@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_NEWCIV_TITLE</Tag>
+		<English>A new civilization is being born</English>
+		<French>Naissance d'une nouvelle civilisation</French>
+		<German>Eine neue Zivilisation entsteht</German>
+		<Italian>Nasce una nuova civilt&#224;</Italian>
+		<Spanish>Ha nacido una nueva civilizaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NEWCIV_MESSAGE2</Tag>
+		<English> empire?</English>
+		<French> ?</French>
+		<German> Reich übernehmen?</German>
+		<Italian>?</Italian>
+		<Spanish>  </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FLIPMESSAGE1</Tag>
+		<English>The following cities:[NEWLINE][NEWLINE]</English>
+		<French>Les villes suivantes :[NEWLINE][NEWLINE]</French>
+		<German>Die folgenden St&#228;dte:[NEWLINE][NEWLINE]</German>
+		<Italian>Le seguenti citt&#224;:[NEWLINE][NEWLINE]</Italian>
+		<Spanish>Las ciudades de[NEWLINE][NEWLINE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FLIPMESSAGE2</Tag>
+		<English>[NEWLINE]want to flip to a rising civilization. Our refusal may lead to a war and some of our troops may join it. Should we let them go?</English>
+		<French>[NEWLINE]désirent rejoindre une civilisation émergente. Notre refus pourrait conduire à une guerre et certaines de nos troupes pourraient s'y joindre. Devons-nous les laisser y aller ?</French>
+		<German>[NEWLINE]wollen sich einer aufstrebenden Zivilisation anschließen. Wenn wir es ihnen verweigern, hätte das einen Krieg zur Folge und einige unserer Truppen k&#246;nnten sich dem Feind anschließen. Sollen wir die St&#228;dte ziehen lassen?</German>
+		<Italian>[NEWLINE]vogliono passare a una nuova civilt&#224;. Il nostro rifiuto potrebbe portare alla guerra e alcune nostre truppe potrebbero unirsi a loro. Le lasciamo andare?</Italian>
+		<Spanish>[NEWLINE]quieren unirse a la incipiente civilizaci&#243;n. Una negativa por nuestra parte podr&#237;a provocar la guerra y parte de nuestras tropas podr&#237;an unirse a ella. ¿Debemos permitir que se unan?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FLIP_AGREED</Tag>
+		<English>We agreed to the flip!</English>
+		<French>Nous acceptons de céder la ville !</French>
+		<German>Wir lassen sie ziehen!</German>
+		<Italian>Siamo d'accordo sul passaggio!</Italian>
+		<Spanish>¡Hemos accedido a la cesi&#243;n!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FLIP_REFUSED</Tag>
+		<English>We refused the flip, this means war!</English>
+		<French>Nous refusons de céder la ville, cela signifie la guerre !</French>
+		<German>Wir lassen sie nicht ziehen. Das bedeutet Krieg!</German>
+		<Italian>Abbiamo rifiutato il passaggio: ci&#242; significa guerra!</Italian>
+		<Spanish>Nos hemos negado a la cesi&#243;n, ¡esto significa la guerra!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FLIP_BETRAYAL</Tag>
+		<English>Some of our forces are joining the enemy to help their war of liberation!</English>
+		<French>Certaines de nos forces se joignent à l'ennemi pour les aider dans leur guerre de libération !</French>
+		<German>Einige unserer Streitkr&#228;fte schlie&#223;en sich dem Feind an, um ihm bei seinem Befreiungskrieg zu helfen!</German>
+		<Italian>Alcune delle nostre forze si uniscono al nemico per aiutarne la guerra di liberazione!</Italian>
+		<Spanish>¡Algunas de nuestras unidades se han unido al enemigo para luchar en su guerra de liberaci&#243;n!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FLIP_BETRAYAL_NEW</Tag>
+		<English>Some of our enemy's forces are joining us to help our war of liberation!</English>
+		<French>Certaines des forces ennemies se joignent à nous pour nous aider dans notre guerre de libération !</French>
+		<German>Einige feindliche Streitkr&#228;fte schlie&#223;en sich uns an, um uns bei unserem Befreiungskrieg zu helfen!</German>
+		<Italian>Alcune forze del nemico si uniscono a noi per aiutarci nella guerra di liberazione!</Italian>
+		<Spanish>¡Algunas de las unidades del enemigo se han unido a nosotros para apoyarnos en nuestra guerra de liberaci&#243;n!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CIV_IS_BORN</Tag>
+		<English>A new civilization is born: %s1_CityName</English>
+		<French>Naissance d'une nouvelle civilisation : %s1_CityName</French>
+		<German>Eine neue Zivilisation wurde geboren: %s1_CityName</German>
+		<Italian>&#200; nata una nuova civilt&#224;: %s1_CityName</Italian>
+		<Spanish>Ha nacido una nueva civilizaci&#243;n: %s1_CityName</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INDEPENDENCE1</Tag>
+		<English/>
+		<French/>
+		<German/>
+		<Italian>&#200; nata una nuova civilt&#224;: %s1_CityName</Italian>
+		<Spanish>Ha nacido una nueva civilizaci&#243;n: %s1_CityName</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INDEPENDENCE2</Tag>
+		<English>cities have declared independence from their foreign domination!</English>
+		<French> ont déclaré leur indépendance par rapport à la domination étrangère !</French>
+		<German>St&#228;dte haben ihre Unabh&#228;ngigkeit von der Fremdherrschaft erkl&#228;rt!</German>
+		<Italian>citt&#224; hanno dichiarato la propria indipendenza dal dominio straniero!</Italian>
+		<Spanish>ciudades han declarado su independencia del dominio extranjero.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REBELLION_TITLE</Tag>
+		<English>Independence!</English>
+		<French>Indépendance !</French>
+		<German>Unabh&#228;ngigkeit!</German>
+		<Italian>Indipendenza!</Italian>
+		<Spanish>¡Independencia!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REBELLION_MESSAGE</Tag>
+		<English>cities have declared their independence from us and expelled our garrisons. Shall we leave them free?</English>
+		<French>ont déclaré leur indépendance et attaquent nos garnisons. Devons-nous les laisser libres ?</French>
+		<German>St&#228;dte haben ihre Unabh&#228;ngigkeit von uns erkl&#228;rt und unsere Garnisonen vertrieben. Sollen wir sie gewähren lassen?</German>
+		<Italian>citt&#224; hanno dichiarato la propria indipendenza, espellendo le nostre guarnigioni. Dobbiamo lasciarle libere?</Italian>
+		<Spanish>ciudades han declarado su independencia de nosotros y han expulsado a nuestras guarniciones. ¿Debeos permitir su libertad?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EXILE_TITLE</Tag>
+		<English>Exile!</English>
+		<French>Exil !</French>
+		<German>Exil!</German>
+		<Italian>Esilio!</Italian>
+		<Spanish>¡Al exilio!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EXILE_TEXT1</Tag>
+		<English>You have been captured by the</English>
+		<French>Vous avez été capturé par les</French>
+		<German>Ihr wurdet von den</German>
+		<Italian>Sei stato catturato dai</Italian>
+		<Spanish>El</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EXILE_TEXT2</Tag>
+		<English>and exiled to the unimportant lands of</English>
+		<French>et exilé dans les terres inintéressantes de</French>
+		<German>gefangen genommen und seid ins Exil geschickt worden - in das unbedeutende Land von</German>
+		<Italian>ed esiliato nelle insignificanti terre di</Italian>
+		<Spanish>os ha capturado y exiliado a las insignificantes tierras de</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EXILE_TEXT3</Tag>
+		<English>. You have a short period of time for retaking your capital and gain back your position.</English>
+		<French>. Vous avez peu de temps pour reprendre votre capitale et récupérer votre situation.</French>
+		<German>. Es bleibt Euch nur wenig Zeit, um Eure Hauptstadt zur&#252;ckzuerobern und Eure Position wiederzuerlangen.</German>
+		<Italian>. Hai un breve periodo di tempo per riprendere la tua capitale e riguadagnare la tua posizione.</Italian>
+		<Spanish>. Dispon&#233;is de un breve periodo de tiempo para recuperar vuestra capital y vuestra posici&#243;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ESCAPE_TITLE</Tag>
+		<English>You have escaped!</English>
+		<French>Vous vous êtes échappé !</French>
+		<German>Ihr seid entkommen!</German>
+		<Italian>Sei riuscito a fuggire!</Italian>
+		<Spanish>¡Hab&#233;is escapado!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ESCAPE_TEXT1</Tag>
+		<English>You have escaped and regained control of </English>
+		<French>Vous vous êtes échappé et avez regagné le contrôle du territoire </French>
+		<German>Ihr seid entkommen und habt die Kontrolle über das </German>
+		<Italian>Sei riuscito a fuggire e a riguadagnare il controllo del territorio</Italian>
+		<Spanish>Hab&#233;is escapado y recuperado el control del territorio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ESCAPE_TEXT2</Tag>
+		<English>territory. Now let's teach our enemies a lesson!</English>
+		<French>. A présent, donnons une leçon à nos ennemis !</French>
+		<German>Territorium wiedererlangt. Nun sollten wir unseren Feinden eine Lektion erteilen!</German>
+		<Italian>. Ora diamo una bella lezione ai nostri nemici!</Italian>
+		<Spanish>. ¡D&#233;mosles una lecci&#243;n a nuestros enemigos!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FIRST_CONTACT_NEWWORLD</Tag>
+		<English>Conquerors from a far away continent are invading our lands searching for wealth!</English>
+		<French>Des conquérants d'un continent lointain envahissent nos terres à la recherche de richesses !</French>
+		<German>Eroberer von einem weit entfernten Kontinent fallen auf der Suche nach Reichtum in unser Land ein!</German>
+		<Italian>I conquistatori provenienti da un continente lontano invadono le nostre terre in cerca di ricchezza!</Italian>
+		<Spanish>¡Unos conquistadores de un continente lejano est&#225;n invadiendo nuestras tierras en busca de riquezas!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FIRST_CONTACT_OLDWORLD</Tag>
+		<English>A group of our own adventurers has arrived in the new world searching for wealth!</English>
+		<French>Un groupe de nos aventuriers est arrivé dans le nouveau monde à la recherche de richesses !</French>
+		<German>Eine Gruppe Eurer eigenen Abenteurer ist auf der Suche nach Reichtum in der Neuen Welt angekommen!</German>
+		<Italian>Un gruppo di nostri avventurieri &#232; arrivato nel nuovo mondo in cerca di ricchezza!</Italian>
+		<Spanish>¡Uno de nuestros grupos de aventureros ha llegado a unas nuevas tierras en busca de riquezas!</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_0</Tag>
+		<English>It is the year 3000 BC. The kingdoms of Egypt have just been united. Drawing from the wealth of the Nile, the Egyptians set out to build monuments that will attest the glory of their dynasties for all time.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_1</Tag>
+		<English>It is the year 3000 BC. At the Indus valley, technological and cultural achievements lay the foundations for future Indian civilizations to develop a multitude of myths and religions and spread their spirituality all over the Indian subcontinent.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_2</Tag>
+		<English>It is the year 3000 BC. The first dynasties emerge in the north of China. Within these vast and rich lands, it is apparent that this is the center of the world, and that the Chinese people are destined to rule it from there for all time.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_3</Tag>
+		<English>It is the year 3000 BC. The kingdoms of Sumer and Akkad are thriving in the fertile crescent of Mesopotamia, where the city of Babylon emerges to become to greatest metropolis of its time.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_4</Tag>
+		<English>It is the year 1600 BC. Mycenaean Greeks have first reached the Greek peninsula. The constant struggle of their various city states will not stop them from spreading their culture all around the known world, by both war and philosophy.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_5</Tag>
+		<English>It is the year 844 BC. The Achaemenids have established their rule over the Iranian plateau. With wealthy India in its east and the rich Mesopotamian lands in its west, the warlike people of Persia have vast lands to conquer on their way to become the world’s greatest empire.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_6</Tag>
+		<English>It is the year 1200 BC. At the fringe of the Babylonian and Egyptian empires, the Phoenician city states have established themselves as independent trade nations, seeking to control the trade of the whole Mediterranean.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_7</Tag>
+		<English>It is the year 753 BC. The city of Rome has just been founded. From there on, it is the intent of the Roman people, not only to bring their rule to all barbaric people on the coasts of the Mediterranean Sea, but also their culture and civilization.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_8</Tag>
+		<English>It is the year 660 BC. Emperor Jimmu has founded the Japanese Empire, beginning a lineage of emperors that will ensure the supremacy of Japan over the coasts and islands of the Pacific for all time.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_9</Tag>
+		<English>It is the year 300 BC. Along the trade routes between Rome and India, the Ethiopian kingdom of Aksum is beginning to flourish. It is the fate of the Ethiopian people to withstand the influence of all outside powers, both religiously and militarily.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_10</Tag>
+		<English>It is the year 60 AD. Urbanization on the peninsula of Yucatan sparks the formation of the Mayan city states, whose technological and architectural advancements would create the first civilization in the Americas.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_11</Tag>
+		<English>It is the year 551 AD. From their settlements on the coast of Norway, the first Viking raiders start out to rule the seas and settle or plunder the coasts of not only the North Sea, but also the Mediterranean Sea and even the New World.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_12</Tag>
+		<English>It is the year 622 AD. The founding of Islam unites the Arabian people under one banner, and the era of Arabian conquests has begun. Mesopotamia, Persia, Egypt and Iberia wait to be conquered and become a part of the new age of Arabian enlightenment.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_13</Tag>
+		<English>It is the year 655 AD. The Khmer people found their capital at Angkor, dedicating the culture of their growing cities to the veneration of Buddhism.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_14</Tag>
+		<English>It is the year 718 AD. Visigoth rule over Spain has ended, and the newly founded Kingdom of Asturias intends to not only control all of Iberia, but also to discover new riches upon which they can build an empire in which the sun never sets.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_15</Tag>
+		<English>It is the year 751 AD. With the coronation of Pepin from the Carolingian dynasty, a new era begins for the people of France. An era where they can prove that they are the only truly cultured civilization in the whole Christian world.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_16</Tag>
+		<English>It is the year 829 AD. The first king gains overlordship over the Anglo-Saxon kingdoms of England. Their new unity is but only the first step gain rule of the waves and bring English superiority to all lands of this world.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_17</Tag>
+		<English>It is the year 843 AD. The Treaty of Verdun brought independence for the German East Frankish Kingdom. The German kings would strive for continuation of the Roman Empire, adopting the title of emperors, and so claiming superiority over all of Europe.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_18</Tag>
+		<English>It is the year 860 AD. The people of Russia have first adopted Christianity, making the first step towards unity. This unity will enable them to expand into the vast areas of Siberia, as well as even further frontiers.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_19</Tag>
+		<English>It is the year 1500 AD. After long wars, the Dutch people have finally reached independence from foreign domination. Now they can take the opportunity and create a spice trading empire that stretches all around the globe.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_20</Tag>
+		<English>It is the year 989 AD. The foundation of Sankore in Timbuktu marks the rise of the Mali Empire. Known for its rich gold mines, the empire must withstand greedy barbarians and prove that it is truly the richest civilization on Earth.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_21</Tag>
+		<English>It is the year 1128 AD. Portugal has just defeated Spain and gained independence. Situated at the western end of Europe, the kingdom is in a good position to send ships to ports all over the world while entertaining a large colonial empire.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_22</Tag>
+		<English>It is the year 1150 AD. Manco Capac has just founded the Kingdom of Cuzco, the first Incan kingdom. Adapted to their position in the Andes, the Inca are ready to raise the greatest native American empire of all times.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_23</Tag>
+		<English>It is the year 1190 AD. Temujin has just brought all Mongolian tribes under his command. With his highly disciplined troops of steppe riders, he is ready to have both Orient and Occident tremble in fear before his armies.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_24</Tag>
+		<English>It is the year 1195 AD. The city of Tenochtitlan has just been founded at Lake Texcoco. Building their empire upon the remnants of the Maya, the Aztecs are able to become the greatest civilization in Mesoamerica.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_25</Tag>
+		<English>It is the year 1280 AD. Osman I has taken the throne to form the Ottoman Empire, leading the Turks from all Anatolia to new glory. With the Bosphorus right within their grasp, they will be able to form an empire that stretches over three continents.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_26</Tag>
+		<English>It is the year 1776 AD. Discontent with foreign domination, the people in the American colonies have risen up in revolution to found their own nation. They now must defend themselves from and even surpass the European civilizations to fulfill their manifest destiny.</English>
+	</TEXT>
+
+
+</Civ4GameText>

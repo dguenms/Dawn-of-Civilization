@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Terrain art path information -->
+<Civ4ArtDefines xmlns="x-schema:CIV4ArtDefinesSchema.xml">
+	<TerrainArtInfos>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_GRASS</Type>
+			<Path>Art/Terrain/Textures/GrassBlend.dds</Path>
+			<Grid>Art/Terrain/Textures/GrassGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/GrassDETAIL.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Grassland.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,3,1</Button>
+			<LayerOrder>4</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>8,0</TextureBlend01>
+			<TextureBlend02>1,0</TextureBlend02>
+			<TextureBlend04>6,0</TextureBlend04>
+			<TextureBlend08>5,0</TextureBlend08>
+			<TextureBlend03>2,0</TextureBlend03>
+			<TextureBlend06>10,0</TextureBlend06>
+			<TextureBlend12>12,0</TextureBlend12>
+			<TextureBlend09>9,0</TextureBlend09>
+			<TextureBlend07>3,0</TextureBlend07>
+			<TextureBlend14>14,0</TextureBlend14>
+			<TextureBlend13>11,0</TextureBlend13>
+			<TextureBlend11>4,0</TextureBlend11>
+			<TextureBlend10>7,0</TextureBlend10>
+			<TextureBlend05>13,0</TextureBlend05>
+			<TextureBlend15>15,0 16,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0</TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_PLAINS</Type>
+			<Path>Art/Terrain/Textures/PlainsBlend.dds</Path>
+			<Grid>Art/Terrain/Textures/PlainsGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/PlainsDETAIL.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Plains.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,8,1</Button>
+			<LayerOrder>3</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>8,0</TextureBlend01>
+			<TextureBlend02>1,0</TextureBlend02>
+			<TextureBlend04>6,0</TextureBlend04>
+			<TextureBlend08>5,0</TextureBlend08>
+			<TextureBlend03>2,0</TextureBlend03>
+			<TextureBlend06>10,0</TextureBlend06>
+			<TextureBlend12>12,0</TextureBlend12>
+			<TextureBlend09>9,0</TextureBlend09>
+			<TextureBlend07>3,0</TextureBlend07>
+			<TextureBlend14>14,0</TextureBlend14>
+			<TextureBlend13>11,0</TextureBlend13>
+			<TextureBlend11>4,0</TextureBlend11>
+			<TextureBlend10>7,0</TextureBlend10>
+			<TextureBlend05>13,0</TextureBlend05>
+			<TextureBlend15>15,0 16,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0</TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_DESERT</Type>
+			<Path>Art/Terrain/Textures/DesertBlend.dds</Path>
+			<Grid>Art/Terrain/Textures/DesertGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/DesertDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Desert.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,2,1</Button>
+			<LayerOrder>2</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>8,0</TextureBlend01>
+			<TextureBlend02>1,0</TextureBlend02>
+			<TextureBlend04>6,0</TextureBlend04>
+			<TextureBlend08>5,0</TextureBlend08>
+			<TextureBlend03>2,0</TextureBlend03>
+			<TextureBlend06>10,0</TextureBlend06>
+			<TextureBlend12>12,0</TextureBlend12>
+			<TextureBlend09>9,0</TextureBlend09>
+			<TextureBlend07>3,0</TextureBlend07>
+			<TextureBlend14>14,0</TextureBlend14>
+			<TextureBlend13>11,0</TextureBlend13>
+			<TextureBlend11>4,0</TextureBlend11>
+			<TextureBlend10>7,0</TextureBlend10>
+			<TextureBlend05>13,0</TextureBlend05>
+			<TextureBlend15>15,0 16,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0</TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_TUNDRA</Type>
+			<Path>Art/Terrain/Textures/TundraBlend.dds</Path>
+			<Grid>Art/Terrain/Textures/TundraGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/TundraDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Tundra.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,1,2</Button>
+			<LayerOrder>1</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>8,0</TextureBlend01>
+			<TextureBlend02>1,0</TextureBlend02>
+			<TextureBlend04>6,0</TextureBlend04>
+			<TextureBlend08>5,0</TextureBlend08>
+			<TextureBlend03>2,0</TextureBlend03>
+			<TextureBlend06>10,0</TextureBlend06>
+			<TextureBlend12>12,0</TextureBlend12>
+			<TextureBlend09>9,0</TextureBlend09>
+			<TextureBlend07>3,0</TextureBlend07>
+			<TextureBlend14>14,0</TextureBlend14>
+			<TextureBlend13>11,0</TextureBlend13>
+			<TextureBlend11>4,0</TextureBlend11>
+			<TextureBlend10>7,0</TextureBlend10>
+			<TextureBlend05>13,0</TextureBlend05>
+			<TextureBlend15>15,0 16,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0</TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_SNOW</Type>
+			<Path>Art/Terrain/Textures/IceBlend.dds</Path>
+			<Grid>Art/Terrain/Textures/IceGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/IceDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Ice.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,5,1</Button>
+			<LayerOrder>5</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>8,0</TextureBlend01>
+			<TextureBlend02>1,0</TextureBlend02>
+			<TextureBlend04>6,0</TextureBlend04>
+			<TextureBlend08>5,0</TextureBlend08>
+			<TextureBlend03>2,0</TextureBlend03>
+			<TextureBlend06>10,0</TextureBlend06>
+			<TextureBlend12>12,0</TextureBlend12>
+			<TextureBlend09>9,0</TextureBlend09>
+			<TextureBlend07>3,0</TextureBlend07>
+			<TextureBlend14>14,0</TextureBlend14>
+			<TextureBlend13>11,0</TextureBlend13>
+			<TextureBlend11>4,0</TextureBlend11>
+			<TextureBlend10>7,0</TextureBlend10>
+			<TextureBlend05>13,0</TextureBlend05>
+			<TextureBlend15>15,0 16,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0</TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_COAST</Type>
+			<Path>Art/Terrain/Textures/CoastBLEND.dds</Path>
+			<Grid>Art/Terrain/Textures/CoastGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/CoastDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Coast.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,1,1</Button>
+			<LayerOrder>50</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>1,180 5,270 9,180  13,270 17,180 21,270 26,270</TextureBlend01>
+			<TextureBlend02>1,270 5,0   9,270  13,0   17,270 21,0   26,0</TextureBlend02>
+			<TextureBlend04>1,0   5,90  9,0    13,90  17,0   21,90  26,90</TextureBlend04>
+			<TextureBlend08>1,90  5,180 9,90   13,180 17,90  21,180 26,180</TextureBlend08>
+			<TextureBlend03>3,0   7,180 11,0   15,180 19,0   23,180 27,0   31,180</TextureBlend03>
+			<TextureBlend06>3,90  7,270 11,90  15,270 19,90  23,270 27,90  31,270</TextureBlend06>
+			<TextureBlend12>3,180 7,0   11,180 15,0   19,180 23,0   27,180 31,0</TextureBlend12>
+			<TextureBlend09>3,270 7,90  11,270 15,90  19,270 23,90  27,270 31,90</TextureBlend09>
+			<TextureBlend07>4,0   8,270 12,0   16,270 20,0   24,270 28,0   32,270</TextureBlend07>
+			<TextureBlend14>4,90  8,0   12,90  16,0   20,90  24,0   28,90  32,0</TextureBlend14>
+			<TextureBlend13>4,180 8,90  12,180 16,90  20,180 24,90  28,180 32,90</TextureBlend13>
+			<TextureBlend11>4,270 8,180 12,270 16,180 20,270 24,180 28,270 32,180</TextureBlend11>
+			<TextureBlend10>2,0   6,90  10,0   14,90  18,0   22,90  </TextureBlend10>
+			<TextureBlend05>2,90  6,0   10,90  14,0   18,90  22,0   </TextureBlend05>
+			<TextureBlend15>29,0 </TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_OCEAN</Type>
+			<Path>Art/Terrain/Textures/OceanBLEND.dds</Path>
+			<Grid>Art/Terrain/Textures/OceanGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/OceanDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Ocean.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,6,1</Button>
+			<LayerOrder>60</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>1,180 5,270 9,180  13,270 17,180 21,270</TextureBlend01>
+			<TextureBlend02>1,270 5,0   9,270  13,0   17,270 21,0  </TextureBlend02>
+			<TextureBlend04>1,0   5,90  9,0    13,90  17,0   21,90 </TextureBlend04>
+			<TextureBlend08>1,90  5,180 9,90   13,180 17,90  21,180</TextureBlend08>
+			<TextureBlend03>3,0   7,180 11,0   15,180 19,0   23,180 27,0   31,180</TextureBlend03>
+			<TextureBlend06>3,90  7,270 11,90  15,270 19,90  23,270 27,90  31,270</TextureBlend06>
+			<TextureBlend12>3,180 7,0   11,180 15,0   19,180 23,0   27,180 31,0</TextureBlend12>
+			<TextureBlend09>3,270 7,90  11,270 15,90  19,270 23,90  27,270 31,90</TextureBlend09>
+			<TextureBlend07>4,0   8,270 12,0   16,270 20,0   24,270 28,0   32,270</TextureBlend07>
+			<TextureBlend14>4,90  8,0   12,90  16,0   20,90  24,0   28,90  32,0</TextureBlend14>
+			<TextureBlend13>4,180 8,90  12,180 16,90  20,180 24,90  28,180 32,90</TextureBlend13>
+			<TextureBlend11>4,270 8,180 12,270 16,180 20,270 24,180 28,270 32,180</TextureBlend11>
+			<TextureBlend10>2,0   6,90  10,0   14,90  18,0   22,90  26,0</TextureBlend10>
+			<TextureBlend05>2,90  6,0   10,90  14,0   18,90  22,0   26,90</TextureBlend05>
+			<TextureBlend15>29,0 </TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_PEAK</Type>
+			<Path>Art/Terrain/Textures/PeakBlend.dds</Path>
+			<Grid>Art/Terrain/Textures/PeakGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/IceDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Peak.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,7,1</Button>
+			<LayerOrder>80</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>8,0</TextureBlend01>
+			<TextureBlend02>1,0</TextureBlend02>
+			<TextureBlend04>6,0</TextureBlend04>
+			<TextureBlend08>5,0</TextureBlend08>
+			<TextureBlend03>2,0</TextureBlend03>
+			<TextureBlend06>10,0</TextureBlend06>
+			<TextureBlend12>12,0</TextureBlend12>
+			<TextureBlend09>9,0</TextureBlend09>
+			<TextureBlend07>3,0</TextureBlend07>
+			<TextureBlend14>14,0</TextureBlend14>
+			<TextureBlend13>11,0</TextureBlend13>
+			<TextureBlend11>4,0</TextureBlend11>
+			<TextureBlend10>7,0</TextureBlend10>
+			<TextureBlend05>13,0</TextureBlend05>
+			<TextureBlend15>15,0 16,0</TextureBlend15>
+		</TerrainArtInfo>
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_HILL</Type>
+			<Path>Art/Terrain/Textures/HillBlend.dds</Path>
+			<Grid>Art/Terrain/Textures/HillGrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/IceDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Hill.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,4,1</Button>
+			<LayerOrder>79</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>8,0</TextureBlend01>
+			<TextureBlend02>1,0</TextureBlend02>
+			<TextureBlend04>6,0</TextureBlend04>
+			<TextureBlend08>5,0</TextureBlend08>
+			<TextureBlend03>2,0</TextureBlend03>
+			<TextureBlend06>10,0</TextureBlend06>
+			<TextureBlend12>12,0</TextureBlend12>
+			<TextureBlend09>9,0</TextureBlend09>
+			<TextureBlend07>3,0</TextureBlend07>
+			<TextureBlend14>14,0</TextureBlend14>
+			<TextureBlend13>11,0</TextureBlend13>
+			<TextureBlend11>4,0</TextureBlend11>
+			<TextureBlend10>7,0</TextureBlend10>
+			<TextureBlend05>13,0</TextureBlend05>
+			<TextureBlend15>15,0 16,0</TextureBlend15>
+		</TerrainArtInfo>
+		<!-- Rhye - start -->
+		<TerrainArtInfo>
+			<Type>ART_DEF_TERRAIN_MARSH</Type>
+			<Path>Art/Terrain/Textures/MarshBLEND.dds</Path>
+			<Grid>Art/Terrain/Textures/Marshgrids.dds</Grid>
+			<Detail>Art/Terrain/Textures/CoastDetail.dds</Detail>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Marsh.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,2,2</Button>
+			<LayerOrder>60</LayerOrder>
+			<AlphaShader>0</AlphaShader>
+			<TextureBlend01>1,180 5,270 9,180  13,270 17,180 21,270</TextureBlend01>
+			<TextureBlend02>1,270 5,0   9,270  13,0   17,270 21,0  </TextureBlend02>
+			<TextureBlend04>1,0   5,90  9,0    13,90  17,0   21,90 </TextureBlend04>
+			<TextureBlend08>1,90  5,180 9,90   13,180 17,90  21,180</TextureBlend08>
+			<TextureBlend03>3,0   7,180 11,0   15,180 19,0   23,180 27,0   31,180</TextureBlend03>
+			<TextureBlend06>3,90  7,270 11,90  15,270 19,90  23,270 27,90  31,270</TextureBlend06>
+			<TextureBlend12>3,180 7,0   11,180 15,0   19,180 23,0   27,180 31,0</TextureBlend12>
+			<TextureBlend09>3,270 7,90  11,270 15,90  19,270 23,90  27,270 31,90</TextureBlend09>
+			<TextureBlend07>4,0   8,270 12,0   16,270 20,0   24,270 28,0   32,270</TextureBlend07>
+			<TextureBlend14>4,90  8,0   12,90  16,0   20,90  24,0   28,90  32,0</TextureBlend14>
+			<TextureBlend13>4,180 8,90  12,180 16,90  20,180 24,90  28,180 32,90</TextureBlend13>
+			<TextureBlend11>4,270 8,180 12,270 16,180 20,270 24,180 28,270 32,180</TextureBlend11>
+			<TextureBlend10>2,0   6,90  10,0   14,90  18,0   22,90  26,0</TextureBlend10>
+			<TextureBlend05>2,90  6,0   10,90  14,0   18,90  22,0   26,90</TextureBlend05>
+			<TextureBlend15>29,0 </TextureBlend15>
+		</TerrainArtInfo>
+		<!-- Rhye - end -->
+	</TerrainArtInfos>
+</Civ4ArtDefines>

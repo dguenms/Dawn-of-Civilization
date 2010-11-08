@@ -1,0 +1,10 @@
+# Upgrade to the latest patch of RFC (BtS v1.187)
+  For a list of features, see the dedicated RFC thread
+# Upgrade to the latest version of RFC Epic/Marathon (version 1.2). This includes:
+	# optimized loading times
+	# disabled autosave during autoplay
+	# a fixed Congress system
+	# rebalancing for research times
+# Individual "Dawn of Man" texts have been added for each civilization
+# Fixed a bug in the diplomatic advisor screen
+# Catholic and Protestant buildings now have appropriate buttons

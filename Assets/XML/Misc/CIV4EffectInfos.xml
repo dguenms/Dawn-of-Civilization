@@ -1,0 +1,2560 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Effect Infos -->
+<Civ4EffectInfos xmlns="x-schema:CIV4MiscSchema.xml">
+	<EffectInfos>
+		<!-- Interface:-->
+		<EffectInfo>
+			<Type>EFFECT_FOOTSTEP_ON</Type>
+			<Description>EFFECT_FOOTSTEP_ON</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/FootStep_ON.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FOOTSTEP</Type>
+			<Description>Footstep</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/FootStep.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_PING</Type>
+			<Description>Ping</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/EmpBlast.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_RES_BOMB</Type>
+			<Description>Res Bomb</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/ResourceBOMB.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STASIS</Type>
+			<Description>Stasis</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/Stasis.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WAYPOINT</Type>
+			<Description>Waypoint</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/Waypoint.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_LASER_HIT</Type>
+			<Description>Laser Hit</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/LaserHit.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MINE</Type>
+			<Description>Mine</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/Mine.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MUTINY</Type>
+			<Description>Mutiny</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Interface/Effects/Mutiny.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CANDLE_FLAME_FOR_RELIGION_POPUP</Type>
+			<Description>Candle flame for religion popup cinematic</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_candle_flame/fx_fire_candle_flame.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CANDLE_HWLIGHT_FOR_RELIGION_POPUP</Type>
+			<Description>Candle flame hardware light for religion popup cinematic</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_candle_flame/fx_fire_candle_hardware_light.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Tracks and Footprints:-->
+		<EffectInfo>
+			<Type>EFFECT_FOOTPRINT</Type>
+			<Description>Footprint</Description>
+			<fScale>0.85</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Shared/Footstep.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FOOTPRINT_80</Type>
+			<Description>Footprint Medium</Description>
+			<fScale>0.75</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Shared/Footstep.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FOOTPRINT_60</Type>
+			<Description>Footprint Small</Description>
+			<fScale>0.65</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Shared/Footstep.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_HORSEPRINT</Type>
+			<Description>Horse Hoof Print</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Shared/HorsePrint.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BIGHORSEPRINT</Type>
+			<Description>Horse Hoof Print</Description>
+			<fScale>2.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Shared/HorsePrint.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_PAWPRINT</Type>
+			<Description>Wild Animal Paw Print</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Shared/PawPrint.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MECHPRINT</Type>
+			<Description>Assault Mech Print</Description>
+			<fScale>5.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Shared/MechPrint.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FOOTPRINT</Type>
+			<Description>Footprint</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Shared/Footstep.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Projectiles:-->
+		<EffectInfo>
+			<Type>EFFECT_LONGBOWARROW</Type>
+			<Description>Longbow Arrow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Longbowman/LongbowArrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CROSSBOWBOLT</Type>
+			<Description>Crossbow bolt</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Crossbowman/CrossbowBolt.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ARCHERARROW</Type>
+			<Description>ArcherArrow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Archer/ArcherArrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CHINESEARROW</Type>
+			<Description>ChineseArcherArrow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Archer_Chinese/Archer_Chinese_Arrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EGYPTIANARROW</Type>
+			<Description>EgyptianArcherArrow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Archer_Egyptian/Archer_Egyptian_Arrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EURASIANARROW</Type>
+			<Description>EurasianArcherArrow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Archer_Eurasian/Archer_Eurasian_Arrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GALLEY_FIREARROW</Type>
+			<Description>Galley Fire Arrow Effect</Description>
+			<fScale>0.7</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_arrow/fx_Galley_FireArrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>300.00</fSpeed>
+			<fArcValue>3.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CAMELARCHERARROW</Type>
+			<Description>CamelArcherArrow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Unique/Arabia/CamelArcher/ArabiaCamelArcherArrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_HORSEARCHERARROW</Type>
+			<Description>HorseArcherArrow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/HorseArcher/HorseArcherArrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MALISPEAR</Type>
+			<Description>Mali Spear</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Unique/Mali/Skirmisher/MaliSkirmisherSpear.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CATAPULT_ROCK</Type>
+			<Description>Catapult Rock</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Catapult/CatapultRock.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>4.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GRENADE_THROW</Type>
+			<Description>Grenadier Grenade</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Grenadier/GrenadierGrenade.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>350.0</fSpeed>
+			<fArcValue>4.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_HWACHA_ROCKET</Type>
+			<Description>Hwacha Rocket fire</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Hwacha_Korean/Hwacha_Rocket.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>350.0</fSpeed>
+			<fArcValue>4.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SAM_ANTI_AIR_MISSLE</Type>
+			<Description>Sam_Infantry missle</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/SAMInfantry/SAMInfantry_missile.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>600.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STONE_THROW</Type>
+			<Description>Peltast Sling Stone</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Peltast/Peltast_Stone_Throw.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>350.0</fSpeed>
+			<fArcValue>4.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MONGOL_JAV</Type>
+			<Description>Mongolian Javelin</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Mongolian_JavelinThrower/Mongolian_Javelin.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>2.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TREBUCHET_ROCK</Type>
+			<Description>Trebuchet Rock</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Trebuchet/TrebuchetRock.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>400</fSpeed>
+			<fArcValue>6</fArcValue>
+		</EffectInfo>
+		<!-- Misc Unit Effects:-->
+		<EffectInfo>
+			<Type>EFFECT_SETTLERSMOKE</Type>
+			<Description>Dust Cloud</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/settler_smoke/SettlerSmoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_PACK_UP</Type>
+			<Description>Goody hut pop dust and hay Used for Yert to Mongol Settler </Description>
+			<fScale>1.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/improvement_goody_hut_pop/fx_goodyhut_pop.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MININGSPARK</Type>
+			<Description>Hot Sparks</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/work_mine/MiningSpark.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_DIGDIRT</Type>
+			<Description>Quick Puff of Dirt</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/work_dig/DigDirt.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_THROWDIRT</Type>
+			<Description>Quick Clump of Dirt</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/work_dig/ThrowDirt.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FLINTSPARK</Type>
+			<Description>Creation Effect</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_flintspark/fx_weapon_flintspark.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SPY_SABOTAGE</Type>
+			<Description>Spy Sabotaging Production</Description>
+			<fScale>.2</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_OMEN_HORSEMAN</Type>
+			<Description>Omen Horsemen attack</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Omen_Horseman/OMEN_HORSEMAN_EFFECT.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SIEGE_TOWER_DIE</Type>
+			<Description>Dust as the Siege tower dies</Description>
+			<fScale>2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/settler_smoke/SettlerSmoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- This section of explosions needs dirt explosion and smoke plume added if Jesse gets multiple NIFs working -->
+		<EffectInfo>
+			<Type>EFFECT_B52_BOMB_EXPLODE</Type>
+			<Description>B-52's bomb explosion</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+			<fSpeed>400.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_JETFIGHTER_MISSILE</Type>
+			<Description>Jet Fighter Missile</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/JetFighter/JetFighterMissile.NIF</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>800.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_JETFIGHTER_BOMB</Type>
+			<Description>Jet Fighter Bomb Animations</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/JetFighter/JetFighterBomb.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>400.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BOMBER_BOMB</Type>
+			<Description>Bomber Bomb Animations</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Bomber/BomberBomb.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>400.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STEALTHBOMBER_BOMB</Type>
+			<Description>Stealth Bomber Bomb Animations</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/StealthBomber/StealthBomberBomb.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>400.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_JETFIGHTER_BOMB_EXPLODE</Type>
+			<Description>Jet Fighter Bomb Explosion</Description>
+			<fScale>0.1</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STEALTHBOMBER_BOMB_EXPLODE</Type>
+			<Description>Stealth BomberBomb Explosion</Description>
+			<fScale>0.15</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BOMBER_BOMB_EXPLODE</Type>
+			<Description>Bomber Bomb Explosion</Description>
+			<fScale>0.05</fScale>
+			<fUpdateRate>1.7</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STEALTH_BOMB_EXPLODE</Type>
+			<Description>Stealth Bomber's bomb explosion</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STEALTH_BOMB_EXPLODE_2</Type>
+			<Description>Stealth Bomber's bomb explosion</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_JET_MISSILE_EXPLODE</Type>
+			<Description>Jet Fighter's missile explosion</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Explosions & Hits:-->
+		<EffectInfo>
+			<Type>EFFECT_ICBM_NUCLEAR_EXPLOSION</Type>
+			<Description>The Nuclear Explosion</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_nuke/fx_explosion_nuke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ICBM_FIREBALL_SMALL</Type>
+			<Description>Small fire ball for on ICBM</Description>
+			<fScale>0.20</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ICBM_FIREBALL_LARGE</Type>
+			<Description>Large fire ball for on ICBM</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.6</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ICBM_SW_LASER</Type>
+			<Description>Laser Effect for a Blocked ICBM</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ICBM_Laser/ICBM_Laser.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BOULDER_IMPACT</Type>
+			<Description>Boulder explosion in Dirt</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_02/fx_explosion_dirt_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CATAPULT_HIT_SMALL</Type>
+			<Description>Small Rock explosion for a Hit Catapult</Description>
+			<fScale>0.20</fScale>
+			<fUpdateRate>3.0</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_02/fx_explosion_dirt_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CATAPULT_HIT_LARGE</Type>
+			<Description>Boulder explosion for Catapult Death</Description>
+			<fScale>0.32</fScale>
+			<fUpdateRate>2.7</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_02/fx_explosion_dirt_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ARTILLERY_SHELL_EXPLODE</Type>
+			<Description>Artillery's Shell explosion</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CANNON_DEATH_FIRE</Type>
+			<Description>Death fire for wooden cannon</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_dead_cannon/fx_fire_dead_cannon.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_AIRPLANE_FIREBALL_LARGE</Type>
+			<Description>large fire ball for on airplanes</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_AIRPLANE_FIREBALL_SMALL</Type>
+			<Description>Small fire ball for on airplanes</Description>
+			<fScale>0.7</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FIGHTER_FIREBALL_SMALL</Type>
+			<Description>Small fire ball for on Fighter</Description>
+			<fScale>0.25</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FIGHTER_FIREBALL_LARGE</Type>
+			<Description>large fire ball for on Fighter</Description>
+			<fScale>.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BOMBER_FIREBALL_SMALL</Type>
+			<Description>Small fire ball for on Bomber</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BOMBER_FIREBALL_LARGE</Type>
+			<Description>large fire ball for on Bomber</Description>
+			<fScale>.9</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_JETFIGHTER_FIREBALL_SMALL</Type>
+			<Description>Small fire ball for on Jet Fighter</Description>
+			<fScale>0.8</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_JETFIGHTER_FIREBALL_LARGE</Type>
+			<Description>large fire ball for on Jet Fighter</Description>
+			<fScale>1.4</fScale>
+			<fUpdateRate>0.9</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STEALTHBOMBER_FIREBALL_SMALL</Type>
+			<Description>Small fire ball for on Stealth Bomber</Description>
+			<fScale>0.45</fScale>
+			<fUpdateRate>1.3</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STEALTHBOMBER_FIREBALL_LARGE</Type>
+			<Description>large fire ball for on Stealth Bomber</Description>
+			<fScale>.85</fScale>
+			<fUpdateRate>.8</fUpdateRate>
+			<Path>Art/Effects/fireball_airplane/fx_fireball_airplane.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GUNSHIPSMALLEXPLODE01</Type>
+			<Description>Variation 01 for Gunship</Description>
+			<fScale>0.35</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GUNSHIPSMALLEXPLODE02</Type>
+			<Description>Variation 02 for Gunship</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GUNSHIP_DEATH_EXPLOSION</Type>
+			<Description>Large Explosion for the death of the Gunship</Description>
+			<fScale>0.15</fScale>
+			<fUpdateRate>0.8</fUpdateRate>
+			<Path>Art/Effects/Unit_Explosion_Oil/fx_UNIT_oil_death_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GRENADIER_EXPLOSION</Type>
+			<Description>Grenadier grenade explosion</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>.8</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_OILY_HIT</Type>
+			<Description>Small oily hit explosion</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TRANSPORT_HIT01</Type>
+			<Description>Larger Oily hit explosion for Transport Version 1</Description>
+			<fScale>0.12</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TRANSPORT_HIT02</Type>
+			<Description>Smaller Oily hit explosion for Transport Version 2</Description>
+			<fScale>0.1</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_DESTROYER_HIT01</Type>
+			<Description>Larger Oily hit explosion for Destroyer</Description>
+			<fScale>0.15</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_DESTROYER_HIT02</Type>
+			<Description>Smaller Oily hit explosion for Destroyer</Description>
+			<fScale>0.1</fScale>
+			<fUpdateRate>1.8</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BATTLESHIP_HIT01</Type>
+			<Description>Larger Oily hit explosion for Destroyer</Description>
+			<fScale>0.17</fScale>
+			<fUpdateRate>1.3</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BATTLESHIP_HIT02</Type>
+			<Description>Smaller Oily hit explosion for Destroyer</Description>
+			<fScale>0.12</fScale>
+			<fUpdateRate>1.6</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CARRIER_HIT01</Type>
+			<Description>Larger Oily hit explosion for Carrier</Description>
+			<fScale>0.19</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CARRIER_HIT02</Type>
+			<Description>Smaller Oily hit explosion for Carrier</Description>
+			<fScale>0.14</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_UNIT_DESTRUCTION_OILY_SMOKE</Type>
+			<Description>Oily smoke for high damage on late vehicles</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_damage_smoke_oily/fx_unit_damage_oily_smoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_UNIT_DESTRUCTION_OILY_FIRE</Type>
+			<Description>Oily smoke and fire for high damage on late vehicles</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_damage_smoke_oily/fx_unit_damage_oily_fire_and_smoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_LARGE_OILY_DEATH</Type>
+			<Description>explosion when late modern mechanical units bite the dust</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Unit_Explosion_Oil/fx_UNIT_oil_death_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_LARGE_GUNPOWDER_DEATH</Type>
+			<Description>explosion when early modern mechanical units bite the dust</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Unit_Explosion_gunpowdery/fx_unit_gunpowdery_death_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EXPLOSION_SHOCKWAVE</Type>
+			<Description>Shockwave to add to specific unit explosion</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_shockwave/fx_explosion_shockwave.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_GUNPOWDER_DEATH</Type>
+			<Description>Large death explosion for gunpowder water-vehicles</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_CARAVEL_DEATH</Type>
+			<Description>Large death explosion for Caravel</Description>
+			<fScale>0.15</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_GALLEON_DEATH</Type>
+			<Description>Large death explosion for Galleon</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.1</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_FRIGATE_DEATH</Type>
+			<Description>Large death explosion for Frigate</Description>
+			<fScale>0.26</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_IRONCLAD_DEATH</Type>
+			<Description>Large death explosion for Ironclad</Description>
+			<fScale>0.08</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_WORKBOATMODERN_DEATH</Type>
+			<Description>Large death explosion for WorkBoat Modern</Description>
+			<fScale>0.16</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_TRANSPORT_DEATH</Type>
+			<Description>Large death explosion for Destroyer</Description>
+			<fScale>0.04</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_DESTROYER_DEATH</Type>
+			<Description>Large death explosion for Destroyer</Description>
+			<fScale>0.05</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_BATTLESHIP_DEATH</Type>
+			<Description>Large death explosion for Battleship</Description>
+			<fScale>0.06</fScale>
+			<fUpdateRate>1.1</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_CARRIER_DEATH01</Type>
+			<Description>Large death explosion for Battleship</Description>
+			<fScale>0.07</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_CARRIER_DEATH02</Type>
+			<Description>Large death explosion for Battleship</Description>
+			<fScale>0.05</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_OIL_DEATH</Type>
+			<Description>Large death explosion for Oil water-vehicles</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil/fx_ship_oil_death_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EXPLOSION_DIRT</Type>
+			<Description>Explosion in Dirt</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_01/fx_explosion_dirt_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EXPLOSION_ON_VEHICLE</Type>
+			<Description>Explosion for on hard surfaces like modern vehicles</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TANKSMALLEXPLODE01</Type>
+			<Description>Variation 01 for Tanks</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>0.9</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TANKSMALLEXPLODE02</Type>
+			<Description>Variation 02 for Tanks</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>0.9</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TANKSMALLEXPLODE03</Type>
+			<Description>Variation 03 for Tanks</Description>
+			<fScale>0.15</fScale>
+			<fUpdateRate>0.9</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_PANZER_DEATH_EXPLOSION</Type>
+			<Description>Large Explosion for the death of a tank</Description>
+			<fScale>0.1</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Unit_Explosion_Oil/fx_UNIT_oil_death_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ARTILLERY_HIT_SMALL01</Type>
+			<Description>Variation 01 for Artillery</Description>
+			<fScale>0.25</fScale>
+			<fUpdateRate>1.1</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ARTILLERY_HIT_SMALL02</Type>
+			<Description>Variation 02 for Artillery</Description>
+			<fScale>0.16</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ARTILLERY_DEATH_EXPLOSION</Type>
+			<Description>Large Explosion for the death of Artillery</Description>
+			<fScale>0.08</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/Unit_Explosion_Oil/fx_UNIT_oil_death_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MACHINEGUNNER_HIT_SMALL01</Type>
+			<Description>Variation 01 for MachineGunner</Description>
+			<fScale>0.22</fScale>
+			<fUpdateRate>1.3</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MACHINEGUNNER_HIT_SMALL02</Type>
+			<Description>Variation 02 for MachineGunner</Description>
+			<fScale>0.13</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MACHINEGUNNER_DEATH_EXPLOSION</Type>
+			<Description>Large Explosion for the death of MachineGunner</Description>
+			<fScale>0.05</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/Unit_Explosion_Oil/fx_UNIT_oil_death_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EXPLOSION_ON_PLANE</Type>
+			<Description>Explosion for on surface of plane before fireball</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SMALL_PLANE_DEATH</Type>
+			<Description>explosion when small planes hit the ground</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_LARGE_PLANE_DEATH</Type>
+			<Description>explosion when large planes hit the ground</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MACHINEGUN_VEHICLE_HIT</Type>
+			<Description>Machine gun shot hitting vehicle or unit</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_on_vehicle/fx_explosion_on_vehicle_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MACHINEGUN_DIRT_HIT</Type>
+			<Description>Machine gun shot hitting dirt</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_01/fx_explosion_dirt_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_AIRCRAFT_MACHINE_GUN_IMPACT</Type>
+			<Description>aircraft machine gun impact explosion with dirt flying up</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_01/fx_explosion_dirt_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CANNONBALL_IMPACT</Type>
+			<Description>Cannonball impact</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_01/fx_explosion_dirt_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_GUNPOWDER_HIT</Type>
+			<Description>Small Gunpowdery hit explosion for water-vehicles</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CARAVEL_HIT01</Type>
+			<Description>Small Gunpowdery hit explosion for Caravel Version 1</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CARAVEL_HIT02</Type>
+			<Description>Small Gunpowdery hit explosion for Caravel Version 2</Description>
+			<fScale>0.55</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GALLEON_HIT01</Type>
+			<Description>Small Gunpowdery hit explosion for Galleon Version 1</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GALLEON_HIT02</Type>
+			<Description>Small Gunpowdery hit explosion for Galleon Version 2</Description>
+			<fScale>1.1</fScale>
+			<fUpdateRate>1.3</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FRIGATE_HIT01</Type>
+			<Description>Small Gunpowdery hit explosion for Frigate Version 1</Description>
+			<fScale>0.85</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FRIGATE_HIT02</Type>
+			<Description>Small Gunpowdery hit explosion for Frigate Version 2</Description>
+			<fScale>0.98</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IRONCLAD_HIT01</Type>
+			<Description>Small Gunpowdery hit explosion for Ironclad Version 1</Description>
+			<fScale>0.22</fScale>
+			<fUpdateRate>1.6</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IRONCLAD_HIT02</Type>
+			<Description>Small Gunpowdery hit explosion for Ironclad Version 2</Description>
+			<fScale>0.25</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WORKBOATMODERN_HIT01</Type>
+			<Description>Small Gunpowdery hit explosion for WorkboatModernVersion 1</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.6</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WORKBOATMODERN_HIT02</Type>
+			<Description>Small Gunpowdery hit explosion for WorkboatModernVersion 2</Description>
+			<fScale>0.45</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_OIL_HIT</Type>
+			<Description>Small oily hit explosion for water-vehicles</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_Oil_Hit/fx_ship_oil_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IMPACT_FLASH</Type>
+			<Description>pre gunpowder small flash impact on early vessels</Description>
+			<fScale>6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/kapow_003/fx_kapow_003.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_SUBMARINE_HIT</Type>
+			<Description>Small splashy hit for submarine</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Water_Splash_Submarine_Hit/fx_water_splash_submarine_hit.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SUBMARINE_HIT_SPLASH</Type>
+			<Description>Small splash hit for submarine</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/Water_Splash_Submarine_Hit/fx_water_splash_submarine_hit.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SUBMARINE_HIT_EXPLODE</Type>
+			<Description>Small explosion hit for submarine</Description>
+			<fScale>0.25</fScale>
+			<fUpdateRate>6.0</fUpdateRate>
+			<Path>Art/Effects/water_submerged_explosion/fx_water_submerged_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SUBMARINE_DEATH</Type>
+			<Description>Large Death Explosion for Submarine</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/water_submerged_explosion/fx_water_submerged_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EXPLOSION_LARGE_001</Type>
+			<Description>Explosion Over Land</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EXPLOSION_CITY</Type>
+			<Description>One big city sized explosion</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/explosion_large_001/fx_explosion_large_001.NIF</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BOMBARD</Type>
+			<Description>OLD Bombard</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EXPLOSION_02</Type>
+			<Description>OLD Ship Explosion Over Water</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_EXPLOSION_01</Type>
+			<Description>OLD Ship Explosion Over Water</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CANNON_HIT_SMALL01</Type>
+			<Description>Small Gunpowdery hit explosion for Cannon Version 1</Description>
+			<fScale>0.35</fScale>
+			<fUpdateRate>1.6</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CANNON_HIT_SMALL02</Type>
+			<Description>Small Gunpowdery hit explosion for Cannon Version 2</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion_gunpowder_hit/fx_ship_gunpowder_small_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CANNON_DEATH_EXPLOSION</Type>
+			<Description>Large death explosion for Cannon</Description>
+			<fScale>0.05</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/ShipExplosion/fx_ship_destruction_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Air and Sky:-->
+		<EffectInfo>
+			<Type>EFFECT_WIND_SWIRL</Type>
+			<Description>Frosty swirling air flow</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/wind_swirl/fx_wind_swirl_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Contrails and Smokey Trails:-->
+		<EffectInfo>
+			<Type>EFFECT_SMOKE_JET_CONTRAIL</Type>
+			<Description>aircraft jet engine contrail smoke</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Smoke_Contrail/fx_smoke_contrail.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SMOKE_PROJECTILE_CONTRAIL</Type>
+			<Description>missile contrail smoke</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/smoke_missile_contrail/fx_smoke_missile_contrail.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_JET_AFTERBURN</Type>
+			<Description>Jet afterburn</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_afterburn/fx_fire_afterburn.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSILE_AFTERBURN</Type>
+			<Description>Jet afterburn</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_afterburn/fx_fire_afterburn.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BOMBER_BOMB_WIND</Type>
+			<Description>air flow behind bomb</Description>
+			<fScale>0.7</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/wind_swirl/fx_wind_swirl_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SMOKETRAIL</Type>
+			<Description>Cannonball smoke trail</Description>
+			<fScale>0.7</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Smoke_Contrail/fx_smoke_contrail.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BOULDER_SMOKETRAIL</Type>
+			<Description>Catapult Boulder smoke trail</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Smoke_Contrail/fx_smoke_contrail.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Damage Fires and Smoke:-->
+		<EffectInfo>
+			<Type>EFFECT_SMOKESTACK_SMOKE</Type>
+			<Description>Ironclad smokestack smoke</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/smokestack_smoke/smokestack_smoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_HORSEHOOFDUST</Type>
+			<Description>Hoof dust for a running horse</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/dust_impact_002/fx_dust_impact_002.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TANK_EXHAUST</Type>
+			<Description>Tank Unit Exhaust</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/smoke_tank_exhaust/fx_smoke_tank_exhaust.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_DAMAGE_GUNPOWDER_SMOKE</Type>
+			<Description>Gunpowdery smoke for high damage on water-vehicles</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ship_damage_smoke_gunpowder/fx_ship_damage_gunpowder_smoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_DAMAGE_FIREY_GUNPOWDER_SMOKE</Type>
+			<Description>Gunpowdery smoke and fire for high damage on water-vehicles</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ship_damage_smoke_gunpowder/fx_ship_damage_gunpowder_fire_and_smoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_DAMAGE_OILY_SMOKE</Type>
+			<Description>Oily smoke for high damage on water-vehicles</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ship_damage_smoke_oily/fx_ship_damage_oily_smoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_DAMAGE_FIREY_OILY_SMOKE</Type>
+			<Description>OIly smoke and fire for high damage on water-vehicles</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/ship_damage_smoke_oily/fx_ship_damage_oily_fire_and_smoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_UNIT_DESTRUCTION_SMOKEY</Type>
+			<Description>Smokey discharge for highest level of unit damage</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_damage_smoke/fx_unit_damage_smokey.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_UNIT_DESTRUCTION_FIRE</Type>
+			<Description>Fire with smoke for highest level of unit damage</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_damage_smoke/fx_unit_damage_fire_and_smoke.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>LOOPINGEFFECT_SMOKE</Type>
+			<Description>Dark Smoke</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/chimney_smoke/fx_chimneysmoke_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Weapon Fire:-->
+		<EffectInfo>
+			<Type>EFFECT_AIRCRAFT_MACHINE_GUN</Type>
+			<Description>aircraft machine gun fire</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_modern/fx_rifleblast_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GUNSHIP_MACHINE_GUN</Type>
+			<Description>Gunship machine gun fire</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_modern/fx_rifleblast_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CATAPULT_ROCK_EXPLODE</Type>
+			<Description>Boulder Explosion for Catapult Attack</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_02/fx_explosion_dirt_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MACHINEGUNFIRE_AIR</Type>
+			<Description>Fighter machine gun fire</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_modern/fx_rifleblast_modern.nif</Path>
+			<bSticky>1</bSticky>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FIGHTER_MACHINE_GUN_BOMB</Type>
+			<Description>Fighter machine gun fire</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.2</fUpdateRate>
+			<Path>Art/Effects/weapon_machinegun_flash/fx_weapon_machinegun_flash.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_RIFLEBLAST</Type>
+			<Description>Rifleblast for flintlock rifle</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_old/fx_rifleblast_old.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_RIFLEBLAST_MUSKETEER</Type>
+			<Description>Rifleblast for flintlock rifle</Description>
+			<fScale>.8</fScale>
+			<fUpdateRate>1.3</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_old/fx_rifleblast_old.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_RIFLEBLAST_OLD_POWERFUL</Type>
+			<Description>Old rifleblast more powerful</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_old_powerful/fx_rifleblast_old_powerful.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_RIFLEBLAST_MODERN</Type>
+			<Description>Rifleblast for modern rifle</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_modern/fx_rifleblast_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TRANSPORT_MACHINEGUN</Type>
+			<Description>MachineGun Blast for Transport</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.4</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_modern/fx_rifleblast_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SAM_FRONT</Type>
+			<Description>smokeblast for front of SAM launcher as it fires</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_sam_launcher/fx_weapon_sam_front.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SAM_EXHAUST</Type>
+			<Description>Exhaust for rear of SAM launcher as it fires</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_sam_launcher/fx_weapon_sam_exhaust.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CANNONFIRE</Type>
+			<Description>ancient cannonfire</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CANNONFIRE_2</Type>
+			<Description>a variant of ancient cannonfire</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CANNONFIRE_3</Type>
+			<Description>yet another variant of ancient cannonfire</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_03.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CARAVEL_CANNON_01</Type>
+			<Description>Caravel Cannon Fire Version 1</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CARAVEL_CANNON_02</Type>
+			<Description>Caravel Cannon Fire Version 2</Description>
+			<fScale>0.16</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_GALLEON_CANNON_01</Type>
+			<Description>Galleon Cannon Fire Version 1</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_GALLEON_CANNON_02</Type>
+			<Description>Galleon Cannon Fire Version 2</Description>
+			<fScale>0.32</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_GALLEON_CANNON_03</Type>
+			<Description>Caravel Cannon Fire Version 3</Description>
+			<fScale>0.36</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_03.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_FRIGATE_CANNON_01</Type>
+			<Description>Frigate Cannon Fire Version 1</Description>
+			<fScale>0.34</fScale>
+			<fUpdateRate>2.7</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_FRIGATE_CANNON_02</Type>
+			<Description>Frigate Cannon Fire Version 2</Description>
+			<fScale>0.27</fScale>
+			<fUpdateRate>2.7</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_FRIGATE_CANNON_03</Type>
+			<Description>Frigate Cannon Fire Version 3</Description>
+			<fScale>0.31</fScale>
+			<fUpdateRate>2.7</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_03.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_IRONCLAD_CANNON_01</Type>
+			<Description>Ironclad Cannon Fire Version 1</Description>
+			<fScale>0.08</fScale>
+			<fUpdateRate>2.7</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_IRONCLAD_CANNON_02</Type>
+			<Description>Ironclad Cannon Fire Version 2</Description>
+			<fScale>0.07</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_IRONCLAD_CANNON_03</Type>
+			<Description>Ironclad Cannon Fire Version 3</Description>
+			<fScale>0.07</fScale>
+			<fUpdateRate>2.6</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_03.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CANNONFIRE_MODERN_TANKS</Type>
+			<Description>Modern cannonfire for Armoured vehicles</Description>
+			<fScale>1.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CANNONFIRE_MODERN_SHIPS</Type>
+			<Description>Modern Cannonfire For Naval ships</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_DESTROYER01</Type>
+			<Description>Modern Cannonfire For Destroyer Version 1</Description>
+			<fScale>0.02</fScale>
+			<fUpdateRate>2.2</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_DESTROYER02</Type>
+			<Description>Modern Cannonfire For Destroyer Version 2</Description>
+			<fScale>0.018</fScale>
+			<fUpdateRate>2.4</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_BATTLESHIP01</Type>
+			<Description>Modern Cannonfire For Battleship Version 1</Description>
+			<fScale>0.022</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_BATTLESHIP02</Type>
+			<Description>Modern Cannonfire For Battleship Version 2</Description>
+			<fScale>0.019</fScale>
+			<fUpdateRate>2.2</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CARRIER_BLAST</Type>
+			<Description>Modern Weapon Fire for Carrier attacks</Description>
+			<fScale>0.01</fScale>
+			<fUpdateRate>1.8</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_TORPEDO</Type>
+			<Description>Torpedo for Submarine</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Submarine/SubmarineTorpedo.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_PANZER_FIRE</Type>
+			<Description>Panzer Tank Cannon Fire </Description>
+			<fScale>.05</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CANNON_FIRE</Type>
+			<Description>Cannon Fire</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>2.8</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire/fx_weapon_cannonfire_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_ARTILLERY</Type>
+			<Description>Artillery Cannon Fire </Description>
+			<fScale>.04</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_MACHINEGUNNERY_FIRE</Type>
+			<Description>MachineGunner Fire</Description>
+			<fScale>1.2</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/weapon_rifleblast_modern/fx_rifleblast_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_CANNONFIRE_MODERN_HOWITZER</Type>
+			<Description>Modern Cannonfire for Howitzer type cannons</Description>
+			<fScale>0.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/weapon_cannonfire_modern/fx_weapon_cannonfire_modern.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WEAPON_MECHANIZED_INFANTRY_BLAST</Type>
+			<Description>Machanized Infantry Shell Blast</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/MachineGun/MachineGun_Fire.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Unit information:-->
+		<EffectInfo>
+			<Type>EFFECT_HEALSPARKLE</Type>
+			<Description>Unit Healing effect</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_healing/fx_unit_healing.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_LOTUS_BLOOM</Type>
+			<Description>Lotus Appearing Effect in the Buddhist Animations</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/unit_healing/fx_unit_healing.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_PROMOTION_UNIT</Type>
+			<Description>Promotion for unit</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_promotion/fx_unit_promotion_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ENEMY_GLOW_UNIT</Type>
+			<Description>Enemy glow for unit</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Unit_Enemy_Presence/fx_Unit_Enemy_Presence.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_PROMOTION_INTERFACE</Type>
+			<Description>Promotion for Interface</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_promotion/fx_unit_promotion_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CREATION</Type>
+			<Description>Creation Effect Dim</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/creation/fx_creation_dim.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CREATION_BIG</Type>
+			<Description>Creation Effect Bright</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/creation/fx_creation_bright.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CREATION_BIG_FAST</Type>
+			<Description>Creation Effect Bright Fast</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>6.6</fUpdateRate>
+			<Path>Art/Effects/creation/fx_creation_bright.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSIONARY_ACTIVE_BUDDHISM</Type>
+			<Description>Activation effect for Buddhist missionary</Description>
+			<fScale>1.3</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_missionary_activation/fx_missionary_activate_buddhism.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSIONARY_ACTIVE_CONFUSCIAN</Type>
+			<Description>Activation effect for Confuscian missionary</Description>
+			<fScale>1.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_missionary_activation/fx_missionary_activate_confuscian.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSIONARY_ACTIVE_CHRISTIANITY</Type>
+			<Description>Activation effect for Christian missionary</Description>
+			<fScale>1.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_missionary_activation/fx_missionary_activate_christianity.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSIONARY_ACTIVE_HINDUISM</Type>
+			<Description>Activation effect for Hindu missionary</Description>
+			<fScale>1.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_missionary_activation/fx_missionary_activate_hinduism.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSIONARY_ACTIVE_ISLAM</Type>
+			<Description>Activation effect for Islamic missionary</Description>
+			<fScale>1.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_missionary_activation/fx_missionary_activate_islam.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSIONARY_ACTIVE_JEWISH</Type>
+			<Description>Activation effect for Jewish missionary</Description>
+			<fScale>1.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_missionary_activation/fx_missionary_activate_jewish.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSIONARY_ACTIVE_TAOISM</Type>
+			<Description>Activation effect for Tao missionary</Description>
+			<fScale>1.2</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_missionary_activation/fx_missionary_activate_taoism.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_ACTIVE_ARTIST</Type>
+			<Description>Activation effect for the King Baby!</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Artist_Activate.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_BIRTH_ARTIST</Type>
+			<Description>The King is Born Baby!</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Artist_Birth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_HIGHLIGHT_ARTIST</Type>
+			<Description>Highlight effect for the King. That's right little mama!</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Artist_Highlight.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_ACTIVE_ENGINEER</Type>
+			<Description>Activation effect for Engineer</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Engineer_Activation.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_BIRTH_ENGINEER</Type>
+			<Description>Birth effect for the engineer</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Engineer_Birth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_HIGHLIGHT_ENGINEER</Type>
+			<Description>Highlight effect for the Engineer</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Engineer_Highlight.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_ENGINEER_GEARS</Type>
+			<Description>Gear effect for the Engineer</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_ModernEngineer_Gears.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_ACTIVE_PROPHET</Type>
+			<Description>Activation effect for Prophet</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Prophet_Activation.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_BIRTH_PROPHET</Type>
+			<Description>Birth effect for the Prophet</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Prophet_Birth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_HIGHLIGHT_PROPHET</Type>
+			<Description>Highlight effect for the Prophet</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Prophet_Highlight.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_ACTIVE_SCIENTIST</Type>
+			<Description>Activation effect for Scientist</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Scientist_Activation.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_BIRTH_SCIENTIST</Type>
+			<Description>Birth effect for the Scientist</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Scientist_Birth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_HIGHLIGHT_SCIENTIST</Type>
+			<Description>Highlight effect for the Scientist</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Scientist_Highlight.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_ACTIVE_MERCHANT</Type>
+			<Description>Activation effect for Merchant</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Tycoon_Activation.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_BIRTH_MERCHANT</Type>
+			<Description>Birth effect for Merchant</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Tycoon_Birth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_HIGHLIGHT_MERCHANT</Type>
+			<Description>Highlight effect for the Merchant</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Tycoon_Highlight.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_ACTIVE_WARLORD</Type>
+			<Description>Activation effect for the warlord general</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Warlord_Activate.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_BIRTH_WARLORD</Type>
+			<Description>Birth of the Warlord</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Warlord_Birth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GREATPEOPLE_HIGHLIGHT_WARLORD</Type>
+			<Description>Highlight effect for the Warlord</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/unit_greatpeople/fx_GreatPeople_Warlord_Highlight.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Water and Ship Effects:-->
+		<EffectInfo>
+			<Type>EFFECT_WATER_SUBMARINE_DEATH</Type>
+			<Description>water submerged explosion for submarine death</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/water_submerged_explosion/fx_water_submerged_explosion.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_BOW_FROTH</Type>
+			<Description>Ship_Bow_Froth</Description>
+			<fScale>0.15</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_bow_froth/fx_water_ship_bow_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_SIDE_FROTH</Type>
+			<Description>Ship_Side_Froth</Description>
+			<fScale>0.15</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_side_froth/fx_water_ship_side_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SHIP_SINKING_FROTH</Type>
+			<Description>Ship_Sinking_Froth</Description>
+			<fScale>0.1</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GALLEY_SINKING_FROTH</Type>
+			<Description>Galley_Sinking_Froth</Description>
+			<fScale>0.25</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GALLEY_SPLASH_PLUME_LRG</Type>
+			<Description>Water Plume Splash Small</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/water_splash_plume/fx_water_plume01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CARAVEL_SINKING_FROTH</Type>
+			<Description>Caravel Sinking_Froth</Description>
+			<fScale>0.20</fScale>
+			<fUpdateRate>2.2</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GALLEON_SINKING_FROTH</Type>
+			<Description>Galleon Sinking_Froth</Description>
+			<fScale>0.40</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IRONCLAD_SINKING_FROTH</Type>
+			<Description>Ironclad Sinking_Froth</Description>
+			<fScale>0.1</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_TRANSPORT_SINKING_FROTH</Type>
+			<Description>Transport_Sinking_Froth</Description>
+			<fScale>0.06</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FRIGATE_SINKING_FROTH</Type>
+			<Description>Frigate Sinking_Froth</Description>
+			<fScale>0.35</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_DESTROYER_SINKING_FROTH</Type>
+			<Description>Ironclad Sinking_Froth</Description>
+			<fScale>0.06</fScale>
+			<fUpdateRate>1.8</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BATTLESHIP_SINKING_FROTH</Type>
+			<Description>Battleship Sinking_Froth</Description>
+			<fScale>0.07</fScale>
+			<fUpdateRate>1.6</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CARRIER_SINKING_FROTH</Type>
+			<Description>Carrier Sinking_Froth</Description>
+			<fScale>0.08</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WORKBOAT_SINKING_FROTH</Type>
+			<Description>WorkBoat_Sinking_Froth</Description>
+			<fScale>0.15</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/water_ship_sinking_froth/fx_water_ship_sinking_froth.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_WORKBOAT_SPLASH_PLUME</Type>
+			<Description>Workboat Water Plume Splash</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>2.0</fUpdateRate>
+			<Path>Art/Effects/water_splash_plume/fx_water_plume01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SPLASH_PLUME_SML</Type>
+			<Description>Water Plume Splash Small</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/water_splash_plume/fx_water_plume01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_SPLASH_PLUME_LRG</Type>
+			<Description>Water plume splash Large</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/water_splash_plume/fx_water_plume01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_PROPELLER_BUBBLES</Type>
+			<Description>water bubbles for submarine etc</Description>
+			<fScale>0.8</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/water_propeller_bubbles/fx_water_propeller_bubbles.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Terrain:-->
+		<EffectInfo>
+			<Type>EFFECT_FOG_EMITER</Type>
+			<Description>One fog emiter to create a bank of them with </Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fog_01/fx_fog_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BIRDSCATTER</Type>
+			<Description>Birds flying out and fading.</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Magpie/Flock.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!-- Fireworks:-->
+		<EffectInfo>
+			<Type>FIREWORKS_RED_LARGE_SLOW</Type>
+			<Description>RED firework large slow</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_red.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_RED_SMALL_FAST</Type>
+			<Description>RED firework large slow</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>4.0</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_red.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_GREEN_LARGE_SLOW</Type>
+			<Description>GREEN firework large slow</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_green.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_GREEN_SMALL_FAST</Type>
+			<Description>GREEN firework large slow</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>4.0</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_green.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_PURPLE_LARGE_SLOW</Type>
+			<Description>PURPLE firework large slow</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_purple.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_PURPLE_SMALL_FAST</Type>
+			<Description>PURPLE firework large slow</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>4.0</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_purple.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_YELLOW_LARGE_SLOW</Type>
+			<Description>YELLOW firework large slow</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_yellow.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_YELLOW_SMALL_FAST</Type>
+			<Description>YELLOW firework large slow</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>4.0</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_yellow.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_BLUE_LARGE_SLOW</Type>
+			<Description>BLUE firework large slow</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.5</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_blue.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>FIREWORKS_BLUE_SMALL_FAST</Type>
+			<Description>BLUE firework large slow</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>4.0</fUpdateRate>
+			<Path>Art/Effects/fireworks/fx_fireworks_blue.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!--Improvements:-->
+		<EffectInfo>
+			<Type>EFFECT_IMPROVEMENT_GOODYHUT_POP</Type>
+			<Description>Goody hut pop dust and hay</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/improvement_goody_hut_pop/fx_goodyhut_pop.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IMPROVEMENT_CAMPFIRE</Type>
+			<Description>improvements campfire</Description>
+			<fScale>100.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/improvement_campfire/fx_fire_campfire.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IMPROVEMENT_FIRE_FOOMP</Type>
+			<Description>Fire blowing out of top of Mine smelter</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/improvement_fire_foomp/fx_improvement_fire_foomp.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IMPROVEMENT_STEAM</Type>
+			<Description>STEAM</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/improvement_steam/fx_improvement_steam.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IMPROVEMENT_CHIMNEY_SMOKE_03</Type>
+			<Description>Chimney smoke for improvements</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/smoke_chimney_02/fx_chimneysmoke_03.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_IMPROVEMENT_FIREPLACE</Type>
+			<Description>Fire for improvement fire place</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_torch/fx_fire_torch.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!--Wonders:-->
+		<EffectInfo>
+			<Type>EFFECT_FIRE_TORCH</Type>
+			<Description>Torchfire made for the colossus</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_torch/fx_fire_torch.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FAKE_EVENT</Type>
+			<Description>fake event so that spyxml doesnt freak out</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_torch/fx_fire_torch.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!--Cities:-->
+		<EffectInfo>
+			<Type>EFFECT_SHRINE_FLAMES</Type>
+			<Description>Fire for AGE OF GODS Ianna shrine</Description>
+			<fScale>3.5</fScale>
+			<fUpdateRate>0.8</fUpdateRate>
+			<Path>Art/Effects/fire_torch/fx_fire_torch.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CHIMNEY_SMOKE_01</Type>
+			<Description>Chimney smoke for cities (variation)</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/smoke_chimney_02/fx_chimneysmoke_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CHIMNEY_SMOKE_02</Type>
+			<Description>Chimney smoke for cities (variation)</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/smoke_chimney_02/fx_chimneysmoke_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CHIMNEY_SMOKE_03</Type>
+			<Description>Chimney smoke for cities (variation)</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/smoke_chimney_02/fx_chimneysmoke_03.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CITY_SMOKING_01</Type>
+			<Description>Smoke for destroyed cities (variation)</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/cities_smoking/fx_cities_smoking_01.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CITY_SMOKING_02</Type>
+			<Description>Smoke for destroyed cities (variation)</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/cities_smoking/fx_cities_smoking_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CITY_BURNING_SMOKE</Type>
+			<Description>underlit smoke for unhappy cities (variation)</Description>
+			<fScale>0.1</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/cities_unhappy_burning/fx_unhappy_burning.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CITY_BIG_BURNING_SMOKE</Type>
+			<Description>underlit smoke for occupied cities</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/cities_occupied_burning/fx_occupied_burning.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CITY_FIRE</Type>
+			<Description>Fire for zoomed out unhappy citees</Description>
+			<fScale>3.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/fire_torch/fx_fire_torch.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CITY_DISEASED</Type>
+			<Description>Fumes for diseased citees</Description>
+			<fScale>4.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/cities_sickly_fumes/fx_cities_sickly_fumes.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CITY_IRRADIATED</Type>
+			<Description>Pulsing glow for irradiated citees</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/cities_irradiated/fx_cities_irradiated.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!--Prototype Unit Effects:-->
+		<EffectInfo>
+			<Type>EFFECT_MACHINEGUNFIRE_GROUND</Type>
+			<Description>Air to Ground Machine Gun</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/PrototypeEffects/MachineGunFire/MachineGunFire_Ground.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MACHINEGUNFIRE_AIR___UNNEEDED</Type>
+			<Description>Air to Air Machine Gun</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/PrototypeEffects/MachineGunFire/MachineGunFire_Air.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_STEALTHBOMB</Type>
+			<Description>Stealh Bomber Bomb</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/PrototypeEffects/StealthBombs/Bombs/StealthBombs.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_GALLEY_ARROWS</Type>
+			<Description>Galley Arrows</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/PrototypeEffects/Galley/GalleyArrows.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_MISSILE_LARGE_HIT</Type>
+			<Description>Small explosion for Invasion Ship</Description>
+			<fScale>3.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_explosion_large/FF_explosion_large.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+
+		<!--Final Frontier Unit Effects:-->
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_SMALL_HIT</Type>
+			<Description>Large explosion for Invasion Ship</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_explosion_large/FF_explosion_large.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_LARGE_HIT</Type>
+			<Description>Small explosion for Invasion Ship</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_explosion_large/FF_explosion_large.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_LASER</Type>
+			<Description>Powerup laser effect</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_powerUp_laser/FF_powerUp_laser.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_FLAK</Type>
+			<Description>Powerup laser effect</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_Flak_Fire/fx_weapon_flak.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_LASERBEAM</Type>
+			<Description>Powerup laser effect</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_Laserbeam/fx_laserbeam.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_TORPEDO</Type>
+			<Description>Powerup laser effect</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_Torpedo/fx_torpedo.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_LASERFIRE</Type>
+			<Description>Standard laser effect</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_Laser_Fire/fx_laser_fire.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_LASERFIRESMALL</Type>
+			<Description>Smaller laser effect</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_Laser_Fire/fx_laser_fire_small.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_INVASIONSHIP_LASERFIRE_BIG</Type>
+			<Description>Standard laser effect</Description>
+			<fScale>2.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_Laser_Fire/fx_laser_fire.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_RED_EYELASER</Type>
+			<Description>Red pulse cannon</Description>
+			<fScale>0.5</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Red_Laser/fx_redlaser.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FRONTIER_SIGNAL</Type>
+			<Description>Space radio signals</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_Signal/ff_signal.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_FF_TRANSPORT</Type>
+			<Description>Colony settling effect</Description>
+			<fScale>0.3</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/FF_Transporter/fx_transporter.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<!--Rhye-->
+		<EffectInfo>
+			<Type>EFFECT_PILUM</Type>
+			<Description>Pilum</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Legion1/pilumthrow.nif</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>500.0</fSpeed>
+			<fArcValue>0.0</fArcValue>
+		</EffectInfo>
+	</EffectInfos>
+</Civ4EffectInfos>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UP_ETH</Tag>
+		<English>The Power of Sovereignty:</English>
+		<French>Le Pouvoir de la Souveraineté :</French>
+		<German>Die Macht der Souveränität:</German>
+		<Italian>Il potere della sovranit&#224;:</Italian>
+		<Spanish>El poder de la soberan&#237;a:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ETH2</Tag>
+		<English>Ethiopian cities can't be demanded in a congress</English>
+		<French>Les villes éthiopiennes ne peuvent pas être exigées dans un congrès</French>
+		<German>Keine Forderungen nach äthiopischen Städten während eines Kongresses</German>
+		<Italian>Le citt&#224; etiopi non possono essere richieste durante un congresso</Italian>
+		<Spanish>No se pueden pedir ciudades et&#237;opes en un Congreso</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAY</Tag>
+		<English>The Power of Astronomy:</English>
+		<French>Le Pouvoir de l'Astronomie :</French>
+		<German>Die Macht der Astronomie:</German>
+		<Italian>Il potere dell'astronomia:</Italian>
+		<Spanish>El poder de la astronom&#237;a:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MAY2</Tag>
+		<English>-40% research cost until the end of the Middle Ages</English>
+		<French>-40% sur les coûts de recherche jusqu'à la fin du Moyen Age</French>
+		<German>-40% Forschungskosten bis zum Ende des Mittelalters</German>
+		<Italian>-40% ai costi di ricerca fino alla fine del Medioevo</Italian>
+		<Spanish>-40% al coste de investigaci&#243;n hasta el final de la Edad Media</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KHM</Tag>
+		<English>The Power of Monsoons:</English>
+		<French>Le Pouvoir des Moussons :</French>
+		<German>Die Macht des Monsuns:</German>
+		<Italian>Il potere dei monsoni:</Italian>
+		<Spanish>El poder de los monzones:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KHM2</Tag>
+		<English>All land units can move through jungles</English>
+		<French>Toutes les unités terrestres peuvent se déplacer à travers la jungle</French>
+		<German>Fortbewegung auf Dschungel-Gelände für alle Landeinheiten</German>
+		<Italian>Tutte le unit&#224; di terra si possono muovere attraverso la giungla</Italian>
+		<Spanish>Todas las unidades terrestres se pueden mover a trav&#233;s de las junglas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HOL</Tag>
+		<English>The Power of Trading Companies:</English>
+		<French>Le Pouvoir des Entreprises Commerciales :</French>
+		<German>Die Macht der Handelsgesellschaften:</German>
+		<Italian>Il potere delle compagnie commerciali:</Italian>
+		<Spanish>El poder de la Compa&#241;&#237;a de las Indias:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HOL2</Tag>
+		<English>All sea units can enter rival territory</English>
+		<French>Toutes les unités en mer peuvent entrer sur un territoire ennemi</French>
+		<German>Zugang zu feindlichem Territorium für alle Marineeinheiten</German>
+		<Italian>Tutte le unit&#224; marittime possono entrare in territorio nemico</Italian>
+		<Spanish>Todas las unidades mar&#237;timas pueden entrar en territorio enemigo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_POR</Tag>
+		<English>The Power of Exploration:</English>
+		<French>Le Pouvoir de l'Exploration :</French>
+		<German>Die Macht des Kundschaftens:</German>
+		<Italian>Il potere dell'esplorazione:</Italian>
+		<Spanish>El poder de la exploraci&#243;n:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_POR2</Tag>
+		<English>All sea units have broader visibility range</English>
+		<French>Toutes les unités en mer ont un champ de vision élargi</French>
+		<German>Höhere Sichtweite für alle Marineeinheiten</German>
+		<Italian>Tutte le unit&#224; marine hanno un raggio visivo più ampio</Italian>
+		<Spanish>Todas las unidades mar&#237;timas tienen un alcance de visibilidad superior</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ITA</Tag>
+		<English>The Power of Renaissance:</English>
+		<German>Die Macht der Renaissance:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ITA2</Tag>
+		<English>Every city gets a free specialist for each of its wonders until the Industrial Age</English>
+		<German>Jede Stadt erhält einen freien Spezialisten für jedes ihrer Wunder bis zum Industriezeitalter</German>
+	</TEXT>
+</Civ4GameText>

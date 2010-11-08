@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CHECKF2</Tag>
+		<English>Check the Interior Advisor (F2) for details</English>
+		<French>Consulter le Conseiller aux affaires intérieures (F2) pour de plus amples détails</French>
+		<German>Einzelheiten im Inlandsberater (F2)</German>
+		<Italian>Per avere ulteriori dettagli consulta il Consigliere per gli interni (F2)</Italian>
+		<Spanish>Revisa el Consejero de Interior [F2] para obtener más detalles.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CHECKF8</Tag>
+		<English>Check the Victory Conditions (F8) for details</English>
+		<French>Consulter les conditions de victoire (F8) pour de plus amples détails</French>
+		<German>Einzelheiten in den Siegbedingungen (F8)</German>
+		<Italian>Per ulteriori dettagli consulta le Condizioni di vittoria (F8)</Italian>
+		<Spanish>Revisa las condiciones para la victoria [F8] para obtener más detalles.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ACCOMPLISHED</Tag>
+		<English>Historical goals accomplished:</English>
+		<French>Objectifs historiques accomplis :</French>
+		<German>Erreichte historische Ziele:</German>
+		<Italian>Obiettivi storici raggiunti:</Italian>
+		<Spanish>Objetivos históricos conseguidos:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LOADING_TIME</Tag>
+		<English>(Estimated loading time:</English>
+		<French>(Temps de chargement estimé :</French>
+		<German>(Geschätzte Ladezeit:</German>
+		<Italian>(Tempo stimato di caricamento:</Italian>
+		<Spanish>(Tiempo estimado de carga:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MINUTES</Tag>
+		<English>minutes)</English>
+		<French>minutes)</French>
+		<German>Minuten)</German>
+		<Italian>minuti)</Italian>
+		<Spanish>minuto/s)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FLIP_TO_US</Tag>
+		<English>Cities in the area have joined our rising empire!</English>
+		<French>Certaines villes de la région ont rejoint notre empire florissant !</French>
+		<German>Die Städte in der Gegend haben sich unserem aufstrebenden Reich angeschlossen!</German>
+		<Italian>Le città di questa regione si sono unite al nostro impero!</Italian>
+		<Spanish>¡Las ciudades de la zona se han unido a nuestro naciente imperio!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT</Tag>
+		<English>RFC Concepts</English>
+		<French>
+			<Text>Concepts du RFC</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>RFC-Konzepte</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Nozioni di RFC</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Conceptos de RFC</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RFCINTRO</Tag>
+		<English>Welcome to Rhye's and Fall of Civilization</English>
+		<French>Bienvenue à "Rhye's and Fall of Civilization"</French>
+		<German>Willkommen zu Rhye's and Fall of Civilization</German>
+		<Italian>Benvenuto a Rhye's and Fall</Italian>
+		<Spanish>Bienvenido a &quot;Rhye's and Fall of Civilization&quot;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RFCINTRO_PEDIA</Tag>
+		<English>[H1]Welcome to Rhye's and Fall of Civilization[\H1]
+[PARAGRAPH:0]v1.186
+[PARAGRAPH:2]Rhye's and Fall of Civilization is a mod based on a map of the world, that attempts to make your single-player game a realistic simulator of history on Earth. It is the sequel to "Rhye's of Civilization", one of the most popular modpacks for Civilization III. 
+[PARAGRAPH:2]The mod revolves around the historic rise and fall of civilizations: they won't start all at the same time, but at appropriate dates. The human player can choose a late start (waiting for the game to play by itself) or take the control of one of the early civs and switch to another one later on. Civilizations will fall by many factors, including civil wars caused by inner instability, and scripted barbarian attacks.
+[PARAGRAPH:2]Each civilization is heavily differentiated from the others, thanks to the UPs (Unique Powers), the UHVs (Unique Historical Victory conditions), and a unique AI that will found cities in their historical place, with their historical name.
+[PARAGRAPH:2]Other additions include plague outbreaks, embassies, world congresses where cities are traded, dynamic spread of the resources, and new flag and terrain graphics.
+[PARAGRAPH:2]More detailed info is provided in the readme. For any other question you can visit the official site (http://rhye.civfanatics.net), the development forum (http://forums.civfanatics.com/forumdisplay.php?f=204) or the wiki (http://wikirhye.wikidot.com/), which contains useful strategy guides.
+		</English>
+		<French>[H1]Bienvenue à "Rhye's and Fall of Civilization"[\H1]
+[PARAGRAPH:0]v1.186
+[PARAGRAPH:2]"Rhye's and Fall of Civilization" est un mod basé sur une carte du monde, qui tente de rendre votre partie aussi proche de la réalité historique que possible. Il s'agit de la suite de "Rhye's of Civilization", l'un des mods les plus populaires de Civilization III . 
+[PARAGRAPH:2]Ce mod est basé sur l'essor et la chute des civilisations tels que ces événements se sont réellement déroulés. Toutes ces civilisations ne démarreront pas en même temps, mais aux dates appropriées. Le joueur peut choisir de commencer plus tard (la partie démarre alors sans lui) ou de prendre le contrôle de l'une des premières civilisations pour en changer plus tard. Les civilisations chuteront en raison de nombreux facteurs, dont les guerres civiles causées par l'instabilité du pays et les attaques barbares scénarisées.
+[PARAGRAPH:2]Chaque civilisation est extrêmement différente des autres, grâce aux PU (Pouvoirs uniques), aux VHU (conditions de Victoires Historiques Uniques), et à une IA unique qui fondera les villes dans leur site historique et leur donnera le nom qu’elles ont réellement porté.
+[PARAGRAPH:2]Parmi les nouveautés, citons les épidémies de peste, les ambassades, les congrès mondiaux où sont échangées les villes, la propagation dynamique des ressources et de nouveaux graphismes pour les drapeaux et les terrains.
+[PARAGRAPH:2]Vous trouverez de plus amples informations dans la section Lisez-moi. Vous pouvez également consulter le site officiel (http://rhye.civfanatics.net), le forum de développement (http://forums.civfanatics.com/forumdisplay.php?f=204) ou l'encyclopédie (http://wikirhye.wikidot.com/), laquelle contient de nombreux conseils stratégiques.
+		</French>
+		<German>[H1]Willkommen zu Rhye's and Fall of Civilization[\H1]
+[PARAGRAPH:0]v1.186
+[PARAGRAPH:2]Rhye's and Fall of Civilization ist ein Mod, das auf einer Weltkarte basiert, um das Einzelspielerspiel zu einer realistischen Simulation der Geschichte der Erde zu machen. Es ist die Fortsetzung von "Rhye's of Civilization", eines der bekanntesten Mod-Pakete für Civilization III. 
+[PARAGRAPH:2]Das Mod handelt vom historischen Aufstieg und Fall der Zivilisationen: Sie beginnen nicht alle zur selben Zeit, sondern zum passenden Zeitpunkt. Der Spieler kann einen späten Start wählen (und warten, bis das Spiel so weit vorangeschritten ist) oder die Kontrolle über eine der frühen Zivilisationen übernehmen und später dann zu einer anderen wechseln. Der Fall von Zivilisationen wird von vielen Faktoren beeinflusst, wie etwa Bürgerkriege, die durch innere Instabilität ausgelöst werden, und programmierte Angriffe von Barbaren.
+[PARAGRAPH:2]Jede Zivilisation unterscheidet sich von den anderen durch die EMs (Einzigartigen Mächte), die EHS (Einzigartigen historischen Siegbedingungen) und eine einzigartige KI, die Städte an historischen Orten und mit ihrem historischen Namen errichten wird.
+[PARAGRAPH:2]Andere Ergänzungen beinhalten den Ausbruch der Pest, Botschaften, Weltkongresse, bei denen ganze Städte verkauft werden, dynamische Verteilung der Ressourcen und neue Gelände- und  Flaggengrafiken.
+[PARAGRAPH:2]Genauere Informationen finden Sie im ReadMe. Für weitergehende Fragen, sehen Sie bitte auf der offiziellen Website (http://rhye.civfanatics.net), dem Entwicklerforum (http://forums.civfanatics.com/forumdisplay.php?f=204) oder der Wikipedia (http://wikirhye.wikidot.com/) nach. Hier finden Sie hilfreiche Strategietipps.
+		</German>
+		<Italian>[H1]Benvenuto a Rhye's and Fall[\H1]
+[PARAGRAPH:0]v1.186
+[PARAGRAPH:2]Rhye's and Fall è un mod basato sulla mappa del mondo, che cerca di trasformare una partita per giocatore singolo in un simulatore realistico di storia della Terra. È il seguito di &quot;Rhye's of Civilization&quot;, uno dei mod più popolari per Civilization III. 
+[PARAGRAPH:2]Il mod ruota attorno all'ascesa e al declino delle civiltà storiche: non avranno tutte inizio nel medesimo istante, ma nella propria epoca. Il giocatore può scegliere un avvio in ritardo (lasciando che la partita evolva per conto proprio) o prendere subito il controllo di una delle prime civiltà e passare a un'altra in un secondo momento. Le civiltà cadranno per diversi motivi, tra cui guerre civili scatenate da instabilità interna, e attacchi dei barbari programmati.
+[PARAGRAPH:2]Ogni civiltà è estremamente diversa dalle altre, grazie ai poteri unici, le condizioni di vittoria uniche e una intelligenza artificiale che fonderà le città nella loro corretta ubicazione storica, con il loro vero nome.
+[PARAGRAPH:2]Tra le altre aggiunte ci sono le epidemie di peste, le ambasciate, i congressi mondiali nei quali scambiare le città, la diffusione dinamica delle risorse, e una nuova grafica per bandiere e terreno.
+[PARAGRAPH:2]Il file readme contiene ulteriori informazioni. Per ogni altro dubbio potete visitare il sito ufficiale (http://rhye.civfanatics.net), il forum degli sviluppatori (http://forums.civfanatics.com/forumdisplay.php?f=204) o la voce wiki (http://wikirhye.wikidot.com/), che contiene utili consigli strategici.
+		</Italian>
+		<Spanish>[H1]Bienvenido a &quot;Rhye's and Fall of Civilization&quot;[\H1]
+[PARAGRAPH:0]v1.186
+[PARAGRAPH:2]&quot;Rhye's and Fall of Civilization&quot; es un mod basado en un mapa del mundo que intenta hacer que la partida para un jugador sea una simulación realista de la historia de la Tierra. Es la secuela de &quot;Rhye's of Civilization&quot;, uno de los mods más populares de Civilization III.  
+[PARAGRAPH:2]El mod gira en torno al auge y caída históricos de las civilizaciones: no empezarán todas al mismo tiempo, sino en las fechas precisas. El jugador puede optar por un inicio tardío (si se espera a que el programa juegue por sí mismo) o tomar el control de una de las civilizaciones y cambiar posteriormente a otra. Las civilizaciones pueden caer por muchos factores, incluyendo las guerras civiles causadas por la inestabilidad interna y los ataques bárbaros programados en el script.
+[PARAGRAPH:2]Cada civilización se diferencia acusadamente de las demás gracias a los PU (poderes únicos), las condiciones UVH (condiciones únicas para la victoria histórica) y una IA propia que ubicará las ciudades en su emplazamiento histórico y les dará su nombre real.
+[PARAGRAPH:2]Otros añadidos incluyen apariciones de plagas, embajadas, congresos mundiales donde se intercambian ciudades, una propagación dinámica de los recursos y nuevos gráficos para las marcas y terrenos.
+[PARAGRAPH:2]En el documento &quot;Readme (Léame)&quot; se proporciona información más detallada. Para cualquier otra cuestión, visita la página oficial (http://rhye.civfanatics.net), el foro de desarrollo (http://forums.civfanatics.com/forumdisplay.php?f=204) o la wikiguía (http://wikirhye.wikidot.com/), que contiene consejos útiles sobre la estrategia.
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

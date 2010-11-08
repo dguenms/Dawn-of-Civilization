@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMBASSY_EP</Tag>
+		<English>[ICON_BULLET] Requires 10 [ICON_ESPIONAGE] against this civilization</English>
+		<French>[ICON_BULLET] Nécessite 10 [ICON_ESPIONAGE] contre cette civilisation</French>
+		<German>[ICON_BULLET] Erfordert 10 [ICON_ESPIONAGE] gegen diese Zivilisation</German>
+		<Italian>[ICON_BULLET] Richiede 10 [ICON_ESPIONAGE] contro questa civilt&#224;.</Italian>
+		<Spanish>[ICON_BULLET] Se necesitan 10 [ICON_ESPIONAGE] contra esta civilizaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ETH_EMBASSY</Tag>
+		<English>Ethiopian Embassy</English>
+		<French>Ambassade éthiopienne</French>
+		<German>Äthiopische Botschaft</German>
+		<Italian>Ambasciata etiope</Italian>
+		<Spanish>Embajada et&#237;ope</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAY_EMBASSY</Tag>
+		<English>Mayan Embassy</English>
+		<French>Ambassade maya</French>
+		<German>Maya-Botschaft</German>
+		<Italian>Ambasciata maya</Italian>
+		<Spanish>Embajada maya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KHM_EMBASSY</Tag>
+		<English>Khmer Embassy</English>
+		<French>Ambassade khmère</French>
+		<German>Khmerische Botschaft</German>
+		<Italian>Ambasciata khmer</Italian>
+		<Spanish>Embajada j&#233;mer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HOL_EMBASSY</Tag>
+		<English>Dutch Embassy</English>
+		<French>Ambassade néerlandaise</French>
+		<German>Holländische Botschaft</German>
+		<Italian>Ambasciata olandese</Italian>
+		<Spanish>Embajada holandesa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POR_EMBASSY</Tag>
+		<English>Portuguese Embassy</English>
+		<French>Ambassade portugaise</French>
+		<German>Portugiesische Botschaft</German>
+		<Italian>Ambasciata portoghese</Italian>
+		<Spanish>Embajada portuguesa</Spanish>
+	</TEXT>
+</Civ4GameText>

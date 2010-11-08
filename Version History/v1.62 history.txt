@@ -1,0 +1,16 @@
+# added a war on spawn between Turkey and Arabia
+# doubled the chance for a war on spawn between Arabia and Egypt
+# German Haithabu is renamed to Hamburg after the Renaissance
+# London is called Lundúvir by the Vikings
+# Constantinople is renamed to "Kostantiniyye" when captured by Turkey
+# Turkish Kostantiniyye changes its name to "Istanbul" in the Industrial Age
+# fixed Reformation popup bug
+# fixed China's new UHV condition
+# Egypt's Obelisk and Ethiopia's Stele now also expire with Divine Right
+# fixed the typo in the "production consumes food" entry
+# increased the likeliness that Russia attacks Kyiv
+# undocumented 1.6 change: the Levant is now part of Europe until Arabia spawns to encourage Phoenicia's focus on Europe
+# refined the triggered respawn mechanic:
+	# all civilizations now spawn with a stack of units first
+	# cities and culture are converted the next turn
+	# no city ruins bug anymore

@@ -1,0 +1,14 @@
+# updated Netherland's spawn units to Musketmen
+# New first UHV condition for Netherlands: settle 3 great merchants in Amsterdam by 1745 AD
+# Chinese first UHV now again requires Confucian Academies and Taoist Pagodas
+# Netherlands get an additional settler at start, and a Caravel
+# added Philosophy, Gunpowder and Education as Dutch techs
+# Embracing the Reformation now yields 500 gold to counterbalance the loss of the Apostolic Palace
+# Phoenician UHV: now requires 4 dye ressources, dye distribution changed across the Mediterranean
+# added the Temple of Salomon as a wonder, giving +3 gold per religious building of your state religion
+# Spiral Minaret now gives +2 commerce per priest
+# Temple of Salomon spawns with Yerushalayim
+# Republic: replaced unlimited Merchants, Artists, Scientists with +50% great people birth
+# Socialism: replaced +100% great people birth with unlimited Merchants, Artists, Scientists
+# fixed the bug that allowed you to switch civs during the Dutch autoplay
+# the Khmer Empire is now called Siam Empire after the Renaissance

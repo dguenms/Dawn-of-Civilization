@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Final Release Win32" />
+	<File name="AI_Defines.h" open="0" top="0" tabpos="11">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="CvArea.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="310" topLine="0" />
+	</File>
+	<File name="CvCity.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="198479" topLine="8406" />
+	</File>
+	<File name="CvCity.h" open="0" top="0" tabpos="12">
+		<Cursor position="310" topLine="0" />
+	</File>
+	<File name="CvCityAI.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="56896" topLine="2094" />
+	</File>
+	<File name="CvDLLInterfaceIFaceBase.h" open="0" top="0" tabpos="0">
+		<Cursor position="3280" topLine="59" />
+	</File>
+	<File name="CvDLLWidgetData.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="10207" topLine="406" />
+	</File>
+	<File name="CvDefines.h" open="0" top="0" tabpos="4">
+		<Cursor position="4693" topLine="77" />
+	</File>
+	<File name="CvDiploParameters.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="499" topLine="12" />
+	</File>
+	<File name="CvDllPythonEvents.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="21806" topLine="842" />
+	</File>
+	<File name="CvEnums.h" open="0" top="0" tabpos="3">
+		<Cursor position="31061" topLine="330" />
+	</File>
+	<File name="CvEventReporter.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="8216" topLine="282" />
+	</File>
+	<File name="CvGame.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="65345" topLine="2240" />
+	</File>
+	<File name="CvGameCoreDLL.h" open="0" top="0" tabpos="2">
+		<Cursor position="415" topLine="174" />
+	</File>
+	<File name="CvGameTextMgr.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="240272" topLine="6942" />
+	</File>
+	<File name="CvGameTextMgr.h" open="0" top="0" tabpos="0">
+		<Cursor position="842" topLine="12" />
+	</File>
+	<File name="CvGlobals.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="35253" topLine="1572" />
+	</File>
+	<File name="CvInfos.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="25924" topLine="1036" />
+	</File>
+	<File name="CvInfos.h" open="0" top="0" tabpos="4">
+		<Cursor position="198187" topLine="6023" />
+	</File>
+	<File name="CvMap.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="9908" topLine="331" />
+	</File>
+	<File name="CvPlayer.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="285621" topLine="11755" />
+	</File>
+	<File name="CvPlayer.h" open="0" top="0" tabpos="3">
+		<Cursor position="64906" topLine="1035" />
+	</File>
+	<File name="CvPlayerAI.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="87252" topLine="3349" />
+	</File>
+	<File name="CvPlayerAI.h" open="0" top="0" tabpos="8">
+		<Cursor position="0" topLine="24" />
+	</File>
+	<File name="CvPlot.cpp" open="1" top="1" tabpos="7">
+		<Cursor position="66736" topLine="3014" />
+	</File>
+	<File name="CvPlot.h" open="0" top="0" tabpos="0">
+		<Cursor position="553" topLine="543" />
+	</File>
+	<File name="CvRhyes.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="19511" topLine="444" />
+	</File>
+	<File name="CvRhyes.h" open="0" top="0" tabpos="5">
+		<Cursor position="5650" topLine="175" />
+	</File>
+	<File name="CvTeam.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="141018" topLine="5052" />
+	</File>
+	<File name="CvTeamAI.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="49784" topLine="1973" />
+	</File>
+	<File name="CvUnit.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="182273" topLine="7466" />
+	</File>
+	<File name="CvUnitAI.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="264306" topLine="12361" />
+	</File>
+	<File name="CvXMLLoadUtilitySet.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="26560" topLine="580" />
+	</File>
+	<File name="CyCity.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="42517" topLine="1811" />
+	</File>
+	<File name="CyGameInterface.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="328" topLine="242" />
+	</File>
+	<File name="CyGameTextMgr.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2792" topLine="77" />
+	</File>
+	<File name="CyGlobalContext.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="443" topLine="15" />
+	</File>
+	<File name="CyPlayer.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="38023" topLine="1464" />
+	</File>
+	<File name="CyPlayer.h" open="0" top="0" tabpos="6">
+		<Cursor position="21570" topLine="487" />
+	</File>
+	<File name="CyPlayerInterface1.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="37453" topLine="413" />
+	</File>
+	<File name="CyPlayerInterface2.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="27" />
+	</File>
+	<File name="CyTeam.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="629" topLine="12" />
+	</File>
+	<File name="CyUnit.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="13818" topLine="512" />
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,18 @@
+# decreased China's inclination to research Education
+# Netherlands start with Paper and Astronomy
+# Netherlands start with two East Indiamen
+# German dynamic names: "German Democratic Republic" when vassal of Russia, "German Council Republic" when communist
+# Viking inclination to found Haithabu lessened
+# assigned the proper building sounds to Protestant buildings and the Temple of Solomon
+# some civilizations (Arabia, Mongolia, Turkey) fight their initial spawn wars longer
+# added Rhye as a Great Italian Artist
+# added Durres as German name for the Durazzo tile, Belgrad for 1E of copper
+# conqueror events automatically trigger war (and set the conquering AI's warplan to total war)
+# war continues against independents when your former opponent collapses
+# Netherlands and Portugal are much less likely to become peacevassals
+# settlers can only be built in core cities until the discovery of Astronomy
+# new Babylonian UP: +33% production and commerce in your capital after the discovery of Code of Laws
+# Temple of Solomon now expires with Liberalism, as intended
+# Oil Industry doesn't produce oil anymore
+# civs cannot be vassals of too far away civs until the discovery of Astronomy
+# Reworded the first Chinese UHV

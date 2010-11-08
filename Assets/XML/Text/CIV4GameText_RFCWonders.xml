@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_PEDIA</Tag>
+		<English>[TAB]A triumphal arch is a structure in the shape of a monumental archway, usually built to celebrate a victory in war. The arch is invariably a free-standing structure, quite separate from city gates or walls. In its simplest form a triumphal arch consists of two pillars connected by an arch, crowned with a superstructure or attic on which a statue or commemorative inscriptions might be mounted. More elaborate triumphal arches have flanking subsidiary archways, typically a pair. Famous arches include the Arch of Titus in Rome and the Arc de Triomphe in Paris.</English>
+		<French>[TAB]Un arc de triomphe est un ouvrage en forme d'arche monumentale, généralement construit pour célébrer une victoire à la guerre. L'arc est toujours une structure indépendante, à l'écart des portes et des remparts de la ville. Dans sa forme la plus simple, l'arc de triomphe se compose de deux piliers reliés par un arc et surmontés d'un entablement ou d'un attique sur lequel peuvent être ajoutées une statue ou des inscriptions commémoratives. Les arcs de triomphe plus élaborés comportent des arches secondaires - généralement au nombre de deux - sur les côtés. Parmi les arcs de triomphes les plus célèbres, on trouve l'Arc de Titus à Rome et l'Arc de triomphe de l'Etoile à Paris.</French>
+		<German>[TAB]Ein Triumphbogen ist ein frei stehendes Bauwerk in Form eines monumentalen Tors oder Bogengangs, das üblicherweise zur Würdigung eines bedeutenden militärischen Sieges abseits von Stadttoren oder -mauern errichtet wird. In seiner einfachsten Form besteht ein Triumphbogen aus zwei Säulen, die durch einen Bogen verbunden und mit einer Attika versehen sind, auf der eine Statue thront oder eine Inschrift angebracht ist. Aufwändiger gearbeitete Triumphbögen haben zusätzlich noch angrenzende Seitenbogengänge, die meist paarweise angeordnet sind. Berühmte Triumphbögen sind beispielsweise der Titusbogen in Rom und der Arc de Triomphe in Paris.</German>
+		<Italian>[TAB]Un arco di trionfo &#232; una struttura con la forma di una monumentale arcata, spesso costruita per celebrare la vittoria in una guerra. L'arco &#232; invariabilmente una struttura a s&#233; stante, separata dalle mura o dalle porte di una citt&#224;. Nella sua forma più semplice un arco di trionfo consiste di due colonne unite da un arco, sovrastato da una struttura o un attico su cui si possono trovare statue o iscrizioni. Gli archi di trionfo più elaborati possono avere arcate sussidiarie laterali, di solito una coppia. Tra i più famosi sono l'Arco di Tito a Roma e l'Arco di Trionfo a Parigi.</Italian>
+		<Spanish>[TAB]Un Arco de Triunfo es una enorme arcada monumental que se suele construir para celebrar una victoria en la guerra. El arco siempre es una estructura solitaria, separada de las puertas o muros de la ciudad. En su forma m&#225;s sencilla consiste en dos pilares conectados por un arco que a su vez est&#225; coronado por una estructura superior en la cual se suele colocar una estatua o una inscripci&#243;n conmemorativa. Los Arcos de Triunfo m&#225;s elaborados pueden tener un par de arcos secundarios en los laterales. Los m&#225;s famosos son el Arco de Tito en Roma y el Arco del Triunfo de Paris.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHICHEN_ITZA</Tag>
+		<English>Temple of Kukulkan</English>
+		<French>
+			<Text>Temple de Quetzalcóatl</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Pyramide des Kukulc&#225;n</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Tempio di Kukulcan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Templo de Kukulc&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHICHEN_ITZA_PEDIA</Tag>
+		<English>[TAB]The Temple of Kukulkan (also known as El Castillo or the Temple of Quetzalcoatl) is one of the best-known Mayan buildings in Chichen Itza. The structure itself is a typical four-sided step temple, but at its base rests stone pillars carved with feathered serpents (revealing the strong Toltec/Aztec influence). Many archeologists believe that its design is based upon the Mayan calendar, since each stairway has 90 steps. Add the total steps to the number of stairways plus the top platform, and you reach the number of 365 (the number of days in [our] typical calendar year).</English>
+		<French>[TAB]Le temple de Quetzalcóatl (aussi appelé la Citadelle ou le temple de Kukulcán) est l'un des bâtiments mayas les plus connus sur le site de Chichén Itzá. L'ouvrage est une simple pyramide à degrés à quatre côtés, mais on trouve à sa base des piliers en pierre sur lesquels sont gravés des serpents à plumes, révélant la forte influence toltèque et aztèque. Beaucoup d'archéologues pensent que ce temple fut conçu d'après le calendrier maya, car chaque escalier compte 90 marches. Si l'on fait le total des marches et des escaliers, et qu'on ajoute la plate-forme au sommet, on obtient le nombre 365, soit le nombre de jours d'une année civile classique.</French>
+		<German>[TAB]Die Pyramide des Kukulc&#225;n (auch El Castillo oder Tempel des Quetzalcoatl genannt) ist eines der bekanntesten Maya-Bauwerke in Chichen Itza. Das Gebäude selbst ist eine typische vierseitige Stufenpyramide, an deren Fuß allerdings Steinsäulen mit eingemeißelten gefiederten Schlangen angebracht sind (was den starken toltekischen/aztekischen Einfluss widerspiegelt). Viele Archäologen glauben, dass dieses Design auf dem Maya-Kalender basiert, da jeder Treppenabschnitt 90 Stufen hat. Addiert man die Gesamtzahl der Stufen und zählt dann die Anzahl der Treppenabschnitte plus der Dachplattform hinzu, so erhält man die Zahl 365 (die Anzahl der Tage in [unserem] gew&#246;hnlichen Kalenderjahr).</German>
+		<Italian>[TAB]Il Tempio di Kukulcan (conosciuto anche come El Castillo o Tempio di Quetzalcoatl) &#232; uno degli edifici maya meglio conosciuti di Chichen Itza. La struttura &#232; quella tipica di un tempo con quattro lati, ma alla base si trovano colonne di pietra scolpite con serpenti piumati (che rivelano la forte influenza tolteca/azteca). Molti archeologi credono che il progetto si basi sul calendario maya, visto che ogni scala ha 90 scalini. Sommando il numero di scalini delle quattro scale a quelli della piattaforma sovrastante si ottiene 365 (il numero di giorni nel [nostro] anno).</Italian>
+		<Spanish>[TAB]El Templo de Kukulc&#225;n (tambi&#233;n conocido como &quot;El Castillo&quot; o el &quot;Templo de Quetzalcoatl&quot;) es uno de los edificios mayas m&#225;s conocidos de Chichen Itz&#225;. La estructura en s&#237; es un templo t&#237;pico con cuatro paredes inclinadas y con escalones, pero en su base descansan unos pilares de piedra grabados con serpientes emplumadas (lo cual evidencia la fuerte influencia tolteca/azteca). Muchos arque&#243;logos creen que su dise&#241;o est&#225; basado en el calendario maya, pues todas las escaleras tienen noventa pelda&#241;os. Al sumar el número de pelda&#241;os al de escaleras y a la plataforma superior, obtenemos los 365 d&#237;as que tiene el a&#241;o según nuestro calendario.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WEST_POINT</Tag>
+		<English>The Bastille</English>
+		<French>
+			<Text>La Bastille</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Die Bastille</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>La Bastiglia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Bastilla</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WEST_POINT_PEDIA</Tag>
+		<English>[TAB]The Bastille was a prison in Paris, known formally as Bastille Saint-Antoine, best known today because of the storming of the Bastille on July 14, 1789, which along with the Tennis Court Oath is considered the beginning of the French Revolution. Bastille is a French word meaning "castle" or "stronghold"; used as a single word ("la Bastide" in French), it refers to the prison. Built from 1370 to 1383 as part of the defences of Paris, the structure was later converted into a prison.</English>
+		<French>[TAB]La Bastille, ou plus précisément la Bastille Saint-Antoine, était une prison de Paris. Elle devint célèbre avec la prise de la Bastille le 14 juillet 1789 qui marqua, avec le serment du jeu de paume, le début de la Révolution française. Dérivé de "bastide", le mot "bastille" signifie "château" ou "forteresse". Utilisé comme nom propre, il désigne la prison. Commencé en 1370 et achevé en 1383, l'ouvrage devait servir à la défense de Paris. Il fut par la suite transformé en prison.</French>
+		<German>[TAB]Die Bastille war das Staatgefängnis in Paris, früher offiziell als "Bastille Saint-Antoine" bezeichnet, das heute vor allem durch den Sturm auf die Bastille am 14. Juli 1789 berühmt ist, der zusammen mit dem "Ballhausschwur" als Beginn der französischen Revolution erachtet wird. Das französische Wort "Bastille" bedeutet übersetzt etwa "kleine Bastion" oder "kleine Burg". Das Gebäude wurde von 1370 bis 1383 als Teil der Verteidigungsanlagen von Paris erbaut und später als Kerkeranlage genutzt, weshalb der Begriff "Bastille" heute gleichbedeutend mit Gefängnis verwendet wird.</German>
+		<Italian>[TAB]La Bastiglia era una prigione di Parigi, il cui nome completo francese &#232; Bastille Saint-Antoine, conosciuta al giorno d'oggi per l'assalto che sub&#236; il 14 luglio 1789 e che, assieme al Giuramento della Sala della Pallacorda, &#232; considerato l'inizio della rivoluzione francese. Bastille &#232; una parola francese che significa &quot;castello&quot; o &quot;fortezza&quot;; usata da sola (&quot;la Bastide&quot; in francese) si riferisce a una prigione. Costruita nel periodo che va dal 1370 al 1383 come parte delle difese di Parigi, venne più tardi convertita in una prigione.</Italian>
+		<Spanish>[TAB]La Bastilla fue una prisi&#243;n parisina, conocida antiguamente como &quot;Bastide Saint-Antoine&quot;. Hoy es m&#225;s conocida por la c&#233;lebre toma de la Bastilla que se produjo el 14 de julio de 1789, que, junto con el Juramento del Juego de la Pelota, se considera el comienzo de la Revoluci&#243;n Francesa. &quot;Bastide&quot; es una palabra francesa que significa &quot;castillo&quot; o &quot;fortaleza&quot;, mientras que &quot;Bastille&quot;, el nombre con el que ha pasado a la historia, significa &quot;prisi&#243;n&quot;. Fue construida entre 1370 y 1383 como parte del complejo defensivo de Par&#237;s, aunque m&#225;s tarde se convirti&#243; en una prisi&#243;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
+		<English>Amphitheatre</English>
+		<French>
+			<Text>Amphithéâtre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Amphitheater</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Anfiteatro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Anfiteatro:Anfiteatros</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Tag>
+		<English>The Colosseum</English>
+		<French>
+			<Text>Le Colisée</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Das Kolosseum</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Il Colosseo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Coliseo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_PEDIA</Tag>
+		<English>[TAB]The Colosseum or Coliseum, situated in Rome and originally known as the Flavian Amphitheatre (Latin: Amphitheatrum Flavium), is the largest amphitheatre built in the Roman Empire. Originally capable of seating 50,000 spectators, it was used for gladiatorial combat. Construction of the Flavian Amphitheatre began under the rule of Emperor Vespasian in 72 AD. It was completed by his son, Titus, in 80 AD, with later improvements by Domitian.</English>
+		<French>[TAB]Le Colisée de Rome, appelé à l'origine "amphithéâtre Flavien" (en latin : Amphitheatrum Flavium), est le plus grand amphithéâtre construit dans l'Empire romain. Il pouvait contenir à l'origine 50 000 spectateurs et servait à organiser des combats de gladiateurs. La construction de l'amphithéâtre Flavien fut lancée sous Vespasien, en 72 apr. J.-C. L'ouvrage fut achevé par son fils, Titus, en 80 apr. J.-C., puis amélioré par Domitien.</French>
+		<German>[TAB]Das Kolosseum (Lateinisch: Amphitheatrum Novum oder Amphitheatrum Flavium) ist das gr&#246;ßte der im antiken Rom erbauten Amphitheater. Es fasste ursprünglich 50.000 Zuschauer und diente vor allem als Schauplatz für Gladiatorenkämpfe. Der Bau des Amphitheatrum Flavium wurde im Jahr 72 n. Chr. von Kaiser Vespasian in Auftrag gegeben und im Jahr 80 n. Chr. von seinem Sohn Titus vollendet. Dessen Bruder Domitian ließ später noch einige Erweiterungen und Verbesserungen an dem Gebäude vornehmen.</German>
+		<Italian>[TAB]Il Colosseo, situato a Roma e originariamente conosciuto come Anfiteatro Flavio (in latino: Amphitheatrum Flavium), &#232; il più grande anfiteatro costruito nell'impero romano. In origine era in grado di ospitare 50.000 spettatori e veniva utilizzato per i giochi gladiat&#242;ri. La costruzione dell'Anfiteatro Flavio inizi&#242; sotto l'imperatore Vespasiano nel 72 d.C e venne completata sotto il regno del figlio, Tito, nell'80 d.C., con ulteriori modifiche apportate durante il regno di Domiziano.</Italian>
+		<Spanish>[TAB]El Coliseo de Roma, que en su origen fue conocido como Anfiteatro Flavio (del lat&#237;n, &quot;Amphitheatrum Flavium&quot;), es el anfiteatro m&#225;s grande construido por el Imperio Romano. Era capaz de alojar a 50.000 espectadores durante los combates de gladiadores. La construcci&#243;n del Anfiteatro Flavio se inici&#243; durante el mandato del emperador Vespasiano en el 72 d. C. Fue inaugurado por su hijo Tito en el 80 d. C., aunque en realidad fue Domiciano quien lo complet&#243;, dos a&#241;os m&#225;s tarde.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LEANING_TOWER</Tag>
+		<English>The Leaning Tower</English>
+		<French>
+			<Text>La tour de Pise</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Der schiefe Turm</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>La torre pendente</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Torre Inclinada</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LEANING_TOWER_PEDIA</Tag>
+		<English>[TAB]The Leaning Tower of Pisa, or simply The Tower of Pisa (Italian: La Torre di Pisa) is the campanile, or freestanding bell tower, of the cathedral of the Italian city of Pisa. It is situated behind the Cathedral and it is the third structure in Pisa's Campo dei Miracoli (field of Miracles). The tower is the most famous leaning building in the world. While intended to stand vertically, it began leaning to the southeast soon after the onset of construction in 1173 due to a poorly laid foundation and loose substrate that has allowed the foundation to shift.</English>
+		<French>[TAB]La tour de Pise, que les Italiens appellent "torre di Pisa", est le campanile (clocher isolé) de la cathédrale de Pise, en Italie. Située derrière la cathédrale, elle est le troisième bâtiment sur la place des miracles de la ville. La tour est le plus célèbre des bâtiments penchés au monde. Verticale à l'origine, elle commença à s'incliner vers le sud-est peu après le début de sa construction en 1173, ses fondations glissant sur le sous-sol trop meuble.</French>
+		<German>[TAB]Der schiefe Turm von Pisa (Italienisch: La Torre di Pisa) ist ein "Campanile", ein frei stehender Glockenturm des Doms von Pisa. Er befindet sich auf der Rückseite des Doms und ist als drittes Bauwerk auf Pisas "Piazza dei Miracoli" (Platz der Wunder) das wohl bekannteste schiefe Gebäude der Welt. Das Gebäude sollte gemäß der Bauplaner normal gerade stehen, doch kurz nach Baubeginn im Jahr 1173 bekam es wegen eines Grundbruches, dem Nachgeben des Fundamentes, eine Schräglage Richtung Südosten.</German>
+		<Italian>[TAB]La torre pendente di Pisa, o semplicemente la torre di Pisa &#232; il campanile della cattedrale di Pisa. Si trova dietro la cattedrale ed &#232; la terza struttura nel Campo dei Miracoli. La torre &#232; il più famoso edificio pendente al mondo. Pur essendo stata progettata per rimanere verticale, cominci&#242; a pendere poco dopo l'inizio dei lavori di costruzione nel 1173, a causa di fondamenta mal realizzate e di un sottostrato friabile che ha permesso alle fondamenta di spostarsi.</Italian>
+		<Spanish>[TAB]La Torre Inclinada de Pisa, o simplemente la Torre de Pisa, es una torre campanario individual de la catedral de la ciudad italiana de Pisa. Est&#225; situada detr&#225;s de la catedral y es la tercera estructura del &quot;Campo dei Miracoli&quot; de Pisa (&quot;Campo de los Milagros&quot;). La torre es el edificio inclinado m&#225;s famoso del mundo. Aunque se pretend&#237;a que fuera totalmente vertical, comenz&#243; a inclinarse hacia el sudeste poco despu&#233;s de su construcci&#243;n, en 1173, debido a unos cimientos defectuosos y la tierra reblandecida sobre la que reposa.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE</Tag>
+		<English>National Gallery</English>
+		<French>
+			<Text>Galerie nationale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationalgalerie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Galleria nazionale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la National Gallery</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE_PEDIA</Tag>
+		<English>[TAB]A national gallery is a country's major public art gallery. With different names, they are widespread in almost every nation capital. They are a space for the exhibition of art, usually visual art, and usually primarily paintings, illustrations, and sculpture. The art museum is considered a fairly modern invention, the first being the Louvre in Paris, which was established in 1793, soon after the French Revolution when the royal treasures were declared for the people.</English>
+		<French>[TAB]Une galerie nationale est la principale galerie d'art ouverte au public dans un pays. Bien que les appellations changent suivant les pays, on en trouve une dans presque chaque capitale du monde. Ces bâtiments servent à exposer les arts _ généralement visuels _ et notamment les peintures, les illustrations et les sculptures. On considère que le musée d'art est une invention assez moderne ; le plus ancien est le Louvre, qui ouvrit en 1793, peu après la Révolution française, lorsque les trésors royaux ont été déclarés propriété du peuple.</French>
+		<German>[TAB]Eine Nationalgalerie ist die größte öffentlich zugängliche Kunstgalerie eines Landes. Diese Galerien sind unter verschiedenen Bezeichnungen in fast allen Hauptstädten weit verbreitet und dienen als Ausstellungsorte für Kunst, meist bildende Kunst, und zwar in erster Linie für Gemälde, Illustrationen und Skulpturen. Das Kunstmuseum als solches ist eine relativ moderne Einrichtung: Die erste Institution dieser Art war der Pariser Louvre, der erst 1793 - kurz nach der französischen Revolution - gebaut wurde, nachdem die königlichen Schätze per Dekret dem Volk zugänglich gemacht worden waren. </German>
+		<Italian>[TAB]Una galleria nazionale &#232; la principale galleria d'arte pubblica di una nazione. Con diversi nomi se ne trovano in quasi ogni capitale. Sono uno spazio per l'esibizione dell'arte, solitamente visiva, e principalmente dipinti, illustrazioni e sculture. Il museo d'arte &#232; considerato un'invenzione abbastanza moderna: il primo &#232; quello del Louvre a Parigi fondato nel 1793, poco dopo la rivoluzione francese, quando i tesori reali vennero dichiarati di propriet&#224; del popolo. </Italian>
+		<Spanish>[TAB]Una galer&#237;a nacional es un gran museo de arte público de un pa&#237;s. Recibe diferentes nombres, pero casi todas las capitales del mundo cuentan con una de ellas. Hay un espacio para la exhibici&#243;n de elementos art&#237;sticos, normalmente artes visuales, fundamentalmente pintura, ilustraci&#243;n y escultura. El museo de arte se considera una invenci&#243;n relativamente moderna. El primero de ellos fue el Louvre en Par&#237;s, fundado en 1793, al poco de finalizar la Revoluci&#243;n Francesa y tras declarar públicos los bienes de la realeza. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE</Tag>
+		<English>Opera House</English>
+		<French>
+			<Text>Opéra</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Opernhaus</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Teatro dell'opera</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Teatro de la Ópera</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE_PEDIA</Tag>
+		<English>[TAB]An opera house is a building where operas are performed. The venues are usually constructed specifically with opera in mind, although other performing arts may be performed there. Notable opera houses include London's Globe Theater, where most of the plays of William Shakespeare were first performed on the stage, the Sydney Opera House, one of the most distinctive and famous 20th century buildings and La Scala in Milan. </English>
+		<French>[TAB]Un opéra est un bâtiment où sont représentés les opéras. Les lieux sont généralement pensés pour l'opéra, mais peuvent servir pour d'autres représentations artistiques. Parmi les opéras les plus célèbres, on trouve le théâtre du Globe de Londres, où eut lieu la première représentation de la plupart des oeuvres de William Shakespeare, l'opéra de Sydney, l'un des bâtiments les plus marquants et les plus célèbres du XXe siècle, et la Scala de Milan.</French>
+		<German>[TAB]Ein Opernhaus ist ein Gebäude, in dem Opern aufgeführt werden. Es ist baulich normalerweise speziell für derartige Aufführungen konzipiert, es können aber auch andere darstellende Künste dargeboten werden. Berühmte Opernhäuser sind zum Beispiel das Globe Theatre in London, in dem die meisten Stücke von William Shakespeare uraufgeführt wurden, das Sydney Opera House, eins der markantesten und berühmtesten Bauwerke des 20. Jahrhunderts, sowie das Teatro alla Scala in Mailand.</German>
+		<Italian>[TAB]Un teatro dell'opera &#232; un teatro in cui vengono rappresentate le opere. Solitamente sono costruiti in maniera specifica con in mente l'opera, anche se vi si possono tenere anche altri spettacoli. Fra i teatri dell'opera più conosciuti si annovera anche il Globe Theatre di Londra, in cui vennero rappresentati per la prima volta quasi tutti i lavori di Shakespeare, e il teatro dell'opera di Sydney, uno dei più particolari e famosi edifici del 20° secolo, oltre alla Scala di Milano. </Italian>
+		<Spanish>[TAB]Un Teatro de la Ópera es un edificio en el que se interpretan &#243;peras. Las instalaciones se suelen construir espec&#237;ficamente para la representaci&#243;n de &#243;peras, aunque tambi&#233;n pueden albergar otro tipo de actuaciones. Algunos de los teatros de &#243;pera m&#225;s famosos son el Globe Theatre de Londres, donde se presentaron la mayor&#237;a de las obras de William Shakespeare por primera vez, la Opera House de Sydney, uno de los edificios m&#225;s famosos del siglo XX y La Scala de Mil&#225;n. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WALL_STREET</Tag>
+		<English>Stock Exchange</English>
+		<French>
+			<Text>Bourse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>B&#246;rse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Borsa</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Bolsa</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WALL_STREET_PEDIA</Tag>
+		<English>[TAB]A stock exchange, share market or bourse is a corporation or mutual organization which provides facilities for stock brokers and traders, to trade company stocks and other securities. Stock exchanges also provide facilities for the issue and redemption of securities, as well as, other financial instruments and capital events including the payment of income and dividends. The most famous one is New York Stock Exchange, based in Wall Street. </English>
+		<French>[TAB]Une Bourse, ou un marché financier, est une organisation qui permet aux courtiers et aux opérateurs de négocier des actions et d'autres titres. Les Bourses fournissent aussi l'infrastructure pour l'émission et le remboursement de titres ainsi que divers outils financiers, et elles permettent des opérations de capitaux comme le paiement de revenus et de dividendes. La Bourse la plus célèbre est celle de New York, située sur Wall Street.</French>
+		<German>[TAB]Eine Börse ist ein organisierter Markt für Geschäfte mit Aktien, Anleihen, Devisen, oder bestimmten Waren, die von so genannten Maklern oder Brokern (Wertpapierhändlern) getätigt werden. Ebenso werden hier Wertpapiere und andere finanzielle Instrumente und Kapitalgeschäfte abgewickelt, einschließlich der Zahlung von Gewinnen und Dividenden. Die berühmteste Börse ist die New York Stock Exchange in der Wall Street.</German>
+		<Italian>[TAB]Una borsa &#232; una corporazione o organizzazione che fornisce la possibilit&#224; ad agenti e scambisti di scambiare azioni e altre security delle varie compagnie. Le borse servono anche per l'emissione e il riscatto delle security, cos&#236; come di altri strumenti finanziari ed eventi capitali, incluso il pagamento di entrate e dividendi. La più famosa al mondo &#232; la borsa di New York, che si trova a Wall Street. </Italian>
+		<Spanish>[TAB]La bolsa o mercado de valores es una corporaci&#243;n u organizaci&#243;n que proporciona instalaciones a los &quot;corredores&quot; y comerciantes para intercambiar acciones de empresas y otros t&#237;tulos. Las bolsas tambi&#233;n brindan facilidades para librar, expedir o reembolsar t&#237;tulos, as&#237; como instrumentos financieros apropiados para el pago de rentas y dividendos. La m&#225;s famosa es la que se encuentra en la calle Wall Street de Nueva York.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD</Tag>
+		<English>Interpol</English>
+		<French>
+			<Text>Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Interpol</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD_PEDIA</Tag>
+		<English>[TAB]Interpol (or International Criminal Police Organization) was created in 1923 to assist international criminal police cooperation. Interpol, once merely the organization's telegraphic address, was officially incorporated as the organization's new name in 1956, prior to which it was known as the International Criminal Police Commission. Interpol is the world's third largest international organization, after the United Nations and FIFA; it currently has 186 member countries.</English>
+		<French>[TAB]Interpol (abréviation de l'anglais "International Criminal Police Organization") fut créée en 1923 pour faciliter la coopération policière internationale. Interpol n'était au départ que l'adresse télégraphique de l'organisation. C'est en 1956 que ce nom devint officiellement celui de l'organisation, appelée jusque-là International Criminal Police Commission. Interpol est la troisième plus grande organisation internationale, derrière l'ONU et la FIFA. Elle compte actuellement 186 pays membres.</French>
+		<German>[TAB]Interpol (früher offiziell "International Criminal Police Commission", zu Deutsch: Internationale kriminalpolizeiliche Organisation (IKPO)) wurde 1923 als Kommission zur gemeinschaftlichen internationalen Verbrechensbekämpfung gegründet. Das Wort "Interpol" war ursprünglich lediglich die telegrafische Adresse der Organisation, wurde jedoch 1956 als offizielle Bezeichnung übernommen. Interpol stellt nach den Vereinten Nationen und der FIFA mit gegenwärtig 186 Mitgliedsstaaten die drittgrößte internationale Organisation dar.</German>
+		<Italian>[TAB]L'Interpol (o International Criminal Police Organization, Organizzazione Internazionale di Polizia Criminale) &#232; stata creata nel 1923 per assistere nella cooperazione internazionale tra polizie criminali. Interpol, che una volta era semplicemente l'indirizzo telegrafico dell'organizzazione, &#232; stato ufficialmente incorporato nel nome dell'organizzazione nel 1956, mentre precedentemente era conosciuta come International Criminal Police Commission (Commissione Internazionale di Polizia Criminale). L'Interpol &#232; la terza organizzazione più grande al mondo, dopo le Nazioni Unite e la FIFA; attualmente consta di 186 paesi membri.</Italian>
+		<Spanish>[TAB]La Interpol (&quot;International Criminal Police Organization&quot; u &quot;Organizaci&#243;n Internacional de Polic&#237;a Criminal&quot; en castellano) fue fundada en 1923 para mejorar la cooperaci&#243;n internacional de la polic&#237;a criminal. El nombre &quot;Interpol&quot;, que entonces solo era la direcci&#243;n de tel&#233;grafo de la organizaci&#243;n, fue adoptado en 1956 como nuevo nombre oficial de la organizaci&#243;n, que dej&#243; de llamarse Comisi&#243;n Internacional de Polic&#237;a Criminal. Interpol es la tercera organizaci&#243;n internacional m&#225;s grande del mundo, despu&#233;s de las Naciones Unidas y la FIFA, y cuenta con 186 pa&#237;ses miembro.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VERSAILLES</Tag>
+		<English>Summer Palace</English>
+		<French>
+			<Text>Palais d'été</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sommerresidenz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Palazzo d'estate</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Palacio de Verano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUMMER_PALACE_PEDIA</Tag>
+		<English>[TAB]A palace is the home of a head of state or other high-ranking public figure. Many palaces are now put to other uses such as parliaments or museums. Heads of State, especially monarchs, usually spend some weeks each year in other palaces that are not their primary residence. Such palaces are often called Winter Palaces or Summer Palaces, depending on the season they are used. A few examples are the Russian Winter Palace in St. Petersburg, the Chinese Summer Palace in Beijing, and the Kucuksu Summer Palace in Istanbul.</English>
+		<French>[TAB]Un palais est un lieu où réside un chef d'Etat ou un personnage public important. Beaucoup de palais ont aujourd'hui été reconvertis en parlements ou en musées. Les chefs d'Etat, et principalement les monarques, passent généralement quelques semaines par an dans des palais secondaires. Ces palais sont souvent appelés palais d'hiver ou palais d'été, suivant la saison à laquelle ils sont occupés. On peut citer, par exemple, le palais d'hiver de Saint-Pétersbourg en Russie, le palais d'été de Beijing en Chine, et le palais d'été de Küçüksu à Istanbul.</French>
+		<German>[TAB]Eine Residenz ist der Wohnsitz eines Staatsoberhaupts oder einer anderen hochrangigen Person des öffentlichen Lebens. Viele Residenzen dienen heute als Parlamentssitze oder Museen. Staatsoberh&#228;upter, insbesondere Monarchen, leben in der Regel einige Wochen im Jahr nicht in ihrem Hauptwohnsitz, sondern (je nach Jahreszeit) in ihren so genannten Winter- oder Sommerresidenzen. Beispiele hierfür sind der russische Winterpalast in St. Petersburg, der chinesische Sommerpalast in Peking und der Kücüksu-Sommerpalast in Istanbul.</German>
+		<Italian>[TAB]Un palazzo &#232; la casa di un capo di stato o di un'altra importante figura pubblica. Molti palazzi ora sono adibiti a usi diversi, come parlamenti o musei. I capi di stato, specialmente i monarchi, passano qualche settimana ogni anno in palazzi che non sono la loro residenza primaria. Solitamente sono chiamati palazzo d'inverno o d'estate, a seconda della stagione in cui vengono usati. Un esempio sono il Palazzo d'Inverno a San Pietroburgo, il Palazzo d'Estate a Pechino e il Palazzo d'Estate Kucuksu a Istanbul.</Italian>
+		<Spanish>[TAB]Un palacio es el hogar del jefe de estado o de otro personaje público de alto rango. Hoy en d&#237;a, muchos palacios se usan para cosas diferentes, por ejemplo, como sedes del Parlamento o museos. Los cabezas de estado, especialmente los monarcas, sol&#237;an pasar algunas semanas del a&#241;o fuera de su residencia habitual, en otros palacios. Dichos edificios sol&#237;an recibir el nombre de palacios de invierno o de verano, en funci&#243;n de la estaci&#243;n en la que fueran utilizados. Algunos ejemplos son el Palacio de Invierno ruso de San Petersburgo, el Palacio de Verano chino de Pek&#237;n, y el Palacio de Kucuksu, de verano, en Estambul.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BROADWAY</Tag>
+		<English>Wembley</English>
+		<French>
+			<Text>Stade de Wembley</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Wembley</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Wembley</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Wembley</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BROADWAY_PEDIA</Tag>
+		<English>[TAB]Wembley Stadium is one of the world's most famous football stadiums, located in Wembley, London. In 2003, the original structure was demolished, to be replaced by a new one due to open in 2007. When complete, the new Wembley Stadium will be the largest roof-covered football stadium in Europe. First known as the Empire Stadium, the original stadium was built for the British Empire Exhibition of 1924. The first event held at the stadium was the FA Cup final on 28 April 1923 between Bolton Wanderers and West Ham United.</English>
+		<French>[TAB]Le stade de Wembley est l'un des stades de football les plus connus au monde. Il est situé dans le quartier de Wembley à Londres. En 2003, la structure originale fut détruite afin de laisser place à un nouveau stade dont l'inauguration est prévue pour 2007. Une fois achevé, le nouveau stade de Wembley sera le plus grand stade de football couvert d'Europe. D'abord connu sous le nom d'Empire Stadium, le premier stade fut construit pour l'exposition de l'Empire britannique de 1924. Le premier événement organisé dans ce stade fut la finale de la FA Cup du 28 avril 1923, qui opposa le Bolton Wanderers au West Ham United.</French>
+		<German>[TAB]Das Wembley-Stadion in Wembley, einem Londoner Teil des Londoner Stadtbezirks Brent, zählt zu den berühmtesten Fußballstadien der Welt. Nach dem Abriss des alten Stadiongebäudes im Jahr 2003 wurde der Neubau im Jahr 2007 feierlich wiedereröffnet und repräsentiert nun das zweitgrößte Stadion Europas und das weltweit größte mit einem beweglichen Dach. Ursprünglich wurde das Wembley-Stadion als Empire Stadion für die British Empire Exhibition des Jahres 1924 gebaut. Die erste Veranstaltung in diesem Stadion war am 28. April 1923 das Football Association Challenge Cup (FA Cup)-Finale zwischen den Bolton Wanderers und West Ham United.</German>
+		<Italian>[TAB]Lo stadio di Wembley &#232; uno dei più famosi stadi di calcio al mondo e si trova a Wembley, Londra. Nel 2003 la struttura originaria venne demolita per essere rimpiazzata da un'altra, aperta nel 2007. Lo stadio di Wembley (nuovo) &#232; il più grande stadio calcistico al coperto d'Europa. Inizialmente conosciuto come Empire Stadium, lo stadio originale venne costruito per l'esibizione del British Empire nel 1924. Il primo evento che si tenne allo stadio fu la finale di Coppa d'Inghilterra del 28 aprile 1923, tra i Bolton Wanderers e il West Ham United.</Italian>
+		<Spanish>[TAB]El estadio de Wembley es uno de los estadios de fútbol m&#225;s famosos y se encuentra en Wembley, Londres. En el a&#241;o 2003 se demoli&#243; la estructura original, que ha sido reemplazada por un estadio nuevo en el 2007. El Nuevo Estadio de Wembley es el estadio cubierto m&#225;s grande de Europa. El estadio original, que entonces llevaba el nombre de &quot;Empire Stadium&quot; o &quot;Estadio Imperial&quot;, se construy&#243; con motivo de la &quot;British Empire Exhibition&quot; de 1924. El primer evento celebrado en el estadio fue la final de la Copa FA, el 28 de abril de 1923, entre el Bolton Wanderers y el West Ham United.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_DRAMA</Tag>
+		<English>Hit Football Event</English>
+		<French>
+			<Text>Match de football majeur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fu&#223;ballveranstaltungen</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Eventi calcistici</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Eventos importantes de fútbol</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_DRAMA_PEDIA</Tag>
+		<English>[TAB]Football (also known as association football or soccer) is a team sport played between two teams, of 11 players each, and is widely considered to be the most popular sport in the world. The modern game was officiated in England following the formation of the Football Association, whose 1863 set of rules created the foundations for how the sport is played today. Football is governed internationally by the FIFA. The most prestigious international football competition is the World Cup, played every four years, which is also the most widely viewed and famous sporting event in the world, even more popular than the Summer Olympics. In many parts of the world football evokes great passions and plays an important role in the life of individual fans, local communities, and even nations.</English>
+		<French>[TAB]Le football est un sport collectif opposant deux équipes de onze joueurs chacune. Il est largement admis qu'il s'agit du sport le plus populaire au monde. Le jeu moderne a été créé en Angleterre après la formation de la Football Association, dont les règles de 1863 ont servi de base pour définir le sport tel qu'il se joue aujourd'hui. Le football est géré au niveau international par la FIFA. La compétition internationale de football la plus prestigieuse est la Coupe du Monde, organisée tous les quatre ans, qui est aussi l'événement sportif le plus célèbre et le plus regardé au monde. La Coupe du Monde de football est même plus populaire que les jeux olympiques d'été. Dans bien des régions du monde, le football suscite les passions et joue un rôle important dans la vie des fans, des communautés locales et même des nations.</French>
+		<German>[TAB]Fu&#223;ball ist ein Ballsport, bei dem zwei Mannschaften mit je elf Spielern (einem Torh&#252;ter und zehn Feldspielern) gegeneinander antreten. Er gilt weithin als die beliebteste Sportart der Welt. Heute gilt England als das Mutterland des Fußballs, denn dort wurde 1863 in London die Football Association (FA) gegründet wurde, welche das umfangreiche Regelwerk aufstellte, das die Grundlage für die heutige Spielweise in diesem Sport bildet. International ist der Fußballsport im Weltverband FIFA organisiert. Das bedeutendste internationale Fußballturnier ist die Fußballweltmeisterschaft, die alle vier Jahre ausgetragen wird. Sie stellt die weltweit berühmteste und meist gesehene Sportveranstaltung überhaupt dar und ist sogar noch populärer als die Olympischen Sommerspiele. In vielen Teilen der Welt weckt der Fußballsport große Leidenschaft und spielt im Leben der einzelnen Fans, regionaler Gemeinschaften und auch Nationen eine bedeutende Rolle.</German>
+		<Italian>[TAB]Il calcio &#232; uno sport di squadra giocato fra due squadre, ognuna composta da 11 giocatori, ed &#232; considerato lo sport più popolare al mondo. Il gioco moderno nacque in Inghilterra in seguito alla formazione della Football Association, le cui regole del 1863 crearono le fondamenta dello sport conosciuto oggi. Il calcio &#232; governato a livello internazionale dalla FIFA. Il torneo internazionale più prestigioso &#232; la Coppa del Mondo: si gioca ogni quattro anni ed &#232; l'evento sportivo più conosciuto e visto a livello mondiale, ancora più popolare delle Olimpiadi. In molte parti del mondo il calcio alimenta grandi passioni e gioca un ruolo importante nella vita dei singoli fan, delle comunit&#224; e addirittura delle nazioni.</Italian>
+		<Spanish>[TAB]El fútbol, sin duda el deporte m&#225;s popular del mundo, se juega entre dos equipos de once jugadores cada uno. El juego moderno fue oficializado en Inglaterra con la fundaci&#243;n de la &quot;Football Association&quot;, o &quot;Asociaci&#243;n de Fútbol&quot;, cuyo conjunto de 1.863 normas supuso la base del deporte que se juega hoy en d&#237;a. La FIFA es la organizaci&#243;n que rige los destinos del fútbol a nivel internacional. La competici&#243;n de mayor prestigio es la Copa del Mundo, que se juega cada cuatro a&#241;os y genera m&#225;s expectaci&#243;n que ningún otro evento deportivo del mundo, incluyendo los Juegos Ol&#237;mpicos. En muchas partes del mundo el fútbol suscita grandes pasiones y juega un papel muy importante en las vidas de los aficionados, comunidades locales e incluso naciones.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ROCKNROLL</Tag>
+		<English>Graceland</English>
+		<French>
+			<Text>Graceland</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Graceland</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Graceland</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Graceland</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL</Tag>
+		<English>Channel Tunnel</English>
+		<French>
+			<Text>Tunnel sous la Manche</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Eurotunnel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Canale della Manica</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Eurotúnel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL_PEDIA</Tag>
+		<English>[TAB]The Channel Tunnel (French: le tunnel sous la Manche) is a 31 mile (50.5 km)-long rail tunnel beneath the English Channel at the Straits of Dover, connecting Folkestone, Kent in England to Coquelles near Calais in northern France. A long-standing and very expensive megaproject that saw several false starts, it was finally completed in 1994. It is the second-longest rail tunnel in the world, with the Seikan Tunnel in Japan being longer, but the undersea section of 24 miles (39 km) is the longest of its kind in the world.</English>
+		<French>[TAB]Le tunnel sous la Manche est un tunnel ferroviaire long de 49,7 km, qui effectue la liaison entre Coquelles (près de Calais) dans le Nord de la France et Folkestone dans le Kent, en Angleterre. Après avoir été plusieurs fois abandonné, ce projet colossal au budget faramineux fut finalement achevé en 1994. Le tunnel sous la Manche est le deuxième plus grand tunnel au monde, le premier étant le tunnel du Seikan au Japon. Sa section sous la mer (37,3 km) est toutefois la plus longue au monde.</French>
+		<German>[TAB]Der Eurotunnel oder Kanaltunnel ist ein 50 km langer Eisenbahntunnel, der unterhalb des Ärmelkanals an der Meerenge von Dover verläuft. Er verbindet Folkeston in Kent (England) und Coquelle nahe Calais in Nordfrankreich. Das langwierige und äußerst kostspielige Mega-Bauprojekt, dem einige fehlgeschlagene Tunnelbauversuche vorangingen, wurde schließlich 1994 vollendet. Der Tunnel ist nach dem Seikan-Tunnel in Japan der zweitlängste Eisenbahntunnel der Welt, wobei der 37,9 Kilometer lange unterseeische Tunnelabschnitt bislang weltweit unübertroffen ist.</German>
+		<Italian>[TAB]Il canale della Manica (in francese: le tunnel sous la Manche) &#232; un tunnel lungo 50,5 km che passa sotto la manica all'altezza dello stretto di Dover e collega Folkestone, Kent in Inghilterra con Coquelles, vicino a Calais nella Francia settentrionale. Si tratta di un mega progetto che &#232; rimasto in ballo molto tempo e ha avuto molte false partenze, ed &#232; stato finalmente completato nel 1994. &#200; il secondo tunnel ferroviario più lungo al mondo: &#232; superato solo dal tunnel Seikan in Giappone, ma la sezione subacquea di 39 km &#232; la più lunga al mondo, nel suo genere.</Italian>
+		<Spanish>[TAB]El Eurotúnel es un túnel de cincuenta kil&#243;metros y medio que recorre el subsuelo del Canal de la Mancha y que conecta Folkestone, Kent, en Inglaterra, con Coquelles, cerca de Calais, en el norte de Francia. Se trata de un largo y caro proyecto que, tras varias salidas en falso, fue finalmente terminado en 1994. Es el segundo túnel para transporte ferroviario m&#225;s largo del mundo, despu&#233;s del Túnel Seikan japon&#233;s. Sin embargo, su secci&#243;n submarina, de 39 kil&#243;metros, es la m&#225;s larga del mundo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY</Tag>
+		<English>Trading Company</English>
+		<French>
+			<Text>Compagnie marchande</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Handelsgesellschaft</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Compagnia commerciale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Compa&#241;&#237;a de las Indias</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY_PEDIA</Tag>
+		<English>[TAB]A trading company is an association formed by investors or shareholders for the purpose of trade, exploration and colonisation. Typically, these companies were formed from the sixteenth century onwards by groups of European investors to underwrite and profit from the exploration of Africa, India, the Caribbean and North America, usually under the patronage of one state, which issued the company's charter. Notable companies include British East India Company and Dutch Verenigde Oostindische Compagnie.</English>
+		<French>[TAB]Une compagnie marchande est une association formée par des investisseurs ou des actionnaires s'intéressant au commerce, à l'exploration et à la colonisation. Ces compagnies furent créées à partir du XVIe siècle, généralement par des investisseurs européens, pour financer l'exploration de l'Afrique, de l'Inde, des Caraïbes et de l'Amérique du Nord, et bien sûr en tirer profit. Elles étaient généralement sous le patronage d'un Etat, qui leur accordait une charte. Parmi les compagnies les plus connues, on peut citer la British East India Company (Compagnie anglaise des Indes orientales) et la Dutch Verenigde Oostindische Compagnie (Compagnie hollandaise des Indes orientales).</French>
+		<German>[TAB]Eine Handelsgesellschaft ist eine von Investoren oder Aktionären gebildete Interessengemeinschaft zum Zwecke des Handels, der Ausbeutung und der Kolonialisierung. Derartige Gesellschaften wurden seit dem 16. Jahrhundert von europäischen Investoren gebildet, um sich den Anspruch auf die privilegierte Ausbeutung Afrikas, Indiens, Nordamerikas und des karibischen Raumes sowie die damit verbundenen Profite zu sichern, üblicherweise unter der Führung eines Staates, der den Freibrief für die Gesellschaft ausstellte. Bedeutende Gesellschaften dieser Art waren die Britische Ostindien-Kompanie und die Niederl&#228;ndische Ostindien-Kompanie.</German>
+		<Italian>[TAB]Una compagnia commerciale &#232; un'associazione formata da investitori o azionisti con lo scopo di commerciare, esplorare e colonizzare. Queste compagnie nacquero a partire dal sedicesimo secolo per volont&#224; di investitori europei, che desideravano finanziare e approfittare dell'esplorazione di Africa, India, Caraibi e Nord America, solitamente con l'appoggio di uno stato, che emetteva l'atto costitutivo della societ&#224;. Tra le più famose ci sono la Compagnia delle Indie Orientali Britannica e la Compagnia Olandese delle Indie Orientali.</Italian>
+		<Spanish>[TAB]Una compa&#241;&#237;a de las Indias es una asociaci&#243;n de inversores o accionistas cuyos fines son promocionar el comercio, la exploraci&#243;n y la colonizaci&#243;n. Estas compa&#241;&#237;as se formaron a partir del siglo XVI por grupos de inversores europeos que quer&#237;an financiar la exploraci&#243;n de África, la India, el Caribe y el norte de Am&#233;rica, normalmente bajo la tutela de un estado, que emit&#237;a la carta real o los estatutos de la compa&#241;&#237;a. Algunas de las m&#225;s notables fueron la brit&#225;nica Compa&#241;&#237;a de las Indias Orientales y la Verenigde Oostindische Compagnie holandesa.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK</Tag>
+		<English>Olympic Park</English>
+		<French>
+			<Text>Parc olympique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Olympiapark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Parco olimpico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Estadio Ol&#237;mpico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK_PEDIA</Tag>
+		<English>[TAB]An Olympic Park is a venue set up when a country hosts the Olympic Games. A cauldron is always built within the park and it's the final destination of the torch relay ceremony. The final bearer of the torch runs towards the cauldron, usually placed at the top of a grand staircase, and then uses the torch to start the flame in the stadium. The cauldron and the pedestal it sits on are always the subject of unique and often dramatic design. These also tie in with how the cauldron is lit during the Opening Ceremony. In Barcelona in 1992, an archer shot a flaming arrow immediately over the cauldron to light it.</English>
+		<French>[TAB]Un parc olympique est un lieu créé lorsqu'un pays accueille les jeux olympiques. Une vasque est toujours construite à l'intérieur du parc ; elle est la destination finale de la cérémonie de relais de la flamme olympique. Le dernier porteur de la torche court vers la vasque, généralement placée en haut d'un grand escalier, puis utilise la torche pour allumer la flamme dans le stade. La vasque et le piédestal sur lequel elle est posée ont toujours une forme unique et spectaculaire, qui déterminera comment sera allumée la vasque durant la cérémonie d'ouverture. A Barcelone en 1992, un archer a allumé la vasque en tirant une flèche enflammée juste au-dessus.</French>
+		<German>[TAB]Ein Olympiapark ist ein Veranstaltungsort, der von dem Gastgeberland Olympischer Spiele errichtet wird. Im Innern des Parks ist stets eine große Schale untergebracht, welche als letzte Station für die Zeremonie des Olympischen Fackellaufs dient: Der Schlussläufer läuft auf diese Schale zu, die üblicherweise am oberen Ende einer großen Treppe platziert ist, und entzündet im Stadion das Olympische Feuer. Die Schale und das Podest, auf dem sie angebracht ist, sind stets in einem einzigartigen und häufig dramatischen Design entworfen, das thematisch die Art und Weise widerspiegelt, wie das Feuer während der Er&#246;ffnungsfeier entfacht wird - bei den Olympischen Spielen in Barcelona 1992 schoss ein Bogensch&#252;tze einen brennenden Pfeil direkt &#252;ber den Kessel, um ihn zu entz&#252;nden.</German>
+		<Italian>[TAB]Un Parco olimpico &#232; un complesso architettonico creato da un paese quando deve ospitare le Olimpiadi e al cui interno viene sempre costruito un braciere: la destinazione della fiamma olimpica. L'ultimo tedoforo corre verso il braciere, solitamente posto in cima a una grande scalinata, e poi usa la torcia per accendere la fiamma nello stadio. Il braciere e il piedistallo su cui riposa sono sempre oggetto di design molto particolari. Ci&#242; &#232; anche legato al modo in cui il braciere viene acceso durante la cerimonia d'apertura. A Barcellona nel 1992, per esempio, un arciere scocc&#242; una freccia incendiaria sopra il braciere, per accenderlo.</Italian>
+		<Spanish>[TAB]Un estadio ol&#237;mpico es el edificio principal de acogida al público de unos Juegos Ol&#237;mpicos. Siempre se construye un pebetero en el interior del mismo, que es el destino final de la ceremonia de entrega de la antorcha. El último portador de la antorcha debe correr hacia el pebetero, que suele encontrarse en la cima de unas escaleras, y usar la citada antorcha para encender la llama del estadio. El pebetero y el pedestal que lo soporta siempre son objeto de una ceremonia única y a menudo impresionante. El protagonismo de este evento tambi&#233;n reside en el modo de pasar la llama al pebetero durante la ceremonia de inauguraci&#243;n. En Barcelona en 1992, un arquero dispar&#243; una flecha en llamas que inmediatamente encendi&#243; la llama del pebetero.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANGKOR_WAT</Tag>
+		<English>Wat Preah Pisnulok</English>
+		<French>
+			<Text>Vat Preah Pisnulok</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Wat Preah Pisnulok</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Wat Preah Pisnulok</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Wat Preah Pisnulok</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<!-- added by Leoreth -->
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MONUMENT</Tag>
+		<English>Pagan Temple</English>
+		<French>
+			<Text>Temple Paien</Text>	<!-- stupid internet translation -->
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Heidnischer Tempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Tempio Etnico</Text>	<!-- stupid internet translation -->
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Templo Pagano:Templos Paganos</Text>	<!-- stupid internet translation -->
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<!-- added by Leoreth -->
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PERSIAN_APOTHECARY</Tag>
+		<English>Bazaar</English>
+		<French>
+			<Text>Bazar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Basar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Bazar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Bazar:Bazares</Text>	<!-- stupid internet translation -->
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+
+	<!-- Confucianism -> Zoroastrianism rename by Leoreth -->
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONFUCIAN_TEMPLE</Tag>	<!-- translations missing -->
+		<English>Zoroastrian Temple</English>
+		<French>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zoroastrischer Tempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONFUCIAN_MONASTERY</Tag>	<!-- translations missing -->
+		<English>Zoroastrian Monastery</English>
+		<French>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zoroastrisches Kloster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL</Tag>	<!-- translations missing -->
+		<English>Zoroastrian Fire Temple</English>
+		<French>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zoroastrischer Feuertempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE</Tag>
+		<English>Adur Farnbag</English>
+		<French>
+			<Text>Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Adur Farnbag:Adur Farnbag</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_SALOMON</Tag> <!-- translation needed! -->
+		<English>Temple of Solomon</English>
+		<French>
+			<Text>Temple of Solomon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Tempel von Salomon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Temple of Solomon</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Temple of Solomon:Temple of Solomon</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE</Tag> <!-- translation needed! -->
+		<English>Ishtar Gate</English>
+		<French>
+			<Text>Ishtar Gate</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Ishtar-Tor</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Ishtar Gate</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ishtar Gate:Ishtar Gate</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THEODOSIAN_WALLS</Tag> <!-- translation needed! -->
+		<English>Theodosian Walls</English>
+		<French>
+			<Text>Theodosian Walls</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Theodosische Mauern</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Theodosian Walls</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Theodosian Walls:Theodosian Walls</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY</Tag> <!-- translation needed! -->
+		<English>Terracotta Army</English>
+		<French>
+			<Text>Terracotta Army</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Terracotta-Armee</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Terracotta Army</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Terracotta Army:Terracotta Army</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MEZQUITA</Tag> <!-- translation needed! -->
+		<English>La Mezquita</English>
+		<French>
+			<Text>La Mezquita</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>La Mezquita</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>La Mezquita</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>La Mezquita:La Mezquita</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DOME_ROCK</Tag> <!-- translation needed! -->
+		<English>Dome of the Rock</English>
+		<French>
+			<Text>Dome of the Rock</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Felsendom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Dome of the Rock</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Dome of the Rock:Dome of the Rock</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE</Tag> <!-- translation needed! -->
+		<English>Topkapi Palace</English>
+		<French>
+			<Text>Topkapi Palace</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Topkapi-Palast</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Topkapi Palace</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Topkapi Palace:Topkapi Palace</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE</Tag> <!-- translation needed! -->
+		<English>Brandenburg Gate</English>
+		<French>
+			<Text>Brandenburg Gate</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Brandenburger Tor</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Brandenburg Gate</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Brandenburg Gate:Brandenburg Gate</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KREMLIN</Tag> <!-- translation needed! -->
+		<English>St. Basil's Cathedral</English>
+		<French>
+			<Text>St. Basil's Cathedral</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Basilius-Kathedrale</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>St. Basil's Cathedral</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>St. Basil's Cathedral:St. Basil's Cathedral</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SAN_MARCO</Tag> <!-- translation needed! -->
+		<English>San Marco Basilica</English>
+		<French>
+			<Text>San Marco Basilica</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>San Marco Basilica</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>San Marco Basilica</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>San Marco Basilica:San Marco Basilica</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WESTMINSTER</Tag> <!-- translation needed! -->
+		<English>Westminster Palace</English>
+		<French>
+			<Text>Westminster Palace</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Palast von Westminster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Westminster Palace</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Westminster Palace:Westminster Palace</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CERN</Tag>
+		<English>CERN Research Complex</English>
+		<French>
+			<Text>CERN</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>CERN Forschungskomplex</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>CERN</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>CERN</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_EFFECT_SOLOMON</Tag>
+		<English>[ICON_BULLET]Doubles the revenue limit of all your shrines</English>
+		<German>[ICON_BULLET]Verdoppelt die Einnahmegrenze aller Ihrer Schreine</German>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_EFFECT_APOSTOLIC_PALACE</Tag>
+		<English>[ICON_BULLET]Moves its religion's holy city to where it is built</English>
+		<German>[ICON_BULLET]Verlegt die heilige Stadt seiner Religion in seinen Bauort</German>
+	</TEXT>
+
+</Civ4GameText>

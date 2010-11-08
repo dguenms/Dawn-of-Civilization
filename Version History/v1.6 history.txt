@@ -1,0 +1,83 @@
+# LEADERHEADS
+# added Maria II as a late Portuguese leaderhead
+# added a civic-specific leader switch mechanic:
+	# Germany and Spain switch to Hitler and Franco when fascist, respectively
+	# China and Russia switch to Mao and Stalin when communist, respectively
+	# Cixi and Nicholas II added as non-communist leaders
+# replaced the previous Abu Bakr leaderhead with the Omani leader from Sword of Islam (leaderhead by Ekmek, background by Amra)
+
+# NEW CIVILIZATION (ALPHA)
+# added the Italian civilization
+	# leaderhead: Victor Emmanuel
+	# unique unit: Bersagliere (Infantry with 2 movement)
+	# unique building: Art Studio (Forge with +1 happiness from marble, dye and one artist slot)
+# added an incomplete scripted spawn for Italy in 1861 (actually a respawn of Rome), the player is able to switch to them (for testing purposes)
+	# KNOWN PROBLEM: City graphics turn to ruins after the switch, city panels disappear
+	                 I have decided to release this version dispite this flaw to make all other new features available
+	# The civ also still carries many artifacts of Rome, like city names, dynamic names, stability maps
+	# There is no UP and UHV
+
+# WONDERS
+# Wonders of the classical Mediterranean no longer require marble, but the Pantheon civic to be built
+# Theodosian Walls are now pre-built in Constantinople in the 600 AD scenario
+# Theodosian Walls are now displayed as walls on the map (graphics adapted from Sword of Islam)
+# The Pantheon is now pre-built in Rome in the 600 AD scenario
+# San Marco Cathedral now requires a harbor and therefore sea access
+# The Parthenon now expires after you discover Theology (its effect was intended for Rome and Greece, seeing a Turkish democracy in the 600 AD scenario feels wrong)
+# Effect of the Temple of Solomon changed: it now doubles the shrine revenue limit for its owner and expires with Liberalism
+# The Spiral Minaret now has its old effect again (+2 gold per religious building)
+# increased Mezquita's effect to +2 beakers per specialist
+
+# UNITS
+# replaced Maceman with Longswordsman (heavy infantry graphics from Charlemagne scenario)
+# new unit: Levy (strength 6, +25% against mounted units, produced with food, requires Feudalism and Vassalage)
+# Knights now require Feudalism and the Vassalage civic
+# Camel Archers and Keshiks now require Feudalism, but not the Vassalage civic
+# Cataphracts still require Machinery and no civic
+# Longbowman now require Guilds
+
+# GAME MECHANICS
+# civilizations are more likely to collapse after a certain historical date (e.g. Rome after 476 AD)
+# adapted the civic requirement mechanic for buildings and units from Sword of Islam
+# all civilizations have their core areas revealed at spawn
+# fixed various dynamic city names
+
+# INTERFACE
+# the mouseover info box now displays tile stability in five categories:
+	# Core Area (dark green): no penalty, enemy cities here give a stability hit
+	# Historical Area (light green): no penalty
+	# Contested Area (yellow): no direct penalty, but indirect because this tile is part of the core of another civ
+	# Foreign Area (orange): penalty if number of controlled tiles exceeds a certain tolerance
+	# Foreign Core Area (red): like foreign area, but also indirect penalties because this tile is part of the core of another civ
+# removed embassies and corporation headquarters from the wonders civilopedia
+# enabled display of "produced using food" in the civilopedia
+# fixed various wrong entries for civics in the civicoption menu and civilopedia:
+	# "no state religion"
+	# "post-communist crisis"
+	# "risk of great depression"
+	# "transition to democracy"
+# reenabled the "great person born" messages known from vanilla BtS
+
+# CIVICS
+# modified the AI to be more likely to adopt historical civics
+  (basically the "favourite civic" feature per civ and per era)
+  this was especially used to encourage Greece, Rome, Babylonia, Phoenicia and Egypt to adopt Pantheon, and to discourage China and India to do so
+# Aristocracy now gives additional free units and +2 unit experience
+# Vassalage now gives +50% worker speed and allows to train Levies and Knights
+# Representation doesn't influence city maintenance anymore
+# Parliamentarism now creates unhappiness for all civs that don't adopt it (ca. 2/3 as Emancipation in vanilla) instead of a free specialist
+
+# CIVILIZATIONS
+# Egypt's UP now includes enabled Pantheon civic at start
+# added a new coat of arms for Korea (the Ihwamun)
+# Phoenicia now has its own UP: The Power of Seafaring - +50% trade route yield
+# Removed China's second UHV condition (no cities lost to Barbarians or Mongols until 1400 AD)
+# Added a new second UHV condition for China: have four golden ages until 1850 AD
+
+# BALANCE AND BUGFIXING
+# Increased "switch civic" and "switch religion" espionage mission costs
+# modified some civic stability modifiers
+# fixed all civic-dependant events to be triggered by an appropriate of the new civics
+# deleted the "you have entered the medieval era" screen after Netherlands spawn
+# fixed Justinian's starting civics in the 600 AD scenario
+# France doesn't get Musketeers at the conqueror event anymore

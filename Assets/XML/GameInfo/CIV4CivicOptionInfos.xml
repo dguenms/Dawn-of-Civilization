@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jesse Smith (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Civic Option -->
+<Civ4CivicOptionInfos xmlns="x-schema:CIV4GameInfoSchema.xml">
+	<CivicOptionInfos>
+		<CivicOptionInfo>
+			<Type>CIVICOPTION_GOVERNMENT</Type>
+			<Description>TXT_KEY_CIVICOPTION_GOVERNMENT</Description>
+			<TraitNoUpkeeps/>
+		</CivicOptionInfo>
+		<CivicOptionInfo>
+			<Type>CIVICOPTION_LEGAL</Type>
+			<Description>TXT_KEY_CIVICOPTION_LEGAL</Description>
+			<TraitNoUpkeeps/>
+		</CivicOptionInfo>
+		<CivicOptionInfo>
+			<Type>CIVICOPTION_LABOR</Type>
+			<Description>TXT_KEY_CIVICOPTION_LABOR</Description>
+			<TraitNoUpkeeps/>
+		</CivicOptionInfo>
+		<CivicOptionInfo>
+			<Type>CIVICOPTION_ECONOMY</Type>
+			<Description>TXT_KEY_CIVICOPTION_ECONOMY</Description>
+			<TraitNoUpkeeps/>
+		</CivicOptionInfo>
+		<CivicOptionInfo>
+			<Type>CIVICOPTION_RELIGION</Type>
+			<Description>TXT_KEY_CIVICOPTION_RELIGION</Description>
+			<TraitNoUpkeeps/>
+		</CivicOptionInfo>
+		<!-- Rhye - start -->
+		<CivicOptionInfo>
+			<Type>CIVICOPTION_EXPANSION</Type>
+			<Description>TXT_KEY_CIVICOPTION_EXPANSION</Description>
+			<TraitNoUpkeeps/>
+		</CivicOptionInfo>
+		<!-- Rhye - end -->
+	</CivicOptionInfos>
+</Civ4CivicOptionInfos>

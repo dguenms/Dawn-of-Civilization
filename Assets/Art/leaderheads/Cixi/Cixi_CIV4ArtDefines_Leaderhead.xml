@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- Sid Meier's Civilization 4 Beyond the Sword -->
+<!-- Modified by the Civ Gold Team -->
+<!-- -->
+<Civ4ArtDefines xmlns="x-schema:Cixi_CIV4ArtDefinesSchema.xml">
+	<LeaderheadArtInfos>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CIXI</Type>
+			<Button>Modules/Custom Leaderheads/Cixi/Btn_LH_Cixi.dds</Button>
+			<NIF>Modules/Custom Leaderheads/Cixi/Cixi.nif</NIF>
+			<KFM>Modules/Custom Leaderheads/Cixi/asoka.kfm</KFM>
+			<NoShaderNIF/>
+			<BackgroundKFM>Modules/Custom Leaderheads/Cixi/asoka_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+	</LeaderheadArtInfos>
+</Civ4ArtDefines>

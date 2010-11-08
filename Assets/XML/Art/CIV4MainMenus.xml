@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Main Menu Infos -->
+<Civ4MainMenus xmlns="x-schema:CIV4ArtDefinesSchema.xml">
+	<MainMenus>
+		<MainMenu>
+			<Type>MAIN_MENU_BEYOND_SWORD</Type>
+			<Description>Beyond the Sword</Description>
+			<Scene>MAINMENU_SCENE</Scene>
+			<SceneNoShader>MAINMENU_SCENE_NO_SHADER</SceneNoShader>
+			<Soundtrack>AS2D_OPENING_MENU</Soundtrack>
+			<Loading>MAINMENU_LOAD_BTS</Loading>
+			<LoadingSlideshow>MAINMENU_SLIDESHOW_LOAD_BTS</LoadingSlideshow>
+		</MainMenu>
+	</MainMenus>
+</Civ4MainMenus>

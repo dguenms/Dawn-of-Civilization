@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB1</Tag>
+		<English>Be the first to discover Writing, Code of Laws and Monarchy</English>
+		<French>Etre le premier à découvrir l'Ecriture, le Livre des Lois et la Monarchie</French>
+		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Schrift, Gesetzgebung und Monarchie</German>
+		<Italian>Devi essere il primo a scoprire scrittura, codice di leggi e monarchia</Italian>
+		<Spanish>Ser el primero en descubrir la Escritura, la Legislaci&#243;n y la Monarqu&#237;a</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB2</Tag>
+		<English>Make Babylon the most populous city in the world in 850 BC (Turn 84)</English>
+		<French>Faire de Babylone la ville la plus peuplée avant 850 av. J.-C. (Tour 84)</French>
+		<German>Sorgen Sie dafür, dass Babylon im Jahr 850 v. Chr. (Runde 84) die größte Stadt der Welt ist</German>
+		<Italian>Rendi Babilonia la citt&#224; più popolosa del mondo nell'850 a.C. (turno 84)</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s poblada del mundo en el 850 a. C. (turno 84)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB3</Tag>
+		<English>Make Babylon the most culturally advanced city in the world by 700 BC (Turn 94)</English>
+		<French>Faire de Babylone la ville la plus avancée culturellement avant 700 av. J.-C. (Tour 94)</French>
+		<German>Machen Sie Babylon bis zum Jahr 700 v. Chr. (Runde 94) zur kulturell bedeutendsten Stadt</German>
+		<Italian>Rendi Babilonia la citt&#224; culturalmente più avanzata del mondo entro il 700 a.C. (turno 94)</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s adelantada del mundo en t&#233;rminos de cultura en el 700 a. C. (turno 94)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR1</Tag>
+		<English>Control 5 coastal cities in the Mediterranean in 100 BC (Turn 134)</English>
+		<French>Contrôler 5 villes côtières en Méditerranée en 100 av. J.-C. (Tour 134)</French>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. (Runde 134) 7 Küstenstädte im Mittelmeerraum</German>
+		<Italian>Controlla 5 città costiere sul Mediterraneo nel 100 a.C. (turno 134)</Italian>
+		<Spanish>Controlar 5 ciudades costeras del Mediterráneo en el 100 a. C. (turno 134)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR2</Tag>
+		<English>Secure through trade or take control of 4 dye resources by 200 AD (Turn 154)</English>
+		<French>Se procurer par le commerce ou prendre le contrôle de 4 ressources de teinture avant 200 ap. J.-C. (Tour 154)</French>
+		<German>Sichern Sie sich bis zum Jahr 200 n. Chr. (Runde 154) 4 Färbemittel-Ressourcen über den Handel oder bringen Sie sie unter Ihre Kontrolle</German>
+		<Italian>Conquista o controlla con le rotte commerciali 4 fonti di tintura entro il 200 d.C. (turno 154)</Italian>
+		<Spanish>Hacerse con el control de 4 recursos de tintura o controlarlos mediante el intercambio en el 200 d. C. (turno 154)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR3</Tag>
+		<English>Have the largest map of the world in 200 AD</English>
+		<French>Etre le premier à faire le tour du monde</French>
+		<German>Besitzen Sie im Jahr 200 n. Chr. die größte Karte der Welt</German>
+		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>
+		<Spanish>Ser el primero en circunnavegar el globo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK1</Tag>
+		<English>Have 5000 gold in 1500 AD</English>
+		<French>Avoir 5000 en or en 1500 ap. J.-C.</French>
+		<German>Verfügen Sie im Jahr 1500 n. Chr. über 5.000 Gold</German>
+		<Italian>Devi avere 5000 oro nel 1500 d.C.</Italian>
+		<Spanish>Tener 5.000 monedas de oro en el 1500 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK2</Tag>
+		<English>Sink 25 ships</English>
+		<French>Couler 25 navires</French>
+		<German>Versenken Sie 25 Schiffe</German>
+		<Italian>Affonda 25 navi</Italian>
+		<Spanish>Hundir 25 barcos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK3</Tag>
+		<English>Be the first to found a city in America</English>
+		<French>Etre le premier à fonder une ville en Amérique</French>
+		<German>Gründen Sie vor allen anderen Zivilisationen die erste Stadt in Amerika</German>
+		<Italian>Devi essere il primo a fondare una citt&#224; in America</Italian>
+		<Spanish>Ser el primero en fundar una ciudad en Am&#233;rica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR1</Tag>
+		<English>Control the Bosporus (the Istanbul Strait) by 1500 AD</English>
+		<French>Contrôler le Bosphore (détroit d'Istanbul) avant 1500 ap. J.-C.</French>
+		<German>Bringen Sie bis zum Jahr 1500 n. Chr. den Bosporus (die Meerenge um Istanbul) unter Ihre Kontrolle</German>
+		<Italian>Controlla il Bosforo (lo stretto di Istanbul) entro il 1500 d.C.</Italian>
+		<Spanish>Controlar el B&#243;sforo (el estrecho de Estambul) en el 1500 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR2</Tag>
+		<English>Control the Balkans, the Black Sea and Mesopotamia in 1700 AD</English>
+		<French>Contrôler les Balkans, la Mer Noire et la Mésopotamie en 1700 ap. J.-C.</French>
+		<German>Kontrollieren Sie im Jahr 1700 n. Chr. den Balkan, das Schwarze Meer und Mesopotamien</German>
+		<Italian>Controlla Balcani, Mar Nero e Mesopotamia nel 1700 d.C.</Italian>
+		<Spanish>Controlar los Balcanes, el Mar Negro y Mesopotamia en el 1700 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR3</Tag>
+		<English>Have at least three vassal states in 1870 AD</English>
+		<French>Avoir au moins trois états vassaux en 1870 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1870 n. Chr. mindestens 3 Vasallenstaaten</German>
+		<Italian>Devi avere almeno tre stati vassalli nel 1870 d.C.</Italian>
+		<Spanish>Tener al menos tres estados vasallos en el 1870 d. C.</Spanish>
+	</TEXT>
+</Civ4GameText>

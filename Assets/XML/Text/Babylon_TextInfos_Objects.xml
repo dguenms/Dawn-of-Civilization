@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text Objects -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BABYLON_BOWMAN</Tag>
+		<English>Asharittu Bowman</English>
+		<French>
+			<Text>Archer Asharittu:Archers Asharittu</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Asharittu-Bogensch&#252;tze</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Arciere Asharittu:Arcieri Asharittu</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Saetero asharittu:Saeteros asharittu</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_EDUBBA</Tag>
+		<English>Edubba</English>
+		<French>
+			<Text>Edubba</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Edubba</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Edubba</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Edubba:Edubbas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_EDUBBA_PEDIA</Tag>
+		<English>Besides being the earliest civilization, the ancient Sumerians were known to have developed the first form of writing, Cuneiform. The word Cuneiform translates to 'wedge-shaped,' named for the tool that was used to carve this writing on clay tablets. The 'Edubba', literally meaning 'House of Tablets,' was the centre of learning in Mesopotamian cities. The 'House of Tablets' was the place where young Mesopotamian boys learned reading, writing, and mathematics. Young boys who graduated from the 'House of Tablets' lived to be scribes, writers, or scientists. Every city in Mesopotamia had an 'Edubba,' for it wasn't only a school; it was also a library for the public. The 'Edubba,' acquired its place in history for being the first to be institution of learning to be open to the public, a feature that wasn't available in ancient Egypt, and wasn't common until the time of the Romans and the Greeks, about 4000 years later.</English>
+		<French>En plus d'être la civilisation la plus ancienne, les Sumériens sont connus pour avoir développé la première forme d'écriture, appelée cunéiforme. Ce mot, qui signifie ''en forme de coin", vient de l'outil utilisé pour graver les écrits sur des tablettes d'argile. L'Edubba, littéralement la "maison des tablettes", était le centre d'enseignement des villes mésopotamiennes. C'est là que les jeunes garçons apprenaient la lecture, l'écriture et les mathématiques. Ceux qui étaient diplômés de la maison des tablettes devenaient scribes, écrivains ou scientifiques. Chaque ville de Mésopotamie possédait une edduba, qui faisait aussi office d'école mais aussi de bibliothèque. L'édubba a été la première institution d'enseignement ouverte au public, une caractéristique que n'avait pas l'ancienne Egypte et qui ne s'est répandue qu'à l'époque des Romains et des Grecs, 4000 ans plus tard.</French>
+		<German>Abgesehen davon, dass sie die früheste Zivilisation bildeten, sind die Sumerer der Antike auch dafür bekannt, die erste Form der Schrift entwickelt zu haben: die Keilschrift. Sie verdankt ihren Namen dem keilförmigen Instrument, einem Griffel aus Reet, das in den Sümpfen Südmesopotamiens wuchs, mit dem die Schriftzeichen in Tontafeln geritzt wurden. Das "Edubba", wörtlich übersetzt das "Tafelhaus", war das Bildungszentrum in mesopotamischen Städten. Im "Tafelhaus" (abgeleitet von den Tontafeln) wurden die jungen Mesopotamier im Lesen, Schreiben und Rechnen unterrichtet. Junge Männer verdingten sich nach Beendigung ihrer Ausbildung im "Tafelhaus" als Schreiber oder Gelehrte. Jede Stadt in Mesopotamien besaß ein "Edubba", denn es diente nicht nur als Schule, sondern auch als öffentliche Bibliothek. Weil es einerseits eine der ersten Schulen in der Menschheitsgeschichte darstellte und darüber hinaus auch noch für jedermann, hat sich das "Edubba", das "Tafelhaus", seinen Platz in der Geschichte redlich verdient - denn das gab es weder im alten Ägypten, noch war es bis zur Zeit der Römer und Griechen üblich, also erst 4.000 Jahre nachdem diese "öffentlichen Schulen" in Mesopotamien existiert hatten.</German>
+		<Italian>Oltre a essere la prima civilt&#224;, gli antichi Sumeri sono conosciuti per aver sviluppato la prima forma di scrittura, quella cuneiforme. La parola significa &quot;a forma di cuneo&quot;, a causa dello strumento che veniva utilizzato per incidere sulle tavolette d'argilla. L'&quot;Edubba&quot;, che letteralmente significa &quot;casa delle tavolette&quot;, era il centro di educazione nelle citt&#224; della Mesopotamia. Qui i giovani imparavano la matematica e a leggere e scrivere. I giovani che si diplomavano alla &quot;casa delle tavolette&quot; diventavano scribi, scrittori o scienziati. Ogni citt&#224; della Mesopotamia aveva un'&quot;Edubba&quot;, perch&#233; non era solo una scuola: era anche una biblioteca pubblica. L'&quot;Edubba&quot; si guadagn&#242; un posto nella storia per essere stata la prima istituzione educativa aperta al pubblico, caratteristica che non era disponibile nell'antico Egitto, e che non divenne comune fino a Greci e Romani, circa 4000 anni più tardi.</Italian>
+		<Spanish>Adem&#225;s de constituir la primera civilizaci&#243;n, los antiguos sumerios son conocidos por haber desarrollado la primera forma de escritura, la cuneiforme. La palabra cuneiforme significa &quot;con forma de cu&#241;a&quot;, y procede de la herramienta que se utilizaba para grabar los s&#237;mbolos en tablas de arcilla. &quot;Edubba&quot; significa literalmente &quot;casa de las tablas&quot;, y era el centro de aprendizaje de las ciudades de Mesopotamia. La &quot;casa de las tablas&quot; era el lugar en el que los j&#243;venes mesopot&#225;micos aprend&#237;an a leer, escribir y a realizar c&#225;lculos matem&#225;ticos. Los j&#243;venes graduados en la &quot;casa de las tablas&quot; se convert&#237;an en escribas o cient&#237;ficos. Toda ciudad mesopot&#225;mica ten&#237;a una &quot;Edubba&quot;, pues no solo era una escuela, sino que tambi&#233;n hac&#237;a las veces de biblioteca pública. La &quot;Edubba&quot; ocupa su lugar en la historia como primera instituci&#243;n de ense&#241;anza pública, algo que no se dio en el antiguo Egipto y que no se hizo común hasta los tiempos de los romanos y los griegos, unos 4.000 a&#241;os m&#225;s tarde.</Spanish>
+	</TEXT>
+</Civ4GameText>

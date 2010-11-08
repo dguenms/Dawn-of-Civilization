@@ -1,0 +1,24 @@
+# RFC Marathon modmod by embryodead
+#
+# Thanks to the work of embryodead, you are now also able to play this modmod in epic or marathon game speed
+# Spawns, events and UHVs of course scale correctly.
+
+# new UP for Japan: The Power of Honor - unit promotions are available 50% faster
+# new UP for England: The Power of Indirect Rule - city distance maintenance halved
+# The Khmer spawn one tile south at Bang Makok (to help the AI)
+# Corporation redesign: the corporations are now:
+	1. Cereal Industry (GM): Wheat, Rice, Corn -> Food
+	2. Fishing Industry (GM): Rice, Fish, Crab, Clam -> Food
+	3. Oil Industry (GM): Oil -> Gold
+	4. Computer Industry (GS): Oil, Copper, Aluminum -> Gold & Research
+	5. Textile Industry (GE): Coal, Sheep, Cotton, Silk, Dye -> Gold & Production
+	6. Steel Industry (GE): Coal, Copper, Iron, Aluminum -> Production
+	7. Luxury Industry (GA): Gems, Gold, Silver -> Gold & Culture
+# new UP for Mongolia: The Power of the Horde - every city captured spawns keshiks according to its size
+# more Keshiks for Mongolia on spawn
+# The Germans now spawn at Wien/Vienna. The coal on this tile was moved onto a hill west of it.
+# fixed Egypt's UP: now allows Monarchy/Serfdom for the same effects as in RFC
+# gave Netherlands some beakers in Astronomy to make them research it faster
+# The Apostolic Palace now requires Catholic state religion
+# The Apostolic Palace moves the Catholic holy city to its city when built. The shrine is not moved.
+# fixed Pantheon and Secularism so that they allow no state religion, as intended.

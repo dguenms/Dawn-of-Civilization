@@ -1,0 +1,32 @@
+# Unique Civ-specific Great People Mod by Gaius Octavius
+  Now every civilization* has its own set of names for each type of great person.
+  No Benjamin Franklin in Ancient Egypt or Akbar in modern Japan anymore!
+# *Civilizations missing unique GP names are: Portugal, Khmer, Maya
+# Plague enabled again, but units are only harmed until they are at 50% damage.
+# Added the following wonders:
+	# Ishtar Gate (Monarchy): +100% enemy war weariness
+	# Theodosian Walls (Construction, Catholicism): -100% bombard damage (except vs. Gunpowder)
+	# Terracotta Army (Pottery, Taoism): +50% great general rate
+	# La Mezquita (Theology, Islam): +1 research per specialist
+	# Dome of the Rock (Divine Right, Islam): -50% war weariness
+	# Topkapi Palace (Paper, Islam): works as government center
+	# Brandenburg Gate (Nationalism): +100% great general rate within cultural borders
+# Changed the effects of the following wonders:
+	# Statue of Zeus: free pagan temples
+	# Pyramids: -33% hurry costs
+	# Sphinx: adds 5 artist slots
+	# Parthenon: allows all government civics
+	# Hagia Sophia: +50% great people birth in all cities
+	# Temple of Salomon: now only +2 gold per religious building
+	# Kremlin: Renamed St. Basil's Cathedral, new effect: +2 espionage per specialist
+# Fixed the Bireme graphics bug (1.23 hotfix)
+# Fixed the civ name display bug (1.23 hotfix)
+# Added missing change of the Confucian/Zoroastrian adjective (1.23 hotfix)
+# Phoenicia gets its settler + army + workers at Qart-Hadasht in 820BC again (if controlled by the AI)
+# Removed Edinburgh spawn, England gets an additional settler instead
+# excluded Sicily from Roman spawn area
+# Airships now require Combustion to be built
+# Democratic civ names are now properly displayed when in Autocracy with Representation or Parliament
+# Decreased the likeliness that Germany settles in the Ukraine, increased likeliness for the Baltic
+# Increased the likeliness that Russia settles in the Ukraine
+# Changed all occurences of "Reich" in Germany's unique names to "Empire"

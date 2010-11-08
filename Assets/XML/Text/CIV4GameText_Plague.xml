@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PLAGUE</Tag>
+		<English>Plague</English>
+		<French>Peste</French>
+		<German>Pest</German>
+		<Italian>Peste</Italian>
+		<Spanish>Peste</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAGUE_SPREAD_CITY</Tag>
+		<English>Plague has spread in</English>
+		<French>La peste se répand dans la ville : </French>
+		<German>Die Pest breitet sich aus, diesmal in</German>
+		<Italian>La peste si è diffusa a</Italian>
+		<Spanish>La peste se ha extendido por</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAGUE_PROCESS_CITY</Tag>
+		<English>Plague is killing people in</English>
+		<French>La peste tue des gens dans la ville : </French>
+		<German>Die Pest fordert Menschenopfer in</German>
+		<Italian>La peste sta uccidendo gente a</Italian>
+		<Spanish>La peste está matando gente en</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAGUE_PROCESS_UNIT</Tag>
+		<English>Plague has killed our unit near</English>
+		<French>La peste a tué notre unité près de</French>
+		<German>Eine unserer Einheiten ist der Pest zum Opfer gefallen, und zwar in der N&#228;he von</German>
+		<Italian>La peste ha ucciso la nostra unità vicino a </Italian>
+		<Spanish>La peste ha matado a una unidad nuestra cerca de</Spanish>
+	</TEXT>
+</Civ4GameText>
