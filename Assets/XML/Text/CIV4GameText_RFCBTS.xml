@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<!--Please place any new text entries into this file-->
+	<!-- now Charlemagne again
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CHARLEMAGNE</Tag>
+		<English>Otto I</English>
+		<French>
+			<Text>Otto I</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Otto I.</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Ottone I</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ot&#243;n I</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	-->
+
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_JUDAISM_PEDIA</Tag>
+		<English>[TAB]Christianity is the world's largest religion. It is the dominant religion in Europe, North, Central and South America, and has made significant inroads in all other parts of the world. Christianity is based upon the teachings of Jesus Christ, whom Christians believe to have been the "son of God made flesh," brought to the world to teach men the way of salvation. Jesus lived from approximately 6 BC to 30 AD. [PARAGRAPH:2]Jesus' life and teachings are recorded in the New Testament. Born of the Virgin Mary, a Jew, the Christ lived and taught in and around present-day Palestine and Israel. According to the New Testament, he performed many miracles during his lifetime, and he taught men how to cleanse themselves from sin and thus achieve eternal happiness after death. Jesus was betrayed and crucified, but he rose from death after three days and ascended into heaven. [PARAGRAPH:2]After Christ's death, Christianity spread throughout the eastern Mediterranean. The Romans tried unsuccessfully to suppress it, but eventually they adopted Christianity as the state religion. With the might of Rome behind it, Christianity spread rapidly through the known world. [PARAGRAPH:2]Protestantism represents the branch of Christianity which split from Rome in the 16th and 17th centuries. There are many different Protestant churches with a diverse range of practices and theological views. Many Protestant churches are closer to Rome than their more radical fellow Protestants.</English>
+		<French>[TAB]Le confucianisme constitue une religion d'Asie du Sud-Est fond&#233;e sur les enseignements de Confucius (552 &#224; 479 av. J.-C.). Confucius (ou Kong Fu Zi en chinois) a v&#233;cu en Chine durant une p&#233;riode particuli&#232;rement agit&#233;e, &#224; l'heure o&#249; le pays avait cruellement besoin d'un pouvoir central fort et o&#249; divers petits Etats se livraient &#224; une lutte incessante. Tout autant philosophe et th&#233;oricien politique que chef religieux, Confucius cherchait &#224; enseigner le comportement correct de l'homme en soci&#233;t&#233;. Sa philosophie accordait une grande importance &#224; la moralit&#233; personnelle et gouvernementale ainsi qu'&#224; une loyaut&#233; familiale forte. Il consid&#233;rait que tout homme avait une place dans la soci&#233;t&#233; et qu'il devait se comporter de fa&#231;on vertueuse et biens&#233;ante en fonction de cette place. Ceci valait &#233;galement pour le dirigeant, qui devait &#234;tre d&#233;vou&#233; au peuple et ne pas privil&#233;gier son avancement personnel. [PARAGRAPH:2]Le confucianisme a vu son influence grandir au cours des deux si&#232;cles ayant suivi la mort de Confucius, avant d'&#234;tre compl&#232;tement supprim&#233; sous la dynastie Qin : les dirigeants le consid&#233;raient en effet comme une menace pour leur pouvoir. Les Qin ont syst&#233;matiquement d&#233;truit les temples confucianistes et br&#251;l&#233; tous les livres sur le confucianisme, y compris la majorit&#233; des &#233;crits de Confucius. Pratiquement tout a disparu, except&#233; des livres importants cach&#233;s dans les murs de la maison d'un fid&#232;le. A leur d&#233;couverte, les quelques ultimes adeptes ont pu r&#233;tablir leur religion et la r&#233;pandre. Finalement, le confucianisme est devenu la religion d'Etat en Chine et l'est rest&#233;e jusqu'&#224; l'arriv&#233;e au pouvoir des Communistes au XXe si&#232;cle. [PARAGRAPH:2]Aujourd'hui, le confucianisme b&#233;n&#233;ficie d'une sorte de renouveau et de nombreux &#233;tudiants chinois (et du monde entier) &#233;tudient le grand philosophe et ses enseignements. A l'heure actuelle, il est cependant davantage &#233;tudi&#233; comme philosophie que comme religion, bien que la distinction ne soit pas nette dans la pens&#233;e orientale.</French>
+		<German>[TAB]Der Konfuzianismus ist eine ostasiatische Religion, die auf den Lehren Konfuzius' basiert. Konfuzius (Chinesisch: "Kong Fu Zi") lebte um 552 bis 479 vor Christus in China, als unz&#228;hlige Feudalherren um die Vorherrschaft k&#228;mpften. Konfuzius war Philosoph, Theoretiker und Glaubensstifter. Er war entschlossen, seine Mitmenschen das richtige Verhalten innerhalb der Gesellschaft zu lehren. Seine Philosophie umfasste die pers&#246;nliche und die Regierungsmoral sowie die Bindungen innerhalb der Familie. In seinen Augen hatte jeder Mensch einen festen Platz innerhalb der Gesellschaft und musste sich seiner gesellschaftlichen Stellung entsprechend verhalten. Dies galt auch f&#252;r den Herrscher, der laut Konfuzius in erster Linie seinem Volk Rechenschaft schuldig war. [PARAGRAPH:2]Der Konfuzianismus gewann in den Jahrhunderten nach Konfuzius' Tod an Einfluss, bis er w&#228;hrend der Qin-Dynastie unterdr&#252;ckt wurde. Die Qin-Herrscher zerst&#246;rten systematisch alle konfuzianischen Tempel und verbrannten nahezu alle konfuzianischen Schriften. Mit Ausnahme einiger wichtiger (in den Mauern des Hauses eines Anh&#228;ngers der konfuzianischen Lehre versteckter) B&#252;cher wurden alle Schriften vernichtet. Dank dieser B&#252;cher konnten die wenigen &#252;berlebenden Anh&#228;nger ihre Religion erneuern und erneut verbreiten. Sp&#228;ter war der Konfuzianismus in China (bis zur Machtergreifung der Kommunisten) sogar Staatsreligion. [PARAGRAPH:2]Heute erlebt der Konfuzianismus eine kleine Renaissance. Viele (nicht nur chinesische) Studenten studieren den gro&#223;en Philosophen und seine Lehren. Allerdings gilt Konfuzius heute eher als Philosoph denn als Religionsstifter.</German>
+		<Italian>[TAB]Il Confucianesimo &#232; una religione dell'Est Asiatico, fondata sugli insegnamenti di Confucio (in Cinese Kong Fu Zi), che visse in Cina tra il 552 e il 479 a. C., in un periodo turbolento nel quale la nazione era priva di un governo centrale, mentre altri piccoli stati lottavano tra loro per il dominio del territorio. Tanto filosofo politico quanto leader religioso, Confucio cerc&#242; di insegnare il corretto comportamento di un uomo all'interno della societ&#224;: la sua filosofia enfatizzava l'etica morale di ogni individuo e del governo, oltre a forti legami famigliari. Confucio credeva che ogni uomo avesse un posto nella societ&#224; e ciascuno dovesse agire giustamente e correttamente a seconda del suo ruolo; il discorso valeva anche per il sovrano, che doveva essere devoto verso il suo popolo. [PARAGRAPH:2]Il Confucianesimo divent&#242; molto influente nei due secoli successivi alla morte di Confucio, finch&#233; non venne soppresso durante la dinastia Qin, i cui leader credevano potesse rappresentare un pericolo per la conservazione del potere. I Qin distrussero sistematicamente ogni tempio e ogni libro di Confucio, comprese la maggior parte delle sue scritture. Venne distrutto praticamente tutto, tranne alcuni importanti libri, nascosti nelle mura della casa di un fedele. Quando vennero scoperti, i seguaci rimanenti furono in grado di ricostruire e diffondere nuovamente la loro religione. In seguito, il Confucianesimo divenne la religione ufficiale della Cina ed &#232; rimasta tale fino all'avvento del regime comunista, nel XX secolo. [PARAGRAPH:2]Al giorno d'oggi, il Confucianesimo sta vivendo un periodo di rinascita e molti studenti Cinesi (ma anche di tutto il mondo), studiano il grande filosofo e i suoi insegnamenti. Tuttavia, oggigiorno il Confucianesimo viene studiato pi&#249; come filosofia, piuttosto che come religione (malgrado non esista una netta distinzione tra le due cose, almeno in Oriente).</Italian>
+		<Spanish>[TAB]El confucianismo es una religi&#243;n del Lejano Oriente basada en las ense&#241;anzas de Confucio, (conocido en chino como Kong Fu Zi), que vivi&#243; entre el 552 y el 479 a. C. En aquel tiempo, China viv&#237;a un periodo especialmente turbulento, sin un liderazgo central y disputada por varios estados menores. Confucio, fil&#243;sofo y te&#243;rico pol&#237;tico adem&#225;s de l&#237;der religioso, incluy&#243; entre sus ense&#241;anzas un importante componente &#233;tico. Su filosof&#237;a subrayaba especialmente la moralidad personal y gubernamental, as&#237; como la importancia de los lazos familiares. Para &#233;l, cada hombre ten&#237;a un lugar en la sociedad, y deb&#237;a comportarse con rectitud y correcci&#243;n en funci&#243;n de ese lugar. Esto tambi&#233;n se aplicaba al gobernante, quien deb&#237;a actuar por el bien del pueblo, y no por el suyo propio. [PARAGRAPH:2]La influencia del confucianismo fue aumentando durante los dos siglos posteriores a la muerte de su creador, hasta que fue severamente reprimido por la dinast&#237;a Qin, cuyos l&#237;deres lo consideraban una amenaza para su poder. Los Qin destruyeron sistem&#225;ticamente los templos confucionistas y quemaron todos sus libros, incluida la mayor parte de las escrituras del propio Confucio. Todo se perdi&#243;, salvo algunos libros importantes que quedaron escondidos en la pared de la casa de uno de sus seguidores. Cuando fueron descubiertos, los fieles supervivientes pudieron reconstruir y difundir de nuevo su religi&#243;n. Con el tiempo, el confucianismo acab&#243; por convertirse en la religi&#243;n oficial en China. Sigui&#243; si&#233;ndolo hasta que los comunistas se hicieron con el poder en el siglo XX. [PARAGRAPH:2]En la actualidad, el confucianismo vive una especie de renacimiento, y muchos chinos (y gente de todo el mundo) estudian al gran fil&#243;sofo y sus ense&#241;anzas. No obstante, se estudia m&#225;s como una filosof&#237;a que como una religi&#243;n (aunque debe se&#241;alarse que en Oriente no hay una distinci&#243;n clara entre ambos conceptos).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_CHRISTIANITY_PEDIA</Tag>
+		<English>[TAB]Christianity is the world's largest religion. It is the dominant religion in Europe, North, Central and South America, and has made significant inroads in all other parts of the world. Christianity is based upon the teachings of Jesus Christ, whom Christians believe to have been the "son of God made flesh," brought to the world to teach men the way of salvation. Jesus lived from approximately 6 BC to 30 AD. [PARAGRAPH:2]Jesus' life and teachings are recorded in the New Testament. Born of the Virgin Mary, a Jew, the Christ lived and taught in and around present-day Palestine and Israel. According to the New Testament, he performed many miracles during his lifetime, and he taught men how to cleanse themselves from sin and thus achieve eternal happiness after death. Jesus was betrayed and crucified, but he rose from death after three days and ascended into heaven. [PARAGRAPH:2]After Christ's death, Christianity spread throughout the eastern Mediterranean. The Romans tried unsuccessfully to suppress it, but eventually they adopted Christianity as the state religion. With the might of Rome behind it, Christianity spread rapidly through the known world. [PARAGRAPH:2]Catholicism represents the branch of Christianity which did not join the Protestant Reformation. The Roman Catholic and the Eastern Orthodox churches are the two largest groupings of "unreformed" Christian denominations.</English>
+		<French>[TAB]Le christianisme constitue la religion la plus r&#233;pandue dans le monde. Il domine en Europe, en Am&#233;rique du Nord et en Am&#233;rique latine et s'est largement impos&#233; dans toutes les autres r&#233;gions du monde. Le christianisme repose sur les enseignements de J&#233;sus-Christ consid&#233;r&#233; par les Chr&#233;tiens comme le "fils de Dieu fait homme" et mis au monde pour apporter le salut. J&#233;sus a v&#233;cu d'environ 6 av. J.-C. &#224; 30 ap. J.-C. [PARAGRAPH:2]La vie de J&#233;sus et ses enseignements sont consign&#233;s dans le Nouveau Testament. N&#233; d'une m&#232;re juive, la Vierge Marie, le Christ a v&#233;cu et enseign&#233; dans la zone correspondant aujourd'hui &#224; la Palestine et &#224; Isra&#235;l. Selon le Nouveau Testament, il a accompli de nombreux miracles au cours de sa vie et a enseign&#233; aux hommes comment se purifier de leurs p&#233;ch&#233;s et parvenir ainsi &#224; la vie &#233;ternelle apr&#232;s la mort. J&#233;sus a &#233;t&#233; trahi et crucifi&#233;, mais il est ressuscit&#233; le troisi&#232;me jour et est mont&#233; au ciel [PARAGRAPH:2]Apr&#232;s la mort du Christ, la chr&#233;tient&#233; s'est r&#233;pandue dans toute la M&#233;diterran&#233;e orientale. Les Romains ont tent&#233;, sans y parvenir, de l'&#233;radiquer, avant d'adopter finalement le christianisme comme religion d'Etat. A la chute de l'Empire romain, la chr&#233;tient&#233; s'est scind&#233;e en deux Eglises et a continu&#233; depuis &#224; se diviser en diverses branches relativement hostiles les unes envers les autres. Aujourd'hui, les principales Eglises chr&#233;tiennes sont le catholicisme romain, le protestantisme, la chr&#233;tient&#233; orthodoxe et le mormonisme.</French>
+		<German>[TAB]Das Christentum ist als gr&#246;&#223;te Weltreligion die Hauptreligion Europas, Nord-, Mittel- und S&#252;damerikas. Grundlage des Christentums ist die Lehre Jesus', des "fleischgewordenen Sohns Gottes", der von Maria geboren wurde, um den Menschen die Erl&#246;sung zu bringen. Jesus lebte um 6 vor bis 30 nach Christus. [PARAGRAPH:2]Sein Leben und Wirken ist im Neuen Testament festgehalten. Jesus lebte und lehrte im heutigen Pal&#228;stina und Israel. Laut des Neuen Testaments vollbrachte er verschiedene Wunder und versprach den Menschen die Vergebung ihrer S&#252;nden und die ewige Gl&#252;ckseligkeit. Jesus wurde von Judas Ischariot an die R&#246;mer ausgeliefert und gekreuzigt. Drei Tage nach seinem Tod stand Jesus von den Toten auf und fuhr in den Himmel auf. [PARAGRAPH:2]Nach Jesus' Tod breitete sich das Christentum im gesamten &#246;stlichen Mittelmeerraum aus. Die R&#246;mer versuchten zun&#228;chst erfolglos, die neue Religion zu unterdr&#252;cken, bis schlie&#223;lich Kaiser Konstantin das Christentum zur Staatsreligion erhob. Als das R&#246;mische Reich zerfiel, kam es zu einer ersten Spaltung des Christentums. Heute sind der Katholizismus, der Protestantismus sowie das orthodoxe Christentum die wichtigsten Str&#246;mungen des Christentums.</German>
+		<Italian>[TAB]Il Cristianesimo &#232; la religione pi&#249; diffusa del mondo, &#232; dominante in Europa e nelle Americhe e si pu&#242; trovare anche in comunit&#224; in altre parti del mondo. Il Cristianesimo si basa sugli insegnamenti di Ges&#249; Cristo, che i Cristiani credono sia stato "il figlio di Dio sceso in Terra", venuto al mondo per insegnare agli uomini la via della salvezza. Ges&#249; visse approssimativamente tra il 6 a. C e il 30 d. C. [PARAGRAPH:2] La vita di Ges&#249; e i suoi insegnamenti sono raccolti nel Nuovo Testamento: figlio della Vergine Maria e di un Ebreo, Cristo visse e insegn&#242; nella zona tra Palestina e Israele. Stando al Nuovo Testamento, durante la sua vita comp&#236; molti miracoli e insegn&#242; agli uomini come liberarsi dai propri peccati e come raggiungere la pace eterna dopo la morte. Ges&#249; venne tradito e crocefisso, ma risorse dalla morte dopo tre giorni e sal&#236; in Paradiso. [PARAGRAPH:2]Dopo la morte di Cristo, il Cristianesimo si diffuse nella zona orientale del Mediterraneo: i Romani tentarono di sopprimerlo, ma successivamente adottarono il Cristianesimo come religione ufficiale; grazie alla potenza di Roma, la nuova religione si diffuse rapidamente nel mondo conosciuto. Con la caduta dell'Impero Romano, il Cristianesimo si divise in due gruppi: da allora ha continuato a frammentarsi, addirittura con la creazione di fazioni molto ostili tra loro. Oggi, i gruppi principali sono il Cattolicesimo Romano, il Protestantesimo, il Cristianesimo Ortodosso e il Mormonismo.</Italian>
+		<Spanish>[TAB]El cristianismo es la religi&#243;n m&#225;s extendida del mundo. Predomina en Europa y Am&#233;rica y tiene una importante presencia en las dem&#225;s zonas del mundo. Se basa en las ense&#241;anzas de Jesucristo, "el hijo de Dios hecho carne" para los cristianos, venido al mundo para mostrar a los hombres el camino de la salvaci&#243;n. Jes&#250;s vivi&#243; aproximadamente del a&#241;o 6 a. C. al a&#241;o 30 d. C. [PARAGRAPH:2]Su vida y sus ense&#241;anzas se narran en el Nuevo Testamento. Nacido de la virgen Mar&#237;a, una jud&#237;a, Cristo vivi&#243; y ense&#241;&#243; en la zona donde hoy en d&#237;a se encuentran Palestina e Israel. Seg&#250;n el Nuevo Testamento, durante su vida realiz&#243; numerosos milagros y ense&#241;&#243; a los hombres a purificarse del pecado y alcanzar la felicidad eterna tras la muerte. Jes&#250;s fue traicionado y crucificado, pero se alz&#243; de entre los muertos tres d&#237;as despu&#233;s y ascendi&#243; a los cielos. [PARAGRAPH:2]Tras su muerte, el cristianismo se propag&#243; r&#225;pidamente por el Mediterr&#225;neo oriental. Los romanos trataron de reprimirlo sin mucho &#233;xito, hasta el punto de que acabar&#237;an adopt&#225;ndolo como religi&#243;n de estado. Respaldado por el poder de Roma, se difundi&#243; r&#225;pidamente por todo el orbe. Tras la ca&#237;da del Imperio Romano, el cristianismo se dividi&#243; en dos ramas. Desde entonces esa fragmentaci&#243;n se ha incrementado, y la hostilidad entre las diferentes facciones ha alcanzado cotas muy elevadas. En la actualidad, las ramas m&#225;s importantes del cristianismo son el catolicismo romano, el protestantismo, el cristianismo ortodoxo y el mormonismo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFORMATION_PEDIA</Tag>
+		<English>[TAB]Christianity endured many schisms and heresies through the Dark Ages and Middle Ages, the most significant being the Great Schism of 1054, when the Roman Catholic and Eastern Orthodox churches separated. The Renaissance saw a split in Catholicism of perhaps even greater magnitude. The Protestant Reformation began as an internal reaction against corrupt practices and ended as a full-blown theological schism. The process began with Martin Luther's nailing of the Ninety-Five Theses to the door of Wittenberg Castle in 1517, and ended with the Peace of Westphalia in 1648, which permanently recognised the Catholic-Protestant division in Europe. Events between these include the conversion of many European states to Protestant faiths (of which there were many), the Council of Trent (beginning in 1545 to encourage internal Catholic reform), and the Thirty Years' War, beginning in 1618, which left Central Europe devastated.</English>
+		<French>[TAB]Les peuples du monde antique &#233;taient fascin&#233;s et intimid&#233;s par les forces de la nature. Les s&#233;ismes, temp&#234;tes et autres ph&#233;nom&#232;nes naturels &#233;taient g&#233;n&#233;ralement consid&#233;r&#233;s comme des signes du ciel. Des individus et des groupes se sont d&#233;marqu&#233;s en donnant des explications &#224; ces &#233;v&#233;nements et ont transmis leurs connaissances &#224; la tribu. Les pr&#234;tres et pr&#234;tresses du mysticisme, souvent appel&#233;s oracles, pr&#233;tendaient &#234;tre li&#233;s au divin par la m&#233;ditation et la transe. Le mysticisme primitif offrait &#224; l'humanit&#233; les premiers semblants de liens avec les puissances qui fa&#231;onnaient leur monde et repr&#233;sentait un premier pas vers les religions organis&#233;es &#224; venir, polyth&#233;istes ou monoth&#233;istes.</French>
+		<German>[TAB]Die V&#246;lker der alten Welt waren von den Naturm&#228;chten, die sie umgaben, gleicherma&#223;en fasziniert wie ge&#228;ngstigt: Erdbeben, St&#252;rme und andere Naturereignisse wurden allgemein als Zeichen der G&#246;tter interpretiert. Sowohl einzelne Mystiker als auch mystische Vereinigungen begannen, Erkl&#228;rungen f&#252;r diese Vorg&#228;nge zu formulieren und ihren St&#228;mmen kundzutun. Die Priester und Priesterinnen der Mystik, die oftmals als Orakel bezeichnet wurden, behaupteten, durch Meditation und im Trancezustand in direkter Verbindung mit den G&#246;ttern zu stehen. Auf diese Weise suggerierte die primitive Mystik den Menschen erste Kontakte mit den M&#228;chten, die ihre Welt erschaffen und geformt hatten - damit war der Grundstein f&#252;r die polytheistischen und monotheistischen Religionen der Zukunft gelegt.</German>
+		<Italian>[TAB]I popoli antichi erano affascinati e al tempo stesso intimiditi dalle forze della natura che li circondava: terremoti, tempeste e altri fenomeni erano generalmente visti come segni inviati dal cielo. Individui e gruppi tentarono di formulare spiegazioni per questi eventi, che si tramandarono poi di generazione in generazione. I sacerdoti e le sacerdotesse del misticismo, spesso chiamati &quot;oracoli&quot;, dichiaravano di entrare in contatto con la divinità attraverso la meditazione profonda e la contemplazione in stato di trance. Il misticismo primitivo fornì all'umanità il primo, tenue, legame con i poteri che formavano il mondo e rappresentò il primo passo verso le religioni organizzate, monoteiste e politeiste, che apparvero successivamente.</Italian>
+		<Spanish>[TAB]A los pueblos del mundo antiguo les fascinaban y sobrecog&#237;an las fuerzas de la naturaleza que les rodeaban. Los terremotos, tormentas y otros fen&#243;menos sol&#237;an ser considerados se&#241;ales del cielo. Surgieron individuos y grupos que formulaban explicaciones para estos sucesos, y transmit&#237;an dicho conocimiento a la tribu. Los sacerdotes y sacerdotisas del misticismo, llamados a menudo or&#225;culos, afirmaban unirse con la divinidad por medio de la meditaci&#243;n y de un estado contemplativo similar al trance. El misticismo primitivo ofreci&#243; a la humanidad los primeros y tenues v&#237;nculos con los poderes que daban forma a su mundo, y represent&#243; un primer paso en el camino hacia las futuras religiones organizadas, tanto polite&#237;stas como monote&#237;stas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFORMATION</Tag>
+		<English>Reformation</English>
+		<French>
+			<Text>Mysticisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Mystik</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Misticismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Misticismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REFORMATION_TITLE</Tag>
+		<English>The Reformation!</English>
+		<French>The Reformation!</French>
+		<German>The Reformation!</German>
+		<Italian>The Reformation!</Italian>
+		<Spanish>The Reformation!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REFORMATION_MESSAGE</Tag>
+		<English>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</English>
+		<French>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</French>
+		<German>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</German>
+		<Italian>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</Italian>
+		<Spanish>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFORMATION_QUOTE</Tag>
+		<English>"Peace if possible, truth at all costs." - Martin Luther</English>
+		<French>"Une soci&#233;t&#233; pr&#234;te &#224; sacrifier un peu de libert&#233; contre un peu de s&#233;curit&#233; ne m&#233;rite ni l'une ni l'autre et finit par perdre les deux !" - Benjamin Franklin</French>
+		<German>"Eine Gesellschaft, die ihre Freiheit zugunsten der Sicherheit opfert, hat beides nicht verdient." - Benjamin Franklin</German>
+		<Italian>"Qualsiasi societ&#224; che sacrifica un po' di libert&#224; per una maggiore sicurezza non si merita nessuna delle due cose e le perde entrambe." - Benjamin Franklin</Italian>
+		<Spanish>"Cualquier sociedad que renuncie a un poco de libertad para obtener algo de seguridad no se merece ni una ni otra y acabar&#225; perdiendo ambas." - Benjamin Franklin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MONOTHEISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic. </English>
+		<French>[COLOR_TECH_TEXT]Monoth&#233;isme[COLOR_REVERT] permet d'instaurer la [COLOR_HIGHLIGHT_TEXT]religion organis&#233;e[COLOR_REVERT].</French>
+		<German>Dar&#252;ber hinaus erm&#246;glicht sie die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT].</German>
+		<Italian>[COLOR_TECH_TEXT]Monoteismo[COLOR_REVERT] permette la realizzazione della forma di governo [COLOR_HIGHLIGHT_TEXT]Religione organizzata[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Monote&#237;smo[COLOR_REVERT] activa el principio de la [COLOR_HIGHLIGHT_TEXT]Religi&#243;n organizada[COLOR_REVERT]. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THEOLOGY_STRATEGY</Tag>
+		<English>The first to research this tech founds [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. It enables the [COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] civic and allows construction of the [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] wonder.</English>
+		<French>La premi&#232;re civilisation qui atteint cette technologie fonde le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT], qui permet d'instaurer la [COLOR_HIGHLIGHT_TEXT]th&#233;ocratie[COLOR_REVERT] et de construire la [COLOR_BUILDING_TEXT]Chapelle Sixtine[COLOR_REVERT].</French>
+		<German>Wer diese Technologie zuerst erforscht, begr&#252;ndet das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Letzteres ist die Voraussetzung f&#252;r die Staatsform [COLOR_HIGHLIGHT_TEXT]Theokratie[COLOR_REVERT] und erm&#246;glicht den Bau der [COLOR_BUILDING_TEXT]Sixtinischen Kapelle[COLOR_REVERT].</German>
+		<Italian>Chi ricerca per primo questa tecnologia scopre il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Inoltre, permette la realizzazione della forma di governo [COLOR_HIGHLIGHT_TEXT]Teocrazia[COLOR_REVERT] e la costruzione della Meraviglia [COLOR_BUILDING_TEXT]Cappella Sistina[COLOR_REVERT].</Italian>
+		<Spanish>El primero en investigar esta tecnolog&#237;a fundar&#225; el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. &#201;ste activa el principio de [COLOR_HIGHLIGHT_TEXT]Teocracia[COLOR_REVERT] y permite la construcci&#243;n de la maravilla de la [COLOR_BUILDING_TEXT]Capilla Sixtina[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFORMATION_STRATEGY</Tag>
+		<English>The [COLOR_TECH_TEXT]Reformation[COLOR_REVERT] sparks a great schism in Christianity!</English>
+		<French>Le [COLOR_TECH_TEXT]mysticisme[COLOR_REVERT] permet de construire l'[COLOR_BUILDING_TEXT]Ob&#233;lisque[COLOR_REVERT] et [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Il m&#232;ne aussi &#224; la [COLOR_TECH_TEXT]m&#233;ditation[COLOR_REVERT] et au [COLOR_TECH_TEXT]polyth&#233;isme[COLOR_REVERT], ces deux technologies permettant au joueur en ayant fait la d&#233;couverte en premier de fonder une religion.</French>
+		<German>Die [COLOR_TECH_TEXT]Mystik[COLOR_REVERT] erm&#246;glicht den Bau von [COLOR_BUILDING_TEXT]Obelisken[COLOR_REVERT] und des Wunders von [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Dar&#252;ber hinaus legt sie den Grundstein f&#252;r die [COLOR_TECH_TEXT]Meditation[COLOR_REVERT] und den [COLOR_TECH_TEXT]Polytheismus[COLOR_REVERT]. Der Entdecker des Polytheismus bzw. der Meditation erh&#228;lt eine Religion.</German>
+		<Italian>Il [COLOR_TECH_TEXT]Misticismo[COLOR_REVERT] permette la realizzazione di [COLOR_BUILDING_TEXT]obelischi[COLOR_REVERT] e della Meraviglia [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Inoltre, conduce alla [COLOR_TECH_TEXT]Meditazione[COLOR_REVERT] e al [COLOR_TECH_TEXT]Politeismo[COLOR_REVERT], ciascuno delle quali fornisce una religione alla civilt&#224; che le scopre per prima.</Italian>
+		<Spanish>El [COLOR_TECH_TEXT]Misticismo[COLOR_REVERT] permite los [COLOR_BUILDING_TEXT]Obeliscos[COLOR_REVERT] y la maravilla de [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Tambi&#233;n lleva a la [COLOR_TECH_TEXT]Meditaci&#243;n[COLOR_REVERT] y al [COLOR_TECH_TEXT]Polite&#237;smo[COLOR_REVERT], cada uno de los cuales proporciona una religi&#243;n al primero que lo descubra.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT]</English>
+		<French>Utilisez le missionnaire pour propager le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] dans les villes alli&#233;es (ou les villes rivales avec lesquelles vous avez un accord de [COLOR_HIGHLIGHT_TEXT]libre passage[COLOR_REVERT]). Cela augmente vos revenus si vous avez construit le [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT].</French>
+		<German>Setzen Sie diesen Missionar ein, um in verb&#252;ndeten oder feindlichen St&#228;dten (mit [COLOR_HIGHLIGHT_TEXT]offenen Grenzen[COLOR_REVERT]) das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] zu verbreiten. Haben Sie die [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT], erh&#246;hen sich dadurch Ihre Einnahmen.</German>
+		<Italian>Usa questo missionario per diffondere il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] nelle citt&#224; amiche (o nelle citt&#224; rivali con le quali si ha [COLOR_HIGHLIGHT_TEXT]diritto di passaggio[COLOR_REVERT]). Aumentano le entrate se si possiede il [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT].</Italian>
+		<Spanish>Este misionero sirve para propagar el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] por ciudades amigas (o de civilizaciones rivales con las que se tenga una [COLOR_HIGHLIGHT_TEXT]Apertura de fronteras[COLOR_REVERT]). Eso aumentar&#225; los ingresos si se tiene el [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHRISTIAN_MISSIONARY_STRATEGY</Tag>
+		<English>Use this missionary to actively spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]). This increases your income if you have the [COLOR_BUILDING_TEXT]Basilica of St. Peter[COLOR_REVERT]</English>
+		<French>Utilisez le missionnaire pour propager le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] dans les villes alli&#233;es (ou les villes rivales avec lesquelles vous avez un accord de [COLOR_HIGHLIGHT_TEXT]libre passage[COLOR_REVERT]). Cela augmente vos revenus si vous avez construit l'[COLOR_BUILDING_TEXT]Basilica of St. Peter[COLOR_REVERT]).</French>
+		<German>Setzen Sie diesen Missionar ein, um in verb&#252;ndeten oder feindlichen St&#228;dten (mit [COLOR_HIGHLIGHT_TEXT]offenen Grenzen[COLOR_REVERT]) den [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] zu verbreiten. Haben Sie den [COLOR_BUILDING_TEXT]Basilica of St. Peter[COLOR_REVERT], erh&#246;hen sich dadurch Ihre Einnahmen.</German>
+		<Italian>Usa questo missionario per diffondere il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] nelle citt&#224; amiche (o nelle citt&#224; rivali con le quali si ha [COLOR_HIGHLIGHT_TEXT]diritto di passaggio[COLOR_REVERT]). Aumentano le entrate se si possiede la [COLOR_BUILDING_TEXT]Basilica of St. Peter[COLOR_REVERT].</Italian>
+		<Spanish>Este misionero sirve para propagar el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] por ciudades amigas (o de civilizaciones rivales con las que se tenga una [COLOR_HIGHLIGHT_TEXT]Apertura de fronteras[COLOR_REVERT]). Eso aumentar&#225; los ingresos si se tiene la [COLOR_BUILDING_TEXT]Basilica of St. Peter[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion).</English>
+		<French>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] augmente nettement la production de culture d'une ville. Elle rend les citoyens de la ville heureux (si le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] est la religion d'&#233;tat).</French>
+		<German>Die [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] erh&#246;ht den kulturellen Aussto&#223; einer Stadt deutlich. Ist das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in einer Stadt Staatsreligion, steigt die Zufriedenheit der Bev&#246;lkerung.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] aumenta notevolmente la produzione culturale della citt&#224;. Inoltre, genera felicit&#224; tra i cittadini (se il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] &#232; la religione di stato).</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] aumenta mucho la producci&#243;n cultural de la ciudad. Tambi&#233;n hace felices a sus habitantes (si el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] es la religi&#243;n oficial).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion).</English>
+		<French>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] augmente nettement la production de culture d'une ville. Elle rend les citoyens de la ville heureux (si le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] est la religion d'&#233;tat).</French>
+		<German>Die [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] erh&#246;ht den kulturellen Aussto&#223; einer Stadt deutlich. Ist das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in einer Stadt Staatsreligion, steigt die Zufriedenheit der Bev&#246;lkerung.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] aumenta notevolmente la produzione culturale della citt&#224;. Inoltre, genera felicit&#224; tra i cittadini (se il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] &#232; la religione di stato).</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] aumenta mucho la producci&#243;n cultural de la ciudad. Tambi&#233;n hace felices a los habitantes de la ciudad (si el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] es la religi&#243;n oficial).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]sanctuaire Protestant[COLOR_REVERT]) produit 1 unit&#233; d'or par tour pour chaque ville pratiquant le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Il r&#233;pand &#233;galement le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] dans le monde et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]proph&#232;te illustre[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] praktizieren, 1 Gold/Runde. Au&#223;erdem verbreitet er das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] (il [COLOR_BUILDING_TEXT]santuario Protestant[COLOR_REVERT]) produce un'unit&#224; d'oro a turno per ogni citt&#224; nel mondo che pratica il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Inoltre, diffonde nel mondo il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] e aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Profeta[COLOR_REVERT].</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] (el [COLOR_BUILDING_TEXT]santuario Protestant[COLOR_REVERT]) produce uno de oro cada turno por cada ciudad del mundo en la que se practique el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Tambi&#233;n propaga el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] por el globo y aumenta las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran profeta[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Church of the Nativity[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>L'[COLOR_BUILDING_TEXT]Church of the Nativity[COLOR_REVERT] ([COLOR_BUILDING_TEXT]sanctuaire Catholic[COLOR_REVERT]) produit 1 unit&#233; d'or par tour pour chaque ville pratiquant le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Elle r&#233;pand &#233;galement le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] dans le monde et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]proph&#232;te illustre[COLOR_REVERT].</French>
+		<German>Die [COLOR_BUILDING_TEXT]Church of the Nativity[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] praktizieren, 1 Gold/Runde. Au&#223;erdem verbreitet sie das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Church of the Nativity[COLOR_REVERT] (il [COLOR_BUILDING_TEXT]santuario Catholic[COLOR_REVERT]) produce un'unit&#224; d'oro a turno per ogni citt&#224; nel mondo che pratica il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Inoltre, diffonde nel mondo il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] e aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Profeta[COLOR_REVERT].</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Church of the Nativity[COLOR_REVERT] (el [COLOR_BUILDING_TEXT]santuario Catholic[COLOR_REVERT]) produce uno de oro cada turno por cada ciudad del mundo en la que se practique el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Tambi&#233;n propaga el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] por el globo y aumenta las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran profeta[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_SHRINE_PEDIA</Tag>
+		<English>[TAB]All Saints' Church is a Lutheran church in the town of Wittenberg in Germany. It is best known as the location where Martin Luther started the Reformation, by nailing his Ninety-Five Theses to the doors of the church. The Ninety-Five Theses were an attack on the sale of indulgences by the Catholic Church. "Indulgences" were purchased by those Catholics who, having already obtained forgiveness for their sins, wished to reduce the time they would spend in punishment in the afterlife for their sins, before eventually going to heaven. In practice, these were sold to fund the expenses of the Catholic Church on salaries and construction projects. It was Luther's contention that this turned penitence into a commercial transaction. [PARAGRAPH:2]Past heresies in Christianity were quickly quashed by the Church, which excommunicated and even declared crusades against dissenters. However, the development of the printing press ensured the rapid spread of Luther's message throughout Europe. Luther's refusal to recant his condemnations of Rome is seen as the beginning of the process of the Protestant Reformation.</English>
+		<French>[TAB]Selon la tradition juive, le Temple de Salomon est la premi&#232;re synagogue de J&#233;rusalem et en tant que "maison de Dieu", l'&#233;difice le plus important de la religion juive. Sa construction commence sous le r&#232;gne du roi David et s'ach&#232;ve sous celui de son fils, Salomon. Le Temple de Salomon est construit par des ouvriers ph&#233;niciens qui utilisent les plus beaux mat&#233;riaux disponibles : des pierres extraites de carri&#232;res situ&#233;es sous la ville, du bois du Liban, 3 000 tonnes d'or et 30 000 tonnes d'argent. Il en r&#233;sulte un &#233;difice d'une beaut&#233; surprenante mesurant pr&#232;s de 27 m de long, 9 m de large et 14 m de haut. Sa construction n&#233;cessite sept ann&#233;es. [PARAGRAPH:2] Le Temple de Salomon consiste en trois pi&#232;ces principales entour&#233;es de salles plus petites. Apr&#232;s avoir mont&#233; quelques marches, le visiteur entre dans le vestibule, surmont&#233; de deux &#233;normes piliers portant les noms de Yachin et Boaz. De l&#224;, le visiteur p&#233;n&#232;tre dans la "grande maison" ou "lieu saint", o&#249; s'effectuent les principaux services religieux. Apr&#232;s la grande maison se trouve le "Saint des Saints", une pi&#232;ce carr&#233;e lambriss&#233;e de bois de c&#232;dre qui abrite l'"Arche d'alliance". L'Arche d'alliance est un coffre sacr&#233; qui contient les tablettes de pierre sur lesquelles sont &#233;crits les Dix commandements que Mo&#239;se a re&#231;u de Dieu. Le b&#226;timent est entour&#233; d'une cour dans laquelle la population pratique sa religion. [PARAGRAPH:2] Le Temple de Salomon a fait l'objet de nombreux pillages au fil des ann&#233;es avant d'&#234;tre pill&#233; une derni&#232;re fois et enti&#232;rement br&#251;l&#233; par le roi Nabuchodonosor II de Babylone vers 580 av. J.-C. pendant la p&#233;riode de "captivit&#233; babylonienne". Des ann&#233;es plus tard, bon nombre des tr&#233;sors du Temple de Salomon sont rendus aux juifs par le roi [LINK=LEADER_CYRUS]Cyrus[\LINK] Ier de Perse, mais il manque l'Arche. Certains pensent que l'Arche a &#233;t&#233; enlev&#233;e et cach&#233;e avant l'attaque babylonienne ; d'autres estiment que l'Arche a &#233;t&#233; prise par Babylone puis d&#233;truite ou perdue. L'Eglise orthodoxe d'Ethiopie assure qu'elle poss&#232;de l'Arche qui lui aurait &#233;t&#233; apport&#233;e par l'un des fils de Salomon. En tout cas, le Temple de Salomon a &#233;t&#233; enti&#232;rement d&#233;truit et son emplacement d'origine fait l'objet de nombreuses controverses et discussions. [PARAGRAPH:2]Le "Second Temple", construit &#224; J&#233;rusalem vers 500 av. J.-C., est d&#233;truit &#224; son tour par les Romains en 70 ap. J.-C. Il en reste uniquement le "Mur occidental", plus connu sous le nom de "Mur des lamentations".</French>
+		<German>[TAB]Laut der j&#252;dischen &#220;berlieferung war Salomons Tempel der erste j&#252;dische Tempel in Jerusalem und als "Wohnst&#228;tte Gottes" das wichtigste Geb&#228;ude des Judentums. K&#246;nig David begann mit dem Bau, der von seinem Sohn Salomon schlie&#223;lich vollendet wurde. Der Tempel wurde von ph&#246;nizischen Arbeitern aus Steinquadern, libanesischem Holz, 3000 Tonnen Gold und 3000 Tonnen Silber errichtet. Nach seiner Fertigstellung war der pr&#228;chtige Tempel 30 Meter lang, 10 Meter breit und 16 Meter hoch. Der Bau des Gotteshauses nahm sieben Jahre in Anspruch.[PARAGRAPH:2]Der Tempel bestand aus drei Hauptr&#228;umen und war an drei Seiten von Seitenzimmern umgeben, in denen die Sch&#228;tze und religi&#246;sen Artefakte des Tempels aufbewahrt wurden. Die Vorhalle wurde von den beiden Bronzes&#228;ulen Iachin und Boas ("Festigkeit und St&#228;rke") getragen. Die Vorhalle m&#252;ndete in das so genannte "Heilige", in dem die goldenen Leuchter, der Schaubrottisch und der R&#228;ucheraltar standen. Hinter einem Vorhang befand sich das Allerheiligste mit der Bundeslade und den beiden Cherubim. Beide R&#228;ume waren mit Zedernholz get&#228;felt. Die Bundeslade war eine mit Gold &#252;berzogene Truhe aus Akazienholz, in der die zehn Gebote, die Moses von Gott erhalten hatte, aufbewahrt wurden. [PARAGRAPH:2]Der Tempel wurde zu Beginn der babylonischen Gefangenschaft im Jahr 586 vor Christus von den Babyloniern unter K&#246;nig Nebukadnezar II. gepl&#252;ndert und niedergebrannt. Viele Jahre sp&#228;ter gab K&#246;nig [LINK=LEADER_CYRUS]Kyrus[\LINK]. von Persien den Juden den Gro&#223;teil der Tempelsch&#228;tze zur&#252;ck. Die Bundeslade blieb jedoch verschwunden. Bis heute ist unklar, ob die Bundeslade vor dem Angriff der Babylonier versteckt oder von diesen erbeutet und zerst&#246;rt wurde. Nach der &#220;berlieferung der &#228;thiopischen Kirche wurde die Bundeslade gestohlen und befindet sich heute in Aksum, der heiligen Stadt &#196;thiopiens. Da der Tempel v&#246;llig zerst&#246;rt wurde, ist bis heute nicht eindeutig gekl&#228;rt, wo er gestanden hat. [PARAGRAPH:2]Der "Zweite Tempel" wurde etwa um 500 vor Christus in Jerusalem gebaut und 70 vor Christus von den R&#246;mern zerst&#246;rt. Alles, was von ihm noch &#252;brig ist, ist die westliche "Klagemauer".</German>
+		<Italian>[TAB]Secondo la tradizione Ebraica, il Tempio di Salomone fu il primo tempio Giudaico di Gerusalemme e il "luogo di residenza di Dio", l'edificio pi&#249; importante della religione israelita. La costruzione venne iniziata da re Davide e completata da suo figlio, Salomone. Il tempio venne realizzato dai lavoratori Fenici usando i migliori materiali disponibili: pietre scavate dal sottosuolo della citt&#224;, legno proveniente dal Libano, 3.000 tonnellate d'oro e 30.000 di argento. Il risultato di tali sforzi fu un bellissimo tempio lungo 27 metri, largo 10 e alto 15. Per completare il tempio ci vollero sette anni.[PARAGRAPH:2]Il tempio era composto da tre stanze principali, circondate da altre pi&#249; piccole. Salendo una rampa di scale, il visitatore poteva raggiungere il vestibolo che si trovava in cima a due grosse colonne Jachin e Boaz. Da qui si poteva procedere nella "casa maggiore" o "luogo sacro", dove venivano officiati importanti servizi. Dietro la "casa maggiore" si trova il "Sancta Santorum" una stanza quadrata con presente dei cedri all'interno della quale veniva conservata l'Arca dell'Alleanza. L'Arca dell'Alleanza era un contenitore sacro che conteneva i resti delle tavole sulle quali furono scritti i Dieci Comandamenti che Dio diede a Mos&#232;: l'edificio era circondato da un cortile all'interno del quale i fedeli potevano pregare. [PARAGRAPH:2]Il tempio venne saccheggiato molte volte nel corso dei secoli e infine raso al suolo dal re Nabucodonosor II di Babilonia intorno al 580 d. C. durante "l'esilio dei Giudei a Babilonia". Anni dopo, il tesoro venne restituito da re  [LINK=LEADER_CYRUS]Ciro[\LINK] di Persia, ma mancava l'Arca. Alcuni credono che l'Arca sia stata rimossa e nascosta prima dell'attacco dei Babilonesi, mentre altri credono che sia stata rubata e poi successivamente distrutta. La chiesa Ortodossa Etiope dichiara di possedere l'Arca, consegnata loro da uno dei figli di Salomone. In ogni caso, la distruzione del Tempio fu totale e si discute molto sulla destino dell'Arca. [PARAGRAPH:2]Il "secondo Tempio" fu costruito a Gerusalemme circa nel 500 a. C. per essere poi distrutto dai Romani nel 70 d. C. Tutto ci&#242; che rimane del Tempio &#232; il "muro occidentale", noto anche come "muro del pianto".</Italian>
+		<Spanish>[TAB]Seg&#250;n la tradici&#243;n jud&#237;a, el Templo de Salom&#243;n fue el primer templo jud&#237;o de Jerusal&#233;n y, como "morada de Dios", el edificio m&#225;s importante de la religi&#243;n jud&#237;a. Las obras se iniciaron en tiempos del rey David y se concluyeron en la &#233;poca de su hijo, Salom&#243;n. El templo fue levantado por trabajadores fenicios, que emplearon los mejores materiales disponibles: piedras de las canteras de la ciudad, madera del L&#237;bano, 3.000 toneladas de oro y otras 30.000 de plata. El resultado fue un edificio de extraordinaria belleza, de unos 30 metros de largo por 10 de ancho y 16 de altura. Tard&#243; siete a&#241;os en completarse.[PARAGRAPH:2]El Templo estaba formado por tres habitaciones principales, rodeadas por c&#225;maras de menor tama&#241;o. Tras subir las escaleras, el visitante acced&#237;a al vest&#237;bulo, sustentado por dos enormes pilares, conocidos como Jachin y Boaz. Desde all&#237; pod&#237;a pasar a la "Casa Mayor" o "Lugar Sagrado", donde se llevaban a cabo importantes ceremonias religiosas. M&#225;s all&#225; de la Casa Mayor se encontraba la "Sagrada de las Sagradas", una sala cuadrada forrada de cedro que conten&#237;a el "Arca de la Alianza". El Arca era un contenedor sagrado que albergaba las diez tablas de piedra en las que estaban escritos los Diez Mandamientos, entregados a Mois&#233;s por Dios. El edificio estaba rodeado por un patio en el que el pueblo celebraba sus ceremonias. [PARAGRAPH:2]A lo largo de los a&#241;os, el templo sufri&#243; numerosos saqueos, hasta que finalmente fue incendiado y destruido por el rey Nabucodonosor II de Babilonia alrededor del a&#241;o 580 a. C., durante el tiempo del "cautiverio babil&#243;nico". Muchos a&#241;os despu&#233;s, gran parte de los tesoros del templo fueron devueltos a los jud&#237;os por el rey [LINK=LEADER_CYRUS]Ciro[\LINK] de Persia, aunque el Arca no estaba entre ellos. Algunos creen que la escondieron antes del ataque babil&#243;nico, mientras que, para otros, fue capturada por los invasores, y luego se perdi&#243; o fue destruida. La Iglesia Ortodoxa de Etiop&#237;a asegura que posee el Arca aut&#233;ntica, llevada all&#237; por uno de los Hijos de Salom&#243;n. En cualquier caso, la destrucci&#243;n del templo fue total, y ha habido grandes controversias y debates sobre el lugar de su emplazamiento original. [PARAGRAPH:2]El "Segundo Templo" de Jerusal&#233;n se construy&#243; aproximadamente en el a&#241;o 500 a. C. Fue destruido por los romanos en el a&#241;o 70 d. C. Lo &#250;nico que queda de &#233;l es el muro occidental, tambi&#233;n conocido como "Muro de las Lamentaciones".</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY</Tag>
+		<English>Protestant Missionary</English>
+		<French>
+			<Text>Protestant Missionary</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protestant Missionary</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Protestant Missionary:Protestant Missionary</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protestant Missionary:Protestant Missionary</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CHRISTIAN_MISSIONARY</Tag>
+		<English>Catholic Missionary</English>
+		<French>
+			<Text>Missionnaire chr&#233;tien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Christlicher Missionar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Missionario Cristiano:Missionari Cristiani</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Misionero cristiano:Misioneros cristianos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_JUDAISM</Tag>
+		<English>Protestantism</English>
+		<French>
+			<Text>Protestantism</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protestantism</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Protestantism:Protestantism</Text>
+			<Gender>Male:Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protestantism</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_CHRISTIANITY</Tag>
+		<English>Catholicism</English>
+		<French>
+			<Text>Catholicism</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Catholicism</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Catholicism:Catholicism</Text>
+			<Gender>Male:Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Catholicism</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
+		<English>Protestant Church</English>
+		<French>
+			<Text>Protestant Temple</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protestantische Kirche</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Protestant Temple:Protestant Temple</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protestant Temple:Protestant Temple</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
+		<English>Protestant Monastery</English>
+		<French>
+			<Text>Protestant Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protestantisches Kloster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Protestant Monastery:Protestant Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protestant Monastery:Protestant Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
+		<English>Protestant Cathedral</English>
+		<French>
+			<Text>Protestant Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protestantische Kathedrale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Protestant Cathedral:Protestant Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protestant Cathedral:Protestant Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_SHRINE</Tag>
+		<English>All Saints' Church</English>
+		<French>
+			<Text>All Saints' Church</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>All Saints' Church</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>All Saints' Church</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>All Saints' Church</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE</Tag>
+		<English>Catholic Church</English>
+		<French>
+			<Text>Catholic Temple</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Katholische Kirche</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Catholic Temple:Catholic Temple</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Catholic Temple:Catholic Temple</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY</Tag>
+		<English>Catholic Monastery</English>
+		<French>
+			<Text>Catholic Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Katholisches Kloster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Catholic Monastery:Catholic Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Catholic Monastery:Catholic Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL</Tag>
+		<English>Catholic Cathedral</English>
+		<French>
+			<Text>Catholic Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Katholische Kathedrale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Catholic Cathedral:Catholic Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Catholic Cathedral:Catholic Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_SHRINE</Tag>
+		<English>Church of the Holy Sepulchre</English>
+		<French>
+			<Text>Église du Saint-Sépulcre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Grabeskirche</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Basilica del Santo Sepolcro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Santo Sepulcro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_1</Tag>
+		<English>Cereal Industry</English>
+		<French>
+			<Text>Cereal Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Cereal Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Cereal Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cereal Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>CHANGED_TXT_KEY_CORPORATION_2</Tag>
+		<English>Fishing Industry</English>
+		<French>
+			<Text>Fishing Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fishing Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Fishing Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Fishing Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_3</Tag>
+		<English>Oil Industry</English>
+		<French>
+			<Text>Oil Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Oil Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Oil Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Oil Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_4</Tag>
+		<English>Computer Industry</English>
+		<French>
+			<Text>Computer Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Computer Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Computer Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Computer Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_5</Tag>
+		<English>Textile Industry</English>
+		<French>
+			<Text>Textile Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Textile Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Textile Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Textile Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_6</Tag>
+		<English>Steel Industry</English>
+		<French>
+			<Text>Steel Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Steel Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Steel Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Steel Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_7</Tag>
+		<English>Luxury Industry</English>
+		<French>
+			<Text>Luxury Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Luxury Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Luxury Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Luxury Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EXECUTIVE_1</Tag>
+		<English>Cereal Industry Executive</English>
+		<French>
+			<Text>Directeur des Cereal Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vorstand der Cereal Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Funzionario della Cereal Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ejecutivo de Cereal Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EXECUTIVE_2</Tag>
+		<English>Fishing Industry Executive</English>
+		<French>
+			<Text>Dirigeant de Fishing Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vorstand der Fishing Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Funzionario della Fishing Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ejecutivo de Fishing Industry:Ejecutivos de Fishing Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EXECUTIVE_3</Tag>
+		<English>Oil Industry Executive</English>
+		<French>
+			<Text>Directeur d'Oil Industry </Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vorstand der Oil Industry </Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Funzionario della Oil Industry :Funzionari della Oil Industry </Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ejecutivo de Oil Industry :Ejecutivos de Oil Industry </Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EXECUTIVE_4</Tag>
+		<English>Computer Industry Executive</English>
+		<French>
+			<Text>Directeur de Computer Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vorstand der Computer Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Funzionario della Computer Industry:Funzionari della Computer Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ejecutivo de Computer Industry:Ejecutivos de Computer Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EXECUTIVE_5</Tag>
+		<English>Textile Industry Executive</English>
+		<French>
+			<Text>Directeur de la Textile Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vorstand der Textile Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Funzionario della Textile Industry:Funzionari della Textile Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ejecutivo de Textile Industry:Ejecutivos de Textile Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EXECUTIVE_6</Tag>
+		<English>Steel Industry Executive</English>
+		<French>
+			<Text>Directeur d'Steel Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vorstand der Steel Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Funzionario della Steel Industry:Funzionari della Steel Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ejecutivo de Steel Industry:Ejecutivos de Steel Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EXECUTIVE_7</Tag>
+		<English>Luxury Industry Executive</English>
+		<French>
+			<Text>Directeur des Luxury Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vorstand der Luxury Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Funzionario della Luxury Industry:Funzionari della Luxury Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ejecutivo de Luxury Industry:Ejecutivos de Luxury Industry</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

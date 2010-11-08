@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_UPGRADES</Tag>
+		<English>Unit Upgrades</English>
+		<French>Améliorations d'unités</French>
+		<German>Einheitenbef&#246;rderungen</German>
+		<Italian>Aggiornamento delle unit&#224;</Italian>
+		<Spanish>Modernizaci&#243;n de unidades</Spanish>
+	</TEXT>
+</Civ4GameText>

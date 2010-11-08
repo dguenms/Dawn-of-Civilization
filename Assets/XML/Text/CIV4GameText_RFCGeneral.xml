@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<!--Please place any new text entries into this file-->
+	<TEXT>
+		<Tag>TXT_KEY_RHYES_DAWN_OF_MAN_TEXT</Tag>
+		<English>The sun rises on the year %s1_year. The %s2_civ people are ready to settle down and found your first city. [NEWLINE][NEWLINE]%s3_leader, your people have vested absolute power in you, trusting that you can build a Civilization to stand the test of time!</English>
+		<French>Le soleil se lève sur l'an %s1_year. Les %s2_civ sont prêts à s'installer et à fonder votre première ville. [NEWLINE][NEWLINE]%s3_leader, votre peuple vous a confié le pouvoir absolu et s'en remet à vous pour bâtir une civilisation qui résistera à l'épreuve du temps !</French>
+		<German>Die Sonne erhellt das Jahr %s1_year. Das %s2:3_civ Volk ist bereit, sich niederzulassen und Eure erste Stadt zu gr&#252;nden. [NEWLINE][NEWLINE]%s3_leader, Euer Volk hat Euch absolute Macht verliehen und vertraut darauf, dass Ihr eine Zivilisation errichtet, welche die Zeit &#252;berdauern wird!</German>
+		<Italian>Il sole sorge nell'anno %s1_year. La popolazione %s2:2_civ &#232; infine pronta a stabilirsi e a fondare la tua prima citt&#224;. [NEWLINE][NEWLINE]%s3_leader, il tuo popolo ti ha conferito potere assoluto, credendo che tu possa sviluppare una civilt&#224; in grado di resistere alle prove del tempo!</Italian>
+		<Spanish>El sol se alza en el a&#241;o %s1_year. Las gentes del %s2_civ est&#225;n listas para asentarse y fundar vuestra primera ciudad. [NEWLINE][NEWLINE]%s3_leader, vuestro pueblo os ha conferido poder absoluto, confiando en que pod&#225;is desarrollar una civilizaci&#243;n que supere los retos del tiempo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AUTOPLAY_TURNS_REMAINING</Tag>
+		<English>AUTO-PLAY TURNS REMAINING:  %d1_Num</English>
+		<French>TOURS RESTANTS EN JEU AUTO : %d1_Num</French>
+		<German>VERBLEIBENDE AUTOPLAY-RUNDEN:  %d1_Num</German>
+		<Italian>TURNI DI GIOCO AUTOMATICO RIMANENTI:  %d1_Num</Italian>
+		<Spanish>TURNOS AUTOMÁTICOS RESTANTES: %d1_Num</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_DEFEAT</Tag>
+		<English/>
+		<French/>
+		<German/>
+		<Italian/>
+		<Spanish/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_DEFEAT2</Tag>
+		<English>You have been defeated!!!</English>
+		<French>Vous essuyez une défaite !!!</French>
+		<German>Wir wurden besiegt!!!</German>
+		<Italian>Sei stato sconfitto!!!</Italian>
+		<Spanish>¡Os han derrotado!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_VICEROY</Tag>
+		<English>Viceroy</English>
+		<French>
+			<Text>Vice-roi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vizek&#246;nig</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Vicer&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Virrey</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_MARSH</Tag>
+		<English>Marsh</English>
+		<French>
+			<Text>Marécage</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sumpf</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Palude</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ci&#233;naga</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_SWAMP_PEDIA</Tag>
+		<English>Swamp</English>
+		<French>
+			<Text>Marais</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Moor</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Pantano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pantano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STARTING_YEAR</Tag>
+		<English>Starting year</English>
+		<French>Année de départ</French>
+		<German>Startjahr</German>
+		<Italian>Anno di avvio</Italian>
+		<Spanish>A&#241;o de inicio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BC</Tag>
+		<English>BC</English>
+		<French>av. J.-C.</French>
+		<German>v. Chr.</German>
+		<Italian>a.C.</Italian>
+		<Spanish>a.C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AD</Tag>
+		<English>AD</English>
+		<French>ap. J.-C.</French>
+		<German>n. Chr.</German>
+		<Italian>d.C.</Italian>
+		<Spanish>d.C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MM_GOLD</Tag>
+		<English>[ICON_BULLET]Gold: </English>
+		<French>[ICON_BULLET]Or : </French>
+		<German>[ICON_BULLET]Gold: </German>
+		<Italian>[ICON_BULLET]Oro: </Italian>
+		<Spanish>[ICON_BULLET]Oro: </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MM_SCIENCE</Tag>
+		<English>[ICON_BULLET]Science: </English>
+		<French>[ICON_BULLET]Science : </French>
+		<German>[ICON_BULLET]Wissenschaft: </German>
+		<Italian>[ICON_BULLET]Scienza: </Italian>
+		<Spanish>[ICON_BULLET]Ciencia: </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MM_TRADE</Tag>
+		<English>[ICON_BULLET]Trade: </English>
+		<French>[ICON_BULLET]Commerce : </French>
+		<German>[ICON_BULLET]Handel: </German>
+		<Italian>[ICON_BULLET]Commercio: </Italian>
+		<Spanish>[ICON_BULLET]Intercambio: </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MM_PRODUCTION</Tag>
+		<English>[ICON_BULLET]Production: </English>
+		<French>[ICON_BULLET]Production : </French>
+		<German>[ICON_BULLET]Produktion: </German>
+		<Italian>[ICON_BULLET]Produzione: </Italian>
+		<Spanish>[ICON_BULLET]Producci&#243;n: </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MM_CULTURE</Tag>
+		<English>[ICON_BULLET]Culture: </English>
+		<French>[ICON_BULLET]Culture : </French>
+		<German>[ICON_BULLET]Kultur: </German>
+		<Italian>[ICON_BULLET]Cultura: </Italian>
+		<Spanish>[ICON_BULLET]Cultura: </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MM_GROWTH</Tag>
+		<English>[ICON_BULLET]Growth: </English>
+		<French>[ICON_BULLET]Croissance : </French>
+		<German>[ICON_BULLET]Wachstum: </German>
+		<Italian>[ICON_BULLET]Crescita: </Italian>
+		<Spanish>[ICON_BULLET]Crecimiento: </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MM_STARTING_SITUATION</Tag>
+		<English>[ICON_BULLET]Starting situation: </English>
+		<French>[ICON_BULLET]Situation de départ : </French>
+		<German>[ICON_BULLET]Startsituation: </German>
+		<Italian>[ICON_BULLET]Situazione di avvio: </Italian>
+		<Spanish>[ICON_BULLET]Situaci&#243;n de inicio: </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_5STARS</Tag>
+		<English>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn%F5_HealthOrUn</English>
+		<French>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn%F5_HealthOrUn</French>
+		<German>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn%F5_HealthOrUn</German>
+		<Italian>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn%F5_HealthOrUn</Italian>
+		<Spanish>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn%F5_HealthOrUn</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_4STARS</Tag>
+		<English>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn</English>
+		<French>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn</French>
+		<German>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn</German>
+		<Italian>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn</Italian>
+		<Spanish>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn%F4_HealthOrUn</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_3STARS</Tag>
+		<English>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn</English>
+		<French>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn</French>
+		<German>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn</German>
+		<Italian>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn</Italian>
+		<Spanish>%F1_HealthOrUn%F2_HealthOrUn%F3_HealthOrUn</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_2STARS</Tag>
+		<English>%F1_HealthOrUn%F2_HealthOrUn</English>
+		<French>%F1_HealthOrUn%F2_HealthOrUn</French>
+		<German>%F1_HealthOrUn%F2_HealthOrUn</German>
+		<Italian>%F1_HealthOrUn%F2_HealthOrUn</Italian>
+		<Spanish>%F1_HealthOrUn%F2_HealthOrUn</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_1STAR</Tag>
+		<English>%F1_HealthOrUn</English>
+		<French>%F1_HealthOrUn%F2_HealthOrUn</French>
+		<German>%F1_HealthOrUn%F2_HealthOrUn</German>
+		<Italian>%F1_HealthOrUn%F2_HealthOrUn</Italian>
+		<Spanish>%F1_HealthOrUn</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RATING</Tag>
+		<English>Rating</English>
+		<French>Evaluation</French>
+		<German>Bewertung</German>
+		<Italian>Valutazione</Italian>
+		<Spanish>Índice</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_BONUS</Tag>
+		<English>Military Bonus</English>
+		<French>Bonus militaire</French>
+		<German>Milit&#228;rbonus</German>
+		<Italian>Bonus militare</Italian>
+		<Spanish>Bonificaci&#243;n militar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FREE_PROMOTION</Tag>
+		<English>Free Promotion: (%s1)</English>
+		<French>Promotion gratuite : (%s1)</French>
+		<German>Freie Bef&#246;rderung: (%s1)</German>
+		<Italian>Promozione gratuita: (%s1)</Italian>
+		<Spanish>Ascenso gratis: (%s1)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AGE_RENAISSANCE</Tag>
+		<English>Renaissance Age</English>
+		<French>Renaissance</French>
+		<German>Renaissance</German>
+		<Italian>Et&#224; rinascimentale</Italian>
+		<Spanish>Renacimiento</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AGE_MEDIEVAL</Tag>
+		<English>Medieval Age</English>
+		<French>Age Médiéval</French>
+		<German>Mittelalter</German>
+		<Italian>Et&#224; medievale</Italian>
+		<Spanish>Edad Media</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AGE_IRON</Tag>
+		<English>Iron Age</English>
+		<French>Age de Fer</French>
+		<German>Eisenzeit</German>
+		<Italian>Et&#224; del ferro</Italian>
+		<Spanish>Edad de Hierro</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AGE_BRONZE</Tag>
+		<English>Bronze Age</English>
+		<French>Age de Bronze</French>
+		<German>Bronzezeit</German>
+		<Italian>Et&#224; del bronzo</Italian>
+		<Spanish>Edad de Bronce</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AGE_STONE</Tag>
+		<English>Stone Age</English>
+		<French>Age de Pierre</French>
+		<German>Steinzeit</German>
+		<Italian>Eta della pietra</Italian>
+		<Spanish>Edad de Piedra</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SAVEGAME_TURN</Tag>
+		<English>Turn %d1_TurnNum</English>
+		<French>Tour %d1_TurnNum</French>
+		<German>Runde %d1_TurnNum</German>
+		<Italian>Turno %d1_TurnNum</Italian>
+		<Spanish>Turno %d1_TurnNum</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_DEFENSIVE_PACT</Tag>
+		<English>A Mutual Protection Pact - Each Party Agrees to Automatically Declare War if the Other Party is Attacked.</English>
+		<French>Pacte d'assistance mutuelle : chaque partie accepte de d&#233;clarer automatiquement la guerre si l'autre est attaqu&#233;e.</French>
+		<German>Ein Verteidigungsb&#252;ndnis - Beide Parteien stimmen zu, den Angreifern der anderen Partei automatisch den Krieg zu erkl&#228;ren.</German>
+		<Italian>Un patto di protezione reciproca: ogni civilt&#224; accetta di dichiarare automaticamente guerra se la civilt&#224; alleata viene attaccata.</Italian>
+		<Spanish>Un acuerdo de protecci&#243;n mutua: cada parte accede a declarar autom&#225;ticamente la guerra si alguien ataca a la otra.</Spanish>
+	</TEXT>
+</Civ4GameText>

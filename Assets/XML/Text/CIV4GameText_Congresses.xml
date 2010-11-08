@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NEW</Tag>
+		<English>New Congress</English>
+		<French>Nouveau Congrès</French>
+		<German>Neuer Kongress</German>
+		<Italian>Nuovo congresso</Italian>
+		<Spanish>Nuevo Congreso</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_INVITATION</Tag>
+		<English>An international Congress is being held in 2 turns. You have been invited to participate. Will you accept the invitation?</English>
+		<French>Un Congrès international aura lieu dans 2 tours. Vous avez été invité à y participer. Acceptez-vous l'invitation ?</French>
+		<German>In 2 Runden wird ein internationaler Kongress stattfinden. Ihr wurdet eingeladen, daran teilzunehmen. Nehmt Ihr die Einladung an?</German>
+		<Italian>Fra 2 turni si terr&#224; un congresso internazionale. Sei stato invitato a partecipare. Accetterai l'invito?</Italian>
+		<Spanish>Se va a celebrar un Congreso internacional en 2 turnos. Se os ha invitado a participar. ¿Acept&#225;is la invitaci&#243;n?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REQUEST</Tag>
+		<English>%s1 wants %s2 (%s3)</English>
+		<French>%s1 désire %s2 (%s3)</French>
+		<German>%s1 fordert %s2 (%s3)</German>
+		<Italian>%s1 vuole %s2 (%s3)</Italian>
+		<Spanish>%s1 quiere %s2 (%s3)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_OF</Tag>
+		<English>Congress of</English>
+		<French>Congrès de</French>
+		<German>Kongress von</German>
+		<Italian>Congresso di</Italian>
+		<Spanish>Congreso de</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_INTRO</Tag>
+		<English>A new international Congress is about to start.[NEWLINE]The leaders of some of the most important nations will meet there to discuss the balance of the world.[NEWLINE][NEWLINE]Each side will have its turn to ask a city; if the decision is approved the owner of the city that is being traded must accept it.[NEWLINE]If you refuse a decision, you are likely to face a war against some of the sides that voted YES.</English>
+		<French>Un nouveau Congrès international est sur le point de commencer.[NEWLINE]Les dirigeants des plus grandes nations vont s'y rencontrer pour discuter de l'équilibre mondial.[NEWLINE][NEWLINE]Chacun pourra à son tour réclamer une ville ; si la décision est approuvée, le possesseur de la ville échangée doit l'accepter.[NEWLINE]Si vous refusez une décision, vous risquez d'entrer en guerre contre ceux qui ont voté OUI.</French>
+		<German>In Kürze wird ein neuer internationaler Kongress beginnen.[NEWLINE]Die Staatsoberhäupter einiger der wichtigsten Nationen werden dort zusammentreffen, um die Machtverhältnisse in der Welt zu erörtern.[NEWLINE][NEWLINE]Jede Partei kann der Reihe nach eine Stadt fordern. Wird der Forderung per Votum entsprochen, muss der bisherige Besitzer der betreffenden Stadt diese Entscheidung akzeptieren.[NEWLINE]Die Widersetzung gegen diese Entscheidung kommt in der Regel einer Kriegserklärung gegenüber einigen der Parteien gleich, die mit JA gestimmt haben.</German>
+		<Italian>Sta per cominciare un nuovo congresso internazionale.[NEWLINE]I leader di alcune delle nazioni più importanti si incontreranno per discutere dell'equilibrio mondiale.[NEWLINE][NEWLINE]Ogni fazione avr&#224; modo di richiedere una citt&#224;, a turno; se la decisione viene approvata il possessore della citt&#224; dovr&#224; accettare la transazione.[NEWLINE]Se rifiuti potresti trovarti in guerra contro alcune delle fazioni che hanno votato SÌ.</Italian>
+		<Spanish>Est&#225; a punto de comenzar un nuevo Congreso internacional.[NEWLINE]Los l&#237;deres de algunas de las naciones m&#225;s importantes se encuentran aqu&#237; para discutir sobre la estabilidad mundial.[NEWLINE][NEWLINE]Cada parte tendr&#225; un turno para solicitar una ciudad; si la decisi&#243;n es aprobada, el propietario de la ciudad a intercambiar debe aceptar.[NEWLINE]Si os neg&#225;is a aceptar una decisi&#243;n, podr&#237;ais ser objeto de una declaraci&#243;n de guerra por parte de los que votaron SÍ.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_INTRO_NOT_INVITED</Tag>
+		<English>A World Congress is being held, but we haven't been invited. Maybe we aren't important enough.[NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</English>
+		<French>Un Congrès mondial va avoir lieu, mais nous n'avons pas été invité. Nous ne sommes peut-être pas suffisamment importants.[NEWLINE][NEWLINE]Nous ne pouvons qu'attendre leurs décisions et faire confiance à leur jugement.</French>
+		<German>Zurzeit findet ein Weltkongress statt, zu dem Ihr jedoch nicht eingeladen wurdet. Vielleicht ist unsere Nation einfach nicht bedeutend genug.[NEWLINE][NEWLINE]Uns bleibt nun wohl nichts anderes übrig, als die Entscheidungen der Teilnehmer abzuwarten und zu hoffen, dass sie ihren gesunden Menschenverstand nutzen.</German>
+		<Italian>Si tiene un congresso internazionale, ma non siamo stati invitati. Forse non siamo abbastanza importanti.[NEWLINE][NEWLINE]Ora possiamo solo aspettare le loro decisioni e confidare nel loro buon senso.</Italian>
+		<Spanish>Se est&#225; celebrando un Congreso Mundial, pero no hemos sido invitados. Quiz&#225; no seamos lo bastante importantes.[NEWLINE][NEWLINE]Ahora solo podemos esperar sus decisiones y confiar en su sentido común.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_VOTE_YES</Tag>
+		<English>Vote YES</English>
+		<French>Voter OUI</French>
+		<German>Mit JA stimmen</German>
+		<Italian>Vota SÌ</Italian>
+		<Spanish>Votar SÍ</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_VOTE_NO</Tag>
+		<English>Vote NO</English>
+		<French>Voter NON</French>
+		<German>Mit NEIN stimmen</German>
+		<Italian>Vota NO</Italian>
+		<Spanish>Votar NO</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_POPUP_VOTES_YES</Tag>
+		<English>votes YES[NEWLINE]</English>
+		<French>vote OUI[NEWLINE]</French>
+		<German>stimmt mit JA[NEWLINE]</German>
+		<Italian>vota SÌ[NEWLINE]</Italian>
+		<Spanish>vota SÍ[NEWLINE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_POPUP_VOTES_NO</Tag>
+		<English>votes NO[NEWLINE]</English>
+		<French>vote NON[NEWLINE]</French>
+		<German>stimmt mit NEIN[NEWLINE]</German>
+		<Italian>vota NO[NEWLINE]</Italian>
+		<Spanish>vota NO[NEWLINE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_POPUP_ABSTAINS</Tag>
+		<English>abstains[NEWLINE]</English>
+		<French>s'abstient[NEWLINE]</French>
+		<German>enth&#228;lt sich der Stimme[NEWLINE]</German>
+		<Italian>si astiene[NEWLINE]</Italian>
+		<Spanish>se abstiene[NEWLINE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_POPUP_YES_WINS</Tag>
+		<English>[NEWLINE]YES wins</English>
+		<French>[NEWLINE]Le OUI l'emporte</French>
+		<German>[NEWLINE]JA-Stimmen überwiegen</German>
+		<Italian>[NEWLINE]Vincono i SÌ</Italian>
+		<Spanish>[NEWLINE]Gana el SÍ</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_POPUP_NO_WINS</Tag>
+		<English>[NEWLINE]NO wins</English>
+		<French>[NEWLINE]Le NON l'emporte</French>
+		<German>[NEWLINE]NEIN-Stimmen überwiegen</German>
+		<Italian>[NEWLINE]Vincono i NO</Italian>
+		<Spanish>[NEWLINE]Gana el NO</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NO_CITY</Tag>
+		<English>There is no appropriate city to ask</English>
+		<French>Il n'y a pas de ville appropriée à réclamer</French>
+		<German>Es steht keine geeignete Stadt zur Auswahl</German>
+		<Italian>Non ci sono citt&#224; da richiedere</Italian>
+		<Spanish>No hay una ciudad apropiada que solicitar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_HUMAN_REQUEST</Tag>
+		<English>What city shall we ask for?</English>
+		<French>Quelle ville allons-nous réclamer ?</French>
+		<German>Welche Stadt sollen wir fordern?</German>
+		<Italian>Che citt&#224; dovremmo richiedere?</Italian>
+		<Spanish>¿Qu&#233; ciudad debemos solicitar?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NO_REQUEST</Tag>
+		<English>NO REQUEST</English>
+		<French>PAS DE REQUETE</French>
+		<German>KEINE FORDERUNG</German>
+		<Italian>NESSUNA RICHIESTA</Italian>
+		<Spanish>SIN SOLICITUD</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REQUEST1</Tag>
+		<English>The Congress has decided that</English>
+		<French>Le Congrès a décidé que</French>
+		<German>Der Kongress hat beschlossen, dass</German>
+		<Italian>Il congresso ha deciso che</Italian>
+		<Spanish>El Congreso ha decidido que</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REQUEST2</Tag>
+		<English>should be assigned to</English>
+		<French>devrait être assigné au contrôle de</French>
+		<German>an</German>
+		<Italian>debba essere assegnata a</Italian>
+		<Spanish>pase a estar bajo control</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REQUEST3</Tag>
+		<English>control.[NEWLINE]Do you agree? (Our refusal may lead to a war)</English>
+		<French>[NEWLINE]Etes-vous d'accord ? (Notre refus pourrait mener à une guerre)</French>
+		<German>übereignet werden sollte.[NEWLINE]Seid Ihr einverstanden? (Unsere Weigerung könnte einen Krieg nach sich ziehen)</German>
+		<Italian>.[NEWLINE]Sei d'accordo? (Il rifiuto potrebbe portare a una guerra)</Italian>
+		<Spanish> [NEWLINE]¿Est&#225;is de acuerdo? (Una negativa podr&#237;a provocar una guerra)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NOTIFY_YES1</Tag>
+		<English>is passing under</English>
+		<French>passe sous contrôle</French>
+		<German>wird</German>
+		<Italian>sta passando sotto il controllo</Italian>
+		<Spanish>pasar&#225; a control del</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NOTIFY_YES2</Tag>
+		<English>control</English>
+		<French/>
+		<German>übereignet</German>
+		<Italian>.</Italian>
+		<Spanish>control</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_ACCEPT_DECISION</Tag>
+		<English>Accept the decision and leave the city</English>
+		<French>Accepter la décision et quitter la ville</French>
+		<German>Votum akzeptieren und Stadt übereignen</German>
+		<Italian>Accetta la decisione e lascia la citt&#224;.</Italian>
+		<Spanish>Aceptar la decisi&#243;n y ceder la ciudad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REFUSE_DECISION</Tag>
+		<English>Refuse leaving the city!</English>
+		<French>Refuser de quitter la ville !</French>
+		<German>Übereignung der Stadt verweigern!</German>
+		<Italian>Rifiutati di lasciare la citt&#224;!</Italian>
+		<Spanish>¡Negarse a ceder la ciudad!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CORRUPTION_REQUEST</Tag>
+		<English>We can use some of our gold to try to bribe another civilization to vote for our interests. Do you want to attempt?</English>
+		<French>Nous pouvons utiliser notre or pour soudoyer une autre civilisation, afin qu'elle vote selon notre intérêt. Voulez-vous essayer ?</French>
+		<German>Wir könnten versuchen, eine andere Nation mit Gold zu bestechen, damit sie in unserem Sinne abstimmt. Wollt Ihr es wagen?</German>
+		<Italian>Possiamo usare un po' del nostro oro per provare a convincere un'altra civilt&#224; a votare a nostro favore. Vuoi provare?</Italian>
+		<Spanish>Podemos usar parte de nuestro oro para sobornar a otra civilizaci&#243;n con objeto de que vote según nuestros intereses. ¿Quer&#233;is intentarlo?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CORRUPTION_GOLD</Tag>
+		<English>How much gold shall we use for this purpose?</English>
+		<French>Combien d'or devons-nous utiliser pour cela ?</French>
+		<German>Wie viel Gold wollt Ihr dafür aufwenden?</German>
+		<Italian>Quanto oro dovremmo usare a questo scopo?</Italian>
+		<Spanish>¿Cu&#225;nto oro debemos invertir en esta empresa?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CORRUPTION_YES</Tag>
+		<English>They accepted our proposal. They will vote for our interests.</English>
+		<French>Ils ont accepté notre proposition. Ils voteront selon notre intérêt.</French>
+		<German>Sie sind auf unser Angebot eingegangen und werden in unserem Sinne abstimmen.</German>
+		<Italian>Hanno accettato la nostra proposta. Voteranno a nostro favore.</Italian>
+		<Spanish>Han aceptado nuestra propuesta. Votar&#225;n a favor de nuestros intereses.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CORRUPTION_NO</Tag>
+		<English>They refused our proposal.</English>
+		<French>Ils ont refusé notre proposition.</French>
+		<German>Sie haben unser Angebot abgelehnt.</German>
+		<Italian>Hanno rifiutato la nostra proposta.</Italian>
+		<Spanish>Han rechazado nuestra propuesta.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CORRUPTION_ENEMY</Tag>
+		<English>They refused our proposal with indignation. Now they might even vote against our interests!</English>
+		<French>Ils ont refusé avec indignation notre proposition. A présent, ils vont peut-être voter contre notre intérêt !</French>
+		<German>Sie haben unser Angebot empört abgelehnt. Jetzt werden sie vermutlich erst recht nicht in unserem Sinne abstimmen!</German>
+		<Italian>Hanno rifiutato la nostra proposta, indignandosi. Ora potrebbero addirittura votare contro i nostri interessi!</Italian>
+		<Spanish>Han rechazado nuestra propuesta con indignaci&#243;n. ¡Ahora podr&#237;an incluso votar en contra de nuestros intereses!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CITY_WAS_TRADED_TO</Tag>
+		<English>%s1_CityName was traded to the %s2_CivName!!!</English>
+		<French>%s1_CityName a été échangé à %s2_CivName!!!</French>
+		<German>Die Stadt %s1_CityName wurde an das %s2:2_CivName übereignet!!!</German>
+		<Italian>%s1_CityName &#232; stata ceduta a %s2_CivName!!!</Italian>
+		<Spanish>¡%s1_CityName ha sido cedida al %s2_CivName!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NO_AI_REQUEST</Tag>
+		<English>makes no requests</English>
+		<French>ne fait pas de requêtes</French>
+		<German>erhebt keine Forderungen</German>
+		<Italian>non avanza richieste</Italian>
+		<Spanish>no realiza solicitudes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_OK</Tag>
+		<English>OK</English>
+		<French>OK</French>
+		<German>OK</German>
+		<Italian>OK</Italian>
+		<Spanish>Aceptar</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CvGameCoreDLL", "CvGameCoreDLL.vcproj", "{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug FxsMemory = Debug FxsMemory
+		Final Debug = Final Debug
+		Final Release = Final Release
+		Release = Release
+		Release FxsMemory = Release FxsMemory
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Debug.ActiveCfg = Debug|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Debug.Build.0 = Debug|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Debug FxsMemory.ActiveCfg = Debug FxsMemory|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Debug FxsMemory.Build.0 = Debug FxsMemory|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Final Debug.ActiveCfg = Final Debug|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Final Debug.Build.0 = Final Debug|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Final Release.ActiveCfg = Final Release|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Final Release.Build.0 = Final Release|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Release.ActiveCfg = Release|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Release.Build.0 = Release|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Release FxsMemory.ActiveCfg = Release FxsMemory|Win32
+		{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}.Release FxsMemory.Build.0 = Release FxsMemory|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

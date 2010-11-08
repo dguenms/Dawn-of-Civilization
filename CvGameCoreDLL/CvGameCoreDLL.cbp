@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CvGameCoreDLL" />
+		<Option pch_mode="2" />
+		<Option compiler="msvctk" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="..\Assets\CvGameCoreDLL_DEBUG" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="3" />
+				<Option compiler="msvctk" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="/DWIN32" />
+					<Add option="/D_DEBUG" />
+					<Add option="/D_WINDOWS" />
+					<Add option="/D_USRDLL" />
+					<Add option="/DCVGAMECOREDLL_EXPORTS" />
+					<Add option="/W3" />
+					<Add option="/ZI" />
+					<Add option="/Od" />
+					<Add option="/MDd" />
+					<Add option="EHsc" />
+					<Add option="/GR" />
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add option="/pdb:Debug\CvGameCoreDLL_DEBUG.pdb" />
+					<Add library="boost_python-vc71-mt-gd-1_32" />
+					<Add library="winmm" />
+					<Add directory="Python24\libs" />
+					<Add directory="boost-1.32.0\libs\" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="..\Assets\CvGameCoreDLL_RELEASE" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="3" />
+				<Option compiler="msvctk" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="/DWIN32" />
+					<Add option="/DNDEBUG" />
+					<Add option="/D_WINDOWS" />
+					<Add option="/D_USRDLL" />
+					<Add option="/DCVGAMECOREDLL_EXPORTS" />
+					<Add option="/W3" />
+					<Add option="/Zi" />
+					<Add option="/O2" />
+					<Add option="/MD" />
+					<Add option="EHsc" />
+					<Add option="/GR" />
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add option="/INCREMENTAL:NO" />
+					<Add option="/pdb:Release\CvGameCoreDLL_RELEASE.pdb" />
+					<Add library="boost_python-vc71-mt-1_32" />
+					<Add library="winmm" />
+					<Add directory="Python24\libs" />
+					<Add directory="boost-1.32.0\libs\" />
+				</Linker>
+			</Target>
+			<Target title="Release FxsMemory Win32">
+				<Option output="..\Beyond the Sword\Assets\CvGameCoreDLL_RELEASE_MEM" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release FxsMemory Win32" />
+				<Option type="3" />
+				<Option compiler="msvctk" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="/DWIN32" />
+					<Add option="/DNDEBUG" />
+					<Add option="/D_WINDOWS" />
+					<Add option="/D_USRDLL" />
+					<Add option="/DCVGAMECOREDLL_EXPORTS" />
+					<Add option="/DUSE_MEMMANAGER" />
+					<Add option="/W3" />
+					<Add option="/Zi" />
+					<Add option="/O2" />
+					<Add option="/MD" />
+					<Add option="EHsc" />
+					<Add option="/GR" />
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add option="/INCREMENTAL:NO" />
+					<Add option="/pdb:Release FxsMemory Win32\CvGameCoreDLL_RELEASE_MEM.pdb" />
+					<Add library="boost_python-vc71-mt-1_32" />
+					<Add library="winmm" />
+					<Add directory="Python24\libs" />
+					<Add directory="boost-1.32.0\libs\" />
+				</Linker>
+			</Target>
+			<Target title="Debug FxsMemory Win32">
+				<Option output="..\Beyond the Sword\Assets\CvGameCoreDLL_DEBUG_MEM" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug FxsMemory Win32" />
+				<Option type="3" />
+				<Option compiler="msvctk" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="/DWIN32" />
+					<Add option="/D_DEBUG" />
+					<Add option="/D_WINDOWS" />
+					<Add option="/D_USRDLL" />
+					<Add option="/DCVGAMECOREDLL_EXPORTS" />
+					<Add option="/DUSE_MEMMANAGER" />
+					<Add option="/W3" />
+					<Add option="/ZI" />
+					<Add option="/Od" />
+					<Add option="/MDd" />
+					<Add option="EHsc" />
+					<Add option="/GR" />
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add option="/pdb:Debug FxsMemory Win32\CvGameCoreDLL_DEBUG_MEM.pdb" />
+					<Add library="boost_python-vc71-mt-gd-1_32" />
+					<Add library="winmm" />
+					<Add directory="Python24\libs" />
+					<Add directory="boost-1.32.0\libs\" />
+				</Linker>
+			</Target>
+			<Target title="Final Release Win32">
+				<Option output="..\Assets\CvGameCoreDLL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Final Release Win32" />
+				<Option type="3" />
+				<Option compiler="msvctk" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="/MD" />
+					<Add option="/GR" />
+					<Add option="/O2" />
+					<Add option="/W3" />
+					<Add option="/EHsc" />
+					<Add option="/DWIN32" />
+					<Add option="/DNDEBUG" />
+					<Add option="/D_WINDOWS" />
+					<Add option="/D_USRDLL" />
+					<Add option="/DCVGAMECOREDLL_EXPORTS" />
+					<Add option="/DFINAL_RELEASE" />
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="/debug" />
+					<Add option="/INCREMENTAL:NO" />
+					<Add library="boost_python-vc71-mt-1_32" />
+					<Add library="winmm" />
+					<Add library="user32" />
+					<Add directory="Python24\libs" />
+					<Add directory="boost-1.32.0\libs\" />
+				</Linker>
+			</Target>
+			<Target title="Final Debug Win32">
+				<Option output="..\Assets\CvGameCoreDLL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Final Debug Win32" />
+				<Option type="3" />
+				<Option compiler="msvctk" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="/DWIN32" />
+					<Add option="/D_DEBUG" />
+					<Add option="/D_WINDOWS" />
+					<Add option="/D_USRDLL" />
+					<Add option="/DCVGAMECOREDLL_EXPORTS" />
+					<Add option="/W3" />
+					<Add option="/ZI" />
+					<Add option="/Od" />
+					<Add option="/MD" />
+					<Add option="EHsc" />
+					<Add option="/GR" />
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="Boost-1.32.0\include" />
+					<Add directory="Python24\include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="/NODEFAULTLIB:msvcprtd.lib" />
+					<Add option="/debug" />
+					<Add option="/pdb:Final Debug Win32\CvGameCoreDLL_DEBUG.pdb" />
+					<Add library="boost_python-vc71-mt-1_32" />
+					<Add library="winmm" />
+					<Add library="msvcprt" />
+					<Add directory="Python24\libs" />
+					<Add directory="boost-1.32.0\libs\" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="AI_Defines.h" />
+		<Unit filename="CvArea.cpp" />
+		<Unit filename="CvArea.h" />
+		<Unit filename="CvArtFileMgr.cpp" />
+		<Unit filename="CvArtFileMgr.h" />
+		<Unit filename="CvCity.cpp" />
+		<Unit filename="CvCity.h" />
+		<Unit filename="CvCityAI.cpp" />
+		<Unit filename="CvCityAI.h" />
+		<Unit filename="CvDLLButtonPopup.cpp" />
+		<Unit filename="CvDLLButtonPopup.h" />
+		<Unit filename="CvDLLDataStreamIFaceBase.h" />
+		<Unit filename="CvDLLEngineIFaceBase.h" />
+		<Unit filename="CvDLLEntity.cpp" />
+		<Unit filename="CvDLLEntity.h" />
+		<Unit filename="CvDLLEntityIFaceBase.h" />
+		<Unit filename="CvDLLFAStarIFaceBase.h" />
+		<Unit filename="CvDLLFlagEntityIFaceBase.h" />
+		<Unit filename="CvDLLIniParserIFaceBase.h" />
+		<Unit filename="CvDLLInterfaceIFaceBase.h" />
+		<Unit filename="CvDLLPlotBuilderIFaceBase.h" />
+		<Unit filename="CvDLLPython.cpp" />
+		<Unit filename="CvDLLPythonIFaceBase.h" />
+		<Unit filename="CvDLLSymbolIFaceBase.h" />
+		<Unit filename="CvDLLUtilityIFaceBase.h" />
+		<Unit filename="CvDLLWidgetData.cpp" />
+		<Unit filename="CvDLLWidgetData.h" />
+		<Unit filename="CvDLLXMLIFaceBase.h" />
+		<Unit filename="CvDeal.cpp" />
+		<Unit filename="CvDeal.h" />
+		<Unit filename="CvDefines.h" />
+		<Unit filename="CvDiploParameters.cpp" />
+		<Unit filename="CvDiploParameters.h" />
+		<Unit filename="CvDllPythonEvents.cpp" />
+		<Unit filename="CvDllPythonEvents.h" />
+		<Unit filename="CvDllTranslator.cpp" />
+		<Unit filename="CvDllTranslator.h" />
+		<Unit filename="CvEnums.h" />
+		<Unit filename="CvEventReporter.cpp" />
+		<Unit filename="CvEventReporter.h" />
+		<Unit filename="CvFractal.cpp" />
+		<Unit filename="CvFractal.h" />
+		<Unit filename="CvGame.cpp" />
+		<Unit filename="CvGame.h" />
+		<Unit filename="CvGameAI.cpp" />
+		<Unit filename="CvGameAI.h" />
+		<Unit filename="CvGameCoreDLL.cpp" />
+		<Unit filename="CvGameCoreDLL.h" />
+		<Unit filename="CvGameCoreDLLDefNew.h" />
+		<Unit filename="CvGameCoreDLLUndefNew.h" />
+		<Unit filename="CvGameCoreUtils.cpp" />
+		<Unit filename="CvGameCoreUtils.h" />
+		<Unit filename="CvGameInterface.cpp" />
+		<Unit filename="CvGameTextMgr.cpp" />
+		<Unit filename="CvGameTextMgr.h" />
+		<Unit filename="CvGlobals.cpp" />
+		<Unit filename="CvGlobals.h" />
+		<Unit filename="CvHallOfFameInfo.cpp" />
+		<Unit filename="CvHallOfFameInfo.h" />
+		<Unit filename="CvInfoWater.cpp" />
+		<Unit filename="CvInfoWater.h" />
+		<Unit filename="CvInfos.cpp" />
+		<Unit filename="CvInfos.h" />
+		<Unit filename="CvInitCore.cpp" />
+		<Unit filename="CvInitCore.h" />
+		<Unit filename="CvMap.cpp" />
+		<Unit filename="CvMap.h" />
+		<Unit filename="CvMapGenerator.cpp" />
+		<Unit filename="CvMapGenerator.h" />
+		<Unit filename="CvMessageControl.cpp" />
+		<Unit filename="CvMessageControl.h" />
+		<Unit filename="CvMessageData.cpp" />
+		<Unit filename="CvMessageData.h" />
+		<Unit filename="CvPlayer.cpp" />
+		<Unit filename="CvPlayer.h" />
+		<Unit filename="CvPlayerAI.cpp" />
+		<Unit filename="CvPlayerAI.h" />
+		<Unit filename="CvPlot.cpp" />
+		<Unit filename="CvPlot.h" />
+		<Unit filename="CvPlotGroup.cpp" />
+		<Unit filename="CvPlotGroup.h" />
+		<Unit filename="CvPopupInfo.cpp" />
+		<Unit filename="CvPopupInfo.h" />
+		<Unit filename="CvPopupReturn.cpp" />
+		<Unit filename="CvPopupReturn.h" />
+		<Unit filename="CvRandom.cpp" />
+		<Unit filename="CvRandom.h" />
+		<Unit filename="CvReplayInfo.cpp" />
+		<Unit filename="CvReplayInfo.h" />
+		<Unit filename="CvReplayMessage.cpp" />
+		<Unit filename="CvReplayMessage.h" />
+		<Unit filename="CvRhyes.cpp" />
+		<Unit filename="CvRhyes.h" />
+		<Unit filename="CvSelectionGroup.cpp" />
+		<Unit filename="CvSelectionGroup.h" />
+		<Unit filename="CvSelectionGroupAI.cpp" />
+		<Unit filename="CvSelectionGroupAI.h" />
+		<Unit filename="CvStatistics.cpp" />
+		<Unit filename="CvStatistics.h" />
+		<Unit filename="CvString.h" />
+		<Unit filename="CvStructs.cpp" />
+		<Unit filename="CvStructs.h" />
+		<Unit filename="CvTalkingHeadMessage.cpp" />
+		<Unit filename="CvTalkingHeadMessage.h" />
+		<Unit filename="CvTeam.cpp" />
+		<Unit filename="CvTeam.h" />
+		<Unit filename="CvTeamAI.cpp" />
+		<Unit filename="CvTeamAI.h" />
+		<Unit filename="CvUnit.cpp" />
+		<Unit filename="CvUnit.h" />
+		<Unit filename="CvUnitAI.cpp" />
+		<Unit filename="CvUnitAI.h" />
+		<Unit filename="CvXMLLoadUtility.cpp" />
+		<Unit filename="CvXMLLoadUtility.h" />
+		<Unit filename="CvXMLLoadUtilityGet.cpp" />
+		<Unit filename="CvXMLLoadUtilityInit.cpp" />
+		<Unit filename="CvXMLLoadUtilitySet.cpp" />
+		<Unit filename="CyArea.cpp" />
+		<Unit filename="CyArea.h" />
+		<Unit filename="CyAreaInterface.cpp" />
+		<Unit filename="CyArgsList.cpp" />
+		<Unit filename="CyArgsList.h" />
+		<Unit filename="CyArtFileMgr.cpp" />
+		<Unit filename="CyArtFileMgr.h" />
+		<Unit filename="CyArtFileMgrInterface.cpp" />
+		<Unit filename="CyCity.cpp" />
+		<Unit filename="CyCity.h" />
+		<Unit filename="CyCityInterface1.cpp" />
+		<Unit filename="CyDeal.cpp" />
+		<Unit filename="CyDeal.h" />
+		<Unit filename="CyEnumsInterface.cpp" />
+		<Unit filename="CyGame.cpp" />
+		<Unit filename="CyGame.h" />
+		<Unit filename="CyGameCoreUtils.cpp" />
+		<Unit filename="CyGameCoreUtils.h" />
+		<Unit filename="CyGameCoreUtilsInterface.cpp" />
+		<Unit filename="CyGameInterface.cpp" />
+		<Unit filename="CyGameTextMgr.cpp" />
+		<Unit filename="CyGameTextMgr.h" />
+		<Unit filename="CyGameTextMgrInterface.cpp" />
+		<Unit filename="CyGlobalContext.cpp" />
+		<Unit filename="CyGlobalContext.h" />
+		<Unit filename="CyGlobalContextInterface1.cpp" />
+		<Unit filename="CyGlobalContextInterface2.cpp" />
+		<Unit filename="CyGlobalContextInterface3.cpp" />
+		<Unit filename="CyGlobalContextInterface4.cpp" />
+		<Unit filename="CyHallOfFameInfo.cpp" />
+		<Unit filename="CyHallOfFameInfo.h" />
+		<Unit filename="CyHallOfFameInterface.cpp" />
+		<Unit filename="CyInfoInterface1.cpp" />
+		<Unit filename="CyInfoInterface2.cpp" />
+		<Unit filename="CyInfoInterface3.cpp" />
+		<Unit filename="CyMap.cpp" />
+		<Unit filename="CyMap.h" />
+		<Unit filename="CyMapGenerator.cpp" />
+		<Unit filename="CyMapGenerator.h" />
+		<Unit filename="CyMapGeneratorInterface.cpp" />
+		<Unit filename="CyMapInterface.cpp" />
+		<Unit filename="CyMessageControl.cpp" />
+		<Unit filename="CyMessageControl.h" />
+		<Unit filename="CyMessageControlInterface.cpp" />
+		<Unit filename="CyPlayer.cpp" />
+		<Unit filename="CyPlayer.h" />
+		<Unit filename="CyPlayerInterface1.cpp" />
+		<Unit filename="CyPlayerInterface2.cpp" />
+		<Unit filename="CyPlot.cpp" />
+		<Unit filename="CyPlot.h" />
+		<Unit filename="CyPlotInterface1.cpp" />
+		<Unit filename="CyRandomInterface.cpp" />
+		<Unit filename="CyReplayInfo.cpp" />
+		<Unit filename="CyReplayInfo.h" />
+		<Unit filename="CySelectionGroup.cpp" />
+		<Unit filename="CySelectionGroup.h" />
+		<Unit filename="CySelectionGroupInterface.cpp" />
+		<Unit filename="CyStructsInterface1.cpp" />
+		<Unit filename="CyTeam.cpp" />
+		<Unit filename="CyTeam.h" />
+		<Unit filename="CyTeamInterface.cpp" />
+		<Unit filename="CyUnit.cpp" />
+		<Unit filename="CyUnit.h" />
+		<Unit filename="CyUnitInterface1.cpp" />
+		<Unit filename="FAssert.cpp" />
+		<Unit filename="FAssert.h" />
+		<Unit filename="FDialogTemplate.cpp" />
+		<Unit filename="FDialogTemplate.h" />
+		<Unit filename="FProfiler.h" />
+		<Unit filename="LinkedList.h" />
+		<Unit filename="_precompile.cpp" />
+		<Unit filename="resource.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

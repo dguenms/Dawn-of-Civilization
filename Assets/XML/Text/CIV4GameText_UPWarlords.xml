@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UP_BAB</Tag>
+		<English>The Power of Law:</English>
+		<French>Le Pouvoir de la Loi :</French>
+		<German>Die Macht des Gesetzes:</German>
+		<Italian>Il potere della legge:</Italian>
+		<Spanish>El poder de la ley:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BAB2</Tag>
+		<English>+33% [ICON_PRODUCTION]and [ICON_COMMERCE]in your Capital after the discovery of Code of Laws</English>
+		<French>Pas de résistance dans les villes conquises</French>
+		<German>+33% [ICON_PRODUCTION]und [ICON_COMMERCE]in Eurer Hauptstadt nach der Entdeckung der Gesetzgebung</German>
+		<Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
+		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CAR</Tag>
+		<English>The Power of Seafaring:</English>
+		<French>Le Pouvoir des Mercenaires :</French>
+		<German>Die Macht der Seefahrt:</German>
+		<Italian>Il potere dei mercenari:</Italian>
+		<Spanish>El poder de los mercenarios:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_CAR2</Tag>
+		<English>Trade route yields increased by 50%</English>
+		<French>Coûts de recrutement et d'entretien des mercenaires divisés par deux</French>
+		<German>Einnahmen durch Handelsrouten um 50% erhöht</German>
+		<Italian>Dimezzati i costi di assunzione e mantenimento dei mercenari</Italian>
+		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_VIK</Tag>
+		<English>The Power of Raid:</English>
+		<French>Le Pouvoir du Pillage :</French>
+		<German>Die Macht des Raubens:</German>
+		<Italian>Il potere dell'incursione:</Italian>
+		<Spanish>El poder del pillaje:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_VIK2</Tag>
+		<English>5X Gold obtained from pillaging</English>
+		<French>5X Or obtenu par le pillage</French>
+		<German>5x Gold durch Plünderung</German>
+		<Italian>5X oro ottenuto dai saccheggi</Italian>
+		<Spanish>Se obtiene oro x5 del pillaje</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TUR</Tag>
+		<English>The Power of Assimilation:</English>
+		<French>Le Pouvoir de l'Assimilation :</French>
+		<German>Die Macht der Anpassung:</German>
+		<Italian>Il potere dell'assimilazione:</Italian>
+		<Spanish>El poder de la asimilaci&#243;n:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TUR2</Tag>
+		<English>The majority of foreign culture in Turkish cities is converted to Turkish culture</English>
+		<French>La plus grande partie de la culture étrangère dans les villes turques est convertie à la culture turque</French>
+		<German>Umwandlung eines Großteils fremder Kultureinflüsse in türkischen Städten zu türkischer Kultur</German>
+		<Italian>La maggioranza di cultura straniera nelle citt&#224; turche &#232; convertita in cultura turca</Italian>
+		<Spanish>La mayor parte de la cultura extranjera en ciudades turcas se convierte a cultura turca</Spanish>
+	</TEXT>
+</Civ4GameText>

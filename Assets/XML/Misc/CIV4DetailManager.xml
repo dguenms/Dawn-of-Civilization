@@ -1,0 +1,466 @@
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Detail Manager -->
+<!-- Deines level-o-detail controllers or Cbiv4 graphical elements -->
+<!-- Useful hint: values in this file can be changed on the fly (i.e. effects will be noticeable w/o restarting the game) -->
+<DetailManagerInfos xmlns="x-schema:CIV4DetailManagerSchema.xml">
+	<Fader>
+		<Name>DF_DETAIL</Name>
+		<Key>700, 0.00</Key>
+		<Key>750, 1.00</Key>
+	</Fader>
+	<Fader>
+		<Name>DF_SKY</Name>
+		<!-- Rhye - start -->
+		<Key>7000, 0.00</Key>
+		<Key>7400, 1.0</Key>
+		<Key>%CAMERA_MAX_DISTANCE, 1.00</Key>
+	</Fader>
+	<Fader>
+		<Name>DF_GLOBE_TERRAIN</Name>
+		<Key>7000, 0.00</Key>
+		<Key>7400, 1.00</Key>
+	</Fader>
+	<Fader>
+		<Name>DF_GLOBE_MORPH</Name>
+		<Key>7400,	0.00</Key>
+		<Key>%CAMERA_MAX_DISTANCE*0.97, 1.00</Key>
+	</Fader>
+	<Fader>
+		<Name>UNIT_SCALE</Name>
+		<Key>700.0,  0.8</Key>
+		<Key>1500.0, 1.1</Key>
+		<Key>3000.0, 1.4</Key>
+		<Key>5000.0, 1.7</Key>
+		<!-- Rhye - end -->
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_UNIT_CUT_RADIUS</Name>
+		<!-- controls the radius of space to leave around fortified unit in a city layout -->
+		<Value>20</Value>
+	</Fader>
+	<Fader>
+		<Name>FLAG_SCALE</Name>
+		<!-- Rhye - start -->
+		<Key>700.0,  0.8</Key>
+		<Key>1500.0, 0.9</Key>
+		<Key>3000.0, 1.1</Key>
+		<Key>5000.0, 1.4</Key>
+		<!-- Rhye - end -->
+	</Fader>
+	<Fader>
+		<Name>F_PLOTINDICATOR_SCALE</Name>
+		<Key>0.0,  0.0</Key>
+		<Key>0.2,  0.9</Key>
+		<Key>1.0,  1.0</Key>
+	</Fader>
+	<Fader>
+		<Name>F_PLOTINDICATOR_ALPHA</Name>
+		<Key>0.0,  0.0</Key>
+		<Key>0.2,  0.5</Key>
+		<Key>0.7,  0.8</Key>
+		<Key>1.0,  1.0</Key>
+	</Fader>
+	<Fader>
+		<Name>CITY_GLOBEVIEW_ZOOM</Name>
+		<!-- cities grow synthetically in the globe view to this size -->
+		<Value>2.0f</Value>
+	</Fader>
+	<Fader>
+		<Name>CITYBILLBOARD_SCALE</Name>
+		<!-- changes the size of the billboards based on the camera distance -->
+		<Key>700,	 1.5</Key>
+		<Key>2500,   1.0</Key>
+		<Key>6000,   0.67</Key>
+		<Key>25000,   0.40</Key> <!-- Rhye -->
+	</Fader>
+	<Fader>
+		<Name>CITYBILLBOARD_HEIGHT</Name>
+		<!-- changes the height of the city billboards ***toward the camera*** based on camera distnace -->
+		<Key>700, 300.0</Key>
+		<Key>5000, 300.0</Key>
+	</Fader>
+	<Fader>
+		<Name>CITYBILLBOARD_RADIUS</Name>
+		<!-- the billboard is placed a certain distance out from the center of the city ... this is the distance used, again vs. camera distance -->
+		<Key>700, 90.0</Key>
+		<Key>5000, 35.0</Key>
+	</Fader>
+	<Fader>
+		<Name>CITYBILLBOARD_TURN_BIAS</Name>
+		<!-- as you turn the camera left and right, the city billboard gets placed in the local south, i.e. "down on your screen"... but this bias pushes the placement left and right from there... the -.784 is a full 45 degree left-tilt, +.784 is right -->
+		<Key>-0.785,0.0</Key>
+		<Key> 0.000,0.0</Key>
+		<Key>+0.785,0.0</Key>
+	</Fader>
+	<Fader>
+		<Name>CITYBILLBOARD_TURN_BIAS2</Name>
+		<!-- as the camera zooms out, the city billboard sometimes appears to move left and right ... this allows you to force it to the left or right slightly based upon zoom ... -->
+		<Key>700,0.0</Key>
+		<Key>5000,0.0</Key>
+	</Fader>
+	<Fader>
+		<Name>CITYBILLBOARD_ANGLE_SCALE</Name>
+		<!-- as the city billboard moves to the edge of the globe, it shrinks ... play with these values while in globeview to get an idea of what this fader does in practice. -->
+		<Key>0.0,  0.0</Key>
+		<Key>0.2,  0.75</Key>
+		<Key>1.0,  1.0</Key>
+	</Fader>
+	<Fader>
+		<Name>CITYBILLBOARD_ANGLE_HEIGHT_BIAS</Name>
+		<!-- as the city billboard moves to the edge of the globe, it gets lower in the sky... play with these values while in globeview to get an idea of what this fader does in practice. -->
+		<Key>0.0,  -250.0</Key>
+		<Key>1.0,  0.0</Key>
+	</Fader>
+	<Fader>
+		<Name>CITY_TWIST</Name>
+		<Value>-0.7853981633</Value>
+		<!-- how much to rotate cities about their axis -->
+		<!-- make sure you keep CITY_WALLS and CITY_AQUEDUCT sync'd to this in CityLSystem.xml -->
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_SIZE</Name>
+		<!-- controls how big a city is, in terms of numbers of plots -->
+		<Value>0.72</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_NODE_WATERINESS</Name>
+		<!-- roughly speaking, the percent of area allowed to be in-water for a node to finalize -->
+		<Value>0.5</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_PRODUCTION_WATERINESS</Name>
+		<!-- the percent of area in a production allowed for it to be finalized -->
+		<Value>0.5</Value>
+	</Fader>
+	<Fader>
+		<Name>	CITY_LAYOUT_COAST_FINDER_RADIUS</Name>
+		<Value>1.5</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_COAST_FINDER_DENSITY</Name>
+		<Value>20</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_COAST_FINDER_FILTER_SIZE</Name>
+		<Value>40</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_COAST_FINDER_NOISE</Name>
+		<Value>0</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_COAST_FINDER_CLOSENESS</Name>
+		<Value>60</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_COAST_FINDER_WATER_CLOSENESS</Name>
+		<Value>80</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_TREECUT_SCALE</Name>
+		<!-- multiplies plot size to obtain the radius of the treecut on cities -->
+		<Value>1.0</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_TREECUT_ZONE_BEGIN</Name>
+		<!-- if a node lies outside this radius from the city center, then it gets a treecut added to it when finalized -->
+		<Value>100</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_GROUND_SCALE</Name>
+		<Value>1.0</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_GROUND_ZOFFSET_PLAINS</Name>
+		<Value>1.0</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_GROUND_ZOFFSET_HILLS</Name>
+		<Value>4.5</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_BUILDING_SCALE</Name>
+		<!-- controls the scale applied to buildings in the city ... keep in mind that the actual size of a building is this value multiplied by CITY_SCALE -->
+		<Value>0.33</Value>
+	</Fader>
+	<Fader>
+		<Name>WALL_DEPTH</Name>
+		<!-- controls how high walls are off of the ground -->
+		<Value>-5.0</Value>
+	</Fader>
+	<Fader>
+		<Name>WALL_TWEAK_X</Name>
+		<!-- small translation factor for walls to keep them aligned with the city -->
+		<Value>0.50</Value>
+	</Fader>
+	<Fader>
+		<Name>WALL_TWEAK_Y</Name>
+		<!-- small translation factor for walls to keep them aligned with the city-->
+		<Value>.5</Value>
+	</Fader>
+	<Fader>
+		<Name>WALL_OFFSET_AMOUNT</Name>
+		<!-- how far are the walls away from the core city outline? -->
+		<Value>8</Value>
+	</Fader>
+	<Fader>
+		<Name>WALL_MIN_POST_DISTANCE</Name>
+		<!-- how far are the walls away from the core city outline? -->
+		<Value>40</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_WALLS_MAX_RADIUS</Name>
+		<!-- the maximum radius of the wall, in Civ4CityLSystem units -->
+		<Value>6</Value>
+	</Fader>
+	<Fader>
+		<Name>BONUS_DYNSCALE</Name>
+		<!-- nothing to see here... move on folks, move on... -->
+		<Value>0.5</Value>
+	</Fader>
+	<Fader>
+		<Name>PLOT_LAYOUT_SIZE</Name>
+		<!-- nothing to see here... move on folks, move on... -->
+		<Value>0.5</Value>
+	</Fader>
+	<Fader>
+		<Name>PLOT_LAYOUT_NODE_WATERINESS</Name>
+		<!-- roughly speaking, the percent of area allowed to be in-water for a node to finalize -->
+		<Value>0.2</Value>
+	</Fader>
+	<Fader>
+		<Name>PLOT_LAYOUT_PRODUCTION_WATERINESS</Name>
+		<!-- the percent of area in a production allowed for it to be finalized -->
+		<Value>0.5</Value>
+	</Fader>
+	<Fader>
+		<Name>SYMBOL_SCALE</Name>
+		<Key>700.0,  1.1</Key>
+		<Key>1800.0, 1.6</Key>
+		<Key>5000.0, 2.8</Key>
+	</Fader>
+	<!-- PlotBuilder node priority is computed in one of two ways:
+		   1) By the distance of the node from the center of the plot
+		   2) By the minimum distnace of one of the node's corners to the plot cente
+		 At F_PLOTBUILDER_PBLEND=0.0, the first metric will dominate node priority and at
+		 F_PLOTBUILDER_PBLEND=1.0, the second will dominate. -->
+	<Fader>
+		<Name>F_PLOTBUILDER_PBLEND</Name>
+		<Value>0.5</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_LANDSCAPE_BIAS</Name>
+		<Value>5.0</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_SKY_HEIGHT</Name>
+		<Value>65.0</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_CAP_RADIUS</Name>
+		<!-- what ART_GLOBEVIEW_WORLD_CAP -->
+		<Value>83.0</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_CAP_BIAS</Name>
+		<!-- displaces the icecap vertices +GLOBE_CAP_BIAS units along their normal -->
+		<Value>0.0</Value>
+	</Fader>
+	<!-- the following three parameters control how the Civ4 globe is lit.
+	     Since the size and position of the globe varies from map to map, it is necessary
+	     for these values to vary somewhat from map-to-map. This is accomplished with a fader whose
+	     X values are the "world size" and the Y values are the resulting value for that world size.
+	     Generally speaking, common values for world sizes are 7000 in the case of small maps to 15000 for large maps.
+	     The general rule, however, is hand-tuning: just tweak these numbers for different keyings to get the effect you want
+	     -->
+	<Fader>
+		<!-- maps from current globe radius to lighting angle -->
+		<Name>GLOBE_SPOTLIGHT_ANGLE</Name>
+		<!--<Key>%MAX_CAMERA_DISTANCE,24</Key>-->
+		<Key>3810,22</Key>
+		<Key>7619,26</Key>
+		<Key>9908,30</Key>
+		<Key>19799,30</Key>
+		<Key>100000,90</Key>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_SPOTLIGHT_XTRANS</Name>
+		<!--- in/out of globe light in screenspace versus max camera distance -->
+		<Key>10000,0</Key>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_SPOTLIGHT_YTRANS</Name>
+		<!-- up/down of globe light in screenspace -->
+		<Key>10000,250</Key>
+		<Key>23803,350</Key>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_SPOTLIGHT_ZTRANS</Name>
+		<!-- left/right of globe light in screenspace -->
+		<Key>10000,2000</Key>
+		<Key>23803,2200</Key>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_SPOTLIGHT_EXPONENT</Name>
+		<Value>1.4</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_MATERIAL_SHININESS</Name>
+		<Value>1.0</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_MATERIAL_AMBIENT_DAMPING</Name>
+		<Value>0.15</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_MATERIAL_DIFFUSE_DAMPING</Name>
+		<Value>1.0</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_SPOTLIGHT_YROT</Name>
+		<Value>-.25</Value>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_NIGHTSKY_SCALE</Name>
+		<Value>4.0</Value>
+	</Fader>
+	<Fader>
+		<Name>CAMERA_MAX_DISTANCE_FADER </Name>
+		<Value>0.85</Value> <!--Rhye 0.75-->
+	</Fader>
+	<Fader>
+		<Name>CAMERA_FAR_PLANE_SCALE</Name>
+		<Value>10.0</Value>
+	</Fader>
+	<Fader>
+		<Name>UNIT_HEALTH_BILLBOARD_SCALE</Name>
+		<!-- changes the size of the billboards based on the camera distance -->
+		<Key>700,	 3.0</Key>
+		<Key>2500,   2.0</Key>
+	</Fader>
+	<Fader>
+		<Name>UNIT_HEALTH_BILLBOARD_Z</Name>
+		<!-- changes the height of the city billboards ***toward the camera*** based on camera distnace -->
+		<Key>700, 80.0</Key>
+		<Key>5000,70.0</Key>
+	</Fader>
+	<Fader>
+		<Name>UNIT_HEALTH_BILLBOARD_RADIUS</Name>
+		<!-- the billboard is placed a certain distance out from the center of the city ... this is the distance used, again vs. camera distance -->
+		<Key>700, 0.0</Key>
+		<Key>2000,-60</Key>
+		<Key>5000, -80.0</Key>
+	</Fader>
+	<Fader>
+		<Name>UNIT_HEALTH_BILLBOARD_Z_VS_TURN</Name>
+		<!-- as you turn the camera left and right, the city billboard gets placed in the local south, i.e. "down on your screen"... but this bias pushes the placement left and right from there... the -.784 is a full 45 degree left-tilt, +.784 is right -->
+		<Key>-0.785,-25.0</Key>
+		<Key> 0.000,0.0</Key>
+		<Key>+0.785,0.0</Key>
+	</Fader>
+	<!-- Controllers for how the aqueduct sourc eand sink is found -->
+	<Fader>
+		<Name>AQUEDUCT_SINK_MIN_DIST</Name>
+		<Value>50.0</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_SINK_MAX_DIST</Name>
+		<Value>80.0</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_SINK_TWIST</Name>
+		<Value>0.15</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_SOURCE_MIN_DIST</Name>
+		<Value>180.0</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_SOURCE_MAX_DIST</Name>
+		<Value>256.0</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_PLOT_SEARCH_DIST</Name>
+		<Value>2</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_HEIGHT_CUTOFF</Name> <!-- points in the aqueduct won't be created above this altitutde -->
+		<Value>100</Value>
+	</Fader>
+
+	<!-- controllers for how the path between source and sink is found ... 
+		we recursively split the line between source and sink until it reaches and ideal length,
+		adding noise to each split vertex in the tangent (X) and normal (Y) directions -->
+	<Fader>
+		<Name>AQUEDUCT_MIN_SEGMENT_LENGTH</Name>
+		<!-- how big is each segement in the aqueduct -->
+		<Value>20.0</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_SPLIT_NOISE_TANGENT</Name>
+		<!-- segment length VERSUS midpoint position in percentage from segment midpoint -->
+		<Key>32,	0.0</Key>
+		<Key>128,	0.1</Key>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_SPLIT_NOISE_NORMAL</Name>
+		<!-- segment length VERSUS offset in tangent direction in percentage of length -->
+		<Key>32,	0.0</Key>
+		<Key>90,	0.4</Key>
+		<Key>128,	0.4</Key>
+	</Fader>
+	<!-- controllers for how trees and buildings interact with the aqueduct -->
+	<Fader>
+		<Name>AQUEDUCT_CUT_DENSITY</Name>
+		<!-- add a cut every few units along the aqueduct length -->
+		<Value>10.0f</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_CUT_RADIUS</Name>
+		<Value>5.0f</Value>
+	</Fader>
+	<!-- controllers for the overall size of the aqueduct -->
+	<Fader>
+		<Name>AQUEDUCT_BASEMENT_DEPTH</Name>
+		<Value>-20.0f</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_MAIN_SCALE</Name>
+		<Value>0.4f</Value>
+	</Fader>
+	<Fader>
+		<Name>AQUEDUCT_HEIGHT_SCALE</Name>
+		<Value>0.5f</Value>
+	</Fader>
+	<Fader>
+		<Name>PLOT_LAYOUT_REGIONQUERY_SWELL</Name>
+		<Value>0.0f</Value>
+	</Fader>
+	<Fader>
+		<Name>CITY_LAYOUT_REGIONQUERY_SWELL</Name>
+		<Value>10.0f</Value>
+	</Fader>
+	<!-- these faders control how fast the globe pans in response to mouse movement in the x and y directions respectively...
+	     the first value is the width and height of the map being played -->
+	<Fader>
+		<Name>GLOBE_PAN_RATE_X</Name>
+		<Key>3810,0.005</Key>
+		<Key>19799,0.0075</Key>
+	</Fader>
+	<Fader>
+		<Name>GLOBE_PAN_RATE_Y</Name>
+		<Key>3810,0.005</Key>
+		<Key>19799,0.005</Key>
+	</Fader>
+	<!-- cities visible on globe -->
+	<Fader>
+		<Name>CITY_VISIBILITY</Name>
+		<Key>6000, 1.0</Key>
+		<!-- uncomment this to hide cities on maps wider than 6000 units
+		<Key>6001,0.0</Key>
+		-->
+	</Fader>
+</DetailManagerInfos>

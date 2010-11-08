@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_COLLAPSING</Tag>
+		<English>Collapsing</English>
+		<French>En chute</French>
+		<German>Zerfallend</German>
+		<Italian>Collasso</Italian>
+		<Spanish>Al borde del colapso</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_UNSTABLE</Tag>
+		<English>Unstable</English>
+		<French>Instable</French>
+		<German>Instabil</German>
+		<Italian>Instabile</Italian>
+		<Spanish>Inestable</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_SHAKY</Tag>
+		<English>Shaky</English>
+		<French>Agité</French>
+		<German>Wankend</German>
+		<Italian>Traballante</Italian>
+		<Spanish>Incierta</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_STABLE</Tag>
+		<English>Stable</English>
+		<French>Stable</French>
+		<German>Stabil</German>
+		<Italian>Stabile</Italian>
+		<Spanish>Estable</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_SOLID</Tag>
+		<English>Solid</English>
+		<French>Solide</French>
+		<German>Solide</German>
+		<Italian>Solido</Italian>
+		<Spanish>S&#243;lida</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_VERYSOLID</Tag>
+		<English>Very Solid</English>
+		<French>Très solide</French>
+		<German>Sehr solide</German>
+		<Italian>Molto solido</Italian>
+		<Spanish>Muy s&#243;lida</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CIVILWAR_HUMAN</Tag>
+		<English>Your empire is descending into civil war!</English>
+		<French>Votre empire entre en guerre civile !</French>
+		<German>Euer Reich steht vor einem Bürgerkrieg!</German>
+		<Italian>Il tuo impero sta per cadere nella guerra civile!</Italian>
+		<Spanish>¡Tu imperio est&#225; sufriendo una guerra civil!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CIVILWAR</Tag>
+		<English>is descending into civil war!</English>
+		<French>entre en guerre civile !</French>
+		<German>steht vor einem Bürgerkrieg!</German>
+		<Italian>sta cadendo nella guerra civile!</Italian>
+		<Spanish>est&#225; sufriendo una guerra civil.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_SECESSION</Tag>
+		<English>has declared its independence!</English>
+		<French>a déclaré son indépendance !</French>
+		<German>hat seine Unabh&#228;ngigkeit erkl&#228;rt!</German>
+		<Italian>ha dichiarato la propria indipendenza!</Italian>
+		<Spanish>ha declarado su independencia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_PERIOD</Tag>
+		<English>Your empire is experiencing a period of</English>
+		<French>Votre empire connaît une période</French>
+		<German>Euer Reich durchlebt eine Phase der</German>
+		<Italian>Il tuo impero sta vivendo un periodo di</Italian>
+		<Spanish>Tu imperio est&#225; pasando por un periodo de</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION</Tag>
+		<English>Great Depression!</English>
+		<French>de Grande Dépression !</French>
+		<German>Großen Depression!</German>
+		<Italian>Grande Depressione!</Italian>
+		<Spanish>Gran Depresi&#243;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_POST_COMMUNISM</Tag>
+		<English>post-communist crisis!</English>
+		<French>de crise post-communiste !</French>
+		<German>post-kommunistischen Krise!</German>
+		<Italian>crisi post-comunista!</Italian>
+		<Spanish>crisis post-comunista.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DEMOCRACY</Tag>
+		<English>instability caused by transition to democracy!</English>
+		<French>d'instabilité causée par la transition démocratique !</French>
+		<German>Instabilität, verursacht durch den Wechsel zur Demokratie!</German>
+		<Italian>instabilit&#224;, causata dal passaggio alla democrazia!</Italian>
+		<Spanish>inestabilidad causada por la transici&#243;n a la democracia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE1</Tag>
+		<English>The period of Great Depression in the</English>
+		<French>La période de Grande Dépression en</French>
+		<German>Die Phase der Gro&#223;en Depression in</German>
+		<Italian>Il periodo di Grande Depressione nel</Italian>
+		<Spanish>El periodo de Gran Depresi&#243;n del</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE2</Tag>
+		<English>is negatively influencing our economy!</English>
+		<French>influence négativement notre économie !</French>
+		<German>hat negative Auswirkungen auf unsere Wirtschaft!</German>
+		<Italian>sta influenzando negativamente la nostra economia!</Italian>
+		<Spanish>est&#225; afectando negativamente a nuestra econom&#237;a.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FINANCIAL_ADVISOR_TITLE</Tag>
+		<English>Interior Advisor</English>
+		<French>Conseiller Interne</French>
+		<German>Inlandsberater</German>
+		<Italian>Consigliere per gli interni</Italian>
+		<Spanish>Consejero de Interior</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ADVISOR_TITLE</Tag>
+		<English>STABILITY: </English>
+		<French>STABILITE : </French>
+		<German>STABILITÄT: </German>
+		<Italian>STABILIT&#192;: </Italian>
+		<Spanish>ESTABILIDAD: </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_PARAMETER_CITIES</Tag>
+		<English>CITIES</English>
+		<French>VILLES</French>
+		<German>STÄDTE</German>
+		<Italian>CITT&#192;</Italian>
+		<Spanish>CIUDADES</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_PARAMETER_CIVICS</Tag>
+		<English>CIVICS</English>
+		<French>REGIME</French>
+		<German>STAATSFORMEN</German>
+		<Italian>FORME DI GOVERNO</Italian>
+		<Spanish>PRINCIPIOS</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_PARAMETER_FOREIGN</Tag>
+		<English>FOREIGN</English>
+		<French>ETRANGER</French>
+		<German>AUSLAND</German>
+		<Italian>ESTERO</Italian>
+		<Spanish>ASUNTOS EXTERIORES</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_PARAMETER_ECONOMY</Tag>
+		<English>ECONOMY</English>
+		<French>ECONOMIE</French>
+		<German>WIRTSCHAFT</German>
+		<Italian>ECONOMIA</Italian>
+		<Spanish>ECONOMÍA</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_PARAMETER_EXPANSION</Tag>
+		<English>EXPANSION</English>
+		<French>EXPANSION</French>
+		<German>EXPANSION</German>
+		<Italian>ESPANSIONE</Italian>
+		<Spanish>EXPANSIÓN</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH1</Tag>
+		<English>Found one religion</English>
+		<French>Fonder une religion</French>
+		<German>Begründen Sie eine Religion</German>
+		<Italian>Fonda una religione</Italian>
+		<Spanish>Fundar una religi&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2</Tag>
+		<English>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD</English>
+		<French>Aucune colonie européenne en Afrique orientale et subéquatoriale en 1500 ap. J.-C.</French>
+		<German>Lassen Sie im Jahr 1500 n. Chr. keine europäischen Kolonien im östlichen und subäquatorialen Afrika zu</German>
+		<Italian>Non permettere alcuna colonia europea nell'Africa orientale e subequatoriale nel 1500 d.C.</Italian>
+		<Spanish>Asegurarse de que no existan colonias europeas en África ecuatorial y oriental en el 1500 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH3</Tag>
+		<English>Ensure there are no European colonies in East and Subequatorial Africa in 1910 AD</English>
+		<French>Aucune colonie européenne en Afrique orientale et subéquatoriale en 1910 ap. J.-C.</French>
+		<German>Lassen Sie im Jahr 1910 n. Chr. keine europäischen Kolonien im östlichen und subäquatorialen Afrika zu</German>
+		<Italian>Non permettere alcuna colonia europea nell'Africa orientale e subequatoriale nel 1910 d.C.</Italian>
+		<Spanish>Asegurarse de que no existan colonias europeas en África ecuatorial y oriental en el 1910 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY1</Tag>
+		<English>Discover Calendar by 600 AD (Turn 181)</English>
+		<French>Découvrir le calendrier avant 600 ap. J.-C. (Tour 181)</French>
+		<German>Erforschen Sie bis zum Jahr 600 n. Chr. (Runde 181) die Technologie Kalender</German>
+		<Italian>Scopri il calendario entro il 600 d.C. (turno 181)</Italian>
+		<Spanish>Descubrir el Calendario antes del 600 d. C. (turno 181)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY2</Tag>
+		<English>Build the Temple of Kukulkan by 900 AD</English>
+		<French>Construire le Temple de Quetzalcoatl avant 900 ap. J.-C.</French>
+		<German>Errichten Sie bis zum Jahr 900 n. Chr. die Pyramide des Kukulc&#225;n</German>
+		<Italian>Costruisci il Tempio di Kukulcan entro il 900 d.C.</Italian>
+		<Spanish>Construir el Templo de Kukulc&#225;n antes del 900 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY3</Tag>
+		<English>Never lose a city before 1745 AD</English>
+		<French>Ne perdre aucune ville avant 1745 ap. J.-C.</French>
+		<German>Verlieren Sie bis zum Jahr 1745 n. Chr. keine einzige Stadt</German>
+		<Italian>Non farti conquistare alcuna citt&#224; prima del 1745 d.C.</Italian>
+		<Spanish>No perder una ciudad antes del 1745 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM1</Tag>
+		<English>Have more than 12000 Culture in 1450 AD</English>
+		<French>Avoir plus de 12000 en Culture en 1450 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1450 n. Chr. mehr als 12.000 Kulturpunkte</German>
+		<Italian>Devi avere più di 12.000 cultura nel 1450 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 12.000 en el 1450 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM2</Tag>
+		<English>Have an average city size of 10 or more in 1450 AD</English>
+		<French>Taille moyenne des villes de 10 ou plus en 1450 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1450 n. Chr. eine durchschnittliche Stadtgröße von 10 oder mehr</German>
+		<Italian>Le tue citt&#224; devono avere una dimensione media di 10 o più nel 1450 d.C.</Italian>
+		<Spanish>Tener un tama&#241;o medio de las ciudades de 10 o m&#225;s en el 1450 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM3</Tag>
+		<English>Spread Buddhism to 30%</English>
+		<French>Répandre le Bouddhisme à 30%</French>
+		<German>Sorgen Sie für eine 30%%-ige Verbreitung des Buddhismus</German>
+		<Italian>Diffondi il buddismo al 30%</Italian>
+		<Spanish>Propagar el Budismo al 30%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL1</Tag>
+		<English>Have 3 great merchants settled in your capital by 1745 AD</English>
+		<French>Avoir la carte du monde la plus étendue en 1600 ap. J.-C.</French>
+		<German>Siedeln Sie 3 große Händler bis 1745 n. Chr. in Ihrer Hauptstadt an</German>
+		<Italian>Devi essere la civiltà con più terreno svelato sulla mappa nel 1600 d.C.</Italian>
+		<Spanish>Ser la civilización con más terreno del mapa revelado en el 1600 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL2</Tag>
+		<English>Be the first to found a city in Australia</English>
+		<French>Etre le premier à fonder une ville en Australie</French>
+		<German>Gründen Sie vor allen anderen Zivilisationen die erste Stadt in Australien</German>
+		<Italian>Devi essere il primo a fondare una citt&#224; in Australia</Italian>
+		<Spanish>Ser el primero en fundar una ciudad en Australia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL3</Tag>
+		<English>Secure or get by trade 7 spices resources by 1775 AD</English>
+		<French>Sécuriser ou obtenir par le commerce 7 en ressources d'épices avant 1775 ap. J.-C.</French>
+		<German>Besetzen oder kaufen Sie bis zum Jahr 1775 n. Chr. 7 Gewürz-Ressourcen</German>
+		<Italian>Assicurati o procurati col commercio 7 fonti di spezie entro il 1775 d.C.</Italian>
+		<Spanish>Asegurar o conseguir por medio del comercio 7 recursos de especias en el 1775 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR1</Tag>
+		<English>Be the Civ with the most revealed territory on your map in 1500 AD</English>
+		<French>Avoir la carte du monde la plus étendue en 1500 ap. J.-C.</French>
+		<German>Weisen Sie im Jahr 1500 n. Ch. die am weitesten aufgedeckte Gebietskarte vor</German>
+		<Italian>Devi essere la civiltà con più terreno svelato sulla mappa nel 1500 d.C.</Italian>
+		<Spanish>Ser la civilización con más terreno del mapa revelado en el 1500 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR2</Tag>
+		<English>Have open borders agreement with 12 other civs in 1650 AD</English>
+		<French>Avoir un accord de libre passage avec 12 autres civilisations en 1650 ap. J.-C.</French>
+		<German>Verfügen Sie im Jahr 1650 n. Chr. über Offene-Grenzen-Abkommen mit 11 anderen Zivilisationen</German>
+		<Italian>Devi aver abilitato il diritto di passaggio con altre 12 civiltà nel 1650 d.C.</Italian>
+		<Spanish>Tener un acuerdo de apertura de fronteras con otras 12 civilizaciones en el 1650 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR3</Tag>
+		<English>Found 15 extra-European colonies</English>
+		<French>Fonder 15 colonies hors d'Europe</French>
+		<German>Gründen Sie 15 außereuropäische Kolonien</German>
+		<Italian>Fonda 15 colonie extra-europee</Italian>
+		<Spanish>Fundar 15 colonias fuera de Europa</Spanish>
+	</TEXT>
+</Civ4GameText>

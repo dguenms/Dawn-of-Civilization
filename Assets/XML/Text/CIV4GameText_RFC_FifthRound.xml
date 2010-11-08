@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<!--Please place any new text entries into this file-->
+	<TEXT>
+		<Tag>TXT_KEY_NEWCIV_MESSAGE1</Tag>
+		<English>Do you wish to take permanent control of the </English>
+		<French>Voulez-vous prendre le contrôle permanent de la</French>
+		<German>Wollt Ihr die permanente Kontrolle über </German>
+		<Italian>Vuoi assumere il controllo permanente di </Italian>
+		<Spanish>¿Deseas tener el control permanente sobre </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_PLAYER_GOLDEN_AGE_BEGINS</Tag>
+		<English>The %s1_PlyrAdject Golden Age begins</English>
+		<French>L'âge d'or %s1:1_PlyrAdject commence</French>
+		<German>Für das %s1:3_PlyrAdject Reich beginnt ein Goldenes Zeitalter</German>
+		<Italian>L'Età dell'oro %s1:2_PlyrAdject inizia</Italian>
+		<Spanish>Empieza la edad de oro %s1:2_PlyrAdject.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_PLAYER_GOLDEN_AGE_HAS_BEGUN</Tag>
+		<English>The %s1_PlyrAdject Golden Age has begun!!!</English>
+		<French>L'âge d'or %s1:1_PlyrAdject vient de commencer !</French>
+		<German>Für das %s1:3_PlyrAdject Reich hat das Goldene Zeitalter begonnen!!!</German>
+		<Italian>L'Età dell'oro %s1:2_PlyrAdject è iniziata!!!</Italian>
+		<Spanish>¡Ha empezado la edad de oro %s1:2_PlyrAdject!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_PLAYER_GOLDEN_AGE_ENDED</Tag>
+		<English>The %s1_PlyrAdject Golden Age has ended...</English>
+		<French>L'âge d'or %s1:1_PlyrAdject a pris fin...</French>
+		<German>Für das %s1:3_PlyrAdject Reich endet das Goldene Zeitalter ...</German>
+		<Italian>L'Età dell'oro %s1:2_PlyrAdject è finita...</Italian>
+		<Spanish>Ha terminado la edad de oro %s1:2_PlyrAdject...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NOTIFY_YES</Tag>
+		<English>is passing under %s1 control</English>
+		<French>passe sous contrôle %s1</French>
+		<German>wird dem %s1:2 Volk übereignet</German>
+		<Italian>sta passando sotto il controllo di %s1</Italian>
+		<Spanish>pasa al control de %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NEWCIV_MESSAGE</Tag>
+		<English>Do you wish to take permanent control of the %s1 civilization?</English>
+		<French>Voulez-vous prendre le contrôle permanent de la civilisation %s1:2</French>
+		<German>Wollt Ihr die permanente Kontrolle über das %s1:3 Volk übernehmen?</German>
+		<Italian>Vuoi assumere il controllo permanente della civilt&#224; %s1:2?</Italian>
+		<Spanish>¿Deseas tomar el control permanente de la civilizaci&#243;n %s1:2?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REBELLION_TEXT</Tag>
+		<English>%s1 cities have declared their independence from us and expelled our garrisons. Shall we leave them free?</English>
+		<French>Les villes %s1 ont déclaré leur indépendance et attaquent nos garnisons. Devons-nous les laisser libres ?</French>
+		<German>%s1:3 St&#228;dte haben ihre Unabh&#228;ngigkeit von uns erkl&#228;rt und unsere Garnisonen vertrieben. Sollen wir sie gewähren lassen?</German>
+		<Italian>Le citt&#224; %s1:4 hanno dichiarato la propria indipendenza, espellendo le nostre guarnigioni. Dobbiamo lasciarle libere?</Italian>
+		<Spanish>Las ciudades %s1:4 han declarado su independencia de nosotros y han expulsado a nuestras guarniciones. ¿Debemos permitir su libertad?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INDEPENDENCE_TEXT</Tag>
+		<English>%s1 cities have declared their independence from their foreign domination!</English>
+		<French>Les villes %s1 ont déclaré leur indépendance par rapport à la domination étrangère !</French>
+		<German>%s1:3 St&#228;dte haben ihre Unabh&#228;ngigkeit von der Fremdherrschaft erkl&#228;rt!</German>
+		<Italian>Le citt&#224; %s1:4 hanno dichiarato la propria indipendenza dal dominio straniero!</Italian>
+		<Spanish>Las ciudades %s1:4 han declarado su independencia del dominio extranjero.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EXILE_TEXT</Tag>
+		<English>You have been captured by the %s1:2 and exiled to the unimportant lands of %s2. You have a short period of time for retaking your capital and gain back your position.</English>
+		<French>Vous avez été capturé par les %s1 et exilé dans les terres inintéressantes de %s2. Vous avez peu de temps pour reprendre votre capitale et récupérer votre situation.</French>
+		<German>Ihr wurdet vom %s1:2 Volk gefangen genommen und seid ins Exil geschickt worden - in das unbedeutende %s2:3 Reich. Es bleibt Euch nur wenig Zeit, um Eure Hauptstadt zur&#252;ckzuerobern und Eure Position wiederzuerlangen.</German>
+		<Italian>Sei stato catturato dai %s1:3 ed esiliato nelle insignificanti terre di %s2. Hai un breve periodo di tempo per riprendere la tua capitale e riguadagnare la tua posizione.</Italian>
+		<Spanish>Habéis sido capturado por los %s1:3 y exiliado a las insignificantes tierras de %s2. Disponéis de un breve periodo de tiempo para recuperar vuestra capital y vuestra posición.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ESCAPE_TEXT</Tag>
+		<English>You have escaped and regained control of %s1 territory. Now let's teach our enemies a lesson!</English>
+		<French>Vous vous êtes échappé et avez regagné le contrôle du territoire %s1. A présent, donnons une leçon à nos ennemis !</French>
+		<German>Ihr seid entkommen und habt die Kontrolle über das %s1:3 Gebiet wiedererlangt. Nun sollten wir unseren Feinden eine Lektion erteilen!</German>
+		<Italian>Sei riuscito a fuggire e a riguadagnare il controllo del territorio %s1. Ora diamo una bella lezione ai nostri nemici!</Italian>
+		<Spanish>Habéis escapado y recuperado el control del territorio %s1:1. ¡Démosles una lección a nuestros enemigos!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE</Tag>
+		<English>The period of Great Depression in the %s1 is negatively influencing our economy!</English>
+		<French>La période de Grande Dépression en %s1influence négativement notre économie ! </French>
+		<German>Die Phase der Gro&#223;en Depression im %s1:2 Reich hat negative Auswirkungen auf unsere Wirtschaft!</German>
+		<Italian>Il periodo di Grande Depressione nell'%s1 sta influenzando negativamente la nostra economia!</Italian>
+		<Spanish>¡El periodo de Gran Depresión de %s1 está afectando negativamente a nuestra economía!</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,43 @@
+# Removed the following UHV conditions:
+	# Circumnavigation for Greece, Phoenicia, England
+	# Allow no Frech, English and Dutch cities in the Americas in 1700 AD for Spain
+# Added the following UHV conditions:
+	# Greece: Control Egypt, Phoenicia, Babylonia and Persia by 330 BC
+	# Phoenicia: Have the largest map of the world in 200 AD
+	# England: Have a larger navy than the following two European civs combined
+	# Spain: Have the largest empire of the world in 1760 AD
+# Changed the following UHV conditions:
+	# Spain now needs to be in control of Aztecs and Inca in 1700 AD
+# fixed the UHV condition display bug for Romans
+# opened up a way to reach Vinland/Newfoundland via Galley to allow for a more realistic Viking UHV
+# blocked several coast tiles for coastal sailing to avoid early contacts and workboat exploits
+	# Cape Hoorn
+	# Northern Chile
+	# Cape of Good Hope
+	# around Newfoundland to deny Viking access to the rest of America
+# reduced the yield of Oil Industry
+# added Westminster Palace as a wonder (Industrialism, -33% hurry cost)
+# fixed the second UHV condition for Rome
+# the victory requirements for Arabia are now correctly displayed as "Control or vassalize Egypt, Spain and the Levant"
+# fixed a TXT_KEY problem with the celebrations under Theocracy
+# replaced Channel Tunnel with CERN Research Complex (same effects, enabled with Fission)
+# Changed the following civics:
+	# Theocracy is changed to: +2 exp with state religion, no foreign religion spread, +1 happiness with state religion
+	# Autocracy lost the +25% espionage bonus
+	# Vassalage now also adds +25% worker speed
+	# Aristocracy is changed to: 10% free military units, units are produced using food
+	# Capitalism now adds +1 commerce to towns and villages instead of +2 commerce to towns
+	# Totalitarianism now also adds +25% espionage
+	# Socialism doesn't increase city maintenance anymore
+	# State Church is changed to: unlimited priests, +50% great people birth with state religion
+# switched position of Capitalism and Socialism to make Socialism the preferred UN civic
+# spelling of "Temple of Solomon" corrected
+# excluded Detroit / Fort Détroit from the American spawn area
+# Taoism is now founded by Calendar again
+# removed a bug that prevented you from stopping a great depression by switching away from Capitalism
+# China's first UHV condition now works as intended
+# removed a bug from Phoenicia's unique names
+# lowered China's research costs for classical and ancient era by roughly 10%, to help with their UHV
+# Khmer now spawn at Angkor again (but one tile south of RFC's Angkor and thus still at sea)
+# independent Kyiv spawns in 900 AD with 2 longbowmen
+# courthouses now give a spy slot again
