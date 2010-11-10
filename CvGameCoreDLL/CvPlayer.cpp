@@ -7371,7 +7371,7 @@ int CvPlayer::calculateInflationRate() const
             if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
                 iRate *= 130;
             else
-                iRate *= 79;    // Leoreth - Renaissance Italy
+                iRate *= 84;    // Leoreth - Renaissance Italy
 			iRate /= 100;
 			break;
 		case JAPAN:
