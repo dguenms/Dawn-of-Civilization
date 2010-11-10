@@ -211,7 +211,9 @@ extern int borders[27][27];
 extern wchar civDynamicNames[2][27][22][19]; //(dynamic civ names - not jdog's)
 extern int civDynamicNamesFlag[27];
 extern int civDynamicNamesEraThreshold[27];
-extern string GPnames[38][6][12];
+extern list<CvWString> GPNameList[38][6];
 extern int settlersMaps[2][27][68][124];
+
+extern void fillGPNamesList();
 
 

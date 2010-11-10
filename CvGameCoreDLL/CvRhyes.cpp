@@ -620,7 +620,7 @@ int civDynamicNamesFlag[27] = 	{	 1,  1,  0,  1,  0,  1,  1,  0,  0,  1,  0,  0,
 
 int civDynamicNamesEraThreshold[27] = { 2,  3,  4,  2,  2,  3,  2,  3,  4,  3,  3,  3,  4,  4,  4,  4,  4,  4,  4,  4,  3,  4,  3,  3,  3,  3,  4};
 
-string GPnames[38][6][12] = {
+CvWString GPnames[38][6][12] = {
 // America
 {{"William Penn", "Roger Williams", "Jonathan Edwards", "Joseph Smith", "Sojourner Truth"}, //Prophet
 {"Edgar Allan Poe", "Herman Melville", "Mark Twain", "Ernest Hemingway", "Charlie Chaplin", "Elvis Presley", "Miles Davis", "Jimi Hendrix"}, //Artist
@@ -867,21 +867,23 @@ string GPnames[38][6][12] = {
 {},
 {}}};
 
-/*vector< vector< vector<string> > > GPNamesVector;
+list<CvWString> GPNameList[38][6];
 
-void fillGPVector(string* inArray, vector< vector< vector<string> > > &outVector)
+void fillGPNamesList()
 {
     for (int iI = 0; iI < 38; iI++)
     {
         for (int iJ = 0; iJ < 6; iJ++)
         {
-            vector<string> currVector (inArray[iI][iJ], inArray[iI][iJ]+sizeof(inArray[iI][iJ])/sizeof(inArray[iI][iJ][0]));
-            outVector[iI][iJ] = currVector;
+            int size = sizeof(GPnames[iI][iJ])/sizeof(string);
+            for (int iL = 0; iL < size; iL++)
+            {
+                GPNameList[iI][iJ].push_back(GPnames[iI][iJ][iL]);
+            }
         }
     }
 }
 
-fillGPVector(GPnames, GPNamesVector);*/
 
 //Leoreth - added a born/reborn dimension
 // settlersMaps[reborn?][player][y-axis][x-axis]

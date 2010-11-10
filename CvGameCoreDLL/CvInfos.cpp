@@ -4159,7 +4159,7 @@ const TCHAR* CvUnitInfo::getUnitNames(int i) const
 {
 	FAssertMsg(i < getNumUnitNames(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
-	return (m_paszUnitNames) ? m_paszUnitNames[i] : NULL;
+    return (m_paszUnitNames) ? m_paszUnitNames[i] : NULL;
 }
 
 const TCHAR* CvUnitInfo::getFormationType() const
