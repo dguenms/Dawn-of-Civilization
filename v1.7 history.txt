@@ -16,3 +16,5 @@
 # Oil Industry doesn't produce oil anymore
 # civs cannot be vassals of too far away civs until the discovery of Astronomy
 # Reworded the first Chinese UHV
+# fixed the third Italian goal
+# slowed Italy's research speed, slightly increased inflation, city upkeep and civic upkeep

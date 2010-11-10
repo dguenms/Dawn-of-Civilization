@@ -10270,7 +10270,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
         if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
             return researchPercent*108/100; //95 before the new timeline
         else
-            return researchPercent*85/100;  // Renaissance Italy
+            return researchPercent*92/100;  // Renaissance Italy
 	case JAPAN:
 		return researchPercent*98/100; //95 before the new timeline //120 before embassies
 	case ETHIOPIA:
@@ -10449,7 +10449,7 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
         if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
             return result*9/10;
         else
-            return result*7/10; // Leoreth - Renaissance Italy
+            return result*8/10; // Leoreth - Renaissance Italy
 	case JAPAN:
 		return result*110/100;
 	case ETHIOPIA:
@@ -10555,7 +10555,7 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
         }
         else
         {
-            return result*7/10;    // Leoreth - Renaissance Italy
+            return result*8/10;    // Leoreth - Renaissance Italy
         }
 	case JAPAN:
 		return result*8/10;   //11 before removal of Organized trait
