@@ -773,14 +773,14 @@ class Victory:
 						if self.getGoal(iRome, 1) == -1:
 							self.setGoal(iRome, 1, 0)
 
-					if (iGameTurn == getTurnForYear(1930)):
+					if (iGameTurn == getTurnForYear(1933)):
 						bGreece = self.checkOwnedCiv(iRome, iGreece)
 						bEthiopia = self.checkOwnedCiv(iRome, iEthiopia)
 						bLibya = self.checkOwnedArea(iRome, tLibyaTL, tLibyaBR, 1)
 
-						for iCiv in range(con.iNumCivs):
-							if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
-								bLibya = False
+						#for iCiv in range(con.iNumPlayers):
+						#	if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
+						#		bLibya = False
 
 						if bGreece and bEthiopia and bLibya:
 							self.setGoal(iRome, 2, 1)

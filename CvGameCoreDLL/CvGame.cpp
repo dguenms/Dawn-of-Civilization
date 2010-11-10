@@ -208,6 +208,9 @@ void CvGame::init(HandicapTypes eHandicap)
 	}
 	//edead: end
 
+	// Leoreth - fill in civ dynamic GP names
+	fillGPNamesList();
+
 	if (getGameTurn() == 0)
 	{
 		iStartTurn = 0;
