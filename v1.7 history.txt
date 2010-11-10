@@ -18,3 +18,4 @@
 # Reworded the first Chinese UHV
 # fixed the third Italian goal
 # slowed Italy's research speed, slightly increased inflation, city upkeep and civic upkeep
+# slightly buffed some of Netherlands' coefficients

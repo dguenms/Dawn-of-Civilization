@@ -10390,7 +10390,7 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 	case RUSSIA:
 		return result*5/10;
 	case NETHERLANDS:
-		return result*5/10;
+		return result*45/100; // Leoreth: slightly lowered, 50 before
 	case MALI:
 		return result*80/100;  //70 before new UP
 	case TURKEY:
@@ -10580,7 +10580,7 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 	case RUSSIA:
 		return result*70/100;
 	case NETHERLANDS:
-		return result*7/10;
+		return result*6/10; // Leoreth: reduced, 7 before
 	case MALI:
 		return result*8/10; //6 before new UP
 	case TURKEY:

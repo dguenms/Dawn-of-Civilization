@@ -11683,7 +11683,7 @@ void CvCity::doCulture()
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
 				break;
 			case NETHERLANDS:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *132 /100, false, true); //135, but it's too strong as Amsterdam is a powerhouse
+				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *140 /100, false, true); // 140: Leoreth //135, but it's too strong as Amsterdam is a powerhouse
 				break;
 			case MALI:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);

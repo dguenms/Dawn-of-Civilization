@@ -6506,7 +6506,7 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded /= 100;
 				break;
 			case NETHERLANDS:
-				iProductionNeeded *= 90;
+				iProductionNeeded *= 80;    // Leoreth: made cheaper to allow for a better Amsterdam faster, 90 before
 				iProductionNeeded /= 100;
 				break;
 			case MALI:
@@ -8754,7 +8754,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			result = (iThreshold*77/100);
 			break;
 		case NETHERLANDS:
-			result = (iThreshold*73/100);
+			result = (iThreshold*70/100);   //Leoreth: slightly reduced, 73 before
 			break;
 		case MALI:
 			result = (iThreshold*80/100);
