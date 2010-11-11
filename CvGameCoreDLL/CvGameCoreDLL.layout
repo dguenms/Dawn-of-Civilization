@@ -8,13 +8,13 @@
 		<Cursor position="310" topLine="0" />
 	</File>
 	<File name="CvCity.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="293685" topLine="11666" />
+		<Cursor position="290723" topLine="11609" />
 	</File>
 	<File name="CvCity.h" open="0" top="0" tabpos="12">
 		<Cursor position="852" topLine="19" />
 	</File>
 	<File name="CvCityAI.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="144744" topLine="4675" />
+		<Cursor position="143970" topLine="4630" />
 	</File>
 	<File name="CvDLLInterfaceIFaceBase.h" open="0" top="0" tabpos="0">
 		<Cursor position="3280" topLine="59" />
@@ -41,7 +41,7 @@
 		<Cursor position="8309" topLine="281" />
 	</File>
 	<File name="CvGame.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="65412" topLine="2240" />
+		<Cursor position="64850" topLine="2215" />
 	</File>
 	<File name="CvGame.h" open="0" top="0" tabpos="0">
 		<Cursor position="20578" topLine="391" />
@@ -59,7 +59,7 @@
 		<Cursor position="35253" topLine="1572" />
 	</File>
 	<File name="CvInfos.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="314279" topLine="10709" />
+		<Cursor position="312050" topLine="10608" />
 	</File>
 	<File name="CvInfos.h" open="0" top="0" tabpos="4">
 		<Cursor position="198187" topLine="6023" />
@@ -68,7 +68,7 @@
 		<Cursor position="9908" topLine="331" />
 	</File>
 	<File name="CvPlayer.cpp" open="1" top="1" tabpos="5">
-		<Cursor position="601712" topLine="23537" />
+		<Cursor position="275599" topLine="11391" />
 	</File>
 	<File name="CvPlayer.h" open="0" top="0" tabpos="3">
 		<Cursor position="64906" topLine="1035" />
