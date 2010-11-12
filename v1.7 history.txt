@@ -22,3 +22,4 @@
 # fascist names now also with (Autocracy or Totalitarianism) and no Parliament
 # removed some city names from Italy's standard list that are also in the CityNameManager
 # removed the Dutch war on spawn against Vikings
+# AI conquerors now attack native cities immediately (unitai_attack_city_lemming)

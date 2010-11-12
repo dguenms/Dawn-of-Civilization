@@ -2509,55 +2509,55 @@ class RiseAndFall:
 
                                                 if (teamOldWorldCiv.isHasTech(con.iRifling)):
                                                         if (iOldWorldCiv == iEngland):
-                                                                utils.makeUnit(con.iEnglishRedcoat, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iEnglishRedcoat, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         else:
-                                                                utils.makeUnit(con.iRifleman, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iRifleman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                 elif (teamOldWorldCiv.isHasTech(con.iGunpowder)):
                                                         #if (iOldWorldCiv == iFrance):
-                                                        #        utils.makeUnit(con.iFrenchMusketeer, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                        #        utils.makeUnit(con.iFrenchMusketeer, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         if (iOldWorldCiv == iTurkey):
-                                                                utils.makeUnit(con.iOttomanJanissary, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iOttomanJanissary, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         else:
-                                                                utils.makeUnit(con.iMusketman, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iMusketman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                 elif (teamOldWorldCiv.isHasTech(con.iCivilService)):
                                                         if (iOldWorldCiv == iJapan):
-                                                                utils.makeUnit(con.iJapanSamurai, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iJapanSamurai, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         elif (iOldWorldCiv == iVikings):
-                                                                utils.makeUnit(con.iVikingBeserker, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iVikingBeserker, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         else:
-                                                                utils.makeUnit(con.iMaceman, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iMaceman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                 else:
                                                         if (iOldWorldCiv == iChina):
-                                                                utils.makeUnit(con.iChinaChokonu, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iChinaChokonu, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         else:
-                                                                utils.makeUnit(con.iCrossbowman, iOldWorldCiv, tArrivalPlot, 1 + iModifier2)
+                                                                utils.makeUnit(con.iCrossbowman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         
                                                 utils.makeUnit(con.iPikeman, iOldWorldCiv, tArrivalPlot, 2)
                                                 
                                                 if (teamOldWorldCiv.isHasTech(con.iGunpowder)):
-                                                        utils.makeUnit(con.iCannon, iOldWorldCiv, tArrivalPlot, 1 + iModifier1 + iModifier2)
+                                                        utils.makeUnit(con.iCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
                                                 else:
-                                                        utils.makeUnit(con.iCatapult, iOldWorldCiv, tArrivalPlot, 1 + iModifier1 + iModifier2)
+                                                        utils.makeUnit(con.iCatapult, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
 
                                                 if (iOldWorldCiv == iSpain and teamOldWorldCiv.isHasTech(con.iGunpowder)):
-                                                        utils.makeUnit(con.iConquistador, iOldWorldCiv, tArrivalPlot, 2 + iModifier1)
+                                                        utils.makeUnit(con.iConquistador, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2 + iModifier1)
                                                 else:
                                                         if (teamOldWorldCiv.isHasTech(con.iGuilds)):
                                                                 if (iOldWorldCiv == iArabia):
-                                                                        utils.makeUnit(con.iCamelArcher, iOldWorldCiv, tArrivalPlot, 2 + iModifier1)
+                                                                        utils.makeUnit(con.iCamelArcher, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2 + iModifier1)
                                                                 elif (iOldWorldCiv == iMongolia):
-                                                                        utils.makeUnit(con.iMongolKeshik, iOldWorldCiv, tArrivalPlot, 2 + iModifier1)
+                                                                        utils.makeUnit(con.iMongolKeshik, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2 + iModifier1)
                                                                 else:
-                                                                        utils.makeUnit(con.iKnight, iOldWorldCiv, tArrivalPlot, 2 + iModifier1)
+                                                                        utils.makeUnit(con.iKnight, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2 + iModifier1)
 
                                                 if (iNewWorldCiv == iInca):
-                                                        utils.makeUnit(con.iIncanQuechua, iOldWorldCiv, tArrivalPlot, 3)
+                                                        utils.makeUnit(con.iIncanQuechua, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
                                                 elif (iNewWorldCiv == iAztecs):
-                                                        utils.makeUnit(con.iAztecJaguar, iOldWorldCiv, tArrivalPlot, 2)
-                                                        utils.makeUnit(con.iMayaHolkan, iOldWorldCiv, tArrivalPlot, 1)
+                                                        utils.makeUnit(con.iAztecJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
+                                                        utils.makeUnit(con.iMayaHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1)
                                                 elif (iNewWorldCiv == iMaya):
-                                                        utils.makeUnit(con.iMayaHolkan, iOldWorldCiv, tArrivalPlot, 2)
-                                                        utils.makeUnit(con.iAztecJaguar, iOldWorldCiv, tArrivalPlot, 1)
+                                                        utils.makeUnit(con.iMayaHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
+                                                        utils.makeUnit(con.iAztecJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1)
 
 						teamNewWorldCiv = gc.getTeam(gc.getPlayer(iNewWorldCiv).getTeam())
 						teamOldWorldCiv = gc.getTeam(gc.getPlayer(iOldWorldCiv).getTeam())

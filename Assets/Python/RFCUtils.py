@@ -354,6 +354,13 @@ class RFCUtils:
                         player = gc.getPlayer(iPlayer)
                         player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
+	#Leoreth: overloaded function to allow easy AI setting
+	def makeUnit(self, iUnit, iPlayer, tCoords, iAIType, iNum): #by LOQ
+                'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
+                for i in range(iNum):
+                        player = gc.getPlayer(iPlayer)
+                        player.initUnit(iUnit, tCoords[0], tCoords[1], iAIType, DirectionTypes.DIRECTION_SOUTH)
+
         #RiseAndFall, Religions, Congresses
         def getHumanID(self):
 ##                for iCiv in range(iNumPlayers):
