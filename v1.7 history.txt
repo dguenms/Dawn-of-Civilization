@@ -20,3 +20,5 @@
 # slowed Italy's research speed, slightly increased inflation, city upkeep and civic upkeep
 # slightly buffed some of Netherlands' coefficients
 # fascist names now also with (Autocracy or Totalitarianism) and no Parliament
+# removed some city names from Italy's standard list that are also in the CityNameManager
+# removed the Dutch war on spawn against Vikings
