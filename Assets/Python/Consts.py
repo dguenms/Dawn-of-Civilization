@@ -1259,7 +1259,7 @@ lEnemyCivsOnSpawn = [
 [], #Japan
 [], #Ethiopia
 [], #Maya
-[iRome,iArabia,iSpain,iEngland,iEngland,iFrance,iFrance,iGermany,iGermany,iNetherlands,iCeltia,iIndependent,iIndependent2], #Vikings
+[iRome,iArabia,iSpain,iEngland,iEngland,iFrance,iFrance,iGermany,iGermany,iCeltia,iIndependent,iIndependent2], #Vikings
 [iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Khmer
 [iArabia], #Spain
