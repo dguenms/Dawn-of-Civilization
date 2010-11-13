@@ -24,3 +24,4 @@
 # removed the Dutch war on spawn against Vikings
 # AI conquerors now attack native cities immediately (unitai_attack_city_lemming)
 # Byzantium now starts with Machinery instead of Engineering
+# Turkey starts with 3 missionaries and 0 settlers, but gets 3 settlers when their workers arrive

@@ -2901,12 +2901,13 @@ class RiseAndFall:
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iMaliSkirmisher, iCiv, tPlot, 5)
                 if (iCiv == iTurkey):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
+                        #utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 3)
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
                         utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
+			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
                 if (iCiv == iPortugal):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
@@ -3038,6 +3039,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iTurkey):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 4)
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                 if (iCiv == iPortugal):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3) 
                 if (iCiv == iInca):
