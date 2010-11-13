@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_DESC</Tag>
+		<English>The Byzantines</English>
+		<French>
+			<Text>Les Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzantiner:Die Byzantiner:den Byzantinern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ00</Tag>
+		<English>Greek Peoples</English>
+		<French>
+			<Text>Peuplades Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Griechenv&#246;lker:Griechenv&#246;lker:Griechenv&#246;lkern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ01</Tag>
+		<English>Byzantine Empire</English>
+		<French>
+			<Text>Cit&#233;s-Etats Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinisches Reich:Byzantinische Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ02</Tag>
+		<English>Byzantine Empire</English>
+		<French>
+			<Text>Cit&#233;s-Etats Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinisches Reich:Byzantinisches Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ03</Tag>
+		<English>Byzantine Empire</English>
+		<French>
+			<Text>Cit&#233;s-Etats Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinisches Reich:Byzantinische Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ04</Tag>
+		<English>Byzantine Empire</English>
+		<French>
+			<Text>Cit&#233;s-Etats Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisches Reich:Byzantinisches Reich:Byzantinische Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ05</Tag>
+		<English>Byzantine Republic</English>
+		<French>
+			<Text>R&#233;publique F&#233;d&#233;rale Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Byzantinische Republik:Byzantinische Republik:Byzantinische Republik</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica Federale Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica Federal Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ06</Tag>
+		<English>Byzantine People's Republic</English>
+		<French>
+			<Text>Etat Libre Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Byzantinische Volksrepublik:Byzantinische Volksrepublik:Byzantinische Volksrepublik</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Stato Libero Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estado Libre Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ07</Tag>
+		<English>Greater Byzantium</English>
+		<French>
+			<Text>Junte Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Großbyzanz:Großbyzanz:Großbyzanz</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Giunta Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Junta Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ08</Tag>
+		<English>Caliphate of Byzantium</English>
+		<French>
+			<Text>Cit&#233;s-Etats Islamiques Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Kalifat von Byzanz:Kalifat von Byzanz:Kalifat von Byzanz</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato Islamiche Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados Isl&#225;micas Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ09</Tag>
+		<English>Caliphate of Byzantium</English>
+		<French>
+			<Text>Cit&#233;s-Etats Islamiques Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Kalifat von Byzanz:Kalifat von Byzanz:Kalifat von Byzanz</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato Islamiche Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados Isl&#225;micas Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ10</Tag>
+		<English>Satrapy of Anatolia</English>
+		<French>
+			<Text>Satrape des Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Satrapie Anatolien:Satrapie Anatolien:Satrapie Anatolien</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Satrapia di Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Satrap&#237;a de Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ11</Tag>
+		<English>Province of Anatolia</English>
+		<French>
+			<Text>Province des Mayas</Text>
+			<Gender>female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Provinz Anatolien:Provinz Anatolien:Provinz Anatolien</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Provincia di Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Provincia de Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ12</Tag>
+		<English>Sultanate of Rûm</English>
+		<French>
+			<Text>Sultanat des Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sultanat von Rûm:Sultanat von Rûm:Sultanat von Rûm</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sultanato di Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sultanato de Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ13</Tag>
+		<English>Latin Empire</English>
+		<French>
+			<Text>Dioc&#232;se du Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Lateinisches Kaiserreich:Lateinisches Kaiserreich:Lateinisches Kaiserreich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Diocesi dello Yucat&#225;n</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Diocesis de Yucat&#225;n</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ14</Tag>
+		<English>Latin Empire</English>
+		<French>
+			<Text>Yucat&#225;n Fran&#231;ais</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Lateinisches Kaiserreich:Lateinisches Kaiserreich:Lateinisches Kaiserreich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Yucat&#225;n Francese</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Yucat&#225;n Franc233;s</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ15</Tag>
+		<English>Latin Empire</English>
+		<French>
+			<Text>Colonie du Honduras Britannique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Lateinisches Kaiserreich:Lateinisches Kaiserreich:Lateinisches Kaiserreich</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Colonia dell'Honduras Britannico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Colonia de Honduras Brit&#225;nico</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ16</Tag>
+		<English>Reichskommissariat Bosporus</English>
+		<French>
+			<Text>Yucat&#225;n Allemand</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Reichskommissariat Bosporus:Reichskommissariat Bosporus:Reichskommissariat Bosporus</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Yucat&#225;n Tedesco</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Yucat&#225;n Alem&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ17</Tag>
+		<English>Soviet Byzantium</English>
+		<French>
+			<Text>Yucat&#225;n Sovi&#233;tique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sowjetbyzanz:Sowjetbyzanz:Sowjetbyzanz</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Yucat&#225;n Sovietico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Yucat&#225;n Sovi&#233;tico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ18</Tag>
+		<English>Khanate of Anatolia</English>
+		<French>
+			<Text>Khanat du Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Khanat Anatolien:Khanat Anatolien:Khanat Anatolien</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Khanato del Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Janato de Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ19</Tag>
+		<English>Eyalet of Rûm</English>
+		<French>
+			<Text>Eyalet du Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Eyalet Rûm:Eyalet Rûm:Eyalet Rûm</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Eyalet del Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Eyalet de Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ20</Tag>
+		<English>Tributary Daqin State</English>
+		<French>
+			<Text>Etat Maya Tributaire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Tributstaat Daqin:Tributstaat Daqin:Tributstaat Daqin</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Stato Maya Tributario</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estado Maya Tributario</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_BYZ21</Tag>
+		<English>Province of Anatolia</English>
+		<French>
+			<Text>Colonie des Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Provinz Anatolien:Provinz Anatolien:Provinz Anatolien</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Colonia Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Colonia Maya</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>
