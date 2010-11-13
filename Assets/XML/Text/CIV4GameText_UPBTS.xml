@@ -94,4 +94,14 @@
 		<English>Every city gets a free specialist for each of its wonders until the Industrial Age</English>
 		<German>Jede Stadt erhält einen freien Spezialisten für jedes ihrer Wunder bis zum Industriezeitalter</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BYZ</Tag>
+		<English>The Power of Byzantine Diplomacy:</English>
+		<German>Die Macht der Byzantinischen Diplomatie:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BYZ2</Tag>
+		<English>Every city creates two [ICON_ESPIONAGE] per culture level</English>
+		<German>Jede Stadt erzeugt zwei [ICON_ESPIONAGE] pro Kulturstufe</German>
+	</TEXT>
 </Civ4GameText>

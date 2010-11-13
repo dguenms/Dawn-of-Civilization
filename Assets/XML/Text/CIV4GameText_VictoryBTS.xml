@@ -124,4 +124,19 @@
 		<Italian>Fonda 15 colonie extra-europee</Italian>
 		<Spanish>Fundar 15 colonias fuera de Europa</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ1</Tag>
+		<English>Own 5000 gold in 1000 AD</English>
+		<German>Besitzen Sie 5000 Gold im Jahr 1000 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ2</Tag>
+		<English>Make Constantinople the world's largest and most cultured city in 1200 AD</English>
+		<German>Machen Sie Konstantinopel zur größten und kultiviertesten Stadt der Welt im Jahr 1200 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ3</Tag>
+		<English>Control three cities in Europe, Asia and Africa in 1450 AD</English>
+		<German>Kontrollieren Sie drei Städte in Europa, Asien und Afrika im Jahr 1450 n. Chr.</German>
+	</TEXT>
 </Civ4GameText>
