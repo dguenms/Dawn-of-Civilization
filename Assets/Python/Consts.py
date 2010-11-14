@@ -6,11 +6,11 @@
 from CvPythonExtensions import *
 gc = CyGlobalContext()
 
-l0Array =       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-l0ArrayActive = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-l0ArrayTotal =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0Array =       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0ArrayActive = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0ArrayTotal =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-lm1Array =      [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+lm1Array =      [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 
 # initialise player variables to player IDs from WBS
 iEgypt = 0
@@ -24,51 +24,52 @@ iRome = 7
 iJapan = 8
 iEthiopia = 9
 iMaya = 10
-iVikings = 11
-iArabia = 12
-iKhmer = 13
-iSpain = 14
-iFrance = 15
-iEngland = 16
-iGermany = 17
-iRussia = 18
-iNetherlands = 19
-iHolland = 19
-iMali = 20
-iPortugal = 21
-iInca = 22
-iMongolia = 23
-iAztecs = 24
-iTurkey = 25
-iAmerica = 26
-iNumPlayers = 27
-iNumMajorPlayers = 27
-iNumActivePlayers = 27
-iIndependent = 27
-iIndependent2 = 28
-iNative = 29
-iCeltia = 30
-iNumTotalPlayers = 31
-iBarbarian = 31
-iNumTotalPlayersB = 32
+iByzantium = 11
+iVikings = 12
+iArabia = 13
+iKhmer = 14
+iSpain = 15
+iFrance = 16
+iEngland = 17
+iGermany = 18
+iRussia = 19
+iNetherlands = 20
+iHolland = 20
+iMali = 21
+iPortugal = 22
+iInca = 23
+iMongolia = 24
+iAztecs = 25
+iTurkey = 26
+iAmerica = 27
+iNumPlayers = 28
+iNumMajorPlayers = 28
+iNumActivePlayers = 28
+iIndependent = 28
+iIndependent2 = 29
+iNative = 30
+iCeltia = 31
+iNumTotalPlayers = 32
+iBarbarian = 32
+iNumTotalPlayersB = 33
 
 #for Congresses and Victory
-lCivGroups = [[iGreece, iRome, iVikings, iSpain, iFrance, iEngland, iGermany, iRussia, iNetherlands, iPortugal],  #Euros
-                [iIndia, iChina, iPersia, iJapan, iKhmer, iRussia, iMongolia], #Asian
+lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iGermany, iRussia, iNetherlands, iPortugal],  #Euros
+                [iIndia, iChina, iPersia, iJapan, iByzantium, iKhmer, iRussia, iMongolia], #Asian
                 [iEgypt, iBabylonia, iPersia, iArabia, iTurkey, iCarthage], #MiddleEastern
-                [iEgypt, iGreece, iCarthage, iRome], #Mediterranean
+                [iEgypt, iGreece, iCarthage, iRome, iByzantium], #Mediterranean
                 [iEgypt, iCarthage, iEthiopia, iMali], #African
                 [iMaya, iInca, iAztecs, iAmerica]] #American
 
 lCivStabilityGroups = [[iVikings, iSpain, iFrance, iEngland, iGermany, iRussia, iNetherlands, iPortugal],  #Euros
                 [iIndia, iChina, iJapan, iKhmer, iMongolia], #Asian
                 [iBabylonia, iPersia, iArabia, iTurkey], #MiddleEastern
-                [iEgypt, iGreece, iCarthage, iRome, iEthiopia, iMali], #Mediterranean
+                [iEgypt, iGreece, iCarthage, iRome, iEthiopia, iByzantium, iMali], #Mediterranean
                 [iMaya, iInca, iAztecs, iAmerica]] #American
 
 
 lCivBioOldWorld = [iEgypt, iIndia, iChina, iBabylonia, iGreece, iPersia, iCarthage, iRome, iJapan, \
-                   iEthiopia, iVikings, iArabia, iKhmer, iSpain, iFrance, iEngland, iGermany, iRussia, \
+                   iEthiopia, iByzantium, iVikings, iArabia, iKhmer, iSpain, iFrance, iEngland, iGermany, iRussia, \
                    iNetherlands, iMali, iTurkey, iPortugal, iMongolia, iAmerica, \
                    iIndependent, iIndependent2, iCeltia, iBarbarian]
 lCivBioNewWorld = [iMaya, iInca, iAztecs] #, iNative]
@@ -98,32 +99,33 @@ iLime = 100
 
 #neighbours
 lNeighbours = [
-[iBabylonia, iGreece, iPersia, iCarthage, iRome, iEthiopia, iArabia, iTurkey], #Egypt
+[iBabylonia, iGreece, iPersia, iCarthage, iRome, iEthiopia, iByzantium, iArabia, iTurkey], #Egypt
 [iChina, iPersia, iKhmer, iMongolia], #India
 [iIndia, iJapan, iKhmer, iMongolia], #China
-[iEgypt, iGreece, iPersia, iTurkey, iMongolia, iCarthage], #Babylonia
-[iPersia, iCarthage, iRome, iGermany, iRussia, iTurkey], #Greece
-[iIndia, iBabylonia, iGreece, iTurkey, iMongolia, iCarthage], #Persia
+[iEgypt, iGreece, iPersia, iTurkey, iMongolia, iCarthage, iByzantium], #Babylonia
+[iPersia, iCarthage, iRome, iByzantium, iGermany, iRussia, iTurkey], #Greece
+[iIndia, iBabylonia, iGreece, iByzantium, iTurkey, iMongolia, iCarthage], #Persia
 [iEgypt, iGreece, iRome, iSpain, iMali, iPortugal, iBabylonia, iPersia, iArabia, iTurkey], #Carthage
 [iEgypt, iBabylonia, iGreece, iCarthage, iSpain, iFrance, iGermany, iPortugal], #Rome
 [iChina, iKhmer, iMongolia], #Japan
 [iEgypt, iArabia, iMali], #Ethiopia
 [iSpain, iInca, iAztecs, iAmerica], #Maya
+[iEgypt, iBabylonia, iGreece, iPersia, iArabia, iRussia], #Byzantium
 [iFrance, iEngland, iGermany, iRussia, iNetherlands], #Vikings
-[iEgypt, iBabylonia, iPersia, iEthiopia, iTurkey, iCarthage], #Arabia
+[iEgypt, iBabylonia, iPersia, iEthiopia, iByzantium, iTurkey, iCarthage], #Arabia
 [iIndia, iChina, iJapan], #Khmer
 [iCarthage, iRome, iFrance, iEngland, iPortugal], #Spain
 [iRome, iVikings, iSpain, iEngland, iGermany, iNetherlands, iPortugal], #France
 [iRome, iVikings, iSpain, iFrance, iGermany, iNetherlands], #England
 [iRome, iVikings, iFrance, iEngland, iRussia, iNetherlands], #Germany
-[iPersia, iVikings, iGermany, iTurkey, iMongolia], #Russia
+[iPersia, iByzantium, iVikings, iGermany, iTurkey, iMongolia], #Russia
 [iVikings, iFrance, iEngland, iGermany], #Netherlands
 [iEgypt, iCarthage, iEthiopia], #Mali
 [iCarthage, iRome, iSpain, iFrance], #Portugal
 [iSpain, iAztecs, iAmerica], #Inca
 [iIndia, iChina, iPersia, iJapan, iRussia, iTurkey], #Mongolia
 [iSpain, iInca, iAmerica], #Aztec
-[iBabylonia, iGreece, iPersia, iRussia, iMongolia, iCarthage], #Turkey
+[iBabylonia, iGreece, iPersia, iByzantium, iRussia, iMongolia, iCarthage], #Turkey
 [iJapan, iSpain, iFrance, iEngland, iRussia, iInca, iAztecs] #America
 ]
 
@@ -140,8 +142,9 @@ lOlderNeighbours = [
 [], #Japan
 [iEgypt], #Ethiopia
 [], #Maya
+[iGreece], #Byzantium
 [], #Vikings
-[iEgypt, iPersia], #Arabia
+[iEgypt, iPersia, iByzantium], #Arabia
 [iIndia], #Khmer
 [iCarthage, iRome], #Spain
 [iRome], #France
@@ -154,7 +157,7 @@ lOlderNeighbours = [
 [], #Inca
 [iChina, iJapan, iKhmer, iRussia], #Mongolia
 [iMaya], #Aztec
-[iBabylonia, iGreece, iPersia], #Turkey
+[iBabylonia, iGreece, iPersia, iByzantium], #Turkey
 [iSpain, iFrance, iEngland, iNetherlands, iPortugal, iAztecs, iMaya] #America
 ]
 
@@ -173,6 +176,7 @@ tBirth = (
 -660, # 97, #660BC
 -300, # 121, #300BC
 60, # 145, #60AD
+330,
 551, # 177, #551AD
 620, # 183, #622AD
 655, # 187, #657AD
@@ -209,6 +213,7 @@ tFall = (
 2020,
 960,
 900,
+1204, #fourth crusade
 1300,
 1258,
 1431,
@@ -236,6 +241,7 @@ tRebirth = (
 -1,
 -1,
 1167,	# Italy
+-1,
 -1,
 -1,
 -1,
@@ -284,6 +290,7 @@ tRebirthCiv = (
 -1,
 -1,
 -1,
+-1,
 -1)
 
 tRebirthPlot = (
@@ -295,6 +302,7 @@ tRebirthPlot = (
 -1,
 -1,
 (59,46),	# Italy - Firenze
+-1,
 -1,
 -1,
 -1,
@@ -342,6 +350,7 @@ tRebirthArea = (
 -1,
 -1,
 -1,
+-1,
 -1)
 
 tYear = (
@@ -356,6 +365,7 @@ tYear = (
 ("655 ", "TXT_KEY_BC"),
 ("295 ", "TXT_KEY_BC"),
 ("65 ", "TXT_KEY_AD"),
+("330 ", "TXT_KEY_AD"),
 ("545 ", "TXT_KEY_AD"),
 ("620 ", "TXT_KEY_AD"),
 ("660 ", "TXT_KEY_AD"),
@@ -388,6 +398,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"),
 ("TXT_KEY_UHV_ETH1", "TXT_KEY_UHV_ETH2", "TXT_KEY_UHV_ETH3"),
 ("TXT_KEY_UHV_MAY1_NOTURN", "TXT_KEY_UHV_MAY2", "TXT_KEY_UHV_MAY3"),
+("TXT_KEY_UHV_BYZ1", "TXT_KEY_UHV_BYZ2", "TXT_KEY_UHV_BYZ3"),
 ("TXT_KEY_UHV_VIK1_MARATHON", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1_MARATHON", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
@@ -417,6 +428,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"),
 ("TXT_KEY_UHV_ETH1", "TXT_KEY_UHV_ETH2", "TXT_KEY_UHV_ETH3"),
 ("TXT_KEY_UHV_MAY1", "TXT_KEY_UHV_MAY2", "TXT_KEY_UHV_MAY3"),
+("TXT_KEY_UHV_BYZ1", "TXT_KEY_UHV_BYZ2", "TXT_KEY_UHV_BYZ3"),
 ("TXT_KEY_UHV_VIK1_EPIC", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1_EPIC", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
@@ -446,6 +458,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"),
 ("TXT_KEY_UHV_ETH1", "TXT_KEY_UHV_ETH2", "TXT_KEY_UHV_ETH3"),
 ("TXT_KEY_UHV_MAY1", "TXT_KEY_UHV_MAY2", "TXT_KEY_UHV_MAY3"),
+("TXT_KEY_UHV_BYZ1", "TXT_KEY_UHV_BYZ2", "TXT_KEY_UHV_BYZ3"),
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
@@ -478,6 +491,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"),
 ("TXT_KEY_UHV_ETH1", "TXT_KEY_UHV_ETH2", "TXT_KEY_UHV_ETH3"),
 ("TXT_KEY_UHV_MAY1_NOTURN", "TXT_KEY_UHV_MAY2", "TXT_KEY_UHV_MAY3"),
+("TXT_KEY_UHV_BYZ1", "TXT_KEY_UHV_BYZ2", "TXT_KEY_UHV_BYZ3"),
 ("TXT_KEY_UHV_VIK1_MARATHON", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1_MARATHON", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
@@ -507,6 +521,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"),
 ("TXT_KEY_UHV_ETH1", "TXT_KEY_UHV_ETH2", "TXT_KEY_UHV_ETH3"),
 ("TXT_KEY_UHV_MAY1", "TXT_KEY_UHV_MAY2", "TXT_KEY_UHV_MAY3"),
+("TXT_KEY_UHV_BYZ1", "TXT_KEY_UHV_BYZ2", "TXT_KEY_UHV_BYZ3"),
 ("TXT_KEY_UHV_VIK1_EPIC", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1_EPIC", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
@@ -536,6 +551,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"),
 ("TXT_KEY_UHV_ETH1", "TXT_KEY_UHV_ETH2", "TXT_KEY_UHV_ETH3"),
 ("TXT_KEY_UHV_MAY1", "TXT_KEY_UHV_MAY2", "TXT_KEY_UHV_MAY3"),
+("TXT_KEY_UHV_BYZ1", "TXT_KEY_UHV_BYZ2", "TXT_KEY_UHV_BYZ3"),
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
@@ -651,6 +667,7 @@ tCapitals = (
 (113, 45), #tKyoto
 (72, 29), #tAksum
 (22, 35), #tTikal
+(69, 44), #tNicaea
 #(61, 62), #tNidaros
 (60, 59), #tOslo
 (75, 33), #tMecca
@@ -714,6 +731,7 @@ tReserveCapitals = (
 (), 
 (), 
 (), 
+(),
 (), 
 (), 
 (), 
@@ -749,6 +767,7 @@ tCoreAreasTL = (
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya
+(64, 45), #Byzantium
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
@@ -777,6 +796,7 @@ tCoreAreasTL = (
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya
+(64, 45), #Byzantium
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
@@ -807,6 +827,7 @@ tCoreAreasBR = (
 (116, 49), #Japan
 (73, 30), #Ethiopia
 (23, 37), #Maya
+(74, 42), #Byzantium
 (70, 65), #Vikings
 (81, 39), #Arabia
 (103, 36), #Khmer
@@ -835,6 +856,7 @@ tCoreAreasBR = (
 (116, 49), #Japan
 (73, 30), #Ethiopia
 (23, 37), #Maya
+(74, 42), #Byzantium
 (70, 65), #Vikings
 (81, 39), #Arabia
 (103, 36), #Khmer
@@ -866,6 +888,7 @@ tExceptions = (  #for RiseAndFall
 (), #Japan
 (), #Ethiopia
 (), #Maya
+(), #Byzantium
 ((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
 ((82, 34), (73, 40), (74, 40), (75, 40), (71, 36), (72, 37)),  #Arabia
 (), #Khmer
@@ -894,6 +917,7 @@ tExceptions = (  #for RiseAndFall
 (), #Japan
 (), #Ethiopia
 (), #Maya
+(), #Byzantium
 ((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
 ((82, 34), (73, 40), (74, 40), (75, 40), (71, 36), (72, 37)),  #Arabia
 (), #Khmer
@@ -928,6 +952,7 @@ tNormalAreasTL = (
 (111, 41), #Japan
 (68, 25), #Ethiopia
 (20, 32), #Maya
+(64, 45), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -956,6 +981,7 @@ tNormalAreasTL = (
 (111, 41), #Japan
 (68, 25), #Ethiopia
 (20, 32), #Maya
+(64, 45), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -986,6 +1012,7 @@ tNormalAreasBR = (
 (116, 52), #Japan
 (77, 30), #Ethiopia
 (23, 37), #Maya
+(74, 42), #Byzantium
 (67, 65), #Vikings
 (82, 38), #Arabia
 (103, 37), #Khmer
@@ -1014,6 +1041,7 @@ tNormalAreasBR = (
 (116, 52), #Japan
 (77, 30), #Ethiopia
 (23, 37), #Maya
+(74, 42), #Byzantium
 (67, 65), #Vikings
 (82, 38), #Arabia
 (103, 37), #Khmer
@@ -1045,6 +1073,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 ((111, 52), (112, 52), (111, 51)), #Japan
 ((76, 30), (77, 30)), #Ethiopia
 (), #Maya
+(), #Byzantium
 ((65, 55), (66, 55), (67, 55), (66, 56), (67, 56)), #Vikings
 ((81, 38), (82, 38), (82, 37)),  #Arabia
 (), #Khmer
@@ -1073,6 +1102,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 ((111, 52), (112, 52), (111, 51)), #Japan
 ((76, 30), (77, 30)), #Ethiopia
 (), #Maya
+(), #Byzantium
 ((65, 55), (66, 55), (67, 55), (66, 56), (67, 56)), #Vikings
 ((81, 38), (82, 38), (82, 37)),  #Arabia
 (), #Khmer
@@ -1105,6 +1135,7 @@ tBroaderAreasTL = (
 (110, 40), #Japan
 (67, 21), #Ethiopia
 (19, 30), #Maya
+(64, 45), #Byzantium
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer
@@ -1133,6 +1164,7 @@ tBroaderAreasTL = (
 (110, 40), #Japan
 (67, 21), #Ethiopia
 (19, 30), #Maya
+(64, 45), #Byzantium
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer
@@ -1163,6 +1195,7 @@ tBroaderAreasBR = (
 (116, 56), #Japan
 (77, 30), #Ethiopia
 (26, 37), #Maya
+(74, 42), #Byzantium
 (71, 65), #Vikings
 (85, 44), #Arabia
 (105, 39), #Khmer
@@ -1191,6 +1224,7 @@ tBroaderAreasBR = (
 (116, 56), #Japan
 (77, 30), #Ethiopia
 (26, 37), #Maya
+(74, 42), #Byzantium
 (71, 65), #Vikings
 (85, 44), #Arabia
 (105, 39), #Khmer
@@ -1222,6 +1256,7 @@ tHire = (
 60, #Japan
 30, #Ethiopia
 30, #Maya
+10, #Byzantium
 60, #Viking
 50, #Arabia
 30, #Ethiopia
@@ -1259,8 +1294,9 @@ lEnemyCivsOnSpawn = [
 [], #Japan
 [], #Ethiopia
 [], #Maya
+[iGreece], #Byzantium
 [iRome,iArabia,iSpain,iEngland,iEngland,iFrance,iFrance,iGermany,iGermany,iCeltia,iIndependent,iIndependent2], #Vikings
-[iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
+[iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Khmer
 [iArabia], #Spain
 [iArabia], #France
@@ -1273,7 +1309,7 @@ lEnemyCivsOnSpawn = [
 [], #Inca
 [iIndia,iChina,iChina,iJapan,iPersia,iKhmer,iRussia,iRussia,iIndependent,iIndependent,iIndependent2,iIndependent2], #Mongolia
 [iMaya], #Aztec
-[iEgypt,iBabylonia,iGreece,iGreece,iCeltia,iCeltia,iArabia,iArabia,iArabia], #Turkey
+[iEgypt,iBabylonia,iGreece,iGreece,iByzantium,iByzantium,iByzantium,iCeltia,iCeltia,iArabia,iArabia,iArabia], #Turkey
 [iIndependent,iIndependent2] #America
 ]
 
@@ -1290,6 +1326,7 @@ lTotalWarOnSpawn = [
 [], #Japan
 [], #Ethiopia
 [], #Maya
+[], #Byzantium
 [], #Vikings
 [iEgypt, iBabylonia, iCarthage, iPersia], #Arabia
 [], #Khmer
@@ -1304,7 +1341,7 @@ lTotalWarOnSpawn = [
 [], #Inca
 [iChina], #Mongolia
 [iMaya], #Aztec
-[iCeltia, iArabia], #Turkey
+[iByzantium, iCeltia, iArabia], #Turkey
 [], #America
 ]
 
@@ -1322,6 +1359,7 @@ tAggressionLevel = (
 1, #Japan
 0, #Ethiopia
 1, #Maya
+1, #Byzantium
 2, #Viking
 2, #Arabia
 1, #Khmer
@@ -1354,6 +1392,7 @@ tAIStopBirthThreshold = (
     80, #Japan
     80, #Ethiopia
     80, #Maya
+    80, #Byzantium
     80, #Viking
     80, #Arabia
     80, #Khmer
@@ -1390,6 +1429,7 @@ tResurrectionProb = (
 100, #Japan
 80, #Ethopia
 30, #Maya
+65, #Byzantium
 60, #Viking
 100, #Arabia
 60, #Khmer
@@ -1424,6 +1464,7 @@ tPatienceThreshold = (
 25, #Japan
 20, #Ethopia
 35, #Maya
+25, #Byzantium
 30, #Viking
 30, #Arabia
 30, #Khmer
@@ -1456,6 +1497,7 @@ tMaxColonists = (
 0, #Japan
 0, #Ethopia
 0, #Maya
+0, #Byzantium
 1, #Viking
 0, #Arabia
 0, #Khmer
@@ -1962,24 +2004,25 @@ iRomEmbassy = 180
 iJapEmbassy = 181
 iEthEmbassy = 182
 iMayEmbassy = 183
-iVikEmbassy = 184
-iAraEmbassy = 185
-iKhmEmbassy = 186
-iSpaEmbassy = 187
-iFraEmbassy = 188
-iEngEmbassy = 189
-iGerEmbassy = 190
-iRusEmbassy = 191
-iHolEmbassy = 192
-iMalEmbassy = 193
-iPorEmbassy = 194
-iIncEmbassy = 195
-iMonEmbassy = 196
-iAztEmbassy = 197
-iTurEmbassy = 198
-iAmeEmbassy = 199
+iByzEmbassy = 184
+iVikEmbassy = 185
+iAraEmbassy = 186
+iKhmEmbassy = 187
+iSpaEmbassy = 188
+iFraEmbassy = 189
+iEngEmbassy = 190
+iGerEmbassy = 191
+iRusEmbassy = 192
+iHolEmbassy = 193
+iMalEmbassy = 194
+iPorEmbassy = 195
+iIncEmbassy = 196
+iMonEmbassy = 197
+iAztEmbassy = 198
+iTurEmbassy = 199
+iAmeEmbassy = 200
 
-iNumBuildingsEmbassy = 200
+iNumBuildingsEmbassy = 201
 
 
 #Projects
@@ -2151,10 +2194,11 @@ tLeaders = (
 (iPericles, iAlexander,),
 (iCyrus, iDarius),
 (iHannibal, iElishat),
-(iAugustus, iJulius_Caesar, iJustinian),
+(iAugustus, iJulius_Caesar),	#Justinian now Byzantine, find new
 (iTokugawa, iJimmu, iMeiji),
 (iZara_Yaqob, iHaile_Selassie),
 (iPacal,),
+(iJustinian,),
 (iRagnar, iGustav),
 (iSaladin, iAbu_Bakr),
 (iSuryavarman,),
@@ -2184,6 +2228,7 @@ tEarlyLeaders = (
 (iJimmu),
 (iZara_Yaqob),
 (iPacal),
+(iJustinian),
 (iRagnar),
 (iAbu_Bakr),
 (iSuryavarman),
@@ -2203,10 +2248,12 @@ tEarlyLeaders = (
 
 # converted to years - edead
 
-if (gc.getPlayer(0).isPlayable()): #late start condition
-        tRomanLateLeaders = (iAugustus, 50, 5, 2, iJustinian, 1000, 10, 3)
-else: 
-        tRomanLateLeaders = (iAugustus, 50, 5, 2)
+#Leoreth: no longer needed because Justinian is now Byzantine
+#if (gc.getPlayer(0).isPlayable()): #late start condition
+        #tRomanLateLeaders = (iAugustus, 50, 5, 2, iJustinian, 1000, 10, 3)	
+#else: 
+        #tRomanLateLeaders = (iAugustus, 50, 5, 2)
+tRomanLateLeaders = (iAugustus, 50, 5, 2)
 
 
 tLateLeaders = ( #all up to 300 turns earlier because the switch is triggered after a few years
@@ -2221,6 +2268,7 @@ tRomanLateLeaders,
 (iTokugawa, 1200, 10, 3, iMeiji, 1850, 10, 4),
 (iHaile_Selassie, 1800, 10, 4),
 (iPacal,),
+(iJustinian,),
 (iGustav, 1600, 10, 3),
 (iSaladin, 1000, 10, 2),
 (iSuryavarman,),
@@ -2265,9 +2313,11 @@ iVictorEmmanuel,
 -1,
 -1,
 -1,
+-1,
 -1)
 
 tFascistLeaders = (
+-1,
 -1,
 -1,
 -1,
@@ -2315,6 +2365,7 @@ iMao,
 -1,
 -1,
 -1,
+-1,
 iStalin,
 -1,
 -1,
@@ -2337,6 +2388,7 @@ tIsActiveOnLateStart = (
 1,
 0,
 0,
+0, #Byzantium currently not active on late start
 1,
 1,
 1,
