@@ -49,6 +49,7 @@ iRome = con.iRome
 iJapan = con.iJapan
 iEthiopia = con.iEthiopia
 iMaya = con.iMaya
+iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
@@ -88,6 +89,7 @@ pRome = gc.getPlayer(iRome)
 pJapan = gc.getPlayer(iJapan)
 pEthiopia = gc.getPlayer(iEthiopia)
 pMaya = gc.getPlayer(iMaya)
+pByzantium = gc.getPlayer(iByzantium)
 pVikings = gc.getPlayer(iVikings)
 pArabia = gc.getPlayer(iArabia)
 pKhmer = gc.getPlayer(iKhmer)
@@ -122,6 +124,7 @@ teamRome = gc.getTeam(pRome.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
 teamEthiopia = gc.getTeam(pEthiopia.getTeam())
 teamMaya = gc.getTeam(pMaya.getTeam())
+teamByzantium = gc.getTeam(pByzantium.getTeam())
 teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
@@ -147,7 +150,7 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 1, 1, 0, 8, 7, 6, 5, 4, 3, 2, 2, 6, 2, 3, 2, 1, 0, 0, 0)
+tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 1, 1, 0, 0, 8, 7, 6, 5, 4, 3, 2, 2, 6, 2, 3, 2, 1, 0, 0, 0)
                                                                           #ma po in mo az tu am
 
 # starting locations coordinates
@@ -580,6 +583,7 @@ class RiseAndFall:
                 pJapan.changeGold(100)
                 pEthiopia.changeGold(100)
                 pMaya.changeGold(200)
+		pByzantium.changeGold(400)
                 pVikings.changeGold(150)
                 pArabia.changeGold(300)
                 pKhmer.changeGold(200)
@@ -2709,7 +2713,10 @@ class RiseAndFall:
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
                 if (iCiv == iMaya):
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iMayaHolkan, iCiv, tPlot, 2)   
+                        utils.makeUnit(con.iMayaHolkan, iCiv, tPlot, 2)
+		if (iCiv == iByzantium):
+			utils.makeUnit(con.iByzantineCataphract, iCiv, tPlot, 2)
+			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)   
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iAxeman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
@@ -2821,6 +2828,10 @@ class RiseAndFall:
                 if (iCiv == iMaya):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 3)
+		if (iCiv == iByzantium):
+			utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 3)
+			utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 4)
@@ -3017,6 +3028,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iMaya):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+		if (iCiv == iByzantium):
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)                              
                 if (iCiv == iArabia):
@@ -3172,6 +3185,9 @@ class RiseAndFall:
                 if ( pMaya.isHuman() ):
                     utils.makeUnit(iSettler, iMaya, tCapitals[0][iMaya], 1)
                     utils.makeUnit(iWarrior, iMaya, tCapitals[0][iMaya], 1)
+		if ( pByzantium.isHuman() ):
+		    utils.makeUnit(iSettler, iByzantium, tCapitals[0][iByzantium], 1)
+		    utils.makeUnit(iWarrior, iByzantium, tCapitals[0][iByzantium], 1)
                 if ( pVikings.isHuman() ):
                     utils.makeUnit(iSettler, iVikings, tCapitals[0][iVikings], 1)
                     utils.makeUnit(iScout, iVikings, tCapitals[0][iVikings], 1)
@@ -3562,6 +3578,37 @@ class RiseAndFall:
                                 teamMaya.setHasTech(con.iAgriculture, True, iCiv, False, False)
                                 teamMaya.setHasTech(con.iWriting, True, iCiv, False, False)
                                 teamMaya.setHasTech(con.iHunting, True, iCiv, False, False)
+			if (iCiv == iByzantium):
+				teamByzantium.setHasTech(con.iMining, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iIronWorking, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iMachinery, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iMysticism, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iPolytheism, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iMasonry, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iPriesthood, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iMonotheism, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iTheology, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iMonarchy, True, iCiv, False, False)
+                                #teamByzantium.setHasTech(con.iDivineRight, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iFishing, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iSailing, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iTheWheel, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iPottery, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iAgriculture, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iWriting, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iFeudalism, True, iCiv, False, False)
+                                #teamByzantium.setHasTech(con.iGuilds, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iAlphabet, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iMathematics, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iConstruction, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iCurrency, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iHunting, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iArchery, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+                                teamByzantium.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
                         if (iCiv == iVikings):
                                 teamVikings.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamVikings.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

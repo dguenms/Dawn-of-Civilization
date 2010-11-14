@@ -54,6 +54,7 @@ iPersia = con.iPersia
 iCarthage = con.iCarthage
 iRome = con.iRome
 iJapan = con.iJapan
+iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
 iSpain = con.iSpain

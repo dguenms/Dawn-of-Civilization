@@ -151,6 +151,7 @@ iRome = con.iRome
 iJapan = con.iJapan
 iEthiopia = con.iEthiopia
 iMaya = con.iMaya
+iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
@@ -190,6 +191,7 @@ pRome = gc.getPlayer(iRome)
 pJapan = gc.getPlayer(iJapan)
 pEthiopia = gc.getPlayer(iEthiopia)
 pMaya = gc.getPlayer(iMaya)
+pByzantium = gc.getPlayer(iByzantium)
 pVikings = gc.getPlayer(iVikings)
 pArabia = gc.getPlayer(iArabia)
 pKhmer = gc.getPlayer(iKhmer)
@@ -224,6 +226,7 @@ teamRome = gc.getTeam(pRome.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
 teamEthiopia = gc.getTeam(pEthiopia.getTeam())
 teamMaya = gc.getTeam(pMaya.getTeam())
+teamByzantium = hc.getTeam(pByzantium.getTeam())
 teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
@@ -559,6 +562,7 @@ class Victory:
                                                         self.setGoal(iBabylonia, 1, 0)
                                         else:
                                                 self.setGoal(iBabylonia, 1, 0)
+
                                 if (iGameTurn == getTurnForYear(-700)):           
                                         bestCity = self.calculateTopCityCulture(76, 40)                                        
                                         if (bestCity != -1):
@@ -873,6 +877,35 @@ class Victory:
                                         if (self.getGoal(iMaya, 2) == -1): #see onCityAcquired()
                                                 self.setGoal(iMaya, 2, 1)
 
+		elif (iPlayer == iByzantium):
+			if (pByzantium.isAlive()):
+
+				if (iGameTurn == getTurnForYear(1000)):
+					if (pByzantium.getGold() >= 5000):
+						self.setGoal(iByzantium, 0, 1)
+					else:
+						self.setGoal(iByzantium, 0, 0)
+
+				if (iGameTurn == getTurnForYear(1200)):
+					bCulture = False
+					mostCulturedCity = self.calculateTopCityCulture(68, 45)
+					if (mostCulturedCity != -1):
+                                                if (bestCity.getOwner() == iByzantium and bestCity.getX() == 68 and bestCity.getY() == 45):
+                                                        bCulture = True
+
+					bLargest = False
+					largestCity = self.calculateTopCityPopulation(68, 45)                                        
+                                        if (largestCity != -1):
+                                                if (bestCity.getOwner() == iByzantium and bestCity.getX() == 68 and bestCity.getY() == 45):
+                                                        bLargest = True
+
+					if (bCulture and bLargest):
+						self.setGoal(iByzantium, 1, 1)
+					else:
+						self.setGoal(iByzantium, 1, 0)
+
+				if (iGameTurn == getTurnForYear(1450)):
+					# yet to be implemented
 
                                                 
 
