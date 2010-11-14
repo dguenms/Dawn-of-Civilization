@@ -2345,6 +2345,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			return 0;
 		}
 		break;
+    case BYZANTIUM:
+        if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
+        {
+            return 0;
+        }
+        break;
 	case VIKING:
 		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
 		{
@@ -2720,6 +2726,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			case MAYA:
 				iValue -= (abs(iDistance) - 3) * 500;
 				break;
+            case BYZANTIUM:
+                iValue -= (abs(iDistance) - 3) * 400;
+                break;
 			case VIKING:
 				if (!GET_TEAM((TeamTypes)VIKING).isHasTech((TechTypes)OPTICS))
 				{
@@ -2870,7 +2879,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
                     if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
                         compactEmpireModifier = 30;
                     else
-                        compactEmpireModifier = 10;     // Leoreth - Renaissance Italy
+                        compactEmpireModifier = 30;     // Leoreth - Renaissance Italy (test: increased to 30 ... more cities?)
 					break;
 				case JAPAN:
 					compactEmpireModifier = 20;
@@ -2881,6 +2890,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				case MAYA:
 					compactEmpireModifier = 40;
 					break;
+                case BYZANTIUM:
+                    compactEmpireModifier = 30;
+                    break;
 				case VIKING:
 					compactEmpireModifier = 5;
 					break;
@@ -2901,7 +2913,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 						compactEmpireModifier = 5;
 					break;
 				case ENGLAND:
-					compactEmpireModifier = 30;
+					compactEmpireModifier = 40;     // test: increased from 30 to 40 ... more cities?
 					if (GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
 						compactEmpireModifier = 5;
 					break;
@@ -3306,6 +3318,9 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		case MAYA:
 			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
 			break;
+        case BYZANTIUM:
+            iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
+            break;
 		case VIKING:
 			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))*2/3);
 			break;
@@ -5421,6 +5436,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == CODEOFLAWS)
 										iValue *= 3;
 									break;
+                                case BYZANTIUM:
+                                    if (iI == OPTICS || iI == GUNPOWDER || iI == ASTRONOMY)
+                                        iValue /= 2;
+                                    break;
 								case VIKING:
 									if (iI == MACHINERY || iI == CIVIL_SERVICE)
 										iValue *= 3;

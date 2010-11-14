@@ -10130,6 +10130,8 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 		return result*100/100;
 	case MAYA:
 		return result*110/100;
+    case BYZANTIUM:
+        return result*110/100;
 	case VIKING:
 		return result*9/10;
 	case ARABIA:
@@ -10283,6 +10285,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		else
 			return researchPercent*115/100;
 		//Rhye - end UP
+    case BYZANTIUM:
+        return researchPercent*115/100;
 	case VIKING:
 		return researchPercent*8/10;
 	case GERMANY:
@@ -10373,6 +10377,8 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 		return result*10/10;
 	case MAYA:
 		return result*10/10;
+    case BYZANTIUM:
+        return result*7/10;
 	case VIKING:
 		return result*7/10;
 	case ARABIA:
@@ -10456,6 +10462,8 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 		return result*115/100;
 	case MAYA:
 		return result*115/100;
+    case BYZANTIUM:
+        return result*7/10;
 	case VIKING:
 		return result*75/100;
 	case ARABIA:
@@ -10563,6 +10571,8 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 		return result*8/10;
 	case MAYA:
 		return result*8/10;
+    case BYZANTIUM:
+        return result*9/10;
 	case VIKING:
 		return result*8/10;
 	case ARABIA:
@@ -10657,6 +10667,9 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 	case MAYA:
 		result = m_iHealthBonus*6;
 		break;
+    case BYZANTIUM:
+        result = m_iHealthBonus*6;
+        break;
 	case VIKING:
 		result = m_iHealthBonus*6;
 		break;

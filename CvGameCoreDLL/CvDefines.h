@@ -24,7 +24,7 @@
 #define RANDPLOT_NOT_CITY											(0x00000040)
 
 #ifdef _USRDLL
-#define MAX_CIV_PLAYERS												(31) //Rhye
+#define MAX_CIV_PLAYERS												(32) //Rhye, Leoreth: +1 for Byzantium
 #else
 #define MAX_CIV_PLAYERS												(CvGlobals::getInstance().getMaxCivPlayers())
 #endif
