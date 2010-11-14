@@ -7489,6 +7489,10 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 120;
 		iRate /= 100;
 		break;
+    case BYZANTIUM:
+        iRate *= 110;
+        iRate /= 100;
+        break;
 	case VIKING:
 		iRate *= 120;
 		iRate /= 100;

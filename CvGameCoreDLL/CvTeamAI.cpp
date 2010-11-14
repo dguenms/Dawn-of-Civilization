@@ -2580,7 +2580,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	//Rhye - start
 	//due to easier pact trading, there's a cap of civs alliances
 	//exploring the pacts tree without recursion
-	int civsArray[27] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	int civsArray[28] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	civsArray[getID()] = 1;
 	civsArray[eTeam] = 1;
 	int iJ;

@@ -2253,6 +2253,7 @@ void CvGame::update()
 		case ROME:
 		case ETHIOPIA:
 		case MAYA:
+		case BYZANTIUM:
 		case KHMER:
 		case SPAIN:
 		case FRANCE:

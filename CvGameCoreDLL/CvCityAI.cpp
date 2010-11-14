@@ -2416,6 +2416,14 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case MAYA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		break;
+    case BYZANTIUM:
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
+		aiUnitAIVal[UNITAI_WORKER] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		break;
 	case VIKING:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
@@ -3042,6 +3050,10 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case MAYA:
 										if (iI == CHICHENITZA) iTempValue *= 4;
 										break;
+                                    case BYZANTIUM:
+                                        if (iI == HAGIASOPHIA || iI == THEODOSIAN) iTempValue *= 3;
+                                        else if (iI == NOTREDAME || iI == SISTINECHAPEL) iTempValue /= 2;
+                                        break;
 									case VIKING:
 										if (iI == CHANNELTUNNEL) {
 														iTempValue *= 3;
@@ -4672,6 +4684,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				case MAYA:
 					iValue -= 1;
 					break;
+                case BYZANTIUM:
+                    iValue += 1;
+                    break;
 				case VIKING:
 					break;
 				case KHMER:

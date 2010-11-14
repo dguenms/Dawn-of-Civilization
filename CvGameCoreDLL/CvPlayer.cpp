@@ -5364,6 +5364,9 @@ void CvPlayer::found(int iX, int iY)
 				case MAYA:
 					startingEra = 1;
 					break;
+                case BYZANTIUM:
+                    startingEra = 2;
+                    break;
 				case VIKING:
 					startingEra = 2;
 					break;
@@ -5775,6 +5778,9 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		case MAYA:
 			startingEra = 1;
 			break;
+        case BYZANTIUM:
+            startingEra = 2;
+            break;
 		case VIKING:
 			startingEra = 2;
 			break;
@@ -6236,6 +6242,9 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded *= 105;
 			iProductionNeeded /= 100;
 			break;
+        case BYZANTIUM:
+            iProductionNeeded *= 95;
+            iProductionNeeded /= 100;
 		case VIKING:
 			iProductionNeeded *= 85;
 			iProductionNeeded /= 100;
@@ -6473,6 +6482,10 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
 				break;
+            case BYZANTIUM:
+                iProductionNeeded *= 90;
+                iProductionNeeded /= 100;
+                break;
 			case VIKING:
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
@@ -6606,6 +6619,10 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
 				break;
+            case BYZANTIUM:
+                iProductionNeeded *= 90;
+                iProductionNeeded /= 100;
+                break;
 			case VIKING:
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
@@ -7386,6 +7403,10 @@ int CvPlayer::calculateInflationRate() const
 			iRate *= 125;
 			iRate /= 100;
 			break;
+        case BYZANTIUM:
+            iRate *= 120;
+            iRate /= 100;
+            break;
 		case VIKING:
 			iRate *= 72;
 			iRate /= 100;
@@ -8729,6 +8750,9 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 		case MAYA:
 			result = (iThreshold*100/100);
 			break;
+        case BYZANTIUM:
+            result = (iThreshold*90/100);
+            break;
 		case VIKING:
 			result = (iThreshold*90/100);
 			break;
@@ -11435,6 +11459,9 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 		case MAYA:
 			startEra = 1;
 			break;
+        case BYZANTIUM:
+            startEra = 2;
+            break;
 		case VIKING:
 			startEra = 2;
 			break;
@@ -22296,6 +22323,10 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold *= 110;
 			iThreshold /= 100;
 			break;
+        case BYZANTIUM:
+            iThreshold *= 76;
+            iThreshold /= 100;
+            break;
 		case VIKING:
 			iThreshold *= 80;
 			iThreshold /= 100;

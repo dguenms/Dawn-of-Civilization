@@ -317,6 +317,9 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	case MAYA:
 		eraModifier = 0;
 		break;
+    case BYZANTIUM:
+        eraModifier = 1;
+        break;
 	case VIKING:
 		eraModifier = 1;
 		break;
@@ -11647,7 +11650,7 @@ void CvCity::doCulture()
                 if (!GET_PLAYER((PlayerTypes)getOwnerINLINE()).isReborn())
                     changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true); //was 110 but it chokes euro civs
                 else
-                    changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *160 /100, false, true); //respawned Italy
+                    changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true); //respawned Italy
 				break;
 			case JAPAN:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
@@ -11658,6 +11661,9 @@ void CvCity::doCulture()
 			case MAYA:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
 				break;
+            case BYZANTIUM:
+                changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
+                break;
 			case VIKING:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
 				break;

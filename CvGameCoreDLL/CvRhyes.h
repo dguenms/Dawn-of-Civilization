@@ -24,28 +24,29 @@ typedef list<char*> LISTCHAR;
 #define JAPAN					(8)
 #define ETHIOPIA				(9)
 #define MAYA					(10)
-#define VIKING					(11)
-#define ARABIA					(12)
-#define KHMER					(13)
-#define SPAIN					(14)
-#define FRANCE					(15)
-#define ENGLAND					(16)
-#define GERMANY					(17)
-#define RUSSIA					(18)
-#define NETHERLANDS				(19)
-#define MALI					(20)
-#define PORTUGAL				(21)
-#define INCA					(22)
-#define MONGOLIA				(23)
-#define AZTEC					(24)
-#define TURKEY					(25)
-#define AMERICA					(26)
-#define NUM_MAJOR_PLAYERS		(27)
-#define INDEPENDENT				(27)
-#define INDEPENDENT2			(28)
-#define NATIVE					(29)
-#define CELTIA					(30)
-#define BARBARIAN				(31)
+#define BYZANTIUM               (11)
+#define VIKING					(12)
+#define ARABIA					(13)
+#define KHMER					(14)
+#define SPAIN					(15)
+#define FRANCE					(16)
+#define ENGLAND					(17)
+#define GERMANY					(18)
+#define RUSSIA					(19)
+#define NETHERLANDS				(20)
+#define MALI					(21)
+#define PORTUGAL				(22)
+#define INCA					(23)
+#define MONGOLIA				(24)
+#define AZTEC					(25)
+#define TURKEY					(26)
+#define AMERICA					(27)
+#define NUM_MAJOR_PLAYERS		(28)
+#define INDEPENDENT				(28)
+#define INDEPENDENT2			(29)
+#define NATIVE					(30)
+#define CELTIA					(31)
+#define BARBARIAN				(32)
 
 
 #define MEDITATION				(1)
@@ -204,15 +205,15 @@ extern char uniquePower[35][2][16];
 extern char uniqueGoals[35][3][18];
 extern char rating[35][6][15];
 
-extern int turnPlayed[32];
-extern int civSpreadFactor[32][7];
-extern int civicMatrix[27][6][5];
-extern int borders[27][27];
-extern wchar civDynamicNames[2][27][22][19]; //(dynamic civ names - not jdog's)
-extern int civDynamicNamesFlag[27];
-extern int civDynamicNamesEraThreshold[27];
+extern int turnPlayed[33];
+extern int civSpreadFactor[33][7];
+extern int civicMatrix[28][6][5];
+extern int borders[28][28];
+extern wchar civDynamicNames[2][28][22][19]; //(dynamic civ names - not jdog's)
+extern int civDynamicNamesFlag[28];
+extern int civDynamicNamesEraThreshold[28];
 extern list<CvWString> GPNameList[38][6];
-extern int settlersMaps[2][27][68][124];
+extern int settlersMaps[2][28][68][124];
 
 extern void fillGPNamesList();
 
