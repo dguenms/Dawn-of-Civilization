@@ -502,7 +502,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         tList.pop(20) #korea                  
                         tList.pop(14) #hre
                         tList.pop(6) #celts
-                        tList.pop(4) #byzantium
+                        #tList.pop(4) #byzantium
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING): #all -3 because there aren't palaces in the list
                         #removed in CvPediaBuilding.py

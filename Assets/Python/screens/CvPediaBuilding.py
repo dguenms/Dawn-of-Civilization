@@ -351,7 +351,7 @@ class CvPediaBuilding:
                         #listSorted.pop(67) #ziggurat
                         listSorted.pop(66) #rathaus
                         listSorted.pop(54) #garden
-                        listSorted.pop(50) #hippodrome
+                        #listSorted.pop(50) #hippodrome
                         listSorted.pop(42) #seowon
                         listSorted.pop(37) #totem                        
                         listSorted.pop(5) #ikhanda                        
