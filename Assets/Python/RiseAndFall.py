@@ -1696,12 +1696,6 @@ class RiseAndFall:
                         tBottomRight = tCoreAreasBR[reborn][iCiv]
                         tBroaderTopLeft = tBroaderAreasTL[reborn][iCiv]
                         tBroaderBottomRight = tBroaderAreasBR[reborn][iCiv]
-
-			# Leoreth: force Byzantine flip
-			if (iCiv == iByzantium):
-				self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
-				self.convertSurroundingCities(iCiv, tTopLeft, tBottomRight)
-
                     
                         if (self.getFlipsDelay(iCiv) == 0): #city hasn't already been founded)
                             
