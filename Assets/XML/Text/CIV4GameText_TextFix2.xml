@@ -204,30 +204,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_DESC</Tag>
-		<English>Byzantine Empire</English>
-		<French>
-			<Text>Empire Byzantin</Text> <!--byzantin-->
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Byzantinisches Reich:Byzantinische Reich:Byzantinischen Reich</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Impero Bizantino</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Imperio Bizantino</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_SHORT_DESC</Tag>
 		<English>Byzantium</English>
 		<French>
