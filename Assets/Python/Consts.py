@@ -767,7 +767,7 @@ tCoreAreasTL = (
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya
-(64, 45), #Byzantium
+(64, 42), #Byzantium
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
@@ -796,7 +796,7 @@ tCoreAreasTL = (
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya
-(64, 45), #Byzantium
+(64, 42), #Byzantium
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
@@ -827,7 +827,7 @@ tCoreAreasBR = (
 (116, 49), #Japan
 (73, 30), #Ethiopia
 (23, 37), #Maya
-(74, 42), #Byzantium
+(74, 45), #Byzantium
 (70, 65), #Vikings
 (81, 39), #Arabia
 (103, 36), #Khmer
@@ -856,7 +856,7 @@ tCoreAreasBR = (
 (116, 49), #Japan
 (73, 30), #Ethiopia
 (23, 37), #Maya
-(74, 42), #Byzantium
+(74, 45), #Byzantium
 (70, 65), #Vikings
 (81, 39), #Arabia
 (103, 36), #Khmer
@@ -952,7 +952,7 @@ tNormalAreasTL = (
 (111, 41), #Japan
 (68, 25), #Ethiopia
 (20, 32), #Maya
-(64, 45), #Byzantium
+(64, 42), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -981,7 +981,7 @@ tNormalAreasTL = (
 (111, 41), #Japan
 (68, 25), #Ethiopia
 (20, 32), #Maya
-(64, 45), #Byzantium
+(64, 42), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -1012,7 +1012,7 @@ tNormalAreasBR = (
 (116, 52), #Japan
 (77, 30), #Ethiopia
 (23, 37), #Maya
-(74, 42), #Byzantium
+(74, 45), #Byzantium
 (67, 65), #Vikings
 (82, 38), #Arabia
 (103, 37), #Khmer
@@ -1041,7 +1041,7 @@ tNormalAreasBR = (
 (116, 52), #Japan
 (77, 30), #Ethiopia
 (23, 37), #Maya
-(74, 42), #Byzantium
+(74, 45), #Byzantium
 (67, 65), #Vikings
 (82, 38), #Arabia
 (103, 37), #Khmer
@@ -1135,7 +1135,7 @@ tBroaderAreasTL = (
 (110, 40), #Japan
 (67, 21), #Ethiopia
 (19, 30), #Maya
-(64, 45), #Byzantium
+(64, 42), #Byzantium
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer
@@ -1164,7 +1164,7 @@ tBroaderAreasTL = (
 (110, 40), #Japan
 (67, 21), #Ethiopia
 (19, 30), #Maya
-(64, 45), #Byzantium
+(64, 42), #Byzantium
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer
@@ -1195,7 +1195,7 @@ tBroaderAreasBR = (
 (116, 56), #Japan
 (77, 30), #Ethiopia
 (26, 37), #Maya
-(74, 42), #Byzantium
+(74, 45), #Byzantium
 (71, 65), #Vikings
 (85, 44), #Arabia
 (105, 39), #Khmer
@@ -1224,7 +1224,7 @@ tBroaderAreasBR = (
 (116, 56), #Japan
 (77, 30), #Ethiopia
 (26, 37), #Maya
-(74, 42), #Byzantium
+(74, 45), #Byzantium
 (71, 65), #Vikings
 (85, 44), #Arabia
 (105, 39), #Khmer
