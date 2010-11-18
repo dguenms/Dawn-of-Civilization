@@ -226,7 +226,7 @@ teamRome = gc.getTeam(pRome.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
 teamEthiopia = gc.getTeam(pEthiopia.getTeam())
 teamMaya = gc.getTeam(pMaya.getTeam())
-teamByzantium = hc.getTeam(pByzantium.getTeam())
+teamByzantium = gc.getTeam(pByzantium.getTeam())
 teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
@@ -904,7 +904,7 @@ class Victory:
 					else:
 						self.setGoal(iByzantium, 1, 0)
 
-				if (iGameTurn == getTurnForYear(1450)):
+				#if (iGameTurn == getTurnForYear(1450)):
 					# yet to be implemented
 
                                                 

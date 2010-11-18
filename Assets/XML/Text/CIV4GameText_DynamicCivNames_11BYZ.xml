@@ -30,14 +30,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DN_BYZ00</Tag>
-		<English>Greek Peoples</English>
+		<English>Byzantine Peoples</English>
 		<French>
 			<Text>Peuplades Mayas</Text>
 			<Gender>Female</Gender>
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Griechenv&#246;lker:Griechenv&#246;lker:Griechenv&#246;lkern</Text>
+			<Text>Byzantinische V&#246;lker:Byzantinische V&#246;lker:Byzantinische V&#246;lkern</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>1:1:1</Plural>
 		</German>
