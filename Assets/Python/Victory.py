@@ -138,6 +138,12 @@ tBrazilTL = (32, 14)
 tBrazilBR = (43, 30)
 tLibyaTL = (59, 35)
 tLibyaBR = (66, 37)
+tBalkansTL = (64, 39)
+tBalkansBR = (67, 45)
+tNorthAfricaTL = (59, 32)
+tNorthAfricaBR = (71, 36)
+tNearEastTL = (69, 37)
+tNearEastBR = (76, 45)
 
 # initialise player variables
 iEgypt = con.iEgypt
@@ -904,9 +910,15 @@ class Victory:
 					else:
 						self.setGoal(iByzantium, 1, 0)
 
-				#if (iGameTurn == getTurnForYear(1450)):
-					# yet to be implemented
+				if (iGameTurn == getTurnForYear(1450)):
+					bBalkans = self.checkOwnedArea(iByzantium, tBalkansTL, tBalkansBR, 3)
+					bNorthAfrica = self.checkOwnedArea(iByzantium, tNorthAfricaTL, tNorthAfricaBR, 3)
+					bNearEast = self.checkOwnedArea(iByzantium, tNearEastTL, tNearEastBR, 3)
 
+					if (bBalkans and bNorthAfrica and bNearEast):
+						self.setGoal(iByzantium, 2, 1)
+					else:
+						self.setGoal(iByzantium, 2, 0)
                                                 
 
                 elif (iPlayer == iVikings):

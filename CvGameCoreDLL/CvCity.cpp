@@ -1893,20 +1893,17 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 		}
 	}
 
-	// Leoreth - build settlers only in core cities until the discovery of Astronomy
+	// Leoreth - build settlers only in cities on the same continent as the capital until the discovery of Astronomy
 	if((int)eUnit == 4)
 	{
 	    if (!GET_TEAM((TeamTypes)getOwner()).isHasTech((TechTypes)ASTRONOMY))
 	    {
-	        CyArgsList argsList3;
-            argsList3.add(getX());
-            argsList3.add(getY());
-            argsList3.add((int)getOwner());
-            long lResult = 0;
-            gDLL->getPythonIFace()->callFunction(PYScreensModule, "isCorePlot", argsList3.makeFunctionArgs(), &lResult);
-            if (lResult == 0)
-            {
-                return false;
+	        if (plot()->getArea() != GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea())
+	        {
+	            if ((int)getOwner() != CARTHAGE && (int)getOwner() != BYZANTIUM && (int)getOwner() != TURKEY && (int)getOwner() != ARABIA)
+	            {
+                    return false;
+	            }
             }
 	    }
 	}
@@ -8283,6 +8280,15 @@ int CvCity::getCommerceFromPercent(CommerceTypes eIndex, int iYieldRate) const
 	if (eIndex == COMMERCE_GOLD)
 	{
 		iCommerce += (iYieldRate - iCommerce - getCommerceFromPercent(COMMERCE_RESEARCH, iYieldRate) - getCommerceFromPercent(COMMERCE_CULTURE, iYieldRate) - getCommerceFromPercent(COMMERCE_ESPIONAGE, iYieldRate));
+	}
+
+	// Leoreth: Byzantine UP
+	if ((int)getOwner() == BYZANTIUM)
+	{
+        if (eIndex == COMMERCE_ESPIONAGE)
+        {
+            iCommerce += 2 * (int)getCultureLevel();
+        }
 	}
 
 	return iCommerce;

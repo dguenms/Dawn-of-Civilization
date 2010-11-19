@@ -1,12 +1,8 @@
 # Greek AIWars map
-# Greek city name map
+# Roman city name map
 # Greek settler map
 # original Byzantine rename function
 # broader and normal area = core
 # Byzantium not active on late start yet (set Consts.py::isActiveOnLateStart and affected functions in RiseAndFall.py accordingly later)
 # find new third leader for Rome
-# implement third UHV goal
-# implement UP
 # balance spawn units and techs
-
-##### CURRENTLY done: all python
