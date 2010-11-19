@@ -1678,7 +1678,7 @@ class Victory:
                                 if (self.getGoal(iEthiopia, 0) == -1):
                                         self.setGoal(iEthiopia, 0, 1)
 
-                elif (iReligion == con.iIslam):
+                elif (iReligion == con.iJudaism):
                         if (self.getGoal(iEthiopia, 0) == -1):
                                 self.setGoal(iEthiopia, 0, 0)
 
