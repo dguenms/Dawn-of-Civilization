@@ -23563,7 +23563,7 @@ void CvPlayer::processCivNames()
 				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][6]); // Communist name
 				return;
             }
-			else if ((getCivics((CivicOptionTypes)0) == 3 && getCivics((CivicOptionTypes)2) == 13) || ((getCivics((CivicOptionTypes)0) == 3 || getCivics((CivicOptionTypes)2) == 13) && !(getCivics((CivicOptionTypes)1) == 8))) { // Autocracy AND Totalitarianism OR (one of them) and no Parliament
+			else if (getCivics((CivicOptionTypes)2) == 13) { //Totalitarianism
 				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][7]); // Fascist name
 				return;
             }

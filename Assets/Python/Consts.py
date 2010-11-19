@@ -1288,13 +1288,13 @@ lEnemyCivsOnSpawn = [
 [iIndependent,iIndependent2,iIndependent2], #China
 [iIndependent,iIndependent2], #Babylonia
 [iIndependent,iIndependent2,iBabylonia], #Greece
-[iBabylonia,iBabylonia,iGreece], #Persia
+[iBabylonia,iBabylonia,iGreece,iCarthage,iCarthage,iIndia,iIndia], #Persia
 [], #Carthage
 [iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
 [], #Japan
 [], #Ethiopia
 [], #Maya
-[iGreece], #Byzantium
+[iGreece, iPersia], #Byzantium
 [iRome,iArabia,iSpain,iEngland,iEngland,iFrance,iFrance,iGermany,iGermany,iCeltia,iIndependent,iIndependent2], #Vikings
 [iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Khmer
@@ -1320,13 +1320,13 @@ lTotalWarOnSpawn = [
 [], #China
 [], #Babylonia
 [], #Greece
-[], #Persia
+[iBabylonia, iCarthage], #Persia
 [], #Phoenicia
-[], #Rome
+[iGreece], #Rome
 [], #Japan
 [], #Ethiopia
 [], #Maya
-[], #Byzantium
+[iGreece], #Byzantium
 [], #Vikings
 [iEgypt, iBabylonia, iCarthage, iPersia], #Arabia
 [], #Khmer

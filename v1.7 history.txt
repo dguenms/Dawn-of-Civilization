@@ -10,8 +10,8 @@
 # conqueror events automatically trigger war (and set the conquering AI's warplan to total war)
 # war continues against independents when your former opponent collapses
 # Netherlands and Portugal are much less likely to become peacevassals
-# settlers can only be built in core cities until the discovery of Astronomy
-# new Babylonian UP: +33% production and commerce in your capital after the discovery of Code of Laws
+# settlers can only be built in cities on the same continent as the capital until the discovery of Astronomy
+# new Babylonian UP: free Absolutism bonus after the discovery of Code of Laws
 # Temple of Solomon now expires with Liberalism, as intended
 # Oil Industry doesn't produce oil anymore
 # civs cannot be vassals of too far away civs until the discovery of Astronomy
@@ -25,3 +25,15 @@
 # AI conquerors now attack native cities immediately (unitai_attack_city_lemming)
 # Byzantium now starts with Machinery instead of Engineering
 # Turkey starts with 3 missionaries and 0 settlers, but gets 3 settlers when their workers arrive
+# implemented the Byzantine civilization
+	# Spawn: 330 AD
+	# Leader: Justinian
+	# UP: Byzantine Diplomacy - +2 espionage per culture level in every city
+	# UU: Cataphract
+	# UB: Hippodrome
+	# UHV:	- Own 5000 gold in 1000 AD
+		- Make Constantinopolis the world's largest and most cultured city in 1200 AD
+		- Own three cities in Europe, Asia and Africa in 1450 AD
+# removed Justinian as a Roman leader
+# added Roman total war on spawn on Greece
+# added Persian total war on spawn on Babylonia and Phoenicia

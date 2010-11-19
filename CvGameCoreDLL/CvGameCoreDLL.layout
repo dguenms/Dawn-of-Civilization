@@ -7,8 +7,8 @@
 	<File name="CvArea.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="310" topLine="0" />
 	</File>
-	<File name="CvCity.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="367268" topLine="14097" />
+	<File name="CvCity.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="193828" topLine="8252" />
 	</File>
 	<File name="CvCity.h" open="0" top="0" tabpos="12">
 		<Cursor position="852" topLine="19" />
@@ -40,7 +40,7 @@
 	<File name="CvEventReporter.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="8309" topLine="281" />
 	</File>
-	<File name="CvGame.cpp" open="1" top="1" tabpos="2">
+	<File name="CvGame.cpp" open="1" top="0" tabpos="2">
 		<Cursor position="90637" topLine="3456" />
 	</File>
 	<File name="CvGame.h" open="0" top="0" tabpos="0">
@@ -67,8 +67,8 @@
 	<File name="CvMap.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="9908" topLine="331" />
 	</File>
-	<File name="CvPlayer.cpp" open="0" top="0" tabpos="7">
-		<Cursor position="139416" topLine="5347" />
+	<File name="CvPlayer.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="601599" topLine="23542" />
 	</File>
 	<File name="CvPlayer.h" open="0" top="0" tabpos="3">
 		<Cursor position="64906" topLine="1035" />
