@@ -3535,6 +3535,7 @@ class RiseAndFall:
                                 teamRome.setHasTech(con.iAlphabet, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iHunting, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+				teamRome.setHasTech(con.iMathematics, True, iCiv, False, False)
                         if (iCiv == iJapan):
                                 teamJapan.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamJapan.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

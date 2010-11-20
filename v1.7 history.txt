@@ -37,3 +37,5 @@
 # removed Justinian as a Roman leader
 # added Roman total war on spawn on Greece
 # added Persian total war on spawn on Babylonia and Phoenicia
+# Legions get +25% strength against the axeman unit class
+# Rome starts with mathematics (catapults)
