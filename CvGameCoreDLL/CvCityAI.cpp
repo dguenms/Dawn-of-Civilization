@@ -3015,7 +3015,24 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == APOSTOLIC) iTempValue /= 2;
 										break;
 									case ROME:      // leave unchanged for Italy
-										if (iI == PARTHENON) {
+                                        if (iI == FLAVIANAMPHITHEATRE || iI == LEANINGTOWER || iI == SISTINECHAPEL || iI == SANMARCO)
+                                        {
+                                            iTempValue *= 3;
+                                        }
+                                        else if (iI == APOSTOLIC)
+                                        {
+                                            iTempValue *= 4;
+                                        }
+                                        else if (iI == GREATWALL)
+                                        {
+                                            iTempValue /= 10;
+                                        }
+                                        else
+                                        {
+                                            iTempValue /= 2;
+                                        }
+                                        break;
+										/*if (iI == PARTHENON) {
 														iTempValue *= 3;
 														iTempValue /= 2;
 										}
@@ -3040,7 +3057,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 3;
 											iTempValue /= 4;
 											}
-										break;
+										break;*/
 									case JAPAN:
 										if (iI == GREATWALL) iTempValue /= 10;
 										else if (iI == APOSTOLIC) iTempValue /= 2;
