@@ -651,7 +651,15 @@ tGoals = (tGoals1, tGoals2)
 # i1950AD = 430
 # i2000AD = 480
 
+iEurope = gc.getMap().plot(55, 50).getArea()
+iAfrica = gc.getMap().plot(72, 29).getArea()
+iAsia = gc.getMap().plot(102, 47).getArea()
 
+lClassicalWorld = []
+lMiddleEast = []
+lEastIndies = []
+lAfrica = []
+lConstantinople = []
 
 # starting locations coordinates
 tCapitals = (
@@ -1352,10 +1360,10 @@ tAggressionLevel = (
 0, #India
 1, #China
 1, #Babylonia
-1, #Greece
-2, #Persia
+2, #Greece
+3, #Persia
 0, #Carthage
-2, #Rome
+3, #Rome
 1, #Japan
 0, #Ethiopia
 1, #Maya

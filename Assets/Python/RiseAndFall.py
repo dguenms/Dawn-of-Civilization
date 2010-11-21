@@ -2808,7 +2808,9 @@ class RiseAndFall:
                 if (iCiv == iRome):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
-                        utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 4)
+                        #utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 4)
+			utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 6)
+			utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)

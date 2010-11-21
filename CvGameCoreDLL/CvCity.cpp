@@ -14127,10 +14127,10 @@ bool CvCity::isAutoRaze() const
 		return true;
 	}
 
-	if ((getX() == 73 || getX() == 71) && getY() == 43)     // Leoreth - hack to stop Phoenicia from conquering Gordion or Hattusas and expanding there
+	/*if ((getX() == 73 || getX() == 71) && getY() == 43)     // Leoreth - hack to stop Phoenicia from conquering Gordion or Hattusas and expanding there
 	{
 	    return true;
-	}
+	}*/
 
 	return false;
 }

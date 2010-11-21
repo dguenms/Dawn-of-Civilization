@@ -39,3 +39,13 @@
 # added Persian total war on spawn on Babylonia and Phoenicia
 # Legions get +25% strength against the axeman unit class
 # Rome starts with mathematics (catapults)
+# increased Roman, Greek, Persian aggression level
+# more Roman interest in Greece, more Greek interest in Anatolia and Persia, more Persian interest in Anatolia and Greece
+# removed Gordion and Hattusas spawns
+# added Barbarian spawns in Anatolia from 2000 to 800 BC (Hittites)
+# forbade Phoenicia from settling in Anatolia
+# increased Greece's likeliness to settle in Anatolia
+# less Barbarians in Europe until 300 AD
+# larger Roman starting army
+# reduced intervals between early wars
+# modified Julius' and Augustus' personality for less wonders, more units and more wars

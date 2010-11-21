@@ -1063,9 +1063,9 @@ class Stability:
 					bHumanNeighbour = True
 
 			if bHumanNeighbour:
-				iNewBaseStability -= min(10, iGameTurn - getTurnForYear(con.tFall[pPlayer.getID()]))
+				iNewBaseStability -= min(15, iGameTurn - getTurnForYear(con.tFall[pPlayer.getID()]))
 			else:
-				iNewBaseStability -= min(20, iGameTurn - getTurnForYear(con.tFall[pPlayer.getID()]))
+				iNewBaseStability -= min(25, iGameTurn - getTurnForYear(con.tFall[pPlayer.getID()]))
                 
                 
                   

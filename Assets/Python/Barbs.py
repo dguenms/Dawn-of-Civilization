@@ -169,6 +169,10 @@ class Barbs:
                         self.spawnUnits( iBarbarian, (72, 20), (91, 36), con.iTrireme, 1, iGameTurn, 8, 0, utils.outerCoastSpawn, 2)
 
 
+
+		# Leoreth: Barbarians in Anatolia (Hittites), replace Hattusas spawn
+		if (iGameTurn >= getTurnForYear(-2000) and iGameTurn <= getTurnForYear(-800)):
+			self.spawnUnits( iBarbarian, (68, 42), (74, 45), con.iChariot, 2 + iHandicap, iGameTurn, 14, 0, utils.outerInvasion, 1)
                         
                 #barbarians in europe
 		# Leoreth: less Barbs before 300 AD
@@ -276,13 +280,13 @@ class Barbs:
                 #self.foundCity(lBabylon, "Babel", iGameTurn, 1, con.iArcher, 1)
                 self.foundCity(iIndependent2, lSusa, "Shushan", iGameTurn, 1, con.iArcher, 1)
                 #self.foundCity(lKnossos, "Knossos", iGameTurn, 1, con.iWarrior, 0)                
-                self.foundCity(iBarbarian, lHattusas, "Hattusas", iGameTurn, 1, con.iChariot, 2)
+                #self.foundCity(iBarbarian, lHattusas, "Hattusas", iGameTurn, 1, con.iChariot, 2)
                 self.foundCity(iIndependent, lSamarkand, "Afrasiyab", iGameTurn, 1, con.iArcher, 1)
                 #self.foundCity(iBarbarian, lNineveh, "Nineveh", iGameTurn, 1, -1, -1)
                 #self.foundCity(lGadir, "Qart-Gadir", iGameTurn, 1, -1, -1)
                 #self.foundCity(lLepcis, "Lpqy", iGameTurn, 2, -1, -1)
                 #self.foundCity(lCarthage, "Qart-Hadasht", iGameTurn, 2, -1, -1)
-                self.foundCity(iBarbarian, lGordion, "Gordion", iGameTurn, 1, con.iChariot, 1)
+                #self.foundCity(iBarbarian, lGordion, "Gordion", iGameTurn, 1, con.iChariot, 1)
                 #self.foundCity(lPalermo, "Ziz", iGameTurn, 2, con.iArcher, 1)
                 self.foundCity(iCeltia, lMilan, "Melpum", iGameTurn, 2, con.iArcher, 2)
                 #self.foundCity(iBarbarian, lAugsburg, "Damasia", iGameTurn, 1, -1, -1)
