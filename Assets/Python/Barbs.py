@@ -171,10 +171,15 @@ class Barbs:
 
                         
                 #barbarians in europe
-                if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(470)):
+		# Leoreth: less Barbs before 300 AD
+                if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(300)):
+                        self.spawnUnits( iBarbarian, (50, 45), (63, 52), con.iAxeman, 1 + iHandicap, iGameTurn, 12, 0, utils.outerInvasion, 0)
+                        self.spawnUnits( iBarbarian, (64, 49), (69, 55), con.iAxeman, 1 + iHandicap, iGameTurn, 14, 2, utils.outerInvasion, 0)
+		if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(470)):
                         self.spawnUnits( iBarbarian, (50, 45), (63, 52), con.iAxeman, 3 + iHandicap, iGameTurn, 12, 0, utils.outerInvasion, 0)
                         self.spawnUnits( iBarbarian, (64, 49), (69, 55), con.iAxeman, 2 + iHandicap, iGameTurn, 14, 2, utils.outerInvasion, 0)
-                if (iGameTurn >= getTurnForYear(50) and iGameTurn <= getTurnForYear(470)):
+		# Leoreth: begins 250 AD instead of 50 AD
+                if (iGameTurn >= getTurnForYear(250) and iGameTurn <= getTurnForYear(470)):
                         self.spawnUnits( iBarbarian, (58, 45), (70, 55), con.iSwordsman, 3, iGameTurn, 10, 5, utils.outerInvasion, 0)                       
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(550)):
                         self.spawnUnits( iBarbarian, (49, 41), (56, 52), con.iAxeman, 4 + iHandicap, iGameTurn, 6, 4, utils.outerInvasion, 0)

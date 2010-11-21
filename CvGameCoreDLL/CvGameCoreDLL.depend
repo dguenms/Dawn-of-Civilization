@@ -15605,7 +15605,7 @@
 	"CvInfos.h"
 	"CvGlobals.h"
 
-1289743059 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvcity.cpp
+1290336856 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvcity.cpp
 	"CvGameCoreDLL.h"
 	"CvGlobals.h"
 	"CvCity.h"
@@ -16163,11 +16163,15 @@
 	"CvGameCoreDLL.h"
 	".\cvreplaymessage.h"
 
-1274128585 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvrhyes.cpp
+1289748057 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvrhyes.cpp
 	"CvGameCoreDLL.h"
 	"CvRhyes.h"
+	<list>
+	<vector>
+	<boost/assign/std/vector.hpp>
+	<string>
 
-1246026308 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvselectiongroup.cpp
+1289651580 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvselectiongroup.cpp
 	"CvGameCoreDLL.h"
 	"CvGlobals.h"
 	"CvSelectionGroup.h"
@@ -16191,9 +16195,9 @@
 	<set>
 	"CvEventReporter.h"
 
-1208189248 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyselectiongroup.h
+1289651579 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyselectiongroup.h
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvselectiongroupai.cpp
+1289651577 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvselectiongroupai.cpp
 	"CvGameCoreDLL.h"
 	"CvSelectionGroupAI.h"
 	"CvPlayerAI.h"
@@ -16205,7 +16209,7 @@
 	"FProfiler.h"
 	"CVInfos.h"
 
-1242304890 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvstatistics.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvstatistics.cpp
 	"CvGameCoreDLL.h"
 	"CvStatistics.h"
 	"CvUnit.h"
@@ -16214,17 +16218,17 @@
 	"CvGameAI.h"
 	"CvPlayerAI.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvstructs.cpp
+1289651578 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvstructs.cpp
 	"CvGameCoreDLL.h"
 	"CvUnit.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvtalkingheadmessage.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvtalkingheadmessage.cpp
 	"CvGameCoreDLL.h"
 	"CvTalkingHeadMessage.h"
 	"CvGameAI.h"
 	"CvGlobals.h"
 
-1272804828 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvteam.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvteam.cpp
 	"CvGameCoreDLL.h"
 	"CvPlayerAI.h"
 	"CvDefines.h"
@@ -16248,7 +16252,7 @@
 	"FProfiler.h"
 	"CvRhyes.h"
 
-1272805052 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvteamai.cpp
+1289743092 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvteamai.cpp
 	"CvGameCoreDLL.h"
 	"CvTeamAI.h"
 	"CvPlayerAI.h"
@@ -16265,7 +16269,7 @@
 	"CvDLLPythonIFaceBase.h"
 	"CvRhyes.h"
 
-1272805168 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvunit.cpp
+1289743095 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvunit.cpp
 	"CvGameCoreDLL.h"
 	"CvUnit.h"
 	"CvArea.h"
@@ -16294,7 +16298,7 @@
 	"CvArtFileMgr.h"
 	"CvRhyes.h"
 
-1272805186 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvunitai.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvunitai.cpp
 	"CvGameCoreDLL.h"
 	"CvUnitAI.h"
 	"CvMap.h"
@@ -16316,7 +16320,7 @@
 	"CvDLLInterfaceIFaceBase.h"
 	"CvDLLFAStarIFaceBase.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvxmlloadutility.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvxmlloadutility.cpp
 	"CvGameCoreDLL.h"
 	"CvDLLXMLIFaceBase.h"
 	"CvXMLLoadUtility.h"
@@ -16324,7 +16328,7 @@
 	"FProfiler.h"
 	"CvDLLUtilityIFaceBase.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvxmlloadutilityget.cpp
+1289651579 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvxmlloadutilityget.cpp
 	"CvGameCoreDLL.h"
 	"CvDLLXMLIFaceBase.h"
 	"CvXMLLoadUtility.h"
@@ -16333,9 +16337,9 @@
 	"FInputDevice.h"
 	"FProfiler.h"
 
-1208189248 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\finputdevice.h
+1289651580 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\finputdevice.h
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvxmlloadutilityinit.cpp
+1289651576 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvxmlloadutilityinit.cpp
 	"CvGameCoreDLL.h"
 	"CvXMLLoadUtility.h"
 	"CvGlobals.h"
@@ -16344,7 +16348,7 @@
 	"CvInfoWater.h"
 	"FProfiler.h"
 
-1246030456 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvxmlloadutilityset.cpp
+1289651579 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvxmlloadutilityset.cpp
 	"CvGameCoreDLL.h"
 	"CvDLLXMLIFaceBase.h"
 	"CvXMLLoadUtility.h"
@@ -16357,39 +16361,39 @@
 	"FVariableSystem.h"
 	"CvGameCoreUtils.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyarea.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyarea.cpp
 	"CvGameCoreDLL.h"
 	"CyCity.h"
 	"CyArea.h"
 	"CvArea.h"
 
-1208189246 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyarea.h
+1289651577 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyarea.h
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyareainterface.cpp
+1289651580 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyareainterface.cpp
 	"CvGameCoreDLL.h"
 	"CyArea.h"
 	"CyCity.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyargslist.cpp
+1289651576 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyargslist.cpp
 	"CvGameCoreDLL.h"
 	"CyArgsList.h"
 	"CyGlobalContext.h"
 	"CvDLLPythonIFaceBase.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyartfilemgr.cpp
+1289651576 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyartfilemgr.cpp
 	"CvGameCoreDLL.h"
 	"CyArtFileMgr.h"
 	"CvArtFileMgr.h"
 	"CyGlobalContext.h"
 
-1208189246 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyartfilemgr.h
+1289651575 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyartfilemgr.h
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyartfilemgrinterface.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyartfilemgrinterface.cpp
 	"CvGameCoreDLL.h"
 	"CyArtFileMgr.h"
 	"CvInfos.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cycity.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cycity.cpp
 	"CvGameCoreDLL.h"
 	"CyCity.h"
 	"CvCity.h"
@@ -16399,41 +16403,41 @@
 	"CvDLLPythonIFaceBase.h"
 	"CvGlobals.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cycityinterface1.cpp
+1289651579 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cycityinterface1.cpp
 	"CvGameCoreDLL.h"
 	"CyCity.h"
 	"CyPlot.h"
 	"CyArea.h"
 	"CvInfos.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cydeal.cpp
+1289651579 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cydeal.cpp
 	"CvGameCoreDLL.h"
 	"CyDeal.h"
 	"CvDeal.h"
 
-1208189246 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cydeal.h
+1289651575 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cydeal.h
 
-1246030576 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyenumsinterface.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyenumsinterface.cpp
 	"CvGameCoreDLL.h"
 	"CvEnums.h"
 	"CvGameCoreDLLUnDefNew.h"
 	<boost/python/enum.hpp>
 	"CvGameCoreDLLDefNew.h"
 
-1164114148 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\enum.hpp
+1289651449 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\enum.hpp
 	<boost/python/detail/prefix.hpp>
 	<boost/python/object/enum_base.hpp>
 	<boost/python/converter/rvalue_from_python_data.hpp>
 	<boost/python/converter/registered.hpp>
 
-1164114148 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\object\enum_base.hpp
+1289651441 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\object\enum_base.hpp
 	<boost/python/object_core.hpp>
 	<boost/python/type_id.hpp>
 	<boost/python/converter/to_python_function_type.hpp>
 	<boost/python/converter/convertible_function.hpp>
 	<boost/python/converter/constructor_function.hpp>
 
-1246030670 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygame.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygame.cpp
 	"CvGameCoreDLL.h"
 	"CyGame.h"
 	"CvGameAI.h"
@@ -16445,10 +16449,10 @@
 	"CvReplayInfo.h"
 	"CyPlot.h"
 
-1208189248 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyreplayinfo.h
+1289651577 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyreplayinfo.h
 	"CvReplayInfo.h"
 
-1272805201 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygamecoreutils.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygamecoreutils.cpp
 	"CvGameCoreDLL.h"
 	"CyGameCoreUtils.h"
 	"CvGameCoreUtils.h"
@@ -16456,16 +16460,16 @@
 	"CyCity.h"
 	"CyUnit.h"
 
-1272805211 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygamecoreutils.h
+1289651575 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygamecoreutils.h
 
-1272805219 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygamecoreutilsinterface.cpp
+1289651578 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygamecoreutilsinterface.cpp
 	"CvGameCoreDLL.h"
 	"CyGameCoreUtils.h"
 	"CyPlot.h"
 	"CyCity.h"
 	"CyUnit.h"
 
-1246030794 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygameinterface.cpp
+1289651576 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygameinterface.cpp
 	"CvGameCoreDLL.h"
 	"CyGame.h"
 	"CvRandom.h"
@@ -16473,7 +16477,7 @@
 	"CyDeal.h"
 	"CyReplayInfo.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygametextmgr.cpp
+1289651579 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygametextmgr.cpp
 	"CvGameCoreDLL.h"
 	"CvGameTextMgr.h"
 	"CyGameTextMgr.h"
@@ -16481,13 +16485,13 @@
 	"CyDeal.h"
 	"CyUnit.h"
 
-1208189246 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygametextmgr.h
+1289651575 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygametextmgr.h
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygametextmgrinterface.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cygametextmgrinterface.cpp
 	"CvGameCoreDLL.h"
 	"CyGameTextMgr.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontext.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontext.cpp
 	"CvGameCoreDLL.h"
 	"CyGlobalContext.h"
 	"CyGame.h"
@@ -16501,9 +16505,9 @@
 	"CvTeamAI.h"
 	"CyArtFileMgr.h"
 
-1248190144 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyteam.h
+1289651576 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyteam.h
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontextinterface1.cpp
+1289651578 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontextinterface1.cpp
 	"CvGameCoreDLL.h"
 	"CyMap.h"
 	"CyPlayer.h"
@@ -16513,7 +16517,7 @@
 	"CvInfos.h"
 	"CyTeam.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontextinterface2.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontextinterface2.cpp
 	"CvGameCoreDLL.h"
 	"CyMap.h"
 	"CyPlayer.h"
@@ -16523,7 +16527,7 @@
 	"CvInfos.h"
 	"CyTeam.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontextinterface3.cpp
+1289651578 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontextinterface3.cpp
 	"CvGameCoreDLL.h"
 	"CyMap.h"
 	"CyPlayer.h"
@@ -16533,7 +16537,7 @@
 	"CvInfos.h"
 	"CyTeam.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontextinterface4.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyglobalcontextinterface4.cpp
 	"CvGameCoreDLL.h"
 	"CyMap.h"
 	"CyPlayer.h"
@@ -16543,33 +16547,33 @@
 	"CvInfos.h"
 	"CyTeam.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyhalloffameinfo.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyhalloffameinfo.cpp
 	"CvGameCoreDLL.h"
 	"CyHallOfFameInfo.h"
 	"CyReplayInfo.h"
 
-1208189246 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyhalloffameinfo.h
+1289651575 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyhalloffameinfo.h
 	"CvHallOfFameInfo.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyhalloffameinterface.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyhalloffameinterface.cpp
 	"CvGameCoreDLL.h"
 	"CyReplayInfo.h"
 	"CyHallOfFameInfo.h"
 	"CyMap.h"
 
-1246030840 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyinfointerface1.cpp
+1289651579 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyinfointerface1.cpp
 	"CvGameCoreDLL.h"
 	"CvInfos.h"
 
-1247532466 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyinfointerface2.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyinfointerface2.cpp
 	"CvGameCoreDLL.h"
 	"CvInfos.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyinfointerface3.cpp
+1289651579 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyinfointerface3.cpp
 	"CvGameCoreDLL.h"
 	"CvInfos.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymap.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymap.cpp
 	"CvGameCoreDLL.h"
 	"cyMap.h"
 	"CyPlot.h"
@@ -16582,7 +16586,7 @@
 	"CvMapGenerator.h"
 	"CvInitCore.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymapgenerator.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymapgenerator.cpp
 	"CvGameCoreDLL.h"
 	"CyMapGenerator.h"
 	"CvGlobals.h"
@@ -16590,13 +16594,13 @@
 	"CvMapGenerator.h"
 	"CyPlot.h"
 
-1208189246 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymapgenerator.h
+1289651579 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymapgenerator.h
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymapgeneratorinterface.cpp
+1289651576 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymapgeneratorinterface.cpp
 	"CvGameCoreDLL.h"
 	"CyMapGenerator.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymapinterface.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymapinterface.cpp
 	"CvGameCoreDLL.h"
 	"CyMap.h"
 	"CyArea.h"
@@ -16605,22 +16609,22 @@
 	"CyUnit.h"
 	"CyPlot.h"
 
-1242304890 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymessagecontrol.cpp
+1289651578 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymessagecontrol.cpp
 	"CvGameCoreDLL.h"
 	"CyMessageControl.h"
 	"CvMessageControl.h"
 	"CvDLLPythonIFaceBase.h"
 	"CvDLLUtilityIFaceBase.h"
 
-1242304890 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymessagecontrol.h
+1289651575 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymessagecontrol.h
 	<boost/python/list.hpp>
 	<boost/python/tuple.hpp>
 
-1242304890 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymessagecontrolinterface.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cymessagecontrolinterface.cpp
 	"CvGameCoreDLL.h"
 	"CyMessageControl.h"
 
-1208189246 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplayer.cpp
+1289651578 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplayer.cpp
 	"CvGameCoreDLL.h"
 	"CyPlayer.h"
 	"CyUnit.h"
@@ -16635,7 +16639,7 @@
 	"CvDLLPythonIFaceBase.h"
 	"CvGlobals.h"
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplayerinterface1.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplayerinterface1.cpp
 	"CvGameCoreDLL.h"
 	"CyPlayer.h"
 	"CyUnit.h"
@@ -16644,7 +16648,7 @@
 	"CySelectionGroup.h"
 	"CyArea.h"
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplayerinterface2.cpp
+1289651576 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplayerinterface2.cpp
 	"CvGameCoreDLL.h"
 	"CyPlayer.h"
 	"CyUnit.h"
@@ -16653,7 +16657,7 @@
 	"CySelectionGroup.h"
 	"CyArea.h"
 
-1227211406 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplot.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplot.cpp
 	"CvGameCoreDLL.h"
 	"CyPlot.h"
 	"CyCity.h"
@@ -16661,7 +16665,7 @@
 	"CyUnit.h"
 	"CvPlot.h"
 
-1227152174 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplotinterface1.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyplotinterface1.cpp
 	"CvGameCoreDLL.h"
 	"CyPlot.h"
 	"CyCity.h"
@@ -16669,17 +16673,17 @@
 	"CyUnit.h"
 	"CvPlot.h"
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyrandominterface.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyrandominterface.cpp
 	"CvGameCoreDLL.h"
 	"CvRandom.h"
 	<boost/python/overloads.hpp>
 
-1164114150 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\overloads.hpp
+1289651449 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\overloads.hpp
 	<boost/python/detail/prefix.hpp>
 	<boost/python/detail/overloads_fwd.hpp>
 	<boost/python/detail/defaults_def.hpp>
 
-1164114148 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\detail\defaults_def.hpp
+1289651448 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\detail\defaults_def.hpp
 	<boost/python/detail/defaults_gen.hpp>
 	<boost/type_traits.hpp>
 	<boost/mpl/front.hpp>
@@ -16693,7 +16697,7 @@
 	<boost/python/detail/make_keyword_range_fn.hpp>
 	<boost/python/object/add_to_namespace.hpp>
 
-1164114148 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\detail\defaults_gen.hpp
+1289651447 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\python\detail\defaults_gen.hpp
 	<boost/python/detail/preprocessor.hpp>
 	<boost/preprocessor/repeat.hpp>
 	<boost/preprocessor/repeat_from_to.hpp>
@@ -16713,10 +16717,10 @@
 	<boost/mpl/deref.hpp>
 	<cstddef>
 
-1164114146 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\preprocessor\repeat_from_to.hpp
+1289651411 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\preprocessor\repeat_from_to.hpp
 	<boost/preprocessor/repetition/repeat_from_to.hpp>
 
-1164114148 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\preprocessor\tuple.hpp
+1289651411 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\preprocessor\tuple.hpp
 	<boost/preprocessor/tuple/eat.hpp>
 	<boost/preprocessor/tuple/elem.hpp>
 	<boost/preprocessor/tuple/rem.hpp>
@@ -16724,31 +16728,31 @@
 	<boost/preprocessor/tuple/to_list.hpp>
 	<boost/preprocessor/tuple/to_seq.hpp>
 
-1164114148 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\preprocessor\tuple\reverse.hpp
+1289651392 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\preprocessor\tuple\reverse.hpp
 	<boost/preprocessor/config/config.hpp>
 
-1164114148 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\preprocessor\tuple\to_seq.hpp
+1289651392 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\preprocessor\tuple\to_seq.hpp
 	<boost/preprocessor/config/config.hpp>
 
-1164114140 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\mpl\front.hpp
+1289651510 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\mpl\front.hpp
 	<boost/mpl/front_fwd.hpp>
 	<boost/mpl/aux_/front_impl.hpp>
 	<boost/mpl/sequence_tag.hpp>
 	<boost/mpl/aux_/na_spec.hpp>
 	<boost/mpl/aux_/lambda_support.hpp>
 
-1164114132 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\mpl\aux_\front_impl.hpp
+1289651491 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\mpl\aux_\front_impl.hpp
 	<boost/mpl/front_fwd.hpp>
 	<boost/mpl/begin_end.hpp>
 	<boost/mpl/deref.hpp>
 	<boost/mpl/aux_/traits_lambda_spec.hpp>
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyreplayinfo.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyreplayinfo.cpp
 	"CvGameCoreDLL.h"
 	"CyReplayInfo.h"
 	"CyMap.h"
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyselectiongroup.cpp
+1289651578 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyselectiongroup.cpp
 	"CvGameCoreDLL.h"
 	"CySelectionGroup.h"
 	"CvSelectionGroup.h"
@@ -16758,30 +16762,30 @@
 	"CyArea.h"
 	"CyUnit.h"
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyselectiongroupinterface.cpp
+1289651580 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyselectiongroupinterface.cpp
 	"CvGameCoreDLL.h"
 	"CySelectionGroup.h"
 	"CyPlot.h"
 	"CyArea.h"
 	"CyUnit.h"
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cystructsinterface1.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cystructsinterface1.cpp
 	"CvGameCoreDLL.h"
 	"CvUnit.h"
 	"CvInfos.h"
 
-1248190200 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyteam.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyteam.cpp
 	"CvGameCoreDLL.h"
 	"CyTeam.h"
 	"CyArea.h"
 	"CvTeam.h"
 
-1248190106 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyteaminterface.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyteaminterface.cpp
 	"CvGameCoreDLL.h"
 	"CyArea.h"
 	"CyTeam.h"
 
-1246030888 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyunit.cpp
+1289651578 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyunit.cpp
 	"CvGameCoreDLL.h"
 	"CyUnit.h"
 	"CyCity.h"
@@ -16795,7 +16799,7 @@
 	"CvDLLInterfaceIFaceBase.h"
 	"CvGlobals.h"
 
-1246030992 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyunitinterface1.cpp
+1289651579 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cyunitinterface1.cpp
 	"CvGameCoreDLL.h"
 	"CyUnit.h"
 	"CyCity.h"
@@ -16805,23 +16809,23 @@
 	"CyArtFileMgr.h"
 	"CvInfos.h"
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\fassert.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\fassert.cpp
 	"CvGameCoreDll.h"
 	"FDialogTemplate.h"
 	<tchar.h>
 	<stdio.h>
 
-1208189248 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\fdialogtemplate.h
+1289651575 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\fdialogtemplate.h
 	<windows.h>
 
-1208189248 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\fdialogtemplate.cpp
+1289651577 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\fdialogtemplate.cpp
 	"CvGameCoreDll.h"
 	"FDialogTemplate.h"
 	"CvGameCoreDLLUndefNew.h"
 	<tchar.h>
 	"CvGameCoreDLLUndefNew.h"
 
-1208189244 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\_precompile.cpp
+1289651575 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\_precompile.cpp
 	"CvGameCoreDLL.h"
 
 1289743077 source:i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\cvplayer.cpp
@@ -16863,6 +16867,23 @@
 	<vector>
 
 1164110524 c:\programme\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\assign\list_inserter.hpp
+	<boost/detail/workaround.hpp>
+	<boost/mpl/if.hpp>
+	<boost/type_traits/is_same.hpp>
+	<boost/config.hpp>
+	<cstddef>
+	<boost/preprocessor/repetition/enum_binary_params.hpp>
+	<boost/preprocessor/repetition/enum_params.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/iteration/local.hpp>
+	<boost/preprocessor/arithmetic/inc.hpp>
+
+1289651557 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\assign\std\vector.hpp
+	<boost/assign/list_inserter.hpp>
+	<boost/config.hpp>
+	<vector>
+
+1289651557 i:\spiele\firaxis games\sid meier's civilization 4\beyond the sword\mods\rfc dawn of civilization\cvgamecoredll\boost-1.32.0\include\boost\assign\list_inserter.hpp
 	<boost/detail/workaround.hpp>
 	<boost/mpl/if.hpp>
 	<boost/type_traits/is_same.hpp>

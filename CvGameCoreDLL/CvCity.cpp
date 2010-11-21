@@ -8287,7 +8287,7 @@ int CvCity::getCommerceFromPercent(CommerceTypes eIndex, int iYieldRate) const
 	{
         if (eIndex == COMMERCE_ESPIONAGE)
         {
-            iCommerce += 2 * (int)getCultureLevel();
+            iCommerce += 200 * (int)getCultureLevel();
         }
 	}
 
