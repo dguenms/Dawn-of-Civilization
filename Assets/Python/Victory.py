@@ -896,13 +896,13 @@ class Victory:
 					bCulture = False
 					mostCulturedCity = self.calculateTopCityCulture(68, 45)
 					if (mostCulturedCity != -1):
-                                                if (bestCity.getOwner() == iByzantium and bestCity.getX() == 68 and bestCity.getY() == 45):
+                                                if (mostCulturedCity.getOwner() == iByzantium and mostCulturedCity.getX() == 68 and mostCulturedCity.getY() == 45):
                                                         bCulture = True
 
 					bLargest = False
 					largestCity = self.calculateTopCityPopulation(68, 45)                                        
                                         if (largestCity != -1):
-                                                if (bestCity.getOwner() == iByzantium and bestCity.getX() == 68 and bestCity.getY() == 45):
+                                                if (largestCity.getOwner() == iByzantium and largestCity.getX() == 68 and largestCity.getY() == 45):
                                                         bLargest = True
 
 					if (bCulture and bLargest):
