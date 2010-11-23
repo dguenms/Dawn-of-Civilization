@@ -2540,7 +2540,7 @@ class RiseAndFall:
                                                         else:
                                                                 utils.makeUnitAI(con.iCrossbowman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         
-                                                utils.makeUnitAI(con.iPikeman, iOldWorldCiv, tArrivalPlot, 2)
+                                                utils.makeUnitAI(con.iPikeman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
                                                 
                                                 if (teamOldWorldCiv.isHasTech(con.iGunpowder)):
                                                         utils.makeUnitAI(con.iCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
