@@ -655,11 +655,37 @@ iEurope = gc.getMap().plot(55, 50).getArea()
 iAfrica = gc.getMap().plot(72, 29).getArea()
 iAsia = gc.getMap().plot(102, 47).getArea()
 
-lClassicalWorld = []
 lMiddleEast = []
 lEastIndies = []
-lAfrica = []
+lNorthAfrica = []
 lConstantinople = []
+
+# North Africa
+for i in range(48,65+1):
+	for j in range(35,39+1):
+		lNorthAfrica.append((i,j))
+
+for i in range(66,71+1):
+	for j in range(29,37+1):
+		lNorthAfrica.append((i,j))
+
+for i in range(72,73+1):
+	for j in range(29,32+1):
+		lNorthAfrica.append((i,j))
+
+# Middle East
+for i in range(72,86+1):
+	for j in range(34,46+1):
+		lMiddleEast.append((i,j))
+
+for i in range(69,71+1):
+	for j in range(40,45+1):
+		lMiddleEast.append((i,j))
+
+for i in range(78,86+1):
+	for j in range(47,49+1):
+		lMiddleEast.append((i,j))
+		
 
 # starting locations coordinates
 tCapitals = (
@@ -775,7 +801,7 @@ tCoreAreasTL = (
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya
-(64, 42), #Byzantium
+(64, 41), #Byzantium
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
@@ -804,7 +830,7 @@ tCoreAreasTL = (
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya
-(64, 42), #Byzantium
+(64, 41), #Byzantium
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
@@ -960,7 +986,7 @@ tNormalAreasTL = (
 (111, 41), #Japan
 (68, 25), #Ethiopia
 (20, 32), #Maya
-(64, 42), #Byzantium
+(64, 41), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -989,7 +1015,7 @@ tNormalAreasTL = (
 (111, 41), #Japan
 (68, 25), #Ethiopia
 (20, 32), #Maya
-(64, 42), #Byzantium
+(64, 41), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -1143,7 +1169,7 @@ tBroaderAreasTL = (
 (110, 40), #Japan
 (67, 21), #Ethiopia
 (19, 30), #Maya
-(64, 42), #Byzantium
+(64, 41), #Byzantium
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer
@@ -1172,7 +1198,7 @@ tBroaderAreasTL = (
 (110, 40), #Japan
 (67, 21), #Ethiopia
 (19, 30), #Maya
-(64, 42), #Byzantium
+(64, 41), #Byzantium
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer

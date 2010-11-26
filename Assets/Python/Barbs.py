@@ -340,14 +340,22 @@ class Barbs:
                 if ((iTurn == getTurnForYear(lCity[2]) + lCity[3]) and (lCity[3]<10)): # conversion from years - edead
                         #print self.checkRegion(tUr)
                         bResult, lCity[3] = self.checkRegion(lCity)
+			print ("bResult: "+repr(bResult))
                         if (bResult == True):
                                 pCiv = gc.getPlayer(iCiv)
+				print ("Attempting to found city "+name)
+				# the code gets to this point, then crashes
                                 pCiv.found(lCity[0], lCity[1])
+				# this point is not reached anymore
+				print "City founded"
                                 self.getCity((lCity[0], lCity[1])).setName(name, False)
+				print "Name set"
                                 if (iPopulation != 1):
                                         self.getCity((lCity[0], lCity[1])).setPopulation(iPopulation)
+					print "Population set"
                                 if (iNumUnits > 0):
                                         self.makeUnit(iUnitType, iCiv, (lCity[0], lCity[1]), iNumUnits, 0)
+					print "Units created"
                                 return True
                         if (bResult == False) and (lCity[3] == -1):
                                 return False

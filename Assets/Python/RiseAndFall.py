@@ -666,7 +666,7 @@ class RiseAndFall:
         def checkTurn(self, iGameTurn):
 
                 #debug
-                
+                print('Reached turn '+repr(iGameTurn))
                 
                 #Trigger betrayal mode
                 if (self.getBetrayalTurns() > 0):
@@ -881,6 +881,18 @@ class RiseAndFall:
                 #self.resurrection(iGameTurn)          
                 #self.resurrectionFromBarbs(iGameTurn)
 
+		#Leoreth: convert Middle East and North Africa
+		if (iGameTurn == getTurnForYear(-3000)):
+			print('Attempt to change continents.')
+			self.convertMiddleEast()
+			print('Continents changed.')
+			#self.reconvertNorthAfrica()
+
+		#if (iGameTurn == getTurnForYear(600)):
+			#self.reconvertMiddleEast()
+			#self.reconvertNorthAfrica()
+
+		print('Reached turn '+repr(iGameTurn))
 
 
 
@@ -1644,6 +1656,99 @@ class RiseAndFall:
                                 gc.getMap().plot(68, 45).setArea(asiaID)
                                 print("Constantinople now Asian")
 
+	def convertMiddleEast(self):
+		print('Beginning to make the Middle East European ...')
+		if (gc.getMap().plot(76,40).area().getID() == con.iEurope):
+			print('Middle East already European.')
+			return
+		for i in range(72,86+1):
+			for j in range(34,46):
+				pCurrent = gc.getMap().plot(i, j)
+				print('try to convert ('+repr(i)+','+repr(j)+').')
+                                if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
+                                        pCurrent.setArea(con.iEurope)
+					print('converted tile ('+repr(i)+','+repr(j)+').')
+
+		for i in range(69,71+1):
+			for j in range(40,45):
+				pCurrent = gc.getMap().plot(i, j)
+				print('try to convert ('+repr(i)+','+repr(j)+').')
+                                if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
+                                        pCurrent.setArea(con.iEurope)
+					print('converted tile ('+repr(i)+','+repr(j)+').')
+
+		for i in range(78,86+1):
+			for j in range(47,49):
+				pCurrent = gc.getMap().plot(i, j)
+				print('try to convert ('+repr(i)+','+repr(j)+').')
+                                if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
+                                        pCurrent.setArea(con.iEurope)
+					print('converted tile ('+repr(i)+','+repr(j)+').')
+		return
+
+
+	def reconvertMiddleEast(self):
+		if (gc.getMap().plot(76,40).area().getID() == con.iAsia):
+			return
+		for i in range(72,86+1):
+			for j in range(34,46+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iAsia)
+
+		for i in range(69,71+1):
+			for j in range(40,45+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iAsia)
+
+		for i in range(78,86+1):
+			for j in range(47,49+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iAsia)
+
+	def convertNorthAfrica(self):
+		if (gc.getMap().plot(69,33).area().getID() == con.iEurope):
+			return
+		for i in range(48,65+1):
+			for j in range(35,39+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iEurope)
+
+		for i in range(66,71+1):
+			for j in range(29,37+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iEurope)
+
+		for i in range(72,73+1):
+			for j in range(29,32+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iEurope)
+
+	def reconvertNorthAfrica(self):
+		if (gc.getMap().plot(69,33).area().getID() == con.iAsia):
+			return
+		for i in range(48,65+1):
+			for j in range(35,39+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iAsia)
+
+		for i in range(66,71+1):
+			for j in range(29,37+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iAsia)
+
+		for i in range(72,73+1):
+			for j in range(29,32+1):
+				pCurrent = gc.getMap().plot(i, j)
+                                if (not pCurrent.isWater()):
+                                        pCurrent.setArea(con.iAsia)
         def processAfrica(self):
                 africaID = gc.getMap().plot(65, 10).area().getID()
                 if (gc.getMap().plot(56, 29).area().getID() == africaID):
@@ -1654,26 +1759,6 @@ class RiseAndFall:
                                 if (not pCurrent.isWater()):
                                         pCurrent.setArea(africaID)                
                 print("Sahara now African")
-
-	def processLevant(self):
-		europeID = gc.getMap().plot(55,50).area().getID()
-		if (gc.getMap().plot(73,40).area().getID() == europeID):
-			return
-		for iLoopY in range(37,41+1):
-			pCurrent = gc.getMap().plot(73, iLoopY)
-                        if (not pCurrent.isWater()):
-				pCurrent.setArea(europeID)
-		print("Levant now European")
-
-	def processLevantBack(self):
-		asiaID = gc.getMap().plot(69,44).area().getID()
-		if (gc.getMap().plot(73,40).area().getID() == asiaID):
-			return
-		for iLoopY in range(37,41+1):
-			pCurrent = gc.getMap().plot(73, iLoopY)
-                        if (not pCurrent.isWater()):
-				pCurrent.setArea(asiaID)
-		print("Levant now Asian")
                             
                                     
         def initBirth(self, iCurrentTurn, iBirthYear, iCiv): # iBirthYear is really year now, so no conversion prior to function call - edead
@@ -1685,10 +1770,12 @@ class RiseAndFall:
                                 self.processConstantinople()
                         if (iCurrentTurn >= getTurnForYear(con.tBirth[iEngland])-1 and iCurrentTurn <= getTurnForYear(con.tBirth[iMali])-1):
                                 self.processAfrica()
-			if (iCurrentTurn >= getTurnForYear(con.tBirth[iBabylonia])-1 and iCurrentTurn <= getTurnForYear(con.tBirth[iArabia])-1):
-				self.processLevant()
-			if (iCurrentTurn >= getTurnForYear(con.tBirth[iKhmer])-1 and iCurrentTurn <= getTurnForYear(con.tBirth[iTurkey])-1):
-				self.processLevantBack()
+			#if (iCurrentTurn >= getTurnForYear(con.tBirth[iBabylonia])-1 and iCurrentTurn <= getTurnForYear(con.tBirth[iArabia])-1):
+				#self.convertMiddleEast()
+				#self.convertNorthAfrica()
+			#if (iCurrentTurn >= getTurnForYear(con.tBirth[iArabia])-1 and iCurrentTurn <= getTurnForYear(con.tBirth[iTurkey])-1):
+				#self.reconvertMiddleEast()
+				#self.reconvertNorthAfrica()
                     
 			reborn = utils.getReborn(iCiv)
                         tCapital = tCapitals[reborn][iCiv]

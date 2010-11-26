@@ -49,3 +49,4 @@
 # larger Roman starting army
 # reduced intervals between early wars
 # modified Julius' and Augustus' personality for less wonders, more units and more wars
+# changed State Property's upkeep to high
