@@ -5291,6 +5291,7 @@ void CvPlayer::found(int iX, int iY)
 
 	if (isBarbarian())
 	{
+
 		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE);
 
 		if (eDefenderUnit == NO_UNIT)
@@ -5305,6 +5306,7 @@ void CvPlayer::found(int iX, int iY)
 				initUnit(eDefenderUnit, iX, iY, UNITAI_CITY_DEFENSE);
 			}
 		}
+
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
@@ -11789,7 +11791,7 @@ int CvPlayer::getCapitalYieldRateModifier(YieldTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
 	//Leoreth - Babylonian UP: free Absolutism bonus after the discovery of Code of Laws
-	if (getID() == BABYLONIA && GET_TEAM(getTeam()).isHasTech((TechTypes)CODEOFLAWS))
+	/*if (getID() == BABYLONIA && GET_TEAM(getTeam()).isHasTech((TechTypes)CODEOFLAWS))
 	{
 	    if ((int) eIndex != 0)
 	    {
@@ -11798,7 +11800,7 @@ int CvPlayer::getCapitalYieldRateModifier(YieldTypes eIndex) const
                 return m_aiCapitalYieldRateModifier[eIndex]+33;
             }
 	    }
-	}
+	}*/
 	return m_aiCapitalYieldRateModifier[eIndex];
 }
 
