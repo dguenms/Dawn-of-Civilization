@@ -275,11 +275,10 @@ class Barbs:
 
                 #self.foundCity(iIndependent, lUr, "Ur", iGameTurn, 1, con.iWarrior, 1)
                 #self.foundCity(iIndependent2, lTyre, "Sur", iGameTurn, 1, con.iArcher, 1)
-                self.foundCity(iIndependent, lJerusalem, "Yerushalayim", iGameTurn, 2, con.iArcher, 3)
-		CyGlobalContext().getMap().plot(lJerusalem[0], lJerusalem[1]).getPlotCity().setHasRealBuilding(con.iTempleOfSalomon, True)                        
+                self.foundCity(iIndependent, lJerusalem, "Yerushalayim", iGameTurn, 2, con.iArcher, 3)                        
                 #self.foundCity(lBabylon, "Babel", iGameTurn, 1, con.iArcher, 1)
                 self.foundCity(iIndependent2, lSusa, "Shushan", iGameTurn, 1, con.iArcher, 1)
-                #self.foundCity(lKnossos, "Knossos", iGameTurn, 1, con.iWarrior, 0)                
+                #self.foundCity(iIndependent, lKnossos, "Knossos", iGameTurn, 1, con.iWarrior, 0)                
                 #self.foundCity(iBarbarian, lHattusas, "Hattusas", iGameTurn, 1, con.iChariot, 2)
                 self.foundCity(iIndependent, lSamarkand, "Afrasiyab", iGameTurn, 1, con.iArcher, 1)
                 #self.foundCity(iBarbarian, lNineveh, "Nineveh", iGameTurn, 1, -1, -1)
@@ -330,6 +329,9 @@ class Barbs:
                 #self.foundCity(iBarbarian, [59, 50, 146, 0], "Germanii", iGameTurn, 1, con.iArcher, 1)
                 #self.foundCity(iBarbarian, [62, 51, 146, 0], "Goti", iGameTurn, 1, con.iArcher, 1)
 
+		if iGameTurn == getTurnForYear(-3000):
+			gc.getMap().plot(lJerusalem[0], lJerusalem[1]).getPlotCity().setHasRealBuilding(con.iTempleOfSalomon, True)
+
 
 
         def getCity(self, tCoords): #by LOQ
@@ -343,7 +345,7 @@ class Barbs:
 			print ("bResult: "+repr(bResult))
                         if (bResult == True):
                                 pCiv = gc.getPlayer(iCiv)
-				print ("Attempting to found city "+name)
+				print ("Attempting to found city "+name+" with "+repr(lCity))
 				# the code gets to this point, then crashes
                                 pCiv.found(lCity[0], lCity[1])
 				# this point is not reached anymore

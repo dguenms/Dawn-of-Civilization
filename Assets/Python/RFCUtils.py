@@ -238,8 +238,39 @@ class RFCUtils:
                 if (len(cityList)):           
                         return cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')]
                 else:
-                        return -1                   
-                                            
+                        return -1
+
+	# Leoreth - finds an adjacent land plot without enemy units that's closest to the player's capital (for the Roman UP)
+	def findNearestLandPlot(self, tPlot, iPlayer):
+		x, y = tPlot
+		plotList = []
+
+		for i in range(x - 2, x + 3):        
+                        for j in range(y - 2, y + 3):	
+                                pCurrent = gc.getMap().plot( i, j )
+                                if (not pCurrent.isWater()):
+                                        if ( not pCurrent.isUnit() ):
+                                                plotList.append(pCurrent)
+
+		if (len(plotList) > 0):
+			iDistance = 1000
+			pCapital = gc.getPlayer(iPlayer).getCapitalCity()
+			iCapX = pCapital.getX()
+			iCapY = pCapital.getY()
+                        for plot in plotList:
+				plotX = plot.getX()
+				plotY = plot.getY()
+				iTempDist = self.calculateDistance(iCapX, plotX, iCapY, plotY)
+
+				if iTempDist < iDistance:
+					nearestPlot = plot
+					iDistance = iTempDist
+
+			return nearestPlot
+
+                return (None)
+
+
 
         def isMortalUnit(self, unit):
                 if (unit.isHasPromotion(42)): #leader

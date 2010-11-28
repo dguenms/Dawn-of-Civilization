@@ -50,3 +50,6 @@
 # reduced intervals between early wars
 # modified Julius' and Augustus' personality for less wonders, more units and more wars
 # changed State Property's upkeep to high
+# modified Cyrus and Dareios' personality for a more warlike behavior
+# removed artificial continents, now there's only America, Australia and Eurasiafrica
+# added an interface message when the Mongol UP triggers

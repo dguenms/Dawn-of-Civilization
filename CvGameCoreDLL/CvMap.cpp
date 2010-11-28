@@ -65,9 +65,9 @@ void CvMap::init(CvMapInitData* pInitInfo/*=NULL*/)
 	int iX, iY;
 
 	PROFILE("CvMap::init");
-	gDLL->logMemState( CvString::format("CvMap::init begin - world size=%s, climate=%s, sealevel=%s, num custom options=%6", 
-		GC.getWorldInfo(GC.getInitCore().getWorldSize()).getDescription(), 
-		GC.getClimateInfo(GC.getInitCore().getClimate()).getDescription(), 
+	gDLL->logMemState( CvString::format("CvMap::init begin - world size=%s, climate=%s, sealevel=%s, num custom options=%6",
+		GC.getWorldInfo(GC.getInitCore().getWorldSize()).getDescription(),
+		GC.getClimateInfo(GC.getInitCore().getClimate()).getDescription(),
 		GC.getSeaLevelInfo(GC.getInitCore().getSeaLevel()).getDescription(),
 		GC.getInitCore().getNumCustomMapOptions()).c_str() );
 
@@ -210,7 +210,7 @@ void CvMap::reset(CvMapInitData* pInitInfo)
 //		// Check map script for wrap override (map script beats ini file)
 //		gDLL->getPythonIFace()->pythonGetWrapXY(&m_bWrapX, &m_bWrapY);
 //	}
-//Speed: End Modify	
+//Speed: End Modify
 		//Rhye - end
 	}
 
@@ -311,7 +311,7 @@ void CvMap::setAllPlotTypes(PlotTypes ePlotType)
 	//mark minimap as dirty
 	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
-	
+
 	//float endTime = (float) timeGetTime();
 	//OutputDebugString(CvString::format("[Jason] setAllPlotTypes: %f\n", endTime - startTime).c_str());
 }
@@ -483,7 +483,7 @@ void CvMap::updateMinOriginalStartDist(CvArea* pArea)
 
 					if (pLoopPlot->area() == pArea)
 					{
-						
+
 						//iDist = GC.getMapINLINE().calculatePathDistance(pStartingPlot, pLoopPlot);
 						iDist = stepDistance(pStartingPlot->getX_INLINE(), pStartingPlot->getY_INLINE(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE());
 
@@ -888,7 +888,7 @@ bool CvMap::isPlot(int iX, int iY) const
 }
 
 
-int CvMap::numPlots() const																											 
+int CvMap::numPlots() const
 {
 	return numPlotsINLINE();
 }
@@ -944,13 +944,13 @@ float CvMap::plotYToPointY(int iY)
 }
 
 
-float CvMap::getWidthCoords()																	
+float CvMap::getWidthCoords()
 {
 	return (GC.getPLOT_SIZE() * ((float)getGridWidthINLINE()));
 }
 
 
-float CvMap::getHeightCoords()																	
+float CvMap::getHeightCoords()
 {
 	return (GC.getPLOT_SIZE() * ((float)getGridHeightINLINE()));
 }
@@ -1077,7 +1077,7 @@ CustomMapOptionTypes CvMap::getCustomMapOption(int iOption)
 }
 
 
-int CvMap::getNumBonuses(BonusTypes eIndex)													
+int CvMap::getNumBonuses(BonusTypes eIndex)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumBonusInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -1085,7 +1085,7 @@ int CvMap::getNumBonuses(BonusTypes eIndex)
 }
 
 
-void CvMap::changeNumBonuses(BonusTypes eIndex, int iChange)									
+void CvMap::changeNumBonuses(BonusTypes eIndex, int iChange)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumBonusInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -1094,7 +1094,7 @@ void CvMap::changeNumBonuses(BonusTypes eIndex, int iChange)
 }
 
 
-int CvMap::getNumBonusesOnLand(BonusTypes eIndex)													
+int CvMap::getNumBonusesOnLand(BonusTypes eIndex)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumBonusInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -1102,7 +1102,7 @@ int CvMap::getNumBonusesOnLand(BonusTypes eIndex)
 }
 
 
-void CvMap::changeNumBonusesOnLand(BonusTypes eIndex, int iChange)									
+void CvMap::changeNumBonusesOnLand(BonusTypes eIndex, int iChange)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumBonusInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -1123,19 +1123,19 @@ CvPlot* CvMap::plot(int iX, int iY) const
 }
 
 
-CvPlot* CvMap::pointToPlot(float fX, float fY)													
+CvPlot* CvMap::pointToPlot(float fX, float fY)
 {
 	return plotINLINE(pointXToPlotX(fX), pointYToPlotY(fY));
 }
 
 
-int CvMap::getIndexAfterLastArea()																
+int CvMap::getIndexAfterLastArea()
 {
 	return m_areas.getIndexAfterLast();
 }
 
 
-int CvMap::getNumAreas()																		
+int CvMap::getNumAreas()
 {
 	return m_areas.getCount();
 }
@@ -1161,7 +1161,7 @@ int CvMap::getNumLandAreas()
 }
 
 
-CvArea* CvMap::getArea(int iID)																
+CvArea* CvMap::getArea(int iID)
 {
 	return m_areas.getAt(iID);
 }
@@ -1304,7 +1304,7 @@ void CvMap::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumBonusInfos(), m_paiNumBonus);
 	pStream->Write(GC.getNumBonusInfos(), m_paiNumBonusOnLand);
 
-	int iI;	
+	int iI;
 	for (iI = 0; iI < numPlotsINLINE(); iI++)
 	{
 		m_pMapPlots[iI].write(pStream);
@@ -1363,6 +1363,7 @@ void CvMap::calculateAreas()
 			gDLL->getFAStarIFace()->GeneratePath(&GC.getAreaFinder(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), -1, -1, pLoopPlot->isWater(), iArea);
 		}
 	}
+	/* LEORETH TEST ONLY: completely disabled artificial continents to see its effect on AI behavior
 	//Rhye - start (continents)
 	CvArea* sudamericaArea = addArea();
 	int sudamericaID = sudamericaArea->getID();
@@ -1511,6 +1512,7 @@ void CvMap::calculateAreas()
 		}
 	}*/
 	//Rhye - end
+
 }
 
 

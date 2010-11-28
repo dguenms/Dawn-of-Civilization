@@ -142,6 +142,17 @@ class UniquePowers:
         def setEnslavedUnits( self, iNewValue ):
                 sd.scriptDict['iEnslavedUnits'] = iNewValue
 
+	# Roman UP
+
+	def increaseRomanVictories(self):
+		sd.scriptDict['iRomanVictories'] += 1
+
+	def resetRomanVictories(self):
+		sd.scriptDict['iRomanVictories'] = 0
+
+	def getRomanVictories(self):
+		return sd.scriptDict['iRomanVictories']
+
 #######################################
 ### Main methods (Event-Triggered) ###
 #####################################  
@@ -155,11 +166,47 @@ class UniquePowers:
                 if (iGameTurn >= getTurnForYear(con.tBirth[iAmerica])+utils.getTurns(5) and ((self.getImmigrationTurnLength() != 0) or ((gc.getGame().getSorenRandNum(30, 'random') % 20) == 0 and gc.getPlayer(iAmerica).isAlive()))):
                         self.americanUP()
 
-                if (iGameTurn >= getTurnForYear(1190)):
+                #if (iGameTurn >= getTurnForYear(1190)):
                 #if (iGameTurn >= 0): #debug
-                        for iTimer in range(iMongolianTimer+1):
-                                if (iGameTurn == self.getLatestRazeData(0)+iTimer):
-                                        self.useMongolUP()
+                        #for iTimer in range(iMongolianTimer+1):
+                                #if (iGameTurn == self.getLatestRazeData(0)+iTimer):
+                                        #self.useMongolUP()
+
+#------------------ROMAN UP-----------------------
+
+        def romanCombatUP(self, argsList):
+
+		pWinningUnit, pLosingUnit = argsList
+                pWinningPlayer = gc.getPlayer(pWinningUnit.getOwner())
+		
+                if (pWinningPlayer.getID() != iRome or pWinningPlayer.isReborn()):
+                        return
+
+                pLosingPlayer = gc.getPlayer(pLosingUnit.getOwner())
+
+                if not pLosingPlayer.isBarbarian():
+                        self.increaseRomanVictories()
+                
+                if self.getRomanVictories() >= 5:
+                        utils.makeUnit(con.iRomePraetorian, iRome, (pWinningUnit.getX(), pWinningUnit.getY()), 1)
+                        self.resetRomanVictories()
+			
+                        CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_TRIUMPH", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+
+	def romanConquestUP(self, iEnemy):
+
+		#pEnemy = gc.getPlayer(iEnemy)
+	
+		pTargetCity = utils.getRandomCity(iEnemy)
+
+		tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
+
+		utils.makeUnit(con.iRomePraetorian, iRome, tPlot, 3)
+		utils.makeUnit(con.iCatapult, iRome, tPlot, 2)
+
+		CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS", (gc.getPlayer(iEnemy).getCivilizationShortDescription(0))), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+		
 
 
 #------------------ARABIAN U.P.-------------------
@@ -259,9 +306,6 @@ class UniquePowers:
                                         utils.convertPlotCulture(pCurrent, iTurkey, 80, True)
                                 else:
                                         utils.convertPlotCulture(pCurrent, iTurkey, 20, False)
-
-
-                                
 
 
 #------------------MONGOLIAN U.P.-------------------
@@ -367,11 +411,12 @@ class UniquePowers:
 
 
 	def mongolUP(self, city):
-		if (city.getPopulation() >= 8):
+		if (city.getPopulation() >= 7):
 			utils.makeUnit(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), 2)
-		elif (city.getPopulation() >= 5):
+		elif (city.getPopulation() >= 4):
 			utils.makeUnit(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), 1)
 
+		CyInterface().addMessage(iMongolia, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_MONGOL_HORDE", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
 
 #------------------AMERICAN U.P.-------------------
