@@ -348,4 +348,24 @@
 		<Italian>temono di subire lo stesso fato dei vicini e si arrendono!</Italian>
 		<Spanish>temen sufrir el mismo destino que sus vecinos y se rinden.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ROMAN_CONQUESTS</Tag>
+		<English>An army has been fielded to attack %s!</English>
+		<German>Eine Armee wurde zusammengestellt zum Angriff auf %s!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ROMAN_CONQUESTS_TARGET</Tag>
+		<English>The Romans have fielded an army to conquer our civilization!</English>
+		<German>Die Römer haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MONGOL_HORDE</Tag>
+		<English>Your successful conquests have made your horde grow!</English>
+		<German>Eure erfolgreichen Eroberungen haben Eure Horde wachsen lassen!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ROMAN_TRIUMPH</Tag>
+		<English>Your triumphant victories have enabled you to field another legion!</English>
+		<German>Eure triumphalen Siege haben Euch ermöglicht, eine weitere Legion auszuheben!</German>
+	</TEXT>
 </Civ4GameText>

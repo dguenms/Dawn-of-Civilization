@@ -5092,7 +5092,7 @@
 			<Civilopedia>TXT_KEY_LEADER_CYRUS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_CYRUS</ArtDefineTag>
 			<iWonderConstructRand>40</iWonderConstructRand>
-			<iBaseAttitude>1</iBaseAttitude>
+			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>3</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
 			<iWarmongerRespect>0</iWarmongerRespect>
@@ -5103,13 +5103,13 @@
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<!-- Rhye -->
-			<iMaxWarRand>200</iMaxWarRand>
-			<iMaxWarNearbyPowerRatio>100</iMaxWarNearbyPowerRatio>
-			<iMaxWarDistantPowerRatio>60</iMaxWarDistantPowerRatio>
-			<iMaxWarMinAdjacentLandPercent>3</iMaxWarMinAdjacentLandPercent>
-			<iLimitedWarRand>160</iLimitedWarRand>
-			<iLimitedWarPowerRatio>100</iLimitedWarPowerRatio>
-			<iDogpileWarRand>100</iDogpileWarRand>
+			<iMaxWarRand>50</iMaxWarRand>
+			<iMaxWarNearbyPowerRatio>120</iMaxWarNearbyPowerRatio>
+			<iMaxWarDistantPowerRatio>80</iMaxWarDistantPowerRatio>
+			<iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
+			<iLimitedWarRand>80</iLimitedWarRand>
+			<iLimitedWarPowerRatio>120</iLimitedWarPowerRatio>
+			<iDogpileWarRand>50</iDogpileWarRand>
 			<iMakePeaceRand>20</iMakePeaceRand>
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>
@@ -5655,13 +5655,13 @@
 			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
-			<iMaxWarRand>200</iMaxWarRand>
-			<iMaxWarNearbyPowerRatio>100</iMaxWarNearbyPowerRatio>
-			<iMaxWarDistantPowerRatio>60</iMaxWarDistantPowerRatio>
+			<iMaxWarRand>50</iMaxWarRand>
+			<iMaxWarNearbyPowerRatio>120</iMaxWarNearbyPowerRatio>
+			<iMaxWarDistantPowerRatio>80</iMaxWarDistantPowerRatio>
 			<iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
-			<iLimitedWarRand>160</iLimitedWarRand>
-			<iLimitedWarPowerRatio>100</iLimitedWarPowerRatio>
-			<iDogpileWarRand>100</iDogpileWarRand>
+			<iLimitedWarRand>120</iLimitedWarRand>
+			<iLimitedWarPowerRatio>120</iLimitedWarPowerRatio>
+			<iDogpileWarRand>50</iDogpileWarRand>
 			<iMakePeaceRand>20</iMakePeaceRand>
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>

@@ -666,7 +666,7 @@ class RiseAndFall:
         def checkTurn(self, iGameTurn):
 
                 #debug
-                print('Reached turn '+repr(iGameTurn))
+                #print('Reached turn '+repr(iGameTurn))
                 
                 #Trigger betrayal mode
                 if (self.getBetrayalTurns() > 0):
@@ -690,10 +690,13 @@ class RiseAndFall:
 
 		#Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
 		if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820)):
-			utils.makeUnit(con.iSettler, iCarthage, (58, 39), 1)
-			utils.makeUnit(con.iArcher, iCarthage, (58, 39), 1)
+			utils.makeUnit(con.iSettler, iCarthage, (58, 39), 2)
+			utils.makeUnit(con.iArcher, iCarthage, (58, 39), 2)
 			utils.makeUnit(con.iWorker, iCarthage, (58, 39), 2)
 			utils.makeUnit(con.iWarElephant, iCarthage, (58, 39), 2)
+
+		if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820)+1):
+			gc.getMap().plot(58,39).getPlotCity().setHasRealBuilding(con.iPalace, True)
 
                 #Colonists
                 if (iGameTurn == getTurnForYear(-850)):
@@ -880,19 +883,6 @@ class RiseAndFall:
                 #debug
                 #self.resurrection(iGameTurn)          
                 #self.resurrectionFromBarbs(iGameTurn)
-
-		#Leoreth: convert Middle East and North Africa
-		if (iGameTurn == getTurnForYear(-3000)):
-			print('Attempt to change continents.')
-			self.convertMiddleEast()
-			print('Continents changed.')
-			#self.reconvertNorthAfrica()
-
-		#if (iGameTurn == getTurnForYear(600)):
-			#self.reconvertMiddleEast()
-			#self.reconvertNorthAfrica()
-
-		print('Reached turn '+repr(iGameTurn))
 
 
 
@@ -2880,8 +2870,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iPersiaImmortal, iCiv, tPlot, 6)
                         utils.makeUnit(con.iChariot, iCiv, tPlot, 4)
                 if (iCiv == iCarthage):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-                        utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
+                        utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                         #utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
                         #utils.makeUnit(con.iCarthageNumidianCavalry, iCiv, tPlot, 3)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
