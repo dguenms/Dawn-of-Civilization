@@ -54,14 +54,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DN_CAR01</Tag>
-		<English>Phoenicican Empire</English>
+		<English>Phoenician City-States</English>
 		<French>
 			<Text>Empire Phénicien</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Phönizisches Reich:Phönizische Reich:Phönizischen Reich</Text>
+			<Text>Phönizische Stadtstaaten:Phönizischen Stadtstaaten:Phönizischen Stadtstaaten</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
@@ -102,14 +102,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DN_CAR03</Tag>
-		<English>Phoenicican Empire</English>
+		<English>Phoenician City-States</English>
 		<French>
 			<Text>Empire Phénicien</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Phönizisches Reich:Phönizische Reich:Phönizischen Reich</Text>
+			<Text>Phönizische Stadtstaaten:Phönizischen Stadtstaaten:Phönizischen Stadtstaaten</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>

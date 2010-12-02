@@ -1324,7 +1324,8 @@ lEnemyCivsOnSpawn = [
 [iIndependent,iIndependent2,iBabylonia], #Greece
 [iBabylonia,iBabylonia,iGreece,iCarthage,iCarthage,iIndia,iIndia], #Persia
 [], #Carthage
-[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
+#[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
+[], # rome for testing
 [], #Japan
 [], #Ethiopia
 [], #Maya

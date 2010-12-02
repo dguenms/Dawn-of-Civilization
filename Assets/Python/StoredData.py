@@ -57,6 +57,7 @@ class StoredData:
                                     'iLatestFlipTurn': 0,
                                     'lLatestRazeData': [-1, -1, -1, -1, -1],
 				    'iRomanVictories': 0,
+				    'lRomanWars': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                                     #------------AIWars
                                     'lAttackingCivsArray': [0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, 0],
                                     'iNextTurnAIWar': -1,

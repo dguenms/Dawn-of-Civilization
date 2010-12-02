@@ -252,22 +252,29 @@ class RFCUtils:
                                         if ( not pCurrent.isUnit() ):
                                                 plotList.append(pCurrent)
 
+		#if (len(plotList) > 0):
+		#	iDistance = 1000
+		#	pCapital = gc.getPlayer(iPlayer).getCapitalCity()
+		#	iCapX = pCapital.getX()
+		#	iCapY = pCapital.getY()
+                #        for plot in plotList:
+		#		plotX = plot.getX()
+		#		plotY = plot.getY()
+		#		iTempDist = self.calculateDistance(iCapX, plotX, iCapY, plotY)
+#
+		#		if iTempDist < iDistance:
+		#			nearestPlot = plot
+		#			iDistance = iTempDist
+
+		#	return nearestPlot
+
+                #return (None)
+
 		if (len(plotList) > 0):
-			iDistance = 1000
-			pCapital = gc.getPlayer(iPlayer).getCapitalCity()
-			iCapX = pCapital.getX()
-			iCapY = pCapital.getY()
-                        for plot in plotList:
-				plotX = plot.getX()
-				plotY = plot.getY()
-				iTempDist = self.calculateDistance(iCapX, plotX, iCapY, plotY)
-
-				if iTempDist < iDistance:
-					nearestPlot = plot
-					iDistance = iTempDist
-
-			return nearestPlot
-
+                        rndNum = gc.getGame().getSorenRandNum(len(plotList), 'sea plot')
+                        result = plotList[rndNum]
+                        if (result):                                                        
+                                    return ((result.getX(), result.getY()))
                 return (None)
 
 

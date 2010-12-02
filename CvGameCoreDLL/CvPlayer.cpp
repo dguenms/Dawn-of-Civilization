@@ -23477,6 +23477,12 @@ void CvPlayer::processCivNames()
 	//if (GC.getGameINLINE().getGameTurn() == 0 && getID() != EGYPT) //Egyptian UP
 	//	return;
 
+	int cityThreshold = 6;
+
+	if (getID() == CARTHAGE) {
+	    cityThreshold = 2;
+	}
+
 	if (getID() < NUM_MAJOR_PLAYERS) {
 		int iMaster = -1;
 		int iI;
@@ -23587,7 +23593,7 @@ void CvPlayer::processCivNames()
 				}
 			else  { // in any other case there's a monarchist name dependent on size and era
 				if (getCurrentEra() < civDynamicNamesEraThreshold[getID()]+GET_PLAYER((PlayerTypes)getID()).getReborn()) { // Leoreth - workaround to let reborn civs change one era later
-					if (getNumCities() <= 6) {
+					if (getNumCities() <= cityThreshold) {
 						setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][1]); // small early monarchist name
 						return;
 					}

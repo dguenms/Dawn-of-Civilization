@@ -84,6 +84,9 @@ iNumTotalPlayers = con.iNumTotalPlayers
 pMongolia = gc.getPlayer(iMongolia)
 teamMongolia = gc.getTeam(pMongolia.getTeam())
 
+pRome = gc.getPlayer(iRome)
+teamRome = gc.getTeam(pRome.getTeam())
+
 
 tRussianTopLeft = (65, 49)
 tRussianBottomRight = (121, 65)
@@ -153,6 +156,12 @@ class UniquePowers:
 	def getRomanVictories(self):
 		return sd.scriptDict['iRomanVictories']
 
+	def getRomanWar(self, iPlayer):
+		return sd.scriptDict['lRomanWars'][iPlayer]
+
+	def setRomanWar(self, iPlayer, iValue):
+		sd.scriptDict['lRomanWars'][iPlayer] = iValue
+
 #######################################
 ### Main methods (Event-Triggered) ###
 #####################################  
@@ -166,6 +175,14 @@ class UniquePowers:
                 if (iGameTurn >= getTurnForYear(con.tBirth[iAmerica])+utils.getTurns(5) and ((self.getImmigrationTurnLength() != 0) or ((gc.getGame().getSorenRandNum(30, 'random') % 20) == 0 and gc.getPlayer(iAmerica).isAlive()))):
                         self.americanUP()
 
+		if iGameTurn == getTurnForYear(con.tBirth[iRome]+1):
+			for iCiv in range(iNumActivePlayers):
+				if teamRome.isAtWar(iCiv):
+					self.setRomanWar(iCiv, -1)
+
+		if (iGameTurn >= getTurnForYear(con.tBirth[iRome])+2):
+			self.checkRomanWar()
+
                 #if (iGameTurn >= getTurnForYear(1190)):
                 #if (iGameTurn >= 0): #debug
                         #for iTimer in range(iMongolianTimer+1):
@@ -173,6 +190,18 @@ class UniquePowers:
                                         #self.useMongolUP()
 
 #------------------ROMAN UP-----------------------
+
+	def checkRomanWar(self):
+		
+		for iCiv in range(iNumActivePlayers):
+			if self.getRomanWar(iCiv) == -1:
+				if (not teamRome.isAtWar(iCiv)):
+					self.setRomanWar(iCiv, 0)
+			elif self.getRomanWar(iCiv) == 0:
+				if teamRome.isAtWar(iCiv):
+					self.setRomanWar(iCiv, 1)
+					print "Roman conquest triggered."
+					self.romanConquestUP(iCiv)
 
         def romanCombatUP(self, argsList):
 
@@ -204,7 +233,7 @@ class UniquePowers:
 		utils.makeUnit(con.iRomePraetorian, iRome, tPlot, 3)
 		utils.makeUnit(con.iCatapult, iRome, tPlot, 2)
 
-		CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS", (gc.getPlayer(iEnemy).getCivilizationShortDescription(0))), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+		CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS", (gc.getPlayer(iEnemy).getCivilizationShortDescription(0),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		
 
