@@ -386,16 +386,6 @@ class CvRFCEventHandler:
 ##                                self.rnf.setBetrayalTurns(rnf.iBetrayalPeriod)
 ##                                self.rnf.initBetrayal()
 
-	# Leoreth - new Roman UP: armies at enemy's borders after war is declared
-	def onChangeWar(self, argsList):
-		bIsWar, iTeam, iRivalTeam = argsList
-		
-		if (bIsWar):
-			if (iTeam == iRome and not Rome.isReborn()):
-				print "Roman declaration of war"
-				self.up.romanConquestUP(iRivalTeam)
-
-
         def onReligionFounded(self, argsList):
                 'Religion Founded'
                 iReligion, iFounder = argsList

@@ -53,3 +53,6 @@
 # modified Cyrus and Dareios' personality for a more warlike behavior
 # removed artificial continents, now there's only America, Australia and Eurasiafrica
 # added an interface message when the Mongol UP triggers
+# new Roman UP:
+	One legion spawns for every won battle
+	An army spawns near your enemy's cities when you declare war on them for the first time

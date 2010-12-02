@@ -690,7 +690,7 @@ class RiseAndFall:
 
 		#Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
 		if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820)):
-			utils.makeUnit(con.iSettler, iCarthage, (58, 39), 2)
+			utils.makeUnit(con.iSettler, iCarthage, (58, 39), 1)
 			utils.makeUnit(con.iArcher, iCarthage, (58, 39), 2)
 			utils.makeUnit(con.iWorker, iCarthage, (58, 39), 2)
 			utils.makeUnit(con.iWarElephant, iCarthage, (58, 39), 2)
@@ -2870,6 +2870,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iPersiaImmortal, iCiv, tPlot, 6)
                         utils.makeUnit(con.iChariot, iCiv, tPlot, 4)
                 if (iCiv == iCarthage):
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                         #utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
                         #utils.makeUnit(con.iCarthageNumidianCavalry, iCiv, tPlot, 3)
