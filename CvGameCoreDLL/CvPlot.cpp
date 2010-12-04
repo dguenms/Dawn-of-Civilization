@@ -2827,11 +2827,12 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 
 	//Rhye - start UP
 	// Leoreth: UP not for Italy
-	if (getOwnerINLINE() == ROME && !GET_PLAYER((PlayerTypes)ROME).isReborn())
+	// Leoreth: UP replaced
+	/*if (getOwnerINLINE() == ROME && !GET_PLAYER((PlayerTypes)ROME).isReborn())
 	{
 		iRouteCost /= 2;
 		iRouteFlatCost /= 2;
-	}
+	}*/
 	//Rhye - end UP
 
 	return std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));

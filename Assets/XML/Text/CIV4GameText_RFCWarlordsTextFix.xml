@@ -224,14 +224,38 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_SHORT_DESC</Tag>
-		<English>Carthage</English>
+		<English>Phoenicia</English>
 		<French>
-			<Text>Carthage</Text>
+			<Text>Phoenicia</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Karthago</Text>
+			<Text>Phönizien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Cartagine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cartago</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_ADJECTIVE</Tag>
+		<English>Phoenician</English>
+		<French>
+			<Text>Phoenicia</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>phönizisch</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
