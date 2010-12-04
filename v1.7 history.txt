@@ -54,5 +54,6 @@
 # removed artificial continents, now there's only America, Australia and Eurasiafrica
 # added an interface message when the Mongol UP triggers
 # new Roman UP:
-	One legion spawns for every won battle
 	An army spawns near your enemy's cities when you declare war on them for the first time
+# increased likeliness for Phoenicia and Rome to settle in Iberia, decreased Roman likeliness to settle at the Danube
+# corrected Phoenicia's dynamic names, you should see Phoenician city states and Carthaginian Empire more often now

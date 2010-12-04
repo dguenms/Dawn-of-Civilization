@@ -367,7 +367,7 @@ class CvRFCEventHandler:
 
         def onCombatResult(self, argsList):
                 self.up.aztecUP(argsList)
-		self.up.romanCombatUP(argsList)
+		#self.up.romanCombatUP(argsList)
                 self.vic.onCombatResult(argsList)
                 self.sta.onCombatResult(argsList)
                 self.rnf.immuneMode(argsList)

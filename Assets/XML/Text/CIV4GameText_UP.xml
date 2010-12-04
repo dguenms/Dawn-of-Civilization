@@ -94,17 +94,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROM</Tag>
-		<English>The Power of Infrastructure:</English>
+		<English>The Power of Mandate Armies:</English>
 		<French>Le Pouvoir de l'Infrastructure :</French>
-		<German>Die Macht der Infrastruktur:</German>
+		<German>Die Macht der Mandatsarmeen:</German>
 		<Italian>Il potere delle infrastrutture:</Italian>
 		<Spanish>El poder de la infraestructura:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROM2</Tag>
-		<English>Roads within Roman borders allow 4X unit movement instead of 2X</English>
+		<English>You will be granted an additional army when you declare your first war on a Mediterranean civilization.</English>
 		<French>Les routes à l'intérieur des frontières romaines permettent aux unités un mouvement 4X au lieu de 2X.</French>
-		<German>4x statt 2x Einheitenfortbewegung auf Straßen innerhalb der römischen Grenzen</German>
+		<German>Ihr erhaltet eine zusätzliche Armee nach der ersten Kriegserklärung gegen eine Zivilisation des Mittelmeers.</German>
 		<Italian>Le strade all'interno dei confini romani permettono movimento delle unit&#224; 4X invece di 2X</Italian>
 		<Spanish>Las carreteras dentro de las fronteras romanas permiten un movimiento de unidades multiplicado x4 en lugar de x2</Spanish>
 	</TEXT>

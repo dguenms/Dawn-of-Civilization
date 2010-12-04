@@ -203,24 +203,24 @@ class UniquePowers:
 					print "Roman conquest triggered."
 					self.romanConquestUP(iCiv)
 
-        def romanCombatUP(self, argsList):
-
-		pWinningUnit, pLosingUnit = argsList
-                pWinningPlayer = gc.getPlayer(pWinningUnit.getOwner())
-		
-                if (pWinningPlayer.getID() != iRome or pWinningPlayer.isReborn()):
-                        return
-
-                pLosingPlayer = gc.getPlayer(pLosingUnit.getOwner())
-
-                if not pLosingPlayer.isBarbarian():
-                        self.increaseRomanVictories()
-                
-                if self.getRomanVictories() >= 5:
-                        utils.makeUnit(con.iRomePraetorian, iRome, (pWinningUnit.getX(), pWinningUnit.getY()), 1)
-                        self.resetRomanVictories()
-			
-                        CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_TRIUMPH", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+#        def romanCombatUP(self, argsList):
+#
+#		pWinningUnit, pLosingUnit = argsList
+#                pWinningPlayer = gc.getPlayer(pWinningUnit.getOwner())
+#		
+#                if (pWinningPlayer.getID() != iRome or pWinningPlayer.isReborn()):
+#                        return
+#
+##                pLosingPlayer = gc.getPlayer(pLosingUnit.getOwner())
+#
+#                if not pLosingPlayer.isBarbarian():
+#                        self.increaseRomanVictories()
+#                
+#                if self.getRomanVictories() >= 5:
+#                        utils.makeUnit(con.iRomePraetorian, iRome, (pWinningUnit.getX(), pWinningUnit.getY()), 1)
+#                        self.resetRomanVictories()
+#			
+#                        CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_TRIUMPH", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
 	def romanConquestUP(self, iEnemy):
 
@@ -230,8 +230,8 @@ class UniquePowers:
 
 		tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
 
-		utils.makeUnit(con.iRomePraetorian, iRome, tPlot, 3)
-		utils.makeUnit(con.iCatapult, iRome, tPlot, 2)
+		utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+		utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CIY, 2)
 
 		CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS", (gc.getPlayer(iEnemy).getCivilizationShortDescription(0),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
