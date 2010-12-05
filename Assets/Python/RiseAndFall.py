@@ -701,8 +701,8 @@ class RiseAndFall:
                 #Colonists
                 if (iGameTurn == getTurnForYear(-850)):
                         self.giveEarlyColonists(iGreece)
-                #if (iGameTurn == getTurnForYear(-800)):	# removed their colonists because of the Qart-Hadasht spawn
-                #        self.giveEarlyColonists(iCarthage)
+                if (iGameTurn == getTurnForYear(-600)):	# removed their colonists because of the Qart-Hadasht spawn
+                        self.giveEarlyColonists(iCarthage)
  
                 if (iGameTurn >= getTurnForYear(860) and iGameTurn <= getTurnForYear(1250)):
                         if (iGameTurn % utils.getTurns(10) == 9):
@@ -1808,7 +1808,7 @@ class RiseAndFall:
                                                                         break
                                 print ("bDeleteEverything", bDeleteEverything)
                                 if (not gc.getMap().plot(tCapital[0], tCapital[1]).isOwned()):
-                                        if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iCarthage or (iCiv == iRome and utils.getReborn(iCiv) == 1) or iCiv == iByzantium): #dangerous starts
+                                        if (iCiv == iNetherlands or iCiv == iPortugal or (iCiv == iRome and utils.getReborn(iCiv) == 1) or iCiv == iByzantium): #dangerous starts
                                                 self.setDeleteMode(0, iCiv)
                                         self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
                                 elif (bDeleteEverything):

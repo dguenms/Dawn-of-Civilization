@@ -248,7 +248,7 @@ class RFCUtils:
 		for i in range(x - 2, x + 3):        
                         for j in range(y - 2, y + 3):	
                                 pCurrent = gc.getMap().plot( i, j )
-                                if (not pCurrent.isWater()):
+                                if (not pCurrent.isWater() and not pCurrent.isPeak()):
                                         if ( not pCurrent.isUnit() ):
                                                 plotList.append(pCurrent)
 

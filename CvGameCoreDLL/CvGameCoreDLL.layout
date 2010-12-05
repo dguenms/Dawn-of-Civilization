@@ -34,8 +34,8 @@
 	<File name="CvDllPythonEvents.h" open="0" top="0" tabpos="0">
 		<Cursor position="3354" topLine="51" />
 	</File>
-	<File name="CvEnums.h" open="0" top="0" tabpos="3">
-		<Cursor position="31061" topLine="330" />
+	<File name="CvEnums.h" open="1" top="0" tabpos="5">
+		<Cursor position="25295" topLine="1258" />
 	</File>
 	<File name="CvEventReporter.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="8309" topLine="281" />
@@ -70,7 +70,7 @@
 	<File name="CvMap.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="34781" topLine="1344" />
 	</File>
-	<File name="CvPlayer.cpp" open="1" top="1" tabpos="2">
+	<File name="CvPlayer.cpp" open="1" top="0" tabpos="2">
 		<Cursor position="598090" topLine="23472" />
 	</File>
 	<File name="CvPlayer.h" open="0" top="0" tabpos="3">
@@ -82,14 +82,14 @@
 	<File name="CvPlayerAI.h" open="0" top="0" tabpos="8">
 		<Cursor position="0" topLine="24" />
 	</File>
-	<File name="CvPlot.cpp" open="0" top="0" tabpos="9">
-		<Cursor position="194819" topLine="8730" />
+	<File name="CvPlot.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="63699" topLine="2813" />
 	</File>
 	<File name="CvPlot.h" open="0" top="0" tabpos="0">
 		<Cursor position="553" topLine="543" />
 	</File>
-	<File name="CvRhyes.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="281496" topLine="1335" />
+	<File name="CvRhyes.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="556429" topLine="1895" />
 	</File>
 	<File name="CvRhyes.h" open="0" top="0" tabpos="2">
 		<Cursor position="5706" topLine="178" />
