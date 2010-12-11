@@ -49,6 +49,7 @@ class StoredData:
                                     'lDeleteMode': [-1, -1, -1], #first is a bool, the other values are capital coordinates
                                     'lFirstContactConquerors': [0, 0, 0], #maya, inca, aztecs
                                     'bCheatMode': False,
+				    'tTempFlippingCity': (0, 0),
                                      #------------Religions
                                     'iSeed': -1,
                                     #------------UP
