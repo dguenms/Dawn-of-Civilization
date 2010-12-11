@@ -319,6 +319,12 @@ class RiseAndFall:
 
         def setCheatMode( self, bNewValue ):
                 sd.scriptDict['bCheatMode'] = bNewValue
+
+	def setTempFlippingCity(self, tPlot):
+		sd.scriptDict['tTempFlippingCity'] = tPlot
+
+	def getTempFlippingCity(self):
+		return sd.scriptDict['tTempFlippingCity']
                 
 ###############
 ### Popups ###
@@ -1788,6 +1794,10 @@ class RiseAndFall:
                                 
 				#if (iCiv == iByzantium):
 				#	utils.cultureManager((68,45), 50, iCiv, gc.getMap().plot(68,45).getPlotCity().getOwner(), True, False, False)
+
+				if iCiv in [iByzantium]:
+					self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
+					return	
                         
                                 bDeleteEverything = False
                                 pCapital = gc.getMap().plot(tCapital[0], tCapital[1])
@@ -2091,8 +2101,150 @@ class RiseAndFall:
                 if (iNumHumanCitiesToConvert > 0):
                         self.flipPopup(iCiv, tTopLeft, tBottomRight)
 
+	#Leoreth - adapted from SoI's birthConditional method by embryodead
+	def birthInCapital(self, iCiv, tCapital, tTopLeft, tBottomRight):
+
+		startingPlot = (tCapital[0], tCapital[1])
+		iOwner = gc.getMap().plot(tCapital[0], tCapital[1]).getOwner()
+
+		if self.getFlipsDelay(iCiv) == 0:
+			iFlipsDelay = self.getFlipsDelay(iCiv)+2
+
+			if iFlipsDelay > 0:
+
+				# flip capital instead of spawning starting units
+				utils.cultureManager(startingPlot, 100, iCiv, iOwner, True, False, False) # done
 
 
+				#utils.flipUnitsInCityBefore(startingPlot, iCiv, iOwner)		# done
+				plotCity = gc.getMap().plot(startingPlot[0], startingPlot[1])
+				city = plotCity.getPlotCity()
+				iNumUnitsInAPlot = plotCity.getNumUnits()
+				j = 0
+				for i in range(iNumUnitsInAPlot):
+					unit = plotCity.getUnit(j)
+					unitType = unit.getUnitType()
+					if (unit.getOwner() == iOldOwner):
+						unit.kill(False, con.iBarbarian)
+						if (iCiv < con.iNumPlayers or unitType > con.iSettler):
+							utils.makeUnit(self.getBaseUnit(unitType, iNewOwner), iNewOwner, (0, 0), 1) # edead
+					else:
+						j += 1
+
+				self.setTempFlippingCity(startingPlot) 			#necessary for the (688379128, 0) bug # done
+
+
+				utils.flipCity(startingPlot, 0, 0, iCiv, [iOwner])	# done
+
+
+				#utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iCiv)
+				#moves new units back in their place
+				tCityPlot = self.getTempFlippingCity()
+				print ("tCityPlot After", tCityPlot)
+				tempPlot = gc.getMap().plot(0, 0)
+				if (tempPlot.getNumUnits() != 0):
+					iNumUnitsInAPlot = tempPlot.getNumUnits()
+					#print ("iNumUnitsInAPlot", iNumUnitsInAPlot)
+					for i in range(iNumUnitsInAPlot):
+						unit = tempPlot.getUnit(0)
+						unit.setXY(tCityPlot[0], tCityPlot[1], False, False, False)
+
+				#cover plots revealed
+				#self.coverPlots(con.iFlipX, con.iFlipY, iCiv)
+				gc.getMap().plot(0, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(0, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(0, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 2).setRevealed(iCiv, False, True, -1)
+
+
+				#print ("starting units in", tCapital[0], tCapital[1])
+				print ("birthConditional: starting units in", tCapital[0], tCapital[1])
+				self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
+
+				utils.setPlagueCountdown(iCiv, -con.iImmunity)
+				utils.clearPlague(iCiv)
+
+				print ("flipping remaining units")
+				utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
+                        	utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
+                        	utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
+				
+				self.setFlipsDelay(iCiv, iFlipsDelay) #save
+
+				# kill the catapult and cover the plots
+				plotZero = gc.getMap().plot(0, 0)
+				if (plotZero.getNumUnits()):
+					catapult = plotZero.getUnit(0)
+					catapult.kill(False, iCiv)
+				gc.getMap().plot(0, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(0, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(0, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 2).setRevealed(iCiv, False, True, -1)
+				print ("Plots covered")
+
+			else:		# starting units have already been placed, now to the second part
+
+				iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, plotList)
+				self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
+				
+				for i in range(iIndependent, iBarbarian+1):
+					utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, i, False, True) #remaining barbs/indeps in the region now belong to the new civ   
+				#print ("utils.flipUnitsInArea()")
+				
+				# kill the catapult and cover the plots
+				plotZero = gc.getMap().plot(0, 0)
+				if (plotZero.getNumUnits()):
+					catapult = plotZero.getUnit(0)
+					catapult.kill(False, iCiv)
+				gc.getMap().plot(0, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(0, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(2, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(1, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(0, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 0).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 1).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(122, 2).setRevealed(iCiv, False, True, -1)
+                        	gc.getMap().plot(123, 2).setRevealed(iCiv, False, True, -1)
+				print ("Plots covered")
+				
+				# create workers
+				if gc.getPlayer(iCiv).getNumCities() > 0:
+					capital = gc.getPlayer(iCiv).getCapitalCity()
+					self.createStartingWorkers(iCiv, (capital.getX(), capital.getY()))
+				
+				# convert human cities
+				if iNumHumanCitiesToConvert > 0:
+					self.flipPopup(iCiv, plotList)
+				
+				self.assignTechs(iCiv)
 
                                                 
         def convertSurroundingCities(self, iCiv, tTopLeft, tBottomRight):
@@ -2885,9 +3037,9 @@ class RiseAndFall:
                 if (iCiv == iRome):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
-                        #utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 4)
-			utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 6)
-			utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
+                        utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 4)
+			#utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 6)
+			#utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)

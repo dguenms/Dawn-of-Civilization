@@ -701,7 +701,7 @@ tCapitals = (
 (113, 45), #tKyoto
 (72, 29), #tAksum
 (22, 35), #tTikal
-(69, 43), #tNicaea
+(68, 45), #tConstantinople
 #(61, 62), #tNidaros
 (60, 59), #tOslo
 (75, 33), #tMecca
@@ -734,6 +734,7 @@ tCapitals = (
 (113, 45), #tKyoto
 (72, 29), #tAksum
 (22, 35), #tTikal
+(68, 45), #tConstantinople
 #(61, 62), #tNidaros
 (60, 59), #tOslo
 (75, 33), #tMecca
