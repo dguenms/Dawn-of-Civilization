@@ -192,6 +192,9 @@ class UniquePowers:
 #------------------ROMAN UP-----------------------
 
 	def checkRomanWar(self):
+
+		if gc.getPlayer(iRome).isReborn():
+			return
 		
 		for iCiv in range(iNumActivePlayers):
 			if self.getRomanWar(iCiv) == -1:

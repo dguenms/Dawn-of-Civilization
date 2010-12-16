@@ -1797,6 +1797,7 @@ class RiseAndFall:
 
 				if iCiv in [iByzantium]:
 					self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
+					self.assignTechs(iCiv)
 					return	
                         
                                 bDeleteEverything = False
@@ -2244,7 +2245,6 @@ class RiseAndFall:
 				if iNumHumanCitiesToConvert > 0:
 					self.flipPopup(iCiv, plotList)
 				
-				self.assignTechs(iCiv)
 
                                                 
         def convertSurroundingCities(self, iCiv, tTopLeft, tBottomRight):
@@ -3064,9 +3064,9 @@ class RiseAndFall:
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 3)
 		if (iCiv == iByzantium):
-			utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 3)
-			utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 1)
+			utils.makeUnit(con.iSpearman, iCiv, tPlot, 1)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
@@ -3836,7 +3836,7 @@ class RiseAndFall:
                                 teamByzantium.setHasTech(con.iAgriculture, True, iCiv, False, False)
                                 teamByzantium.setHasTech(con.iWriting, True, iCiv, False, False)
                                 teamByzantium.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iFeudalism, True, iCiv, False, False)
+                                #teamByzantium.setHasTech(con.iFeudalism, True, iCiv, False, False)
                                 #teamByzantium.setHasTech(con.iGuilds, True, iCiv, False, False)
                                 teamByzantium.setHasTech(con.iAlphabet, True, iCiv, False, False)
                                 teamByzantium.setHasTech(con.iMathematics, True, iCiv, False, False)
