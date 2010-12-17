@@ -2125,10 +2125,10 @@ class RiseAndFall:
 				for i in range(iNumUnitsInAPlot):
 					unit = plotCity.getUnit(j)
 					unitType = unit.getUnitType()
-					if (unit.getOwner() == iOldOwner):
+					if (unit.getOwner() == iOwner):
 						unit.kill(False, con.iBarbarian)
 						if (iCiv < con.iNumPlayers or unitType > con.iSettler):
-							utils.makeUnit(self.getBaseUnit(unitType, iNewOwner), iNewOwner, (0, 0), 1) # edead
+							utils.makeUnit(self.getBaseUnit(unitType, iNewOwner), iCiv, (0, 0), 1) # edead
 					else:
 						j += 1
 
