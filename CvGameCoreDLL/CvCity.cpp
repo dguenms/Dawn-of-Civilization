@@ -8279,7 +8279,14 @@ int CvCity::getCommerceFromPercent(CommerceTypes eIndex, int iYieldRate) const
 
 	if (eIndex == COMMERCE_GOLD)
 	{
-		iCommerce += (iYieldRate - iCommerce - getCommerceFromPercent(COMMERCE_RESEARCH, iYieldRate) - getCommerceFromPercent(COMMERCE_CULTURE, iYieldRate) - getCommerceFromPercent(COMMERCE_ESPIONAGE, iYieldRate));
+	    // Leoreth: Byzantine espionage bonus gets subtracted from income to (as commerce spent on espionage), so counterbalance it
+	    if ((int) getOwner() == BYZANTIUM)
+	    {
+	        iCommerce += (iYieldRate - iCommerce - getCommerceFromPercent(COMMERCE_RESEARCH, iYieldRate) - getCommerceFromPercent(COMMERCE_CULTURE, iYieldRate) - getCommerceFromPercent(COMMERCE_ESPIONAGE, iYieldRate) + 200 * (int)getCultureLevel());
+	    }else
+	    {
+            iCommerce += (iYieldRate - iCommerce - getCommerceFromPercent(COMMERCE_RESEARCH, iYieldRate) - getCommerceFromPercent(COMMERCE_CULTURE, iYieldRate) - getCommerceFromPercent(COMMERCE_ESPIONAGE, iYieldRate));
+	    }
 	}
 
 	// Leoreth: Byzantine UP
