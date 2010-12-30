@@ -999,7 +999,21 @@ void CvCity::doTurn()
 
 	doGrowth();
 
+/*************************************************************************************************/
+/**	SPEEDTWEAK (BarbCities) Sephi                                            					**/
+/**	This function can be very slow for barbarian cities(adds 1-3sec to turn time).Reason unknown**/
+/**	                                                                 							**/
+/*************************************************************************************************/
+/** orig
 	doCulture();
+**/
+    if (!isBarbarian())
+    {
+        doCulture();
+    }
+/*************************************************************************************************/
+/**	END                                                                  						**/
+/*************************************************************************************************/
 
 	doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
 
@@ -1088,7 +1102,15 @@ void CvCity::doTurn()
 	}
 
 	// ONEVENT - Do turn
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 	CvEventReporter::getInstance().cityDoTurn(this, getOwnerINLINE());
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
 
 	// XXX
 #ifdef _DEBUG
@@ -1900,10 +1922,10 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	    {
 	        if (plot()->getArea() != GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea())
 	        {
-	            if ((int)getOwner() != CARTHAGE && (int)getOwner() != BYZANTIUM && (int)getOwner() != TURKEY && (int)getOwner() != ARABIA)
-	            {
+	            //if ((int)getOwner() != CARTHAGE && (int)getOwner() != BYZANTIUM && (int)getOwner() != TURKEY && (int)getOwner() != ARABIA)
+	            //{
                     return false;
-	            }
+	            //}
             }
 	    }
 	}
@@ -3527,8 +3549,16 @@ UnitTypes CvCity::getConscriptUnit() const
 	CyArgsList argsList;
 	argsList.add(getOwnerINLINE());	// pass in player
 	lConscriptUnit = -1;
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "getConscriptUnitType", argsList.makeFunctionArgs(),&lConscriptUnit);
-
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
+	
 	if (lConscriptUnit != -1)
 	{
 		eBestUnit = ((UnitTypes)lConscriptUnit);
@@ -11012,7 +11042,15 @@ void CvCity::pushOrder(OrderTypes eOrder, int iData1, int iData2, bool bSave, bo
 
 			bValid = true;
 			bBuildingUnit = true;
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 			CvEventReporter::getInstance().cityBuildingUnit(this, (UnitTypes)iData1);
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
 		}
     break;
 
@@ -11023,7 +11061,15 @@ void CvCity::pushOrder(OrderTypes eOrder, int iData1, int iData2, bool bSave, bo
 
 			bValid = true;
 			bBuildingBuilding = true;
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 			CvEventReporter::getInstance().cityBuildingBuilding(this, (BuildingTypes)iData1);
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
 		}
 		break;
 
@@ -12252,16 +12298,24 @@ void CvCity::doMeltdown()
 	CvWString szBuffer;
 	int iI;
 
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 	CyCity* pyCity = new CyCity(this);
 	CyArgsList argsList;
 	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
 	long lResult=0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "doMeltdown", argsList.makeFunctionArgs(), &lResult);
-	delete pyCity;	// python fxn must not hold on to this pointer
+	delete pyCity;	// python fxn must not hold on to this pointer 
 	if (lResult == 1)
 	{
 		return;
 	}
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{

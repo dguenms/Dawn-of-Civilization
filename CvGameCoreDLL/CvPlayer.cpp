@@ -11338,6 +11338,32 @@ CivilizationTypes CvPlayer::getCivilizationType() const
 void CvPlayer::setCivilizationType(CivilizationTypes iNewValue)
 {
 	GC.getInitCore().setCiv(getID(), iNewValue);
+	gDLL->getInterfaceIFace()->setDirty(Fog_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	GC.getInitCore().setFlagDecal(getID(), (CvWString)GC.getCivilizationInfo(iNewValue).getFlagTexture());
+	GC.getInitCore().setColor(getID(), (PlayerColorTypes)GC.getCivilizationInfo(iNewValue).getDefaultPlayerColor());
+	GC.getInitCore().setArtStyle(getID(), (ArtStyleTypes)GC.getCivilizationInfo(iNewValue).getArtStyleType());
+	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(HighlightPlot_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(SelectionSound_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeInfo_DIRTY_BIT, true);
 }
 // edead: end
 
@@ -14115,6 +14141,11 @@ void CvPlayer::doGold()
 	int iDisbandUnit;
 	int iI;
 
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 	CyArgsList argsList;
 	argsList.add(getID());
 	long lResult=0;
@@ -14123,6 +14154,9 @@ void CvPlayer::doGold()
 	{
 		return;
 	}
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
 
 	iGoldChange = calculateGoldRate();
 
@@ -14174,6 +14208,11 @@ void CvPlayer::doResearch()
 	bool bForceResearchChoice;
 	int iOverflowResearch;
 
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 	CyArgsList argsList;
 	argsList.add(getID());
 	long lResult=0;
@@ -14182,6 +14221,9 @@ void CvPlayer::doResearch()
 	{
 		return;
 	}
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
 
 	if (isResearch())
 	{
@@ -14250,7 +14292,7 @@ void CvPlayer::doEspionagePoints()
 				}
 			}
 		}
-	}
+	}	
 }
 
 int CvPlayer::getEspionageSpending(TeamTypes eAgainstTeam) const
@@ -18259,7 +18301,7 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 	CvCity* pCity = pPlot->getPlotCity();
 	CvWString szReplayMessage;
 
-    // Python Event
+	// Python Event
 	if (pCity)
 	{
 		CvEventReporter::getInstance().greatPersonBorn(pGreatPeopleUnit, getID(), pCity);

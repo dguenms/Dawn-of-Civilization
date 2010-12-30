@@ -298,6 +298,8 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("setConversionTimer", &CyPlayer::setConversionTimer, "void (int iNewValue)") // edead
 		.def("changeConversionTimer", &CyPlayer::changeConversionTimer, "void (int iChange)") // edead
 		.def("getRevolutionTimer", &CyPlayer::getRevolutionTimer, "int ()")
+		.def("setRevolutionTimer", &CyPlayer::setRevolutionTimer, "void (int iNewValue)") // edead
+		.def("changeRevolutionTimer", &CyPlayer::changeRevolutionTimer, "void (int iChange)") // edead
 
 		.def("isStateReligion", &CyPlayer::isStateReligion, "bool ()")
 		.def("isNoNonStateReligionSpread", &CyPlayer::isNoNonStateReligionSpread, "bool ()")

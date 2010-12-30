@@ -1318,6 +1318,20 @@ int CyPlayer::getRevolutionTimer()
 	return m_pPlayer ? m_pPlayer->getRevolutionTimer() : -1;
 }
 
+// edead: start
+void CyPlayer::setRevolutionTimer(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setRevolutionTimer(iNewValue);
+}
+
+void CyPlayer::changeRevolutionTimer(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeRevolutionTimer(iChange);
+}
+// edead: end
+
 bool CyPlayer::isStateReligion()
 {
 	return m_pPlayer ? m_pPlayer->isStateReligion() : false;

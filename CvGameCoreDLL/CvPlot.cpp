@@ -7485,8 +7485,16 @@ void CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
 
 		if (isRevealed(eTeam, false))
 		{
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 			// ONEVENT - PlotRevealed
 			CvEventReporter::getInstance().plotRevealed(this, eTeam);
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
 		}
 	}
 

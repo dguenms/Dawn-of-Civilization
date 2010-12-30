@@ -4159,7 +4159,7 @@ const TCHAR* CvUnitInfo::getUnitNames(int i) const
 {
 	FAssertMsg(i < getNumUnitNames(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
-	return (m_paszUnitNames) ? m_paszUnitNames[i] : NULL;
+    return (m_paszUnitNames) ? m_paszUnitNames[i] : NULL;
 }
 
 const TCHAR* CvUnitInfo::getFormationType() const
@@ -6528,8 +6528,10 @@ m_iAdvisorType(NO_ADVISOR),
 m_iHolyCity(NO_RELIGION),
 m_iReligionType(NO_RELIGION),
 m_iStateReligion(NO_RELIGION),
+m_iOrStateReligion(NO_RELIGION), // edead
 m_iPrereqReligion(NO_RELIGION),
-m_iPrereqCivic(NO_CIVIC), // Leoreth/edead
+m_iOrPrereqReligion(NO_RELIGION), // edead
+m_iPrereqCivic(NO_CIVIC), // edead
 m_iPrereqCorporation(NO_CORPORATION),
 m_iFoundsCorporation(NO_CORPORATION),
 m_iGlobalReligionCommerce(0),
@@ -6616,7 +6618,6 @@ m_ppaiSpecialistYieldChange(NULL),
 m_ppaiBonusYieldModifier(NULL)
 {
 }
-
 //------------------------------------------------------------------------------------------------------
 //
 //  FUNCTION:   ~CvBuildingInfo()
@@ -7002,17 +7003,29 @@ int CvBuildingInfo::getStateReligion() const
 	return m_iStateReligion;
 }
 
+// edead: start
+int CvBuildingInfo::getOrStateReligion() const
+{
+	return m_iOrStateReligion;
+}
+// edead: end
+
 int CvBuildingInfo::getPrereqReligion() const
 {
 	return m_iPrereqReligion;
 }
 
-// edead/Leoreth: start
+// edead: start
+int CvBuildingInfo::getOrPrereqReligion() const
+{
+	return m_iOrPrereqReligion;
+}
+
 int CvBuildingInfo::getPrereqCivic() const
 {
 	return m_iPrereqCivic;
 }
-// edead/Leoreth: end
+// edead: end
 
 int CvBuildingInfo::getPrereqCorporation() const
 {
@@ -7755,8 +7768,10 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iHolyCity);
 	stream->Read(&m_iReligionType);
 	stream->Read(&m_iStateReligion);
+	stream->Read(&m_iOrStateReligion); // edead
 	stream->Read(&m_iPrereqReligion);
-	stream->Read(&m_iPrereqCivic); // Leoreth/edead
+	stream->Read(&m_iOrPrereqReligion); // edead
+	stream->Read(&m_iPrereqCivic); // edead
 	stream->Read(&m_iPrereqCorporation);
 	stream->Read(&m_iFoundsCorporation);
 	stream->Read(&m_iGlobalReligionCommerce);
@@ -8061,8 +8076,10 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iHolyCity);
 	stream->Write(m_iReligionType);
 	stream->Write(m_iStateReligion);
+	stream->Write(m_iOrStateReligion); // edead
 	stream->Write(m_iPrereqReligion);
-	stream->Write(m_iPrereqCivic); // Leoreth/edead
+	stream->Write(m_iOrPrereqReligion); // edead
+	stream->Write(m_iPrereqCivic); // edead
 	stream->Write(m_iPrereqCorporation);
 	stream->Write(m_iFoundsCorporation);
 	stream->Write(m_iGlobalReligionCommerce);
@@ -8206,11 +8223,18 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(szTextVal, "StateReligion");
 	m_iStateReligion = pXML->FindInInfoClass(szTextVal);
 
+	pXML->GetChildXmlValByName(szTextVal, "OrStateReligion"); // edead
+	m_iOrStateReligion = pXML->FindInInfoClass(szTextVal); // edead
+
 	pXML->GetChildXmlValByName(szTextVal, "PrereqReligion");
 	m_iPrereqReligion = pXML->FindInInfoClass(szTextVal);
 
-	pXML->GetChildXmlValByName(szTextVal, "PrereqCivic"); // edead/Leoreth
+	pXML->GetChildXmlValByName(szTextVal, "OrPrereqReligion"); // edead
+	m_iOrPrereqReligion = pXML->FindInInfoClass(szTextVal); // edead
+
+	pXML->GetChildXmlValByName(szTextVal, "PrereqCivic"); // edead
 	m_aszExtraXMLforPass3.push_back(szTextVal); // edead -> readpass3
+	//m_iPrereqCivic = pXML->FindInInfoClass(szTextVal);
 
 	pXML->GetChildXmlValByName(szTextVal, "PrereqCorporation");
 	m_iPrereqCorporation = pXML->FindInInfoClass(szTextVal);
@@ -10096,13 +10120,18 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 	case CARTHAGE:
 		return result*125/100;
 	case ROME:
-		return result*11/10;
+        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+            return result*11/10;
+        else
+            return result*10/10;  // Italy
 	case JAPAN:
 		return result*113/100;   //11 before removal of Aggressive trait
 	case ETHIOPIA:
 		return result*100/100;
 	case MAYA:
 		return result*110/100;
+    case BYZANTIUM:
+        return result*110/100;
 	case VIKING:
 		return result*9/10;
 	case ARABIA:
@@ -10240,7 +10269,10 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 	case CARTHAGE:
 		return researchPercent*100/100;  //90 before the new timeline
 	case ROME:
-		return researchPercent*108/100; //95 before the new timeline
+        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+            return researchPercent*108/100; //95 before the new timeline
+        else
+            return researchPercent*92/100;  // Renaissance Italy
 	case JAPAN:
 		return researchPercent*98/100; //95 before the new timeline //120 before embassies
 	case ETHIOPIA:
@@ -10253,6 +10285,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		else
 			return researchPercent*115/100;
 		//Rhye - end UP
+    case BYZANTIUM:
+        return researchPercent*115/100;
 	case VIKING:
 		return researchPercent*8/10;
 	case GERMANY:
@@ -10270,7 +10304,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 	case RUSSIA:
 		return researchPercent*67/100; //should be 75, they need a lower value cos their empire size and lack of commerce make them very slow
 	case NETHERLANDS:
-		return researchPercent*75/100;
+		return researchPercent*62/100; // increased to compensate for their late start
 	case MALI:
 		return researchPercent*110/100; //140 before No tech brokering  //high to counter their UP
 	case TURKEY:
@@ -10333,13 +10367,18 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 	case CARTHAGE:
 		return result*75/100;
 	case ROME:
-		return result*75/100;
+        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+            return result*75/100;
+        else
+            return result*7/10;     // Leoreth - Renaissance Italy
 	case JAPAN:
 		return result*95/100;
 	case ETHIOPIA:
 		return result*10/10;
 	case MAYA:
 		return result*10/10;
+    case BYZANTIUM:
+        return result*7/10;
 	case VIKING:
 		return result*7/10;
 	case ARABIA:
@@ -10357,7 +10396,7 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 	case RUSSIA:
 		return result*5/10;
 	case NETHERLANDS:
-		return result*5/10;
+		return result*45/100; // Leoreth: slightly lowered, 50 before
 	case MALI:
 		return result*80/100;  //70 before new UP
 	case TURKEY:
@@ -10413,13 +10452,18 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 	case CARTHAGE:
 		return result*9/10;
 	case ROME:
-		return result*9/10;
+        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+            return result*9/10;
+        else
+            return result*8/10; // Leoreth - Renaissance Italy
 	case JAPAN:
 		return result*110/100;
 	case ETHIOPIA:
 		return result*115/100;
 	case MAYA:
 		return result*115/100;
+    case BYZANTIUM:
+        return result*7/10;
 	case VIKING:
 		return result*75/100;
 	case ARABIA:
@@ -10513,13 +10557,22 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 	case CARTHAGE:
 		return result*7/10;
 	case ROME:
-		return result*75/100;   //8 before removal of Organized trait
+        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+        {
+            return result*75/100;   //8 before removal of Organized trait
+        }
+        else
+        {
+            return result*8/10;    // Leoreth - Renaissance Italy
+        }
 	case JAPAN:
 		return result*8/10;   //11 before removal of Organized trait
 	case ETHIOPIA:
 		return result*8/10;
 	case MAYA:
 		return result*8/10;
+    case BYZANTIUM:
+        return result*9/10;
 	case VIKING:
 		return result*8/10;
 	case ARABIA:
@@ -10537,7 +10590,7 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 	case RUSSIA:
 		return result*70/100;
 	case NETHERLANDS:
-		return result*7/10;
+		return result*6/10; // Leoreth: reduced, 7 before
 	case MALI:
 		return result*8/10; //6 before new UP
 	case TURKEY:
@@ -10600,7 +10653,10 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 		result = m_iHealthBonus*7;
 		break;
 	case ROME:
-		result = m_iHealthBonus*7;   //4 before removal of Expansive trait
+        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+            result = m_iHealthBonus*7;   //4 before removal of Expansive trait
+        else
+            result = m_iHealthBonus*6;   // Leoreth - Renaissance Italy
 		break;
 	case JAPAN:
 		result = m_iHealthBonus*3;
@@ -10611,6 +10667,9 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 	case MAYA:
 		result = m_iHealthBonus*6;
 		break;
+    case BYZANTIUM:
+        result = m_iHealthBonus*6;
+        break;
 	case VIKING:
 		result = m_iHealthBonus*6;
 		break;
@@ -10678,6 +10737,14 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 int CvHandicapInfo::getHappyBonus() const
 {
 	return m_iHappyBonus;
+}
+
+int CvHandicapInfo::getHappyBonusByID(PlayerTypes pl) const
+{
+    if (pl == NETHERLANDS)
+        return m_iHappyBonus+3;
+    else
+        return m_iHappyBonus;
 }
 
 int CvHandicapInfo::getAttitudeChange() const

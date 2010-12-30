@@ -181,6 +181,7 @@ class UniquePowers:
 					self.setRomanWar(iCiv, -1)
 
 		if (iGameTurn >= getTurnForYear(con.tBirth[iRome])+2):
+			print ("Checking Roman wars.")
 			self.checkRomanWar()
 
                 #if (iGameTurn >= getTurnForYear(1190)):
@@ -199,13 +200,15 @@ class UniquePowers:
 		for iCiv in range(iNumActivePlayers):
 			if self.getRomanWar(iCiv) == -1:
 				if (not teamRome.isAtWar(iCiv)):
+					print("Set Roman war to 0.")
 					self.setRomanWar(iCiv, 0)
 			elif self.getRomanWar(iCiv) == 0:
 				if teamRome.isAtWar(iCiv):
 					self.setRomanWar(iCiv, 1)
 					if (iCiv in con.lCivGroups[2]) or (iCiv in con.lCivGroups[3]):
-						print "Roman conquest triggered."
+						print ("Roman conquest triggered.")
 						self.romanConquestUP(iCiv)
+						print ("Roman conquest completed.")
 
 #        def romanCombatUP(self, argsList):
 #
@@ -229,24 +232,28 @@ class UniquePowers:
 	def romanConquestUP(self, iEnemy):
 
 		#pEnemy = gc.getPlayer(iEnemy)
-	
+
+		print ("Getting random target city.")
 		pTargetCity = utils.getRandomCity(iEnemy)
 
 		if (pTargetCity != -1):
+			print ("City found, searching free land plot.")
 			tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
 		
 		if (not tPlot):
+			print ("No plot found, spawning in Roma instead.")
 			tPlot = con.tCapitals[0][iRome]
 
 		utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
 		utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+		print ("Units created.")
 
 		#utils.makeUnit(con.iRomePraetorian, iRome, tPlot, 3)
 		#utils.makeUnit(con.iCatapult, iRome, tPlot, 2)
 
 		CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS", (gc.getPlayer(iEnemy).getCivilizationShortDescription(0),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-		
+		print ("Message displayed.")
 
 
 #------------------ARABIAN U.P.-------------------

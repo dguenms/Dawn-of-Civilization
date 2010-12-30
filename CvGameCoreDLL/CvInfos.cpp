@@ -10199,6 +10199,15 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		humanContributionPercent = 110;
 	}
 
+	// edead: Epic/Marathon 1.22 late game balancing - progressive growth of research cost - 0% to 25% mid-game
+	if (researchPercent >= 150) {
+		researchPercent *= std::min(120, 100 + 50 * GC.getGameINLINE().getGameTurn() / GC.getGameINLINE().getMaxTurns());
+		researchPercent /= 100;
+		// reduce human contribution penalty by 0-5% since the above does the same thing
+		humanContributionPercent -= 5 * GC.getGameINLINE().getGameTurn() / GC.getGameINLINE().getMaxTurns();
+	}
+	// edead: end
+
 	if (!GET_PLAYER((PlayerTypes)pl).isHuman()) {
 		researchPercent *= basePercent;
 		researchPercent /= 100;

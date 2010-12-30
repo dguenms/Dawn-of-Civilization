@@ -214,6 +214,16 @@ m_iUSE_ON_UNIT_CREATED_CALLBACK(0),
 m_iUSE_ON_UNIT_LOST_CALLBACK(0),
 m_paHints(NULL),
 m_paMainMenus(NULL)
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
+/*                                                                                              */
+/* Efficiency, Options                                                                          */
+/************************************************************************************************/
+,m_iCOMBAT_DIE_SIDES(-1)
+,m_iCOMBAT_DAMAGE(-1)
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                       END                                                  */
+/************************************************************************************************/
 {
 }
 
@@ -2655,6 +2665,16 @@ void CvGlobals::cacheGlobals()
 	m_iUSE_ON_UPDATE_CALLBACK = getDefineINT("USE_ON_UPDATE_CALLBACK");
 	m_iUSE_ON_UNIT_CREATED_CALLBACK = getDefineINT("USE_ON_UNIT_CREATED_CALLBACK");
 	m_iUSE_ON_UNIT_LOST_CALLBACK = getDefineINT("USE_ON_UNIT_LOST_CALLBACK");
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
+/*                                                                                              */
+/* Efficiency, Options                                                                          */
+/************************************************************************************************/
+	m_iCOMBAT_DIE_SIDES = getDefineINT("COMBAT_DIE_SIDES");
+	m_iCOMBAT_DAMAGE = getDefineINT("COMBAT_DAMAGE");
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                       END                                                  */
+/************************************************************************************************/
 }
 
 int CvGlobals::getDefineINT( const char * szName ) const
@@ -3579,3 +3599,20 @@ void CvGlobals::setBorderFinder(FAStar* pVal) { m_borderFinder = pVal; }
 void CvGlobals::setAreaFinder(FAStar* pVal) { m_areaFinder = pVal; }
 void CvGlobals::setPlotGroupFinder(FAStar* pVal) { m_plotGroupFinder = pVal; }
 CvDLLUtilityIFaceBase* CvGlobals::getDLLIFaceNonInl() { return m_pDLL; }
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
+/*                                                                                              */
+/* Efficiency, Options                                                                          */
+/************************************************************************************************/
+int CvGlobals::getCOMBAT_DIE_SIDES()
+{
+	return m_iCOMBAT_DIE_SIDES;
+}
+
+int CvGlobals::getCOMBAT_DAMAGE()
+{
+	return m_iCOMBAT_DAMAGE;
+}
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                       END                                                  */
+/************************************************************************************************/

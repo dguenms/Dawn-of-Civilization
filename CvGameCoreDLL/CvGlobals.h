@@ -1189,6 +1189,22 @@ protected:
 
 	FProfiler* m_Profiler;		// profiler
 	CvString m_szDllProfileText;
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
+/*                                                                                              */
+/* Efficiency, Options                                                                          */
+/************************************************************************************************/
+public:
+	int getDefineINT( const char * szName, const int iDefault ) const;
+	int getCOMBAT_DIE_SIDES();
+	int getCOMBAT_DAMAGE();
+
+protected:
+	int m_iCOMBAT_DIE_SIDES;
+	int m_iCOMBAT_DAMAGE;
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                       END                                                  */
+/************************************************************************************************/
 };
 
 extern CvGlobals gGlobals;	// for debugging

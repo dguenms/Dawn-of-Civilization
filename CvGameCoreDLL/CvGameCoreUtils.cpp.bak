@@ -2018,6 +2018,8 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 	return iTurnCount;
 }
 
+// edead: end
+
 // these string functions should only be used under chipotle cheat code (not internationalized)
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType)

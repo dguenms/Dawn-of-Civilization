@@ -3035,6 +3035,11 @@ bool CvSelectionGroup::groupAttack(int iX, int iY, int iFlags, bool& bFailedAlre
 
 						bAttack = true;
 
+/*************************************************************************************************/
+/**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
+/**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
+/*************************************************************************************************/
+/**
 						CySelectionGroup* pyGroup = new CySelectionGroup(this);
 						CyPlot* pyPlot = new CyPlot(pDestPlot);
 						CyArgsList argsList;
@@ -3048,6 +3053,9 @@ bool CvSelectionGroup::groupAttack(int iX, int iY, int iFlags, bool& bFailedAlre
 						{
 							break;
 						}
+/*************************************************************************************************/
+/**	END	                                        												**/
+/*************************************************************************************************/
 
 						if (getNumUnits() > 1)
 						{
