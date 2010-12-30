@@ -1000,6 +1000,8 @@ class Stability:
                 if (teamPlayer.isHasTech(con.iDemocracy)): #transition to democracy
                         if (iCivic0 == 0 or (iCivic0 == 1 and iCivic1 != 8) or iCivic0 == 2 or iCivic0 == 3 or (iCivic0 == 4 and iCivic1 != 8)): #despotic governments: every government except republic+representation and monarchy+representation
                                 self.setDemocracyCountdown(iPlayer, -1) #has a desp. gov.
+			if (iCivic1 == 8 and (iCivic0 == 1 or iCivic0 == 4):
+				self.setDemocracyCountdown(iPlayer, 0)  #reset to zero to avoid instability
                         if (self.getDemocracyCountdown(iPlayer) == -1 and iCivic1 == 9): #switched to Parliament
                                 self.setDemocracyCountdown(iPlayer, 7) #7 turns
                         if (self.getDemocracyCountdown(iPlayer) > 0):
