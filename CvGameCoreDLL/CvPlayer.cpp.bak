@@ -93,6 +93,9 @@ CvPlayer::CvPlayer()
 	CvWString m_szCivAdj;
 	//Rhye (jdog) - end -----------------------
 
+	//Leoreth - rebirth mechanism
+	bool m_bReborn = false;
+
 	reset(NO_PLAYER, true);
 }
 
@@ -299,9 +302,9 @@ void CvPlayer::init(PlayerTypes eID)
 
 	//Rhye - start (dynamic civ names - not jdog's)
 	if (getID() < NUM_MAJOR_PLAYERS)
-		setCivDescription(civDynamicNames[getID()][0]);
+		setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][0]);
 	if (getID() == EGYPT) //Egyptian UP
-		setCivDescription(civDynamicNames[getID()][1]); //Egypt
+		setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][1]); //Egypt
 	//Rhye - end
 }
 
@@ -422,8 +425,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iMilitaryProductionModifier = 0;
 	m_iSpaceProductionModifier = 0;
 	m_iCityDefenseModifier = 0;
-	m_iNumNukeUnits = 0; 
-	m_iNumOutsideUnits = 0; 
+	m_iNumNukeUnits = 0;
+	m_iNumOutsideUnits = 0;
 	m_iBaseFreeUnits = 0;
 	m_iBaseFreeMilitaryUnits = 0;
 	m_iFreeUnitsPopulationPercent = 0;
@@ -493,7 +496,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bExtendedGame = false;
 	m_bFoundedFirstCity = false;
 	m_bStrike = false;
-	m_bOlympics = false; //Rhye	
+	m_bOlympics = false; //Rhye
 
 	// Rhye (jdog) - start ---------------------
 	//m_szName.clear();
@@ -502,6 +505,10 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	//m_szCivShort.clear();
 	//m_szCivAdj.clear();
 	// Rhye (jdog) - end -----------------------
+
+	//Leoreth
+	m_bReborn = false;
+
 	m_eID = eID;
 	updateTeamType();
 	updateHuman();
@@ -650,7 +657,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		{
 			m_paiSpecialBuildingNotRequiredCount[iI] = 0;
 		}
-	
+
 		FAssertMsg(m_paiHasCivicOptionCount==NULL, "about to leak memory, CvPlayer::m_paiHasCivicOptionCount");
 		m_paiHasCivicOptionCount = new int[GC.getNumCivicOptionInfos()];
 		FAssertMsg(m_paiNoCivicUpkeepCount==NULL, "about to leak memory, CvPlayer::m_paiNoCivicUpkeepCount");
@@ -670,7 +677,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		{
 			m_paiHasReligionCount[iI] = 0;
 		}
-	
+
 		FAssertMsg(m_paiHasCorporationCount==NULL, "about to leak memory, CvPlayer::m_paiHasReligionCount");
 		m_paiHasCorporationCount = new int[GC.getNumCorporationInfos()];
 		for (iI = 0;iI < GC.getNumCorporationInfos();iI++)
@@ -1049,19 +1056,19 @@ bool CvPlayer::startingPlotWithinRange(CvPlot* pPlot, PlayerTypes ePlayer, int i
 {
 	PROFILE_FUNC();
 
-	//XXX changes to AI_foundValue (which are far more flexible) make this function 
-	//    redundant but it is still called from Python. 
+	//XXX changes to AI_foundValue (which are far more flexible) make this function
+	//    redundant but it is still called from Python.
 	return false;
 }
 
 int CvPlayer::startingPlotDistanceFactor(CvPlot* pPlot, PlayerTypes ePlayer, int iRange) const
 {
 	PROFILE_FUNC();
-	
+
 	FAssert(ePlayer != getID());
 
 	CvPlot* pStartingPlot;
-	
+
 	int iValue = 1000;
 
 	pStartingPlot = getStartingPlot();
@@ -1721,12 +1728,13 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 		if (iTeamCulturePercent < GC.getDefineINT("OCCUPATION_CULTURE_PERCENT_THRESHOLD"))
 		{
+            // Leoreth - UP replaced
 			//Rhye - start UP (Babylonian)
 			//pNewCity->changeOccupationTimer(((GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100)) * (100 - iTeamCulturePercent)) / 100);
-			if (getID() != BABYLONIA)
+			//if (getID() != BABYLONIA)
 			pNewCity->changeOccupationTimer(((GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100)) * (100 - iTeamCulturePercent)) / 100);
-			else
-				pNewCity->changeOccupationTimer(0);
+			//else
+				//pNewCity->changeOccupationTimer(0);
 			//Rhye - end UP
 		}
 
@@ -5283,6 +5291,7 @@ void CvPlayer::found(int iX, int iY)
 
 	if (isBarbarian())
 	{
+
 		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE);
 
 		if (eDefenderUnit == NO_UNIT)
@@ -5297,6 +5306,7 @@ void CvPlayer::found(int iX, int iY)
 				initUnit(eDefenderUnit, iX, iY, UNITAI_CITY_DEFENSE);
 			}
 		}
+
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
@@ -5336,7 +5346,14 @@ void CvPlayer::found(int iX, int iY)
 					startingEra = 1;
 					break;
 				case ROME:
-					startingEra = 1;
+                    if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+                        startingEra = 1;
+                    else
+                    {                       // Leoreth - Renaissance Italy
+                        startingEra = 2;
+                        if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
+                            startingEra = 3;
+                    }
 					break;
 				case JAPAN:
 					startingEra = 1;
@@ -5349,6 +5366,9 @@ void CvPlayer::found(int iX, int iY)
 				case MAYA:
 					startingEra = 1;
 					break;
+                case BYZANTIUM:
+                    startingEra = 2;
+                    break;
 				case VIKING:
 					startingEra = 2;
 					break;
@@ -5459,10 +5479,20 @@ void CvPlayer::found(int iX, int iY)
 	{
 		pCity->chooseProduction();
 	}
-	else
+	//Rhye - start comment (no human civ spawn message fix)
+	//else
+	//{
+	//	pCity->doFoundMessage();
+	//}
+	if (!(isHuman() && getAdvancedStartPoints() < 0))
 	{
 		pCity->doFoundMessage();
 	}
+	else
+	{
+		pCity->doFoundReplayMessage();
+	}
+	//Rhye - end comment
 
 	CvEventReporter::getInstance().cityBuilt(pCity);
 
@@ -5532,6 +5562,24 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 			return false;
 		}
 	}
+
+	// edead: start civic requirement
+	bool bFound = false;
+	if (GC.getUnitInfo(eUnit).getPrereqCivic() != NO_CIVIC)
+	{
+		for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
+		{
+			if (getCivics((CivicOptionTypes)iI) == GC.getUnitInfo(eUnit).getPrereqCivic())
+			{
+				bFound = true;
+			}
+		}
+		if (!bFound)
+		{
+			return false;
+		}
+	}
+	// edead: end
 
 	if (GC.getGameINLINE().isUnitClassMaxedOut(eUnitClass))
 	{
@@ -5645,6 +5693,24 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		}
 	}
 
+	// edead: start civic requirement
+	bool bFound = false;
+	if (GC.getBuildingInfo(eBuilding).getPrereqCivic() != NO_CIVIC)
+	{
+		for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
+		{
+			if (getCivics((CivicOptionTypes)iI) == GC.getBuildingInfo(eBuilding).getPrereqCivic())
+			{
+				bFound = true;
+			}
+		}
+		if (!bFound)
+		{
+			return false;
+		}
+	}
+	// edead: end
+
 	if (GC.getGameINLINE().countCivTeamsEverAlive() < GC.getBuildingInfo(eBuilding).getNumTeamsPrereq())
 	{
 		return false;
@@ -5698,7 +5764,10 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			startingEra = 1;
 			break;
 		case ROME:
-			startingEra = 1;
+            if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+                startingEra = 1;
+            else
+                startingEra = 2;    // Leoreth - Renaissance Italy
 			break;
 		case JAPAN:
 			startingEra = 1;
@@ -5711,6 +5780,9 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		case MAYA:
 			startingEra = 1;
 			break;
+        case BYZANTIUM:
+            startingEra = 2;
+            break;
 		case VIKING:
 			startingEra = 2;
 			break;
@@ -6153,8 +6225,12 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded /= 100;
 			break;
 		case ROME:
-			iProductionNeeded *= 105;
-			iProductionNeeded /= 100;
+            if (!GET_PLAYER((PlayerTypes)ROME).isReborn()){
+                iProductionNeeded *= 105;
+                iProductionNeeded /= 100;}
+            else{
+                iProductionNeeded *= 110;    // Leoreth - Renaissance Italy
+                iProductionNeeded /= 100;}
 			break;
 		case JAPAN:
 			iProductionNeeded *= 93;
@@ -6168,6 +6244,9 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded *= 105;
 			iProductionNeeded /= 100;
 			break;
+        case BYZANTIUM:
+            iProductionNeeded *= 95;
+            iProductionNeeded /= 100;
 		case VIKING:
 			iProductionNeeded *= 85;
 			iProductionNeeded /= 100;
@@ -6220,7 +6299,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded /= 100;
 			break;
 		case PORTUGAL:
-			iProductionNeeded *= 88;
+			iProductionNeeded *= 90;
 			iProductionNeeded /= 100;
 			break;
 		case INCA:
@@ -6390,7 +6469,7 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded /= 100;
 				break;
 			case ROME:
-				iProductionNeeded *= 90;
+				iProductionNeeded *= 90;    // Leoreth - Renaissance Italy would have the same values
 				iProductionNeeded /= 100;
 				break;
 			case JAPAN:
@@ -6405,6 +6484,10 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
 				break;
+            case BYZANTIUM:
+                iProductionNeeded *= 90;
+                iProductionNeeded /= 100;
+                break;
 			case VIKING:
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
@@ -6438,7 +6521,7 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded /= 100;
 				break;
 			case NETHERLANDS:
-				iProductionNeeded *= 90;
+				iProductionNeeded *= 80;    // Leoreth: made cheaper to allow for a better Amsterdam faster, 90 before
 				iProductionNeeded /= 100;
 				break;
 			case MALI:
@@ -6520,8 +6603,11 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded /= 100;
 				break;
 			case ROME:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
+                if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+                    iProductionNeeded *= 90;
+                else
+                    iProductionNeeded *= 80;    // Leoreth - Renaissance Italy
+                iProductionNeeded /= 100;
 				break;
 			case JAPAN:
 				iProductionNeeded *= 100;
@@ -6535,6 +6621,10 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
 				break;
+            case BYZANTIUM:
+                iProductionNeeded *= 90;
+                iProductionNeeded /= 100;
+                break;
 			case VIKING:
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
@@ -7273,11 +7363,11 @@ int CvPlayer::calculateInflationRate() const
 			iRate /= 100;
 			break;
 		case INDIA:
-			iRate *= 136;
+			iRate *= 137;
 			iRate /= 100;
 			break;
 		case CHINA:
-			iRate *= 127;   //+10 before removal of Financian trait
+			iRate *= 125;   //+10 before removal of Financian trait
 			iRate /= 100;
 			break;
 		case BABYLONIA:
@@ -7297,11 +7387,14 @@ int CvPlayer::calculateInflationRate() const
 			iRate /= 100;
 			break;
 		case ROME:
-			iRate *= 130;
+            if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+                iRate *= 130;
+            else
+                iRate *= 84;    // Leoreth - Renaissance Italy
 			iRate /= 100;
 			break;
 		case JAPAN:
-			iRate *= 82;
+			iRate *= 81;
 			iRate /= 100;
 			break;
 		case ETHIOPIA:
@@ -7312,15 +7405,19 @@ int CvPlayer::calculateInflationRate() const
 			iRate *= 125;
 			iRate /= 100;
 			break;
+        case BYZANTIUM:
+            iRate *= 120;
+            iRate /= 100;
+            break;
 		case VIKING:
 			iRate *= 72;
 			iRate /= 100;
 			break;
 		case ARABIA:
-			iRate *= 88;
+			iRate *= 85;
 			iRate /= 100;
 			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) {
-				iRate *= 110; //96
+				iRate *= 115; //96
 				iRate /= 100;
 			}
 			break;
@@ -7361,7 +7458,7 @@ int CvPlayer::calculateInflationRate() const
 			iRate /= 100;
 			break;
 		case PORTUGAL:
-			iRate *= 80;
+			iRate *= 84; //gets super strong thanks to Brazil
 			iRate /= 100;
 			break;
 		case INCA:
@@ -7369,7 +7466,7 @@ int CvPlayer::calculateInflationRate() const
 			iRate /= 100;
 			break;
 		case MONGOLIA:
-			iRate *= 87;
+			iRate *= 89;
 			iRate /= 100;
 			break;
 		case AZTEC:
@@ -7387,7 +7484,7 @@ int CvPlayer::calculateInflationRate() const
 	}
 	//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 	//if (GC.getGameINLINE().getGameTurn() >=181 )
-	if (GC.getGameINLINE().getGameTurn() >= getTurnForYear(600) ) // edead
+	if (GC.getGameINLINE().getGameTurn() >= getTurnForYear(600) ) // edead: epic/marathon
 		if (getID() < VIKING) {
 			iRate *= 85;
 			iRate /= 100;
@@ -7864,7 +7961,7 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 	}
 	//Rhye - start UP
 	if (getID() == EGYPT)
-		if ((eCivic == 1) || (eCivic == 16))
+		if ((eCivic == 1) || (eCivic == 16) || (eCivic == 21))
 			return true;
 	//Rhye - end UP
 
@@ -8202,8 +8299,26 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 			if (pLoopCity->isCapital())
 			{
-				iValue /= 2; //Rhye (8)
+				//Rhye - start
+				//iValue /= 8;
+				iValue *= 3;
+				iValue /= 5;
 			}
+			if ((pLoopCity->getX() == 60 && pLoopCity->getX() == 44) || (pLoopCity->getX() == 73 && pLoopCity->getX() == 38)) //Rome or Jerusalem
+			{
+				iValue *= 2;
+				//iValue /= 3;
+			}
+			if (pLoopCity->getX() == 59 && pLoopCity->getX() == 47) //Milan
+			{
+				iValue /= 2;
+			}
+			if (pLoopCity->getX() == 71 && pLoopCity->getX() == 43) //Gordium
+			{
+				iValue /= 8;
+			}
+			//Rhye - end
+
 
 			iValue = std::max(1, iValue);
 
@@ -8620,7 +8735,10 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			result = (iThreshold*110/100);
 			break;
 		case ROME:
-			result = (iThreshold*110/100);
+            if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+                result = (iThreshold*110/100);
+            else
+                result = (iThreshold*77/100);   // Leoreth - Renaissance Italy
 			break;
 		case JAPAN:
 			result = (iThreshold*110/100);
@@ -8634,6 +8752,9 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 		case MAYA:
 			result = (iThreshold*100/100);
 			break;
+        case BYZANTIUM:
+            result = (iThreshold*90/100);
+            break;
 		case VIKING:
 			result = (iThreshold*90/100);
 			break;
@@ -8659,7 +8780,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			result = (iThreshold*77/100);
 			break;
 		case NETHERLANDS:
-			result = (iThreshold*73/100);
+			result = (iThreshold*70/100);   //Leoreth: slightly reduced, 73 before
 			break;
 		case MALI:
 			result = (iThreshold*80/100);
@@ -11213,6 +11334,14 @@ CivilizationTypes CvPlayer::getCivilizationType() const
 }
 
 
+// edead: start
+void CvPlayer::setCivilizationType(CivilizationTypes iNewValue)
+{
+	GC.getInitCore().setCiv(getID(), iNewValue);
+}
+// edead: end
+
+
 LeaderHeadTypes CvPlayer::getLeaderType() const
 {
 	return GC.getInitCore().getLeader(getID());
@@ -11318,7 +11447,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 		case CARTHAGE:
 			startEra = 1;
 			break;
-		case ROME:
+		case ROME:              // Leoreth - doesn't matter for Italy respawn
 			startEra = 1;
 			break;
 		case JAPAN:
@@ -11332,6 +11461,9 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 		case MAYA:
 			startEra = 1;
 			break;
+        case BYZANTIUM:
+            startEra = 2;
+            break;
 		case VIKING:
 			startEra = 2;
 			break;
@@ -11357,7 +11489,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 			startEra = 2;
 			break;
 		case NETHERLANDS:
-			startEra = 2;
+			startEra = 3;
 			break;
 		case MALI:
 			startEra = 2;
@@ -11658,6 +11790,17 @@ int CvPlayer::getCapitalYieldRateModifier(YieldTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	//Leoreth - Babylonian UP: free Absolutism bonus after the discovery of Code of Laws
+	/*if (getID() == BABYLONIA && GET_TEAM(getTeam()).isHasTech((TechTypes)CODEOFLAWS))
+	{
+	    if ((int) eIndex != 0)
+	    {
+            if (getCivics((CivicOptionTypes)1) != 7)
+            {
+                return m_aiCapitalYieldRateModifier[eIndex]+33;
+            }
+	    }
+	}*/
 	return m_aiCapitalYieldRateModifier[eIndex];
 }
 
@@ -17007,7 +17150,7 @@ int CvPlayer::verifySettlersHalt(int threshold)
 				{
 					if (!(pLoopPlot->isOwned()))
 					{
-						if (settlersMaps[getID()][EARTH_Y -1 -iJ][iI] >= threshold)
+						if (settlersMaps[getReborn()][getID()][EARTH_Y -1 -iJ][iI] >= threshold)
 						{
 							count++;
 
@@ -17030,18 +17173,38 @@ int CvPlayer::verifySettlersHalt(int threshold)
 
 int CvPlayer::getSettlersMaps(int y, int x)
 {
-	return settlersMaps[getID()][y][x];
+	return settlersMaps[getReborn()][getID()][y][x];
 }
 
-/*void CvPlayer::setFlag(CvWString s)
+// Leoreth - return civic preference, see CvRhyes
+int CvPlayer::getCivicPreference(int column)
+{
+    FAssertMsg(column < 5, "Illegal civic option type");
+    FAssertMsg(column >= 0, "Illegal civic option type");
+
+    int iResult = civicMatrix[getID()][getCurrentEra()][column];
+
+    if (iResult == -1)
+    {
+        return iResult;
+    }
+    else
+    {
+        return iResult + 5*column;
+    }
+}
+
+
+void CvPlayer::setFlag(CvWString s)
 {
 	GC.getInitCore().setFlagDecal( getID(), s );
-}*/
+}
 
 void CvPlayer::setLeader(int i)
 {
 	GC.getInitCore().setLeader((PlayerTypes)getID(), (LeaderHeadTypes)i );
 	GC.getInitCore().setLeaderName(getID(), GC.getLeaderHeadInfo(getLeaderType()).getDescription(0));
+	setPersonalityType((LeaderHeadTypes)i); //Rhye
 }
 
 LeaderHeadTypes CvPlayer::getLeader()
@@ -17269,6 +17432,10 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	//pStream->ReadString(m_szCivShort);
 	//pStream->ReadString(m_szCivAdj);
 	//Rhye (jdog) -  end -----------------------
+
+	//Leoreth
+	pStream->Read(&m_bReborn);
+
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
 	pStream->Read((int*)&m_eCurrentEra);
@@ -17741,6 +17908,10 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	//pStream->WriteString(m_szCivShort);
 	//pStream->WriteString(m_szCivAdj);
 	//Rhye (jdog) -  end -----------------------
+
+	//Leoreth
+	pStream->Write(m_bReborn);
+
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);
 	pStream->Write(m_eCurrentEra);
@@ -18084,50 +18255,51 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 		}
 	}
 
-
 	CvPlot* pPlot = GC.getMapINLINE().plot(iX, iY);
 	CvCity* pCity = pPlot->getPlotCity();
 	CvWString szReplayMessage;
 
-	if (pPlot)
-	{
-		if (pCity)
-		{
-			CvWString szCity;
-			szCity.Format(L"%s (%s)", pCity->getName().GetCString(), GET_PLAYER(pCity->getOwnerINLINE()).getName());
-			//szReplayMessage = gDLL->getText("TXT_KEY_MISC_GP_BORN", pGreatPeopleUnit->getName().GetCString(), szCity.GetCString()); //Rhye
-		}
-		else
-		{
-			//szReplayMessage = gDLL->getText("TXT_KEY_MISC_GP_BORN_FIELD", pGreatPeopleUnit->getName().GetCString()); //Rhye
-		}
-		//GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getID(), szReplayMessage, iX, iY, (ColorTypes)GC.getInfoTypeForString("COLOR_UNIT_TEXT")); //Rhye
-	}
-
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (pPlot->isRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false))
-			{
-				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szReplayMessage, "AS2D_UNIT_GREATPEOPLE", MESSAGE_TYPE_MAJOR_EVENT, pGreatPeopleUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_UNIT_TEXT"), iX, iY, true, true);
-			}
-			//Rhye - start (GP born in far away land)
-			/*else
-			{
-				CvWString szMessage = gDLL->getText("TXT_KEY_MISC_GP_BORN_SOMEWHERE", pGreatPeopleUnit->getName().GetCString());
-				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "AS2D_UNIT_GREATPEOPLE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_UNIT_TEXT"));
-			}*/
-			//Rhye - end
-		}
-	}
-
-	// Python Event
+    // Python Event
 	if (pCity)
 	{
 		CvEventReporter::getInstance().greatPersonBorn(pGreatPeopleUnit, getID(), pCity);
 	}
 
+    if (pGreatPeopleUnit->getOwner() != INDEPENDENT && pGreatPeopleUnit->getOwner() != INDEPENDENT2 && pGreatPeopleUnit->getOwner() != BARBARIAN)
+    {
+        if (pPlot)
+        {
+            if (pCity)
+            {
+                CvWString szCity;
+                szCity.Format(L"%s (%s)", pCity->getName().GetCString(), GET_PLAYER(pCity->getOwnerINLINE()).getCivilizationShortDescription());
+                szReplayMessage = gDLL->getText("TXT_KEY_MISC_GP_BORN", pGreatPeopleUnit->getName().GetCString(), szCity.GetCString()); //Rhye
+            }
+            else
+            {
+                szReplayMessage = gDLL->getText("TXT_KEY_MISC_GP_BORN_FIELD", pGreatPeopleUnit->getName().GetCString()); //Rhye
+            }
+            //GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getID(), szReplayMessage, iX, iY, (ColorTypes)GC.getInfoTypeForString("COLOR_UNIT_TEXT")); //Rhye
+        }
+
+        for (int iI = 0; iI < MAX_PLAYERS; iI++)
+        {
+            if (GET_PLAYER((PlayerTypes)iI).isAlive())
+            {
+                if (pPlot->isRevealed(GET_PLAYER((PlayerTypes)iI).getTeam(), false))
+                {
+                    gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szReplayMessage, "AS2D_UNIT_GREATPEOPLE", MESSAGE_TYPE_MAJOR_EVENT, pGreatPeopleUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_UNIT_TEXT"), iX, iY, true, true);
+                }
+                //Rhye - start (GP born in far away land)
+                else
+                {
+                    CvWString szMessage = gDLL->getText("TXT_KEY_MISC_GP_BORN_SOMEWHERE", pGreatPeopleUnit->getName().GetCString());
+                    gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getDefineINT("EVENT_MESSAGE_TIME"), szMessage, "AS2D_UNIT_GREATPEOPLE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_UNIT_TEXT"));
+                }
+                //Rhye - end
+            }
+        }
+    }
 }
 
 
@@ -22135,7 +22307,10 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold /= 100;
 			break;
 		case ROME:
-			iThreshold *= 120;
+            if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+                iThreshold *= 120;
+            else
+                iThreshold *= 73;   // Leoreth - Renaissance Italy
 			iThreshold /= 100;
 			break;
 		case JAPAN:
@@ -22150,6 +22325,10 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold *= 110;
 			iThreshold /= 100;
 			break;
+        case BYZANTIUM:
+            iThreshold *= 76;
+            iThreshold /= 100;
+            break;
 		case VIKING:
 			iThreshold *= 80;
 			iThreshold /= 100;
@@ -22195,7 +22374,7 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold /= 100;
 			break;
 		case PORTUGAL:
-			iThreshold *= 71;
+			iThreshold *= 76; //Lisbon and Brazil too
 			iThreshold /= 100;
 			break;
 		case INCA:
@@ -22203,7 +22382,7 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold /= 100;
 			break;
 		case MONGOLIA:
-			iThreshold *= 73;
+			iThreshold *= 74;
 			iThreshold /= 100;
 			break;
 		case AZTEC:
@@ -23265,6 +23444,28 @@ bool CvPlayer::hasSpaceshipArrived() const
 
 	return false;
 }
+
+//Leoreth - get if this civ is reborn (int value for arrays: 1 -> reborn, 0 -> not reborn)
+
+bool CvPlayer::isReborn()
+{
+    return m_bReborn;
+}
+
+
+int CvPlayer::getReborn()
+{
+    if (m_bReborn)
+        return 1;
+    else
+        return 0;
+}
+
+void CvPlayer::setReborn()
+{
+    m_bReborn = true;
+}
+
 //Rhye - start switch (dynamic civ names - not jdog's)
 void CvPlayer::processCivNames()
 {
@@ -23275,6 +23476,12 @@ void CvPlayer::processCivNames()
 	//	|| (GC.getGameINLINE().getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition (to be changed in MP)
 	//if (GC.getGameINLINE().getGameTurn() == 0 && getID() != EGYPT) //Egyptian UP
 	//	return;
+
+	int cityThreshold = 6;
+
+	if (getID() == CARTHAGE) {
+	    cityThreshold = 2;
+	}
 
 	if (getID() < NUM_MAJOR_PLAYERS) {
 		int iMaster = -1;
@@ -23297,48 +23504,51 @@ void CvPlayer::processCivNames()
 			switch (iMaster)
 			{
 			case PERSIA:
-				setCivDescription(civDynamicNames[getID()][10]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][10]);
 				break;
 			case ROME:
-				setCivDescription(civDynamicNames[getID()][11]);
+                if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+                    setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][11]);
+                else
+                    setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][21]);
 				break;
 			case ARABIA:
-				setCivDescription(civDynamicNames[getID()][12]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][12]);
 				break;
 			case SPAIN:
-				setCivDescription(civDynamicNames[getID()][13]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][13]);
 				break;
 			case FRANCE:
-				setCivDescription(civDynamicNames[getID()][14]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][14]);
 				break;
 			case ENGLAND:
-				setCivDescription(civDynamicNames[getID()][15]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][15]);
 				break;
 			case GERMANY:
 				if (GET_PLAYER((PlayerTypes)GERMANY).getCurrentEra() >= 4) //industrial
-					setCivDescription(civDynamicNames[getID()][16]);
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][16]);
 				else
-					setCivDescription(civDynamicNames[getID()][21]);
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][21]);
 				break;
 			case RUSSIA:
 				if (GET_PLAYER((PlayerTypes)RUSSIA).getCurrentEra() >= 4) //industrial
-					setCivDescription(civDynamicNames[getID()][17]);
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][17]);
 				else
-					setCivDescription(civDynamicNames[getID()][21]);
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][21]);
 				break;
 			case MONGOLIA:
-				setCivDescription(civDynamicNames[getID()][18]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][18]);
 				break;
 			case TURKEY:
-				setCivDescription(civDynamicNames[getID()][19]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][19]);
 				break;
 			case CHINA:
 			case JAPAN:
 			case KHMER:
-				setCivDescription(civDynamicNames[getID()][20]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][20]);
 				break;
 			default:
-				setCivDescription(civDynamicNames[getID()][21]);
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][21]);
 				break;
 			}
 			return;
@@ -23348,57 +23558,57 @@ void CvPlayer::processCivNames()
 			// current civic naming by Leoreth
 			if (civDynamicNamesFlag[getID()] == 1 && getStateReligion() == 2) { //Islam
 				if (getCivics((CivicOptionTypes)0) == 0 || getCivics((CivicOptionTypes)0) == 1 || getCivics((CivicOptionTypes)0) == 2) {  //Tyranny, Monarchy, Theocracy
-					setCivDescription(civDynamicNames[getID()][8]); // medieval islamic name
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][8]); // medieval islamic name
 					return;
                 }
 				else if (getCivics((CivicOptionTypes)0) == 3 || getCivics((CivicOptionTypes)0) == 4) { // Autocracy, Republic
-					setCivDescription(civDynamicNames[getID()][9]); // modern islamic name
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][9]); // modern islamic name
 					return;
                 }
             }
 
             if (getCivics((CivicOptionTypes)3) == 18 ) { //State Property
-				setCivDescription(civDynamicNames[getID()][6]); // Communist name
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][6]); // Communist name
 				return;
             }
-			else if (getCivics((CivicOptionTypes)0) == 3 && getCivics((CivicOptionTypes)2) == 13) { // Autocracy AND Totalitarianism
-				setCivDescription(civDynamicNames[getID()][7]); // Fascist name
+			else if (getCivics((CivicOptionTypes)2) == 13) { //Totalitarianism
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][7]); // Fascist name
 				return;
             }
 
             if (civDynamicNamesFlag[getID()] == 0 && getStateReligion() == 2) { //Islam
 				if (getCivics((CivicOptionTypes)0) == 0 || getCivics((CivicOptionTypes)0) == 1 || getCivics((CivicOptionTypes)0) == 2) { //Tyranny, Monarchy, Theocracy
-					setCivDescription(civDynamicNames[getID()][8]); // medieval islamic name
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][8]); // medieval islamic name
 					return;
 					}
 				else if (getCivics((CivicOptionTypes)0) == 3 || getCivics((CivicOptionTypes)0) == 4) { //Autocracy, Republic
-					setCivDescription(civDynamicNames[getID()][9]); // modern islamic name
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][9]); // modern islamic name
 					return;
 					}
 			}
 
 			if (getCivics((CivicOptionTypes)0) == 4 || (getCivics((CivicOptionTypes)0) == 3 && getCivics((CivicOptionTypes)1) == 8) || (getCivics((CivicOptionTypes)0) == 3 &&getCivics((CivicOptionTypes)1) == 9)) { // Republic or Autocracy with Representation or Autocracy with Parliamentarism
-				setCivDescription(civDynamicNames[getID()][5]); // Democratic name
+				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][5]); // Democratic name
 				return;
 				}
 			else  { // in any other case there's a monarchist name dependent on size and era
-				if (getCurrentEra() < civDynamicNamesEraThreshold[getID()]) {
-					if (getNumCities() <= 6) {
-						setCivDescription(civDynamicNames[getID()][1]); // small early monarchist name
+				if (getCurrentEra() < civDynamicNamesEraThreshold[getID()]+GET_PLAYER((PlayerTypes)getID()).getReborn()) { // Leoreth - workaround to let reborn civs change one era later
+					if (getNumCities() <= cityThreshold) {
+						setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][1]); // small early monarchist name
 						return;
 					}
 					else {
-						setCivDescription(civDynamicNames[getID()][2]); // large early monarchist name
+						setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][2]); // large early monarchist name
 						return;
 					}
 				}
 				else { //industrial and modern
 					if (getNumCities() <= 6) {
-						setCivDescription(civDynamicNames[getID()][3]); // small modern monarchist name
+						setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][3]); // small modern monarchist name
 						return;
 					}
 					else {
-						setCivDescription(civDynamicNames[getID()][4]); // large modern monarchist name
+						setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][4]); // large modern monarchist name
 						return;
 					}
 				}

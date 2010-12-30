@@ -13,10 +13,10 @@
 			<Description>TXT_KEY_GAMESPEED_MARATHON</Description>
 			<Help>TXT_KEY_GAMESPEED_MARATHON_HELP</Help>
 			<iGrowthPercent>300</iGrowthPercent>
-			<iTrainPercent>195</iTrainPercent><!--default: 180-->
+			<iTrainPercent>200</iTrainPercent><!--default: 180-->
 			<iConstructPercent>300</iConstructPercent>
 			<iCreatePercent>300</iCreatePercent>
-			<iResearchPercent>330</iResearchPercent><!--default: 320-->
+			<iResearchPercent>335</iResearchPercent><!--default:320; grows by up to 20% as the game progresses-->
 			<iBuildPercent>300</iBuildPercent>
 			<iImprovementPercent>300</iImprovementPercent>
 			<iGreatPeoplePercent>300</iGreatPeoplePercent>
@@ -79,10 +79,10 @@
 			<Description>TXT_KEY_GAMESPEED_EPIC</Description>
 			<Help>TXT_KEY_GAMESPEED_EPIC_HELP</Help>
 			<iGrowthPercent>150</iGrowthPercent>
-			<iTrainPercent>135</iTrainPercent>
+			<iTrainPercent>140</iTrainPercent><!--default: 135-->
 			<iConstructPercent>150</iConstructPercent>
 			<iCreatePercent>150</iCreatePercent>
-			<iResearchPercent>170</iResearchPercent><!--default: 160-->
+			<iResearchPercent>165</iResearchPercent><!--default: 160; grows by up to 20% as the game progresses-->
 			<iBuildPercent>150</iBuildPercent>
 			<iImprovementPercent>150</iImprovementPercent>
 			<iGreatPeoplePercent>150</iGreatPeoplePercent>

@@ -13,10 +13,10 @@
 			<Description>TXT_KEY_GAMESPEED_MARATHON</Description>
 			<Help>TXT_KEY_GAMESPEED_MARATHON_HELP</Help>
 			<iGrowthPercent>300</iGrowthPercent>
-			<iTrainPercent>180</iTrainPercent>
+			<iTrainPercent>195</iTrainPercent><!--default: 180-->
 			<iConstructPercent>300</iConstructPercent>
 			<iCreatePercent>300</iCreatePercent>
-			<iResearchPercent>320</iResearchPercent>
+			<iResearchPercent>330</iResearchPercent><!--default: 320-->
 			<iBuildPercent>300</iBuildPercent>
 			<iImprovementPercent>300</iImprovementPercent>
 			<iGreatPeoplePercent>300</iGreatPeoplePercent>
@@ -31,7 +31,7 @@
 			<iGoldenAgePercent>200</iGoldenAgePercent>
 			<iHurryPercent>33</iHurryPercent>
 			<iHurryConscriptAngerPercent>300</iHurryConscriptAngerPercent>
-			<iInflationPercent>22</iInflationPercent>
+			<iInflationPercent>23</iInflationPercent>
 			<iInflationOffset>-360</iInflationOffset>
 			<iVictoryDelayPercent>300</iVictoryDelayPercent>
 			<GameTurnInfos>
@@ -82,7 +82,7 @@
 			<iTrainPercent>135</iTrainPercent>
 			<iConstructPercent>150</iConstructPercent>
 			<iCreatePercent>150</iCreatePercent>
-			<iResearchPercent>160</iResearchPercent>
+			<iResearchPercent>170</iResearchPercent><!--default: 160-->
 			<iBuildPercent>150</iBuildPercent>
 			<iImprovementPercent>150</iImprovementPercent>
 			<iGreatPeoplePercent>150</iGreatPeoplePercent>

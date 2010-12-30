@@ -7471,7 +7471,10 @@ int CvUnit::workRate(bool bMax) const
 		iRate /= 100;
 		break;
 	case ROME:
-		iRate *= 120;
+        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+            iRate *= 120;
+        else
+            iRate *= 140;   // Leoreth - Renaissance Italy
 		iRate /= 100;
 		break;
 	case JAPAN:
@@ -7486,6 +7489,10 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 120;
 		iRate /= 100;
 		break;
+    case BYZANTIUM:
+        iRate *= 110;
+        iRate /= 100;
+        break;
 	case VIKING:
 		iRate *= 120;
 		iRate /= 100;
@@ -7556,8 +7563,8 @@ int CvUnit::workRate(bool bMax) const
 		break;
 	}
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-		if (getID() < VIKING) {
-			iRate *= 110;
+		if (getOwnerINLINE() < VIKING) {
+			iRate *= 105;
 			iRate /= 100;
 		}
 	//Rhye - end

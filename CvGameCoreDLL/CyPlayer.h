@@ -311,6 +311,8 @@ public:
 	void setConversionTimer(int iNewValue); // edead
 	void changeConversionTimer(int iChange); // edead
 	int getRevolutionTimer();
+	void setRevolutionTimer(int iNewValue); // edead
+	void changeRevolutionTimer(int iChange); // edead
 
 	bool isStateReligion();
 	bool isNoNonStateReligionSpread();

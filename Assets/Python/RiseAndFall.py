@@ -1796,8 +1796,29 @@ class RiseAndFall:
 				#	utils.cultureManager((68,45), 50, iCiv, gc.getMap().plot(68,45).getPlotCity().getOwner(), True, False, False)
 
 				if iCiv in [iByzantium]:
+					utils.makeUnit(con.iCatapult, iCiv, (0,0), 1)
 					self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
 					self.assignTechs(iCiv)
+					plotZero = gc.getMap().plot( 0, 0 )                        
+                        		if (plotZero.getNumUnits()):
+                                		catapult = plotZero.getUnit(0)
+                                		catapult.kill(False, iCiv)
+                        		gc.getMap().plot(0, 0).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(0, 1).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(1, 1).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(1, 0).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(123, 0).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(123, 1).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(2, 0).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(2, 1).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(2, 2).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(1, 2).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(0, 2).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(122, 0).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(122, 1).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(122, 2).setRevealed(iCiv, False, True, -1);
+                        		gc.getMap().plot(123, 2).setRevealed(iCiv, False, True, -1);
+                        		print ("Plots covered")
 					return	
                         
                                 bDeleteEverything = False
@@ -2128,7 +2149,7 @@ class RiseAndFall:
 					if (unit.getOwner() == iOwner):
 						unit.kill(False, con.iBarbarian)
 						if (iCiv < con.iNumPlayers or unitType > con.iSettler):
-							utils.makeUnit(self.getBaseUnit(unitType, iNewOwner), iCiv, (0, 0), 1) # edead
+							utils.makeUnit(unitType, iCiv, (0, 0), 1) # edead
 					else:
 						j += 1
 
