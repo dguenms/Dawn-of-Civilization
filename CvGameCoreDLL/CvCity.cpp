@@ -1922,10 +1922,10 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	    {
 	        if (plot()->getArea() != GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea())
 	        {
-	            //if ((int)getOwner() != CARTHAGE && (int)getOwner() != BYZANTIUM && (int)getOwner() != TURKEY && (int)getOwner() != ARABIA)
-	            //{
+	            if ((int)getOwner() != CARTHAGE && (int)getOwner() != BYZANTIUM && (int)getOwner() != TURKEY && (int)getOwner() != ARABIA)
+	            {
                     return false;
-	            //}
+	            }
             }
 	    }
 	}

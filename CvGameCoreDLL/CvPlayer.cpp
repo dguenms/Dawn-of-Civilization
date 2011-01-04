@@ -14292,7 +14292,7 @@ void CvPlayer::doEspionagePoints()
 				}
 			}
 		}
-	}	
+	}
 }
 
 int CvPlayer::getEspionageSpending(TeamTypes eAgainstTeam) const
@@ -18301,7 +18301,7 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 	CvCity* pCity = pPlot->getPlotCity();
 	CvWString szReplayMessage;
 
-	// Python Event
+    // Python Event
 	if (pCity)
 	{
 		CvEventReporter::getInstance().greatPersonBorn(pGreatPeopleUnit, getID(), pCity);

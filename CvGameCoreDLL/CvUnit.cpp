@@ -527,7 +527,7 @@ void CvUnit::convert(CvUnit* pUnit)
 void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 {
 	PROFILE_FUNC();
-	
+
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pTransportUnit;
 	CvUnit* pLoopUnit;
@@ -4616,12 +4616,7 @@ bool CvUnit::pillage()
 
 	if (pPlot->isWater())
 	{
-		// UncutDragon
-		// original
-		//CvUnit* pInterceptor = bestSeaPillageInterceptor(this, GC.getDefineINT("COMBAT_DIE_SIDES") / 2);
-		// modified
-		CvUnit* pInterceptor = bestSeaPillageInterceptor(this, GC.getCOMBAT_DIE_SIDES() / 2);
-		// /UncutDragon
+		CvUnit* pInterceptor = bestSeaPillageInterceptor(this, GC.getDefineINT("COMBAT_DIE_SIDES") / 2);
 		if (NULL != pInterceptor)
 		{
 			setMadeAttack(false);
@@ -12883,7 +12878,7 @@ void CvUnit::applyEvent(EventTypes eEvent)
 	{
 		return;
 	}
-	
+
 	CvEventInfo& kEvent = GC.getEventInfo(eEvent);
 
 	if (0 != kEvent.getUnitExperience())
