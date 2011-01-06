@@ -119,11 +119,83 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SLAVE_REVOLT</Tag>
-		<English>A slave revolt has taken place in the %s1_civ_adjective city of %s2_city!</English>
+		<English>A peasant revolt has taken place in the %s1_civ_adjective city of %s2_city!</English>
 		<French>Une r&#233;volte d'esclaves a eu lieu dans la ville %s1:2_civ_adjective de %s2_city !</French>
-		<German>In der %s1:2_civ_adjective Stadt %s2_city tobt ein Sklavenaufstand!</German>
+		<German>In der %s1:2_civ_adjective Stadt %s2_city tobt ein Bauernaufstand!</German>
 		<Italian>Una rivolta di schiavi &#232; scoppiata nella citt&#224; %s1:2_civ_adjective di %s2_city!</Italian>
 		<Spanish>&#161;Una rebeli&#243;n de esclavos ha tenido lugar en la ciudad %s1:2_civ_adjective de %s2_city!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SLAVE_REVOLT_1</Tag>
+		<English>A peasant revolt has taken place in %s2_city!</English>
+		<French>Une r&#233;volte d'esclaves a eu lieu &#224; %s2_city !</French>
+		<German>In %s2_city tobt ein Bauernaufstand!</German>
+		<Italian>&#200; scoppiata una rivolta di schiavi a %s2_city!</Italian>
+		<Spanish>&#161;Una rebeli&#243;n de esclavos ha tenido lugar en %s2_city!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SLAVE_REVOLT_2</Tag>
+		<English>The peasants in %s2_city have rebelled against their lords. The city is in chaos.</English>
+		<French>Les esclaves de %s2_city se sont rebell&#233;s contre leurs gardiens. La ville est plong&#233;e dans le chaos.</French>
+		<German>Die Bauern in %s2_city haben sich gegen ihre Herren erhoben. In der Stadt herrscht das Chaos.</German>
+		<Italian>Gli schiavi a %s2_city si sono ribellati ai loro padroni. La citt&#224; &#232; nel caos.</Italian>
+		<Spanish>Los esclavos de %s2_city se han levantado contra sus se&#241;ores. La ciudad est&#225; sumida en el caos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SLAVE_REVOLT_3</Tag>
+		<English>Production at %s2_city has been halted temporarily by rebellious peasants.</English>
+		<French>A %s2_city, toute production a &#233;t&#233; temporairement arr&#234;t&#233;e en raison d'une r&#233;volte d'esclaves.</French>
+		<German>Wegen der Bauernaufst&#228;nde ist die Produktion in %s2_city vor&#252;bergehend zum Erliegen gekommen.</German>
+		<Italian>La produzione a %s2_city &#232; stata temporaneamente fermata dagli schiavi ribelli.</Italian>
+		<Spanish>Esclavos rebeldes han detenido temporalmente la producci&#243;n de %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_SLAVE_REVOLT_AGAIN</Tag>
+		<English>The peasants in %s2_city are still in revolt. Local authorities are bumbling the crackdown.</English>
+		<French>Les esclaves de %s2_city sont toujours en r&#233;bellion. Les autorit&#233;s locales peinent &#224; r&#233;tablir l'ordre.</French>
+		<German>Die Bauern in %s2_city rebellieren noch immer. Die &#246;rtlichen Beh&#246;rden greifen hart durch.</German>
+		<Italian>Gli schiavi a %s2_city sono ancora in rivolta. Le autorit&#224; locali hanno causato un pasticcio.</Italian>
+		<Spanish>Los esclavos de %s2_city siguen alzados. Las autoridades locales no est&#225;n siendo capaces de tomar medidas en&#233;rgicas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SLAVE_REVOLT_AGAIN_1</Tag>
+		<English>The local authorities in %s2_city have so far been unable to put down the peasant revolt.</English>
+		<French>Les autorit&#233;s locales &#224; %s2_city sont dans l'incapacit&#233; de mater la r&#233;volte d'esclaves.</French>
+		<German>Die &#246;rtlichen Beh&#246;rden in %s2_city waren bisher nicht in der Lage, den Bauernaufstand niederzuschlagen.</German>
+		<Italian>Le autorit&#224; locali a %s2_city sono state incapaci, finora, di sedare la rivolta di schiavi.</Italian>
+		<Spanish>Las autoridades locales de %s2_city se han visto incapaces de contener la rebeli&#243;n de esclavos de momento.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_SLAVE_REVOLT_AGAIN_2</Tag>
+		<English>The peasant revolt in %s2_city continues unabated. The economy there is at a standstill.</English>
+		<French>La r&#233;volte d'esclaves &#224; %s2_city n'est toujours pas mat&#233;e. L'&#233;conomie locale est paralys&#233;e.</French>
+		<German>Der Bauernaufstand in %s2_city dauert weiterhin an. Die Stadt liegt wirtschaftlich am Boden.</German>
+		<Italian>La rivolta di schiavi a %s2_city continua indisturbata. L'economia &#232; a un punto morto.</Italian>
+		<Spanish>La rebeli&#243;n de esclavos de %s2_city sigue sin contenerse. La econom&#237;a del lugar ha quedado totalmente paralizada.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SLAVE_REVOLT_1</Tag>
+		<English>Crack down on the rebels. Put down the revolt. Re-establish order.</English>
+		<French>Mater les rebelles. R&#233;primer la r&#233;volte. R&#233;tablir l'ordre. </French>
+		<German>Greift hart gegen die Rebellen durch. Schlagt die Revolte nieder und stellt die Ordnung wieder her.</German>
+		<Italian>Colpiamo i ribelli. Soffoca la rivolta. Ristabilisci l'ordine.</Italian>
+		<Spanish>Aplastad a los rebeldes. Acabad con la rebeli&#243;n. Reestableced el orden.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SLAVE_REVOLT_2</Tag>
+		<English>Restore order first, then investigate and redress some of the peasants' grievances.</English>
+		<French>R&#233;tablir l'ordre en premier lieu, puis &#233;couter et r&#233;pondre aux griefs des esclaves.</French>
+		<German>Stellt zuerst die Ordnung wieder her und dann untersucht und beseitigt die Missst&#228;nde bei den Bauern.</German>
+		<Italian>Prima ripristina l'ordine, poi investiga e rimedia ad alcuni dei problemi degli schiavi.</Italian>
+		<Spanish>Primero restableced el orden, y luego que se investiguen y solucionen las quejas de los esclavos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SLAVE_REVOLT_3</Tag>
+		<English>We are too busy to be bothered. Leave the matter to the local authorities. (Revolt may continue)</English>
+		<French>Nous sommes trop occup&#233;s pour ces broutilles. Laisser les autorit&#233;s locales s'en charger (la r&#233;volte risque de continuer).</French>
+		<German>Wir haben keine Zeit, uns darum zu k&#252;mmern. &#220;berlasst die Sache den &#246;rtlichen Beh&#246;rden. (Die Revolte k&#246;nnte fortdauern.)</German>
+		<Italian>Siamo troppo impegnati. Lascia che del problema si occupino le autorit&#224; locali. (La rivolta potrebbe continuare).</Italian>
+		<Spanish>Estamos demasiado ocupados como para que se nos moleste. Dejad el asunto en manos de las autoridades locales. Es posible que la rebeli&#243;n prosiga.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_BLESSED_SEA_DONE</Tag>

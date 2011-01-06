@@ -3168,6 +3168,7 @@ class RiseAndFall:
                 if (iCiv == iMali):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iMaliSkirmisher, iCiv, tPlot, 5)
+			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 1)
                 if (iCiv == iTurkey):
                         #utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
