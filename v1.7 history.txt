@@ -57,3 +57,7 @@
 	An army spawns near your enemy's cities when you declare war on them for the first time
 # increased likeliness for Phoenicia and Rome to settle in Iberia, decreased Roman likeliness to settle at the Danube
 # corrected Phoenicia's dynamic names, you should see Phoenician city states and Carthaginian Empire more often now
+# Mali spawns with an Islamic Missionary now
+# Khmer late name changed to Empire of Siam
+# Changed slave revolt text to peasant revolt
+# Mansa Musa is now way more reluctant to become a peace vassal (you need to become friendly with him)
