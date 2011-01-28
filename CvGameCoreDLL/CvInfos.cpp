@@ -10272,14 +10272,20 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		else
 			return researchPercent*125/100; //113 before the new timeline
 	case GREECE:
-		return researchPercent*116/100; //102 before the new timeline +higher because the UP already helps
+        if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 2)
+            return researchPercent*116/100; //102 before the new timeline +higher because the UP already helps
+        else
+            return researchPercent*135/100;
 	case PERSIA:
 		return researchPercent*100/100; //90 before the new timeline
 	case CARTHAGE:
 		return researchPercent*100/100;  //90 before the new timeline
 	case ROME:
         if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            return researchPercent*108/100; //95 before the new timeline
+            if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 2)
+                return researchPercent*108/100; //95 before the new timeline
+            else
+                return researchPercent*135/100;
         else
             return researchPercent*92/100;  // Renaissance Italy
 	case JAPAN:
