@@ -2186,7 +2186,7 @@ class RiseAndFall:
 					#print ("iNumUnitsInAPlot", iNumUnitsInAPlot)
 					for i in range(iNumUnitsInAPlot):
 						unit = tempPlot.getUnit(0)
-						#unit.setXY(tCityPlot[0]-2, tCityPlot[1], False, False, False)
+						unit.setXY(tCityPlot[0], tCityPlot[1], False, False, False)
 
 				#cover plots revealed
 				#self.coverPlots(con.iFlipX, con.iFlipY, iCiv)
@@ -2209,7 +2209,7 @@ class RiseAndFall:
 
 				#print ("starting units in", tCapital[0], tCapital[1])
 				print ("birthConditional: starting units in", tCapital[0], tCapital[1])
-				self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
+				self.createStartingUnits(iCiv, (tCapital[0]-1, tCapital[1]))
 
 				utils.setPlagueCountdown(iCiv, -con.iImmunity)
 				utils.clearPlague(iCiv)
