@@ -762,10 +762,7 @@ class RFCUtils:
                         else:
                                 iUnitType = con.iEnglishRedcoat
                 elif (gc.getTeam(pCiv.getTeam()).isHasTech(con.iGunpowder)):
-                        if (iNewOwner != con.iFrance):
-                                iUnitType = con.iMusketman
-                        else:
-                                iUnitType = con.iFrenchMusketeer
+                        iUnitType = con.iMusketman
                 else:
                         iUnitType = con.iLongbowman
 
