@@ -1765,9 +1765,13 @@ class RiseAndFall:
 		
 		lConditionalCivs = [iByzantium]
 
-		#if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
-		#	if iCiv in lConditionalCivs:
-		#		utils.makeUnit(con.iCatapult, iCiv, (1,0), 1)
+		if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
+			if iCiv in lConditionalCivs:
+				x, y = con.tCapitals[0][iCiv]
+				x = x-2
+				gc.getMap().plot(x,y).setOwner(iCiv)
+				self.createStartingUnits(iCiv, (x,y))
+				self.convertSurroundingPlotCulture(iCiv, con.tCoreAreasTL[0][iCiv], con.tCoreAreasBR[0][iCiv])
 
 
                 if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
@@ -2152,8 +2156,11 @@ class RiseAndFall:
 			if iFlipsDelay > 0:
 
 				# flip capital instead of spawning starting units
-				utils.cultureManager(startingPlot, 100, iCiv, iOwner, True, False, False) # done
+				#utils.cultureManager(startingPlot, 100, iCiv, iOwner, True, False, False) # done
+				#self.convertSurroundingPlotCulture(iCiv, (tCapital[0]+2, tCapital[1]+2), (tCapital[0]-2, tCapital[1]-2))
+				self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
 
+				return
 
 				#utils.flipUnitsInCityBefore(startingPlot, iCiv, iOwner)		# done
 				plotCity = gc.getMap().plot(startingPlot[0], startingPlot[1])
@@ -2209,7 +2216,7 @@ class RiseAndFall:
 
 				#print ("starting units in", tCapital[0], tCapital[1])
 				print ("birthConditional: starting units in", tCapital[0], tCapital[1])
-				self.createStartingUnits(iCiv, (tCapital[0]-1, tCapital[1]))
+				#self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
 
 				utils.setPlagueCountdown(iCiv, -con.iImmunity)
 				utils.clearPlague(iCiv)
