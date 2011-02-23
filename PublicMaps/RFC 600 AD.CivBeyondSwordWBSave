@@ -156,7 +156,7 @@ BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM                
 	Team=11                 
-	PlayableCiv=0                 
+	PlayableCiv=1                 
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -22601,13 +22601,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=31
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Tripolis
 		CityPopulation=2
-		Player31Culture=10
+		Player28Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -24226,16 +24226,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=31
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=31
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Hesperides
 		CityPopulation=2
-		Player31Culture=10
+		Player28Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25476,19 +25476,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=31
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=31
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit	
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Alexandria
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
 		BuildingType=BUILDING_GREAT_LIBRARY
-		Player31Culture=10
+		Player28Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25516,16 +25516,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=31
+		UnitType=UNIT_WORKER, UnitOwner=28
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=31
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=28
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=31
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Athenae
 		CityPopulation=3
 		BuildingType=BUILDING_HARBOR
@@ -25535,7 +25535,7 @@ BeginPlot
 		BuildingType=BUILDING_GREEK_ODEON
 		ReligionType=RELIGION_CHRISTIANITY
 		BuildingType=BUILDING_PARTHENON
-		Player31Culture=50
+		Player28Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -25983,47 +25983,47 @@ BeginPlot
 	x=68,y=45
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=31
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=31
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=31
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=31
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=31
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=31
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=31
-	EndUnit
-	BeginCity
-		CityOwner=31
-		CityName=Constantinopolis
-		CityPopulation=4
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_CASTLE
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_BYZANTINE_HIPPODROME
-		ReligionType=RELIGION_CHRISTIANITY
-		BuildingType=BUILDING_HAGIA_SOPHIA
-		BuildingType=BUILDING_THEODOSIAN_WALLS
-		Player31Culture=1000
-	EndCity
+	#BeginUnit
+	#	UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=31
+	#EndUnit
+	#BeginUnit
+	#	UnitType=UNIT_PIKEMAN, UnitOwner=31
+	#EndUnit
+	#BeginUnit
+	#	UnitType=UNIT_PIKEMAN, UnitOwner=31
+	#EndUnit
+	#BeginUnit
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=31
+	#EndUnit
+	#BeginUnit
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=31
+	#EndUnit
+	#BeginUnit
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=31
+	#EndUnit
+	#BeginUnit
+	#	UnitType=UNIT_WORKER, UnitOwner=31
+	#EndUnit
+	#BeginCity
+	#	CityOwner=31
+	#	CityName=Constantinopolis
+	#	CityPopulation=4
+	#	BuildingType=BUILDING_PALACE
+	#	BuildingType=BUILDING_WALLS
+	#	BuildingType=BUILDING_CASTLE
+	#	BuildingType=BUILDING_BARRACKS
+	#	BuildingType=BUILDING_STABLE
+	#	BuildingType=BUILDING_GRANARY
+	#	BuildingType=BUILDING_LIBRARY
+	#	BuildingType=BUILDING_MARKET
+	#	BuildingType=BUILDING_GROCER
+	#	BuildingType=BUILDING_HARBOR
+	#	BuildingType=BUILDING_BYZANTINE_HIPPODROME
+	#	ReligionType=RELIGION_CHRISTIANITY
+	#	BuildingType=BUILDING_HAGIA_SOPHIA
+	#	BuildingType=BUILDING_THEODOSIAN_WALLS
+	#	Player31Culture=1000
+	#EndCity
 EndPlot
 BeginPlot
 	x=68,y=46
@@ -26360,14 +26360,14 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=31
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit	
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMID
-		Player31Culture=10
+		Player28Culture=10
 	EndCity
 	PlotType=2
 EndPlot
@@ -27576,17 +27576,17 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=31
+		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=28
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=31
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=28
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Iconium
 		CityPopulation=2
 		BuildingType=BUILDING_MARKET
-		Player31Culture=10
+		Player28Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -27940,15 +27940,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=31
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Hierusalem
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHRISTIAN_SHRINE
-		Player31Culture=1
+		Player28Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -27971,15 +27971,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=31
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=28
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Alexandretta
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
-		Player31Culture=1
+		Player28Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -28773,19 +28773,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=31
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=28
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=31
+		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=28
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=28
 		CityName=Trapezus
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
-		Player31Culture=10
+		Player28Culture=10
 	EndCity
 EndPlot
 BeginPlot
