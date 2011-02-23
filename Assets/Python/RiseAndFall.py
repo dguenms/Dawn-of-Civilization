@@ -1768,11 +1768,8 @@ class RiseAndFall:
 		if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
 			if iCiv in lConditionalCivs:
 				x, y = con.tCapitals[0][iCiv]
-				x = x-2
 				gc.getMap().plot(x,y).setOwner(iCiv)
-				self.createStartingUnits(iCiv, (x,y))
-				self.convertSurroundingPlotCulture(iCiv, con.tCoreAreasTL[0][iCiv], con.tCoreAreasBR[0][iCiv])
-
+				#self.createStartingUnits(iCiv, (x-1,y))
 
                 if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
 
@@ -2156,44 +2153,42 @@ class RiseAndFall:
 			if iFlipsDelay > 0:
 
 				# flip capital instead of spawning starting units
-				#utils.cultureManager(startingPlot, 100, iCiv, iOwner, True, False, False) # done
-				#self.convertSurroundingPlotCulture(iCiv, (tCapital[0]+2, tCapital[1]+2), (tCapital[0]-2, tCapital[1]-2))
-				self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
-
-				return
+				utils.flipCity(tCapital, False, True, iCiv, ())
+				utils.cultureManager(tCapital, 100, iCiv, iOwner, True, False, False)
+				self.convertSurroundingPlotCulture(iCiv, (tCapital[0]-1,tCapital[1]-1), (tCapital[0]+1,tCapital[1]+1))
 
 				#utils.flipUnitsInCityBefore(startingPlot, iCiv, iOwner)		# done
-				plotCity = gc.getMap().plot(startingPlot[0], startingPlot[1])
-				city = plotCity.getPlotCity()
-				iNumUnitsInAPlot = plotCity.getNumUnits()
-				j = 0
-				for i in range(iNumUnitsInAPlot):
-					unit = plotCity.getUnit(j)
-					unitType = unit.getUnitType()
-					if (unit.getOwner() == iOwner):
-						unit.kill(False, con.iBarbarian)
-						if (iCiv < con.iNumPlayers or unitType > con.iSettler):
-							utils.makeUnit(unitType, iCiv, (0, 0), 1) # edead
-					else:
-						j += 1
+				#plotCity = gc.getMap().plot(startingPlot[0], startingPlot[1])
+				#city = plotCity.getPlotCity()
+				#iNumUnitsInAPlot = plotCity.getNumUnits()
+				#j = 0
+				#for i in range(iNumUnitsInAPlot):
+				#	unit = plotCity.getUnit(j)
+				#	unitType = unit.getUnitType()
+				#	if (unit.getOwner() == iOwner):
+				#		unit.kill(False, con.iBarbarian)
+				#		if (iCiv < con.iNumPlayers or unitType > con.iSettler):
+				#			utils.makeUnit(unitType, iCiv, (0, 0), 1) # edead
+				#	else:
+				#		j += 1
 
-				self.setTempFlippingCity(startingPlot) 			#necessary for the (688379128, 0) bug # done
+				#self.setTempFlippingCity(startingPlot) 			#necessary for the (688379128, 0) bug # done
 
 
-				utils.flipCity(startingPlot, 0, 0, iCiv, [iOwner])	# done
+				#utils.flipCity(startingPlot, 0, 0, iCiv, [iOwner])	# done
 
 
 				#utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iCiv)
 				#moves new units back in their place
-				tCityPlot = self.getTempFlippingCity()
-				print ("tCityPlot After", tCityPlot)
-				tempPlot = gc.getMap().plot(0, 0)
-				if (tempPlot.getNumUnits() != 0):
-					iNumUnitsInAPlot = tempPlot.getNumUnits()
+				#tCityPlot = self.getTempFlippingCity()
+				#print ("tCityPlot After", tCityPlot)
+				#tempPlot = gc.getMap().plot(0, 0)
+				#if (tempPlot.getNumUnits() != 0):
+				#	iNumUnitsInAPlot = tempPlot.getNumUnits()
 					#print ("iNumUnitsInAPlot", iNumUnitsInAPlot)
-					for i in range(iNumUnitsInAPlot):
-						unit = tempPlot.getUnit(0)
-						unit.setXY(tCityPlot[0], tCityPlot[1], False, False, False)
+				#	for i in range(iNumUnitsInAPlot):
+				#		unit = tempPlot.getUnit(0)
+				#		unit.setXY(tCityPlot[0], tCityPlot[1], False, False, False)
 
 				#cover plots revealed
 				#self.coverPlots(con.iFlipX, con.iFlipY, iCiv)
@@ -2216,7 +2211,8 @@ class RiseAndFall:
 
 				#print ("starting units in", tCapital[0], tCapital[1])
 				print ("birthConditional: starting units in", tCapital[0], tCapital[1])
-				#self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
+				utils.cultureManager(tCapital, 100, iCiv, iOwner, True, False, False)
+				self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
 
 				utils.setPlagueCountdown(iCiv, -con.iImmunity)
 				utils.clearPlague(iCiv)
@@ -3109,9 +3105,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 3)
 		if (iCiv == iByzantium):
-			utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 1)
-			utils.makeUnit(con.iSpearman, iCiv, tPlot, 1)
-			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 3)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)

@@ -52,4 +52,12 @@
 		<Italian>Ambasciata portoghese</Italian>
 		<Spanish>Embajada portuguesa</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BYZ_EMBASSY</Tag>
+		<English>Byzantine Embassy</English>
+		<French>Ambassade byzantine</French>
+		<German>Byzantinische Botschaft</German>
+		<Italian>Ambasciata bizantina</Italian>
+		<Spanish>Embajada bizantina</Spanish>
+	</TEXT>
 </Civ4GameText>
