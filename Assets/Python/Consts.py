@@ -802,7 +802,7 @@ tCoreAreasTL = (
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya
-(64, 41), #Byzantium
+(64, 38), #Byzantium
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
@@ -923,7 +923,7 @@ tExceptions = (  #for RiseAndFall
 (), #Japan
 (), #Ethiopia
 (), #Maya
-(), #Byzantium
+((65,40), (66,40)), #Byzantium
 ((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
 ((82, 34), (73, 40), (74, 40), (75, 40), (71, 36), (72, 37)),  #Arabia
 (), #Khmer
@@ -987,7 +987,7 @@ tNormalAreasTL = (
 (111, 41), #Japan
 (68, 25), #Ethiopia
 (20, 32), #Maya
-(64, 41), #Byzantium
+(64, 38), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -1016,7 +1016,7 @@ tNormalAreasTL = (
 (111, 41), #Japan
 (68, 25), #Ethiopia
 (20, 32), #Maya
-(64, 41), #Byzantium
+(64, 38), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -1170,7 +1170,7 @@ tBroaderAreasTL = (
 (110, 40), #Japan
 (67, 21), #Ethiopia
 (19, 30), #Maya
-(64, 41), #Byzantium
+(58, 34), #Byzantium
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer
@@ -1199,7 +1199,7 @@ tBroaderAreasTL = (
 (110, 40), #Japan
 (67, 21), #Ethiopia
 (19, 30), #Maya
-(64, 41), #Byzantium
+(64, 38), #Byzantium
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer

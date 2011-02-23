@@ -62,3 +62,4 @@
 # Changed slave revolt text to peasant revolt
 # Mansa Musa is now way more reluctant to become a peace vassal (you need to become friendly with him)
 # Rome and Greece get research penalties from the Renaissance onward
+# prevented Babylonia from founding cities too far into Anatolia

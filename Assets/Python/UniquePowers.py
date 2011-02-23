@@ -244,8 +244,13 @@ class UniquePowers:
 			print ("No plot found, spawning in Roma instead.")
 			tPlot = con.tCapitals[0][iRome]
 
-		utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-		utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+		# weaken the effect if there's a human involved
+		if (utils.getHumanID() == iEnemy or utils.getHumanID() == iRome):
+			utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+			utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+		else:
+			utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+			utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 		print ("Units created.")
 
 		#utils.makeUnit(con.iRomePraetorian, iRome, tPlot, 3)

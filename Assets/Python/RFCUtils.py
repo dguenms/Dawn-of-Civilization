@@ -271,11 +271,12 @@ class RFCUtils:
                 #return (None)
 
 		if (len(plotList) > 0):
-                        rndNum = gc.getGame().getSorenRandNum(len(plotList), 'sea plot')
+                        rndNum = gc.getGame().getSorenRandNum(len(plotList), 'land plot')
                         result = plotList[rndNum]
                         if (result):                                                        
-                                    return ((result.getX(), result.getY()))
-                return (None)
+                        	return ((result.getX(), result.getY()))
+		# if no plot is found, return that player's capital
+                return con.tCapitals[iPlayer]
 
 
 
