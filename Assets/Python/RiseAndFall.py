@@ -528,7 +528,9 @@ class RiseAndFall:
                 if (gc.getPlayer(0).isPlayable()): #late start condition
                         self.create4000BCstartingUnits()
                 else:
+			self.prepareConstantinople()
                         self.create600ADstartingUnits()
+			self.flip600ADByzantium()
                 #self.assign4000BCtechs()
                 self.setEarlyLeaders()
 
@@ -619,6 +621,42 @@ class RiseAndFall:
                         unit = plotEgypt.getUnit(0)
                         unit.centerCamera()
                         #print (unit)
+
+	def prepareConstantinople(self):
+		plot = con.tCapitals[0][iByzantium]
+		pByzantium.found(plot[0], plot[1])
+		constantinople = CyGlobalContext().getMap().plot(plot[0], plot[1]).getPlotCity()
+		
+		CyGlobalContext().getMap().plot(plot[0], plot[1]).setCulture(iByzantium, 1000, True)
+
+		constantinople.setName("Constantinopolis", False)
+		constantinople.setPopulation(4)
+		constantinople.setHasRealBuilding(con.iWalls, True)
+		constantinople.setHasRealBuilding(con.iCastle, True)
+		constantinople.setHasRealBuilding(con.iBarracks, True)
+		constantinople.setHasRealBuilding(con.iStable, True)
+		constantinople.setHasRealBuilding(con.iGranary, True)
+		constantinople.setHasRealBuilding(con.iLibrary, True)
+		constantinople.setHasRealBuilding(con.iMarket, True)
+		constantinople.setHasRealBuilding(con.iGrocer, True)
+		constantinople.setHasRealBuilding(con.iHarbor, True)
+		constantinople.setHasRealBuilding(con.iByzantineHippodrome, True)
+		constantinople.setHasRealBuilding(con.iHagiaSophia, True)
+		constantinople.setHasRealBuilding(con.iTheodosianWalls, True)
+		constantinople.setHasReligion(con.iChristianity, True, False, False)
+
+	def flip600ADByzantium(self):
+		BL = (64, 35)
+		TR = (76, 45)
+
+		self.convertSurroundingCities(iByzantium, BL, TR)
+		self.convertSurroundingPlotCulture(iByzantium, BL, TR)
+
+		BL = (59, 36)
+		TR = (61, 38)
+
+		self.convertSurroundingCities(iByzantium, BL, TR)
+		self.convertSurroundingPlotCulture(iByzantium, BL, TR)
 
 
         def clear600ADChina(self):
@@ -3383,6 +3421,11 @@ class RiseAndFall:
                 utils.makeUnit(con.iArabiaCamelarcher, iArabia, tCapitals[0][iArabia], 5)
                 utils.makeUnit(con.iWorker, iArabia, tCapitals[0][iArabia], 2)
 
+		utils.makeUnit(con.iPikeman, iByzantium, tCapitals[0][iByzantium], 2)
+		utils.makeUnit(con.iLongbowman, iByzantium, tCapitals[0][iByzantium], 3)
+		utils.makeUnit(con.iByzantineCataphract, iByzantium, tCapitals[0][iByzantium], 1)
+		#utils.makeUnit(con.iSettler, iByzantium, tCapitals[0][iByzantium], 1)
+
                 if ( pKhmer.isHuman() ):
                     utils.makeUnit(iSettler, iKhmer, tCapitals[0][iKhmer], 1)
                     utils.makeUnit(iWarrior, iKhmer, tCapitals[0][iKhmer], 1)
@@ -3691,44 +3734,44 @@ class RiseAndFall:
                 iCiv = iNative
                 teamNative.setHasTech(con.iHunting, True, iCiv, False, False)
                 teamNative.setHasTech(con.iArchery, True, iCiv, False, False)
-                iCiv = iCeltia #Byzantium
-                teamCeltia.setHasTech(con.iMining, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iMachinery, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iMysticism, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iMasonry, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iTheology, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                #teamCeltia.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iFishing, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iSailing, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iPottery, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iWriting, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                #teamCeltia.setHasTech(con.iGuilds, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iMathematics, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iConstruction, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iCurrency, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iHunting, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iArchery, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iLiterature, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iDrama, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iAesthetics, True, iCiv, False, False)
-                #teamCeltia.setHasTech(con.iEngineering, True, iCiv, False, False)
-                #teamCeltia.setHasTech(con.iMusic, True, iCiv, False, False)
-                #teamCeltia.setHasTech(con.iPhilosophy, True, iCiv, False, False)
-                teamCeltia.setHasTech(con.iCalendar, True, iCiv, False, False)
+                iCiv = iByzantium #Byzantium
+                teamByzantium.setHasTech(con.iMining, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iIronWorking, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iMachinery, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iMysticism, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iPolytheism, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iMasonry, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iPriesthood, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iMonotheism, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iTheology, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iMonarchy, True, iCiv, False, False)
+                #teamByzantium.setHasTech(con.iDivineRight, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iFishing, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iSailing, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iTheWheel, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iPottery, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iAgriculture, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iWriting, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iFeudalism, True, iCiv, False, False)
+                #teamByzantium.setHasTech(con.iGuilds, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iAlphabet, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iMathematics, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iConstruction, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iCurrency, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iHunting, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iArchery, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iLiterature, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iDrama, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iAesthetics, True, iCiv, False, False)
+                #teamByzantium.setHasTech(con.iEngineering, True, iCiv, False, False)
+                #teamByzantium.setHasTech(con.iMusic, True, iCiv, False, False)
+                #teamByzantium.setHasTech(con.iPhilosophy, True, iCiv, False, False)
+                teamByzantium.setHasTech(con.iCalendar, True, iCiv, False, False)
                 
                 
         def assignTechs( self, iCiv ):

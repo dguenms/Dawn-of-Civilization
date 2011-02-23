@@ -2424,7 +2424,7 @@ tIsActiveOnLateStart = (
 1,
 0,
 0,
-0, #Byzantium currently not active on late start
+1,
 1,
 1,
 1,
