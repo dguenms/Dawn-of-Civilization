@@ -3421,8 +3421,8 @@ class RiseAndFall:
                 utils.makeUnit(con.iArabiaCamelarcher, iArabia, tCapitals[0][iArabia], 5)
                 utils.makeUnit(con.iWorker, iArabia, tCapitals[0][iArabia], 2)
 
-		utils.makeUnit(con.iPikeman, iByzantium, tCapitals[0][iByzantium], 2)
-		utils.makeUnit(con.iLongbowman, iByzantium, tCapitals[0][iByzantium], 3)
+		utils.makeUnit(con.iSpearman, iByzantium, tCapitals[0][iByzantium], 2)
+		utils.makeUnit(con.iArcher, iByzantium, tCapitals[0][iByzantium], 3)
 		utils.makeUnit(con.iByzantineCataphract, iByzantium, tCapitals[0][iByzantium], 1)
 		#utils.makeUnit(con.iSettler, iByzantium, tCapitals[0][iByzantium], 1)
 

@@ -174,14 +174,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DN_GER06</Tag>
-		<English>German Council Republic</English>
+		<English>Free Socialist Republic of Germany</English>
 		<French>
 			<Text>R&#233;publique D&#233;mocratique Allemande</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Deutsche Räterepublik</Text>
+			<Text>Freie Sozialistische Republik Deutschland</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</German>

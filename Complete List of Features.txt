@@ -1,5 +1,5 @@
 RFC Dawn of Civilization
-Complete List of Features (as of version 1.63)
+Complete List of Features (as of version 1.7)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
@@ -21,20 +21,31 @@ GAME MECHANICS
   (basically the "favourite civic" feature per civ and per era)
 # added a war on spawn between Turkey and Arabia
 # doubled the chance of war on spawn between Arabia and Egypt
-# the Levant is considered European until Arabia spawns
-# hardcoded specific cities to be autorazed on conquest
+# removed continent boundaries to help the AI
+# some civilizations (Arabia, Mongolia, Turkey) fight their initial spawn wars longer
+# conqueror events automatically trigger war
+# AI conquerors now made to attack native cities immediately
+# civilizations cannot be vassals of too far away civs until the discovery of Astronomy
+# Fascist names now also with (Autocracy or Totalitarism) and no Parliament
+# New total wars on spawn: Rome on Greece, Persia on Babylonia and Persia
+# Implemented the "birth in capital" mechanics, where certain civilization flip the city on their spawn plot on spawn (currently only used for Byzantium)
+# reduced the intervals between early AI wars
 
 BALANCE
 # more Keshiks for Mongolia on spawn
-# Netherlands get a headstart on Astronomy
+# Phoenicia spawns a settler in Qart-Hadasht 820 BC (AI only)
+# England receives an extra settler to make up for the lost Inverness
 # lowered China's research costs in the ancient and classical era
 # increased "switch civic" and "switch religion" espionage mission costs
 # increased the Dutch tech speed by roughly 15%
+# removed the Dutch war on spawn with the Vikings
+# increase aggressiveness of Rome, Greece and Persia
+# Rome starts with Mathematics and has a larger starting army
+# less Barbarians in Europe before 300 AD, but more afterwards
+# Rome and Greece receive research penalties from the Renaissance onward
 
 INTERFACE
 # Great people births are displayed again
-# Phoenicia spawns a settler in Qart-Hadasht 820 BC (AI only)
-# England receives an extra settler to make up for the lost Inverness
 # added individual "Dawn of Man" texts for each civilization
 # the mouseover info box now displays tile stability in five categories:
 	# Core Area (dark green): no penalty, enemy cities here give a stability hit
@@ -43,6 +54,8 @@ INTERFACE
 	# Foreign Area (orange): penalty if number of controlled tiles exceeds a certain tolerance
 	# Foreign Core Area (red): like foreign area, but also indirect penalties because this tile is part of the core of another civ
 # removed embassies and corporation headquarters from the wonders civilopedia
+# added a message when the Roman or Mongol UPs trigger
+# slave revolts are now referred to as peasant revolts
 
 GRAPHICS
 # China has a light yellow color now (Zulu from BtS)
@@ -78,18 +91,24 @@ MAP
 # moved Massilia one tile west, Venice one tile east in the 600 AD scenario
 # wine and clams spawn in Savoy in 1100 AD
 # placed Adur Farnbag and a Zoroastrian temple in Sirajis in the 600 AD scenario
+# removed preplaced cities from Anatolia in the 3000 BC scenario, replaced them with more Barbarian spawns
 
 CIVILIZATIONS
 # Updated UP for Egypt: it now enables Monarchy, Serfdom and Pantheon
 # New UP for Japan: The Power of Honor - unit promotions are available 50% faster
 # New UP for England: The Power of Indirect Rule - city distance maintenance halved
 # New UP for Mongolia: The Power of the Horde - every captured city spawns Keshiks according to its size
+# New UP for Rome: The Power of Mandate Armies - the first declaration of war against a mediterranean civ spawns an army near one of their cities
 # The Vikings now spawn at Oslo instead of Nidaros/Trondheim
 # The Viking dynamic civilization names now change to Sweden after the Renaissance
 # The Khmer spawn with Angkor at the coast
 # The Khmer are referred to as Siam after the Renaissance
 # The Germans now spawn at Wien/Vienna
 # The Dutch now spawn in 1500 AD with appropriate techs and an adapted UHV
+# German dynamic names: "Free Socialist Republic of Germany" when communist, "German Democratic Republic" when vassal of Russia
+# The Turks now spawn with 3 missionaries and 0 settlers, but get 3 settlers later with their workers
+# The Mali now spawn with an Islamic missionary
+# The Mali are now much more reluctant to peacefully vassalize
 
 UHVs
 # First Chinese goal requires Confucian Academies (University UB) and Taoist Pagodas
@@ -125,6 +144,17 @@ NEW CIVILIZATIONS
 		# Be the first to discover Banking, Education, Radio and Fascism
 		# Build three universities by 1570 AD
 		# Control Greece, Libya and Ethiopia in 1930 AD
+# added playable Byzantium
+	# spawn in 330 AD in Constantinople (or from the start in the 600 AD scenario)
+	# Leaderhead: Justinian I (removed from Rome)
+	# city names and overlay maps adapted from Rome and Greece
+	# Unique Unit: Cataphract (Knight with +2 strength)
+	# Unique Building: Hippodrome (Theatre with more happiness from culture and horses)
+	# Unique Power: The Power of Byzantine Diplomacy - every city creates +2 espionage points per culture level
+	# Unique Historical Victory:
+		# Own 5000 gold in 1000 AD
+		# Make Constantinople the world's largest and most cultured city in 1200 AD
+		# Control three cities in the Balkans, Northern Africa and the Near East in 1450 AD
 
 UNITS
 # The Greek unique unit was renamed from Phalanx to Hoplite
@@ -140,6 +170,7 @@ UNITS
 # Camel Archers and Keshiks now require Feudalism, but not Vassalage
 # Cataphracts still require Machinery and no Vassalage
 # Longbowmen now require Guilds
+# Legions now receive +25% against axemen
 
 BUILDINGS
 # Monument was renamed Pagan Temple, expires with Divine Right and gives +1 happiness with the Pantheon civic (see "civics")

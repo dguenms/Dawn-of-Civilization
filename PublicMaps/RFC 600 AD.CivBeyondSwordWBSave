@@ -25519,7 +25519,7 @@ BeginPlot
 		UnitType=UNIT_WORKER, UnitOwner=28
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=28
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SPEARMAN, UnitOwner=28
@@ -27576,10 +27576,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=28
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=28
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit
 	BeginCity
 		CityOwner=28
@@ -27971,7 +27968,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=28
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit
 	BeginCity
 		CityOwner=28
@@ -28773,10 +28770,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=28
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=28
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit
 	BeginCity
 		CityOwner=28
