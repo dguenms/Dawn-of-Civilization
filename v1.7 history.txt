@@ -1,7 +1,7 @@
 # decreased China's inclination to research Education
 # Netherlands start with Paper and Astronomy
 # Netherlands start with two East Indiamen
-# German dynamic names: "German Democratic Republic" when vassal of Russia, "German Council Republic" when communist
+# German dynamic names: "German Democratic Republic" when vassal of Russia, "Free Socialist Republic of Germany" when communist
 # Viking inclination to found Haithabu lessened
 # assigned the proper building sounds to Protestant buildings and the Temple of Solomon
 # some civilizations (Arabia, Mongolia, Turkey) fight their initial spawn wars longer
@@ -17,7 +17,7 @@
 # civs cannot be vassals of too far away civs until the discovery of Astronomy
 # Reworded the first Chinese UHV
 # fixed the third Italian goal
-# slowed Italy's research speed, slightly increased inflation, city upkeep and civic upkeep
+# slowed down Italy's research speed, slightly increased inflation, city upkeep and civic upkeep
 # slightly buffed some of Netherlands' coefficients
 # fascist names now also with (Autocracy or Totalitarianism) and no Parliament
 # removed some city names from Italy's standard list that are also in the CityNameManager
@@ -33,7 +33,7 @@
 	# UB: Hippodrome
 	# UHV:	- Own 5000 gold in 1000 AD
 		- Make Constantinopolis the world's largest and most cultured city in 1200 AD
-		- Own three cities in Europe, Asia and Africa in 1450 AD
+		- Own three cities in the Balkans, Northern Africa and the Near East in 1450 AD
 # removed Justinian as a Roman leader
 # added Roman total war on spawn on Greece
 # added Persian total war on spawn on Babylonia and Phoenicia
