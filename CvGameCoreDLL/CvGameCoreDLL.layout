@@ -82,14 +82,14 @@
 	<File name="CvPlayerAI.h" open="0" top="0" tabpos="8">
 		<Cursor position="0" topLine="24" />
 	</File>
-	<File name="CvPlot.cpp" open="1" top="1" tabpos="9">
+	<File name="CvPlot.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="142981" topLine="6511" />
 	</File>
 	<File name="CvPlot.h" open="0" top="0" tabpos="0">
 		<Cursor position="553" topLine="543" />
 	</File>
-	<File name="CvRhyes.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="174250" topLine="1103" />
+	<File name="CvRhyes.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="2202" topLine="0" />
 	</File>
 	<File name="CvRhyes.h" open="1" top="0" tabpos="2">
 		<Cursor position="5706" topLine="13" />

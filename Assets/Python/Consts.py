@@ -989,7 +989,7 @@ tNormalAreasTL = (
 (20, 32), #Maya
 (64, 38), #Byzantium
 (57, 55), #Vikings
-(73, 30), #Arabia
+(72, 30), #Arabia
 (98, 26), #Khmer
 (49, 40), #Spain
 (51, 46), #France
