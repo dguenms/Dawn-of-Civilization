@@ -98,7 +98,7 @@ iNumReligions = con.iNumReligions
 #Buildings
 iTemple = con.iTemple
 iCathedral = con.iCathedral
-
+iMonastery = con.iMonastery
 
 
 iMongolianRadius = 4
@@ -273,6 +273,19 @@ class UniquePowers:
                                 city.setHasRealBuilding((iTemple + iStateReligion*4), True)
                         if (not city.hasBuilding(iCathedral + iStateReligion*4)):
                                 city.setHasRealBuilding((iCathedral + iStateReligion*4), True)
+
+			# Leoreth: now removes foreign religions and buildings (except holy cities) as well
+			for iReligion in range(7):
+				if iReligion == iStateReligion:
+					pass
+				if city.isHasReligion(iReligion) and not city.isHolyCity():
+					city.setHasReligion(iReligion, False, False, False)
+				if city.hasBuilding(iTemple + iReligion*4):
+					city.setHasRealBuilding((iTemple + iReligion*4), False)
+				if city.hasBuilding(iCathedral + iReligion*4):
+					city.setHasRealBuilding((iCathedral + iReligion*4), False)
+				if city.hasBuilding(iMonastery + iReligion*4):
+					city.setHasRealBuilding((iMonastery + iReligion*4), False)
                                         
                                     #converts other religions temples and cathedrals
 ##                                        for iReligionLoop in range(iNumReligions):

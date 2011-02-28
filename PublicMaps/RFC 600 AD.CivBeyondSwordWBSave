@@ -29519,6 +29519,16 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=29
+	EndUnit
+	BeginCity
+		CityOwner=29
+		CityName=Tisfun
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		Player29Culture=1
+	EndCity
 EndPlot
 BeginPlot
 	x=77,y=41

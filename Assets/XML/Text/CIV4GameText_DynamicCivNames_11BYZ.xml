@@ -150,16 +150,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DN_BYZ05</Tag>
-		<English>Byzantine Republic</English>
+		<English>Republic of Rhomania</English>
 		<French>
 			<Text>R&#233;publique F&#233;d&#233;rale Maya</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Byzantinische Republik:Byzantinische Republik:Byzantinische Republik</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>0:0:0</Plural>
+			<Text>Republik Rhomanien</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</German>
 		<Italian>
 			<Text>Repubblica Federale Maya</Text>
@@ -198,16 +198,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DN_BYZ07</Tag>
-		<English>Greater Byzantium</English>
+		<English>Despotate of Byzantium</English>
 		<French>
 			<Text>Junte Maya</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Groﬂbyzanz:Groﬂbyzanz:Groﬂbyzanz</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>0:0:0</Plural>
+			<Text>Despotat Byzanz</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</German>
 		<Italian>
 			<Text>Giunta Maya</Text>

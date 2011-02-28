@@ -4,3 +4,5 @@
 # renamed Alexandretta to Antiochia
 # rearranged resources in Anatolia (removed 1 wheat and 1 clam)
 # Bulgar, Cuman, Pecheneg barbarian spawns to challenge Byzantium to the west and north
+# Arabian UHV now erases non-state religions except holy cities
+# preplaced Tisfun/Ctesiphon/Baghdad in the 600 AD scenario
