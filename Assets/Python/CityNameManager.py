@@ -5369,6 +5369,8 @@ class CityNameManager:
 			#Phoenicia
 			elif sName == 'Sidon' or sName == 'Sydwn':
 				city.setName('Sayda', False)
+			elif sName == 'Tisfun' or sName == 'Ctesiphon':
+				city.setName('Baghdad', False)
 
                 elif (iNewOwner == iKhmer): 
                         if (sName == 'Malacca' or sName == 'Malakka' or sName == 'Malaca'):
@@ -7321,6 +7323,8 @@ class CityNameManager:
                                 city.setName('Rostochium', False)
                         elif (sName == 'Krakau' or sName == 'Cracovia'):
                                 city.setName('Krak&#243;w', False)
+			elif (sName == 'Al-Qahirah'):
+				city.setName('Cairo', False)
 
 
                 if sName == 'Inbhir Nis' and iNewOwner != iCeltia:
