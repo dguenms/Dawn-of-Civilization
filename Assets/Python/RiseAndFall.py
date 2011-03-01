@@ -819,13 +819,13 @@ class RiseAndFall:
 
 		if (iGameTurn == getTurnForYear(640)):		# Leoreth: moved to later (historicity, no conflict with Byzantine flip)
 			if (not gc.getPlayer(0).isPlayable()):   
-                                iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iArabia, (67, 30), (82, 38))
-                                self.convertSurroundingPlotCulture(iArabia, tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 36))
-                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 36), iArabia, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
-                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 36), iArabia, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 36), iArabia, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+                                iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iArabia, (67, 30), (82, 40))
+                                self.convertSurroundingPlotCulture(iArabia, tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 40))
+                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 40), iArabia, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
+                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 40), iArabia, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 40), iArabia, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 				if (iNumHumanCitiesToConvert > 0):
-                                	self.flipPopup(iArabia, (67,30), (82,38))
+                                	self.flipPopup(iArabia, (67,30), (82,40))
                                 #teamArabia.setHasTech(con.iDivineRight, True, iArabia, False, False)
 
                 #kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs

@@ -2322,10 +2322,18 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		break;
 	case ROME:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))    // Leoreth - not sure what this does, remains unchanged for Italy
-		{
-			return 0;
-		}
+        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+        {
+            if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
+            {
+                return 0;
+            }
+        }else{
+            if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -2))    // Renaissance Italy
+            {
+                return 0;
+            }
+        }
 		break;
 	case JAPAN:
 		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
