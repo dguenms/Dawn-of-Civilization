@@ -6245,7 +6245,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded /= 100;
 			break;
         case BYZANTIUM:
-            iProductionNeeded *= 95;
+            iProductionNeeded *= 115;
             iProductionNeeded /= 100;
 		case VIKING:
 			iProductionNeeded *= 85;
@@ -6485,7 +6485,7 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded /= 100;
 				break;
             case BYZANTIUM:
-                iProductionNeeded *= 90;
+                iProductionNeeded *= 110;
                 iProductionNeeded /= 100;
                 break;
 			case VIKING:
@@ -6622,7 +6622,7 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded /= 100;
 				break;
             case BYZANTIUM:
-                iProductionNeeded *= 90;
+                iProductionNeeded *= 110;
                 iProductionNeeded /= 100;
                 break;
 			case VIKING:
@@ -8753,7 +8753,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			result = (iThreshold*100/100);
 			break;
         case BYZANTIUM:
-            result = (iThreshold*90/100);
+            result = (iThreshold*120/100);
             break;
 		case VIKING:
 			result = (iThreshold*90/100);
@@ -22368,7 +22368,7 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold /= 100;
 			break;
         case BYZANTIUM:
-            iThreshold *= 76;
+            iThreshold *= 80;
             iThreshold /= 100;
             break;
 		case VIKING:

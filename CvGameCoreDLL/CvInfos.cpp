@@ -10301,7 +10301,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 			return researchPercent*115/100;
 		//Rhye - end UP
     case BYZANTIUM:
-        return researchPercent*115/100;
+        return researchPercent*135/100;
 	case VIKING:
 		return researchPercent*8/10;
 	case GERMANY:
@@ -10393,7 +10393,7 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 	case MAYA:
 		return result*10/10;
     case BYZANTIUM:
-        return result*7/10;
+        return result*8/10;
 	case VIKING:
 		return result*7/10;
 	case ARABIA:
@@ -10478,7 +10478,7 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 	case MAYA:
 		return result*115/100;
     case BYZANTIUM:
-        return result*7/10;
+        return result*8/10;
 	case VIKING:
 		return result*75/100;
 	case ARABIA:

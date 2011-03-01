@@ -7205,7 +7205,7 @@ class CityNameManager:
                                 city.setName('Ilium', False)
                         elif (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
                                 city.setName('Alexandria', False)
-                        elif sName == 'Tisfun':
+                        elif sName == 'Tisfun' or sName == 'Baghdad':
                                 city.setName('Ctesiphon', False)
                         elif (sName == 'Massalia' or sName == 'Marseille' or sName == 'Marsella' or sName == 'Marsiliya'):
                                 city.setName('Massilia', False)

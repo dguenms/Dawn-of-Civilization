@@ -266,18 +266,9 @@ class UniquePowers:
         def arabianUP(self, city):
                 pArabia = gc.getPlayer(iArabia)
                 iStateReligion = pArabia.getStateReligion()
-                if (iStateReligion >= 0):
-                        if (not city.isHasReligion(iStateReligion)):
-                                city.setHasReligion(iStateReligion, True, True, False)
-                        if (not city.hasBuilding(iTemple + iStateReligion*4)):
-                                city.setHasRealBuilding((iTemple + iStateReligion*4), True)
-                        if (not city.hasBuilding(iCathedral + iStateReligion*4)):
-                                city.setHasRealBuilding((iCathedral + iStateReligion*4), True)
 
-			# Leoreth: now removes foreign religions and buildings (except holy cities) as well
-			for iReligion in range(7):
-				if iReligion == iStateReligion:
-					pass
+                if (iStateReligion >= 0):
+			for iReligion in range(7):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
 				if city.isHasReligion(iReligion) and not city.isHolyCity():
 					city.setHasReligion(iReligion, False, False, False)
 				if city.hasBuilding(iTemple + iReligion*4):
@@ -286,6 +277,15 @@ class UniquePowers:
 					city.setHasRealBuilding((iCathedral + iReligion*4), False)
 				if city.hasBuilding(iMonastery + iReligion*4):
 					city.setHasRealBuilding((iMonastery + iReligion*4), False)
+
+                        if (not city.isHasReligion(iStateReligion)):
+                                city.setHasReligion(iStateReligion, True, True, False)
+                        if (not city.hasBuilding(iTemple + iStateReligion*4)):
+                                city.setHasRealBuilding((iTemple + iStateReligion*4), True)
+                        if (not city.hasBuilding(iCathedral + iStateReligion*4)):
+                                city.setHasRealBuilding((iCathedral + iStateReligion*4), True)
+
+
                                         
                                     #converts other religions temples and cathedrals
 ##                                        for iReligionLoop in range(iNumReligions):

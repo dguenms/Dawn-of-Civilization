@@ -7518,7 +7518,7 @@ int CvUnit::workRate(bool bMax) const
 		iRate /= 100;
 		break;
     case BYZANTIUM:
-        iRate *= 110;
+        iRate *= 90;
         iRate /= 100;
         break;
 	case VIKING:
@@ -8645,7 +8645,7 @@ int CvUnit::experienceNeeded() const
 
 	CyArgsList argsList;
 	argsList.add(getLevel());	// pass in the units level
-	argsList.add(getOwnerINLINE());	// pass in the units 
+	argsList.add(getOwnerINLINE());	// pass in the units
 /*************************************************************************************************/
 /**	SPEEDTWEAK (Block Python) Sephi                                               	            **/
 /**	If you want to allow modmodders to enable this Callback, see CvCity::cancreate for example  **/
@@ -8653,14 +8653,14 @@ int CvUnit::experienceNeeded() const
 /**
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "getExperienceNeeded", argsList.makeFunctionArgs(),&lExperienceNeeded);
 **/
-	//this code follow the same logic as the one in cvgameutils.py 
+	//this code follow the same logic as the one in cvgameutils.py
 	lExperienceNeeded = getLevel()*getLevel() + 1;
 
 	int	iModifier = GET_PLAYER(getOwnerINLINE()).getLevelExperienceModifier();
 	if (0 != iModifier)
 	{
 		lExperienceNeeded += (lExperienceNeeded * iModifier + 99) / 100;   // ROUND UP
-	}			
+	}
 /*************************************************************************************************/
 /**	END	                                        												**/
 /*************************************************************************************************/

@@ -22601,7 +22601,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=28
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit
 	BeginCity
 		CityOwner=28
@@ -24227,9 +24227,6 @@ BeginPlot
 	PlotType=2
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=28
-	EndUnit	
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit
 	BeginCity
 		CityOwner=28
@@ -25477,10 +25474,7 @@ BeginPlot
 	PlotType=2
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=28
-	EndUnit	
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=28
-	EndUnit	
+	EndUnit
 	BeginCity
 		CityOwner=28
 		CityName=Alexandria
@@ -26360,7 +26354,7 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=28
+		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit	
 	BeginCity
 		CityOwner=28

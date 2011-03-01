@@ -1,8 +1,13 @@
 # reduced Constantinople's starting culture
-# Arabia now flips Jerusalem, Memphis and Alexandria in 640 AD
+# Arabia now flips Jerusalem, Memphis, Alexandria and Tisfun in 640 AD
 # Byzantine 600 AD spawn date now properly displayed
 # renamed Alexandretta to Antiochia
 # rearranged resources in Anatolia (removed 1 wheat and 1 clam)
 # Bulgar, Cuman, Pecheneg barbarian spawns to challenge Byzantium to the west and north
 # Arabian UHV now erases non-state religions except holy cities
 # preplaced Tisfun/Ctesiphon/Baghdad in the 600 AD scenario
+# made Justinian less military inclined
+# nerfed several Byzantine coefficients, most prominently research, GP rate, production, city upkeep
+# reduced Byzantine likeliness to train settlers or offensive units
+# changed Cataphracts to strength 9, +25% against melee
+# removed Byzantine spearmen in 600 AD Africa
