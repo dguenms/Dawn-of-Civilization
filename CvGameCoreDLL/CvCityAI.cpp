@@ -2370,6 +2370,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+        aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
 	case GREECE:
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
@@ -2388,12 +2389,18 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 				aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		break;
 	case ROME:      // leave unit AI unchanged so far
-		aiUnitAIVal[UNITAI_SETTLE] *= 2;
-		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
-		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
-		aiUnitAIVal[UNITAI_WORKER] *= 2;
-		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
-		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
+        if (!GET_PLAYER((PlayerTypes)getOwnerINLINE()).isReborn())
+        {
+            aiUnitAIVal[UNITAI_SETTLE] *= 2;
+            //aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
+            aiUnitAIVal[UNITAI_EXPLORE] *= 2;
+            aiUnitAIVal[UNITAI_WORKER] *= 2;
+            aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
+            aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
+        }else{
+            aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
+            aiUnitAIVal[UNITAI_COUNTER] *= 2;
+        }
 		break;
 	case JAPAN:
 		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)INDUSTRIALISM))

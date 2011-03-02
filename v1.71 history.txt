@@ -11,3 +11,4 @@
 # reduced Byzantine likeliness to train settlers or offensive units
 # changed Cataphracts to strength 9, +25% against melee
 # removed Byzantine spearmen in 600 AD Africa
+# reduced Babylonian likeliness to train settlers
