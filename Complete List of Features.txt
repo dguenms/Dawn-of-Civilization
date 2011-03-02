@@ -27,7 +27,7 @@ GAME MECHANICS
 # AI conquerors now made to attack native cities immediately
 # civilizations cannot be vassals of too far away civs until the discovery of Astronomy
 # Fascist names now also with (Autocracy or Totalitarism) and no Parliament
-# New total wars on spawn: Rome on Greece, Persia on Babylonia and Persia
+# New total wars on spawn: Rome on Greece, Persia on Babylonia and Phoenicia
 # Implemented the "birth in capital" mechanics, where certain civilization flip the city on their spawn plot on spawn (currently only used for Byzantium)
 # reduced the intervals between early AI wars
 
