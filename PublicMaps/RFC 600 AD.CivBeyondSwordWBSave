@@ -21832,7 +21832,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=37
-	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	RouteType=ROUTE_ROAD
@@ -22603,6 +22602,9 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=28
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
+	EndUnit
 	BeginCity
 		CityOwner=28
 		CityName=Tripolis
@@ -23023,7 +23025,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=36
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -24226,7 +24227,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=28
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit
 	BeginCity
 		CityOwner=28
@@ -25473,7 +25474,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=28
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit
 	BeginCity
 		CityOwner=28
@@ -26355,6 +26356,9 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=28
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=28
 	EndUnit	
 	BeginCity
 		CityOwner=28
