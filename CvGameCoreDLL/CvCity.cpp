@@ -3558,7 +3558,7 @@ UnitTypes CvCity::getConscriptUnit() const
 /*************************************************************************************************/
 /**	END	                                        												**/
 /*************************************************************************************************/
-	
+
 	if (lConscriptUnit != -1)
 	{
 		eBestUnit = ((UnitTypes)lConscriptUnit);
@@ -7187,16 +7187,12 @@ int CvCity::getFreeSpecialist() const
 {
     // Leoreth: Italian UP, only until the industrial era
     int iItalianSpecialists = 0;
-    int iI;
 
     if (getOwner() == ROME && GET_PLAYER((PlayerTypes)ROME).isReborn() && GET_PLAYER((PlayerTypes)ROME).getCurrentEra() < 4)
     {
-        for (iI = HEROICEPIC; iI < NUM_WONDERS; iI++)
+        if (findPopulationRank() <= 3)
         {
-            if (hasBuilding((BuildingTypes)iI))
-            {
-                iItalianSpecialists++;
-            }
+            iItalianSpecialists++;
         }
     }
 
@@ -12308,7 +12304,7 @@ void CvCity::doMeltdown()
 	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
 	long lResult=0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "doMeltdown", argsList.makeFunctionArgs(), &lResult);
-	delete pyCity;	// python fxn must not hold on to this pointer 
+	delete pyCity;	// python fxn must not hold on to this pointer
 	if (lResult == 1)
 	{
 		return;
