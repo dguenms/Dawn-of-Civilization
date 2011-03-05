@@ -629,7 +629,7 @@ class RiseAndFall:
 		
 		CyGlobalContext().getMap().plot(plot[0], plot[1]).setCulture(iByzantium, 250, True)
 
-		constantinople.setName("Constantinopolis", False)
+		constantinople.setName("Konstantinoupolis", False)
 		constantinople.setPopulation(4)
 		constantinople.setHasRealBuilding(con.iWalls, True)
 		constantinople.setHasRealBuilding(con.iCastle, True)

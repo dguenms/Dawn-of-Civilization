@@ -3951,2973 +3951,2973 @@ class CityNameManager:
                 if (iNewOwner == iEgypt):                                                        
                         if (sName == 'Yerushalayim' or sName == 'Aelia Capitolina' or sName == 'Urushalim' or sName == 'Hierousalem'):
                                 city.setName('Aarru-Hetep', False)
-                        elif (sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
+                        if (sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
                                 city.setName('Al-Quds', False)
-                        elif sName == 'Qidshu':
+                        if sName == 'Qidshu':
                                 city.setName('Kadesh', False)
-                        elif sName == 'Elath':
+                        if sName == 'Elath':
                                 city.setName('Etsion-Gaber', False)
-                        elif (sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bingazi' or sName == 'Benghazi'):
+                        if (sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bingazi' or sName == 'Benghazi'):
                                 city.setName('Bangazi', False)
-                        elif (sName == 'Khartoum' or sName == 'Hartum'):
+                        if (sName == 'Khartoum' or sName == 'Hartum'):
                                 city.setName('Al-Hartum', False)
-                        elif (sName == 'Al-Iskandariya' or sName == 'Alexandria' or sName == 'Iskenderiye'):
+                        if (sName == 'Al-Iskandariya' or sName == 'Alexandria' or sName == 'Iskenderiye'):
                                 city.setName('Eskendereyya', False)
-                        elif (sName == 'Cairo' or sName == 'Al-Qahirah' or sName == 'Kahire' or sName == 'Kairo'):
+                        if (sName == 'Cairo' or sName == 'Al-Qahirah' or sName == 'Kahire' or sName == 'Kairo'):
                                 city.setName('El-Qahirah', False)
-                        elif (sName == 'Al-Kharijah'):
+                        if (sName == 'Al-Kharijah'):
                                 city.setName('El-Kharijah', False)
-                        elif (sName == 'Al-Uqsur' or sName == 'Luksor' or sName == 'Luxor'):
+                        if (sName == 'Al-Uqsur' or sName == 'Luksor' or sName == 'Luxor'):
                                 city.setName('El-Uqsur', False)
-                        elif (sName == 'Al-Hartum'):
+                        if (sName == 'Al-Hartum'):
                                 city.setName('El-Hartum', False)
-                        elif (sName == 'Al-Jawf'):
+                        if (sName == 'Al-Jawf'):
                                 city.setName('El-Jawf', False)
-                        elif sName == 'Serabit Al-Khadem':
+                        if sName == 'Serabit Al-Khadem':
                                 city.setName('Serabit El-Khadem', False)
-                        elif (sName == 'Arae' or sName == 'Arae Philaenorum'):
+                        if (sName == 'Arae' or sName == 'Arae Philaenorum'):
                                 city.setName('Ras Lanuf', False)
-                        elif (sName == 'Anabucis' or sName == 'Automala' or sName == 'Al-Uqaylah'):
+                        if (sName == 'Anabucis' or sName == 'Automala' or sName == 'Al-Uqaylah'):
                                 city.setName('El Agheila', False)
-			elif (sName == 'Kition' or sName == 'Citium'):
+			if (sName == 'Kition' or sName == 'Citium'):
 				city.setName('Kittim', False)
-			elif sName == 'Damietta' or sName == 'Domyat' or sName == 'Dimyat':
+			if sName == 'Damietta' or sName == 'Domyat' or sName == 'Dimyat':
 				city.setName('Tamiat', False)
                                 
-                elif (iNewOwner == iIndia):       
+                if (iNewOwner == iIndia):       
                         if sName == 'Madras':
                                 city.setName('Chennai', False)
-                        elif sName == 'Coedeloer':
+                        if sName == 'Coedeloer':
                                 city.setName('Cuddalore', False)
-                        elif (sName == 'Tranquebar' or sName == 'Trankebar'):
+                        if (sName == 'Tranquebar' or sName == 'Trankebar'):
                                 city.setName('Tharangambadi', False)
-                        elif sName == 'Frederiksnagore':
+                        if sName == 'Frederiksnagore':
                                 city.setName('Serampore', False)
-                        elif (sName == 'Pondicherry' or sName == 'Pondich&#233;ry'):
+                        if (sName == 'Pondicherry' or sName == 'Pondich&#233;ry'):
                                 city.setName('Puducherry', False)
-                        elif (sName == 'Bombay' or sName == 'Bombaim' or sName == 'Bonbei' or sName == 'Munbai'):
+                        if (sName == 'Bombay' or sName == 'Bombaim' or sName == 'Bonbei' or sName == 'Munbai'):
                                 city.setName('Mumbai', False)
-                        elif (sName == 'Debal' or sName == 'Mirat ul Memalik' or sName == 'Barbarikon' or sName == 'Barbaricum'):
+                        if (sName == 'Debal' or sName == 'Mirat ul Memalik' or sName == 'Barbarikon' or sName == 'Barbaricum'):
                                 city.setName('Kolachi', False)
-                        elif (sName == 'New Delhi' or sName == 'Delhi' or sName == 'Deli'):
+                        if (sName == 'New Delhi' or sName == 'Delhi' or sName == 'Deli'):
                                 city.setName('Dilli', False)
-                        elif (sName == 'Azimabad' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Kashijou'):
+                        if (sName == 'Azimabad' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Kashijou'):
                                 city.setName('Patna', False) #Pataliputra
-                        elif sName == 'Dacca':
+                        if sName == 'Dacca':
                                 city.setName('Dhaka', False)
                         #Khmer
-                        elif sName == 'Da Nang':
+                        if sName == 'Da Nang':
                                 city.setName('Indrapura', False)
-                        elif sName == 'Qui Nhon':
+                        if sName == 'Qui Nhon':
                                 city.setName('Vijaya', False)
-                        elif sName == 'Phan Rang':
+                        if sName == 'Phan Rang':
                                 city.setName('Panduranga', False)
-                        elif sName == 'Nha Trang':
+                        if sName == 'Nha Trang':
                                 city.setName('Kauthara', False)
 
-                elif (iNewOwner == iChina): 
+                if (iNewOwner == iChina): 
                         if (sName == 'Khanbaliq' or sName == 'Pekin' or sName == 'Hokkin'):
                                 city.setName('Beijing', False)
-                        elif sName == 'Shinkyo':
+                        if sName == 'Shinkyo':
                                 city.setName('Changchun', False)
-                        elif (sName == 'Chach' or sName == 'Shash' or sName == 'Tashkent' or sName == 'Binkath'):
+                        if (sName == 'Chach' or sName == 'Shash' or sName == 'Tashkent' or sName == 'Binkath'):
                                 city.setName('Cheshih', False)
-                        elif (sName == 'Seoul' or sName == 'Hanseong' or sName == 'Keijou' or sName == 'Seul'):
+                        if (sName == 'Seoul' or sName == 'Hanseong' or sName == 'Keijou' or sName == 'Seul'):
                                 city.setName('Hancheng', False)
-                        elif sName == 'Port Edward':
+                        if sName == 'Port Edward':
                                 city.setName('Weihai', False)
-                        elif (sName == 'Cant&#227;o' or sName == 'Canton' or sName == 'Koushuu'):
+                        if (sName == 'Cant&#227;o' or sName == 'Canton' or sName == 'Koushuu'):
                                 city.setName('Guangzhou', False)
-                        elif (sName == 'Laoag' or sName == 'Raoagu'):
+                        if (sName == 'Laoag' or sName == 'Raoagu'):
                                 city.setName('Laowo', False)
-                        elif (sName == 'Vladivostok' or sName == 'Urajio' or sName == 'Port May'):
+                        if (sName == 'Vladivostok' or sName == 'Urajio' or sName == 'Port May'):
                                 city.setName('Fuladiwosituoke', False)
-                        elif (sName == 'Singapura' or sName == 'Singapur' or sName == 'Singapore' or sName == 'Shounantou'):
+                        if (sName == 'Singapura' or sName == 'Singapur' or sName == 'Singapore' or sName == 'Shounantou'):
                                 city.setName('Xinjiapo', False)
-                        elif (sName == 'Mukden' or sName == "Shin'you"):
+                        if (sName == 'Mukden' or sName == "Shin'you"):
                                 city.setName('Shenyang', False)
-                        elif (sName == 'Dilli' or sName == 'Delhi' or sName == 'New Delhi'):
+                        if (sName == 'Dilli' or sName == 'Delhi' or sName == 'New Delhi'):
                                 city.setName('Deli', False)
-                        elif (sName == 'Macao' or sName == 'Macau' or sName == 'Makao'):
+                        if (sName == 'Macao' or sName == 'Macau' or sName == 'Makao'):
                                 city.setName('Aomen', False)
-                        elif (sName == 'Hong Kong' or sName == 'Honkon' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Hong Kong' or sName == 'Honkon' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Xianggang', False)
-                        elif (sName == 'Takao' or sName == 'Kaohsiung'):
+                        if (sName == 'Takao' or sName == 'Kaohsiung'):
                                 city.setName('Gaoxiong', False)
-                        elif (sName == 'Taihoku'):
+                        if (sName == 'Taihoku'):
                                 city.setName('Taibei', False)
-                        elif (sName == "Dal'nij" or sName == 'Dairen'):
+                        if (sName == "Dal'nij" or sName == 'Dairen'):
                                 city.setName('Dalian', False)
-                        elif (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Roma'):
+                        if (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Roma'):
                                 city.setName('Daqin', False)
-                        elif (sName == 'Shanhai'):
+                        if (sName == 'Shanhai'):
                                 city.setName('Shanghai', False)
-                        elif (sName == 'Chichiharu'):
+                        if (sName == 'Chichiharu'):
                                 city.setName('Qiqihaer', False)
-                        elif (sName == 'Fukushuu'):
+                        if (sName == 'Fukushuu'):
                                 city.setName('Fuzhou', False)
-                        elif (sName == 'Seitou' or sName == 'Tsingtau'):
+                        if (sName == 'Seitou' or sName == 'Tsingtau'):
                                 city.setName('Qingdao', False)
-                        elif (sName == 'Chonjin'):
+                        if (sName == 'Chonjin'):
                                 city.setName('Chongjin', False)
-                        elif (sName == 'Uonsan' or sName == 'Genzan'):
+                        if (sName == 'Uonsan' or sName == 'Genzan'):
                                 city.setName('Wonsan', False)
-                        elif (sName == 'Kinshuu' or sName == "Czin'chzhou"):
+                        if (sName == 'Kinshuu' or sName == "Czin'chzhou"):
                                 city.setName('Jinzhou', False)
-                        elif (sName == 'Kuishuu'):
+                        if (sName == 'Kuishuu'):
                                 city.setName('Hangzhou', False)
-                        elif (sName == 'Nankin'):
+                        if (sName == 'Nankin'):
                                 city.setName('Nanjing', False)
-                        elif (sName == 'Kaihou'):
+                        if (sName == 'Kaihou'):
                                 city.setName('Kaifeng', False)
-                        elif (sName == 'Anyou'):
+                        if (sName == 'Anyou'):
                                 city.setName('Anyang', False)
-                        elif (sName == 'Kyokufu'):
+                        if (sName == 'Kyokufu'):
                                 city.setName('Qufu', False)
-                        elif (sName == 'Nanshou'):
+                        if (sName == 'Nanshou'):
                                 city.setName('Nanchang', False)
-                        elif (sName == 'Heihouku'):
+                        if (sName == 'Heihouku'):
                                 city.setName('Pingfang', False)
-                        elif (sName == 'Seian'):
+                        if (sName == 'Seian'):
                                 city.setName("Xi'an", False)
-                        elif (sName == 'Rakuyou'):
+                        if (sName == 'Rakuyou'):
                                 city.setName('Luoyang', False)
-                        elif (sName == 'Chousa'):
+                        if (sName == 'Chousa'):
                                 city.setName('Changsha', False)
-                        elif (sName == 'Jousai'):
+                        if (sName == 'Jousai'):
                                 city.setName('Chongqing', False)
-                        elif (sName == 'Kyou'):
+                        if (sName == 'Kyou'):
                                 city.setName('Guiyang', False)
-                        elif (sName == 'Nannei'):
+                        if (sName == 'Nannei'):
                                 city.setName('Nannei', False)
-                        elif (sName == 'Konmei'):
+                        if (sName == 'Konmei'):
                                 city.setName('Kunming', False)
-                        elif (sName == 'Ranshuu'):
+                        if (sName == 'Ranshuu'):
                                 city.setName('Lanzhou', False)
-                        elif (sName == 'Anzan'):
+                        if (sName == 'Anzan'):
                                 city.setName('Anshan', False)
-                        elif (sName == 'Seito'):
+                        if (sName == 'Seito'):
                                 city.setName('Changdu', False)
-                        elif (sName == 'Bukan'):
+                        if (sName == 'Bukan'):
                                 city.setName('Wuhan', False)
-                        elif (sName == 'Hakuniuu'):
+                        if (sName == 'Hakuniuu'):
                                 city.setName('Hegang', False)
-                        elif (sName == 'Botankou' or sName == "Mudan'czjan"):
+                        if (sName == 'Botankou' or sName == "Mudan'czjan"):
                                 city.setName('Mudanjiang', False)
-                        elif (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Azimabad' or sName == 'Kashijou'):
+                        if (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Azimabad' or sName == 'Kashijou'):
                                 city.setName('Huazhicheng', False)
-                        elif (sName == 'Tsuuryou'):
+                        if (sName == 'Tsuuryou'):
                                 city.setName('Tungliao', False)
-                        elif (sName == 'Goshuu'):
+                        if (sName == 'Goshuu'):
                                 city.setName('Wuzhow', False)
-                        elif (sName == 'Shunsen' or sName == "Chunchkhon"):
+                        if (sName == 'Shunsen' or sName == "Chunchkhon"):
                                 city.setName('Chuncheon', False)
-                        elif (sName == 'Fuzan'):
+                        if (sName == 'Fuzan'):
                                 city.setName('Pusan', False)
-                        elif (sName == 'Hakuryoku' or sName == 'Khabarovsk'):
+                        if (sName == 'Hakuryoku' or sName == 'Khabarovsk'):
                                 city.setName('Boli', False)
-                        elif (sName == 'Choukakou'):
+                        if (sName == 'Choukakou'):
                                 city.setName('Zhangjiakou', False)
-                        elif (sName == 'Nekka'):
+                        if (sName == 'Nekka'):
                                 city.setName('Jehol', False)
-                        elif (sName == 'Hairaru' or sName == 'Hulun'):
+                        if (sName == 'Hairaru' or sName == 'Hulun'):
                                 city.setName('Hailaer', False)
-                        elif (sName == 'Heijo' or sName == "Pkhen'jan"):
+                        if (sName == 'Heijo' or sName == "Pkhen'jan"):
                                 city.setName('Pyongyang', False)
                         #Japan
-                        elif (sName == 'Oosaka'):
+                        if (sName == 'Oosaka'):
                                 city.setName('Daban', False)
-                        elif (sName == 'Edo' or sName == 'Toukyou' or sName == 'Tokio'):
+                        if (sName == 'Edo' or sName == 'Toukyou' or sName == 'Tokio'):
                                 city.setName('Jianghu', False)
-                        elif (sName == 'Yokohama'):
+                        if (sName == 'Yokohama'):
                                 city.setName('Hengbin', False)
-                        elif (sName == 'Nagoya'):
+                        if (sName == 'Nagoya'):
                                 city.setName('Mingguwu', False)
-                        elif (sName == 'Sapporo'):
+                        if (sName == 'Sapporo'):
                                 city.setName('Zahuang', False)
-                        elif (sName == 'Kyouto' or sName == "Kioto"):
+                        if (sName == 'Kyouto' or sName == "Kioto"):
                                 city.setName('Jingdu', False)
-                        elif (sName == 'Niigata'):
+                        if (sName == 'Niigata'):
                                 city.setName('Xinxi', False)
-                        elif (sName == 'Kushiro'):
+                        if (sName == 'Kushiro'):
                                 city.setName('Chuanlu', False)
-                        elif (sName == 'Kagoshima' or sName == "Kagosima"):
+                        if (sName == 'Kagoshima' or sName == "Kagosima"):
                                 city.setName("Lu'erdao", False)
-                        elif (sName == 'Akita'):
+                        if (sName == 'Akita'):
                                 city.setName('Qiutian', False)
-                        elif (sName == 'Hiroshima'):
+                        if (sName == 'Hiroshima'):
                                 city.setName('Guangdao', False)
-                        elif (sName == 'Nagasaki'):
+                        if (sName == 'Nagasaki'):
                                 city.setName('Changqi', False)
-                        elif (sName == 'Fukuoka'):
+                        if (sName == 'Fukuoka'):
                                 city.setName('Fugang', False)
-                        elif (sName == 'Hakata'):
+                        if (sName == 'Hakata'):
                                 city.setName('Boduo', False)
-                        elif (sName == 'Aomori'):
+                        if (sName == 'Aomori'):
                                 city.setName('Qingsen', False)
-                        elif (sName == 'Toyohara'):
+                        if (sName == 'Toyohara'):
                                 city.setName('Fengyuan', False)
-                        elif (sName == 'Matsuyama'):
+                        if (sName == 'Matsuyama'):
                                 city.setName('Songshan', False)
-                        elif (sName == 'Nagano'):
+                        if (sName == 'Nagano'):
                                 city.setName('Changye', False)
-                        elif (sName == 'Sendai'):
+                        if (sName == 'Sendai'):
                                 city.setName('Xiantai', False)
-                        elif (sName == 'Nara'):
+                        if (sName == 'Nara'):
                                 city.setName('Nailiang', False)
                         #Khmer
-                        elif sName == 'Indrapura':
+                        if sName == 'Indrapura':
                                 city.setName('Da Nang', False)
-                        elif sName == 'Vijaya':
+                        if sName == 'Vijaya':
                                 city.setName('Qui Nhon', False)
-                        elif sName == 'Panduranga':
+                        if sName == 'Panduranga':
                                 city.setName('Phan Rang', False)
-                        elif sName == 'Kauthara':
+                        if sName == 'Kauthara':
                                 city.setName('Nha Trang', False)
 
-                elif (iNewOwner == iBabylonia): 
+                if (iNewOwner == iBabylonia): 
                         if (sName == 'Shush' or sName == 'Seleukeia Susiana' or sName == 'Seleucia ad Eulaeum' or sName == 'Susa'):
                                 city.setName('Shushan', False)
-                        elif sName == 'Kadesh':
+                        if sName == 'Kadesh':
                                 city.setName('Qidshu', False)
-                        elif sName == 'Etsion-Gaber':
+                        if sName == 'Etsion-Gaber':
                                 city.setName('Elath', False)
-                        elif sName == 'Bagdat':
+                        if sName == 'Bagdat':
                                 city.setName('Baghdad', False)
                         if (sName == 'Yerushalayim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Hierousalem' or sName == 'Hierusalem'):
                                 city.setName('Urushalim', False)
-                        elif (sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
+                        if (sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
                                 city.setName('Al-Quds', False)
-                        elif (sName == 'Babirush' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babylon' or sName == 'Babili' or sName == 'Vavilon'):
+                        if (sName == 'Babirush' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babylon' or sName == 'Babili' or sName == 'Vavilon'):
                                 city.setName('Babil&#251;', False)
 
-                elif (iNewOwner == iPersia): 
+                if (iNewOwner == iPersia): 
                         if (sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Hierousalem'):
                                 city.setName('Yerushalayim', False)
-                        elif (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
+                        if (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
                                 city.setName('Qods', False)
-                        elif (sName == 'Shushan' or sName == 'Seleukeia Susiana' or sName == 'Seleucia ad Eulaeum' or sName == 'Susa'):
+                        if (sName == 'Shushan' or sName == 'Seleukeia Susiana' or sName == 'Seleucia ad Eulaeum' or sName == 'Susa'):
                                 city.setName('Shush', False)
-                        elif (sName == 'Marakanda' or sName == 'Samarkand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
+                        if (sName == 'Marakanda' or sName == 'Samarkand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 city.setName('Samarqand', False)
-                        elif sName == 'Rhagae':
+                        if sName == 'Rhagae':
                                 city.setName('Ragha', False)
-                        elif sName == 'Persepolis':
+                        if sName == 'Persepolis':
                                 city.setName('Parsa', False)
-                        elif sName == 'Pasargadae':
+                        if sName == 'Pasargadae':
                                 city.setName('Pathragada', False)
-                        elif sName == 'Ecbatana':
+                        if sName == 'Ecbatana':
                                 city.setName('Hangmatana', False)
-                        elif sName == 'Bactra':
+                        if sName == 'Bactra':
                                 city.setName('Bhakri', False)
-                        elif sName == 'Ctesiphon':
+                        if sName == 'Ctesiphon':
                                 city.setName('Tisfun', False)
-                        elif sName == 'Zadrakarta':
+                        if sName == 'Zadrakarta':
                                 city.setName('Tureng Tepe', False)
-                        elif sName == 'Hekatompilos':
+                        if sName == 'Hekatompilos':
                                 city.setName('Sauloe', False)
-                        elif sName == 'Dur Untash':
+                        if sName == 'Dur Untash':
                                 city.setName('Chogha Zanbil', False)
-                        elif sName == 'Tahran':
+                        if sName == 'Tahran':
                                 city.setName('Tehran', False)	
-                        elif (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babylon' or sName == 'Babili' or sName == 'Vavilon'):
+                        if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babylon' or sName == 'Babili' or sName == 'Vavilon'):
                                 city.setName('Babirush', False)
-                        elif (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Kashijou'):
+                        if (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Kashijou'):
                                 city.setName('Azimabad', False)
-                        elif sName == 'Bhagyanagar':
+                        if sName == 'Bhagyanagar':
                                 city.setName('Hyderabad', False)
-			elif sName == 'Sivas' or sName == 'Sebastia' or sName == 'Sebasteia':
+			if sName == 'Sivas' or sName == 'Sebastia' or sName == 'Sebasteia':
 				city.setName('Sebhasd', False)
 
-                elif (iNewOwner == iGreece):
+                if (iNewOwner == iGreece):
                         if (sName == 'Niwt-Rst' or sName == 'Diospolis Magna'):
                                 city.setName('Diospolis Megale', False)
-                        elif sName == 'Per-Wadjet':
+                        if sName == 'Per-Wadjet':
                                 city.setName('Buto', False)
-                        elif sName == 'Ineb Hedj':
+                        if sName == 'Ineb Hedj':
                                 city.setName('Memphis', False)
-                        elif sName == 'Abdju':
+                        if sName == 'Abdju':
                                 city.setName('Abydos', False)
-                        elif (sName == 'Iunu' or sName == 'Per-Atum'):
+                        if (sName == 'Iunu' or sName == 'Per-Atum'):
                                 city.setName('Heliopolis', False)
-                        elif sName == 'Yebu':
+                        if sName == 'Yebu':
                                 city.setName('Elephantine', False)
-                        elif (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusium'):
+                        if (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusium'):
                                 city.setName('Pelousion', False)
-                        elif sName == 'Ragha':
+                        if sName == 'Ragha':
                                 city.setName('Rhagae', False)
-                        elif sName == 'Tisfun':
+                        if sName == 'Tisfun':
                                 city.setName('Ctesiphon', False)
-                        elif sName == 'Parsa':
+                        if sName == 'Parsa':
                                 city.setName('Persepolis', False)
-                        elif sName == 'Pathragada':
+                        if sName == 'Pathragada':
                                 city.setName('Pasargadae', False)
-                        elif (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleucia ad Eulaeum' or sName == 'Susa'):
+                        if (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleucia ad Eulaeum' or sName == 'Susa'):
                                 city.setName('Seleukeia Susiana', False)
-                        elif (sName == 'Sur' or sName == 'Tyrus' or sName == 'As-Sur'):
+                        if (sName == 'Sur' or sName == 'Tyrus' or sName == 'As-Sur'):
                                 city.setName('T&#253;ros', False)
-                        elif sName == 'Lpqy':
+                        if sName == 'Lpqy':
                                 city.setName('Lepcis', False)
-                        elif sName == 'Lixus':
+                        if sName == 'Lixus':
                                 city.setName('Lixos', False)
-                        elif (sName == 'Ziz' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Palermo'):
+                        if (sName == 'Ziz' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Palermo'):
                                 city.setName('Panormos', False) 
-                        elif (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis' or sName == 'C&#225;diz'):
+                        if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis' or sName == 'C&#225;diz'):
                                 city.setName('Gadeira', False)
-                        elif (sName == 'Qart-Hadasht' or sName == 'Carthago'):
+                        if (sName == 'Qart-Hadasht' or sName == 'Carthago'):
                                 city.setName('Karkhedon', False) 
-                        elif sName == 'Merv':
+                        if sName == 'Merv':
                                 city.setName('Margiana', False)
-                        elif sName == 'Ecbatana':
+                        if sName == 'Ecbatana':
                                 city.setName('Hangmatana', False)
-                        elif (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
+                        if (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 city.setName('Marakanda', False)
-                        elif (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Hierusalem'):
+                        if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Hierusalem'):
                                 city.setName('Hierousalem', False)
-                        elif sName == 'Bhakri':
+                        if sName == 'Bhakri':
                                 city.setName('Bactra', False)
-                        elif (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
+                        if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
                                 city.setName('Babylon', False)
-                        elif sName == 'Sauloe':
+                        if sName == 'Sauloe':
                                 city.setName('Hekatompilos', False)
-                        elif sName == 'Tureng Tepe':
+                        if sName == 'Tureng Tepe':
                                 city.setName('Zadrakarta', False)
-                        elif sName == 'Tisfun':
+                        if sName == 'Tisfun':
                                 city.setName('Ctesiphon', False)
-                        elif (sName == 'Massilia' or sName == 'Marseille' or sName == 'Marsella' or sName == 'Marsiliya'):
+                        if (sName == 'Massilia' or sName == 'Marseille' or sName == 'Marsella' or sName == 'Marsiliya'):
                                 city.setName('Massalia', False)
-                        elif sName == 'Dyrrachium' or sName == 'Dyrrachion':
+                        if sName == 'Dyrrachium' or sName == 'Dyrrachion':
                                 city.setName('Epidamnos', False)
-                        elif (sName == 'Athenae' or sName == 'Atina' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athena'):
+                        if (sName == 'Athenae' or sName == 'Atina' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athena'):
                                 city.setName('Athenai', False)
-                        elif (sName == 'Sparta' or sName == 'Esparta'):
+                        if (sName == 'Sparta' or sName == 'Esparta'):
                                 city.setName('Sparte', False)
-                        elif sName == 'Corinthus':
+                        if sName == 'Corinthus':
                                 city.setName('Korinthos', False)
-                        elif sName == 'Delphi':
+                        if sName == 'Delphi':
                                 city.setName('Delphoi', False)
-                        elif sName == "Pi-Ramesses":
+                        if sName == "Pi-Ramesses":
                                 city.setName('Avaris', False)
-                        elif sName == 'Djanet':
+                        if sName == 'Djanet':
                                 city.setName('Tanis', False)
-                        elif sName == 'Attalea':
+                        if sName == 'Attalea':
                                 city.setName('Attaleia', False)
-                        elif (sName == 'Anavarin' or sName == 'Navarino'):
+                        if (sName == 'Anavarin' or sName == 'Navarino'):
                                 city.setName('Neokastron', False)
-                        elif sName == 'Inebahti':
+                        if sName == 'Inebahti':
                                 city.setName('Naupactus', False)
-                        elif sName == 'Gebal':
+                        if sName == 'Gebal':
                                 city.setName('Byblos', False)
-                        elif sName == 'Paraetonium':
+                        if sName == 'Paraetonium':
                                 city.setName('Paraitonion', False)
-                        elif sName == 'Cyrene':
+                        if sName == 'Cyrene':
                                 city.setName('Kyrene', False)
-                        elif sName == 'Syracusae' or sName == 'Siracusa' or sName == 'Syrakousa':
+                        if sName == 'Syracusae' or sName == 'Siracusa' or sName == 'Syrakousa':
                                 city.setName('Syrakousai', False)
-                        elif (sName == 'Moncastrum' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
+                        if (sName == 'Moncastrum' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
                                 city.setName('Tyras', False)
-                        elif (sName == 'Miklagard' or sName == 'Bizantiya'):
+                        if (sName == 'Miklagard' or sName == 'Bizantiya'):
                                 city.setName('Byzantion', False) 
-                        elif (sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == 'Constantinopolis' or sName == 'Miklagard' or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul'):
+                        if (sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == 'Constantinopolis' or sName == 'Miklagard' or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul'):
                                 city.setName('Konstantinoupolis', False) 
-                        elif (sName == 'Trapezus' or sName == 'Tarabizun' or sName == 'Trabzon' or sName == 'Trapezounta'):
+                        if (sName == 'Trapezus' or sName == 'Tarabizun' or sName == 'Trabzon' or sName == 'Trapezounta'):
                                 city.setName('Trapezon', False)
-                        elif (sName == 'Milid' or sName == 'Melitene' or sName == 'Malatya'):
+                        if (sName == 'Milid' or sName == 'Melitene' or sName == 'Malatya'):
                                 city.setName('Malateia', False)
-                        elif (sName == 'Mazaka' or sName == 'Caesarea Mazaca' or sName == 'Kayseri'):
+                        if (sName == 'Mazaka' or sName == 'Caesarea Mazaca' or sName == 'Kayseri'):
                                 city.setName('Kaisareia', False)
-                        elif (sName == 'Karlsburg' or sName == 'Apulum' or sName == 'Balgrad'):
+                        if (sName == 'Karlsburg' or sName == 'Apulum' or sName == 'Balgrad'):
                                 city.setName('Apulon', False)
-                        elif (sName == 'Tomis' or sName == 'Konstanca' or sName == 'K&#246;stendsche' or sName == 'Kustendje'):
+                        if (sName == 'Tomis' or sName == 'Konstanca' or sName == 'K&#246;stendsche' or sName == 'Kustendje'):
                                 city.setName('Konstantia', False)
-                        elif sName == 'Mycenae':
+                        if sName == 'Mycenae':
                                 city.setName('Mykenai', False)
-                        elif (sName == 'Kolachi' or sName == 'Debal' or sName == 'Barbaricum' or sName == 'Karachi' or sName == 'Mirat ul Memalik'):
+                        if (sName == 'Kolachi' or sName == 'Debal' or sName == 'Barbaricum' or sName == 'Karachi' or sName == 'Mirat ul Memalik'):
                                 city.setName('Barbarikon', False)
-                        elif (sName == 'Chersonesus' or sName == 'Khersones'):
+                        if (sName == 'Chersonesus' or sName == 'Khersones'):
                                 city.setName('Chersonesos', False) 
-                        elif sName == 'Tiran':
+                        if sName == 'Tiran':
                                 city.setName('Tirana', False)
-                        elif (sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
+                        if (sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 city.setName('Venetia', False)
-                        elif (sName == 'Iadera' or sName == 'Zadar'):
+                        if (sName == 'Iadera' or sName == 'Zadar'):
                                 city.setName('Zantar', False) 
-                        elif (sName == 'Wien' or sName == 'Vena' or sName == 'Vindobona' or sName == 'Viyana'):
+                        if (sName == 'Wien' or sName == 'Vena' or sName == 'Vindobona' or sName == 'Viyana'):
                                 city.setName('Vienne', False)
-                        elif (sName == 'Laibach' or sName == 'Ljubljana' or sName == 'Aemona Iulia'):
+                        if (sName == 'Laibach' or sName == 'Ljubljana' or sName == 'Aemona Iulia'):
                                 city.setName('Emona', False)
-                        elif (sName == 'Split' or sName == 'Spalatum'):
+                        if (sName == 'Split' or sName == 'Spalatum'):
                                 city.setName('Aspalathos', False)
-                        elif (sName == 'Beograd' or sName == 'Singidunum' or sName == 'Belgrad'):
+                        if (sName == 'Beograd' or sName == 'Singidunum' or sName == 'Belgrad'):
                                 city.setName('Singidun', False)
-                        elif (sName == 'Dimitrof&#231;e' or sName == 'Sirmium' or sName == 'Syrmisch Mitrowitz' or sName == 'Sremska Mitrovica'):
+                        if (sName == 'Dimitrof&#231;e' or sName == 'Sirmium' or sName == 'Syrmisch Mitrowitz' or sName == 'Sremska Mitrovica'):
                                 city.setName('Sirmion', False)
-                        elif (sName == 'Felicitas Julia' or sName == 'Allis Ubbo' or sName == "Al-'Ishbunah"):
+                        if (sName == 'Felicitas Julia' or sName == 'Allis Ubbo' or sName == "Al-'Ishbunah"):
                                 city.setName('Olissipo', False)
-                        elif (sName == 'Ninua' or sName == 'Ninova' or sName == 'Ninawa'):
+                        if (sName == 'Ninua' or sName == 'Ninova' or sName == 'Ninawa'):
                                 city.setName('Nineve', False)
-                        elif sName == 'Artashat':
+                        if sName == 'Artashat':
                                 city.setName('Artaxata', False)
-                        elif (sName == 'Khalpe' or sName == 'Halab' or sName == 'Halep'):
+                        if (sName == 'Khalpe' or sName == 'Halab' or sName == 'Halep'):
                                 city.setName('Beroea', False)
-                        elif (sName == 'Al-Iskandariya' or sName == 'Alexandria' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
+                        if (sName == 'Al-Iskandariya' or sName == 'Alexandria' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
                                 city.setName('Alexandreia', False)
-                        elif sName == 'Zawty':
+                        if sName == 'Zawty':
                                 city.setName('Asyut', False)
-                        elif sName == 'Nekhen':
+                        if sName == 'Nekhen':
                                 city.setName('Hierakonpolis', False)
-                        elif sName == 'Per-Bastet':
+                        if sName == 'Per-Bastet':
                                 city.setName('Bubastis', False)
-                        elif sName == 'Khmun':
+                        if sName == 'Khmun':
                                 city.setName('Hermopolis', False)
-                        elif sName == 'Brundisium':
+                        if sName == 'Brundisium':
                                 city.setName('Brentesion', False)
-                        elif (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Azimabad' or sName == 'Huazhicheng' or sName == 'Kashijou'):
+                        if (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Azimabad' or sName == 'Huazhicheng' or sName == 'Kashijou'):
                                 city.setName('Palibothra', False)
-                        elif (sName == 'Anabucis'):
+                        if (sName == 'Anabucis'):
                                 city.setName('Automala', False)
-			elif (sName == 'Kition' or sName == 'Citium' or sName == 'Larnaca' or sName == 'Kittim'):
+			if (sName == 'Kition' or sName == 'Citium' or sName == 'Larnaca' or sName == 'Kittim'):
 				city.setName('Larnaka')
-			elif (sName == 'Sydwn' or sName == 'Sayda'):
+			if (sName == 'Sydwn' or sName == 'Sayda'):
 				city.setName('Sidon')
-			elif sName == 'Actia Nicopolis' or sName == 'Preveza':
+			if sName == 'Actia Nicopolis' or sName == 'Preveza':
 				city.setName('Nikopolis', False)
-			elif sName == 'Akko' or sName == 'Akkon' or sName == 'Akka':
+			if sName == 'Akko' or sName == 'Akkon' or sName == 'Akka':
 				city.setName('Akre', False)
 
-                elif (iNewOwner == iCarthage): 
+                if (iNewOwner == iCarthage): 
                         if (sName == 'Byblos' or sName == 'Jbeil'):
                                 city.setName('Gebal', False)
-                        elif (sName == 'Lepcis' or sName == 'Leptis Magna'):
+                        if (sName == 'Lepcis' or sName == 'Leptis Magna'):
                                 city.setName('Lpqy', False)
-                        elif (sName == 'Panormos' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Palermo'):
+                        if (sName == 'Panormos' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Palermo'):
                                 city.setName('Ziz', False)  
-                        elif (sName == 'Gades' or sName == 'Cad&#225;z' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis'):
+                        if (sName == 'Gades' or sName == 'Cad&#225;z' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis'):
                                 city.setName('Qart-Gadir', False)
-                        elif (sName == 'Karkhedon' or sName == 'Qartaj' or sName == 'Kartaca' or sName == 'Carthago'):
+                        if (sName == 'Karkhedon' or sName == 'Qartaj' or sName == 'Kartaca' or sName == 'Carthago'):
                                 city.setName('Qart-Hadasht', False) 
-                        elif sName == 'Hippo Regius':
+                        if sName == 'Hippo Regius':
                                 city.setName('Hippo', False)
-                        elif sName == 'Iol Caesarea':
+                        if sName == 'Iol Caesarea':
                                 city.setName('Iol', False)
-                        elif (sName == 'Regio Tripolitana' or sName == 'Tripolis'):
+                        if (sName == 'Regio Tripolitana' or sName == 'Tripolis'):
                                 city.setName('Oea', False)
-                        elif (sName == 'Felicitas Julia' or sName == 'Olissipo' or sName == "Al-'Ishbunah"):
+                        if (sName == 'Felicitas Julia' or sName == 'Olissipo' or sName == "Al-'Ishbunah"):
                                 city.setName('Allis Ubbo', False)
-			elif (sName == 'T&#253;ros' or sName == 'Tyrus' or sName == 'As-Sur'):
+			if (sName == 'T&#253;ros' or sName == 'Tyrus' or sName == 'As-Sur'):
 				city.setName('Sur', False)
-			elif (sName == 'Larnaka' or sName == 'Larnaca' or sName == 'Citium' or sName == 'Kittim'):
+			if (sName == 'Larnaka' or sName == 'Larnaca' or sName == 'Citium' or sName == 'Kittim'):
 				city.setName('Kition', False)
-			elif (sName == 'Sidon' or sName == 'Sayda'):
+			if (sName == 'Sidon' or sName == 'Sayda'):
 				city.setName('Sydwn', False)
 
-                elif (iNewOwner == iRome):
+                if (iNewOwner == iRome):
 			if (not gc.getPlayer(iRome).isReborn()): 
                         	if sName == 'Per-Wadjet':
                                 	city.setName('Buto', False)
-                        	elif sName == 'Abdju':
+                        	if sName == 'Abdju':
                            	     city.setName('Abydos', False)
-                     	   	elif (sName == 'Niwt-Rst' or sName == 'Diospolis Megale'):
+                     	   	if (sName == 'Niwt-Rst' or sName == 'Diospolis Megale'):
                                 	city.setName('Diospolis Magna', False)
-                  	      	elif (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusion'):
+                  	      	if (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusion'):
                                 	city.setName('Pelusium', False)
-                        	elif sName == 'Ineb Hedj':
+                        	if sName == 'Ineb Hedj':
                                 	city.setName('Memphis', False)
-                        	elif (sName == 'Iunu' or sName == 'Per-Atum'):
+                        	if (sName == 'Iunu' or sName == 'Per-Atum'):
                                 	city.setName('Heliopolis', False)
-                        	elif sName == 'Yebu':
+                        	if sName == 'Yebu':
                                 	city.setName('Elephantine', False)
-                        	elif sName == 'Poseidonia':
+                        	if sName == 'Poseidonia':
                                 	city.setName('Paestum', False)
-                        	elif sName == 'Taras':
+                        	if sName == 'Taras':
                                 	city.setName('Tarentum', False)
-                        	elif (sName == 'Rhegion' or sName == 'Riv&#224;h' or sName == 'R&#237;joles' or sName == 'Reggio') :
+                        	if (sName == 'Rhegion' or sName == 'Riv&#224;h' or sName == 'R&#237;joles' or sName == 'Reggio') :
                                 	city.setName('Rhegium Julii', False)
-                        	elif (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mil&#225;n' or sName == 'Milan'):
+                        	if (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mil&#225;n' or sName == 'Milan'):
                                 	city.setName('Mediolanum', False)
-                        	elif (sName == 'Lutetia' or sName == 'Paris' or sName == 'Parijs'):
+                        	if (sName == 'Lutetia' or sName == 'Paris' or sName == 'Parijs'):
                                 	city.setName('Lutetia Parisiorum', False)
-                        	elif (sName == 'Burdeos' or sName == 'Bordeaux'):
+                        	if (sName == 'Burdeos' or sName == 'Bordeaux'):
                                 	city.setName('Burdigala', False)
-                        	elif sName == 'Tarragona':
+                        	if sName == 'Tarragona':
                                 	city.setName('Tarraco', False)
-                        	elif (sName == 'Hippo' or sName == 'Annaba' or sName == 'B&#244;ne'):
+                        	if (sName == 'Hippo' or sName == 'Annaba' or sName == 'B&#244;ne'):
                                 	city.setName('Hippo Regius', False)
-                        	elif (sName == 'Byzantion' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Konstantinoupolis' or sName == 'Qustantiniyah' or sName == 'Konstantinopel'  or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul'):
+                        	if (sName == 'Byzantion' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Konstantinoupolis' or sName == 'Qustantiniyah' or sName == 'Konstantinopel'  or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul'):
                                 	city.setName('Constantinopolis', False) 
-                        	elif (sName == 'Qart-Hadasht' or sName == 'Karkhedon'):
+                        	if (sName == 'Qart-Hadasht' or sName == 'Karkhedon'):
                                 	city.setName('Carthago', False)
-                        	elif sName == 'Qart Hadasht':
+                        	if sName == 'Qart Hadasht':
                                 	city.setName('Nova Carthago', False)
-                        	elif (sName == 'Ziz' or sName == 'Panormos' or sName == 'Balharm' or sName == 'Palermo'):
+                        	if (sName == 'Ziz' or sName == 'Panormos' or sName == 'Balharm' or sName == 'Palermo'):
                                 	city.setName('Panormus', False)
-                        	elif sName == 'Iol':
+                        	if sName == 'Iol':
                                 	city.setName('Iol Caesarea', False)
-                        	elif (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis' or sName == 'C&#225;diz'):
+                        	if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis' or sName == 'C&#225;diz'):
                                 	city.setName('Gades', False)
-                        	elif sName == 'Lpqy':
+                        	if sName == 'Lpqy':
                                 	city.setName('Leptis Magna', False)
-                        	elif sName == 'Lixos':
+                        	if sName == 'Lixos':
                                 	city.setName('Lixus', False)
-                        	elif (sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Hierousalem'):
+                        	if (sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Hierousalem'):
                                 	city.setName('Aelia Capitolina', False)
-                        	elif (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Urshalim' or sName == 'Kud&#252;s'):
+                        	if (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Urshalim' or sName == 'Kud&#252;s'):
                                 	city.setName('Hierusalem', False)
-                        	elif (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
+                        	if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
                                 	city.setName('Babylon', False)
-                        	elif (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleukeia Susiana' or sName == 'Susa'):
+                        	if (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleukeia Susiana' or sName == 'Susa'):
                                 	city.setName('Seleucia ad Eulaeum', False)
-                        	elif (sName == 'Sur' or sName == 'T&#253;ros' or sName == 'As-Sur'):
+                        	if (sName == 'Sur' or sName == 'T&#253;ros' or sName == 'As-Sur'):
                                 	city.setName('Tyrus', False)
-                        	elif sName == 'Emporion':
+                        	if sName == 'Emporion':
                                 	city.setName('Emporiae', False)
-                        	elif sName == 'Odessos':
+                        	if sName == 'Odessos':
                                 	city.setName('Odessus', False)
-                        	elif sName == 'Naissos':
+                        	if sName == 'Naissos':
                                 	city.setName('Naissus', False)
-                        	elif sName == 'Berenikis':
+                        	if sName == 'Berenikis':
                                 	city.setName('Berenice', False)
-                        	elif sName == 'Ikonion':
+                        	if sName == 'Ikonion':
                                 	city.setName('Iconium', False)
-                        	elif sName == 'Ankyra':
+                        	if sName == 'Ankyra':
                                 	city.setName('Ancyra', False)
-                        	elif sName == 'Antiokeia tes Pisidias':
+                        	if sName == 'Antiokeia tes Pisidias':
                                 	city.setName('Antiochia Pisidiae', False)
-                        	elif sName == 'Antiokheia Megale':
+                        	if sName == 'Antiokheia Megale':
                                 	city.setName('Antiochia ad Orontem', False)
-                        	elif sName == 'Halikarnassos':
+                        	if sName == 'Halikarnassos':
                                 	city.setName('Halikarnassus', False)
-                        	elif sName == 'Ephesos' or sName == 'Efes':
+                        	if sName == 'Ephesos' or sName == 'Efes':
                                 	city.setName('Ephesus', False)
-                        	elif sName == 'Ilion':
+                        	if sName == 'Ilion':
                                 	city.setName('Ilium', False)
-                        	elif (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
+                        	if (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
                                 	city.setName('Alexandria', False)
-                        	elif sName == 'Tisfun':
+                        	if sName == 'Tisfun':
                                 	city.setName('Ctesiphon', False)
-                        	elif (sName == 'Massalia' or sName == 'Marseille' or sName == 'Marsella' or sName == 'Marsiliya'):
+                        	if (sName == 'Massalia' or sName == 'Marseille' or sName == 'Marsella' or sName == 'Marsiliya'):
                                 	city.setName('Massilia', False)
-                        	elif sName == 'Epidamnos' or sName == 'Dyrrachion':
+                        	if sName == 'Epidamnos' or sName == 'Dyrrachion':
                                 	city.setName('Dyrrachium', False)
-                        	elif (sName == 'Athenai' or sName == 'Atina' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athena'):
+                        	if (sName == 'Athenai' or sName == 'Atina' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athena'):
                                 	city.setName('Athenae', False)
-                        	elif (sName == 'Sparte' or sName == 'Esparta'):
+                        	if (sName == 'Sparte' or sName == 'Esparta'):
                                 	city.setName('Sparta', False)
-                        	elif sName == 'Korinthos':
+                        	if sName == 'Korinthos':
                                 	city.setName('Corinthus', False)
-                        	elif sName == 'Delphoi':
+                        	if sName == 'Delphoi':
                                 	city.setName('Delphi', False)
-                        	elif (sName == 'Lyon' or sName == 'Lugodunon'):
+                        	if (sName == 'Lyon' or sName == 'Lugodunon'):
                                 	city.setName('Lugdunum', False)
-                        	elif sName == "Pi-Ramesses":
+                        	if sName == "Pi-Ramesses":
                                 	city.setName('Avaris', False)
-                        	elif sName == 'Djanet':
+                        	if sName == 'Djanet':
                                 	city.setName('Tanis', False)
-                        	elif sName == 'Attaleia':
+                        	if sName == 'Attaleia':
                                 	city.setName('Attalea', False)
-                        	elif (sName == 'Anavarin' or sName == 'Neokastron'):
+                        	if (sName == 'Anavarin' or sName == 'Neokastron'):
                                 	city.setName('Navarino', False)
-                        	elif (sName == 'Laibach' or sName == 'Ljubljana' or sName == 'Emona'):
+                        	if (sName == 'Laibach' or sName == 'Ljubljana' or sName == 'Emona'):
                                 	city.setName('Aemona Iulia', False)
-                        	elif (sName == 'Karlsburg' or sName == 'Apulon' or sName == 'Balgrad'):
+                        	if (sName == 'Karlsburg' or sName == 'Apulon' or sName == 'Balgrad'):
                                 	city.setName('Apulum', False)
-                        	elif (sName == 'Napoca' or sName == 'Cluj-Napoca' or sName == 'Klausenburg' or sName == 'Kalosvar'):
+                        	if (sName == 'Napoca' or sName == 'Cluj-Napoca' or sName == 'Klausenburg' or sName == 'Kalosvar'):
                                 	city.setName('Castrum Clus', False)
-                        	elif sName == 'Gordion':
+                        	if sName == 'Gordion':
                                 	city.setName('Gordium', False)
-                        	elif sName == 'Paraitonion':
+                        	if sName == 'Paraitonion':
                                 	city.setName('Paraetonium', False)
-                        	elif sName == 'Kyrene':
+                        	if sName == 'Kyrene':
                                 	city.setName('Cyrene', False)
-                        	elif sName == 'Syrakousai' or sName == 'Siracusa' or sName == 'Syrakousa':
+                        	if sName == 'Syrakousai' or sName == 'Siracusa' or sName == 'Syrakousa':
                                 	city.setName('Syracusae', False)
-                        	elif (sName == 'Tyras' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
+                        	if (sName == 'Tyras' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
                                 	city.setName('Moncastrum', False)
-                        	elif (sName == 'Trapezon' or sName == 'Tarabizun' or sName == 'Trabzon' or sName == 'Trapezounta'):
+                        	if (sName == 'Trapezon' or sName == 'Tarabizun' or sName == 'Trabzon' or sName == 'Trapezounta'):
                                 	city.setName('Trapezus', False)
-                        	elif (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
+                        	if (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
                                 	city.setName('Roma', False)
-                        	elif sName == 'Amisos':
+                        	if sName == 'Amisos':
                                 	city.setName('Amisus', False)
-                        	elif (sName == 'Milid' or sName == 'Malateia' or sName == 'Malatya'):
+                        	if (sName == 'Milid' or sName == 'Malateia' or sName == 'Malatya'):
                                 	city.setName('Melitene', False)
-                        	elif (sName == 'Mazaka' or sName == 'Kaisareia' or sName == 'Kayseri'):
+                        	if (sName == 'Mazaka' or sName == 'Kaisareia' or sName == 'Kayseri'):
                                 	city.setName('Caesarea Mazaca', False)
-                        	elif (sName == 'Aix-la-Chapelle' or sName == 'Aachen' or sName == 'Aken'):
+                        	if (sName == 'Aix-la-Chapelle' or sName == 'Aachen' or sName == 'Aken'):
                                 	city.setName('Aquisgranum', False)
-                        	elif (sName == 'Nijmegen' or sName == 'Nim&#232;gue'):
+                        	if (sName == 'Nijmegen' or sName == 'Nim&#232;gue'):
                                 	city.setName('Batavodurum', False)
-                        	elif (sName == 'Bambalunah' or sName == 'Pamplona' or sName == 'Pampelune'):
+                        	if (sName == 'Bambalunah' or sName == 'Pamplona' or sName == 'Pampelune'):
                                 	city.setName('Pompaelo', False)
-                        	elif (sName == 'Konstantia' or sName == 'Konstanca' or sName == 'K&#246;stendsche' or sName == 'Kustendje'):
+                        	if (sName == 'Konstantia' or sName == 'Konstanca' or sName == 'K&#246;stendsche' or sName == 'Kustendje'):
                                 	city.setName('Tomis', False)
-                        	elif (sName == 'Wien' or sName == 'Vena' or sName == 'Vienne' or sName == 'Viyana'):
+                        	if (sName == 'Wien' or sName == 'Vena' or sName == 'Vienne' or sName == 'Viyana'):
                                 	city.setName('Vindobona', False)
-                        	elif sName == 'Pise':
+                        	if sName == 'Pise':
                                 	city.setName('Pisae', False)
-                        	elif (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
+                        	if (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 	city.setName('Marakanda', False)
-                        	elif (sName == 'Mainz' or sName == 'Mogontiacum' or sName == 'Mayence'):
+                        	if (sName == 'Mainz' or sName == 'Mogontiacum' or sName == 'Mayence'):
                                 	city.setName('Moguntiacum', False)
-                        	elif (sName == 'Damasia' or sName == 'Augsburg'):
+                        	if (sName == 'Damasia' or sName == 'Augsburg'):
                                 	city.setName('Augusta Vindelicorum', False)
-                        	elif (sName == 'Agley' or sName == 'Oglej' or sName == 'Aquil&#233;e'):
+                        	if (sName == 'Agley' or sName == 'Oglej' or sName == 'Aquil&#233;e'):
                                 	city.setName('Aquileia', False)
-                        	elif (sName == 'Pompeji' or sName == 'Pompeya' or sName == 'Pomp&#233;i'):
+                        	if (sName == 'Pompeji' or sName == 'Pompeya' or sName == 'Pomp&#233;i'):
                                 	city.setName('Pompeii', False)
-                        	elif sName == 'Oea':
+                        	if sName == 'Oea':
                                 	city.setName('Tripolis', False)
-                        	elif (sName == 'Alexandreia ad Issum' or sName == 'Al-Iskandarun' or sName == 'Iskenderun'):
+                        	if (sName == 'Alexandreia ad Issum' or sName == 'Al-Iskandarun' or sName == 'Iskenderun'):
                                 	city.setName('Alexandretta', False)
-                        	elif (sName == 'Budapest' or sName == 'Budin' or sName == 'Ak Ink'):
+                        	if (sName == 'Budapest' or sName == 'Budin' or sName == 'Ak Ink'):
                                 	city.setName('Aquincum', False)
-                        	elif sName == 'Mykenai':
+                        	if sName == 'Mykenai':
                                 	city.setName('Mycenae', False)
-                        	elif (sName == 'Kolachi' or sName == 'Debal' or sName == 'Barbarikon' or sName == 'Karachi' or sName == 'Mirat ul Memalik'):
+                        	if (sName == 'Kolachi' or sName == 'Debal' or sName == 'Barbarikon' or sName == 'Karachi' or sName == 'Mirat ul Memalik'):
                                 	city.setName('Barbaricum', False)
-                        	elif sName == 'Santander':
+                        	if sName == 'Santander':
                                 	city.setName('Victoriae Iuliobrigensium', False)
-                        	elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        	if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 	city.setName('Mexicopolis', False)
-                        	elif (sName == 'Chersonesos' or sName == 'Khersones'):
+                        	if (sName == 'Chersonesos' or sName == 'Khersones'):
                                 	city.setName('Chersonesus', False) 
-                        	elif sName == 'Tiran':
+                        	if sName == 'Tiran':
                                 	city.setName('Tirana', False)
-                        	elif (sName == 'Burtuqal' or sName == 'Porto' or sName == 'Oporto'):
+                        	if (sName == 'Burtuqal' or sName == 'Porto' or sName == 'Oporto'):
                                 	city.setName('Portus Cale', False)
-                        	elif (sName == 'Frankfurt' or sName == 'Francfort' or sName == 'Frankfort'):
+                        	if (sName == 'Frankfurt' or sName == 'Francfort' or sName == 'Frankfort'):
                                 	city.setName('Bona Mansio', False)
-                        	elif (sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
+                        	if (sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 	city.setName('Venetia', False)
-                        	elif (sName == 'Zantar' or sName == 'Zadar'):
+                        	if (sName == 'Zantar' or sName == 'Zadar'):
                                 	city.setName('Iadera', False) 
-                        	elif (sName == 'Split' or sName == 'Aspalathos'):
+                        	if (sName == 'Split' or sName == 'Aspalathos'):
                                 	city.setName('Spalatum', False)
-                        	elif (sName == 'Beograd' or sName == 'Singidun' or sName == 'Belgrad'):
+                        	if (sName == 'Beograd' or sName == 'Singidun' or sName == 'Belgrad'):
                                 	city.setName('Singidunum', False)
-                        	elif (sName == 'Dimitrof&#231;e' or sName == 'Sirmion' or sName == 'Syrmisch Mitrowitz' or sName == 'Sremska Mitrovica'):
+                        	if (sName == 'Dimitrof&#231;e' or sName == 'Sirmion' or sName == 'Syrmisch Mitrowitz' or sName == 'Sremska Mitrovica'):
                                 	city.setName('Sirmium', False)
-                        	elif (sName == 'Toledo' or sName == 'Tulaytulah'):
+                        	if (sName == 'Toledo' or sName == 'Tulaytulah'):
                                 	city.setName('Toletum', False)
-                        	elif (sName == 'Balansiyyah' or sName == 'Valencia' or sName == 'Valence'):
+                        	if (sName == 'Balansiyyah' or sName == 'Valencia' or sName == 'Valence'):
                                 	city.setName('Valentia', False)
-                        	elif (sName == 'Saraqustah' or sName == 'Zaragoza'):
+                        	if (sName == 'Saraqustah' or sName == 'Zaragoza'):
                                 	city.setName('Caesaraugusta', False)
-                        	elif (sName == 'Faro' or sName == "'Uhshunubah"):
+                        	if (sName == 'Faro' or sName == "'Uhshunubah"):
                                 	city.setName('Ossonoba', False)
-                        	elif (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon'):
+                        	if (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon'):
                                 	city.setName('Felicitas Julia', False)
-                        	elif sName == 'Sala':
+                        	if sName == 'Sala':
                                 	city.setName('Sala Colonia', False)
-                        	elif (sName == 'Ninua' or sName == 'Ninova' or sName == 'Ninawa'):
+                        	if (sName == 'Ninua' or sName == 'Ninova' or sName == 'Ninawa'):
                                 	city.setName('Nineve', False)
-                        	elif sName == 'Artashat':
+                        	if sName == 'Artashat':
                                 	city.setName('Artaxata', False)
-                        	elif (sName == 'C&#243;rdoba' or sName == 'Qurtuba' or sName == 'C&#243;rdova'):
+                        	if (sName == 'C&#243;rdoba' or sName == 'Qurtuba' or sName == 'C&#243;rdova'):
                                 	city.setName('Corduba', False)
-                        	elif (sName == 'Hamburg' or sName == 'Hamborg' or sName == 'Hambourg'):
+                        	if (sName == 'Hamburg' or sName == 'Hamborg' or sName == 'Hambourg'):
                                 	city.setName('Hamburgum', False)
-                        	elif (sName == 'Ajaccio'):
+                        	if (sName == 'Ajaccio'):
                                 	city.setName('Adiacium', False)
-                        	elif (sName == 'Berlin' or sName == 'Berlijn'):
+                        	if (sName == 'Berlin' or sName == 'Berlijn'):
                                 	city.setName('Berolinum', False)
-                        	elif sName == 'Zawty':
+                        	if sName == 'Zawty':
                                 	city.setName('Asyut', False)
-                        	elif sName == 'Nekhen':
+                        	if sName == 'Nekhen':
                                 	city.setName('Hierakonpolis', False)
-                        	elif sName == 'Per-Bastet':
+                        	if sName == 'Per-Bastet':
                                 	city.setName('Bubastis', False)
-                        	elif sName == 'Khmun':
+                        	if sName == 'Khmun':
                                 	city.setName('Hermopolis', False)
-                        	elif sName == 'Klagenfurt':
+                        	if sName == 'Klagenfurt':
                                 	city.setName('Virunum', False)
-                        	elif sName == 'Gen&#232ve':
+                        	if sName == 'Gen&#232ve':
                                 	city.setName('Genava', False)
-                        	elif (sName == 'Brentesion' or sName == 'Brindisi'):
+                        	if (sName == 'Brentesion' or sName == 'Brindisi'):
                                 	city.setName('Brundisium', False)
-                        	elif sName == 'Angers':
+                        	if sName == 'Angers':
                                 	city.setName('Iuliomagus', False)
-                        	elif sName == 'Barion' or sName == 'Bari':
+                        	if sName == 'Barion' or sName == 'Bari':
                                 	city.setName('Barium', False)
-                        	elif sName == 'Arae':
+                        	if sName == 'Arae':
                                 	city.setName('Arae Philaenorum', False)
-                        	elif (sName == 'Automala'):
+                        	if (sName == 'Automala'):
                                 	city.setName('Anabucis', False)
-                        	elif (sName == 'Hannover' or sName == 'Hanovre'):
+                        	if (sName == 'Hannover' or sName == 'Hanovre'):
                                 	city.setName('Hannovera', False)
-                        	elif (sName == 'Gdansk' or sName == 'Danswijk' or sName == 'Danzig'):
+                        	if (sName == 'Gdansk' or sName == 'Danswijk' or sName == 'Danzig'):
                                 	city.setName('Gedanum', False)
-                        	elif (sName == 'K&#246;nigsberg' or sName == 'Kaliningrad'):
+                        	if (sName == 'K&#246;nigsberg' or sName == 'Kaliningrad'):
                                 	city.setName('Calininopolis', False)
-                        	elif (sName == 'Warschau' or sName == 'Varsovia'):
+                        	if (sName == 'Warschau' or sName == 'Varsovia'):
                                 	city.setName('Warszawa', False)
-                        	elif (sName == 'Tallinn' or sName == 'Tallin' or sName == 'Revalia'):
+                        	if (sName == 'Tallinn' or sName == 'Tallin' or sName == 'Revalia'):
                                 	city.setName('Reval', False)
-                        	elif (sName == 'Helsinki' or sName == 'Helsingfors' or sName == "Khel'sinki"):
+                        	if (sName == 'Helsinki' or sName == 'Helsingfors' or sName == "Khel'sinki"):
                                 	city.setName('Helsingia', False)
-                        	elif (sName == 'Dresde' or sName == 'Dresden'):
+                        	if (sName == 'Dresde' or sName == 'Dresden'):
                                 	city.setName('Dresda', False)
-                        	elif (sName == 'Rostock'):
+                        	if (sName == 'Rostock'):
                                 	city.setName('Rostochium', False)
-                        	elif (sName == 'Krakau' or sName == 'Krak&#243;w'):
+                        	if (sName == 'Krakau' or sName == 'Krak&#243;w'):
                                 	city.setName('Cracovia', False)
-                        	elif (sName == 'K&#246;ln' or sName == 'Keulen'):
+                        	if (sName == 'K&#246;ln' or sName == 'Keulen'):
                                 	city.setName('Colonia Agrippina', False)
-				elif sName == 'Kition' or sName == 'Kittim':
+				if sName == 'Kition' or sName == 'Kittim':
 					city.setName('Citium', False)
-				elif sName == 'Larnaka':
+				if sName == 'Larnaka':
 					city.setName('Larnaca', False)
-				elif (sName == 'Sydwn' or sName == 'Sayda'):
+				if (sName == 'Sydwn' or sName == 'Sayda'):
 					city.setName('Sidon', False)
-				elif sName == 'Nikopolis' or sName == 'Preveza':
+				if sName == 'Nikopolis' or sName == 'Preveza':
 					city.setName('Actia Nicopolis', False)
-				elif sName == 'Durostulon' or sName == 'Silistre' or sName == 'Drastar':
+				if sName == 'Durostulon' or sName == 'Silistre' or sName == 'Drastar':
 					city.setName('Durostorum', False)
-				elif sName == 'Eregli' or sName == 'Herakleia':
+				if sName == 'Eregli' or sName == 'Herakleia':
 					city.setName('Heraklia', False)
-				elif sName == 'Iznik' or sName == 'Nikaia':
+				if sName == 'Iznik' or sName == 'Nikaia':
 					city.setName('Nicaea', False)
-				elif sName == 'Dorylaion' or sName == 'Eski&#351;ehir':
+				if sName == 'Dorylaion' or sName == 'Eski&#351;ehir':
 					city.setName('Dorylaeum', False)
-				elif sName == 'Tarsos':
+				if sName == 'Tarsos':
 					city.setName('Tarsus', False)
-				elif sName == 'Amisos' or sName == 'Samsun':
+				if sName == 'Amisos' or sName == 'Samsun':
 					city.setName('Amisus', False)
-				elif sName == 'Sivas' or sName == 'Sebasteia' or sName == 'Sebhasd':
+				if sName == 'Sivas' or sName == 'Sebasteia' or sName == 'Sebhasd':
 					city.setName('Sebastia', False)
-				elif sName == 'Damaskos' or sName == 'Dimashq' or sName == 'Sam':
+				if sName == 'Damaskos' or sName == 'Dimashq' or sName == 'Sam':
 					city.setName('Damascus', False)
-				elif sName == 'Akka' or sName == 'Akkon' or sName == 'Akre':
+				if sName == 'Akka' or sName == 'Akkon' or sName == 'Akre':
 					city.setName('Akko', False)
-				elif sName == 'Domyat' or sName == 'Dimyat' or sName == 'Tamias':
+				if sName == 'Domyat' or sName == 'Dimyat' or sName == 'Tamias':
 					city.setName('Damietta', False)
 			else:
 				if sName == 'Per-Wadjet':
                                 	city.setName('Buto', False)
-                        	elif sName == 'Abdju':
+                        	if sName == 'Abdju':
                            	     city.setName('Abydos', False)
-                     	   	elif (sName == 'Niwt-Rst' or sName == 'Diospolis Megale'):
+                     	   	if (sName == 'Niwt-Rst' or sName == 'Diospolis Megale'):
                                 	city.setName('Tebe', False)
-                  	      	elif (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusion'):
+                  	      	if (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusion'):
                                 	city.setName('Pelusium', False)
-                        	elif sName == 'Ineb Hedj' or sName == 'Memphis':
+                        	if sName == 'Ineb Hedj' or sName == 'Memphis':
                                 	city.setName('Menphi', False)
-                        	elif (sName == 'Iunu' or sName == 'Per-Atum' or sName == 'Heliopolis'):
+                        	if (sName == 'Iunu' or sName == 'Per-Atum' or sName == 'Heliopolis'):
                                 	city.setName('Eliopoli', False)
-                        	elif sName == 'Yebu' or sName == 'Elephantine':
+                        	if sName == 'Yebu' or sName == 'Elephantine':
                                 	city.setName('Elefantina', False)
-                        	elif sName == 'Poseidonia' or sName == 'Paestum':
+                        	if sName == 'Poseidonia' or sName == 'Paestum':
                                 	city.setName('Napoli', False)
-                        	elif sName == 'Taras' or sName == 'Tarentum':
+                        	if sName == 'Taras' or sName == 'Tarentum':
                                 	city.setName('Taranto', False)
-                        	elif (sName == 'Rhegion' or sName == 'Riv&#224;h' or sName == 'R&#237;joles' or sName == 'Reggio' or sName == 'Rhegium Julii') :
+                        	if (sName == 'Rhegion' or sName == 'Riv&#224;h' or sName == 'R&#237;joles' or sName == 'Reggio' or sName == 'Rhegium Julii') :
                                 	city.setName('Reggio di Calabria', False)
-                        	elif (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mil&#225;n' or sName == 'Milan' or sName == 'Mediolanum'):
+                        	if (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mil&#225;n' or sName == 'Milan' or sName == 'Mediolanum'):
                                 	city.setName('Milano', False)
-                        	elif (sName == 'Lutetia' or sName == 'Paris' or sName == 'Parijs' or sName == 'Lutetia Parisiorum'):
+                        	if (sName == 'Lutetia' or sName == 'Paris' or sName == 'Parijs' or sName == 'Lutetia Parisiorum'):
                                 	city.setName('Parigi', False)
-                        	elif (sName == 'Burdeos' or sName == 'Burdigala'):
+                        	if (sName == 'Burdeos' or sName == 'Burdigala'):
                                 	city.setName('Bordeaux', False)
-                        	elif sName == 'Tarraco':
+                        	if sName == 'Tarraco':
                                 	city.setName('Tarragona', False)
-                        	elif (sName == 'Hippo' or sName == 'Hippo Regius' or sName == 'B&#244;ne'):
+                        	if (sName == 'Hippo' or sName == 'Hippo Regius' or sName == 'B&#244;ne'):
                                 	city.setName('Annaba', False)
-                        	elif (sName == 'Byzantion' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Konstantinoupolis' or sName == 'Qustantiniyah' or sName == 'Konstantinopel'  or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul' or sName == 'Constantinopolis'):
+                        	if (sName == 'Byzantion' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Konstantinoupolis' or sName == 'Qustantiniyah' or sName == 'Konstantinopel'  or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul' or sName == 'Constantinopolis'):
                                 	city.setName('Constantinopoli', False) 
-                        	elif (sName == 'Qart-Hadasht' or sName == 'Karkhedon' or sName == 'Carthago'):
+                        	if (sName == 'Qart-Hadasht' or sName == 'Karkhedon' or sName == 'Carthago'):
                                 	city.setName('Carthagine', False)
-                        	elif sName == 'Qart Hadasht' or sName == 'Nova Carthago':
+                        	if sName == 'Qart Hadasht' or sName == 'Nova Carthago':
                                 	city.setName('Cartagena', False)
-                        	elif (sName == 'Ziz' or sName == 'Panormos' or sName == 'Balharm' or sName == 'Panormus'):
+                        	if (sName == 'Ziz' or sName == 'Panormos' or sName == 'Balharm' or sName == 'Panormus'):
                                 	city.setName('Palermo', False)
-                        	elif sName == 'Iol' or sName == 'Iol Caesarea':
+                        	if sName == 'Iol' or sName == 'Iol Caesarea':
                                 	city.setName('Cherchell', False)
-                        	elif (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis' or sName == 'C&#225;diz' or sName == 'Gades'):
+                        	if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis' or sName == 'C&#225;diz' or sName == 'Gades'):
                                 	city.setName('Cadice', False)
-                        	elif sName == 'Lpqy':
+                        	if sName == 'Lpqy':
                                 	city.setName('Leptis Magna', False)
-                        	elif sName == 'Lixos':
+                        	if sName == 'Lixos':
                                 	city.setName('Lixus', False)
-                        	elif (sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Hierousalem' or sName == 'Aelia Capitolina'):
+                        	if (sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Hierousalem' or sName == 'Aelia Capitolina'):
                                 	city.setName('Gerusalemme', False)
-                        	elif (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Urshalim' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
+                        	if (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Urshalim' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
                                 	city.setName('Gerusalemme', False)
-                        	elif (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon' or sName == 'Babylon'):
+                        	if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon' or sName == 'Babylon'):
                                 	city.setName('Babilonia', False)
-                        	elif (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleukeia Susiana' or sName == 'Seleucia ad Eulaeum'):
+                        	if (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleukeia Susiana' or sName == 'Seleucia ad Eulaeum'):
                                 	city.setName('Susa', False)
-                        	elif (sName == 'Sur' or sName == 'T&#253;ros' or sName == 'As-Sur' or sName == 'Tyrus'):
+                        	if (sName == 'Sur' or sName == 'T&#253;ros' or sName == 'As-Sur' or sName == 'Tyrus'):
                                 	city.setName('Tiro', False)
-                        	elif sName == 'Emporion' or sName == 'Emporiae':
+                        	if sName == 'Emporion' or sName == 'Emporiae':
                                 	city.setName('Ampurias', False)
-                        	elif sName == 'Berenikis':
+                        	if sName == 'Berenikis':
                                 	city.setName('Bengasi', False)
                                 	city.setName('Ilium', False)
-                        	elif (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya' or sName == 'Alexandria'):
+                        	if (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya' or sName == 'Alexandria'):
                                 	city.setName('Alessandria', False)
-                        	elif (sName == 'Massalia' or sName == 'Marseille' or sName == 'Marsella' or sName == 'Marsiliya' or sName == 'Massilia'):
+                        	if (sName == 'Massalia' or sName == 'Marseille' or sName == 'Marsella' or sName == 'Marsiliya' or sName == 'Massilia'):
                                 	city.setName('Marsiglia', False)
-                        	elif sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Dyrrachion':
+                        	if sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Dyrrachion':
                                 	city.setName('Durazzo', False)
-                        	elif (sName == 'Athenai' or sName == 'Atina' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athenae' or sName == 'Athena'):
+                        	if (sName == 'Athenai' or sName == 'Atina' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athenae' or sName == 'Athena'):
                                 	city.setName('Atene', False)
-                        	elif (sName == 'Sparte' or sName == 'Esparta'):
+                        	if (sName == 'Sparte' or sName == 'Esparta'):
                                 	city.setName('Sparta', False)
-                        	elif sName == 'Korinthos' or sName == 'Corinthus':
+                        	if sName == 'Korinthos' or sName == 'Corinthus':
                                 	city.setName('Corinto', False)
-                        	elif (sName == 'Lyon' or sName == 'Lugodunon' or sName == 'Lugdunum'):
+                        	if (sName == 'Lyon' or sName == 'Lugodunon' or sName == 'Lugdunum'):
                                 	city.setName('Lione', False)
-                        	elif (sName == 'Anavarin' or sName == 'Neokastron'):
+                        	if (sName == 'Anavarin' or sName == 'Neokastron'):
                                 	city.setName('Navarino', False)
-                        	elif (sName == 'Laibach' or sName == 'Ljubljana' or sName == 'Emona' or sName == 'Aemona Iulia'):
+                        	if (sName == 'Laibach' or sName == 'Ljubljana' or sName == 'Emona' or sName == 'Aemona Iulia'):
                                 	city.setName('Lubiana', False)
-                        	elif (sName == 'Karlsburg' or sName == 'Apulon' or sName == 'Balgrad' or sName == 'Apulum'):
+                        	if (sName == 'Karlsburg' or sName == 'Apulon' or sName == 'Balgrad' or sName == 'Apulum'):
                                 	city.setName('Alba Iulia', False)
-                        	elif (sName == 'Napoca' or sName == 'Castrum Clus' or sName == 'Klausenburg' or sName == 'Kalosvar'):
+                        	if (sName == 'Napoca' or sName == 'Castrum Clus' or sName == 'Klausenburg' or sName == 'Kalosvar'):
                                 	city.setName('Cluj-Napoca', False)
-                        	elif sName == 'Paraitonion' or sName == 'Paraetonium':
+                        	if sName == 'Paraitonion' or sName == 'Paraetonium':
                                 	city.setName('Paretonio', False)
-                        	elif sName == 'Kyrene' or sName == 'Cyrene':
+                        	if sName == 'Kyrene' or sName == 'Cyrene':
                                 	city.setName('Cirene', False)
-                        	elif sName == 'Syrakousai' or sName == 'Syracusae' or sName == 'Syrakousa':
+                        	if sName == 'Syrakousai' or sName == 'Syracusae' or sName == 'Syrakousa':
                                 	city.setName('Siracusa', False)
-                        	elif (sName == 'Tyras' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Moncastrum' or sName == 'Asperon'):
+                        	if (sName == 'Tyras' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Moncastrum' or sName == 'Asperon'):
                                 	city.setName('Moncastro', False)
-                        	elif (sName == 'Trapezon' or sName == 'Tarabizun' or sName == 'Trabzon' or sName == 'Trapezus' or sName == 'Trapezounta'):
+                        	if (sName == 'Trapezon' or sName == 'Tarabizun' or sName == 'Trabzon' or sName == 'Trapezus' or sName == 'Trapezounta'):
                                 	city.setName('Trebisonda', False)
-                        	elif (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
+                        	if (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
                                 	city.setName('Roma', False)
-                        	elif sName == 'Amisos' or sName == 'Amisus':
+                        	if sName == 'Amisos' or sName == 'Amisus':
                                 	city.setName('Amiso', False)
-                        	elif (sName == 'Milid' or sName == 'Malateia' or sName == 'Malatya'):
+                        	if (sName == 'Milid' or sName == 'Malateia' or sName == 'Malatya'):
                                 	city.setName('Melitene', False)
-                        	elif (sName == 'Mazaka' or sName == 'Kaisareia' or sName == 'Kayseri' or sName == 'Caesarea Mazaca'):
+                        	if (sName == 'Mazaka' or sName == 'Kaisareia' or sName == 'Kayseri' or sName == 'Caesarea Mazaca'):
                                 	city.setName('Cesarea Mazaca', False)
-                        	elif (sName == 'Aix-la-Chapelle' or sName == 'Aachen' or sName == 'Aken' or sName == 'Aquisgranum'):
+                        	if (sName == 'Aix-la-Chapelle' or sName == 'Aachen' or sName == 'Aken' or sName == 'Aquisgranum'):
                                 	city.setName('Aquisgrana', False)
-                        	elif (sName == 'Nijmegen' or sName == 'Nim&#232;gue' or sName == 'Batavodurum'):
+                        	if (sName == 'Nijmegen' or sName == 'Nim&#232;gue' or sName == 'Batavodurum'):
                                 	city.setName('Nimega', False)
-                        	elif (sName == 'Wien' or sName == 'Vena' or sName == 'Vienne' or sName == 'Viyana' or sName == 'Vindobona'):
+                        	if (sName == 'Wien' or sName == 'Vena' or sName == 'Vienne' or sName == 'Viyana' or sName == 'Vindobona'):
                                 	city.setName('Vienna', False)
-                        	elif sName == 'Pise' or sName == 'Pisae':
+                        	if sName == 'Pise' or sName == 'Pisae':
                                 	city.setName('Pisa', False)
-                        	elif (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab' or sName == 'Marakanda'):
+                        	if (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab' or sName == 'Marakanda'):
                                 	city.setName('Samarcanda', False)
-                        	elif (sName == 'Mainz' or sName == 'Mogontiacum' or sName == 'Mayence' or sName == 'Moguntiacum'):
+                        	if (sName == 'Mainz' or sName == 'Mogontiacum' or sName == 'Mayence' or sName == 'Moguntiacum'):
                                 	city.setName('Magonza', False)
-                        	elif (sName == 'Damasia' or sName == 'Augsburg' or sName == 'Augusta Vindelicorum'):
+                        	if (sName == 'Damasia' or sName == 'Augsburg' or sName == 'Augusta Vindelicorum'):
                                 	city.setName('Augusta', False)
-                        	elif (sName == 'Agley' or sName == 'Oglej' or sName == 'Aquil&#233;e'):
+                        	if (sName == 'Agley' or sName == 'Oglej' or sName == 'Aquil&#233;e'):
                                 	city.setName('Aquileia', False)
-                        	elif (sName == 'Pompeji' or sName == 'Pompeya' or sName == 'Pomp&#233;i' or sName == 'Pompeii' or sName == 'Neapel' or sName == 'Naples' or sName == 'Neapolis'):
+                        	if (sName == 'Pompeji' or sName == 'Pompeya' or sName == 'Pomp&#233;i' or sName == 'Pompeii' or sName == 'Neapel' or sName == 'Naples' or sName == 'Neapolis'):
                                 	city.setName('Napoli', False)
-                        	elif sName == 'Oea' or sName == 'Tripolis':
+                        	if sName == 'Oea' or sName == 'Tripolis':
                                 	city.setName('Tripoli', False)
-                        	elif sName == 'Mykenai' or sName == 'Mycenae':
+                        	if sName == 'Mykenai' or sName == 'Mycenae':
                                 	city.setName('Micene', False)
-                        	elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        	if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 	city.setName('Citt&#224; del Messico', False)
-                        	elif sName == 'Tiran':
+                        	if sName == 'Tiran':
                                 	city.setName('Tirana', False)
-                        	elif (sName == 'Burtuqal' or sName == 'Porto' or sName == 'Portus Cale'):
+                        	if (sName == 'Burtuqal' or sName == 'Porto' or sName == 'Portus Cale'):
                                 	city.setName('Oporto', False)
-                        	elif (sName == 'Frankfurt' or sName == 'Francfort' or sName == 'Frankfort' or sName == 'Bona Mansio'):
+                        	if (sName == 'Frankfurt' or sName == 'Francfort' or sName == 'Frankfort' or sName == 'Bona Mansio'):
                                 	city.setName('Francoforte', False)
-                        	elif (sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik' or sName == 'Venetia'):
+                        	if (sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik' or sName == 'Venetia'):
                                 	city.setName('Venezia', False)
-                        	elif (sName == 'Zantar' or sName == 'Zadar' or sName == 'Iadera'):
+                        	if (sName == 'Zantar' or sName == 'Zadar' or sName == 'Iadera'):
                                 	city.setName('Zara', False) 
-                        	elif (sName == 'Split' or sName == 'Aspalathos' or sName == 'Spalatum'):
+                        	if (sName == 'Split' or sName == 'Aspalathos' or sName == 'Spalatum'):
                                 	city.setName('Spalato', False)
-                        	elif (sName == 'Beograd' or sName == 'Singidun' or sName == 'Belgrad' or sName == 'Singidunum'):
+                        	if (sName == 'Beograd' or sName == 'Singidun' or sName == 'Belgrad' or sName == 'Singidunum'):
                                 	city.setName('Belgrado', False)
-                        	elif (sName == 'Toledo'):
+                        	if (sName == 'Toledo'):
                                 	city.setName('Toledo', False)
-                        	elif (sName == 'Balansiyyah' or sName == 'Valentia' or sName == 'Valence'):
+                        	if (sName == 'Balansiyyah' or sName == 'Valentia' or sName == 'Valence'):
                                 	city.setName('Valencia', False)
-                        	elif (sName == 'Saraqustah' or sName == 'Zaragoza' or sName == 'Caesaraugusta'):
+                        	if (sName == 'Saraqustah' or sName == 'Zaragoza' or sName == 'Caesaraugusta'):
                                 	city.setName('Saragozza', False)
-                        	elif (sName == 'Ossonoba' or sName == "'Uhshunubah"):
+                        	if (sName == 'Ossonoba' or sName == "'Uhshunubah"):
                                 	city.setName('Faro', False)
-                        	elif (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon' or sName == 'Felicitas Julia'):
+                        	if (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon' or sName == 'Felicitas Julia'):
                                 	city.setName('Lisbona', False)
-                        	elif (sName == 'Ninua' or sName == 'Ninova' or sName == 'Ninawa' or sName == 'Nineve'):
+                        	if (sName == 'Ninua' or sName == 'Ninova' or sName == 'Ninawa' or sName == 'Nineve'):
                                 	city.setName('Ninive', False)
-                        	elif (sName == 'C&#243;rdoba' or sName == 'Qurtuba' or sName == 'C&#243;rdova' or sName == 'Corduba'):
+                        	if (sName == 'C&#243;rdoba' or sName == 'Qurtuba' or sName == 'C&#243;rdova' or sName == 'Corduba'):
                                 	city.setName('Cordova', False)
-                        	elif (sName == 'Hamburg' or sName == 'Hamborg' or sName == 'Hambourg' or sName == 'Hamburgum'):
+                        	if (sName == 'Hamburg' or sName == 'Hamborg' or sName == 'Hambourg' or sName == 'Hamburgum'):
                                 	city.setName('Amburgo', False)
-                        	elif (sName == 'Adiacium'):
+                        	if (sName == 'Adiacium'):
                                 	city.setName('Ajaccio', False)
-                        	elif (sName == 'Berlin' or sName == 'Berlijn' or sName == 'Berolinum'):
+                        	if (sName == 'Berlin' or sName == 'Berlijn' or sName == 'Berolinum'):
                                 	city.setName('Berlino', False)
-                        	elif sName == 'Gen&#232ve' or sName == 'Genava':
+                        	if sName == 'Gen&#232ve' or sName == 'Genava':
                                 	city.setName('Ginevra', False)
-                        	elif (sName == 'Brentesion' or sName == 'Brundisium'):
+                        	if (sName == 'Brentesion' or sName == 'Brundisium'):
                                 	city.setName('Brindisi', False)
-                        	elif (sName == 'Hannover' or sName == 'Hanovre'):
+                        	if (sName == 'Hannover' or sName == 'Hanovre'):
                                 	city.setName('Hannovera', False)
-                        	elif (sName == 'Gdansk' or sName == 'Danswijk' or sName == 'Danzig' or sName == 'Gedanum'):
+                        	if (sName == 'Gdansk' or sName == 'Danswijk' or sName == 'Danzig' or sName == 'Gedanum'):
                                 	city.setName('Danzica', False)
-                        	elif (sName == 'Warschau' or sName == 'Varsovia' or sName == 'Warszawa'):
+                        	if (sName == 'Warschau' or sName == 'Varsovia' or sName == 'Warszawa'):
                                 	city.setName('Varsavia', False)
-                        	elif (sName == 'Dresde' or sName == 'Dresden'):
+                        	if (sName == 'Dresde' or sName == 'Dresden'):
                                 	city.setName('Dresda', False)
-                        	elif (sName == 'Krakau' or sName == 'Krak&#243;w'):
+                        	if (sName == 'Krakau' or sName == 'Krak&#243;w'):
                                 	city.setName('Cracovia', False)
-                        	elif (sName == 'Colonia Agrippina' or sName == 'Keulen' or sName == 'K&#246;ln'):
+                        	if (sName == 'Colonia Agrippina' or sName == 'Keulen' or sName == 'K&#246;ln'):
                                 	city.setName('Colonia', False)
-				elif sName == 'Messana':
+				if sName == 'Messana':
 					city.setName('Messina', False)
-				elif sName == 'Caralis':
+				if sName == 'Caralis':
 					city.setName('Cagliari', False)
-				elif sName == 'Augusta Taurinorum':
+				if sName == 'Augusta Taurinorum':
 					city.setName('Torino', False)
-				elif sName == 'Ariminum':
+				if sName == 'Ariminum':
 					city.setName('Rimini', False)
-				elif sName == 'Antium':
+				if sName == 'Antium':
 					city.setName('Anzio', False)
-				elif sName == 'Canusium':
+				if sName == 'Canusium':
 					city.setName('Canosa di Puglia', False)
-				elif sName == 'Brundisium':
+				if sName == 'Brundisium':
 					city.setName('Brindisi', False)
-				elif sName == 'Panormus':
+				if sName == 'Panormus':
 					city.setName('Palermo', False)
-				elif sName == 'Ragusium':
+				if sName == 'Ragusium':
 					city.setName('Ragusa', False)
-				elif sName == 'Nice':
+				if sName == 'Nice':
 					city.setName('Nizza', False)
-				elif sName == 'Turin':
+				if sName == 'Turin':
 					city.setName('Torino', False)
-				elif sName == 'Neapel' or sName == 'Naples' or sName == 'Neapolis':
+				if sName == 'Neapel' or sName == 'Naples' or sName == 'Neapolis':
 					city.setName('Napoli', False)
-				elif sName == 'Florence' or sName == 'Florenz':
+				if sName == 'Florence' or sName == 'Florenz':
 					city.setName('Firenze', False)
-				elif sName == 'Triest':
+				if sName == 'Triest':
 					city.setName('Trieste', False)
-				elif sName == 'Maqadishu' or sName == 'Muqdisho':
+				if sName == 'Maqadishu' or sName == 'Muqdisho':
 					city.setName('Mogadiscio', False)
-				elif sName == 'Jaabuti' or sName == 'Djibouti':
+				if sName == 'Jaabuti' or sName == 'Djibouti':
 					city.setName('Gibuti', False)
-				elif sName == 'Bangazi' or sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bingazi' or sName == 'Benghazi':
+				if sName == 'Bangazi' or sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bingazi' or sName == 'Benghazi':
 					city.setName('Bengasi', False)
-				elif sName == 'Barion' or sName == 'Barium':
+				if sName == 'Barion' or sName == 'Barium':
 					city.setName('Bari', False)
-				elif sName == 'Cosentia':
+				if sName == 'Cosentia':
 					city.setName('Cosenza', False)
-				elif sName == 'Nikopolis' or sName == 'Actia Nicopolis':
+				if sName == 'Nikopolis' or sName == 'Actia Nicopolis':
 					city.setName('Preveza', False)
-				elif sName == 'Monemvasia' or sName == 'Menek&#351;e':
+				if sName == 'Monemvasia' or sName == 'Menek&#351;e':
 					city.setName('Malvasia', False)
 
-                elif (iNewOwner == iJapan): 
+                if (iNewOwner == iJapan): 
                         if (sName == 'Daban'):
                                 city.setName('Oosaka', False)
-                        elif (sName == 'Jianghu' or sName == 'Tokio'):
+                        if (sName == 'Jianghu' or sName == 'Tokio'):
                                 city.setName('Toukyou', False)  #Edo?
-                        elif (sName == 'Hengbin'):
+                        if (sName == 'Hengbin'):
                                 city.setName('Yokohama', False)
-                        elif (sName == 'Mingguwu'):
+                        if (sName == 'Mingguwu'):
                                 city.setName('Nagoya', False)
-                        elif (sName == 'Zahuang'):
+                        if (sName == 'Zahuang'):
                                 city.setName('Sapporo', False)
-                        elif (sName == 'Jingdu' or sName == "Kioto"):
+                        if (sName == 'Jingdu' or sName == "Kioto"):
                                 city.setName('Kyouto', False)
-                        elif (sName == 'Xinxi'):
+                        if (sName == 'Xinxi'):
                                 city.setName('Niigata', False)
-                        elif (sName == 'Chuanlu'):
+                        if (sName == 'Chuanlu'):
                                 city.setName('Kushiro', False)
-                        elif (sName == "Lu'erdao" or sName == "Kagosima"):
+                        if (sName == "Lu'erdao" or sName == "Kagosima"):
                                 city.setName('Kagoshima', False)
-                        elif (sName == 'Qiutian'):
+                        if (sName == 'Qiutian'):
                                 city.setName('Akita', False)
-                        elif (sName == 'Guangdao'):
+                        if (sName == 'Guangdao'):
                                 city.setName('Hiroshima', False)
-                        elif (sName == 'Changqi'):
+                        if (sName == 'Changqi'):
                                 city.setName('Nagasaki', False)
-                        elif (sName == 'Fugang'):
+                        if (sName == 'Fugang'):
                                 city.setName('Fukuoka', False)
-                        elif (sName == 'Boduo'):
+                        if (sName == 'Boduo'):
                                 city.setName('Hakata', False)
-                        elif (sName == 'Qingsen'):
+                        if (sName == 'Qingsen'):
                                 city.setName('Aomori', False)
-                        elif (sName == 'Fengyuan'):
+                        if (sName == 'Fengyuan'):
                                 city.setName('Toyohara', False)
-                        elif (sName == 'Songshan'):
+                        if (sName == 'Songshan'):
                                 city.setName('Matsuyama', False)
-                        elif (sName == 'Changye'):
+                        if (sName == 'Changye'):
                                 city.setName('Nagano', False)
-                        elif (sName == 'Xiantai'):
+                        if (sName == 'Xiantai'):
                                 city.setName('Sendai', False)
-                        elif (sName == 'Nailiang'):
+                        if (sName == 'Nailiang'):
                                 city.setName('Nara', False)
                         #gaikoku
-                        elif (sName == 'Pyongyang' or sName == "Pkhen'jan"):
+                        if (sName == 'Pyongyang' or sName == "Pkhen'jan"):
                                 city.setName('Heijo', False)
-                        elif (sName == 'Seoul' or sName == 'Hanseong' or sName == 'Hancheng' or sName == 'Seul'):
+                        if (sName == 'Seoul' or sName == 'Hanseong' or sName == 'Hancheng' or sName == 'Seul'):
                                 city.setName('Keijou', False)
-                        elif sName == 'Changchun':
+                        if sName == 'Changchun':
                                 city.setName('Shinkyo', False)
-                        elif (sName == 'Vladivostok' or sName == 'Haishenwai' or sName == 'Fuladiwosituoke' or sName == 'Port May'):
+                        if (sName == 'Vladivostok' or sName == 'Haishenwai' or sName == 'Fuladiwosituoke' or sName == 'Port May'):
                                 city.setName('Urajio', False)
-                        elif (sName == 'Khanbaliq' or sName == 'Beijing' or sName == 'Pekin'):
+                        if (sName == 'Khanbaliq' or sName == 'Beijing' or sName == 'Pekin'):
                                 city.setName('Hokkin', False)
-                        elif (sName == "Juzhno-Kuri'lsk"):
+                        if (sName == "Juzhno-Kuri'lsk"):
                                 city.setName('Furukamappu', False)								
-                        elif (sName == "Dal'nij" or sName == 'Dalian' or sName == 'Sanshan'):
+                        if (sName == "Dal'nij" or sName == 'Dalian' or sName == 'Sanshan'):
                                 city.setName('Dairen', False)
-                        elif (sName == 'Shanghai'):
+                        if (sName == 'Shanghai'):
                                 city.setName('Shanhai', False)
-                        elif (sName == 'Qiqihaer'):
+                        if (sName == 'Qiqihaer'):
                                 city.setName('Chichiharu', False)
-                        elif (sName == 'Fuzhou'):
+                        if (sName == 'Fuzhou'):
                                 city.setName('Fukushuu', False)
-                        elif (sName == 'Qingdao' or sName == 'Tsingtau'):
+                        if (sName == 'Qingdao' or sName == 'Tsingtau'):
                                 city.setName('Seitou', False)
-                        elif (sName == 'Chongjin'):
+                        if (sName == 'Chongjin'):
                                 city.setName('Seishin', False)
-                        elif (sName == 'Wonsan'):
+                        if (sName == 'Wonsan'):
                                 city.setName('Genzan', False)
-                        elif (sName == 'Jinzhou' or sName == "Czin'chzhou"):
+                        if (sName == 'Jinzhou' or sName == "Czin'chzhou"):
                                 city.setName('Kinshuu', False)
-                        elif (sName == 'Hangzhou'):
+                        if (sName == 'Hangzhou'):
                                 city.setName('Kuishuu', False)
-                        elif (sName == 'Guangzhou' or sName == 'Cant&#227;o' or sName == 'Canton'):
+                        if (sName == 'Guangzhou' or sName == 'Cant&#227;o' or sName == 'Canton'):
                                 city.setName('Koushuu', False)
-                        elif (sName == 'Nanjing'):
+                        if (sName == 'Nanjing'):
                                 city.setName('Nankin', False)
-                        elif (sName == 'Kaifeng'):
+                        if (sName == 'Kaifeng'):
                                 city.setName('Kaihou', False)
-                        elif (sName == 'Anyang'):
+                        if (sName == 'Anyang'):
                                 city.setName("An'you", False)
-                        elif (sName == 'Haojing' or sName == 'Macau' or sName == 'Aomen' or sName == 'Macao'):
+                        if (sName == 'Haojing' or sName == 'Macau' or sName == 'Aomen' or sName == 'Macao'):
                                 city.setName('Makao', False)
-                        elif (sName == 'Qufu'):
+                        if (sName == 'Qufu'):
                                 city.setName('Kyokufu', False)
-                        elif (sName == 'Hong Kong' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Hong Kong' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Honkon', False)
-                        elif (sName == 'Nanchang'):
+                        if (sName == 'Nanchang'):
                                 city.setName('Nanshou', False)
-                        elif (sName == 'Pingfang'):
+                        if (sName == 'Pingfang'):
                                 city.setName('Heihouku', False)
-                        elif (sName == "Chang'an" or sName == "Xi'an"):
+                        if (sName == "Chang'an" or sName == "Xi'an"):
                                 city.setName('Seian', False)
-                        elif (sName == 'Luoyang'):
+                        if (sName == 'Luoyang'):
                                 city.setName('Rakuyou', False)
-                        elif (sName == 'Changsha'):
+                        if (sName == 'Changsha'):
                                 city.setName('Chousa', False)
-                        elif (sName == 'Chongqing'):
+                        if (sName == 'Chongqing'):
                                 city.setName('Jousai', False)
-                        elif (sName == 'Guiyang'):
+                        if (sName == 'Guiyang'):
                                 city.setName('Kyou', False)
-                        elif (sName == 'Shenyang' or sName == 'Mukden'):
+                        if (sName == 'Shenyang' or sName == 'Mukden'):
                                 city.setName("Shin'you", False)
-                        elif (sName == 'Nanning'):
+                        if (sName == 'Nanning'):
                                 city.setName('Nannei', False)
-                        elif (sName == 'Kunming'):
+                        if (sName == 'Kunming'):
                                 city.setName('Konmei', False)
-                        elif (sName == 'Lanzhou'):
+                        if (sName == 'Lanzhou'):
                                 city.setName('Ranshuu', False)
-                        elif (sName == 'Anshan'):
+                        if (sName == 'Anshan'):
                                 city.setName('Anzan', False)
-                        elif (sName == 'Changdu'):
+                        if (sName == 'Changdu'):
                                 city.setName('Seito', False)
-                        elif (sName == 'Wuhan'):
+                        if (sName == 'Wuhan'):
                                 city.setName('Bukan', False)
-                        elif (sName == 'Davao'):
+                        if (sName == 'Davao'):
                                 city.setName('Dabao', False)
-                        elif (sName == 'Jayakarta' or sName == 'Batavia'):
+                        if (sName == 'Jayakarta' or sName == 'Batavia'):
                                 city.setName('Jakaruta', False)
-                        elif (sName == 'Manila'):
+                        if (sName == 'Manila'):
                                 city.setName('Manira', False)
-                        elif (sName == 'Laoag' or sName == 'Laowo'):
+                        if (sName == 'Laoag' or sName == 'Laowo'):
                                 city.setName('Raoagu', False)
-                        elif (sName == 'Korsakov'):
+                        if (sName == 'Korsakov'):
                                 city.setName('Otomari', False)
-                        elif (sName == 'Kaohsiung' or sName == 'Gaoxiong'):
+                        if (sName == 'Kaohsiung' or sName == 'Gaoxiong'):
                                 city.setName('Takao', False)
-                        elif (sName == 'Taibei'):
+                        if (sName == 'Taibei'):
                                 city.setName('Taihoku', False)
-                        elif (sName == 'Hegang'):
+                        if (sName == 'Hegang'):
                                 city.setName('Hakuniuu', False)
-                        elif (sName == 'Mudanjiang' or sName == "Mudan'czjan"):
+                        if (sName == 'Mudanjiang' or sName == "Mudan'czjan"):
                                 city.setName('Botankou', False)
-                        elif (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapur' or sName == 'Singapore'):
+                        if (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapur' or sName == 'Singapore'):
                                 city.setName('Shounantou', False)
-                        elif (sName == 'Chuncheon' or sName == "Chunchkhon"):
+                        if (sName == 'Chuncheon' or sName == "Chunchkhon"):
                                 city.setName('Shunsen', False)
-                        elif (sName == 'Pusan'):
+                        if (sName == 'Pusan'):
                                 city.setName('Fuzan', False)
-                        elif (sName == 'Boli' or sName == 'Khabarovsk'):
+                        if (sName == 'Boli' or sName == 'Khabarovsk'):
                                 city.setName('Hakuryoku', False)
-                        elif (sName == 'Zhangjiakou'):
+                        if (sName == 'Zhangjiakou'):
                                 city.setName('Choukakou', False)
-                        elif (sName == 'Jehol'):
+                        if (sName == 'Jehol'):
                                 city.setName('Nekka', False)
-                        elif (sName == 'Hailaer' or sName == 'Hulun'):
+                        if (sName == 'Hailaer' or sName == 'Hulun'):
                                 city.setName('Hairaru', False)
-                        elif (sName == 'Jakutsk'):
+                        if (sName == 'Jakutsk'):
                                 city.setName('Yakuttsuku', False)
-                        elif (sName == 'San Francisco' or sName == 'San-Francisko'):
+                        if (sName == 'San Francisco' or sName == 'San-Francisko'):
                                 city.setName('Sanfuranshisuko', False)
-                        elif (sName == 'Vancouver' or sName == 'Vankuver'):
+                        if (sName == 'Vancouver' or sName == 'Vankuver'):
                                 city.setName('Bankuubaa', False)
-                        elif (sName == 'Seattle' or sName == 'Siehtl'):
+                        if (sName == 'Seattle' or sName == 'Siehtl'):
                                 city.setName('Shiatoru', False)
-                        elif (sName == 'Los-Andzheles' or sName == 'Los Angeles'):
+                        if (sName == 'Los-Andzheles' or sName == 'Los Angeles'):
                                 city.setName('Rosu', False)
-                        elif (sName == 'Washington' or sName == 'Vashington'):
+                        if (sName == 'Washington' or sName == 'Vashington'):
                                 city.setName('Washinton', False)
-                        elif (sName == 'Nieuw Amsterdam' or sName == 'New York' or sName == "N'yu-York"):
+                        if (sName == 'Nieuw Amsterdam' or sName == 'New York' or sName == "N'yu-York"):
                                 city.setName('Nyuu Yooku', False)
-                        elif (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Azimabad'):
+                        if (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Azimabad'):
                                 city.setName('Kashijou', False)
-                        elif (sName == 'Fort Dauphin' or sName == 'Tolanaro'):
+                        if (sName == 'Fort Dauphin' or sName == 'Tolanaro'):
                                 city.setName('Toranaro', False)
-                        elif (sName == 'Quelimane'):
+                        if (sName == 'Quelimane'):
                                 city.setName('Kerimane', False)
-                        elif (sName == 'Sofala'):
+                        if (sName == 'Sofala'):
                                 city.setName('Sofara', False)
-                        elif (sName == 'Dilli' or sName == 'Delhi' or sName == 'New Delhi' or sName == 'Deli'):
+                        if (sName == 'Dilli' or sName == 'Delhi' or sName == 'New Delhi' or sName == 'Deli'):
                                 city.setName('Derii', False)
-                        elif (sName == 'Bombay' or sName == 'Bombaim'):
+                        if (sName == 'Bombay' or sName == 'Bombaim'):
                                 city.setName('Bonbei', False)
-                        elif (sName == 'Mumbai'):
+                        if (sName == 'Mumbai'):
                                 city.setName('Munbai', False)
-                        elif (sName == "Juzhno-Kuril'sk"):
+                        if (sName == "Juzhno-Kuril'sk"):
                                 city.setName('Furukamappu', False)
-                        elif (sName == "Kusiro"):
+                        if (sName == "Kusiro"):
                                 city.setName("Kushiro", False)
-                        elif (sName == "Khakodate"):
+                        if (sName == "Khakodate"):
                                 city.setName("Hakodate", False)
-                        elif (sName == "Nakha"):
+                        if (sName == "Nakha"):
                                 city.setName("Naha", False)
 
-                elif (iNewOwner == iEthiopia): 
+                if (iNewOwner == iEthiopia): 
                         if sName == 'Maqadishu':
                                 city.setName('Muqdisho', False)
-                        elif (sName == 'Fort Gouraud'):
+                        if (sName == 'Fort Gouraud'):
                                 city.setName('Fderik', False)
-                        elif (sName == 'Fort Polignac'):
+                        if (sName == 'Fort Polignac'):
                                 city.setName('Illizi', False)
-                        elif (sName == 'Salisbury'):
+                        if (sName == 'Salisbury'):
                                 city.setName('Harare', False)
 								
-		elif (iNewOwner == iByzantium):
+		if (iNewOwner == iByzantium):
 			if sName == 'Qart-Hadasht' or sName == 'Karkhedon':
 				city.setName('Carthago', False)
-			elif sName == 'Qabis' or sName == 'Tacape' or sName == 'Gab&#232;s':
+			if sName == 'Qabis' or sName == 'Tacape' or sName == 'Gab&#232;s':
 				city.setName('Gabes', False)
-			elif sName == 'Oea' or sName == 'Regio Tripolitania' or sName == 'Tarabulus' or sName == 'Trablus' or sName == 'Tripoli':
+			if sName == 'Oea' or sName == 'Regio Tripolitania' or sName == 'Tarabulus' or sName == 'Trablus' or sName == 'Tripoli':
 				city.setName('Tripolis', False)
-			elif sName == 'Surt' or sName == 'Syrte':
+			if sName == 'Surt' or sName == 'Syrte':
 				city.setName('Sirte', False)
-			elif sName == 'Berenikis' or sName == 'Berenice' or sName == 'Bingazi' or sName == 'Benghazi' or sName == 'Bengasi':
+			if sName == 'Berenikis' or sName == 'Berenice' or sName == 'Bingazi' or sName == 'Benghazi' or sName == 'Bengasi':
 				city.setName('Hesperides', False)
-			elif sName == 'Ziz' or sName == 'Panormus' or sName == 'Palermo' or sName == 'Balharm':
+			if sName == 'Ziz' or sName == 'Panormus' or sName == 'Palermo' or sName == 'Balharm':
 				city.setName('Panormos', False)
-			elif sName == 'Syrakousai' or sName == 'Syracusae' or sName == 'Siracusa':
+			if sName == 'Syrakousai' or sName == 'Syracusae' or sName == 'Siracusa':
 				city.setName('Syrakousa', False)
-			elif sName == 'Cosenza':
+			if sName == 'Cosenza':
 				city.setName('Cosentia', False)
-			elif sName == 'Napoli' or sName == 'Neapel' or sName == 'Naples' or sName == 'Pompeii':
+			if sName == 'Napoli' or sName == 'Neapel' or sName == 'Naples' or sName == 'Pompeii':
 				city.setName('Neapolis', False)
-			elif sName == 'Bari' or sName == 'Barium':
+			if sName == 'Bari' or sName == 'Barium':
 				city.setName('Barion', False)
-			elif sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin':
+			if sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin':
 				city.setName('Roma', False)
-			elif sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik' or sName == 'Venezia':
+			if sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik' or sName == 'Venezia':
 				city.setName('Venetia', False)
-			elif sName == 'Split' or sName == 'Spalatum' or sName == 'Aspalathos' or sName == 'Spalato':
+			if sName == 'Split' or sName == 'Spalatum' or sName == 'Aspalathos' or sName == 'Spalato':
 				city.setName('Spolato', False)
-			elif sName == 'Ragusium':
+			if sName == 'Ragusium':
 				city.setName('Ragusa', False)
-			elif sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Durr&#235;s' or sName == 'Drach' or sName == 'Dira&#231;' or sName == 'Duras':
+			if sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Durr&#235;s' or sName == 'Drach' or sName == 'Dira&#231;' or sName == 'Duras':
 				city.setName('Dyrrachion', False)
-			elif sName == 'Preveza' or sName == 'Actia Nicopolis':
+			if sName == 'Preveza' or sName == 'Actia Nicopolis':
 				city.setName('Nikopolis', False)
-			elif sName == 'Athenae' or sName == 'Atina' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Atene':
+			if sName == 'Athenae' or sName == 'Atina' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Atene':
 				city.setName('Athena', False)
-			elif sName == 'Anavarin' or sName == 'Navarino':
+			if sName == 'Anavarin' or sName == 'Navarino':
 				city.setName('Neokastron', False)
-			elif sName == 'Malvasia' or sName == 'Menek&#351;e':
+			if sName == 'Malvasia' or sName == 'Menek&#351;e':
 				city.setName('Monemvasia', False)
-			elif sName == 'Plovdiv':
+			if sName == 'Plovdiv':
 				city.setName('Philippopolis', False)
-			elif sName == 'Thessalonica' or sName == 'Thessaloniki' or sName == 'Sel&#226;nik':
+			if sName == 'Thessalonica' or sName == 'Thessaloniki' or sName == 'Sel&#226;nik':
 				city.setName('Thessalonike', False)
-			elif sName == 'Byzantion' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul':
+			if sName == 'Byzantion' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul':
 				city.setName('Konstantinoupolis', False)
-			elif sName == 'Hadrianopolis' or sName == 'Edirne':
+			if sName == 'Hadrianopolis' or sName == 'Edirne':
 				city.setName('Adrianopolis', False)
-			elif sName == 'Durostorum' or sName == 'Silistre' or sName == 'Drastar':
+			if sName == 'Durostorum' or sName == 'Silistre' or sName == 'Drastar':
 				city.setName('Durostulon', False)
-			elif sName == 'Tomis' or sName == 'Konstanca' or sName == 'Kustendje':
+			if sName == 'Tomis' or sName == 'Konstanca' or sName == 'Kustendje':
 				city.setName('Konstantia', False)
-			elif sName == 'Moncastrum' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Tyras':
+			if sName == 'Moncastrum' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Tyras':
 				city.setName('Asperon', False)
-			elif sName == 'Chersonesus' or sName == 'Khersones':
+			if sName == 'Chersonesus' or sName == 'Khersones':
 				city.setName('Chersonesos', False)
-			elif sName == 'Yanya':
+			if sName == 'Yanya':
 				city.setName('Ioannina', False)
-			elif sName == 'Eregli' or sName == 'Heraklia':
+			if sName == 'Eregli' or sName == 'Heraklia':
 				city.setName('Herakleia', False)
-			elif sName == 'Izmir':
+			if sName == 'Izmir':
 				city.setName('Smyrna', False)
-			elif sName == 'Iznik' or sName == 'Nicaea':
+			if sName == 'Iznik' or sName == 'Nicaea':
 				city.setName('Nikaia', False)
-			elif sName == 'Eski&#351;ehir' or sName == 'Dorylaeum':
+			if sName == 'Eski&#351;ehir' or sName == 'Dorylaeum':
 				city.setName('Dorylaion', False)
-			elif sName == 'Efes' or sName == 'Ephesus':
+			if sName == 'Efes' or sName == 'Ephesus':
 				city.setName('Ephesos', False)
-			elif sName == 'Amasra':
+			if sName == 'Amasra':
 				city.setName('Amastris', False)
-			elif sName == 'Ankara' or sName == 'Ancyra' or sName == 'Angora':
+			if sName == 'Ankara' or sName == 'Ancyra' or sName == 'Angora':
 				city.setName('Ankyra', False)
-			elif sName == 'Konya' or sName == 'Iconium':
+			if sName == 'Konya' or sName == 'Iconium':
 				city.setName('Ikonion', False)
-			elif sName == 'Antalya' or sName == 'Attalea':
+			if sName == 'Antalya' or sName == 'Attalea':
 				city.setName('Attaleia', False)
-			elif sName == 'Sinop':
+			if sName == 'Sinop':
 				city.setName('Sinope', False)
-			elif sName == 'Amasya':
+			if sName == 'Amasya':
 				city.setName('Amasia', False)
-			elif sName == 'Kayseri' or sName == 'Mazaka' or sName == 'Caesarea Mazaca':
+			if sName == 'Kayseri' or sName == 'Mazaka' or sName == 'Caesarea Mazaca':
 				city.setName('Kaisareia', False)
-			elif sName == 'Tarsus':
+			if sName == 'Tarsus':
 				city.setName('Tarsos', False)
-			elif sName == 'Samsun' or sName == 'Amisus':
+			if sName == 'Samsun' or sName == 'Amisus':
 				city.setName('Amisos', False)
-			elif sName == 'Sivas' or sName == 'Sebhasd' or sName == 'Sebastia':
+			if sName == 'Sivas' or sName == 'Sebhasd' or sName == 'Sebastia':
 				city.setName('Sebasteia', False)
-			elif sName == 'Antakya' or sName == 'Antakiyya' or sName == 'Antiochia' or sName == 'Antiochia ad Orontem' or sName == 'Antiokheia Megale':
+			if sName == 'Antakya' or sName == 'Antakiyya' or sName == 'Antiochia' or sName == 'Antiochia ad Orontem' or sName == 'Antiokheia Megale':
 				city.setName('Antiocheia', False)
-			elif sName == 'Trapezus' or sName == 'Trapezon' or sName == 'Tarabizun' or sName == 'Trabzon':
+			if sName == 'Trapezus' or sName == 'Trapezon' or sName == 'Tarabizun' or sName == 'Trabzon':
 				city.setName('Trapezounta', False)
-			elif sName == 'Poti':
+			if sName == 'Poti':
 				city.setName('Phasis', False)
-			elif sName == 'Dabil' or sName == 'Dvin' or sName == 'Yerevan':
+			if sName == 'Dabil' or sName == 'Dvin' or sName == 'Yerevan':
 				city.setName('Dousios', False)
-			elif sName == 'Tiflis' or sName == 'Tbilisi':
+			if sName == 'Tiflis' or sName == 'Tbilisi':
 				city.setName('Tiphlis', False)
-			elif sName == 'Malatya' or sName == 'Milid' or sName == 'Melitene':
+			if sName == 'Malatya' or sName == 'Milid' or sName == 'Melitene':
 				city.setName('Malateia', False)
-			elif sName == 'Urfa':
+			if sName == 'Urfa':
 				city.setName('Edessa', False)
-			elif sName == 'Damascus' or sName == 'Dimashq' or sName == 'Sam':
+			if sName == 'Damascus' or sName == 'Dimashq' or sName == 'Sam':
 				city.setName('Damaskos', False)
-			elif sName == 'Tisfun' or sName == 'Baghdad' or sName == 'Bagdat':
+			if sName == 'Tisfun' or sName == 'Baghdad' or sName == 'Bagdat':
 				city.setName('Ctesiphon', False)
-			elif sName == 'Akka' or sName == 'Akko' or sName == 'Akre':
+			if sName == 'Akka' or sName == 'Akko' or sName == 'Akre':
 				city.setName('Akkon', False)
-			elif sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Al-Quds' or sName == 'Yerushalayim' or sName == 'Aelia Capitolina' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Aarru-Hetep':
+			if sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Al-Quds' or sName == 'Yerushalayim' or sName == 'Aelia Capitolina' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Aarru-Hetep':
 				city.setName('Hierusalem', False)
-			elif sName == 'Domyat' or sName == 'Tamiat' or sName == 'Dimyat':
+			if sName == 'Domyat' or sName == 'Tamiat' or sName == 'Dimyat':
 				city.setName('Damietta', False)
-			elif sName == 'Al-Iskandariya' or sName == 'Iskenderiye' or sName == 'Eskendereyya' or sName == 'Buto':
+			if sName == 'Al-Iskandariya' or sName == 'Iskenderiye' or sName == 'Eskendereyya' or sName == 'Buto':
 				city.setName('Alexandria', False)
-			elif sName == 'Cairo' or sName == 'Fustat' or sName == 'Al-Qahirah' or sName == 'Kahire' or sName == 'El-Qahirah':
+			if sName == 'Cairo' or sName == 'Fustat' or sName == 'Al-Qahirah' or sName == 'Kahire' or sName == 'El-Qahirah':
 				city.setName('Kairo', False)
-			elif sName == 'Ineb Hedj':
+			if sName == 'Ineb Hedj':
 				city.setName('Memphis', False)
 
-                elif (iNewOwner == iVikings): 
+                if (iNewOwner == iVikings): 
                         if (sName == 'Byzantion' or sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == 'Konstantinopel' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul'):
                                 city.setName('Miklagard', False)
-                        elif sName == 'Gothenburg':
+                        if sName == 'Gothenburg':
                                 city.setName('G&#246;teborg', False)
-                        elif (sName == 'Dublin' or sName == '&#193;th Cliath'):
+                        if (sName == 'Dublin' or sName == '&#193;th Cliath'):
                                 city.setName('Dubh Linn', False)
-                        elif sName == 'Staraja Lagoda':
+                        if sName == 'Staraja Lagoda':
                                 city.setName('Aldeigjuborg', False)
-                        elif (sName == 'Nowgorod' or sName == 'Novgorod'):
+                        if (sName == 'Nowgorod' or sName == 'Novgorod'):
                                 city.setName('Holmg&#229;rd', False)
-                        elif sName == 'Staraja Lagoda':
+                        if sName == 'Staraja Lagoda':
                                 city.setName('Kiev', False)
-                        elif sName == 'Derby':
+                        if sName == 'Derby':
                                 city.setName('Deoraby', False)
-                        elif sName == 'York':
+                        if sName == 'York':
                                 city.setName('J&#243;rvik', False)
-                        elif sName == 'Kirkwall':
+                        if sName == 'Kirkwall':
                                 city.setName('Kirkjuvagr', False)
-                        elif (sName == 'Kopenhagen' or sName == 'Copenhagen' or sName == 'Copenhague' or sName == 'Hafnia'):
+                        if (sName == 'Kopenhagen' or sName == 'Copenhagen' or sName == 'Copenhague' or sName == 'Hafnia'):
                                 city.setName('Kj&#248;bmandehavn', False)
-                        elif (sName == 'Hedeby' or sName == 'Haithabu'):
+                        if (sName == 'Hedeby' or sName == 'Haithabu'):
                                 city.setName('Heithabyr', False)
-                        elif (sName == 'Anse-aux-M&#233;duses' or sName == 'Anse aux Meadows'):
+                        if (sName == 'Anse-aux-M&#233;duses' or sName == 'Anse aux Meadows'):
                                 city.setName('Vinland', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Mexico', False)
-                        elif (sName == 'Havana' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
+                        if (sName == 'Havana' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
                                 city.setName('Havanna', False)
-                        elif sName == 'Wilmington':
+                        if sName == 'Wilmington':
                                 city.setName('Fort Kristina', False)
-                        elif (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
+                        if (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
                                 city.setName('New Orleans', False)
-                        elif sName == 'Saint Thomas':
+                        if sName == 'Saint Thomas':
                                 city.setName('Sankt Thomas', False)
-                        elif sName == 'Wiborg':
+                        if sName == 'Wiborg':
                                 city.setName('Vyborg', False)
-                        elif (sName == 'Helsinki' or sName == "Khel'sinki" or sName == 'Helsingia'):
+                        if (sName == 'Helsinki' or sName == "Khel'sinki" or sName == 'Helsingia'):
                                 city.setName('Helsingfors', False)
-                        elif (sName == 'Tharangambadi' or sName == 'Tranquebar'):
+                        if (sName == 'Tharangambadi' or sName == 'Tranquebar'):
                                 city.setName('Trankebar', False)
-                        elif sName == 'Serampore':
+                        if sName == 'Serampore':
                                 city.setName('Frederiksnagore', False)
-                        elif sName == 'Osu':
+                        if sName == 'Osu':
                                 city.setName('Fort Christiansborg', False)
-                        elif sName == 'Keta':
+                        if sName == 'Keta':
                                 city.setName('Fort Prinsensten', False)
-                        elif sName == 'Takoradi':
+                        if sName == 'Takoradi':
                                 city.setName('Fort Witsten', False)
-                        elif (sName == 'Venetia' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
+                        if (sName == 'Venetia' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 city.setName('Venedig', False)
-                        elif (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Hong Kong', False)
-                        elif (sName == 'Tallinn' or sName == 'Tallin' or sName == 'Revalia'):
+                        if (sName == 'Tallinn' or sName == 'Tallin' or sName == 'Revalia'):
                                 city.setName('Reval', False)
-			elif (sName == 'London' or sName == 'Londinium'):
+			if (sName == 'London' or sName == 'Londinium'):
 				city.setName('Lund&#250;vir', False)
 
-                elif (iNewOwner == iArabia): 
+                if (iNewOwner == iArabia): 
                         if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Hierusalem' or sName == 'Urushalim' or sName == 'Qods' or sName == 'Hierousalem'): 
                                 city.setName('Al-Quds', False)
-                        elif (sName == 'Tingi' or sName == 'Tanger' or sName == 'T&#225;nger'):
+                        if (sName == 'Tingi' or sName == 'Tanger' or sName == 'T&#225;nger'):
                                 city.setName('Tanja', False)
-                        elif sName == 'Pax Iulia':
+                        if sName == 'Pax Iulia':
                                 city.setName('Beja', False)
-                        elif (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == 'Felicitas Julia' or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon'):
+                        if (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == 'Felicitas Julia' or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon'):
                                 city.setName("Al-'Ishbunah", False)
-                        elif (sName == 'Hippo' or sName == 'Hippo Regius' or sName == 'B&#244;ne'):
+                        if (sName == 'Hippo' or sName == 'Hippo Regius' or sName == 'B&#244;ne'):
                                 city.setName('Annaba', False)
-                        elif (sName == 'Margiana' or sName == 'Margus'):
+                        if (sName == 'Margiana' or sName == 'Margus'):
                                 city.setName('Merv', False)
-                        elif (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tripoli' or sName == 'Tripolis' or sName == 'Trablus'):
+                        if (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tripoli' or sName == 'Tripolis' or sName == 'Trablus'):
                                 city.setName('Tarabulus', False)
-                        elif sName == 'Cirta':
+                        if sName == 'Cirta':
                                 city.setName('Qusantinah', False)
-                        elif sName == 'Damaskos':
+                        if sName == 'Damaskos':
                                 city.setName('Dimashq', False)
-                        elif (sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bingazi' or sName == 'Benghazi'):
+                        if (sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bingazi' or sName == 'Benghazi'):
                                 city.setName('Bangazi', False)
-                        elif sName == 'Siwa':
+                        if sName == 'Siwa':
                                 city.setName('Siwah', False)
-                        elif (sName == 'Ziz' or sName == 'Panormos' or sName == 'Panormus' or sName == 'Palermo'):
+                        if (sName == 'Ziz' or sName == 'Panormos' or sName == 'Panormus' or sName == 'Palermo'):
                                 city.setName('Balharm', False)
-                        elif sName == 'Kabura':
+                        if sName == 'Kabura':
                                 city.setName('Kabul', False)
-                        elif sName == 'Bhakri':
+                        if sName == 'Bhakri':
                                 city.setName('Balkh', False)
-                        elif sName == 'Neyshabur':
+                        if sName == 'Neyshabur':
                                 city.setName('Nishapur', False)
-                        elif sName == 'Hangmatana':
+                        if sName == 'Hangmatana':
                                 city.setName('Hamadan', False)
-                        elif (sName == 'Marakanda' or sName == 'Samarkand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
+                        if (sName == 'Marakanda' or sName == 'Samarkand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 city.setName('Samarqand', False)
-                        elif sName == 'Casablanca':
+                        if sName == 'Casablanca':
                                 city.setName('Dar Beida', False)
-                        elif sName == 'S.Cruz de Mar Peque&#241;a':
+                        if sName == 'S.Cruz de Mar Peque&#241;a':
                                 city.setName('Sidi Ifni', False)
-                        elif (sName == 'Sur' or sName == 'T&#253;ros' or sName == 'Tyrus'):
+                        if (sName == 'Sur' or sName == 'T&#253;ros' or sName == 'Tyrus'):
                                 city.setName('As-Sur', False)
-                        elif (sName == 'Cairo' or sName == 'Memphis' or sName == 'Ineb Hedj' or sName == 'Kahire' or sName == 'Kairo'):
+                        if (sName == 'Cairo' or sName == 'Memphis' or sName == 'Ineb Hedj' or sName == 'Kahire' or sName == 'Kairo'):
                                 city.setName('Al-Qahirah', False)
-                        elif (sName == "Pi-Ramesses" or sName == 'Avaris'):
+                        if (sName == "Pi-Ramesses" or sName == 'Avaris'):
                                 city.setName("Tell El-Dab'a", False)
-                        elif (sName == 'Djanet' or sName == 'Tanis'):
+                        if (sName == 'Djanet' or sName == 'Tanis'):
                                 city.setName('San El-Hagar', False)
-                        elif sName == 'Akabe':
+                        if sName == 'Akabe':
                                 city.setName('Al-Aqabah', False)
-                        elif sName == 'Musul':
+                        if sName == 'Musul':
                                 city.setName('Mosul', False)
-                        elif (sName == 'Halep' or sName == 'Aleppo'):
+                        if (sName == 'Halep' or sName == 'Aleppo'):
                                 city.setName('Halab', False)
-                        elif (sName == 'Cezayir' or sName == 'Alger'):
+                        if (sName == 'Cezayir' or sName == 'Alger'):
                                 city.setName('Al-Jazair', False)
-                        elif sName == 'Tunus':
+                        if sName == 'Tunus':
                                 city.setName('Tunis', False)
-                        elif (sName == 'Iskenderiye' or sName == 'Alexandreia' or sName == 'Alexandria' or sName == 'Eskendereyya'):
+                        if (sName == 'Iskenderiye' or sName == 'Alexandreia' or sName == 'Alexandria' or sName == 'Eskendereyya'):
                                 city.setName('Al-Iskandariya', False)
-                        elif sName == 'Sam' or sName == 'Damascus' or sName == 'Damaskos':
+                        if sName == 'Sam' or sName == 'Damascus' or sName == 'Damaskos':
                                 city.setName('Dimashq', False)
-                        elif (sName == 'Mekke' or sName == 'Mecca'):
+                        if (sName == 'Mekke' or sName == 'Mecca'):
                                 city.setName('Makkah', False)
-                        elif sName == 'Medine':
+                        if sName == 'Medine':
                                 city.setName('Madinah', False)
-                        elif sName == 'Bagdat':
+                        if sName == 'Bagdat':
                                 city.setName('Baghdad', False)
-                        elif (sName == 'Byblos' or sName == 'Gebal'):
+                        if (sName == 'Byblos' or sName == 'Gebal'):
                                 city.setName('Jbeil', False)
-                        elif sName == 'Hippo Diarrhytus':
+                        if sName == 'Hippo Diarrhytus':
                                 city.setName('Binzart', False)
-                        elif sName == 'Kandahar':
+                        if sName == 'Kandahar':
                                 city.setName('Qandahar', False)
-                        elif (sName == 'Ninua' or sName == 'Ninova' or sName == 'Nineve'):
+                        if (sName == 'Ninua' or sName == 'Ninova' or sName == 'Nineve'):
                                 city.setName('Ninawa', False)
-                        elif sName == 'Kalhu':
+                        if sName == 'Kalhu':
                                 city.setName('Nimrud', False)
-                        elif (sName == 'Qart-Hadasht' or sName == 'Kartaca' or sName == 'Karkhedon' or sName == 'Carthago'):
+                        if (sName == 'Qart-Hadasht' or sName == 'Kartaca' or sName == 'Karkhedon' or sName == 'Carthago'):
                                 city.setName('Qartaj', False)
-                        elif (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babylon' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
+                        if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babylon' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
                                 city.setName('Babil', False)
-                        elif (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusium' or sName == 'Pelusion'):
+                        if (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusium' or sName == 'Pelusion'):
                                 city.setName('Tell El-Farama', False)
-                        elif (sName == 'Buto' or sName == 'Per-Wadjet'):
+                        if (sName == 'Buto' or sName == 'Per-Wadjet'):
                                 city.setName('Kem Kasir', False)
-                        elif (sName == 'Kadesh' or sName == 'Qidshu'):
+                        if (sName == 'Kadesh' or sName == 'Qidshu'):
                                 city.setName('Tell Nebi Mend', False)
-                        elif sName == 'Serabit':
+                        if sName == 'Serabit':
                                 city.setName('Serabit Al-Khadem', False)
-                        elif (sName == 'Paraetonium' or sName == 'Paraitonion'):
+                        if (sName == 'Paraetonium' or sName == 'Paraitonion'):
                                 city.setName('Marsa Matruh', False)
-                        elif sName == 'Xou':
+                        if sName == 'Xou':
                                 city.setName('Sakha', False)
-                        elif (sName == 'Etsion-Gaber' or sName == 'Elath'):
+                        if (sName == 'Etsion-Gaber' or sName == 'Elath'):
                                 city.setName('Umm Rashrash', False)
-                        elif (sName == 'Per-Wadjet' or sName == 'Buto'):
+                        if (sName == 'Per-Wadjet' or sName == 'Buto'):
                                 city.setName('Kem Kasir', False)
-                        elif (sName == 'Niwt-Rst' or sName == 'Diospolis Megale' or sName == 'Diospolis Magna' or sName == 'Luksor' or sName == 'Luxor'):
+                        if (sName == 'Niwt-Rst' or sName == 'Diospolis Megale' or sName == 'Diospolis Magna' or sName == 'Luksor' or sName == 'Luxor'):
                                 city.setName('Al-Uqsur', False)
-                        elif (sName == 'Per-Atum' or sName == 'Heliopolis'):
+                        if (sName == 'Per-Atum' or sName == 'Heliopolis'):
                                 city.setName('Tell-Hisn', False)
-                        elif sName == 'Mut':
+                        if sName == 'Mut':
                                 city.setName('Mut al-Khorab', False)
-                        elif sName == 'Kumma':
+                        if sName == 'Kumma':
                                 city.setName('Semna', False)
-                        elif (sName == 'Malaka' or sName == 'M&#225;laga'):
+                        if (sName == 'Malaka' or sName == 'M&#225;laga'):
                                 city.setName('Malaqah', False)
-                        elif (sName == 'Byzantion' or sName == 'Miklagard'):
+                        if (sName == 'Byzantion' or sName == 'Miklagard'):
                                 city.setName('Bizantiya', False)
-                        elif (sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Konstantinopel' or sName == "Konstantinopol'" or sName == "Car'grad"):
+                        if (sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Konstantinopel' or sName == "Konstantinopol'" or sName == "Car'grad"):
                                 city.setName('Qustantiniyah', False)
-                        elif (sName == 'Rusadir' or sName == 'Melilla'):
+                        if (sName == 'Rusadir' or sName == 'Melilla'):
                                 city.setName('Maliliyah', False)
-                        elif (sName == 'Angora' or sName == 'Ankyra' or sName == 'Ancyra' or sName == 'Ankara'):
+                        if (sName == 'Angora' or sName == 'Ankyra' or sName == 'Ancyra' or sName == 'Ankara'):
                                 city.setName('Anqarah', False)	
-                        elif sName == 'Sevilla':
+                        if sName == 'Sevilla':
                                 city.setName('Ishbiliya', False)
-                        elif sName == 'C&#243;rdoba':
+                        if sName == 'C&#243;rdoba':
                                 city.setName('Qurtubah', False)	
-                        elif sName == 'Tehran':
+                        if sName == 'Tehran':
                                 city.setName('Tahran', False)	
-                        elif (sName == 'Trapezon' or sName == 'Trapezus' or sName == 'Trabzon' or sName == 'Trapezounta'):
+                        if (sName == 'Trapezon' or sName == 'Trapezus' or sName == 'Trabzon' or sName == 'Trapezounta'):
                                 city.setName('Tarabizun', False)
-                        elif (sName == 'Chach' or sName == 'Cheshih' or sName == 'Binkath'):
+                        if (sName == 'Chach' or sName == 'Cheshih' or sName == 'Binkath'):
                                 city.setName('Shash', False)
-                        elif (sName == 'Iol Caesarea' or sName == 'Iol'):
+                        if (sName == 'Iol Caesarea' or sName == 'Iol'):
                                 city.setName('Sharshal', False)
-                        elif (sName == 'Abdju' or sName == 'Abydos'):
+                        if (sName == 'Abdju' or sName == 'Abydos'):
                                 city.setName('Arabet', False)
-                        elif sName == 'Imu':
+                        if sName == 'Imu':
                                 city.setName('Kom El-Hisn', False)
-                        elif (sName == 'Lpqy' or sName == 'Leptis Magna' or sName == 'Lepcis'):
+                        if (sName == 'Lpqy' or sName == 'Leptis Magna' or sName == 'Lepcis'):
                                 city.setName('Libdeh Al-Kubra', False)
-                        elif (sName == 'Villa Cisneros' or sName == 'Dakhla'):
+                        if (sName == 'Villa Cisneros' or sName == 'Dakhla'):
                                 city.setName('ad-Dakhla', False)
-                        elif (sName == 'Persepolis' or sName == 'Parsa'):
+                        if (sName == 'Persepolis' or sName == 'Parsa'):
                                 city.setName('Takht-e Jamshid', False)
-                        elif (sName == 'Cyrene' or sName == 'Kyrene'):
+                        if (sName == 'Cyrene' or sName == 'Kyrene'):
                                 city.setName('Shahat', False)
-                        elif sName == 'Sirajis':
+                        if sName == 'Sirajis':
                                 city.setName('Shiraz', False)
-                        elif (sName == 'Sparte' or sName == 'Esparta'):
+                        if (sName == 'Sparte' or sName == 'Esparta'):
                                 city.setName('Sparta', False)
-                        elif sName == 'Almer&#237;a':
+                        if sName == 'Almer&#237;a':
                                 city.setName('Al-Mariyat', False)
-                        elif (sName == 'Or&#225;n' or sName == 'Oran'):
+                        if (sName == 'Or&#225;n' or sName == 'Oran'):
                                 city.setName('Wahran', False)
-                        elif (sName == 'Bug&#2237;a' or sName == 'B&#233;ja&#239;a'):
+                        if (sName == 'Bug&#2237;a' or sName == 'B&#233;ja&#239;a'):
                                 city.setName('Bijayah', False)
-                        elif sName == 'Siwa':
+                        if sName == 'Siwa':
                                 city.setName('Siwah', False)
-                        elif (sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Venetia' or sName == 'Venedik'):
+                        if (sName == 'Venedig' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Venetia' or sName == 'Venedik'):
                                 city.setName('Al-Bundukiyya', False)
-                        elif (sName == 'Toletum' or sName == 'Toledo'):
+                        if (sName == 'Toletum' or sName == 'Toledo'):
                                 city.setName('Tulaytulah', False)
-                        elif sName == 'Madrid':
+                        if sName == 'Madrid':
                                 city.setName('Al-Magrit', False)
-                        elif (sName == 'Valentia' or sName == 'Valencia' or sName == 'Valence'):
+                        if (sName == 'Valentia' or sName == 'Valencia' or sName == 'Valence'):
                                 city.setName('Balansiyyah', False)
-                        elif (sName == 'Caesaraugusta' or sName == 'Zaragoza'):
+                        if (sName == 'Caesaraugusta' or sName == 'Zaragoza'):
                                 city.setName('Saraqustah', False)
-                        elif (sName == 'Pompaelo' or sName == 'Pamplona' or sName == 'Pampelune'):
+                        if (sName == 'Pompaelo' or sName == 'Pamplona' or sName == 'Pampelune'):
                                 city.setName('Bambalunah', False)
-                        elif (sName == 'Portus Cale' or sName == 'Porto' or sName == 'Oporto'):
+                        if (sName == 'Portus Cale' or sName == 'Porto' or sName == 'Oporto'):
                                 city.setName('Burtuqal', False)
-                        elif (sName == 'Faro' or sName == 'Ossonoba'):
+                        if (sName == 'Faro' or sName == 'Ossonoba'):
                                 city.setName("'Uhshunubah", False)
-                        elif sName == 'Akhetaten':
+                        if sName == 'Akhetaten':
                                 city.setName("Al-'Amarna", False) 
-                        elif (sName == "Kuveyt" or sName == "Kuwait City"):
+                        if (sName == "Kuveyt" or sName == "Kuwait City"):
                                 city.setName('Al-Kuwait', False)
-                        elif sName == 'Siraz':
+                        if sName == 'Siraz':
                                 city.setName("Shiraz", False)
-                        elif sName == 'Basra':
+                        if sName == 'Basra':
                                 city.setName("Al-Basrah", False)
-                        elif (sName == "Riyad" or sName == "Riyadh"):
+                        if (sName == "Riyad" or sName == "Riyadh"):
                                 city.setName('Ar-Riyad', False)
-                        elif sName == 'Necef':
+                        if sName == 'Necef':
                                 city.setName("An-Najaf", False)
-                        elif sName == 'Amman':
+                        if sName == 'Amman':
                                 city.setName("'Amman", False)
-                        elif sName == 'Hurgada':
+                        if sName == 'Hurgada':
                                 city.setName("Al-Ghardaqah", False)
-                        elif sName == "Tobruk":
+                        if sName == "Tobruk":
                                 city.setName('Tubruq', False)
-                        elif (sName == 'Sala' or sName == 'Sala Colonia'):
+                        if (sName == 'Sala' or sName == 'Sala Colonia'):
                                 city.setName('Chellah', False)
-                        elif (sName == 'Mogador' or sName == 'Essaouira'):
+                        if (sName == 'Mogador' or sName == 'Essaouira'):
                                 city.setName('Es-Sauirah', False)
-                        elif (sName == 'Praga' or sName == 'Prag' or sName == 'Praha'):
+                        if (sName == 'Praga' or sName == 'Prag' or sName == 'Praha'):
                                 city.setName('Birag', False)
-                        elif sName == 'Safakes':
+                        if sName == 'Safakes':
                                 city.setName('Safaqis', False)
-                        elif (sName == 'Tacape' or sName == 'Gabes' or sName == 'Gab&#232;s'):
+                        if (sName == 'Tacape' or sName == 'Gabes' or sName == 'Gab&#232;s'):
                                 city.setName('Qabis', False)
-                        elif (sName == 'Khartoum' or sName == 'Hartum'):
+                        if (sName == 'Khartoum' or sName == 'Hartum'):
                                 city.setName('Al-Hartum', False)
-                        elif (sName == 'C&#243;rdoba' or sName == 'Corduba' or sName == 'C&#243;rdova'):
+                        if (sName == 'C&#243;rdoba' or sName == 'Corduba' or sName == 'C&#243;rdova'):
                                 city.setName('Qurtuba', False)
-                        elif (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marseille' or sName == 'Marsella'):
+                        if (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marseille' or sName == 'Marsella'):
                                 city.setName('Marsiliya', False)
-                        elif (sName == 'Santiago'):
+                        if (sName == 'Santiago'):
                                 city.setName('Sant Yaqub', False)
-                        elif (sName == 'Rome' or sName == 'Rom' or sName == 'Roma' or sName == 'Daqin'):
+                        if (sName == 'Rome' or sName == 'Rom' or sName == 'Roma' or sName == 'Daqin'):
                                 city.setName('Rumiya', False)
-                        elif (sName == 'Kolachi' or sName == 'Mirat ul Memalik' or sName == 'Barbarikon' or sName == 'Barbaricum' or sName == 'Karachi'):
+                        if (sName == 'Kolachi' or sName == 'Mirat ul Memalik' or sName == 'Barbarikon' or sName == 'Barbaricum' or sName == 'Karachi'):
                                 city.setName('Debal', False)
-                        elif (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athena'):
+                        if (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athena'):
                                 city.setName('Atina', False)
-                        elif sName == 'Lazkiye':
+                        if sName == 'Lazkiye':
                                 city.setName("Al-Ladhiqiyah", False)
-                        elif (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Kashijou'):
+                        if (sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Kashijou'):
                                 city.setName('Azimabad', False)
-                        elif sName == 'Bhagyanagar':
+                        if sName == 'Bhagyanagar':
                                 city.setName('Hyderabad', False)
-                        elif sName == 'Muscat':
+                        if sName == 'Muscat':
                                 city.setName('Masqat', False)
-                        elif (sName == 'Arae' or sName == 'Arae Philaenorum'):
+                        if (sName == 'Arae' or sName == 'Arae Philaenorum'):
                                 city.setName('Ras Lanuf', False)
-                        elif (sName == 'Anabucis' or sName == 'Automala' or sName == 'El Agheila'):
+                        if (sName == 'Anabucis' or sName == 'Automala' or sName == 'El Agheila'):
                                 city.setName('Al-Uqaylah', False)
-                        elif (sName == 'Rhegion' or sName == 'Rhegium Julii' or sName == 'R&#237;joles' or sName == 'Reggio') :
+                        if (sName == 'Rhegion' or sName == 'Rhegium Julii' or sName == 'R&#237;joles' or sName == 'Reggio') :
                                 city.setName('Riv&#224;h', False)
-                        elif (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Gadeira' or sName == 'C&#225;dis' or sName == 'C&#225;diz' or sName == 'Cadix'):
+                        if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Gadeira' or sName == 'C&#225;dis' or sName == 'C&#225;diz' or sName == 'Cadix'):
                                 city.setName('Al-Qadiz', False)
                         #Turkey
                         if (sName == 'Amisos' or sName == 'Amisus'):
                                 city.setName('Samsun', False)
-                        elif (sName == 'Milid' or sName == 'Malateia' or sName == 'Melitene'):
+                        if (sName == 'Milid' or sName == 'Malateia' or sName == 'Melitene'):
                                 city.setName('Malatya', False)
-                        elif (sName == 'Mazaka' or sName == 'Caesarea Mazaca' or sName == 'Kaisareia'):
+                        if (sName == 'Mazaka' or sName == 'Caesarea Mazaca' or sName == 'Kaisareia'):
                                 city.setName('Kayseri', False)
-                        elif (sName == 'Antiokheia Megale' or sName == 'Antiochia ad Orontem' or sName == 'Antakya' or sName == 'Antiochia' or sName == 'Antiocheia'):
+                        if (sName == 'Antiokheia Megale' or sName == 'Antiochia ad Orontem' or sName == 'Antakya' or sName == 'Antiochia' or sName == 'Antiocheia'):
                                 city.setName('Antakiyyah', False)
-                        elif (sName == 'Alexandreia ad Issum' or sName == 'Iskenderun' or sName == 'Alexandretta'):
+                        if (sName == 'Alexandreia ad Issum' or sName == 'Iskenderun' or sName == 'Alexandretta'):
                                 city.setName('Al-Iskandarun', False)
-                        elif (sName == 'Ikonion' or sName == 'Iconium'):
+                        if (sName == 'Ikonion' or sName == 'Iconium'):
                                 city.setName('Konya', False)
-                        elif (sName == 'Khalpe' or sName == 'Beroea' or sName == 'Halep'):
+                        if (sName == 'Khalpe' or sName == 'Beroea' or sName == 'Halep'):
                                 city.setName('Halab', False)
                         #Ethiopia
-                        elif sName == 'Muqdisho':
+                        if sName == 'Muqdisho':
                                 city.setName('Maqadishu', False)
 			#Phoenicia
-			elif sName == 'Sidon' or sName == 'Sydwn':
+			if sName == 'Sidon' or sName == 'Sydwn':
 				city.setName('Sayda', False)
 
-			elif sName == 'Tisfun' or sName == 'Ctesiphon':
+			if sName == 'Tisfun' or sName == 'Ctesiphon':
 				city.setName('Baghdad', False)
-			elif sName == 'Sirte' or sName == 'Syrte':
+			if sName == 'Sirte' or sName == 'Syrte':
 				city.setName('Surt', False)
-			elif sName == 'Akko' or sName == 'Akkon' or sName == 'Akre':
+			if sName == 'Akko' or sName == 'Akkon' or sName == 'Akre':
 				city.setName('Akka', False)
-			elif sName == 'Damietta' or sName == 'Tamiat' or sName == 'Dimyat':
+			if sName == 'Damietta' or sName == 'Tamiat' or sName == 'Dimyat':
 				city.setName('Domyat', False)
 
-                elif (iNewOwner == iKhmer): 
+                if (iNewOwner == iKhmer): 
                         if (sName == 'Malacca' or sName == 'Malakka' or sName == 'Malaca'):
                                 city.setName('Bandar Melaka', False)
-                        elif (sName == 'Singapur' or sName == 'Xinjiapo' or sName == 'Singapore' or sName == 'Shounantou'):
+                        if (sName == 'Singapur' or sName == 'Xinjiapo' or sName == 'Singapore' or sName == 'Shounantou'):
                                 city.setName('Singapura', False)
-                        elif (sName == 'Jakaruta' or sName == 'Batavia'):
+                        if (sName == 'Jakaruta' or sName == 'Batavia'):
                                 city.setName('Jayakarta', False)
-                        elif (sName == 'Manira'):
+                        if (sName == 'Manira'):
                                 city.setName('Manila', False)
-                        elif (sName == 'Dabao'):
+                        if (sName == 'Dabao'):
                                 city.setName('Davao', False)
-                        elif (sName == 'Raoagu' or sName == 'Laowo'):
+                        if (sName == 'Raoagu' or sName == 'Laowo'):
                                 city.setName('Laoag', False)
 
-                elif (iNewOwner == iSpain): 
+                if (iNewOwner == iSpain): 
                         if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis'):
                                 city.setName('C&#225;diz', False)
-                        elif (sName == 'Toletum' or sName == 'Tulaytulah'):
+                        if (sName == 'Toletum' or sName == 'Tulaytulah'):
                                 city.setName('Toledo', False)
-                        elif (sName == 'Valentia' or sName == 'Balansiyyah' or sName == 'Valence'):
+                        if (sName == 'Valentia' or sName == 'Balansiyyah' or sName == 'Valence'):
                                 city.setName('Valencia', False)
-                        elif sName == 'Tarraco':
+                        if sName == 'Tarraco':
                                 city.setName('Tarragona', False)
-                        elif (sName == 'Caesaraugusta' or sName == 'Saraqustah'):
+                        if (sName == 'Caesaraugusta' or sName == 'Saraqustah'):
                                 city.setName('Zaragoza', False)
-                        elif sName == 'Brigantium':
+                        if sName == 'Brigantium':
                                 city.setName('La Coru&#241;a', False)
-                        elif sName == 'Hispalis':
+                        if sName == 'Hispalis':
                                 city.setName('Sevilla', False)
-                        elif sName == 'Asturica Augusta':
+                        if sName == 'Asturica Augusta':
                                 city.setName('Astorga', False)		
-                        elif sName == 'Emerita Augusta':
+                        if sName == 'Emerita Augusta':
                                 city.setName('M&#233;rida', False)	
-                        elif (sName == 'Emporion' or sName == 'Emporiae'):
+                        if (sName == 'Emporion' or sName == 'Emporiae'):
                                 city.setName('Ampurias', False)
-                        elif sName == 'Saguntum':
+                        if sName == 'Saguntum':
                                 city.setName('Sagunto', False)	
-                        elif (sName == 'Nova Carthago' or sName == 'Qart Hadasht'):
+                        if (sName == 'Nova Carthago' or sName == 'Qart Hadasht'):
                                 city.setName('Cartagena', False)	
-                        elif (sName == 'Rusadir' or sName == 'Maliliyah'):
+                        if (sName == 'Rusadir' or sName == 'Maliliyah'):
                                 city.setName('Melilla', False)	
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Ciudad de M&#233;xico', False)
-                        elif (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mediolanum' or sName == 'Milan'):
+                        if (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mediolanum' or sName == 'Milan'):
                                 city.setName('Mil&#225;n', False)
-                        elif sName == 'Numantia':
+                        if sName == 'Numantia':
                                 city.setName('Numancia', False)
-                        elif (sName == 'Tingi' or sName == 'Tanger' or sName == 'Tanja'):
+                        if (sName == 'Tingi' or sName == 'Tanger' or sName == 'Tanja'):
                                 city.setName('T&#225;nger', False)
-                        elif (sName == 'Malaka' or sName == 'Malaqah'):
+                        if (sName == 'Malaka' or sName == 'Malaqah'):
                                 city.setName('M&#225;laga', False)
-                        elif sName == 'Ishbiliya':
+                        if sName == 'Ishbiliya':
                                 city.setName('Sevilla', False)
-                        elif sName == 'Qurtubah':
+                        if sName == 'Qurtubah':
                                 city.setName('C&#243;rdoba', False)
-                        elif sName == 'St. Augustine':
+                        if sName == 'St. Augustine':
                                 city.setName('San Agust&#237;n', False)	
-                        elif (sName == 'Panormos' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Ziz'):
+                        if (sName == 'Panormos' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Ziz'):
                                 city.setName('Palermo', False)  
-                        elif (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
+                        if (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
                                 city.setName('Roma', False)
-                        elif (sName == 'Iol Caesarea' or sName == 'Iol' or sName == 'Sharshal'):
+                        if (sName == 'Iol Caesarea' or sName == 'Iol' or sName == 'Sharshal'):
                                 city.setName('Cherchell', False)
-                        elif (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marseille' or sName == 'Marsiliya'):
+                        if (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marseille' or sName == 'Marsiliya'):
                                 city.setName('Marsella', False)
-                        elif sName == 'Bracara Augusta':
+                        if sName == 'Bracara Augusta':
                                 city.setName('Braga', False)
-                        elif (sName == 'Felicitas Julia' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon'):
+                        if (sName == 'Felicitas Julia' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon'):
                                 city.setName('Lisboa', False)
-                        elif (sName == 'Pompaelo' or sName == 'Pampelune' or sName == 'Bambalunah'):
+                        if (sName == 'Pompaelo' or sName == 'Pampelune' or sName == 'Bambalunah'):
                                 city.setName('Pamplona', False)
-                        elif sName == 'Dar Beida':
+                        if sName == 'Dar Beida':
                                 city.setName('Casablanca', False)
-                        elif sName == 'Sidi Ifni':
+                        if sName == 'Sidi Ifni':
                                 city.setName('S.Cruz de Mar Peque&#241;a', False)
-                        elif sName == 'Pax Iulia':
+                        if sName == 'Pax Iulia':
                                 city.setName('Beja', False)
-                        elif (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Marakanda' or sName == 'Afrasiyab'):
+                        if (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Marakanda' or sName == 'Afrasiyab'):
                                 city.setName('Samarcanda', False)
-                        elif (sName == 'ad-Dakhla' or sName == 'Dakhla'):
+                        if (sName == 'ad-Dakhla' or sName == 'Dakhla'):
                                 city.setName('Villa Cisneros', False)
-                        elif (sName == 'Saint Domingue' or sName == 'Dakhla'):
+                        if (sName == 'Saint Domingue' or sName == 'Dakhla'):
                                 city.setName('Santo Domingo', False)
-                        elif (sName == 'Li&#232;ge' or sName == 'Luik' or sName == 'L&#252;ttich'):
+                        if (sName == 'Li&#232;ge' or sName == 'Luik' or sName == 'L&#252;ttich'):
                                 city.setName('Lieja', False)
-                        elif (sName == 'Sint-Helena' or sName == 'Saint Helena'):
+                        if (sName == 'Sint-Helena' or sName == 'Saint Helena'):
                                 city.setName('Santa Helena', False)
-                        elif (sName == 'Cap Horn' or sName == 'Kaap Hoorn' or sName == 'Cape Horn'):
+                        if (sName == 'Cap Horn' or sName == 'Kaap Hoorn' or sName == 'Cape Horn'):
                                 city.setName('Cabo de Hornos', False)
-                        elif (sName == 'Pompeji' or sName == 'Pompeii' or sName == 'Pomp&#233;i'):
+                        if (sName == 'Pompeji' or sName == 'Pompeii' or sName == 'Pomp&#233;i'):
                                 city.setName('Pompeya', False)
-                        elif (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atina' or sName == 'Ath&#232;nes'):
+                        if (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atina' or sName == 'Ath&#232;nes'):
                                 city.setName('Atenas', False)
-                        elif (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
+                        if (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
                                 city.setName('Tripoli', False)
-                        elif (sName == 'Sparte' or sName == 'Sparta'):
+                        if (sName == 'Sparte' or sName == 'Sparta'):
                                 city.setName('Esparta', False)
-                        elif (sName == 'Bandar Melaka' or sName == 'Malakka' or sName == 'Malacca'):
+                        if (sName == 'Bandar Melaka' or sName == 'Malakka' or sName == 'Malacca'):
                                 city.setName('Malaca', False)
-                        elif (sName == 'Corunha' or sName == 'The Groyne' or sName == 'La Corogne'):
+                        if (sName == 'Corunha' or sName == 'The Groyne' or sName == 'La Corogne'):
                                 city.setName('La Coru&#241;a', False)
-                        elif (sName == 'Burdigala' or sName == 'Bordeaux'):
+                        if (sName == 'Burdigala' or sName == 'Bordeaux'):
                                 city.setName('Burdeos', False)
-                        elif (sName == 'Havana' or sName == 'Havanna' or sName == 'La Havane' or sName == 'Gavana'):
+                        if (sName == 'Havana' or sName == 'Havanna' or sName == 'La Havane' or sName == 'Gavana'):
                                 city.setName('La Habana', False)
-                        elif (sName == 'New Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
+                        if (sName == 'New Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
                                 city.setName('Nueva Orleans', False)
-                        elif (sName == 'Klein-Venedig'):
+                        if (sName == 'Klein-Venedig'):
                                 city.setName('Venezuela', False)
-                        elif (sName == 'Trefel&#237;n'):
+                        if (sName == 'Trefel&#237;n'):
                                 city.setName('Trevelin', False)
-                        elif (sName == 'Porth Madryn'):
+                        if (sName == 'Porth Madryn'):
                                 city.setName('Puerto Madryn', False)
-                        elif sName == 'Lle Cul':
+                        if sName == 'Lle Cul':
                                 city.setName('Villa La Angostura', False)
-                        elif sName == 'Spatzenkutter':
+                        if sName == 'Spatzenkutter':
                                 city.setName('Asunci&#243;n', False)
-                        elif sName == 'Holtzel':
+                        if sName == 'Holtzel':
                                 city.setName('Colonia Nievas', False)
-                        elif sName == 'Dehler':
+                        if sName == 'Dehler':
                                 city.setName('Colonia San Miguel', False)
-                        elif sName == 'Hildmann':
+                        if sName == 'Hildmann':
                                 city.setName('Santa Trinidad', False)
-                        elif sName == 'Onuba':
+                        if sName == 'Onuba':
                                 city.setName('Huelva', False)
-                        elif (sName == 'Barcino' or sName == 'Barcelone'):
+                        if (sName == 'Barcino' or sName == 'Barcelone'):
                                 city.setName('Barcelona', False)
-                        elif sName == 'Al-Mariyat':
+                        if sName == 'Al-Mariyat':
                                 city.setName('Almer&#237;a', False)
-                        elif (sName == 'Cape of Good Hope' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Kap der Guten Hoffnung' or sName == 'Kaap de Goede Hoop'):
+                        if (sName == 'Cape of Good Hope' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Kap der Guten Hoffnung' or sName == 'Kaap de Goede Hoop'):
                                 city.setName('Cabo de Buena Esperanza', False)
-                        elif (sName == 'Wahran' or sName == 'Oran'):
+                        if (sName == 'Wahran' or sName == 'Oran'):
                                 city.setName('Or&#225;n', False)
-                        elif (sName == 'Bijayah' or sName == 'B&#233;ja&#239;a'):
+                        if (sName == 'Bijayah' or sName == 'B&#233;ja&#239;a'):
                                 city.setName('Bug&#2237;a', False)
-                        elif sName == 'Victoriae Iuliobrigensium':
+                        if sName == 'Victoriae Iuliobrigensium':
                                 city.setName('Santander', False)
-                        elif sName == 'Helmantica':
+                        if sName == 'Helmantica':
                                 city.setName('Salamanca', False)
-                        elif (sName == 'Portus Cale' or sName == 'Porto' or sName == 'Burtuqal'):
+                        if (sName == 'Portus Cale' or sName == 'Porto' or sName == 'Burtuqal'):
                                 city.setName('Oporto', False)
-                        elif (sName == 'Ossonoba' or sName == "'Uhshunubah"):
+                        if (sName == 'Ossonoba' or sName == "'Uhshunubah"):
                                 city.setName('Faro', False)
-                        elif (sName == 'Venedig' or sName == 'Venise' or sName == 'Venetia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
+                        if (sName == 'Venedig' or sName == 'Venise' or sName == 'Venetia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 city.setName('Venecia', False)
-                        elif sName == 'Al-Magrit':
+                        if sName == 'Al-Magrit':
                                 city.setName('Madrid', False)
-                        elif (sName == 'Mogador' or sName == 'Es-Sauirah'):
+                        if (sName == 'Mogador' or sName == 'Es-Sauirah'):
                                 city.setName('Essaouira', False)
-                        elif sName == 'Brigantium':
+                        if sName == 'Brigantium':
                                 city.setName('Betanzos', False)
-                        elif sName == 'Maynilad':
+                        if sName == 'Maynilad':
                                 city.setName('Manila', False)
-                        elif (sName == 'Qurtuba' or sName == 'Corduba' or sName == 'C&#243;rdova'):
+                        if (sName == 'Qurtuba' or sName == 'Corduba' or sName == 'C&#243;rdova'):
                                 city.setName('C&#243;rdoba', False)
-                        elif (sName == 'Sant Yaqub'):
+                        if (sName == 'Sant Yaqub'):
                                 city.setName('Santiago', False)
-                        elif (sName == 'Santa Fe'):
+                        if (sName == 'Santa Fe'):
                                 city.setName('Santa F&#233;', False)
-                        elif (sName == 'Dilli' or sName == 'Deli' or sName == 'New Delhi' or sName == 'Derii'):
+                        if (sName == 'Dilli' or sName == 'Deli' or sName == 'New Delhi' or sName == 'Derii'):
                                 city.setName('Delhi', False)
-                        elif (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapore' or sName == 'Shounantou'):
+                        if (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapore' or sName == 'Shounantou'):
                                 city.setName('Singapur', False)
-                        elif (sName == 'Haojing' or sName == 'Macau' or sName == 'Aomen' or sName == 'Makao'):
+                        if (sName == 'Haojing' or sName == 'Macau' or sName == 'Aomen' or sName == 'Makao'):
                                 city.setName('Macao', False)
-                        elif (sName == 'New Iberia' or sName == 'Nouvelle-Ib&#233;rie'):
+                        if (sName == 'New Iberia' or sName == 'Nouvelle-Ib&#233;rie'):
                                 city.setName('Nueva Iberia', False)
-                        elif (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Hong Kong', False)
-                        elif sName == 'Col&#244;nia do Sacramento':
+                        if sName == 'Col&#244;nia do Sacramento':
                                 city.setName('Colonia del Sacramento', False)
-                        elif sName == 'Yokib':
+                        if sName == 'Yokib':
                                 city.setName('Piedras Negras', False)
-                        elif (sName == 'Mbanza Kongo' or sName == 'S.Salvador do Congo'):
+                        if (sName == 'Mbanza Kongo' or sName == 'S.Salvador do Congo'):
                                 city.setName('S.Salvador de Congo', False)
-                        elif (sName == 'Brentesion' or sName == 'Brindisi'):
+                        if (sName == 'Brentesion' or sName == 'Brindisi'):
                                 city.setName('Brundisium', False)
-                        elif (sName == 'Port Solitude' or sName == 'Port St. Louis'):
+                        if (sName == 'Port Solitude' or sName == 'Port St. Louis'):
                                 city.setName('Puerto Soledad', False)
-                        elif (sName == 'Parijs' or sName == 'Paris'):
+                        if (sName == 'Parijs' or sName == 'Paris'):
                                 city.setName('Par&#237;s', False)
                         #inca
-                        elif sName == 'Quitu':
+                        if sName == 'Quitu':
                                 city.setName('Quito', False)
-                        elif sName == 'Tucume':
+                        if sName == 'Tucume':
                                 city.setName('T&#250;cume', False)
-                        elif sName == 'Chan-Chan':
+                        if sName == 'Chan-Chan':
                                 city.setName('Chanchan', False) #Trujillo
-                        elif sName == 'Pachacamaq':
+                        if sName == 'Pachacamaq':
                                 city.setName('Pachacamac', False)
-                        elif sName == 'Machu-Pikchu':
+                        if sName == 'Machu-Pikchu':
                                 city.setName('Machu Picchu', False)
-                        elif sName == 'Qusqu':
+                        if sName == 'Qusqu':
                                 city.setName('Cuzco', False)
-                        elif sName == 'Ariqipaya':
+                        if sName == 'Ariqipaya':
                                 city.setName('Arequipa', False)
-                        elif sName == 'Tiyawanaku':
+                        if sName == 'Tiyawanaku':
                                 city.setName('Tiahuanaco', False) #Tihuanaku? #Tiwanaku? #Puno?
-                        elif sName == 'Caqonatambu':
+                        if sName == 'Caqonatambu':
                                 city.setName('Limatambo', False)
-                        elif sName == 'Coqimpu':
+                        if sName == 'Coqimpu':
                                 city.setName('Coquimbo', False)
-                        elif sName == 'Ullantaytanpu':
+                        if sName == 'Ullantaytanpu':
                                 city.setName('Ollantaytambo', False)
-                        elif sName == 'Vitcos':
+                        if sName == 'Vitcos':
                                 city.setName('Piura', False)
-                        elif sName == 'Andahuailas':
+                        if sName == 'Andahuailas':
                                 city.setName('Andahuaylas', False)
-                        elif sName == 'Acari':
+                        if sName == 'Acari':
                                 city.setName('Atico', False)
-                        elif sName == 'Lluli':
+                        if sName == 'Lluli':
                                 city.setName('Juli', False)
-                        elif sName == 'Chuqiapu':
+                        if sName == 'Chuqiapu':
                                 city.setName('Chuquiapo', False)
-                        elif sName == 'Huanuqupampa':
+                        if sName == 'Huanuqupampa':
                                 city.setName('Huanucopampa', False)
-                        elif sName == 'Tambuqcucha':
+                        if sName == 'Tambuqcucha':
                                 city.setName('Tamboccocha', False)
-                        elif sName == 'Waras':
+                        if sName == 'Waras':
                                 city.setName('Huaraz', False)
-                        elif sName == 'Cacsamalca':
+                        if sName == 'Cacsamalca':
                                 city.setName('Caxamalca', False)
-                        elif sName == 'Sauza':
+                        if sName == 'Sauza':
                                 city.setName('Sausa', False)
-                        elif sName == 'Tampupuca':
+                        if sName == 'Tampupuca':
                                 city.setName('Tambocolorado', False)
-                        elif sName == 'Huaqa':
+                        if sName == 'Huaqa':
                                 city.setName('Huaca', False)
-                        elif sName == 'Chuitu':
+                        if sName == 'Chuitu':
                                 city.setName('Chuito', False)
-                        elif sName == 'Kashamarka':
+                        if sName == 'Kashamarka':
                                 city.setName('Cajamarca', False)
-                        elif sName == 'Lauricucha':
+                        if sName == 'Lauricucha':
                                 city.setName('Hu&#225;nuco', False)
-                        elif sName == 'Tomebamba':
+                        if sName == 'Tomebamba':
                                 city.setName('Cuenca', False)
-                        elif sName == 'Jauja':
+                        if sName == 'Jauja':
                                 city.setName('Sausa', False)
-                        elif sName == 'Willkapampa':
+                        if sName == 'Willkapampa':
                                 city.setName('Vilcabamba', False)
-                        elif sName == 'Wantar Chawin':
+                        if sName == 'Wantar Chawin':
                                 city.setName('Chavín de Hu&#225;ntar', False)								
-                        elif sName == 'Punu':
+                        if sName == 'Punu':
                                 city.setName('Puno', False)	
-                        elif (sName == 'G&#234;nes' or sName == 'Genua'):
+                        if (sName == 'G&#234;nes' or sName == 'Genua'):
                                 city.setName('G&#233;nova', False)
-                        elif (sName == 'Manira'):
+                        if (sName == 'Manira'):
                                 city.setName('Manila', False)
-                        elif (sName == "Chich'en Itz&#225;"):
+                        if (sName == "Chich'en Itz&#225;"):
                                 city.setName('Ciudad Real', False)
-                        elif (sName == "Huaxyacac"):
+                        if (sName == "Huaxyacac"):
                                 city.setName('Oaxaca', False)
-                        elif (sName == "Oxhuitza" or sName == 'Caracol'):
+                        if (sName == "Oxhuitza" or sName == 'Caracol'):
                                 city.setName('El Caracol', False)
-                        elif (sName == 'Rhegion' or sName == 'Riv&#224;h' or sName == 'Rhegium Julii' or sName == 'Reggio') :
+                        if (sName == 'Rhegion' or sName == 'Riv&#224;h' or sName == 'Rhegium Julii' or sName == 'Reggio') :
                                 city.setName('R&#237;joles', False)
 
-                elif (iNewOwner == iFrance): 
+                if (iNewOwner == iFrance): 
                         if (sName == 'Lutetia' or sName == 'Lutetia Parisiorum' or sName == 'Parijs' or sName == 'Par&#237;s'):
                                 city.setName('Paris', False)
-                        elif sName == 'Rotomagus':
+                        if sName == 'Rotomagus':
                                 city.setName('Rouen', False)
-                        elif (sName == 'Lugdunum' or sName == 'Lugodunon'):
+                        if (sName == 'Lugdunum' or sName == 'Lugodunon'):
                                 city.setName('Lyon', False)
-                        elif sName == 'Aquae Sextiae':
+                        if sName == 'Aquae Sextiae':
                                 city.setName('Aix-en-Provence', False)
-                        elif (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marsella' or sName == 'Marsiliya' or sName == 'Marsiglia'):
+                        if (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marsella' or sName == 'Marsiliya' or sName == 'Marsiglia'):
                                 city.setName('Marseille', False)
-                        elif sName == 'Turonensis':
+                        if sName == 'Turonensis':
                                 city.setName('Tours', False)
-                        elif sName == 'Aurelia':
+                        if sName == 'Aurelia':
                                 city.setName('Orl&#233;ans', False)
-                        elif sName == 'Lapurdum':
+                        if sName == 'Lapurdum':
                                 city.setName('Bayonne', False)
-                        elif (sName == 'Burdigala' or sName == 'Burdeos'):
+                        if (sName == 'Burdigala' or sName == 'Burdeos'):
                                 city.setName('Bordeaux', False)
-                        elif sName == 'Narbo Martius':
+                        if sName == 'Narbo Martius':
                                 city.setName('Narbonne', False)
-                        elif sName == 'Limonum':
+                        if sName == 'Limonum':
                                 city.setName('Poitiers', False)
-                        elif sName == 'Tolosa':
+                        if sName == 'Tolosa':
                                 city.setName('Toulouse', False)
-                        elif sName == 'Caesarodunum':
+                        if sName == 'Caesarodunum':
                                 city.setName('Tours', False)
-                        elif sName == 'Portus Namnetum':
+                        if sName == 'Portus Namnetum':
                                 city.setName('Nantes', False)
-                        elif sName == 'Gesocribate':
+                        if sName == 'Gesocribate':
                                 city.setName('Brest', False)
-                        elif sName == 'Condate Redonum':
+                        if sName == 'Condate Redonum':
                                 city.setName('Rennes', False)
-                        elif sName == 'Augustodurum':
+                        if sName == 'Augustodurum':
                                 city.setName('Bayeux', False)
-                        elif sName == 'Durocoturum':
+                        if sName == 'Durocoturum':
                                 city.setName('Reims', False)
-                        elif sName == 'Cenabum Aureliani':
+                        if sName == 'Cenabum Aureliani':
                                 city.setName('Orl&#233;ans', False)
-                        elif sName == 'Vesontio':
+                        if sName == 'Vesontio':
                                 city.setName('Besan&#231;on', False)
-                        elif sName == 'Lousonna':
+                        if sName == 'Lousonna':
                                 city.setName('Lausanne', False)
-                        elif (sName == 'Argentoratus' or sName == 'Stra&#223;burg'):
+                        if (sName == 'Argentoratus' or sName == 'Stra&#223;burg'):
                                 city.setName('Strasbourg', False)
-                        elif sName == 'Augusta Treverorum':
+                        if sName == 'Augusta Treverorum':
                                 city.setName('Tr&#232;ves', False)
-                        elif sName == 'Gesoriacum':
+                        if sName == 'Gesoriacum':
                                 city.setName('Boulogne', False)
-                        elif (sName == 'Nijmegen' or sName == 'Batavodurum'):
+                        if (sName == 'Nijmegen' or sName == 'Batavodurum'):
                                 city.setName('Nim&#232;gue', False)
-                        elif sName == 'Iuliomagus':
+                        if sName == 'Iuliomagus':
                                 city.setName('Angers', False)
-                        elif sName == 'Nemausus':
+                        if sName == 'Nemausus':
                                 city.setName('N&#238;mes', False)
-                        elif (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mediolanum' or sName == 'Mil&#225;n' or sName == 'Milano'):
+                        if (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mediolanum' or sName == 'Mil&#225;n' or sName == 'Milano'):
                                 city.setName('Milan', False)
-                        elif sName == 'Genava':
+                        if sName == 'Genava':
                                 city.setName('Gen&#232ve', False)
-                        elif sName == 'Castra Regina':
+                        if sName == 'Castra Regina':
                                 city.setName('Ratisbonne', False)
-                        elif (sName == 'Aachen' or sName == 'Aquisgranum' or sName == 'Aken'):
+                        if (sName == 'Aachen' or sName == 'Aquisgranum' or sName == 'Aken'):
                                 city.setName('Aix-la-Chapelle', False)
-                        elif (sName == 'Copenhagen' or sName == 'Kopenhagen' or sName == 'Kj&#248;bmandehavn' or sName == 'Hafnia'):
+                        if (sName == 'Copenhagen' or sName == 'Kopenhagen' or sName == 'Kj&#248;bmandehavn' or sName == 'Hafnia'):
                                 city.setName('Copenhague', False)
-                        elif (sName == 'Al-Jazair' or sName == 'Cezayir'):
+                        if (sName == 'Al-Jazair' or sName == 'Cezayir'):
                                 city.setName('Alger', False)
-                        elif (sName == 'Tingi' or sName == 'T&#225;nger' or sName == 'Tanja'):
+                        if (sName == 'Tingi' or sName == 'T&#225;nger' or sName == 'Tanja'):
                                 city.setName('Tanger', False)
-                        elif (sName == 'Dubh Linn' or sName == '&#193;th Cliath'):
+                        if (sName == 'Dubh Linn' or sName == '&#193;th Cliath'):
                                 city.setName('Dublin', False)
-                        elif (sName == 'Heithabyr' or sName == 'Haithabu'):
+                        if (sName == 'Heithabyr' or sName == 'Haithabu'):
                                 city.setName('Hedeby', False)
-                        elif (sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Durr&#235;s' or sName == 'Drach' or sName == 'Dira&#231' or sName == 'Dyrrachion'):
+                        if (sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Durr&#235;s' or sName == 'Drach' or sName == 'Dira&#231' or sName == 'Dyrrachion'):
                                 city.setName('Duras', False)
-                        elif (sName == 'Moguntiacum' or sName == 'Mogontiacum' or sName == 'Mainz'):
+                        if (sName == 'Moguntiacum' or sName == 'Mogontiacum' or sName == 'Mainz'):
                                 city.setName('Mayence', False)
-                        elif (sName == 'Roma' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
+                        if (sName == 'Roma' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
                                 city.setName('Rome', False)
-                        elif sName == 'Bremen':
+                        if sName == 'Bremen':
                                 city.setName('Br&#234;me', False)
-                        elif (sName == 'Iol Caesarea' or sName == 'Iol' or sName == 'Sharshal'):
+                        if (sName == 'Iol Caesarea' or sName == 'Iol' or sName == 'Sharshal'):
                                 city.setName('Cherchell', False)
-                        elif (sName == 'Panormos' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Ziz'):
+                        if (sName == 'Panormos' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Ziz'):
                                 city.setName('Palermo', False) 
-                        elif (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcanda' or sName == 'Marakanda' or sName == 'Afrasiyab'):
+                        if (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcanda' or sName == 'Marakanda' or sName == 'Afrasiyab'):
                                 city.setName('Samarcande', False) 
-                        elif (sName == 'Santo Domingo' or sName == 'Dakhla'):
+                        if (sName == 'Santo Domingo' or sName == 'Dakhla'):
                                 city.setName('Saint Domingue', False)
-                        elif (sName == 'Brussels' or sName == 'Br&#252;ssel' or sName == 'Brussel'):
+                        if (sName == 'Brussels' or sName == 'Br&#252;ssel' or sName == 'Brussel'):
                                 city.setName('Bruxelles', False)
-                        elif (sName == 'Lieja' or sName == 'Luik' or sName == 'L&#252;ttich'):
+                        if (sName == 'Lieja' or sName == 'Luik' or sName == 'L&#252;ttich'):
                                 city.setName('Li&#232;ge', False)
-                        elif (sName == 'Hamburg' or sName == 'Hamborg' or sName == 'Hamburgum'):
+                        if (sName == 'Hamburg' or sName == 'Hamborg' or sName == 'Hamburgum'):
                                 city.setName('Hambourg', False)
-                        elif (sName == 'Knob Lake'):
+                        if (sName == 'Knob Lake'):
                                 city.setName('Lac Knob', False)
-                        elif (sName == 'Quebec City'):
+                        if (sName == 'Quebec City'):
                                 city.setName('Qu&#233;bec', False)
-                        elif (sName == 'Sa&#245; Lu&#237;s'):
+                        if (sName == 'Sa&#245; Lu&#237;s'):
                                 city.setName('Saint Louis', False)
-                        elif (sName == 'New Orleans' or sName == 'Nueva Orleans' or sName == 'Nova Orle&#227;es'):
+                        if (sName == 'New Orleans' or sName == 'Nueva Orleans' or sName == 'Nova Orle&#227;es'):
                                 city.setName('Nouvelle Orl&#233;ans', False)
-                        elif (sName == 'Cabo de Hornos' or sName == 'Kaap Hoorn' or sName == 'Cape Horn'):
+                        if (sName == 'Cabo de Hornos' or sName == 'Kaap Hoorn' or sName == 'Cape Horn'):
                                 city.setName('Cap Horn', False)
-                        elif (sName == 'Little Chute'):
+                        if (sName == 'Little Chute'):
                                 city.setName('La Petite Chute', False)
-                        elif (sName == 'Vinland' or sName == 'Anse aux Meadows'):
+                        if (sName == 'Vinland' or sName == 'Anse aux Meadows'):
                                 city.setName('Anse-aux-M&#233;duses', False)
-                        elif (sName == 'Agley' or sName == 'Oglej' or sName == 'Aquileia'):
+                        if (sName == 'Agley' or sName == 'Oglej' or sName == 'Aquileia'):
                                 city.setName('Aquil&#233;e', False)
-                        elif (sName == 'Londinium' or sName == 'London' or sName == 'Londen'):
+                        if (sName == 'Londinium' or sName == 'London' or sName == 'Londen'):
                                 city.setName('Londres', False)
-                        elif (sName == 'Pompeji' or sName == 'Pompeii' or sName == 'Pompeya'):
+                        if (sName == 'Pompeji' or sName == 'Pompeii' or sName == 'Pompeya'):
                                 city.setName('Pomp&#233;i', False)
-                        elif (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atina' or sName == 'Atenas' or sName == 'Athena'):
+                        if (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atina' or sName == 'Atenas' or sName == 'Athena'):
                                 city.setName('Ath&#232;nes', False)
-                        elif (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
+                        if (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
                                 city.setName('Tripoli', False)
-                        elif (sName == 'Sparta' or sName == 'Esparta'):
+                        if (sName == 'Sparta' or sName == 'Esparta'):
                                 city.setName('Sparte', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Mexico', False)
-                        elif (sName == 'Fderik'):
+                        if (sName == 'Fderik'):
                                 city.setName('Fort Gouraud', False)
-                        elif (sName == 'Illizi'):
+                        if (sName == 'Illizi'):
                                 city.setName('Fort Polignac', False)
-                        elif (sName == 'Havana' or sName == 'Havanna' or sName == 'La Habana' or sName == 'Gavana'):
+                        if (sName == 'Havana' or sName == 'Havanna' or sName == 'La Habana' or sName == 'Gavana'):
                                 city.setName('La Havane', False)
-                        elif (sName == 'Klein-Venedig'):
+                        if (sName == 'Klein-Venedig'):
                                 city.setName('Venezuela', False)
-                        elif sName == 'Sankt Thomas':
+                        if sName == 'Sankt Thomas':
                                 city.setName('Saint Thomas', False)
-                        elif (sName == 'Guangzhou' or sName == 'Cant&#227;o' or sName == 'Koushuu'):
+                        if (sName == 'Guangzhou' or sName == 'Cant&#227;o' or sName == 'Koushuu'):
                                 city.setName('Canton', False)
-                        elif (sName == 'Cape of Good Hope' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cabo de Buena Esperanza' or sName == 'Kap der Guten Hoffnung' or sName == 'Kaap de Goede Hoop'):
+                        if (sName == 'Cape of Good Hope' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cabo de Buena Esperanza' or sName == 'Kap der Guten Hoffnung' or sName == 'Kaap de Goede Hoop'):
                                 city.setName('Cap de Bonne-Esp&#233;rance', False)
-                        elif (sName == 'Bijayah' or sName == 'Bug&#2237;a'):
+                        if (sName == 'Bijayah' or sName == 'Bug&#2237;a'):
                                 city.setName('B&#233;ja&#239;a', False)
-                        elif (sName == 'Or&#225;n' or sName == 'Wahran'):
+                        if (sName == 'Or&#225;n' or sName == 'Wahran'):
                                 city.setName('Oran', False)
-                        elif (sName == 'Tharangambadi' or sName == 'Trankebar'):
+                        if (sName == 'Tharangambadi' or sName == 'Trankebar'):
                                 city.setName('Tranquebar', False)
-                        elif (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik' or sName == 'Venezia'):
+                        if (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik' or sName == 'Venezia'):
                                 city.setName('Venise', False)
-                        elif (sName == 'Wien' or sName == 'Vena' or sName == 'Vindobona' or sName == 'Viyana'):
+                        if (sName == 'Wien' or sName == 'Vena' or sName == 'Vindobona' or sName == 'Viyana'):
                                 city.setName('Vienne', False)
-                        elif sName == 'Arguim':
+                        if sName == 'Arguim':
                                 city.setName('Arguin', False)
-                        elif (sName == 'Corunha' or sName == 'The Groyne' or sName == 'La Coru&#241;a'):
+                        if (sName == 'Corunha' or sName == 'The Groyne' or sName == 'La Coru&#241;a'):
                                 city.setName('La Corogne', False)
-                        elif (sName == 'Pompaelo' or sName == 'Pamplona' or sName == 'Bambalunah'):
+                        if (sName == 'Pompaelo' or sName == 'Pamplona' or sName == 'Bambalunah'):
                                 city.setName('Pampelune', False)
-                        elif (sName == 'Pondicherry' or sName == 'Puducherry'):
+                        if (sName == 'Pondicherry' or sName == 'Puducherry'):
                                 city.setName('Pondich&#233;ry', False)
-                        elif (sName == 'Tacape' or sName == 'Gabes' or sName == 'Qabis'):
+                        if (sName == 'Tacape' or sName == 'Gabes' or sName == 'Qabis'):
                                 city.setName('Gab&#232;s', False)
-                        elif (sName == 'Barcino' or sName == 'Barcelona'):
+                        if (sName == 'Barcino' or sName == 'Barcelona'):
                                 city.setName('Barcelone', False)
-                        elif (sName == 'M&#252;nchen'):
+                        if (sName == 'M&#252;nchen'):
                                 city.setName('Munich', False)
-                        elif (sName == 'Haojing' or sName == 'Macau' or sName == 'Aomen' or sName == 'Makao'):
+                        if (sName == 'Haojing' or sName == 'Macau' or sName == 'Aomen' or sName == 'Makao'):
                                 city.setName('Macao', False)
-                        elif (sName == 'New Iberia' or sName == 'Nueva Iberia'):
+                        if (sName == 'New Iberia' or sName == 'Nueva Iberia'):
                                 city.setName('Nouvelle-Ib&#233;rie', False)
-                        elif (sName == 'Adiacium'):
+                        if (sName == 'Adiacium'):
                                 city.setName('Ajaccio', False)
-                        elif (sName == 'Dilli' or sName == 'Deli' or sName == 'New Delhi' or sName == 'Derii'):
+                        if (sName == 'Dilli' or sName == 'Deli' or sName == 'New Delhi' or sName == 'Derii'):
                                 city.setName('Delhi', False)
-                        elif (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Hong Kong', False)
-                        elif sName == 'Bang Makok':
+                        if sName == 'Bang Makok':
                                 city.setName('Bangkok', False)
-                        elif sName == 'Jabuuti':
+                        if sName == 'Jabuuti':
                                 city.setName('Djibouti', False)
-                        elif (sName == 'B&#226;ton Rouge'):
+                        if (sName == 'B&#226;ton Rouge'):
                                 city.setName('Baton Rouge', False)
-                        elif (sName == 'Hippo' or sName == 'Annaba' or sName == 'Hippo Regius'):
+                        if (sName == 'Hippo' or sName == 'Annaba' or sName == 'Hippo Regius'):
                                 city.setName('B&#244;ne', False)
-                        elif (sName == 'Fort Panmure'):
+                        if (sName == 'Fort Panmure'):
                                 city.setName('Fort Rosalie', False)
-                        elif (sName == 'Diaroritum'):
+                        if (sName == 'Diaroritum'):
                                 city.setName('Rennes-le-Ch&#226;teau', False)
-                        elif (sName == 'G&#233;nova' or sName == 'Genua'):
+                        if (sName == 'G&#233;nova' or sName == 'Genua'):
                                 city.setName('G&#234;nes', False)
-                        elif (sName == 'Frankfurt' or sName == 'Bona Mansio' or sName == 'Frankfort'):
+                        if (sName == 'Frankfurt' or sName == 'Bona Mansio' or sName == 'Frankfort'):
                                 city.setName('Francfort', False)
-                        elif (sName == 'Brentesion' or sName == 'Brindisi'):
+                        if (sName == 'Brentesion' or sName == 'Brindisi'):
                                 city.setName('Brundisium', False)
-                        elif (sName == 'Port Solitude' or sName == 'Puerto Soledad'):
+                        if (sName == 'Port Solitude' or sName == 'Puerto Soledad'):
                                 city.setName('Port St. Louis', False)
-                        elif (sName == 'Pittsburgh'):
+                        if (sName == 'Pittsburgh'):
                                 city.setName('Fort Duquesne', False)
-                        elif (sName == 'Hannover' or sName == 'Hannovera'):
+                        if (sName == 'Hannover' or sName == 'Hannovera'):
                                 city.setName('Hanovre', False)
-                        elif (sName == 'Toranaro' or sName == 'Tolanaro'):
+                        if (sName == 'Toranaro' or sName == 'Tolanaro'):
                                 city.setName('Fort Dauphin', False)
-                        elif (sName == 'Rhegion' or sName == 'Riv&#224;h' or sName == 'Rhegium Julii' or sName == 'R&#237;joles') :
+                        if (sName == 'Rhegion' or sName == 'Riv&#224;h' or sName == 'Rhegium Julii' or sName == 'R&#237;joles') :
                                 city.setName('Reggio', False)
-                        elif (sName == 'Balansiyyah' or sName == 'Valencia' or sName == 'Valentia'):
+                        if (sName == 'Balansiyyah' or sName == 'Valencia' or sName == 'Valentia'):
                                 city.setName('Valence', False)
-                        elif (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lissabon' or sName == 'Lisbon'):
+                        if (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lissabon' or sName == 'Lisbon'):
                                 city.setName('Lisbonne', False)
-			elif (sName == 'Nizza'):
+			if (sName == 'Nizza'):
 				city.setName('Nice', False)
-			elif (sName == 'Torino'):
+			if (sName == 'Torino'):
 				city.setName('Turin', False)
-			elif (sName == 'Firenze' or sName == 'Florenz'):
+			if (sName == 'Firenze' or sName == 'Florenz'):
 				city.setName('Florence', False)
-			elif (sName == 'Napoli' or sName == 'Neapel' or sName == 'Neapolis'):
+			if (sName == 'Napoli' or sName == 'Neapel' or sName == 'Neapolis'):
 				city.setName('Naples', False)
-			elif sName == 'Sirte' or sName == 'Surt':
+			if sName == 'Sirte' or sName == 'Surt':
 				city.setName('Syrte', False)
 
                         if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'C&#225;diz' or sName == 'C&#225;dis'):
                                 city.setName('Cadix', False)
 
-                elif (iNewOwner == iEngland): 
+                if (iNewOwner == iEngland): 
                         if (sName == 'Londinium' or sName == 'Londres' or sName == 'Londen' or sName == 'Lund&#250;vir'):
                                 city.setName('London', False)
-                        elif sName == 'Ebracum':
+                        if sName == 'Ebracum':
                                 city.setName('York', False)
-                        elif sName == 'Aquae Sulis':
+                        if sName == 'Aquae Sulis':
                                 city.setName('Bath', False)
-                        elif sName == 'Durovernum':
+                        if sName == 'Durovernum':
                                 city.setName('Canterbury', False)
-                        elif sName == 'Venta Belgarum':
+                        if sName == 'Venta Belgarum':
                                 city.setName('Winchester', False)
-                        elif sName == 'Isca Dumnoniorum':
+                        if sName == 'Isca Dumnoniorum':
                                 city.setName('Exeter', False)
-                        elif sName == 'Deva':
+                        if sName == 'Deva':
                                 city.setName('Chester', False)
-                        elif sName == 'Camulodunum':
+                        if sName == 'Camulodunum':
                                 city.setName('Colchester', False)
-                        elif sName == 'Isca Silurum':
+                        if sName == 'Isca Silurum':
                                 city.setName('Caerleon', False)
-                        elif sName == 'Mancunium':
+                        if sName == 'Mancunium':
                                 city.setName('Manchester', False)
-                        elif sName == 'Luguvallium':
+                        if sName == 'Luguvallium':
                                 city.setName('Carlisle', False)
-                        elif (sName == 'Eblana' or sName == 'Dubh Linn'):
+                        if (sName == 'Eblana' or sName == 'Dubh Linn'):
                                 city.setName('Dublin', False)
-                        elif sName == 'Luguvallium':
+                        if sName == 'Luguvallium':
                                 city.setName('Carlisle', False)
-                        elif (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mediolanum' or sName == 'Mil&#225;n'):
+                        if (sName == 'Melpum' or sName == 'Mailand' or sName == 'Mediolanum' or sName == 'Mil&#225;n'):
                                 city.setName('Milan', False)
-                        elif sName == 'G&#246;teborg':
+                        if sName == 'G&#246;teborg':
                                 city.setName('Gothenburg', False)
-                        elif (sName == 'Copenhague' or sName == 'Kopenhagen' or sName == 'Kj&#248;bmandehavn'):
+                        if (sName == 'Copenhague' or sName == 'Kopenhagen' or sName == 'Kj&#248;bmandehavn'):
                                 city.setName('Copenhagen', False)
-                        elif (sName == 'Nieuw Amsterdam' or sName == "N'yu-York" or sName == 'Nyuu Yooku'):
+                        if (sName == 'Nieuw Amsterdam' or sName == "N'yu-York" or sName == 'Nyuu Yooku'):
                                 city.setName('New York', False)
-                        elif (sName == 'Dubh Linn' or sName == '&#193;th Cliath'):
+                        if (sName == 'Dubh Linn' or sName == '&#193;th Cliath'):
                                 city.setName('Dublin', False)
-                        elif sName == 'Deoraby':
+                        if sName == 'Deoraby':
                                 city.setName('Derby', False)
-                        elif sName == 'J&#243;rvik':
+                        if sName == 'J&#243;rvik':
                                 city.setName('York', False)
-                        elif sName == 'Kirkjuvagr':
+                        if sName == 'Kirkjuvagr':
                                 city.setName('Kirkwall', False)
-                        elif sName == 'San Agust&#237;n':
+                        if sName == 'San Agust&#237;n':
                                 city.setName('St. Augustine', False)
-                        elif sName == 'B&#233;al Feirste':
+                        if sName == 'B&#233;al Feirste':
                                 city.setName('Belfast', False)
-                        elif sName == 'Kaapstadt':
+                        if sName == 'Kaapstadt':
                                 city.setName('Cape Town', False)
-                        elif (sName == 'Santa Helena' or sName == 'Sint-Helena'):
+                        if (sName == 'Santa Helena' or sName == 'Sint-Helena'):
                                 city.setName('Saint Helena', False)
-                        elif (sName == 'Bruxelles' or sName == 'Br&#252;ssel' or sName == 'Brussel'):
+                        if (sName == 'Bruxelles' or sName == 'Br&#252;ssel' or sName == 'Brussel'):
                                 city.setName('Brussels', False)
-                        elif (sName == 'Lac Knob'):
+                        if (sName == 'Lac Knob'):
                                 city.setName('Knob Lake', False)
-                        elif (sName == 'Qu&#233;bec'):
+                        if (sName == 'Qu&#233;bec'):
                                 city.setName('Quebec City', False)
-                        elif (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
+                        if (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
                                 city.setName('New Orleans', False)
-                        elif (sName == 'Cabo de Hornos' or sName == 'Kaap Hoorn' or sName == 'Cap Horn'):
+                        if (sName == 'Cabo de Hornos' or sName == 'Kaap Hoorn' or sName == 'Cap Horn'):
                                 city.setName('Cape Horn', False)
-                        elif (sName == 'Fort Zeelandia' or sName == 'Paramaribo'):
+                        if (sName == 'Fort Zeelandia' or sName == 'Paramaribo'):
                                 city.setName('Fort Willoughby', False)
-                        elif sName == 'Fort Goede Hoop':
+                        if sName == 'Fort Goede Hoop':
                                 city.setName('Hartford', False)
-                        elif sName == 'Beverwyck':
+                        if sName == 'Beverwyck':
                                 city.setName('Albany', False)
-                        elif sName == 'Fort Beversreede':
+                        if sName == 'Fort Beversreede':
                                 city.setName('Philadelphia', False)
-                        elif sName == 'Wilmington':
+                        if sName == 'Wilmington':
                                 city.setName('Nieuwer-Amstel', False)
-                        elif (sName == 'La Petite Chute'):
+                        if (sName == 'La Petite Chute'):
                                 city.setName('Little Chute', False)
-                        elif (sName == 'Vinland' or sName == 'Anse-aux-M&#233;duses'):
+                        if (sName == 'Vinland' or sName == 'Anse-aux-M&#233;duses'):
                                 city.setName('Anse aux Meadows', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Mexico City', False)
-                        elif (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Ath&#232;nes' or sName == 'Atina' or sName == 'Atenas' or sName == 'Athena'):
+                        if (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Ath&#232;nes' or sName == 'Atina' or sName == 'Atenas' or sName == 'Athena'):
                                 city.setName('Athens', False)
-                        elif (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
+                        if (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
                                 city.setName('Tripoli', False)
-                        elif (sName == 'Sparte' or sName == 'Esparta'):
+                        if (sName == 'Sparte' or sName == 'Esparta'):
                                 city.setName('Sparta', False)
-                        elif (sName == 'Jekabforts'):
+                        if (sName == 'Jekabforts'):
                                 city.setName('Fort James', False)
-                        elif sName == 'Novo-Arkhangelsk':
+                        if sName == 'Novo-Arkhangelsk':
                                 city.setName('Sitka', False)
-                        #elif sName == "Krepost' Ross":
+                        #if sName == "Krepost' Ross":
                         #        city.setName("Fort Ross", False)
-                        elif (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
+                        if (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
                                 city.setName('Havana', False)
-                        elif sName == 'Fort Kristina':
+                        if sName == 'Fort Kristina':
                                 city.setName('Wilmington', False)
-                        elif (sName == 'Klein-Venedig'):
+                        if (sName == 'Klein-Venedig'):
                                 city.setName('Venezuela', False)
-                        elif sName == 'Sankt Thomas':
+                        if sName == 'Sankt Thomas':
                                 city.setName('Saint Thomas', False)
-                        elif sName == 'Fort D&#233;troit':
+                        if sName == 'Fort D&#233;troit':
                                 city.setName('Detroit', False)
-                        elif sName == 'Weihai':
+                        if sName == 'Weihai':
                                 city.setName('Port Edward', False)
-                        elif (sName == 'Guangzhou' or sName == 'Cant&#227;o' or sName == 'Koushuu'):
+                        if (sName == 'Guangzhou' or sName == 'Cant&#227;o' or sName == 'Koushuu'):
                                 city.setName('Canton', False)
-                        elif (sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cabo de Buena Esperanza' or sName == 'Kap der Guten Hoffnung' or sName == 'Kaap de Goede Hoop'):
+                        if (sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cabo de Buena Esperanza' or sName == 'Kap der Guten Hoffnung' or sName == 'Kaap de Goede Hoop'):
                                 city.setName('Cape of Good Hope', False)
-                        elif sName == 'Fort Frontenac':
+                        if sName == 'Fort Frontenac':
                                 city.setName('Kingston', False)
-                        elif (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
+                        if (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 city.setName('Venice', False)
-                        elif (sName == 'Hierusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'): 
+                        if (sName == 'Hierusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'): 
                                 city.setName('Jerusalem', False)
-                        elif (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
+                        if (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
                                 city.setName('Alexandria', False)
-                        elif (sName == 'Al-Qahirah' or sName == 'Memphis' or sName == 'Ineb Hedj' or sName == 'Kahire' or sName == 'El-Qahirah' or sName == 'Kairo'):
+                        if (sName == 'Al-Qahirah' or sName == 'Memphis' or sName == 'Ineb Hedj' or sName == 'Kahire' or sName == 'El-Qahirah' or sName == 'Kairo'):
                                 city.setName('Cairo', False)
-                        elif sName == 'Arguim':
+                        if sName == 'Arguim':
                                 city.setName('Arguin', False)
-                        elif (sName == 'Corunha' or sName == 'La Corogne' or sName == 'La Coru&#241;a'):
+                        if (sName == 'Corunha' or sName == 'La Corogne' or sName == 'La Coru&#241;a'):
                                 city.setName('The Groyne', False)
-                        elif sName == "Tubruq":
+                        if sName == "Tubruq":
                                 city.setName('Tobruk', False)
-                        elif (sName == 'Pondich&#233;ry' or sName == 'Puducherry'):
+                        if (sName == 'Pondich&#233;ry' or sName == 'Puducherry'):
                                 city.setName('Pondicherry', False)
-                        elif (sName == 'Mumbai' or sName == 'Bombaim' or sName == 'Bonbei' or sName == 'Munbai'):
+                        if (sName == 'Mumbai' or sName == 'Bombaim' or sName == 'Bonbei' or sName == 'Munbai'):
                                 city.setName('Bombay', False)
-                        elif (sName == 'Al-Hartum' or sName == 'Hartum'):
+                        if (sName == 'Al-Hartum' or sName == 'Hartum'):
                                 city.setName('Khartoum', False)
-                        elif sName == 'Neu Braunfels':
+                        if sName == 'Neu Braunfels':
                                 city.setName('New Braunfels', False)
-                        elif (sName == 'Bandar Melaka' or sName == 'Malakka' or sName == 'Malaca'):
+                        if (sName == 'Bandar Melaka' or sName == 'Malakka' or sName == 'Malaca'):
                                 city.setName('Malacca', False)
-                        elif (sName == 'Fort Rouill&#233;' or sName == 'Fort Toronto'):
+                        if (sName == 'Fort Rouill&#233;' or sName == 'Fort Toronto'):
                                 city.setName('Toronto', False)
-                        elif (sName == 'M&#252;nchen'):
+                        if (sName == 'M&#252;nchen'):
                                 city.setName('Munich', False)
-                        elif (sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bingazi' or sName == 'Bangazi'):
+                        if (sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bingazi' or sName == 'Bangazi'):
                                 city.setName('Benghazi', False)
-                        elif (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapur' or sName == 'Shounantou'):
+                        if (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapur' or sName == 'Shounantou'):
                                 city.setName('Singapore', False)
-                        elif (sName == 'Haojing' or sName == 'Macao' or sName == 'Aomen' or sName == 'Makao'):
+                        if (sName == 'Haojing' or sName == 'Macao' or sName == 'Aomen' or sName == 'Makao'):
                                 city.setName('Macau', False)
-                        elif (sName == 'Nouvelle-Ib&#233;rie' or sName == 'Nueva Iberia'):
+                        if (sName == 'Nouvelle-Ib&#233;rie' or sName == 'Nueva Iberia'):
                                 city.setName('New Iberia', False)
-                        elif (sName == 'Fort Rouge'):
+                        if (sName == 'Fort Rouge'):
                                 city.setName('Winnipeg', False)
-                        elif (sName == 'Kolachi' or sName == 'Debal' or sName == 'Barbarikon' or sName == 'Barbaricum' or sName == 'Mirat ul Memalik'):
+                        if (sName == 'Kolachi' or sName == 'Debal' or sName == 'Barbarikon' or sName == 'Barbaricum' or sName == 'Mirat ul Memalik'):
                                 city.setName('Karachi', False)
-                        elif (sName == 'Dilli' or sName == 'Delhi' or sName == 'Deli' or sName == 'Derii'):
+                        if (sName == 'Dilli' or sName == 'Delhi' or sName == 'Deli' or sName == 'Derii'):
                                 city.setName('New Delhi', False)
-                        elif (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Hong Kong', False)
-                        elif (sName == 'B&#226;ton Rouge'):
+                        if (sName == 'B&#226;ton Rouge'):
                                 city.setName('Baton Rouge', False)
-                        elif (sName == 'Fort Rosalie'):
+                        if (sName == 'Fort Rosalie'):
                                 city.setName('Fort Panmure', False)
-                        elif (sName == 'Niwt-Rst' or sName == 'Diospolis Megale' or sName == 'Diospolis Magna' or sName == 'Luksor' or sName == 'Al-Uqsur'):
+                        if (sName == 'Niwt-Rst' or sName == 'Diospolis Megale' or sName == 'Diospolis Magna' or sName == 'Luksor' or sName == 'Al-Uqsur'):
                                 city.setName('Luxor', False)
-                        elif (sName == 'Kolkata'):
+                        if (sName == 'Kolkata'):
                                 city.setName('Calcutta', False)
-                        elif (sName == 'Bengaluru'):
+                        if (sName == 'Bengaluru'):
                                 city.setName('Bangalore', False)
-                        elif (sName == 'Mumbai' or sName == 'Bombaim' or sName == 'Bonbei' or sName == 'Munbai'):
+                        if (sName == 'Mumbai' or sName == 'Bombaim' or sName == 'Bonbei' or sName == 'Munbai'):
                                 city.setName('Bombay', False)
-                        elif (sName == 'Yangon'):
+                        if (sName == 'Yangon'):
                                 city.setName('Rangoon', False)
-                        elif (sName == 'Port St. Louis' or sName == 'Puerto Soledad'):
+                        if (sName == 'Port St. Louis' or sName == 'Puerto Soledad'):
                                 city.setName('Port Solitude', False)
-                        elif (sName == 'Roodt Eylandt'):
+                        if (sName == 'Roodt Eylandt'):
                                 city.setName('Rhode Island', False)
-                        elif (sName == 'Nieuw Brunswyck'):
+                        if (sName == 'Nieuw Brunswyck'):
                                 city.setName('New Brunswick', False)
-                        elif (sName == 'Fort Duquesne'):
+                        if (sName == 'Fort Duquesne'):
                                 city.setName('Pittsburgh', False)
-                        elif (sName == 'Renault'):
+                        if (sName == 'Renault'):
                                 city.setName('Reno', False)
-                        elif (sName == 'Dresden' or sName == 'Dresda'):
+                        if (sName == 'Dresden' or sName == 'Dresda'):
                                 city.setName('Dresde', False)
-                        elif (sName == "Elizavetinskaja Krepost'"):
+                        if (sName == "Elizavetinskaja Krepost'"):
                                 city.setName('Fort Elizabeth', False)
-                        elif (sName == "Oxhuitza" or sName == 'El Caracol'):
+                        if (sName == "Oxhuitza" or sName == 'El Caracol'):
                                 city.setName('Caracol', False)
-                        elif sName == 'Dhaka':
+                        if sName == 'Dhaka':
                                 city.setName('Dacca', False)
-                        elif (sName == "'s-Gravenhage" or sName == 'Den Haag'):
+                        if (sName == "'s-Gravenhage" or sName == 'Den Haag'):
                                 city.setName('The Hague', False)
-                        elif (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lissabon' or sName == 'Lisbonne'):
+                        if (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lissabon' or sName == 'Lisbonne'):
                                 city.setName('Lisbon', False)
 
-                elif (iNewOwner == iGermany): 
+                if (iNewOwner == iGermany): 
                         if sName == ('Colonia Agrippina' or sName == 'Keulen'):
                                 city.setName('K&#246;ln', False)
-                        elif sName == 'Lentia':
+                        if sName == 'Lentia':
                                 city.setName('Linz', False)
-                        elif (sName == 'Augusta Vindelicorum' or sName == 'Damasia'):
+                        if (sName == 'Augusta Vindelicorum' or sName == 'Damasia'):
                                 city.setName('Augsburg', False)
-                        elif (sName == 'Moguntiacum' or sName == 'Mogontiacum' or sName == 'Mayence'):
+                        if (sName == 'Moguntiacum' or sName == 'Mogontiacum' or sName == 'Mayence'):
                                 city.setName('Mainz', False)
-                        elif (sName == 'Vienne' or sName == 'Vena' or sName == 'Vindobona' or sName == 'Viyana'):
+                        if (sName == 'Vienne' or sName == 'Vena' or sName == 'Vindobona' or sName == 'Viyana'):
                                 city.setName('Wien', False)
-                        elif (sName == 'Castra Regina' or sName == 'Ratisbonne'):
+                        if (sName == 'Castra Regina' or sName == 'Ratisbonne'):
                                 city.setName('Regensburg', False)
-                        elif (sName == 'Argentoratus' or sName == 'Strasbourg'):
+                        if (sName == 'Argentoratus' or sName == 'Strasbourg'):
                                 city.setName('Stra&#223;burg', False)
-                        elif sName == 'Constantia':
+                        if sName == 'Constantia':
                                 city.setName('Konstanz', False)
-                        elif sName == 'Virunum':
+                        if sName == 'Virunum':
                                 city.setName('Klagenfurt', False)
-                        elif sName == 'Augusta Treverorum':
+                        if sName == 'Augusta Treverorum':
                                 city.setName('Trier', False)
-                        elif (sName == 'Emona' or sName == 'Ljubljana' or sName == 'Aemona Iulia'):
+                        if (sName == 'Emona' or sName == 'Ljubljana' or sName == 'Aemona Iulia'):
                                 city.setName('Laibach', False)
-                        elif (sName == 'Melpum' or sName == 'Milan' or sName == 'Mediolanum' or sName == 'Mil&#225;n' or sName == 'Milano'):
+                        if (sName == 'Melpum' or sName == 'Milan' or sName == 'Mediolanum' or sName == 'Mil&#225;n' or sName == 'Milano'):
                                 city.setName('Mailand', False)
-                        elif sName == 'Genava':
+                        if sName == 'Genava':
                                 city.setName('Genf', False)
-                        elif (sName == 'Dresde' or sName == 'Dresda'):
+                        if (sName == 'Dresde' or sName == 'Dresda'):
                                 city.setName('Dresden', False)
-                        elif sName == 'Groningue':
+                        if sName == 'Groningue':
                                 city.setName('Groningen', False)
-                        elif sName == 'Br&#234;me':
+                        if sName == 'Br&#234;me':
                                 city.setName('Bremen', False)
-                        elif (sName == 'Hambourg' or sName == 'Hamborg' or sName == 'Hamburgum'):
+                        if (sName == 'Hambourg' or sName == 'Hamborg' or sName == 'Hamburgum'):
                                 city.setName('Hamburg', False)
-                        elif (sName == 'Francfort' or sName == 'Bona Mansio' or sName == 'Frankfort'):
+                        if (sName == 'Francfort' or sName == 'Bona Mansio' or sName == 'Frankfort'):
                                 city.setName('Frankfurt', False)
-                        elif sName == 'Cassel':
+                        if sName == 'Cassel':
                                 city.setName('Kassel', False)
-                        elif sName == 'Cobourg':
+                        if sName == 'Cobourg':
                                 city.setName('Coburg', False)
-                        elif (sName == 'Hanovre' or sName == 'Hannovera'):
+                        if (sName == 'Hanovre' or sName == 'Hannovera'):
                                 city.setName('Hannover', False)
-                        elif (sName == 'Aix-la-Chapelle' or sName == 'Aquisgranum' or sName == 'Aken'):
+                        if (sName == 'Aix-la-Chapelle' or sName == 'Aquisgranum' or sName == 'Aken'):
                                 city.setName('Aachen', False)
-                        elif (sName == 'Apulum' or sName == 'Apulon' or sName == 'Balgrad'):
+                        if (sName == 'Apulum' or sName == 'Apulon' or sName == 'Balgrad'):
                                 city.setName('Karlsburg', False)
-                        elif (sName == 'Napoca' or sName == 'Cluj-Napoca' or sName == 'Castrum Clus' or sName == 'Kalosvar'):
+                        if (sName == 'Napoca' or sName == 'Cluj-Napoca' or sName == 'Castrum Clus' or sName == 'Kalosvar'):
                                 city.setName('Klausenburg', False)
-                        elif sName == 'Gothenburg':
+                        if sName == 'Gothenburg':
                                 city.setName('G&#246;teborg', False)
-                        elif (sName == 'Gdansk' or sName == 'Danswijk' or sName == 'Gedanum'):
+                        if (sName == 'Gdansk' or sName == 'Danswijk' or sName == 'Gedanum'):
                                 city.setName('Danzig', False)
-                        elif (sName == 'Kaliningrad' or sName == 'Calininopolis'):
+                        if (sName == 'Kaliningrad' or sName == 'Calininopolis'):
                                 city.setName('K&#246;nigsberg', False)
-                        elif sName == 'Moskva':
+                        if sName == 'Moskva':
                                 city.setName('Moskau', False)
-                        elif (sName == 'Dubh Linn' or sName == '&#193;th Cliath'):
+                        if (sName == 'Dubh Linn' or sName == '&#193;th Cliath'):
                                 city.setName('Dublin', False)
-                        elif (sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Duras' or sName == 'Drach' or sName == 'Dira&#231' or sName == 'Dyrrachion'):
+                        if (sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Duras' or sName == 'Drach' or sName == 'Dira&#231' or sName == 'Dyrrachion'):
                                 city.setName('Durr&#235;s', False)
-                        elif (sName == 'Copenhague' or sName == 'Copenhagen' or sName == 'Kj&#248;bmandehavn' or sName == 'Hafnia'):
+                        if (sName == 'Copenhague' or sName == 'Copenhagen' or sName == 'Kj&#248;bmandehavn' or sName == 'Hafnia'):
                                 city.setName('Kopenhagen', False)
-                        elif (sName == 'Heithabyr' or sName == 'Hedeby'):
+                        if (sName == 'Heithabyr' or sName == 'Hedeby'):
                                 city.setName('Haithabu', False)
-                        elif (sName == 'Athenai' or sName == 'Atina' or sName == 'Athenae' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes'):
+                        if (sName == 'Athenai' or sName == 'Atina' or sName == 'Athenae' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes'):
                                 city.setName('Athen', False)
-                        elif (sName == 'Panormos' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Ziz'):
+                        if (sName == 'Panormos' or sName == 'Panormus' or sName == 'Balharm' or sName == 'Ziz'):
                                 city.setName('Palermo', False)  
-                        elif (sName == 'Roma' or sName == 'Rome' or sName == 'Rumiya' or sName == 'Daqin'):
+                        if (sName == 'Roma' or sName == 'Rome' or sName == 'Rumiya' or sName == 'Daqin'):
                                 city.setName('Rom', False)
-                        elif sName == 'Br&#234;me':
+                        if sName == 'Br&#234;me':
                                 city.setName('Bremen', False)
-                        elif (sName == 'Marakanda' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
+                        if (sName == 'Marakanda' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 city.setName('Samarkand', False)
-                        elif (sName == 'Konstantia' or sName == 'Tomis' or sName == 'Konstanca' or sName == 'Kustendje'):
+                        if (sName == 'Konstantia' or sName == 'Tomis' or sName == 'Konstanca' or sName == 'Kustendje'):
                                 city.setName('K&#246;stendsche', False)
-                        elif (sName == 'Byzantium' or sName == 'Bizantiya'):
+                        if (sName == 'Byzantium' or sName == 'Bizantiya'):
                                 city.setName('Byzantion', False)
-                        elif (sName == 'Qustantiniyah' or sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == 'Miklagard' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul'):
+                        if (sName == 'Qustantiniyah' or sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == 'Miklagard' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul'):
                                 city.setName('Konstantinopel', False)
-                        elif (sName == 'Aquil&#233;e' or sName == 'Oglej' or sName == 'Aquileia'):
+                        if (sName == 'Aquil&#233;e' or sName == 'Oglej' or sName == 'Aquileia'):
                                 city.setName('Agley', False)
-                        elif (sName == 'Pomp&#233;i' or sName == 'Pompeii' or sName == 'Pompeya'):
+                        if (sName == 'Pomp&#233;i' or sName == 'Pompeii' or sName == 'Pompeya'):
                                 city.setName('Pompeji', False)
-                        elif (sName == 'Sparte' or sName == 'Esparta'):
+                        if (sName == 'Sparte' or sName == 'Esparta'):
                                 city.setName('Sparta', False)
-                        elif (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marsella' or sName == 'Marsiliya' or sName == 'Marsiglia'):
+                        if (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marsella' or sName == 'Marsiliya' or sName == 'Marsiglia'):
                                 city.setName('Marseille', False)
-                        elif (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripoli' or sName == 'Trablus'):
+                        if (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripoli' or sName == 'Trablus'):
                                 city.setName('Tripolis', False)
-                        elif (sName == 'Fort James'):
+                        if (sName == 'Fort James'):
                                 city.setName('Jekabforts', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexicopolis' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexicopolis' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Mexiko-Stadt', False)
-                        elif (sName == 'Havana' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
+                        if (sName == 'Havana' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
                                 city.setName('Havanna', False)
-                        elif (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
+                        if (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
                                 city.setName('New Orleans', False)
-                        elif (sName == 'Venezuela'):
+                        if (sName == 'Venezuela'):
                                 city.setName('Klein-Venedig', False)
-                        elif (sName == 'S&#227;o Leopoldo'):
+                        if (sName == 'S&#227;o Leopoldo'):
                                 city.setName('S. Leopold', False)
-                        elif (sName == 'Cape of Good Hope' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cabo de Buena Esperanza' or sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Kaap de Goede Hoop'):
+                        if (sName == 'Cape of Good Hope' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cabo de Buena Esperanza' or sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Kaap de Goede Hoop'):
                                 city.setName('Kap der Guten Hoffnung', False)
-                        elif sName == 'Vyborg':
+                        if sName == 'Vyborg':
                                 city.setName('Wiborg', False)
-                        elif (sName == 'Burdigala' or sName == 'Burdeos'):
+                        if (sName == 'Burdigala' or sName == 'Burdeos'):
                                 city.setName('Bordeaux', False)
-                        elif (sName == 'Helsingfors' or sName == "Khel'sinki" or sName == 'Helsingia'):
+                        if (sName == 'Helsingfors' or sName == "Khel'sinki" or sName == 'Helsingia'):
                                 city.setName('Helsinki', False)
-                        elif (sName == 'Venetia' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik' or sName == 'Venezia'):
+                        if (sName == 'Venetia' or sName == 'Venise' or sName == 'Venecia' or sName == 'Venice' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik' or sName == 'Venezia'):
                                 city.setName('Venedig', False)
-                        elif sName == 'Arguim':
+                        if sName == 'Arguim':
                                 city.setName('Arguin', False)
-                        elif (sName == 'Pokesu' or sName == 'Fort Hollandia'):
+                        if (sName == 'Pokesu' or sName == 'Fort Hollandia'):
                                 city.setName('Gro&#223; Friedrichsburg', False)
-                        elif (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Hong Kong', False)
-                        elif sName == 'Doliwa':
+                        if sName == 'Doliwa':
                                 city.setName('Romasdorf', False)
-                        elif sName == 'Dobruja':
+                        if sName == 'Dobruja':
                                 city.setName('Dobrudscha', False)
-                        elif sName == 'Kolomyia':
+                        if sName == 'Kolomyia':
                                 city.setName('Kolomea', False)
-                        elif sName == 'Tonkoschurowka':
+                        if sName == 'Tonkoschurowka':
                                 city.setName('Marienthal', False)
-                        elif (sName == 'Spalatum' or sName == 'Aspalathos' or sName == 'Spalato'):
+                        if (sName == 'Spalatum' or sName == 'Aspalathos' or sName == 'Spalato'):
                                 city.setName('Split', False)
-                        elif (sName == 'Salonae' or sName == 'Salona'):
+                        if (sName == 'Salonae' or sName == 'Salona'):
                                 city.setName('Solin', False)
-                        elif (sName == 'Moncastrum' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Tyras' or sName == 'Asperon'):
+                        if (sName == 'Moncastrum' or sName == 'Tiraspol' or sName == 'Akkerman' or sName == 'Tyras' or sName == 'Asperon'):
                                 city.setName('Wei&#223;enburg', False)
-                        elif sName == 'Tiran':
+                        if sName == 'Tiran':
                                 city.setName('Tirana', False)
-                        elif (sName == 'Zantar' or sName == 'Iadera'):
+                        if (sName == 'Zantar' or sName == 'Iadera'):
                                 city.setName('Zadar', False) 
-                        elif sName == 'Klajpeda':
+                        if sName == 'Klajpeda':
                                 city.setName('Memel', False)
-                        elif (sName == 'Warszawa' or sName == 'Varsovia'):
+                        if (sName == 'Warszawa' or sName == 'Varsovia'):
                                 city.setName('Warschau', False)
-                        elif (sName == 'Singidunum' or sName == 'Singidun' or sName == 'Beograd'):
+                        if (sName == 'Singidunum' or sName == 'Singidun' or sName == 'Beograd'):
                                 city.setName('Belgrad', False)
-                        elif (sName == 'Sirmium' or sName == 'Sirmion' or sName == 'Dimitrof&#231;e' or sName == 'Sremska Mitrovica'):
+                        if (sName == 'Sirmium' or sName == 'Sirmion' or sName == 'Dimitrof&#231;e' or sName == 'Sremska Mitrovica'):
                                 city.setName('Syrmisch Mitrowitz', False)
-                        elif sName == "L'vov":
+                        if sName == "L'vov":
                                 city.setName('Lemberg', False)
-                        elif sName == 'Shirokolanovka':
+                        if sName == 'Shirokolanovka':
                                 city.setName('Landau', False)
-                        elif sName == 'Brest-Litovsk':
+                        if sName == 'Brest-Litovsk':
                                 city.setName('Brest-Litowsk', False)
-                        elif (sName == 'Praga' or sName == 'Praha' or sName == 'Birag'):
+                        if (sName == 'Praga' or sName == 'Praha' or sName == 'Birag'):
                                 city.setName('Prag', False)
-                        elif sName == "Tver'":
+                        if sName == "Tver'":
                                 city.setName('Twer', False)
-                        elif (sName == 'Munich'):
+                        if (sName == 'Munich'):
                                 city.setName('M&#252;nchen', False)
-                        elif (sName == 'Haojing' or sName == 'Macau' or sName == 'Aomen' or sName == 'Makao'):
+                        if (sName == 'Haojing' or sName == 'Macau' or sName == 'Aomen' or sName == 'Makao'):
                                 city.setName('Macao', False)
-                        elif (sName == 'Berolinum' or sName == 'Berlijn'):
+                        if (sName == 'Berolinum' or sName == 'Berlijn'):
                                 city.setName('Berlin', False)
-                        elif sName == 'Traiectum Eruditum':
+                        if sName == 'Traiectum Eruditum':
                                 city.setName('Utrecht', False)
-                        elif (sName == 'Nim&#232;gue' or sName == 'Batavodurum'):
+                        if (sName == 'Nim&#232;gue' or sName == 'Batavodurum'):
                                 city.setName('Nijmegen', False)
-                        elif (sName == 'Bruxelles' or sName == 'Brussel' or sName == 'Brussels'):
+                        if (sName == 'Bruxelles' or sName == 'Brussel' or sName == 'Brussels'):
                                 city.setName('Br&#252;ssel', False)
-                        elif (sName == 'Lieja' or sName == 'Luik' or sName == 'Li&#232;ge'):
+                        if (sName == 'Lieja' or sName == 'Luik' or sName == 'Li&#232;ge'):
                                 city.setName('L&#252;ttich', False)
-                        elif (sName == 'Krak&#243;w' or sName == 'Cracovia'):
+                        if (sName == 'Krak&#243;w' or sName == 'Cracovia'):
                                 city.setName('Krakau', False)
-                        elif (sName == 'G&#234;nes' or sName == 'G&#233;nova'):
+                        if (sName == 'G&#234;nes' or sName == 'G&#233;nova'):
                                 city.setName('Genua', False)
-                        elif (sName == 'Reval' or sName == 'Tallin' or sName == 'Revalia'):
+                        if (sName == 'Reval' or sName == 'Tallin' or sName == 'Revalia'):
                                 city.setName('Tallinn', False)
-                        elif (sName == 'Kovno'):
+                        if (sName == 'Kovno'):
                                 city.setName('Kauen', False)
-                        elif (sName == "Vil'na"):
+                        if (sName == "Vil'na"):
                                 city.setName('Wilna', False)
-                        elif (sName == 'Szczecin'):
+                        if (sName == 'Szczecin'):
                                 city.setName('Stettin', False)
-                        elif (sName == 'Poznan'):
+                        if (sName == 'Poznan'):
                                 city.setName('Posen', False)
-                        elif (sName == 'Novgorod' or sName == 'Holmg&#229;rd'):
+                        if (sName == 'Novgorod' or sName == 'Holmg&#229;rd'):
                                 city.setName('Nowgorod', False)
-                        elif (sName == 'Wittenberg'):
+                        if (sName == 'Wittenberg'):
                                 city.setName('Lutherstadt Wittenberg', False)
-                        elif (sName == 'Pruissisch Holland' or sName == 'Paslek'):
+                        if (sName == 'Pruissisch Holland' or sName == 'Paslek'):
                                 city.setName('Preu&#223;isch Holland', False)
-                        elif (sName == 'Frederikstad'):
+                        if (sName == 'Frederikstad'):
                                 city.setName('Friedrichstadt', False)
-                        elif (sName == 'Parijs' or sName == 'Par&#237;s'):
+                        if (sName == 'Parijs' or sName == 'Par&#237;s'):
                                 city.setName('Paris', False)
-                        elif (sName == 'Qingdao' or sName == 'Seitou'):
+                        if (sName == 'Qingdao' or sName == 'Seitou'):
                                 city.setName('Tsingtau', False)
-                        elif (sName == 'Rostochium'):
+                        if (sName == 'Rostochium'):
                                 city.setName('Rostock', False)
-                        elif (sName == "'s-Gravenhage" or sName == 'The Hague'):
+                        if (sName == "'s-Gravenhage" or sName == 'The Hague'):
                                 city.setName('Den Haag', False)
-                        elif (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lisbon' or sName == 'Lisbonne'):
+                        if (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lisbon' or sName == 'Lisbonne'):
                                 city.setName('Lissabon', False)
-			elif (sName == 'Kyiv' or sName == 'Kiev'):
+			if (sName == 'Kyiv' or sName == 'Kiev'):
 				city.setName('Kiew', False)
-			elif (sName == 'Torino'):
+			if (sName == 'Torino'):
 				city.setName('Turin', False)
-			elif (sName == 'Firenze' or sName == 'Florence'):
+			if (sName == 'Firenze' or sName == 'Florence'):
 				city.setName('Florenz', False)
-			elif (sName == 'Napoli' or sName == 'Naples' or sName == 'Neapolis'):
+			if (sName == 'Napoli' or sName == 'Naples' or sName == 'Neapolis'):
 				city.setName('Neapel', False)
-			elif (sName == 'Trieste'):
+			if (sName == 'Trieste'):
 				city.setName('Triest', False)
 
-                elif (iNewOwner == iRussia): 
+                if (iNewOwner == iRussia): 
                         if (sName == 'Singidunum' or sName == 'Singidun' or sName == 'Belgrad'):
                                 city.setName('Beograd', False)
-                        elif (sName == 'Emona' or sName == 'Laibach' or sName == 'Aemona Iulia'):
+                        if (sName == 'Emona' or sName == 'Laibach' or sName == 'Aemona Iulia'):
                                 city.setName('Ljubljana', False)
-                        elif (sName == 'Spalatum' or sName == 'Aspalathos'):
+                        if (sName == 'Spalatum' or sName == 'Aspalathos'):
                                 city.setName('Split', False)
-                        elif (sName == 'Salonae' or sName == 'Salona'):
+                        if (sName == 'Salonae' or sName == 'Salona'):
                                 city.setName('Solin', False)
-                        elif sName == 'Ragusium':
+                        if sName == 'Ragusium':
                                 city.setName('Dubrovnik', False)
-                        elif (sName == 'Sirmium' or sName == 'Sirmion' or sName == 'Dimitrof&#231;e' or sName == 'Syrmisch Mitrowitz'):
+                        if (sName == 'Sirmium' or sName == 'Sirmion' or sName == 'Dimitrof&#231;e' or sName == 'Syrmisch Mitrowitz'):
                                 city.setName('Sremska Mitrovica', False)
-                        elif (sName == 'Odessos' or sName == 'Odessus'):
+                        if (sName == 'Odessos' or sName == 'Odessus'):
                                 city.setName('Varna', False)
-                        elif (sName == 'Naissos' or sName == 'Naissus'):
+                        if (sName == 'Naissos' or sName == 'Naissus'):
                                 city.setName('Nis', False)
-                        elif sName == 'Philippopolis':
+                        if sName == 'Philippopolis':
                                 city.setName('Plovdiv', False)
-                        elif (sName == 'Marakanda' or sName == 'Samarkant' or sName == 'Samarqand' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
+                        if (sName == 'Marakanda' or sName == 'Samarkant' or sName == 'Samarqand' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 city.setName('Samarkand', False)
-                        elif (sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Duras' or sName == 'Dira&#231' or sName == 'Durr&#235;s' or sName == 'Durazzo' or sName == 'Dyrrachion'):
+                        if (sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Duras' or sName == 'Dira&#231' or sName == 'Durr&#235;s' or sName == 'Durazzo' or sName == 'Dyrrachion'):
                                 city.setName('Drach', False)
-                        elif sName == 'Kefe':
+                        if sName == 'Kefe':
                                 city.setName('Feodosija', False)
-                        elif sName == 'Bosna Saraj':
+                        if sName == 'Bosna Saraj':
                                 city.setName('Sarajevo', False)
-                        elif sName == 'Aldeigjuborg':
+                        if sName == 'Aldeigjuborg':
                                 city.setName('Staraja Ladoga', False)
-                        elif (sName == 'Nowgorod' or sName == 'Holmg&#229;rd'):
+                        if (sName == 'Nowgorod' or sName == 'Holmg&#229;rd'):
                                 city.setName('Novgorod', False)
-                        elif sName == 'K&#246;nug&#229;rd':
+                        if sName == 'K&#246;nug&#229;rd':
                                 city.setName('Kiev', False)
-                        elif (sName == 'Danzig' or sName == 'Danswijk' or sName == 'Gedanum'):
+                        if (sName == 'Danzig' or sName == 'Danswijk' or sName == 'Gedanum'):
                                 city.setName('Gdansk', False)
-                        elif (sName == 'K&#246;nigsberg' or sName == 'Calininopolis'):
+                        if (sName == 'K&#246;nigsberg' or sName == 'Calininopolis'):
                                 city.setName('Kaliningrad', False)
-                        elif sName == 'Moskau':
+                        if sName == 'Moskau':
                                 city.setName('Moskva', False)
-                        elif (sName == 'Tyras' or sName == 'Moncastrum' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
+                        if (sName == 'Tyras' or sName == 'Moncastrum' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
                                 city.setName('Tiraspol', False) #Belgorod-Dnestrovskiy
-                        elif (sName == 'Chach' or sName == 'Shash' or sName == 'Cheshih' or sName == 'Binkath' or sName == 'Toshkent'):
+                        if (sName == 'Chach' or sName == 'Shash' or sName == 'Cheshih' or sName == 'Binkath' or sName == 'Toshkent'):
                                 city.setName('Tashkent', False)
-                        elif (sName == 'Apulum' or sName == 'Apulon' or sName == 'Karlsburg'):
+                        if (sName == 'Apulum' or sName == 'Apulon' or sName == 'Karlsburg'):
                                 city.setName('Balgrad', False)
-                        elif (sName == 'Napoca' or sName == 'Klausenburg' or sName == 'Castrum Clus' or sName == 'Kalosvar'):
+                        if (sName == 'Napoca' or sName == 'Klausenburg' or sName == 'Castrum Clus' or sName == 'Kalosvar'):
                                 city.setName('Cluj-Napoca', False)
-                        elif (sName == 'Konstantia' or sName == 'Tomis' or sName == 'K&#246;stendsche' or sName == 'Kustendje'):
+                        if (sName == 'Konstantia' or sName == 'Tomis' or sName == 'K&#246;stendsche' or sName == 'Kustendje'):
                                 city.setName('Konstanca', False)
-                        elif sName == 'Romasdorf':
+                        if sName == 'Romasdorf':
                                 city.setName('Doliwa', False)
-                        elif sName == 'Dobrudscha':
+                        if sName == 'Dobrudscha':
                                 city.setName('Dobruja', False)
-                        elif sName == 'Kolomea':
+                        if sName == 'Kolomea':
                                 city.setName('Kolomyia', False)
-                        elif sName == 'Pokrovsk':
+                        if sName == 'Pokrovsk':
                                 city.setName('Engels', False)
-                        elif sName == 'Katharinenstadt':
+                        if sName == 'Katharinenstadt':
                                 city.setName('Marx', False)
-                        elif sName == 'Marienthal':
+                        if sName == 'Marienthal':
                                 city.setName('Tonkoschurowka', False)
-                        elif sName == 'Saryk Atov':
+                        if sName == 'Saryk Atov':
                                 city.setName('Saratov', False)
-                        elif (sName == 'Aquil&#233;e' or sName == 'Agley' or sName == 'Aquileia'):
+                        if (sName == 'Aquil&#233;e' or sName == 'Agley' or sName == 'Aquileia'):
                                 city.setName('Oglej', False)
-                        elif (sName == 'Byzantion' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Constantinopolis' or sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == 'Kostantiniyye'):
+                        if (sName == 'Byzantion' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Constantinopolis' or sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == 'Kostantiniyye'):
                                 city.setName("Car'grad", False) 
-                        elif (sName == 'Istanbul'):
+                        if (sName == 'Istanbul'):
                                 city.setName('Stambul', False) #new one
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Mexico', False)
-                        elif sName == 'Sitka':
+                        if sName == 'Sitka':
                                 city.setName("Novoarkhangel'sk", False)
-                        #elif sName == "Fort Ross":
+                        #if sName == "Fort Ross":
                         #        city.setName("Krepost' Ross", False)
-                        elif (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
+                        if (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
                                 city.setName('Havana', False)
-                        elif (sName == 'Chersonesos' or sName == 'Chersonesus'):
+                        if (sName == 'Chersonesos' or sName == 'Chersonesus'):
                                 city.setName('Khersones', False)
-                        elif sName == 'Tiran':
+                        if sName == 'Tiran':
                                 city.setName('Tirana', False)
-                        elif (sName == 'Helsinki' or sName == 'Helsingfors' or sName == 'Helsingia'):
+                        if (sName == 'Helsinki' or sName == 'Helsingfors' or sName == 'Helsingia'):
                                 city.setName("Khel'sinki", False)
-                        elif (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venice' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
+                        if (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venice' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 city.setName('Venecija', False)
-                        elif (sName == 'Zantar' or sName == 'Iadera'):
+                        if (sName == 'Zantar' or sName == 'Iadera'):
                                 city.setName('Zadar', False) 
-                        elif (sName == 'Vienne' or sName == 'Wien' or sName == 'Vindobona' or sName == 'Viyana'):
+                        if (sName == 'Vienne' or sName == 'Wien' or sName == 'Vindobona' or sName == 'Viyana'):
                                 city.setName('Vena', False)
-                        elif sName == 'Memel':
+                        if sName == 'Memel':
                                 city.setName('Klajpeda', False)
-                        elif (sName == 'Warschau' or sName == 'Varsovia'):
+                        if (sName == 'Warschau' or sName == 'Varsovia'):
                                 city.setName('Warszawa', False)
-                        elif sName == "Grozni":
+                        if sName == "Grozni":
                                 city.setName('Groznyj', False)
-                        elif sName == 'Lemberg':
+                        if sName == 'Lemberg':
                                 city.setName("L'vov", False)
-                        elif sName == 'Landau':
+                        if sName == 'Landau':
                                 city.setName('Shirokolanovka', False)
-                        elif sName == 'Brest-Litowsk':
+                        if sName == 'Brest-Litowsk':
                                 city.setName('Brest-Litovsk', False)
-                        elif (sName == 'Praga' or sName == 'Prag' or sName == 'Birag'):
+                        if (sName == 'Praga' or sName == 'Prag' or sName == 'Birag'):
                                 city.setName('Praha', False)
-                        elif sName == 'Artaxata':
+                        if sName == 'Artaxata':
                                 city.setName('Artashat', False)
-                        elif sName == 'Twer':
+                        if sName == 'Twer':
                                 city.setName("Tver'", False)
-                        elif (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babylon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
+                        if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babylon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
                                 city.setName('Babilon', False)
-                        elif (sName == 'Haishenwai' or sName == 'Urajiosutokku' or sName == 'Fuladiwosituoke' or sName == 'Port May'):
+                        if (sName == 'Haishenwai' or sName == 'Urajiosutokku' or sName == 'Fuladiwosituoke' or sName == 'Port May'):
                                 city.setName('Vladivostok', False)
-                        elif (sName == 'Boli' or sName == 'Hakuryoku'):
+                        if (sName == 'Boli' or sName == 'Hakuryoku'):
                                 city.setName('Khabarovsk', False)
-                        elif (sName == 'Fuyori'):
+                        if (sName == 'Fuyori'):
                                 city.setName('Nikolaevsk-na-Amure', False)
-                        elif (sName == 'Tiflis' or sName == 'Tiphlis'):
+                        if (sName == 'Tiflis' or sName == 'Tiphlis'):
                                 city.setName('Tbilisi', False)
-                        elif (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Hong Kong', False)
-                        elif (sName == 'Furukamappu'):
+                        if (sName == 'Furukamappu'):
                                 city.setName("Juzhno-Kuri'lsk", False)
-                        elif (sName == 'Sofya'):
+                        if (sName == 'Sofya'):
                                 city.setName('Sofia', False)							
-                        elif (sName == 'B&#252;kres'):
+                        if (sName == 'B&#252;kres'):
                                 city.setName('Bucuresti', False)	
-                        elif (sName == 'Dairen' or sName == 'Dalian' or sName == 'Sanshan'):
+                        if (sName == 'Dairen' or sName == 'Dalian' or sName == 'Sanshan'):
                                 city.setName("Dal'nij", False)
-                        elif (sName == 'Krakau' or sName == 'Cracovia'):
+                        if (sName == 'Krakau' or sName == 'Cracovia'):
                                 city.setName('Krak&#243;w', False)
-                        elif (sName == 'Otomari'):
+                        if (sName == 'Otomari'):
                                 city.setName('Korsakov', False)
-                        elif (sName == 'Reval' or sName == 'Tallinn' or sName == 'Revalia'):
+                        if (sName == 'Reval' or sName == 'Tallinn' or sName == 'Revalia'):
                                 city.setName('Tallin', False)
-                        elif (sName == 'Kauen'):
+                        if (sName == 'Kauen'):
                                 city.setName('Kovno', False)
-                        elif (sName == 'Wilna'):
+                        if (sName == 'Wilna'):
                                 city.setName("Vil'na", False)
-                        elif (sName == 'Stettin'):
+                        if (sName == 'Stettin'):
                                 city.setName('Szczecin', False)
-                        elif (sName == 'Posen'):
+                        if (sName == 'Posen'):
                                 city.setName('Poznan', False)
-                        elif (sName == 'Pruissisch Holland' or sName == 'Preu&#223;isch Holland'):
+                        if (sName == 'Pruissisch Holland' or sName == 'Preu&#223;isch Holland'):
                                 city.setName('Paslek', False)
-                        elif (sName == 'Konkolewo Hauland'):
+                        if (sName == 'Konkolewo Hauland'):
                                 city.setName('Kakolewo', False)
-                        elif (sName == 'Cyty'):
+                        if (sName == 'Cyty'):
                                 city.setName('Chita', False)
-                        elif (sName == 'Ulaan-Ude'):
+                        if (sName == 'Ulaan-Ude'):
                                 city.setName('Ulan-Udeh', False)
-                        elif (sName == 'Astrakhan'):
+                        if (sName == 'Astrakhan'):
                                 city.setName("Astrakhan'", False)
-                        elif (sName == 'Kulsary'):
+                        if (sName == 'Kulsary'):
                                 city.setName("Kul'sary", False)
-                        elif (sName == 'Yakuttsuku'):
+                        if (sName == 'Yakuttsuku'):
                                 city.setName('Jakutsk', False)
-                        elif (sName == 'San Francisco' or sName == 'Sanfuranshisuko'):
+                        if (sName == 'San Francisco' or sName == 'Sanfuranshisuko'):
                                 city.setName('San-Francisko', False)
-                        elif (sName == 'Vancouver' or sName == 'Bankuubaa'):
+                        if (sName == 'Vancouver' or sName == 'Bankuubaa'):
                                 city.setName('Vankuver', False)
-                        elif (sName == 'Seattle' or sName == 'Shiatoru'):
+                        if (sName == 'Seattle' or sName == 'Shiatoru'):
                                 city.setName('Siehtl', False)
-                        elif (sName == 'Rosu' or sName == 'Los Angeles'):
+                        if (sName == 'Rosu' or sName == 'Los Angeles'):
                                 city.setName('Los-Andzheles', False)
-                        elif (sName == 'Washington' or sName == 'Washinton'):
+                        if (sName == 'Washington' or sName == 'Washinton'):
                                 city.setName('Vashington', False)
-                        elif (sName == 'Nieuw Amsterdam' or sName == 'New York' or sName == 'Nyuu Yooku'):
+                        if (sName == 'Nieuw Amsterdam' or sName == 'New York' or sName == 'Nyuu Yooku'):
                                 city.setName("N'yu-York", False)
-                        elif (sName == 'Fort Elizabeth'):
+                        if (sName == 'Fort Elizabeth'):
                                 city.setName("Elizavetinskaja Krepost'", False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mexicopolis'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mexicopolis'):
                                 city.setName('Mekhiko', False)
-                        elif (sName == 'Havana' or sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana'):
+                        if (sName == 'Havana' or sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana'):
                                 city.setName('Gavana', False)
-                        elif (sName == 'Babirush' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babylon' or sName == 'Babili' or sName == 'Babil&#251;'):
+                        if (sName == 'Babirush' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babylon' or sName == 'Babili' or sName == 'Babil&#251;'):
                                 city.setName('Vavilon', False)
-                        elif (sName == 'Hong Kong' or sName == 'Honkon' or sName == 'Xianggang'):
+                        if (sName == 'Hong Kong' or sName == 'Honkon' or sName == 'Xianggang'):
                                 city.setName('Sjangan', False)
-                        elif (sName == 'Furukamappu'):
+                        if (sName == 'Furukamappu'):
                                 city.setName("Juzhno-Kuril'sk", False)
-                        elif (sName == 'Seward'):
+                        if (sName == 'Seward'):
                                 city.setName("Voskresenskaja", False)
-                        elif (sName == "Kushiro"):
+                        if (sName == "Kushiro"):
                                 city.setName("Kusiro", False)
-                        elif (sName == "Hakodate"):
+                        if (sName == "Hakodate"):
                                 city.setName("Khakodate", False)
-                        elif (sName == 'Kyouto' or sName == "Jingdu"):
+                        if (sName == 'Kyouto' or sName == "Jingdu"):
                                 city.setName('Kioto', False)
-                        elif (sName == 'Edo' or sName == 'Toukyou' or sName == 'Jianghu'):
+                        if (sName == 'Edo' or sName == 'Toukyou' or sName == 'Jianghu'):
                                 city.setName('Tokio', False)
-                        elif (sName == 'Kagoshima' or sName == "Lu'erdao"):
+                        if (sName == 'Kagoshima' or sName == "Lu'erdao"):
                                 city.setName("Kagosima", False)
-                        elif (sName == "Naha"):
+                        if (sName == "Naha"):
                                 city.setName("Nakha", False)
-                        elif (sName == 'Heijo' or sName == 'Pyongyang'):
+                        if (sName == 'Heijo' or sName == 'Pyongyang'):
                                 city.setName("Pkhen'jan", False)
-                        elif (sName == 'Shunsen' or sName == "Chunchkhon"):
+                        if (sName == 'Shunsen' or sName == "Chunchkhon"):
                                 city.setName('Chuncheon', False)
-                        elif (sName == 'Seoul' or sName == 'Hanseong' or sName == 'Hancheng' or sName == 'Seul'):
+                        if (sName == 'Seoul' or sName == 'Hanseong' or sName == 'Hancheng' or sName == 'Seul'):
                                 city.setName('Keijou', False)
-                        elif (sName == 'Khanbaliq' or sName == 'Beijing' or sName == 'Hokkin'):
+                        if (sName == 'Khanbaliq' or sName == 'Beijing' or sName == 'Hokkin'):
                                 city.setName('Pekin', False)
-                        elif (sName == "Qara Qorum"):
+                        if (sName == "Qara Qorum"):
                                 city.setName("Karakorum", False)
-                        elif (sName == 'Shenyang' or sName == "Shin'you"):
+                        if (sName == 'Shenyang' or sName == "Shin'you"):
                                 city.setName('Mukden', False)
-                        elif (sName == 'Botankou' or sName == 'Mudanjiang'):
+                        if (sName == 'Botankou' or sName == 'Mudanjiang'):
                                 city.setName("Mudan'czjan", False)
-                        elif (sName == 'Jinzhou' or sName == "Czin'chzhou"):
+                        if (sName == 'Jinzhou' or sName == "Czin'chzhou"):
                                 city.setName('Kinshuu', False)
-                        elif (sName == 'Francfort' or sName == 'Bona Mansio' or sName == 'Frankfort'):
+                        if (sName == 'Francfort' or sName == 'Bona Mansio' or sName == 'Frankfort'):
                                 city.setName('Frankfurt', False)
-                        elif (sName == 'Berolinum' or sName == 'Berlijn'):
+                        if (sName == 'Berolinum' or sName == 'Berlijn'):
                                 city.setName('Berlin', False)
-                        elif (sName == "Erkh&#252;&#252;"):
+                        if (sName == "Erkh&#252;&#252;"):
                                 city.setName("Irkutsk", False)
-                        elif (sName == 'Qazan'):
+                        if (sName == 'Qazan'):
                                 city.setName("Kazan'", False)
-                        elif (sName == 'Ufu'):
+                        if (sName == 'Ufu'):
                                 city.setName("Ufa", False)
-			elif (sName == 'Kyiv' or sName == 'Kiew'):
+			if (sName == 'Kyiv' or sName == 'Kiew'):
 				city.setName('Kiev', False)
-			elif sName == 'Silistre' or sName == 'Durostulon' or sName == 'Durostorum':
+			if sName == 'Silistre' or sName == 'Durostulon' or sName == 'Durostorum':
 				city.setName('Drastar', False)
-			elif sName == 'Dousios' or sName == 'Dabil':
+			if sName == 'Dousios' or sName == 'Dabil':
 				city.setName('Dvin', False)
-			elif sName == 'Phasis':
+			if sName == 'Phasis':
 				city.setName('Poti', False)
 
                 if (iNewOwner == iNetherlands): 
                         if (sName == 'New York' or sName == "N'yu-York" or sName == 'Nyuu Yooku'):
                                 city.setName('Nieuw Amsterdam', False)
-                        elif sName == 'Br&#234;me':
+                        if sName == 'Br&#234;me':
                                 city.setName('Bremen', False)
-                        elif sName == 'Cape Town':
+                        if sName == 'Cape Town':
                                 city.setName('Kaapstadt', False)
-                        elif sName == 'Groningue':
+                        if sName == 'Groningue':
                                 city.setName('Groningen', False)
-                        elif sName == 'Traiectum Eruditum':
+                        if sName == 'Traiectum Eruditum':
                                 city.setName('Utrecht', False)
-                        elif (sName == 'Nim&#232;gue' or sName == 'Batavodurum'):
+                        if (sName == 'Nim&#232;gue' or sName == 'Batavodurum'):
                                 city.setName('Nijmegen', False)
-                        elif (sName == 'Aix-la-Chapelle' or sName == 'Aquisgranum' or sName == 'Aachen'):
+                        if (sName == 'Aix-la-Chapelle' or sName == 'Aquisgranum' or sName == 'Aachen'):
                                 city.setName('Aken', False)
-                        elif (sName == 'Bruxelles' or sName == 'Br&#252;ssel' or sName == 'Brussels'):
+                        if (sName == 'Bruxelles' or sName == 'Br&#252;ssel' or sName == 'Brussels'):
                                 city.setName('Brussel', False)
-                        elif (sName == 'Lieja' or sName == 'L&#252;ttich' or sName == 'Li&#232;ge'):
+                        if (sName == 'Lieja' or sName == 'L&#252;ttich' or sName == 'Li&#232;ge'):
                                 city.setName('Luik', False)
-                        elif (sName == 'Hamburg' or sName == 'Hambourg' or sName == 'Hamburgum'):
+                        if (sName == 'Hamburg' or sName == 'Hambourg' or sName == 'Hamburgum'):
                                 city.setName('Hamborg', False)
-                        elif (sName == 'Paris' or sName == 'Par&#237;s'):
+                        if (sName == 'Paris' or sName == 'Par&#237;s'):
                                 city.setName('Parijs', False)
-                        elif sName == 'Cuddalore':
+                        if sName == 'Cuddalore':
                                 city.setName('Coedeloer', False)
-                        elif (sName == 'Cabo de Hornos' or sName == 'Cape Horn' or sName == 'Cap Horn'):
+                        if (sName == 'Cabo de Hornos' or sName == 'Cape Horn' or sName == 'Cap Horn'):
                                 city.setName('Kaap Hoorn', False)
-                        elif (sName == 'Santa Helena' or sName == 'Saint Helena'):
+                        if (sName == 'Santa Helena' or sName == 'Saint Helena'):
                                 city.setName('Sint-Helena', False)
-                        elif sName == 'Recife':
+                        if sName == 'Recife':
                                 city.setName('Mauritsstad', False)
-                        elif sName == 'Fortaleza':
+                        if sName == 'Fortaleza':
                                 city.setName('Fort Schoonenburgh', False)
-                        elif (sName == 'Fort Willoughby' or sName == 'Paramaribo'):
+                        if (sName == 'Fort Willoughby' or sName == 'Paramaribo'):
                                 city.setName('Fort Zeelandia', False)
-                        elif sName == 'Georgetown':
+                        if sName == 'Georgetown':
                                 city.setName('Stabroek', False)
-                        elif sName == 'Hartford':
+                        if sName == 'Hartford':
                                 city.setName('Fort Goede Hoop', False)
-                        elif sName == 'Albany':
+                        if sName == 'Albany':
                                 city.setName('Beverwyck', False)
-                        elif sName == 'Philadelphia':
+                        if sName == 'Philadelphia':
                                 city.setName('Fort Beversreede', False)
-                        elif sName == 'Nieuwer-Amstel':
+                        if sName == 'Nieuwer-Amstel':
                                 city.setName('Wilmington', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexicopolis' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexicopolis' or sName == 'Mexico' or sName == 'Cidade do M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mekhiko'):
                                 city.setName('Mexico-stad', False)
-                        elif (sName == 'Bandar Melaka' or sName == 'Malacca'):
+                        if (sName == 'Bandar Melaka' or sName == 'Malacca'):
                                 city.setName('Malakka', False)
-                        elif (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
+                        if (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
                                 city.setName('Tripoli', False)
-                        elif (sName == 'Sparte' or sName == 'Esparta'):
+                        if (sName == 'Sparte' or sName == 'Esparta'):
                                 city.setName('Sparta', False)
-                        elif (sName == 'Roma' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
+                        if (sName == 'Roma' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
                                 city.setName('Rome', False)
-                        elif (sName == 'Dubh Linn' or sName == '&#193;th Cliath'):
+                        if (sName == 'Dubh Linn' or sName == '&#193;th Cliath'):
                                 city.setName('Dublin', False)
-                        elif (sName == 'Qart-Hadasht' or sName == 'Qartaj' or sName == 'Karkhedon' or sName == 'Kartaca' or sName == 'Kartaca'):
+                        if (sName == 'Qart-Hadasht' or sName == 'Qartaj' or sName == 'Karkhedon' or sName == 'Kartaca' or sName == 'Kartaca'):
                                 city.setName('Carthago', False)
-                        elif (sName == 'Fort James'):
+                        if (sName == 'Fort James'):
                                 city.setName('Jekabforts', False)
-                        elif (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
+                        if (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
                                 city.setName('Havana', False)
-                        elif (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
+                        if (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
                                 city.setName('New Orleans', False)
-                        elif (sName == 'Klein-Venedig'):
+                        if (sName == 'Klein-Venedig'):
                                 city.setName('Venezuela', False)
-                        elif (sName == 'Cape of Good Hope' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cabo de Buena Esperanza' or sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Kap der Guten Hoffnung'):
+                        if (sName == 'Cape of Good Hope' or sName == 'Capo de Boa Esperan&#231;a' or sName == 'Cabo de Buena Esperanza' or sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Kap der Guten Hoffnung'):
                                 city.setName('Kaap de Goede Hoop', False)
-                        elif (sName == 'Burdigala' or sName == 'Burdeos'):
+                        if (sName == 'Burdigala' or sName == 'Burdeos'):
                                 city.setName('Bordeaux', False)
-                        elif (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneza' or sName == 'Venecija' or sName == 'Venice' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
+                        if (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneza' or sName == 'Venecija' or sName == 'Venice' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 city.setName('Veneti&#235;', False)
-                        elif sName == 'Arguim':
+                        if sName == 'Arguim':
                                 city.setName('Arguin', False)
-                        elif (sName == 'Pokesu' or sName == 'Gro&#223; Friedrichsburg'):
+                        if (sName == 'Pokesu' or sName == 'Gro&#223; Friedrichsburg'):
                                 city.setName('Fort Hollandia', False)
-                        elif (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marsella' or sName == 'Marsiliya'):
+                        if (sName == 'Massalia' or sName == 'Massilia' or sName == 'Marsella' or sName == 'Marsiliya'):
                                 city.setName('Marseille', False)
-                        elif (sName == 'Munich'):
+                        if (sName == 'Munich'):
                                 city.setName('M&#252;nchen', False)
-                        elif (sName == 'Jakaruta' or sName == 'Jayakarta'):
+                        if (sName == 'Jakaruta' or sName == 'Jayakarta'):
                                 city.setName('Batavia', False)
-                        elif (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapur' or sName == 'Shounantou'):
+                        if (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapur' or sName == 'Shounantou'):
                                 city.setName('Singapore', False)
-                        elif (sName == 'Haojing' or sName == 'Macao' or sName == 'Aomen' or sName == 'Makao'):
+                        if (sName == 'Haojing' or sName == 'Macao' or sName == 'Aomen' or sName == 'Makao'):
                                 city.setName('Macau', False)
-                        elif (sName == 'Dilli' or sName == 'Deli' or sName == 'New Delhi' or sName == 'Derii'):
+                        if (sName == 'Dilli' or sName == 'Deli' or sName == 'New Delhi' or sName == 'Derii'):
                                 city.setName('Delhi', False)
-                        elif (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Hong Kong', False)
-                        elif (sName == 'Copenhague' or sName == 'Copenhagen' or sName == 'Kj&#248;bmandehavn' or sName == 'Hafnia'):
+                        if (sName == 'Copenhague' or sName == 'Copenhagen' or sName == 'Kj&#248;bmandehavn' or sName == 'Hafnia'):
                                 city.setName('Kopenhagen', False)
-                        elif (sName == 'Rhode Island'):
+                        if (sName == 'Rhode Island'):
                                 city.setName('Roodt Eylandt', False)
-                        elif (sName == 'New Brunswyck'):
+                        if (sName == 'New Brunswyck'):
                                 city.setName('Nieuw Brunswyck', False)
-                        elif (sName == 'Lutherstadt Wittenberg'):
+                        if (sName == 'Lutherstadt Wittenberg'):
                                 city.setName('Wittenberg', False)
-                        elif (sName == 'Preu&#223;isch Holland' or sName == 'Paslek'):
+                        if (sName == 'Preu&#223;isch Holland' or sName == 'Paslek'):
                                 city.setName('Pruissisch Holland', False)
-                        elif (sName == 'Kakolewo'):
+                        if (sName == 'Kakolewo'):
                                 city.setName('Konkolewo Hauland', False)
-                        elif (sName == 'Friedrichstadt'):
+                        if (sName == 'Friedrichstadt'):
                                 city.setName('Frederikstad', False)
-                        elif (sName == 'Gdansk' or sName == 'Danzig' or sName == 'Gedanum'):
+                        if (sName == 'Gdansk' or sName == 'Danzig' or sName == 'Gedanum'):
                                 city.setName('Danswijk', False)
-                        elif (sName == 'Berlin' or sName == 'Berolinum'):
+                        if (sName == 'Berlin' or sName == 'Berolinum'):
                                 city.setName('Berlijn', False)
-                        elif (sName == 'Frankfurt' or sName == 'Francfort' or sName == 'Bona Mansio'):
+                        if (sName == 'Frankfurt' or sName == 'Francfort' or sName == 'Bona Mansio'):
                                 city.setName('Frankfort', False)
-                        elif (sName == 'Den Haag' or sName == 'The Hague'):
+                        if (sName == 'Den Haag' or sName == 'The Hague'):
                                 city.setName("'s-Gravenhage", False)
-                        elif (sName == 'Londinium' or sName == 'London' or sName == 'Londres'):
+                        if (sName == 'Londinium' or sName == 'London' or sName == 'Londres'):
                                 city.setName('Londen', False)
-                        elif sName == ('Colonia Agrippina' or sName == 'K&#246;ln'):
+                        if sName == ('Colonia Agrippina' or sName == 'K&#246;ln'):
                                 city.setName('Keulen', False)
-                        elif (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lisbon' or sName == 'Lisbonne'):
+                        if (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lisbon' or sName == 'Lisbonne'):
                                 city.setName('Lissabon', False)
 
-                elif (iNewOwner == iMali): 
+                if (iNewOwner == iMali): 
                         if sName == 'S.Cruz de Mar Peque&#241;a':
                                 city.setName('Sidi Ifni', False)
-                        elif (sName == 'Villa Cisneros' or sName == 'ad-Dakhla'):
+                        if (sName == 'Villa Cisneros' or sName == 'ad-Dakhla'):
                                 city.setName('Dakhla', False)
-                        elif (sName == 'Fort Gouraud'):
+                        if (sName == 'Fort Gouraud'):
                                 city.setName('Fderik', False)
-                        elif (sName == 'Fort Polignac'):
+                        if (sName == 'Fort Polignac'):
                                 city.setName('Illizi', False)
-                        elif sName == 'Fort Christiansborg':
+                        if sName == 'Fort Christiansborg':
                                 city.setName('Osu', False)
-                        elif sName == 'Fort Prinsensten':
+                        if sName == 'Fort Prinsensten':
                                 city.setName('Keta', False)
-                        elif sName == 'Fort Witsten':
+                        if sName == 'Fort Witsten':
                                 city.setName('Takoradi', False)
-                        elif (sName == 'Fort Hollandia' or sName == 'Gro&#223; Friedrichsburg'):
+                        if (sName == 'Fort Hollandia' or sName == 'Gro&#223; Friedrichsburg'):
                                 city.setName('Pokesu', False)
-                        elif (sName == 'Salisbury'):
+                        if (sName == 'Salisbury'):
                                 city.setName('Harare', False)
-                        elif (sName == 'Conakry'):
+                        if (sName == 'Conakry'):
                                 city.setName('Konakiri', False)
 
                 if (iNewOwner == iPortugal): 
                         if (sName == 'Sint-Helena' or sName == 'Saint Helena'):
                                 city.setName('Santa Helena', False)
-                        elif (sName == 'Saint Louis'):
+                        if (sName == 'Saint Louis'):
                                 city.setName('Sa&#245; Lu&#237;s', False)
-                        elif sName == 'Mauritsstad':
+                        if sName == 'Mauritsstad':
                                 city.setName('Recife', False)
-                        elif sName == 'Fort Schoonenburgh':
+                        if sName == 'Fort Schoonenburgh':
                                 city.setName('Fortaleza', False)
-                        elif (sName == 'Fort Willoughby' or sName == 'Fort Zeelandia'):
+                        if (sName == 'Fort Willoughby' or sName == 'Fort Zeelandia'):
                                 city.setName('Paramaribo', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Mexico City' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Mexico City' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Cidade do M&#233;xico', False)
-                        elif (sName == 'Bandar Melaka' or sName == 'Malakka' or sName == 'Malacca'):
+                        if (sName == 'Bandar Melaka' or sName == 'Malakka' or sName == 'Malacca'):
                                 city.setName('Malaca', False)
-                        elif (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
+                        if (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Trablus'):
                                 city.setName('Tripoli', False)
-                        elif (sName == 'Sparte' or sName == 'Esparta'):
+                        if (sName == 'Sparte' or sName == 'Esparta'):
                                 city.setName('Sparta', False)
-                        elif (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atina' or sName == 'Ath&#232;nes' or sName == 'Athena'):
+                        if (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atina' or sName == 'Ath&#232;nes' or sName == 'Athena'):
                                 city.setName('Atenas', False)
-                        elif (sName == 'La Coru&#241;a' or sName == 'The Groyne' or sName == 'La Corogne'):
+                        if (sName == 'La Coru&#241;a' or sName == 'The Groyne' or sName == 'La Corogne'):
                                 city.setName('Corunha', False)
-                        elif (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
+                        if (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
                                 city.setName('Havana', False)
-                        elif (sName == 'New Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nueva Orleans'):
+                        if (sName == 'New Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nueva Orleans'):
                                 city.setName('Nova Orle&#227;es', False)
-                        elif (sName == 'Klein-Venedig'):
+                        if (sName == 'Klein-Venedig'):
                                 city.setName('Venezuela', False)
-                        elif (sName == 'S. Leopold'):
+                        if (sName == 'S. Leopold'):
                                 city.setName('S&#227;o Leopoldo', False)
-                        elif (sName == 'Guangzhou' or sName == 'Canton' or sName == 'Koushuu'):
+                        if (sName == 'Guangzhou' or sName == 'Canton' or sName == 'Koushuu'):
                                 city.setName('Cant&#227;o', False)
-                        elif (sName == 'Cape of Good Hope' or sName == 'Kaap de Goede Hoop' or sName == 'Cabo de Buena Esperanza' or sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Kap der Guten Hoffnung'):
+                        if (sName == 'Cape of Good Hope' or sName == 'Kaap de Goede Hoop' or sName == 'Cabo de Buena Esperanza' or sName == 'Cap de Bonne-Esp&#233;rance' or sName == 'Kap der Guten Hoffnung'):
                                 city.setName('Capo de Boa Esperan&#231;a', False)
-                        elif (sName == 'Portus Cale' or sName == 'Porto' or sName == 'Burtuqal'):
+                        if (sName == 'Portus Cale' or sName == 'Porto' or sName == 'Burtuqal'):
                                 city.setName('Oporto', False)
-                        elif (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Venice' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
+                        if (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Venice' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 city.setName('Veneza', False)
-                        elif sName == 'Arguin':
+                        if sName == 'Arguin':
                                 city.setName('Arguim', False)
-                        elif (sName == 'Ossonoba' or sName == "'Uhshunubah"):
+                        if (sName == 'Ossonoba' or sName == "'Uhshunubah"):
                                 city.setName('Faro', False)
-                        elif (sName == 'Felicitas Julia' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon'):
+                        if (sName == 'Felicitas Julia' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Lisbonne' or sName == 'Lissabon' or sName == 'Lisbon'):
                                 city.setName('Lisboa', False)
-                        elif (sName == 'Essaouira' or sName == 'Es-Sauirah'):
+                        if (sName == 'Essaouira' or sName == 'Es-Sauirah'):
                                 city.setName('Mogador', False)
-                        elif (sName == 'Mumbai' or sName == 'Bombay' or sName == 'Bonbei' or sName == 'Munbai'):
+                        if (sName == 'Mumbai' or sName == 'Bombay' or sName == 'Bonbei' or sName == 'Munbai'):
                                 city.setName('Bombaim', False)
-                        elif (sName == 'Qurtuba' or sName == 'Corduba' or sName == 'C&#243;rdoba'):
+                        if (sName == 'Qurtuba' or sName == 'Corduba' or sName == 'C&#243;rdoba'):
                                 city.setName('C&#243;rdova', False)
-                        elif sName == 'Colonia del Sacramento':
+                        if sName == 'Colonia del Sacramento':
                                 city.setName('Col&#244;nia do Sacramento', False)
-                        elif (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
+                        if (sName == 'Honkon' or sName == 'Xianggang' or sName == 'Gon Kong' or sName == 'Sjangan'):
                                 city.setName('Hong Kong', False)
-                        elif (sName == 'Mombasa'):
+                        if (sName == 'Mombasa'):
                                 city.setName('Momba&#231;a', False)
-                        elif (sName == 'Mbanza Kongo' or sName == 'S.Salvador de Congo'):
+                        if (sName == 'Mbanza Kongo' or sName == 'S.Salvador de Congo'):
                                 city.setName('S.Salvador do Congo', False)
-                        elif (sName == 'Haojing' or sName == 'Macao' or sName == 'Aomen' or sName == 'Makao'):
+                        if (sName == 'Haojing' or sName == 'Macao' or sName == 'Aomen' or sName == 'Makao'):
                                 city.setName('Macau', False)
-                        elif (sName == 'Dilli' or sName == 'Delhi' or sName == 'New Delhi' or sName == 'Derii'):
+                        if (sName == 'Dilli' or sName == 'Delhi' or sName == 'New Delhi' or sName == 'Derii'):
                                 city.setName('Deli', False)
-                        elif (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'C&#225;diz' or sName == 'Cadix'):
+                        if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'C&#225;diz' or sName == 'Cadix'):
                                 city.setName('C&#225;dis', False)
-                        elif (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
+                        if (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
                                 city.setName('Roma', False)
                         #inca (spanish names)
-                        elif sName == 'Quitu':
+                        if sName == 'Quitu':
                                 city.setName('Quito', False)
-                        elif sName == 'Tucume':
+                        if sName == 'Tucume':
                                 city.setName('T&#250;cume', False)
-                        elif sName == 'Chan-Chan':
+                        if sName == 'Chan-Chan':
                                 city.setName('Chanchan', False) #Trujillo
-                        elif sName == 'Pachacamaq':
+                        if sName == 'Pachacamaq':
                                 city.setName('Pachacamac', False)
-                        elif sName == 'Machu-Pikchu':
+                        if sName == 'Machu-Pikchu':
                                 city.setName('Machu Picchu', False)
-                        elif sName == 'Qusqu':
+                        if sName == 'Qusqu':
                                 city.setName('Cuzco', False)
-                        elif sName == 'Ariqipaya':
+                        if sName == 'Ariqipaya':
                                 city.setName('Arequipa', False)
-                        elif sName == 'Tiyawanaku':
+                        if sName == 'Tiyawanaku':
                                 city.setName('Tiahuanaco', False) #Tihuanaku? #Tiwanaku? #Puno?
-                        elif sName == 'Caqonatambu':
+                        if sName == 'Caqonatambu':
                                 city.setName('Limatambo', False)
-                        elif sName == 'Coqimpu':
+                        if sName == 'Coqimpu':
                                 city.setName('Coquimbo', False)
-                        elif sName == 'Ullantaytanpu':
+                        if sName == 'Ullantaytanpu':
                                 city.setName('Ollantaytambo', False)
-                        elif sName == 'Vitcos':
+                        if sName == 'Vitcos':
                                 city.setName('Piura', False)
-                        elif sName == 'Andahuailas':
+                        if sName == 'Andahuailas':
                                 city.setName('Andahuaylas', False)
-                        elif sName == 'Acari':
+                        if sName == 'Acari':
                                 city.setName('Atico', False)
-                        elif sName == 'Lluli':
+                        if sName == 'Lluli':
                                 city.setName('Juli', False)
-                        elif sName == 'Chuqiapu':
+                        if sName == 'Chuqiapu':
                                 city.setName('Chuquiapo', False)
-                        elif sName == 'Huanuqupampa':
+                        if sName == 'Huanuqupampa':
                                 city.setName('Huanucopampa', False)
-                        elif sName == 'Tambuqcucha':
+                        if sName == 'Tambuqcucha':
                                 city.setName('Tamboccocha', False)
-                        elif sName == 'Huaraz':
+                        if sName == 'Huaraz':
                                 city.setName('Huaras', False)
-                        elif sName == 'Cacsamalca':
+                        if sName == 'Cacsamalca':
                                 city.setName('Caxamalca', False)
-                        elif sName == 'Sauza':
+                        if sName == 'Sauza':
                                 city.setName('Sausa', False)
-                        elif sName == 'Tampupuca':
+                        if sName == 'Tampupuca':
                                 city.setName('Tambocolorado', False)
-                        elif sName == 'Huaqa':
+                        if sName == 'Huaqa':
                                 city.setName('Huaca', False)
-                        elif sName == 'Chuitu':
+                        if sName == 'Chuitu':
                                 city.setName('Chuito', False)
-                        elif sName == 'Cajamarca':
+                        if sName == 'Cajamarca':
                                 city.setName('Caiamarca', False)
-                        elif sName == 'Lauricucha':
+                        if sName == 'Lauricucha':
                                 city.setName('Hu&#225;nuco', False)
-                        elif sName == 'Tomebamba':
+                        if sName == 'Tomebamba':
                                 city.setName('Cuenca', False)
-                        elif sName == 'Jauja':
+                        if sName == 'Jauja':
                                 city.setName('Sausa', False)
-                        elif sName == 'Willkapampa':
+                        if sName == 'Willkapampa':
                                 city.setName('Vilcabamba', False)
-                        elif sName == 'Wantar Chawin':
+                        if sName == 'Wantar Chawin':
                                 city.setName('Chavín de Hu&#225;ntar', False)								
-                        elif sName == 'Punu':
+                        if sName == 'Punu':
                                 city.setName('Puno', False)	
 
 
-                elif (iNewOwner == iInca):
+                if (iNewOwner == iInca):
                         pass	
 
-                elif (iNewOwner == iMongolia): 
+                if (iNewOwner == iMongolia): 
                         if (sName == 'Marakanda' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 city.setName('Samarkand', False)
-                        elif (sName == 'Beijing' or sName == 'Pekin' or sName == 'Hokkin'):
+                        if (sName == 'Beijing' or sName == 'Pekin' or sName == 'Hokkin'):
                                 city.setName('Khanbaliq', False)
 				if (not gc.getPlayer(iMongolia).isHuman()):
                                         city.setHasRealBuilding((0), True) #palace
@@ -6925,28 +6925,28 @@ class CityNameManager:
                                         for pCity in apCityList:
                                                 if (pCity.GetCy().getName() == "Qara Qorum"):
                                                         pCity.GetCy().setHasRealBuilding((0), False) #palace
-                        elif (sName == 'Shash' or sName == 'Cheshih' or sName == 'Binkath'):
+                        if (sName == 'Shash' or sName == 'Cheshih' or sName == 'Binkath'):
                                 city.setName('Chach', False)
-                        elif (sName == 'Shenyang' or sName == "Shin'you"):
+                        if (sName == 'Shenyang' or sName == "Shin'you"):
                                 city.setName('Mukden', False)
-                        elif (sName == 'Tbilisi' or sName == 'Tiphlis'):
+                        if (sName == 'Tbilisi' or sName == 'Tiphlis'):
                                 city.setName('Tiflis', False)
-                        elif (sName == 'Hailaer' or sName == 'Hairaru'):
+                        if (sName == 'Hailaer' or sName == 'Hairaru'):
                                 city.setName('Hulun', False)
-                        elif (sName == 'Chita'):
+                        if (sName == 'Chita'):
                                 city.setName('Cyty', False)
-                        elif (sName == 'Ulan-Udeh'):
+                        if (sName == 'Ulan-Udeh'):
                                 city.setName('Ulaan-Ude', False)
-                        elif (sName == "Astrakhan'"):
+                        if (sName == "Astrakhan'"):
                                 city.setName('Astrakhan', False)
-                        elif (sName == "Kul'sary"):
+                        if (sName == "Kul'sary"):
                                 city.setName('Kulsary', False)
-                        elif (sName == "Karakorum"):
+                        if (sName == "Karakorum"):
                                 city.setName("Qara Qorum", False)
-                        elif (sName == "Irkutsk"):
+                        if (sName == "Irkutsk"):
                                 city.setName("Erkh&#252;&#252;", False)
 
-                elif (iNewOwner == iTurkey): 
+                if (iNewOwner == iTurkey): 
                         if (sName == 'Byzantion' or sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == "Konstantinopol'" or sName == "Car'grad"):
                                 city.setName('Kostantiniyye', False)
                                 if (not gc.getPlayer(iTurkey).isHuman()):
@@ -6955,341 +6955,341 @@ class CityNameManager:
                                         for pCity in apCityList:
                                                 if (pCity.GetCy().getName() == "S&#246;g&#252;t"):
                                                         pCity.GetCy().setHasRealBuilding((0), False) #palace
-                        elif sName == 'Nicomedia':
+                        if sName == 'Nicomedia':
                                 city.setName('Izmit', False)
-                        elif (sName == 'Pergamon' or sName == 'Pergamum'):
+                        if (sName == 'Pergamon' or sName == 'Pergamum'):
                                 city.setName('Bergama', False)
-                        elif (sName == 'Trapezon' or sName == 'Trapezus' or sName == 'Tarabizun' or sName == 'Trapezounta'):
+                        if (sName == 'Trapezon' or sName == 'Trapezus' or sName == 'Tarabizun' or sName == 'Trapezounta'):
                                 city.setName('Trabzon', False)
-                        elif (sName == 'Antiokheia Megale' or sName == 'Antiochia ad Orontem' or sName == 'Antakiyyah' or sName == 'Antiochia' or sName == 'Antiocheia'):
+                        if (sName == 'Antiokheia Megale' or sName == 'Antiochia ad Orontem' or sName == 'Antakiyyah' or sName == 'Antiochia' or sName == 'Antiocheia'):
                                 city.setName('Antakya', False)
-                        elif (sName == 'Ikonion' or sName == 'Iconium'):
+                        if (sName == 'Ikonion' or sName == 'Iconium'):
                                 city.setName('Konya', False)
-                        elif (sName == 'Antiokeia tes Pisidias' or sName == 'Antiochia Pisidiae'):
+                        if (sName == 'Antiokeia tes Pisidias' or sName == 'Antiochia Pisidiae'):
                                 city.setName('Aksehir', False)
-                        elif (sName == 'Halikarnassos' or sName == 'Halikarnassus'):
+                        if (sName == 'Halikarnassos' or sName == 'Halikarnassus'):
                                 city.setName('Bodrum', False)
-                        elif (sName == 'Ephesos' or sName == 'Ephesus'):
+                        if (sName == 'Ephesos' or sName == 'Ephesus'):
                                 city.setName('Efes', False)
-                        elif sName == 'Nicaea' or sName == 'Nikaia':
+                        if sName == 'Nicaea' or sName == 'Nikaia':
                                 city.setName('Iznik', False)
-                        elif (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Marakanda' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
+                        if (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Marakanda' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 city.setName('Samarqand', False)
-                        elif (sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Duras' or sName == 'Drach' or sName == 'Durr&#235;s' or sName == 'Durazzo' or sName == 'Dyrrachion'):
+                        if (sName == 'Epidamnos' or sName == 'Dyrrachium' or sName == 'Duras' or sName == 'Drach' or sName == 'Durr&#235;s' or sName == 'Durazzo' or sName == 'Dyrrachion'):
                                 city.setName('Dira&#231;', False)
-                        elif sName == 'Sinope':
+                        if sName == 'Sinope':
                                 city.setName('Sinop', False)
-                        elif sName == 'Hadrianopolis' or sName == 'Adrianopolis':
+                        if sName == 'Hadrianopolis' or sName == 'Adrianopolis':
                                 city.setName('Edirne', False)
-                        elif sName == 'Edessa':
+                        if sName == 'Edessa':
                                 city.setName('Urfa', False)
-                        elif (sName == 'Attaleia' or sName == 'Attalea'):
+                        if (sName == 'Attaleia' or sName == 'Attalea'):
                                 city.setName('Antalya', False)
-                        elif sName == 'Al-Aqabah':
+                        if sName == 'Al-Aqabah':
                                 city.setName('Akabe', False)
-                        elif (sName == 'Thessalonica' or sName == 'Thessaloniki' or sName == 'Thessalonike'):
+                        if (sName == 'Thessalonica' or sName == 'Thessaloniki' or sName == 'Thessalonike'):
                                 city.setName('Sel&#226;nik', False)
-                        elif sName == 'Mosul':
+                        if sName == 'Mosul':
                                 city.setName('Musul', False)
-                        elif sName == 'Halab':
+                        if sName == 'Halab':
                                 city.setName('Halep', False)
-                        elif (sName == 'Navarino' or sName == 'Neokastron'):
+                        if (sName == 'Navarino' or sName == 'Neokastron'):
                                 city.setName('Anavarin', False)
-                        elif (sName == 'Al-Jazair' or sName == 'Alger'):
+                        if (sName == 'Al-Jazair' or sName == 'Alger'):
                                 city.setName('Cezayir', False)
-                        elif sName == 'Tunis':
+                        if sName == 'Tunis':
                                 city.setName('Tunus', False)
-                        elif (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Alexandria' or sName == 'Eskendereyya'):
+                        if (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Alexandria' or sName == 'Eskendereyya'):
                                 city.setName('Iskenderiye', False)
-                        elif (sName == 'Cairo' or sName == 'Memphis' or sName == 'Ineb Hedj' or sName == 'Al-Qahirah' or sName == 'El-Qahirah' or sName == 'Kairo'):
+                        if (sName == 'Cairo' or sName == 'Memphis' or sName == 'Ineb Hedj' or sName == 'Al-Qahirah' or sName == 'El-Qahirah' or sName == 'Kairo'):
                                 city.setName('Kahire', False)
-                        elif sName == 'Dimashq':
+                        if sName == 'Dimashq':
                                 city.setName('Sam', False)
-                        elif (sName == 'Makkah' or sName == 'Mecca'):
+                        if (sName == 'Makkah' or sName == 'Mecca'):
                                 city.setName('Mekke', False)
-                        elif sName == 'Madinah':
+                        if sName == 'Madinah':
                                 city.setName('Medine', False)
-                        elif (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urshalim' or sName == 'Hierusalem' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'):
+                        if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urshalim' or sName == 'Hierusalem' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'):
                                 city.setName('Kud&#252;s', False)
-                        elif sName == 'Baghdad':
+                        if sName == 'Baghdad':
                                 city.setName('Bagdat', False)
-                        elif (sName == 'Singidunum' or sName == 'Singidun' or sName == 'Beograd'):
+                        if (sName == 'Singidunum' or sName == 'Singidun' or sName == 'Beograd'):
                                 city.setName('Belgrad', False)
-                        elif (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athena'):
+                        if (sName == 'Athenae' or sName == 'Athenai' or sName == 'Athen' or sName == 'Athens' or sName == 'Atenas' or sName == 'Ath&#232;nes' or sName == 'Athena'):
                                 city.setName('Atina', False)
-                        elif sName == 'Naupactus':
+                        if sName == 'Naupactus':
                                 city.setName('Inebahti', False)
-                        elif (sName == 'Qart-Hadasht' or sName == 'Qartaj' or sName == 'Karkhedon' or sName == 'Carthago' or sName == 'Kartaca'):
+                        if (sName == 'Qart-Hadasht' or sName == 'Qartaj' or sName == 'Karkhedon' or sName == 'Carthago' or sName == 'Kartaca'):
                                 city.setName('Kartaca', False)
-                        elif (sName == 'Tyras' or sName == 'Moncastrum' or sName == 'Tiraspol' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
+                        if (sName == 'Tyras' or sName == 'Moncastrum' or sName == 'Tiraspol' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
                                 city.setName('Akkerman', False)
-                        elif (sName == 'Anqarah' or sName == 'Ankyra' or sName == 'Ancyra'):
+                        if (sName == 'Anqarah' or sName == 'Ankyra' or sName == 'Ancyra'):
                                 city.setName('Angora', False)	
-                        elif (sName == 'Chach' or sName == 'Shash' or sName == 'Cheshih' or sName == 'Binkath' or sName == 'Tashkent'):
+                        if (sName == 'Chach' or sName == 'Shash' or sName == 'Cheshih' or sName == 'Binkath' or sName == 'Tashkent'):
                                 city.setName('Toshkent', False)
-                        elif (sName == 'Amisos' or sName == 'Amisus'):
+                        if (sName == 'Amisos' or sName == 'Amisus'):
                                 city.setName('Samsun', False)
-                        elif (sName == 'Milid' or sName == 'Malateia' or sName == 'Melitene'):
+                        if (sName == 'Milid' or sName == 'Malateia' or sName == 'Melitene'):
                                 city.setName('Malatya', False)
-                        elif (sName == 'Mazaka' or sName == 'Caesarea Mazaca' or sName == 'Kaisareia'):
+                        if (sName == 'Mazaka' or sName == 'Caesarea Mazaca' or sName == 'Kaisareia'):
                                 city.setName('Kayseri', False)
-                        elif (sName == 'Konstantia' or sName == 'Tomis' or sName == 'Konstanca' or sName == 'K&#246;stendsche'):
+                        if (sName == 'Konstantia' or sName == 'Tomis' or sName == 'Konstanca' or sName == 'K&#246;stendsche'):
                                 city.setName('Kustendje', False)
-                        elif sName == 'Saratov':
+                        if sName == 'Saratov':
                                 city.setName('Saryk Atov', False)
-                        elif (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleukeia Susiana' or sName == 'Seleucia ad Eulaeum'):
+                        if (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleukeia Susiana' or sName == 'Seleucia ad Eulaeum'):
                                 city.setName('Susa', False)
-                        elif sName == 'Parsa':
+                        if sName == 'Parsa':
                                 city.setName('Persepolis', False)
-                        elif (sName == 'Alexandreia ad Issum' or sName == 'Al-Iskandarun' or sName == 'Alexandretta'):
+                        if (sName == 'Alexandreia ad Issum' or sName == 'Al-Iskandarun' or sName == 'Alexandretta'):
                                 city.setName('Iskenderun', False)
-                        elif (sName == 'Sparte' or sName == 'Esparta'):
+                        if (sName == 'Sparte' or sName == 'Esparta'):
                                 city.setName('Sparta', False)
-                        elif (sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bangazi' or sName == 'Benghazi'):
+                        if (sName == 'Berenikis' or sName == 'Berenice' or sName == 'Hesperides' or sName == 'Bangazi' or sName == 'Benghazi'):
                                 city.setName('Bingazi', False)
-                        elif (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Tripoli'):
+                        if (sName == 'Oea' or sName == 'Regio Tripolitana' or sName == 'Tarabulus' or sName == 'Tripolis' or sName == 'Tripoli'):
                                 city.setName('Trablus', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Mexico City' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Mexico', False)
-                        elif (sName == 'Niwt-Rst' or sName == 'Diospolis Megale' or sName == 'Diospolis Magna' or sName == 'Al-Uqsur' or sName == 'Luxor'):
+                        if (sName == 'Niwt-Rst' or sName == 'Diospolis Megale' or sName == 'Diospolis Magna' or sName == 'Al-Uqsur' or sName == 'Luxor'):
                                 city.setName('Luksor', False)
-                        elif (sName == "Pi-Ramesses" or sName == 'Avaris'):
+                        if (sName == "Pi-Ramesses" or sName == 'Avaris'):
                                 city.setName("Tell El-Dab'a", False)
-                        elif sName == 'Tirana':
+                        if sName == 'Tirana':
                                 city.setName('Tiran', False)
-                        elif (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Venice' or sName == 'Al-Bundukiyya' or sName == 'Veneza'):
+                        if (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Venice' or sName == 'Al-Bundukiyya' or sName == 'Veneza'):
                                 city.setName('Venedik', False)
-                        elif (sName == 'Zantar' or sName == 'Iadera'):
+                        if (sName == 'Zantar' or sName == 'Iadera'):
                                 city.setName('Zadar', False)
-                        elif (sName == 'Vienne' or sName == 'Wien' or sName == 'Vindobona' or sName == 'Vena'):
+                        if (sName == 'Vienne' or sName == 'Wien' or sName == 'Vindobona' or sName == 'Vena'):
                                 city.setName('Viyana', False) 
-                        elif (sName == 'Sirmium' or sName == 'Sirmion' or sName == 'Syrmisch Mitrowitz' or sName == 'Sremska Mitrovica'):
+                        if (sName == 'Sirmium' or sName == 'Sirmion' or sName == 'Syrmisch Mitrowitz' or sName == 'Sremska Mitrovica'):
                                 city.setName('Dimitrof&#231;e', False)
-                        elif (sName == "Al-Kuwait" or sName == "Kuwait City"):
+                        if (sName == "Al-Kuwait" or sName == "Kuwait City"):
                                 city.setName('Kuveyt', False)
-                        elif sName == "Shiraz":
+                        if sName == "Shiraz":
                                 city.setName('Siraz', False)
-                        elif sName == "Al-Basrah":
+                        if sName == "Al-Basrah":
                                 city.setName('Basra', False)
-                        elif (sName == "Ar-Riyad" or sName == "Riyadh"):
+                        if (sName == "Ar-Riyad" or sName == "Riyadh"):
                                 city.setName('Riyad', False)
-                        elif sName == "An-Najaf":
+                        if sName == "An-Najaf":
                                 city.setName('Necef', False)
-                        elif sName == "'Amman":
+                        if sName == "'Amman":
                                 city.setName('Amman', False)
-                        elif sName == "Al-Ghardaqah":
+                        if sName == "Al-Ghardaqah":
                                 city.setName('Hurgada', False)
-                        elif sName == "Tubruq":
+                        if sName == "Tubruq":
                                 city.setName('Tobruk', False)
-                        elif (sName == 'Budapest' or sName == 'Aquincum' or sName == 'Ak Ink'):
+                        if (sName == 'Budapest' or sName == 'Aquincum' or sName == 'Ak Ink'):
                                 city.setName('Budin', False)
-                        elif (sName == 'Napoca' or sName == 'Cluj-Napoca' or sName == 'Castrum Clus' or sName == 'Klausenburg'):
+                        if (sName == 'Napoca' or sName == 'Cluj-Napoca' or sName == 'Castrum Clus' or sName == 'Klausenburg'):
                                 city.setName('Kalosvar', False)
-                        elif sName == "Groznyj":
+                        if sName == "Groznyj":
                                 city.setName('Grozni', False)
-                        elif (sName == 'Praga' or sName == 'Praha' or sName == 'Birag'):
+                        if (sName == 'Praga' or sName == 'Praha' or sName == 'Birag'):
                                 city.setName('Prag', False)
-                        elif sName == 'Safaqis':
+                        if sName == 'Safaqis':
                                 city.setName('Safakes', False)
-                        elif (sName == 'Tacape' or sName == 'Qabis' or sName == 'Gab&#232;s'):
+                        if (sName == 'Tacape' or sName == 'Qabis' or sName == 'Gab&#232;s'):
                                 city.setName('Gabes', False)
-                        elif (sName == 'Khartoum' or sName == 'Al-Hartum'):
+                        if (sName == 'Khartoum' or sName == 'Al-Hartum'):
                                 city.setName('Hartum', False)
-                        elif (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babylon' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
+                        if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babylon' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
                                 city.setName('Babil', False)
-                        elif (sName == 'Ninua' or sName == 'Nineve' or sName == 'Ninawa'):
+                        if (sName == 'Ninua' or sName == 'Nineve' or sName == 'Ninawa'):
                                 city.setName('Ninova', False)
-                        elif (sName == 'Tyrus' or sName == 'T&#253;ros' or sName == 'As-Sur'):
+                        if (sName == 'Tyrus' or sName == 'T&#253;ros' or sName == 'As-Sur'):
                                 city.setName('Sur', False)
-                        elif sName == 'Artaxata':
+                        if sName == 'Artaxata':
                                 city.setName('Artashat', False)
-                        elif (sName == 'Khalpe' or sName == 'Beroea' or sName == 'Halab'):
+                        if (sName == 'Khalpe' or sName == 'Beroea' or sName == 'Halab'):
                                 city.setName('Halep', False)
-                        elif (sName == 'Kolachi' or sName == 'Debal' or sName == 'Barbarikon' or sName == 'Barbaricum' or sName == 'Karachi'):
+                        if (sName == 'Kolachi' or sName == 'Debal' or sName == 'Barbarikon' or sName == 'Barbaricum' or sName == 'Karachi'):
                                 city.setName('Mirat ul Memalik', False)
-                        elif (sName == 'Tbilisi' or sName == 'Tiphlis'):
+                        if (sName == 'Tbilisi' or sName == 'Tiphlis'):
                                 city.setName('Tiflis', False)
-                        elif (sName == 'Sofia'):
+                        if (sName == 'Sofia'):
                                 city.setName('Sofya', False)
-                        elif (sName == 'B&#252;kres'):
+                        if (sName == 'B&#252;kres'):
                                 city.setName('Bucuresti', False)	
-                        elif (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusium' or sName == 'Pelusion'):
+                        if (sName == 'Sin' or sName == 'Sena' or sName == 'Pelusium' or sName == 'Pelusion'):
                                 city.setName('Tell el-Farama', False) #this is arabic
-                        elif (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
+                        if (sName == 'Rome' or sName == 'Rom' or sName == 'Rumiya' or sName == 'Daqin'):
                                 city.setName('Roma', False)
-                        elif (sName == 'Buto' or sName == 'Per-Wadjet'):
+                        if (sName == 'Buto' or sName == 'Per-Wadjet'):
                                 city.setName('Kem Kasir', False)			
-                        elif (sName == 'Baku'):
+                        if (sName == 'Baku'):
                                 city.setName('Bak&#252;', False)
-                        elif sName == 'Al-Ladhiqiyah':
+                        if sName == 'Al-Ladhiqiyah':
                                 city.setName("Lazkiye", False)
-                        elif sName == 'Hattusas':
+                        if sName == 'Hattusas':
                                 city.setName("Bogazk&#246;y", False)	
-                        elif (sName == "Astrakhan'"):
+                        if (sName == "Astrakhan'"):
                                 city.setName('Astrakhan', False)
-                        elif (sName == "Kul'sary"):
+                        if (sName == "Kul'sary"):
                                 city.setName('Kulsary', False)
-                        elif (sName == "Kazan'"):
+                        if (sName == "Kazan'"):
                                 city.setName('Qazan', False)
-                        elif (sName == "Ufa"):
+                        if (sName == "Ufa"):
                                 city.setName('Ufu', False)
-			elif (sName == 'Kition' or sName == 'Citium' or sName == 'Larnaka' or sName == 'Larnaca' or sName == 'Kittim'):
+			if (sName == 'Kition' or sName == 'Citium' or sName == 'Larnaka' or sName == 'Larnaca' or sName == 'Kittim'):
 				city.setName('Larnaka', False)
-			elif (sName == 'Sidon' or sName == 'Sydwn'):
+			if (sName == 'Sidon' or sName == 'Sydwn'):
 				city.setName('Sayda', False)
-			elif sName == 'Actia Nicopolis' or sName == 'Nikopolis':
+			if sName == 'Actia Nicopolis' or sName == 'Nikopolis':
 				city.setName('Preveza', False)
-			elif sName == 'Monemvasia' or sName == 'Malvasia':
+			if sName == 'Monemvasia' or sName == 'Malvasia':
 				city.setName('Menek&#351;e', False)
-			elif sName == 'Durostulon' or sName == 'Durostorum' or sName == 'Drastar':
+			if sName == 'Durostulon' or sName == 'Durostorum' or sName == 'Drastar':
 				city.setName('Silistre', False)
-			elif sName == 'Ioannina':
+			if sName == 'Ioannina':
 				city.setName('Yanya', False)
-			elif sName == 'Herakleia' or sName == 'Heraklia':
+			if sName == 'Herakleia' or sName == 'Heraklia':
 				city.setName('Eregli', False)
-			elif sName == 'Smyrna':
+			if sName == 'Smyrna':
 				city.setName('Izmir', False)
-			elif sName == 'Dorylaion' or sName == 'Dorylaeum':
+			if sName == 'Dorylaion' or sName == 'Dorylaeum':
 				city.setName('Eski&#351;ehir', False)
-			elif sName == 'Amastris':
+			if sName == 'Amastris':
 				city.setName('Amasra', False)
-			elif sName == 'Amasia':
+			if sName == 'Amasia':
 				city.setName('Amasya', False)
-			elif sName == 'Tarsos':
+			if sName == 'Tarsos':
 				city.setName('Tarsus', False)
-			elif sName == 'Sebasteia' or sName == 'Sebastia' or sName == 'Sebhasd':
+			if sName == 'Sebasteia' or sName == 'Sebastia' or sName == 'Sebhasd':
 				city.setName('Sivas', False)
-			elif sName == 'Phasis':
+			if sName == 'Phasis':
 				city.setName('Poti', False)
-			elif sName == 'Dousios' or sName == 'Dabil' or sName == 'Dvin':
+			if sName == 'Dousios' or sName == 'Dabil' or sName == 'Dvin':
 				city.setName('Yerevan', False)
-			elif sName == 'Damaskos' or sName == 'Damascus' or sName == 'Dimashq':
+			if sName == 'Damaskos' or sName == 'Damascus' or sName == 'Dimashq':
 				city.setName('Sam', False)
-			elif sName == 'Akkon' or sName == 'Akre' or sName == 'Akko':
+			if sName == 'Akkon' or sName == 'Akre' or sName == 'Akko':
 				city.setName('Akka', False)
-			elif sName == 'Damietta' or sName == 'Tamiat' or sName == 'Domyat':
+			if sName == 'Damietta' or sName == 'Tamiat' or sName == 'Domyat':
 				city.setName('Dimyat', False)
 						
-                elif (iNewOwner == iAmerica): 
+                if (iNewOwner == iAmerica): 
                         if (sName == 'Nieuw Amsterdam' or sName == "N'yu-York" or sName == 'Nyuu Yooku'):
                                 city.setName('New York', False)
-                        elif sName == 'San Agust&#237;n':
+                        if sName == 'San Agust&#237;n':
                                 city.setName('St. Augustine', False)
-                        elif sName == 'Charles Town':
+                        if sName == 'Charles Town':
                                 city.setName('Charleston', False)
-                        elif sName == 'Fort Caroline':
+                        if sName == 'Fort Caroline':
                                 city.setName('Jacksonville', False)
-                        elif (sName == 'Lac Knob'):
+                        if (sName == 'Lac Knob'):
                                 city.setName('Knob Lake', False)
-                        elif (sName == 'Qu&#233;bec'):
+                        if (sName == 'Qu&#233;bec'):
                                 city.setName('Quebec City', False)
-                        elif (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
+                        if (sName == 'Nueva Orleans' or sName == 'Nouvelle Orl&#233;ans' or sName == 'Nova Orle&#227;es'):
                                 city.setName('New Orleans', False)
-                        elif sName == 'Fort Goede Hoop':
+                        if sName == 'Fort Goede Hoop':
                                 city.setName('Hartford', False)
-                        elif sName == 'Beverwyck':
+                        if sName == 'Beverwyck':
                                 city.setName('Albany', False)
-                        elif sName == 'Fort Beversreede':
+                        if sName == 'Fort Beversreede':
                                 city.setName('Philadelphia', False)
-                        elif sName == 'Wilmington':
+                        if sName == 'Wilmington':
                                 city.setName('Nieuwer-Amstel', False)
-                        elif (sName == 'La Petite Chute'):
+                        if (sName == 'La Petite Chute'):
                                 city.setName('Little Chute', False)
-                        elif (sName == 'Vinland' or sName == 'Anse-aux-M&#233;duses'):
+                        if (sName == 'Vinland' or sName == 'Anse-aux-M&#233;duses'):
                                 city.setName('Anse aux Meadows', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Mexico City', False)
-                        elif (sName == 'Londinium' or sName == 'Londres' or sName == 'Londen'):
+                        if (sName == 'Londinium' or sName == 'Londres' or sName == 'Londen'):
                                 city.setName('London', False)
-                        elif (sName == 'Jekabforts'):
+                        if (sName == 'Jekabforts'):
                                 city.setName('Fort James', False)
-                        #elif sName == "Krepost' Ross":
+                        #if sName == "Krepost' Ross":
                         #        city.setName("Fort Ross", False)
-                        elif (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
+                        if (sName == 'Havanna' or sName == 'La Havane' or sName == 'La Habana' or sName == 'Gavana'):
                                 city.setName('Havana', False)
-                        elif sName == 'Fort Kristina':
+                        if sName == 'Fort Kristina':
                                 city.setName('Wilmington', False)
-                        elif (sName == 'Klein-Venedig'):
+                        if (sName == 'Klein-Venedig'):
                                 city.setName('Venezuela', False)
-                        elif sName == 'Sankt Thomas':
+                        if sName == 'Sankt Thomas':
                                 city.setName('Saint Thomas', False)
-                        elif sName == 'Fort D&#233;troit':
+                        if sName == 'Fort D&#233;troit':
                                 city.setName('Detroit', False)
-                        elif sName == 'Novo-Arkhangelsk':
+                        if sName == 'Novo-Arkhangelsk':
                                 city.setName('Sitka', False)
-                        elif sName == 'Fort Frontenac':
+                        if sName == 'Fort Frontenac':
                                 city.setName('Kingston', False)
-                        elif (sName == 'Hierusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'): 
+                        if (sName == 'Hierusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'): 
                                 city.setName('Jerusalem', False)
-                        elif sName == 'Neu Braunfels':
+                        if sName == 'Neu Braunfels':
                                 city.setName('New Braunfels', False)
-                        elif (sName == 'Fort Rouill&#233;' or sName == 'Fort Toronto'):
+                        if (sName == 'Fort Rouill&#233;' or sName == 'Fort Toronto'):
                                 city.setName('Toronto', False)
-                        elif (sName == 'Nouvelle-Ib&#233;rie' or sName == 'Nueva Iberia'):
+                        if (sName == 'Nouvelle-Ib&#233;rie' or sName == 'Nueva Iberia'):
                                 city.setName('New Iberia', False)
-                        elif (sName == 'Cabo Mesurado'):
+                        if (sName == 'Cabo Mesurado'):
                                 city.setName('Monrovia', False)
-                        elif (sName == 'Fort Rouge'):
+                        if (sName == 'Fort Rouge'):
                                 city.setName('Winnipeg', False)
-                        elif (sName == 'Santa F&#233;'):
+                        if (sName == 'Santa F&#233;'):
                                 city.setName('Santa Fe', False)
-                        elif (sName == 'B&#226;ton Rouge'):
+                        if (sName == 'B&#226;ton Rouge'):
                                 city.setName('Baton Rouge', False)
-                        elif (sName == 'Guatemala'):
+                        if (sName == 'Guatemala'):
                                 city.setName('Guatemala City', False)
-                        elif (sName == 'Fort Rosalie'):
+                        if (sName == 'Fort Rosalie'):
                                 city.setName('Fort Panmure', False)
-                        elif (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
+                        if (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
                                 city.setName('Alexandria', False)
-                        elif (sName == 'Al-Hartum' or sName == 'Hartum'):
+                        if (sName == 'Al-Hartum' or sName == 'Hartum'):
                                 city.setName('Khartoum', False)
-                        elif (sName == 'Al-Qahirah' or sName == 'Memphis' or sName == 'Ineb Hedj' or sName == 'Kahire' or sName == 'El-Qahirah' or sName == 'Kairo'):
+                        if (sName == 'Al-Qahirah' or sName == 'Memphis' or sName == 'Ineb Hedj' or sName == 'Kahire' or sName == 'El-Qahirah' or sName == 'Kairo'):
                                 city.setName('Cairo', False)
-                        elif (sName == 'Niwt-Rst' or sName == 'Diospolis Megale' or sName == 'Diospolis Magna' or sName == 'Luksor' or sName == 'Al-Uqsur'):
+                        if (sName == 'Niwt-Rst' or sName == 'Diospolis Megale' or sName == 'Diospolis Magna' or sName == 'Luksor' or sName == 'Al-Uqsur'):
                                 city.setName('Luxor', False)
-                        elif sName == 'Al-Basrah':
+                        if sName == 'Al-Basrah':
                                 city.setName("Basra", False)
-                        elif (sName == "Riyad" or sName == "Ar-Riyad"):
+                        if (sName == "Riyad" or sName == "Ar-Riyad"):
                                 city.setName('Riyadh', False)
-                        elif sName == 'Bagdat':
+                        if sName == 'Bagdat':
                                 city.setName('Baghdad', False)
-                        elif (sName == "Kuveyt" or sName == "Al-Kuwait"):
+                        if (sName == "Kuveyt" or sName == "Al-Kuwait"):
                                 city.setName('Kuwait City', False)
-                        elif (sName == 'Mekke' or sName == 'Makkah'):
+                        if (sName == 'Mekke' or sName == 'Makkah'):
                                 city.setName('Mecca', False)
-                        elif sName == 'Masqat':
+                        if sName == 'Masqat':
                                 city.setName('Muscat', False)
-                        elif (sName == 'Roodt Eylandt'):
+                        if (sName == 'Roodt Eylandt'):
                                 city.setName('Rhode Island', False)
-                        elif (sName == 'Nieuw Brunswyck'):
+                        if (sName == 'Nieuw Brunswyck'):
                                 city.setName('New Brunswick', False)
-                        elif (sName == 'Fort Duquesne'):
+                        if (sName == 'Fort Duquesne'):
                                 city.setName('Pittsburgh', False)
-                        elif (sName == 'Renault'):
+                        if (sName == 'Renault'):
                                 city.setName('Reno', False)
-                        elif (sName == 'San-Francisko' or sName == 'Sanfuranshisuko'):
+                        if (sName == 'San-Francisko' or sName == 'Sanfuranshisuko'):
                                 city.setName('San Francisco', False)
-                        elif (sName == 'Vankuver' or sName == 'Bankuubaa'):
+                        if (sName == 'Vankuver' or sName == 'Bankuubaa'):
                                 city.setName('Vancouver', False)
-                        elif (sName == 'Siehtl' or sName == 'Shiatoru'):
+                        if (sName == 'Siehtl' or sName == 'Shiatoru'):
                                 city.setName('Seattle', False)
-                        elif (sName == 'Rosu' or sName == 'Los-Andzheles'):
+                        if (sName == 'Rosu' or sName == 'Los-Andzheles'):
                                 city.setName('Los Angeles', False)
-                        elif (sName == 'Vashington' or sName == 'Washinton'):
+                        if (sName == 'Vashington' or sName == 'Washinton'):
                                 city.setName('Washington', False)
-                        elif (sName == 'Tenochtitl&#225;n' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
+                        if (sName == 'Tenochtitl&#225;n' or sName == 'Ciudad de M&#233;xico' or sName == 'Mexico' or sName == 'Mexiko-Stadt' or sName == 'Mexicopolis' or sName == 'Cidade do M&#233;xico' or sName == 'Mexico-stad' or sName == 'Mekhiko'):
                                 city.setName('Mexico City', False)
-                        elif (sName == "Elizavetinskaja Krepost'"):
+                        if (sName == "Elizavetinskaja Krepost'"):
                                 city.setName('Fort Elizabeth', False)
-                        elif (sName == "Voskresenskaja"):
+                        if (sName == "Voskresenskaja"):
                                 city.setName('Seward', False)
 
-                elif (iNewOwner == iCeltia and gc.getPlayer(0).isPlayable()): #late start condition 
+                if (iNewOwner == iCeltia and gc.getPlayer(0).isPlayable()): #late start condition 
                         if sName == 'Inverness':
                                 city.setName('Inbhir Nis', False)
-                        elif sName == 'Belfast':
+                        if sName == 'Belfast':
                                 city.setName('B&#233;al Feirste', False)
-                        elif (sName == 'Dubh Linn' or sName == 'Dublin'):
+                        if (sName == 'Dubh Linn' or sName == 'Dublin'):
                                 city.setName('&#193;th Cliath', False)
 
                 if sName == 'Inbhir Nis' and iNewOwner != iCeltia:
@@ -7317,27 +7317,27 @@ class CityNameManager:
                         city = pCity.GetCy()
                         if (city.getName() == 'Caricyn'):
                                 city.setName('Stalingrad', False)
-                        elif (city.getName() == 'Sankt-Peterburg'):
+                        if (city.getName() == 'Sankt-Peterburg'):
                                 city.setName('Leningrad', False)
-                        elif (city.getName() == "Tver'"):
+                        if (city.getName() == "Tver'"):
                                 city.setName('Kalinin', False)
-                        elif (city.getName() == 'Ekaterinburg'):
+                        if (city.getName() == 'Ekaterinburg'):
                                 city.setName('Sverdlovsk', False)
-                        elif (city.getName() == 'Nizhnij Novgorod'):
+                        if (city.getName() == 'Nizhnij Novgorod'):
                                 city.setName('Gorki', False)
-                        elif (city.getName() == 'Samara'):
+                        if (city.getName() == 'Samara'):
                                 city.setName('Kujbyshev', False)
-                        elif (city.getName() == "Car'grad"):
+                        if (city.getName() == "Car'grad"):
                                 city.setName("Konstantinopol'", False)
-                        elif (city.getName() == 'Bobrujsk'):
+                        if (city.getName() == 'Bobrujsk'):
                                 city.setName('Stalinsk', False)
-                        elif (city.getName() == 'Vjatka'):
+                        if (city.getName() == 'Vjatka'):
                                 city.setName('Kirov', False)
-                        elif (city.getName() == 'Bavly'):
+                        if (city.getName() == 'Bavly'):
                                 city.setName("Oktjabr'skij", False)
-                        elif (city.getName() == 'Sumin'):
+                        if (city.getName() == 'Sumin'):
                                 city.setName('Sumy', False)
-                        elif (city.getName() == 'Sjangan'):
+                        if (city.getName() == 'Sjangan'):
                                 city.setName('Gon Kong', False)
 
 
@@ -7393,7 +7393,7 @@ class CityNameManager:
                                 city = pCity.GetCy()
                                 if (city.getName() == 'Novokholmogory'):
                                         city.setName("Arkhangel'sk", False)
-                                elif (city.getName() == 'Spas na Kholmu'):
+                                if (city.getName() == 'Spas na Kholmu'):
                                         city.setName('Krasnyj Kholm', False)
                                         break
                 if (iPlayer == iRussia and era >= con.iIndustrial):
@@ -7406,7 +7406,7 @@ class CityNameManager:
                                 if (city.getName() == 'Angora'):
                                         city.setName('Ankara', False)
                                         break
-                                elif (city.getName() == 'Hanseong'):
+                                if (city.getName() == 'Hanseong'):
                                         city.setName('Seoul', False)
                                         break
 		if (iPlayer == iGermany and era == con.iRenaissance):
