@@ -140,8 +140,8 @@ tLibyaTL = (59, 35)
 tLibyaBR = (66, 37)
 tBalkansTL = (64, 39)
 tBalkansBR = (67, 45)
-tNorthAfricaTL = (59, 32)
-tNorthAfricaBR = (71, 36)
+tNorthAfricaTL = (58, 32)
+tNorthAfricaBR = (71, 38)
 tNearEastTL = (69, 37)
 tNearEastBR = (76, 45)
 
@@ -914,6 +914,13 @@ class Victory:
 					bBalkans = self.checkOwnedArea(iByzantium, tBalkansTL, tBalkansBR, 3)
 					bNorthAfrica = self.checkOwnedArea(iByzantium, tNorthAfricaTL, tNorthAfricaBR, 3)
 					bNearEast = self.checkOwnedArea(iByzantium, tNearEastTL, tNearEastBR, 3)
+
+					if bBalkans:
+						print "Third Byzantine goal: Balkans."
+					if bNorthAfrica:
+						print "Third Byzantine goal: North Africa."
+					if bNearEast:
+						print "Third Byzantine goal: Near East."
 
 					if (bBalkans and bNorthAfrica and bNearEast):
 						self.setGoal(iByzantium, 2, 1)
