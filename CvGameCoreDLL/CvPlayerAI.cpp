@@ -1379,7 +1379,15 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 			if (pCity->hasActiveWorldWonder())
 				iRazeValue -= 10;
 			}
-		else if ((iX == 68 && iY == 45)) { //Byzantium
+        // Leoreth: added more 600 AD cities here
+		else if ((iX == 68 && iY == 45) || //Byzantium
+            (iX == 60 && iY == 37) ||     //Tripolis
+            (iX == 64 && iY == 36) ||     //Bengazi
+            (iX == 67 && iY == 36) ||     //Alexandria
+            (iX == 69 && iY == 35) ||     //Cairo
+            (iX == 82 && iY == 38) ||     //Shiraz
+            (iX == 83 && iY == 45) ||     //Merv
+            (iX == 85 && iY == 47)) {    //Samarkand
 				iRazeValue -= 30;
 			}
 
@@ -1735,6 +1743,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int iNumAreaCities;
 
 	pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
+
+    int tempX = pPlot->getX_INLINE();
+	int tempY = pPlot->getY_INLINE();
+    int reborn = GET_PLAYER(getID()).getReborn();
+
+    // Leoreth: settler map entry of 1000 (never used by Rhye) to force a city no matter the environment
+    if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] == 1000)
+        return 100000;
 
 	if (!canFound(iX, iY))
 	{
@@ -2328,12 +2344,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
             {
                 return 0;
             }
-        }else{
-            if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -2))    // Renaissance Italy
+        }/*else{
+            if (iTakenTiles > (NUM_CITY_PLOTS *2/3 +1))    // Renaissance Italy
             {
                 return 0;
             }
-        }
+        }*/
 		break;
 	case JAPAN:
 		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
@@ -2722,8 +2738,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			case ROME:
                 if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
                     iValue -= (abs(iDistance) - 3) * 300;
-                else
-                    iValue -= (abs(iDistance) - 3) * 400;       // Leoreth - Renaissance Italy
+                //else
+                //    iValue -= (abs(iDistance) - 4) * 50;       // Leoreth - Renaissance Italy
 				break;
 			case JAPAN:
 				iValue -= (abs(iDistance) - 3) * 500;
@@ -2887,7 +2903,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
                     if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
                         compactEmpireModifier = 30;
                     else
-                        compactEmpireModifier = 30;     // Leoreth - Renaissance Italy (test: increased to 30 ... more cities?)
+                        compactEmpireModifier = 5;     // Leoreth - Renaissance Italy (test: increased to 30 ... more cities?)
 					break;
 				case JAPAN:
 					compactEmpireModifier = 20;
@@ -3099,9 +3115,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	} //Rhye
 
 	//Rhye - start
-	int tempX = pPlot->getX_INLINE();
-	int tempY = pPlot->getY_INLINE();
-    int reborn = GET_PLAYER(getID()).getReborn();
 
 	iValue *= settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX];
 	iValue /= 100;
@@ -3126,8 +3139,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		iValue /= 100;
 	}
 	//Rhye - end
-
-
 
 	return std::max(1, iValue);
 }
