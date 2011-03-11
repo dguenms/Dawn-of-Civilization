@@ -245,8 +245,8 @@ class RFCUtils:
 		x, y = tPlot
 		plotList = []
 
-		for i in range(x - 2, x + 3):        
-                        for j in range(y - 2, y + 3):	
+		for i in range(x - 1, x + 2):        
+                        for j in range(y - 1, y + 2):	
                                 pCurrent = gc.getMap().plot( i, j )
                                 if (not pCurrent.isWater() and not pCurrent.isPeak()):
                                         if ( not pCurrent.isUnit() ):
@@ -720,6 +720,26 @@ class RFCUtils:
                                         unit.setXYOld(tDestination[0], tDestination[1])
                                 else:
                                         j = j + 1
+
+	def relocateGarrisons(self, tCityPlot, iOldOwner):
+		if iOldOwner < con.iNumPlayers:
+			pCity = self.getRandomCity(iOldOwner)
+			if pCity != -1:
+				plot = gc.getMap().plot(tCityPlot[0],tCityPlot[1])
+				iNumUnits = plot.getNumUnits()
+				j = 0
+				for i in range(iNumUnits):
+					unit = plot.getUnit(j)
+					if (unit.getDomainType() == 2): #land
+						unit.setXYOld(pCity.getX(), pCity.getY())
+					else:
+						j = j + 1
+		else:
+			plot = gc.getMap().plot(tCityPlot[0], tCityPlot[1])
+			iNumUnits = plot.getNumUnits()
+			for i in range(iNumUnits):
+				unit = plot.getUnit(i)
+				unit.kill(False, iOldOwner)
                                 
         #Congresses, RiseAndFall
         def relocateSeaGarrisons(self, tCityPlot, iOldOwner):
@@ -1209,6 +1229,28 @@ class RFCUtils:
 	# Leoreth
 	def getReborn(self, iCiv):
 		return gc.getPlayer(iCiv).getReborn()
+
+	# Leoreth
+	def getCoreCityList(self, iCiv, reborn):
+		cityList = []
+		for x in range(con.tCoreAreasTL[reborn][iCiv][0], con.tCoreAreasBR[reborn][iCiv][0]+1):
+			for y in range(con.tCoreAreasTL[reborn][iCiv][1], con.tCoreAreasBR[reborn][iCiv][1]+1):
+				plot = gc.getMap().plot(x,y)
+				if plot.isCity():
+					cityList.append(plot.getPlotCity())
+		return cityList
+
+	# Leoreth
+	def getCoreUnitList(self, iCiv, reborn):
+		unitList = []
+		for x in range(con.tCoreAreasTL[reborn][iCiv][0], con.tCoreAreasBR[reborn][iCiv][0]+1):
+			for y in range(con.tCoreAreasTL[reborn][iCiv][1], con.tCoreAreasBR[reborn][iCiv][1]+1):
+				plot = gc.getMap().plot(x,y)
+				if not plot.isCity():
+					for i in range(plot.getNumUnits()):
+						unitList.append(plot.getUnit(i))
+		return unitList
+				
 
 
 

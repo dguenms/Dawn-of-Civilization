@@ -819,14 +819,89 @@ class RiseAndFall:
 
 		if (iGameTurn == getTurnForYear(640)):		# Leoreth: moved to later (historicity, no conflict with Byzantine flip)
 			if (not gc.getPlayer(0).isPlayable()):   
-                                iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iArabia, (67, 30), (82, 40))
-                                self.convertSurroundingPlotCulture(iArabia, tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 40))
-                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 40), iArabia, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
-                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 40), iArabia, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (82, 40), iArabia, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+                                iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iArabia, (67, 30), (80, 40))
+                                self.convertSurroundingPlotCulture(iArabia, tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (80, 40))
+                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (80, 40), iArabia, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
+                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (80, 40), iArabia, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+                                utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (80, 40), iArabia, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 				if (iNumHumanCitiesToConvert > 0):
                                 	self.flipPopup(iArabia, (67,30), (82,40))
                                 #teamArabia.setHasTech(con.iDivineRight, True, iArabia, False, False)
+
+		if (iGameTurn == getTurnForYear(650)):
+			if (not gc.getPlayer(0).isPlayable()):
+				plotBaghdad = gc.getMap().plot(77,40)
+				plotCairo = gc.getMap().plot(69,35)
+
+				Baghdad = plotBaghdad.getPlotCity()
+				Cairo = plotCairo.getPlotCity()
+
+				bBaghdad = (plotBaghdad.getOwner() == iArabia)
+				bCairo = (plotCairo.getOwner() == iArabia)
+
+				if (bBaghdad and bCairo):
+					iRand = gc.getGame().getSorenRandNum(2, "Toss Coin")
+
+					if iRand == 0:
+						if utils.getHumanID() != iArabia:
+							Baghdad.setHasRealBuilding(con.iPalace, True)
+							utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 3)
+							utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+						utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 2)
+						utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+					else:
+						if utils.getHumanID() != iArabia:
+							Cairo.setHasRealBuilding(con.iPalace, True)
+							utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
+							utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+						utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
+						utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+
+					utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+					utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+					utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
+					utils.makeUnit(con.iWorker, iArabia, (69,35), 1)
+
+				elif (bBaghdad and not bCairo):
+					if utils.getHumanID() != iArabia:
+						Baghdad.setHasRealBuilding(con.iPalace, True)
+						utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 3)
+						utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+					utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+					utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 2)
+					utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+
+					utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+					utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
+					utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
+
+				elif (not bBaghdad and not bCairo):
+					if utils.getHumanID() != iArabia:
+						Cairo.setHasRealBuilding(con.iPalace, True)
+						utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
+						utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+					utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+					utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
+					utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+
+					utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+					utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
+					utils.makeUnit(con.iWorker, iArabia, (69,35), 1)
+
+				else:
+					utils.makeUnit(con.iSettler, iArabia, (75,33), 2)
+					utils.makeUnit(con.iWorker, iArabia, (75,33), 2)
+					if utils.getHumanID() != iArabia:
+						utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 3)
+						utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
+					utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 2)
+					utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
+
+		if (iGameTurn <= getTurnForYear(1100) and not gc.getPlayer(iEgypt).isPlayable()):	# keep independent culture away from southern italy to help Byzantium settle there
+			for x in range(41, 45):
+				for y in range(55, 60):
+					plot = gc.getMap().plot(x,y)
+					utils.convertPlotCulture(plot, iByzantium, 100, False)
 
                 #kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs
                 if (iGameTurn >= getTurnForYear(con.tBirth[iVikings])+2 and iGameTurn <= getTurnForYear(con.tBirth[iVikings])+utils.getTurns(10)):
@@ -901,20 +976,58 @@ class RiseAndFall:
 		for iCiv in range(con.iNumPlayers):
 			if (con.tRebirth[iCiv] != -1):
 				if (iGameTurn == getTurnForYear(con.tRebirth[iCiv]) and not gc.getPlayer(iCiv).isAlive()):
+					
+					if iCiv == iRome:
+						cityList = utils.getCoreCityList(iCiv, 1)
+						
+						iCitiesTotal = 0
+						iIndependentCities = 0
+
+						for pCity in cityList:
+							iCitiesTotal += 1
+							if not pCity.getOwner() < con.iNumPlayers:
+								iIndependentCities += 1
+						
+						# italy needs at least half of all core cities independent -> break when there are less
+						# now: no foreign presence in Italy
+						if iIndependentCities < iCitiesTotal:
+							break
+				
 					pCiv = gc.getPlayer(iCiv)
 					pCiv.setCivilizationType(con.tRebirthCiv[iCiv])
 					pCiv.setLeader(con.tRebirthLeaders[iCiv])
 					x, y = con.tRebirthPlot[iCiv]
 					gc.getMap().plot(x,y).setOwner(iCiv)
+					gc.getMap().plot(x,y).setCulture(iCiv, 100, True)
 					self.createRespawnUnits(iCiv, (x,y))
+					print "Rebirth units placed."
 					CyInterface().addMessage(gc.getGame().getActivePlayer(), True, con.iDuration, (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
 					pCiv.setReborn()
 					self.assignTechs(iCiv)
 					if (iGameTurn >= getTurnForYear(con.tBirth[gc.getGame().getActivePlayer()])):
 						self.newCivPopup(iCiv)
+					print "Rebirth 1st turn passed"
 				if (iGameTurn == getTurnForYear(con.tRebirth[iCiv])+1 and utils.getReborn(iCiv) == 1):
+					print "Rebirth 2nd turn begun"
+					unitList = utils.getCoreUnitList(iCiv, 1)
+					for pUnit in unitList:
+						if pUnit.getOwner() != utils.getHumanID() and pUnit.getOwner() != iCiv:
+							pCity = gc.getPlayer(pUnit.getOwner()).getCapitalCity()
+							pUnit.setXYOld(pCity.getX(), pCity.getY())
+					print "Units moved"
+					cityList = utils.getCoreCityList(iCiv, 1)
+					for pCity in cityList:
+						if pCity.getOwner() != utils.getHumanID():
+							x = pCity.getX()
+							y = pCity.getY()
+							utils.relocateGarrisons((x,y), pCity.getOwner())
+							utils.relocateSeaGarrisons((x,y), pCity.getOwner())
+							utils.createGarrisons((x,y), iCiv, 2)
+					print "Garrisons moved"
 					self.convertSurroundingCities(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
+					print "Cities converted"
 					self.convertSurroundingPlotCulture(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
+					print "Plots converted"
 					utils.setBaseStabilityLastTurn(iCiv, 0)
                                 	utils.setStability(iCiv, 10) 		#the new civs start as slightly stable
                                 	utils.setPlagueCountdown(iCiv, -10)
@@ -922,7 +1035,14 @@ class RiseAndFall:
 					sd.scriptDict['lGoals'][iCiv][0] = -1
 					sd.scriptDict['lGoals'][iCiv][1] = -1
 					sd.scriptDict['lGoals'][iCiv][2] = -1
+					print "Rebirth 2nd turn passed"
+
 					if iCiv == iRome:
+						x, y = con.tRebirthPlot[iRome]
+						plot = gc.getMap().plot(58,43)
+						for i in plot.getNumUnits():
+							plot.getUnit(i).setXYOld(x,y)
+						print "Sardinia units reallocated"
 						pVenice = gc.getMap().plot(61,47).getPlotCity()
 						pVenice.setCulture(iRome, 250, True)
 						pVenice.setPopulation(5)
@@ -934,7 +1054,6 @@ class RiseAndFall:
                 #debug
                 #self.resurrection(iGameTurn)          
                 #self.resurrectionFromBarbs(iGameTurn)
-
 
 
         def checkPlayerTurn(self, iGameTurn, iPlayer):
@@ -1807,6 +1926,18 @@ class RiseAndFall:
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
 		
 		lConditionalCivs = [iByzantium]
+
+		# Leoreth: extra checks for conditional civs
+		if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
+			if iCiv == iByzantium:
+				bRomanCityInGreece = False
+				cityList = utils.getCoreCityList(iGreece, 0)
+				for pCity in cityList:
+					if pCity.getOwner == iRome:
+						bRomanCityInGreece = True
+
+				if pGreece.isAlive() or (not bRomanCityInGreece):
+					return
 
 		if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
 			if iCiv in lConditionalCivs:
@@ -3283,16 +3414,11 @@ class RiseAndFall:
 
 	def createRespawnUnits(self, iCiv, tPlot):
 		if (iCiv == iRome):
-			utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iMaceman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
 			player = gc.getPlayer(iRome)
                         player.initUnit(iSettler, tPlot[0], tPlot[1], UnitAITypes.UNITAI_SETTLE, DirectionTypes.DIRECTION_SOUTH)
-			utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
-		if (iCiv == iGreece):
-			utils.makeUnit(con.iByzantineCataphract, iCiv, tPlot, 3)
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
-
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
                 lReligions = [0, 0, 0, 0, 0, 0, 0]
@@ -3372,7 +3498,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iTurkey):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 4)
-			utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
+			#utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                 if (iCiv == iPortugal):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3) 
                 if (iCiv == iInca):
@@ -3420,11 +3546,11 @@ class RiseAndFall:
                         #utils.makeUnit(con.iArcher, iVikings, tSeaPlot, 1)
                         
                         
-                utils.makeUnit(con.iSettler, iArabia, tCapitals[0][iArabia], 3)
-                utils.makeUnit(con.iLongbowman, iArabia, tCapitals[0][iArabia], 4)
-                utils.makeUnit(con.iSwordsman, iArabia, tCapitals[0][iArabia], 2)
-                utils.makeUnit(con.iArabiaCamelarcher, iArabia, tCapitals[0][iArabia], 5)
-                utils.makeUnit(con.iWorker, iArabia, tCapitals[0][iArabia], 2)
+                utils.makeUnit(con.iSettler, iArabia, tCapitals[0][iArabia], 1)
+                utils.makeUnit(con.iArcher, iArabia, tCapitals[0][iArabia], 3)
+                #utils.makeUnit(con.iSwordsman, iArabia, tCapitals[0][iArabia], 2)
+                utils.makeUnit(con.iArabiaCamelarcher, iArabia, tCapitals[0][iArabia], 2)
+                utils.makeUnit(con.iWorker, iArabia, tCapitals[0][iArabia], 1)
 
 		utils.makeUnit(con.iSpearman, iByzantium, tCapitals[0][iByzantium], 2)
 		utils.makeUnit(con.iArcher, iByzantium, tCapitals[0][iByzantium], 3)
@@ -3675,7 +3801,7 @@ class RiseAndFall:
                 teamArabia.setHasTech(con.iWriting, True, iCiv, False, False)
                 #teamArabia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
                 teamArabia.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iGuilds, True, iCiv, False, False)
+                #teamArabia.setHasTech(con.iGuilds, True, iCiv, False, False)
                 teamArabia.setHasTech(con.iAlphabet, True, iCiv, False, False)
                 teamArabia.setHasTech(con.iMathematics, True, iCiv, False, False)
                 teamArabia.setHasTech(con.iConstruction, True, iCiv, False, False)
@@ -3760,7 +3886,7 @@ class RiseAndFall:
                 teamByzantium.setHasTech(con.iAgriculture, True, iCiv, False, False)
                 teamByzantium.setHasTech(con.iWriting, True, iCiv, False, False)
                 teamByzantium.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                teamByzantium.setHasTech(con.iFeudalism, True, iCiv, False, False)
+                #teamByzantium.setHasTech(con.iFeudalism, True, iCiv, False, False)
                 #teamByzantium.setHasTech(con.iGuilds, True, iCiv, False, False)
                 teamByzantium.setHasTech(con.iAlphabet, True, iCiv, False, False)
                 teamByzantium.setHasTech(con.iMathematics, True, iCiv, False, False)
@@ -3983,7 +4109,7 @@ class RiseAndFall:
                                 teamArabia.setHasTech(con.iWriting, True, iCiv, False, False)
                                 teamArabia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
                                 teamArabia.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iGuilds, True, iCiv, False, False)
+                                #teamArabia.setHasTech(con.iGuilds, True, iCiv, False, False)
                                 teamArabia.setHasTech(con.iAlphabet, True, iCiv, False, False)
                                 teamArabia.setHasTech(con.iMathematics, True, iCiv, False, False)
                                 teamArabia.setHasTech(con.iConstruction, True, iCiv, False, False)

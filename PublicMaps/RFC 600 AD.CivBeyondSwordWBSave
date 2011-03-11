@@ -29523,7 +29523,7 @@ BeginPlot
 	BeginCity
 		CityOwner=29
 		CityName=Tisfun
-		CityPopulation=2
+		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		Player29Culture=1
 	EndCity

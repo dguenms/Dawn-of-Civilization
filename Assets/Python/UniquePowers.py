@@ -181,7 +181,6 @@ class UniquePowers:
 					self.setRomanWar(iCiv, -1)
 
 		if (iGameTurn >= getTurnForYear(con.tBirth[iRome])+2):
-			print ("Checking Roman wars.")
 			self.checkRomanWar()
 
                 #if (iGameTurn >= getTurnForYear(1190)):

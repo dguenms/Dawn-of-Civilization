@@ -827,7 +827,7 @@ tCoreAreasTL = (
 (65, 39), #Greece
 (79, 37), #Persia
 (71, 39), #Carthage
-(58, 41), #Rome		# ITALY
+(58, 44), #Rome		# ITALY
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya

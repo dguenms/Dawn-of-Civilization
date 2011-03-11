@@ -191,10 +191,10 @@ class Barbs:
 		#Leoreth: barbarians in Balkans / Black Sea until the High Middle Ages (Bulgarians, Cumans, Pechenegs)
 		if (iGameTurn >= getTurnForYear(680) and iGameTurn <= getTurnForYear(1000)):
 			if (gc.getPlayer(0).isPlayable()):
-				self.spawnUnits(iBarbarian, (64, 45), (69, 49), con.iHorseArcher, 3 + iHandicap, iGameTurn, 6, 2, utils.outerInvasion, 0)
+				self.spawnUnits(iBarbarian, (64, 45), (69, 49), con.iHorseArcher, 3 + iHandicap, iGameTurn, 6, 2, utils.innerInvasion, 0)
 		if (iGameTurn >= getTurnForYear(900) and iGameTurn <= getTurnForYear(1200)):
 			if (gc.getPlayer(0).isPlayable()):
-				self.spawnUnits(iBarbarian, (68, 48), (75, 50), con.iHorseArcher, 3 + iHandicap, iGameTurn, 10, 5, utils.outerInvasion, 0)
+				self.spawnUnits(iBarbarian, (68, 48), (78, 50), con.iHorseArcher, 3 + iHandicap, iGameTurn, 10, 5, utils.innerInvasion, 0)
 
                 #last barbarians in east europe and caucasus
                 if (iGameTurn >= getTurnForYear(690) and iGameTurn <= getTurnForYear(1100)):
