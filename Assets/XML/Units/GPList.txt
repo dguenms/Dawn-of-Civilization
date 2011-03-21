@@ -1,0 +1,667 @@
+#PHOENICIA
+#Prophet
+Acherbas	legendary
+Tertullian	2nd
+Cyprian		3rd
+Donatus		4th
+#Artist
+Kartobal	?
+Orthobal	?
+Sophonisba	3rd BC
+Oxynthas	?
+Micipsa		2nd BC
+#Scientist
+Bomilcar	3rd BC
+Tanit		?
+Eshmuniaton	?
+Mago		4th BC
+Hiram		10th BC
+#Merchant
+Hanno		5th BC
+Aherbal		2nd BC
+Himilco		5th BC
+Bocchus		2nd BC
+#Engineer
+Gauda		?
+Zelalsen	?
+Gala		3rd BC
+Malchus		?
+#General
+Hamilcar Barca	3rd BC
+Hasdrubal Barca	3rd BC
+Maharbal		2nd BC
+Mago Barca		3rd BC
+Cathalo			?
+
+#PERSIA
+#Prophet
+Zoroaster				18-10th BC
+Mani					3rd AD
+Mazdak					6th AD
+Zahed Gilani			13th AD
+Mevlana					13th
+Mulla Sadra				17th
+#Artist
+Safi al-Din				13th
+Saadi					13th	
+Firdausi				10th
+Reza Abbasi				16th
+Kamal ud-Din Behzad		15th
+#Scientist
+Ardashir				4th
+Al-Khwarizmi			9th
+Al-Razi					9th
+Ibn Sina				10th
+Abd al-Rahman al-Sufi	10th				
+Al-Farisi				13th
+#Merchant
+Kavadh					5th
+Ahmad ibn Rustah		10th
+Istakhri				10th
+#Engineer
+Artaxerxes				5th BC
+Bahram					3rd
+Al-Khujandi				10th
+Ibn al-Haitham			10th
+#General
+Achaemenes				7th BC
+Xerxes					5th BC
+Shapur					3rd
+Abbas					16th
+Mehrdad					2nd BC
+
+#ROME
+#Prophet
+Tarpeia				legendary
+Aquilia Severa		3rd BC
+Augustinus			4th
+Eusebius			4th
+Aurelius Ambrosius	4th
+#Artist
+Livius		1st
+Vergilius	1st BC
+Ovidius		1st		
+Plutarchus	1st
+Iuvenalis	2nd
+#Scientist	
+Seneca		1st
+Strabo		1st
+Cato		1st BC
+Cicero		1st BC
+Plinius		1st
+Sosigenes	1st BC
+#Merchant
+Iucundus	?
+Sittius		?
+Atticus		?
+Marcus Crassus 1st BC
+#Engineer
+Agrippa			1st BC
+Apollodorus		2nd BC
+Hitarius		?
+Vitruvius		1st BC +
+#General
+Scipio Africanus	2nd BC
+Gaius Marius		2nd BC
+Pompeius			1st BC
+Vespasianus			1st
+Traianus			1st
+Hadrianus			2nd
+
+#JAPAN
+#Prophet
+Kobo-Daishi		8th
+Nikko Shonin	13th
+Takuan Soho		17th
+Shinran			13th
+Eisai Zenji		12th
+Uchimura Kanzo	19th	
+#Artist
+Saigyo Hoshi		12th
+Kano Eitoku			16th
+Toshusai Sharaku	18th
+Katsushika Hokusai	18th
+Utagawa Hiroshige	19th
+#Scientist
+Yoshida Mitsuyoshi	17th
+Aida Yasuaki		18th
+Kiyoshi Ito			20th
+Hideki Yukawa		20th
+Kenkichi Iwasawa	20th
+Masatoshi Koshiba	20th
+#Merchant
+Masahisa Fujita		20th
+Torakusu Yamaha		19th
+Kiichiro Toyoda		20th
+Yoshitaka Fukuda	20th
+Soichiro Honda		20th
+Otani Kozui			19th
+#Engineer
+Tanaka Hisashige	19th
+Takeda Ayasaburo	19th
+Katayama Tokuma		19th
+Kyota Sugimoto		20th
+Hidetsugu Yagi		20th
+Kotaro Honda		20th
+Ken Sakamura		20th
+Shigeru Miyamoto	20th
+#General
+Fujiwara no Kamatari	7th
+Ashikaga Takauji		14th
+Minamoto no Yoritomo	12th
+Toyotomi Hideyoshi		16th
+Togo Heihachiro			19th
+Tomoyuki Yamashita		20th
+Isoroku Yamamoto		20th
+
+#ETHIOPIA ~credit JiimBV
+#Prophet
+Abba Samuel			14th
+Ewostatewos			14th
+Abune Tewophilos	20th
+Gabra Manfas Qeddus legendary
+Yared				6th
+#Artist
+Tsegaye Gabre-Medhin	20th
+Afeworq Tekle			20th
+Alexander Boghossian	20th
+Adamu Tesfaw			20th
+Gebre Kristos Desta		19th
+#Scientist
+Abba Bahrey				16th
+Kitaw Ejigu				20th
+Gebisa Ejeta			20th
+Sossina Haile			20th
+Tilahun Yilma			20th
+Aklilu Lemma			20th
+#Merchant
+Mohammed Al Amoudi	20th
+Nigiste Saba		legendary
+Eleni Gebre-Medhin	20th
+Berhanu Nega		20th
+#Engineer
+Ezana				4th
+Alam Sagad			17th
+Gebre Mesqel Lalibela 13th
+#General
+Yohannes		19th
+Yekuno Amlak	13th
+Iyasu			17th
+Amda Seyon		14th
+Eskender		15th
+Tewodros		15th
+#Spy
+Yodit/Gudit
+
+#MAYA ~no gp names yet, use Aztecs instead
+
+#BYZANTIUM
+#Prophet
+Ioannikios Megas		9th
+Theodoros Stoudios		8th
+Kyrillos				9th
+Methodios				9th
+Photios					9th
+Nikon Metanoeite		10th
+Ioannis Xiphilinos		11th
+Nikolaos Mystikos		10th
+# Artist
+Eulalios				12th
+Theodoros Prodromos		12th		
+Manuel Chrysoloras		14th
+Theophylaktos Simokates 7th
+Theophanes Strelitzas	16th
+Georgios Plethon		14th
+#Scientist
+Stephanos Alexandrinos 7th
+Nikephoros Blemmydes 13th
+Michael Psellos		11th
+Simeon Seth			11th
+Niketas Choniates	13th
+Georgios Akropolites	13th
+Thomas Magister		14th
+Nikephoros Gregoras 14th
+Theodoros Metochites	14th
+Gregorios Gemistos	15th
+#Merchant
+Georgius Cuprios	7th
+Danielis			9th
+Hierokles			6th
+Zemarchos			6th
+#Engineer
+Anthemios			6th
+Isidoros			6th
+Eutokios			6th
+Kallinikos			7th
+#General
+Ioannis Tzimiskes		10th
+Georgios Maniakes		11th
+Nikephoros Bryennios 12th
+Andronikos Kontostephanos 12th
+Alexios Strategopoulos 13th
+Belisarios			6th
+Basileios Bulgaroktonos 11th
+Michael Palaiologos 12th
+
+#VIKING
+#Prophet
+Ansgar				9th
+Haraldr BlÂ´atonn	10th
+Sveinn TjÂ´uguskegg	10th
+#Artist
+Nils Hakansson		14th swedish
+Johan Nordahl Brun	18th
+Olav Duun			19th
+Hans Christian Andersen	19th
+Johan Ludvig Runeberg 19th finnish
+#Scientist
+Johannes Magnus		16th swedish
+Mikael Agricola		16th finnish
+Anders Angstrom		19th swedish
+Tycho Brahe			16th
+Johannes Rydberg	19th swedish
+Ole R&#248;mer		17th
+Anders Celsius		18th swedish
+Niels Bohr			20th
+#Merchant
+Eirikr Raudhi		10th
+Leifr Eiriksson		10th
+Haakon Sigurdsson	10th
+Ingvar Kamprad		20th swedish
+Roald Amundsen		20th
+#Engineer
+Hercules von Oberberg	16th
+Hans van Steenwinkel	17th
+Ivar Giaever			20th
+Sophus Lie				19th
+Niels Abel				19th
+Alfred Nobel			19th swedish
+Linus Torvalds			20th finnish
+#General
+Eirikr Blodh&#248;x		10th			
+Harald Hardraada		11th
+Knutr					11th
+Birger Jarl				13th swedish		
+Gustav Vasa				16th swedish
+
+#ARABIA
+#Prophet
+Ali ibn Abi Talib	7th
+Hasan ibn Ali		7th
+Al-Baqilanni		10th
+Umar ibn al-Khattab 7th
+Uthman ibn Affan	7th				
+#Artist
+Ibn Muqlah			10th
+Al-Mutanabbi		10th
+Ibn Quzman			12th
+Ibn al-Nadim		10th
+Ibn Furtu			16th
+Yaqut al-Hamawi		13th
+#Scientist
+Al-Farabi			10th
+Ibn al-Haytham		11th
+Al-Kindi			9th
+Ibrahim ibn Sinan	10th
+Al-Zarqali			11th
+Ibn al-Jazzar		10th
+#Merchant
+Ibn Battuta			14th
+Ahmad ibn Majid		15th
+Ibn Jubayr			12th
+Ibn Hawqal			10th
+Al-Idrisi			12th
+#Engineer
+Al-Jazari			12th
+Jabir ibn Hayyan	8th
+Abbas ibn Firnas	9th
+Ibn Wahshiyah		10th
+#General
+Muawiyah			7th
+Ziyad Ibn Abihi		7th		
+Ahmah al-Mansur		16th
+Yusuf ib Tashfin	12th
+Khalid ibn al-Walid	7th
+Amr ibn al-As		7th
+Nur ad-Din Zengi	12th
+
+#KHMER ~credit JiimBV
+#Prophet
+Kirtipandita		10th
+Tamalinda			12th
+Maha Ghosananda		20th
+Chuon Nath			19th
+#Artist
+Thqmmaracha			16th
+Vann Nath			20th
+Ang Duong			19th
+Chhim Sothy			20th
+Chath Piersath		20th
+#Scientist
+Jayavarman			10th
+Shaiwatna Kupratakul 20th
+Krisana Kraisintu	20th
+#Merchant
+Srei Meara			17th
+Srindravarman		14th
+Chey Chettha		16th
+Teng Bunma			20th
+Uthong				14th
+#Engineer
+Indravarman I		9th
+Yasovarman I		9th
+Suryavarman II		12th
+Vann Molyvann		20th
+#General
+Vinyanandana		9th
+Rajendravarman II	10th
+Bhavavarman I		6th
+Dien Del			20th
+Sak Sutsakhan		20th
+
+#SPAIN
+#Prophet
+Ignacio de Loyola		16th
+Junipero Serra			18th
+Bartolome de Las Casas	16th
+Juan de Sepulveda		16th
+Francisco Suarez		16th
+#Artist
+Miguel de Cervantes		16th
+Diego de Silva Velazquez 17th
+Garcilaso de la Vega	16th
+Pablo Picasso			20th
+Salvador Dal&#237;		20th
+#Scientist
+Juan de Ortega			11th
+Gherard de Cremona		12th
+Santiago Ram&#243;n y Cajal 19th
+Antonio de Ulloa		18th
+#Merchant
+Cristoforo Colombo		15th
+Fernando Magallanes		15th
+Hernando de Soto		16th
+Salvador Fidalgo		18th
+#Engineer
+Juan de Herrera			16th
+Juan de la Cierva		20th
+Esteban Terradas i Illa 19th
+Alberto Palacio			19th
+Agust&#237;n de Betancourt 18th
+#General
+El Cid					11th
+Francisco Coronado		16th
+Hernando Cortes			16th
+Francisco Pizarro		16th
+Ambrosio Spinola Doria  17th
+Alvaro de Bazan			16th
+
+#FRANCE
+#Prophet
+Pierre Abelard			12th
+Louis IX				13th
+Jeanne d'Arc			15th
+Jean Calvin				16th
+Albert Schweitzer			20th
+Marcel L&#233;gaut		20th
+#Artist
+Charles Le Brun			17th
+Jean-Baptiste Lully		17th
+Jean-Antoine Watteau		17th
+Victor Hugo				19th
+Claude Monet			19th
+Henri Matisse			19th
+Claude Debussy			19th
+Alexandre Dumas			19th
+#Scientist
+Nicole Oresme			14th
+Louis Pasteur			19th
+Rene Descartes			17th
+Antoine Lavoisier			18th
+Pierre-Simon Laplace		18th
+Pierre de Fermat			17th
+Antoine Henri Becquerel		20th
+Marie Curie				19th
+#Merchant
+Jacques Cartier			16th
+Coco Chanel				20th
+Samuel de Champlain		17th
+Marcel Dassault			20th
+#Engineer
+Jules Hardouin Mansart		17th
+Blaise Pascal			17th
+Charles Augustin de Coulomb	18th
+Alexandre Gustave Eiffel	19th
+Claude Perrault			17th
+Joseph-Michel Montgolfier	18th
+#General
+Charles Martel			8th
+Godefroy de Bouillon		11th
+Charles V				14th
+Louis-Joseph de Montcalm	18th
+Gilbert de Lafayette		19th
+Louis-Rene de Latouche Treville 18th
+Louis-Nicolas Davout		18th
+
+#ENGLAND
+#Prophet
+Bede the Venerable		8th
+Anselm of Canterbury		11th
+Thomas Becket			12th
+Thomas More				16th
+John Newton				18th
+William Booth			19th
+#Artist
+William Shakespeare		17th
+John Vanbrugh			17th
+George Frideric Handel		18th
+John Milton				17th
+Charles Dickens			19th
+Arthur Conan Doyle		19th
+John Lennon				20th
+#Scientist
+Isaac Newton		17th
+Francis Bacon		16th
+John Dalton			19th
+James Clerk Maxwell	19th
+Charles Darwin		19th
+Ernest Rutherford		20th
+Stephen Hawking		20th
+#Merchant
+Francis Drake		16th
+James Cook			18th
+Adam Smith			18th
+John Maynard Keynes	20th
+#Engineer
+Christopher Wren		17th
+Henry Bessemer		19th
+James Watt			18th
+Charles Babbage		19th
+Alan Turing			20th
+#General
+William the Conqueror	11th
+Richard the Lionheart	12th
+Edward III			14th
+Oliver Cromwell		17th
+Horatio Nelson		18th
+Arthur Wellington		19th
+Bernard Law Montgomery	20th
+
+#GERMANY
+#Prophet
+Hildegard von Bingen	12th
+Albertus Magnus		13th
+Martin Luther		16th
+Philip Melanchthon	16th
+Jan Hus			14th
+Dietrich Bonhoeffer	20th
+#Artist
+Albrecht D&#252;rer		15th
+Johann Sebastian Bach		17th
+Ludwig van Beethoven		18th
+Wolfgang Amadeus Mozart		18th
+Johann Wolfgang von Goethe	18th
+Friedrich Schiller		18th
+#Scientist
+Nikolaus Kopernikus		16th
+Johannes Kepler			17th
+Carl Friedrich Gauß		19th
+Gottfried Leibniz			17th
+Albert Einstein			20th
+Werner Heisenberg			20th
+Erwin Schr&#246;dinger		20th
+Max Planck				20th
+#Merchant
+Gerhard Mercator		16th
+Jakob Fugger		15th
+August Horch		20th
+Ferdinand Porsche		20th
+Carl Benz			19th
+Alfred Krupp		19th
+#Engineer
+Wilhelm Schickard		17th
+Johannes Gutenberg	15th
+Nikolaus August Otto	19th
+Gottlieb Daimler		19th
+Fritz Haber			19th
+Wernher von Braun		20th
+Otto Hahn			20th
+#General
+Otto der Große				10th
+Albrecht von Wallenstein		17th
+Gebhard Leberecht von Bl&#252;cher	18th
+Carl von Clausewitz			19th
+Paul von Hindenburg			19th
+Erwin Rommel				20th
+Heinz Guderian				20th
+
+#RUSSIA
+#Prophet
+Paisiy Yaroslavov			15th
+Feofan Prokopovich		18th
+Nikolai Berdyaev			20th
+Georges Florovsky			20th
+Alexei Losev			20th
+#Artist
+Leo Tolstoy				19th
+Anton Chekhov			19th
+Fyodor Dostoyevsky		19th
+Pyotr Ilyich Tchaikovsky	19th
+Modest Mussorgsky			19th
+#Scientist
+Mikail Lomonosov			18th
+Nikolai Lobachevsky		19th
+Dmitri Mendeleyev			19th
+Mikhail Ostrogradsky		19th
+Pavel Cherenkov			20th
+#Merchant
+Ivan Kruzenshtern			19th
+Vitus Bering			18th
+Afansiy Nikitin			15th
+#Engineer
+Ivan Starov			18th
+Sergei Korolev		20th
+Leon Theremin		20th
+Vladimir Zworykin		20th
+Andrey Tupolev		20th
+Igor Sikorsky		20th
+#General
+Alexander Nevsky		13th
+Mikhail Romanov		17th
+Alexander Suvorov		18th
+Pavel Nakhimov		19th
+Mikhail Skobelev		19th
+Georgy Zhukov		20th
+Vasily Chuikov		20th
+
+#MALI
+#Prophet
+Ali Coulibaly		18th
+Wali Keita		13th
+Seku Amadu		18th
+Sidi Yahya		15th
+#Artist
+Nare Maghann Konate	13th
+Lobi Traore		20th
+Ibrahima Aya		20th
+#Scientist
+Ahmed Baba		16th
+Ag Mohammed Kawen	19th
+Abu al Baraaka		12-16th
+Gaoussou Diawara	14th
+#Merchant
+Abubakari		13th
+Abu Bakr ibn Ahmad Biru 12-16th
+Moctar Ouane		20th
+Tunka Manin		11th
+#Engineer
+Al-Qadi Aqib ibn Umar	13th
+Abu Es Haq es Saheli	14th
+Mohammed Bagayogo	16th
+Sakura			13th
+Mohammed Naddah		15th
+#General
+Askia Muhammad		15th
+Askia Daoud		16th
+Sunni Ali		15th
+Sundiata Keita		13th
+Ngolo Diarra		18th
+
+#PORTUGAL
+#Prophet
+António de Lisboa		13th
+Isabel de Arag~ao		14th
+Jo~ao de Deus			16th
+Jo~ao de Brito			17th
+#Artist
+Fern&#227;o Lopes		15th
+Lu&#237;s de Cam&#245;es	16th
+Ant&#243;nio Ferreira		16th
+Nuno Gon,calves			15th
+Machado de Castro		18th
+Joao de Barros			16th
+#Scientist
+Pedro Nunes			16th
+Garcia de Orta			16th
+Abel Salazar			20th
+Jacob de Castro Sarmento	18th
+Antonio Egas Moniz		20th
+Bartolomeu de Gusmao		18th
+#Merchant
+Vasco da Gama			15th
+Francisco de Almeida		15th
+Pedro &#193;lvares Cabral	15th
+Henrique o Navegador		15th
+Fern~ao Mendes Pinto		16th
+Bartolomeu Dias			15th
+#Engineer
+Diogo de Boitaca		16th
+Mateus Fernandes		15th
+Jo~ao Antunes			17th
+Álvaro Siza Vieira		20th
+#General
+Afonso de Albuquerque		15th
+Nuno &#193;lvares Pereira	14th
+Alvaro Vaz de Almada		15th
+Otelo Saraiva de Carvalho	20th
+
+#INCA
++Prophet
+Guyasuta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
