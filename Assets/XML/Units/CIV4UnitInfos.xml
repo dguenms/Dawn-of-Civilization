@@ -30712,9 +30712,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_PHOENICIAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Acherbas</UniqueName><!-- legendary -->
+				<UniqueName>Tertullian</UniqueName><!-- 2nd -->
+				<UniqueName>Cyprian</UniqueName><!-- 3rd -->
+				<UniqueName>Donatus</UniqueName><!-- 4th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -30920,9 +30923,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_PHOENICIAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Kartobal</UniqueName><!-- ? -->
+				<UniqueName>Ortobal</UniqueName><!-- ? -->
+				<UniqueName>Sophonisba</UniqueName><!-- 3rd BC -->
+				<UniqueName>Micipsa</UniqueName><!-- 2nd BC -->
+				<UniqueName>Oxynthas</UniqueName><!-- ? -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -31105,9 +31112,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_PHOENICIAN_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Hiram</UniqueName><!-- 10th BC -->
+				<UniqueName>Mago</UniqueName><!-- 4th BC -->
+				<UniqueName>Bomilcar</UniqueName><!-- 3rd BC -->
+				<UniqueName>Eshmuniaton</UniqueName><!-- ? -->
+				<UniqueName>Tanit</UniqueName><!-- ? -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -31294,9 +31305,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_PHOENICIAN_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Hanno</UniqueName><!-- 5th BC -->
+				<UniqueName>Himilco</UniqueName><!-- 5th BC -->
+				<UniqueName>Adherbal</UniqueName><!-- 2nd BC -->
+				<UniqueName>Bocchus</UniqueName><!-- 2nd BC -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -31487,9 +31501,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_PHOENICIAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Gala</UniqueName><!-- 3rd BC -->
+				<UniqueName>Zelalsen</UniqueName><!-- ? -->
+				<UniqueName>Malchus</UniqueName><!-- ? -->
+				<UniqueName>Gauda</UniqueName><!-- ? -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -31676,9 +31693,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_PHOENICIAN_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Hasdrubal Barca</UniqueName><!-- 3rd BC -->
+				<UniqueName>Hamilcar Barca</UniqueName><!-- 3rd BC -->
+				<UniqueName>Mago Barca</UniqueName><!-- 3rd BC -->
+				<UniqueName>Maharbal</UniqueName><!-- 2nd BC -->
+				<UniqueName>Cathalo</UniqueName><!-- ? -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -31862,9 +31883,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_PERSIAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Zoroaster</UniqueName><!-- 18-10th BC -->
+				<UniqueName>Mani</UniqueName><!-- 3rd -->
+				<UniqueName>Mazdak</UniqueName><!-- 4th -->
+				<UniqueName>Al-Ghazali</UniqueName><!-- 11th -->
+				<UniqueName>Mevlana</UniqueName><!-- 13th -->
+				<UniqueName>Mulla Sadra</UniqueName><!-- 17th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -32070,9 +32096,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_PERSIAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Firdausi</UniqueName><!-- 10th -->
+				<UniqueName>Safi al-Din</UniqueName><!-- 13th -->
+				<UniqueName>Saadi</UniqueName><!-- 13th -->
+				<UniqueName>Kamal ud-Din Behzad</UniqueName><!-- 15th -->
+				<UniqueName>Reza Abbasi</UniqueName><!-- 16th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -32255,9 +32285,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_PERSIAN_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Ardashir</UniqueName><!-- 4th -->
+				<UniqueName>Al-Khwarizmi</UniqueName><!-- 9th -->
+				<UniqueName>Al-Razi</UniqueName><!-- 9th -->
+				<UniqueName>Ibn Sina</UniqueName><!-- 10th -->
+				<UniqueName>Abd al-Rahman al-Sufi</UniqueName><!-- 10th -->
+				<UniqueName>Al-Farisi</UniqueName><!-- 13th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -32444,9 +32479,11 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_PERSIAN_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Kavadh</UniqueName><!-- 5th -->
+				<UniqueName>Ahmad ibn Rustah</UniqueName><!-- 10th -->
+				<UniqueName>Istakhri</UniqueName><!-- 10th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -32637,9 +32674,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_PERSIAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Artaxerxes</UniqueName><!-- 5th BC -->
+				<UniqueName>Bahram</UniqueName><!-- 3rd -->
+				<UniqueName>Al-Khujandi</UniqueName><!-- 10th -->
+				<UniqueName>Ibn al-Haitham</UniqueName><!-- 10th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -32826,9 +32866,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_PERSIAN_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Achaemenes</UniqueName><!-- 7th BC -->
+				<UniqueName>Xerxes</UniqueName><!-- 5th BC -->
+				<UniqueName>Mehrdad</UniqueName><!-- 2nd BC -->
+				<UniqueName>Shapur</UniqueName><!-- 3rd -->
+				<UniqueName>Abbas</UniqueName><!-- 16th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -33012,9 +33056,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_ROMAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Tarpeia</UniqueName><!-- legendary -->
+				<UniqueName>Aquilia Severa</UniqueName><!-- 3rd BC -->
+				<UniqueName>Augustinus</UniqueName><!-- 4th -->
+				<UniqueName>Aurelius Ambrosius</UniqueName><!-- 4th -->
+				<UniqueName>Eusebius</UniqueName><!-- 4th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -33220,9 +33268,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_ROMAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Vergilius</UniqueName><!-- 1st BC -->
+				<UniqueName>Livius</UniqueName><!-- 1st -->
+				<UniqueName>Ovidius</UniqueName><!-- 1st -->
+				<UniqueName>Plutarchus</UniqueName><!-- 1st -->
+				<UniqueName>Iuvenalis</UniqueName><!-- 2nd -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -33405,9 +33457,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_ROMAN_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Cato</UniqueName><!-- 1st BC -->
+				<UniqueName>Cicero</UniqueName><!-- 1st BC -->
+				<UniqueName>Sosigenes</UniqueName><!-- 1st BC -->
+				<UniqueName>Plinius</UniqueName><!-- 1st -->
+				<UniqueName>Strabo</UniqueName><!-- 1st -->
+				<UniqueName>Seneca</UniqueName><!-- 1st -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -33594,9 +33651,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_ROMAN_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Marcus Crassus</UniqueName><!-- 1st BC -->
+				<UniqueName>Iucundus</UniqueName><!-- ? -->
+				<UniqueName>Atticus</UniqueName><!-- ? -->
+				<UniqueName>Sittius</UniqueName><!-- ? -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -33787,9 +33847,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_ROMAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Apollodorus</UniqueName><!-- 2nd BC -->
+				<UniqueName>Vitruvius</UniqueName><!-- 1st BC -->
+				<UniqueName>Agrippa</UniqueName><!-- 1st BC -->
+				<UniqueName>Hitarius</UniqueName><!-- ? -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -33976,9 +34039,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_ROMAN_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Scipio Africanus</UniqueName><!-- 2nd BC -->
+				<UniqueName>Gaius Marius</UniqueName><!-- 2nd BC -->
+				<UniqueName>Pompeius</UniqueName><!-- 1st BC -->
+				<UniqueName>Vaspasianus</UniqueName><!-- 1st -->
+				<UniqueName>Traianus</UniqueName><!-- 1st -->
+				<UniqueName>Hadrianus</UniqueName><!-- 2nd -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -34162,9 +34230,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_JAPANESE_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Kobo Daishi</UniqueName><!-- 8th -->
+				<UniqueName>Eisai Zenji</UniqueName><!-- 12th -->
+				<UniqueName>Shinran</UniqueName><!-- 13th -->
+				<UniqueName>Nikko Shonin</UniqueName><!-- 13th -->
+				<UniqueName>Takuan Soho</UniqueName><!-- 17th -->
+				<UniqueName>Uchimura Kanzo</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -34370,9 +34443,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_JAPANESE_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Saigyo Hoshi</UniqueName><!-- 12th -->
+				<UniqueName>Kano Eitoku</UniqueName><!-- 16th -->
+				<UniqueName>Toshusai Sharaku</UniqueName><!-- 18th -->
+				<UniqueName>Katsushika Hokusai</UniqueName><!-- 18th -->
+				<UniqueName>Utagawa Hiroshige</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -34555,9 +34632,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_JAPANESE_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Yoshida Mitsuyoshi</UniqueName><!-- 17th -->
+				<UniqueName>Aida Yasuaki</UniqueName><!-- 18th -->
+				<UniqueName>Kiyoshi Ito</UniqueName><!-- 20th -->
+				<UniqueName>Hideki Yukawa</UniqueName><!-- 20th -->
+				<UniqueName>Masatoshi Koshiba</UniqueName><!-- 20th -->
+				<UniqueName>Kenkichi Iwasawa</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -34744,9 +34826,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_JAPANESE_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Torakusu Yamaha</UniqueName><!-- 19th -->
+				<UniqueName>Otano Kozui</UniqueName><!-- 19th -->
+				<UniqueName>Masahisa Fujita</UniqueName><!-- 20th -->
+				<UniqueName>Kiichiro Toyoda</UniqueName><!-- 20th -->
+				<UniqueName>Soichiro Honda</UniqueName><!-- 20th -->
+				<UniqueName>Yoshitaka Fukuda</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -34937,9 +35024,16 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_JAPANESE_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Tanaka Hisashige</UniqueName><!-- 19th -->
+				<UniqueName>Katayama Tokuma</UniqueName><!-- 19th -->
+				<UniqueName>Takeda Ayasaburo</UniqueName><!-- 19th -->
+				<UniqueName>Kotaro Honda</UniqueName><!-- 20th -->
+				<UniqueName>Ken Sakamura</UniqueName><!-- 20th -->
+				<UniqueName>Kyota Sugimoto</UniqueName><!-- 20th -->
+				<UniqueName>Hidetsugu Yagi</UniqueName><!-- 20th -->
+				<UniqueName>Shigeru Miyamoto</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -35126,9 +35220,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_JAPANESE_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Fujiwara no Kamatari</UniqueName><!-- 7th -->
+				<UniqueName>Minamoto no Yoritomo</UniqueName><!-- 12th -->
+				<UniqueName>Ashikaga Takauji</UniqueName><!-- 14th -->
+				<UniqueName>Toyotomi Hideyoshi</UniqueName><!-- 16th -->
+				<UniqueName>Togo Heihachiro</UniqueName><!-- 19th -->
+				<UniqueName>Isoroku Yamamoto</UniqueName><!-- 20th -->
+				<UniqueName>Tomoyuki Yamashita</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -35312,9 +35412,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_ETHIOPIAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Gabra Manfas Qeddus</UniqueName><!-- legendary -->
+				<UniqueName>Yared</UniqueName><!-- 6th -->
+				<UniqueName>Ewostatewos</UniqueName><!-- 14th -->
+				<UniqueName>Abba Samuel</UniqueName><!-- 14th -->
+				<UniqueName>Abune Tewophilos</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -35520,9 +35624,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_ETHIOPIAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Gebre Kristos Desta</UniqueName><!-- 19th -->
+				<UniqueName>Tsegaye Gabre-Medhin</UniqueName><!-- 20th -->
+				<UniqueName>Adamu Tesfaw</UniqueName><!-- 20th -->
+				<UniqueName>Afeworq Tekle</UniqueName><!-- 20th -->
+				<UniqueName>Alexander Boghossian</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -35705,9 +35813,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_ETHIOPIAN_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Abba Bahrey</UniqueName><!-- 16th -->
+				<UniqueName>Aklilu Lemma</UniqueName><!-- 20th -->
+				<UniqueName>Kitaw Ejigu</UniqueName><!-- 20th -->
+				<UniqueName>Sossina Haile</UniqueName><!-- 20th -->
+				<UniqueName>Gebisa Ejeta</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -35894,9 +36006,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_ETHIOPIAN_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Nigiste Saba</UniqueName><!-- legendary -->
+				<UniqueName>Berhanu Nega</UniqueName><!-- 20th -->
+				<UniqueName>Eleni Gebre-Medhin</UniqueName><!-- 20th -->
+				<UniqueName>Mohammed Al Amoudi</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -36087,9 +36202,11 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_ETHIOPIAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Ezana</UniqueName><!-- 4th -->
+				<UniqueName>Gebre Mesqel Lalibela</UniqueName><!-- 13th -->
+				<UniqueName>Alam Sagad</UniqueName><!-- 17th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -36276,9 +36393,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_ETHIOPIAN_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Yekuno Amlak</UniqueName><!-- 13th -->
+				<UniqueName>Amda Seyon</UniqueName><!-- 14th -->
+				<UniqueName>Eskender</UniqueName><!-- 15th -->
+				<UniqueName>Tewodros</UniqueName><!-- 15th -->
+				<UniqueName>Iyasu</UniqueName><!-- 17th -->
+				<UniqueName>Yohannes</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -36462,9 +36584,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_BYZANTINE_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Kyrillos</UniqueName><!-- 9th -->
+				<UniqueName>Methodios</UniqueName><!-- 9th -->
+				<UniqueName>Photios</UniqueName><!-- 9th -->
+				<UniqueName>Nikolaos Mystikos</UniqueName><!-- 10th -->
+				<UniqueName>Ioannes Xiphilinos</UniqueName><!-- 11th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -36670,9 +36796,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_BYZANTINE_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Theophylaktos Simokates</UniqueName><!-- 7th -->
+				<UniqueName>Theodoros Prodromos</UniqueName><!-- 12th -->
+				<UniqueName>Eulalios</UniqueName><!-- 12th -->
+				<UniqueName>Manuel Chrysoloras</UniqueName><!-- 14th -->
+				<UniqueName>Georgios Plethon</UniqueName><!-- 14th -->
+				<UniqueName>Theophanes Strelitzas</UniqueName><!-- 16th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -36855,9 +36986,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_BYZANTINE_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Stephanos Alexandrinos</UniqueName><!-- 7th -->
+				<UniqueName>Michael Psellos</UniqueName><!-- 11th -->
+				<UniqueName>Nikephoros Blemmydes</UniqueName><!-- 13th -->
+				<UniqueName>Niketas Choniates</UniqueName><!-- 13th -->
+				<UniqueName>Nikephoros Gregoras</UniqueName><!-- 14th -->
+				<UniqueName>Gregorios Gemistos</UniqueName><!-- 15th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -37044,9 +37180,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_BYZANTINE_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Hierokles</UniqueName><!-- 6th -->
+				<UniqueName>Zemarchos</UniqueName><!-- 6th -->
+				<UniqueName>Georgios Kyprios</UniqueName><!-- 7th -->
+				<UniqueName>Danielis</UniqueName><!-- 9th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -37237,9 +37376,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_BYZANTINE_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Anthemios</UniqueName><!-- 6th -->
+				<UniqueName>Isidoros</UniqueName><!-- 6th -->
+				<UniqueName>Eutokios</UniqueName><!-- 6th -->
+				<UniqueName>Kallinikos</UniqueName><!-- 7th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -37426,9 +37568,16 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_BYZANTINE_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Belisarios</UniqueName><!-- 6th -->
+				<UniqueName>Ioannis Tzimiskes</UniqueName><!-- 10th -->
+				<UniqueName>Basileios Bulgaroktonos</UniqueName><!-- 11th -->
+				<UniqueName>Georgios Maniakes</UniqueName><!-- 11th -->
+				<UniqueName>Michael Palaiologos</UniqueName><!-- 12th -->
+				<UniqueName>Nikephoros Bryennios</UniqueName><!-- 12th -->
+				<UniqueName>Andronikos Kontostephanos</UniqueName><!-- 12th -->
+				<UniqueName>Alexios Strategopoulos</UniqueName><!-- 13th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -37612,9 +37761,11 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_NORSE_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Ansgar</UniqueName><!-- 9th -->
+				<UniqueName>Haraldr Blátonn</UniqueName><!-- 10th -->
+				<UniqueName>Sveinn Tjúguskegg</UniqueName><!-- 10th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -37820,10 +37971,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_NORSE_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
-			</UniqueNames>
+				<UniqueName>Nils Hakansson</UniqueName><!-- 14th swedish -->
+				<UniqueName>Johan Nordahl Brun</UniqueName><!-- 18th -->
+				<UniqueName>Hans Christian Andersen</UniqueName><!-- 19th -->
+				<UniqueName>Olav Duun</UniqueName><!-- 19th -->
+				<UniqueName>Johan Ludvig Runeberg</UniqueName><!-- 19th finnish -->
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -38005,9 +38159,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_NORSE_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Tycho Brahe</UniqueName><!-- 16th -->
+				<UniqueName>Mikael Agrocola</UniqueName><!-- 16th finnish -->
+				<UniqueName>Ole R&#248;mer</UniqueName><!-- 17th -->
+				<UniqueName>Anders Celsius</UniqueName><!-- 18th swedish -->
+				<UniqueName>Johannes Rydberg</UniqueName><!-- 19th swedish -->
+				<UniqueName>Anders Angstrom</UniqueName><!-- 19th swedish -->
+				<UniqueName>Niels Bohr</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -38194,9 +38354,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_NORSE_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Eirikr Raudhi</UniqueName><!-- 10th -->
+				<UniqueName>Leifr Eiriksson</UniqueName><!-- 10th -->
+				<UniqueName>Haakon Sigurdsson</UniqueName><!-- 10th -->
+				<UniqueName>Ingvar Kamprad</UniqueName><!-- 20th swedish -->
+				<UniqueName>Roald Amundsen</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -38387,9 +38551,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_NORSE_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Hercules von Oberberg</UniqueName><!-- 16th -->
+				<UniqueName>Niels Abel</UniqueName><!-- 19th -->
+				<UniqueName>Alfred Nobel</UniqueName><!-- 19th swedish -->
+				<UniqueName>Ivar Giaever</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -38576,9 +38743,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_NORSE_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Eirikr Blodh&#248;x</UniqueName><!-- 10th -->
+				<UniqueName>Harald Hardraada</UniqueName><!-- 11th -->
+				<UniqueName>Knutr</UniqueName><!-- 11th -->
+				<UniqueName>Birger Jarl</UniqueName><!-- 13th swedish -->
+				<UniqueName>Gustav Vasa</UniqueName><!-- 16th swedish -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -38762,9 +38933,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_ARABIAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Ali ibn Abi Talib</UniqueName><!-- 7th -->
+				<UniqueName>Hasan ibn Ali</UniqueName><!-- 7th -->
+				<UniqueName>Uthman ibn Affan</UniqueName><!-- 7th -->
+				<UniqueName>Umar ibn al-Kattab</UniqueName><!-- 7th -->
+				<UniqueName>Al-Baqilanni</UniqueName><!-- 10th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -38970,9 +39145,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_ARABIAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Ibn Muqlah</UniqueName><!-- 10th -->
+				<UniqueName>Ibn al-Nadim</UniqueName><!-- 10th -->
+				<UniqueName>Al-Mutanabbi</UniqueName><!-- 10th -->
+				<UniqueName>Ibn Quzman</UniqueName><!-- 12th -->
+				<UniqueName>Yaqut al-Hamawi</UniqueName><!-- 13th -->
+				<UniqueName>Ibn Furtu</UniqueName><!-- 16th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -39155,9 +39335,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_ARABIAN_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Al-Kindi</UniqueName><!-- 9th -->
+				<UniqueName>Al-Farabi</UniqueName><!-- 10th -->
+				<UniqueName>Ibrahim ibn Sinan</UniqueName><!-- 10th -->
+				<UniqueName>Ibn al-Jazzar</UniqueName><!-- 10th -->
+				<UniqueName>Al-Zarqali</UniqueName><!-- 11th -->
+				<UniqueName>Ibn al-Haytam</UniqueName><!-- 11th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -39344,9 +39529,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_ARABIAN_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Ibn Hawqal</UniqueName><!-- 10th -->
+				<UniqueName>Al-Idrisi</UniqueName><!-- 12th -->
+				<UniqueName>Ibn Jubayr</UniqueName><!-- 12th -->
+				<UniqueName>Ibn Battuta</UniqueName><!-- 14th -->
+				<UniqueName>Ahmad ibn Majid</UniqueName><!-- 15th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -39537,9 +39726,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_ARABIAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Jabir ibn Hayyan</UniqueName><!-- 8th -->
+				<UniqueName>Abbas ibn Firnas</UniqueName><!-- 9th -->
+				<UniqueName>Ibn Wahshiyah</UniqueName><!-- 10th -->
+				<UniqueName>Al-Jazari</UniqueName><!-- 12th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -39726,9 +39918,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_ARABIAN_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Khalid ibn al-Walid</UniqueName><!-- 7th -->
+				<UniqueName>Muawiyah</UniqueName><!-- 7th -->
+				<UniqueName>Ziyad ibn Abihi</UniqueName><!-- 7th -->
+				<UniqueName>Amr ibn al-As</UniqueName><!-- 7th -->
+				<UniqueName>Nur ad-Din Zengi</UniqueName><!-- 12th -->
+				<UniqueName>Yusuf ibn Tashfin</UniqueName><!-- 12th -->
+				<UniqueName>Ahmah al-Mansur</UniqueName><!-- 16th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -39912,9 +40110,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_KHMER_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Kirtipandita</UniqueName><!--  10th-->
+				<UniqueName>Tamalinda</UniqueName><!-- 12th -->
+				<UniqueName>Chuon Nath</UniqueName><!-- 19th -->
+				<UniqueName>Maha Ghosananda</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -40120,9 +40321,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_KHMER_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Thammaracha</UniqueName><!-- 16th -->
+				<UniqueName>Ang Duong</UniqueName><!-- 19th -->
+				<UniqueName>Vann Nath</UniqueName><!-- 20th -->
+				<UniqueName>Chath Piersath</UniqueName><!-- 20th -->
+				<UniqueName>Chhim Sothy</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -40305,9 +40510,11 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_KHMER_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Jayavarman</UniqueName><!-- 10th -->
+				<UniqueName>Krisana Kraisintu</UniqueName><!-- 20th -->
+				<UniqueName>Shaiwatna Kupratakul</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -40494,9 +40701,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_KHMER_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Srindravarman</UniqueName><!-- 14th -->
+				<UniqueName>Uthong</UniqueName><!-- 14th -->
+				<UniqueName>Chey Chettha</UniqueName><!-- 16th -->
+				<UniqueName>Srei Meara</UniqueName><!-- 17th -->
+				<UniqueName>Teng Bunma</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -40687,9 +40898,11 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_KHMER_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Indravarman</UniqueName><!-- 9th -->
+				<UniqueName>Yasovarman</UniqueName><!-- 9th -->
+				<UniqueName>Vann Molyvann</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -40876,9 +41089,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_KHMER_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Bhavavarman</UniqueName><!-- 6th -->
+				<UniqueName>Vinyanandana</UniqueName><!-- 9th -->
+				<UniqueName>Rajendravarman</UniqueName><!-- 10th -->
+				<UniqueName>Sak Sutsakhan</UniqueName><!-- 20th -->
+				<UniqueName>Dien Del</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -41062,9 +41279,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_SPANISH_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Ignacio de Loyola</UniqueName><!-- 16th -->
+				<UniqueName>Juan de Sepulveda</UniqueName><!-- 16th -->
+				<UniqueName>Francisco Suarez</UniqueName><!-- 16th -->
+				<UniqueName>Bartolome de Las Casas</UniqueName><!-- 16th -->
+				<UniqueName>Junipero Serra</UniqueName><!-- 18th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -41270,9 +41491,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_SPANISH_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Miguel de Cervantes</UniqueName><!-- 16th -->
+				<UniqueName>Garcilaso de la Vega</UniqueName><!-- 16th -->
+				<UniqueName>Diego de Silva Velazquez</UniqueName><!-- 17th -->
+				<UniqueName>Pablo Picasso</UniqueName><!-- 20th -->
+				<UniqueName>Salvador Dal&#237;</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -41455,9 +41680,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_SPANISH_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Juan de Ortega</UniqueName><!-- 11th -->
+				<UniqueName>Gherard de Cremona</UniqueName><!-- 12th -->
+				<UniqueName>Antonio de Ulloa</UniqueName><!-- 18th -->
+				<UniqueName>Santiago Ram&#243;n y Cajal</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -41644,9 +41872,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_SPANISH_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Cristoforo Colombo</UniqueName><!-- 15th -->
+				<UniqueName>Fernando Magallanes</UniqueName><!-- 15th -->
+				<UniqueName>Hernando de Soto</UniqueName><!-- 16th -->
+				<UniqueName>Salvador Fidalgo</UniqueName><!-- 18th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -41837,9 +42068,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_SPANISH_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Juan de Herrera</UniqueName><!-- 16th -->
+				<UniqueName>Agust&#237;n de Betancourt</UniqueName><!-- 18th -->
+				<UniqueName>Alberto Palacio</UniqueName><!-- 19th -->
+				<UniqueName>Esteban Terradas i Illa</UniqueName><!-- 19th -->
+				<UniqueName>Juan de la Cierva</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -42026,9 +42261,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_SPANISH_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>El Cid</UniqueName><!-- 11th -->
+				<UniqueName>Francisco Coronado</UniqueName><!-- 16th -->
+				<UniqueName>Hernando Cortes</UniqueName><!-- 16th -->
+				<UniqueName>Francisco Pizarro</UniqueName><!-- 16th -->
+				<UniqueName>Alvaro de Bazan</UniqueName><!-- 16th -->
+				<UniqueName>Ambrosio Spinola Doria</UniqueName><!-- 17th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -42212,9 +42452,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_FRENCH_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Pierre Abélard</UniqueName><!-- 12th -->
+				<UniqueName>Louis IX</UniqueName><!-- 13th -->
+				<UniqueName>Jeanne d'Arc</UniqueName><!-- 15th -->
+				<UniqueName>Jean Calvin</UniqueName><!-- 16th -->
+				<UniqueName>Albert Schweitzer</UniqueName><!-- 20th -->
+				<UniqueName>Marcel Légaut</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -42420,9 +42665,16 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_FRENCH_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Charles Le Brun</UniqueName><!-- 17th -->
+				<UniqueName>Jean-Baptiste Lully</UniqueName><!-- 17th -->
+				<UniqueName>Jean-Antoine Watteau</UniqueName><!-- 17th -->
+				<UniqueName>Victor Hugo</UniqueName><!-- 19th -->
+				<UniqueName>Claude Monet</UniqueName><!-- 19th -->
+				<UniqueName>Henri Matisse</UniqueName><!-- 19th -->
+				<UniqueName>Claude Debussy</UniqueName><!-- 19th -->
+				<UniqueName>Alexandre Dumas</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -42605,9 +42857,16 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_FRENCH_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Nicole Oresme</UniqueName><!-- 14th -->
+				<UniqueName>Rene Descartes</UniqueName><!-- 17th -->
+				<UniqueName>Pierre de Fermat</UniqueName><!-- 17th -->
+				<UniqueName>Antoine Lavoisier</UniqueName><!-- 18th -->
+				<UniqueName>Pierre-Simon Laplace</UniqueName><!-- 18th -->
+				<UniqueName>Louis Pasteur</UniqueName><!-- 19th -->
+				<UniqueName>Marie Curie</UniqueName><!-- 19th -->
+				<UniqueName>Antoine Henri Becquerel</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -42794,9 +43053,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_FRENCH_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Jacques Cartier</UniqueName><!-- 16th -->
+				<UniqueName>Samuel de Champlain</UniqueName><!-- 17th -->
+				<UniqueName>Coco Chanel</UniqueName><!-- 20th -->
+				<UniqueName>Marcel Dessault</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -42987,9 +43249,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_FRENCH_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Jules Hardouin Mansart</UniqueName><!-- 17th -->
+				<UniqueName>Blaise Pascal</UniqueName><!-- 17th -->
+				<UniqueName>Claude Perrault</UniqueName><!-- 17th -->
+				<UniqueName>Charles Augustin de Coulomb</UniqueName><!-- 18th -->
+				<UniqueName>Joseph-Michel Montgolfier</UniqueName><!-- 18th -->
+				<UniqueName>Alexandre Gustave Eiffel</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -43176,9 +43443,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_FRENCH_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Charles Martel</UniqueName><!-- 8th -->
+				<UniqueName>Godefroy de Bouillon</UniqueName><!-- 11th -->
+				<UniqueName>Charles V</UniqueName><!-- 14th -->
+				<UniqueName>Louis-Joseph de Montcalm</UniqueName><!-- 18th -->
+				<UniqueName>Louis-Rene de Latouche Treville</UniqueName><!-- 18th -->
+				<UniqueName>Louis-Nicolas Davout</UniqueName><!-- 18th -->
+				<UniqueName>Gilbert de Lafayette</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -43362,9 +43635,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_ENGLISH_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Bede the Venerable</UniqueName><!-- 8th -->
+				<UniqueName>Anselm of Canterbury</UniqueName><!-- 11th -->
+				<UniqueName>Thomas Becket</UniqueName><!-- 12th -->
+				<UniqueName>Thomas More</UniqueName><!-- 16th -->
+				<UniqueName>John Newton</UniqueName><!-- 18th -->
+				<UniqueName>William Booth</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -43570,9 +43848,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_ENGLISH_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>William Shakespeare</UniqueName><!-- 17th -->
+				<UniqueName>John Milton</UniqueName><!-- 17th -->
+				<UniqueName>John Vanbrugh</UniqueName><!-- 17th -->
+				<UniqueName>George Frideric Handel</UniqueName><!-- 18th -->
+				<UniqueName>Charles Dickens</UniqueName><!-- 19th -->
+				<UniqueName>Arthur Conan Doyle</UniqueName><!-- 19th -->
+				<UniqueName>John Lennon</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -43755,9 +44039,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_ENGLISH_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Francis Bacon</UniqueName><!-- 16th -->
+				<UniqueName>Isaac Newton</UniqueName><!-- 17th -->
+				<UniqueName>John Dalton</UniqueName><!-- 19th -->
+				<UniqueName>Charles Darwin</UniqueName><!-- 19th -->
+				<UniqueName>James Clerk Maxwell</UniqueName><!-- 19th -->
+				<UniqueName>Ernest Rutherford</UniqueName><!-- 20th -->
+				<UniqueName>Stephen Hawking</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -43944,9 +44234,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_ENGLISH_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Francis Drake</UniqueName><!-- 16th -->
+				<UniqueName>James Cook</UniqueName><!-- 18th -->
+				<UniqueName>Adam Smith</UniqueName><!-- 18th -->
+				<UniqueName>John Maynard Keynes</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -44137,9 +44430,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_ENGLISH_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Christopher Wren</UniqueName><!-- 17th -->
+				<UniqueName>James Watt</UniqueName><!-- 18th -->
+				<UniqueName>Henry Bessemer</UniqueName><!-- 19th -->
+				<UniqueName>Charles Babbage</UniqueName><!-- 19th -->
+				<UniqueName>Alan Turing</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -44326,9 +44623,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_ENGLISH_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>William the Conqueror</UniqueName><!-- 11th -->
+				<UniqueName>Richard the Lionheart</UniqueName><!-- 12th -->
+				<UniqueName>Edward III</UniqueName><!-- 14th -->
+				<UniqueName>Oliver Cromwell</UniqueName><!-- 17th -->
+				<UniqueName>Horatio Nelson</UniqueName><!-- 18th -->
+				<UniqueName>Arthur Wellington</UniqueName><!-- 19th -->
+				<UniqueName>Bernard Law Montgomery</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -44512,9 +44815,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_GERMAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Hildegard von Bingen</UniqueName><!-- 12th -->
+				<UniqueName>Albertus Magnus</UniqueName><!-- 13th -->
+				<UniqueName>Jan Hus</UniqueName><!-- 14th -->
+				<UniqueName>Martin Luther</UniqueName><!-- 16th -->
+				<UniqueName>Philip Melanchthon</UniqueName><!-- 16th -->
+				<UniqueName>Dietrich Bonhoeffer</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -44720,9 +45028,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_GERMAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Albrecht D&#252;rer</UniqueName><!-- 15th -->
+				<UniqueName>Johann Sebastian Bach</UniqueName><!-- 17th -->
+				<UniqueName>Ludwig van Beethoven</UniqueName><!-- 18th -->
+				<UniqueName>Wolfgang Amadeus Mozart</UniqueName><!-- 18th -->
+				<UniqueName>Johann Wolfgang von Goethe</UniqueName><!-- 18th -->
+				<UniqueName>Friedrich Schiller</UniqueName><!-- 18th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -44905,9 +45218,16 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_GERMAN_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Nikolaus Kopernikus</UniqueName><!-- 16th -->
+				<UniqueName>Johannes Kepler</UniqueName><!-- 17th -->
+				<UniqueName>Gottfried Leibniz</UniqueName><!-- 17th -->
+				<UniqueName>Carl Friedrich Gauß</UniqueName><!-- 19th -->
+				<UniqueName>Albert Einstein</UniqueName><!-- 20th -->
+				<UniqueName>Werner Heisenberg</UniqueName><!-- 20th -->
+				<UniqueName>Max Planck</UniqueName><!-- 20th -->
+				<UniqueName>Erwin Schr&#246;dinger</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -45094,9 +45414,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_GERMAN_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Jakob Fugger</UniqueName><!-- 15th -->
+				<UniqueName>Gerhard Mercator</UniqueName><!-- 16th -->
+				<UniqueName>Carl Benz</UniqueName><!-- 19th -->
+				<UniqueName>Alfred Krupp</UniqueName><!-- 19th -->
+				<UniqueName>Ferdinand Porsche</UniqueName><!-- 20th -->
+				<UniqueName>August Horch</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -45287,9 +45612,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_GERMAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Johannes Gutenberg</UniqueName><!-- 15th -->
+				<UniqueName>Wilhelm Schickard</UniqueName><!-- 17th -->
+				<UniqueName>Nikolaus August Otto</UniqueName><!-- 19th -->
+				<UniqueName>Gottlieb Daimler</UniqueName><!-- 19th -->
+				<UniqueName>Fritz Haber</UniqueName><!-- 19th -->
+				<UniqueName>Wernher von Braun</UniqueName><!-- 20th -->
+				<UniqueName>Otto Hahn</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -45476,9 +45807,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_GERMAN_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Otto der Große</UniqueName><!-- 10th -->
+				<UniqueName>Albrecht von Wallenstein</UniqueName><!-- 17th -->
+				<UniqueName>Gebhard Leberecht von Bl&#252;cher</UniqueName><!-- 18th -->
+				<UniqueName>Carl von Clausewitz</UniqueName><!-- 19th -->
+				<UniqueName>Paul von Hindenburg</UniqueName><!-- 19th -->
+				<UniqueName>Erwin Rommel</UniqueName><!-- 20th -->
+				<UniqueName>Heinz Guderian</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -45662,9 +45999,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_RUSSIAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Paisiy Yaroslavov</UniqueName><!-- 15th -->
+				<UniqueName>Feofan Prokopovich</UniqueName><!-- 18th -->
+				<UniqueName>Nikolai Berdyaev</UniqueName><!-- 20th -->
+				<UniqueName>Georges Florovsky</UniqueName><!-- 20th -->
+				<UniqueName>Alexei Losev</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -45870,9 +46211,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_RUSSIAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Fyodor Dostoyevsky</UniqueName><!-- 19th -->
+				<UniqueName>Leo Tolstoy</UniqueName><!-- 19th -->
+				<UniqueName>Pyotr Ilyich Tchaikovsky</UniqueName><!-- 19th -->
+				<UniqueName>Modest Mussorgsky</UniqueName><!-- 19th -->
+				<UniqueName>Anton Chekov</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -46055,9 +46400,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_RUSSIAN_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Mikhail Lomonosov</UniqueName><!-- 18th -->
+				<UniqueName>Dmitri Mendeleyev</UniqueName><!-- 19th -->
+				<UniqueName>Nikolai Lobachevsky</UniqueName><!-- 19th -->
+				<UniqueName>Pavel Cherenkov</UniqueName><!-- 20th -->
+				<UniqueName>Mikhail Ostrogradsky</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -46244,9 +46593,11 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_RUSSIAN_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Afanasiy Nikitin</UniqueName><!-- 15th -->
+				<UniqueName>Vitus Bering</UniqueName><!-- 18th -->
+				<UniqueName>Ivan Kruzenshtern</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -46437,9 +46788,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_RUSSIAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Ivan Starov</UniqueName><!-- 18th -->
+				<UniqueName>Sergei Korolev</UniqueName><!-- 20th -->
+				<UniqueName>Andrey Tupolev</UniqueName><!-- 20th -->
+				<UniqueName>Leon Theremin</UniqueName><!-- 20th -->
+				<UniqueName>Vladimir Zworykin</UniqueName><!-- 20th -->
+				<UniqueName>Igor Sikorsky</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -46626,9 +46982,15 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_RUSSIAN_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Alexander Nevsky</UniqueName><!-- 13th -->
+				<UniqueName>Mikhail Romanov</UniqueName><!-- 17th -->
+				<UniqueName>Alexander Suvorov</UniqueName><!-- 18th -->
+				<UniqueName>Pavel Nakhimov</UniqueName><!-- 19th -->
+				<UniqueName>Mikhail Skobelev</UniqueName><!-- 19th -->
+				<UniqueName>Georgy Zhukov</UniqueName><!-- 20th -->
+				<UniqueName>Vasily Chuikov</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -46812,9 +47174,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_MALI_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Wali Keita</UniqueName><!-- 13th -->
+				<UniqueName>Sidi Yahya</UniqueName><!-- 15th -->
+				<UniqueName>Seku Amadu</UniqueName><!-- 18th -->
+				<UniqueName>Ali Coulibaly</UniqueName><!-- 18th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -47020,9 +47385,11 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_MALI_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Nare Maghann Konate</UniqueName><!-- 13th -->
+				<UniqueName>Lobi Traore</UniqueName><!-- 20th -->
+				<UniqueName>Ibrahim Aya</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -47205,9 +47572,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_MALI_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Gaoussou Diawara</UniqueName><!-- 14th -->
+				<UniqueName>Abu al Baraaka</UniqueName><!-- 12-16th -->
+				<UniqueName>Ahmed Baba</UniqueName><!-- 16th -->
+				<UniqueName>Ag Mohammed Kawen</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -47394,9 +47764,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_MALI_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Tunka Manin</UniqueName><!-- 11th -->
+				<UniqueName>Abubakari</UniqueName><!-- 13th -->
+				<UniqueName>Abu Bakr ibn Ahmad Biru</UniqueName><!-- 12-16th -->
+				<UniqueName>Moctar Ouane</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -47587,9 +47960,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_MALI_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Sakura</UniqueName><!-- 13th -->
+				<UniqueName>Al-Qadi Aqib ibn Umar</UniqueName><!-- 13th -->
+				<UniqueName>Abu Es Haq es Saheli</UniqueName><!-- 14th -->
+				<UniqueName>Mohammed Naddah</UniqueName><!-- 15th -->
+				<UniqueName>Mohammed Bagayogo</UniqueName><!-- 16th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -47776,9 +48153,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_MALI_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Sundiata Keita</UniqueName><!-- 13th -->
+				<UniqueName>Askia Muhammad</UniqueName><!-- 15th -->
+				<UniqueName>Sunni Ali</UniqueName><!-- 15th -->
+				<UniqueName>Askia Daoud</UniqueName><!-- 16th -->
+				<UniqueName>Ngolo Diarra</UniqueName><!-- 18th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -47962,9 +48343,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
-			<Type>UNIT_PROPHET</Type>
+			<Type>UNIT_PORTUGUESE_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>António de Lisboa</UniqueName><!-- 13th -->
+				<UniqueName>Isabel de Arag&#227;o</UniqueName><!-- 14th -->
+				<UniqueName>Jo&#227;o de Deus</UniqueName><!-- 16th -->
+				<UniqueName>Jo&#227;o de Brito</UniqueName><!-- 17th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -48170,9 +48554,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
-			<Type>UNIT_ARTIST</Type>
+			<Type>UNIT_PORTUGUESE_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Fern&#227;o Lopes</UniqueName><!-- 15th -->
+				<UniqueName>Nuno Gon&#231;ales</UniqueName><!-- 15th -->
+				<UniqueName>Lu&#237;s de Cam&#245;es</UniqueName><!-- 16th -->
+				<UniqueName>António Ferreira</UniqueName><!-- 16th -->
+				<UniqueName>Jo&#227;o de Barros</UniqueName><!-- 16th -->
+				<UniqueName>Machado de Castro</UniqueName><!-- 18th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -48355,9 +48744,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
-			<Type>UNIT_SCIENTIST</Type>
+			<Type>UNIT_PORTUGUESE_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Garcia de Orta</UniqueName><!-- 16th -->
+				<UniqueName>Pedro Nunes</UniqueName><!-- 16th -->
+				<UniqueName>Bartolomeu de Gusmao</UniqueName><!-- 18th -->
+				<UniqueName>Jacob de Castro Sarmento</UniqueName><!-- 18th -->
+				<UniqueName>Abel Salazar</UniqueName><!-- 20th -->
+				<UniqueName>António Egas Moniz</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -48544,9 +48938,14 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
-			<Type>UNIT_MERCHANT</Type>
+			<Type>UNIT_PORTUGUESE_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Vasco da Gama</UniqueName><!-- 15th -->
+				<UniqueName>Francisco de Almeida</UniqueName><!-- 15th -->
+				<UniqueName>Henrique o Navegador</UniqueName><!-- 15th -->
+				<UniqueName>Bartolomeu Dias</UniqueName><!-- 15th -->
+				<UniqueName>Pedro &#193;lvares Cabral</UniqueName><!-- 15th -->
+				<UniqueName>Fern&#227;o Mendes Pinto</UniqueName><!-- 16th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -48737,9 +49136,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
-			<Type>UNIT_ENGINEER</Type>
+			<Type>UNIT_PORTUGUESE_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Mateus Fernandes</UniqueName><!-- 15th -->
+				<UniqueName>Diogo de Boitaca</UniqueName><!-- 16th -->
+				<UniqueName>Jo&#227;o Antunes</UniqueName><!-- 17th -->
+				<UniqueName>&#193lvaro Siza Vieira</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -48926,9 +49328,12 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
-			<Type>UNIT_GREAT_GENERAL</Type>
+			<Type>UNIT_PORTUGUESE_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName></UniqueName>
+				<UniqueName>Nuno &#193;lvares Pereira</UniqueName><!-- 14th -->
+				<UniqueName>Afonso de Albuquerque</UniqueName><!-- 15th -->
+				<UniqueName>Alvaro Vaz de Almada</UniqueName><!-- 15th -->
+				<UniqueName>Otelo Saraiva de Carvalho</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>

@@ -38,6 +38,7 @@ Cathalo			?
 Zoroaster				18-10th BC
 Mani					3rd AD
 Mazdak					6th AD
+Al-Ghazali			11th
 Zahed Gilani			13th AD
 Mevlana					13th
 Mulla Sadra				17th
@@ -197,8 +198,6 @@ Yodit/Gudit
 
 #BYZANTIUM
 #Prophet
-Ioannikios Megas		9th
-Theodoros Stoudios		8th
 Kyrillos				9th
 Methodios				9th
 Photios					9th
@@ -216,12 +215,8 @@ Georgios Plethon		14th
 Stephanos Alexandrinos 7th
 Nikephoros Blemmydes 13th
 Michael Psellos		11th
-Simeon Seth			11th
 Niketas Choniates	13th
-Georgios Akropolites	13th
-Thomas Magister		14th
 Nikephoros Gregoras 14th
-Theodoros Metochites	14th
 Gregorios Gemistos	15th
 #Merchant
 Georgius Cuprios	7th
@@ -255,7 +250,6 @@ Olav Duun			19th
 Hans Christian Andersen	19th
 Johan Ludvig Runeberg 19th finnish
 #Scientist
-Johannes Magnus		16th swedish
 Mikael Agricola		16th finnish
 Anders Angstrom		19th swedish
 Tycho Brahe			16th
@@ -273,10 +267,8 @@ Roald Amundsen		20th
 Hercules von Oberberg	16th
 Hans van Steenwinkel	17th
 Ivar Giaever			20th
-Sophus Lie				19th
 Niels Abel				19th
 Alfred Nobel			19th swedish
-Linus Torvalds			20th finnish
 #General
 Eirikr Blodh&#248;x		10th			
 Harald Hardraada		11th
@@ -646,8 +638,292 @@ Alvaro Vaz de Almada		15th
 Otelo Saraiva de Carvalho	20th
 
 #INCA
-+Prophet
+#Prophet
 Guyasuta
+Yahuar Huacac
+#Artist
+Ah Cacao
+Viracocha
+Ninan Cuyochi
+Ocllo
+#Scientist
+Sinchi Roca
+Manco Capac
+Maita Capac
+Titu Cusi
+Huascar
+Ibca Roca
+#Merchant
+Tupa Inca-Yupanqui
+Felipillo
+Quetzal-Macau
+#Engineer
+Sipan-Itchi
+Mana-Paoa
+Kenu Curaua
+Sayri Tupa Inca
+Capac Yupanqui
+#General
+Pachacuti
+Manco Inca
+Tupa Amaru
+Atahualpa
+Chalicuchima
+Quisquis
+
+#ITALY
+#Prophet
+Thomas Aquinas		13th
+Francesco d'Assisi	13th
+Giuliano della Rovere	15th
+Giulio de' Medici	16th
+Camillo Borghese	16th
+#Artist
+Michelangelo		16th
+Dante Alighieri		13th
+Giovanni Boccaccio	14th
+Sandro Botticelli	15th
+Niccolò Machiavelli	15th
+Donatello		15th
+Raphael			16th
+Gabriele Trovato	20th
+#Scientist
+Francesco Petrarca	14th
+Pico della Mirandola	15th
+Galileo Galilei		17th
+Giordano Bruno		16th
+Luigi Galvani		18th
+Alessandro Volta	18th
+Enrico Fermi		20th
+#Merchant
+Donato Peruzzi		14th
+Simone de' Bardi	13th
+Giovanni de' Medici	14th
+Ciriaco de Ancona	15th
+Marco Polo		13th
+#Engineer
+Leonardo da Vinci	15th
+Taccola			15th
+Filippo Brunelleschi	15th
+Donato Bramante		15th
+Guglielmo Marconi	20th
+#General
+Simone Boccanegra	14th
+Enrico Dandolo		13th
+Francesco Sforza	15th
+Giuseppe Garibaldi	19th
+
+#MONGOLIA
+#Prophet
+Zanabazar	17th
+Abaqa		13th
+Arghun		13th
+Sartaq		13th
+#Artist
+Siqin Gaowa	20th
+Oghul Qaimish	13th
+Tolui		13th
+Uzbeg		14th
+#Scientist
+Nurhaci		16th
+Dayan		15th
+Kaidu		13th
+Mandukhai	15th
+#Merchant
+Altan		16th
+Hulagu		13th
+Gaykhatu	13th
+G&#252;y&#252;k 13th
+Mengu-Timur	13th
+#Engineer
+Li Siguang	20th
+Zhang Wenqian	13th
+Toqta		14th
+Duwa		13th
+#General
+Ogodei		13th
+Chagatai	13th
+Toghril		12th
+M&#246;ngke	13th
+Timur-e Lang	14th
+
+#AZTECS ~also use for Maya (-> mesoamerican)
+#Prophet
+Tlacateotl
+Tenoch
+Papantzin
+Yacotzin
+Ixtlilxochitl
+#Artist
+Cipactli
+Oxomoco
+Huitzilopchtli
+Techotlalatzin
+Ihuitemotzin
+#Scientist
+Chichatoyotl
+Textalatzin
+Axayacatl
+Ixtlilxochitl
+Coanacochtzin
+#Merchant
+Cuauhtemoc
+Tlacotzin
+Chak-Mol
+Atlante
+Techichpotzin
+#Engineer
+Xolotl
+Itzcatl
+Mixcoatl
+Tlacaelel
+Moquihuix
+#General
+Ahuitzotl
+Itzcoatl
+Huitzilhuitl
+Chimalpopoca
+Maxtla
+Tezozomoc
+
+#TURKS
+#Prophet	
+Sokollu Mehmet Pa,sa	16th
+Mustada ,Ca^grici	20th
+Yaakov Culi		18th
+Sabatai Zevi		17th
+#Artist
+Yunus Emre		13th
+Hayâlî			16th
+Gül Baba		16th
+Mehmet Akif Ersoy	20th
+#Scientist
+Cahit Arf		20th
+Qazi Zada		14th
+Oktay Sinano^glu	20th
+Feza G&#252;rsey	20th
+#Merchant
+Evliya ,Celebi		17th
+Abdülmecid		19th
+Hormuzd Rassam		20th
+Nejat Eczaci.ba,si.	20th
+Aydi.n Do^gan		20th
+#Engineer
+Atik Sinan		15th
+Mimar Sinan		15th
+Davud A^ga		15th
+Ekmel Ozbay		20th
+#General
+Orhan			14th
+Selim			16th
+Turgut Reis		16th
+.Ismail Enver		20th
+Kara Mustafa Pa,sa	17th
+Hayreddin Barbarossa	16th
+
+#NETHERLANDS
+#Prophet
+Abraham Kuyper		19th
+Geert Grote		14th	
+Erasmus van Rotterdam	16th
+#Artist
+Rembrandt van Rijn	17th
+Vincent van Gogh	19th
+Johannes Vermeer	17th
+Hendrick de Keyser	16th
+Pieter Corneliszoon Hooft 17th
+#Scientist
+Christiaan Huygens	17th
+Simon Stevin		16th
+Govert Bidloo		17th
+Jan Hendrik Oort	20th
+Gerrit Pieter Kuiper	20th
+#Merchant
+Pieter Stuyvesant	17th
+Abel Tasman		17th
+Willem Barentsz		16th
+Cornelis de Houtman	16th
+Jan van Riebeeck	17th
+Jan Coen		17th
+Antony van Diemen	17th
+#Engineer
+Jan Leeghwater		17th
+Cornelis Corneliszoon	16th
+Antonie van Leeuwenhoek	17th
+#General
+Maurits van Nassau	16th
+Frederik Hendrik	17th
+Cornelis Tromp		17th
+Michiel de Ruyter	17th
+
+#AMERICA
+#Prophet
+William Penn		18th		
+Roger Williams		17th
+Jonathan Edwards	18th
+Joseph Smith		19th
+Sojourner Truth		19th
+#Artist
+Edgar Allan Poe		19th
+Herman Melville		19th
+Mark Twain		19th
+Ernest Hemingway	20th
+Charlie Chaplin		20th
+Elvis Presley		20th
+Miles Davis		20th
+Jimi Hendrix		20th
+#Scientist
+Arthur Compton		20th
+Edwin Hubble		20th
+John von Neumann	20th
+Glenn Seaborg		20th
+Robert Oppenheimer	20th
+Richard Feynman		20th
+#Merchant
+Cornelius Vanderbilt	19th
+John D. Rockefeller	19th
+Andrew Carnegie		19th
+William Edward Boeing	20th
+Bill Gates		20th
+#Engineer
+Benjamin Franklin	18th
+Thomas Edison		19th
+Nichola Tesla		19th
+Henry Ford		19th
+Charles Goodyear	19th
+Brothers Wright		20th
+#General
+Andrew Jackson		19th
+Ulysses S. Grant	19th
+Robert E. Lee		19th
+Dwight D. Eisenhower	20th
+George Patton		20th
+Douglas MacArthur	20th
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
