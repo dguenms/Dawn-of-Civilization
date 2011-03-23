@@ -28,7 +28,6 @@ import Victory
 import Stability
 import Plague
 import Communications
-import CivSpecificGreatPeopleModNameUtils
         
 gc = CyGlobalContext()        
 #iBetrayalCheaters = 15
@@ -593,9 +592,9 @@ class CvRFCEventHandler:
 		
 		#if(len(pUnit.getNameNoDesc()) == 0): # Rename units with no names - important to avoid confusion with event log
 			
-		iCivilizationType = player.player.getCivilizationType()
+		#iCivilizationType = player.player.getCivilizationType()
 		# Pass the civilization and unit type along to the renamer
-		pUnit.setName(CivSpecificGreatPeopleModNameUtils.generateCivilizationName(iCivilizationType, infoUnit))
+		#pUnit.setName(CivSpecificGreatPeopleModNameUtils.generateCivilizationName(iCivilizationType, infoUnit))
 
 
         def onEndGameTurn(self, argsList):

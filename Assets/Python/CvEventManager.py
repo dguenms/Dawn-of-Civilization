@@ -20,7 +20,6 @@ import sys
 import CvWorldBuilderScreen
 import CvAdvisorUtils
 import CvTechChooser
-import CvCivSpecificGreatPeopleModEventManager as GPmod
 
 #Rhye
 import RFCUtils
@@ -677,8 +676,6 @@ class CvEventManager:
 		if (not self.__LOG_GREATPERSON):
 			return
 		CvUtil.pyPrint('A %s was born for %s in %s' %(pUnit.getName(), player.getCivilizationName(), pCity.getName()))
-
-		GPmod.onGreatPersonBorn(self, argsList)
 	
 	def onTechAcquired(self, argsList):
 		'Tech Acquired'

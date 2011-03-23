@@ -508,7 +508,9 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         #removed in CvPediaBuilding.py
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT):
-                        tList.pop(83) #Hwacha
+                    	for i in range(168):	#remove unique GPs (currently 28 civs with 6 GPs each -> 6*28=168)
+				tList.pop(127)	#first unique GP, change when new units are added
+			tList.pop(83) #Hwacha
                         tList.pop(71) #Cataphract  
                         tList.pop(41) #Landsknecht
                         tList.pop(38) #Impi

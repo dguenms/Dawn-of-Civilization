@@ -18301,12 +18301,6 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 	CvCity* pCity = pPlot->getPlotCity();
 	CvWString szReplayMessage;
 
-    // Python Event
-	if (pCity)
-	{
-		CvEventReporter::getInstance().greatPersonBorn(pGreatPeopleUnit, getID(), pCity);
-	}
-
     if (pGreatPeopleUnit->getOwner() != INDEPENDENT && pGreatPeopleUnit->getOwner() != INDEPENDENT2 && pGreatPeopleUnit->getOwner() != BARBARIAN)
     {
         if (pPlot)
@@ -18342,6 +18336,11 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
             }
         }
     }
+    // Python Event
+	if (pCity)
+	{
+		CvEventReporter::getInstance().greatPersonBorn(pGreatPeopleUnit, getID(), pCity);
+	}
 }
 
 
