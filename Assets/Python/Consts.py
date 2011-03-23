@@ -1797,7 +1797,7 @@ iGreatSpy = 122
 iCulverine = 123
 iBireme = 124
 iBersagliere = 125
-
+iLevy = 126
 
 
 # initialise bonuses variables to bonuses IDs from WBS

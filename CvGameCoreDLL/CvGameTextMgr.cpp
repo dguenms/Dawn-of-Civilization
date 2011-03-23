@@ -5568,6 +5568,7 @@ void CvGameTextMgr::setTechHelp(CvWStringBuffer &szBuffer, TechTypes eTech, bool
 					{
 						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_TECH_GREAT_PERSON_DISCOVER", kUnit.getTextKeyWide()));
+						break;
 					}
 				}
 			}
@@ -7627,6 +7628,7 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 			szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_UNIT_TEXT"), GC.getUnitInfo((UnitTypes)iI).getDescription());
 			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", bFirst);
 			bFirst = false;
+			break;
 		}
 	}
 
