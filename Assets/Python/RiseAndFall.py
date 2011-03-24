@@ -646,14 +646,14 @@ class RiseAndFall:
 		constantinople.setHasReligion(con.iChristianity, True, False, False)
 
 	def flip600ADByzantium(self):
-		BL = (64, 35)
+		BL = (62, 37)
 		TR = (76, 45)
 
 		self.convertSurroundingCities(iByzantium, BL, TR)
 		self.convertSurroundingPlotCulture(iByzantium, BL, TR)
 
-		BL = (59, 36)
-		TR = (61, 38)
+		BL = (66, 34)
+		TR = (70, 37)
 
 		self.convertSurroundingCities(iByzantium, BL, TR)
 		self.convertSurroundingPlotCulture(iByzantium, BL, TR)
@@ -1001,6 +1001,18 @@ class RiseAndFall:
 					gc.getMap().plot(x,y).setCulture(iCiv, 100, True)
 					self.createRespawnUnits(iCiv, (x,y))
 					print "Rebirth units placed."
+					
+					bFree = True
+					for i in range(x-1,x+2):
+						for j in range(y-1,y+2):
+							if gc.getMap().plot(i,j).isCity():
+								bFree = False
+
+					if bFree and utils.getHumanID() != iCiv:
+						pCiv.found(x,y)
+					else:
+						utils.makeUnit(con.iSettler, iCiv, (x,y), 1)
+
 					CyInterface().addMessage(gc.getGame().getActivePlayer(), True, con.iDuration, (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
 					pCiv.setReborn()
 					self.assignTechs(iCiv)
@@ -1040,8 +1052,9 @@ class RiseAndFall:
 					if iCiv == iRome:
 						x, y = con.tRebirthPlot[iRome]
 						plot = gc.getMap().plot(58,43)
-						for i in plot.getNumUnits():
-							plot.getUnit(i).setXYOld(x,y)
+						if plot.getNumUnits() > 0:
+							for i in plot.getNumUnits():
+								plot.getUnit(i).setXYOld(x,y)
 						print "Sardinia units reallocated"
 						pVenice = gc.getMap().plot(61,47).getPlotCity()
 						pVenice.setCulture(iRome, 250, True)
@@ -3416,9 +3429,6 @@ class RiseAndFall:
 		if (iCiv == iRome):
 			utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
 			utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
-			player = gc.getPlayer(iRome)
-                        player.initUnit(iSettler, tPlot[0], tPlot[1], UnitAITypes.UNITAI_SETTLE, DirectionTypes.DIRECTION_SOUTH)
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
                 lReligions = [0, 0, 0, 0, 0, 0, 0]
