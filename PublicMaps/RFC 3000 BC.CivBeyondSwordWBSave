@@ -21150,6 +21150,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=55
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -21511,7 +21512,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=55
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

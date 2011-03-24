@@ -8,3 +8,10 @@
 # Former city garrisons get pushed out before they flip to Italy to avoid that they become a military power
 # reduced the probability of 600 AD preplaced cities to get razed
 # changed Abu Bakr's personality to focus on science as well
+# preplaced Naples in 600 AD
+# Tripolis and Benghazi are independent in 600 AD now
+# fixed unique GP names
+# added Ethiopian and Khmer GP names, expanded Portuguese GP names (credit to JiimBV)
+# forced reborn AI civs to found a new city
+# moved sheep from Mecca to Baghdad
+# moved fish in the North Sea to be accessible to Amsterdam only (also discourage Aarhus)

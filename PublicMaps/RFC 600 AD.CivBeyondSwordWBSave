@@ -21209,6 +21209,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=55
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -21571,7 +21572,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=55
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -23476,6 +23476,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=28
+	EndUnit
+	BeginCity
+		CityOwner=28
+		CityName=Napoli
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		Player28Culture=1
+	EndCity
 EndPlot
 BeginPlot
 	x=62,y=43
@@ -28328,7 +28338,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=35
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -29900,6 +29909,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=40
+	BonusType=BONUS_SHEEP
 	isNOfRiver
 	RiverWEDirection=1
 	TerrainType=TERRAIN_PLAINS
