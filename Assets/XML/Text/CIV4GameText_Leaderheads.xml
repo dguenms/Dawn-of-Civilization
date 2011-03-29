@@ -532,6 +532,16 @@
 		<English>Chiang Kai-Shek</English>
 		<German>Chiang Kai-Shek</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ABBAS</Tag>
+		<English>Abbas I</English>
+		<German>Abbas I.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_KHOMEINI</Tag>
+		<English>Khomeini</English>
+		<German>Chomeini</German>
+	</TEXT>
 
 
 

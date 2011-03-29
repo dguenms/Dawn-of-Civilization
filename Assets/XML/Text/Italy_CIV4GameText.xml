@@ -339,12 +339,12 @@
 		<Hungarian>Art Studio</Hungarian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_VICTOR_EMMANUEL</Tag>
-		<English>Victor Emmanuel I</English>
-		<French>Victor Emmanuel I</French>
-		<German>Viktor Emmanuel I.</German>
-		<Italian>Vittorio Emmanuele I</Italian>
-		<Spanish>Victor Emmanuel I</Spanish>
+		<Tag>TXT_KEY_LEADER_CAVOUR</Tag>
+		<English>Cavour</English>
+		<French>Cavour</French>
+		<German>Cavour</German>
+		<Italian>Cavour</Italian>
+		<Spanish>Cavour</Spanish>
 	</TEXT>
 </Civ4GameText>
 

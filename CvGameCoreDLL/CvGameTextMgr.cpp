@@ -3886,7 +3886,8 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			eUniqueUnit = ((UnitTypes)(GC.getUnitClassInfo((UnitClassTypes) iI).getDefaultUnitIndex()));
 			if ((eDefaultUnit != NO_UNIT) && (eUniqueUnit != NO_UNIT))
 			{
-				if (eDefaultUnit != eUniqueUnit)
+				//if (eDefaultUnit != eUniqueUnit) // edead - do not display bGraphicalOnly units
+				if ((eDefaultUnit != eUniqueUnit) && (!GC.getUnitInfo(eDefaultUnit).isGraphicalOnly())) // edead
 				{
 					iCounter++;
 					// Add Unit
@@ -5564,11 +5565,13 @@ void CvGameTextMgr::setTechHelp(CvWStringBuffer &szBuffer, TechTypes eTech, bool
 
 				if (kUnit.getBaseDiscover() > 0 || kUnit.getDiscoverMultiplier() > 0)
 				{
-					if (::getDiscoveryTech((UnitTypes)iI, GC.getGameINLINE().getActivePlayer()) == eTech)
+					// edead: start - do not display units with bGraphicalOnly - added 10.12.2009
+					//if (::getDiscoveryTech((UnitTypes)iI, GC.getGameINLINE().getActivePlayer()) == eTech)
+					if ((::getDiscoveryTech((UnitTypes)iI, GC.getGameINLINE().getActivePlayer()) == eTech) && (!GC.getUnitInfo((UnitTypes)iI).isGraphicalOnly()))
+					// edead: end
 					{
 						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_TECH_GREAT_PERSON_DISCOVER", kUnit.getTextKeyWide()));
-						break;
 					}
 				}
 			}
@@ -6708,11 +6711,26 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 			{
 				if (iI != eUnit)
 				{
-					if (eUnitClass == GC.getUnitInfo((UnitTypes)iI).getUnitClassType())
+					// edead: start - remove clutter from unit card; no "Replaced by" if not UU and no bGraphicalOnly units
+					// if (eUnitClass == GC.getUnitInfo((UnitTypes)iI).getUnitClassType())
+					// {
+						// szBuffer.append(NEWLINE);
+						// szBuffer.append(gDLL->getText("TXT_KEY_REPLACED_BY_UNIT", GC.getUnitInfo((UnitTypes)iI).getTextKeyWide()));
+					// }
+					if ((eUnitClass == GC.getUnitInfo((UnitTypes)iI).getUnitClassType()) && (!GC.getUnitInfo((UnitTypes)iI).isGraphicalOnly()))
 					{
-						szBuffer.append(NEWLINE);
-						szBuffer.append(gDLL->getText("TXT_KEY_REPLACED_BY_UNIT", GC.getUnitInfo((UnitTypes)iI).getTextKeyWide()));
+					    int iJ;
+                        for (iJ = 0; iJ < GC.getNumCivilizationInfos(); ++iJ)
+						{
+							if (GC.getCivilizationInfo((CivilizationTypes)iJ).getCivilizationUnits(eUnitClass) == iI)
+							{
+								szBuffer.append(NEWLINE);
+								szBuffer.append(gDLL->getText("TXT_KEY_REPLACED_BY_UNIT", GC.getUnitInfo((UnitTypes)iI).getTextKeyWide()));
+								break;
+							}
+						}
 					}
+					// edead: end
 				}
 			}
 		}
@@ -7624,11 +7642,12 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 	{
 		if (GC.getUnitInfo((UnitTypes)iI).getBuildings(eBuilding) || GC.getUnitInfo((UnitTypes)iI).getForceBuildings(eBuilding))
 		{
+			if (!GC.getUnitInfo((UnitTypes)iI).isGraphicalOnly()) { // edead
 			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_UNIT_REQUIRED_TO_BUILD").c_str());
 			szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_UNIT_TEXT"), GC.getUnitInfo((UnitTypes)iI).getDescription());
 			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", bFirst);
 			bFirst = false;
-			break;
+			}
 		}
 	}
 
