@@ -429,8 +429,7 @@
 			<KFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Zara Yaqob/Zara_Yaqob_NONSHADER.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob_BG.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>
-		
+		</LeaderheadArtInfo>		
 		<!-- added by Leoreth -->
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_JIMMU</Type>
@@ -440,7 +439,6 @@
 			<NoShaderNIF>Art/leaderheads/Jimmu/jimmu.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Jimmu/brennus_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_MEIJI</Type>
 			<Button>Art/leaderheads/Meiji/Btn_LH_meiji.dds</Button>
@@ -449,7 +447,6 @@
 			<NoShaderNIF>Art/leaderheads/Meiji/Meiji.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Meiji/Meiji_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_AKBAR</Type>
 			<Button>Art/leaderheads/Akbar/Btn_Akbar.dds</Button>
@@ -458,7 +455,6 @@
 			<NoShaderNIF>Art/leaderheads/Akbar/Zara Yaqob.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Akbar/Zara Yaqob_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_HIRAM</Type>
 			<Button>Art/leaderheads/Hiram/Button_Hiram.dds</Button>
@@ -467,7 +463,6 @@
 			<NoShaderNIF>Art/leaderheads/Hiram/Darius_NONSHADER.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Hiram/Darius_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_HAILE_SELASSIE</Type>
 			<Button>Art/leaderheads/HSelassie/Haile.dds</Button>
@@ -476,7 +471,6 @@
 			<NoShaderNIF>Art/leaderheads/HSelassie/Hselassie.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/HSelassie/saladin_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_GUSTAV</Type>
 			<Button>Art/leaderheads/Gustav/Gustav.dds</Button>
@@ -485,7 +479,6 @@
 			<NoShaderNIF>Art/leaderheads/Gustav/vanderdonk.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Gustav/vanderdonk_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ABU_BAKR</Type>
 			<Button>,Art/Interface/Buttons/Leaderheads/Omani.dds,Art/Interface/Buttons/mem_leaders_atlas.dds,1,3</Button>
@@ -494,7 +487,6 @@
 			<NoShaderNIF>Art/Leaderheads/AbuBakr/abubakr.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Idris2/Suleiman_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_MONGKUT</Type>
 			<Button></Button>
@@ -503,7 +495,6 @@
 			<NoShaderNIF>Art/leaderheads/Mongkut/Tachnechobrus.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Mongkut/Ataturk_Background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ELISHAT</Type>
 			<Button>Art/leaderheads/DidoFINAL/Btn_Dido.dds</Button>
@@ -512,7 +503,6 @@
 			<NoShaderNIF>Art/leaderheads/DidoFINAL/catherine.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/DidoFINAL/leader_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_PHILIP</Type>
 			<Button>Art/leaderheads/Philipp/Philipp.dds</Button>
@@ -521,7 +511,6 @@
 			<NoShaderNIF>Art/leaderheads/Philipp/SimonBolivar.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Philipp/SimonBolivar_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_BARBAROSSA</Type>
 			<Button></Button>
@@ -530,7 +519,6 @@
 			<NoShaderNIF>Art/leaderheads/Arthur/arthur.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Arthur/Pericles_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CHARLES</Type>
 			<Button>Art/leaderheads/CharlesV/Btn_CharlesV.dds</Button>
@@ -539,7 +527,6 @@
 			<NoShaderNIF>Art/leaderheads/CharlesV/charles de gaulle.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/CharlesV/charles de gaulle_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_FRANCIS</Type>
 			<Button>Art/leaderheads/Francis_I/Btn_LH_Francis.dds</Button>
@@ -548,7 +535,6 @@
 			<NoShaderNIF>Art/leaderheads/Francis_I/frederick_the_great.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Francis_I/frederick_the_great_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_YAROSLAV</Type>
 			<Button>Art/leaderheads/Yaroslav/yaroslav.dds</Button>
@@ -557,7 +543,6 @@
 			<NoShaderNIF>Art/leaderheads/Yaroslav/Yaroslav.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Yaroslav/alexander_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
       			<Type>ART_DEF_LEADER_AFONSO</Type>
       			<Button>Art/leaderheads/Afonso/AfonsoHenriques.dds</Button>
@@ -566,7 +551,6 @@
       			<NoShaderNIF>Art/leaderheads/Afonso/Pericles.nif</NoShaderNIF>
       			<BackgroundKFM>Art/leaderheads/Afonso/Pericles_BG.kfm</BackgroundKFM>
     		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ATATURK</Type>
 			<Button>Art/leaderheads/Ataturk/Btn_LH_Ataturk.dds</Button>
@@ -575,7 +559,6 @@
 			<NoShaderNIF/>
 			<BackgroundKFM>Art/leaderheads/Ataturk/Ataturk_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_MARIA_II</Type>
 			<Button>Art/leaderheads/Maria_II/maria_ii.dds</Button>
@@ -584,7 +567,6 @@
 			<NoShaderNIF>Art/leaderheads/Maria_II/elizabeth_noshader.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Maria_II/elizabeth_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_HITLER</Type>
 			<Button>Art/leaderheads/Hitler/hitler.dds</Button>
@@ -592,8 +574,7 @@
 			<KFM>Art/LeaderHeads/Hitler/alexander.kfm</KFM>
 			<NoShaderNIF>Art/leaderheads/Hitler/hitler_nonshader.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Hitler/Hitler_BG.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>
-		
+		</LeaderheadArtInfo>		
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_FRANCO</Type>
 			<Button>Art/leaderheads/Franco/Franco.dds</Button>
@@ -602,7 +583,6 @@
 			<NoShaderNIF/>
 			<BackgroundKFM>Art/leaderheads/Franco/josef_stalin_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CIXI</Type>
 			<Button>Art/leaderheads/Cixi/Btn_LH_Cixi.dds</Button>
@@ -611,7 +591,6 @@
 			<NoShaderNIF/>
 			<BackgroundKFM>Art/leaderheads/Cixi/asoka_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CHIANG_KAISHEK</Type>
 			<Button>Art/leaderheads/Chiang/Chiang.dds</Button>
@@ -620,7 +599,6 @@
 			<NoShaderNIF/>
 			<BackgroundKFM>Art/leaderheads/Chiang/Wang_Kon_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_NICHOLAS</Type>
 			<Button>Art/leaderheads/Nicholas II/Nicholas.dds</Button>
@@ -629,15 +607,29 @@
 			<NoShaderNIF/>
 			<BackgroundKFM>Art/leaderheads/Nicholas II/napoleon_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_VICTOR_EMMANUEL</Type>
-			<Button>Art/leaderheads/Victor Emmanuel II/VictorEmmanuel.dds</Button>
-			<NIF>Art/leaderheads/Victor Emmanuel II/bismarck.nif</NIF>
-			<KFM>Art/LeaderHeads/Victor Emmanuel II/bismarck.kfm</KFM>
-			<NoShaderNIF>Art/LeaderHeads/Victor Emmanuel II/bismarck_noshader.nif</NoShaderNIF>
-			<BackgroundKFM>Art/leaderheads/Victor Emmanuel II/bismarck_bg.kfm</BackgroundKFM>
+			<Type>ART_DEF_LEADER_CAVOUR</Type>
+			<Button>Art/leaderheads/Cavour/Btn_Cavour.dds</Button>
+			<NIF>Art/leaderheads/Cavour/winston_churchill.nif</NIF>
+			<KFM>Art/LeaderHeads/Cavour/winston_churchill.kfm</KFM>
+			<NoShaderNIF>Art/LeaderHeads/Cavour/winston_churchill_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/leaderheads/Cavour/winston_churchill_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ABBAS</Type>
+			<Button>,Art/Interface/Buttons/Leaderheads/Abbas.dds,Art/Interface/Buttons/mem_leaders_atlas.dds,1,1</Button>
+			<NIF>art/LeaderHeads/Abbas/tokugawa.nif</NIF>
+			<KFM>art/LeaderHeads/Abbas/tokugawa.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Abbas/tokugawa_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Abbas/tokugawa_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_KHOMEINI</Type>
+			<Button>,Art/leaderheads/Khomeini/Kh_button.dds</Button>
+			<NIF>art/LeaderHeads/Khomeini/saladin.nif</NIF>
+			<KFM>art/LeaderHeads/Khomeini/saladin.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Khomeini/saladin.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Khomeini/saladin_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

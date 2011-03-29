@@ -989,18 +989,18 @@ class RiseAndFall:
 								iIndependentCities += 1
 						
 						# italy needs at least half of all core cities independent -> break when there are less
-						# now: no foreign presence in Italy
-						if iIndependentCities < iCitiesTotal:
+						if 2*iIndependentCities < iCitiesTotal:
+							print "No Italy spawn"
 							break
 				
 					pCiv = gc.getPlayer(iCiv)
-					pCiv.setCivilizationType(con.tRebirthCiv[iCiv])
-					pCiv.setLeader(con.tRebirthLeaders[iCiv])
+					if con.tRebirthCiv[iCiv] != -1:
+						pCiv.setCivilizationType(con.tRebirthCiv[iCiv])
+					pCiv.setLeader(con.tRebirthLeaders[iCiv][0])
 					x, y = con.tRebirthPlot[iCiv]
-					gc.getMap().plot(x,y).setOwner(iCiv)
-					gc.getMap().plot(x,y).setCulture(iCiv, 100, True)
-					self.createRespawnUnits(iCiv, (x,y))
-					print "Rebirth units placed."
+
+					CyInterface().addMessage(gc.getGame().getActivePlayer(), True, con.iDuration, (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
+					pCiv.setReborn()
 					
 					bFree = True
 					for i in range(x-1,x+2):
@@ -1008,13 +1008,21 @@ class RiseAndFall:
 							if gc.getMap().plot(i,j).isCity():
 								bFree = False
 
-					if bFree and utils.getHumanID() != iCiv:
-						pCiv.found(x,y)
+					if gc.getMap().plot(x,y).isCity():
+						utils.flipCity((x,y), False, True, iCiv, ())
+						print"Flip rebirth plot city"
 					else:
-						utils.makeUnit(con.iSettler, iCiv, (x,y), 1)
+						if bFree:
+							gc.getMap().plot(x,y).setOwner(iCiv)
+							pCiv.found(x,y)
+							print "Found rebirth plot city"
+						else:
+							utils.makeUnit(con.iSettler, iCiv, (x,y), 1)
+							print "Don't found rebirth plot city"
+					
+					self.createRespawnUnits(iCiv, (x,y))
+					print "Rebirth units placed."
 
-					CyInterface().addMessage(gc.getGame().getActivePlayer(), True, con.iDuration, (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
-					pCiv.setReborn()
 					self.assignTechs(iCiv)
 					if (iGameTurn >= getTurnForYear(con.tBirth[gc.getGame().getActivePlayer()])):
 						self.newCivPopup(iCiv)
@@ -1027,7 +1035,7 @@ class RiseAndFall:
 							pCity = gc.getPlayer(pUnit.getOwner()).getCapitalCity()
 							pUnit.setXYOld(pCity.getX(), pCity.getY())
 					print "Units moved"
-					cityList = utils.getCoreCityList(iCiv, 1)
+					cityList = utils.getCivRectangleCities(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
 					for pCity in cityList:
 						if pCity.getOwner() != utils.getHumanID():
 							x = pCity.getX()
@@ -1050,15 +1058,9 @@ class RiseAndFall:
 					print "Rebirth 2nd turn passed"
 
 					if iCiv == iRome:
-						x, y = con.tRebirthPlot[iRome]
-						plot = gc.getMap().plot(58,43)
-						if plot.getNumUnits() > 0:
-							for i in plot.getNumUnits():
-								plot.getUnit(i).setXYOld(x,y)
-						print "Sardinia units reallocated"
 						pVenice = gc.getMap().plot(61,47).getPlotCity()
-						pVenice.setCulture(iRome, 250, True)
-						pVenice.setPopulation(5)
+						pVenice.setCulture(iRome, 100, True)
+						pVenice.setPopulation(4)
 						utils.makeUnit(con.iGalley, iRome, (pVenice.plot().getX(), pVenice.plot().getY()), 2)
 
 #############################################################################################################
@@ -1113,24 +1115,31 @@ class RiseAndFall:
 		elif bCommunist:
 			gc.getPlayer(iPlayer).setLeader(con.tCommunistLeaders[iPlayer])
 		elif utils.getReborn(iPlayer) == 0:
-			if (len(tLeaders[iPlayer]) > 1 and utils.getReborn(iPlayer) == 0):
-                        	if (len(tLateLeaders[iPlayer]) > 9):
-                                	if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][9])):
-                                        	self.switchLateLeaders(iPlayer, 8)
-                            	   	elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][5])):
-                                  	      	self.switchLateLeaders(iPlayer, 4)
-                                	elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
-                                        	self.switchLateLeaders(iPlayer, 0)
-                        	elif (len(tLateLeaders[iPlayer]) > 5):
-                                	if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][5])):
-                                        	self.switchLateLeaders(iPlayer, 4)
-                                	elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
-                                        	self.switchLateLeaders(iPlayer, 0)
-                        	else:
-                                	if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
-                                        	self.switchLateLeaders(iPlayer, 0)
-		else:
-			gc.getPlayer(iPlayer).setLeader(con.tRebirthLeaders[iPlayer])
+			if (not gc.getPlayer(iPlayer).isReborn()):
+				if (len(tLeaders[iPlayer]) > 1):
+                        		if (len(tLateLeaders[iPlayer]) > 9):
+                                		if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][9])):
+                                        		self.switchLateLeaders(iPlayer, 8)
+                            	   		elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][5])):
+                                  	      		self.switchLateLeaders(iPlayer, 4)
+                                		elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
+                                        		self.switchLateLeaders(iPlayer, 0)
+                        		elif (len(tLateLeaders[iPlayer]) > 5):
+                                		if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][5])):
+                                        		self.switchLateLeaders(iPlayer, 4)
+                                		elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
+                                        		self.switchLateLeaders(iPlayer, 0)
+                        		else:
+                                		if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
+                                        		self.switchLateLeaders(iPlayer, 0)
+			else:
+				if len(con.tRebirthLeaders[iPlayer]) > 1:
+					if iGameTurn >= getTurnForYear(con.tRebirthLeaders[iPlayer][1]):
+						gc.getPlayer(iPlayer).setLeader(con.tRebirthLeaders[iPlayer][2])
+					else:
+						gc.getPlayer(iPlayer).setLeader(con.tRebirthLeaders[iPlayer][0])
+				else:
+					gc.getPlayer(iPlayer).setLeader(con.tRebirthLeaders[iPlayer][0])
 
         def switchLateLeaders(self, iPlayer, iLeaderIndex):
                 if (tLateLeaders[iPlayer][iLeaderIndex] != gc.getPlayer(iPlayer).getLeader()):
@@ -1560,7 +1569,7 @@ class RiseAndFall:
                                 iDeadCiv = j % iNumPlayers
                                 #iDeadCiv = iIndia #DEBUG
                                 cityList = []
-                                if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > getTurnForYear(con.tBirth[iDeadCiv]) + utils.getTurns(50) and iGameTurn > utils.getLastTurnAlive(iDeadCiv) + utils.getTurns(20) and con.tRebirth[iDeadCiv] == -1): # last condition added by Leoreth, civ must not have a scripted respawn
+                                if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > getTurnForYear(con.tBirth[iDeadCiv]) + utils.getTurns(50) and iGameTurn > utils.getLastTurnAlive(iDeadCiv) + utils.getTurns(20) and con.tRebirth[iDeadCiv] == -1 and iDeadCiv != iByzantium): # last condition added by Leoreth, civ must not have a scripted respawn
                                 #if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > con.tBirth[iDeadCiv] + 50): #DEBUG
                                         if (gc.getGame().getSorenRandNum(100, 'roll') >= con.tResurrectionProb[iDeadCiv]):
                                                 #print("skip")
@@ -3429,6 +3438,9 @@ class RiseAndFall:
 		if (iCiv == iRome):
 			utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
 			utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
+		if (iCiv == iPersia):
+			utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
                 lReligions = [0, 0, 0, 0, 0, 0, 0]
@@ -4550,6 +4562,49 @@ class RiseAndFall:
                                 teamRome.setHasTech(con.iLiterature, True, iCiv, False, False)
 				teamRome.setHasTech(con.iCompass, True, iCiv, False, False)
 				teamRome.setHasTech(con.iCivilService, True, iCiv, False, False)
+			if iCiv == iPersia:
+				teamPersia.setHasTech(con.iMysticism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMeditation, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPolytheism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPriesthood, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMonotheism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMonarchy, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iLiterature, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iFeudalism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iTheology, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMusic, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCivilService, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iGuilds, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iDivineRight, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iFishing, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iTheWheel, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAgriculture, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPottery, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAesthetics, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iSailing, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iWriting, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMathematics, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAlphabet, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCalendar, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCurrency, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPhilosophy, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPaper, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iHunting, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMining, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iArchery, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMasonry, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iIronWorking, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCompass, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iConstruction, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMachinery, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iEngineering, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iOptics, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iGunpowder, True, iCiv, False, False)
 		
 
                 self.hitNeighboursStability(iCiv)

@@ -15,3 +15,10 @@
 # forced reborn AI civs to found a new city
 # moved sheep from Mecca to Baghdad
 # moved fish in the North Sea to be accessible to Amsterdam only (also discourage Aarhus)
+# rebirth civs now found a new city on their rebirth plot if possible (you'll see Florence more often)
+# Rome is now excluded from the Italian rebirth flip
+# added a Safavid rebirth for Persia in 1500 AD in Esfahan (no new unique assets)
+# new Persian leaders: Abbas I, Khomeini
+# new Italian leader: Cavour, replacing Victor Emmanuel
+# Netherlands now found larger cities with more buildings
+# all civilizations now start with appropriate civics and state religions if applicable

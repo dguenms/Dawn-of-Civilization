@@ -510,6 +510,7 @@
 	</ElementType>
 	<ElementType name="LeaderPromotion" content="textOnly"/>
 	<ElementType name="iLeaderExperience" content="textOnly" dt:type="int"/>
+	<ElementType name="bGraphicalOnly" content="textOnly" dt:type="boolean"/>
 	<ElementType name="UnitInfo" content="eltOnly">
 		<element type="Class"/>
 		<element type="Type"/>

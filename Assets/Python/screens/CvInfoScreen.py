@@ -1922,6 +1922,17 @@ class CvInfoScreen:
 		screen = self.getScreen()
 
 		iNumUnits = gc.getNumUnitInfos()
+		# edead: start (count GraphicalOnly units and make a dictionary that translates them into basic types)
+		iNumUnitTypes = 0
+		unitDict = {}
+		for i in range(iNumUnits):
+			if not gc.getUnitInfo(i).isGraphicalOnly():
+				unitDict[i] = iNumUnitTypes
+				j = iNumUnitTypes
+				iNumUnitTypes += 1
+			else:
+				unitDict[i] = j
+		# edead: end
 		iNumBuildings = gc.getNumBuildingInfos()
 
 		self.iNumUnitStatsChartCols = 5
@@ -1956,14 +1967,20 @@ class CvInfoScreen:
 		aiUnitsBuilt = []
 		for iUnitLoop in range(iNumUnits):
 			aiUnitsBuilt.append(CyStatistics().getPlayerNumUnitsBuilt(self.iActivePlayer, iUnitLoop))
+			if gc.getUnitInfo(iUnitLoop).isGraphicalOnly(): # edead
+				aiUnitsBuilt[unitDict[iUnitLoop]] += CyStatistics().getPlayerNumUnitsBuilt(self.iActivePlayer, iUnitLoop) # edead
 
 		aiUnitsKilled = []
 		for iUnitLoop in range(iNumUnits):
 			aiUnitsKilled.append(CyStatistics().getPlayerNumUnitsKilled(self.iActivePlayer, iUnitLoop))
+			if gc.getUnitInfo(iUnitLoop).isGraphicalOnly(): # edead
+				aiUnitsKilled[unitDict[iUnitLoop]] += CyStatistics().getPlayerNumUnitsKilled(self.iActivePlayer, iUnitLoop) # edead
 
 		aiUnitsLost = []
 		for iUnitLoop in range(iNumUnits):
 			aiUnitsLost.append(CyStatistics().getPlayerNumUnitsLost(self.iActivePlayer, iUnitLoop))
+			if gc.getUnitInfo(iUnitLoop).isGraphicalOnly(): # edead
+				aiUnitsLost[unitDict[iUnitLoop]] += CyStatistics().getPlayerNumUnitsLost(self.iActivePlayer, iUnitLoop) # edead
 
 		aiBuildingsBuilt = []
 		for iBuildingLoop in range(iNumBuildings):
@@ -1977,6 +1994,8 @@ class CvInfoScreen:
 		for pUnit in apUnitList:
 			iType = pUnit.getUnitType()
 			aiUnitsCurrent[iType] += 1
+			if gc.getUnitInfo(iUnitLoop).isGraphicalOnly(): # edead
+				aiUnitsCurrent[unitDict[iUnitLoop]] += 1 # edead
 
 ################################################### TOP PANEL ###################################################
 
@@ -2080,7 +2099,10 @@ class CvInfoScreen:
 		
 		# Add Units to table
 		for iUnitLoop in range(iNumUnits):
-			iRow = iUnitLoop
+			#iRow = iUnitLoop
+			iRow = unitDict[iUnitLoop] # edead
+			
+			if gc.getUnitInfo(iUnitLoop).isGraphicalOnly(): continue # edead
 			
 			iCol = 0
 			szUnitName = gc.getUnitInfo(iUnitLoop).getDescription()

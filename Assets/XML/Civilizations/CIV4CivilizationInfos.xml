@@ -2239,7 +2239,7 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
-					<LeaderName>LEADER_VICTOR_EMMANUEL</LeaderName>
+					<LeaderName>LEADER_CAVOUR</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
@@ -3433,6 +3433,14 @@
 				</Leader>
 				<Leader>
 					<LeaderName>LEADER_DARIUS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_ABBAS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KHOMEINI</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>

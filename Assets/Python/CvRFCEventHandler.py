@@ -501,7 +501,7 @@ class CvRFCEventHandler:
         def onBeginPlayerTurn(self, argsList):        
                 iGameTurn, iPlayer = argsList
 
-                #print ("PLAYER", iPlayer)
+                print ("PLAYER", iPlayer)
                 #if (iPlayer == con.iMongolia):
                 #        if (iGameTurn == self.up.getLatestRazeData(0) +1):
                 #                self.up.setMongolAI()

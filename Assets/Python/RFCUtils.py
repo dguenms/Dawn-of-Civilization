@@ -1250,6 +1250,15 @@ class RFCUtils:
 					for i in range(plot.getNumUnits()):
 						unitList.append(plot.getUnit(i))
 		return unitList
+
+	def getCivRectangleCities(self, iCiv, TopLeft, BottomRight):
+		cityList = []
+		for x in range(TopLeft[0], BottomRight[0]+1):
+			for y in range(TopLeft[1], BottomRight[1]+1):
+				plot = gc.getMap().plot(x,y)
+				if plot.isCity():
+					cityList.append(plot.getPlotCity())
+		return cityList
 				
 
 

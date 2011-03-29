@@ -220,7 +220,7 @@ tFall = (
 2020,
 2020,
 2020,
-2020, # Germany was 1648, but is kept alive until a scripted respawn is added
+2020, # Germany was 1648, but is kept alive until Prussia is added
 2020,
 2020,
 1600,
@@ -238,7 +238,7 @@ tRebirth = (
 -1,
 -1,
 -1,	# Byzantium
--1,
+1501,	# Safavid Persia
 -1,
 1167,	# Italy
 -1,
@@ -299,9 +299,9 @@ tRebirthPlot = (
 -1,
 -1,
 (69,44),
+(81,41),	# Safavids - Esfahan
 -1,
--1,
-(59,46),	# Italy - Firenze
+(59,46),	# Italy - Florence
 -1,
 -1,
 -1,
@@ -329,9 +329,9 @@ tRebirthArea = (
 -1,
 -1,
 ((64,45),(74,42)),	# Byzantium - Balkans, Greece, Anatolia, Levant
+((79,37),(85,44)),	# Safavids - Azerbaijan, Iran, Afghanistan (no Merv, no Baghdad)
 -1,
--1,
-((57,42),(62,47)),	# Italy - Lombardy and Tuscany + Rome
+((57,45),(62,47)),	# Italy - Lombardy and Tuscany without Rome
 -1,
 -1,
 -1,
@@ -727,7 +727,7 @@ tCapitals = (
 (102, 47), #tBeijing
 (76, 40), #tBabylon
 (67, 41), #tAthens
-(82, 39), #tPersepolis
+(81, 41), #Esfahan
 #(58, 39), #tCarthage
 (73, 40), #tSur
 (60, 44), #tRome
@@ -827,7 +827,7 @@ tCoreAreasTL = (
 (65, 39), #Greece
 (79, 37), #Persia
 (71, 39), #Carthage
-(58, 44), #Rome		# ITALY
+(58, 45), #Rome		# ITALY (now doesn't include southern italy because that apparently causes a crash with Byzantine or independent Naples?)
 (111, 41), #Japan
 (69, 27), #Ethiopia
 (20, 35), #Maya
@@ -1345,7 +1345,7 @@ lEnemyCivsOnSpawn = [
 [], #Inca
 [iIndia,iChina,iChina,iJapan,iPersia,iKhmer,iRussia,iRussia,iIndependent,iIndependent,iIndependent2,iIndependent2], #Mongolia
 [iMaya], #Aztec
-[iEgypt,iBabylonia,iGreece,iGreece,iByzantium,iByzantium,iByzantium,iCeltia,iCeltia,iArabia,iArabia,iArabia], #Turkey
+[iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia], #Turkey
 [iIndependent,iIndependent2] #America
 ]
 
@@ -1377,7 +1377,7 @@ lTotalWarOnSpawn = [
 [], #Inca
 [iChina], #Mongolia
 [iMaya], #Aztec
-[iByzantium, iCeltia, iArabia], #Turkey
+[iArabia], #Turkey
 [], #America
 ]
 
@@ -2220,7 +2220,9 @@ iFranco = 71
 iNicholas = 72
 iCixi = 73
 iChiang_Kaishek = 74
-iVictorEmmanuel = 75
+iCavour = 75
+iAbbas = 76
+iKhomeini = 77
 
 
 tLeaders = (
@@ -2328,10 +2330,10 @@ tRebirthLeaders = (
 -1,
 -1,
 -1,
-iJustinian,
 -1,
+(iAbbas, 1900, iKhomeini),
 -1,
-iVictorEmmanuel,
+(iCavour,),
 -1,
 -1,
 -1,
