@@ -184,6 +184,8 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION   
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY 
+	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_SUBJUGATION
+	StateReligion=RELIGION_CHRISTIANITY
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -192,7 +194,8 @@ BeginPlayer
 	Team=12                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE            
+	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE                  
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM          
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
