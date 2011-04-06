@@ -991,13 +991,15 @@ class RiseAndFall:
 						# italy needs at least half of all core cities independent -> break when there are less
 						if 2*iIndependentCities < iCitiesTotal:
 							print "No Italy spawn"
-							break
+							#break
 				
 					pCiv = gc.getPlayer(iCiv)
 					if con.tRebirthCiv[iCiv] != -1:
 						pCiv.setCivilizationType(con.tRebirthCiv[iCiv])
 					pCiv.setLeader(con.tRebirthLeaders[iCiv][0])
 					x, y = con.tRebirthPlot[iCiv]
+
+					utils.makeUnit(con.iWarrior, iCiv, (10,0), 1)
 
 					CyInterface().addMessage(gc.getGame().getActivePlayer(), True, con.iDuration, (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
 					pCiv.setReborn()
@@ -1029,6 +1031,9 @@ class RiseAndFall:
 					print "Rebirth 1st turn passed"
 				if (iGameTurn == getTurnForYear(con.tRebirth[iCiv])+1 and utils.getReborn(iCiv) == 1):
 					print "Rebirth 2nd turn begun"
+
+					gc.getMap().plot(10,0).getUnit(0).kill(False, iCiv)
+
 					unitList = utils.getCoreUnitList(iCiv, 1)
 					for pUnit in unitList:
 						if pUnit.getOwner() != utils.getHumanID() and pUnit.getOwner() != iCiv:
@@ -1044,10 +1049,14 @@ class RiseAndFall:
 							utils.relocateSeaGarrisons((x,y), pCity.getOwner())
 							utils.createGarrisons((x,y), iCiv, 2)
 					print "Garrisons moved"
+					print "Independent 1 number of cities: "+repr(gc.getPlayer(con.iIndependent).getNumCities())
+					print "Independent 2 number of cities: "+repr(gc.getPlayer(con.iIndependent2).getNumCities())
 					self.convertSurroundingCities(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
 					print "Cities converted"
 					self.convertSurroundingPlotCulture(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
 					print "Plots converted"
+					print "Independent 1 number of cities: "+repr(gc.getPlayer(con.iIndependent).getNumCities())
+					print "Independent 2 number of cities: "+repr(gc.getPlayer(con.iIndependent2).getNumCities())
 					utils.setBaseStabilityLastTurn(iCiv, 0)
                                 	utils.setStability(iCiv, 10) 		#the new civs start as slightly stable
                                 	utils.setPlagueCountdown(iCiv, -10)
