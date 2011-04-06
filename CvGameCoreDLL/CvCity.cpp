@@ -8465,7 +8465,7 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 				{
 				    // modified by Leoreth to account for Solomon's Temple's effect
 				    int limit;
-				    if (GET_PLAYER(getOwner()).countNumBuildings((BuildingTypes)SOLOMON) > 0 && GET_TEAM(getTeam()).isHasTech((TechTypes)LIBERALISM))
+				    if (GET_PLAYER(getOwner()).countNumBuildings((BuildingTypes)SOLOMON) > 0 && !GET_TEAM(getTeam()).isHasTech((TechTypes)LIBERALISM))
 				    {
 				        limit = MAX_COM_SHRINE*2;
 				    }
