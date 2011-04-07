@@ -3928,6 +3928,8 @@ class AIWars:
 
         def checkTurn(self, iGameTurn):
 
+		print "Check AI wars"
+
                 #turn automatically peace on between independent cities and all the major civs
                 if (iGameTurn % 20 == 7):
                         utils.restorePeaceHuman(con.iIndependent2, False)

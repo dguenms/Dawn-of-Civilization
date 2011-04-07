@@ -5190,7 +5190,7 @@ class CityNameManager:
 				city.setName('Amisos', False)
 			if sName == 'Sivas' or sName == 'Sebhasd' or sName == 'Sebastia':
 				city.setName('Sebasteia', False)
-			if sName == 'Antakya' or sName == 'Antakiyya' or sName == 'Antiochia' or sName == 'Antiochia ad Orontem' or sName == 'Antiokheia Megale':
+			if sName == 'Antakya' or sName == 'Antakiyyah' or sName == 'Antiochia' or sName == 'Antiochia ad Orontem' or sName == 'Antiokheia Megale':
 				city.setName('Antiocheia', False)
 			if sName == 'Trapezus' or sName == 'Trapezon' or sName == 'Tarabizun' or sName == 'Trabzon':
 				city.setName('Trapezounta', False)
