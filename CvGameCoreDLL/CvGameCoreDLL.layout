@@ -7,8 +7,8 @@
 	<File name="CvArea.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="18746" topLine="747" />
 	</File>
-	<File name="CvCity.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="201220" topLine="8446" />
+	<File name="CvCity.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="218840" topLine="9050" />
 	</File>
 	<File name="CvCity.h" open="0" top="0" tabpos="12">
 		<Cursor position="852" topLine="19" />
@@ -64,8 +64,8 @@
 	<File name="CvGlobals.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="35253" topLine="1572" />
 	</File>
-	<File name="CvInfos.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="300956" topLine="10286" />
+	<File name="CvInfos.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="84671" topLine="3269" />
 	</File>
 	<File name="CvInfos.h" open="0" top="0" tabpos="4">
 		<Cursor position="198187" topLine="6023" />
@@ -74,7 +74,7 @@
 		<Cursor position="34781" topLine="1344" />
 	</File>
 	<File name="CvPlayer.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="59221" topLine="1961" />
+		<Cursor position="136999" topLine="5408" />
 	</File>
 	<File name="CvPlayer.h" open="0" top="0" tabpos="3">
 		<Cursor position="64906" topLine="1035" />
@@ -106,8 +106,8 @@
 	<File name="CvTeamAI.h" open="0" top="0" tabpos="10">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="CvUnit.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="143804" topLine="5642" />
+	<File name="CvUnit.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="191507" topLine="8129" />
 	</File>
 	<File name="CvUnitAI.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="274384" topLine="12643" />
@@ -115,8 +115,8 @@
 	<File name="CvXMLLoadUtilitySet.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="26560" topLine="580" />
 	</File>
-	<File name="CyCity.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="408" topLine="7" />
+	<File name="CyCity.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="40944" topLine="1738" />
 	</File>
 	<File name="CyGameInterface.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="328" topLine="242" />
@@ -127,7 +127,7 @@
 	<File name="CyGlobalContext.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="443" topLine="15" />
 	</File>
-	<File name="CyPlayer.cpp" open="1" top="1" tabpos="1">
+	<File name="CyPlayer.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="52101" topLine="1977" />
 	</File>
 	<File name="CyPlayer.h" open="0" top="0" tabpos="6">

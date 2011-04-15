@@ -818,7 +818,7 @@ class RiseAndFall:
                                 utils.flipUnitsInArea(tCoreAreasTL[utils.getReborn(iChina)][iChina], tCoreAreasBR[utils.getReborn(iChina)][iChina], iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 
 		if (iGameTurn == getTurnForYear(640)):		# Leoreth: moved to later (historicity, no conflict with Byzantine flip)
-			if (not gc.getPlayer(0).isPlayable()):   
+			if True:   
                                 iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iArabia, (67, 30), (80, 40))
                                 self.convertSurroundingPlotCulture(iArabia, tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (80, 40))
                                 utils.flipUnitsInArea(tNormalAreasTL[utils.getReborn(iArabia)][iArabia], (80, 40), iArabia, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
@@ -829,7 +829,7 @@ class RiseAndFall:
                                 #teamArabia.setHasTech(con.iDivineRight, True, iArabia, False, False)
 
 		if (iGameTurn == getTurnForYear(650)):
-			if (not gc.getPlayer(0).isPlayable()):
+			if True:
 				plotBaghdad = gc.getMap().plot(77,40)
 				plotCairo = gc.getMap().plot(69,35)
 
@@ -875,7 +875,7 @@ class RiseAndFall:
 					utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
 					utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
 
-				elif (not bBaghdad and not bCairo):
+				elif (not bBaghdad and bCairo):
 					if utils.getHumanID() != iArabia:
 						Cairo.setHasRealBuilding(con.iPalace, True)
 						utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
@@ -1010,13 +1010,19 @@ class RiseAndFall:
 							if gc.getMap().plot(i,j).isCity():
 								bFree = False
 
+					if gc.getMap().plot(x,y).getNumUnits() > 0:
+						print "Units on rebirth city plot"
+						bFree = False
+					
+
 					if gc.getMap().plot(x,y).isCity():
 						utils.flipCity((x,y), False, True, iCiv, ())
 						print"Flip rebirth plot city"
 					else:
+						gc.getMap().plot(x,y).setOwner(iCiv)
 						if bFree:
-							gc.getMap().plot(x,y).setOwner(iCiv)
-							pCiv.found(x,y)
+							#pCiv.found(x,y)
+							utils.makeUnit(con.iSettler, iCiv, (x,y), 1)
 							print "Found rebirth plot city"
 						else:
 							utils.makeUnit(con.iSettler, iCiv, (x,y), 1)
