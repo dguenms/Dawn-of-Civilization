@@ -1,0 +1,8 @@
+# Temple of Solomon now loses its effect with Liberalism, instead of acquiring it
+# fixed the transition to democracy instability (you now only need to have Representation before you can switch to Parliament without penalty)
+# Arabian expansion now also in the 3000 BC scenario
+# Made Washington more reluctant to peacefully vassalize
+# included Algor Mortis' fixes to the Roman UP and Italian spawn crashes
+# included robf32's fix to the Persian spawn crash
+# England's first UHV goal now requires them to build a total of 25 frigates and ships of the line
+# added an SoI style UHV goal progress display

@@ -235,6 +235,8 @@ class UniquePowers:
 		print ("Getting random target city.")
 		pTargetCity = utils.getRandomCity(iEnemy)
 
+		return	# disable temporarily to avoid crashes
+
 		if (pTargetCity != -1):
 			print ("City found, searching free land plot.")
 			tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
