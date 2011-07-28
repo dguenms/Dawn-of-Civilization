@@ -5340,7 +5340,7 @@ void CvPlayer::found(int iX, int iY)
 					startingEra = 1;
 					break;
 				case PERSIA:
-                    if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+                    if (!GET_PLAYER((PlayerTypes)PERSIA).isReborn())
                         startingEra = 1;
                     else
                         startingEra = 3;    //Leoreth: Safavid Persia

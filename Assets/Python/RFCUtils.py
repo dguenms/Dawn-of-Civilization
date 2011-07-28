@@ -245,8 +245,8 @@ class RFCUtils:
 		x, y = tPlot
 		plotList = []
 
-		for i in range(x - 1, x + 2):        
-                        for j in range(y - 1, y + 2):	
+		for i in range(x - 3, x + 3):        
+                        for j in range(y - 3, y + 3):	
                                 pCurrent = gc.getMap().plot( i, j )
                                 if (not pCurrent.isWater() and not pCurrent.isPeak()):
                                         if ( not pCurrent.isUnit() ):
@@ -276,7 +276,7 @@ class RFCUtils:
                         if (result):                                                        
                         	return ((result.getX(), result.getY()))
 		# if no plot is found, return that player's capital
-                return con.tCapitals[iPlayer]
+                return con.tCapital[iPlayer]
 
 
 
