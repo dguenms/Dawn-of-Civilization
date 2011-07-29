@@ -2236,7 +2236,7 @@ class Victory:
 
 		elif iPlayer == iChina:
 			if iGoal == 0:
-				iConfucianCounter = self.getNumBuildings(iChina, con.iConfucianAcademy)
+				iConfucianCounter = self.getNumBuildings(iChina, con.iChineseAcademy)
 				iTaoistCounter = self.getNumBuildings(iChina, con.iTaoistCathedral)
 				aHelp.append(self.getIcon(iConfucianCounter >= 2) + 'Confucian Academies: ' + str(iConfucianCounter) + '/2' + self.getIcon(iTaoistCounter >= 2) + 'Taoist Pagodas: ' + str(iTaoistCounter) + '/2')
 			elif iGoal == 1:
