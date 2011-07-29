@@ -8,6 +8,7 @@ import time
 import Consts as con #Rhye
 import cPickle as pickle #Rhye
 import RFCUtils #Rhye
+from Victory import Victory
 
 PyPlayer = PyHelpers.PyPlayer
 
@@ -17,6 +18,7 @@ utils = RFCUtils.RFCUtils() #Rhye
 gc = CyGlobalContext()
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
+vic = Victory()
 
 VICTORY_CONDITION_SCREEN = 0
 GAME_SETTINGS_SCREEN = 1
@@ -802,6 +804,13 @@ class CvVictoryScreen:
                                                         screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NO", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
                                                 else:       
                                                         screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NOTYET", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						# edead: start help text (Leoreth: goal progress display adapted from SoI)
+						aHelpStrings = vic.getUHVHelp(self.iActivePlayer, i)
+						if len(aHelpStrings) > 0:
+							for szHelp in aHelpStrings:
+								iRow = screen.appendTableRow(szTable)
+								szHelp = "    " + szHelp
+								screen.setTableText(szTable, 0, iRow, szHelp, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
                                         bEntriesFound = True
                                 #Rhye - end
 					
