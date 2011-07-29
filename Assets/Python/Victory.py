@@ -662,7 +662,7 @@ class Victory:
                                                                         iWonderFlag = 1
                                                                         break
                                                         iCounter += iWonderFlag
-                                                for i in range(con.iOlympicPark+1 - con.iApostolicPalace):
+                                                for i in range(con.iWestminster+1 - con.iApostolicPalace):
                                                         iWonder = i + con.iApostolicPalace
                                                         iWonderFlag = 0
                                                         for pCity in apCityList:
@@ -773,19 +773,14 @@ class Victory:
                                                 	self.setGoal(iRome, 0, 0)  
                                     
                                 	if (iGameTurn == getTurnForYear(470)):                                              
-                                        	bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iSpain)][iSpain], tCoreAreasBR[utils.getReborn(iSpain)][iSpain], 2)
-                                        	bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[utils.getReborn(iFrance)][iFrance], 3)
-                                        	bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iEngland)][iEngland], tCoreAreasBR[utils.getReborn(iEngland)][iEngland], 1)
+                                        	bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[0][iSpain], tCoreAreasBR[0][iSpain], 2)
+                                        	bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[0][iFrance], 3)
+                                        	bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEngland], tCoreAreasBR[0][iEngland], 1)
                                         	bCarthage = self.checkOwnedArea(iRome, tCarthageTL, tCarthageBR, 2)
-                                        	#bNearEast = self.checkOwnedArea(iRome, tNearEastTL, tNearEastBR, 2) #3)
-                                        	#bEgypt = self.checkOwnedCiv(iRome, iEgypt)
-                                        	#bGreece = self.checkOwnedCiv(iRome, iGreece)
-                                        	##bPersia = self.checkOwnedCiv(iRome, iPersia)
-                                        	##bGermany = self.checkOwnedArea(iRome, tCoreAreasTL[iGermany], tCoreAreasBR[iGermany], 1)
-                                        
-                                        
+						bByzantium = self.checkOwnedArea(iRome, tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium], 4)
+						bEgypt = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt], 2)
 
-                                        	if (bSpain and bFrance and bEngland and bCarthage ): #and bEgypt and bGreece and bNearEast): # and bGermany and bPersia ):
+                                       		if (bSpain and bFrance and bEngland and bCarthage and bByzantium and bEgypt):
                                         	        self.setGoal(iRome, 1, 1)   
                                         	else:
                                         	        self.setGoal(iRome, 1, 0)
@@ -990,16 +985,11 @@ class Victory:
                             
                                 if (iGameTurn >= getTurnForYear(con.tBirth[iSpain])+1 and iGameTurn <= getTurnForYear(1300)):
                                         if (self.getGoal(iArabia, 1) == -1):
-                                                bSpain = self.checkOwnedCiv(iArabia, iSpain)
-                                                if (teamSpain.isVassal(iArabia)):
-                                                        bSpain = True
-                                                bEgypt = self.checkOwnedCiv(iArabia, iEgypt)
-                                                if (teamEgypt.isVassal(iArabia)):
-                                                        bEgypt = True
-                                                bCarthage = self.checkOwnedCiv(iArabia, iCarthage)
-                                                if (teamCarthage.isVassal(iArabia)):
-                                                        bCarthage = True
-                                                if (bSpain and bEgypt and bCarthage):
+                                                bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
+                                                bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
+						bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
+						bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
+                                                if (bSpain and bMaghreb and bMesopotamia and bPersia):
                                                         self.setGoal(iArabia, 1, 1)
                                 elif (iGameTurn > getTurnForYear(1300)):
                                         if (self.getGoal(iArabia, 1) == -1):
@@ -2170,15 +2160,36 @@ class Victory:
 				iBest = iCiv
 				iBestGold = iCurrentGold
 		return iBest
-				
+
+	# Leoreth: new implementation of the Arabian conquest goal
+	# all cities in the area must now be held either by you or one of your vassals
+	def isControlledOrVassalized(self, iPlayer, tTopLeft, tBottomRight):
+		bControlled = False
+		lOwnerList = []
+		lValidOwners = [iPlayer]
+		dummy, lCityList = utils.squareSearch(tTopLeft, tBottomRight, utils.ownedCityPlots, iPlayer)
+		for pCity in lCityList:
+			if pCity.getOwner() not in lOwnerList:
+				lOwnerList.insert(pCity.getOwner())
+		for iCiv in range(con.iNumPlayers):
+			if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iPlayer):
+				lValidOwners.insert(iCiv)
+		for iCiv in lValidOwners:
+			if iCiv in lOwnerList:
+				bControlled = True		# you or one of your vassals holds at least one city
+				lOwnerList.remove(iCiv)
+		if len(lOwnerList) > 0:
+			bControlled = False			# someone who's not your vassal holds at least one city
+		return bControlled
+		
 			
 
 
 	def getIcon(self, bVal):
 		if bVal:
-			return u"%c" %(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 14)
+			return u"%c" %(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 10)
 		else:
-			return u"%c" %(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 15)
+			return u"%c" %(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 11)
 
 
 	def getUHVHelp(self, iPlayer, iGoal):
@@ -2187,31 +2198,31 @@ class Victory:
 		aHelp = [];
 		
 		# the info is outdated or irrelevant once the goal has been accomplished or failed
-		if sd.getGoal(iPlayer, iGoal) == 1:
+		if self.getGoal(iPlayer, iGoal) == 1:
 			aHelp.append(self.getIcon(True) + 'Goal accomplished!')
 			return aHelp
-		elif sd.getGoal(iPlayer, iGoal) == 0:
+		elif self.getGoal(iPlayer, iGoal) == 0:
 			aHelp.append(self.getIcon(False) + 'Goal failed!')
 			return aHelp
 
 		if iPlayer == iEgypt:
 			if iGoal == 0:
 				iCulture = pEgypt.countTotalCulture()
-				aHelp.append(self.getIcon(iCulture >= utils.getTurns(500)) + 'Total culture: ' + str(iCulture) + '/' + str(utils.getTurns(500))
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(500)) + 'Total culture: ' + str(iCulture) + '/' + str(utils.getTurns(500)))
 			elif iGoal == 1:
-				bPyramids = (self.getNumBuildings(iEgypt, con.iPyramids) > 0)
+				bPyramids = (self.getNumBuildings(iEgypt, con.iPyramid) > 0)
 				bLibrary = (self.getNumBuildings(iEgypt, con.iGreatLibrary) > 0)
 				bLighthouse = (self.getNumBuildings(iEgypt, con.iGreatLighthouse) > 0)
-				aHelp.append(self.getIcon(bPyramids) + 'Pyramids, ' + self.getIcon(bLibrary) + 'Great Library, ' + self.getIcon(bLighthouse) + 'Great Lighthouse')
+				aHelp.append(self.getIcon(bPyramids) + 'Pyramids ' + self.getIcon(bLibrary) + 'Great Library ' + self.getIcon(bLighthouse) + 'Great Lighthouse')
 			elif iGoal == 2:
 				iCulture = pEgypt.countTotalCulture()
-				aHelp.append(self.getIcon(iCulture >= utils.getTurns(5000)) + 'Total culture: ' + str(iCulture) + '/' + str(utils.getTurns(5000))
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(5000)) + 'Total culture: ' + str(iCulture) + '/' + str(utils.getTurns(5000)))
 
 		elif iPlayer == iIndia:
 			if iGoal == 0:
 				bBuddhism = (self.getReligionFounded(con.iBuddhism) == 1)
 				bHinduism = (self.getReligionFounded(con.iHinduism) == 1)
-				aHelp.append(self.getIcon(bHinduism) + 'Hinduism, ' + self.getIcon(bBuddhism) + 'Buddhism')
+				aHelp.append(self.getIcon(bHinduism) + 'Hinduism ' + self.getIcon(bBuddhism) + 'Buddhism')
 			elif iGoal == 1:
 				iCount = 0
 				for iReligion in range(7):
@@ -2226,7 +2237,7 @@ class Victory:
 		elif iPlayer == iChina:
 			if iGoal == 0:
 				iConfucianCounter = self.getNumBuildings(iChina, con.iConfucianAcademy)
-				iTaoistCounter = self.getNumBuildings(iChina, con.iTaoistPagdoda)
+				iTaoistCounter = self.getNumBuildings(iChina, con.iTaoistCathedral)
 				aHelp.append(self.getIcon(iConfucianCounter >= 2) + 'Confucian Academies: ' + str(iConfucianCounter) + '/2' + self.getIcon(iTaoistCounter >= 2) + 'Taoist Pagodas: ' + str(iTaoistCounter) + '/2')
 			elif iGoal == 1:
 				iGATurns = self.getChineseGoldenAgeTurns()
@@ -2241,7 +2252,7 @@ class Victory:
 				bWriting = (self.getBabylonianTechs(0) == 1)
 				bCodeOfLaws = (self.getBabylonianTechs(1) == 1)
 				bMonarchy = (self.getBabylonianTechs(2) == 1)
-				aHelp.append(self.getIcon(bWriting) + 'Writing, ' + self.getIcon(bCodeOfLaws) + 'Code of Laws, ' + self.getIcon(bMonarchy) + 'Monarchy')
+				aHelp.append(self.getIcon(bWriting) + 'Writing ' + self.getIcon(bCodeOfLaws) + 'Code of Laws ' + self.getIcon(bMonarchy) + 'Monarchy')
 			elif iGoal == 1:
 				pBestCity = self.calculateTopCityPopulation(76, 40)
 				bBestCity = (pBestCity.getOwner() == iBabylonia and pBestCity.getX() == 76 and pBestCity.getY() == 40)
@@ -2256,19 +2267,19 @@ class Victory:
 				bLiterature = (self.getGreekTechs(0) == 1)
 				bDrama = (self.getGreekTechs(1) == 1)
 				bPhilosophy = (self.getGreekTechs(2) == 1)
-				aHelp.append(self.getIcon(bLiterature) + 'Literature, ' + self.getIcon(bDrama) + 'Drama, ' + self.getIcon(bPhilosophy) + 'Philosophy')
+				aHelp.append(self.getIcon(bLiterature) + 'Literature ' + self.getIcon(bDrama) + 'Drama ' + self.getIcon(bPhilosophy) + 'Philosophy')
 			elif iGoal == 1:
 				bOracle = (self.getNumBuildings(iGreece, con.iOracle) > 0)
 				bParthenon = (self.getNumBuildings(iGreece, con.iParthenon) > 0)
 				bColossus = (self.getNumBuildings(iGreece, con.iColossus) > 0)
-				bArtemis = (self.getNumBuildings(iGreece, con.iTempleOfArtemis) > 0)
-				aHelp.append(self.getIcon(bOracle) + 'Oracle, ' + self.getIcon(bParthenon) + 'Parthenon, ' + self.getIcon(bColossus) + 'Colossus, ' + self.getIcon(bArtemis) + 'Temple of Artemis')
+				bArtemis = (self.getNumBuildings(iGreece, con.iArtemis) > 0)
+				aHelp.append(self.getIcon(bOracle) + 'Oracle ' + self.getIcon(bParthenon) + 'Parthenon ' + self.getIcon(bColossus) + 'Colossus ' + self.getIcon(bArtemis) + 'Temple of Artemis')
 			elif iGoal == 2:
                         	bEgypt = self.checkOwnedCiv(iGreece, iEgypt)
                         	bPhoenicia = self.checkOwnedCiv(iGreece, iCarthage)
                         	bBabylonia = self.checkOwnedCiv(iGreece, iBabylonia)
 				bPersia = self.checkOwnedCiv(iGreece, iPersia)
-				aHelp.append(self.getIcon(bEgypt) + 'Egypt, ' + self.getIcon(bPhoenicia) + 'Phoenicia, ' + self.getIcon(bBabylonia) + 'Babylonia, ' + self.getIcon(bPersia) + 'Persia')
+				aHelp.append(self.getIcon(bEgypt) + 'Egypt ' + self.getIcon(bPhoenicia) + 'Phoenicia ' + self.getIcon(bBabylonia) + 'Babylonia ' + self.getIcon(bPersia) + 'Persia')
 
 		elif iPlayer == iPersia:
 			if iGoal == 0:
@@ -2287,7 +2298,7 @@ class Victory:
                         	for i in range(con.iMoaiStatues+1 - con.iArtemis):
                         		iWonder = i + con.iArtemis
 					iCounter += self.getNumBuildings(iPersia, iWonder)
-                        	for i in range(con.iOlympicPark+1 - con.iApostolicPalace):
+                        	for i in range(con.iWestminster+1 - con.iApostolicPalace):
                         		iWonder = i + con.iApostolicPalace
 					iCounter += self.getNumBuildings(iPersia, iWonder)
 				iCounter += self.getNumBuildings(iPersia, con.iFlavianAmphitheatre)
@@ -2324,21 +2335,24 @@ class Victory:
 				if iGoal == 0:
 					iBarracks = self.getNumBuildings(iRome, con.iBarracks)
 					iAqueducts = self.getNumBuildings(iRome, con.iAqueduct)
-					iAmphitheatres = self.getNumBuildings(iRome, con.iAmphitheatre)
+					iAmphitheatres = self.getNumBuildings(iRome, con.iColosseum)
 					aHelp.append(self.getIcon(iBarracks >= 5) + 'Barracks: ' + str(iBarracks) + '/5,' + self.getIcon(iAqueducts >= 5) + 'Aqueducts: ' + str(iAqueducts) + '/5,' + self.getIcon(iAmphitheatres >= 5) + 'Amphitheatres: ' + str(iAmphitheatres) + '/5')
 				elif iGoal == 1:                              
                                		bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iSpain)][iSpain], tCoreAreasBR[utils.getReborn(iSpain)][iSpain], 2)
                                 	bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[utils.getReborn(iFrance)][iFrance], 3)
                                 	bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iEngland)][iEngland], tCoreAreasBR[utils.getReborn(iEngland)][iEngland], 1)
                                 	bCarthage = self.checkOwnedArea(iRome, tCarthageTL, tCarthageBR, 2)
-					aHelp.append(self.getIcon(bSpain) + 'Spain, ' + self.getIcon(bFrance) + 'France, ' + self.getIcon(bEngland) + 'England, ' + self.getIcon(bCarthage) + 'Carthage')
+					bByzantium = self.checkOwnedArea(iRome, tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium], 4)
+					bEgypt = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt], 2)
+					aHelp.append(self.getIcon(bSpain) + '2 cities in Spain ' + self.getIcon(bFrance) + '3 cities in France ' + self.getIcon(bEngland) + '1 city in England')
+					aHelp.append(self.getIcon(bCarthage) + '2 cities in Carthage ' + self.getIcon(bByzantium) + '4 cities in Greece and Anatolia ' + self.getIcon(bEgypt) + '2 cities in Egypt')
 			else:
 				if iGoal == 0:
 					bBanking = self.getItalianTechs(0)
 					bEducation = self.getItalianTechs(1)
 					bRadio = self.getItalianTechs(2)
 					bFascism = self.getItalianTechs(3)
-					aHelp.append(self.getIcon(bBanking) + 'Banking, ' + self.getIcon(bEducation) + 'Education, ' + self.getIcon(bRadio) + 'Radio, ' + self.getIcon(bFascism) + 'Fascism')
+					aHelp.append(self.getIcon(bBanking) + 'Banking ' + self.getIcon(bEducation) + 'Education ' + self.getIcon(bRadio) + 'Radio ' + self.getIcon(bFascism) + 'Fascism')
 				elif iGoal == 1:
 					iUniversities = self.getItalianUniversities()
 					aHelp.append(self.getIcon(iUniversities >= 3) + 'Univiersities built: ' + str(iUniversities) + '/3')
@@ -2350,7 +2364,7 @@ class Victory:
 						if (iCiv != iRome):
 							if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
 								bLibya = False
-					aHelp.append(self.getIcon(bGreece) + 'Greece, ' + self.getIcon(bLibya) + 'Libya, ' + self.getIcon(bEthiopia) + 'Ethiopia')
+					aHelp.append(self.getIcon(bGreece) + 'Greece ' + self.getIcon(bLibya) + 'Libya ' + self.getIcon(bEthiopia) + 'Ethiopia')
 				
 
 		elif iPlayer == iJapan:
@@ -2364,7 +2378,7 @@ class Victory:
                                 				if (iLoop != iJapan):
                                 					if (pCurrent.getCulture(iLoop) > 0):
                                 						bForeignPresence = True
-				aHelp.append(self.getIcon(bForeignPresence) + 'Foreign presence on Honshuu')
+				aHelp.append(self.getIcon(not bForeignPresence) + 'No foreign presence on Honshuu')
 			elif iGoal == 1:
 				iFirstRankCiv = self.getHighestRankCiv()
 				bFirstRank = (iFirstRankCiv == iJapan)
@@ -2381,7 +2395,7 @@ class Victory:
                                  			bAfrica = False
                                  		if (bAfrica == False):
                                  			break
-				aHelp.append(self.getIcon(bAfrica) + 'No cities in East and Subequatorial Africaa')
+				aHelp.append(self.getIcon(bAfrica) + 'No European colonies in East and Subequatorial Africaa')
 
 		# Maya goals have no stages
 
@@ -2399,7 +2413,7 @@ class Victory:
 				bBalkans = self.checkOwnedArea(iByzantium, tBalkansTL, tBalkansBR, 3)
 				bNorthAfrica = self.checkOwnedArea(iByzantium, tNorthAfricaTL, tNorthAfricaBR, 3)
 				bNearEast = self.checkOwnedArea(iByzantium, tNearEastTL, tNearEastBR, 3)
-				aHelp.append(self.getIcon(bBalkans) + 'Balkans, ' + self.getIcon(bNorthAfrica) + 'North Africa, ' + self.getIcon(bNearEast) + 'Near East')
+				aHelp.append(self.getIcon(bBalkans) + 'Balkans ' + self.getIcon(bNorthAfrica) + 'North Africa ' + self.getIcon(bNearEast) + 'Near East')
 
 		elif iPlayer == iVikings:
 			if iGoal == 0:
@@ -2417,10 +2431,11 @@ class Victory:
 					iCounter += self.getNumBuildings(iArabia, iCurrentShrine)
 				aHelp.append(self.getIcon(iCounter >= 3) + 'Shrines: ' + str(iCounter) + '/3')
 			elif iGoal == 1:
-				bSpain = self.checkOwnedCiv(iArabia, iSpain) or teamSpain.isVassal(iArabia)
-				bEgypt = self.checkOwnedCiv(iArabia, iEgypt) or teamEgypt.isVassal(iArabia)
-				bLevant = self.checkOwnedCiv(iArabia, iCarthage) or teamCarthage.isVassal(iArabia)
-				aHelp.append(self.getIcon(bSpain) + 'Spain, ' + self.getIcon(bEgypt) + 'Egypt, ' + self.getIcon(bLevant) + 'Levant')
+                                bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
+                                bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
+				bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
+				bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
+				aHelp.append(self.getIcon(bSpain) + 'Spain ' + self.getIcon(bMaghreb) + 'Maghreb ' + self.getIcon(bMesopotamia) + 'Mesopotamia ' + self.getIcon(bPersia) + 'Persia')
 			elif iGoal == 2:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iIslam)
 				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + 'Islam spread to: ' + str(fReligionPercent) + '/40 %')
@@ -2447,7 +2462,7 @@ class Victory:
 			elif iGoal == 2:
 				bAztecs = self.checkOwnedCiv(iSpain, iAztecs)
 				bInca = self.checkOwnedCiv(iSpain, iInca)
-				aHelp.append(self.getIcon(bAztecs) + 'Aztecs, ' + self.getIcon(bInca) + 'Inca')
+				aHelp.append(self.getIcon(bAztecs) + 'Aztecs ' + self.getIcon(bInca) + 'Inca')
 
 		elif iPlayer == iFrance:
 			if iGoal == 0:
@@ -2457,12 +2472,12 @@ class Victory:
 			elif iGoal == 1:
 				bNECanada = self.checkFoundedArea(iFrance, tNECanadaTL, tNECanadaBR, 3)
                                 bLouisiana = self.checkFoundedArea(iFrance, tLouisianaTL, tLouisianaBR, 1)
-				aHelp.append(self.getIcon(bNECanada) + 'Quebec and Hudson Bay, ' + self.getIcon(bLouisiana) + 'Louisiana')
+				aHelp.append(self.getIcon(bNECanada) + '3 cities in Quebec and Hudson Bay ' + self.getIcon(bLouisiana) + '1 city in Louisiana')
 			elif iGoal == 2:
 				bNotreDame = (self.getNumBuildings(iFrance, con.iNotreDame) > 0)
 				bStatueOfLiberty = (self.getNumBuildings(iFrance, con.iStatueOfLiberty) > 0)
 				bEiffelTower = (self.getNumBuildings(iFrance, con.iEiffelTower) > 0)
-				aHelp.append(self.getIcon(bNotreDame) + 'Notre Dame, ' + self.getIcon(bStatueOfLiberty) + 'Statue of Liberty, ' + self.getIcon(bEiffelTower) + 'Eiffel Tower')
+				aHelp.append(self.getIcon(bNotreDame) + 'Notre Dame ' + self.getIcon(bStatueOfLiberty) + 'Statue of Liberty ' + self.getIcon(bEiffelTower) + 'Eiffel Tower')
 
 		elif iPlayer == iEngland:
 			if iGoal == 0:
@@ -2476,23 +2491,24 @@ class Victory:
                                 bAfrica = self.checkFoundedArea(iEngland, tAfricaTL, tAfricaBR, 3)
                                 bAsia = self.checkFoundedArea(iEngland, tAsiaTL, tAsiaBR, 3)
                                 bOceania = self.checkFoundedArea(iEngland, tOceaniaTL, tOceaniaBR, 3)
-				aHelp.append(self.getIcon(bNCAmerica) + 'North America, ' + self.getIcon(bSAmerica) + 'South America, ' + self.getIcon(bAfrica) + 'Africa, ' + self.getIcon(bAsia) + 'Asia, ' + self.getIcon(bOceania) + 'Oceania')
+				aHelp.append(self.getIcon(bNCAmerica) + 'North America ' + self.getIcon(bSAmerica) + 'South America ' + self.getIcon(bAfrica) + 'Africa')
+				aHelp.append(self.getIcon(bAsia) + 'Asia ' + self.getIcon(bOceania) + 'Oceania')
 			elif iGoal == 2:
 				bIndustrial = (self.getEnglishEras(0) == 1)
 				bModern = (self.getEnglishEras(1) == 1)
-				aHelp.append(self.getIcon(bIndustrial) + 'First to enter the Industrial Era' + self.getIcon(bModern) + 'First to enter the Modern Era')
+				aHelp.append(self.getIcon(bIndustrial) + 'First to enter the Industrial Era ' + self.getIcon(bModern) + 'First to enter the Modern Era')
 
 		elif iPlayer == iGermany:
 			if iGoal == 0:
                                	bFrance = self.checkOwnedCiv(iGermany, iFrance)
                                 bRome = self.checkOwnedCiv(iGermany, iRome)
                                 bGreece = self.checkOwnedCiv(iGermany, iGreece)
-				aHelp.append(self.getIcon(bRome) + 'Rome, ' + self.getIcon(bGreece) + 'Greece, ' + self.getIcon(bFrance) + 'France')
+				aHelp.append(self.getIcon(bRome) + 'Rome ' + self.getIcon(bGreece) + 'Greece ' + self.getIcon(bFrance) + 'France')
 			elif iGoal == 1:
                                 bRussia = self.checkOwnedCiv(iGermany, iRussia)
                                 bEngland = self.checkOwnedCiv(iGermany, iEngland)                                        
                                 bScandinavia = self.checkOwnedCiv(iGermany, iVikings)
-				aHelp.append(self.getIcon(bScandinavia) + 'Scandinavia, ' + self.getIcon(bEngland) + 'England, ' + self.getIcon(bRussia) + 'Russia')
+				aHelp.append(self.getIcon(bScandinavia) + 'Scandinavia ' + self.getIcon(bEngland) + 'England ' + self.getIcon(bRussia) + 'Russia')
 
 		elif iPlayer == iRussia:
 			if iGoal == 0:
@@ -2591,7 +2607,7 @@ class Victory:
 				bBalkans = self.checkOwnedArea(iTurkey, tBalkansTL, tBalkansBR, 3)
                                 bBlackSea = self.checkOwnedAreaAdjacentArea(iTurkey, tBlackSeaTL, tBlackSeaBR, 4, (71,47))
                                 bMesopotamia = self.checkOwnedArea(iTurkey, tMesopotamiaTL, tMesopotamiaBR, 3)
-				aHelp.append(self.getIcon(bBalkans) + 'Balkans, ' + self.getIcon(bBlackSea) + 'Black Sea, ' + self.getIcon(bMesopotamia) + 'Mesopotamia')
+				aHelp.append(self.getIcon(bBalkans) + 'Balkans ' + self.getIcon(bBlackSea) + 'Black Sea ' + self.getIcon(bMesopotamia) + 'Mesopotamia')
 			elif iGoal == 2:
                                 iCounter = 0
                                 for iCiv in range(iNumPlayers):
@@ -2614,7 +2630,7 @@ class Victory:
 				bUnitedNations = (self.getNumBuildings(iAmerica, con.iUnitedNations) > 0)
 				bStatueOfLiberty = (self.getNumBuildings(iAmerica, con.iStatueOfLiberty) > 0)
 				bPentagon = (self.getNumBuildings(iAmerica, con.iPentagon) > 0)
-				aHelp.append(self.getIcon(bUnitedNations) + 'United Nations, ' + self.getIcon(bStatueOfLiberty) + 'StatueOfLiberty, ' + self.getIcon(bPentagon) + 'Pentagon')
+				aHelp.append(self.getIcon(bUnitedNations) + 'United Nations ' + self.getIcon(bStatueOfLiberty) + 'StatueOfLiberty ' + self.getIcon(bPentagon) + 'Pentagon')
 			elif iGoal == 2:
 				iCounter = pAmerica.getNumAvailableBonuses(con.iOil) - pAmerica.getBonusImport(con.iOil)
                                 for iCiv in range(iNumPlayers):

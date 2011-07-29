@@ -246,7 +246,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2</Tag>
-		<English>Control in 470 AD (Turn 172) all the area historically known as the Western Roman Empire</English>
+		<English>Control in 470 AD (Turn 172) all the area historically known as the Roman Empire</English>
 		<French>Contrôler tout le territoire connu historiquement comme l'Empire romain d'Occident en 470 ap. J.-C. (Tour 172)</French>
 		<German>Kontrollieren Sie im Jahr 470 n. Chr. (Runde 172) das gesamte historische Gebiet des Weströmischen Reiches</German>
 		<Italian>Devi controllare, nel 470 d.C. (turno 172), tutta l'area storicamente conosciuta come Impero Romano d'Occidente</Italian>
@@ -294,7 +294,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARA2</Tag>
-		<English>Control or make vassal states of Egypt, Spain and the Levant by 1300 AD</English>
+		<English>Control Spain, the Maghreb, Mesopotamia and Persia directly or by vassal by 1300 AD</English>
 		<French>Contrôler ou vassaliser l'Egypte, l'Espagne et Carthage avant 1300 ap. J.-C.</French>
 		<German>Bringen Sie bis zum Jahr 1300 n. Chr. Ägypten, Spanien und die Levante unter Ihre Kontrolle oder machen Sie sie zu Vasallenstaaten</German>
 		<Italian>Entro il 1300 d.C. devi controllare o aver reso stati vassalli Egitto, Spagna e Cartagine</Italian>
@@ -358,9 +358,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG1</Tag>
-		<English>Have a larger navy than the following two European civilizations combined in 1800 AD</English>
+		<English>Control a total of 25 frigates or ships of the line in 1800 AD</English>
 		<French>Etre le premier à faire le tour du monde</French>
-		<German>Besitzen Sie im Jahr 1800 n. Chr. eine größere Marine als die zwei folgenden europäischen Zivilisationen zusammen</German>
+		<German>Kontrollieren Sie insgesamt 25 Fregatten oder Linienschiffe im Jahr 1800 n. Chr.</German>
 		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>
 		<Spanish>Ser el primero en circunnavegar el globo</Spanish>
 	</TEXT>
