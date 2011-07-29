@@ -456,7 +456,7 @@ class Victory:
                         return False
 
 	def getNumberOfCoastalAreaCities(self, iCiv, tTopLeft, tBottomRight, tExceptionList):
-		dummy1, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.ownedCityPlots, iActiveCiv )
+		dummy1, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.ownedCityPlots, iCiv )
                 iCounter = 0
                 for i in range(len(plotList)):
                         x = plotList[i][0]
@@ -2074,7 +2074,13 @@ class Victory:
 
         def calculateTopCityCulture(self, x, y):
                 iBestCityValue = 0
-                pCurrent = gc.getMap().plot( x, y )
+		if gc.getMap().plot(x,y).isCity():
+                	pCurrent = gc.getMap().plot(x,y)
+		else:
+			for iCiv in range(con.iNumPlayers):
+				if gc.getPlayer(iCiv).isAlive():
+					pCurrent = gc.getPlayer(iCiv).getCapitalCity().plot()
+					break
                 if (pCurrent.isCity()):
                         bestCity = pCurrent.getPlotCity()
                         for iPlayerLoop in range(gc.getMAX_PLAYERS()):
@@ -2093,7 +2099,13 @@ class Victory:
 
         def calculateTopCityPopulation(self, x, y):
                 iBestCityValue = 0
-                pCurrent = gc.getMap().plot( x, y )
+		if gc.getMap().plot(x,y).isCity():
+                	pCurrent = gc.getMap().plot(x,y)
+		else:
+			for iCiv in range(con.iNumPlayers):		# we want to make sure this Algorithm always returns the best city
+				if gc.getPlayer(iCiv).isAlive():	# so we always need a starting city
+					pCurrent = gc.getPlayer(iCiv).getCapitalCity().plot()
+					break
                 if (pCurrent.isCity()):
                         bestCity = pCurrent.getPlotCity()
                         for iPlayerLoop in range(gc.getMAX_PLAYERS()):
@@ -2167,13 +2179,14 @@ class Victory:
 		bControlled = False
 		lOwnerList = []
 		lValidOwners = [iPlayer]
-		dummy, lCityList = utils.squareSearch(tTopLeft, tBottomRight, utils.ownedCityPlots, iPlayer)
-		for pCity in lCityList:
-			if pCity.getOwner() not in lOwnerList:
-				lOwnerList.insert(pCity.getOwner())
+		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.ownedCityPlots, iPlayer)
+		for tPlot in lCityPlotList:
+			x, y = tPlot
+			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList:
+				lOwnerList.append(gc.getMap().plot(x,y).getPlotCity().getOwner())
 		for iCiv in range(con.iNumPlayers):
 			if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iPlayer):
-				lValidOwners.insert(iCiv)
+				lValidOwners.append(iCiv)
 		for iCiv in lValidOwners:
 			if iCiv in lOwnerList:
 				bControlled = True		# you or one of your vassals holds at least one city
@@ -2232,7 +2245,7 @@ class Victory:
 			elif iGoal == 2:
 				iHighestCiv = self.getHighestPopulationCiv(iIndia)
 				bHighest = (iHighestCiv == iIndia)
-				aHelp.append(self.getIcon(bHighest) + 'Civilization with the largest population: ' + gc.getPlayer(iHighestCiv).getCivilizationShortDescriptionKey())
+				aHelp.append(self.getIcon(bHighest) + 'Civilization with the largest population: ' + CyTranslator().getText(str(gc.getPlayer(iHighestCiv).getCivilizationShortDescriptionKey()),()))
 
 		elif iPlayer == iChina:
 			if iGoal == 0:
@@ -2305,14 +2318,14 @@ class Victory:
 				aHelp.append(self.getIcon(iCounter >= 7) + 'Wonders: ' + str(iCounter) + '/7')
 			elif iGoal == 2:
 				iCounter = 0
-				for iReligion in range(con.iNumReligion):
+				for iReligion in range(con.iNumReligions):
 					iCurrentShrine = con.iShrine + iReligion*4
 					iCounter += self.getNumBuildings(iPersia, iCurrentShrine)
 				aHelp.append(self.getIcon(iCounter >= 2) + 'Shrines: ' + str(iCounter) + '/2')
 
 		elif iPlayer == iCarthage:
 			if iGoal == 0:
-				iNumCities = self.getCoastalAreaCities(iCarthage, tMediterraneanTL, tMediterraneanBR, tMediterraneanExceptions)
+				iNumCities = self.getNumberOfCoastalAreaCities(iCarthage, tMediterraneanTL, tMediterraneanBR, tMediterraneanExceptions)
 				aHelp.append(self.getIcon(iNumCities >= 5) + 'Cities at the Mediterranean Sea: ' + str(iNumCities) + '/5')
 			elif iGoal == 1:
 				iDye = pCarthage.getNumAvailableBonuses(con.iDye)
@@ -2328,7 +2341,7 @@ class Victory:
 				for iCiv in range(iNumPlayers):
 					if lRevealedMap[iCiv] > lRevealedMap[iBestCiv]:
 						iBestCiv = iCiv
-				aHelp.append(self.getIcon(iBestCiv == iCarthage) + 'Largest map: ' + gc.getPlayer(iCarthage).getCivilizationShortDescriptionKey())
+				aHelp.append(self.getIcon(iBestCiv == iCarthage) + 'Largest map: ' + CyTranslator().getText(str(gc.getPlayer(iBestCiv).getCivilizationShortDescriptionKey()),()))
 
 		elif iPlayer == iRome:
 			if not pRome.isReborn():
@@ -2382,7 +2395,7 @@ class Victory:
 			elif iGoal == 1:
 				iFirstRankCiv = self.getHighestRankCiv()
 				bFirstRank = (iFirstRankCiv == iJapan)
-				aHelp.append(self.getIcon(bFirstRank) + 'Civilization with the highest score: ' + gc.getPlayer(iFirstRankCiv).getCivilizationShortDescriptionKey())
+				aHelp.append(self.getIcon(bFirstRank) + 'Civilization with the highest score: ' + CyTranslator().getText(str(gc.getPlayer(iFirstRankCiv).getCivilizationShortDescriptionKey()),()))
 		
                 elif iPlayer == iEthiopia:
 			if iGoal == 1 or iGoal == 2:
@@ -2405,10 +2418,10 @@ class Victory:
 				aHelp.append(self.getIcon(iGold >= 5000) + 'Gold in treasury: ' + str(iGold) + '/5000')
 			elif iGoal == 1:           	
 				pBestPopCity = self.calculateTopCityPopulation(68, 45)
-				bBestPopCity = (pBestCity.getOwner() == iByzantium and pBestCity.getX() == 68 and pBestCity.getY() == 45)
+				bBestPopCity = (pBestPopCity.getOwner() == iByzantium and pBestPopCity.getX() == 68 and pBestPopCity.getY() == 45)
 				pBestCultureCity = self.calculateTopCityCulture(68, 45)
-				bBestCultureCity = (pBestCity.getOwner() == iByzantium and pBestCity.getX() == 68 and pBestCity.getY() == 45)
-				aHelp.append(self.getIcon(bBestPopCity) + 'Most populous city: ' + pBestPopCity.getName() + self.getIcon(bBestCultureCity) + 'Most cultured city: ' + pBestCultureCity.getName())
+				bBestCultureCity = (pBestCultureCity.getOwner() == iByzantium and pBestCultureCity.getX() == 68 and pBestCultureCity.getY() == 45)
+				aHelp.append(self.getIcon(bBestPopCity) + 'Most populous city: ' + pBestPopCity.getName() + ' ' + self.getIcon(bBestCultureCity) + 'Most cultured city: ' + pBestCultureCity.getName())
 			elif iGoal == 2:
 				bBalkans = self.checkOwnedArea(iByzantium, tBalkansTL, tBalkansBR, 3)
 				bNorthAfrica = self.checkOwnedArea(iByzantium, tNorthAfricaTL, tNorthAfricaBR, 3)
@@ -2426,7 +2439,7 @@ class Victory:
 		elif iPlayer == iArabia:
 			if iGoal == 0:
 				iCounter = 0
-				for iReligion in range(con.iNumReligion):
+				for iReligion in range(con.iNumReligions):
 					iCurrentShrine = con.iShrine + iReligion*4
 					iCounter += self.getNumBuildings(iArabia, iCurrentShrine)
 				aHelp.append(self.getIcon(iCounter >= 3) + 'Shrines: ' + str(iCounter) + '/3')
@@ -2445,11 +2458,14 @@ class Victory:
 				iCulture = pKhmer.countTotalCulture()
 				aHelp.append(self.getIcon(iCulture >= utils.getTurns(12000)) + 'Total culture: ' +str(iCulture) + '/' + str(utils.getTurns(12000)))
 			elif iGoal == 1:
-				apCityList = pKhmer.getCityList()
+				apCityList = PyPlayer(iKhmer).getCityList()
                                 iTotalPopulation = 0
                                 for pCity in apCityList:			
                                 	iTotalPopulation += pCity.getPopulation()
-                                fPopPerCity = iTotalPopulation / len(apCityList)
+				if len(apCityList) > 0:
+                                	fPopPerCity = iTotalPopulation / len(apCityList)
+				else:
+					fPopPerCity = 0
 				aHelp.append(self.getIcon(fPopPerCity >= 10.0) + 'Average population per city: ' + str(fPopPerCity) + '/10')
 			elif iGoal == 2:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism)
@@ -2458,7 +2474,7 @@ class Victory:
 		elif iPlayer == iSpain:
 			if iGoal == 1:
 				iLargestEmpireCiv = self.getLargestEmpireCiv(iSpain)
-				aHelp.append(self.getIcon(iLargestEmpireCiv == iSpain) + 'Largest empire: ' + gc.getPlayer(iLargestEmpireCiv).getCivilizationShortDescriptionKey())
+				aHelp.append(self.getIcon(iLargestEmpireCiv == iSpain) + 'Largest empire: ' + CyTranslator().getText(str(gc.getPlayer(iLargestEmpireCiv).getCivilizationShortDescriptionKey()),()))
 			elif iGoal == 2:
 				bAztecs = self.checkOwnedCiv(iSpain, iAztecs)
 				bInca = self.checkOwnedCiv(iSpain, iInca)
@@ -2491,8 +2507,8 @@ class Victory:
                                 bAfrica = self.checkFoundedArea(iEngland, tAfricaTL, tAfricaBR, 3)
                                 bAsia = self.checkFoundedArea(iEngland, tAsiaTL, tAsiaBR, 3)
                                 bOceania = self.checkFoundedArea(iEngland, tOceaniaTL, tOceaniaBR, 3)
-				aHelp.append(self.getIcon(bNCAmerica) + 'North America ' + self.getIcon(bSAmerica) + 'South America ' + self.getIcon(bAfrica) + 'Africa')
-				aHelp.append(self.getIcon(bAsia) + 'Asia ' + self.getIcon(bOceania) + 'Oceania')
+				aHelp.append(self.getIcon(bNCAmerica) + 'North America ' + self.getIcon(bSAmerica) + 'South America')
+				aHelp.append(self.getIcon(bAfrica) + 'Africa ' + self.getIcon(bAsia) + 'Asia ' + self.getIcon(bOceania) + 'Oceania')
 			elif iGoal == 2:
 				bIndustrial = (self.getEnglishEras(0) == 1)
 				bModern = (self.getEnglishEras(1) == 1)
@@ -2531,7 +2547,7 @@ class Victory:
 		elif iPlayer == iMali:
 			if iGoal == 0:
 				iMostGoldCiv = self.getMostGoldCiv(iMali)
-				aHelp.append(self.getIcon(iMostGoldCiv == iMali) + 'Richest civilization: ' + gc.getPlayer(iMostGoldCiv).getCivilizationShortDescriptionKey())
+				aHelp.append(self.getIcon(iMostGoldCiv == iMali) + 'Richest civilization: ' + CyTranslator().getText(str(gc.getPlayer(iMostGoldCiv).getCivilizationShortDescriptionKey()),()))
 			elif iGoal == 1:
 				iGold = pMali.getGold()
 				aHelp.append(self.getIcon(iGold >= 4000) + 'Gold in treasury: ' + str(iGold) + '/4000')
@@ -2551,7 +2567,7 @@ class Victory:
 				for iCiv in range(iNumPlayers):
 					if lRevealedMap[iCiv] > lRevealedMap[iBestCiv]:
 						iBestCiv = iCiv
-				aHelp.append(self.getIcon(iBestCiv == iPortugal) + 'Largest map: ' + gc.getPlayer(iBestCiv).getCivilizationShortDescriptionKey())
+				aHelp.append(self.getIcon(iBestCiv == iPortugal) + 'Largest map: ' + CyTranslator().getText(str(gc.getPlayer(iBestCiv).getCivilizationShortDescriptionKey()),()))
 			elif iGoal == 1:
 				iCount = 0
                                 for iLoopCiv in range(iNumMajorPlayers):
@@ -2630,7 +2646,7 @@ class Victory:
 				bUnitedNations = (self.getNumBuildings(iAmerica, con.iUnitedNations) > 0)
 				bStatueOfLiberty = (self.getNumBuildings(iAmerica, con.iStatueOfLiberty) > 0)
 				bPentagon = (self.getNumBuildings(iAmerica, con.iPentagon) > 0)
-				aHelp.append(self.getIcon(bUnitedNations) + 'United Nations ' + self.getIcon(bStatueOfLiberty) + 'StatueOfLiberty ' + self.getIcon(bPentagon) + 'Pentagon')
+				aHelp.append(self.getIcon(bUnitedNations) + 'United Nations ' + self.getIcon(bStatueOfLiberty) + 'Statue of Liberty ' + self.getIcon(bPentagon) + 'Pentagon')
 			elif iGoal == 2:
 				iCounter = pAmerica.getNumAvailableBonuses(con.iOil) - pAmerica.getBonusImport(con.iOil)
                                 for iCiv in range(iNumPlayers):
