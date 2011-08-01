@@ -13,15 +13,15 @@
 int startingTurn[28] = {0, 0, 0, 0, 50, 84, 66, 90, 97, 121, 145, 163, 177, 183, 187, 193, 196, 203, 205, 207, 281, 220, 234, 236, 240, 241, 249, 346}; //332 for 1733
 
 // edead: replaces the above to allow different game speeds
-int startingTurnYear[28] = {-3000, -3000, -3000, -3000, -1600, -844, -1200, -753, -660, -300, 60, 330, 551, 622, 657, 718, 751, 829, 843, 860, 1500, 989, 1128, 1150, 1190, 1195, 1280, 1775};
+int startingTurnYear[29] = {-3000, -3000, -3000, -3000, -1600, -844, -1200, -753, -660, -300, -50, 60, 330, 551, 622, 657, 718, 751, 829, 843, 860, 1500, 989, 1128, 1150, 1190, 1195, 1280, 1775};
 
-//Alphabetical order:		  	  AME		ARA		AZT		BAB		BYZ		CAR		XXX		CHI		EGY		 ENG	 ETH	 FRA	  GER	  GRE	   XXX	    INC		IND		XXX     JAP		KHM	    XXX	    MAL		MAY	     MON	 XXX     HOL      TUR	  PER	  POR     ROM	 RUS	 SPA	 XXX    VIK		XXX
-char loadingTime[35][4] =     {   "60",   "20",   "35",    "0",     "15",   "5",    "X",     "0",    "0",    "30",    "10",   "25",   "30",   "2",     "X",     "35",    "0",    "35",    "10",   "20",   "X",   "35",    "15",   "35",    "X",    "40",   "35",    "5",   "35",   "5",   "30",  "25",   "X",   "20",  "X"};
-char loadingTime600AD[35][4] = {  "30",   "0",   "15",     "0",     "0",    "0",    "X",     "0",    "0",    "10",    "0",    "5",    "10",   "0",     "X",     "15",    "0",   "15",     "0",    "2",    "X",   "15",    "0",    "15",    "X",    "20",   "15",    "0",    "15",   "0",    "10",  "5",    "X",   "0",   "X"};
-char startingYear[35][6] =      {"1775 ", "620 ", "1200 ", "3000 ", "330 ", "1200 ", "XXX ", "3000 ", "3000 ", "820 ", "295 ", "750 ", "840 ", "1600 ", "XXX ", "1150 ", "3000 ", "1167 ", "655 ", "660 ", "XXX ", "980 ", "65 ", "1190 ", "XXX ", "1500 ", "1280 ", "850 ", "1130 ", "760 ", "860 ", "720 ", "XXX ", "545 ", "XXX "};
+//Alphabetical order:		  	  AME		ARA		AZT		BAB		BYZ		CAR		XXX		CHI		EGY		 ENG	 ETH	 FRA	  GER	  GRE	   XXX	    INC		IND		XXX     JAP		KHM	    KOR	    MAL		MAY	     MON	 XXX     HOL      TUR	  PER	  POR     ROM	 RUS	 SPA	 XXX    VIK		XXX
+char loadingTime[35][4] =     {   "60",   "20",   "35",    "0",     "15",   "5",    "X",     "0",    "0",    "30",    "10",   "25",   "30",   "2",     "X",     "35",    "0",    "35",    "10",   "20",   "15",   "35",    "15",   "35",    "X",    "40",   "35",    "5",   "35",   "5",   "30",  "25",   "X",   "20",  "X"};
+char loadingTime600AD[35][4] = {  "30",   "0",   "15",     "0",     "0",    "0",    "X",     "0",    "0",    "10",    "0",    "5",    "10",   "0",     "X",     "15",    "0",   "15",     "0",    "2",    "0",   "15",    "0",    "15",    "X",    "20",   "15",    "0",    "15",   "0",    "10",  "5",    "X",   "0",   "X"};
+char startingYear[35][6] =      {"1775 ", "620 ", "1200 ", "3000 ", "330 ", "1200 ", "XXX ", "3000 ", "3000 ", "820 ", "295 ", "750 ", "840 ", "1600 ", "XXX ", "1150 ", "3000 ", "1167 ", "655 ", "660 ", "50 ", "980 ", "65 ", "1190 ", "XXX ", "1500 ", "1280 ", "850 ", "1130 ", "760 ", "860 ", "720 ", "XXX ", "545 ", "XXX "};
 bool startingEra[35] =		    {true,   true,   true,   false,   true,   false,  false,   false,   false,   true,  false,   true,   true,   false,   false,   true,   false,  true,  false,  true,  false,  true,   true,  true,   false,    true,   true,   false,   true,  false,  true,  true,  false,   true,  false};   //AD or BC
-char startingYear600AD[35][6] = {"1775 ", "600 ", "1200 ", "3000 ", "600 ", "1200 ", "XXX ", "600 ", "3000 ", "820 ", "295 ", "750 ", "840 ", "1600 ", "XXX ", "1150 ", "3000 ", "1167 ",  "600 ", "660 ", "XXX ", "980 ", "65 ", "1190 ", "XXX ", "1500 ", "1280 ", "850 ", "1130 ", "760 ", "860 ", "720 ", "XXX ", "600 ", "XXX "};
-bool startingEra600AD[35] =		{true,   true,   true,   false,   true,   false,  false,   true,   false,   true,  false,   true,   true,   false,   false,   true,   false,   true,  true,  true,  false,  true,   false,  true,   false,    true,   true,   false,   true,  false,  true,  true,  false,     true,  false};   //AD or BC
+char startingYear600AD[35][6] = {"1775 ", "600 ", "1200 ", "3000 ", "600 ", "1200 ", "XXX ", "600 ", "3000 ", "820 ", "295 ", "750 ", "840 ", "1600 ", "XXX ", "1150 ", "3000 ", "1167 ",  "600 ", "660 ", "600 ", "980 ", "65 ", "1190 ", "XXX ", "1500 ", "1280 ", "850 ", "1130 ", "760 ", "860 ", "720 ", "XXX ", "600 ", "XXX "};
+bool startingEra600AD[35] =		{true,   true,   true,   false,   true,   false,  false,   true,   false,   true,  false,   true,   true,   false,   false,   true,   false,   true,  true,  true,  false,  false,   false,  true,   false,    true,   true,   false,   true,  false,  true,  true,  false,     true,  false};   //AD or BC
 
 char uniquePower[35][2][16]  = {
 	{"TXT_KEY_UP_AME", "TXT_KEY_UP_AME2"},
@@ -48,7 +48,7 @@ char uniquePower[35][2][16]  = {
 	{"TXT_KEY_UP_MAL", "TXT_KEY_UP_MAL2"},
 	{"TXT_KEY_UP_MAY", "TXT_KEY_UP_MAY2"},
 	{"TXT_KEY_UP_MON", "TXT_KEY_UP_MON2"},
-	{"XXX", "XXX"},
+	{"TXT_KEY_UP_KOR", "TXT_KEY_UP_KOR2"},
 	{"TXT_KEY_UP_HOL", "TXT_KEY_UP_HOL2"},
 	{"TXT_KEY_UP_TUR", "TXT_KEY_UP_TUR2"},
 	{"TXT_KEY_UP_PER", "TXT_KEY_UP_PER2"},
@@ -82,7 +82,7 @@ char uniqueGoals[35][3][18]  = {
 	{"TXT_KEY_UHV_ITA1", "TXT_KEY_UHV_ITA2", "TXT_KEY_UHV_ITA3"},
 	{"TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"},
 	{"TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"},
-	{"XXX", "XXX", "XXX"},
+	{"TXT_KEY_UHV_KOR1", "TXT_KEY_UHV_KOR2", "TXT_KEY_UHV_KOR3"},
 	{"TXT_KEY_UHV_MAL1", "TXT_KEY_UHV_MAL2", "TXT_KEY_UHV_MAL3"},
 	{"TXT_KEY_UHV_MAY1", "TXT_KEY_UHV_MAY2", "TXT_KEY_UHV_MAY3"},
 	{"TXT_KEY_UHV_MON1", "TXT_KEY_UHV_MON2", "TXT_KEY_UHV_MON3"},
@@ -142,8 +142,8 @@ char rating[35][6][15]  = {
 	{"TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS", "TXT_KEY_4STARS" },
 //Khmer
 	{"TXT_KEY_3STARS", "TXT_KEY_2STARS", "TXT_KEY_4STARS", "TXT_KEY_3STARS", "TXT_KEY_2STARS"},
-//
-	{"XXX", "XXX", "XXX", "XXX", "XXX"},
+//Korea
+	{"TXT_KEY_3STARS", "TXT_KEY_1STAR", "TXT_KEY_3STARS", "TXT_KEY_5STARS", "TXT_KEY_2STARS"},
 //Mali
 	{"TXT_KEY_5STARS", "TXT_KEY_1STAR", "TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_3STARS" },
 //Maya
@@ -174,10 +174,10 @@ char rating[35][6][15]  = {
 	{"XXX", "XXX", "XXX", "XXX", "XXX"}};
 
 
-int turnPlayed[33] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+int turnPlayed[34] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 
-int civSpreadFactor[33][7]  = { //Panopticon - new spread figures for Protestantism, Leoreth: new spread rate for Zoroastrianism
+int civSpreadFactor[34][7]  = { //Panopticon - new spread figures for Protestantism, Leoreth: new spread rate for Zoroastrianism
 //		PRO	 CAT  ISL  HIN  BUD  ZOR  TAO
 //Egypt
 	{	100, 250, 350,  20,  20,  20,  20 },	//100, 200, 300,  20,  20,  20,  20  before removal of Aggressive trait
@@ -199,6 +199,8 @@ int civSpreadFactor[33][7]  = { //Panopticon - new spread figures for Protestant
 	{	 40,  40,  20,  20, 300,  20, 100 },
 //Ethiopia
 	{	300, 400, 400,  80,  80,  20,  80 }, //was 80, 300, 300,  20,  20,  20,  20 before; increased to help with their UHV
+//Korea
+    {    60,  80,  20,  20, 300,  20, 300 },
 //Maya
 	{	200, 300,  80,  80,  80,  80,  80 },
 //Byzantium
@@ -248,7 +250,7 @@ int civSpreadFactor[33][7]  = { //Panopticon - new spread figures for Protestant
 
 // Leoreth - favorite civics for each civ per era in every column (except expansion), to replace favorite civics of leaders
 // civicMatrix[civ][era][column], where 0-4 are the respective civics, -1 means no preference in that column
-int civicMatrix[28][6][5] = {
+int civicMatrix[29][6][5] = {
 // Egypt
     {   { 1, -1, 1, 1, 1 }, // ancient
         { 1, -1, 1, 1, 1 }, // classical
@@ -319,6 +321,13 @@ int civicMatrix[28][6][5] = {
         { -1, -1, -1, -1, -1 }, // renaissance
         { -1, -1, -1, -1, -1 }, // industrial
         { -1, -1, -1, -1, -1 }}, // modern
+// Korea
+    {   { -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1 }},
 // Maya
     {   { -1, -1,  1, -1,  1 }, // ancient
         { -1, -1,  1, -1,  1 }, // classical
@@ -447,65 +456,67 @@ int civicMatrix[28][6][5] = {
         {  4,  4,  2,  4,  4 }} // modern
 };
 
-int borders[28][28]  = { // 1 = share borders, 3 = close, 4 = quite close, 5 = distant
-//		EGY	IND CHI BAB GRE PER CAR ROM JAP ETH MAY BYZ VIK ARA KHM SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
+int borders[29][29]  = { // 1 = share borders, 3 = close, 4 = quite close, 5 = distant
+//		EGY	IND CHI BAB GRE PER CAR ROM JAP ETH KOR MAY BYZ VIK ARA KHM SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
 //Egypt
-	{	 0,  5,  5,  4,  1,  4,  3,  4,  5,  1,  5,  4,  5,  1,  5,  5,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  4,  5 },
+	{	 0,  5,  5,  4,  1,  4,  3,  4,  5,  1,  5,  5,  4,  5,  1,  5,  5,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  4,  5 },
 //India
-	{	 5,  0,  4,  4,  5,  1,  5,  5,  5,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5 },
+	{	 5,  0,  4,  4,  5,  1,  5,  5,  5,  5,  4,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5 },
 //China
-	{	 5,  4,  0,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5,  3,  5,  5,  5,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5 },
+	{	 5,  4,  0,  5,  5,  5,  5,  5,  1,  5,  1,  5,  5,  5,  5,  3,  5,  5,  5,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5 },
 //Babylonia
-	{	 4,  4,  5,  0,  4,  1,  1,  5,  5,  4,  5,  1,  5,  1,  5,  5,  5,  5,  5,  1,  5,  4,  5,  5,  5,  5,  1,  5 },
+	{	 4,  4,  5,  0,  4,  1,  1,  5,  5,  4,  5,  5,  1,  5,  1,  5,  5,  5,  5,  5,  1,  5,  4,  5,  5,  5,  5,  1,  5 },
 //Greece
-	{	 1,  5,  5,  4,  0,  4,  4,  1,  5,  4,  5,  1,  5,  4,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5,  5,  1,  5 },
+	{	 1,  5,  5,  4,  0,  4,  4,  1,  5,  4,  5,  5,  1,  5,  4,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5,  5,  1,  5 },
 //Persia
-	{	 4,  1,  5,  1,  4,  0,  4,  5,  5,  5,  5,  3,  5,  1,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  4,  5 },
+	{	 4,  1,  5,  1,  4,  0,  4,  5,  5,  5,  5,  5,  3,  5,  1,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  4,  5 },
 //Carthage
-	{	 3,  5,  5,  5,  4,  4,  0,  3,  5,  4,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5 },
+	{	 3,  5,  5,  5,  4,  4,  0,  3,  5,  4,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5 },
 //Rome
-	{	 4,  5,  5,  5,  1,  5,  3,  0,  5,  4,  5,  4,  5,  5,  5,  4,  1,  5,  1,  5,  4,  5,  4,  5,  5,  5,  5,  5 },
+	{	 4,  5,  5,  5,  1,  5,  3,  0,  5,  4,  5,  5,  4,  5,  5,  5,  4,  1,  5,  1,  5,  4,  5,  4,  5,  5,  5,  5,  5 },
 //Japan
-	{	 5,  5,  1,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  5,  5 },
+	{	 5,  5,  1,  5,  5,  5,  5,  5,  0,  5,  1,  5,  5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  5,  5 },
 //Ethiopia
-	{	 1,  5,  5,  4,  4,  5,  4,  4,  5,  0,  5,  5,  5,  1,  5,  5,  5,  5,  5,  5,  5,  3,  5,  5,  5,  5,  4,  5 },
+	{	 1,  5,  5,  4,  4,  5,  4,  4,  5,  0,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5,  5,  5,  3,  5,  5,  5,  5,  4,  5 },
+//Korea
+    {    5,  4,  1,  5,  5,  5,  5,  5,  1,  5,  0,  5,  5,  5,  5,  3,  5,  5,  5,  5,  5,  5,  5,  5,  5,  3,  5,  5,  5 },
 //Maya
-	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  1,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  1,  5,  5 },
 //Byzantium
-    {    4,  5,  5,  1,  1,  3,  5,  4,  5,  5,  5,  0,  5,  3,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5,  5,  1,  5 },
+    {    4,  5,  5,  1,  1,  3,  5,  4,  5,  5,  5,  5,  0,  5,  3,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5,  5,  1,  5 },
 //Viking
-	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  3,  1,  3,  1,  5,  5,  5,  5,  5,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  3,  1,  3,  1,  5,  5,  5,  5,  5,  5,  5 },
 //Arabia
-	{	 1,  4,  5,  1,  4,  1,  5,  5,  5,  1,  5,  3,  5,  0,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5 },
+	{	 1,  4,  5,  1,  4,  1,  5,  5,  5,  1,  5,  5,  3,  5,  0,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5 },
 //Khmer
-	{	 5,  3,  3,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5 },
+	{	 5,  3,  3,  5,  5,  5,  5,  5,  4,  5,  3,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5 },
 //Spain
-	{	 5,  5,  5,  5,  5,  5,  1,  1,  5,  5,  5,  5,  5,  5,  5,  0,  1,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  1,  1,  5,  5,  5,  5,  5,  5,  5,  5,  0,  1,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5 },
 //France
-	{	 5,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5,  5,  5,  1,  0,  1,  1,  5,  1,  5,  4,  5,  5,  5,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5,  5,  5,  5,  1,  0,  1,  1,  5,  1,  5,  4,  5,  5,  5,  5,  5 },
 //England
-	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  3,  5,  5,  5,  1,  0,  4,  5,  1,  5,  5,  5,  5,  5,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  3,  5,  5,  5,  1,  0,  4,  5,  1,  5,  5,  5,  5,  5,  5,  5 },
 //Germany
-	{	 5,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5,  4,  1,  5,  5,  5,  1,  4,  0,  1,  1,  5,  5,  5,  5,  5,  4,  5 },
+	{	 5,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  4,  1,  5,  5,  5,  1,  4,  0,  1,  1,  5,  5,  5,  5,  5,  4,  5 },
 //Russia
-	{	 5,  5,  5,  1,  3,  4,  5,  5,  5,  5,  5,  3,  3,  5,  5,  5,  5,  5,  1,  0,  5,  5,  5,  5,  4,  5,  3,  5 },
+	{	 5,  5,  5,  1,  3,  4,  5,  5,  5,  5,  5,  5,  3,  3,  5,  5,  5,  5,  5,  1,  0,  5,  5,  5,  5,  4,  5,  3,  5 },
 //Holland
-	{	 5,  5,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  1,  5,  5,  5,  1,  1,  1,  5,  0,  5,  5,  5,  5,  5,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  5,  1,  5,  5,  5,  1,  1,  1,  5,  0,  5,  5,  5,  5,  5,  5,  5 },
 //Mali
-	{	 5,  5,  5,  5,  5,  5,  4,  5,  5,  3,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  4,  5,  5,  3,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5,  5 },
 //Portugal
-	{	 5,  5,  5,  5,  5,  5,  3,  4,  5,  5,  5,  5,  5,  5,  5,  1,  4,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  3,  4,  5,  5,  5,  5,  5,  5,  5,  5,  1,  4,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5,  5 },
 //Inca
-	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5 },
+	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  5,  5,  5 },
 //Mongolia
-	{	 5,  4,  1,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  0,  5,  5,  5 },
+	{	 5,  4,  1,  5,  5,  5,  5,  5,  4,  5,  3,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  5,  5,  5,  0,  5,  5,  5 },
 //Aztec
-	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  4 },
+	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  1,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  5,  4 },
 //Turkey
-	{	 4,  5,  5,  1,  1,  4,  5,  5,  5,  4,  5,  1,  5,  4,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5,  5,  0,  5 },
+	{	 4,  5,  5,  1,  1,  4,  5,  5,  5,  4,  5,  5,  1,  5,  4,  5,  5,  5,  5,  4,  3,  5,  5,  5,  5,  5,  5,  0,  5 },
 //America
-	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  0 }};
-//		EGY	IND CHI BAB GRE PER CAR ROM JAP ETH MAY VIK ARA KHM SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
+	{	 5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  4,  5,  0 }};
+//		EGY	IND CHI BAB GRE PER CAR ROM JAP ETH KOR MAY BYZ VIK ARA KHM SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
 
 
 
@@ -513,7 +524,7 @@ int borders[28][28]  = { // 1 = share borders, 3 = close, 4 = quite close, 5 = d
 
 
 // (dynamic civ names - not jdog's)
-wchar civDynamicNames[2][28][22][19]  = {
+wchar civDynamicNames[2][29][22][19]  = {
 //				//people		monarchy		monarchy ext		monarchy mod		monarchy ext mod		republic			communism			fascism				islam monarchy		islam republic			vas. Persia			vas. Rome			vas. Arabia			vas. Spain				vas. France			vas. England		vas. Germany			vas. Russia			vas. Mongolia			vas. Turkey			vas. Chi/Jap/Khm	vassal generic
 //Egypt
 	{{	 L"TXT_KEY_DN_EGY00", L"TXT_KEY_DN_EGY01", L"TXT_KEY_DN_EGY02", L"TXT_KEY_DN_EGY03",  L"TXT_KEY_DN_EGY04",  L"TXT_KEY_DN_EGY05",  L"TXT_KEY_DN_EGY06",  L"TXT_KEY_DN_EGY07",  L"TXT_KEY_DN_EGY08",  L"TXT_KEY_DN_EGY09",  L"TXT_KEY_DN_EGY10",  L"TXT_KEY_DN_EGY11",  L"TXT_KEY_DN_EGY12",  L"TXT_KEY_DN_EGY13",  L"TXT_KEY_DN_EGY14",  L"TXT_KEY_DN_EGY15",  L"TXT_KEY_DN_EGY16",  L"TXT_KEY_DN_EGY17",  L"TXT_KEY_DN_EGY18",  L"TXT_KEY_DN_EGY19",  L"TXT_KEY_DN_EGY20",  L"TXT_KEY_DN_EGY21" },
@@ -535,6 +546,8 @@ wchar civDynamicNames[2][28][22][19]  = {
 	{	 L"TXT_KEY_DN_JAP00", L"TXT_KEY_DN_JAP01", L"TXT_KEY_DN_JAP02", L"TXT_KEY_DN_JAP03",  L"TXT_KEY_DN_JAP04",  L"TXT_KEY_DN_JAP05",  L"TXT_KEY_DN_JAP06",  L"TXT_KEY_DN_JAP07",  L"TXT_KEY_DN_JAP08",  L"TXT_KEY_DN_JAP09",  L"TXT_KEY_DN_JAP10",  L"TXT_KEY_DN_JAP11",  L"TXT_KEY_DN_JAP12",  L"TXT_KEY_DN_JAP13",  L"TXT_KEY_DN_JAP14",  L"TXT_KEY_DN_JAP15",  L"TXT_KEY_DN_JAP16",  L"TXT_KEY_DN_JAP17",  L"TXT_KEY_DN_JAP18",  L"TXT_KEY_DN_JAP19",  L"TXT_KEY_DN_JAP20",  L"TXT_KEY_DN_JAP21" },
 //Ethiopia
 	{	 L"TXT_KEY_DN_ETH00", L"TXT_KEY_DN_ETH01", L"TXT_KEY_DN_ETH02", L"TXT_KEY_DN_ETH03",  L"TXT_KEY_DN_ETH04",  L"TXT_KEY_DN_ETH05",  L"TXT_KEY_DN_ETH06",  L"TXT_KEY_DN_ETH07",  L"TXT_KEY_DN_ETH08",  L"TXT_KEY_DN_ETH09",  L"TXT_KEY_DN_ETH10",  L"TXT_KEY_DN_ETH11",  L"TXT_KEY_DN_ETH12",  L"TXT_KEY_DN_ETH13",  L"TXT_KEY_DN_ETH14",  L"TXT_KEY_DN_ETH15",  L"TXT_KEY_DN_ETH16",  L"TXT_KEY_DN_ETH17",  L"TXT_KEY_DN_ETH18",  L"TXT_KEY_DN_ETH19",  L"TXT_KEY_DN_ETH20",  L"TXT_KEY_DN_ETH21" },
+//Korea
+    {    L"TXT_KEY_DN_KOR00", L"TXT_KEY_DN_KOR01", L"TXT_KEY_DN_KOR02", L"TXT_KEY_DN_KOR03",  L"TXT_KEY_DN_KOR04",  L"TXT_KEY_DN_KOR05",  L"TXT_KEY_DN_KOR06",  L"TXT_KEY_DN_KOR07",  L"TXT_KEY_DN_KOR08",  L"TXT_KEY_DN_KOR09",  L"TXT_KEY_DN_KOR10",  L"TXT_KEY_DN_KOR11",  L"TXT_KEY_DN_KOR12",  L"TXT_KEY_DN_KOR13",  L"TXT_KEY_DN_KOR14",  L"TXT_KEY_DN_KOR15",  L"TXT_KEY_DN_KOR16",  L"TXT_KEY_DN_KOR17",  L"TXT_KEY_DN_KOR18",  L"TXT_KEY_DN_KOR19",  L"TXT_KEY_DN_KOR20",  L"TXT_KEY_DN_KOR21" },
 //Maya
 	{	 L"TXT_KEY_DN_MAY00", L"TXT_KEY_DN_MAY01", L"TXT_KEY_DN_MAY02", L"TXT_KEY_DN_MAY03",  L"TXT_KEY_DN_MAY04",  L"TXT_KEY_DN_MAY05",  L"TXT_KEY_DN_MAY06",  L"TXT_KEY_DN_MAY07",  L"TXT_KEY_DN_MAY08",  L"TXT_KEY_DN_MAY09",  L"TXT_KEY_DN_MAY10",  L"TXT_KEY_DN_MAY11",  L"TXT_KEY_DN_MAY12",  L"TXT_KEY_DN_MAY13",  L"TXT_KEY_DN_MAY14",  L"TXT_KEY_DN_MAY15",  L"TXT_KEY_DN_MAY16",  L"TXT_KEY_DN_MAY17",  L"TXT_KEY_DN_MAY18",  L"TXT_KEY_DN_MAY19",  L"TXT_KEY_DN_MAY20",  L"TXT_KEY_DN_MAY21" },
 //Byzantium
@@ -591,6 +604,8 @@ wchar civDynamicNames[2][28][22][19]  = {
 	{	 L"TXT_KEY_DN_JAP00", L"TXT_KEY_DN_JAP01", L"TXT_KEY_DN_JAP02", L"TXT_KEY_DN_JAP03",  L"TXT_KEY_DN_JAP04",  L"TXT_KEY_DN_JAP05",  L"TXT_KEY_DN_JAP06",  L"TXT_KEY_DN_JAP07",  L"TXT_KEY_DN_JAP08",  L"TXT_KEY_DN_JAP09",  L"TXT_KEY_DN_JAP10",  L"TXT_KEY_DN_JAP11",  L"TXT_KEY_DN_JAP12",  L"TXT_KEY_DN_JAP13",  L"TXT_KEY_DN_JAP14",  L"TXT_KEY_DN_JAP15",  L"TXT_KEY_DN_JAP16",  L"TXT_KEY_DN_JAP17",  L"TXT_KEY_DN_JAP18",  L"TXT_KEY_DN_JAP19",  L"TXT_KEY_DN_JAP20",  L"TXT_KEY_DN_JAP21" },
 //Ethiopia
 	{	 L"TXT_KEY_DN_ETH00", L"TXT_KEY_DN_ETH01", L"TXT_KEY_DN_ETH02", L"TXT_KEY_DN_ETH03",  L"TXT_KEY_DN_ETH04",  L"TXT_KEY_DN_ETH05",  L"TXT_KEY_DN_ETH06",  L"TXT_KEY_DN_ETH07",  L"TXT_KEY_DN_ETH08",  L"TXT_KEY_DN_ETH09",  L"TXT_KEY_DN_ETH10",  L"TXT_KEY_DN_ETH11",  L"TXT_KEY_DN_ETH12",  L"TXT_KEY_DN_ETH13",  L"TXT_KEY_DN_ETH14",  L"TXT_KEY_DN_ETH15",  L"TXT_KEY_DN_ETH16",  L"TXT_KEY_DN_ETH17",  L"TXT_KEY_DN_ETH18",  L"TXT_KEY_DN_ETH19",  L"TXT_KEY_DN_ETH20",  L"TXT_KEY_DN_ETH21" },
+//Korea
+    {    L"TXT_KEY_DN_KOR00", L"TXT_KEY_DN_KOR01", L"TXT_KEY_DN_KOR02", L"TXT_KEY_DN_KOR03",  L"TXT_KEY_DN_KOR04",  L"TXT_KEY_DN_KOR05",  L"TXT_KEY_DN_KOR06",  L"TXT_KEY_DN_KOR07",  L"TXT_KEY_DN_KOR08",  L"TXT_KEY_DN_KOR09",  L"TXT_KEY_DN_KOR10",  L"TXT_KEY_DN_KOR11",  L"TXT_KEY_DN_KOR12",  L"TXT_KEY_DN_KOR13",  L"TXT_KEY_DN_KOR14",  L"TXT_KEY_DN_KOR15",  L"TXT_KEY_DN_KOR16",  L"TXT_KEY_DN_KOR17",  L"TXT_KEY_DN_KOR18",  L"TXT_KEY_DN_KOR19",  L"TXT_KEY_DN_KOR20",  L"TXT_KEY_DN_KOR21" },
 //Maya
 	{	 L"TXT_KEY_DN_MAY00", L"TXT_KEY_DN_MAY01", L"TXT_KEY_DN_MAY02", L"TXT_KEY_DN_MAY03",  L"TXT_KEY_DN_MAY04",  L"TXT_KEY_DN_MAY05",  L"TXT_KEY_DN_MAY06",  L"TXT_KEY_DN_MAY07",  L"TXT_KEY_DN_MAY08",  L"TXT_KEY_DN_MAY09",  L"TXT_KEY_DN_MAY10",  L"TXT_KEY_DN_MAY11",  L"TXT_KEY_DN_MAY12",  L"TXT_KEY_DN_MAY13",  L"TXT_KEY_DN_MAY14",  L"TXT_KEY_DN_MAY15",  L"TXT_KEY_DN_MAY16",  L"TXT_KEY_DN_MAY17",  L"TXT_KEY_DN_MAY18",  L"TXT_KEY_DN_MAY19",  L"TXT_KEY_DN_MAY20",  L"TXT_KEY_DN_MAY21" },
 //Byzantium
@@ -629,280 +644,15 @@ wchar civDynamicNames[2][28][22][19]  = {
 	{	 L"TXT_KEY_DN_AME00", L"TXT_KEY_DN_AME01", L"TXT_KEY_DN_AME02", L"TXT_KEY_DN_AME03",  L"TXT_KEY_DN_AME04",  L"TXT_KEY_DN_AME05",  L"TXT_KEY_DN_AME06",  L"TXT_KEY_DN_AME07",  L"TXT_KEY_DN_AME08",  L"TXT_KEY_DN_AME09",  L"TXT_KEY_DN_AME10",  L"TXT_KEY_DN_AME11",  L"TXT_KEY_DN_AME12",  L"TXT_KEY_DN_AME13",  L"TXT_KEY_DN_AME14",  L"TXT_KEY_DN_AME15",  L"TXT_KEY_DN_AME16",  L"TXT_KEY_DN_AME17",  L"TXT_KEY_DN_AME18",  L"TXT_KEY_DN_AME19",  L"TXT_KEY_DN_AME20",  L"TXT_KEY_DN_AME21" }}};
 
 
-int civDynamicNamesFlag[28] = 	{	 1,  1,  0,  1,  0,  1,  1,  0,  0,  1,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  1,  0,  0,  0,  0,  1,  0 };
-//									EGY	IND CHI BAB GRE PER CAR ROM JAP ETH MAY BYZ VIK ARA KHM SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
+int civDynamicNamesFlag[29] = 	{	 1,  1,  0,  1,  0,  1,  1,  0,  0,  1,  0,  0,  0,  0,  1,  0,  0,  0,  0,  0,  0,  0,  1,  0,  0,  0,  0,  1,  0 };
+//									EGY	IND CHI BAB GRE PER CAR ROM JAP ETH KOR MAY BYZ VIK ARA KHM SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
 // 1 = REL, 0 = GOV
 
-int civDynamicNamesEraThreshold[28] = { 2,  3,  4,  2,  2,  3,  2,  3,  4,  3,  3,  2,  3,  4,  4,  4,  4,  4,  4,  4,  4,  3,  4,  3,  3,  3,  3,  4};
-
-CvWString GPnames[38][6][12] = {
-// America
-{{"William Penn", "Roger Williams", "Jonathan Edwards", "Joseph Smith", "Sojourner Truth"}, //Prophet
-{"Edgar Allan Poe", "Herman Melville", "Mark Twain", "Ernest Hemingway", "Charlie Chaplin", "Elvis Presley", "Miles Davis", "Jimi Hendrix"}, //Artist
-{"Arthur Compton", "Edwin Hubble", "John von Neumann", "Glenn Seaborg", "Robert Oppenheimer", "Richard Feynman"}, // Scientist
-{"Benjamin Franklin", "Thomas Edison", "Nichola Tesla", "Henry Ford", "Orville Wright", "Charles Goodyear"}, // Engineer
-{"Cornelius Vanderbilt", "John D. Rockefeller", "Andrew Carnegie", "William Edward Boeing", "Bill Gates"}, // Merchant
-{"Andrew Jackson", "Ulysses C. Grant", "Robert E. Lee", "Dwight D. Eisenhower", "George Patton", "Douglas MacArthur"}}, // General
-// Arabia
-{{"Ali ibn Abi Talib", "Al-Farabi", "Hasan", "Ismail", "Al-Baqilani", "Abd-al-Wahhab", "Umar ibn al-Khattab", "Uthman"},
-{"Ibn Muqlah", "Al-Mutanabbi", "Ibn Quzman", "Ibn al-Nadim", "Ibn Furtu", "Yaqut al-Hamawi"},
-{"Alhazen", "Al-Kindi", "Uthman al-Sabuni", "Ibrahim ibn Sinan", "Al-Zarqali", "Ibn Al-Jazzar", "Al-Qabizi"},
-{"Ali Abbas", "Al-Jazari", "Jabir ibn Hayyan", "Abbas ibn Firnas", "Ibn Wahshiyah"},
-{"Ibn Battuta", "Ahmad ibn Majid", "Ibn Jubayr", "Ibn Hawqal", "Al-Idrisi"},
-{"Mu'awiya", "Ziyad Ibn Abihi", "Ahmah al-Mansur", "Yusuf ibn Tashfin", "Khalid ibn Al-Walid", "Amr ibn al-As"}},
-// Aztecs
-{{"Tlacateotl", "Tenoch", "Papantzin", "Yacotzin", "Ixtlilxochitl"},
-{"Cipactli", "Oxomoco", "Huitzilopochtli", "Techotlalatzin", "Ihuitemotzin"},
-{"Chichatoyotl", "Textalatzin", "Axayacatl", "Ixtlilxochitl", "Coanacochtzin"},
-{"Xolotl", "Itzcatl", "Mixcoatl", "Tlacaelel", "Moquihuix"},
-{"Cuauhtemoc", "Tlacotzin", "Chak-Mol", "Atlante", "Techichpotzin"},
-{"Ahuitzotl", "Itzcoatl", "Huitzilhuitl", "Chimalpopoca", "Maxtla", "Tezozomoc"}},
-// Babylonia
-{{"Utnapishtim", "Ibrahim", "Younis"},
-{"Gudea", "Samsu-ditana"},
-{"Sin-leqi-unninni", "Tapputi-Belatekallim", "Sudines", "Kidenas"},
-{"Ur-Nammu", "Nabupolassar", "Naram-sin", "Gudea"},
-{"Burna-Briash", "Kadashman-Enlil"},
-{"Sennacherib", "Tiglath-pileser", "Nebukadnezar", "Shalmaneser"}},
-// Byzantium
-{{"Photios", "Michael Kerularios", "Ioannis Xiphilinos", "Nikolaos Mystikos", "Damaskios", "Gregorios o Nazianzos"},
-{"Theophylaktos Simokates", "Theophanes Strelitzas", "Georgios Plethon", "Manuel Chrysoloras", "Ioannis Kukuzelis"},
-{"Stephanos Alexandrinos", "Georgios Hermonymos", "Anna Comnena", "Demetrios Triklinios", "Nikephoros Blemmydes", "Nicholas Myrepsos"},
-{"Anthemios o Tralleis", "Isidor o Milet", "Eutokios o Askalon", "Kallinikos o Heliopolis", "Leontios"},
-{"Hierokles", "Loukas Notaras", "Theophoros", "Zemarchos"},
-{"Belisarios", "Herakleios", "Maurikios", "Basileios Bulgaroktonos", "Alexios Komnenos", "Michael Palaiologos"}},
-// Carthage
-{{"Acherbas", "Tertullian", "Cyprian", "Donatus"},
-{"Kartobal", "Orthobal", "Sophonisba", "Oxyntas", "Micipsa"},
-{"Bomilcar", "Tanit", "Eshmuniaton", "Mago", "Hiram"},
-{"Gauda", "Zelalsen", "Gala", "Malchus"},
-{"Hanno", "Adherbal", "Himilco", "Bocchus"},
-{"Hamilcar Barca", "Hasdrubal Barca", "Maharbal", "Mago Barca", "Cathalo", "Himilco"}},
-//
-{{},
-{},
-{},
-{},
-{},
-{}},
-// China
-{{"Meng Zi", "Han Fei", "Kong Fuzi", "Zhuang Zi", "Lao Tzu"},
-{"Li Bo", "Du Fu", "Wang Xizhi", "Ling Lun", "Su Shi"},
-{"Zu Chongzhi", "Liu Hui", "Li Fan", "Zhu Shijie", "Yuan Lee", "Chen Ning Yang"},
-{"Cai Lun", "Qian Saqiang", "Zhang Heng", "Bi Sheng", "Li Siguang", "Xiaoyun Wang"},
-{"Zhang Qian", "Wang Anshi", "Zheng He", "Lo Hong-Shui", "Zhou Zhengyi"},
-{"Sun Tzu", "Cao Cao", "Zhuge Liang", "Guo Ziyi", "Shi Lang", "Zhang Zuolin", "Chiang Kai-shek"}},
-// Egypt
-{{"Moses", "Akhenaten", "Ptahhotep", "Mehryra", "Petiese"},
-{"Khaemweset", "Yuny", "Ineni", "Amenemhat", "Khafre", "Amenhotep", "Nefertari"},
-{"Merit Ptah", "Ptolemaios", "Hypatia", "Conon", "Diophantos", "Manetho"},
-{"Imhotep", "Khaemwase", "Zoser", "Snefru", "Senemut", "Kha"},
-{"Harkuf", "Piye", "Alara", "Maya", "Ahmose"},
-{"Menes", "Khufu", "Mentuhotep", "Seti", "Narmer", "Thotmosis"}},
-// England
-{{"Venerable Bede", "Anselm of Canterbury", "Thomas Becket", "Thomas More", "John Newton", "William Booth"},
-{"William Shakespeare", "John Milton", "Charles Dickens", "Arthur Conan Doyle", "JRR Tolkien", "John Lennon", "Elton John"},
-{"Isaac Newton", "Francis Bacon", "John Dalton", "James Clerk Maxwell", "Charles Darwin", "Ernest Rutherford", "Stephen Hawking"},
-{"Henry Bessemer", "James Watt", "Charles Babbage", "Alan Turing", "James Dyson"},
-{"Francis Drake", "James Cook", "Adam Smith", "John Maynard Keynes"},
-{"William the Conqueror", "Edward Longshanks", "Richard the Lionhearted", "Oliver Cromwell", "Horatio Nelson", "Arthur Wellesley of Wellington", "Louis Mountbatten", "Bernard Law Montgomery"}},
-// Ethiopia
-{{},
-{},
-{},
-{},
-{},
-{}},
-// France
-{{"Pierre Abelard", "Louis Capet", "Jean Calvin", "Hubert Languet", "Marcel L&#233;gaut"},
-{"Victor Hugo", "Claude Monet", "Fran&#231;ois Truffaut", "Henri Matisse", "Claude Debussy", "Alexandre Dumas"},
-{"Louis Pasteur", "Rene Descartes", "Antoine Lavoisier", "Pierre-Simon Laplace", "Pierre de Fermat", "Antoine Henri Becquerel", "Marie Curie"},
-{"Blaise Pascal", "Charles Augustin de Coulomb", "Alexandre Gustave Eiffel", "Claude Perrault", "Joseph-Michel Montgolfier"},
-{"Jacques Cartier", "Coco Chanel", "Samuel de Champlain", "Marcel Dassault", "Liliane Bettencourt"},
-{"Charles Martel", "Louis-Joseph de Montcalm", "Gilbert de Lafayette", "Louis-Rene de Latouche Treville", "Louis-Nicolas Davout"}},
-// Germany
-{{"Hildegard von Bingen", "Albertus Magnus", "Martin Luther", "Philip Melanchthon", "Jan Hus", "Albert Schweitzer", "Dietrich Bonhoeffer"},
-{"Albrecht D&#252;rer", "Johann Sebastian Bach", "Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Wolfgang von Goethe", "Friedrich Schiller", "Franz Kafka"},
-{"Nikolaus Kopernikus", "Johannes Kepler", "Carl Friedrich Gauss", "Gottfried Leibniz", "Albert Einstein", "Werner Heisenberg", "Erwin Schr&#246;dinger", "Max Planck"},
-{"Wilhelm Schickard", "Johannes Gutenberg", "Nikolaus August Otto", "Gottlieb Daimler", "Fritz Haber", "Wernher von Braun", "Otto Hahn"},
-{"Gerhard Mercator", "Jakob Fugger", "August Horch", "Ferdinand Porsche", "Carl Benz"},
-{"Arminius", "Friedrich Barbarossa", "Albrecht von Wallenstein", "Gebhard Leberecht von Bl&#252;cher", "Carl von Clausewitz", "Paul von Hindenburg", "Erwin Rommel", "Heinz Guderian"}},
-// Greece
-{{"Herakleitos", "Parmenides", "Epikuros", "Philolaos", "Anacharsis"},
-{"Homeros", "Thukydides", "Sophokles", "Euripides", "Herodotos", "Aeschylos"},
-{"Sokrates", "Platon", "Aristoteles", "Eukleides", "Pythagoras", "Erastothenes", "Demokritos", "Anaxagoras", "Galenos", "Hippokrates"},
-{"Archimedes", "Heron", "Thales", "Zenon", "Empedokles", "Satyros"},
-{"Pytheas", "Kroisos", "Androsthenes", "Megasthenes"},
-{"Leonidas", "Lysandros", "Pyrrhos", "Hektor", "Philippos", "Themistokles"}},
-//
-{{},
-{},
-{},
-{},
-{},
-{}},
-// Inca
-{{"Guyasuta", "Yahuar Huacac"},
-{"Ah Cacao", "Viracocha", "Ninan Cuyochi", "Ocllo"},
-{"Sinchi Roca", "Manco Capac", "Maita Capac", "Titu Cusi", "Huascar", "Inca Roca"},
-{"Sipan-Itchi", "Mana-Paoa", "Kenu Curaua", "Sayri Tupa Inca", "Capac Yupanqui"},
-{"Tupa Inca-Yupanqui", "Felipillo", "Quetzal-Macau"},
-{"Pachacuti", "Manco Inca", "Tupa Amaru", "Atahualpa", "Chalicuchima", "Quisquis"}},
-// India
-{{"Mahavira", "Shankara", "Siddharta Gautama", "Tipu Sultan", "Ananda", "Atisha"},
-{"Valmiki", "Kalidas", "Raja Rao", "Rabindranath Tagore", "Basawan"},
-{"Aryabhata", "Brahmagupta", "Bhaskara", "Nilakantha Somayaji", "Madhava", "Kamalakara"},
-{"Baudhayana", "Chandrasekhara Venkata Raman", "Jagadish Bose", "Lagadha"},
-{"Raja Todar Mal", "Shah Jahan", "Jamshetji Tata", "Ardeshir Godrej"},
-{"Chandragupta Maurya", "Samudragupta Maurya", "Rajaraja Chola", "Shivaji Bhosle"}},
-// Italy
-{{"Francesco d'Assisi", "Alfonso de Borgia", "Giulio de' Medici", "Camillo Borghese"},
-{"Michelangelo", "Dante Alighieri", "Sandro Botticelli", "Nicolo Macchiavelli", "Donatello", "Raphael", "Gabriele Trovato"},
-{"Francesco Petrarca", "Pico della Mirandola", "Galileo Galilei", "Luigi Galvani", "Guglielmo Marconi", "Enrico Fermi"},
-{"Leonardo da Vinci", "Taccola", "Filippo Brunelleschi", "Donato Bramante", "Alessandro Volta"},
-{"Simone de' Bardi", "Donato Peruzzi", "Giovanni de'Medici", "Ciriaco de Ancona", "Marco Polo"},
-{"Lorenzo de' Medici", "Enrico Dandolo", "Francesco Sforza", "Giuseppe Garibaldi"}},
-// Japan
-{{"Kobo-Daishi", "Nikko Shonin", "Takuan Soho", "Shinran", "Eisai Zenji", "Uchimura Kanzo"},
-{"Saigyo Hoshi", "Kano Eitoku", "Toshusai Sharaku", "Katsushika Hokusai", "Utagawa Hiroshige"},
-{"Aida Yasuaki", "Kiyoshi Ito", "Hideki Yukawa", "Kenkichi Iwasawa", "Masatoshi Koshiba"},
-{"Kyota Sugimoto", "Hidetsugu Yagi", "Kotaro Honda", "Ken Sakamura", "Shigeru Miyamoto"},
-{"Masahisa Fujita", "Torakusu Yamaha", "Kiichiro Toyoda", "Yoshitaka Fukuda", "Soichiro Honda"},
-{"Fujiwara no Kamatari", "Ashikaga Takauji", "Minamoto no Yoritomo", "Toyotomi Hideyoshi", "Togo Heihachiro", "Tomoyuki Yamashita", "Isoroku Yamamoto"}},
-// Khmer
-{{},
-{},
-{},
-{},
-{},
-{}},
-//
-{{},
-{},
-{},
-{},
-{},
-{}},
-// Mali
-{{"Ali Coulibaly", "Wali Keita", "Seku Amadu", "Sidi Yahya"},
-{"Nare Maghann Konate", "Gao", "Lobi Traore", "Abd Arahman ibn Faqi Mahmud", "Ibrahima Aya"},
-{"Mahmud", "Ahmed Baba", "Ag Mohammed", "Abu al Baraaka", "Gaoussou Diawara"},
-{"Al-Qadi Aqib ibn Umar", "Abu Es Haq es Saheli", "Mohammed Bagayogo", "Sakura", "Mohamed Naddah"},
-{"Abubakari", "Abu Bakr ibn Ahmad Biru", "Wali Keita", "Moctar Ouane", "Tunka Manin"},
-{"Askia Muhammad", "Askia Daud", "Sunni Ali", "Sundiata", "Ngolo Diarra"}},
-// Maya
-{{},
-{},
-{},
-{},
-{},
-{}},
-// Mongolia
-{{"Chabi", "Zanabazar", "Abaqa", "Arghun", "Sartaq"},
-{"Siqin Gaowa", "Oghul Ghaymish", "Tolui", "Uzbeg Khan"},
-{"Minzu Wenyibao", "Nurhaci", "Dayan Khan", "Kaidu", "Mandukhai Khatun"},
-{"Li Siguang", "Ulan Bator", "Zhang Wenqian", "Toqta", "Duwa"},
-{"Altan Khan", "Hulagu", "Gaykhatu", "G&#252;y&#252;k", "Mengu-Timur"},
-{"Ogadei", "Chagatai", "Toghril", "M&#246;ngke", "Timur Lenk"}},
-//
-{{},
-{},
-{},
-{},
-{},
-{}},
-// Netherlands
-{{"Abraham Kuyper", "Erasmus van Rotterdam"},
-{"Rembrandt van Rijn", "Vincent van Gogh", "Johannes Vermeer", "Hendrick de Keyser", "Pieter Corneliszoon Hooft"},
-{"Christiaan Huygens", "Simon Stevin", "Govert Bidloo"},
-{"Jan Leeghwater", "Cornelis Corneliszoon", "Anton van Leeuwenhoek"},
-{"Pieter Stuyvesant", "Abel Tasman", "Willem Barentz", "Cornelis de Houtman", "Jan van Riebeeck", "Jan Coen", "Antony van Diemen"},
-{"Maurits van Nassau", "Frederik Hendrik", "Cornelis Tromp", "Michiel de Ruyter"}},
-// Turkey
-{{"Rumi", "Sokollu Mehmet Pasha", "Mustafa Cagrici", "Yaakov Culi", "Sabbatai Zevi"},
-{"Yunus Emre", "Hayali", "Gul Baba", "Mehmet Akif Ersoy", "Atik Sinan"},
-{"Thabit Ibn Qurra", "Cahit Arf", "Qazi Zadeh", "Oktay Sinanoglu", "Feza G&#252;rsey"},
-{"Evliya Celebi", "Abdulmecid", "Hormuzd Rassam", "Nejat Eczacibasi", "Aydin Dogan"},
-{"Sinan", "Nitam-al-Mulk", "Al-Ghazali", "Ratip Berker", "Ekmel Ozbay"},
-{"Orhan", "Selim", "Bayezid", "Turgut Reis", "Ismail Enver", "Ibrahim Pasha"}},
-// Persia
-{{"Zoroaster", "Mani", "Mazdak", "Zahed Gilani", "Jalal al-Din al-Rumi", "Mulla Sadra"},
-{"Safi Al-Din", "Abu-Muhammad Shirazi", "Firdausi", "Reza Abbasi", "Kamal ud-Din Behzad"},
-{"Ardashir", "Al-Khwarizmi", "Al-Razi", "Ibn Sina", "Azophi", "Zakariya Masawaiyh"},
-{"Artaxerxes", "Bahram", "Al-Khujandi", "Ibn al-Haitham"},
-{"Kavadh", "Ahmad ibn Rustah", "Istakhri", "Ahmad-e Roste Esfahani"},
-{"Achaemenes", "Xerxes", "Shapur", "Abbas", "Mithridates"}},
-// Portugal
-{{"Fernando de Bulh&#245;es", "Isabel de Aragao", "Joao de Deus"},
-{"Fern&#227;o Lopes", "Ruy de Pina", "Garcia de Resende", "Lu&#237;s de Cam&#245;es", "Ant&#243;nio Ferreira"},
-{"Pedro Nunes", "Garcia de Orta"},
-{"Diogo Boitac", "Mateus Fernandes", "Diogo de Arruda"},
-{"Vasco da Gama", "Pedro &#193;lvares Cabral", "Henrique o Navegador"},
-{"Nuno &#193;lvares Pereira"}},
-// Rome
-{{"Tarpeia", "Aquilia Severa", "Augustinus", "Thomas Aquinas", "Eusebius"},
-{"Livius", "Vergil", "Ovid", "Plutarch", "Seneca", "Juvenal"},
-{"Strabo", "Cato", "Cicero", "Plinius", "Sosigenes"},
-{"Agrippa", "Apollodorus", "Hitarius", "Vitruvius"},
-{"Jucundus", "Sittius", "Atticus", "Marcus L. Crassus"},
-{"Scipio Africanus", "Gaius Marius", "Pompeius", "Vespasian", "Trajan", "Hadrian"}},
-// Russia
-{{"Paisiy Yaroslavov", "Feofan Prokopovich", "Nikolai Berdyaev", "Georges Florovsky", "Alexei Losev"},
-{"Leo Tolstoi", "Anton Chekov", "Fyodor Dostoyevsky", "Pyotr Ilyich Tchaikovsky", "Modest Mussorgsky"},
-{"Mikhail Lomonosov", "Nikolai Lobachevsky", "Dmitri Mendeleyev", "Mikhail Ostrogradsky", "Pavel Cherenkov"},
-{"Ivan Starov", "Sergei Korolev", "Leon Theremin", "Vladimir Zworykin", "Andrey Tupolev", "Igor Sikorsky"},
-{"Ivan Kruzenshtern", "Vitus Bering", "Afanasiy Nikitin"},
-{"Alexander Nevsky", "Mikhail Romanov", "Alexander Suvorov", "Pavel Nakhimov", "Mikhail Skobelev", "Georgy Zhukov", "Vasily Chuikov"}},
-// Spain
-{{"Ignatius Loyola", "Junipero Serra", "Bartolome de Las Casas", "Juan de Sepulveda", "Francisco Suarez"},
-{"Miguel de Cervantes", "Diego de Silva Velazquez", "Garcilaso de la Vega", "Pablo Picasso", "Salvador Dal&#237;"},
-{"Juan de Ortega", "Gherard de Cremona", "Joao Baptista Lavanha", "Santiago Ram&#243;n y Cajal", "Antonio de Ulloa"},
-{"Juan de Herrera", "Juan de la Cierva", "Esteban Terradas i Illa", "Alberto Palacio", "Agust&#237;n de Betancourt"},
-{"Cristoforo Colombo", "Ferdinand Magellan", "Hernando de Soto", "Vasco da Gama", "Salvador Fidaldo"},
-{"El Cid Campeador", "Francisco Coronado", "Hernando Cortes", "Francisco Pizarro", "Ambrosio Spinola Doria", "Alvaro de Bazan"}},
-//
-{{},
-{},
-{},
-{},
-{},
-{}},
-// Vikings
-{{"Harold Bluetooth", "Sweyn Forkbeard", "Aethelstan", "Gisbertus Voetius", "Jacobus Arminius"},
-{"Johan Nordahl Brun", "Olav Duun", "Hans Christian Andersen", "Johan Ludvig Runeberg"},
-{"Anders Angstrom", "Tycho Brahe", "Johannes Rydberg", "Ole R&#248;mer", "Anders Celsius", "Niels Bohr"},
-{"Ivar Giaver", "Sophus Lie", "Niels Abel", "Alfred Nobel", "Linus Torvalds"},
-{"Leif Eriksson", "Haakon Sigurdsson", "Ingvar Kamprad", "Roald Amundsen"},
-{"Eric Bloodaxe", "Harald Hardraada", "Canute II", "Gustav Vasa"}},
-//
-{{},
-{},
-{},
-{},
-{},
-{}}};
-
-list<CvWString> GPNameList[38][6];
-
-void fillGPNamesList()
-{
-    for (int iI = 0; iI < 38; iI++)
-    {
-        for (int iJ = 0; iJ < 6; iJ++)
-        {
-            int size = sizeof(GPnames[iI][iJ])/sizeof(string);
-            for (int iL = 0; iL < size; iL++)
-            {
-                GPNameList[iI][iJ].push_back(GPnames[iI][iJ][iL]);
-            }
-        }
-    }
-}
-
+int civDynamicNamesEraThreshold[29] = { 2,  3,  4,  2,  2,  3,  2,  3,  4,  3,  3,  3,  2,  3,  4,  4,  4,  4,  4,  4,  4,  4,  3,  4,  3,  3,  3,  3,  4};
 
 //Leoreth - added a born/reborn dimension
 // settlersMaps[reborn?][player][y-axis][x-axis]
-int settlersMaps[2][28][68][124] = {
+int settlersMaps[2][29][68][124] = {
 //Egypt
 {{{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
@@ -1591,6 +1341,76 @@ int settlersMaps[2][28][68][124] = {
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	3,	20,	20,	20,	3,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	}},
+
+//Korea
+{{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	300,	3,	3,	3,	3,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	20,	20,	300,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	300,	20,	20,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	400,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	200,	200,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	500,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	200,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	}},
@@ -3530,6 +3350,76 @@ int settlersMaps[2][28][68][124] = {
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	3,	20,	20,	20,	3,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	}},
+
+//Korea
+{{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	300,	3,	3,	3,	3,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	20,	20,	300,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	300,	20,	20,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	3,	20,	20,	400,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	200,	200,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	500,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	200,	200,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
+{	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	},
 {	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	20,	}},

@@ -7513,6 +7513,10 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 100;
 		iRate /= 100;
 		break;
+    case KOREA:
+        iRate *= 100;
+        iRate /= 100;
+        break;
 	case MAYA:
 		iRate *= 120;
 		iRate /= 100;

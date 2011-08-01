@@ -80,6 +80,8 @@ BeginTeam
 EndTeam
 BeginTeam                 
 EndTeam
+BeginTeam
+EndTeam
 BeginPlayer
 	LeaderType=LEADER_RAMESSES
 	CivType=CIVILIZATION_EGYPT                 
@@ -168,9 +170,19 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
+	LeaderType=LEADER_WANGKON
+	CivType=CIVILIZATION_KOREA
+	Team=10
+	PlayableCiv=1                   
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE               
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	StateReligion=RELIGION_BUDDHISM
+	Handicap=HANDICAP_PRINCE
+EndPlayer
+BeginPlayer
 	LeaderType=LEADER_PACAL
 	CivType=CIVILIZATION_MAYA                 
-	Team=10                 
+	Team=11                 
 	PlayableCiv=1                                 
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM         
 	Handicap=HANDICAP_PRINCE                 
@@ -178,7 +190,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM                 
-	Team=11                 
+	Team=12                 
 	PlayableCiv=1                 
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY                
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
@@ -191,7 +203,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_RAGNAR
 	CivType=CIVILIZATION_VIKING                 
-	Team=12                 
+	Team=13                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE                  
@@ -201,7 +213,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SALADIN
 	CivType=CIVILIZATION_ARABIA                 
-	Team=13                 
+	Team=14                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -214,7 +226,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SURYAVARMAN
 	CivType=CIVILIZATION_KHMER                 
-	Team=14                 
+	Team=15                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
@@ -224,7 +236,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_ISABELLA
 	CivType=CIVILIZATION_SPAIN                 
-	Team=15                 
+	Team=16                 
 	PlayableCiv=1                   
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -237,7 +249,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_LOUIS_XIV
 	CivType=CIVILIZATION_FRANCE                 
-	Team=16                 
+	Team=17                 
 	PlayableCiv=1                   
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -250,7 +262,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_VICTORIA
 	CivType=CIVILIZATION_ENGLAND                 
-	Team=17                 
+	Team=18                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -263,7 +275,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BISMARCK
 	CivType=CIVILIZATION_GERMANY                 
-	Team=18                 
+	Team=19                 
 	PlayableCiv=1                   
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -276,7 +288,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_STALIN
 	CivType=CIVILIZATION_RUSSIA                 
-	Team=19                 
+	Team=20                 
 	PlayableCiv=1                   
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -289,7 +301,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
 	CivType=CIVILIZATION_NETHERLANDS                 
-	Team=20                 
+	Team=21                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_EMANCIPATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -302,7 +314,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI                 
-	Team=21                 
+	Team=22                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -312,7 +324,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL                 
-	Team=22                 
+	Team=23                 
 	PlayableCiv=1                   
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -325,7 +337,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA                 
-	Team=23                 
+	Team=24                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -335,7 +347,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL                 
-	Team=24                 
+	Team=25                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM              
@@ -344,7 +356,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC                 
-	Team=25                 
+	Team=26                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM                    
@@ -353,7 +365,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN                 
-	Team=26                 
+	Team=27                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -366,7 +378,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA                 
-	Team=27                 
+	Team=28                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_EMANCIPATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SERFDOM
@@ -380,7 +392,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
-	Team=28                 
+	Team=29                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -389,7 +401,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
-	Team=29                 
+	Team=30                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -398,7 +410,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_NATIVE
 	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
-	Team=30                 
+	Team=31                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -406,7 +418,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT                 
-	Team=31                 
+	Team=32                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 

@@ -10128,6 +10128,8 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 		return result*113/100;   //11 before removal of Aggressive trait
 	case ETHIOPIA:
 		return result*100/100;
+    case KOREA:
+        return result*113/100;
 	case MAYA:
 		return result*110/100;
     case BYZANTIUM:
@@ -10292,6 +10294,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		return researchPercent*98/100; //95 before the new timeline //120 before embassies
 	case ETHIOPIA:
 		return researchPercent*110/100; //105 before the new timeline
+    case KOREA:
+        return researchPercent*112/100;
 	case MAYA:
 		//Rhye - start UP (Mayan)
 		//return researchPercent*90/100;
@@ -10390,6 +10394,8 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 		return result*95/100;
 	case ETHIOPIA:
 		return result*10/10;
+    case KOREA:
+        return result*10/10;
 	case MAYA:
 		return result*10/10;
     case BYZANTIUM:
@@ -10475,6 +10481,8 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 		return result*110/100;
 	case ETHIOPIA:
 		return result*115/100;
+    case KOREA:
+        return result*110/100;
 	case MAYA:
 		return result*115/100;
     case BYZANTIUM:
@@ -10584,6 +10592,8 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 		return result*8/10;   //11 before removal of Organized trait
 	case ETHIOPIA:
 		return result*8/10;
+    case KOREA:
+        return result*10/10;
 	case MAYA:
 		return result*8/10;
     case BYZANTIUM:
@@ -10679,6 +10689,9 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 	case ETHIOPIA:
 		result = m_iHealthBonus*6;
 		break;
+    case KOREA:
+        result = m_iHealthBonus*3;
+        break;
 	case MAYA:
 		result = m_iHealthBonus*6;
 		break;

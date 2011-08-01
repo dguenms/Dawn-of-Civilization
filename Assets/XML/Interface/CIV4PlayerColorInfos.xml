@@ -342,7 +342,7 @@
 		<!-- Rhye - end -->
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_KOREA</Type>
-			<ColorTypePrimary>COLOR_PLAYER_RED</ColorTypePrimary>
+			<ColorTypePrimary>COLOR_PLAYER_PALE_RED</ColorTypePrimary>
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_PALE_RED</TextColorType>
 		</PlayerColorInfo>

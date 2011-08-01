@@ -2420,6 +2420,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
+    case KOREA:
+        aiUnitAIVal[UNITAI_EXPLORE] /= 2;
+        aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
+        aiUnitAIVal[UNITAI_SETTLE] /= 2;
+        aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
+        break;
 	case MAYA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		break;
@@ -3071,6 +3077,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case ETHIOPIA:
 										break;
+                                    case KOREA:
+                                        break;
 									case MAYA:
 										if (iI == CHICHENITZA) iTempValue *= 4;
 										break;
@@ -4705,6 +4713,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					break;
 				case ETHIOPIA:
 					break;
+                case KOREA:
+                    iValue -= 2;
+                    break;
 				case MAYA:
 					iValue -= 1;
 					break;

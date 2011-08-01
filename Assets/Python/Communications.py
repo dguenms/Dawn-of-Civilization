@@ -62,7 +62,8 @@ tPool3 = (con.iEgypt,
           con.iJapan,
           con.iPersia,
           con.iFrance,
-	  con.iByzantium)
+	  con.iByzantium,
+          con.iKorea)
 
 
 class Communications:

@@ -2363,6 +2363,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			return 0;
 		}
 		break;
+    case KOREA:
+        if (iTakenTiles > (NUM_CITY_PLOTS *2/3 +1))
+            return 0;
 	case MAYA:
 		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -2))
 		{
@@ -2747,6 +2750,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			case ETHIOPIA:
 				iValue -= (abs(iDistance) - 4) * 500;
 				break;
+            case KOREA:
+                iValue -= (abs(iDistance) - 4) * 150;
+                break;
 			case MAYA:
 				iValue -= (abs(iDistance) - 3) * 500;
 				break;
@@ -2911,6 +2917,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				case ETHIOPIA:
 					compactEmpireModifier = 40;
 					break;
+                case KOREA:
+                    compactEmpireModifier = 40;
+                    break;
 				case MAYA:
 					compactEmpireModifier = 40;
 					break;
@@ -3334,6 +3343,8 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		case ETHIOPIA:
 			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
 			break;
+        case KOREA:
+            iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
 		case MAYA:
 			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
 			break;
@@ -5449,6 +5460,13 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == THEOLOGY)
 										iValue *= 2;
 									break;
+                                case KOREA:
+                                    if (iI == OPTICS)
+                                        iValue /= 4;
+                                    if (iI == ASTRONOMY || iI == RIFLING || iI == LIBERALISM)
+                                        iValue /= 2;
+                                    if (iI == PRINTING_PRESS || iI == GUNPOWDER)
+                                        iValue *= 3;
 								case MAYA:
 									if (iI == CALENDAR)
 										iValue *= 4;

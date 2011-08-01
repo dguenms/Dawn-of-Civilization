@@ -5366,6 +5366,9 @@ void CvPlayer::found(int iX, int iY)
 				case ETHIOPIA:
 					startingEra = 1;
 					break;
+                case KOREA:
+                    startingEra = 1;
+                    break;
 				case MAYA:
 					startingEra = 1;
 					break;
@@ -5780,6 +5783,9 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		case ETHIOPIA:
 			startingEra = 1;
 			break;
+        case KOREA:
+            startingEra = 1;
+            break;
 		case MAYA:
 			startingEra = 1;
 			break;
@@ -6243,6 +6249,10 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded *= 95;
 			iProductionNeeded /= 100;
 			break;
+        case KOREA:
+            iProductionNeeded *= 110;
+            iProductionNeeded /= 100;
+            break;
 		case MAYA:
 			iProductionNeeded *= 105;
 			iProductionNeeded /= 100;
@@ -6483,6 +6493,10 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 100;
 				iProductionNeeded /= 100;
 				break;
+            case KOREA:
+                iProductionNeeded *= 100;
+                iProductionNeeded /= 100;
+                break;
 			case MAYA:
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
@@ -6620,6 +6634,10 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 100;
 				iProductionNeeded /= 100;
 				break;
+            case KOREA:
+                iProductionNeeded *= 100;
+                iProductionNeeded /= 100;
+                break;
 			case MAYA:
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
@@ -7404,6 +7422,10 @@ int CvPlayer::calculateInflationRate() const
 			iRate *= 132;
 			iRate /= 100;
 			break;
+        case KOREA:
+            iRate *= 90;
+            iRate /= 100;
+            break;
 		case MAYA:
 			iRate *= 125;
 			iRate /= 100;
@@ -8752,6 +8774,9 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			else
 				result = (iThreshold*110/100);
 			break;
+        case KOREA:
+            result = (iThreshold*110/100);
+            break;
 		case MAYA:
 			result = (iThreshold*100/100);
 			break;
@@ -11500,6 +11525,9 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 		case ETHIOPIA:
 			startEra = 1;
 			break;
+        case KOREA:
+            startEra = 1;
+            break;
 		case MAYA:
 			startEra = 1;
 			break;
@@ -22378,6 +22406,10 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold *= 100;
 			iThreshold /= 100;
 			break;
+        case KOREA:
+            iThreshold *= 112;
+            iThreshold /= 100;
+            break;
 		case MAYA:
 			iThreshold *= 110;
 			iThreshold /= 100;
