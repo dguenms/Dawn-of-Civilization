@@ -208,9 +208,6 @@ void CvGame::init(HandicapTypes eHandicap)
 	}
 	//edead: end
 
-	// Leoreth - fill in civ dynamic GP names
-	fillGPNamesList();
-
 	if (getGameTurn() == 0)
 	{
 		iStartTurn = 0;
@@ -2252,6 +2249,9 @@ void CvGame::update()
 		case CARTHAGE:
 		case ROME:
 		case ETHIOPIA:
+		case KOREA:
+            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+                break;
 		case MAYA:
 		case BYZANTIUM:
             if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition

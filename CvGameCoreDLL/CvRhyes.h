@@ -23,30 +23,31 @@ typedef list<char*> LISTCHAR;
 #define ROME					(7)
 #define JAPAN					(8)
 #define ETHIOPIA				(9)
-#define MAYA					(10)
-#define BYZANTIUM               (11)
-#define VIKING					(12)
-#define ARABIA					(13)
-#define KHMER					(14)
-#define SPAIN					(15)
-#define FRANCE					(16)
-#define ENGLAND					(17)
-#define GERMANY					(18)
-#define RUSSIA					(19)
-#define NETHERLANDS				(20)
-#define MALI					(21)
-#define PORTUGAL				(22)
-#define INCA					(23)
-#define MONGOLIA				(24)
-#define AZTEC					(25)
-#define TURKEY					(26)
-#define AMERICA					(27)
-#define NUM_MAJOR_PLAYERS		(28)
-#define INDEPENDENT				(28)
-#define INDEPENDENT2			(29)
-#define NATIVE					(30)
-#define CELTIA					(31)
-#define BARBARIAN				(32)
+#define KOREA                   (10)
+#define MAYA					(11)
+#define BYZANTIUM               (12)
+#define VIKING					(13)
+#define ARABIA					(14)
+#define KHMER					(15)
+#define SPAIN					(16)
+#define FRANCE					(17)
+#define ENGLAND					(18)
+#define GERMANY					(19)
+#define RUSSIA					(20)
+#define NETHERLANDS				(21)
+#define MALI					(22)
+#define PORTUGAL				(23)
+#define INCA					(24)
+#define MONGOLIA				(25)
+#define AZTEC					(26)
+#define TURKEY					(27)
+#define AMERICA					(28)
+#define NUM_MAJOR_PLAYERS		(29)
+#define INDEPENDENT				(29)
+#define INDEPENDENT2			(30)
+#define NATIVE					(31)
+#define CELTIA					(32)
+#define BARBARIAN				(33)
 
 
 #define MEDITATION				(1)
@@ -205,16 +206,13 @@ extern char uniquePower[35][2][16];
 extern char uniqueGoals[35][3][18];
 extern char rating[35][6][15];
 
-extern int turnPlayed[33];
-extern int civSpreadFactor[33][7];
-extern int civicMatrix[28][6][5];
-extern int borders[28][28];
-extern wchar civDynamicNames[2][28][22][19]; //(dynamic civ names - not jdog's)
-extern int civDynamicNamesFlag[28];
-extern int civDynamicNamesEraThreshold[28];
-extern list<CvWString> GPNameList[38][6];
-extern int settlersMaps[2][28][68][124];
-
-extern void fillGPNamesList();
+extern int turnPlayed[34];
+extern int civSpreadFactor[34][7];
+extern int civicMatrix[29][6][5];
+extern int borders[29][29];
+extern wchar civDynamicNames[2][29][22][19]; //(dynamic civ names - not jdog's)
+extern int civDynamicNamesFlag[29];
+extern int civDynamicNamesEraThreshold[29];
+extern int settlersMaps[2][29][68][124];
 
 

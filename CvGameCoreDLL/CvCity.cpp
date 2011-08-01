@@ -314,6 +314,9 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	case ETHIOPIA:
 		eraModifier = 0;
 		break;
+    case KOREA:
+        eraModifier = 0;
+        break;
 	case MAYA:
 		eraModifier = 0;
 		break;
@@ -11713,6 +11716,9 @@ void CvCity::doCulture()
 			case ETHIOPIA:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
 				break;
+            case KOREA:
+                changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
+                break;
 			case MAYA:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
 				break;

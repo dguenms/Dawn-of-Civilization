@@ -60,7 +60,7 @@ lBordeaux = [53, 48, -300, 0] #121
 lCartagena = [54, 42, -230, 0] #125
 lArtaxata = [77, 44, -190,0] #128
 lLutetia = [55, 50, -50, 0] #137
-lSeoul = [109, 46, -25, 0] #139
+#lSeoul = [109, 46, -25, 0] #139
 #lTikal = [22, 35, 60, 0] #145
 lSanaa = [76, 30, 100, 0] #147
 lPagan = [98, 36, 107, 0] #148
@@ -298,7 +298,7 @@ class Barbs:
                 #self.foundCity(iIndependent, lAxum, "Axum", iGameTurn, 1, -1, -1)
                 self.foundCity(iCeltia, lBordeaux, "Burdigala", iGameTurn, 2, -1, -1)
                 #self.foundCity(lCartagena, "Qart Hadasht", iGameTurn, 1, -1, -1)
-                self.foundCity(iIndependent, lSeoul, "Hanseong", iGameTurn, 2, -1, -1)
+                #self.foundCity(iIndependent, lSeoul, "Hanseong", iGameTurn, 2, -1, -1)
                 self.foundCity(iIndependent2, lArtaxata, "Artashat", iGameTurn, 1, -1, -1)
                 self.foundCity(iCeltia, lLutetia, "Lutetia", iGameTurn, 2, -1, -1)
                 #self.foundCity(iNative, lTikal, "Tikal", iGameTurn, 1, -1, -1)

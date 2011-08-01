@@ -44,6 +44,7 @@ iCarthage = con.iCarthage
 iRome = con.iRome
 iJapan = con.iJapan
 iEthiopia = con.iEthiopia
+iKorea = con.iKorea
 iMaya = con.iMaya
 iByzantium = con.iByzantium
 iVikings = con.iVikings
