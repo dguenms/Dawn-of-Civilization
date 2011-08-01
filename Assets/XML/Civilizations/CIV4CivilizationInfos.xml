@@ -2502,20 +2502,14 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>TXT_KEY_CITY_NAME_SEOUL</City>
-				<City>TXT_KEY_CITY_NAME_PYONGYANG</City>
-				<City>TXT_KEY_CITY_NAME_WONSAN</City>
-				<City>TXT_KEY_CITY_NAME_PUSAN</City>
 				<City>TXT_KEY_CITY_NAME_NAMPO</City>
 				<City>TXT_KEY_CITY_NAME_CHEJU</City>
 				<City>TXT_KEY_CITY_NAME_HYANGSAN</City>
 				<City>TXT_KEY_CITY_NAME_ULSAN</City>
-				<City>TXT_KEY_CITY_NAME_INCHON</City>
 				<City>TXT_KEY_CITY_NAME_PYONGSONG</City>
 				<City>TXT_KEY_CITY_NAME_TAEJON</City>
 				<City>TXT_KEY_CITY_NAME_PAEGAM</City>
 				<City>TXT_KEY_CITY_NAME_MANPO</City>
-				<City>TXT_KEY_CITY_NAME_KAESONG</City>
 				<City>TXT_KEY_CITY_NAME_CHONJU</City>
 				<City>TXT_KEY_CITY_NAME_SARIWON</City>
 				<City>TXT_KEY_CITY_NAME_SUWON</City>
@@ -2524,9 +2518,7 @@
 				<City>TXT_KEY_CITY_NAME_CHINJE</City>
 				<City>TXT_KEY_CITY_NAME_TOKCHON</City>
 				<City>TXT_KEY_CITY_NAME_CHONGFU</City>
-				<City>TXT_KEY_CITY_NAME_TAEGWON</City>
 				<City>TXT_KEY_CITY_NAME_SOKCHO</City>
-				<City>TXT_KEY_CITY_NAME_HAMHUNG</City>
 				<City>TXT_KEY_CITY_NAME_IRI</City>
 				<City>TXT_KEY_CITY_NAME_HUICHON</City>
 				<City>TXT_KEY_CITY_NAME_NAMWON</City>
@@ -2543,6 +2535,30 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_CATAPULT</UnitClassType>
 					<UnitType>UNIT_KOREAN_HWACHA</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_KOREAN_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_KOREAN_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_KOREAN_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_KOREAN_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_KOREAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_KOREAN_GREAT_GENERAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
