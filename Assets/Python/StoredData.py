@@ -114,7 +114,7 @@ class StoredData:
                                                [-1, -1, -1],
                                                [-1, -1, -1],
                                                [-1, -1, -1]],
-                                    'lReligionFounded': [-1, -1, -1, -1, -1, -1, -1],
+                                    'lReligionFounded': [-1, -1, -1, -1, -1, -1, -1, -1],
                                     'iEnslavedUnits': 0,
                                     'iRazedByMongols': 0,
                                     'lEnglishEras': [-1, -1],

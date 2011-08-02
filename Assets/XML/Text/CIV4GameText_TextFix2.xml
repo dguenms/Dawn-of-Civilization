@@ -1033,7 +1033,7 @@
 
 	<!-- name of Confucianism changed to Zoroastrianism by Leoreth -->
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_CONFUCIANISM</Tag>
+		<Tag>TXT_KEY_RELIGION_ZOROASTRIANISM</Tag>
 		<English>Zoroastrianism</English>
 		<French>
 			<Text>Zoroastrisme</Text>
@@ -1057,7 +1057,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY</Tag>	<!-- missing translations -->
+		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Tag>	<!-- missing translations -->
 		<English>Zoroastrian Missionary</English>
 		<French>
 			<Text></Text>

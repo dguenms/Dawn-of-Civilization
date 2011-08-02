@@ -39,7 +39,6 @@
 			<MovieSound>AS2D_BUILD_CHRISTIAN_MOVIE</MovieSound>
 			<Sound>AS2D_BUILD_CHRISTIAN</Sound>
 		</ReligionInfo>
-
 		<ReligionInfo>
 			<Type>RELIGION_CHRISTIANITY</Type>
 			<Description>TXT_KEY_RELIGION_CHRISTIANITY</Description>
@@ -73,7 +72,6 @@
 			<MovieSound>AS2D_BUILD_CHRISTIAN_MOVIE</MovieSound>
 			<Sound>AS2D_BUILD_CHRISTIAN</Sound>
 		</ReligionInfo>
-
 		<ReligionInfo>
 			<Type>RELIGION_ISLAM</Type>
 			<Description>TXT_KEY_RELIGION_ISLAM</Description>
@@ -107,7 +105,6 @@
 			<MovieSound>AS2D_BUILD_ISLAMIC_MOVIE</MovieSound>
 			<Sound>AS2D_BUILD_ISLAMIC</Sound>
 		</ReligionInfo>
-
 		<ReligionInfo>
 			<Type>RELIGION_HINDUISM</Type>
 			<Description>TXT_KEY_RELIGION_HINDUISM</Description>
@@ -142,7 +139,6 @@
 			<MovieSound>AS2D_BUILD_HINDU_MOVIE</MovieSound>
 			<Sound>AS2D_BUILD_HINDU</Sound>
 		</ReligionInfo>
-
 		<ReligionInfo>
 			<Type>RELIGION_BUDDHISM</Type>
 			<Description>TXT_KEY_RELIGION_BUDDHISM</Description>
@@ -177,14 +173,13 @@
 			<MovieSound>AS2D_BUILD_BUDDHIST_MOVIE</MovieSound>
 			<Sound>AS2D_BUILD_BUDDHIST</Sound>
 		</ReligionInfo>
-
 		<ReligionInfo>
-			<Type>RELIGION_CONFUCIANISM</Type>				<!-- Zoroastrianism -->
+			<Type>RELIGION_CONFUCIANISM</Type>
 			<Description>TXT_KEY_RELIGION_CONFUCIANISM</Description>
 			<Adjective>TXT_KEY_RELIGION_CONFUCIANISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_CONFUCIANISM_PEDIA</Civilopedia>
 			<!-- Rhye -->
-			<TechPrereq>TECH_MONARCHY</TechPrereq>
+			<TechPrereq>TECH_MATHEMATICS</TechPrereq>
 			<FreeUnitClass>UNITCLASS_CONFUCIAN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>70</iSpreadFactor> <!-- Rhye -->
@@ -204,15 +199,14 @@
 				<iStateReligionCommerce>0</iStateReligionCommerce>
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
-			<Button>Art/Interface/Buttons/Religions/Zoroaster.dds</Button>
+			<Button>Art/Interface/Buttons/Religions/Confuscianism.dds</Button>
 			<!-- Rhye -->
-			<TechButton>Art/Interface/Buttons/TechTree/monarchy.dds</TechButton>
+			<TechButton>Art/Interface/Buttons/TechTree/mathematics.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Confucianism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,7,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Confucianism/Con_Found.nif</MovieFile>
 			<MovieSound>AS2D_BUILD_CONFUCIAN_MOVIE</MovieSound>
 			<Sound>AS2D_BUILD_CONFUCIAN</Sound>
 		</ReligionInfo>
-
 		<ReligionInfo>
 			<Type>RELIGION_TAOISM</Type>
 			<Description>TXT_KEY_RELIGION_TAOISM</Description>
@@ -246,6 +240,40 @@
 			<MovieFile>Art/Movies/Religion/Taoism/Tao_Found.nif</MovieFile>
 			<MovieSound>AS2D_BUILD_TAOIST_MOVIE</MovieSound>
 			<Sound>AS2D_BUILD_TAOIST</Sound>
-		</ReligionInfo>		
+		</ReligionInfo>
+		<ReligionInfo>
+			<Type>RELIGION_ZOROASTRIANISM</Type>
+			<Description>TXT_KEY_RELIGION_ZOROASTRIANISM</Description>
+			<Adjective>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_RELIGION_ZOROASTRIANISM_PEDIA</Civilopedia>
+			<!-- Rhye -->
+			<TechPrereq>TECH_MONARCHY</TechPrereq>
+			<FreeUnitClass>UNITCLASS_ZOROASTRIAN_MISSIONARY</FreeUnitClass>
+			<iFreeUnits>1</iFreeUnits>
+			<iSpreadFactor>50</iSpreadFactor> <!-- Rhye -->
+			<GlobalReligionCommerces>
+				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
+				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
+				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
+			</GlobalReligionCommerces>
+			<HolyCityCommerces>
+				<iHolyCityCommerce>0</iHolyCityCommerce>
+				<iHolyCityCommerce>0</iHolyCityCommerce>
+				<!-- Rhye -->
+				<iHolyCityCommerce>3</iHolyCityCommerce>
+			</HolyCityCommerces>
+			<StateReligionCommerces>
+				<iStateReligionCommerce>0</iStateReligionCommerce>
+				<iStateReligionCommerce>0</iStateReligionCommerce>
+				<iStateReligionCommerce>1</iStateReligionCommerce>
+			</StateReligionCommerces>
+			<Button>Art/Interface/Buttons/Religions/Zoroaster.dds</Button>
+			<!-- Rhye -->
+			<TechButton>Art/Interface/Buttons/TechTree/monarchy.dds</TechButton>
+			<GenericTechButton>,Art/Interface/Buttons/TechTree/Confucianism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,7,3</GenericTechButton>
+			<MovieFile>Art/Movies/Religion/Judaism/Jud_Found.nif</MovieFile>
+			<MovieSound>AS2D_BUILD_JEWISH_MOVIE</MovieSound>
+			<Sound>AS2D_BUILD_JEWISH</Sound>
+		</ReligionInfo>	
 	</ReligionInfos>
 </Civ4ReligionInfo>

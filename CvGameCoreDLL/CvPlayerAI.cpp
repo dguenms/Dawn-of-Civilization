@@ -5368,7 +5368,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 3;
 									if (iI == WRITING || iI == CODEOFLAWS)
 										iValue *= 3;
-									if (iI == MASONRY || iI == MONARCHY)
+									if (iI == MASONRY || iI == MONARCHY || iI == POLYTHEISM)
 										iValue *= 2;
 									if (iI == MATHEMATICS)
 										iValue /= 3;

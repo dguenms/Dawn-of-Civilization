@@ -12197,9 +12197,10 @@ void CvCity::doReligion()
 									int iSpreadFactor = civSpreadFactor[getOwnerINLINE()][iI] * iBaseSpreadFactor / 100;
 									iSpread *= iSpreadFactor;
 
-									if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-										if (iI == 1 && getOwnerINLINE() == CELTIA) //no spread of Christianity in the Byzantine empire, because otherwise the Turks will get it
-											iSpread = 0;
+                                    //Leoreth: disabled, but do something to get rid of Christianity in Anatolia when Byzantium collapses
+									//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+									//	if (iI == 1 && getOwnerINLINE() == CELTIA) //no spread of Christianity in the Byzantine empire, because otherwise the Turks will get it
+									//		iSpread = 0;
 									//Rhye - end
 
 									if (iSpread > 0)

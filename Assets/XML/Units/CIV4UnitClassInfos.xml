@@ -214,6 +214,15 @@
 			<DefaultUnit>UNIT_TAOIST_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_ZOROASTRIAN_MISSIONARY</Type>
+			<Description>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_ZOROASTRIAN_MISSIONARY</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_WARRIOR</Type>
 			<Description>TXT_KEY_UNIT_WARRIOR</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
