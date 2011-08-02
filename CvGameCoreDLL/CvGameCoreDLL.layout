@@ -7,14 +7,14 @@
 	<File name="CvArea.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="18746" topLine="40" />
 	</File>
-	<File name="CvCity.cpp" open="1" top="1" tabpos="3">
+	<File name="CvCity.cpp" open="1" top="0" tabpos="3">
 		<Cursor position="313624" topLine="12175" />
 	</File>
 	<File name="CvCity.h" open="0" top="0" tabpos="12">
 		<Cursor position="852" topLine="19" />
 	</File>
-	<File name="CvCityAI.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="69405" topLine="2395" />
+	<File name="CvCityAI.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="67886" topLine="2358" />
 	</File>
 	<File name="CvDLLButtonPopup.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="51789" topLine="1481" />
@@ -80,7 +80,7 @@
 		<Cursor position="64906" topLine="1035" />
 	</File>
 	<File name="CvPlayerAI.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="73755" topLine="2910" />
+		<Cursor position="60791" topLine="2344" />
 	</File>
 	<File name="CvPlayerAI.h" open="0" top="0" tabpos="8">
 		<Cursor position="0" topLine="24" />

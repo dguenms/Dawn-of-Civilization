@@ -1,0 +1,11 @@
+# added the Korean civilization
+	# Spawn: 50 BC at Hanseong/Seoul
+	# Leader: Wang Kon
+	# Unique Building: Seowon (University)
+	# Unique Unit: Hwacha (Catapult)
+# returned Confucianism, Zoroastrianism is now an eighth religion
+# reduced Babylonia's likeliness to build settlers
+# increased Babylonia's likeliness to research Polytheism (for wonder building)
+# smoothed/replaced religion icons in the game font files
+# added a routine that removes Christianity from Turkey's core when Byzantium collapses
+# removed Ming Taizu from China to use him as Wang Kon
