@@ -2370,7 +2370,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
-        aiUnitAIVal[UNITAI_SETTLE] /= 3;
+        aiUnitAIVal[UNITAI_SETTLE] /= 5;
 		break;
 	case GREECE:
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;

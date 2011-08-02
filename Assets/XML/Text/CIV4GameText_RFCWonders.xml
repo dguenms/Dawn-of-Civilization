@@ -585,7 +585,7 @@
 
 	<!-- Confucianism -> Zoroastrianism rename by Leoreth -->
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CONFUCIAN_TEMPLE</Tag>	<!-- translations missing -->
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE</Tag>	<!-- translations missing -->
 		<English>Zoroastrian Temple</English>
 		<French>
 			<Text></Text>
@@ -609,7 +609,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CONFUCIAN_MONASTERY</Tag>	<!-- translations missing -->
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>	<!-- translations missing -->
 		<English>Zoroastrian Monastery</English>
 		<French>
 			<Text></Text>
@@ -633,7 +633,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL</Tag>	<!-- translations missing -->
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>	<!-- translations missing -->
 		<English>Zoroastrian Fire Temple</English>
 		<French>
 			<Text></Text>
@@ -657,7 +657,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE</Tag>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE</Tag>
 		<English>Adur Farnbag</English>
 		<French>
 			<Text>Adur Farnbag</Text>

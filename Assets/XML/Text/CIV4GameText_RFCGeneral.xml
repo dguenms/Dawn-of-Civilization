@@ -310,4 +310,9 @@
 		<Italian>Un patto di protezione reciproca: ogni civilt&#224; accetta di dichiarare automaticamente guerra se la civilt&#224; alleata viene attaccata.</Italian>
 		<Spanish>Un acuerdo de protecci&#243;n mutua: cada parte accede a declarar autom&#225;ticamente la guerra si alguien ataca a la otra.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_SCREEN_DATE_FOUNDED</Tag>
+		<English>Founded:</English>
+		<German>Gegr&#252;ndet:</German>
+	</TEXT>
 </Civ4GameText>

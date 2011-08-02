@@ -45,6 +45,7 @@ iHinduism = con.iHinduism
 iBuddhism = con.iBuddhism
 iConfucianism = con.iConfucianism
 iTaoism = con.iTaoism
+iZoroastrianism = con.iZoroastrianism
 
 iMissionary_Jewish = con.iJewishMissionary
 iMissionary_Christian = con.iChristianMissionary
@@ -53,6 +54,7 @@ iMissionary_Hindu = con.iHinduMissionary
 iMissionary_Buddhist = con.iBuddhistMissionary
 iMissionary_Confucian = con.iConfucianMissionary
 iMissionary_Taoist = con.iTaoistMissionary
+iMissionary_Zoroastrian = con.iZoroastrianMissionary
 
 
 # initialise coordinates
@@ -78,7 +80,7 @@ tQufuTL = (102, 44)
 tQufuBR = (106, 46)
 tMecca = (75, 33)
 
-lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 80, 50, 10, 80, 80, 50, 95, 75, 30, 25, 80, 10, 50, 95, 50, 50, 50, 80, 50, 50, 50, 50, 80, 50]
+lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 80, 50, 50, 10, 80, 80, 50, 95, 75, 30, 25, 80, 10, 50, 95, 50, 50, 50, 80, 50, 50, 50, 50, 80, 50]
 
 
 class Religions:
@@ -262,6 +264,7 @@ class Religions:
                 #print city
                 #print city.getOwner()
                 utils.makeUnit(iMissionary, city.getOwner(), tCoords, iNum)
+		
 
 ##REFORMATION
 

@@ -101,7 +101,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_BUREAUCRACY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
-	StateReligion=RELIGION_TAOISM               
+	StateReligion=RELIGION_CONFUCIANISM            
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -31482,9 +31482,10 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
-		BuildingType=BUILDING_CONFUCIAN_SHRINE
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		HolyCityReligionType=RELIGION_CONFUCIANISM
+		BuildingType=BUILDING_ZOROASTRIAN_SHRINE
+		BuildingType=BUILDING_ZOROASTRIAN_TEMPLE
+		ReligionType=RELIGION_ZOROASTRIANISM
+		HolyCityReligionType=RELIGION_ZOROASTRIANISM
 		Player30Culture=10
 	EndCity
 EndPlot
@@ -38453,7 +38454,9 @@ BeginPlot
 		BuildingType=BUILDING_GREAT_WALL
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_TAOISM
+		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
+		HolyCityReligionType=RELIGION_CONFUCIANISM
 		Player30Culture=10
 	EndCity
 EndPlot
@@ -40042,10 +40045,15 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		BuildingType=BUILDING_CONFUCIAN_MONASTERY
+		BuildingType=BUILDING_CONFUCIAN_SHRINE
 		BuildingType=BUILDING_TAOIST_TEMPLE
 		BuildingType=BUILDING_TAOIST_MONASTERY
 		BuildingType=BUILDING_TAOIST_SHRINE
+		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
+		HolyCityReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
 		Player30Culture=1000
 	EndCity
@@ -41196,6 +41204,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
+		ReligionType=RELIGION_CONFUCIANISM
 		Player30Culture=10
 	EndCity
 EndPlot

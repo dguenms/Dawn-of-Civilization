@@ -207,7 +207,7 @@ extern char uniqueGoals[35][3][18];
 extern char rating[35][6][15];
 
 extern int turnPlayed[34];
-extern int civSpreadFactor[34][7];
+extern int civSpreadFactor[34][8];
 extern int civicMatrix[29][6][5];
 extern int borders[29][29];
 extern wchar civDynamicNames[2][29][22][19]; //(dynamic civ names - not jdog's)

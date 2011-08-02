@@ -886,6 +886,10 @@ class RFCUtils:
                         self.clearEmbassies(iCiv)
                 self.setLastTurnAlive(iCiv, gc.getGame().getGameTurn())
 
+		# Leoreth: Byzantium collapses - Christians in Turkish core disappear
+		if iCiv == con.iByzantium:
+			self.removeReligionByArea(con.tCoreAreasTL[0][con.iTurkey], con.tCoreAreasBR[0][con.iTurkey], con.iChristianity)
+
 
 
         def pickFragmentation(self, iPlayer, iNewCiv1, iNewCiv2, iNewCiv3, bAssignCities):
@@ -1259,6 +1263,24 @@ class RFCUtils:
 				if plot.isCity():
 					cityList.append(plot.getPlotCity())
 		return cityList
+
+	
+
+	def removeReligionByArea(self, tTopLeft, tBottomRight, iReligion):
+		lCityList = []
+                for x in range(tTopLeft[0], tBottomRight[0]+1):
+                        for y in range(tTopLeft[1], tBottomRight[1]+1):
+				if gc.getMap().plot(x,y).isCity():
+					lCityList.append(gc.getMap().plot(x,y).getPlotCity())
+		for city in lCityList:
+			if city.isHasReligion(iReligion) and not city.isHolyCity():
+				city.setHasReligion(iReligion, False, False, False)
+			if city.hasBuilding(con.iTemple + iReligion*4):
+				city.setHasRealBuilding((con.iTemple + iReligion*4), False)
+			if city.hasBuilding(con.iCathedral + iReligion*4):
+				city.setHasRealBuilding((con.iCathedral + iReligion*4), False)
+			if city.hasBuilding(con.iMonastery + iReligion*4):
+				city.setHasRealBuilding((con.iMonastery + iReligion*4), False)
 				
 
 

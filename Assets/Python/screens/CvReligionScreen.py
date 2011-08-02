@@ -58,13 +58,13 @@ class CvReligionScreen:
 
 		
 		self.LEFT_EDGE_TEXT = 10
-		self.X_RELIGION_START = 180
-		self.DX_RELIGION = 98
+		self.X_RELIGION_START = 120 # edead (180)
+		self.DX_RELIGION = 95 # edead (98)
 		self.Y_RELIGION = 35
 		self.Y_FOUNDED = 90
 		self.Y_HOLY_CITY = 115
 		self.Y_INFLUENCE = 140
-		self.Y_RELIGION_NAME = 58
+		self.Y_RELIGION_NAME = 65
 
 		self.X_RELIGION_AREA = 45
 		self.Y_RELIGION_AREA = 84

@@ -128,7 +128,7 @@ BeginPlayer
 	PlayableCiv=1                  
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE               
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	StateReligion=RELIGION_CONFUCIANISM
+	StateReligion=RELIGION_ZOROASTRIANISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
