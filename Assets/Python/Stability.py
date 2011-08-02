@@ -1056,7 +1056,7 @@ class Stability:
 		# Leoreth: lower player's stability by 10 after a specific historical date to further their collapse
 		# the human player is not affected, his neighbors only by half
 		# stability hit starts with 1 and increases every turn until its maximum
-		if ( (not pPlayer.isHuman()) and iGameTurn >= getTurnForYear(con.tFall[pPlayer.getID()])):
+		if ( (not pPlayer.isHuman()) and (not pPlayer.isReborn()) and iGameTurn >= getTurnForYear(con.tFall[pPlayer.getID()])):
 			bHumanNeighbour = False
 			for iNeighbour in con.lNeighbours[pPlayer.getID()]:
 				if gc.getPlayer(iNeighbour).isHuman() and gc.getPlayer(iNeighbour).isAlive():
