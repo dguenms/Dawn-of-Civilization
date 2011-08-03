@@ -168,6 +168,8 @@ class UniquePowers:
 
        	
         def checkTurn(self, iGameTurn):
+
+		print("UniquePowers.checkTurn()")
                         
                 if (iGameTurn >= getTurnForYear(860)):
                         self.russianUP()
@@ -181,6 +183,7 @@ class UniquePowers:
 					self.setRomanWar(iCiv, -1)
 
 		if (iGameTurn >= getTurnForYear(con.tBirth[iRome])+2):
+			print("Check Roman war")
 			self.checkRomanWar()
 
                 #if (iGameTurn >= getTurnForYear(1190)):
@@ -197,12 +200,16 @@ class UniquePowers:
 			return
 		
 		for iCiv in range(iNumActivePlayers):
+			#print("Roman war status with "+gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()+": "+str(self.getRomanWar(iCiv)))
 			if self.getRomanWar(iCiv) == -1:
+				#print("Roman war status -1 with "+str(iCiv))
 				if (not teamRome.isAtWar(iCiv)):
 					print("Set Roman war to 0.")
 					self.setRomanWar(iCiv, 0)
 			elif self.getRomanWar(iCiv) == 0:
+				#print("Roman war status 0 with "+str(iCiv))
 				if teamRome.isAtWar(iCiv):
+					#print("Set Roman War to 1")
 					self.setRomanWar(iCiv, 1)
 					if (iCiv in con.lCivGroups[2]) or (iCiv in con.lCivGroups[3]):
 						print ("Roman conquest triggered.")
@@ -235,8 +242,6 @@ class UniquePowers:
 		print ("Getting random target city.")
 		pTargetCity = utils.getRandomCity(iEnemy)
 
-		return	# disable temporarily to avoid crashes
-
 		if (pTargetCity != -1):
 			print ("City found, searching free land plot.")
 			tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
@@ -257,7 +262,7 @@ class UniquePowers:
 		#utils.makeUnit(con.iRomePraetorian, iRome, tPlot, 3)
 		#utils.makeUnit(con.iCatapult, iRome, tPlot, 2)
 
-		CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS", (gc.getPlayer(iEnemy).getCivilizationShortDescription(0),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+		CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS",(gc.getPlayer(iEnemy).getCivilizationShortDescriptionKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		print ("Message displayed.")
 

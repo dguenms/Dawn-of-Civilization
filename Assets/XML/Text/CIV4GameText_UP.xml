@@ -350,8 +350,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROMAN_CONQUESTS</Tag>
-		<English>An army has been fielded to attack %s!</English>
-		<German>Eine Armee wurde zusammengestellt zum Angriff auf %s!</German>
+		<English>An army has been fielded to attack %s1_civ_adjective!</English>
+		<German>Eine Armee wurde zusammengestellt zum Angriff auf %s1_civ_adjective!</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROMAN_CONQUESTS_TARGET</Tag>
