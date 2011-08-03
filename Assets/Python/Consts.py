@@ -820,7 +820,7 @@ tCoreAreasTL = (
 (59, 41), #Rome
 (111, 41), #Japan
 (69, 27), #Ethiopia
-(107, 45), #Korea
+(108, 45), #Korea
 (20, 35), #Maya
 (64, 38), #Byzantium
 (57, 57), #Vikings
@@ -850,7 +850,7 @@ tCoreAreasTL = (
 (58, 45), #Rome		# ITALY (now doesn't include southern italy because that apparently causes a crash with Byzantine or independent Naples?)
 (111, 41), #Japan
 (69, 27), #Ethiopia
-(107, 45), #Korea
+(108, 45), #Korea
 (20, 35), #Maya
 (64, 41), #Byzantium
 (57, 57), #Vikings
@@ -1010,7 +1010,7 @@ tNormalAreasTL = (
 (57, 40), #Rome
 (111, 41), #Japan
 (68, 25), #Ethiopia
-(107, 45), #Korea
+(108, 45), #Korea
 (20, 32), #Maya
 (64, 38), #Byzantium
 (57, 55), #Vikings
@@ -1040,7 +1040,7 @@ tNormalAreasTL = (
 (57, 40), #Rome
 (111, 41), #Japan
 (68, 25), #Ethiopia
-(107, 45), #Korea
+(108, 45), #Korea
 (20, 32), #Maya
 (64, 38), #Byzantium
 (57, 55), #Vikings
@@ -1934,14 +1934,14 @@ iAcademy = 42
 iLibrary = 43
 iArabianMadrassa = 44
 iUniversity = 45
-iChineseAcademy = 46
-iKoreanSeowon = 47
-iObservatory = 48
-iLaboratory = 49
-iRussianResearchInstitute = 50
-iTheatre = 51
-iFrenchSalon = 52
-iByzantineHippodrome = 53
+iKoreanSeowon = 46
+iObservatory = 47
+iLaboratory = 48
+iRussianResearchInstitute = 49
+iTheatre = 50
+iFrenchSalon = 51
+iByzantineHippodrome = 52
+iChinesePavillion = 53
 iColosseum = 54
 iGreekOdeon = 55
 iMayaBallCourt = 56
@@ -2271,12 +2271,14 @@ iChiang_Kaishek = 74
 iCavour = 75
 iAbbas = 76
 iKhomeini = 77
+iTaizong = 78
+iYongle = 79
 
 
 tLeaders = (
 (iRamesses, iHatshepsut),
 (iAsoka, iAkbar, iGandhi),
-(iQin_Shi_Huang, iCixi, iMao),		# Ming Tai Zu / Wang Kon now Korean, find new
+(iQin_Shi_Huang, iTaizong, iYongle, iCixi),
 (iHammurabi, iGilgamesh),
 (iPericles, iAlexander,),
 (iCyrus, iDarius),
@@ -2348,7 +2350,7 @@ tRomanLateLeaders = (iAugustus, 50, 5, 2)
 tLateLeaders = ( #all up to 300 turns earlier because the switch is triggered after a few years
 (iHatshepsut, -400, 5, 1), 
 (iAkbar, 1400, 5, 3, iGandhi, 1900, 5, 4),
-(iCixi, 1870, 10, 5),
+(iTaizong, 600, 10, 2, iYongle, 1400, 15, 3, iCixi, 1870, 10, 4),
 (iHammurabi, -1600, 10, 1),
 (iAlexander, -10, 5, 2),
 (iDarius, -10, 5, 2),

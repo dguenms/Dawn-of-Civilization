@@ -156,6 +156,7 @@ iCarthage = con.iCarthage
 iRome = con.iRome
 iJapan = con.iJapan
 iEthiopia = con.iEthiopia
+iKorea = con.iKorea
 iMaya = con.iMaya
 iByzantium = con.iByzantium
 iVikings = con.iVikings
@@ -359,6 +360,18 @@ class Victory:
 
 	def getItalianUniversities(self):
 		return sd.scriptDict['iItalianUniversities']
+
+	def getNumKoreanSinks(self):
+		return sd.scriptDict['iNumKoreanSinks']
+
+	def setNumKoreanSinks(self, iNewValue):
+		sd.scriptDict['iNumKoreanSinks'] = iNewValue
+
+	def getKoreanTechs(self, i):
+		return sd.scriptDict['lKoreanTechs'][i]
+
+	def setKoreanTechs(self, i, iNewValue):
+		sd.scriptDict['lKoreanTechs'][i] = iNewValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -880,6 +893,13 @@ class Victory:
                                                 self.setGoal(iEthiopia, 2, 1)
                                         else:
                                                 self.setGoal(iEthiopia, 2, 0)
+
+		elif (iPlayer == iKorea):
+			if (pKorea.isAlive()):
+
+				if (iGameTurn == getTurnForYear(1200)):
+					if (self.getGoal(iKorea, 0) == -1):
+						self.setGoal(iKorea, 0, 0)
 
                 elif (iPlayer == iMaya):
                         if (pMaya.isAlive()):
@@ -1843,7 +1863,26 @@ class Victory:
                                                         if (not bOtherCompleted):
                                                                 self.setGoal(iJapan, 2, 1)
                                                         else:
-                                                                self.setGoal(iJapan, 2, 0) 
+                                                                self.setGoal(iJapan, 2, 0)
+
+		elif (iPlayer == iKorea):
+			if (pKorea.isAlive()):
+				if (iTech == con.iPrintingPress):
+					self.setKoreanTechs(0, 1)
+					for iCiv in range(iNumPlayers):
+						if (iCiv != iKorea):
+							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+								self.setKoreanTechs(0, 0)
+				elif (iTech == con.iGunpowder):
+					self.setKoreanTechs(1, 1)
+					for iCiv in range(iNumPlayers):
+						if (iCiv != iKorea):
+							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+								self.setKoreanTechs(1, 0)
+				if (self.getKoreanTechs(0) == 1 and self.getKoreanTechs(1) == 1):
+					self.setGoal(iKorea, 1, 1)
+				elif (self.getKoreanTechs(0) == 0 or self.getKoreanTechs(1) == 0):
+					self.setGoal(iKorea, 1, 0) 
                                                 
 
                 elif (iPlayer == iMaya):
@@ -1955,14 +1994,14 @@ class Victory:
                         if (pChina.isAlive()):
                                 if (self.getGoal(iChina, 0) == -1):
                                         if (iGameTurn <= getTurnForYear(1000)):
-                                                if (iBuilding == con.iChineseAcademy or iBuilding == con.iTaoistCathedral):
+                                                if (iBuilding == con.iConfucianCathedral or iBuilding == con.iTaoistCathedral):
                                                         #iConfucianCounter = pChina.getBuildingClassCount(con.iConfucianCathedral)
                                                         #iTaoistCounter = pChina.getBuildingClassCount(con.iTaoistCathedral)
                                                         iConfucianCounter = 0
                                                         iTaoistCounter = 0
                                                         for iCity in range(pChina.getNumCities()):
                                                                 pCity = pChina.getCity(iCity)
-                                                                if (pCity.hasBuilding(con.iChineseAcademy)):
+                                                                if (pCity.hasBuilding(con.iConfucianCathedral)):
                                                                         iConfucianCounter += 1
                                                                 if (pCity.hasBuilding(con.iTaoistCathedral)):
                                                                         iTaoistCounter += 1
@@ -1982,7 +2021,19 @@ class Victory:
                                                 if (self.getWondersBuilt(iGreece) == 4):                                    
                                                         self.setGoal(iGreece, 1, 1)
                                         if (iGameTurn > getTurnForYear(-250)):                                   
-                                                self.setGoal(iGreece, 1, 0)     
+                                                self.setGoal(iGreece, 1, 0)
+
+		elif (iPlayer == iKorea):
+			if (pKorea.isAlive()):
+				if (self.getGoal(iKorea, 0) == -1):
+					if (iGameTurn <= getTurnForYear(1200)):
+						if (iBuilding == con.iBuddhistCathedral or iBuilding == con.iConfucianCathedral):
+							bBuddhistCathedral = (self.getNumBuildings(iKorea, con.iBuddhistCathedral) > 0)
+							bConfucianCathedral = (self.getNumBuildings(iKorea, con.iConfucianCathedral) > 0)
+							if (bBuddhistCathedral and bConfucianCathedral):
+								self.setGoal(iKorea, 0, 1)
+					else:
+						self.setGoal(iKorea, 0, 0)     
 
                                                 
 
@@ -2069,6 +2120,13 @@ class Victory:
                                         self.setNumSinks(self.getNumSinks() + 1)
                                         if (self.getNumSinks() == 25):
                                                 self.setGoal(iVikings, 1, 1)
+
+		elif (iPlayer == iKorea):
+			if (self.getGoal(iKorea, 2) == -1):
+				if (cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA")):
+					self.setNumKoreanSinks(self.getNumKoreanSinks() + 1)
+					if (self.getNumKoreanSinks() == 20):
+						self.setGoal(iKorea, 2, 1)
                                         
 
 
@@ -2249,7 +2307,7 @@ class Victory:
 
 		elif iPlayer == iChina:
 			if iGoal == 0:
-				iConfucianCounter = self.getNumBuildings(iChina, con.iChineseAcademy)
+				iConfucianCounter = self.getNumBuildings(iChina, con.iConfucianCathedral)
 				iTaoistCounter = self.getNumBuildings(iChina, con.iTaoistCathedral)
 				aHelp.append(self.getIcon(iConfucianCounter >= 2) + 'Confucian Academies: ' + str(iConfucianCounter) + '/2' + self.getIcon(iTaoistCounter >= 2) + 'Taoist Pagodas: ' + str(iTaoistCounter) + '/2')
 			elif iGoal == 1:
@@ -2361,10 +2419,10 @@ class Victory:
 					aHelp.append(self.getIcon(bCarthage) + '2 cities in Carthage ' + self.getIcon(bByzantium) + '4 cities in Greece and Anatolia ' + self.getIcon(bEgypt) + '2 cities in Egypt')
 			else:
 				if iGoal == 0:
-					bBanking = self.getItalianTechs(0)
-					bEducation = self.getItalianTechs(1)
-					bRadio = self.getItalianTechs(2)
-					bFascism = self.getItalianTechs(3)
+					bBanking = (self.getItalianTechs(0) == 1)
+					bEducation = (self.getItalianTechs(1) == 1)
+					bRadio = (self.getItalianTechs(2) == 1)
+					bFascism = (self.getItalianTechs(3) == 1)
 					aHelp.append(self.getIcon(bBanking) + 'Banking ' + self.getIcon(bEducation) + 'Education ' + self.getIcon(bRadio) + 'Radio ' + self.getIcon(bFascism) + 'Fascism')
 				elif iGoal == 1:
 					iUniversities = self.getItalianUniversities()
@@ -2409,6 +2467,19 @@ class Victory:
                                  		if (bAfrica == False):
                                  			break
 				aHelp.append(self.getIcon(bAfrica) + 'No European colonies in East and Subequatorial Africaa')
+
+		elif iPlayer == iKorea:
+			if iGoal == 0:
+				bConfucianCathedral = (self.getNumBuildings(iKorea, con.iConfucianCathedral) > 0)
+				bBuddhistCathedral = (self.getNumBuildings(iKorea, con.iBuddhistCathedral) > 0)
+				aHelp.append(self.getIcon(bBuddhistCathedral) + 'Buddhist Stupa ' + self.getIcon(bConfucianCathedral) + 'Confucian Academy')
+			elif iGoal == 1:
+				bPrintingPress = (self.getKoreanTechs(0) == 1)
+				bGunpowder = (self.getKoreanTechs(1) == 1)
+				aHelp.append(self.getIcon(bPrintingPress) + 'Printing Press ' + self.getIcon(bGunpowder) + 'Gunpowder')
+			elif iGoal == 2:
+				iNumSinks = self.getNumKoreanSinks()
+				aHelp.append(self.getIcon(iNumSinks >= 20) + 'Enemy ships sunk: ' + str(iNumSinks) + '/20')
 
 		# Maya goals have no stages
 

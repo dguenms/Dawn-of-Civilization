@@ -631,5 +631,21 @@
 			<NoShaderNIF>art/LeaderHeads/Khomeini/saladin.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Khomeini/saladin_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_TAIZONG</Type>
+			<Button>,Art/leaderheads/Taizong/Taizong.dds</Button>
+			<NIF>art/leaderheads/Taizong/mao_tse_tung.nif</NIF>
+			<KFM>art/leaderheads/Taizong/mao_tse_tung.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Taizong/mao_tse_tung_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Taizong/mao_tse_tung_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_YONGLE</Type>
+			<Button>,Art/leaderheads/Yongle/Taizong.dds</Button>
+			<NIF>art/leaderheads/Yongle/wang_kon.nif</NIF>
+			<KFM>art/leaderheads/Yongle/wang_kon.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Yongle/wang_kon_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Yongle/Wang_Kon_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

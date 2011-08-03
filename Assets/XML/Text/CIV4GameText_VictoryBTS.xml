@@ -139,4 +139,19 @@
 		<English>Control three cities in the Balkans, Northern Africa and the Near East in 1450 AD</English>
 		<German>Kontrollieren Sie drei St‰dte im Balkan, Nordafrika und dem Nahen Osten im Jahr 1450 n. Chr.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR1</Tag>
+		<English>Build a Buddhist Stupa and a Confucian Academy by 1200 AD</English>
+		<German>Bauen Sie eine Buddhistische Stupa und eine Konfuzianische Akademie bis zum Jahr 1200 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR2</Tag>
+		<English>Be first to discover Printing Press and Gunpowder</English>
+		<German>Erforschen Sie als Erster Druckerpresse und Schieﬂpulver</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR3</Tag>
+		<English>Sink 20 enemy ships</English>
+		<German>Versenken Sie 20 gegnerische Schiffe</German>
+	</TEXT>
 </Civ4GameText>

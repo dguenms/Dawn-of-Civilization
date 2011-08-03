@@ -5368,6 +5368,8 @@ void CvPlayer::found(int iX, int iY)
 					break;
                 case KOREA:
                     startingEra = 1;
+                    if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+                        startingEra = 2;
                     break;
 				case MAYA:
 					startingEra = 1;
@@ -5785,6 +5787,8 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			break;
         case KOREA:
             startingEra = 1;
+            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+                startingEra = 2;
             break;
 		case MAYA:
 			startingEra = 1;
@@ -11527,6 +11531,8 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 			break;
         case KOREA:
             startEra = 1;
+            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+                startEra = 2;
             break;
 		case MAYA:
 			startEra = 1;

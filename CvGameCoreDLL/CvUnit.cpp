@@ -223,6 +223,13 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 				setHasPromotion(((PromotionTypes)0), true); //combat1
 			}
 		break;*/
+    case KOREA:
+        if (getUnitCombatType() == 8) //naval
+            {
+                setHasPromotion(((PromotionTypes)29), true); //Drill1
+                setHasPromotion(((PromotionTypes)30), true); //Drill2
+            }
+        break;
 	case SPAIN:
 		if (getUnitCombatType() == 8) //naval
 			{
