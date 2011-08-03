@@ -92,7 +92,7 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_QIN_SHI_HUANG
+	LeaderType=LEADER_TAIZONG
 	CivType=CIVILIZATION_CHINA                 
 	Team=2                 
 	PlayableCiv=1                       

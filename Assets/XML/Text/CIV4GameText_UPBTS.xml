@@ -104,4 +104,14 @@
 		<English>Every city creates two [ICON_ESPIONAGE] per culture level</English>
 		<German>Jede Stadt erzeugt zwei [ICON_ESPIONAGE] pro Kulturstufe</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KOR</Tag>
+		<English>The Power of Kobuksons:</English>
+		<German>Die Macht der Kobuksons:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KOR2</Tag>
+		<English>Free Drill I and Drill II promotions for all naval units</English>
+		<German>Alle Marineeinheiten erhalten die Drill I und Drill II Beförderung</German>
+	</TEXT>
 </Civ4GameText>

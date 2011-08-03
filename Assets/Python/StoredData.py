@@ -130,6 +130,8 @@ class StoredData:
 				    'iChineseGoldenAges' : 0,
 				    'lItalianTechs': [-1, -1, -1, -1],
 				    'iItalianUniversities': 0,
+				    'iNumKoreanSinks': 0,
+				    'lKoreanTechs': [-1, -1],
                                     #------------Stability
                                     'lBaseStabilityLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                                     'lPartialBaseStability': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],

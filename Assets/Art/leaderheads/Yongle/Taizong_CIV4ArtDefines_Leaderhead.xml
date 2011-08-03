@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- Sid Meier's Civilization 4 Beyond the Sword -->
+<!-- Modified by the Civ Gold Team -->
+<!-- -->
+<Civ4ArtDefines xmlns="x-schema:Taizong_CIV4ArtDefinesSchema.xml">
+	<LeaderheadArtInfos>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_TAIZONG</Type>
+			<Button>Modules/Custom Leaderheads/Taizong/Taizong.dds</Button>
+			<NIF>Modules/Custom Leaderheads/Taizong/wang_kon.nif</NIF>
+			<KFM>Modules/Custom Leaderheads/Taizong/wang_kon.kfm</KFM>
+			<NoShaderNIF>Modules/Custom Leaderheads/Taizong/wang_kon_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Modules/Custom Leaderheads/Taizong/Wang_Kon_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+	</LeaderheadArtInfos>
+</Civ4ArtDefines>

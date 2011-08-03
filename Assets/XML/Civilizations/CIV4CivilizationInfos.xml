@@ -872,8 +872,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
-					<BuildingType>BUILDING_CHINESE_ACADEMY</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
+					<BuildingType>BUILDING_CHINESE_PAVILLION</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -941,6 +941,14 @@
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_QIN_SHI_HUANG</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_TAIZONG</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_YONGLE</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
