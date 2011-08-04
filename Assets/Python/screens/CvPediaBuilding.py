@@ -330,7 +330,8 @@ class CvPediaBuilding:
 	def getBuildingSortedList(self, bWonder):
 		listBuildings = []
 		iCount = 0
-		for iBuilding in range(gc.getNumBuildingInfos()): #Rhye
+		#for iBuilding in range(gc.getNumBuildingInfos()): #Rhye
+		for iBuilding in range(con.iNumBuildingsEmbassy): #Leoreth
 			if (self.getBuildingType(iBuilding) == bWonder and not gc.getBuildingInfo(iBuilding).isGraphicalOnly()):
                                 #Rhye - start
 				#listBuildings.append(iBuilding)

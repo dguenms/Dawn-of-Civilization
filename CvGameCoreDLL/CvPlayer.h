@@ -1063,6 +1063,7 @@ public:
 	bool isReborn(); // Leoreth
     int getReborn(); // Leoreth
     void setReborn(); // Leoreth
+    bool isHasBuilding(BuildingTypes eIndex); // Leoreth
 
 protected:
 

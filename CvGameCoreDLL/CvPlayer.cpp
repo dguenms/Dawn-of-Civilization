@@ -6806,6 +6806,15 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 		}
 	}
 
+	// Khajuraho effect
+	if (GET_PLAYER((PlayerTypes)getID()).isHasBuilding((BuildingTypes)KHAJURAHO))
+	{
+	    if (GC.getBuildingInfo(eBuilding).getSpecialBuildingType() != NO_SPECIALBUILDING && GC.getBuildingInfo(eBuilding).getPrereqReligion() == getStateReligion())
+		{
+			iMultiplier += 100;
+		}
+	}
+
 	if (::isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
 	{
 		iMultiplier += getMaxGlobalBuildingProductionModifier();
@@ -23561,6 +23570,11 @@ void CvPlayer::setReborn()
     m_bReborn = true;
 }
 
+bool CvPlayer::isHasBuilding(BuildingTypes eIndex)
+{
+    return (countNumBuildings(eIndex) > 0);
+}
+
 //Rhye - start switch (dynamic civ names - not jdog's)
 void CvPlayer::processCivNames()
 {
@@ -23576,6 +23590,8 @@ void CvPlayer::processCivNames()
 
 	if (getID() == CARTHAGE) {
 	    cityThreshold = 2;
+	}else if (getID() == KOREA) {
+	    cityThreshold = 3;
 	}
 
 	if (getID() < NUM_MAJOR_PLAYERS) {
