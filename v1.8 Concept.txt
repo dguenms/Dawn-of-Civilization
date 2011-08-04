@@ -30,14 +30,15 @@ Change India's second UHV goal: build 24 temples
 Add the following wonders:
 	Borobudur (Machinery, Aesthetics), requires Buddhism: +1 artist slot per temple
 	Khajuraho (Theology, Aesthetics), requires Hinduism: +100% religious building construction speed [no graphics yet]
-	Harmandir Sahib (Divine Right), requires Hinduism: +2 experience for units built in cities with state religion [no graphics yet]
+	Harmandir Sahib (Military Tradition), requires Hinduism: +2 experience for units built in cities with state religion [no graphics yet]
 	Himeji Castle (Feudalism, Masonry), requires Buddhism: +100% gold from pillaging, no pillage on own territory
-	Porcelain Tower (Economics), requires Confucianism: all trade routes count as foreign intercontinental routes
+	Porcelain Tower (Banking), requires Confucianism: all trade routes count as foreign intercontinental routes
 	Great Bath (Pottery), requires Hinduism, expires with Construction: provides fresh water, +1 population for every founded city
 	Unsure/no appropriate effects yet: Jokhang (Buddhism), Lakshminarayan (Hinduism)
 	Change Terracotta Army and Great Wall to Confucian wonders
 	Change Topkapi Palace to its "recruit vassal's UUs" effect
 	Change St. Basil's Cathedral to a Late Middle Ages wonder that gives +2 espionage per state religion building
+	Jokhang (Theology): Unlimited missionaries, enemy players never refuse to talk
 
 Add the following wonders (but maybe only with 1.9):
 	Empire State Building (Radio): +1 commerce per population in the city
@@ -45,3 +46,39 @@ Add the following wonders (but maybe only with 1.9):
 	Trafalgar Square (Military Tradition): +4 experience for all naval units
 	
 Change Mongolia's second UHV goal: control 7 foreign cores by 1400 AD
+
+Mongol horde event:
+	By making contact with [India, Persia, Arabia, Byzantium, Russia] AI Mongolia automatically declares war on them and spawns an army
+
+Corporation rework: the new eight corporations will be:
+	Silk Route (Currency): +gold, food from silk
+	Trading Company (Astronomy): +gold, food from cotton, spices, sugar, ivory
+	
+	Steel Industry (Steel, GE); +production from iron, copper, coal
+	Luxury Industry (Assembly Line, GA): +gold, culture from gold, silver, gems, silk
+	Oil Industry (Combustion, GE): +gold from oil
+	Computer Industry (Computers, GS): +science from copper, aluminum, oil
+	Cereal Industry (Biology, GM): +food from from wheat, rice, corn
+	Fishing Industry (Refrigeration, GM): +food from fish, crab, clam
+
+	The rules for corporations change as well and are now similar to SoI's companies. That means:
+		- there are no corporation executives anymore
+		- corporations can spread to any city whose owner knows the prerequisite tech
+		- probability of spreading based on a number of factors like number of owned consumed resources, present buildings or civics
+		- the two preindustrial corporations follow special rules:
+			- they disappear after discovering a certain tech (Astronomy for Silk Route, Assembly Line for Trading Company)
+			- they can spread only to cities in certain areas (China, Mongolia, Persia, Mesopotamia, Levant, Anatolia, Balkans and Italy for Silk Route, Carribean Sea, African Coast, India and the East Indies for Trading Company)
+			- they have no corporation headquarter
+		- the corporations do not need to get founded before they can spread, the tech alone is enough
+		- players can still found corporation headquarters by using GP to acquire the additional gold
+		- you can even build already constructed headquarters again to secure it for your civ (using a GP again), however, he needs to control more associated resources than the current holder
+
+	The two preindustrial corporations have been explicitly designed to improve the silk route cities or one tile islands in the aforementioned regions to better represent their historical value.
+
+Religion rework: non-state religions now give -1 happiness from the start, i.e. its canceled out by building its temple
+
+New Indian UP: The Power of Spirituality: no penalties from non-state religions, no anarchy from switching religions
+
+New Babylonian UP: The Power of Law: no anarchy from switching civics
+
+-> playtest Korea (overall performance, UHV), Mongols (UHV), India (UHV, Khajuraho gambit), Khmer (Borobudur gambit), Spain/Portugal (Trading Company corporation)
