@@ -1014,8 +1014,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Tag>
-		<English>[ICON_BULLET]Own improvements are immune to plundering[NEWLINE][ICON_BULLET]Amount of[ICON_GOLD]looted doubled</English>
-		<German>[ICON_BULLET]Eigene Verbesserungen sind immun gegen Plünderung[NEWLINE][ICON_BULLET]Menge des geplünderten[ICON_GOLD]verdoppelt</German>
+		<English>[ICON_BULLET]Own improvements are immune to plundering[NEWLINE][ICON_BULLET]Amount of [ICON_GOLD]looted doubled</English>
+		<German>[ICON_BULLET]Eigene Verbesserungen sind immun gegen Plünderung[NEWLINE][ICON_BULLET]Menge des geplünderten [ICON_GOLD]verdoppelt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER</Tag>

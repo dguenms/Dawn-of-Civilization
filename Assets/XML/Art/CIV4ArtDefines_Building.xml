@@ -2103,7 +2103,7 @@
 			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Borobudur/Borobudur.nif</NIF>
 			<KFM/>
-			<Button></Button>
+			<Button>Art/Structures/Wonders/Borobudur/Borobudur.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HIMEJI_CASTLE</Type>
@@ -2120,7 +2120,7 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.4</fScale>
-			<fInterfaceScale>0.28</fInterfaceScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Porcelain Tower/nanjing.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Porcelain Tower/Button_PorcelainTower.dds</Button>
@@ -2131,9 +2131,29 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Great Bath/bath_middle_east.nif</NIF>
+			<NIF>Art/Structures/Wonders/Great Bath/bath_middle_east.nif</NIF>
 			<KFM/>
-			<Button>Art/Great Bath/GreatBathButton.dds</Button>
+			<Button>Art/Structures/Wonders/Great Bath/GreatBathButton.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KHAJURAHO</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Khmer_Baray/Khmer_Baray.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Wonders/Khajuraho.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HARMANDIR_SAHIB</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>2.55</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Monastery/Hindu/Hindu_monastery.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Wonders/HarmandirSahib.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
