@@ -32135,7 +32135,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iCitiesPrereq>0</iCitiesPrereq>
-			<iTeamsPrereq>3</iTeamsPrereq>
+			<iTeamsPrereq>0</iTeamsPrereq>
 			<iLevelPrereq>0</iLevelPrereq>
 			<iMinLatitude>0</iMinLatitude>
 			<iMaxLatitude>90</iMaxLatitude>
@@ -32259,7 +32259,7 @@
 			<Strategy>TXT_KEY_BUILDING_KHAJURAHO_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_HELP_KHAJURAHO</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HINDU_CATHEDRAL</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_KHAJURAHO</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
@@ -32321,7 +32321,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iCitiesPrereq>0</iCitiesPrereq>
-			<iTeamsPrereq>3</iTeamsPrereq>
+			<iTeamsPrereq>0</iTeamsPrereq>
 			<iLevelPrereq>0</iLevelPrereq>
 			<iMinLatitude>0</iMinLatitude>
 			<iMaxLatitude>90</iMaxLatitude>
@@ -32532,7 +32532,7 @@
 			<iAreaHealth>0</iAreaHealth>
 			<iGlobalHealth>0</iGlobalHealth>
 			<iHappiness>0</iHappiness>
-			<iAreaHappiness>2</iAreaHappiness>
+			<iAreaHappiness>0</iAreaHappiness>
 			<iGlobalHappiness>0</iGlobalHappiness>
 			<iStateReligionHappiness>0</iStateReligionHappiness>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
@@ -32712,7 +32712,7 @@
 			<iAreaHealth>0</iAreaHealth>
 			<iGlobalHealth>0</iGlobalHealth>
 			<iHappiness>0</iHappiness>
-			<iAreaHappiness>2</iAreaHappiness>
+			<iAreaHappiness>0</iAreaHappiness>
 			<iGlobalHappiness>0</iGlobalHappiness>
 			<iStateReligionHappiness>0</iStateReligionHappiness>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
@@ -32796,7 +32796,7 @@
 			<Strategy>TXT_KEY_BUILDING_HARMANDIR_SAHIB_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_HELP_HARMANDIR_SAHIB</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HINDU_MONASTERY</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_HARMANDIR_SAHIB</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
@@ -32837,7 +32837,7 @@
 			<DiploVoteType>NONE</DiploVoteType>
 			<bForceTeamVoteEligible>0</bForceTeamVoteEligible>
 			<bCapital>0</bCapital>
-			<bGovernmentCenter>1</bGovernmentCenter>
+			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bMapCentering>0</bMapCentering>

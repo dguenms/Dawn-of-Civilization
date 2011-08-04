@@ -7,8 +7,8 @@
 	<File name="CvArea.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="18746" topLine="40" />
 	</File>
-	<File name="CvCity.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="52980" topLine="2057" />
+	<File name="CvCity.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="192842" topLine="8168" />
 	</File>
 	<File name="CvCity.h" open="0" top="0" tabpos="12">
 		<Cursor position="852" topLine="19" />
@@ -55,8 +55,8 @@
 	<File name="CvGameCoreUtils.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="46129" topLine="1774" />
 	</File>
-	<File name="CvGameTextMgr.cpp" open="1" top="1" tabpos="7">
-		<Cursor position="240302" topLine="6937" />
+	<File name="CvGameTextMgr.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="480666" topLine="14120" />
 	</File>
 	<File name="CvGameTextMgr.h" open="0" top="0" tabpos="0">
 		<Cursor position="842" topLine="12" />
