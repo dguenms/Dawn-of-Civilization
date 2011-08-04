@@ -391,6 +391,10 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		if (getOwnerINLINE() < VIKING) {
 			eraModifier = 1;
 		}
+
+    //Leoreth: Great Bath effect
+    if (GET_PLAYER(eOwner).isHasBuilding((BuildingTypes)GREAT_BATH) && !GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)CONSTRUCTION))
+        eraModifier++;
 	changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + eraModifier);
 	//changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + iExtraPop);
 	//Rhye - end switch
@@ -2549,6 +2553,10 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		if (isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()))
 		{
 			iExperience += GET_PLAYER(getOwnerINLINE()).getStateReligionFreeExperience();
+
+			//Leoreth: Harmandir Sahib effect
+            if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HARMANDIR_SAHIB))
+                iExperience += 2;
 		}
 	}
 
@@ -8120,12 +8128,14 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	if (NULL != pOtherCity)
 	{
-		if (area() != pOtherCity->area())
+	    //Leoreth: includes Porcelain Tower effect
+		if (area() != pOtherCity->area() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
 		{
 			iModifier += GC.getDefineINT("OVERSEAS_TRADE_MODIFIER");
 		}
 
-		if (getTeam() != pOtherCity->getTeam())
+        //Leoreth: includes Porcelain Tower effect
+		if (getTeam() != pOtherCity->getTeam() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
 		{
 			iModifier += getForeignTradeRouteModifier();
 
@@ -9926,6 +9936,14 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
+	//Leoreth: Borobudur effect
+	if (eIndex == (SpecialistTypes)2) //artist
+	{
+	    if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)BOROBUDUR) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
+	    {
+	        return m_paiMaxSpecialistCount[eIndex]+m_paiMaxSpecialistCount[(SpecialistTypes)1]; //priest
+	    }
+	}
 	return m_paiMaxSpecialistCount[eIndex];
 }
 

@@ -987,4 +987,65 @@
 		<German>[ICON_BULLET]Verlegt die heilige Stadt seiner Religion in seinen Bauort</German>
 	</TEXT>
 
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BOROBUDUR</Tag>
+		<English>Borobudur</English>
+		<German>Borobudur</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELP_BOROBUDUR</Tag>
+		<English>[ICON_BULLET]One additional artist slot for every priest slot in your cities</English>
+		<German>[ICON_BULLET]Ihr könnt einen zusätzlichen Künstler für jeden verfügbaren Priester einstellen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KHAJURAHO</Tag>
+		<English>Khajuraho</English>
+		<German>Khajuraho</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELP_KHAJURAHO</Tag>
+		<English>[ICON_BULLET]State Religion buildings are constructed twice as fast</English>
+		<German>[ICON_BULLET]Gebäude der Staatsreligion werden doppelt so schnell gebaut</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HIMEJI_CASTLE</Tag>
+		<English>Himeji Castle</English>
+		<German>Die Burg von Himeji</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Tag>
+		<English>[ICON_BULLET]Own improvements are immune to plundering[NEWLINE][ICON_BULLET]Amount of[ICON_GOLD]looted doubled</English>
+		<German>[ICON_BULLET]Eigene Verbesserungen sind immun gegen Plünderung[NEWLINE][ICON_BULLET]Menge des geplünderten[ICON_GOLD]verdoppelt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER</Tag>
+		<English>Porcelain Tower</English>
+		<German>Porzellanturm</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
+		<English>[ICON_BULLET]All trade routes are counted as foreign and intercontinental</English>
+		<German>[ICON_BULLET]All Handelsrouten werden als ausländische und Überseerouten gewertet</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Tag>
+		<English>Harmandir Sahib</English>
+		<German>Harmandir Sahib</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELP_HARMANDIR_SAHIB</Tag>
+		<English>[ICON_BULLET]All units built in cities with state religion receive +2 experience</English>
+		<German>[ICON_BULLET]Alle Einheiten, die in Städten mit Staatsreligion ausgebildet werden, erhalten +2 Erfahrung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_BATH</Tag>
+		<English>The Great Bath</English>
+		<German>Das Große Bad</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HELP_GREAT_BATH</Tag>
+		<English>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</English>
+		<German>[ICON_BULLET]Versorgt die Stadt mit Süßwasser[NEWLINE][ICON_BULLET]Alle neu gegründeten Städte erhalten einen zusätzlichen Bevölkerungspunkt</German>
+	</TEXT>
+
 </Civ4GameText>

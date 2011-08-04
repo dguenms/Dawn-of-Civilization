@@ -1359,6 +1359,16 @@ bool CvPlot::isFreshWater() const
 		return true;
 	}
 
+	//Leoreth: Great Bath effect
+	if (isCity())
+	{
+	    CvCity* pCity = getPlotCity();
+	    if (pCity->isHasRealBuilding((BuildingTypes)GREAT_BATH))
+	    {
+	        return true;
+	    }
+	}
+
 	for (iDX = -1; iDX <= 1; iDX++)
 	{
 		for (iDY = -1; iDY <= 1; iDY++)

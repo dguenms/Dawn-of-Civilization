@@ -2095,5 +2095,45 @@
 			<KFM/>
 			<Button>Art/Structures/Wonders/CERN/btn_cern.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BOROBUDUR</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Borobudur/Borobudur.nif</NIF>
+			<KFM/>
+			<Button></Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HIMEJI_CASTLE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Himeji Castle/asiapalace.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Himeji Castle/HimejiCastle.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PORCELAIN_TOWER</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.28</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Porcelain Tower/nanjing.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Porcelain Tower/Button_PorcelainTower.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GREAT_BATH</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Great Bath/bath_middle_east.nif</NIF>
+			<KFM/>
+			<Button>Art/Great Bath/GreatBathButton.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

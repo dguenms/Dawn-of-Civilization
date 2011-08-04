@@ -250,5 +250,21 @@
 			<Type>ART_DEF_MOVIE_CERN</Type>
 			<Path>Art/Movies/Wonders/ParticleAccelerator.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BOROBUDUR</Type>
+			<Path>Art/Structures/Wonders/Borobudur/Borobudur.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HIMEJI_CASTLE</Type>
+			<Path>Art/Structures/Wonders/Himeji Castle/HimejiCastle.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PORCELAIN_TOWER</Type>
+			<Path>Art/Structures/Wonders/Porcelain Tower/PorcelainTower.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_BATH</Type>
+			<Path>Art/Structure/Wonders/Great Bath/MohenjoDaro.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>
