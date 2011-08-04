@@ -7,13 +7,13 @@
 	<File name="CvArea.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="18746" topLine="40" />
 	</File>
-	<File name="CvCity.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="9382" topLine="295" />
+	<File name="CvCity.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="52980" topLine="2057" />
 	</File>
 	<File name="CvCity.h" open="0" top="0" tabpos="12">
 		<Cursor position="852" topLine="19" />
 	</File>
-	<File name="CvCityAI.cpp" open="1" top="0" tabpos="4">
+	<File name="CvCityAI.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="67886" topLine="2358" />
 	</File>
 	<File name="CvDLLButtonPopup.cpp" open="0" top="0" tabpos="7">
@@ -25,7 +25,7 @@
 	<File name="CvDLLWidgetData.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="10207" topLine="406" />
 	</File>
-	<File name="CvDefines.h" open="1" top="0" tabpos="5">
+	<File name="CvDefines.h" open="0" top="0" tabpos="5">
 		<Cursor position="942" topLine="77" />
 	</File>
 	<File name="CvDiploParameters.cpp" open="0" top="0" tabpos="7">
@@ -43,7 +43,7 @@
 	<File name="CvEventReporter.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="8309" topLine="281" />
 	</File>
-	<File name="CvGame.cpp" open="1" top="0" tabpos="6">
+	<File name="CvGame.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="65235" topLine="2230" />
 	</File>
 	<File name="CvGame.h" open="0" top="0" tabpos="0">
@@ -55,8 +55,8 @@
 	<File name="CvGameCoreUtils.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="46129" topLine="1774" />
 	</File>
-	<File name="CvGameTextMgr.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="232279" topLine="6697" />
+	<File name="CvGameTextMgr.cpp" open="1" top="1" tabpos="7">
+		<Cursor position="240302" topLine="6937" />
 	</File>
 	<File name="CvGameTextMgr.h" open="0" top="0" tabpos="0">
 		<Cursor position="842" topLine="12" />
@@ -64,8 +64,8 @@
 	<File name="CvGlobals.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="35253" topLine="1572" />
 	</File>
-	<File name="CvInfos.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="309472" topLine="10462" />
+	<File name="CvInfos.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="157004" topLine="5566" />
 	</File>
 	<File name="CvInfos.h" open="0" top="0" tabpos="4">
 		<Cursor position="198187" topLine="6023" />
@@ -73,41 +73,41 @@
 	<File name="CvMap.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="34781" topLine="1344" />
 	</File>
-	<File name="CvPlayer.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="280550" topLine="11508" />
+	<File name="CvPlayer.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="174680" topLine="6788" />
 	</File>
 	<File name="CvPlayer.h" open="0" top="0" tabpos="3">
-		<Cursor position="64906" topLine="1035" />
+		<Cursor position="64964" topLine="1035" />
 	</File>
-	<File name="CvPlayerAI.cpp" open="1" top="0" tabpos="9">
+	<File name="CvPlayerAI.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="60791" topLine="2344" />
 	</File>
 	<File name="CvPlayerAI.h" open="0" top="0" tabpos="8">
 		<Cursor position="0" topLine="24" />
 	</File>
-	<File name="CvPlot.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="142981" topLine="6526" />
+	<File name="CvPlot.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="29312" topLine="1343" />
 	</File>
 	<File name="CvPlot.h" open="0" top="0" tabpos="0">
 		<Cursor position="553" topLine="543" />
 	</File>
-	<File name="CvRhyes.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="9959" topLine="165" />
+	<File name="CvRhyes.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="1407786" topLine="0" />
 	</File>
-	<File name="CvRhyes.h" open="1" top="0" tabpos="2">
-		<Cursor position="5441" topLine="176" />
+	<File name="CvRhyes.h" open="1" top="0" tabpos="4">
+		<Cursor position="2177" topLine="162" />
 	</File>
 	<File name="CvTeam.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="72679" topLine="2820" />
+		<Cursor position="141018" topLine="5094" />
 	</File>
-	<File name="CvTeamAI.cpp" open="1" top="0" tabpos="10">
+	<File name="CvTeamAI.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="64614" topLine="2568" />
 	</File>
 	<File name="CvTeamAI.h" open="0" top="0" tabpos="10">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="CvUnit.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="6553" topLine="212" />
+	<File name="CvUnit.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="244345" topLine="10085" />
 	</File>
 	<File name="CvUnitAI.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="274384" topLine="12643" />
@@ -140,7 +140,7 @@
 		<Cursor position="0" topLine="27" />
 	</File>
 	<File name="CyPlot.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="22125" topLine="887" />
+		<Cursor position="19097" topLine="786" />
 	</File>
 	<File name="CyTeam.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="629" topLine="12" />
