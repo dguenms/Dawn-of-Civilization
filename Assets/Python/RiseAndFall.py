@@ -3064,12 +3064,44 @@ class RiseAndFall:
                                                 if (not bVassal):
                                                         teamNewWorldCiv.setAtWar(iOldWorldCiv, True)
                                                         teamOldWorldCiv.setAtWar(iNewWorldCiv, True)
-                                                        teamNewWorldCiv.AI_setWarPlan(iOldWorldCiv, 5)
+                                                        teamOldWorldCiv.AI_setWarPlan(iNewWorldCiv, 5)
                                                 
                                                 if (gc.getPlayer(iNewWorldCiv).isHuman()):
                                                         CyInterface().addMessage(iNewWorldCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_NEWWORLD", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
                                                 if (gc.getPlayer(iOldWorldCiv).isHuman()):
                                                         CyInterface().addMessage(iOldWorldCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_OLDWORLD", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+
+		# Leoreth: Mongol horde event against India, Persia, Arabia, Byzantium, Russia
+		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia and iTeamX in [iIndia, iPersia, iArabia, iByzantium, iRussia] and gc.getGame().getGameTurn() < getTurnForYear(1400):
+		
+			teamTarget = gc.getTeam(iTeamX)
+
+			teamMongolia.setAtWar(iTeamX, True)
+			teamTarget.setAtWar(iMongolia, True)
+			teamMongolia.AI_setWarPlan(iTeamX, 5)	# necessary?
+			print("Mongolian war set against "+gc.getPlayer(iTeamX).getCivilizationDescriptionKey())
+
+			if iTeamX in [iArabia, iByzantium, iRussia]:
+				pCity = utils.getEasternmostCity(iTeamX)
+			elif iTeamX == iPersia:
+				pCity = utils.getNorthernmostCity(iTeamX)
+			elif iTeamX == iIndia:
+				pCity = utils.getWesternmostCity(iTeamX)
+
+			if pCity != -1:
+				print ("City found, search land plot.")
+				tPlot = utils.findNearestLandPlot((pCity.getX(), pCity.getY()), iMongolia)
+
+			if tPlot:
+				print ("Plot found, place units.")
+				utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
+				utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
+				utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+
+			if utils.isHuman(iTeamX):
+				CyInterface().addMessage(iTeamX, True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE_HUMAN", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+			else:
+				CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iTeamX).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
 
 
