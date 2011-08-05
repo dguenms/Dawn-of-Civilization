@@ -298,5 +298,16 @@
 		<English>It is the year 1776 AD. Discontent with foreign domination, the people in the American colonies have risen up in revolution to found their own nation. They now must defend themselves from and even surpass the European civilizations to fulfill their manifest destiny.</English>
 	</TEXT>
 
+	<TEXT>
+		<Tag>TXT_KEY_MONGOL_HORDE</Tag>
+		<English>The Mongol hordes have invaded %s1_civ_adjective territory!</English>
+		<German>Die mongolischen Horden sind in %s1_civ_adjective Territorium eingefallen!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MONGOL_HORDE_HUMAN</Tag>
+		<English>The Mongol hordes have invaded our territory!</English>
+		<German>Die mongolischen Horden sind in unser Territorium eingefallen!</German>
+	</TEXT>
+
 
 </Civ4GameText>

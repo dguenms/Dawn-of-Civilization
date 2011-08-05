@@ -476,6 +476,54 @@
 
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_1</Tag>
+		<English>Silk Route</English>
+		<French>
+			<Text>Silk Route</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Seidenstraﬂe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Silk Route</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Silk Route</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_2</Tag>
+		<English>Trading Company</English>
+		<French>
+			<Text>Trading Company</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Handelskompanie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Trading Company</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Trading Company</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_3</Tag>
 		<English>Cereal Industry</English>
 		<French>
 			<Text>Cereal Industry</Text>
@@ -499,7 +547,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>CHANGED_TXT_KEY_CORPORATION_2</Tag>
+		<Tag>CHANGED_TXT_KEY_CORPORATION_4</Tag>
 		<English>Fishing Industry</English>
 		<French>
 			<Text>Fishing Industry</Text>
@@ -523,7 +571,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_3</Tag>
+		<Tag>TXT_KEY_CORPORATION_6</Tag>
 		<English>Oil Industry</English>
 		<French>
 			<Text>Oil Industry</Text>
@@ -547,7 +595,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_4</Tag>
+		<Tag>TXT_KEY_CORPORATION_8</Tag>
 		<English>Computer Industry</English>
 		<French>
 			<Text>Computer Industry</Text>
@@ -572,30 +620,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_5</Tag>
-		<English>Textile Industry</English>
-		<French>
-			<Text>Textile Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Textile Industry</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Textile Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Textile Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_6</Tag>
 		<English>Steel Industry</English>
 		<French>
 			<Text>Steel Industry</Text>

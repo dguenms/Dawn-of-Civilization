@@ -7,9 +7,66 @@
 <Civ4CorporationInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
 	<CorporationInfos>
 		<CorporationInfo>
-			<Type>CORPORATION_1</Type>	<!-- Cereal Industry -->
+			<Type>CORPORATION_1</Type>	<!-- Silk Route -->
 			<Description>TXT_KEY_CORPORATION_1</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_1_PEDIA</Civilopedia>
+			<TechPrereq>NONE</TechPrereq>
+			<FreeUnitClass>NONE</FreeUnitClass>
+			<iSpreadFactor>200</iSpreadFactor>
+			<iSpreadCost>50</iSpreadCost>
+			<iMaintenance>100</iMaintenance>
+			<PrereqBonuses>
+				<BonusType>BONUS_SILK</BonusType>
+			</PrereqBonuses>
+			<HeadquarterCommerces>
+				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+			</HeadquarterCommerces>
+			<BonusProduced>NONE</BonusProduced>
+			<CommercesProduced>
+				<iCommerceProduced>250</iCommerceProduced>
+			</CommercesProduced>
+			<YieldsProduced>
+				<iYieldProduced>50</iYieldProduced>
+			</YieldsProduced>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,14</Button>
+			<MovieFile>NONE</MovieFile>
+			<MovieSound>NONE</MovieSound>
+			<Sound>AS2D_BUILD_BANK</Sound>
+		</CorporationInfo>
+		<CorporationInfo>
+			<Type>CORPORATION_2</Type>	<!-- Trading Company -->
+			<Description>TXT_KEY_CORPORATION_2</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_2_PEDIA</Civilopedia>
+			<TechPrereq>NONE</TechPrereq>
+			<FreeUnitClass>NONE</FreeUnitClass>
+			<iSpreadFactor>200</iSpreadFactor>
+			<iSpreadCost>50</iSpreadCost>
+			<iMaintenance>100</iMaintenance>
+			<PrereqBonuses>
+				<BonusType>BONUS_SPICES</BonusType>
+				<BonusType>BONUS_SUGAR</BonusType>
+				<BonusType>BONUS_BANANA</BonusType>
+				<BonusType>BONUS_IVORY</BonusType>
+			</PrereqBonuses>
+			<HeadquarterCommerces>
+				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+			</HeadquarterCommerces>
+			<BonusProduced>NONE</BonusProduced>
+			<CommercesProduced>
+				<iCommerceProduced>100</iCommerceProduced>
+			</CommercesProduced>
+			<YieldsProduced>
+				<iYieldProduced>25</iYieldProduced>
+			</YieldsProduced>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,11</Button>
+			<MovieFile>NONE</MovieFile>
+			<MovieSound>NONE</MovieSound>
+			<Sound>AS2D_BUILD_BANK</Sound>
+		</CorporationInfo>
+		<CorporationInfo>
+			<Type>CORPORATION_3</Type>	<!-- Cereal Industry -->
+			<Description>TXT_KEY_CORPORATION_3</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_3_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -32,15 +89,15 @@
 			<YieldsProduced>
 				<iYieldProduced>75</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,6</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,16</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_2</Type>	<!-- Fishing Industry -->
-			<Description>CHANGED_TXT_KEY_CORPORATION_2</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_2_PEDIA</Civilopedia>
+			<Type>CORPORATION_4</Type>	<!-- Fishing Industry -->
+			<Description>CHANGED_TXT_KEY_CORPORATION_4</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_4_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -74,111 +131,9 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_3</Type>	<!-- Oil Industry -->
-			<Description>TXT_KEY_CORPORATION_3</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_3_PEDIA</Civilopedia>
-			<TechPrereq>NONE</TechPrereq>
-			<FreeUnitClass>NONE</FreeUnitClass>
-			<iSpreadFactor>200</iSpreadFactor>
-			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
-			<PrereqBonuses>
-				<BonusType>BONUS_OIL</BonusType>
-			</PrereqBonuses>
-			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
-				<iHeadquarterCommerce>0</iHeadquarterCommerce>
-				<iHeadquarterCommerce>0</iHeadquarterCommerce>
-			</HeadquarterCommerces>
-			<BonusProduced>NONE</BonusProduced>
-			<CommercesProduced>
-				<iCommerceProduced>500</iCommerceProduced>
-				<iCommerceProduced>0</iCommerceProduced>
-			</CommercesProduced>
-			<YieldsProduced>
-				<iYieldProduced>0</iYieldProduced>
-			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,6</Button>
-			<MovieFile>NONE</MovieFile>
-			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
-		</CorporationInfo>
-		<CorporationInfo>
-			<Type>CORPORATION_4</Type>	<!-- Computers Industry -->
-			<Description>TXT_KEY_CORPORATION_4</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_4_PEDIA</Civilopedia>
-			<TechPrereq>NONE</TechPrereq>
-			<FreeUnitClass>NONE</FreeUnitClass>
-			<iSpreadFactor>200</iSpreadFactor>
-			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
-			<PrereqBonuses>
-				<BonusType>BONUS_COPPER</BonusType>
-				<BonusType>BONUS_ALUMINUM</BonusType>
-				<BonusType>BONUS_OIL</BonusType>
-			</PrereqBonuses>
-			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
-				<iHeadquarterCommerce>0</iHeadquarterCommerce>
-				<iHeadquarterCommerce>0</iHeadquarterCommerce>
-			</HeadquarterCommerces>
-			<BonusProduced>NONE</BonusProduced>
-			<CommercesProduced>
-				<iCommerceProduced>150</iCommerceProduced>
-				<iCommerceProduced>300</iCommerceProduced>
-				<iCommerceProduced>0</iCommerceProduced>
-			</CommercesProduced>
-			<YieldsProduced>
-				<iYieldProduced>0</iYieldProduced>
-				<iYieldProduced>0</iYieldProduced>
-				<iYieldProduced>0</iYieldProduced>
-			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,4,6</Button>
-			<MovieFile>NONE</MovieFile>
-			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
-		</CorporationInfo>
-		<CorporationInfo>
-			<Type>CORPORATION_5</Type>	<!-- Textile Industry -->
+			<Type>CORPORATION_5</Type>	<!-- Steel Industry -->
 			<Description>TXT_KEY_CORPORATION_5</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_5_PEDIA</Civilopedia>
-			<TechPrereq>NONE</TechPrereq>
-			<FreeUnitClass>NONE</FreeUnitClass>
-			<iSpreadFactor>200</iSpreadFactor>
-			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
-			<PrereqBonuses>
-				<BonusType>BONUS_COAL</BonusType>
-				<BonusType>BONUS_SHEEP</BonusType>
-				<BonusType>BONUS_COTTON</BonusType>
-				<BonusType>BONUS_SILK</BonusType>
-				<BonusType>BONUS_DYE</BonusType>
-			</PrereqBonuses>
-			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
-				<iHeadquarterCommerce>0</iHeadquarterCommerce>
-				<iHeadquarterCommerce>0</iHeadquarterCommerce>
-			</HeadquarterCommerces>
-			<BonusProduced>NONE</BonusProduced>
-			<CommercesProduced>
-				<iCommerceProduced>100</iCommerceProduced>
-				<iCommerceProduced>0</iCommerceProduced>
-				<iCommerceProduced>0</iCommerceProduced>
-			</CommercesProduced>
-			<YieldsProduced>
-				<iYieldProduced>0</iYieldProduced>
-				<iYieldProduced>75</iYieldProduced>
-				<iYieldProduced>0</iYieldProduced>
-			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,6</Button>
-			<MovieFile>NONE</MovieFile>
-			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
-		</CorporationInfo>
-		<CorporationInfo>
-			<Type>CORPORATION_6</Type>	<!-- Steel Industry -->
-			<Description>TXT_KEY_CORPORATION_6</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_6_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -211,7 +166,37 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_7</Type>	<!-- Luxus Industry -->
+			<Type>CORPORATION_6</Type>	<!-- Oil Industry -->
+			<Description>TXT_KEY_CORPORATION_6</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_6_PEDIA</Civilopedia>
+			<TechPrereq>NONE</TechPrereq>
+			<FreeUnitClass>NONE</FreeUnitClass>
+			<iSpreadFactor>200</iSpreadFactor>
+			<iSpreadCost>50</iSpreadCost>
+			<iMaintenance>100</iMaintenance>
+			<PrereqBonuses>
+				<BonusType>BONUS_OIL</BonusType>
+			</PrereqBonuses>
+			<HeadquarterCommerces>
+				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+			</HeadquarterCommerces>
+			<BonusProduced>NONE</BonusProduced>
+			<CommercesProduced>
+				<iCommerceProduced>500</iCommerceProduced>
+				<iCommerceProduced>0</iCommerceProduced>
+			</CommercesProduced>
+			<YieldsProduced>
+				<iYieldProduced>0</iYieldProduced>
+			</YieldsProduced>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,15</Button>
+			<MovieFile>NONE</MovieFile>
+			<MovieSound>NONE</MovieSound>
+			<Sound>AS2D_BUILD_BANK</Sound>
+		</CorporationInfo>
+		<CorporationInfo>
+			<Type>CORPORATION_7</Type>	<!-- Luxury Industry -->
 			<Description>TXT_KEY_CORPORATION_7</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_7_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
@@ -239,6 +224,41 @@
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,6</Button>
+			<MovieFile>NONE</MovieFile>
+			<MovieSound>NONE</MovieSound>
+			<Sound>AS2D_BUILD_BANK</Sound>
+		</CorporationInfo>
+		<CorporationInfo>
+			<Type>CORPORATION_8</Type>	<!-- Computers Industry -->
+			<Description>TXT_KEY_CORPORATION_8</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_8_PEDIA</Civilopedia>
+			<TechPrereq>NONE</TechPrereq>
+			<FreeUnitClass>NONE</FreeUnitClass>
+			<iSpreadFactor>200</iSpreadFactor>
+			<iSpreadCost>50</iSpreadCost>
+			<iMaintenance>100</iMaintenance>
+			<PrereqBonuses>
+				<BonusType>BONUS_COPPER</BonusType>
+				<BonusType>BONUS_ALUMINUM</BonusType>
+				<BonusType>BONUS_OIL</BonusType>
+			</PrereqBonuses>
+			<HeadquarterCommerces>
+				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+			</HeadquarterCommerces>
+			<BonusProduced>NONE</BonusProduced>
+			<CommercesProduced>
+				<iCommerceProduced>0</iCommerceProduced>
+				<iCommerceProduced>300</iCommerceProduced>
+				<iCommerceProduced>0</iCommerceProduced>
+			</CommercesProduced>
+			<YieldsProduced>
+				<iYieldProduced>0</iYieldProduced>
+				<iYieldProduced>0</iYieldProduced>
+				<iYieldProduced>0</iYieldProduced>
+			</YieldsProduced>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,2</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
