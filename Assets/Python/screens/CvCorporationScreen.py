@@ -143,19 +143,19 @@ class CvCorporationScreen:
 			xLoop += self.DX_CORPORATION
 
 		# Great Person				
-		xLoop = self.X_CORPORATION_START
-		for i in range(gc.getNumCorporationInfos()):
-			szGreatPerson = ""
-			for iBuilding in range(gc.getNumBuildingInfos()):
-				if (gc.getBuildingInfo(iBuilding).getFoundsCorporation() == i):
-					break
-			for iUnit in range(gc.getNumUnitInfos()):
-				if gc.getUnitInfo(iUnit).getBuildings(iBuilding) or gc.getUnitInfo(iUnit).getForceBuildings(iBuilding):
-					szGreatPerson = gc.getUnitInfo(iUnit).getDescription()
-					break
-			screen.setLabelAt("", szArea, szGreatPerson, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_GREAT_PERSON, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		#xLoop = self.X_CORPORATION_START
+		#for i in range(gc.getNumCorporationInfos()):
+		#	szGreatPerson = ""
+		#	for iBuilding in range(gc.getNumBuildingInfos()):
+		#		if (gc.getBuildingInfo(iBuilding).getFoundsCorporation() == i):
+		#			break
+		#	for iUnit in range(gc.getNumUnitInfos()):
+		#		if gc.getUnitInfo(iUnit).getBuildings(iBuilding) or gc.getUnitInfo(iUnit).getForceBuildings(iBuilding):
+		#			szGreatPerson = gc.getUnitInfo(iUnit).getDescription()
+		#			break
+		#	screen.setLabelAt("", szArea, szGreatPerson, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_GREAT_PERSON, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
-			xLoop += self.DX_CORPORATION
+		#	xLoop += self.DX_CORPORATION
 
 		# Bonuses
 		xLoop = self.X_CORPORATION_START
@@ -203,7 +203,7 @@ class CvCorporationScreen:
 			# xLoop += self.DX_CORPORATION
 					
 		# Headquarters
-		screen.setLabelAt("", szArea, localText.getText("TXT_KEY_CORPORATION_SCREEN_HEADQUARTERS", ()), CvUtil.FONT_LEFT_JUSTIFY, self.LEFT_EDGE_TEXT, self.Y_HEADQUARTERS, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		#screen.setLabelAt("", szArea, localText.getText("TXT_KEY_CORPORATION_SCREEN_HEADQUARTERS", ()), CvUtil.FONT_LEFT_JUSTIFY, self.LEFT_EDGE_TEXT, self.Y_HEADQUARTERS, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		xLoop = self.X_CORPORATION_START
 		for i in range(gc.getNumCorporationInfos()):
