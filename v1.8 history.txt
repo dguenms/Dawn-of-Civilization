@@ -17,3 +17,6 @@
 # added Tang Taizong and the Yongle Emperor as Chinese leaders
 # changed the Chinese UB back to Pavilion
 # the Chinese UHV now requires two Confucian Cathedrals
+# added a Mongol horde event that spawns armies for AI Mongolia at the borders of India, Persia, Byzantium, Arabia, Russia
+# Netherlands now start with Protestant state religion if it's already founded, and a missionary of its state religion
+# prevented several classical wonders from being built in later eras

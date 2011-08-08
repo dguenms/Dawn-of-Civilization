@@ -173,6 +173,13 @@ class Religions:
                                         if (pMecca.getPlotCity().getOwner() == con.iArabia):
                                                 self.foundReligion(tMecca, iIslam)
 
+		if iGameTurn == getTurnForYear(1500):
+			if gc.getGame().isReligionFounded(iJudaism):	# Protestantism founded
+				gc.getPlayer(con.iNetherlands).setLastStateReligion(iJudaism) # make Protestantism Dutch state religion if already founded at their spawn
+				utils.makeUnit(iMissionary_Jewish, con.iNetherlands, con.tCapitals[0][con.iNetherlands], 1)
+			else:
+				utils.makeUnit(iMissionary_Christian, con.iNetherlands, con.tCapitals[0][con.iNetherlands], 1)
+
 
         def foundReligion(self, tPlot, iReligion):
                 if (tPlot != False):

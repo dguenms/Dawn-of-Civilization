@@ -612,6 +612,7 @@ class CvRFCEventHandler:
         def onFirstContact(self, argsList):
             
                 iTeamX,iHasMetTeamY = argsList
+		print("Team "+str(iTeamX)+" has made first contact with team "+str(iHasMetTeamY)+".")
                 self.rnf.onFirstContact(iTeamX, iHasMetTeamY)
                 self.pla.onFirstContact(iTeamX, iHasMetTeamY)
 
@@ -634,7 +635,8 @@ class CvRFCEventHandler:
                             iPlayer == con.iGermany or \
                             iPlayer == con.iAztecs or \
                             iPlayer == con.iBabylonia or \
-			    iPlayer == con.iRome):                            
+			    iPlayer == con.iRome or \
+			    iPlayer == con.iKorea):                            
                                 self.vic.onTechAcquired(argsList[0], argsList[2])
                         self.cnm.onTechAcquired(argsList[2])
 

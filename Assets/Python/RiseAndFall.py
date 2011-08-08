@@ -3072,37 +3072,42 @@ class RiseAndFall:
                                                         CyInterface().addMessage(iOldWorldCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_OLDWORLD", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
 		# Leoreth: Mongol horde event against India, Persia, Arabia, Byzantium, Russia
-		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia and iTeamX in [iIndia, iPersia, iArabia, iByzantium, iRussia] and gc.getGame().getGameTurn() < getTurnForYear(1400):
+		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
+			print("AI Mongolia makes contact with somebody")
+			if iTeamX in [iIndia, iPersia, iArabia, iByzantium, iRussia]:
+				print("New contact is a valid target")
+				if gc.getGame().getGameTurn() < getTurnForYear(2000):
 		
-			teamTarget = gc.getTeam(iTeamX)
+					teamTarget = gc.getTeam(iTeamX)
 
-			teamMongolia.setAtWar(iTeamX, True)
-			teamTarget.setAtWar(iMongolia, True)
-			teamMongolia.AI_setWarPlan(iTeamX, 5)	# necessary?
-			print("Mongolian war set against "+gc.getPlayer(iTeamX).getCivilizationDescriptionKey())
+					teamMongolia.setAtWar(iTeamX, True)
+					teamTarget.setAtWar(iMongolia, True)
+					teamMongolia.AI_setWarPlan(iTeamX, 5)	# necessary?
+					print("Mongolian war set against "+gc.getPlayer(iTeamX).getCivilizationDescriptionKey())
 
-			if iTeamX in [iArabia, iByzantium, iRussia]:
-				pCity = utils.getEasternmostCity(iTeamX)
-			elif iTeamX == iPersia:
-				pCity = utils.getNorthernmostCity(iTeamX)
-			elif iTeamX == iIndia:
-				pCity = utils.getWesternmostCity(iTeamX)
+					if iTeamX in [iArabia, iByzantium, iRussia]:
+						pCity = utils.getEasternmostCity(iTeamX)
+					elif iTeamX == iPersia:
+						pCity = utils.getNorthernmostCity(iTeamX)
+					elif iTeamX == iIndia:
+						pCity = utils.getWesternmostCity(iTeamX)
 
-			if pCity != -1:
-				print ("City found, search land plot.")
-				tPlot = utils.findNearestLandPlot((pCity.getX(), pCity.getY()), iMongolia)
+					if pCity != -1:
+						print ("City found, search land plot.")
+						tPlot = utils.findNearestLandPlot((pCity.getX(), pCity.getY()), iMongolia)
 
-			if tPlot:
-				print ("Plot found, place units.")
-				utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
-				utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
-				utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+					if tPlot:
+						print ("Plot found, place units.")
+						utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
+						utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
+						utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
 
-			if utils.isHuman(iTeamX):
-				CyInterface().addMessage(iTeamX, True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE_HUMAN", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-			else:
-				CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iTeamX).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-
+					if utils.getHumanID() == iTeamX:
+						CyInterface().addMessage(iTeamX, True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE_HUMAN", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+					else:
+						CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iTeamX).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+				else:
+					print("Beyond deadline.")
 
 
         def warOnSpawn(self):
@@ -3354,7 +3359,8 @@ class RiseAndFall:
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
 		if (iCiv == iKorea):
-			utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
 			utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
                 if (iCiv == iMaya):
@@ -3496,8 +3502,9 @@ class RiseAndFall:
 
         def createRespawnUnits(self, iCiv, tPlot):
                 if (iCiv == iRome):
-                        utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 5)
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
                 if (iCiv == iPersia):
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
@@ -3641,7 +3648,8 @@ class RiseAndFall:
                 utils.makeUnit(con.iByzantineCataphract, iByzantium, tCapitals[0][iByzantium], 1)
                 #utils.makeUnit(con.iSettler, iByzantium, tCapitals[0][iByzantium], 1)
 
-		utils.makeUnit(con.iSettler, iKorea, tCapitals[0][iKorea], 2)
+		utils.makeUnit(con.iSettler, iKorea, tCapitals[0][iKorea], 1)
+		utils.makeUnit(con.iBuddhistMissionary, iKorea, tCapitals[0][iKorea], 1)
 		utils.makeUnit(con.iArcher, iKorea, tCapitals[0][iKorea], 2)
 		utils.makeUnit(con.iSwordsman, iKorea, tCapitals[0][iKorea], 3)
 		utils.makeUnit(con.iHorseArcher, iKorea, tCapitals[0][iKorea], 1)
