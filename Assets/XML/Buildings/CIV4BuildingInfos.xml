@@ -20007,7 +20007,7 @@
 			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<!-- Rhye -->
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
@@ -22571,7 +22571,7 @@
 			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
 			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<TechTypes/>
@@ -22935,7 +22935,7 @@
 			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<TechTypes/>
@@ -23116,7 +23116,7 @@
 			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_ASTRONOMY</ObsoleteTech>
 			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
 			<TechTypes/>
@@ -27600,7 +27600,7 @@
 			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
 			<TechTypes/>
@@ -29742,7 +29742,7 @@
 			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<TechTypes/>

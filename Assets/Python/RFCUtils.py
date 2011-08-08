@@ -1283,7 +1283,7 @@ class RFCUtils:
 				city.setHasRealBuilding((con.iMonastery + iReligion*4), False)
 
 	def getEasternmostCity(self, iCiv):
-		pCiv = gc.getPlayer(iCiv)
+		pPlayer = gc.getPlayer(iCiv)
 		pResultCity = pPlayer.getCapitalCity()
 		for i in range(pPlayer.getNumCities()):
 			if pPlayer.getCity(i).getX() > pResultCity.getX():
@@ -1291,7 +1291,7 @@ class RFCUtils:
 		return pResultCity
 
 	def getNorthernmostCity(self, iCiv):
-		pCiv = gc.getPlayer(iCiv)
+		pPlayer = gc.getPlayer(iCiv)
 		pResultCity = pPlayer.getCapitalCity()
 		for i in range(pPlayer.getNumCities()):
 			if pPlayer.getCity(i).getY() > pResultCity.getY():
@@ -1299,13 +1299,9 @@ class RFCUtils:
 		return pResultCity
 
 	def getWesternmostCity(self, iCiv):
-		pCiv = gc.getPlayer(iCiv)
+		pPlayer = gc.getPlayer(iCiv)
 		pResultCity = pPlayer.getCapitalCity()
 		for i in range(pPlayer.getNumCities()):
 			if pPlayer.getCity(i).getX() < pResultCity.getX():
 				pResultCity = pPlayer.getCity(i)
 		return pResultCity
-				
-
-
-
