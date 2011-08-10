@@ -2373,7 +2373,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		break;
     case BYZANTIUM:
-        if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
+        if (iTakenTiles > (NUM_CITY_PLOTS /2 -1))
         {
             return 0;
         }
@@ -10859,6 +10859,34 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	    iValue *= 6;
 	    iValue /= 5;
 	}
+
+	// Leoreth - prefer Pantheon if more than half of their cities has no religion
+	if (eCivic == 21){  // Pantheon
+        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME){
+            int iCityCounter = 0;
+            for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++){
+                for (int iJ = 0; iJ < 8; iJ++){
+                    if (GET_PLAYER((PlayerTypes)getID()).getCity(iI)->isHasReligion((ReligionTypes)iJ))
+                    {
+                        iCityCounter++;
+                        break;
+                    }
+                }
+            }
+            if (2*iCityCounter <= GET_PLAYER((PlayerTypes)getID()).getNumCities())
+                iValue *= 2;
+        }
+	}
+
+	// Leoreth - prefer Vassalage for medieval Eurocivs
+	if (eCivic == 6){
+	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == GERMANY || getID() == VIKING || getID() == PORTUGAL || getID() == RUSSIA){
+	        if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() == 2){
+	            iValue *= 2;
+	        }
+	    }
+	}
+
 
 	if (AI_isDoStrategy(AI_STRATEGY_CULTURE2) && (GC.getCivicInfo(eCivic).isNoNonStateReligionSpread()))
 	{
