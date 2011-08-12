@@ -28,6 +28,7 @@ import Victory
 import Stability
 import Plague
 import Communications
+import Companies
         
 gc = CyGlobalContext()        
 #iBetrayalCheaters = 15
@@ -158,7 +159,7 @@ class CvRFCEventHandler:
                 eventManager.addEventHandler("buildingBuilt",self.onBuildingBuilt) #Victory
                 eventManager.addEventHandler("projectBuilt",self.onProjectBuilt) #Victory
                 eventManager.addEventHandler("BeginPlayerTurn", self.onBeginPlayerTurn) #Mercenaries
-                #eventManager.addEventHandler("EndPlayerTurn", self.onEndPlayerTurn)
+                eventManager.addEventHandler("EndPlayerTurn", self.onEndPlayerTurn)
                 eventManager.addEventHandler("EndGameTurn", self.onEndGameTurn) #Stability
                 eventManager.addEventHandler("kbdEvent",self.onKbdEvent) #Mercenaries
                 eventManager.addEventHandler("unitLost",self.onUnitLost) #Mercenaries
@@ -190,7 +191,7 @@ class CvRFCEventHandler:
                 self.sta = Stability.Stability()
                 self.pla = Plague.Plague()
                 self.com = Communications.Communications()
-                
+                self.corp = Companies.Companies()
                 
                 #Mercenaries - start
                 
@@ -288,6 +289,8 @@ class CvRFCEventHandler:
                 self.com.onCityAcquired(city) #Communications
 
                 self.vic.onCityAcquired(owner, playerType, bConquest) #Victory
+
+		self.corp.onCityAcquired(argsList) #Companies
                 
                 return 0
 
@@ -458,6 +461,7 @@ class CvRFCEventHandler:
                 self.vic.checkTurn(iGameTurn)
                 self.sta.checkTurn(iGameTurn)
                 self.com.checkTurn(iGameTurn)
+		self.corp.checkTurn(iGameTurn)
 
                 #Mercenaries - start
 
@@ -562,13 +566,13 @@ class CvRFCEventHandler:
                 
                         # Place any mercenaries that might be ready to be placed.
                         objMercenaryUtils.placeMercenaries(iPlayer)
-                #print ("PLAYER FINE", iPlayer)
+                print ("PLAYER FINE", iPlayer)
 
         
         def onEndPlayerTurn(self, argsList):
 
                 iGameTurn, iPlayer = argsList
-                #print ("END PLAYER", iPlayer)
+                print ("END PLAYER", iPlayer)
                 
                 'Called at the end of a players turn'
 

@@ -7585,4 +7585,10 @@ class CityNameManager:
 				city = pCity.GetCy()
 				if (city.getName() == 'Fiorenza'):
 					city.setName('Firenze', False)
+		if (iPlayer == iKorea and era == con.iModern):
+			cityList = PyPlayer(iPlayer).getCityList()
+			for pCity in cityList:
+				city = pCity.GetCy()
+				if (city.getName() == 'Hanseong'):
+					city.setName('Seoul', False)
 		

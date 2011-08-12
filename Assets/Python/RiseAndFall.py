@@ -964,11 +964,12 @@ class RiseAndFall:
                 #self.collapseMotherland()
 
                 #resurrection of civs
+		print "Resurrection of Civs"
                 iNumDeadCivs1 = 11 #5 in vanilla, 8 in warlords (that includes native and celt)
                 iNumDeadCivs2 = 9 #3 in vanilla, 6 in Warlords: here we must count natives and celts as dead too
-                #if (not gc.getPlayer(0).isPlayable()):  #late start condition
-                #        iNumDeadCivs1 -= 2
-                #        iNumDeadCivs2 -= 2
+                if (not gc.getPlayer(0).isPlayable()):  #late start condition
+                        iNumDeadCivs1 -= 2
+                        iNumDeadCivs2 -= 2
                 if (gc.getGame().countCivPlayersEverAlive() - gc.getGame().countCivPlayersAlive() > iNumDeadCivs1): 
                         if (iGameTurn % utils.getTurns(15) == 10): #in Warlords 14, in vanilla 13
                                 self.resurrection(iGameTurn)                        
@@ -1566,6 +1567,7 @@ class RiseAndFall:
 
                               
         def resurrection(self, iGameTurn):
+		print "Check resurrection"
                 iMinNumCities = 2
                 bEnabled = False
 
@@ -1588,6 +1590,7 @@ class RiseAndFall:
                         bDeadCivFound = False
                         for j in range(iRndnum, iRndnum + iNumPlayers):
                                 iDeadCiv = j % iNumPlayers
+				print "Check resurrection for player "+str(iDeadCiv)
                                 #iDeadCiv = iIndia #DEBUG
                                 cityList = []
                                 if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > getTurnForYear(con.tBirth[iDeadCiv]) + utils.getTurns(50) and iGameTurn > utils.getLastTurnAlive(iDeadCiv) + utils.getTurns(20) and con.tRebirth[iDeadCiv] == -1 and iDeadCiv != iByzantium): # last condition added by Leoreth, civ must not have a scripted respawn
@@ -1605,6 +1608,7 @@ class RiseAndFall:
                                         #else:
                                         #        tTopLeft = tCoreAreasTL[iDeadCiv]
                                         #        tBottomRight = tCoreAreasBR[iDeadCiv]
+					print ("Leoreth rebirth check 1")
                                         for x in range(tTopLeft[0], tBottomRight[0]+1):
                                                 for y in range(tTopLeft[1], tBottomRight[1]+1):
                                                         if ((x,y) not in con.tNormalAreasSubtract[utils.getReborn(iDeadCiv)][iDeadCiv]):
@@ -1656,6 +1660,7 @@ class RiseAndFall:
                                                                                                                  cityList.append(pCurrent.getPlotCity())
                                                                                                                  #print (iDeadCiv, pCurrent.getPlotCity().getName(), pCurrent.getPlotCity().getOwner(), "4", cityList)
                                         #print("len(cityList)",len(cityList))
+					print "Leoreth rebirth check 2"
                                         if (len(cityList) >= iMinNumCities or (len(cityList) >= 1 and (iDeadCiv == iNetherlands))): #no portugal: they have the azores
                                                 bDeadCivFound = True
                                                 break
@@ -1676,6 +1681,7 @@ class RiseAndFall:
                                         teamDeadCiv.makePeace(l)
                                 self.setNumCities(iDeadCiv, 0) #reset collapse condition
 
+				print "Leoreth rebirth check 3"
                                 #reset vassallage
                                 for iOtherCiv in range(iNumPlayers):
                                         if (teamDeadCiv.isVassal(iOtherCiv) or gc.getTeam(gc.getPlayer(iOtherCiv).getTeam()).isVassal(iDeadCiv)):
@@ -3076,7 +3082,7 @@ class RiseAndFall:
 			print("AI Mongolia makes contact with somebody")
 			if iTeamX in [iIndia, iPersia, iArabia, iByzantium, iRussia]:
 				print("New contact is a valid target")
-				if gc.getGame().getGameTurn() < getTurnForYear(2000):
+				if gc.getGame().getGameTurn() < getTurnForYear(1500):
 		
 					teamTarget = gc.getTeam(iTeamX)
 
@@ -3484,6 +3490,7 @@ class RiseAndFall:
                         pMongolia.initUnit(con.iMongolKeshik, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
                         pMongolia.initUnit(con.iMongolKeshik, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
                         utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
+			utils.makeUnitAI(con.iScout, iCiv, tPlot, UnitAITypes.UNITAI_EXPLORE, 2)
                 if (iCiv == iAztecs):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 4)
@@ -3510,7 +3517,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
-                lReligions = [0, 0, 0, 0, 0, 0, 0]
+                lReligions = [0, 0, 0, 0, 0, 0, 0, 0]
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
                                 pCurrent = gc.getMap().plot( x, y )
@@ -3523,7 +3530,7 @@ class RiseAndFall:
                                                         lReligions[iStateReligion] += 1
                 iMax = 0
                 iWinnerReligion = -1
-                for i in range(1, len(lReligions)+1): #so that Christianity comes first
+                for i in range(len(lReligions)): #so that Protestantism comes first
                         iLoopReligion = i % con.iNumReligions
                         if (lReligions[iLoopReligion] > iMax):
                                 iMax = lReligions[iLoopReligion]
@@ -3537,7 +3544,7 @@ class RiseAndFall:
                                                 if (iStateReligion >= 0 and iStateReligion < con.iNumReligions):
                                                         lReligions[iStateReligion] += 1
 
-                        for iLoopReligion in range(1, len(lReligions)+1): #so that Christianity comes first
+                        for iLoopReligion in range(len(lReligions)): #so that Protestantism comes first
                                 iLoopReligion = i % con.iNumReligions
                                 if (lReligions[iLoopReligion] > iMax):
                                         iMax = lReligions[iLoopReligion]
@@ -3609,6 +3616,7 @@ class RiseAndFall:
                 utils.makeUnit(con.iChinaChokonu, iChina, tCapitals[0][iChina], 2)
                 utils.makeUnit(con.iHorseArcher, iChina, tCapitals[0][iChina], 1)
                 utils.makeUnit(con.iWorker, iChina, tCapitals[0][iChina], 2)
+		utils.makeUnit(con.iConfucianMissionary, iChina, tCapitals[0][iChina], 1)
                 
                 utils.makeUnit(iSettler, iJapan, tCapitals[0][iJapan], 3)
                 utils.makeUnit(con.iSwordsman, iJapan, tCapitals[0][iJapan], 2)

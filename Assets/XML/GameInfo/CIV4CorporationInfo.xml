@@ -107,7 +107,6 @@
 				<BonusType>BONUS_CRAB</BonusType>
 				<BonusType>BONUS_CLAM</BonusType>
 				<BonusType>BONUS_FISH</BonusType>
-				<BonusType>BONUS_RICE</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>4</iHeadquarterCommerce>
