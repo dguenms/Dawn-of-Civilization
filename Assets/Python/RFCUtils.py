@@ -289,9 +289,9 @@ class RFCUtils:
                                         return False              
                 iUnitType = unit.getUnitType()
                 if (iUnitType <= con.iKhmerBallistaElephant \
-                     and iUnitType != con.iSettler and iUnitType != con.iMechanizedInfantry):
+                     and iUnitType != con.iSettler and iUnitType != con.iMechanizedInfantry) or iUnitType == con.iBersagliere or iUnitType == con.iLevy:
                         return True
-                if (iUnitType >= con.iCatapult and iUnitType <= con.iMobileArtillery ):
+                if (iUnitType >= con.iCatapult and iUnitType <= con.iMobileArtillery ) or iUnitType == con.iCulverine:
                         if (gc.getPlayer(unit.getOwner()).isHuman()):
                                 return True
                         else:

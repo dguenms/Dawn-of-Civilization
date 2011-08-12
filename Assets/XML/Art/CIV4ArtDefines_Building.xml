@@ -1795,6 +1795,16 @@
 			<Button>,Art/Interface/Buttons/Civilizations/Ethiopia.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,3,4</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KOR_EMBASSY</Type>
+			<LSystem>LSYSTEM1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Civilizations/Spain.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,4,1</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MAY_EMBASSY</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>

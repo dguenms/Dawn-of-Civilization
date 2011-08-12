@@ -2961,6 +2961,12 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == ZEUS) iTempValue /= 2;
 										else if (iI == TAJMAHAL) iTempValue *= 3;
 										else if (iI == PAYA) iTempValue *= 2;
+										else if (iI == KHAJURAHO) iTempValue *= 2;
+										else if (iI == HARMANDIR_SAHIB) iTempValue *= 2;
+										else if (iI == BOROBUDUR || iI == GREAT_BATH) {
+											iTempValue *= 3;
+											iTempValue /= 2;
+										}
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;
@@ -2969,11 +2975,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case CHINA:
 										if (iI == FORBIDDENPALACE) iTempValue *= 4;
 										else if (iI == GREATWALL) iTempValue *= 8;
-										else if (iI == GREATDAM) iTempValue *= 2;
+										else if (iI == GREATDAM || iI == TERRACOTTA || iI == PORCELAIN) iTempValue *= 2;
 										else if (iI == HANGINGGARDEN) iTempValue /= 3;
 										else if (iI == APOSTOLIC) iTempValue /= 2;
 									case BABYLONIA:
-										if (iI == HANGINGGARDEN) iTempValue *= 5;
+										if (iI == HANGINGGARDEN || iI == ISHTAR) iTempValue *= 5;
 										else if (iI == SPIRALMINARET) iTempValue *= 2;
 										else if (iI == GREATWALL) iTempValue /= 4;
 										if (iI == MAUSOLLOS) {
@@ -3074,6 +3080,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case JAPAN:
 										if (iI == GREATWALL) iTempValue /= 10;
 										else if (iI == APOSTOLIC) iTempValue /= 2;
+										else if (iI == HIMEJI) iTempValue *= 3;
 										break;
 									case ETHIOPIA:
 										break;
@@ -3095,7 +3102,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case ARABIA:
 										if (iI == HAGIASOPHIA) iTempValue *= 2;
-										else if (iI == SPIRALMINARET) iTempValue *= 3;
+										else if (iI == SPIRALMINARET || iI == MEZQUITA || iI == DOMEROCK) iTempValue *= 3;
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;
@@ -3105,6 +3112,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == ANGKORWAT) iTempValue *= 3;
 										else if (iI == PAYA) iTempValue *= 3;
 										else if (iI == TAJMAHAL) iTempValue *= 2;
+										else if (iI == BOROBUDUR) iTempValue *= 3;
 										else if (iI == MOAI) {
 											iTempValue *= 3;
 											iTempValue /= 2;
@@ -3115,7 +3123,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											}
 										break;
 									case SPAIN:
-										if (iI == NOTREDAME) {
+										if (iI == NOTREDAME || iI == MEZQUITA) {
 														iTempValue *= 3;
 														iTempValue /= 2;
 										}
@@ -3145,7 +3153,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}*/
 										else if (iI == TRADINGCOMPANY) iTempValue *= 2;
 										else if (iI == NATIONALGALLERY) iTempValue *= 2;
-										else if (iI == WEMBLEY) iTempValue *= 3;
+										else if (iI == WEMBLEY || iI == WESTMINSTER) iTempValue *= 3;
 										//else if (iI == GLOBETHEATRE) iTempValue *= 2;
 										else if (iI == CHANNELTUNNEL) iTempValue *= 3;
 										//else if (iI == SCOTLANDYARD) iTempValue *= 2;
@@ -3166,6 +3174,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										else if (iI == WEMBLEY) iTempValue *= 2;
 										else if (iI == APOSTOLIC) iTempValue *= 2;
+										else if (iI == BRANDENBURG) iTempValue *= 2;
 										break;
 									case RUSSIA:
 										if (iI == KREMLIN) iTempValue *= 2;
@@ -3195,7 +3204,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == SANKORE)	iTempValue *= 4;
 										break;
 									case TURKEY:
-										if (iI == HAGIASOPHIA)	iTempValue *= 4;
+										if (iI == HAGIASOPHIA || iI == TOPKAPI)	iTempValue *= 4;
 										break;
 									case PORTUGAL:
 										if (iI == NOTREDAME) {
