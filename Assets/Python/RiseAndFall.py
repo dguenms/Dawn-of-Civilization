@@ -1080,10 +1080,11 @@ class RiseAndFall:
                                         print "Rebirth 2nd turn passed"
 
                                         if iCiv == iRome:
-                                                pVenice = gc.getMap().plot(61,47).getPlotCity()
-                                                pVenice.setCulture(iRome, 100, True)
-                                                pVenice.setPopulation(4)
-                                                utils.makeUnit(con.iGalley, iRome, (pVenice.plot().getX(), pVenice.plot().getY()), 2)
+												if gc.getMap().plot(61,47).isCity():
+												        pVenice = gc.getMap().plot(61,47).getPlotCity()
+												        pVenice.setCulture(iRome, 100, True)
+                                                        pVenice.setPopulation(4)
+                                                        utils.makeUnit(con.iGalley, iRome, (pVenice.plot().getX(), pVenice.plot().getY()), 2)
 
 #############################################################################################################
                         

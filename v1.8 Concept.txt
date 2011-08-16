@@ -84,3 +84,32 @@ New Babylonian UP: The Power of Law: no anarchy from switching civics
 -> playtest Korea (overall performance, UHV), Mongols (UHV), India (UHV, Khajuraho gambit), Khmer (Borobudur gambit), Spain/Portugal (Trading Company corporation)
 
 Help the AI along with better flips in some aspects (larger for some civs like Russia, Mongolia, America; flip all resulting indie cities if AI enemy collapses for Mongolia)
+
+New civilizations: Indonesia and Thailand
+
+Indonesia:
+	Spawn: 700 AD (Srivijaya)
+	Capital: Palembang
+	Leaders: Dharmasetu, Hayam Wuruk (1300), Suharto (1940)
+	Color: greenish blue
+	Unique Power: Strait Trade (other civilizations are willing to trade away their resources even if they have it only once)
+	Unique Unit:
+	Unique Building:
+	Unique Historical Victory:
+		- Have three cities with a size of at least 15 without unhealthiness or unhappiness in 1200 AD
+		- Build three Islamic Mosques by 1600 AD
+		- Have 30% of the world's population in your empire in 1930 AD
+
+Thailand
+	Spawn: 1361 AD (Ayutthaya); Khmer must be dead (Angkor gets moved and flips)
+	Capital: Bangkok/Ayutthaya
+	Leaders: Mongkut
+	Color: middle blue
+	Unique Power: Father Governs Children (no unhappiness for "we wish to join our country")
+	Unique Unit: Battle Elephant (Cuirassier)
+	Unique Building: Ho Trai (Library)
+	Unique Historical Victory:
+		- Make Ayutthaya the largest city in the world in 1700 AD
+		- Spread Buddhism to 30%
+		- Allow no Christian or Muslim country in South Eastern Asia in 1900 AD
+	
