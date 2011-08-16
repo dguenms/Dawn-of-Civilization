@@ -4336,6 +4336,9 @@ class AIWars:
                                 if (iLoopCiv == con.iSpain):
                                         lTargetCivs[iLoopCiv] *= 1
                                         lTargetCivs[iLoopCiv] /= 2
+			if (iCiv == con.iRome and gc.getPlayer(iCiv).isReborn()):
+				if (iLoopCiv == con.iGermany or iLoopCiv == con.iFrance):
+					lTargetCivs[iLoopCiv] /= 2
                                 
                                 
                 #print(lTargetCivs)

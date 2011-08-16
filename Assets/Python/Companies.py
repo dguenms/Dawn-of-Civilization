@@ -141,6 +141,8 @@ class Companies:
 		elif iCompany == iSilkRoute:
 			if owner.getID() == con.iMongolia:
 				iValue += 1
+			elif owner.getID() == con.iChina:
+				return -1
 		
 		# geographical requirements
 		tPlot = (city.getX(), city.getY())
@@ -245,7 +247,7 @@ class Companies:
 			iValue += 1
 		
 		# threshold
-		if iValue < 3: return -1
+		if iValue < 1: return -1
 		
 		# spread it out
 		iValue -= owner.countCorporations(iCompany)

@@ -3043,7 +3043,7 @@ class RiseAndFall:
                                                 if (iOldWorldCiv == iSpain and teamOldWorldCiv.isHasTech(con.iGunpowder)):
                                                         utils.makeUnitAI(con.iConquistador, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2 + iModifier1)
                                                 else:
-                                                        if (teamOldWorldCiv.isHasTech(con.iGuilds)):
+                                                        if (teamOldWorldCiv.isHasTech(con.iFeudalism)):
                                                                 if (iOldWorldCiv == iArabia):
                                                                         utils.makeUnitAI(con.iCamelArcher, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2 + iModifier1)
                                                                 elif (iOldWorldCiv == iMongolia):
@@ -3104,9 +3104,9 @@ class RiseAndFall:
 
 					if tPlot:
 						print ("Plot found, place units.")
-						utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
-						utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
-						utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+						utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 5)
+						utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
+						utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
 
 					if utils.getHumanID() == iTeamX:
 						CyInterface().addMessage(iTeamX, True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE_HUMAN", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)

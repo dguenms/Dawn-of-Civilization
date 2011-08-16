@@ -2362,6 +2362,8 @@ void CyPlayer::setReborn()
         m_pPlayer->setReborn();
 }
 
-
-
-
+void CyPlayer::updateTradeRoutes()
+{
+	if (m_pPlayer)
+		m_pPlayer->updateTradeRoutes();
+}

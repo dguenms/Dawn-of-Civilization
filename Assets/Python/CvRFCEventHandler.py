@@ -426,6 +426,10 @@ class CvRFCEventHandler:
 		if iBuildingType == con.iApostolicPalace:
 			gc.getGame().setHolyCity(con.iChristianity, city, False)
 
+		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
+		if iBuildingType == con.iPorcelainTower:
+			gc.getPlayer(iOwner).updateTradeRoutes()
+
         def onProjectBuilt(self, argsList):
                 city, iProjectType = argsList
                 self.vic.onProjectBuilt(city.getOwner(), iProjectType)

@@ -28295,7 +28295,7 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 		</BuildingInfo>
-		<BuildingInfo>
+		<!--BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CORPORATION_1</BuildingClass>
 			<Type>BUILDING_CORPORATION_1</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
@@ -29532,7 +29532,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-		</BuildingInfo>
+		</BuildingInfo-->
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_APOSTOLIC_PALACE</BuildingClass>
 			<Type>BUILDING_APOSTOLIC_PALACE</Type>
