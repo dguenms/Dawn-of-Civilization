@@ -39002,6 +39002,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=36
+	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -39386,7 +39387,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=35
-	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

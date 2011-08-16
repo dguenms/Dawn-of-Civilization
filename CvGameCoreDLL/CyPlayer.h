@@ -524,6 +524,7 @@ public:
 	bool isReborn();
 	int getReborn();
 	void setReborn();
+	void updateTradeRoutes();
 
 private:
 	CvPlayer* m_pPlayer;

@@ -82,3 +82,5 @@ New Indian UP: The Power of Spirituality: no penalties from non-state religions,
 New Babylonian UP: The Power of Law: no anarchy from switching civics
 
 -> playtest Korea (overall performance, UHV), Mongols (UHV), India (UHV, Khajuraho gambit), Khmer (Borobudur gambit), Spain/Portugal (Trading Company corporation)
+
+Help the AI along with better flips in some aspects (larger for some civs like Russia, Mongolia, America; flip all resulting indie cities if AI enemy collapses for Mongolia)

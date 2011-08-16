@@ -1468,7 +1468,7 @@
 			<DefaultBuilding>BUILDING_MOAI_STATUES</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>
+		<!--BuildingClassInfo>
 			<Type>BUILDINGCLASS_CORPORATION_1</Type>
 			<Description>TXT_KEY_CORPORATION_1</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1551,7 +1551,7 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CORPORATION_7</DefaultBuilding>
 			<VictoryThresholds/>
-		</BuildingClassInfo>
+		</BuildingClassInfo-->
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_APOSTOLIC_PALACE</Type>
 			<Description>TXT_KEY_BUILDING_APOSTOLIC_PALACE</Description>

@@ -87,7 +87,7 @@
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SPY</DefaultUnit>
 		</UnitClassInfo>
-		<UnitClassInfo>
+		<!--UnitClassInfo>
 			<Type>UNITCLASS_EXECUTIVE_1</Type>
 			<Description>TXT_KEY_UNIT_EXECUTIVE_1</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -149,7 +149,7 @@
 			<iMaxPlayerInstances>5</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_EXECUTIVE_7</DefaultUnit>
-		</UnitClassInfo>
+		</UnitClassInfo-->
 		<UnitClassInfo>
 			<Type>UNITCLASS_JEWISH_MISSIONARY</Type>
 			<Description>TXT_KEY_UNIT_JEWISH_MISSIONARY</Description>
