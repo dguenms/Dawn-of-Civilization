@@ -77,20 +77,20 @@ class Companies:
 			if gc.getPlayer(iLoopPlayer).isAlive():
 				iCompanyCount += gc.getPlayer(iLoopPlayer).countCorporations(iCompany)
 		
-		# debugText = 'ID: %d, ' %(iCompany)
+		#debugText = 'ID: %d, ' %(iCompany)
 		# spread the company
 		for i in range(len(cityValueList)):
 			city = cityValueList[i][0]
 			if city.isHasCorporation(iCompany):
-				# debugText += '%s:%d(skip), ' %(city.getName(), cityValueList[i][1])
+				#debugText += '%s:%d(skip), ' %(city.getName(), cityValueList[i][1])
 				continue
 			if iCompanyCount >= iMaxCompanies and i >= iMaxCompanies: # don't spread to weak cities if the limit was reached
-				# debugText += 'limit reached'
+				#debugText += 'limit reached'
 				break
 			city.setHasCorporation(iCompany, True, True, True)
-			# debugText += '%s(OK!), ' %(city.getName())
+			#debugText += '%s(OK!), ' %(city.getName())
 			break
-		# utils.echo(debugText)
+		#print debugText
 		
 		# if the limit was exceeded, remove company from the worst city
 		if iCompanyCount > iMaxCompanies:
@@ -115,7 +115,7 @@ class Companies:
 		if city is None: return -1
 		elif city.isNone(): return -1
 		
-		iValue = 0
+		iValue = 2
 		
 		owner = gc.getPlayer(city.getOwner())
 		ownerTeam = gc.getTeam(owner.getTeam())
@@ -227,6 +227,11 @@ class Companies:
 					iTempValue += city.getNumBonuses(iBonus)
 				elif iCompany == iOilIndustry:
 					iTempValue += city.getNumBonuses(iBonus) * 4
+				elif iCompany == iSilkRoute:
+					if iBonus == con.iSilk:
+						iTempValue += city.getNumBonuses(iBonus) * 4
+					else:
+						iTempValue += city.getNumBonuses(iBonus) * 2
 				else:
 					iTempValue += city.getNumBonuses(iBonus) * 2
 		if not bFound: return -1
@@ -243,8 +248,8 @@ class Companies:
 			iValue *= (4 - len(lOtherCompanies)) / 4
 		
 		# protection for already established companies (in case of removals)
-		if city.isHasCorporation(iCompany):
-			iValue += 1
+		#if city.isHasCorporation(iCompany):
+		#	iValue += 1
 		
 		# threshold
 		if iValue < 1: return -1
@@ -260,7 +265,7 @@ class Companies:
 		tlx, tly = tTL
 		brx, bry = tBR
 
-		if (x > tlx-1) and (x < brx+1) and (y > tly-1) and (y < bry+1):
+		if (x >= tlx) and (x <= brx) and (y >= tly) and (y <= bry):
 			return True
 		else:
 			return False
