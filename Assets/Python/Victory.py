@@ -1878,10 +1878,10 @@ class Victory:
 						if (iCiv != iKorea):
 							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
 								bFirst = False
-				if bFirst:
-					self.setGoal(iKorea, 1, 1)
-				else:
-					self.setGoal(iKorea, 1, 0) 
+					if bFirst:
+						self.setGoal(iKorea, 1, 1)
+					else:
+						self.setGoal(iKorea, 1, 0) 
                                                 
 
                 elif (iPlayer == iMaya):

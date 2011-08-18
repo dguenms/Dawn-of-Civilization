@@ -85,6 +85,8 @@ New Babylonian UP: The Power of Law: no anarchy from switching civics
 
 Help the AI along with better flips in some aspects (larger for some civs like Russia, Mongolia, America; flip all resulting indie cities if AI enemy collapses for Mongolia)
 
+Remove the northern coast of the Black Sea from Turkey's core (only Krim maybe)
+
 New civilizations: Indonesia and Thailand
 
 Indonesia:
@@ -112,4 +114,7 @@ Thailand
 		- Make Ayutthaya the largest city in the world in 1700 AD
 		- Spread Buddhism to 30%
 		- Allow no Christian or Muslim country in South Eastern Asia in 1900 AD
-	
+
+Adopt kairob's barbarian spawns for Seljuks, Ilkhanate and Golden Horde (maybe to replace Horde event)
+
+Change Topkapi palace to its RFCE effect (allows to recruit your vassal's UUs), better tech?
