@@ -162,6 +162,7 @@ iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
+iIndonesia = con.iIndonesia
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland
@@ -203,6 +204,7 @@ pByzantium = gc.getPlayer(iByzantium)
 pVikings = gc.getPlayer(iVikings)
 pArabia = gc.getPlayer(iArabia)
 pKhmer = gc.getPlayer(iKhmer)
+pIndonesia = gc.getPlayer(iIndonesia)
 pSpain = gc.getPlayer(iSpain)
 pFrance = gc.getPlayer(iFrance)
 pEngland = gc.getPlayer(iEngland)
@@ -239,6 +241,7 @@ teamByzantium = gc.getTeam(pByzantium.getTeam())
 teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
+teamIndonesia = gc.getTeam(pIndonesia.getTeam())
 teamSpain = gc.getTeam(pSpain.getTeam())
 teamFrance = gc.getTeam(pFrance.getTeam())
 teamEngland = gc.getTeam(pEngland.getTeam())
@@ -369,11 +372,11 @@ class Victory:
 	def setNumKoreanSinks(self, iNewValue):
 		sd.scriptDict['iNumKoreanSinks'] = iNewValue
 
-	def getKoreanTechs(self, i):
-		return sd.scriptDict['lKoreanTechs'][i]
+	#def getKoreanTechs(self, i):
+	#	return sd.scriptDict['lKoreanTechs'][i]
 
-	def setKoreanTechs(self, i, iNewValue):
-		sd.scriptDict['lKoreanTechs'][i] = iNewValue
+	#def setKoreanTechs(self, i, iNewValue):
+	#	sd.scriptDict['lKoreanTechs'][i] = iNewValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -1870,20 +1873,14 @@ class Victory:
 		elif (iPlayer == iKorea):
 			if (pKorea.isAlive()):
 				if (iTech == con.iPrintingPress):
-					self.setKoreanTechs(0, 1)
+					bFirst = True
 					for iCiv in range(iNumPlayers):
 						if (iCiv != iKorea):
 							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-								self.setKoreanTechs(0, 0)
-				elif (iTech == con.iGunpowder):
-					self.setKoreanTechs(1, 1)
-					for iCiv in range(iNumPlayers):
-						if (iCiv != iKorea):
-							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-								self.setKoreanTechs(1, 0)
-				if (self.getKoreanTechs(0) == 1 and self.getKoreanTechs(1) == 1):
+								bFirst = False
+				if bFirst:
 					self.setGoal(iKorea, 1, 1)
-				elif (self.getKoreanTechs(0) == 0 or self.getKoreanTechs(1) == 0):
+				else:
 					self.setGoal(iKorea, 1, 0) 
                                                 
 
@@ -2475,10 +2472,10 @@ class Victory:
 				bConfucianCathedral = (self.getNumBuildings(iKorea, con.iConfucianCathedral) > 0)
 				bBuddhistCathedral = (self.getNumBuildings(iKorea, con.iBuddhistCathedral) > 0)
 				aHelp.append(self.getIcon(bBuddhistCathedral) + 'Buddhist Stupa ' + self.getIcon(bConfucianCathedral) + 'Confucian Academy')
-			elif iGoal == 1:
-				bPrintingPress = (self.getKoreanTechs(0) == 1)
-				bGunpowder = (self.getKoreanTechs(1) == 1)
-				aHelp.append(self.getIcon(bPrintingPress) + 'Printing Press ' + self.getIcon(bGunpowder) + 'Gunpowder')
+			#elif iGoal == 1:
+			#	bPrintingPress = (self.getKoreanTechs(0) == 1)
+			#	bGunpowder = (self.getKoreanTechs(1) == 1)
+			#	aHelp.append(self.getIcon(bPrintingPress) + 'Printing Press ' + self.getIcon(bGunpowder) + 'Gunpowder')
 			elif iGoal == 2:
 				iNumSinks = self.getNumKoreanSinks()
 				aHelp.append(self.getIcon(iNumSinks >= 20) + 'Enemy ships sunk: ' + str(iNumSinks) + '/20')

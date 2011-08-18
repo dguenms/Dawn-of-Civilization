@@ -2148,6 +2148,103 @@
 			<CivilizationActionSound>AS3D_INDIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_INDONESIA</Type>
+			<Description>TXT_KEY_CIV_INDONESIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_INDONESIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_INDONESIA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_INDONESIA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_TEAL</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_INDONESIA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Jakarta</City>
+				<City>Majapahit</City>
+				<City>Trowulan</City>
+				<City>Palembang</City>
+				<City>Jambi</City>
+				<City>Borobudur</City>
+				<City>Chaiya</City>
+				<City>Surabaya</City>
+				<City>Prambanan</City>
+				<City>Makassar</City>
+				<City>Kota Gede</City>
+				<City>Malang</City>
+				<City>Surakarta</City>
+				<City>Malacca</City>
+				<City>Bojonegoro</City>
+				<City>Ratu Boko</City>
+				<City>Samarinda</City>
+				<City>Medan</City>
+				<City>Cirebon</City>
+				<City>Banda Aceh</City>
+				<City>Singapore</City>
+				<City>Bandar</City>
+				<City>Penataran</City>
+				<City>Pajang</City>
+				<City>Yogyakarta</City>
+				<City>Demak</City>
+				<City>Bandung</City>
+				<City>Semarang</City>
+				<City>Plaosan</City>
+				<City>Bantam</City>
+				<City>Banjarmasin</City>
+				<City>Ternate</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
+					<BuildingType>BUILDING_INDONESIAN_CANDI</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_SILAT</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_DESPOTISM</CivicType>
+				<CivicType>CIVIC_BARBARISM</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
+				<CivicType>CIVIC_PAGANISM</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_DHARMASETU</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_HAYAM_WURUK</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_SUHARTO</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_KHMER</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_ITALY</Type>
 			<Description>TXT_KEY_CIV_ITALY_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_ITALY_SHORT_DESC</ShortDescription>
@@ -2255,6 +2352,7 @@
 			<CivilizationSelectionSound>AS3D_ROME_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_ROME_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
+
 		<CivilizationInfo>
 			<Type>CIVILIZATION_JAPAN</Type>
 			<Description>TXT_KEY_CIV_JAPAN_DESC</Description>

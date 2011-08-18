@@ -2257,6 +2257,7 @@ void CvGame::update()
             if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 				break;
 		case KHMER:
+		case INDONESIA:
 		case SPAIN:
 		case FRANCE:
 		case ENGLAND:

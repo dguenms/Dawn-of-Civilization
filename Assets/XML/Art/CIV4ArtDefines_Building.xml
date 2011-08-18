@@ -1855,6 +1855,16 @@
 			<Button>,Art/Interface/Buttons/Civilizations/Khmer.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,5,4</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_INO_EMBASSY</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Civilizations/Indonesia.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,5,4</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SPA_EMBASSY</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
@@ -2164,6 +2174,16 @@
 			<NIF>Art/Structures/Buildings/Monastery/Hindu/Hindu_monastery.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Wonders/HarmandirSahib.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_INDONESIAN_CANDI</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Candi/Candi.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Candi/Candi_btn.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

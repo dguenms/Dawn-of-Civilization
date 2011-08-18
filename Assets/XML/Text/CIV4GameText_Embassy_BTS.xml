@@ -45,6 +45,14 @@
 		<Spanish>Embajada j&#233;mer</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INO_EMBASSY</Tag>
+		<English>Indonesian Embassy</English>
+		<French>Ambassade indonésienne</French>
+		<German>Indonesische Botschaft</German>
+		<Italian>Ambasciata indonesiana</Italian>
+		<Spanish>Embajada indonesia</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOL_EMBASSY</Tag>
 		<English>Dutch Embassy</English>
 		<French>Ambassade néerlandaise</French>

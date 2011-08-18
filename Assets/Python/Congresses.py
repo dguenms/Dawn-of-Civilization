@@ -40,6 +40,7 @@ iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
+iIndonesia = con.iIndonesia
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland

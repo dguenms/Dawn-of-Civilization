@@ -1046,5 +1046,12 @@
 			<fBlue>0.00</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_TEAL</Type>
+			<fRed>0.0</fRed>
+			<fGreen>0.5020</fGreen>
+			<fBlue>.5020</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

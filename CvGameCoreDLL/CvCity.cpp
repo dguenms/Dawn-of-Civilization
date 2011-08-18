@@ -332,6 +332,9 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	case KHMER:
 		eraModifier = 1;
 		break;
+	case INDONESIA:
+		eraModifier = 1;
+		break;
 	case SPAIN:
 		eraModifier = 1;
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
@@ -11750,6 +11753,9 @@ void CvCity::doCulture()
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *110 /100, false, true); //100 in vanilla
 				break;
 			case KHMER:
+				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *120 /100, false, true);
+				break;
+			case INDONESIA:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *120 /100, false, true);
 				break;
 			case FRANCE:

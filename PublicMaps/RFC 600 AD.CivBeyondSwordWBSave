@@ -74,6 +74,8 @@ BeginTeam
 EndTeam
 BeginTeam
 EndTeam
+BeginTeam
+EndTeam
 BeginPlayer
 	LeaderType=LEADER_RAMESSES
 	CivType=CIVILIZATION_EGYPT                 
@@ -225,9 +227,19 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
+	LeaderType=LEADER_HAYAM_WURUK
+	CivType=CIVILIZATION_INDONESIA
+	Team=16
+	PlayableCiv=1                    
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_BUDDHISM                       
+	Handicap=HANDICAP_PRINCE                 
+EndPlayer
+BeginPlayer
 	LeaderType=LEADER_ISABELLA
 	CivType=CIVILIZATION_SPAIN                 
-	Team=16                 
+	Team=17                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -240,7 +252,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_LOUIS_XIV
 	CivType=CIVILIZATION_FRANCE                 
-	Team=17                 
+	Team=18                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -253,7 +265,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_VICTORIA
 	CivType=CIVILIZATION_ENGLAND                 
-	Team=18                 
+	Team=19                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -266,7 +278,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BISMARCK
 	CivType=CIVILIZATION_GERMANY                 
-	Team=19                 
+	Team=20                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -279,7 +291,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_STALIN
 	CivType=CIVILIZATION_RUSSIA                 
-	Team=20                 
+	Team=21                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -292,7 +304,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
 	CivType=CIVILIZATION_NETHERLANDS                 
-	Team=21                 
+	Team=22                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_EMANCIPATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -305,7 +317,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI                 
-	Team=22                 
+	Team=23                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -315,7 +327,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL                 
-	Team=23                 
+	Team=24                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -328,7 +340,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA                 
-	Team=24                 
+	Team=25                 
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -338,7 +350,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL                 
-	Team=25                 
+	Team=26                 
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM                           
@@ -347,7 +359,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC                 
-	Team=26                 
+	Team=27                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM                 
@@ -356,7 +368,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN                 
-	Team=27                 
+	Team=28                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -369,7 +381,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA                 
-	Team=28                 
+	Team=29                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_EMANCIPATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SERFDOM
@@ -383,7 +395,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
-	Team=29                 
+	Team=30                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -392,7 +404,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
-	Team=30                 
+	Team=31                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -402,7 +414,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_NATIVE
 	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
-	Team=31                 
+	Team=32                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -417,7 +429,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_DECENTRALIZATION                         
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION   	
 	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_SUBJUGATION   
-	Team=32                 
+	Team=33                 
 	PlayableCiv=0                 
 	MinorNationStatus=1               
 	Handicap=HANDICAP_PRINCE                 
@@ -8564,15 +8576,15 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYA_HOLKAN, UnitOwner=31
+		UnitType=UNIT_MAYA_HOLKAN, UnitOwner=32
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=32
 		CityName=Yax Mutal
 		CityPopulation=2
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_MAYA_BALL_COURT
-		Player31Culture=1
+		Player32Culture=1
 	EndCity	
 EndPlot
 BeginPlot
@@ -8971,18 +8983,18 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYA_HOLKAN, UnitOwner=31
+		UnitType=UNIT_MAYA_HOLKAN, UnitOwner=32
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=31
+		UnitType=UNIT_WORKER, UnitOwner=32
 	EndUnit
 	BeginCity
-		CityOwner=31
+		CityOwner=32
 		CityName=Chich'en Itz&#225;
 		CityPopulation=2
 		BuildingType=BUILDING_MAYA_BALL_COURT
 		BuildingType=BUILDING_CHICHEN_ITZA
-		Player31Culture=10
+		Player32Culture=10
 	EndCity	
 EndPlot
 BeginPlot
@@ -20123,16 +20135,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=29
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=30
 	EndUnit		
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Burdigala
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
-		Player29Culture=1
+		Player30Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -21246,16 +21258,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=29
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=30
 	EndUnit		
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Massilia
 		CityPopulation=3
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
-		Player29Culture=1
+		Player30Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -22394,14 +22406,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=30
+		UnitType=UNIT_AXEMAN, UnitOwner=31
 	EndUnit		
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Bona Mansio
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
-		Player30Culture=1
+		Player31Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -22708,16 +22720,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=29
+		UnitType=UNIT_SPEARMAN, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Tripolis
 		CityPopulation=2
-		Player29Culture=10
+		Player30Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -22758,37 +22770,37 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=30
+		UnitType=UNIT_PIKEMAN, UnitOwner=31
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=30
+		UnitType=UNIT_PIKEMAN, UnitOwner=31
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=31
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=31
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHRISTIAN_MISSIONARY, UnitOwner=30
+		UnitType=UNIT_CHRISTIAN_MISSIONARY, UnitOwner=31
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=30
+		UnitType=UNIT_WORKER, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Roma
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
@@ -22802,7 +22814,7 @@ BeginPlot
 		BuildingType=BUILDING_LEANING_TOWER
 		ReligionType=RELIGION_CHRISTIANITY
 		HolyCityReligionType=RELIGION_CHRISTIANITY
-		Player30Culture=100
+		Player31Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -23199,38 +23211,38 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=29
+		UnitType=UNIT_PIKEMAN, UnitOwner=30
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=29
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=29
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=29
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=30
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit		
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Venetia
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
-		Player29Culture=1
+		Player30Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -23585,14 +23597,14 @@ BeginPlot
 	PlotType=1
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Napoli
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
-		Player29Culture=1
+		Player30Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -24345,13 +24357,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=29
+		UnitType=UNIT_SPEARMAN, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Hesperides
 		CityPopulation=2
-		Player29Culture=10
+		Player30Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25592,16 +25604,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=29
+		UnitType=UNIT_SPEARMAN, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Alexandria
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
 		BuildingType=BUILDING_GREAT_LIBRARY
-		Player29Culture=10
+		Player30Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25629,16 +25641,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=29
+		UnitType=UNIT_WORKER, UnitOwner=30
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=29
+		UnitType=UNIT_SPEARMAN, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Athenae
 		CityPopulation=3
 		BuildingType=BUILDING_HARBOR
@@ -25648,7 +25660,7 @@ BeginPlot
 		BuildingType=BUILDING_GREEK_ODEON
 		ReligionType=RELIGION_CHRISTIANITY
 		BuildingType=BUILDING_PARTHENON
-		Player29Culture=50
+		Player30Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -26097,25 +26109,25 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	#BeginUnit
-	#	UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=31
+	#	UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=32
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_PIKEMAN, UnitOwner=31
+	#	UnitType=UNIT_PIKEMAN, UnitOwner=32
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_PIKEMAN, UnitOwner=31
+	#	UnitType=UNIT_PIKEMAN, UnitOwner=32
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=31
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=32
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=31
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=32
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=31
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=32
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_WORKER, UnitOwner=31
+	#	UnitType=UNIT_WORKER, UnitOwner=32
 	#EndUnit
 	#BeginCity
 	#	CityOwner=31
@@ -26473,17 +26485,17 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=29
+		UnitType=UNIT_SPEARMAN, UnitOwner=30
 	EndUnit	
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMID
-		Player29Culture=10
+		Player30Culture=10
 	EndCity
 	PlotType=2
 EndPlot
@@ -27603,18 +27615,18 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=30
+		UnitType=UNIT_SPEARMAN, UnitOwner=31
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=30
+		UnitType=UNIT_ARCHER, UnitOwner=31
 	EndUnit	
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Aksum
 		CityPopulation=2
 		BuildingType=BUILDING_ETHIOPIAN_STELE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player30Culture=50
+		Player31Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -27692,14 +27704,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Iconium
 		CityPopulation=2
 		BuildingType=BUILDING_MARKET
-		Player29Culture=10
+		Player30Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -28053,15 +28065,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Hierusalem
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHRISTIAN_SHRINE
-		Player29Culture=1
+		Player30Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -28084,15 +28096,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Antiochia
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
-		Player29Culture=1
+		Player30Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -28883,16 +28895,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Trapezus
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
-		Player29Culture=10
+		Player30Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -29192,14 +29204,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=30
+		UnitType=UNIT_ARCHER, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Sana'a
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
-		Player30Culture=1
+		Player31Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -29635,14 +29647,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=30
+		UnitType=UNIT_ARCHER, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Tisfun
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
-		Player30Culture=1
+		Player31Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -31473,10 +31485,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=30
+		UnitType=UNIT_ARCHER, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Sirajis
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -31486,7 +31498,7 @@ BeginPlot
 		BuildingType=BUILDING_ZOROASTRIAN_TEMPLE
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player30Culture=10
+		Player31Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -31887,14 +31899,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Merv
 		CityPopulation=2
 		BuildingType=BUILDING_STABLE
-		Player29Culture=1
+		Player30Culture=1
 	EndCity
 
 	RouteType=ROUTE_ROAD
@@ -32646,16 +32658,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=30
+		UnitType=UNIT_ARCHER, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Kandahar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
-		Player30Culture=10
+		Player31Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -32694,16 +32706,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Samarkand
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
-		Player29Culture=1
+		Player30Culture=1
 	EndCity
 
 EndPlot
@@ -33781,10 +33793,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=29
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Mumbai
 		CityPopulation=3
 		BuildingType=BUILDING_STABLE
@@ -33794,7 +33806,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player29Culture=100
+		Player30Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -34581,13 +34593,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=29
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=30
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=29
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=30
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Delhi
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
@@ -34599,7 +34611,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
-		Player29Culture=100
+		Player30Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -36111,16 +36123,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=30
+		UnitType=UNIT_ARCHER, UnitOwner=31
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=30
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=31
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=30
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Patliputra
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
@@ -36139,7 +36151,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		HolyCityReligionType=RELIGION_BUDDHISM
-		Player30Culture=50
+		Player31Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -37578,16 +37590,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=29
+		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit	
 	BeginCity
-		CityOwner=29
+		CityOwner=30
 		CityName=Pagan
 		CityPopulation=4
 		BuildingType=BUILDING_BUDDHIST_TEMPLE                             
 		BuildingType=BUILDING_SHWEDAGON_PAYA
 		ReligionType=RELIGION_BUDDHISM
-		Player29Culture=10
+		Player30Culture=10
 	EndCity
 
 EndPlot
@@ -38437,13 +38449,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=30
+		UnitType=UNIT_SPEARMAN, UnitOwner=31
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=30
+		UnitType=UNIT_SPEARMAN, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Xi'an
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
@@ -38457,7 +38469,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
-		Player30Culture=10
+		Player31Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -39231,10 +39243,10 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Guiyang
 		CityPopulation=1
-		Player30Culture=10
+		Player31Culture=10
 	EndCity
 	PlotType=1
 EndPlot
@@ -40037,10 +40049,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=30
+		UnitType=UNIT_ARCHER, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Qufu
 		CityPopulation=2
 		BuildingType=BUILDING_LIBRARY
@@ -40055,7 +40067,7 @@ BeginPlot
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player30Culture=1000
+		Player31Culture=1000
 	EndCity
 EndPlot
 BeginPlot
@@ -40404,17 +40416,17 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=30
+		UnitType=UNIT_SPEARMAN, UnitOwner=31
 	EndUnit
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Guangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player30Culture=10
+		Player31Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -41198,14 +41210,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginCity
-		CityOwner=30
+		CityOwner=31
 		CityName=Hangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player30Culture=10
+		Player31Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -41995,10 +42007,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	#BeginUnit
-	#	UnitType=UNIT_WORKER, UnitOwner=28
+	#	UnitType=UNIT_WORKER, UnitOwner=29
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=28
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=29
 	#EndUnit	
 	#BeginCity
 	#	CityOwner=29

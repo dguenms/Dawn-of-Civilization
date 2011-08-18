@@ -2396,6 +2396,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			return 0;
 		}
 		break;
+	case INDONESIA:
+		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
+		{
+			return 0;
+		}
+		break;
 	case SPAIN:
 		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
 		{
@@ -2775,6 +2781,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			case KHMER:
 				iValue -= (abs(iDistance) - 4) * 400;
 				break;
+			case INDONESIA:
+				iValue -= (abs(iDistance) - 4) * 400;
+				break;
 			case SPAIN:
 				if (!GET_TEAM((TeamTypes)SPAIN).isHasTech((TechTypes)ASTRONOMY)) //OPTICS?
 				{
@@ -2934,6 +2943,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					break;
 				case KHMER:
 					compactEmpireModifier = 40;
+					break;
+				case INDONESIA:
+					compactEmpireModifier = 35;
 					break;
 				case SPAIN:
 					compactEmpireModifier = 40;
@@ -3358,6 +3370,9 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))*2/3);
 			break;
 		case KHMER:
+			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
+			break;
+		case INDONESIA:
 			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
 			break;
 		case SPAIN:
@@ -5495,10 +5510,18 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case KHMER:
 									if (iI == PHILOSOPHY)
 										iValue *= 3;
-									if (iI == ALPHABET || iI == CURRENCY)
+									if (iI == ALPHABET || iI == CURRENCY || iI == OPTICS)
 										iValue /= 3;
 									if (iI == AESTHETICS)
 										iValue *= 2;
+									break;
+								case INDONESIA:
+									if (iI == AESTHETICS)
+										iValue *= 3;
+									else if (iI == ALPHABET)
+										iValue /= 3;
+									else if (iI == OPTICS)
+										iValue /= 2;
 									break;
 								case SPAIN:
 									if (iI == MEDITATION)
@@ -10830,6 +10853,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				iValue += 20;
 				break;
 			case KHMER:
+				iValue += 20;
+				break;
+			case INDONESIA:
 				iValue += 20;
 				break;
 			case INDIA:

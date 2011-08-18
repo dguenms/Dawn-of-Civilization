@@ -647,5 +647,29 @@
 			<NoShaderNIF>art/leaderheads/Yongle/wang_kon_noshader.nif</NoShaderNIF>
 			<BackgroundKFM>art/leaderheads/Yongle/Wang_Kon_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_HAYAW_WURUK</Type>
+			<Button>,Art/leaderheads/HayamWuruk/hayam_btn.dds</Button>
+			<NIF>art/leaderheads/HayamWuruk/HayamWuruk.nif</NIF>
+			<KFM>art/leaderheads/HayamWuruk/Tachnechobrus.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/HayamWuruk/HayamWuruk.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/HayamWuruk/Tachnechobrus_Background.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SUHARTO</Type>
+			<Button>,Art/leaderheads/Suharto/suharto_btn.dds</Button>
+			<NIF>art/leaderheads/Suharto/SuhartoShadered.nif</NIF>
+			<KFM>art/leaderheads/Suharto/mao_tse_tung.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Suharto/SuhartoShadered.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Suharto/mao_tse_tung_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_DHARMASETU</Type>
+			<Button>,Art/leaderheads/Dharmasetu/Dharmasetu_btn.dds</Button>
+			<NIF>art/leaderheads/Dharmasetu/Arawak.nif</NIF>
+			<KFM>art/leaderheads/Dharmasetu/Arawak.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Dharmasetu/Arawak.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Dharmasetu/Arawak_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

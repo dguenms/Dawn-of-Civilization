@@ -5383,6 +5383,9 @@ void CvPlayer::found(int iX, int iY)
 				case KHMER:
 					startingEra = 2;
 					break;
+				case INDONESIA:
+					startingEra = 2;
+					break;
 				case ARABIA:
 					startingEra = 2;
 					break;
@@ -5800,6 +5803,9 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			startingEra = 2;
 			break;
 		case KHMER:
+			startingEra = 2;
+			break;
+		case INDONESIA:
 			startingEra = 2;
 			break;
 		case ARABIA:
@@ -6276,6 +6282,10 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded *= 95;
 			iProductionNeeded /= 100;
 			break;
+		case INDONESIA:
+			iProductionNeeded *= 95;
+			iProductionNeeded /= 100;
+			break;
 		case SPAIN:
 			iProductionNeeded *= 95;
 			iProductionNeeded /= 100;
@@ -6521,6 +6531,10 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
 				break;
+			case INDONESIA:
+				iProductionNeeded *= 80;
+				iProductionNeeded /= 100;
+				break;
 			case SPAIN:
 				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
@@ -6660,6 +6674,10 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				break;
 			case KHMER:
 				iProductionNeeded *= 100;
+				iProductionNeeded /= 100;
+				break;
+			case INDONESIA:
+				iProductionNeeded *= 90;
 				iProductionNeeded /= 100;
 				break;
 			case SPAIN:
@@ -7461,6 +7479,10 @@ int CvPlayer::calculateInflationRate() const
 			break;
 		case KHMER:
 			iRate *= 100;
+			iRate /= 100;
+			break;
+		case INDONESIA:
+			iRate *= 90;
 			iRate /= 100;
 			break;
 		case SPAIN:
@@ -8803,6 +8825,9 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			result = (iThreshold*80/100);
 			break;
 		case KHMER:
+			result = (iThreshold*90/100);
+			break;
+		case INDONESIA:
 			result = (iThreshold*90/100);
 			break;
 		case FRANCE:
@@ -11553,6 +11578,9 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 			startEra = 2;
 			break;
 		case KHMER:
+			startEra = 2;
+			break;
+		case INDONESIA:
 			startEra = 2;
 			break;
 		case ARABIA:
@@ -22441,6 +22469,10 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold *= 80;
 			iThreshold /= 100;
 			break;
+		case INDONESIA:
+			iThreshold *= 80;
+			iThreshold /= 100;
+			break;
 		case ARABIA:
 			iThreshold *= 76;
 			iThreshold /= 100;
@@ -23656,6 +23688,7 @@ void CvPlayer::processCivNames()
 			case CHINA:
 			case JAPAN:
 			case KHMER:
+			case INDONESIA:
 				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][20]);
 				break;
 			default:
