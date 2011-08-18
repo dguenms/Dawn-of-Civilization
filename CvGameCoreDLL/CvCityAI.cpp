@@ -2456,8 +2456,14 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case KHMER:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
-		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
+		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
 		break;
+	case INDONESIA:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
+		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 	case SPAIN:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
@@ -3112,7 +3118,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == ANGKORWAT) iTempValue *= 3;
 										else if (iI == PAYA) iTempValue *= 3;
 										else if (iI == TAJMAHAL) iTempValue *= 2;
-										else if (iI == BOROBUDUR) iTempValue *= 3;
+										else if (iI == BOROBUDUR) iTempValue *= 2;
 										else if (iI == MOAI) {
 											iTempValue *= 3;
 											iTempValue /= 2;
@@ -3121,6 +3127,14 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 2;
 											iTempValue /= 3;
 											}
+										break;
+									case INDONESIA:
+										if (iI == BOROBUDUR) iTempValue *= 3;
+										else if (iI == PAYA || iI == ANGKORWAT) iTempValue *= 2;
+										else {
+											iTempValue *= 2;
+											iTempValue /= 3;
+										}
 										break;
 									case SPAIN:
 										if (iI == NOTREDAME || iI == MEZQUITA) {
@@ -4734,6 +4748,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				case VIKING:
 					break;
 				case KHMER:
+					break;
+				case INDONESIA:
+					iValue += 1;
 					break;
 				case ARABIA:
 					iValue += 2;

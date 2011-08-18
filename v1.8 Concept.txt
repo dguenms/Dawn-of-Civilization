@@ -89,7 +89,7 @@ New civilizations: Indonesia and Thailand
 
 Indonesia:
 	Spawn: 700 AD (Srivijaya)
-	Capital: Palembang
+	Capital: Palembang (99,27) // (98,31)-(107,24) / (113,24) for broader/normal
 	Leaders: Dharmasetu, Hayam Wuruk (1300), Suharto (1940)
 	Color: greenish blue
 	Unique Power: Strait Trade (other civilizations are willing to trade away their resources even if they have it only once)
@@ -102,7 +102,7 @@ Indonesia:
 
 Thailand
 	Spawn: 1361 AD (Ayutthaya); Khmer must be dead (Angkor gets moved and flips)
-	Capital: Bangkok/Ayutthaya
+	Capital: Bangkok/Ayutthaya (101,33)
 	Leaders: Mongkut
 	Color: middle blue
 	Unique Power: Father Governs Children (no unhappiness for "we wish to join our country")

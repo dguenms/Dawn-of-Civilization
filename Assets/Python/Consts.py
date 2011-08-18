@@ -6,11 +6,11 @@
 from CvPythonExtensions import *
 gc = CyGlobalContext()
 
-l0Array =       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-l0ArrayActive = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-l0ArrayTotal =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0Array =       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0ArrayActive = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0ArrayTotal =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-lm1Array =      [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+lm1Array =      [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 
 # initialise player variables to player IDs from WBS
 iEgypt = 0
@@ -29,48 +29,50 @@ iByzantium = 12
 iVikings = 13
 iArabia = 14
 iKhmer = 15
-iSpain = 16
-iFrance = 17
-iEngland = 18
-iGermany = 19
-iRussia = 20
-iNetherlands = 21
-iHolland = 21
-iMali = 22
-iPortugal = 23
-iInca = 24
-iMongolia = 25
-iAztecs = 26
-iTurkey = 27
-iAmerica = 28
-iNumPlayers = 29
-iNumMajorPlayers = 29
-iNumActivePlayers = 29
-iIndependent = 29
-iIndependent2 = 30
-iNative = 31
-iCeltia = 32
-iNumTotalPlayers = 33
-iBarbarian = 33
-iNumTotalPlayersB = 34
+iIndonesia = 16
+iSpain = 17
+
+iFrance = 18
+iEngland = 19
+iGermany = 20
+iRussia = 21
+iNetherlands = 22
+iHolland = 22
+iMali = 23
+iPortugal = 24
+iInca = 25
+iMongolia = 26
+iAztecs = 27
+iTurkey = 28
+iAmerica = 29
+iNumPlayers = 30
+iNumMajorPlayers = 30
+iNumActivePlayers = 30
+iIndependent = 30
+iIndependent2 = 31
+iNative = 32
+iCeltia = 33
+iNumTotalPlayers = 34
+iBarbarian = 34
+iNumTotalPlayersB = 35
 
 #for Congresses and Victory
 lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iGermany, iRussia, iNetherlands, iPortugal],  #Euros
-                [iIndia, iChina, iPersia, iJapan, iKorea, iByzantium, iKhmer, iRussia, iMongolia], #Asian
+                [iIndia, iChina, iPersia, iJapan, iKorea, iByzantium, iKhmer, iIndonesia, iRussia, iMongolia], #Asian
                 [iEgypt, iBabylonia, iPersia, iArabia, iTurkey, iCarthage], #MiddleEastern
                 [iEgypt, iGreece, iCarthage, iRome, iByzantium], #Mediterranean
                 [iEgypt, iCarthage, iEthiopia, iMali], #African
                 [iMaya, iInca, iAztecs, iAmerica]] #American
 
 lCivStabilityGroups = [[iVikings, iSpain, iFrance, iEngland, iGermany, iRussia, iNetherlands, iPortugal],  #Euros
-                [iIndia, iChina, iJapan, iKorea, iKhmer, iMongolia], #Asian
+                [iIndia, iChina, iJapan, iKorea, iKhmer, iIndonesia, iMongolia], #Asian
                 [iBabylonia, iPersia, iArabia, iTurkey], #MiddleEastern
                 [iEgypt, iGreece, iCarthage, iRome, iEthiopia, iByzantium, iMali], #Mediterranean
                 [iMaya, iInca, iAztecs, iAmerica]] #American
 
 
 lCivBioOldWorld = [iEgypt, iIndia, iChina, iBabylonia, iGreece, iPersia, iCarthage, iRome, iJapan, \
-                   iEthiopia, iKorea, iByzantium, iVikings, iArabia, iKhmer, iSpain, iFrance, iEngland, iGermany, iRussia, \
+                   iEthiopia, iKorea, iByzantium, iVikings, iArabia, iKhmer, iIndonesia, iSpain, iFrance, iEngland, iGermany, iRussia, \
                    iNetherlands, iMali, iTurkey, iPortugal, iMongolia, iAmerica, \
                    iIndependent, iIndependent2, iCeltia, iBarbarian]
 lCivBioNewWorld = [iMaya, iInca, iAztecs] #, iNative]
@@ -115,7 +117,8 @@ lNeighbours = [
 [iEgypt, iBabylonia, iGreece, iPersia, iArabia, iRussia], #Byzantium
 [iFrance, iEngland, iGermany, iRussia, iNetherlands], #Vikings
 [iEgypt, iBabylonia, iPersia, iEthiopia, iByzantium, iTurkey, iCarthage], #Arabia
-[iIndia, iChina, iJapan], #Khmer
+[iIndia, iChina, iJapan, iIndonesia], #Khmer
+[iIndia, iJapan, iKhmer], #Indonesia
 [iCarthage, iRome, iFrance, iEngland, iPortugal], #Spain
 [iRome, iVikings, iSpain, iEngland, iGermany, iNetherlands, iPortugal], #France
 [iRome, iVikings, iSpain, iFrance, iGermany, iNetherlands], #England
@@ -149,6 +152,7 @@ lOlderNeighbours = [
 [], #Vikings
 [iEgypt, iPersia, iByzantium], #Arabia
 [iIndia], #Khmer
+[iKhmer], #Indonesia
 [iCarthage, iRome], #Spain
 [iRome], #France
 [], #England
@@ -184,6 +188,7 @@ tBirth = (
 551, # 177, #551AD
 620, # 183, #622AD
 655, # 187, #657AD
+700,
 720, # 193, #718AD
 750, # 196, #751AD
 820, # 203, #829AD
@@ -221,7 +226,8 @@ tFall = (
 1204, #fourth crusade
 1300,
 1258,
-1431,
+1431, # Angkor razed by the Thais
+2020,
 2020,
 2020,
 2020,
@@ -266,6 +272,7 @@ tRebirth = (
 -1,
 -1,
 -1,
+-1,
 -1)
 
 # Leoreth: ID of the civilization a player is turned into on rebirth
@@ -277,7 +284,8 @@ tRebirthCiv = (
 4,	# Byzantium
 -1,
 -1,
-17,	# Italy
+18,	# Italy
+-1,
 -1,
 -1,
 -1,
@@ -329,6 +337,7 @@ tRebirthPlot = (
 -1,
 -1,
 -1,
+-1,
 -1)
 
 tRebirthArea = (
@@ -340,6 +349,7 @@ tRebirthArea = (
 ((79,37),(85,44)),	# Safavids - Azerbaijan, Iran, Afghanistan (no Merv, no Baghdad)
 -1,
 ((57,45),(62,47)),	# Italy - Lombardy and Tuscany without Rome
+-1,
 -1,
 -1,
 -1,
@@ -379,6 +389,7 @@ tYear = (
 ("545 ", "TXT_KEY_AD"),
 ("620 ", "TXT_KEY_AD"),
 ("660 ", "TXT_KEY_AD"),
+("700 ", "TXT_KEY_AD"),
 ("720 ", "TXT_KEY_AD"),
 ("750 ", "TXT_KEY_AD"),
 ("820 ", "TXT_KEY_AD"),
@@ -413,6 +424,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_VIK1_MARATHON", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1_MARATHON", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
+("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
@@ -444,6 +456,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_VIK1_EPIC", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1_EPIC", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
+("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
@@ -475,6 +488,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
+("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
@@ -509,6 +523,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_VIK1_MARATHON", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1_MARATHON", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
+("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
@@ -540,6 +555,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_VIK1_EPIC", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1_EPIC", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
+("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
@@ -571,6 +587,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
+("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
@@ -724,6 +741,7 @@ tCapitals = (
 (75, 33), #tMecca
 #(102, 34), #tAngkor
 (102, 33), #tAngkor
+(99, 27), #Padang (should be Palembang)
 (52, 43), #tMadrid
 (55, 50), #tParis
 (53, 54), #tLondon
@@ -758,6 +776,7 @@ tCapitals = (
 (75, 33), #tMecca
 #(102, 34), #tAngkor
 (102, 33), #tAngkor
+(99, 27), #Padang (should be Palembang)
 (52, 43), #tMadrid
 (55, 50), #tParis
 (53, 54), #tLondon
@@ -793,6 +812,7 @@ tReserveCapitals = (
 (), 
 (), 
 (), 
+(),
 (), 
 (), 
 (), 
@@ -826,6 +846,7 @@ tCoreAreasTL = (
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
+(98, 24), #Indonesia
 (49, 40), #Spain
 (54, 47), #France
 (50, 53), #England
@@ -856,6 +877,7 @@ tCoreAreasTL = (
 (57, 57), #Vikings
 (73, 30), #Arabia
 (100, 32), #Khmer
+(98, 24), #Indonesia
 (49, 40), #Spain
 (54, 47), #France
 (50, 53), #England
@@ -888,6 +910,7 @@ tCoreAreasBR = (
 (70, 65), #Vikings
 (81, 39), #Arabia
 (103, 36), #Khmer
+(107, 31), #Indonesia
 (55, 46), #Spain
 (57, 52), #France
 (54, 60), #England   57 without Scotland
@@ -918,6 +941,7 @@ tCoreAreasBR = (
 (70, 65), #Vikings
 (81, 39), #Arabia
 (103, 36), #Khmer
+(107, 31), #Indonesia
 (55, 46), #Spain
 (57, 52), #France
 (54, 60), #England   57 without Scotland
@@ -951,6 +975,7 @@ tExceptions = (  #for RiseAndFall
 ((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
 ((82, 34), (73, 40), (74, 40), (75, 40), (71, 36), (72, 37)),  #Arabia
 (), #Khmer
+(), #Indonesia (should probably exclude Borneo)
 (), #Spain
 ((51, 50), (52, 49), (52, 50), (53, 47), (53, 48), (53, 49), (53, 50), (53, 51), (55, 46), (56, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50)), #France
 (), #England
@@ -980,6 +1005,7 @@ tExceptions = (  #for RiseAndFall
 ((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
 ((82, 34), (73, 40), (74, 40), (75, 40), (71, 36), (72, 37)),  #Arabia
 (), #Khmer
+(), #Indonesia (should probably exclude Borneo)
 (), #Spain
 ((51, 50), (52, 49), (52, 50), (53, 47), (53, 48), (53, 49), (53, 50), (53, 51), (55, 46), (56, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50)), #France
 (), #England
@@ -1016,6 +1042,7 @@ tNormalAreasTL = (
 (57, 55), #Vikings
 (72, 30), #Arabia
 (98, 26), #Khmer
+(98, 24), #Indonesia
 (49, 40), #Spain
 (51, 46), #France
 (50, 53), #England
@@ -1046,6 +1073,7 @@ tNormalAreasTL = (
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
+(98, 24), #Indonesia
 (49, 40), #Spain
 (51, 46), #France
 (50, 53), #England
@@ -1078,6 +1106,7 @@ tNormalAreasBR = (
 (67, 65), #Vikings
 (82, 38), #Arabia
 (103, 37), #Khmer
+(113, 31), #Indonesia
 (55, 46), #Spain
 (58, 52), #France
 (54, 60), #England
@@ -1108,6 +1137,7 @@ tNormalAreasBR = (
 (67, 65), #Vikings
 (82, 38), #Arabia
 (103, 37), #Khmer
+(113, 31), #Indonesia
 (55, 46), #Spain
 (58, 52), #France
 (54, 60), #England
@@ -1141,6 +1171,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 ((65, 55), (66, 55), (67, 55), (66, 56), (67, 56)), #Vikings
 ((81, 38), (82, 38), (82, 37)),  #Arabia
 (), #Khmer
+(), #Indonesia
 ((49, 44), (49, 43), (49, 42), (49, 41)), #Spain #bts only
 ((51, 46), (52, 46), (53, 46), (58, 47), (58, 46), (58, 51), (58, 52), (57, 52)), #France #changed in BTS
 (), #England
@@ -1170,6 +1201,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 ((65, 55), (66, 55), (67, 55), (66, 56), (67, 56)), #Vikings
 ((81, 38), (82, 38), (82, 37)),  #Arabia
 (), #Khmer
+(), #Indonesia
 ((49, 44), (49, 43), (49, 42), (49, 41)), #Spain #bts only
 ((51, 46), (52, 46), (53, 46), (58, 47), (58, 46), (58, 51), (58, 52), (57, 52)), #France #changed in BTS
 (), #England
@@ -1204,6 +1236,7 @@ tBroaderAreasTL = (
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer
+(98, 24), #Indonesia
 (49, 38), #Spain
 (49, 44), #France
 (48, 53), #England
@@ -1234,6 +1267,7 @@ tBroaderAreasTL = (
 (57, 55), #Vikings
 (64, 30), #Arabia
 (97, 25), #Khmer
+(98, 24), #Indonesia
 (49, 38), #Spain
 (49, 44), #France
 (48, 53), #England
@@ -1266,6 +1300,7 @@ tBroaderAreasBR = (
 (71, 65), #Vikings
 (85, 44), #Arabia
 (105, 39), #Khmer
+(113, 31), #Indonesia
 (55, 46), #Spain
 (61, 52), #France
 (54, 60), #England
@@ -1296,6 +1331,7 @@ tBroaderAreasBR = (
 (71, 65), #Vikings
 (85, 44), #Arabia
 (105, 39), #Khmer
+(113, 31), #Indonesia
 (55, 46), #Spain
 (61, 52), #France
 (54, 60), #England
@@ -1328,7 +1364,8 @@ tHire = (
 10, #Byzantium
 60, #Viking
 50, #Arabia
-30, #Ethiopia
+30, #Khmer
+60, #Indonesia
 50, #Spain
 50, #France
 50, #England
@@ -1369,6 +1406,7 @@ lEnemyCivsOnSpawn = [
 [iRome,iArabia,iSpain,iEngland,iEngland,iFrance,iFrance,iGermany,iGermany,iCeltia,iIndependent,iIndependent2], #Vikings
 [iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Khmer
+[], #Indonesia
 [iArabia], #Spain
 [iArabia], #France
 [], #England
@@ -1402,6 +1440,7 @@ lTotalWarOnSpawn = [
 [], #Vikings
 [iEgypt, iBabylonia, iCarthage, iPersia], #Arabia
 [], #Khmer
+[], #Indonesia
 [], #Spain
 [], #France
 [], #England
@@ -1436,6 +1475,7 @@ tAggressionLevel = (
 2, #Viking
 2, #Arabia
 1, #Khmer
+1, #Indonesia
 2, #Spain
 1, #France
 1, #England
@@ -1470,6 +1510,7 @@ tAIStopBirthThreshold = (
     80, #Viking
     80, #Arabia
     80, #Khmer
+	80, #Indonesia
     80, #Spain  #60 in vanilla and Warlords
     80, #France #60 in vanilla and Warlords
     50, #England
@@ -1508,6 +1549,7 @@ tResurrectionProb = (
 60, #Viking
 100, #Arabia
 60, #Khmer
+80, #Indonesia
 100, #Spain
 100, #France
 100, #England
@@ -1544,6 +1586,7 @@ tPatienceThreshold = (
 30, #Viking
 30, #Arabia
 30, #Khmer
+30, #Indonesia
 20, #Spain
 20, #France
 20, #England
@@ -1578,6 +1621,7 @@ tMaxColonists = (
 1, #Viking
 0, #Arabia
 0, #Khmer
+0, #Indonesia
 6, #Spain
 6, #France
 6, #England
@@ -1746,94 +1790,95 @@ iZuluImpi = 32
 iMayaHolkan = 33
 iPikeman = 34
 iHolyRomanLandsknecht = 35
-iMusketman = 36
-iFrenchMusketeer = 37
-iOttomanJanissary = 38
-iEthiopianOromoWarrior = 39
-iRifleman = 40
-iEnglishRedcoat = 41
-iGrenadier = 42
-iAtInfantry = 43
-iInfantry = 44
-iSamInfantry = 45
-iMobileSam = 46
-iMarine = 47
-iAmericanNavySeal = 48
-iParatrooper = 49
-iMechanizedInfantry = 50
-iArcher = 51
-iMaliSkirmisher = 52
-iBabylonBowman = 53
-iLongbowman = 54
-iCrossbowman = 55
-iChinaChokonu = 56
-iChariot = 57
-iEgyptWarchariot = 58
-iPersiaImmortal = 59
-iHorseArcher = 60
-iCarthageNumidianCavalry = 61
-iMongolKeshik = 62
-iKnight = 63
-iArabiaCamelarcher = 64
-iCamelArcher = 64 #
-iByzantineCataphract = 65
-iSpanishConquistador = 66
-iConquistador = 66 #
-iCuirassier = 67
-iCavalry = 68
-iRussiaCossack = 69
-iWarElephant = 70
-iKhmerBallistaElephant = 71
-iTank = 72
-iGermanPanzer = 73
-iModernArmor = 74
-iGunship = 75
-iCatapult = 76
-iKoreanHwacha = 77
-iTrebuchet = 78
-iCannon = 79
-iMachineGun = 80
-iArtillery = 81
-iMobileArtillery = 82
-iWorkboat = 83
-iWorkBoat = 83 #
-iGalley = 84
-iTrireme = 85
-iCaravel = 86
-iPortugalCarrack = 87
-iGalleon = 88
-iNetherlandsOostindievaarder = 89
-iPrivateer = 90
-iFrigate = 91
-iShipOfTheLine = 92
-iIronclad = 93
-iTransport = 94
-iDestroyer = 95
-iBattleship = 96
-iMissileCruiser = 97
-iStealthDestroyer = 98
-iSubmarine = 99
-iAttackSubmarine = 100
-iCarrier = 101
-iAirship = 102
-iFighter = 103
-iJetFighter = 104
-iBomber = 105
-iStealthBomber = 106
-iGuidedMissile = 107
-iTacticalNuke = 108
-iIcbm = 109
-iProphet = 110
-iArtist = 111
-iScientist = 112
-iMerchant = 113
-iEngineer = 114
-iGreatGeneral = 115
-iGreatSpy = 116
-iCulverine = 117
-iBireme = 118
-iBersagliere = 119
-iLevy = 120
+iIndonesianPencuSilat = 36
+iMusketman = 37
+iFrenchMusketeer = 38
+iOttomanJanissary = 39
+iEthiopianOromoWarrior = 40
+iRifleman = 41
+iEnglishRedcoat = 42
+iGrenadier = 43
+iAtInfantry = 44
+iInfantry = 45
+iSamInfantry = 46
+iMobileSam = 47
+iMarine = 48
+iAmericanNavySeal = 49
+iParatrooper = 50
+iMechanizedInfantry = 51
+iArcher = 52
+iMaliSkirmisher = 53
+iBabylonBowman = 54
+iLongbowman = 55
+iCrossbowman = 56
+iChinaChokonu = 57
+iChariot = 58
+iEgyptWarchariot = 59
+iPersiaImmortal = 60
+iHorseArcher = 61
+iCarthageNumidianCavalry = 62
+iMongolKeshik = 63
+iKnight = 64
+iArabiaCamelarcher = 65
+iCamelArcher = 65 #
+iByzantineCataphract = 66
+iSpanishConquistador = 67
+iConquistador = 67 #
+iCuirassier = 68
+iCavalry = 69
+iRussiaCossack = 70
+iWarElephant = 71
+iKhmerBallistaElephant = 72
+iTank = 73
+iGermanPanzer = 74
+iModernArmor = 75
+iGunship = 76
+iCatapult = 77
+iKoreanHwacha = 78
+iTrebuchet = 79
+iCannon = 80
+iMachineGun = 81
+iArtillery = 82
+iMobileArtillery = 83
+iWorkboat = 84
+iWorkBoat = 84 #
+iGalley = 85
+iTrireme = 86
+iCaravel = 87
+iPortugalCarrack = 88
+iGalleon = 89
+iNetherlandsOostindievaarder = 90
+iPrivateer = 91
+iFrigate = 92
+iShipOfTheLine = 93
+iIronclad = 94
+iTransport = 95
+iDestroyer = 96
+iBattleship = 97
+iMissileCruiser = 98
+iStealthDestroyer = 99
+iSubmarine = 100
+iAttackSubmarine = 101
+iCarrier = 102
+iAirship = 103
+iFighter = 104
+iJetFighter = 105
+iBomber = 106
+iStealthBomber = 107
+iGuidedMissile = 108
+iTacticalNuke = 109
+iIcbm = 110
+iProphet = 111
+iArtist = 112
+iScientist = 113
+iMerchant = 114
+iEngineer = 115
+iGreatGeneral = 116
+iGreatSpy = 117
+iCulverine = 118
+iBireme = 119
+iBersagliere = 120
+iLevy = 121
 
 
 # initialise bonuses variables to bonuses IDs from WBS
@@ -1873,10 +1918,10 @@ iCotton = 35
 
 
 #Buildings (update Persian UHV every time this is changed)
-iTemple = 77 #generic
-iCathedral = 78 #generic
-iMonastery = 79 #generic
-iShrine = 80 #generic
+iTemple = 78 #generic
+iCathedral = 79 #generic
+iMonastery = 80 #generic
+iShrine = 81 #generic
 
 
 iPalace = 0
@@ -1935,171 +1980,173 @@ iTheatre = 50
 iFrenchSalon = 51
 iByzantineHippodrome = 52
 iChinesePavillion = 53
-iColosseum = 54
-iGreekOdeon = 55
-iMayaBallCourt = 56
-iBabylonGarden = 57
-iBroadcastTower = 58
-iMarket = 59
-iRomanForum = 60
-iPersianApothecary = 61
-iGrocer = 62
-iBank = 63
-iEnglishStockExchange = 64
-iSupermarket = 65
-iAmericanMall = 66
-iCourthouse = 67
-iAztecSacrificialAltar = 68
-iHolyRomanRathaus = 69
-iSumerianZiggurat = 70
-iJail = 71
-iIndianMausoleum = 72
-iLevee = 73
-iNetherlandsDike = 74
-iIntelligenceAgency = 75
-iNationalSecurity = 76
-iJewishTemple = 77
-iJewishCathedral = 78
-iJewishMonastery = 79
-iJewishShrine = 80
-iChristianTemple = 81
-iChristianCathedral = 82
-iChristianMonastery = 83
-iChristianShrine = 84
-iIslamicTemple = 85
-iIslamicCathedral = 86
-iIslamicMonastery = 87
-iIslamicShrine = 88
-iHinduTemple = 89
-iHinduCathedral = 90
-iHinduMonastery = 91
-iHinduShrine = 92
-iBuddhistTemple = 93
-iBuddhistCathedral = 94
-iBuddhistMonastery = 95
-iBuddhistShrine = 96
-iConfucianTemple = 97
-iConfucianCathedral = 98
-iConfucianMonastery = 99
-iConfucianShrine = 100
-iTaoistTemple = 101
-iTaoistCathedral = 102
-iTaoistMonastery = 103
-iTaoistShrine = 104
-iZoroastrianTemple = 105
-iZoroastrianCathedral = 106
-iZoroastrianMonastery = 107
-iZoroastrianShrine = 108
-iHeroicEpic = 109 #
-iFlavianAmphitheatre = 109
-iNationalEpic = 110
-iTriumphalArch = 110 #
-iGlobeTheatre = 111
-iNationalPark = 112
-iHermitage = 113
-iNationalGallery = 113 #
-iChannelTunnel = 114
-iWallStreet = 115
-iIronWorks = 116
-iTradingCompany = 117
-iMtRushmore = 118
-iRedCross = 119
-iScotlandYard = 120
-iInterpol = 120 #
-iPyramid = 121
-iStonehenge = 122
-iGreatLibrary = 123
-iGreatLighthouse = 124
-iHangingGarden = 125
-iColossus = 126
-iOracle = 127
-iParthenon = 128
-iAngkorWat = 129
-iHagiaSophia = 130
-iChichenItza = 131
-iTempleOfKukulkan = 131 #
-iSistineChapel = 132
-iSpiralMinaret = 133
-iNotreDame = 134
-iTajMahal = 135
-iKremlin = 136
-iEiffelTower = 137
-iStatueOfLiberty = 138
-iBroadway = 139
-iWembley = 139 #
-iRocknroll = 140
-iGraceland = 140 #
-iHollywood = 141
-iGreatDam = 142
-iPentagon = 143
-iUnitedNations = 144
-iSpaceElevator = 145
-iMilitaryAcademy = 146
-iArtemis = 147
-iSankore = 148
-iGreatWall = 149
-iStatueOfZeus = 150
-iMausoleumOfMaussollos = 151
-iCristoRedentor = 152
-iShwedagonPaya = 153
-iMoaiStatues = 154
-iApostolicPalace = 155
-iLeaningTower = 156
-iOlympicPark = 157
-iTempleOfSalomon = 158
-iIshtarGate = 159
-iTheodosianWalls = 160
-iTerracottaArmy = 161
-iMezquita = 162
-iDomeOfTheRock = 163
-iTopkapiPalace = 164
-iBrandenburgGate = 165
-iSanMarcoBasilica = 166
-iWestminster = 167
-iItalianArtStudio = 168
-iBorobudur = 169
-iKhajuraho = 170
-iHimejiCastle = 171
-iPorcelainTower = 172
-iHarmandirSahib = 173
-iGreatBath = 174
+iIndonesianCandi = 54
+iColosseum = 55
+iGreekOdeon = 56
+iMayaBallCourt = 57
+iBabylonGarden = 58
+iBroadcastTower = 59
+iMarket = 60
+iRomanForum = 61
+iPersianApothecary = 62
+iGrocer = 63
+iBank = 64
+iEnglishStockExchange = 65
+iSupermarket = 66
+iAmericanMall = 67
+iCourthouse = 68
+iAztecSacrificialAltar = 69
+iHolyRomanRathaus = 70
+iSumerianZiggurat = 71
+iJail = 72
+iIndianMausoleum = 73
+iLevee = 74
+iNetherlandsDike = 75
+iIntelligenceAgency = 76
+iNationalSecurity = 77
+iJewishTemple = 78
+iJewishCathedral = 79
+iJewishMonastery = 80
+iJewishShrine = 81
+iChristianTemple = 82
+iChristianCathedral = 83
+iChristianMonastery = 84
+iChristianShrine = 85
+iIslamicTemple = 86
+iIslamicCathedral = 87
+iIslamicMonastery = 88
+iIslamicShrine = 89
+iHinduTemple = 90
+iHinduCathedral = 91
+iHinduMonastery = 92
+iHinduShrine = 93
+iBuddhistTemple = 94
+iBuddhistCathedral = 95
+iBuddhistMonastery = 96
+iBuddhistShrine = 97
+iConfucianTemple = 98
+iConfucianCathedral = 99
+iConfucianMonastery = 100
+iConfucianShrine = 101
+iTaoistTemple = 102
+iTaoistCathedral = 103
+iTaoistMonastery = 104
+iTaoistShrine = 105
+iZoroastrianTemple = 106
+iZoroastrianCathedral = 107
+iZoroastrianMonastery = 108
+iZoroastrianShrine = 109
+iHeroicEpic = 110 #
+iFlavianAmphitheatre = 110
+iNationalEpic = 111
+iTriumphalArch = 111 #
+iGlobeTheatre = 112
+iNationalPark = 113
+iHermitage = 114
+iNationalGallery = 114 #
+iChannelTunnel = 115
+iWallStreet = 116
+iIronWorks = 117
+iTradingCompany = 118
+iMtRushmore = 119
+iRedCross = 120
+iScotlandYard = 121
+iInterpol = 121 #
+iPyramid = 122
+iStonehenge = 123
+iGreatLibrary = 124
+iGreatLighthouse = 125
+iHangingGarden = 126
+iColossus = 127
+iOracle = 128
+iParthenon = 129
+iAngkorWat = 130
+iHagiaSophia = 131
+iChichenItza = 132
+iTempleOfKukulkan = 132 #
+iSistineChapel = 133
+iSpiralMinaret = 134
+iNotreDame = 135
+iTajMahal = 136
+iKremlin = 137
+iEiffelTower = 138
+iStatueOfLiberty = 139
+iBroadway = 140
+iWembley = 140 #
+iRocknroll = 141
+iGraceland = 141 #
+iHollywood = 142
+iGreatDam = 143
+iPentagon = 144
+iUnitedNations = 145
+iSpaceElevator = 146
+iMilitaryAcademy = 147
+iArtemis = 148
+iSankore = 149
+iGreatWall = 150
+iStatueOfZeus = 151
+iMausoleumOfMaussollos = 152
+iCristoRedentor = 153
+iShwedagonPaya = 154
+iMoaiStatues = 155
+iApostolicPalace = 156
+iLeaningTower = 157
+iOlympicPark = 158
+iTempleOfSalomon = 159
+iIshtarGate = 160
+iTheodosianWalls = 161
+iTerracottaArmy = 162
+iMezquita = 163
+iDomeOfTheRock = 164
+iTopkapiPalace = 165
+iBrandenburgGate = 166
+iSanMarcoBasilica = 167
+iWestminster = 168
+iItalianArtStudio = 169
+iBorobudur = 170
+iKhajuraho = 171
+iHimejiCastle = 172
+iPorcelainTower = 173
+iHarmandirSahib = 174
+iGreatBath = 175
 
 
-iNumBuildings = 175
-iPlague = 175
-iNumBuildingsPlague = 176
+iNumBuildings = 176
+iPlague = 176
+iNumBuildingsPlague = 177
 
-iEgyEmbassy = 176
-iIndEmbassy = 177
-iChiEmbassy = 178
-iBabEmbassy = 179
-iGreEmbassy = 180
-iPerEmbassy = 181
-iCarEmbassy = 182
-iRomEmbassy = 183
-iJapEmbassy = 184
-iEthEmbassy = 185
-iKorEmbassy = 186
-iMayEmbassy = 187
-iByzEmbassy = 188
-iVikEmbassy = 189
-iAraEmbassy = 190
-iKhmEmbassy = 191
-iSpaEmbassy = 192
-iFraEmbassy = 193
-iEngEmbassy = 194
-iGerEmbassy = 195
-iRusEmbassy = 196
-iHolEmbassy = 197
-iMalEmbassy = 198
-iPorEmbassy = 199
-iIncEmbassy = 200
-iMonEmbassy = 201
-iAztEmbassy = 202
-iTurEmbassy = 203
-iAmeEmbassy = 204
+iEgyEmbassy = 177
+iIndEmbassy = 178
+iChiEmbassy = 179
+iBabEmbassy = 180
+iGreEmbassy = 181
+iPerEmbassy = 182
+iCarEmbassy = 183
+iRomEmbassy = 184
+iJapEmbassy = 185
+iEthEmbassy = 186
+iKorEmbassy = 187
+iMayEmbassy = 188
+iByzEmbassy = 189
+iVikEmbassy = 190
+iAraEmbassy = 191
+iKhmEmbassy = 192
+iInoEmbassy = 193
+iSpaEmbassy = 194
+iFraEmbassy = 195
+iEngEmbassy = 196
+iGerEmbassy = 197
+iRusEmbassy = 198
+iHolEmbassy = 199
+iMalEmbassy = 200
+iPorEmbassy = 201
+iIncEmbassy = 202
+iMonEmbassy = 203
+iAztEmbassy = 204
+iTurEmbassy = 205
+iAmeEmbassy = 206
 
-iNumBuildingsEmbassy = 205
+iNumBuildingsEmbassy = 207
 
 
 #Projects
@@ -2265,6 +2312,9 @@ iAbbas = 76
 iKhomeini = 77
 iTaizong = 78
 iYongle = 79
+iDharmasetu = 80
+iHayamWuruk = 81
+iSuharto = 82
 
 
 tLeaders = (
@@ -2284,6 +2334,7 @@ tLeaders = (
 (iRagnar, iGustav),
 (iSaladin, iAbu_Bakr),
 (iSuryavarman,),
+(iDharmasetu, iHayamWuruk, iSuharto),
 (iIsabella, iPhilip),
 (iLouis_Xiv, iCharlemagne, iNapoleon, iDe_Gaulle),
 (iVictoria, iBrennus, iElizabeth, iChurchill),
@@ -2315,6 +2366,7 @@ tEarlyLeaders = (
 (iRagnar),
 (iAbu_Bakr),
 (iSuryavarman),
+(iDharmasetu),
 (iIsabella),
 (iCharlemagne),
 (iAlfred),
@@ -2356,6 +2408,7 @@ tRomanLateLeaders,
 (iGustav, 1600, 10, 3),
 (iSaladin, 1000, 10, 2),
 (iSuryavarman,),
+(iHayamWuruk, 1300, 10, 2, iSuharto, 1940, 10, 5),
 (iPhilip, 1400, 10, 3),
 (iLouis_Xiv, 1600, 10, 3, iNapoleon, 1750, 10, 4, iDe_Gaulle, 1940, 10, 5),
 (iElizabeth, 1500, 10, 3, iVictoria, 1750, 15, 3, iChurchill, 1930, 10, 5),
@@ -2399,9 +2452,11 @@ tRebirthLeaders = (
 -1,
 -1,
 -1,
+-1,
 -1)
 
 tFascistLeaders = (
+-1,
 -1,
 -1,
 -1,
@@ -2453,6 +2508,7 @@ iMao,
 -1,
 -1,
 -1,
+-1,
 iStalin,
 -1,
 -1,
@@ -2476,6 +2532,7 @@ tIsActiveOnLateStart = (
 0,
 1,
 0,
+1,
 1,
 1,
 1,

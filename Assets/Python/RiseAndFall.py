@@ -54,6 +54,7 @@ iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
+iIndonesia = con.iIndonesia
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland
@@ -95,6 +96,7 @@ pByzantium = gc.getPlayer(iByzantium)
 pVikings = gc.getPlayer(iVikings)
 pArabia = gc.getPlayer(iArabia)
 pKhmer = gc.getPlayer(iKhmer)
+pIndonesia = gc.getPlayer(iIndonesia)
 pSpain = gc.getPlayer(iSpain)
 pFrance = gc.getPlayer(iFrance)
 pEngland = gc.getPlayer(iEngland)
@@ -131,6 +133,7 @@ teamByzantium = gc.getTeam(pByzantium.getTeam())
 teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
+teamIndonesia = gc.getTeam(pIndonesia.getTeam())
 teamSpain = gc.getTeam(pSpain.getTeam())
 teamFrance = gc.getTeam(pFrance.getTeam())
 teamEngland = gc.getTeam(pEngland.getTeam())
@@ -153,8 +156,8 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 1, 1, 0, 0, 0, 8, 7, 6, 5, 4, 3, 2, 2, 6, 2, 3, 2, 1, 0, 0, 0)
-                                                                          #ma po in mo az tu am
+tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 1, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 6, 2, 3, 2, 1, 0, 0, 0)
+                                                                                   #ma po in mo az tu am
 
 # starting locations coordinates
 tCapitals = con.tCapitals
@@ -601,6 +604,7 @@ class RiseAndFall:
                 pVikings.changeGold(150)
                 pArabia.changeGold(300)
                 pKhmer.changeGold(200)
+		pIndonesia.changeGold(300)
                 pSpain.changeGold(200)
                 pFrance.changeGold(150)    
                 pEngland.changeGold(200)
@@ -3264,6 +3268,9 @@ class RiseAndFall:
                 if (iCiv == iKhmer):
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iKhmerBallistaElephant, iCiv, tPlot, 2)
+		if (iCiv == iIndonesia):
+			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
                 if (iCiv == iSpain):
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 3)
@@ -3399,8 +3406,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iArabiaCamelarcher, iCiv, tPlot, 5)                
                 if (iCiv == iKhmer):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
+                        utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+                        utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                         utils.makeUnit(con.iKhmerBallistaElephant, iCiv, tPlot, 2)
                         utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
@@ -3409,6 +3416,19 @@ class RiseAndFall:
                                 pKhmer.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                                 utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+		if (iCiv == iIndonesia):
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
+			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if (tSeaPlot):
+				utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
+				pIndonesia.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				utils.makeUnit(con.iGalley, iCiv, tSeaPlot, 1)
+				utils.makeUnit(con.iTrireme, iCiv, tSeaPlot, 2)
+				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+				utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                 if (iCiv == iSpain):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 4)
@@ -3580,7 +3600,9 @@ class RiseAndFall:
                 if (iCiv == iArabia):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iKhmer):
-                        utils.makeUnit(con.iWorker, iCiv, tPlot, 3)                
+                        utils.makeUnit(con.iWorker, iCiv, tPlot, 3)  
+		if (iCiv == iIndonesia):
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iSpain):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iFrance):
@@ -3657,15 +3679,20 @@ class RiseAndFall:
                 utils.makeUnit(con.iByzantineCataphract, iByzantium, tCapitals[0][iByzantium], 1)
                 #utils.makeUnit(con.iSettler, iByzantium, tCapitals[0][iByzantium], 1)
 
-		utils.makeUnit(con.iSettler, iKorea, tCapitals[0][iKorea], 1)
+		utils.makeUnit(con.iSettler, iKorea, tCapitals[0][iKorea], 2)
 		utils.makeUnit(con.iBuddhistMissionary, iKorea, tCapitals[0][iKorea], 1)
+		utils.makeUnit(con.iConfucianMissionary, iKorea, tCapitals[0][iKorea], 1)
 		utils.makeUnit(con.iArcher, iKorea, tCapitals[0][iKorea], 2)
 		utils.makeUnit(con.iSwordsman, iKorea, tCapitals[0][iKorea], 3)
 		utils.makeUnit(con.iHorseArcher, iKorea, tCapitals[0][iKorea], 1)
+		utils.makeUnit(con.iWorker, iKorea, tCapitals[0][iKorea], 3)
 
                 if ( pKhmer.isHuman() ):
                     utils.makeUnit(iSettler, iKhmer, tCapitals[0][iKhmer], 1)
                     utils.makeUnit(iWarrior, iKhmer, tCapitals[0][iKhmer], 1)
+		if ( pIndonesia.isHuman() ):
+			utils.makeUnit(iSettler, iIndonesia, tCapitals[0][iIndonesia], 1)
+			utils.makeUnit(iWarrior, iIndonesia, tCapitals[0][iIndonesia], 1)
                 if ( pSpain.isHuman() ):
                     utils.makeUnit(iSettler, iSpain, tCapitals[0][iSpain], 1)
                     utils.makeUnit(iWarrior, iSpain, tCapitals[0][iSpain], 1)
@@ -3757,6 +3784,9 @@ class RiseAndFall:
                 if ( pKhmer.isHuman() ):
                     utils.makeUnit(iSettler, iKhmer, tCapitals[0][iKhmer], 1)
                     utils.makeUnit(iWarrior, iKhmer, tCapitals[0][iKhmer], 1)
+		if ( pIndonesia.isHuman() ):
+			utils.makeUnit(iSettler, iIndonesia, tCapitals[0][iIndonesia], 1)
+			utils.makeUnit(iWarrior, iIndonesia, tCapitals[0][iIndonesia], 1)
                 if ( pSpain.isHuman() ):
                     utils.makeUnit(iSettler, iSpain, tCapitals[0][iSpain], 1)
                     utils.makeUnit(iWarrior, iSpain, tCapitals[0][iSpain], 1)
@@ -4134,7 +4164,7 @@ class RiseAndFall:
                                 teamEthiopia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamEthiopia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
 			if (iCiv == iKorea):
-				lKoreanTechs = [con.iMining, con.iBronzeWorking, con.iMysticism, con.iPolytheism, con.iMeditation, con.iPriesthood, \
+				lKoreanTechs = [con.iMining, con.iAgriculture, con.iBronzeWorking, con.iMysticism, con.iPolytheism, con.iMeditation, con.iPriesthood, \
 						con.iMonotheism, con.iMasonry, con.iFishing, con.iSailing, con.iMonarchy, con.iTheWheel, con.iPottery, \
 						con.iWriting, con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iCalendar]
 				for iTech in lKoreanTechs:
@@ -4265,7 +4295,14 @@ class RiseAndFall:
                                 teamKhmer.setHasTech(con.iHunting, True, iCiv, False, False)
                                 teamKhmer.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamKhmer.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)          
+                                teamKhmer.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			if (iCiv == iIndonesia):
+				lIndonesianTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, \
+						con.iMysticism, con.iPolytheism, con.iMasonry, con.iMeditation, con.iPriesthood, con.iMonotheism, \
+						con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iSailing, \
+						con.iCodeOfLaws, con.iMathematics, con.iConstruction, con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding]
+				for iTech in lIndonesianTechs:
+					teamIndonesia.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iSpain):
                                 teamSpain.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamSpain.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

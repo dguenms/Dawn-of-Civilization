@@ -10140,6 +10140,8 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 		return result*105/100;
 	case KHMER:
 		return result*90/100;
+	case INDONESIA:
+		return result*9/10;
 	case SPAIN:
 		return result*11/10;
 	case FRANCE:
@@ -10316,6 +10318,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		return researchPercent*100/100;
 	case KHMER:
 		return researchPercent*100/100;
+	case INDONESIA:
+		return researchPercent*100/100;
 	case SPAIN:
 		return researchPercent*8/10;
 	case ENGLAND:
@@ -10406,6 +10410,8 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 		return result*7/10;
 	case KHMER:
 		return result*8/10;
+	case INDONESIA:
+		return result*8/10;
 	case SPAIN:
 		return result*5/10;
 	case FRANCE:
@@ -10492,6 +10498,8 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 	case ARABIA:
 		return result*10/10;
 	case KHMER:
+		return result*10/10;
+	case INDONESIA:
 		return result*10/10;
 	case SPAIN:
 		return result*7/10;
@@ -10604,6 +10612,8 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 		return result*9/10;
 	case KHMER:
 		return result*10/10;
+	case INDONESIA:
+		return result*10/10;
 	case SPAIN:
 		return result*6/10;
 	case FRANCE:
@@ -10705,6 +10715,9 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 		result = m_iHealthBonus*3;
 		break;
 	case KHMER:
+		result = m_iHealthBonus*6;
+		break;
+	case INDONESIA:
 		result = m_iHealthBonus*6;
 		break;
 	case FRANCE:

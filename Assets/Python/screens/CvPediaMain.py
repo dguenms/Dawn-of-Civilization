@@ -493,12 +493,12 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         tList.pop(5) #boudica
                         tList.pop(0) #barbarian
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):
-                        tList.pop(37) #natives
-                        tList.pop(36) #independent2
-                        tList.pop(35) #independent
-                        tList.pop(34) #zulu
-                        tList.pop(32) #sumeria                        
-                        tList.pop(24) #nat.Am.
+                        tList.pop(38) #natives
+                        tList.pop(37) #independent2
+                        tList.pop(36) #independent
+                        tList.pop(35) #zulu
+                        tList.pop(33) #sumeria                        
+                        tList.pop(25) #nat.Am.
                         #tList.pop(20) #korea                  
                         tList.pop(14) #hre
                         tList.pop(6) #celts
