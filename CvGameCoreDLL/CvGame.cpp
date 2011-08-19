@@ -5446,6 +5446,7 @@ int CvGame::getCorporationGameTurnFounded(CorporationTypes eIndex)
 
 bool CvGame::isCorporationFounded(CorporationTypes eIndex)
 {
+	//return true; //Leoreth: corporations don't get founded anymore
 	return (getCorporationGameTurnFounded(eIndex) != -1);
 }
 

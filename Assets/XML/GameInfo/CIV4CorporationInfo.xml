@@ -14,21 +14,21 @@
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
+			<iMaintenance>0</iMaintenance>
 			<PrereqBonuses>
 				<BonusType>BONUS_SILK</BonusType>
 				<BonusType>BONUS_COTTON</BonusType>
 				<BonusType>BONUS_INCENSE</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
 			<BonusProduced>NONE</BonusProduced>
 			<CommercesProduced>
-				<iCommerceProduced>250</iCommerceProduced>
+				<iCommerceProduced>300</iCommerceProduced>
 			</CommercesProduced>
 			<YieldsProduced>
-				<iYieldProduced>50</iYieldProduced>
+				<iYieldProduced>100</iYieldProduced>
 			</YieldsProduced>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,14</Button>
 			<MovieFile>NONE</MovieFile>
@@ -43,7 +43,7 @@
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
+			<iMaintenance>0</iMaintenance>
 			<PrereqBonuses>
 				<BonusType>BONUS_SPICES</BonusType>
 				<BonusType>BONUS_SUGAR</BonusType>
@@ -51,14 +51,14 @@
 				<BonusType>BONUS_IVORY</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
 			<BonusProduced>NONE</BonusProduced>
 			<CommercesProduced>
-				<iCommerceProduced>100</iCommerceProduced>
+				<iCommerceProduced>200</iCommerceProduced>
 			</CommercesProduced>
 			<YieldsProduced>
-				<iYieldProduced>25</iYieldProduced>
+				<iYieldProduced>50</iYieldProduced>
 			</YieldsProduced>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,11</Button>
 			<MovieFile>NONE</MovieFile>
@@ -73,14 +73,14 @@
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
+			<iMaintenance>0</iMaintenance>
 			<PrereqBonuses>
 				<BonusType>BONUS_WHEAT</BonusType>
 				<BonusType>BONUS_CORN</BonusType>
 				<BonusType>BONUS_RICE</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
@@ -104,14 +104,14 @@
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
+			<iMaintenance>0</iMaintenance>
 			<PrereqBonuses>
 				<BonusType>BONUS_CRAB</BonusType>
 				<BonusType>BONUS_CLAM</BonusType>
 				<BonusType>BONUS_FISH</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
@@ -139,7 +139,7 @@
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
+			<iMaintenance>0</iMaintenance>
 			<PrereqBonuses>
 				<BonusType>BONUS_COAL</BonusType>
 				<BonusType>BONUS_COPPER</BonusType>
@@ -147,7 +147,7 @@
 				<BonusType>BONUS_ALUMINUM</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
@@ -174,12 +174,12 @@
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
+			<iMaintenance>0</iMaintenance>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
@@ -204,14 +204,14 @@
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
+			<iMaintenance>0</iMaintenance>
 			<PrereqBonuses>
 				<BonusType>BONUS_GOLD</BonusType>
 				<BonusType>BONUS_SILVER</BonusType>
 				<BonusType>BONUS_GEMS</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
@@ -237,14 +237,14 @@
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
-			<iMaintenance>100</iMaintenance>
+			<iMaintenance>0</iMaintenance>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_ALUMINUM</BonusType>
 				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>4</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
