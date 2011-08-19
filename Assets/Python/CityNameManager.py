@@ -7676,6 +7676,9 @@ class CityNameManager:
                                 city = pCity.GetCy()
                                 if (city.getName() == 'Edo'):
                                         city.setName('Toukyou', False)
+					oldCapital = gc.getPlayer(iJapan).getCapitalCity()
+					city.setHasRealBuilding(con.iPalace, True)
+					oldCapital.setHasRealBuilding(con.iPalace, False)
                                         break    
                 if ((iPlayer == iEngland or iPlayer == iSpain or iPlayer == iAmerica) and era == con.iIndustrial):
                         cityList = PyPlayer(iPlayer).getCityList()

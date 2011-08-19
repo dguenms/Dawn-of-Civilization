@@ -6,7 +6,7 @@
 	# Unique Power: The Power of Kobuksons: Free Drill I and Drill II promotions for naval units
 	# Unique Historical Victory:
 		- Build a Buddhist Stupa and a Confucian Academy by 1200 AD
-		- Be first to discover Printing Press and Gunpowder
+		- Be first to discover Printing Press
 		- Sink 20 enemy ships
 # returned Confucianism, Zoroastrianism is now an eighth religion
 # reduced Babylonia's likeliness to build settlers
@@ -20,3 +20,17 @@
 # added a Mongol horde event that spawns armies for AI Mongolia at the borders of India, Persia, Byzantium, Arabia, Russia
 # Netherlands now start with Protestant state religion if it's already founded, and a missionary of its state religion
 # prevented several classical wonders from being built in later eras
+# Corporation system redone:
+	# Silk Route (Currency): silk, cotton, incense -> food, gold
+	# Trading Company (Astronomy): spices, sugar, ivory, banana -> food, gold
+	# Cereal Industry (Biology): wheat, rice, corn -> food
+	# Fishing Industry (Refrigeration): fish, clam, crab -> food
+	# Steel Industry (Steel): iron, copper, coal, aluminum -> production
+	# Oil Industry (Combustion): oil -> gold
+	# Luxury Industry (Industrialism): gold, silver, gems -> gold, culture
+	# Computer Industry (Computers): copper, aluminum, oil -> research
+# Corporation headquarters and executives removed, they spread automatically now to everyone who knows the required tech and fulfills other criteria (owning the resources, associated buildings)
+# Silk Route and Trading Company only spread to appropriate historical regions
+# New Dutch UP: Doubled yield and commerce from the trading company corporation
+# The Dutch East Indiaman is now able to enter enemy territory without open border agreements
+# The Japanese capital switches to Tokyo when entering the Industrial Era

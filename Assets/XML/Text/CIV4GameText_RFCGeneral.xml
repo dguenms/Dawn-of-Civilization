@@ -315,4 +315,14 @@
 		<English>Founded:</English>
 		<German>Gegr&#252;ndet:</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP</Tag>
+		<English>[ICON_BULLET]Increased chance of spreading Trading Company</English>
+		<German>[ICON_BULLET]Erhöhte Chance, Handelsgesellschaften zu verbreiten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_MARKET_HELP</Tag>
+		<English>[ICON_BULLET]Increased chance of spreading corporations</English>
+		<German>[ICON_BULLET]Erhöhte Chance, Kapitalgesellschaften zu verbreiten</German>
+	</TEXT>
 </Civ4GameText>

@@ -105,10 +105,10 @@ Indonesia:
 Thailand
 	Spawn: 1361 AD (Ayutthaya); Khmer must be dead (Angkor gets moved and flips)
 	Capital: Bangkok/Ayutthaya (101,33)
-	Leaders: Mongkut
+	Leaders: Naresuan (use Ramkhamhaeng), Mongkut
 	Color: middle blue
 	Unique Power: Father Governs Children (no unhappiness for "we wish to join our country")
-	Unique Unit: Battle Elephant (Cuirassier)
+	Unique Unit: Chang Sangkhram Elephant (Cuirassier)
 	Unique Building: Ho Trai (Library)
 	Unique Historical Victory:
 		- Make Ayutthaya the largest city in the world in 1700 AD
