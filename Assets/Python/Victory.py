@@ -1760,91 +1760,180 @@ class Victory:
 
                 iGameTurn = gc.getGame().getGameTurn()
 
-                if (iPlayer == iBabylonia):
-                        if (pBabylonia.isAlive()):
-                                if (self.getGoal(iBabylonia, 0) == -1): #eof error???
-                                        if (iTech == con.iWriting):
-                                                self.setBabylonianTechs(0, 1)
-                                                for iCiv in range(iNumPlayers):
-                                                        if (iCiv != iBabylonia):
-                                                                if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-                                                                        self.setBabylonianTechs(0, 0)
-                                        elif (iTech == con.iCodeOfLaws):
-                                                self.setBabylonianTechs(1, 1)
-                                                for iCiv in range(iNumPlayers):
-                                                        if (iCiv != iBabylonia):
-                                                                if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-                                                                        self.setBabylonianTechs(1, 0)
-                                        elif (iTech == con.iMonarchy):
-                                                self.setBabylonianTechs(2, 1)
-                                                for iCiv in range(iNumPlayers):
-                                                        if (iCiv != iBabylonia):
-                                                                if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-                                                                        self.setBabylonianTechs(2, 0)
-                                        print ("self.getBabylonianTechs", self.getBabylonianTechs(0), self.getBabylonianTechs(1), self.getBabylonianTechs(2))
-                                        if (self.getBabylonianTechs(0) == 1 and self.getBabylonianTechs(1) == 1 and self.getBabylonianTechs(2) == 1):
-                                                self.setGoal(iBabylonia, 0, 1)
-                                        elif (self.getBabylonianTechs(0) == 0 or self.getBabylonianTechs(1) == 0 or self.getBabylonianTechs(2) == 0):
-                                                self.setGoal(iBabylonia, 0, 0)
+		# Babylonian UHV: Writing, Code of Laws, Monarchy
+		if iTech == con.iWriting:
+			if self.getBabylonianTechs(0) == -1:
+				if iPlayer == iBabylonia:
+					self.setBabylonianTechs(0, 1)
+				else:
+					self.setGoal(iBabylonia, 0, 0)
 
-                elif (iPlayer == iGreece):
-                        if (pGreece.isAlive()):
-                                if (self.getGoal(iGreece, 0) == -1): #eof error???
-                                        if (iTech == con.iLiterature):
-                                                self.setGreekTechs(0, 1)
-                                                for iCiv in range(iNumPlayers):
-                                                        if (iCiv != iGreece):
-                                                                if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-                                                                        self.setGreekTechs(0, 0)
-                                        elif (iTech == con.iDrama):
-                                                self.setGreekTechs(1, 1)
-                                                for iCiv in range(iNumPlayers):
-                                                        if (iCiv != iGreece):
-                                                                if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-                                                                        self.setGreekTechs(1, 0)
-                                        elif (iTech == con.iPhilosophy):
-                                                self.setGreekTechs(2, 1)
-                                                for iCiv in range(iNumPlayers):
-                                                        if (iCiv != iGreece):
-                                                                if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-                                                                        self.setGreekTechs(2, 0)
-                                        print ("self.getGreekTechs", self.getGreekTechs(0), self.getGreekTechs(1), self.getGreekTechs(2))
-                                        if (self.getGreekTechs(0) == 1 and self.getGreekTechs(1) == 1 and self.getGreekTechs(2) == 1):
-                                                self.setGoal(iGreece, 0, 1)
-                                        elif (self.getGreekTechs(0) == 0 or self.getGreekTechs(1) == 0 or self.getGreekTechs(2) == 0):
-                                                self.setGoal(iGreece, 0, 0)
+		elif iTech == con.iCodeOfLaws:
+			if self.getBabylonianTechs(1) == -1:
+				if iPlayer == iBabylonia:
+					self.setBabylonianTechs(1, 1)
+				else:
+					self.setGoal(iBabylonia, 0, 0)
 
-		elif (iPlayer == iRome):
-                        if (pRome.isAlive()):
-				if (pRome.isReborn()):
-					if (iTech == con.iBanking):
+		elif iTech == con.iMonarchy:
+			if self.getBabylonianTechs(2) == -1:
+				if iPlayer == iBabylonia:
+					self.setBabylonianTechs(2, 1)
+				else:
+					self.setGoal(iBabylonia, 0, 0)
+
+		if iTech in [con.iWriting, con.iCodeOfLaws, con.iMonarchy]:
+			if self.getBabylonianTechs(0) == 1 and self.getBabylonianTechs(1) == 1 and self.getBabylonianTechs(2) == 1:
+				self.setGoal(iBabylonia, 0, 1)
+	
+
+                #if (iPlayer == iBabylonia):
+                 #       if (pBabylonia.isAlive()):
+                  #              if (self.getGoal(iBabylonia, 0) == -1): #eof error???
+                   #                     if (iTech == con.iWriting):
+                    #                            self.setBabylonianTechs(0, 1)
+                     #                           for iCiv in range(iNumPlayers):
+                      #                                  if (iCiv != iBabylonia):
+                       #                                         if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+                        #                                                self.setBabylonianTechs(0, 0)
+                         #               elif (iTech == con.iCodeOfLaws):
+                          #                      self.setBabylonianTechs(1, 1)
+                           #                     for iCiv in range(iNumPlayers):
+                            #                            if (iCiv != iBabylonia):
+                             #                                   if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+                              #                                          self.setBabylonianTechs(1, 0)
+                               #         elif (iTech == con.iMonarchy):
+                                #                self.setBabylonianTechs(2, 1)
+                                 #               for iCiv in range(iNumPlayers):
+                                  #                      if (iCiv != iBabylonia):
+                                   #                             if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+                                    #                                    self.setBabylonianTechs(2, 0)
+                                     #   print ("self.getBabylonianTechs", self.getBabylonianTechs(0), self.getBabylonianTechs(1), self.getBabylonianTechs(2))
+                                      #  if (self.getBabylonianTechs(0) == 1 and self.getBabylonianTechs(1) == 1 and self.getBabylonianTechs(2) == 1):
+                                       #         self.setGoal(iBabylonia, 0, 1)
+                                        #elif (self.getBabylonianTechs(0) == 0 or self.getBabylonianTechs(1) == 0 or self.getBabylonianTechs(2) == 0):
+                                         #       self.setGoal(iBabylonia, 0, 0)
+
+		# Greek UHV: Literature, Drama, Philosophy
+		if iTech == con.iLiterature:
+			if self.getGreekTechs(0) == -1:
+				if iPlayer == iGreece:
+					self.setGreekTechs(0, 1)
+				else:
+					self.setGoal(iGreece, 0, 0)
+
+		elif iTech == con.iDrama:
+			if self.getGreekTechs(1) == -1:
+				if iPlayer == iGreece:
+					self.setGreekTechs(1, 1)
+				else:
+					self.setGoal(iGreece, 0, 0)
+
+		elif iTech == con.iPhilosophy:
+			if self.getGreekTechs(2) == -1:
+				if iPlayer == iGreece:
+					self.setGreekTechs(2, 1)
+				else:
+					self.setGoal(iGreece, 0, 0)
+
+		if iTech in [con.iLiterature, con.iDrama, con.iPhilosophy]:
+			if self.getGreekTechs(0) == 1 and self.getGreekTechs(1) == 1 and self.getGreekTechs(2) == 1:
+				self.setGoal(iGreece, 0, 1)
+
+
+                #elif (iPlayer == iGreece):
+                 #       if (pGreece.isAlive()):
+                  #              if (self.getGoal(iGreece, 0) == -1): #eof error???
+                   #                     if (iTech == con.iLiterature):
+                    #                            self.setGreekTechs(0, 1)
+                     #                           for iCiv in range(iNumPlayers):
+                      #                                  if (iCiv != iGreece):
+                       #                                         if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+                        #                                                self.setGreekTechs(0, 0)
+                         #               elif (iTech == con.iDrama):
+                          #                      self.setGreekTechs(1, 1)
+                           #                     for iCiv in range(iNumPlayers):
+                            #                            if (iCiv != iGreece):
+                             #                                   if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+                              #                                          self.setGreekTechs(1, 0)
+                               #         elif (iTech == con.iPhilosophy):
+                                #                self.setGreekTechs(2, 1)
+                                 #               for iCiv in range(iNumPlayers):
+                                  #                      if (iCiv != iGreece):
+                                   #                             if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+                                    #                                    self.setGreekTechs(2, 0)
+                                     #   print ("self.getGreekTechs", self.getGreekTechs(0), self.getGreekTechs(1), self.getGreekTechs(2))
+                                      #  if (self.getGreekTechs(0) == 1 and self.getGreekTechs(1) == 1 and self.getGreekTechs(2) == 1):
+                                       #         self.setGoal(iGreece, 0, 1)
+                                        #elif (self.getGreekTechs(0) == 0 or self.getGreekTechs(1) == 0 or self.getGreekTechs(2) == 0):
+                                         #       self.setGoal(iGreece, 0, 0)
+
+		# Italian UHV: Banking, Education, Radio, Fascism
+		if pRome.isReborn():
+			if iTech == con.iBanking:
+				if self.getItalianTechs(0) == -1:
+					if iPlayer == iRome:
 						self.setItalianTechs(0, 1)
-						for iCiv in range(iNumPlayers):
-							if (iCiv != iRome):
-								if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-									self.setItalianTechs(0, 0)
-					elif (iTech == con.iEducation):
-						self.setItalianTechs(1, 1)
-						for iCiv in range(iNumPlayers):
-							if (iCiv != iRome):
-								if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-									self.setItalianTechs(1, 0)
-					elif (iTech == con.iRadio):
-						self.setItalianTechs(2, 1)
-						for iCiv in range(iNumPlayers):
-							if (iCiv != iRome):
-								if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-									self.setItalianTechs(2, 0)
-					elif (iTech == con.iFascism):
-						self.setItalianTechs(3, 1)
-						for iCiv in range(iNumPlayers):
-							if (iCiv != iRome):
-								if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-									self.setItalianTechs(3, 0)
-					if (self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1):
-						self.setGoal(iRome, 0, 1)
-					elif (self.getItalianTechs(0) == 0 or self.getItalianTechs(1) == 0 or self.getItalianTechs(2) == 0 or self.getItalianTechs(3) == 0):
+					else:
 						self.setGoal(iRome, 0, 0)
+
+			elif iTech == con.iEducation:
+				if self.getItalianTechs(1) == -1:
+					if iPlayer == iRome:
+						self.setItalianTechs(1, 1)
+					else:
+						self.setGoal(iRome, 0, 0)
+
+			elif iTech == con.iRadio:
+				if self.getItalianTechs(2) == -1:
+					if iPlayer == iRome:
+						self.setItalianTechs(2, 1)
+					else:
+						self.setGoal(iRome, 0, 0)
+
+			elif iTech == con.iFascism:
+				if self.getItalianTechs(3) == -1:
+					if iPlayer == iRome:
+						self.setItalianTechs(3, 1)
+					else:
+						self.setGoal(iRome, 0, 0)
+
+			if iTech in [con.iBanking, con.iEducation, con.iRadio, con.iFascism]:
+				if self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1:
+					self.setGoal(iRome, 0, 1)
+
+		#elif (iPlayer == iRome):
+                #       if (pRome.isAlive()):
+		#		if (pRome.isReborn()):
+		#			if (iTech == con.iBanking):
+		#				self.setItalianTechs(0, 1)
+		#				for iCiv in range(iNumPlayers):
+		#					if (iCiv != iRome):
+		#						if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+		#							self.setItalianTechs(0, 0)
+		#			elif (iTech == con.iEducation):
+		#				self.setItalianTechs(1, 1)
+		#				for iCiv in range(iNumPlayers):
+		#					if (iCiv != iRome):
+		#						if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+		#							self.setItalianTechs(1, 0)
+		#			elif (iTech == con.iRadio):
+		#				self.setItalianTechs(2, 1)
+		#				for iCiv in range(iNumPlayers):
+		#					if (iCiv != iRome):
+		#						if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+		#							self.setItalianTechs(2, 0)
+		#			elif (iTech == con.iFascism):
+		#				self.setItalianTechs(3, 1)
+		#				for iCiv in range(iNumPlayers):
+		#					if (iCiv != iRome):
+		#						if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+		#							self.setItalianTechs(3, 0)
+		#			if (self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1):
+		#				self.setGoal(iRome, 0, 1)
+		#			elif (self.getItalianTechs(0) == 0 or self.getItalianTechs(1) == 0 or self.getItalianTechs(2) == 0 or self.getItalianTechs(3) == 0):
+		#				self.setGoal(iRome, 0, 0)
+
 
                 elif (iPlayer == iJapan):
                         if (pJapan.isAlive()):
@@ -1870,18 +1959,26 @@ class Victory:
                                                         else:
                                                                 self.setGoal(iJapan, 2, 0)
 
-		elif (iPlayer == iKorea):
-			if (pKorea.isAlive()):
-				if (iTech == con.iPrintingPress):
-					bFirst = True
-					for iCiv in range(iNumPlayers):
-						if (iCiv != iKorea):
-							if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
-								bFirst = False
-					if bFirst:
-						self.setGoal(iKorea, 1, 1)
-					else:
-						self.setGoal(iKorea, 1, 0) 
+		# Korean UHV: Printing Press
+		if iTech == con.iPrintingPress:
+			if self.getGoal(iKorea, 1) == -1:
+				if iPlayer == iKorea:
+					self.setGoal(iKorea, 1, 1)
+				else:
+					self.setGoal(iKorea, 1, 0)
+
+		#elif (iPlayer == iKorea):
+		#	if (pKorea.isAlive()):
+		#		if (iTech == con.iPrintingPress):
+		#			bFirst = True
+		#			for iCiv in range(iNumPlayers):
+		#				if (iCiv != iKorea):
+		#					if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iTech) == True):
+		#						bFirst = False
+		#			if bFirst:
+		#				self.setGoal(iKorea, 1, 1)
+		#			else:
+		#				self.setGoal(iKorea, 1, 0) 
                                                 
 
                 elif (iPlayer == iMaya):

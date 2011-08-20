@@ -741,7 +741,7 @@ tCapitals = (
 (75, 33), #tMecca
 #(102, 34), #tAngkor
 (102, 33), #tAngkor
-(99, 27), #Padang (should be Palembang)
+(100, 26), #Palembang
 (52, 43), #tMadrid
 (55, 50), #tParis
 (53, 54), #tLondon
@@ -776,7 +776,7 @@ tCapitals = (
 (75, 33), #tMecca
 #(102, 34), #tAngkor
 (102, 33), #tAngkor
-(99, 27), #Padang (should be Palembang)
+(100, 26), #Palembang
 (52, 43), #tMadrid
 (55, 50), #tParis
 (53, 54), #tLondon

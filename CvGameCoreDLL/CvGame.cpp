@@ -5904,7 +5904,7 @@ void CvGame::doTurn()
 	//Rhye - comment this to stop religion founding
 	doHolyCity();
 
-	doHeadquarters();
+	//doHeadquarters();
 
 	doDiploVote();
 
@@ -8625,24 +8625,26 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 
 bool CvGame::isCompetingCorporation(CorporationTypes eCorporation1, CorporationTypes eCorporation2) const
 {
-	bool bShareResources = false;
+	// edead: start comment
+	// bool bShareResources = false;
 
-	for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES() && !bShareResources; ++i)
-	{
-		if (GC.getCorporationInfo(eCorporation1).getPrereqBonus(i) != NO_BONUS)
-		{
-			for (int j = 0; j < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++j)
-			{
-				if (GC.getCorporationInfo(eCorporation2).getPrereqBonus(j) != NO_BONUS)
-				{
-					if (GC.getCorporationInfo(eCorporation1).getPrereqBonus(i) == GC.getCorporationInfo(eCorporation2).getPrereqBonus(j))
-					{
-						return true;
-					}
-				}
-			}
-		}
-	}
+	// for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES() && !bShareResources; ++i)
+	// {
+		// if (GC.getCorporationInfo(eCorporation1).getPrereqBonus(i) != NO_BONUS)
+		// {
+			// for (int j = 0; j < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++j)
+			// {
+				// if (GC.getCorporationInfo(eCorporation2).getPrereqBonus(j) != NO_BONUS)
+				// {
+					// if (GC.getCorporationInfo(eCorporation1).getPrereqBonus(i) == GC.getCorporationInfo(eCorporation2).getPrereqBonus(j))
+					// {
+						// return true;
+					// }
+				// }
+			// }
+		// }
+	// }
+	// edead: end comment
 
 	return false;
 }

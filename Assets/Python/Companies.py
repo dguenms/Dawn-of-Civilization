@@ -22,7 +22,7 @@ iNumCompanies = 8
 (iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
 
 tCompanyTechs = (con.iCurrency, con.iAstronomy, con.iBiology, con.iRefrigeration, con.iSteel, con.iCombustion, con.iIndustrialism, con.iComputers)
-tCompaniesLimit = (100, 120, 200, 100, 200, 80, 100, 120) # kind of arbitrary currently, see how this plays out
+tCompaniesLimit = (10, 12, 20, 10, 20, 8, 10, 12) # kind of arbitrary currently, see how this plays out
 
 lTradingCompanyCivs = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 
@@ -140,7 +140,7 @@ class Companies:
 				iValue += 2
 		elif iCompany == iSilkRoute:
 			if owner.getID() == con.iMongolia:
-				iValue += 1
+				iValue += 2
 			elif owner.getID() == con.iChina:
 				return -1
 		
