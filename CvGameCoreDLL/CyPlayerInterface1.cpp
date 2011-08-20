@@ -461,5 +461,6 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("isReborn", &CyPlayer::isReborn, "bool ()")
 		.def("getReborn", &CyPlayer::getReborn, "int ()")
 		.def("setReborn", &CyPlayer::setReborn, "void ()")
+		.def("updateTradeRoutes", &CyPlayer::updateTradeRoutes, "void ()")
 		;
 }

@@ -34,3 +34,4 @@
 # New Dutch UP: Doubled yield and commerce from the trading company corporation
 # The Dutch East Indiaman is now able to enter enemy territory without open border agreements
 # The Japanese capital switches to Tokyo when entering the Industrial Era
+# Victory code rewritten so that a "first to discover" goal immediately fails when someone else researches the tech faster
