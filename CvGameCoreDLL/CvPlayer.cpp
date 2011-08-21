@@ -5326,7 +5326,10 @@ void CvPlayer::found(int iX, int iY)
 					startingEra = 0;
 					break;
 				case INDIA:
-					startingEra = 0;
+					if (!GET_PLAYER((PlayerTypes)INDIA).isReborn())
+						startingEra = 0;
+					else
+						startingEra = 4;
 					break;
 				case CHINA:
 					startingEra = 0;
@@ -5755,7 +5758,10 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			startingEra = 0;
 			break;
 		case INDIA:
-			startingEra = 0;
+			if (!GET_PLAYER((PlayerTypes)INDIA).isReborn())
+				startingEra = 0;
+			else
+				startingEra = 4;
 			break;
 		case CHINA:
 			startingEra = 0;
@@ -5769,7 +5775,10 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			startingEra = 1;
 			break;
 		case PERSIA:
-			startingEra = 1;
+			if (!GET_PLAYER((PlayerTypes)PERSIA).isReborn())
+				startingEra = 1;
+			else
+				startingEra = 3;
 			break;
 		case CARTHAGE:
 			startingEra = 1;
@@ -6283,7 +6292,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded /= 100;
 			break;
 		case INDONESIA:
-			iProductionNeeded *= 95;
+			iProductionNeeded *= 105;
 			iProductionNeeded /= 100;
 			break;
 		case SPAIN:
