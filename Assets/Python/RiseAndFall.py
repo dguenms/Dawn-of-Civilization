@@ -1025,7 +1025,7 @@ class RiseAndFall:
                                                 print "Units on rebirth city plot"
                                                 bFree = False
                                         
-
+					print "Prepare first respawn city"
                                         if gc.getMap().plot(x,y).isCity():
                                                 utils.flipCity((x,y), False, True, iCiv, ())
                                                 print"Flip rebirth plot city"
@@ -1046,6 +1046,7 @@ class RiseAndFall:
                                         if (iGameTurn >= getTurnForYear(con.tBirth[gc.getGame().getActivePlayer()])):
                                                 self.newCivPopup(iCiv)
                                         print "Rebirth 1st turn passed"
+
                                 if (iGameTurn == getTurnForYear(con.tRebirth[iCiv])+1 and utils.getReborn(iCiv) == 1):
                                         print "Rebirth 2nd turn begun"
 
@@ -1065,15 +1066,15 @@ class RiseAndFall:
                                                         utils.relocateGarrisons((x,y), pCity.getOwner())
                                                         utils.relocateSeaGarrisons((x,y), pCity.getOwner())
                                                         utils.createGarrisons((x,y), iCiv, 2)
-                                        print "Garrisons moved"
-                                        print "Independent 1 number of cities: "+repr(gc.getPlayer(con.iIndependent).getNumCities())
-                                        print "Independent 2 number of cities: "+repr(gc.getPlayer(con.iIndependent2).getNumCities())
+                                        #print "Garrisons moved"
+                                        #print "Independent 1 number of cities: "+repr(gc.getPlayer(con.iIndependent).getNumCities())
+                                        #print "Independent 2 number of cities: "+repr(gc.getPlayer(con.iIndependent2).getNumCities())
                                         self.convertSurroundingCities(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
-                                        print "Cities converted"
+                                        #print "Cities converted"
                                         self.convertSurroundingPlotCulture(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
-                                        print "Plots converted"
-                                        print "Independent 1 number of cities: "+repr(gc.getPlayer(con.iIndependent).getNumCities())
-                                        print "Independent 2 number of cities: "+repr(gc.getPlayer(con.iIndependent2).getNumCities())
+                                        #print "Plots converted"
+                                        #print "Independent 1 number of cities: "+repr(gc.getPlayer(con.iIndependent).getNumCities())
+                                        #print "Independent 2 number of cities: "+repr(gc.getPlayer(con.iIndependent2).getNumCities())
                                         utils.setBaseStabilityLastTurn(iCiv, 0)
                                         utils.setStability(iCiv, 10)            #the new civs start as slightly stable
                                         utils.setPlagueCountdown(iCiv, -10)
@@ -3540,6 +3541,13 @@ class RiseAndFall:
                 if (iCiv == iPersia):
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
+		if (iCiv == iIndia):
+			utils.makeUnit(con.iCuirassier, iCiv, tPlot, 3)
+			utils.makeUnit(con.iMusketman, iCiv, tPlot, 8)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 5)
+			utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 3)
+			if not gc.getPlayer(0).isPlayable():
+				utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
                 lReligions = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -4747,6 +4755,15 @@ class RiseAndFall:
                                 teamPersia.setHasTech(con.iEngineering, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iOptics, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iGunpowder, True, iCiv, False, False)
+			if iCiv == iIndia:
+				lIndianTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, \
+						con.iCodeOfLaws, con.iFeudalism, con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iFishing, \
+						con.iTheWheel, con.iAgriculture, con.iPottery, con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, \
+						con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, \
+						con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iIronWorking, con.iMetalCasting, con.iCompass, con.iConstruction, \
+						con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iAstronomy, con.iPrintingPress, con.iMilitaryTradition]
+				for iTech in lIndianTechs:
+					teamIndia.setHasTech(iTech, True, iCiv, False, False)
                 
 
                 self.hitNeighboursStability(iCiv)

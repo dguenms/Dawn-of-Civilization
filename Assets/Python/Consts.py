@@ -31,7 +31,6 @@ iArabia = 14
 iKhmer = 15
 iIndonesia = 16
 iSpain = 17
-
 iFrance = 18
 iEngland = 19
 iGermany = 20
@@ -245,7 +244,7 @@ tFall = (
 # Leoreth: date-triggered respawn for certain civs
 tRebirth = (
 -1,
--1,
+1674,	# Maratha Empire
 -1,
 -1,
 -1,	# Byzantium
@@ -310,7 +309,7 @@ tRebirthCiv = (
 
 tRebirthPlot = (
 -1,
--1,
+(88,36),	# Marathas - Raigad/Mumbai
 -1,
 -1,
 (69,44),
@@ -342,7 +341,7 @@ tRebirthPlot = (
 
 tRebirthArea = (
 -1,
--1,
+((87,28),(94,37)),	# Maratha - Deccan
 -1,
 -1,
 ((64,45),(74,42)),	# Byzantium - Balkans, Greece, Anatolia, Levant
@@ -2315,16 +2314,17 @@ iYongle = 79
 iDharmasetu = 80
 iHayamWuruk = 81
 iSuharto = 82
+iShivaji = 83
 
 
 tLeaders = (
 (iRamesses, iHatshepsut),
-(iAsoka, iAkbar, iGandhi),
+(iAsoka, iShivaji, iGandhi),
 (iQin_Shi_Huang, iTaizong, iYongle, iCixi),
 (iHammurabi, iGilgamesh),
 (iPericles, iAlexander,),
 (iCyrus, iDarius),
-(iHannibal, iElishat),
+(iHannibal, iHiram),
 (iAugustus, iJulius_Caesar),	#Justinian now Byzantine, find new
 (iTokugawa, iJimmu, iMeiji),
 (iZara_Yaqob, iHaile_Selassie),
@@ -2334,7 +2334,7 @@ tLeaders = (
 (iRagnar, iGustav),
 (iSaladin, iAbu_Bakr),
 (iSuryavarman,),
-(iDharmasetu, iHayamWuruk, iSuharto),
+(iHayamWuruk, iDharmasetu, iSuharto),
 (iIsabella, iPhilip),
 (iLouis_Xiv, iCharlemagne, iNapoleon, iDe_Gaulle),
 (iVictoria, iBrennus, iElizabeth, iChurchill),
@@ -2356,7 +2356,7 @@ tEarlyLeaders = (
 (iGilgamesh),
 (iPericles),
 (iCyrus),
-(iElishat),
+(iHiram),
 (iJulius_Caesar),
 (iJimmu),
 (iZara_Yaqob),
@@ -2425,7 +2425,7 @@ tRomanLateLeaders,
 
 tRebirthLeaders = (
 -1,
--1,
+(iShivaji, 1900, iGandhi),
 -1,
 -1,
 -1,
