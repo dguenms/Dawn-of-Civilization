@@ -2392,7 +2392,7 @@ class Victory:
 				aHelp.append(self.getIcon(bHinduism) + 'Hinduism ' + self.getIcon(bBuddhism) + 'Buddhism')
 			elif iGoal == 1:
 				iCount = 0
-				for iReligion in range(7):
+				for iReligion in range(con.iNumReligions):
 					if self.getReligionFounded(iReligion) == 1:
 						iCount += 1
 				aHelp.append(self.getIcon(iCount >= 5) + 'Religions founded: ' + str(iCount) + '/5')
