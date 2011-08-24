@@ -114,4 +114,14 @@
 		<English>Free Drill I and Drill II promotions for all naval units</English>
 		<German>Alle Marineeinheiten erhalten die Drill I und Drill II Beförderung</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_INO</Tag>
+		<English>The Power of Trade:</English>
+		<German>Die Macht des Handels:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_INO2</Tag>
+		<English>Other civilizations are likelier to open borders or trade away resources</English>
+		<German>Andere Zivilisationen sind eher bereit, offene Grenzen zu vereinbaren oder Ressourcen zu handeln</German>
+	</TEXT>
 </Civ4GameText>

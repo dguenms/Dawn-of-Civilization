@@ -1054,9 +1054,40 @@ class Victory:
                                         #print ("religionPercent", religionPercent)
                                         if (religionPercent >= 30.0):
                                                 self.setGoal(iKhmer, 2, 1)
-                                                
 
+		elif (iPlayer == iIndonesia):
+			if (pIndonesia.isAlive()):
 
+				if iGameTurn == getTurnForYear(1300):
+					if self.getHighestPopulationCiv(iIndonesia) == iIndonesia:
+						self.setGoal(iIndonesia, 0, 1)
+					else:
+						self.setGoal(iIndonesia, 0, 0)
+
+				if iGameTurn == getTurnForYear(1500):
+					lHappinessBonuses = [con.iDye, con.iFur, con.iGems, con.iGold, con.iIncense, con.iIvory, con.iSilk, con.iSilver, con.iSpices, con.iSugar, con.iWine, con.iWhales, con.iCotton]
+                                        iCounter = 0
+					for iBonus in lHappinessBonuses:
+						if pIndonesia.getNumAvailableBonuses(iBonus) > 0:
+							iCounter += 1
+					if iCounter >= 9:
+						self.setGoal(iIndonesia, 1, 1)
+					else:
+						self.setGoal(iIndonesia, 1, 0)
+
+				if iGameTurn == getTurnForYear(1940):
+					totalPop = gc.getGame().getTotalPopulation()
+					ourPop = teamIndonesia.getTotalPopulation()
+					if (totalPop > 0):
+						popPercent = (ourPop * 100.0) / totalPop
+					else:
+						popPercent = 0.0
+
+					if popPercent >= 20.0:
+						self.setGoal(iIndonesia, 2, 1)
+					else:
+						self.setGoal(iIndonesia, 2, 0)
+						
                         
                 elif (iPlayer == iSpain):
                         if (pSpain.isAlive()):
@@ -2637,6 +2668,27 @@ class Victory:
 			elif iGoal == 2:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism)
 				aHelp.append(self.getIcon(fReligionPercent >= 30.0) + 'Buddhism spread to: ' + str(fReligionPercent) + '/30 %')
+
+		elif iPlayer == iIndonesia:
+			if iGoal == 0:
+				iHighestCiv = self.getHighestPopulationCiv(iIndonesia)
+				bHighest = (iHighestCiv == iIndonesia)
+				aHelp.append(self.getIcon(bHighest) + 'Civilization with the largest population: ' + CyTranslator().getText(str(gc.getPlayer(iHighestCiv).getCivilizationShortDescriptionKey()),()))
+			elif iGoal == 1:
+				lHappinessBonuses = [con.iDye, con.iFur, con.iGems, con.iGold, con.iIncense, con.iIvory, con.iSilk, con.iSilver, con.iSpices, con.iSugar, con.iWine, con.iWhales, con.iCotton]
+                                iCounter = 0
+				for iBonus in lHappinessBonuses:
+					if pIndonesia.getNumAvailableBonuses(iBonus) > 0:
+						iCounter += 1
+				aHelp.append(self.getIcon(iCounter >= 9) + 'Owned happiness resources: ' + str(iCounter) + '/9')
+			elif iGoal == 2:
+				totalPop = gc.getGame().getTotalPopulation()
+				ourPop = teamIndonesia.getTotalPopulation()
+				if (totalPop > 0):
+					popPercent = (ourPop * 100.0) / totalPop
+				else:
+					popPercent = 0.0
+				aHelp.append(self.getIcon(popPercent >= 20.0) + 'Percentage of world population: ' + str(popPercent) + '/20 %')
 
 		elif iPlayer == iSpain:
 			if iGoal == 1:
