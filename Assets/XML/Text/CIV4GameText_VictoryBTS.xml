@@ -154,4 +154,19 @@
 		<English>Sink 20 enemy ships</English>
 		<German>Versenken Sie 20 gegnerische Schiffe</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO1</Tag>
+		<English>Have the largest population in the world in 1300 AD</English>
+		<German>Haben Sie die größte Bevölkerung der Welt im Jahr 1300 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO2</Tag>
+		<English>Acquire 9 different happiness resources in 1500 AD</English>
+		<German>Erwerben Sie 9 verschiedene Zufriedenheitsressourcen im Jahr 1500 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO3</Tag>
+		<English>Control 20% of the world's population in 1940 AD</English>
+		<German>Kontrollieren Sie 20% der Bevölkerung der Welt im Jahr 1940 n. Chr.</German>
+	</TEXT>
 </Civ4GameText>
