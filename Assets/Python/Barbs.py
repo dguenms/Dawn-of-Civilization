@@ -59,6 +59,8 @@ lLyon = [56, 47, -350, 0] #117
 lBordeaux = [53, 48, -300, 0] #121
 lCartagena = [54, 42, -230, 0] #125
 lArtaxata = [77, 44, -190,0] #128
+lDunhuang = [95, 47, -100, 0] #133 Orka
+lKashgar = [89, 46, -75, 0] #133 Orka
 lLutetia = [55, 50, -50, 0] #137
 #lSeoul = [109, 46, -25, 0] #139
 #lTikal = [22, 35, 60, 0] #145
@@ -328,6 +330,11 @@ class Barbs:
                 self.foundCity(iNative, lMombasa, "Mombasa", iGameTurn, 1, con.iZuluImpi, 1)
                 self.foundCity(iBarbarian, lKazan, "Kazan", iGameTurn, 2, con.iHorseArcher, 1)
                 self.foundCity(iNative, lKongo, "Mbanza Kongo", iGameTurn, 1, con.iZuluImpi, 1)
+
+                if ( self.foundCity(iBarbarian, lDunhuang, "Dunhuang", iGameTurn, 1, con.iArcher, 1) ): #Orka                    
+                        if (not gc.getPlayer(con.iChina).isHuman()): #Orka     
+                                self.makeUnit(con.iHorseArcher, con.iChina, (99, 46), 3, 1)     
+                self.foundCity(iBarbarian, lKashgar, "Kashgar", iGameTurn, 1, con.iArcher, 1) #Orka
 
 
                 #self.foundCity(iBarbarian, [59, 50, 146, 0], "Germanii", iGameTurn, 1, con.iArcher, 1)

@@ -33395,7 +33395,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=47
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -41007,7 +41007,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=48
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
