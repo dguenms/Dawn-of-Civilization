@@ -32,6 +32,12 @@ iRice = con.iRice
 iClam = con.iClam
 iFish = con.iFish
 
+iCottage = con.iCottage
+iSilk = con.iSilk
+iRoad = 0
+#Orka: Silk Road road locations
+tSilkRoute = ((85,48), (86,49), (87,48), (88,47), (89,46), (90,47),(90,45),  (91,47),(91,45),  (92,48),(92,45),  (93,48),(93,46),  (94,47), (95,47), (96,47), (97,47), (98,47), (99,46))
+
 class Resources:
        	
         def checkTurn(self, iGameTurn):
@@ -40,6 +46,31 @@ class Resources:
                 if (iGameTurn == 5): #otherwise it's picked by Portugal at the beginning
                         gc.getMap().plot(49, 43).setImprovementType(con.iHut)
 
+                #Orka: Silk Road
+                if (iGameTurn == getTurnForYear(-200)): 
+                        for i in range( len(tSilkRoute) ):
+                            gc.getMap().plot(tSilkRoute[i][0], tSilkRoute[i][1]).setRouteType(iRoad)
+                
+                #Orka: Silk Road
+                if (iGameTurn == getTurnForYear(-100)):
+                        CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan    
+                        gc.getMap().plot(91, 45).setImprovementType(iCottage) #Khotan                               
+                        CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan    
+                        gc.getMap().plot(93, 48).setImprovementType(iCottage) #Turfan                            
+                        #gc.getMap().plot(90, 45).setBonusType(iCotton) #Kashgar
+                        #gc.getMap().plot(94, 47).setBonusType(iWheat) #Dunhuang
+                        #gc.getMap().plot(96, 48).setBonusType(iSilk) #Dunhuang
+                        CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei    
+                        gc.getMap().plot(97, 47).setImprovementType(iCottage) #Wuwei    
+                        #CyGame().setPlotExtraYield(85, 38, YieldTypes.YIELD_FOOD, 2) #Lanzhou
+                        #gc.getMap().plot(99, 46).setImprovementType(iCottage) #Lanzhou
+			CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
+			CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
+
+			gc.getMap().plot(88, 47).setPlotType(PlotTypes.PLOT_HILLS, True, True)
+			gc.getMap().plot(88, 47).setRouteType(iRoad)
+			gc.getMap().plot(88, 47).setBonusType(iSilk)
+			gc.getMap().plot(85, 46).setBonusType(iSilk)
 
                 if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
                         gc.getMap().plot(53, 51).setBonusType(iDye) #France
@@ -48,6 +79,15 @@ class Resources:
                         if (iGameTurn == getTurnForYear(600)): 
                                 gc.getMap().plot(53, 51).setBonusType(iDye) #France
                                 gc.getMap().plot(53, 55).setBonusType(iDye) #England
+
+		# Leoreth: replicate silk route in 600 AD
+		if iGameTurn == getTurnForYear(600) and not gc.getPlayer(0).isPlayable():
+                        CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan                               
+                        CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan
+                        CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei
+			CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
+			CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
+			
                     
                 if (iGameTurn == getTurnForYear(1100)):
                         #gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt

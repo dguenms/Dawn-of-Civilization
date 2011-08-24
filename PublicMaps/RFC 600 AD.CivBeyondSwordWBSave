@@ -32697,6 +32697,7 @@ EndPlot
 BeginPlot
 	x=85,y=46
 	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_SILK
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33870,7 +33871,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=47
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_SILK
 	PlotType=1
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -34244,6 +34246,22 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD
+	BeginCity
+		CityOwner=30
+		CityName=Kashgar
+		CityPopulation=3
+		ReligionType=RELIGION_ISLAM
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_MARKET
+		Player30Culture=10
+	EndCity
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
+	EndUnit
 EndPlot
 BeginPlot
 	x=89,y=47
@@ -35025,6 +35043,7 @@ BeginPlot
 	x=91,y=45
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=91,y=46
@@ -35793,6 +35812,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=93,y=49
@@ -36553,6 +36573,18 @@ BeginPlot
 	x=95,y=47
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginCity
+		CityOwner=30
+		CityName=Dunhuang
+		CityPopulation=3
+		ReligionType=RELIGION_BUDDHISM
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_MARKET
+		Player30Culture=10
+	EndCity
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
+	EndUnit
 EndPlot
 BeginPlot
 	x=95,y=48
@@ -37284,6 +37316,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=97,y=48
@@ -41636,7 +41669,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=48
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2

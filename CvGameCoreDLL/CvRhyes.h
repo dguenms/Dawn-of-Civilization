@@ -193,7 +193,7 @@ typedef list<char*> LISTCHAR;
 
 #define NUM_WONDERS             (176)
 
-#define NUM_BUILDINGS_PLAGUE	(176)
+#define NUM_BUILDINGS_PLAGUE	(177)
 
 #define NUM_BUILDINGTYPES_PLAGUE	(137)
 

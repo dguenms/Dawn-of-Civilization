@@ -2024,6 +2024,14 @@ class RiseAndFall:
                         tBottomRight = tCoreAreasBR[reborn][iCiv]
                         tBroaderTopLeft = tBroaderAreasTL[reborn][iCiv]
                         tBroaderBottomRight = tBroaderAreasBR[reborn][iCiv]
+
+			if iCiv == iChina and utils.getHumanID() != iChina:
+				if not gc.getPlayer(0).isPlayable():
+					tTopLeft = (99, 39) # 4 tiles further south
+			elif iCiv == iMongolia and utils.getHumanID() != iMongolia:
+				tTopLeft = (81, 45) # 6 more west, 1 more south
+			elif iCiv == iTurkey and utils.getHumanID() != iMongolia and not pByzantium.isAlive():
+				tTopLeft = (67, 41) # two more west
                     
                         if (self.getFlipsDelay(iCiv) == 0): #city hasn't already been founded)
                             
@@ -2532,14 +2540,15 @@ class RiseAndFall:
                                                 cityList.append(pCurrent.getPlotCity())
 
                 #Exceptions
-                reborn = utils.getReborn(iCiv)
-                if (len(tExceptions[reborn][iCiv])):
-                        for j in range(len(tExceptions[reborn][iCiv])):
-                                pCurrent = gc.getMap().plot( tExceptions[reborn][iCiv][j][0], tExceptions[reborn][iCiv][j][1] )
-                                if ( pCurrent.isCity()):
-                                        if (pCurrent.getPlotCity().getOwner() != iCiv):
-                                                print ("append", pCurrent)
-                                                cityList.append(pCurrent.getPlotCity())
+		if (iCiv != iAmerica or utils.getHumanID() == iAmerica):	# AI America gets larger flip
+                	reborn = utils.getReborn(iCiv)
+                	if (len(tExceptions[reborn][iCiv])):
+                        	for j in range(len(tExceptions[reborn][iCiv])):
+                                	pCurrent = gc.getMap().plot( tExceptions[reborn][iCiv][j][0], tExceptions[reborn][iCiv][j][1] )
+                                	if ( pCurrent.isCity()):
+                                        	if (pCurrent.getPlotCity().getOwner() != iCiv):
+                                                	print ("append", pCurrent)
+                                                	cityList.append(pCurrent.getPlotCity())
 
                 print ("Birth", iCiv)
                 #print (cityList)
@@ -3508,7 +3517,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iIncanQuechua, iCiv, tPlot, 4)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
                 if (iCiv == iMongolia):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
+                        utils.makeUnit(con.iSettler, iCiv, tPlot, 3)		# -2 settlers, more preplaces cities instead
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2) 
