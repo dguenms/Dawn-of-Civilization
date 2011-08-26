@@ -1083,7 +1083,7 @@ class Victory:
 					else:
 						popPercent = 0.0
 
-					if popPercent >= 20.0:
+					if popPercent >= 10.0:
 						self.setGoal(iIndonesia, 2, 1)
 					else:
 						self.setGoal(iIndonesia, 2, 0)
@@ -2688,7 +2688,7 @@ class Victory:
 					popPercent = (ourPop * 100.0) / totalPop
 				else:
 					popPercent = 0.0
-				aHelp.append(self.getIcon(popPercent >= 20.0) + 'Percentage of world population: ' + str(popPercent) + '/20 %')
+				aHelp.append(self.getIcon(popPercent >= 10.0) + 'Percentage of world population: ' + (u"%.2f%%" % popPercent) + '/10%')
 
 		elif iPlayer == iSpain:
 			if iGoal == 1:
