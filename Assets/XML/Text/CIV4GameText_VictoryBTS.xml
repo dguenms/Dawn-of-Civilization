@@ -147,7 +147,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR2</Tag>
 		<English>Be first to discover Printing Press</English>
-		<German>Erforschen Sie als Erster Druckerpresse</German>
+		<German>Erforschen Sie als Erster die Druckerpresse</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR3</Tag>
@@ -166,7 +166,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INO3</Tag>
-		<English>Control 20% of the world's population in 1940 AD</English>
-		<German>Kontrollieren Sie 20% der Bevölkerung der Welt im Jahr 1940 n. Chr.</German>
+		<English>Control 10% of the world's population in 1940 AD</English>
+		<German>Kontrollieren Sie 10% der Weltbevölkerung im Jahr 1940 n. Chr.</German>
 	</TEXT>
 </Civ4GameText>
