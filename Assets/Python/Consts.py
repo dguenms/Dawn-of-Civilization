@@ -244,7 +244,8 @@ tFall = (
 # Leoreth: date-triggered respawn for certain civs
 tRebirth = (
 -1,
-1674,	# Maratha Empire
+-1,
+#1674,	# Maratha Empire
 -1,
 -1,
 -1,	# Byzantium
@@ -345,7 +346,7 @@ tRebirthArea = (
 -1,
 -1,
 ((64,45),(74,42)),	# Byzantium - Balkans, Greece, Anatolia, Levant
-((79,37),(85,44)),	# Safavids - Azerbaijan, Iran, Afghanistan (no Merv, no Baghdad)
+((78,38),(86,43)),	# Safavids - Azerbaijan, Iran, Afghanistan (no Merv, no Baghdad)
 -1,
 ((57,45),(62,47)),	# Italy - Lombardy and Tuscany without Rome
 -1,
@@ -370,6 +371,39 @@ tRebirthArea = (
 -1,
 -1,
 -1)
+
+tResurrectionIntervals = (
+[(900, 1300), (1800, 2020)], #Egypt
+[(1600, 1800), (1900, 2020)], #India
+[(1360, 1640), (1930, 2020)], #China
+[(-700, -500)], #Babylonia
+[(1820, 2020)], #Greece
+[(220, 650), (1500, 2020)], #Persia
+[], #Carthage
+[], #Rome
+[(1800, 2020)], #Japan
+[(1850, 2020)], #Ethiopia
+[(1800, 2020)], #Korea
+[], #Maya
+[], #Byzantium
+[(1520, 2020)], #Vikings
+[(1900, 2020)], #Arabia
+[(1950, 2020)], #Khmer
+[(1900, 2020)], #Indonesia
+[(1700, 2020)], #Spain
+[(1700, 2020)], #France
+[(1700, 2020)], #England
+[(1870, 2020)], #Germany
+[(1280, 1550), (1700, 2020)], #Russia
+[(1700, 2020)], #Netherlands
+[(1340, 1590)], #Mali
+[(1700, 2020)], #Portugal
+[], #Inca
+[(1910, 2020)], #Mongolia
+[], #Aztec
+[(1700, 2020)], #Turkey
+[(1770, 2020)] #America
+)
 
 tYear = (
 ("3000 ", "TXT_KEY_BC"),
@@ -1014,7 +1048,7 @@ tExceptions = (  #for RiseAndFall
 (), #Mali
 (), #Portugal
 (), #Inca
-((90, 47), (91, 47), (92, 47), (93, 47), (94, 47), (95, 47), (96, 47), (97, 47), (98, 47)), #Mongolia
+((90, 47), (91, 47), (92, 47), (93, 47), (94, 47), (95, 47), (96, 47), (97, 47), (98, 47), (99, 47), (100, 47), (101, 47), (102, 47), (103, 47), (99, 46), (100, 46), (101, 46), (102, 46), (103, 46), (104, 46), (99, 45), (100, 45), (101, 45), (102, 45), (103, 45), (104, 45), (105, 45), (106, 45)), #Mongolia
 (), #Aztecs
 ((68, 48), (68, 49), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (74, 42), (75, 42), (80, 47), (80, 48), (80, 49)), #Turkey
 ((29, 49), (30, 49), (31, 49), (31, 50), (32, 50), (24, 44), (25, 44), (24, 43), (25, 43), (26, 48)) #America

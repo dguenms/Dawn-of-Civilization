@@ -21666,7 +21666,6 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -21676,8 +21675,10 @@
 			<MaxStartEra>NONE</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<!-- Rhye -->
-			<PrereqTech>TECH_ECONOMICS</PrereqTech>
-			<TechTypes/>
+			<PrereqTech>TECH_ASTRONOMY</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_BANKING</PrereqTech>
+			</TechTypes>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses/>
 			<!-- Rhye -->

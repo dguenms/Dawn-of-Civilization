@@ -30050,7 +30050,7 @@ EndPlot
 BeginPlot
 	x=78,y=43
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=78,y=44
@@ -34247,7 +34247,7 @@ BeginPlot
 	PlotType=2
 	RouteType=ROUTE_ROAD
 	BeginCity
-		CityOwner=30
+		CityOwner=34
 		CityName=Kashgar
 		CityPopulation=3
 		ReligionType=RELIGION_ISLAM
@@ -34257,10 +34257,10 @@ BeginPlot
 		Player30Culture=10
 	EndCity
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=34
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=34
 	EndUnit
 EndPlot
 BeginPlot
@@ -36574,7 +36574,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginCity
-		CityOwner=30
+		CityOwner=34
 		CityName=Dunhuang
 		CityPopulation=3
 		ReligionType=RELIGION_BUDDHISM
@@ -36583,7 +36583,7 @@ BeginPlot
 		Player30Culture=10
 	EndCity
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=30
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=34
 	EndUnit
 EndPlot
 BeginPlot

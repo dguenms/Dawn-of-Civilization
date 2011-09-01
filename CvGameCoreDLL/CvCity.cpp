@@ -2090,6 +2090,8 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 			return false;
 		if ((GET_TEAM(getTeam()).isAtWar((TeamTypes)((int)eBuilding - NUM_BUILDINGS_PLAGUE))))
 			return false;
+		if (!(GET_PLAYER((PlayerTypes)((int)eBuilding - NUM_BUILDINGS_PLAGUE))).isAlive())
+			return false;
 		//if (GC.getGameINLINE().getGameTurn() <= startingTurn[eBuilding - NUM_BUILDINGS_PLAGUE] + 2)
 		if (GC.getGameINLINE().getGameTurn() <= getTurnForYear(startingTurnYear[eBuilding - NUM_BUILDINGS_PLAGUE]) + 2) // edead
 			return false;
@@ -11767,7 +11769,7 @@ void CvCity::doCulture()
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
 				break;
             case KOREA:
-                changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
+                changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
                 break;
 			case MAYA:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
