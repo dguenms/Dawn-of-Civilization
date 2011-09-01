@@ -235,6 +235,12 @@ class CvRFCEventHandler:
                 self.aiw.setup()
                 self.rnf.warOnSpawn()
 
+		s = ""
+		for y in range(68):
+			for x in range(124):
+				s += str(gc.getMap().plot(x,68-y).getArea()) + ", "
+			print s
+			s = ""
                 
 
                 #Mercenaries - start
@@ -430,6 +436,7 @@ class CvRFCEventHandler:
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == con.iPorcelainTower:
 			gc.getPlayer(iOwner).updateTradeRoutes()
+
 
         def onProjectBuilt(self, argsList):
                 city, iProjectType = argsList
@@ -675,6 +682,9 @@ class CvRFCEventHandler:
                                 gc.getMap().plot(49, 62).setTerrainType(con.iCoast, True, True)
                 if (argsList[0] == con.iMedicine):
                         self.pla.onTechAcquired(argsList[0], argsList[2])
+
+		if (argsList[0] == con.iEconomics):
+			self.rnf.onEconomicsDiscovered(argsList[2])
                     
                 if (gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iHuman])):
 

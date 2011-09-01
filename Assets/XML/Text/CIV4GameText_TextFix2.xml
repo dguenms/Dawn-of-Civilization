@@ -1341,5 +1341,13 @@
 		<English>[ICON_BULLET]Production consumes [ICON_FOOD]</English>
 		<German>[ICON_BULLET]Produktion verbraucht [ICON_FOOD]</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CORPORATION_REMOVED</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</Spanish>
+	</TEXT>
 
 </Civ4GameText>

@@ -1363,7 +1363,7 @@ void CvMap::calculateAreas()
 			gDLL->getFAStarIFace()->GeneratePath(&GC.getAreaFinder(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), -1, -1, pLoopPlot->isWater(), iArea);
 		}
 	}
-	/* LEORETH TEST ONLY: completely disabled artificial continents to see its effect on AI behavior
+	/* LEORETH TEST ONLY: completely disabled artificial continents to see its effect on AI behavior */
 	//Rhye - start (continents)
 	CvArea* sudamericaArea = addArea();
 	int sudamericaID = sudamericaArea->getID();
@@ -1456,6 +1456,67 @@ void CvMap::calculateAreas()
 
 	plotSorenINLINE(119, 54)->setArea(europaID); //Kamchatka
 
+	//Leoreth: expand Europe to emulate the hellenistic world in the classical era
+	//Anatolia and Levant
+	for (int iX = 69; iX <= 79; iX++)
+	{
+		for (int iY = 38; iY <= 45; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater())
+				plotSorenINLINE(iX, iY)->setArea(europaID);
+		}
+	}
+
+	//Persia
+	for (int iX = 80; iX <= 85; iX++)
+	{
+		for (int iY = 37; iY <= 43; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater())
+				plotSorenINLINE(iX, iY)->setArea(europaID);
+		}
+	}
+
+	//Sahara, Arabia
+	for (int iX = 48; iX <= 82; iX++)
+	{
+		for (int iY = 32; iY <= 37; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater())
+				plotSorenINLINE(iX, iY)->setArea(europaID);
+		}
+	}
+
+	//Maghreb
+	for (int iX = 51; iX <= 58; iX++)
+	{
+		for (int iY = 38; iY <= 39; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater())
+				plotSorenINLINE(iX, iY)->setArea(europaID);
+		}
+	}
+
+	//Yemen
+	for (int iX = 76; iX <= 79; iX++)
+	{
+		for (int iY = 30; iY <= 31; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater())
+				plotSorenINLINE(iX, iY)->setArea(europaID);
+		}
+	}
+
+	//British Isles
+	for (int iX = 48; iX <= 54; iX++)
+	{
+		for (int iY = 53; iY <= 60; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater())
+				plotSorenINLINE(iX, iY)->setArea(europaID);
+		}
+	}
+
 	//for (int iX = 48; iX <= 67; iX++)
 	//{
 	//	gDLL->callUpdater();
@@ -1495,6 +1556,26 @@ void CvMap::calculateAreas()
 	for (int iX = 61; iX <= 72; iX++)
 	{
 		for (int iY = 10; iY <= 22; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater())
+				plotSorenINLINE(iX, iY)->setArea(africaID);
+		}
+	}
+
+	// Leoreth: Sahel zone and central africa and Ethiopia Africa as well
+	for (int iX = 48; iX <= 75; iX++)
+	{
+		for (int iY = 23; iY <= 31; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater())
+				plotSorenINLINE(iX, iY)->setArea(africaID);
+		}
+	}
+
+	// Horn of Africa
+	for (int iX = 76; iX <= 77; iX++)
+	{
+		for (int iY = 27; iY <= 28; iY++)
 		{
 			if (!plotSorenINLINE(iX, iY)->isWater())
 				plotSorenINLINE(iX, iY)->setArea(africaID);

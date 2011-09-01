@@ -3145,6 +3145,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == CRISTO) iTempValue *= 2;
 										else if (iI == WEMBLEY) iTempValue *= 2;
 										else if (iI == APOSTOLIC) iTempValue *= 2;
+										else if (iI == TRADINGCOMPANY) iTempValue *= 2;
 										break;
 									case FRANCE:
 										if (iI == NOTREDAME) iTempValue *= 2;
@@ -3152,6 +3153,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == STATUEOFLIBERTY) iTempValue *= 2;
 										else if (iI == CHANNELTUNNEL) iTempValue *= 3;
 										else if (iI == APOSTOLIC) iTempValue *= 2;
+										else if (iI == TRADINGCOMPANY) iTempValue *= 4;
 										else {
 											iTempValue *= 3;
 											iTempValue /= 4;
@@ -3166,7 +3168,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 														iTempValue *= 3;
 														iTempValue /= 2;
 										}*/
-										else if (iI == TRADINGCOMPANY) iTempValue *= 2;
+										else if (iI == TRADINGCOMPANY) iTempValue *= 5;
 										else if (iI == NATIONALGALLERY) iTempValue *= 2;
 										else if (iI == WEMBLEY || iI == WESTMINSTER) iTempValue *= 3;
 										//else if (iI == GLOBETHEATRE) iTempValue *= 2;
@@ -3205,7 +3207,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 														iTempValue *= 3;
 														iTempValue /= 2;
 										}
-										else if (iI == TRADINGCOMPANY) iTempValue *= 3;
+										else if (iI == TRADINGCOMPANY) iTempValue *= 6;
 										else if (iI == NATIONALGALLERY) iTempValue *= 3;
 										else if (iI == WEMBLEY) iTempValue *= 3;
 										else if (iI == CHANNELTUNNEL) iTempValue *= 2;
@@ -3229,6 +3231,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == CRISTO) iTempValue *= 4;
 										else if (iI == WEMBLEY) iTempValue *= 2;
 										else if (iI == APOSTOLIC) iTempValue *= 2;
+										else if (iI == TRADINGCOMPANY) iTempValue *= 4;
 										break;
 									case INCA:
 										if (iI == CHICHENITZA) iTempValue *= 2;
