@@ -72,6 +72,17 @@ class Resources:
 			gc.getMap().plot(88, 47).setBonusType(iSilk)
 			gc.getMap().plot(85, 46).setBonusType(iSilk)
 
+		#Leoreth: change Indus tiles to desert floodplains in 0 AD
+		if (iGameTurn == getTurnForYear(0)):
+			for tPlot in [(86, 37), (86, 38), (87, 38)]:
+				x, y = tPlot
+				gc.getMap().plot(x,y).setBonusType(-1)
+				gc.getMap().plot(x,y).setTerrainType(2, True, True)
+				gc.getMap().plot(x,y).setFeatureType(3, 0)
+			for tPlot in [(85, 38), (85, 37)]:
+				x, y = tPlot
+				gc.getMap().plot(x,y).setFeatureType(3, 0)
+
                 if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
                         gc.getMap().plot(53, 51).setBonusType(iDye) #France
                         gc.getMap().plot(53, 55).setBonusType(iDye) #England
