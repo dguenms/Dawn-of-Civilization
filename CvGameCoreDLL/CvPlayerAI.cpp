@@ -2727,7 +2727,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				iValue -= (abs(iDistance) - 4) * 500;
 				break;
 			case INDIA:
-				iValue -= (abs(iDistance) - 5) * 500;
+				iValue -= (abs(iDistance) - 3) * 300;
 				break;
 			case CHINA:
 				iValue -= (abs(iDistance) - 5) * 400;
@@ -2897,7 +2897,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					compactEmpireModifier = 40;
 					break;
 				case INDIA:
-					compactEmpireModifier = 40;
+					compactEmpireModifier = 50;
 					break;
 				case CHINA:
 					compactEmpireModifier = 40;
@@ -2927,7 +2927,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					compactEmpireModifier = 40;
 					break;
                 case KOREA:
-                    compactEmpireModifier = 40;
+                    compactEmpireModifier = 50;
                     break;
 				case MAYA:
 					compactEmpireModifier = 40;
@@ -6184,10 +6184,24 @@ int CvPlayerAI::AI_getSameReligionAttitude(PlayerTypes ePlayer) const
 {
 	int iAttitudeChange;
 	int iAttitude;
+	bool bSameReligion = false; // edead
 
 	iAttitude = 0;
 
+	// edead: begin religions - count Chinese religions as one but with less bonus (below); should not apply to Sunni/Shia
 	if ((getStateReligion() != NO_RELIGION) && (getStateReligion() == GET_PLAYER(ePlayer).getStateReligion()))
+	{
+		bSameReligion = true;
+	}
+	
+	if (((getStateReligion() == CONFUCIANISM) && (GET_PLAYER(ePlayer).getStateReligion() == TAOISM)) || ((getStateReligion() == TAOISM) && (GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM)))
+	{
+		bSameReligion = true;
+	}
+	
+	//if ((getStateReligion() != NO_RELIGION) && (getStateReligion() == GET_PLAYER(ePlayer).getStateReligion()))
+	if (bSameReligion)
+	// edead: end
 	{
 		iAttitude += GC.getLeaderHeadInfo(getPersonalityType()).getSameReligionAttitudeChange();
 
@@ -6203,10 +6217,17 @@ int CvPlayerAI::AI_getSameReligionAttitude(PlayerTypes ePlayer) const
 		}
 	}
 
-	//Rhye - start
-	if (getCurrentEra() == 3 || getCurrentEra() == 4) //renaissance and industrial
+	// edead: less love between Chinese religions
+	if (((getStateReligion() == CONFUCIANISM) && (GET_PLAYER(ePlayer).getStateReligion() == TAOISM)) || ((getStateReligion() == TAOISM) && (GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM)))
+	{
+		iAttitude /= 2;
+	}
+	// edead: end
+
+	//Rhye - start (modified by Leoreth)
+	if (getCurrentEra() >= 3) //renaissance and industrial and modern
 		iAttitude /= 4;
-	else if (getCurrentEra() <= 1 || getCurrentEra() == 5) //ancient, classical and modern
+	else if (getCurrentEra() <= 1) //ancient, classical
 		iAttitude /= 2;
 	//medieval = default
 	//Rhye - end
@@ -6224,6 +6245,12 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 
 	if ((getStateReligion() != NO_RELIGION) && (GET_PLAYER(ePlayer).getStateReligion() != NO_RELIGION) && (getStateReligion() != GET_PLAYER(ePlayer).getStateReligion()))
 	{
+		// Leoreth: no penalties between Confucianism and Taoism
+		if (((getStateReligion() == CONFUCIANISM) && (GET_PLAYER(ePlayer).getStateReligion() == TAOISM)) || ((getStateReligion() == TAOISM) && (GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM)))
+		{
+			return 0;
+		}
+
 		iAttitude += GC.getLeaderHeadInfo(getPersonalityType()).getDifferentReligionAttitudeChange();
 
 		if (hasHolyCity(getStateReligion()))
@@ -6238,11 +6265,27 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 		}
 	}
 
-	//Rhye - start
+	//Leoreth: Halved penalty for Buddhism to Confucianism, Taoism, Hinduism
+	if (((getStateReligion() == BUDDHISM) && (GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM)) || ((getStateReligion() == CONFUCIANISM) && (GET_PLAYER(ePlayer).getStateReligion() == BUDDHISM)))
+	{
+		iAttitude /= 2;
+	}
+	if (((getStateReligion() == BUDDHISM) && (GET_PLAYER(ePlayer).getStateReligion() == TAOISM)) || ((getStateReligion() == TAOISM) && (GET_PLAYER(ePlayer).getStateReligion() == BUDDHISM)))
+	{
+		iAttitude /= 2;
+	}
+	else if (((getStateReligion() == HINDUISM) && (GET_PLAYER(ePlayer).getStateReligion() == BUDDHISM)) || ((getStateReligion() == BUDDHISM) && (GET_PLAYER(ePlayer).getStateReligion() == HINDUISM)))
+	{
+		iAttitude /= 2;
+	}
+
+	//Rhye - start (modified by Leoreth)
 	if (getCurrentEra() == 2) //medieval
-		iAttitude *= 4;
-	else if (getCurrentEra() <= 1 || getCurrentEra() == 5) //ancient, classical and modern
+		iAttitude *= 3;
+	else if (getCurrentEra() == 3) //renaissance
 		iAttitude *= 2;
+	//else if (getCurrentEra() <= 1 || getCurrentEra() == 5) //ancient, classical and modern
+		//iAttitude *= 2;
 	//renaissance and industrial = default
 	//Rhye - end
 

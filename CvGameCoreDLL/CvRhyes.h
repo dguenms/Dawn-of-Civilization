@@ -199,7 +199,17 @@ typedef list<char*> LISTCHAR;
 
 #endif	// CVRHYES_H
 
-
+enum MyReligions
+{
+	PROTESTANTISM,
+	CATHOLICISM,
+	ISLAM,
+	HINDUISM,
+	BUDDHISM,
+	CONFUCIANISM,
+	TAOISM,
+	ZOROASTRIANISM
+};
 
 extern int startingTurn[];
 extern int startingTurnYear[]; // edead
