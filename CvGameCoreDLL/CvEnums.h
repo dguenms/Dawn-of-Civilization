@@ -1568,7 +1568,7 @@ enum SpecialistTypes			// Exposed to Python
 
 enum ReligionTypes				// Exposed to Python
 {
-	NO_RELIGION = -1,
+	NO_RELIGION = -1
 };
 
 enum CorporationTypes				// Exposed to Python
