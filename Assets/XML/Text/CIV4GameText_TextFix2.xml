@@ -1327,8 +1327,8 @@
 
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MACEMAN</Tag>
-		<English>Longswordsman</English>
-		<German>Langschwertkämpfer</German>
+		<English>Heavy Swordsman</English>
+		<German>Schwerer Schwertkämpfer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LEVY</Tag>
