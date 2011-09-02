@@ -34875,6 +34875,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=39
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -35244,7 +35245,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=39
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

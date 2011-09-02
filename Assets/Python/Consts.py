@@ -757,7 +757,7 @@ for i in range(78,86+1):
 tCapitals = (
 ((69, 33), #tThebes
 #(90, 40), #tDelhi
-(92, 39), #tVaranasi
+(93, 39), #tVaranasi
 (102, 47), #tBeijing
 (76, 40), #tBabylon
 (67, 41), #tAthens

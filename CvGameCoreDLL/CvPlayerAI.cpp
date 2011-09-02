@@ -2302,7 +2302,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		break;
 	case INDIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS /2 -1))    //9
+		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 + 2))    //16
 		{
 			return 0;
 		}
@@ -2364,7 +2364,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		break;
     case KOREA:
-        if (iTakenTiles > (NUM_CITY_PLOTS *2/3 +1))
+        if (iTakenTiles > (NUM_CITY_PLOTS *2/3 +4)) // 18
             return 0;
 	case MAYA:
 		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -2))
