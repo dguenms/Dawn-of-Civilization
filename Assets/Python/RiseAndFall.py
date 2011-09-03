@@ -1015,7 +1015,7 @@ class RiseAndFall:
                                         pCiv.setLeader(con.tRebirthLeaders[iCiv][0])
                                         x, y = con.tRebirthPlot[iCiv]
 
-                                        utils.makeUnit(con.iWarrior, iCiv, (10,0), 1)
+                                        #utils.makeUnit(con.iWarrior, iCiv, (10,0), 1)
 
                                         CyInterface().addMessage(gc.getGame().getActivePlayer(), True, con.iDuration, (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
                                         pCiv.setReborn()
