@@ -37887,8 +37887,9 @@ BeginPlot
 	x=100,y=42
 	isWOfRiver
 	RiverNSDirection=2
+	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=100,y=43
@@ -37906,7 +37907,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=45
-	BonusType=BONUS_COAL
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -38293,15 +38294,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=44
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	BonusType=BONUS_WHEAT
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=45
 	isWOfRiver
 	RiverNSDirection=2
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=101,y=46
@@ -38322,7 +38324,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=48
-	BonusType=BONUS_IRON
+	BonusType=BONUS_COAL
 	isNOfRiver
 	RiverWEDirection=1
 	TerrainType=TERRAIN_PLAINS
@@ -38679,6 +38681,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	RiverNSDirection=0
+	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39054,14 +39057,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=41
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=103,y=42
-	BonusType=BONUS_DEER
+	BonusType=BONUS_RICE
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39442,7 +39444,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=41
-	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -39456,12 +39457,14 @@ BeginPlot
 	x=104,y=43
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=104,y=44
+	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -39474,7 +39477,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=46
-	BonusType=BONUS_WHEAT
 	isNOfRiver
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
@@ -39859,6 +39861,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40285,6 +40288,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=53
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -44020,7 +44024,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=51
-	BonusType=BONUS_COAL
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot

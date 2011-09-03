@@ -34256,7 +34256,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_MARKET
-		Player30Culture=10
+		Player34Culture=10
 	EndCity
 	BeginUnit
 		UnitType=UNIT_LONGBOWMAN, UnitOwner=34
@@ -36587,7 +36587,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
-		Player30Culture=10
+		Player34Culture=10
 	EndCity
 	BeginUnit
 		UnitType=UNIT_LONGBOWMAN, UnitOwner=34
@@ -38473,8 +38473,9 @@ BeginPlot
 	x=100,y=42
 	isWOfRiver
 	RiverNSDirection=2
+	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=100,y=43
@@ -38489,33 +38490,10 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=31
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=31
-	EndUnit
-	BeginCity
-		CityOwner=31
-		CityName=Xi'an
-		CityPopulation=3
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		BuildingType=BUILDING_TAOIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_GREAT_WALL
-		ReligionType=RELIGION_BUDDHISM
-		ReligionType=RELIGION_TAOISM
-		ReligionType=RELIGION_CONFUCIANISM
-		HolyCityReligionType=RELIGION_TAOISM
-		HolyCityReligionType=RELIGION_CONFUCIANISM
-		Player31Culture=10
-	EndCity
 EndPlot
 BeginPlot
 	x=100,y=45
-	BonusType=BONUS_COAL
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -38904,15 +38882,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=44
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	BonusType=BONUS_WHEAT
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=45
 	isWOfRiver
 	RiverNSDirection=2
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=101,y=46
@@ -38933,7 +38912,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=48
-	BonusType=BONUS_IRON
+	BonusType=BONUS_COAL
 	isNOfRiver
 	RiverWEDirection=1
 	TerrainType=TERRAIN_PLAINS
@@ -39296,6 +39275,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	RiverNSDirection=0
+	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39330,6 +39310,29 @@ BeginPlot
 	x=102,y=47
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=31
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=31
+	EndUnit
+	BeginCity
+		CityOwner=31
+		CityName=Beijing
+		CityPopulation=3
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		BuildingType=BUILDING_TAOIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_GREAT_WALL
+		ReligionType=RELIGION_BUDDHISM
+		ReligionType=RELIGION_TAOISM
+		ReligionType=RELIGION_CONFUCIANISM
+		HolyCityReligionType=RELIGION_TAOISM
+		HolyCityReligionType=RELIGION_CONFUCIANISM
+		Player31Culture=10
+	EndCity
 EndPlot
 BeginPlot
 	x=102,y=48
@@ -39672,14 +39675,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=41
-	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=103,y=42
-	BonusType=BONUS_DEER
+	BonusType=BONUS_RICE
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39693,9 +39695,28 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=44
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=31
+	EndUnit
+	BeginCity
+		CityOwner=31
+		CityName=Kaifeng
+		CityPopulation=2
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		BuildingType=BUILDING_TAOIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_GREAT_WALL
+		ReligionType=RELIGION_BUDDHISM
+		ReligionType=RELIGION_TAOISM
+		ReligionType=RELIGION_CONFUCIANISM
+		HolyCityReligionType=RELIGION_TAOISM
+		HolyCityReligionType=RELIGION_CONFUCIANISM
+		Player31Culture=10
+	EndCity
 EndPlot
 BeginPlot
 	x=103,y=45
@@ -40060,7 +40081,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=41
-	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40074,45 +40094,26 @@ BeginPlot
 	x=104,y=43
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_DEER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=104,y=44
+	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=104,y=45
+	BonusType=BONUS_SILK
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=31
-	EndUnit
-	BeginCity
-		CityOwner=31
-		CityName=Qufu
-		CityPopulation=2
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		BuildingType=BUILDING_CONFUCIAN_MONASTERY
-		BuildingType=BUILDING_CONFUCIAN_SHRINE
-		BuildingType=BUILDING_TAOIST_TEMPLE
-		BuildingType=BUILDING_TAOIST_MONASTERY
-		BuildingType=BUILDING_TAOIST_SHRINE
-		ReligionType=RELIGION_CONFUCIANISM
-		ReligionType=RELIGION_TAOISM
-		HolyCityReligionType=RELIGION_CONFUCIANISM
-		HolyCityReligionType=RELIGION_TAOISM
-		Player31Culture=1000
-	EndCity
 EndPlot
 BeginPlot
 	x=104,y=46
-	BonusType=BONUS_WHEAT
 	isNOfRiver
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
@@ -40499,6 +40500,27 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=31
+	EndUnit
+	BeginCity
+		CityOwner=31
+		CityName=Nanjing
+		CityPopulation=2
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		BuildingType=BUILDING_CONFUCIAN_MONASTERY
+		BuildingType=BUILDING_CONFUCIAN_SHRINE
+		BuildingType=BUILDING_TAOIST_TEMPLE
+		BuildingType=BUILDING_TAOIST_MONASTERY
+		BuildingType=BUILDING_TAOIST_SHRINE
+		ReligionType=RELIGION_CONFUCIANISM
+		ReligionType=RELIGION_TAOISM
+		HolyCityReligionType=RELIGION_CONFUCIANISM
+		HolyCityReligionType=RELIGION_TAOISM
+		Player31Culture=1000
+	EndCity
 EndPlot
 BeginPlot
 	x=105,y=44
@@ -40509,7 +40531,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
-	BonusType=BONUS_SILK
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40936,6 +40958,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=53
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -44697,7 +44720,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=51
-	BonusType=BONUS_COAL
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot

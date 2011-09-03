@@ -2308,7 +2308,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		break;
 	case CHINA:
-		if (iTakenTiles > (NUM_CITY_PLOTS /2 -1))
+		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 + 1))
 		{
 			return 0;
 		}
@@ -2727,7 +2727,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				iValue -= (abs(iDistance) - 4) * 500;
 				break;
 			case INDIA:
-				iValue -= (abs(iDistance) - 3) * 300;
+				iValue -= (abs(iDistance) - 5) * 400;
 				break;
 			case CHINA:
 				iValue -= (abs(iDistance) - 5) * 400;
@@ -2900,7 +2900,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					compactEmpireModifier = 50;
 					break;
 				case CHINA:
-					compactEmpireModifier = 40;
+					compactEmpireModifier = 50;
 					break;
 				case BABYLONIA:
 					compactEmpireModifier = 40;
