@@ -1055,7 +1055,7 @@ class RiseAndFall:
                                 if (iGameTurn == getTurnForYear(con.tRebirth[iCiv])+1 and utils.getReborn(iCiv) == 1):
                                         print "Rebirth 2nd turn begun"
 
-                                        gc.getMap().plot(10,0).getUnit(0).kill(False, iCiv)
+                                        #gc.getMap().plot(10,0).getUnit(0).kill(False, iCiv)
 
                                         unitList = utils.getCoreUnitList(iCiv, 1)
                                         #for pUnit in unitList:
