@@ -955,4 +955,22 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JUDAISM_ADJECTIVE</Tag>
+		<English>Protestant</English>
+		<German>
+			<Text>protestantisch:protestantischen:protestantische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHRISTIANITY_ADJECTIVE</Tag>
+		<English>Catholic</English>
+		<German>
+			<Text>katholisch:katholischen:katholische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+	</TEXT>
 </Civ4GameText>

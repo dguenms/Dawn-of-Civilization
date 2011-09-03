@@ -222,7 +222,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 	if (lResult == 1)
 	{
-		if (pPlot->getFeatureType() != NO_FEATURE && pPlot->getFeatureType() != 3) //Leoreth: flood plains are not removed by cities
+		if (pPlot->getFeatureType() != NO_FEATURE && pPlot->getFeatureType() != (FeatureTypes)GC.getInfoTypeForString("FEATURE_FLOOD_PLAINS")) //Leoreth: flood plains are not removed by cities
 		{
 			pPlot->setFeatureType(NO_FEATURE);
 		}
