@@ -332,6 +332,14 @@ class RiseAndFall:
 
         def getTempFlippingCity(self):
                 return sd.scriptDict['tTempFlippingCity']
+
+	def setFirstContactMongols(self, iCiv, iValue):
+		lMongolCivs = [iIndia, iPersia, iByzantium, iArabia, iRussia]
+		sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)] = iValue
+
+	def getFirstContactMongols(self, iCiv):
+		lMongolCivs = [iIndia, iPersia, iByzantium, iArabia, iRussia]
+		return sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)]
                 
 ###############
 ### Popups ###
@@ -2026,9 +2034,9 @@ class RiseAndFall:
 			#if iCiv == iChina and utils.getHumanID() != iChina:
 			#	if not gc.getPlayer(0).isPlayable():
 			#		tTopLeft = (99, 39) # 4 tiles further south
-			#elif iCiv == iMongolia and utils.getHumanID() != iMongolia:
-			#	tTopLeft = (81, 45) # 6 more west, 1 more south
-			if iCiv == iTurkey and utils.getHumanID() != iTurkey and not pByzantium.isAlive():
+			if iCiv == iMongolia and utils.getHumanID() != iMongolia:
+				tTopLeft = (81, 45) # 6 more west, 1 more south
+			elif iCiv == iTurkey and utils.getHumanID() != iTurkey and not pByzantium.isAlive():
 				tTopLeft = (67, 41) # two more west
                     
                         if (self.getFlipsDelay(iCiv) == 0): #city hasn't already been founded)
@@ -2535,7 +2543,7 @@ class RiseAndFall:
                 #collect all the cities in the spawn region
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if not (x,y) in tExceptions[utils.getReborn(iCiv)][iCiv]: # Leoreth: exclude exception plots here
+				if not (x,y) in tExceptions[utils.getReborn(iCiv)][iCiv] or (iCiv == iAmerica and utils.getHumanID() != iAmerica): # Leoreth: exclude exception plots here
                                 	pCurrent = gc.getMap().plot( x, y )
                                 	if ( pCurrent.isCity()):
                                         	if (pCurrent.getPlotCity().getOwner() != iCiv):
@@ -3098,7 +3106,9 @@ class RiseAndFall:
 			print("AI Mongolia makes contact with somebody")
 			if iTeamX in [iIndia, iPersia, iArabia, iByzantium, iRussia]:
 				print("New contact is a valid target")
-				if gc.getGame().getGameTurn() < getTurnForYear(1500):
+				if gc.getGame().getGameTurn() < getTurnForYear(1500) and self.getFirstContactMongols(iTeamX) == 0:
+
+					self.setFirstContactMongols(iCiv, 1)
 		
 					teamTarget = gc.getTeam(iTeamX)
 

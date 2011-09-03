@@ -48,6 +48,7 @@ class StoredData:
                                     'lBirthTurnModifier': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                                     'lDeleteMode': [-1, -1, -1], #first is a bool, the other values are capital coordinates
                                     'lFirstContactConquerors': [0, 0, 0], #maya, inca, aztecs
+				    'lFirstContactMongols': [0, 0, 0, 0, 0], #india, persia, byzantium, arabia, russia
                                     'bCheatMode': False,
 				    'tTempFlippingCity': (0, 0),
                                      #------------Religions
