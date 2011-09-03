@@ -758,7 +758,8 @@ tCapitals = (
 ((69, 33), #tThebes
 #(90, 40), #tDelhi
 (93, 39), #tVaranasi
-(102, 47), #tBeijing
+#(102, 47), #tBeijing
+(100, 44), #Chang'an
 (76, 40), #tBabylon
 (67, 41), #tAthens
 (82, 39), #tPersepolis
