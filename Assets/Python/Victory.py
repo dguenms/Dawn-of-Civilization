@@ -377,6 +377,12 @@ class Victory:
 
 	#def setKoreanTechs(self, i, iNewValue):
 	#	sd.scriptDict['lKoreanTechs'][i] = iNewValue
+
+	def getNumGenerals(self):
+		return sd.scriptDict['iNumGenerals']
+
+	def setNumGenerals(self, iNewValue):
+		sd.scriptDict['iNumGenerals'] = iNewValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -414,6 +420,7 @@ class Victory:
         def checkFoundedArea(self, iActiveCiv, tTopLeft, tBottomRight, iThreshold):
                 dummy1, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.foundedCityPlots, iActiveCiv )
                 if (len(plotList) >= iThreshold):
+
                         return True
                 else:
                         return False
@@ -834,24 +841,30 @@ class Victory:
                         if (pJapan.isAlive()):
 
                             
-                                if (iGameTurn == getTurnForYear(1650)):
-                                        bForeignPresence = False
-                                        #Honshu
-                                        for x in range(tHonshuTL[0], tHonshuBR[0]+1):
-                                                for y in range(tHonshuTL[1], tHonshuBR[1]+1):
-                                                        pCurrent = gc.getMap().plot(x,y)
-                                                        if (not pCurrent.isWater()):
-                                                                for iLoop in range(iNumMajorPlayers): #no minor civs
-                                                                        if (iLoop != iJapan):
-                                                                                if (pCurrent.getCulture(iLoop) > 0):
-                                                                                        bForeignPresence = True
-                                                                                        print (iPlayer, "presence in Japan")
+                                #if (iGameTurn == getTurnForYear(1650)):
+                                #        bForeignPresence = False
+                                #        #Honshu
+                                #        for x in range(tHonshuTL[0], tHonshuBR[0]+1):
+                                #                for y in range(tHonshuTL[1], tHonshuBR[1]+1):
+                                #                        pCurrent = gc.getMap().plot(x,y)
+                                #                        if (not pCurrent.isWater()):
+                                #                                for iLoop in range(iNumMajorPlayers): #no minor civs
+                                #                                        if (iLoop != iJapan):
+                                #                                                if (pCurrent.getCulture(iLoop) > 0):
+                                #                                                        bForeignPresence = True
+                                #                                                        print (iPlayer, "presence in Japan")
 
-                                        print ("bForeignPresence ", bForeignPresence)
-                                        if (bForeignPresence == False):
-                                                self.setGoal(iJapan, 0, 1)
-                                        else:
-                                                self.setGoal(iJapan, 0, 0)
+                                #        print ("bForeignPresence ", bForeignPresence)
+                                #        if (bForeignPresence == False):
+                                #                self.setGoal(iJapan, 0, 1)
+                                #        else:
+                                #                self.setGoal(iJapan, 0, 0)
+
+				# Leoreth: new first goal: three great generals by 1600 AD
+				if iGameTurn == getTurnForYear(1600):
+					if self.getGoal(iJapan, 0) == -1:
+						self.setGoal(iJapan, 0, 0)
+
 
                                 if (iGameTurn == getTurnForYear(1930)):
                                         if (gc.getGame().getTeamRank(iJapan) == 0):
@@ -2254,6 +2267,20 @@ class Victory:
 					self.setNumKoreanSinks(self.getNumKoreanSinks() + 1)
 					if (self.getNumKoreanSinks() == 20):
 						self.setGoal(iKorea, 2, 1)
+
+	def onGreatPersonBorn(self, argsList):
+		pUnit, iPlayer, pCity = argsList
+		
+		iGameTurn = gc.getGame().getGameTurn()
+		
+		# Leoreth: new first goal for Japan: three great generals by 1600 AD
+		if iPlayer == iJapan:
+			if pUnit.getUnitClassType() == CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_GREAT_GENERAL'):
+				if sd.getGoal(iJapan, 1) == -1:
+					if gc.getGame().getGameTurn() <= getTurnForYear(1600):
+						sd.setNumGenerals(sd.getNumGenerals() + 1)
+						if sd.getNumGenerals() == 3:
+							sd.setGoal(iJapan, 0, 1)
                                         
 
 
@@ -2567,16 +2594,8 @@ class Victory:
 
 		elif iPlayer == iJapan:
 			if iGoal == 0:
-				bForeignPresence = False
-                                for x in range(tHonshuTL[0], tHonshuBR[0]+1):
-                                	for y in range(tHonshuTL[1], tHonshuBR[1]+1):
-                                		pCurrent = gc.getMap().plot(x,y)
-                                		if (not pCurrent.isWater()):
-                                			for iLoop in range(iNumMajorPlayers):
-                                				if (iLoop != iJapan):
-                                					if (pCurrent.getCulture(iLoop) > 0):
-                                						bForeignPresence = True
-				aHelp.append(self.getIcon(not bForeignPresence) + 'No foreign presence on Honshuu')
+				iNumGenerals = self.getNumGenerals()
+				aHelp.append(self.getIcon(iNumGenerals >= 3) + 'Generals born: '+str(iNumGenerals)+'/3')
 			elif iGoal == 1:
 				iFirstRankCiv = self.getHighestRankCiv()
 				bFirstRank = (iFirstRankCiv == iJapan)

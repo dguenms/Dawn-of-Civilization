@@ -111,7 +111,7 @@ lNeighbours = [
 [iEgypt, iBabylonia, iGreece, iCarthage, iSpain, iFrance, iGermany, iPortugal], #Rome
 [iChina, iKorea, iKhmer, iMongolia], #Japan
 [iEgypt, iArabia, iMali], #Ethiopia
-[iChina, iJapan, iMongolia], #Korea
+[iChina, iKorea, iMongolia], #Korea
 [iSpain, iInca, iAztecs, iAmerica], #Maya
 [iEgypt, iBabylonia, iGreece, iPersia, iArabia, iRussia], #Byzantium
 [iFrance, iEngland, iGermany, iRussia, iNetherlands], #Vikings
@@ -143,9 +143,9 @@ lOlderNeighbours = [
 [iEgypt, iBabylonia, iGreece], #Persia
 [iEgypt, iBabylonia], #Carthage
 [iEgypt, iGreece, iCarthage], #Rome
-[], #Japan
+[iKorea], #Japan
 [iEgypt], #Ethiopia
-[iChina, iJapan], #Korea
+[iChina], #Korea
 [], #Maya
 [iGreece], #Byzantium
 [], #Vikings
@@ -179,7 +179,7 @@ tBirth = (
 -850, # 84, #844BC
 -1200, # 66, #814BC # Leoreth: 1200 BC
 -753, # 90, #753BC
--660, # 97, #660BC
+525, # 97, #660BC
 -300, # 121, #300BC
 -50,
 60, # 145, #60AD

@@ -133,6 +133,7 @@ class StoredData:
 				    'lItalianTechs': [-1, -1, -1, -1],
 				    'iItalianUniversities': 0,
 				    'iNumKoreanSinks': 0,
+				    'iNumGenerals': 0,
                                     #------------Stability
                                     'lBaseStabilityLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                                     'lPartialBaseStability': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],

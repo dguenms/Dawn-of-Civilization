@@ -5362,7 +5362,7 @@ void CvPlayer::found(int iX, int iY)
                     }
 					break;
 				case JAPAN:
-					startingEra = 1;
+					startingEra = 2;
 					if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 						startingEra = 2;
 					break;
@@ -5790,7 +5790,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
                 startingEra = 2;    // Leoreth - Renaissance Italy
 			break;
 		case JAPAN:
-			startingEra = 1;
+			startingEra = 2;
 			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 				startingEra = 2;
 			break;
@@ -11565,7 +11565,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 			startEra = 1;
 			break;
 		case JAPAN:
-			startEra = 1;
+			startEra = 2;
 			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 				startEra = 2;
 			break;
