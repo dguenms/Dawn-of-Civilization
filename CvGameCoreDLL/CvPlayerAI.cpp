@@ -2757,7 +2757,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				iValue -= (abs(iDistance) - 4) * 500;
 				break;
             case KOREA:
-                iValue -= (abs(iDistance) - 4) * 150;
+                iValue -= (abs(iDistance) - 6) * 500;
                 break;
 			case MAYA:
 				iValue -= (abs(iDistance) - 3) * 500;
@@ -2897,10 +2897,10 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					compactEmpireModifier = 40;
 					break;
 				case INDIA:
-					compactEmpireModifier = 50;
+					compactEmpireModifier = 40;
 					break;
 				case CHINA:
-					compactEmpireModifier = 50;
+					compactEmpireModifier = 45;
 					break;
 				case BABYLONIA:
 					compactEmpireModifier = 40;
@@ -2927,7 +2927,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					compactEmpireModifier = 40;
 					break;
                 case KOREA:
-                    compactEmpireModifier = 50;
+                    compactEmpireModifier = 100;
                     break;
 				case MAYA:
 					compactEmpireModifier = 40;

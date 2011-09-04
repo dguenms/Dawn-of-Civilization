@@ -155,7 +155,7 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 1, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 6, 2, 3, 2, 1, 0, 0, 0)
+tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 3, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 6, 2, 3, 2, 1, 0, 0, 0)
                                                                                    #ma po in mo az tu am
 
 # starting locations coordinates
@@ -3429,13 +3429,14 @@ class RiseAndFall:
                                 pRome.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 pRome.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                 if (iCiv == iJapan):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 2)
-                        tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
-                        if (tSeaPlot):                                
-                                utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
+                        utils.makeUnit(iSettler, iJapan, tCapitals[0][iJapan], 3)
+			utils.makeUnit(con.iBuddhistMissionary, iJapan, tCapitals[0][iJapan], 3)
+                	utils.makeUnit(con.iSwordsman, iJapan, tCapitals[0][iJapan], 2)
+                	utils.makeUnit(con.iArcher, iJapan, tCapitals[0][iJapan], 2)
+                	utils.makeUnit(con.iWorker, iJapan, tCapitals[0][iJapan], 2)
+                	tSeaPlot = self.findSeaPlots(tCapitals[0][iJapan], 1, iJapan)
+                	if (tSeaPlot):                                
+                        	utils.makeUnit(con.iWorkBoat, iJapan, tSeaPlot, 2)
                 if (iCiv == iEthiopia):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
@@ -3728,7 +3729,7 @@ class RiseAndFall:
 		utils.makeUnit(con.iConfucianMissionary, iChina, tCapitals[0][iChina], 1)
                 
                 utils.makeUnit(iSettler, iJapan, tCapitals[0][iJapan], 3)
-		utils.makeUnit(con.iBuddhistMissionary, iJapan, tCapitals[0][iJapan], 1)
+		utils.makeUnit(con.iBuddhistMissionary, iJapan, tCapitals[0][iJapan], 3)
                 utils.makeUnit(con.iSwordsman, iJapan, tCapitals[0][iJapan], 2)
                 utils.makeUnit(con.iArcher, iJapan, tCapitals[0][iJapan], 2)
                 utils.makeUnit(con.iWorker, iJapan, tCapitals[0][iJapan], 2)
@@ -3951,34 +3952,13 @@ class RiseAndFall:
                 teamChina.setHasTech(con.iDrama, True, iCiv, False, False)
                 teamChina.setHasTech(con.iMusic, True, iCiv, False, False)
                 iCiv = iJapan
-                teamJapan.setHasTech(con.iMining, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iMachinery, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iMysticism, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iMeditation, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iMasonry, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iFishing, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iSailing, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iPottery, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iWriting, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iMathematics, True, iCiv, False, False)
-                #teamJapan.setHasTech(con.iCalendar, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iConstruction, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iCurrency, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iCivilService, True, iCiv, False, False)
-                #teamJapan.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iHunting, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iArchery, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                teamJapan.setHasTech(con.iAesthetics, True, iCiv, False, False)
+		lJapaneseTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, \
+				  con.iPolytheism, con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, \
+				  con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iMathematics, \
+				  con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iCivilService, con.iHunting, con.iArchery, \
+				  con.iAnimalHusbandry, con.iAesthetics]
+		for iTech in lJapaneseTechs:
+			teamJapan.setHasTech(iTech, True, iCiv, False, False)
                 iCiv = iVikings
                 teamVikings.setHasTech(con.iMining, True, iCiv, False, False)
                 teamVikings.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -4217,20 +4197,13 @@ class RiseAndFall:
                                 teamRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iMathematics, True, iCiv, False, False)
                         if (iCiv == iJapan):
-                                teamJapan.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iMeditation, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamJapan.setHasTech(con.iWriting, True, iCiv, False, False)
+				lJapaneseTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, \
+						  con.iPolytheism, con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, \
+						  con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iMathematics, \
+						  con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iCivilService, con.iHunting, con.iArchery, \
+						  con.iAnimalHusbandry]
+				for iTech in lJapaneseTechs:
+					teamJapan.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iEthiopia):
                                 teamEthiopia.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamEthiopia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
