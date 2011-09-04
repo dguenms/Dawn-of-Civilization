@@ -2163,7 +2163,7 @@
 			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Khmer_Baray/Khmer_Baray.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Wonders/Khajuraho.dds</Button>
+			<Button>Art/Interface/Buttons/Wonders/Khajuraho.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_HARMANDIR_SAHIB</Type>
@@ -2173,7 +2173,7 @@
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Monastery/Hindu/Hindu_monastery.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Wonders/HarmandirSahib.dds</Button>
+			<Button>Art/Interface/Buttons/Wonders/HarmandirSahib.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_INDONESIAN_CANDI</Type>
