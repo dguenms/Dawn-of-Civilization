@@ -15421,6 +15421,13 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 		GET_TEAM(getTeam()).setNoTradeTech((TechTypes)iTech, true);
 
 		bSomethingHappened = true;
+
+		//Leoreth: trigger for stolen techs (Japanese UHV)
+		long result = -1;
+		CyArgsList argsList;
+		argsList.add(getID());
+		argsList.add(iTech);
+	    gDLL->getPythonIFace()->callFunction(PYScreensModule, "onTechStolen", argsList.makeFunctionArgs(), &result);
 	}
 
 	//////////////////////////////

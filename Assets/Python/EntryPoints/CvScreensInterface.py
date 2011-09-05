@@ -58,6 +58,8 @@ g_bIsScreenActive = -1
 from StoredData import sd
 import Consts as con
 import RFCUtils
+import Victory
+vic = Victory.Victory()
 utils = RFCUtils.RFCUtils()
 def getStability(argsList):
         return utils.getStability(argsList[0])
@@ -931,6 +933,13 @@ def isBroaderPlot(argsList):
 #Leoreth
 def getReborn(argsList):
 	return sd.scriptDict['lReborn'][argsList[0]]
+
+#Leoreth
+def onTechStolen(argsList):
+	iPlayer = argsList[0]
+	iTech = argsList[1]
+	vic.onTechStolen(iPlayer, iTech)
+	return 1
 
 #######################################################################################
 ## Handle Close Map

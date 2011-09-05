@@ -383,6 +383,12 @@ class Victory:
 
 	def setNumGenerals(self, iNewValue):
 		sd.scriptDict['iNumGenerals'] = iNewValue
+
+	def increaseTechsStolen(self):
+		sd.scriptDict['iTechsStolen'] += 1
+
+	def getTechsStolen(self):
+		return sd.scriptDict['iTechsStolen']
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -860,7 +866,7 @@ class Victory:
                                 #        else:
                                 #                self.setGoal(iJapan, 0, 0)
 
-				# Leoreth: new first goal: three great generals by 1600 AD
+				# Leoreth: new first goal: steal five techs by 1600 AD
 				if iGameTurn == getTurnForYear(1600):
 					if self.getGoal(iJapan, 0) == -1:
 						self.setGoal(iJapan, 0, 0)
@@ -2274,13 +2280,20 @@ class Victory:
 		iGameTurn = gc.getGame().getGameTurn()
 		
 		# Leoreth: new first goal for Japan: three great generals by 1600 AD
+		#if iPlayer == iJapan:
+		#	if pUnit.getUnitClassType() == CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_GREAT_GENERAL'):
+		#		if sd.getGoal(iJapan, 1) == -1:
+		#			if gc.getGame().getGameTurn() <= getTurnForYear(1600):
+		#				sd.setNumGenerals(sd.getNumGenerals() + 1)
+		#				if sd.getNumGenerals() == 3:
+		#					sd.setGoal(iJapan, 0, 1)
+
+	def onTechStolen(self, iPlayer, iTech):
+		# Leoreth: first goal for Japan: steal five technologies by 1600 AD
 		if iPlayer == iJapan:
-			if pUnit.getUnitClassType() == CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_GREAT_GENERAL'):
-				if sd.getGoal(iJapan, 1) == -1:
-					if gc.getGame().getGameTurn() <= getTurnForYear(1600):
-						sd.setNumGenerals(sd.getNumGenerals() + 1)
-						if sd.getNumGenerals() == 3:
-							sd.setGoal(iJapan, 0, 1)
+			self.increaseTechsStolen()
+			if self.getTechsStolen() == 5:
+				sd.setGoal(iJapan, 0, 1)
                                         
 
 
@@ -2594,8 +2607,8 @@ class Victory:
 
 		elif iPlayer == iJapan:
 			if iGoal == 0:
-				iNumGenerals = self.getNumGenerals()
-				aHelp.append(self.getIcon(iNumGenerals >= 3) + 'Generals born: '+str(iNumGenerals)+'/3')
+				iTechsStolen = self.getTechsStolen()
+				aHelp.append(self.getIcon(iTechsStolen >= 5) + 'Techs stolen: '+str(iTechsStolen)+'/5')
 			elif iGoal == 1:
 				iFirstRankCiv = self.getHighestRankCiv()
 				bFirstRank = (iFirstRankCiv == iJapan)
