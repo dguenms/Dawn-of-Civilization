@@ -3108,7 +3108,7 @@ class RiseAndFall:
 				print("New contact is a valid target")
 				if gc.getGame().getGameTurn() < getTurnForYear(1500) and self.getFirstContactMongols(iTeamX) == 0:
 
-					self.setFirstContactMongols(iCiv, 1)
+					self.setFirstContactMongols(iTeamX, 1)
 		
 					teamTarget = gc.getTeam(iTeamX)
 

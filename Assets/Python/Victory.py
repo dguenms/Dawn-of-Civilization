@@ -348,11 +348,11 @@ class Victory:
         def setNewWorld( self, i, iNewValue ):
                 sd.scriptDict['lNewWorld'][i] = iNewValue
 
-	def getChineseGoldenAgeTurns( self ):
-		return sd.scriptDict['iChineseGoldenAges']
+	#def getChineseGoldenAgeTurns( self ):
+	#	return sd.scriptDict['iChineseGoldenAges']
 
-	def increaseChineseGoldenAgeTurns( self ):
-		sd.scriptDict['iChineseGoldenAges'] += 1
+	#def increaseChineseGoldenAgeTurns( self ):
+	#	sd.scriptDict['iChineseGoldenAges'] += 1
 
 	def getItalianTechs(self, i):
 		return sd.scriptDict['lItalianTechs'][i]
@@ -389,6 +389,12 @@ class Victory:
 
 	def getTechsStolen(self):
 		return sd.scriptDict['iTechsStolen']
+
+	def getChineseTechs(self, i):
+		return sd.scriptDict['lChineseTechs'][i]
+
+	def setChineseTechs(self, i, iNewValue):
+		sd.scriptDict['lChineseTechs'][i] = iNewValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -578,6 +584,10 @@ class Victory:
                                         else:
                                                 self.setGoal(iIndia, 2, 0)
 
+				if iGameTurn == getTurnForYear(1000):
+					if self.getGoal(iIndia, 1) == -1:
+						self.setGoal(iIndia, 1, 0)
+
                             
                         
                 elif (iPlayer == iChina):
@@ -588,21 +598,21 @@ class Victory:
                                                 self.setGoal(iChina, 0, 0)
 
 				# Leoreth - new condition: have 4 golden ages until 1850 AD
-                                if (iGameTurn == getTurnForYear(1850)):      
-                                        if (self.getGoal(iChina, 1) == -1):
-                                                self.setGoal(iChina, 1, 0)
+                                #if (iGameTurn == getTurnForYear(1850)):      
+                                #        if (self.getGoal(iChina, 1) == -1):
+                                #                self.setGoal(iChina, 1, 0)
 
                                 if (iGameTurn == getTurnForYear(1600)):
-                                        if (pChina.getNumUnits() >= 120):
+                                        if (pChina.getNumUnits() >= 100):
                                                 self.setGoal(iChina, 2, 1)
                                         else:
                                                 self.setGoal(iChina, 2, 0)
 
-				if self.getChineseGoldenAgeTurns() >= utils.getTurns(32):
-					self.setGoal(iChina, 1, 1)
+				#if self.getChineseGoldenAgeTurns() >= utils.getTurns(32):
+				#	self.setGoal(iChina, 1, 1)
 
-				if pChina.isGoldenAge():
-					self.increaseChineseGoldenAgeTurns()
+				#if pChina.isGoldenAge():
+				#	self.increaseChineseGoldenAgeTurns()
 
 
                 elif (iPlayer == iBabylonia):
@@ -1713,21 +1723,21 @@ class Victory:
                         if (self.getReligionFounded(con.iHinduism) == 1 and self.getReligionFounded(con.iBuddhism) == 1):
                                 self.setGoal(iIndia, 0, 1)     
 
-                if (self.getGoal(iIndia, 1) == -1):
-                        iCounter = 0
-                        for i in range(con.iNumReligions):
-                                if (self.getReligionFounded(i) == 1):
-                                        iCounter += 1
-                        if (iCounter >= 5):
-                                self.setGoal(iIndia, 1, 1)
+                #if (self.getGoal(iIndia, 1) == -1):
+                #        iCounter = 0
+                #        for i in range(con.iNumReligions):
+                #                if (self.getReligionFounded(i) == 1):
+                #                        iCounter += 1
+                #        if (iCounter >= 5):
+                #                self.setGoal(iIndia, 1, 1)
 
-                        if (self.getGoal(iIndia, 1) == -1):
-                                iFounded = 0
-                                for iLoopReligion in range(con.iNumReligions):
-                                        if (gc.getGame().isReligionFounded(iLoopReligion)):
-                                                iFounded += 1
-                                if (iFounded == con.iNumReligions):
-                                        self.setGoal(iIndia, 1, 0)
+                #        if (self.getGoal(iIndia, 1) == -1):
+                #                iFounded = 0
+                #                for iLoopReligion in range(con.iNumReligions):
+                #                        if (gc.getGame().isReligionFounded(iLoopReligion)):
+                #                                iFounded += 1
+                #                if (iFounded == con.iNumReligions):
+                #                        self.setGoal(iIndia, 1, 0)
 
 
                 if (iPlayer == iEthiopia):
@@ -1809,6 +1819,39 @@ class Victory:
                         return
 
                 iGameTurn = gc.getGame().getGameTurn()
+
+		# Chinese UHV: Compass, Paper, Gunpowder, Printing Press
+		if iTech == con.iCompass:
+			if self.getChineseTechs(0) == -1:
+				if iPlayer == iChina:
+					self.setChineseTechs(0, 1)
+				else:
+					self.setGoal(iChina, 1, 0)
+
+		elif iTech == con.iPaper:
+			if self.getChineseTechs(1) == -1:
+				if iPlayer == iChina:
+					self.setChineseTechs(1, 1)
+				else:
+					self.setGoal(iChina, 1, 0)
+
+		elif iTech == con.iGunpowder:
+			if self.getChineseTechs(2) == -1:
+				if iPlayer == iChina:
+					self.setChineseTechs(2, 1)
+				else:
+					self.setGoal(iChina, 1, 0)
+
+		elif iTech == con.iPrintingPress:
+			if self.getChineseTechs(3) == -1:
+				if iPlayer == iChina:
+					self.setChineseTechs(3, 1)
+				else:
+					self.setGoal(iChina, 1, 0)
+
+		if iTech in [con.iCompass, con.iPaper, con.iGunpowder, con.iPrintingPress]:
+			if self.getChineseTechs(0) == 1 and self.getChineseTechs(1) == 1 and self.getChineseTechs(2) == 1 and self.getChineseTechs(3) == 1:
+				self.setGoal(iChina, 1, 1)
 
 		# Babylonian UHV: Writing, Code of Laws, Monarchy
 		if iTech == con.iWriting:
@@ -2133,7 +2176,19 @@ class Victory:
                                                         self.setGoal(iEgypt, 1, 1)
                                         if (iGameTurn >= getTurnForYear(-100)):
                                                 if (self.getWondersBuilt(iEgypt) != 3):                                    
-                                                        self.setGoal(iEgypt, 1, 0)      
+                                                        self.setGoal(iEgypt, 1, 0)
+
+		if iPlayer == iIndia:
+			if pIndia.isAlive():
+				if self.getGoal(iIndia, 1) == -1:
+					if iGameTurn <= getTurnForYear(1000):
+						lTemples = [con.iJewishTemple, con.iChristianTemple, con.iIslamicTemple, con.iHinduTemple, con.iBuddhistTemple, con.iConfucianTemple, con.iTaoistTemple, con.iZoroastrianTemple]
+						if iBuilding in lTemples:
+							iCounter = 0
+							for iTemple in lTemples:
+								iCounter += self.getNumBuildings(iIndia, iTemple)
+							if iCounter >= 20:
+								self.setGoal(iIndia, 1, 1)
 
 
                 elif (iPlayer == iChina):
@@ -2462,11 +2517,11 @@ class Victory:
 				bHinduism = (self.getReligionFounded(con.iHinduism) == 1)
 				aHelp.append(self.getIcon(bHinduism) + 'Hinduism ' + self.getIcon(bBuddhism) + 'Buddhism')
 			elif iGoal == 1:
-				iCount = 0
-				for iReligion in range(con.iNumReligions):
-					if self.getReligionFounded(iReligion) == 1:
-						iCount += 1
-				aHelp.append(self.getIcon(iCount >= 5) + 'Religions founded: ' + str(iCount) + '/5')
+				lTemples = [con.iJewishTemple, con.iChristianTemple, con.iIslamicTemple, con.iHinduTemple, con.iBuddhistTemple, con.iConfucianTemple, con.iTaoistTemple, con.iZoroastrianTemple]
+				iCounter = 0
+				for iTemple in lTemples:
+					iCounter += self.getNumBuildings(iIndia, iTemple)
+				aHelp.append(self.getIcon(iCounter >= 20) + 'Temples built: ' + str(iCounter) + '/20')
 			elif iGoal == 2:
 				iHighestCiv = self.getHighestPopulationCiv(iIndia)
 				bHighest = (iHighestCiv == iIndia)
@@ -2476,14 +2531,16 @@ class Victory:
 			if iGoal == 0:
 				iConfucianCounter = self.getNumBuildings(iChina, con.iConfucianCathedral)
 				iTaoistCounter = self.getNumBuildings(iChina, con.iTaoistCathedral)
-				aHelp.append(self.getIcon(iConfucianCounter >= 2) + 'Confucian Academies: ' + str(iConfucianCounter) + '/2' + self.getIcon(iTaoistCounter >= 2) + 'Taoist Pagodas: ' + str(iTaoistCounter) + '/2')
+				aHelp.append(self.getIcon(iConfucianCounter >= 2) + 'Confucian Academies: ' + str(iConfucianCounter) + '/2 ' + self.getIcon(iTaoistCounter >= 2) + 'Taoist Pagodas: ' + str(iTaoistCounter) + '/2')
 			elif iGoal == 1:
-				iGATurns = self.getChineseGoldenAgeTurns()
-				iGoldenAges = iGATurns / utils.getTurns(8)
-				aHelp.append(self.getIcon(iGATurns >= utils.getTurns(32)) + 'Golden ages: ' + str(iGoldenAges) + '/4')
+				bCompass = (self.getChineseTechs(0) == 1)
+				bPaper = (self.getChineseTechs(1) == 1)
+				bGunpowder = (self.getChineseTechs(2) == 1)
+				bPrintingPress = (self.getChineseTechs(3) == 1)
+				aHelp.append(self.getIcon(bCompass) + 'Compass ' + self.getIcon(bPaper) + 'Paper ' + self.getIcon(bGunpowder) + 'Gunpowder ' + self.getIcon(bPrintingPress) + 'Printing Press')
 			elif iGoal == 2:
 				iNumUnits = pChina.getNumUnits()
-				aHelp.append(self.getIcon(iNumUnits >= 120) + 'Number of units: ' + str(iNumUnits) + '/120')
+				aHelp.append(self.getIcon(iNumUnits >= 100) + 'Number of units: ' + str(iNumUnits) + '/100')
 
 		elif iPlayer == iBabylonia:
 			if iGoal == 0:

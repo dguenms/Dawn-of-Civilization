@@ -1316,7 +1316,7 @@ class RFCUtils:
 				if current.isCity():
 					lCivList.append(current.getPlotCity().getOwner())
 				else:
-					if not current.isPeak() and not current.isWater():
+					if not current.isPeak() and not current.isWater() and (i,j) != (x,y):
 						lFreePlots.append((i,j))
 
 		if len(lCivList) == 0:

@@ -1047,5 +1047,10 @@
 		<English>[ICON_BULLET]Provides fresh water to the city[NEWLINE][ICON_BULLET]All newly founded cities receive one additional point of population</English>
 		<German>[ICON_BULLET]Versorgt die Stadt mit Süßwasser[NEWLINE][ICON_BULLET]Alle neu gegründeten Städte erhalten einen zusätzlichen Bevölkerungspunkt</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL</Tag>
+		<English>Examination Hall</English>
+		<German>Prüfungshalle</German>
+	</TEXT>
 
 </Civ4GameText>

@@ -1387,7 +1387,8 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
             (iX == 69 && iY == 35) ||     //Cairo
             (iX == 82 && iY == 38) ||     //Shiraz
             (iX == 83 && iY == 45) ||     //Merv
-            (iX == 85 && iY == 47)) {    //Samarkand
+            (iX == 85 && iY == 47) ||    //Samarkand
+			(iX == 102 && iY == 47)){	//Beijing
 				iRazeValue -= 30;
 			}
 
@@ -1749,8 +1750,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
     int reborn = GET_PLAYER(getID()).getReborn();
 
     // Leoreth: settler map entry of 1000 (never used by Rhye) to force a city no matter the environment
-    if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] == 1000)
-        return 100000;
+    //if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] == 1000)
+    //    return 100000;
 
 	if (!canFound(iX, iY))
 	{
@@ -2308,7 +2309,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		break;
 	case CHINA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 + 1))
+		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 ))
 		{
 			return 0;
 		}
@@ -2730,7 +2731,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				iValue -= (abs(iDistance) - 5) * 400;
 				break;
 			case CHINA:
-				iValue -= (abs(iDistance) - 5) * 400;
+				iValue -= (abs(iDistance) - 3) * 400;
 				break;
 			case BABYLONIA:
 				iValue -= (abs(iDistance) - 3) * 500;
