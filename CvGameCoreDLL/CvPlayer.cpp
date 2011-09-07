@@ -6228,12 +6228,12 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 		case CHINA:
 			iProductionNeeded *= 110;
 			iProductionNeeded /= 100;
-			//Rhye - start UP
-			if (GC.getUnitInfo(eUnit).getUnitCombatType() == 3 || GC.getUnitInfo(eUnit).getUnitCombatType() == 5)
+			//Rhye - start UP (Leoreth: replaced)
+			/*if (GC.getUnitInfo(eUnit).getUnitCombatType() == 3 || GC.getUnitInfo(eUnit).getUnitCombatType() == 5)
 			{
 				iProductionNeeded *= 73; // 2/3 of 110. Otherwise it would be 67
 				iProductionNeeded /= 100;
-			}
+			}*/
 			//Rhye - end UP
 			break;
 		case BABYLONIA:
@@ -8895,7 +8895,13 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 
 int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) const
 {
-	return (GC.getSpecialistInfo(eSpecialist).getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield));
+	//Leoreth: Indian UP (+1 food for artists, scientists, merchants)
+	if (getID() == (PlayerTypes)INDIA && (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_ARTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SCIENTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_MERCHANT")) && eYield == (YieldTypes)0) // food
+	{
+		return (GC.getSpecialistInfo(eSpecialist).getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield)+1);
+	}else{
+		return (GC.getSpecialistInfo(eSpecialist).getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield));
+	}
 }
 
 
@@ -9298,8 +9304,8 @@ void CvPlayer::updateMaxAnarchyTurns()
 		}
 	}
 
-	//Rhye - start UP
-	if (getID() == INDIA)
+	//Rhye - start UP (new for Babylonia now)
+	if (getID() == BABYLONIA)
 	{
 		iBestValue = 0;
 	}

@@ -150,9 +150,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND2</Tag>
-		<English>Found at least 5 religions</English>
+		<English>Build 20 temples by 1000 AD</English>
 		<French>Fonder au moins 5 religions</French>
-		<German>Begründen Sie mindestens 5 Religionen</German>
+		<German>Bauen Sie 20 Tempel bis 1000 n. Chr.</German>
 		<Italian>Fonda almeno 5 religioni</Italian>
 		<Spanish>Fundar al menos 5 religiones</Spanish>
 	</TEXT>
@@ -174,17 +174,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CHI2</Tag>
-		<English>Experience four golden ages by 1850 AD</English>
+		<English>Be first to discover Compass, Paper, Gunpowder and Printing Press</English>
 		<French>Ne perdre aucune ville aux barbares ou aux Mongols avant 1400 ap. J.-C.</French>
-		<German>Erleben Sie vier goldene Zeitalter bis 1850 n. Chr.</German>
+		<German>Entdecken Sie als erster Kompass, Papier, Schießpulver und Druckerpresse</German>
 		<Italian>Barbari o Mongoli non devono conquistare alcuna tua citt&#224; prima del 1400 d.C.</Italian>
 		<Spanish>No perder ciudades ante los b&#225;rbaros ni los mongoles antes del 1400 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CHI3</Tag>
-		<English>Control an army of 120 units in 1600 AD</English>
+		<English>Control an army of 100 units in 1600 AD</English>
 		<French>Contrôler une armée de 120 unités en 1600 ap. J.-C.</French>
-		<German>Befehligen Sie im Jahr 1600 n. Chr. eine Armee mit 120 Einheiten</German>
+		<German>Befehligen Sie im Jahr 1600 n. Chr. eine Armee mit 100 Einheiten</German>
 		<Italian>Comanda un esercito di 120 unit&#224; nel 1600 d.C.</Italian>
 		<Spanish>Controlar un ej&#233;rcito de 120 unidades en el 1600 d. C.</Spanish>
 	</TEXT>

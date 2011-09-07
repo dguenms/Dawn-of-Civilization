@@ -603,7 +603,7 @@ class CvRFCEventHandler:
 		player = PyPlayer(iPlayer)
 		infoUnit = pUnit.getUnitClassType()
 
-		self.vic.onGreatPersonBorn(self, argsList)
+		self.vic.onGreatPersonBorn(argsList)
 		
 		# Check if we should even show the popup:
 		if pUnit.isNone() or pCity.isNone():

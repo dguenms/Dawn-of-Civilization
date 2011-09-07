@@ -10110,7 +10110,7 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 	case INDIA:
 		return result*115/100;
 	case CHINA:
-		return result*11/10;   //10 before the addition of chinese UP
+		return result*10/10;   //10 before the addition of chinese UP //11 before removal of UP
 	case BABYLONIA:
 		return result*12/10;
 	case GREECE:
@@ -10267,9 +10267,9 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		return researchPercent*135/100; //123 before the new timeline
 	case CHINA:
         if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 1)
-            return researchPercent*112/100; // Leoreth; to help with UHV
+            return researchPercent*102/100; // Leoreth; to help with UHV
         else
-            return researchPercent*122/100; //115 before the new timeline
+            return researchPercent*112/100; //115 before the new timeline
 	case BABYLONIA:
 		if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 1)
 			return researchPercent*120/100; //a little boost for the UHV

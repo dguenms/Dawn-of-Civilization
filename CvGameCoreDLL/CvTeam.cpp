@@ -2800,6 +2800,24 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	}*/
 	//Rhye - end
 
+	//Leoreth: new Chinese UP: techs not known by anyone get -25% cost
+	if (getID() == CHINA)
+	{
+		bool bUnknown = true;
+		for (int i = 0; i < NUM_MAJOR_PLAYERS; i++)
+		{
+			if (GET_TEAM((TeamTypes)i).isHasTech(eTech))
+			{
+				bUnknown = false;
+			}
+		}
+
+		if (bUnknown)
+		{
+			iCost *= 75;
+			iCost /= 100;
+		}
+	}
 
 
 	return std::max(1, iCost);

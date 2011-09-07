@@ -30,33 +30,33 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND</Tag>
-		<English>The Power of Spirituality:</English>
+		<English>The Power of Varnas:</English>
 		<French>Le Pouvoir de la Spiritualité :</French>
-		<German>Die Macht der Spiritualität:</German>
+		<German>Die Macht der Varnas:</German>
 		<Italian>Il potere della spiritualit&#224;:</Italian>
 		<Spanish>El poder de la espiritualidad:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND2</Tag>
-		<English>No Anarchy in revolutions</English>
+		<English>Artists, scientists and merchants create one extra [ICON_FOOD]</English>
 		<French>Pas d'anarchie lors des révolutions</French>
-		<German>Keine Anarchiephase bei Revolutionen</German>
+		<German>Künstler, Wissenschaftler und Händler erzeugen eine zusätzliche Einheit [ICON_FOOD]</German>
 		<Italian>Niente anarchia durante le rivoluzioni</Italian>
 		<Spanish>No hay anarqu&#237;a por las revoluciones</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI</Tag>
-		<English>The Power of the Myriads:</English>
+		<English>The Power of the Cradle of Civilization:</English>
 		<French>Le Pouvoir des Myriades :</French>
-		<German>Die Macht der Myriaden:</German>
+		<German>Die Macht der Wiege der Zivilisation:</German>
 		<Italian>Il potere delle miriadi:</Italian>
 		<Spanish>El poder de las mir&#237;adas:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI2</Tag>
-		<English>1.5X Melee and Gunpowder units train speed</English>
+		<English>Techs that nobody has discovered yet cost -25%[ICON_RESEARCH]</English>
 		<French>1.5X Vitesse d'entraînement des unités de combat rapproché et équipées d'armes à feu</French>
-		<German>1,5x schnellere Ausbildung von Nahkampf- und Schießpulver-Einheiten</German>
+		<German>Technologien, die bisher von niemandem entdeckt wurden, kosten -25%[ICON_RESEARCH]</German>
 		<Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
 		<Spanish>Velocidad de entrenamiento de unidades de cuerpo a cuerpo y con armas de p&#243;lvora multiplicada x1,5</Spanish>
 	</TEXT>
