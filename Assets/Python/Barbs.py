@@ -341,7 +341,7 @@ class Barbs:
 		if utils.getHumanID() != con.iChina:
 			self.foundCity(iIndependent, lBeijing, "Zhongdu", iGameTurn, 2, con.iSpearman, 1)
 
-		self.foundCity(iBarbarian, lShenyang, "Simiyan hoton", iGameTurn, 1, con.iHorseArcher, 3)
+		self.foundCity(iBarbarian, lShenyang, "Simiyan hoton", iGameTurn, 2, con.iChariot, 2)
 
 
                 #self.foundCity(iBarbarian, [59, 50, 146, 0], "Germanii", iGameTurn, 1, con.iArcher, 1)

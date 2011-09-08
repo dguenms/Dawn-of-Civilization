@@ -654,7 +654,8 @@ class CvRFCEventHandler:
                             iPlayer == con.iAztecs or \
                             iPlayer == con.iBabylonia or \
 			    iPlayer == con.iRome or \
-			    iPlayer == con.iKorea):                            
+			    iPlayer == con.iKorea or \
+			    iPlayer == con.iChina):                            
                                 self.vic.onTechAcquired(argsList[0], argsList[2])
                         self.cnm.onTechAcquired(argsList[2])
 

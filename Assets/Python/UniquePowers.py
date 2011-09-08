@@ -243,14 +243,13 @@ class UniquePowers:
 
 		print ("Getting random target city.")
 		pTargetCity = utils.getRandomCity(iEnemy)
+		tPlot = con.tCapitals[0][iRome]
 
 		if (pTargetCity != -1):
 			print ("City found, searching free land plot.")
 			tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
-		
-		if (not tPlot):
+		else:
 			print ("No plot found, spawning in Roma instead.")
-			tPlot = con.tCapitals[0][iRome]
 
 		# weaken the effect if there's a human involved
 		if (utils.getHumanID() == iEnemy or utils.getHumanID() == iRome):
