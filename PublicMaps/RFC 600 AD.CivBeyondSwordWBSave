@@ -28098,14 +28098,6 @@ BeginPlot
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=30
 	EndUnit
-	BeginCity
-		CityOwner=30
-		CityName=Antiochia
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_HARBOR
-		Player30Culture=1
-	EndCity
 EndPlot
 BeginPlot
 	x=73,y=42
@@ -28485,11 +28477,22 @@ BeginPlot
 	x=74,y=40
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginCity
+		CityOwner=30
+		CityName=Damaskos
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_WALLS
+		ReligionType=RELIGION_CHRISTIANITY
+		Player30Culture=1
+	EndCity
 EndPlot
 BeginPlot
 	x=74,y=41
 	isWOfRiver
 	RiverNSDirection=2
+	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2

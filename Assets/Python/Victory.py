@@ -1018,22 +1018,28 @@ class Victory:
 
                                                 
 
-                                if (iGameTurn == getTurnForYear(1300)):
-                                        iCounter = 0
-                                        for iReligion in range(con.iNumReligions):
-                                                iCurrentShrine = con.iShrine + iReligion*4
-                                                apCityList = PyPlayer(iArabia).getCityList()
-                                                for pCity in apCityList:
-                                                        if (pCity.hasBuilding(iCurrentShrine)):
-                                                                iCounter += 1
-                                                                break
-                                                #iCounter += pArabia.getBuildingClassCount(con.iShrine + iReligion*4) #BUGGY!                                                
-                                                #print (iReligion, con.iShrine + iReligion*4, pArabia.getBuildingClassCount(con.iShrine + iReligion*4))
-                                        if (iCounter >= 3):
-                                                self.setGoal(iArabia, 0, 1)
-                                        else:
-                                                self.setGoal(iArabia, 0, 0)
+                                #if (iGameTurn == getTurnForYear(1300)):
+                                #        iCounter = 0
+                                #        for iReligion in range(con.iNumReligions):
+                                #                iCurrentShrine = con.iShrine + iReligion*4
+                                #                apCityList = PyPlayer(iArabia).getCityList()
+                                #                for pCity in apCityList:
+                                #                        if (pCity.hasBuilding(iCurrentShrine)):
+                                #                                iCounter += 1
+                                #                                break
+                                #                #iCounter += pArabia.getBuildingClassCount(con.iShrine + iReligion*4) #BUGGY!                                                
+                                #                #print (iReligion, con.iShrine + iReligion*4, pArabia.getBuildingClassCount(con.iShrine + iReligion*4))
+                                #        if (iCounter >= 3):
+                                #                self.setGoal(iArabia, 0, 1)
+                                #        else:
+                                #                self.setGoal(iArabia, 0, 0)
 
+				# Leoreth: new first Arabian goal: be the most advanced civ in 1300 AD
+				if iGameTurn == getTurnForYear(1300):
+					if self.getMostAdvancedCiv(iArabia) == iArabia:
+						self.setGoal(iArabia, 0, 1)
+					else:
+						self.setGoal(iArabia, 0, 0)
 
 
                             
@@ -2474,6 +2480,23 @@ class Victory:
 		if len(lOwnerList) > 0:
 			bControlled = False			# someone who's not your vassal holds at least one city
 		return bControlled
+
+	def getNumTechs(self, iCiv):
+		iCount = 0
+		for iTech in range(con.iNumTechs):
+			if gc.getTeam(iCiv).isHasTech(iTech):
+				iCount += 1
+		return iCount
+
+	def getMostAdvancedCiv(self, iCiv):
+		iBestCiv = iCiv
+		iBestTechs = self.getNumTechs(iCiv)
+		for iLoopCiv in range(con.iNumPlayers):
+			iTempTechs = self.getNumTechs(iLoopCiv)
+			if iTempTechs > iBestTechs:
+				iBestCiv = iLoopCiv
+				iBestTechs = iTempTechs
+		return iBestCiv
 		
 			
 
@@ -2725,11 +2748,8 @@ class Victory:
 
 		elif iPlayer == iArabia:
 			if iGoal == 0:
-				iCounter = 0
-				for iReligion in range(con.iNumReligions):
-					iCurrentShrine = con.iShrine + iReligion*4
-					iCounter += self.getNumBuildings(iArabia, iCurrentShrine)
-				aHelp.append(self.getIcon(iCounter >= 3) + 'Shrines: ' + str(iCounter) + '/3')
+				iMostAdvancedCiv = self.getMostAdvancedCiv(iArabia)
+				aHelp.append(self.getIcon(iMostAdvancedCiv == iArabia) + 'Most advanced civ: ' + CyTranslator().getText(str(gc.getPlayer(iMostAdvancedCiv).getCivilizationShortDescriptionKey()),()))
 			elif iGoal == 1:
                                 bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)

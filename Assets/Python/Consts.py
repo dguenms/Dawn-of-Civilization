@@ -1008,7 +1008,7 @@ tExceptions = (  #for RiseAndFall
 (), #Maya
 ((65,40), (66,40)), #Byzantium
 ((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
-((82, 34), (73, 40), (74, 40), (75, 40), (71, 36), (72, 37)),  #Arabia
+((82, 34), (73, 40), (75, 40), (71, 36), (72, 37)),  #Arabia
 (), #Khmer
 (), #Indonesia (should probably exclude Borneo)
 (), #Spain
