@@ -2758,7 +2758,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				iValue -= (abs(iDistance) - 4) * 500;
 				break;
             case KOREA:
-                iValue -= (abs(iDistance) - 6) * 500;
+                iValue -= (abs(iDistance) - 5)^2 * 400;
                 break;
 			case MAYA:
 				iValue -= (abs(iDistance) - 3) * 500;
@@ -5410,7 +5410,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									if (iI == CALENDAR)
 										iValue /= 3;
-									if (iI == MACHINERY)
+									if (iI == MACHINERY || iI == PAPER || iI == PRINTING_PRESS)
 										iValue /= 2;
 									//1800 - end
 									break;
