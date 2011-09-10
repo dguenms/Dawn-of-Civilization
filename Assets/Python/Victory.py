@@ -2749,7 +2749,7 @@ class Victory:
 		elif iPlayer == iArabia:
 			if iGoal == 0:
 				iMostAdvancedCiv = self.getMostAdvancedCiv(iArabia)
-				aHelp.append(self.getIcon(iMostAdvancedCiv == iArabia) + 'Most advanced civ: ' + CyTranslator().getText(str(gc.getPlayer(iMostAdvancedCiv).getCivilizationShortDescriptionKey()),()))
+				aHelp.append(self.getIcon(iMostAdvancedCiv == iArabia) + 'Most advanced civilization: ' + CyTranslator().getText(str(gc.getPlayer(iMostAdvancedCiv).getCivilizationShortDescriptionKey()),()))
 			elif iGoal == 1:
                                 bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
