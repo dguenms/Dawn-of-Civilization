@@ -394,21 +394,22 @@ class RiseAndFall:
                 flipText = CyTranslator().getText("TXT_KEY_FLIPMESSAGE1", ())
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
-                                pCurrent = gc.getMap().plot( x, y )
-                                if ( pCurrent.isCity()):
-                                        if (pCurrent.getPlotCity().getOwner() == iHuman):
-                                                #if (not pCurrent.getPlotCity().isCapital()): #exploitable
-                                                if ( ((x, y) != tCapitals[utils.getReborn(iHuman)][iHuman]) and not (self.getCheatMode() == True and pCurrent.getPlotCity().isCapital())):
-                                                        flipText += (pCurrent.getPlotCity().getName() + "\n")
+				if not (x,y) in tExceptions[utils.getReborn(iNewCiv)][iNewCiv]:
+                                	pCurrent = gc.getMap().plot( x, y )
+                                	if ( pCurrent.isCity()):
+                                        	if (pCurrent.getPlotCity().getOwner() == iHuman):
+                                                	#if (not pCurrent.getPlotCity().isCapital()): #exploitable
+                                                	if ( ((x, y) != tCapitals[utils.getReborn(iHuman)][iHuman]) and not (self.getCheatMode() == True and pCurrent.getPlotCity().isCapital())):
+                                                        	flipText += (pCurrent.getPlotCity().getName() + "\n")
                 #exceptions
-                                reborn = utils.getReborn(iNewCiv)
-                if (len(tExceptions[reborn][iNewCiv])):
-                        for j in range(len(tExceptions[reborn][iNewCiv])):
-                                pCurrent = gc.getMap().plot( tExceptions[reborn][iNewCiv][j][0], tExceptions[reborn][iNewCiv][j][1] )
-                                if (pCurrent.isCity()):
-                                        if (pCurrent.getPlotCity().getOwner() == iHuman):
-                                                if (not pCurrent.getPlotCity().isCapital()):
-                                                        flipText += (pCurrent.getPlotCity().getName() + "\n")                                                
+                #reborn = utils.getReborn(iNewCiv)
+                #if (len(tExceptions[reborn][iNewCiv])):
+                #        for j in range(len(tExceptions[reborn][iNewCiv])):
+                #                pCurrent = gc.getMap().plot( tExceptions[reborn][iNewCiv][j][0], tExceptions[reborn][iNewCiv][j][1] )
+                #                if (pCurrent.isCity()):
+                #                        if (pCurrent.getPlotCity().getOwner() == iHuman):
+                #                                if (not pCurrent.getPlotCity().isCapital()):
+                #                                        flipText += (pCurrent.getPlotCity().getName() + "\n")                                                
                 flipText += CyTranslator().getText("TXT_KEY_FLIPMESSAGE2", ())
                                                         
                 self.showPopup(7615, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), flipText, (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
