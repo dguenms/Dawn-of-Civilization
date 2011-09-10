@@ -2006,6 +2006,15 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		return false;
 	}
 
+	// Leoreth: pagan temples only if no religion present
+	if (eBuilding == (BuildingTypes)PAGAN_TEMPLE)
+	{
+		if (getReligionCount() > 0)
+		{
+			return false;
+		}
+	}
+
 	if (GC.getBuildingInfo(eBuilding).isPrereqReligion())
 	{
 		if (getReligionCount() > 0)

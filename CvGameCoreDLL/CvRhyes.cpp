@@ -23,6 +23,47 @@ bool startingEra[36] =		    {true,   true,   true,   false,   true,   false,  fa
 char startingYear600AD[36][6] = {"1775 ", "600 ", "1200 ", "3000 ", "600 ", "1200 ", "XXX ", "600 ", "3000 ", "820 ", "295 ", "750 ", "840 ", "1600 ", "XXX ", "1150 ", "3000 ", "700 ", "1167 ",  "600 ", "660 ", "600 ", "980 ", "65 ", "1190 ", "XXX ", "1500 ", "1280 ", "850 ", "1130 ", "760 ", "860 ", "720 ", "XXX ", "600 ", "XXX "};
 bool startingEra600AD[36] =		{true,   true,   true,   false,   true,   false,  false,   true,   false,   true,  false,   true,   true,   false,   false,   true,   false,   true,	 true,  true,  true,  false,  false,   false,  true,   false,    true,   true,   false,   true,  false,  true,  true,  false,     true,  false};   //AD or BC
 
+//Leoreth: relocate most civ modifiers here (respawns like Italy not included!)
+// CvPlayerAI.cpp
+//										    EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
+int takenTiles[30] =					{	13, 16, 14, 14, 13, 13, 12, 13, 13, 13, 18, 12, 10, 13, 12, 13, 13, 13, 13, 13, 12,  7, 15, 10, 15, 10, 10, 13, 13, 13 }; // default: 13
+int distanceSubtrahend[30] =			{	 4,  5,  3,  3,  3,  4,  4,  3,  3,  4,  5,  3,  3,  4,  4,  4,  4,  3,  3,  3,  3,  5,  4,  3,  4,  3,  4,  3,  3,  5 }; // default: 4
+int distanceSubtrahendAstronomy[30] =	{	 4,  5,  3,  3,  3,  4,  4,  3,  3,  4,  5,  3,  3,  4,  4,  4,  4,  4,  4,  4,  4,  5,  4,  3,  4,  3,  4,  3,  3,  5 };
+int distanceMultiply[30] =				{  500,400,400,500,300,500,500,300,500,500,400,500,400,500,250,400,400,500,500,500,500,150,150,500,150,500,200,500,400,400}; // default: 500
+int distanceMultiplyAstronomy[30] =		{  500,400,400,500,300,500,500,300,500,500,400,500,400,300,250,400,400,150,150,100,300,150,150,500,150,500,200,500,400,400};
+int compactEmpireModifier[30] =			{	40, 40, 45, 40, 10, 40, 20, 30, 20, 40,100, 40, 30,  5, 10, 40, 35, 40, 40, 40, 40, 40,  5, 40,  5, 40, 40, 40, 40, 40}; // default: 10
+int compactEmpireModifierAstronomy[30]= {	40, 40, 45, 40, 10, 40, 20, 30, 20, 40,100, 40, 30,  5, 10, 40, 35, 10,  5,  5, 40, 40,  5, 40,  5, 40, 40, 40, 40, 40};
+int targetCityValueDivisor[30] =		{  100,100,100,100,100,100,100, 66,100,100, 33,100,100, 66, 66,100,100, 33, 33, 33, 33, 33, 33,100, 33,100, 10,100,100, 33}; // default: 100
+
+// CvCity.cpp
+//											EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
+int eraModifierInit[30] =				{    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  3 };
+int cultureModifier[30] =				{   90, 80, 80, 90,100,100,100,100, 90, 90, 50,100,100,130,110,120,120,125,160,130,128,130,140,130,147,140,135,140,150,165 }; // default: 40
+
+// CvHandicapInfos.cpp
+//											EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
+int unitCostModifier[30] =				{  125,115,100,120,110,100,125,110,113,100,113,110,110, 90,105, 90, 90,110, 97,100, 75, 75, 90, 95, 93,100, 75, 95, 80, 75 };
+int researchModifier[30] =				{  135,135,112,125,135,100,100,135, 98,110,112,115,135, 80,100,100,100, 80, 80, 80, 69, 67, 62,110, 75, 79, 73, 87, 75, 63 };
+int distanceMaintenanceModifier[30] =	{  100,100,100,110, 90,100, 75, 75, 95,100,100,100, 80, 70, 70, 80, 80, 50, 50, 25, 60, 50, 45, 80, 50, 60, 58, 70, 60, 60 }; //includes English UP
+int numMaintenanceModifier[30] =		{  135,130,127,135,127,100, 90, 90,110,115,110,115, 80, 75,100,100,100, 70, 70, 70, 70, 70, 70, 90, 72, 80, 70, 85, 70, 70 };
+int civicUpkeepModifier[30] =			{  110,102,105,100, 80, 70, 70, 75, 80, 80,100, 80, 90, 80, 90,100,100, 60, 80, 60, 70, 70, 60, 80, 72, 50, 64, 60, 70, 50 };
+int healthMultiplier[30] =				{    2,  1,  1,  2,  4,  5,  7,  7,  3,  6,  3,  6,  6,  6,  3,  6,  6,  6,  4,  6,  7,  6,  6,  4,  6,  4,  6,  4,  6,  4 }; //don't forget India's -1
+
+// CvPlayer.cpp
+//											EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT TUR AME
+int startingEraFound[30] =				{    0,  0,  0,  0,  1,  1,  1,  1,  2,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  4,  3,  3,  3,  3,  3,  3,  4 };		//in found and canConstruct
+int startingEraFound600AD[30] =			{    0,  0,  2,  0,  1,  1,  1,  1,  2,  1,  2,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  4,  3,  3,  3,  3,  3,  3,  4 };
+int startingEraFoundAstronomy[30] =		{    0,  0,  2,  0,  1,  1,  1,  1,  2,  1,  2,  1,  1,  2,  2,  2,  2,  3,  3,  3,  3,  3,  4,  3,  3,  3,  3,  3,  3,  4 };
+int unitCostModifier2[30] =				{  110,105,110,115,110, 88,110,105, 93, 95,110,105,115, 85, 92, 95,105, 95, 92, 95, 80, 85, 90, 90, 90,105, 80,108, 88, 83 };
+int wonderCostModifier[30] =			{   80,115, 80, 90, 80, 85, 90, 90,100,100,100, 90,110, 90, 90, 90, 80, 90, 70, 90,100,100, 80, 90, 90, 80, 90, 80, 90, 70 };
+int buildingCostModifier[30] =			{  110,120,120,110,100,110, 90, 90,100,100,100, 90,110, 90,100,100, 90, 90, 85, 90, 70,100, 80, 80, 85, 70, 80, 80, 80, 70 };
+int inflationRateModifier[30] =			{  133,137,125,132,130,132,132,130, 81,132, 90,125,120, 72, 85,100, 90, 80, 75, 67, 70, 67, 74,115, 84, 80, 89, 80, 79, 63 };
+int greatPeopleThreshold[30] =			{  140,140,140,140,110,110,110,110,110,110,110,100,120, 90, 80, 90, 90, 77, 70, 74, 77, 77, 70, 80, 73, 70, 70, 70, 77, 64 };
+int currentEra[30] =					{    0,  0,  0,  0,  1,  1,  1,  1,  2,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  2,  2,  2,  2,  2,  2,  3 };
+int currentEra600AD[30] =				{    0,  0,  2,  0,  1,  1,  1,  1,  2,  1,  2,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  2,  2,  2,  2,  2,  2,  3 };
+int growthThreshold[30] =				{  148,134,132,138,130,130,120,120,112,100,112,110, 80, 80, 76, 80, 80, 68, 69, 67, 67, 70, 73, 78, 76, 69, 74, 68, 69, 64 };
+
+
 char uniquePower[36][2][16]  = {
 	{"TXT_KEY_UP_AME", "TXT_KEY_UP_AME2"},
 	{"TXT_KEY_UP_ARA", "TXT_KEY_UP_ARA2"},

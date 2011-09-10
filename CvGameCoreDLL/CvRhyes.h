@@ -120,6 +120,8 @@ typedef list<char*> LISTCHAR;
 #define VERSAILLES				(2)
 #define FORBIDDENPALACE			(2)
 
+#define PAGAN_TEMPLE			(37)
+
 #define HEROICEPIC				(111)
 #define FLAVIANAMPHITHEATRE		(111)
 #define NATIONALEPIC			(112)
@@ -219,6 +221,38 @@ extern char startingYear[36][6];
 extern bool startingEra[36];
 extern char startingYear600AD[36][6];
 extern bool startingEra600AD[36];
+
+extern int takenTiles[30];
+extern int distanceSubtrahend[30];
+extern int distanceSubtrahendAstronomy[30];
+extern int distanceMultiply[30];
+extern int distanceMultiplayAstronomy[30];
+extern int compactEmpireModifier[30];
+extern int compactEmpireModifierAstronomy[30];
+extern int targetCityValueDivisor[30];
+
+extern int eraModifierInit[30];
+extern int cultureModifier[30];
+
+extern int unitCostModifier[30];
+extern int researchModifier[30];
+extern int distanceMaintenanceModifier[30];
+extern int numMaintenanceModifier[30];
+extern int civicUpkeepModifier[30];
+extern int healthMultiplier[30];
+
+extern int startingEraFound[30];
+extern int startingEraFound600AD[30];
+extern int startingEraFoundAstronomy[30];
+extern int unitCostModifier2[30];
+extern int wonderCostModifier[30];
+extern int buildingCostModifier[30];
+extern int inflationRateModifier[30];
+extern int greatPeopleThreshold[30];
+extern int currentEra[30];
+extern int currentEra600AD[30];
+extern int growthThreshold[30];
+
 //extern int militaryBonus[2][18];
 extern char uniquePower[36][2][16];
 extern char uniqueGoals[36][3][18];
