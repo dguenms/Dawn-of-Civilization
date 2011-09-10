@@ -1953,10 +1953,10 @@ iCotton = 35
 
 
 #Buildings (update Persian UHV every time this is changed)
-iTemple = 78 #generic
-iCathedral = 79 #generic
-iMonastery = 80 #generic
-iShrine = 81 #generic
+iTemple = 79 #generic
+iCathedral = 80 #generic
+iMonastery = 81 #generic
+iShrine = 82 #generic
 
 
 iPalace = 0

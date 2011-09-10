@@ -2843,7 +2843,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	            gDLL->getPythonIFace()->callFunction(PYScreensModule, "isForeignCorePlot", argsList2.makeFunctionArgs(), &result2);
                 long iForeignCore = (long)result2;
 
-                if (iSettlerValue >= 100)
+                if (iSettlerValue >= 90)
                 {
                     if (iForeignCore == 1)
                     {
