@@ -348,15 +348,15 @@ class CvPediaBuilding:
 			listSorted[iI] = (gc.getBuildingInfo(iBuilding).getDescription(), iBuilding)
 			iI += 1
 		#Rhye - start
-		if (not bWonder):
+		#if (not bWonder):
                         #listSorted.pop(67) #ziggurat
-                        listSorted.pop(66) #rathaus
-                        listSorted.pop(54) #garden
+                        #listSorted.pop(66) #rathaus
+                        #listSorted.pop(54) #garden
                         #listSorted.pop(50) #hippodrome
                         #listSorted.pop(42) #seowon
-                        listSorted.pop(37) #totem                        
-                        listSorted.pop(5) #ikhanda                        
-                        listSorted.pop(1) #dun
+                        #listSorted.pop(37) #totem                        
+                        #listSorted.pop(5) #ikhanda                        
+                        #listSorted.pop(1) #dun
                 #Rhye - end
 		#listSorted.sort() #Rhye
 		return listSorted

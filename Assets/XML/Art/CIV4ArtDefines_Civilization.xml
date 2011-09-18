@@ -285,5 +285,23 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_SuryaMajapahit.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_THAILAND</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/thailand.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Garuda.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_MUGHALS</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Mughals.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Mughals.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_SELJUK</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Seljuks.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Bow.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

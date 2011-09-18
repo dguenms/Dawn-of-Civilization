@@ -1938,6 +1938,18 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MUG_EMBASSY</Type>
+			<Description>TXT_KEY_BUILDING_MUG_EMBASSY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_MUG_EMBASSY</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TUR_EMBASSY</Type>
 			<Description>TXT_KEY_BUILDING_TUR_EMBASSY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

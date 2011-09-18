@@ -64,6 +64,7 @@ iPortugal = con.iPortugal
 iInca = con.iInca
 iMongolia = con.iMongolia
 iAztecs = con.iAztecs
+iMughals = con.iMughals
 iTurkey = con.iTurkey
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers

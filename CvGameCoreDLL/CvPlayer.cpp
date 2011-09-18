@@ -5320,7 +5320,7 @@ void CvPlayer::found(int iX, int iY)
 			{
 				//Rhye - start switch
 				int startingEra;
-				switch (getID())
+				/*switch (getID())
 				{
 				case EGYPT:
 					startingEra = 0;
@@ -5444,7 +5444,43 @@ void CvPlayer::found(int iX, int iY)
 				default:
 					startingEra = 0;
 					break;
+				}*/
+
+				if (getID() < NUM_MAJOR_PLAYERS)
+				{
+					if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
+					{
+						startingEra = startingEraFoundAstronomy[getID()];
+					}else
+					{
+						if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+						{
+							startingEra = startingEraFound600AD[getID()];
+						}else
+						{
+							startingEra = startingEraFound[getID()];
+						}
+					}
+				}else
+				{
+					startingEra = 0;
 				}
+
+				// handle respawns explicitly here (overwrite)
+				if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+				{
+					if (getID() == ROME)
+					{
+						if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
+							startingEra = 3;
+						else
+							startingEra = 2;
+					}
+
+					if (getID() == PERSIA)
+						startingEra = 3;
+				}
+
 				if (startingEra >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
 				//if (GC.getGameINLINE().getStartEra() >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
 				//Rhye - end switch
@@ -5752,7 +5788,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	{
 		//Rhye - start switch
 		int startingEra;
-		switch (getID())
+		/*switch (getID())
 		{
 		case EGYPT:
 			startingEra = 0;
@@ -5868,7 +5904,49 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			else
 				startingEra = 0;
 			break;
+		}*/
+
+		if (getID() < NUM_MAJOR_PLAYERS)
+		{
+			if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
+			{
+				startingEra = startingEraFoundAstronomy[getID()];
+			}else
+			{
+				if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+				{
+					startingEra = startingEraFound600AD[getID()];
+				}else
+				{
+					startingEra = startingEraFound[getID()];
+				}
+			}
+		}else if (getID() == NATIVE)
+		{
+			startingEra = 0;
+		}else
+		{
+			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+				startingEra = 2;
+			else
+				startingEra = 0;
 		}
+
+		// handle respawns explicitly here (overwrite)
+		if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+		{
+			if (getID() == ROME)
+			{
+				if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
+					startingEra = 3;
+				else
+					startingEra = 2;
+			}
+
+			if (getID() == PERSIA)
+				startingEra = 3;
+		}
+
 		if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 			if (getID() < VIKING)
 				startingEra = 2;
@@ -6215,7 +6293,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 	}
 
 	//Rhye - start switch
-	switch (getID())
+	/*switch (getID())
 	{
 		case EGYPT:
 			iProductionNeeded *= 110;
@@ -6235,7 +6313,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 				iProductionNeeded /= 100;
 			}*/
 			//Rhye - end UP
-			break;
+			/*break;
 		case BABYLONIA:
 			iProductionNeeded *= 115;
 			iProductionNeeded /= 100;
@@ -6313,7 +6391,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 				iProductionNeeded /= 100;
 			}*/
 			//Rhye - end UP
-			break;
+			/*break;
 		case GERMANY:
 			iProductionNeeded *= 80;
 			iProductionNeeded /= 100;
@@ -6378,9 +6456,32 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded *= 100;
 			iProductionNeeded /= 100;
 			break;
-	}
+	}*/
 	//Rhye - end
 
+	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+	{
+		if (getID() == ROME)
+			iProductionNeeded = iProductionNeeded * 110 / 100;
+	}else
+	{
+		if (getID() < NUM_MAJOR_PLAYERS)
+		{
+			iProductionNeeded = iProductionNeeded * unitCostModifier2[getID()] / 100;
+		}else if (getID() == INDEPENDENT || getID() == INDEPENDENT2)
+		{
+			iProductionNeeded = iProductionNeeded * 200 / 100;
+		}else if (getID() == CELTIA || getID() == NATIVE)
+		{
+			iProductionNeeded = iProductionNeeded * 150 / 100;
+		}else if (getID() == BARBARIAN)
+		{
+			iProductionNeeded = iProductionNeeded * 140 / 100;
+		}else
+		{
+			iProductionNeeded = iProductionNeeded * 100 / 100;
+		}
+	}
 
 	//Rhye - start (modern units cost more)
 	if (eUnit == 4) { //Settler
@@ -6474,7 +6575,7 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 	//Rhye - start switch
 	if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
 	{
-		switch (getID())
+		/*switch (getID())
 		{
 			case EGYPT:
 				iProductionNeeded *= 80;
@@ -6612,11 +6713,29 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 100;
 				iProductionNeeded /= 100;
 				break;
+		}*/
+
+		if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+		{
+			if (getID() == ROME)
+				iProductionNeeded = iProductionNeeded * 90 / 100;
+		}else
+		{
+			if (getID() < NUM_MAJOR_PLAYERS)
+			{
+				iProductionNeeded = iProductionNeeded * wonderCostModifier[getID()] / 100;
+			}else if (getID() == INDEPENDENT || getID() == INDEPENDENT2 || getID() == NATIVE)
+			{
+				iProductionNeeded = iProductionNeeded * 150 / 100;
+			}else
+			{
+				iProductionNeeded = iProductionNeeded * 100 / 100;
+			}
 		}
 	}
 	else
 	{
-		switch (getID())
+		/*switch (getID())
 		{
 			case EGYPT:
 				iProductionNeeded *= 110;
@@ -6749,6 +6868,24 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded *= 100;
 				iProductionNeeded /= 100;
 				break;
+		}*/
+
+		if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+		{
+			if (getID() == ROME)
+				iProductionNeeded = iProductionNeeded * 80 / 100;
+		}else
+		{
+			if (getID() < NUM_MAJOR_PLAYERS)
+			{
+				iProductionNeeded = iProductionNeeded * buildingCostModifier[getID()] / 100;
+			}else if (getID() == NATIVE)
+			{
+				iProductionNeeded = iProductionNeeded * 150 / 100;
+			}else
+			{
+				iProductionNeeded = iProductionNeeded * 100 / 100;
+			}
 		}
 	}
 	//Rhye - end
@@ -7417,7 +7554,7 @@ int CvPlayer::calculateInflationRate() const
 	iRatePercent += (iTurns * (iTurns - 1) * iInflationPerTurnTimes10000 * iInflationPerTurnTimes10000) / 2000000;
 	//Rhye - start switch
 	int iRate = iRatePercent;
-	switch (getID())
+	/*switch (getID())
 	{
 		case EGYPT:
 			iRate *= 133;
@@ -7550,7 +7687,29 @@ int CvPlayer::calculateInflationRate() const
 			iRate *= 95;
 			iRate /= 100;
 			break;
+	}*/
+
+	if (getID() < NUM_MAJOR_PLAYERS)
+	{
+		iRate = iRatePercent * inflationRateModifier[getID()] / 100;
+	}else
+	{
+		iRate = iRatePercent * 95 / 100;
 	}
+
+	// handle several special effects explicitly here (overwrite)
+	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+	{
+		if (getID() == ARABIA)
+			iRate = iRatePercent * 115 / 100;
+	}
+
+	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+	{
+		if (getID() == ROME)
+			iRate = iRatePercent * 84 / 100;
+	}
+
 	//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 	//if (GC.getGameINLINE().getGameTurn() >=181 )
 	if (GC.getGameINLINE().getGameTurn() >= getTurnForYear(600) ) // edead: epic/marathon
@@ -8780,7 +8939,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 
 	//Rhye - start switch
 	int result = iThreshold;
-	switch (getID())
+	/*switch (getID())
 	{
 		case EGYPT:
 			result = (iThreshold*140/100);
@@ -8881,7 +9040,29 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 		default:
 			result = (iThreshold*100/100);
 			break;
+	}*/
+
+	if (getID() < NUM_MAJOR_PLAYERS)
+	{
+		result = iThreshold * greatPeopleThresholdArray[getID()] / 100;
+	}else
+	{
+		result = iThreshold * 100 / 100;
 	}
+
+	// handle respawns and era buffs explicitly here (overwrite)
+	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+	{
+		if (getID() == ROME)
+			result = iThreshold * 77 / 100;
+	}
+
+	if (getID() == ETHIOPIA)
+	{
+		if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() <= 2)
+			result = iThreshold * 80 / 100;
+	}
+
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 		if (getID() < VIKING) {
 			result *= 87;
@@ -11542,7 +11723,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 
 		//Rhye - start switch (for multiple new era splashes
 		int startEra;
-		switch (getID())
+		/*switch (getID())
 		{
 		case EGYPT:
 			startEra = 0;
@@ -11643,7 +11824,22 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 		default:
 			startEra = 0;
 			break;
+		}*/
+
+		if (getID() < NUM_MAJOR_PLAYERS)
+		{
+			if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+			{
+				startEra = currentEra600AD[getID()];
+			}else
+			{
+				startEra = currentEra[getID()];
+			}
+		}else
+		{
+			startEra = 0;
 		}
+
 		if (isHuman() && (getCurrentEra() >= startEra) && !GC.getGameINLINE().isNetworkMultiPlayer())
 		//if (isHuman() && (getCurrentEra() != GC.getGameINLINE().getStartEra()) && !GC.getGameINLINE().isNetworkMultiPlayer())
 		//Rhye - end switch
@@ -22426,7 +22622,7 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 	}
 
 	//Rhye - start switch
-	switch (getID())
+	/*switch (getID())
 	{
 		case EGYPT:
 			iThreshold *= 148;
@@ -22555,7 +22751,25 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold *= 130;
 			iThreshold /= 100;
 			break;
+	}*/
+
+	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+	{
+		if (getID() == ROME)
+			iThreshold = iThreshold * 73 / 100;
+		else
+			iThreshold = iThreshold * 130 / 100;
+	}else
+	{
+		if (getID() < NUM_MAJOR_PLAYERS)
+		{
+			iThreshold = iThreshold * growthThreshold[getID()] / 100;
+		}else
+		{
+			iThreshold = iThreshold * 130 / 100;
+		}
 	}
+
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 		if (getID() < VIKING) {
 			iThreshold *= 80;

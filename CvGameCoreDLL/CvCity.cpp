@@ -274,8 +274,8 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	}*/
 	//Rhye - start switch
 	//changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + GC.getEraInfo(GC.getGameINLINE().getStartEra()).getFreePopulation());
-	int eraModifier;
-	switch (getOwnerINLINE())
+	int eraModifier = 0;
+	/*switch (getOwnerINLINE())
 	{
 	case EGYPT:
 		eraModifier = 0;
@@ -389,7 +389,34 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	default:
 		eraModifier = 0;
 		break;
+	}*/
+
+	if (getOwnerINLINE() < NUM_MAJOR_PLAYERS)
+	{
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+		{
+			eraModifier = eraModifierInitAstronomy[getOwnerINLINE()];
+		}else
+		{
+			eraModifier = eraModifierInit[getOwnerINLINE()];
+		}
 	}
+
+	// handle respawned civs explicitly here
+	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).isReborn())
+	{
+		if (getOwnerINLINE() == ROME)
+		{
+			if (GET_TEAM((TeamTypes)ROME).isHasTech((TechTypes)ASTRONOMY))
+			{
+				eraModifier = 2;
+			}else
+			{
+				eraModifier = 1;
+			}
+		}
+	}
+
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 		if (getOwnerINLINE() < VIKING) {
 			eraModifier = 1;
@@ -11748,7 +11775,7 @@ void CvCity::doCulture()
 	if 	(getCommerceRate(COMMERCE_CULTURE) <=4)
 		changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
 	else {
-		switch (getOwnerINLINE())
+		/*switch (getOwnerINLINE())
 	{
 			case EGYPT:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true); //72 before removal of Creative trait
@@ -11885,8 +11912,67 @@ void CvCity::doCulture()
 				break;
 			default:
 				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *40 /100, false, true);
-				break;
-		}
+				break;*/
+
+			if (GET_PLAYER((PlayerTypes) getOwnerINLINE()).isReborn())
+			{
+				if (getOwnerINLINE() == ROME)
+				{
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 130 / 100, false, true);
+				}else
+				{
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 40 / 100, false, true);
+				}
+			}else
+			{
+				if (getOwnerINLINE() < NUM_MAJOR_PLAYERS)
+				{
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * cultureModifier[getOwnerINLINE()] / 100, false, true);
+				}else if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2)
+				{
+					if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) { //late start condition
+						if (getX_INLINE() == 57 && getY_INLINE() == 46) //Marseilles
+							if (getCulture(getOwnerINLINE()) < 1)
+								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
+						else if (getX_INLINE() == 60 && getY_INLINE() == 44) //Rome
+							if (getCulture(getOwnerINLINE()) < 50)
+								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
+						else
+							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
+					}
+					else
+						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
+				}else if (getOwnerINLINE() == NATIVE)
+				{
+					if (hasActiveWorldWonder()) {
+						if (getCulture(getOwnerINLINE()) < 50)
+							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true); }
+					else {
+						if (getCulture(getOwnerINLINE()) < 5)
+							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true); }
+				}else if (getOwnerINLINE() == CELTIA)
+				{
+					if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) { //late start condition (Byzantium)
+						if (getX_INLINE() == 73 && getY_INLINE() == 41) //Alexandretta
+							if (getCulture(getOwnerINLINE()) < 1)
+								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
+						else if (getX_INLINE() == 73 && getY_INLINE() == 38) //Jerusalem
+							if (getCulture(getOwnerINLINE()) < 1)
+								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
+						else
+							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
+					}
+					else
+						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
+				}else if (getOwnerINLINE() == BARBARIAN)
+				{
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *30 /100, false, true);
+				}else
+				{
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 40 / 100, false, true);
+				}
+			}
+		
 	}
 	//Rhye - end
 

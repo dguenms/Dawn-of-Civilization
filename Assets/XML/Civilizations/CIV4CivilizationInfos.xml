@@ -2063,8 +2063,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
-					<BuildingType>BUILDING_INDIAN_MAUSOLEUM</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_GROCER</BuildingClassType>
+					<BuildingType>BUILDING_INDIAN_AYURVEDA_APOTHECARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2139,7 +2139,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
-					<LeaderName>LEADER_AKBAR</LeaderName>
+					<LeaderName>LEADER_SHIVAJI</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
@@ -3063,6 +3063,138 @@
 			<CivilizationActionSound>AS3D_MONGOL_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_MUGHALS</Type>
+			<Description>TXT_KEY_CIV_MUGHALS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_MUGHALS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_MUGHALS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_MUGHALS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_DARK_ROT_GREEN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_MUGHALS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> <!-- Rhye -->
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<!-- Rhye - start -->
+				<City>TXT_KEY_CITY_NAME_KOLHAPUR</City>
+				<City>TXT_KEY_CITY_NAME_JAIPUR</City>
+				<City>TXT_KEY_CITY_NAME_HYDERABAD</City>
+				<City>TXT_KEY_CITY_NAME_PUNE</City>
+				<City>TXT_KEY_CITY_NAME_VIJAYANAGARA</City>
+				<City>TXT_KEY_CITY_NAME_PATALIPUTRA</City>
+				<City>TXT_KEY_CITY_NAME_AGRA</City>
+				<City>TXT_KEY_CITY_NAME_MADURAI</City>
+				<City>TXT_KEY_CITY_NAME_LUCKNOW</City>
+				<City>TXT_KEY_CITY_NAME_BHOPAL</City>
+				<City>TXT_KEY_CITY_NAME_RAJSHAHI</City>
+				<City>TXT_KEY_CITY_NAME_PESHAWAR</City>
+				<City>TXT_KEY_CITY_NAME_DARJEELING</City>
+				<City>TXT_KEY_CITY_NAME_CUTTACK</City>
+				<City>TXT_KEY_CITY_NAME_CALICUT</City>
+				<City>TXT_KEY_CITY_NAME_RAWALPINDI</City>
+				<City>TXT_KEY_CITY_NAME_QUETTA</City>
+				<City>TXT_KEY_CITY_NAME_HOWRAH</City>
+				<City>TXT_KEY_CITY_NAME_TRIVERAPATNAM</City>
+				<City>TXT_KEY_CITY_NAME_DAKPATHAR</City>
+				<City>TXT_KEY_CITY_NAME_THANJAVUR</City>
+				<City>TXT_KEY_CITY_NAME_JAUNPUR</City>
+				<City>TXT_KEY_CITY_NAME_KODAIKANAL</City>
+				<City>TXT_KEY_CITY_NAME_VRINDAVAN</City>
+				<City>TXT_KEY_CITY_NAME_GUWAHATI</City>
+				<City>TXT_KEY_CITY_NAME_BHALUKPONG</City>
+				<City>TXT_KEY_CITY_NAME_SONEPUR</City>
+				<City>TXT_KEY_CITY_NAME_VAISHALI</City>
+				<City>TXT_KEY_CITY_NAME_REWALSAR</City>
+				<City>TXT_KEY_CITY_NAME_KURUKSHETRA</City>
+				<City>TXT_KEY_CITY_NAME_SUBARNAPUR</City>
+				<City>TXT_KEY_CITY_NAME_WADHVAN</City>
+				<City>TXT_KEY_CITY_NAME_NARKANDA</City>
+				<City>TXT_KEY_CITY_NAME_DHANAULTI</City>
+				<City>TXT_KEY_CITY_NAME_CHITRADURGA</City>
+				<City>TXT_KEY_CITY_NAME_SRIKAKULAM</City>
+				<City>TXT_KEY_CITY_NAME_VIJAYAWEDA</City>
+				<City>TXT_KEY_CITY_NAME_BANSWARA</City>
+				<!-- Rhye - end -->
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingType>BUILDING_INDIAN_MAUSOLEUM</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
+					<UnitType>UNIT_MUGHAL_VOLLEY_GUN</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_INDIAN_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_INDIAN_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_GENERAL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs>
+				<FreeTech>
+					<TechType>TECH_MYSTICISM</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+				<FreeTech>
+					<TechType>TECH_MINING</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+			</FreeTechs>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_DESPOTISM</CivicType>
+				<CivicType>CIVIC_BARBARISM</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
+				<CivicType>CIVIC_PAGANISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_AKBAR</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_PERSIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_PERSIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_NATIVE_AMERICA</Type>
 			<Description>TXT_KEY_CIV_NATIVE_AMERICA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_NATIVE_AMERICA_SHORT_DESC</ShortDescription>
@@ -3931,6 +4063,66 @@
 			<CivilizationActionSound>AS3D_RUSSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_SELJUK</Type>
+			<Description>TXT_KEY_CIV_SELJUK_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_SELJUK_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_SELJUK_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_SELJUK_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_SELJUK</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_SELJUK</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<bPlayable>0</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>City Name Missing</City>
+			</Cities>
+			<Buildings/>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SPY</UnitClassType>
+					<UnitType>NONE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitType>UNIT_SELJUK_GHULAM_WARRIOR</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses/>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_DESPOTISM</CivicType>
+				<CivicType>CIVIC_BARBARISM</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
+				<CivicType>CIVIC_PAGANISM</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_ALP</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_OTTOMAN</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_OTTOMAN_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_OTTOMAN_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_SPAIN</Type>
 			<Description>TXT_KEY_CIV_SPAIN_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_SPAIN_SHORT_DESC</ShortDescription>
@@ -4151,6 +4343,106 @@
 			<DerivativeCiv>CIVILIZATION_BABYLONIA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_SUMERIA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_SUMERIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_THAILAND</Type>
+			<Description>TXT_KEY_CIV_THAILAND_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_THAILAND_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_THAILAND_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_THAILAND_PEDIA</Civilopedia>
+			<!-- Rhye -->
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_BLUE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_THAILAND</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<!-- Rhye - start -->
+				<City>TXT_KEY_CITY_NAME_HARIHARALAYA</City>
+				<City>TXT_KEY_CITY_NAME_ISVARAPURA</City>
+				<City>TXT_KEY_CITY_NAME_JAYENDRANAGARI</City>
+				<City>TXT_KEY_CITY_NAME_VIMAYAPURA</City>
+				<City>TXT_KEY_CITY_NAME_LINGAPURA</City>
+				<City>TXT_KEY_CITY_NAME_CHOK_GARGYAR</City>
+				<City>TXT_KEY_CITY_NAME_MAHENDRAPARVATA</City>
+				<City>TXT_KEY_CITY_NAME_AMARENDRAPURA</City>
+				<City>Chiang Rai</City>
+				<City>Kauthara</City>
+				<City>TXT_KEY_CITY_NAME_LAVO</City>
+				<City>TXT_KEY_CITY_NAME_PREAH_VIHEAR</City>
+				<City>TXT_KEY_CITY_NAME_PHANOM_RUNG</City>
+				<City>TXT_KEY_CITY_NAME_PHIMAI</City>
+				<City>TXT_KEY_CITY_NAME_MUANG_TAM</City>
+				<City>TXT_KEY_CITY_NAME_BENG_MELEA</City>
+				<City>TXT_KEY_CITY_NAME_PRASAT_BAKAN</City>
+				<City>TXT_KEY_CITY_NAME_CHALIENG</City>
+				<City>TXT_KEY_CITY_NAME_SUKHOTHAI</City>
+				<City>TXT_KEY_CITY_NAME_VIANGCHAN</City>
+				<City>TXT_KEY_CITY_NAME_BATTAMBANG</City>
+				<City>TXT_KEY_CITY_NAME_SURYAPARVATA</City>
+				<City>TXT_KEY_CITY_NAME_PREY_NOKOR</City>
+				<City>TXT_KEY_CITY_NAME_O_KEO</City>
+				<City>TXT_KEY_CITY_NAME_ANINDITAPURA</City>
+				<City>TXT_KEY_CITY_NAME_ISANAPURA</City>
+				<City>TXT_KEY_CITY_NAME_SHRESTAPURA</City>
+				<City>TXT_KEY_CITY_NAME_VYADHAPURA</City>
+				<City>TXT_KEY_CITY_NAME_BHAVAPURA</City>
+				<City>TXT_KEY_CITY_NAME_SAMBHUPURA</City>
+				<City>TXT_KEY_CITY_NAME_LOVEK</City>
+				<City>TXT_KEY_CITY_NAME_UDONG</City>
+				<City>TXT_KEY_CITY_NAME_NAGARA_JAYASRI</City>
+				<!-- Rhye - end -->
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
+					<BuildingType>BUILDING_THAI_HO_TRAI</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CUIRASSIER</UnitClassType>
+					<UnitType>UNIT_THAI_CHANG_SUEK</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<!-- Rhye -->
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_DESPOTISM</CivicType>
+				<CivicType>CIVIC_BARBARISM</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
+				<CivicType>CIVIC_PAGANISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_NARESUAN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_MONGKUT</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_VIKING</Type>

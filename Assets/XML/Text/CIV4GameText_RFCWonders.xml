@@ -1052,5 +1052,15 @@
 		<English>Taixue</English>
 		<German>Taixue</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDIAN_AYURVEDA_APOTHECARY</Tag>
+		<English>Ayurveda Apothecary</English>
+		<German>Ayurveda-Apotheke</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THAI_HO_TRAI</Tag>
+		<English>Ho Trai</English>
+		<German>Ho Trai</German>
+	</TEXT>
 
 </Civ4GameText>
