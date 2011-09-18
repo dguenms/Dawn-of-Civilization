@@ -19,4 +19,114 @@
 		<English>Mughal</English>
 		<German>Mogul</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG00</Tag>
+		<English>Mughal peoples</English>
+		<German>Mogulvölker</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG01</Tag>
+		<English>Mughal Empire</English>
+		<German>Mogulreich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG02</Tag>
+		<English>Mughal Empire</English>
+		<German>Mogulreich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG03</Tag>
+		<English>Mughal Empire</English>
+		<German>Mogulreich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG04</Tag>
+		<English>Mughal Empire</English>
+		<German>Mogulreich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG05</Tag>
+		<English>Republic of Pakistan</English>
+		<German>Republik Pakistan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG06</Tag>
+		<English>People's Republic of Pakistan</English>
+		<German>Volksrepublik Pakistan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG07</Tag>
+		<English>Republic of Pakistan</English>
+		<German>Republik Pakistan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG08</Tag>
+		<English>Mughal Empire</English>
+		<German>Mogulreich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG09</Tag>
+		<English>Islamic Republic of Pakistan</English>
+		<German>Islamische Republik Pakistan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG10</Tag>
+		<English>Satrapy of the Indus</English>
+		<German>Indus-Satrapie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG11</Tag>
+		<English>Province of India</English>
+		<German>Provinz Indien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG12</Tag>
+		<English>Emirate of Delhi</English>
+		<German>Emirat von Delhi</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG13</Tag>
+		<English>Viceroyalty of West India</English>
+		<German>Vizekönigreich Westindien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG14</Tag>
+		<English>Mandate of West India</English>
+		<German>Mandats-Westindien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG15</Tag>
+		<English>Dominion of Pakistan</English>
+		<German>Dominion Pakistan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG16</Tag>
+		<English>German West India</English>
+		<German>Deutsch-Westindien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG17</Tag>
+		<English>Soviet Pakistan</English>
+		<German>Sowjet-Pakistan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG18</Tag>
+		<English>Mughal Khanate</English>
+		<German>Mogulkhanat</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG19</Tag>
+		<English>Eyalet of Pakistan</English>
+		<German>Eyalet Pakistan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG20</Tag>
+		<English>Tributary Mughal State</English>
+		<German>Mogul-Tributstaat</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DN_MUG21</Tag>
+		<English>Protectorate of Pakistan</English>
+		<German>Protektorat Pakistan</German>
+	</TEXT>
 </Civ4GameText>
