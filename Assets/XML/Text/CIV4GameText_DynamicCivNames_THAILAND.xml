@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_DESC</Tag>
+		<English>The Thais</English>
+		<German>The Thais</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_SHORT_DESC</Tag>
+		<English>Thailand</English>
+		<German>Thailand</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_ADJECTIVE</Tag>
+		<English>Thai</English>
+		<German>Thai</German>
+	</TEXT>
+</Civ4GameText>
