@@ -1350,4 +1350,15 @@
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</Spanish>
 	</TEXT>
 
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK</Tag>
+		<English>Chang Suek</English>
+		<German>Chang Suek</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MUGHAL_VOLLEY_GUN</Tag>
+		<English>Volley Gun</English>
+		<German>Orgelkanone</German>
+	</TEXT>
+
 </Civ4GameText>

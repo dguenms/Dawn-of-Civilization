@@ -7592,6 +7592,10 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 115;
 		iRate /= 100;
 		break;
+	case MUGHALS:
+		iRate *= 110;
+		iRate /= 100;
+		break;
 	case AZTEC:
 		iRate *= 135;
 		iRate /= 100;

@@ -67,6 +67,7 @@ iPortugal = con.iPortugal
 iInca = con.iInca
 iMongolia = con.iMongolia
 iAztecs = con.iAztecs
+iMughals = con.iMughals
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
@@ -109,6 +110,7 @@ pPortugal = gc.getPlayer(iPortugal)
 pInca = gc.getPlayer(iInca)
 pMongolia = gc.getPlayer(iMongolia)
 pAztecs = gc.getPlayer(iAztecs)
+pMughals = gc.getPlayer(iMughals)
 pAmerica = gc.getPlayer(iAmerica)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
@@ -146,6 +148,7 @@ teamPortugal = gc.getTeam(pPortugal.getTeam())
 teamInca = gc.getTeam(pInca.getTeam())
 teamMongolia = gc.getTeam(pMongolia.getTeam())
 teamAztecs = gc.getTeam(pAztecs.getTeam())
+teamMughals = gc.getTeam(pMughals.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
@@ -155,8 +158,8 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 3, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 6, 2, 3, 2, 1, 0, 0, 0)
-                                                                                   #ma po in mo az tu am
+tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 3, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 7, 2, 3, 2, 1, 0, 0, 0, 0)
+                                                                                   #ma po in mo mu az tu am
 
 # starting locations coordinates
 tCapitals = con.tCapitals
@@ -334,11 +337,11 @@ class RiseAndFall:
                 return sd.scriptDict['tTempFlippingCity']
 
 	def setFirstContactMongols(self, iCiv, iValue):
-		lMongolCivs = [iIndia, iPersia, iByzantium, iArabia, iRussia]
+		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 		sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)] = iValue
 
 	def getFirstContactMongols(self, iCiv):
-		lMongolCivs = [iIndia, iPersia, iByzantium, iArabia, iRussia]
+		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 		return sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)]
                 
 ###############
@@ -626,6 +629,7 @@ class RiseAndFall:
                 pInca.changeGold(700)
                 pMongolia.changeGold(250) 
                 pAztecs.changeGold(600)
+		pMughals.changeGold(400)
                 pTurkey.changeGold(300)
                 pAmerica.changeGold(1500)
                
@@ -1987,7 +1991,7 @@ class RiseAndFall:
                 iHuman = utils.getHumanID()
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
                 
-                lConditionalCivs = [iByzantium]
+                lConditionalCivs = [iByzantium, iMughals]
 
                 # Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -2659,16 +2663,17 @@ class RiseAndFall:
                 
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
-                                pCurrent = gc.getMap().plot( x, y )
-                                if (not pCurrent.isCity()):
-                                        utils.convertPlotCulture(pCurrent, iCiv, 100, False)
+				if not (x,y) in tExceptions[utils.getReborn(iCiv)][iCiv]:
+	                                pCurrent = gc.getMap().plot( x, y )
+        	                        if (not pCurrent.isCity()):
+                	                        utils.convertPlotCulture(pCurrent, iCiv, 100, False)
 
-                reborn = utils.getReborn(iCiv)
-                if (len(tExceptions[reborn][iCiv])):
-                        for j in range(len(tExceptions[reborn][iCiv])):
-                                pCurrent = gc.getMap().plot( tExceptions[reborn][iCiv][j][0], tExceptions[reborn][iCiv][j][1] )
-                                if (not pCurrent.isCity()):
-                                        utils.convertPlotCulture(pCurrent, iCiv, 100, False)
+                #reborn = utils.getReborn(iCiv)
+                #if (len(tExceptions[reborn][iCiv])):
+                #        for j in range(len(tExceptions[reborn][iCiv])):
+                #                pCurrent = gc.getMap().plot( tExceptions[reborn][iCiv][j][0], tExceptions[reborn][iCiv][j][1] )
+                #                if (not pCurrent.isCity()):
+                #                        utils.convertPlotCulture(pCurrent, iCiv, 100, False)
 
 
 
@@ -3061,7 +3066,12 @@ class RiseAndFall:
                                                 utils.makeUnitAI(con.iPikeman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
                                                 
                                                 if (teamOldWorldCiv.isHasTech(con.iGunpowder)):
-                                                        utils.makeUnitAI(con.iCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
+							if iOldWorldCiv == iFrance:
+                                                        	utils.makeUnitAI(con.iCulverine, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
+                                                        elif iOldWorldCiv == iMughals:
+	                                                        utils.makeUnitAI(con.iMughalVolleyGun, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
+							else:
+								utils.makeUnitAI(con.iCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
                                                 else:
                                                         utils.makeUnitAI(con.iCatapult, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
 
@@ -3102,10 +3112,10 @@ class RiseAndFall:
                                                 if (gc.getPlayer(iOldWorldCiv).isHuman()):
                                                         CyInterface().addMessage(iOldWorldCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_OLDWORLD", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
-		# Leoreth: Mongol horde event against India, Persia, Arabia, Byzantium, Russia
+		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
 			print("AI Mongolia makes contact with somebody")
-			if iTeamX in [iIndia, iPersia, iArabia, iByzantium, iRussia]:
+			if iTeamX in [iPersia, iArabia, iByzantium, iRussia]:
 				print("New contact is a valid target")
 				if gc.getGame().getGameTurn() < getTurnForYear(1500) and self.getFirstContactMongols(iTeamX) == 0:
 
@@ -3122,7 +3132,7 @@ class RiseAndFall:
 						pCity = utils.getEasternmostCity(iTeamX)
 					elif iTeamX == iPersia:
 						pCity = utils.getNorthernmostCity(iTeamX)
-					elif iTeamX == iIndia:
+					elif iTeamX == iMughals:
 						pCity = utils.getWesternmostCity(iTeamX)
 
 					if pCity != -1:
@@ -3381,6 +3391,9 @@ class RiseAndFall:
                 if (iCiv == iAztecs):
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 5)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
+		if iCiv == iMughals:
+			utils.makeUnit(con.iMughalVolleyGun, iCiv, tPlot, 2)
+			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 4)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 3)
@@ -3595,6 +3608,13 @@ class RiseAndFall:
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 4)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 4)
+		if iCiv == iMughals:
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
+			utils.makeUnit(con.iMughalVolleyGun, iCiv, tPlot, 3)
+			utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
+			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)
+			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 4)
+			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
@@ -3716,6 +3736,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 4)
                 if (iCiv == iAztecs):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+		if iCiv == iMughals:
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 4)
 
@@ -3818,6 +3840,9 @@ class RiseAndFall:
                 if ( pAztecs.isHuman() ):
                     utils.makeUnit(iSettler, iAztecs, tCapitals[0][iAztecs], 1)
                     utils.makeUnit(iScout, iAztecs, tCapitals[0][iAztecs], 1)
+		if pMughals.isHuman():
+			utils.makeUnit(iSettler, iMughals, tCapitals[0][iMughals], 1)
+			utils.makeUnit(iWarrior, iMughals, tCapitals[0][iMughals], 1)
                 if ( pAmerica.isHuman() ):
                     utils.makeUnit(iSettler, iAmerica, tCapitals[0][iAmerica], 1)
                     utils.makeUnit(iWarrior, iAmerica, tCapitals[0][iAmerica], 1)
@@ -3912,6 +3937,9 @@ class RiseAndFall:
                 if ( pAztecs.isHuman() ):
                     utils.makeUnit(iSettler, iAztecs, tCapitals[0][iAztecs], 1)
                     utils.makeUnit(iScout, iAztecs, tCapitals[0][iAztecs], 1)
+		if pMughals.isHuman():
+			utils.makeUnit(iSettler, iMughals, tCapitals[0][iMughals], 1)
+			utils.makeUnit(iWarrior, iMughals, tCapitals[0][iMughals], 1)
                 if ( pAmerica.isHuman() ):
                     utils.makeUnit(iSettler, iAmerica, tCapitals[0][iAmerica], 1)
                     utils.makeUnit(iWarrior, iAmerica, tCapitals[0][iAmerica], 1)
@@ -4715,6 +4743,14 @@ class RiseAndFall:
                                 teamAztecs.setHasTech(con.iCurrency, True, iCiv, False, False)
                                 teamAztecs.setHasTech(con.iHunting, True, iCiv, False, False)
                                 teamAztecs.setHasTech(con.iArchery, True, iCiv, False, False)
+			if iCiv == iMughals:
+				lMughalTechs =  [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
+						con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
+						con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iFeudalism, con.iCivilService, con.iGuilds, \
+						con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iEngineering, con.iCurrency, \
+						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding]
+				for iTech in lMughalTechs:
+					teamMughals.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iAmerica):
                                 for x in range(con.iDemocracy+1):
                                                 teamAmerica.setHasTech(x, True, iCiv, False, False)

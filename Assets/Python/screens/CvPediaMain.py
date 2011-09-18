@@ -13,6 +13,8 @@ import string
 import CvUtil
 import ScreenInput
 
+import Consts as con
+
 PyPlayer = PyHelpers.PyPlayer
 PyCity = PyHelpers.PyCity
 
@@ -482,41 +484,41 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
                         tList.pop(36) #marsh
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
-                        tList.pop(49) #wang kon
-                        tList.pop(43) #sitt.b.
-                        tList.pop(42) #shaka   
-                        #tList.pop(25) #justinian 
-                        tList.pop(20) #hatshepsut
-                        tList.pop(17) #gilgamesh
-                        tList.pop(8) #charlemagne
-                        tList.pop(6) #brennus
-                        tList.pop(5) #boudica
-                        tList.pop(0) #barbarian
+                        #tList.pop(con.iWangKon) #wang kon
+                        tList.pop(con.iSittingBull) #sitt.b.
+                        tList.pop(con.iShaka) #shaka   
+                        #tList.pop(con.iJustinian) #justinian 
+                        #tList.pop(con.iHatshepsut) #hatshepsut
+                        tList.pop(con.iGilgamesh) #gilgamesh
+                        #tList.pop(con.iCharlemagne) #charlemagne
+                        #tList.pop(con.iBrennus) #brennus
+                        tList.pop(con.iBoudica) #boudica
+                        tList.pop(con.iBarbarianLeader) #barbarian
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):
-                        tList.pop(38) #natives
-                        tList.pop(37) #independent2
-                        tList.pop(36) #independent
-                        tList.pop(35) #zulu
-                        tList.pop(33) #sumeria                        
-                        tList.pop(25) #nat.Am.
-                        #tList.pop(20) #korea                  
-                        tList.pop(14) #hre
-                        tList.pop(6) #celts
-                        #tList.pop(4) #byzantium
+                        tList.pop(con.iCivNative) #natives
+                        tList.pop(con.iCivIndependent2) #independent2
+                        tList.pop(con.iCivIndependent) #independent
+                        tList.pop(con.iCivZulu) #zulu
+                        tList.pop(con.iCivSumeria) #sumeria                        
+                        tList.pop(con.iCivNativeAmericans) #nat.Am.
+                        #tList.pop(con.iCivKorea) #korea                  
+                        tList.pop(con.iCivHolyRoman) #hre
+                       	tList.pop(con.iCivCelt) #celts
+                        #tList.pop(con.iCivByzantium) #byzantium
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING): #all -3 because there aren't palaces in the list
                         #removed in CvPediaBuilding.py
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT):
                     	for i in range(174):	#remove unique GPs (currently 29 civs with 6 GPs each -> 6*29=174)
-				tList.pop(127)	#first unique GP, change when new units are added
+				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
 			#tList.pop(83) #Hwacha
                         #tList.pop(71) #Cataphract  
-                        tList.pop(41) #Landsknecht
-                        tList.pop(38) #Impi
-                        tList.pop(33) #DogSoldier                          
-                        tList.pop(32) #Vulture
-                        tList.pop(28) #GallicWarrior
+                        tList.pop(con.iHolyRomanLandsknecht) #Landsknecht
+                        tList.pop(con.iZuluImpi) #Impi
+                        tList.pop(con.iNativeAmericaDogSoldier) #DogSoldier                          
+                        tList.pop(con.iSumerianVulture) #Vulture
+                        tList.pop(con.iCelticGallicWarrior) #GallicWarrior
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT):
                         tList.pop(1) #water worked

@@ -51,7 +51,7 @@ tPool3 = (con.iEgypt,
           con.iNetherlands,
           con.iMongolia,
           con.iKhmer,
-		  con.iIndonesia,
+	  con.iIndonesia,
           con.iSpain,
           con.iGreece,
           con.iMali,
@@ -64,7 +64,8 @@ tPool3 = (con.iEgypt,
           con.iPersia,
           con.iFrance,
 	  con.iByzantium,
-          con.iKorea)
+          con.iKorea,
+	  con.iMughals)
 
 
 class Communications:

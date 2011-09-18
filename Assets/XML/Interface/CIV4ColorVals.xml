@@ -1053,5 +1053,26 @@
 			<fBlue>.5020</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_DARK_ROT_GREEN</Type>
+			<fRed>0.18</fRed>
+			<fGreen>0.35</fGreen>
+			<fBlue>0.00</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_DARK_ROT_GREEN_TEXT</Type>
+			<fRed>0.60</fRed>
+			<fGreen>0.80</fGreen>
+			<fBlue>0.30</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_SELJUK</Type>
+			<fRed>0.745</fRed>
+			<fGreen>0.862</fGreen>
+			<fBlue>0.941</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

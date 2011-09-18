@@ -24,7 +24,7 @@
 #define RANDPLOT_NOT_CITY											(0x00000040)
 
 #ifdef _USRDLL
-#define MAX_CIV_PLAYERS												(34) //Rhye, Leoreth: +3 for Byzantium and Korea and Indonesia
+#define MAX_CIV_PLAYERS												(35) //Rhye, Leoreth: +4 for Byzantium and Korea and Indonesia and Mughals
 #else
 #define MAX_CIV_PLAYERS												(CvGlobals::getInstance().getMaxCivPlayers())
 #endif

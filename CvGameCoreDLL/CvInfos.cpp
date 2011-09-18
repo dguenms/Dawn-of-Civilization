@@ -10103,7 +10103,7 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 			result /= 100;
 		}
 	}
-	switch (pl)
+	/*switch (pl)
 	{
 	case EGYPT:
 		return result*125/100;
@@ -10175,7 +10175,31 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 	default:
 		return result;
 		break;
+	}*/
+
+	int iFinalResult;
+
+	if (pl < NUM_MAJOR_PLAYERS)
+	{
+		iFinalResult = result * unitCostModifier[pl] / 100;
+	}else if (pl == INDEPENDENT || pl == INDEPENDENT2)
+	{
+		iFinalResult = result * 130 / 100;
+	}else
+	{
+		iFinalResult = result;
 	}
+
+	// handle reborn civs explicitly (overwrite)
+	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	{
+		if (pl == ROME)
+		{
+			iFinalResult = result * 100 / 100;
+		}
+	}
+
+	return iFinalResult;
 }
 //Rhye - end
 
@@ -10351,6 +10375,55 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		return researchPercent*110/100;
 		break;
 	}
+
+	/*int iFinalResearchPercent;
+
+	if (pl < NUM_MAJOR_PLAYERS)
+	{
+		iFinalResearchPercent = researchPercent * researchModifier[pl] / 100;
+	}else if (pl == CELTIA)
+	{
+		if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+			iFinalResearchPercent = researchPercent * 350 / 100;
+		else
+			iFinalResearchPercent = researchPercent * 100 / 100;
+	}else
+	{
+		iFinalResearchPercent = researchPercent * 110 / 100;
+	}
+
+	// handle several other aspects explicitly (overwrite): era buffs, Mayan UP, reborn civs
+	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 2)
+	{
+		if (pl == GREECE)
+			iFinalResearchPercent = researchPercent * 116 / 100;
+		if (pl == ROME)
+			iFinalResearchPercent = researchPercent * 108 / 100;
+		if (pl == MAYA)												// Maya UP
+			iFinalResearchPercent = researchPercent * 65 / 100;
+	}
+
+	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 1)
+	{
+		if (pl == CHINA)
+			iFinalResearchPercent = researchPercent * 102 / 100;
+		if (pl == BABYLONIA)
+			iFinalResearchPercent = researchPercent * 120 / 100;
+	}
+
+	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)
+	{
+		if (pl == INDIA)
+			iFinalResearchPercent = researchPercent * 135 / 100;
+	};
+
+	if (GET_PLAYER((PlayerTypes)pl).getReborn())
+	{
+		if (pl == ROME)
+			iFinalResearchPercent = researchPercent * 92 / 100;
+	}
+
+	return iFinalResearchPercent;*/
 }
 //Rhye - end
 
@@ -10370,7 +10443,7 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 			result /= 100;
 		}
 
-	switch (pl)
+	/*switch (pl)
 	{
 	case EGYPT:
 		return result*10/10;
@@ -10443,7 +10516,29 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 			return result*5/10;
 		else
 			return result*2/10;
+	}*/
+
+	int iFinalResult;
+
+	if (pl < NUM_MAJOR_PLAYERS)
+	{
+		iFinalResult = result * distanceMaintenanceModifier[pl] / 100;
+	}else
+	{
+		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+			iFinalResult = result * 50 / 100;
+		else
+			iFinalResult = result * 20 / 100;
 	}
+
+	// handle respawns explicitly here (overwrite)
+	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	{
+		if (pl == ROME)
+			iFinalResult = result * 70 / 100;
+	}
+
+	return iFinalResult;
 }
 //Rhye - end
 
@@ -10462,7 +10557,7 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 			result *= 80;
 			result /= 100;
 		}
-	switch (pl)
+	/*switch (pl)
 	{
 	case EGYPT:
 		return result*135/100;
@@ -10532,7 +10627,29 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 			return result*6/10;
 		else
 			return result*3/10;
+	}*/
+
+	int iFinalResult;
+
+	if (pl < NUM_MAJOR_PLAYERS)
+	{
+		iFinalResult = result * numMaintenanceModifier[pl] / 100;
+	}else
+	{
+		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+			iFinalResult = result * 60 / 100;
+		else
+			iFinalResult = result * 30 / 100;
 	}
+
+	// handle respawned civs explicitly here (overwrite)
+	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	{
+		if (pl == ROME)
+			iFinalResult = result * 80 / 100;
+	}
+
+	return iFinalResult;
 }
 //Rhye - end
 
@@ -10571,7 +10688,7 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 			result /= 100;
 		}
 
-	switch (pl)
+	/*switch (pl)
 	{
 	case EGYPT:
 		return result*11/10;
@@ -10645,7 +10762,29 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 			return result*9/10;
 		else
 			return result*7/10;
+	}*/
+
+	int iFinalResult;
+
+	if (pl < NUM_MAJOR_PLAYERS)
+	{
+		iFinalResult = result * civicUpkeepModifier[pl] / 100;
+	}else
+	{
+		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+			iFinalResult = result * 90 / 100;
+		else
+			iFinalResult = result * 70 / 100;
 	}
+
+	// handle respawns explicitly here (overwrite)
+	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	{
+		if (pl == ROME)
+			iFinalResult = result * 80 / 100;
+	}
+
+	return iFinalResult;
 }
 //Rhye - end
 
@@ -10664,7 +10803,7 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 {
 	int result = m_iHealthBonus;
 
-	switch (pl)
+	/*switch (pl)
 	{
 	case EGYPT:
 		result = m_iHealthBonus*2;
@@ -10762,7 +10901,24 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 	default:
 		result = m_iHealthBonus;
 		break;
+	}*/
+
+	if (pl < NUM_MAJOR_PLAYERS)
+	{
+		result = m_iHealthBonus * healthMultiplier[pl];
 	}
+
+	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	{
+		if (pl == ROME)
+			result = m_iHealthBonus * 6;
+	}
+
+	if (pl == INDIA)
+	{
+		result -= 1;
+	}
+
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) { //late start condition
 		if (pl < VIKING && result < 5) {
 			result += 1;

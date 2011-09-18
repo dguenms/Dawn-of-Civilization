@@ -36,6 +36,18 @@ BeginTeam
 EndTeam
 BeginTeam                 
 EndTeam
+BeginTeam
+EndTeam
+BeginTeam                 
+EndTeam
+BeginTeam                 
+EndTeam
+BeginTeam                 
+EndTeam
+BeginTeam                 
+EndTeam
+BeginTeam                 
+EndTeam
 BeginTeam                 
 EndTeam
 BeginTeam
@@ -58,7 +70,7 @@ BeginTeam
 EndTeam
 BeginTeam                 
 EndTeam
-BeginTeam                 
+BeginTeam
 EndTeam
 BeginTeam                 
 EndTeam
@@ -71,16 +83,6 @@ EndTeam
 BeginTeam                 
 EndTeam
 BeginTeam
-EndTeam
-BeginTeam                 
-EndTeam
-BeginTeam                 
-EndTeam
-BeginTeam                 
-EndTeam
-BeginTeam                 
-EndTeam
-BeginTeam                 
 EndTeam
 BeginTeam
 EndTeam
@@ -375,9 +377,21 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
+	LeaderType=LEADER_AKBAR
+	CivType=CIVILIZATION_MUGHALS
+	Team=28
+	PlayableCiv=0
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_BUREAUCRACY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FREE_SPEECH
+	StateReligion=RELIGION_ISLAM
+	Handicap=HANDICAP_PRINCE
+EndPlayer
+BeginPlayer
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN                 
-	Team=28                 
+	Team=29                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -390,7 +404,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA                 
-	Team=29                 
+	Team=30                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_EMANCIPATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SERFDOM
@@ -404,7 +418,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
-	Team=30                 
+	Team=31                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -413,7 +427,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
-	Team=31                 
+	Team=32                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -422,7 +436,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_NATIVE
 	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
-	Team=32                 
+	Team=33                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -430,7 +444,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT                 
-	Team=33                 
+	Team=34                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 

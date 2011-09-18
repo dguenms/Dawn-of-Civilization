@@ -2361,6 +2361,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
+		aiUnitAIVal[UNITAI_SETTLE] /= 4;
 		break;
 	case CHINA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
@@ -2530,6 +2531,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		break;
 	case MALI:
+		break;
+	case MUGHALS:
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
 		break;
 	case TURKEY:
 		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
@@ -3240,6 +3246,10 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case AZTEC:
 										if (iI == CHICHENITZA) iTempValue *= 3;
+										break;
+									case MUGHALS:
+										if (iI == TAJMAHAL) iTempValue *= 4;
+										else if (iI == HARMANDIR_SAHIB) iTempValue *= 2;
 										break;
 									case AMERICA:
 										if (iI == STATUEOFLIBERTY) iTempValue *= 2;
@@ -4789,6 +4799,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iValue -= 1;
 					break;
 				case AZTEC:
+					iValue -= 1;
+					break;
+				case MUGHALS:
 					iValue -= 1;
 					break;
 				case TURKEY:
