@@ -9,9 +9,6 @@ typedef list<char*> LISTCHAR;
 #define EARTH_X					(124)
 #define EARTH_Y					(68)
 
-#define NUM_MAJOR_PLAYERS		(30)
-#define ITALY					ROME
-
 #define MAX_COM_SHRINE			(20)
 
 #define GREATPALACE				(1)
@@ -25,6 +22,9 @@ typedef list<char*> LISTCHAR;
 #define NUM_WONDERS					(179)
 #define NUM_BUILDINGS_PLAGUE		(180)
 #define NUM_BUILDINGTYPES_PLAGUE	(137)
+
+#define NUM_MAJOR_PLAYERS		(31)
+#define ITALY					ROME
 
 enum MyCivs
 {

@@ -23530,6 +23530,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -25710,6 +25714,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -26862,6 +26870,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -28006,6 +28018,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -29143,6 +29159,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -30294,6 +30314,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -31451,6 +31475,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -32599,6 +32627,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -33744,6 +33776,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -34894,6 +34930,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -36052,6 +36092,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -37195,6 +37239,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -38347,6 +38395,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -39497,6 +39549,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -40645,6 +40701,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -41798,6 +41858,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -42941,6 +43005,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -44090,6 +44158,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -45250,6 +45322,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -46403,6 +46479,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -47563,6 +47643,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -48713,6 +48797,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -49855,6 +49943,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -51004,6 +51096,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -52150,6 +52246,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -53303,6 +53403,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -54447,6 +54551,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -55598,6 +55706,10 @@
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
 			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
@@ -56741,6 +56853,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -57889,6 +58005,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_TAOIST_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ZOROASTRIAN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>

@@ -76,4 +76,9 @@
 		<Italian>Ambasciata bizantina</Italian>
 		<Spanish>Embajada bizantina</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUG_EMBASSY</Tag>
+		<English>Mughal Embassy</English>
+		<German>Mogul-Botschaft</German>
+	</TEXT>
 </Civ4GameText>
