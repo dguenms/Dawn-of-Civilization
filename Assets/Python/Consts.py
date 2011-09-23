@@ -1984,6 +1984,7 @@ iHitler,
 -1,
 -1,
 -1,
+-1,
 -1)
 
 tCommunistLeaders = (
