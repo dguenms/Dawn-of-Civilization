@@ -10283,7 +10283,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 			researchPercent /= 100;
 		}
 
-	switch (pl)
+	/*switch (pl)
 	{
 	case EGYPT:
 		return researchPercent*135/100; //125 before the new timeline
@@ -10374,9 +10374,9 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 	default:
 		return researchPercent*110/100;
 		break;
-	}
+	}*/
 
-	/*int iFinalResearchPercent;
+	int iFinalResearchPercent;
 
 	if (pl < NUM_MAJOR_PLAYERS)
 	{
@@ -10423,7 +10423,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 			iFinalResearchPercent = researchPercent * 92 / 100;
 	}
 
-	return iFinalResearchPercent;*/
+	return iFinalResearchPercent;
 }
 //Rhye - end
 

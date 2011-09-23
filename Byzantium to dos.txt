@@ -1,6 +1,0 @@
-# Greek AIWars map
-# Roman city name map
-# Greek settler map
-# original Byzantine rename function
-# find new third leader for Rome
-# balance spawn units and techs
