@@ -892,6 +892,7 @@
 			<Description>TXT_KEY_BUILDING_CASTLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CASTLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CASTLE_STRATEGY</Strategy>
+			<Help>TXT_KEY_VASSALAGE_REQUIREMENT</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CASTLE</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -900,7 +901,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			
+			<PrereqCivic>CIVIC_VASSALAGE</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -8074,7 +8075,7 @@
 			</CommerceChangeDoubleTimes>
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
-				<iCommerce>30</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
 			<GlobalCommerceModifiers/>
 			<SpecialistExtraCommerces/>
