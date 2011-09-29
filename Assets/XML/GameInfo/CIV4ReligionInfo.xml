@@ -247,7 +247,7 @@
 			<Adjective>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ZOROASTRIANISM_PEDIA</Civilopedia>
 			<!-- Rhye -->
-			<TechPrereq>TECH_MONARCHY</TechPrereq>
+			<TechPrereq>TECH_MONOTHEISM</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ZOROASTRIAN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>50</iSpreadFactor> <!-- Rhye -->
