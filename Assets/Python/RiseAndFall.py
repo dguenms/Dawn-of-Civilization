@@ -688,6 +688,13 @@ class RiseAndFall:
                 pGuiyang.setImprovementType(-1)
                 pGuiyang.setRouteType(-1)
                 pGuiyang.setFeatureType(con.iForest, 0)
+
+		pXian = gc.getMap().plot(100, 44)
+		pXian.getPlotCity().kill()
+		pXian.setImprovementType(-1)
+		pXian.setRouteType(-1)
+		pXian.setFeatureType(con.iForest, 0)
+
                 tCultureRegionTL = (98, 37)
                 tCultureRegionBR = (109, 49)
                 for x in range(tCultureRegionTL[0], tCultureRegionBR[0]+1):       

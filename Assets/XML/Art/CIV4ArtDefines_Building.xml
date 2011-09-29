@@ -1491,7 +1491,7 @@
 			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Monument/Monument.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Obelisk.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,6,4</Button>
+			<Button>Art/Interface/Buttons/Buildings/Temple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ETHIOPIAN_STELE</Type>

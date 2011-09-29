@@ -1358,7 +1358,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 		int iX = pCity->getX_INLINE();
 		int iY = pCity->getY_INLINE();
 		if ((iX == 58 && iY == 39) || //Carthage
-			(iX == 76 && iY == 40) || //Babylon
+			//(iX == 76 && iY == 40) || //Babylon
 			(iX == 62 && iY == 42) || //Pompeii
 			(iX == 76 && iY == 42) || //Niniveh
 			(iX == 77 && iY == 42) || //Niniveh
@@ -5429,7 +5429,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								switch (getID())
 								{
 								case EGYPT:
-									if (iI == WRITING || iI == SAILING)
+									if (iI == WRITING || iI == SAILING || iI == MONOTHEISM)
 										iValue /= 3;
 									if (iI == MEDITATION || iI == PRIESTHOOD)
 										iValue /= 5;
@@ -5473,7 +5473,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                     }
 									break;
 								case BABYLONIA:
-									if (iI == MEDITATION || iI == CALENDAR || iI == PRIESTHOOD)
+									if (iI == MEDITATION || iI == CALENDAR || iI == PRIESTHOOD || iI == MONOTHEISM)
 										iValue /= 3;
 									if (iI == WRITING || iI == CODEOFLAWS)
 										iValue *= 3;
@@ -5495,7 +5495,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									//1800
 									if (iI == METALCASTING)
 										iValue *= 2;
-									if (iI == ALPHABET || iI == LITERATURE || iI == PHILOSOPHY || iI == DRAMA || iI == POLYTHEISM || iI == AESTHETICS)
+									if (iI == ALPHABET || iI == PHILOSOPHY || iI == DRAMA || iI == POLYTHEISM || iI == AESTHETICS || iI == LITERATURE)
 										iValue *= 3;
 									if (iI == SAILING)
 										iValue *= 4;
