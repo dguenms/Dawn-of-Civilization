@@ -4402,8 +4402,10 @@ class CityNameManager:
 				city.setName('Tamiat', False)
                                 
                 if (iNewOwner == iIndia):       
-                        if sName == 'Madras':
+                        if sName == 'Madras' or sName == 'Madarasapatinam':
                                 city.setName('Chennai', False)
+			elif sName == 'Thanjapore':
+				city.setName('Thanjavur', False)
                         if sName == 'Coedeloer':
                                 city.setName('Cuddalore', False)
                         if (sName == 'Tranquebar' or sName == 'Trankebar'):
@@ -4433,7 +4435,7 @@ class CityNameManager:
                                 city.setName('Kauthara', False)
 
                 if (iNewOwner == iChina): 
-                        if (sName == 'Khanbaliq' or sName == 'Pekin' or sName == 'Hokkin' or sName == 'Zhongdu'):
+                        if (sName == 'Khanbaliq' or sName == 'Pekin' or sName == 'Hokkin'):
                                 city.setName('Beijing', False)
                         if sName == 'Shinkyo':
                                 city.setName('Changchun', False)
@@ -6672,6 +6674,10 @@ class CityNameManager:
                                 city.setName('The Hague', False)
                         if (sName == 'Lisboa' or sName == 'Allis Ubbo' or sName == 'Olissipo' or sName == "Al-'Ishbunah" or sName == 'Felicitas Julia' or sName == 'Lissabon' or sName == 'Lisbonne'):
                                 city.setName('Lisbon', False)
+			if sName == 'Thanjavur':
+				city.setName('Thanjapore', False)
+			elif sName == 'Madarasapatinam':
+				city.setName('Madras', False)
 
                 if (iNewOwner == iGermany): 
                         if sName == ('Colonia Agrippina' or sName == 'Keulen'):

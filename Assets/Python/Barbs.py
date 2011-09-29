@@ -59,6 +59,8 @@ lLyon = [56, 47, -350, 0] #117
 #lAxum = [72, 29, -300, 0] #121
 lShenyang = [105, 49, -300, 0]
 lBordeaux = [53, 48, -300, 0] #121
+lThanjavur = [91, 31, -300, 0]
+lMadras = [92, 33, -300, 0]
 lCartagena = [54, 42, -230, 0] #125
 lArtaxata = [77, 44, -190,0] #128
 lDunhuang = [95, 47, -100, 0] #133 Orka
@@ -332,6 +334,9 @@ class Barbs:
                 self.foundCity(iNative, lMombasa, "Mombasa", iGameTurn, 1, con.iZuluImpi, 1)
                 self.foundCity(iBarbarian, lKazan, "Kazan", iGameTurn, 2, con.iHorseArcher, 1)
                 self.foundCity(iNative, lKongo, "Mbanza Kongo", iGameTurn, 1, con.iZuluImpi, 1)
+
+		self.foundCity(iIndependent, lThanjavur, "Thanjavur", iGameTurn, 1, con.iWarElephant, 1)
+		self.foundCity(iIndependent, lMadras, "Madarasapatinam", iGameTurn, 2, con.iWarElephant, 2)
 
                 if ( self.foundCity(iBarbarian, lDunhuang, "Dunhuang", iGameTurn, 1, con.iArcher, 1) ): #Orka                    
                         if (not gc.getPlayer(con.iChina).isHuman()): #Orka     
