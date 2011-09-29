@@ -2361,13 +2361,15 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
-		aiUnitAIVal[UNITAI_SETTLE] /= 4;
+		aiUnitAIVal[UNITAI_SETTLE] /= 8;
 		break;
 	case CHINA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_COUNTER] /= 2;
 		aiUnitAIVal[UNITAI_ATTACK] *= 3;
+		aiUnitAIVal[UNITAI_SETTLE] *= 3;
+		aiUnitAIVal[UNITAI_SETTLE] /= 2;
 		break;
 	case BABYLONIA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;

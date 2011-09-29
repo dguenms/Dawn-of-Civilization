@@ -34067,6 +34067,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=30
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -34450,7 +34451,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=31
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
