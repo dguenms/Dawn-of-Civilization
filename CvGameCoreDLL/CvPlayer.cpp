@@ -8523,7 +8523,8 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			iValue += pLoopCity->getPopulation();
 			iValue += GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("FOUND_RELIGION_CITY_RAND"), "Found Religion");
 
-			iValue /= (pLoopCity->getReligionCount() + 1);
+            if (eReligion != BUDDHISM && eReligion != TAOISM)
+                iValue /= (pLoopCity->getReligionCount() + 1);
 
 			if (pLoopCity->isCapital())
 			{
@@ -8546,6 +8547,10 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 				iValue /= 8;
 			}
 			//Rhye - end
+
+			//Leoreth: exclude 1 population cities because it doesn't make sense to have a religion founded there
+			if (pLoopCity->getPopulation() == 1)
+                iValue = 1;
 
 
 			iValue = std::max(1, iValue);
