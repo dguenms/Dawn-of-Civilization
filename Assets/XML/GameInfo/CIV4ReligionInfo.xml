@@ -269,7 +269,7 @@
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Zoroaster.dds</Button>
 			<!-- Rhye -->
-			<TechButton>Art/Interface/Buttons/TechTree/monarchy.dds</TechButton>
+			<TechButton>Art/Interface/Buttons/TechTree/monotheism.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Confucianism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,7,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Judaism/Jud_Found.nif</MovieFile>
 			<MovieSound>AS2D_BUILD_JEWISH_MOVIE</MovieSound>

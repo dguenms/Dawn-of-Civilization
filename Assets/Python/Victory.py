@@ -2692,6 +2692,7 @@ class Victory:
 			if iGoal == 0:
 				iTechsStolen = self.getTechsStolen()
 				aHelp.append(self.getIcon(iTechsStolen >= 5) + 'Techs stolen: '+str(iTechsStolen)+'/5')
+				aHelp.append('Total culture: '+str(pJapan.countTotalCulture()))
 			elif iGoal == 1:
 				iFirstRankCiv = self.getHighestRankCiv()
 				bFirstRank = (iFirstRankCiv == iJapan)
