@@ -880,8 +880,15 @@ class Victory:
                                 #                self.setGoal(iJapan, 0, 0)
 
 				# Leoreth: new first goal: steal five techs by 1600 AD
+				#if iGameTurn == getTurnForYear(1600):
+				#	if self.getGoal(iJapan, 0) == -1:
+				#		self.setGoal(iJapan, 0, 0)
+
+				# Leoreth: new first goal: have 24000 culture in 1600 AD
 				if iGameTurn == getTurnForYear(1600):
-					if self.getGoal(iJapan, 0) == -1:
+					if pJapan.countTotalCulture() >= 24000:
+						self.setGoal(iJapan, 0, 1)
+					else:
 						self.setGoal(iJapan, 0, 0)
 
 
@@ -2353,12 +2360,13 @@ class Victory:
 		#					sd.setGoal(iJapan, 0, 1)
 
 	def onTechStolen(self, iPlayer, iTech):
+		return
 		# Leoreth: first goal for Japan: steal five technologies by 1600 AD
-		if iPlayer == iJapan:
-			self.increaseTechsStolen()
-			if self.getTechsStolen() == 5:
-				sd.setGoal(iJapan, 0, 1)
-                                        
+		#if iPlayer == iJapan:
+		#	self.increaseTechsStolen()
+		#	if self.getTechsStolen() == 5:
+		#		sd.setGoal(iJapan, 0, 1)
+                                       
 
 
         def calculateTopCityCulture(self, x, y):
@@ -2690,9 +2698,9 @@ class Victory:
 
 		elif iPlayer == iJapan:
 			if iGoal == 0:
-				iTechsStolen = self.getTechsStolen()
-				aHelp.append(self.getIcon(iTechsStolen >= 5) + 'Techs stolen: '+str(iTechsStolen)+'/5')
-				aHelp.append('Total culture: '+str(pJapan.countTotalCulture()))
+				iCulture = pJapan.countTotalCulture()
+				#aHelp.append(self.getIcon(iTechsStolen >= 5) + 'Techs stolen: '+str(iTechsStolen)+'/5')
+				aHelp.append(self.getIcon(iCulture >= 24000) + 'Total culture: '+str(iCulture)+'/24000')
 			elif iGoal == 1:
 				iFirstRankCiv = self.getHighestRankCiv()
 				bFirstRank = (iFirstRankCiv == iJapan)

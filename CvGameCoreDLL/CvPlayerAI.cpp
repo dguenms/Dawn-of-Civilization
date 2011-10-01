@@ -5453,7 +5453,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 4;
 									if (iI == WRITING && (!(GET_PLAYER((PlayerTypes)BABYLONIA).isHuman()) || GET_TEAM((TeamTypes)BABYLONIA).isHasTech((TechTypes)WRITING)))
 										iValue *= 4;	// fair conditions for the Babylonian UHV, otherwise even more luck dependent
-									if (iI == GUNPOWDER || iI == PAPER)
+									if (iI == GUNPOWDER || iI == PAPER || iI == PRINTING_PRESS)
 										iValue *= 2;
 									if (iI == CIVIL_SERVICE) {
 										iValue *= 3;
@@ -5471,6 +5471,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue *= 2;
                                         iValue /= 3;
                                     }
+									if (iI == OPTICS || iI == ASTRONOMY || iI == LIBERALISM)
+										iValue /= 4;
 									break;
 								case BABYLONIA:
 									if (iI == MEDITATION || iI == CALENDAR || iI == PRIESTHOOD || iI == MONOTHEISM)
