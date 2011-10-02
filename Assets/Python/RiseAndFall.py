@@ -4753,8 +4753,8 @@ class RiseAndFall:
 			if iCiv == iMughals:
 				lMughalTechs =  [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
 						con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
-						con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iFeudalism, con.iCivilService, con.iGuilds, \
-						con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iEngineering, con.iCurrency, \
+						con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, \
+						con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, \
 						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding]
 				for iTech in lMughalTechs:
 					teamMughals.setHasTech(iTech, True, iCiv, False, False)
