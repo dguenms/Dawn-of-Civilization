@@ -264,6 +264,8 @@ class CvRFCEventHandler:
                         self.up.turkishUP(city)
 		elif (playerType == con.iMongolia and bConquest):
 			self.up.mongolUP(city)
+		elif (playerType == con.iMughals):
+			self.up.mughalUP(city)
 
                 if (playerType < iNumMajorPlayers):
                          utils.spreadMajorCulture(playerType, city.getX(), city.getY())

@@ -183,6 +183,8 @@ class Resources:
 
                         gc.getMap().plot(11, 45).setBonusType(iFish) #California
 
+			gc.getMap().plot(115, 52).setBonusType(iCow) #Hokkaido
+
 
 
 

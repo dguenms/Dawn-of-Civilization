@@ -39,3 +39,4 @@
 # new Chinese UB: Taixue (Library): 3 scientist slots
 # new Chinese first goal: be first to discover Compass, Gunpowder, Paper, Printing Press
 # castles now require the vassalage civic
+# Anti-Tank-Infantry now requires Rocketry

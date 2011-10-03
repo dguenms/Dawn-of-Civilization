@@ -4441,7 +4441,7 @@ class CityNameManager:
                                 city.setName('Changchun', False)
                         if (sName == 'Chach' or sName == 'Shash' or sName == 'Tashkent' or sName == 'Binkath'):
                                 city.setName('Cheshih', False)
-                        if (sName == 'Hanseong' or sName == 'Keijo'):
+                        if (sName == 'Hanseong' or sName == 'Keijou'):
                                 city.setName('Hancheng', False)
                         if sName == 'Port Edward':
                                 city.setName('Weihai', False)
@@ -5400,7 +5400,7 @@ class CityNameManager:
                         elif (sName == 'Siljikgug'):
                                 city.setName('Samcheok', False)	
                         elif (sName == 'Hanseong' or sName == 'Seoul' or sName == 'Shouer' or sName == 'Hancheng'):
-                                city.setName('Keijo', False)	
+                                city.setName('Keijou', False)	
                         elif (sName == 'Gwangju'):
                                 city.setName('Koushu', False)
                         elif (sName == 'Busan' or sName == 'Pusan'):
@@ -5569,7 +5569,7 @@ class CityNameManager:
                                 city.setName('Songak', False)	
                         elif (sName == 'Chunsen'):
                                 city.setName('Chunju', False)	
-                        elif (sName == 'Keijo' or sName == 'Shouer' or sName == 'Hancheng'):
+                        elif (sName == 'Keijou' or sName == 'Shouer' or sName == 'Hancheng'):
                                 city.setName('Seoul', False)
                         elif (sName == 'Koushuu'):
                                 city.setName('Gwangju', False)
@@ -6021,11 +6021,16 @@ class CityNameManager:
                                 city.setName('Davao', False)
                         if (sName == 'Raoagu' or sName == 'Laowo'):
                                 city.setName('Laoag', False)
-								
-				#Notes on the Indonesian CNM:
 
-				#Sundapura -> Jayakarta -> Jakarta
-				#Tumasik -> Malacca -> Singapura
+		if iNewOwner == iIndonesia:
+			if sName == 'Malaca' or sName == 'Malacca' or sName == 'Malakka':
+				city.setName('Melaka', False)
+			elif sName == 'Singapore' or sName == 'Singapur' or sName == 'Xinjiapo' or sName == 'Shounantou':
+				city.setName('Singapura', False)
+			elif sName == 'Batavia' or sName == 'Jakaruta':
+				city.setName('Jakarta', False)
+			elif sName == 'Manira':
+				city.setName('Manila', False)
 
                 if (iNewOwner == iSpain): 
                         if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'Cadix' or sName == 'C&#225;dis'):
@@ -7392,7 +7397,9 @@ class CityNameManager:
                         if sName == 'Wantar Chawin':
                                 city.setName('Chavín de Hu&#225;ntar', False)								
                         if sName == 'Punu':
-                                city.setName('Puno', False)	
+                                city.setName('Puno', False)
+			if sName == 'Tumasik' or sName == 'Singapura' or sName == 'Singapore':
+				city.setName('Malaca', False)	
 
 
                 if (iNewOwner == iInca):
@@ -7429,6 +7436,8 @@ class CityNameManager:
                                 city.setName("Qara Qorum", False)
                         if (sName == "Irkutsk"):
                                 city.setName("Erkh&#252;&#252;", False)
+			if sName == 'Cant&#227;o':
+				city.setName("Guangzhou", False)
 
                 if (iNewOwner == iTurkey): 
                         if (sName == 'Byzantion' or sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == "Konstantinopol'" or sName == "Car'grad"):
@@ -7653,6 +7662,7 @@ class CityNameManager:
 				city.setName('Akka', False)
 			if sName == 'Damietta' or sName == 'Tamiat' or sName == 'Domyat':
 				city.setName('Dimyat', False)
+			
 						
                 if (iNewOwner == iAmerica): 
                         if (sName == 'Nieuw Amsterdam' or sName == "N'yu-York" or sName == 'Nyuu Yooku'):

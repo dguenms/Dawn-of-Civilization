@@ -5270,6 +5270,30 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		}
 	}
 
+	//Leoreth: prevent AI from settling on food resources
+	if (!isHuman())
+	{
+		BonusTypes bonus = pPlot->getBonusType();
+		if (bonus != NO_BONUS)
+		{
+			switch ((int)bonus)
+			{
+			case BONUS_BANANA:
+			case BONUS_CORN:
+			case BONUS_COW:
+			case BONUS_DEER:
+			case BONUS_PIG:
+			case BONUS_RICE:
+			case BONUS_SHEEP:
+			case BONUS_WHEAT:
+				return false;
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
 	return true;
 }
 

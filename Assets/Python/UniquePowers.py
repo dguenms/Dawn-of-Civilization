@@ -68,6 +68,7 @@ iMali = con.iMali
 iTurkey = con.iTurkey
 iInca = con.iInca
 iMongolia = con.iMongolia
+iMughals = con.iMughals
 iAztecs = con.iAztecs
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
@@ -270,12 +271,20 @@ class UniquePowers:
 
 #------------------ARABIAN U.P.-------------------
 
+	def mughalUP(self, city):
+		pMughals = gc.getPlayer(iMughals)
+		iStateReligion = pMughals.getStateReligion()
+
+		if iStateReligion >= 0:
+			city.setHasReligion(iStateReligion, True, True, False)
+		
+
         def arabianUP(self, city):
                 pArabia = gc.getPlayer(iArabia)
                 iStateReligion = pArabia.getStateReligion()
 
                 if (iStateReligion >= 0):
-			for iReligion in range(7):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
+			for iReligion in range(con.iNumReligions):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
 				if city.isHasReligion(iReligion) and not city.isHolyCity():
 					city.setHasReligion(iReligion, False, False, False)
 				if city.hasBuilding(iTemple + iReligion*4):
@@ -483,7 +492,7 @@ class UniquePowers:
 
 
 	def mongolUP(self, city):
-		if (city.getPopulation() >= 7):
+		if (not gc.getPlayer(iMongolia).isHuman() or city.getPopulation() >= 7):
 			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 2)
 		elif (city.getPopulation() >= 4):
 			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 1)

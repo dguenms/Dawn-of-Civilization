@@ -2465,7 +2465,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case INDONESIA:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
-		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
+		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
@@ -3232,6 +3232,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case TURKEY:
 										if (iI == HAGIASOPHIA || iI == TOPKAPI)	iTempValue *= 4;
+										else if (iI == TAJMAHAL) iTempValue /= 4;
 										break;
 									case PORTUGAL:
 										if (iI == NOTREDAME) {

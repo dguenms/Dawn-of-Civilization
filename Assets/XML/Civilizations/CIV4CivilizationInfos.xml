@@ -2063,8 +2063,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_GROCER</BuildingClassType>
-					<BuildingType>BUILDING_INDIAN_AYURVEDA_APOTHECARY</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
+					<BuildingType>BUILDING_INDIAN_STEPWELL</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
