@@ -932,11 +932,11 @@ class RiseAndFall:
                                         utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 2)
                                         utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
 
-                if (iGameTurn <= getTurnForYear(1100) and not gc.getPlayer(iEgypt).isPlayable()):       # keep independent culture away from southern italy to help Byzantium settle there
-                        for x in range(41, 45):
-                                for y in range(55, 60):
-                                        plot = gc.getMap().plot(x,y)
-                                        utils.convertPlotCulture(plot, iByzantium, 100, False)
+                #if (iGameTurn <= getTurnForYear(1100) and not gc.getPlayer(iEgypt).isPlayable()):       # keep independent culture away from southern italy to help Byzantium settle there
+                #        for x in range(41, 45):
+                #                for y in range(55, 60):
+                #                        plot = gc.getMap().plot(x,y)
+                #                        utils.convertPlotCulture(plot, iByzantium, 100, False)
 
                 #kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs
                 if (iGameTurn >= getTurnForYear(con.tBirth[iVikings])+2 and iGameTurn <= getTurnForYear(con.tBirth[iVikings])+utils.getTurns(10)):
@@ -994,17 +994,20 @@ class RiseAndFall:
 
                 #resurrection of civs
 		print "Resurrection of Civs"
-                iNumDeadCivs1 = 11 #5 in vanilla, 8 in warlords (that includes native and celt)
-                iNumDeadCivs2 = 9 #3 in vanilla, 6 in Warlords: here we must count natives and celts as dead too
-                if (not gc.getPlayer(0).isPlayable()):  #late start condition
-                        iNumDeadCivs1 -= 2
-                        iNumDeadCivs2 -= 2
-                if (gc.getGame().countCivPlayersEverAlive() - gc.getGame().countCivPlayersAlive() > iNumDeadCivs1): 
-                        if (iGameTurn % utils.getTurns(15) == 10): #in Warlords 14, in vanilla 13
-                                self.resurrection(iGameTurn)                        
-                elif (gc.getGame().countCivPlayersEverAlive() - gc.getGame().countCivPlayersAlive() > iNumDeadCivs2): 
-                        if (iGameTurn % utils.getTurns(30) == 15): #in Warlords 25, in vanilla 20
-                                self.resurrection(iGameTurn)
+                #iNumDeadCivs1 = 11 #5 in vanilla, 8 in warlords (that includes native and celt)
+                #iNumDeadCivs2 = 9 #3 in vanilla, 6 in Warlords: here we must count natives and celts as dead too
+                #if (not gc.getPlayer(0).isPlayable()):  #late start condition
+                #        iNumDeadCivs1 -= 2
+                #        iNumDeadCivs2 -= 2
+                #if (gc.getGame().countCivPlayersEverAlive() - gc.getGame().countCivPlayersAlive() > iNumDeadCivs1): 
+                #        if (iGameTurn % utils.getTurns(15) == 10): #in Warlords 14, in vanilla 13
+                #                self.resurrection(iGameTurn)                        
+                #elif (gc.getGame().countCivPlayersEverAlive() - gc.getGame().countCivPlayersAlive() > iNumDeadCivs2): 
+                #        if (iGameTurn % utils.getTurns(30) == 15): #in Warlords 25, in vanilla 20
+                #                self.resurrection(iGameTurn)
+
+		if iGameTurn % utils.getTurns(15) == 10:
+			self.resurrection(iGameTurn)
 
 ##############################################################################################################
 
@@ -1598,7 +1601,7 @@ class RiseAndFall:
 
                               
         def resurrection(self, iGameTurn):
-		print "Check resurrection"
+		print "Check resurrection in game turn year: "+str(gc.getGame().getGameTurnYear())
                 iMinNumCities = 2
                 bEnabled = True
 
@@ -1614,8 +1617,12 @@ class RiseAndFall:
 				print "Check resurrection for player "+str(iDeadCiv)
 				if len(con.tResurrectionIntervals[iDeadCiv]) > 0:
 					for tInterval in con.tResurrectionIntervals[iDeadCiv]:
-						if iGameTurn >= tInterval[0] and iGameTurn <= tInterval[1]:
+						print "Check interval: ("+str(tInterval[0])+", "+str(tInterval[1])+")"
+						if iGameTurn >= getTurnForYear(tInterval[0]) and iGameTurn <= getTurnForYear(tInterval[1]):
+							print "Result: possible"
 							bPossible = True
+						else:
+							print "Result: impossible"
                                 #iDeadCiv = iIndia #DEBUG
                                 cityList = []
                                 if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > getTurnForYear(con.tBirth[iDeadCiv]) + utils.getTurns(50) and iGameTurn > utils.getLastTurnAlive(iDeadCiv) + utils.getTurns(20) and con.tRebirth[iDeadCiv] == -1 and bPossible): # last condition added by Leoreth, civ must not have a scripted respawn
@@ -1684,7 +1691,7 @@ class RiseAndFall:
                                                                                                                  cityList.append(pCurrent.getPlotCity())
                                                                                                                  #print (iDeadCiv, pCurrent.getPlotCity().getName(), pCurrent.getPlotCity().getOwner(), "4", cityList)
                                         #print("len(cityList)",len(cityList))
-					print "Leoreth rebirth check 2"
+					#print "Leoreth rebirth check 2"
                                         if (len(cityList) >= iMinNumCities or (len(cityList) >= 1 and (iDeadCiv == iNetherlands))): #no portugal: they have the azores
                                                 bDeadCivFound = True
                                                 break
@@ -1705,7 +1712,7 @@ class RiseAndFall:
                                         teamDeadCiv.makePeace(l)
                                 self.setNumCities(iDeadCiv, 0) #reset collapse condition
 
-				print "Leoreth rebirth check 3"
+				#print "Leoreth rebirth check 3"
                                 #reset vassallage
                                 for iOtherCiv in range(iNumPlayers):
                                         if (teamDeadCiv.isVassal(iOtherCiv) or gc.getTeam(gc.getPlayer(iOtherCiv).getTeam()).isVassal(iDeadCiv)):
@@ -3517,13 +3524,13 @@ class RiseAndFall:
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if (tSeaPlot):
 				utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
-				utils.makeUnit(con.iTrireme, iCiv, tSeaPlot, 2)
+				utils.makeUnit(con.iTrireme, iCiv, tSeaPlot, 1)
 				pIndonesia.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				pIndonesia.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				if utils.getHumanID() != iIndonesia:
-					pIndonesia.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-					utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
-					utils.makeUnit(con.iArcher, iCiv, tSeaPlot, 1)
+				#if utils.getHumanID() != iIndonesia:
+				#	pIndonesia.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				#	utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
+				#	utils.makeUnit(con.iArcher, iCiv, tSeaPlot, 1)
 				utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(con.iArcher, iCiv, tSeaPlot, 1)
 				utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
@@ -3620,8 +3627,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iMughalVolleyGun, iCiv, tPlot, 3)
 			utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)
-			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 4)
-			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
+			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 1)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
@@ -3648,9 +3654,9 @@ class RiseAndFall:
 			utils.makeUnit(con.iMusketman, iCiv, tPlot, 8)
 			utils.makeUnit(con.iCannon, iCiv, tPlot, 5)
 			utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 3)
-			if not gc.getPlayer(0).isPlayable():
-				utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
-				utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 3)
+			#if not gc.getPlayer(0).isPlayable():
+			#	utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
+			#	utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 3)
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
                 lReligions = [0, 0, 0, 0, 0, 0, 0, 0]

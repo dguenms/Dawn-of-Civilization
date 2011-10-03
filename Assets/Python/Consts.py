@@ -996,7 +996,7 @@ tExceptions = (  #for RiseAndFall
 
 tNormalAreasTL = (
 ((65, 30), #Egypt
-(86, 29), #India
+(87, 28), #India
 (99, 39), #China
 (74, 38), #Babylonia
 (64, 39), #Greece
@@ -1062,7 +1062,7 @@ tNormalAreasTL = (
 
 tNormalAreasBR = (
 ((72, 37), #Egypt
-(97, 42), #India
+(94, 37), #India
 (108, 50), #China
 (79, 44), #Babylonia
 (68, 44), #Greece
@@ -1682,13 +1682,13 @@ iSugar, iWine, iWhales, iDrama, iMusic, iMovies, iCotton) = range(iNumBonuses)
 
 iNumBuildings = 179
 (iPalace, iGreatPalace, iVersailles, iWalls, iCelticDun, iCastle, iSpanishCitadel, iBarracks, iZuluIkhanda, iStable,
-iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iHospital, iRecyclingCenter,
+iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iHospital, iRecyclingCenter,
 iLighthouse, iVikingTradingPost, iHarbor, iCarthageCothon, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
 iForge, iMaliMint, iFactory, iGermanAssemblyPlant, iCoalPlant, iJapaneseShalePlant, iHydroPlant, iNuclearPlant,
 iIndustrialPark, iObelisk, iEgyptianObelisk, iEthiopianStele, iNativeAmericaTotem, iPublicTransportation, iAcademy,
 iLibrary, iArabianMadrassa, iChineseTaixue, iThaiHoTrai, iUniversity, iKoreanSeowon, iObservatory, iLaboratory, iRussianResearchInstitute,
 iTheatre, iFrenchSalon, iByzantineHippodrome, iChinesePavillion, iIndonesianCandi, iColosseum, iGreekOdeon, iMayaBallCourt,
-iBabylonGarden, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iGrocer, iIndianAyurvedaApothecary, iBank, iEnglishStockExchange,
+iBabylonGarden, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iGrocer, iBank, iEnglishStockExchange,
 iSupermarket, iAmericanMall, iCourthouse, iAztecSacrificialAltar, iHolyRomanRathaus, iSumerianZiggurat, iJail, iIndianMausoleum,
 iLevee, iNetherlandsDike, iIntelligenceAgency, iNationalSecurity, iJewishTemple, iJewishCathedral, iJewishMonastery,
 iJewishShrine, iChristianTemple, iChristianCathedral, iChristianMonastery, iChristianShrine, iIslamicTemple, iIslamicCathedral,

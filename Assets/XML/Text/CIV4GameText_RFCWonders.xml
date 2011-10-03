@@ -1053,14 +1053,19 @@
 		<German>Taixue</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_INDIAN_AYURVEDA_APOTHECARY</Tag>
-		<English>Ayurveda Apothecary</English>
-		<German>Ayurveda-Apotheke</German>
+		<Tag>TXT_KEY_BUILDING_INDIAN_STEPWELL</Tag>
+		<English>Stepwell</English>
+		<German>Stufenbrunnen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_THAI_HO_TRAI</Tag>
 		<English>Ho Trai</English>
 		<German>Ho Trai</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAPANESE_SHALE_PLANT</Tag>
+		<English>Kaizen Plant</English>
+		<German>Kaizen-Kraftwerk</German>
 	</TEXT>
 
 </Civ4GameText>

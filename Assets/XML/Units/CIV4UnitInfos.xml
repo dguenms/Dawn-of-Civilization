@@ -9842,7 +9842,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>TECH_ARTILLERY</PrereqTech>
+			<PrereqTech>TECH_ROCKETRY</PrereqTech>
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>

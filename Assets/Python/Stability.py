@@ -836,7 +836,7 @@ class Stability:
                         iAgriculture = pPlayer.calculateTotalYield(YieldTypes.YIELD_FOOD)
                         iPopulation = pPlayer.getRealPopulation()
 
-                        if (iPlayer == con.iIndia or iPlayer == con.iChina or iPlayer == con.iJapan): #counterbalance the low growth threshold of ancient civs
+                        if (iPlayer == con.iIndia or iPlayer == con.iChina or iPlayer == con.iJapan or iPlayer == con.iMughals or iPlayer == con.iIndonesia): #counterbalance the low growth threshold of ancient civs
                                 iPopulation *= 3
                                 iPopulation /= 4
                         if (iPlayer == con.iEgypt or iPlayer == con.iMaya or iPlayer == con.iMali or iPlayer == con.iKhmer): #counterbalance the high growth threshold
@@ -848,7 +848,7 @@ class Stability:
                                 #iEconomy /= 7
                                 iEconomy /= 2
 
-                        if (iPlayer == con.iEgypt or iPlayer == con.iMali or (iPlayer == con.iEthiopia and not gc.getPlayer(con.iEgypt).isAlive())): #counterbalance the flood plains
+                        if (iPlayer == con.iEgypt or iPlayer == con.iMali or (iPlayer == con.iEthiopia and not gc.getPlayer(con.iEgypt).isAlive()) or iPlayer == con.iMughals or iPlayer == con.iIndia): #counterbalance the flood plains
                                 iAgriculture *= 75 #3
                                 iAgriculture /= 100 #5
                         

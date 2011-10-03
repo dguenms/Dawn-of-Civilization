@@ -2205,5 +2205,15 @@
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Lighthouse.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,1</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_INDIAN_STEPWELL</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Stepwell/Khmer_Baray.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/Aqueduct.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,7</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
