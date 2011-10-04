@@ -331,10 +331,10 @@
 		<Spanish>Autosuficiencia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM</Tag>	<!-- economy:serfdom -->
-		<English>Serfdom</English>
+		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM</Tag>	<!-- economy:forced labor -->
+		<English>Forced Labor</English>
 		<French>Servage</French>
-		<German>Leibeigenschaft</German>
+		<German>Zwangsarbeit</German>
 		<Italian>Servitù</Italian>
 		<Spanish>Servidumbre</Spanish>
 	</TEXT>

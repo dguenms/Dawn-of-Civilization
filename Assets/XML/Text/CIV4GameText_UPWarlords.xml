@@ -6,17 +6,17 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_UP_BAB</Tag>
-		<English>The Power of Law:</English>
+		<English>The Power of the Cradle of Civilization:</English>
 		<French>Le Pouvoir de la Loi :</French>
-		<German>Die Macht des Gesetzes:</German>
+		<German>Die Macht der Wiege der Zivilisation:</German>
 		<Italian>Il potere della legge:</Italian>
 		<Spanish>El poder de la ley:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BAB2</Tag>
-		<English>No anarchy in revolutions</English>
+		<English>Begins the game with the knowledge of Animal Husbandry, Pottery and Archery</English>
 		<French>Pas de résistance dans les villes conquises</French>
-		<German>Keine Anarchiephase bei Revolutionen</German>
+		<German>Beginnt das Spiel mit dem Wissen über Tierzucht, Keramik und Bogenschießen</German>
 		<Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
 		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
 	</TEXT>

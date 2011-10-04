@@ -9514,11 +9514,11 @@ void CvPlayer::updateMaxAnarchyTurns()
 		}
 	}
 
-	//Rhye - start UP (new for Babylonia now)
+	/*/Rhye - start UP (new for Babylonia now)
 	if (getID() == BABYLONIA)
 	{
 		iBestValue = 0;
-	}
+	}*/
 	//Rhye - end UP
 
 	m_iMaxAnarchyTurns = iBestValue;

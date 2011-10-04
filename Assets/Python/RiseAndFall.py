@@ -3511,6 +3511,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                         utils.makeUnit(con.iKhmerBallistaElephant, iCiv, tPlot, 2)
                         utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
+			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)

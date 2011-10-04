@@ -40,3 +40,9 @@
 # new Chinese first goal: be first to discover Compass, Gunpowder, Paper, Printing Press
 # castles now require the vassalage civic
 # Anti-Tank-Infantry now requires Rocketry
+# New second Japanese UHV goal: control or vassalize Korea, Manchuria, China, Indochina, Indonesia and Philippines
+# changed Suryavarman's preferred and Khmer's starting religion to Hinduism
+# changed Wat Preah Pisnulok's religion requirement to Hinduism
+# changed Serfdom's name to Forced Labor
+# first Khmer goal now requires them to control Shwedagon Paya, Borobudur and Wat Preah Pisnulok in 1450 AD
+# third Khmer goal now requires to spread Buddhism and Hinduism combined to 35%

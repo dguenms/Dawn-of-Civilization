@@ -22,7 +22,10 @@ BeginTeam
 EndTeam
 BeginTeam                 
 	Tech=TECH_AGRICULTURE                 
-	Tech=TECH_THE_WHEEL                 
+	Tech=TECH_THE_WHEEL
+	Tech=TECH_ANIMAL_HUSBANDRY
+	Tech=TECH_POTTERY
+	Tech=TECH_ARCHERY
 EndTeam
 BeginTeam                 
 EndTeam
@@ -234,7 +237,7 @@ BeginPlayer
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
-	StateReligion=RELIGION_BUDDHISM                          
+	StateReligion=RELIGION_HINDUISM                          
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
