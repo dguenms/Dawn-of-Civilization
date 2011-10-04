@@ -87,7 +87,7 @@
 	</TEXT>
 <!-- UU and UB -->
 	<TEXT>
-		<Tag>TXT_KEY_INDONESIAN_CANDI</Tag>
+		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI</Tag>
 		<English>Candi</English>
 		<French>Candi</French>
 		<German>Candi</German>
@@ -95,7 +95,7 @@
 		<Spanish>Candi</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_INDONESIAN_CANDI_PEDIA</Tag>
+		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI_PEDIA</Tag>
 		<English>[TAB]Candis were Hindu and Buddhist temples built in Indonesia mostly between the 8th and 15th century AD. The term "candi" itself derived from Candika, one of the manifestation of the goddess Durga as the goddess of death. This suggested in ancient Indonesia the "candi" has mortuary function as well as attributed with the afterlife. The association of the name "candi", candika or durga with Hindu-Buddhist temples is unknown in India and other of Indonesia's Southeast Asian neighbours such as Cambodia, Thailand, or Burma. The historians suggested that temples of ancient Java also used to store the ashes of cremated deceased kings or royalties. This is also in-line with buddhist concept of stupa  as the structure to store buddhist relicts including the ashes and remnants of holy buddhist priest or the buddhist king, the patron of buddhism. The statue of god stored inside the garbhagriha (main chamber) of the temple often modelled after the deceased king and considered as deified self of the king portrayed as Vishnu or Shiva. The example is the statue of king Airlangga from Belahan temple portrayed as Vishnu riding Garuda.[PARAGRAPH:1]Some of the more famous Candis are Borobudur, a Mahayana Buddhist monument in Central Java and the large Prambanan, dedicated to the Hindu god Trimurti, both built in the 9th century.</English>
 		<French>[TAB]Candis were Hindu and Buddhist temples built in Indonesia mostly between the 8th and 15th century AD. The term "candi" itself derived from Candika, one of the manifestation of the goddess Durga as the goddess of death. This suggested in ancient Indonesia the "candi" has mortuary function as well as attributed with the afterlife. The association of the name "candi", candika or durga with Hindu-Buddhist temples is unknown in India and other of Indonesia's Southeast Asian neighbours such as Cambodia, Thailand, or Burma. The historians suggested that temples of ancient Java also used to store the ashes of cremated deceased kings or royalties. This is also in-line with buddhist concept of stupa  as the structure to store buddhist relicts including the ashes and remnants of holy buddhist priest or the buddhist king, the patron of buddhism. The statue of god stored inside the garbhagriha (main chamber) of the temple often modelled after the deceased king and considered as deified self of the king portrayed as Vishnu or Shiva. The example is the statue of king Airlangga from Belahan temple portrayed as Vishnu riding Garuda.[PARAGRAPH:1]Some of the more famous Candis are Borobudur, a Mahayana Buddhist monument in Central Java and the large Prambanan, dedicated to the Hindu god Trimurti, both built in the 9th century.</French>
 		<German>[TAB]Candis were Hindu and Buddhist temples built in Indonesia mostly between the 8th and 15th century AD. The term "candi" itself derived from Candika, one of the manifestation of the goddess Durga as the goddess of death. This suggested in ancient Indonesia the "candi" has mortuary function as well as attributed with the afterlife. The association of the name "candi", candika or durga with Hindu-Buddhist temples is unknown in India and other of Indonesia's Southeast Asian neighbours such as Cambodia, Thailand, or Burma. The historians suggested that temples of ancient Java also used to store the ashes of cremated deceased kings or royalties. This is also in-line with buddhist concept of stupa  as the structure to store buddhist relicts including the ashes and remnants of holy buddhist priest or the buddhist king, the patron of buddhism. The statue of god stored inside the garbhagriha (main chamber) of the temple often modelled after the deceased king and considered as deified self of the king portrayed as Vishnu or Shiva. The example is the statue of king Airlangga from Belahan temple portrayed as Vishnu riding Garuda.[PARAGRAPH:1]Some of the more famous Candis are Borobudur, a Mahayana Buddhist monument in Central Java and the large Prambanan, dedicated to the Hindu god Trimurti, both built in the 9th century.</German>
@@ -103,7 +103,7 @@
 		<Spanish>[TAB]Candis were Hindu and Buddhist temples built in Indonesia mostly between the 8th and 15th century AD. The term "candi" itself derived from Candika, one of the manifestation of the goddess Durga as the goddess of death. This suggested in ancient Indonesia the "candi" has mortuary function as well as attributed with the afterlife. The association of the name "candi", candika or durga with Hindu-Buddhist temples is unknown in India and other of Indonesia's Southeast Asian neighbours such as Cambodia, Thailand, or Burma. The historians suggested that temples of ancient Java also used to store the ashes of cremated deceased kings or royalties. This is also in-line with buddhist concept of stupa  as the structure to store buddhist relicts including the ashes and remnants of holy buddhist priest or the buddhist king, the patron of buddhism. The statue of god stored inside the garbhagriha (main chamber) of the temple often modelled after the deceased king and considered as deified self of the king portrayed as Vishnu or Shiva. The example is the statue of king Airlangga from Belahan temple portrayed as Vishnu riding Garuda.[PARAGRAPH:1]Some of the more famous Candis are Borobudur, a Mahayana Buddhist monument in Central Java and the large Prambanan, dedicated to the Hindu god Trimurti, both built in the 9th century.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_INDONESIAN_CANDI_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], provides the Indonesians with +1 happiness as well as giving them a reliable culture-boost.</English>
 		<French>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], provides the Indonesians with +1 happiness as well as giving them a reliable culture-boost.</French>
 		<German>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], provides the Indonesians with +1 happiness as well as giving them a reliable culture-boost.</German>
@@ -111,12 +111,12 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], provides the Indonesians with +1 happiness as well as giving them a reliable culture-boost.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_INDONESIAN_SILAT</Tag>
-		<English>Pencak Silat</English>
-		<French>Pencak Silat</French>
-		<German>Pencak Silat</German>
-		<Italian>Pencak Silat</Italian>
-		<Spanish>Pencak Silat</Spanish>
+		<Tag>TXT_KEY_UNIT_INDONESIAN_ORANG_LAUT</Tag>
+		<English>Orang Laut</English>
+		<French>Orang Laut</French>
+		<German>Orang Laut</German>
+		<Italian>Orang Laut</Italian>
+		<Spanish>Orang Laut</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INDONESIAN_SILAT_PEDIA</Tag>

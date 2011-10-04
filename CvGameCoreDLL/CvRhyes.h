@@ -16,7 +16,7 @@ typedef list<char*> LISTCHAR;
 #define VERSAILLES				(2)
 #define FORBIDDENPALACE			(2)
 
-#define PAGAN_TEMPLE			(37)
+#define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
 
 #define BEGIN_WONDERS				(113)
 #define NUM_WONDERS					(179)
