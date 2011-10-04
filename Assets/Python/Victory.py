@@ -1096,12 +1096,22 @@ class Victory:
                 elif (iPlayer == iKhmer):
                         if (pKhmer.isAlive()):
 
-                                if (iGameTurn == getTurnForYear(1450)):
-                                        print ("khmer culture", pKhmer.countTotalCulture())
-                                        if (pKhmer.countTotalCulture() >= utils.getTurns(12000)):
-                                                self.setGoal(iKhmer, 0, 1)
-                                        else:
-                                                self.setGoal(iKhmer, 0, 0)
+                                #if (iGameTurn == getTurnForYear(1450)):
+                                #        print ("khmer culture", pKhmer.countTotalCulture())
+                                #        if (pKhmer.countTotalCulture() >= utils.getTurns(12000)):
+                                #                self.setGoal(iKhmer, 0, 1)
+                                #        else:
+                                #                self.setGoal(iKhmer, 0, 0)
+
+				# Leoreth: new first goal: control Shwedagon Paya, Borobudur and Wat Preah Pisnulok in 1450 AD
+				if iGameTurn == getTurnForYear(1450):
+					bShwedagon = (self.getNumBuildings(iKhmer, con.iShwedagonPaya) > 0)
+					bBorobudur = (self.getNumBuildings(iKhmer, con.iBorobudur) > 0)
+					bAngkorWat = (self.getNumBuildings(iKhmer, con.iAngkorWat) > 0)
+					if bShwedagon and bBorobudur and bAngkorWat:
+						self.setGoal(iKhmer, 0, 1)
+					else:
+						self.setGoal(iKhmer, 0, 0)
 
                                                 
                                 if (iGameTurn == getTurnForYear(1450)):
@@ -1121,9 +1131,9 @@ class Victory:
 
 
                                 if (self.getGoal(iKhmer, 2) == -1):
-                                        religionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism)
+                                        religionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism) + gc.getGame().calculateReligionPercent(con.iHinduism)
                                         #print ("religionPercent", religionPercent)
-                                        if (religionPercent >= 30.0):
+                                        if (religionPercent >= 35.0):
                                                 self.setGoal(iKhmer, 2, 1)
 
 		elif (iPlayer == iIndonesia):
@@ -2805,8 +2815,10 @@ class Victory:
 
 		elif iPlayer == iKhmer:
 			if iGoal == 0:
-				iCulture = pKhmer.countTotalCulture()
-				aHelp.append(self.getIcon(iCulture >= utils.getTurns(12000)) + 'Total culture: ' +str(iCulture) + '/' + str(utils.getTurns(12000)))
+				bShwedagon = (self.getNumBuildings(iKhmer, con.iShwedagonPaya) > 0)
+				bBorobudur = (self.getNumBuildings(iKhmer, con.iBorobudur) > 0)
+				bAngkorWat = (self.getNumBuildings(iKhmer, con.iAngkorWat) > 0)
+				aHelp.append(self.getIcon(bShwedagon) + 'Shwedagon Paya ' + self.getIcon(bBorobudur) + 'Borobudur ' + self.getIcon(bAngkorWat) + 'Wat Preah Pisnulok')
 			elif iGoal == 1:
 				apCityList = PyPlayer(iKhmer).getCityList()
                                 iTotalPopulation = 0
@@ -2818,8 +2830,8 @@ class Victory:
 					fPopPerCity = 0
 				aHelp.append(self.getIcon(fPopPerCity >= 10.0) + 'Average population per city: ' + str(fPopPerCity) + '/10')
 			elif iGoal == 2:
-                                fReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism)
-				aHelp.append(self.getIcon(fReligionPercent >= 30.0) + 'Buddhism spread to: ' + str(fReligionPercent) + '/30 %')
+                                fReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism) + gc.getGame().calculateReligionPercent(con.iHinduism)
+				aHelp.append(self.getIcon(fReligionPercent >= 35.0) + 'Buddhism and Hinduism spread to: ' + str(fReligionPercent) + '/30 %')
 
 		elif iPlayer == iIndonesia:
 			if iGoal == 0:

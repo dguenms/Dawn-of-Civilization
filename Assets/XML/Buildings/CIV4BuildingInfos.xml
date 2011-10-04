@@ -24348,7 +24348,7 @@
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
-			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
+			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
