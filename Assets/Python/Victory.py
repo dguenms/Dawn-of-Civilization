@@ -145,6 +145,19 @@ tNorthAfricaBR = (71, 38)
 tNearEastTL = (69, 37)
 tNearEastBR = (76, 45)
 
+tManchuriaTL = (104, 50)
+tManchuriaBR = (112, 55)
+tKoreaTL = (108, 45)
+tKoreaBR = (110, 49)
+tChinaTL = (99, 39)
+tChinaBR = (107, 49)
+tIndochinaTL = (97, 31)
+tIndochinaBR = (103, 38)
+tIndonesiaTL = (98, 24)
+tIndonesiaBR = (109, 30)
+tPhilippinesTL = (108, 30)
+tPhilippinesBR = (110, 36)
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -892,11 +905,24 @@ class Victory:
 						self.setGoal(iJapan, 0, 0)
 
 
-                                if (iGameTurn == getTurnForYear(1930)):
-                                        if (gc.getGame().getTeamRank(iJapan) == 0):
-                                                self.setGoal(iJapan, 1, 1)
-                                        else:
-                                                self.setGoal(iJapan, 1, 0)
+                                #if (iGameTurn == getTurnForYear(1930)):
+                                #        if (gc.getGame().getTeamRank(iJapan) == 0):
+                                #                self.setGoal(iJapan, 1, 1)
+                                #        else:
+                                #                self.setGoal(iJapan, 1, 0)
+
+				# Leoreth: new second goal: control or vassalize Korea, Manchuria, China, Indochina, Indonesia and Philippines in 1940
+				if iGameTurn == getTurnForYear(1940):
+					bKorea = self.isControlledOrVassalized(iJapan, tKoreaTL, tKoreaBR)
+					bManchuria = self.isControlledOrVassalized(iJapan, tManchuriaTL, tManchuriaBR)
+					bChina = self.isControlledOrVassalized(iJapan, tChinaTL, tChinaBR)
+					bIndochina = self.isControlledOrVassalized(iJapan, tIndochinaTL, tIndochinaBR)
+					bIndonesia = self.isControlledOrVassalized(iJapan, tIndonesiaTL, tIndonesiaBR)
+					bPhilippines = self.isControlledOrVassalized(iJapan, tPhilippinesTL, tPhilippinesBR)
+					if bKorea and bManchuria and bChina and bIndochina and bIndonesia and bPhilippines:
+						self.setGoal(iJapan, 1, 1)
+					else:
+						self.setGoal(iJapan, 1, 0)
 
                                                 
 ##                                if (iGameTurn == getTurnForYear(1850)):      
@@ -2702,9 +2728,14 @@ class Victory:
 				#aHelp.append(self.getIcon(iTechsStolen >= 5) + 'Techs stolen: '+str(iTechsStolen)+'/5')
 				aHelp.append(self.getIcon(iCulture >= 24000) + 'Total culture: '+str(iCulture)+'/24000')
 			elif iGoal == 1:
-				iFirstRankCiv = self.getHighestRankCiv()
-				bFirstRank = (iFirstRankCiv == iJapan)
-				aHelp.append(self.getIcon(bFirstRank) + 'Civilization with the highest score: ' + CyTranslator().getText(str(gc.getPlayer(iFirstRankCiv).getCivilizationShortDescriptionKey()),()))
+				bKorea = self.isControlledOrVassalized(iJapan, tKoreaTL, tKoreaBR)
+				bManchuria = self.isControlledOrVassalized(iJapan, tManchuriaTL, tManchuriaBR)
+				bChina = self.isControlledOrVassalized(iJapan, tChinaTL, tChinaBR)
+				bIndochina = self.isControlledOrVassalized(iJapan, tIndochinaTL, tIndochinaBR)
+				bIndonesia = self.isControlledOrVassalized(iJapan, tIndonesiaTL, tIndonesiaBR)
+				bPhilippines = self.isControlledOrVassalized(iJapan, tPhilippinesTL, tPhilippinesBR)
+				aHelp.append(self.getIcon(bKorea) + 'Korea ' + self.getIcon(bManchuria) + 'Manchuria ' + self.getIcon(bChina) + 'China')
+				aHelp.append(self.getIcon(bIndochina) + 'Indochina ' + self.getIcon(bIndonesia) + 'Indonesia ' + self.getIcon(bPhilippines) + 'Philippines')
 		
                 elif iPlayer == iEthiopia:
 			if iGoal == 1 or iGoal == 2:

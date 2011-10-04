@@ -2160,16 +2160,12 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Jakarta</City>
-				<City>Majapahit</City>
 				<City>Trowulan</City>
-				<City>Palembang</City>
 				<City>Jambi</City>
 				<City>Borobudur</City>
 				<City>Chaiya</City>
 				<City>Surabaya</City>
 				<City>Prambanan</City>
-				<City>Makassar</City>
 				<City>Kota Gede</City>
 				<City>Malang</City>
 				<City>Surakarta</City>
@@ -2179,30 +2175,26 @@
 				<City>Samarinda</City>
 				<City>Medan</City>
 				<City>Cirebon</City>
-				<City>Banda Aceh</City>
-				<City>Singapore</City>
 				<City>Bandar</City>
 				<City>Penataran</City>
 				<City>Pajang</City>
-				<City>Yogyakarta</City>
 				<City>Demak</City>
 				<City>Bandung</City>
 				<City>Semarang</City>
 				<City>Plaosan</City>
 				<City>Bantam</City>
-				<City>Banjarmasin</City>
 				<City>Ternate</City>
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_OBELISK</BuildingClassType>
 					<BuildingType>BUILDING_INDONESIAN_CANDI</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_SILAT</UnitType>
+					<UnitClassType>UNITCLASS_PRIVATEER</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_ORANG_LAUT</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
