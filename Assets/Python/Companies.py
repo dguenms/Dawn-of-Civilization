@@ -43,12 +43,16 @@ tSouthAsiaBR = (117, 39)
 
 class Companies:
 
-
 	def checkTurn(self, iGameTurn):
-		
+
 		iCompany = iGameTurn % iNumCompanies
-		#if iGameTurn < getTurnForYear(tCompaniesBirth[iCompany]):
-		#	return
+		self.checkCompany(iCompany, iGameTurn)
+
+		iCompany = iGameTurn + 4 % iNumCompanies
+		self.checkCompany(iCompany, iGameTurn)
+
+
+	def checkCompany(self, iCompany, iGameTurn):
 		
 		if (iCompany == iSilkRoute and iGameTurn > getTurnForYear(1500)) or (iCompany == iTradingCompany and iGameTurn > getTurnForYear(1800)):
 			iMaxCompanies = 0
