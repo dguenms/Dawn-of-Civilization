@@ -48,7 +48,7 @@ class Companies:
 		iCompany = iGameTurn % iNumCompanies
 		self.checkCompany(iCompany, iGameTurn)
 
-		iCompany = iGameTurn + 4 % iNumCompanies
+		iCompany = (iGameTurn + 4) % iNumCompanies
 		self.checkCompany(iCompany, iGameTurn)
 
 
