@@ -22183,10 +22183,8 @@
 			<MaxStartEra>NONE</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<!-- Rhye -->
-			<PrereqTech>TECH_ASTRONOMY</PrereqTech>
-			<TechTypes>
-				<PrereqTech>TECH_BANKING</PrereqTech>
-			</TechTypes>
+			<PrereqTech>TECH_ECONOMICS</PrereqTech>
+			<TechTypes/>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses/>
 			<!-- Rhye -->

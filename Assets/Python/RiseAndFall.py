@@ -1,3 +1,4 @@
+
 # Rhye's and Fall of Civilization - Main Scenario
 
 from CvPythonExtensions import *
@@ -183,7 +184,7 @@ tLeaders = con.tLeaders
 tEarlyLeaders = con.tEarlyLeaders
 tLateLeaders = con.tLateLeaders
 
-lConditionalCivs = [iByzantium]
+#lConditionalCivs = [iByzantium]
 
 class RiseAndFall:
 
@@ -356,7 +357,6 @@ class RiseAndFall:
                 for i in labels:
                     popup.addButton( i )
                 popup.launch(False)
-
 
         def newCivPopup(self, iCiv):
                 self.showPopup(7614, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
@@ -531,6 +531,20 @@ class RiseAndFall:
                 elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
                         gc.getTeam(gc.getPlayer(iHuman).getTeam()).declareWar(iRebelCiv, False, -1)
 
+	def eventApply7625(self, userData, popupReturn):
+		iHuman = utils.getHumanID()
+		iPlayer, targetList = userData
+		if popupReturn.getButtonClicked() == 0:
+			for tPlot in targetList:
+				x, y = tPlot
+				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iHuman:
+					utils.colonialAcquisition(iPlayer, x, y)
+					gc.getPlayer(iHuman).changeGold(200)
+		elif popupReturn.getButtonClicked() == 1:
+			for tPlot in targetList:
+				x, y = tPlot
+				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iHuman:
+					utils.colonialConquest(iPlayer, x, y)
 
 
 #######################################
@@ -3169,52 +3183,68 @@ class RiseAndFall:
 	def onEconomicsDiscovered(self, iCiv):
 		print "On Economics discovered."
 
-		if iCiv == iSpain:
-			print "Spanish trading company."
-			utils.colonialConquest(iCiv, 109, 33)	# Manila
+		if utils.getHumanID() != iCiv:
+			if iCiv in [iSpain, iPortugal]:
+				self.handleColonialAcquisition(iCiv)
+			elif iCiv in [iFrance, iEngland, iNetherlands]:
+				self.handleColonialConquest(iCiv)
 
-		elif iCiv == iFrance:
-			print "French trading company."
-			utils.colonialConquest(iCiv, 91, 32) # Pondicherry
+	def handleColonialAcquisition(self, iPlayer):
+		targetList = utils.getColonialTargets(iPlayer)
+		targetCivList = []
 
-		elif iCiv == iEngland:
-			print "English trading company."
-			iRand = gc.getGame().getSorenRandNum(3, 'random city skip')
+		iGold = len(targetList) * 200
 
-			if iRand != 1:
-				utils.colonialConquest(iCiv, 88, 36) # Bombay
-			if iRand != 2:
-				utils.colonialConquest(iCiv, 95, 39) # Calcutta
-			if iRand != 3:
-				utils.colonialConquest(iCiv, 92, 33) # Madras
+		for tPlot in targetList:
+			x, y = tPlot
+			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
+			if not iTargetCiv in targetCivList:
+				targetCivList.append(iTargetCiv)
+	
+		for iTargetCiv in targetCivList:
+			if iTargetCiv == utils.getHumanID():
+                		popup = Popup.PyPopup(7625, EventContextTypes.EVENTCONTEXT_ALL)
+                		popup.setHeaderString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_TITLE", ()))
+                		popup.setBodyString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_MESSAGE", ()))
+				popup.addButton(CyTranslator().getText("TXT_KEY_POPUP_YES", ()))
+				popup.addButton(CyTranslator().getText("TXT_KEY_POPUP_NO", ()))
+				argsList = [iPlayer, targetList]
+				popup.setUserData(argsList)
+                		popup.launch(False)
+			else:
+				iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
+				if iRand >= con.tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
+					bAccepted = True
+				else:
+					bAccepted = False
 
-		elif iCiv == iPortugal:
-			print "Portuguese trading company."
-			iRand1 = gc.getGame().getSorenRandNum(5, 'random city skip')
-			iRand2 = gc.getGame().getSorenRandNum(5, 'random city skip')
+				for tPlot in targetList:
+					x, y = tPlot
+					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
+						if bAccepted:
+							utils.colonialAcquisition(iPlayer, x, y)
+							gc.getPlayer(iTargetCiv).changeGold(200)
+						else:
+							utils.colonialConquest(iPlayer, x, y)
+						targetList.remove(tPlot)
 
-			if iRand1 != 1 and iRand2 != 1:
-				utils.colonialConquest(iCiv, 82, 34) # Masqat
-				print "Masqat"
-			if iRand1 != 2 and iRand2 != 2:
-				utils.colonialAcquisition(iCiv, 90, 31) # Cochin
-				print "Cochin"
-			if iRand1 != 3 and iRand2 != 3:
-				utils.colonialAcquisition(iCiv, 89, 33) # Goa
-				print "Goa"
-			if iRand1 != 4 and iRand2 != 4:
-				utils.colonialAcquisition(iCiv, 101, 29) # Malacca
-				print "Malacca"
-			if iRand1 != 5 and iRand2 != 5:
-				utils.colonialAcquisition(iCiv, 105, 39) # Macau
-				print "Macau"
+		pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
 
-		elif iCiv == iNetherlands:
-			print "Dutch trading company."
-			utils.colonialConquest(iCiv, 100, 26) # Sumatra
-			utils.colonialConquest(iCiv, 105, 25) # Java
-			utils.colonialConquest(iCiv, 105, 29) # Borneo
-			utils.colonialConquest(iCiv, 108, 27) # Sulawesi
+	def handleColonialConquest(self, iPlayer):
+		targetList = utils.getColonialTargets(iPlayer)
+
+		for tPlot in targetList:
+			x, y = tPlot
+			utils.colonialConquest(iPlayer, x, y)
+
+		x, y = targetList[0]
+		for i in range(x-1, x+2):
+			for j in range(y-1, y+2):
+				if gc.getMap().plot(i, j).isWater():
+					tSeaPlot = (i, j)
+					break
+
+		utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
 
 
         def warOnSpawn(self):

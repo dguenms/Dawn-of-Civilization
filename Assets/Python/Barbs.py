@@ -156,6 +156,19 @@ class Barbs:
                 #elephants in india pre-khmer
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(700)):
                         self.spawnUnits( iBarbarian, (86, 31), (100, 41), con.iWarElephant, 1, iGameTurn, 6-iHandicap, 4, utils.outerInvasion, 0)
+
+		#Indo-Scythians
+		if iGameTurn >= getTurnForYear(-200) and iGameTurn <= getTurnForYear(400):
+			self.spawnUnits(iBarbarian, (84, 40), (87, 43), con.iHorseArcher, 2, iGameTurn, 10-iHandicap, 4, utils.internalInvasion, 0)
+
+		#Kushana
+		if iGameTurn >= getTurnForYear(30) and iGameTurn <= getTurnForYear(220):
+			self.spawnUnits(iBarbarian, (84, 40), (87, 43), con.iSwordsman, 1, iGameTurn, 6-iHandicap, 3, utils.internalInvasion, 0)
+
+		#Hephtalites
+		if iGameTurn >= getTurnForYear(400) and iGameTurn <= getTurnForYear(550):
+			self.spawnUnits(iBarbarian, (84, 40), (87, 43), con.iHorseArcher, 2+iHandicap, iGameTurn, 6-iHandicap, 3, utils.internalInvasion, 0)
+
        
                         
                 #pirates in Mediterranean
@@ -197,10 +210,10 @@ class Barbs:
 		#Leoreth: barbarians in Balkans / Black Sea until the High Middle Ages (Bulgarians, Cumans, Pechenegs)
 		if (iGameTurn >= getTurnForYear(680) and iGameTurn <= getTurnForYear(1000)):
 			if (gc.getPlayer(0).isPlayable()):
-				self.spawnUnits(iBarbarian, (64, 45), (69, 49), con.iHorseArcher, 3 + iHandicap, iGameTurn, 6, 2, utils.innerInvasion, 0)
+				self.spawnUnits(iBarbarian, (64, 45), (69, 49), con.iHorseArcher, 3 + iHandicap, iGameTurn, 6, 2, utils.internalInvasion, 0)
 		if (iGameTurn >= getTurnForYear(900) and iGameTurn <= getTurnForYear(1200)):
 			if (gc.getPlayer(0).isPlayable()):
-				self.spawnUnits(iBarbarian, (68, 48), (78, 50), con.iHorseArcher, 3 + iHandicap, iGameTurn, 10, 5, utils.innerInvasion, 0)
+				self.spawnUnits(iBarbarian, (68, 48), (78, 50), con.iHorseArcher, 3 + iHandicap, iGameTurn, 10, 5, utils.internalInvasion, 0)
 
                 #last barbarians in east europe and caucasus
                 if (iGameTurn >= getTurnForYear(690) and iGameTurn <= getTurnForYear(1100)):

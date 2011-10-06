@@ -1086,6 +1086,17 @@ class RFCUtils:
                                                 return (None, bPaint, bContinue)
                 # not a good plot, so don't paint it but continue search
                 return (None, not bPaint, bContinue)
+
+	def internalInvasion(self, tCoords, result, argsList):
+		"""Like inner invasion, but ignores territory, to allow for more barbarians"""
+		bPaint = True
+		bContinue = True
+		pCurrent = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pCurrent.isHills() or pCurrent.isFlatlands():
+			if pCurrent.getTerrainType() != con.iMarsh and pCurrent.getFeatureType() != con.iJungle:
+				if not pCurrent.isCity() and not pCurrent.isUnit():
+					return (None, bPaint, bContinue)
+		return (None, not bPaint, bContinue)
             
         def innerSpawn( self, tCoords, result, argsList ):
                 """Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
@@ -1127,6 +1138,14 @@ class RFCUtils:
                 return (None, not bPaint, bContinue)
 
         #RiseAndFall
+	def cityPlots(self, tCoords, result, argsList):
+		bPaint = True
+		bContinue = True
+		pCurrent = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pCurrent.isCity():
+			return (None, bPaint, bContinue)
+		return (None, not bPaint, bContinue)
+
         def ownedCityPlots( self, tCoords, result, argsList ):
                 """Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
                 Plot is valid if it contains a city belonging to the civ"""
@@ -1308,48 +1327,30 @@ class RFCUtils:
 
 	def colonialConquest(self, iCiv, x, y):
 		bRifling = gc.getTeam(iCiv).isHasTech(con.iRifling)
-		lCivList = []
+		iTargetCiv = gc.getMap().plot(x,y).getPlotCity().getOwner()
 		lFreePlots = []
+
 		for i in range(x-1, x+2):
 			for j in range(y-1, y+2):
-				current = gc.getMap().plot(i,j)
-				if current.isCity():
-					lCivList.append(current.getPlotCity().getOwner())
-				else:
-					if not current.isPeak() and not current.isWater() and (i,j) != (x,y):
-						lFreePlots.append((i,j))
+				current = gc.getMap().plot(i, j)
+				if not current.isCity() and not current.isPeak() and not current.isWater():
+					lFreePlots.append((i,j))
 
-		if len(lCivList) == 0:
-			if gc.getMap().plot(x,y).getFeatureType() == 1: # jungle
-				gc.getMap().plot(x,y).setFeatureType(-1, 0)
-                        self.convertPlotCulture(gc.getMap().plot(x,y), iCiv, 100, True)
-			gc.getMap().plot(x,y).setOwner(iCiv)
-			self.makeUnit(con.iSettler, iCiv, (x,y), 1)
-			self.makeUnit(con.iWorker, iCiv, (x,y), 2)
-			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
-			if bRifling:
-				if iCiv == con.iEngland:
-					self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), 2)
-				else:
-					self.makeUnit(con.iRifleman, iCiv, (x,y), 2)
+		gc.getTeam(iCiv).setAtWar(iTargetCiv, True)
+		gc.getTeam(iTargetCiv).setAtWar(iCiv, True)
+
+		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
+		tPlot = lFreePlots[iRand]
+
+		self.makeUnit(con.iCannon, iCiv, tPlot, 2)
+		if bRifling:
+			if iCiv == con.iEngland:
+				self.makeUnit(con.iEnglishRedcoat, iCiv, tPlot, 4)
 			else:
-				self.makeUnit(con.iMusketman, iCiv, (x,y), 2)
+				self.makeUnit(con.iRifleman, iCiv, tPlot, 4)
 		else:
-			for iEnemyCiv in lCivList:
-				gc.getTeam(iCiv).setAtWar(iEnemyCiv, True)
-				gc.getTeam(iEnemyCiv).setAtWar(iCiv, True)
-			iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
-			tPlot = lFreePlots[iRand]
+			self.makeUnit(con.iMusketman, iCiv, tPlot, 4)
 
-			self.makeUnit(con.iCannon, iCiv, tPlot, 2)
-			if bRifling:
-				if iCiv == con.iEngland:
-					self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), 4)
-				else:
-					self.makeUnit(con.iRifleman, iCiv, (x,y), 4)
-			else:
-				self.makeUnit(con.iMusketman, iCiv, (x,y), 4)
 
 	def colonialAcquisition(self, iCiv, x, y):
 		if gc.getMap().plot(x,y).isCity():
@@ -1365,4 +1366,42 @@ class RFCUtils:
 			else:
 				self.colonialConquest(iCiv, x, y)
 		else:
-			self.colonialConquest(iCiv, x, y)
+			gc.getMap().plot(x,y).setCulture(iCiv, 10, True)
+			gc.getMap().plot(x,y).setOwner(iCiv)
+			self.makeUnit(con.iSettler, iCiv, (x,y), 1)
+			self.makeUnit(con.iWorker, iCiv, (x,y), 2)
+			if gc.getTeam(iCiv).isHasTech(con.iRifling):
+				self.makeUnit(con.iRifleman, iCiv, (x,y), 2)
+			else:
+				self.makeUnit(con.iMusketman, iCiv, (x,y), 2)
+			if gc.getPlayer(iCiv).getStateReligion() != -1:
+				self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+
+	def getColonialTargets(self, iPlayer):
+		if iPlayer == con.iSpain or iPlayer == con.iFrance:
+			iNumCities = 1
+		else:
+			iNumCities = 3
+
+		lPlotList = con.tTradingCompanyPlotLists[id]
+
+		cityList = []
+		for tPlot in lPlotList:
+			x, y = tPlot
+			if gc.getMap().plot(x, y).isCity():
+				cityList.append((x, y))
+
+		targetList = []
+		for i in range(iNumCities):
+			iRand = gc.getGame().getSorenRandNum(len(cityList), 'Random city')
+			targetList.append(cityList[iRand])
+			cityList.remove(cityList[iRand])
+
+		if len(targetList) == 0:
+			for i in range(iNumCities):
+				iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random free plot')
+				targetList.append(lPlotList[iRand])
+				lPlotList.remove(lPlotList[iRand])
+
+		return targetList
+
