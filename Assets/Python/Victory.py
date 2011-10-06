@@ -2512,7 +2512,7 @@ class Victory:
 		bControlled = False
 		lOwnerList = []
 		lValidOwners = [iPlayer]
-		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.ownedCityPlots, iPlayer)
+		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.cityPlots, iPlayer)
 		for tPlot in lCityPlotList:
 			x, y = tPlot
 			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList:

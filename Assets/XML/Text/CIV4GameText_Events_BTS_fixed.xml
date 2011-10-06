@@ -1822,4 +1822,29 @@
 		<Italian>Il Presidente %s1:1_civ_adjective &#232; stato messo sotto impeachment</Italian>
 		<Spanish>El presidente %s1_civ_adjective se enfrente a una moci&#243;n de censura.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_TRADING_COMPANY_CONQUERORS</Tag>
+		<English>With the establishment of our own Trading Company, our country's merchants are approaching you to take action to further assert their position in the South Asian markets.</English>
+		<German>Mit der Einrichtung unserer eignenen Handelsgesellschaft treten die Kaufleute unseres Landes an Euch heran, Maßnahmen zur weiteren Sicherung ihrer Position in den südasiatischen Märkten zu ergreifen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_TRADING_COMPANY_CONQUERORS</Tag>
+		<English>The %s1_civ_adjective Trading Company considers to take further actions to enforce its South Asian market position.</English>
+		<German>Die %s1:1 Handelsgesellschaft erwägt weitere Aktionen zur Festigung ihrer Marketstellung in Südasien.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_1</Tag>
+		<English>Fund the establishment of contracted harbors out of our treasury.</English>
+		<German>Finanziert die Einrichtung von Vertragshäfen aus unserer Schatzkammer.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_2</Tag>
+		<English>Draft an army to establish control.</English>
+		<German>Stellt eine Armee auf, um die Kontrolle zu erringen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_3</Tag>
+		<English>This is none of our concern.</English>
+		<German>Das geht uns nichts an.</German>
+	</TEXT>
 </Civ4GameText>

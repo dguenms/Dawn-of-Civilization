@@ -34188,7 +34188,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=33
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -34603,7 +34603,7 @@ EndPlot
 BeginPlot
 	x=90,y=36
 	BonusType=BONUS_COTTON
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -36137,17 +36137,17 @@ EndPlot
 BeginPlot
 	x=94,y=36
 	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	PlotType=2
 EndPlot
 BeginPlot
 	x=94,y=37
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
-	BonusType=BONUS_COTTON
 	PlotType=2
 EndPlot
 BeginPlot
 	x=94,y=38
+	BonusType=BONUS_COTTON
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -36540,7 +36540,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=38
-	BonusType=BONUS_BANANA
+	BonusType=BONUS_SPICES
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -36921,7 +36921,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=39
-	BonusType=BONUS_SPICES
+	BonusType=BONUS_BANANA
 	isWOfRiver
 	RiverNSDirection=2
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0

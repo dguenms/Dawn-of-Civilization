@@ -51,6 +51,7 @@ class StoredData:
 				    'lFirstContactMongols': [0, 0, 0, 0, 0], #india, persia, byzantium, arabia, russia
                                     'bCheatMode': False,
 				    'tTempFlippingCity': (0, 0),
+				    'tTradingCompanyConquerorsTargets': ([], [], [], [], []),
                                      #------------Religions
                                     'iSeed': -1,
                                     #------------UP

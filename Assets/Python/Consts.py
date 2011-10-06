@@ -370,7 +370,7 @@ tResurrectionIntervals = (
 [(900, 1300), (1800, 2020)], #Egypt
 [(1600, 1800), (1900, 2020)], #India
 [(1360, 1640), (1930, 2020)], #China
-[(-700, -500)], #Babylonia
+[], #Babylonia
 [(1820, 2020)], #Greece
 [(220, 650), (1500, 2020)], #Persia
 [], #Carthage
@@ -627,6 +627,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_RUS1", "TXT_KEY_UHV_RUS2", "TXT_KEY_UHV_RUS3"),
+
 ("TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"),
 ("TXT_KEY_UHV_MAL1", "TXT_KEY_UHV_MAL2", "TXT_KEY_UHV_MAL3"),
 ("TXT_KEY_UHV_POR1", "TXT_KEY_UHV_POR2", "TXT_KEY_UHV_POR3"),
@@ -682,7 +683,7 @@ for i in range(78,86+1):
 tCapitals = (
 ((69, 33), #tThebes
 #(90, 40), #tDelhi
-(93, 39), #tVaranasi
+(94, 40), #tVaranasi
 #(102, 47), #tBeijing
 (100, 44), #Chang'an
 (76, 40), #tBabylon
@@ -2056,3 +2057,11 @@ tIsActiveOnLateStart = (
 1,
 1,
 1)
+
+tTradingCompanyPlotLists = (
+[(109, 33)], #Spain
+[(89, 33), (90, 33), (91, 33), (92, 33), (89, 32), (90, 32), (91, 32), (90, 31), (91, 31), (90, 30), (91, 29)], #France
+[(88, 36), (88, 35), (88, 34), (89, 34), (89, 33), (89, 32), (90, 32), (90, 31), (90, 30), (91, 29), (91, 31), (91, 32), (91, 33), (92, 33), (92, 34), (93, 34), (93, 35), (94, 35), (94, 36), (94, 37)], #England
+[(82, 34), (89, 33), (90, 31), (101, 29), (105, 39)], #Portugal
+[(99, 28), (99, 27), (100, 27), (100, 26), (101, 26), (104, 25), (105, 25), (106, 25), (107, 24), (104, 27), (105, 27), (106, 27), (104, 28), (106, 28), (105, 29), (106, 29)] #Netherlands
+)

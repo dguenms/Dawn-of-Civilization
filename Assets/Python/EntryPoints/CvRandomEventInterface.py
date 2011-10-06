@@ -13,9 +13,12 @@ import CvUtil
 from CvPythonExtensions import *
 
 import Consts as con #Rhye
+import RFCUtils #Leoreth
+from StoredData import sd
 
 gc = CyGlobalContext()
 localText = CyTranslator()
+utils = RFCUtils.RFCUtils()
 
 
 ######## BLESSED SEA ###########
@@ -4275,3 +4278,201 @@ def canTriggerImpeachmentCity(argsList):
 		return true
 	return false
 
+######## Trading Company Conquerors (Leoreth) ########
+
+def canTriggerTradingCompanyConquerors(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+
+	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	id = lCivList.index(iPlayer)
+
+	if iPlayer not in lCivList or utils.getHumanID() != iPlayer:
+		return False
+
+	# Leoreth: dirty solution: determine that turn's target cities during this check
+	targetList = utils.getColonialTargets(iPlayer)
+	
+	sd.scriptDict['tTradingCompanyConquerorsTargets'][id].extend(targetList)
+
+	return True	
+
+def canChooseTradingCompanyConquerors1(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	pPlayer = gc.getPlayer(iPlayer)
+
+	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	id = lCivList.index(iPlayer)
+
+	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+
+	iGold = len(targetList) * 200
+
+	if pPlayer.getGold() >= iGold:
+		return True
+	return False
+
+def getTradingCompanyConquerors1HelpText(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+
+	text = 'Will offer '
+
+	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	id = lCivList.index(iPlayer)
+
+	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+
+	text += str(len(targetList) * 200)
+	text += ' gold to '
+
+	targetCivList = []
+
+	for tPlot in targetList:
+		x, y = tPlot
+		iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
+		if not iTargetCiv in targetCivList:
+			targetCivList.append(iTargetCiv)
+
+	if len(targetCivList) > 0:
+		for iCiv in targetCivList:
+			if targetCivList.index(iCiv) != 0:
+				text += ', '
+			text += CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
+
+		text += ' for their cities of '
+	else:
+		text += 'our colonists to settle '
+
+	for tPlot in targetList:
+		x, y = tPlot
+		if targetList.index(tPlot) != 0:
+			text += ', '
+		if gc.getMap().plot(x, y).isCity():
+			text += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
+		else:
+			text += tCityMap[gc.getPlayer(iPlayer).getReborn()][iPlayer][67-y][x]
+
+	if len(targetCivList) > 0:
+		text += '. Their refusal will lead to war.'
+	else:
+		text += '.'
+
+	return text
+
+def doTradingCompanyConquerors1(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	pPlayer = gc.getPlayer(iPlayer)
+
+	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	id = lCivList.index(iPlayer)
+
+	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+	targetCivList = []
+
+	iGold = len(targetList) * 200
+
+	for tPlot in targetList:
+		x, y = tPlot
+		iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
+		if not iTargetCiv in targetCivList:
+			targetCivList.append(iTargetCiv)
+	
+	for iTargetCiv in targetCivList:
+		iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
+		if iRand >= con.tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
+			bAccepted = True
+		else:
+			bAccepted = False
+
+		for tPlot in targetList:
+			x, y = tPlot
+			if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
+				if bAccepted:
+					utils.colonialAcquisition(iPlayer, x, y)
+					gc.getPlayer(iTargetCiv).changeGold(200)
+				else:
+					utils.colonialConquest(iPlayer, x, y)
+				targetList.remove(tPlot)
+
+	pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
+
+def canChooseTradingCompanyConquerors2(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+
+	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	id = lCivList.index(iPlayer)
+
+	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+
+	bResult = False
+	for tPlot in targetList:
+		x, y = tPlot
+		if gc.getMap().plot(x, y).isCity():
+			bResult = True
+			break
+
+	return bResult
+
+def getTradingCompanyConquerors2HelpText(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+
+	text = 'Will draft armies to attack '
+
+	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	id = lCivList.index(iPlayer)
+
+	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+	targetCivList = []
+
+	for tPlot in targetList:
+		x, y = tPlot
+		iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
+		if not iTargetCiv in targetCivList:
+			targetCivList.append(iTargetCiv)
+
+	for iCiv in targetCivList:
+		if targetCivList.index(iCiv) != 0:
+			text += ', '
+		text += CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
+
+	text += ' to conquer their cities of '
+
+	for tPlot in targetList:
+		x, y = tPlot
+		if targetList.index(tPlot) != 0:
+			text += ', '
+		if gc.getMap().plot(x, y).isCity():
+			text += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
+
+	text += '.'
+
+	return text
+
+def doTradingCompanyConquerors2(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+
+	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	id = lCivList.index(iPlayer)
+
+	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+
+	for tPlot in targetList:
+		x, y = tPlot
+		utils.colonialConquest(iPlayer, x, y)
+
+	x, y = targetList[0]
+	for i in range(x-1, x+2):
+		for j in range(y-1, y+2):
+			if gc.getMap().plot(i, j).isWater():
+				tSeaPlot = (i, j)
+				break
+
+	utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
+
+	
