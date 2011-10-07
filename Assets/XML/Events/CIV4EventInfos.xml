@@ -28460,7 +28460,7 @@
 			<LocalInfoText/>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENT_TEXT_TRADING_COMOPANY_CONQUERORS_1</Text>
-			<WorldNewsTexts>
+			</WorldNewsTexts>
 			<OtherPlayerPopup/>
 			<QuestFailText/>
 			<bQuest>0</bQuest>
@@ -28543,7 +28543,7 @@
 			<LocalInfoText/>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENT_TEXT_TRADING_COMOPANY_CONQUERORS_2</Text>
-			<WorldNewsTexts>
+			</WorldNewsTexts>
 			<OtherPlayerPopup/>
 			<QuestFailText/>
 			<bQuest>0</bQuest>
