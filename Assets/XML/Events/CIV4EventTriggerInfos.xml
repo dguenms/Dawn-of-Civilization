@@ -17253,9 +17253,7 @@
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_TRADING_COMPANY_CONQUERORS</Type>
-			<WorldNewsTexts>
-				<Text>TXT_KEY_EVENTTRIGGER_TRADING_COMPANY_CONQUERORS</Text>
-			</WorldNewsTexts>
+			<WorldNewsTexts/>
 			<TriggerTexts>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_TRADING_COMPANY_CONQUERORS</Text>

@@ -4285,10 +4285,11 @@ def canTriggerTradingCompanyConquerors(argsList):
 	iPlayer = kTriggeredData.ePlayer
 
 	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
-	id = lCivList.index(iPlayer)
-
+	
 	if iPlayer not in lCivList or utils.getHumanID() != iPlayer:
 		return False
+
+	id = lCivList.index(iPlayer)
 
 	# Leoreth: dirty solution: determine that turn's target cities during this check
 	targetList = utils.getColonialTargets(iPlayer)

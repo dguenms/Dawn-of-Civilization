@@ -1383,6 +1383,9 @@ class RFCUtils:
 		else:
 			iNumCities = 3
 
+		lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+		id = lCivList.index(iPlayer)
+
 		lPlotList = con.tTradingCompanyPlotLists[id]
 
 		cityList = []
