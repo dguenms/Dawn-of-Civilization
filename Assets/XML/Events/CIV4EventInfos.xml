@@ -28458,7 +28458,9 @@
 			<Type>EVENT_TRADING_COMPANY_CONQUERORS_1</Type>
 			<Description>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_1</Description>
 			<LocalInfoText/>
-			<WorldNewsTexts/>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENT_TEXT_TRADING_COMOPANY_CONQUERORS_1</Text>
+			<WorldNewsTexts>
 			<OtherPlayerPopup/>
 			<QuestFailText/>
 			<bQuest>0</bQuest>
@@ -28539,7 +28541,9 @@
 			<Type>EVENT_TRADING_COMPANY_CONQUERORS_2</Type>
 			<Description>TXT_KEY_EVENT_TRADING_COMPANY_CONQUERORS_2</Description>
 			<LocalInfoText/>
-			<WorldNewsTexts/>
+			<WorldNewsTexts>
+				<Text>TXT_KEY_EVENT_TEXT_TRADING_COMOPANY_CONQUERORS_2</Text>
+			<WorldNewsTexts>
 			<OtherPlayerPopup/>
 			<QuestFailText/>
 			<bQuest>0</bQuest>
