@@ -1668,6 +1668,9 @@ class RiseAndFall:
                                                                         else:
                                                                                 iMinNumCitiesOwner = 3
                                                                                 iOwnerStability = utils.getStability(iOwner)
+										#Leoreth: make civs a little less vulnerable before Nationalism
+										if utils.getCivsWithNationalism() == 0:
+											iOwnerStability += 10
                                                                                 if (not gc.getPlayer(iOwner).isHuman()):
                                                                                         iMinNumCitiesOwner = 2
                                                                                         iOwnerStability -= 20
