@@ -8461,7 +8461,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_THAI_HO_TRAI_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_THAI_HO_TRAI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_LIBRARY</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_THAI_HO_TRAI</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>RELIGION_BUDDHISM</ReligionType>
