@@ -7600,6 +7600,10 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 135;
 		iRate /= 100;
 		break;
+	case THAILAND:
+		iRate *= 110;
+		iRate /= 100;
+		break;
 	case AMERICA:
 		iRate *= 150;
 		iRate /= 100;

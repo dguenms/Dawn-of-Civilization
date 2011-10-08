@@ -484,8 +484,12 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
                         tList.pop(36) #marsh
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
+			tList.pop(con.iChiang_Kaishek)
+			tList.pop(con.iFrancis)
+			tList.pop(con.iBarbarossa)
+			tList.pop(con.iElishat)
                         #tList.pop(con.iWangKon) #wang kon
-                        tList.pop(con.iSittingBull) #sitt.b.
+                        tList.pop(con.iSitting_Bull) #sitt.b.
                         tList.pop(con.iShaka) #shaka   
                         #tList.pop(con.iJustinian) #justinian 
                         #tList.pop(con.iHatshepsut) #hatshepsut
@@ -493,7 +497,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         #tList.pop(con.iCharlemagne) #charlemagne
                         #tList.pop(con.iBrennus) #brennus
                         tList.pop(con.iBoudica) #boudica
-                        tList.pop(con.iBarbarianLeader) #barbarian
+                        tList.pop(con.iLeaderBarbarian) #barbarian
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):
                         tList.pop(con.iCivNative) #natives
                         tList.pop(con.iCivIndependent2) #independent2

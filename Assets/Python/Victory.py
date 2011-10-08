@@ -158,6 +158,9 @@ tIndonesiaBR = (109, 30)
 tPhilippinesTL = (108, 30)
 tPhilippinesBR = (110, 36)
 
+tSouthAsiaTL = (88, 24)
+tSouthAsiaBR = (110, 38)
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -190,6 +193,7 @@ iInca = con.iInca
 iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
+iThailand = con.iThailand
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
@@ -233,6 +237,7 @@ pInca = gc.getPlayer(iInca)
 pMongolia = gc.getPlayer(iMongolia)
 pAztecs = gc.getPlayer(iAztecs)
 pMughals = gc.getPlayer(iMughals)
+pThailand = gc.getPlayer(iThailand)
 pAmerica = gc.getPlayer(iAmerica)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
@@ -271,6 +276,7 @@ teamInca = gc.getTeam(pInca.getTeam())
 teamMongolia = gc.getTeam(pMongolia.getTeam())
 teamAztecs = gc.getTeam(pAztecs.getTeam())
 teamMughals = gc.getTeam(pMughals.getTeam())
+teamThailand = gc.getTeam(pThailand.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
@@ -1554,6 +1560,42 @@ class Victory:
 ##                                                else:
 ##                                                        self.setGoal(iAztecs, 2, 0)
 
+		elif iPlayer == iThailand:
+			if pThailand.isAlive():
+
+				if iGameTurn == getTurnForYear(1650):
+					iCount = 0
+					for iCiv in range(iNumMajorPlayers):
+						if iCiv != iPortugal:
+							if teamPortugal.isOpenBorders(iCiv):
+								iCount += 1
+					if iCount >= 8:
+						self.setGoal(iThailand, 0, 1)
+					else:
+						self.setGoal(iThailand, 0, 0)
+
+				if iGameTurn == getTurnForYear(1700):
+					bestCity = self.calculateTopCityPopulation(101, 33)
+					if bestCity != -1:
+						if bestCity.getOwner() == iThailand and bestCity.getX() == 101 and bestCity.getY() == 33:
+							self.setGoal(iThailand, 1, 1)
+						else:
+							self.setGoal(iThailand, 1, 0)
+					else:
+						self.setGoal(iThailand, 1, 0)
+
+				if iGameTurn == getTurnForYear(1900):
+					bSouthAsia = True
+					for iCiv in range(iNumPlayers):
+						if iCiv not in [iIndia, iKhmer, iIndonesia, iMughals, iThailand]:
+							if not self.checkNotOwnedArea(iCiv, tSouthAsiaTL, tSouthAsiaBR):
+								bSouthAsia = False
+					if bSouthAsia:
+						self.setGoal(iThailand, 2, 1)
+					else:
+						self.setGoal(iThailand, 2, 0)
+
+
                         
                 elif (iPlayer == iAmerica):
                         if (pAmerica.isAlive()):
@@ -2758,7 +2800,7 @@ class Victory:
                                  			bAfrica = False
                                  		if (bAfrica == False):
                                  			break
-				aHelp.append(self.getIcon(bAfrica) + 'No European colonies in East and Subequatorial Africaa')
+				aHelp.append(self.getIcon(bAfrica) + 'No European colonies in East and Subequatorial Africa')
 
 		elif iPlayer == iKorea:
 			if iGoal == 0:
@@ -3015,6 +3057,27 @@ class Victory:
                                 			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iTurkey)):
                                 				iCounter += 1
 				aHelp.append(self.getIcon(iCounter >= 3) + 'Vassals: ' + str(iCounter) + '/3')
+
+		elif iPlayer == iThailand:
+			if iGoal == 0:
+				iCount = 0
+                                for iLoopCiv in range(iNumMajorPlayers):
+                                	if (iLoopCiv != iThailand):
+                                		if (teamThailand.isOpenBorders(iLoopCiv)):
+                                			iCount += 1
+				aHelp.append(self.getIcon(iCount >= 8) + 'Open border agreements: ' + str(iCount) + '/8')
+			elif iGoal == 1:
+				pBestCity = self.calculateTopCityPopulation(101, 33)
+				bBestCity = (pBestCity.getOwner() == iThailand and pBestCity.getX() == 101 and pBestCity.getY() == 33)
+				aHelp.append(self.getIcon(bBestCity) + 'Most populous city: ' + pBestCity.getName())
+			elif iGoal == 2:
+				bSouthAsia = True
+                                for iCiv in range(iNumPlayers):
+                                	if iCiv not in [iIndia, iKhmer, iIndonesia, iMughals, iThailand]:
+                                 		if not self.checkNotOwnedArea(iCiv, tSomaliaTL, tSomaliaBR):
+                                 			bSouthAsia = False
+				aHelp.append(self.getIcon(bSouthAsia) + 'No foreign colonies in South Asia')
+				
 
 		elif iPlayer == iAmerica:
 			if iGoal == 0:

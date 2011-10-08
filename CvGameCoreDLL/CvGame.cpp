@@ -2270,6 +2270,7 @@ void CvGame::update()
 		case INCA:
 		case MONGOLIA:
 		case AZTEC:
+		case THAILAND:
 		case AMERICA:
 			//if (getGameTurn() == 0 || (getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition
 			if (getGameTurn() == 0 || (getGameTurn() == getTurnForYear(600) && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition // edead

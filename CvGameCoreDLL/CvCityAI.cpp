@@ -2573,6 +2573,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
+	case THAILAND:
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		break;
 	case AMERICA:
 		aiUnitAIVal[UNITAI_RESERVE] *= 2;
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
@@ -3255,6 +3258,20 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case MUGHALS:
 										if (iI == TAJMAHAL) iTempValue *= 4;
 										else if (iI == HARMANDIR_SAHIB) iTempValue *= 2;
+										break;
+									case THAILAND:
+										if (iI == ANGKORWAT) iTempValue *= 3;
+										else if (iI == PAYA) iTempValue *= 3;
+										else if (iI == TAJMAHAL) iTempValue *= 2;
+										else if (iI == BOROBUDUR) iTempValue *= 2;
+										else if (iI == MOAI) {
+											iTempValue *= 3;
+											iTempValue /= 2;
+										}
+										else {
+											iTempValue *= 2;
+											iTempValue /= 3;
+											}
 										break;
 									case AMERICA:
 										if (iI == STATUEOFLIBERTY) iTempValue *= 2;
@@ -4811,6 +4828,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					break;
 				case TURKEY:
 					iValue -= 1;
+					break;
+				case THAILAND:
+					iValue += 1;
 					break;
 				case AMERICA:
 					iValue += 1;

@@ -293,7 +293,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_PHILIP</Tag>
+		<Tag>TXT_KEY_LEADER_FILIPE</Tag>
 		<English>Philip II</English>
 		<French>
 			<Text>Philippe II</Text>
@@ -556,9 +556,14 @@
 		<English>Greetings [CT_NAME]. I am [OUR_NAME], emperor of all the lands below the heavens. With absolute power over numberless minions, do you dare hurt the divine ruler of mighty [OUR_CIV_SHORT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_YONGLE</Tag>
-		<English>Yongle</English>
-		<German>Yongle</German>
+		<Tag>TXT_KEY_LEADER_HONGWU</Tag>
+		<English>Hongwu</English>
+		<German>Hongwu</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_NARESUAN</Tag>
+		<English>Naresuan</English>
+		<German>Naresuan</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_SHIVAJI</Tag>
