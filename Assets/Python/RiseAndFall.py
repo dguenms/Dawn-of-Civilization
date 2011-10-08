@@ -69,6 +69,7 @@ iInca = con.iInca
 iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
+iThailand = con.iThailand
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
@@ -112,6 +113,7 @@ pInca = gc.getPlayer(iInca)
 pMongolia = gc.getPlayer(iMongolia)
 pAztecs = gc.getPlayer(iAztecs)
 pMughals = gc.getPlayer(iMughals)
+pThailand = gc.getPlayer(iThailand)
 pAmerica = gc.getPlayer(iAmerica)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
@@ -150,6 +152,7 @@ teamInca = gc.getTeam(pInca.getTeam())
 teamMongolia = gc.getTeam(pMongolia.getTeam())
 teamAztecs = gc.getTeam(pAztecs.getTeam())
 teamMughals = gc.getTeam(pMughals.getTeam())
+teamThailand = gc.getTeam(pThailand.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
@@ -159,8 +162,8 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 3, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 7, 2, 3, 2, 1, 0, 0, 0, 0)
-                                                                                   #ma po in mo mu az tu am
+tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 3, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 7, 2, 3, 2, 1, 0, 0, 0, 0, 0)
+                                                                                   #ma po in mo az mu tu th am
 
 # starting locations coordinates
 tCapitals = con.tCapitals
@@ -645,6 +648,7 @@ class RiseAndFall:
                 pAztecs.changeGold(600)
 		pMughals.changeGold(400)
                 pTurkey.changeGold(300)
+		pThailand.changeGold(800)
                 pAmerica.changeGold(1500)
                
            
@@ -2022,7 +2026,7 @@ class RiseAndFall:
                 iHuman = utils.getHumanID()
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
                 
-                lConditionalCivs = [iByzantium, iMughals]
+                lConditionalCivs = [iByzantium, iMughals, iThailand]
 
                 # Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -2033,8 +2037,16 @@ class RiseAndFall:
                                         if pCity.getOwner == iRome:
                                                 bRomanCityInGreece = True
 
-                                if pGreece.isAlive() or (not bRomanCityInGreece):
+                                if (not bRomanCityInGreece):
                                         return
+
+			elif iCiv == iThailand:
+				if utils.getHumanID() != iKhmer:
+					if utils.getStability(iKhmer) > 0:
+						return
+				else:
+					if utils.getStability(iKhmer) > -20:
+						return
 
                 if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
                         if iCiv in lConditionalCivs:
@@ -2090,7 +2102,7 @@ class RiseAndFall:
                                 #if (iCiv == iByzantium):
                                 #       utils.cultureManager((68,45), 50, iCiv, gc.getMap().plot(68,45).getPlotCity().getOwner(), True, False, False)
 
-                                if iCiv in lConditionalCivs:
+                                if iCiv in lConditionalCivs and iCiv != iThailand:
                                         utils.makeUnit(con.iCatapult, iCiv, (1,0), 1)
                                         self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
                                         self.assignTechs(iCiv)
@@ -2135,7 +2147,7 @@ class RiseAndFall:
                                                                         break
                                 print ("bDeleteEverything", bDeleteEverything)
                                 if (not gc.getMap().plot(tCapital[0], tCapital[1]).isOwned()):
-                                        if (iCiv == iNetherlands or iCiv == iPortugal or (iCiv == iRome and utils.getReborn(iCiv) == 1) or iCiv == iByzantium or iCiv == iKorea): #dangerous starts
+                                        if (iCiv == iNetherlands or iCiv == iPortugal or (iCiv == iRome and utils.getReborn(iCiv) == 1) or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand): #dangerous starts
                                                 self.setDeleteMode(0, iCiv)
                                         self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
                                 elif (bDeleteEverything):
@@ -3441,6 +3453,9 @@ class RiseAndFall:
 		if iCiv == iMughals:
 			utils.makeUnit(con.iMughalVolleyGun, iCiv, tPlot, 2)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 4)
+		if iCiv == iThailand:
+			utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iThaiChangSuek, iCiv, tPlot, 2)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 3)
@@ -3662,6 +3677,11 @@ class RiseAndFall:
 			utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)
 			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 1)
+		if iCiv == iThailand:
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
+			utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iThaiChangSuek, iCiv, tPlot, 2)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
@@ -3785,6 +3805,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 		if iCiv == iMughals:
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+		if iCiv == iThailand:
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 4)
 
@@ -3887,9 +3909,12 @@ class RiseAndFall:
                 if ( pAztecs.isHuman() ):
                     utils.makeUnit(iSettler, iAztecs, tCapitals[0][iAztecs], 1)
                     utils.makeUnit(iScout, iAztecs, tCapitals[0][iAztecs], 1)
-		if pMughals.isHuman():
-			utils.makeUnit(iSettler, iMughals, tCapitals[0][iMughals], 1)
-			utils.makeUnit(iWarrior, iMughals, tCapitals[0][iMughals], 1)
+		if ( pMughals.isHuman() ):
+		    utils.makeUnit(iSettler, iMughals, tCapitals[0][iMughals], 1)
+		    utils.makeUnit(iWarrior, iMughals, tCapitals[0][iMughals], 1)
+		if ( pThailand.isHuman() ):
+		    utils.makeUnit(iSettler, iThailand, tCapitals[0][iThailand], 1)
+		    utils.makeUnit(iWarrior, iThailand, tCapitals[0][iThailand], 1)
                 if ( pAmerica.isHuman() ):
                     utils.makeUnit(iSettler, iAmerica, tCapitals[0][iAmerica], 1)
                     utils.makeUnit(iWarrior, iAmerica, tCapitals[0][iAmerica], 1)
@@ -4798,6 +4823,14 @@ class RiseAndFall:
 						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding]
 				for iTech in lMughalTechs:
 					teamMughals.setHasTech(iTech, True, iCiv, False, False)
+			if iCiv == iThailand:
+				lThaiTechs =   [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
+						con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
+						con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, \
+						con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, \
+						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding]
+				for iTech in lThaiTechs:
+					teamThailand.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iAmerica):
                                 for x in range(con.iDemocracy+1):
                                                 teamAmerica.setHasTech(x, True, iCiv, False, False)

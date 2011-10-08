@@ -66,6 +66,7 @@ iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
 iTurkey = con.iTurkey
+iThailand = con.iThailand
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers

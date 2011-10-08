@@ -489,7 +489,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_MONGKUT</Type>
-			<Button></Button>
+			<Button>Art/leaderheads/Mongkut/MongkutButton.dds</Button>
 			<NIF>Art/leaderheads/Mongkut/Tachnechobrus.nif</NIF>
 			<KFM>Art/leaderheads/Mongkut/Tachnechobrus.kfm</KFM>
 			<NoShaderNIF>Art/leaderheads/Mongkut/Tachnechobrus.nif</NoShaderNIF>
@@ -504,12 +504,12 @@
 			<BackgroundKFM>Art/leaderheads/DidoFINAL/leader_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_PHILIP</Type>
-			<Button>Art/leaderheads/Philipp/Philipp.dds</Button>
-			<NIF>Art/leaderheads/Philipp/SimonBolivar.nif</NIF>
-			<KFM>Art/leaderheads/Philipp/SimonBolivar.kfm</KFM>
-			<NoShaderNIF>Art/leaderheads/Philipp/SimonBolivar.nif</NoShaderNIF>
-			<BackgroundKFM>Art/leaderheads/Philipp/SimonBolivar_BG.kfm</BackgroundKFM>
+			<Type>ART_DEF_LEADER_FILIPE</Type>
+			<Button>Art/Leaderheads/Filipe/btn_philip.dds</Button>
+			<NIF>Art/Leaderheads/Filipe/simonbolivar.nif</NIF>
+			<KFM>Art/Leaderheads/Filipe/simonbolivar.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Filipe/simonbolivar.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Filipe/simonbolivar_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_BARBAROSSA</Type>
@@ -640,12 +640,12 @@
 			<BackgroundKFM>art/leaderheads/Taizong/mao_tse_tung_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_YONGLE</Type>
-			<Button>,Art/leaderheads/Yongle/Taizong.dds</Button>
-			<NIF>art/leaderheads/Yongle/wang_kon.nif</NIF>
-			<KFM>art/leaderheads/Yongle/wang_kon.kfm</KFM>
-			<NoShaderNIF>art/leaderheads/Yongle/wang_kon_noshader.nif</NoShaderNIF>
-			<BackgroundKFM>art/leaderheads/Yongle/Wang_Kon_BG.kfm</BackgroundKFM>
+			<Type>ART_DEF_LEADER_HONGWU</Type>
+			<Button>Art/Leaderheads/Sejong/Sejong.dds</Button>
+			<NIF>Art/Leaderheads/Sejong/mao_tse_tung.nif</NIF>
+			<KFM>Art/Leaderheads/Sejong/mao_tse_tung.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Sejong/mao_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Sejong/mao_tse_tung_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_HAYAW_WURUK</Type>
@@ -697,11 +697,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_NARESUAN</Type>
-			<Button>,Art/Leaderheads/Bayinnaung/Bayin_Button.dds</Button>
-			<NIF>Art/Leaderheads/Bayinnaung/Gilgamesh.nif</NIF>
-			<KFM>Art/Leaderheads/Bayinnaung/Gilgamesh.kfm</KFM>
-			<NoShaderNIF>Art/Leaderheads/Bayinnaung/Gilgamesh_NONSHADER.nif</NoShaderNIF>
-			<BackgroundKFM>Art/Leaderheads/Bayinnaung/Gilgamesh_Backgrnd.kfm</BackgroundKFM>
+			<Button>Art/Leaderheads/Ramkhamhaeng/Ramkham.dds</Button>
+			<NIF>Art/Leaderheads/Ramkhamhaeng/Suryavarman.nif</NIF>
+			<KFM>Art/Leaderheads/Ramkhamhaeng/Suryavarman.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Ramkhamhaeng/Suryavarman.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Ramkhamhaeng/Suryavarman_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>	
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

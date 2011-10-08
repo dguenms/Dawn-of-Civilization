@@ -18,12 +18,12 @@ typedef list<char*> LISTCHAR;
 
 #define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
 
-#define BEGIN_WONDERS				(113)
-#define NUM_WONDERS					(179)
-#define NUM_BUILDINGS_PLAGUE		(180)
-#define NUM_BUILDINGTYPES_PLAGUE	(137)
+#define BEGIN_WONDERS				(114)
+#define NUM_WONDERS					(180)
+#define NUM_BUILDINGS_PLAGUE		(181)
+#define NUM_BUILDINGTYPES_PLAGUE	(138)
 
-#define NUM_MAJOR_PLAYERS		(31)
+#define NUM_MAJOR_PLAYERS		(32)
 #define ITALY					ROME
 
 enum MyCivs
@@ -58,6 +58,7 @@ enum MyCivs
  AZTEC,
  MUGHALS,
  TURKEY,
+ THAILAND,
  AMERICA,
  INDEPENDENT,
  INDEPENDENT2,
@@ -301,50 +302,50 @@ extern bool startingEra[39];
 extern char startingYear600AD[39][6];
 extern bool startingEra600AD[39];
 
-extern int takenTiles[31];
-extern int distanceSubtrahend[31];
-extern int distanceSubtrahendAstronomy[31];
-extern int distanceMultiply[31];
-extern int distanceMultiplyAstronomy[31];
-extern int compactEmpireModifierArray[31];
-extern int compactEmpireModifierAstronomy[31];
-extern int targetCityValueDivisor[31];
+extern int takenTiles[32];
+extern int distanceSubtrahend[32];
+extern int distanceSubtrahendAstronomy[32];
+extern int distanceMultiply[32];
+extern int distanceMultiplyAstronomy[32];
+extern int compactEmpireModifierArray[32];
+extern int compactEmpireModifierAstronomy[32];
+extern int targetCityValueDivisor[32];
 
-extern int eraModifierInit[31];
-extern int eraModifierInitAstronomy[31];
-extern int cultureModifier[31];
+extern int eraModifierInit[32];
+extern int eraModifierInitAstronomy[32];
+extern int cultureModifier[32];
 
-extern int unitCostModifier[31];
-extern int researchModifier[31];
-extern int distanceMaintenanceModifier[31];
-extern int numMaintenanceModifier[31];
-extern int civicUpkeepModifier[31];
-extern int healthMultiplier[31];
+extern int unitCostModifier[32];
+extern int researchModifier[32];
+extern int distanceMaintenanceModifier[32];
+extern int numMaintenanceModifier[32];
+extern int civicUpkeepModifier[32];
+extern int healthMultiplier[32];
 
-extern int startingEraFound[31];
-extern int startingEraFound600AD[31];
-extern int startingEraFoundAstronomy[31];
-extern int unitCostModifier2[31];
-extern int wonderCostModifier[31];
-extern int buildingCostModifier[31];
-extern int inflationRateModifier[31];
-extern int greatPeopleThresholdArray[31];
-extern int currentEra[31];
-extern int currentEra600AD[31];
-extern int growthThreshold[31];
+extern int startingEraFound[32];
+extern int startingEraFound600AD[32];
+extern int startingEraFoundAstronomy[32];
+extern int unitCostModifier2[32];
+extern int wonderCostModifier[32];
+extern int buildingCostModifier[32];
+extern int inflationRateModifier[32];
+extern int greatPeopleThresholdArray[32];
+extern int currentEra[32];
+extern int currentEra600AD[32];
+extern int growthThreshold[32];
 
 //extern int militaryBonus[2][18];
 extern char uniquePower[39][2][16];
 extern char uniqueGoals[39][3][18];
 extern char rating[39][6][15];
 
-extern int turnPlayed[36];
-extern int civSpreadFactor[36][8];
-extern int civicMatrix[31][6][5];
-extern int borders[31][31];
-extern wchar civDynamicNames[2][31][22][19]; //(dynamic civ names - not jdog's)
-extern int civDynamicNamesFlag[31];
-extern int civDynamicNamesEraThreshold[31];
-extern int settlersMaps[2][31][68][124];
+extern int turnPlayed[37];
+extern int civSpreadFactor[37][8];
+extern int civicMatrix[32][6][5];
+extern int borders[32][32];
+extern wchar civDynamicNames[2][32][22][19]; //(dynamic civ names - not jdog's)
+extern int civDynamicNamesFlag[32];
+extern int civDynamicNamesEraThreshold[32];
+extern int settlersMaps[2][32][68][124];
 
 

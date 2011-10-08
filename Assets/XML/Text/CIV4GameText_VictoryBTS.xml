@@ -169,4 +169,19 @@
 		<English>Control 10% of the world's population in 1940 AD</English>
 		<German>Kontrollieren Sie 10% der Weltbevölkerung im Jahr 1940 n. Chr.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA1</Tag>
+		<English>Have open borders with 8 civilizations in 1650 AD</English>
+		<German>Haben Sie im Jahr 1650 n. Chr. offene Grenzen mit 8 Zivilisationen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA2</Tag>
+		<English>Make Ayutthaya the most populous city in the world in 1700 AD</English>
+		<German>Machen Sie Ayutthaya zur bevölkerungsreichsten Stadt der Welt im Jahr 1700 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA3</Tag>
+		<English>Allow no foreign powers in Southern Asia in 1900 AD</English>
+		<German>Lassen Sie im Jahr 1900 n. Chr. keine ausländischen Mächte im südlichen Asien zu</German>
+	</TEXT>
 </Civ4GameText>
