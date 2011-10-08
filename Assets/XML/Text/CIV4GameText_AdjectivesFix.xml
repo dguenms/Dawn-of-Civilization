@@ -928,31 +928,12 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ZOROASTRIANISM_ADJECTIVE</Tag>
-		<English>
-			<Text>Zoroastrian</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</English>
-		<French>
-			<Text>portugais:portugaise:portugais:portugaises</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
+		<Tag>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Tag>
+		<English>Zoroastrian</English>
 		<German>
-			<Text>Portugiesisch:portugiesischen:portugiesische</Text>
+			<Text>Zoroastrisch:zoroastrischen:zoroastrische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
-		<Italian>
-			<Text>portoghese:portoghese:portoghesi:portoghesi</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>portugu&#233;s:portuguesa:portugueses:portuguesas</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Spanish>
 	</TEXT>
 </Civ4GameText>
