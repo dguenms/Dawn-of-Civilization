@@ -1585,11 +1585,7 @@ class Victory:
 						self.setGoal(iThailand, 1, 0)
 
 				if iGameTurn == getTurnForYear(1900):
-					bSouthAsia = True
-					for iCiv in range(iNumPlayers):
-						if iCiv not in [iIndia, iKhmer, iIndonesia, iMughals, iThailand]:
-							if not self.checkNotOwnedArea(iCiv, tSouthAsiaTL, tSouthAsiaBR):
-								bSouthAsia = False
+					bSouthAsia = self.isAreaFreeOfCivs(tSouthAsiaTL, tSouthAsiaBR, [iIndia, iKhmer, iIndonesia, iMughals, iThailand])
 					if bSouthAsia:
 						self.setGoal(iThailand, 2, 1)
 					else:
@@ -2586,8 +2582,22 @@ class Victory:
 				iBestCiv = iLoopCiv
 				iBestTechs = iTempTechs
 		return iBestCiv
-		
-			
+
+	# only allow the civs in lCivList in the area
+	def isAreaFreeOfCivs(self, tTopLeft, tBottomRight, lCivList):
+		lOwnerList = []
+		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.cityPlots, lCivList[0])
+		for tPlot in lCityPlotList:
+			x, y = tPlot
+			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList:
+				lOwnerList.append(gc.getMap().plot(x,y).getPlotCity().getOwner())
+		for iCiv in lCivList:
+			if iCiv in lOwnerList or iCiv >= con.iNumPlayers:
+				lOwnerList.remove(iCiv)
+		if len(lOwnerList) == 0:
+			return True
+		else:
+			return False
 
 
 	def getIcon(self, bVal):
@@ -3071,11 +3081,7 @@ class Victory:
 				bBestCity = (pBestCity.getOwner() == iThailand and pBestCity.getX() == 101 and pBestCity.getY() == 33)
 				aHelp.append(self.getIcon(bBestCity) + 'Most populous city: ' + pBestCity.getName())
 			elif iGoal == 2:
-				bSouthAsia = True
-                                for iCiv in range(iNumPlayers):
-                                	if iCiv not in [iIndia, iKhmer, iIndonesia, iMughals, iThailand]:
-                                 		if not self.checkNotOwnedArea(iCiv, tSomaliaTL, tSomaliaBR):
-                                 			bSouthAsia = False
+				bSouthAsia = self.isAreaFreeOfCivs(tSouthAsiaTL, tSouthAsiaBR, [iIndia, iKhmer, iIndonesia, iMughals, iThailand])
 				aHelp.append(self.getIcon(bSouthAsia) + 'No foreign colonies in South Asia')
 				
 

@@ -1342,25 +1342,37 @@ class RFCUtils:
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		tPlot = lFreePlots[iRand]
 
-		self.makeUnit(con.iCannon, iCiv, tPlot, 2)
+		if iCiv in [con.iSpain, con.iPortugal, con.iNetherlands]:
+			iNumUnits = 2
+		elif iCiv in [con.iFrance, con.iEngland]:
+			iNumUnits = 3
+
+		self.makeUnit(con.iCannon, iCiv, tPlot, iNumUnits)
 		if bRifling:
 			if iCiv == con.iEngland:
-				self.makeUnit(con.iEnglishRedcoat, iCiv, tPlot, 4)
+				self.makeUnit(con.iEnglishRedcoat, iCiv, tPlot, 2*iNumUnits)
 			else:
-				self.makeUnit(con.iRifleman, iCiv, tPlot, 4)
+				self.makeUnit(con.iRifleman, iCiv, tPlot, 2*iNumUnits)
 		else:
-			self.makeUnit(con.iMusketman, iCiv, tPlot, 4)
+			self.makeUnit(con.iMusketman, iCiv, tPlot, 2*iNumUnits)
 
 
 	def colonialAcquisition(self, iCiv, x, y):
+		if iCiv in [con.iPortugal, con.iSpain]:
+			iNumUnits = 1
+		elif iCiv in [con.iFrance, con.iEngland, con.iNetherlands]:
+			iNumUnits = 2
 		if gc.getMap().plot(x,y).isCity():
 			if gc.getMap().plot(x,y).getPlotCity().getOwner() != self.getHumanID():
 				self.flipCity((x,y), False, True, iCiv, [])
-				self.makeUnit(con.iWorker, iCiv, (x,y), 2)
+				self.makeUnit(con.iWorker, iCiv, (x,y), iNumUnits)
 				if gc.getTeam(iCiv).isHasTech(con.iRifling):
-					self.makeUnit(con.iRifleman, iCiv, (x,y), 2)
+					self.makeUnit(con.iRifleman, iCiv, (x,y), iNumUnits)
 				else:
-					self.makeUnit(con.iMusketman, iCiv, (x,y), 2)
+					if iCiv == con.iEngland:
+						self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), iNumUnits)
+					else:
+						self.makeUnit(con.iMusketman, iCiv, (x,y), iNumUnits)
 				if gc.getPlayer(iCiv).getStateReligion() != -1:
 					self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 			else:

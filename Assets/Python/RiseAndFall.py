@@ -1,4 +1,3 @@
-
 # Rhye's and Fall of Civilization - Main Scenario
 
 from CvPythonExtensions import *
@@ -3199,12 +3198,19 @@ class RiseAndFall:
 		print "On Economics discovered."
 
 		if utils.getHumanID() != iCiv:
-			if iCiv in [iSpain, iPortugal]:
-				self.handleColonialAcquisition(iCiv)
-			elif iCiv in [iFrance, iEngland, iNetherlands]:
+			if iCiv in [iFrance, iEngland, iNetherlands]:
 				self.handleColonialConquest(iCiv)
 
+	def onAstronomyDiscovered(self, iCiv):
+		print "On Astronomy discovered."
+
+		if utils.getHumanID() != iCiv:
+			if iCiv in [iSpain, iPortugal]:
+				self.handleColonialAcquisition(iCiv)
+
+
 	def handleColonialAcquisition(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
 		targetList = utils.getColonialTargets(iPlayer)
 		targetCivList = []
 
@@ -3658,13 +3664,13 @@ class RiseAndFall:
                         utils.makeUnit(con.iIncanQuechua, iCiv, tPlot, 4)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
                 if (iCiv == iMongolia):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 3)		# -2 settlers, more preplaces cities instead
+                        utils.makeUnit(con.iSettler, iCiv, tPlot, 3)		# -2 settlers, more preplaced cities instead
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2) 
-                        utils.makeUnit(con.iMongolKeshik, iCiv, tPlot, 4)
-                        pMongolia.initUnit(con.iMongolKeshik, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
-                        pMongolia.initUnit(con.iMongolKeshik, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
+                        utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 6)
+			if utils.getHumanID() != iMongolia: 
+                        	utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 4)
                         utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
 			utils.makeUnitAI(con.iScout, iCiv, tPlot, UnitAITypes.UNITAI_EXPLORE, 2)
                 if (iCiv == iAztecs):

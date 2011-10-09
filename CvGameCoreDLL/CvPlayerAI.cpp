@@ -5635,7 +5635,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case FRANCE:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING)
+									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS)
 										iValue *= 2;
 									if (iI == DRAMA || iI == MUSIC || iI == GUILDS || iI == CHEMISTRY) {
 										iValue *= 3;
@@ -5652,7 +5652,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case ENGLAND:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING)
+									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS)
 										iValue *= 2;
 									if (iI == LITERATURE || iI == DRAMA || iI == GUILDS || iI == ECONOMICS || iI == LIBERALISM || iI == CHEMISTRY) {
 										iValue *= 3;
@@ -6114,6 +6114,16 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 			iAttitude += 8;
 	}
 	//Rhye - end UP
+
+	//Leoreth: start Thai UP
+	if (ePlayer == THAILAND)
+	{
+		if (getID() == GREECE || getID() == ROME || getID() || getID() == VIKING || getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == GERMANY || getID() == RUSSIA || getID() == PORTUGAL || getID() == NETHERLANDS)
+		{
+			iAttitude += 5;
+		}
+	}
+	// end
 
 //	if (GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI))
 //	{
