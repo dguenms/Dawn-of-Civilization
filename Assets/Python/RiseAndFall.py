@@ -3097,7 +3097,7 @@ class RiseAndFall:
                                                         if (iOldWorldCiv == iJapan):
                                                                 utils.makeUnitAI(con.iJapanSamurai, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         elif (iOldWorldCiv == iVikings):
-                                                                utils.makeUnitAI(con.iVikingBeserker, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
+                                                                utils.makeUnitAI(con.iVikingBerserker, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         else:
                                                                 utils.makeUnitAI(con.iMaceman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                 else:
@@ -3672,7 +3672,6 @@ class RiseAndFall:
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 4)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 4)
 		if iCiv == iMughals:
-			utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
 			utils.makeUnit(con.iMughalVolleyGun, iCiv, tPlot, 3)
 			utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)
@@ -4828,7 +4827,7 @@ class RiseAndFall:
 						con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
 						con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, \
 						con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, \
-						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding]
+						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics, con.iPaper, con.iDrama, con.iMusic]
 				for iTech in lThaiTechs:
 					teamThailand.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iAmerica):

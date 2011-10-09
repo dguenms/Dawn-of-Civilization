@@ -81,4 +81,9 @@
 		<English>Mughal Embassy</English>
 		<German>Mogul-Botschaft</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THA_EMBASSY</Tag>
+		<English>Thai Embassy</English>
+		<German>Thai-Botschaft</German>
+	</TEXT>
 </Civ4GameText>
