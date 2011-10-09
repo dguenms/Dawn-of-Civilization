@@ -32267,7 +32267,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=43
-	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -32646,6 +32645,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=43
+	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot

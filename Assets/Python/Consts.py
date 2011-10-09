@@ -1436,7 +1436,7 @@ lEnemyCivsOnSpawn = [
 [iChina,iChina,iIndependent,iIndependent,iIndependent2,iIndependent2], #Mongolia
 [iMaya], #Aztec
 [iIndia, iIndia], #Mughals
-[iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia], #Turkey
+[iEgypt,iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia], #Turkey
 [iKhmer], #Thailand
 [iIndependent,iIndependent2] #America
 ]
@@ -1472,7 +1472,7 @@ lTotalWarOnSpawn = [
 [iChina], #Mongolia
 [iMaya], #Aztec
 [iIndia], #Mughals
-[iArabia], #Turkey
+[iArabia, iEgypt], #Turkey
 [], #Thailand
 [], #America
 ]
@@ -1704,7 +1704,7 @@ iZuluImpi, iMayaHolkan, iPikeman, iHolyRomanLandsknecht, iMusketman, iFrenchMusk
 iEthiopianOromoWarrior, iRifleman, iEnglishRedcoat, iGrenadier, iAtInfantry, iInfantry, iSamInfantry, iMobileSam,
 iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMaliSkirmisher, iBabylonBowman, iLongbowman,
 iCrossbowman, iChinaChokonu, iChariot, iEgyptWarChariot, iPersiaImmortal, iHorseArcher, iCarthageNumidianCavalry,
-iMongolKeshik, iKnight, iArabiaCamelarcher, iByzantineCataphract, iSeljukGhulamWarrior, iSpanishConquistador, iCuirassier, iThaiChangSuek, iCavalry, iRussiaCossack,
+iMongolKeshik, iKnight, iArabiaCamelarcher, iByzantineCataphract, iSeljukGhulamWarrior, iThaiChangSuek, iSpanishConquistador, iCuirassier, iCavalry, iRussiaCossack,
 iWarElephant, iKhmerBallistaElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha, iTrebuchet,
 iCannon, iMughalVolleyGun, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iTrireme, iCaravel, iPortugalCarrack, iGalleon,
 iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iFrigate, iShipOfTheLine, iIronclad, iTransport, iDestroyer, iBattleship,

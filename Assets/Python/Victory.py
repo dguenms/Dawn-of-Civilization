@@ -1566,8 +1566,8 @@ class Victory:
 				if iGameTurn == getTurnForYear(1650):
 					iCount = 0
 					for iCiv in range(iNumMajorPlayers):
-						if iCiv != iPortugal:
-							if teamPortugal.isOpenBorders(iCiv):
+						if iCiv != iThailand:
+							if teamThailand.isOpenBorders(iCiv):
 								iCount += 1
 					if iCount >= 8:
 						self.setGoal(iThailand, 0, 1)
