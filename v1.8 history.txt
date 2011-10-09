@@ -46,3 +46,5 @@
 # changed Serfdom's name to Forced Labor
 # first Khmer goal now requires them to control Shwedagon Paya, Borobudur and Wat Preah Pisnulok in 1450 AD
 # third Khmer goal now requires to spread Buddhism and Hinduism combined to 35%
+# disabled the "tributary" vassal names in the industrial era
+# religion spread turns pagan temples into the new religion's temple

@@ -492,10 +492,13 @@ class UniquePowers:
 
 
 	def mongolUP(self, city):
-		if (not gc.getPlayer(iMongolia).isHuman() or city.getPopulation() >= 7):
-			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 2)
+		if (city.getPopulation() >= 7):
+			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
 		elif (city.getPopulation() >= 4):
-			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 1)
+			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1)
+
+		if utils.getHumanID() != iMongolia:
+			utils.makeUnitAI(con.iLongbowman, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 
 		CyInterface().addMessage(iMongolia, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_MONGOL_HORDE", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 

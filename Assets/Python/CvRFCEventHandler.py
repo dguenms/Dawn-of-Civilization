@@ -629,7 +629,14 @@ class CvRFCEventHandler:
         def onReligionSpread(self, argsList):
             
                 iReligion, iOwner, pSpreadCity = argsList
-                self.sta.onReligionSpread(iReligion, iOwner)             
+                self.sta.onReligionSpread(iReligion, iOwner)
+
+		#Leoreth: if pagan temples are not in use anymore (i.e. not running Pantheon), replace them with the temple of the religion that spreads             
+		if pSpreadCity.isHasBuilding(con.iObelisk):
+			if gc.getPlayer(iOwner).getCivics(4) != 21:
+				pSpreadCity.setHasRealBuilding(con.iObelisk, False)
+				pSpreadCity.setHasRealBuilding(con.iJewishTemple+4*iReligion, True)
+
 
         def onFirstContact(self, argsList):
             
@@ -676,6 +683,7 @@ class CvRFCEventHandler:
                         self.cong.onTechAcquired(argsList[0], argsList[2])
 
                 if (argsList[0] == con.iAstronomy):
+			self.rnf.onAstronomyDiscovered(argsList[2])
                         if (iPlayer == con.iSpain or \
                             iPlayer == con.iFrance or \
                             iPlayer == con.iEngland or \

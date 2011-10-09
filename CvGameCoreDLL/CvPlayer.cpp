@@ -23955,8 +23955,11 @@ void CvPlayer::processCivNames()
 			case JAPAN:
 			case KHMER:
 			case INDONESIA:
-				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][20]);
-				break;
+				if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < 4)
+				{
+					setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][20]);
+					break;
+				}
 			default:
 				setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][21]);
 				break;
