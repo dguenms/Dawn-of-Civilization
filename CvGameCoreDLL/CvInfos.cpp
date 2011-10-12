@@ -10399,8 +10399,6 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 			iFinalResearchPercent = researchPercent * 116 / 100;
 		if (pl == ROME)
 			iFinalResearchPercent = researchPercent * 108 / 100;
-		if (pl == MAYA)												// Maya UP
-			iFinalResearchPercent = researchPercent * 65 / 100;
 	}
 
 	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 1)
@@ -10409,6 +10407,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 			iFinalResearchPercent = researchPercent * 102 / 100;
 		if (pl == BABYLONIA)
 			iFinalResearchPercent = researchPercent * 135 / 100;
+		if (pl == MAYA)												// Maya UP
+			iFinalResearchPercent = researchPercent * 65 / 100;
 	}
 
 	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)

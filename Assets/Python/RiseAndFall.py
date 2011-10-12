@@ -161,7 +161,7 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 3, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 7, 2, 3, 2, 1, 0, 0, 0, 0, 0)
+tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 3, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 8, 2, 3, 2, 1, 0, 0, 0, 0, 0)
                                                                                    #ma po in mo az mu tu th am
 
 # starting locations coordinates
@@ -346,6 +346,12 @@ class RiseAndFall:
 	def getFirstContactMongols(self, iCiv):
 		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 		return sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)]
+
+	def getLatestSpawn(self, iCiv):
+		return sd.scriptDict['tLatestSpawn'][iCiv]
+
+	def setLatestSpawn(self, iCiv, iYear):
+		sd.scriptDict['tLatestSpawn'][iCiv] = iYear
                 
 ###############
 ### Popups ###
@@ -870,7 +876,7 @@ class RiseAndFall:
                                 utils.flipUnitsInArea(tTopLeft, tCoreAreasBR[0][iChina], iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 
                 if (iGameTurn == getTurnForYear(640)):          # Leoreth: moved to later (historicity, no conflict with Byzantine flip)
-                        if True:   
+                        if not gc.getPlayer(iEgypt).isPlayable():   
                                 iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iArabia, (67, 30), (80, 40))
                                 self.convertSurroundingPlotCulture(iArabia, tNormalAreasTL[0][iArabia], (80, 40))
                                 utils.flipUnitsInArea(tNormalAreasTL[0][iArabia], (80, 40), iArabia, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
@@ -881,7 +887,7 @@ class RiseAndFall:
                                 #teamArabia.setHasTech(con.iDivineRight, True, iArabia, False, False)
 
                 if (iGameTurn == getTurnForYear(650)):
-                        if True:
+                        if not gc.getPlayer(iEgypt).isPlayable():
                                 plotBaghdad = gc.getMap().plot(77,40)
                                 plotCairo = gc.getMap().plot(69,35)
 
@@ -903,7 +909,7 @@ class RiseAndFall:
                                                 utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
                                         else:
                                                 if utils.getHumanID() != iArabia:
-                                                        Cairo.setHasRealBuilding(con.iPalace, True)
+                                                        Baghdad.setHasRealBuilding(con.iPalace, True)
                                                         utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
                                                         utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
                                                 utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
@@ -929,7 +935,7 @@ class RiseAndFall:
 
                                 elif (not bBaghdad and bCairo):
                                         if utils.getHumanID() != iArabia:
-                                                Cairo.setHasRealBuilding(con.iPalace, True)
+                                                #Cairo.setHasRealBuilding(con.iPalace, True)
                                                 utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
                                                 utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
                                         utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
@@ -1090,6 +1096,8 @@ class RiseAndFall:
                                         self.assignTechs(iCiv)
                                         if (iGameTurn >= getTurnForYear(con.tBirth[gc.getGame().getActivePlayer()])):
                                                 self.newCivPopup(iCiv)
+
+					self.setLatestSpawn(iCiv, con.tRebirth[iCiv])
                                         print "Rebirth 1st turn passed"
 
                                 if (iGameTurn == getTurnForYear(con.tRebirth[iCiv])+1 and utils.getReborn(iCiv) == 1):
@@ -1838,6 +1846,10 @@ class RiseAndFall:
                                                 
                                 CyInterface().addMessage(iHuman, True, con.iDuration, \
                                                         (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pDeadCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
+				
+				#Leoreth: store when this civ returned
+				self.setLatestSpawn(iDeadCiv, gc.getGame().getGameTurnYear())
+
                                 if (bHuman == True):                                        
                                         self.rebellionPopup(iDeadCiv)
                                 utils.setBaseStabilityLastTurn(iDeadCiv, 0)
@@ -2176,7 +2188,9 @@ class RiseAndFall:
                 reborn = utils.getReborn(iCiv)
                 for x in range(con.tCoreAreasTL[reborn][iCiv][0], con.tCoreAreasBR[reborn][iCiv][0]+1):
                         for y in range(con.tBroaderAreasTL[reborn][iCiv][1], con.tBroaderAreasBR[reborn][iCiv][1]+1):
-                                gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)  
+                                gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
+
+		self.setLatestSpawn(iCiv, iBirthYear)  
                         
                 if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and (iHuman+tDifference[iHuman] < iCiv or utils.getReborn(iCiv) == 1):
                         self.newCivPopup(iCiv)
@@ -3258,6 +3272,7 @@ class RiseAndFall:
 			x, y = tPlot
 			utils.colonialConquest(iPlayer, x, y)
 
+		tSeaPlot = -1
 		x, y = targetList[0]
 		for i in range(x-1, x+2):
 			for j in range(y-1, y+2):
@@ -3265,7 +3280,8 @@ class RiseAndFall:
 					tSeaPlot = (i, j)
 					break
 
-		utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
+		if tSeaPlot != -1:
+			utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
 
 
         def warOnSpawn(self):
@@ -3594,6 +3610,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 4)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                         if (not gc.getPlayer(0).isPlayable()): #late start condition
                                 utils.makeUnit(con.iWorker, iCiv, tPlot, 1) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)
                 if (iCiv == iFrance):
@@ -3601,9 +3618,11 @@ class RiseAndFall:
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 4)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iAxeman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                 if (iCiv == iEngland):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
@@ -3616,6 +3635,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iAxeman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                 if (iCiv == iRussia):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 4)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
@@ -3651,6 +3671,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)

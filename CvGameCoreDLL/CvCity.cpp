@@ -1959,10 +1959,28 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	    {
 	        if (plot()->getArea() != GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea())
 	        {
-	            if ((int)getOwner() != CARTHAGE && (int)getOwner() != BYZANTIUM && (int)getOwner() != TURKEY && (int)getOwner() != ARABIA && (int)getOwner() != INDONESIA)
-	            {
-                    return false;
-	            }
+				int englandID = GC.getMap().plot(53, 54)->getArea();
+				int irelandID = GC.getMap().plot(49, 56)->getArea();
+				int europeID = GC.getMap().plot(55, 50)->getArea();
+				bool bVikingEnglandException = false;
+				if (plot()->getArea() == englandID || plot()->getArea() == irelandID)
+				{
+					if (GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea() == europeID)
+					{
+						bVikingEnglandException = true;
+					}
+				}
+				if (plot()->getArea() == europeID && GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea() == englandID)
+				{
+					bVikingEnglandException = true;
+				}
+				if (!bVikingEnglandException)
+				{
+					if ((int)getOwner() != CARTHAGE && (int)getOwner() != BYZANTIUM && (int)getOwner() != TURKEY && (int)getOwner() != ARABIA && (int)getOwner() != INDONESIA)
+					{
+					    return false;
+					}
+				}
             }
 	    }
 	}

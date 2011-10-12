@@ -32665,6 +32665,24 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=33
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
+	EndUnit
+	BeginCity
+		CityOwner=33
+		CityName=Daibul
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HINDU_TEMPLE
+		ReligionType=RELIGION_HINDUISM
+		Player33Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=85,y=38
@@ -33066,24 +33084,6 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=33
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
-	EndUnit
-	BeginCity
-		CityOwner=33
-		CityName=Kolachi
-		CityPopulation=2
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player33Culture=50
-	EndCity
 EndPlot
 BeginPlot
 	x=86,y=38
@@ -33880,7 +33880,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player32Culture=100
+		Player32Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -34238,36 +34238,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=32
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=89,y=33
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=33
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
-	EndUnit
-	BeginCity
-		CityOwner=33
-		CityName=Govapuri
-		CityPopulation=2
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player33Culture=10
-	EndCity
 EndPlot
 BeginPlot
 	x=89,y=34
@@ -34643,15 +34620,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=30
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-EndPlot
-BeginPlot
-	x=90,y=31
-	BonusType=BONUS_ALUMINUM
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
 	BeginUnit
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=32
 	EndUnit
@@ -34677,6 +34647,12 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
+	x=90,y=31
+	BonusType=BONUS_ALUMINUM
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
+EndPlot
+BeginPlot
 	x=90,y=32
 	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
@@ -34685,9 +34661,31 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=33
-	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=33
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
+	EndUnit
+	BeginCity
+		CityOwner=33
+		CityName=Vijayanagara
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_HINDU_TEMPLE
+		ReligionType=RELIGION_HINDUISM
+		Player33Culture=10
+	EndCity
 EndPlot
 BeginPlot
 	x=90,y=34
@@ -35074,6 +35072,7 @@ EndPlot
 BeginPlot
 	x=91,y=31
 	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	PlotType=2
 EndPlot
 BeginPlot
@@ -35085,9 +35084,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=33
+	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=91,y=34
@@ -35122,7 +35122,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=33
-		CityName=Hyderabad
+		CityName=Bhagyanagar
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
@@ -35513,7 +35513,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=32
-		CityName=Madras
+		CityName=Kanchipuram
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS

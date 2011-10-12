@@ -1067,5 +1067,20 @@
 		<English>Kaizen Plant</English>
 		<German>Kaizen-Kraftwerk</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_HELP</Tag>
+		<English>[ICON_BULLET]Can draft two extra units per turn</English>
+		<German>[ICON_BULLET]Kann zwei zusätzliche Einheiten pro Runde rekrutieren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE</Tag>
+		<English>Blue Mosque</English>
+		<German>Blaue Moschee</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RED_FORT</Tag>
+		<English>The Red Fort</English>
+		<German>Das Rote Fort</German>
+	</TEXT>
 
 </Civ4GameText>

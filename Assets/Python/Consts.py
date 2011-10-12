@@ -388,7 +388,7 @@ tResurrectionIntervals = (
 [(1850, 2020)], #Ethiopia
 [(1800, 2020)], #Korea
 [], #Maya
-[], #Byzantium
+[(1100, 1300)], #Byzantium
 [(1520, 2020)], #Vikings
 [(1900, 2020)], #Arabia
 [(1950, 2020)], #Khmer
@@ -699,7 +699,7 @@ for i in range(78,86+1):
 tCapitals = (
 ((69, 33), #tThebes
 #(90, 40), #tDelhi
-(94, 40), #tVaranasi
+(94, 40), #tPataliputra
 #(102, 47), #tBeijing
 (100, 44), #Chang'an
 (76, 40), #tBabylon
@@ -841,7 +841,7 @@ tCoreAreasTL = (
 (24, 18), #Inca
 (87, 46), #Mongolia
 (15, 36), #Aztecs
-(86, 37), #Mughals
+(86, 38), #Mughals
 (69, 41), #Turkey
 (100, 32), #Thailand
 (26, 42) #America
@@ -910,7 +910,7 @@ tCoreAreasBR = (
 (105, 58), #Mongolia
 (20, 41), #Aztecs
 (94, 43), #Mughals
-(78, 48), #Turkey
+(77, 48), #Turkey
 (103, 36), #Thailand
 (31, 48) #America
 ),
@@ -943,7 +943,7 @@ tCoreAreasBR = (
 (105, 58), #Mongolia
 (20, 41), #Aztecs
 (94, 43), #Mughals
-(78, 48), #Turkey
+(77, 48), #Turkey
 (103, 36), #Thailand
 (31, 48) #America
 ))
@@ -1724,7 +1724,7 @@ iSugar, iWine, iWhales, iDrama, iMusic, iMovies, iCotton) = range(iNumBonuses)
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 179
+iNumBuildings = 181
 (iPalace, iGreatPalace, iVersailles, iWalls, iCelticDun, iCastle, iSpanishCitadel, iBarracks, iZuluIkhanda, iStable,
 iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iHospital, iRecyclingCenter,
 iLighthouse, iVikingTradingPost, iHarbor, iCarthageCothon, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
@@ -1747,7 +1747,7 @@ iWembley, iGraceland, iHollywood, iGreatDam, iPentagon, iUnitedNations, iSpaceEl
 iSankore, iGreatWall, iStatueOfZeus, iMausoleumOfMaussollos, iCristoRedentor, iShwedagonPaya, iMoaiStatues, iApostolicPalace,
 iLeaningTower, iOlympicPark, iTempleOfSalomon, iIshtarGate, iTheodosianWalls, iTerracottaArmy, iMezquita, iDomeOfTheRock,
 iTopkapiPalace, iBrandenburgGate, iSanMarcoBasilica, iWestminster, iItalianArtStudio, iBorobudur, iKhajuraho,
-iHimejiCastle, iPorcelainTower, iHarmandirSahib, iGreatBath) = range(iNumBuildings)
+iHimejiCastle, iPorcelainTower, iHarmandirSahib, iGreatBath, iBlueMosque, iRedFort) = range(iNumBuildings)
 
 iSummerPalace = iGreatPalace
 iForbiddenPalace = iVersailles

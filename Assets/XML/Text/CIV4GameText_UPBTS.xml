@@ -124,4 +124,14 @@
 		<English>Other civilizations are likelier to open borders or trade away resources</English>
 		<German>Andere Zivilisationen sind eher bereit, offene Grenzen zu vereinbaren oder Ressourcen zu handeln</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_THA</Tag>
+		<English>The Power of Emissaries:</English>
+		<German>Die Macht der Abgesandten:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_INO2</Tag>
+		<English>Better relations with civilizations you have established embassies with</English>
+		<German>Bessere Beziehungen mit Zivilisationen, mit denen Botschaften eingerichtet wurden</German>
+	</TEXT>
 </Civ4GameText>
