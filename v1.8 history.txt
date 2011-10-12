@@ -48,3 +48,5 @@
 # third Khmer goal now requires to spread Buddhism and Hinduism combined to 35%
 # disabled the "tributary" vassal names in the industrial era
 # religion spread turns pagan temples into the new religion's temple
+# Maya UP expires with the Medieval Era
+# holy cities can't be razed anymore

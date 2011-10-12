@@ -266,5 +266,13 @@
 			<Type>ART_DEF_MOVIE_GREAT_BATH</Type>
 			<Path>Art/Structure/Wonders/Great Bath/MohenjoDaro.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BLUE_MOSQUE</Type>
+			<Path>Art/Movies/Wonders/blue_mosque.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_RED_FORT</Type>
+			<Path>Art/Movies/Wonders/red_fort.dds</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

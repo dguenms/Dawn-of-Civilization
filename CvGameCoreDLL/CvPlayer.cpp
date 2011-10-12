@@ -4681,6 +4681,12 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 		{
 			return false;
 		}
+
+		//Leoreth: protect holy cities
+		if (pCity->isHolyCity())
+		{
+			return false;
+		}
 	}
 
 	//Rhye - start
@@ -10036,7 +10042,13 @@ void CvPlayer::setHighestUnitLevel(int iNewValue)
 
 int CvPlayer::getMaxConscript() const
 {
-	return m_iMaxConscript;
+	if (GET_PLAYER((PlayerTypes)getID()).isHasBuilding((BuildingTypes)TOPKAPI))
+	{
+		return m_iMaxConscript+2;
+	}else
+	{
+		return m_iMaxConscript;
+	}
 }
 
 
@@ -11858,7 +11870,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
-			if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
 			{
 				startEra = currentEra600AD[getID()];
 			}else

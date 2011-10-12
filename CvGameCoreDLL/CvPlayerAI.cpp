@@ -6115,15 +6115,14 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 	}
 	//Rhye - end UP
 
-	//Leoreth: start Thai UP
+	//Leoreth: Thai UP
 	if (ePlayer == THAILAND)
 	{
-		if (getID() == GREECE || getID() == ROME || getID() || getID() == VIKING || getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == GERMANY || getID() == RUSSIA || getID() == PORTUGAL || getID() == NETHERLANDS)
+		if (GET_PLAYER((PlayerTypes)THAILAND).isHasBuilding((BuildingTypes)(NUM_BUILDINGS_PLAGUE+getID())))
 		{
-			iAttitude += 5;
+			iAttitude += 4;
 		}
 	}
-	// end
 
 //	if (GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI))
 //	{

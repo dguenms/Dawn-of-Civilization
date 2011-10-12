@@ -3122,6 +3122,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case ARABIA:
 										if (iI == HAGIASOPHIA) iTempValue *= 2;
+										else if (iI == TOPKAPI) iTempValue /= 2;
 										else if (iI == SPIRALMINARET || iI == MEZQUITA || iI == DOMEROCK) iTempValue *= 3;
 										else {
 											iTempValue *= 2;
@@ -3234,8 +3235,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == SANKORE)	iTempValue *= 4;
 										break;
 									case TURKEY:
-										if (iI == HAGIASOPHIA || iI == TOPKAPI)	iTempValue *= 4;
-										else if (iI == TAJMAHAL) iTempValue /= 4;
+										if (iI == HAGIASOPHIA || iI == TOPKAPI || iI == BLUE_MOSQUE) iTempValue *= 4;
+										else if (iI == TAJMAHAL || iI == RED_FORT) iTempValue /= 4;
 										break;
 									case PORTUGAL:
 										if (iI == NOTREDAME) {
@@ -3256,8 +3257,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == CHICHENITZA) iTempValue *= 3;
 										break;
 									case MUGHALS:
-										if (iI == TAJMAHAL) iTempValue *= 4;
+										if (iI == TAJMAHAL || iI == RED_FORT) iTempValue *= 4;
 										else if (iI == HARMANDIR_SAHIB) iTempValue *= 2;
+										else if (iI == BLUE_MOSQUE || iI == TOPKAPI) iTempValue /= 4;
 										break;
 									case THAILAND:
 										if (iI == ANGKORWAT) iTempValue *= 3;

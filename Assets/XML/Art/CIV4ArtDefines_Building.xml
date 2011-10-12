@@ -2235,5 +2235,25 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Ho Trai/Ho Trai.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BLUE_MOSQUE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Blue_Mosque/bluemosque.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Blue_Mosque/blue_mosque.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_RED_FORT</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.5</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Red Fort/palace.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Red Fort/Red Fort.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

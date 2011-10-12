@@ -4,6 +4,7 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers  
 import cPickle as pickle
+import Consts as con
 
 # globals
 gc = CyGlobalContext()
@@ -52,6 +53,7 @@ class StoredData:
                                     'bCheatMode': False,
 				    'tTempFlippingCity': (0, 0),
 				    'tTradingCompanyConquerorsTargets': ([], [], [], [], []),
+				    'tLatestSpawn': con.l0Array,
                                      #------------Religions
                                     'iSeed': -1,
                                     #------------UP

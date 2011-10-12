@@ -485,7 +485,7 @@
 			<NIF>Art/Leaderheads/AbuBakr/abubakr.nif</NIF>
 			<KFM>Art/Leaderheads/AbuBakr/frederick_the_great.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/AbuBakr/abubakr.nif</NoShaderNIF>
-			<BackgroundKFM>Art/Leaderheads/Idris2/Suleiman_BG.kfm</BackgroundKFM>
+			<BackgroundKFM>Art/Leaderheads/AbuBakr/frederick_the_great_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_MONGKUT</Type>
@@ -677,7 +677,7 @@
 			<NIF>art/leaderheads/Shaybani/Tokugawa.nif</NIF>
 			<KFM>art/leaderheads/Shaybani/Tokugawa.kfm</KFM>
 			<NoShaderNIF>art/leaderheads/Shaybani/Tokugawa.nif</NoShaderNIF>
-			<BackgroundKFM>art/leaderheads/MauryaFINAL/Tachnechobrus_Background.kfm</BackgroundKFM>
+			<BackgroundKFM>art/leaderheads/Shaybani/tokugawa_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ISABELLA_NEW</Type>
