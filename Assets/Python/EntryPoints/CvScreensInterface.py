@@ -941,6 +941,11 @@ def onTechStolen(argsList):
 	vic.onTechStolen(iPlayer, iTech)
 	return 1
 
+#Leoreth
+def getLatestRebellionTurn(argsList):
+	iPlayer = argsList[0]
+	return sd.scriptDict['lLatestRebellionTurn'][iPlayer]
+
 #######################################################################################
 ## Handle Close Map
 #######################################################################################

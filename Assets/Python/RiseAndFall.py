@@ -346,12 +346,6 @@ class RiseAndFall:
 	def getFirstContactMongols(self, iCiv):
 		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 		return sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)]
-
-	def getLatestSpawn(self, iCiv):
-		return sd.scriptDict['tLatestSpawn'][iCiv]
-
-	def setLatestSpawn(self, iCiv, iYear):
-		sd.scriptDict['tLatestSpawn'][iCiv] = iYear
                 
 ###############
 ### Popups ###
@@ -1097,7 +1091,7 @@ class RiseAndFall:
                                         if (iGameTurn >= getTurnForYear(con.tBirth[gc.getGame().getActivePlayer()])):
                                                 self.newCivPopup(iCiv)
 
-					self.setLatestSpawn(iCiv, con.tRebirth[iCiv])
+					self.setLatestRebellionTurn(iCiv, getTurnForYear(con.tRebirth[iCiv]))
                                         print "Rebirth 1st turn passed"
 
                                 if (iGameTurn == getTurnForYear(con.tRebirth[iCiv])+1 and utils.getReborn(iCiv) == 1):
@@ -1648,6 +1642,9 @@ class RiseAndFall:
 							bPossible = True
 						else:
 							print "Result: impossible"
+				# prevent conditional civs from respawning if they have never spawned
+				if self.getLatestRebellionTurn(iDeadCiv) == 0:
+					bPossible = False
                                 #iDeadCiv = iIndia #DEBUG
                                 cityList = []
                                 if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > getTurnForYear(con.tBirth[iDeadCiv]) + utils.getTurns(50) and iGameTurn > utils.getLastTurnAlive(iDeadCiv) + utils.getTurns(20) and con.tRebirth[iDeadCiv] == -1 and bPossible): # last condition added by Leoreth, civ must not have a scripted respawn
@@ -1857,8 +1854,6 @@ class RiseAndFall:
                                 CyInterface().addMessage(iHuman, True, con.iDuration, \
                                                         (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pDeadCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
 				
-				#Leoreth: store when this civ returned
-				self.setLatestSpawn(iDeadCiv, gc.getGame().getGameTurnYear())
 
                                 if (bHuman == True):                                        
                                         self.rebellionPopup(iDeadCiv)
@@ -2203,8 +2198,6 @@ class RiseAndFall:
                 for x in range(con.tCoreAreasTL[reborn][iCiv][0], con.tCoreAreasBR[reborn][iCiv][0]+1):
                         for y in range(con.tBroaderAreasTL[reborn][iCiv][1], con.tBroaderAreasBR[reborn][iCiv][1]+1):
                                 gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
-
-		self.setLatestSpawn(iCiv, iBirthYear)  
                         
                 if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and (iHuman+tDifference[iHuman] < iCiv or utils.getReborn(iCiv) == 1):
                         self.newCivPopup(iCiv)

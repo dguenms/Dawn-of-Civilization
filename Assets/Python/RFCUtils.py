@@ -1407,6 +1407,10 @@ class RFCUtils:
 				cityList.append((x, y))
 
 		targetList = []
+
+		if len(cityList) == 0:
+			CyInterface().addMessage(self.getHumanID(), False, con.iDuration, "Error: colonial target list empty", "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+
 		for i in range(iNumCities):
 			iRand = gc.getGame().getSorenRandNum(len(cityList)-1, 'Random city')
 			targetList.append(cityList[iRand])
