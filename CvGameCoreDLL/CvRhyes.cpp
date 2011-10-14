@@ -39,7 +39,7 @@ int targetCityValueDivisor[32] =		{  100,100,100,100,100,100,100, 66,100,100, 33
 //											EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT	MUG TUR THA AME
 int eraModifierInit[32] =				{    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3 };
 int eraModifierInitAstronomy[32] =		{	 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3 };
-int cultureModifier[32] =				{   90, 80, 80, 90,100,100,100,100, 90, 90, 50,100,100,130,110,120,120,125,160,130,128,130,140,130,147,140,135,140,150,150,130,165 }; // default: 40
+int cultureModifier[32] =				{   90, 80, 80, 80,100,100,100,100, 90, 90, 50,100,100,130,110,120,120,125,160,130,128,130,140,130,147,140,135,140,150,150,130,165 }; // default: 40
 
 // CvHandicapInfos.cpp
 //											EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT MUG TUR THA AME
@@ -48,7 +48,7 @@ int researchModifier[32] =				{  135,155,122,125,135,100,100,135, 98,110,112,115
 int distanceMaintenanceModifier[32] =	{  100,100,100,110, 90,100, 75, 75, 95,100,100,100, 80, 70, 70, 80, 80, 50, 50, 25, 60, 50, 45, 80, 50, 60, 58, 70, 70, 60, 80, 60 }; //includes English UP
 int numMaintenanceModifier[32] =		{  135,140,127,135,127,100, 90, 90,110,115,110,115, 80, 75,100,100,100, 70, 70, 70, 70, 70, 70, 90, 72, 80, 70, 85, 70, 70,100, 70 };
 int civicUpkeepModifier[32] =			{  110,102,105,100, 80, 70, 70, 75, 80, 80,100, 80, 90, 80, 90,100,100, 60, 80, 60, 70, 70, 60, 80, 72, 50, 64, 60, 60, 70, 80, 50 };
-int healthMultiplier[32] =				{    2,  1,  1,  2,  4,  5,  7,  7,  3,  6,  3,  6,  6,  6,  3,  6,  6,  6,  4,  6,  7,  6,  6,  4,  6,  4,  6,  4,  6,  6,  6,  4 }; //don't forget India's -1
+int healthMultiplier[32] =				{    2,  1,  1,  1,  4,  5,  7,  7,  3,  6,  3,  6,  6,  6,  3,  6,  6,  6,  4,  6,  7,  6,  6,  4,  6,  4,  6,  4,  6,  6,  6,  4 }; //don't forget India's -1
 
 // CvPlayer.cpp
 //											EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT MUG TUR THA AME

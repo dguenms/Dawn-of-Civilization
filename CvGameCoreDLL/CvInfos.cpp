@@ -10406,7 +10406,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		if (pl == CHINA)
 			iFinalResearchPercent = researchPercent * 102 / 100;
 		if (pl == BABYLONIA)
-			iFinalResearchPercent = researchPercent * 135 / 100;
+			iFinalResearchPercent = researchPercent * 145 / 100;
 		if (pl == MAYA)												// Maya UP
 			iFinalResearchPercent = researchPercent * 65 / 100;
 	}
