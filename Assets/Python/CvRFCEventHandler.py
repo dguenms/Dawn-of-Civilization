@@ -656,18 +656,8 @@ class CvRFCEventHandler:
                 if (not gc.getPlayer(0).isPlayable() and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
                         return
                 
-                if (gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])):                    
-                        if (iPlayer == con.iGreece or \
-                            iPlayer == con.iJapan or \
-                            iPlayer == con.iMaya or \
-                            iPlayer == con.iEngland or \
-                            iPlayer == con.iGermany or \
-                            iPlayer == con.iAztecs or \
-                            iPlayer == con.iBabylonia or \
-			    iPlayer == con.iRome or \
-			    iPlayer == con.iKorea or \
-			    iPlayer == con.iChina):                            
-                                self.vic.onTechAcquired(argsList[0], argsList[2])
+                if (gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])):                            
+                	self.vic.onTechAcquired(argsList[0], argsList[2])
                         self.cnm.onTechAcquired(argsList[2])
 
                 if (gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer]) and iPlayer < con.iNumPlayers):

@@ -1824,7 +1824,7 @@ iWorkBoat = iWorkboat
 iNumBonuses = 36
 (iAluminium, iCoal, iCopper, iHorse, iIron, iMarble, iOil, iStone, iUranium, iBanana, iClam, iCorn, iCow, iCrab,
 iDeer, iFish, iPig, iRice, iSheep, iWheat, iDye, iFur, iGems, iGold, iIncense, iIvory, iSilk, iSilver, iSpices,
-iSugar, iWine, iWhales, iDrama, iMusic, iMovies, iCotton) = range(iNumBonuses)
+iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton) = range(iNumBonuses)
 
 #Buildings (update Persian UHV every time this is changed)
 
