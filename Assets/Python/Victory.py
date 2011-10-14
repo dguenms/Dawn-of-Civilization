@@ -161,6 +161,14 @@ tPhilippinesBR = (110, 36)
 tSouthAsiaTL = (88, 24)
 tSouthAsiaBR = (110, 38)
 
+tVienna = (63, 49)
+tCairo = (69, 35)
+tMecca = (75, 33)
+tBaghdad = (77, 40)
+
+lEasternMediterranean = [(58, 39), (58, 38), (58, 37), (59, 37), (60, 37), (61, 37), (61, 36), (62, 36), (63, 36), (64, 36), (65, 36), (66, 36), (67, 36), (68, 36), (69, 36), (70, 36), (71, 36), (65, 37), (66, 37), (72, 37), (73, 37), (73, 38), (73, 39), (73, 40), (73, 41), (73, 42), (70, 42), (71, 42), (72, 42), (69, 43), (70, 43), (69, 44), (68, 45), (67, 44), (67, 45), (66, 44), (65, 43), (66, 43), (65, 42), (66, 42), (67, 42), (67, 41), (65, 40), (66, 40)]
+lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44), (74, 44), (75, 44), (76, 44), (76, 45), (76, 46), (76, 47), (75, 47), (74, 48), (75, 48), (72, 48), (74, 49), (73, 49), (71, 49), (69, 49), (69, 50), (70, 50), (71, 50), (72, 50), (73, 50), (68, 49), (68, 48), (67, 45), (67, 46), (67, 47), (67, 48), (68, 45)]
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -1389,44 +1397,124 @@ class Victory:
                 elif (iPlayer == iTurkey):
                         if (pTurkey.isAlive()):
 
-                                if (self.getGoal(iTurkey, 0) == -1):
-                                        if (iGameTurn <= getTurnForYear(1500)):
-                                                pIstanbulE = gc.getMap().plot( 68, 45 )
-                                                pIstanbulE2 = gc.getMap().plot( 67, 45 )
-                                                pIstanbulA = gc.getMap().plot( 69, 44 )
-                                                if (pIstanbulE.isCity()):                                                        
-                                                        if (pIstanbulE.getPlotCity().getOwner() == iTurkey):
-                                                                self.setGoal(iTurkey, 0, 1)
-                                                elif (pIstanbulA.isCity()):                                                        
-                                                        if (pIstanbulA.getPlotCity().getOwner() == iTurkey):
-                                                                self.setGoal(iTurkey, 0, 1)
-                                                elif (pIstanbulE2.isCity()):                                                        
-                                                        if (pIstanbulE2.getPlotCity().getOwner() == iTurkey):
-                                                                self.setGoal(iTurkey, 0, 1)
-                                        else:
-                                                self.setGoal(iTurkey, 0, 0)
+                                #if (self.getGoal(iTurkey, 0) == -1):
+                                #        if (iGameTurn <= getTurnForYear(1500)):
+                                #                pIstanbulE = gc.getMap().plot( 68, 45 )
+                                #                pIstanbulE2 = gc.getMap().plot( 67, 45 )
+                                #                pIstanbulA = gc.getMap().plot( 69, 44 )
+                                #                if (pIstanbulE.isCity()):                                                        
+                                #                        if (pIstanbulE.getPlotCity().getOwner() == iTurkey):
+                                #                                self.setGoal(iTurkey, 0, 1)
+                                #                elif (pIstanbulA.isCity()):                                                        
+                                #                        if (pIstanbulA.getPlotCity().getOwner() == iTurkey):
+                                #                                self.setGoal(iTurkey, 0, 1)
+                                #                elif (pIstanbulE2.isCity()):                                                        
+                                #                        if (pIstanbulE2.getPlotCity().getOwner() == iTurkey):
+                                #                                self.setGoal(iTurkey, 0, 1)
+                                #        else:
+                                #                self.setGoal(iTurkey, 0, 0)
 
 
-                                if (iGameTurn == getTurnForYear(1700)):
-                                        bBalkans = self.checkOwnedArea(iTurkey, tBalkansTL, tBalkansBR, 3)
-                                        bBlackSea = self.checkOwnedAreaAdjacentArea(iTurkey, tBlackSeaTL, tBlackSeaBR, 4, (71,47))
-                                        bMesopotamia = self.checkOwnedArea(iTurkey, tMesopotamiaTL, tMesopotamiaBR, 3)
-                                        if (bBalkans and bBlackSea and bMesopotamia):
-                                                self.setGoal(iTurkey, 1, 1)
-                                        else:
-                                                self.setGoal(iTurkey, 1, 0)
+                                #if (iGameTurn == getTurnForYear(1700)):
+                                #        bBalkans = self.checkOwnedArea(iTurkey, tBalkansTL, tBalkansBR, 3)
+                                #        bBlackSea = self.checkOwnedAreaAdjacentArea(iTurkey, tBlackSeaTL, tBlackSeaBR, 4, (71,47))
+                                #        bMesopotamia = self.checkOwnedArea(iTurkey, tMesopotamiaTL, tMesopotamiaBR, 3)
+                                #        if (bBalkans and bBlackSea and bMesopotamia):
+                                #                self.setGoal(iTurkey, 1, 1)
+                                #        else:
+                                #                self.setGoal(iTurkey, 1, 0)
 
-                                if (iGameTurn == getTurnForYear(1870)):
-                                        iCounter = 0
-                                        for iCiv in range(iNumPlayers):
-                                                if (iCiv != iTurkey):
-                                                        if (gc.getPlayer(iCiv).isAlive()):
-                                                                if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iTurkey)):
-                                                                        iCounter += 1
-                                        if (iCounter >= 3):
-                                                self.setGoal(iTurkey, 2, 1)
-                                        else:
-                                                self.setGoal(iTurkey, 2, 0)
+                                #if (iGameTurn == getTurnForYear(1870)):
+                                #        iCounter = 0
+                                #        for iCiv in range(iNumPlayers):
+                                #                if (iCiv != iTurkey):
+                                #                        if (gc.getPlayer(iCiv).isAlive()):
+                                #                                if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iTurkey)):
+                                #                                        iCounter += 1
+                                #        if (iCounter >= 3):
+                                #                self.setGoal(iTurkey, 2, 1)
+                                #        else:
+                                #                self.setGoal(iTurkey, 2, 0)
+
+				# Leoreth: new first goal: have four wonders in your capital in 1550 AD
+				if iGameTurn == getTurnForYear(1550):
+					capital = pTurkey.getCapitalCity()
+					iCounter = 0
+                                        for i in range(con.iSpaceElevator+1 - con.iPyramid):
+                                        	iWonder = i + con.iPyramid
+						if capital.hasBuilding(iWonder):
+							iCounter += 1
+					for i in range(con.iMoaiStatues+1 - con.iArtemis):
+                                        	iWonder = i + con.iArtemis
+						if capital.hasBuilding(iWonder):
+							iCounter += 1
+					for i in range(con.iWestminster+1 - con.iApostolicPalace):
+                                        	iWonder = i + con.iApostolicPalace
+						if capital.hasBuilding(iWonder):
+							iCounter += 1
+					if capital.hasBuilding(con.iFlavianAmphitheatre):
+						iCounter += 1
+					if iCounter >= 4:
+						self.setGoal(iTurkey, 0, 1)
+					else:
+						self.setGoal(iTurkey, 0, 0)
+
+				# Leoreth: new second goal: control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna in 1700 AD
+				if iGameTurn == getTurnForYear(1700):
+					bEasternMediterranean = True
+					bBlackSea = True
+
+					for tPlot in lEasternMediterranean:
+						x, y = tPlot
+						if gc.getMap().plot(x, y).getOwner() != iTurkey:
+							bEasternMediterranean = False
+
+					for tPlot in lBlackSea:
+						x, y = tPlot
+						if gc.getMap().plot(x, y).getOwner() != iTurkey:
+							bBlackSea = False
+
+					bCairo = False
+					bMecca = False
+					bBaghdad = False
+					bVienna = False
+
+					x, y = tCairo
+					for i in range(x-1, x+2):
+						for j in range(y-1, y+2):
+							if gc.getMap().plot(i, j).isCity():
+								if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
+									bCairo = True
+					x, y = tMecca
+					for i in range(x-1, x+2):
+						for j in range(y-1, y+2):
+							if gc.getMap().plot(i, j).isCity():
+								if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
+									bMecca = True
+					x, y = tBaghdad
+					for i in range(x-1, x+2):
+						for j in range(y-1, y+2):
+							if gc.getMap().plot(i, j).isCity():
+								if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
+									bBaghdad = True
+					x, y = tVienna
+					for i in range(x-1, x+2):
+						for j in range(y-1, y+2):
+							if gc.getMap().plot(i, j).isCity():
+								if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
+									bVienna = True
+
+					if bEasternMediterranean and bBlackSea and bCairo and bMecca and bBaghdad and bVienna:
+						self.setGoal(iTurkey, 1, 1)
+					else:
+						self.setGoal(iTurkey, 1, 0)
+
+				# Leoreth: new third goal: have the largest military power in 1800 AD
+				if iGameTurn == getTurnForYear(1800):
+					if self.getMostPowerfulCiv(iTurkey) == iTurkey:
+						self.setGoal(iTurkey, 2, 1)
+					else:
+						self.setGoal(iTurkey, 2, 0)
 
 
 
@@ -2599,6 +2687,16 @@ class Victory:
 		else:
 			return False
 
+	def getMostPowerfulCiv(self, iCiv):
+		iBestCiv = iCiv
+		iBestPower = gc.getPlayer(iCiv).getPower()
+		for iLoopCiv in range(con.iNumPlayers):
+			iTempPower = gc.getPlayer(iLoopCiv).getPower()
+			if iTempPower > iBestPower:
+				iBestCiv = iLoopCiv
+				iBestPower = iTempPower
+		return iBestCiv
+
 
 	def getIcon(self, bVal):
 		if bVal:
@@ -3054,19 +3152,68 @@ class Victory:
 				aHelp.append(self.getIcon(bCAmerica) + 'No European colonies in Central America, Southern USA and the Caribbean')
 
 		elif iPlayer == iTurkey:
-			if iGoal == 1:
-				bBalkans = self.checkOwnedArea(iTurkey, tBalkansTL, tBalkansBR, 3)
-                                bBlackSea = self.checkOwnedAreaAdjacentArea(iTurkey, tBlackSeaTL, tBlackSeaBR, 4, (71,47))
-                                bMesopotamia = self.checkOwnedArea(iTurkey, tMesopotamiaTL, tMesopotamiaBR, 3)
-				aHelp.append(self.getIcon(bBalkans) + 'Balkans ' + self.getIcon(bBlackSea) + 'Black Sea ' + self.getIcon(bMesopotamia) + 'Mesopotamia')
+			if iGoal == 0:
+				capital = pTurkey.getCapitalCity()
+				iCounter = 0
+                                for i in range(con.iSpaceElevator+1 - con.iPyramid):
+                                    	iWonder = i + con.iPyramid
+					if capital.hasBuilding(iWonder):
+						iCounter += 1
+				for i in range(con.iMoaiStatues+1 - con.iArtemis):
+                                       	iWonder = i + con.iArtemis
+					if capital.hasBuilding(iWonder):
+						iCounter += 1
+				for i in range(con.iWestminster+1 - con.iApostolicPalace):
+                                       	iWonder = i + con.iApostolicPalace
+					if capital.hasBuilding(iWonder):
+						iCounter += 1
+				if capital.hasBuilding(con.iFlavianAmphitheatre):
+					iCounter += 1
+				aHelp.append(self.getIcon(iCounter >= 4) + 'Wonders in your capital: ' + str(iCounter) + '/4')
+			elif iGoal == 1:
+				bEasternMediterranean = True
+				bBlackSea = True
+				for tPlot in lEasternMediterranean:
+					x, y = tPlot
+					if gc.getMap().plot(x, y).getOwner() != iTurkey:
+						bEasternMediterranean = False
+				for tPlot in lBlackSea:
+					x, y = tPlot
+					if gc.getMap().plot(x, y).getOwner() != iTurkey:
+						bBlackSea = False
+				bCairo = False
+				bMecca = False
+				bBaghdad = False
+				bVienna = False
+				x, y = tCairo
+				for i in range(x-1, x+2):
+					for j in range(y-1, y+2):
+						if gc.getMap().plot(i, j).isCity():
+							if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
+								bCairo = True
+				x, y = tMecca
+				for i in range(x-1, x+2):
+					for j in range(y-1, y+2):
+						if gc.getMap().plot(i, j).isCity():
+							if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
+								bMecca = True
+				x, y = tBaghdad
+				for i in range(x-1, x+2):
+					for j in range(y-1, y+2):
+						if gc.getMap().plot(i, j).isCity():
+							if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
+								bBaghdad = True
+				x, y = tVienna
+				for i in range(x-1, x+2):
+					for j in range(y-1, y+2):
+						if gc.getMap().plot(i, j).isCity():
+							if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
+								bVienna = True
+				aHelp.append(self.getIcon(bEasternMediterranean) + 'Eastern Mediterranean ' + self.getIcon(bBlackSea) + 'Black Sea')
+				aHelp.append(self.getIcon(bCairo) + 'Cairo ' + self.getIcon(bMecca) + 'Mecca ' + self.getIcon(bBaghdad) + 'Baghdad ' + self.getIcon(bVienna) + 'Vienna')
 			elif iGoal == 2:
-                                iCounter = 0
-                                for iCiv in range(iNumPlayers):
-                                	if (iCiv != iTurkey):
-                                		if (gc.getPlayer(iCiv).isAlive()):
-                                			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iTurkey)):
-                                				iCounter += 1
-				aHelp.append(self.getIcon(iCounter >= 3) + 'Vassals: ' + str(iCounter) + '/3')
+				iMostPowerfulCiv = self.getMostPowerfulCiv(iTurkey)
+				aHelp.append(self.getIcon(iMostPowerfulCiv == iTurkey) + 'Most powerful civ: ' + CyTranslator().getText(str(gc.getPlayer(iMostPowerfulCiv).getCivilizationShortDescriptionKey()),()))
 
 		elif iPlayer == iThailand:
 			if iGoal == 0:

@@ -26228,6 +26228,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=34
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
