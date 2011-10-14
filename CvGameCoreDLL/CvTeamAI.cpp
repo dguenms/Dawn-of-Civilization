@@ -1694,6 +1694,18 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 
 	CvTeamAI& kMasterTeam = GET_TEAM(eTeam);
 
+	//Leoreth: recently spawned or respawned civs won't vassalize
+	long result = -1;
+	CyArgsList argsList;
+	argsList.add((int)eTeam);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "getLatestRebellionTurn", argsList.makeFunctionArgs(), &result);
+	int iLatestRebellionTurn = (int)result;
+
+	if (GC.getGame().getGameTurn() - iLatestRebellionTurn < 10)
+	{
+		return DENIAL_NO_GAIN;
+	}
+
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);

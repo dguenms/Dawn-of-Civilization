@@ -714,37 +714,10 @@ class Victory:
                                 if (self.getGoal(iPersia, 1) == -1):
                                         if (iGameTurn <= getTurnForYear(350)):
                                                 iCounter = 0
-                                                apCityList = PyPlayer(iPersia).getCityList()
-                                                for i in range(con.iSpaceElevator+1 - con.iPyramid):
-                                                        iWonder = i + con.iPyramid
-                                                        iWonderFlag = 0                                                        
-                                                        for pCity in apCityList:
-                                                                if (pCity.hasBuilding(iWonder)):
-                                                                        iWonderFlag = 1
-                                                                        break
-                                                        #print ("Persian UHV", iWonder, pPersia.getBuildingClassCount(iWonder), iWonderFlag)
-                                                        #iCounter += pPersia.getBuildingClassCount(iWonder) #BUGGY!
-                                                        iCounter += iWonderFlag
-                                                for i in range(con.iMoaiStatues+1 - con.iArtemis):
-                                                        iWonder = i + con.iArtemis
-                                                        iWonderFlag = 0
-                                                        for pCity in apCityList:
-                                                                if (pCity.hasBuilding(iWonder)):
-                                                                        iWonderFlag = 1
-                                                                        break
-                                                        iCounter += iWonderFlag
-                                                for i in range(con.iWestminster+1 - con.iApostolicPalace):
-                                                        iWonder = i + con.iApostolicPalace
-                                                        iWonderFlag = 0
-                                                        for pCity in apCityList:
-                                                                if (pCity.hasBuilding(iWonder)):
-                                                                        iWonderFlag = 1
-                                                                        break
-                                                        iCounter += iWonderFlag
-                                                for pCity in apCityList:
-                                                        if (pCity.hasBuilding(con.iFlavianAmphitheatre)):
-                                                                iCounter += 1
-                                                                break
+						for iWonder in range(con.iPyramid, con.iNumBuildings):
+							if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
+								iCounter += self.getNumBuildings(iPersia, iWonder)
+						iCounter += self.getNumBuildings(iPersia, con.iFlavianAmphitheatre)
                                                 if (iCounter >= 7):
                                                         self.setGoal(iPersia, 1, 1)
                                         else:
@@ -1440,19 +1413,11 @@ class Victory:
 				if iGameTurn == getTurnForYear(1550):
 					capital = pTurkey.getCapitalCity()
 					iCounter = 0
-                                        for i in range(con.iSpaceElevator+1 - con.iPyramid):
-                                        	iWonder = i + con.iPyramid
-						if capital.hasBuilding(iWonder):
-							iCounter += 1
-					for i in range(con.iMoaiStatues+1 - con.iArtemis):
-                                        	iWonder = i + con.iArtemis
-						if capital.hasBuilding(iWonder):
-							iCounter += 1
-					for i in range(con.iWestminster+1 - con.iApostolicPalace):
-                                        	iWonder = i + con.iApostolicPalace
-						if capital.hasBuilding(iWonder):
-							iCounter += 1
-					if capital.hasBuilding(con.iFlavianAmphitheatre):
+					for iWonder in range(coniPyramid, con.iNumBuildings):
+						if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
+							if capital.isHasRealBuilding(iWonder):
+								iCounter += 1
+					if capital.isHasRealBuilding(con.iFlavianAmphitheatre):
 						iCounter += 1
 					if iCounter >= 4:
 						self.setGoal(iTurkey, 0, 1)
@@ -1461,48 +1426,13 @@ class Victory:
 
 				# Leoreth: new second goal: control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna in 1700 AD
 				if iGameTurn == getTurnForYear(1700):
-					bEasternMediterranean = True
-					bBlackSea = True
-
-					for tPlot in lEasternMediterranean:
-						x, y = tPlot
-						if gc.getMap().plot(x, y).getOwner() != iTurkey:
-							bEasternMediterranean = False
-
-					for tPlot in lBlackSea:
-						x, y = tPlot
-						if gc.getMap().plot(x, y).getOwner() != iTurkey:
-							bBlackSea = False
-
-					bCairo = False
-					bMecca = False
-					bBaghdad = False
-					bVienna = False
-
-					x, y = tCairo
-					for i in range(x-1, x+2):
-						for j in range(y-1, y+2):
-							if gc.getMap().plot(i, j).isCity():
-								if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
-									bCairo = True
-					x, y = tMecca
-					for i in range(x-1, x+2):
-						for j in range(y-1, y+2):
-							if gc.getMap().plot(i, j).isCity():
-								if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
-									bMecca = True
-					x, y = tBaghdad
-					for i in range(x-1, x+2):
-						for j in range(y-1, y+2):
-							if gc.getMap().plot(i, j).isCity():
-								if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
-									bBaghdad = True
-					x, y = tVienna
-					for i in range(x-1, x+2):
-						for j in range(y-1, y+2):
-							if gc.getMap().plot(i, j).isCity():
-								if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
-									bVienna = True
+					
+					bEasternMediterranean = self.isCultureControlled(iTurkey, lEasternMediterranean)
+					bBlackSea = self.isCultureControlled(iTurkey, lBlackSea)
+					bCairo = self.controlsCity(iTurkey, tCairo)
+					bMecca = self.controlsCity(iTurkey, tMecca)
+					bBaghdad = self.controlsCity(iTurkey, tBaghdad)
+					bVienna = self.controlsCity(iTurkey, tVienna)
 
 					if bEasternMediterranean and bBlackSea and bCairo and bMecca and bBaghdad and bVienna:
 						self.setGoal(iTurkey, 1, 1)
@@ -2580,11 +2510,7 @@ class Victory:
 
 
 	def getNumBuildings(self, iPlayer, iBuilding):
-		iCount = 0
-		apCityList = PyPlayer(iPlayer).getCityList()
-		for pCity in apCityList:
-			if pCity.getNumBuilding(iBuilding): iCount += 1
-		return iCount
+		return gc.getPlayer(iPlayer).countNumBuildings(iBuilding)
 
 
 	def isHighestPopulation(self, iPlayer):
@@ -2697,6 +2623,28 @@ class Victory:
 				iBestPower = iTempPower
 		return iBestCiv
 
+	#Leoreth: checks if the given tile or one of its neighbors contain a city owned by iCiv
+	def controlsCity(iCiv, tPlot):
+		bResult = False
+		x, y = tPlot
+		for i in range(x-1, x+2):
+			for j in range(y-1, y+2):
+				if gc.getMap().plot(i, j).isCity():
+					if gc.getMap().plot(i, j).getPlotCity().getOwner() == iCiv:
+						bResult = True
+		return bResult
+
+	#Leoreth: be the only civ who culture controls the tiles in the plot list
+	def isCultureControlled(iCiv, lPlotList):
+		bResult = True
+		for tPlot in lPlotList:
+			x, y = tPlot
+			plot = gc.getMap().plot(x, y)
+			if plot.getOwner() != -1 and plot.getOwner() != iCiv:
+				bResult = False
+				break
+		return bResult
+
 
 	def getIcon(self, bVal):
 		if bVal:
@@ -2807,15 +2755,9 @@ class Victory:
 				aHelp.append(self.getIcon(landPercent >= 7.995) + 'Percentage of world territory: ' + str(landPercent) + '/8 %')
 			elif iGoal == 1:
                         	iCounter = 0
-                        	for i in range(con.iSpaceElevator+1 - con.iPyramid):
-                        		iWonder = i + con.iPyramid
-					iCounter += self.getNumBuildings(iPersia, iWonder)
-                        	for i in range(con.iMoaiStatues+1 - con.iArtemis):
-                        		iWonder = i + con.iArtemis
-					iCounter += self.getNumBuildings(iPersia, iWonder)
-                        	for i in range(con.iWestminster+1 - con.iApostolicPalace):
-                        		iWonder = i + con.iApostolicPalace
-					iCounter += self.getNumBuildings(iPersia, iWonder)
+				for iWonder in range(con.iPyramid, con.iNumBuildings):
+					if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
+						iCounter += self.getNumBuildings(iPersia, iWonder)
 				iCounter += self.getNumBuildings(iPersia, con.iFlavianAmphitheatre)
 				aHelp.append(self.getIcon(iCounter >= 7) + 'Wonders: ' + str(iCounter) + '/7')
 			elif iGoal == 2:
@@ -3155,60 +3097,20 @@ class Victory:
 			if iGoal == 0:
 				capital = pTurkey.getCapitalCity()
 				iCounter = 0
-                                for i in range(con.iSpaceElevator+1 - con.iPyramid):
-                                    	iWonder = i + con.iPyramid
-					if capital.hasBuilding(iWonder):
-						iCounter += 1
-				for i in range(con.iMoaiStatues+1 - con.iArtemis):
-                                       	iWonder = i + con.iArtemis
-					if capital.hasBuilding(iWonder):
-						iCounter += 1
-				for i in range(con.iWestminster+1 - con.iApostolicPalace):
-                                       	iWonder = i + con.iApostolicPalace
-					if capital.hasBuilding(iWonder):
-						iCounter += 1
-				if capital.hasBuilding(con.iFlavianAmphitheatre):
+				for iWonder in range(coniPyramid, con.iNumBuildings):
+					if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
+						if capital.isHasRealBuilding(iWonder):
+							iCounter += 1
+				if capital.isHasRealBuilding(con.iFlavianAmphitheatre):
 					iCounter += 1
 				aHelp.append(self.getIcon(iCounter >= 4) + 'Wonders in your capital: ' + str(iCounter) + '/4')
 			elif iGoal == 1:
-				bEasternMediterranean = True
-				bBlackSea = True
-				for tPlot in lEasternMediterranean:
-					x, y = tPlot
-					if gc.getMap().plot(x, y).getOwner() != iTurkey:
-						bEasternMediterranean = False
-				for tPlot in lBlackSea:
-					x, y = tPlot
-					if gc.getMap().plot(x, y).getOwner() != iTurkey:
-						bBlackSea = False
-				bCairo = False
-				bMecca = False
-				bBaghdad = False
-				bVienna = False
-				x, y = tCairo
-				for i in range(x-1, x+2):
-					for j in range(y-1, y+2):
-						if gc.getMap().plot(i, j).isCity():
-							if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
-								bCairo = True
-				x, y = tMecca
-				for i in range(x-1, x+2):
-					for j in range(y-1, y+2):
-						if gc.getMap().plot(i, j).isCity():
-							if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
-								bMecca = True
-				x, y = tBaghdad
-				for i in range(x-1, x+2):
-					for j in range(y-1, y+2):
-						if gc.getMap().plot(i, j).isCity():
-							if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
-								bBaghdad = True
-				x, y = tVienna
-				for i in range(x-1, x+2):
-					for j in range(y-1, y+2):
-						if gc.getMap().plot(i, j).isCity():
-							if gc.getMap().plot(i, j).getPlotCity().getOwner() == iTurkey:
-								bVienna = True
+				bEasternMediterranean = self.isCultureControlled(iTurkey, lEasternMediterranean)
+				bBlackSea = self.isCultureControlled(iTurkey, lBlackSea)
+				bCairo = self.controlsCity(iTurkey, tCairo)
+				bMecca = self.controlsCity(iTurkey, tMecca)
+				bBaghdad = self.controlsCity(iTurkey, tBaghdad)
+				bVienna = self.controlsCity(iTurkey, tVienna)
 				aHelp.append(self.getIcon(bEasternMediterranean) + 'Eastern Mediterranean ' + self.getIcon(bBlackSea) + 'Black Sea')
 				aHelp.append(self.getIcon(bCairo) + 'Cairo ' + self.getIcon(bMecca) + 'Mecca ' + self.getIcon(bBaghdad) + 'Baghdad ' + self.getIcon(bVienna) + 'Vienna')
 			elif iGoal == 2:

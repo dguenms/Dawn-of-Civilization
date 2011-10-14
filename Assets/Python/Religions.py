@@ -180,6 +180,11 @@ class Religions:
 			else:
 				utils.makeUnit(iMissionary_Christian, con.iNetherlands, con.tCapitals[0][con.iNetherlands], 1)
 
+			# Islam spreads to Indonesia
+			for i in range(3):
+				self.spreadReligion(self.selectRandomCityCiv(iIndonesia), 1, iMissionary_Islamic)
+			
+
 
         def foundReligion(self, tPlot, iReligion):
                 if (tPlot != False):

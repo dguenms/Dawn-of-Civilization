@@ -50,3 +50,11 @@
 # religion spread turns pagan temples into the new religion's temple
 # Maya UP expires with the Medieval Era
 # holy cities can't be razed anymore
+# terrain changes to Egypt
+# new Ottoman UHV:
+	# Have four wonders in your capital in 1550 AD
+	# Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna in 1700 AD
+	# Have the world's largest military power in 1800 AD
+# assigned specific new capitals to civs on respawn
+# recently respawned civs don't vassalize
+# Islam spreads to Indonesia in the 16th century
