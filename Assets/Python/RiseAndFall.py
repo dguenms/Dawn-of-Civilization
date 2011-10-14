@@ -1657,8 +1657,12 @@ class RiseAndFall:
                                                 continue
                                         pDeadCiv = gc.getPlayer(iDeadCiv)
                                         teamDeadCiv = gc.getTeam(pDeadCiv.getTeam())
-                                        tTopLeft = tNormalAreasTL[utils.getReborn(iDeadCiv)][iDeadCiv]
-                                        tBottomRight = tNormalAreasBR[utils.getReborn(iDeadCiv)][iDeadCiv]
+					if con.tRespawnTL[iDeadCiv] != -1:
+						tTopLeft = con.tRespawnTL[iDeadCiv]
+						tBottomRight = con.tRespawnBR[iDeadCiv]
+					else:
+	                                        tTopLeft = tNormalAreasTL[utils.getReborn(iDeadCiv)][iDeadCiv]
+        	                                tBottomRight = tNormalAreasBR[utils.getReborn(iDeadCiv)][iDeadCiv]
                                         #if (self.getLatestRebellionTurn(iDeadCiv) > 0):
                                         #        tTopLeft = tNormalAreasTL[iDeadCiv]
                                         #        tBottomRight = tNormalAreasBR[iDeadCiv]
@@ -1706,18 +1710,24 @@ class RiseAndFall:
                                                                                                                             cityList.append(pCurrent.getPlotCity())
                                                                                                                             #print (iDeadCiv, pCurrent.getPlotCity().getName(), pCurrent.getPlotCity().getOwner(), "3", cityList)
                                                                                         if (iOwnerStability < 20):
-                                                                                                 if (city.getX() == tCapitals[utils.getReborn(iDeadCiv)][iDeadCiv][0] and city.getY() == tCapitals[utils.getReborn(iDeadCiv)][iDeadCiv][1]):
-                                                                                                         #print(pCurrent.getPlotCity(), cityList)
-                                                                                                         #if (pCurrent.getPlotCity() not in cityList):  #sadly, this doesn't work
-                                                                                                         bAlreadyAdded = False
-                                                                                                         for l in range(len(cityList)):
-                                                                                                                 if (cityList[l].getName() == city.getName()):
-                                                                                                                         bAlreadyAdded = True
-                                                                                                                         break
-                                                                                                         #print("bAlreadyAdded",bAlreadyAdded)
-                                                                                                         if (not bAlreadyAdded):
-                                                                                                                 cityList.append(pCurrent.getPlotCity())
-                                                                                                                 #print (iDeadCiv, pCurrent.getPlotCity().getName(), pCurrent.getPlotCity().getOwner(), "4", cityList)
+												x = city.getX()
+												y = city.getY()
+												if con.tRespawnCapitals[iDeadCiv] != -1:
+													bCapital = (con.tRespawnCapitals[iDeadCiv][0] == x and con.tRespawnCapitals[iDeadCiv][1] == y)
+												else:
+													bCapital = (tCapitals[utils.getReborn(iDeadCiv)][iDeadCiv][0] == x and tCapitals[utils.getReborn(iDeadCiv)][iDeadCiv][1] == y)
+                                                                                        	if bCapital:
+                                                                                                	#print(pCurrent.getPlotCity(), cityList)
+                                                                                                        #if (pCurrent.getPlotCity() not in cityList):  #sadly, this doesn't work
+                                                                                                	bAlreadyAdded = False
+                                                                                                	for l in range(len(cityList)):
+                                                                                                		if (cityList[l].getName() == city.getName()):
+                                                                                                                	bAlreadyAdded = True
+                                                                                                                	break
+                                                                                                        #print("bAlreadyAdded",bAlreadyAdded)
+                                                                                                        if (not bAlreadyAdded):
+                                                                                                        	cityList.append(pCurrent.getPlotCity())
+                                                                                                        	#print (iDeadCiv, pCurrent.getPlotCity().getName(), pCurrent.getPlotCity().getOwner(), "4", cityList)
                                         #print("len(cityList)",len(cityList))
 					#print "Leoreth rebirth check 2"
                                         if (len(cityList) >= iMinNumCities or (len(cityList) >= 1 and (iDeadCiv == iNetherlands))): #no portugal: they have the azores
@@ -1861,8 +1871,12 @@ class RiseAndFall:
 
         def moveBackCapital(self, iCiv):
                 apCityList = PyPlayer(iCiv).getCityList()
-                if (gc.getMap().plot(tCapitals[utils.getReborn(iCiv)][iCiv][0], tCapitals[utils.getReborn(iCiv)][iCiv][1]).isCity()):
-                        oldCapital = gc.getMap().plot(tCapitals[utils.getReborn(iCiv)][iCiv][0], tCapitals[utils.getReborn(iCiv)][iCiv][1]).getPlotCity()
+		if con.tRespawnCapitals[iCiv] != -1:
+			x, y = con.tRespawnCapitals[iCiv]
+		else:
+			x, y = tCapitals[utils.getReborn(iCiv)][iCiv]
+                if (gc.getMap().plot(x, y).isCity()):
+                        oldCapital = gc.getMap().plot(x, y).getPlotCity()
                         if (oldCapital.getOwner() == iCiv):
                                 if (not oldCapital.hasBuilding(con.iPalace)):                                        
                                         for pCity in apCityList:

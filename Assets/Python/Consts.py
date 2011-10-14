@@ -1362,6 +1362,110 @@ tBroaderAreasBR = (
 (37, 56) #America
 ))
 
+#Leoreth: respawn areas and capitals similar to SoI
+tRespawnCapitals = (
+(69, 35), #Al-Qahira
+(88, 36), #Mumbai
+(102, 47), #Beijing
+-1,
+-1,
+(81, 41), #Esfahan
+-1,
+-1,
+(116, 46), #Tokyo
+-1,
+-1,
+-1,
+-1,
+(63, 58), #Stockholm
+-1,
+-1,
+(104, 25), #Jakarta
+-1,
+-1,
+-1,
+(62, 52), #Berlin
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+(85, 37), #Karachi
+(68, 45), #Istanbul
+-1,
+-1)
+
+# area flipped on respawn, if -1 normal area is used instead
+tRespawnTL = (
+(58, 31), #Egypt
+(88, 29), #India
+(99, 39), #China
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+(85, 37), #Mughals
+-1,
+-1,
+-1)
+
+tRespawnBR = (
+(71, 39), #Egypt
+(94, 37), #India
+(107, 47), #China
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+-1,
+(88, 43), #Mughals
+-1,
+-1,
+-1)
+
 #Mercenaries. Higher number = less likely to hire
 tHire = (
 10, #Egypt

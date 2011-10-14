@@ -91,6 +91,11 @@ class Resources:
                                 gc.getMap().plot(53, 51).setBonusType(iDye) #France
                                 gc.getMap().plot(53, 55).setBonusType(iDye) #England
 
+		# Leoreth: remove floodplains in Sudan
+		if iGameTurn == getTurnForYear(550):
+			gc.getMap().plot(67, 30).setFeatureType(-1, 0)
+			gc.getMap().plot(67, 31).setFeatureType(-1, 0)
+
 		# Leoreth: replicate silk route in 600 AD
 		if iGameTurn == getTurnForYear(600) and not gc.getPlayer(0).isPlayable():
                         CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan                               
