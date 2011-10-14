@@ -2052,9 +2052,9 @@ class RiseAndFall:
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
                         if iCiv == iByzantium:
                                 bRomanCityInGreece = False
-                                cityList = utils.getCoreCityList(iGreece, 0)
+                                cityList = utils.getCoreCityList(iByzantium, 0)
                                 for pCity in cityList:
-                                        if pCity.getOwner == iRome:
+                                        if pCity.getOwner() == iRome:
                                                 bRomanCityInGreece = True
 
                                 if (not bRomanCityInGreece):
