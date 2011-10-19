@@ -5575,7 +5575,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                     if (iI == OPTICS)
                                         iValue /= 4;
                                     if (iI == ASTRONOMY || iI == RIFLING || iI == LIBERALISM)
-                                        iValue /= 2;
+                                        iValue /= 4;
                                     if (iI == PRINTING_PRESS || iI == GUNPOWDER)
                                         iValue *= 3;
 								case MAYA:

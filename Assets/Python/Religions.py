@@ -17,6 +17,7 @@ utils = RFCUtils.RFCUtils()
 
 ### Constants ###
 
+iIndonesia = con.iIndonesia
 iArabia = con.iArabia
 iNumPlayers = con.iNumPlayers
 iNumTotalPlayers = con.iNumTotalPlayers

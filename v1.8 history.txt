@@ -58,3 +58,7 @@
 # assigned specific new capitals to civs on respawn
 # recently respawned civs don't vassalize
 # Islam spreads to Indonesia in the 16th century
+# reduced Mongol city upkeep
+# "free tech" events like the Oracle or Liberalism effects only allow you to choose techs of your own era or earlier
+# changed Hanging Gardens to Pottery and Agriculture, +3 health in its city
+# changed Ishtar Gate to Priesthood

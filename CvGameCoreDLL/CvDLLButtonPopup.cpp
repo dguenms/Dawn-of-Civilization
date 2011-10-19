@@ -1499,30 +1499,33 @@ bool CvDLLButtonPopup::launchChooseTechPopup(CvPopup* pPopup, CvPopupInfo &info)
 			{
 				if (player.canResearch((TechTypes)iI))
 				{
-					CvWString szBuffer;
-					szBuffer.Format(L"%s (%d)", GC.getTechInfo((TechTypes)iI).getDescription(), ((iDiscover > 0) ? 0 : player.getResearchTurnsLeft(((TechTypes)iI), true)));
-
-					if ((iI == eBestTech) || (iI == eNextBestTech))
+					if (iDiscover == 0 || GC.getTechInfo((TechTypes)iI).getEra() <= player.getCurrentEra()) //Leoreth: free techs only for your current era or earlier
 					{
-						szBuffer += gDLL->getText("TXT_KEY_POPUP_RECOMMENDED_ONLY_ADV", GC.getAdvisorInfo((AdvisorTypes)(GC.getTechInfo((TechTypes)iI).getAdvisorType())).getTextKeyWide());
-					}
-
-					CvString szButton = GC.getTechInfo((TechTypes) iI).getButton();
-
-					for (int iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
-					{
-						if (GC.getReligionInfo((ReligionTypes)iJ).getTechPrereq() == iI)
+						CvWString szBuffer;
+						szBuffer.Format(L"%s (%d)", GC.getTechInfo((TechTypes)iI).getDescription(), ((iDiscover > 0) ? 0 : player.getResearchTurnsLeft(((TechTypes)iI), true)));
+							
+						if ((iI == eBestTech) || (iI == eNextBestTech))
 						{
-							if (!(GC.getGameINLINE().isReligionSlotTaken((ReligionTypes)iJ)))
+							szBuffer += gDLL->getText("TXT_KEY_POPUP_RECOMMENDED_ONLY_ADV", GC.getAdvisorInfo((AdvisorTypes)(GC.getTechInfo((TechTypes)iI).getAdvisorType())).getTextKeyWide());
+						}
+
+						CvString szButton = GC.getTechInfo((TechTypes) iI).getButton();
+
+						for (int iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
+						{
+							if (GC.getReligionInfo((ReligionTypes)iJ).getTechPrereq() == iI)
 							{
-								szButton = GC.getGameINLINE().isOption(GAMEOPTION_PICK_RELIGION) ? GC.getReligionInfo((ReligionTypes) iJ).getGenericTechButton() : GC.getReligionInfo((ReligionTypes) iJ).getTechButton();
-								break;
+								if (!(GC.getGameINLINE().isReligionSlotTaken((ReligionTypes)iJ)))
+								{
+									szButton = GC.getGameINLINE().isOption(GAMEOPTION_PICK_RELIGION) ? GC.getReligionInfo((ReligionTypes) iJ).getGenericTechButton() : GC.getReligionInfo((ReligionTypes) iJ).getTechButton();
+									break;
+								}
 							}
 						}
-					}
 
-					gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, szButton, iI, WIDGET_RESEARCH, iI, iDiscover, true, POPUP_LAYOUT_STRETCH, DLL_FONT_LEFT_JUSTIFY);
-					iNumTechs++;
+						gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, szButton, iI, WIDGET_RESEARCH, iI, iDiscover, true, POPUP_LAYOUT_STRETCH, DLL_FONT_LEFT_JUSTIFY);
+						iNumTechs++;
+					}
 				}
 			}
 		}

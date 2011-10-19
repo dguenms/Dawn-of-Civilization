@@ -702,6 +702,22 @@
 			<KFM>Art/Leaderheads/Ramkhamhaeng/Suryavarman.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/Ramkhamhaeng/Suryavarman.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Ramkhamhaeng/Suryavarman_bg.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>	
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BAIBARS</Type>
+			<Button>Art/Leaderheads/Baibars/btn_baibars.dds</Button>
+			<NIF>art/LeaderHeads/Baibars/Baibars.nif</NIF>
+			<KFM>art/LeaderHeads/Baibars/alexander.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Baibars/Baibars.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Baibars/alexander_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_NASSER</Type>
+			<Button>art/LeaderHeads/NasserFINAL/Btn_Nasser.dds</Button>
+			<NIF>art/LeaderHeads/NasserFINAL/Charles De Gaulle.nif</NIF>
+			<KFM>art/LeaderHeads/NasserFINAL/Charles De Gaulle.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/NasserFINAL/Charles De Gaulle.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/NasserFINAL/fdr_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

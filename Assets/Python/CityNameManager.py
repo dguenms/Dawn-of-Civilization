@@ -8091,4 +8091,10 @@ class CityNameManager:
 				city = pCity.GetCy()
 				if city.getName == 'Dagou':
 					city.setName('Gaoxiong', False)
+		if iPlayer == iThailand and era == con.iIndustrial:
+			cityList = PyPlayer(iPlayer).getCityList()
+			for pCity in cityList:
+				city = pCity.GetCy()
+				if city.getName == 'Ayutthaya':
+					city.setName('Bangkok', False)
 		

@@ -2350,12 +2350,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case EGYPT:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
-		/*if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)FEUDALISM))
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)FEUDALISM))
 			aiUnitAIVal[UNITAI_SETTLE] /= 3;
-		else {
-			aiUnitAIVal[UNITAI_SETTLE] *= 2;
-			aiUnitAIVal[UNITAI_SETTLE] /= 3;
-		}*/
 		break;
 	case INDIA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
@@ -2540,6 +2536,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		break;
 	case TURKEY:
 		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;

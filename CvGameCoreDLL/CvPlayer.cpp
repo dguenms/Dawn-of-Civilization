@@ -5944,7 +5944,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				startingEra = startingEraFoundAstronomy[getID()];
 			}else
 			{
-				if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+				if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
 				{
 					startingEra = startingEraFound600AD[getID()];
 				}else
@@ -6905,6 +6905,8 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 		{
 			if (getID() == ROME)
 				iProductionNeeded = iProductionNeeded * 80 / 100;
+			if (getID() == PERSIA)
+				iProductionNeeded = iProductionNeeded * 90 / 100;
 		}else
 		{
 			if (getID() < NUM_MAJOR_PLAYERS)
@@ -7739,6 +7741,8 @@ int CvPlayer::calculateInflationRate() const
 	{
 		if (getID() == ROME)
 			iRate = iRatePercent * 84 / 100;
+		if (getID() == PERSIA)
+			iRate = iRatePercent * 75 / 100;
 	}
 
 	//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
@@ -9091,6 +9095,8 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 	{
 		if (getID() == ROME)
 			result = iThreshold * 77 / 100;
+		if (getID() == PERSIA)
+			result = iThreshold * 80 / 100;
 	}
 
 	if (getID() == ETHIOPIA)
@@ -12460,6 +12466,9 @@ int CvPlayer::getStateReligionBuildingCommerce(CommerceTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	if (getID() == PERSIA && (GET_PLAYER((PlayerTypes)PERSIA).isReborn()))
+		if (eIndex == COMMERCE_CULTURE || eIndex == COMMERCE_RESEARCH)
+			return m_aiStateReligionBuildingCommerce[eIndex]+2;
 	return m_aiStateReligionBuildingCommerce[eIndex];
 }
 
@@ -22799,6 +22808,8 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 	{
 		if (getID() == ROME)
 			iThreshold = iThreshold * 73 / 100;
+		else if (getID() == PERSIA)
+			iThreshold = iThreshold * 72 / 100;
 		else
 			iThreshold = iThreshold * 130 / 100;
 	}else

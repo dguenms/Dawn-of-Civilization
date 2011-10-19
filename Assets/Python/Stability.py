@@ -1145,7 +1145,7 @@ class Stability:
                                 self.setStability(playerType, self.getStability(playerType) + max(0,min(5,(12 - gc.getPlayer(playerType).getNumCities())/2)) )
                         #print("Stability - city acquired", playerType)
                         #Persian UP
-                        if (playerType == con.iPersia and gc.getPlayer(playerType).getCivics(5) != 28):
+                        if (playerType == con.iPersia and utils.getReborn(playerType) == 0 and gc.getPlayer(playerType).getCivics(5) != 28):
                                 if (bConquest):                                
                                         self.setStability(playerType, self.getStability(playerType) + 2)
                         

@@ -11935,12 +11935,11 @@ void CvCity::doCulture()
 			if (GET_PLAYER((PlayerTypes) getOwnerINLINE()).isReborn())
 			{
 				if (getOwnerINLINE() == ROME)
-				{
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 130 / 100, false, true);
-				}else
-				{
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
+				else if (getOwnerINLINE() == PERSIA)
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
+				else
 					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 40 / 100, false, true);
-				}
 			}else
 			{
 				if (getOwnerINLINE() < NUM_MAJOR_PLAYERS)

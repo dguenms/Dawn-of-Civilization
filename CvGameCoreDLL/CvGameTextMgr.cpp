@@ -6864,6 +6864,20 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 				aiCommerces[iI] = kBuilding.getCommerceChange(iI);
 				aiCommerces[iI] += kBuilding.getObsoleteSafeCommerceChange(iI);
 			}
+			// Leoreth: display Safavid UP effect
+			if (pCity->getOwner() == (PlayerTypes)PERSIA && GET_PLAYER((PlayerTypes)PERSIA).isReborn())
+			{
+				if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
+				{
+					if (GC.getBuildingInfo(eBuilding).getReligionType() == GET_PLAYER(pCity->getOwner()).getStateReligion())
+					{
+						if (iI == COMMERCE_CULTURE || iI == COMMERCE_RESEARCH)
+						{
+							aiCommerces[iI] += 2;
+						}
+					}
+				}
+			}
 		}
 		setCommerceChangeHelp(szBuffer, L", ", L"", L"", aiCommerces, false, false);
 

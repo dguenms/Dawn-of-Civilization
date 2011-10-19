@@ -274,5 +274,53 @@
 			<Type>ART_DEF_MOVIE_RED_FORT</Type>
 			<Path>Art/Movies/Wonders/red_fort.dds</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TOPKAPI_PALACE</Type>
+			<Path>Art/Movies/Wonders/topkapi_palace.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SPHINX</Type>
+			<Path>Art/Movies/Wonders/sphinx.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BRANDENBURG_GATE</Type>
+			<Path>Art/Movies/Wonders/brandenburg.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_DOME_ROCK</Type>
+			<Path>Art/Movies/Wonders/Domeofrock.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HARMANDIR_SAHIB</Type>
+			<Path>Art/Movies/Wonders/harmandirsahib.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ISHTAR_GATE</Type>
+			<Path>Art/Movies/Wonders/ishtar.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_KHAJURAHO</Type>
+			<Path>Art/Movies/Wonders/Khajuraho.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MEZQUITA</Type>
+			<Path>Art/Movies/Wonders/Mezquita.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SAN_MARCO</Type>
+			<Path>Art/Movies/Wonders/Sanmarco.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TERRACOTTA_ARMY</Type>
+			<Path>Art/Movies/Wonders/terracotta.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_THEODOSIAN_WALLS</Type>
+			<Path>Art/Movies/Wonders/theodosian.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_WESTMINSTER</Type>
+			<Path>Art/Movies/Wonders/westminster.dds</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

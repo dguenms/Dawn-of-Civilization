@@ -571,6 +571,18 @@
 		<German>Shivaji Bhosle</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_BAIBARS</Tag>
+		<English>Baibars</English>
+		<German>Baibars</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_NASSER</Tag>
+		<English>Nasser</English>
+		<German>Nasser</German>
+	</TEXT>
+
+
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_NICHOLAS_II</Tag>
 		<English>Nicholas II</English>
 		<French>Nicholas II</French>
