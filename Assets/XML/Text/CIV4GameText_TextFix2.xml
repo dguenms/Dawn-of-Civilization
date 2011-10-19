@@ -1356,9 +1356,9 @@
 		<German>Chang Suek</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MUGHAL_VOLLEY_GUN</Tag>
-		<English>Volley Gun</English>
-		<German>Orgelkanone</German>
+		<Tag>TXT_KEY_UNIT_MUGHAL_SIEGE_ELEPHANT</Tag>
+		<English>Siege Elephant</English>
+		<German>Belagerungselephant</German>
 	</TEXT>
 
 </Civ4GameText>

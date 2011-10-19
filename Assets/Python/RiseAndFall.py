@@ -3145,7 +3145,7 @@ class RiseAndFall:
 							if iOldWorldCiv == iFrance:
                                                         	utils.makeUnitAI(con.iCulverine, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
                                                         elif iOldWorldCiv == iMughals:
-	                                                        utils.makeUnitAI(con.iMughalVolleyGun, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
+	                                                        utils.makeUnitAI(con.iMughalSiegeElephant, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
 							else:
 								utils.makeUnitAI(con.iCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
                                                 else:
@@ -3501,7 +3501,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 5)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
 		if iCiv == iMughals:
-			utils.makeUnit(con.iMughalVolleyGun, iCiv, tPlot, 2)
+			utils.makeUnit(con.iMughalSiegeElephant, iCiv, tPlot, 2)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 4)
 		if iCiv == iThailand:
 			utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
@@ -3727,7 +3727,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 4)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 4)
 		if iCiv == iMughals:
-			utils.makeUnit(con.iMughalVolleyGun, iCiv, tPlot, 3)
+			utils.makeUnit(con.iMughalSiegeElephant, iCiv, tPlot, 3)
 			utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)
 			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 1)
