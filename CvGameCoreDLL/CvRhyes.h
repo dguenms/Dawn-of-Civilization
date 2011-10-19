@@ -18,9 +18,9 @@ typedef list<char*> LISTCHAR;
 
 #define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
 
-#define BEGIN_WONDERS				(113)
-#define NUM_WONDERS					(181)
-#define NUM_BUILDINGS_PLAGUE		(182)
+#define BEGIN_WONDERS				(115)
+#define NUM_WONDERS					(183)
+#define NUM_BUILDINGS_PLAGUE		(184)
 #define NUM_BUILDINGTYPES_PLAGUE	(139)
 
 #define NUM_MAJOR_PLAYERS		(32)
@@ -297,12 +297,12 @@ enum MyBonuses
 
 extern int startingTurn[];
 extern int startingTurnYear[]; // edead
-extern char loadingTime[39][4];
-extern char loadingTime600AD[39][4];
-extern char startingYear[39][6];
-extern bool startingEra[39];
-extern char startingYear600AD[39][6];
-extern bool startingEra600AD[39];
+extern char loadingTime[40][4];
+extern char loadingTime600AD[40][4];
+extern char startingYear[40][6];
+extern bool startingEra[40];
+extern char startingYear600AD[40][6];
+extern bool startingEra600AD[40];
 
 extern int takenTiles[32];
 extern int distanceSubtrahend[32];
@@ -337,9 +337,9 @@ extern int currentEra600AD[32];
 extern int growthThreshold[32];
 
 //extern int militaryBonus[2][18];
-extern char uniquePower[39][2][16];
-extern char uniqueGoals[39][3][18];
-extern char rating[39][6][15];
+extern char uniquePower[40][2][16];
+extern char uniqueGoals[40][3][18];
+extern char rating[40][6][15];
 
 extern int turnPlayed[37];
 extern int civSpreadFactor[37][8];

@@ -10194,9 +10194,9 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 	if (GET_PLAYER((PlayerTypes)pl).isReborn())
 	{
 		if (pl == ROME)
-		{
 			iFinalResult = result * 100 / 100;
-		}
+		if (pl == PERSIA)
+			iFinalResult = result * 90 / 100;
 	}
 
 	return iFinalResult;
@@ -10406,7 +10406,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		if (pl == CHINA)
 			iFinalResearchPercent = researchPercent * 102 / 100;
 		if (pl == BABYLONIA)
-			iFinalResearchPercent = researchPercent * 145 / 100;
+			iFinalResearchPercent = researchPercent * 140 / 100;
 		if (pl == MAYA)												// Maya UP
 			iFinalResearchPercent = researchPercent * 65 / 100;
 	}
@@ -10421,6 +10421,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 	{
 		if (pl == ROME)
 			iFinalResearchPercent = researchPercent * 92 / 100;
+		if (pl == PERSIA)
+			iFinalResearchPercent = researchPercent * 90 / 100;
 	}
 
 	return iFinalResearchPercent;

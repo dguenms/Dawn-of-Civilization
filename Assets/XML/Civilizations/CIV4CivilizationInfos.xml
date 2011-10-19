@@ -1099,6 +1099,14 @@
 					<LeaderName>LEADER_RAMESSES</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
+				<Leader>
+					<LeaderName>LEADER_BAIBARS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_NASSER</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
 			</Leaders>
 			<DerivativeCiv>NONE</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_EGYPT_SELECT</CivilizationSelectionSound>
@@ -2259,6 +2267,130 @@
 			<DerivativeCiv>CIVILIZATION_KHMER</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_KHMER_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_IRAN</Type>
+			<Description>TXT_KEY_CIV_IRAN_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_IRAN_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_IRAN_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_IRAN_PEDIA</Civilopedia>		
+			<DefaultPlayerColor>PLAYERCOLOR_PINK</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_IRAN</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Tabriz</City>
+				<City>Isfahan</City>
+				<City>Quazvin</City>
+				<City>Herat</City>
+				<City>Mashad</City>
+				<City>Tehran</City>
+				<City>Hamedan</City>
+				<City>Ardabil</City>
+				<City>Maragha</City>
+				<City>Shiraz</City>
+				<City>Karaj</City>
+				<City>Kerman</City>
+				<City>Rasht</City>
+				<City>Baghdad</City>
+				<City>Kandahar</City>
+				<City>Derbent</City>
+				<City>Qom</City>
+				<City>Samarra</City>
+				<City>Ahvaz</City>
+				<City>Karbala</City>
+				<City>Sari</City>
+				<City>Urmia</City>
+				<City>Khoy</City>
+				<City>Najaf</City>
+				<City>Semnan</City>
+				<City>Zaranj</City>
+				<City>Yazd</City>
+				<City>Lahijan</City>
+				<City>Kermanshah</City>
+				<City>Arzinjan</City>
+				<City>Baku</City>
+				<City>Dimdim</City>
+				<City>Amasya</City>
+				<City>Nain</City>
+				<City>Bahrain</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingType>BUILDING_CARAVANSERAI</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_MACEMAN</UnitClassType>
+					<UnitType>UNIT_QIZILBASH</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_IRANIAN_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_IRANIAN_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_IRANIAN_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_IRANIAN_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_IRANIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_IRANIAN_GREAT_GENERAL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<!-- Rhye -->
+			<FreeTechs>
+			</FreeTechs>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_DESPOTISM</CivicType>
+				<CivicType>CIVIC_BARBARISM</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_DECENTRALIZATION</CivicType>
+				<CivicType>CIVIC_PAGANISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_ABBAS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KHOMEINI</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_PERSIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_PERSIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_PERSIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_ITALY</Type>
@@ -3764,6 +3896,10 @@
 					<BuildingClassType>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClassType>
 					<BuildingType>BUILDING_PORTUGAL_FEITORIA</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_TRADING_COMPANY</BuildingClassType>
+					<BuildingType>BUILDING_IBERIAN_TRADING_COMPANY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4181,6 +4317,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_CASTLE</BuildingClassType>
 					<BuildingType>BUILDING_SPANISH_CITADEL</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_TRADING_COMPANY</BuildingClassType>
+					<BuildingType>BUILDING_IBERIAN_TRADING_COMPANY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

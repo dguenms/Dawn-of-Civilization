@@ -134,4 +134,14 @@
 		<English>Better relations with civilizations you have established embassies with</English>
 		<German>Bessere Beziehungen mit Zivilisationen, mit denen Botschaften eingerichtet wurden</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IRA</Tag>
+		<English>The Power of Safaviyya:</English>
+		<German>Die Macht der Safaviyya:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_IRA2</Tag>
+		<English>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</English>
+		<German>Religiöse Gebäude produzieren +2 [ICON_CULTUE] und +2 [ICON_RESEARCH]</German>
+	</TEXT>
 </Civ4GameText>

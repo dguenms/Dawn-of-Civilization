@@ -184,4 +184,19 @@
 		<English>Allow no foreign powers in Southern Asia in 1900 AD</English>
 		<German>Lassen Sie im Jahr 1900 n. Chr. keine ausländischen Mächte im südlichen Asien zu</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA1</Tag>
+		<English>Have open borders with 6 European civilizations in 1650 AD</English>
+		<German>Haben Sie im Jahr 1650 n. Chr. offene Grenzen mit 8 europäischen Zivilisationen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA2</Tag>
+		<English>Control Mesopotamia, Transoxania and Northwestern India in 1750 AD</English>
+		<German>Kontrollieren Sie im Jahr 1750 n. Chr. Mesopotamien, Transoxanien und Nordwest-Indien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA3</Tag>
+		<English>Have a city of at least 20000 culture in 1800 AD</English>
+		<German>Haben Sie im Jahr 1800 n. Chr. eine Stadt mit mindestens 20000 Kulturpunkten</German>
+	</TEXT>
 </Civ4GameText>

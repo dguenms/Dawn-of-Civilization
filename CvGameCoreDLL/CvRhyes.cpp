@@ -15,13 +15,13 @@ int startingTurn[28] = {0, 0, 0, 0, 50, 84, 66, 90, 97, 121, 145, 163, 177, 183,
 // edead: replaces the above to allow different game speeds
 int startingTurnYear[32] = {-3000, -3000, -3000, -3000, -1600, -844, -1200, -753, 525, -300, -50, 60, 330, 551, 622, 657, 700, 718, 751, 829, 843, 860, 1500, 989, 1128, 1150, 1190, 1195, 1206, 1280, 1350, 1775};
 
-//Alphabetical order:		  	  AME	ARA		AZT		BAB		BYZ		CAR		XXX		CHI		EGY		ENG		ETH		FRA		GER		GRE		XXX		INC		IND		INO		ITA		JAP		KHM		KOR		MAL		MAY		MON		MUG		XXX		HOL		TUR		PER		POR		ROM		RUS		SEL		SPA		XXX		THA		VIK		XXX
-char loadingTime[39][4] =       {"60",	"20",	"35",	"0",	"15",	"5",	"X",	"0",	"0",	"30",	"10",   "25",	"30",	"2",	"X",	"35",	"0",	"15",	"35",	"20",	"20",	"15",	"35",	"15",	"35",	"X",	"X",	"40",	"35",	"5",	"35",	"5",	"30",	"X",	"25",	"X",	"35",	"20",	"X"};
-char loadingTime600AD[39][4] =  {"30",	"0",	"15",	"0",	"0",	"0",	"X",	"0",	"0",	"10",	"0",    "5",	"10",	"0",	"X",	"15",	"0",	"2",	"15",	"0",	"2",	"0",	"15",	"0",	"15",	"X",	"X",	"20",	"15",	"0",	"15",	"0",	"10",	"X",	"5",	"X",	"15",	"0",	"X"};
-char startingYear[39][6] =      {"1775 ","620 ","1200 ","3000 ","330 ",	"1200 ","XXX ",	"3000 ","3000 ","820 ",	"295 ", "750 ",	"840 ",	"1600 ","XXX ",	"1150 ","3000 ","700 ", "1167 ","525 ",	"660 ",	"50 ",	"980 ",	"65 ",	"1190 ","XXX ",	"XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"545 ",	"XXX "};
-bool startingEra[39] =		    {true,	true,	true,	false,	true,	false,	false,	false,	false,	true,	false,   true,	true,	false,	false,	true,	false,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
-char startingYear600AD[39][6] = {"1775 ","600 ","1200 ","3000 ","600 ",	"1200 ","XXX ",	"600 ",	"3000 ","820 ",	"295 ", "750 ",	"840 ",	"1600 ","XXX ",	"1150 ","3000 ","700 ",	"1167 ","600 ",	"660 ",	"600 ",	"980 ",	"65 ",	"1190 ","XXX ",	"XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"600 ",	"XXX "};
-bool startingEra600AD[39] =		{true,	true,	true,	false,	true,	false,	false,	true,	false,	true,	false,   true,	true,	false,	false,	true,	false,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
+//Alphabetical order:		  	  AME	ARA		AZT		BAB		BYZ		CAR		XXX		CHI		EGY		ENG		ETH		FRA		GER		GRE		XXX		INC		IND		INO		IRA		ITA		JAP		KHM		KOR		MAL		MAY		MON		MUG		XXX		HOL		TUR		PER		POR		ROM		RUS		SEL		SPA		XXX		THA		VIK		XXX
+char loadingTime[40][4] =       {"60",	"20",	"35",	"0",	"15",	"5",	"X",	"0",	"0",	"30",	"10",   "25",	"30",	"2",	"X",	"35",	"0",	"15",	"35",	"35",	"20",	"20",	"15",	"35",	"15",	"35",	"X",	"X",	"40",	"35",	"5",	"35",	"5",	"30",	"X",	"25",	"X",	"35",	"20",	"X"};
+char loadingTime600AD[40][4] =  {"30",	"0",	"15",	"0",	"0",	"0",	"X",	"0",	"0",	"10",	"0",    "5",	"10",	"0",	"X",	"15",	"0",	"2",	"20",	"15",	"0",	"2",	"0",	"15",	"0",	"15",	"X",	"X",	"20",	"15",	"0",	"15",	"0",	"10",	"X",	"5",	"X",	"15",	"0",	"X"};
+char startingYear[40][6] =      {"1775 ","620 ","1200 ","3000 ","330 ",	"1200 ","XXX ",	"3000 ","3000 ","820 ",	"295 ", "750 ",	"840 ",	"1600 ","XXX ",	"1150 ","3000 ","700 ", "1500",	"1167 ","525 ",	"660 ",	"50 ",	"980 ",	"65 ",	"1190 ","XXX ",	"XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"545 ",	"XXX "};
+bool startingEra[40] =		    {true,	true,	true,	false,	true,	false,	false,	false,	false,	true,	false,   true,	true,	false,	false,	true,	false,	true,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
+char startingYear600AD[40][6] = {"1775 ","600 ","1200 ","3000 ","600 ",	"1200 ","XXX ",	"600 ",	"3000 ","820 ",	"295 ", "750 ",	"840 ",	"1600 ","XXX ",	"1150 ","3000 ","700 ",	"1500 ","1167 ","600 ",	"660 ",	"600 ",	"980 ",	"65 ",	"1190 ","XXX ",	"XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"600 ",	"XXX "};
+bool startingEra600AD[40] =		{true,	true,	true,	false,	true,	false,	false,	true,	false,	true,	false,   true,	true,	false,	false,	true,	false,	true,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
 
 //Leoreth: relocate most civ modifiers here (respawns like Italy not included!)
 // CvPlayerAI.cpp
@@ -39,14 +39,14 @@ int targetCityValueDivisor[32] =		{  100,100,100,100,100,100,100, 66,100,100, 33
 //											EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT	MUG TUR THA AME
 int eraModifierInit[32] =				{    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3 };
 int eraModifierInitAstronomy[32] =		{	 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3 };
-int cultureModifier[32] =				{   90, 80, 80, 80,100,100,100,100, 90, 90, 50,100,100,130,110,120,120,125,160,130,128,130,140,130,147,140,135,140,150,150,130,165 }; // default: 40
+int cultureModifier[32] =				{   90, 80, 80, 90,100,100,100,100, 90, 90, 50,100,100,130,110,120,120,125,160,130,128,130,140,130,147,140,135,140,125,150,130,165 }; // default: 40
 
 // CvHandicapInfos.cpp
 //											EGY	IND	CHI	BAB	GRE	PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT MUG TUR THA AME
 int unitCostModifier[32] =				{  125,135,120,120,110,100,125,110,113,100,113,110,110, 90,105, 90, 90,110, 97,100, 75, 75, 90, 95, 93,100, 75, 95, 110, 80, 90, 75 };
-int researchModifier[32] =				{  135,155,122,125,135,100,100,135, 98,110,112,115,135, 80,100,100,100, 80, 80, 80, 69, 67, 62,110, 75, 79, 73, 87, 100, 75, 80, 63 };
-int distanceMaintenanceModifier[32] =	{  100,100,100,110, 90,100, 75, 75, 95,100,100,100, 80, 70, 70, 80, 80, 50, 50, 25, 60, 50, 45, 80, 50, 60, 58, 70, 70, 60, 80, 60 }; //includes English UP
-int numMaintenanceModifier[32] =		{  135,140,127,135,127,100, 90, 90,110,115,110,115, 80, 75,100,100,100, 70, 70, 70, 70, 70, 70, 90, 72, 80, 70, 85, 70, 70,100, 70 };
+int researchModifier[32] =				{  135,155,122,125,135,100,100,135, 98,110,112,115,135, 80,100,100,100, 80, 80, 80, 69, 67, 62,110, 75, 79, 73, 87, 110, 75, 80, 63 };
+int distanceMaintenanceModifier[32] =	{  100,100,100,110, 90,100, 75, 75, 95,100,100,100, 80, 70, 70, 80, 80, 50, 50, 25, 60, 50, 45, 80, 50, 60, 38, 70, 70, 60, 80, 60 }; //includes English UP
+int numMaintenanceModifier[32] =		{  135,140,127,135,127,100, 90, 90,110,115,110,115, 80, 75,100,100,100, 70, 70, 70, 70, 70, 70, 90, 72, 80, 50, 85, 70, 70,100, 70 };
 int civicUpkeepModifier[32] =			{  110,102,105,100, 80, 70, 70, 75, 80, 80,100, 80, 90, 80, 90,100,100, 60, 80, 60, 70, 70, 60, 80, 72, 50, 64, 60, 60, 70, 80, 50 };
 int healthMultiplier[32] =				{    2,  1,  1,  1,  4,  5,  7,  7,  3,  6,  3,  6,  6,  6,  3,  6,  6,  6,  4,  6,  7,  6,  6,  4,  6,  4,  6,  4,  6,  6,  6,  4 }; //don't forget India's -1
 
@@ -65,7 +65,7 @@ int currentEra600AD[32] =				{    0,  0,  2,  0,  1,  1,  1,  1,  2,  1,  2,  1,
 int growthThreshold[32] =				{  148,134,132,138,130,130,120,120,112,100,112,110, 80, 80, 76, 80, 80, 68, 69, 67, 67, 70, 73, 78, 76, 69, 74, 68, 69, 69, 75, 64 };
 
 
-char uniquePower[39][2][16]  = {
+char uniquePower[40][2][16]  = {
 	{"TXT_KEY_UP_AME", "TXT_KEY_UP_AME2"},
 	{"TXT_KEY_UP_ARA", "TXT_KEY_UP_ARA2"},
 	{"TXT_KEY_UP_AZT", "TXT_KEY_UP_AZT2"},
@@ -84,6 +84,7 @@ char uniquePower[39][2][16]  = {
 	{"TXT_KEY_UP_INC", "TXT_KEY_UP_INC2"},
 	{"TXT_KEY_UP_IND", "TXT_KEY_UP_IND2"},
 	{"TXT_KEY_UP_INO", "TXT_KEY_UP_INO2"},
+	{"TXT_KEY_UP_IRA", "TXT_KEY_UP_IRA2"},
 	{"TXT_KEY_UP_ITA", "TXT_KEY_UP_ITA2"},
 	{"TXT_KEY_UP_JAP", "TXT_KEY_UP_JAP2"},
 	{"TXT_KEY_UP_KHM", "TXT_KEY_UP_KHM2"},
@@ -107,7 +108,7 @@ char uniquePower[39][2][16]  = {
 	{"XXX", "XXX"}};
 
 
-char uniqueGoals[39][3][18]  = {
+char uniqueGoals[40][3][18]  = {
 	{"TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"},
 	{"TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"},
 	{"TXT_KEY_UHV_AZT1", "TXT_KEY_UHV_AZT2", "TXT_KEY_UHV_AZT3"},
@@ -126,6 +127,7 @@ char uniqueGoals[39][3][18]  = {
 	{"TXT_KEY_UHV_INC1", "TXT_KEY_UHV_INC2", "TXT_KEY_UHV_INC3"},
 	{"TXT_KEY_UHV_IND1", "TXT_KEY_UHV_IND2", "TXT_KEY_UHV_IND3"},
 	{"TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"},
+	{"TXT_KEY_UHV_IRA1", "TXT_KEY_UHV_IRA2", "TXT_KEY_UHV_IRA3"},
 	{"TXT_KEY_UHV_ITA1", "TXT_KEY_UHV_ITA2", "TXT_KEY_UHV_ITA3"},
 	{"TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"},
 	{"TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"},
@@ -150,7 +152,7 @@ char uniqueGoals[39][3][18]  = {
 
 
 
-char rating[39][6][15]  = {
+char rating[40][6][15]  = {
 //		    TRA				 PRO				CUL					GRO				S.S.
 //America
 	{"TXT_KEY_4STARS", "TXT_KEY_5STARS", "TXT_KEY_1STAR", "TXT_KEY_5STARS", "TXT_KEY_1STAR" },
@@ -188,6 +190,8 @@ char rating[39][6][15]  = {
 	{"TXT_KEY_4STARS", "TXT_KEY_1STAR", "TXT_KEY_5STARS", "TXT_KEY_1STAR", "TXT_KEY_4STARS" },
 //Indonesia
 	{"TXT_KEY_4STARS", "TXT_KEY_1STAR", "TXT_KEY_3STARS", "TXT_KEY_5STARS", "TXT_KEY_2STARS" },
+//Iran
+	{"TXT_KEY_4STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS", "TXT_KEY_2STARS", "TXT_KEY_2STARS" },
 //Italy
 	{"TXT_KEY_4STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS", "TXT_KEY_3STARS", "TXT_KEY_2STARS"},
 //Japan

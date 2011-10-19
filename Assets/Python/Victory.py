@@ -169,6 +169,13 @@ tBaghdad = (77, 40)
 lEasternMediterranean = [(58, 39), (58, 38), (58, 37), (59, 37), (60, 37), (61, 37), (61, 36), (62, 36), (63, 36), (64, 36), (65, 36), (66, 36), (67, 36), (68, 36), (69, 36), (70, 36), (71, 36), (65, 37), (66, 37), (72, 37), (73, 37), (73, 38), (73, 39), (73, 40), (73, 41), (73, 42), (70, 42), (71, 42), (72, 42), (69, 43), (70, 43), (69, 44), (68, 45), (67, 44), (67, 45), (66, 44), (65, 43), (66, 43), (65, 42), (66, 42), (67, 42), (67, 41), (65, 40), (66, 40)]
 lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44), (74, 44), (75, 44), (76, 44), (76, 45), (76, 46), (76, 47), (75, 47), (74, 48), (75, 48), (72, 48), (74, 49), (73, 49), (71, 49), (69, 49), (69, 50), (70, 50), (71, 50), (72, 50), (73, 50), (68, 49), (68, 48), (67, 45), (67, 46), (67, 47), (67, 48), (68, 45)]
 
+tSafavidMesopotamiaTL = (75, 39)
+tSafavidMesopotamiaBR = (79, 43)
+tTransoxaniaTL = (82, 42)
+tTransoxaniaBR = (86, 49)
+tNWIndiaTL = (86, 37)
+tNWIndiaBR = (91, 43)
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -696,51 +703,76 @@ class Victory:
                         
                 elif (iPlayer == iPersia):
                         if (pPersia.isAlive()):
+				if not pPersia.isReborn():
 
-                                if (self.getGoal(iPersia, 0) == -1):
-                                        if (iGameTurn <= getTurnForYear(140)):
-                                                totalLand = gc.getMap().getLandPlots()
-                                                persianLand = pPersia.getTotalLand()
-                                                if (totalLand > 0):
-                                                        landPercent = (persianLand * 100.0) / totalLand
-                                                else:
-                                                        landPercent = 0.0
-                                                        
-                                                if (landPercent >= 7.995): #it's shown as 8.00 in the victory screen)
-                                                        self.setGoal(iPersia, 0, 1)
-                                        else:
-                                                self.setGoal(iPersia, 0, 0)
+	                                if (self.getGoal(iPersia, 0) == -1):
+        	                                if (iGameTurn <= getTurnForYear(140)):
+                	                                totalLand = gc.getMap().getLandPlots()
+                        	                        persianLand = pPersia.getTotalLand()
+                                	                if (totalLand > 0):
+                                        	                landPercent = (persianLand * 100.0) / totalLand
+                                                	else:
+                                                        	landPercent = 0.0
+	                                                        
+        	                                if (landPercent >= 7.995): #it's shown as 8.00 in the victory screen)
+                	                                self.setGoal(iPersia, 0, 1)
+                        	                else:
+                                	                self.setGoal(iPersia, 0, 0)
 
-                                if (self.getGoal(iPersia, 1) == -1):
-                                        if (iGameTurn <= getTurnForYear(350)):
-                                                iCounter = 0
-						for iWonder in range(con.iPyramid, con.iNumBuildings):
-							if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
-								iCounter += self.getNumBuildings(iPersia, iWonder)
-						iCounter += self.getNumBuildings(iPersia, con.iFlavianAmphitheatre)
-                                                if (iCounter >= 7):
-                                                        self.setGoal(iPersia, 1, 1)
-                                        else:
-                                                self.setGoal(iPersia, 1, 0)
+	                                if (self.getGoal(iPersia, 1) == -1):
+        	                                if (iGameTurn <= getTurnForYear(350)):
+                	                                iCounter = 0
+							for iWonder in range(con.iPyramid, con.iNumBuildings):
+								if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
+									iCounter += self.getNumBuildings(iPersia, iWonder)
+							iCounter += self.getNumBuildings(iPersia, con.iFlavianAmphitheatre)
+        	                                        if (iCounter >= 7):
+                	                                        self.setGoal(iPersia, 1, 1)
+                        	                else:
+                            	    	                self.setGoal(iPersia, 1, 0)
                             
-                                if (iGameTurn == getTurnForYear(350)):
-                                        iCounter = 0
-                                        for iReligion in range(con.iNumReligions):
-                                                iCurrentShrine = con.iShrine + iReligion*4
-                                                apCityList = PyPlayer(iPersia).getCityList()
-                                                for pCity in apCityList:
-                                                        if (pCity.hasBuilding(iCurrentShrine)):
-                                                                iCounter += 1
-                                                                break
-                                                #iCounter += pPersia.getBuildingClassCount(con.iShrine + iReligion*4) #BUGGY!
-                                        if (iCounter >= 2):
-                                                self.setGoal(iPersia, 2, 1)
-                                        else:
-                                                self.setGoal(iPersia, 2, 0)
+                                	if (iGameTurn == getTurnForYear(350)):
+                                        	iCounter = 0
+                                        	for iReligion in range(con.iNumReligions):
+                                                	iCurrentShrine = con.iShrine + iReligion*4
+                                                	apCityList = PyPlayer(iPersia).getCityList()
+                                                	for pCity in apCityList:
+                                                        	if (pCity.hasBuilding(iCurrentShrine)):
+                                                                	iCounter += 1
+                                                                	break
+                                                	#iCounter += pPersia.getBuildingClassCount(con.iShrine + iReligion*4) #BUGGY!
+                                        	if (iCounter >= 2):
+                                                	self.setGoal(iPersia, 2, 1)
+                                        	else:
+                                                	self.setGoal(iPersia, 2, 0)
+				else:
+					if iGameTurn == getTurnForYear(1650):
+						iCount = 0
+						for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iEngland, iRussia, iNetherlands, iPortugal]:
+							if teamPersia.isOpenBorders(iEurociv):
+								iCount += 1
+						if iCount >= 6:
+							self.setGoal(iPersia, 0, 1)
+						else:
+							self.setGoal(iPersia, 0, 0)
 
+					if iGameTurn == getTurnForYear(1750):
+						bMesopotamia = self.isControlled(iPersia, tSafavidMesopotamiaTL, tSafavidMesopotamiaBR)
+						bTransoxania = self.isControlled(iPersia, tTransoxaniaTL, tTransoxaniaBR)
+						bNWIndia = self.isControlled(iPersia, tNWIndiaTL, tNWIndiaBR)
+						if bMesopotamia and bTransoxania and bNWIndia:
+							self.setGoal(iPersia, 1, 1)
+						else:
+							self.setGoal(iPersia, 1, 0)
 
-
+					if iGameTurn == getTurnForYear(1800):
+						pBestCity = self.getMostCulturedCity(iPersia)
+						if pBestCity.getCulture(iPersia) >= 20000:
+							self.setGoal(iPersia, 2, 1)
+						else:
+							self.setGoal(iPersia, 2, 0)
                                                 
+
                 elif (iPlayer == iCarthage):
                         if (pCarthage.isAlive()):
 
@@ -1413,7 +1445,7 @@ class Victory:
 				if iGameTurn == getTurnForYear(1550):
 					capital = pTurkey.getCapitalCity()
 					iCounter = 0
-					for iWonder in range(coniPyramid, con.iNumBuildings):
+					for iWonder in range(con.iPyramid, con.iNumBuildings):
 						if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
 							if capital.isHasRealBuilding(iWonder):
 								iCounter += 1
@@ -2454,10 +2486,11 @@ class Victory:
 		iBest = iPlayer
 		iBestGold = gc.getPlayer(iPlayer).getGold()
 		for iCiv in range(con.iNumPlayers):
-			iCurrentGold = gc.getPlayer(iCiv).getGold()
-			if iCurrentGold > iBestGold:
-				iBest = iCiv
-				iBestGold = iCurrentGold
+			if gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]):
+				iCurrentGold = gc.getPlayer(iCiv).getGold()
+				if iCurrentGold > iBestGold:
+					iBest = iCiv
+					iBestGold = iCurrentGold
 		return iBest
 
 	# Leoreth: new implementation of the Arabian conquest goal
@@ -2480,6 +2513,21 @@ class Victory:
 				lOwnerList.remove(iCiv)
 		if len(lOwnerList) > 0:
 			bControlled = False			# someone who's not your vassal holds at least one city
+		return bControlled
+
+	def isControlled(self, iPlayer, tTopLeft, tBottomRight):
+		bControlled = False
+		lOwnerList = []
+		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.cityPlots, iPlayer)
+		for tPlot in lCityPlotList:
+			x, y = tPlot
+			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList:
+				lOwnerList.append(gc.getMap().plot(x,y).getPlotCity().getOwner())
+		if iPlayer in lOwnerList:
+			bControlled = True
+			lOwnerList.remove(iPlayer)
+		if len(lOwnerList) > 0:
+			bControlled = False
 		return bControlled
 
 	def getNumTechs(self, iCiv):
@@ -2526,7 +2574,7 @@ class Victory:
 		return iBestCiv
 
 	#Leoreth: checks if the given tile or one of its neighbors contain a city owned by iCiv
-	def controlsCity(iCiv, tPlot):
+	def controlsCity(self, iCiv, tPlot):
 		bResult = False
 		x, y = tPlot
 		for i in range(x-1, x+2):
@@ -2537,7 +2585,7 @@ class Victory:
 		return bResult
 
 	#Leoreth: be the only civ who culture controls the tiles in the plot list
-	def isCultureControlled(iCiv, lPlotList):
+	def isCultureControlled(self, iCiv, lPlotList):
 		bResult = True
 		for tPlot in lPlotList:
 			x, y = tPlot
@@ -2546,6 +2594,17 @@ class Victory:
 				bResult = False
 				break
 		return bResult
+
+	def getMostCulturedCity(self, iCiv):
+		lCityList = PyPlayer(iPersia).getCityList()
+		pBestCity = lCityList[0].GetCy()
+		iBestCulture = pBestCity.getCulture(iCiv)
+		for pCity in lCityList:
+			iTempCulture = pCity.GetCy().getCulture(iCiv)
+			if iTempCulture > iBestCulture:
+				pBestCity = pCity.GetCy()
+				iBestCulture = iTempCulture
+		return pBestCity
 
 
 	def getIcon(self, bVal):
@@ -2647,27 +2706,44 @@ class Victory:
 				aHelp.append(self.getIcon(bEgypt) + 'Egypt ' + self.getIcon(bPhoenicia) + 'Phoenicia ' + self.getIcon(bBabylonia) + 'Babylonia ' + self.getIcon(bPersia) + 'Persia')
 
 		elif iPlayer == iPersia:
-			if iGoal == 0:
-				totalLand = gc.getMap().getLandPlots()
-                        	persianLand = pPersia.getTotalLand()
-                        	if (totalLand > 0):
-                        		landPercent = (persianLand * 100.0) / totalLand
-                        	else:
-                        		landPercent = 0.0
-				aHelp.append(self.getIcon(landPercent >= 7.995) + 'Percentage of world territory: ' + str(landPercent) + '/8 %')
-			elif iGoal == 1:
-                        	iCounter = 0
-				for iWonder in range(con.iPyramid, con.iNumBuildings):
-					if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
-						iCounter += self.getNumBuildings(iPersia, iWonder)
-				iCounter += self.getNumBuildings(iPersia, con.iFlavianAmphitheatre)
-				aHelp.append(self.getIcon(iCounter >= 7) + 'Wonders: ' + str(iCounter) + '/7')
-			elif iGoal == 2:
-				iCounter = 0
-				for iReligion in range(con.iNumReligions):
-					iCurrentShrine = con.iShrine + iReligion*4
-					iCounter += self.getNumBuildings(iPersia, iCurrentShrine)
-				aHelp.append(self.getIcon(iCounter >= 2) + 'Shrines: ' + str(iCounter) + '/2')
+			if not pPersia.isReborn():
+				if iGoal == 0:
+					totalLand = gc.getMap().getLandPlots()
+                	        	persianLand = pPersia.getTotalLand()
+                        		if (totalLand > 0):
+                        			landPercent = (persianLand * 100.0) / totalLand
+                        		else:
+                        			landPercent = 0.0
+					aHelp.append(self.getIcon(landPercent >= 7.995) + 'Percentage of world territory: ' + str(landPercent) + '/8 %')
+				elif iGoal == 1:
+                        		iCounter = 0
+					for iWonder in range(con.iPyramid, con.iNumBuildings):
+						if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
+							iCounter += self.getNumBuildings(iPersia, iWonder)
+					iCounter += self.getNumBuildings(iPersia, con.iFlavianAmphitheatre)
+					aHelp.append(self.getIcon(iCounter >= 7) + 'Wonders: ' + str(iCounter) + '/7')
+				elif iGoal == 2:
+					iCounter = 0
+					for iReligion in range(con.iNumReligions):
+						iCurrentShrine = con.iShrine + iReligion*4
+						iCounter += self.getNumBuildings(iPersia, iCurrentShrine)
+					aHelp.append(self.getIcon(iCounter >= 2) + 'Shrines: ' + str(iCounter) + '/2')
+			else:
+				if iGoal == 0:
+					iCount = 0
+					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iRussia, iPortugal, iNetherlands]:
+						if teamPersia.isOpenBorders(iEurociv):
+							iCount += 1
+					aHelp.append(self.getIcon(iCount >= 6) + 'Open border agreements: ' + str(iCount) + '/6')
+				elif iGoal == 1:
+					bMesopotamia = self.isControlled(iPersia, tSafavidMesopotamiaTL, tSafavidMesopotamiaBR)
+					bTransoxania = self.isControlled(iPersia, tTransoxaniaTL, tTransoxaniaBR)
+					bNWIndia = self.isControlled(iPersia, tNWIndiaTL, tNWIndiaBR)
+					aHelp.append(self.getIcon(bMesopotamia) + 'Mesopotamia ' + self.getIcon(bTransoxania) + 'Transoxania ' + self.getIcon(bNWIndia) + 'Northwest India')
+				elif iGoal == 2:
+					pBestCity = self.getMostCulturedCity(iPersia)
+					iCulture = pBestCity.getCulture(iPersia)
+					aHelp.append(self.getIcon(iCulture >= 20000) + 'Most cultured city: ' + str(pBestCity.getName()) + ' (' + str(iCulture) + '/20000)')
 
 		elif iPlayer == iCarthage:
 			if iGoal == 0:

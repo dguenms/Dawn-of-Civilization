@@ -1408,20 +1408,63 @@ class RFCUtils:
 
 		targetList = []
 
-		if len(cityList) == 0:
-			CyInterface().addMessage(self.getHumanID(), False, con.iDuration, "Error: colonial target list empty", "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-
-		for i in range(iNumCities):
-			iRand = gc.getGame().getSorenRandNum(len(cityList)-1, 'Random city')
-			targetList.append(cityList[iRand])
-			cityList.remove(cityList[iRand])
+		if len(cityList) != 0:
+			for i in range(iNumCities):
+				iRand = gc.getGame().getSorenRandNum(len(cityList), 'Random city')
+				targetList.append(cityList[iRand])
+				cityList.remove(cityList[iRand])
 
 		if len(targetList) == 0:
 			for i in range(iNumCities):
-				iRand = gc.getGame().getSorenRandNum(len(lPlotList)-1, 'Random free plot')
+				iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random free plot')
 				targetList.append(lPlotList[iRand])
 				lPlotList.remove(lPlotList[iRand])
 
 		return targetList
-				
+
+	# Leoreth: tests if the plot is a part of the civs border in the specified direction
+	#          returns list containing the plot if that's the case, empty list otherwise
+	#          iDirection = -1 tests all directions
+	def testBorderPlot(self, tPlot, iCiv, iDirection):
+		x, y = tPlot
+		if gc.getMap().plot(x, y).getOwner() != iCiv or gc.getMap().plot(x, y).isWater() or gc.getMap().plot(x, y).isPeak():
+			return []
+
+		lDirectionList = []
+		if iDirection == -1 or iDirection == DirectionTypes.DIRECTION_NORTH:
+			if y < 68:
+				lDirectionList.append((0, 1))
+		if iDirection == -1 or iDirection == DirectionTypes.DIRECTION_SOUTH:
+			if y > 0:
+				lDirectionList.append((0, -1))
+		if iDirection == -1 or iDirection == DirectionTypes.DIRECTION_EAST:
+			if x < 124:
+				lDirectionList.append((1, 0))
+			else:
+				lDirectionList.append((-124, 0))
+		if iDirection == -1 or iDirection == DirectionTypes.DIRECTION_WEST:
+			if x > 0:
+				lDirectionList.append((-1, 0))
+			else:
+				lDirectionList.append((124, 0))
+
+		for tDirection in lDirectionList:
+			dx, dy = tDirection
+			nx = x + dx
+			ny = y + dy
+			if gc.getMap().plot(nx, ny).getOwner() != iCiv:
+				return [tPlot]
+
+		return []
+
+	# Leoreth: return list of border plots in a given direction, -1 means all directions
+	def getBorderPlotList(self, iCiv, iDirection):
+		lPlotList = []
+
+		for x in range(124):
+			for y in range(68):
+				if gc.getMap().plot(x, y).getOwner() == iCiv:
+					lPlotList.extend(self.testBorderPlot((x, y), iCiv, iDirection))
+
+		return lPlotList
 

@@ -1137,6 +1137,19 @@ class RiseAndFall:
 							pVenice.setCulture(iRome, 100, True)
 							pVenice.setPopulation(4)
 							utils.makeUnit(con.iGalley, iRome, (pVenice.plot().getX(), pVenice.plot().getY()), 2)
+						pRome.setLastStateReligion(con.iChristianity)
+						pRome.setCivics(0, 1)
+						pRome.setCivics(1, 6)
+						pRome.setCivics(2, 11)
+						pRome.setCivics(3, 16)
+						pRome.setCivics(4, 22)
+					elif iCiv == iPersia:
+						pPersia.setLastStateReligion(con.iIslam)
+						pPersia.setCivics(0, 1)
+						pPersia.setCivics(1, 7)
+						pPersia.setCivics(2, 11)
+						pPersia.setCivics(3, 16)
+						pPersia.setCivics(4, 22)
 
 #############################################################################################################
                         
@@ -1643,8 +1656,8 @@ class RiseAndFall:
 						else:
 							print "Result: impossible"
 				# prevent conditional civs from respawning if they have never spawned
-				if self.getLatestRebellionTurn(iDeadCiv) == 0:
-					bPossible = False
+				#if self.getLatestRebellionTurn(iDeadCiv) == 0:
+				#	bPossible = False
                                 #iDeadCiv = iIndia #DEBUG
                                 cityList = []
                                 if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > getTurnForYear(con.tBirth[iDeadCiv]) + utils.getTurns(50) and iGameTurn > utils.getLastTurnAlive(iDeadCiv) + utils.getTurns(20) and con.tRebirth[iDeadCiv] == -1 and bPossible): # last condition added by Leoreth, civ must not have a scripted respawn
@@ -3191,22 +3204,30 @@ class RiseAndFall:
 					teamMongolia.AI_setWarPlan(iTeamX, 5)	# necessary?
 					print("Mongolian war set against "+gc.getPlayer(iTeamX).getCivilizationDescriptionKey())
 
-					if iTeamX in [iArabia, iByzantium, iRussia]:
-						pCity = utils.getEasternmostCity(iTeamX)
-					elif iTeamX == iPersia:
-						pCity = utils.getNorthernmostCity(iTeamX)
-					elif iTeamX == iMughals:
-						pCity = utils.getWesternmostCity(iTeamX)
+					lPlotList = []
+					lTargetList = []
+					iWesternLimit = 75
 
-					if pCity != -1:
-						print ("City found, search land plot.")
-						tPlot = utils.findNearestLandPlot((pCity.getX(), pCity.getY()), iMongolia)
+					if iTeamX in [iArabia, iPersia]:
+						lPlotList = utils.getBorderPlotList(iTeamX, DirectionTypes.DIRECTION_NORTH)
+						for tPlot in lPlotList:
+							x, y = tPlot
+							if x < iWesternLimit:
+								lPlotList.remove(tPlot)
+					elif iTeamX in [iByzantium, iRussia]:
+						lPlotList = utils.getBorderPlotList(iTeamX, DirectionTypes.DIRECTION_EAST)
 
-					if tPlot:
+					for i in range(3):
+						if len(lPlotList) > 0:
+							iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random target plot')
+							lTargetList.append(lPlotList[iRand])
+							lPlotList.remove(lPlotList[iRand])
+
+					for tPlot in lTargetList:
 						print ("Plot found, place units.")
-						utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 5)
-						utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
-						utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
+						utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
+						utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1)
+						utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1)
 
 					if utils.getHumanID() == iTeamX:
 						CyInterface().addMessage(iTeamX, True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE_HUMAN", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
@@ -3553,8 +3574,8 @@ class RiseAndFall:
 		if (iCiv == iKorea):
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
-			utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
-			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
+			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 1)
                 if (iCiv == iMaya):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 3)
@@ -4292,6 +4313,9 @@ class RiseAndFall:
                                 teamPersia.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+				# Leoreth: Babylonian UHV: make them lose if they don't have Monarchy already
+				if sd.scriptDict['lBabylonianTechs'][1] == -1:
+					sd.scriptDict['lGoals'][iBabylonia][0] = 0
                         if (iCiv == iCarthage):
                                 teamCarthage.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
