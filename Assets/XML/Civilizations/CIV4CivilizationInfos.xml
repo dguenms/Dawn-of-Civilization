@@ -3273,7 +3273,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
-					<UnitType>UNIT_MUGHAL_VOLLEY_GUN</UnitType>
+					<UnitType>UNIT_MUGHAL_SIEGE_ELEPHANT</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>

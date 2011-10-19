@@ -17609,7 +17609,7 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_CANNON</Class>
-			<Type>UNIT_MUGHAL_VOLLEY_GUN</Type>
+			<Type>UNIT_MUGHAL_SIEGE_ELEPHANT</Type>
 			<UniqueNames/>
 			<Special>NONE</Special>
 			<Capture>NONE</Capture>
@@ -17618,9 +17618,9 @@
 			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
-			<Description>TXT_KEY_UNIT_MUGHAL_VOLLEY_GUN</Description>
-			<Civilopedia>TXT_KEY_UNIT_MUGHAL_VOLLEY_GUN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_CANNON_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_MUGHAL_SIEGE_ELEPHANT</Description>
+			<Civilopedia>TXT_KEY_UNIT_MUGHAL_SIEGE_ELEPHANT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_MUGHAL_SIEGE_ELEPHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -17692,9 +17692,13 @@
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<!-- Rhye -->
 			<PrereqTech>TECH_GUNPOWDER</PrereqTech>
-			<TechTypes/>
+			<TechTypes>
+				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
+			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
-			<PrereqBonuses/>
+			<PrereqBonuses>
+				<BonusType>BONUS_IVORY</BonusType>
+			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
@@ -17747,7 +17751,7 @@
 			<iCollateralDamage>100</iCollateralDamage>
 			<iCollateralDamageLimit>60</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>7</iCollateralDamageMaxUnits>
-			<iCityAttack>0</iCityAttack>
+			<iCityAttack>25</iCityAttack>
 			<iCityDefense>0</iCityDefense>
 			<iAnimalCombat>0</iAnimalCombat>
 			<iHillsAttack>0</iHillsAttack>
@@ -17787,7 +17791,7 @@
 				<iRangedWaveSize>2</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_CANNON</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_MUGHAL_SIEGE_ELEPHANT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
@@ -17796,16 +17800,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<FreePromotions>
-				<FreePromotion>
-					<PromotionType>PROMOTION_BARRAGE1</PromotionType>
-					<bFreePromotion>1</bFreePromotion>
-				</FreePromotion>
-				<FreePromotion>
-					<PromotionType>PROMOTION_BARRAGE2</PromotionType>
-					<bFreePromotion>1</bFreePromotion>
-				</FreePromotion>
-			</FreePromotions>
+			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>

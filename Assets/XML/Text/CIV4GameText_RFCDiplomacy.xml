@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_GENERIC</Tag>
+		<English>Greetings, [CT_NAME]! I am [OUR_NAME], leader of the great civilization of [OUR_CIV_SHORT].</English>
+		<German>Seid gegrüßt, [CT_NAME]! Ich bin [OUR_NAME], Anführer der großen Zivilisation von [OUR_CIV_SHORT].</German>
+	</TEXT>
+</Civ4GameText>
