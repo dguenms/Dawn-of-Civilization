@@ -71,3 +71,4 @@
 	- Control Mesopotamia, Transoxania, Northwestern India in 1750 AD
 	- Have a city with at least 20000 culture in 1800 AD
 # AI more reluctant to trade techs with China to offset the advantage of their UHV
+# included 3Miro's fixes to the bugs that rendered settlers and large unit stacks unable to move, respectively
