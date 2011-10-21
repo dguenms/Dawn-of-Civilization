@@ -54,9 +54,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI2</Tag>
-		<English>Techs that nobody has discovered yet cost -25%[ICON_RESEARCH]</English>
+		<English>Techs that nobody has discovered yet cost -20%[ICON_RESEARCH]</English>
 		<French>1.5X Vitesse d'entraînement des unités de combat rapproché et équipées d'armes à feu</French>
-		<German>Technologien, die bisher von niemandem entdeckt wurden, kosten -25%[ICON_RESEARCH]</German>
+		<German>Technologien, die bisher von niemandem entdeckt wurden, kosten -20%[ICON_RESEARCH]</German>
 		<Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
 		<Spanish>Velocidad de entrenamiento de unidades de cuerpo a cuerpo y con armas de p&#243;lvora multiplicada x1,5</Spanish>
 	</TEXT>

@@ -2800,7 +2800,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	}*/
 	//Rhye - end
 
-	//Leoreth: new Chinese UP: techs not known by anyone get -25% cost
+	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
 	if (getID() == CHINA)
 	{
 		bool bUnknown = true;
@@ -2814,7 +2814,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 
 		if (bUnknown)
 		{
-			iCost *= 75;
+			iCost *= 80;
 			iCost /= 100;
 		}
 	}

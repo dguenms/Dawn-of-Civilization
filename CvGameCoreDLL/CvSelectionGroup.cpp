@@ -1428,24 +1428,30 @@ void CvSelectionGroup::continueMission(int iSteps)
 			{
 				switch (headMissionQueueNode()->m_data.eMissionType)
 				{
-				case MISSION_MOVE_TO:
+				case MISSION_MOVE_TO:					//GC.getGameINLINE().logMsg(" MISSION_MOVE_TO from %d %d",getX(),getY());
 					if (getDomainType() == DOMAIN_AIR)
 					{
+						//GC.getGameINLINE().logMsg(" MISSION_MOVE_TO 1 ");
 						groupPathTo(headMissionQueueNode()->m_data.iData1, headMissionQueueNode()->m_data.iData2, headMissionQueueNode()->m_data.iFlags);
 						bDone = true;
 					}
 					else if (groupPathTo(headMissionQueueNode()->m_data.iData1, headMissionQueueNode()->m_data.iData2, headMissionQueueNode()->m_data.iFlags))
 					{
+						//GC.getGameINLINE().logMsg(" MISSION_MOVE_TO 2 ");
 						bAction = true;
 
 						if (getNumUnits() > 0)
 						{
+							//GC.getGameINLINE().logMsg(" MISSION_MOVE_TO 2.1 ");
 							if (!canAllMove())
 							{
+								//GC.getGameINLINE().logMsg(" MISSION_MOVE_TO 2.2 ");
 								if (headMissionQueueNode() != NULL)
 								{
+									//GC.getGameINLINE().logMsg(" MISSION_MOVE_TO 2.3 ");
 									if (groupAmphibMove(GC.getMapINLINE().plotINLINE(headMissionQueueNode()->m_data.iData1, headMissionQueueNode()->m_data.iData2), headMissionQueueNode()->m_data.iFlags))
 									{
+										//GC.getGameINLINE().logMsg(" MISSION_MOVE_TO 2.4 ");
 										bAction = false;
 										bDone = true;
 									}
@@ -1455,7 +1461,16 @@ void CvSelectionGroup::continueMission(int iSteps)
 					}
 					else
 					{
-						bDone = true;
+						//Leoreth: applying 3Miro's infinite settler loop fix
+						if ( (headMissionQueueNode()!=NULL)&& (headMissionQueueNode()->m_data.eMissionType==MISSION_MOVE_TO)&& ((getX() != headMissionQueueNode()->m_data.iData1) || (getY() != headMissionQueueNode()->m_data.iData2)) )
+						{
+							bDone = true;
+														pushMission(MISSION_SKIP);
+						}else
+						{
+							bDone = true;
+						};
+						//bDone = true; // 3Miro: Original code
 					}
 					break;
 
@@ -2514,7 +2529,7 @@ bool CvSelectionGroup::canMoveThrough(CvPlot* pPlot)
 		while (pUnitNode != NULL)
 		{
 			iCounter++; //Rhye (fix)
-			if (iCounter > 10) return false; //Rhye (fix)
+			if (iCounter > 50) return false; //Rhye (fix) // Leoreth/3Miro: increase threshold 10->50
 
 			pLoopUnit = ::getUnit(pUnitNode->m_data);
 			pUnitNode = nextUnitNode(pUnitNode);
