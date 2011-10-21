@@ -6865,15 +6865,18 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 				aiCommerces[iI] += kBuilding.getObsoleteSafeCommerceChange(iI);
 			}
 			// Leoreth: display Safavid UP effect
-			if (pCity->getOwner() == (PlayerTypes)PERSIA && GET_PLAYER((PlayerTypes)PERSIA).isReborn())
+			if (pCity != NULL)
 			{
-				if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
+				if (pCity->getOwner() == (PlayerTypes)PERSIA && GET_PLAYER((PlayerTypes)PERSIA).isReborn())
 				{
-					if (GC.getBuildingInfo(eBuilding).getReligionType() == GET_PLAYER(pCity->getOwner()).getStateReligion())
+					if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 					{
-						if (iI == COMMERCE_CULTURE || iI == COMMERCE_RESEARCH)
+						if (GC.getBuildingInfo(eBuilding).getReligionType() == GET_PLAYER(pCity->getOwner()).getStateReligion())
 						{
-							aiCommerces[iI] += 2;
+							if (iI == COMMERCE_CULTURE || iI == COMMERCE_RESEARCH)
+							{
+								aiCommerces[iI] += 2;
+							}
 						}
 					}
 				}
