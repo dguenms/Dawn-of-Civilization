@@ -35,7 +35,7 @@
 # The Dutch East Indiaman is now able to enter enemy territory without open border agreements
 # The Japanese capital switches to Tokyo when entering the Industrial Era
 # Victory code rewritten so that a "first to discover" goal immediately fails when someone else researches the tech faster
-# new Chinese UP: Scholar-Bureaucracy: -25% costs for all techs not already discovered by somebody else
+# new Chinese UP: Invention: -25% costs for all techs not already discovered by somebody else
 # new Chinese UB: Taixue (Library): 3 scientist slots
 # new Chinese first goal: be first to discover Compass, Gunpowder, Paper, Printing Press
 # castles now require the vassalage civic
@@ -62,3 +62,11 @@
 # "free tech" events like the Oracle or Liberalism effects only allow you to choose techs of your own era or earlier
 # changed Hanging Gardens to Pottery and Agriculture, +3 health in its city
 # changed Ishtar Gate to Priesthood
+# New Egyptian LHs: Baibars, Nasser
+# Iranian UB: Caravanserai, replaces Market, +1 trade route
+# Iranian UU: Qizilbash, replaces Heavy Swordsman, -10 hammers, +1 strength
+# Iranian UP: Safaviyya, +2 research +2 culture per state religion building
+# Iranian UHV:
+	- Have open borders with 6 European civilizations in 1650 AD
+	- Control Mesopotamia, Transoxania, Northwestern India in 1750 AD
+	- Have a city with at least 20000 culture in 1800 AD

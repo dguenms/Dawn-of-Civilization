@@ -7026,11 +7026,13 @@ int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pLis
 		switch (pNode->m_data.m_eItemType)
 		{
 		case TRADE_TECHNOLOGIES:
+			GC.getGameINLINE().logMsg("Enter tech trade calculation.");
 			//Leoreth: penalize China so they can't abuse their UP
-			if (ePlayer == (PlayerTypes)CHINA)
+			/*if (ePlayer == (PlayerTypes)CHINA)
 				iValue += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam())/2;
-			else
+			else*/
 				iValue += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam());
+			GC.getGameINLINE().logMsg("Finish tech trade calculation.");
 			break;
 		case TRADE_RESOURCES:
 			if (!bIgnoreAnnual)
@@ -7380,11 +7382,13 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 					switch (pNode->m_data.m_eItemType)
 					{
 					case TRADE_TECHNOLOGIES:
+						GC.getGameINLINE().logMsg("Enter tech trade calculation.");
 						//Leoreth: penalize China so they can't abuse their UP
-						if (ePlayer == (PlayerTypes)CHINA)
+						/*if (ePlayer == (PlayerTypes)CHINA)
 							iWeight += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam())/2;
-						else
+						else*/
 							iWeight += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam());
+						GC.getGameINLINE().logMsg("Finish tech trade calculation.");
 						break;
 					case TRADE_RESOURCES:
 						if (!pabBonusDeal[pNode->m_data.m_iData])
@@ -7667,11 +7671,13 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 					switch (pNode->m_data.m_eItemType)
 					{
 					case TRADE_TECHNOLOGIES:
+						GC.getGameINLINE().logMsg("Enter tech trade calculation.");
 						// Leoreth: penalize China in tech trading, so it's not possible to abuse the UP
-						if (ePlayer == (PlayerTypes)CHINA)
+						/*if (ePlayer == (PlayerTypes)CHINA)
 							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam())/2;
-						else
+						else*/
 							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam());
+						GC.getGameINLINE().logMsg("Finish tech trade calculation.");
 						break;
 					case TRADE_RESOURCES:
 						if (!pabBonusDeal[pNode->m_data.m_iData])
@@ -11053,20 +11059,20 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 	// Leoreth - prefer Pantheon if more than half of their cities has no religion
 	if (eCivic == 21){  // Pantheon
-		GC.getGameINLINE().logMsg("Pantheon check entered");
+		//GC.getGameINLINE().logMsg("Pantheon check entered");
         if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME){
             int iCityCounter = 0;
             for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++){
                 for (int iJ = 0; iJ < 8; iJ++){
-					char cArray[99];
-					sprintf(cArray, "Checking player %d, city %d, religion %d", getID(), iI, iJ);
-					GC.getGameINLINE().logMsg(cArray);
+					//char cArray[99];
+					//sprintf(cArray, "Checking player %d, city %d, religion %d", getID(), iI, iJ);
+					//GC.getGameINLINE().logMsg(cArray);
                     if (GET_PLAYER((PlayerTypes)getID()).getCity(iI))
 					{
 						if (GET_PLAYER((PlayerTypes)getID()).getCity(iI)->isHasReligion((ReligionTypes)iJ))
 						{
 							iCityCounter++;
-							GC.getGameINLINE().logMsg("Counter increased");
+							//GC.getGameINLINE().logMsg("Counter increased");
 							break;
 						}
 					}
@@ -11075,7 +11081,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
             if (2*iCityCounter <= GET_PLAYER((PlayerTypes)getID()).getNumCities())
                 iValue *= 2;
         }
-		GC.getGameINLINE().logMsg("Pantheon check finished");
+		//GC.getGameINLINE().logMsg("Pantheon check finished");
 	}
 
 	// Leoreth - prefer Vassalage for medieval Eurocivs
