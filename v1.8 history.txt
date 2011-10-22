@@ -50,6 +50,7 @@
 # religion spread turns pagan temples into the new religion's temple
 # Maya UP expires with the Medieval Era
 # holy cities can't be razed anymore
+# AI doesn't found cities on food resources anymore
 # terrain changes to Egypt
 # new Ottoman UHV:
 	# Have four wonders in your capital in 1550 AD
@@ -73,3 +74,5 @@
 # AI more reluctant to trade techs with China to offset the advantage of their UHV
 # included 3Miro's fixes to the bugs that rendered settlers and large unit stacks unable to move, respectively
 # included war maps into the DLL, they now also influence which cities the AI attacks
+# Babylonian UB (Ziggurat) now replaces Pagan Temple and adds +4 culture, +5% science, +5% culture
+# culture doesn't expand farther than the third ring until you know Monarchy

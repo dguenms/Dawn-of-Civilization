@@ -685,7 +685,10 @@ void CvPlayerAI::AI_doPeace()
 
 															if (eBestReceiveTech != NO_TECH)
 															{
-																iOurValue += GET_TEAM(getTeam()).AI_techTradeVal(eBestReceiveTech, GET_PLAYER((PlayerTypes)iI).getTeam());
+																if (iI == CHINA)
+																	iOurValue += GET_TEAM(getTeam()).AI_techTradeVal(eBestReceiveTech, GET_PLAYER((PlayerTypes)iI).getTeam())*3/4;
+																else
+																	iOurValue += GET_TEAM(getTeam()).AI_techTradeVal(eBestReceiveTech, GET_PLAYER((PlayerTypes)iI).getTeam());
 															}
 														}
 
@@ -7033,7 +7036,7 @@ int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pLis
 		case TRADE_TECHNOLOGIES:
 			//Leoreth: penalize China so they can't abuse their UP
 			if (ePlayer == (PlayerTypes)CHINA)
-				iValue += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam())/2;
+				iValue += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam())*3/4;
 			else
 				iValue += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam());
 			break;
@@ -7387,7 +7390,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 					case TRADE_TECHNOLOGIES:
 						//Leoreth: penalize China so they can't abuse their UP
 						if (ePlayer == (PlayerTypes)CHINA)
-							iWeight += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam())/2;
+							iWeight += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam())*3/4;
 						else
 							iWeight += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam());
 						break;
@@ -7674,7 +7677,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 					case TRADE_TECHNOLOGIES:
 						// Leoreth: penalize China in tech trading, so it's not possible to abuse the UP
 						if (ePlayer == (PlayerTypes)CHINA)
-							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam())/2;
+							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam())*3/4;
 						else
 							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam());
 						break;
@@ -13657,6 +13660,11 @@ void CvPlayerAI::AI_doDiplo()
 													}
 
 													iOurValue = GET_TEAM(getTeam()).AI_techTradeVal(eBestReceiveTech, GET_PLAYER((PlayerTypes)iI).getTeam());
+
+													//Leoreth: penalize the Chinese in tech trading to offset their UP
+													if (iI == CHINA)
+														iOurValue = iOurValue * 3 / 4;
+
 													if (eBestGiveTech != NO_TECH)
 													{
 														iTheirValue = GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).AI_techTradeVal(eBestGiveTech, getTeam());

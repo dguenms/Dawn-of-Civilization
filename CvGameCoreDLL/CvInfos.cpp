@@ -10272,12 +10272,17 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		researchPercent /= 100;
 	}
 
-	if (GC.getGameINLINE().getGameTurn() < (getTurnForYear(-1000)+1) ) // edead: turn 75
+	//Leoreth: delay the tech penalty a little to give Babylonia more time if it's player controlled
+	int iDeadline = -1000;
+	if (pl == (PlayerTypes)BABYLONIA)
+		iDeadline = -900;
+
+	if (GC.getGameINLINE().getGameTurn() < (getTurnForYear(iDeadline)+1) ) // edead: turn 75
 		{
 			researchPercent *= 105;
 			researchPercent /= 100;
 		}
-	else if (GC.getGameINLINE().getGameTurn() >= (getTurnForYear(-1000)+1) && GC.getGameINLINE().getGameTurn() <= (getTurnForYear(600)-1))  // edead: turn 75/180 //up to where the new timeline's stretched
+	else if (GC.getGameINLINE().getGameTurn() >= (getTurnForYear(iDeadline)+1) && GC.getGameINLINE().getGameTurn() <= (getTurnForYear(600)-1))  // edead: turn 75/180 //up to where the new timeline's stretched
 		{
 			researchPercent *= 150;
 			researchPercent /= 100;
