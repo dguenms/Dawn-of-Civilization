@@ -3357,13 +3357,18 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] <= 20)
 		iValue -= 1;
 	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 500) //500-700
-		iValue += 4;
+		iValue += 2; // Leoreth: lowered because of war maps influence
 	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 300) //300-400
-		iValue += 3;
+		iValue += 1; // Leoreth: lowered because of war maps influence
+
+	/* Leoreth: take out because of war map influence
 	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 150) //150-200
 		iValue += 2;
 	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 40) //40-60-90
-		iValue += 1;
+		iValue += 1;*/
+
+	//Leoreth: take war maps into account here as well
+	iValue += warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] / 2;
 
 	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
 		iValue += 2;
