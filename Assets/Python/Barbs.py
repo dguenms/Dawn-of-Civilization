@@ -117,6 +117,17 @@ class Barbs:
                 #handicap level modifier
                 iHandicap = (gc.getGame().getHandicapType() - 1)
 
+		# Leoreth: Tibet
+		if iGameTurn == getTurnForYear(lLhasa[2]):
+			x, y = lLhasa[0], lLhasa[1]
+			if not gc.getMap().plot(x, y).isCity():
+				gc.getMap().plot(x, y).setOwner(iBarbarian)
+				gc.getPlayer(iBarbarian).found(x, y)
+			if gc.getMap().plot(x, y).isCity():
+				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iBarbarian:
+					gc.getMap().plot(x, y).getPlotCity().setCulture(iBarbarian, 1000, True)
+					gc.getMap().plot(x, y).getPlotCity().setName("Lhasa", False)
+
                 #debug
                 #if (iGameTurn % 50 == 1):
                 #        print ("iHandicap", iHandicap)

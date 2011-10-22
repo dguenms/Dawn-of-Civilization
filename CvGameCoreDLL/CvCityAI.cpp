@@ -3000,9 +3000,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == HANGINGGARDEN || iI == ISHTAR) iTempValue *= 5;
 										else if (iI == SPIRALMINARET) iTempValue *= 2;
 										else if (iI == GREATWALL) iTempValue /= 4;
-										if (iI == MAUSOLLOS) {
+										else if (iI == MAUSOLLOS) {
 														iTempValue *= 3;
 														iTempValue /= 2;
+										} else {
+											iTempValue /= 4;
 										}
 									case GREECE:
 										if (iI == GREATLIBRARY) {

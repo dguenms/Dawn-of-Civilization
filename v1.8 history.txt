@@ -76,3 +76,5 @@
 # included war maps into the DLL, they now also influence which cities the AI attacks
 # Babylonian UB (Ziggurat) now replaces Pagan Temple and adds +4 culture, +5% science, +5% culture
 # culture doesn't expand farther than the third ring until you know Monarchy
+# added a generic first contact text so that leaders are not mute when you first meet them
+# encouraged Arabian rulers to build wonders (and Turkish to a lesser extent)
