@@ -7780,7 +7780,11 @@ TeamTypes CvCity::getTeam() const
 
 CultureLevelTypes CvCity::getCultureLevel() const
 {
-	return m_eCultureLevel;
+	//Leoreth: cap at three before monarchy is known
+	if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)MONARCHY))
+		return m_eCultureLevel;
+	else
+		return std::min(m_eCultureLevel, (CultureLevelTypes)3);
 }
 
 

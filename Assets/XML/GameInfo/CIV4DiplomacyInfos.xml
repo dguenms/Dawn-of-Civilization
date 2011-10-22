@@ -61,15 +61,6 @@
 			<Responses>
 				<Response>
 					<Civilizations/>
-					<Leaders/>
-					<Attitudes/>
-					<DiplomacyPowers/>
-					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_GENERIC</Text>
-					</DiplomacyText>
-				</Response>
-				<Response>
-					<Civilizations/>
 					<Leaders>
 						<Leader>
 							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
@@ -784,6 +775,15 @@
 					<DiplomacyPowers/>
 					<DiplomacyText>
 						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_GILGAMESH_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders/>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_GENERIC</Text>
 					</DiplomacyText>
 				</Response>
 			</Responses>

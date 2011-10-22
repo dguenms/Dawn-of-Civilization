@@ -399,7 +399,7 @@
 					<!-- Rhye - start -->
 					<!-- 	<BuildingClassType>BUILDINGCLASS_COLOSSEUM</BuildingClassType>
 					<BuildingType>BUILDING_BABYLON_GARDEN</BuildingType> -->
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_OBELISK</BuildingClassType>
 					<BuildingType>BUILDING_SUMERIAN_ZIGGURAT</BuildingType>
 					<!-- Rhye - end -->
 				</Building>

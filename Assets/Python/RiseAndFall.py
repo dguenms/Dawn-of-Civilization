@@ -3576,6 +3576,8 @@ class RiseAndFall:
 			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
 			utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 1)
+			if utils.getHumanID() != iKorea:
+				utils.makeUnit(con.iAxeman, iCiv, tPlot, 3)
                 if (iCiv == iMaya):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 3)
