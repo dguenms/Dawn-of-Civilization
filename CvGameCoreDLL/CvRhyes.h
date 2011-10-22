@@ -349,5 +349,6 @@ extern wchar civDynamicNames[2][32][22][19]; //(dynamic civ names - not jdog's)
 extern int civDynamicNamesFlag[32];
 extern int civDynamicNamesEraThreshold[32];
 extern int settlersMaps[2][32][68][124];
+extern int warMaps[2][32][68][124];
 
 

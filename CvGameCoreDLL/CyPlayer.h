@@ -525,6 +525,7 @@ public:
 	int getReborn();
 	void setReborn();
 	void updateTradeRoutes();
+	int getWarMapValue(int x, int y);
 
 private:
 	CvPlayer* m_pPlayer;

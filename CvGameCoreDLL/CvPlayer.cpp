@@ -23891,6 +23891,11 @@ void CvPlayer::setReborn()
     m_bReborn = true;
 }
 
+int CvPlayer::getWarMapValue(int x, int y)
+{
+	return warMaps[getReborn()][getID()][EARTH_Y-1-y][x];
+}
+
 bool CvPlayer::isHasBuilding(BuildingTypes eIndex)
 {
     return (countNumBuildings(eIndex) > 0);
