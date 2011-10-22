@@ -848,7 +848,7 @@ class Victory:
                                         	if (self.getGoal(iRome, 0) == -1):
                                                 	self.setGoal(iRome, 0, 0)  
                                     
-                                	if (iGameTurn == getTurnForYear(300)):                                              
+                                	if (iGameTurn == getTurnForYear(320)):                                              
                                         	bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[0][iSpain], tCoreAreasBR[0][iSpain], 2)
                                         	bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[0][iFrance], 3)
                                         	bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEngland], tCoreAreasBR[0][iEngland], 1)
