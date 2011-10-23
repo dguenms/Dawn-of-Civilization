@@ -122,6 +122,10 @@
 							<LeaderType>LEADER_QIN_SHI_HUANG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_TAIZONG</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
