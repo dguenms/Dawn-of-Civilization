@@ -3754,7 +3754,7 @@ class RiseAndFall:
                 if (iCiv == iRome):
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 5)
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
-			utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
+			utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 4)
                 if (iCiv == iPersia):
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
