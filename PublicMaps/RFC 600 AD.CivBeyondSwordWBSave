@@ -80,6 +80,8 @@ BeginTeam
 EndTeam
 BeginTeam
 EndTeam
+BeginTeam
+EndTeam
 BeginPlayer
 	LeaderType=LEADER_RAMESSES
 	CivType=CIVILIZATION_EGYPT                 
@@ -461,6 +463,19 @@ BeginPlayer
 	PlayableCiv=0                 
 	MinorNationStatus=1               
 	Handicap=HANDICAP_PRINCE                 
+EndPlayer
+BeginPlayer
+	LeaderType=LEADER_ALP
+	CivType=CIVILIZATION_SELJUK
+	StateReligion=RELIGION_ISLAM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FREE_SPEECH
+	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_OCCUPATION
+	Team=36
+	PlayableCiv=0
+	MinorNationStatus=1
+	Handicap=HANDICAP_PRINCE
 EndPlayer
 
 BeginMap
@@ -32664,24 +32679,24 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=33
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=33
-	EndUnit
-	BeginCity
-		CityOwner=33
-		CityName=Daibul
-		CityPopulation=2
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
-		Player33Culture=50
-	EndCity
+	#BeginUnit
+	#	UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=33
+	#EndUnit
+	#BeginUnit
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=33
+	#EndUnit
+	#BeginUnit
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=33
+	#EndUnit
+	#BeginCity
+	#	CityOwner=33
+	#	CityName=Daibul
+	#	CityPopulation=2
+	#	BuildingType=BUILDING_GRANARY
+	#	BuildingType=BUILDING_HINDU_TEMPLE
+	#	ReligionType=RELIGION_HINDUISM
+	#	Player33Culture=50
+	#EndCity
 EndPlot
 BeginPlot
 	x=85,y=38

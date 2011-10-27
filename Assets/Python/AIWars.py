@@ -72,6 +72,7 @@ class AIWars:
                         utils.minorWars(con.iIndependent2)
                 if (iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50)):
                         utils.minorWars(con.iCeltia)
+			utils.minorWars(con.iSeljuks)
                         
                 if (iGameTurn == getTurnForYear(1500) or iGameTurn == getTurnForYear(1850)):
                         for iLoopCiv in range( iNumPlayers ):

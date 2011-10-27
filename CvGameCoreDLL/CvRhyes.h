@@ -64,6 +64,7 @@ enum MyCivs
  INDEPENDENT2,
  NATIVE,
  CELTIA,
+ SELJUKS,
  BARBARIAN
 };
 
@@ -341,8 +342,8 @@ extern char uniquePower[40][2][16];
 extern char uniqueGoals[40][3][18];
 extern char rating[40][6][15];
 
-extern int turnPlayed[37];
-extern int civSpreadFactor[37][8];
+extern int turnPlayed[38];
+extern int civSpreadFactor[38][8];
 extern int civicMatrix[32][6][5];
 extern int borders[32][32];
 extern wchar civDynamicNames[2][32][22][19]; //(dynamic civ names - not jdog's)

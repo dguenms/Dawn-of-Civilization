@@ -10185,6 +10185,9 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 	}else if (pl == INDEPENDENT || pl == INDEPENDENT2)
 	{
 		iFinalResult = result * 130 / 100;
+	}else if (pl == SELJUKS)
+	{
+		iFinalResult = 50 / 100;
 	}else
 	{
 		iFinalResult = result;

@@ -15,7 +15,7 @@ Global
 		{EC36E172-1F97-4179-B6A3-A49D59E6D509}.Debug FxsMemory|Win32.ActiveCfg = Debug|Win32
 		{EC36E172-1F97-4179-B6A3-A49D59E6D509}.Debug|Win32.ActiveCfg = Debug|Win32
 		{EC36E172-1F97-4179-B6A3-A49D59E6D509}.Final Debug|Win32.ActiveCfg = Debug|Win32
-		{EC36E172-1F97-4179-B6A3-A49D59E6D509}.Final Release|Win32.ActiveCfg = Release|Win32
+		{EC36E172-1F97-4179-B6A3-A49D59E6D509}.Final Release|Win32.ActiveCfg = Debug|Win32
 		{EC36E172-1F97-4179-B6A3-A49D59E6D509}.Release FxsMemory|Win32.ActiveCfg = Release|Win32
 		{EC36E172-1F97-4179-B6A3-A49D59E6D509}.Release|Win32.ActiveCfg = Release|Win32
 	EndGlobalSection

@@ -80,6 +80,7 @@ iIndependent = con.iIndependent
 iIndependent2 = con.iIndependent2
 iNative = con.iNative
 iCeltia = con.iCeltia
+iSeljuks = con.iSeljuks
 iBarbarian = con.iBarbarian
 iNumTotalPlayers = con.iNumTotalPlayers
 
@@ -374,19 +375,19 @@ class UniquePowers:
 #------------------TURKISH U.P.-------------------
 
 
-        def turkishUP(self, city):
+        def turkishUP(self, city, iCiv):
                
                 for x in range(city.getX()-2, city.getX()+3):
                         for y in range(city.getY()-2, city.getY()+3):
                                 pCurrent = gc.getMap().plot( x, y )
                                 if (x == city.getX() and y == city.getY()):
-                                        utils.convertPlotCulture(pCurrent, iTurkey, 51, False)
+                                        utils.convertPlotCulture(pCurrent, iCiv, 51, False)
                                 elif (pCurrent.isCity()):
                                         pass
                                 elif (utils.calculateDistance(x, y, city.getX(), city.getY()) == 1):
-                                        utils.convertPlotCulture(pCurrent, iTurkey, 80, True)
+                                        utils.convertPlotCulture(pCurrent, iCiv, 80, True)
                                 else:
-                                        utils.convertPlotCulture(pCurrent, iTurkey, 20, False)
+                                        utils.convertPlotCulture(pCurrent, iCiv, 20, False)
 
 
 #------------------MONGOLIAN U.P.-------------------
@@ -500,7 +501,8 @@ class UniquePowers:
 		if utils.getHumanID() != iMongolia:
 			utils.makeUnitAI(con.iLongbowman, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 
-		CyInterface().addMessage(iMongolia, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_MONGOL_HORDE", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+		if city.getPopulation() >= 4:
+			CyInterface().addMessage(iMongolia, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_MONGOL_HORDE", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
 
 #------------------AMERICAN U.P.-------------------

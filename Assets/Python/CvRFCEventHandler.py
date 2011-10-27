@@ -75,6 +75,7 @@ iIndependent = con.iIndependent
 iIndependent2 = con.iIndependent2
 iNative = con.iNative
 iCeltia = con.iCeltia
+iSeljuks = con.iSeljuks
 iBarbarian = con.iBarbarian
 iNumTotalPlayers = con.iNumTotalPlayers
 #Rhye - end
@@ -261,8 +262,8 @@ class CvRFCEventHandler:
                 
                 if (playerType == con.iArabia):
                         self.up.arabianUP(city)
-                elif (playerType == con.iTurkey):
-                        self.up.turkishUP(city)
+                elif (playerType == con.iTurkey or playerType == con.iSeljuks):
+                        self.up.turkishUP(city, playerType)
 		elif (playerType == con.iMongolia and bConquest):
 			self.up.mongolUP(city)
 		elif (playerType == con.iMughals):
@@ -354,7 +355,7 @@ class CvRFCEventHandler:
 
 
                 if (iOwner == con.iTurkey):
-                        self.up.turkishUP(city)
+                        self.up.turkishUP(city, iOwner)
 
 
                 if (self.vic.getNewWorld(0) == -1):

@@ -10984,6 +10984,27 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
+		<SoundData>
+			<SoundID>SND_BUILD_ZORO</SoundID>
+			<Filename>Sounds/Units/ZoroDink</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_BUILD_ZORO_MOVIE</SoundID>
+			<Filename>Sounds/Units/Zoro</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_BUILD_ZORO_MISSIONARY</SoundID>
+			<Filename>Sounds/Units/Zoro2</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
 	</SoundDatas>
 	<ContextTypes>
 		<ContextType>Generic</ContextType>

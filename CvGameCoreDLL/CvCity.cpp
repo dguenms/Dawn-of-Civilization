@@ -5880,6 +5880,7 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		case INDEPENDENT2:
 		case NATIVE:
 		case CELTIA: //late start too, as Byzantium stands in the junction point of 3 continents
+		case SELJUKS:
 			return 0;
 	}
 	//Rhye - end
@@ -12374,6 +12375,10 @@ void CvCity::doReligion()
 									int iSpreadFactor = civSpreadFactor[getOwnerINLINE()][iI] * iBaseSpreadFactor / 100;
 									iSpread *= iSpreadFactor;
 
+									//Leoreth: prohibit Zoroastrianism from spreading again
+									if (iI == ZOROASTRIANISM && GC.getGame().getGameTurnYear() >= 1000)
+										iSpread = 0;
+
                                     //Leoreth: disabled, but do something to get rid of Christianity in Anatolia when Byzantium collapses
 									//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 									//	if (iI == 1 && getOwnerINLINE() == CELTIA) //no spread of Christianity in the Byzantine empire, because otherwise the Turks will get it
@@ -14462,3 +14467,10 @@ void CvCity::getBuildQueue(std::vector<std::string>& astrQueue) const
 	}
 }
 
+//Leoreth: to protect Middle Eastern cities from repeated invasions
+bool CvCity::isMiddleEast() const
+{
+	int x = getX_INLINE();
+	int y = getY_INLINE();
+	return ((x >= 67 && x <= 72 && y >= 31 && y <= 37) || (x >= 68 && x <= 72 && y >= 38 && y <= 46) || (x >= 73 && x <= 91 && y >= 30 && y <= 46));
+}

@@ -24007,7 +24007,7 @@
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
-			<PrereqTech>TECH_POTTERY</PrereqTech>
+			<PrereqTech>TECH_MASONRY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_AGRICULTURE</PrereqTech>
 			</TechTypes>

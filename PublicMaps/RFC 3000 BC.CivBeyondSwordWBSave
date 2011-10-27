@@ -91,6 +91,8 @@ BeginTeam
 EndTeam
 BeginTeam
 EndTeam
+BeginTeam
+EndTeam
 BeginPlayer
 	LeaderType=LEADER_RAMESSES
 	CivType=CIVILIZATION_EGYPT                 
@@ -466,6 +468,18 @@ BeginPlayer
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
+EndPlayer
+BeginPlayer
+	LeaderType=LEADER_ALP
+	CivType=CIVILIZATION_SELJUK
+	StateReligion=RELIGION_ISLAM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FREE_SPEECH
+	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_OCCUPATION
+	Team=36
+	PlayableCiv=0
+	Handicap=HANDICAP_PRINCE
 EndPlayer
 
 BeginMap

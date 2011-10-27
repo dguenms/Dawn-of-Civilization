@@ -1327,6 +1327,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int iDamage;
 	int iDX, iDY;
 	int iI;
+	int iProb; //Leoreth
 	CLinkList<IDInfo> oldUnits;
 	std::vector<int> aeFreeSpecialists;
 
@@ -1597,7 +1598,13 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pNewCity->setPreviousOwner(eOldOwner);
 	pNewCity->setOriginalOwner(eOriginalOwner);
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
-	pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
+
+	//Leoreth: protect middle eastern cities from Seljuk invasions
+	if (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)
+		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation)) : iPopulation);
+	else
+		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
+
 	pNewCity->setHighestPopulation(iHighestPopulation);
 	pNewCity->setName(szName);
 	pNewCity->setNeverLost(false);
@@ -1633,7 +1640,10 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 					{
 						if (pNewCity->isValidBuildingLocation(eBuilding))
 						{
-							if (!bConquest || bRecapture || GC.getGameINLINE().getSorenRandNum(100, "Capture Probability") < GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability())
+							//Leoreth: protect middle eastern cities from Seljuk invasions
+							iProb = (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)? 100 : GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability();
+
+							if (!bConquest || bRecapture || GC.getGameINLINE().getSorenRandNum(100, "Capture Probability") < iProb)
 							{
 								iNum += paiNumRealBuilding[iI];
 							}
@@ -15676,11 +15686,11 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 		bSomethingHappened = true;
 
 		//Leoreth: trigger for stolen techs (Japanese UHV)
-		long result = -1;
+		/*long result = -1;
 		CyArgsList argsList;
 		argsList.add(getID());
 		argsList.add(iTech);
-	    gDLL->getPythonIFace()->callFunction(PYScreensModule, "onTechStolen", argsList.makeFunctionArgs(), &result);
+	    gDLL->getPythonIFace()->callFunction(PYScreensModule, "onTechStolen", argsList.makeFunctionArgs(), &result);*/
 	}
 
 	//////////////////////////////

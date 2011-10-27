@@ -30,9 +30,10 @@ iIndependent = iNumPlayers
 iIndependent2 = iNumPlayers+1
 iNative = iNumPlayers+2
 iCeltia = iNumPlayers+3
-iNumTotalPlayers = iNumPlayers+4
-iBarbarian = iNumPlayers+4
-iNumTotalPlayersB = iBarbarian
+iSeljuks = iNumPlayers+4
+iNumTotalPlayers = iNumPlayers+5
+iBarbarian = iNumPlayers+5
+iNumTotalPlayersB = iBarbarian+1
 
 # civilizations, not players
 iNumCivilizations = 45
@@ -198,7 +199,8 @@ tBirth = (
 -3000, # 0,
 -3000, # 0,
 -3000, # 0,
--3000, # 0)
+-3000, # 0,
+-3000
 )
 
 # Leoreth: stability penalty from this date on

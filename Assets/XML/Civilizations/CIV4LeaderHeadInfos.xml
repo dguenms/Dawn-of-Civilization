@@ -46578,7 +46578,7 @@
 			<Description>TXT_KEY_LEADER_BARBARIAN</Description>
 			<Civilopedia>TXT_KEY_LEADER_BARBARIAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_BARBARIAN</ArtDefineTag>
-			<iWonderConstructRand>30</iWonderConstructRand>
+			<iWonderConstructRand>20</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
 			<iPeaceWeightRand>0</iPeaceWeightRand>

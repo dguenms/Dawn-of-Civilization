@@ -9,4 +9,49 @@
 		<English>Greetings, [CT_NAME]! I am [OUR_NAME], leader of the great civilization of [OUR_CIV_SHORT].</English>
 		<German>Seid gegrüßt, [CT_NAME]! Ich bin [OUR_NAME], Anführer der großen Zivilisation von [OUR_CIV_SHORT].</German>
 	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_NICHOLAS_II_1</Tag>
+		<English>Greetings. I am [OUR_NAME], Emperor of [OUR_CIV_SHORT]. Dedicating all my efforts to the well-being of my people, I shall guard the concept of Autocracy like all my forefathers did.</English>
+		<German>Seid gegrüßt, [CT_NAME]! Ich bin [OUR_NAME], Anführer der großen Zivilisation von [OUR_CIV_SHORT].</German>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_YAROSLAV_1</Tag>
+		<English>[OUR_NAME] of [OUR_CIV_SHORT] greets you. I do not praise myself or my courage, but I praise God, for he protected me, a sinful man, from deadly dangers and created me capable of doing many human things.</English>
+		<German>Seid gegrüßt, [CT_NAME]! Ich bin [OUR_NAME], Anführer der großen Zivilisation von [OUR_CIV_SHORT].</German>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ATATURK_1</Tag>
+		<English>I am [OUR_NAME], the President of the Turkish people. We Turks do not consider our principles as dogmas contained in books that are said to come from heaven. We derive our inspiration not from heaven, or from an unseen world, but directly from life.</English>
+		<German>Seid gegrüßt, [CT_NAME]! Ich bin [OUR_NAME], Anführer der großen Zivilisation von [OUR_CIV_SHORT].</German>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_KHOMEINI_1</Tag>
+		<English>I, [OUR_NAME] of the [OUR_CIV], greet you. Know that those who speak of nationalism, democracy, and such things want to take our nation away from its mission.</English>
+		<German>Seid gegrüßt, [CT_NAME]! Ich bin [OUR_NAME], Anführer der großen Zivilisation von [OUR_CIV_SHORT].</German>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CIXI_1</Tag>
+		<English>Greetings, I am [OUR_NAME], the most clever woman that ever lived, and others cannot compare with me. I have four billion people dependent on my judgement.</English>
+		<German>Seid gegrüßt, [CT_NAME]! Ich bin [OUR_NAME], Anführer der großen Zivilisation von [OUR_CIV_SHORT].</German>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_NICHOLAS_II_1</Tag>
+		<English>Treachery, cowardice and lies are everywhere - and your nation is no exception.</English>
+		<German>Verrat, Feigheit und Lügen sind überall - und Eure Nation ist keine Ausnahme.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_KHOMEINI_1</Tag>
+		<English>If one permits an infidel to continue in his role as a corrupter of the earth, the infidel's moral suffering will be all the worse. If one kills the infidel, and this stops him from perpetrating his misdeeds, his death will be a blessing to him.</English>
+		<German>Wenn man einem Ungläubigen erlaubt, seine Rolle als Verderber der Erde fortzusetzen, wird das moralische Leiden des Ungläubigen umso größer sein. Wenn man den Ungläubigen tötet, und ihn vom Fortsetzen seiner Untaten abhält, wird ihm sein Tod ein Segen sein.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CIXI_1</Tag>
+		<English>Under heaven, people with righteousness are not murderers and arsonists like you.</English>
+		<German>Unter dem Himmel sind Menschen von Rechtschaffenheit keine Mörder und Brandstifter wie Ihr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ATATURK_1</Tag>
+		<English>We must get ready to build up the friendship between our peoples. How does a people get prepared for such an endeavour? By strengthening the natural bridges that exist between us. Language is a bridge... Religon is a bridge... History is a bridge...</English>
+		<German>Wir müssen uns bereit machen, die Freundschaft zwischen unseren Völkern aufzubauen. Wie wird ein Volk auf solch ein Vorhaben vorbereitet? Indem wir die natürlichen Brücken stärken, die zwischen uns existieren. Sprache ist eine Brücke ... Religion ist eine Brücke ... Geschichte ist eine Brücke ...</German>
+	</TEXT>
 </Civ4GameText>
