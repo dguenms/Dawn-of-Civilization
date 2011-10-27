@@ -3373,6 +3373,20 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	//Leoreth: take war maps into account here as well
 	iValue += warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] / 2;
 
+	//Leoreth: Seljuks target only cities in the middle east
+	if (getID() == SELJUKS)
+	{
+		if (pCity->isMiddleEast())
+			iValue += 3;
+		else
+			iValue -= 10;
+
+		if ((pCity->getX() == 89 && pCity->getY() == 46) || (pCity->getX() == 95 && pCity->getY() == 47))
+			iValue -= 10;
+		else if (pCity->getX() == 72 && pCity->getY() == 43)
+			iValue += 5;
+	}
+
 	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
 		iValue += 2;
 	//Rhye - end
@@ -3436,8 +3450,11 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		case CARTHAGE:
 			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
 			break;
-		case ROME:  // Leoreth - left unchanged for Italy
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))*2/3);
+		case ROME:  // Linkman226- greater chance the Romans will pursue wars farther, same chance for Italians
+			if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
+				iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
+			else
+				iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))*2/3);
 			break;
 		case JAPAN:
 			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));

@@ -1001,8 +1001,8 @@ class Victory:
                                         if (self.getGoal(iMaya, 1) == -1): #see onBuildingBuilt()
                                                 self.setGoal(iMaya, 1, 0)
 
-                                if (iGameTurn == getTurnForYear(1745)):      
-                                        if (self.getGoal(iMaya, 2) == -1): #see onCityAcquired()
+                                if (iGameTurn == getTurnForYear(1600)):      
+                                        if (self.getGoal(iMaya, 2) == -1): #see onGreatPersonBorn()
                                                 self.setGoal(iMaya, 2, 1)
 
 		elif (iPlayer == iByzantium):
@@ -2385,6 +2385,13 @@ class Victory:
 		#				if sd.getNumGenerals() == 3:
 		#					sd.setGoal(iJapan, 0, 1)
 
+		# Leoreth: new third goal for Maya: get a great general by 1600 AD
+		if iPlayer == iMaya:
+			if pUnit.getUnitClassType == CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_GREAT_GENERAL'):
+				if self.getGoal(iMaya, 2) == -1:
+					if gc.getGame().getGameTurn() <= getTurnForYear(1600):
+						self.setGoal(iMaya, 2, 1)
+
 	def onTechStolen(self, iPlayer, iTech):
 		return
 		# Leoreth: first goal for Japan: steal five technologies by 1600 AD
@@ -2486,7 +2493,7 @@ class Victory:
 		iBest = iPlayer
 		iBestGold = gc.getPlayer(iPlayer).getGold()
 		for iCiv in range(con.iNumPlayers):
-			if gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]):
+			if gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]) and gc.getPlayer(iCiv).isAlive():
 				iCurrentGold = gc.getPlayer(iCiv).getGold()
 				if iCurrentGold > iBestGold:
 					iBest = iCiv
@@ -2731,7 +2738,7 @@ class Victory:
 			else:
 				if iGoal == 0:
 					iCount = 0
-					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iRussia, iPortugal, iNetherlands]:
+					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iGermany, iRussia, iPortugal, iNetherlands]:
 						if teamPersia.isOpenBorders(iEurociv):
 							iCount += 1
 					aHelp.append(self.getIcon(iCount >= 6) + 'Open border agreements: ' + str(iCount) + '/6')

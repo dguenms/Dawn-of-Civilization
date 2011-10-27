@@ -63,6 +63,76 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
+							<LeaderType>LEADER_NICHOLAS_II</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_NICHOLAS_II_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_YAROSLAV</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_YAROSLAV_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_ATATURK</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_ATATURK_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_KHOMEINI</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_KHOMEINI_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_CIXI</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_CIXI_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
 							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -784,11 +854,16 @@
 				<Response>
 					<Civilizations/>
 					<Leaders>
+
 						<Leader>
+
 							<LeaderType>LEADER_JIMMU</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
 						<Leader>
+
 							<LeaderType>LEADER_MEIJI</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -796,6 +871,7 @@
 							<LeaderType>LEADER_AKBAR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+
 						<Leader>
 							<LeaderType>LEADER_HIRAM</LeaderType>
 							<bLeaderType>1</bLeaderType>
@@ -808,6 +884,7 @@
 							<LeaderType>LEADER_GUSTAV</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+
 						<Leader>
 							<LeaderType>LEADER_ABU_BAKR</LeaderType>
 							<bLeaderType>1</bLeaderType>
@@ -818,76 +895,106 @@
 						</Leader>
 						<Leader>
 							<LeaderType>LEADER_FILIPE</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
 						<Leader>
+
 							<LeaderType>LEADER_BARBAROSSA</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
+
 							<LeaderType>LEADER_CHARLES</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
+
 							<LeaderType>LEADER_FRANCIS</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
-							<LeaderType>LEADER_YAROSLAV</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
+
 							<LeaderType>LEADER_AFONSO</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+	
 						</Leader>
+
 						<Leader>
-							<LeaderType>LEADER_ATATURK</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
+
 							<LeaderType>LEADER_MARIA_II</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
+
 							<LeaderType>LEADER_HITLER</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
+
 							<LeaderType>LEADER_FRANCO</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
-							<LeaderType>LEADER_NICHOLAS_II</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
-							<LeaderType>LEADER_CIXI</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
+
 							<LeaderType>LEADER_CAVOUR</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
+
 							<LeaderType>LEADER_ABBAS</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
-							<LeaderType>LEADER_KHOMEINI</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
+
 							<LeaderType>LEADER_HONGWU</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 						<Leader>
+
 							<LeaderType>LEADER_SHIVAJI</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+	
 						<Leader>
+
 							<LeaderType>LEADER_NARESUAN</LeaderType>
+
 							<bLeaderType>1</bLeaderType>
+
 						</Leader>
+
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
@@ -3789,6 +3896,29 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
+							<LeaderType>LEADER_ATATURK</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes>
+						<Attitude>
+							<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+					</Attitudes>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ATATURK_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
 							<LeaderType>LEADER_JOAO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -4449,6 +4579,75 @@
 					<DiplomacyPowers/>
 					<DiplomacyText>
 						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ISABELLA_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_NICHOLAS_II</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes>
+						<Attitude>
+							<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_FURIOUS</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+					</Attitudes>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_NICHOLAS_II_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_KHOMEINI</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes>
+						<Attitude>
+							<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_FURIOUS</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+					</Attitudes>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_KHOMEINI_1</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_CIXI</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes>
+						<Attitude>
+							<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_FURIOUS</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+					</Attitudes>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CIXI_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>

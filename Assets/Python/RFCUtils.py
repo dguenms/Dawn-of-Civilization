@@ -1325,6 +1325,18 @@ class RFCUtils:
 				pResultCity = pPlayer.getCity(i)
 		return pResultCity
 
+	def getFreeNeighborPlot(self, tPlot):
+		x, y = tPlot
+		plotList = []
+		for i in range(x-1, x+2):
+			for j in range(y-1, y+2):
+				if (i, j) != (x, y):
+					plot = gc.getMap().plot(i, j)
+					if (not plot.isPeak()) and (not plot.isWater()) and (not plot.isCity()) and (not plot.isUnit()):
+						plotList.append((i, j))
+		iRand = gc.getGame().getSorenRandNum(len(plotList), '')
+		return plotList[iRand]
+
 	def colonialConquest(self, iCiv, x, y):
 		bRifling = gc.getTeam(iCiv).isHasTech(con.iRifling)
 		iTargetCiv = gc.getMap().plot(x,y).getPlotCity().getOwner()
@@ -1336,8 +1348,9 @@ class RFCUtils:
 				if not current.isCity() and not current.isPeak() and not current.isWater():
 					lFreePlots.append((i,j))
 
-		gc.getTeam(iCiv).setAtWar(iTargetCiv, True)
-		gc.getTeam(iTargetCiv).setAtWar(iCiv, True)
+		if iTargetCiv != -1:
+			gc.getTeam(iCiv).setAtWar(iTargetCiv, True)
+			gc.getTeam(iTargetCiv).setAtWar(iCiv, True)
 
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		tPlot = lFreePlots[iRand]
@@ -1411,14 +1424,16 @@ class RFCUtils:
 		if len(cityList) != 0:
 			for i in range(iNumCities):
 				iRand = gc.getGame().getSorenRandNum(len(cityList), 'Random city')
-				targetList.append(cityList[iRand])
-				cityList.remove(cityList[iRand])
+				print 'iRand = '+str(iRand)
+				targetList.append(cityList[iRand-1])
+				cityList.remove(cityList[iRand-1])
 
 		if len(targetList) == 0:
 			for i in range(iNumCities):
 				iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random free plot')
-				targetList.append(lPlotList[iRand])
-				lPlotList.remove(lPlotList[iRand])
+				print 'iRand = '+str(iRand)
+				targetList.append(lPlotList[iRand-1])
+				lPlotList.remove(lPlotList[iRand-1])
 
 		return targetList
 

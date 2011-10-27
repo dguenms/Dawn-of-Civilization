@@ -57,6 +57,7 @@ iIndependent = con.iIndependent
 iIndependent2 = con.iIndependent2
 iNative = con.iNative
 iCeltia = con.iCeltia
+iSeljuks = con.iSeljuks
 iBarbarian = con.iBarbarian
 iNumTotalPlayers = con.iNumTotalPlayers
       
@@ -7582,10 +7583,10 @@ class CityNameManager:
 			if sName == 'Cant&#227;o':
 				city.setName("Guangzhou", False)
 
-                if (iNewOwner == iTurkey): 
+                if (iNewOwner == iTurkey or iNewOwner == iSeljuks): 
                         if (sName == 'Byzantion' or sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Miklagard' or sName == 'Bizantiya' or sName == 'Qustantiniyah' or sName == 'Konstantinopel' or sName == "Konstantinopol'" or sName == "Car'grad"):
                                 city.setName('Kostantiniyye', False)
-                                if (not gc.getPlayer(iTurkey).isHuman()):
+                                if (iNewOwner == iTurkey and not gc.getPlayer(iTurkey).isHuman()):
                                         city.setHasRealBuilding((0), True) #palace
                                         apCityList = PyPlayer(iTurkey).getCityList()
                                         for pCity in apCityList:
@@ -7805,6 +7806,11 @@ class CityNameManager:
 				city.setName('Akka', False)
 			if sName == 'Damietta' or sName == 'Tamiat' or sName == 'Domyat':
 				city.setName('Dimyat', False)
+			if sName == 'Tebriz':
+				if iNewOwner == iSeljuks:
+                                        formerCapital = gc.getPlayer(iSeljuks).getCapitalCity()
+                                        city.setHasRealBuilding((0), True) #palace
+                                        formerCapital.setHasRealBuilding((0), False) #palace
 			
 						
                 if (iNewOwner == iAmerica): 

@@ -4488,7 +4488,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_JEWISH_MISSIONARY</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_ZORO_MISSIONARY</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>

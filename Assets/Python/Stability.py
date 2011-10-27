@@ -1129,7 +1129,7 @@ class Stability:
                                                         self.setParameter(playerType, iParDiplomacyE, True, +3) 
                                 if (city.getX() == tCapitals[utils.getReborn(owner)][owner][0] and city.getY() == tCapitals[utils.getReborn(owner)][owner][1]):
                                         iTotalCityLostModifier += 20
-                                if (playerType == con.iBarbarian or playerType == con.iCeltia):
+                                if (playerType == con.iBarbarian or playerType == con.iCeltia or playerType == con.iSeljuks):
                                         iTotalCityLostModifier += 1                        
                         self.setParameter(owner, iParExpansionE, True, -iTotalCityLostModifier) 
                         self.setStability(owner, self.getStability(owner) - iTotalCityLostModifier )

@@ -271,9 +271,9 @@
 			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/monotheism.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Confucianism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,7,3</GenericTechButton>
-			<MovieFile>Art/Movies/Religion/Judaism/Jud_Found.nif</MovieFile>
-			<MovieSound>AS2D_BUILD_JEWISH_MOVIE</MovieSound>
-			<Sound>AS2D_BUILD_JEWISH</Sound>
+			<MovieFile>Art/Movies/Zoroastrianism/Tao_Found.nif</MovieFile>
+			<MovieSound>AS2D_BUILD_ZORO_MOVIE</MovieSound>
+			<Sound>AS2D_BUILD_ZORO</Sound>
 		</ReligionInfo>	
 	</ReligionInfos>
 </Civ4ReligionInfo>

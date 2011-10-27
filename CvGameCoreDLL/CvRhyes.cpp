@@ -21,7 +21,7 @@ char loadingTime600AD[40][4] =  {"30",	"0",	"15",	"0",	"0",	"0",	"X",	"0",	"0",	
 char startingYear[40][6] =      {"1775 ","620 ","1200 ","3000 ","330 ",	"1200 ","XXX ",	"3000 ","3000 ","820 ",	"295 ", "750 ",	"840 ",	"1600 ","XXX ",	"1150 ","3000 ","700 ", "1500",	"1167 ","525 ",	"660 ",	"50 ",	"980 ",	"65 ",	"1190 ","XXX ",	"XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"545 ",	"XXX "};
 bool startingEra[40] =		    {true,	true,	true,	false,	true,	false,	false,	false,	false,	true,	false,   true,	true,	false,	false,	true,	false,	true,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
 char startingYear600AD[40][6] = {"1775 ","600 ","1200 ","3000 ","600 ",	"1200 ","XXX ",	"600 ",	"3000 ","820 ",	"295 ", "750 ",	"840 ",	"1600 ","XXX ",	"1150 ","3000 ","700 ",	"1500 ","1167 ","600 ",	"660 ",	"600 ",	"980 ",	"65 ",	"1190 ","XXX ",	"XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"600 ",	"XXX "};
-bool startingEra600AD[40] =		{true,	true,	true,	false,	true,	false,	false,	true,	false,	true,	false,   true,	true,	false,	false,	true,	false,	true,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
+bool startingEra600AD[40] =		{true,	true,	true,	false,	true,	false,	false,	true,	false,	true,	false,   true,	true,	false,	false,	true,	false,	true,	true,	true,	true,	true,	true,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
 
 //Leoreth: relocate most civ modifiers here (respawns like Italy not included!)
 // CvPlayerAI.cpp
@@ -236,10 +236,10 @@ char rating[40][6][15]  = {
 	{"XXX", "XXX", "XXX", "XXX", "XXX"}};
 
 
-int turnPlayed[37] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+int turnPlayed[38] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 
-int civSpreadFactor[37][8]  = { //Panopticon - new spread figures for Protestantism, Leoreth: new spread rate for Zoroastrianism
+int civSpreadFactor[38][8]  = { //Panopticon - new spread figures for Protestantism, Leoreth: new spread rate for Zoroastrianism
 //		PRO	 CAT  ISL  HIN  BUD  CON  TAO  ZOR
 //Egypt
 	{	100, 250, 350,  20,  20,  20,  20,  20 },	//100, 200, 300,  20,  20,  20,  20  before removal of Aggressive trait
@@ -313,8 +313,10 @@ int civSpreadFactor[37][8]  = { //Panopticon - new spread figures for Protestant
 	{	200, 200, 200,  80,  80,  80,  80,  20 },
 //Celtia
 	{	300, 300,  80,  20,  40,  20,  20,  20 },
+//Seljuks
+	{    80,  80, 400,  20,  20,  20,  20,  20 },
 //Barbarian
-	{	100, 100, 100, 100, 100, 100, 100, 20 }};
+	{	100, 100, 100, 100, 100, 100, 100,  20 }};
 
 // Leoreth - favorite civics for each civ per era in every column (except expansion), to replace favorite civics of leaders
 // civicMatrix[civ][era][column], where 0-4 are the respective civics, -1 means no preference in that column

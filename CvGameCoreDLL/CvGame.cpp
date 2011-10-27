@@ -2817,7 +2817,7 @@ bool CvGame::isTeamVoteEligible(TeamTypes eTeam, VoteSourceTypes eVoteSource) co
 	CvTeam& kTeam = GET_TEAM(eTeam);
 
 	//Rhye - start
-	if (eTeam == INDEPENDENT || eTeam == INDEPENDENT2 || eTeam == NATIVE || eTeam == CELTIA)
+	if (eTeam == INDEPENDENT || eTeam == INDEPENDENT2 || eTeam == NATIVE || eTeam == CELTIA || eTeam == SELJUKS)
 	{
 		return false;
 	}

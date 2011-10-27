@@ -61,7 +61,7 @@
 # Islam spreads to Indonesia in the 16th century
 # reduced Mongol city upkeep
 # "free tech" events like the Oracle or Liberalism effects only allow you to choose techs of your own era or earlier
-# changed Hanging Gardens to Pottery and Agriculture, +3 health in its city
+# changed Hanging Gardens to Masonry and Agriculture, +3 health in its city
 # changed Ishtar Gate to Priesthood
 # New Egyptian LHs: Baibars, Nasser
 # Iranian UB: Caravanserai, replaces Market, +1 trade route
@@ -78,3 +78,7 @@
 # culture doesn't expand farther than the third ring until you know Monarchy
 # added a generic first contact text so that leaders are not mute when you first meet them
 # encouraged Arabian rulers to build wonders (and Turkish to a lesser extent)
+# new third Maya goal: get a great general by 1600 AD
+# no Zoroastrianism spread after 1000 AD
+# added Seljuks as a minor civ, two invasion waves: 1040 and 1070 AD
+# protected cities in the Middle East from getting destroyed by the Seljuks
