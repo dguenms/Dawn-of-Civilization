@@ -82,3 +82,5 @@
 # no Zoroastrianism spread after 1000 AD
 # added Seljuks as a minor civ, two invasion waves: 1040 and 1070 AD
 # protected cities in the Middle East from getting destroyed by the Seljuks
+# added diplomacy texts for Yaroslav, Nicholas II, Cixi, Khomeini, Ataturk
+# added diplomacy music for Maria II and Afonso Henriques
