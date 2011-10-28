@@ -128,6 +128,11 @@ class Barbs:
 					gc.getMap().plot(x, y).getPlotCity().setCulture(iBarbarian, 1000, True)
 					gc.getMap().plot(x, y).getPlotCity().setName("Lhasa", False)
 
+			lTibet = [(93, 42), (93, 43), (93, 44), (94, 42), (94, 43), (94, 44), (95, 42), (95, 43), (95, 44), (96, 42), (96, 43), (96, 44), (92, 43), (95, 45), (96, 45), (97, 45), (97, 44), (97, 43)]
+			for tPlot in lTibet:
+				x, y = tPlot
+				utils.convertPlotCulture(gc.getMap().plot(x, y), con.iBarbarian, 100, False)
+
                 #debug
                 #if (iGameTurn % 50 == 1):
                 #        print ("iHandicap", iHandicap)

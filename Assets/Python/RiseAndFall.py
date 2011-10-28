@@ -4338,6 +4338,14 @@ class RiseAndFall:
 
 		for iTech in lKoreanTechs:
 			teamKorea.setHasTech(iTech, True, iKorea, False, False)
+
+		lSeljukTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, con.iMasonry, \
+				con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, \
+				con.iWriting, con.iCodeOfLaws, con.iFeudalism, con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, \
+				con.iAnimalHusbandry, con.iHorsebackRiding, con.iLiterature, con.iDrama, con.iAesthetics, con.iMusic, con.iCalendar]
+
+		for iTech in lSeljukTechs:
+			teamSeljuks.setHasTech(iTech, True, iSeljuks, False, False)
                 
                 
         def assignTechs( self, iCiv ):
