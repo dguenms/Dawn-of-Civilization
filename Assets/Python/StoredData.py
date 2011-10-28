@@ -52,6 +52,7 @@ class StoredData:
                                     'bCheatMode': False,
 				    'tTempFlippingCity': (0, 0),
 				    'tTradingCompanyConquerorsTargets': ([], [], [], [], []),
+				    'iOttomanSpawnTurn': -1,
                                      #------------Religions
                                     'iSeed': -1,
                                     #------------UP
