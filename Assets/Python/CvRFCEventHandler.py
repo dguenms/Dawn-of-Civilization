@@ -281,6 +281,12 @@ class CvRFCEventHandler:
                                         print ("killed Byzantium")
                                         utils.killAndFragmentCiv(iCeltia, iIndependent, iIndependent2, -1, False)
 
+		#kill Seljuks
+		if owner == iSeljuks and gc.getPlayer(iSeljuks).isAlive():
+			if city.isCapital() or gc.getPlayer(iSeljuks).getNumCities() <= 2:
+				print "Killed Seljuks"
+				utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
+
                 
                 if (bConquest):
                         #self.rnf.collapseCapitals(owner, city, playerType)

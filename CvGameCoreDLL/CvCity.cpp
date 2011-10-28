@@ -7781,8 +7781,10 @@ TeamTypes CvCity::getTeam() const
 
 CultureLevelTypes CvCity::getCultureLevel() const
 {
-	//Leoreth: cap at three before monarchy is known
-	if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)MONARCHY))
+	//Leoreth: cap at three before monarchy is known, cap at two for minors
+	if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2 || getOwnerINLINE() == SELJUKS)
+		return std::min(m_eCultureLevel, (CultureLevelTypes)2);
+	else if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)MONARCHY))
 		return m_eCultureLevel;
 	else
 		return std::min(m_eCultureLevel, (CultureLevelTypes)3);

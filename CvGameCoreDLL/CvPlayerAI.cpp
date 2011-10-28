@@ -1391,7 +1391,9 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
             (iX == 82 && iY == 38) ||     //Shiraz
             (iX == 83 && iY == 45) ||     //Merv
             (iX == 85 && iY == 47) ||    //Samarkand
-			(iX == 102 && iY == 47)){	//Beijing
+			(iX == 102 && iY == 47) ||	//Beijing
+			(iX == 75 && iY == 44) ||	//Trabzon
+			(iX == 72 && iY == 43)){	//Konya
 				iRazeValue -= 30;
 			}
 
