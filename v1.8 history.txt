@@ -83,3 +83,4 @@
 # protected cities in the Middle East from getting destroyed by the Seljuks
 # added diplomacy texts for Yaroslav, Nicholas II, Cixi, Khomeini, Ataturk
 # added diplomacy music for Maria II and Afonso Henriques
+# limited independent and minor civ culture levels to two
