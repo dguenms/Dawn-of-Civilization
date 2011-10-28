@@ -763,7 +763,20 @@ class RiseAndFall:
 
                 #debug
                 #print('Reached turn '+repr(iGameTurn))
-                
+
+		#Leoreth: Turkey immediately flips Seljuk or independent cities in its core to avoid being pushed out of Anatolia
+		if iGameTurn == sd.scriptDict['iOttomanSpawnTurn']+1:
+			dummy, cityPlotList = utils.squareSearch(con.tCoreAreasTL[0][iTurkey], con.tCoreAreasBR[0][iTurkey], utils.cityPlots, -1)
+			for tPlot in cityPlotList:
+				x, y = tPlot
+				city = gc.getMap().plot(x, y).getPlotCity()
+				iOwner = city.getOwner()
+				if iOwner in [iSeljuks, iIndependent, iIndependent2]:
+                               		utils.flipCity(tPlot, False, True, iTurkey, ())
+                               		utils.cultureManager(tPlot, 100, iTurkey, iOwner, True, False, False)
+                               		self.convertSurroundingPlotCulture(iTurkey, (tPlot[0]-1,tPlot[1]-1), (tPlot[0]+1,tPlot[1]+1))
+					utils.makeUnit(con.iLongbowman, iTurkey, tPlot, 1)
+			                
                 #Trigger betrayal mode
                 if (self.getBetrayalTurns() > 0):
                         self.initBetrayal()
@@ -823,6 +836,21 @@ class RiseAndFall:
                                 self.giveColonists(iGermany, tNormalAreasTL[utils.getReborn(iGermany)][iGermany], tNormalAreasBR[utils.getReborn(iGermany)][iGermany])
 
 		if iGameTurn == getTurnForYear(1040):	# Leoreth: first Seljuk wave (flips independents, spawns armies for players)
+			esfahan = gc.getMap().plot(81, 41)
+			if esfahan.isCity():
+				utils.flipCity((81, 41), False, True, iSeljuks, ())
+			else:
+				pSeljuks.found(81, 41)
+				esfahan.getPlotCity().setName('Isfahan', False)
+			utils.makeUnitAI(con.iLongbowman, iSeljuks, (81, 41), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
+			utils.makeUnit(con.iWorker, iSeljuks, (81, 41), 3)
+			utils.cultureManager(tPlot, 100, iSeljuks, esfahan.getOwner(), True, False, False)
+			for i in range(x-1, x+2):
+				for j in range(y-1, y+2):
+			               	pCurrent = gc.getMap().plot( x, y )
+        		                if (not pCurrent.isCity()):
+                	        		utils.convertPlotCulture(pCurrent, iSeljuks, 100, False)
+
 			tSeljukAreaTL = (78, 37)
 			tSeljukAreaBR = (85, 46)
 			targetCityList = []
@@ -2138,10 +2166,10 @@ class RiseAndFall:
 
 			elif iCiv == iThailand:
 				if utils.getHumanID() != iKhmer:
-					if utils.getStability(iKhmer) > 0:
+					if utils.getStability(iKhmer) > 10:
 						return
 				else:
-					if utils.getStability(iKhmer) > -20:
+					if utils.getStability(iKhmer) > -10:
 						return
 
                 if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
@@ -2415,19 +2443,8 @@ class RiseAndFall:
                                 print ("starting units in", tCapital[0], tCapital[1])
                                 self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
 
-				#Leoreth: Turkey immediately flips Seljuk or independent cities in its core to avoid being pushed out of Anatolia
 				if iCiv == iTurkey:
-					dummy, cityPlotList = utils.squareSearch(con.tCoreAreasTL[0][iCiv], con.tCoreAreasBR[0][iCiv], utils.cityPlots, -1)
-					for tPlot in cityPlotList:
-						x, y = tPlot
-						city = gc.getMap().plot(x, y).getPlotCity()
-						iOwner = city.getOwner()
-						if iOwner in [iSeljuks, iIndependent, iIndependent2]:
-                                			utils.flipCity(tPlot, False, True, iCiv, ())
-                                			utils.cultureManager(tPlot, 100, iCiv, iOwner, True, False, False)
-                                			self.convertSurroundingPlotCulture(iCiv, (tPlot[0]-1,tPlot[1]-1), (tPlot[0]+1,tPlot[1]+1))
-							utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
-                                
+					sd.scriptDict['iOttomanSpawnTurn'] = gc.getGame().getGameTurn()
 
                                 #if (self.getDeleteMode(0) == iCiv):                                                                
                                 #        self.createStartingWorkers(iCiv, tCapital) #XXX bugfix? no!
@@ -2510,19 +2527,9 @@ class RiseAndFall:
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ 
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, False, False) #remaining barbs in the region now belong to the new civ 
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining barbs in the region now belong to the new civ
-			 
-                        #Leoreth: Turkey immediately flips Seljuk or independent cities in its core to avoid being pushed out of Anatolia
+			
 			if iCiv == iTurkey:
-				dummy, cityPlotList = utils.squareSearch(con.tCoreAreasTL[0][iCiv], con.tCoreAreasBR[0][iCiv], utils.cityPlots, -1)
-				for tPlot in cityPlotList:
-					x, y = tPlot
-					city = gc.getMap().plot(x, y).getPlotCity()
-					iOwner = city.getOwner()
-					if iOwner in [iSeljuks, iIndependent, iIndependent2]:
-                               			utils.flipCity(tPlot, False, True, iCiv, ())
-                               			utils.cultureManager(tPlot, 100, iCiv, iOwner, True, False, False)
-                               			self.convertSurroundingPlotCulture(iCiv, (tPlot[0]-1,tPlot[1]-1), (tPlot[0]+1,tPlot[1]+1))
-						utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
+	                        sd.scriptDict['iOttomanSpawnTurn'] = gc.getGame().getGameTurn()
 
                 else:   #search another place
                         dummy, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.goodPlots, [] )
@@ -4373,7 +4380,7 @@ class RiseAndFall:
                                 teamPersia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
 				# Leoreth: Babylonian UHV: make them lose if they don't have Monarchy already
-				if sd.scriptDict['lBabylonianTechs'][1] == -1:
+				if sd.scriptDict['lBabylonianTechs'][2] == -1:
 					sd.scriptDict['lGoals'][iBabylonia][0] = 0
                         if (iCiv == iCarthage):
                                 teamCarthage.setHasTech(con.iMining, True, iCiv, False, False)

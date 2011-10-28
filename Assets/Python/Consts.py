@@ -220,7 +220,7 @@ tFall = (
 1204, #fourth crusade
 1300,
 1258,
-1431, # Angkor razed by the Thais
+1200, # earlier so that the Thai can spawn
 2020,
 2020,
 2020,

@@ -28138,9 +28138,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=32
-	EndUnit
 EndPlot
 BeginPlot
 	x=73,y=42
@@ -28520,6 +28517,9 @@ BeginPlot
 	x=74,y=40
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=32
+	EndUnit
 	BeginCity
 		CityOwner=32
 		CityName=Damaskos
@@ -34334,7 +34334,7 @@ BeginPlot
 	PlotType=2
 	RouteType=ROUTE_ROAD
 	BeginCity
-		CityOwner=36
+		CityOwner=37
 		CityName=Kashgar
 		CityPopulation=3
 		ReligionType=RELIGION_ISLAM
@@ -34344,10 +34344,10 @@ BeginPlot
 		Player36Culture=10
 	EndCity
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=36
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=37
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=36
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=37
 	EndUnit
 EndPlot
 BeginPlot
@@ -36780,7 +36780,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginCity
-		CityOwner=36
+		CityOwner=37
 		CityName=Dunhuang
 		CityPopulation=3
 		ReligionType=RELIGION_BUDDHISM
@@ -36789,7 +36789,7 @@ BeginPlot
 		Player36Culture=10
 	EndCity
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=36
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=37
 	EndUnit
 EndPlot
 BeginPlot

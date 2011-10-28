@@ -1417,7 +1417,8 @@ class RFCUtils:
 		for tPlot in lPlotList:
 			x, y = tPlot
 			if gc.getMap().plot(x, y).isCity():
-				cityList.append((x, y))
+				if gc.getMap().plot(x, y).getPlotCity().getOwner() != iPlayer:
+					cityList.append((x, y))
 
 		targetList = []
 
