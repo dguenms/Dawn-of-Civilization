@@ -844,7 +844,7 @@ class RiseAndFall:
 				esfahan.getPlotCity().setName('Isfahan', False)
 			utils.makeUnitAI(con.iLongbowman, iSeljuks, (81, 41), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(con.iWorker, iSeljuks, (81, 41), 3)
-			utils.cultureManager(tPlot, 100, iSeljuks, esfahan.getOwner(), True, False, False)
+			utils.cultureManager((81, 41), 100, iSeljuks, esfahan.getOwner(), True, False, False)
 			for i in range(x-1, x+2):
 				for j in range(y-1, y+2):
 			               	pCurrent = gc.getMap().plot( x, y )
