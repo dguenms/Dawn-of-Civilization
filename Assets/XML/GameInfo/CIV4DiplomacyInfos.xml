@@ -906,6 +906,20 @@
 						</Leader>
 						<Leader>
 
+							<LeaderType>LEADER_BAIBARS</LeaderType>
+
+							<bLeaderType>1</bLeaderType>
+
+						</Leader>
+						<Leader>
+
+							<LeaderType>LEADER_NASSER</LeaderType>
+
+							<bLeaderType>1</bLeaderType>
+
+						</Leader>
+						<Leader>
+
 							<LeaderType>LEADER_MEIJI</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -919,18 +933,10 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_HAILE_SELASSIE</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
 							<LeaderType>LEADER_GUSTAV</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 
-						<Leader>
-							<LeaderType>LEADER_ABU_BAKR</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
 						<Leader>
 							<LeaderType>LEADER_ELISHAT</LeaderType>
 							<bLeaderType>1</bLeaderType>
@@ -949,13 +955,6 @@
 
 						</Leader>
 
-						<Leader>
-
-							<LeaderType>LEADER_CHARLES</LeaderType>
-
-							<bLeaderType>1</bLeaderType>
-
-						</Leader>
 
 						<Leader>
 

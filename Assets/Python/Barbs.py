@@ -245,7 +245,7 @@ class Barbs:
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(700)):
                         if (gc.getPlayer(0).isPlayable()):  #late start condition
                                 self.spawnUnits( iBarbarian, (78, 42), (88, 50), con.iHorseArcher, 3 + iHandicap, iGameTurn, 8-iHandicap, 2, utils.outerInvasion, 0)
-                if (iGameTurn > getTurnForYear(700) and iGameTurn <= getTurnForYear(1400)):
+                if (iGameTurn > getTurnForYear(700) and iGameTurn <= getTurnForYear(1040)):
                         if (gc.getPlayer(0).isPlayable()):  #late start condition
                                 self.spawnUnits( iBarbarian, (78, 42), (90, 52), con.iHorseArcher, 2 + iHandicap, iGameTurn, 6-iHandicap, 2, utils.outerInvasion, 0)
                         

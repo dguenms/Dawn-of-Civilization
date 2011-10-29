@@ -1360,7 +1360,11 @@ class RFCUtils:
 		elif iCiv in [con.iFrance, con.iEngland]:
 			iNumUnits = 3
 
-		self.makeUnit(con.iCannon, iCiv, tPlot, iNumUnits)
+		if iCiv == con.iFrance:
+			self.makeUnit(con.iCulverine, iCiv, tPlot, iNumUnits)
+		else:
+			self.makeUnit(con.iCannon, iCiv, tPlot, iNumUnits)
+
 		if bRifling:
 			if iCiv == con.iEngland:
 				self.makeUnit(con.iEnglishRedcoat, iCiv, tPlot, 2*iNumUnits)

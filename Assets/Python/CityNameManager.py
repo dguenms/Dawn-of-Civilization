@@ -4807,6 +4807,8 @@ class CityNameManager:
 				city.setName('Sebhasd', False)
 			if sName == 'Kanchipuram':
 				city.setName('Madras', False)
+			if sName == 'Purushapura':
+				city.setName('Peshawar', False)
 
                 if (iNewOwner == iGreece):
                         if (sName == 'Niwt-Rst' or sName == 'Diospolis Magna'):
@@ -6827,6 +6829,8 @@ class CityNameManager:
 				city.setName('Thanjapore', False)
 			elif sName == 'Madarasapatinam' or sName == 'Kanchipuram':
 				city.setName('Madras', False)
+			elif sName == 'Vijayanagara':
+				city.setName('Bangalore', False)
 
                 if (iNewOwner == iGermany): 
                         if sName == ('Colonia Agrippina' or sName == 'Keulen'):

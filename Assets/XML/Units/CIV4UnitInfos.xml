@@ -14539,15 +14539,7 @@
 			<FeatureDefenses/>
 			<UnitClassAttackMods>
 				<UnitClassAttackMod>
-					<UnitClassType>UNIT_BYZANTINE_CATAPHRACT</UnitClassType>
-					<iUnitClassMod>100</iUnitClassMod>
-				</UnitClassAttackMod>
-				<UnitClassAttackMod>
-					<UnitClassType>UNIT_ARABIA_CAMELARCHER</UnitClassType>
-					<iUnitClassMod>100</iUnitClassMod>
-				</UnitClassAttackMod>
-				<UnitClassAttackMod>
-					<UnitClassType>UNIT_PIKEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
 			</UnitClassAttackMods>
