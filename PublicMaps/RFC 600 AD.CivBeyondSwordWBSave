@@ -33516,7 +33516,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=32
-		CityName=Peshawar
+		CityName=Purushapura
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE

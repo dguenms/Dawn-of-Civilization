@@ -1149,7 +1149,7 @@ class Victory:
                                         #                self.setGoal(iKhmer, 1, 0)
 
 
-                                if (self.getGoal(iKhmer, 2) == -1):
+                                if self.getGoal(iKhmer, 2) == -1 and iGameTurn >= getTurnForYear(1000):
                                         religionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism) + gc.getGame().calculateReligionPercent(con.iHinduism)
                                         #print ("religionPercent", religionPercent)
                                         if (religionPercent >= 35.0):
@@ -1165,6 +1165,10 @@ class Victory:
 						self.setGoal(iIndonesia, 0, 0)
 
 				if iGameTurn == getTurnForYear(1500):
+					if self.getGoal(iIndonesia, 1) == -1:
+						self.setGoal(iIndonesia, 1, 0)
+
+				if self.getGoal(iIndonesia, 1) == -1:
 					lHappinessBonuses = [con.iDye, con.iFur, con.iGems, con.iGold, con.iIncense, con.iIvory, con.iSilk, con.iSilver, con.iSpices, con.iSugar, con.iWine, con.iWhales, con.iCotton]
                                         iCounter = 0
 					for iBonus in lHappinessBonuses:
@@ -1172,8 +1176,6 @@ class Victory:
 							iCounter += 1
 					if iCounter >= 9:
 						self.setGoal(iIndonesia, 1, 1)
-					else:
-						self.setGoal(iIndonesia, 1, 0)
 
 				if iGameTurn == getTurnForYear(1940):
 					totalPop = gc.getGame().getTotalPopulation()

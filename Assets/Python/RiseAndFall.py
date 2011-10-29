@@ -845,9 +845,9 @@ class RiseAndFall:
 			utils.makeUnitAI(con.iLongbowman, iSeljuks, (81, 41), UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(con.iWorker, iSeljuks, (81, 41), 3)
 			utils.cultureManager((81, 41), 100, iSeljuks, esfahan.getOwner(), True, False, False)
-			for i in range(x-1, x+2):
-				for j in range(y-1, y+2):
-			               	pCurrent = gc.getMap().plot( x, y )
+			for i in range(81-1, 81+2):
+				for j in range(41-1, 41+2):
+			               	pCurrent = gc.getMap().plot( 81, 41 )
         		                if (not pCurrent.isCity()):
                 	        		utils.convertPlotCulture(pCurrent, iSeljuks, 100, False)
 
@@ -1746,14 +1746,22 @@ class RiseAndFall:
 							bPossible = True
 						else:
 							print "Result: impossible"
+
 				# prevent Thai from respawning when Khmer are alive and vice versa
 				if (iDeadCiv == iThailand and pKhmer.isAlive()) or (iDeadCiv == iKhmer and pThailand.isAlive()):
 					bPossible = False
+
+				# make Byzantium return in the 13th century if Turkey is player controlled
+				if iDeadCiv == iByzantium and utils.getHumanID() == iTurkey and iGameTurn >= getTurnForYear(1200) and iGameTurn <= getTurnForYear(con.tBirth[iTurkey]):
+					iModifier = 110
+				else:
+					iModifier = 0
+
                                 #iDeadCiv = iIndia #DEBUG
                                 cityList = []
                                 if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > getTurnForYear(con.tBirth[iDeadCiv]) + utils.getTurns(50) and iGameTurn > utils.getLastTurnAlive(iDeadCiv) + utils.getTurns(20) and con.tRebirth[iDeadCiv] == -1 and bPossible): # last condition added by Leoreth, civ must not have a scripted respawn
                                 #if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > con.tBirth[iDeadCiv] + 50): #DEBUG
-                                        if (gc.getGame().getSorenRandNum(100, 'roll') + iNationalismModifier - 10 >= con.tResurrectionProb[iDeadCiv]):
+                                        if (gc.getGame().getSorenRandNum(100, 'roll') + iModifier + iNationalismModifier - 10 >= con.tResurrectionProb[iDeadCiv]):
                                                 #print("skip")
                                                 continue
                                         pDeadCiv = gc.getPlayer(iDeadCiv)
