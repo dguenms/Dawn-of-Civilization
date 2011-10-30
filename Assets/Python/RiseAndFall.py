@@ -908,9 +908,9 @@ class RiseAndFall:
 
 				if count <= 2:
 					iModifier = 0
-				elif count >= len(lCityPlotList)-2
+				elif count >= len(lCityPlotList)-2:
 					iModifier = 2
-				else
+				else:
 					iModifier = 1
 
                         	utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2 + iModifier)
