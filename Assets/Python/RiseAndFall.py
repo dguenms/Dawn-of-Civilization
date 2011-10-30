@@ -896,8 +896,25 @@ class RiseAndFall:
 		if iGameTurn == getTurnForYear(1230 + utils.getSeed()/10): #Linkman226- Mongol Conquerors for Seljuks
 			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
                         	tPlot = (84, 46)
-                        	utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 4)
-				utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
+				targetAreaTL = (73, 38)
+				targetAreaBR = (85, 46)
+				count = 0
+				dummy, lCityPlotList = utils.squareSearch(targetAreaTL, targetAreaBR, utils.cityPlots, -1)
+
+				for tPlot in lCityPlotList:
+					x, y = tPlot
+					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iSeljuks:
+						count += 1
+
+				if count <= 2:
+					iModifier = 0
+				elif count >= len(lCityPlotList)-2
+					iModifier = 2
+				else
+					iModifier = 1
+
+                        	utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2 + iModifier)
+				utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier)
 				utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
                         	CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iSeljuks).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
                 if iGameTurn == getTurnForYear(1230 + utils.getSeed()/10 + 3): #Linkman226- Mongol Conquerors for Seljuks

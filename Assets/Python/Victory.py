@@ -1100,11 +1100,11 @@ class Victory:
                             
                                 if (iGameTurn >= getTurnForYear(con.tBirth[iSpain])+1 and iGameTurn <= getTurnForYear(1300)):
                                         if (self.getGoal(iArabia, 1) == -1):
-                                                bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
+                                                bEgypt = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iEgypt], con.tCoreAreasBR[0][iEgypt])
                                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
 						bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
 						bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-                                                if (bSpain and bMaghreb and bMesopotamia and bPersia):
+                                                if (bEgypt and bMaghreb and bMesopotamia and bPersia):
                                                         self.setGoal(iArabia, 1, 1)
                                 elif (iGameTurn > getTurnForYear(1300)):
                                         if (self.getGoal(iArabia, 1) == -1):
@@ -2883,11 +2883,11 @@ class Victory:
 				iMostAdvancedCiv = self.getMostAdvancedCiv(iArabia)
 				aHelp.append(self.getIcon(iMostAdvancedCiv == iArabia) + 'Most advanced civilization: ' + CyTranslator().getText(str(gc.getPlayer(iMostAdvancedCiv).getCivilizationShortDescriptionKey()),()))
 			elif iGoal == 1:
-                                bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
+                                bEgypt = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iEgypt], con.tCoreAreasBR[0][iEgypt])
                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
 				bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
 				bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-				aHelp.append(self.getIcon(bSpain) + 'Spain ' + self.getIcon(bMaghreb) + 'Maghreb ' + self.getIcon(bMesopotamia) + 'Mesopotamia ' + self.getIcon(bPersia) + 'Persia')
+				aHelp.append(self.getIcon(bEgypt) + 'Egypt ' + self.getIcon(bMaghreb) + 'Maghreb ' + self.getIcon(bMesopotamia) + 'Mesopotamia ' + self.getIcon(bPersia) + 'Persia')
 			elif iGoal == 2:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iIslam)
 				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + 'Islam spread to: ' + str(fReligionPercent) + '/40 %')

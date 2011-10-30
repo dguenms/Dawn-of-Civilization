@@ -1600,7 +1600,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
 
 	//Leoreth: protect middle eastern cities from Seljuk invasions
-	if (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)
+	if (pNewCity->isEast() && pNewCity->getOwnerINLINE() == SELJUKS)
 		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation)) : iPopulation);
 	else
 		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
@@ -1640,10 +1640,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 					{
 						if (pNewCity->isValidBuildingLocation(eBuilding))
 						{
-							//Leoreth: protect middle eastern cities from Seljuk invasions
-							iProb = (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)? 100 : GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability();
-
-							if (!bConquest || bRecapture || GC.getGameINLINE().getSorenRandNum(100, "Capture Probability") < iProb)
+							if (!bConquest || bRecapture || GC.getGameINLINE().getSorenRandNum(100, "Capture Probability") < GC.getBuildingInfo((BuildingTypes)iI).getConquestProbability())
 							{
 								iNum += paiNumRealBuilding[iI];
 							}
@@ -3718,6 +3715,12 @@ bool CvPlayer::canContact(PlayerTypes ePlayer) const
 		return false;
 	}
 
+	//Leoreth: Seljuks should be covered by minors but make sure here anyway
+	if (getID() == SELJUKS || ePlayer == (PlayerTypes)SELJUKS)
+	{
+		return false;
+	}
+
 	if (getTeam() != GET_PLAYER(ePlayer).getTeam())
 	{
 		if (!(GET_TEAM(getTeam()).isHasMet(GET_PLAYER(ePlayer).getTeam())))
@@ -4621,6 +4624,9 @@ void CvPlayer::findNewCapital()
 				iValue += pLoopCity->getReligionCount();
 				iValue += pLoopCity->getCorporationCount();
 				iValue += (pLoopCity->getNumGreatPeople() * 2);
+
+				if (getID() == ARABIA)
+					iValue += (pLoopCity->isHolyCity())? 25 : 0;
 
 				iValue *= (pLoopCity->calculateCulturePercent(getID()) + 100);
 				iValue /= 100;

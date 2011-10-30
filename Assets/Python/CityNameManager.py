@@ -4564,6 +4564,8 @@ class CityNameManager:
                                 city.setName('Patna', False) #Pataliputra
                         if sName == 'Dacca':
                                 city.setName('Dhaka', False)
+			if sName == 'Peshawar':
+				city.setName('Purushapura', False)
                         #Khmer
                         if sName == 'Da Nang':
                                 city.setName('Indrapura', False)
@@ -4809,6 +4811,8 @@ class CityNameManager:
 				city.setName('Madras', False)
 			if sName == 'Purushapura':
 				city.setName('Peshawar', False)
+			if sName == 'Pataliputra' or sName == 'Patna':
+				city.setName('Azimabad', False)
 
                 if (iNewOwner == iGreece):
                         if (sName == 'Niwt-Rst' or sName == 'Diospolis Magna'):
@@ -6151,6 +6155,8 @@ class CityNameManager:
 				city.setName('Akka', False)
 			if sName == 'Damietta' or sName == 'Tamiat' or sName == 'Dimyat':
 				city.setName('Domyat', False)
+			if sName == 'Purushapura':
+				city.setName('Peshawar', False)
 
                 if (iNewOwner == iKhmer or iNewOwner == iThailand): 
                         if (sName == 'Malacca' or sName == 'Malakka' or sName == 'Malaca'):
@@ -7810,11 +7816,11 @@ class CityNameManager:
 				city.setName('Akka', False)
 			if sName == 'Damietta' or sName == 'Tamiat' or sName == 'Domyat':
 				city.setName('Dimyat', False)
-			if sName == 'Tebriz':
-				if iNewOwner == iSeljuks:
-                                        formerCapital = gc.getPlayer(iSeljuks).getCapitalCity()
-                                        city.setHasRealBuilding((0), True) #palace
-                                        formerCapital.setHasRealBuilding((0), False) #palace
+			#if sName == 'Tebriz':
+			#	if iNewOwner == iSeljuks:
+                         #               formerCapital = gc.getPlayer(iSeljuks).getCapitalCity()
+                          #              city.setHasRealBuilding((0), True) #palace
+                           #             formerCapital.setHasRealBuilding((0), False) #palace
 			
 						
                 if (iNewOwner == iAmerica): 
