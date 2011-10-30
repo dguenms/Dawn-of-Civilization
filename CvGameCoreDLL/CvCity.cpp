@@ -14474,5 +14474,5 @@ bool CvCity::isMiddleEast() const
 {
 	int x = getX_INLINE();
 	int y = getY_INLINE();
-	return ((x >= 67 && x <= 72 && y >= 31 && y <= 37) || (x >= 68 && x <= 72 && y >= 38 && y <= 46) || (x >= 73 && x <= 91 && y >= 30 && y <= 46));
+	return ((x >= 67 && x <= 72 && y >= 31 && y <= 37) || (x >= 68 && x <= 72 && y >= 38 && y <= 46) || (x >= 73 && x <= 85 && y >= 38 && y <= 46));
 }
