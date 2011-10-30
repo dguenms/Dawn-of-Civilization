@@ -893,20 +893,20 @@ def isCorePlot(argsList):
 	y = argsList[1]
 	iCiv = argsList[2]
 	reborn = utils.getReborn(iCiv)
-	if (x >= con.tCoreAreasTL[reborn][iCiv][0] and x <= con.tCoreAreasBR[reborn][iCiv][0] and y >= con.tCoreAreasTL[reborn][iCiv][1] and y <= con.tCoreAreasBR[reborn][iCiv][1] and not (x, y) in con.tExceptions[reborn][iCiv]):
-		return 1
-	else:
-		return 0
+	if iCiv < con.iNumPlayers:
+		if (x >= con.tCoreAreasTL[reborn][iCiv][0] and x <= con.tCoreAreasBR[reborn][iCiv][0] and y >= con.tCoreAreasTL[reborn][iCiv][1] and y <= con.tCoreAreasBR[reborn][iCiv][1] and not (x, y) in con.tExceptions[reborn][iCiv]):
+			return 1
+	return 0
 
 # Leoreth
 def isNormalPlot(argsList):
 	x = argsList[0]
 	y = argsList[1]
 	iCiv = argsList[2]
-	if (x >= con.tNormalAreasTL[utils.getReborn(iCiv)][iCiv][0] and x <= con.tNormalAreasBR[utils.getReborn(iCiv)][iCiv][0] and y >= con.tNormalAreasTL[utils.getReborn(iCiv)][iCiv][1] and y <= con.tNormalAreasBR[utils.getReborn(iCiv)][iCiv][1] and not (x, y) in con.tNormalAreasSubtract[utils.getReborn(iCiv)][iCiv]):
-		return 1
-	else:
-		return 0
+	if iCiv < con.iNumPlayers:
+		if (x >= con.tNormalAreasTL[utils.getReborn(iCiv)][iCiv][0] and x <= con.tNormalAreasBR[utils.getReborn(iCiv)][iCiv][0] and y >= con.tNormalAreasTL[utils.getReborn(iCiv)][iCiv][1] and y <= con.tNormalAreasBR[utils.getReborn(iCiv)][iCiv][1] and not (x, y) in con.tNormalAreasSubtract[utils.getReborn(iCiv)][iCiv]):
+			return 1
+	return 0
 
 # Leoreth
 def isForeignCorePlot(argsList):
@@ -925,14 +925,10 @@ def isBroaderPlot(argsList):
 	y = argsList[1]
 	iCiv = argsList[2]
 	reborn = utils.getReborn(iCiv)
-	if (x >= con.tBroaderAreasTL[reborn][iCiv][0] and x <= con.tBroaderAreasBR[reborn][iCiv][0] and y >= con.tBroaderAreasTL[reborn][iCiv][1] and y <= con.tBroaderAreasBR[reborn][iCiv][1]):
-		return 1
-	else:
-		return 0
-
-#Leoreth
-def getReborn(argsList):
-	return sd.scriptDict['lReborn'][argsList[0]]
+	if iCiv < con.iNumPlayers:
+		if (x >= con.tBroaderAreasTL[reborn][iCiv][0] and x <= con.tBroaderAreasBR[reborn][iCiv][0] and y >= con.tBroaderAreasTL[reborn][iCiv][1] and y <= con.tBroaderAreasBR[reborn][iCiv][1]):
+			return 1
+	return 0
 
 #Leoreth
 def onTechStolen(argsList):
