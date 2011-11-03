@@ -4566,6 +4566,8 @@ class CityNameManager:
                                 city.setName('Dhaka', False)
 			if sName == 'Peshawar':
 				city.setName('Purushapura', False)
+			if sName == 'Indraprastha' and gc.getGame().getGameTurnYear() >= 0:
+				city.setName('Dilli', False)
                         #Khmer
                         if sName == 'Da Nang':
                                 city.setName('Indrapura', False)
@@ -4813,6 +4815,8 @@ class CityNameManager:
 				city.setName('Peshawar', False)
 			if sName == 'Pataliputra' or sName == 'Patna':
 				city.setName('Azimabad', False)
+			if sName == 'Indraprastha':
+				city.setName('Delhi', False)
 
                 if (iNewOwner == iGreece):
                         if (sName == 'Niwt-Rst' or sName == 'Diospolis Magna'):
@@ -6157,6 +6161,8 @@ class CityNameManager:
 				city.setName('Domyat', False)
 			if sName == 'Purushapura':
 				city.setName('Peshawar', False)
+			if sName == 'Indraprastha':
+				city.setName('Delhi', False)
 
                 if (iNewOwner == iKhmer or iNewOwner == iThailand): 
                         if (sName == 'Malacca' or sName == 'Malakka' or sName == 'Malaca'):
@@ -8105,12 +8111,18 @@ class CityNameManager:
 			cityList = PyPlayer(iPlayer).getCityList()
 			for pCity in cityList:
 				city = pCity.GetCy()
-				if city.getName == 'Dagou':
+				if city.getName() == 'Dagou':
 					city.setName('Gaoxiong', False)
 		if iPlayer == iThailand and era == con.iIndustrial:
 			cityList = PyPlayer(iPlayer).getCityList()
 			for pCity in cityList:
 				city = pCity.GetCy()
-				if city.getName == 'Ayutthaya':
+				if city.getName() == 'Ayutthaya':
 					city.setName('Bangkok', False)
+		if iPlayer == iIndia and era == con.iClassical:
+			cityList = PyPlayer(iPlayer).getCityList()
+			for pCity in cityList:
+				city = pCity.GetCy()
+				if city.getName() == 'Indraprastha':
+					city.setName('Dilli', False)
 		

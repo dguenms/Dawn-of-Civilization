@@ -164,7 +164,7 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (0, 0, 0, 0, 3, 2, 2, 1, 5, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 8, 2, 3, 2, 1, 0, 0, 0, 0, 0)
+tDifference = (3, 3, 1, 2, 3, 2, 2, 1, 5, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 8, 2, 3, 2, 1, 0, 0, 0, 0, 0)
                                                                                    #ma po in mo az mu tu th am
 
 # starting locations coordinates
@@ -955,7 +955,7 @@ class RiseAndFall:
 ##                self.initBirth(iGameTurn, con.tBirth[iAmerica], iAmerica)
                         
                 if (gc.getPlayer(0).isPlayable()):
-                        iFirstSpawn = iGreece
+                        iFirstSpawn = iIndia
                 else:
                         iFirstSpawn = iKhmer
                 for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
@@ -2172,7 +2172,8 @@ class RiseAndFall:
                             
                                     
         def initBirth(self, iCurrentTurn, iBirthYear, iCiv): # iBirthYear is really year now, so no conversion prior to function call - edead
-                iHuman = utils.getHumanID()
+                print 'init birth in: '+str(iBirthYear)
+		iHuman = utils.getHumanID()
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
                 
                 lConditionalCivs = [iByzantium, iMughals, iThailand]
@@ -3601,6 +3602,9 @@ class RiseAndFall:
 
 
         def createStartingUnits( self, iCiv, tPlot ):
+		if iCiv == iIndia:
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			utils.makeUnit(con.iWarrior, iCiv, tPlot, 1)
                 if (iCiv == iGreece):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 2)
@@ -3897,6 +3901,8 @@ class RiseAndFall:
 
                                 
         def createStartingWorkers( self, iCiv, tPlot ):
+		if iCiv == iIndia:
+			utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 1)
                 if (iCiv == iGreece):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iPersia):
@@ -4070,8 +4076,9 @@ class RiseAndFall:
                 utils.makeUnit(iSettler, iEgypt, tCapitals[0][iEgypt], 1)
                 utils.makeUnit(iWarrior, iEgypt, tCapitals[0][iEgypt], 1)
 
-                utils.makeUnit(iSettler, iIndia, tCapitals[0][iIndia], 1)
-                utils.makeUnit(iWarrior, iIndia, tCapitals[0][iIndia], 1)
+		if ( pIndia.isHuman() ):
+                    utils.makeUnit(iSettler, iIndia, tCapitals[0][iIndia], 1)
+                    utils.makeUnit(iWarrior, iIndia, tCapitals[0][iIndia], 1)
 
                 utils.makeUnit(iSettler, iChina, tCapitals[0][iChina], 1)
                 utils.makeUnit(iWarrior, iChina, tCapitals[0][iChina], 1)
@@ -4379,6 +4386,11 @@ class RiseAndFall:
                 #popup.launch()
                 
                 if (utils.getReborn(iCiv) == 0):
+			if iCiv == iIndia:
+				lIndianTechs = [con.iMysticism, con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, \
+						con.iHunting, con.iMining, con.iWriting, con.iMeditation]
+				for iTech in lIndianTechs:
+					teamIndia.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iGreece):
                                 teamGreece.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamGreece.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

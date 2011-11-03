@@ -14669,7 +14669,7 @@
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_VASSALAGE</PrereqCivic>
+			<PrereqCivic>NONE</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>TECH_FEUDALISM</PrereqTech>

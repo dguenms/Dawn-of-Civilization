@@ -411,6 +411,8 @@ class CvRFCEventHandler:
                 'Religion Founded'
                 iReligion, iFounder = argsList
 
+		print 'Religion founded: '+str(iReligion)
+
                 if (not gc.getPlayer(0).isPlayable() and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
                         return
         

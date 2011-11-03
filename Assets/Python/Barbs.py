@@ -46,6 +46,8 @@ lKnossos = [69, 39, -2600, 0] #13
 lHattusas = [73, 43, -2000, 0] #34
 lSamarkand = [85, 47, -2000, 0] #34
 lNineveh = [76, 42, -1800, 0] #42
+lVaranasi = [92, 39, -1500, 0]
+lIndraprastha = [90, 40, -1500, 0]
 lGadir = [51, 40, -1100, 0] #70
 lLepcis = [61, 37, -1100, 0] #70
 lBeijing = [102, 47, -1000, 0]
@@ -364,8 +366,11 @@ class Barbs:
                 self.foundCity(iBarbarian, lKazan, "Kazan", iGameTurn, 2, con.iHorseArcher, 1)
                 self.foundCity(iNative, lKongo, "Mbanza Kongo", iGameTurn, 1, con.iZuluImpi, 1)
 
-		self.foundCity(iIndependent, lThanjavur, "Thanjavur", iGameTurn, 1, con.iWarElephant, 1)
-		self.foundCity(iIndependent, lMadras, "Madarasapatinam", iGameTurn, 2, con.iWarElephant, 2)
+		self.foundCity(iIndependent, lThanjavur, "Madura", iGameTurn, 1, con.iWarElephant, 1)
+		self.foundCity(iIndependent, lMadras, "Kanchipuram", iGameTurn, 2, con.iWarElephant, 2)
+
+		self.foundCity(iIndependent, lVaranasi, "Varanasi", iGameTurn, 1, con.iWarrior, 1)
+		self.foundCity(iIndependent, lIndraprastha, "Indraprastha", iGameTurn, 1, con.iWarrior, 1)
 
                 if ( self.foundCity(iBarbarian, lDunhuang, "Dunhuang", iGameTurn, 1, con.iArcher, 1) ): #Orka                    
                         if (not gc.getPlayer(con.iChina).isHuman()): #Orka     
