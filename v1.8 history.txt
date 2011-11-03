@@ -84,3 +84,4 @@
 # added diplomacy texts for Yaroslav, Nicholas II, Cixi, Khomeini, Ataturk
 # added diplomacy music for Maria II and Afonso Henriques
 # limited independent and minor civ culture levels to two
+# moved India's spawn to 1500 BC, placed Varanasi and Indraprastha

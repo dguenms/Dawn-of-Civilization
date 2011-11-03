@@ -1600,7 +1600,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
 
 	//Leoreth: protect middle eastern cities from Seljuk invasions
-	if (pNewCity->isEast() && pNewCity->getOwnerINLINE() == SELJUKS)
+	if (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)
 		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation)) : iPopulation);
 	else
 		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);

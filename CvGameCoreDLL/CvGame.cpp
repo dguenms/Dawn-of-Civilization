@@ -2229,8 +2229,6 @@ void CvGame::update()
 		{
 		case EGYPT:
 			break;
-		case INDIA:
-			break;
 		case CHINA:
 			break;
 		case BABYLONIA:
@@ -2244,6 +2242,8 @@ void CvGame::update()
 		case ARABIA:
 			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 				break;
+		case INDIA:
+			//break;
 		case GREECE:
 		case PERSIA:
 		case CARTHAGE:

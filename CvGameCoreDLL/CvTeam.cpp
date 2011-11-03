@@ -5309,7 +5309,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					argsList.add(bFirst);
 					long lResult=0;
 					gDLL->getPythonIFace()->callFunction(PYGameModule, "doHolyCityTech", argsList.makeFunctionArgs(), &lResult);
-					if (lResult != 1)
+					if (lResult != 1 && getID() < NUM_MAJOR_PLAYERS) //Leoreth: independents don't found religions
 					{
 						for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 						{

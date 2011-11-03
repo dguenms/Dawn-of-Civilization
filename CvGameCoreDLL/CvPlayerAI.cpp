@@ -1933,7 +1933,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					iBadTile++;
 				}
 			}
-            else if (pLoopPlot->isOwned())
+            /*else if (pLoopPlot->isOwned())
             {
                 if (pLoopPlot->getTeam() == getTeam())
                 {
@@ -1942,7 +1942,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
                         iBadTile += bAdvancedStart ? 2 : 1;
                     }
                 }
-            }
+            }*/
 		}
 	}
 
@@ -3247,6 +3247,17 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		iValue /= 100;
 	}
 	//Rhye - end
+
+	if (getID() == CHINA)
+	{
+		if (getNumCities() <= 3)
+		{
+			if (iX == 103 && (iY == 43 || iY == 44))
+				iValue *= 100;	//Luoyang or Kaifeng
+			if ((iX == 106 && iY == 44) || (iX == 107 && iY == 43))
+				iValue *= 50;	//Shanghai or Hangzhou
+		}
+	}
 
 	return std::max(1, iValue);
 }
@@ -5465,15 +5476,15 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									break;
 								case INDIA:
 									if (iI == MEDITATION || iI == PRIESTHOOD)
-										iValue *= 5;
+										iValue *= 20;
 									if (iI == WRITING  || iI == MONOTHEISM || iI == MONARCHY || iI == CALENDAR || iI == MATHEMATICS)
 										iValue /= 3;
 									break;
 								case CHINA:
 									if (iI == MEDITATION || iI == MONOTHEISM || iI == FISHING)
 										iValue /= 2;
-									if (iI == PRIESTHOOD)
-										iValue *= 2;
+									//if (iI == PRIESTHOOD)
+									//	iValue *= 2;
 									if (iI == ALPHABET || iI == SAILING)
 										iValue /= 5;
 									if (iI == MATHEMATICS || iI == CALENDAR)
@@ -5502,8 +5513,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									break;
 								case BABYLONIA:
-									if (iI == MEDITATION || iI == CALENDAR || iI == PRIESTHOOD || iI == MONOTHEISM)
+									if (iI == MEDITATION || iI == CALENDAR || iI == MONOTHEISM)
 										iValue /= 3;
+									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
+										iValue /= 5;
 									if (iI == WRITING || iI == CODEOFLAWS)
 										iValue *= 3;
 									if (iI == MASONRY || iI == MONARCHY || iI == POLYTHEISM)
@@ -5782,6 +5795,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									break;
 								}
 								//Rhye - end
+
+								if (getID() != INDIA)
+								{
+									if (iI == MEDITATION && !GC.getGame().isReligionFounded((ReligionTypes)HINDUISM))
+										iValue /= 3;
+									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
+										iValue /= 4;
+								}
 
 								iValue = std::max(1, iValue);
 

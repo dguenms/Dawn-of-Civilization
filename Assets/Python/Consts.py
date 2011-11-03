@@ -164,7 +164,7 @@ lOlderNeighbours = [
 # converted to years - edead
 tBirth = (
 -3000, # 0, #3000BC
--3000, # 0, #3000BC
+-1500, # 0, #3000BC
 -3000, # 0, #3000BC
 -3000, # 0, #3000BC
 -1600, # 50, #1600BC
@@ -1664,7 +1664,7 @@ tAIStopBirthThreshold = (
 
 #RiseAndFall
 tResurrectionProb = (
-80, #Egypt
+60, #Egypt
 100, #India
 100, #China
 30, #Babylonia
