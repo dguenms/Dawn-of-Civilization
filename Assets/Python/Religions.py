@@ -108,6 +108,12 @@ class Religions:
        	
         def checkTurn(self, iGameTurn):
 
+		if utils.getHumanID() != con.iIndia:
+			if iGameTurn == getTurnForYear(-2000)+1:
+				if not gc.getGame().isReligionFounded(iHinduism):
+					if not gc.getMap().plot(92, 39).getPlotCity().isNone():
+						self.foundReligion((92, 39), iHinduism)
+
                 if (not gc.getGame().isReligionFounded(iChristianity)):
                         iEthiopianModifier = 0
                         if (gc.getPlayer(con.iEthiopia).isHuman()):
