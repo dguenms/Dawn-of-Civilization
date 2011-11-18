@@ -107,7 +107,8 @@ BeginPlayer
 	LeaderType=LEADER_ASOKA
 	CivType=CIVILIZATION_INDIA                 
 	Team=1                 
-	PlayableCiv=1                 
+	PlayableCiv=1
+    StateReligion=RELIGION_HINDUISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
