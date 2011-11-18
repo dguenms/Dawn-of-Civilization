@@ -1327,7 +1327,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int iDamage;
 	int iDX, iDY;
 	int iI;
-	int iProb; //Leoreth
 	CLinkList<IDInfo> oldUnits;
 	std::vector<int> aeFreeSpecialists;
 
@@ -5205,7 +5204,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		}
 	}
 
-	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()))
+	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && (isHuman()? true : getNumCities() > 0)) //in case of one city, allow it, so spawning players can't be pushed out and denied their capital
 	{
 		return false;
 	}
@@ -8584,24 +8583,28 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 				iValue *= 3;
 				iValue /= 5;
 			}
-			if ((pLoopCity->getX() == 60 && pLoopCity->getX() == 44) || (pLoopCity->getX() == 73 && pLoopCity->getX() == 38)) //Rome or Jerusalem
+			if ((pLoopCity->getX() == 60 && pLoopCity->getY() == 44) || (pLoopCity->getX() == 73 && pLoopCity->getY() == 38)) //Rome or Jerusalem
 			{
 				iValue *= 2;
 				//iValue /= 3;
 			}
-			if (pLoopCity->getX() == 59 && pLoopCity->getX() == 47) //Milan
+			if (pLoopCity->getX() == 59 && pLoopCity->getY() == 47) //Milan
 			{
 				iValue /= 2;
 			}
-			if (pLoopCity->getX() == 71 && pLoopCity->getX() == 43) //Gordium
+			if (pLoopCity->getX() == 71 && pLoopCity->getY() == 43) //Gordium
 			{
 				iValue /= 8;
+			}
+			if (pLoopCity->getX() == 92 && pLoopCity->getY() == 39) //Varanasi
+			{
+				iValue *= 4;
 			}
 			//Rhye - end
 
 			//Leoreth: exclude 1 population cities because it doesn't make sense to have a religion founded there
-			if (pLoopCity->getPopulation() == 1)
-                iValue = 1;
+			//if (pLoopCity->getPopulation() == 1)
+            //    iValue = 1;
 
 
 			iValue = std::max(1, iValue);
@@ -8634,6 +8637,8 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			}
 		}
 	}
+
+	return;
 }
 
 

@@ -5560,6 +5560,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case CARTHAGE:
 									if (iI == COMPASS)
 										iValue *= 2;
+									if (iI == MONOTHEISM)
+										iValue /= 2;
 									break;
 								case ROME:
                                     if (!GET_PLAYER((PlayerTypes)ROME).isReborn())

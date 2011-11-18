@@ -142,17 +142,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND1</Tag>
-		<English>Found Buddhism and Hinduism</English>
+		<English>Control the shrines of Hinduism and Buddhism in 250 BC</English>
 		<French>Fonder le Bouddhisme et l'Hindouisme</French>
-		<German>Begründen Sie die Religionen Buddhismus und Hinduismus</German>
+		<German>Kontrollieren Sie die Schreine des Hinduismus und Buddhismus im Jahr 250 v. Chr.</German>
 		<Italian>Fonda buddismo e induismo</Italian>
 		<Spanish>Fundar el Budismo y el Hinduismo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND2</Tag>
-		<English>Build 20 temples by 1000 AD</English>
+		<English>Build 20 temples by 600 AD</English>
 		<French>Fonder au moins 5 religions</French>
-		<German>Bauen Sie 20 Tempel bis 1000 n. Chr.</German>
+		<German>Bauen Sie 20 Tempel bis 600 n. Chr.</German>
 		<Italian>Fonda almeno 5 religioni</Italian>
 		<Spanish>Fundar al menos 5 religiones</Spanish>
 	</TEXT>
@@ -206,7 +206,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE3</Tag>
-		<English>Control Egpyt, Phoenicia, Babylonia and Persia in 330 BC</English>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
 		<French>Etre le premier à faire le tour du monde</French>
 		<German>Kontrollieren Sie im Jahr 330 v.Chr. Ägypten, Phönizien, Babylonien und Persien</German>
 		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>

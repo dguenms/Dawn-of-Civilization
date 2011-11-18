@@ -5297,6 +5297,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 
 			bReligionFounded = false;
 			bFirstBonus = false;
+			TCHAR szOut[1024];
 
 			if (bFirst)
 			{
@@ -5315,6 +5316,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 						{
 							if (GC.getReligionInfo((ReligionTypes)iI).getTechPrereq() == eIndex)
 							{
+
 								iBestValue = MAX_INT;
 								eBestPlayer = NO_PLAYER;
 
@@ -5324,33 +5326,34 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 									{
 										if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
 										{
-											iValue = 10;
+												iValue = 10;
+													
+												iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Religion (Player)");
 
-											iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Religion (Player)");
+												for (iK = 0; iK < GC.getNumReligionInfos(); iK++)
+												{
+													iValue += (GET_PLAYER((PlayerTypes)iJ).getHasReligionCount((ReligionTypes)iK) * 10);
+												}
 
-											for (iK = 0; iK < GC.getNumReligionInfos(); iK++)
-											{
-												iValue += (GET_PLAYER((PlayerTypes)iJ).getHasReligionCount((ReligionTypes)iK) * 10);
-											}
+												if (GET_PLAYER((PlayerTypes)iJ).getCurrentResearch() != eIndex)
+												{
+													iValue *= 10;
+												}
 
-											if (GET_PLAYER((PlayerTypes)iJ).getCurrentResearch() != eIndex)
-											{
-												iValue *= 10;
-											}
-
-											if (iValue < iBestValue)
-											{
-												iBestValue = iValue;
-												eBestPlayer = ((PlayerTypes)iJ);
-											}
+												if (iValue < iBestValue)
+												{
+													iBestValue = iValue;
+													eBestPlayer = ((PlayerTypes)iJ);
+												}
+											
 										}
 									}
 								}
 
 								if (eBestPlayer != NO_PLAYER)
 								{
-										//Rhye - start comment (comment this to stop religion founding)
-									GC.getGameINLINE().setReligionSlotTaken((ReligionTypes)iI, true);
+									//Rhye - start comment (comment this to stop religion founding)
+									//GC.getGameINLINE().setReligionSlotTaken((ReligionTypes)iI, true);
 
 									if (GC.getGameINLINE().isOption(GAMEOPTION_PICK_RELIGION))
 									{
@@ -5378,7 +5381,8 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 
 									bReligionFounded = true;
 									bFirstBonus = true;
-										//Rhye - end comment
+									//Rhye - end comment
+									eBestPlayer = NO_PLAYER;
 								}
 							}
 						}

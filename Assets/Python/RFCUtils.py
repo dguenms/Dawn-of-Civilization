@@ -1487,4 +1487,5 @@ class RFCUtils:
 					lPlotList.extend(self.testBorderPlot((x, y), iCiv, iDirection))
 
 		return lPlotList
+		
 

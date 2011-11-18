@@ -393,7 +393,7 @@ class Stability:
                                 #iEconomy /= 7
                                 iEconomy /= 2
 
-                        if (iPlayer == con.iEgypt or iPlayer == con.iMali or iPlayer == con.iEthiopia): #counterbalance the flood plains
+                        if (iPlayer == con.iEgypt or iPlayer == con.iMali or iPlayer == con.iEthiopia or iPlayer == con.iIndia): #counterbalance the flood plains
                                 iAgriculture *= 7 #3
                                 iAgriculture /= 10 #5
 
@@ -1070,6 +1070,11 @@ class Stability:
                 
                   
                 ##print ("iNewBaseStability", iNewBaseStability)
+
+		# Leoreth: try new Byzantine UP here: stability caps at -30 if Constantinople is controlled
+		if iPlayer == con.iByzantium:
+			if pPlayer.getCapitalCity().getX() == con.tCapitals[0][iPlayer][0] and pPlayer.getCapitalCity().getY() == con.tCapitals[0][iPlayer][1]:
+				iNewBaseStability = max(iNewBaseStability, -30)
 
                                 
                 self.setStability(iPlayer, self.getStability(iPlayer) - self.getBaseStabilityLastTurn(iPlayer) + iNewBaseStability)

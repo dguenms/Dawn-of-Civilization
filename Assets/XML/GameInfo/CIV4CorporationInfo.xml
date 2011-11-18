@@ -25,10 +25,10 @@
 			</HeadquarterCommerces>
 			<BonusProduced>NONE</BonusProduced>
 			<CommercesProduced>
-				<iCommerceProduced>300</iCommerceProduced>
+				<iCommerceProduced>200</iCommerceProduced>
 			</CommercesProduced>
 			<YieldsProduced>
-				<iYieldProduced>100</iYieldProduced>
+				<iYieldProduced>50</iYieldProduced>
 			</YieldsProduced>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,14</Button>
 			<MovieFile>NONE</MovieFile>

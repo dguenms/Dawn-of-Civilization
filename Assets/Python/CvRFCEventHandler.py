@@ -262,12 +262,15 @@ class CvRFCEventHandler:
                 
                 if (playerType == con.iArabia):
                         self.up.arabianUP(city)
-                elif (playerType == con.iTurkey or playerType == con.iSeljuks):
+                elif (playerType == con.iTurkey):
                         self.up.turkishUP(city, playerType)
 		elif (playerType == con.iMongolia and bConquest):
 			self.up.mongolUP(city)
 		elif (playerType == con.iMughals):
 			self.up.mughalUP(city)
+		elif (playerType == con.iSeljuks):
+			self.up.seljukUP(city)
+			self.up.turkishUP(city, playerType)
 
                 if (playerType < iNumMajorPlayers):
                          utils.spreadMajorCulture(playerType, city.getX(), city.getY())
@@ -449,6 +452,10 @@ class CvRFCEventHandler:
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == con.iPorcelainTower:
 			gc.getPlayer(iOwner).updateTradeRoutes()
+
+		# Leoreth: found Buddhism when a Hindu temple is built
+		if iBuildingType == con.iHinduTemple:
+			self.rel.foundBuddhism(city)
 
 
         def onProjectBuilt(self, argsList):

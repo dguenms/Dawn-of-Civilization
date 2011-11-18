@@ -625,6 +625,7 @@ class RiseAndFall:
                         pNative.changeGold(100)
                                
                 # set starting gold
+		pIndia.changeGold(80)
                 pGreece.changeGold(100)
                 pCarthage.changeGold(200)
                 pRome.changeGold(100)
@@ -2276,7 +2277,10 @@ class RiseAndFall:
                                         gc.getMap().plot(122, 2).setRevealed(iCiv, False, True, -1);
                                         gc.getMap().plot(123, 2).setRevealed(iCiv, False, True, -1);
                                         print ("Plots covered")
-                                        return  
+                                        return
+
+				if iCiv == iTurkey:
+					self.moveOutInvaders(tTopLeft, tBottomRight)  
                         
                                 bDeleteEverything = False
                                 pCapital = gc.getMap().plot(tCapital[0], tCapital[1])
@@ -2356,6 +2360,27 @@ class RiseAndFall:
 ##                                        unit = pCurrent.getUnit(0)
 ##                                        unit.setXY(tDestination[0], tDestination[1])
 
+	def moveOutInvaders(self, tTL, tBR):
+		x1, y1 = tTL
+		x2, y2 = tBR
+		if pSeljuks.isAlive():
+			seljukCapital = pSeljuks.getCapitalCity()
+		if pMongolia.isAlive():
+			mongolCapital = pMongolia.getCapitalCity()
+		for x in range(x1, x2+1):
+			for y in range(y1, y2+1):
+				plot = gc.getMap().plot(x, y)
+				for i in range(plot.getNumUnits()):
+					unit = plot.getUnit(i)
+					if not utils.isDefenderUnit(unit):
+						if unit.getOwner() == iMongolia:
+							if utils.getHumanID() != iMongolia:
+								unit.setXYOld(mongolCapital.getX(), mongolCapital.getY())
+						elif unit.getOwner() == iSeljuks:
+							unit.setXYOld(seljukCapital.getX(), seljukCapital.getY())
+						else:
+							if unit.getUnitType() == con.iSeljukGhulamWarrior or unit.getUnitType() == con.iMongolKeshik:
+								unit.kill(False, iBarbarian)
                                 
                 
 
@@ -4388,7 +4413,8 @@ class RiseAndFall:
                 if (utils.getReborn(iCiv) == 0):
 			if iCiv == iIndia:
 				lIndianTechs = [con.iMysticism, con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, \
-						con.iHunting, con.iMining, con.iWriting, con.iMeditation]
+						con.iHunting, con.iMining, con.iWriting, con.iMeditation, con.iAnimalHusbandry, \
+						con.iBronzeWorking]
 				for iTech in lIndianTechs:
 					teamIndia.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iGreece):

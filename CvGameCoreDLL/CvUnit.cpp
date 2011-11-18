@@ -122,11 +122,31 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	int iNumNames = m_pUnitInfo->getNumUnitNames();
 	if (iUnitName < iNumNames)
 	{
+		/* Leoreth: disable random name selection
 		int iOffset = GC.getGameINLINE().getSorenRandNum(iNumNames, "Unit name selection");
 
 		for (iI = 0; iI < iNumNames; iI++)
 		{
 			int iIndex = (iI + iOffset) % iNumNames;
+			CvWString szName = gDLL->getText(m_pUnitInfo->getUnitNames(iIndex));
+			if (!GC.getGameINLINE().isGreatPersonBorn(szName))
+			{
+				setName(szName);
+				GC.getGameINLINE().addGreatPersonBornName(szName);
+				break;
+			}
+		}*/
+
+		//Leoreth: names in chronological order, but allow some randomness that increases with the game era
+		int iOffset = GC.getGameINLINE().getSorenRandNum(GET_PLAYER(eOwner).getCurrentEra()/2, "Unit name selection");
+
+		for (iI = 0; iI < iNumNames; iI++)
+		{
+			int iIndex;
+			if (iI + iOffset < iNumNames)
+				iIndex = iI + iOffset;
+			else
+				iIndex = iI;
 			CvWString szName = gDLL->getText(m_pUnitInfo->getUnitNames(iIndex));
 			if (!GC.getGameINLINE().isGreatPersonBorn(szName))
 			{
@@ -1164,7 +1184,8 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 /* BETTER_BTS_AI_MOD                       END                                                  */
 /************************************************************************************************/
 		{
-			if (getCombatFirstStrikes() == 0)
+			if (getCombatFirstStrikes() == 0)	//Leoreth: let cavalry with first strikes flank too (side effects??)
+			//if (true)
 			{
 				if (getDamage() + iAttackerDamage >= maxHitPoints() && GC.getGameINLINE().getSorenRandNum(100, "Withdrawal") < withdrawalProbability())
 				{
@@ -2226,6 +2247,12 @@ bool CvUnit::generatePath(const CvPlot* pToPlot, int iFlags, bool bReuse, int* p
 
 bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) const
 {
+	//Leoreth: allow to enter enemy territory while you have no cities to avoid being pushed out after spawn
+	if (GET_PLAYER(getOwner()).getNumCities() == 0)
+	{
+		return true;
+	}
+
 	if (GET_TEAM(getTeam()).isFriendlyTerritory(eTeam))
 	{
 		return true;
@@ -2264,9 +2291,9 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 		}
 	}
 
-	//Rhye - start UP (Dutch)
-	if (getOwnerINLINE() == NETHERLANDS && DOMAIN_SEA == getDomainType())
-		return true;
+	//Rhye - start UP (Dutch) - Leoreth: removed
+	//if (getOwnerINLINE() == NETHERLANDS && DOMAIN_SEA == getDomainType())
+	//	return true;
 	//Rhye - end
 
 	return false;
