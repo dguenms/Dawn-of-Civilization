@@ -278,6 +278,22 @@ class UniquePowers:
 
 		if iStateReligion >= 0:
 			city.setHasReligion(iStateReligion, True, True, False)
+
+	def seljukUP(self, city):
+		pSeljuks = gc.getPlayer(iSeljuks)
+		iStateReligion = pSeljuks.getStateReligion()
+
+		if iStateReligion >= 0:
+			city.setHasReligion(iStateReligion, True, True, False)
+			for iReligion in range(con.iNumReligions):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
+				if city.isHasReligion(iReligion) and not city.isHolyCity():
+					city.setHasReligion(iReligion, False, False, False)
+				if city.hasBuilding(iTemple + iReligion*4):
+					city.setHasRealBuilding((iTemple + iReligion*4), False)
+				if city.hasBuilding(iCathedral + iReligion*4):
+					city.setHasRealBuilding((iCathedral + iReligion*4), False)
+				if city.hasBuilding(iMonastery + iReligion*4):
+					city.setHasRealBuilding((iMonastery + iReligion*4), False)
 		
 
         def arabianUP(self, city):

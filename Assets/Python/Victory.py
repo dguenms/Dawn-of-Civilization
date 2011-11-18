@@ -604,7 +604,15 @@ class Victory:
 
                                                 
                 elif (iPlayer == iIndia):
-                        if (pIndia.isAlive()):                                                            
+                        if (pIndia.isAlive()):
+
+				if iGameTurn == getTurnForYear(-250):
+					bBuddhistShrine = (self.getNumBuildings(iIndia, con.iBuddhistShrine) > 0)	
+					bHinduShrine = (self.getNumBuildings(iIndia, con.iHinduShrine) > 0)
+					if bHinduShrine and bBuddhistShrine:
+						self.setGoal(iIndia, 0, 1)
+					else:
+						self.setGoal(iIndia, 0, 0)     
                                                                 
                                 if (iGameTurn == getTurnForYear(1200)):
                                         iPop = pIndia.getRealPopulation()
@@ -714,8 +722,8 @@ class Victory:
                                                 	else:
                                                         	landPercent = 0.0
 	                                                        
-        	                                if (landPercent >= 7.995): #it's shown as 8.00 in the victory screen)
-                	                                self.setGoal(iPersia, 0, 1)
+        	                                	if (landPercent >= 7.995): #it's shown as 8.00 in the victory screen)
+                	                                	self.setGoal(iPersia, 0, 1)
                         	                else:
                                 	                self.setGoal(iPersia, 0, 0)
 
@@ -1507,7 +1515,7 @@ class Victory:
                                         if (iGameTurn == getTurnForYear(1650)):
                                                 iCount = 0
                                                 for iLoopCiv in range(iNumMajorPlayers):
-                                                        if (iLoopCiv != iPortugal):
+                                                       if (iLoopCiv != iPortugal):
                                                                 if (teamPortugal.isOpenBorders(iLoopCiv)):
                                                                        iCount += 1
                                                 if (iCount >= 12):                                                                    
@@ -1732,7 +1740,7 @@ class Victory:
                                 
 
                         if (gc.getGame().getWinner() == -1):                              
-                                if (self.getGoal(iPlayer, 0) == 1 and self.getGoal(iPlayer, 1) == 1 and self.getGoal(iPlayer, 2) == 1):
+                                if (self.getGoal(iPlayer, 0) == 1 and self.getGoal(iPlayer, 1) == 1 and self.getGoal(iPlayer, 2) == 1) and gc.getGame().getGameTurnYear() >= con.tBirth[utils.getHumanID()]: #Leoreth: don't win during autoplay
                                         gc.getGame().setWinner(iPlayer, 7) #Historical Victory
 
 
@@ -1855,15 +1863,15 @@ class Victory:
                 if (iFounder == iIndia):
                         self.setReligionFounded(iReligion, 1)
 
-                if (self.getGoal(iIndia, 0) == -1):
-                        if (iReligion == con.iHinduism):
-                                if (iFounder != iIndia):
-                                        self.setGoal(iIndia, 0, 0) 
-                        elif (iReligion == con.iBuddhism):
-                                if (iFounder != iIndia):
-                                        self.setGoal(iIndia, 0, 0)
-                        if (self.getReligionFounded(con.iHinduism) == 1 and self.getReligionFounded(con.iBuddhism) == 1):
-                                self.setGoal(iIndia, 0, 1)     
+                #if (self.getGoal(iIndia, 0) == -1):
+                #        if (iReligion == con.iHinduism):
+                #                if (iFounder != iIndia):
+                #                        self.setGoal(iIndia, 0, 0) 
+                #        elif (iReligion == con.iBuddhism):
+                #                if (iFounder != iIndia):
+                #                        self.setGoal(iIndia, 0, 0)
+                #        if (self.getReligionFounded(con.iHinduism) == 1 and self.getReligionFounded(con.iBuddhism) == 1):
+                #                self.setGoal(iIndia, 0, 1)     
 
                 #if (self.getGoal(iIndia, 1) == -1):
                 #        iCounter = 0
@@ -2651,9 +2659,9 @@ class Victory:
 
 		elif iPlayer == iIndia:
 			if iGoal == 0:
-				bBuddhism = (self.getReligionFounded(con.iBuddhism) == 1)
-				bHinduism = (self.getReligionFounded(con.iHinduism) == 1)
-				aHelp.append(self.getIcon(bHinduism) + 'Hinduism ' + self.getIcon(bBuddhism) + 'Buddhism')
+				bBuddhistShrine = (self.getNumBuildings(iIndia, con.iBuddhistShrine) > 0)	
+				bHinduShrine = (self.getNumBuildings(iIndia, con.iHinduShrine) > 0)
+				aHelp.append(self.getIcon(bHinduShrine) + 'Hindu Shrine ' + self.getIcon(bBuddhistShrine) + 'Buddhist Shrine')
 			elif iGoal == 1:
 				lTemples = [con.iJewishTemple, con.iChristianTemple, con.iIslamicTemple, con.iHinduTemple, con.iBuddhistTemple, con.iConfucianTemple, con.iTaoistTemple, con.iZoroastrianTemple]
 				iCounter = 0
@@ -3084,7 +3092,7 @@ class Victory:
 			if iGoal == 0:
 				capital = pTurkey.getCapitalCity()
 				iCounter = 0
-				for iWonder in range(coniPyramid, con.iNumBuildings):
+				for iWonder in range(con.iPyramid, con.iNumBuildings):
 					if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
 						if capital.isHasRealBuilding(iWonder):
 							iCounter += 1

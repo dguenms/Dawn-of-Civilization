@@ -35571,7 +35571,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=39
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -35942,6 +35941,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=39
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -39929,6 +39929,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	RiverNSDirection=0
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -40736,7 +40737,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=45
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

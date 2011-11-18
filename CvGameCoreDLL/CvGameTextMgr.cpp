@@ -3951,7 +3951,7 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			eUniqueBuilding = ((BuildingTypes)(GC.getBuildingClassInfo((BuildingClassTypes) iI).getDefaultBuildingIndex()));
 			if ((eDefaultBuilding != NO_BUILDING) && (eUniqueBuilding != NO_BUILDING))
 			{
-				if (eDefaultBuilding != eUniqueBuilding)
+				if (eDefaultBuilding != eUniqueBuilding && eDefaultBuilding != (BuildingTypes)GC.getInfoTypeForString("BUILDING_IBERIAN_TRADING_COMPANY")) //Leoreth: don't display trading company UBs
 				{
 					iCounter++;
 					// Add Building

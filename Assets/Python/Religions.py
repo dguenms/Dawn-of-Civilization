@@ -277,6 +277,11 @@ class Religions:
                 #print city
                 #print city.getOwner()
                 utils.makeUnit(iMissionary, city.getOwner(), tCoords, iNum)
+
+##BUDDHISM
+
+	def foundBuddhism(self, city):
+		gc.getPlayer(city.getOwner()).foundReligion(con.iBuddhism, con.iBuddhism, True)
 		
 
 ##REFORMATION

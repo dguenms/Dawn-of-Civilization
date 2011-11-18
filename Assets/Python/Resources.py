@@ -72,6 +72,10 @@ class Resources:
 			gc.getMap().plot(88, 47).setBonusType(iSilk)
 			gc.getMap().plot(85, 46).setBonusType(iSilk)
 
+		#Leoreth: Hanseong's pig appears later so China isn't that eager to found Sanshan
+		if iGameTurn == getTurnForYear(-50):
+			gc.getMap().plot(108, 47).setBonusType(iPig)
+
 		#Leoreth: change Indus tiles to desert floodplains in 0 AD
 		if (iGameTurn == getTurnForYear(0)):
 			for tPlot in [(86, 37), (86, 38), (87, 38)]:
