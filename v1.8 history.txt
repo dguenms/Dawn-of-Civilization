@@ -94,3 +94,5 @@
 # the AI can't win the game during autoplay anymore (they only achieve 3/3)
 # Varanasi founds Hinduism ~2000 BC unless the player controls India
 # Keshiks now cause flanking damage as intended
+# new Byzantine UP: cities in historical area are immune to collapse as long as you control Constantinople
+# new second Arabian goal: control Egypt, Maghreb, Mesopotamia and Persia in 1300 AD

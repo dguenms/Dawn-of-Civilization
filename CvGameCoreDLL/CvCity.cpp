@@ -8390,24 +8390,24 @@ int CvCity::getCommerceFromPercent(CommerceTypes eIndex, int iYieldRate) const
 
 	if (eIndex == COMMERCE_GOLD)
 	{
-	    // Leoreth: Byzantine espionage bonus gets subtracted from income to (as commerce spent on espionage), so counterbalance it
-	    if ((int) getOwner() == BYZANTIUM)
+	    // Leoreth: Byzantine espionage bonus gets subtracted from income to (as commerce spent on espionage), so counterbalance it DISABLED
+	    /*if ((int) getOwner() == BYZANTIUM)
 	    {
 	        iCommerce += (iYieldRate - iCommerce - getCommerceFromPercent(COMMERCE_RESEARCH, iYieldRate) - getCommerceFromPercent(COMMERCE_CULTURE, iYieldRate) - getCommerceFromPercent(COMMERCE_ESPIONAGE, iYieldRate) + 200 * (int)getCultureLevel());
-	    }else
-	    {
-            iCommerce += (iYieldRate - iCommerce - getCommerceFromPercent(COMMERCE_RESEARCH, iYieldRate) - getCommerceFromPercent(COMMERCE_CULTURE, iYieldRate) - getCommerceFromPercent(COMMERCE_ESPIONAGE, iYieldRate));
-	    }
+	    }else*/
+	    //{
+        iCommerce += (iYieldRate - iCommerce - getCommerceFromPercent(COMMERCE_RESEARCH, iYieldRate) - getCommerceFromPercent(COMMERCE_CULTURE, iYieldRate) - getCommerceFromPercent(COMMERCE_ESPIONAGE, iYieldRate));
+	    //}
 	}
 
-	// Leoreth: Byzantine UP
-	if ((int)getOwner() == BYZANTIUM)
+	// Leoreth: Byzantine UP DISABLED
+	/*if ((int)getOwner() == BYZANTIUM)
 	{
         if (eIndex == COMMERCE_ESPIONAGE)
         {
             iCommerce += 200 * (int)getCultureLevel();
         }
-	}
+	}*/
 
 	return iCommerce;
 }
