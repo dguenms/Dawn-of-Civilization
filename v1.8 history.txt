@@ -86,9 +86,11 @@
 # limited independent and minor civ culture levels to two
 # moved India's spawn to 1500 BC, placed Varanasi and Indraprastha
 # Seljuks spread their state religion on conquest
-# you need Hinduism as state religion to found Buddhism
+# Buddhism is founded by building a Hindu Temple
 # you can enter enemy territory and found cities there (AI only) as long as you have no cities to avoid being culture-pushed out of your spawning plot
 # new first goal for India: control the Buddhist and Hindu shrine in 250 BC
-# new second goal for India: build 20 temples by 600 AD
+# new second goal for India: build 20 temples by 1000 AD
 # great people names now appear in semi-chronological order (still some randomness involved, but modern names shouldn't appear early anymore)
 # the AI can't win the game during autoplay anymore (they only achieve 3/3)
+# Varanasi founds Hinduism ~2000 BC unless the player controls India
+# Keshiks now cause flanking damage as intended

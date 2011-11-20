@@ -2558,10 +2558,11 @@ class Victory:
 		iBestCiv = iCiv
 		iBestTechs = self.getNumTechs(iCiv)
 		for iLoopCiv in range(con.iNumPlayers):
-			iTempTechs = self.getNumTechs(iLoopCiv)
-			if iTempTechs > iBestTechs:
-				iBestCiv = iLoopCiv
-				iBestTechs = iTempTechs
+			if gc.getPlayer(iLoopCiv).isAlive():
+				iTempTechs = self.getNumTechs(iLoopCiv)
+				if iTempTechs > iBestTechs:
+					iBestCiv = iLoopCiv
+					iBestTechs = iTempTechs
 		return iBestCiv
 
 	# only allow the civs in lCivList in the area
