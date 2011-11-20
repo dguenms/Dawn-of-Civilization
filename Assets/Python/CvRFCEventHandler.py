@@ -277,12 +277,33 @@ class CvRFCEventHandler:
 
                 self.sta.onCityAcquired(owner,playerType,city,bConquest,bTrade)
 
+		#kill Byzantium
+		if owner == iByzantium and gc.getPlayer(iByzantium).isAlive():
+			if city.getX() == 68 and city.getY() == 45:
+				if self.sta.getStability(iByzantium) < -40:
+                                	print ("COLLAPSE: CIVIL WAR", gc.getPlayer(iPlayer).getCivilizationAdjective(0))
+                                	if (iPlayer != utils.getHumanID()):
+                                		if (gc.getPlayer(utils.getHumanID()).canContact(iPlayer)):
+                                        	CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iPlayer).getCivilizationDescription(0) + " " + \
+                                                                	                            CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+                                        	if (iGameTurn < getTurnForYear(1400)):
+                                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, iBarbarian, False)
+                                        	else:
+                                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, -1, False)
+                                        else:
+                                        	if (gc.getPlayer(iPlayer).getNumCities() > 1):
+                                        		CyInterface().addMessage(iPlayer, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+                                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, -1, True)
+                                                	utils.setStartingStabilityParameters(iPlayer)
+                                                	self.setGNPold(iPlayer, 0)
+                                                	self.setGNPnew(iPlayer, 0)
+
                 #kill byzantium
-                if (not gc.getPlayer(0).isPlayable()):  #late start condition
-                        if (owner == iCeltia and gc.getPlayer(iCeltia).isAlive()):
-                                if ((city.getX() == 68 and city.getY() == 45) or gc.getPlayer(iCeltia).getNumCities() <= 2): #constantinopolis captured or empire size <=2
-                                        print ("killed Byzantium")
-                                        utils.killAndFragmentCiv(iCeltia, iIndependent, iIndependent2, -1, False)
+                #if (not gc.getPlayer(0).isPlayable()):  #late start condition
+                #        if (owner == iCeltia and gc.getPlayer(iCeltia).isAlive()):
+                #                if ((city.getX() == 68 and city.getY() == 45) or gc.getPlayer(iCeltia).getNumCities() <= 2): #constantinopolis captured or empire size <=2
+                #                        print ("killed Byzantium")
+                #                        utils.killAndFragmentCiv(iCeltia, iIndependent, iIndependent2, -1, False)
 
 		#kill Seljuks
 		if owner == iSeljuks and gc.getPlayer(iSeljuks).isAlive():

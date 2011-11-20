@@ -96,13 +96,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ</Tag>
-		<English>The Power of Byzantine Diplomacy:</English>
-		<German>Die Macht der Byzantinischen Diplomatie:</German>
+		<English>The Power of the Metropolis:</English>
+		<German>Die Macht der Metropole:</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ2</Tag>
-		<English>Every city creates two [ICON_ESPIONAGE] per culture level</English>
-		<German>Jede Stadt erzeugt zwei [ICON_ESPIONAGE] pro Kulturstufe</German>
+		<English>Cities in your historical area are immune to collapse as long as you control Constantinople</English>
+		<German>Städte in Ihrem historischem Territorium sind immun gegenüber Kollaps solange Sie Konstantinopel kontrollieren</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR</Tag>

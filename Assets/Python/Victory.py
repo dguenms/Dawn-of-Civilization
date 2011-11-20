@@ -1106,7 +1106,7 @@ class Victory:
 
 
                             
-                                if (iGameTurn >= getTurnForYear(con.tBirth[iSpain])+1 and iGameTurn <= getTurnForYear(1300)):
+                                if (iGameTurn == getTurnForYear(1300)):
                                         if (self.getGoal(iArabia, 1) == -1):
                                                 bEgypt = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iEgypt], con.tCoreAreasBR[0][iEgypt])
                                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
