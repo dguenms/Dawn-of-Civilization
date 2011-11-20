@@ -1730,6 +1730,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_LIBERALISM</PrereqTech>
+				<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_UTOPIA_QUOTE</Quote>
 			<Sound>AS2D_TECH_UTOPIA</Sound>
