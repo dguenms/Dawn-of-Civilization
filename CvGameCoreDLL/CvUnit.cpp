@@ -7509,7 +7509,7 @@ int CvUnit::workRate(bool bMax) const
 		iRate /= 100;
 		break;
 	case INDIA:
-		iRate *= 80 + 2*(int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //90
+		iRate *= 90 + 2*(int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //90
 		iRate /= 100;
 		break;
 	case CHINA:

@@ -606,7 +606,7 @@ class Victory:
                 elif (iPlayer == iIndia):
                         if (pIndia.isAlive()):
 
-				if iGameTurn == getTurnForYear(-250):
+				if iGameTurn == getTurnForYear(-100):
 					bBuddhistShrine = (self.getNumBuildings(iIndia, con.iBuddhistShrine) > 0)	
 					bHinduShrine = (self.getNumBuildings(iIndia, con.iHinduShrine) > 0)
 					if bHinduShrine and bBuddhistShrine:
@@ -629,7 +629,7 @@ class Victory:
                                         else:
                                                 self.setGoal(iIndia, 2, 0)
 
-				if iGameTurn == getTurnForYear(1000):
+				if iGameTurn == getTurnForYear(700):
 					if self.getGoal(iIndia, 1) == -1:
 						self.setGoal(iIndia, 1, 0)
 
