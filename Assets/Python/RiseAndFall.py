@@ -3629,7 +3629,7 @@ class RiseAndFall:
         def createStartingUnits( self, iCiv, tPlot ):
 		if iCiv == iIndia:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-			utils.makeUnit(con.iWarrior, iCiv, tPlot, 1)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                 if (iCiv == iGreece):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 2)
@@ -3927,7 +3927,7 @@ class RiseAndFall:
                                 
         def createStartingWorkers( self, iCiv, tPlot ):
 		if iCiv == iIndia:
-			utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 1)
+			utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 2)
                 if (iCiv == iGreece):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iPersia):
@@ -4414,7 +4414,7 @@ class RiseAndFall:
 			if iCiv == iIndia:
 				lIndianTechs = [con.iMysticism, con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, \
 						con.iHunting, con.iMining, con.iWriting, con.iMeditation, con.iAnimalHusbandry, \
-						con.iBronzeWorking]
+						con.iBronzeWorking, con.iArchery, con.iSailing, con.iIronWorking]
 				for iTech in lIndianTechs:
 					teamIndia.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iGreece):

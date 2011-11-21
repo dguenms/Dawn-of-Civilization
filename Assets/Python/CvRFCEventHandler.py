@@ -669,7 +669,7 @@ class CvRFCEventHandler:
 
 		#Leoreth: if pagan temples are not in use anymore (i.e. not running Pantheon), replace them with the temple of the religion that spreads             
 		if pSpreadCity.isHasBuilding(con.iObelisk):
-			if gc.getPlayer(iOwner).getCivics(4) != 21:
+			if gc.getPlayer(iOwner).getCivics(4) != 21 and gc.getPlayer(iOwner).isHasTech(con.iPriesthood):
 				pSpreadCity.setHasRealBuilding(con.iObelisk, False)
 				pSpreadCity.setHasRealBuilding(con.iJewishTemple+4*iReligion, True)
 
