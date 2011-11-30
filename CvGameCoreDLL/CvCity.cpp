@@ -4162,8 +4162,8 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
-		//Leoreth: Indian UP (+1 food for artists, scientists, merchants)
-		if (getOwner() == (PlayerTypes)INDIA && (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_ARTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SCIENTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_MERCHANT")) && iI == 0) // food
+		//Leoreth: Indian UP (+1 food for artists, scientists, merchants, priests)
+		if (getOwner() == (PlayerTypes)INDIA && (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_PRIEST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_ARTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SCIENTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_MERCHANT")) && iI == 0) // food
 		{
 			changeBaseYieldRate(((YieldTypes)iI), ((GC.getSpecialistInfo(eSpecialist).getYieldChange(iI)+1) * iChange));
 		}else{
