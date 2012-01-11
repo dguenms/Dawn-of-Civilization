@@ -5499,7 +5499,7 @@ void CvPlayer::found(int iX, int iY)
 						startingEra = startingEraFoundAstronomy[getID()];
 					}else
 					{
-						if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+						if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
 						{
 							startingEra = startingEraFound600AD[getID()];
 						}else
@@ -18662,6 +18662,12 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 	if (bIncrementExperience)
 	{
 		incrementGreatGeneralsCreated();
+
+		//Leoreth: trigger for created generals (Maya UHV)
+		long result = -1;
+		CyArgsList argsList;
+		argsList.add(getID());
+	    gDLL->getPythonIFace()->callFunction(PYScreensModule, "onGreatGeneralBorn", argsList.makeFunctionArgs(), &result);
 
 		changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
 

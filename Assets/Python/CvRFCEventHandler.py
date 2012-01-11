@@ -282,10 +282,10 @@ class CvRFCEventHandler:
 			if city.getX() == 68 and city.getY() == 45:
 				if self.sta.getStability(iByzantium) < -40:
                                 	print ("COLLAPSE: CIVIL WAR", gc.getPlayer(iByzantium).getCivilizationAdjective(0))
-                                	if (iPlayer != utils.getHumanID()):
+                                	if (playerType != utils.getHumanID()):
                                 		if (gc.getPlayer(utils.getHumanID()).canContact(iByzantium)):
-                                        		CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iPlayer).getCivilizationDescription(0) + " " + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-                                        	if (iGameTurn < getTurnForYear(1400)):
+                                        		CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(playerType).getCivilizationDescription(0) + " " + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+                                        	if (gc.getGame().getGameTurn() < getTurnForYear(1400)):
                                                 	utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, iBarbarian, False)
                                         	else:
                                                 	utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, -1, False)
@@ -294,8 +294,8 @@ class CvRFCEventHandler:
                                         		CyInterface().addMessage(iByzantium, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
                                                 	utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, -1, True)
                                                 	utils.setStartingStabilityParameters(iByzantium)
-                                                	self.setGNPold(iPlayer, 0)
-                                                	self.setGNPnew(iPlayer, 0)
+                                                	self.setGNPold(playerType, 0)
+                                                	self.setGNPnew(playerType, 0)
 
                 #kill byzantium
                 #if (not gc.getPlayer(0).isPlayable()):  #late start condition
@@ -669,7 +669,7 @@ class CvRFCEventHandler:
 
 		#Leoreth: if pagan temples are not in use anymore (i.e. not running Pantheon), replace them with the temple of the religion that spreads             
 		if pSpreadCity.isHasBuilding(con.iObelisk):
-			if gc.getPlayer(iOwner).getCivics(4) != 21 and gc.getPlayer(iOwner).isHasTech(con.iPriesthood):
+			if gc.getPlayer(iOwner).getCivics(4) != 21 and gc.getTeam(iOwner).isHasTech(con.iPriesthood):
 				pSpreadCity.setHasRealBuilding(con.iObelisk, False)
 				pSpreadCity.setHasRealBuilding(con.iJewishTemple+4*iReligion, True)
 

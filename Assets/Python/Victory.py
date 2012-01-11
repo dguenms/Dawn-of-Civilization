@@ -2395,12 +2395,16 @@ class Victory:
 		#				if sd.getNumGenerals() == 3:
 		#					sd.setGoal(iJapan, 0, 1)
 
+		
+
+	def onGreatGeneralBorn(self, iPlayer):
+
 		# Leoreth: new third goal for Maya: get a great general by 1600 AD
 		if iPlayer == iMaya:
-			if pUnit.getUnitClassType == CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_GREAT_GENERAL'):
-				if self.getGoal(iMaya, 2) == -1:
-					if gc.getGame().getGameTurn() <= getTurnForYear(1600):
-						self.setGoal(iMaya, 2, 1)
+			if self.getGoal(iMaya, 2) == -1:
+				if gc.getGame().getGameTurn() <= getTurnForYear(1600):
+					self.setGoal(iMaya, 2, 1)
+
 
 	def onTechStolen(self, iPlayer, iTech):
 		return

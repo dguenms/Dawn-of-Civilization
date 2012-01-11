@@ -942,6 +942,13 @@ def getLatestRebellionTurn(argsList):
 	iPlayer = argsList[0]
 	return sd.scriptDict['lLatestRebellionTurn'][iPlayer]
 
+#Leoreth
+def onGreatGeneralBorn(argsList):
+	iPlayer = argsList[0]
+	vic.onGreatGeneralBorn(iPlayer)
+	return 1
+
+
 #######################################################################################
 ## Handle Close Map
 #######################################################################################
