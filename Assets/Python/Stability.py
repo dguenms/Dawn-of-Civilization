@@ -1385,10 +1385,10 @@ class Stability:
 							for pCity in secedingCities:
 								iNewCiv = con.iIndependent + (pCity.getX() % 2)
                                                 		utils.cultureManager((pCity.getX(),pCity.getY()), 50, iNewCiv, iPlayer, False, True, True)
-                                                		utils.flipUnitsInCityBefore((pCity.getX(),pCity.getY()), iNewCiv, iPlayer)                            
-                                                		self.setTempFlippingCity((pCity.getX(),pCity.getY()))
+                                                		utils.flipUnitsInCityBefore((pCity.getX(),pCity.getY()), iNewCiv, iPlayer)
+						                sd.scriptDict['tempFlippingCity'] = (pCity.getX(),pCity.getY())                            
                                                 		utils.flipCity((pCity.getX(),pCity.getY()), 0, 0, iNewCiv, [iPlayer])   #by trade because by conquest may raze the city
-                                                		utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iNewCiv)
+                                                		utils.flipUnitsInCityAfter(sd.scriptDict['tempFlippingCity'], iNewCiv)
                                                 		if (iPlayer == utils.getHumanID()):
                                                         		CyInterface().addMessage(iPlayer, True, con.iDuration, pCity.getName() + " " + \
                                                                                            		CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)

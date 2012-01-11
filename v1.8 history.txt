@@ -97,3 +97,6 @@
 # new Byzantine UP: cities in historical area are immune to collapse as long as you control Constantinople
 # new second Arabian goal: control Egypt, Maghreb, Mesopotamia and Persia in 1300 AD
 # Communism now requires Assembly Line
+# Statue of Zeus now provides +25% military training speed for all cities with pagan temples
+# Byzantium now spawns when Rome is alive and controls two or more cities outside of its core
+# The European part of Byzantium's core does not flip when the player controls Greece

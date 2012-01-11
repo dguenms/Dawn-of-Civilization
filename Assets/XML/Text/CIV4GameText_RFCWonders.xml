@@ -1082,5 +1082,10 @@
 		<English>The Red Fort</English>
 		<German>Das Rote Fort</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STATUE_OF_ZEUS_EFFECT</Tag>
+		<English>[ICON_BULLET]Increases military unit production speed by 25% in all cities with pagan temples</English>
+		<German>[ICON_BULLET]Erhöht die Produktionsgeschwindigkeit militärischer Einheiten in allen Städten mit heidnischen Tempeln um 25%</German>
+	</TEXT>
 
 </Civ4GameText>

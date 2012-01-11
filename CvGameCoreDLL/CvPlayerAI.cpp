@@ -5753,6 +5753,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == GUNPOWDER || iI == RIFLING || iI == MILITARY_TRADITION)
 										iValue *= 3;
 									break;
+								case MUGHALS:
+									if (iI == RIFLING || iI == LIBERALISM)
+										iValue /= 3;
+									break;
 								case PORTUGAL:
 									if (iI == MEDITATION)
 										iValue /= 2;

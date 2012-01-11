@@ -247,7 +247,7 @@ class Companies:
 		elif iCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
 			lOtherCompanies = []
 			for iTempCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
-				if iTempCompany != iCompany:
+				if iTempCompany != iCompany and city.isHasCorporation(iTempCompany):
 					lOtherCompanies.append(iTempCompany)
 			iValue *= (4 - len(lOtherCompanies)) / 4
 		

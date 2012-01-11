@@ -2182,13 +2182,13 @@ class RiseAndFall:
                 # Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
                         if iCiv == iByzantium:
-                                bRomanCityInGreece = False
-                                cityList = utils.getCoreCityList(iByzantium, 0)
-                                for pCity in cityList:
-                                        if pCity.getOwner() == iRome:
-                                                bRomanCityInGreece = True
+                                bRomanExpansion = False
+				if pRome.isAlive():
+	                                cityList = utils.getCoreCityList(iRome, 0)
+					if pRome.getNumCities() - len(cityList) >= 2:	# more than two cities outside of core
+						bRomanExpansion = True
 
-                                if (not bRomanCityInGreece):
+                                if (not bRomanExpansion):
                                         return
 
 			elif iCiv == iThailand:
@@ -2235,8 +2235,10 @@ class RiseAndFall:
 			#		tTopLeft = (99, 39) # 4 tiles further south
 			if iCiv == iMongolia and utils.getHumanID() != iMongolia:
 				tTopLeft = (81, 45) # 6 more west, 1 more south
-			elif iCiv == iTurkey and utils.getHumanID() != iTurkey and not pByzantium.isAlive():
+			if iCiv == iTurkey and utils.getHumanID() != iTurkey and not pByzantium.isAlive():
 				tTopLeft = (67, 41) # two more west
+			if iCiv == iByzantium and utils.getHumanID() == iGreece:
+				tTopLeft = (68, 38) # exclude the European part
                     
                         if (self.getFlipsDelay(iCiv) == 0): #city hasn't already been founded)
                             
@@ -3390,10 +3392,13 @@ class RiseAndFall:
                 		popup.launch(False)
 			else:
 				iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
-				if iRand >= con.tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
-					bAccepted = True
+				if iTargetCiv < con.iNumPlayers:
+					if iRand >= con.tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
+						bAccepted = True
+					else:
+						bAccepted = False
 				else:
-					bAccepted = False
+					bAccepted = True
 
 				for tPlot in targetList:
 					x, y = tPlot
@@ -3680,6 +3685,9 @@ class RiseAndFall:
                 	tSeaPlot = self.findSeaPlots(tCapitals[0][iJapan], 1, iJapan)
                 	if (tSeaPlot):                                
                         	utils.makeUnit(con.iWorkBoat, iJapan, tSeaPlot, 2)
+			if utils.getHumanID() != iJapan:
+				utils.makeUnit(con.iArcher, iJapan, tCapitals[0][iJapan], 2)
+				utils.makeUnit(con.iAxeman, iJapan, tCapitals[0][iJapan], 2)
                 if (iCiv == iEthiopia):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
@@ -4005,6 +4013,10 @@ class RiseAndFall:
                 if (tSeaPlot):                                
                         utils.makeUnit(con.iWorkBoat, iJapan, tSeaPlot, 2)
 
+		if utils.getHumanID() != iJapan:
+			utils.makeUnit(con.iArcher, iJapan, tCapitals[0][iJapan], 2)
+			utils.makeUnit(con.iAxeman, iJapan, tCapitals[0][iJapan], 2)
+
 
                 utils.makeUnit(con.iSettler, iVikings, tCapitals[0][iVikings], 2)
                 utils.makeUnit(con.iLongbowman, iVikings, tCapitals[0][iVikings], 4)
@@ -4039,7 +4051,7 @@ class RiseAndFall:
 		utils.makeUnit(con.iBuddhistMissionary, iKorea, tCapitals[0][iKorea], 1)
 		utils.makeUnit(con.iConfucianMissionary, iKorea, tCapitals[0][iKorea], 1)
 		utils.makeUnit(con.iArcher, iKorea, tCapitals[0][iKorea], 2)
-		utils.makeUnit(con.iSwordsman, iKorea, tCapitals[0][iKorea], 3)
+		utils.makeUnit(con.iAxeman, iKorea, tCapitals[0][iKorea], 3)
 		utils.makeUnit(con.iHorseArcher, iKorea, tCapitals[0][iKorea], 1)
 		utils.makeUnit(con.iWorker, iKorea, tCapitals[0][iKorea], 3)
 

@@ -1430,15 +1430,17 @@ class RFCUtils:
 			for i in range(iNumCities):
 				iRand = gc.getGame().getSorenRandNum(len(cityList), 'Random city')
 				print 'iRand = '+str(iRand)
-				targetList.append(cityList[iRand-1])
-				cityList.remove(cityList[iRand-1])
+				if len(cityList) > 0:
+					targetList.append(cityList[iRand])
+					cityList.remove(cityList[iRand])
 
 		if len(targetList) == 0:
 			for i in range(iNumCities):
 				iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random free plot')
 				print 'iRand = '+str(iRand)
-				targetList.append(lPlotList[iRand-1])
-				lPlotList.remove(lPlotList[iRand-1])
+				if len(lPlotList) > 0:
+					targetList.append(lPlotList[iRand])
+					lPlotList.remove(lPlotList[iRand])
 
 		return targetList
 
