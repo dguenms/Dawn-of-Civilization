@@ -1948,8 +1948,8 @@ iImmunity = 20
 
 #leaders
 
-iNumLeaders = 88
-(iLeaderBarbarian, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iAlfred, iCatherine, iCharlemagne, iChurchill,
+iNumLeaders = 89
+(iLeaderBarbarian, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
 iCyrus, iDarius, iDe_Gaulle, iElizabeth, iFrederick, iGandhi, iGenghis_Khan, iGilgamesh, iHammurabi, iHannibal, iHatshepsut,
 iHuayna_Capac, iIsabella, iJoao, iJulius_Caesar, iJustinian, iKublai_Khan, iLincoln, iLouis_Xiv, iMansa_Musa, iMao,
 iMehmed, iMontezuma, iNapoleon, iPacal, iPericles, iPeter, iQin_Shi_Huang, iRamesses, iRagnar, iFranklin_Roosevelt,
@@ -1957,10 +1957,7 @@ iSaladin, iShaka, iSitting_Bull, iStalin, iSuleiman, iSuryavarman, iTokugawa, iV
 iZara_Yaqob, iJimmu, iMeiji, iAkbar, iHiram, iHaile_Selassie, iGustav, iAbu_Bakr, iMongkut, iElishat,
 iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonso, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
 iChiang_Kaishek, iCavour, iAbbas, iKhomeini, iTaizong, iYongle, iDharmasetu, iHayamWuruk, iSuharto, iShivaji,
-iNaresuan, iAlpArslan, iBaibars, iNasser) = range(iNumLeaders)
-
-iBrennus = iAlfred
-
+iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred) = range(iNumLeaders)
 
 tLeaders = (
 (iRamesses, iHatshepsut, iBaibars, iNasser),
@@ -1982,7 +1979,7 @@ tLeaders = (
 (iHayamWuruk, iDharmasetu, iSuharto),
 (iIsabella, iPhilip),
 (iLouis_Xiv, iCharlemagne, iNapoleon, iDe_Gaulle),
-(iVictoria, iBrennus, iElizabeth, iChurchill),
+(iVictoria, iAlfred, iElizabeth, iChurchill),
 (iBismarck, iCharles, iFrederick),
 (iStalin, iYaroslav, iPeter, iCatherine),
 (iWillem_Van_Oranje,),
@@ -2060,7 +2057,7 @@ tRomanLateLeaders,
 (iHayamWuruk, 1300, 10, 2, iSuharto, 1940, 10, 5),
 (iPhilip, 1400, 10, 3),
 (iLouis_Xiv, 1600, 10, 3, iNapoleon, 1750, 10, 4, iDe_Gaulle, 1940, 10, 5),
-(iElizabeth, 1500, 10, 3, iVictoria, 1750, 15, 3, iChurchill, 1930, 10, 5),
+(iElizabeth, 1400, 10, 3, iVictoria, 1750, 15, 3, iChurchill, 1930, 10, 5),
 (iFrederick, 1700, 10, 4, iBismarck, 1850, 10, 4),
 (iPeter, 1400, 15, 3, iCatherine, 1650, 15, 4, iNicholas, 1850, 15, 5),
 (iWillem_Van_Oranje,),

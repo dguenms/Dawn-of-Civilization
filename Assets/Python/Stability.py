@@ -1375,7 +1375,7 @@ class Stability:
                         for iPlayer in range(iNumPlayers):
                                 if (gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(con.tBirth[iPlayer]) + utils.getTurns(25) and not gc.getPlayer(iPlayer).isGoldenAge()):
                                         if (self.getStability(iPlayer) < -40): #civil war
-						if iPlayer == con.iByzantium and gc.getPlayer(iPlayer).getCapitalCity().getX() == con.tCapitals[0][iPlayer][0] and gc.getPlayer(iPlayer).getCapitalCity().getY() == con.tCapitals[0][iPlayer][1]:
+						if iPlayer == con.iByzantium and gc.getPlayer(iPlayer).getCapitalCity().getX() == con.tCapitals[0][iPlayer][0] and gc.getPlayer(iPlayer).getCapitalCity().getY() == con.tCapitals[0][iPlayer][1] and gc.getPlayer(con.iByzantium).getCurrentEra() <= 2:
 							print "Byzantine Collapse prevented by UP, foreign cities secede"
 							secedingCities = []
 							citylist = PyPlayer(iPlayer).getCityList()
