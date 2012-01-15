@@ -100,3 +100,5 @@
 # Statue of Zeus now provides +25% military training speed for all cities with pagan temples
 # Byzantium now spawns when Rome is alive and controls two or more cities outside of its core
 # The European part of Byzantium's core does not flip when the player controls Greece
+# added Alfred as an English leader
+# Great Library expires with Divine Right now

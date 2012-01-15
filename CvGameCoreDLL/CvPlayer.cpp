@@ -10071,7 +10071,7 @@ int CvPlayer::getMaxConscript() const
 {
 	if (GET_PLAYER((PlayerTypes)getID()).isHasBuilding((BuildingTypes)TOPKAPI))
 	{
-		return m_iMaxConscript+2;
+		return m_iMaxConscript+1;
 	}else
 	{
 		return m_iMaxConscript;

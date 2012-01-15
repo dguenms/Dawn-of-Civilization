@@ -125,10 +125,10 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_BRENNUS</Tag>
-		<English>Alfred</English>
+		<Tag>TXT_KEY_LEADER_ALFRED</Tag>
+		<English>Alfred the Great</English>
 		<French>
-			<Text>Alfred</Text>
+			<Text>Alfred der Groﬂe</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
