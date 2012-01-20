@@ -125,6 +125,9 @@ class Resources:
                         gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
 			gc.getMap().plot(96, 37).setBonusType(iFish)  #Calcutta/Dhaka/Pagan
 
+		if iGameTurn == getTurnForYear(1350):
+			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove jungle in Vietnam
+
 		if (iGameTurn == getTurnForYear(1500)):
 			gc.getMap().plot(36, 54).setFeatureType(4, 2) #Forest in Newfoundland
 			gc.getMap().plot(36, 54).setTerrainType(3, True, True) #Tundra in Newfoundland

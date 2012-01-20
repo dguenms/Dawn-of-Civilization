@@ -3696,6 +3696,7 @@ class RiseAndFall:
                         tSeaPlot = (74, 29)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(con.iTrireme, iCiv, tSeaPlot, 1)
 		if (iCiv == iKorea):
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)

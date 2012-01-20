@@ -6876,7 +6876,6 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -7180,14 +7179,19 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>25</iCommerce>
+				<iCommerce>15</iCommerce>
 			</CommerceModifiers>
 			<GlobalCommerceModifiers/>
 			<SpecialistExtraCommerces/>
 			<StateReligionCommerces/>
 			<CommerceHappinesses/>
 			<ReligionChanges/>
-			<SpecialistCounts/>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<FreeSpecialistCounts/>
 			<CommerceFlexibles/>
 			<CommerceChangeOriginalOwners/>
