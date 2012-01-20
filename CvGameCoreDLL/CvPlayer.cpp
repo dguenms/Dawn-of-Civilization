@@ -8600,6 +8600,8 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			{
 				iValue *= 4;
 			}
+			if (pLoopCity->getX() == 72 && pLoopCity->getY() == 29 && pLoopCity->getOwner() == (PlayerTypes)ETHIOPIA) //Aksum
+				iValue *= 4;
 			//Rhye - end
 
 			//Leoreth: exclude 1 population cities because it doesn't make sense to have a religion founded there

@@ -432,6 +432,12 @@ class Victory:
 
 	def setChineseTechs(self, i, iNewValue):
 		sd.scriptDict['lChineseTechs'][i] = iNewValue
+
+	def getEthiopianControl(self):
+		return sd.scriptDict['iEthiopianControl']
+
+	def setEthiopianControl(self, iNewValue):
+		sd.scriptDict['iEthiopianControl'] = iNewValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -961,6 +967,13 @@ class Victory:
                 elif (iPlayer == iEthiopia):
                         if (pEthiopia.isAlive()):
 
+				if iGameTurn <= getTurnForYear(600) and self.getGoal(iEthiopia, 1) == -1:
+					if pEthiopia.getNumAvailableBonuses(con.iIncense) >= 3:
+						self.setGoal(iEthiopia, 1, 1)
+
+				if iGameTurn == getTurnForYear(600)+1:
+					self.setGoal(iEthiopia, 1, 0)
+
                                 if (iGameTurn == getTurnForYear(1500)):
                                         bAfrica = True
                                         for iEuroCiv in range(iNumPlayers):
@@ -972,11 +985,11 @@ class Victory:
                                                         if (bAfrica == False):
                                                                 break
                                         if (bAfrica):
-                                                self.setGoal(iEthiopia, 1, 1)
+                                                self.setEthiopianControl(1)
                                         else:
-                                                self.setGoal(iEthiopia, 1, 0)
+                                                self.setGoal(iEthiopia, 2, 0)
 
-                                if (iGameTurn == getTurnForYear(1910)):
+                                if (iGameTurn == getTurnForYear(1910) and self.getGoal(iEthiopia, 2) == -1):
                                         bAfrica = True
                                         for iEuroCiv in range(iNumPlayers):
                                                 if (iEuroCiv in con.lCivGroups[0]):
@@ -1496,10 +1509,11 @@ class Victory:
                                 if (iGameTurn == getTurnForYear(1500)):
                                         lRevealedMap = con.l0Array
                                         for iCiv in range(iNumPlayers):
-                                                for x in range(124):
-                                                        for y in range(68):
-                                                                if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
-                                                                      lRevealedMap[iCiv] += 1
+						if gc.getPlayer(iCiv).isAlive():
+	                                                for x in range(124):
+        	                                                for y in range(68):
+                	                                                if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
+                        	                                              lRevealedMap[iCiv] += 1
                                         bBestMap = True
                                         for iCiv in range(iNumPlayers):
                                                 if (lRevealedMap[iPortugal] < lRevealedMap[iCiv]):                                                        
@@ -1811,11 +1825,11 @@ class Victory:
                                         #bAustralia = self.checkOwnedArea(iEngland, tAustraliaTL, tAustraliaBR, 2)
                                         #print ("English UHV:", bEastCoast, bSouthAfrica, bAustralia)
                                         #if (bEastCoast and bSouthAfrica and bAustralia):
-                                        bNCAmerica = self.checkFoundedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 3)
-                                        bSAmerica = self.checkFoundedArea(iEngland, tSAmericaTL, tSAmericaBR, 3)
-                                        bAfrica = self.checkFoundedArea(iEngland, tAfricaTL, tAfricaBR, 3)
-                                        bAsia = self.checkFoundedArea(iEngland, tAsiaTL, tAsiaBR, 3)
-                                        bOceania = self.checkFoundedArea(iEngland, tOceaniaTL, tOceaniaBR, 3)
+                                        bNCAmerica = self.checkOwnedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 4)
+                                        bSAmerica = self.checkOwnedArea(iEngland, tSAmericaTL, tSAmericaBR, 4)
+                                        bAfrica = self.checkOwnedArea(iEngland, tAfricaTL, tAfricaBR, 4)
+                                        bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 4)
+                                        bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 4)
                                         if (bNCAmerica and bSAmerica and bAfrica and bAsia and bOceania):
                                                 self.setGoal(iEngland, 1, 1)
 
@@ -1945,7 +1959,17 @@ class Victory:
                                 if (bConquest):
                                         if (self.getGoal(iRussia, 2) == -1):
                                                 if (iGameTurn <= getTurnForYear(1950)):
-                                                        self.setGoal(iRussia, 2, 0)          
+                                                        self.setGoal(iRussia, 2, 0)
+
+		elif (iPlayer == iEngland):
+                        if (iGameTurn <= getTurnForYear(1730)):
+                                        bNCAmerica = self.checkOwnedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 4)
+                                        bSAmerica = self.checkOwnedArea(iEngland, tSAmericaTL, tSAmericaBR, 4)
+                                        bAfrica = self.checkOwnedArea(iEngland, tAfricaTL, tAfricaBR, 4)
+                                        bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 4)
+                                        bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 4)
+                                        if (bNCAmerica and bSAmerica and bAfrica and bAsia and bOceania):
+                                                self.setGoal(iEngland, 1, 1)        
 
 
         def onCityRazed(self, iPlayer):
@@ -2840,7 +2864,10 @@ class Victory:
 				aHelp.append(self.getIcon(bIndochina) + 'Indochina ' + self.getIcon(bIndonesia) + 'Indonesia ' + self.getIcon(bPhilippines) + 'Philippines')
 		
                 elif iPlayer == iEthiopia:
-			if iGoal == 1 or iGoal == 2:
+			if iGoal == 1:
+				iNumIncense = pEthiopia.getNumAvailableBonuses(con.iIncense)
+				aHelp.append(self.getIcon(iNumIncense >= 3) + 'Available incense resources: ' + str(iNumIncense) + '/3')
+			elif iGoal == 2:
 				bAfrica = True
                                 for iEuroCiv in range(iNumPlayers):
                                 	if (iEuroCiv in con.lCivGroups[0]):
@@ -2850,7 +2877,9 @@ class Victory:
                                  			bAfrica = False
                                  		if (bAfrica == False):
                                  			break
-				aHelp.append(self.getIcon(bAfrica) + 'No European colonies in East and Subequatorial Africa')
+				aHelp.append(self.getIcon(bAfrica) + 'Currently no European colonies in East and Subequatorial Africa')
+				aHelp.append(self.getIcon(self.getEthiopianControl() == 1) + 'No European colonies in East and Subequatorial Africa in 1500 AD')
+				aHelp.append(self.getIcon(False) + 'No European colonies in East and Subequatorial Africa in 1910 AD')
 
 		elif iPlayer == iKorea:
 			if iGoal == 0:
@@ -2977,11 +3006,11 @@ class Victory:
 				iEnglishNavy = gc.getPlayer(iEngland).getUnitClassCount(iCFrigate) + gc.getPlayer(iEngland).getUnitClassCount(iCShipOfTheLine)
 				aHelp.append(self.getIcon(iEnglishNavy >= 25) + 'Total of frigates and ships of the line: ' + str(iEnglishNavy) + '/25')
 			elif iGoal == 1:
-                                bNCAmerica = self.checkFoundedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 3)
-                                bSAmerica = self.checkFoundedArea(iEngland, tSAmericaTL, tSAmericaBR, 3)
-                                bAfrica = self.checkFoundedArea(iEngland, tAfricaTL, tAfricaBR, 3)
-                                bAsia = self.checkFoundedArea(iEngland, tAsiaTL, tAsiaBR, 3)
-                                bOceania = self.checkFoundedArea(iEngland, tOceaniaTL, tOceaniaBR, 3)
+                                bNCAmerica = self.checkFoundedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 4)
+                                bSAmerica = self.checkFoundedArea(iEngland, tSAmericaTL, tSAmericaBR, 4)
+                                bAfrica = self.checkFoundedArea(iEngland, tAfricaTL, tAfricaBR, 4)
+                                bAsia = self.checkFoundedArea(iEngland, tAsiaTL, tAsiaBR, 4)
+                                bOceania = self.checkFoundedArea(iEngland, tOceaniaTL, tOceaniaBR, 4)
 				aHelp.append(self.getIcon(bNCAmerica) + 'North America ' + self.getIcon(bSAmerica) + 'South America')
 				aHelp.append(self.getIcon(bAfrica) + 'Africa ' + self.getIcon(bAsia) + 'Asia ' + self.getIcon(bOceania) + 'Oceania')
 			elif iGoal == 2:
@@ -3034,10 +3063,11 @@ class Victory:
 			if iGoal == 0:
 				lRevealedMap = con.l0Array
 				for iCiv in range(iNumPlayers):
-                                	for x in range(124):
-                                		for y in range(68):
-                                			if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
-                                				lRevealedMap[iCiv] += 1
+					if gc.getPlayer(iCiv).isAlive():
+	                                	for x in range(124):
+        	                        		for y in range(68):
+                	                			if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
+                        	        				lRevealedMap[iCiv] += 1
 				iBestCiv = iPortugal
 				for iCiv in range(iNumPlayers):
 					if lRevealedMap[iCiv] > lRevealedMap[iBestCiv]:

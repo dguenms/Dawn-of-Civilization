@@ -5503,13 +5503,13 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 									if (iI == HUNTING)
 										iValue *= 2;
-									if (iI == THEOLOGY || iI == ENGINEERING)
+									if (iI == ENGINEERING)
 										iValue /= 2;
                                     if (iI == EDUCATION) {
                                         iValue *= 2;
                                         iValue /= 3;
                                     }
-									if (iI == OPTICS || iI == ASTRONOMY || iI == LIBERALISM)
+									if (iI == OPTICS || iI == ASTRONOMY || iI == LIBERALISM || iI == THEOLOGY)
 										iValue /= 4;
 									break;
 								case BABYLONIA:
@@ -5562,6 +5562,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 									if (iI == MONOTHEISM)
 										iValue /= 2;
+									if (iI == HORSEBACK_RIDING || iI == CONSTRUCTION)
+										iValue *= 3;
 									break;
 								case ROME:
                                     if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
