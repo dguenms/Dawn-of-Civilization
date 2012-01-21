@@ -1035,6 +1035,14 @@
 							<bLeaderType>1</bLeaderType>
 
 						</Leader>
+	
+						<Leader>
+
+							<LeaderType>LEADER_ALFRED</LeaderType>
+
+							<bLeaderType>1</bLeaderType>
+
+						</Leader>
 
 					</Leaders>
 					<Attitudes/>
