@@ -721,11 +721,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ALFRED</Type>
-			<Button>Art/LeaderHeads/Alfred/Harold.dds</Button>
-			<NIF>art/LeaderHeads/Alfred/ragnar_lodbrok.nif</NIF>
-			<KFM>art/LeaderHeads/Alfred/ragnar_lodbrok.kfm</KFM>
-			<NoShaderNIF>art/LeaderHeads/Alfred/ragnar_lodbrok.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Alfred/Ragnar_BG.kfm</BackgroundKFM>
+			<Button>Art/LeaderHeads/Harold/Harold.dds</Button>
+			<NIF>art/LeaderHeads/Harold/ragnar_lodbrok.nif</NIF>
+			<KFM>art/LeaderHeads/Harold/ragnar_lodbrok.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Harold/ragnar_lodbrok.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Harold/Ragnar_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
