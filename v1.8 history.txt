@@ -105,7 +105,6 @@
 # England founds larger cities with more buildings after discovering Astronomy
 # England's second UHV goal now requires them to found or conquer four cities on every continent
 # Ethiopian stele now has +15% culture, 1 priest slot
-# Added Alfred as English LH
 # Jungle in Vietnam disappears at Thailand's spawn
 # New second Ethiopian UHV goal: acquire 3 incense resources by 600 AD
 # Third Ethiopian goal now covers 1500 AD and 1910 AD

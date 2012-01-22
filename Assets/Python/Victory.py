@@ -971,7 +971,7 @@ class Victory:
 					if pEthiopia.getNumAvailableBonuses(con.iIncense) >= 3:
 						self.setGoal(iEthiopia, 1, 1)
 
-				if iGameTurn == getTurnForYear(600)+1:
+				if iGameTurn == getTurnForYear(600)+1 and self.getGoal(iEthiopia, 1) == -1:
 					self.setGoal(iEthiopia, 1, 0)
 
                                 if (iGameTurn == getTurnForYear(1500)):
