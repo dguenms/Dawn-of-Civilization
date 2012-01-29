@@ -51,6 +51,7 @@ lIndraprastha = [90, 40, -2000, 0]
 lGadir = [51, 40, -1100, 0] #70
 lLepcis = [61, 37, -1100, 0] #70
 lBeijing = [102, 47, -1000, 0]
+lAnkara = [72, 44, -1000, 0]
 lCarthage = [58, 39, -814, 0] #86
 lGordion = [71, 43, -800, 0] #87
 lPalermo = [60, 40, -760, 0] #94-5
@@ -381,6 +382,8 @@ class Barbs:
 			self.foundCity(iIndependent, lBeijing, "Zhongdu", iGameTurn, 2, con.iSpearman, 1)
 
 		self.foundCity(iBarbarian, lShenyang, "Simiyan hoton", iGameTurn, 2, con.iChariot, 2)
+
+		self.foundCity(iIndependent, lAnkara, "Ankuwash", iGameTurn, 2, con.iArcher, 2)
 
 
                 #self.foundCity(iBarbarian, [59, 50, 146, 0], "Germanii", iGameTurn, 1, con.iArcher, 1)

@@ -2239,6 +2239,9 @@ class RiseAndFall:
 				tTopLeft = (67, 41) # two more west
 			if iCiv == iByzantium and utils.getHumanID() == iGreece:
 				tTopLeft = (68, 38) # exclude the European part
+			if iCiv == iPersia and utils.getHumanID() != iPersia:
+				tTopLeft = (72, 37) # include Assyria and Anatolia
+				
                     
                         if (self.getFlipsDelay(iCiv) == 0): #city hasn't already been founded)
                             
@@ -3686,8 +3689,8 @@ class RiseAndFall:
                 	if (tSeaPlot):                                
                         	utils.makeUnit(con.iWorkBoat, iJapan, tSeaPlot, 2)
 			if utils.getHumanID() != iJapan:
-				utils.makeUnit(con.iArcher, iJapan, tCapitals[0][iJapan], 2)
-				utils.makeUnit(con.iAxeman, iJapan, tCapitals[0][iJapan], 2)
+				utils.makeUnit(con.iCrossbowman, iJapan, tCapitals[0][iJapan], 2)
+				utils.makeUnit(con.iJapanSamurai, iJapan, tCapitals[0][iJapan], 3)
                 if (iCiv == iEthiopia):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
@@ -3851,6 +3854,8 @@ class RiseAndFall:
                         	utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 4)
                         utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
 			utils.makeUnitAI(con.iScout, iCiv, tPlot, UnitAITypes.UNITAI_EXPLORE, 2)
+			if utils.getHumanID() == iChina and gc.getPlayer(iEgypt).iPlayable():
+				utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_CITY_ATTACK, 4)
                 if (iCiv == iAztecs):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 4)
@@ -4015,8 +4020,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorkBoat, iJapan, tSeaPlot, 2)
 
 		if utils.getHumanID() != iJapan:
-			utils.makeUnit(con.iArcher, iJapan, tCapitals[0][iJapan], 2)
-			utils.makeUnit(con.iAxeman, iJapan, tCapitals[0][iJapan], 2)
+			utils.makeUnit(con.iCrossbowman, iJapan, tCapitals[0][iJapan], 2)
+			utils.makeUnit(con.iJapanSamurai, iJapan, tCapitals[0][iJapan], 3)
 
 
                 utils.makeUnit(con.iSettler, iVikings, tCapitals[0][iVikings], 2)
@@ -4055,6 +4060,9 @@ class RiseAndFall:
 		utils.makeUnit(con.iAxeman, iKorea, tCapitals[0][iKorea], 3)
 		utils.makeUnit(con.iHorseArcher, iKorea, tCapitals[0][iKorea], 1)
 		utils.makeUnit(con.iWorker, iKorea, tCapitals[0][iKorea], 3)
+
+		if utils.getHumanID() != iKorea:
+			utils.makeUnit(con.iMaceman, iKorea, tCapitals[0][iKorea], 2)
 
                 if ( pKhmer.isHuman() ):
                     utils.makeUnit(iSettler, iKhmer, tCapitals[0][iKhmer], 1)

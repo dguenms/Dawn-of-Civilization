@@ -2812,11 +2812,11 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 			}
 		}
 
-		if (bUnknown)
-		{
+		/*if (bUnknown && GC.getTechInfo(eTech).getEra() <= 2) //allow for all techs
+		{*/
 			iCost *= 80;
 			iCost /= 100;
-		}
+		//}
 	}
 
 

@@ -288,6 +288,12 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	}
 	//Rhye - end
 
+	if (GET_PLAYER(eOwner).isHasBuilding((BuildingTypes)HIMEJI))
+	{
+		setHasPromotion(((PromotionTypes)26), true); //citygarrison1
+		setHasPromotion(((PromotionTypes)29), true); //drill1
+	}
+
 	if (getDomainType() == DOMAIN_LAND)
 	{
 		if (baseCombatStr() > 0)
@@ -10147,6 +10153,10 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 {
 	int iUnitExperience = iChange;
 
+	// Leoreth: Terracotta Army effect
+	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)TERRACOTTA) && iMax != GC.getDefineINT("ANIMAL_MAX_XP_VALUE"))
+		iMax = MAX_INT;
+
 	if (bFromCombat)
 	{
 		CvPlayer& kPlayer = GET_PLAYER(getOwnerINLINE());
@@ -10159,7 +10169,8 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 			iUnitExperience += (iChange * kPlayer.getExpInBorderModifier()) / 100;
 		}
 
-		if (bUpdateGlobal)
+		// Leoreth: Terracotta Army effect
+		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)TERRACOTTA))
 		{
 			kPlayer.changeCombatExperience((iChange * iCombatExperienceMod) / 100);
 		}

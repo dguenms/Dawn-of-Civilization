@@ -7083,9 +7083,9 @@ int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pLis
 		{
 		case TRADE_TECHNOLOGIES:
 			//Leoreth: penalize China so they can't abuse their UP
-			if (ePlayer == (PlayerTypes)CHINA)
+			/*if (ePlayer == (PlayerTypes)CHINA)
 				iValue += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam())*3/4;
-			else
+			else*/
 				iValue += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam());
 			break;
 		case TRADE_RESOURCES:
@@ -7437,9 +7437,9 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 					{
 					case TRADE_TECHNOLOGIES:
 						//Leoreth: penalize China so they can't abuse their UP
-						if (ePlayer == (PlayerTypes)CHINA)
+						/*if (ePlayer == (PlayerTypes)CHINA)
 							iWeight += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam())*3/4;
-						else
+						else*/
 							iWeight += GET_TEAM(getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), GET_PLAYER(ePlayer).getTeam());
 						break;
 					case TRADE_RESOURCES:

@@ -38,9 +38,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND2</Tag>
-		<English>Artists, scientists, merchants and priests create one extra [ICON_FOOD]</English>
+		<English>Specialists create one extra [ICON_HEALTH]</English>
 		<French>Pas d'anarchie lors des révolutions</French>
-		<German>Künstler, Wissenschaftler, Händler und Priester erzeugen eine zusätzliche Einheit [ICON_FOOD]</German>
+		<German>Spezialisten erzeugen eine zusätzliche Einheit [ICON_HEALTH]</German>
 		<Italian>Niente anarchia durante le rivoluzioni</Italian>
 		<Spanish>No hay anarqu&#237;a por las revoluciones</Spanish>
 	</TEXT>
@@ -54,7 +54,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CHI2</Tag>
-		<English>Techs that nobody has discovered yet cost -20%[ICON_RESEARCH]</English>
+		<English>Technologies that nobody has discovered yet cost -20%[ICON_RESEARCH]</English>
 		<French>1.5X Vitesse d'entraînement des unités de combat rapproché et équipées d'armes à feu</French>
 		<German>Technologien, die bisher von niemandem entdeckt wurden, kosten -20%[ICON_RESEARCH]</German>
 		<Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
@@ -367,5 +367,10 @@
 		<Tag>TXT_KEY_UP_ROMAN_TRIUMPH</Tag>
 		<English>Your triumphant victories have enabled you to field another legion!</English>
 		<German>Eure triumphalen Siege haben Euch ermöglicht, eine weitere Legion auszuheben!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_GOOD_HEALTH_FROM_SPECIALISTS</Tag>
+		<English>%D1_Change[ICON_HEALTHY] from Specialists</English>
+		<German>%D1_Change[ICON_HEALTHY] durch Spezialisten</German>
 	</TEXT>
 </Civ4GameText>

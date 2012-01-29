@@ -34,7 +34,7 @@
 # The Dutch East Indiaman is now able to enter enemy territory without open border agreements
 # The Japanese capital switches to Tokyo when entering the Industrial Era
 # Victory code rewritten so that a "first to discover" goal immediately fails when someone else researches the tech faster
-# new Chinese UP: Invention: -25% costs for all techs not already discovered by somebody else
+# new Chinese UP: Invention: -20% costs for all techs not already discovered by somebody else
 # new Chinese UB: Taixue (Library): 3 scientist slots
 # new Chinese first goal: be first to discover Compass, Gunpowder, Paper, Printing Press
 # castles now require the vassalage civic
@@ -108,3 +108,10 @@
 # Jungle in Vietnam disappears at Thailand's spawn
 # New second Ethiopian UHV goal: acquire 3 incense resources by 600 AD
 # Third Ethiopian goal now covers 1500 AD and 1910 AD
+# China can't trade away technologies it has a monopoly on, to limit the power of their UP
+# new Indian UP: specialists generate +1 health
+# new third Chinese goal: Experience 4 golden ages by 1800 AD
+# discouraged Japan from founding cities too closely
+# Mausoleum of Maussollos now requires Zoroastrianism
+# Independent Ankara spawns in 1000 BC
+# AI Persia now also flips Assyria and Anatolia

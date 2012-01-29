@@ -22311,6 +22311,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=37
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -23058,7 +23059,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=36
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
