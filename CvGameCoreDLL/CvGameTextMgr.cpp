@@ -8764,6 +8764,16 @@ void CvGameTextMgr::setGoodHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
+		if (city.getOwner() == INDIA)
+		{
+			iHealth = city.getSpecialistPopulation();
+			if (iHealth > 0)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_GOOD_HEALTH_FROM_SPECIALISTS", iHealth));
+				szBuffer.append(NEWLINE);
+			}
+		}
+
 		szBuffer.append(L"-----------------------\n");
 
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_TOTAL_HEALTHY", city.goodHealth()));

@@ -373,16 +373,16 @@ class CvGameUtils:
 
 ## Himeji Samurai Castle Start ##
 
-		pPlayer = gc.getPlayer( pOldCity.getOwner( ) )
+#		pPlayer = gc.getPlayer( pOldCity.getOwner( ) )
 
-		b_Himeji = gc.getInfoTypeForString("BUILDING_HIMEJI_CASTLE")
-		obsoleteTech = gc.getBuildingInfo(b_Himeji).getObsoleteTech()
+#		b_Himeji = gc.getInfoTypeForString("BUILDING_HIMEJI_CASTLE")
+#		obsoleteTech = gc.getBuildingInfo(b_Himeji).getObsoleteTech()
 
-		if ( gc.getTeam(pPlayer.getTeam()).isHasTech(obsoleteTech) == false or obsoleteTech == -1 ):
-			for iCity in range(pPlayer.getNumCities()):
-				ppCity = pPlayer.getCity(iCity)
-				if ppCity.getNumActiveBuilding(b_Himeji) == true:
-					iCaptureGold = 0
+#		if ( gc.getTeam(pPlayer.getTeam()).isHasTech(obsoleteTech) == false or obsoleteTech == -1 ):
+#			for iCity in range(pPlayer.getNumCities()):
+#				ppCity = pPlayer.getCity(iCity)
+#				if ppCity.getNumActiveBuilding(b_Himeji) == true:
+#					iCaptureGold = 0
 		
 ## Himeji Samurai Castle End ##	
 	

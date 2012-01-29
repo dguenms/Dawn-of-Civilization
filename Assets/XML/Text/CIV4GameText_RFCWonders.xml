@@ -1014,8 +1014,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Tag>
-		<English>[ICON_BULLET]Own improvements are immune to plundering[NEWLINE][ICON_BULLET]Amount of [ICON_GOLD]looted doubled</English>
-		<German>[ICON_BULLET]Eigene Verbesserungen sind immun gegen Plünderung[NEWLINE][ICON_BULLET]Menge des geplünderten [ICON_GOLD]verdoppelt</German>
+		<English>[ICON_BULLET]New units start with City Garrison I and Drill I[NEWLINE][ICON_BULLET]Amount of [ICON_GOLD]looted doubled</English>
+		<German>[ICON_BULLET]Neue Einheiten starten mit Garnison I und Drill I[NEWLINE][ICON_BULLET]Menge des geplünderten [ICON_GOLD]verdoppelt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER</Tag>
@@ -1024,8 +1024,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
-		<English>[ICON_BULLET]All trade routes are counted as foreign and intercontinental</English>
-		<German>[ICON_BULLET]All Handelsrouten werden als ausländische und Überseerouten gewertet</German>
+		<English>[ICON_BULLET]All trade routes are counted as foreign and intercontinental[NEWLINE][ICON_BULLET]Trade route yield increased by 20% for every civilization you have contact, but not open borders with</English>
+		<German>[ICON_BULLET]All Handelsrouten werden als ausländische und Überseerouten gewertet[NEWLINE][ICON_BULLET]Handelsroutenertrag erhöht sich um 20% für jede Zivilisation, mit der Sie Kontakt, aber keine offenen Grenzen haben</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Tag>
@@ -1086,6 +1086,11 @@
 		<Tag>TXT_KEY_BUILDING_STATUE_OF_ZEUS_EFFECT</Tag>
 		<English>[ICON_BULLET]Increases military unit production speed by 25% in all cities with pagan temples</English>
 		<German>[ICON_BULLET]Erhöht die Produktionsgeschwindigkeit militärischer Einheiten in allen Städten mit heidnischen Tempeln um 25%</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY_HELP</Tag>
+		<English>[ICON_BULLET]Unlimited experience from barbarian units[NEWLINE][ICON_BULLET]Victories against barbarians contribute to great general birth</English>
+		<German>[ICON_BULLET]Unbegrenzte Erfahrung von barbarischen Einheiten[NEWLINE][ICON_BULLET]Siege gegen Barbaren tragen zur Geburt großer Generäle bei</German>
 	</TEXT>
 
 </Civ4GameText>

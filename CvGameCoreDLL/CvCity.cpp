@@ -4171,13 +4171,13 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
-		//Leoreth: Indian UP (+1 food for artists, scientists, merchants, priests)
-		if (getOwner() == (PlayerTypes)INDIA && (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_PRIEST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_ARTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SCIENTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_MERCHANT")) && iI == 0) // food
+		//Leoreth: Indian UP (+1 food for artists, scientists, merchants, priests) -- deprecated
+		/*if (getOwner() == (PlayerTypes)INDIA && (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_PRIEST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_ARTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SCIENTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_MERCHANT")) && iI == 0) // food
 		{
 			changeBaseYieldRate(((YieldTypes)iI), ((GC.getSpecialistInfo(eSpecialist).getYieldChange(iI)+1) * iChange));
-		}else{
+		}else{*/
 			changeBaseYieldRate(((YieldTypes)iI), (GC.getSpecialistInfo(eSpecialist).getYieldChange(iI) * iChange));
-		}
+		//}
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -4768,6 +4768,16 @@ int CvCity::goodHealth() const
 	if (iHealth > 0)
 	{
 		iTotalHealth += iHealth;
+	}
+
+	//Leoreth: Indian UP: +1 health per specialist
+	if (getOwner() == INDIA)
+	{
+		iHealth = getSpecialistPopulation();
+		if (iHealth > 0)
+		{
+			iTotalHealth += iHealth;
+		}
 	}
 
 	return iTotalHealth;
@@ -8223,6 +8233,11 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 			iModifier += getPeaceTradeModifier(pOtherCity->getTeam());
 		}
 	}
+
+	//Leoreth: Porcelain Tower effect
+	for (int iI; iI < NUM_MAJOR_PLAYERS; iI++)
+		if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM(getOwner()).isOpenBorders((TeamTypes)iI))
+			iModifier += 20;
 
 	return iModifier;
 }

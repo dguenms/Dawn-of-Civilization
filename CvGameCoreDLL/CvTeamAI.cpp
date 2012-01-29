@@ -1516,6 +1516,15 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 		{
 			return DENIAL_TECH_MONOPOLY;
 		}
+
+		// Leoreth: stop China from trading away techs it has monopoly on to make its UP less powerful
+		if (iKnownCount <= 1)
+		{
+			if (getID() == CHINA)
+				return DENIAL_TECH_MONOPOLY;
+			if (eTeam == CHINA)
+				return NO_DENIAL;
+		}
 	}
 
 	for (iI = 0; iI < GC.getNumUnitInfos(); iI++)

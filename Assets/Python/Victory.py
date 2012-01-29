@@ -385,11 +385,11 @@ class Victory:
         def setNewWorld( self, i, iNewValue ):
                 sd.scriptDict['lNewWorld'][i] = iNewValue
 
-	#def getChineseGoldenAgeTurns( self ):
-	#	return sd.scriptDict['iChineseGoldenAges']
+	def getChineseGoldenAgeTurns( self ):
+		return sd.scriptDict['iChineseGoldenAges']
 
-	#def increaseChineseGoldenAgeTurns( self ):
-	#	sd.scriptDict['iChineseGoldenAges'] += 1
+	def increaseChineseGoldenAgeTurns( self ):
+		sd.scriptDict['iChineseGoldenAges'] += 1
 
 	def getItalianTechs(self, i):
 		return sd.scriptDict['lItalianTechs'][i]
@@ -649,21 +649,21 @@ class Victory:
                                                 self.setGoal(iChina, 0, 0)
 
 				# Leoreth - new condition: have 4 golden ages until 1850 AD
-                                #if (iGameTurn == getTurnForYear(1850)):      
-                                #        if (self.getGoal(iChina, 1) == -1):
-                                #                self.setGoal(iChina, 1, 0)
-
-                                if (iGameTurn == getTurnForYear(1600)):
-                                        if (pChina.getNumUnits() >= 100):
-                                                self.setGoal(iChina, 2, 1)
-                                        else:
+                                if (iGameTurn == getTurnForYear(1800)):      
+                                        if (self.getGoal(iChina, 1) == -1):
                                                 self.setGoal(iChina, 2, 0)
 
-				#if self.getChineseGoldenAgeTurns() >= utils.getTurns(32):
-				#	self.setGoal(iChina, 1, 1)
+                                #if (iGameTurn == getTurnForYear(1600)):
+                                #        if (pChina.getNumUnits() >= 100):
+                                #                self.setGoal(iChina, 2, 1)
+                                #        else:
+                                #                self.setGoal(iChina, 2, 0)
 
-				#if pChina.isGoldenAge():
-				#	self.increaseChineseGoldenAgeTurns()
+				if self.getChineseGoldenAgeTurns() >= utils.getTurns(32) and self.getGoal(iChina, 1) == -1:
+					self.setGoal(iChina, 2, 1)
+
+				if pChina.isGoldenAge():
+					self.increaseChineseGoldenAgeTurns()
 
 
                 elif (iPlayer == iBabylonia):
@@ -2714,8 +2714,8 @@ class Victory:
 				bPrintingPress = (self.getChineseTechs(3) == 1)
 				aHelp.append(self.getIcon(bCompass) + 'Compass ' + self.getIcon(bPaper) + 'Paper ' + self.getIcon(bGunpowder) + 'Gunpowder ' + self.getIcon(bPrintingPress) + 'Printing Press')
 			elif iGoal == 2:
-				iNumUnits = pChina.getNumUnits()
-				aHelp.append(self.getIcon(iNumUnits >= 100) + 'Number of units: ' + str(iNumUnits) + '/100')
+				iGoldenAgeTurns = self.getChineseGoldenAgeTurns()
+				aHelp.append(self.getIcon(iGoldenAgeTurns >= utils.getTurns(32)) + 'Golden Ages: ' + str(iGoldenAgeTurns / utils.getTurns(8)) + '/4')
 
 		elif iPlayer == iBabylonia:
 			if iGoal == 0:
