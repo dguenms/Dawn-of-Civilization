@@ -249,7 +249,8 @@ class Companies:
 			for iTempCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
 				if iTempCompany != iCompany and city.isHasCorporation(iTempCompany):
 					lOtherCompanies.append(iTempCompany)
-			iValue *= (4 - len(lOtherCompanies)) / 4
+			iValue *= (4 - len(lOtherCompanies))
+			iValue /= 4
 		
 		# protection for already established companies (in case of removals)
 		#if city.isHasCorporation(iCompany):
