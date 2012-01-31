@@ -1349,8 +1349,7 @@ class RFCUtils:
 					lFreePlots.append((i,j))
 
 		if iTargetCiv != -1:
-			gc.getTeam(iCiv).setAtWar(iTargetCiv, True)
-			gc.getTeam(iTargetCiv).setAtWar(iCiv, True)
+			gc.getTeam(iCiv).declareWar(iTargetCiv, True)
 
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		tPlot = lFreePlots[iRand]
@@ -1489,5 +1488,3 @@ class RFCUtils:
 					lPlotList.extend(self.testBorderPlot((x, y), iCiv, iDirection))
 
 		return lPlotList
-		
-

@@ -5886,6 +5886,12 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		return 0;
 	}
 
+	//Leoreth: English UP
+	if (getOwnerINLINE() == (PlayerTypes)ENGLAND)
+	{
+		return 0;
+	}
+
 	CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
 	if (pCapital && pCapital->area() == area())
 	{
@@ -8236,7 +8242,7 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	//Leoreth: Porcelain Tower effect
 	for (int iI; iI < NUM_MAJOR_PLAYERS; iI++)
-		if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM(getOwner()).isOpenBorders((TeamTypes)iI))
+		if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM((TeamTypes)getOwner()).isOpenBorders((TeamTypes)iI))
 			iModifier += 20;
 
 	return iModifier;

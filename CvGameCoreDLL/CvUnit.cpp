@@ -288,7 +288,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	}
 	//Rhye - end
 
-	if (GET_PLAYER(eOwner).isHasBuilding((BuildingTypes)HIMEJI))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HIMEJI) && getUnitCombatType() >= 1 && getUnitCombatType() <= 6)
 	{
 		setHasPromotion(((PromotionTypes)26), true); //citygarrison1
 		setHasPromotion(((PromotionTypes)29), true); //drill1

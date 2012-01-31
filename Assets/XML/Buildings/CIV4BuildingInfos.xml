@@ -32420,7 +32420,9 @@
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_NATIONALISM</PrereqTech>
-			<TechTypes/>
+			<TechTypes>
+				<PrereqTech>TECH_RIFLING</PrereqTech>
+			</TechTypes>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses>NONE</PrereqBonuses>
 			<ProductionTraits/>
@@ -32775,8 +32777,10 @@
 			<!-- Rhye -->
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
-			<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
-			<TechTypes/>
+			<PrereqTech>TECH_CORPORATION</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_DEMOCRACY</PrereqTech>
+			</TechTypes>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses>NONE</PrereqBonuses>
 			<ProductionTraits/>

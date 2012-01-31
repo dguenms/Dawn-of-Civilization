@@ -115,3 +115,6 @@
 # Mausoleum of Maussollos now requires Zoroastrianism
 # Independent Ankara spawns in 1000 BC
 # AI Persia now also flips Assyria and Anatolia
+# Westminster Palace now requires Corporation and Democracy
+# Brandenburg Gate now requires Nationalism and Rifling
+# Extended the English UP to include no colony maintenance
