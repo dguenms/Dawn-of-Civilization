@@ -829,7 +829,7 @@ tCoreAreasTL = (
 (20, 35), #Maya
 (64, 38), #Byzantium
 (57, 57), #Vikings
-(73, 30), #Arabia
+(67, 30), #Arabia	73,30
 (100, 32), #Khmer
 (98, 24), #Indonesia
 (49, 40), #Spain
@@ -897,7 +897,7 @@ tCoreAreasBR = (
 (23, 37), #Maya
 (74, 45), #Byzantium
 (70, 65), #Vikings
-(81, 39), #Arabia
+(80, 40), #Arabia	81,39
 (103, 36), #Khmer
 (107, 31), #Indonesia
 (55, 46), #Spain
@@ -966,7 +966,7 @@ tExceptions = (  #for RiseAndFall
 (), #Maya
 ((65,40), (66,40)), #Byzantium
 ((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
-((82, 34), (73, 40), (75, 40), (71, 36), (72, 37)),  #Arabia
+((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
 (), #Khmer
 (), #Indonesia (should probably exclude Borneo)
 (), #Spain

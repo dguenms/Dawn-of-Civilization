@@ -12410,10 +12410,10 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>TECH_MACHINERY</PrereqTech>
+			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
+				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
