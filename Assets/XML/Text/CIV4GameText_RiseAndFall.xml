@@ -183,47 +183,59 @@
 
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_0</Tag>
-		<English>It is the year 3000 BC. The kingdoms of Egypt have just been united. Drawing from the wealth of the Nile, the Egyptians set out to build monuments that will attest the glory of their dynasties for all time.</English>
+		<English>It is the year 3000 BC. The Egyptian civilization coalesces under the recent unification of the Kingdoms of Lower and Upper Egypt. The fertile banks of the Nile make Egypt one of the wealthiest regions of the world. It is time to use this wealth to build monuments and establish a culture the world has never seen before.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_1</Tag>
-		<English>It is the year 3000 BC. At the Indus valley, technological and cultural achievements lay the foundations for future Indian civilizations to develop a multitude of myths and religions and spread their spirituality all over the Indian subcontinent.</English>
+		<English>It is the year 1500 BC. After the collapse of the Harappan civilization, the Vedic Aryans reach the Indo-Gangetic plain. The following Vedic era features the development of a caste system and the Mahajanapada kingdoms, where the most important epics of Indian culture are authored, laying the foundation for the Indian religions.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_2</Tag>
-		<English>It is the year 3000 BC. The first dynasties emerge in the north of China. Within these vast and rich lands, it is apparent that this is the center of the world, and that the Chinese people are destined to rule it from there for all time.</English>
+		<English>It is the year 3000 BC. China is the easternmost region of the world where human civilization first develops. Through the dynasties of Xia, Shang and Zhou, cities develop mainly in the vicinity of the Yellow River, and the concept of a “Mandate of Heaven” is invented to legitimize the rule of the Middle Kingdom of China through the ages.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_LATE_2</Tag>
+		<English>It is the year 600 AD. After the Han Dynasty had collapsed, civil war between the Chinese kingdoms ensued. Only 11 years ago Emperor Wen of Sui managed to reunite China and reclaim the Mandate of Heaven. But the power of the Sui Dynasty is not completely consolidated, and the old challenges of China remain.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_3</Tag>
-		<English>It is the year 3000 BC. The kingdoms of Sumer and Akkad are thriving in the fertile crescent of Mesopotamia, where the city of Babylon emerges to become to greatest metropolis of its time.</English>
+		<English>It is the year 3000 BC. The fertile crescent of Mesopotamia is home of the first urbanized cultures in the history of mankind and known as the cradle of civilization. Right now, the cities of Sumer and Akkad are thriving, but with the emergence of Babylon, they are soon to be overshadowed by the greatest metropolis of its time.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_4</Tag>
-		<English>It is the year 1600 BC. Mycenaean Greeks have first reached the Greek peninsula. The constant struggle of their various city states will not stop them from spreading their culture all around the known world, by both war and philosophy.</English>
+		<English>It is the year 1600 BC. The first city states emerge on the Greek peninsula. While the division of the Greek civilization might seem as a disadvantage at first, their emphasis on independence favors the inception of new ideas in science and philosophy as well as new tactics in the art of warfare.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_5</Tag>
-		<English>It is the year 844 BC. The Achaemenids have established their rule over the Iranian plateau. With wealthy India in its east and the rich Mesopotamian lands in its west, the warlike people of Persia have vast lands to conquer on their way to become the world’s greatest empire.</English>
+		<English>It is the year 844 BC. Persia has always been home to warlike peoples, but now the Achaemenid dynasty provides them with the unifying force to form an organized empire. While the Persian plateau is not particularly wealthy, it has rich and defenseless neighbors in India in the east and Mesopotamia in the east to conquer on their way to become the world's greatest empire.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_6</Tag>
-		<English>It is the year 1200 BC. At the fringe of the Babylonian and Egyptian empires, the Phoenician city states have established themselves as independent trade nations, seeking to control the trade of the whole Mediterranean.</English>
+		<English>It is the year 1200 BC. Foreign invasions have weakened the Mesopotamian kingdoms, allowing the Phoenician city states to achieve independence. With the neighboring lands dominated by more powerful civilizations, the Phoenicians have turned their eyes to the west, seeing the opportunity to gain wealth by trade on the Mediterranean Sea.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_7</Tag>
-		<English>It is the year 753 BC. The city of Rome has just been founded. From there on, it is the intent of the Roman people, not only to bring their rule to all barbaric people on the coasts of the Mediterranean Sea, but also their culture and civilization.</English>
+		<English>It is the year 753 BC. The Latin people have just founded the city of Rome. Situated at a favorable position and governed by a superior political system, it is fated to control the whole Italian peninsula. Most of its neighboring regions in Europe are still barbaric and uncivilized. The city of Carthage is its only rival on the way to rule and civilize the whole Mediterranean.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_8</Tag>
-		<English>It is the year 525 AD. Influences from the Chinese Sui and Tang dynasties as well as the spread of Buddhism further the evolution of the Yamato polity into the Empire of Japan.</English>
+		<English>It is the year 525 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN__LATE_8</Tag>
+		<English>It is the year 600 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_9</Tag>
-		<English>It is the year 300 BC. Along the trade routes between Rome and India, the Ethiopian kingdom of Aksum is beginning to flourish. It is the fate of the Ethiopian people to withstand the influence of all outside powers, both religiously and militarily.</English>
+		<English>It is the year 295 BC. The Ethiopian highlands are exceptionally fertile due to its temperate climate, but also quite remote from other civilizations. This changes when the major trade routes between the Roman Empire and Indians shift to the Red Sea, allowing the Ethiopian kingdom of Aksum to flourish.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_10</Tag>
-		<English>It is the year 50 BC. The first Korean kingdoms emerge at the fringe of China and Manchuria.</English>
+		<English>It is the year 50 BC. The three Korean kingdoms of Silla, Baekje and Goguryeo form on the Korean peninsula, the first step of centralization of power away from their predecessor chiefdoms. The Chinese are close; Korea will have to have to adapt their more advanced organization without abandoning its own sovereignty.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_LATE_10</Tag>
+		<English>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has expanded the influence of Korean civilization into Manchuria. But now that China is reunited again, they have to be careful to protect their independence for the future.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_11</Tag>
@@ -234,68 +246,72 @@
 		<English>It is the year 330 AD. With the Roman Empire threatened by Barbarian invasions from the east, it becomes evident that the Empire cannot be governed from Rome alone. So Constantine the Great has founded Constantinopolis as a "New Rome", in hopes that the Eastern Empire will be able to withstand these incursions and eventually restore the glory of the Roman Empire.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_LATE_12</Tag>
+		<English>It is the year 600 AD. After the death of Justinian, most of his successes were unmade again. While the Lombards took Northern Italy and the Danube could be barely held against the Slavs, Byzantium was also plunged into a war against Sassanid Persia. Its victory proved Pyrrhic, and now the Empire is economically and militarily weakened.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_13</Tag>
-		<English>It is the year 551 AD. From their settlements on the coast of Norway, the first Viking raiders start out to rule the seas and settle or plunder the coasts of not only the North Sea, but also the Mediterranean Sea and even the New World.</English>
+		<English>It is the year 551 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also the Mediterranean and even the New World make good targets for either plunder of settlement.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_14</Tag>
-		<English>It is the year 622 AD. The founding of Islam unites the Arabian people under one banner, and the era of Arabian conquests has begun. Mesopotamia, Persia, Egypt and Iberia wait to be conquered and become a part of the new age of Arabian enlightenment.</English>
+		<English>It is the year 622 AD. The founding of Islam units the Arabian people under the banner of the Caliphate. Arabia's direct neighbors, the Byzantine Empire and Sassanid Persia, are weakened from their recent wars. It is the right time to expand the House of Islam into their wealthy possessions, forming a melting pot of cultures that will bring culture and science to new heights.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_15</Tag>
-		<English>It is the year 655 AD. The Khmer people found their capital at Angkor, dedicating the culture of their growing cities to the veneration of Buddhism.</English>
+		<English>It is the year 655 AD. The irregular nature of the South East Asian monsoons have so far prevented the formation of a developed civilization in the region. Not until the advanced Khmer water management techniques lead to the foundation of their capital Angkor, facilitating enormous population growth and urbanization.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_16</Tag>
-		<English>It is the year 700 AD. Benefitting from the trade at the Strait of Malacca, the Kingdom of Srivijaya emerges on the Indonesian island of Sumatra.</English>
+		<English>It is the year 700 AD. Nearly all of the trade between China and India passes the Strait of Malacca. Benefitting from its position on the nearby island of Sumatra, the Indonesian Kingdom of Srivijaya rises to become a major trading power in South East Asia.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_17</Tag>
-		<English>It is the year 718 AD. Visigoth rule over Spain has ended, and the newly founded Kingdom of Asturias intends to not only control all of Iberia, but also to discover new riches upon which they can build an empire in which the sun never sets.</English>
+		<English>It is the year 718 AD. Arabs from the Ummayad Caliphate have overrun almost all of Iberia and put an end to Visigoth rule. Now the Spanish Kingdom of Asturias is founded in the mountainous north, seeking to restore Christian control over Iberia and expand it beyond.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_18</Tag>
-		<English>It is the year 751 AD. With the coronation of Pepin from the Carolingian dynasty, a new era begins for the people of France. An era where they can prove that they are the only truly cultured civilization in the whole Christian world.</English>
+		<English>It is the year 751 AD. After the collapse of the Western Roman Empire, the Merovingian Frankish Empire became the major Christian power in Europe. With the coronation of Pepin from the Carolingian dynasty, the Franks have come another step closer to reclaim Rome's legacy and dominate Christian Europe.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_19</Tag>
-		<English>It is the year 829 AD. The first king gains overlordship over the Anglo-Saxon kingdoms of England. Their new unity is but only the first step to gain rule of the waves and bring English superiority to all lands of this world.</English>
+		<English>It is the year 829 AD. After the migration of Germanic peoples to Britain, the island has been divided between several Celtic, Norse and Anglo-Saxon kingdoms. Now the King of Wessex has been crowned Bretwalda and thus ruler of all of England. Now unified, the English people can turn their eyes from their island across the sea and gain rule of the waves.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_20</Tag>
-		<English>It is the year 843 AD. The Treaty of Verdun brought independence for the German East Frankish Kingdom. The German kings would strive for continuation of the Roman Empire, adopting the title of emperors, and so claiming superiority over all of Europe.</English>
+		<English>It is the year 843 AD. The Treaty of Verdun brings the final separation of the Frankish Empire into West and East Francia. The eastern half dominated by German peoples, and not only would its German kings break with the Romantic Frankish culture, but also claim its imperial title and the continuation of the Holy Roman Empire.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_21</Tag>
-		<English>It is the year 860 AD. The people of Russia have first adopted Christianity, making the first step towards unity. This unity will enable them to expand into the vast areas of Siberia, as well as even further frontiers.</English>
+		<English>It is the year 860 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_22</Tag>
-		<English>It is the year 1500 AD. After long wars, the Dutch people have finally reached independence from foreign domination. Now they can take the opportunity and create a spice trading empire that stretches all around the globe.</English>
+		<English>It is the year 1500 AD. Situated at the confluence of Europe's most important trade routes, the Netherlands are the most populated and wealthiest region of the continent. Far too long this wealth has gone to foreign powers, but now, after long wars, the Dutch people have finally reached independence and established a Republic.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_23</Tag>
-		<English>It is the year 989 AD. The foundation of Sankore in Timbuktu marks the rise of the Mali Empire. Known for its rich gold mines, the empire must withstand greedy barbarians and prove that it is truly the richest civilization on Earth.</English>
+		<English>It is the year 989 AD. Sub-Saharan Africa is still underdeveloped compared to the rest of the old world. But the Malinese people control rich gold mines, which has caught the attention of its northern neighbors. Defending against foreign attempts to seize its riches by force, Mali has now the opportunity to truly become the richest civilization on Earth.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_24</Tag>
-		<English>It is the year 1128 AD. Portugal has just defeated Spain and gained independence. Situated at the western end of Europe, the kingdom is in a good position to send ships to ports all over the world while entertaining a large colonial empire.</English>
+		<English>It is the year 1128 AD. Portugal has just defeated Spain and gained independence. Situated at the western end of Europe, the kingdom is in a good position to send ships to ports all over the world and control the trade of all of Europe, Africa and Asia.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_25</Tag>
-		<English>It is the year 1150 AD. Manco Capac has just founded the Kingdom of Cuzco, the first Incan kingdom. Adapted to their position in the Andes, the Inca are ready to raise the greatest native American empire of all times.</English>
+		<English>It is the year 1150 AD. Manco Capac has just founded the Kingdom of Cuzco, the first Incan kingdom. Even in the harsh environment of the Andes and lacking suitable pack animals, they set out to create an empire never seen before in America.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_26</Tag>
-		<English>It is the year 1190 AD. Temujin has just brought all Mongolian tribes under his command. With his highly disciplined troops of steppe riders, he is ready to have both Orient and Occident tremble in fear before his armies.</English>
+		<English>It is the year 1190 AD. For centuries, the peoples of the Mongolian steppe were too divided to pose an actual threat to the world. Now that Temujin has managed to unify all Mongolian tribes under his command, everything has changed, and soon both Orient and Occident will tremble in fear before his armies.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_27</Tag>
-		<English>It is the year 1195 AD. The city of Tenochtitlan has just been founded at Lake Texcoco. Building their empire upon the remnants of the Maya, the Aztecs are able to become the greatest civilization in Mesoamerica.</English>
+		<English>It is the year 1195 AD. The Aztec peoples have founded the city of Tenochtitlan at Lake Texcoco in the Valley of Mexico. Through clever use of irrigation systems, Tenochtitlan can become the largest metropolis of Mesoamerica and dominate the surrounding cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_29</Tag>
-		<English>It is the year 1280 AD. Osman I has taken the throne to form the Ottoman Empire, leading the Turks from all Anatolia to new glory. With the Bosphorus right within their grasp, they will be able to form an empire that stretches over three continents.</English>
+		<English>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_30</Tag>
@@ -303,7 +319,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_31</Tag>
-		<English>It is the year 1776 AD. Discontent with foreign domination, the people in the American colonies have risen up in revolution to found their own nation. They now must defend themselves from and even surpass the European civilizations to fulfill their manifest destiny.</English>
+		<English>It is the year 1776 AD. Discontent with foreign domination, the people in the American colonies have risen up in revolution to found their own nation. However, their young democracy is still in danger of being reclaimed by European colonial powers and has to surpass its former masters to fulfill its manifest destiny.</English>
 	</TEXT>
 
 	<TEXT>

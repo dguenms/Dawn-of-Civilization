@@ -118,3 +118,4 @@
 # Westminster Palace now requires Corporation and Democracy
 # Brandenburg Gate now requires Nationalism and Rifling
 # Extended the English UP to include no colony maintenance
+# New Dawn of Man texts (including extra 600 AD start texts if applicable)

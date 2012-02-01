@@ -290,7 +290,7 @@ class CvRFCEventHandler:
                                         	else:
                                                 	utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, -1, False)
                                         else:
-                                        	if (gc.getPlayer(iPlayer).getNumCities() > 1):
+                                        	if (gc.getPlayer(iByzantium).getNumCities() > 1):
                                         		CyInterface().addMessage(iByzantium, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
                                                 	utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, -1, True)
                                                 	utils.setStartingStabilityParameters(iByzantium)
