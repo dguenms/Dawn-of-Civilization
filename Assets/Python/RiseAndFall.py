@@ -958,7 +958,7 @@ class RiseAndFall:
                 if (gc.getPlayer(0).isPlayable()):
                         iFirstSpawn = iIndia
                 else:
-                        iFirstSpawn = iKhmer
+                        iFirstSpawn = iArabia
                 for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
                         if (iGameTurn >= getTurnForYear(con.tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(con.tBirth[iLoopCiv]) + 6):
                                 self.initBirth(iGameTurn, con.tBirth[iLoopCiv], iLoopCiv)
@@ -978,85 +978,85 @@ class RiseAndFall:
                                 utils.flipUnitsInArea(tTopLeft, tCoreAreasBR[0][iChina], iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
                                 utils.flipUnitsInArea(tTopLeft, tCoreAreasBR[0][iChina], iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 
-                if (iGameTurn == getTurnForYear(640)):          # Leoreth: moved to later (historicity, no conflict with Byzantine flip)
-                        if not gc.getPlayer(iEgypt).isPlayable():   
-                                iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iArabia, (67, 30), (80, 40))
-                                self.convertSurroundingPlotCulture(iArabia, tNormalAreasTL[0][iArabia], (80, 40))
-                                utils.flipUnitsInArea(tNormalAreasTL[0][iArabia], (80, 40), iArabia, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
-                                utils.flipUnitsInArea(tNormalAreasTL[0][iArabia], (80, 40), iArabia, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-                                utils.flipUnitsInArea(tNormalAreasTL[0][iArabia], (80, 40), iArabia, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
-                                if (iNumHumanCitiesToConvert > 0):
-                                        self.flipPopup(iArabia, (67,30), (82,40))
-                                #teamArabia.setHasTech(con.iDivineRight, True, iArabia, False, False)
+#                if (iGameTurn == getTurnForYear(640)):          # Leoreth: moved to later (historicity, no conflict with Byzantine flip)
+#                        if not gc.getPlayer(iEgypt).isPlayable():   
+#                                iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iArabia, (67, 30), (80, 40))
+#                                self.convertSurroundingPlotCulture(iArabia, tNormalAreasTL[0][iArabia], (80, 40))
+#                                utils.flipUnitsInArea(tNormalAreasTL[0][iArabia], (80, 40), iArabia, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
+#                                utils.flipUnitsInArea(tNormalAreasTL[0][iArabia], (80, 40), iArabia, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+#                                utils.flipUnitsInArea(tNormalAreasTL[0][iArabia], (80, 40), iArabia, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+#                                if (iNumHumanCitiesToConvert > 0):
+#                                        self.flipPopup(iArabia, (67,30), (82,40))
+#                                #teamArabia.setHasTech(con.iDivineRight, True, iArabia, False, False)
 
-                if (iGameTurn == getTurnForYear(650)):
-                        if not gc.getPlayer(iEgypt).isPlayable():
-                                plotBaghdad = gc.getMap().plot(77,40)
-                                plotCairo = gc.getMap().plot(69,35)
+#                if (iGameTurn == getTurnForYear(650)):
+#                        if not gc.getPlayer(iEgypt).isPlayable():
+#                                plotBaghdad = gc.getMap().plot(77,40)
+#                                plotCairo = gc.getMap().plot(69,35)
+#
+#                                Baghdad = plotBaghdad.getPlotCity()
+#                                Cairo = plotCairo.getPlotCity()
+#
+#                                bBaghdad = (plotBaghdad.getOwner() == iArabia)
+#                                bCairo = (plotCairo.getOwner() == iArabia)
+#
+#                                if (bBaghdad and bCairo):
+#                                        iRand = gc.getGame().getSorenRandNum(2, "Toss Coin")
+#
+#                                        if iRand == 0:
+#                                                if utils.getHumanID() != iArabia:
+#                                                        Baghdad.setHasRealBuilding(con.iPalace, True)
+#                                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 3)
+#                                                        utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+#                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 2)
+#                                                utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+#                                        else:
+#                                                if utils.getHumanID() != iArabia:
+#                                                        Baghdad.setHasRealBuilding(con.iPalace, True)
+#                                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
+#                                                        utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+#                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
+#                                                utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
 
-                                Baghdad = plotBaghdad.getPlotCity()
-                                Cairo = plotCairo.getPlotCity()
+#                                        utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+#                                        utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+#                                        utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
+#                                        utils.makeUnit(con.iWorker, iArabia, (69,35), 1)
 
-                                bBaghdad = (plotBaghdad.getOwner() == iArabia)
-                                bCairo = (plotCairo.getOwner() == iArabia)
+#                                elif (bBaghdad and not bCairo):
+#                                        if utils.getHumanID() != iArabia:
+#                                                Baghdad.setHasRealBuilding(con.iPalace, True)
+#                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 3)
+#                                                utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+#                                        utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+#                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 2)
+#                                        utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)#
+#
+#                                        utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+#                                        utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
+#                                        utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
 
-                                if (bBaghdad and bCairo):
-                                        iRand = gc.getGame().getSorenRandNum(2, "Toss Coin")
+#                                elif (not bBaghdad and bCairo):
+#                                        if utils.getHumanID() != iArabia:
+#                                                #Cairo.setHasRealBuilding(con.iPalace, True)
+#                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
+#                                                utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+#                                        utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+#                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
+#                                        utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
 
-                                        if iRand == 0:
-                                                if utils.getHumanID() != iArabia:
-                                                        Baghdad.setHasRealBuilding(con.iPalace, True)
-                                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 3)
-                                                        utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
-                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 2)
-                                                utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
-                                        else:
-                                                if utils.getHumanID() != iArabia:
-                                                        Baghdad.setHasRealBuilding(con.iPalace, True)
-                                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
-                                                        utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
-                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
-                                                utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+#                                        utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+#                                        utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
+#                                        utils.makeUnit(con.iWorker, iArabia, (69,35), 1)
 
-                                        utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
-                                        utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
-                                        utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
-                                        utils.makeUnit(con.iWorker, iArabia, (69,35), 1)
-
-                                elif (bBaghdad and not bCairo):
-                                        if utils.getHumanID() != iArabia:
-                                                Baghdad.setHasRealBuilding(con.iPalace, True)
-                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 3)
-                                                utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
-                                        utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
-                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 2)
-                                        utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
-
-                                        utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
-                                        utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
-                                        utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
-
-                                elif (not bBaghdad and bCairo):
-                                        if utils.getHumanID() != iArabia:
-                                                #Cairo.setHasRealBuilding(con.iPalace, True)
-                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
-                                                utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
-                                        utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
-                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
-                                        utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
-
-                                        utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
-                                        utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
-                                        utils.makeUnit(con.iWorker, iArabia, (69,35), 1)
-
-                                else:
-                                        utils.makeUnit(con.iSettler, iArabia, (75,33), 2)
-                                        utils.makeUnit(con.iWorker, iArabia, (75,33), 2)
-                                        if utils.getHumanID() != iArabia:
-                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 3)
-                                                utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
-                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 2)
-                                        utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
+#                                else:
+#                                        utils.makeUnit(con.iSettler, iArabia, (75,33), 2)
+#                                        utils.makeUnit(con.iWorker, iArabia, (75,33), 2)
+#                                        if utils.getHumanID() != iArabia:
+#                                                utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 3)
+#                                                utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
+#                                        utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 2)
+#                                        utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
 
                 #if (iGameTurn <= getTurnForYear(1100) and not gc.getPlayer(iEgypt).isPlayable()):       # keep independent culture away from southern italy to help Byzantium settle there
                 #        for x in range(41, 45):
@@ -2527,7 +2527,11 @@ class RiseAndFall:
                         self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-                        utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ   
+                        utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+
+			if iCiv == iArabia:
+				self.arabianSpawn()
+   
                         print ("utils.flipUnitsInArea()") 
                         #cover plots revealed by the lion
                         plotZero = gc.getMap().plot( 0, 0 )                        
@@ -3732,10 +3736,10 @@ class RiseAndFall:
                                 pVikings.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)           
                                 pVikings.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)        
                 if (iCiv == iArabia):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
-                        utils.makeUnit(con.iLongbowman, iCiv, tPlot, 4)
-                        utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iArabiaCamelarcher, iCiv, tPlot, 5)                
+                        utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+                        utils.makeUnit(con.iArabiaCamelarcher, iCiv, tPlot, 2)
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 1)             
                 if (iCiv == iKhmer):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
@@ -5158,5 +5162,76 @@ class RiseAndFall:
                                         utils.setStability(iLoop, utils.getStability(iLoop)-3)
                         if (bHuman):
                                 utils.setStabilityParameters(con.iParDiplomacyE, utils.getStabilityParameters(con.iParDiplomacyE)-3)
+
+	def arabianSpawn(self):
+        	plotBaghdad = gc.getMap().plot(77,40)
+                plotCairo = gc.getMap().plot(69,35)
+                Baghdad = plotBaghdad.getPlotCity()
+                Cairo = plotCairo.getPlotCity()
+
+                bBaghdad = (plotBaghdad.getOwner() == iArabia)
+                bCairo = (plotCairo.getOwner() == iArabia)
+
+                if (bBaghdad and bCairo):
+                	iRand = gc.getGame().getSorenRandNum(2, "Toss Coin")
+
+                        if iRand == 0:
+				if utils.getHumanID() != iArabia:
+					Baghdad.setHasRealBuilding(con.iPalace, True)
+					utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 3)
+					utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+				utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 2)
+				utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+                        else:
+				if utils.getHumanID() != iArabia:
+					Baghdad.setHasRealBuilding(con.iPalace, True)
+					utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
+					utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+				utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
+				utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+
+			utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+			utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+			utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
+			utils.makeUnit(con.iWorker, iArabia, (69,35), 1)
+
+		elif (bBaghdad and not bCairo):
+			if utils.getHumanID() != iArabia:
+				Baghdad.setHasRealBuilding(con.iPalace, True)
+				utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 3)
+				utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)
+			utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+			utils.makeUnit(con.iArabiaCamelarcher, iArabia, (77,40), 2)
+			utils.makeUnit(con.iSwordsman, iArabia, (77,40), 2)#
+
+			utils.makeUnit(con.iSettler, iArabia, (77,40), 1)
+			utils.makeUnit(con.iWorker, iArabia, (77,40), 1)
+			utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
+
+		elif (not bBaghdad and bCairo):
+			if utils.getHumanID() != iArabia:
+				#Cairo.setHasRealBuilding(con.iPalace, True)
+				utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 3)
+				utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+			utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+			utils.makeUnit(con.iArabiaCamelarcher, iArabia, (69,35), 2)
+			utils.makeUnit(con.iSwordsman, iArabia, (69,35), 2)
+
+			utils.makeUnit(con.iSettler, iArabia, (69,35), 1)
+			utils.makeUnit(con.iWorker, iArabia, (75,33), 1)
+			utils.makeUnit(con.iWorker, iArabia, (69,35), 1)
+
+		else:
+			utils.makeUnit(con.iSettler, iArabia, (75,33), 2)
+			utils.makeUnit(con.iWorker, iArabia, (75,33), 2)
+			if utils.getHumanID() != iArabia:
+				utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 3)
+				utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
+			utils.makeUnit(con.iArabiaCamelarcher, iArabia, (75,33), 2)
+			utils.makeUnit(con.iSwordsman, iArabia, (75,33), 2)
+
+		if utils.getHumanID() != iArabia and bBaghdad:
+			utils.makeUnit(con.iSpearman, iArabia, (77, 40), 2)
+		
 
 

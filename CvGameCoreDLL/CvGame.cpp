@@ -2239,9 +2239,9 @@ void CvGame::update()
 		case VIKING:
 			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 				break;
-		case ARABIA:
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-				break;
+		//case ARABIA:
+			//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+				//break;
 		case INDIA:
 			//break;
 		case GREECE:
@@ -2256,6 +2256,7 @@ void CvGame::update()
 		case BYZANTIUM:
             if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 				break;
+		case ARABIA:
 		case KHMER:
 		case INDONESIA:
 		case SPAIN:

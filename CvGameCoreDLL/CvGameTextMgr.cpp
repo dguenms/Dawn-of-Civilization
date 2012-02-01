@@ -8764,6 +8764,7 @@ void CvGameTextMgr::setGoodHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
+		//Leoreth: Indian UP
 		if (city.getOwner() == INDIA)
 		{
 			iHealth = city.getSpecialistPopulation();

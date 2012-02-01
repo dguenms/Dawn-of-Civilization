@@ -393,9 +393,12 @@ class Stability:
                                 #iEconomy /= 7
                                 iEconomy /= 2
 
-                        if (iPlayer == con.iEgypt or iPlayer == con.iMali or iPlayer == con.iEthiopia or iPlayer == con.iIndia): #counterbalance the flood plains
+                        if (iPlayer == con.iEgypt or iPlayer == con.iMali or iPlayer == con.iEthiopia): #counterbalance the flood plains
                                 iAgriculture *= 7 #3
                                 iAgriculture /= 10 #5
+			elif iPlayer == con.iIndia:
+				iAgriculture *= 6
+				iAgriculture /= 10
 
                 else:   #every 3 turns
                         iNewBaseStability = 0
