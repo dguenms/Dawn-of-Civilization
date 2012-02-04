@@ -46587,7 +46587,7 @@
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
 			<Type>LEADER_ALP</Type>
-			<Description>TXT_KEY_LEADER_BARBARIAN</Description>
+			<Description>Alp Arslan</Description>
 			<Civilopedia>TXT_KEY_LEADER_BARBARIAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_BARBARIAN</ArtDefineTag>
 			<iWonderConstructRand>20</iWonderConstructRand>
