@@ -1349,7 +1349,7 @@ class RFCUtils:
 					lFreePlots.append((i,j))
 
 		if iTargetCiv != -1:
-			gc.getTeam(iCiv).declareWar(iTargetCiv, True)
+			gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_TOTAL)
 
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		tPlot = lFreePlots[iRand]
@@ -1486,5 +1486,10 @@ class RFCUtils:
 			for y in range(68):
 				if gc.getMap().plot(x, y).getOwner() == iCiv:
 					lPlotList.extend(self.testBorderPlot((x, y), iCiv, iDirection))
+
+		# exclude Mediterranean islands
+		for tPlot in [(68, 39), (69, 39), (71, 40)]:
+			if tPlot in lPlotList:
+				lPlotList.remove(tPlot)
 
 		return lPlotList
