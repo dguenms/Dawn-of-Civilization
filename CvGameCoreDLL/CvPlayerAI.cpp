@@ -5756,7 +5756,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									break;
 								case MUGHALS:
-									if (iI == RIFLING || iI == LIBERALISM)
+									if (iI == RIFLING || iI == LIBERALISM || iI == MILITARY_TRADITION || iI == ASTRONOMY)
 										iValue /= 3;
 									break;
 								case PORTUGAL:

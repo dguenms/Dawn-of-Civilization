@@ -33,6 +33,7 @@ INTERFACE
 # "be first to discover" goals now immediately fail when someone beats you to one of its techs
 # Disabled the "tributary" vassal names with the industrial era
 # Extended and streamlined the Dawn of Man texts, there are now extra versions for the 600 AD scenario
+# Added hints and civililopedia texts for some of DoC's features
 
 
 GRAPHICS
@@ -209,6 +210,7 @@ RELIGION
 # Zoroastrianism stops to spread on its own after 1000 AD
 # Buddhism is founded by building a Hindu temple instead of discovering a tech
 # Varanasi founds Hinduism ~2000 BC unless the player controls India
+# Related religions like Hinduism and Buddhism or Confucianism and Taoism create smaller diplomacy penalties
 
 
 CIVICS

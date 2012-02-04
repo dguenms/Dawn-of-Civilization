@@ -59,6 +59,31 @@
 			<Description>TXT_KEY_CONCEPT_ODDS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_ODDS_PEDIA</Civilopedia>
 		</ConceptInfo>
-		<!-- Rhye - end -->
+		<!-- Rhye - end -->		
+		<ConceptInfo>
+			<Type>CONCEPT_REFORMATION</Type>
+			<Description>TXT_KEY_CONCEPT_REFORMATION</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_REFORMATION_PEDIA</Civilopedia>
+		</ConceptInfo>		
+		<ConceptInfo>
+			<Type>CONCEPT_TRADING_COMPANY_CONQUERORS</Type>
+			<Description>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS_PEDIA</Civilopedia>
+		</ConceptInfo>		
+		<ConceptInfo>
+			<Type>CONCEPT_NEW_CORPORATIONS</Type>
+			<Description>TXT_KEY_CONCEPT_NEW_CORPORATIONS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_NEW_CORPORATIONS_PEDIA</Civilopedia>
+		</ConceptInfo>		
+		<ConceptInfo>
+			<Type>CONCEPT_RESPAWNS</Type>
+			<Description>TXT_KEY_CONCEPT_RESPAWNS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_RESPAWNS_PEDIA</Civilopedia>
+		</ConceptInfo>		
+		<ConceptInfo>
+			<Type>CONCEPT_DOC_ODDS</Type>
+			<Description>TXT_KEY_CONCEPT_DOC_ODDS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_DOC_ODDS_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>
