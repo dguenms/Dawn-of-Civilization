@@ -38,9 +38,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND2</Tag>
-		<English>Specialists create one extra [ICON_HEALTH]</English>
+		<English>Specialists create one extra [ICON_HEALTHY]</English>
 		<French>Pas d'anarchie lors des révolutions</French>
-		<German>Spezialisten erzeugen eine zusätzliche Einheit [ICON_HEALTH]</German>
+		<German>Spezialisten erzeugen eine zusätzliche Einheit [ICON_HEALTHY]</German>
 		<Italian>Niente anarchia durante le rivoluzioni</Italian>
 		<Spanish>No hay anarqu&#237;a por las revoluciones</Spanish>
 	</TEXT>
