@@ -21,11 +21,11 @@ GAME MECHANICS
   (basically the "favourite civic" feature per civ and per era)
 # added a war on spawn between Turkey and Arabia
 # doubled the chance of war on spawn between Arabia and Egypt
-# removed continent boundaries to help the AI
 # some civilizations (Arabia, Mongolia, Turkey) fight their initial spawn wars longer
 # conqueror events automatically trigger war
 # AI conquerors now made to attack native cities immediately
 # civilizations cannot be vassals of too far away civs until the discovery of Astronomy
+# you need to discover Astronomy to train settlers on other continents than your capital's
 # Fascist names now also with (Autocracy or Totalitarism) and no Parliament
 # New total wars on spawn: Rome on Greece, Persia on Babylonia and Phoenicia
 # Implemented the "birth in capital" mechanics, where certain civilization flip the city on their spawn plot on spawn (currently only used for Byzantium)
@@ -394,6 +394,7 @@ RELIGION
 # Zoroastrianism stops to spread on its own after 1000 AD
 # Buddhism is founded by building a Hindu temple instead of discovering a tech
 # Varanasi founds Hinduism ~2000 BC unless the player controls India
+# Related religions like Hinduism and Buddhism or Confucianism and Taoism create smaller diplomacy penalties
 
 
 CIVICS

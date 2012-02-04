@@ -200,4 +200,61 @@
 - Como consecuencia de los sucesos programados, solo existe una velocidad.
 - Tus primeros combates contra b&#225;rbaros ser&#225;n victorias seguras. &#161;No los desperdicies con animales!</Spanish>
 	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_REFORMATION</Tag>
+		<English>Reformation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_REFORMATION_PEDIA</Tag>
+		<English>[H1]Reformation[\H1][PARAGRAPH:2]The Protestant religion is not founded like the other religions. Instead, the discovery of Printing Press by a civilization with Catholic state religion triggers the Reformation. All Catholic civilizations then have to decide if they want to convert to Protestantism and gain additional gold from the dissolution of monasteries, foregoing the benefits of the Apostolic Palace. When a civilization decides to convert, all of its cities immediately change their religion to Protestantism. Large cities also have a chance of keeping Catholicism or gaining Protestantism regardless of your decision.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS</Tag>
+		<English>Trading Companies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS_PEDIA</Tag>
+		<English>[H1]Trading Companies[\H1][PARAGRAPH:2]If you are either Portugal, Spain, France, England or the Netherlands, building the Trading Company triggers an event that gives you the opportunity to expand your colonial empire into South Asia. The event selects a number of target cities and gives you the choice to either attempt to acquire them by investing money or raising an army. In case of the former, the owning civ can decline your gold offer, which means the gold is lost. In case of the latter, you lose population and happiness in your capital (similar to drafting), armies appear close to the target cities and you enter war with their owners. If the target areas are empty, you get a settler there instead. AI civilizations get the same opportunity by discovering Economics, without building a Trading Company.[PARAGRAPH:2]The target areas of each civilization are as follows:
+Portugal: three cities out of Muscat, Goa, Cochin, Malacca and Canton
+Spain: always Manila
+France: one city in South India
+England: three cities in India
+Netherlands: three cities in Indonesia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_NEW_CORPORATIONS</Tag>
+		<English>Corporations in DoC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_NEW_CORPORATIONS_PEDIA</Tag>
+		<English>[H1]Corporations in Dawn of Civilization[\H1][PARAGRAPH:2]Corporation headquarters and executives have been removed in Dawn of Civilization. Instead, corporations spread on their own to cities that can attract them. To be able to attract a corporation, you need to have the associated technology and control at least one of the consumed resources. The chance increases by acquiring more resources, constructing appropriate buildings or adopting the Free Market civic. The number of cities per corporation is limited, so corporations can also leave one cities and move to another that fulfills its requirements better. Certain corporations also compete with each other, reducing the chance of being present in the same city.[PARAGRAPH:2]The Silk Route and Trading Company corporations behave differently from the others. They don't require the Corporation technology to spread to your cities, but are limited to certain historical regions of the map. Also, they expire after a certain date and start to leave your cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RESPAWNS</Tag>
+		<English>Respawns in DoC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RESPAWNS_PEDIA</Tag>
+		<English>[H1]Rebirths and Resurrections in Dawn of Civilization[\H1][PARAGRAPH:2]There are different mechanics for collapsed civilizations to return into the game. Resurrection refers to the rules already present in vanilla RFC that allow a civilization to return if its core is controlled by independents or an unstable civilization. This effect is limited to certain periods in Dawn of Civilization, to prevent ahistorical respawns of ancient and classical civs. Also, it's not necessary to discover Nationalism to enable this mechanism, although it increases the probability of resurrections. This means that you will see them occuring earlier in the game.[PARAGRAPH:2]Dawn of Civilization also adds another mechanic that is referred to as rebirths. These are scripted and return a specific dead civ at specific dates, if certain conditions are met. Also, the faction now represents a completely new civilization with UU, UB, UP and UHV. Players can take control of these civilizations and complete their victory goals by switching to them, even if they have switched once already. Currently, this mechanic covers the rebirth of Rome as Italy and Persia as Iran.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_DOC_ODDS</Tag>
+		<English>Odds and Ends in DoC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_DOC_ODDS_PEDIA</Tag>
+		<English>[H1]Odds and Ends: Dawn of Civilization[\H1][PARAGRAPH:2]
+- The plague can't kill units anymore
+- AI civilizations become more unstable if they survive ahistorically long
+- The American conqueror event automatically leads to war
+- It's impossible to vassalize far away civilizations until the discovery of Astronomy
+- It's impossible to train settlers on other continents than your capital's until the discovery of Astronomy
+- AI Mongols get additional armies to attack Russia and the Middle East
+- Pagan Temples can only be built in cities without religions
+- Religion spread to a city turns Pagan Temples into temples of the new religion
+- Free tech events like Liberalism or Oracle only allow to choose techs from your current or earlier eras
+- The Seljuks attack the Middle East in the 12th century
+- Buddhism is founded by building a Hindu Temple</English>
+	</TEXT>	
 </Civ4GameText>

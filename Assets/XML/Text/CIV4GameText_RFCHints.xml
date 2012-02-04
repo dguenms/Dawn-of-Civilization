@@ -365,4 +365,88 @@
 		<Italian>Non dire &quot;gatto&quot; se non ce l'hai nel sacco. (G.Trapattoni)</Italian>
 		<Spanish>No hay que vender la piel del oso antes de haberlo cazado.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_1</Tag>
+		<English>AI Mongols receive additional armies to attack Russia and the Middle East. Be prepared!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_2</Tag>
+		<English>In Dawn of Civilization, several civilizations like Byzantium, Italy and Thailand have conditional spawns, and don't appear in every game.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_3</Tag>
+		<English>Several AI civilizations flip larger areas on spawn to help them along.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_4</Tag>
+		<English>In Dawn of Civiliaztion, free technology effects like Liberalism or the Oracle only allow you to choose technologies of your current or earlier eras.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_5</Tag>
+		<English>If you're playing as a Western European civilization, build a Trading Company to expand to South Asia.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_6</Tag>
+		<English>Pagan Temples cannot be built in cities that have a religion, and spreading religions replace Pagan Temples with their own.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_7</Tag>
+		<English>In Dawn of Civilization, Nationalism is not necessary for resurrection of civilizations, but they can only happen in historically appropriate periods.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_8</Tag>
+		<English>You need to discover Astronomy before you can vassalize far away civilizations.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_9</Tag>
+		<English>You need to discover Astronomy before you can train settlers on other continents than your capital's.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_10</Tag>
+		<English>In Dawn of Civilization, units cannot be killed by the plague, only weakened.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_11</Tag>
+		<English>To play as Italy, play another civilization until they spawn in the 12th century, then take control of them. You can even switch if you have done that already.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_12</Tag>
+		<English>The Seljuks appear in the Middle East in the 11th century. Be prepared!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_13</Tag>
+		<English>Adopt the Vassalage civic to gain access to Levies, Knights and Castles.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_14</Tag>
+		<English>Adopt the Pantheon civic to gain access to Classical wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_15</Tag>
+		<English>Related religions like Hinduism and Buddhism or Confucianism and Taoism create smaller diplomacy penalties</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_16</Tag>
+		<English>Corporation headquarters and executives have been removed, corporations spread on their own if the prerequisites are met.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_17</Tag>
+		<English>The Silk Route and Trading Company corporations can only spread in historically accurate regions.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_18</Tag>
+		<English>To attract corporations, acquire more of its resources, build associated buildings, or adopt the Free Market civic.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_19</Tag>
+		<English>In Dawn of Civilization, many wonders have religion or civic prerequisites to encourage their historical distribution.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_20</Tag>
+		<English>Buddhism cannot be founded by discovering a technology anymore. Build a Hindu temple to found it instead.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_21</Tag>
+		<English>Researching Printing Press as a Catholic civilization starts the Reformation, forcing all Catholic civilizations to decide whether to convert to Protestantism.</English>
+	</TEXT>
 </Civ4GameText>
