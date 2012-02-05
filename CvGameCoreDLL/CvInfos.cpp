@@ -10411,13 +10411,17 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 
 	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 1)
 	{
-		if (pl == CHINA)
-			iFinalResearchPercent = researchPercent * 102 / 100;
+		//if (pl == CHINA)
+		//	iFinalResearchPercent = researchPercent * 102 / 100;
 		if (pl == BABYLONIA)
 			iFinalResearchPercent = researchPercent * 140 / 100;
 		if (pl == MAYA)												// Maya UP
 			iFinalResearchPercent = researchPercent * 65 / 100;
 	}
+
+	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() > 2)
+		if (pl == CHINA)
+			iFinalResearchPercent = researchPercent * 132 / 100;
 
 	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)
 	{
