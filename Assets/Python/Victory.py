@@ -659,7 +659,7 @@ class Victory:
                                 #        else:
                                 #                self.setGoal(iChina, 2, 0)
 
-				if self.getChineseGoldenAgeTurns() >= utils.getTurns(32) and self.getGoal(iChina, 1) == -1:
+				if self.getChineseGoldenAgeTurns() >= utils.getTurns(32) and self.getGoal(iChina, 2) == -1:
 					self.setGoal(iChina, 2, 1)
 
 				if pChina.isGoldenAge():
