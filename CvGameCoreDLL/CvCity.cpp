@@ -7809,8 +7809,8 @@ CultureLevelTypes CvCity::getCultureLevel() const
 	//Leoreth: cap at two for minors
 	if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2 || getOwnerINLINE() == SELJUKS)
 		return std::min(m_eCultureLevel, (CultureLevelTypes)2);
-	else
-		return std::min(m_eCultureLevel, (CultureLevelTypes)3);
+
+	return m_eCultureLevel;
 }
 
 
@@ -8239,7 +8239,7 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 	}
 
 	//Leoreth: Porcelain Tower effect
-	for (int iI; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 		if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM((TeamTypes)getOwner()).isOpenBorders((TeamTypes)iI))
 			iModifier += 20;
 
