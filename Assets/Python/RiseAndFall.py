@@ -4046,11 +4046,11 @@ class RiseAndFall:
                         #utils.makeUnit(con.iArcher, iVikings, tSeaPlot, 1)
                         
                         
-                utils.makeUnit(con.iSettler, iArabia, tCapitals[0][iArabia], 1)
-                utils.makeUnit(con.iArcher, iArabia, tCapitals[0][iArabia], 3)
+                #utils.makeUnit(con.iSettler, iArabia, tCapitals[0][iArabia], 1)
+                #utils.makeUnit(con.iArcher, iArabia, tCapitals[0][iArabia], 3)
                 #utils.makeUnit(con.iSwordsman, iArabia, tCapitals[0][iArabia], 2)
-                utils.makeUnit(con.iArabiaCamelarcher, iArabia, tCapitals[0][iArabia], 2)
-                utils.makeUnit(con.iWorker, iArabia, tCapitals[0][iArabia], 1)
+                #utils.makeUnit(con.iArabiaCamelarcher, iArabia, tCapitals[0][iArabia], 2)
+                #utils.makeUnit(con.iWorker, iArabia, tCapitals[0][iArabia], 1)
 
                 utils.makeUnit(con.iSpearman, iByzantium, tCapitals[0][iByzantium], 2)
                 utils.makeUnit(con.iArcher, iByzantium, tCapitals[0][iByzantium], 3)
@@ -4068,6 +4068,9 @@ class RiseAndFall:
 		if utils.getHumanID() != iKorea:
 			utils.makeUnit(con.iMaceman, iKorea, tCapitals[0][iKorea], 2)
 
+		if pArabia.isHuman():
+			utils.makeUnit(iSettler, iArabia, tCapitals[0][iArabia], 1)
+			utils.makeUnit(iWarrior, iArabia, tCapitals[0][iArabia], 1)
                 if ( pKhmer.isHuman() ):
                     utils.makeUnit(iSettler, iKhmer, tCapitals[0][iKhmer], 1)
                     utils.makeUnit(iWarrior, iKhmer, tCapitals[0][iKhmer], 1)
