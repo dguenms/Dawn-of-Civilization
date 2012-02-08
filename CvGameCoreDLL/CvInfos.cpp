@@ -10421,7 +10421,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 
 	if (pl == CHINA)
 	{
-		iFinalResearchPercent = researchPercent * (researchModifier[pl] + std::min(GET_PLAYER((PlayerTypes)pl).getCurrentEra() - 1, 4) * 10) / 100;
+		iFinalResearchPercent = researchPercent * (researchModifier[pl] + std::min(GET_PLAYER((PlayerTypes)pl).getCurrentEra() - 1, 3) * 10) / 100;
 	}
 
 	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)
