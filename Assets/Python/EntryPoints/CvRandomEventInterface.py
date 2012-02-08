@@ -14,6 +14,7 @@ from CvPythonExtensions import *
 
 import Consts as con #Rhye
 import RFCUtils #Leoreth
+from CityNameManager import tCityMap
 from StoredData import sd
 
 gc = CyGlobalContext()
@@ -4332,9 +4333,10 @@ def getTradingCompanyConquerors1HelpText(argsList):
 
 	for tPlot in targetList:
 		x, y = tPlot
-		iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-		if not iTargetCiv in targetCivList:
-			targetCivList.append(iTargetCiv)
+		if gc.getMap().plot(x, y).isCity():
+			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
+			if not iTargetCiv in targetCivList:
+				targetCivList.append(iTargetCiv)
 
 	if len(targetCivList) > 0:
 		for iCiv in targetCivList:
@@ -4377,9 +4379,15 @@ def doTradingCompanyConquerors1(argsList):
 
 	for tPlot in targetList:
 		x, y = tPlot
-		iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-		if not iTargetCiv in targetCivList:
-			targetCivList.append(iTargetCiv)
+		if gc.getMap().plot(x, y).isCity():
+			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
+			if not iTargetCiv in targetCivList:
+				targetCivList.append(iTargetCiv)
+
+	if len(targetCivList) == 0:
+		for tPlot in targetList:
+			x, y = tPlot
+			utils.colonialAcquisition(iPlayer, x, y)
 	
 	for iTargetCiv in targetCivList:
 		iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
@@ -4432,9 +4440,13 @@ def getTradingCompanyConquerors2HelpText(argsList):
 
 	for tPlot in targetList:
 		x, y = tPlot
-		iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-		if not iTargetCiv in targetCivList:
-			targetCivList.append(iTargetCiv)
+		if gc.getMap().plot(x, y).isCity():
+			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
+			if not iTargetCiv in targetCivList:
+				targetCivList.append(iTargetCiv)
+
+	if len(targetCivList) == 0:
+		return 'There are no cities that your armies could conquer.'
 
 	for iCiv in targetCivList:
 		if targetCivList.index(iCiv) != 0:

@@ -435,23 +435,24 @@ class RiseAndFall:
                 humanCityList = []
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
-                                pCurrent = gc.getMap().plot( x, y )
-                                if ( pCurrent.isCity()):
-                                        city = pCurrent.getPlotCity()
-                                        if (city.getOwner() == iHuman):
-                                                #if (not city.isCapital()): #exploitable
-                                                if (not (x == tCapitals[utils.getReborn(iHuman)][iHuman] and y == tCapitals[utils.getReborn(iHuman)][iHuman]) and not (self.getCheatMode() == True and pCurrent.getPlotCity().isCapital())):
-                                                        humanCityList.append(city)
+				if not (x,y) in tExceptions[utils.getReborn(iNewCivFlip)][iNewCivFlip]:
+	                                pCurrent = gc.getMap().plot( x, y )
+        	                        if ( pCurrent.isCity()):
+                	                        city = pCurrent.getPlotCity()
+                        	                if (city.getOwner() == iHuman):
+                                	                #if (not city.isCapital()): #exploitable
+                                        	        if (not (x == tCapitals[utils.getReborn(iHuman)][iHuman] and y == tCapitals[utils.getReborn(iHuman)][iHuman]) and not (self.getCheatMode() == True and pCurrent.getPlotCity().isCapital())):
+                                                	        humanCityList.append(city)
                 #exceptions
-                reborn = utils.getReborn(iNewCivFlip)
-                if (len(tExceptions[reborn][iNewCivFlip])):
-                        for j in range(len(tExceptions[reborn][self.getNewCivFlip()])):
-                                pCurrent = gc.getMap().plot( tExceptions[reborn][iNewCivFlip][j][0], tExceptions[reborn][iNewCivFlip][j][1] )
-                                if (pCurrent.isCity()):
-                                        city = pCurrent.getPlotCity()
-                                        if (city.getOwner() == iHuman):
-                                                if (not city.isCapital()):
-                                                        humanCityList.append(city)
+                #reborn = utils.getReborn(iNewCivFlip)
+                #if (len(tExceptions[reborn][iNewCivFlip])):
+                #        for j in range(len(tExceptions[reborn][self.getNewCivFlip()])):
+                #                pCurrent = gc.getMap().plot( tExceptions[reborn][iNewCivFlip][j][0], tExceptions[reborn][iNewCivFlip][j][1] )
+                #                if (pCurrent.isCity()):
+                #                        city = pCurrent.getPlotCity()
+                #                        if (city.getOwner() == iHuman):
+                #                                if (not city.isCapital()):
+                #                                        humanCityList.append(city)
                 
                 if( popupReturn.getButtonClicked() == 0 ): # 1st button
                         print ("Flip agreed")
@@ -1992,6 +1993,11 @@ class RiseAndFall:
                                 utils.setPlagueCountdown(iDeadCiv, -10)
                                 utils.clearPlague(iDeadCiv)                                
                                 self.convertBackCulture(iDeadCiv)
+
+				# Leoreth: switch to resurrected civs
+				if not self.getAlreadySwitched():
+					self.newCivPopup(iDeadCiv)
+
                                 return
 
         def moveBackCapital(self, iCiv):
@@ -2338,7 +2344,7 @@ class RiseAndFall:
                         for y in range(con.tBroaderAreasTL[reborn][iCiv][1], con.tBroaderAreasBR[reborn][iCiv][1]+1):
                                 gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
                         
-                if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and (iHuman+tDifference[iHuman] < iCiv or utils.getReborn(iCiv) == 1):
+                if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and (iCiv != con.iMughals) and (iHuman+tDifference[iHuman] < iCiv or utils.getReborn(iCiv) == 1):
                         self.newCivPopup(iCiv)
 
 
@@ -3383,9 +3389,13 @@ class RiseAndFall:
 
 		for tPlot in targetList:
 			x, y = tPlot
-			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
-			if not iTargetCiv in targetCivList:
-				targetCivList.append(iTargetCiv)
+			if gc.getMap().plot(x, y).isCity():
+				iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
+				if not iTargetCiv in targetCivList:
+					targetCivList.append(iTargetCiv)
+
+		if len(iTargetCivList) == 0:
+			utils.colonialAcquisition(iPlayer, x, y)
 	
 		for iTargetCiv in targetCivList:
 			if iTargetCiv == utils.getHumanID():
@@ -5140,7 +5150,7 @@ class RiseAndFall:
                                 teamPersia.setHasTech(con.iConstruction, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iMachinery, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iEngineering, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iOptics, True, iCiv, False, False)
+                                #teamPersia.setHasTech(con.iOptics, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iGunpowder, True, iCiv, False, False)
 			if iCiv == iIndia:
 				lIndianTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, \

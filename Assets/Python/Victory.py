@@ -3006,11 +3006,11 @@ class Victory:
 				iEnglishNavy = gc.getPlayer(iEngland).getUnitClassCount(iCFrigate) + gc.getPlayer(iEngland).getUnitClassCount(iCShipOfTheLine)
 				aHelp.append(self.getIcon(iEnglishNavy >= 25) + 'Total of frigates and ships of the line: ' + str(iEnglishNavy) + '/25')
 			elif iGoal == 1:
-                                bNCAmerica = self.checkFoundedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 4)
-                                bSAmerica = self.checkFoundedArea(iEngland, tSAmericaTL, tSAmericaBR, 4)
-                                bAfrica = self.checkFoundedArea(iEngland, tAfricaTL, tAfricaBR, 4)
-                                bAsia = self.checkFoundedArea(iEngland, tAsiaTL, tAsiaBR, 4)
-                                bOceania = self.checkFoundedArea(iEngland, tOceaniaTL, tOceaniaBR, 4)
+                                bNCAmerica = self.checkOwnedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 4)
+                                bSAmerica = self.checkOwnedArea(iEngland, tSAmericaTL, tSAmericaBR, 4)
+                                bAfrica = self.checkOwnedArea(iEngland, tAfricaTL, tAfricaBR, 4)
+                                bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 4)
+                                bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 4)
 				aHelp.append(self.getIcon(bNCAmerica) + 'North America ' + self.getIcon(bSAmerica) + 'South America')
 				aHelp.append(self.getIcon(bAfrica) + 'Africa ' + self.getIcon(bAsia) + 'Asia ' + self.getIcon(bOceania) + 'Oceania')
 			elif iGoal == 2:

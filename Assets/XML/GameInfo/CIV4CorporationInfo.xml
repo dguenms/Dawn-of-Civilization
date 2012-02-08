@@ -25,7 +25,7 @@
 			</HeadquarterCommerces>
 			<BonusProduced>NONE</BonusProduced>
 			<CommercesProduced>
-				<iCommerceProduced>200</iCommerceProduced>
+				<iCommerceProduced>150</iCommerceProduced>
 			</CommercesProduced>
 			<YieldsProduced>
 				<iYieldProduced>50</iYieldProduced>
@@ -33,7 +33,7 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,14</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
-			<Sound>AS2D_BUILD_BANK</Sound>
+			<Sound>AS2D_BUILD_MARKET</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_2</Type>	<!-- Trading Company -->
@@ -55,7 +55,7 @@
 			</HeadquarterCommerces>
 			<BonusProduced>NONE</BonusProduced>
 			<CommercesProduced>
-				<iCommerceProduced>200</iCommerceProduced>
+				<iCommerceProduced>150</iCommerceProduced>
 			</CommercesProduced>
 			<YieldsProduced>
 				<iYieldProduced>50</iYieldProduced>
