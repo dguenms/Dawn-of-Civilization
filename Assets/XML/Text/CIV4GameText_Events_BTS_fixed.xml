@@ -1849,8 +1849,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TEXT_TRADING_COMPANY_CONQUERORS_1</Tag>
-		<English>The %1_civ_adjective Trading Company has established control over South Asian harbors.</English>
-		<German>Die %1:1_civ_adjective Handelsgesellschaft hat Kontrolle über einige südasiatische Häfen erlangt.</German>
+		<English>The %s1_civ_adjective Trading Company has established control over South Asian harbors.</English>
+		<German>Die %s1:1_civ_adjective Handelsgesellschaft hat Kontrolle über einige südasiatische Häfen erlangt.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TEXT_TRADING_COMPANY_CONQUERORS_2</Tag>
