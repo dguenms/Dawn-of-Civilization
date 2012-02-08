@@ -7135,15 +7135,19 @@ void CvCity::changeExtraTradeRoutes(int iChange)
 
 int CvCity::getTradeRouteModifier() const
 {
+	int iResult = m_iTradeRouteModifier;
+	
     // Leoreth - new Phoenician UP: the power of seafaring, +50% trade route yield.
     if (getOwner() == CARTHAGE)
-    {
-        return m_iTradeRouteModifier+50;
-    }
-    else
-    {
-        return m_iTradeRouteModifier;
-    }
+        iResult += 50;
+
+	//Leoreth: Porcelain Tower effect
+	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
+		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM((TeamTypes)getOwner()).isOpenBorders((TeamTypes)iI))
+				iResult += 20;
+
+	return iResult;
 }
 
 void CvCity::changeTradeRouteModifier(int iChange)
@@ -8237,11 +8241,6 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 			iModifier += getPeaceTradeModifier(pOtherCity->getTeam());
 		}
 	}
-
-	//Leoreth: Porcelain Tower effect
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
-		if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM((TeamTypes)getOwner()).isOpenBorders((TeamTypes)iI))
-			iModifier += 20;
 
 	return iModifier;
 }
