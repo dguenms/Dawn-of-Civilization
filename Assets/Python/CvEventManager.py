@@ -154,6 +154,9 @@ class CvEventManager:
 			'playerGoldTrade'		: self.onPlayerGoldTrade,
 			'windowActivation'		: self.onWindowActivation,
 			'gameUpdate'			: self.onGameUpdate,		# sample generic event
+			'playerChangeStateReligion'	: self.onPlayerChangeStateReligion,
+			'vassalState'			: self.onVassalState,
+			'revolution'			: self.onRevolution,
 		}
 
 		################## Events List ###############################
@@ -945,6 +948,10 @@ class CvEventManager:
 		'sample generic event, called on each game turn slice'
 		genericArgs = argsList[0][0]	# tuple of tuple of my args
 		turnSlice = genericArgs[0]
+		
+	def onPlayerChangeStateReligion(self, argsList):
+		'Player changes his state religion'
+		iPlayer, iNewReligion, iOldReligion = argsList
 	
 	def onMouseEvent(self, argsList):
 		'mouse handler - returns 1 if the event was consumed'
@@ -1097,3 +1104,7 @@ class CvEventManager:
 		iStartYear = popupReturn.getSpinnerWidgetValue(int(0))
 		CvScreensInterface.getWorldBuilderScreen().setStartYearCB(iStartYear)
 		return
+
+	def onRevolution(self, argsList):
+		'Revolution has started'
+		iPlayer = argsList[0]

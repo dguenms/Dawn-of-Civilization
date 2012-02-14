@@ -53,6 +53,8 @@ class StoredData:
 				    'tTempFlippingCity': (0, 0),
 				    'tTradingCompanyConquerorsTargets': ([], [], [], [], []),
 				    'iOttomanSpawnTurn': -1,
+				    'lAnarchyTurns': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				    'lResurrections': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                                      #------------Religions
                                     'iSeed': -1,
                                     #------------UP

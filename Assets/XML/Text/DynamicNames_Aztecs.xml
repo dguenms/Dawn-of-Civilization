@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTEC_DESC</Tag>
+		<English>The Aztecs</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_DESC_PEOPLES</Tag>
+		<English>Mexica Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_DESC_DEFAULT</Tag>
+		<English>Aztec Triple Alliance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_DESC_DEMOCRATIC</Tag>
+		<English>United States of Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_DESC_COMMUNIST</Tag>
+		<English>Anti-Reelectionist Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_DESC_FASCIST</Tag>
+		<English>Mexican Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_ALTEPETL</Tag>
+		<English>Mexican Altepetl</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_EMPIRE</Tag>
+		<English>Aztec Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_EMPIRE</Tag>
+		<English>Mexican Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_SOVIET_VASSAL</Tag>
+		<English>Soviet Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_NAZI_VASSAL</Tag>
+		<English>German Mexico</English>
+	</TEXT>
+</Civ4GameText>

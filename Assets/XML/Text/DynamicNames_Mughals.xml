@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DESC</Tag>
+		<English>The Mughals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DESC_PEOPLES</Tag>
+		<English>Ghorid Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DESC_DEFAULT</Tag>
+		<English>Mughal Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DESC_DEMOCRATIC</Tag>
+		<English>Republic of Pakistan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DESC_COMMUNIST</Tag>
+		<English>People's Republic of Pakistan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DESC_FASCIST</Tag>
+		<English>Pakistani Military Government</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DESC_ISLAMIC_MODERN</Tag>
+		<English>Islamic Republic of Pakistan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DELHI</Tag>
+		<English>Delhi Sultanate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_SOVIET_VASSAL</Tag>
+		<English>Soviet Pakistan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_NAZI_VASSAL</Tag>
+		<English>German West India</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_MUGHAL_VASSAL</Tag>
+		<English>Deccan Sultanates</English>
+	</TEXT>
+</Civ4GameText>

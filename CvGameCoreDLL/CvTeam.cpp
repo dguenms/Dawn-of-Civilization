@@ -2812,11 +2812,11 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 			}
 		}
 
-		/*if (bUnknown && GC.getTechInfo(eTech).getEra() <= 2) //allow for all techs
-		{*/
+		if (bUnknown) //allow for all techs
+		{
 			iCost *= 80;
 			iCost /= 100;
-		//}
+		}
 	}
 
 
@@ -4344,8 +4344,9 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 			}
 		}
 		// Sanguo Mod Performance, end
-			
-		GET_PLAYER((PlayerTypes)getID()).processCivNames(); //Rhye - dynamic civ names - not jdog's
+		
+		//Leoreth: moved to Python
+		//GET_PLAYER((PlayerTypes)getID()).processCivNames(); //Rhye - dynamic civ names - not jdog's
 	}
 }
 

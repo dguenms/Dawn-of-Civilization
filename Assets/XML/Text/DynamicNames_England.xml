@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_DESC</Tag>
+		<English>The English</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_DESC_PEOPLES</Tag>
+		<English>Anglo-Saxon Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_DESC_DEFAULT</Tag>
+		<English>Kingdom of England</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_DESC_DEMOCRATIC</Tag>
+		<English>Commonwealth of England</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_DESC_COMMUNIST</Tag>
+		<English>Commonwealth of England</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_DESC_FASCIST</Tag>
+		<English>British Union</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_EMPIRE</Tag>
+		<English>British Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN</Tag>
+		<English>Kingdom of Great Britain</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM</Tag>
+		<English>United Kingdom of Great Britain</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE</Tag>
+		<English>Angevin Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_NAZI_VASSAL</Tag>
+		<English>Reichskommissariat England</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_SOVIET_VASSAL</Tag>
+		<English>Soviet England</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_VASSAL_GENERIC</Tag>
+		<English>Dominion of %s</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_ENGLISH_VASSAL</Tag>
+		<English>British Protectorate of Egypt</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIA_ENGLISH_VASSAL</Tag>
+		<English>British Raj</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_ENGLISH_VASSAL</Tag>
+		<English>British Mandate of Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERSIA_ENGLISH_VASSAL</Tag>
+		<English>British Mandate of Persia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_ENGLISH_VASSAL</Tag>
+		<English>British Mandate of Lebanon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_ENGLISH_VASSAL</Tag>
+		<English>British East Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAYA_ENGLISH_VASSAL</Tag>
+		<English>Colony of British Honduras</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_ENGLISH_VASSAL</Tag>
+		<English>Latin Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_ENGLISH_VASSAL</Tag>
+		<English>County of Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_ENGLISH_VASSAL</Tag>
+		<English>British Mandate of Arabia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_ENGLISH_VASSAL</Tag>
+		<English>Dominion of Indochina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_ENGLISH_VASSAL</Tag>
+		<English>Duchy of Anjou</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_ENGLISH_VASSAL</Tag>
+		<English>Kingdom of Hanover</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_ENGLISH_VASSAL</Tag>
+		<English>County of Holland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALI_ENGLISH_VASSAL</Tag>
+		<English>British West Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_ENGLISH_VASSAL</Tag>
+		<English>Dominion of Peru</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_ENGLISH_VASSAL</Tag>
+		<English>Dominion of Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_ENGLISH_VASSAL</Tag>
+		<English>British Mandate of Turkey</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_ENGLISH_VASSAL</Tag>
+		<English>Dominion of Pakistan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_ENGLISH_VASSAL</Tag>
+		<English>British Siam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AMERICA_ENGLISH_VASSAL</Tag>
+		<English>Thirteen Colonies</English>
+	</TEXT>
+</Civ4GameText>

@@ -332,6 +332,14 @@
 		<English>The Mongol hordes have invaded our territory!</English>
 		<German>Die mongolischen Horden sind in unser Territorium eingefallen!</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_COLONY</Tag>
+		<English>Colony of %s</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE</Tag>
+		<English>Protectorate of %s</English>
+	</TEXT>
 
 
 </Civ4GameText>

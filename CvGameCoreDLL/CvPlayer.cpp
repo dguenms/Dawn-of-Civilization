@@ -301,11 +301,11 @@ void CvPlayer::init(PlayerTypes eID)
 	AI_init();
 
 	//Rhye - start (dynamic civ names - not jdog's)
-	if (getID() < NUM_MAJOR_PLAYERS)
+	/*if (getID() < NUM_MAJOR_PLAYERS)
 		setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][0]);
 	if (getID() == EGYPT) //Egyptian UP
 		setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][1]); //Egypt
-	//Rhye - end
+	//Rhye - end*/
 }
 
 
@@ -1849,8 +1849,9 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 	}
 
-	processCivNames(); //Rhye - dynamic civ names - not jdog's
-	GET_PLAYER(eOldOwner).processCivNames(); //Rhye - dynamic civ names - not jdog's
+	//Leoreth: moved to Python
+	//processCivNames(); //Rhye - dynamic civ names - not jdog's
+	//GET_PLAYER(eOldOwner).processCivNames(); //Rhye - dynamic civ names - not jdog's
 }
 
 
@@ -4793,7 +4794,8 @@ void CvPlayer::raze(CvCity* pCity)
 
 	disband(pCity);
 
-	processCivNames(); //Rhye - dynamic civ names - not jdog's
+	//Leoreth: moved to Python
+	//processCivNames(); //Rhye - dynamic civ names - not jdog's
 }
 
 
@@ -5592,7 +5594,8 @@ void CvPlayer::found(int iX, int iY)
 
 	CvEventReporter::getInstance().cityBuilt(pCity);
 
-	processCivNames(); //Rhye - dynamic civ names - not jdog's
+	//Leoreth: moved to Python
+	//processCivNames(); //Rhye - dynamic civ names - not jdog's
 }
 
 
@@ -8351,6 +8354,8 @@ void CvPlayer::revolution(CivicTypes* paeNewCivics, bool bForce)
 	{
 		gDLL->getInterfaceIFace()->setDirty(Popup_DIRTY_BIT, true); // to force an update of the civic chooser popup
 	}
+	
+	CvEventReporter::getInstance().revolution(getID()); // edead
 }
 
 
@@ -8481,7 +8486,8 @@ void CvPlayer::convert(ReligionTypes eReligion)
 
 	setConversionTimer(std::max(1, ((100 + getAnarchyModifier()) * GC.getDefineINT("MIN_CONVERSION_TURNS")) / 100) + iAnarchyLength);
 
-	processCivNames(); //Rhye - dynamic civ names - not jdog's
+	//Leoreth: moved to Python
+	//processCivNames(); //Rhye - dynamic civ names - not jdog's
 }
 
 
@@ -13479,7 +13485,8 @@ void CvPlayer::setCivics(CivicOptionTypes eIndex, CivicTypes eNewValue)
 			//Rhye - end
 
 			//Rhye - start (dynamic civ names - not jdog's)
-			processCivNames();
+			//Leoreth: moved to Python
+			//processCivNames();
 			//Rhye - end
 		}
 		// Sanguo Mod Performance start, added by poyuzhe 07.26.09
@@ -23931,7 +23938,7 @@ bool CvPlayer::isHasBuilding(BuildingTypes eIndex)
 }
 
 //Rhye - start switch (dynamic civ names - not jdog's)
-void CvPlayer::processCivNames()
+/*void CvPlayer::processCivNames()
 {
 	if (getID() >= NUM_MAJOR_PLAYERS || !GET_PLAYER((PlayerTypes)getID()).isAlive())
 		return;
@@ -24142,8 +24149,8 @@ void CvPlayer::processCivNames()
 					}
 				}
 			}
-			*/
 		}
 	}
 }
 //Rhye - end
+*/

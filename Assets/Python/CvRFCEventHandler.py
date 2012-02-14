@@ -29,6 +29,7 @@ import Stability
 import Plague
 import Communications
 import Companies
+import DynamicCivs
         
 gc = CyGlobalContext()        
 #iBetrayalCheaters = 15
@@ -176,6 +177,9 @@ class CvRFCEventHandler:
                 eventManager.addEventHandler("firstContact",self.onFirstContact)
                 eventManager.addEventHandler("corporationFounded",self.onCorporationFounded) #Stability
                 eventManager.addEventHandler("OnPreSave",self.onPreSave) #StoredData-edead
+		eventManager.addEventHandler("playerChangeStateReligion", self.onPlayerChangeStateReligion)
+		eventManager.addEventHandler("vassalState", self.onVassalState)
+		eventManager.addEventHandler("revolution", self.onRevolution)
                 
 		#Leoreth
 		eventManager.addEventHandler("greatPersonBorn", self.onGreatPersonBorn)
@@ -196,6 +200,7 @@ class CvRFCEventHandler:
                 self.pla = Plague.Plague()
                 self.com = Communications.Communications()
                 self.corp = Companies.Companies()
+		self.dc = DynamicCivs.DynamicCivs()
                 
                 #Mercenaries - start
                 
@@ -234,6 +239,7 @@ class CvRFCEventHandler:
                 self.rnf.setup()
                 self.rel.setup()
                 self.pla.setup()
+		self.dc.setup()
                 self.sta.setup()
                 self.aiw.setup()
                 self.rnf.warOnSpawn()
@@ -332,6 +338,8 @@ class CvRFCEventHandler:
                 self.vic.onCityAcquired(owner, playerType, bConquest) #Victory
 
 		self.corp.onCityAcquired(argsList) #Companies
+
+		self.dc.onCityAcquired(argsList) #DynamicCivs
                 
                 return 0
 
@@ -408,6 +416,19 @@ class CvRFCEventHandler:
 
                 if (iOwner < con.iNumPlayers):
                         self.sta.onCityBuilt(iOwner, city.getX(), city.getY() )
+			self.dc.onCityBuilt(iOwner)
+
+		if iOwner == con.iArabia:
+			if not gc.getGame().isReligionFounded(con.iIslam):
+				if (city.getX(), city.getY()) == (75, 33):
+					self.rel.foundReligion((75, 33), con.iIslam)
+
+        def onPlayerChangeStateReligion(self, argsList):
+		'Player changes his state religion'
+		iPlayer, iNewReligion, iOldReligion = argsList
+		
+		if iPlayer < iNumPlayers:
+			self.dc.onPlayerChangeStateReligion(argsList)
 
         def onCombatResult(self, argsList):
                 self.up.aztecUP(argsList)
@@ -452,6 +473,20 @@ class CvRFCEventHandler:
 		
                 if (iFounder < con.iNumPlayers):
                         self.sta.onCorporationFounded(iFounder)
+
+        def onVassalState(self, argsList):
+		'Vassal State'
+		print "Check 1 passed"
+		iMaster, iVassal, bVassal = argsList
+		
+		self.dc.onVassalState(argsList)
+
+	def onRevolution(self, argsList):
+		'Called at the start of a revolution'
+		iPlayer = argsList[0]
+		
+		if iPlayer < iNumPlayers:
+			self.dc.onRevolution(iPlayer)
 
 
                         
@@ -514,6 +549,8 @@ class CvRFCEventHandler:
                 self.sta.checkTurn(iGameTurn)
                 self.com.checkTurn(iGameTurn)
 		self.corp.checkTurn(iGameTurn)
+		if iGameTurn % 10 == 0:
+                        self.dc.checkTurn(argsList)
 
                 #Mercenaries - start
 

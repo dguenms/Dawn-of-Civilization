@@ -90,6 +90,7 @@ public:
 	void reportVictory(TeamTypes eNewWinner, VictoryTypes eNewVictory);
 
 	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal);
+	void reportRevolution(PlayerTypes ePlayerID); //edead
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
