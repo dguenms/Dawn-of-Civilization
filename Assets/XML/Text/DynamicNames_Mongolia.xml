@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOL_DESC</Tag>
+		<English>The Mongols</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_DESC_PEOPLES</Tag>
+		<English>Mongolian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_DESC_DEFAULT</Tag>
+		<English>Mongol State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_DESC_DEMOCRATIC</Tag>
+		<English>United Mongolia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_DESC_COMMUNIST</Tag>
+		<English>Mongolian People's Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_DESC_FASCIST</Tag>
+		<English>Nationalist Mongolia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_EMPIRE</Tag>
+		<English>Mongol Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_YUAN</Tag>
+		<English>Yuan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_KHAMAG</Tag>
+		<English>Khamag Mongol</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_SOVIET_VASSAL</Tag>
+		<English>Soviet Mongolia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_NAZI_VASSAL</Tag>
+		<English>German Mongolia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_MONGOL_VASSAL</Tag>
+		<English>Khanate of Siam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_MONGOL_VASSAL</Tag>
+		<English>Ilkhanate of Egypt</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINA_MONGOL_VASSAL</Tag>
+		<English>Khanate of Dumdadu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_MONGOL_VASSAL</Tag>
+		<English>Ilkhanate of Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GREECE_MONGOL_VASSAL</Tag>
+		<English>Ilkhanate of Greece</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERSIA_MONGOL_VASSAL</Tag>
+		<English>Ilkhanate of Persia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_MONGOL_VASSAL</Tag>
+		<English>Ilkhanate of Syria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_MONGOL_VASSAL</Tag>
+		<English>Ilkhanate of Rome</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAYA_MONGOL_VASSAL</Tag>
+		<English>Khanate of Yucat&#225;n</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_MONGOL_VASSAL</Tag>
+		<English>Khanate of Anatolia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_MONGOL_VASSAL</Tag>
+		<English>Khanate of Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_MONGOL_VASSAL</Tag>
+		<English>Khanate of Kampuchea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_MONGOL_VASSAL</Tag>
+		<English>Khanate of the Golden Horde</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_MONGOL_VASSAL</Tag>
+		<English>Khanate of the Netherlands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_MONGOL_VASSAL</Tag>
+		<English>Khanate of Peru</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_MONGOL_VASSAL</Tag>
+		<English>Khanate of Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_MONGOL_VASSAL</Tag>
+		<English>Khanate of Turkestan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_MONGOL_VASSAL</Tag>
+		<English>Khanate of Delhi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOL_VASSAL_GENERIC</Tag>
+		<English>Khanate of %s</English>
+	</TEXT>
+</Civ4GameText>

@@ -1418,6 +1418,33 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 	}
 	//Rhye - end
 
+	iKnownCount = 0;
+	iPossibleKnownCount = 0;
+
+	for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
+	{
+		if (GET_TEAM((TeamTypes)iI).isAlive())
+		{
+			if ((iI != getID()) && (iI != eTeam))
+			{
+				if (isHasMet((TeamTypes)iI))
+				{
+					if (GET_TEAM((TeamTypes)iI).isHasTech(eTech))
+					{
+						iKnownCount++;
+					}
+
+					iPossibleKnownCount++;
+				}
+			}
+		}
+	}
+
+	// Leoreth: stop China from trading away techs it has monopoly on to make its UP less powerful
+	if (iKnownCount <= 1)
+		if (getID() == CHINA)
+			return DENIAL_TECH_MONOPOLY;
+
 
 	if (isHuman())
 	{
@@ -1482,28 +1509,6 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 			}
 		}
 
-		iKnownCount = 0;
-		iPossibleKnownCount = 0;
-
-		for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
-		{
-			if (GET_TEAM((TeamTypes)iI).isAlive())
-			{
-				if ((iI != getID()) && (iI != eTeam))
-				{
-					if (isHasMet((TeamTypes)iI))
-					{
-						if (GET_TEAM((TeamTypes)iI).isHasTech(eTech))
-						{
-							iKnownCount++;
-						}
-
-						iPossibleKnownCount++;
-					}
-				}
-			}
-		}
-
 		iTechTradeKnownPercent = AI_techTradeKnownPercent();
 
 		iTechTradeKnownPercent *= std::max(0, (GC.getHandicapInfo(GET_TEAM(eTeam).getHandicapType()).getTechTradeKnownModifier() + 100));
@@ -1515,15 +1520,6 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 		if ((iPossibleKnownCount > 0) ? (((iKnownCount * 100) / iPossibleKnownCount) < iTechTradeKnownPercent) : (iTechTradeKnownPercent > 0))
 		{
 			return DENIAL_TECH_MONOPOLY;
-		}
-
-		// Leoreth: stop China from trading away techs it has monopoly on to make its UP less powerful
-		if (iKnownCount <= 1)
-		{
-			if (getID() == CHINA)
-				return DENIAL_TECH_MONOPOLY;
-			if (eTeam == CHINA)
-				return NO_DENIAL;
 		}
 	}
 

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_DESC</Tag>
+		<English>The Germans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_DESC_PEOPLES</Tag>
+		<English>Germanic Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_DESC_DEFAULT</Tag>
+		<English>Kingdom of Germany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_DESC_DEMOCRATIC</Tag>
+		<English>Federal Republic of Germany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_DESC_COMMUNIST</Tag>
+		<English>Free Socialist Republic of Germany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_DESC_FASCIST</Tag>
+		<English>Third Reich</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_HRE</Tag>
+		<English>Holy Roman Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_EMPIRE</Tag>
+		<English>German Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_GREATER_EMPIRE</Tag>
+		<English>Greater German Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_GERMAN_VASSAL</Tag>
+		<English>Crown of Italy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_GERMAN_VASSAL</Tag>
+		<English>West Francia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_GERMAN_VASSAL</Tag>
+		<English>Duchy of Brabant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_GERMAN_VASSAL</Tag>
+		<English>Latin Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_GERMAN_VASSAL</Tag>
+		<English>German Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAYA_GERMAN_VASSAL</Tag>
+		<English>German Yucat&#225;n</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_GERMAN_VASSAL</Tag>
+		<English>German Peru</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_GERMAN_VASSAL</Tag>
+		<English>German East Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MALI_GERMAN_VASSAL</Tag>
+		<English>German West Africa</English>
+	</TEXT>
+</Civ4GameText>

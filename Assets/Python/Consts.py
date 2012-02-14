@@ -22,6 +22,7 @@ iHolland = iNetherlands
 iDelhi = iMughals
 iItaly = iRome
 iSiam = iThailand
+iPhoenicia = iCarthage
 
 iNumMajorPlayers = iNumPlayers
 iNumActivePlayers = iNumPlayers

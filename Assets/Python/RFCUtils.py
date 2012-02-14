@@ -693,6 +693,14 @@ class RFCUtils:
                 if (bOwner == True):
                         pCurrent.setOwner(iCiv)
 
+        #DynamicCivs
+        def getMaster(self, iCiv):
+		team = gc.getTeam(gc.getPlayer(iCiv).getTeam())
+		for iMaster in range(iNumTotalPlayers):
+			if team.isVassal(iMaster):
+				return iMaster
+		return -1
+
 
 
                                 

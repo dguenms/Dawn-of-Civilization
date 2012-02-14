@@ -114,6 +114,8 @@ public:
 	void playerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
 	void playerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPlayer, int iAmount);
 
+	void revolution(PlayerTypes ePlayerID); // edead
+
 	DllExport void chat(CvWString szString);		
 
 	void victory(TeamTypes eWinner, VictoryTypes eVictory);

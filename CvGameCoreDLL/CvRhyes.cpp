@@ -621,7 +621,7 @@ int borders[32][32]  = { // 1 = share borders, 3 = close, 4 = quite close, 5 = d
 
 
 // (dynamic civ names - not jdog's)
-wchar civDynamicNames[2][32][22][19]  = {
+/*wchar civDynamicNames[2][32][22][19]  = {
 //				//people		monarchy		monarchy ext		monarchy mod		monarchy ext mod		republic			communism			fascism				islam monarchy		islam republic			vas. Persia			vas. Rome			vas. Arabia			vas. Spain				vas. France			vas. England		vas. Germany			vas. Russia			vas. Mongolia			vas. Turkey			vas. Chi/Jap/Khm	vassal generic
 //Egypt
 	{{	 L"TXT_KEY_DN_EGY00", L"TXT_KEY_DN_EGY01", L"TXT_KEY_DN_EGY02", L"TXT_KEY_DN_EGY03",  L"TXT_KEY_DN_EGY04",  L"TXT_KEY_DN_EGY05",  L"TXT_KEY_DN_EGY06",  L"TXT_KEY_DN_EGY07",  L"TXT_KEY_DN_EGY08",  L"TXT_KEY_DN_EGY09",  L"TXT_KEY_DN_EGY10",  L"TXT_KEY_DN_EGY11",  L"TXT_KEY_DN_EGY12",  L"TXT_KEY_DN_EGY13",  L"TXT_KEY_DN_EGY14",  L"TXT_KEY_DN_EGY15",  L"TXT_KEY_DN_EGY16",  L"TXT_KEY_DN_EGY17",  L"TXT_KEY_DN_EGY18",  L"TXT_KEY_DN_EGY19",  L"TXT_KEY_DN_EGY20",  L"TXT_KEY_DN_EGY21" },
@@ -749,7 +749,7 @@ wchar civDynamicNames[2][32][22][19]  = {
 	{	 L"TXT_KEY_DN_THA00", L"TXT_KEY_DN_THA01", L"TXT_KEY_DN_THA02", L"TXT_KEY_DN_THA03",  L"TXT_KEY_DN_THA04",  L"TXT_KEY_DN_THA05",  L"TXT_KEY_DN_THA06",  L"TXT_KEY_DN_THA07",  L"TXT_KEY_DN_THA08",  L"TXT_KEY_DN_THA09",  L"TXT_KEY_DN_THA10",  L"TXT_KEY_DN_THA11",  L"TXT_KEY_DN_THA12",  L"TXT_KEY_DN_THA13",  L"TXT_KEY_DN_THA14",  L"TXT_KEY_DN_THA15",  L"TXT_KEY_DN_THA16",  L"TXT_KEY_DN_THA17",  L"TXT_KEY_DN_THA18",  L"TXT_KEY_DN_THA19",  L"TXT_KEY_DN_THA20",  L"TXT_KEY_DN_THA21" },
 //America
 	{	 L"TXT_KEY_DN_AME00", L"TXT_KEY_DN_AME01", L"TXT_KEY_DN_AME02", L"TXT_KEY_DN_AME03",  L"TXT_KEY_DN_AME04",  L"TXT_KEY_DN_AME05",  L"TXT_KEY_DN_AME06",  L"TXT_KEY_DN_AME07",  L"TXT_KEY_DN_AME08",  L"TXT_KEY_DN_AME09",  L"TXT_KEY_DN_AME10",  L"TXT_KEY_DN_AME11",  L"TXT_KEY_DN_AME12",  L"TXT_KEY_DN_AME13",  L"TXT_KEY_DN_AME14",  L"TXT_KEY_DN_AME15",  L"TXT_KEY_DN_AME16",  L"TXT_KEY_DN_AME17",  L"TXT_KEY_DN_AME18",  L"TXT_KEY_DN_AME19",  L"TXT_KEY_DN_AME20",  L"TXT_KEY_DN_AME21" }}};
-
+*/
 
 int civDynamicNamesFlag[32] = 	{	 1,  1,  0,  1,  0,  1,  1,  0,  0,  1,  0,  0,  0,  0,  1,  0,  1,  0,  0,  0,  0,  0,  0,  1,  0,  0,  0,  0,  1,  1,  0,  0 };
 //									EGY	IND CHI BAB GRE PER CAR ROM JAP ETH KOR MAY BYZ VIK ARA KHM INO SPA FRA ENG GER RUS HOL MAL POR INC MON AZT MUG TUR THA AME

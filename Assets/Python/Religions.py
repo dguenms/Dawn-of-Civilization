@@ -164,21 +164,21 @@ class Religions:
                                                 self.spreadReligion(tCity, 3, iMissionary_Christian)   
  
           
-                if (iGameTurn == getTurnForYear(622)+1):
-                        if (gc.getGame().isReligionFounded(iIslam)):
-                                for pyCity in PyPlayer(iArabia).getCityList():
-                                        if (pyCity.GetCy().isHolyCityByType(iIslam)):
-                                                if (gc.getPlayer(pyCity.GetCy().getOwner()).isHuman() == 0):
-                                                        print ("spreading Islam", iMissionary_Islamic)
-                                                        #self.spreadReligion( tMecca, 4, iMissionary_Islamic)
-                                                        self.spreadReligion( (pyCity.GetCy().getX(), pyCity.GetCy().getY()), 4, iMissionary_Islamic) 
+                #if (iGameTurn == getTurnForYear(622)+1):
+                #        if (gc.getGame().isReligionFounded(iIslam)):
+                #                for pyCity in PyPlayer(iArabia).getCityList():
+                #                        if (pyCity.GetCy().isHolyCityByType(iIslam)):
+                #                                if (gc.getPlayer(pyCity.GetCy().getOwner()).isHuman() == 0):
+                #                                        print ("spreading Islam", iMissionary_Islamic)
+                #                                        #self.spreadReligion( tMecca, 4, iMissionary_Islamic)
+                #                                        self.spreadReligion( (pyCity.GetCy().getX(), pyCity.GetCy().getY()), 4, iMissionary_Islamic) 
 
-                if (iGameTurn == getTurnForYear(600)):
-                        if (not gc.getPlayer(0).isPlayable()): #late start condition
-                                pMecca = gc.getMap().plot(tMecca[0], tMecca[1])                
-                                if (not pMecca.getPlotCity().isNone()):                            
-                                        if (pMecca.getPlotCity().getOwner() == con.iArabia):
-                                                self.foundReligion(tMecca, iIslam)
+                #if (iGameTurn == getTurnForYear(600)):
+                #        if (not gc.getPlayer(0).isPlayable()): #late start condition
+                #                pMecca = gc.getMap().plot(tMecca[0], tMecca[1])                
+                #                if (not pMecca.getPlotCity().isNone()):                            
+                #                        if (pMecca.getPlotCity().getOwner() == con.iArabia):
+                #                                self.foundReligion(tMecca, iIslam)
 
 		if iGameTurn == getTurnForYear(1500):
 			if gc.getGame().isReligionFounded(iJudaism):	# Protestantism founded

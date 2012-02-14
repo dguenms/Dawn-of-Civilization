@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKING_DESC</Tag>
+		<English>The Vikings</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DESC_PEOPLES</Tag>
+		<English>Norse Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DESC_DEFAULT</Tag>
+		<English>Viking Union</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DESC_DEMOCRATIC</Tag>
+		<English>Republic of Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DESC_COMMUNIST</Tag>
+		<English>Democratic Republic of Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DESC_FASCIST</Tag>
+		<English>National Gathering of Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS</Tag>
+		<English>Norse Kingdoms</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_KALMAR_UNION</Tag>
+		<English>Kalmar Union</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_SWEDISH_EMPIRE</Tag>
+		<English>Swedish Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY</Tag>
+		<English>Kingdom of Denmark-Norway</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_NORWAY</Tag>
+		<English>Kingdom of Norway</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_SWEDEN</Tag>
+		<English>Kingdom of Sweden</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK</Tag>
+		<English>Kingdom of Denmark</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_SOVIET_VASSAL</Tag>
+		<English>Soviet Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_NAZI_VASSAL</Tag>
+		<English>Reichskommissariat Nordland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_VIKING_VASSAL</Tag>
+		<English>Danelaw</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_VIKING_VASSAL</Tag>
+		<English>Varangian Principalities</English>
+	</TEXT>
+</Civ4GameText>

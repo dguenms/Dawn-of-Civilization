@@ -11,6 +11,7 @@ import RFCUtils
 import Consts as con
 import CityNameManager 
 import Victory as vic
+import DynamicCivs
 
 
 ################
@@ -20,6 +21,7 @@ import Victory as vic
 gc = CyGlobalContext()  # LOQ
 PyPlayer = PyHelpers.PyPlayer   # LOQ
 utils = RFCUtils.RFCUtils()
+dc = DynamicCivs.DynamicCivs()
 
 iCheatersPeriod = 12
 iBetrayalPeriod = 8
@@ -1210,7 +1212,9 @@ class RiseAndFall:
                                         #gc.getMap().plot(10,0).getUnit(0).kill(False, iCiv)
 
                                         unitList = utils.getCoreUnitList(iCiv, 1)
-                                        #for pUnit in unitList:
+                                        for pUnit in unitList:
+						if pUnit.getOwner() == con.iSeljuks:
+							pUnit.kill()
                                                 #if pUnit.getOwner() != utils.getHumanID() and pUnit.getOwner() != iCiv:
                                                         #pCity = gc.getPlayer(pUnit.getOwner()).getCapitalCity()
                                                         #pUnit.setXYOld(pCity.getX(), pCity.getY())
@@ -1770,17 +1774,17 @@ class RiseAndFall:
 				if (iDeadCiv == iThailand and pKhmer.isAlive()) or (iDeadCiv == iKhmer and pThailand.isAlive()):
 					bPossible = False
 
-				# make Byzantium return in the 13th century if Turkey is player controlled
-				if iDeadCiv == iByzantium and utils.getHumanID() == iTurkey and iGameTurn >= getTurnForYear(1200) and iGameTurn <= getTurnForYear(con.tBirth[iTurkey]):
-					iModifier = 110
-				else:
-					iModifier = 0
+				# make Byzantium return in the 13th century if Turkey is player controlled (obsolete due to their new UP)
+				#if iDeadCiv == iByzantium and utils.getHumanID() == iTurkey and iGameTurn >= getTurnForYear(1200) and iGameTurn <= getTurnForYear(con.tBirth[iTurkey]):
+				#	iModifier = 110
+				#else:
+				#	iModifier = 0
 
                                 #iDeadCiv = iIndia #DEBUG
                                 cityList = []
                                 if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > getTurnForYear(con.tBirth[iDeadCiv]) + utils.getTurns(50) and iGameTurn > utils.getLastTurnAlive(iDeadCiv) + utils.getTurns(20) and con.tRebirth[iDeadCiv] == -1 and bPossible): # last condition added by Leoreth, civ must not have a scripted respawn
                                 #if (not gc.getPlayer(iDeadCiv).isAlive() and iGameTurn > con.tBirth[iDeadCiv] + 50): #DEBUG
-                                        if (gc.getGame().getSorenRandNum(100, 'roll') + iModifier + iNationalismModifier - 10 >= con.tResurrectionProb[iDeadCiv]):
+                                        if (gc.getGame().getSorenRandNum(100, 'roll') + iNationalismModifier - 10 >= con.tResurrectionProb[iDeadCiv]):
                                                 #print("skip")
                                                 continue
                                         pDeadCiv = gc.getPlayer(iDeadCiv)
@@ -1995,8 +1999,11 @@ class RiseAndFall:
                                 self.convertBackCulture(iDeadCiv)
 
 				# Leoreth: switch to resurrected civs
-				if not self.getAlreadySwitched():
-					self.newCivPopup(iDeadCiv)
+				#if not self.getAlreadySwitched() and iGameTurn > getTurnForYear(con.tBirth[utils.getHumanID()]):
+				#	self.newCivPopup(iDeadCiv)
+				
+				# Leoreth: report to Dynamic civs
+				dc.onCivRespawn(iDeadCiv, ownersList)
 
                                 return
 
@@ -3394,7 +3401,7 @@ class RiseAndFall:
 				if not iTargetCiv in targetCivList:
 					targetCivList.append(iTargetCiv)
 
-		if len(iTargetCivList) == 0:
+		if len(targetCivList) == 0:
 			utils.colonialAcquisition(iPlayer, x, y)
 	
 		for iTargetCiv in targetCivList:
@@ -3445,7 +3452,10 @@ class RiseAndFall:
 					break
 
 		if tSeaPlot != -1:
-			utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
+			if iPlayer == con.iNetherlands:
+				utils.makeUnit(con.iNetherlandsOostindievaarder, iPlayer, tSeaPlot, 1)
+			else:
+				utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
 
 
         def warOnSpawn(self):

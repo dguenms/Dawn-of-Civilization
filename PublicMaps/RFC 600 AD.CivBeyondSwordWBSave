@@ -34337,7 +34337,6 @@ BeginPlot
 		CityOwner=37
 		CityName=Kashgar
 		CityPopulation=3
-		ReligionType=RELIGION_ISLAM
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_MARKET

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_DESC</Tag>
+		<English>The Arabs</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_DESC_PEOPLES</Tag>
+		<English>Bedouin Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_DESC_DEFAULT</Tag>
+		<English>Arabian Sultanates</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_DESC_DEMOCRATIC</Tag>
+		<English>Arab League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_DESC_FASCIST</Tag>
+		<English>Pan Arab State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_DESC_COMMUNIST</Tag>
+		<English>Baathist Arabia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_SAUDI</Tag>
+		<English>Kingdom of Saudi-Arabia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_RASHIDUN_CALIPHATE</Tag>
+		<English>Rashidun Caliphate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_UMMAYAD_CALIPHATE</Tag>
+		<English>Ummayad Caliphate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_ABBASID_CALIPHATE</Tag>
+		<English>Abbasid Caliphate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_SOVIET_VASSAL</Tag>
+		<English>Soviet Arabia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_NAZI_VASSAL</Tag>
+		<English>German Arabia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_ARABIA_VASSAL</Tag>
+		<English>Emirate of Misr</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Iraq</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERSIA_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Fars</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Ifriqiya</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Italiya</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Abyssinia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Rûm</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Kampuchea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Al-Andalus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_ARABIAN_VASSAL</Tag>
+		<English>Emirate of the Netherlands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_ARABIAN_VASSAL</Tag>
+		<English>Ottoman Sultanate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Delhi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Siam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC</Tag>
+		<English>Emirate of %s</English>
+	</TEXT>
+</Civ4GameText>

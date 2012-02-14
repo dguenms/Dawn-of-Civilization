@@ -387,6 +387,13 @@ void CvEventReporter::playerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPl
 	m_kPythonEventMgr.reportPlayerGoldTrade(eFromPlayer, eToPlayer, iAmount);
 }
 
+// edead: start
+void CvEventReporter::revolution(PlayerTypes ePlayerID)
+{
+	m_kPythonEventMgr.reportRevolution(ePlayerID);
+}
+// edead: end
+
 void CvEventReporter::chat(CvWString szString)
 {
 	m_kPythonEventMgr.reportChat(szString);

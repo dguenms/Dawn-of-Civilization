@@ -1136,6 +1136,21 @@ void CvDllPythonEvents::reportPlayerGoldTrade(PlayerTypes eFromPlayer, PlayerTyp
 	}
 }
 
+// edead: start
+void CvDllPythonEvents::reportRevolution(PlayerTypes ePlayerID)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("revolution");			// add key to lookup python handler fxn
+
+		eventData.add((int)ePlayerID);
+
+		postEvent(eventData);
+	}
+}
+// edead: end
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())
