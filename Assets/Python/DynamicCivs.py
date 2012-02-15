@@ -702,11 +702,11 @@ class DynamicCivs:
                 
 
         def setCivDesc(self, iCiv, sName, sInsert=""):
-		if sInsert != "":
-			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, (sInsert,)))
-		else:
+		if sInsert == "":
 			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, ()))
-
+		else:
+			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, ()) + " " + localText.getText(str(sInsert), ()))
+			
 
         def setup(self):
                 for iPlayer in range(iNumPlayers):
@@ -760,6 +760,7 @@ class DynamicCivs:
 		elif iPlayer == iKorea: iThreshold = 3
 		elif iPlayer == iRussia: iThreshold = 8
 		elif iPlayer == iGermany and gc.getPlayer(iGermany).getCurrentEra() <= iRenaissance: iThreshold = 4
+		elif iPlayer == iRome and pRome.isReborn(): iThreshold = 4
 			
 		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
 		

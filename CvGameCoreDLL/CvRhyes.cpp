@@ -244,7 +244,7 @@ int civSpreadFactor[38][8]  = { //Panopticon - new spread figures for Protestant
 //Egypt
 	{	100, 250, 350,  20,  20,  20,  20,  20 },	//100, 200, 300,  20,  20,  20,  20  before removal of Aggressive trait
 //India
-	{	 90,  90, 180, 400, 180,  20,  60,  20 },	// 20,  80, 150, 300, 100,  20,  40  before removal of Aggressive trait
+	{	 90,  90, 180, 300, 400,  20,  60,  20 },	// 20,  80, 150, 300, 100,  20,  40  before removal of Aggressive trait
 //China
 	{	 60,  80,  20,  20, 200, 300, 200,  20 },
 //Babylonia

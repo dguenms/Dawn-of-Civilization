@@ -138,6 +138,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_VASSAL_GENERIC</Tag>
-		<English>Satrapy of %s</English>
+		<English>Satrapy of </English>
 	</TEXT>
 </Civ4GameText>

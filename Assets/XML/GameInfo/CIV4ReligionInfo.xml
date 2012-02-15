@@ -148,7 +148,7 @@
 			<TechPrereq>TECH_BUDDHISM</TechPrereq>
 			<FreeUnitClass>UNITCLASS_BUDDHIST_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>3</iFreeUnits>
-			<iSpreadFactor>300</iSpreadFactor> <!-- Rhye -->
+			<iSpreadFactor>140</iSpreadFactor> <!-- Rhye -->
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
