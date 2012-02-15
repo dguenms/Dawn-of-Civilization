@@ -701,10 +701,8 @@ class DynamicCivs:
 	#	sd.scriptDict['lPreviousOwner'].remove(iPreviousOwner)
                 
 
-        def setCivDesc(self, iCiv, sName, sShort="", sAdj=""):
-		#print "rename civ "+str(iCiv)+" to "+sName
-		
-                gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, ()))
+        def setCivDesc(self, iCiv, sName, sInsert=""):
+                gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, (sInsert,)))
 
 
         def setup(self):
@@ -758,6 +756,7 @@ class DynamicCivs:
 		if iPlayer == iCarthage: iThreshold = 2
 		elif iPlayer == iKorea: iThreshold = 3
 		elif iPlayer == iRussia: iThreshold = 8
+		elif iPlayer == iGermany and gc.getPlayer(iGermany).getCurrentEra() <= iRenaissance: iThreshold = 4
 			
 		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
 		
@@ -786,7 +785,7 @@ class DynamicCivs:
                 iGameTurn = gc.getGame().getGameTurn()
                 bAnarchy = pPlayer.isAnarchy()
 		bEmpire = self.isEmpire(iPlayer)
-		bCityStates = True # when included into civics
+		bCityStates = False # when included into civics
 		bTheocracy = (iCivic0 == 2)
 		bResurrected = (self.getResurrections(iPlayer) > 0)
 		iAnarchyTurns = self.getAnarchyTurns(iPlayer)
@@ -820,14 +819,14 @@ class DynamicCivs:
 						return
 					
 				if iMaster in self.genericVassalNames:
-					self.setCivDesc(iPlayer, self.genericVassalNames[iMaster] %(pPlayer.getCivShortDescriptionKey()))
+					self.setCivDesc(iPlayer, self.genericVassalNames[iMaster], pPlayer.getCivilizationShortDescriptionKey())
 					return
 				
 			if iPlayer in [iMali, iEthiopia, iAztecs, iInca, iMaya]:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_COLONY" %(pPlayer.getCivShortDescriptionKey()))
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_COLONY", pPlayer.getCivilizationShortDescriptionKey())
 				return
 				
-			self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE" %(pPlayer.getCivShortDescriptionKey()))
+			self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE", pPlayer.getCivilizationShortDescriptionKey())
 			return
 		
 		# Communism
@@ -1224,7 +1223,7 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EMPIRE")
 				return
 				
-			if not pGermany.isAlive():
+			if not pGermany.isAlive() and iEra == iMedieval:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_FRANKISH_EMPIRE")
 				return
 				
