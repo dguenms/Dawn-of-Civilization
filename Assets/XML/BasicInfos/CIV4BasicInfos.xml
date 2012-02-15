@@ -84,6 +84,11 @@
 			<Type>CONCEPT_DOC_ODDS</Type>
 			<Description>TXT_KEY_CONCEPT_DOC_ODDS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_DOC_ODDS_PEDIA</Civilopedia>
+		</ConceptInfo>	
+		<ConceptInfo>
+			<Type>CONCEPT_CONDITIONAL_SPAWNS</Type>
+			<Description>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS_PEDIA</Civilopedia>
 		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

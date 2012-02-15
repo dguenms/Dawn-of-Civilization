@@ -222,7 +222,7 @@ tFall = (
 1300,
 1258,
 1200, # earlier so that the Thai can spawn
-2020,
+1500,
 2020,
 2020,
 2020,
@@ -1543,7 +1543,7 @@ lEnemyCivsOnSpawn = [
 [iChina,iChina,iIndependent,iIndependent,iIndependent2,iIndependent2], #Mongolia
 [iMaya], #Aztec
 [iIndia, iIndia], #Mughals
-[iEgypt,iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia], #Turkey
+[iEgypt,iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia,iByzantium,iByzantium,iByzantium], #Turkey
 [iKhmer], #Thailand
 [iIndependent,iIndependent2] #America
 ]

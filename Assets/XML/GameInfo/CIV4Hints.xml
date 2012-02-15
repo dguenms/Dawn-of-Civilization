@@ -482,5 +482,8 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_21</Description>
 		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_22</Description>
+		</HintInfo>
 	</HintInfos>
 </Civ4Hints>

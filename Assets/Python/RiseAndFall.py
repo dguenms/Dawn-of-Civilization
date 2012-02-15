@@ -3850,6 +3850,9 @@ class RiseAndFall:
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
                         utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
                         utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
+			if utils.getHumanID() != iTurkey:
+				utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
+				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 4)
                 if (iCiv == iPortugal):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
@@ -5081,6 +5084,7 @@ class RiseAndFall:
                                 for x in range(con.iHunting, con.iRifling+1):
                                                 teamAmerica.setHasTech(x, True, iCiv, False, False)
                                 teamAmerica.setHasTech(con.iSteamPower, True, iCiv, False, False)
+				teamAmerica.setHasTech(con.iScientificMethod, True, iCiv, False, False)
                 else:
                         if (iCiv == iRome):
                                 teamRome.setHasTech(con.iMining, True, iCiv, False, False)

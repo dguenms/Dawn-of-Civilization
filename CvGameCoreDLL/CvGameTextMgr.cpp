@@ -2830,7 +2830,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	        if (iCore == 1)
 	        {
 	            szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_GREEN_STABILITY_TEXT")));
-	            szString.append("Core Area");
+	            szString.append(gDLL->getText("TXT_KEY_STABILITY_CORE_AREA"));
 	        }
 	        else
 	        {
@@ -2848,24 +2848,24 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
                     if (iForeignCore == 1)
                     {
                         szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_YELLOW_TEXT")));
-                        szString.append("Contested Area");
+                        szString.append(gDLL->getText("TXT_KEY_STABILITY_CONTESTED_AREA"));
                     }
                     else
                     {
                         szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_GREEN_TEXT")));
-                        szString.append("Historical Area");
+                        szString.append(gDLL->getText("TXT_KEY_STABILITY_HISTORICAL_AREA"));
                     }
                 }
                 else
                     if (iForeignCore == 1)
                     {
                         szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_RED_TEXT")));
-                        szString.append("Foreign Core Area");
+                        szString.append(gDLL->getText("TXT_KEY_STABILITY_FOREIGN_CORE_AREA"));
                     }
                     else
                     {
                         szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_ORANGE_TEXT")));
-                        szString.append("Foreign Area");
+                        szString.append(gDLL->getText("TXT_KEY_STABILITY_FOREIGN_AREA"));
                     }
 	        }
 	        szString.append(CvWString::format( ENDCOLR ));

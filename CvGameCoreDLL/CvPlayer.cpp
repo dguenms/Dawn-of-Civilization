@@ -6532,6 +6532,9 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 		}
 	}
 
+	if (getID() == CHINA && !GET_PLAYER((PlayerTypes)CHINA).isHuman())
+		iProductionNeeded = iProductionNeeded * 80 / 100;
+
 	//Rhye - start (modern units cost more)
 	if (eUnit == 4) { //Settler
 		if (getCurrentEra() == 1) { //classical
@@ -8608,6 +8611,8 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			}
 			if (pLoopCity->getX() == 72 && pLoopCity->getY() == 29 && pLoopCity->getOwner() == (PlayerTypes)ETHIOPIA) //Aksum
 				iValue *= 4;
+			if (eReligion == (ReligionTypes)ZOROASTRIANISM && pLoopCity->getX() == 82 && pLoopCity->getY() == 39) //Parsa
+				iValue *= 8;
 			//Rhye - end
 
 			//Leoreth: exclude 1 population cities because it doesn't make sense to have a religion founded there

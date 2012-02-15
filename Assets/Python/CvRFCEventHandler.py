@@ -263,6 +263,7 @@ class CvRFCEventHandler:
         def onCityAcquired(self, argsList):
                 #'City Acquired'
                 owner,playerType,city,bConquest,bTrade = argsList
+		lTradingCompanyList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
                 #CvUtil.pyPrint('City Acquired Event: %s' %(city.getName()))
                 self.cnm.renameCities(city, playerType)
                 
@@ -277,6 +278,9 @@ class CvRFCEventHandler:
 		elif (playerType == con.iSeljuks):
 			self.up.seljukUP(city)
 			self.up.turkishUP(city, playerType)
+		elif playerType in lTradingCompanyList:
+			if (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(playerType)]:
+				self.up.turkishUP(city, playerType)
 
                 if (playerType < iNumMajorPlayers):
                          utils.spreadMajorCulture(playerType, city.getX(), city.getY())
