@@ -3259,7 +3259,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case MUGHALS:
 										if (iI == TAJMAHAL || iI == RED_FORT) iTempValue *= 4;
 										else if (iI == HARMANDIR_SAHIB) iTempValue *= 2;
-										else if (iI == BLUE_MOSQUE || iI == TOPKAPI) iTempValue /= 4;
+										else if (iI == BLUE_MOSQUE || iI == TOPKAPI) iTempValue /= 8;
 										break;
 									case THAILAND:
 										if (iI == ANGKORWAT) iTempValue *= 3;
