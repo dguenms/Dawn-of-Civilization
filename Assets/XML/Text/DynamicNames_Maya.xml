@@ -9,6 +9,10 @@
 		<English>The Maya</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MAYA_DESC_PEOPLES</Tag>
+		<English>Maya Peoples</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_DESC_DEFAULT</Tag>
 		<English>Mayan City-States</English>
 	</TEXT>

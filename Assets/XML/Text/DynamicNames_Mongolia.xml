@@ -122,6 +122,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_VASSAL_GENERIC</Tag>
-		<English>Khanate of %s</English>
+		<English>Khanate of </English>
 	</TEXT>
 </Civ4GameText>
