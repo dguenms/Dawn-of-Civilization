@@ -449,4 +449,8 @@
 		<Tag>TXT_KEY_HINT_DOC_21</Tag>
 		<English>Researching Printing Press as a Catholic civilization starts the Reformation, forcing all Catholic civilizations to decide whether to convert to Protestantism.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_22</Tag>
+		<English>In Dawn of Civilization, vassals can keep control of the first ring around its cities, unless the tile is also part of a master's city's first ring.</English>
+	</TEXT>
 </Civ4GameText>

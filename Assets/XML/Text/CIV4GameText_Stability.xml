@@ -179,4 +179,24 @@
 		<Italian>ESPANSIONE</Italian>
 		<Spanish>EXPANSIÓN</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CORE_AREA</Tag>
+		<English>Core Area</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_HISTORICAL_AREA</Tag>
+		<English>Historical Area</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CONTESTED_AREA</Tag>
+		<English>Contested Area</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_FOREIGN_AREA</Tag>
+		<English>Foreign Area</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_FOREIGN_CORE_AREA</Tag>
+		<English>Foreign Core Area</English>
+	</TEXT>
 </Civ4GameText>

@@ -38278,7 +38278,7 @@ BeginPlot
 	x=99,y=43
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -38671,7 +38671,7 @@ BeginPlot
 	x=100,y=42
 	isWOfRiver
 	RiverNSDirection=2
-	BonusType=BONUS_PIG
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot

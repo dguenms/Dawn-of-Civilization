@@ -17,6 +17,7 @@ GAME MECHANICS
 # Seljuk and independent cities immediately flip to Turkey to offset their lack of starting settlers
 # former city garrisons get pushed out before they flip to certain civs (Italy, Turkey) to prevent them from becoming too strong
 # building a Trading Company as Portugal, Spain, France, England, Netherlands gives you the option to acquire Asian cities in your civs historical area by force or gold *
+# vassals can keep control of the first ring around its cities, unless the tile is also part of a the first ring of a master's city
 
 
 BALANCE

@@ -13,6 +13,10 @@
 		<English>Canaanite Peoples</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_DESC_DEFAULT</Tag>
+		<English>Kingdom of Carthage</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_DESC_DEMOCRATIC</Tag>
 		<English>Republic of Lebanon</English>
 	</TEXT>

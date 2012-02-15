@@ -166,7 +166,7 @@ class DynamicCivs:
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_DEFAULT",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_DEFAULT",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEFAULT",
-                        iCarthage : "TXT_KEY_CIV_CARTHAGE_DESC_DEFAULT",
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEFAULT",
                         iRome : "TXT_KEY_CIV_ROME_DESC_DEFAULT",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEFAULT",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_DEFAULT",
@@ -201,7 +201,7 @@ class DynamicCivs:
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_PEOPLES",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_PEOPLES",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_PEOPLES",
-                        iCarthage : "TXT_KEY_CIV_CARTHAGE_DESC_PEOPLES",
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES",
                         iRome : "TXT_KEY_CIV_ROME_DESC_PEOPLES",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_PEOPLES",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_PEOPLES",
@@ -224,7 +224,7 @@ class DynamicCivs:
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_PEOPLES",
                         iAztecs : "TXT_KEY_CIV_AZTECS_DESC_PEOPLES",
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_PEOPLES",
-                        iTurkey : "TXT_KEY_CIV_OTTOMAN_DESC_PEOPLES",
+                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_PEOPLES",
 			iThailand : "TXT_KEY_CIV_THAILAND_DESC_PEOPLES",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_PEOPLES",
                 }
@@ -702,7 +702,10 @@ class DynamicCivs:
                 
 
         def setCivDesc(self, iCiv, sName, sInsert=""):
-                gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, (sInsert,)))
+		if sInsert != "":
+			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, (sInsert,)))
+		else:
+			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, ()))
 
 
         def setup(self):
@@ -812,15 +815,14 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, self.naziNames[iPlayer])
 				return
 			
-			if not bReborn:
-				if iMaster in self.specificVassalNames and not pMasterPlayer.isReborn():
-					if iPlayer in self.specificVassalNames[iMaster]:
-						self.setCivDesc(iPlayer, self.specificVassalNames[iMaster][iPlayer])
-						return
-					
-				if iMaster in self.genericVassalNames:
-					self.setCivDesc(iPlayer, self.genericVassalNames[iMaster], pPlayer.getCivilizationShortDescriptionKey())
+			if iMaster in self.specificVassalNames and not pMasterPlayer.isReborn():
+				if iPlayer in self.specificVassalNames[iMaster]:
+					self.setCivDesc(iPlayer, self.specificVassalNames[iMaster][iPlayer])
 					return
+					
+			if iMaster in self.genericVassalNames:
+				self.setCivDesc(iPlayer, self.genericVassalNames[iMaster], pPlayer.getCivilizationShortDescriptionKey())
+				return
 				
 			if iPlayer in [iMali, iEthiopia, iAztecs, iInca, iMaya]:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_COLONY", pPlayer.getCivilizationShortDescriptionKey())
@@ -895,7 +897,7 @@ class DynamicCivs:
 					return
 					
 		elif iPlayer == iIndia:
-			if bReborn:
+			if bReborn or bResurrected:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
 				return
 				

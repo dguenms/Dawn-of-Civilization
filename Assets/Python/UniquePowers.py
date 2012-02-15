@@ -254,8 +254,8 @@ class UniquePowers:
 		else:
 			print ("No plot found, spawning in Roma instead.")
 
-		# weaken the effect if there's a human involved
-		if (utils.getHumanID() == iEnemy or utils.getHumanID() == iRome):
+		# weaken the effect if human player is Rome
+		if (utils.getHumanID() == iRome):
 			utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 			utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 		else:

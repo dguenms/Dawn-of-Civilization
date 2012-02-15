@@ -246,6 +246,7 @@ Netherlands: three cities in Indonesia</English>
 		<Tag>TXT_KEY_CONCEPT_DOC_ODDS_PEDIA</Tag>
 		<English>[H1]Odds and Ends: Dawn of Civilization[\H1][PARAGRAPH:2]
 - The plague can't kill units anymore
+- Cities of a vassalized civilization can keep control of the first ring around its cities, unless it's also the first ring of a master's city
 - AI civilizations become more unstable if they survive ahistorically long
 - The American conqueror event automatically leads to war
 - It's impossible to vassalize far away civilizations until the discovery of Astronomy
@@ -256,5 +257,13 @@ Netherlands: three cities in Indonesia</English>
 - Free tech events like Liberalism or Oracle only allow to choose techs from your current or earlier eras
 - The Seljuks attack the Middle East in the 12th century
 - Buddhism is founded by building a Hindu Temple</English>
-	</TEXT>	
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS</Tag>
+		<English>Conditional Spawns</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS_PEDIA</Tag>
+		<English>[H1]Conditional Spawns[\H1][PARAGRAPH:2]Certain civilizations in Dawn of Civilization only spawn when the right conditions are met. These civilizations are Byzantium, Italy and Thailand. Their requirements are listed below:[NEWLINE][BOLD]Byzantium:[/BOLD] Only spawns if Rome is alive and controls at least two cities outside of its core. [NEWLINE][BOLD]Italy:[/BOLD] Only spawns if there are at least as many cities controlled by independents as by other players. [NEWLINE][BOLD]Thailand:[/BOLD] Only spawns if the Khmer are dead or sufficiently unstable. This threshold less strict when the player is controlling the Khmer.</English>
+	</TEXT>
 </Civ4GameText>
