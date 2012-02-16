@@ -418,6 +418,11 @@
 		<Tag>TXT_KEY_VASSALAGE_ALLOWS</Tag>
 		<English>[ICON_BULLET]Required to train [LINK=literal]Levy[\LINK] and [LINK=literal]Knight[\LINK][NEWLINE][ICON_BULLET]Required to build [LINK=literal]Castle[\LINK]</English>
 	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_REPUBLIC_REQUIREMENT</Tag>
+		<English>[ICON_BULLET]Requires [LINK=literal]Republic[\LINK]</English>
+	</TEXT>
 	
 
 </Civ4GameText>

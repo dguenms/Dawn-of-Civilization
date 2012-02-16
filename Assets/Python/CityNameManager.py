@@ -6662,7 +6662,7 @@ class CityNameManager:
                         if (sName == 'Gadir' or sName == 'Qart-Gadir' or sName == 'Gades' or sName == 'Gadeira' or sName == 'Al-Qadiz' or sName == 'C&#225;diz' or sName == 'C&#225;dis'):
                                 city.setName('Cadix', False)
 			if sName == 'Kanchipuram':
-				city.setName('Pondichéry', False)
+				city.setName('Pondich&#233;ry', False)
 
                 if (iNewOwner == iEngland): 
                         if (sName == 'Londinium' or sName == 'Londres' or sName == 'Londen' or sName == 'Lund&#250;vir'):
