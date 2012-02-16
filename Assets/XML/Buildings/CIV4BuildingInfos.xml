@@ -26378,6 +26378,7 @@
 			<Description>TXT_KEY_BUILDING_STATUE_OF_LIBERTY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_STATUE_OF_LIBERTY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_STATUE_OF_LIBERTY_STRATEGY</Strategy>
+			<Help>TXT_KEY_REPUBLIC_REQUIREMENT</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STATUE_OF_LIBERTY</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STATUE_OF_LIBERTY</MovieDefineTag>
@@ -26386,7 +26387,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			
+			<PrereqCivic>CIVIC_EMANCIPATION</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -32817,7 +32818,7 @@
 			<bPrereqReligion>0</bPrereqReligion>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>0</iAIWeight>
-			<iCost>400</iCost>
+			<iCost>650</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>

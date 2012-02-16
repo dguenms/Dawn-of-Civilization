@@ -379,7 +379,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_4</Tag>
-		<English>In Dawn of Civiliaztion, free technology effects like Liberalism or the Oracle only allow you to choose technologies of your current or earlier eras.</English>
+		<English>In Dawn of Civilization, free technology effects like Liberalism or the Oracle only allow you to choose technologies of your current or earlier eras.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_5</Tag>
@@ -452,5 +452,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_22</Tag>
 		<English>In Dawn of Civilization, vassals can keep control of the first ring around its cities, unless the tile is also part of a master's city's first ring.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_23</Tag>
+		<English>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</English>
 	</TEXT>
 </Civ4GameText>
