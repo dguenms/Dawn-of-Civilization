@@ -3881,8 +3881,8 @@ class RiseAndFall:
                         	utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 4)
                         utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
 			utils.makeUnitAI(con.iScout, iCiv, tPlot, UnitAITypes.UNITAI_EXPLORE, 2)
-			if utils.getHumanID() == iChina and gc.getPlayer(iEgypt).iPlayable():
-				utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_CITY_ATTACK, 4)
+			if utils.getHumanID() == iChina and gc.getPlayer(iEgypt).isPlayable():
+				utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
                 if (iCiv == iAztecs):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 4)

@@ -7145,7 +7145,7 @@ int CvCity::getTradeRouteModifier() const
 	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
 		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 			if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM((TeamTypes)getOwner()).isOpenBorders((TeamTypes)iI))
-				iResult += 20;
+				iResult += 10;
 
 	return iResult;
 }
