@@ -404,9 +404,9 @@ tResurrectionIntervals = (
 [(1700, 2020)], #Netherlands
 [(1340, 1590)], #Mali
 [(1700, 2020)], #Portugal
-[], #Inca
+[(1800, 1900)], #Inca
 [(1910, 2020)], #Mongolia
-[], #Aztec
+[(1800, 1900)], #Aztec
 [], #Mughals
 [(1700, 2020)], #Turkey
 [(1700, 2020)], #Thailand
@@ -1665,7 +1665,7 @@ tAIStopBirthThreshold = (
 
 #RiseAndFall
 tResurrectionProb = (
-60, #Egypt
+40, #Egypt
 100, #India
 100, #China
 30, #Babylonia
