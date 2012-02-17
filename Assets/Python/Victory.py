@@ -2114,10 +2114,16 @@ class Victory:
 			if iTech in [con.iBanking, con.iEducation, con.iRadio, con.iFascism]:
 				if self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1:
 					self.setGoal(iRome, 0, 1)
+					
+		# Korean UHV: Printing Press
+		if iTech == con.iPrintingPress:
+			if self.getGoal(iKorea, 1) == -1:
+				if iPlayer == iKorea:
+					self.setGoal(iKorea, 1, 1)
+				else:
+					self.setGoal(iKorea, 1, 0)
 
-		
-
-                elif (iPlayer == iJapan):
+                if (iPlayer == iJapan):
                         if (pJapan.isAlive()):
                                 if (iGameTurn >= getTurnForYear(1700) and pJapan.getCurrentEra() >= iModern):
                                         if (self.getGoal(iJapan, 2) == -1):
@@ -2140,14 +2146,6 @@ class Victory:
                                                                 self.setGoal(iJapan, 2, 1)
                                                         else:
                                                                 self.setGoal(iJapan, 2, 0)
-
-		# Korean UHV: Printing Press
-		if iTech == con.iPrintingPress:
-			if self.getGoal(iKorea, 1) == -1:
-				if iPlayer == iKorea:
-					self.setGoal(iKorea, 1, 1)
-				else:
-					self.setGoal(iKorea, 1, 0)
 
 		
                 elif (iPlayer == iMaya):
