@@ -1319,7 +1319,10 @@ public:
 	int getDistanceMaintenanceModifier() const;				// Exposed to Python
 	int getNumCitiesMaintenanceModifier() const;				// Exposed to Python
 	int getCorporationMaintenanceModifier() const;				// Exposed to Python
+	int getCorporationCommerceModifier() const; //Leoreth
+	int getProcessModifier() const; //Leoreth
 	int getExtraHealth() const;						// Exposed to Python
+	int getPollutionModifier() const; //Leoreth
 	int getFreeExperience() const;				// Exposed to Python
 	int getWorkerSpeedModifier() const;				// Exposed to Python
 	int getImprovementUpgradeRateModifier() const;				// Exposed to Python
@@ -1334,6 +1337,7 @@ public:
 	int getLargestCityHappiness() const;					// Exposed to Python
 	int getWarWearinessModifier() const;					// Exposed to Python
 	int getFreeSpecialist() const;				// Exposed to Python
+	int getCoreFreeSpecialist() const; //Leoreth
 	int getTradeRoutes() const;				// Exposed to Python
 	int getTechPrereq() const;				// Exposed to Python
 	int getCivicPercentAnger() const;				// Exposed to Python
@@ -1376,6 +1380,8 @@ public:
 	int* getCapitalCommerceModifierArray() const;
 	int getSpecialistExtraCommerce(int i) const;				// Exposed to Python
 	int* getSpecialistExtraCommerceArray() const;
+	int getSpecialistExtraYield(int i) const; //Leoreth
+	int* getSpecialistExtraYieldArray() const; //Leoreth
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
 	int getBuildingHealthChanges(int i) const;				// Exposed to Python
 	int getFeatureHappinessChanges(int i) const;				// Exposed to Python
@@ -1405,7 +1411,10 @@ protected:
 	int m_iDistanceMaintenanceModifier;
 	int m_iNumCitiesMaintenanceModifier;
 	int m_iCorporationMaintenanceModifier;
+	int m_iCorporationCommerceModifier; //Leoreth
+	int m_iProcessModifier; //Leoreth
 	int m_iExtraHealth;
+	int m_iPollutionModifier; //Leoreth
 	int m_iFreeExperience;
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;
@@ -1420,6 +1429,7 @@ protected:
 	int m_iLargestCityHappiness;
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
+	int m_iCoreFreeSpecialist; //Leoreth
 	int m_iTradeRoutes;
 	int m_iTechPrereq;
 	int m_iCivicPercentAnger;
@@ -1454,6 +1464,7 @@ protected:
 	int* m_piCommerceModifier;
 	int* m_piCapitalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
+	int* m_piSpecialistExtraYield; //Leoreth
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
 	int* m_paiFeatureHappinessChanges;
