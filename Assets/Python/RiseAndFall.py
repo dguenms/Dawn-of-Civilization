@@ -5031,7 +5031,7 @@ class RiseAndFall:
                                 teamMongolia.setHasTech(con.iFeudalism, True, iCiv, False, False)
                                 teamMongolia.setHasTech(con.iMathematics, True, iCiv, False, False)
                                 teamMongolia.setHasTech(con.iConstruction, True, iCiv, False, False)
-				pMongols.isHuman():
+				if pMongols.isHuman():
 					teamMongolia.setHasTech(con.iEngineering, True, iCiv, False, False)
 					teamMongolia.setHasTech(con.iGuilds, True, iCiv, False, False)
                                 teamMongolia.setHasTech(con.iCurrency, True, iCiv, False, False)
