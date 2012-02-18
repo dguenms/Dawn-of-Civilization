@@ -189,7 +189,7 @@ class DynamicCivs:
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_DEFAULT",
                         iAztecs : "TXT_KEY_CIV_AZTECS_DESC_DEFAULT",
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_DEFAULT",
-                        iTurkey : "TXT_KEY_CIV_OTTOMAN_DESC_DEFAULT",
+                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_DEFAULT",
 			iThailand : "TXT_KEY_CIV_THAILAND_DESC_DEFAULT",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEFAULT",
                 }
