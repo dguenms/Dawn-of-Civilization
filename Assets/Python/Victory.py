@@ -162,7 +162,7 @@ tSouthAsiaTL = (88, 24)
 tSouthAsiaBR = (110, 38)
 
 tVienna = (63, 49)
-tCairo = (69, 35)
+tCairo = (69, 34)
 tMecca = (75, 33)
 tBaghdad = (77, 40)
 

@@ -475,6 +475,15 @@ public:
 	int getCorporationMaintenanceModifier() const;																															// Exposed to Python
 	void changeCorporationMaintenanceModifier(int iChange);
 
+	//Leoreth
+	int getCorporationCommerceModifier() const;
+	void changeCorporationCommerceModifier(int iChange);
+
+	//Leoreth
+	int getProcessModifier() const;
+	void changeProcessModifier(int iChange);
+	void updateProductionToCommerceModifier();
+
 	int getTotalMaintenance() const;																																					// Exposed to Python
 	void changeTotalMaintenance(int iChange);
 
@@ -486,6 +495,10 @@ public:
 
 	DllExport int getExtraHealth() const;																																			// Exposed to Python
 	void changeExtraHealth(int iChange);
+
+	//Leoreth
+	int getPollutionModifier() const;
+	void changePollutionModifier(int iChange);
 
 	int getBuildingGoodHealth() const;																																				// Exposed to Python
 	void changeBuildingGoodHealth(int iChange);
@@ -511,6 +524,10 @@ public:
 
 	int getFreeSpecialist() const;																																						// Exposed to Python
 	void changeFreeSpecialist(int iChange);
+
+	//Leoreth
+	int getCoreFreeSpecialist() const;
+	void changeCoreFreeSpecialist(int iChange);
 
 	int getNoForeignTradeCount() const;
 	bool isNoForeignTrade() const;																																						// Exposed to Python
@@ -1124,10 +1141,13 @@ protected:
 	int m_iDistanceMaintenanceModifier;
 	int m_iNumCitiesMaintenanceModifier;
 	int m_iCorporationMaintenanceModifier;
+	int m_iCorporationCommerceModifier; //Leoreth
+	int m_iProcessModifier; //Leoreth
 	int m_iTotalMaintenance;
 	int m_iUpkeepModifier;
 	int m_iLevelExperienceModifier;
 	int m_iExtraHealth;
+	int m_iPollutionModifier; //Leoreth
 	int m_iBuildingGoodHealth;
 	int m_iBuildingBadHealth;
 	int m_iExtraHappiness;
@@ -1136,6 +1156,7 @@ protected:
 	int m_iWarWearinessPercentAnger;
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
+	int m_iCoreFreeSpecialist; //Leoreth
 	int m_iNoForeignTradeCount;
 	int m_iNoCorporationsCount;
 	int m_iNoForeignCorporationsCount;
@@ -1207,6 +1228,7 @@ protected:
 	int* m_aiCapitalCommerceRateModifier;
 	int* m_aiStateReligionBuildingCommerce;
 	int* m_aiSpecialistExtraCommerce;
+	int* m_aiSpecialistExtraYield; //Leoreth
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;

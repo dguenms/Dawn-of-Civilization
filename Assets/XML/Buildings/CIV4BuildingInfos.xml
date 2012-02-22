@@ -20882,7 +20882,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -23267,7 +23267,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -23447,7 +23447,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -23638,7 +23638,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -23824,7 +23824,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -24002,7 +24002,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -24185,7 +24185,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -24370,7 +24370,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -24551,7 +24551,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -25102,7 +25102,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -26387,7 +26387,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_EMANCIPATION</PrereqCivic>
+			<PrereqCivic>CIVIC_REPUBLIC</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -27936,7 +27936,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -28490,7 +28490,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -29202,7 +29202,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -30626,8 +30626,7 @@
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
 			<bStateReligion>1</bStateReligion>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
-			
+			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>			
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -30753,7 +30752,12 @@
 			<SpecialistExtraCommerces/>
 			<StateReligionCommerces/>
 			<CommerceHappinesses/>
-			<ReligionChanges/>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
 			<SpecialistCounts/>
 			<FreeSpecialistCounts/>
 			<CommerceFlexibles/>
@@ -30798,7 +30802,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -31329,7 +31333,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>CIVIC_PACIFISM</PrereqCivic>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>

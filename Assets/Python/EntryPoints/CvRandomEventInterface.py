@@ -1465,7 +1465,7 @@ def canTriggerInterstate(argsList):
 	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	if not player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_EMANCIPATION')):
+	if not player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_EGALITARIANISM')):
 		return false
 	
 	return true
@@ -3167,7 +3167,7 @@ def canTriggerEsteemedPlaywright(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	# If source civ is operating this Civic, disallow the event to trigger.
-	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_SLAVERY')):
+	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_FORCED_LABOR')):
 		return false
 
 	return true
@@ -3199,7 +3199,7 @@ def canTriggerHighWarlord(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	# If source civ is operating this Civic, disallow the event to trigger.
-	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_EMANCIPATION')):
+	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_EGALITARIANISM')):
 		return false
 
 	return true
@@ -3555,7 +3555,7 @@ def canApplyEliteSwordsDone2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_HEREDITARY_RULE')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_DYNASTICISM')
 	
 	if not player.isCivic(iCivic):
 		return false

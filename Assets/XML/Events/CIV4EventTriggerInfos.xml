@@ -1048,7 +1048,7 @@
 			<iWeight>500</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_ENVIRONMENTALISM</Civic>	<!-- Serfdom -->
+			<Civic>CIVIC_FORCED_LABOR</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>4</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -6375,7 +6375,7 @@
 			<iWeight>200</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_EMANCIPATION</Civic>
+			<Civic>CIVIC_CAPITALISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -7668,7 +7668,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_CASTE_SYSTEM</Civic>	<!-- Socialism -->
+			<Civic>CIVIC_ENVIRONMENTALISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -7752,7 +7752,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_FREE_RELIGION</Civic>
+			<Civic>CIVIC_SECULARISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -13169,7 +13169,7 @@
 			<iWeight>200</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_EMANCIPATION</Civic>	<!-- Republic -->
+			<Civic>CIVIC_REPUBLIC</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -13433,7 +13433,7 @@
 			<iWeight>-2</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_EMANCIPATION</Civic>
+			<Civic>CIVIC_REPUBLIC</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -13514,7 +13514,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_HEREDITARY_RULE</Civic>
+			<Civic>CIVIC_DYNASTICISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -13780,7 +13780,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_NATIONHOOD</Civic>		<!-- Autocracy -->
+			<Civic>CIVIC_AUTOCRACY</Civic>		<!-- Autocracy -->
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -15560,7 +15560,7 @@
 			<iWeight>0</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_ENVIRONMENTALISM</Civic>	<!-- Serfdom -->
+			<Civic>CIVIC_FORCED_LABOR</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>4</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -15897,7 +15897,7 @@
 			<iWeight>1000</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_THEOCRACY</Civic>
+			<Civic>CIVIC_SCHOLASTICISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -17103,7 +17103,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_HEREDITARY_RULE</Civic>
+			<Civic>CIVIC_DYNASTICISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>

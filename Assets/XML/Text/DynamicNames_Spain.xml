@@ -45,6 +45,10 @@
 		<English>Kingdom of Iberia</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SPAIN_ARAGON</Tag>
+		<English>Crown of Aragon</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_NAZI_VASSAL</Tag>
 		<English>Reichskommissariat Spain</English>
 	</TEXT>

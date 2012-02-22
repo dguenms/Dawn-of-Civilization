@@ -7724,9 +7724,9 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 					{
 					case TRADE_TECHNOLOGIES:
 						// Leoreth: penalize China in tech trading, so it's not possible to abuse the UP
-						if (ePlayer == (PlayerTypes)CHINA)
+						/*if (ePlayer == (PlayerTypes)CHINA)
 							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam())*3/4;
-						else
+						else*/
 							iWeight += GET_TEAM(GET_PLAYER(ePlayer).getTeam()).AI_techTradeVal((TechTypes)(pNode->m_data.m_iData), getTeam());
 						break;
 					case TRADE_RESOURCES:
@@ -10684,6 +10684,7 @@ CivicTypes CvPlayerAI::AI_bestCivic(CivicOptionTypes eCivicOption) const
 int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 {
 	PROFILE_FUNC();
+	GC.getGameINLINE().logMsg("Begin AI civic value.");
 
 	bool bWarPlan;
 	int iConnectedForeignCities;
@@ -10751,6 +10752,42 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12);
+
+	//Leoreth: free core specialist
+	if (kCivic.getCoreFreeSpecialist() > 0)
+	{
+		if (getCapitalCity() != NULL)
+		{
+			GC.getGameINLINE().logMsg("Begin AI free core specialist.");
+			int iLoop;
+			int iX;
+			int iY;
+			int iCapitalX = getCapitalCity()->getX();
+			int iCapitalY = getCapitalCity()->getY();
+			CvCity* pLoopCity;
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				iX = pLoopCity->getX();
+				iY = pLoopCity->getY();
+				if (plotDistance(iX, iY, iCapitalX, iCapitalY) <= 3)
+				{
+					iValue += kCivic.getCoreFreeSpecialist() * 12;
+				}
+			}
+			GC.getGameINLINE().logMsg("End AI free core specialist.");
+		}
+
+		if (getID() == MALI || getID() == EGYPT)
+		{
+			iValue -= 40;
+		}
+
+		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || (getID() == ROME && GET_PLAYER((PlayerTypes)ROME).isReborn()))
+		{
+			iValue += 40;
+		}
+	}
+
 	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * 3) * 6) + (getNumCities() * 2));
 	iValue += -((kCivic.isNoForeignTrade()) ? (iConnectedForeignCities * 3) : 0);
 	if (kCivic.isNoCorporations())
@@ -10783,6 +10820,20 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 	}
 
+	//Leoreth: corporation commerce modifier
+	if (kCivic.getCorporationCommerceModifier() != 0)
+	{
+		GC.getGameINLINE().logMsg("Begin AI corporation commerce modifier.");
+
+		int iCorpCount = 0;
+		for (int iCorp = 0; iCorp < GC.getNumCorporationInfos(); ++iCorp)
+		{
+			iCorpCount += countCorporations((CorporationTypes)iCorp);
+		}
+		iValue += ((kCivic.getCorporationCommerceModifier() * iCorpCount) / 5);
+		GC.getGameINLINE().logMsg("End AI corporation commerce modifier.");
+	}
+
 	if (kCivic.getCivicPercentAnger() != 0)
 	{
 		int iNumOtherCities = GC.getGameINLINE().getNumCities() - getNumCities();
@@ -10808,19 +10859,36 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += (getNumCities() * 6 * AI_getHealthWeight(isCivic(eCivic) ? -kCivic.getExtraHealth() : kCivic.getExtraHealth(), 1)) / 100;
 	}
 
+	// Leoreth: pollution modifier
+	iTempValue = 0;
+	if (kCivic.getPollutionModifier() != 0)
+	{
+		GC.getGameINLINE().logMsg("Begin AI pollution modifier.");
+		int iHealthDifference;
+		int iLoop;
+		CvCity* pLoopCity;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			iHealthDifference = pLoopCity->badHealth() - (100 + kCivic.getPollutionModifier()) * pLoopCity->badHealth() / 100;
+			iTempValue += (6 * AI_getHealthWeight(isCivic(eCivic) ? -iHealthDifference : iHealthDifference, 1));
+		}
+		iValue = iTempValue / 100;
+		GC.getGameINLINE().logMsg("End AI pollution modifier.");
+	}
+
 	iTempValue = kCivic.getHappyPerMilitaryUnit() * 3;
 	if (iTempValue != 0)
 	{
 		//Rhye - start switch
 		//iValue += (getNumCities() * 9 * AI_getHappinessWeight(isCivic(eCivic) ? -iTempValue : iTempValue, 1)) / 100; //Rhye
-		int iModifier = 8;
+		int iModifier = 7;
 		switch (getID())
 		{
 			case JAPAN:
-				iModifier = 9;
+				iModifier = 8;
 				break;
 			default:
-				iModifier = 8;
+				iModifier = 7;
 				break;
 		}
 		iValue += (getNumCities() * iModifier * AI_getHappinessWeight(isCivic(eCivic) ? -iTempValue : iTempValue, 1)) / 100; //Rhye
@@ -10880,6 +10948,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) + getNumCities() * 2))) / 100;
 		}
+		// Leoreth: specialist extra yield
+		GC.getGameINLINE().logMsg("Begin AI specialist extra yield.");
+		iTempValue += ((kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15);
+		GC.getGameINLINE().logMsg("End AI specialist extra yield.");
 
 		if (iI == YIELD_FOOD)
 		{
@@ -10896,6 +10968,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 		iValue += iTempValue;
 	}
+
+	//Leoreth: process modifier
+	//do nothing here, look if other effects are enough
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
@@ -11089,26 +11164,41 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 	//Rhye - end 6th
 
+	//Leoreth: Pantheon civic
+	if (eCivic == (CivicTypes)PANTHEON)
+	{
+		GC.getGameINLINE().logMsg("Begin AI pantheon civic.");
+		if (GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getFavoriteReligion() == -1 && GET_PLAYER(getID()).getCurrentEra() < 2 && getID() != MAYA)
+		{
+			iValue += GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getWonderConstructRand() * 2;
+		}
+		else
+		{
+			return 0;
+		}
+		GC.getGameINLINE().logMsg("End AI pantheon civic.");
+	}
+
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)
 	{
 		if (!kCivic.isStateReligion() || iHighestReligionCount > 0)
 		{
-			iValue *= 11;   // Leoreth: was 5/4 before, lowered because of civicMatrix' additional impact
-			iValue /= 10;
+			iValue *= 5;   // Leoreth: was 5/4 before, lowered because of civicMatrix' additional impact
+			iValue /= 4;
 			iValue += 6 * getNumCities();
 			iValue += 20;
 		}
 	}
 
 	// Leoreth - preferred civics (by era and civ), see CvRhyes
-	if (GET_PLAYER((PlayerTypes)getID()).getCivicPreference(kCivic.getCivicOptionType()) == eCivic)
+	/*if (GET_PLAYER((PlayerTypes)getID()).getCivicPreference(kCivic.getCivicOptionType()) == eCivic)
 	{
 	    iValue *= 6;
 	    iValue /= 5;
-	}
+	}*/
 
 	// Leoreth - prefer Pantheon if more than half of their cities has no religion
-	if (eCivic == 21){  // Pantheon
+	if (eCivic == (CivicTypes)PANTHEON){  // Pantheon
 		//GC.getGameINLINE().logMsg("Pantheon check entered");
         if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME){
             int iCityCounter = 0;
@@ -11128,14 +11218,14 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 					}
 				}
             }
-            if (2*iCityCounter <= GET_PLAYER((PlayerTypes)getID()).getNumCities())
-                iValue *= 2;
+            if (2*iCityCounter >= GET_PLAYER((PlayerTypes)getID()).getNumCities())
+                iValue /= 2;
         }
 		//GC.getGameINLINE().logMsg("Pantheon check finished");
 	}
 
 	// Leoreth - prefer Vassalage for medieval Eurocivs
-	if (eCivic == 6){
+	if (eCivic == (CivicTypes)VASSALAGE){
 	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == GERMANY || getID() == VIKING || getID() == PORTUGAL || getID() == RUSSIA){
 	        if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() == 2){
 	            iValue *= 2;
@@ -11148,6 +11238,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 	    iValue /= 10;
 	}
+	GC.getGameINLINE().logMsg("End AI civic value.");
 
 	return iValue;
 }
@@ -13710,8 +13801,8 @@ void CvPlayerAI::AI_doDiplo()
 													iOurValue = GET_TEAM(getTeam()).AI_techTradeVal(eBestReceiveTech, GET_PLAYER((PlayerTypes)iI).getTeam());
 
 													//Leoreth: penalize the Chinese in tech trading to offset their UP
-													if (iI == CHINA)
-														iOurValue = iOurValue * 3 / 4;
+													/*if (iI == CHINA)
+														iOurValue = iOurValue * 3 / 4;*/
 
 													if (eBestGiveTech != NO_TECH)
 													{
