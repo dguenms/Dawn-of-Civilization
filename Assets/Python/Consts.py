@@ -1880,6 +1880,15 @@ iEthEmbassy, iKorEmbassy, iMayEmbassy, iByzEmbassy, iVikEmbassy, iAraEmbassy, iK
 iFraEmbassy, iEngEmbassy, iGerEmbassy, iRusEmbassy, iHolEmbassy, iMalEmbassy, iPorEmbassy, iIncEmbassy, iMonEmbassy,
 iAztEmbassy, iMugEmbassy, iTurEmbassy, iThaEmbassy, iAmeEmbassy) = range(iNumBuildingsPlague, iNumBuildingsPlague+iNumPlayers)
 
+#Civics
+iNumCivics = 36
+(iTyranny, iDynasticism, iCityStates, iTheocracy, iAutocracy, iRepublic,
+iDirectRule, iVassalage, iAbsolutism, iRepresentation, iSupremeCouncil, iUniversalSuffrage,
+iTribalism, iAgrarianism, iUrbanization, iCapitalism, iTotalitarianism, iEgalitarianism,
+iSelfSufficiency, iForcedLabor, iMercantilism, iFreeMarket, iStateProperty, iEnvironmentalism,
+iAnimism, iPantheon, iOrganizedReligion, iScholasticism, iPatriarchate, iSecularism,
+iSubjugation, iViceroyalty, iResettlement, iOccupation, iConfederation, iCommonwealth) = range(iNumCivics)
+
 
 #Projects
 

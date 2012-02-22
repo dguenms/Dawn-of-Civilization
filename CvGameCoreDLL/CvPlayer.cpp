@@ -50,6 +50,7 @@ CvPlayer::CvPlayer()
 	m_aiCapitalCommerceRateModifier = new int[NUM_COMMERCE_TYPES];
 	m_aiStateReligionBuildingCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiSpecialistExtraCommerce = new int[NUM_COMMERCE_TYPES];
+	m_aiSpecialistExtraYield = new int[NUM_YIELD_TYPES]; //Leoreth
 	m_aiCommerceFlexibleCount = new int[NUM_COMMERCE_TYPES];
 	m_aiGoldPerTurnByPlayer = new int[MAX_PLAYERS];
 	m_aiEspionageSpendingWeightAgainstTeam = new int[MAX_TEAMS];
@@ -116,6 +117,7 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiCapitalCommerceRateModifier);
 	SAFE_DELETE_ARRAY(m_aiStateReligionBuildingCommerce);
 	SAFE_DELETE_ARRAY(m_aiSpecialistExtraCommerce);
+	SAFE_DELETE_ARRAY(m_aiSpecialistExtraYield); //Leoreth
 	SAFE_DELETE_ARRAY(m_aiCommerceFlexibleCount);
 	SAFE_DELETE_ARRAY(m_aiGoldPerTurnByPlayer);
 	SAFE_DELETE_ARRAY(m_aiEspionageSpendingWeightAgainstTeam);
@@ -156,9 +158,14 @@ void CvPlayer::init(PlayerTypes eID)
 	FAssert(getTeam() != NO_TEAM);
 	GET_TEAM(getTeam()).changeNumMembers(1);
 
+	TCHAR szOut[1024];
+
 	if ((GC.getInitCore().getSlotStatus(getID()) == SS_TAKEN) || (GC.getInitCore().getSlotStatus(getID()) == SS_COMPUTER))
 	{
 		setAlive(true);
+
+		sprintf(szOut, "Player %d set alive reached\n", eID);
+		GC.getGameINLINE().logMsg(szOut);
 
 		if (GC.getGameINLINE().isOption(GAMEOPTION_RANDOM_PERSONALITIES))
 		{
@@ -298,7 +305,13 @@ void CvPlayer::init(PlayerTypes eID)
 		}
 	}
 
+	sprintf(szOut, "Player %d AI init reached.", eID);
+	GC.getGameINLINE().logMsg(szOut);
+
 	AI_init();
+
+	sprintf(szOut, "Player %d init completed.", eID);
+	GC.getGameINLINE().logMsg(szOut);
 
 	//Rhye - start (dynamic civ names - not jdog's)
 	/*if (getID() < NUM_MAJOR_PLAYERS)
@@ -447,10 +460,13 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iDistanceMaintenanceModifier = 0;
 	m_iNumCitiesMaintenanceModifier = 0;
 	m_iCorporationMaintenanceModifier = 0;
+	m_iCorporationCommerceModifier = 0; //Leoreth
+	m_iProcessModifier = 0; //Leoreth
 	m_iTotalMaintenance = 0;
 	m_iUpkeepModifier = 0;
 	m_iLevelExperienceModifier = 0;
 	m_iExtraHealth = 0;
+	m_iPollutionModifier = 0; //Leoreth
 	m_iBuildingGoodHealth = 0;
 	m_iBuildingBadHealth = 0;
 	m_iExtraHappiness = 0;
@@ -459,6 +475,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iWarWearinessPercentAnger = 0;
 	m_iWarWearinessModifier = 0;
 	m_iFreeSpecialist = 0;
+	m_iCoreFreeSpecialist = 0; //Leoreth
 	m_iNoForeignTradeCount = 0;
 	m_iNoCorporationsCount = 0;
 	m_iNoForeignCorporationsCount = 0;
@@ -532,6 +549,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_aiCapitalYieldRateModifier[iI] = 0;
 		m_aiExtraYieldThreshold[iI] = 0;
 		m_aiTradeYieldModifier[iI] = 0;
+		m_aiSpecialistExtraYield[iI] = 0; //Leoreth
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -2702,7 +2720,7 @@ const TCHAR* CvPlayer::getUnitButton(UnitTypes eUnit) const
 void CvPlayer::doTurn()
 {
 	PROFILE_FUNC();
-	//GC.getGameINLINE().logMsg("player doTurn", getID()); //Rhye
+	GC.getGameINLINE().logMsg("player doTurn", getID()); //Rhye
 
 	//Rhye - start
 	if (turnPlayed[getID()] == 1)
@@ -8245,7 +8263,10 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 	}
 	//Rhye - start UP
 	if (getID() == EGYPT)
-		if ((eCivic == 1) || (eCivic == 16) || (eCivic == 21))
+		if ((eCivic == (CivicTypes)DYNASTICISM) || (eCivic == (CivicTypes)FORCED_LABOR) || (eCivic == (CivicTypes)PANTHEON))
+			return true;
+	if (getID() == NETHERLANDS)
+		if (eCivic == (CivicTypes)REPUBLIC)
 			return true;
 	//Rhye - end UP
 
@@ -10251,6 +10272,63 @@ void CvPlayer::changeCorporationMaintenanceModifier(int iChange)
 	}
 }
 
+//Leoreth
+int CvPlayer::getCorporationCommerceModifier() const
+{
+	return m_iCorporationCommerceModifier;
+}
+
+//Leoreth
+void CvPlayer::changeCorporationCommerceModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCorporationMaintenanceModifier += iChange;
+	}
+}
+
+//Leoreth
+int CvPlayer::getProcessModifier() const
+{
+	return m_iProcessModifier;
+}
+
+//Leoreth
+void CvPlayer::changeProcessModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iProcessModifier += iChange;
+
+		updateProductionToCommerceModifier();
+		
+		updateCommerce();
+
+		AI_makeAssignWorkDirty();
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+		}
+	}
+}
+
+//Leoreth
+void CvPlayer::updateProductionToCommerceModifier()
+{
+	GC.getGameINLINE().logMsg("Begin update process modifier.");
+	int iLoop;
+	CvCity* pLoopCity;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		for (int iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
+		{
+			pLoopCity->changeProductionToCommerceModifier((CommerceTypes)iI, pLoopCity->getProductionToCommerceModifier((CommerceTypes)iI) * (100 + getProcessModifier()) / 100 - pLoopCity->getProductionToCommerceModifier((CommerceTypes)iI));
+		}
+	}
+	GC.getGameINLINE().logMsg("End update process modifier.");
+}
+
 
 int CvPlayer::getTotalMaintenance() const
 {
@@ -10305,6 +10383,22 @@ void CvPlayer::changeExtraHealth(int iChange)
 	}
 }
 
+//Leoreth
+int CvPlayer::getPollutionModifier() const
+{
+	return m_iPollutionModifier;
+}
+
+//Leoreth
+void CvPlayer::changePollutionModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iPollutionModifier += iChange;
+
+		AI_makeAssignWorkDirty();
+	}
+}
 
 int CvPlayer::getBuildingGoodHealth() const
 {
@@ -10492,6 +10586,24 @@ void CvPlayer::changeFreeSpecialist(int iChange)
 	{
 		m_iFreeSpecialist = (m_iFreeSpecialist + iChange);
 		FAssert(getFreeSpecialist() >= 0);
+
+		AI_makeAssignWorkDirty();
+	}
+}
+
+//Leoreth
+int CvPlayer::getCoreFreeSpecialist() const
+{
+	return m_iCoreFreeSpecialist;
+}
+
+//Leoreth
+void CvPlayer::changeCoreFreeSpecialist(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCoreFreeSpecialist += iChange;
+		FAssert(getCoreFreeSpecialist() >= 0);
 
 		AI_makeAssignWorkDirty();
 	}
@@ -17443,6 +17555,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 {
 	int iI, iJ;
 
+	GC.getGameINLINE().logMsg("Begin process civics.");
+
 	changeGreatPeopleRateModifier(GC.getCivicInfo(eCivic).getGreatPeopleRateModifier() * iChange);
 	changeGreatGeneralRateModifier(GC.getCivicInfo(eCivic).getGreatGeneralRateModifier() * iChange);
 	changeDomesticGreatGeneralRateModifier(GC.getCivicInfo(eCivic).getDomesticGreatGeneralRateModifier() * iChange);
@@ -17450,7 +17564,10 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeDistanceMaintenanceModifier(GC.getCivicInfo(eCivic).getDistanceMaintenanceModifier() * iChange);
 	changeNumCitiesMaintenanceModifier(GC.getCivicInfo(eCivic).getNumCitiesMaintenanceModifier() * iChange);
 	changeCorporationMaintenanceModifier(GC.getCivicInfo(eCivic).getCorporationMaintenanceModifier() * iChange);
+	changeCorporationCommerceModifier(GC.getCivicInfo(eCivic).getCorporationCommerceModifier() * iChange); //Leoreth
+	changeProcessModifier(GC.getCivicInfo(eCivic).getProcessModifier() * iChange); //Leoreth
 	changeExtraHealth(GC.getCivicInfo(eCivic).getExtraHealth() * iChange);
+	changePollutionModifier(GC.getCivicInfo(eCivic).getPollutionModifier() * iChange); //Leoreth
 	changeFreeExperience(GC.getCivicInfo(eCivic).getFreeExperience() * iChange);
 	changeWorkerSpeedModifier(GC.getCivicInfo(eCivic).getWorkerSpeedModifier() * iChange);
 	changeImprovementUpgradeRateModifier(GC.getCivicInfo(eCivic).getImprovementUpgradeRateModifier() * iChange);
@@ -17469,6 +17586,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeLargestCityHappiness(GC.getCivicInfo(eCivic).getLargestCityHappiness() * iChange);
 	changeWarWearinessModifier(GC.getCivicInfo(eCivic).getWarWearinessModifier() * iChange);
 	changeFreeSpecialist(GC.getCivicInfo(eCivic).getFreeSpecialist() * iChange);
+	changeCoreFreeSpecialist(GC.getCivicInfo(eCivic).getCoreFreeSpecialist() * iChange); //Leoreth
 	changeTradeRoutes(GC.getCivicInfo(eCivic).getTradeRoutes() * iChange);
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
 	changeNoCorporationsCount(GC.getCivicInfo(eCivic).isNoCorporations() * iChange);
@@ -17487,6 +17605,10 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		changeYieldRateModifier(((YieldTypes)iI), (GC.getCivicInfo(eCivic).getYieldModifier(iI) * iChange));
 		changeCapitalYieldRateModifier(((YieldTypes)iI), (GC.getCivicInfo(eCivic).getCapitalYieldModifier(iI) * iChange));
 		changeTradeYieldModifier(((YieldTypes)iI), (GC.getCivicInfo(eCivic).getTradeYieldModifier(iI) * iChange));
+		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+		{
+			changeSpecialistExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange)); //Leoreth
+		}
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -17533,6 +17655,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 			changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (GC.getCivicInfo(eCivic).getImprovementYieldChanges(iI, iJ) * iChange));
 		}
 	}
+	GC.getGameINLINE().logMsg("End process civics.");
 }
 
 void CvPlayer::showMissedMessages()
@@ -17810,10 +17933,13 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iDistanceMaintenanceModifier);
 	pStream->Read(&m_iNumCitiesMaintenanceModifier);
 	pStream->Read(&m_iCorporationMaintenanceModifier);
+	pStream->Read(&m_iCorporationCommerceModifier); //Leoreth
+	pStream->Read(&m_iProcessModifier); //Leoreth
 	pStream->Read(&m_iTotalMaintenance);
 	pStream->Read(&m_iUpkeepModifier);
 	pStream->Read(&m_iLevelExperienceModifier);
 	pStream->Read(&m_iExtraHealth);
+	pStream->Read(&m_iPollutionModifier); //Leoreth
 	pStream->Read(&m_iBuildingGoodHealth);
 	pStream->Read(&m_iBuildingBadHealth);
 	pStream->Read(&m_iExtraHappiness);
@@ -17822,6 +17948,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iWarWearinessPercentAnger);
 	pStream->Read(&m_iWarWearinessModifier);
 	pStream->Read(&m_iFreeSpecialist);
+	pStream->Read(&m_iCoreFreeSpecialist); //Leoreth
 	pStream->Read(&m_iNoForeignTradeCount);
 	pStream->Read(&m_iNoCorporationsCount);
 	pStream->Read(&m_iNoForeignCorporationsCount);
@@ -18285,10 +18412,13 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iDistanceMaintenanceModifier);
 	pStream->Write(m_iNumCitiesMaintenanceModifier);
 	pStream->Write(m_iCorporationMaintenanceModifier);
+	pStream->Write(m_iCorporationCommerceModifier); //Leoreth
+	pStream->Write(m_iProcessModifier); //Leoreth
 	pStream->Write(m_iTotalMaintenance);
 	pStream->Write(m_iUpkeepModifier);
 	pStream->Write(m_iLevelExperienceModifier);
 	pStream->Write(m_iExtraHealth);
+	pStream->Write(m_iPollutionModifier); //Leoreth
 	pStream->Write(m_iBuildingGoodHealth);
 	pStream->Write(m_iBuildingBadHealth);
 	pStream->Write(m_iExtraHappiness);
@@ -18297,6 +18427,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iWarWearinessPercentAnger);
 	pStream->Write(m_iWarWearinessModifier);
 	pStream->Write(m_iFreeSpecialist);
+	pStream->Write(m_iCoreFreeSpecialist); //Leoreth
 	pStream->Write(m_iNoForeignTradeCount);
 	pStream->Write(m_iNoCorporationsCount);
 	pStream->Write(m_iNoForeignCorporationsCount);

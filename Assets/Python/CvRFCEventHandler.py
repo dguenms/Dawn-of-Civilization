@@ -270,17 +270,17 @@ class CvRFCEventHandler:
                 if (playerType == con.iArabia):
                         self.up.arabianUP(city)
                 elif (playerType == con.iTurkey):
-                        self.up.turkishUP(city, playerType)
+                        self.up.turkishUP(city, playerType, owner)
 		elif (playerType == con.iMongolia and bConquest):
 			self.up.mongolUP(city)
 		elif (playerType == con.iMughals):
 			self.up.mughalUP(city)
 		elif (playerType == con.iSeljuks):
 			self.up.seljukUP(city)
-			self.up.turkishUP(city, playerType)
+			self.up.turkishUP(city, playerType, owner)
 		elif playerType in lTradingCompanyList:
 			if (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(playerType)]:
-				self.up.turkishUP(city, playerType)
+				self.up.turkishUP(city, playerType, owner)
 
                 if (playerType < iNumMajorPlayers):
                          utils.spreadMajorCulture(playerType, city.getX(), city.getY())
@@ -396,7 +396,14 @@ class CvRFCEventHandler:
 
 
                 if (iOwner == con.iTurkey):
-                        self.up.turkishUP(city, iOwner)
+                        self.up.turkishUP(city, iOwner, -1)
+			
+		if (iOwner == con.iCarthage):
+			if not gc.getPlayer(con.iCarthage).isHuman() and city.getX() == 58 and city.getY() == 39:
+				x = gc.getPlayer(con.iCarthage).getCapitalCity().getX()
+				y = gc.getPlayer(con.iCarthage).getCapitalCity().getY()
+				gc.getMap().plot(58,39).getPlotCity().setHasRealBuilding(con.iPalace, True)
+				gc.getMap().plot(x,y).getPlotCity().setHasRealBuilding(con.iPalace, False)
 
 
                 if (self.vic.getNewWorld(0) == -1):
@@ -599,7 +606,7 @@ class CvRFCEventHandler:
         def onBeginPlayerTurn(self, argsList):        
                 iGameTurn, iPlayer = argsList
 
-                print ("PLAYER", iPlayer)
+                print ("PLAYER", iPlayer, gc.getGame().getGameTurnYear())
                 #if (iPlayer == con.iMongolia):
                 #        if (iGameTurn == self.up.getLatestRazeData(0) +1):
                 #                self.up.setMongolAI()

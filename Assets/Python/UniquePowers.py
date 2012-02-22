@@ -392,7 +392,7 @@ class UniquePowers:
 #------------------TURKISH U.P.-------------------
 
 
-        def turkishUP(self, city, iCiv):
+        def turkishUP(self, city, iCiv, iPreviousOwner):
                
                 for x in range(city.getX()-2, city.getX()+3):
                         for y in range(city.getY()-2, city.getY()+3):
@@ -404,7 +404,8 @@ class UniquePowers:
                                 elif (utils.calculateDistance(x, y, city.getX(), city.getY()) == 1):
                                         utils.convertPlotCulture(pCurrent, iCiv, 80, True)
                                 else:
-                                        utils.convertPlotCulture(pCurrent, iCiv, 20, False)
+					if pCurrent.getOwner() == iPreviousOwner:
+						utils.convertPlotCulture(pCurrent, iCiv, 20, False)
 
 
 #------------------MONGOLIAN U.P.-------------------

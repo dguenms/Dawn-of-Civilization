@@ -807,12 +807,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iArcher, iCarthage, (58, 39), 2)
                         utils.makeUnit(con.iWorker, iCarthage, (58, 39), 2)
                         utils.makeUnit(con.iWarElephant, iCarthage, (58, 39), 2)
-
-                if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820)+1):
-                        gc.getMap().plot(58,39).getPlotCity().setHasRealBuilding(con.iPalace, True)
-                        gc.getMap().plot(73,40).getPlotCity().setHasRealBuilding(con.iPalace, False)
-                        gc.getMap().plot(73,41).getPlotCity().setHasRealBuilding(con.iPalace, False)
-                        gc.getMap().plot(73,39).getPlotCity().setHasRealBuilding(con.iPalace, False)
+			
                 #Colonists
                 if (iGameTurn == getTurnForYear(-850)):
                         self.giveEarlyColonists(iGreece)
@@ -1252,18 +1247,18 @@ class RiseAndFall:
 							pVenice.setPopulation(4)
 							utils.makeUnit(con.iGalley, iRome, (pVenice.plot().getX(), pVenice.plot().getY()), 2)
 						pRome.setLastStateReligion(con.iChristianity)
-						pRome.setCivics(0, 1)
-						pRome.setCivics(1, 6)
-						pRome.setCivics(2, 11)
-						pRome.setCivics(3, 16)
-						pRome.setCivics(4, 22)
+						pRome.setCivics(0, con.iCityStates)
+						pRome.setCivics(1, con.iAbsolutism)
+						pRome.setCivics(2, con.iUrbanization)
+						pRome.setCivics(3, con.iForcedLabor)
+						pRome.setCivics(4, con.iPatriarchate)
 					elif iCiv == iPersia:
 						pPersia.setLastStateReligion(con.iIslam)
-						pPersia.setCivics(0, 1)
-						pPersia.setCivics(1, 7)
-						pPersia.setCivics(2, 11)
-						pPersia.setCivics(3, 16)
-						pPersia.setCivics(4, 22)
+						pPersia.setCivics(0, con.iDynasticism)
+						pPersia.setCivics(1, con.iAbsolutism)
+						pPersia.setCivics(2, con.iAgrarianism)
+						pPersia.setCivics(3, con.iForcedLabor)
+						pPersia.setCivics(4, con.iPatriarchate)
 
 #############################################################################################################
                         
@@ -1302,12 +1297,11 @@ class RiseAndFall:
                 if iGameTurn >= getTurnForYear(1700) and iGameTurn % 5 == 0:
                         bCommunist = False
                         bFascist = False
-                        iCivic0 = gc.getPlayer(iPlayer).getCivics(0)
                         iCivic2 = gc.getPlayer(iPlayer).getCivics(2)
                         iCivic3 = gc.getPlayer(iPlayer).getCivics(3)
-                        if con.tFascistLeaders[iPlayer] != -1 and iCivic2 == 13 and iCivic0 != 4:       #Totalitarianism and no Republic
+                        if con.tFascistLeaders[iPlayer] != -1 and iCivic2 == con.iTotalitarianism:       #Totalitarianism and no Republic
                                 bFascist = True
-                        if con.tCommunistLeaders[iPlayer] != -1 and iCivic3 == 18:      #State Property
+                        if con.tCommunistLeaders[iPlayer] != -1 and iCivic3 == con.iStateProperty:      #State Property
                                 bCommunist = True
 
                 # Leoreth: if communist or fascist leader possible, switch to those
@@ -3402,7 +3396,9 @@ class RiseAndFall:
 					targetCivList.append(iTargetCiv)
 
 		if len(targetCivList) == 0:
-			utils.colonialAcquisition(iPlayer, x, y)
+			for tPlot in targetList:
+				x, y = tPlot
+				utils.colonialAcquisition(iPlayer, x, y)
 	
 		for iTargetCiv in targetCivList:
 			if iTargetCiv == utils.getHumanID():
@@ -4442,7 +4438,7 @@ class RiseAndFall:
 		lKoreanTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
 		 con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, con.iSailing, con.iTheWheel, con.iPottery, \
 		 con.iAgriculture, con.iWriting, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iHunting, con.iArchery, \
-		 con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics, con.iDrama]
+		 con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics, con.iDrama, con.iMonotheism]
 
 		for iTech in lKoreanTechs:
 			teamKorea.setHasTech(iTech, True, iKorea, False, False)
@@ -5031,7 +5027,7 @@ class RiseAndFall:
                                 teamMongolia.setHasTech(con.iFeudalism, True, iCiv, False, False)
                                 teamMongolia.setHasTech(con.iMathematics, True, iCiv, False, False)
                                 teamMongolia.setHasTech(con.iConstruction, True, iCiv, False, False)
-				if pMongols.isHuman():
+				if pMongolia.isHuman():
 					teamMongolia.setHasTech(con.iEngineering, True, iCiv, False, False)
 					teamMongolia.setHasTech(con.iGuilds, True, iCiv, False, False)
                                 teamMongolia.setHasTech(con.iCurrency, True, iCiv, False, False)
@@ -5109,7 +5105,7 @@ class RiseAndFall:
                                 teamRome.setHasTech(con.iWriting, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                #teamRome.setHasTech(con.iGuilds, True, iCiv, False, False)
+                                teamRome.setHasTech(con.iGuilds, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iAlphabet, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iMathematics, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iCalendar, True, iCiv, False, False)

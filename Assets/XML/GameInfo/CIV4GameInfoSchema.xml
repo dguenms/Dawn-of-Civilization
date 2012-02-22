@@ -623,7 +623,10 @@
 	<ElementType name="iDistanceMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iNumCitiesMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iCorporationMaintenanceModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCorporationCommerceModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iProcessModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iExtraHealth" content="textOnly" dt:type="int"/>
+	<ElementType name="iPollutionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iFreeExperience" content="textOnly" dt:type="int"/>
 	<ElementType name="iWorkerSpeedModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iImprovementUpgradeRateModifier" content="textOnly" dt:type="int"/>
@@ -642,6 +645,7 @@
 	<ElementType name="bBuildingOnlyHealthy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iLargestCityHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeSpecialist" content="textOnly" dt:type="int"/>
+	<ElementType name="iCoreFreeSpecialist" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="bNoForeignTrade" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoCorporations" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoForeignCorporations" content="textOnly" dt:type="boolean"/>
@@ -679,6 +683,9 @@
 	</ElementType>
 	<ElementType name="SpecialistExtraCommerces" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="SpecialistExtraYields" content="eltOnly"> <!-- Leoreth -->
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="HurryType" content="textOnly"/>
 	<ElementType name="bHurry" content="textOnly" dt:type="boolean"/>
@@ -763,7 +770,10 @@
 		<element type="iDistanceMaintenanceModifier"/>
 		<element type="iNumCitiesMaintenanceModifier"/>
 		<element type="iCorporationMaintenanceModifier"/>
+		<element type="iCorporationCommerceModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iProcessModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iExtraHealth"/>
+		<element type="iPollutionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iFreeExperience"/>
 		<element type="iWorkerSpeedModifier"/>
 		<element type="iImprovementUpgradeRateModifier"/>
@@ -783,6 +793,7 @@
 		<element type="iLargestCityHappiness"/>
 		<element type="iWarWearinessModifier"/>
 		<element type="iFreeSpecialist"/>
+		<element type="iCoreFreeSpecialist" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iTradeRoutes"/>
 		<element type="bNoForeignTrade"/>
 		<element type="bNoCorporations"/>
@@ -807,6 +818,7 @@
 		<element type="CommerceModifiers"/>
 		<element type="CapitalCommerceModifiers"/>
 		<element type="SpecialistExtraCommerces"/>
+		<element type="SpecialistExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Hurrys"/>
 		<element type="SpecialBuildingNotRequireds"/>
 		<element type="SpecialistValids"/>

@@ -228,173 +228,115 @@
 		<Italian>Nessun punto stabilit&#224; negativo in caso di scarso commercio di risorse; nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
 		<Spanish>No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados; no hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
 	</TEXT>
-
-	<!-- new civic names as added by Leoreth -->
-
+	
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_DESPOTISM</Tag>		<!-- government tyranny -->
+		<Tag>TXT_KEY_CIVIC_TYRANNY</Tag>
 		<English>Tyranny</English>
-		<French>Tyrannie</French>
-		<German>Tyrannei</German>
-		<Italian>Tirannia</Italian>
-		<Spanish>Tiranía</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_HEREDITARY_RULE</Tag>	<!-- government:monarchy -->
-		<English>Monarchy</English>
-		<French>Monarchie</French>
-		<German>Monarchie</German>
-		<Italian>Monarchia</Italian>
-		<Spanish>Monarquía</Spanish>
+		<Tag>TXT_KEY_CIVIC_DYNASTICISM</Tag>
+		<English>Dynasticism</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_EMANCIPATION</Tag>		<!-- government:republic -->
-		<English>Republic</English>
-		<French>République</French>
-		<German>Republik</German>
-		<Italian>Repubblica</Italian>
-		<Spanish>República</Spanish>
+		<Tag>TXT_KEY_CIVIC_CITY_STATES</Tag>
+		<English>City States</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_NATIONHOOD</Tag>		<!-- government:autocracy -->
+		<Tag>TXT_KEY_CIVIC_AUTOCRACY</Tag>
 		<English>Autocracy</English>
-		<French>Autocratie</French>
-		<German>Autokratie</German>
-		<Italian>Autocrazia</Italian>
-		<Spanish>Autocracia</Spanish>
 	</TEXT>
-
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_BARBARISM</Tag>		<!-- legal direct rule -->
+		<Tag>TXT_KEY_CIVIC_REPUBLIC</Tag>
+		<English>Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DIRECT_RULE</Tag>
 		<English>Direct Rule</English>
-		<French>Pouvoir direct</French>			<!-- stupid internet translation -->
-		<German>Direkte Herrschaft</German>
-		<Italian>Impero diretto</Italian>		<!-- stupid internet translation -->
-		<Spanish>Dominio Derecho</Spanish>		<!-- stupid internet translation -->
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_BUREAUCRACY</Tag>		<!-- legal absolutism -->
+		<Tag>TXT_KEY_CIVIC_ABSOLUTISM</Tag>
 		<English>Absolutism</English>
-		<French>Absolutisme</French>
-		<German>Absolutismus</German>
-		<Italian>Assolutismo</Italian>
-		<Spanish>Absolutismo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_UNIVERSAL_SUFFRAGE</Tag>	<!-- legal:parliamentarism -->
-		<English>Parliamentarism</English>
-		<French>Parlementarism</French>
-		<German>Parlamentarismus</German>
-		<Italian>Parlamentarismo</Italian>
-		<Spanish>Parlamentarismo</Spanish>
-	</TEXT>
-
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_SLAVERY</Tag>		<!-- society:aristocracy -->
-		<English>Aristocracy</English>
-		<French>Aristocratie</French>
-		<German>Aristokratie</German>
-		<Italian>Aristocrazia</Italian>
-		<Spanish>Aristocracia</Spanish>
+		<Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL</Tag>
+		<English>Supreme Council</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_SERFDOM</Tag>		<!-- society:capitalism -->
+		<Tag>TXT_KEY_CIVIC_AGRARIANISM</Tag>
+		<English>Agrarianism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_URBANIZATION</Tag>
+		<English>Urbanization</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPITALISM</Tag>
 		<English>Capitalism</English>
-		<French>Capitalisme</French>
-		<German>Kapitalismus</German>
-		<Italian>Capitalismo</Italian>
-		<Spanish>Capitalismo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CASTE_SYSTEM</Tag>		<!-- society:socialism -->
-		<English>Socialism</English>
-		<French>Socialisme</French>
-		<German>Sozialismus</German>
-		<Italian>Socialismo</Italian>
-		<Spanish>Socialismo</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_POLICE_STATE</Tag>		<!-- society:totalitarianism -->
+		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM</Tag>
 		<English>Totalitarianism</English>
-		<French>Totalitarisme</French>
-		<German>Totalitarismus</German>
-		<Italian>Totalitarismo</Italian>
-		<Spanish>Totalitarismo</Spanish>
-	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_DECENTRALIZATION</Tag>	<!-- economy:self-sufficiency -->
-		<English>Self-sufficiency</English>
-		<French>Autosuffisance</French>
-		<German>Selbstversorgung</German>
-		<Italian>Autosufficienza</Italian>
-		<Spanish>Autosuficiencia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM</Tag>	<!-- economy:forced labor -->
+		<Tag>TXT_KEY_CIVIC_EGALITARIANISM</Tag>
+		<English>Egalitarianism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SELF_SUFFICIENCY</Tag>
+		<English>Self-Sufficiency</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FORCED_LABOR</Tag>
 		<English>Forced Labor</English>
-		<French>Servage</French>
-		<German>Zwangsarbeit</German>
-		<Italian>Servitù</Italian>
-		<Spanish>Servidumbre</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
+		<English>Animism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PANTHEON</Tag>
+		<English>Pantheon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SCHOLASTICISM</Tag>
+		<English>Scholasticism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PATRIARCHATE</Tag>
+		<English>Patriarchate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SECULARISM</Tag>
+		<English>Secularism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CONFEDERATION</Tag>
+		<English>Confederation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
+		<English>Organization</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_SOCIETY</Tag>
+		<English>Society</English>
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_PAGANISM</Tag>		<!-- religion:Animism -->
-		<English>Animism</English>
-		<French>Animisme</French>
-		<German>Animismus</German>
-		<Italian>Animismo</Italian>
-		<Spanish>Animismo</Spanish>
+		<Tag>TXT_KEY_CIVIC_CORPORATION_COMMERCE</Tag>
+		<English>[ICON_BULLET]Increases commerce created by corporations by %D1_Mod%%</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_PACIFISM</Tag>		<!-- religion:Pantheon -->
-		<English>Pantheon</English>
-		<French>Panthéon</French>
-		<German>Pantheon</German>
-		<Italian>Pantheon</Italian>			<!-- translation?? -->
-		<Spanish>Panteón</Spanish>
+		<Tag>TXT_KEY_CIVIC_POLLUTION_MODIFIER</Tag>
+		<English>[ICON_BULLET]Changes unhealthiness by %D1_Mod%%</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION</Tag>	<!-- religion:Patriarchate -->
-		<English>Patriarchate</English>
-		<French>Patriarcat</French>
-		<German>Patriarchat</German>
-		<Italian>Patriarcato</Italian>
-		<Spanish>Patriarcado</Spanish>
+		<Tag>TXT_KEY_CIVIC_PROCESS_MODIFIER</Tag>
+		<English>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_FREE_SPEECH</Tag>		<!-- religion:State Church -->
-		<English>State Church</English>
-		<French>Religion d'État</French>
-		<German>Staatskirche</German>
-		<Italian>Religione di Stato</Italian>
-		<Spanish>Iglesia Estatal</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_FREE_RELIGION</Tag>		<!-- religion:laicism, now secularism -->
-		<English>Secularism</English>
-		<French>Sécularisme</French>
-		<German>Säkularismus</German>
-		<Italian>Secolarismo</Italian>
-		<Spanish>Secularismo</Spanish>
-	</TEXT>
-
-	<TEXT>
-		<Tag>TXT_KEY_CIVICOPTION_LEGAL</Tag>
-		<English>Organisation</English>
-		<French>Organisation</French>
-		<German>Organisation</German>
-		<Italian>Organizzazione</Italian>
-		<Spanish>Organización</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVICOPTION_LABOR</Tag>
-		<English>Society</English>
-		<French>Société</French>
-		<German>Gesellschaft</German>
-		<Italian>Società</Italian>
-		<Spanish>Sociedad</Spanish>
+		<Tag>TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS</Tag>
+		<English>[ICON_BULLET]%D1_Change free specialist for all cities within the third ring of your capital</English>
 	</TEXT>
 
 	<!-- Pantheon requirement for classical wonders -->
@@ -422,6 +364,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_REPUBLIC_REQUIREMENT</Tag>
 		<English>[ICON_BULLET]Requires [LINK=literal]Republic[\LINK]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_POLLUTION_MODIFIER</Tag>
+		<English>%D1_Change[ICON_UNHEALTHY] from civics</English>
+		<German>%D1_Change[ICON_UNHEALTHY] durch Regierungsformen</German>
 	</TEXT>
 	
 

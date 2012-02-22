@@ -257,7 +257,7 @@
 	</Define>
 	<Define>
 		<DefineName>MAX_CIVIC_OPTIONS</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>6</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>BASE_CIVIC_ANARCHY_LENGTH</DefineName>

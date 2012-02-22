@@ -98,9 +98,9 @@ BeginPlayer
 	CivType=CIVILIZATION_EGYPT                 
 	Team=0                 
 	PlayableCiv=1                 
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE                 
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PACIFISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM              
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -108,7 +108,7 @@ BeginPlayer
 	CivType=CIVILIZATION_INDIA                 
 	Team=1                 
 	PlayableCiv=1
-    StateReligion=RELIGION_HINDUISM
+	StateReligion=RELIGION_HINDUISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -130,7 +130,7 @@ BeginPlayer
 	CivType=CIVILIZATION_GREECE                 
 	Team=4                 
 	PlayableCiv=1   
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PACIFISM            
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON            
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -138,8 +138,8 @@ BeginPlayer
 	CivType=CIVILIZATION_PERSIA                 
 	Team=5                 
 	PlayableCiv=1                  
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE               
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM               
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	StateReligion=RELIGION_ZOROASTRIANISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -148,8 +148,8 @@ BeginPlayer
 	CivType=CIVILIZATION_CARTHAGE                 
 	Team=6                 
 	PlayableCiv=1                                 
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PACIFISM 
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON 
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -157,8 +157,8 @@ BeginPlayer
 	CivType=CIVILIZATION_ROME                 
 	Team=7                 
 	PlayableCiv=1                               
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PACIFISM         
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON         
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -166,8 +166,8 @@ BeginPlayer
 	CivType=CIVILIZATION_JAPAN                 
 	Team=8                 
 	PlayableCiv=1                    
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE               
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM               
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -176,8 +176,8 @@ BeginPlayer
 	CivType=CIVILIZATION_ETHIOPIA                 
 	Team=9                 
 	PlayableCiv=1                      
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	               
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	               
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION 
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -186,8 +186,8 @@ BeginPlayer
 	CivType=CIVILIZATION_KOREA
 	Team=10
 	PlayableCiv=1                   
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE               
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM               
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_PRINCE
 EndPlayer
@@ -196,18 +196,18 @@ BeginPlayer
 	CivType=CIVILIZATION_MAYA                 
 	Team=11                 
 	PlayableCiv=1                                 
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM         
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR         
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM                 
 	Team=12                 
-	PlayableCiv=1                 
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY                
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION   
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY 
+	PlayableCiv=1     
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PATRIARCHATE   
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
 	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_SUBJUGATION
 	StateReligion=RELIGION_CHRISTIANITY
 	Handicap=HANDICAP_PRINCE                 
@@ -216,22 +216,22 @@ BeginPlayer
 	LeaderType=LEADER_RAGNAR
 	CivType=CIVILIZATION_VIKING                 
 	Team=13                 
-	PlayableCiv=1                      
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE                  
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM          
+	PlayableCiv=1                       
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_VASSALAGE                   
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR          
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SALADIN
 	CivType=CIVILIZATION_ARABIA                 
 	Team=14                 
-	PlayableCiv=1                      
+	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SCHOLASTICISM
 	StateReligion=RELIGION_ISLAM                            
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -239,8 +239,8 @@ BeginPlayer
 	LeaderType=LEADER_SURYAVARMAN
 	CivType=CIVILIZATION_KHMER                 
 	Team=15                 
-	PlayableCiv=1                    
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
+	PlayableCiv=1                     
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_HINDUISM                          
 	Handicap=HANDICAP_PRINCE                 
@@ -249,8 +249,8 @@ BeginPlayer
 	LeaderType=LEADER_HAYAM_WURUK
 	CivType=CIVILIZATION_INDONESIA
 	Team=16
-	PlayableCiv=1
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
+	PlayableCiv=1                
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_PRINCE
@@ -259,12 +259,12 @@ BeginPlayer
 	LeaderType=LEADER_ISABELLA
 	CivType=CIVILIZATION_SPAIN                 
 	Team=17                 
-	PlayableCiv=1                   
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	PlayableCiv=1                     
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PATRIARCHATE
 	StateReligion=RELIGION_CHRISTIANITY                       
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -273,11 +273,11 @@ BeginPlayer
 	CivType=CIVILIZATION_FRANCE                 
 	Team=18                 
 	PlayableCiv=1                   
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PATRIARCHATE
 	StateReligion=RELIGION_CHRISTIANITY                       
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -285,12 +285,12 @@ BeginPlayer
 	LeaderType=LEADER_VICTORIA
 	CivType=CIVILIZATION_ENGLAND                 
 	Team=19                 
-	PlayableCiv=1                    
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	PlayableCiv=1                     
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SCHOLASTICISM
 	StateReligion=RELIGION_CHRISTIANITY                      
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -298,11 +298,11 @@ BeginPlayer
 	LeaderType=LEADER_BISMARCK
 	CivType=CIVILIZATION_GERMANY                 
 	Team=20                 
-	PlayableCiv=1                   
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	PlayableCiv=1                          
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY	
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_CHRISTIANITY                       
 	Handicap=HANDICAP_PRINCE                 
@@ -311,11 +311,11 @@ BeginPlayer
 	LeaderType=LEADER_STALIN
 	CivType=CIVILIZATION_RUSSIA                 
 	Team=21                 
-	PlayableCiv=1                   
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	PlayableCiv=1                      
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_CHRISTIANITY                       
 	Handicap=HANDICAP_PRINCE                 
@@ -324,10 +324,10 @@ BeginPlayer
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
 	CivType=CIVILIZATION_NETHERLANDS                 
 	Team=22	
-	PlayableCiv=1                    
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_EMANCIPATION
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_BUREAUCRACY
+	PlayableCiv=1                          
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION	
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_CHRISTIANITY                         
@@ -337,21 +337,20 @@ BeginPlayer
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI                 
 	Team=23                 
-	PlayableCiv=1                     
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM              
+	PlayableCiv=1              
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR             
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL                 
 	Team=24                 
-	PlayableCiv=1                   
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	PlayableCiv=1                     
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION	
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_CHRISTIANITY                       
 	Handicap=HANDICAP_PRINCE                 
@@ -360,19 +359,19 @@ BeginPlayer
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA                 
 	Team=25                 
-	PlayableCiv=1                      
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM              
+	PlayableCiv=1                     
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR          
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL                 
 	Team=26                 
-	PlayableCiv=1                      
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM              
+	PlayableCiv=1                        
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR              
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -380,8 +379,8 @@ BeginPlayer
 	CivType=CIVILIZATION_AZTEC                 
 	Team=27                 
 	PlayableCiv=1                      
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM                    
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR                    
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -389,10 +388,11 @@ BeginPlayer
 	CivType=CIVILIZATION_MUGHALS
 	Team=28
 	PlayableCiv=0
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_BUREAUCRACY
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FREE_SPEECH
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SCHOLASTICISM
 	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_PRINCE
 EndPlayer
@@ -401,11 +401,11 @@ BeginPlayer
 	CivType=CIVILIZATION_OTTOMAN                 
 	Team=29                 
 	PlayableCiv=1                      
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE	
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_BUREAUCRACY	
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FREE_SPEECH
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM	
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM	
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PATRIARCHATE
 	StateReligion=RELIGION_ISLAM                              
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -414,10 +414,10 @@ BeginPlayer
 	CivType=CIVILIZATION_THAILAND
 	Team=30
 	PlayableCiv=1
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_HEREDITARY_RULE
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_VASSALAGE
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_PRINCE
@@ -426,12 +426,12 @@ BeginPlayer
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA                 
 	Team=31                 
-	PlayableCiv=1                     
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_EMANCIPATION
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SERFDOM
-	CivicOption=CIVICOPTION_LEGAL, Civic=CIVIC_REPRESENTATION
+	PlayableCiv=1                    
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CAPITALISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FREE_RELIGION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	StateReligion=RELIGION_JUDAISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -475,8 +475,8 @@ BeginPlayer
 	CivType=CIVILIZATION_SELJUK
 	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_ENVIRONMENTALISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FREE_SPEECH
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
 	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_OCCUPATION
 	MinorNationStatus=1
 	Team=36

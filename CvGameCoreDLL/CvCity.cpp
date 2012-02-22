@@ -4143,12 +4143,15 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 void CvCity::processProcess(ProcessTypes eProcess, int iChange)
 {
+	GC.getGameINLINE().logMsg("Begin process process.");
 	int iI;
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
-		changeProductionToCommerceModifier(((CommerceTypes)iI), (GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) * iChange));
+		//Leoreth: process efficiency modifier inside (civic)
+		changeProductionToCommerceModifier(((CommerceTypes)iI), ((GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) * (100+GET_PLAYER(getOwner()).getProcessModifier()) / 100 * iChange)));
 	}
+	GC.getGameINLINE().logMsg("End process process.");
 }
 
 
@@ -4845,6 +4848,9 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 	{
 		iTotalHealth += iHealth;
 	}
+
+	//Leoreth: civic pollution modifier
+	iTotalHealth = iTotalHealth * (100 + GET_PLAYER(getOwner()).getPollutionModifier()) / 100;
 
 	return (unhealthyPopulation(bNoAngry, iExtra) - iTotalHealth);
 }
@@ -7293,6 +7299,7 @@ int CvCity::getFreeSpecialist() const
 {
     // Leoreth: Italian UP, only until the industrial era
     int iItalianSpecialists = 0;
+	int iCoreSpecialists = 0;
 
     if (getOwner() == ROME && GET_PLAYER((PlayerTypes)ROME).isReborn() && GET_PLAYER((PlayerTypes)ROME).getCurrentEra() < 4)
     {
@@ -7302,7 +7309,16 @@ int CvCity::getFreeSpecialist() const
         }
     }
 
-	return m_iFreeSpecialist+iItalianSpecialists;
+	//Leoreth: handle free specialists for core here for simplicity
+	if (GET_PLAYER(getOwner()).getCoreFreeSpecialist() > 0)
+	{
+		if (plotDistance(getX(), getY(), GET_PLAYER(getOwner()).getCapitalCity()->getX(), GET_PLAYER(getOwner()).getCapitalCity()->getY()) <= 3)
+		{
+			iCoreSpecialists = GET_PLAYER(getOwner()).getCoreFreeSpecialist();
+		}
+	}
+
+	return m_iFreeSpecialist+iItalianSpecialists+iCoreSpecialists;
 }
 
 
@@ -8821,6 +8837,9 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			}
 		}
 	}
+
+	//Leoreth: civic corporation commerce modifier
+	iCommerce = iCommerce * (100 + GET_PLAYER(getOwner()).getCorporationCommerceModifier()) / 100;
 
 	return (iCommerce + 99) / 100;
 }
