@@ -291,7 +291,7 @@ class RFCUtils:
                 if (iUnitType <= con.iKhmerBallistaElephant \
                      and iUnitType != con.iSettler and iUnitType != con.iMechanizedInfantry) or iUnitType == con.iBersagliere or iUnitType == con.iLevy:
                         return True
-                if (iUnitType >= con.iCatapult and iUnitType <= con.iMobileArtillery ) or iUnitType == con.iCulverine:
+                if (iUnitType >= con.iCatapult and iUnitType <= con.iMobileArtillery ):
                         if (gc.getPlayer(unit.getOwner()).isHuman()):
                                 return True
                         else:
@@ -1366,11 +1366,14 @@ class RFCUtils:
 			iNumUnits = 2
 		elif iCiv in [con.iFrance, con.iEngland]:
 			iNumUnits = 3
-
-		if iCiv == con.iFrance:
-			self.makeUnit(con.iCulverine, iCiv, tPlot, iNumUnits)
+		
+		if bRifling:
+			if iCiv == con.iFrance:
+				self.makeUnit(con.iFrenchHeavyCannon, iCiv, tPlot, iNumUnits)
+			else:
+				self.makeUnit(con.iCannon, iCiv, tPlot, iNumUnits)
 		else:
-			self.makeUnit(con.iCannon, iCiv, tPlot, iNumUnits)
+			self.makeUnit(con.iBombard, iCiv, tPlot, iNumUnit)
 
 		if bRifling:
 			if iCiv == con.iEngland:

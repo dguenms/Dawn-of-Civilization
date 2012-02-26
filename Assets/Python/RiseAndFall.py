@@ -1813,9 +1813,11 @@ class RiseAndFall:
                                                                         else:
                                                                                 iMinNumCitiesOwner = 3
                                                                                 iOwnerStability = utils.getStability(iOwner)
-										#Leoreth: make civs a little less vulnerable before Nationalism
+										#Leoreth: make civs a little less vulnerable before Nationalism, but don't let it stack with the Confederation civic
 										if utils.getCivsWithNationalism() == 0:
 											iOwnerStability += 10
+										elif gc.getPlayer(iOwner).getCivics(5) == con.iConfederation: # Confederation civic effect
+											iOwnerStability += 15
                                                                                 if (not gc.getPlayer(iOwner).isHuman()):
                                                                                         iMinNumCitiesOwner = 2
                                                                                         iOwnerStability -= 20
@@ -3276,16 +3278,22 @@ class RiseAndFall:
                                                                 utils.makeUnitAI(con.iChinaChokonu, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         else:
                                                                 utils.makeUnitAI(con.iCrossbowman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
-                                                        
-                                                utils.makeUnitAI(con.iPikeman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
                                                 
-                                                if (teamOldWorldCiv.isHasTech(con.iGunpowder)):
+						if iOldWorldCiv == iHolyRome:
+							utils.makeUnitAI(con.iHolyRomanLandsknecht, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
+                                                else:
+							utils.makeUnitAI(con.iPikeman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
+						
+						if teamOldWorldCiv.isHasTech(con.iRifling):
 							if iOldWorldCiv == iFrance:
-                                                        	utils.makeUnitAI(con.iCulverine, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
-                                                        elif iOldWorldCiv == iMughals:
-	                                                        utils.makeUnitAI(con.iMughalSiegeElephant, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
+								utils.makeUnitAI(con.iFrenchHeavyCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
 							else:
 								utils.makeUnitAI(con.iCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
+                                                elif (teamOldWorldCiv.isHasTech(con.iGunpowder)):
+							if iOldWorldCiv == iMughals:
+	                                                        utils.makeUnitAI(con.iMughalSiegeElephant, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
+							else:
+								utils.makeUnitAI(con.iBombard, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
                                                 else:
                                                         utils.makeUnitAI(con.iCatapult, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier1 + iModifier2)
 
@@ -3856,11 +3864,11 @@ class RiseAndFall:
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 3)
-                        utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
+                        utils.makeUnit(con.iBombard, iCiv, tPlot, 2)
                         utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
                         utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
 			if utils.getHumanID() != iTurkey:
-				utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
+				utils.makeUnit(con.iBombard, iCiv, tPlot, 2)
 				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 4)
                 if (iCiv == iPortugal):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)

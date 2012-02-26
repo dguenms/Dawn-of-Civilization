@@ -314,6 +314,10 @@
 		<English>Confederation</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CONFEDERATION_HELP</Tag>
+		<English>Reduced likeliness of respawns on your territory</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
 		<English>Organization</English>
 	</TEXT>
@@ -358,7 +362,7 @@
 	<!-- Allows training of levies for vassalage -->
 	<TEXT>
 		<Tag>TXT_KEY_VASSALAGE_ALLOWS</Tag>
-		<English>[ICON_BULLET]Required to train [LINK=literal]Levy[\LINK] and [LINK=literal]Knight[\LINK][NEWLINE][ICON_BULLET]Required to build [LINK=literal]Castle[\LINK]</English>
+		<English>[ICON_BULLET]Required to train [LINK=literal]Levy[\LINK]</English>
 	</TEXT>
 
 	<TEXT>

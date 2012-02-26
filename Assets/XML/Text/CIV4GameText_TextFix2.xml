@@ -1083,28 +1083,11 @@
 	<!-- text for new French culverine -->
 
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_FRENCH_CULVERINE</Tag>
-		<English>Culverin</English>
-		<French>
-			<Text>Couleuvrine</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Kolubrine</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Colubrina:Colubrine</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Culebrina:Culebrinas</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_UNIT_FRENCH_HEAVY_CANNON</Tag>
+		<English>Heavy Cannon</English>
+	</TEXT><TEXT>
+		<Tag>TXT_KEY_UNIT_BOMBARD</Tag>
+		<English>Bombard</English>
 	</TEXT>
 
 	<TEXT>

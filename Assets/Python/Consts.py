@@ -1855,7 +1855,7 @@ iNumTechsFuture = iNumTechs+1
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 126
+iNumUnits = 127
 (iLion, iBear, iPanther, iWolf, iSettler, iWorker, iIndianFastWorker, iScout, iExplorer, iSpy, iJewishMissionary,
 iChristianMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary,
 iZoroastrianMissionary, iWarrior, iIncanQuechua, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
@@ -1865,12 +1865,12 @@ iEthiopianOromoWarrior, iRifleman, iEnglishRedcoat, iGrenadier, iAtInfantry, iIn
 iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMaliSkirmisher, iBabylonBowman, iLongbowman,
 iCrossbowman, iChinaChokonu, iChariot, iEgyptWarChariot, iPersiaImmortal, iHorseArcher, iCarthageNumidianCavalry,
 iMongolKeshik, iKnight, iArabiaCamelarcher, iByzantineCataphract, iSeljukGhulamWarrior, iThaiChangSuek, iSpanishConquistador, iCuirassier, iCavalry, iRussiaCossack,
-iWarElephant, iKhmerBallistaElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha, iTrebuchet,
-iCannon, iMughalSiegeElephant, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iTrireme, iCaravel, iPortugalCarrack, iGalleon,
+iWarElephant, iKhmerBallistaElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha, iTrebuchet, iBombard, iMughalSiegeElephant,
+iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iTrireme, iCaravel, iPortugalCarrack, iGalleon,
 iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iFrigate, iShipOfTheLine, iIronclad, iTransport, iDestroyer, iBattleship,
 iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, iJetFighter, iBomber,
 iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iGreatGeneral, iGreatSpy,
-iCulverine, iBireme, iBersagliere, iLevy) = range(iNumUnits)
+iBireme, iBersagliere, iLevy) = range(iNumUnits)
 
 iCamelArcher = iArabiaCamelarcher
 iConquistador = iSpanishConquistador
