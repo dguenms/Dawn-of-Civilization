@@ -592,8 +592,8 @@
 		<CivilizationInfo>
 			<Type>CIVILIZATION_CARTHAGE</Type>
 			<Description>TXT_KEY_CIV_CARTHAGE_DESC</Description>
-			<ShortDescription>TXT_KEY_CIV_CARTHAGE_SHORT_DESC</ShortDescription>
-			<Adjective>TXT_KEY_CIV_CARTHAGE_ADJECTIVE</Adjective>
+			<ShortDescription>TXT_KEY_CIV_PHOENICIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_PHOENICIA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_CARTHAGE_PEDIA</Civilopedia>
 			<!-- Rhye -->
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_INDIGO</DefaultPlayerColor>
@@ -1488,9 +1488,8 @@
 			<ShortDescription>TXT_KEY_CIV_GERMANY_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_GERMANY_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_GERMANY_PEDIA</Civilopedia>
-			<!-- changed by Leoreth to emulate HRE look -->
-			<DefaultPlayerColor>PLAYERCOLOR_DARK_LEMON</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_HOLY_ROMAN</ArtDefineTag>
+			<DefaultPlayerColor>PLAYERCOLOR_GRAY</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_GERMANY</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
 			<bPlayable>1</bPlayable>
@@ -1611,18 +1610,6 @@
 				</Leader>
 				<Leader>
 					<LeaderName>LEADER_BISMARCK</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-				<Leader>
-					<LeaderName>LEADER_BARBAROSSA</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-				<Leader>
-					<LeaderName>LEADER_CHARLES</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
-				<Leader>
-					<LeaderName>LEADER_FRANCIS</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 				<Leader>
@@ -1777,8 +1764,8 @@
 		<CivilizationInfo>
 			<Type>CIVILIZATION_HOLY_ROMAN</Type>
 			<Description>TXT_KEY_CIV_HOLY_ROMAN_DESC</Description>
-			<ShortDescription>TXT_KEY_CIV_HOLY_ROMAN_SHORT_DESC</ShortDescription>
-			<Adjective>TXT_KEY_CIV_HOLY_ROMAN_ADJECTIVE</Adjective>
+			<ShortDescription>TXT_KEY_CIV_GERMANY_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_GERMANY_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_HOLY_ROMAN_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_LEMON</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HOLY_ROMAN</ArtDefineTag>
@@ -1896,7 +1883,15 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
-					<LeaderName>LEADER_CHARLEMAGNE</LeaderName>
+					<LeaderName>LEADER_BARBAROSSA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_CHARLES</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_FRANCIS</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>

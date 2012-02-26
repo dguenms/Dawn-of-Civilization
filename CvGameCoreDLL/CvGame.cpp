@@ -687,7 +687,7 @@ void CvGame::initDiplomacy()
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ROME), false, NO_WARPLAN);
 				//GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)GREECE), false, NO_WARPLAN);
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ENGLAND), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)GERMANY), false, NO_WARPLAN);
+				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)HOLY_ROME), false, NO_WARPLAN);
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)VIKING), false, NO_WARPLAN);
 			}
 			else if (iI == CELTIA && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) { //late start condition Byzantium
@@ -2262,7 +2262,7 @@ void CvGame::update()
 		case SPAIN:
 		case FRANCE:
 		case ENGLAND:
-		case GERMANY:
+		case HOLY_ROME:
 		case RUSSIA:
 		case NETHERLANDS:
 		case MALI:
@@ -2272,6 +2272,7 @@ void CvGame::update()
 		case MONGOLIA:
 		case AZTEC:
 		case THAILAND:
+		case GERMANY:
 		case AMERICA:
 			//if (getGameTurn() == 0 || (getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition
 			if (getGameTurn() == 0 || (getGameTurn() == getTurnForYear(600) && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition // edead

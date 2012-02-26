@@ -318,24 +318,24 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_BARBAROSSA</Tag>
-		<English>Frederick Barbarossa</English>
+		<English>Barbarossa</English>
 		<French>
-			<Text>Frédéric Barberousse</Text>
+			<Text>Barberousse</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Friedrich Barbarossa</Text>
+			<Text>Barbarossa</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
 		<Italian>
-			<Text>Federico Barbarossa</Text>
+			<Text>Barbarossa</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Federico Barbarroja</Text>
+			<Text>Barbarroja</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>

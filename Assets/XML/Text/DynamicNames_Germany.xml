@@ -6,15 +6,15 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_DESC</Tag>
-		<English>The Germans</English>
+		<English>The Prussians</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_DESC_PEOPLES</Tag>
-		<English>Germanic Peoples</English>
+		<English>Prussian Peoples</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_DESC_DEFAULT</Tag>
-		<English>Kingdom of Germany</English>
+		<English>Kingdom of Prussia</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_DESC_DEMOCRATIC</Tag>
@@ -29,10 +29,6 @@
 		<English>Third Reich</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GERMANY_HRE</Tag>
-		<English>Holy Roman Empire</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_EMPIRE</Tag>
 		<English>German Empire</English>
 	</TEXT>
@@ -41,20 +37,8 @@
 		<English>Greater German Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_GERMAN_VASSAL</Tag>
-		<English>Crown of Italy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_GERMAN_VASSAL</Tag>
-		<English>West Francia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_NETHERLANDS_GERMAN_VASSAL</Tag>
-		<English>Duchy of Brabant</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_GERMAN_VASSAL</Tag>
-		<English>Latin Empire</English>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMAN_VASSAL</Tag>
+		<English>State of German Austria</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_GERMAN_VASSAL</Tag>

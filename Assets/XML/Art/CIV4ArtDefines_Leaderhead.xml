@@ -513,7 +513,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_BARBAROSSA</Type>
-			<Button></Button>
+			<Button>Art/leaderheads/Arthur/Barbarossa.dds</Button>
 			<NIF>Art/leaderheads/Arthur/arthur.nif</NIF>
 			<KFM>Art/leaderheads/Arthur/Pericles.kfm</KFM>
 			<NoShaderNIF>Art/leaderheads/Arthur/arthur.nif</NoShaderNIF>

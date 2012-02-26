@@ -22273,6 +22273,10 @@ int CvPlayer::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 		}
 	}
 
+	//Leoreth: Holy Roman UP
+	if (eReligion != NO_RELIGION && getID() == HOLY_ROME)
+		iVotes *= 2;
+
 	return iVotes;
 }
 

@@ -48,7 +48,7 @@ enum MyCivs
  SPAIN,
  FRANCE,
  ENGLAND,
- GERMANY,
+ HOLY_ROME,
  RUSSIA,
  NETHERLANDS,
  MALI,
@@ -59,6 +59,7 @@ enum MyCivs
  MUGHALS,
  TURKEY,
  THAILAND,
+ GERMANY,
  AMERICA,
  INDEPENDENT,
  INDEPENDENT2,
@@ -338,51 +339,51 @@ extern bool startingEra[40];
 extern char startingYear600AD[40][6];
 extern bool startingEra600AD[40];
 
-extern int takenTiles[32];
-extern int distanceSubtrahend[32];
-extern int distanceSubtrahendAstronomy[32];
-extern int distanceMultiply[32];
-extern int distanceMultiplyAstronomy[32];
-extern int compactEmpireModifierArray[32];
-extern int compactEmpireModifierAstronomy[32];
-extern int targetCityValueDivisor[32];
+extern int takenTiles[33];
+extern int distanceSubtrahend[33];
+extern int distanceSubtrahendAstronomy[33];
+extern int distanceMultiply[33];
+extern int distanceMultiplyAstronomy[33];
+extern int compactEmpireModifierArray[33];
+extern int compactEmpireModifierAstronomy[33];
+extern int targetCityValueDivisor[33];
 
-extern int eraModifierInit[32];
-extern int eraModifierInitAstronomy[32];
-extern int cultureModifier[32];
+extern int eraModifierInit[33];
+extern int eraModifierInitAstronomy[33];
+extern int cultureModifier[33];
 
-extern int unitCostModifier[32];
-extern int researchModifier[32];
-extern int distanceMaintenanceModifier[32];
-extern int numMaintenanceModifier[32];
-extern int civicUpkeepModifier[32];
-extern int healthMultiplier[32];
+extern int unitCostModifier[33];
+extern int researchModifier[33];
+extern int distanceMaintenanceModifier[33];
+extern int numMaintenanceModifier[33];
+extern int civicUpkeepModifier[33];
+extern int healthMultiplier[33];
 
-extern int startingEraFound[32];
-extern int startingEraFound600AD[32];
-extern int startingEraFoundAstronomy[32];
-extern int unitCostModifier2[32];
-extern int wonderCostModifier[32];
-extern int buildingCostModifier[32];
-extern int inflationRateModifier[32];
-extern int greatPeopleThresholdArray[32];
-extern int currentEra[32];
-extern int currentEra600AD[32];
-extern int growthThreshold[32];
+extern int startingEraFound[33];
+extern int startingEraFound600AD[33];
+extern int startingEraFoundAstronomy[33];
+extern int unitCostModifier2[33];
+extern int wonderCostModifier[33];
+extern int buildingCostModifier[33];
+extern int inflationRateModifier[33];
+extern int greatPeopleThresholdArray[33];
+extern int currentEra[33];
+extern int currentEra600AD[33];
+extern int growthThreshold[33];
 
 //extern int militaryBonus[2][18];
 extern char uniquePower[40][2][16];
 extern char uniqueGoals[40][3][18];
 extern char rating[40][6][15];
 
-extern int turnPlayed[38];
-extern int civSpreadFactor[38][8];
-extern int civicMatrix[32][6][5];
-extern int borders[32][32];
+extern int turnPlayed[39];
+extern int civSpreadFactor[39][8];
+extern int civicMatrix[33][6][5];
+extern int borders[33][33];
 extern wchar civDynamicNames[2][32][22][19]; //(dynamic civ names - not jdog's)
 extern int civDynamicNamesFlag[32];
 extern int civDynamicNamesEraThreshold[32];
-extern int settlersMaps[2][32][68][124];
-extern int warMaps[2][32][68][124];
+extern int settlersMaps[2][33][68][124];
+extern int warMaps[2][33][68][124];
 
 

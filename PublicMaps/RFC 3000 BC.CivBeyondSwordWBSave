@@ -39,6 +39,8 @@ BeginTeam
 EndTeam
 BeginTeam                 
 EndTeam
+BeginTeam
+EndTeam
 BeginTeam                 
 EndTeam
 BeginTeam
@@ -295,8 +297,8 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_BISMARCK
-	CivType=CIVILIZATION_GERMANY                 
+	LeaderType=LEADER_BARBAROSSA
+	CivType=CIVILIZATION_HOLY_ROMAN                 
 	Team=20                 
 	PlayableCiv=1                          
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY	
@@ -423,9 +425,22 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE
 EndPlayer
 BeginPlayer
+	LeaderType=LEADER_FREDERICK
+	CivType=CIVILIZATION_GERMANY
+	Team=31
+	PlayableCiv=1
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CAPITALISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PATRIARCHATE
+	StateReligion=RELIGION_JUDAISM
+	Handicap=HANDICAP_PRINCE
+EndPlayer
+BeginPlayer
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA                 
-	Team=31                 
+	Team=32                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CAPITALISM
@@ -439,7 +454,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
-	Team=32                 
+	Team=33                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -448,7 +463,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
-	Team=33        
+	Team=34        
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -457,7 +472,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_NATIVE
 	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
-	Team=34                 
+	Team=35                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -465,7 +480,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT                 
-	Team=35                 
+	Team=36                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -479,7 +494,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
 	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_OCCUPATION
 	MinorNationStatus=1
-	Team=36
+	Team=37
 	PlayableCiv=0
 	Handicap=HANDICAP_PRINCE
 EndPlayer

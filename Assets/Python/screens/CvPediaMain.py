@@ -487,7 +487,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 			tList.pop(con.iAlpArslan)
 			tList.pop(con.iChiang_Kaishek)
 			tList.pop(con.iFrancis)
-			tList.pop(con.iBarbarossa)
+			#tList.pop(con.iBarbarossa)
 			tList.pop(con.iElishat)
                         #tList.pop(con.iWangKon) #wang kon
                         tList.pop(con.iSitting_Bull) #sitt.b.
@@ -496,7 +496,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         #tList.pop(con.iHatshepsut) #hatshepsut
                         tList.pop(con.iGilgamesh) #gilgamesh
                         #tList.pop(con.iCharlemagne) #charlemagne
-                        #tList.pop(con.iBrennus) #brennus
+                        tList.pop(con.iBrennus) #brennus
                         tList.pop(con.iBoudica) #boudica
                         tList.pop(con.iLeaderBarbarian) #barbarian
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):
@@ -507,7 +507,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         tList.pop(con.iCivSumeria) #sumeria                        
                         tList.pop(con.iCivNativeAmericans) #nat.Am.
                         #tList.pop(con.iCivKorea) #korea                  
-                        tList.pop(con.iCivHolyRoman) #hre
+                        #tList.pop(con.iCivHolyRoman) #hre
                        	tList.pop(con.iCivCelt) #celts
                         #tList.pop(con.iCivByzantium) #byzantium
                         pass
@@ -519,7 +519,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
 			#tList.pop(83) #Hwacha
                         #tList.pop(71) #Cataphract  
-                        tList.pop(con.iHolyRomanLandsknecht) #Landsknecht
+                        #tList.pop(con.iHolyRomanLandsknecht) #Landsknecht
                         tList.pop(con.iZuluImpi) #Impi
                         tList.pop(con.iNativeAmericaDogSoldier) #DogSoldier                          
                         tList.pop(con.iSumerianVulture) #Vulture
