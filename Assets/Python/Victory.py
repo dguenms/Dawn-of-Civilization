@@ -197,7 +197,7 @@ iIndonesia = con.iIndonesia
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland
-iGermany = con.iGermany
+iHolyRome = con.iHolyRome
 iRussia = con.iRussia
 iNetherlands = con.iNetherlands
 iHolland = con.iHolland
@@ -209,6 +209,7 @@ iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
 iThailand = con.iThailand
+iGermany = con.iGermany
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
@@ -241,7 +242,7 @@ pIndonesia = gc.getPlayer(iIndonesia)
 pSpain = gc.getPlayer(iSpain)
 pFrance = gc.getPlayer(iFrance)
 pEngland = gc.getPlayer(iEngland)
-pGermany = gc.getPlayer(iGermany)
+pHolyRome = gc.getPlayer(iHolyRome)
 pRussia = gc.getPlayer(iRussia)
 pNetherlands = gc.getPlayer(iNetherlands)
 pHolland = gc.getPlayer(iHolland)
@@ -253,6 +254,7 @@ pMongolia = gc.getPlayer(iMongolia)
 pAztecs = gc.getPlayer(iAztecs)
 pMughals = gc.getPlayer(iMughals)
 pThailand = gc.getPlayer(iThailand)
+pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
@@ -280,7 +282,7 @@ teamIndonesia = gc.getTeam(pIndonesia.getTeam())
 teamSpain = gc.getTeam(pSpain.getTeam())
 teamFrance = gc.getTeam(pFrance.getTeam())
 teamEngland = gc.getTeam(pEngland.getTeam())
-teamGermany = gc.getTeam(pGermany.getTeam())
+teamHolyRome = gc.getTeam(pHolyRome.getTeam())
 teamRussia = gc.getTeam(pRussia.getTeam())
 teamNetherlands = gc.getTeam(pNetherlands.getTeam())
 teamHolland = gc.getTeam(pHolland.getTeam())
@@ -292,6 +294,7 @@ teamMongolia = gc.getTeam(pMongolia.getTeam())
 teamAztecs = gc.getTeam(pAztecs.getTeam())
 teamMughals = gc.getTeam(pMughals.getTeam())
 teamThailand = gc.getTeam(pThailand.getTeam())
+teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
@@ -1308,26 +1311,56 @@ class Victory:
 						self.setGoal(iEngland, 0, 1)
 					else:
 						self.setGoal(iEngland, 0, 0)
-					
+						
+						
+		elif iPlayer == iHolyRome:
+			if pHolyRome.isAlive():
+			
+				if iGameTurn == getTurnForYear(1200):
+					bApostolicPalace = self.getNumBuildings(iHolyRome, con.iApostolicPalace) > 0
+					bHolySepulchre = self.getNumBuildings(iHolyRome, con.iChristianShrine) > 0
+					if bApostolicPalace and bHolySepulchre:
+						self.setGoal(iHolyRome, 0, 1)
+					else:
+						self.setGoal(iHolyRome, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1600) and self.getGoal(iHolyRome, 1) == -1:
+					self.setGoal(iHolyRome, 2, 0)
 
 
                 elif (iPlayer == iGermany):
                         if (pGermany.isAlive()):
 
-                                if (iGameTurn == getTurnForYear(1870)):
-                                        bFrance = self.checkOwnedCiv(iGermany, iFrance)
-                                        bRome = self.checkOwnedCiv(iGermany, iRome)
-                                        bGreece = self.checkOwnedCiv(iGermany, iGreece)                                        
-                                        if (bFrance and bRome and bGreece):
-                                                self.setGoal(iGermany, 0, 1)
-                                        else:
-                                                self.setGoal(iGermany, 0, 0)
+                                #if (iGameTurn == getTurnForYear(1870)):
+                                #        bFrance = self.checkOwnedCiv(iGermany, iFrance)
+                                #        bRome = self.checkOwnedCiv(iGermany, iRome)
+                                #        bGreece = self.checkOwnedCiv(iGermany, iGreece)                                        
+                                #        if (bFrance and bRome and bGreece):
+                                #                self.setGoal(iGermany, 0, 1)
+                                #        else:
+                                #                self.setGoal(iGermany, 0, 0)
+				
+				if iGameTurn == getTurnForYear(1900):
+					x, y = con.tCapitals[utils.getReborn(iGermany)][iGermany]
+					plot = gc.getMap().plot(x, y)
+					iCounter = 0
+					if plot.isCity:
+						capital = plot.getPlotCity()
+						for iSpecialist in range(gc.getNumSpecialistInfos()):
+							if iSpecialist >= 7: # great priest
+								iCounter += capital.getFreeSpecialistCount(iSpecialist)
+					if iCounter >= 7:
+						self.setGoal(iGermany, 0, 1)
+					else:
+						self.setGoal(iGermany, 0, 0)
                                                         
                                 if (iGameTurn == getTurnForYear(1940)):
+                                        bFrance = self.checkOwnedCiv(iGermany, iFrance)
+                                        bRome = self.checkOwnedCiv(iGermany, iRome)
                                         bRussia = self.checkOwnedCiv(iGermany, iRussia)
                                         bEngland = self.checkOwnedCiv(iGermany, iEngland)                                        
                                         bScandinavia = self.checkOwnedCiv(iGermany, iVikings)
-                                        if (bRussia and bEngland and bScandinavia):
+                                        if (bFrance and bRome and bRussia and bEngland and bScandinavia):
                                                 self.setGoal(iGermany, 1, 1)
                                         else:
                                                 self.setGoal(iGermany, 1, 0)
@@ -1912,6 +1945,15 @@ class Victory:
                 elif (iReligion == con.iJudaism):
                         if (self.getGoal(iEthiopia, 0) == -1):
                                 self.setGoal(iEthiopia, 0, 0)
+				
+		if iReligion == con.iJudaism:
+			if iPlayer == iHolyRome:
+				self.setGoal(iHolyRome, 1, 1)
+			else:
+				self.setGoal(iHolyRome, 1, 0)
+			
+				
+				
 
 
         def onCityAcquired(self, owner, playerType, bConquest):
@@ -2435,6 +2477,15 @@ class Victory:
 		#	self.increaseTechsStolen()
 		#	if self.getTechsStolen() == 5:
 		#		sd.setGoal(iJapan, 0, 1)
+		
+	def onVassalState(self, iMaster, iVassal):
+		if iMaster == iHolyRome:
+			iCount = 0
+			for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPortugal, iNetherlands]:
+				if utils.getMaster(iCiv) == iHolyRome:
+					iCount += 1
+			if iCount >= 3:
+				self.setGoal(iHolyRome, 2, 1)
                                        
 
 
@@ -3016,17 +3067,37 @@ class Victory:
 				bModern = (self.getEnglishEras(1) == 1)
 				aHelp.append(self.getIcon(bIndustrial) + 'First to enter the Industrial Era ' + self.getIcon(bModern) + 'First to enter the Modern Era')
 
+		elif iPlayer == iHolyRome:
+			if iGoal == 0:
+				bApostolicPalace = self.getNumBuildings(iHolyRome, con.iApostolicPalace) > 0
+				bHolySepulchre = self.getNumBuildings(iHolyRome, con.iChristianShrine) > 0
+				aHelp.append(self.getIcon(bApostolicPalace) + 'Apostolic Palace ' + self.getIcon(bHolySepulchre) + 'Church of the Holy Sepulchre')
+			elif iGoal == 2:
+				iCount = 0
+				for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPortugal, iNetherlands]:
+					if utils.getMaster(iCiv) == iHolyRome:
+						iCount += 1
+				aHelp.append(self.getIcon(iCount >= 3) + 'Number of vassals: ' + str(iCount) + '/3')
+				
 		elif iPlayer == iGermany:
 			if iGoal == 0:
+				x, y = con.tCapitals[utils.getReborn(iGermany)][iGermany]
+				plot = gc.getMap().plot(x, y)
+				iCounter = 0
+				if plot.isCity:
+					capital = plot.getPlotCity()
+					for iSpecialist in range(gc.getNumSpecialistInfos()):
+						if iSpecialist >= 7: # great priest
+							iCounter += capital.getFreeSpecialistCount(iSpecialist)
+				aHelp.append(self.getIcon(iCounter >= 7) + 'Great people in Berlin: ' + str(iCounter) + '/7')
+			elif iGoal == 1:
                                	bFrance = self.checkOwnedCiv(iGermany, iFrance)
                                 bRome = self.checkOwnedCiv(iGermany, iRome)
-                                bGreece = self.checkOwnedCiv(iGermany, iGreece)
-				aHelp.append(self.getIcon(bRome) + 'Rome ' + self.getIcon(bGreece) + 'Greece ' + self.getIcon(bFrance) + 'France')
-			elif iGoal == 1:
                                 bRussia = self.checkOwnedCiv(iGermany, iRussia)
                                 bEngland = self.checkOwnedCiv(iGermany, iEngland)                                        
                                 bScandinavia = self.checkOwnedCiv(iGermany, iVikings)
-				aHelp.append(self.getIcon(bScandinavia) + 'Scandinavia ' + self.getIcon(bEngland) + 'England ' + self.getIcon(bRussia) + 'Russia')
+				aHelp.append(self.getIcon(bRome) + 'Italy ' + self.getIcon(bFrance) + 'France ' + self.getIcon(bScandinavia) + 'Scandinavia')
+				aHelp.append(self.getIcon(bEngland) + 'England ' + self.getIcon(bRussia) + 'Russia')
 
 		elif iPlayer == iRussia:
 			if iGoal == 0:

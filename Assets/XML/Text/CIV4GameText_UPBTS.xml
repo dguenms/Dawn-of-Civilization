@@ -144,4 +144,14 @@
 		<English>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</English>
 		<German>Religiöse Gebäude produzieren +2 [ICON_CULTUE] und +2 [ICON_RESEARCH]</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HRE</Tag>
+		<English>The Power of the Emperor:</English>
+		<German>Die Macht des Kaisers:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HRE2</Tag>
+		<English>Double votes in Apostolic Palace elections</English>
+		<German>Doppelte Stimmzahl in Wahlen zum Apostolischen Palast</German>
+	</TEXT>
 </Civ4GameText>

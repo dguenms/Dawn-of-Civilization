@@ -6836,12 +6836,6 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 		return 0;
 	}
 
-	//Rhye - start UP
-	if (getOwnerINLINE() == GERMANY)
-		if (GET_TEAM(GET_PLAYER((PlayerTypes)GERMANY).getTeam()).isHasTech((TechTypes)INDUSTRIALISM))
-			return 0;
-	//Rhye - end UP
-
 	iPrice = GC.getDefineINT("BASE_UNIT_UPGRADE_COST");
 
 	iPrice += (std::max(0, (GET_PLAYER(getOwnerINLINE()).getProductionNeeded(eUnit) - GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType()))) * GC.getDefineINT("UNIT_UPGRADE_COST_PER_PRODUCTION"));
@@ -6856,6 +6850,16 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 	}
 
 	iPrice -= (iPrice * getUpgradeDiscount()) / 100;
+
+	//Rhye - start UP
+	if (getOwnerINLINE() == GERMANY)
+	{
+		if (GET_TEAM(GET_PLAYER((PlayerTypes)GERMANY).getTeam()).isHasTech((TechTypes)INDUSTRIALISM))
+		{
+			iPrice /= 2;
+		}
+	}
+	//Rhye - end UP
 
 	return iPrice;
 }
@@ -7593,8 +7597,8 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 130;
 		iRate /= 100;
 		break;
-	case GERMANY:
-		iRate *= 140;
+	case HOLY_ROME:
+		iRate *= 120;
 		iRate /= 100;
 		break;
 	case RUSSIA:
@@ -7635,6 +7639,10 @@ int CvUnit::workRate(bool bMax) const
 		break;
 	case THAILAND:
 		iRate *= 110;
+		iRate /= 100;
+		break;
+	case GERMANY:
+		iRate *= 140;
 		iRate /= 100;
 		break;
 	case AMERICA:

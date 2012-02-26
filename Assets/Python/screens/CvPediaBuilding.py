@@ -118,7 +118,8 @@ class CvPediaBuilding:
 		self.placeHistory()
 
 			
-	# Place happiness/health/commerce/great people modifiers
+
+			# Place happiness/health/commerce/great people modifiers
 	def placeStats(self):
 
 		screen = self.top.getScreen()

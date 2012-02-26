@@ -2501,12 +2501,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_DEFENSE_AIR] *= 3;
 		aiUnitAIVal[UNITAI_DEFENSE_AIR] /= 2;
 		break;
-	case GERMANY:
-		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
-		aiUnitAIVal[UNITAI_ATTACK_AIR] *= 2;
-		aiUnitAIVal[UNITAI_DEFENSE_AIR] *= 2;
-		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
-		aiUnitAIVal[UNITAI_ICBM] *= 2;
+	case HOLY_ROME:
+		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 2;
 		break;
 	case RUSSIA:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 3;
@@ -2573,6 +2571,13 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case THAILAND:
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		break;
+	case GERMANY:
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
+		aiUnitAIVal[UNITAI_ATTACK_AIR] *= 2;
+		aiUnitAIVal[UNITAI_DEFENSE_AIR] *= 2;
+		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
+		aiUnitAIVal[UNITAI_ICBM] *= 2;
 		break;
 	case AMERICA:
 		aiUnitAIVal[UNITAI_RESERVE] *= 2;
@@ -3194,18 +3199,12 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 4;
 										}
 										break;
-									case GERMANY:
+									case HOLY_ROME:
 										if (iI == NOTREDAME) { //Notre Dame
 														iTempValue *= 3;
 														iTempValue /= 2;
 										}
-										if (iI == IRONWORKS) { //Iron Works
-														iTempValue *= 3;
-														iTempValue /= 2;
-										}
-										else if (iI == WEMBLEY) iTempValue *= 2;
 										else if (iI == APOSTOLIC) iTempValue *= 2;
-										else if (iI == BRANDENBURG) iTempValue *= 2;
 										break;
 									case RUSSIA:
 										if (iI == KREMLIN) iTempValue *= 2;
@@ -3274,6 +3273,14 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 2;
 											iTempValue /= 3;
 											}
+										break;
+									case GERMANY:
+										if (iI == IRONWORKS) { //Iron Works
+														iTempValue *= 3;
+														iTempValue /= 2;
+										}
+										else if (iI == WEMBLEY || iI == CHANNELTUNNEL) iTempValue *= 2;
+										else if (iI == BRANDENBURG) iTempValue *= 3;
 										break;
 									case AMERICA:
 										if (iI == STATUEOFLIBERTY) iTempValue *= 2;
@@ -4802,7 +4809,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				case ENGLAND:
 					iValue += 2;
 					break;
-				case GERMANY:
+				case HOLY_ROME:
 					iValue += 1;
 					break;
 				case RUSSIA:
@@ -4832,6 +4839,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iValue -= 1;
 					break;
 				case THAILAND:
+					iValue += 1;
+					break;
+				case GERMANY:
 					iValue += 1;
 					break;
 				case AMERICA:

@@ -1763,6 +1763,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		return 0;
 	}
 
+	//Leoreth: prevent France from founding Metz
+	if (iX == 57 && iY == 50)
+	{
+		return 0;
+	}
+
 	bIsCoastal = pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN());
 	pArea = pPlot->area();
 	iNumAreaCities = pArea->getCitiesPerPlayer(getID());
@@ -3397,6 +3403,9 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		if ((pCity->getX() == 89 && pCity->getY() == 46) || (pCity->getX() == 95 && pCity->getY() == 47))
 			iValue -= 10;
 		else if (pCity->getX() == 72 && pCity->getY() == 43)
+			iValue += 5;
+
+		if (pCity->getOwner() == BYZANTIUM)
 			iValue += 5;
 	}
 
@@ -5708,12 +5717,12 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == COMMUNISM)
 										iValue /= 2;
 									break;
-								case GERMANY:
+								case HOLY_ROME:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == PRINTING_PRESS || iI == RIFLING)
-										iValue *= 2;
-									if (iI == MUSIC || iI == GUILDS || iI == MILITARY_TRADITION  || iI == MILITARY_SCIENCE || iI == CHEMISTRY) {
+									if (iI == PRINTING_PRESS)
+										iValue *= 5;
+									if (iI == MUSIC || iI == GUILDS || iI == ASTRONOMY) {
 										iValue *= 3;
 										iValue /= 2;
 									}
@@ -5790,6 +5799,15 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									if (iI == MACHINERY || iI == GUNPOWDER || iI == GUILDS)
 										iValue /= 2;
+									break;
+								case GERMANY:
+									if (iI == COMBUSTION || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == FASCISM)
+										iValue *= 2;
+									if (iI == FISSION)
+									{
+										iValue *= 5;
+										iValue /= 4;
+									}
 									break;
 								case AMERICA:
 									if (iI == FISSION) {
@@ -6164,9 +6182,9 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 	//Rhye - start UP
 	if (ePlayer == FRANCE) {    // Leoreth - unaffected by Italy respawn
 		if ((getID() != ROME) && (getID() != GREECE)
-			&& (getID() != SPAIN) && (getID() != ENGLAND) && (getID() != GERMANY) && (getID() != RUSSIA)
+			&& (getID() != SPAIN) && (getID() != ENGLAND) && (getID() != HOLY_ROME) && (getID() != RUSSIA)
 			&& (getID() != VIKING)
-			&& (getID() != NETHERLANDS) && (getID() != PORTUGAL))
+			&& (getID() != NETHERLANDS) && (getID() != PORTUGAL) && (getID() != GERMANY))
 			iAttitude += 8;
 	}
 	//Rhye - end UP
@@ -11225,13 +11243,13 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 
 	// Leoreth - prefer Vassalage for medieval Eurocivs
-	if (eCivic == (CivicTypes)VASSALAGE){
-	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == GERMANY || getID() == VIKING || getID() == PORTUGAL || getID() == RUSSIA){
+	/*if (eCivic == (CivicTypes)VASSALAGE){
+	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == HOLY_ROME || getID() == VIKING || getID() == PORTUGAL || getID() == RUSSIA){
 	        if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() == 2){
 	            iValue *= 2;
 	        }
 	    }
-	}
+	}*/
 
 
 	if (AI_isDoStrategy(AI_STRATEGY_CULTURE2) && (GC.getCivicInfo(eCivic).isNoNonStateReligionSpread()))

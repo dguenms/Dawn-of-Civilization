@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROMAN_DESC</Tag>
+		<English>The Germans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_PEOPLES</Tag>
+		<English>Germanic Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_DEFAULT</Tag>
+		<English>Kingdom of Germany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_DEMOCRATIC</Tag>
+		<English>Republic of Austria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_COMMUNIST</Tag>
+		<English>Socialist Republic of Austria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_FASCIST</Tag>
+		<English>Greater Austrian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_NAZI_VASSAL</Tag>
+		<English>Ostmark</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_SOVIET_VASSAL</Tag>
+		<English>Soviet Austria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_HRE</Tag>
+		<English>Holy Roman Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_AUSTRIA_EMPIRE</Tag>
+		<English>Austrian Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_HABSBURG_EMPIRE</Tag>
+		<English>Habsburg Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRIA_SHORT_DESC</Tag>
+		<English>Austria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRIA_ADJECTIVE</Tag>
+		<English>Austrian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_HOLY_ROMAN_VASSAL</Tag>
+		<English>Crown of Italy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_HOLY_ROMAN_VASSAL</Tag>
+		<English>West Francia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_HOLY_ROMAN_VASSAL</Tag>
+		<English>Duchy of Brabant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_HOLY_ROMAN_VASSAL</Tag>
+		<English>Latin Empire</English>
+	</TEXT>
+</Civ4GameText>

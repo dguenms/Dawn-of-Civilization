@@ -56,7 +56,7 @@ tPool3 = (con.iEgypt,
           con.iGreece,
           con.iMali,
           con.iMaya,
-          con.iGermany,
+          con.iHolyRome,
           con.iIndia,
           con.iAmerica,
           con.iPortugal,          
@@ -66,6 +66,7 @@ tPool3 = (con.iEgypt,
 	  con.iByzantium,
           con.iKorea,
 	  con.iMughals,
+	  con.iGermany,
 	  con.iThailand)
 
 

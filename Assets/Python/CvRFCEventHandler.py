@@ -56,7 +56,7 @@ iIndonesia = con.iIndonesia
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland
-iGermany = con.iGermany
+iHolyRome = con.iHolyRome
 iRussia = con.iRussia
 iNetherlands = con.iNetherlands
 iHolland = con.iHolland
@@ -68,6 +68,7 @@ iAztecs = con.iAztecs
 iMughals = con.iMughals
 iTurkey = con.iTurkey
 iThailand = con.iThailand
+iGermany = con.iGermany
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
@@ -491,6 +492,9 @@ class CvRFCEventHandler:
 		iMaster, iVassal, bVassal = argsList
 		
 		self.dc.onVassalState(argsList)
+		
+		if iMaster == iHolyRome:
+			self.dc.onVassalState(argsList)
 
 	def onRevolution(self, argsList):
 		'Called at the start of a revolution'

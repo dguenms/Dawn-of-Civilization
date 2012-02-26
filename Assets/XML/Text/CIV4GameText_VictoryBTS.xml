@@ -199,4 +199,19 @@
 		<English>Have a city of at least 20000 culture in 1800 AD</English>
 		<German>Haben Sie im Jahr 1800 n. Chr. eine Stadt mit mindestens 20000 Kulturpunkten</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE1</Tag>
+		<English>Control the Apostolic Palace and the Church of the Holy Sepulchre in 1200 AD</English>
+		<German>Kontrollieren Sie den Apostolischen Palast und die Kirche des heiligen Grabes im Jahr 1200 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE2</Tag>
+		<English>Found Protestantism</English>
+		<German>Begründen Sie den Protestantismus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE3</Tag>
+		<English>Vassalize three European civilizations by 1600 AD</English>
+		<German>Vassalisieren Sie drei europäische Zivilisationen bis zum Jahr 1500 n. Chr.</German>
+	</TEXT>
 </Civ4GameText>
