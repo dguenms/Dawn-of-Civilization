@@ -1413,7 +1413,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
-					<UnitType>UNIT_FRENCH_CULVERINE</UnitType>
+					<UnitType>UNIT_FRENCH_HEAVY_CANNON</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>

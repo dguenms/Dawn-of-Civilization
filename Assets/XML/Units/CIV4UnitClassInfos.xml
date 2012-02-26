@@ -493,6 +493,15 @@
 			<DefaultUnit>UNIT_TREBUCHET</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_BOMBARD</Type>
+			<Description>TXT_KEY_UNIT_BOMBARD</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_BOMBARD</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_CANNON</Type>
 			<Description>TXT_KEY_UNIT_CANNON</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
