@@ -1373,7 +1373,7 @@ class RFCUtils:
 			else:
 				self.makeUnit(con.iCannon, iCiv, tPlot, iNumUnits)
 		else:
-			self.makeUnit(con.iBombard, iCiv, tPlot, iNumUnit)
+			self.makeUnit(con.iBombard, iCiv, tPlot, iNumUnits)
 
 		if bRifling:
 			if iCiv == con.iEngland:

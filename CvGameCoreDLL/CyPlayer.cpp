@@ -140,6 +140,18 @@ void CyPlayer::setCivDescription(std::wstring szNewDesc)
 	if( m_pPlayer )
 		m_pPlayer->setCivDescription(szNewDesc);
 }
+
+void CyPlayer::setCivShortDescription(std::wstring szNewShortDesc)
+{
+	if ( m_pPlayer )
+		 m_pPlayer->setCivShortDescription(szNewShortDesc);
+}
+
+void CyPlayer::setCivAdjective(std::wstring szNewAdj)
+{
+	if ( m_pPlayer )
+		 m_pPlayer->setCivAdjective(szNewAdj);
+}
 //Rhye (jdog) -  end -----------------------
 
 std::wstring CyPlayer::getCivilizationDescriptionKey()

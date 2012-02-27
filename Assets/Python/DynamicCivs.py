@@ -722,7 +722,12 @@ class DynamicCivs:
 			
 	def setCivName(self, iCiv, sName, sShort, sAdjective):
 		gc.getPlayer(iCiv).setCivName(localText.getText(sName, ()), localText.getText(sShort, ()), localText.getText(sAdjective, ()))
-			
+	
+	def setCivAdj(self, iCiv, sAdj):
+		gc.getPlayer(iCiv).setCivAdjective(localText.getText(sAdj, ()))
+		
+	def setCivShortDesc(self, iCiv, sShort):
+		gc.getPlayer(iCiv).setCivAdjective(localText.getText(sShort, ()))
 
         def setup(self):
                 for iPlayer in range(iNumPlayers):
@@ -777,6 +782,7 @@ class DynamicCivs:
 		elif iPlayer == iRussia: iThreshold = 8
 		elif iPlayer == iHolyRome: iThreshold = 4
 		elif iPlayer == iGermany: iThreshold = 4
+		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
 		elif iPlayer == iRome and pRome.isReborn(): iThreshold = 4
 		elif iPlayer == iInca: iThreshold = 3
 			
@@ -1284,8 +1290,9 @@ class DynamicCivs:
 				if iCounter >= 2:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_HABSBURG_EMPIRE")
 					return
-					
-				self.setCivDesc(iPlayer, "TXT_KEY_HOLY_ROME_HRE")
+				
+				if iEra <= con.iRenaissance:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_HRE")
 				
 			# Kingdom of Germany as default
 			
@@ -1466,3 +1473,7 @@ class DynamicCivs:
         def checkTurn(self, argsList): # called only once every ten turns
                 for iPlayer in range(iNumPlayers):
                         self.checkName(iPlayer)
+			
+		if argsList[0] == getTurnForYear(1700):
+			self.setCivAdj(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
+			self.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")

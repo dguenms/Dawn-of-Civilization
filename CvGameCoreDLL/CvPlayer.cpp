@@ -2451,6 +2451,7 @@ void CvPlayer::setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::
 	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 }
+
 void CvPlayer::setCivDescription(std::wstring szNewDesc) //Rhye
 {
 	m_szCivDescKey = szNewDesc;
@@ -2465,6 +2466,31 @@ void CvPlayer::setCivDescription(std::wstring szNewDesc) //Rhye
 	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 }
+
+void CvPlayer::setCivShortDescription(std::wstring szNewShort) //Leoreth
+{
+	m_szCivShort = szNewShort;
+
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+}
+
+void CvPlayer::setCivAdjective(std::wstring szNewAdj) //Leoreth
+{
+	m_szCivAdj = szNewAdj;
+
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+}
+
 //Rhye (jdog) -  end -----------------------
 
 const wchar* CvPlayer::getCivilizationDescriptionKey() const
@@ -6802,6 +6828,13 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 				iProductionNeeded = iProductionNeeded * 100 / 100;
 			}
 		}
+
+		//Leoreth
+		if (!GET_PLAYER((PlayerTypes)getID()).isHuman())
+		{
+			iProductionNeeded = iProductionNeeded * 3 / 4;
+		}
+
 	}
 	else
 	{
