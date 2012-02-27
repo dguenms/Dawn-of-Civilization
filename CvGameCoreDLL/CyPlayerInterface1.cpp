@@ -48,7 +48,9 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getCivilizationDescription", &CyPlayer::getCivilizationDescription, "str() - returns the Civilization Description String")
 		//Rhye (jdog) -  start ---------------------
 		.def("setCivName", &CyPlayer::setCivName, "void(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj)" )																														// Exposed to Python
-		.def("setCivDescription", &CyPlayer::setCivDescription, "void(std::wstring szNewDesc)" )																														// Exposed to Python
+		.def("setCivDescription", &CyPlayer::setCivDescription, "void(std::wstring szNewDesc)" )// Exposed to Python
+		.def("setCivShortDescription", &CyPlayer::setCivShortDescription, "void(std::wstring szNewShortDesc)" )
+		.def("setCivAdjective", &CyPlayer::setCivAdjective, "void(std::wstring szNewAdjective)" )
 		//Rhye (jdog) -  end -----------------------
 		.def("getCivilizationShortDescription", &CyPlayer::getCivilizationShortDescription, "str() - returns the short Civilization Description")
 		.def("getCivilizationDescriptionKey", &CyPlayer::getCivilizationDescriptionKey, "str() - returns the Civilization Description String")

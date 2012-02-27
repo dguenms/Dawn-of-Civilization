@@ -76,7 +76,9 @@ public:
 	//Rhye (jdog) -  start ---------------------
 	void setName(std::wstring szNewValue);																														// Exposed to Python
 	void setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj);																														// Exposed to Python
-	void setCivDescription(std::wstring szNewDesc);																														// Exposed to Python
+	void setCivDescription(std::wstring szNewDesc); // Exposed to Python
+	void setCivShortDescription(std::wstring szNewShort);
+	void setCivAdjective(std::wstring szNewAdj);
 	//Rhye (jdog) -  end -----------------------
 	DllExport const wchar* getNameKey() const;																																	// Exposed to Python
 	DllExport const wchar* getCivilizationDescription(uint uiForm = 0) const;																		// Exposed to Python

@@ -3665,8 +3665,8 @@ class RiseAndFall:
 			utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iThaiChangSuek, iCiv, tPlot, 2)
 		if iCiv == iGermany:
-			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
-			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
+			utils.makeUnit(con.iMusketman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 3)
@@ -3831,7 +3831,7 @@ class RiseAndFall:
                                 utils.makeUnit(con.iGalley, iCiv, tSeaPlot, 2)
                 if (iCiv == iHolyRome):                        
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
-			if utils.getHumanID() != iHolyRome or gc.getPlayer(0).isPlayable():
+			if gc.getPlayer(0).isPlayable():
 				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
@@ -3918,8 +3918,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iJewishMissionary, iCiv, tPlot, 3)
 			utils.makeUnit(con.iRifleman, iCiv, tPlot, 4)
-			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
-			utils.makeUnit(con.iCavalry, iCiv, tPlot, 2)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
