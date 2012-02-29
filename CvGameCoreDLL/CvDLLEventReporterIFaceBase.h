@@ -100,7 +100,7 @@ public:
 
 	virtual void victory(TeamTypes eNewWinner, VictoryTypes eNewVictory) = 0;
 
-	virtual void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal) = 0;
+	virtual void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated) = 0;
 };
 
 #endif	// CvDLLEventReporterIFaceBase_h

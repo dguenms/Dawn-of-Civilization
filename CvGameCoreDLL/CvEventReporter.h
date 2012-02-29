@@ -120,7 +120,7 @@ public:
 
 	void victory(TeamTypes eWinner, VictoryTypes eVictory);
 
-	void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal);
+	void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
 
 	DllExport void preSave();
 

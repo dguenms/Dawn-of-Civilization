@@ -89,7 +89,7 @@ public:
 	void reportChat(CvWString szString);				
 	void reportVictory(TeamTypes eNewWinner, VictoryTypes eNewVictory);
 
-	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal);
+	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
 	void reportRevolution(PlayerTypes ePlayerID); //edead
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);

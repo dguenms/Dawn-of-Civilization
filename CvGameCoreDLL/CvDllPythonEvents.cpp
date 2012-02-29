@@ -1079,7 +1079,7 @@ void CvDllPythonEvents::reportVictory(TeamTypes eNewWinner, VictoryTypes eNewVic
 	}
 }
 
-void CvDllPythonEvents::reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal)
+void CvDllPythonEvents::reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated)
 {
 	if (preEvent())
 	{
@@ -1088,6 +1088,7 @@ void CvDllPythonEvents::reportVassalState(TeamTypes eMaster, TeamTypes eVassal, 
 		eventData.add((int)eMaster);
 		eventData.add((int)eVassal);
 		eventData.add(bVassal);
+		eventData.add(bCapitulated);
 
 		postEvent(eventData);
 	}
