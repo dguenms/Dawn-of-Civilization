@@ -4332,7 +4332,7 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 
 		if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
 		{
-			CvEventReporter::getInstance().vassalState(eIndex, getID(), bNewValue);
+			CvEventReporter::getInstance().vassalState(eIndex, getID(), bNewValue, bCapitulated);
 		}
 		// Sanguo Mod Performance start, added by poyuzhe 07.26.09
 		for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)

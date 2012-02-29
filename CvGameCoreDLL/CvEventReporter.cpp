@@ -417,9 +417,9 @@ void CvEventReporter::victory(TeamTypes eWinner, VictoryTypes eVictory)
 	gDLL->reportStatistics();
 }
 
-void CvEventReporter::vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal)
+void CvEventReporter::vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated)
 {
-	m_kPythonEventMgr.reportVassalState(eMaster, eVassal, bVassal);
+	m_kPythonEventMgr.reportVassalState(eMaster, eVassal, bVassal, bCapitulated);
 }
 
 void CvEventReporter::preSave()

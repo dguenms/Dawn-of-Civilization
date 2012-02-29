@@ -1,0 +1,56 @@
+# Civic overhaul: now 6 civics per category
+# GOVERNMENT
+	- Tyranny
+	- Dynasticism (Monarchy): +1 happiness per military unit
+	- City States (Code of Laws): +1 specialist for all cities within three tiles of the capital, +100% number of cities maintenance
+	- Theocracy (Theology): +2 XP in cities with state religion, no foreign religion spread
+	- Autocracy (Nationalism): +2 happiness with barracks, can draft 2 units
+	- Republic (Liberalism): +50% GP birth, +100% cottage growth, +25% war weariness
+# ORGANIZATION
+	- Direct Rule
+	- Vassalage (Feudalism): extra free units, +2 XP per unit, -25% number of cities upkeep
+	- Absolutism (Civil Service): +40% commerce and production in capital
+	- Representation (Constitution): +2 science per specialist
+	- Supreme Council (Communism): No city distance maintenance
+	- Universal Suffrage (Democracy): +1 production for towns, +2 happiness in largest cities
+# SOCIETY
+	- Tribalism
+	- Agrarianism (Calendar): +2 commerce for pastures and plantations, -25% great people birth, -50% cottage growth
+	- Urbanization (Guilds): +50% worker speed, +1 production from workshops
+	- Capitalism (Economics): +2 commerce for towns, can hurry with gold
+	- Totalitarianism (Fascism): -50% war weariness, +25% espionage, +25% unit production
+	- Egalitarianism (Democracy): Unlimited artist, merchant, scientist
+# ECONOMY
+	- Self-Sufficiency
+	- Forced Labor (Masonry): Can hurry with population
+	- Mercantilism (Banking): +1 specialist, no foreign trade
+	- Free Market (Economics): +1 trade route, +50% trade route yield, +25% corporation yield
+	- State Property (Communism): +50% production to commerce rate, +1 food for workshop, watermill, +1 production per specialist, no corporations
+	- Environmentalism (Ecology): -30% unhealthiness, +1 unhappiness from Nuclear Plant, +2 commerce for windmill
+# RELIGION
+	- Animism: +1 unhappiness per non-state religion
+	- Pantheon: no state religion, can build classical wonders, +1 happiness with Pagan Temple, +1 unhappiness per non-state religion
+	- Organized Religion: +25% building construction with state religion, can always train missionaries, +1 unhappiness per non-state religion
+	- Scholasticism: +30% great people birth, +1 unhappiness per non-state religion
+	- Patriarchate: +2 happiness with state religion, unlimited priests, +25% culture in capital, +1 unhappiness per non-state religion
+	- Secularism: +10% science
+# EXPANSION
+	- added Confederation: respawns on your territory is less likely
+
+# Germany split into two civilizations: Holy Rome (spawn: 840 AD) and Germany (spawn: 1700 AD)
+# Holy Roman UHV:
+	- Control the Apostolic Palace and the Church of the Holy Sepulchre in 1200 AD
+	- Found Protestantism
+	- Vassalize three European civilizations by 1600 AD
+# German UHV:
+	- Have seven great people in Berlin in 1900 AD
+	- Control Italy, France, Scandinavia, England and Russia in 1940 AD
+	- Be first to complete the tech tree
+# Holy Roman UP: Double votes in Apostolic Palace decisions
+# German UP: -50% upgrade costs
+
+# Cannon requires Rifling and has strength 12
+# Previous role filled by Bombard, strength 8, +25% against cities
+# French UU is now a Heavy Cannon (replaces Cannon)
+
+# Stability of capitulated civs is reset

@@ -489,9 +489,12 @@ class CvRFCEventHandler:
         def onVassalState(self, argsList):
 		'Vassal State'
 		print "Check 1 passed"
-		iMaster, iVassal, bVassal = argsList
+		iMaster, iVassal, bVassal, bCapitulated = argsList
 		
 		self.dc.onVassalState(argsList)
+		
+		if bCapitulated:
+			self.sta.onVassalState(iVassal)
 		
 		if iMaster == iHolyRome:
 			self.dc.onVassalState(argsList)
