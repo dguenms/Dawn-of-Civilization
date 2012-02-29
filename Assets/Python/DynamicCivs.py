@@ -1441,11 +1441,23 @@ class DynamicCivs:
                 #        pPlayer.setCivilizationType(con.tRebirthCiv[iPlayer])
                 #pPlayer.setLeader(con.tRebirthLeaders[iPlayer][0])
 		self.changeResurrections(iPlayer, 1)
+		
+		if iPlayer == iAztecs:
+			self.setCivName(iPlayer, "", "TXT_KEY_CIV_MEXICO_SHORT_DESC", "TXT_KEY_CIV_MEXICO_ADJECTIVE")
+		elif iPlayer == iInca:
+			self.setCivName(iPlayer, "", "TXT_KEY_CIV_PERU_SHORT_DESC", "TXT_KEY_CIV_PERU_ADJECTIVE")
+		
                 self.setCivDesc(iPlayer, self.defaultNames[iPlayer])
                 self.checkName(iPlayer, tOriginalOwners)
                 
         def onVassalState(self, argsList):
                 iMaster, iVassal, bVassal = argsList
+		
+		if iVassal == iAztecs:
+			self.setCivName(iVassal, "", "TXT_KEY_CIV_MEXICO_SHORT_DESC", "TXT_KEY_CIV_MEXICO_ADJECTIVE")
+		elif iVassal == iInca:
+			self.setCivName(iVassal, "", "TXT_KEY_CIV_PERU_SHORT_DESC", "TXT_KEY_CIV_PERU_ADJECTIVE")
+			
                 self.checkName(iVassal)
         
         def onPlayerChangeStateReligion(self, argsList):
@@ -1460,11 +1472,14 @@ class DynamicCivs:
         def onCityAcquired(self, argsList):
                 iPreviousOwner, iNewOwner, city, bConquest, bTrade = argsList
                 
-                if city.getNumRealBuilding(con.iPalace):
-                        self.checkName(iPreviousOwner)
+		self.checkName(iPreviousOwner)
+		self.checkName(iNewOwner)
+		
+                #if city.getNumRealBuilding(con.iPalace):
+                #        self.checkName(iPreviousOwner)
                 
-                if gc.getPlayer(iNewOwner).getNumCities() in [0, 1, 2, 3, 6]:
-                        self.checkName(iNewOwner)
+                #if gc.getPlayer(iNewOwner).getNumCities() in [0, 1, 2, 3, 6]:
+                #        self.checkName(iNewOwner)
 			
 	def onCityBuilt(self, iOwner):
 		if gc.getPlayer(iOwner).getNumCities() in [0, 1, 2, 3, 6]:
@@ -1475,5 +1490,4 @@ class DynamicCivs:
                         self.checkName(iPlayer)
 			
 		if argsList[0] == getTurnForYear(1700):
-			self.setCivAdj(iHolyRome, "Austrian")
-			self.setCivShortDesc(iHolyRome, "Austria")
+			self.setCivName(iHolyRome, "", "TXT_KEY_CIV_AUSTRIA_SHORT_DESC", "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")

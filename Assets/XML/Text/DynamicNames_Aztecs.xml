@@ -29,6 +29,14 @@
 		<English>Mexican Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_SHORT_DESC</Tag>
+		<English>Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_ADJECTIVE</Tag>
+		<English>Mexican</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_ALTEPETL</Tag>
 		<English>Mexican Altepetl</English>
 	</TEXT>

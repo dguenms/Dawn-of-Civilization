@@ -1102,9 +1102,7 @@
 			<TradeYieldModifiers/>
 			<CommerceModifiers/>
 			<CapitalCommerceModifiers/>
-			<SpecialistExtraCommerces>
-				<iCommerce>1</iCommerce>
-			</SpecialistExtraCommerces>
+			<SpecialistExtraCommerces/>
 			<Hurrys/>
 			<SpecialBuildingNotRequireds/>
 			<SpecialistValids/>
@@ -1326,7 +1324,7 @@
 			<bNoForeignTrade>0</bNoForeignTrade>
 			<bNoCorporations>0</bNoCorporations>
 			<bNoForeignCorporations>0</bNoForeignCorporations>
-			<iCivicPercentAnger>100</iCivicPercentAnger>
+			<iCivicPercentAnger>0</iCivicPercentAnger>
 			<bStateReligion>0</bStateReligion>
 			<bNoNonStateReligionSpread>0</bNoNonStateReligionSpread>
 			<iStateReligionHappiness>0</iStateReligionHappiness>
@@ -1359,10 +1357,6 @@
 				</SpecialistValid>
 				<SpecialistValid>
 					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
-					<bValid>1</bValid>
-				</SpecialistValid>
-				<SpecialistValid>
-					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
 					<bValid>1</bValid>
 				</SpecialistValid>
 			</SpecialistValids>

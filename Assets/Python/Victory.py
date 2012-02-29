@@ -1874,29 +1874,19 @@ class Victory:
                                         if (bSiberia):
                                                 self.setGoal(iRussia, 0, 1)
 
-
-
-                elif (iPlayer == iNetherlands):
-                        if (self.getGoal(iNetherlands, 1) == -1):
-                                if (city.getX() >= tAustraliaTL[0] and city.getX() <= tAustraliaBR[0] and city.getY() >= tAustraliaTL[1] and city.getY() <= tAustraliaBR[1]):
-                                        bFirst = True                                        
-                                        for iCiv in range(iNumPlayers):
-                                                if ((iCiv != iNetherlands)):
-                                                        if (self.checkNotOwnedArea(iCiv, tAustraliaTL, tAustraliaBR) == False):
-                                                                bFirst = False
-                                                                #print ("bFirst = False", iCiv)
-                                                                break
-                                        if (bFirst):
-                                                self.setGoal(iNetherlands, 1, 1)
-                                        else:
-                                                self.setGoal(iNetherlands, 1, 0)
-
                 elif (iPlayer == iPortugal):
                         if (self.getGoal(iPortugal, 2) == -1):
                                 if (not (city.getX() >= tEuropeTL[0] and city.getX() <= tEuropeBR[0] and city.getY() >= tEuropeTL[1] and city.getY() <= tEuropeBR[1])):
                                         self.setPortugueseColonies(self.getPortugueseColonies() + 1)
                                         if (self.getPortugueseColonies() >= 15):
                                                 self.setGoal(iPortugal, 2, 1)
+						
+                if (self.getGoal(iNetherlands, 1) == -1):
+                        if (city.getX() >= tAustraliaTL[0] and city.getX() <= tAustraliaBR[0] and city.getY() >= tAustraliaTL[1] and city.getY() <= tAustraliaBR[1]):
+                                if iPlayer == iNetherlands:
+					self.setGoal(iNetherlands, 1, 1)
+                                else:
+                                        self.setGoal(iNetherlands, 1, 0)
 
                                                 
                         

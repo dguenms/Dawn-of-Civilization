@@ -7014,7 +7014,7 @@ class CityNameManager:
                                 city.setName('Augsburg', False)
                         if (sName == 'Moguntiacum' or sName == 'Mogontiacum' or sName == 'Mayence'):
                                 city.setName('Mainz', False)
-                        if (sName == 'Vienne' or sName == 'Vena' or sName == 'Vindobona' or sName == 'Viyana'):
+                        if (sName == 'Vienne' or sName == 'Vena' or sName == 'Vindobona' or sName == 'Viyana' or sName == 'Vienna'):
                                 city.setName('Wien', False)
                         if (sName == 'Castra Regina' or sName == 'Ratisbonne'):
                                 city.setName('Regensburg', False)

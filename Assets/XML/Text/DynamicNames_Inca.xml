@@ -29,6 +29,14 @@
 		<English>Government of the Incan Armed Forces</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_SHORT_DESC</Tag>
+		<English>Peru</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_ADJECTIVE/Tag>
+		<English>Peruvian</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_EMPIRE</Tag>
 		<English>Four Incan Regions</English>
 	</TEXT>
