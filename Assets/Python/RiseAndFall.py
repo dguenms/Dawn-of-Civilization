@@ -3916,9 +3916,9 @@ class RiseAndFall:
 			utils.makeUnit(con.iThaiChangSuek, iCiv, tPlot, 2)
 		if iCiv == iGermany:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-			utils.makeUnit(con.iJewishMissionary, iCiv, tPlot, 3)
-			utils.makeUnit(con.iRifleman, iCiv, tPlot, 4)
-			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
+			utils.makeUnit(con.iJewishMissionary, iCiv, tPlot, 2)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
@@ -5114,7 +5114,7 @@ class RiseAndFall:
 			if iCiv == iGermany:
 				lGermanTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
 						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
-						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, \
+						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, \
 						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
 						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
 						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling]
