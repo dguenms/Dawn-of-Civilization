@@ -86,4 +86,9 @@
 		<English>Thai Embassy</English>
 		<German>Thai-Botschaft</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HRE_EMBASSY</Tag>
+		<English>Holy Roman Embassy</English>
+		<German>Heilig-Römische Botschaft</German>
+	</TEXT>
 </Civ4GameText>

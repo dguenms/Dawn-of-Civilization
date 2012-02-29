@@ -724,10 +724,10 @@ class DynamicCivs:
 		gc.getPlayer(iCiv).setCivName(localText.getText(sName, ()), localText.getText(sShort, ()), localText.getText(sAdjective, ()))
 	
 	def setCivAdj(self, iCiv, sAdj):
-		gc.getPlayer(iCiv).setCivAdjective(localText.getText(sAdj, ()))
+		gc.getPlayer(iCiv).setCivAdjective(sAdj)
 		
 	def setCivShortDesc(self, iCiv, sShort):
-		gc.getPlayer(iCiv).setCivAdjective(localText.getText(sShort, ()))
+		gc.getPlayer(iCiv).setCivAdjective(sShort)
 
         def setup(self):
                 for iPlayer in range(iNumPlayers):
@@ -1475,5 +1475,5 @@ class DynamicCivs:
                         self.checkName(iPlayer)
 			
 		if argsList[0] == getTurnForYear(1700):
-			self.setCivAdj(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
-			self.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
+			self.setCivAdj(iHolyRome, "Austrian")
+			self.setCivShortDesc(iHolyRome, "Austria")
