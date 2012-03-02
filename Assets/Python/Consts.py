@@ -40,12 +40,12 @@ iBarbarian = iNumPlayers+5
 iNumTotalPlayersB = iBarbarian+1
 
 # civilizations, not players
-iNumCivilizations = 46
+iNumCivilizations = 45
 (iCivAmerica, iCivArabia, iCivAztec, iCivBabylonia, iCivByzantium, iCivCarthage, iCivCelt, iCivChina, iCivEgypt,
 iCivEngland, iCivEthiopia, iCivFrance, iCivGermany, iCivGreece, iCivHolyRoman, iCivInca, iCivIndia, iCivIndonesia, iCivIran,
 iCivItaly, iCivJapan, iCivKhmer, iCivKorea, iCivMali, iCivMaya, iCivMongol, iCivMughals, iCivNativeAmericans, iCivNetherlands,
 iCivOttomans, iCivPersia, iCivPortugal, iCivRome, iCivRussia, iCivSeljuks, iCivSpain, iCivSumeria, iCivThailand, iCivViking,
-iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian, iCivAustria) = range(iNumCivilizations)
+iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = range(iNumCivilizations)
 
 #for Congresses and Victory
 lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPortugal, iGermany],  #Euros

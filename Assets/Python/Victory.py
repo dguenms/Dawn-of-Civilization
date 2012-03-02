@@ -1316,7 +1316,7 @@ class Victory:
 		elif iPlayer == iHolyRome:
 			if pHolyRome.isAlive():
 			
-				if iGameTurn == getTurnForYear(1200):
+				if iGameTurn == getTurnForYear(1250):
 					bApostolicPalace = self.getNumBuildings(iHolyRome, con.iApostolicPalace) > 0
 					bHolySepulchre = self.getNumBuildings(iHolyRome, con.iChristianShrine) > 0
 					if bApostolicPalace and bHolySepulchre:

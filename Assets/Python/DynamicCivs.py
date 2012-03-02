@@ -780,9 +780,7 @@ class DynamicCivs:
 		if iPlayer == iCarthage: iThreshold = 2
 		elif iPlayer == iKorea: iThreshold = 3
 		elif iPlayer == iRussia: iThreshold = 8
-		elif iPlayer == iHolyRome:
-			if pGermany.isAlive(): iThreshold = 3
-			else: iThreshold = 4
+		elif iPlayer == iHolyRome: iThreshold = 4
 		elif iPlayer == iGermany: iThreshold = 4
 		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
 		elif iPlayer == iRome and pRome.isReborn(): iThreshold = 4
