@@ -935,7 +935,7 @@ class CvEventManager:
 	
 	def onVassalState(self, argsList):
 		'Vassal State'
-		iMaster, iVassal, bVassal = argsList
+		iMaster, iVassal, bVassal, bCapitulated = argsList
 		
 		if (bVassal):
 			CvUtil.pyPrint("Team %d becomes a Vassal State of Team %d"

@@ -438,6 +438,15 @@ class Stability:
                                         if (iCivic5 == con.iViceroyalty):
                                                 iNewBaseStability += 4
                                                 #print("iNewBaseStability civic 6th column viceroyalty",iNewBaseStability, iPlayer)
+						
+			#Leoreth: imperialism: extra stability for controlling foreign cores:
+			if (iCivic5 == con.iImperialism):
+				for iLoopCiv in range(iNumPlayers):
+					reborn = utils.getReborn(iOwnedCiv)
+					dummy1, plotList1 = utils.squareSearch( tNormalAreasTL[reborn][iOwnedCiv], tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iActiveCiv )
+					dummy2, plotList2 = utils.squareSearch( tNormalAreasTL[reborn][iOwnedCiv], tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iOwnedCiv )
+					if ((len(plotList1) >= 2 and len(plotList1) > len(plotList2)) or (len(plotList1) >= 1 and not gc.getPlayer(iOwnedCiv).isAlive())):
+						iNewBaseStability += 2*len(plotList1)
 
                         iNumContacts = 0
                         for iLoopCiv3 in range( iNumPlayers ):     

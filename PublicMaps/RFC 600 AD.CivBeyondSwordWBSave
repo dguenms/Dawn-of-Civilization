@@ -8642,7 +8642,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_MAYA_BALL_COURT
-		Player34Culture=1
+		Player35Culture=1
 	EndCity	
 EndPlot
 BeginPlot
@@ -9052,7 +9052,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_MAYA_BALL_COURT
 		BuildingType=BUILDING_CHICHEN_ITZA
-		Player34Culture=10
+		Player35Culture=10
 	EndCity	
 EndPlot
 BeginPlot
@@ -21325,7 +21325,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
-		Player32Culture=1
+		Player33Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -22787,7 +22787,7 @@ BeginPlot
 		CityOwner=33
 		CityName=Tripolis
 		CityPopulation=2
-		Player32Culture=10
+		Player33Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -22872,7 +22872,7 @@ BeginPlot
 		BuildingType=BUILDING_LEANING_TOWER
 		ReligionType=RELIGION_CHRISTIANITY
 		HolyCityReligionType=RELIGION_CHRISTIANITY
-		Player33Culture=100
+		Player34Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -23301,7 +23301,7 @@ BeginPlot
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
-		Player32Culture=1
+		Player33Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -23663,7 +23663,7 @@ BeginPlot
 		CityName=Napoli
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
-		Player32Culture=1
+		Player33Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -24102,7 +24102,7 @@ BeginPlot
 		CityName=Vindobona
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
-		Player32Culture=1
+		Player34Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -24434,7 +24434,7 @@ BeginPlot
 		CityOwner=33
 		CityName=Hesperides
 		CityPopulation=2
-		Player32Culture=10
+		Player33Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -24952,7 +24952,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=53
-	BonusType=BONUS_HORSE
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -25366,7 +25366,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=53
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -25682,7 +25682,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
 		BuildingType=BUILDING_GREAT_LIBRARY
-		Player32Culture=10
+		Player33Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25729,7 +25729,7 @@ BeginPlot
 		BuildingType=BUILDING_GREEK_ODEON
 		ReligionType=RELIGION_CHRISTIANITY
 		BuildingType=BUILDING_PARTHENON
-		Player32Culture=50
+		Player33Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -26565,7 +26565,7 @@ BeginPlot
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMID
-		Player32Culture=10
+		Player33Culture=10
 	EndCity
 	PlotType=2
 EndPlot
@@ -27696,7 +27696,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_ETHIOPIAN_STELE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player33Culture=50
+		Player34Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -27781,7 +27781,7 @@ BeginPlot
 		CityName=Iconium
 		CityPopulation=2
 		BuildingType=BUILDING_MARKET
-		Player32Culture=10
+		Player33Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -28143,7 +28143,7 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHRISTIAN_SHRINE
-		Player32Culture=1
+		Player33Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -28555,7 +28555,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_WALLS
 		ReligionType=RELIGION_CHRISTIANITY
-		Player32Culture=1
+		Player33Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -28977,7 +28977,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
-		Player32Culture=10
+		Player33Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -29284,7 +29284,7 @@ BeginPlot
 		CityName=Sana'a
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
-		Player33Culture=1
+		Player34Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -29727,7 +29727,7 @@ BeginPlot
 		CityName=Tisfun
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
-		Player33Culture=1
+		Player34Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -31571,7 +31571,7 @@ BeginPlot
 		BuildingType=BUILDING_ZOROASTRIAN_TEMPLE
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -31979,7 +31979,7 @@ BeginPlot
 		CityName=Merv
 		CityPopulation=2
 		BuildingType=BUILDING_STABLE
-		Player32Culture=1
+		Player33Culture=1
 	EndCity
 
 	RouteType=ROUTE_ROAD
@@ -32760,7 +32760,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -32808,7 +32808,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
-		Player32Culture=1
+		Player33Culture=1
 	EndCity
 
 EndPlot
@@ -33548,7 +33548,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player32Culture=50
+		Player33Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -33920,7 +33920,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player32Culture=50
+		Player33Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -34367,7 +34367,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_MARKET
-		Player36Culture=10
+		Player38Culture=10
 	EndCity
 	BeginUnit
 		UnitType=UNIT_LONGBOWMAN, UnitOwner=38
@@ -34682,7 +34682,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player32Culture=10
+		Player33Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -34723,7 +34723,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -34788,7 +34788,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
-		Player32Culture=100
+		Player33Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -35167,7 +35167,7 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player33Culture=50
+		Player34Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -35559,7 +35559,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player32Culture=50
+		Player33Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -36350,7 +36350,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player33Culture=50
+		Player34Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -36402,7 +36402,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		HolyCityReligionType=RELIGION_BUDDHISM
-		Player33Culture=50
+		Player34Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -36812,7 +36812,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
-		Player36Culture=10
+		Player38Culture=10
 	EndCity
 	BeginUnit
 		UnitType=UNIT_LONGBOWMAN, UnitOwner=38
@@ -37864,7 +37864,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE                             
 		BuildingType=BUILDING_SHWEDAGON_PAYA
 		ReligionType=RELIGION_BUDDHISM
-		Player32Culture=10
+		Player33Culture=10
 	EndCity
 
 EndPlot
@@ -38719,7 +38719,7 @@ BeginPlot
 		CityOwner=34
 		CityName=Chang'an
 		CityPopulation=1
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -39496,7 +39496,7 @@ BeginPlot
 		CityOwner=34
 		CityName=Guiyang
 		CityPopulation=1
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 	PlotType=1
 EndPlot
@@ -39562,7 +39562,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -39946,7 +39946,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -40699,7 +40699,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -40751,7 +40751,7 @@ BeginPlot
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -41512,7 +41512,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player33Culture=10
+		Player34Culture=10
 	EndCity
 EndPlot
 BeginPlot
