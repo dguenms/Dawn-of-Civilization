@@ -40,12 +40,12 @@ iBarbarian = iNumPlayers+5
 iNumTotalPlayersB = iBarbarian+1
 
 # civilizations, not players
-iNumCivilizations = 45
+iNumCivilizations = 46
 (iCivAmerica, iCivArabia, iCivAztec, iCivBabylonia, iCivByzantium, iCivCarthage, iCivCelt, iCivChina, iCivEgypt,
 iCivEngland, iCivEthiopia, iCivFrance, iCivGermany, iCivGreece, iCivHolyRoman, iCivInca, iCivIndia, iCivIndonesia, iCivIran,
 iCivItaly, iCivJapan, iCivKhmer, iCivKorea, iCivMali, iCivMaya, iCivMongol, iCivMughals, iCivNativeAmericans, iCivNetherlands,
 iCivOttomans, iCivPersia, iCivPortugal, iCivRome, iCivRussia, iCivSeljuks, iCivSpain, iCivSumeria, iCivThailand, iCivViking,
-iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = range(iNumCivilizations)
+iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian, iCivAustria) = range(iNumCivilizations)
 
 #for Congresses and Victory
 lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPortugal, iGermany],  #Euros
@@ -1940,7 +1940,7 @@ iDirectRule, iVassalage, iAbsolutism, iRepresentation, iSupremeCouncil, iUnivers
 iTribalism, iAgrarianism, iUrbanization, iCapitalism, iTotalitarianism, iEgalitarianism,
 iSelfSufficiency, iForcedLabor, iMercantilism, iFreeMarket, iStateProperty, iEnvironmentalism,
 iAnimism, iPantheon, iOrganizedReligion, iScholasticism, iPatriarchate, iSecularism,
-iSubjugation, iViceroyalty, iResettlement, iOccupation, iConfederation, iCommonwealth) = range(iNumCivics)
+iSubjugation, iViceroyalty, iResettlement, iOccupation, iImperialism, iCommonwealth) = range(iNumCivics)
 
 
 #Projects

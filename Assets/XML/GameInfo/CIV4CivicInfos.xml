@@ -960,7 +960,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_AGRARIANISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_AGRARIANISM_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Civics/Serfdom.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,7,2</Button>
-			<TechPrereq>TECH_CALENDAR</TechPrereq>
+			<TechPrereq>TECH_CURRENCY</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iAIWeight>0</iAIWeight>
@@ -2591,15 +2591,15 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_EXPANSION</CivicOptionType>
-			<Type>CIVIC_CONFEDERATION</Type>
-			<Description>TXT_KEY_CIVIC_CONFEDERATION</Description>
-			<Civilopedia>TXT_KEY_CIVIC_CONFEDERATION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_CONFEDERATION_STRATEGY</Strategy>
-			<Help>TXT_KEY_CIVIC_CONFEDERATION_HELP</Help>
+			<Type>CIVIC_IMPERIALISM</Type>
+			<Description>TXT_KEY_CIVIC_IMPERIALISM</Description>
+			<Civilopedia>TXT_KEY_CIVIC_IMPERIALISM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_IMPERIALISM_STRATEGY</Strategy>
+			<Help>TXT_KEY_CIVIC_IMPERIALISM_HELP</Help>
 			<Button>,Art/Interface/Buttons/TechTree/Nationalism.dds,Art/Interface/Buttons/TechTree_Atlas.dds,1,6</Button>
 			<TechPrereq>TECH_NATIONALISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
+			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iAIWeight>0</iAIWeight>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>

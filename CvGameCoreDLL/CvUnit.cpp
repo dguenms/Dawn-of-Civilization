@@ -6854,10 +6854,7 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 	//Rhye - start UP
 	if (getOwnerINLINE() == GERMANY)
 	{
-		if (GET_TEAM(GET_PLAYER((PlayerTypes)GERMANY).getTeam()).isHasTech((TechTypes)INDUSTRIALISM))
-		{
-			iPrice /= 2;
-		}
+		iPrice /= 2;
 	}
 	//Rhye - end UP
 

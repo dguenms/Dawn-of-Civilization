@@ -780,7 +780,9 @@ class DynamicCivs:
 		if iPlayer == iCarthage: iThreshold = 2
 		elif iPlayer == iKorea: iThreshold = 3
 		elif iPlayer == iRussia: iThreshold = 8
-		elif iPlayer == iHolyRome: iThreshold = 4
+		elif iPlayer == iHolyRome:
+			if pGermany.isAlive(): iThreshold = 3
+			else: iThreshold = 4
 		elif iPlayer == iGermany: iThreshold = 4
 		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
 		elif iPlayer == iRome and pRome.isReborn(): iThreshold = 4
@@ -1293,6 +1295,10 @@ class DynamicCivs:
 				
 				if iEra <= con.iRenaissance:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_HRE")
+			
+			if pGermany.isAlive():
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_ARCHDUCHY")
+				return
 				
 			# Kingdom of Germany as default
 			
@@ -1451,7 +1457,7 @@ class DynamicCivs:
                 self.checkName(iPlayer, tOriginalOwners)
                 
         def onVassalState(self, argsList):
-                iMaster, iVassal, bVassal = argsList
+                iMaster, iVassal, bVassal, bCapitulated = argsList
 		
 		if iVassal == iAztecs:
 			self.setCivName(iVassal, "", "TXT_KEY_CIV_MEXICO_SHORT_DESC", "TXT_KEY_CIV_MEXICO_ADJECTIVE")
@@ -1485,9 +1491,6 @@ class DynamicCivs:
 		if gc.getPlayer(iOwner).getNumCities() in [0, 1, 2, 3, 6]:
 			self.checkName(iOwner)
 
-        def checkTurn(self, argsList): # called only once every ten turns
+        def checkTurn(self, iGameTurn): # called only once every ten turns
                 for iPlayer in range(iNumPlayers):
                         self.checkName(iPlayer)
-			
-		if argsList[0] == getTurnForYear(1700):
-			self.setCivName(iHolyRome, "", "TXT_KEY_CIV_AUSTRIA_SHORT_DESC", "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
