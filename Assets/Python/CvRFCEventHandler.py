@@ -569,9 +569,6 @@ class CvRFCEventHandler:
 		self.corp.checkTurn(iGameTurn)
 		if iGameTurn % 10 == 0:
                         self.dc.checkTurn(iGameTurn)
-				
-		if iGameTurn == getTurnForYear(1700):
-			pHolyRome.setCivilizationType(con.iCivAustria)
 
                 #Mercenaries - start
 

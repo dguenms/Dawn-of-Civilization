@@ -3834,8 +3834,9 @@ class RiseAndFall:
 			if gc.getPlayer(0).isPlayable():
 				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 3)
-                        utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iAxeman, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iSwordsman, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iKnight, iCiv, tPlot, 3)
+			utils.makeUnit(con.iCatapult, iCiv, tPlot, 4)
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                 if (iCiv == iRussia):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 4)
@@ -4858,6 +4859,7 @@ class RiseAndFall:
                                 teamHolyRome.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamHolyRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamHolyRome.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+                                teamHolyRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
                         if (iCiv == iRussia):
                                 teamRussia.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamRussia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
