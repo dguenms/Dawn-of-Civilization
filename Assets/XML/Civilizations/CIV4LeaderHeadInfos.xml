@@ -47869,11 +47869,8 @@
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
 			<Type>LEADER_ALFRED</Type>
-
 			<Description>TXT_KEY_LEADER_ALFRED</Description>
-
 			<Civilopedia>TXT_KEY_LEADER_ALFRED_PEDIA</Civilopedia>
-
 			<ArtDefineTag>ART_DEF_LEADER_ALFRED</ArtDefineTag>
 			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>1</iBaseAttitude>
@@ -48313,11 +48310,9 @@
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId/>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId/>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
@@ -48332,31 +48327,31 @@
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_ELIZABETH_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_ELIZABETH_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_ELIZABETH_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId>AS2D_DIPLO_ELIZABETH_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_MIDDLE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_ELIZABETH_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MODERN</EraType>
-					<DiploScriptId>AS2D_DIPLO_ELIZABETH_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_FUTURE</EraType>
-					<DiploScriptId>AS2D_DIPLO_ELIZABETH_LATE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
