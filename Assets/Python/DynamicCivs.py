@@ -692,6 +692,46 @@ class DynamicCivs:
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_ISLAMIC_MODERN",
                 }
 		
+		self.startingLeaders = {
+			iEgypt : con.iRamesses,
+			iIndia : con.iAsoka,
+			iChina : con.iQinShiHuang,
+			iBabylonia : con.iGilgamesh,
+			iGreece : con.iPericles,
+			iPersia : con.iCyrus,
+			iCarthage : con.iHiram,
+			iRome : con.iJuliusCaesar,
+			iJapan : con.iJimmu,
+			iEthiopia : con.iZaraYaqob,
+			iKorea : con.iWangKon,
+			iMaya : con.iPacal,
+			iByzantium : con.iJustinian,
+			iVikings : con.iRagnar,
+			iArabia : con.iAbuBakr,
+			iKhmer : con.iSuryavarman,
+			iIndonesia : con.iDharmasetu,
+			iSpain : con.iIsabella,
+			iFrance : con.iCharlemagne,
+			iEngland : con.iAlfred,
+			iHolyRome : con.iBarbarossa,
+			iRussia : con.iYaroslav,
+			iNetherlands : con.iWillemVanOranje,
+			iMali : con.iMansaMusa,
+			iPortugal : con.iAfonso,
+			iInca : con.iHuaynaCapac,
+			iMongolia : con.iGenghisKhan,
+			iAztecs : con.iMontezuma,
+			iMughals : con.iAkbar,
+			iTurkey : con.iMehmed,
+			iThailand : con.iNaresuan,
+			iGermany : con.iFrederick,
+			iAmerica : con.iWashington
+		}
+		
+		self.lateStartingLeaders = {
+			iChina : con.iTaizong
+		}
+		
 	def getAnarchyTurns(self, iPlayer):
 		return sd.scriptDict['lAnarchyTurns'][iPlayer]
 		
@@ -728,11 +768,21 @@ class DynamicCivs:
 		
 	def setCivShortDesc(self, iCiv, sShort):
 		gc.getPlayer(iCiv).setCivAdjective(sShort)
+		
+	def setLeader(self, iCiv, iLeader):
+		if gc.getPlayer(iCiv).getLeader() != iLeader:
+			gc.getPlayer(iCiv).setLeader(iLeader)
 
         def setup(self):
                 for iPlayer in range(iNumPlayers):
                         pPlayer = gc.getPlayer(iPlayer)
                         self.setCivDesc(iPlayer, self.peopleNames[iPlayer])
+			
+			if not gc.getPlayer(iPlayer).isHuman():
+				self.setLeader(iPlayer, self.startingLeaders[iPlayer])
+			
+				if gc.getPlayer(iEgypt).isPlayable() and iPlayer in self.lateStartingLeaders:
+					self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
 			
 		if not gc.getPlayer(iEgypt).isPlayable():
 			self.changeAnarchyTurns(iChina, 3)
@@ -1437,7 +1487,303 @@ class DynamicCivs:
 			
 		self.setCivDesc(iPlayer, self.defaultNames[iPlayer])
 				
+	
+	def checkLeader(self, iPlayer):
+        
+                if iPlayer >= iNumPlayers: return
+		
+		if not gc.getPlayer(iPlayer).isAlive(): return
+		
+		if gc.getPlayer(iPlayer).isHuman(): return
+		
+                pPlayer = gc.getPlayer(iPlayer)
+                tPlayer = gc.getTeam(pPlayer.getTeam())
+                bReborn = pPlayer.isReborn()
+                iReligion = pPlayer.getStateReligion()
+                capital = gc.getPlayer(iPlayer).getCapitalCity()
+                tCapitalCoords = (capital.getX(), capital.getY())
+                iCivic0 = pPlayer.getCivics(0)
+                iCivic1 = pPlayer.getCivics(1)
+                iCivic2 = pPlayer.getCivics(2)
+                iCivic3 = pPlayer.getCivics(3)
+                iCivic4 = pPlayer.getCivics(4)
+                iGameTurn = gc.getGame().getGameTurn()
+		bEmpire = self.isEmpire(iPlayer)
+		bCityStates = (iCivic0 == con.iCityStates or not gc.getTeam(pPlayer.getTeam()).isHasTech(con.iCodeOfLaws))
+		bTheocracy = (iCivic0 == con.iTheocracy)
+		bResurrected = (self.getResurrections(iPlayer) > 0)
+		bMonarchy = not (self.isCommunist(iPlayer) or self.isFascist(iPlayer) or self.isDemocratic(iPlayer))
+		iAnarchyTurns = self.getAnarchyTurns(iPlayer)
+		iEra = pPlayer.getCurrentEra()
+		iGameEra = gc.getGame().getCurrentEra()
+		
+		
+		if iPlayer == iEgypt:
+		
+			if not bMonarchy and iEra >= con.iModern:
+				self.setLeader(iPlayer, con.iNasser)
+				return
+			
+			if bResurrected:
+				self.setLeader(iPlayer, con.iBaibars)
+				return
+				
+			if iEra >= con.iClassical:
+				self.setLeader(iPlayer, con.iCleopatra)
+				return
+				
+		elif iPlayer == iIndia:
+		
+			if not bMonarchy and iEra >= con.iModern:
+				self.setLeader(iPlayer, con.iGandhi)
+				return
+				
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iShivaji)
+				return
+				
+		elif iPlayer == iChina:
+		
+			if self.isCommunist(iPlayer) or self.isDemocratic(iPlayer):
+				self.setLeader(iPlayer, con.iMao)
+				return
+				
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iQixi)
+				return
+				
+			if iEra >= con.iRenaissance or bResurrected:
+				self.setLeader(iPlayer, con.iHongwu)
+				return
+				
+			if iEra >= con.iMedieval:
+				self.setLeader(iPlayer, con.iTaizong)
+				return
+				
+		elif iPlayer == iBabylonia:
+		
+			if iGameTurn >= getTurnForYear(-1600):
+				self.setLeader(iPlayer, con.iHammurabi)
+				return
+				
+		elif iPlayer == iGreece:
+		
+			if bEmpire or not bCityStates:
+				self.setLeader(iPlayer, con.iAlexander)
+				return
+				
+		elif iPlayer == iPersia:
+		
+			if bReborn:
+				if iEra >= iModern:
+					self.setLeader(iPlayer, con.iKhomeini)
+					return
 					
+				self.setLeader(iPlayer, con.iAbbas)
+				return
+			else:
+				if bEmpire:
+					self.setLeader(iPlayer, con.iDarius)
+					return
+					
+		elif iPlayer == iCarthage:
+		
+			if capital.getName() == "Qart-Hadasht" or bEmpire or not bCityStates:
+				self.setLeader(iPlayer, con.iHannibal)
+				return
+				
+		elif iPlayer == iRome:
+		
+			if bReborn:
+				self.setLeader(iPlayer, con.iCavour)
+				return
+			else:
+				if bEmpire or not bCityStates:
+					self.setLeader(iPlayer, con.iAugustus)
+					return
+				
+		elif iPlayer == iJapan:
+		
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iMeiji)
+				return
+				
+			if tPlayer.isHasTech(con.iFeudalism):
+				self.setLeader(iPlayer, con.iTokugawa)
+				return
+				
+		elif iPlayer == iEthiopia:
+		
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iHaileSelassie)
+				return
+				
+		elif iPlayer == iKorea:
+			return
+			
+		elif iPlayer == iMaya:
+			return
+			
+		elif iPlayer == iByzantium:
+			return
+			
+		elif iPlayer == iVikings:
+		
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iGustav)
+				return
+				
+		elif iPlayer == iArabia:
+		
+			if iGameTurn >= getTurnForYear(1000):
+				self.setLeader(iPlayer, con.iSaladin)
+				return
+				
+		elif iPlayer == iKhmer:
+			return
+			
+		elif iPlayer == iIndonesia:
+			
+			if iEra >= con.iModern:
+				self.setLeader(iPlayer, con.iSuharto)
+				return
+				
+			if bEmpire:
+				self.setLeader(iPlayer, con.iHayamWuruk)
+				return
+				
+		elif iPlayer == iSpain:
+		
+			if self.isFascist(iPlayer):
+				self.setLeader(iPlayer, con.iFranco)
+				return
+		
+			if sd.scriptDict['lFirstContactConquerors'][0] == 1 or sd.scriptDict['lFirstContactConquerors'][1] == 1 or sd.scriptDict['lFirstContactConquerors'][2] == 1:
+				self.setLeader(iPlayer, con.iPhilip)
+				return
+				
+		elif iPlayer == iFrance:
+		
+			if iEra >= con.iModern:
+				self.setLeader(iPlayer, con.iDeGaulle)
+				return
+				
+			if iEra >= con.iIndustrial or iCivic0 == con.iAutocracy:
+				self.setLeader(iPlayer, con.iNapoleon)
+				return
+				
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iLouis)
+				return
+				
+		elif iPlayer == iEngland:
+		
+			if iEra >= con.iModern:
+				self.setLeader(iPlayer, con.iChurchill)
+				return
+				
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iVictoria)
+				return
+				
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iElizabeth)
+				return
+				
+		elif iPlayer == iHolyRome:
+		
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iCharles)
+				return
+				
+		elif iPlayer == iRussia:
+		
+			if not bMonarchy and iEra >= iIndustrial:
+				self.setLeader(iPlayer, con.iStalin)
+				if self.isCommunist(iPlayer):
+                                        CityNameManager.CityNameManager().sovietNames()
+				return
+				
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iNicholas)
+				return
+				
+			if iEra >= con.iRenaissance:
+				if iGameTurn >= getTurnForYear(1700):
+					self.setLeader(iPlayer, con.iCatherine)
+				else:
+					self.setLeader(iPlayer, con.iPeter)
+				return
+				
+		elif iPlayer == iNetherlands:
+			return
+			
+		elif iPlayer == iMali:
+			return
+			
+		elif iPlayer == iPortugal:
+		
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iMaria)
+				return
+			
+			if tPlayer.isHasTech(con.iOptics):
+				self.setLeader(iPlayer, con.iJoao)
+				return
+				
+		elif iPlayer == iInca:
+			return
+			
+		elif iPlayer == iMongolia:
+		
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iKublaiKhan)
+				return
+				
+		elif iPlayer == iAztecs:
+			return
+			
+		elif iPlayer == iMughals:
+			return
+			
+		elif iPlayer == iTurkey:
+		
+			if not bMonarchy and iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iAtaturk)
+				return
+				
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iSuleiman)
+				return
+				
+		elif iPlayer == iThailand:
+		
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iMongkut)
+				return
+				
+		elif iPlayer == iGermany:
+		
+			if self.isFascist(iPlayer):
+				self.setLeader(iPlayer, con.iHitler)
+				return
+				
+			if tPlayer.isHasTech(con.iNationalism):
+				self.setLeader(iPlayer, con.iBismarck)
+				return
+				
+		elif iPlayer == iAmerica:
+		
+			if iEra >= con.iModern:
+				self.setLeader(iPlayer, con.iFranklinRoosevelt)
+				return
+				
+			if iGameTurn >= getTurnForYear(1850):
+				self.setLeader(iPlayer, con.iLincoln)
+				return
+				
+		self.setLeader(iPlayer, self.startingLeaders[iPlayer])
+		
 
         def onCivRespawn(self, iPlayer, tOriginalOwners):
                 #pPlayer = gc.getPlayer(iPlayer)
@@ -1453,6 +1799,7 @@ class DynamicCivs:
 		
                 self.setCivDesc(iPlayer, self.defaultNames[iPlayer])
                 self.checkName(iPlayer, tOriginalOwners)
+		self.checkLeader(iPlayer)
                 
         def onVassalState(self, argsList):
                 iMaster, iVassal, bVassal, bCapitulated = argsList
@@ -1492,3 +1839,4 @@ class DynamicCivs:
         def checkTurn(self, iGameTurn): # called only once every ten turns
                 for iPlayer in range(iNumPlayers):
                         self.checkName(iPlayer)
+			self.checkLeader(iPlayer)
