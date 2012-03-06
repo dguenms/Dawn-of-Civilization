@@ -1066,7 +1066,7 @@ tNormalAreasTL = (
 (68, 25), #Ethiopia
 (108, 45), #Korea
 (20, 32), #Maya
-(64, 38), #Byzantium
+(64, 40), #Byzantium
 (57, 55), #Vikings
 (72, 30), #Arabia
 (98, 26), #Khmer
@@ -1100,7 +1100,7 @@ tNormalAreasTL = (
 (68, 25), #Ethiopia
 (108, 45), #Korea
 (20, 32), #Maya
-(64, 38), #Byzantium
+(64, 40), #Byzantium
 (57, 55), #Vikings
 (73, 30), #Arabia
 (98, 26), #Khmer
@@ -1136,7 +1136,7 @@ tNormalAreasBR = (
 (77, 30), #Ethiopia
 (110, 49), #Korea
 (23, 37), #Maya
-(74, 45), #Byzantium
+(72, 45), #Byzantium
 (67, 65), #Vikings
 (82, 38), #Arabia
 (103, 37), #Khmer
@@ -1170,7 +1170,7 @@ tNormalAreasBR = (
 (77, 30), #Ethiopia
 (110, 49), #Korea
 (23, 37), #Maya
-(74, 45), #Byzantium
+(72, 45), #Byzantium
 (67, 65), #Vikings
 (82, 38), #Arabia
 (103, 37), #Khmer

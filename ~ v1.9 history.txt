@@ -54,3 +54,9 @@
 # French UU is now a Heavy Cannon (replaces Cannon)
 
 # Stability of capitulated civs is reset
+
+# Byzantine UP now protects cities in their normal area from collapse and secession
+
+# The game checks for collapse more often, to make up for the increased number of active civ
+
+# The first Ethiopian goal requires them to found Catholicism now

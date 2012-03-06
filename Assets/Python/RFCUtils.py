@@ -823,11 +823,19 @@ class RFCUtils:
                 iNumPlayerCities = len(PyPlayer(iCiv).getCityList()) #needs to be assigned cause it changes dinamically
                 for pyCity in PyPlayer(iCiv).getCityList():
                         #print("iCounter",iCounter)
-                        tCoords = (pyCity.GetCy().getX(), pyCity.GetCy().getY())
+			city = pyCity.GetCy()
+                        tCoords = (city.getX(), city.getY())
                         pCurrent = gc.getMap().plot(tCoords[0], tCoords[1])
                         #loyal cities for the human player
                         #print(bAssignOneCity,iNumLoyalCities,1+(iNumPlayerCities-1)/6,pyCity.GetCy().isCapital(),iCounter%6 == 0)
-                        if (bAssignOneCity and iNumLoyalCities <= 1+(iNumPlayerCities-1)/6 and (pyCity.GetCy().isCapital() or iCounter%6 == 0)):
+			# Leoreth: Byzantine UP: cities in normal area immune to collapse [expires for AI after the MA]
+			if iCiv == con.iByzantium and (bAssignOneCity or gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval):
+				x, y = tCoords
+				tlx, tly = con.tNormalAreasTL[iCiv]
+				brx, bry = con.tNormalAreasBR[iCiv]
+				if x >= tlx and x <= brx and y >= tly and y <= bry and tCoords not in con.tNormalAreasSubtract[iCiv]:
+					continue
+                        elif (bAssignOneCity and iNumLoyalCities <= 1+(iNumPlayerCities-1)/6 and (pyCity.GetCy().isCapital() or iCounter%6 == 0)):
                                 iNumLoyalCities += 1
                                 if (iNumLoyalCities == 1):
                                         gc.getTeam(gc.getPlayer(iCiv).getTeam()).declareWar(iNewCiv1, False, -1) #too dangerous?

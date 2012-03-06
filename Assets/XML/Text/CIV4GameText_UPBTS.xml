@@ -101,8 +101,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ2</Tag>
-		<English>Cities in your historical area are immune to collapse as long as you control Constantinople</English>
-		<German>Städte in Ihrem historischem Territorium sind immun gegenüber Kollaps solange Sie Konstantinopel kontrollieren</German>
+		<English>Cities in the center of your empire are immune to collapse and secession</English>
+		<German>Städte im Zentrum Ihres Reiches sind immun gegenüber Kollaps und Sezession</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR</Tag>

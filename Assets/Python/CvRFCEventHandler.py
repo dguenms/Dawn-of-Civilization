@@ -497,7 +497,7 @@ class CvRFCEventHandler:
 			self.sta.onVassalState(iVassal)
 		
 		if iMaster == iHolyRome:
-			self.dc.onVassalState(argsList)
+			self.vic.onVassalState(argsList)
 
 	def onRevolution(self, argsList):
 		'Called at the start of a revolution'
