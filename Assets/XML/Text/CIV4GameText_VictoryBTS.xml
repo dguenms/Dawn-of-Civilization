@@ -6,9 +6,9 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1</Tag>
-		<English>Found one religion</English>
+		<English>Found Catholicism</English>
 		<French>Fonder une religion</French>
-		<German>Begründen Sie eine Religion</German>
+		<German>Begründen Sie den Katholizismus</German>
 		<Italian>Fonda una religione</Italian>
 		<Spanish>Fundar una religi&#243;n</Spanish>
 	</TEXT>

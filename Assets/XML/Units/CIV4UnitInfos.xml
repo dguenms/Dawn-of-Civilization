@@ -14842,6 +14842,10 @@
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
 				<FlankingStrike>
+					<FlankingStrikeUnitClass>UNITCLASS_BOMBARD</FlankingStrikeUnitClass>
+					<iFlankingStrength>100</iFlankingStrength>
+				</FlankingStrike>
+				<FlankingStrike>
 					<FlankingStrikeUnitClass>UNITCLASS_CANNON</FlankingStrikeUnitClass>
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
@@ -15055,6 +15059,10 @@
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
 				<FlankingStrike>
+					<FlankingStrikeUnitClass>UNITCLASS_BOMBARD</FlankingStrikeUnitClass>
+					<iFlankingStrength>100</iFlankingStrength>
+				</FlankingStrike>
+				<FlankingStrike>
 					<FlankingStrikeUnitClass>UNITCLASS_CANNON</FlankingStrikeUnitClass>
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
@@ -15263,6 +15271,10 @@
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
 				<FlankingStrike>
+					<FlankingStrikeUnitClass>UNITCLASS_BOMBARD</FlankingStrikeUnitClass>
+					<iFlankingStrength>100</iFlankingStrength>
+				</FlankingStrike>
+				<FlankingStrike>
 					<FlankingStrikeUnitClass>UNITCLASS_CANNON</FlankingStrikeUnitClass>
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
@@ -15468,6 +15480,10 @@
 				</FlankingStrike>
 				<FlankingStrike>
 					<FlankingStrikeUnitClass>UNITCLASS_TREBUCHET</FlankingStrikeUnitClass>
+					<iFlankingStrength>100</iFlankingStrength>
+				</FlankingStrike>
+				<FlankingStrike>
+					<FlankingStrikeUnitClass>UNITCLASS_BOMBARD</FlankingStrikeUnitClass>
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
 				<FlankingStrike>

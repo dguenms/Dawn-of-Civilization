@@ -1927,20 +1927,26 @@ class Victory:
                 #                        self.setGoal(iIndia, 1, 0)
 
 
-                if (iPlayer == iEthiopia):
-                        if (pEthiopia.isAlive()):
-                                if (self.getGoal(iEthiopia, 0) == -1):
-                                        self.setGoal(iEthiopia, 0, 1)
+                #if (iPlayer == iEthiopia):
+                #        if (pEthiopia.isAlive()):
+                #                if (self.getGoal(iEthiopia, 0) == -1):
+                #                        self.setGoal(iEthiopia, 0, 1)
 
-                elif (iReligion == con.iJudaism):
-                        if (self.getGoal(iEthiopia, 0) == -1):
-                                self.setGoal(iEthiopia, 0, 0)
+                #elif (iReligion == con.iJudaism):
+                #        if (self.getGoal(iEthiopia, 0) == -1):
+                #                self.setGoal(iEthiopia, 0, 0)
 				
 		if iReligion == con.iJudaism:
 			if iPlayer == iHolyRome:
 				self.setGoal(iHolyRome, 1, 1)
 			else:
 				self.setGoal(iHolyRome, 1, 0)
+				
+		if iReligion == con.iChristianity:
+			if iPlayer == iEthiopia:
+				self.setGoal(iEthiopia, 0, 1)
+			else:
+				self.setGoal(iEthiopia, 0, 0)
 			
 				
 				
