@@ -23,7 +23,7 @@ typedef list<char*> LISTCHAR;
 #define NUM_BUILDINGS_PLAGUE		(184)
 #define NUM_BUILDINGTYPES_PLAGUE	(139)
 
-#define NUM_MAJOR_PLAYERS		(32)
+#define NUM_MAJOR_PLAYERS		(33)
 #define ITALY					ROME
 
 enum MyCivs

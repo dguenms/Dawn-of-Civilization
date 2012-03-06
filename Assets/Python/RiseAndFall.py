@@ -1717,12 +1717,12 @@ class RiseAndFall:
 												
 					# Leoreth: Byzantine UP: cities in normal area are immune to secession
 					if iPlayer == iByzantium:
-						tlx, tly = con.tNormalAreasTL[iByzantium]
-						brx, bry = con.tNormalAreasBR[iByzantium]
+						tlx, tly = con.tNormalAreasTL[utils.getReborn(iByzantium)][iByzantium]
+						brx, bry = con.tNormalAreasBR[utils.getReborn(iByzantium)][iByzantium]
 						for city in cityList:
 							x = city.getX()
 							y = city.getY()
-							if x >= tlx and x <= brx and y >= tly and y <= bry and (x,y) not in con.tNormalAreasSubtract[iByzantium]:
+							if x >= tlx and x <= brx and y >= tly and y <= bry and (x,y) not in con.tNormalAreasSubtract[utils.getReborn(iByzantium)][iByzantium]:
 								cityList.remove(city)
 
                                         if (len(cityList)):

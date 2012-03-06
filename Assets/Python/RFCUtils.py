@@ -831,9 +831,9 @@ class RFCUtils:
 			# Leoreth: Byzantine UP: cities in normal area immune to collapse [expires for AI after the MA]
 			if iCiv == con.iByzantium and (bAssignOneCity or gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval):
 				x, y = tCoords
-				tlx, tly = con.tNormalAreasTL[iCiv]
-				brx, bry = con.tNormalAreasBR[iCiv]
-				if x >= tlx and x <= brx and y >= tly and y <= bry and tCoords not in con.tNormalAreasSubtract[iCiv]:
+				tlx, tly = con.tNormalAreasTL[self.getReborn(iCiv)][iCiv]
+				brx, bry = con.tNormalAreasBR[self.getReborn(iCiv)][iCiv]
+				if x >= tlx and x <= brx and y >= tly and y <= bry and tCoords not in con.tNormalAreasSubtract[self.getReborn(iCiv)][iCiv]:
 					continue
                         elif (bAssignOneCity and iNumLoyalCities <= 1+(iNumPlayerCities-1)/6 and (pyCity.GetCy().isCapital() or iCounter%6 == 0)):
                                 iNumLoyalCities += 1
