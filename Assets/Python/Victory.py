@@ -1162,7 +1162,7 @@ class Victory:
                                         iTotalPopulation = 0
                                         for pCity in apCityList:			
                                                 iTotalPopulation += pCity.getPopulation()
-                                        if (iTotalPopulation / len(apCityList) >= 10):
+                                        if len(apCityList) > 0 and (iTotalPopulation / len(apCityList) >= 10):
                                                 self.setGoal(iKhmer, 1, 1)
                                         else:
                                                 self.setGoal(iKhmer, 1, 0)                                        

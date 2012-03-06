@@ -1549,7 +1549,7 @@ class DynamicCivs:
 				return
 				
 			if iEra >= con.iIndustrial:
-				self.setLeader(iPlayer, con.iQixi)
+				self.setLeader(iPlayer, con.iCixi)
 				return
 				
 			if iEra >= con.iRenaissance or bResurrected:
