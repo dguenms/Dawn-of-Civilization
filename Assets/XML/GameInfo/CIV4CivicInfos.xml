@@ -374,7 +374,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_REPUBLIC_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_REPUBLIC_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Civics/Emancipation.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,6,1</Button>
-			<TechPrereq>TECH_LIBERALISM</TechPrereq>
+			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iAIWeight>0</iAIWeight>
@@ -2086,7 +2086,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_SCHOLASTICISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_SCHOLASTICISM_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/TechTree/Philosophy.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,6</Button>
-			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
+			<TechPrereq>TECH_LITERATURE</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iAIWeight>0</iAIWeight>

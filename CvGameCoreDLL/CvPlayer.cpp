@@ -8298,9 +8298,9 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 	if (getID() == EGYPT)
 		if ((eCivic == (CivicTypes)DYNASTICISM) || (eCivic == (CivicTypes)FORCED_LABOR) || (eCivic == (CivicTypes)PANTHEON))
 			return true;
-	if (getID() == NETHERLANDS)
+	/*if (getID() == NETHERLANDS)
 		if (eCivic == (CivicTypes)REPUBLIC)
-			return true;
+			return true;*/
 	//Rhye - end UP
 
 	if (!isHasCivicOption((CivicOptionTypes)(GC.getCivicInfo(eCivic).getCivicOptionType())) && !(GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getCivicInfo(eCivic).getTechPrereq()))))
