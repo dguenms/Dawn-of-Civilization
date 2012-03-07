@@ -1128,7 +1128,8 @@ class Victory:
                                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
 						bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
 						bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-                                                if (bEgypt and bMaghreb and bMesopotamia and bPersia):
+						bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
+                                                if (bEgypt and bMaghreb and bMesopotamia and bPersia and bSpain):
                                                         self.setGoal(iArabia, 1, 1)
                                 elif (iGameTurn > getTurnForYear(1300)):
                                         if (self.getGoal(iArabia, 1) == -1):
@@ -1316,7 +1317,7 @@ class Victory:
 		elif iPlayer == iHolyRome:
 			if pHolyRome.isAlive():
 			
-				if iGameTurn == getTurnForYear(1250):
+				if iGameTurn == getTurnForYear(1200):
 					bApostolicPalace = self.getNumBuildings(iHolyRome, con.iApostolicPalace) > 0
 					bHolySepulchre = self.getNumBuildings(iHolyRome, con.iChristianShrine) > 0
 					if bApostolicPalace and bHolySepulchre:
@@ -2974,7 +2975,9 @@ class Victory:
                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
 				bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
 				bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-				aHelp.append(self.getIcon(bEgypt) + 'Egypt ' + self.getIcon(bMaghreb) + 'Maghreb ' + self.getIcon(bMesopotamia) + 'Mesopotamia ' + self.getIcon(bPersia) + 'Persia')
+				bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
+				aHelp.append(self.getIcon(bEgypt) + 'Egypt ' + self.getIcon(bMaghreb) + 'Maghreb ' + self.getIcon(bSpain) + 'Spain')
+				aHelp.append(self.getIcon(bMesopotamia) + 'Mesopotamia ' + self.getIcon(bPersia) + 'Persia')
 			elif iGoal == 2:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iIslam)
 				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + 'Islam spread to: ' + str(fReligionPercent) + '/40 %')

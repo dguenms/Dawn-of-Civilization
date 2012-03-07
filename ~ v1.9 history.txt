@@ -5,7 +5,7 @@
 	- City States (Code of Laws): +1 specialist for all cities within three tiles of the capital, +100% number of cities maintenance
 	- Theocracy (Theology): +2 XP in cities with state religion, no foreign religion spread
 	- Autocracy (Nationalism): +2 happiness with barracks, can draft 2 units
-	- Republic (Liberalism): +50% GP birth, +100% cottage growth, +25% war weariness
+	- Republic (Philosophy): +50% GP birth, +100% cottage growth, +25% war weariness
 # ORGANIZATION
 	- Direct Rule
 	- Vassalage (Feudalism): extra free units, +2 XP per unit, -25% number of cities upkeep
@@ -29,11 +29,11 @@
 	- Environmentalism (Ecology): -30% unhealthiness, +1 unhappiness from Nuclear Plant, +2 commerce for windmill
 # RELIGION
 	- Animism: +1 unhappiness per non-state religion
-	- Pantheon: no state religion, can build classical wonders, +1 happiness with Pagan Temple, +1 unhappiness per non-state religion
-	- Organized Religion: +25% building construction with state religion, can always train missionaries, +1 unhappiness per non-state religion
-	- Scholasticism: +30% great people birth, +1 unhappiness per non-state religion
-	- Patriarchate: +2 happiness with state religion, unlimited priests, +25% culture in capital, +1 unhappiness per non-state religion
-	- Secularism: +10% science
+	- Pantheon (Polytheism): no state religion, can build classical wonders, +1 happiness with Pagan Temple, +1 unhappiness per non-state religion
+	- Organized Religion (Monotheism): +25% building construction with state religion, can always train missionaries, +1 unhappiness per non-state religion
+	- Scholasticism (Literature): +30% great people birth, +1 unhappiness per non-state religion
+	- Patriarchate (Theology): +2 happiness with state religion, unlimited priests, +25% culture in capital, +1 unhappiness per non-state religion
+	- Secularism (Liberalism): +10% science
 # EXPANSION
 	- added Confederation: respawns on your territory is less likely
 
@@ -54,9 +54,9 @@
 # French UU is now a Heavy Cannon (replaces Cannon)
 
 # Stability of capitulated civs is reset
-
 # Byzantine UP now protects cities in their normal area from collapse and secession
-
-# The game checks for collapse more often, to make up for the increased number of active civ
-
+# The game checks for collapse more often, to make up for the increased number of active civs
 # The first Ethiopian goal requires them to found Catholicism now
+# Luxury Industry now requires Electricity
+# Changed La Mezquita to +1 research per specialist
+# Arabian UHV now requires them to conquer or vassalize Spain as well
