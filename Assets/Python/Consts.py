@@ -1094,7 +1094,7 @@ tNormalAreasTL = (
 (74, 38), #Babylonia
 (64, 39), #Greece
 (79, 37), #Persia
-(72, 39), #Carthage
+(71, 39), #Carthage
 (57, 40), #Rome
 (111, 41), #Japan
 (68, 25), #Ethiopia
