@@ -451,7 +451,7 @@ class Victory:
 		reborn = utils.getReborn(iOwnedCiv)
                 dummy1, plotList1 = utils.squareSearch( tNormalAreasTL[reborn][iOwnedCiv], tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iActiveCiv )
                 dummy2, plotList2 = utils.squareSearch( tNormalAreasTL[reborn][iOwnedCiv], tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iOwnedCiv )
-                if ((len(plotList1) >= 2 and len(plotList1) > len(plotList2)) or (len(plotList1) >= 1 and not gc.getPlayer(iOwnedCiv).isAlive()) or (len(plotList1) >= 1 and iOwnedCiv == con.iCarthage):
+                if ((len(plotList1) >= 2 and len(plotList1) > len(plotList2)) or (len(plotList1) >= 1 and not gc.getPlayer(iOwnedCiv).isAlive()) or (len(plotList1) >= 1 and iOwnedCiv == con.iCarthage)):
                         return True
                 else:
                         return False
