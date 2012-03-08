@@ -60,3 +60,4 @@
 # Luxury Industry now requires Electricity
 # Changed La Mezquita to +1 research per specialist
 # Arabian UHV now requires them to conquer or vassalize Spain as well
+# Allowed the AI to start wonders the player requires for his UHV only after he has spawned

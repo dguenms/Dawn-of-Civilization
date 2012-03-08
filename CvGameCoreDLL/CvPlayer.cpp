@@ -6146,6 +6146,32 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		}
 	}
 
+	//Leoreth: don't allow UHV wonders before the respective human civ has spawned and some turns after
+	if (!isHuman())
+	{
+		if (eBuilding == NOTREDAME || eBuilding == EIFFELTOWER){
+			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman()){
+				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[FRANCE])+5){
+					return false;
+				}
+			}
+		}
+		else if (eBuilding == BLUE_MOSQUE || eBuilding == TOPKAPI){
+			if (GET_PLAYER((PlayerTypes)TURKEY).isHuman()){
+				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[TURKEY])+5){
+					return false;
+				}
+			}
+		}
+		else if (eBuilding == UNITEDNATIONS || eBuilding == PENTAGON || eBuilding == STATUEOFLIBERTY){
+			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman()){
+				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[AMERICA])+5){
+					return false;
+				}
+			}
+		}
+	}
+
 	return true;
 }
 
