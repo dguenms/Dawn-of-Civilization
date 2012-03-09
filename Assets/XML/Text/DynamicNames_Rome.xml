@@ -137,8 +137,12 @@
 		<English>Province of Britannia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GERMANY_ROMAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_ROMAN_VASSAL</Tag>
 		<English>Province of Germania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_ROMAN_VASSAL</Tag>
+		<English>Province of Borussia</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_ROMAN_VASSAL</Tag>

@@ -37,6 +37,10 @@
 		<English>Frankish Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_EXILE</Tag>
+		<English>Free France</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_NAZI_VASSAL</Tag>
 		<English>Vichy France</English>
 	</TEXT>

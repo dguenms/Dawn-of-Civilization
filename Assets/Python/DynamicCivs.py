@@ -153,6 +153,9 @@ iIndustrial = con.iIndustrial
 iModern = con.iModern
 iFuture = con.iFuture
 
+tBrazilTL = (32, 14)
+tBrazilBR = (43, 30)
+
 class DynamicCivs:
 
 
@@ -259,7 +262,7 @@ class DynamicCivs:
 				iSpain : "TXT_KEY_CIV_SPAIN_CHINESE_VASSAL",
 				iFrance : "TXT_KEY_CIV_FRANCE_CHINESE_VASSAL",
 				iEngland : "TXT_KEY_CIV_ENGLAND_CHINESE_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
+				iHolyRome : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
 				iRussia : "TXT_KEY_CIV_RUSSIA_CHINESE_VASSAL",
 				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_CHINESE_VASSAL",
 				iMali : "TXT_KEY_CIV_MALI_CHINESE_VASSAL",
@@ -270,6 +273,7 @@ class DynamicCivs:
 				iTurkey : "TXT_KEY_CIV_TURKEY_CHINESE_VASSAL",
 				iMughals : "TXT_KEY_CIV_MUGHALS_CHINESE_VASSAL",
 				iThailand : "TXT_KEY_CIV_THAILAND_CHINESE_VASSAL",
+				iGermany : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
 				iAmerica : "TXT_KEY_CIV_AMERICA_CHINESE_VASSAL"},
 			iBabylonia : {
 				iPhoenicia : "TXT_KEY_CIV_PHOENICIA_BABYLONIAN_VASSAL"},	# Babylonian Phoenicia
@@ -307,7 +311,7 @@ class DynamicCivs:
 				iSpain : "TXT_KEY_CIV_SPAIN_ROMAN_VASSAL",
 				iFrance : "TXT_KEY_CIV_FRANCE_ROMAN_VASSAL",
 				iEngland : "TXT_KEY_CIV_ENGLAND_ROMAN_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_ROMAN_VASSAL",
+				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_ROMAN_VASSAL",
 				iRussia : "TXT_KEY_CIV_RUSSIA_ROMAN_VASSAL",
 				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ROMAN_VASSAL",
 				iMali : "TXT_KEY_CIV_MALI_ROMAN_VASSAL",
@@ -315,6 +319,7 @@ class DynamicCivs:
 				iMongolia : "TXT_KEY_CIV_MONGOLIA_ROMAN_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_ROMAN_VASSAL",
 				iTurkey : "TXT_KEY_CIV_TURKEY_ROMAN_VASSAL",
+				iGermany : "TXT_KEY_CIV_GERMANY_ROMAN_VASSAL",
 				iThailand : "TXT_KEY_CIV_THAILAND_ROMAN_VASSAL",},
 			iJapan : {
 				iChina : "TXT_KEY_CIV_CHINA_JAPANESE_VASSAL",
@@ -387,7 +392,7 @@ class DynamicCivs:
 				iKhmer : "TXT_KEY_CIV_KHMER_FRENCH_VASSAL",
 				iSpain : "TXT_KEY_CIV_SPAIN_FRENCH_VASSAL",
 				iEngland : "TXT_KEY_CIV_ENGLAND_FRENCH_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_FRENCH_VASSAL",
+				iHolyRome : "TXT_KEY_CIV_GERMANY_FRENCH_VASSAL",
 				iRussia : "TXT_KEY_CIV_RUSSIA_FRENCH_VASSAL",
 				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_FRENCH_VASSAL",
 				iMali : "TXT_KEY_CIV_MALI_FRENCH_VASSAL",
@@ -397,6 +402,7 @@ class DynamicCivs:
 				iMughals : "TXT_KEY_CIV_MUGHALS_FRENCH_VASSAL",
 				iTurkey : "TXT_KEY_CIV_TURKEY_FRENCH_VASSAL",
 				iThailand : "TXT_KEY_CIV_THAILAND_FRENCH_VASSAL",
+				iGermany : "TXT_KEY_CIV_GERMANY_FRENCH_VASSAL",
 				iAmerica : "TXT_KEY_CIV_AMERICA_FRENCH_VASSAL"},
 			iEngland : {
 				iEgypt : "TXT_KEY_CIV_EGYPT_ENGLISH_VASSAL",
@@ -411,7 +417,7 @@ class DynamicCivs:
 				iArabia : "TXT_KEY_CIV_ARABIA_ENGLISH_VASSAL",
 				iKhmer : "TXT_KEY_CIV_KHMER_ENGLISH_VASSAL",
 				iFrance : "TXT_KEY_CIV_FRANCE_ENGLISH_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_ENGLISH_VASSAL",
+				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_ENGLISH_VASSAL",
 				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ENGLISH_VASSAL",
 				iMali : "TXT_KEY_CIV_MALI_ENGLISH_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_ENGLISH_VASSAL",
@@ -419,6 +425,7 @@ class DynamicCivs:
 				iTurkey : "TXT_KEY_CIV_TURKEY_ENGLISH_VASSAL",
 				iMughals : "TXT_KEY_CIV_MUGHALS_ENGLISH_VASSAL",
 				iThailand : "TXT_KEY_CIV_THAILAND_ENGLISH_VASSAL",
+				iGermany : "TXT_KEY_CIV_GERMANY_ENGLISH_VASSAL",
 				iAmerica : "TXT_KEY_CIV_AMERICA_ENGLISH_VASSAL"},
 			iHolyRome : {
 				iRome : "TXT_KEY_CIV_ROME_HOLY_ROMAN_VASSAL",
@@ -430,7 +437,8 @@ class DynamicCivs:
 				iAztecs : "TXT_KEY_CIV_AZTECS_DUTCH_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_DUTCH_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_DUTCH_VASSAL"},
-			#iRussia - none so far
+			iRussia: {
+				iAmerica : "TXT_KEY_CIV_AMERICA_RUSSIAN_VASSAL"},
 			iPortugal : {
 				iIndia : "TXT_KEY_CIV_INDIA_PORTUGUESE_VASSAL",
 				iIndonesia : "TXT_KEY_CIV_INDONESIA_PORTUGUESE_VASSAL",
@@ -488,7 +496,12 @@ class DynamicCivs:
 				iMali : "TXT_KEY_CIV_MALI_GERMAN_VASSAL",
 				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_GERMAN_VASSAL"},
 			iAmerica : {
-				iEngland : "TXT_KEY_CIV_ENGLAND_AMERICAN_VASSAL"}
+				iEngland : "TXT_KEY_CIV_ENGLAND_AMERICAN_VASSAL",
+				iJapan : "TXT_KEY_CIV_JAPAN_AMERICAN_VASSAL",
+				iGermany : "TXT_KEY_CIV_GERMANY_AMERICAN_VASSAL",
+				iMaya : "TXT_KEY_CIV_MAYA_AMERICAN_VASSAL",
+				iKorea : "TXT_KEY_CIV_KOREA_AMERICAN_VASSAL",
+				iAztecs : "TXT_KEY_CIV_AZTECS_AMERICAN_VASSAL",}
 		}
 		
 		self.genericVassalNames = {
@@ -940,7 +953,7 @@ class DynamicCivs:
 					elif iEra <= iIndustrial:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_CALIPHATE")
 						return
-				else:
+				elif iReligion == con.iIslam:
 					if iEra <= iMedieval:
 						if pArabia.isAlive():
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_FATIMID_SULTANATE")
@@ -950,6 +963,9 @@ class DynamicCivs:
 					elif iEra <= iIndustrial:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_SULTANATE")
 						return
+				else:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_COPTIC")
+					return
 			else:
 				if iGreece in lPreviousOwners:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_PTOLEMAIC")
@@ -1291,7 +1307,7 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_ARAGON")
 				return
 		
-			if iGameTurn < getTurnForYear(1300):
+			if not tPlayer.isHasTech(con.iOptics):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_CASTILLE")
 				return
 				
@@ -1300,6 +1316,10 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iFrance:
+			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iFrance], con.tCoreAreasBR[0][iFrance]):
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EXILE")
+				return
+		
 			if (iEra > iRenaissance and bEmpire) or iCivic0 == 3:	# Autocracy
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EMPIRE")
 				return
@@ -1360,6 +1380,10 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iNetherlands:
+			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iNetherlands], con.tCoreAreasBR[0][iNetherlands]):
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_EXILE")
+				return
+		
 			if iEra < iIndustrial:
 				if bEmpire:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_UNITED_KINGDOM")
@@ -1383,6 +1407,14 @@ class DynamicCivs:
 			# Empire as default
 			
 		elif iPlayer == iPortugal:
+			if utils.isPlotInArea(tCapitalCoords, tBrazilTL, tBrazilBR):
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_BRAZIL")
+				return
+				
+			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iPortugal], con.tCoreAreasBR[0][iPortugal]):
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_EXILE")
+				return
+		
 			if bEmpire and iEra > iRenaissance:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_EMPIRE")
 				return
@@ -1475,7 +1507,7 @@ class DynamicCivs:
 			# Kingdom of Prussia as default
 			
 		elif iPlayer == iAmerica:
-			if iCivic4 == 21:	# Forced Labor
+			if iCivic3 == con.iForcedLabor or iCivic2 == con.iAgrarianism:	# Forced Labor
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
 				
 			# Empire of Columbia as default
@@ -1668,7 +1700,7 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iDeGaulle)
 				return
 				
-			if iEra >= con.iIndustrial or iCivic0 == con.iAutocracy:
+			if iEra >= con.iIndustrial or tPlayer.isHasTech(con.iNationalism):
 				self.setLeader(iPlayer, con.iNapoleon)
 				return
 				
