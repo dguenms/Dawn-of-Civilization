@@ -1512,3 +1512,13 @@ class RFCUtils:
 				lPlotList.remove(tPlot)
 
 		return lPlotList
+		
+	def isPlotInArea(self, tPlot, tTopLeft, tBottomRight, lExceptions=[]):
+		x, y = tPlot
+		tlx, tly = tTopLeft
+		brx, bry = tBottomRight
+		
+		return x >= tlx and x <= brx and y >= tly and y <= bry and tPlot not in lExceptions
+	
+	
+	

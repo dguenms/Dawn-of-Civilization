@@ -33,6 +33,14 @@
 		<English>Portuguese Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_BRAZIL</Tag>
+		<English>Kingdom of Brazil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_EXILE</Tag>
+		<English>Portuguese Government in Exile</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_PORTUGUESE_VASSAL</Tag>
 		<English>Viceroyalty of Portuguese India</English>
 	</TEXT>

@@ -90,7 +90,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_ENGLISH_VASSAL</Tag>
-		<English>County of Scandinavia</English>
+		<English>Duchy of Scandinavia</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_ENGLISH_VASSAL</Tag>
@@ -105,12 +105,16 @@
 		<English>Duchy of Anjou</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_ENGLISH_VASSAL</Tag>
+		<English>Duchy of Hanover</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_ENGLISH_VASSAL</Tag>
-		<English>Kingdom of Hanover</English>
+		<English>British-Occupied Germany</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_ENGLISH_VASSAL</Tag>
-		<English>County of Holland</English>
+		<English>Duchy of Flanders</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_ENGLISH_VASSAL</Tag>

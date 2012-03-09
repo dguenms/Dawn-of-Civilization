@@ -37,6 +37,10 @@
 		<English>United Kingdom of the Netherlands</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_EXILE</Tag>
+		<English>Dutch Government in Exile</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_SOVIET_VASSAL</Tag>
 		<English>Soviet Netherlands</English>
 	</TEXT>
