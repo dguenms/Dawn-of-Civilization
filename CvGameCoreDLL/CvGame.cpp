@@ -2270,6 +2270,7 @@ void CvGame::update()
 		case PORTUGAL:
 		case INCA:
 		case MONGOLIA:
+		case MUGHALS:
 		case AZTEC:
 		case THAILAND:
 		case GERMANY:

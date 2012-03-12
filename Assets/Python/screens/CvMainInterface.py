@@ -572,14 +572,14 @@ class CvMainInterface:
 
 		# Holy City Overlay
 		for i in range( gc.getNumReligionInfos() ):
-			xCoord = xResolution - 242 + (i * 29) # edead (34)
+			xCoord = xResolution - 242 + (i * 26) # edead (34) # Leoreth (29)
 			yCoord = 42
 			szName = "ReligionHolyCityDDS" + str(i)
 			screen.addDDSGFC( szName, ArtFileMgr.getInterfaceArtInfo("INTERFACE_HOLYCITY_OVERLAY").getPath(), xCoord, yCoord, 24, 24, WidgetTypes.WIDGET_HELP_RELIGION_CITY, i, -1 )
 			screen.hide( szName )
 
 		for i in range( gc.getNumCorporationInfos() ):
-			xCoord = xResolution - 242 + (i * 29) # edead (34)
+			xCoord = xResolution - 242 + (i * 26) # edead (34) # Leoreth (29)
 			yCoord = 66
 			szName = "CorporationHeadquarterDDS" + str(i)
 			screen.addDDSGFC( szName, ArtFileMgr.getInterfaceArtInfo("INTERFACE_HOLYCITY_OVERLAY").getPath(), xCoord, yCoord, 24, 24, WidgetTypes.WIDGET_HELP_CORPORATION_CITY, i, -1 )
@@ -2505,7 +2505,7 @@ class CvMainInterface:
 				szBuffer = u""
 
 				for i in range(gc.getNumReligionInfos()):
-					xCoord = xResolution - 242 + (i * 29) # edead (34)
+					xCoord = xResolution - 242 + (i * 26) # edead (34) # Leoreth (29)
 					yCoord = 42
 					
 					bEnable = True
@@ -2556,7 +2556,7 @@ class CvMainInterface:
 					screen.show( szName )
 
 				for i in range(gc.getNumCorporationInfos()):
-					xCoord = xResolution - 242 + (i * 29) # edead (34)
+					xCoord = xResolution - 242 + (i * 26) # edead (34) # Leoreth (29)
 					yCoord = 66
 					
 					bEnable = True

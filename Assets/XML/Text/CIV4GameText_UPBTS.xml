@@ -154,4 +154,14 @@
 		<English>Double votes in Apostolic Palace elections</English>
 		<German>Doppelte Stimmzahl in Wahlen zum Apostolischen Palast</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MUG</Tag>
+		<English>The Power of Tolerance:</English>
+		<German>Die Macht der Toleranz:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MUG2</Tag>
+		<English>No unhappiness from non-state religions</English>
+		<German>Keine Unzufriedenheit durch Nicht-Staatsreligionen</German>
+	</TEXT>
 </Civ4GameText>

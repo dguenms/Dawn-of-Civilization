@@ -763,59 +763,38 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Tag>
-		<English>
-			<Text>Jewish</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</English>
-		<French>
-			<Text>juif:juive:juifs:juives</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
+		<English>Protestant</English>
 		<German>
 			<Text>J&#252;disch:j&#252;dischen:j&#252;dische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
-		<Italian>
-			<Text>ebreo:ebrea:ebrei:ebree</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>jud&#237;o:jud&#237;a:jud&#237;os:jud&#237;as</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_CHRISTIANITY_ADJECTIVE</Tag>
 		<English>
-			<Text>Christian</Text>
+			<Text>Catholic</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</English>
-		<French>
-			<Text>chr&#233;tien:chr&#233;tienne:chr&#233;tiens:chr&#233;tiennes</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
 		<German>
-			<Text>Christlich:christlichen:christliche</Text>
+			<Text>Katholisch:katholischen:katholische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
-		<Italian>
-			<Text>cristiano:cristiana:cristiani:cristiane</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>cristiano:cristiana:cristianos:cristianas</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Tag>
+		<English>
+			<Text>Orthodox</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</English>
+		<German>
+			<Text>Orthodox:orthodoxen:orthodoxe</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ISLAM_ADJECTIVE</Tag>
@@ -1080,6 +1059,18 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_ORTHODOXY</Tag>
+		<English>Orthodoxy</English>
+		<German>Orthodoxie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Tag>
+		<English>Orthodox Missionary</English>
+		<German>Orthodoxer Missionar</German>
+	</TEXT>
+	
 	<!-- text for new French culverine -->
 
 	<TEXT>

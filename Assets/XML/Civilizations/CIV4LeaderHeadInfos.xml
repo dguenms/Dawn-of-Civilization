@@ -3544,7 +3544,7 @@
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -13336,7 +13336,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -19341,7 +19341,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AGRARIANISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -28180,7 +28180,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -30964,7 +30964,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -35854,7 +35854,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
-			<FavoriteReligion>NONE</FavoriteReligion>
+			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -39688,7 +39688,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>

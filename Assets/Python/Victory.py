@@ -1637,7 +1637,32 @@ class Victory:
                                                         self.setGoal(iMongolia, 2, 1)
                                         else:
                                                 self.setGoal(iMongolia, 2, 0)
-
+						
+						
+		elif iPlayer == iMughals:
+			if pMughals.isAlive():
+			
+				if iGameTurn == getTurnForYear(1500):
+					if self.getGoal(iMughals, 0) == -1:
+						self.setGoal(iMughals, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1660):
+					if pMughals.countTotalCulture() >= getTurns(50000):
+						self.setGoal(iMughals, 1, 1)
+					else:
+						self.setGoal(iMughals, 1, 0)
+						
+				if iGameTurn == getTurnForYear(1750):
+					totalPop = gc.getGame().getTotalPopulation()
+					ourPop = teamMughals.getTotalPopulation()
+					if (totalPop > 0):
+						popPercent = (ourPop * 100.0) / totalPop
+					else:
+						popPercent = 0.0
+					if popPercent >= 15.0:
+						self.setGoal(iMughals, 2, 1)
+					else:
+						self.setGoal(iMughals, 2, 0)
                             
                         
                 elif (iPlayer == iAztecs):
@@ -2383,6 +2408,13 @@ class Victory:
                                         if (iGameTurn > getTurnForYear(2000)):
                                                 if (self.getWondersBuilt(iAmerica) != 3):                                    
                                                         self.setGoal(iAmerica, 1, 0)
+							
+		elif iPlayer == iMughals:
+			if pMughals.isAlive():
+				if self.getGoal(iMughals, 0) == -1:
+					if iBuilding == con.iIslamicCathedral:
+						if self.getNumBuildings(iMughals, con.iIslamicCathedral) >= 3:
+							self.setGoal(iMughals, 0, 1)
 
 
 
@@ -2738,7 +2770,7 @@ class Victory:
 				bHinduShrine = (self.getNumBuildings(iIndia, con.iHinduShrine) > 0)
 				aHelp.append(self.getIcon(bHinduShrine) + 'Hindu Shrine ' + self.getIcon(bBuddhistShrine) + 'Buddhist Shrine')
 			elif iGoal == 1:
-				lTemples = [con.iJewishTemple, con.iChristianTemple, con.iIslamicTemple, con.iHinduTemple, con.iBuddhistTemple, con.iConfucianTemple, con.iTaoistTemple, con.iZoroastrianTemple]
+				lTemples = [con.iJewishTemple, con.iChristianTemple, con.iOrthodoxTemple, con.iIslamicTemple, con.iHinduTemple, con.iBuddhistTemple, con.iConfucianTemple, con.iTaoistTemple, con.iZoroastrianTemple]
 				iCounter = 0
 				for iTemple in lTemples:
 					iCounter += self.getNumBuildings(iIndia, iTemple)
@@ -2823,7 +2855,7 @@ class Victory:
 			else:
 				if iGoal == 0:
 					iCount = 0
-					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iGermany, iRussia, iPortugal, iNetherlands]:
+					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iGermany, iRussia, iPortugal, iNetherlands]:
 						if teamPersia.isOpenBorders(iEurociv):
 							iCount += 1
 					aHelp.append(self.getIcon(iCount >= 6) + 'Open border agreements: ' + str(iCount) + '/6')
@@ -3177,6 +3209,22 @@ class Victory:
                         	else:
                         		landPercent = 0.0
 				aHelp.append(self.getIcon(landPercent >= 11.995) + 'Percentage of world territory: ' + str(landPercent) + '/12 %')
+				
+		elif iPlayer == iMughals:
+			if iGoal == 0:
+				iNumMosques = self.getNumBuildings(iMughals, con.iIslamicCathedral)
+				aHelp.append(self.getIcon(iNumMosques >= 3) + 'Mosques built: ' + str(iNumMosques) + '/3')
+			elif iGoal == 1:
+				iCulture = pMughals.countTotalCulture()
+				aHelp.append(self.getIcon(iCulture >= 50000) + 'Total culture: ' + str(iCulture) + '/50000')
+			elif iGoal == 2:
+				totalPop = gc.getGame().getTotalPopulation()
+				ourPop = teamMughals.getTotalPopulation()
+				if (totalPop > 0):
+					popPercent = (ourPop * 100.0) / totalPop
+				else:
+					popPercent = 0.0
+				aHelp.append(self.getIcon(popPercent >= 15.0) + 'Percentage of world population: ' + (u"%.2f%%" % popPercent) + '/15%')
 
 		elif iPlayer == iAztecs:
 			if iGoal == 0:

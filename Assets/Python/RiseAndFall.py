@@ -687,10 +687,13 @@ class RiseAndFall:
                 constantinople.setHasRealBuilding(con.iMarket, True)
                 constantinople.setHasRealBuilding(con.iGrocer, True)
                 constantinople.setHasRealBuilding(con.iHarbor, True)
+                constantinople.setHasRealBuilding(con.iOrthodoxTemple, True)
                 constantinople.setHasRealBuilding(con.iByzantineHippodrome, True)
-                constantinople.setHasRealBuilding(con.iHagiaSophia, True)
+                constantinople.setHasRealBuilding(con.iOrthodoxShrine, True)
                 constantinople.setHasRealBuilding(con.iTheodosianWalls, True)
                 constantinople.setHasReligion(con.iChristianity, True, False, False)
+                constantinople.setHasReligion(con.iOrthodoxy, True, False, False)
+		gc.getGame().setHolyCity(con.iOrthodoxy, constantinople, False)
 
         def flip600ADByzantium(self):
                 BL = (62, 37)
@@ -2198,7 +2201,7 @@ class RiseAndFall:
 		iHuman = utils.getHumanID()
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
                 
-                lConditionalCivs = [iByzantium, iMughals, iThailand]
+                lConditionalCivs = [iByzantium, iMughals, iThailand, iNetherlands]
 
                 # Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -2556,6 +2559,9 @@ class RiseAndFall:
 			
 			if iCiv == iArabia:
 				self.arabianSpawn()
+				
+			if iCiv == iGermany:
+				self.germanSpawn()
    
                         print ("utils.flipUnitsInArea()") 
                         #cover plots revealed by the lion
@@ -2646,6 +2652,9 @@ class RiseAndFall:
                 if (iNumHumanCitiesToConvert > 0):
 			print "Flip Popup: foreign borders"
                         self.flipPopup(iCiv, tTopLeft, tBottomRight)
+			
+		if iCiv == iGermany:
+			self.germanSpawn()
 
         #Leoreth - adapted from SoI's birthConditional method by embryodead
         def birthInCapital(self, iCiv, tCapital, tTopLeft, tBottomRight):
@@ -3393,14 +3402,14 @@ class RiseAndFall:
 	def onEconomicsDiscovered(self, iCiv):
 		print "On Economics discovered."
 
-		if utils.getHumanID() != iCiv:
+		if utils.getHumanID() != iCiv and not utils.isAVassal(iCiv):
 			if iCiv in [iFrance, iEngland, iNetherlands]:
 				self.handleColonialConquest(iCiv)
 
 	def onAstronomyDiscovered(self, iCiv):
 		print "On Astronomy discovered."
 
-		if utils.getHumanID() != iCiv:
+		if utils.getHumanID() != iCiv and not utils.isAVassal(iCiv):
 			if iCiv in [iSpain, iPortugal]:
 				self.handleColonialAcquisition(iCiv)
 
@@ -3959,7 +3968,7 @@ class RiseAndFall:
 			#	utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 3)
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
-                lReligions = [0, 0, 0, 0, 0, 0, 0, 0]
+                lReligions = [0, 0, 0, 0, 0, 0, 0, 0, 0]
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
                                 pCurrent = gc.getMap().plot( x, y )
@@ -5313,6 +5322,12 @@ class RiseAndFall:
 
 		if utils.getHumanID() != iArabia and bBaghdad:
 			utils.makeUnit(con.iSpearman, iArabia, (77, 40), 2)
+			
+	def germanSpawn(self):
+		if sd.scriptDict['lStability'][iHolyRome] < -10:
+			sd.scriptDict['lStability'][iHolyRome] = -10
+			
+		pHolyRome.setReborn()
 		
 
 

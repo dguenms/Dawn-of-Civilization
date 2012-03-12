@@ -6733,6 +6733,9 @@ int CvCity::getReligionGoodHappiness() const
 
 int CvCity::getReligionBadHappiness() const
 {
+	if (getOwnerINLINE() == (PlayerTypes)MUGHALS)
+		return 0;
+
 	return m_iReligionBadHappiness;
 }
 
@@ -12421,6 +12424,12 @@ void CvCity::doReligion()
 									//iSpread *= GC.getReligionInfo((ReligionTypes)iI).getSpreadFactor();
 									int iBaseSpreadFactor = GC.getReligionInfo((ReligionTypes)iI).getSpreadFactor();
 									int iSpreadFactor = civSpreadFactor[getOwnerINLINE()][iI] * iBaseSpreadFactor / 100;
+
+									if (iI == CATHOLICISM && !GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
+									{
+										iSpreadFactor = std::max(civSpreadFactor[getOwnerINLINE()][ORTHODOXY], civSpreadFactor[getOwnerINLINE()][CATHOLICISM]) * iBaseSpreadFactor / 100;
+									}
+
 									iSpread *= iSpreadFactor;
 
 									//Leoreth: prohibit Zoroastrianism from spreading again

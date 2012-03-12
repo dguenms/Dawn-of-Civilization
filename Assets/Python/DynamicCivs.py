@@ -799,6 +799,7 @@ class DynamicCivs:
 			
 		if not gc.getPlayer(iEgypt).isPlayable():
 			self.changeAnarchyTurns(iChina, 3)
+			self.setCivDesc(iByzantium, "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT")
 
         def setDetermineds(self, iPlayer, szName="", szFlag=""):
                 pPlayer = gc.getPlayer(iPlayer)
@@ -1310,13 +1311,18 @@ class DynamicCivs:
 			if not tPlayer.isHasTech(con.iOptics):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_CASTILLE")
 				return
-				
+			
 			if not pPortugal.isAlive():
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")
+				return
+			
+			pPortugueseCapital = gc.getPlayer(iPortugal).getCapitalCity()	
+			if not utils.isPlotInArea((pPortugueseCapital.getX(), pPortugueseCapital.getY()), con.tCoreAreasTL[0][iPortugal], con.tCoreAreasBR[0][iPortugal], con.tExceptions[0][iPortugal]):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")
 				return
 				
 		elif iPlayer == iFrance:
-			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iFrance], con.tCoreAreasBR[0][iFrance]):
+			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iFrance], con.tCoreAreasBR[0][iFrance], con.tExceptions[0][iFrance]):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EXILE")
 				return
 		
@@ -1380,7 +1386,7 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iNetherlands:
-			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iNetherlands], con.tCoreAreasBR[0][iNetherlands]):
+			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iNetherlands], con.tCoreAreasBR[0][iNetherlands], con.tExceptions[0][iNetherlands]):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_EXILE")
 				return
 		
@@ -1411,7 +1417,7 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_BRAZIL")
 				return
 				
-			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iPortugal], con.tCoreAreasBR[0][iPortugal]):
+			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iPortugal], con.tCoreAreasBR[0][iPortugal], con.tExceptions[0][iPortugal]):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_EXILE")
 				return
 		

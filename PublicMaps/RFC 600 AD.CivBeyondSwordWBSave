@@ -197,7 +197,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PATRIARCHATE   
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
 	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_SUBJUGATION
-	StateReligion=RELIGION_CHRISTIANITY                
+	StateReligion=RELIGION_ORTHODOXY              
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -305,7 +305,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
-	StateReligion=RELIGION_CHRISTIANITY                  
+	StateReligion=RELIGION_ORTHODOXY                  
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -375,7 +375,7 @@ BeginPlayer
 	LeaderType=LEADER_AKBAR
 	CivType=CIVILIZATION_MUGHALS
 	Team=28
-	PlayableCiv=0
+	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION
@@ -23301,6 +23301,7 @@ BeginPlot
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
+		ReligionType=RELIGION_CHRISTIANITY
 		Player33Culture=1
 	EndCity
 EndPlot
@@ -23663,6 +23664,7 @@ BeginPlot
 		CityName=Napoli
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		ReligionType=RELIGION_CHRISTIANITY
 		Player33Culture=1
 	EndCity
 EndPlot
@@ -25682,6 +25684,8 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
 		BuildingType=BUILDING_GREAT_LIBRARY
+		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_CHRISTIANITY
 		Player33Culture=10
 	EndCity
 EndPlot
@@ -25727,7 +25731,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_GREEK_ODEON
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_ORTHODOXY
 		BuildingType=BUILDING_PARTHENON
 		Player33Culture=50
 	EndCity
@@ -26565,6 +26569,7 @@ BeginPlot
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMID
+		ReligionType=RELIGION_ORTHODOXY
 		Player33Culture=10
 	EndCity
 	PlotType=2
@@ -27695,7 +27700,7 @@ BeginPlot
 		CityName=Aksum
 		CityPopulation=2
 		BuildingType=BUILDING_ETHIOPIAN_STELE
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_ORTHODOXY
 		Player34Culture=50
 	EndCity
 EndPlot
@@ -27781,6 +27786,7 @@ BeginPlot
 		CityName=Iconium
 		CityPopulation=2
 		BuildingType=BUILDING_MARKET
+		ReligionType=RELIGION_ORTHODOXY
 		Player33Culture=10
 	EndCity
 EndPlot
@@ -28139,10 +28145,12 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=33
-		CityName=Hierusalem
+		CityName=Hierousalem
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHRISTIAN_SHRINE
+		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_ORTHODOXY
 		Player33Culture=1
 	EndCity
 EndPlot
@@ -28554,7 +28562,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_WALLS
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_ORTHODOXY
 		Player33Culture=1
 	EndCity
 EndPlot
@@ -28977,6 +28985,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
+		ReligionType=RELIGION_ORTHODOXY
 		Player33Culture=10
 	EndCity
 EndPlot

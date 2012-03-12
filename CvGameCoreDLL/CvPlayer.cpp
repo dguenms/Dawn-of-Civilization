@@ -8693,6 +8693,12 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 				iValue *= 4;
 			if (eReligion == (ReligionTypes)ZOROASTRIANISM && pLoopCity->getX() == 82 && pLoopCity->getY() == 39) //Parsa
 				iValue *= 8;
+
+			if (eReligion == (ReligionTypes)ORTHODOXY && !pLoopCity->isCapital())
+				iValue = 0;
+			if (eReligion == (ReligionTypes)ORTHODOXY && pLoopCity->isCapital())
+				iValue = 100;
+
 			//Rhye - end
 
 			//Leoreth: exclude 1 population cities because it doesn't make sense to have a religion founded there

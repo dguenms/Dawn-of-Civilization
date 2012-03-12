@@ -344,6 +344,15 @@
 		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE</Tag>
 		<English>Protectorate of </English>
 	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_SCHISM_TITLE</Tag>
+		<English>The Great Schism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCHISM_MESSAGE</Tag>
+		<English>The institution of papacy has already existed for several centuries. However, his claim to be the sole representative of God on Earth is threatening our own theological authority. Many clergymen in our civilization are also worried that his interpretation of the Word of God has strayed to far from the true origins of Christianity. Shall we heed their call to separate from the Catholic Church in a Great Schism and follow Orthodox Christianity instead?</English>
+	</TEXT>
 
 
 </Civ4GameText>
