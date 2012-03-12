@@ -244,6 +244,9 @@ class CvRFCEventHandler:
                 self.sta.setup()
                 self.aiw.setup()
                 self.rnf.warOnSpawn()
+		
+		print "FIRST WONDER: "+str(con.iApostolicPalace)
+		print "FIRST WONDER: "+str(gc.getInfoTypeForString("BUILDING_APOSTOLIC_PALACE"))
 
 		s = ""
 		for y in range(68):
@@ -320,6 +323,15 @@ class CvRFCEventHandler:
 			if city.isCapital() or gc.getPlayer(iSeljuks).getNumCities() <= 2:
 				print "Killed Seljuks"
 				utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
+				
+		# Leoreth: relocate capital for AI if reacquired:
+		if utils.getHumanID() != playerType and playerType < con.iNumPlayers:
+			if sd.scriptDict['lResurrections'][playerType] == 0:
+				if (city.getX(), city.getY()) == con.tCapitals[utils.getReborn(playerType)][playerType]:
+					utils.relocateCapital(playerType, city)
+			else:
+				if (city.getX(), city.getY()) == con.tRespawnCapitals[utils.getReborn(playerType)][playerType]:
+					utils.relocateCapital(playerType, city)
 
                 
                 if (bConquest):
@@ -494,7 +506,7 @@ class CvRFCEventHandler:
 		self.dc.onVassalState(argsList)
 		
 		if bCapitulated:
-			self.sta.onVassalState(iVassal)
+			self.sta.onVassalState(iVassal, bCapitulated)
 		
 		if iMaster == iHolyRome:
 			self.vic.onVassalState(argsList)
@@ -520,6 +532,8 @@ class CvRFCEventHandler:
 
 		# Leoreth: Apostolic Palace moves holy city
 		if iBuildingType == con.iApostolicPalace:
+			print "Found Orthodoxy"
+			self.rel.foundOrthodoxy(iOwner)
 			gc.getGame().setHolyCity(con.iChristianity, city, False)
 
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect

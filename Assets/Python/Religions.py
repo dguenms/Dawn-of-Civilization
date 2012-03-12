@@ -19,6 +19,7 @@ utils = RFCUtils.RFCUtils()
 
 iIndonesia = con.iIndonesia
 iArabia = con.iArabia
+iRussia = con.iRussia
 iNumPlayers = con.iNumPlayers
 iNumTotalPlayers = con.iNumTotalPlayers
 iBarbarian = con.iBarbarian
@@ -41,6 +42,7 @@ iCeltia = con.iCeltia
 # initialise religion variables to religion indices from XML
 iJudaism = con.iJudaism 
 iChristianity = con.iChristianity
+iOrthodoxy = con.iOrthodoxy
 iIslam = con.iIslam
 iHinduism = con.iHinduism
 iBuddhism = con.iBuddhism
@@ -50,6 +52,7 @@ iZoroastrianism = con.iZoroastrianism
 
 iMissionary_Jewish = con.iJewishMissionary
 iMissionary_Christian = con.iChristianMissionary
+iMissionary_Orthodox = con.iOrthodoxMissionary
 iMissionary_Islamic = con.iIslamicMissionary
 iMissionary_Hindu = con.iHinduMissionary
 iMissionary_Buddhist = con.iBuddhistMissionary
@@ -83,6 +86,10 @@ tMecca = (75, 33)
 
 lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 80, 50, 50, 10, 80, 80, 50, 95, 75, 30, 25, 80, 10, 50, 95, 50, 50, 50, 80, 50, 50, 50, 50, 80, 50, 20, 50]
 
+lOrthodoxFounders = (con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia, con.iRome)
+lOrthodoxEast = [con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia]
+lOrthodoxMiddle = [con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia, con.iRome, con.iHolyRome, con.iVikings]
+lOrthodoxWest = [con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia, con.iRome, con.iHolyRome, con.iVikings, con.iFrance, con.iEngland]
 
 class Religions:
 
@@ -190,6 +197,15 @@ class Religions:
 			# Islam spreads to Indonesia
 			for i in range(3):
 				self.spreadReligion(self.selectRandomCityCiv(iIndonesia), 1, iMissionary_Islamic)
+				
+		# (Orthodox) Christianity spreads to Russia
+		if iGameTurn == getTurnForYear(988):
+			for i in range(2):
+				self.spreadReligion(self.selectRandomCityCiv(iRussia), 1, iMissionary_Orthodox)
+				
+		if iGameTurn == getTurnForYear(800) + (utils.getSeed() % 20):
+			if not gc.getGame().isReligionFounded(iOrthodoxy):
+				self.foundOrthodoxy(con.iRome)
 			
 
 
@@ -288,6 +304,80 @@ class Religions:
 
 	def foundBuddhism(self, city):
 		gc.getPlayer(city.getOwner()).foundReligion(con.iBuddhism, con.iBuddhism, True)
+		
+		
+##ORTHODOXY
+
+	def foundOrthodoxy(self, iPopeCiv):
+		if gc.getGame().isReligionFounded(con.iOrthodoxy): return
+	
+		iOwner = gc.getGame().getHolyCity(con.iChristianity).getOwner()
+		pOwner = gc.getPlayer(iOwner)
+		iFounder = iPopeCiv
+		
+		if iOwner != iPopeCiv and iOwner < con.iNumPlayers and pOwner.getStateReligion() == con.iChristianity:
+			iFounder = iOwner
+			print "Set Orthodoxy founder: "+str(iFounder)
+		else:
+			for iCiv in lOrthodoxFounders:
+				print "Check Orthodoxy: Civ "+str(iCiv)+" State religion: "+str(gc.getPlayer(iCiv).getStateReligion())
+				if gc.getPlayer(iCiv).isAlive() and gc.getPlayer(iCiv).getStateReligion() == con.iChristianity:
+					iFounder = iCiv
+					print "Set Orthodoxy founder: "+str(iFounder)
+					break
+					
+		print "Final Orthodoxy founder: "+str(iFounder)
+					
+                gc.getPlayer(iFounder).foundReligion(con.iOrthodoxy, con.iOrthodoxy, True)
+                gc.getPlayer(iFounder).getCapitalCity().setNumRealBuilding(con.iOrthodoxShrine, 1)
+		
+		if con.tBirth[utils.getHumanID()] <= getTurnForYear(gc.getGame().getGameTurnYear()) and gc.getPlayer(utils.getHumanID()).getStateReligion() == con.iChristianity:
+			self.showPopup(7626, CyTranslator().getText("TXT_KEY_SCHISM_TITLE", ()), CyTranslator().getText("TXT_KEY_SCHISM_MESSAGE", ()), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
+		
+		if iFounder in lOrthodoxEast:
+			for iCiv in lOrthodoxEast:
+				if gc.getPlayer(iCiv).isAlive(): self.schism(iCiv)
+		elif iFounder in lOrthodoxMiddle:
+			for iCiv in lOrthodoxMiddle:
+				if gc.getPlayer(iCiv).isAlive(): self.schism(iCiv)
+		elif iFounder in lOrthodoxWest:
+			for iCiv in lOrthodoxWest:
+				if gc.getPlayer(iCiv).isAlive(): self.schism(iCiv)
+		else:
+			for iCiv in range(con.iNumPlayers):
+				if gc.getPlayer(iCiv).isAlive(): self.schism(iCiv)
+				
+		for iCiv in [con.iEthiopia, con.iGreece, con.iByzantium, con.iRussia]:
+			if not gc.getPlayer(iCiv).isAlive():
+				gc.getPlayer(iCiv).setLastStateReligion(con.iOrthodoxy)
+				
+	def eventApply7626(self, popupReturn):
+		if (popupReturn.getButtonClicked() == 0):
+			self.schism(utils.getHumanID())
+			
+	def schism(self, iPlayer):
+		cityList = PyPlayer(iPlayer).getCityList()
+		for city in cityList:
+			pCity = city.GetCy()
+			if pCity.isHasReligion(iChristianity):
+				pCity.setHasReligion(iChristianity, False, False, False)
+			
+				for iBuilding in [con.iTemple, con.iCathedral, con.iMonastery]:
+					if pCity.isHasBuilding(iBuilding + 4*iChristianity):
+						pCity.setHasRealBuilding(iBuilding + 4*iChristianity, False)
+						pCity.setHasRealBuilding(iBuilding + 4*iOrthodoxy, True)
+						
+				if pCity.getPopulation() > 7:
+					iRand = gc.getGame().getSorenRandNum(100, 'RemainingCatholics')
+					if iRand <= 50:
+						pCity.setHasReligion(iChristianity, True, False, False)
+						
+				pCity.setHasReligion(con.iOrthodoxy, True, False, False)
+				
+		if gc.getPlayer(iPlayer).getStateReligion() == iChristianity:
+			gc.getPlayer(iPlayer).setLastStateReligion(iOrthodoxy)
+				
+		
 		
 
 ##REFORMATION

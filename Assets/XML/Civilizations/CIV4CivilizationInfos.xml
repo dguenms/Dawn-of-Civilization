@@ -3275,7 +3275,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
+					<UnitClassType>UNITCLASS_BOMBARD</UnitClassType>
 					<UnitType>UNIT_MUGHAL_SIEGE_ELEPHANT</UnitType>
 				</Unit>
 				<Unit>
@@ -5584,11 +5584,10 @@
 					<BuildingClassType>BUILDINGCLASS_ANGKOR_WAT</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
-				<Building>
+				<!--Building>
 					<BuildingClassType>BUILDINGCLASS_HAGIA_SOPHIA</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				<!-- Rhye -->
-				</Building>
+				</Building-->
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SISTINE_CHAPEL</BuildingClassType>
 					<BuildingType>NONE</BuildingType>

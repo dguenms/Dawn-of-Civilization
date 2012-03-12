@@ -318,8 +318,8 @@ class UniquePowers:
                                 city.setHasReligion(iStateReligion, True, True, False)
                         if (not city.hasBuilding(iTemple + iStateReligion*4)):
                                 city.setHasRealBuilding((iTemple + iStateReligion*4), True)
-                        if (not city.hasBuilding(iCathedral + iStateReligion*4)):
-                                city.setHasRealBuilding((iCathedral + iStateReligion*4), True)
+                        #if (not city.hasBuilding(iCathedral + iStateReligion*4)):
+                        #        city.setHasRealBuilding((iCathedral + iStateReligion*4), True)
 
 
                                         

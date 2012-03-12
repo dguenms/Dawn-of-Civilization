@@ -212,6 +212,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE3</Tag>
 		<English>Vassalize three European civilizations by 1600 AD</English>
-		<German>Vassalisieren Sie drei europäische Zivilisationen bis zum Jahr 1500 n. Chr.</German>
+		<German>Vassalisieren Sie drei europäische Zivilisationen bis zum Jahr 1600 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG1</Tag>
+		<English>Build three Islamic Mosques by 1500 AD</English>
+		<German>Bauen Sie drei Islamische Moscheen bis zum Jahr 1500 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG2</Tag>
+		<English>Have more than 50000 culture in 1660 AD</English>
+		<German>Haben Sie mehr als 50000 Kulturpunkte im Jahr 1660 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG3</Tag>
+		<English>Control 15% of the world's population in 1750 AD</English>
+		<German>Kontrollieren Sie 15% der Weltbevölkerung im Jahr 1750 n. Chr.</German>
 	</TEXT>
 </Civ4GameText>

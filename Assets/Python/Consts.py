@@ -784,8 +784,8 @@ tCapitals = (
 (55, 50), #tParis
 (53, 54), #tLondon
 #(62, 52), #tBerlin
-#(63, 49), #tVienna
-(59, 50), #Frankfurt
+(63, 49), #tVienna
+#(59, 50), #Frankfurt
 (73, 54), #tMoskow
 (57, 53), #tAmsterdam
 (53, 31), #tTimbuktu
@@ -894,7 +894,7 @@ tCoreAreasTL = (
 (49, 40), #Spain
 (51, 46), #France
 (50, 53), #England
-(58, 48), #Holy Rome
+(61, 46), #Holy Rome
 (67, 50), #Russia
 (56, 52), #Holland
 (49, 26), #Mali
@@ -964,7 +964,7 @@ tCoreAreasBR = (
 (55, 46), #Spain
 (57, 52), #France
 (54, 60), #England   57 without Scotland
-(65, 54), #Holy Rome
+(66, 50), #Holy Rome
 (74, 57), #Russia
 (58, 53), #Holland
 (57, 31), #Mali
@@ -1034,7 +1034,7 @@ tExceptions = (  #for RiseAndFall
 (), #Spain
 ((51, 50), (52, 49), (52, 50), (53, 47), (53, 48), (53, 49), (53, 50), (53, 51), (55, 46), (56, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50)), #France
 (), #England
-((62, 47), (63, 47), (64, 47), (58, 51), (58, 52), (58, 53), (57, 53), (65, 55), (66, 55), (66, 56)),  #HolyRome
+(),  #HolyRome
 ((68, 58), (69, 58), (70, 58), (65, 55), (66, 55), (66, 56)), #Russia
 ((57, 51), (58, 51)), #Holland
 (), #Mali
@@ -1108,7 +1108,7 @@ tNormalAreasTL = (
 (49, 40), #Spain
 (51, 46), #France
 (50, 53), #England
-(58, 48), #Holy Rome
+(61, 46), #Holy Rome
 (68, 49), #Russia
 (56, 51), #Holland
 (48, 26), #Mali
@@ -1178,7 +1178,7 @@ tNormalAreasBR = (
 (55, 46), #Spain
 (58, 52), #France
 (54, 60), #England
-(65, 54), #Holy Rome
+(66, 50), #Holy Rome
 (83, 62), #Russia
 (58, 53), #Holland
 (60, 33), #Mali
@@ -1320,7 +1320,7 @@ tBroaderAreasTL = (
 (49, 38), #Spain
 (49, 44), #France
 (48, 53), #England
-(55, 46), #Holy Rome
+(61, 46), #Holy Rome
 (65, 48), #Russia
 (56, 51), #Holland
 (48, 21), #Mali
@@ -1390,7 +1390,7 @@ tBroaderAreasBR = (
 (55, 46), #Spain
 (61, 52), #France
 (54, 60), #England
-(66, 56), #Holy Rome
+(66, 50), #Holy Rome
 (92, 59), #Russia
 (58, 53), #Holland
 (67, 32), #Mali
@@ -1653,7 +1653,7 @@ tAggressionLevel = (
 2, #Spain
 1, #France
 1, #England
-2, #Holy Rome
+3, #Holy Rome
 1, #Russia
 0, #Holland
 0, #Mali
@@ -1827,8 +1827,8 @@ tMaxColonists = (
 
 
 # initialise religion variables to religion indices from XML
-iNumReligions = 8
-(iJudaism, iChristianity, iIslam, iHinduism, iBuddhism, iConfucianism, iTaoism, iZoroastrianism) = range(iNumReligions)
+iNumReligions = 9
+(iJudaism, iChristianity, iOrthodoxy, iIslam, iHinduism, iBuddhism, iConfucianism, iTaoism, iZoroastrianism) = range(iNumReligions)
 iProtestantism = iJudaism
 iCatholicism = iChristianity
 
@@ -1855,9 +1855,9 @@ iNumTechsFuture = iNumTechs+1
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 127
+iNumUnits = 128
 (iLion, iBear, iPanther, iWolf, iSettler, iWorker, iIndianFastWorker, iScout, iExplorer, iSpy, iJewishMissionary,
-iChristianMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary,
+iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary,
 iZoroastrianMissionary, iWarrior, iIncanQuechua, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
 iAxeman, iGreekPhalanx, iSumerianVulture, iNativeAmericaDogSoldier, iMaceman, iJapanSamurai, iVikingBerserker, iIranianQizilbash, iSpearman,
 iZuluImpi, iMayaHolkan, iPikeman, iHolyRomanLandsknecht, iMusketman, iFrenchMusketeer, iOttomanJanissary,
@@ -1884,7 +1884,7 @@ iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton) = range(iNumBonuses)
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 183
+iNumBuildings = 186
 (iPalace, iGreatPalace, iVersailles, iWalls, iCelticDun, iCastle, iSpanishCitadel, iBarracks, iZuluIkhanda, iStable,
 iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iHospital, iRecyclingCenter,
 iLighthouse, iVikingTradingPost, iHarbor, iCarthageCothon, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
@@ -1895,13 +1895,14 @@ iTheatre, iFrenchSalon, iByzantineHippodrome, iChinesePavillion, iColosseum, iGr
 iBabylonGarden, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iGrocer, iBank, iEnglishStockExchange,
 iSupermarket, iAmericanMall, iCourthouse, iAztecSacrificialAltar, iHolyRomanRathaus, iSumerianZiggurat, iJail, iIndianMausoleum,
 iLevee, iNetherlandsDike, iIntelligenceAgency, iNationalSecurity, iJewishTemple, iJewishCathedral, iJewishMonastery,
-iJewishShrine, iChristianTemple, iChristianCathedral, iChristianMonastery, iChristianShrine, iIslamicTemple, iIslamicCathedral,
+iJewishShrine, iChristianTemple, iChristianCathedral, iChristianMonastery, iChristianShrine, 
+iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iIslamicTemple, iIslamicCathedral,
 iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, 
 iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery,
 iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral,
 iZoroastrianMonastery, iZoroastrianShrine, iFlavianAmphitheatre, iTriumphalArch, iGlobeTheatre, iNationalPark, iNationalGallery,
 iChannelTunnel, iWallStreet, iIronWorks, iTradingCompany, iIberianTradingCompany, iMtRushmore, iRedCross, iInterpol, iPyramid,
-iStonehenge, iGreatLibrary, iGreatLighthouse, iHangingGarden, iColossus, iOracle, iParthenon, iAngkorWat, iHagiaSophia,
+iStonehenge, iGreatLibrary, iGreatLighthouse, iHangingGarden, iColossus, iOracle, iParthenon, iAngkorWat,
 iTempleOfKukulkan, iSistineChapel, iSpiralMinaret, iNotreDame, iTajMahal, iKremlin, iEiffelTower, iStatueOfLiberty,
 iWembley, iGraceland, iHollywood, iGreatDam, iPentagon, iUnitedNations, iSpaceElevator, iMilitaryAcademy, iArtemis,
 iSankore, iGreatWall, iStatueOfZeus, iMausoleumOfMaussollos, iCristoRedentor, iShwedagonPaya, iMoaiStatues, iApostolicPalace,

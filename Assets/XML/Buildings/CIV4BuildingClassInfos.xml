@@ -619,6 +619,54 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ORTHODOX_TEMPLE</Type>
+			<Description>TXT_KEY_BUILDING_ORTHODOX_TEMPLE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>1</bMonument>
+			<DefaultBuilding>BUILDING_ORTHODOX_TEMPLE</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ORTHODOX_CATHEDRAL</Type>
+			<Description>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>1</bMonument>
+			<DefaultBuilding>BUILDING_ORTHODOX_CATHEDRAL</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ORTHODOX_MONASTERY</Type>
+			<Description>TXT_KEY_BUILDING_ORTHODOX_MONASTERY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_ORTHODOX_MONASTERY</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ORTHODOX_SHRINE</Type>
+			<Description>TXT_KEY_BUILDING_ORTHODOX_SHRINE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_ORTHODOX_SHRINE</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_ISLAMIC_TEMPLE</Type>
 			<Description>TXT_KEY_BUILDING_ISLAMIC_TEMPLE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -1166,7 +1214,7 @@
 			<DefaultBuilding>BUILDING_ANGKOR_WAT</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<BuildingClassInfo>
+		<!--BuildingClassInfo>
 			<Type>BUILDINGCLASS_HAGIA_SOPHIA</Type>
 			<Description>TXT_KEY_BUILDING_HAGIA_SOPHIA</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1177,7 +1225,7 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_HAGIA_SOPHIA</DefaultBuilding>
 			<VictoryThresholds/>
-		</BuildingClassInfo>
+		</BuildingClassInfo-->
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CHICHEN_ITZA</Type>
 			<Description>TXT_KEY_BUILDING_CHICHEN_ITZA</Description>

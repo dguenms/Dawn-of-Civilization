@@ -1513,12 +1513,18 @@ class RFCUtils:
 
 		return lPlotList
 		
-	def isPlotInArea(self, tPlot, tTopLeft, tBottomRight, lExceptions=[]):
+	def isPlotInArea(self, tPlot, tTopLeft, tBottomRight, lExceptions=()):
 		x, y = tPlot
 		tlx, tly = tTopLeft
 		brx, bry = tBottomRight
 		
-		return x >= tlx and x <= brx and y >= tly and y <= bry and tPlot not in lExceptions
+		return (x >= tlx and x <= brx and y >= tly and y <= bry and tPlot not in lExceptions)
+		
+	def relocateCapital(self, iPlayer, newCapital):
+		oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
+		
+		newCapital.setHasRealBuilding(con.iPalace, True)
+		oldCapital.setHasRealBuilding(con.iPalace, False)
 	
 	
 	

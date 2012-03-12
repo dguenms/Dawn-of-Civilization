@@ -925,7 +925,7 @@ tCityMap1 = (
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Cosentia",	"-1",	"-1",	"-1",	"-1",	"Athena",	"-1",	"-1",	"-1",	"-1",	"-1",	"Antiocheia",	"Edessa",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Panormos",	"Syrakousa",	"-1",	"-1",	"-1",	"Neokastron",	"Monemvasia",	"-1",	"-1",	"-1",	"-1",	"Tripolis",	"Damaskos",	"Damaskos",	"Ctesiphon",	"Ctesiphon",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Carthago",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Akkon",	"-1",	"-1",	"Ctesiphon",	"Ctesiphon",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Hierusalem",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Hierousalem",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Gabes",	"Tripolis",	"Tripolis",	"-1",	"-1",	"-1",	"Hesperides",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Gaza",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Sirte",	"Sirte",	"Hesperides",	"Hesperides",	"-1",	"Alexandria",	"Alexandria",	"Damietta",	"Damietta",	"Gaza",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Alexandria",	"Alexandria",	"Kairo",	"Damietta",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
@@ -4647,7 +4647,7 @@ class CityNameManager:
                 if (iNewOwner == iEgypt):                                                        
                         if (sName == 'Yerushalayim' or sName == 'Aelia Capitolina' or sName == 'Urushalim' or sName == 'Hierousalem'):
                                 city.setName('Aarru-Hetep', False)
-                        if (sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
+                        if (sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Hierousalem'):
                                 city.setName('Al-Quds', False)
                         if sName == 'Qidshu':
                                 city.setName('Kadesh', False)
@@ -4912,9 +4912,9 @@ class CityNameManager:
                                 city.setName('Elath', False)
                         if sName == 'Bagdat':
                                 city.setName('Baghdad', False)
-                        if (sName == 'Yerushalayim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Hierousalem' or sName == 'Hierusalem'):
+                        if (sName == 'Yerushalayim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Hierousalem' or sName == 'Hierousalem'):
                                 city.setName('Urushalim', False)
-                        if (sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
+                        if (sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Hierousalem'):
                                 city.setName('Al-Quds', False)
                         if (sName == 'Babirush' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babylon' or sName == 'Babili' or sName == 'Vavilon'):
                                 city.setName('Babil&#251;', False)
@@ -4922,7 +4922,7 @@ class CityNameManager:
                 if (iNewOwner == iPersia and not gc.getPlayer(iPersia).isReborn()) or iNewOwner == iMughals: 
                         if (sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Hierousalem'):
                                 city.setName('Yerushalayim', False)
-                        if (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
+                        if (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Kud&#252;s' or sName == 'Hierousalem'):
                                 city.setName('Qods', False)
                         if (sName == 'Shushan' or sName == 'Seleukeia Susiana' or sName == 'Seleucia ad Eulaeum' or sName == 'Susa'):
                                 city.setName('Shush', False)
@@ -5010,7 +5010,7 @@ class CityNameManager:
                                 city.setName('Hangmatana', False)
                         if (sName == 'Samarkand' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
                                 city.setName('Marakanda', False)
-                        if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Hierusalem'):
+                        if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Hierousalem'):
                                 city.setName('Hierousalem', False)
                         if sName == 'Bhakri':
                                 city.setName('Bactra', False)
@@ -5200,7 +5200,7 @@ class CityNameManager:
                         	if (sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Hierousalem'):
                                 	city.setName('Aelia Capitolina', False)
                         	if (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Urshalim' or sName == 'Kud&#252;s'):
-                                	city.setName('Hierusalem', False)
+                                	city.setName('Hierousalem', False)
                         	if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon'):
                                 	city.setName('Babylon', False)
                         	if (sName == 'Shushan' or sName == 'Shush' or sName == 'Seleukeia Susiana' or sName == 'Susa'):
@@ -5478,7 +5478,7 @@ class CityNameManager:
                                 	city.setName('Lixus', False)
                         	if (sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aarru-Hetep' or sName == 'Urushalim' or sName == 'Hierousalem' or sName == 'Aelia Capitolina'):
                                 	city.setName('Gerusalemme', False)
-                        	if (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Urshalim' or sName == 'Kud&#252;s' or sName == 'Hierusalem'):
+                        	if (sName == 'Jerusalem' or sName == 'Al-Quds' or sName == 'Qods' or sName == 'Urshalim' or sName == 'Kud&#252;s' or sName == 'Hierousalem'):
                                 	city.setName('Gerusalemme', False)
                         	if (sName == 'Babil&#251;' or sName == 'Babel' or sName == 'Babil' or sName == 'Babilon' or sName == 'Babirush' or sName == 'Babili' or sName == 'Vavilon' or sName == 'Babylon'):
                                 	city.setName('Babilonia', False)
@@ -5985,7 +5985,7 @@ class CityNameManager:
 			if sName == 'Akka' or sName == 'Akko' or sName == 'Akre':
 				city.setName('Akkon', False)
 			if sName == 'Jerusalem' or sName == 'Qods' or sName == 'Kud&#252;s' or sName == 'Al-Quds' or sName == 'Yerushalayim' or sName == 'Aelia Capitolina' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Aarru-Hetep':
-				city.setName('Hierusalem', False)
+				city.setName('Hierousalem', False)
 			if sName == 'Domyat' or sName == 'Tamiat' or sName == 'Dimyat':
 				city.setName('Damietta', False)
 			if sName == 'Al-Iskandariya' or sName == 'Iskenderiye' or sName == 'Eskendereyya' or sName == 'Buto':
@@ -6054,7 +6054,7 @@ class CityNameManager:
 				city.setName('Lund&#250;vir', False)
 
                 if (iNewOwner == iArabia or (iNewOwner == iPersia and gc.getPlayer(iPersia).isReborn())): 
-                        if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Hierusalem' or sName == 'Urushalim' or sName == 'Qods' or sName == 'Hierousalem'): 
+                        if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Qods' or sName == 'Hierousalem'): 
                                 city.setName('Al-Quds', False)
                         if (sName == 'Tingi' or sName == 'Tanger' or sName == 'T&#225;nger'):
                                 city.setName('Tanja', False)
@@ -6912,7 +6912,7 @@ class CityNameManager:
                                 city.setName('Kingston', False)
                         if (sName == 'Venedig' or sName == 'Venecia' or sName == 'Venetia' or sName == 'Venise' or sName == 'Veneza' or sName == 'Veneti&#235;' or sName == 'Venecija' or sName == 'Al-Bundukiyya' or sName == 'Venedik'):
                                 city.setName('Venice', False)
-                        if (sName == 'Hierusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'): 
+                        if (sName == 'Hierousalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'): 
                                 city.setName('Jerusalem', False)
                         if (sName == 'Al-Iskandariya' or sName == 'Alexandreia' or sName == 'Iskenderiye' or sName == 'Eskendereyya'):
                                 city.setName('Alexandria', False)
@@ -7823,7 +7823,7 @@ class CityNameManager:
                                 city.setName('Mekke', False)
                         if sName == 'Madinah':
                                 city.setName('Medine', False)
-                        if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urshalim' or sName == 'Hierusalem' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'):
+                        if (sName == 'Jerusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'):
                                 city.setName('Kud&#252;s', False)
                         if sName == 'Baghdad':
                                 city.setName('Bagdat', False)
@@ -8039,7 +8039,7 @@ class CityNameManager:
                                 city.setName('Sitka', False)
                         if sName == 'Fort Frontenac':
                                 city.setName('Kingston', False)
-                        if (sName == 'Hierusalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'): 
+                        if (sName == 'Hierousalem' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Kud&#252;s' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'): 
                                 city.setName('Jerusalem', False)
                         if sName == 'Neu Braunfels':
                                 city.setName('New Braunfels', False)

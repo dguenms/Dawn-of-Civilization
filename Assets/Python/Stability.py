@@ -1446,8 +1446,9 @@ class Stability:
                 self.setParameter(iPlayer, iParCitiesE, True, -2)
                 #print("Stability - onCorporationFounded", iPlayer)
 		
-	def onVassalState(self, iVassal):
-		self.setStability(iVassal, 0)
+	def onVassalState(self, iVassal, bCapitulated):
+		if bCapitulated and self.getStability(iVassal) < -10:
+			self.setStability(iVassal, -10)
 
 
         def onReligionSpread(self, iReligion, iPlayer):

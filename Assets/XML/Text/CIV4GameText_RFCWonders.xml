@@ -681,6 +681,26 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_TEMPLE</Tag>
+		<English>Orthodox Church</English>
+		<German>Orthodoxe Kirche</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL</Tag>
+		<English>Orthodox Cathedral</English>
+		<German>Orthodoxe Kathedrale</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_MONASTERY</Tag>
+		<English>Orthodox Monastery</English>
+		<German>Orthodoxes Kloster</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_SHRINE</Tag>
+		<English>The Hagia Sophia</English>
+		<German>Die Hagia Sophia</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_SALOMON</Tag> <!-- translation needed! -->
 		<English>Temple of Solomon</English>
 		<French>

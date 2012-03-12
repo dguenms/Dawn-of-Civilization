@@ -169,6 +169,15 @@
 			<DefaultUnit>UNIT_CHRISTIAN_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_ORTHODOX_MISSIONARY</Type>
+			<Description>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_ORTHODOX_MISSIONARY</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_ISLAMIC_MISSIONARY</Type>
 			<Description>TXT_KEY_UNIT_ISLAMIC_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
