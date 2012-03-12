@@ -16880,7 +16880,7 @@
 			<BuildingHappinessChanges/>
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_CHRISTIAN_TEMPLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ORTHODOX_TEMPLE</BuildingClassType>
 					<iNumBuildingNeeded>2</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>

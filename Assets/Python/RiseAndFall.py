@@ -2362,7 +2362,7 @@ class RiseAndFall:
                         for y in range(con.tBroaderAreasTL[reborn][iCiv][1], con.tBroaderAreasBR[reborn][iCiv][1]+1):
                                 gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
                         
-                if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and (iCiv != con.iMughals) and (iHuman+tDifference[iHuman] < iCiv or utils.getReborn(iCiv) == 1):
+                if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and (iHuman+tDifference[iHuman] < iCiv or utils.getReborn(iCiv) == 1):
                         self.newCivPopup(iCiv)
 
 
