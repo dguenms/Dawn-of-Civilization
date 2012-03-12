@@ -3559,7 +3559,7 @@
 			<Builds/>
 			<ReligionSpreads>
 				<ReligionSpread>
-					<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
+					<ReligionType>RELIGION_ORTHODOXY</ReligionType>
 					<iReligionSpread>40</iReligionSpread>
 				</ReligionSpread>
 			</ReligionSpreads>
