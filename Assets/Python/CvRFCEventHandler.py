@@ -365,6 +365,7 @@ class CvRFCEventHandler:
                 city, iPlayer = argsList
 
                 self.sta.onCityRazed(city.getOwner(),iPlayer,city)
+		self.dc.onCityAcquired(argsList)
 		
 #                if (iPlayer == con.iMongolia):
 #                        self.up.setLatestRazeData(0, gc.getGame().getGameTurn())
