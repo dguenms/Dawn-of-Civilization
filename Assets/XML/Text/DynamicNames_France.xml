@@ -41,6 +41,14 @@
 		<English>Free France</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_LOUISIANA</Tag>
+		<English>Kingdom of Louisiana</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_QUEBEC</Tag>
+		<English>Kingdom of Québec</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_NAZI_VASSAL</Tag>
 		<English>Vichy France</English>
 	</TEXT>

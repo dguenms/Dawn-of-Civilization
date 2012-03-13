@@ -155,6 +155,8 @@ iFuture = con.iFuture
 
 tBrazilTL = (32, 14)
 tBrazilBR = (43, 30)
+tNCAmericaTL = (3, 33)
+tNCAmericaBR = (37, 63)
 
 class DynamicCivs:
 
@@ -1323,6 +1325,14 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iFrance:
+			#if capital.getName() == "Nouvelle Orl&#233;ans":
+			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_LOUISIANA")
+			#	return
+				
+			#if utils.isPlotInArea(tCapitalCoords, tNCAmericaTL, tNCAmericaBR):
+			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_QUEBEC")
+			#	return
+		
 			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iFrance], con.tCoreAreasBR[0][iFrance], con.tExceptions[0][iFrance]):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EXILE")
 				return
@@ -1336,6 +1346,10 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iEngland:
+			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iEngland], con.tCoreAreasBR[0][iEngland], con.tExceptions[0][iEngland]):
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_EXILE")
+				return
+		
 			if iEra < iIndustrial:
 				if utils.getMaster(iFrance) == iEngland:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE")

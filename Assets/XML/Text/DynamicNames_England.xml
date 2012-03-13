@@ -45,6 +45,10 @@
 		<English>Angevin Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_EXILE</Tag>
+		<English>British Government in Exile</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_NAZI_VASSAL</Tag>
 		<English>Reichskommissariat England</English>
 	</TEXT>
