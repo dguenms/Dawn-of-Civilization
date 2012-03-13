@@ -842,6 +842,7 @@ class DynamicCivs:
 		iThreshold = 6
 		
 		if iPlayer == iCarthage: iThreshold = 2
+		elif iPlayer == iIndonesia: iThreshold = 4
 		elif iPlayer == iKorea: iThreshold = 3
 		elif iPlayer == iRussia: iThreshold = 8
 		elif iPlayer == iHolyRome: iThreshold = 4
