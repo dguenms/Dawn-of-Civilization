@@ -2011,12 +2011,12 @@ class Victory:
 ##                                                        self.setGoal(iJapan, 2, 0)
 
 
-                elif (iPlayer == iMaya):
-                        if (pMaya.isAlive()):
-                                if (bConquest):
-                                        if (self.getGoal(iMaya, 2) == -1):
-                                                if (iGameTurn <= getTurnForYear(1745)):
-                                                        self.setGoal(iMaya, 2, 0)
+                #elif (iPlayer == iMaya):
+                #        if (pMaya.isAlive()):
+                #                if (bConquest):
+                #                        if (self.getGoal(iMaya, 2) == -1):
+                #                                if (iGameTurn <= getTurnForYear(1745)):
+                #                                        self.setGoal(iMaya, 2, 0)
                                         
                 elif (iPlayer == iRussia):
                         if (pRussia.isAlive()):
