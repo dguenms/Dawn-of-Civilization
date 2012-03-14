@@ -481,6 +481,8 @@ public:
 	int getLiberationPlayer(bool bConquest);
 	void liberate(bool bConquest);
 
+	void changeBuildingCommerceChange(int eBuildingClass, int eCommerce, int iChange);
+
 	bool AI_avoidGrowth();
 	bool AI_isEmphasize(int iEmphasizeType);
 	int AI_countBestBuilds(CyArea* pArea);

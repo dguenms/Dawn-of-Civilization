@@ -57,6 +57,7 @@ class StoredData:
 				    'lResurrections': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                                      #------------Religions
                                     'iSeed': -1,
+				    'lReformationDecision': [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
                                     #------------UP
                                     'iImmigrationTurnLength': 0,
                                     'iImmigrationCurrentTurn': 0,

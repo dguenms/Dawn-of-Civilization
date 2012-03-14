@@ -330,7 +330,7 @@ class CvRFCEventHandler:
 				if (city.getX(), city.getY()) == con.tCapitals[utils.getReborn(playerType)][playerType]:
 					utils.relocateCapital(playerType, city)
 			else:
-				if (city.getX(), city.getY()) == con.tRespawnCapitals[utils.getReborn(playerType)][playerType]:
+				if (city.getX(), city.getY()) == con.tRespawnCapitals[playerType]:
 					utils.relocateCapital(playerType, city)
 
                 
@@ -365,7 +365,7 @@ class CvRFCEventHandler:
                 city, iPlayer = argsList
 
                 self.sta.onCityRazed(city.getOwner(),iPlayer,city)
-		self.dc.onCityAcquired(argsList)
+		self.dc.onCityRazed(argsList)
 		
 #                if (iPlayer == con.iMongolia):
 #                        self.up.setLatestRazeData(0, gc.getGame().getGameTurn())
@@ -510,7 +510,7 @@ class CvRFCEventHandler:
 			self.sta.onVassalState(iVassal, bCapitulated)
 		
 		if iMaster == iHolyRome:
-			self.vic.onVassalState(argsList)
+			self.vic.onVassalState(iMaster, iVassal)
 
 	def onRevolution(self, argsList):
 		'Called at the start of a revolution'
