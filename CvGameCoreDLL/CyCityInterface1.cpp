@@ -477,5 +477,7 @@ void CyCityPythonInterface1(python::class_<CyCity>& x)
 
 		.def("getLiberationPlayer", &CyCity::getLiberationPlayer, "int ()")
 		.def("liberate", &CyCity::liberate, "void ()")
+
+		.def("changeBuildingCommerceChange", &CyCity::changeBuildingCommerceChange, "void (int eBuildingClass, int eCommerce, int iChange)")
 		;
 }

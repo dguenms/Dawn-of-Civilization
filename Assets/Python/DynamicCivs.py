@@ -1884,6 +1884,11 @@ class DynamicCivs:
                 
                 #if gc.getPlayer(iNewOwner).getNumCities() in [0, 1, 2, 3, 6]:
                 #        self.checkName(iNewOwner)
+		
+	def onCityRazed(self, argsList):
+		city, iPlayer = argsList
+		
+		self.checkName(iPlayer)
 			
 	def onCityBuilt(self, iOwner):
 		if gc.getPlayer(iOwner).getNumCities() in [0, 1, 2, 3, 6]:

@@ -1647,7 +1647,7 @@ class Victory:
 						self.setGoal(iMughals, 0, 0)
 						
 				if iGameTurn == getTurnForYear(1660):
-					if pMughals.countTotalCulture() >= getTurns(50000):
+					if pMughals.countTotalCulture() >= 50000:
 						self.setGoal(iMughals, 1, 1)
 					else:
 						self.setGoal(iMughals, 1, 0)

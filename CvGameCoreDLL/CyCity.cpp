@@ -2319,3 +2319,11 @@ void CyCity::liberate(bool bConquest)
 		m_pCity->liberate(bConquest);
 	}
 }
+
+void CyCity::changeBuildingCommerceChange(int eBuildingClass, int eCommerce, int iChange)
+{
+	if (m_pCity)
+	{
+		m_pCity->changeBuildingCommerceChange((BuildingClassTypes)eBuildingClass, (CommerceTypes) eCommerce, iChange);
+	}
+}

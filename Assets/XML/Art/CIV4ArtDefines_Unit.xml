@@ -6344,13 +6344,13 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ORTHODOX_MISSIONARY</Type>
-			<Button>,Art/Interface/Buttons/Units/OrthodoxMissionary.dds</Button>
+			<Button>Art/Interface/Buttons/Units/OrthodoxMissionary.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Russian Orthodox Priest/RussianOrthodoxPriest.nif</NIF>
-			<KFM>Art/Units/Animations/Missionary/Christian/ChristianMissionary.kfm</KFM>
+			<KFM>Art/Units/Missionary/Christian/ChristianMissionary.kfm</KFM>
 			<SHADERNIF>Art/Units/Russian Orthodox Priest/RussianOrthodoxPriest.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
