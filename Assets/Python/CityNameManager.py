@@ -7216,6 +7216,8 @@ class CityNameManager:
 				city.setName('Neapel', False)
 			if (sName == 'Trieste'):
 				city.setName('Triest', False)
+                        if (sName == 'Kud&#252;s' or sName == 'Yerushalayim' or sName == 'Ierusalim' or sName == 'Aelia Capitolina' or sName == 'Aarru-Hetep' or sName == 'Urshalim' or sName == 'Hierousalem' or sName == 'Hierousalem' or sName == 'Urushalim' or sName == 'Al-Quds' or sName == 'Qods'):
+                                city.setName('Jerusalem', False)
 
                 if (iNewOwner == iRussia): 
                         if (sName == 'Singidunum' or sName == 'Singidun' or sName == 'Belgrad'):
