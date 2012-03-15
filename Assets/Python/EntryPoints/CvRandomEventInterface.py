@@ -14,12 +14,14 @@ from CvPythonExtensions import *
 
 import Consts as con #Rhye
 import RFCUtils #Leoreth
+import Religions #Leoreth
 from CityNameManager import tCityMap
 from StoredData import sd
 
 gc = CyGlobalContext()
 localText = CyTranslator()
 utils = RFCUtils.RFCUtils()
+rel = Religions.Religions()
 
 
 ######## BLESSED SEA ###########
@@ -4487,5 +4489,109 @@ def doTradingCompanyConquerors2(argsList):
 				break
 
 	utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
+	
+######## Reformation (Leoreth) ########
+
+def canTriggerReformation(argsList):
+	kTriggeredData = argsList[0]
+	iPlayer = kTriggeredData.ePlayer
+	
+	if utils.getHumanID() != iPlayer: return False
+	
+	if gc.getGame().isReligionFounded(con.iJudaism):
+		if gc.getGame().getReligionGameTurnFounded(con.iJudaism)+2 < gc.getGame().getGameTurn():
+			return False
+	
+	#if gc.getPlayer(iPlayer) != con.iChristianity: return False
+
+	return gc.getGame().isReligionFounded(con.iJudaism)
+
+def canChooseReformation1(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	
+	return (gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity)
+	
+def getReformation1HelpText(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	
+	iNumMonasteries = gc.getPlayer(iPlayer).countNumBuildings(con.iChristianMonastery)
+
+	text = 'State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. The dissolution of all Catholic Monasteries is expected to bring '+str(iNumMonasteries*100)+' gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.'
+
+	return text
+	
+def doReformation1(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	
+	rel.embraceReformation(iPlayer)
+	
+	pHolyCity = gc.getGame().getHolyCity(con.iJudaism)
+	if pHolyCity.getOwner() == iPlayer:
+		pHolyCity.setNumRealBuilding(con.iJewishShrine, 1)
+	
+	for iCiv in range(con.iNumPlayers):
+		if sd.scriptDict['lReformationDecision'][iCiv] == 2:
+			gc.getTeam(iCiv).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
+	
+def canChooseReformation2(argsList):
+	return True
+	
+def getReformation2HelpText(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+
+	text = 'Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.'
+
+	return text
+	
+def doReformation2(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	
+	rel.tolerateReformation(iPlayer)
+	
+def canChooseReformation3(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	
+	return (gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity)
+	
+def getReformation3HelpText(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+
+	text = 'Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. Catholic monasteries will get an additional +2'+(u"%c" %(gc.getCommerceInfo(1).getChar()))+' due to Jesuit influence. You will declare war on all civilizations that decided to convert to Protestantism.'
+
+	return text
+	
+def doReformation3(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	
+	rel.counterReformation(iPlayer)
+	
+	for iTargetCiv in range(con.iNumPlayers):
+		if sd.scriptDict['lReformationDecision'][iTargetCiv] == 0:
+			gc.getTeam(iPlayer).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	

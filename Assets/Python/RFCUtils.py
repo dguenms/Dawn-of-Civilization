@@ -894,7 +894,7 @@ class RFCUtils:
                                 self.flipUnitsInCityAfter(self.getTempFlippingCity(), iNewCiv)
                                 iCounter += 1                                      
                                 self.flipUnitsInArea([tCoords[0]-1,tCoords[1]-1], [tCoords[0]+1,tCoords[1]+1], iNewCiv, iCiv, False, True)
-                if (bAssignOneCity == False):
+                if (not bAssignOneCity and not (iCiv == con.iByzantium and gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval)):
                         #self.flipUnitsInArea([0,0], [123,67], iNewCiv1, iCiv, False, True) #causes a bug: if a unit was inside another city's civ, when it becomes independent or barbarian, may raze it
                         self.killUnitsInArea([0,0], [123,67], iCiv)
                         self.resetUHV(iCiv)

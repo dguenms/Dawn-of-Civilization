@@ -1384,6 +1384,7 @@ class DynamicCivs:
 				
 				if iEra <= con.iRenaissance:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_HRE")
+					return
 			
 			if pGermany.isAlive():
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_ARCHDUCHY")
@@ -1480,7 +1481,7 @@ class DynamicCivs:
 			# Triple Alliance as default
 			
 		elif iPlayer == iMughals:
-			if iEra == iMedieval:
+			if iEra == iMedieval and not bEmpire:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MUGHALS_DELHI")
 				return
 				

@@ -1857,4 +1857,29 @@
 		<English>The %1_civ_adjective government supports its Trading Company to achieve military control over its South Asian trade routes!</English>
 		<German>Die %1:1_civ_adjective Regierung unterstützt ihre Handelsgesellschaft darin, militärische Kontrolle über ihre südasiatischen Handelsrouten zu erlangen!</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_REFORMATION</Tag>
+		<English>The invention of the Printing Press has unleashed a wave of new doctrines. Reformers all over the Catholic world are challenging the authority of the Pope over Christian theology. How shall we react?</English>
+		<German>Die Erfindung der Druckerpresse hat eine Welle neuer Doktrinen ausgelöst. Reformer aus der gesamten katholischen Welt fordern die Autorität des Papstes über theologische Fragen heraus. Wie sollen wir reagieren?</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_TRADING_COMPANY_CONQUERORS</Tag>
+		<English>The Reformation has reached the %s1_civ_adjective civilization.</English>
+		<German>Die Reformation hat die %s1:1 Zivilisation erreicht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REFORMATION_1</Tag>
+		<English>Embrace the Reformation.</English>
+		<German>Nehmt die Reformation an.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REFORMATION_2</Tag>
+		<English>Tolerate the new sects.</English>
+		<German>Toleriert die neuen Sekten.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REFORMATION_3</Tag>
+		<English>Join the Counter-Reformation.</English>
+		<German>Tretet der Gegen-Reformation bei.</German>
+	</TEXT>
 </Civ4GameText>
