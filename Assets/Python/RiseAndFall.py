@@ -2205,7 +2205,7 @@ class RiseAndFall:
 		iHuman = utils.getHumanID()
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
                 
-                lConditionalCivs = [iByzantium, iMughals, iThailand, iNetherlands]
+                lConditionalCivs = [iByzantium, iMughals, iThailand]
 
                 # Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -2286,7 +2286,10 @@ class RiseAndFall:
                                 #if (iCiv == iByzantium):
                                 #       utils.cultureManager((68,45), 50, iCiv, gc.getMap().plot(68,45).getPlotCity().getOwner(), True, False, False)
 
-                                if iCiv in lConditionalCivs and iCiv != iThailand:
+				x, y = con.tCapitals[0][iNetherlands]
+				bNetherlandsCapital = (iCiv == iNetherlands and gc.getMap().plot(x,y).isCity())
+				
+                                if (iCiv in lConditionalCivs and iCiv != iThailand) or bNetherlandsCapital:
                                         utils.makeUnit(con.iCatapult, iCiv, (1,0), 1)
                                         self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
                                         self.assignTechs(iCiv)
