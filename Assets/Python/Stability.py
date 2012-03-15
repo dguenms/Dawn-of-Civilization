@@ -168,7 +168,7 @@ class Stability:
                                 for y in range(0, 67):
                                         pCurrent = gc.getMap().plot( x, y )
                                         iOwner = pCurrent.getOwner()
-                                        if (iOwner >= 0 and iOwner < iNumPlayers and (pCurrent.isHills() or pCurrent.isFlatlands())):
+                                        if (iOwner >= 0 and iOwner < iNumPlayers and (pCurrent.isHills() or pCurrent.isFlatlands()) and pCurrent.isCityRadius()):
                                                 if (gc.getPlayer(iOwner).getSettlersMaps( 67-y, x ) < 90):
                                                         lOwnedPlots[iOwner] += 1
                                                 if (pCurrent.isCity()):
