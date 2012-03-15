@@ -4960,8 +4960,8 @@ class CityNameManager:
 				city.setName('Madras', False)
 			if sName == 'Purushapura':
 				city.setName('Peshawar', False)
-			if sName == 'Pataliputra' or sName == 'Patna':
-				city.setName('Azimabad', False)
+                        if (sName == 'Patliputra' or sName == 'Pataliputra' or sName == 'Patna' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Kashijou'):
+                                city.setName('Azimabad', False)
 			if sName == 'Indraprastha':
 				city.setName('Delhi', False)
 			elif sName == 'Ankuwash':

@@ -803,6 +803,8 @@ class RiseAndFall:
                                 utils.updateMinorTechs(iIndependent, iBarbarian)
                         if (pIndependent2.isAlive()):                                  
                                 utils.updateMinorTechs(iIndependent2, iBarbarian)
+			if pSeljuks.isAlive():
+				utils.updateMinorTechs(iSeljuks, iBarbarian)
 
                 #Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
                 if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820)):
@@ -852,6 +854,8 @@ class RiseAndFall:
 			               	pCurrent = gc.getMap().plot( 81, 41 )
         		                if (not pCurrent.isCity()):
                 	        		utils.convertPlotCulture(pCurrent, iSeljuks, 100, False)
+						
+			utils.updateMinorTechs(iSeljuks, iBarbarian)
 
 			tSeljukAreaTL = (78, 37)
 			tSeljukAreaBR = (85, 46)

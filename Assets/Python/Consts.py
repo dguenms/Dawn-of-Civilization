@@ -1584,7 +1584,7 @@ lEnemyCivsOnSpawn = [
 [], #Mali
 [], #Portugal
 [], #Inca
-[iChina,iChina,iIndependent,iIndependent,iIndependent2,iIndependent2], #Mongolia
+[iChina,iChina,iKorea,iKorea,iIndependent,iIndependent,iIndependent2,iIndependent2], #Mongolia
 [iMaya], #Aztec
 [iIndia, iIndia], #Mughals
 [iEgypt,iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia,iByzantium,iByzantium,iByzantium], #Turkey
