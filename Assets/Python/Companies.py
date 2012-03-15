@@ -125,15 +125,15 @@ class Companies:
 		ownerTeam = gc.getTeam(owner.getTeam())
 		
 		# State Property
-		if owner.getCivics(3) == 18:
+		if owner.getCivics(3) == con.iStateProperty:
 			return -1
 
 		# Mercantilism increases likeliness for trading company
-		if iCompany == iTradingCompany and owner.getCivics(3) == 17:
+		if iCompany == iTradingCompany and owner.getCivics(3) == con.iMercantilism:
 			iValue += 2
 
 		# Free Market increases likeliness for all companies
-		if owner.getCivics(3) == 19:
+		if owner.getCivics(3) == con.iFreeMarket:
 			iValue += 1
 
 		# civilization requirements
@@ -146,7 +146,7 @@ class Companies:
 			if owner.getID() == con.iMongolia:
 				iValue += 2
 			elif owner.getID() == con.iChina:
-				return -1
+				iValue -= 2
 		
 		# geographical requirements
 		tPlot = (city.getX(), city.getY())
