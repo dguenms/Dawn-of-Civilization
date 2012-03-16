@@ -84,7 +84,7 @@ tQufuTL = (102, 44)
 tQufuBR = (106, 46)
 tMecca = (75, 33)
 
-lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 80, 50, 50, 90, 20, 80, 50, 50, 95, 75, 30, 25, 80, 10, 50, 95, 50, 50, 50, 50, 50, 50, 25, 20]
+lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 80, 50, 50, 90, 20, 80, 50, 50, 95, 75, 30, 55, 80, 10, 50, 95, 50, 50, 50, 50, 50, 50, 25, 20]
 
 lOrthodoxFounders = (con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia, con.iRome)
 lOrthodoxEast = [con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia]
@@ -419,6 +419,11 @@ class Religions:
 	def chooseProtestantism(self, iCiv):
 		iRand = gc.getGame().getSorenRandNum(100, 'Protestantism Choice')
 		return iRand >= lReformationMatrix[iCiv]
+		
+	def isProtestantAnyway(self, iCiv):
+		iThreshold = (lReformationMatrix[iCiv]+50)/2
+		iRand = gc.getGame().getSorenRandNum(100, 'Protestantism anyway')
+		return iRand >= iThreshold
 
         def reformation(self):
                 for iCiv in range(iNumTotalPlayers):
@@ -436,9 +441,9 @@ class Religions:
 		for iCiv in range(iNumPlayers):
 			print CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),()) + ": " + str(self.getReformationDecision(iCiv))
 		
-		print "Reformation matrix:"
-		for iCiv in range(iNumPlayers):
-			print CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),()) + ": " + str(lReformationMatrix[iCiv])
+		#print "Reformation matrix:"
+		#for iCiv in range(iNumPlayers):
+		#	print CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),()) + ": " + str(lReformationMatrix[iCiv])
 		
 		for iCiv in range(iNumPlayers):
 			if self.getReformationDecision(iCiv) == 2:
@@ -460,7 +465,7 @@ class Religions:
 			if self.chooseProtestantism(iCiv):
 				self.embraceReformation(iCiv)
 			else:
-				if self.chooseProtestantism(iCiv) or utils.isAVassal(iCiv):
+				if self.isProtestantismAnyway(iCiv) or utils.isAVassal(iCiv):
 					self.tolerateReformation(iCiv)
 				else:
 					self.counterReformation(iCiv)
@@ -469,10 +474,12 @@ class Religions:
 					
 	def embraceReformation(self, iCiv):
 		cityList = PyPlayer(iCiv).getCityList()
-		iNumMonasteries = 0
+		iNumCatholicCities = 0
 		for city in cityList:
 			pCity = city.GetCy()
 			if pCity.isHasReligion(iChristianity):
+				iNumCatholicCities += 1
+			
 				if not pCity.isHolyCityByType(iChristianity):
 					pCity.setHasReligion(iChristianity, False, False, False)
 			
@@ -480,7 +487,6 @@ class Religions:
 					if pCity.isHasBuilding(iBuilding + 4*iChristianity):
 						pCity.setHasRealBuilding(iBuilding + 4*iChristianity, False)
 						pCity.setHasRealBuilding(iBuilding + 4*iJudaism, True)
-						if iBuilding == con.iMonastery: iNumMonasteries += 1
 						
 				if pCity.getPopulation() > 7:
 					if not self.chooseProtestantism(iCiv):
@@ -489,7 +495,7 @@ class Religions:
 				pCity.setHasReligion(iJudaism, True, False, False)
 				
 		pPlayer = gc.getPlayer(iCiv)
-		pPlayer.changeGold(iNumMonasteries*100)
+		pPlayer.changeGold(iNumCatholicCities*100)
 		
 		pPlayer.setLastStateReligion(iJudaism)
 		pPlayer.setConversionTimer(10)
@@ -502,8 +508,8 @@ class Religions:
 		for city in cityList:
 			pCity = city.GetCy()
 			if pCity.isHasReligion(iChristianity):
-				if self.chooseProtestantism(iCiv):
-					if pCity.getPopulation() <= 7 and not pCity.isHolyCityByType(iChristianity):
+				if self.isProtestantismAnyway(iCiv):
+					if pCity.getPopulation() <= 9 and not pCity.isHolyCityByType(iChristianity):
 						pCity.setHasReligion(iChristianity, False, False, False)
 					pCity.setHasReligion(iJudaism, True, False, False)
 		
@@ -519,7 +525,7 @@ class Religions:
 					if pCity.getPopulation() > 6:
 						pCity.setHasReligion(iJudaism, True, False, False)
 						
-			pCity.changeBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_CHRISTIAN_MONASTERY"), 1, 2)
+			#pCity.changeBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_CHRISTIAN_MONASTERY"), 1, 2)
 		
 		if iCiv < con.iNumPlayers:
 			self.setReformationDecision(iCiv, 2)

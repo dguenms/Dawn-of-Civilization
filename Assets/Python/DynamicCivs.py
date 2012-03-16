@@ -1844,6 +1844,9 @@ class DynamicCivs:
                 #if con.tRebirthCiv[iPlayer] != -1:
                 #        pPlayer.setCivilizationType(con.tRebirthCiv[iPlayer])
                 #pPlayer.setLeader(con.tRebirthLeaders[iPlayer][0])
+		
+		print "On Respawn of Civ: "+str(iPlayer)
+		
 		self.changeResurrections(iPlayer, 1)
 		
 		if iPlayer == iAztecs:
