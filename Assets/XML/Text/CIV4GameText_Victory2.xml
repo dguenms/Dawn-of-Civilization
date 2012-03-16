@@ -269,6 +269,22 @@
 		<Spanish>Conseguir una cultura superior a 24.000 en el 1600 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP1_EPIC</Tag>
+		<English>Have more than 36000 Culture in 1600 AD</English>
+		<French>Avoir plus de 36000 en Culture en 1600 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1600 n. Chr. mehr als 36.000 Kulturpunkte</German>
+		<Italian>Devi avere più di 36.000 cultura nel 1600 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 36.000 en el 1600 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP1_MARATHON</Tag>
+		<English>Have more than 72000 Culture in 1600 AD</English>
+		<French>Avoir plus de 72000 en Culture en 1600 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1600 n. Chr. mehr als 72.000 Kulturpunkte</German>
+		<Italian>Devi avere più di 72.000 cultura nel 1600 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 72.000 en el 1600 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP2</Tag>
 		<English>Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and Philippines in 1940 AD</English>
 		<French>Avoir le meilleur score en 1930 ap. J.-C.</French>

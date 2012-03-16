@@ -4999,7 +4999,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 											//Rhye - start (embassy)
 											//iBuildingValue += 100;
 											if (iJ >= NUM_BUILDINGTYPES_PLAGUE)
-												iBuildingValue += 4; //(*numOfCivs)
+												iBuildingValue += 3; //(*numOfCivs)
 											else
 												iBuildingValue += 100;
 											//Rhye - end

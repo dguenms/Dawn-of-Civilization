@@ -306,8 +306,8 @@
 		<English>Scholasticism</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_PATRIARCHATE</Tag>
-		<English>Patriarchate</English>
+		<Tag>TXT_KEY_CIVIC_FANATICISM</Tag>
+		<English>Fanaticism</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SECULARISM</Tag>
@@ -476,8 +476,8 @@
 		<English>Can build missionaries without monasteries; cities with state religion construct buildings faster; extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_PATRIARCHATE_STRATEGY</Tag>
-		<English>Extra happiness from state religion; unlimited priests; extra culture in capital; extra unhappiness from non-state religions</English>
+		<Tag>TXT_KEY_CIVIC_FANATICISM_STRATEGY</Tag>
+		<English>Cities with state religion train units faster; extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>

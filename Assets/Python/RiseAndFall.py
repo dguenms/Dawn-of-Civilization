@@ -1233,8 +1233,8 @@ class RiseAndFall:
                                         #print "Garrisons moved"
                                         #print "Independent 1 number of cities: "+repr(gc.getPlayer(con.iIndependent).getNumCities())
                                         #print "Independent 2 number of cities: "+repr(gc.getPlayer(con.iIndependent2).getNumCities())
-                                        self.convertSurroundingCities(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
-                                        #print "Cities converted"
+                                        iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])                   
+					#print "Cities converted"
                                         self.convertSurroundingPlotCulture(iCiv, con.tRebirthArea[iCiv][0], con.tRebirthArea[iCiv][1])
                                         #print "Plots converted"
                                         #print "Independent 1 number of cities: "+repr(gc.getPlayer(con.iIndependent).getNumCities())
@@ -1246,6 +1246,9 @@ class RiseAndFall:
                                         sd.scriptDict['lGoals'][iCiv][0] = -1
                                         sd.scriptDict['lGoals'][iCiv][1] = -1
                                         sd.scriptDict['lGoals'][iCiv][2] = -1
+                                        if (iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID()): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
+						print "Flip Popup: free region"
+						self.flipPopup(iCiv, tTopLeft, tBottomRight)
                                         print "Rebirth 2nd turn passed"
 
                                         if iCiv == iRome:
@@ -1259,14 +1262,14 @@ class RiseAndFall:
 						pRome.setCivics(1, con.iAbsolutism)
 						pRome.setCivics(2, con.iUrbanization)
 						pRome.setCivics(3, con.iForcedLabor)
-						pRome.setCivics(4, con.iPatriarchate)
+						pRome.setCivics(4, con.iFanaticism)
 					elif iCiv == iPersia:
 						pPersia.setLastStateReligion(con.iIslam)
 						pPersia.setCivics(0, con.iDynasticism)
 						pPersia.setCivics(1, con.iAbsolutism)
 						pPersia.setCivics(2, con.iAgrarianism)
 						pPersia.setCivics(3, con.iForcedLabor)
-						pPersia.setCivics(4, con.iPatriarchate)
+						pPersia.setCivics(4, con.iFanaticism)
 
 #############################################################################################################
                         
@@ -3778,6 +3781,10 @@ class RiseAndFall:
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 2)
+			tSeaPlot = self.findSeaPlots(tCapitals[0][iByzantium], 1, iByzantium)
+			if tSeaPlot:
+				utils.makeUnit(con.iGalley, iByzantium, tSeaPlot, 2)
+				utils.makeUnit(con.iTrireme, iByzantium, tSeaPlot, 2)
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 4)
@@ -3934,6 +3941,8 @@ class RiseAndFall:
 			utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)
 			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 1)
+			if utils.getHumanID() == iMughals:
+				utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
 		if iCiv == iThailand:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
@@ -4129,6 +4138,10 @@ class RiseAndFall:
                 utils.makeUnit(con.iArcher, iByzantium, tCapitals[0][iByzantium], 3)
                 utils.makeUnit(con.iByzantineCataphract, iByzantium, tCapitals[0][iByzantium], 1)
                 #utils.makeUnit(con.iSettler, iByzantium, tCapitals[0][iByzantium], 1)
+		tSeaPlot = self.findSeaPlots(tCapitals[0][iByzantium], 1, iByzantium)
+		if tSeaPlot:
+			utils.makeUnit(con.iGalley, iByzantium, tSeaPlot, 2)
+			utils.makeUnit(con.iTrireme, iByzantium, tSeaPlot, 2)
 
 		utils.makeUnit(con.iSettler, iKorea, tCapitals[0][iKorea], 2)
 		utils.makeUnit(con.iBuddhistMissionary, iKorea, tCapitals[0][iKorea], 1)

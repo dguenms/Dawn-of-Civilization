@@ -784,7 +784,7 @@ class Victory:
 
 					if iGameTurn == getTurnForYear(1800):
 						pBestCity = self.getMostCulturedCity(iPersia)
-						if pBestCity.getCulture(iPersia) >= 20000:
+						if pBestCity.getCulture(iPersia) >= utils.getTurns(20000):
 							self.setGoal(iPersia, 2, 1)
 						else:
 							self.setGoal(iPersia, 2, 0)
@@ -935,7 +935,7 @@ class Victory:
 
 				# Leoreth: new first goal: have 24000 culture in 1600 AD
 				if iGameTurn == getTurnForYear(1600):
-					if pJapan.countTotalCulture() >= 24000:
+					if pJapan.countTotalCulture() >= utils.getTurns(24000):
 						self.setGoal(iJapan, 0, 1)
 					else:
 						self.setGoal(iJapan, 0, 0)
@@ -1033,7 +1033,7 @@ class Victory:
 			if (pByzantium.isAlive()):
 
 				if (iGameTurn == getTurnForYear(1000)):
-					if (pByzantium.getGold() >= 5000):
+					if (pByzantium.getGold() >= utils.getTurns(5000)):
 						self.setGoal(iByzantium, 0, 1)
 					else:
 						self.setGoal(iByzantium, 0, 0)
@@ -1078,7 +1078,7 @@ class Victory:
                         if (pVikings.isAlive()):
 
                                 if (iGameTurn == getTurnForYear(1500)):
-                                        if (pVikings.getGold() >= 5000):
+                                        if (pVikings.getGold() >= utils.getTurns(5000)):
                                                 self.setGoal(iVikings, 0, 1)
                                         else:
                                                 self.setGoal(iVikings, 0, 0)
@@ -1647,22 +1647,26 @@ class Victory:
 						self.setGoal(iMughals, 0, 0)
 						
 				if iGameTurn == getTurnForYear(1660):
-					if pMughals.countTotalCulture() >= 50000:
+					if self.getGoal(iMughals, 0) == -1:
+						self.setGoal(iMughals, 1, 0)
+						
+				if iGameTurn == getTurnForYear(1750):
+					if pMughals.countTotalCulture() >= utils.getTurns(50000):
 						self.setGoal(iMughals, 1, 1)
 					else:
 						self.setGoal(iMughals, 1, 0)
 						
-				if iGameTurn == getTurnForYear(1750):
-					totalPop = gc.getGame().getTotalPopulation()
-					ourPop = teamMughals.getTotalPopulation()
-					if (totalPop > 0):
-						popPercent = (ourPop * 100.0) / totalPop
-					else:
-						popPercent = 0.0
-					if popPercent >= 15.0:
-						self.setGoal(iMughals, 2, 1)
-					else:
-						self.setGoal(iMughals, 2, 0)
+				#if iGameTurn == getTurnForYear(1750):
+				#	totalPop = gc.getGame().getTotalPopulation()
+				#	ourPop = teamMughals.getTotalPopulation()
+				#	if (totalPop > 0):
+				#		popPercent = (ourPop * 100.0) / totalPop
+				#	else:
+				#		popPercent = 0.0
+				#	if popPercent >= 15.0:
+				#		self.setGoal(iMughals, 2, 1)
+				#	else:
+				#		self.setGoal(iMughals, 2, 0)
                             
                         
                 elif (iPlayer == iAztecs):
@@ -2415,6 +2419,18 @@ class Victory:
 					if iBuilding == con.iIslamicCathedral:
 						if self.getNumBuildings(iMughals, con.iIslamicCathedral) >= 3:
 							self.setGoal(iMughals, 0, 1)
+							
+				if self.getGoal(iMughals, 1) == -1:
+					if iBuilding in [con.iTajMahal, con.iRedFort, con.iHarmandirSahib]:
+						bTajMahal = self.getNumBuildings(iMughals, con.iTajMahal) > 0
+						bRedFort = self.getNumBuildings(iMughals, con.iRedFort) > 0
+						bHarmandirSahib = self.getNumBuildings(iMughals, con.iHarmandirSahib) > 0
+						if bTajMahal and bRedFort and bHarmandirSahib:
+							self.setGoal(iMughals, 1, 1)
+							
+		if iBuilding in [con.iTajMahal, con.iRedFort, con.iHarmandirSahib]:
+			if iPlayer != iMughals and self.getGoal(iMughals, 1) == -1:
+				self.setGoal(iMughals, 1, 0)
 
 
 
@@ -2867,7 +2883,7 @@ class Victory:
 				elif iGoal == 2:
 					pBestCity = self.getMostCulturedCity(iPersia)
 					iCulture = pBestCity.getCulture(iPersia)
-					aHelp.append(self.getIcon(iCulture >= 20000) + 'Most cultured city: ' + str(pBestCity.getName()) + ' (' + str(iCulture) + '/20000)')
+					aHelp.append(self.getIcon(iCulture >= utils.getTurns(20000)) + 'Most cultured city: ' + str(pBestCity.getName()) + ' (' + str(iCulture) + '/' +str(utils.getTurns(20000)))
 
 		elif iPlayer == iCarthage:
 			if iGoal == 0:
@@ -2930,7 +2946,7 @@ class Victory:
 			if iGoal == 0:
 				iCulture = pJapan.countTotalCulture()
 				#aHelp.append(self.getIcon(iTechsStolen >= 5) + 'Techs stolen: '+str(iTechsStolen)+'/5')
-				aHelp.append(self.getIcon(iCulture >= 24000) + 'Total culture: '+str(iCulture)+'/24000')
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(24000)) + 'Total culture: '+str(iCulture)+'/'+str(utils.getTurns(24000)))
 			elif iGoal == 1:
 				bKorea = self.isControlledOrVassalized(iJapan, tKoreaTL, tKoreaBR)
 				bManchuria = self.isControlledOrVassalized(iJapan, tManchuriaTL, tManchuriaBR)
@@ -2977,7 +2993,7 @@ class Victory:
 		elif iPlayer == iByzantium:
 			if iGoal == 0:
 				iGold = pByzantium.getGold()
-				aHelp.append(self.getIcon(iGold >= 5000) + 'Gold in treasury: ' + str(iGold) + '/5000')
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(5000)) + 'Gold in treasury: ' + str(iGold) + '/'+str(utils.getTurns(5000)))
 			elif iGoal == 1:           	
 				pBestPopCity = self.calculateTopCityPopulation(68, 45)
 				bBestPopCity = (pBestPopCity.getOwner() == iByzantium and pBestPopCity.getX() == 68 and pBestPopCity.getY() == 45)
@@ -2993,7 +3009,7 @@ class Victory:
 		elif iPlayer == iVikings:
 			if iGoal == 0:
 				iGold = pVikings.getGold()
-				aHelp.append(self.getIcon(iGold >= 5000) + 'Gold in treasury: ' + str(iGold) + '/5000')
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(5000)) + 'Gold in treasury: ' + str(iGold) + '/'+str(utils.getTurns(5000)))
 			elif iGoal == 1:
 				iNumSinks = self.getNumSinks()
 				aHelp.append(self.getIcon(iNumSinks >= 25) + 'Enemy ships sunk: ' + str(iNumSinks) + '/25')
@@ -3154,10 +3170,10 @@ class Victory:
 				aHelp.append(self.getIcon(iMostGoldCiv == iMali) + 'Richest civilization: ' + CyTranslator().getText(str(gc.getPlayer(iMostGoldCiv).getCivilizationShortDescriptionKey()),()))
 			elif iGoal == 1:
 				iGold = pMali.getGold()
-				aHelp.append(self.getIcon(iGold >= 4000) + 'Gold in treasury: ' + str(iGold) + '/4000')
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(4000)) + 'Gold in treasury: ' + str(iGold) + '/' + str(utils.getTurns(4000)))
 			elif iGoal == 2:
 				iGold = pMali.getGold()
-				aHelp.append(self.getIcon(iGold >= 16000) + 'Gold in treasury: ' + str(iGold) + '/16000')
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(16000)) + 'Gold in treasury: ' + str(iGold) + '/' +str(utils.getTurns(16000)))
 
 		elif iPlayer == iPortugal:
 			if iGoal == 0:
@@ -3195,7 +3211,7 @@ class Victory:
 				aHelp.append(self.getIcon(bSAmerica) + 'No European settlements in South America (except Brazil)')
 			elif iGoal == 1:
 				iGold = pInca.getGold()
-				aHelp.append(self.getIcon(iGold >= 3000) + 'Gold in treasury: ' + str(iGold) + '/3000')
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(3000)) + 'Gold in treasury: ' + str(iGold) + '/' + str(utils.getTurns(3000)))
 
 		elif iPlayer == iMongolia:
 			if iGoal == 1:
@@ -3215,16 +3231,13 @@ class Victory:
 				iNumMosques = self.getNumBuildings(iMughals, con.iIslamicCathedral)
 				aHelp.append(self.getIcon(iNumMosques >= 3) + 'Mosques built: ' + str(iNumMosques) + '/3')
 			elif iGoal == 1:
-				iCulture = pMughals.countTotalCulture()
-				aHelp.append(self.getIcon(iCulture >= 50000) + 'Total culture: ' + str(iCulture) + '/50000')
+				bRedFort = self.getNumBuildings(iMughals, con.iRedFort) > 0
+				bHarmandirSahib = self.getNumBuildings(iMughals, con.iHarmandirSahib) > 0
+				bTajMahal = self.getNumBuildings(iMughals, con.iTajMahal) > 0
+				aHelp.append(self.getIcon(bRedFort) + 'The Red Fort ' + self.getIcon(bHarmandirSahib) + 'Harmandir Sahib ' + self.getIcon(bTajMahal) + 'Taj Mahal')
 			elif iGoal == 2:
-				totalPop = gc.getGame().getTotalPopulation()
-				ourPop = teamMughals.getTotalPopulation()
-				if (totalPop > 0):
-					popPercent = (ourPop * 100.0) / totalPop
-				else:
-					popPercent = 0.0
-				aHelp.append(self.getIcon(popPercent >= 15.0) + 'Percentage of world population: ' + (u"%.2f%%" % popPercent) + '/15%')
+				iCulture = pMughals.countTotalCulture()
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(50000)) + 'Total culture: ' + str(iCulture) + '/' +str(utils.getTurns(50000)))
 
 		elif iPlayer == iAztecs:
 			if iGoal == 0:

@@ -236,6 +236,10 @@ class CvRFCEventHandler:
         def onGameStart(self, argsList):
                 'Called at the start of the game'
                 #self.data.setupScriptData()
+		
+		print "Topkapi Palace ID: "+str(con.iTopkapiPalace)
+		print "Class Plague ID: "+str(gc.getInfoTypeForString("BUILDINGCLASS_PLAGUE"))
+		
                 sd.setup() # edead
                 self.rnf.setup()
                 self.rel.setup()
@@ -277,7 +281,7 @@ class CvRFCEventHandler:
                         self.up.turkishUP(city, playerType, owner)
 		elif (playerType == con.iMongolia and bConquest):
 			self.up.mongolUP(city)
-		elif (playerType == con.iMughals):
+		elif (playerType == con.iMughals and utils.getHumanID() != con.iMughals):
 			self.up.mughalUP(city)
 		elif (playerType == con.iSeljuks):
 			self.up.seljukUP(city)

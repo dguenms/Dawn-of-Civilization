@@ -630,7 +630,7 @@ class Stability:
 				iNewBaseStability += 4
 				
 			# religious civics
-			if (iCivic0 == con.iTheocracy and iCivic4 == con.iPatriarchate):
+			if (iCivic0 == con.iTheocracy and iCivic4 == con.iFanaticism):
 				iNewBaseStability += 4
 				
 			if (iCivic0 == con.iTheocracy and iCivic4 == con.iSecularism):
@@ -712,6 +712,11 @@ class Stability:
                         if (iCivic0 == con.iAutocracy): #Autocracy
                                 iNewBaseStability += 3*teamPlayer.getAtWarCount(True)
                                 #print("iNewBaseStability civic single 5",iNewBaseStability, iPlayer)
+				
+			if iCivic4 == con.iFanaticism:
+				for iEnemyCiv in range(con.iNumPlayers):
+					if teamPlayer.isAtWar(iEnemyCiv) and pPlayer.getStateReligion() != gc.getPlayer(iEnemyCiv).getStateReligion():
+						iNewBaseStability += 3
 
                         if (iCivic0 == con.iTyranny): #Tyranny
                                 if (self.getStability(iPlayer) < -60):
@@ -853,7 +858,7 @@ class Stability:
                                                 else:
                                                         continue
                                                     
-                                        if (iCivic4 == con.iPatriarchate or iCivic4 == con.iOrganizedReligion): #Patriarchate or Organized Religion
+                                        if (iCivic4 == con.iFanaticism or iCivic4 == con.iOrganizedReligion): #Patriarchate or Organized Religion
                                                 iCounter = 0
                                                 for iLoop in range(con.iNumReligions):                                    
                                                         if (city.isHasReligion(iLoop) and pPlayer.getStateReligion() != iLoop):

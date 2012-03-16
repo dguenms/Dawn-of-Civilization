@@ -3,7 +3,7 @@
 	- Tyranny
 	- Dynasticism (Monarchy): +1 happiness per military unit
 	- City States (Code of Laws): +1 specialist for all cities within three tiles of the capital, +100% number of cities maintenance
-	- Theocracy (Theology): +2 XP in cities with state religion, no foreign religion spread
+	- Theocracy (Theology): +2 happiness with state religion, +2 XP in cities with state religion, no foreign religion spread
 	- Autocracy (Nationalism): +2 happiness with barracks, can draft 2 units
 	- Republic (Philosophy): +50% GP birth, +100% cottage growth, +25% war weariness
 # ORGANIZATION
@@ -32,7 +32,7 @@
 	- Pantheon (Polytheism): no state religion, can build classical wonders, +1 happiness with Pagan Temple, +1 unhappiness per non-state religion
 	- Organized Religion (Monotheism): +25% building construction with state religion, can always train missionaries, +1 unhappiness per non-state religion
 	- Scholasticism (Literature): +30% great people birth, +1 unhappiness per non-state religion
-	- Patriarchate (Theology): +2 happiness with state religion, unlimited priests, +25% culture in capital, +1 unhappiness per non-state religion
+	- Fanaticism (Divine Right): +25% unit training speed with state religion, +2 unhappiness per non-state religion
 	- Secularism (Liberalism): +10% science
 # EXPANSION
 	- added Confederation: respawns on your territory is less likely
@@ -71,6 +71,17 @@
 # Unique Building (Mausoleum) changed from +2 happiness to free artist
 # Unique Historical Victory:
 	- Build three Islamic Mosques by 1500 AD
-	- Have 50000 culture in 1660 AD
-	- Control 15% of the world's population in 1750 AD
+	- Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD
+	- Have 50000 culture in 1750 AD
+
+# New Reformation mechanic, Protestant shrine isn't built automatically anymore, three choices:
+	- Embrace the Reformation: state religion becomes Protestantism, cities convert to Protestantism, Catholicism can remain in larger cities, 100 gold per Catholic city, if this civ has founded Protestantism, it gets the shrine for free, Catholic civs may declare war
+	- Tolerate the new sects: State religion remains Catholic, Protestantism spreads to your cities and can even replace Catholicism
+	- Join the Counter-Reformation: State religion remains Catholic, Protestantism only rarely spreads to your cities, you declare war on all civs that embraced the Reformation
+
+# Adjusted several UHV goals to different game speeds
+# Byzantium spawns with a navy now
+# Respawning civs now correctly ask to flip human cities
+
+
 

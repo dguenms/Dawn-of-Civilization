@@ -4516,9 +4516,13 @@ def getReformation1HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	iNumMonasteries = gc.getPlayer(iPlayer).countNumBuildings(con.iChristianMonastery)
+	iNumCatholicCities = 0
+	cityList = gc.getPlayer(iPlayer).getCityList()
+	for city in cityList:
+		if city.GetCy().isHasReligion(con.iChristianity):
+			iNumCatholicCities += 1
 
-	text = 'State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. The dissolution of all Catholic Monasteries is expected to bring '+str(iNumMonasteries*100)+' gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.'
+	text = 'State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring '+str(iNumCatholicCities*100)+' gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.'
 
 	return text
 	
@@ -4563,7 +4567,7 @@ def getReformation3HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 
-	text = 'Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. Catholic monasteries will get an additional +2'+(u"%c" %(gc.getCommerceInfo(1).getChar()))+' due to Jesuit influence. You will declare war on all civilizations that decided to convert to Protestantism.'
+	text = 'Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.'
 
 	return text
 	

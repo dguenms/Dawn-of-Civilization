@@ -5250,7 +5250,8 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		}
 	}
 
-	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && (isHuman()? true : getNumCities() > 0)) //in case of one city, allow it, so spawning players can't be pushed out and denied their capital
+	//Leoreth: in case of one city, allow it, so spawning players can't be pushed out and denied their capital
+	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && (isHuman()? true : isFoundedFirstCity())) 
 	{
 		return false;
 	}
@@ -5287,6 +5288,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		}
 	}
 
+	/* Leoreth: removed for speed
 	if(GC.getUSE_CAN_FOUND_CITIES_ON_WATER_CALLBACK())
 	{
 		CyArgsList argsList2;
@@ -5306,7 +5308,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		{
 			return false;
 		}
-	}
+	}*/
 
 	if (!bValid)
 	{
