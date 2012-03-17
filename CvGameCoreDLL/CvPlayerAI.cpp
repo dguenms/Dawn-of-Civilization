@@ -5452,10 +5452,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								//Rhye - start switch
 								if (iI == CONSTRUCTION || iI == ENGINEERING)
 									iValue *= 2;
-								if (iI == FISSION) {
+								/*if (iI == FISSION) {
 									iValue *= 4;
 									iValue /= 3;
-								}
+								}*/
 
 								if (iI == GUILDS || iI == MILITARY_TRADITION) {
 									iValue *= 3;
@@ -5648,10 +5648,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 									break;
 								case ARABIA:
-									if (iI == FISSION) {
+									/*if (iI == FISSION) {
 										iValue *= 4;
 										iValue /= 3;
-									}
+									}*/
 									if (iI == BANKING) {
 									    iValue /= 2;
 									}

@@ -1647,14 +1647,14 @@ class Victory:
 						self.setGoal(iMughals, 0, 0)
 						
 				if iGameTurn == getTurnForYear(1660):
-					if self.getGoal(iMughals, 0) == -1:
+					if self.getGoal(iMughals, 1) == -1:
 						self.setGoal(iMughals, 1, 0)
 						
 				if iGameTurn == getTurnForYear(1750):
 					if pMughals.countTotalCulture() >= utils.getTurns(50000):
-						self.setGoal(iMughals, 1, 1)
+						self.setGoal(iMughals, 2, 1)
 					else:
-						self.setGoal(iMughals, 1, 0)
+						self.setGoal(iMughals, 2, 0)
 						
 				#if iGameTurn == getTurnForYear(1750):
 				#	totalPop = gc.getGame().getTotalPopulation()

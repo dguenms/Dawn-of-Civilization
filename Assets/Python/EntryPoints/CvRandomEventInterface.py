@@ -15,6 +15,7 @@ from CvPythonExtensions import *
 import Consts as con #Rhye
 import RFCUtils #Leoreth
 import Religions #Leoreth
+import PyHelpers #Leoreth
 from CityNameManager import tCityMap
 from StoredData import sd
 
@@ -4498,6 +4499,14 @@ def canTriggerReformation(argsList):
 	
 	if utils.getHumanID() != iPlayer: return False
 	
+	bCatholicCity = False
+	for city in PyHelpers.PyPlayer(iPlayer).getCityList():
+		if city.GetCy().isHasReligion(con.iChristianity):
+			bCatholicCity = True
+			break
+			
+	if not bCatholicCity: return False
+	
 	if gc.getGame().isReligionFounded(con.iJudaism):
 		if gc.getGame().getReligionGameTurnFounded(con.iJudaism)+2 < gc.getGame().getGameTurn():
 			return False
@@ -4517,7 +4526,7 @@ def getReformation1HelpText(argsList):
 	iPlayer = kTriggeredData.ePlayer
 	
 	iNumCatholicCities = 0
-	cityList = gc.getPlayer(iPlayer).getCityList()
+	cityList = PyHelpers.PyPlayer(iPlayer).getCityList()
 	for city in cityList:
 		if city.GetCy().isHasReligion(con.iChristianity):
 			iNumCatholicCities += 1
@@ -4546,8 +4555,13 @@ def canChooseReformation2(argsList):
 def getReformation2HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
+	
+	text = ''
 
-	text = 'Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.'
+	if gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity:
+		text += 'Your state religion remains Catholic. '
+		
+	text += 'Protestantism can spread to your cities and even replace Catholicism.'
 
 	return text
 	
