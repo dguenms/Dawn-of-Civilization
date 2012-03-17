@@ -1334,5 +1334,10 @@
 		<English>Siege Elephant</English>
 		<German>Belagerungselephant</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WE_LOVE_CONSUL</Tag>
+		<English>"We Love the Consul Day"</English>
+		<German>"Konsul-Feiertag"</German>
+	</TEXT>
 
 </Civ4GameText>

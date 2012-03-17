@@ -465,7 +465,7 @@ class Religions:
 			if self.chooseProtestantism(iCiv):
 				self.embraceReformation(iCiv)
 			else:
-				if self.isProtestantismAnyway(iCiv) or utils.isAVassal(iCiv):
+				if self.isProtestantAnyway(iCiv) or utils.isAVassal(iCiv):
 					self.tolerateReformation(iCiv)
 				else:
 					self.counterReformation(iCiv)
@@ -508,7 +508,7 @@ class Religions:
 		for city in cityList:
 			pCity = city.GetCy()
 			if pCity.isHasReligion(iChristianity):
-				if self.isProtestantismAnyway(iCiv):
+				if self.isProtestantAnyway(iCiv):
 					if pCity.getPopulation() <= 9 and not pCity.isHolyCityByType(iChristianity):
 						pCity.setHasReligion(iChristianity, False, False, False)
 					pCity.setHasReligion(iJudaism, True, False, False)
