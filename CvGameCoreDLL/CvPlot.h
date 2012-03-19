@@ -580,6 +580,10 @@ protected:
 
 	// added so under cheat mode we can access protected stuff
 	friend class CvGameTextMgr;
+
+	//Leoreth
+	int getRegionID() const;
+	CvWString getRegionName() const;
 };
 
 #endif

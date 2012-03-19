@@ -314,6 +314,9 @@ class Religions:
 		
 ##ORTHODOXY
 
+	def canFoundOrthodoxy(self, iPlayer):
+		return gc.getPlayer(iPlayer).isAlive() and gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity
+
 	def foundOrthodoxy(self, iPopeCiv):
 		if gc.getGame().isReligionFounded(con.iOrthodoxy): return
 	
@@ -325,12 +328,14 @@ class Religions:
 			iFounder = iOwner
 			print "Set Orthodoxy founder: "+str(iFounder)
 		else:
-			for iCiv in lOrthodoxFounders:
-				print "Check Orthodoxy: Civ "+str(iCiv)+" State religion: "+str(gc.getPlayer(iCiv).getStateReligion())
-				if gc.getPlayer(iCiv).isAlive() and gc.getPlayer(iCiv).getStateReligion() == con.iChristianity:
-					iFounder = iCiv
-					print "Set Orthodoxy founder: "+str(iFounder)
-					break
+			if self.canFoundOrthodoxy(con.iByzantium): iFounder = con.iByzantium
+			elif self.canFoundOrthodoxy(con.iRussia): iFounder = con.iRussia
+			elif self.canFoundOrthodoxy(con.iGreece): iFounder = con.iGreece
+			elif self.canFoundOrthodoxy(con.iEthiopia): iFounder = con.iEthiopia
+			elif self.canFoundOrthodoxy(con.iEgypt): iFounder = con.iEgypt
+			elif self.canFoundOrthodoxy(con.iCarthage): iFounder = con.iCarthage
+			elif self.canFoundOrthodoxy(con.iBabylonia): iFounder = con.iBabylonia
+
 					
 		print "Final Orthodoxy founder: "+str(iFounder)
 					
@@ -417,11 +422,18 @@ class Religions:
                                         self.reformation()
 					
 	def chooseProtestantism(self, iCiv):
+		if iCiv < con.iNumPlayers:
+			iThreshold = lReformationMatrix[iCiv]
+		else:
+			iThreshold = 50
 		iRand = gc.getGame().getSorenRandNum(100, 'Protestantism Choice')
-		return iRand >= lReformationMatrix[iCiv]
+		return iRand >= iThreshold
 		
 	def isProtestantAnyway(self, iCiv):
-		iThreshold = (lReformationMatrix[iCiv]+50)/2
+		if iCiv < con.iNumPlayers:
+			iThreshold = (lReformationMatrix[iCiv]+50)/2
+		else:
+			iThreshold = 50
 		iRand = gc.getGame().getSorenRandNum(100, 'Protestantism anyway')
 		return iRand >= iThreshold
 

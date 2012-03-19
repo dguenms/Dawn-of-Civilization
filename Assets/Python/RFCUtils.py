@@ -829,7 +829,9 @@ class RFCUtils:
                         #loyal cities for the human player
                         #print(bAssignOneCity,iNumLoyalCities,1+(iNumPlayerCities-1)/6,pyCity.GetCy().isCapital(),iCounter%6 == 0)
 			# Leoreth: Byzantine UP: cities in normal area immune to collapse [expires for AI after the MA]
-			if iCiv == con.iByzantium and (bAssignOneCity or gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval):
+			x = gc.getPlayer(iCiv).getCapitalCity().getX()
+			y = gc.getPlayer(iCiv).getCapitalCity().getY()
+			if iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and (bAssignOneCity or gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval):
 				x, y = tCoords
 				tlx, tly = con.tNormalAreasTL[self.getReborn(iCiv)][iCiv]
 				brx, bry = con.tNormalAreasBR[self.getReborn(iCiv)][iCiv]
@@ -894,7 +896,7 @@ class RFCUtils:
                                 self.flipUnitsInCityAfter(self.getTempFlippingCity(), iNewCiv)
                                 iCounter += 1                                      
                                 self.flipUnitsInArea([tCoords[0]-1,tCoords[1]-1], [tCoords[0]+1,tCoords[1]+1], iNewCiv, iCiv, False, True)
-                if (not bAssignOneCity and not (iCiv == con.iByzantium and gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval)):
+                if (not bAssignOneCity and not (iCiv == con.iByzantium and gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval and (x,y) == con.tCapitals[0][con.iByzantium])):
                         #self.flipUnitsInArea([0,0], [123,67], iNewCiv1, iCiv, False, True) #causes a bug: if a unit was inside another city's civ, when it becomes independent or barbarian, may raze it
                         self.killUnitsInArea([0,0], [123,67], iCiv)
                         self.resetUHV(iCiv)

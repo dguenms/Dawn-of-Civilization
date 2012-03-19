@@ -1167,6 +1167,10 @@ class RiseAndFall:
                                         if con.tRebirthCiv[iCiv] != -1:
                                                 pCiv.setCivilizationType(con.tRebirthCiv[iCiv])
                                         x, y = con.tRebirthPlot[iCiv]
+					
+					if iCiv in con.rebirthLeaders:
+						if pCiv.getLeader() != con.rebirthLeaders[iCiv]:
+							pCiv.setLeader(con.rebirthLeaders[iCiv])
 
                                         #utils.makeUnit(con.iWarrior, iCiv, (10,0), 1)
 
@@ -2019,6 +2023,10 @@ class RiseAndFall:
 				# Leoreth: switch to resurrected civs
 				#if not self.getAlreadySwitched() and iGameTurn > getTurnForYear(con.tBirth[utils.getHumanID()]):
 				#	self.newCivPopup(iDeadCiv)
+				
+				if iDeadCiv in con.resurrectionLeaders:
+					if gc.getPlayer(iDeadCiv).getLeader() != con.resurrectionLeaders[iDeadCiv]:
+						gc.getPlayer(iDeadCiv).setLeader(con.resurrectionLeaders[iDeadCiv])
 				
 				# Leoreth: report to Dynamic civs
 				dc.onCivRespawn(iDeadCiv, ownersList)
@@ -5348,6 +5356,9 @@ class RiseAndFall:
 			sd.scriptDict['lStability'][iHolyRome] = -10
 			
 		pHolyRome.setReborn()
+		
+		dc.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
+		dc.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
 		
 
 

@@ -417,11 +417,13 @@ class CvRFCEventHandler:
                         self.up.turkishUP(city, iOwner, -1)
 			
 		if (iOwner == con.iCarthage):
-			if not gc.getPlayer(con.iCarthage).isHuman() and city.getX() == 58 and city.getY() == 39:
-				x = gc.getPlayer(con.iCarthage).getCapitalCity().getX()
-				y = gc.getPlayer(con.iCarthage).getCapitalCity().getY()
-				gc.getMap().plot(58,39).getPlotCity().setHasRealBuilding(con.iPalace, True)
-				gc.getMap().plot(x,y).getPlotCity().setHasRealBuilding(con.iPalace, False)
+			if city.getX() == 58 and city.getY() == 39:
+				if not gc.getPlayer(con.iCarthage).isHuman():
+					x = gc.getPlayer(con.iCarthage).getCapitalCity().getX()
+					y = gc.getPlayer(con.iCarthage).getCapitalCity().getY()
+					gc.getMap().plot(58,39).getPlotCity().setHasRealBuilding(con.iPalace, True)
+					gc.getMap().plot(x,y).getPlotCity().setHasRealBuilding(con.iPalace, False)
+				gc.getPlayer(con.iCarthage).setReborn()
 
 
                 if (self.vic.getNewWorld(0) == -1):
@@ -507,6 +509,11 @@ class CvRFCEventHandler:
 		'Vassal State'
 		print "Check 1 passed"
 		iMaster, iVassal, bVassal, bCapitulated = argsList
+		
+		if iVassal == con.iAztecs:
+			gc.getPlayer(con.iAztecs).setReborn()
+		elif iVassal == con.iInca:
+			gc.getPlayer(con.iInca).setReborn()
 		
 		self.dc.onVassalState(argsList)
 		
