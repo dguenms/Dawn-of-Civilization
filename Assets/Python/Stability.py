@@ -1452,6 +1452,8 @@ class Stability:
                 #print("Stability - onCorporationFounded", iPlayer)
 		
 	def onVassalState(self, iVassal, bCapitulated):
+		if iVassal == con.iByzantium: return
+	
 		if bCapitulated and self.getStability(iVassal) < -10:
 			self.setStability(iVassal, -10)
 

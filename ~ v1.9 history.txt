@@ -82,6 +82,11 @@
 # Adjusted several UHV goals to different game speeds
 # Byzantium spawns with a navy now
 # Respawning civs now correctly ask to flip human cities
-
+# prohibited outside culture to intrude too far into Tibet
+# reduced Spanish Citadel cost to 50%, removed the stone modifier
+# Harmandir Sahib now gets double production speed from gold
+# Increased Ironclad moves to 4
+# Replaced Redcoats' bonus against gunpowder units by collateral damage
+# Coal Plants now require Electricity
 
 

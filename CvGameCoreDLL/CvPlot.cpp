@@ -3109,6 +3109,40 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 		}
 	}
 
+	// Leoreth: no culture from cities in other regions in certain cases (at the moment: Tibet)
+	if (eBestPlayer != NO_PLAYER)
+	{
+		bValid = true;
+		if (getRegionID() == REGION_TIBET)
+		{
+			bValid = false;
+			CvCity* pLoopCity;
+			int iLoop;
+			for (pLoopCity = GET_PLAYER(eBestPlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(eBestPlayer).nextCity(&iLoop))
+			{
+				if (pLoopCity->plot()->getRegionID() == REGION_TIBET)
+				{
+					bValid = true;
+					break;
+				}
+			}
+			for (int iJ = 0; iJ < 4; ++iJ)
+			{
+				if (isCultureRangeCity(eBestPlayer, iJ))
+				{
+					bValid = true;
+					break;
+				}
+			}
+		}
+		
+		if (!bValid)
+		{
+			eBestPlayer = NO_PLAYER;
+		}
+	}
+	// edead: end
+
 	return eBestPlayer;
 }
 
@@ -10368,3 +10402,16 @@ void CvPlot::invalidatePlayerDangerCache(PlayerTypes ePlayer, int iRange)
 }
 // Sanguo Mod Performance, end
 
+int CvPlot::getRegionID() const
+{
+	return regionMap[EARTH_Y-1-getY_INLINE()][getX_INLINE()];
+}
+
+CvWString CvPlot::getRegionName() const
+{
+	char szBuffer[20];
+	CvWString szResult;
+	sprintf(szBuffer, "TXT_KEY_REGION_%d", regionMap[EARTH_Y - 1 - getY_INLINE()][getX_INLINE()]);
+	szResult = gDLL->getText(szBuffer);
+	return gDLL->getText(szResult);
+}

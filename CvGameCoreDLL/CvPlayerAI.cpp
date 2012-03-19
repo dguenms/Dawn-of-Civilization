@@ -5767,6 +5767,15 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case MUGHALS:
 									if (iI == RIFLING || iI == LIBERALISM || iI == MILITARY_TRADITION || iI == ASTRONOMY)
 										iValue /= 3;
+									if (iI == CONSTITUTION)
+										iValue *= 3;
+									if (iI == PHILOSOPHY || iI == MUSIC || iI == PAPER)
+										iValue *= 2;
+									if (iI == ENGINEERING)
+									{
+										iValue *= 3;
+										iValue /= 2;
+									}
 									break;
 								case PORTUGAL:
 									if (iI == MEDITATION)
@@ -5814,6 +5823,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 5;
 										iValue /= 4;
 									}
+									if (iI == CORPORATION || iI == ASSEMBLY_LINE)
+										iValue *= 2;
+									if (iI == RAILROAD)
+										iValue *= 3;
 									break;
 								default:
 									if (iI == POLYTHEISM || iI == MONOTHEISM)

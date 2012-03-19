@@ -1943,6 +1943,12 @@ iSelfSufficiency, iForcedLabor, iMercantilism, iFreeMarket, iStateProperty, iEnv
 iAnimism, iPantheon, iOrganizedReligion, iScholasticism, iFanaticism, iSecularism,
 iSubjugation, iViceroyalty, iResettlement, iOccupation, iImperialism, iCommonwealth) = range(iNumCivics)
 
+#Regions
+iNumRegions = 38
+(rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia, rAnatolia, rMesopotamia, rArabia, rEgypt, rMaghreb,
+rPersia, rIndia, rDeccan, rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet, rCentralAsia, rSiberia,
+rAustralia, rOceania, rEthiopia, rWestAfrica, rSouthAfrica, rCanada, rAlaska, rUnitedStates, rCaribbean, rMesoamerica,
+rBrazil, rArgentina, rPeru, rColombia) = range(iNumRegions)
 
 #Projects
 
@@ -2025,6 +2031,17 @@ iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred) = range(iNumLeaders)
 
 iCleopatra = iHatshepsut
 iSargon = iGilgamesh
+
+resurrectionLeaders = {
+	iChina : iHongwu,
+	iIndia : iShivaji,
+	iEgypt : iBaibars,
+}
+
+rebirthLeaders = {
+	iRome : iCavour,
+	iPersia : iAbbas,
+}
 
 tIsActiveOnLateStart = (
 0, 

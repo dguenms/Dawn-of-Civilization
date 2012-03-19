@@ -779,10 +779,10 @@ class DynamicCivs:
 		gc.getPlayer(iCiv).setCivName(localText.getText(sName, ()), localText.getText(sShort, ()), localText.getText(sAdjective, ()))
 	
 	def setCivAdj(self, iCiv, sAdj):
-		gc.getPlayer(iCiv).setCivAdjective(sAdj)
+		gc.getPlayer(iCiv).setCivAdjective(localText.getText(sAdj, ()))
 		
 	def setCivShortDesc(self, iCiv, sShort):
-		gc.getPlayer(iCiv).setCivAdjective(sShort)
+		gc.getPlayer(iCiv).setCivShortDescription(localText.getText(sShort, ()))
 		
 	def setLeader(self, iCiv, iLeader):
 		if gc.getPlayer(iCiv).getLeader() != iLeader:
@@ -1598,13 +1598,13 @@ class DynamicCivs:
 				
 		elif iPlayer == iChina:
 		
-			if self.isCommunist(iPlayer) or self.isDemocratic(iPlayer):
+			if self.isCommunist(iPlayer) or self.isDemocratic(iPlayer) and iEra >= con.iIndustrial:
 				self.setLeader(iPlayer, con.iMao)
 				return
 				
-			if iEra >= con.iIndustrial:
-				self.setLeader(iPlayer, con.iCixi)
-				return
+			#if iEra >= con.iIndustrial:
+			#	self.setLeader(iPlayer, con.iCixi)
+			#	return
 				
 			if iEra >= con.iRenaissance or bResurrected:
 				self.setLeader(iPlayer, con.iHongwu)

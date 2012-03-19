@@ -3340,6 +3340,8 @@ int CvGame::getImprovementUpgradeTime(ImprovementTypes eImprovement) const
 	iTime *= GC.getEraInfo(getStartEra()).getImprovementPercent();
 	iTime /= 100;
 
+	iTime *= 2; //Leoreth
+
 	return iTime;
 }
 

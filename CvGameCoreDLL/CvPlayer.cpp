@@ -2471,24 +2471,57 @@ void CvPlayer::setCivShortDescription(std::wstring szNewShort) //Leoreth
 {
 	m_szCivShort = szNewShort;
 
+	gDLL->getInterfaceIFace()->setDirty(Fog_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(HighlightPlot_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(SelectionSound_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeInfo_DIRTY_BIT, true);
 }
 
 void CvPlayer::setCivAdjective(std::wstring szNewAdj) //Leoreth
 {
 	m_szCivAdj = szNewAdj;
-
+	gDLL->getInterfaceIFace()->setDirty(Fog_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(HighlightPlot_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(SelectionSound_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GlobeInfo_DIRTY_BIT, true);
 }
 
 //Rhye (jdog) -  end -----------------------
@@ -2522,6 +2555,11 @@ const wchar* CvPlayer::getCivilizationDescriptionKey() const
 
 const wchar* CvPlayer::getCivilizationShortDescription(uint uiForm) const
 {
+	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	{
+		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_SHORT_DESC");
+	}
+
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivShortDesc(getID(), uiForm).empty())
 	{
@@ -2549,6 +2587,11 @@ const wchar* CvPlayer::getCivilizationShortDescription(uint uiForm) const
 
 const wchar* CvPlayer::getCivilizationShortDescriptionKey() const
 {
+	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	{
+		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_SHORT_DESC");
+	}
+
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivShortDescKey(getID()).empty())
 	{
@@ -2576,6 +2619,11 @@ const wchar* CvPlayer::getCivilizationShortDescriptionKey() const
 
 const wchar* CvPlayer::getCivilizationAdjective(uint uiForm) const
 {
+	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	{
+		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_ADJECTIVE");
+	}
+
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivAdjective(getID(), uiForm).empty())
 	{
@@ -2602,6 +2650,11 @@ const wchar* CvPlayer::getCivilizationAdjective(uint uiForm) const
 
 const wchar* CvPlayer::getCivilizationAdjectiveKey() const
 {
+	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	{
+		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_ADJECTIVE");
+	}
+
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivAdjectiveKey(getID()).empty())
 	{
@@ -6056,7 +6109,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	//Rhye - start
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-		if ((eBuilding >= PYRAMID && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == ZEUS || eBuilding == MAUSOLLOS)
+		if ((eBuilding >= PYRAMID && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == ZEUS || eBuilding == MAUSOLLOS || eBuilding == KHAJURAHO)
 			return false;
 	//Rhye - end
 
@@ -7376,7 +7429,7 @@ int CvPlayer::getImprovementUpgradeRate() const
 {
 	int iRate;
 
-	iRate = 1; // XXX
+	iRate = 2; // XXX
 
 	iRate *= std::max(0, (getImprovementUpgradeRateModifier() + 100));
 	iRate /= 100;
@@ -24131,6 +24184,27 @@ int CvPlayer::getReborn()
 
 void CvPlayer::setReborn()
 {
+	if (getID() == HOLY_ROME)
+	{
+		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_ADJECTIVE");
+		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_AUSTRIA_SHORT_DESC");
+	}
+	else if (getID() == AZTEC)
+	{
+		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_MEXICO_ADJECTIVE");
+		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_MEXICO_SHORT_DESC");
+	}
+	else if (getID() == INCA)
+	{
+		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_PERU_ADJECTIVE");
+		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_PERU_SHORT_DESC");
+	}
+	else if (getID() == CARTHAGE)
+	{
+		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_CARTHAGE_ADJECTIVE");
+		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_CARTHAGE_SHORT_DESC");
+	}
+
     m_bReborn = true;
 }
 

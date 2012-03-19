@@ -2871,8 +2871,14 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	        szString.append(CvWString::format( ENDCOLR ));
 	        szString.append(NEWLINE);
 	    }
-
 	    // end tile stability info text
+
+		//Leoreth: display region, only bugfix purposes
+		if (!pPlot->isWater())
+		{
+			szString.append(pPlot->getRegionName());
+			szString.append(NEWLINE);
+		}
 
 		eRevealOwner = pPlot->getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true);
 
