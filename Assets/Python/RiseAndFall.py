@@ -3961,6 +3961,9 @@ class RiseAndFall:
 			utils.makeUnit(con.iJewishMissionary, iCiv, tPlot, 2)
 			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
 			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
+			if utils.getHumanID() != iGermany:
+				utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
+				utils.makeUnit(con.iRifleman, iCiv, tPlot, 2)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
