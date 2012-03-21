@@ -1481,13 +1481,13 @@ class Stability:
 			for iPlayer in range(iNumPlayers):
 				if gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(con.tBirth[iPlayer]) + utils.getTurns(25) and not gc.getPlayer(iPlayer).isGoldenAge():
 					if self.getStability(iPlayer) < -40:
-						lCollapsingCivs.append(iPlayer)
+						lCollapsingCivs.append((iPlayer, self.getStability(iPlayer)))
 						
 			if len(lCollapsingCivs) == 0: return
 						
-			lCollapsingCivs.sort(key=self.getStability(itemgetter(0)), reverse=False)
+			lCollapsingCivs.sort(key=itemgetter(1), reverse=False)
 			
-			iCollapsingCiv = lCollapsingCivs[0]
+			iCollapsingCiv = lCollapsingCivs[0][0]
 			
 			if iCollapsingCiv != utils.getHumanID():
 				if gc.getPlayer(utils.getHumanID()).canContact(iCollapsingCiv):
