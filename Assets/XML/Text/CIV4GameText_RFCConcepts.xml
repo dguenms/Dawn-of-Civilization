@@ -255,7 +255,7 @@ Netherlands: three cities in Indonesia</English>
 - Pagan Temples can only be built in cities without religions
 - Religion spread to a city turns Pagan Temples into temples of the new religion
 - Free tech events like Liberalism or Oracle only allow to choose techs from your current or earlier eras
-- The Seljuks attack the Middle East in the 12th century
+- The Seljuks attack the Middle East in the 11th century
 - Buddhism is founded by building a Hindu Temple</English>
 	</TEXT>
 	<TEXT>
@@ -264,6 +264,6 @@ Netherlands: three cities in Indonesia</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS_PEDIA</Tag>
-		<English>[H1]Conditional Spawns[\H1][PARAGRAPH:2]Certain civilizations in Dawn of Civilization only spawn when the right conditions are met. These civilizations are Byzantium, Italy and Thailand. Their requirements are listed below:[NEWLINE][BOLD]Byzantium:[/BOLD] Only spawns if Rome is alive and controls at least two cities outside of its core. [NEWLINE][BOLD]Italy:[/BOLD] Only spawns if there are at least as many cities controlled by independents as by other players. [NEWLINE][BOLD]Thailand:[/BOLD] Only spawns if the Khmer are dead or sufficiently unstable. This threshold less strict when the player is controlling the Khmer.</English>
+		<English>[H1]Conditional Spawns[\H1][PARAGRAPH:2]Certain civilizations in Dawn of Civilization only spawn when the right conditions are met. These civilizations are Byzantium, Italy and Thailand. Their requirements are listed below:[NEWLINE][BOLD]Byzantium:[\BOLD] Only spawns if Rome is alive and controls at least two cities outside of its core. [NEWLINE][BOLD]Italy:[\BOLD] Only spawns if there are at least as many cities controlled by independents as by other players. [NEWLINE][BOLD]Thailand:[\BOLD] Only spawns if the Khmer are dead or sufficiently unstable. This threshold less strict when the player is controlling the Khmer.</English>
 	</TEXT>
 </Civ4GameText>
