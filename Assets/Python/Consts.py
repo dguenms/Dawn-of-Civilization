@@ -1713,7 +1713,7 @@ tAIStopBirthThreshold = (
 
 #RiseAndFall
 tResurrectionProb = (
-40, #Egypt
+25, #Egypt
 100, #India
 100, #China
 30, #Babylonia
@@ -1810,7 +1810,7 @@ tMaxColonists = (
 0, #Indonesia
 6, #Spain
 6, #France
-6, #England
+8, #England
 0, #Holy Rome
 0, #Russia
 6, #Holland
