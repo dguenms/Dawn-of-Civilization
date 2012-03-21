@@ -485,12 +485,12 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         tList.pop(36) #marsh
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
 			tList.pop(con.iAlpArslan)
-			tList.pop(con.iChiang_Kaishek)
+			tList.pop(con.iChiangKaishek)
 			tList.pop(con.iFrancis)
 			#tList.pop(con.iBarbarossa)
 			tList.pop(con.iElishat)
                         #tList.pop(con.iWangKon) #wang kon
-                        tList.pop(con.iSitting_Bull) #sitt.b.
+                        tList.pop(con.iSittingBull) #sitt.b.
                         tList.pop(con.iShaka) #shaka   
                         #tList.pop(con.iJustinian) #justinian 
                         #tList.pop(con.iHatshepsut) #hatshepsut
