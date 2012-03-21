@@ -300,9 +300,9 @@ class CvRFCEventHandler:
 			if city.getX() == 68 and city.getY() == 45:
 				if self.sta.getStability(iByzantium) < -40:
                                 	print ("COLLAPSE: CIVIL WAR", gc.getPlayer(iByzantium).getCivilizationAdjective(0))
-                                	if (playerType != utils.getHumanID()):
+                                	if (owner != utils.getHumanID()):
                                 		if (gc.getPlayer(utils.getHumanID()).canContact(iByzantium)):
-                                        		CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(playerType).getCivilizationDescription(0) + " " + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+                                        		CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(owner).getCivilizationDescription(0) + " " + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
                                         	if (gc.getGame().getGameTurn() < getTurnForYear(1400)):
                                                 	utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, iBarbarian, False)
                                         	else:
@@ -312,8 +312,8 @@ class CvRFCEventHandler:
                                         		CyInterface().addMessage(iByzantium, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
                                                 	utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, -1, True)
                                                 	utils.setStartingStabilityParameters(iByzantium)
-                                                	self.setGNPold(playerType, 0)
-                                                	self.setGNPnew(playerType, 0)
+                                                	sd.scriptDict['lGNPold'][iByzantium] = 0
+                                                	sd.scriptDict['lGNPnew'][iByzantium] = 0
 
                 #kill byzantium
                 #if (not gc.getPlayer(0).isPlayable()):  #late start condition
