@@ -410,14 +410,14 @@ tResurrectionIntervals = (
 [(1700, 2020)], #Spain
 [(1700, 2020)], #France
 [(1700, 2020)], #England
-[(1870, 2020)], #Holy Rome
+[(1800, 2020)], #Holy Rome
 [(1280, 1550), (1700, 2020)], #Russia
 [(1700, 2020)], #Netherlands
 [(1340, 1590)], #Mali
 [(1700, 2020)], #Portugal
 [(1800, 1900)], #Inca
 [(1910, 2020)], #Mongolia
-[(1800, 1900)], #Aztec
+[(1700, 2020)], #Aztec
 [], #Mughals
 [(1700, 2020)], #Turkey
 [(1700, 2020)], #Thailand

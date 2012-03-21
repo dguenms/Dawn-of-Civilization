@@ -88,5 +88,4 @@
 # Increased Ironclad moves to 4
 # Replaced Redcoats' bonus against gunpowder units by collateral damage
 # Coal Plants now require Electricity
-
-
+# Civs with the lowest stability now get checked for collapse first, instead of older civs

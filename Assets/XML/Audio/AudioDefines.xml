@@ -11008,14 +11008,49 @@
 		<SoundData>
 			<SoundID>DIPLO_AFONSO</SoundID>
 			<Filename>Sounds/Diplomacy/Afonso</Filename>
-			<LoadType>STREAMED</LoadType>
+			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>DIPLO_MARIA</SoundID>
 			<Filename>Sounds/Diplomacy/Maria</Filename>
-			<LoadType>STREAMED</LoadType>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_NARESUAN</SoundID>
+			<Filename>Sounds/Diplomacy/Naresuan</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_AKBAR</SoundID>
+			<Filename>Sounds/Diplomacy/Akbar</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_ABBAS</SoundID>
+			<Filename>Sounds/Diplomacy/Abbas</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_DHARMASETU</SoundID>
+			<Filename>Sounds/Diplomacy/Dharmasetu</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_CAVOUR</SoundID>
+			<Filename>Sounds/Diplomacy/Cavour</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>

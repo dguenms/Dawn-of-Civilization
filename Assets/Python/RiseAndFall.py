@@ -4098,7 +4098,7 @@ class RiseAndFall:
 
         def create600ADstartingUnits( self ):
 
-                utils.makeUnit(iSettler, iChina, tCapitals[0][iChina], 2)
+                #utils.makeUnit(iSettler, iChina, tCapitals[0][iChina], 2)
                 utils.makeUnit(con.iSwordsman, iChina, tCapitals[0][iChina], 2)
                 utils.makeUnit(con.iArcher, iChina, tCapitals[0][iChina], 1)
                 utils.makeUnit(con.iChinaChokonu, iChina, tCapitals[0][iChina], 2)
