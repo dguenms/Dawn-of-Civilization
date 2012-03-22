@@ -852,7 +852,7 @@ class RFCUtils:
                                 iLoopCiv = j % iNumPlayers
                                 if (gc.getPlayer(iLoopCiv).isAlive() and iLoopCiv != iCiv and not gc.getPlayer(iLoopCiv).isHuman()):
                                         if (pCurrent.getCulture(iLoopCiv) > 0):
-                                                if (pCurrent.getCulture(iLoopCiv)*100 / (pCurrent.getCulture(iLoopCiv) + pCurrent.getCulture(iCiv) + pCurrent.getCulture(iBarbarian) + pCurrent.getCulture(iIndependent) + pCurrent.getCulture(iIndependent2)) >= 5): #change in vanilla
+                                                if (pCurrent.getCulture(iLoopCiv)*100 / (pCurrent.getCulture(iLoopCiv) + pCurrent.getCulture(iCiv) + pCurrent.getCulture(iBarbarian) + pCurrent.getCulture(iIndependent) + pCurrent.getCulture(iIndependent2)) >= 50): #change in vanilla
                                                         self.flipUnitsInCityBefore((tCoords[0],tCoords[1]), iLoopCiv, iCiv)                            
                                                         self.setTempFlippingCity((tCoords[0],tCoords[1]))
                                                         self.flipCity(tCoords, 0, 0, iLoopCiv, [iCiv])
