@@ -89,3 +89,4 @@
 # Replaced Redcoats' bonus against gunpowder units by collateral damage
 # Coal Plants now require Electricity
 # Civs with the lowest stability now get checked for collapse first, instead of older civs
+# Cities of collapsing civs are more unlikely to flip to other civs
