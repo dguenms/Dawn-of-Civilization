@@ -7715,6 +7715,12 @@ int CvPlayer::calculateInflationRate() const
 		return 0;
 	}
 
+	// Leoreth: no inflation for America in the beginning to help its start
+	if (getID() == AMERICA && GC.getGameINLINE().getGameTurnYear() < 1840)
+	{
+		return 0;
+	}
+
 	int iInflationPerTurnTimes10000 = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getInflationPercent();
 	iInflationPerTurnTimes10000 *= GC.getHandicapInfo(getHandicapType()).getInflationPercent();
 	iInflationPerTurnTimes10000 /= 100;
