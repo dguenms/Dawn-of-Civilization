@@ -325,4 +325,28 @@
 		<English>[ICON_BULLET]Increased chance of spreading corporations</English>
 		<German>[ICON_BULLET]Erhöhte Chance, Kapitalgesellschaften zu verbreiten</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_COFFEE</Tag>
+		<English>Coffee</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_COFFEE_PEDIA</Tag>
+		<English>Needs to be written.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_TOBACCO</Tag>
+		<English>Tobacco</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_TOBACCO_PEDIA</Tag>
+		<English>Needs to be written.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_TEA</Tag>
+		<English>Tea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_TEA_PEDIA</Tag>
+		<English>Needs to be written.</English>
+	</TEXT>
 </Civ4GameText>

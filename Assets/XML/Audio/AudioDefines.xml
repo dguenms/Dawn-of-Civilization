@@ -11008,14 +11008,14 @@
 		<SoundData>
 			<SoundID>DIPLO_AFONSO</SoundID>
 			<Filename>Sounds/Diplomacy/Afonso</Filename>
-			<LoadType>DYNAMIC_RES</LoadType>
+			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>DIPLO_MARIA</SoundID>
 			<Filename>Sounds/Diplomacy/Maria</Filename>
-			<LoadType>DYNAMIC_RES</LoadType>
+			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
@@ -11043,7 +11043,7 @@
 		<SoundData>
 			<SoundID>DIPLO_DHARMASETU</SoundID>
 			<Filename>Sounds/Diplomacy/Dharmasetu</Filename>
-			<LoadType>DYNAMIC_RES</LoadType>
+			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>

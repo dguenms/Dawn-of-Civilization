@@ -90,3 +90,9 @@
 # Coal Plants now require Electricity
 # Civs with the lowest stability now get checked for collapse first, instead of older civs
 # Cities of collapsing civs are more unlikely to flip to other civs
+# Silk Route now can spread to Chinese cities
+# Trading Company now can also spread to cities that build the Trading Company building
+# Added new resources: Coffee, Tobacco, Tea
+# Minor map adjustments in Colombia, Brazil, Sri Lanka, Mexico, Caribbean, California
+# City disorder limited to four turns
+# All culture in American cities in North America counts as American

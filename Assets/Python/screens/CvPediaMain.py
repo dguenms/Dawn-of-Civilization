@@ -482,7 +482,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 		
                 #Rhye - start
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
-                        tList.pop(36) #marsh
+                        tList.pop(con.iNumBonuses) #marsh
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
 			tList.pop(con.iAlpArslan)
 			tList.pop(con.iChiangKaishek)

@@ -1391,7 +1391,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=37
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1738,7 +1737,7 @@ EndPlot
 BeginPlot
 	x=3,y=37
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=3,y=38
@@ -2094,6 +2093,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=39
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -2429,8 +2429,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=36
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=2
 EndPlot
 BeginPlot
 	x=5,y=37
@@ -7116,7 +7117,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=33
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -7502,8 +7503,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=19,y=34
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=19,y=35
@@ -7903,9 +7904,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=39
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=20,y=40
@@ -9441,7 +9441,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=39
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -9472,6 +9472,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=45
+	BonusType=BONUS_TOBACCO
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -9796,8 +9797,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=38
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_TOBACCO
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=25,y=39
@@ -10172,7 +10174,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=38
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -10541,7 +10543,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=38
-	BonusType=BONUS_SPICES
+	BonusType=BONUS_TOBACCO
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -10580,6 +10582,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=45
+	BonusType=BONUS_TOBACCO
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -11288,8 +11291,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=37
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_SUGAR
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=38
@@ -14297,6 +14301,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=16
+	BonusType=BONUS_TOBACCO
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27682,6 +27687,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=28
+	BonusType=BONUS_COFFEE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27706,6 +27712,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=30
+	BonusType=BONUS_COFFEE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -29665,6 +29672,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=30
+	BonusType=BONUS_COFFEE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -35922,6 +35930,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=29
+	BonusType=BONUS_SPICES
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -36288,6 +36297,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=28
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -36757,7 +36767,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=38
-	BonusType=BONUS_SPICES
+	BonusType=BONUS_TEA
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -38270,7 +38280,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=37
-	BonusType=BONUS_SPICES
+	BonusType=BONUS_TEA
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39077,7 +39087,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=38
-	BonusType=BONUS_SPICES
+	BonusType=BONUS_TEA
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39915,6 +39925,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=41
+	BonusType=BONUS_TEA
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -40231,7 +40242,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=25
-	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40620,6 +40630,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=25
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot

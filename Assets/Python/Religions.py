@@ -324,17 +324,17 @@ class Religions:
 		pOwner = gc.getPlayer(iOwner)
 		iFounder = iPopeCiv
 		
-		if iOwner != iPopeCiv and iOwner < con.iNumPlayers and pOwner.getStateReligion() == con.iChristianity:
-			iFounder = iOwner
-			print "Set Orthodoxy founder: "+str(iFounder)
-		else:
-			if self.canFoundOrthodoxy(con.iByzantium): iFounder = con.iByzantium
-			elif self.canFoundOrthodoxy(con.iRussia): iFounder = con.iRussia
-			elif self.canFoundOrthodoxy(con.iGreece): iFounder = con.iGreece
-			elif self.canFoundOrthodoxy(con.iEthiopia): iFounder = con.iEthiopia
-			elif self.canFoundOrthodoxy(con.iEgypt): iFounder = con.iEgypt
-			elif self.canFoundOrthodoxy(con.iCarthage): iFounder = con.iCarthage
-			elif self.canFoundOrthodoxy(con.iBabylonia): iFounder = con.iBabylonia
+		#if iOwner != iPopeCiv and iOwner < con.iNumPlayers and pOwner.getStateReligion() == con.iChristianity:
+		#	iFounder = iOwner
+		#	print "Set Orthodoxy founder: "+str(iFounder)
+		#else:
+		if self.canFoundOrthodoxy(con.iByzantium): iFounder = con.iByzantium
+		elif self.canFoundOrthodoxy(con.iGreece): iFounder = con.iGreece
+		elif self.canFoundOrthodoxy(con.iRussia): iFounder = con.iRussia
+		elif self.canFoundOrthodoxy(con.iEthiopia): iFounder = con.iEthiopia
+		elif self.canFoundOrthodoxy(con.iEgypt): iFounder = con.iEgypt
+		elif self.canFoundOrthodoxy(con.iCarthage): iFounder = con.iCarthage
+		elif self.canFoundOrthodoxy(con.iBabylonia): iFounder = con.iBabylonia
 
 					
 		print "Final Orthodoxy founder: "+str(iFounder)

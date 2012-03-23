@@ -227,6 +227,8 @@ public:
 	DllExport IDInfo getIDInfo() const;
 	void setID(int iID);
 
+	int getRegionID() const;
+
 	DllExport int getX() const;																			// Exposed to Python
 #ifdef _USRDLL
 	inline int getX_INLINE() const
