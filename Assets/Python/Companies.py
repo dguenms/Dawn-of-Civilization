@@ -17,12 +17,12 @@ utils = RFCUtils.RFCUtils()
 
 iNumPlayers = con.iNumPlayers
 iNumTotalPlayers = con.iNumTotalPlayers
-iNumCompanies = 8
+iNumCompanies = 9
 
-(iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
+(iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
 
-tCompanyTechs = (con.iCurrency, con.iAstronomy, con.iBiology, con.iRefrigeration, con.iSteel, con.iCombustion, con.iElectricity, con.iComputers)
-tCompaniesLimit = (10, 10, 16, 10, 16, 6, 10, 12) # kind of arbitrary currently, see how this plays out
+tCompanyTechs = (con.iCurrency, con.iAstronomy, con.iBiology, con.iRefrigeration, con.iSteamPower, con.iSteel, con.iCombustion, con.iElectricity, con.iComputers)
+tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
 lTradingCompanyCivs = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 
@@ -194,6 +194,10 @@ class Companies:
 			if city.getNumRealBuilding(con.iLighthouse) > 0 or city.getNumRealBuilding(con.iVikingTradingPost) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iHarbor) > 0 or city.getNumRealBuilding(con.iCarthageCothon) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0: iValue += 1
+			
+		elif iCompany == iTextileIndustry:
+			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iFactory) > 0 or city.getNumRealBuilding(con.iGermanAssemblyPlant) > 0: iValue += 1
 
 		elif iCompany == iSteelIndustry:
 			if city.getNumRealBuilding(con.iFactory) > 0 or city.getNumRealBuilding(con.iGermanAssemblyPlant) > 0: iValue += 1
@@ -224,11 +228,11 @@ class Companies:
 		# resources
 		iTempValue = 0
 		bFound = False
-		for i in range(4):
+		for i in range(6):
 			iBonus = gc.getCorporationInfo(iCompany).getPrereqBonus(i)
 			if iBonus > -1:
 				if city.getNumBonuses(iBonus) > 0: bFound = True
-				if iCompany in [iFishingIndustry, iCerealIndustry]:
+				if iCompany in [iFishingIndustry, iCerealIndustry, iTextileIndustry]:
 					iTempValue += city.getNumBonuses(iBonus)
 				elif iCompany == iOilIndustry:
 					iTempValue += city.getNumBonuses(iBonus) * 4
@@ -245,20 +249,24 @@ class Companies:
 		# competition
 		if iCompany == iCerealIndustry and city.isHasCorporation(iFishingIndustry): iValue /= 2
 		elif iCompany == iFishingIndustry and city.isHasCorporation(iCerealIndustry): iValue /= 2
-		elif iCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
-			lOtherCompanies = []
-			for iTempCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
-				if iTempCompany != iCompany and city.isHasCorporation(iTempCompany):
-					lOtherCompanies.append(iTempCompany)
-			iValue *= (4 - len(lOtherCompanies))
-			iValue /= 4
+		elif iCompany == iSteelIndustry and city.isHasCorporation(iTextileIndustry): iValue /= 2
+		elif iCompany == iTextileIndustry and city.isHasCorporation(iSteelIndustry): iValue /= 2
+		elif iCompany == iOilIndustry and city.isHasCorporation(iComputerIndustry): iValue /= 2
+		elif iCompany == iComputerIndustry and city.isHasCorporation(iOilIndustry): iValue /= 2
+		#elif iCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
+		#	lOtherCompanies = []
+		#	for iTempCompany in [iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry]:
+		#		if iTempCompany != iCompany and city.isHasCorporation(iTempCompany):
+		#			lOtherCompanies.append(iTempCompany)
+		#	iValue *= (4 - len(lOtherCompanies))
+		#	iValue /= 4
 		
 		# protection for already established companies (in case of removals)
 		#if city.isHasCorporation(iCompany):
 		#	iValue += 1
 		
 		# threshold
-		if iValue < 1: return -1
+		if iValue < 2: return -1
 		
 		# spread it out
 		iValue -= owner.countCorporations(iCompany)

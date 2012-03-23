@@ -305,7 +305,7 @@
 	</Define>
 	<Define>
 		<DefineName>NUM_CORPORATION_PREREQ_BONUSES</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>6</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>NUM_ROUTE_PREREQ_OR_BONUSES</DefineName>

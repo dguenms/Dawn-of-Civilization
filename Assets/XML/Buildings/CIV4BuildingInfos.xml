@@ -23084,11 +23084,11 @@
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
-			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
+			<GlobalCorporationCommerce>CORPORATION_2</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>NONE</MaxStartEra>
-			<ObsoleteTech>NONE</ObsoleteTech>
+			<ObsoleteTech>TECH_ASSEMBLY_LINE</ObsoleteTech>
 			<!-- Rhye -->
 			<PrereqTech>TECH_ECONOMICS</PrereqTech>
 			<TechTypes/>
@@ -23180,7 +23180,7 @@
 			<iSpaceProductionModifier>0</iSpaceProductionModifier>
 			<iGlobalSpaceProductionModifier>0</iGlobalSpaceProductionModifier>
 			<!-- Rhye -->
-			<iTradeRoutes>3</iTradeRoutes>
+			<iTradeRoutes>2</iTradeRoutes>
 			<iCoastalTradeRoutes>0</iCoastalTradeRoutes>
 			<iGlobalTradeRoutes>0</iGlobalTradeRoutes>
 			<iTradeRouteModifier>0</iTradeRouteModifier>
@@ -23215,10 +23215,6 @@
 			<!-- Rhye - start -->
 			<BonusHealthChanges>
 				<BonusHealthChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
 					<BonusType>BONUS_SPICES</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
@@ -23227,7 +23223,20 @@
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
-			<BonusHappinessChanges/>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_COFFEE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_TEA</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_TOBACCO</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
 			<BonusProductionModifiers/>
 			<!-- Rhye - end -->
 			<UnitCombatFreeExperiences/>
@@ -23277,11 +23286,11 @@
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
-			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
+			<GlobalCorporationCommerce>CORPORATION_2</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>NONE</MaxStartEra>
-			<ObsoleteTech>NONE</ObsoleteTech>
+			<ObsoleteTech>TECH_ASSEMBLY_LINE</ObsoleteTech>
 			<!-- Rhye -->
 			<PrereqTech>TECH_ASTRONOMY</PrereqTech>
 			<TechTypes/>
@@ -23373,7 +23382,7 @@
 			<iSpaceProductionModifier>0</iSpaceProductionModifier>
 			<iGlobalSpaceProductionModifier>0</iGlobalSpaceProductionModifier>
 			<!-- Rhye -->
-			<iTradeRoutes>3</iTradeRoutes>
+			<iTradeRoutes>2</iTradeRoutes>
 			<iCoastalTradeRoutes>0</iCoastalTradeRoutes>
 			<iGlobalTradeRoutes>0</iGlobalTradeRoutes>
 			<iTradeRouteModifier>0</iTradeRouteModifier>
@@ -23408,10 +23417,6 @@
 			<!-- Rhye - start -->
 			<BonusHealthChanges>
 				<BonusHealthChange>
-					<BonusType>BONUS_SILK</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-				<BonusHealthChange>
 					<BonusType>BONUS_SPICES</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
@@ -23420,7 +23425,20 @@
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
-			<BonusHappinessChanges/>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_COFFEE</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_TEA</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_TOBACCO</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
 			<BonusProductionModifiers/>
 			<!-- Rhye - end -->
 			<UnitCombatFreeExperiences/>
