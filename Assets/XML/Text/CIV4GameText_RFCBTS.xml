@@ -531,7 +531,7 @@
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Cereal Industry</Text>
+			<Text>Getreideindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
@@ -555,7 +555,7 @@
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Fishing Industry</Text>
+			<Text>Fischereiindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
@@ -571,7 +571,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_6</Tag>
+		<Tag>TXT_KEY_CORPORATION_7</Tag>
 		<English>Oil Industry</English>
 		<French>
 			<Text>Oil Industry</Text>
@@ -579,7 +579,7 @@
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Oil Industry</Text>
+			<Text>Ölindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
@@ -595,7 +595,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_8</Tag>
+		<Tag>TXT_KEY_CORPORATION_9</Tag>
 		<English>Computer Industry</English>
 		<French>
 			<Text>Computer Industry</Text>
@@ -603,7 +603,7 @@
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Computer Industry</Text>
+			<Text>Computerindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
@@ -619,7 +619,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_5</Tag>
+		<Tag>TXT_KEY_CORPORATION_6</Tag>
 		<English>Steel Industry</English>
 		<French>
 			<Text>Steel Industry</Text>
@@ -627,7 +627,7 @@
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Steel Industry</Text>
+			<Text>Stahlindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
@@ -643,7 +643,31 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_7</Tag>
+		<Tag>TXT_KEY_CORPORATION_5</Tag>
+		<English>Textile Industry</English>
+		<French>
+			<Text>Textile Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Textilindustrie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Textile Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Textile Industry</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_8</Tag>
 		<English>Luxury Industry</English>
 		<French>
 			<Text>Luxury Industry</Text>
@@ -651,7 +675,7 @@
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Luxury Industry</Text>
+			<Text>Luxusindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>

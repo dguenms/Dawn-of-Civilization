@@ -49,8 +49,8 @@ class CvCorporationScreen:
 		self.Y_EXIT = 726
 
 		self.LEFT_EDGE_TEXT = 10
-		self.X_CORPORATION_START = 70 # edead (155)
-		self.DX_CORPORATION = 113 # edead (116)
+		self.X_CORPORATION_START = 65 # edead (155) # Leoreth (70)
+		self.DX_CORPORATION = 113 # edead (116) # Leoreth (113)
 		self.Y_CORPORATION = 70 # edead (35)
 		self.Y_GREAT_PERSON = 90
 		self.Y_BONUSES = 112 # edead (77)
@@ -205,20 +205,20 @@ class CvCorporationScreen:
 		# Headquarters
 		#screen.setLabelAt("", szArea, localText.getText("TXT_KEY_CORPORATION_SCREEN_HEADQUARTERS", ()), CvUtil.FONT_LEFT_JUSTIFY, self.LEFT_EDGE_TEXT, self.Y_HEADQUARTERS, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
-		xLoop = self.X_CORPORATION_START
-		for i in range(gc.getNumCorporationInfos()):
-			pHeadquarters = gc.getGame().getHeadquarters(i)
-			if pHeadquarters.isNone():
-				szFounded = u"-"
-				screen.setLabelAt("", szArea, szFounded, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HEADQUARTERS, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)				
-			elif not pHeadquarters.isRevealed(gc.getPlayer(self.iActivePlayer).getTeam(), False):
-				szFounded = localText.getText("TXT_KEY_UNKNOWN", ())
-				screen.setLabelAt("", szArea, szFounded, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HEADQUARTERS, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-			else:
-				szFounded = pHeadquarters.getName()
-				screen.setLabelAt("", szArea, "(%s)" % gc.getPlayer(pHeadquarters.getOwner()).getCivilizationAdjective(0), CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HEADQUARTERS+8, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-				screen.setLabelAt("", szArea, szFounded, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HEADQUARTERS-8, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-			xLoop += self.DX_CORPORATION
+		#xLoop = self.X_CORPORATION_START
+		#for i in range(gc.getNumCorporationInfos()):
+		#	pHeadquarters = gc.getGame().getHeadquarters(i)
+		#	if pHeadquarters.isNone():
+		#		szFounded = u"-"
+		#		screen.setLabelAt("", szArea, szFounded, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HEADQUARTERS, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)				
+		#	elif not pHeadquarters.isRevealed(gc.getPlayer(self.iActivePlayer).getTeam(), False):
+		#		szFounded = localText.getText("TXT_KEY_UNKNOWN", ())
+		#		screen.setLabelAt("", szArea, szFounded, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HEADQUARTERS, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		#	else:
+		#		szFounded = pHeadquarters.getName()
+		#		screen.setLabelAt("", szArea, "(%s)" % gc.getPlayer(pHeadquarters.getOwner()).getCivilizationAdjective(0), CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HEADQUARTERS+8, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		#		screen.setLabelAt("", szArea, szFounded, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HEADQUARTERS-8, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		#	xLoop += self.DX_CORPORATION
 								
 		self.iCorporationSelected = -1
 		self.iCorporationExamined = self.iCorporationSelected

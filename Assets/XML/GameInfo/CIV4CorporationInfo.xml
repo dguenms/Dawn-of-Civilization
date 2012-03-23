@@ -48,10 +48,12 @@
 				<BonusType>BONUS_SPICES</BonusType>
 				<BonusType>BONUS_SUGAR</BonusType>
 				<BonusType>BONUS_BANANA</BonusType>
-				<BonusType>BONUS_IVORY</BonusType>
+				<BonusType>BONUS_COFFEE</BonusType>
+				<BonusType>BONUS_TEA</BonusType>
+				<BonusType>BONUS_TOBACCO</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
-				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>1</iHeadquarterCommerce>
 			</HeadquarterCommerces>
 			<BonusProduced>NONE</BonusProduced>
 			<CommercesProduced>
@@ -132,9 +134,45 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_5</Type>	<!-- Steel Industry -->
+			<Type>CORPORATION_5</Type>	<!-- Textile Industry -->
 			<Description>TXT_KEY_CORPORATION_5</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_5_PEDIA</Civilopedia>
+			<TechPrereq>NONE</TechPrereq>
+			<FreeUnitClass>NONE</FreeUnitClass>
+			<iSpreadFactor>200</iSpreadFactor>
+			<iSpreadCost>50</iSpreadCost>
+			<iMaintenance>0</iMaintenance>
+			<PrereqBonuses>
+				<BonusType>BONUS_SHEEP</BonusType>
+				<BonusType>BONUS_COTTON</BonusType>
+				<BonusType>BONUS_SILK</BonusType>
+				<BonusType>BONUS_FUR</BonusType>
+				<BonusType>BONUS_DYE</BonusType>
+			</PrereqBonuses>
+			<HeadquarterCommerces>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+				<iHeadquarterCommerce>0</iHeadquarterCommerce>
+			</HeadquarterCommerces>
+			<BonusProduced>NONE</BonusProduced>
+			<CommercesProduced>
+				<iCommerceProduced>100</iCommerceProduced>
+				<iCommerceProduced>0</iCommerceProduced>
+			</CommercesProduced>
+			<YieldsProduced>
+				<iYieldProduced>0</iYieldProduced>
+				<iYieldProduced>50</iYieldProduced>
+				<iYieldProduced>0</iYieldProduced>
+			</YieldsProduced>
+			<Button>,Art/Interface/Buttons/WorldBuilder/Spices.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,14</Button>
+			<MovieFile>NONE</MovieFile>
+			<MovieSound>NONE</MovieSound>
+			<Sound>AS2D_BUILD_BANK</Sound>
+		</CorporationInfo>
+		<CorporationInfo>
+			<Type>CORPORATION_6</Type>	<!-- Steel Industry -->
+			<Description>TXT_KEY_CORPORATION_6</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_6_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -167,9 +205,9 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_6</Type>	<!-- Oil Industry -->
-			<Description>TXT_KEY_CORPORATION_6</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_6_PEDIA</Civilopedia>
+			<Type>CORPORATION_7</Type>	<!-- Oil Industry -->
+			<Description>TXT_KEY_CORPORATION_7</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_7_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -197,9 +235,9 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_7</Type>	<!-- Luxury Industry -->
-			<Description>TXT_KEY_CORPORATION_7</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_7_PEDIA</Civilopedia>
+			<Type>CORPORATION_8</Type>	<!-- Luxury Industry -->
+			<Description>TXT_KEY_CORPORATION_8</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_8_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -230,9 +268,9 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_8</Type>	<!-- Computers Industry -->
-			<Description>TXT_KEY_CORPORATION_8</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_8_PEDIA</Civilopedia>
+			<Type>CORPORATION_9</Type>	<!-- Computers Industry -->
+			<Description>TXT_KEY_CORPORATION_9</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_9_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
