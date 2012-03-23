@@ -358,13 +358,31 @@
 			<FontButtonIndex>37</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_COFFEE</Type>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.5</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Coffee/Cofwes.nif</NIF>
+			<KFM>Art/Terrain/Resources/Coffee/Cofwes.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/Coffee.dds</Button>
+			<FontButtonIndex>38</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_TEA</Type>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.6</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Tea/Spices.nif</NIF>
+			<KFM>Art/Terrain/Resources/Tea/Spices.kfm</KFM>
+			<Button>Art/Interface/Buttons/Resources/Tea.dds</Button>
+			<FontButtonIndex>39</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_BLUE</Type>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.6</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_blue.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,2,13</Button>
-			<FontButtonIndex>38</FontButtonIndex>
+			<FontButtonIndex>40</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_PURPLE</Type>
@@ -373,7 +391,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_purple.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,13</Button>
-			<FontButtonIndex>39</FontButtonIndex>
+			<FontButtonIndex>41</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_RED</Type>
@@ -382,7 +400,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_red.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,13</Button>
-			<FontButtonIndex>40</FontButtonIndex>
+			<FontButtonIndex>42</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_YELLOW</Type>
@@ -391,7 +409,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_yellow.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,13</Button>
-			<FontButtonIndex>41</FontButtonIndex>
+			<FontButtonIndex>43</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_GREEN</Type>
@@ -400,7 +418,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_green.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,6,13</Button>
-			<FontButtonIndex>42</FontButtonIndex>
+			<FontButtonIndex>44</FontButtonIndex>
 		</BonusArtInfo>
 		<!-- Rhye - start -->
 		<BonusArtInfo>
@@ -410,7 +428,7 @@
 			<NIF>Art/Terrain/Resources/Swamp/Wheat.nif</NIF>
 			<KFM>Art/Terrain/Resources/Wheat/Wheat.kfm</KFM>
 			<Button>,Art/Interface/Buttons/BaseTerrain/Marsh.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,2,2</Button>
-			<FontButtonIndex>43</FontButtonIndex>
+			<FontButtonIndex>45</FontButtonIndex>
 		</BonusArtInfo>
 		<!-- Rhye - end -->
 	</BonusArtInfos>

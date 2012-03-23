@@ -7514,6 +7514,9 @@ void CvCity::setOccupationTimer(int iNewValue)
 {
 	bool bOldOccupation;
 
+	//Leoreth: cap city disorder at 4 turns
+	iNewValue = std::min(iNewValue, 4);
+
 	if (getOccupationTimer() != iNewValue)
 	{
 		bOldOccupation = isOccupation();
@@ -7539,7 +7542,8 @@ void CvCity::setOccupationTimer(int iNewValue)
 
 void CvCity::changeOccupationTimer(int iChange)
 {
-	setOccupationTimer(getOccupationTimer() + iChange);
+	//Leoreth: occupation time capped at 4
+	setOccupationTimer(std::min(getOccupationTimer() + iChange, 4));
 }
 
 
@@ -9095,6 +9099,28 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
+
+	// Leoreth: all culture American cities in North America counts as American
+	if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
+	{
+		if (eIndex == (PlayerTypes)AMERICA)
+		{
+			int iAmericanCulture = 0;
+			int iI;
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).isAlive())
+				{
+					iAmericanCulture += m_aiCulture[iI];
+				}
+			}
+			return iAmericanCulture / 100;
+		} else
+		{
+			return 0;
+		}
+	}
+
 	return m_aiCulture[eIndex] / 100;
 }
 
@@ -9102,6 +9128,28 @@ int CvCity::getCultureTimes100(PlayerTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
+
+	// Leoreth: all culture American cities in North America counts as American
+	if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
+	{
+		if (eIndex == (PlayerTypes)AMERICA)
+		{
+			int iAmericanCulture = 0;
+			int iI;
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).isAlive())
+				{
+					iAmericanCulture += m_aiCulture[iI];
+				}
+			}
+			return iAmericanCulture;
+		} else
+		{
+			return 0;
+		}
+	}
+
 	return m_aiCulture[eIndex];
 }
 
@@ -14524,10 +14572,13 @@ void CvCity::getBuildQueue(std::vector<std::string>& astrQueue) const
 	}
 }
 
+int CvCity::getRegionID() const
+{
+	return GC.getMapINLINE().plotSorenINLINE(getX_INLINE(), getY_INLINE())->getRegionID();
+}
+
 //Leoreth: to protect Middle Eastern cities from repeated invasions
 bool CvCity::isMiddleEast() const
 {
-	int x = getX_INLINE();
-	int y = getY_INLINE();
-	return ((x >= 67 && x <= 72 && y >= 31 && y <= 37) || (x >= 68 && x <= 72 && y >= 38 && y <= 46) || (x >= 73 && x <= 85 && y >= 38 && y <= 46) || (x == 68 && y == 45));
+	return (getRegionID() == REGION_PERSIA || getRegionID() == REGION_MESOPOTAMIA || getRegionID() == REGION_ANATOLIA || (getX_INLINE() == 68 && getY_INLINE() == 45));
 }

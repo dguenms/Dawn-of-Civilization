@@ -153,7 +153,7 @@ class Companies:
 		if iCompany == iSilkRoute and not self.isCityInArea(tPlot, tSilkRouteTL, tSilkRouteBR) and not self.isCityInArea(tPlot, tMiddleEastTL, tMiddleEastBR):
 			return -1
 		if iCompany == iTradingCompany:
-			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR):
+			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(con.iTradingCompany) or city.isHasRealBuilding(con.iIberianTradingCompany)):
 				return -1
 			elif self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR):
 				iValue += 1
@@ -170,7 +170,7 @@ class Companies:
 		
 		# religions
 		if iCompany == iSilkRoute:
-			if owner.getStateReligion() == con.iJudaism or owner.getStateReligion() == con.iChristianity:
+			if owner.getStateReligion() in [con.iJudaism, con.iChristianity, con.iOrthodoxy]:
 				iValue -= 1
 		
 		# various bonuses
@@ -183,6 +183,7 @@ class Companies:
 			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iCustomHouse) > 0 or city.getNumRealBuilding(con.iPortugalFeitoria) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iBank) > 0 or city.getNumRealBuilding(con.iEnglishStockExchange) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iTradingCompany) > 0 or city.getNumRealBuilding(con.iIberianTradingCompany) > 0: iValue += 2
 
 		elif iCompany == iCerealIndustry:
 			if city.getNumRealBuilding(con.iGranary) > 0 or city.getNumRealBuilding(con.iIncanTerrace) > 0: iValue += 1

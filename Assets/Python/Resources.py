@@ -31,6 +31,10 @@ iDye = con.iDye
 iRice = con.iRice
 iClam = con.iClam
 iFish = con.iFish
+iCoffee = con.iCoffee
+iTea = con.iTea
+iTobacco = con.iTobacco
+iSpices = con.iSpices
 
 iCottage = con.iCottage
 iSilk = con.iSilk
@@ -136,7 +140,7 @@ class Resources:
                         gc.getMap().plot(28, 46).setBonusType(iCow) #Washington area
                         gc.getMap().plot(30, 49).setBonusType(iCow) #New York area
                         gc.getMap().plot(25, 49).setBonusType(iCow) #Lakes
-                        gc.getMap().plot(24, 43).setBonusType(iCow) #Jacksonville area
+                        gc.getMap().plot(23, 42).setBonusType(iCow) #Jacksonville area
                         gc.getMap().plot(18, 46).setBonusType(iCow) #Colorado 
                         gc.getMap().plot(11, 47).setBonusType(iCow) #California
                         gc.getMap().plot(20, 45).setBonusType(iCow) #Texas
@@ -164,6 +168,8 @@ class Resources:
                         gc.getMap().plot(67, 47).setBonusType(iCorn) #Romania
 
                         gc.getMap().plot(106, 50).setBonusType(iCorn) #Manchuria
+			
+			gc.getMap().plot(92, 35).setBonusType(iSpices) #Deccan
                        
 
                 if (iGameTurn == getTurnForYear(1700)):
@@ -177,9 +183,26 @@ class Resources:
                         gc.getMap().plot(27, 36).setBonusType(iSugar) #Caribbean
                         gc.getMap().plot(39, 25).setBonusType(iSugar) #Brazil
                         gc.getMap().plot(37, 20).setBonusType(iSugar) #inner Brazil
+			gc.getMap().plot(29, 37).setBonusType(iSugar) #Hispaniola
 
                         gc.getMap().plot(104, 52).setBonusType(iCorn) #Manchuria
                         gc.getMap().plot(89, 36).setBonusType(iCorn) #India
+			
+			gc.getMap().plot(38, 18).setBonusType(iCoffee) #Brazil
+			gc.getMap().plot(39, 20).setBonusType(iCoffee) #Brazil
+			gc.getMap().plot(38, 22).setBonusType(iCoffee) #Brazil
+			gc.getMap().plot(27, 30).setBonusType(iCoffee) #Colombia
+			gc.getMap().plot(29, 30).setBonusType(iCoffee) #Colombia
+			gc.getMap().plot(26, 27).setBonusType(iCoffee) #Colombia
+			gc.getMap().plot(104, 25).setBonusType(iCoffee) #Java
+			
+			gc.getMap().plot(67, 44).setBonusType(iTobacco) #Turkey
+			
+			gc.getMap().plot(90, 35).setBonusType(iTea) #West Bengal
+			
+			gc.getMap().plot(39, 16).setBonusType(iFish) #Brazil
+			
+			gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
 
                 if (iGameTurn == getTurnForYear(1850)):
                         gc.getMap().plot(12, 45).setBonusType(iWine) #California
@@ -195,8 +218,18 @@ class Resources:
                         gc.getMap().plot(12, 49).setBonusType(iRice) #California
 
                         gc.getMap().plot(11, 45).setBonusType(iFish) #California
+			gc.getMap().plot(10, 45).setBonusType(iFish) #California
+			gc.getMap().plot(87, 35).setBonusType(iFish) #Bombay
 
 			gc.getMap().plot(115, 52).setBonusType(iCow) #Hokkaido
+			
+			gc.getMap().plot(1, 38).setBonusType(iSugar) #Hawaii
+			gc.getMap().plot(5, 36).setBonusType(iBanana) #Hawaii
+			
+			# flood plains in California
+			for tPlot in [(11, 46), (11, 47), (11, 48)]:
+				x, y = tPlot
+				gc.getMap().plot(x,y).setFeatureType(3, 0)
 
 
 

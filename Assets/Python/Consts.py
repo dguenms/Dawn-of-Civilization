@@ -1877,10 +1877,10 @@ iConquistador = iSpanishConquistador
 iWorkBoat = iWorkboat
 
 # initialise bonuses variables to bonuses IDs from WBS
-iNumBonuses = 36
+iNumBonuses = 39
 (iAluminium, iCoal, iCopper, iHorse, iIron, iMarble, iOil, iStone, iUranium, iBanana, iClam, iCorn, iCow, iCrab,
 iDeer, iFish, iPig, iRice, iSheep, iWheat, iDye, iFur, iGems, iGold, iIncense, iIvory, iSilk, iSilver, iSpices,
-iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton) = range(iNumBonuses)
+iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobacco) = range(iNumBonuses)
 
 #Buildings (update Persian UHV every time this is changed)
 

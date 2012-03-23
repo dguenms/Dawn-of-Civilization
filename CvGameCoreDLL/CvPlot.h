@@ -488,6 +488,10 @@ public:
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 
+	//Leoreth
+	int getRegionID() const;
+	CvWString getRegionName() const;
+
 protected:
 
 	short m_iX;
@@ -580,10 +584,6 @@ protected:
 
 	// added so under cheat mode we can access protected stuff
 	friend class CvGameTextMgr;
-
-	//Leoreth
-	int getRegionID() const;
-	CvWString getRegionName() const;
 };
 
 #endif
