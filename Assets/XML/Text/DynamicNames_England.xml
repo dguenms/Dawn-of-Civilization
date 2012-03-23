@@ -9,6 +9,14 @@
 		<English>The English</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_BRITAIN_SHORT_DESC</Tag>
+		<English>Britain</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_ADJECTIVE</Tag>
+		<English>British</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_DESC_PEOPLES</Tag>
 		<English>Anglo-Saxon Peoples</English>
 	</TEXT>

@@ -50,7 +50,7 @@ class CvCorporationScreen:
 
 		self.LEFT_EDGE_TEXT = 10
 		self.X_CORPORATION_START = 65 # edead (155) # Leoreth (70)
-		self.DX_CORPORATION = 113 # edead (116) # Leoreth (113)
+		self.DX_CORPORATION = 100 # edead (116) # Leoreth (113)
 		self.Y_CORPORATION = 70 # edead (35)
 		self.Y_GREAT_PERSON = 90
 		self.Y_BONUSES = 112 # edead (77)

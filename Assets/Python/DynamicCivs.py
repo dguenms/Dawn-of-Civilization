@@ -779,10 +779,10 @@ class DynamicCivs:
 		gc.getPlayer(iCiv).setCivName(localText.getText(sName, ()), localText.getText(sShort, ()), localText.getText(sAdjective, ()))
 	
 	def setCivAdj(self, iCiv, sAdj):
-		gc.getPlayer(iCiv).setCivAdjective(localText.getText(sAdj, ()))
+		gc.getPlayer(iCiv).setCivAdjective(sAdj)
 		
 	def setCivShortDesc(self, iCiv, sShort):
-		gc.getPlayer(iCiv).setCivShortDescription(localText.getText(sShort, ()))
+		gc.getPlayer(iCiv).setCivShortDescription(sShort)
 		
 	def setLeader(self, iCiv, iLeader):
 		if gc.getPlayer(iCiv).getLeader() != iLeader:
@@ -847,6 +847,7 @@ class DynamicCivs:
 		elif iPlayer == iIndonesia: iThreshold = 4
 		elif iPlayer == iKorea: iThreshold = 3
 		elif iPlayer == iRussia: iThreshold = 8
+		elif iPlayer == iHolyRome and gc.getPlayer(iHolyRome).isReborn(): iThreshold = 3
 		elif iPlayer == iHolyRome: iThreshold = 4
 		elif iPlayer == iGermany: iThreshold = 4
 		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
@@ -1849,10 +1850,16 @@ class DynamicCivs:
 		
 		self.changeResurrections(iPlayer, 1)
 		
-		if iPlayer == iAztecs:
-			self.setCivName(iPlayer, "", "TXT_KEY_CIV_MEXICO_SHORT_DESC", "TXT_KEY_CIV_MEXICO_ADJECTIVE")
-		elif iPlayer == iInca:
-			self.setCivName(iPlayer, "", "TXT_KEY_CIV_PERU_SHORT_DESC", "TXT_KEY_CIV_PERU_ADJECTIVE")
+		if iVassal == iAztecs:
+			self.setCivAdjective(iVassal, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
+			self.setCivShortDesc(iVassal, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
+		elif iVassal == iInca:
+			self.setCivAdjective(iVassal, "TXT_KEY_CIV_PERU_ADJECTIVE")
+			self.setCivShortDesc(iVassal, "TXT_KEY_CIV_PERU_SHORT_DESC")
+		elif iVassal == iHolyRome:
+			self.setCivAdjective(iVassal, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
+			self.setCivAdjective(iVassal, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
+			
 		
                 self.setCivDesc(iPlayer, self.defaultNames[iPlayer])
                 self.checkName(iPlayer, tOriginalOwners)
@@ -1862,14 +1869,25 @@ class DynamicCivs:
                 iMaster, iVassal, bVassal, bCapitulated = argsList
 		
 		if iVassal == iAztecs:
-			self.setCivName(iVassal, "", "TXT_KEY_CIV_MEXICO_SHORT_DESC", "TXT_KEY_CIV_MEXICO_ADJECTIVE")
+			self.setCivAdjective(iVassal, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
+			self.setCivShortDesc(iVassal, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
 		elif iVassal == iInca:
-			self.setCivName(iVassal, "", "TXT_KEY_CIV_PERU_SHORT_DESC", "TXT_KEY_CIV_PERU_ADJECTIVE")
+			self.setCivAdjective(iVassal, "TXT_KEY_CIV_PERU_ADJECTIVE")
+			self.setCivShortDesc(iVassal, "TXT_KEY_CIV_PERU_SHORT_DESC")
 			
                 self.checkName(iVassal)
         
         def onPlayerChangeStateReligion(self, argsList):
                 iPlayer, iNewReligion, iOldReligion = argsList
+		
+		if iNewReligion in [con.iJudaism, con.iChristianity]:
+			if iVassal == iAztecs:
+				self.setCivAdjective(iVassal, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
+				self.setCivShortDesc(iVassal, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
+			elif iVassal == iInca:
+				self.setCivAdjective(iVassal, "TXT_KEY_CIV_PERU_ADJECTIVE")
+				self.setCivShortDesc(iVassal, "TXT_KEY_CIV_PERU_SHORT_DESC")
+			
                 self.checkName(iPlayer)
 
         def onRevolution(self, iPlayer):

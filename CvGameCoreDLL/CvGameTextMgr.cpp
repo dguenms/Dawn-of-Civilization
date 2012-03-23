@@ -9825,8 +9825,9 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 		if (iCorporation != eCorporation)
 		{
 			bool bCompeting = false;
-
 			CvCorporationInfo& kLoopCorporation = GC.getCorporationInfo((CorporationTypes)iCorporation);
+
+			/* Leoreth: competition handled in Python, display hardcoded here
 			for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 			{
 				if (kCorporation.getPrereqBonus(i) != NO_BONUS)
@@ -9845,7 +9846,19 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 				{
 					break;
 				}
-			}
+			}*/
+
+			// Cereal and Fishing
+			if (iCorporation == 2 && eCorporation == 3) bCompeting = true;
+			if (iCorporation == 3 && eCorporation == 2) bCompeting = true;
+
+			// Textile and Steel
+			if (iCorporation == 4 && eCorporation == 5) bCompeting = true;
+			if (iCorporation == 5 && eCorporation == 4) bCompeting = true;
+
+			// Oil and Computers
+			if (iCorporation == 6 && eCorporation == 8) bCompeting = true;
+			if (iCorporation == 8 && eCorporation == 6) bCompeting = true;
 
 			if (bCompeting)
 			{

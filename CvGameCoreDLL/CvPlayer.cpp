@@ -2469,59 +2469,12 @@ void CvPlayer::setCivDescription(std::wstring szNewDesc) //Rhye
 
 void CvPlayer::setCivShortDescription(std::wstring szNewShort) //Leoreth
 {
-	m_szCivShort = szNewShort;
-
-	gDLL->getInterfaceIFace()->setDirty(Fog_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(HighlightPlot_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(SelectionSound_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GlobeInfo_DIRTY_BIT, true);
+	GC.getInitCore().setCivShortDesc(getID(), szNewShort);
 }
 
 void CvPlayer::setCivAdjective(std::wstring szNewAdj) //Leoreth
 {
-	m_szCivAdj = szNewAdj;
-	gDLL->getInterfaceIFace()->setDirty(Fog_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
-	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(HighlightPlot_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(SelectionSound_DIRTY_BIT, true);
-	gDLL->getInterfaceIFace()->setDirty(GlobeInfo_DIRTY_BIT, true);
+	GC.getInitCore().setCivAdjective(getID(), szNewAdj);
 }
 
 //Rhye (jdog) -  end -----------------------
@@ -24190,7 +24143,7 @@ int CvPlayer::getReborn()
 
 void CvPlayer::setReborn()
 {
-	if (getID() == HOLY_ROME)
+	/*if (getID() == HOLY_ROME)
 	{
 		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_ADJECTIVE");
 		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_AUSTRIA_SHORT_DESC");
@@ -24209,7 +24162,7 @@ void CvPlayer::setReborn()
 	{
 		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_CARTHAGE_ADJECTIVE");
 		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_CARTHAGE_SHORT_DESC");
-	}
+	}*/
 
     m_bReborn = true;
 }

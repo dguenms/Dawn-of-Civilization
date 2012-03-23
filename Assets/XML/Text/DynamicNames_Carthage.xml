@@ -9,6 +9,14 @@
 		<English>The Phoenicians</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_SHORT_DESC</Tag>
+		<English>Phoenicia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PHOENICIA_ADJECTIVE</Tag>
+		<English>Phoenician</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES</Tag>
 		<English>Canaanite Peoples</English>
 	</TEXT>
