@@ -9,6 +9,14 @@
 		<English>The Mali</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SONGHAI_ADJECTIVE</Tag>
+		<English>Songhai</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SONGHAI_SHORT_DESC</Tag>
+		<English>Songhai</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MALI_DESC_PEOPLES</Tag>
 		<English>Madinka Peoples</English>
 	</TEXT>

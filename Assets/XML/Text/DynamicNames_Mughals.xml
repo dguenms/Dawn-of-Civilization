@@ -9,6 +9,14 @@
 		<English>The Mughals</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_PAKISTAN_ADJECTIVE</Tag>
+		<English>Pakistani</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PAKISTAN_SHORT_DESC</Tag>
+		<English>Pakistan</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DESC_PEOPLES</Tag>
 		<English>Ghorid Peoples</English>
 	</TEXT>

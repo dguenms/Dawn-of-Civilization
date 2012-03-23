@@ -340,31 +340,13 @@
 			<FontButtonIndex>35</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
-			<Type>ART_DEF_BONUS_TOBACCO</Type>
-			<fScale>0.5</fScale>
-			<fInterfaceScale>1.6</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/Tobacco/tobacco.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/WorldBuilder/Spices.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,2,14</Button>
-			<FontButtonIndex>36</FontButtonIndex>
-		</BonusArtInfo>
-		<BonusArtInfo>
-			<Type>ART_DEF_BONUS_OLIVES</Type>
-			<fScale>0.5</fScale>
-			<fInterfaceScale>1.6</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/Olives/olives.nif</NIF>
-			<KFM/>
-			<Button>,Art/Interface/Buttons/WorldBuilder/Spices.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,14</Button>
-			<FontButtonIndex>37</FontButtonIndex>
-		</BonusArtInfo>
-		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_COFFEE</Type>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.5</fInterfaceScale>
 			<NIF>Art/Terrain/Resources/Coffee/Cofwes.nif</NIF>
 			<KFM>Art/Terrain/Resources/Coffee/Cofwes.kfm</KFM>
 			<Button>Art/Interface/Buttons/Resources/Coffee.dds</Button>
-			<FontButtonIndex>38</FontButtonIndex>
+			<FontButtonIndex>36</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_TEA</Type>
@@ -373,6 +355,24 @@
 			<NIF>Art/Terrain/Resources/Tea/Spices.nif</NIF>
 			<KFM>Art/Terrain/Resources/Tea/Spices.kfm</KFM>
 			<Button>Art/Interface/Buttons/Resources/Tea.dds</Button>
+			<FontButtonIndex>37</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_TOBACCO</Type>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.6</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Tobacco/tobacco.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/WorldBuilder/Spices.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,2,14</Button>
+			<FontButtonIndex>38</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_OLIVES</Type>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.6</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Olives/olives.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/WorldBuilder/Spices.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,14</Button>
 			<FontButtonIndex>39</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>

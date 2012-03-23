@@ -9,6 +9,30 @@
 		<English>The Khmer</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_NANZHAO_ADJECTIVE</Tag>
+		<English>Nanzhao</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NANZHAO_SHORT_DESC</Tag>
+		<English>Nanzhao</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_ADJECTIVE</Tag>
+		<English>Vietnamese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIETNAM_SHORT_DESC</Tag>
+		<English>Vietnam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_ADJECTIVE</Tag>
+		<English>Burmese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_ADJECTIVE</Tag>
+		<English>Burma</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_DESC_PEOPLES</Tag>
 		<English>Khmer Peoples</English>
 	</TEXT>

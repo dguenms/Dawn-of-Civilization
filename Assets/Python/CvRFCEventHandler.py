@@ -423,7 +423,8 @@ class CvRFCEventHandler:
 					y = gc.getPlayer(con.iCarthage).getCapitalCity().getY()
 					gc.getMap().plot(58,39).getPlotCity().setHasRealBuilding(con.iPalace, True)
 					gc.getMap().plot(x,y).getPlotCity().setHasRealBuilding(con.iPalace, False)
-				gc.getPlayer(con.iCarthage).setReborn()
+				dc.setCivAdjective(iOwner, "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
+				dc.setCivShortDesc(iOwner, "TXT_KEY_CIV_CARTHAGE_SHORT_DESC")
 
 
                 if (self.vic.getNewWorld(0) == -1):

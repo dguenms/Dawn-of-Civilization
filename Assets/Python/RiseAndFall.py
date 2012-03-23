@@ -5361,7 +5361,7 @@ class RiseAndFall:
 		pHolyRome.setReborn()
 		
 		dc.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
-		dc.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
+		dc.setCivAdjective(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
 		
 
 
