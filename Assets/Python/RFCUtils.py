@@ -1404,12 +1404,12 @@ class RFCUtils:
 				self.flipCity((x,y), False, True, iCiv, [])
 				self.makeUnit(con.iWorker, iCiv, (x,y), iNumUnits)
 				if gc.getTeam(iCiv).isHasTech(con.iRifling):
-					self.makeUnit(con.iRifleman, iCiv, (x,y), iNumUnits)
-				else:
 					if iCiv == con.iEngland:
 						self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), iNumUnits)
 					else:
-						self.makeUnit(con.iMusketman, iCiv, (x,y), iNumUnits)
+						self.makeUnit(con.iRifleman, iCiv, (x,y), iNumUnits)
+				else:
+					self.makeUnit(con.iMusketman, iCiv, (x,y), iNumUnits)
 				if gc.getPlayer(iCiv).getStateReligion() != -1:
 					self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 			else:

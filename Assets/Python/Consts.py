@@ -402,7 +402,7 @@ tResurrectionIntervals = (
 [(1850, 2020)], #Ethiopia
 [(1800, 2020)], #Korea
 [], #Maya
-[(1100, 1300)], #Byzantium
+[(1100, 1280)], #Byzantium
 [(1520, 2020)], #Vikings
 [(1900, 2020)], #Arabia
 [(1950, 2020)], #Khmer
