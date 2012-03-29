@@ -242,7 +242,7 @@ class DynamicCivs:
 		self.specificVassalNames = {
 			iEgypt : {
 				iCarthage : "TXT_KEY_CIV_PHOENICIA_EGYPTIAN_VASSAL",	# Retenu
-				iEthiopia : "TKT_KEY_CIV_ETHIOPIA_EGYPTIAN_VASSAL"},	# Punt
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_EGYPTIAN_VASSAL"},	# Punt
 			#iIndia - none so far
 			iChina : {
 				iEgypt : "TXT_KEY_CIV_EGYPT_CHINESE_VASSAL",
