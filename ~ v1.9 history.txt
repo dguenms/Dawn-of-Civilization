@@ -115,7 +115,7 @@
 # Changed Ho Trai from +1 happiness with state religion to +25% culture
 # Thai Chang Suek now also have +50% attack against Riflemen
 # Added the Grand Canal wonder (Machinery, Calendar): +2 commerce per river tile for its city, expires with Replaceable Parts
-# Added the Floating Gardens wonder (Civil Serive, Corn): +1 food per river tile for its city, expires with Optics
+# Added the Floating Gardens wonder (Construction, Corn): +1 food per river tile for its city, expires with Optics
 # Added the Trafalgar Square wonder (Chemistry, Astronomy, naval unit with level three or higher): +5 XP and +50% for naval units, expires with Combustion
 # Borobudur now enables Great Prophets to creat great works like Great Artists
 # great work now produces 800 culture per game era
