@@ -5457,7 +5457,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									iValue /= 3;
 								}*/
 
-								if (iI == GUILDS || iI == MILITARY_TRADITION) {
+								if (iI == GUILDS /*|| iI == MILITARY_TRADITION*/) {
 									iValue *= 3;
 									iValue /= 2;
 								}
@@ -5594,7 +5594,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                     }
                                     else    // Leoreth - Renaissance Italy
                                     {
-                                        if (iI == RADIO || iI == FASCISM || iI == BANKING || iI == OPTICS)
+                                        if (iI == RADIO || iI == FASCISM || iI == BANKING || iI == OPTICS || iI == PATRONAGE)
                                             iValue *= 2;
                                         if (iI == FISSION){
                                             iValue *= 5;
@@ -5688,7 +5688,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case FRANCE:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS)
+									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS || iI == PATRONAGE)
 										iValue *= 2;
 									if (iI == DRAMA || iI == MUSIC || iI == GUILDS || iI == CHEMISTRY) {
 										iValue *= 3;
@@ -5736,6 +5736,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									break;
 								case RUSSIA:
 									if (iI == COMMUNISM)
+										iValue *= 3;
+									if (iI == MILITARY_SCIENCE)
 										iValue *= 2;
 									if (iI == MEDITATION)
 										iValue /= 2;
@@ -5759,6 +5761,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									break;
 								case MALI:
+									if (iI == PAPER)
+										iValue *= 3;
 									break;
 								case TURKEY:
 									if (iI == GUNPOWDER || iI == RIFLING || iI == MILITARY_TRADITION)
@@ -5769,7 +5773,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 3;
 									if (iI == CONSTITUTION)
 										iValue *= 3;
-									if (iI == PHILOSOPHY || iI == MUSIC || iI == PAPER)
+									if (iI == PHILOSOPHY || iI == MUSIC || iI == PAPER || iI == PATRONAGE)
 										iValue *= 2;
 									if (iI == ENGINEERING)
 									{
@@ -6467,6 +6471,16 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 		iAttitude /= 2;
 	}
 	else if (((getStateReligion() == HINDUISM) && (GET_PLAYER(ePlayer).getStateReligion() == BUDDHISM)) || ((getStateReligion() == BUDDHISM) && (GET_PLAYER(ePlayer).getStateReligion() == HINDUISM)))
+	{
+		iAttitude /= 2;
+	}
+
+	// Same with Orthodoxy combined with Catholicism or Protestantism
+	if (((getStateReligion() == ORTHODOXY) && (GET_PLAYER(ePlayer).getStateReligion() == CATHOLICISM)) || ((getStateReligion() == CATHOLICISM) && (GET_PLAYER(ePlayer).getStateReligion() == ORTHODOXY)))
+	{
+		iAttitude /= 2;
+	}
+	if (((getStateReligion() == ORTHODOXY) && (GET_PLAYER(ePlayer).getStateReligion() == PROTESTANTISM)) || ((getStateReligion() == PROTESTANTISM) && (GET_PLAYER(ePlayer).getStateReligion() == ORTHODOXY)))
 	{
 		iAttitude /= 2;
 	}
@@ -15184,6 +15198,10 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 
 	iBestValue = MAX_INT;
 	pBestUnit = NULL;
+
+	// Leoreth: AI disband all units otherwise, and gets conquered at spawn
+	if (getID() == GERMANY)
+		return false;
 
 	for(pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 	{

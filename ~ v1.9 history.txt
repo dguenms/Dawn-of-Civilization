@@ -82,17 +82,47 @@
 # Adjusted several UHV goals to different game speeds
 # Byzantium spawns with a navy now
 # Respawning civs now correctly ask to flip human cities
-# prohibited outside culture to intrude too far into Tibet
+# prohibited outside culture from intruding too far into Tibet
 # reduced Spanish Citadel cost to 50%, removed the stone modifier
 # Harmandir Sahib now gets double production speed from gold
 # Increased Ironclad moves to 4
 # Replaced Redcoats' bonus against gunpowder units by collateral damage
 # Coal Plants now require Electricity
 # Civs with the lowest stability now get checked for collapse first, instead of older civs
-# Cities of collapsing civs are more unlikely to flip to other civs
+# Cities of collapsing civs are less likely to flip to other civs
 # Silk Route now can spread to Chinese cities
 # Trading Company now can also spread to cities that build the Trading Company building
 # Added new resources: Coffee, Tobacco, Tea
 # Minor map adjustments in Colombia, Brazil, Sri Lanka, Mexico, Caribbean, California
+# The trading company building now creates gold for every trading company in your cities, and gives extra happiness with coffee, tea, tobacco
+# Added Textile Industry: sheep, silk, fur, cotton, dye -> gold, production (requires Steam Power)
+# Competition changed and displayed correctly: Steel and Textile, Fishing and Cereal, Oil and Computer
 # City disorder limited to four turns
 # All culture in American cities in North America counts as American
+# Reduced Khajuraho cost
+# Statue of Zeus obsoletes with Theology instead of Divine Right
+# Peter and Catherine care less about religion so that Orthodoxy doesn't make them overly hostile
+# University of Sankore obsoletes with Education
+# changed the way resurrections work: civs will now start with techs on par with their geographical region instead of all civs, this means that resurrected Asian civs can't catch up easily by respawning
+# Replaced the Pantheon with the Leaning Tower again
+# Added the Patronage tech, requires Guilds and Music, gives a free great artist for the first civ instead of Music, required for Leaning Tower
+# Changed La Mezquita to two free priests
+# Added the Versailles wonder (Patronage and Divine Right): starts a golden age
+# removed the Great Bath
+# Sistine Chapel now requires Patronage
+# The Greek UP now expires after the Classical Era
+# Added the Empire State Building wonder (Steel, Industrialism): +1 gold per population
+# Changed Ho Trai from +1 happiness with state religion to +25% culture
+# Thai Chang Suek now also have +50% attack against Riflemen
+# Added the Grand Canal wonder (Machinery, Calendar): +2 commerce per river tile for its city, expires with Replaceable Parts
+# Added the Floating Gardens wonder (Civil Serive, Corn): +1 food per river tile for its city, expires with Optics
+# Added the Trafalgar Square wonder (Chemistry, Astronomy, naval unit with level three or higher): +5 XP and +50% for naval units, expires with Combustion
+# Borobudur now enables Great Prophets to creat great works like Great Artists
+# great work now produces 800 culture per game era
+# Kremlin now requires Gunpowder, expires with Communism and gives +2 espionage per state religion building
+# Westminster Palace expires with Fiber Optics
+# Sphinx now gives unlimited artists to its city
+# Extra trade route yield effect removed from Porcelain Tower, gives +2 free merchants instead
+# Reduced the requirement of the first Japanese goal to 20000 culture
+# Added the Lubyanka wonder (Communism): +2 espionage per specialist
+# Negative relation modifiers between Orthodoxy and Protestantism or Catholicism halved

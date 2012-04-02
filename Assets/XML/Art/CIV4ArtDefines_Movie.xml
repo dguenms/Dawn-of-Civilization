@@ -322,5 +322,17 @@
 			<Type>ART_DEF_MOVIE_WESTMINSTER</Type>
 			<Path>Art/Movies/Wonders/westminster.dds</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TRAFALGAR_SQUARE</Type>
+			<Path>Art/Movies/Wonders/TrafalgarSquare.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_EMPIRE_STATE</Type>
+			<Path>Art/Structures/Wonders/Empire State Building/EmpireStateBuilding.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_KGB</Type>
+			<Path>Art/Movies/Wonders/KGB.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

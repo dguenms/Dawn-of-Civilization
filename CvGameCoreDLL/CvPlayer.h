@@ -446,6 +446,10 @@ public:
 	int getHighestUnitLevel() const;																																					// Exposed to Python
 	void setHighestUnitLevel(int iNewValue);
 
+	//Leoreth
+	int getHighestNavalUnitLevel() const;
+	void setHighestNavalUnitLevel(int iNewValue);
+
 	int getConscriptCount() const;																																						// Exposed to Python
 	void setConscriptCount(int iNewValue);																															// Exposed to Python
 	void changeConscriptCount(int iChange);																															// Exposed to Python
@@ -1136,6 +1140,7 @@ protected:
 	int m_iConscriptCount;
 	int m_iMaxConscript;
 	int m_iHighestUnitLevel;
+	int m_iHighestNavalUnitLevel; //Leoreth
 	int m_iOverflowResearch;
 	int m_iNoUnhealthyPopulationCount;
 	int m_iExpInBorderModifier;

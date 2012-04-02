@@ -1249,8 +1249,8 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_LEANING_TOWER</Tag>	<!-- missing translations -->
+	<!--TEXT>
+		<Tag>TXT_KEY_BUILDING_LEANING_TOWER</Tag>
 		<English>The Pantheon</English>
 		<French>
 			<Text></Text>
@@ -1272,7 +1272,7 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
-	</TEXT>
+	</TEXT-->
 
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_CAPE_COAST</Tag>	<!-- missing translations -->

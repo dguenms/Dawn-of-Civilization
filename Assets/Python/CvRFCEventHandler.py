@@ -181,6 +181,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("playerChangeStateReligion", self.onPlayerChangeStateReligion)
 		eventManager.addEventHandler("vassalState", self.onVassalState)
 		eventManager.addEventHandler("revolution", self.onRevolution)
+		eventManager.addEventHandler("cityGrowth", self.onCityGrowth)
                 
 		#Leoreth
 		eventManager.addEventHandler("greatPersonBorn", self.onGreatPersonBorn)
@@ -530,9 +531,16 @@ class CvRFCEventHandler:
 		
 		if iPlayer < iNumPlayers:
 			self.dc.onRevolution(iPlayer)
-
-
-                        
+			
+	def onCityGrowth(self, argsList):
+		'City Population Growth'
+		pCity = argsList[0]
+		iPlayer = argsList[1]
+		
+		# Leoreth/Voyhkah: Empire State Building effect
+		if pCity.isHasRealBuilding(con.iEmpireState):
+                        iPop = pCity.getPopulation()
+                        pCity.setBuildingCommerceChange(con.iEmpireState, 0, iPop)
 
         def onBuildingBuilt(self, argsList):
                 city, iBuildingType = argsList
@@ -552,6 +560,11 @@ class CvRFCEventHandler:
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == con.iPorcelainTower:
 			gc.getPlayer(iOwner).updateTradeRoutes()
+
+		# Leoreth/Voyhkah: Empire State Building
+		if iBuildingType == con.iEmpireState:
+			iPop = pCity.getPopulation()
+			pCity.setBuildingCommerceChange(con.iEmpireState, 0, iPop)
 
 		# Leoreth: found Buddhism when a Hindu temple is built
 		if iBuildingType == con.iHinduTemple:

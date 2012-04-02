@@ -778,7 +778,7 @@ class DynamicCivs:
 	def setCivName(self, iCiv, sName, sShort, sAdjective):
 		gc.getPlayer(iCiv).setCivName(localText.getText(sName, ()), localText.getText(sShort, ()), localText.getText(sAdjective, ()))
 	
-	def setCivAdj(self, iCiv, sAdj):
+	def setCivAdjective(self, iCiv, sAdj):
 		gc.getPlayer(iCiv).setCivAdjective(sAdj)
 		
 	def setCivShortDesc(self, iCiv, sShort):
@@ -1033,13 +1033,19 @@ class DynamicCivs:
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_HAN")
 						return
-					elif iEra >= iMedieval:
+					elif iEra == iMedieval:
 						if iAnarchyTurns <= 2:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
 						elif teamChina.isHasTech(con.iPaper):
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SONG")
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_TANG")
+						return
+					elif iEra == iRenaissance:
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
+						return
+					elif iEra >= iIndustrial:
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")
 						return
 			else:
 				if bEmpire:
@@ -1369,6 +1375,10 @@ class DynamicCivs:
 		elif iPlayer == iHolyRome:
 			if bEmpire:
 				if pGermany.isAlive():
+					if iCivic1 == con.iRepresentation:
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_HUNGARY")
+						return
+						
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_EMPIRE")
 					return
 					
@@ -1850,15 +1860,15 @@ class DynamicCivs:
 		
 		self.changeResurrections(iPlayer, 1)
 		
-		if iVassal == iAztecs:
-			self.setCivAdjective(iVassal, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
-			self.setCivShortDesc(iVassal, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
-		elif iVassal == iInca:
-			self.setCivAdjective(iVassal, "TXT_KEY_CIV_PERU_ADJECTIVE")
-			self.setCivShortDesc(iVassal, "TXT_KEY_CIV_PERU_SHORT_DESC")
-		elif iVassal == iHolyRome:
-			self.setCivAdjective(iVassal, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
-			self.setCivAdjective(iVassal, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
+		if iPlayer == iAztecs:
+			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
+			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
+		elif iPlayer == iInca:
+			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_PERU_ADJECTIVE")
+			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_PERU_SHORT_DESC")
+		elif iPlayer == iHolyRome:
+			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
+			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
 			
 		
                 self.setCivDesc(iPlayer, self.defaultNames[iPlayer])
@@ -1881,12 +1891,12 @@ class DynamicCivs:
                 iPlayer, iNewReligion, iOldReligion = argsList
 		
 		if iNewReligion in [con.iJudaism, con.iChristianity]:
-			if iVassal == iAztecs:
-				self.setCivAdjective(iVassal, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
-				self.setCivShortDesc(iVassal, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
-			elif iVassal == iInca:
-				self.setCivAdjective(iVassal, "TXT_KEY_CIV_PERU_ADJECTIVE")
-				self.setCivShortDesc(iVassal, "TXT_KEY_CIV_PERU_SHORT_DESC")
+			if iPlayer == iAztecs:
+				self.setCivAdjective(iPlayer, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
+				self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
+			elif iPlayer == iInca:
+				self.setCivAdjective(iPlayer, "TXT_KEY_CIV_PERU_ADJECTIVE")
+				self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_PERU_SHORT_DESC")
 			
                 self.checkName(iPlayer)
 

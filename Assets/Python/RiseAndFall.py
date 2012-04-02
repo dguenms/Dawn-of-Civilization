@@ -1924,9 +1924,34 @@ class RiseAndFall:
                                         if (iOwner == iHuman):
                                                 bHuman = True
 
-                                for t in range(con.iNumTechs):
-                                        if (teamBarbarian.isHasTech(t) or teamIndependent.isHasTech(t) or teamIndependent2.isHasTech(t)): #remove indep in vanilla
-                                                teamDeadCiv.setHasTech(t, True, iDeadCiv, False, False)
+                                #for t in range(con.iNumTechs):
+                                #        if (teamBarbarian.isHasTech(t) or teamIndependent.isHasTech(t) or teamIndependent2.isHasTech(t)): #remove indep in vanilla
+                                #                teamDeadCiv.setHasTech(t, True, iDeadCiv, False, False)
+				
+				# Leoreth: change how tech on resurrection works (non-European civs tended to respawn too advanced because independents are balanced to be on par with Europe
+				lTechPeers = []
+				for lRegionList in con.lTechGroups:
+					if iDeadCiv in lRegionList:
+						lTechPeers = lRegionList
+						
+				for iPeerCiv in lTechPeers:
+					if not gc.getPlayer(iPeerCiv).isAlive():
+						lTechPeers.remove(iPeerCiv)
+						
+				lTechPeers.append(iBarbarian)
+				lTechPeers.append(iIndependent)
+				lTechPeers.append(iIndependent2)
+				
+				iThreshold = len(lTechPeers) / 2
+				
+				for iTech in range(con.iNumTechs):
+					iCount = 0
+					for iPeerCiv in lTechPeers:
+						if gc.getTeam(iPeerCiv).isHasTech(iTech):
+							iCount += 1
+					if iCount >= iThreshold:
+						teamDeadCiv.setHasTech(iTech, True, iDeadCiv, False, False)
+					
 
                                 ownersList = []        
                                 bAlreadyVassal = False
@@ -3700,11 +3725,11 @@ class RiseAndFall:
 			utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iThaiChangSuek, iCiv, tPlot, 2)
 		if iCiv == iGermany:
-			utils.makeUnit(con.iMusketman, iCiv, tPlot, 3)
-			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
                 if (iCiv == iAmerica):
-                        utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
-                        utils.makeUnit(con.iMusketman, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iGrenadier, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
 
 
@@ -3962,8 +3987,8 @@ class RiseAndFall:
 			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
 			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
 			if utils.getHumanID() != iGermany:
-				utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
-				utils.makeUnit(con.iRifleman, iCiv, tPlot, 2)
+				utils.makeUnit(con.iRifleman, iCiv, tPlot, 10)
+				utils.makeUnit(con.iCannon, iCiv, tPlot, 5)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)

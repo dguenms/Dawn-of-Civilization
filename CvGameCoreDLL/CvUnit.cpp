@@ -6071,6 +6071,16 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 
 	iCulture = m_pUnitInfo->getGreatWorkCulture();
 
+	// Leoreth: new Borobudur effect: great priests can create great works
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)BOROBUDUR) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+	{
+		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_ARTIST"))).getGreatWorkCulture();
+	}
+
+	// Leoreth: 800 culture per era
+	iCulture *= (GET_PLAYER(getOwnerINLINE()).getCurrentEra()+1);
+	iCulture /= 5;
+
 	iCulture *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitGreatWorkPercent();
 	iCulture /= 100;
 
@@ -10205,6 +10215,15 @@ void CvUnit::setLevel(int iNewValue)
 		if (getLevel() > GET_PLAYER(getOwnerINLINE()).getHighestUnitLevel())
 		{
 			GET_PLAYER(getOwnerINLINE()).setHighestUnitLevel(getLevel());
+		}
+
+		// Leoreth
+		if (getDomainType() == DOMAIN_SEA)
+		{
+			if (getLevel() > GET_PLAYER(getOwnerINLINE()).getHighestNavalUnitLevel())
+			{
+				GET_PLAYER(getOwnerINLINE()).setHighestNavalUnitLevel(getLevel());
+			}
 		}
 
 		if (IsSelected())

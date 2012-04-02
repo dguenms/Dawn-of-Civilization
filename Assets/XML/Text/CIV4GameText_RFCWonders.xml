@@ -293,7 +293,7 @@
 		<Spanish>[TAB]La Interpol (&quot;International Criminal Police Organization&quot; u &quot;Organizaci&#243;n Internacional de Polic&#237;a Criminal&quot; en castellano) fue fundada en 1923 para mejorar la cooperaci&#243;n internacional de la polic&#237;a criminal. El nombre &quot;Interpol&quot;, que entonces solo era la direcci&#243;n de tel&#233;grafo de la organizaci&#243;n, fue adoptado en 1956 como nuevo nombre oficial de la organizaci&#243;n, que dej&#243; de llamarse Comisi&#243;n Internacional de Polic&#237;a Criminal. Interpol es la tercera organizaci&#243;n internacional m&#225;s grande del mundo, despu&#233;s de las Naciones Unidas y la FIFA, y cuenta con 186 pa&#237;ses miembro.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_VERSAILLES</Tag>
+		<Tag>TXT_KEY_BUILDING_SUMMER_PALACE</Tag>
 		<English>Summer Palace</English>
 		<French>
 			<Text>Palais d'été</Text>
@@ -1014,8 +1014,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_BOROBUDUR</Tag>
-		<English>[ICON_BULLET]One additional artist slot for every priest slot in your cities</English>
-		<German>[ICON_BULLET]Ihr könnt einen zusätzlichen Künstler für jeden verfügbaren Priester einstellen</German>
+		<English>[ICON_BULLET]Great prophets can create great works like great artists.</English>
+		<German>[ICON_BULLET]Große Propheten können große Kunstwerke erstellen, genau wie große Künstler.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KHAJURAHO</Tag>
@@ -1044,8 +1044,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
-		<English>[ICON_BULLET]All trade routes are counted as foreign and intercontinental[NEWLINE][ICON_BULLET]Trade route yield increased by 20% for every civilization you have contact, but not open borders with</English>
-		<German>[ICON_BULLET]All Handelsrouten werden als ausländische und Überseerouten gewertet[NEWLINE][ICON_BULLET]Handelsroutenertrag erhöht sich um 20% für jede Zivilisation, mit der Sie Kontakt, aber keine offenen Grenzen haben</German>
+		<English>[ICON_BULLET]All trade routes are counted as foreign and intercontinental</English>
+		<German>[ICON_BULLET]All Handelsrouten werden als ausländische und Überseerouten gewertet</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Tag>
@@ -1112,5 +1112,95 @@
 		<English>[ICON_BULLET]Unlimited experience from barbarian units[NEWLINE][ICON_BULLET]Victories against barbarians contribute to great general birth</English>
 		<German>[ICON_BULLET]Unbegrenzte Erfahrung von barbarischen Einheiten[NEWLINE][ICON_BULLET]Siege gegen Barbaren tragen zur Geburt großer Generäle bei</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE</Tag>
+		<English>Trafalgar Square</English>
+		<German>Trafalgar Square</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_PEDIA</Tag>
+		<English>Needs to be written.</English>
+		<German>Muss noch geschrieben werden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_HELP</Tag>
+		<English>[ICON_BULLET]Requires a naval unit of level three or higher.</English>
+		<German>[ICON_BULLET]Benötigt eine Marineeinheit der Stufe drei oder höher.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_STRATEGY</Tag>
+		<English>Allows faster construction of ships, extra naval experience in this city.</English>
+		<German>Erlaubt schnelleren Schiffsbau, extra Erfahrung für Schiffe in dieser Stadt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE</Tag>
+		<English>The Empire State Building</English>
+		<German>Das Empire State Building</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_PEDIA</Tag>
+		<English>The Empire State Building is a 102-story landmark Art Deco skyscraper in New York City at the intersection of Fifth Avenue and West 34th Street. Its name is derived from the nickname for New York, The Empire State. It stood as the world's tallest building for more than 40 years, from its completion in 1931 until construction of the World Trade Center's North Tower was completed in 1972. Following the terrorist bombing and destruction of the World Trade Center in 2001, the Empire State Building again became the tallest building in New York City.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_STRATEGY</Tag>
+		<English>The Empire State Building provides a gold bonus equal to the population of the city in which it's built.</English>
+		<German>Das Empire State Building produziert Gold entsprechend der Bevölkerung in der Stadt, in der es errichtet wurde.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_HELP</Tag>
+		<English>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population.</English>
+		<German>[ICON_BULLET]Produziert [ICON_GOLD] entsprechend der Bevölkerung seiner Stadt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GRAND_CANAL</Tag>
+		<English>The Grand Canal</English>
+		<German>Kaiserkanal</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GRAND_CANAL_PEDIA</Tag>
+		<English>Needs to be written.</English>
+		<German>Muss noch geschrieben werden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GRAND_CANAL_STRATEGY</Tag>
+		<English>Extra commerce on river tiles.</English>
+		<German>Extra Kommerz an Flussfeldern.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLOATING_GARDENS</Tag>
+		<English>Floating Gardens</English>
+		<German>Schwimmende Gärten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLOATING_GARDENS_PEDIA</Tag>
+		<English>Needs to be written.</English>
+		<German>Muss noch geschrieben werden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FLOATING_GARDENS_STRATEGY</Tag>
+		<English>Extra food on river tiles.</English>
+		<German>Extra Nahrung an Flussfeldern.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KGB</Tag>
+		<English>Lubyanka</English>
+		<German>Lubyanka</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KGB_PEDIA</Tag>
+		<English>[TAB]The Lubyanka is the popular name for the headquarters of the KGB and affiliated prison on Lubyanka Square in Moscow. It is a large building with a facade of yellow brick, designed by Alexander V. Ivanov in 1897 and augmented by Aleksey Shchusev in 1940-1947.[NEWLINE][NEWLINE][TAB]The Lubyanka was originally built in 1898 as the Neo-Baroque headquarters of the All-Russia Insurance Company, noted for its beautiful parquet floors and pale green walls. Belying its massiveness, the edifice avoids an impression of heroic scale: isolated Palladian and Baroque details, such as the minute pediments over the corner bays and the central loggia, are lost in an endlessly-repeating classicizing palace facade, where three bands of cornices emphasize the horizontal lines. A clock is centered in the uppermost band of the facade.[NEWLINE][NEWLINE][TAB]Following the Bolshevik Revolution, the structure was seized by the government for the headquarters of the secret police, then called the Cheka. In Soviet Russian jokes it was referred to as the tallest building in Moscow, since Siberia could be seen from its basement. Another joke referred to the building as "Adult's World" as compared to "Children's World," the name of the popular toy store across the street.[NEWLINE][NEWLINE][TAB]During the Great Purge, the offices became increasingly cramped due to staff numbers. In 1940, the most famous Soviet architect, Shchusev, was commissioned to double its size by adding another storey and engulfing backstreet buildings. Shchusev's design accentuated Neo-Renaissance detailing, but only the left part of the facade was reconstructed under his direction in the 1940s, due to the war and other hindrances. This asymmetric facade survived intact until 1983, when the symmetry was restored at the urging of Yuri Andropov in accordance with Shchusev's plans.[NEWLINE][NEWLINE][TAB]Although the Soviet secret police changed its name many times, its headquarters remained in this building. Secret police chiefs from Lavrenty Beria to Yuri Andropov used the same office on the third floor, which looked down on the statue of Cheka founder Felix Dzerzhinsky. A prison at the ground floor of the building figures prominently in Aleksandr Solzhenitsyn's classic study of the Soviet police state, The Gulag Archipelago. Famous inmates held, tortured and interrogated there include Sidney Reilly, Raoul Wallenberg, János Esterházy and Father Walter Ciszek, S.J.[NEWLINE][NEWLINE][TAB]After the dissolution of the KGB, the Lubyanka became the headquarters of the Border Guard Service of Russia, and houses the Lubyanka prison and one directorate of the Federal Security Service of the Russian Federation (FSB). In addition a museum of the KGB was opened to the public. On November 11, 1999 a fire broke out in the Lubyanka. Four FSB agents were injured, but damage was relatively mild. The fire was later traced to faulty wiring.</English>
+		<German>[TAB]The Lubyanka is the popular name for the headquarters of the KGB and affiliated prison on Lubyanka Square in Moscow. It is a large building with a facade of yellow brick, designed by Alexander V. Ivanov in 1897 and augmented by Aleksey Shchusev in 1940-1947.[NEWLINE][NEWLINE][TAB]The Lubyanka was originally built in 1898 as the Neo-Baroque headquarters of the All-Russia Insurance Company, noted for its beautiful parquet floors and pale green walls. Belying its massiveness, the edifice avoids an impression of heroic scale: isolated Palladian and Baroque details, such as the minute pediments over the corner bays and the central loggia, are lost in an endlessly-repeating classicizing palace facade, where three bands of cornices emphasize the horizontal lines. A clock is centered in the uppermost band of the facade.[NEWLINE][NEWLINE][TAB]Following the Bolshevik Revolution, the structure was seized by the government for the headquarters of the secret police, then called the Cheka. In Soviet Russian jokes it was referred to as the tallest building in Moscow, since Siberia could be seen from its basement. Another joke referred to the building as "Adult's World" as compared to "Children's World," the name of the popular toy store across the street.[NEWLINE][NEWLINE][TAB]During the Great Purge, the offices became increasingly cramped due to staff numbers. In 1940, the most famous Soviet architect, Shchusev, was commissioned to double its size by adding another storey and engulfing backstreet buildings. Shchusev's design accentuated Neo-Renaissance detailing, but only the left part of the facade was reconstructed under his direction in the 1940s, due to the war and other hindrances. This asymmetric facade survived intact until 1983, when the symmetry was restored at the urging of Yuri Andropov in accordance with Shchusev's plans.[NEWLINE][NEWLINE][TAB]Although the Soviet secret police changed its name many times, its headquarters remained in this building. Secret police chiefs from Lavrenty Beria to Yuri Andropov used the same office on the third floor, which looked down on the statue of Cheka founder Felix Dzerzhinsky. A prison at the ground floor of the building figures prominently in Aleksandr Solzhenitsyn's classic study of the Soviet police state, The Gulag Archipelago. Famous inmates held, tortured and interrogated there include Sidney Reilly, Raoul Wallenberg, János Esterházy and Father Walter Ciszek, S.J.[NEWLINE][NEWLINE][TAB]After the dissolution of the KGB, the Lubyanka became the headquarters of the Border Guard Service of Russia, and houses the Lubyanka prison and one directorate of the Federal Security Service of the Russian Federation (FSB). In addition a museum of the KGB was opened to the public. On November 11, 1999 a fire broke out in the Lubyanka. Four FSB agents were injured, but damage was relatively mild. The fire was later traced to faulty wiring.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KGB_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] gives extra espionage from specialists.</English>
+		<German>[COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] erzeugt zusätzliche Spionage durch Spezialisten.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STONEHENGE_HELP</Tag>
+		<English>[ICON_BULLET]Unlimited artists for its city.</English>
+		<German>[ICON_BULLET]Unbegrenzte Künstler für diese Stadt.</German>
+	</TEXT>
+	
 
 </Civ4GameText>

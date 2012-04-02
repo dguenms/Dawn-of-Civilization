@@ -45,6 +45,10 @@
 		<English>Austrian Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_AUSTRIA_HUNGARY</Tag>
+		<English>Austro-Hungarian Empire</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_AUSTRIA_ARCHDUCHY</Tag>
 		<English>Archduchy of Austria</English>
 	</TEXT>
