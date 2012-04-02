@@ -1668,11 +1668,11 @@
 			<Type>ART_DEF_BUILDING_LEANING_TOWER</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.00</fScale>
-			<fInterfaceScale>0.36</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Pantheon/Pantheon.nif</NIF>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/LeaningTower/Pisa.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Aqueduct.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,2,4</Button>
+			<Button>,Art/Interface/Buttons/Buildings/Pisa.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,15</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_OLYMPIC_PARK</Type>
@@ -2304,6 +2304,56 @@
 			<NIF>Art/Structures/Buildings/Orthodox Cathedral/armenian_cathedral.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Cathedral_Orthodox.dds,Art/Interface/Buttons/mem_buildings_atlas.dds,8,1</Button>
+		</BuildingArtInfo>
+   		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TRAFALGAR_SQUARE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.2</fScale>
+			<fInterfaceScale>0.25</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Trafalgar_Square/Trafalgar_square.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Trafalgar_Square/trafalgar_square_button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_EMPIRE_STATE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.00</fScale>
+			<fInterfaceScale>0.43</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Empire State Building/empire.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Empire State Building/empiremain.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_FLOATING_GARDENS</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Incan_Terrace/Incan_Terrace.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/Granary.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,4</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GRAND_CANAL</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Incan_Terrace/Incan_Terrace.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/Granary.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,4</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KGB</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.25</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/KGB/KGB.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,16</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

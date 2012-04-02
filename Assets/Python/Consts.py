@@ -60,6 +60,11 @@ lCivStabilityGroups = [[iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia,
                 [iBabylonia, iPersia, iArabia, iTurkey, iMughals], #MiddleEastern
                 [iEgypt, iGreece, iCarthage, iRome, iEthiopia, iByzantium, iMali], #Mediterranean
                 [iMaya, iInca, iAztecs, iAmerica]] #American
+		
+lTechGroups = [[iRome, iGreece, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPortugal, iGermany, iAmerica], #Europe and NA
+	       [iEgypt, iBabylonia, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMali, iTurkey, iMughals], #Middle East
+	       [iChina, iKorea, iJapan, iKhmer, iIndonesia, iMongolia, iThailand], #Far East
+	       [iMaya, iInca, iAztecs]] #Native America
 
 
 lCivBioOldWorld = [iEgypt, iIndia, iChina, iBabylonia, iGreece, iPersia, iCarthage, iRome, iJapan, \
@@ -392,7 +397,7 @@ tRebirthArea = (
 tResurrectionIntervals = (
 [(900, 1300), (1800, 2020)], #Egypt
 [(1600, 1800), (1900, 2020)], #India
-[(1360, 1640), (1930, 2020)], #China
+[(1360, 2020)], #China
 [], #Babylonia
 [(1820, 2020)], #Greece
 [(220, 650), (1500, 2020)], #Persia
@@ -1578,7 +1583,7 @@ lEnemyCivsOnSpawn = [
 [iArabia], #Spain
 [iArabia], #France
 [], #England
-[iRome], #Holy Rome
+[iRome,iArabia,iArabia], #Holy Rome
 [], #Russia
 [], #Netherlands
 [], #Mali
@@ -1835,9 +1840,9 @@ iCatholicism = iChristianity
 
 # initialise tech variables to unit indices from XML
 
-iNumTechs = 91
+iNumTechs = 92
 (iMysticism, iMeditation, iPolytheism, iPriesthood, iMonotheism, iMonarchy, iLiterature, iCodeOfLaws, iDrama, iFeudalism,
-iTheology, iMusic, iCivilService, iGuilds, iDivineRight, iNationalism, iMilitaryTradition, iConstitution, iLiberalism,
+iTheology, iMusic, iCivilService, iGuilds, iDivineRight, iPatronage, iNationalism, iMilitaryTradition, iConstitution, iLiberalism,
 iDemocracy, iCorporation, iFascism, iCommunism, iMassMedia, iEcology, iFishing, iTheWheel, iAgriculture, iPottery,
 iAesthetics, iSailing, iWriting, iMathematics, iAlphabet, iCalendar, iCurrency, iPhilosophy, iPaper, iBanking, iEducation,
 iPrintingPress, iEconomics, iAstronomy, iChemistry, iScientificMethod, iPhysics, iBiology, iMedicine, iElectricity,
@@ -1875,6 +1880,7 @@ iBireme, iBersagliere, iLevy) = range(iNumUnits)
 iCamelArcher = iArabiaCamelarcher
 iConquistador = iSpanishConquistador
 iWorkBoat = iWorkboat
+iHeavySwordsman = iMaceman
 
 # initialise bonuses variables to bonuses IDs from WBS
 iNumBonuses = 39
@@ -1884,8 +1890,8 @@ iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobac
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 186
-(iPalace, iGreatPalace, iVersailles, iWalls, iCelticDun, iCastle, iSpanishCitadel, iBarracks, iZuluIkhanda, iStable,
+iNumBuildings = 191
+(iPalace, iGreatPalace, iForbiddenPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iBarracks, iZuluIkhanda, iStable,
 iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iHospital, iRecyclingCenter,
 iLighthouse, iVikingTradingPost, iHarbor, iCarthageCothon, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
 iForge, iMaliMint, iFactory, iGermanAssemblyPlant, iCoalPlant, iJapaneseShalePlant, iHydroPlant, iNuclearPlant,
@@ -1908,10 +1914,10 @@ iWembley, iGraceland, iHollywood, iGreatDam, iPentagon, iUnitedNations, iSpaceEl
 iSankore, iGreatWall, iStatueOfZeus, iMausoleumOfMaussollos, iCristoRedentor, iShwedagonPaya, iMoaiStatues, iApostolicPalace,
 iLeaningTower, iOlympicPark, iTempleOfSalomon, iIshtarGate, iTheodosianWalls, iTerracottaArmy, iMezquita, iDomeOfTheRock,
 iTopkapiPalace, iBrandenburgGate, iSanMarcoBasilica, iWestminster, iItalianArtStudio, iBorobudur, iKhajuraho,
-iHimejiCastle, iPorcelainTower, iHarmandirSahib, iGreatBath, iBlueMosque, iRedFort) = range(iNumBuildings)
+iHimejiCastle, iPorcelainTower, iHarmandirSahib, iBlueMosque, iRedFort, iVersailles, iTrafalgarSquare, iEmpireState,
+iGrandCanal, iFloatingGardens, iLubyanka) = range(iNumBuildings)
 
 iSummerPalace = iGreatPalace
-iForbiddenPalace = iVersailles
 iHeroicEpic = iFlavianAmphitheatre
 iNationalEpic = iTriumphalArch
 iHermitage = iNationalGallery 
@@ -2086,6 +2092,6 @@ tTradingCompanyPlotLists = (
 [(109, 33)], #Spain
 [(89, 33), (90, 33), (91, 33), (92, 33), (89, 32), (90, 32), (91, 32), (90, 31), (91, 31), (90, 30), (91, 29)], #France
 [(88, 36), (88, 35), (88, 34), (89, 34), (89, 33), (89, 32), (90, 32), (90, 31), (90, 30), (91, 29), (91, 31), (91, 32), (91, 33), (92, 33), (92, 34), (93, 34), (93, 35), (94, 35), (94, 36), (94, 37)], #England
-[(82, 34), (89, 33), (90, 31), (101, 29), (105, 39)], #Portugal
+[(82, 34), (89, 33), (90, 31), (101, 29), (105, 39), (93, 28)], #Portugal
 [(99, 28), (99, 27), (100, 27), (100, 26), (101, 26), (104, 25), (105, 25), (106, 25), (107, 24), (104, 27), (105, 27), (106, 27), (104, 28), (106, 28), (105, 29), (106, 29)] #Netherlands
 )

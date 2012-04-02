@@ -1360,14 +1360,14 @@ bool CvPlot::isFreshWater() const
 	}
 
 	//Leoreth: Great Bath effect
-	if (isCity())
+	/*if (isCity())
 	{
 	    CvCity* pCity = getPlotCity();
 	    if (pCity->isHasRealBuilding((BuildingTypes)GREAT_BATH))
 	    {
 	        return true;
 	    }
-	}
+	}*/
 
 	for (iDX = -1; iDX <= 1; iDX++)
 	{
@@ -3110,7 +3110,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 	}
 
 	// Leoreth: no culture from cities in other regions in certain cases (at the moment: Tibet)
-	if (eBestPlayer != NO_PLAYER)
+	if (eBestPlayer != NO_PLAYER && eBestPlayer != BARBARIAN)
 	{
 		bValid = true;
 		if (getRegionID() == REGION_TIBET)

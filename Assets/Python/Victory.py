@@ -797,7 +797,7 @@ class Victory:
                                 if (self.getGoal(iCarthage, 1) == -1):
                                         if (iGameTurn <= getTurnForYear(200)):
                                                 #if (pCarthage.countOwnedBonuses(con.iDye) + pCarthage.getBonusImport(con.iDye) >= 3):
-                                                if (pCarthage.getNumAvailableBonuses(con.iDye) >= 3):
+                                                if (pCarthage.getNumAvailableBonuses(con.iDye) >= 4):
                                                         self.setGoal(iCarthage, 1, 1)
                                         else:
                                                 self.setGoal(iCarthage, 1, 0)
@@ -935,7 +935,7 @@ class Victory:
 
 				# Leoreth: new first goal: have 24000 culture in 1600 AD
 				if iGameTurn == getTurnForYear(1600):
-					if pJapan.countTotalCulture() >= utils.getTurns(24000):
+					if pJapan.countTotalCulture() >= utils.getTurns(20000):
 						self.setGoal(iJapan, 0, 1)
 					else:
 						self.setGoal(iJapan, 0, 0)
@@ -1194,7 +1194,7 @@ class Victory:
 						self.setGoal(iIndonesia, 1, 0)
 
 				if self.getGoal(iIndonesia, 1) == -1:
-					lHappinessBonuses = [con.iDye, con.iFur, con.iGems, con.iGold, con.iIncense, con.iIvory, con.iSilk, con.iSilver, con.iSpices, con.iSugar, con.iWine, con.iWhales, con.iCotton]
+					lHappinessBonuses = [con.iDye, con.iFur, con.iGems, con.iGold, con.iIncense, con.iIvory, con.iSilk, con.iSilver, con.iSpices, con.iSugar, con.iWine, con.iWhales, con.iCotton, con.iCoffee, con.iTea, con.iTobacco]
                                         iCounter = 0
 					for iBonus in lHappinessBonuses:
 						if pIndonesia.getNumAvailableBonuses(iBonus) > 0:
@@ -2946,7 +2946,7 @@ class Victory:
 			if iGoal == 0:
 				iCulture = pJapan.countTotalCulture()
 				#aHelp.append(self.getIcon(iTechsStolen >= 5) + 'Techs stolen: '+str(iTechsStolen)+'/5')
-				aHelp.append(self.getIcon(iCulture >= utils.getTurns(24000)) + 'Total culture: '+str(iCulture)+'/'+str(utils.getTurns(24000)))
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(20000)) + 'Total culture: '+str(iCulture)+'/'+str(utils.getTurns(24000)))
 			elif iGoal == 1:
 				bKorea = self.isControlledOrVassalized(iJapan, tKoreaTL, tKoreaBR)
 				bManchuria = self.isControlledOrVassalized(iJapan, tManchuriaTL, tManchuriaBR)
@@ -3056,7 +3056,7 @@ class Victory:
 				bHighest = (iHighestCiv == iIndonesia)
 				aHelp.append(self.getIcon(bHighest) + 'Civilization with the largest population: ' + CyTranslator().getText(str(gc.getPlayer(iHighestCiv).getCivilizationShortDescriptionKey()),()))
 			elif iGoal == 1:
-				lHappinessBonuses = [con.iDye, con.iFur, con.iGems, con.iGold, con.iIncense, con.iIvory, con.iSilk, con.iSilver, con.iSpices, con.iSugar, con.iWine, con.iWhales, con.iCotton]
+				lHappinessBonuses = [con.iDye, con.iFur, con.iGems, con.iGold, con.iIncense, con.iIvory, con.iSilk, con.iSilver, con.iSpices, con.iSugar, con.iWine, con.iWhales, con.iCotton, con.iCoffee, con.iTea, con.iTobacco]
                                 iCounter = 0
 				for iBonus in lHappinessBonuses:
 					if pIndonesia.getNumAvailableBonuses(iBonus) > 0:

@@ -423,8 +423,8 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		}
 
     //Leoreth: Great Bath effect
-    if (GET_PLAYER(eOwner).isHasBuilding((BuildingTypes)GREAT_BATH) && !GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)CONSTRUCTION))
-        eraModifier++;
+    /*if (GET_PLAYER(eOwner).isHasBuilding((BuildingTypes)GREAT_BATH) && !GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)CONSTRUCTION))
+        eraModifier++;*/
 	changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + eraModifier);
 	//changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + iExtraPop);
 	//Rhye - end switch
@@ -5588,7 +5588,7 @@ int CvCity::getGreatPeopleRate() const
 
 	if (getOwnerINLINE() == GREECE) {
 		//Rhye - start UP
-		if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= 2)
+		if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= 1) //Leoreth: expires after Classical now
 			result = (baseValue*250/100);
 		//Rhye - end UP
 	}
@@ -7150,11 +7150,11 @@ int CvCity::getTradeRouteModifier() const
     if (getOwner() == CARTHAGE)
         iResult += 50;
 
-	//Leoreth: Porcelain Tower effect
-	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
+	//Leoreth: Porcelain Tower effect (removed)
+	/*if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
 		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 			if (GET_PLAYER(getOwner()).canContact((PlayerTypes)iI) && !GET_TEAM((TeamTypes)getOwner()).isOpenBorders((TeamTypes)iI))
-				iResult += 10;
+				iResult += 10;*/
 
 	return iResult;
 }
@@ -10121,21 +10121,22 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
-	//Leoreth: Borobudur effect
-	if (eIndex == (SpecialistTypes)2) //artist
+	//Leoreth: Borobudur effect (removed)
+	/*if (eIndex == (SpecialistTypes)2) //artist
 	{
 	    if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)BOROBUDUR) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
 	    {
 	        return m_paiMaxSpecialistCount[eIndex]+m_paiMaxSpecialistCount[(SpecialistTypes)1]; //priest
 	    }
-	}
+	}*/
 	return m_paiMaxSpecialistCount[eIndex];
 }
 
 
 bool CvCity::isSpecialistValid(SpecialistTypes eIndex, int iExtra) const
 {
-	return (((getSpecialistCount(eIndex) + iExtra) <= getMaxSpecialistCount(eIndex)) || GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex) || (eIndex == GC.getDefineINT("DEFAULT_SPECIALIST")));
+	// Leoreth: Sphinx effect included
+	return (((getSpecialistCount(eIndex) + iExtra) <= getMaxSpecialistCount(eIndex)) || GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex) || isHasRealBuilding((BuildingTypes)STONEHENGE) || (eIndex == GC.getDefineINT("DEFAULT_SPECIALIST")));
 }
 
 

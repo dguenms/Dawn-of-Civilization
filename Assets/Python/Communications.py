@@ -218,7 +218,9 @@ class Communications:
 
                 for iLoopCiv in range (iNumMajorPlayers):
                         if (city.hasBuilding(iNumBuildingsPlague + iLoopCiv)):
+				#print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)
                                 city.setHasRealBuilding(iNumBuildingsPlague + iLoopCiv, False)
+				#print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)+" passed."
                                 print ("embassy deleted on city acquired", city.getName())
         
 

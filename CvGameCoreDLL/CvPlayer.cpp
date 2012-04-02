@@ -453,6 +453,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iConscriptCount = 0;
 	m_iMaxConscript = 0;
 	m_iHighestUnitLevel = 1;
+	m_iHighestNavalUnitLevel = 0; //Leoreth
 	m_iOverflowResearch = 0;
 	m_iNoUnhealthyPopulationCount = 0;
 	m_iExpInBorderModifier = 0;
@@ -6062,7 +6063,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	//Rhye - start
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-		if ((eBuilding >= PYRAMID && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == ZEUS || eBuilding == MAUSOLLOS || eBuilding == KHAJURAHO)
+		if ((eBuilding >= PYRAMID && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == ZEUS || eBuilding == MAUSOLLOS || eBuilding == KHAJURAHO || iI == ISHTAR)
 			return false;
 	//Rhye - end
 
@@ -6143,6 +6144,15 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		if (getHighestUnitLevel() < GC.getBuildingInfo(eBuilding).getUnitLevelPrereq())
 		{
 			return false;
+		}
+
+		// Leoreth
+		if (eBuilding == (BuildingTypes)TRAFALGAR)
+		{
+			if (getHighestNavalUnitLevel() < 3)
+			{
+				return false;
+			}
 		}
 
 		for (iI = 0; iI < numBuildingClassInfos; iI++)
@@ -10179,6 +10189,18 @@ void CvPlayer::setHighestUnitLevel(int iNewValue)
 	FAssert(getHighestUnitLevel() >= 0);
 }
 
+// Leoreth
+int CvPlayer::getHighestNavalUnitLevel() const
+{
+	return m_iHighestNavalUnitLevel;
+}
+
+// Leoreth
+void CvPlayer::setHighestNavalUnitLevel(int iNewValue)
+{
+	m_iHighestNavalUnitLevel = iNewValue;
+	FAssert(getHighestsNavalUnitLevel() >= 0);
+}
 
 int CvPlayer::getMaxConscript() const
 {
@@ -18005,6 +18027,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iConscriptCount);
 	pStream->Read(&m_iMaxConscript);
 	pStream->Read(&m_iHighestUnitLevel);
+	pStream->Read(&m_iHighestNavalUnitLevel); //Leoreth
 	pStream->Read(&m_iOverflowResearch);
 	pStream->Read(&m_iNoUnhealthyPopulationCount);
 	pStream->Read(&m_iExpInBorderModifier);
@@ -18484,6 +18507,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iConscriptCount);
 	pStream->Write(m_iMaxConscript);
 	pStream->Write(m_iHighestUnitLevel);
+	pStream->Write(m_iHighestNavalUnitLevel); //Leoreth
 	pStream->Write(m_iOverflowResearch);
 	pStream->Write(m_iNoUnhealthyPopulationCount);
 	pStream->Write(m_iExpInBorderModifier);

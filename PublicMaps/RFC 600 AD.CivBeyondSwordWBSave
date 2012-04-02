@@ -9772,6 +9772,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=33
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -10148,7 +10149,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=33
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -22874,7 +22874,6 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_APOSTOLIC_PALACE
-		BuildingType=BUILDING_LEANING_TOWER
 		ReligionType=RELIGION_CHRISTIANITY
 		HolyCityReligionType=RELIGION_CHRISTIANITY
 		Player34Culture=100
@@ -23858,6 +23857,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=8
+	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -28156,6 +28156,7 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHRISTIAN_SHRINE
+		BuildingType=BUILDING_TEMPLE_OF_SALOMON
 		ReligionType=RELIGION_CHRISTIANITY
 		ReligionType=RELIGION_ORTHODOXY
 		Player33Culture=1
@@ -39960,7 +39961,6 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_TAOIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_GREAT_WALL
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_TAOISM
 		ReligionType=RELIGION_CONFUCIANISM
