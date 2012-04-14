@@ -3,6 +3,7 @@
 from CvPythonExtensions import *
 import CvUtil
 import PyHelpers
+import Popup
 import Consts as con
 #import cPickle as pickle
 from StoredData import sd
@@ -117,6 +118,7 @@ class RFCUtils:
 
                 if (iHandicap == 0):
                         self.setStability(iCiv, 20)
+			gc.getPlayer(iCiv).setStability(20) # test DLL
                         self.setParameter(iCiv, con.iParCitiesE, True, 4)
                         self.setParameter(iCiv, con.iParCivicsE, True, 4)
                         self.setParameter(iCiv, con.iParDiplomacyE, True, 4)
@@ -124,6 +126,7 @@ class RFCUtils:
                         self.setParameter(iCiv, con.iParExpansionE, True, 4) 
                 elif (iHandicap == 1):
                         self.setStability(iCiv, 5)
+			gc.getPlayer(iCiv).setStability(5) # test DLL
                         self.setParameter(iCiv, con.iParCitiesE, True, 1)
                         self.setParameter(iCiv, con.iParCivicsE, True, 1)
                         self.setParameter(iCiv, con.iParDiplomacyE, True, 1)
@@ -131,6 +134,7 @@ class RFCUtils:
                         self.setParameter(iCiv, con.iParExpansionE, True, 1) 
                 elif (iHandicap == 2):
                         self.setStability(iCiv, -10)
+			gc.getPlayer(iCiv).setStability(-10) # test DLL
                         self.setParameter(iCiv, con.iParCitiesE, True, -2)
                         self.setParameter(iCiv, con.iParCivicsE, True, -2)
                         self.setParameter(iCiv, con.iParDiplomacyE, True, -2)
@@ -1469,7 +1473,7 @@ class RFCUtils:
 	#          iDirection = -1 tests all directions
 	def testBorderPlot(self, tPlot, iCiv, iDirection):
 		x, y = tPlot
-		if gc.getMap().plot(x, y).getOwner() != iCiv or gc.getMap().plot(x, y).isWater() or gc.getMap().plot(x, y).isPeak():
+		if gc.getMap().plot(x, y).getOwner() != iCiv or gc.getMap().plot(x, y).isWater() or gc.getMap().plot(x, y).isPeak() or gc.getMap().plot(x, y).isCity():
 			return []
 
 		lDirectionList = []
@@ -1527,6 +1531,23 @@ class RFCUtils:
 		
 		newCapital.setHasRealBuilding(con.iPalace, True)
 		oldCapital.setHasRealBuilding(con.iPalace, False)
+		
+	def getFreePlot(self, x, y):
+		pPlot = gc.getMap().plot(x, y)
+		lFreePlots = []
+		
+		if not (pPlot.isCity() or pPlot.isPeak() or pPlot.isWater()):
+			return (x, y)
+			
+		for i in range(x-1, x+2):
+			for j in range(y-1, y+2):
+				pPlot = gc.getMap().plot(i, j)
+				if not (pPlot.isCity() or pPlot.isPeak() or pPlot.isWater()):
+					lFreePlots.append((i, j))
+					
+		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
+		return lFreePlots[iRand]
+			
 	
 	
 	

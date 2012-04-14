@@ -3255,7 +3255,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case AZTEC:
 										if (iI == CHICHENITZA) iTempValue *= 3;
-										else if (iI == FLOATING_GARDENS) iTempValue *= 6;
+										else if (iI == FLOATING_GARDENS) iTempValue *= 12;
 										break;
 									case MUGHALS:
 										if (iI == TAJMAHAL || iI == RED_FORT) iTempValue *= 4;
@@ -4169,7 +4169,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					}
 					if (kBuilding.getRiverPlotYieldChange(iI) > 0)
 					{
-						iTempValue += (kBuilding.getRiverPlotYieldChange(iI) * countNumRiverPlots() * 4);
+						iTempValue += (kBuilding.getRiverPlotYieldChange(iI) * countNumRiverPlots() * 4 * (iI == 0 ? 3 : 1)); // Leoreth: emphasize river food yield more
 					}
 					iTempValue += (kBuilding.getGlobalSeaPlotYieldChange(iI) * kOwner.countNumCoastalCities() * 8);
 					iTempValue += (kBuilding.getYieldChange(iI) * 6);

@@ -6996,6 +6996,8 @@ class CityNameManager:
 				city.setName('Madras', False)
 			elif sName == 'Vijayanagara':
 				city.setName('Bangalore', False)
+                        if (sName == 'Patliputra' or sName == 'Pataliputra' or sName == 'Azimabad' or sName == 'Palibothra' or sName == 'Huazhicheng' or sName == 'Kashijou'):
+                                city.setName('Patna', False)
 			elif sName == 'Wen Gehua':
 				city.setName('Vancouver', False)
 			elif sName == 'Xi Yatu':

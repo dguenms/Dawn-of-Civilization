@@ -92,6 +92,10 @@ public:
 	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
 	void reportRevolution(PlayerTypes ePlayerID); //edead
 
+	void reportGreatDepression(PlayerTypes ePlayer, bool bAcquired); //Leoreth
+	void reportPostCommunism(PlayerTypes ePlayer); //Leoreth
+	void reportDemocracyTransition(PlayerTypes ePlayer); //Leoreth
+
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
 	void reportPlayerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPlayer, int iAmount);

@@ -2056,6 +2056,19 @@ int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, 
 // a set functions to calculate the turn for a given year/month number, depending on game settings
 // everything is exposed to python
 
+int getTurns(int iTurns)
+{
+	int iSpeed = (int)GC.getGameINLINE().getGameSpeedType();
+	if (iSpeed == 2) return iTurns;
+	else if (iSpeed == 1)
+	{
+		if (iTurns == 3) return 5;
+		else if (iTurns == 6) return 10;
+		else return (iTurns*3/2);
+	}
+	else if (iSpeed == 0) return iTurns*3;
+}
+
 int getTurnForYear(int iTurnYear)
 {
 	return (getGameTurnForMonth(iTurnYear * GC.getNumMonthInfos(), GC.getGameINLINE().getStartYear(), GC.getGameINLINE().getCalendar(), GC.getGameINLINE().getGameSpeedType()));

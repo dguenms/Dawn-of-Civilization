@@ -1027,7 +1027,7 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 				<ImprovementYieldChange>
@@ -1126,7 +1126,6 @@
 			<Description>TXT_KEY_CIVIC_CAPITALISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_CAPITALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CAPITALISM_STRATEGY</Strategy>
-			<Help>TXT_KEY_CIVIC_DEPRESSION</Help>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,9</Button>
 			<TechPrereq>TECH_ECONOMICS</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
@@ -1177,7 +1176,11 @@
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
 			<!-- Rhye - end -->
-			<YieldModifiers/>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>10</iYield>
+			</YieldModifiers>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
 			<CommerceModifiers/>
@@ -1600,6 +1603,7 @@
 			<Description>TXT_KEY_CIVIC_FREE_MARKET</Description>
 			<Civilopedia>TXT_KEY_CIVIC_FREE_MARKET_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_FREE_MARKET_STRATEGY</Strategy>
+			<Help>TXT_KEY_CIVIC_DEPRESSION</Help>
 			<Button>,Art/Interface/Buttons/Civics/Free_Market.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,8,1</Button>
 			<TechPrereq>TECH_ECONOMICS</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
@@ -1612,7 +1616,7 @@
 			<iDistanceMaintenanceModifier>0</iDistanceMaintenanceModifier>
 			<iNumCitiesMaintenanceModifier>0</iNumCitiesMaintenanceModifier>
 			<iCorporationMaintenanceModifier>0</iCorporationMaintenanceModifier>
-			<iCorporationCommerceModifier>25</iCorporationCommerceModifier>
+			<iCorporationCommerceModifier>0</iCorporationCommerceModifier>
 			<iExtraHealth>0</iExtraHealth>
 			<iFreeExperience>0</iFreeExperience>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
@@ -1656,7 +1660,7 @@
 			<TradeYieldModifiers>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
-				<iYield>50</iYield>
+				<iYield>25</iYield>
 			</TradeYieldModifiers>
 			<CommerceModifiers/>
 			<CapitalCommerceModifiers/>

@@ -3400,10 +3400,13 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		else
 			iValue -= 10;
 
+		if (pCity->getRegionID() == REGION_ANATOLIA)
+			iValue += 5;
+
 		if ((pCity->getX() == 89 && pCity->getY() == 46) || (pCity->getX() == 95 && pCity->getY() == 47))
 			iValue -= 10;
 		else if (pCity->getX() == 72 && pCity->getY() == 43)
-			iValue += 5;
+			iValue += 20;
 
 		if (pCity->getOwner() == BYZANTIUM)
 			iValue += 5;
@@ -5705,7 +5708,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case ENGLAND:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS)
+									if (iI == ECONOMICS)
+										iValue *= 3;
+									if (iI == ASTRONOMY || iI == RIFLING)
 										iValue *= 2;
 									if (iI == LITERATURE || iI == DRAMA || iI == GUILDS || iI == ECONOMICS || iI == LIBERALISM || iI == CHEMISTRY) {
 										iValue *= 3;
@@ -10729,7 +10734,7 @@ CivicTypes CvPlayerAI::AI_bestCivic(CivicOptionTypes eCivicOption) const
 int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 {
 	PROFILE_FUNC();
-	GC.getGameINLINE().logMsg("Begin AI civic value.");
+	//GC.getGameINLINE().logMsg("Begin AI civic value.");
 
 	bool bWarPlan;
 	int iConnectedForeignCities;
@@ -10803,7 +10808,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 		if (getCapitalCity() != NULL)
 		{
-			GC.getGameINLINE().logMsg("Begin AI free core specialist.");
+			//GC.getGameINLINE().logMsg("Begin AI free core specialist.");
 			int iLoop;
 			int iX;
 			int iY;
@@ -10819,7 +10824,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 					iValue += kCivic.getCoreFreeSpecialist() * 12;
 				}
 			}
-			GC.getGameINLINE().logMsg("End AI free core specialist.");
+			//GC.getGameINLINE().logMsg("End AI free core specialist.");
 		}
 
 		if (getID() == MALI || getID() == EGYPT)
@@ -10994,9 +10999,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) + getNumCities() * 2))) / 100;
 		}
 		// Leoreth: specialist extra yield
-		GC.getGameINLINE().logMsg("Begin AI specialist extra yield.");
+		//GC.getGameINLINE().logMsg("Begin AI specialist extra yield.");
 		iTempValue += ((kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15);
-		GC.getGameINLINE().logMsg("End AI specialist extra yield.");
+		//GC.getGameINLINE().logMsg("End AI specialist extra yield.");
 
 		if (iI == YIELD_FOOD)
 		{
@@ -11212,7 +11217,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Leoreth: Pantheon civic
 	if (eCivic == (CivicTypes)PANTHEON)
 	{
-		GC.getGameINLINE().logMsg("Begin AI pantheon civic.");
+		//GC.getGameINLINE().logMsg("Begin AI pantheon civic.");
 		if (GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getFavoriteReligion() == -1 && GET_PLAYER(getID()).getCurrentEra() < 2 && getID() != MAYA)
 		{
 			iValue += GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getWonderConstructRand() * 2;
@@ -11221,7 +11226,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			return 0;
 		}
-		GC.getGameINLINE().logMsg("End AI pantheon civic.");
+		//GC.getGameINLINE().logMsg("End AI pantheon civic.");
 	}
 
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)
@@ -11283,7 +11288,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 	    iValue /= 10;
 	}
-	GC.getGameINLINE().logMsg("End AI civic value.");
+	//GC.getGameINLINE().logMsg("End AI civic value.");
 
 	return iValue;
 }

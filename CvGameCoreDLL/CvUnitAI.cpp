@@ -16068,6 +16068,11 @@ bool CvUnitAI::AI_nuke()
 
 	iBestValue = 0;
 
+	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).isMinorCiv())
+	{
+		return false;
+	}
+
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		if (GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_PLAYER((PlayerTypes)iI).isBarbarian())

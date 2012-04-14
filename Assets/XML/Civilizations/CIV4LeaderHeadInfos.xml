@@ -17077,7 +17077,7 @@
 			<Description>TXT_KEY_LEADER_MONTEZUMA</Description>
 			<Civilopedia>TXT_KEY_LEADER_MONTEZUMA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_MONTEZUMA</ArtDefineTag>
-			<iWonderConstructRand>0</iWonderConstructRand>
+			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>

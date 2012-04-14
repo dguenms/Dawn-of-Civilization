@@ -414,14 +414,15 @@ class Plague:
                         CyInterface().addMessage(city.getOwner(), True, con.iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_SPREAD_CITY", ()) + " " + city.getName() + "!", "AS2D_PLAGUE", 0, "", ColorTypes(con.iLime), -1, -1, True, True)
                 for x in range(city.getX()-2, city.getX()+3):
                         for y in range(city.getY()-2, city.getY()+3):
-                                pCurrent = gc.getMap().plot( x, y )                
+                                pCurrent = gc.getMap().plot( x, y )
+				pCurrent.setUpgradeProgress(0)
                                 iImprovement = pCurrent.getImprovementType()
                                 #if (iImprovement == con.iCottage):
                                 #        pCurrent.setImprovementType(-1)
-                                if (iImprovement == con.iHamlet):
-                                        pCurrent.setImprovementType(con.iCottage)
-                                if (iImprovement == con.iVillage):
-                                        pCurrent.setImprovementType(con.iHamlet)
+                                #if (iImprovement == con.iHamlet):
+                                #        pCurrent.setImprovementType(con.iCottage)
+                                #if (iImprovement == con.iVillage):
+                                #        pCurrent.setImprovementType(con.iHamlet)
                                 if (iImprovement == con.iTown):
                                         pCurrent.setImprovementType(con.iVillage)
                                 if (pCurrent.isCity()):

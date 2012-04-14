@@ -15120,14 +15120,26 @@
 			<TerrainDefenses/>
 			<FeatureAttacks/>
 			<FeatureDefenses/>
-			<UnitClassAttackMods/>
+			<UnitClassAttackMods>
+				<UnitClassAttackMod>
+					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
+					<iUnitClassMod>50</iUnitClassMod>
+				</UnitClassAttackMod>
+				<UnitClassAttackMod>
+					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
+					<iUnitClassMod>50</iUnitClassMod>
+				</UnitClassAttackMod>
+				<UnitClassAttackMod>
+					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
+					<iUnitClassMod>50</iUnitClassMod>
+				</UnitClassAttackMod>
+				<UnitClassAttackMod>
+					<UnitClassType>UNITCLASS_MACEMAN</UnitClassType>
+					<iUnitClassMod>50</iUnitClassMod>
+				</UnitClassAttackMod>
+			</UnitClassAttackMods>
 			<UnitClassDefenseMods/>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
+			<UnitCombatMods/>
 			<UnitCombatCollateralImmunes/>
 			<DomainMods/>
 			<BonusProductionModifiers/>
@@ -15140,7 +15152,7 @@
 			<iCultureGarrison>7</iCultureGarrison>
 			<iExtraCost>0</iExtraCost>
 			<iAsset>3</iAsset>
-			<iPower>12</iPower>
+			<iPower>8</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>

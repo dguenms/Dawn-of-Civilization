@@ -1700,13 +1700,7 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 	CvTeamAI& kMasterTeam = GET_TEAM(eTeam);
 
 	//Leoreth: recently spawned or respawned civs won't vassalize
-	long result = -1;
-	CyArgsList argsList;
-	argsList.add((int)eTeam);
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "getLatestRebellionTurn", argsList.makeFunctionArgs(), &result);
-	int iLatestRebellionTurn = (int)result;
-
-	if (GC.getGame().getGameTurn() - iLatestRebellionTurn < 10)
+	if (GC.getGame().getGameTurn() - GET_PLAYER((PlayerTypes)getID()).getLatestRebellionTurn() < 10)
 	{
 		return DENIAL_NO_GAIN;
 	}
@@ -1714,7 +1708,7 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
-		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID())
+		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID() /**/ && !kLoopTeam.isMinorCiv()) // Leoreth: exclude wars with minor civs from vassal considerations
 		{
 			if (!kLoopTeam.isAtWar(kMasterTeam.getID()) && kLoopTeam.isAtWar(getID()))
 			{
@@ -4185,7 +4179,8 @@ void CvTeamAI::AI_doWar()
 								{
 									if (canDeclareWar((TeamTypes)iI))
 									{
-										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)))
+										// Leoreth: Thai UP: AI doesn't declare war on pleased
+										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)) && !(iI == THAILAND && AI_getAttitude((TeamTypes)iI) >= ATTITUDE_PLEASED))
 										{
 											int iDefensivePower = (GET_TEAM((TeamTypes)iI).getDefensivePower() * 2) / 3;
 

@@ -89,6 +89,14 @@
 		<English>Kingdom of Denmark</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_SWEDEN_REPUBLIC</Tag>
+		<English>Republic of Sweden</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VIKINGS_DENMARK_REPUBLIC</Tag>
+		<English>Republic of Denmark</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SOVIET_VASSAL</Tag>
 		<English>Soviet Scandinavia</English>
 	</TEXT>
