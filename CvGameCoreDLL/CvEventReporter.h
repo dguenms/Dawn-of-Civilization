@@ -122,6 +122,10 @@ public:
 
 	void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
 
+	void greatDepression(PlayerTypes ePlayer, bool bAcquired); // Leoreth
+	void postCommunism(PlayerTypes ePlayer); // Leoreth
+	void democracyTransition(PlayerTypes ePlayer); // Leoreth
+
 	DllExport void preSave();
 
 	DllExport void getGameStatistics(std::vector<CvStatBase*>& aStats);

@@ -2384,3 +2384,92 @@ int CyPlayer::getWarMapValue(int x, int y)
 {
 	return m_pPlayer ? m_pPlayer->getWarMapValue(x, y) : -1;
 }
+
+// Leoreth: stability (not active yet)
+int CyPlayer::getStability()
+{
+	return m_pPlayer ? m_pPlayer->getStability() : -1;
+}
+
+void CyPlayer::setStability(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setStability(iNewValue);
+}
+
+void CyPlayer::changeStability(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeStability(iChange);
+}
+
+int CyPlayer::getGreatDepressionCountdown()
+{
+	return m_pPlayer ? m_pPlayer->getGreatDepressionCountdown() : -1;
+}
+
+void CyPlayer::setGreatDepressionCountdown(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setGreatDepressionCountdown(iNewValue);
+}
+
+int CyPlayer::getCombatResultTempModifier()
+{
+	return m_pPlayer ? m_pPlayer->getCombatResultTempModifier() : -1;
+}
+
+void CyPlayer::setCombatResultTempModifier(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setCombatResultTempModifier(iNewValue);
+}
+
+void CyPlayer::changeCombatResultTempModifier(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeCombatResultTempModifier(iChange);
+}
+
+int CyPlayer::getBaseStabilityLastTurn()
+{
+	return m_pPlayer ? m_pPlayer->getBaseStabilityLastTurn() : -1;
+}
+
+void CyPlayer::setBaseStabilityLastTurn(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setBaseStabilityLastTurn(iNewValue);
+}
+
+int CyPlayer::getLatestRebellionTurn()
+{
+	return m_pPlayer ? m_pPlayer->getLatestRebellionTurn() : -1;
+}
+
+void CyPlayer::setLatestRebellionTurn(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setLatestRebellionTurn(iNewValue);
+}
+
+boost::python::list CyPlayer::getStabilityList()
+{
+	boost::python::list output = boost::python::list();
+
+	if (m_pPlayer)
+	{
+		StabilityList m_stabilityList = m_pPlayer->getStabilityList();
+
+		StabilityList::iterator it;
+		for (it = m_stabilityList.begin(); it != m_stabilityList.end(); ++it)
+		{
+			std::string string = (std::string)it->first;
+			int iValue = it->second;
+			boost::python::tuple tup = python::make_tuple(string, iValue);
+			output.append(tup);
+		}
+	}
+
+	return output;
+}

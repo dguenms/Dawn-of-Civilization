@@ -27,7 +27,7 @@ tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary curren
 lTradingCompanyCivs = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 
 tSilkRouteTL = (80, 46)
-tSilkRouteBR = (103, 52)
+tSilkRouteBR = (99, 52)
 
 tMiddleEastTL = (68, 38)
 tMiddleEastBR = (85, 46)
@@ -54,7 +54,7 @@ class Companies:
 
 	def checkCompany(self, iCompany, iGameTurn):
 		
-		if (iCompany == iSilkRoute and iGameTurn > getTurnForYear(1500)) or (iCompany == iTradingCompany and iGameTurn > getTurnForYear(1800)):
+		if (iCompany == iSilkRoute and iGameTurn > getTurnForYear(1500)) or (iCompany == iTradingCompany and iGameTurn > getTurnForYear(1800)) or (iCompany == iTextileIndustry and iGameTurn > getTurnForYear(1920)):
 			iMaxCompanies = 0
 		else:
 			iMaxCompanies = tCompaniesLimit[iCompany]
@@ -62,7 +62,7 @@ class Companies:
 		# loop through all cities, check the company value for each and add the good ones to a list of tuples (city, value)
 		cityValueList = []
 		for iPlayer in range(iNumPlayers):
-			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(tCompanyTechs[iCompany]):
+			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(tCompanyTechs[iCompany]) and (gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(con.iCorporation) or iCompany <= iTradingCompany):
 				apCityList = PyPlayer(iPlayer).getCityList()
 				for pCity in apCityList:
 					city = pCity.GetCy()

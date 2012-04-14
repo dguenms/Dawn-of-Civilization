@@ -5884,6 +5884,10 @@ void CvGame::doTurn()
 	// END OF TURN
 	CvEventReporter::getInstance().beginGameTurn( getGameTurn() );
 
+	GC.getGameINLINE().logMsg("Begin game stability.");
+	doStability(); // Leoreth
+	GC.getGameINLINE().logMsg("Finish game stability.");
+
 	doUpdateCacheOnTurn();
 
 	updateScore();
@@ -9626,3 +9630,337 @@ bool CvGame::pythonIsBonusIgnoreLatitudes() const
 	return false;
 }
 
+void CvGame::doStability()
+{
+	int iGameTurn = getGameTurn();
+
+	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+	{
+		PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+		GET_PLAYER(ePlayer).setOwnedPlotsLastTurn(0);
+		GET_PLAYER(ePlayer).setOwnedOuterPlotsLastTurn(0);
+		GET_PLAYER(ePlayer).setOwnedCitiesLastTurn(0);
+		GET_PLAYER(ePlayer).setOwnedForeignCitiesLastTurn(0);
+	}
+
+	if (iGameTurn % getTurns(6) == 0)
+	{
+		for (int iX = 0; iX < EARTH_X; iX++)
+		{
+			for (int iY = 0; iY < EARTH_Y; iY++)
+			{
+				CvPlot* pCurrent = GC.getMap().plot(iX, iY);
+				PlayerTypes eOwner = pCurrent->getOwner();
+				int iOwner = (int)eOwner;
+				if (iOwner > 0 && iOwner < NUM_MAJOR_PLAYERS && (pCurrent->isHills() || pCurrent->isFlatlands()))
+				{
+					if (GET_PLAYER(eOwner).getSettlersMaps(67-iY, iX) < 90)
+					{
+						if (pCurrent->isCityRadius())
+							GET_PLAYER(eOwner).changeOwnedPlotsLastTurn(1);
+						else
+							GET_PLAYER(eOwner).changeOwnedOuterPlotsLastTurn(1);
+
+						if (pCurrent->isCity())
+							GET_PLAYER(eOwner).changeOwnedForeignCitiesLastTurn(1);
+					}
+
+					if (pCurrent->isCity())
+					{
+						PlayerTypes eCityOwner = pCurrent->getPlotCity()->getOwner();
+						for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+						{
+							PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+							if (iPlayer != (int)eCityOwner && GET_PLAYER(eOwner).isAlive() && iGameTurn >= getTurnForYear(startingTurnYear[iPlayer])+getTurns(30) && iGameTurn >= getTurnForYear(GET_PLAYER(ePlayer).getLatestRebellionTurn())+getTurns(15))
+							{
+								if (GET_PLAYER(ePlayer).getSettlersMaps(67-iY, iX) >= 400)
+								{
+									long result = -1;
+									CyArgsList argsList;
+									argsList.add(iX);
+									argsList.add(iY);
+									argsList.add(iPlayer);
+									gDLL->getPythonIFace()->callFunction(PYScreensModule, "isNormalPlot", argsList.makeFunctionArgs(), &result);
+									long iNormal = (long)result;
+
+									if (iNormal == 1)
+										GET_PLAYER(ePlayer).changeOwnedCitiesLastTurn(1);
+								}
+							}
+
+							if (iPlayer == AMERICA)
+							{
+								if (GET_PLAYER(ePlayer).getOwnedCitiesLastTurn() >= 2)
+								{
+									GET_PLAYER(ePlayer).changeOwnedCitiesLastTurn(-2);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	GC.getGameINLINE().logMsg("Point 1 reached.");
+
+	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+	{
+		PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+		if (GET_PLAYER(ePlayer).isAlive())
+		{
+			int iTempNormalizationThreshold = GET_PLAYER(ePlayer).getStability();
+
+			if (iGameTurn > getTurnForYear(1760) && iGameTurn % getTurns(12) == 7)
+			{
+				if (GET_PLAYER(ePlayer).getStability() < -40)
+				{
+					GET_PLAYER(ePlayer).changeStability(1);
+				}
+			}
+			else if (iGameTurn > getTurnForYear(-1000) && iGameTurn % getTurns(22) == 7)
+			{
+				if (GET_PLAYER(ePlayer).getStability() < -20 && GET_PLAYER(ePlayer).getStability() >= -50)
+				{
+					GET_PLAYER(ePlayer).changeStability(1);
+				}
+			}
+
+			if (iGameTurn % getTurns(10) == 8)
+			{
+				if (GET_PLAYER(ePlayer).getStability() < -50)
+				{
+					GET_PLAYER(ePlayer).changeStability(1);
+				}
+			}
+
+			if (iGameTurn % getTurns(10) == 9)
+			{
+				if (GET_PLAYER(ePlayer).getStability() > 50)
+				{
+					GET_PLAYER(ePlayer).changeStability(-1);
+				}
+			}
+
+			if (iGameTurn > getTurnForYear(-1000) && iGameTurn % getTurns(12) == 5)
+			{
+				int iPermanentModifier = GET_PLAYER(ePlayer).getStability() - GET_PLAYER(ePlayer).getBaseStabilityLastTurn();
+
+				if (iPermanentModifier > 15)
+				{
+					GET_PLAYER(ePlayer).changeStability(-1);
+				}
+				else if (iPermanentModifier < -40)
+				{
+					GET_PLAYER(ePlayer).changeStability(1);
+				}
+			}
+
+			if (iGameTurn % getTurns(20) == 1)
+			{
+				if (getActivePlayer() == iPlayer)
+				{
+					int iHandicap = ((int)getHandicapType())-1;
+					GET_PLAYER(ePlayer).changeStability(iHandicap);
+				}
+			}
+		}
+	}
+
+	GC.getGameINLINE().logMsg("Point 2 reached.");
+
+	if (((iGameTurn > getTurnForYear(-600) && GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) || (iGameTurn > getTurnForYear(600)+getTurns(20) && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) && iGameTurn % getTurns(20) == 15)
+	{
+		continentsNormalization();
+		normalization();
+	}
+}
+
+void CvGame::continentsNormalization()
+{
+	GET_PLAYER((PlayerTypes)INDIA).changeStability(2);
+	GET_PLAYER((PlayerTypes)CHINA).changeStability(2);
+	GET_PLAYER((PlayerTypes)JAPAN).changeStability(2);
+	GET_PLAYER((PlayerTypes)KOREA).changeStability(2);
+	GET_PLAYER((PlayerTypes)KHMER).changeStability(2);
+	GET_PLAYER((PlayerTypes)INDONESIA).changeStability(2);
+	GET_PLAYER((PlayerTypes)MONGOLIA).changeStability(2);
+	GET_PLAYER((PlayerTypes)THAILAND).changeStability(2);
+	
+	GET_PLAYER((PlayerTypes)EGYPT).changeStability(-2);
+	GET_PLAYER((PlayerTypes)GREECE).changeStability(-2);
+	GET_PLAYER((PlayerTypes)CARTHAGE).changeStability(-2);
+	GET_PLAYER((PlayerTypes)ROME).changeStability(-2);
+	GET_PLAYER((PlayerTypes)ETHIOPIA).changeStability(-2);
+	GET_PLAYER((PlayerTypes)BYZANTIUM).changeStability(-2);
+	GET_PLAYER((PlayerTypes)MALI).changeStability(-2);
+}
+
+void CvGame::normalization()
+{
+	GC.getGameINLINE().logMsg("Begin normalization.");
+
+	int iGameTurn = getGameTurn();
+
+	int iMean = 0;
+    int iTotal = 0;
+    int iStandardMean = 3;
+	int iSigma = 0;
+    int iMinSigma = 7 + (iGameTurn - getTurns(100))/getTurns(50);
+    int iMaxSigma = 15 + (iGameTurn - getTurns(100))/getTurns(50);
+    int iStandardSigma = 11 + (iGameTurn - getTurns(100))/getTurns(50);
+    int iNumAlive = 0;
+
+	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+	{
+		PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+		if (GET_PLAYER(ePlayer).isAlive())
+		{
+			iNumAlive += 1;
+			iTotal += GET_PLAYER(ePlayer).getStability();
+		}
+	}
+
+	iMean = iTotal / iNumAlive;
+
+	GC.getGameINLINE().logMsg("Point A reached.");
+
+	int iDifferences = 0;
+
+	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+	{
+		PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+		if (GET_PLAYER(ePlayer).isAlive())
+		{
+			iDifferences += abs(GET_PLAYER(ePlayer).getStability() - iMean);
+		}
+	}
+
+	iSigma = iDifferences / iNumAlive;
+
+	if (iSigma == 0)
+	{
+		iSigma = 1;
+		iStandardSigma = 8;
+		iMinSigma = 5;
+	}
+
+	int iMonitorPlayer = getActivePlayer();
+	int iTempNormalizationThreshold = GET_PLAYER((PlayerTypes)iMonitorPlayer).getStability();
+
+	if (iSigma > iMaxSigma+3)
+	{
+		for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+		{
+			PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+			if (GET_PLAYER(ePlayer).isAlive())
+			{
+				GET_PLAYER(ePlayer).setStability((GET_PLAYER(ePlayer).getStability() - iMean) * iMaxSigma / iSigma + iMean);
+			}
+		}
+	}
+	else if (iSigma > iMaxSigma)
+	{
+		for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+		{
+			PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+			if (GET_PLAYER(ePlayer).isAlive())
+			{
+				GET_PLAYER(ePlayer).setStability((GET_PLAYER(ePlayer).getStability() - iMean) * iStandardSigma / iSigma + iMean);
+			}
+		}
+	}
+	else if (iSigma < iMinSigma - 3)
+	{
+		for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+		{
+			PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+			if (GET_PLAYER(ePlayer).isAlive())
+			{
+				GET_PLAYER(ePlayer).setStability((GET_PLAYER(ePlayer).getStability() - iMean) * iMinSigma / iSigma + iMean);
+			}
+		}
+	}
+	else if (iSigma < iMinSigma)
+	{
+		for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+		{
+			PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+			if (GET_PLAYER(ePlayer).isAlive())
+			{
+				GET_PLAYER(ePlayer).setStability((GET_PLAYER(ePlayer).getStability() - iMean) * iStandardSigma / iSigma + iMean);
+			}
+		}
+	}
+
+	GC.getGameINLINE().logMsg("Point B reached.");
+
+	for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+	{
+		PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+		if (GET_PLAYER(ePlayer).isAlive())
+		{
+			iNumAlive += 1;
+			iTotal += GET_PLAYER(ePlayer).getStability();
+		}
+	}
+
+	iMean = iTotal / iNumAlive;
+
+	if (iMean > iStandardMean + 6)
+	{
+		for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+		{
+			PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+			if (GET_PLAYER(ePlayer).isAlive())
+			{
+				GET_PLAYER(ePlayer).changeStability(-iMean+iStandardMean+3);
+			}
+		}
+	}
+	else if (iMean > iStandardMean + 3)
+	{
+		for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+		{
+			PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+			if (GET_PLAYER(ePlayer).isAlive())
+			{
+				GET_PLAYER(ePlayer).changeStability(-iMean+iStandardMean);
+			}
+		}
+	}
+	else if (iMean < iStandardMean - 6)
+	{
+		for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+		{
+			PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+			if (GET_PLAYER(ePlayer).isAlive())
+			{
+				GET_PLAYER(ePlayer).changeStability(-iMean+iStandardMean-3);
+			}
+		}
+	}
+	else if (iMean < iStandardMean - 3)
+	{
+		for (int iPlayer = 0; iPlayer < NUM_MAJOR_PLAYERS; iPlayer++)
+		{
+			PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+			if (GET_PLAYER(ePlayer).isAlive())
+			{
+				GET_PLAYER(ePlayer).changeStability(-iMean+iStandardMean);
+			}
+		}
+	}
+
+	/* Parameter stuff, do later
+	int iVariation = GET_PLAYER((PlayerTypes)iMonitorPlayer).getStability() - iTempNormalizationThreshold;
+
+	if (iVariation != 0)
+	{
+		for (int iLoopPoint = 0; iLoopPoint < abs(iVariation); iLoopPoint++)
+		{
+			if (iLoopPoint % 5 == 0 || iLoopPoint % 5 == 1)
+			{
+				if (iVariation > 0)
+				{*/
+}

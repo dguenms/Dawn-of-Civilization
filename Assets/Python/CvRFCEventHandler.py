@@ -182,6 +182,11 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("vassalState", self.onVassalState)
 		eventManager.addEventHandler("revolution", self.onRevolution)
 		eventManager.addEventHandler("cityGrowth", self.onCityGrowth)
+		
+		#Leoreth: stability events
+		eventManager.addEventHandler("greatDepression", self.onGreatDepression)
+		eventManager.addEventHandler("postCommunism", self.onPostCommunism)
+		eventManager.addEventHandler("democracyTransition", self.onDemocracyTransition)
                 
 		#Leoreth
 		eventManager.addEventHandler("greatPersonBorn", self.onGreatPersonBorn)
@@ -540,7 +545,26 @@ class CvRFCEventHandler:
 		# Leoreth/Voyhkah: Empire State Building effect
 		if pCity.isHasRealBuilding(con.iEmpireState):
                         iPop = pCity.getPopulation()
-                        pCity.setBuildingCommerceChange(con.iEmpireState, 0, iPop)
+                        pCity.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE"), 0, iPop)
+			
+	def onGreatDepression(self, argsList):
+		iPlayer = argsList[0]
+		bAcquired = argsList[1]
+		
+		if bAcquired:
+			CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE", (gc.getPlayer(iLoopCiv).getCivilizationDescription(0),)), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
+		else:
+			CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_GREAT_DEPRESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
+	
+	def onPostCommunism(self, argsList):
+		iPlayer = argsList[0]
+		
+		CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_POST_COMMUNISM", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
+		
+	def onDemocracyTransition(self, argsList):
+		iPlayer = argsList[0]
+		
+		CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_DEMOCRACY", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
 
         def onBuildingBuilt(self, argsList):
                 city, iBuildingType = argsList
@@ -563,8 +587,8 @@ class CvRFCEventHandler:
 
 		# Leoreth/Voyhkah: Empire State Building
 		if iBuildingType == con.iEmpireState:
-			iPop = pCity.getPopulation()
-			pCity.setBuildingCommerceChange(con.iEmpireState, 0, iPop)
+			iPop = city.getPopulation()
+			city.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE"), 0, iPop)
 
 		# Leoreth: found Buddhism when a Hindu temple is built
 		if iBuildingType == con.iHinduTemple:
@@ -755,6 +779,16 @@ class CvRFCEventHandler:
             
                 iGameTurn = argsList[0]
                 self.sta.checkImplosion(iGameTurn)
+		
+		# Leoreth: test stability on divergences every 5 turns
+		if iGameTurn % utils.getTurns(5) == 0:
+			for iPlayer in range(con.iNumPlayers):
+				if gc.getPlayer(iPlayer).isAlive():
+					print "PYTHON: Player " + str(iPlayer) + " base stability: " + str(self.sta.getBaseStabilityLastTurn(iPlayer))
+					print "DLL: Player " + str(iPlayer) + " base stability: " + str(gc.getPlayer(iPlayer).getBaseStabilityLastTurn())
+					lStabilityList = gc.getPlayer(iPlayer).getStabilityList()
+					for tStabilityTuple in lStabilityList:
+						print str(tStabilityTuple)
 
 
         def onReligionSpread(self, argsList):
@@ -762,10 +796,10 @@ class CvRFCEventHandler:
                 iReligion, iOwner, pSpreadCity = argsList
                 self.sta.onReligionSpread(iReligion, iOwner)
 
-		#Leoreth: if pagan temples are not in use anymore (i.e. not running Pantheon), replace them with the temple of the religion that spreads             
+		#Leoreth: if state religion spreads, pagan temples are replaced with its temple. For other religions, they're simply removed.         
 		if pSpreadCity.isHasBuilding(con.iObelisk):
-			if gc.getPlayer(iOwner).getCivics(4) != 21 and gc.getTeam(iOwner).isHasTech(con.iPriesthood):
-				pSpreadCity.setHasRealBuilding(con.iObelisk, False)
+			pSpreadCity.setHasRealBuilding(con.iObelisk, False)
+			if gc.getPlayer(iOwner).getCivics(4) != con.iPantheon and gc.getPlayer(iReligion).getStateReligion() == iReligion and gc.getTeam(iOwner).isHasTech(con.iPriesthood):
 				pSpreadCity.setHasRealBuilding(con.iJewishTemple+4*iReligion, True)
 
 
@@ -821,6 +855,9 @@ class CvRFCEventHandler:
 
 		if (argsList[0] == con.iEconomics):
 			self.rnf.onEconomicsDiscovered(argsList[2])
+			
+		if argsList[0] == con.iRailroad:
+			self.rnf.onRailroadDiscovered(argsList[2])
                     
                 if (gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iHuman])):
 
@@ -1261,6 +1298,7 @@ class CvRFCEventHandler:
                 if self.rnf.getCheatMode() and theKey == int(InputTypes.KB_S) and self.eventManager.bAlt and self.eventManager.bShift:
                         print("SHIFT-ALT-S") #boosts stability by +10 for the human player
                         utils.setStability(utils.getHumanID(), utils.getStability(utils.getHumanID())+10)
+			gc.getPlayer(utils.getHumanID()).changeStability(10) # test DLL
 
                         
                 #Rhye - end debug

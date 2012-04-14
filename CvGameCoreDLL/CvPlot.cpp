@@ -6398,6 +6398,18 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		}
 		//Rhye - end UP
 
+		// Leoreth: possible mall effect: +1 commerce on cottages
+		/*if (ePlayer == AMERICA)
+		{
+			if (getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_VILLAGE") || getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_HAMLET") || getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_TOWN"))
+			{
+				if (getWorkingCity()->isHasRealBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_AMERICAN_MALL"))
+				{
+					iYield += GC.getBonudInfo((BonusTypes)21).getYieldChange(eYield);
+				}
+			}
+		}*/
+
 		if (GET_PLAYER(ePlayer).isGoldenAge())
 		{
 			if (iYield >= GC.getYieldInfo(eYield).getGoldenAgeYieldThreshold())

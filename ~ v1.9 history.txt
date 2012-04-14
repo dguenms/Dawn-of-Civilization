@@ -60,9 +60,9 @@
 # Luxury Industry now requires Electricity
 # Changed La Mezquita to +1 research per specialist
 # Arabian UHV now requires them to conquer or vassalize Spain as well
-# Allowed the AI to start wonders the player requires for his UHV only after he has spawned
+# Allowed the AI to start wonders the player requires for his UHV only after his spawn
 
-# Included Orthodoxy as a religion, which will be founded by the civ that controls Jerusalem when the Apostolic Palace is built (or when from the 9th to 11th century)
+# Included Orthodoxy as a religion, which will be founded by the civ that controls Jerusalem when the Apostolic Palace is built (or in the 9-11th century if it's not built by then)
 # The Arab UP doesn't automatically build Mosques anymore
 # AI capitals get relocated should they lose and recover their original capital
 
@@ -117,12 +117,33 @@
 # Added the Grand Canal wonder (Machinery, Calendar): +2 commerce per river tile for its city, expires with Replaceable Parts
 # Added the Floating Gardens wonder (Construction, Corn): +1 food per river tile for its city, expires with Optics
 # Added the Trafalgar Square wonder (Chemistry, Astronomy, naval unit with level three or higher): +5 XP and +50% for naval units, expires with Combustion
-# Borobudur now enables Great Prophets to creat great works like Great Artists
+# Sphinx now enables Great Prophets to creat great works like Great Artists
 # great work now produces 800 culture per game era
 # Kremlin now requires Gunpowder, expires with Communism and gives +2 espionage per state religion building
 # Westminster Palace expires with Fiber Optics
-# Sphinx now gives unlimited artists to its city
+# Borobudur effect modified so that it actually uses priest slots for artists now
 # Extra trade route yield effect removed from Porcelain Tower, gives +2 free merchants instead
 # Reduced the requirement of the first Japanese goal to 20000 culture
 # Added the Lubyanka wonder (Communism): +2 espionage per specialist
 # Negative relation modifiers between Orthodoxy and Protestantism or Catholicism halved
+# no stability penalty from foreign culture with Egalitarianism
+# religion spread now always removes pagan temples, but only replaces them with temples of your state religion
+# Thai UP changed: all AIs don't declare war on pleased
+# players cannot declare war on recently (re)spawned civs
+# reduced number of Spanish colonists, they reliably get Mexico and Peru now
+# reduced Agrarianism bonus to +1 commerce for Pastures and Plantation
+# removed +25% corporation commerce from Free Market
+# Free Market now has a risk of great depression, insted of Capitalism
+# respawned civs are now immune to collapse for the next ten turns
+# plague doesn't reduce cottages by one level anymore (except towns), but it destroys all progress to the next level
+# fixed first contact Mongol hordes spawning in cities
+# Electricity only adds +1 commerce to watermills
+# All cottages worked by a city where people migrate to due to the American UP increase in level
+# The time between the American UP effects now depends on their civics (Republic, Capitalism, Free Market and Secularism help)
+# Hurrying production with gold is now 25% cheaper for everyone except the civ with the highest commerce output [make cash hurrying more effective without opening exploits]
+# helped AI America and Russia along to expand to their historical "frontiers"
+# wars and peace with minor civs are now disregarded by the AI while considering to become a vassal
+# minor civs don't use nukes anymore
+# Free Market only provides +25% trade route commerce
+# Capitalism now gives +10% commerce
+# Spanish conquistadors now only get +50% attack vs. Swordsmen, Axemen, Spearmen and Macemen instead of all melee units

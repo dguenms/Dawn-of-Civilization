@@ -157,6 +157,9 @@ class CvEventManager:
 			'playerChangeStateReligion'	: self.onPlayerChangeStateReligion,
 			'vassalState'			: self.onVassalState,
 			'revolution'			: self.onRevolution,
+			'greatDepression'		: self.onGreatDepression,
+			'postCommunism'			: self.onPostCommunism,
+			'democracyTransition'		: self.onDemocracyTransition,
 		}
 
 		################## Events List ###############################
@@ -1107,4 +1110,14 @@ class CvEventManager:
 
 	def onRevolution(self, argsList):
 		'Revolution has started'
+		iPlayer = argsList[0]
+	
+	def onGreatDepression(self, argsList):
+		iPlayer = argsList[0]
+		bAcquired = argsList[1]
+			
+	def onPostCommunism(self, argsList):
+		iPlayer = argsList[0]
+		
+	def onDemocracyTransition(self, argsList):
 		iPlayer = argsList[0]

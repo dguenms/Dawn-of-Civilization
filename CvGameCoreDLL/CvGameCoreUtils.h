@@ -350,6 +350,7 @@ int getTurnYearForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, G
 int getTurnForYear(int iTurnYear);
 int getGameTurnForYear(int iTurnYear, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
 int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
+int getTurns(int iTurns);
 // edead: end
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);

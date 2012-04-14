@@ -1014,8 +1014,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_BOROBUDUR</Tag>
-		<English>[ICON_BULLET]Great prophets can create great works like great artists.</English>
-		<German>[ICON_BULLET]Große Propheten können große Kunstwerke erstellen, genau wie große Künstler.</German>
+		<English>[ICON_BULLET]Artists can also be hired using priest slots.</English>
+		<German>[ICON_BULLET]Künstler können auch mithilfe von Priesterstellen eingestellt werden.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KHAJURAHO</Tag>
@@ -1198,8 +1198,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STONEHENGE_HELP</Tag>
-		<English>[ICON_BULLET]Unlimited artists for its city.</English>
-		<German>[ICON_BULLET]Unbegrenzte Künstler für diese Stadt.</German>
+		<English>[ICON_BULLET]Great prophets can create great works like great artists.</English>
+		<German>[ICON_BULLET]Große Propheten können große Kunstwerke erstellen, genau wie große Künstler.</German>
 	</TEXT>
 	
 

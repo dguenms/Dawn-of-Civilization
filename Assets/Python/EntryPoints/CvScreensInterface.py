@@ -68,6 +68,7 @@ def countAchievedGoals(argsList):
 def resetStabilityParameters(argsList):
         for i in range(con.iNumStabilityParameters):
                 utils.setStabilityParameters(i, 0)
+		gc.getPlayer(i).setStability(0) # test stability
         utils.setLastRecordedStabilityStuff(0, 0)
         utils.setLastRecordedStabilityStuff(1, 0)
         utils.setLastRecordedStabilityStuff(2, 0)
@@ -938,15 +939,16 @@ def onTechStolen(argsList):
 	return 1
 
 #Leoreth
-def getLatestRebellionTurn(argsList):
-	iPlayer = argsList[0]
-	return sd.scriptDict['lLatestRebellionTurn'][iPlayer]
-
-#Leoreth
 def onGreatGeneralBorn(argsList):
 	iPlayer = argsList[0]
 	vic.onGreatGeneralBorn(iPlayer)
 	return 1
+	
+def isNeighbor(argsList):
+	iPlayer = argsList[0]
+	iNeighbor = argsList[1]
+	if iNeighbor in con.lNeighbours[iPlayer]: return 1
+	else: return 0
 
 
 #######################################################################################

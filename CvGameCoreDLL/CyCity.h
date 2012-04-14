@@ -478,6 +478,8 @@ public:
 	int getBuildingHealthChange(int /*BuildingClassTypes*/ eBuildingClass) const;
 	void setBuildingHealthChange(int /*BuildingClassTypes*/ eBuildingClass, int iChange);
 
+	void updateBuildingCommerce(); // Leoreth
+
 	int getLiberationPlayer(bool bConquest);
 	void liberate(bool bConquest);
 

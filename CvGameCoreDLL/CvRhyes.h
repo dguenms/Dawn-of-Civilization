@@ -255,7 +255,8 @@ enum MyReligions
 	BUDDHISM,
 	CONFUCIANISM,
 	TAOISM,
-	ZOROASTRIANISM
+	ZOROASTRIANISM,
+	NUM_RELIGIONS
 };
 
 enum MyBonuses
@@ -333,6 +334,17 @@ enum MyCivics
 	SECULARISM
 };
 
+enum MyEras
+{
+	ERA_ANCIENT,
+	ERA_CLASSICAL,
+	ERA_MEDIEVAL,
+	ERA_RENAISSANCE,
+	ERA_INDUSTRIAL,
+	ERA_MODERN,
+	ERA_FUTURE
+};
+
 enum Regions
 {
 	REGION_BRITAIN,
@@ -380,6 +392,7 @@ enum Regions
 
 extern int startingTurn[];
 extern int startingTurnYear[]; // edead
+extern int fallTurnYear[];
 extern char loadingTime[40][4];
 extern char loadingTime600AD[40][4];
 extern char startingYear[40][6];

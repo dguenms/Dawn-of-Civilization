@@ -6,6 +6,7 @@ import PyHelpers
 import Consts as con
 from StoredData import sd
 import RFCUtils
+import CityNameManager
 utils = RFCUtils.RFCUtils()
 import time
 
@@ -853,6 +854,7 @@ class DynamicCivs:
 		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
 		elif iPlayer == iRome and pRome.isReborn(): iThreshold = 4
 		elif iPlayer == iInca: iThreshold = 3
+		elif iPlayer == iMongolia: iThreshold = 10
 			
 		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
 		
@@ -938,6 +940,23 @@ class DynamicCivs:
 			
 		# Democracy (includes Islamic Republics)
 		if self.isDemocratic(iPlayer):
+			if iPlayer == iMughals:
+				if iCurrentEra <= con.iRenaissance:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MUGHALS_REPUBLIC_MEDIEVAL")
+					return
+			elif iPlayer == iVikings:
+				if capital.getName() == "Stockholm":
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_SWEDEN_REPUBLIC")
+					return
+				elif capital.getName() == "Kobenhavn":
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK_REPUBLIC")
+					return
+			elif iPlayer == iAmerica:
+				if iCivic2 == con.iAgrarianism or iCivic3 == con.iForcedLabor:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
+					return
+		
+		
 			if iPlayer in self.democraticNames:
 				if iPlayer in self.modernIslamNames and iReligion == con.iIslam:
 					self.setCivDesc(iPlayer, self.democraticNames[iPlayer])
@@ -1542,6 +1561,7 @@ class DynamicCivs:
 		elif iPlayer == iAmerica:
 			if iCivic3 == con.iForcedLabor or iCivic2 == con.iAgrarianism:	# Forced Labor
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
+				return
 				
 			# Empire of Columbia as default
 		

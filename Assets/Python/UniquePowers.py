@@ -532,7 +532,11 @@ class UniquePowers:
 ##                popup.setBodyString( 'Turnlength: %d' %(self.getImmigrationTurnLength()))
 ##                popup.launch()            
                 if (self.getImmigrationTurnLength() == 0):
-                        self.setImmigrationTurnLength( 3 + gc.getGame().getSorenRandNum(5, 'random') ) #3 to 7 turns
+			if self.getImmigrationWeight() == 0:
+				iRandom = 10
+			else:
+				iRandom = gc.getGame().getSorenRandNum(5, 'random') * 2 / self.getImmigrationWeight()
+                        self.setImmigrationTurnLength( 3 + iRandom ) #3 to 7 turns
                 iImmigrationCurrentTurn = self.getImmigrationCurrentTurn()
                 self.setImmigrationCurrentTurn(iImmigrationCurrentTurn + 1)
                 if (iImmigrationCurrentTurn <= self.getImmigrationTurnLength()):
@@ -601,10 +605,25 @@ class UniquePowers:
                                         sourceCity = self.selectRandomCitySourceCiv(iPlayer)
                                         print ("immigrating from ", iPlayer)
                                         if ( sourceCity != False):
+						bLarge = (sourceCity.getPopulation() >= 10)
                                                 sourceCity.changePopulation(-1)
+						if bLarge: sourceCity.changePopulation(-1)
                                                 if (gc.getPlayer(iPlayer).isHuman()):
                                                         CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_EMIGRATION", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
                                                 targetCity.changePopulation(1)
+						if bLarge: sourceCity.changePopulation(1)
+						
+						x = targetCity.getX()
+						y = targetCity.getY()
+						for i in range(x-2, x+3):
+							for j in range(y-2, y+3):
+								pCurrent = gc.getMap().plot(i, j)
+								if pCurrent.getWorkingCity() == targetCity:
+									iImprovement = pCurrent.getImprovementType()
+									if iImprovement == con.iCottage: pCurrent.setImprovementType(con.iHamlet)
+									elif iImprovement == con.iHamlet: pCurrent.setImprovementType(con.iVillage)
+									elif iImprovement == con.iVillage: pCurrent.setImprovementType(con.iTown)
+						
                                                 targetPlot = gc.getMap().plot(targetCity.getX(), targetCity.getY())
                                                 iCultureChange = targetPlot.getCulture(iAmerica)/targetCity.getPopulation()
                                                 targetPlot.setCulture(iPlayer, iCultureChange, False)
@@ -638,4 +657,19 @@ class UniquePowers:
                                 iCity = gc.getGame().getSorenRandNum(len(cityList), 'random city')
                                 return cityList[iCity]
                 return False
+		
+	def getImmigrationWeight(self):
+		iCount = 0
+		pAmerica = gc.getPlayer(iAmerica)
+		
+		if pAmerica.getCivics(0) == con.iRepublic:
+			iCount += 1
+			
+		if pAmerica.getCivics(2) == con.iCapitalism and pAmerica.getCivics(3) == con.iFreeMarket:
+			iCount += 1
+			
+		if pAmerica.getCivics(4) == con.iSecularism:
+			iCount += 1
+			
+		return iCount
                         

@@ -206,7 +206,7 @@ BeginPlayer
 	Team=13                 
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_VASSALAGE                   
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE                   
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR                        
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -34738,7 +34738,6 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
 		Player34Culture=10

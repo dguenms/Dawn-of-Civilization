@@ -4143,7 +4143,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 void CvCity::processProcess(ProcessTypes eProcess, int iChange)
 {
-	GC.getGameINLINE().logMsg("Begin process process.");
+	//GC.getGameINLINE().logMsg("Begin process process.");
 	int iI;
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -4151,7 +4151,7 @@ void CvCity::processProcess(ProcessTypes eProcess, int iChange)
 		//Leoreth: process efficiency modifier inside (civic)
 		changeProductionToCommerceModifier(((CommerceTypes)iI), ((GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) * (100+GET_PLAYER(getOwner()).getProcessModifier()) / 100 * iChange)));
 	}
-	GC.getGameINLINE().logMsg("End process process.");
+	//GC.getGameINLINE().logMsg("End process process.");
 }
 
 
@@ -5021,6 +5021,23 @@ int CvCity::getHurryGold(HurryTypes eHurry, int iHurryCost) const
 	}
 
 	iGold = (iHurryCost * GC.getHurryInfo(eHurry).getGoldPerProduction());
+
+	// Leoreth: -25% hurry cost if not first in GDP (make it more useful without being exploitable)
+	bool bFirstGDP = true;
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).calculateTotalCommerce() > GET_PLAYER(getOwner()).calculateTotalCommerce())
+		{
+			bFirstGDP = false;
+			break;
+		}
+	}
+
+	if (!bFirstGDP)
+	{
+		iGold *= 3;
+		iGold /= 4;
+	}
 
 	return std::max(1, iGold);
 }
@@ -10121,22 +10138,30 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
-	//Leoreth: Borobudur effect (removed)
-	/*if (eIndex == (SpecialistTypes)2) //artist
+
+	// Leoreth: Borobudur effect
+	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)BOROBUDUR) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
 	{
-	    if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)BOROBUDUR) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
-	    {
-	        return m_paiMaxSpecialistCount[eIndex]+m_paiMaxSpecialistCount[(SpecialistTypes)1]; //priest
-	    }
-	}*/
+		if (eIndex == (SpecialistTypes)2) // artist
+		{
+			return m_paiMaxSpecialistCount[eIndex]+m_paiMaxSpecialistCount[(SpecialistTypes)1]; // priest
+		}
+
+		if (eIndex == (SpecialistTypes)1) // priest
+		{
+			int iPriestsToArtists = max(0, getSpecialistCount((SpecialistTypes)2) - getFreeSpecialistCount((SpecialistTypes)2) - m_paiMaxSpecialistCount[(SpecialistTypes)2]);
+			return m_paiMaxSpecialistCount[eIndex]-iPriestsToArtists;
+		}
+	}
+
 	return m_paiMaxSpecialistCount[eIndex];
 }
 
 
 bool CvCity::isSpecialistValid(SpecialistTypes eIndex, int iExtra) const
 {
-	// Leoreth: Sphinx effect included
-	return (((getSpecialistCount(eIndex) + iExtra) <= getMaxSpecialistCount(eIndex)) || GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex) || isHasRealBuilding((BuildingTypes)STONEHENGE) || (eIndex == GC.getDefineINT("DEFAULT_SPECIALIST")));
+	// Leoreth: Sphinx effect included (disabled)
+	return (((getSpecialistCount(eIndex) + iExtra) <= getMaxSpecialistCount(eIndex)) || GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex) || /*(isHasRealBuilding((BuildingTypes)STONEHENGE) && eIndex == (SpecialistTypes)2)  ||*/ (eIndex == GC.getDefineINT("DEFAULT_SPECIALIST")));
 }
 
 

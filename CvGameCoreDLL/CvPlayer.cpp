@@ -158,14 +158,14 @@ void CvPlayer::init(PlayerTypes eID)
 	FAssert(getTeam() != NO_TEAM);
 	GET_TEAM(getTeam()).changeNumMembers(1);
 
-	TCHAR szOut[1024];
+	//TCHAR szOut[1024];
 
 	if ((GC.getInitCore().getSlotStatus(getID()) == SS_TAKEN) || (GC.getInitCore().getSlotStatus(getID()) == SS_COMPUTER))
 	{
 		setAlive(true);
 
-		sprintf(szOut, "Player %d set alive reached\n", eID);
-		GC.getGameINLINE().logMsg(szOut);
+		//sprintf(szOut, "Player %d set alive reached\n", eID);
+		//GC.getGameINLINE().logMsg(szOut);
 
 		if (GC.getGameINLINE().isOption(GAMEOPTION_RANDOM_PERSONALITIES))
 		{
@@ -305,13 +305,13 @@ void CvPlayer::init(PlayerTypes eID)
 		}
 	}
 
-	sprintf(szOut, "Player %d AI init reached.", eID);
-	GC.getGameINLINE().logMsg(szOut);
+	//sprintf(szOut, "Player %d AI init reached.", eID);
+	//GC.getGameINLINE().logMsg(szOut);
 
 	AI_init();
 
-	sprintf(szOut, "Player %d init completed.", eID);
-	GC.getGameINLINE().logMsg(szOut);
+	//sprintf(szOut, "Player %d init completed.", eID);
+	//GC.getGameINLINE().logMsg(szOut);
 
 	//Rhye - start (dynamic civ names - not jdog's)
 	/*if (getID() < NUM_MAJOR_PLAYERS)
@@ -391,6 +391,8 @@ void CvPlayer::uninit()
 	clearPopups();
 
 	clearDiplomacy();
+
+	clearStabilityList(); // Leoreth
 }
 
 
@@ -526,6 +528,21 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 	//Leoreth
 	m_bReborn = false;
+
+	m_iBaseStabilityLastTurn = 0;
+	m_iPartialBaseStability = 0;
+	m_iStability = 0;
+	m_iOwnedPlotsLastTurn = 0;
+	m_iOwnedOuterPlotsLastTurn = 0;
+	m_iOwnedForeignCitiesLastTurn = 0;
+	m_iOwnedCitiesLastTurn = 0;
+	m_iCombatResultTempModifier = 0;
+	m_iGNPold = 0;
+	m_iGNPnew = 0;
+	m_iGreatDepressionCountdown = 0;
+	m_iStatePropertyCountdown = 0;
+	m_iDemocracyCountdown = 0;
+	m_iLatestRebellionTurn = 0;
 
 	m_eID = eID;
 	updateTeamType();
@@ -2768,6 +2785,12 @@ void CvPlayer::doTurn()
 
 	CvEventReporter::getInstance().beginPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
 
+	// Leoreth
+	/*GC.getGameINLINE().logMsg("Initiate player stability.");
+	if (isAlive() && getID() < NUM_MAJOR_PLAYERS && getNumCities() > 0)
+		doStability();
+	GC.getGameINLINE().logMsg("Finish player stability.");*/
+
 	doUpdateCacheOnTurn();
 
 	GC.getGameINLINE().verifyDeals();
@@ -4744,8 +4767,15 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 		}
 		//Rhye - end UP (Turkish)
 
+		
 		if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
 		{
+			// Leoreth: else they can't raze cities in NA due to the "always 100% American culture" effect
+			if (getID() == AMERICA && pCity->getOriginalOwner() != AMERICA)
+			{
+				return true;
+			}
+
 			return false;
 		}
 
@@ -8718,8 +8748,6 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			if (eReligion == (ReligionTypes)ZOROASTRIANISM && pLoopCity->getX() == 82 && pLoopCity->getY() == 39) //Parsa
 				iValue *= 8;
 
-			if (eReligion == (ReligionTypes)ORTHODOXY && !pLoopCity->isCapital())
-				iValue = 0;
 			if (eReligion == (ReligionTypes)ORTHODOXY && pLoopCity->isCapital())
 				iValue = 100;
 
@@ -8729,8 +8757,20 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			//if (pLoopCity->getPopulation() == 1)
             //    iValue = 1;
 
-
 			iValue = std::max(1, iValue);
+
+			if (eReligion == (ReligionTypes)ORTHODOXY && !pLoopCity->isCapital())
+				iValue = 0;
+			
+			if (eReligion == (ReligionTypes)PROTESTANTISM)
+			{
+				int iRegion = pLoopCity->getRegionID();
+				if (iRegion != REGION_BRITAIN || iRegion != REGION_IBERIA || iRegion != REGION_ITALY || iRegion != REGION_BALKANS || iRegion != REGION_EUROPE || iRegion != REGION_SCANDINAVIA || iRegion != REGION_RUSSIA)
+				{
+					iValue = 0;
+				}
+			}
+
 
 			if (iValue > iBestValue)
 			{
@@ -17656,7 +17696,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 {
 	int iI, iJ;
 
-	GC.getGameINLINE().logMsg("Begin process civics.");
+	//GC.getGameINLINE().logMsg("Begin process civics.");
 
 	changeGreatPeopleRateModifier(GC.getCivicInfo(eCivic).getGreatPeopleRateModifier() * iChange);
 	changeGreatGeneralRateModifier(GC.getCivicInfo(eCivic).getGreatGeneralRateModifier() * iChange);
@@ -17756,7 +17796,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 			changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (GC.getCivicInfo(eCivic).getImprovementYieldChanges(iI, iJ) * iChange));
 		}
 	}
-	GC.getGameINLINE().logMsg("End process civics.");
+	//GC.getGameINLINE().logMsg("End process civics.");
 }
 
 void CvPlayer::showMissedMessages()
@@ -18098,6 +18138,22 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	//Leoreth
 	pStream->Read(&m_bReborn);
 
+	//Leoreth: stability (not active yet)
+	pStream->Read(&m_iBaseStabilityLastTurn);
+	pStream->Read(&m_iPartialBaseStability);
+	pStream->Read(&m_iStability);
+	pStream->Read(&m_iOwnedPlotsLastTurn);
+	pStream->Read(&m_iOwnedOuterPlotsLastTurn);
+	pStream->Read(&m_iOwnedForeignCitiesLastTurn);
+	pStream->Read(&m_iOwnedCitiesLastTurn);
+	pStream->Read(&m_iCombatResultTempModifier);
+	pStream->Read(&m_iGNPold);
+	pStream->Read(&m_iGNPnew);
+	pStream->Read(&m_iGreatDepressionCountdown);
+	pStream->Read(&m_iStatePropertyCountdown);
+	pStream->Read(&m_iDemocracyCountdown);
+	pStream->Read(&m_iLatestRebellionTurn);
+
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
 	pStream->Read((int*)&m_eCurrentEra);
@@ -18229,6 +18285,18 @@ void CvPlayer::read(FDataStreamBase* pStream)
 			}
 		}
 	}
+
+	/*{
+		clearStabilityList();
+		StabilityList::_Alloc::size_type iSize;
+		pStream->Read(&iSize);
+		for (StabilityList::_Alloc::size_type i = 0; i < iSize; i++)
+		{
+			char* string;
+			int iValue;
+			addToStabilityList(string, iValue);
+		}
+	}*/
 
 	{
 		uint iSize;
@@ -18578,6 +18646,22 @@ void CvPlayer::write(FDataStreamBase* pStream)
 
 	//Leoreth
 	pStream->Write(m_bReborn);
+	
+	//Leoreth: stability (not active yet)
+	pStream->Write(m_iBaseStabilityLastTurn);
+	pStream->Write(m_iPartialBaseStability);
+	pStream->Write(m_iStability);
+	pStream->Write(m_iOwnedPlotsLastTurn);
+	pStream->Write(m_iOwnedOuterPlotsLastTurn);
+	pStream->Write(m_iOwnedForeignCitiesLastTurn);
+	pStream->Write(m_iOwnedCitiesLastTurn);
+	pStream->Write(m_iCombatResultTempModifier);
+	pStream->Write(m_iGNPold);
+	pStream->Write(m_iGNPnew);
+	pStream->Write(m_iGreatDepressionCountdown);
+	pStream->Write(m_iStatePropertyCountdown);
+	pStream->Write(m_iDemocracyCountdown);
+	pStream->Write(m_iLatestRebellionTurn);
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);
@@ -18725,6 +18809,17 @@ void CvPlayer::write(FDataStreamBase* pStream)
 			}
 		}
 	}
+
+	/*{
+		StabilityList::_Alloc::size_type iSize = m_stabilityList.size();
+		pStream->Write(iSize);
+		StabilityList::iterator it;
+		for (it = m_stabilityList.begin(); it != m_stabilityList.end(); ++it)
+		{
+			pStream->Write(it->first);
+			pStream->Write(it->second);
+		}
+	}*/
 
 	{
 		uint iSize = m_mapScoreHistory.size();
@@ -24201,6 +24296,1405 @@ bool CvPlayer::isHasBuilding(BuildingTypes eIndex)
     return (countNumBuildings(eIndex) > 0);
 }
 
+
+int CvPlayer::getBaseStabilityLastTurn()
+{
+	return m_iBaseStabilityLastTurn;
+}
+
+void CvPlayer::setBaseStabilityLastTurn(int iNewValue)
+{
+	m_iBaseStabilityLastTurn = iNewValue;
+}
+
+int CvPlayer::getPartialBaseStability()
+{
+	return m_iPartialBaseStability;
+}
+
+void CvPlayer::setPartialBaseStability(int iNewValue)
+{
+	m_iPartialBaseStability = iNewValue;
+}
+
+int CvPlayer::getStability()
+{
+	return m_iStability;
+}
+
+void CvPlayer::setStability(int iNewValue)
+{
+	m_iStability = iNewValue;
+}
+
+void CvPlayer::changeStability(int iChange)
+{
+	m_iStability += iChange;
+}
+
+int CvPlayer::getOwnedPlotsLastTurn()
+{
+	return m_iOwnedPlotsLastTurn;
+}
+
+void CvPlayer::setOwnedPlotsLastTurn(int iNewValue)
+{
+	m_iOwnedPlotsLastTurn = iNewValue;
+}
+
+void CvPlayer::changeOwnedPlotsLastTurn(int iChange)
+{
+	m_iOwnedPlotsLastTurn += iChange;
+}
+
+int CvPlayer::getOwnedOuterPlotsLastTurn()
+{
+	return m_iOwnedOuterPlotsLastTurn;
+}
+
+void CvPlayer::setOwnedOuterPlotsLastTurn(int iNewValue)
+{
+	m_iOwnedOuterPlotsLastTurn = iNewValue;
+}
+
+void CvPlayer::changeOwnedOuterPlotsLastTurn(int iChange)
+{
+	m_iOwnedOuterPlotsLastTurn += iChange;
+}
+
+int CvPlayer::getOwnedForeignCitiesLastTurn()
+{
+	return m_iOwnedForeignCitiesLastTurn;
+}
+
+void CvPlayer::setOwnedForeignCitiesLastTurn(int iNewValue)
+{
+	m_iOwnedForeignCitiesLastTurn = iNewValue;
+}
+
+void CvPlayer::changeOwnedForeignCitiesLastTurn(int iChange)
+{
+	m_iOwnedForeignCitiesLastTurn += iChange;
+}
+
+int CvPlayer::getOwnedCitiesLastTurn()
+{
+	return m_iOwnedCitiesLastTurn;
+}
+
+void CvPlayer::setOwnedCitiesLastTurn(int iNewValue)
+{
+	m_iOwnedCitiesLastTurn = iNewValue;
+}
+
+void CvPlayer::changeOwnedCitiesLastTurn(int iChange)
+{
+	m_iOwnedCitiesLastTurn += iChange;
+}
+
+int CvPlayer::getCombatResultTempModifier()
+{
+	return m_iCombatResultTempModifier;
+}
+
+void CvPlayer::setCombatResultTempModifier(int iNewValue)
+{
+	m_iCombatResultTempModifier = iNewValue;
+}
+
+void CvPlayer::changeCombatResultTempModifier(int iChange)
+{
+	m_iCombatResultTempModifier += iChange;
+}
+
+int CvPlayer::getGNPold()
+{
+	return m_iGNPold;
+}
+
+void CvPlayer::setGNPold(int iNewValue)
+{
+	m_iGNPold = iNewValue;
+}
+
+int CvPlayer::getGNPnew()
+{
+	return m_iGNPnew;
+}
+
+void CvPlayer::setGNPnew(int iNewValue)
+{
+	m_iGNPnew = iNewValue;
+}
+
+int CvPlayer::getGreatDepressionCountdown()
+{
+	return m_iGreatDepressionCountdown;
+}
+
+void CvPlayer::setGreatDepressionCountdown(int iNewValue)
+{
+	m_iGreatDepressionCountdown = iNewValue;
+}
+
+int CvPlayer::getStatePropertyCountdown()
+{
+	return m_iStatePropertyCountdown;
+}
+
+void CvPlayer::setStatePropertyCountdown(int iNewValue)
+{
+	m_iStatePropertyCountdown = iNewValue;
+}
+
+int CvPlayer::getDemocracyCountdown()
+{
+	return m_iDemocracyCountdown;
+}
+
+void CvPlayer::setDemocracyCountdown(int iNewValue)
+{
+	m_iDemocracyCountdown = iNewValue;
+}
+
+void CvPlayer::doStability()
+{
+	// benchmark the method
+	clock_t start, end;
+	double cpuTime;
+	TCHAR szOut[1024];
+
+	clearStabilityList();
+
+	GC.getGameINLINE().logMsg("Player stability calculation started.");
+
+	start = clock();
+
+	// updateBaseStability
+	int iPlayer = getID();
+	PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+	TeamTypes eTeam = (TeamTypes)iPlayer;
+	int iGameTurn = GC.getGame().getGameTurn();
+
+	bool bLong = (iGameTurn % getTurns(3) == 0);
+
+	CivicTypes eCivic0 = getCivics((CivicOptionTypes)0);
+	CivicTypes eCivic1 = getCivics((CivicOptionTypes)1);
+	CivicTypes eCivic2 = getCivics((CivicOptionTypes)2);
+	CivicTypes eCivic3 = getCivics((CivicOptionTypes)3);
+	CivicTypes eCivic4 = getCivics((CivicOptionTypes)4);
+	CivicTypes eCivic5 = getCivics((CivicOptionTypes)5);
+
+	int iNewBaseStability;
+
+	int iEconomy;
+	int iIndustry;
+	int iAgriculture;
+	int iPopulation;
+	int iDifference;
+	int iEraModifier;
+
+	if (iGameTurn % getTurns(3) != 0)
+	{
+		iNewBaseStability = GET_PLAYER(ePlayer).getPartialBaseStability();
+
+		iEconomy = calculateTotalYield(YIELD_COMMERCE) - calculateInflatedCosts();
+		iIndustry = calculateTotalYield(YIELD_PRODUCTION);
+		iAgriculture = calculateTotalYield(YIELD_FOOD);
+		iPopulation = getRealPopulation();
+		iDifference = (iIndustry*1000000/iPopulation) - (iEconomy*1000000/iPopulation);
+		iEraModifier = getCurrentEra();
+
+		if (iPlayer == MALI)
+			iEconomy /= 2;
+
+		if (iPlayer == EGYPT || iPlayer == MALI || iPlayer == ETHIOPIA)
+		{
+			iAgriculture *= 7;
+			iAgriculture /= 10;
+		}
+		else if (iPlayer == INDIA)
+		{
+			iAgriculture *= 6;
+			iAgriculture /= 10;
+		}
+	}
+	else
+	{
+		iNewBaseStability = 0;
+
+		// defensive pacts
+		iNewBaseStability += 10*GET_TEAM(eTeam).getDefensivePactTradingCount();
+		addToStabilityList("diplomacyStability", 10*GET_TEAM(eTeam).getDefensivePactTradingCount());
+
+		// open borders
+		iNewBaseStability += 2*GET_TEAM(eTeam).getOpenBordersTradingCount();
+		addToStabilityList("diplomacyStability", 2*GET_TEAM(eTeam).getOpenBordersTradingCount());
+
+		// neighbor stability
+		for (int iNeighbor = 0; iNeighbor < NUM_MAJOR_PLAYERS; iNeighbor++)
+		{
+			PlayerTypes eNeighbor = (PlayerTypes)iNeighbor;
+			if (GET_PLAYER(eNeighbor).isAlive())
+			{
+				long result = -1;
+				CyArgsList argsList;
+				argsList.add(iPlayer);
+				argsList.add(iNeighbor);
+				gDLL->getPythonIFace()->callFunction(PYScreensModule, "isNeighbor", argsList.makeFunctionArgs(), &result);
+				long isNeighbor = (long)result;
+
+				if (isNeighbor == 1)
+				{
+					if (GET_PLAYER((PlayerTypes)iNeighbor).getStability() < -20)
+					{
+						if (GET_PLAYER(ePlayer).getStability() >= 0)
+						{
+							iNewBaseStability -= 5;
+							addToStabilityList("neighborStability", -5);
+						}
+					}
+				}
+			}
+		}
+
+		// vassal stability
+		for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+		{
+			if (GET_TEAM(eTeam).isVassal((TeamTypes)iLoopCiv))
+			{
+				iNewBaseStability += 10;
+				iNewBaseStability += std::min(5, std::max(-6, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4));
+				addToStabilityList("vassalStability", 10 + std::min(5, std::max(-6, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4)));
+			}
+		}
+
+		// master stability
+		for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+		{
+			if (GET_TEAM((TeamTypes)iLoopCiv).isVassal(eTeam))
+			{
+				iNewBaseStability += std::min(3, std::max(-3, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4));
+				addToStabilityList("vassalStability", std::min(3, std::max(-3, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4)));
+
+				// Viceroyalty civic
+				if (eCivic5 == CIVIC_VICEROYALTY)
+				{
+					iNewBaseStability += 4;
+					addToStabilityList("vassalStability", 4);
+				}
+			}
+		}
+
+		// Imperialism civic
+		if (eCivic5 == CIVIC_IMPERIALISM)
+		{
+			for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+			{
+				CvCity* pLoopCity;
+				int iLoop;
+				int iNumOwnCities = 0;
+				int iNumNativeCities = 0;
+				for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+				{
+					long result = -1;
+					CyArgsList argsList;
+					argsList.add(pLoopCity->getX());
+					argsList.add(pLoopCity->getY());
+					argsList.add(iLoopCiv);
+					gDLL->getPythonIFace()->callFunction(PYScreensModule, "isNormalPlot", argsList.makeFunctionArgs(), &result);
+					long iNormal = (long)result;
+					if (iNormal == 1)
+					{
+						iNumOwnCities += 1;
+					}
+				}
+				
+				for (pLoopCity = GET_PLAYER((PlayerTypes)iLoopCiv).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iLoopCiv).nextCity(&iLoop))
+				{
+					long result = -1;
+					CyArgsList argsList;
+					argsList.add(pLoopCity->getX());
+					argsList.add(pLoopCity->getY());
+					argsList.add(iLoopCiv);
+					gDLL->getPythonIFace()->callFunction(PYScreensModule, "isNormalPlot", argsList.makeFunctionArgs(), &result);
+					long iNormal = (long)result;
+					if (iNormal == 1)
+					{
+						iNumNativeCities += 1;
+					}
+				}
+
+				if ((iNumOwnCities >= 2 && iNumOwnCities > iNumNativeCities) || (iNumOwnCities >= 1 && !GET_PLAYER((PlayerTypes)iLoopCiv).isAlive()))
+				{
+					iNewBaseStability += 2*iNumOwnCities;
+					addToStabilityList("imperialismStability", 2*iNumOwnCities);
+				}
+			}
+		}
+
+		// number of contacts
+		int iNumContacts = 0;
+		for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+		{
+			if (canContact((PlayerTypes)iLoopCiv) && iLoopCiv != iPlayer)
+			{
+				iNumContacts += 1;
+			}
+		}
+		iNewBaseStability -= (iNumContacts/3 - 4);
+		addToStabilityList("contactStability", -(iNumContacts/3 - 4));
+
+		// here first parameter
+
+		int iForeignStability = iNewBaseStability;
+		sprintf(szOut, "DLL: Player %d foreign stability: %d", iPlayer, iNewBaseStability);
+		GC.getGameINLINE().logMsg(szOut);
+
+		// historical tile stability
+		int iMaxPlotsAbroad = 36;
+		int iHandicap = (int)GC.getGame().getHandicapType();
+
+		if (iHandicap == 0)
+			iMaxPlotsAbroad = 40;
+		else if (iHandicap == 2)
+			iMaxPlotsAbroad = 32;
+
+		// nerf Korea, City States civic
+		if (iPlayer == KOREA || eCivic0 == CIVIC_CITY_STATES)
+			iMaxPlotsAbroad /= 2;
+
+		int iNumPlotsAbroad = std::max(0, GET_PLAYER(ePlayer).getOwnedPlotsLastTurn() - iMaxPlotsAbroad/2);
+		iNewBaseStability -= iNumPlotsAbroad*2/7;
+		addToStabilityList("expansionStability", -iNumPlotsAbroad*2/7);
+
+		iMaxPlotsAbroad -= GET_PLAYER(ePlayer).getOwnedForeignCitiesLastTurn()*3;
+
+		int iNumOuterPlotsAbroad = std::max(0, GET_PLAYER(ePlayer).getOwnedOuterPlotsLastTurn() - iMaxPlotsAbroad/2);
+		iNewBaseStability -= iNumOuterPlotsAbroad/4;
+		addToStabilityList("outerExpansionStability", -iNumOuterPlotsAbroad/4);
+
+		// stability penalty by core cities owned by other civs
+		if (GET_PLAYER(ePlayer).getOwnedCitiesLastTurn() <= 20)
+		{
+			iNewBaseStability -= GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()*7;
+			addToStabilityList("occupiedCoreStability", -GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()*7);
+		}
+		else
+		{
+			iNewBaseStability -= (GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()-6)*10;
+			addToStabilityList("occupiedCoreStability", -(GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()-6)*10);
+		}
+
+		// parameter here
+		
+		int iExpansionStability = iNewBaseStability - iForeignStability;
+		sprintf(szOut, "DLL: Player %d expansion stability: %d", iPlayer, iNewBaseStability);
+		GC.getGameINLINE().logMsg(szOut);
+
+		// civic stability
+		// authoritarian civics
+		if (eCivic0 == CIVIC_AUTOCRACY && eCivic2 == CIVIC_TOTALITARIANISM)
+		{
+			iNewBaseStability += 10;
+			addToStabilityList("civicStability", 10);
+		}
+
+		if (eCivic2 == CIVIC_TOTALITARIANISM && eCivic3 == CIVIC_STATE_PROPERTY)
+		{
+			iNewBaseStability += 5;
+			addToStabilityList("civicStability", 5);
+		}
+
+		if (eCivic2 == CIVIC_TOTALITARIANISM && eCivic1 == CIVIC_UNIVERSAL_SUFFRAGE)
+		{
+			iNewBaseStability -= 10;
+			addToStabilityList("civicStability", -10);
+		}
+
+		if (eCivic2 == CIVIC_TOTALITARIANISM && eCivic4 == CIVIC_SECULARISM)
+		{
+			iNewBaseStability += 3;
+			addToStabilityList("civicStability", 3);
+		}
+
+		// communist civics
+		if (eCivic1 == CIVIC_SUPREME_COUNCIL && eCivic3 == CIVIC_STATE_PROPERTY)
+		{
+			iNewBaseStability += 7;
+			addToStabilityList("civicStability", 7);
+		}
+
+		if (eCivic3 == CIVIC_STATE_PROPERTY && (eCivic2 == CIVIC_AGRARIANISM || eCivic2 == CIVIC_CAPITALISM))
+		{
+			iNewBaseStability -= 7;
+			addToStabilityList("civicStability", -7);
+		}
+
+		if (eCivic1 == CIVIC_SUPREME_COUNCIL && (eCivic0 == CIVIC_DYNASTICISM || eCivic0 == CIVIC_THEOCRACY))
+		{
+			iNewBaseStability -= 4;
+			addToStabilityList("civicStability", -4);
+		}
+
+		// democratic civics
+		if (eCivic0 == CIVIC_REPUBLIC && eCivic4 == CIVIC_SECULARISM)
+		{
+			iNewBaseStability += 2;
+			addToStabilityList("civicStability", 2);
+		}
+
+		if (eCivic0 == CIVIC_TYRANNY && (eCivic1 == CIVIC_ABSOLUTISM || eCivic1 == CIVIC_UNIVERSAL_SUFFRAGE))
+		{
+			iNewBaseStability -= 4;
+			addToStabilityList("civicStability", -4);
+		}
+
+		if (eCivic0 == CIVIC_REPUBLIC && eCivic1 == UNIVERSAL_SUFFRAGE)
+		{
+			iNewBaseStability += 4;
+			addToStabilityList("civicStability", 4);
+		}
+
+		// religious civics
+		if (eCivic0 == CIVIC_THEOCRACY && eCivic4 == CIVIC_FANATICISM)
+		{
+			iNewBaseStability += 4;
+			addToStabilityList("civicStability", 4);
+		}
+
+		if (eCivic0 == CIVIC_THEOCRACY && eCivic4 == CIVIC_SECULARISM)
+		{
+			iNewBaseStability -= 8;
+			addToStabilityList("civicStability", -8);
+		}
+
+		if (eCivic0 == CIVIC_THEOCRACY && eCivic2 == CIVIC_EGALITARIANISM)
+		{
+			iNewBaseStability -= 3;
+			addToStabilityList("civicStability", -3);
+		}
+
+		if (eCivic2 == CIVIC_EGALITARIANISM && eCivic4 == CIVIC_SECULARISM)
+		{
+			iNewBaseStability += 3;
+			addToStabilityList("civicStability", 3);
+		}
+
+		// monarchist civics
+		if (eCivic1 == CIVIC_VASSALAGE && eCivic2 == CIVIC_AGRARIANISM)
+		{
+			iNewBaseStability += 3;
+			addToStabilityList("civicStability", 3);
+		}
+
+		if (eCivic0 == CIVIC_DYNASTICISM && eCivic1 == CIVIC_VASSALAGE)
+		{
+			iNewBaseStability += 3;
+			addToStabilityList("civicStability", 3);
+		}
+
+		// other
+		if (eCivic0 == CIVIC_CITY_STATES && eCivic1 == CIVIC_VASSALAGE)
+		{
+			iNewBaseStability -= 2;
+			addToStabilityList("civicStability", -2);
+		}
+
+		if (eCivic0 == CIVIC_CITY_STATES && eCivic2 != CIVIC_URBANIZATION)
+		{
+			iNewBaseStability -= 3;
+			addToStabilityList("civicStability", -3);
+		}
+
+		if (eCivic0 == CIVIC_CITY_STATES && eCivic3 == CIVIC_MERCANTILISM)
+		{
+			iNewBaseStability += 3;
+			addToStabilityList("civicStability", 3);
+		}
+
+		if (eCivic1 == CIVIC_ABSOLUTISM && eCivic3 == CIVIC_MERCANTILISM)
+		{
+			iNewBaseStability += 3;
+			addToStabilityList("civicStability", 3);
+		}
+
+		if (eCivic2 == CIVIC_CAPITALISM && eCivic3 == CIVIC_FREE_MARKET)
+		{
+			iNewBaseStability += 2;
+			addToStabilityList("civicStability", 2);
+		}
+
+		// civic era stability
+		if (eCivic1 == CIVIC_VASSALAGE)
+		{
+			if (getCurrentEra() == ERA_MEDIEVAL)
+			{
+				iNewBaseStability += 3;
+				addToStabilityList("civicEraStability", 3);
+			}
+			else
+			{
+				iNewBaseStability -= 3;
+				addToStabilityList("civicEraStability", -3);
+			}
+		}
+
+		if (eCivic0 == CIVIC_THEOCRACY)
+		{
+			if (getCurrentEra() >= ERA_INDUSTRIAL)
+			{
+				iNewBaseStability -= 5;
+				addToStabilityList("civicEraStability", -5);
+			}
+		}
+
+		if (eCivic4 == CIVIC_PANTHEON)
+		{
+			if (getCurrentEra() <= ERA_CLASSICAL)
+			{
+				iNewBaseStability += 3;
+				addToStabilityList("civicEraStability", 3);
+			}
+			else
+			{
+				iNewBaseStability -= 3;
+				addToStabilityList("civicEraStability", -3);
+			}
+		}
+
+		if (eCivic0 == CIVIC_CITY_STATES)
+		{
+			if (getCurrentEra() > ERA_CLASSICAL)
+			{
+				iNewBaseStability -= 4;
+				addToStabilityList("civicEraStability", -4);
+			}
+		}
+
+		if (eCivic1 == CIVIC_REPRESENTATION)
+		{
+			if (getCurrentEra() >= ERA_INDUSTRIAL)
+			{
+				iNewBaseStability += 3;
+				addToStabilityList("civicEraStability", 3);
+			}
+		}
+
+		// civics and number of cities stability
+		if (eCivic1 == CIVIC_ABSOLUTISM)
+		{
+			if (getNumCities() <= 5)
+			{
+				iNewBaseStability += 5;
+				addToStabilityList("civicCitiesStability", 5);
+			}
+			else
+			{
+				iNewBaseStability += std::max(-7, 5 - getNumCities());
+				addToStabilityList("civicCitiesStability", std::max(-7, 5 - getNumCities()));
+			}
+		}
+
+		if (eCivic0 == CIVIC_REPUBLIC)
+		{
+			iNewBaseStability += std::max(-5, 5 - getNumCities());
+			addToStabilityList("civicCitiesStability", std::max(-5, 5 - getNumCities()));
+		}
+
+		if (eCivic2 == CIVIC_TOTALITARIANISM)
+		{
+			iNewBaseStability += std::max(10, getNumCities()/5);
+			addToStabilityList("civicCitiesStability", std::max(10, getNumCities()/5));
+		}
+
+		// civic and diplomacy stability
+		if (eCivic0 == CIVIC_AUTOCRACY)
+		{
+			iNewBaseStability += 3*GET_TEAM(eTeam).getAtWarCount(true);
+			addToStabilityList("diplomacyStability", 3*GET_TEAM(eTeam).getAtWarCount(true));
+		}
+
+		if (eCivic4 == CIVIC_FANATICISM)
+		{
+			for (int iEnemyCiv = 0; iEnemyCiv < NUM_MAJOR_PLAYERS; iEnemyCiv++)
+			{
+				if (GET_TEAM(eTeam).isAtWar((TeamTypes)iEnemyCiv) && getStateReligion() != GET_PLAYER((PlayerTypes)iEnemyCiv).getStateReligion())
+				{
+					iNewBaseStability += 3;
+					addToStabilityList("diplomacyStability", 3);
+				}
+			}
+		}
+
+		// civic stability caps
+		if (eCivic0 == CIVIC_TYRANNY)
+			if (getStability() < -60)
+				changeStability(20);
+
+		if (eCivic0 == CIVIC_DYNASTICISM)
+			if (getStability() < -50)
+				setStability(-50);
+
+		if (eCivic0 == CIVIC_THEOCRACY)
+			if (getStability() < -40)
+				setStability(-40);
+
+		if (eCivic0 == CIVIC_REPUBLIC)
+		{
+			if (getStability() > 30)
+			{
+				iNewBaseStability += 5;
+				addToStabilityList("civicCapStability", 5);
+			}
+		}
+
+		if (eCivic1 == CIVIC_UNIVERSAL_SUFFRAGE)
+		{
+			if (getStability() > 50)
+			{
+				iNewBaseStability += 5;
+				addToStabilityList("civicCapStability", 5);
+			}
+		}
+
+		// civics and techs stability
+		if (GET_TEAM(eTeam).isHasTech((TechTypes)DEMOCRACY))
+		{
+			if (eCivic1 == CIVIC_UNIVERSAL_SUFFRAGE)
+			{
+				iNewBaseStability += 3;
+				addToStabilityList("civicTechStability", 3);
+			}
+		}
+
+		if (GET_TEAM(eTeam).isHasTech((TechTypes)COMMUNISM))
+		{
+			if (eCivic2 != CIVIC_EGALITARIANISM)
+			{
+				iNewBaseStability -= 3;
+				addToStabilityList("civicTechStability", -3);
+			}
+		}
+
+		if (GET_TEAM(eTeam).isHasTech((TechTypes)CONSTITUTION))
+		{
+			if (eCivic0 != CIVIC_REPUBLIC)
+			{
+				iNewBaseStability -= 3;
+				addToStabilityList("civicTechStability", -3);
+			}
+		}
+
+		if (GET_TEAM(eTeam).isHasTech((TechTypes)MASONRY) && !GET_TEAM(eTeam).isHasTech((TechTypes)DEMOCRACY))
+		{
+			if (eCivic3 == CIVIC_FORCED_LABOR)
+			{
+				iNewBaseStability += 3;
+				addToStabilityList("civicTechStability", 3);
+			}
+		}
+
+		if (GET_TEAM(eTeam).isHasTech((TechTypes)DEMOCRACY))
+		{
+			if (eCivic3 == CIVIC_FORCED_LABOR && eCivic2 != CIVIC_TOTALITARIANISM)
+			{
+				iNewBaseStability -= 3;
+				addToStabilityList("civicTechStability", -3);
+			}
+		}
+
+		if (GET_TEAM(eTeam).isHasTech((TechTypes)ECONOMICS))
+		{
+			if (eCivic3 == CIVIC_SELF_SUFFICIENCY)
+			{
+				iNewBaseStability -= 5;
+				addToStabilityList("civicTechStability", -5);
+			}
+		}
+
+		// next parameter here
+
+		int iCivicStability = iNewBaseStability - iExpansionStability - iForeignStability;
+		sprintf(szOut, "DLL: Player %d civic stability: %d", iPlayer, iNewBaseStability);
+		GC.getGameINLINE().logMsg(szOut);
+
+		int iTotalTempCityStability = 0;
+
+		// cities in foreign cores
+		CvCity* pLoopCity;
+		int iLoop;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			int iX = pLoopCity->getX();
+			int iY = pLoopCity->getY();
+			for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+			{
+				if (iGameTurn > getTurnForYear(startingTurnYear[iLoopCiv]) && iLoopCiv != iPlayer)
+				{
+					long result = -1;
+					CyArgsList argsList;
+					argsList.add(iX);
+					argsList.add(iY);
+					argsList.add(iLoopCiv);
+					gDLL->getPythonIFace()->callFunction(PYScreensModule, "isNormalPlot", argsList.makeFunctionArgs(), &result);
+					long isNormal = (long)result;
+					if (isNormal == 1)
+					{
+						if (getSettlersMaps(67-iY, iX) < 150)
+						{
+							iNewBaseStability -= 3;
+							addToStabilityList("foreignCoreCitiesStability", -3);
+						}
+						else
+						{
+							iNewBaseStability -= 1;
+							addToStabilityList("foreignCoreCitiesStability", -1);
+						}
+						break;
+					}
+				}
+			}
+		}
+
+		int iCoreStability = iNewBaseStability - iForeignStability - iExpansionStability - iCivicStability;
+		sprintf(szOut, "DLL: Player %d core stability: %d", iPlayer, iNewBaseStability);
+		GC.getGameINLINE().logMsg(szOut);
+
+		int iCount = -1;
+
+		// individual city stability
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			iCount++;
+
+			CvPlot* pPlot = pLoopCity->plot();
+			int iTempCityStability = 0;
+
+			// city happiness effects
+			if (!(eCivic5 == CIVIC_OCCUPATION && pLoopCity->isOccupation()))
+			{
+				if (eCivic2 == CIVIC_TOTALITARIANISM)
+				{
+					if (pLoopCity->angryPopulation(0) > 0)
+						iTempCityStability -= 1;
+					if (pLoopCity->getReligionBadHappiness() > 0)
+						iTempCityStability -= 1;
+					if (pLoopCity->getLargestCityHappiness() < 0)
+						iTempCityStability -= 1;
+					if (pLoopCity->getHurryAngerModifier() > 0)
+						iTempCityStability -= 1;
+					if (pLoopCity->getNoMilitaryPercentAnger() > 0)
+						iTempCityStability -= 1;
+					if (pLoopCity->getWarWearinessPercentAnger() > 0)
+						iTempCityStability -= 1;
+				}
+				else
+				{
+					if (pLoopCity->angryPopulation(0) > 0)
+						iTempCityStability -= 2;
+					if (pLoopCity->getReligionBadHappiness() > 0)
+						iTempCityStability -= 2;
+					if (pLoopCity->getLargestCityHappiness() < 0)
+						iTempCityStability -= 2;
+					if (pLoopCity->getHurryAngerModifier() > 0)
+						iTempCityStability -= 2;
+					if (pLoopCity->getNoMilitaryPercentAnger() > 0)
+						iTempCityStability -= 1;
+					if (pLoopCity->getWarWearinessPercentAnger() > 0)
+						iTempCityStability -= 1;
+				}
+
+				int iOutputCityHappy = iTempCityStability;
+				sprintf(szOut, "DLL: Player %d City %d happy stability: %d", iPlayer, iCount, iOutputCityHappy);
+				GC.getGameINLINE().logMsg(szOut);
+
+				addToStabilityList("cityHappinessStability", iTempCityStability);
+
+				// middle check for optimization
+				if (iTempCityStability <= -5)
+				{
+					iTotalTempCityStability += std::max(-5, iTempCityStability);
+					if (iTotalTempCityStability <= -10)
+					{
+						break;
+					}
+					else
+					{
+						continue;
+					}
+				}
+
+				// city civic effects
+				if (eCivic4 == CIVIC_FANATICISM || eCivic4 == CIVIC_ORGANIZED_RELIGION)
+				{
+					for (int iReligion = 0; iReligion < NUM_RELIGIONS; iReligion++)
+					{
+						if (pLoopCity->isHasReligion((ReligionTypes)iReligion) && getStateReligion() != (ReligionTypes)iReligion)
+						{
+							iTempCityStability -= 1;
+						}
+					}
+				}
+
+				if (eCivic4 == CIVIC_PANTHEON)
+				{
+					for (int iReligion = 0; iReligion < NUM_RELIGIONS; iReligion++)
+					{
+						if (pLoopCity->isHasReligion((ReligionTypes)iReligion))
+						{
+							iTempCityStability -= 2;
+						}
+					}
+				}
+
+				if (eCivic0 == CIVIC_THEOCRACY)
+				{
+					if (pLoopCity->isHasReligion(getStateReligion()))
+					{
+						bool bForeignReligion = false;
+						for (int iReligion = 0; iReligion < NUM_RELIGIONS; iReligion++)
+						{
+							if (pLoopCity->isHasReligion((ReligionTypes)iReligion) && getStateReligion() != (ReligionTypes)iReligion)
+							{
+								bForeignReligion = true;
+								break;
+							}
+						}
+						if (!bForeignReligion)
+						{
+							iTempCityStability += 1;
+						}
+					}
+				}
+				
+				int iOutputCityCivic = iTempCityStability - iOutputCityHappy;
+				sprintf(szOut, "DLL: Player %d City %d civic stability: %d", iPlayer, iCount, iOutputCityCivic);
+				GC.getGameINLINE().logMsg(szOut);
+
+				addToStabilityList("cityCivicStability", iOutputCityCivic);
+
+				if (true) //(eCivic2 != CIVIC_EGALITARIANISM)
+				{
+					for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+					{
+						if (iLoopCiv != iPlayer)
+						{
+							if (pPlot->getCulture((PlayerTypes)iLoopCiv) > 0)
+							{
+								if (pPlot->getCulture(ePlayer) == 0) // to avoid division by zero
+								{
+									iTempCityStability -= 2;
+									break;
+								}
+								else if (eCivic0 == CIVIC_AUTOCRACY)
+								{
+									if (pPlot->getCulture((PlayerTypes)iLoopCiv) * 100 / pPlot->getCulture(ePlayer) >= 5)
+									{
+										iTempCityStability -= 2;
+										break;
+									}
+								}
+								else
+								{
+									if (pPlot->getCulture((PlayerTypes)iLoopCiv) * 100 / pPlot->getCulture(ePlayer) >= 15)
+									{
+										if (iPlayer == AMERICA || iPlayer == TURKEY || iPlayer == NETHERLANDS || iPlayer == PORTUGAL)
+										{
+											iTempCityStability -= 1;
+										}
+										else
+										{
+											iTempCityStability -= 2;
+										}
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				int iOutputCityCulture = iTempCityStability - iOutputCityHappy - iOutputCityCivic;
+				sprintf(szOut, "DLL: Player %d City %d culture stability: %d", iPlayer, iCount, iOutputCityCulture);
+				GC.getGameINLINE().logMsg(szOut);
+
+				addToStabilityList("cityCultureStability", iOutputCityCulture);
+
+				if (iTempCityStability < 0)
+				{
+					iTotalTempCityStability += std::max(-5, iTempCityStability);
+				}
+
+				if (iTotalTempCityStability <= -12)
+				{
+					break;
+				}
+			}
+		}
+
+		if (iTotalTempCityStability < 0)
+		{
+			iNewBaseStability += std::max(-12, iTotalTempCityStability);
+			addToStabilityList("totalCityStability", std::max(-12, iTotalTempCityStability));
+		}
+
+		// parameter here
+		
+		int iCityStability = iNewBaseStability - iCoreStability - iForeignStability - iExpansionStability - iCivicStability;
+		sprintf(szOut, "DLL: Player %d city stability: %d", iPlayer, iNewBaseStability);
+		GC.getGameINLINE().logMsg(szOut);
+
+		int iImports = calculateTotalImports((YieldTypes)YIELD_COMMERCE);
+		int iExports = calculateTotalExports((YieldTypes)YIELD_COMMERCE);
+		int iEraModifier = getCurrentEra();
+		int iImportExportOffset = 5;
+
+		if (iPlayer == CHINA || iPlayer == JAPAN)
+			iImportExportOffset = 3;
+
+		if (iEraModifier >= 3)
+			iEraModifier += 1;
+
+		if (eCivic5 != CIVIC_COMMONWEALTH)
+		{
+			iNewBaseStability += std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset);
+			addToStabilityList("tradeStability", std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset));
+		}
+		else
+		{
+			iNewBaseStability += std::max(0, std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset));
+			addToStabilityList("tradeStability", std::max(0, std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset)));
+		}
+
+		iEconomy = calculateTotalYield((YieldTypes)YIELD_COMMERCE) - calculateInflatedCosts();
+		iIndustry = calculateTotalYield((YieldTypes)YIELD_PRODUCTION);
+		iAgriculture = calculateTotalYield((YieldTypes)YIELD_FOOD);
+		iPopulation = getRealPopulation();
+
+		// counterbalance low growth threshold
+		if (iPlayer == INDIA || iPlayer == CHINA || iPlayer == MUGHALS || iPlayer == JAPAN || iPlayer == INDONESIA)
+		{
+			iPopulation *= 3;
+			iPopulation /= 4;
+		}
+
+		// counterbalance high growth threshold
+		if (iPlayer == EGYPT || iPlayer == MAYA || iPlayer == MALI || iPlayer == KHMER)
+		{
+			iPopulation *= 4;
+			iPopulation /= 3;
+		}
+
+		// counterbalace Mali's UP
+		if (iPlayer == MALI)
+		{
+			iEconomy /= 2;
+		}
+
+		// counterbalance flood plains
+		if (iPlayer == EGYPT || iPlayer == MALI || iPlayer == MUGHALS || iPlayer == INDIA || (iPlayer == ETHIOPIA && !GET_PLAYER((PlayerTypes)EGYPT).isAlive()))
+		{
+			iAgriculture *= 3;
+			iAgriculture /= 4;
+		}
+
+		iNewBaseStability += std::min(8, std::max(-8, (iAgriculture * 100000 / iPopulation - 8 + (iEraModifier - 3)*2)));
+		addToStabilityList("economyStability", std::min(8, std::max(-8, (iAgriculture * 100000 / iPopulation - 8 + (iEraModifier - 3)*2))));
+
+		int iMaxEconomyGain = 3;
+		int iMaxEconomyLoss = -3;
+
+		if (eCivic5 != CIVIC_COMMONWEALTH)
+		{
+			iNewBaseStability += std::min(iMaxEconomyGain, std::max(iMaxEconomyLoss, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2)));
+			addToStabilityList("economyStability", std::min(iMaxEconomyGain, std::max(iMaxEconomyLoss, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2))));
+		}
+		else
+		{
+			iNewBaseStability += std::min(iMaxEconomyGain, std::max(0, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2)));
+			addToStabilityList("economyStability", std::min(iMaxEconomyGain, std::max(0, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2))));
+		}
+
+		// parameter here
+
+		int iDifference = (iIndustry * 1000000 / iPopulation) - (iEconomy * 1000000 / iPopulation);
+
+		// Happiness stability
+		int iHappiness = -10;
+		if (calculateTotalCityHappiness() > 0)
+			iHappiness = (int)((1.0 * calculateTotalCityHappiness()) / (calculateTotalCityHappiness() + calculateTotalCityUnhappiness()) * 100) - 60;
+
+		iNewBaseStability += iHappiness/10;
+		addToStabilityList("happinessStability", iHappiness/10);
+
+		// parameter here
+
+		setPartialBaseStability(iNewBaseStability);
+
+	}
+
+	if (iGameTurn >= getTurnForYear(startingTurnYear[iPlayer]) + getTurns(15))
+	{
+		setGNPnew(getGNPnew() + (iEconomy + 4 * iIndustry + 2 * iAgriculture) / 7);
+
+		if (iGameTurn % getTurns(3) == 2)
+		{
+			int iTempEconomyThreshold = getStability();
+			int iMaxShrink = 7;
+			int iMaxGrowth = 3;
+
+			int iNegativeFasterGrowth = (getGNPnew() - 4) / 3 - getGNPold() / 3;
+			int iNegativeNormalGrowth = (getGNPnew() - 3) / 3 - getGNPold() / 3;
+			int iNegativeSlowerGrowth = (getGNPnew() - 1) / 3 - getGNPold() / 3;
+
+			int iPositiveFasterGrowth = getGNPnew() / 3 - getGNPold() / 3;
+			int iPositiveNormalGrowth = getGNPnew() / 4 - getGNPold() / 4;
+			int iPositiveSlowerGrowth = getGNPnew() / 5 - getGNPold() / 5;
+
+			int iNegativeGrowth = iNegativeNormalGrowth;
+			int iPositiveGrowth = iPositiveNormalGrowth;
+
+			// counterbalance very early spawns
+			if (iPlayer == EGYPT || iPlayer == BABYLONIA || iPlayer == CHINA)
+				iNegativeGrowth = iNegativeSlowerGrowth;
+
+			// counterbalance late spawns
+			if (iPlayer == NETHERLANDS || iPlayer == MALI || iPlayer == PORTUGAL || iPlayer == MONGOLIA || iPlayer == TURKEY || iPlayer == GERMANY)
+				iPositiveGrowth = iPositiveSlowerGrowth;
+
+			// counterbalance late spawns
+			if (iPlayer == MALI || iPlayer == PORTUGAL || iPlayer == TURKEY || iPlayer == AMERICA || iPlayer == NETHERLANDS || iPlayer == GERMANY)
+				iNegativeGrowth = iNegativeFasterGrowth;
+
+			// counterbalance stagnation due to isolation
+			if (iPlayer == JAPAN || iPlayer == INCA)
+				iNegativeGrowth = iNegativeSlowerGrowth;
+
+			// counterbalance stagnation due to isolation
+			if (iPlayer == INDIA || iPlayer == CHINA || iPlayer == KOREA || iPlayer == KHMER || iPlayer == MAYA || iPlayer == AZTEC || iPlayer == INCA)
+				iPositiveGrowth = iPositiveFasterGrowth;
+
+			if (getGNPnew() < getGNPold())
+			{
+				changeStability(std::max(-iMaxShrink, iNegativeGrowth));
+				addToStabilityList("economyExtraStability", std::max(-iMaxShrink, iNegativeGrowth));
+			}
+			else if (getGNPnew() >= getGNPold())
+			{
+				changeStability(std::min(iMaxGrowth, iPositiveGrowth));
+				addToStabilityList("economyExtraStability", std::min(iMaxGrowth, iPositiveGrowth));
+			}
+
+			// parameter here
+
+			if (getGreatDepressionCountdown() == 0)
+			{
+				if (eCivic3 == CIVIC_FREE_MARKET && GET_TEAM(eTeam).isHasTech((TechTypes)CORPORATION))
+				{
+					if (!isGoldenAge())
+					{
+						// low wages and large growth
+						if ((iDifference > 11 && getGNPnew() > getGNPold()) || (iDifference > 6 && getGNPnew() > getGNPold() + 4))
+						{
+							setGreatDepressionCountdown(getTurns(8));
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if (getGreatDepressionCountdown() < 0)
+		setGreatDepressionCountdown(getGreatDepressionCountdown() + 1);
+
+	if (getGreatDepressionCountdown() > 0)
+	{
+		iNewBaseStability -= (15 + std::min(15, iDifference));
+		addToStabilityList("greatDepressionStability", -(15 + std::min(15, iDifference)));
+
+		if (GC.getGame().getActivePlayer() == iPlayer)
+		{
+			CvEventReporter::getInstance().greatDepression(ePlayer, false);
+		}
+
+		setGreatDepressionCountdown(getGreatDepressionCountdown() - 1);
+		
+		bool bQuit = false;
+		if (getGreatDepressionCountdown() == 0)
+			bQuit = true;
+
+		if (getGreatDepressionCountdown() > 0 && getGreatDepressionCountdown() <= getTurns(8)-1) // at least three turns
+			if ((iDifference < 5 && getGNPnew() <= getGNPold()) || eCivic3 != CIVIC_FREE_MARKET) // better wages and natural deflation, or no Free Market anymore
+				bQuit = true;
+
+		if (bQuit)
+		{
+			setGreatDepressionCountdown(-30); // turns of immunity
+
+			bool bOtherDepressionAround = false;
+			for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+			{
+				if (GET_PLAYER((PlayerTypes)iLoopCiv).getGreatDepressionCountdown() > 0)
+				{
+					bOtherDepressionAround = true;
+				}
+			}
+
+			if (!bOtherDepressionAround)
+			{
+				for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+				{
+					if (iLoopCiv != iPlayer)
+					{
+						GET_PLAYER((PlayerTypes)iLoopCiv).setGreatDepressionCountdown(-20); // immunity from depression for all other civs
+					}
+				}
+			}
+		}
+	}
+
+	if (iGameTurn % getTurns(3) == 2)
+	{
+		setGNPold(getGNPnew());
+		setGNPnew(0);
+	}
+
+	// acquire depression: only if not immune and not in depression already, no state property and no golden age
+	if (getGreatDepressionCountdown() == 0 && eCivic3 != CIVIC_STATE_PROPERTY && !isGoldenAge())
+	{
+		for (int iLoopCiv = 0; iLoopCiv < NUM_MAJOR_PLAYERS; iLoopCiv++)
+		{
+			if (GET_TEAM(eTeam).isOpenBorders((TeamTypes)iLoopCiv))
+			{
+				if (GET_PLAYER((PlayerTypes)iLoopCiv).getGreatDepressionCountdown() > 0)
+				{
+					if (eCivic3 == CIVIC_MERCANTILISM)
+					{
+						iNewBaseStability -= 4;
+						addToStabilityList("foreignGreatDepressionStability", -4);
+					}
+					else
+					{
+						iNewBaseStability -= 10;
+						addToStabilityList("foreignGreatDepressionStability", -10);
+					}
+
+					if (GC.getGame().getActivePlayer() == ePlayer)
+					{
+						CvEventReporter::getInstance().greatDepression((PlayerTypes)iLoopCiv, true);
+					}
+
+					break; // once is enough
+				}
+			}
+		}
+	}
+
+	if (GET_TEAM(eTeam).isHasTech((TechTypes)COMMUNISM))
+	{
+		// has state property
+		if (eCivic3 == CIVIC_STATE_PROPERTY)
+			setStatePropertyCountdown(-1);
+
+		// switched away from state property
+		if (getStatePropertyCountdown() == -1 && eCivic3 != CIVIC_STATE_PROPERTY)
+			setStatePropertyCountdown(8);
+
+		// has recently switched away from state property
+		if (getStatePropertyCountdown() > 0)
+		{
+			iNewBaseStability -= 25;
+			addToStabilityList("postCommunismStability", -25);
+			setStatePropertyCountdown(getStatePropertyCountdown() - 1);
+
+			if (GC.getGame().getActivePlayer() == iPlayer)
+				CvEventReporter::getInstance().postCommunism(ePlayer);
+		}
+	}
+
+	// next parameter here
+
+	if (GET_TEAM(eTeam).isHasTech((TechTypes)DEMOCRACY))
+	{
+		// despotic forms of government
+		if (eCivic1 != CIVIC_REPRESENTATION || eCivic1 != CIVIC_UNIVERSAL_SUFFRAGE)
+			setDemocracyCountdown(-1);
+
+		// switched to Universal Suffrage
+		if (getDemocracyCountdown() == -1 && eCivic1 == CIVIC_UNIVERSAL_SUFFRAGE)
+			setDemocracyCountdown(getTurns(7));
+
+		if (getDemocracyCountdown() > 0)
+		{
+			iNewBaseStability -= 20;
+			addToStabilityList("democracyTransitionStability", -20);
+			setDemocracyCountdown(getDemocracyCountdown() - 1);
+			if (GC.getGame().getActivePlayer() == ePlayer)
+				CvEventReporter::getInstance().democracyTransition(ePlayer);
+		}
+	}
+
+	// parameter here
+	
+	if (getNumCities() >= 8)
+	{
+		iNewBaseStability -= (getNumCities() - 5) * (getNumCities() - 5) / 9;
+		addToStabilityList("numCitiesStability", -((getNumCities() - 5) * (getNumCities() - 5) / 9));
+	}
+
+	// next parameter here
+
+	// combat result stability
+	if (getCombatResultTempModifier() != 0)
+	{
+		iNewBaseStability += std::max(-20, std::min(20, getCombatResultTempModifier()));
+		addToStabilityList("combatStability", std::max(-20, std::min(20, getCombatResultTempModifier())));
+
+		// great loss
+		if (getCombatResultTempModifier() <= -4 - (iEraModifier/2))
+		{
+			changeStability(-1);
+			addToStabilityList("combatExtraStability", -1);
+		}
+
+		if (abs(getCombatResultTempModifier()) >= 4)
+			setCombatResultTempModifier(getCombatResultTempModifier() / 2);
+		else
+			setCombatResultTempModifier(0);
+	}
+
+	// anarchy stability
+	if (getAnarchyTurns() != 0)
+	{
+		if (getStability() > 24)
+		{
+			changeStability(-getStability()/8/getTurns(1));
+			addToStabilityList("anarchyStability", -getStability()/8/getTurns(1));
+		}
+		else
+		{
+			changeStability(-3/getTurns(1));
+			addToStabilityList("anarchyStability", -3/getTurns(1));
+		}
+
+		iNewBaseStability -= (getStability() + 30) / 2;
+		addToStabilityList("anarchyStability", -((getStability() + 30) / 2));
+	}
+
+	// golden age stability
+	if (isGoldenAge())
+	{
+		iNewBaseStability += 20;
+		addToStabilityList("goldenAgeStability", 20);
+	}
+
+	// Leoreth: stability hits after historical fall dates
+	if (!isHuman() && !isReborn() && iGameTurn >= getTurnForYear(fallTurnYear[iPlayer]))
+	{
+		bool bHumanNeighbor = false;
+		for (int iNeighbor = 0; iNeighbor < NUM_MAJOR_PLAYERS; iNeighbor++)
+		{
+			long result = -1;
+			CyArgsList argsList;
+			argsList.add(iPlayer);
+			argsList.add(iNeighbor);
+			gDLL->getPythonIFace()->callFunction(PYScreensModule, "isNeighbor", argsList.makeFunctionArgs(), &result);
+			long neighbor = (long)result;
+			if (neighbor == 1)
+			{
+				if (GET_PLAYER((PlayerTypes)iNeighbor).isHuman())
+				{
+					bHumanNeighbor = true;
+					break;
+				}
+			}
+		}
+
+		if (bHumanNeighbor)
+		{
+			iNewBaseStability -= std::min(10, iGameTurn - getTurnForYear(fallTurnYear[iPlayer]));
+			addToStabilityList("fallStability", -std::min(10, iGameTurn - getTurnForYear(fallTurnYear[iPlayer])));
+		}
+		else
+		{
+			iNewBaseStability -= std::min(20, iGameTurn - getTurnForYear(fallTurnYear[iPlayer]));
+			addToStabilityList("fallStability", -std::min(20, iGameTurn - getTurnForYear(fallTurnYear[iPlayer])));
+		}
+	}
+
+	// apply calculated stability
+	changeStability(iNewBaseStability - getBaseStabilityLastTurn());
+
+	// cap stability
+	if (getStability() < -80)
+		setStability(-80);
+
+	if (getStability() > 80)
+		setStability(80);
+
+	addToStabilityList("baseStability", iNewBaseStability);
+
+	setBaseStabilityLastTurn(iNewBaseStability);
+
+	end = clock();
+
+	if (end == -1 || start == -1)
+		GC.getGameINLINE().logMsg("Time measurement failed.");
+
+	cpuTime = end - start;
+	int iCpuTime = end - start;
+
+
+	if (bLong)
+	{
+		sprintf(szOut, "SDK: Performed LONG stability calculation for player %d in %d microseconds.\n", iPlayer, iCpuTime);
+		GC.getGameINLINE().logMsg(szOut);
+	}
+	else
+	{
+		sprintf(szOut, "SDK: Performed SHORT stability calculation for player %d in %d microseconds.\n", iPlayer, iCpuTime);
+		GC.getGameINLINE().logMsg(szOut);
+	}
+
+
+}
+
+int CvPlayer::getLatestRebellionTurn()
+{
+	return m_iLatestRebellionTurn;
+}
+
+void CvPlayer::setLatestRebellionTurn(int iNewValue)
+{
+	m_iLatestRebellionTurn = iNewValue;
+}
+
+StabilityList CvPlayer::getStabilityList()
+{
+	return m_stabilityList;
+}
+
+void CvPlayer::setStabilityList(StabilityList sList)
+{
+	m_stabilityList = sList;
+}
+
+void CvPlayer::addToStabilityList(char* string, int iValue)
+{
+	if (iValue >= 0)
+	{
+		std::pair<char*, int> entry = std::pair<char*, int>(string, iValue);
+		m_stabilityList.push_back(entry);
+	}
+}
+
+void CvPlayer::clearStabilityList()
+{
+	m_stabilityList = StabilityList();
+}
+
+
 //Rhye - start switch (dynamic civ names - not jdog's)
 /*void CvPlayer::processCivNames()
 {
@@ -24350,7 +25844,7 @@ bool CvPlayer::isHasBuilding(BuildingTypes eIndex)
 					}
 					else {
 						setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][4]); // large modern monarchist name
-						return;
+	+					return;
 					}
 				}
 			}

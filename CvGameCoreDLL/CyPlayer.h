@@ -529,6 +529,22 @@ public:
 	void updateTradeRoutes();
 	int getWarMapValue(int x, int y);
 
+	// Leoreth: stability (not active yet)
+	int getStability();
+	void setStability(int iNewValue);
+	void changeStability(int iChange);
+	int getGreatDepressionCountdown();
+	void setGreatDepressionCountdown(int iNewValue);
+	int getCombatResultTempModifier();
+	void setCombatResultTempModifier(int iNewValue);
+	void changeCombatResultTempModifier(int iChange);
+	int getBaseStabilityLastTurn();
+	void setBaseStabilityLastTurn(int iNewValue);
+	int getLatestRebellionTurn();
+	void setLatestRebellionTurn(int iNewValue);
+
+	boost::python::list getStabilityList();
+
 private:
 	CvPlayer* m_pPlayer;
 };

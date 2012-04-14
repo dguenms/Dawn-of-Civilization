@@ -1813,9 +1813,9 @@ tMaxColonists = (
 0, #Arabia
 0, #Khmer
 0, #Indonesia
-6, #Spain
+4, #Spain
 6, #France
-8, #England
+6, #England
 0, #Holy Rome
 0, #Russia
 6, #Holland
