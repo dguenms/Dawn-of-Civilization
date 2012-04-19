@@ -130,10 +130,10 @@
 # religion spread now always removes pagan temples, but only replaces them with temples of your state religion
 # Thai UP changed: all AIs don't declare war on pleased
 # players cannot declare war on recently (re)spawned civs
-# reduced number of Spanish colonists, they reliably get Mexico and Peru now
+# reduced number of Spanish colonists, they already reliably get Mexico and Peru now
 # reduced Agrarianism bonus to +1 commerce for Pastures and Plantation
 # removed +25% corporation commerce from Free Market
-# Free Market now has a risk of great depression, insted of Capitalism
+# Free Market now has a risk of great depression, instead of Capitalism
 # respawned civs are now immune to collapse for the next ten turns
 # plague doesn't reduce cottages by one level anymore (except towns), but it destroys all progress to the next level
 # fixed first contact Mongol hordes spawning in cities
@@ -147,3 +147,4 @@
 # Free Market only provides +25% trade route commerce
 # Capitalism now gives +10% commerce
 # Spanish conquistadors now only get +50% attack vs. Swordsmen, Axemen, Spearmen and Macemen instead of all melee units
+# Added a persecution event that allows you to remove non-state religion from your cities

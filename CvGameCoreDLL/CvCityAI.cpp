@@ -5040,6 +5040,35 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 
 	iValue = 0;
 
+	if (eProject == GC.getInfoTypeForString("PROJECT_PERSECUTION"))
+	{
+		if (GET_PLAYER(getOwnerINLINE()).isStateReligion())
+		{
+			int iNonStateReligions = 0;
+			for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+			{
+				ReligionTypes eReligion = (ReligionTypes)iI;
+				if (isHasReligion(eReligion) && !isHolyCity(eReligion))
+				{
+					iNonStateReligions += 1;
+				}
+			}
+
+			if (iNonStateReligions > 0)
+			{
+				iValue += 5*iNonStateReligions;
+
+				if (getHurryAngerTimer() == 0)
+				{
+					iValue += 5;
+				}
+
+				iValue += abs(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getLeader()).getDifferentReligionAttitudeChange())*5;
+				iValue -= 10;
+			}
+		}
+	}
+
 	if (GC.getProjectInfo(eProject).getNukeInterception() > 0)
 	{
 		if (GC.getGameINLINE().canTrainNukes())

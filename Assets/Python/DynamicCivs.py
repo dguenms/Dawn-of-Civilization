@@ -1034,7 +1034,7 @@ class DynamicCivs:
 					return
 					
 			if bEmpire and iEra == iMedieval:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_PARAMARA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_PALA")
 				return
 				
 			if bEmpire and iEra == iRenaissance:

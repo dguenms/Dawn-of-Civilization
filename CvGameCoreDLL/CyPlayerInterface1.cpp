@@ -479,6 +479,5 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("setBaseStabilityLastTurn", &CyPlayer::setBaseStabilityLastTurn, "void (int iNewValue)")
 		.def("getLatestRebellionTurn", &CyPlayer::getLatestRebellionTurn, "int ()")
 		.def("setLatestRebellionTurn", &CyPlayer::setLatestRebellionTurn, "void (int iNewValue)")
-		.def("getStabilityList", &CyPlayer::getStabilityList, "list ()")
 		;
 }

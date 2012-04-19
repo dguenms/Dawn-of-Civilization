@@ -442,5 +442,32 @@
 			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
+		<ProjectInfo>
+			<Type>PROJECT_PERSECUTION</Type>
+			<Description>TXT_KEY_PROJECT_PERSECUTION</Description>
+			<Civilopedia>TXT_KEY_PROJECT_PERSECUTION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_PERSECUTION_STRATEGY</Strategy>
+			<VictoryPrereq>NONE</VictoryPrereq>
+			<TechPrereq>TECH_DIVINE_RIGHT</TechPrereq>
+			<AnyonePrereqProject>NONE</AnyonePrereqProject>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iCost>100</iCost>
+			<iNukeInterception>0</iNukeInterception>
+			<iTechShare>0</iTechShare>
+			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
+			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
+			<bSpaceship>0</bSpaceship>
+			<bAllowsNukes>0</bAllowsNukes>
+			<Button>,Art/Interface/Buttons/Civics/Pacifism.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,15</Button>
+			<PrereqProjects/>
+			<VictoryThresholds/>
+			<VictoryMinThresholds/>
+			<iVictoryDelayPercent>0</iVictoryDelayPercent>
+			<iSuccessRate>0</iSuccessRate>
+			<BonusProductionModifiers/>
+			<CreateSound/>
+			<MovieDefineTag/>
+		</ProjectInfo>
 	</ProjectInfos>
 </Civ4ProjectInfo>

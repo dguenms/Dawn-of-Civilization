@@ -2373,6 +2373,39 @@ bool CvCity::canCreate(ProjectTypes eProject, bool bContinue, bool bTestVisible)
 		return false;
 	}
 
+	// Leoreth: allow persecution only if you have a state religion and your city has at least one non-state religion
+	if (eProject == GC.getInfoTypeForString("PROJECT_PERSECUTION"))
+	{
+		if (getOwnerINLINE() >= NUM_MAJOR_PLAYERS)
+		{
+			return false;
+		}
+
+		if (!GET_PLAYER(getOwnerINLINE()).isStateReligion())
+		{
+			return false;
+		}
+
+		bool bNonStateReligion = false;
+		for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			ReligionTypes eReligion = (ReligionTypes)iI;
+			if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != eReligion)
+			{
+				if (isHasReligion(eReligion) && !isHolyCity(eReligion))
+				{
+					bNonStateReligion = true;
+					break;
+				}
+			}
+		}
+
+		if (!bNonStateReligion)
+		{
+			return false;
+		}
+	}
+
 	//Rhye - start
 //Speed: Modified by Kael 04/19/2007
 //	pyCity = new CyCity((CvCity*)this);
@@ -12089,6 +12122,10 @@ void CvCity::doCulture()
 					}
 					else
 						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
+
+					// Leoreth: buff Lhasa to help it against cultural takeover
+					if (getRegionID() == REGION_TIBET)
+						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
 				}else if (getOwnerINLINE() == NATIVE)
 				{
 					if (hasActiveWorldWonder()) {

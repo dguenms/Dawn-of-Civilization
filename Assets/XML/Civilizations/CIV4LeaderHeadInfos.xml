@@ -41698,7 +41698,7 @@
 			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
 			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
 			<iSameReligionAttitudeChangeLimit>4</iSameReligionAttitudeChangeLimit>
-			<iDifferentReligionAttitudeChange>-6</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
 			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
@@ -46607,7 +46607,7 @@
 			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
 			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
 			<iSameReligionAttitudeChangeLimit>4</iSameReligionAttitudeChangeLimit>
-			<iDifferentReligionAttitudeChange>-4</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
 			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>

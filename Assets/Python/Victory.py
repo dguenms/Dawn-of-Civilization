@@ -811,8 +811,7 @@ class Victory:
                                 #        if (iGameTurn == getTurnForYear(350)+1):
                                 #                self.setGoal(iCarthage, 1, 0)
 
-                                    
-
+                                
 #                                if (self.getGoal(iCarthage, 2) == -1):
 #                                        if (gc.getGame().getCircumnavigated() != -1):
 #                                                if (gc.getGame().getCircumnavigated() == iCarthage):
