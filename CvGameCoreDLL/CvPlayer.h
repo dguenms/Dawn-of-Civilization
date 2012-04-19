@@ -25,7 +25,7 @@ typedef stdext::hash_map<EventTypes, EventTriggeredData> CvEventMap;
 typedef std::vector< std::pair<UnitCombatTypes, PromotionTypes> > UnitCombatPromotionArray;
 typedef std::vector< std::pair<UnitClassTypes, PromotionTypes> > UnitClassPromotionArray;
 typedef std::vector< std::pair<CivilizationTypes, LeaderHeadTypes> > CivLeaderArray;
-typedef std::list< std::pair<char*, int> > StabilityList;
+typedef std::list< std::pair<int, int> > StabilityList;
 
 class CvPlayer
 {
@@ -1142,10 +1142,16 @@ public:
 
 	void doStability();
 
-	StabilityList getStabilityList();
+	/*StabilityList getStabilityList();
 	void setStabilityList(StabilityList);
-	void addToStabilityList(char* string, int iValue);
-	void clearStabilityList();
+	void addToStabilityList(StabilityTypes eStabilityType, int iValue);
+	void clearStabilityList();*/
+
+	/*int getStabilityCategory(int i);
+	int* getStabilityCategoryArray();*/
+	void changeStabilityCategory(StabilityTypes eStabilityType, int iChange);
+	void setStabilityCategory(StabilityTypes eStabilityType, int iValue);
+	void resetStabilityCategories();
 
 protected:
 
@@ -1289,7 +1295,7 @@ protected:
 	int m_iStatePropertyCountdown;
 	int m_iDemocracyCountdown;
 	int m_iLatestRebellionTurn;
-	StabilityList m_stabilityList;
+	//StabilityList m_stabilityList;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;
@@ -1314,6 +1320,8 @@ protected:
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;
+
+	//int* m_aiStabilityCategories; //Leoreth
 
 	bool* m_abFeatAccomplished;
 	bool* m_abOptions;

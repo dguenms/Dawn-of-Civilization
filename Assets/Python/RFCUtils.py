@@ -99,6 +99,12 @@ class RFCUtils:
         #Communications
         def getSeed( self ):
                 return sd.scriptDict['iSeed']
+		
+	def setTempEventList( self, lTempEventList ):
+		sd.scriptDict['lTempEventList'] = lTempEventList
+		
+	def getTempEventList( self ):
+		return sd.scriptDict['lTempEventList']
 
 #######################################
 
@@ -835,7 +841,7 @@ class RFCUtils:
 			# Leoreth: Byzantine UP: cities in normal area immune to collapse [expires for AI after the MA]
 			x = gc.getPlayer(iCiv).getCapitalCity().getX()
 			y = gc.getPlayer(iCiv).getCapitalCity().getY()
-			if iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and (bAssignOneCity or gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval):
+			if iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and not self.isAVassal(con.iByzantium) and (bAssignOneCity or gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval):
 				x, y = tCoords
 				tlx, tly = con.tNormalAreasTL[self.getReborn(iCiv)][iCiv]
 				brx, bry = con.tNormalAreasBR[self.getReborn(iCiv)][iCiv]

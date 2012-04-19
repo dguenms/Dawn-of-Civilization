@@ -26,6 +26,7 @@ class StoredData:
         def setup(self):
                 """Initialise the global script data dictionary for usage."""
                 self.scriptDict = {      #------------RiseAndFall
+				    'lTempEventList' : [],
                                     'iNewCiv': -1,
                                     'iNewCivFlip': -1,
                                     'iOldCivFlip': -1,

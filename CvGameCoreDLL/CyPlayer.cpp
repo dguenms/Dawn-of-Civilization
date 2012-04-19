@@ -2452,24 +2452,3 @@ void CyPlayer::setLatestRebellionTurn(int iNewValue)
 	if (m_pPlayer)
 		m_pPlayer->setLatestRebellionTurn(iNewValue);
 }
-
-boost::python::list CyPlayer::getStabilityList()
-{
-	boost::python::list output = boost::python::list();
-
-	if (m_pPlayer)
-	{
-		StabilityList m_stabilityList = m_pPlayer->getStabilityList();
-
-		StabilityList::iterator it;
-		for (it = m_stabilityList.begin(); it != m_stabilityList.end(); ++it)
-		{
-			std::string string = (std::string)it->first;
-			int iValue = it->second;
-			boost::python::tuple tup = python::make_tuple(string, iValue);
-			output.append(tup);
-		}
-	}
-
-	return output;
-}

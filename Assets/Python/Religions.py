@@ -365,8 +365,6 @@ class Religions:
 	def eventApply7626(self, popupReturn):
 		if (popupReturn.getButtonClicked() == 0):
 			self.schism(utils.getHumanID())
-		elif popupReturn.getButtonClicked() == 1:
-			return
 			
 	def schism(self, iPlayer):
 		cityList = PyPlayer(iPlayer).getCityList()

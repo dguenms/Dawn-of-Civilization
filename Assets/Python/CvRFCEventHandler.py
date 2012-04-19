@@ -600,6 +600,8 @@ class CvRFCEventHandler:
                 self.vic.onProjectBuilt(city.getOwner(), iProjectType)
                 if (city.getOwner() < con.iNumPlayers):
                         self.sta.onProjectBuilt(city.getOwner(), iProjectType)
+			
+		self.rnf.onProjectBuilt(city, iProjectType)
 
         def onImprovementDestroyed(self, argsList):
                 pass
@@ -786,9 +788,9 @@ class CvRFCEventHandler:
 				if gc.getPlayer(iPlayer).isAlive():
 					print "PYTHON: Player " + str(iPlayer) + " base stability: " + str(self.sta.getBaseStabilityLastTurn(iPlayer))
 					print "DLL: Player " + str(iPlayer) + " base stability: " + str(gc.getPlayer(iPlayer).getBaseStabilityLastTurn())
-					lStabilityList = gc.getPlayer(iPlayer).getStabilityList()
-					for tStabilityTuple in lStabilityList:
-						print str(tStabilityTuple)
+					#lStabilityList = gc.getPlayer(iPlayer).getStabilityList()
+					#for tStabilityTuple in lStabilityList:
+					#	print str(tStabilityTuple)
 
 
         def onReligionSpread(self, argsList):
@@ -799,8 +801,11 @@ class CvRFCEventHandler:
 		#Leoreth: if state religion spreads, pagan temples are replaced with its temple. For other religions, they're simply removed.         
 		if pSpreadCity.isHasBuilding(con.iObelisk):
 			pSpreadCity.setHasRealBuilding(con.iObelisk, False)
-			if gc.getPlayer(iOwner).getCivics(4) != con.iPantheon and gc.getPlayer(iReligion).getStateReligion() == iReligion and gc.getTeam(iOwner).isHasTech(con.iPriesthood):
+			if gc.getPlayer(iOwner).getCivics(4) != con.iPantheon and gc.getPlayer(iOwner).getStateReligion() == iReligion and gc.getTeam(iOwner).isHasTech(con.iPriesthood):
 				pSpreadCity.setHasRealBuilding(con.iJewishTemple+4*iReligion, True)
+                                CyInterface().addMessage(iOwner, True, con.iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REPLACED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()), str(gc.getBuildingInfo(con.iJewishTemple+4*iReligion).getText()))), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+			else:
+				CyInterface().addMessage(iOwner, True, con.iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REMOVED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()))), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
 
         def onFirstContact(self, argsList):

@@ -54,6 +54,7 @@ CvPlayer::CvPlayer()
 	m_aiCommerceFlexibleCount = new int[NUM_COMMERCE_TYPES];
 	m_aiGoldPerTurnByPlayer = new int[MAX_PLAYERS];
 	m_aiEspionageSpendingWeightAgainstTeam = new int[MAX_TEAMS];
+	//m_aiStabilityCategories = new int[NUM_STABILITY_TYPES]; //Leoreth
 
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
@@ -123,6 +124,7 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiEspionageSpendingWeightAgainstTeam);
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
+	//SAFE_DELETE_ARRAY(m_aiStabilityCategories); //Leoreth
 }
 
 
@@ -163,6 +165,8 @@ void CvPlayer::init(PlayerTypes eID)
 	if ((GC.getInitCore().getSlotStatus(getID()) == SS_TAKEN) || (GC.getInitCore().getSlotStatus(getID()) == SS_COMPUTER))
 	{
 		setAlive(true);
+
+		//resetStabilityCategories(); // Leoreth
 
 		//sprintf(szOut, "Player %d set alive reached\n", eID);
 		//GC.getGameINLINE().logMsg(szOut);
@@ -349,6 +353,8 @@ void CvPlayer::uninit()
 
 	SAFE_DELETE_ARRAY(m_paeCivics);
 
+	//SAFE_DELETE_ARRAY(m_aiStabilityCategories); //Leoreth
+
 	m_triggersFired.clear();
 
 	if (m_ppaaiSpecialistExtraYield != NULL)
@@ -392,7 +398,7 @@ void CvPlayer::uninit()
 
 	clearDiplomacy();
 
-	clearStabilityList(); // Leoreth
+	resetStabilityCategories(); // Leoreth
 }
 
 
@@ -18294,7 +18300,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 		{
 			char* string;
 			int iValue;
-			addToStabilityList(string, iValue);
+			changeStabilityCategory(string, iValue);
 		}
 	}*/
 
@@ -24464,7 +24470,7 @@ void CvPlayer::doStability()
 	double cpuTime;
 	TCHAR szOut[1024];
 
-	clearStabilityList();
+	resetStabilityCategories();
 
 	GC.getGameINLINE().logMsg("Player stability calculation started.");
 
@@ -24525,11 +24531,11 @@ void CvPlayer::doStability()
 
 		// defensive pacts
 		iNewBaseStability += 10*GET_TEAM(eTeam).getDefensivePactTradingCount();
-		addToStabilityList("diplomacyStability", 10*GET_TEAM(eTeam).getDefensivePactTradingCount());
+		changeStabilityCategory(STABILITY_DIPLOMACY, 10*GET_TEAM(eTeam).getDefensivePactTradingCount());
 
 		// open borders
 		iNewBaseStability += 2*GET_TEAM(eTeam).getOpenBordersTradingCount();
-		addToStabilityList("diplomacyStability", 2*GET_TEAM(eTeam).getOpenBordersTradingCount());
+		changeStabilityCategory(STABILITY_DIPLOMACY, 2*GET_TEAM(eTeam).getOpenBordersTradingCount());
 
 		// neighbor stability
 		for (int iNeighbor = 0; iNeighbor < NUM_MAJOR_PLAYERS; iNeighbor++)
@@ -24551,7 +24557,7 @@ void CvPlayer::doStability()
 						if (GET_PLAYER(ePlayer).getStability() >= 0)
 						{
 							iNewBaseStability -= 5;
-							addToStabilityList("neighborStability", -5);
+							changeStabilityCategory(STABILITY_NEIGHBOR, -5);
 						}
 					}
 				}
@@ -24565,7 +24571,7 @@ void CvPlayer::doStability()
 			{
 				iNewBaseStability += 10;
 				iNewBaseStability += std::min(5, std::max(-6, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4));
-				addToStabilityList("vassalStability", 10 + std::min(5, std::max(-6, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4)));
+				changeStabilityCategory(STABILITY_VASSAL, 10 + std::min(5, std::max(-6, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4)));
 			}
 		}
 
@@ -24575,13 +24581,13 @@ void CvPlayer::doStability()
 			if (GET_TEAM((TeamTypes)iLoopCiv).isVassal(eTeam))
 			{
 				iNewBaseStability += std::min(3, std::max(-3, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4));
-				addToStabilityList("vassalStability", std::min(3, std::max(-3, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4)));
+				changeStabilityCategory(STABILITY_VASSAL, std::min(3, std::max(-3, GET_PLAYER((PlayerTypes)iLoopCiv).getStability()/4)));
 
 				// Viceroyalty civic
 				if (eCivic5 == CIVIC_VICEROYALTY)
 				{
 					iNewBaseStability += 4;
-					addToStabilityList("vassalStability", 4);
+					changeStabilityCategory(STABILITY_VASSAL, 4);
 				}
 			}
 		}
@@ -24628,7 +24634,7 @@ void CvPlayer::doStability()
 				if ((iNumOwnCities >= 2 && iNumOwnCities > iNumNativeCities) || (iNumOwnCities >= 1 && !GET_PLAYER((PlayerTypes)iLoopCiv).isAlive()))
 				{
 					iNewBaseStability += 2*iNumOwnCities;
-					addToStabilityList("imperialismStability", 2*iNumOwnCities);
+					changeStabilityCategory(STABILITY_IMPERIALISM, 2*iNumOwnCities);
 				}
 			}
 		}
@@ -24643,7 +24649,7 @@ void CvPlayer::doStability()
 			}
 		}
 		iNewBaseStability -= (iNumContacts/3 - 4);
-		addToStabilityList("contactStability", -(iNumContacts/3 - 4));
+		changeStabilityCategory(STABILITY_CONTACTS, -(iNumContacts/3 - 4));
 
 		// here first parameter
 
@@ -24666,24 +24672,24 @@ void CvPlayer::doStability()
 
 		int iNumPlotsAbroad = std::max(0, GET_PLAYER(ePlayer).getOwnedPlotsLastTurn() - iMaxPlotsAbroad/2);
 		iNewBaseStability -= iNumPlotsAbroad*2/7;
-		addToStabilityList("expansionStability", -iNumPlotsAbroad*2/7);
+		changeStabilityCategory(STABILITY_EXPANSION, -iNumPlotsAbroad*2/7);
 
 		iMaxPlotsAbroad -= GET_PLAYER(ePlayer).getOwnedForeignCitiesLastTurn()*3;
 
 		int iNumOuterPlotsAbroad = std::max(0, GET_PLAYER(ePlayer).getOwnedOuterPlotsLastTurn() - iMaxPlotsAbroad/2);
 		iNewBaseStability -= iNumOuterPlotsAbroad/4;
-		addToStabilityList("outerExpansionStability", -iNumOuterPlotsAbroad/4);
+		changeStabilityCategory(STABILITY_OUTER_EXPANSION, -iNumOuterPlotsAbroad/4);
 
 		// stability penalty by core cities owned by other civs
 		if (GET_PLAYER(ePlayer).getOwnedCitiesLastTurn() <= 20)
 		{
 			iNewBaseStability -= GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()*7;
-			addToStabilityList("occupiedCoreStability", -GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()*7);
+			changeStabilityCategory(STABILITY_OCCUPIED_CORE, -GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()*7);
 		}
 		else
 		{
 			iNewBaseStability -= (GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()-6)*10;
-			addToStabilityList("occupiedCoreStability", -(GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()-6)*10);
+			changeStabilityCategory(STABILITY_OCCUPIED_CORE, -(GET_PLAYER(ePlayer).getOwnedCitiesLastTurn()-6)*10);
 		}
 
 		// parameter here
@@ -24697,132 +24703,132 @@ void CvPlayer::doStability()
 		if (eCivic0 == CIVIC_AUTOCRACY && eCivic2 == CIVIC_TOTALITARIANISM)
 		{
 			iNewBaseStability += 10;
-			addToStabilityList("civicStability", 10);
+			changeStabilityCategory(STABILITY_CIVICS, 10);
 		}
 
 		if (eCivic2 == CIVIC_TOTALITARIANISM && eCivic3 == CIVIC_STATE_PROPERTY)
 		{
 			iNewBaseStability += 5;
-			addToStabilityList("civicStability", 5);
+			changeStabilityCategory(STABILITY_CIVICS, 5);
 		}
 
 		if (eCivic2 == CIVIC_TOTALITARIANISM && eCivic1 == CIVIC_UNIVERSAL_SUFFRAGE)
 		{
 			iNewBaseStability -= 10;
-			addToStabilityList("civicStability", -10);
+			changeStabilityCategory(STABILITY_CIVICS, -10);
 		}
 
 		if (eCivic2 == CIVIC_TOTALITARIANISM && eCivic4 == CIVIC_SECULARISM)
 		{
 			iNewBaseStability += 3;
-			addToStabilityList("civicStability", 3);
+			changeStabilityCategory(STABILITY_CIVICS, 3);
 		}
 
 		// communist civics
 		if (eCivic1 == CIVIC_SUPREME_COUNCIL && eCivic3 == CIVIC_STATE_PROPERTY)
 		{
 			iNewBaseStability += 7;
-			addToStabilityList("civicStability", 7);
+			changeStabilityCategory(STABILITY_CIVICS, 7);
 		}
 
 		if (eCivic3 == CIVIC_STATE_PROPERTY && (eCivic2 == CIVIC_AGRARIANISM || eCivic2 == CIVIC_CAPITALISM))
 		{
 			iNewBaseStability -= 7;
-			addToStabilityList("civicStability", -7);
+			changeStabilityCategory(STABILITY_CIVICS, -7);
 		}
 
 		if (eCivic1 == CIVIC_SUPREME_COUNCIL && (eCivic0 == CIVIC_DYNASTICISM || eCivic0 == CIVIC_THEOCRACY))
 		{
 			iNewBaseStability -= 4;
-			addToStabilityList("civicStability", -4);
+			changeStabilityCategory(STABILITY_CIVICS, -4);
 		}
 
 		// democratic civics
 		if (eCivic0 == CIVIC_REPUBLIC && eCivic4 == CIVIC_SECULARISM)
 		{
 			iNewBaseStability += 2;
-			addToStabilityList("civicStability", 2);
+			changeStabilityCategory(STABILITY_CIVICS, 2);
 		}
 
 		if (eCivic0 == CIVIC_TYRANNY && (eCivic1 == CIVIC_ABSOLUTISM || eCivic1 == CIVIC_UNIVERSAL_SUFFRAGE))
 		{
 			iNewBaseStability -= 4;
-			addToStabilityList("civicStability", -4);
+			changeStabilityCategory(STABILITY_CIVICS, -4);
 		}
 
 		if (eCivic0 == CIVIC_REPUBLIC && eCivic1 == UNIVERSAL_SUFFRAGE)
 		{
 			iNewBaseStability += 4;
-			addToStabilityList("civicStability", 4);
+			changeStabilityCategory(STABILITY_CIVICS, 4);
 		}
 
 		// religious civics
 		if (eCivic0 == CIVIC_THEOCRACY && eCivic4 == CIVIC_FANATICISM)
 		{
 			iNewBaseStability += 4;
-			addToStabilityList("civicStability", 4);
+			changeStabilityCategory(STABILITY_CIVICS, 4);
 		}
 
 		if (eCivic0 == CIVIC_THEOCRACY && eCivic4 == CIVIC_SECULARISM)
 		{
 			iNewBaseStability -= 8;
-			addToStabilityList("civicStability", -8);
+			changeStabilityCategory(STABILITY_CIVICS, -8);
 		}
 
 		if (eCivic0 == CIVIC_THEOCRACY && eCivic2 == CIVIC_EGALITARIANISM)
 		{
 			iNewBaseStability -= 3;
-			addToStabilityList("civicStability", -3);
+			changeStabilityCategory(STABILITY_CIVICS, -3);
 		}
 
 		if (eCivic2 == CIVIC_EGALITARIANISM && eCivic4 == CIVIC_SECULARISM)
 		{
 			iNewBaseStability += 3;
-			addToStabilityList("civicStability", 3);
+			changeStabilityCategory(STABILITY_CIVICS, 3);
 		}
 
 		// monarchist civics
 		if (eCivic1 == CIVIC_VASSALAGE && eCivic2 == CIVIC_AGRARIANISM)
 		{
 			iNewBaseStability += 3;
-			addToStabilityList("civicStability", 3);
+			changeStabilityCategory(STABILITY_CIVICS, 3);
 		}
 
 		if (eCivic0 == CIVIC_DYNASTICISM && eCivic1 == CIVIC_VASSALAGE)
 		{
 			iNewBaseStability += 3;
-			addToStabilityList("civicStability", 3);
+			changeStabilityCategory(STABILITY_CIVICS, 3);
 		}
 
 		// other
 		if (eCivic0 == CIVIC_CITY_STATES && eCivic1 == CIVIC_VASSALAGE)
 		{
 			iNewBaseStability -= 2;
-			addToStabilityList("civicStability", -2);
+			changeStabilityCategory(STABILITY_CIVICS, -2);
 		}
 
 		if (eCivic0 == CIVIC_CITY_STATES && eCivic2 != CIVIC_URBANIZATION)
 		{
 			iNewBaseStability -= 3;
-			addToStabilityList("civicStability", -3);
+			changeStabilityCategory(STABILITY_CIVICS, -3);
 		}
 
 		if (eCivic0 == CIVIC_CITY_STATES && eCivic3 == CIVIC_MERCANTILISM)
 		{
 			iNewBaseStability += 3;
-			addToStabilityList("civicStability", 3);
+			changeStabilityCategory(STABILITY_CIVICS, 3);
 		}
 
 		if (eCivic1 == CIVIC_ABSOLUTISM && eCivic3 == CIVIC_MERCANTILISM)
 		{
 			iNewBaseStability += 3;
-			addToStabilityList("civicStability", 3);
+			changeStabilityCategory(STABILITY_CIVICS, 3);
 		}
 
 		if (eCivic2 == CIVIC_CAPITALISM && eCivic3 == CIVIC_FREE_MARKET)
 		{
 			iNewBaseStability += 2;
-			addToStabilityList("civicStability", 2);
+			changeStabilityCategory(STABILITY_CIVICS, 2);
 		}
 
 		// civic era stability
@@ -24831,12 +24837,12 @@ void CvPlayer::doStability()
 			if (getCurrentEra() == ERA_MEDIEVAL)
 			{
 				iNewBaseStability += 3;
-				addToStabilityList("civicEraStability", 3);
+				changeStabilityCategory(STABILITY_CIVIC_ERA, 3);
 			}
 			else
 			{
 				iNewBaseStability -= 3;
-				addToStabilityList("civicEraStability", -3);
+				changeStabilityCategory(STABILITY_CIVIC_ERA, -3);
 			}
 		}
 
@@ -24845,7 +24851,7 @@ void CvPlayer::doStability()
 			if (getCurrentEra() >= ERA_INDUSTRIAL)
 			{
 				iNewBaseStability -= 5;
-				addToStabilityList("civicEraStability", -5);
+				changeStabilityCategory(STABILITY_CIVIC_ERA, -5);
 			}
 		}
 
@@ -24854,12 +24860,12 @@ void CvPlayer::doStability()
 			if (getCurrentEra() <= ERA_CLASSICAL)
 			{
 				iNewBaseStability += 3;
-				addToStabilityList("civicEraStability", 3);
+				changeStabilityCategory(STABILITY_CIVIC_ERA, 3);
 			}
 			else
 			{
 				iNewBaseStability -= 3;
-				addToStabilityList("civicEraStability", -3);
+				changeStabilityCategory(STABILITY_CIVIC_ERA, -3);
 			}
 		}
 
@@ -24868,7 +24874,7 @@ void CvPlayer::doStability()
 			if (getCurrentEra() > ERA_CLASSICAL)
 			{
 				iNewBaseStability -= 4;
-				addToStabilityList("civicEraStability", -4);
+				changeStabilityCategory(STABILITY_CIVIC_ERA, -4);
 			}
 		}
 
@@ -24877,7 +24883,7 @@ void CvPlayer::doStability()
 			if (getCurrentEra() >= ERA_INDUSTRIAL)
 			{
 				iNewBaseStability += 3;
-				addToStabilityList("civicEraStability", 3);
+				changeStabilityCategory(STABILITY_CIVIC_ERA, 3);
 			}
 		}
 
@@ -24887,32 +24893,32 @@ void CvPlayer::doStability()
 			if (getNumCities() <= 5)
 			{
 				iNewBaseStability += 5;
-				addToStabilityList("civicCitiesStability", 5);
+				changeStabilityCategory(STABILITY_CIVIC_CITIES, 5);
 			}
 			else
 			{
 				iNewBaseStability += std::max(-7, 5 - getNumCities());
-				addToStabilityList("civicCitiesStability", std::max(-7, 5 - getNumCities()));
+				changeStabilityCategory(STABILITY_CIVIC_CITIES, std::max(-7, 5 - getNumCities()));
 			}
 		}
 
 		if (eCivic0 == CIVIC_REPUBLIC)
 		{
 			iNewBaseStability += std::max(-5, 5 - getNumCities());
-			addToStabilityList("civicCitiesStability", std::max(-5, 5 - getNumCities()));
+			changeStabilityCategory(STABILITY_CIVIC_CITIES, std::max(-5, 5 - getNumCities()));
 		}
 
 		if (eCivic2 == CIVIC_TOTALITARIANISM)
 		{
 			iNewBaseStability += std::max(10, getNumCities()/5);
-			addToStabilityList("civicCitiesStability", std::max(10, getNumCities()/5));
+			changeStabilityCategory(STABILITY_CIVIC_CITIES, std::max(10, getNumCities()/5));
 		}
 
 		// civic and diplomacy stability
 		if (eCivic0 == CIVIC_AUTOCRACY)
 		{
 			iNewBaseStability += 3*GET_TEAM(eTeam).getAtWarCount(true);
-			addToStabilityList("diplomacyStability", 3*GET_TEAM(eTeam).getAtWarCount(true));
+			changeStabilityCategory(STABILITY_DIPLOMACY, 3*GET_TEAM(eTeam).getAtWarCount(true));
 		}
 
 		if (eCivic4 == CIVIC_FANATICISM)
@@ -24922,7 +24928,7 @@ void CvPlayer::doStability()
 				if (GET_TEAM(eTeam).isAtWar((TeamTypes)iEnemyCiv) && getStateReligion() != GET_PLAYER((PlayerTypes)iEnemyCiv).getStateReligion())
 				{
 					iNewBaseStability += 3;
-					addToStabilityList("diplomacyStability", 3);
+					changeStabilityCategory(STABILITY_DIPLOMACY, 3);
 				}
 			}
 		}
@@ -24945,7 +24951,7 @@ void CvPlayer::doStability()
 			if (getStability() > 30)
 			{
 				iNewBaseStability += 5;
-				addToStabilityList("civicCapStability", 5);
+				changeStabilityCategory(STABILITY_CIVIC_CAP, 5);
 			}
 		}
 
@@ -24954,7 +24960,7 @@ void CvPlayer::doStability()
 			if (getStability() > 50)
 			{
 				iNewBaseStability += 5;
-				addToStabilityList("civicCapStability", 5);
+				changeStabilityCategory(STABILITY_CIVIC_CAP, 5);
 			}
 		}
 
@@ -24964,7 +24970,7 @@ void CvPlayer::doStability()
 			if (eCivic1 == CIVIC_UNIVERSAL_SUFFRAGE)
 			{
 				iNewBaseStability += 3;
-				addToStabilityList("civicTechStability", 3);
+				changeStabilityCategory(STABILITY_CIVIC_TECH, 3);
 			}
 		}
 
@@ -24973,7 +24979,7 @@ void CvPlayer::doStability()
 			if (eCivic2 != CIVIC_EGALITARIANISM)
 			{
 				iNewBaseStability -= 3;
-				addToStabilityList("civicTechStability", -3);
+				changeStabilityCategory(STABILITY_CIVIC_TECH, -3);
 			}
 		}
 
@@ -24982,7 +24988,7 @@ void CvPlayer::doStability()
 			if (eCivic0 != CIVIC_REPUBLIC)
 			{
 				iNewBaseStability -= 3;
-				addToStabilityList("civicTechStability", -3);
+				changeStabilityCategory(STABILITY_CIVIC_TECH, -3);
 			}
 		}
 
@@ -24991,7 +24997,7 @@ void CvPlayer::doStability()
 			if (eCivic3 == CIVIC_FORCED_LABOR)
 			{
 				iNewBaseStability += 3;
-				addToStabilityList("civicTechStability", 3);
+				changeStabilityCategory(STABILITY_CIVIC_TECH, 3);
 			}
 		}
 
@@ -25000,7 +25006,7 @@ void CvPlayer::doStability()
 			if (eCivic3 == CIVIC_FORCED_LABOR && eCivic2 != CIVIC_TOTALITARIANISM)
 			{
 				iNewBaseStability -= 3;
-				addToStabilityList("civicTechStability", -3);
+				changeStabilityCategory(STABILITY_CIVIC_TECH, -3);
 			}
 		}
 
@@ -25009,7 +25015,7 @@ void CvPlayer::doStability()
 			if (eCivic3 == CIVIC_SELF_SUFFICIENCY)
 			{
 				iNewBaseStability -= 5;
-				addToStabilityList("civicTechStability", -5);
+				changeStabilityCategory(STABILITY_CIVIC_TECH, -5);
 			}
 		}
 
@@ -25044,12 +25050,12 @@ void CvPlayer::doStability()
 						if (getSettlersMaps(67-iY, iX) < 150)
 						{
 							iNewBaseStability -= 3;
-							addToStabilityList("foreignCoreCitiesStability", -3);
+							changeStabilityCategory(STABILITY_FOREIGN_CORE_CITIES, -3);
 						}
 						else
 						{
 							iNewBaseStability -= 1;
-							addToStabilityList("foreignCoreCitiesStability", -1);
+							changeStabilityCategory(STABILITY_FOREIGN_CORE_CITIES, -1);
 						}
 						break;
 					}
@@ -25109,7 +25115,7 @@ void CvPlayer::doStability()
 				sprintf(szOut, "DLL: Player %d City %d happy stability: %d", iPlayer, iCount, iOutputCityHappy);
 				GC.getGameINLINE().logMsg(szOut);
 
-				addToStabilityList("cityHappinessStability", iTempCityStability);
+				changeStabilityCategory(STABILITY_CITY_HAPPINESS, iTempCityStability);
 
 				// middle check for optimization
 				if (iTempCityStability <= -5)
@@ -25172,7 +25178,7 @@ void CvPlayer::doStability()
 				sprintf(szOut, "DLL: Player %d City %d civic stability: %d", iPlayer, iCount, iOutputCityCivic);
 				GC.getGameINLINE().logMsg(szOut);
 
-				addToStabilityList("cityCivicStability", iOutputCityCivic);
+				changeStabilityCategory(STABILITY_CITY_CIVICS, iOutputCityCivic);
 
 				if (true) //(eCivic2 != CIVIC_EGALITARIANISM)
 				{
@@ -25219,7 +25225,7 @@ void CvPlayer::doStability()
 				sprintf(szOut, "DLL: Player %d City %d culture stability: %d", iPlayer, iCount, iOutputCityCulture);
 				GC.getGameINLINE().logMsg(szOut);
 
-				addToStabilityList("cityCultureStability", iOutputCityCulture);
+				changeStabilityCategory(STABILITY_CITY_CULTURE, iOutputCityCulture);
 
 				if (iTempCityStability < 0)
 				{
@@ -25236,7 +25242,7 @@ void CvPlayer::doStability()
 		if (iTotalTempCityStability < 0)
 		{
 			iNewBaseStability += std::max(-12, iTotalTempCityStability);
-			addToStabilityList("totalCityStability", std::max(-12, iTotalTempCityStability));
+			changeStabilityCategory(STABILITY_CITY_TOTAL, std::max(-12, iTotalTempCityStability));
 		}
 
 		// parameter here
@@ -25259,12 +25265,12 @@ void CvPlayer::doStability()
 		if (eCivic5 != CIVIC_COMMONWEALTH)
 		{
 			iNewBaseStability += std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset);
-			addToStabilityList("tradeStability", std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset));
+			changeStabilityCategory(STABILITY_TRADE, std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset));
 		}
 		else
 		{
 			iNewBaseStability += std::max(0, std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset));
-			addToStabilityList("tradeStability", std::max(0, std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset)));
+			changeStabilityCategory(STABILITY_TRADE, std::max(0, std::min(10, (iImports + iExports) / (2*iEraModifier + 1) - iImportExportOffset)));
 		}
 
 		iEconomy = calculateTotalYield((YieldTypes)YIELD_COMMERCE) - calculateInflatedCosts();
@@ -25300,7 +25306,7 @@ void CvPlayer::doStability()
 		}
 
 		iNewBaseStability += std::min(8, std::max(-8, (iAgriculture * 100000 / iPopulation - 8 + (iEraModifier - 3)*2)));
-		addToStabilityList("economyStability", std::min(8, std::max(-8, (iAgriculture * 100000 / iPopulation - 8 + (iEraModifier - 3)*2))));
+		changeStabilityCategory(STABILITY_ECONOMY, std::min(8, std::max(-8, (iAgriculture * 100000 / iPopulation - 8 + (iEraModifier - 3)*2))));
 
 		int iMaxEconomyGain = 3;
 		int iMaxEconomyLoss = -3;
@@ -25308,12 +25314,12 @@ void CvPlayer::doStability()
 		if (eCivic5 != CIVIC_COMMONWEALTH)
 		{
 			iNewBaseStability += std::min(iMaxEconomyGain, std::max(iMaxEconomyLoss, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2)));
-			addToStabilityList("economyStability", std::min(iMaxEconomyGain, std::max(iMaxEconomyLoss, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2))));
+			changeStabilityCategory(STABILITY_ECONOMY, std::min(iMaxEconomyGain, std::max(iMaxEconomyLoss, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2))));
 		}
 		else
 		{
 			iNewBaseStability += std::min(iMaxEconomyGain, std::max(0, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2)));
-			addToStabilityList("economyStability", std::min(iMaxEconomyGain, std::max(0, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2))));
+			changeStabilityCategory(STABILITY_ECONOMY, std::min(iMaxEconomyGain, std::max(0, (iEconomy * 100000 / iPopulation - 5 + (iEraModifier - 3)*2))));
 		}
 
 		// parameter here
@@ -25326,7 +25332,7 @@ void CvPlayer::doStability()
 			iHappiness = (int)((1.0 * calculateTotalCityHappiness()) / (calculateTotalCityHappiness() + calculateTotalCityUnhappiness()) * 100) - 60;
 
 		iNewBaseStability += iHappiness/10;
-		addToStabilityList("happinessStability", iHappiness/10);
+		changeStabilityCategory(STABILITY_HAPPINESS, iHappiness/10);
 
 		// parameter here
 
@@ -25378,12 +25384,12 @@ void CvPlayer::doStability()
 			if (getGNPnew() < getGNPold())
 			{
 				changeStability(std::max(-iMaxShrink, iNegativeGrowth));
-				addToStabilityList("economyExtraStability", std::max(-iMaxShrink, iNegativeGrowth));
+				changeStabilityCategory(STABILITY_ECONOMY_EXTRA, std::max(-iMaxShrink, iNegativeGrowth));
 			}
 			else if (getGNPnew() >= getGNPold())
 			{
 				changeStability(std::min(iMaxGrowth, iPositiveGrowth));
-				addToStabilityList("economyExtraStability", std::min(iMaxGrowth, iPositiveGrowth));
+				changeStabilityCategory(STABILITY_ECONOMY_EXTRA, std::min(iMaxGrowth, iPositiveGrowth));
 			}
 
 			// parameter here
@@ -25411,7 +25417,7 @@ void CvPlayer::doStability()
 	if (getGreatDepressionCountdown() > 0)
 	{
 		iNewBaseStability -= (15 + std::min(15, iDifference));
-		addToStabilityList("greatDepressionStability", -(15 + std::min(15, iDifference)));
+		changeStabilityCategory(STABILITY_GREAT_DEPRESSION, -(15 + std::min(15, iDifference)));
 
 		if (GC.getGame().getActivePlayer() == iPlayer)
 		{
@@ -25472,12 +25478,12 @@ void CvPlayer::doStability()
 					if (eCivic3 == CIVIC_MERCANTILISM)
 					{
 						iNewBaseStability -= 4;
-						addToStabilityList("foreignGreatDepressionStability", -4);
+						changeStabilityCategory(STABILITY_FOREIGN_GREAT_DEPRESSION, -4);
 					}
 					else
 					{
 						iNewBaseStability -= 10;
-						addToStabilityList("foreignGreatDepressionStability", -10);
+						changeStabilityCategory(STABILITY_FOREIGN_GREAT_DEPRESSION, -10);
 					}
 
 					if (GC.getGame().getActivePlayer() == ePlayer)
@@ -25505,7 +25511,7 @@ void CvPlayer::doStability()
 		if (getStatePropertyCountdown() > 0)
 		{
 			iNewBaseStability -= 25;
-			addToStabilityList("postCommunismStability", -25);
+			changeStabilityCategory(STABILITY_POST_COMMUNISM, -25);
 			setStatePropertyCountdown(getStatePropertyCountdown() - 1);
 
 			if (GC.getGame().getActivePlayer() == iPlayer)
@@ -25528,7 +25534,7 @@ void CvPlayer::doStability()
 		if (getDemocracyCountdown() > 0)
 		{
 			iNewBaseStability -= 20;
-			addToStabilityList("democracyTransitionStability", -20);
+			changeStabilityCategory(STABILITY_DEMOCRACY_TRANSITION, -20);
 			setDemocracyCountdown(getDemocracyCountdown() - 1);
 			if (GC.getGame().getActivePlayer() == ePlayer)
 				CvEventReporter::getInstance().democracyTransition(ePlayer);
@@ -25540,7 +25546,7 @@ void CvPlayer::doStability()
 	if (getNumCities() >= 8)
 	{
 		iNewBaseStability -= (getNumCities() - 5) * (getNumCities() - 5) / 9;
-		addToStabilityList("numCitiesStability", -((getNumCities() - 5) * (getNumCities() - 5) / 9));
+		changeStabilityCategory(STABILITY_NUM_CITIES, -((getNumCities() - 5) * (getNumCities() - 5) / 9));
 	}
 
 	// next parameter here
@@ -25549,13 +25555,13 @@ void CvPlayer::doStability()
 	if (getCombatResultTempModifier() != 0)
 	{
 		iNewBaseStability += std::max(-20, std::min(20, getCombatResultTempModifier()));
-		addToStabilityList("combatStability", std::max(-20, std::min(20, getCombatResultTempModifier())));
+		changeStabilityCategory(STABILITY_COMBAT, std::max(-20, std::min(20, getCombatResultTempModifier())));
 
 		// great loss
 		if (getCombatResultTempModifier() <= -4 - (iEraModifier/2))
 		{
 			changeStability(-1);
-			addToStabilityList("combatExtraStability", -1);
+			changeStabilityCategory(STABILITY_COMBAT_EXTRA, -1);
 		}
 
 		if (abs(getCombatResultTempModifier()) >= 4)
@@ -25570,23 +25576,23 @@ void CvPlayer::doStability()
 		if (getStability() > 24)
 		{
 			changeStability(-getStability()/8/getTurns(1));
-			addToStabilityList("anarchyStability", -getStability()/8/getTurns(1));
+			changeStabilityCategory(STABILITY_ANARCHY, -getStability()/8/getTurns(1));
 		}
 		else
 		{
 			changeStability(-3/getTurns(1));
-			addToStabilityList("anarchyStability", -3/getTurns(1));
+			changeStabilityCategory(STABILITY_ANARCHY, -3/getTurns(1));
 		}
 
 		iNewBaseStability -= (getStability() + 30) / 2;
-		addToStabilityList("anarchyStability", -((getStability() + 30) / 2));
+		changeStabilityCategory(STABILITY_ANARCHY, -((getStability() + 30) / 2));
 	}
 
 	// golden age stability
 	if (isGoldenAge())
 	{
 		iNewBaseStability += 20;
-		addToStabilityList("goldenAgeStability", 20);
+		changeStabilityCategory(STABILITY_GOLDEN_AGE, 20);
 	}
 
 	// Leoreth: stability hits after historical fall dates
@@ -25614,12 +25620,12 @@ void CvPlayer::doStability()
 		if (bHumanNeighbor)
 		{
 			iNewBaseStability -= std::min(10, iGameTurn - getTurnForYear(fallTurnYear[iPlayer]));
-			addToStabilityList("fallStability", -std::min(10, iGameTurn - getTurnForYear(fallTurnYear[iPlayer])));
+			changeStabilityCategory(STABILITY_FALL, -std::min(10, iGameTurn - getTurnForYear(fallTurnYear[iPlayer])));
 		}
 		else
 		{
 			iNewBaseStability -= std::min(20, iGameTurn - getTurnForYear(fallTurnYear[iPlayer]));
-			addToStabilityList("fallStability", -std::min(20, iGameTurn - getTurnForYear(fallTurnYear[iPlayer])));
+			changeStabilityCategory(STABILITY_FALL, -std::min(20, iGameTurn - getTurnForYear(fallTurnYear[iPlayer])));
 		}
 	}
 
@@ -25633,7 +25639,7 @@ void CvPlayer::doStability()
 	if (getStability() > 80)
 		setStability(80);
 
-	addToStabilityList("baseStability", iNewBaseStability);
+	changeStabilityCategory(STABILITY_BASE, iNewBaseStability);
 
 	setBaseStabilityLastTurn(iNewBaseStability);
 
@@ -25670,28 +25676,36 @@ void CvPlayer::setLatestRebellionTurn(int iNewValue)
 	m_iLatestRebellionTurn = iNewValue;
 }
 
-StabilityList CvPlayer::getStabilityList()
+/*int CvPlayer::getStabilityCategory(int i)
 {
-	return m_stabilityList;
+	return m_aiStabilityCategories[i];
 }
 
-void CvPlayer::setStabilityList(StabilityList sList)
+int* CvPlayer::getStabilityCategoryArray()
 {
-	m_stabilityList = sList;
+	//return m_aiStabilityCategories;
+	return
+}*/
+
+void CvPlayer::setStabilityCategory(StabilityTypes eStabilityType, int iValue)
+{
+	//m_aiStabilityCategories[(int)eStabilityType] = iValue;
+	iValue *= 2;
 }
 
-void CvPlayer::addToStabilityList(char* string, int iValue)
+void CvPlayer::changeStabilityCategory(StabilityTypes eStabilityType, int iChange)
 {
-	if (iValue >= 0)
+	//m_aiStabilityCategories[(int)eStabilityType] += iChange;
+	iChange *= 2;
+}
+
+void CvPlayer::resetStabilityCategories()
+{
+	/*for (int i = 0; i < NUM_STABILITY_TYPES; i++)
 	{
-		std::pair<char*, int> entry = std::pair<char*, int>(string, iValue);
-		m_stabilityList.push_back(entry);
-	}
-}
-
-void CvPlayer::clearStabilityList()
-{
-	m_stabilityList = StabilityList();
+		setStabilityCategory((StabilityTypes)i, 0);
+	}*/
+	int i = 0;
 }
 
 

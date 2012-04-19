@@ -543,8 +543,6 @@ public:
 	int getLatestRebellionTurn();
 	void setLatestRebellionTurn(int iNewValue);
 
-	boost::python::list getStabilityList();
-
 private:
 	CvPlayer* m_pPlayer;
 };

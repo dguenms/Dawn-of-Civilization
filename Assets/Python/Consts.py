@@ -1837,6 +1837,19 @@ iNumReligions = 9
 iProtestantism = iJudaism
 iCatholicism = iChristianity
 
+#Persecution preference
+tPersecutionPreference = (
+(iIslam, iCatholicism, iOrthodoxy, iZoroastrianism, iHinduism, iBuddhism, iTaoism, iConfucianism), # Protestantism
+(iIslam, iProtestantism, iOrthodoxy, iZoroastrianism, iHinduism, iBuddhism, iTaoism, iConfucianism), # Catholicism
+(iIslam, iProtestantism, iCatholicism, iZoroastrianism, iHinduism, iBuddhism, iTaoism, iConfucianism), # Orthodoxy
+(iHinduism, iProtestantism, iCatholicism, iOrthodoxy, iTaoism, iConfucianism, iZoroastrianism, iBuddhism), # Islam
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iZoroastrianism, iTaoism, iConfucianism, iBuddhism), # Hinduism
+(iCatholicism, iProtestantism, iOrthodoxy, iZoroastrianism, iTaoism, iIslam, iConfucianism, iHinduism), # Buddhism
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iZoroastrianism, iHinduism, iBuddhism, iTaoism), # Confucianism
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iZoroastrianism, iHinduism, iBuddhism, iConfucianism), # Taoism
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iBuddhism, iHinduism, iTaoism, iConfucianism), # Zoroastrianism
+)
+
 
 # initialise tech variables to unit indices from XML
 
@@ -1881,6 +1894,7 @@ iCamelArcher = iArabiaCamelarcher
 iConquistador = iSpanishConquistador
 iWorkBoat = iWorkboat
 iHeavySwordsman = iMaceman
+iEthiopianAskari = iEthiopianOromoWarrior
 
 # initialise bonuses variables to bonuses IDs from WBS
 iNumBonuses = 39
@@ -1958,9 +1972,9 @@ rBrazil, rArgentina, rPeru, rColombia) = range(iNumRegions)
 
 #Projects
 
-iNumProjects = 11
+iNumProjects = 12
 (iManhattanProject, iTheInternet, iSDI, iApolloProgram, iSSCasing, iSSThrusters, iSSEngine, iSSDockingBay,
-iSSCockpit, iSSLifeSupport, iSSStasisChamber) = range(iNumProjects)
+iSSCockpit, iSSLifeSupport, iSSStasisChamber, iPersecutionProject) = range(iNumProjects)
 
 
 #Eras

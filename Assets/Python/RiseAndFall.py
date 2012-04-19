@@ -538,9 +538,9 @@ class RiseAndFall:
                 elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
                         gc.getTeam(gc.getPlayer(iHuman).getTeam()).declareWar(iRebelCiv, False, -1)
 
-	def eventApply7625(self, userData, popupReturn):
+	def eventApply7625(self, popupReturn):
 		iHuman = utils.getHumanID()
-		iPlayer, targetList = userData
+		iPlayer, targetList = utils.getTempEventList()
 		if popupReturn.getButtonClicked() == 0:
 			for tPlot in targetList:
 				x, y = tPlot
@@ -552,6 +552,24 @@ class RiseAndFall:
 				x, y = tPlot
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iHuman:
 					utils.colonialConquest(iPlayer, x, y)
+					
+	def eventApply7627(self, popupReturn):
+		lReligionList, tCityPlot = utils.getTempEventList()
+		x, y = tCityPlot
+		city = gc.getMap().plot(x, y).getPlotCity()
+		
+		utils.debugTextPopup("lReligionList: "+str(lReligionList)+"\n Button clicked: "+str(popupReturn.getButtonClicked()))
+		
+		iPersecutedReligion = lReligionList[popupReturn.getButtonClicked()]
+		
+		utils.debugTextPopup("iPersecutedReligion: "+str(gc.getReligionInfo(iPersecutedReligion).getText()))
+		
+		city.setHasReligion(iPersecutedReligion, False, True, True)
+		city.changeOccupationTimer(2)
+		city.changeHurryAngerTimer(city.hurryAngerLength(0))
+		
+		CyInterface().addMessage(city.getOwner(), True, con.iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+		
 
 
 #######################################
@@ -1167,7 +1185,7 @@ class RiseAndFall:
                                                                 iIndependentCities += 1
                                                 
                                                 # italy needs at least half of all core cities independent -> break when there are less
-                                                if iIndependentCities < iCitiesTotal:
+                                                if iIndependentCities == 0:
                                                         print "No Italy spawn"
                                                         break
                                 
@@ -3340,6 +3358,8 @@ class RiseAndFall:
                                                         #        utils.makeUnitAI(con.iFrenchMusketeer, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         if (iOldWorldCiv == iTurkey):
                                                                 utils.makeUnitAI(con.iOttomanJanissary, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
+							elif iOldWorldCiv == iEthiopia:
+								utils.makeUnitAI(con.iEthiopianAskari, iOldWorldCiv, tArrivalPlor, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         else:
                                                                 utils.makeUnitAI(con.iMusketman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                 elif (teamOldWorldCiv.isHasTech(con.iCivilService)):
@@ -3562,8 +3582,8 @@ class RiseAndFall:
                 		popup.setBodyString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_MESSAGE", ()))
 				popup.addButton(CyTranslator().getText("TXT_KEY_POPUP_YES", ()))
 				popup.addButton(CyTranslator().getText("TXT_KEY_POPUP_NO", ()))
-				argsList = [iPlayer, targetList]
-				popup.setUserData(argsList)
+				argsList = (iPlayer, targetList)
+				utils.setTempEventList(argsList)
                 		popup.launch(False)
 			else:
 				iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
@@ -3607,8 +3627,56 @@ class RiseAndFall:
 				utils.makeUnit(con.iNetherlandsOostindievaarder, iPlayer, tSeaPlot, 1)
 			else:
 				utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
-
-
+				
+				
+	def onProjectBuilt(self, city, iProjectType):
+		if iProjectType == con.iPersecutionProject:
+			lReligionList = []
+			iOwner = city.getOwner()
+			pOwner = gc.getPlayer(iOwner)
+			iStateReligion = pOwner.getStateReligion()
+			
+			utils.debugTextPopup("Persecution performed by player: "+str(iOwner))
+			
+			for iReligion in range(con.iNumReligions):
+				if city.isHasReligion(iReligion) and iReligion != iStateReligion and not city.isHolyCityByType(iReligion):
+					lReligionList.append(iReligion)
+					
+			if utils.getHumanID() != iOwner:
+				iPersecutedReligion = self.getPersecutedReligion(lReligionList, iStateReligion)
+			else:
+				iPersecutedReligion = -1
+				self.launchPersecutionPopup(lReligionList, city)
+			
+			if iPersecutedReligion > -1:
+				city.setHasReligion(iPersecutedReligion, False, True, True)
+				city.changeOccupationTimer(2)
+				city.changeHurryAngerTimer(city.hurryAngerLength(0))
+				CyInterface().addMessage(city.getOwner(), True, con.iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+				
+			gc.getTeam(pOwner.getTeam()).changeProjectCount(con.iPersecutionProject, -1)
+			
+	def getPersecutedReligion(self, lReligionList, iStateReligion):
+		for iReligion in con.tPersecutionPreference[iStateReligion]:
+			if iReligion in lReligionList:
+				return iReligion
+				
+		return -1
+		
+	def launchPersecutionPopup(self, lReligionList, city):
+		popup = Popup.PyPopup(7627, EventContextTypes.EVENTCONTEXT_ALL)
+		#popup.setHeaderString(CyTranslator().getText("TXT_KEY_PERSECUTION_TITLE", ()))
+		popup.setBodyString(CyTranslator().getText("TXT_KEY_PERSECUTION_MESSAGE", (city.getName(),)))
+		
+		for iReligion in lReligionList:
+			popup.addButton(gc.getReligionInfo(iReligion).getText())
+			
+		argsList = [lReligionList, (city.getX(), city.getY())]
+		utils.setTempEventList(argsList)
+		
+		popup.launch(False)
+	
+	
         def warOnSpawn(self):
                 for iCiv in range(iNumMajorPlayers):
                         if (not gc.getPlayer(0).isPlayable() and con.tIsActiveOnLateStart[iCiv]==0): #late start condition
