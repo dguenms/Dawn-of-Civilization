@@ -1002,7 +1002,7 @@ tExceptions = (  #for RiseAndFall
 ((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
 ((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
 (), #Khmer
-(), #Indonesia (should probably exclude Borneo)
+((100, 31), (100, 30), (101, 29)), #Indonesia
 (), #Spain
 ((55, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50), (53, 46), (52, 46), (51, 46)), #France
 (), #England
@@ -1653,7 +1653,7 @@ tAggressionLevel = (
 1, #Byzantium
 2, #Viking
 2, #Arabia
-1, #Khmer
+2, #Khmer
 1, #Indonesia
 2, #Spain
 1, #France

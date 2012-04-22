@@ -4561,8 +4561,10 @@
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>NONE</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
-			<PrereqTech>TECH_ECONOMICS</PrereqTech>
-			<TechTypes/>
+			<PrereqTech>TECH_BANKING</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_ASTRONOMY</PrereqTech>
+			</TechTypes>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses/>
 			<ProductionTraits/>
@@ -14598,7 +14600,7 @@
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>NONE</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
-			<PrereqTech>TECH_STEAM_POWER</PrereqTech>
+			<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
 			<TechTypes/>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses/>

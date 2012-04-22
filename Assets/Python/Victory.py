@@ -2090,7 +2090,7 @@ class Victory:
 				else:
 					self.setGoal(iChina, 1, 0)
 
-		if iTech in [con.iCompass, con.iPaper, con.iGunpowder, con.iPrintingPress]:
+		if iTech in [con.iCompass, con.iPaper, con.iGunpowder, con.iPrintingPress] and self.getGoal(iChina, 1) == -1:
 			if self.getChineseTechs(0) == 1 and self.getChineseTechs(1) == 1 and self.getChineseTechs(2) == 1 and self.getChineseTechs(3) == 1:
 				self.setGoal(iChina, 1, 1)
 
@@ -2116,7 +2116,7 @@ class Victory:
 				else:
 					self.setGoal(iBabylonia, 0, 0)
 
-		if iTech in [con.iWriting, con.iCodeOfLaws, con.iMonarchy]:
+		if iTech in [con.iWriting, con.iCodeOfLaws, con.iMonarchy] and self.getGoal(iBabylonia, 0) == -1:
 			if self.getBabylonianTechs(0) == 1 and self.getBabylonianTechs(1) == 1 and self.getBabylonianTechs(2) == 1:
 				self.setGoal(iBabylonia, 0, 1)
 
@@ -2143,7 +2143,7 @@ class Victory:
 				else:
 					self.setGoal(iGreece, 0, 0)
 
-		if iTech in [con.iLiterature, con.iDrama, con.iPhilosophy]:
+		if iTech in [con.iLiterature, con.iDrama, con.iPhilosophy] and self.getGoal(iGreece, 0) == -1:
 			if self.getGreekTechs(0) == 1 and self.getGreekTechs(1) == 1 and self.getGreekTechs(2) == 1:
 				self.setGoal(iGreece, 0, 1)
 
@@ -2178,7 +2178,7 @@ class Victory:
 					else:
 						self.setGoal(iRome, 0, 0)
 
-			if iTech in [con.iBanking, con.iEducation, con.iRadio, con.iFascism]:
+			if iTech in [con.iBanking, con.iEducation, con.iRadio, con.iFascism] and self.getGoal(iRome, 0):
 				if self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1:
 					self.setGoal(iRome, 0, 1)
 					

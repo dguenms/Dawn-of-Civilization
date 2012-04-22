@@ -8757,6 +8757,24 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			if (eReligion == (ReligionTypes)ORTHODOXY && pLoopCity->isCapital())
 				iValue = 100;
 
+			if (eReligion == (ReligionTypes)ORTHODOXY && !pLoopCity->isCapital())
+				iValue = 1;
+			
+			if (eReligion == (ReligionTypes)PROTESTANTISM)
+			{
+				int iRegion = pLoopCity->getRegionID();
+				if (iRegion != REGION_BRITAIN || iRegion != REGION_IBERIA || iRegion != REGION_ITALY || iRegion != REGION_BALKANS || iRegion != REGION_EUROPE || iRegion != REGION_SCANDINAVIA || iRegion != REGION_RUSSIA)
+				{
+					iValue = 1;
+				}
+
+				int iCapitalRegion = getCapitalCity()->getRegionID();
+				if (iRegion == iCapitalRegion)
+				{
+					iValue *= 3;
+				}
+			}
+
 			//Rhye - end
 
 			//Leoreth: exclude 1 population cities because it doesn't make sense to have a religion founded there
@@ -8764,18 +8782,6 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
             //    iValue = 1;
 
 			iValue = std::max(1, iValue);
-
-			if (eReligion == (ReligionTypes)ORTHODOXY && !pLoopCity->isCapital())
-				iValue = 0;
-			
-			if (eReligion == (ReligionTypes)PROTESTANTISM)
-			{
-				int iRegion = pLoopCity->getRegionID();
-				if (iRegion != REGION_BRITAIN || iRegion != REGION_IBERIA || iRegion != REGION_ITALY || iRegion != REGION_BALKANS || iRegion != REGION_EUROPE || iRegion != REGION_SCANDINAVIA || iRegion != REGION_RUSSIA)
-				{
-					iValue = 0;
-				}
-			}
 
 
 			if (iValue > iBestValue)
@@ -24670,7 +24676,7 @@ void CvPlayer::doStability()
 		if (iPlayer == KOREA || eCivic0 == CIVIC_CITY_STATES)
 			iMaxPlotsAbroad /= 2;
 
-		int iNumPlotsAbroad = std::max(0, GET_PLAYER(ePlayer).getOwnedPlotsLastTurn() - iMaxPlotsAbroad/2);
+		int iNumPlotsAbroad = std::max(0, GET_PLAYER(ePlayer).getOwnedPlotsLastTurn() - iMaxPlotsAbroad*2/3);
 		iNewBaseStability -= iNumPlotsAbroad*2/7;
 		changeStabilityCategory(STABILITY_EXPANSION, -iNumPlotsAbroad*2/7);
 

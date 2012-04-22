@@ -9798,9 +9798,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=38
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	BonusType=BONUS_TOBACCO
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=25,y=39
@@ -10543,11 +10545,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=38
-	BonusType=BONUS_TOBACCO
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	PlotType=1
 EndPlot
 BeginPlot
 	x=27,y=39
@@ -10917,8 +10916,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=38
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=39
@@ -11291,7 +11290,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=37
-	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -21392,7 +21390,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=55
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -28549,7 +28546,7 @@ EndPlot
 BeginPlot
 	x=74,y=38
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=74,y=39

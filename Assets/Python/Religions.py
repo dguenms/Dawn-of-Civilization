@@ -194,11 +194,11 @@ class Religions:
                 #                                self.foundReligion(tMecca, iIslam)
 
 		if iGameTurn == getTurnForYear(1500):
-			if gc.getGame().isReligionFounded(iJudaism):	# Protestantism founded
-				gc.getPlayer(con.iNetherlands).setLastStateReligion(iJudaism) # make Protestantism Dutch state religion if already founded at their spawn
-				utils.makeUnit(iMissionary_Jewish, con.iNetherlands, con.tCapitals[0][con.iNetherlands], 1)
-			else:
-				utils.makeUnit(iMissionary_Christian, con.iNetherlands, con.tCapitals[0][con.iNetherlands], 1)
+			#if gc.getGame().isReligionFounded(iJudaism):	# Protestantism founded
+			#	gc.getPlayer(con.iNetherlands).setLastStateReligion(iJudaism) # make Protestantism Dutch state religion if already founded at their spawn
+			#	utils.makeUnit(iMissionary_Jewish, con.iNetherlands, con.tCapitals[0][con.iNetherlands], 1)
+			#else:
+			#	utils.makeUnit(iMissionary_Christian, con.iNetherlands, con.tCapitals[0][con.iNetherlands], 1)
 
 			# Islam spreads to Indonesia
 			for i in range(3):
@@ -212,6 +212,11 @@ class Religions:
 		if iGameTurn == getTurnForYear(800) + (utils.getSeed() % 20):
 			if not gc.getGame().isReligionFounded(iOrthodoxy):
 				self.foundOrthodoxy(con.iRome)
+				
+		# spread Buddhism to China
+		if iGameTurn == getTurnForYear(100) - 5 + (utils.getSeed() % 10):
+			for i in range(3):
+				self.spreadReligion(self.selectRandomCityCiv(con.iChina), 1, iMissionary_Buddhist)
 			
 
 
@@ -460,13 +465,17 @@ class Religions:
 		for iCiv in range(iNumPlayers):
 			if self.getReformationDecision(iCiv) == 2:
 				for iTargetCiv in range(iNumPlayers):
-					if self.getReformationDecision(iTargetCiv) == 0 and utils.getHumanID() != iTargetCiv:
+					if self.getReformationDecision(iTargetCiv) == 0 and utils.getHumanID() != iTargetCiv and iTargetCiv != con.iNetherlands: # protect the Dutch or they'll get crushed
 						gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
 						print "Religious war: "+str(iCiv)+" declares war on "+str(iTargetCiv)
 						
 		pHolyCity = gc.getGame().getHolyCity(con.iJudaism)
 		if self.getReformationDecision(pHolyCity.getOwner()) == 0:
 			pHolyCity.setNumRealBuilding(con.iJewishShrine, 1)
+			
+		# Make Netherlands spawn as Protestant if it's already founded
+		if not gc.getPlayer(con.iNetherlands).isAlive():
+			gc.getPlayer(con.iNetherlands).setStateReligion(con.iProtestantism)
 
         def reformationchoice(self, iCiv):
 		pPlayer = gc.getPlayer(iCiv)
