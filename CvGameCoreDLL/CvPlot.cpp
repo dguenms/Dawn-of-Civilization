@@ -6651,9 +6651,20 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return 0;
 	}
 
+	if (getX_INLINE() == 101 && getY_INLINE() == 37)
+	{
+		int iValue = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, false);
+		if (iValue > area()->getBestFoundValue(eIndex))
+		{
+			area()->setBestFoundValue(eIndex, iValue);
+		}
+
+		return iValue;
+	}
+
 	if (m_aiFoundValue[eIndex] == -1)
 	{
-		long lResult=-1;
+		/*long lResult=-1;
 		if(GC.getUSE_GET_CITY_FOUND_VALUE_CALLBACK())
 		{
 			CyArgsList argsList;
@@ -6661,12 +6672,12 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 			argsList.add(getX());
 			argsList.add(getY());
 			gDLL->getPythonIFace()->callFunction(PYGameModule, "getCityFoundValue", argsList.makeFunctionArgs(), &lResult);
-		}
+		}*/
 
-		if (lResult == -1)
-		{
-			m_aiFoundValue[eIndex] = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, true);
-		}
+		//if (lResult == -1)
+		//{
+		m_aiFoundValue[eIndex] = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, true);
+		//}
 
 		if (m_aiFoundValue[eIndex] > area()->getBestFoundValue(eIndex))
 		{

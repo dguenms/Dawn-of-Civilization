@@ -1185,7 +1185,7 @@ class RiseAndFall:
                                                                 iIndependentCities += 1
                                                 
                                                 # italy needs at least half of all core cities independent -> break when there are less
-                                                if iIndependentCities == 0:
+                                                if iIndependentCities > 0:
                                                         print "No Italy spawn"
                                                         break
                                 
@@ -3999,8 +3999,8 @@ class RiseAndFall:
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
                                 pKhmer.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-                                utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-                                utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+                                utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
+                                utils.makeUnit(con.iArcher, iCiv, tSeaPlot, 1)
 		if (iCiv == iIndonesia):
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
@@ -4062,6 +4062,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
                         #utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)

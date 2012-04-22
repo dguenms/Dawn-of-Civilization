@@ -510,7 +510,7 @@ class Stability:
 			if iPlayer == con.iKorea or iCivic0 == con.iCityStates:
 				iMaxPlotsAbroad /= 2
                         
-                        iNumPlotsAbroad = max(0,self.getOwnedPlotsLastTurn(iPlayer)-iMaxPlotsAbroad/2)                        
+                        iNumPlotsAbroad = max(0,self.getOwnedPlotsLastTurn(iPlayer)-iMaxPlotsAbroad*2/3)                        
                         iNewBaseStability -= iNumPlotsAbroad*2/7
 			
 			iMaxPlotsAbroad -= self.getOwnedForeignCitiesLastTurn(iPlayer)*3

@@ -148,3 +148,8 @@
 # Capitalism now gives +10% commerce
 # Spanish conquistadors now only get +50% attack vs. Swordsmen, Axemen, Spearmen and Macemen instead of all melee units
 # Added a persecution event that allows you to remove non-state religion from your cities
+# Netherlands now properly spawn with Protestantism if it's already founded
+# The Dutch now don't get attacked by Counter-Reformators
+# Buddhism spreads to China around 100 AD
+# Portuguese Feitorias now require Banking and Astronomy
+# Dutch Dikes now require Replaceable Parts

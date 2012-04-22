@@ -135,6 +135,8 @@ class Resources:
 		if (iGameTurn == getTurnForYear(1500)):
 			gc.getMap().plot(36, 54).setFeatureType(4, 2) #Forest in Newfoundland
 			gc.getMap().plot(36, 54).setTerrainType(3, True, True) #Tundra in Newfoundland
+			
+			gc.getMap().plot(56, 54).setBonusType(iFish) #Amsterdam
                         
                 if (iGameTurn == getTurnForYear(1600)):
                         gc.getMap().plot(28, 46).setBonusType(iCow) #Washington area
@@ -142,7 +144,7 @@ class Resources:
                         gc.getMap().plot(25, 49).setBonusType(iCow) #Lakes
                         gc.getMap().plot(23, 42).setBonusType(iCow) #Jacksonville area
                         gc.getMap().plot(18, 46).setBonusType(iCow) #Colorado 
-                        gc.getMap().plot(11, 47).setBonusType(iCow) #California
+                       # gc.getMap().plot(11, 47).setBonusType(iCow) #California
                         gc.getMap().plot(20, 45).setBonusType(iCow) #Texas
                         gc.getMap().plot(37, 14).setBonusType(iCow) #Argentina
                         gc.getMap().plot(33, 11).setBonusType(iCow) #Argentina
