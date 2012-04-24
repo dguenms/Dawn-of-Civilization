@@ -205,6 +205,7 @@ iMali = con.iMali
 iTurkey = con.iTurkey
 iPortugal = con.iPortugal
 iInca = con.iInca
+iItaly = con.iItaly
 iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
@@ -250,6 +251,7 @@ pMali = gc.getPlayer(iMali)
 pTurkey = gc.getPlayer(iTurkey)
 pPortugal = gc.getPlayer(iPortugal)
 pInca = gc.getPlayer(iInca)
+pItaly = gc.getPlayer(iItaly)
 pMongolia = gc.getPlayer(iMongolia)
 pAztecs = gc.getPlayer(iAztecs)
 pMughals = gc.getPlayer(iMughals)
@@ -290,6 +292,7 @@ teamMali = gc.getTeam(pMali.getTeam())
 teamTurkey = gc.getTeam(pTurkey.getTeam())
 teamPortugal = gc.getTeam(pPortugal.getTeam())
 teamInca = gc.getTeam(pInca.getTeam())
+teamItaly = gc.getTeam(pItaly.getTeam())
 teamMongolia = gc.getTeam(pMongolia.getTeam())
 teamAztecs = gc.getTeam(pAztecs.getTeam())
 teamMughals = gc.getTeam(pMughals.getTeam())
@@ -840,68 +843,47 @@ class Victory:
 
                 elif (iPlayer == iRome):
                         if (pRome.isAlive()):
-				if (not pRome.isReborn()):
 
-                                	if (iGameTurn <= getTurnForYear(200)):
-                                        	if (self.getGoal(iRome, 0) == -1):
-                                                	iCounterBarracks = 0
-                                                	iCounterAqueduct = 0
-                                                	iCounterColosseum = 0
-                                                	cityList = PyPlayer(iRome).getCityList()                                        
-                                                	for city in cityList:
-                                                        	if (city.hasBuilding(con.iBarracks)):
-                                                                	iCounterBarracks += 1
-                                                        	if (city.hasBuilding(con.iAqueduct)):
-                                                        	        iCounterAqueduct += 1
-                                                        	if (city.hasBuilding(con.iColosseum)):
-                                                        	        iCounterColosseum += 1
-        ##                                               	if (not city.isConnectedToCapital(iRome)):
-        ##                                         	                bConditions = False
-                                                	if (iCounterBarracks >= 5 and iCounterAqueduct >= 5 and iCounterColosseum >= 5):
-                                                        	self.setGoal(iRome, 0, 1)
+				if (iGameTurn <= getTurnForYear(200)):
+					if (self.getGoal(iRome, 0) == -1):
+						iCounterBarracks = 0
+						iCounterAqueduct = 0
+						iCounterColosseum = 0
+						cityList = PyPlayer(iRome).getCityList()                                        
+						for city in cityList:
+							if (city.hasBuilding(con.iBarracks)):
+								iCounterBarracks += 1
+							if (city.hasBuilding(con.iAqueduct)):
+								iCounterAqueduct += 1
+							if (city.hasBuilding(con.iColosseum)):
+								iCounterColosseum += 1
+##                                               	if (not city.isConnectedToCapital(iRome)):
+##                                         	                bConditions = False
+						if (iCounterBarracks >= 5 and iCounterAqueduct >= 5 and iCounterColosseum >= 5):
+							self.setGoal(iRome, 0, 1)
                                                         
-                                	if (iGameTurn == getTurnForYear(200)+1):
-                                        	if (self.getGoal(iRome, 0) == -1):
-                                                	self.setGoal(iRome, 0, 0)  
+				if (iGameTurn == getTurnForYear(200)+1):
+					if (self.getGoal(iRome, 0) == -1):
+						self.setGoal(iRome, 0, 0)  
                                     
-                                	if (iGameTurn == getTurnForYear(320)):                                              
-                                        	bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[0][iSpain], tCoreAreasBR[0][iSpain], 2)
-                                        	bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[0][iFrance], 3)
-                                        	bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEngland], tCoreAreasBR[0][iEngland], 1)
-                                        	bCarthage = self.checkOwnedArea(iRome, tCarthageTL, tCarthageBR, 2)
-						bByzantium = self.checkOwnedArea(iRome, tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium], 4)
-						bEgypt = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt], 2)
+				if (iGameTurn == getTurnForYear(320)):                                              
+					bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[0][iSpain], tCoreAreasBR[0][iSpain], 2)
+					bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[0][iFrance], 3)
+					bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEngland], tCoreAreasBR[0][iEngland], 1)
+					bCarthage = self.checkOwnedArea(iRome, tCarthageTL, tCarthageBR, 2)
+					bByzantium = self.checkOwnedArea(iRome, tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium], 4)
+					bEgypt = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt], 2)
 
-                                       		if (bSpain and bFrance and bEngland and bCarthage and bByzantium and bEgypt):
-                                        	        self.setGoal(iRome, 1, 1)   
-                                        	else:
-                                        	        self.setGoal(iRome, 1, 0)
+					if (bSpain and bFrance and bEngland and bCarthage and bByzantium and bEgypt):
+						self.setGoal(iRome, 1, 1)   
+					else:
+						self.setGoal(iRome, 1, 0)
 
                                                 
-                                	if (iGameTurn == getTurnForYear(1000)):      
-                                        	if (self.getGoal(iRome, 2) == -1): #see onCityAcquired()
-                                                	self.setGoal(iRome, 2, 1)
+				if (iGameTurn == getTurnForYear(1000)):      
+					if (self.getGoal(iRome, 2) == -1): #see onCityAcquired()
+						self.setGoal(iRome, 2, 1)
 
-				else:
-
-					if iGameTurn == getTurnForYear(1570):
-						if self.getGoal(iRome, 1) == -1:
-							self.setGoal(iRome, 1, 0)
-
-					if (iGameTurn == getTurnForYear(1930)):
-						bGreece = self.checkOwnedCiv(iRome, iGreece)
-						bEthiopia = self.checkOwnedCiv(iRome, iEthiopia)
-						bLibya = self.checkOwnedArea(iRome, tLibyaTL, tLibyaBR, 1)
-
-						for iCiv in range(con.iNumPlayers):
-							if (iCiv != iRome):
-								if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
-									bLibya = False
-
-						if bGreece and bEthiopia and bLibya:
-							self.setGoal(iRome, 2, 1)
-						else:
-							self.setGoal(iRome, 2, 0)
 
                         
                 elif (iPlayer == iJapan):
@@ -1606,7 +1588,30 @@ class Victory:
                                         if (bSAmerica):
                                                 self.setGoal(iInca, 2, 1)
                                         else:
-                                                self.setGoal(iInca, 2, 0)            
+                                                self.setGoal(iInca, 2, 0)    
+
+
+		elif iPlayer == iItaly:
+			if pItaly.isAlive():
+
+				if iGameTurn == getTurnForYear(1570):
+					if self.getGoal(iItaly, 1) == -1:
+						self.setGoal(iItaly, 1, 0)
+
+				if (iGameTurn == getTurnForYear(1930)):
+					bGreece = self.checkOwnedCiv(iItaly, iGreece)
+					bEthiopia = self.checkOwnedCiv(iItaly, iEthiopia)
+					bLibya = self.checkOwnedArea(iItaly, tLibyaTL, tLibyaBR, 1)
+
+					for iCiv in range(con.iNumPlayers):
+						if (iCiv != iItaly):
+							if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
+								bLibya = False
+
+					if bGreece and bEthiopia and bLibya:
+						self.setGoal(iItaly, 2, 1)
+					else:
+						self.setGoal(iItaly, 2, 0)
 
                         
                 elif (iPlayer == iMongolia):
@@ -2149,38 +2154,37 @@ class Victory:
 
 
 		# Italian UHV: Banking, Education, Radio, Fascism
-		if pRome.isReborn():
-			if iTech == con.iBanking:
-				if self.getItalianTechs(0) == -1:
-					if iPlayer == iRome:
-						self.setItalianTechs(0, 1)
-					else:
-						self.setGoal(iRome, 0, 0)
+		if iTech == con.iBanking:
+			if self.getItalianTechs(0) == -1:
+				if iPlayer == iItaly:
+					self.setItalianTechs(0, 1)
+				else:
+					self.setGoal(iItaly, 0, 0)
 
-			elif iTech == con.iEducation:
-				if self.getItalianTechs(1) == -1:
-					if iPlayer == iRome:
-						self.setItalianTechs(1, 1)
-					else:
-						self.setGoal(iRome, 0, 0)
+		elif iTech == con.iEducation:
+			if self.getItalianTechs(1) == -1:
+				if iPlayer == iItaly:
+					self.setItalianTechs(1, 1)
+				else:
+					self.setGoal(iItaly, 0, 0)
 
-			elif iTech == con.iRadio:
-				if self.getItalianTechs(2) == -1:
-					if iPlayer == iRome:
-						self.setItalianTechs(2, 1)
-					else:
-						self.setGoal(iRome, 0, 0)
+		elif iTech == con.iRadio:
+			if self.getItalianTechs(2) == -1:
+				if iPlayer == iItaly:
+					self.setItalianTechs(2, 1)
+				else:
+					self.setGoal(iItaly, 0, 0)
 
-			elif iTech == con.iFascism:
-				if self.getItalianTechs(3) == -1:
-					if iPlayer == iRome:
-						self.setItalianTechs(3, 1)
-					else:
-						self.setGoal(iRome, 0, 0)
+		elif iTech == con.iFascism:
+			if self.getItalianTechs(3) == -1:
+				if iPlayer == iItaly:
+					self.setItalianTechs(3, 1)
+				else:
+					self.setGoal(iItaly, 0, 0)
 
-			if iTech in [con.iBanking, con.iEducation, con.iRadio, con.iFascism] and self.getGoal(iRome, 0):
-				if self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1:
-					self.setGoal(iRome, 0, 1)
+		if iTech in [con.iBanking, con.iEducation, con.iRadio, con.iFascism] and self.getGoal(iItaly, 0):
+			if self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1:
+				self.setGoal(iItaly, 0, 1)
 					
 		# Korean UHV: Printing Press
 		if iTech == con.iPrintingPress:

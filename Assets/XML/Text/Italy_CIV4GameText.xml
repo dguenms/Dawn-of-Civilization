@@ -339,6 +339,11 @@
 		<Hungarian>Art Studio</Hungarian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ITA_EMBASSY</Tag>
+		<English>Italian Embassy</English>
+		<German>Italienische Botschaft</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_CAVOUR</Tag>
 		<English>Cavour</English>
 		<French>Cavour</French>

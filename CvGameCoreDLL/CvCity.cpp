@@ -405,14 +405,14 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	// handle respawned civs explicitly here
 	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).isReborn())
 	{
-		if (getOwnerINLINE() == ROME)
+		if (getOwnerINLINE() == PERSIA)
 		{
-			if (GET_TEAM((TeamTypes)ROME).isHasTech((TechTypes)ASTRONOMY))
+			if (GET_TEAM((TeamTypes)PERSIA).isHasTech((TechTypes)ASTRONOMY))
 			{
-				eraModifier = 2;
+				eraModifier = 3;
 			}else
 			{
-				eraModifier = 1;
+				eraModifier = 2;
 			}
 		}
 	}
@@ -12097,9 +12097,9 @@ void CvCity::doCulture()
 
 			if (GET_PLAYER((PlayerTypes) getOwnerINLINE()).isReborn())
 			{
-				if (getOwnerINLINE() == ROME)
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
-				else if (getOwnerINLINE() == PERSIA)
+				//if (getOwnerINLINE() == ROME)
+				//	changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
+				if (getOwnerINLINE() == PERSIA)
 					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
 				else
 					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 40 / 100, false, true);

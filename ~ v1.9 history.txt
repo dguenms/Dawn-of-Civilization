@@ -153,3 +153,7 @@
 # Buddhism spreads to China around 100 AD
 # Portuguese Feitorias now require Banking and Astronomy
 # Dutch Dikes now require Replaceable Parts
+# Made Italy selectable from the start, not a rebirth of Rome anymore
+# Leaning Tower now also requires Philosophy
+# Education is now a medieval tech
+# Italian Art Studio now gives +25% culture instead of extra happiness

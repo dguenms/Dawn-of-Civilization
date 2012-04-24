@@ -2501,7 +2501,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	}*/
 
 	// Leoreth: only handle respawned civs explicitly here, rest in Rhyes.cpp
-	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+	/*if (GET_PLAYER((PlayerTypes)getID()).isReborn())
 	{
 		if (getID() == ROME)
 		{
@@ -2517,7 +2517,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			}
 		}
 	}else
-	{
+	{*/
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
 			if (iTakenTiles > takenTiles[getID()]) // CvRhyes.cpp
@@ -2531,7 +2531,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				return 0;
 			}
 		}
-	}
+	//}
 
 
 	/*if (iTeammateTakenTiles > 1)
@@ -5578,32 +5578,20 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									break;
 								case ROME:
-                                    if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                                    {
-                                        if (iI == MEDITATION || iI == CALENDAR)
-                                            iValue /= 2;
-                                        if (iI == MONOTHEISM)
-                                            iValue *= 2;
-                                        if (iI == THEOLOGY)
-                                            iValue *= 3;
-                                        if (iI == LITERATURE)
-                                            iValue *= 2;
-                                        if (iI == CONSTRUCTION) {
-                                            iValue *= 3;
-                                            iValue /= 2;
-                                        }
-                                        if (iI == MACHINERY)
-                                            iValue /= 2;
+                                    if (iI == MEDITATION || iI == CALENDAR)
+                                        iValue /= 2;
+                                    if (iI == MONOTHEISM)
+                                        iValue *= 2;
+                                    if (iI == THEOLOGY)
+                                        iValue *= 3;
+                                    if (iI == LITERATURE)
+                                        iValue *= 2;
+                                    if (iI == CONSTRUCTION) {
+                                        iValue *= 3;
+                                        iValue /= 2;
                                     }
-                                    else    // Leoreth - Renaissance Italy
-                                    {
-                                        if (iI == RADIO || iI == FASCISM || iI == BANKING || iI == OPTICS || iI == PATRONAGE)
-                                            iValue *= 2;
-                                        if (iI == FISSION){
-                                            iValue *= 5;
-                                            iValue /= 4;
-                                        }
-                                    }
+                                    if (iI == MACHINERY)
+                                        iValue /= 2;
 									break;
 								case JAPAN:
 									if (iI == CONSTRUCTION)
@@ -5801,6 +5789,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									if (iI == MACHINERY || iI == GUNPOWDER || iI == GUILDS)
 										iValue /= 2;
+									break;
+								case ITALY:
+                                    if (iI == RADIO || iI == FASCISM || iI == BANKING || iI == OPTICS || iI == PATRONAGE)
+                                        iValue *= 2;
+                                    if (iI == FISSION){
+                                        iValue *= 5;
+                                        iValue /= 4;
+                                    }
 									break;
 								case MONGOLIA:
 									if (iI == PAPER) {

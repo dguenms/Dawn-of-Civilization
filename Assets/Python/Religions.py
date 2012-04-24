@@ -475,7 +475,7 @@ class Religions:
 			
 		# Make Netherlands spawn as Protestant if it's already founded
 		if not gc.getPlayer(con.iNetherlands).isAlive():
-			gc.getPlayer(con.iNetherlands).setStateReligion(con.iProtestantism)
+			gc.getPlayer(con.iNetherlands).setLastStateReligion(con.iProtestantism)
 
         def reformationchoice(self, iCiv):
 		pPlayer = gc.getPlayer(iCiv)

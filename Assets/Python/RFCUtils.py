@@ -758,6 +758,31 @@ class RFCUtils:
 			for i in range(iNumUnits):
 				unit = plot.getUnit(i)
 				unit.kill(False, iOldOwner)
+				
+	def removeCoreUnits(self, iPlayer):
+		for x in range(con.tCoreAreasTL[0][iPlayer][0], con.tCoreAreasBR[0][iPlayer][0]+1):
+			for y in range(con.tCoreAreasTL[0][iPlayer][1], con.tCoreAreasBR[0][iPlayer][1]+1):
+				plot = gc.getMap().plot(x, y)
+				if plot.isCity():
+					pCity = plot.getPlotCity()
+					if pCity.getOwner() != iPlayer:
+						x = pCity.getX()
+						y = pCity.getY()
+						self.relocateGarrisons((x,y), pCity.getOwner())
+						self.relocateSeaGarrisons((x,y), pCity.getOwner())
+						self.createGarrisons((x,y), iPlayer, 2)
+				else:
+					iNumUnits = plot.getNumUnits()
+					j = 0
+					for i in range(iNumUnits):
+						unit = plot.getUnit(j)
+						iOwner = unit.getOwner()
+						if iOwner < con.iNumPlayers and iOwner != iPlayer:
+							capital = gc.getPlayer(iOwner).getCapitalCity()
+							if capital.getX() != -1 and capital.getY() != -1:
+								unit.setXYOld(capital.getX(), capital.getY())
+						else:
+							j += 1
                                 
         #Congresses, RiseAndFall
         def relocateSeaGarrisons(self, tCityPlot, iOldOwner):

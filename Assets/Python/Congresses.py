@@ -52,6 +52,7 @@ iMali = con.iMali
 iTurkey = con.iTurkey
 iPortugal = con.iPortugal
 iInca = con.iInca
+iItaly = con.iItaly
 iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
