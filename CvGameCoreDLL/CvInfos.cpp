@@ -10269,8 +10269,8 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 	// handle reborn civs explicitly (overwrite)
 	if (GET_PLAYER((PlayerTypes)pl).isReborn())
 	{
-		if (pl == ROME)
-			iFinalResult = result * 100 / 100;
+		//if (pl == ROME)
+			//iFinalResult = result * 100 / 100;
 		if (pl == PERSIA)
 			iFinalResult = result * 90 / 100;
 	}
@@ -10509,8 +10509,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 
 	if (GET_PLAYER((PlayerTypes)pl).getReborn())
 	{
-		if (pl == ROME)
-			iFinalResearchPercent = researchPercent * 92 / 100;
+		//if (pl == ROME)
+			//iFinalResearchPercent = researchPercent * 92 / 100;
 		if (pl == PERSIA)
 			iFinalResearchPercent = researchPercent * 90 / 100;
 	}
@@ -10624,11 +10624,11 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 	}
 
 	// handle respawns explicitly here (overwrite)
-	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
 	{
 		if (pl == ROME)
 			iFinalResult = result * 70 / 100;
-	}
+	}*/
 
 	return iFinalResult;
 }
@@ -10735,11 +10735,11 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 	}
 
 	// handle respawned civs explicitly here (overwrite)
-	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
 	{
 		if (pl == ROME)
 			iFinalResult = result * 80 / 100;
-	}
+	}*/
 
 	return iFinalResult;
 }
@@ -10870,11 +10870,11 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 	}
 
 	// handle respawns explicitly here (overwrite)
-	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
 	{
 		if (pl == ROME)
 			iFinalResult = result * 80 / 100;
-	}
+	}*/
 
 	return iFinalResult;
 }
@@ -11000,11 +11000,11 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 		result = m_iHealthBonus * healthMultiplier[pl];
 	}
 
-	if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
 	{
 		if (pl == ROME)
 			result = m_iHealthBonus * 6;
-	}
+	}*/
 
 	if (pl == INDIA)
 	{

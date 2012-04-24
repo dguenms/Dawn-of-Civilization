@@ -5606,13 +5606,13 @@ void CvPlayer::found(int iX, int iY)
 				// handle respawns explicitly here (overwrite)
 				if (GET_PLAYER((PlayerTypes)getID()).isReborn())
 				{
-					if (getID() == ROME)
+					/*if (getID() == ROME)
 					{
 						if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
 							startingEra = 3;
 						else
 							startingEra = 2;
-					}
+					}*/
 
 					if (getID() == PERSIA)
 						startingEra = 3;
@@ -17886,7 +17886,7 @@ int CvPlayer::getSettlersMaps(int y, int x)
 }
 
 // Leoreth - return civic preference, see CvRhyes
-int CvPlayer::getCivicPreference(int column)
+/*int CvPlayer::getCivicPreference(int column)
 {
     FAssertMsg(column < 5, "Illegal civic option type");
     FAssertMsg(column >= 0, "Illegal civic option type");
@@ -17901,7 +17901,7 @@ int CvPlayer::getCivicPreference(int column)
     {
         return iResult + 5*column;
     }
-}
+}*/
 
 
 void CvPlayer::setFlag(CvWString s)

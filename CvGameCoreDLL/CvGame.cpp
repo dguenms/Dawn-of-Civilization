@@ -2269,6 +2269,7 @@ void CvGame::update()
 		case TURKEY:
 		case PORTUGAL:
 		case INCA:
+		case ITALY:
 		case MONGOLIA:
 		case MUGHALS:
 		case AZTEC:

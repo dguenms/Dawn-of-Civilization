@@ -45,6 +45,8 @@ BeginTeam
 EndTeam
 BeginTeam
 EndTeam
+BeginTeam
+EndTeam
 BeginTeam                 
 EndTeam
 BeginTeam                 
@@ -368,9 +370,22 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
+	LeaderType=LEADER_CAVOUR
+	CivType=CIVILIZATION_ITALY
+	Team=26
+	PlayableCiv=1
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_CHRISTIANITY
+	Handicap=HANDICAP_PRINCE
+EndPlayer
+BeginPlayer
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL                 
-	Team=26                 
+	Team=27               
 	PlayableCiv=1                        
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR              
@@ -379,7 +394,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC                 
-	Team=27                 
+	Team=28                
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR                    
@@ -388,7 +403,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_AKBAR
 	CivType=CIVILIZATION_MUGHALS
-	Team=28
+	Team=29
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
@@ -401,7 +416,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN                 
-	Team=29                 
+	Team=30                
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM	
@@ -414,7 +429,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_NARESUAN
 	CivType=CIVILIZATION_THAILAND
-	Team=30
+	Team=31
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
@@ -427,7 +442,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FREDERICK
 	CivType=CIVILIZATION_GERMANY
-	Team=31
+	Team=32
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
@@ -440,7 +455,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA                 
-	Team=32                 
+	Team=33                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CAPITALISM
@@ -454,7 +469,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
-	Team=33                 
+	Team=34                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -463,7 +478,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
-	Team=34        
+	Team=35        
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -472,7 +487,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_NATIVE
 	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
-	Team=35                 
+	Team=36                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -480,7 +495,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT                 
-	Team=36                 
+	Team=37                 
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -494,7 +509,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
 	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_OCCUPATION
 	MinorNationStatus=1
-	Team=37
+	Team=38
 	PlayableCiv=0
 	Handicap=HANDICAP_PRINCE
 EndPlayer

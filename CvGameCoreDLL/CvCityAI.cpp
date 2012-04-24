@@ -2390,18 +2390,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 				aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		break;
 	case ROME:      // leave unit AI unchanged so far
-        if (!GET_PLAYER((PlayerTypes)getOwnerINLINE()).isReborn())
-        {
-            aiUnitAIVal[UNITAI_SETTLE] *= 2;
-            //aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
-            aiUnitAIVal[UNITAI_EXPLORE] *= 2;
-            aiUnitAIVal[UNITAI_WORKER] *= 2;
-            aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
-            aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
-        }else{
-            aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
-            aiUnitAIVal[UNITAI_COUNTER] *= 2;
-        }
+        aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
+        aiUnitAIVal[UNITAI_COUNTER] *= 2;
 		break;
 	case JAPAN:
 		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)INDUSTRIALISM))
@@ -2559,6 +2549,14 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case INCA:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		break;
+	case ITALY:
+        aiUnitAIVal[UNITAI_SETTLE] *= 2;
+        //aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
+        aiUnitAIVal[UNITAI_EXPLORE] *= 2;
+        aiUnitAIVal[UNITAI_WORKER] *= 2;
+        aiUnitAIVal[UNITAI_ATTACK_CITY] *= 3;
+        aiUnitAIVal[UNITAI_ATTACK_CITY] /= 2;
 		break;
 	case MONGOLIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
@@ -2999,7 +2997,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == FORBIDDENPALACE || iI == GRAND_CANAL) iTempValue *= 4;
 										else if (iI == GREATWALL) iTempValue *= 8;
 										else if (iI == GREATDAM || iI == TERRACOTTA || iI == PORCELAIN) iTempValue *= 2;
-										else if (iI == HANGINGGARDEN) iTempValue /= 3;
+										else if (iI == HANGINGGARDEN || iI == HIMEJI) iTempValue /= 3;
 										else if (iI == APOSTOLIC) iTempValue /= 2;
 									case BABYLONIA:
 										if (iI == HANGINGGARDEN || iI == ISHTAR) iTempValue *= 5;
@@ -3250,6 +3248,16 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case INCA:
 										if (iI == CHICHENITZA) iTempValue *= 2;
+										break;
+									case ITALY:
+                                        if (iI == FLAVIANAMPHITHEATRE || iI == LEANINGTOWER || iI == SISTINECHAPEL || iI == SANMARCO)
+                                        {
+                                            iTempValue *= 3;
+                                        }
+                                        else if (iI == APOSTOLIC)
+                                        {
+                                            iTempValue *= 10;
+                                        }
 										break;
 									case MONGOLIA:
 										break;
@@ -4827,6 +4835,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					break;
 				case INCA:
 					iValue -= 1;
+					break;
+				case ITALY:
+					iValue += 1;
 					break;
 				case MONGOLIA:
 					iValue -= 1;

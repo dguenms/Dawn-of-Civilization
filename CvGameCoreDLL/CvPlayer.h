@@ -1084,7 +1084,7 @@ public:
 	void reinit( PlayerTypes eID, LeaderHeadTypes prevLeader, bool doReset );  //Rhye
 	void processCivNames(); //Rhye - dynamic civ names - not jdog's
 
-	DllExport int getCivicPreference(int column); // Leoreth
+	//DllExport int getCivicPreference(int column); // Leoreth
 	bool isReborn(); // Leoreth
     int getReborn(); // Leoreth
     void setReborn(); // Leoreth

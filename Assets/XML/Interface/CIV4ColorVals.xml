@@ -531,6 +531,13 @@
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
+			<Type>COLOR_PLAYER_DARK_RED_ITALY</Type>
+			<fRed>0.60</fRed>
+			<fGreen>0.00</fGreen>
+			<fBlue>0.00</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
 			<Type>COLOR_PLAYER_DARK_RED_TEXT</Type>
 			<!-- Rhye -->
 			<fRed>0.90</fRed>

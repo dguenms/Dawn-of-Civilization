@@ -41,6 +41,10 @@
 		<English>Roman Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DESC_PEOPLES</Tag>
+		<English>Lombard Peoples</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_ITALIAN_LEAGUE</Tag>
 		<English>Italian League</English>
 	</TEXT>
@@ -71,6 +75,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_PAPAL_STATE</Tag>
 		<English>Papal States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_HOLY_ROMAN_VASSAL</Tag>
+		<English>Grand Duchy of Tuscany</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_VASSAL_GENERIC</Tag>

@@ -46,6 +46,7 @@ iMali = con.iMali
 iTurkey = con.iTurkey
 iPortugal = con.iPortugal
 iInca = con.iInca
+iItaly = con.iItaly
 iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
@@ -92,6 +93,7 @@ pMali = gc.getPlayer(iMali)
 pTurkey = gc.getPlayer(iTurkey)
 pPortugal = gc.getPlayer(iPortugal)
 pInca = gc.getPlayer(iInca)
+pItaly = gc.getPlayer(iItaly)
 pMongolia = gc.getPlayer(iMongolia)
 pAztecs = gc.getPlayer(iAztecs)
 pMughals = gc.getPlayer(iMughals)
@@ -133,6 +135,7 @@ teamMali = gc.getTeam(pMali.getTeam())
 teamTurkey = gc.getTeam(pTurkey.getTeam())
 teamPortugal = gc.getTeam(pPortugal.getTeam())
 teamInca = gc.getTeam(pInca.getTeam())
+teamItaly = gc.getTeam(pItaly.getTeam())
 teamMongolia = gc.getTeam(pMongolia.getTeam())
 teamAztecs = gc.getTeam(pAztecs.getTeam())
 teamMughals = gc.getTeam(pMughals.getTeam())
@@ -195,6 +198,7 @@ class DynamicCivs:
                         iMali : "TXT_KEY_CIV_MALI_DESC_DEFAULT",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_DEFAULT",
                         iInca : "TXT_KEY_CIV_INCA_DESC_DEFAULT",
+			iItaly : "TXT_KEY_CIV_ITALY_DESC_DEFAULT",
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_DEFAULT",
                         iAztecs : "TXT_KEY_CIV_AZTECS_DESC_DEFAULT",
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_DEFAULT",
@@ -231,6 +235,7 @@ class DynamicCivs:
                         iMali : "TXT_KEY_CIV_MALI_DESC_PEOPLES",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_PEOPLES",
                         iInca : "TXT_KEY_CIV_INCA_DESC_PEOPLES",
+			iItaly : "TXT_KEY_CIV_ITALY_DESC_PEOPLES",
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_PEOPLES",
                         iAztecs : "TXT_KEY_CIV_AZTECS_DESC_PEOPLES",
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_PEOPLES",
@@ -271,6 +276,7 @@ class DynamicCivs:
 				iMali : "TXT_KEY_CIV_MALI_CHINESE_VASSAL",
 				iPortugal : "TXT_KEY_CIV_PORTUGAL_CHINESE_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_CHINESE_VASSAL",
+				iItaly : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
 				iMongolia : "TXT_KEY_CIV_MONGOLIA_CHINESE_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_CHINESE_VASSAL",
 				iTurkey : "TXT_KEY_CIV_TURKEY_CHINESE_VASSAL",
@@ -401,6 +407,7 @@ class DynamicCivs:
 				iMali : "TXT_KEY_CIV_MALI_FRENCH_VASSAL",
 				iPortugal : "TXT_KEY_CIV_PORTUGAL_FRENCH_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_FRENCH_VASSAL",
+				iItaly : "TXT_KEY_CIV_ROME_FRENCH_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_FRENCH_VASSAL",
 				iMughals : "TXT_KEY_CIV_MUGHALS_FRENCH_VASSAL",
 				iTurkey : "TXT_KEY_CIV_TURKEY_FRENCH_VASSAL",
@@ -434,7 +441,8 @@ class DynamicCivs:
 				iRome : "TXT_KEY_CIV_ROME_HOLY_ROMAN_VASSAL",
 				iFrance : "TXT_KEY_CIV_FRANCE_HOLY_ROMAN_VASSAL",
 				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_HOLY_ROMAN_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_HOLY_ROMAN_VASSAL"},
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_HOLY_ROMAN_VASSAL",
+				iItaly : "TXT_KEY_CIV_ITALY_HOLY_ROMAN_VASSAL"},
 			iNetherlands : {
 				iIndonesia : "TXT_KEY_CIV_INDONESIA_DUTCH_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_DUTCH_VASSAL",
@@ -459,6 +467,7 @@ class DynamicCivs:
 				iPersia : "TXT_KEY_CIV_PERSIA_MONGOL_VASSAL",
 				iCarthage : "TXT_KEY_CIV_PHOENICIA_MONGOL_VASSAL",
 				iRome : "TXT_KEY_CIV_ROME_MONGOL_VASSAL",
+				iItaly : "TXT_KEY_CIV_ROME_MONGOL_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_MONGOL_VASSAL",
 				iByzantium : "TXT_KEY_CIV_BYZANTIUM_MONGOL_VASSAL",
 				iVikings : "TXT_KEY_CIV_VIKINGS_MONGOL_VASSAL",
@@ -529,6 +538,7 @@ class DynamicCivs:
                         iPersia : "TXT_KEY_CIV_PERSIA_SOVIET_VASSAL",
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_SOVIET_VASSAL",
                         iRome : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
+			iItaly : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
                         iJapan : "TXT_KEY_CIV_JAPAN_SOVIET_VASSAL",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_SOVIET_VASSAL",
                         iKorea : "TXT_KEY_CIV_KOREA_SOVIET_VASSAL",
@@ -565,6 +575,7 @@ class DynamicCivs:
                         iPersia : "TXT_KEY_CIV_PERSIA_NAZI_VASSAL",
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_NAZI_VASSAL",
                         iRome : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
+			iItaly : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
                         iJapan : "TXT_KEY_CIV_JAPAN_NAZI_VASSAL",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_NAZI_VASSAL",
                         iKorea : "TXT_KEY_CIV_KOREA_NAZI_VASSAL",
@@ -619,6 +630,7 @@ class DynamicCivs:
                         iMali : "TXT_KEY_CIV_MALI_DESC_FASCIST",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_FASCIST",
                         iInca : "TXT_KEY_CIV_INCA_DESC_FASCIST",
+			iItaly : "TXT_KEY_CIV_ROME_DESC_FASCIST",
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_FASCIST",
                         iAztecs : "TXT_KEY_CIV_AZTECS_DESC_FASCIST",
                         iTurkey : "TXT_KEY_CIV_TURKEY_DESC_FASCIST",
@@ -655,6 +667,7 @@ class DynamicCivs:
                         iMali : "TXT_KEY_CIV_MALI_DESC_COMMUNIST",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_COMMUNIST",
                         iInca : "TXT_KEY_CIV_INCA_DESC_COMMUNIST",
+			iItaly : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_COMMUNIST",
                         iAztecs : "TXT_KEY_CIV_AZTECS_DESC_COMMUNIST",
                         iTurkey : "TXT_KEY_CIV_TURKEY_DESC_COMMUNIST",
@@ -691,6 +704,7 @@ class DynamicCivs:
                         iMali : "TXT_KEY_CIV_MALI_DESC_DEMOCRATIC",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_DEMOCRATIC",
                         iInca : "TXT_KEY_CIV_INCA_DESC_DEMOCRATIC",
+			iItaly : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_DEMOCRATIC",
                         iAztecs : "TXT_KEY_CIV_AZTECS_DESC_DEMOCRATIC",
                         iTurkey : "TXT_KEY_CIV_TURKEY_DESC_DEMOCRATIC",
@@ -735,6 +749,7 @@ class DynamicCivs:
 			iMali : con.iMansaMusa,
 			iPortugal : con.iAfonso,
 			iInca : con.iHuaynaCapac,
+			iItaly : con.iCavour,
 			iMongolia : con.iGenghisKhan,
 			iAztecs : con.iMontezuma,
 			iMughals : con.iAkbar,
@@ -852,7 +867,7 @@ class DynamicCivs:
 		elif iPlayer == iHolyRome: iThreshold = 4
 		elif iPlayer == iGermany: iThreshold = 4
 		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
-		elif iPlayer == iRome and pRome.isReborn(): iThreshold = 4
+		elif iPlayer == iItaly: iThreshold = 4
 		elif iPlayer == iInca: iThreshold = 3
 		elif iPlayer == iMongolia: iThreshold = 10
 			
@@ -1158,46 +1173,20 @@ class DynamicCivs:
 			# make Carthaginian Kingdom default
 			
 		elif iPlayer == iRome:
-			if not bReborn:
-				if pByzantium.isAlive():
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_WESTERN_EMPIRE")
-					return
+			if pByzantium.isAlive():
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_WESTERN_EMPIRE")
+				return
 		
-				if bEmpire:
-					if bCityStates:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")
-						return
-					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_EMPIRE")
-						return
+			if bEmpire:
+				if bCityStates:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")
+					return
 				else:
-					if bCityStates:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")
-						return
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_EMPIRE")
+					return
 			else:
 				if bCityStates:
-					if bWar:
-						if bEmpire:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_ITALIAN_LEAGUE")
-						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_LOMBARD_LEAGUE")
-					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS")
-					return
-				else:
-					if bEmpire:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")
-					else:
-						if capital.getName() == "Fiorenza" or capital.getName() == "Firenze":
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_TUSCANY")
-						elif capital.getName() == "Venezia":
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_VENICE")
-						elif capital.getName() == "Milano":
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_MILAN")
-						elif capital.getName() == "Roma":
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_PAPAL_STATE")
-						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")
 					return
 					
 		elif iPlayer == iJapan:
@@ -1479,6 +1468,32 @@ class DynamicCivs:
 				return
 				
 			# Kingdom of Cuzco as default
+			
+		elif iPlayer == iItaly:
+			if bCityStates:
+				if bWar:
+					if bEmpire:
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_ITALIAN_LEAGUE")
+					else:
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_LOMBARD_LEAGUE")
+				else:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS")
+				return
+			else:
+				if bEmpire:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")
+				else:
+					if capital.getName() == "Fiorenza" or capital.getName() == "Firenze":
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_TUSCANY")
+					elif capital.getName() == "Venezia":
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_VENICE")
+					elif capital.getName() == "Milano":
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_MILAN")
+					elif capital.getName() == "Roma":
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_PAPAL_STATE")
+					else:
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")
+				return
 			
 		elif iPlayer == iMongolia:
 			if bEmpire:
@@ -1817,6 +1832,9 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iInca:
+			return
+			
+		elif iPlayer == iItaly:
 			return
 			
 		elif iPlayer == iMongolia:
