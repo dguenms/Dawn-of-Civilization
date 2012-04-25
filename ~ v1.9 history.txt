@@ -157,3 +157,8 @@
 # Leaning Tower now also requires Philosophy
 # Education is now a medieval tech
 # Italian Art Studio now gives +25% culture instead of extra happiness
+# New Viking UHV:
+	- Control the core of another European civilization in 1050 AD
+	- Found a city in America by 1100 AD
+	- Acquire 2000 gold by pillaging, conquering cities and sinking ships by 1500 AD
+# New Viking UP: Additional gold from pillaging, conquering cities and sinking ships

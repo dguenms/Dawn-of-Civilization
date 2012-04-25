@@ -1506,6 +1506,14 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		delete pyOldCity;	// python fxn must not hold on to this pointer
 
 		iCaptureGold = (int)lCaptureGold;
+
+		// Leoreth: Viking UP
+		if (getID() == VIKING)
+		{
+			iCaptureGold *= 2;
+		}
+
+		CvEventReporter::getInstance().cityCaptureGold(pOldCity, getID(), iCaptureGold);
 	}
 
 	changeGold(iCaptureGold);

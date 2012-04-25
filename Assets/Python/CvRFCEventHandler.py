@@ -183,6 +183,8 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("vassalState", self.onVassalState)
 		eventManager.addEventHandler("revolution", self.onRevolution)
 		eventManager.addEventHandler("cityGrowth", self.onCityGrowth)
+		eventManager.addEventHandler("unitPillage", self.onUnitPillage)
+		eventManager.addEventHandler("cityCaptureGold", self.onCityCaptureGold)
 		
 		#Leoreth: stability events
 		eventManager.addEventHandler("greatDepression", self.onGreatDepression)
@@ -475,6 +477,7 @@ class CvRFCEventHandler:
                 self.vic.onCombatResult(argsList)
                 self.sta.onCombatResult(argsList)
                 self.rnf.immuneMode(argsList)
+		self.up.vikingUP(argsList)
 
 
 
@@ -567,6 +570,20 @@ class CvRFCEventHandler:
 		
 		CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_DEMOCRACY", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
 
+	def onUnitPillage(self, argsList):
+		unit, iImprovement, iRoute, iPlayer, iGold = argsList
+		
+		if iPlayer == con.iVikings and iGold > 0:
+			self.vic.onUnitPillage(iPlayer, iGold)
+			
+	def onCityCaptureGold(self, argsList):
+		city, iPlayer, iGold = argsList
+		
+		if iPlayer == con.iVikings and iGold > 0:
+			self.vic.onCityCaptureGold(iPlayer, iGold)
+			
+	
+		
         def onBuildingBuilt(self, argsList):
                 city, iBuildingType = argsList
                 iOwner = city.getOwner()

@@ -444,6 +444,12 @@ class Victory:
 
 	def setEthiopianControl(self, iNewValue):
 		sd.scriptDict['iEthiopianControl'] = iNewValue
+		
+	def getVikingGold(self):
+		return sd.scriptDict['iVikingGold']
+		
+	def changeVikingGold(self, iChange):
+		sd.scriptDict['iVikingGold'] += iChange
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -1057,12 +1063,30 @@ class Victory:
 
                 elif (iPlayer == iVikings):
                         if (pVikings.isAlive()):
+			
+				if iGameTurn == getTurnForYear(1050):
+					lEuroCivs = [iGreece, iRome, iSpain, iFrance, iEngland, iHolyRome, iRussia]
+					bEuropeanCore = False
+					for iEuroCiv in lEuroCivs:
+						if self.checkOwnedCiv(iVikings, iEuroCiv):
+							bEuropeanCore = True
+							break
+							
+					if bEuropeanCore:
+						self.setGoal(iVikings, 0, 1)
+					else:
+						self.setGoal(iVikings, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1100):
+					if self.getGoal(iVikings, 1) == -1:
+						self.setGoal(iVikings, 1, 0)
+						
+				if self.getVikingGold() >= utils.getTurns(2000):
+					self.setGoal(iVikings, 2, 1)
 
                                 if (iGameTurn == getTurnForYear(1500)):
-                                        if (pVikings.getGold() >= utils.getTurns(5000)):
-                                                self.setGoal(iVikings, 0, 1)
-                                        else:
-                                                self.setGoal(iVikings, 0, 0)
+					if self.getGoal(iVikings, 2) == -1:
+						self.setGoal(iVikings, 2, 0)
 
 
                         
@@ -1845,7 +1869,7 @@ class Victory:
 
 
                 if (iPlayer == iVikings):
-                        if (self.getGoal(iVikings, 2) == -1):
+                        if (self.getGoal(iVikings, 1) == -1):
                                 if (city.getX() >= tAmericasTL[0] and city.getX() <= tAmericasBR[0] and city.getY() >= tAmericasTL[1] and city.getY() <= tAmericasBR[1]):
 ##                                        bFirst = True
 ##                                        for iCiv in range(iNumPlayers):
@@ -1855,7 +1879,7 @@ class Victory:
 ##                                                                break
 ##                                        if (bFirst):
                                         if (self.getNewWorld(0) == -1 or self.getNewWorld(0) == iPlayer):
-                                                self.setGoal(iVikings, 2, 1)
+                                                self.setGoal(iVikings, 1, 1)
                                                 #failure moved to EventHandler
 
                 
@@ -2479,14 +2503,14 @@ class Victory:
                 cLosingUnit = PyHelpers.PyInfo.UnitInfo(pLosingUnit.getUnitType())
                 iPlayer = pWinningPlayer.getID()
 
-                if (iPlayer == iVikings):
-                        if (self.getGoal(iVikings, 1) == -1):
-                                if (cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA")):
-                                        self.setNumSinks(self.getNumSinks() + 1)
-                                        if (self.getNumSinks() == 25):
-                                                self.setGoal(iVikings, 1, 1)
+                #if (iPlayer == iVikings):
+                #        if (self.getGoal(iVikings, 1) == -1):
+                #                if (cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA")):
+                #                        self.setNumSinks(self.getNumSinks() + 1)
+                #                        if (self.getNumSinks() == 25):
+                #                                self.setGoal(iVikings, 1, 1)
 
-		elif (iPlayer == iKorea):
+		if (iPlayer == iKorea):
 			if (self.getGoal(iKorea, 2) == -1):
 				if (cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA")):
 					self.setNumKoreanSinks(self.getNumKoreanSinks() + 1)
@@ -2534,6 +2558,14 @@ class Victory:
 					iCount += 1
 			if iCount >= 3:
 				self.setGoal(iHolyRome, 2, 1)
+				
+	def onUnitPillage(self, iPlayer, iGold):
+		if iPlayer == iVikings:
+			self.changeVikingGold(iGold)
+			
+	def onCityCaptureGold(self, iPlayer, iGold):
+		if iPlayer == iVikings:
+			self.changeVikingGold(iGold)
                                        
 
 
@@ -3011,11 +3043,17 @@ class Victory:
 
 		elif iPlayer == iVikings:
 			if iGoal == 0:
-				iGold = pVikings.getGold()
-				aHelp.append(self.getIcon(iGold >= utils.getTurns(5000)) + 'Gold in treasury: ' + str(iGold) + '/'+str(utils.getTurns(5000)))
-			elif iGoal == 1:
-				iNumSinks = self.getNumSinks()
-				aHelp.append(self.getIcon(iNumSinks >= 25) + 'Enemy ships sunk: ' + str(iNumSinks) + '/25')
+				bEuropeanCore = False
+				lEuroCivs = [iGreece, iRome, iByzantium, iSpain, iFrance, iEngland, iHolyRome, iRussia]
+				for iEuroCiv in lEuroCivs:
+					if self.checkOwnedCiv(iVikings, iEuroCiv):
+						bEuropeanCore = True
+						break
+				aHelp.append(self.getIcon(bEuropeanCore) + 'Controlling a European core')
+			elif iGoal == 2:
+				iGold = self.getVikingGold()
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(2000)) + 'Acquired gold: ' + str(iGold) + '/'+str(utils.getTurns(2000)))
+			
 
 		elif iPlayer == iArabia:
 			if iGoal == 0:

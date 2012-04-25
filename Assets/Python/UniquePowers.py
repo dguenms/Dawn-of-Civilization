@@ -198,6 +198,23 @@ class UniquePowers:
                         #for iTimer in range(iMongolianTimer+1):
                                 #if (iGameTurn == self.getLatestRazeData(0)+iTimer):
                                         #self.useMongolUP()
+					
+#------------------VIKING UP----------------------
+
+	def vikingUP(self, argsList):
+	
+		pWinningUnit, pLosingUnit = argsList
+		cLosingUnit = PyHelpers.PyInfo.UnitInfo(pLosingUnit.getUnitType())
+		
+		if pWinningUnit.getOwner() == iVikings:
+			if cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA"):
+				iGold = cLosingUnit.getProductionCost() / 2
+				gc.getPlayer(iVikings).changeGold(iGold)
+				sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()
+				CyInterface().addMessage(iVikings, False, con.iDuration, CyTranslator().getText("TXT_KEY_VIKING_NAVAL_UP", (iGold, sAdjective, pLosingUnit.getNameKey())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+				sd.scriptDict['iVikingGold'] += iGold
+				
+			
 
 #------------------ROMAN UP-----------------------
 

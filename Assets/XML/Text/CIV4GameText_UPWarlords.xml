@@ -46,11 +46,16 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_VIK2</Tag>
-		<English>5X Gold obtained from pillaging</English>
+		<English>Additional gold from pillaging, conquering cities and sinking ships</English>
 		<French>5X Or obtenu par le pillage</French>
-		<German>5x Gold durch Plünderung</German>
+		<German>Zusätzliches gold durch Plünderung, Stadteroberung und das Versenken von Schiffen</German>
 		<Italian>5X oro ottenuto dai saccheggi</Italian>
 		<Spanish>Se obtiene oro x5 del pillaje</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VIKING_NAVAL_UP</Tag>
+		<English>You have acquired %d1 [ICON_GOLD] by sinking a %s2 %s3.</English>
+		<German>Sie haben %s1 [ICON_GOLD] durch das Versenken eines %s2 %s3.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TUR</Tag>

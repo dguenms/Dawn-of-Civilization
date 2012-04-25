@@ -71,6 +71,7 @@ public:
 	void cityBuildingBuilding(CvCity* pCity, BuildingTypes eBuildingType);
 	void cityRename(CvCity* pCity);
 	void cityHurry(CvCity* pCity, HurryTypes eHurry);
+	void cityCaptureGold(CvCity* pCity, PlayerTypes ePlayer, int iCaptureGold);
 
 	void selectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission);
 
@@ -83,7 +84,7 @@ public:
 	void unitPromoted(CvUnit *pUnit, PromotionTypes ePromotion);
 	DllExport void unitSelected(CvUnit *pUnit);
 	void unitRename(CvUnit* pUnit);
-	void unitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer);
+	void unitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer, int iPillagedGold);
 	void unitSpreadReligionAttempt(CvUnit* pUnit, ReligionTypes eReligion, bool bSuccess);
 	void unitGifted(CvUnit* pUnit, PlayerTypes eGiftingPlayer, CvPlot* pPlotLocation);
 	void unitBuildImprovement(CvUnit* pUnit, BuildTypes eBuild, bool bFinished);
