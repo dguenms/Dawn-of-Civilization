@@ -147,6 +147,7 @@ class StoredData:
 				    'iTechsStolen': 0,
 				    'lChineseTechs': [-1, -1, -1, -1],
 				    'iEthiopianControl' : -1,
+				    'iVikingGold' : 0,
                                     #------------Stability
                                     'lBaseStabilityLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                                     'lPartialBaseStability': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],

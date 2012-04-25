@@ -4744,7 +4744,7 @@ bool CvUnit::pillage()
 
 	if (eTempImprovement != NO_IMPROVEMENT || eTempRoute != NO_ROUTE)
 	{
-		CvEventReporter::getInstance().unitPillage(this, eTempImprovement, eTempRoute, getOwnerINLINE());
+		CvEventReporter::getInstance().unitPillage(this, eTempImprovement, eTempRoute, getOwnerINLINE(), iPillageGold);
 	}
 
 	return true;

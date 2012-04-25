@@ -561,6 +561,24 @@ void CvDllPythonEvents::reportCityHurry( CvCity *pCity, HurryTypes eHurry )
 	}
 }
 
+void CvDllPythonEvents::reportCityCaptureGold(CvCity *pCity, PlayerTypes ePlayer, int iCaptureGold)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("cityCaptureGold");
+
+		CyCity* pCyCity = new CyCity(pCity);
+		eventData.add(gDLL->getPythonIFace()->makePythonObject(pCyCity));
+
+		eventData.add((int)ePlayer);
+		eventData.add(iCaptureGold);
+
+		postEvent(eventData);
+		delete pCyCity;
+	}
+}
+
 void CvDllPythonEvents::reportSelectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission)
 {
 	if (NULL == pSelectionGroup)
@@ -761,7 +779,7 @@ void CvDllPythonEvents::reportUnitRename(CvUnit *pUnit)
 	}
 }
 
-void CvDllPythonEvents::reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer)
+void CvDllPythonEvents::reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer, int iPillagedGold)
 {
 	if (preEvent())
 	{
@@ -773,6 +791,7 @@ void CvDllPythonEvents::reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImpro
 		eventData.add((int) eImprovement);
 		eventData.add((int) eRoute);
 		eventData.add((int) ePlayer);
+		eventData.add((int) iPillagedGold);
 
 		postEvent(eventData);
 		delete pCyUnit;

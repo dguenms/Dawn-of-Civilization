@@ -221,6 +221,11 @@ void CvEventReporter::cityHurry(CvCity* pCity, HurryTypes eHurry)
 	m_kPythonEventMgr.reportCityHurry(pCity, eHurry);
 }
 
+void CvEventReporter::cityCaptureGold(CvCity* pCity, PlayerTypes ePlayer, int iCaptureGold)
+{
+	m_kPythonEventMgr.reportCityCaptureGold(pCity, ePlayer, iCaptureGold);
+}
+
 void CvEventReporter::selectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission)
 {
 	m_kPythonEventMgr.reportSelectionGroupPushMission(pSelectionGroup, eMission);
@@ -273,9 +278,9 @@ void CvEventReporter::unitRename(CvUnit* pUnit)
 	m_kPythonEventMgr.reportUnitRename(pUnit);
 }
 
-void CvEventReporter::unitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer)
+void CvEventReporter::unitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer, int iPillagedGold)
 {
-	m_kPythonEventMgr.reportUnitPillage(pUnit, eImprovement, eRoute, ePlayer);
+	m_kPythonEventMgr.reportUnitPillage(pUnit, eImprovement, eRoute, ePlayer, iPillagedGold);
 }
 
 void CvEventReporter::unitSpreadReligionAttempt(CvUnit* pUnit, ReligionTypes eReligion, bool bSuccess)

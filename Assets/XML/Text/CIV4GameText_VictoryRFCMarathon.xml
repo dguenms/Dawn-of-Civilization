@@ -205,19 +205,19 @@
 		<Spanish>Hacerse con el control de 4 recursos de tintura o controlarlos mediante el intercambio en el 200 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_VIK1_EPIC</Tag>
-		<English>Have 7500 gold in 1500 AD</English>
-		<French>Avoir 7500 en or en 1500 ap. J.-C.</French>
-		<German>Verfügen Sie im Jahr 1500 n. Chr. über 7.500 Gold</German>
-		<Italian>Devi avere 7500 oro nel 1500 d.C.</Italian>
-		<Spanish>Tener 7.500 monedas de oro en el 1500 d. C.</Spanish>
+		<Tag>TXT_KEY_UHV_VIK3_EPIC</Tag>
+		<English>Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
+		<French>Etre le premier à fonder une ville en Amérique</French>
+		<German>Erwerben Sie bis 1500 n. Chr. 3000 Gold, indem sie plündern, Städte erobern oder Schiffe versenken</German>
+		<Italian>Devi essere il primo a fondare una citt&#224; in America</Italian>
+		<Spanish>Ser el primero en fundar una ciudad en Am&#233;rica</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_VIK1_MARATHON</Tag>
-		<English>Have 15000 gold in 1500 AD</English>
-		<French>Avoir 15000 en or en 1500 ap. J.-C.</French>
-		<German>Verfügen Sie im Jahr 1500 n. Chr. über 15.000 Gold</German>
-		<Italian>Devi avere 15000 oro nel 1500 d.C.</Italian>
-		<Spanish>Tener 15.000 monedas de oro en el 1500 d. C.</Spanish>
+		<Tag>TXT_KEY_UHV_VIK3_MARATHON</Tag>
+		<English>Acquire 6000 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
+		<French>Etre le premier à fonder une ville en Amérique</French>
+		<German>Erwerben Sie bis 1500 n. Chr. 6000 Gold, indem sie plündern, Städte erobern oder Schiffe versenken</German>
+		<Italian>Devi essere il primo a fondare una citt&#224; in America</Italian>
+		<Spanish>Ser el primero en fundar una ciudad en Am&#233;rica</Spanish>
 	</TEXT>
 </Civ4GameText>

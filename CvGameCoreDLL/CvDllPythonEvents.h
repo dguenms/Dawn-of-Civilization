@@ -48,6 +48,7 @@ public:
 	void reportCityBuildingBuilding(CvCity *pCity, BuildingTypes eBuildingType);
 	void reportCityRename(CvCity *pCity);
 	void reportCityHurry(CvCity *pCity, HurryTypes eHurry);
+	void reportCityCaptureGold(CvCity *pCity, PlayerTypes ePlayer, int iCaptureGold);
 
 	void reportSelectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission);
 
@@ -60,7 +61,7 @@ public:
 	void reportUnitPromoted(CvUnit* pUnit, PromotionTypes ePromotion);
 	void reportUnitSelected(CvUnit *pUnit);
 	void reportUnitRename(CvUnit *pUnit);
-	void reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer);
+	void reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer, int iPillagedGold);
 	void reportUnitSpreadReligionAttempt(CvUnit* pUnit, ReligionTypes eReligion, bool bSuccess);
 	void reportUnitGifted(CvUnit* pUnit, PlayerTypes eGiftingPlayer, CvPlot* pPlotLocation);
 	void reportUnitBuildImprovement(CvUnit* pUnit, BuildTypes eBuild, bool bFinished);

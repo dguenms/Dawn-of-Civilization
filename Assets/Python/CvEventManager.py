@@ -160,6 +160,7 @@ class CvEventManager:
 			'greatDepression'		: self.onGreatDepression,
 			'postCommunism'			: self.onPostCommunism,
 			'democracyTransition'		: self.onDemocracyTransition,
+			'cityCaptureGold'		: self.onCityCaptureGold,
 		}
 
 		################## Events List ###############################
@@ -639,7 +640,7 @@ class CvEventManager:
 	
 	def onUnitPillage(self, argsList):
 		'Unit pillages a plot'
-		pUnit, iImprovement, iRoute, iOwner = argsList
+		pUnit, iImprovement, iRoute, iOwner, iGold = argsList
 		iPlotX = pUnit.getX()
 		iPlotY = pUnit.getY()
 		pPlot = CyMap().plot(iPlotX, iPlotY)
@@ -1121,3 +1122,6 @@ class CvEventManager:
 		
 	def onDemocracyTransition(self, argsList):
 		iPlayer = argsList[0]
+		
+	def onCityCaptureGold(self, argsList):
+		city, iPlayer, iGold = argsList
