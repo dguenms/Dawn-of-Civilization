@@ -157,8 +157,22 @@
 # Leaning Tower now also requires Philosophy
 # Education is now a medieval tech
 # Italian Art Studio now gives +25% culture instead of extra happiness
+# Statue of Liberty now requires coastal access
 # New Viking UHV:
 	- Control the core of another European civilization in 1050 AD
 	- Found a city in America by 1100 AD
 	- Acquire 2000 gold by pillaging, conquering cities and sinking ships by 1500 AD
 # New Viking UP: Additional gold from pillaging, conquering cities and sinking ships
+# New French UHV:
+	- Have 20000 culture in Paris in 1700 AD
+	- Control or vassalize 50% of Europe and North America in 1800 AD
+	- Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD
+# The first Japanese goal now requires only 18000 culture
+# New English UHV:
+	- Colonize every continent by 1730 [North America: 5, Asia: 5, Africa: 4, South/Central America and Caribbean: 3, Australia/Oceania: 3]
+	- Have a total of 25 frigates and ships of the line and sink 50 enemy ships in 1800 AD
+	- Be first to enter the Industrial and Modern eras
+# New Russian UHV:
+	- Colonize Sibera by 1700 AD
+	- Be first to complete the Manhattan Project and the Apollo Project and build the Trans-Sibirian Railway by 1920 AD
+	- Have friendly relations with 5 communist civilizations by 1950 AD
