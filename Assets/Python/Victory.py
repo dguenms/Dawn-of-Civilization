@@ -176,6 +176,8 @@ tTransoxaniaBR = (86, 49)
 tNWIndiaTL = (86, 37)
 tNWIndiaBR = (91, 43)
 
+lSiberianCoast = [(109, 50), (109, 51), (110, 51), (111, 51), (112, 52), (114, 54), (113, 55), (111, 54), (111, 55), (110, 55), (110, 58), (111, 58)]
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -450,6 +452,12 @@ class Victory:
 		
 	def changeVikingGold(self, iChange):
 		sd.scriptDict['iVikingGold'] += iChange
+		
+	def getRussianProjects(self, i):
+		return sd.scriptDict['lRussianProjects'][i]
+		
+	def setRussianProjects(self, i, iNewValue):
+		sd.scriptDict['lRussianProjects'][i] = iNewValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -920,9 +928,9 @@ class Victory:
 				#	if self.getGoal(iJapan, 0) == -1:
 				#		self.setGoal(iJapan, 0, 0)
 
-				# Leoreth: new first goal: have 24000 culture in 1600 AD
+				# Leoreth: new first goal: have 18000 culture in 1600 AD
 				if iGameTurn == getTurnForYear(1600):
-					if pJapan.countTotalCulture() >= utils.getTurns(20000):
+					if pJapan.countTotalCulture() >= utils.getTurns(18000):
 						self.setGoal(iJapan, 0, 1)
 					else:
 						self.setGoal(iJapan, 0, 0)
@@ -1065,7 +1073,7 @@ class Victory:
                         if (pVikings.isAlive()):
 			
 				if iGameTurn == getTurnForYear(1050):
-					lEuroCivs = [iGreece, iRome, iSpain, iFrance, iEngland, iHolyRome, iRussia]
+					lEuroCivs = [iRome, iByzantium, iSpain, iFrance, iEngland, iHolyRome, iRussia]
 					bEuropeanCore = False
 					for iEuroCiv in lEuroCivs:
 						if self.checkOwnedCiv(iVikings, iEuroCiv):
@@ -1247,13 +1255,31 @@ class Victory:
 #                                                self.setGoal(iSpain, 1, 0)
 
 				# Leoreth: Aztec & Inca by 1700 AD
-                                if (iGameTurn == getTurnForYear(1700)):
-                                        bAztecs = self.checkOwnedCiv(iSpain, iAztecs)
-                                        bInca = self.checkOwnedCiv(iSpain, iInca)                                        
-                                        if (bAztecs and bInca):
-                                                self.setGoal(iSpain, 2, 1)
-                                        else:
-                                                self.setGoal(iSpain, 2, 0)
+                                #if (iGameTurn == getTurnForYear(1700)):
+                                #        bAztecs = self.checkOwnedCiv(iSpain, iAztecs)
+                                #        bInca = self.checkOwnedCiv(iSpain, iInca)                                        
+                                #        if (bAztecs and bInca):
+                                #                self.setGoal(iSpain, 2, 1)
+                                #        else:
+                                #                self.setGoal(iSpain, 2, 0)
+				
+				# Leoreth: total of 10 gold or silver resources by 1650 AD
+				if (self.getGoal(iSpain, 1) == -1):
+					if iGameTurn <= getTurnForYear(1650):
+						iGold = pSpain.getNumAvailableBonuses(con.iGold) - pSpain.getBonusImport(con.iGold)
+						iSilver = pSpain.getNumAvailableBonuses(con.iSilver) - pSpain.getBonusImport(con.iSilver)
+						
+						for iCiv in range(iNumPlayers):
+							if iCiv != iSpain:
+								if gc.getPlayer(iCiv).isAlive():
+									if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iSpain):
+										iGold += gc.getPlayer(iCiv).getNumAvailableBonuses(con.iGold) - gc.getPlayer(iCiv).getBonusImport(con.iGold)
+										iSilver += gc.getPlayer(iCiv).getNumAvailableBonuses(con.iSilver) - gc.getPlayer(iCiv).getBonusImport(con.iSilver)
+										
+						if iGold + iSilver >= 10:
+							self.setGoal(iSpain, 1, 1)
+					else:
+						self.setGoal(iSpain, 1, 0)
 
 				# Leoreth: Have the largest empire of the world in 1760 AD
 				if (iGameTurn == getTurnForYear(1760)):
@@ -1265,27 +1291,42 @@ class Victory:
 							bLargest = False
 
 					if bLargest:
-						self.setGoal(iSpain, 1, 1)
+						self.setGoal(iSpain, 2, 1)
 					else:
-						self.setGoal(iSpain, 1, 0)
+						self.setGoal(iSpain, 2, 0)
                             
                         
                 elif (iPlayer == iFrance):
                         if (pFrance.isAlive()):
                             
+				# Leoreth: have 20000 culture in Paris in 1700 AD
                                 if (iGameTurn == getTurnForYear(1700)):
-                                        bestCity = self.calculateTopCityCulture(55, 50)
-                                        if (bestCity != -1):
-                                                if (bestCity.getOwner() == iFrance and bestCity.getX() == 55 and bestCity.getY() == 50):
-                                                        self.setGoal(iFrance, 0, 1)
-                                                else:
-                                                        self.setGoal(iFrance, 0, 0)
-                                        else:
-                                                self.setGoal(iFrance, 0, 0)
-                                                        
-                                if (iGameTurn == getTurnForYear(1760)):
-                                        if (self.getGoal(iFrance, 1) == -1):
-                                                self.setGoal(iFrance, 1, 0)
+					pParis = gc.getMap().plot(55, 50)
+					if pParis.isCity():
+						if pParis.getPlotCity().getCulture(iFrance) >= utils.getTurns(20000):
+							self.setGoal(iFrance, 0, 1)
+						else:
+							self.setGoal(iFrance, 0, 0)
+					else:
+						self.setGoal(iFrance, 0, 0)
+						
+				# Leoreth: Control 50% of Europe and North America in 1800 AD
+				if iGameTurn == getTurnForYear(1800):
+					iEurope = self.countControlledTiles(iFrance, con.tEuropeTL, con.tEuropeBR, True)
+					iEurope += self.countControlledTiles(iFrance, con.tEasternEuropeTL, con.tEasternEuropeBR, True)
+					iNorthAmerica = self.countControlledTiles(iFrance, con.tNorthAmericaTL, con.tNorthAmericaBr, True)
+							
+					fEurope = iEurope * 100.0 / (con.iEuropeTiles + con.iEasternEuropeTiles)
+					fNorthAmerica = iNorthAmerica * 100.0 / con.iNorthAmericaTiles
+					
+					if (fEurope >= 50.0 and fNorthAmerica >= 50.0):
+						self.setGoal(iFrance, 1, 1)
+					else:
+						self.setGoal(iFrance, 1, 0)
+						
+				if iGameTurn == getTurnForYear(1900):
+					if self.getGoal(iFrance, 2) == -1:
+						self.setGoal(iFrance, 2, 0)
 
                                             
                         
@@ -1303,9 +1344,9 @@ class Victory:
 
                                 if (iGameTurn == getTurnForYear(1730)):
                                         if (self.getGoal(iEngland, 1) == -1):
-                                                self.setGoal(iEngland, 1, 0)
+                                                self.setGoal(iEngland, 0, 0)
 
-				# Leoreth: Total of 25 Frigates or Ships of the Line
+				# Leoreth: Total of 25 Frigates or Ships of the Line, and sink 50 enemy ships
 				if (iGameTurn == getTurnForYear(1800)):
 
 					iCShipOfTheLine = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_SHIP_OF_THE_LINE')
@@ -1313,10 +1354,12 @@ class Victory:
 
 					iEnglishNavy = gc.getPlayer(iEngland).getUnitClassCount(iCFrigate) + gc.getPlayer(iEngland).getUnitClassCount(iCShipOfTheLine)
 
-					if iEnglishNavy >= 25:
-						self.setGoal(iEngland, 0, 1)
+					iEnglishSinks = self.getNumSinks()
+					
+					if iEnglishNavy >= 25 and iEnglishSinks >= 50:
+						self.setGoal(iEngland, 1, 1)
 					else:
-						self.setGoal(iEngland, 0, 0)
+						self.setGoal(iEngland, 1, 0)
 						
 						
 		elif iPlayer == iHolyRome:
@@ -1377,14 +1420,46 @@ class Victory:
                                 if (iGameTurn == getTurnForYear(1700)):  
                                         if (self.getGoal(iRussia, 0) == -1):
                                                 self.setGoal(iRussia, 0, 0)
+						
+				# Leoreth: build the Trans-Siberian Railroad by 1930
+				if iGameTurn == getTurnForYear(1930):
+					if self.getGoal(iRussia, 1) == -1:
+						if self.getRussianProjects(0) == -1:
+							self.setGoal(iRussia, 1, 0)
+							
+				if teamRussia.isHasTech(con.iRailroad) and self.getGoal(iRussia) == -1 and self.getRussianProjects(0) == -1:
+					bRailroad = False
+					for tCoast in lSiberianCoast:
+						if self.isConnectedByRailroad(iRussia, con.tCapitals[0][iRussia][0], con.tCapitals[0][iRussia][1], tCoast[0], tCoast[1]):
+							bRailroad = True
+							break
+					if bRailroad:
+						self.setRussianProjects(0, 1)
+						if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
+							self.setGoal(iRussia, 1, 1)
+							
+				# Leoreth: have friendly relations with 5 communist civilizations by 1950 AD
+				if iGameTurn == getTurnForYear(1950):
+					if self.getGoal(iRussia, 2) == -1:
+						self.setGoal(iRussia, 2, 0)
+						
+				if self.getGoal(iRussia, 2) == -1:
+					iCount = 0
+					for iCiv in range(con.iNumPlayers):
+						pPlayer = gc.getPlayer(iCiv)
+						if pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(1) == con.iSupremeCouncil or pPlayer.getCivics(3) == con.iStateProperty):
+							iCount += 1
+					
+					if iCount >= 5:
+						self.setGoal(iRussia, 2, 1)
 
-                                if (iGameTurn == getTurnForYear(1950)+1):      
-                                        if (self.getGoal(iRussia, 1) == -1): 
-                                                self.setGoal(iRussia, 1, 0)
+                                #if (iGameTurn == getTurnForYear(1950)+1):      
+                                #        if (self.getGoal(iRussia, 1) == -1): 
+                                #                self.setGoal(iRussia, 1, 0)
 
-                                if (iGameTurn == getTurnForYear(1950)):                                                  
-                                        if (self.getGoal(iRussia, 2) == -1): 
-                                                self.setGoal(iRussia, 2, 1)
+                                #if (iGameTurn == getTurnForYear(1950)):                                                  
+                                #        if (self.getGoal(iRussia, 2) == -1): 
+                                #                self.setGoal(iRussia, 2, 1)
 
 
 
@@ -1899,13 +1974,13 @@ class Victory:
 
 
                               
-                elif (iPlayer == iFrance):
-                        if (iGameTurn <= getTurnForYear(1760)):
-                                if (self.getGoal(iFrance, 1) == -1):       
-                                        bNECanada = self.checkFoundedArea(iFrance, tNECanadaTL, tNECanadaBR, 3)
-                                        bLouisiana = self.checkFoundedArea(iFrance, tLouisianaTL, tLouisianaBR, 1) 
-                                        if (bNECanada and bLouisiana):
-                                                self.setGoal(iFrance, 1, 1)
+                #elif (iPlayer == iFrance):
+                #        if (iGameTurn <= getTurnForYear(1760)):
+                #                if (self.getGoal(iFrance, 1) == -1):       
+                #                        bNECanada = self.checkFoundedArea(iFrance, tNECanadaTL, tNECanadaBR, 3)
+                #                        bLouisiana = self.checkFoundedArea(iFrance, tLouisianaTL, tLouisianaBR, 1) 
+                #                        if (bNECanada and bLouisiana):
+                #                                self.setGoal(iFrance, 1, 1)
                                                 
 
                 elif (iPlayer == iEngland):
@@ -1916,13 +1991,13 @@ class Victory:
                                         #bAustralia = self.checkOwnedArea(iEngland, tAustraliaTL, tAustraliaBR, 2)
                                         #print ("English UHV:", bEastCoast, bSouthAfrica, bAustralia)
                                         #if (bEastCoast and bSouthAfrica and bAustralia):
-                                        bNCAmerica = self.checkOwnedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 4)
-                                        bSAmerica = self.checkOwnedArea(iEngland, tSAmericaTL, tSAmericaBR, 4)
+                                        bNAmerica = self.checkOwnedArea(iEngland, con.tNorthAmericaTL, con.tNorthAmericaBR, 5)
+                                        bSCAmerica = self.checkOwnedArea(iEngland, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR, 3)
                                         bAfrica = self.checkOwnedArea(iEngland, tAfricaTL, tAfricaBR, 4)
-                                        bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 4)
-                                        bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 4)
-                                        if (bNCAmerica and bSAmerica and bAfrica and bAsia and bOceania):
-                                                self.setGoal(iEngland, 1, 1)
+                                        bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 5)
+                                        bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 3)
+                                        if (bNAmerica and bSCAmerica and bAfrica and bAsia and bOceania):
+                                                self.setGoal(iEngland, 0, 1)
 
 
                 elif (iPlayer == iRussia):
@@ -2059,13 +2134,13 @@ class Victory:
 
 		elif (iPlayer == iEngland):
                         if (iGameTurn <= getTurnForYear(1730)):
-                                        bNCAmerica = self.checkOwnedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 4)
-                                        bSAmerica = self.checkOwnedArea(iEngland, tSAmericaTL, tSAmericaBR, 4)
+                                        bNAmerica = self.checkOwnedArea(iEngland, con.tNorthAmericaTL, con.tNorthAmericaBR, 5)
+                                        bSCAmerica = self.checkOwnedArea(iEngland, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR, 3)
                                         bAfrica = self.checkOwnedArea(iEngland, tAfricaTL, tAfricaBR, 4)
-                                        bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 4)
-                                        bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 4)
-                                        if (bNCAmerica and bSAmerica and bAfrica and bAsia and bOceania):
-                                                self.setGoal(iEngland, 1, 1)        
+                                        bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 5)
+                                        bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 3)
+                                        if (bNAmerica and bSCAmerica and bAfrica and bAsia and bOceania):
+                                                self.setGoal(iEngland, 0, 1)   
 
 
         def onCityRazed(self, iPlayer):
@@ -2405,19 +2480,6 @@ class Victory:
 					else:
 						self.setGoal(iKorea, 0, 0)     
 
-                                                
-
-                elif (iPlayer == iFrance):
-                        if (pFrance.isAlive()):
-                                if (self.getGoal(iFrance, 2) == -1):
-                                        if (iGameTurn <= getTurnForYear(1900)):
-                                                if (iBuilding == con.iNotreDame or iBuilding == con.iStatueOfLiberty or iBuilding == con.iEiffelTower):
-                                                        self.setWondersBuilt(iFrance, self.getWondersBuilt(iFrance) + 1)
-                                                if (self.getWondersBuilt(iFrance) == 3):                                    
-                                                        self.setGoal(iFrance, 2, 1)
-                                        if (iGameTurn > getTurnForYear(1900)):
-                                                if (self.getWondersBuilt(iFrance) != 3):                                    
-                                                        self.setGoal(iFrance, 2, 0)
 
 		elif (iPlayer == iRome):
 			if (pRome.isAlive() and pRome.isReborn()):
@@ -2458,9 +2520,15 @@ class Victory:
 		if iBuilding in [con.iTajMahal, con.iRedFort, con.iHarmandirSahib]:
 			if iPlayer != iMughals and self.getGoal(iMughals, 1) == -1:
 				self.setGoal(iMughals, 1, 0)
-
-
-
+		
+		if iBuilding in [con.iNotreDame, con.iVersailles, con.iStatueOfLiberty, con.iEiffelTower]:
+			if iPlayer == iFrance:
+				if self.getGoal(iFrance, 2) == -1:
+					self.setWondersBuilt(iFrance, self.getWondersBuilt(iFrance) + 1)
+				if self.getWondersBuilt(iFrance) == 4:
+					self.setGoal(iFrance, 2, 1)
+			else:
+				self.setGoal(iFrance, 2, 0)
 
 
 
@@ -2484,11 +2552,21 @@ class Victory:
 
                 if (iProject == con.iApolloProgram):
                         if (iPlayer == iRussia):
-                                if (iGameTurn <= getTurnForYear(1950)):                                
-                                        self.setGoal(iRussia, 1, 1)
-                        else:
-                                if (self.getGoal(iRussia, 1) == -1):
-                                        self.setGoal(iRussia, 1, 0)
+				if self.getGoal(iRussia, 1) == -1:
+					self.setRussianProjects(2, 1)
+					if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
+						self.setGoal(iRussia, 1, 1)
+			else:
+				self.setGoal(iRussia, 1, 0)
+				
+		elif iProject == con.iManhattanProject:
+			if iPlayer == iRussia:
+				if self.getGoal(iRussia, 1) == -1:
+					self.setRussianProjects(1, 1)
+					if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
+						self.setGoal(iRussia, 1, 1)
+			else:
+				self.setGoal(iRussia, 1, 0)
 
 
 
@@ -2503,12 +2581,10 @@ class Victory:
                 cLosingUnit = PyHelpers.PyInfo.UnitInfo(pLosingUnit.getUnitType())
                 iPlayer = pWinningPlayer.getID()
 
-                #if (iPlayer == iVikings):
-                #        if (self.getGoal(iVikings, 1) == -1):
-                #                if (cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA")):
-                #                        self.setNumSinks(self.getNumSinks() + 1)
-                #                        if (self.getNumSinks() == 25):
-                #                                self.setGoal(iVikings, 1, 1)
+                if (iPlayer == iEngland):
+                        if (self.getGoal(iEngland, 1) == -1):
+                                if (cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA")):
+                                        self.setNumSinks(self.getNumSinks() + 1)
 
 		if (iPlayer == iKorea):
 			if (self.getGoal(iKorea, 2) == -1):
@@ -2780,6 +2856,48 @@ class Victory:
 				pBestCity = pCity.GetCy()
 				iBestCulture = iTempCulture
 		return pBestCity
+		
+	def countControlledTiles(self, iPlayer, tTL, tBR, bVassals=False):
+		lValidOwners = [iPlayer]
+		iCount = 0
+		
+		if bVassals:
+			for iCiv in range(con.iNumPlayers):
+				if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iPlayer):
+					lValidOwners.append(iCiv)
+					
+		for x in range(tTL[0], tBR[0]+1):
+			for y in range(tTL[1], tBR[1]+1):
+				plot = gc.getMap().plot(x, y)
+				if not plot.isWater() and plot.getOwner() in lValidOwners:
+					iCount += 1
+					
+		return 
+		
+	def isConnectedByRailroad(self, iPlayer, iStartX, iStartY, iTargetX, iTargetY):
+		startPlot = gc.getMap().plot(iStartX, iStartY)
+		if not (startPlot.isCity() and startPlot.getOwner() == iPlayer): return False
+		
+		lNodes = [(-utils.calculateDistance(iStartX, iStartY, iTargetX, iTargetY), iStartX, iStartY)]
+		lVisitedNodes = []
+		
+		while len(lNodes) > 0:
+			h, x, y = lNodes[0]
+			lNodes.remove((h, x, y))
+			lVisitedNodes.append((h, x, y))
+			
+			for i in range(x-1, x+2):
+				for j in range(y-1, y+2):
+					plot = gc.getMap().plot(i, j)
+					if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == gc.getInfoTypeForString("ROUTE_RAILROAD")):
+						if (i, j) == (iTargetX, iTargetY): return True
+						tTuple = (-utils.calculateDistance(i, j, iTargetX, iTargetY), i, j)
+						if not tTuple in lVisitedNodes:
+							lNodes.append(tTuple)
+						
+			lNodes.sort()
+			
+		return False
 
 
 	def getIcon(self, bVal):
@@ -2936,7 +3054,7 @@ class Victory:
                                 				lRevealedMap[iCiv] += 1
 				iBestCiv = iCarthage
 				for iCiv in range(iNumPlayers):
-					if lRevealedMap[iCiv] > lRevealedMap[iBestCiv]:
+					if lRevealedMap[iCiv] > lRevealedMap[iBestCiv] and gc.getPlayer(iCiv).isAlive():
 						iBestCiv = iCiv
 				aHelp.append(self.getIcon(iBestCiv == iCarthage) + 'Largest map: ' + CyTranslator().getText(str(gc.getPlayer(iBestCiv).getCivilizationShortDescriptionKey()),()))
 
@@ -2981,7 +3099,7 @@ class Victory:
 			if iGoal == 0:
 				iCulture = pJapan.countTotalCulture()
 				#aHelp.append(self.getIcon(iTechsStolen >= 5) + 'Techs stolen: '+str(iTechsStolen)+'/5')
-				aHelp.append(self.getIcon(iCulture >= utils.getTurns(20000)) + 'Total culture: '+str(iCulture)+'/'+str(utils.getTurns(24000)))
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(18000)) + 'Total culture: '+str(iCulture)+'/'+str(utils.getTurns(18000)))
 			elif iGoal == 1:
 				bKorea = self.isControlledOrVassalized(iJapan, tKoreaTL, tKoreaBR)
 				bManchuria = self.isControlledOrVassalized(iJapan, tManchuriaTL, tManchuriaBR)
@@ -3044,7 +3162,7 @@ class Victory:
 		elif iPlayer == iVikings:
 			if iGoal == 0:
 				bEuropeanCore = False
-				lEuroCivs = [iGreece, iRome, iByzantium, iSpain, iFrance, iEngland, iHolyRome, iRussia]
+				lEuroCivs = [iRome, iByzantium, iSpain, iFrance, iEngland, iHolyRome, iRussia]
 				for iEuroCiv in lEuroCivs:
 					if self.checkOwnedCiv(iVikings, iEuroCiv):
 						bEuropeanCore = True
@@ -3069,7 +3187,7 @@ class Victory:
 				aHelp.append(self.getIcon(bMesopotamia) + 'Mesopotamia ' + self.getIcon(bPersia) + 'Persia')
 			elif iGoal == 2:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iIslam)
-				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + 'Islam spread to: ' + str(fReligionPercent) + '/40 %')
+				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + 'Islam spread to: ' + (u"%.2f%%" % fReligionPercent) + '/40 %')
 
 		elif iPlayer == iKhmer:
 			if iGoal == 0:
@@ -3089,7 +3207,7 @@ class Victory:
 				aHelp.append(self.getIcon(fPopPerCity >= 10.0) + 'Average population per city: ' + str(fPopPerCity) + '/10')
 			elif iGoal == 2:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism) + gc.getGame().calculateReligionPercent(con.iHinduism)
-				aHelp.append(self.getIcon(fReligionPercent >= 35.0) + 'Buddhism and Hinduism spread to: ' + str(fReligionPercent) + '/30 %')
+				aHelp.append(self.getIcon(fReligionPercent >= 35.0) + 'Buddhism and Hinduism spread to: ' + (u"%.2f%%" % fReligionPercent) + '/30 %')
 
 		elif iPlayer == iIndonesia:
 			if iGoal == 0:
@@ -3114,42 +3232,59 @@ class Victory:
 
 		elif iPlayer == iSpain:
 			if iGoal == 1:
+				iGold = pSpain.getNumAvailableBonuses(con.iGold) - pSpain.getBonusImport(con.iGold)
+				iSilver = pSpain.getNumAvailableBonuses(con.iSilver) - pSpain.getBonusImport(con.iSilver)
+				
+				for iCiv in range(iNumPlayers):
+					if iCiv != iSpain:
+						if gc.getPlayer(iCiv).isAlive():
+							if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iSpain):
+								iGold += gc.getPlayer(iCiv).getNumAvailableBonuses(con.iGold) - gc.getPlayer(iCiv).getBonusImport(con.iGold)
+								iSilver += gc.getPlayer(iCiv).getNumAvailableBonuses(con.iSilver) - gc.getPlayer(iCiv).getBonusImport(con.iSilver)
+			
+				aHelp.append(self.getIcon(iGold + iSilver >= 10) + 'Gold and silver resources secured: ' + str(iGold+iSilver) + '/10')
+			elif iGoal == 2:
 				iLargestEmpireCiv = self.getLargestEmpireCiv(iSpain)
 				aHelp.append(self.getIcon(iLargestEmpireCiv == iSpain) + 'Largest empire: ' + CyTranslator().getText(str(gc.getPlayer(iLargestEmpireCiv).getCivilizationShortDescriptionKey()),()))
-			elif iGoal == 2:
-				bAztecs = self.checkOwnedCiv(iSpain, iAztecs)
-				bInca = self.checkOwnedCiv(iSpain, iInca)
-				aHelp.append(self.getIcon(bAztecs) + 'Aztecs ' + self.getIcon(bInca) + 'Inca')
 
 		elif iPlayer == iFrance:
 			if iGoal == 0:
-				pBestCity = self.calculateTopCityCulture(55, 50)
-				bBestCity = (pBestCity.getOwner() == iFrance and pBestCity.getX() == 55 and pBestCity.getY() == 50)
-				aHelp.append(self.getIcon(bBestCity) + 'Most cultured city: ' + pBestCity.getName())
+				pParis = gc.getMap().plot(55, 50)
+				if pParis.isCity():
+					iCulture = pParis.getPlotCity().getCulture(iFrance)
+				else:
+					iCulture = 0
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(20000)) + 'Culture in Paris: ' + str(iCulture) + '/' + str(utils.getTurns(20000)))
 			elif iGoal == 1:
-				bNECanada = self.checkFoundedArea(iFrance, tNECanadaTL, tNECanadaBR, 3)
-                                bLouisiana = self.checkFoundedArea(iFrance, tLouisianaTL, tLouisianaBR, 1)
-				aHelp.append(self.getIcon(bNECanada) + '3 cities in Quebec and Hudson Bay ' + self.getIcon(bLouisiana) + '1 city in Louisiana')
-			elif iGoal == 2:
+				iEurope = self.countControlledTiles(iFrance, con.tEuropeTL, con.tEuropeBR, True)
+				iEurope += self.countControlledTiles(iFrance, con.tEasternEuropeTL, con.tEasternEuropeBR, True)
+				iNorthAmerica = self.countControlledTiles(iFrance, con.tNorthAmericaTL, con.tNorthAmericaBR, True)
+				fEurope = iEurope * 100.0 / (con.iEuropeTiles + con.iEasternEuropeTiles)
+				fNorthAmerica = iNorthAmerica * 100.0 / con.iNorthAmericaTiles
+				aHelp.append(self.getIcon(fEurope >= 50.0) + 'European territory: ' + (u"%.2f%%" % fEurope) + '/50% ' + self.getIcon(fNorthAmerica >= 50.0) + 'North American territory: ' + (u"%.2f%%" % fNorthAmerica) + '/50%')
+			elif iGoal == 2:	# not entirely correct, this counts conquered ones as well
 				bNotreDame = (self.getNumBuildings(iFrance, con.iNotreDame) > 0)
+				bVersailles = (self.getNumBuildings(iFrance, con.iVersailles) > 0)
 				bStatueOfLiberty = (self.getNumBuildings(iFrance, con.iStatueOfLiberty) > 0)
 				bEiffelTower = (self.getNumBuildings(iFrance, con.iEiffelTower) > 0)
-				aHelp.append(self.getIcon(bNotreDame) + 'Notre Dame ' + self.getIcon(bStatueOfLiberty) + 'Statue of Liberty ' + self.getIcon(bEiffelTower) + 'Eiffel Tower')
+				aHelp.append(self.getIcon(bNotreDame) + 'Notre Dame ' + self.getIcon(bVersailles) + 'Versailles ' + self.getIcon(bStatueOfLiberty) + 'Statue of Liberty ' + self.getIcon(bEiffelTower) + 'Eiffel Tower')
 
 		elif iPlayer == iEngland:
 			if iGoal == 0:
+				bNAmerica = self.checkOwnedArea(iEngland, con.tNorthAmericaTL, con.tNorthAmericaBR, 5)
+				bSCAmerica = self.checkOwnedArea(iEngland, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR, 3)
+				bAfrica = self.checkOwnedArea(iEngland, tAfricaTL, tAfricaBR, 4)
+				bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 5)
+				bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 3)
+				aHelp.append(self.getIcon(bNAmerica) + '5 cities in North America ' + self.getIcon(bAsia) + '5 cities in Asia ' + self.getIcon(bAfrica) + '4 cities in Africa')
+				aHelp.append(self.getIcon(bSCAmerica) + '3 cities in South America, Central America and the Caribbean')
+				aHelp.append(self.getIcon(bOceania) + '3 cities in Australia and Oceania')
+			elif iGoal == 1:
 				iCShipOfTheLine = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_SHIP_OF_THE_LINE')
 				iCFrigate = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_FRIGATE')
 				iEnglishNavy = gc.getPlayer(iEngland).getUnitClassCount(iCFrigate) + gc.getPlayer(iEngland).getUnitClassCount(iCShipOfTheLine)
-				aHelp.append(self.getIcon(iEnglishNavy >= 25) + 'Total of frigates and ships of the line: ' + str(iEnglishNavy) + '/25')
-			elif iGoal == 1:
-                                bNCAmerica = self.checkOwnedArea(iEngland, tNCAmericaTL, tNCAmericaBR, 4)
-                                bSAmerica = self.checkOwnedArea(iEngland, tSAmericaTL, tSAmericaBR, 4)
-                                bAfrica = self.checkOwnedArea(iEngland, tAfricaTL, tAfricaBR, 4)
-                                bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 4)
-                                bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 4)
-				aHelp.append(self.getIcon(bNCAmerica) + 'North America ' + self.getIcon(bSAmerica) + 'South America')
-				aHelp.append(self.getIcon(bAfrica) + 'Africa ' + self.getIcon(bAsia) + 'Asia ' + self.getIcon(bOceania) + 'Oceania')
+				iEnglishSinks = self.getNumSinks()
+				aHelp.append(self.getIcon(iEnglishNavy >= 25) + 'Total of frigates and ships of the line: ' + str(iEnglishNavy) + '/25' + self.getIcon(iEnglishSinks >= 50) + 'Enemy ships sunk: ' + str(iEnglishSinks) + '/50')
 			elif iGoal == 2:
 				bIndustrial = (self.getEnglishEras(0) == 1)
 				bModern = (self.getEnglishEras(1) == 1)
@@ -3190,7 +3325,19 @@ class Victory:
 		elif iPlayer == iRussia:
 			if iGoal == 0:
 				bSiberia = self.checkFoundedArea(iRussia, tSiberiaTL, tSiberiaBR, 7)
-				aHelp.append(self.getIcon(bSiberia) + 'Siberia')
+				aHelp.append(self.getIcon(bSiberia) + '7 cities in Siberia')
+			elif iGoal == 1:
+				bSiberianRailway = (self.getRussianProjects(0) == 1)
+				bManhattanProject = (self.getRussianProjects(1) == 1)
+				bApolloProgram = (self.getRussianProjects(2) == 1)
+				aHelp.append(self.getIcon(bSiberianRailway) + 'Railroad from Moscow to a Siberian port ' + self.getIcon(bManhattanProject) + 'Manhattan Project ' + self.getIcon(bApolloProgram) + 'Apollo Program')
+			elif iGoal == 2:
+				iCount = 0
+				for iCiv in range(con.iNumPlayers):
+					pPlayer = gc.getPlayer(iCiv)
+					if pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(1) == con.iSupremeCouncil or pPlayer.getCivics(3) == con.iStateProperty):
+						iCount += 1
+				aHelp.append(self.getIcon(iCount >= 5) + 'Communist brothers: ' + str(iCount) + '/5')
 
 		elif iPlayer == iNetherlands:
 			if iGoal == 0:

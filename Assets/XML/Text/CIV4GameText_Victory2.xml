@@ -262,27 +262,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1</Tag>
-		<English>Have more than 20000 Culture in 1600 AD</English>
-		<French>Avoir plus de 20000 en Culture en 1600 ap. J.-C.</French>
-		<German>Haben Sie im Jahr 1600 n. Chr. mehr als 20.000 Kulturpunkte</German>
-		<Italian>Devi avere più di 20.000 cultura nel 1600 d.C.</Italian>
-		<Spanish>Conseguir una cultura superior a 20.000 en el 1600 d. C.</Spanish>
+		<English>Have more than 18000 Culture in 1600 AD</English>
+		<French>Avoir plus de 18000 en Culture en 1600 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1600 n. Chr. mehr als 18.000 Kulturpunkte</German>
+		<Italian>Devi avere più di 18.000 cultura nel 1600 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 18.000 en el 1600 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1_EPIC</Tag>
-		<English>Have more than 30000 Culture in 1600 AD</English>
-		<French>Avoir plus de 30000 en Culture en 1600 ap. J.-C.</French>
-		<German>Haben Sie im Jahr 1600 n. Chr. mehr als 30.000 Kulturpunkte</German>
-		<Italian>Devi avere più di 30.000 cultura nel 1600 d.C.</Italian>
-		<Spanish>Conseguir una cultura superior a 30.000 en el 1600 d. C.</Spanish>
+		<English>Have more than 27000 Culture in 1600 AD</English>
+		<French>Avoir plus de 27000 en Culture en 1600 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1600 n. Chr. mehr als 27.000 Kulturpunkte</German>
+		<Italian>Devi avere più di 27.000 cultura nel 1600 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 27.000 en el 1600 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1_MARATHON</Tag>
-		<English>Have more than 60000 Culture in 1600 AD</English>
-		<French>Avoir plus de 60000 en Culture en 1600 ap. J.-C.</French>
-		<German>Haben Sie im Jahr 1600 n. Chr. mehr als 60.000 Kulturpunkte</German>
-		<Italian>Devi avere più di 60.000 cultura nel 1600 d.C.</Italian>
-		<Spanish>Conseguir una cultura superior a 60.000 en el 1600 d. C.</Spanish>
+		<English>Have more than 54000 Culture in 1600 AD</English>
+		<French>Avoir plus de 54000 en Culture en 1600 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1600 n. Chr. mehr als 54.000 Kulturpunkte</German>
+		<Italian>Devi avere più di 54.000 cultura nel 1600 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 54.000 en el 1600 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP2</Tag>
@@ -334,6 +334,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA2</Tag>
+		<English>Secure a total of 10 silver and gold resources by 1650 AD</English>
+		<French>Contrôler tous les territoires aztèques et incas en 1700 ap. J.-C.</French>
+		<German>Erschließen Sie bis zum Jahr 1650 n. Chr. insgesamt 10 Silber- und Goldvorkommen</German>
+		<Italian>Controlla tutti i territori inca e aztechi nel 1700 d.C.</Italian>
+		<Spanish>Controlar todo el territorio azteca e inca en el 1700 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA3</Tag>
 		<English>Have the largest empire in the world in 1760 AD</English>
 		<French>Aucune ville anglaise, française ou n&#233;erlandaise construite en Amérique en 1700 ap. J.-C.</French>
 		<German>Beherrschen Sie im Jahr 1760 n. Chr. das größte Reich der Welt</German>
@@ -341,52 +349,60 @@
 		<Spanish>Asegurarse de que no haya ciudades inglesas, francesas o holandesas en América en el 1700 d.C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_SPA3</Tag>
-		<English>Control all Aztec and Incan territory in 1700 AD</English>
-		<French>Contrôler tous les territoires aztèques et incas en 1700 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 1700 n. Chr. das gesamte Territorium der Azteken und der Inka</German>
-		<Italian>Controlla tutti i territori inca e aztechi nel 1700 d.C.</Italian>
-		<Spanish>Controlar todo el territorio azteca e inca en el 1700 d. C.</Spanish>
+		<Tag>TXT_KEY_UHV_FRA1</Tag>
+		<English>Have 20000 culture in Paris in 1700 AD</English>
+		<French>Faire de Paris la ville avec la culture la plus importante en 1700 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1700 n. Chr. 20.000 Kulturpunkte in Paris</German>
+		<Italian>Rendi Parigi la città con la cultura più alta nel mondo nel 1700 d.C.</Italian>
+		<Spanish>Convertir París en la ciudad con la mayor cultura del mundo en el 1700 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_FRA1</Tag>
-		<English>Make Paris the city with the highest culture in the world in 1700 AD</English>
+		<Tag>TXT_KEY_UHV_FRA1_EPIC</Tag>
+		<English>Have 30000 culture in Paris in 1700 AD</English>
 		<French>Faire de Paris la ville avec la culture la plus importante en 1700 ap. J.-C.</French>
-		<German>Sorgen Sie dafür, dass Paris im Jahr 1700 n. Chr. die kulturell bedeutendste Stadt ist</German>
+		<German>Haben Sie im Jahr 1700 n. Chr. 30.000 Kulturpunkte in Paris</German>
+		<Italian>Rendi Parigi la città con la cultura più alta nel mondo nel 1700 d.C.</Italian>
+		<Spanish>Convertir París en la ciudad con la mayor cultura del mundo en el 1700 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA1_MARATHON</Tag>
+		<English>Have 60000 culture in Paris in 1700 AD</English>
+		<French>Faire de Paris la ville avec la culture la plus importante en 1700 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1700 n. Chr. 60.000 Kulturpunkte in Paris</German>
 		<Italian>Rendi Parigi la città con la cultura più alta nel mondo nel 1700 d.C.</Italian>
 		<Spanish>Convertir París en la ciudad con la mayor cultura del mundo en el 1700 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA2</Tag>
-		<English>Colonize Quebec, the Hudson Bay and Louisiana by 1760 AD</English>
+		<English>Control or vassalize 50% of Europe and North America in 1800 AD</English>
 		<French>Coloniser le Québec, la baie d'Hudson et la Louisiane avant 1760 ap. J.-C.</French>
-		<German>Kolonisieren Sie bis zum Jahr 1760 n. Chr. Quebec, die Hudson Bay und Louisiana</German>
+		<German>Kontrollieren oder vassalisieren Sie im Jahr 1800 n. Chr. 50% von Europa und Nordamerika</German>
 		<Italian>Colonizza Quebec, Baia di Hudson e Louisiana entro il 1760 d.C.</Italian>
 		<Spanish>Colonizar Quebec, la Bah&#237;a de Hudson y Louisiana antes del 1760 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA3</Tag>
-		<English>Build Notre Dame, the Statue of Liberty and the Eiffel Tower by 1900 AD</English>
+		<English>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</English>
 		<French>Construire Notre Dame, la Statue de la Liberté et la Tour Eiffel avant 1900 ap. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 1900 n. Chr. Notre Dame, die Freiheitsstatue und den Eiffelturm</German>
+		<German>Bauen Sie bis zum Jahr 1900 n. Chr. Notre Dame, Versailles, die Freiheitsstatue und den Eiffelturm</German>
 		<Italian>Devi costruire Notre Dame, la Statua della Libert&#224; e la Torre Eiffel entro il 1900 d.C.</Italian>
 		<Spanish>Construir Notre Dame, la Estatua de la Libertad y la Torre Eiffel antes del 1900 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG1</Tag>
-		<English>Control a total of 25 frigates or ships of the line in 1800 AD</English>
-		<French>Etre le premier à faire le tour du monde</French>
-		<German>Kontrollieren Sie insgesamt 25 Fregatten oder Linienschiffe im Jahr 1800 n. Chr.</German>
-		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>
-		<Spanish>Ser el primero en circunnavegar el globo</Spanish>
+		<English>Colonize every continent by 1730 AD</English>
+		<French>Fonder au moins 3 villes sur chaque continent avant 1730 ap. J.-C.</French>
+		<German>Kolonisieren Sie bis zum Jahr 1730 n. Chr. jeden Kontinent</German>
+		<Italian>Fonda almeno 3 citt&#224; in ciascun continente entro il 1730 d.C.</Italian>
+		<Spanish>Fundar al menos 3 ciudades en cada continente antes del 1730 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG2</Tag>
-		<English>Found or conquer at least 4 cities in every continent by 1730 AD</English>
-		<French>Fonder au moins 3 villes sur chaque continent avant 1730 ap. J.-C.</French>
-		<German>Gründen oder erobern Sie bis zum Jahr 1730 n. Chr. mindestens 4 Städte auf jedem Kontinent</German>
-		<Italian>Fonda almeno 3 citt&#224; in ciascun continente entro il 1730 d.C.</Italian>
-		<Spanish>Fundar al menos 3 ciudades en cada continente antes del 1730 d. C.</Spanish>
+		<English>Control a total of 25 frigates or ships of the line and sink 50 enemy ships in 1800 AD</English>
+		<French>Etre le premier à faire le tour du monde</French>
+		<German>Kontrollieren Sie insgesamt 25 Fregatten oder Linienschiffe und versenken Sie 50 gegnerische Schiffe im Jahr 1800 n. Chr.</German>
+		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>
+		<Spanish>Ser el primero en circunnavegar el globo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG3</Tag>
@@ -422,25 +438,25 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS1</Tag>
-		<English>Colonize Siberia (7 cities) by 1700 AD</English>
+		<English>Colonize Siberia by 1700 AD</English>
 		<French>Coloniser la Sibérie (7 villes) avant 1700 ap. J.-C.</French>
-		<German>Kolonisieren Sie bis zum Jahr 1700 n. Chr. Sibirien (7 Städte)</German>
+		<German>Kolonisieren Sie bis zum Jahr 1700 n. Chr. Sibirien</German>
 		<Italian>Colonizza la Siberia (7 citt&#224;) entro il 1700 d.C.</Italian>
 		<Spanish>Colonizar Siberia (7 ciudades) antes del 1700 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS2</Tag>
-		<English>Build the Apollo Program by 1950 AD</English>
+		<English>Be first to complete the Manhattan Project and Apollo Program and build the Trans-Siberian Railway by 1920 AD</English>
 		<French>Construire le programme Apollo avant 1950 ap. J.-C.</French>
-		<German>Errichten Sie bis zum Jahr 1950 n. Chr. das Apollo-Programm</German>
+		<German>Seien Sie die erste Zivilisation, die das Manhattan-Projekt und Apollo-Programm vervollständigt, und bauen Sie die transsibirische Eisenbahn bis 1920 n. Chr.</German>
 		<Italian>Costruisci il Programma Apollo entro il 1950 d.C.</Italian>
 		<Spanish>Concluir el Programa Apollo antes del 1950 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS3</Tag>
-		<English>Never lose a city before 1950 AD</English>
+		<English>Have friendly relations with 5 communist civilisations by 1950 AD</English>
 		<French>Ne perdre aucune ville avant 1950 ap. J.-C.</French>
-		<German>Verlieren Sie bis zum Jahr 1950 n. Chr. keine einzige Stadt</German>
+		<German>Haben Sie bis zum Jahr 1950 n. Chr. freundliche Beziehungen zu 5 kommunistischen Zivilisationen</German>
 		<Italian>Non farti conquistare alcuna citt&#224; fino al 1950 d.C.</Italian>
 		<Spanish>No perder una ciudad hasta el 1950 d. C.</Spanish>
 	</TEXT>

@@ -795,6 +795,12 @@ class RiseAndFall:
 
                 #debug
                 #print('Reached turn '+repr(iGameTurn))
+		
+		if iGameTurn == getTurnForYear(con.tBirth[iSpain])-1:
+			if not gc.getPlayer(0).isPlayable():
+				pMassilia = gc.getMap().plot(56, 46)
+				if pMassilia.isCity():
+					pMassilia.getPlotCity().setCulture(pMassilia.getPlotCity().getOwner(), 1, True)
 
 		#Leoreth: Turkey immediately flips Seljuk or independent cities in its core to avoid being pushed out of Anatolia
 		if iGameTurn == sd.scriptDict['iOttomanSpawnTurn']+1:
