@@ -2872,7 +2872,7 @@ class Victory:
 				if not plot.isWater() and plot.getOwner() in lValidOwners:
 					iCount += 1
 					
-		return 
+		return iCount
 		
 	def isConnectedByRailroad(self, iPlayer, iStartX, iStartY, iTargetX, iTargetY):
 		startPlot = gc.getMap().plot(iStartX, iStartY)
