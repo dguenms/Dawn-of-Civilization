@@ -435,7 +435,7 @@ class Stability:
 			elif iPlayer == con.iIndia:
 				iAgriculture *= 6
 				iAgriculture /= 10
-d
+
                 else:   #every 3 turns
                         iNewBaseStability = 0
                
