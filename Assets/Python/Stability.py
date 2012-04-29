@@ -435,7 +435,7 @@ class Stability:
 			elif iPlayer == con.iIndia:
 				iAgriculture *= 6
 				iAgriculture /= 10
-
+d
                 else:   #every 3 turns
                         iNewBaseStability = 0
                
@@ -477,7 +477,7 @@ class Stability:
 						
 			#Leoreth: imperialism: extra stability for controlling foreign cores:
 			if (iCivic5 == con.iImperialism):
-				for iLoopCiv in range(iNumPlayers):
+				for iOwnedCiv in range(iNumPlayers):
 					reborn = utils.getReborn(iOwnedCiv)
 					dummy1, plotList1 = utils.squareSearch( tNormalAreasTL[reborn][iOwnedCiv], tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iActiveCiv )
 					dummy2, plotList2 = utils.squareSearch( tNormalAreasTL[reborn][iOwnedCiv], tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iOwnedCiv )

@@ -1447,7 +1447,7 @@ class Victory:
 					iCount = 0
 					for iCiv in range(con.iNumPlayers):
 						pPlayer = gc.getPlayer(iCiv)
-						if pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(1) == con.iSupremeCouncil or pPlayer.getCivics(3) == con.iStateProperty):
+						if iCiv != iRussia and pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(1) == con.iSupremeCouncil or pPlayer.getCivics(3) == con.iStateProperty):
 							iCount += 1
 					
 					if iCount >= 5:
@@ -3335,7 +3335,7 @@ class Victory:
 				iCount = 0
 				for iCiv in range(con.iNumPlayers):
 					pPlayer = gc.getPlayer(iCiv)
-					if pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(1) == con.iSupremeCouncil or pPlayer.getCivics(3) == con.iStateProperty):
+					if iCiv != iRussia and pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(1) == con.iSupremeCouncil or pPlayer.getCivics(3) == con.iStateProperty):
 						iCount += 1
 				aHelp.append(self.getIcon(iCount >= 5) + 'Communist brothers: ' + str(iCount) + '/5')
 

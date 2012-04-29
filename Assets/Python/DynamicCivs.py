@@ -919,10 +919,10 @@ class DynamicCivs:
                 # by vassalage
                 if bVassal:
 			if iMaster == iRussia and pMasterPlayer.getCivics(3) == con.iStateProperty:
-				self.setCivDesc(iPlayer, self.sovietNames[iPlayer])
+				self.setCivDesc(iPlayer, self.sovietVassals[iPlayer])
 				return
 			if iMaster == iGermany and pMasterPlayer.getCivics(2) == con.iTotalitarianism:
-				self.setCivDesc(iPlayer, self.naziNames[iPlayer])
+				self.setCivDesc(iPlayer, self.naziVassals[iPlayer])
 				return
 			
 			if iMaster in self.specificVassalNames and not pMasterPlayer.isReborn():
