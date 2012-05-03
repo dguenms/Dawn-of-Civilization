@@ -186,7 +186,6 @@
 			<iLargestCityHappiness>0</iLargestCityHappiness>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iFreeSpecialist>0</iFreeSpecialist>
-			<iCoreFreeSpecialist>1</iCoreFreeSpecialist>
 			<iTradeRoutes>0</iTradeRoutes>
 			<bNoForeignTrade>0</bNoForeignTrade>
 			<bNoCorporations>0</bNoCorporations>
@@ -211,6 +210,11 @@
 			<CommerceModifiers/>
 			<CapitalCommerceModifiers/>
 			<SpecialistExtraCommerces/>
+			<iSpecialistExtraYieldBaseThreshold>7</iSpecialistExtraYieldBaseThreshold>
+			<iSpecialistExtraYieldEraThreshold>0</iSpecialistExtraYieldEraThreshold>
+			<SpecialistThresholdExtraYields>
+				<iYield>1</iYield>
+			</SpecialistThresholdExtraYields>
 			<Hurrys/>
 			<SpecialBuildingNotRequireds/>
 			<SpecialistValids/>

@@ -608,6 +608,8 @@ public:
 
 	int getExtraSpecialistYield(YieldTypes eIndex) const;																				// Exposed to Python
 	int getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpecialist) const;					// Exposed to Python
+	int getExtraSpecialistThresholdYield(YieldTypes eIndex, SpecialistTypes eSpecialist) const;
+	bool isSpecialistExtraYieldThreshold() const;
 	void updateExtraSpecialistYield(YieldTypes eYield);
 	void updateExtraSpecialistYield();
 

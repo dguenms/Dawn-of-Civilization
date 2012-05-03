@@ -1349,6 +1349,9 @@ public:
 	int getStateReligionFreeExperience() const;								// Exposed to Python
 	int getExpInBorderModifier() const;				// Exposed to Python
 
+	int getSpecialistExtraYieldBaseThreshold() const; //Leoreth
+	int getSpecialistExtraYieldEraThreshold() const; //Leoreth
+
 	bool isMilitaryFoodProduction() const;				// Exposed to Python
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
 	bool isBuildingOnlyHealthy() const;				// Exposed to Python
@@ -1382,6 +1385,8 @@ public:
 	int* getSpecialistExtraCommerceArray() const;
 	int getSpecialistExtraYield(int i) const; //Leoreth
 	int* getSpecialistExtraYieldArray() const; //Leoreth
+	int getSpecialistThresholdExtraYield(int i) const; //Leoreth
+	int* getSpecialistThresholdExtraYieldArray() const; //Leoreth
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
 	int getBuildingHealthChanges(int i) const;				// Exposed to Python
 	int getFeatureHappinessChanges(int i) const;				// Exposed to Python
@@ -1441,6 +1446,9 @@ protected:
 	int m_iStateReligionFreeExperience;
 	int m_iExpInBorderModifier;
 
+	int m_iSpecialistExtraYieldBaseThreshold; //Leoreth
+	int m_iSpecialistExtraYieldEraThreshold; //Leoreth
+
 	bool m_bMilitaryFoodProduction;
 	bool m_bNoUnhealthyPopulation;
 	bool m_bBuildingOnlyHealthy;
@@ -1465,6 +1473,7 @@ protected:
 	int* m_piCapitalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
 	int* m_piSpecialistExtraYield; //Leoreth
+	int* m_piSpecialistThresholdExtraYield; //Leoreth
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
 	int* m_paiFeatureHappinessChanges;

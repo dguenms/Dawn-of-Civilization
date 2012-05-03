@@ -353,6 +353,14 @@
 		<Tag>TXT_KEY_SCHISM_MESSAGE</Tag>
 		<English>The institution of papacy has already existed for several centuries. However, his claim to be the sole representative of God on Earth is threatening our own theological authority. Many clergymen in our civilization are also worried that his interpretation of the Word of God has strayed to far from the true origins of Christianity. Shall we heed their call to separate from the Catholic Church in a Great Schism and follow Orthodox Christianity instead?</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ASKCOLONIALCITY_TITLE</Tag>
+		<English>The %s1 Trading Company</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ASKCOLONIALCITY_MESSAGE</Tag>
+		<English>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
+	</TEXT>
 
 
 </Civ4GameText>

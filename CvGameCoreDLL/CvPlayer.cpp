@@ -85,6 +85,7 @@ CvPlayer::CvPlayer()
 	m_paeCivics = NULL;
 
 	m_ppaaiSpecialistExtraYield = NULL;
+	m_ppaaiSpecialistThresholdExtraYield = NULL; //Leoreth
 	m_ppaaiImprovementYieldChange = NULL;
 
 	//Rhye (jdog) - start ---------------------
@@ -366,6 +367,16 @@ void CvPlayer::uninit()
 		SAFE_DELETE_ARRAY(m_ppaaiSpecialistExtraYield);
 	}
 
+	//Leoreth
+	if (m_ppaaiSpecialistThresholdExtraYield != NULL)
+	{
+		for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaaiSpecialistThresholdExtraYield[iI]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaaiSpecialistThresholdExtraYield);
+	}
+
 	if (m_ppaaiImprovementYieldChange != NULL)
 	{
 		for (int iI = 0; iI < GC.getNumImprovementInfos(); iI++)
@@ -499,6 +510,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iStateReligionUnitProductionModifier = 0;
 	m_iStateReligionBuildingProductionModifier = 0;
 	m_iStateReligionFreeExperience = 0;
+	m_iSpecialistExtraYieldBaseThreshold = 0; //Leoreth
+	m_iSpecialistExtraYieldEraThreshold = 0; //Leoreth
 	m_iCapitalCityID = FFreeList::INVALID_INDEX;
 	m_iCitiesLost = 0;
 	m_iWinsVsBarbs = 0;
@@ -766,6 +779,19 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 			{
 				m_ppaaiSpecialistExtraYield[iI][iJ] = 0;
+			}
+		}
+
+		//Leoreth
+		FAssertMsg(0 < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
+		FAssertMsg(m_ppaaiSpecialistThresholdExtraYield==NULL, "about to leak memory, CvPlayer::m_ppaaiSpecialistExtraYield");
+		m_ppaaiSpecialistThresholdExtraYield = new int*[GC.getNumSpecialistInfos()];
+		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+		{
+			m_ppaaiSpecialistThresholdExtraYield[iI] = new int[NUM_YIELD_TYPES];
+			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+			{
+				m_ppaaiSpecialistThresholdExtraYield[iI][iJ] = 0;
 			}
 		}
 
@@ -11073,6 +11099,29 @@ void CvPlayer::changeStateReligionFreeExperience(int iChange)
 	m_iStateReligionFreeExperience = (m_iStateReligionFreeExperience + iChange);
 }
 
+//Leoreth
+int CvPlayer::getSpecialistExtraYieldBaseThreshold() const
+{
+	return m_iSpecialistExtraYieldBaseThreshold;
+}
+
+//Leoreth
+void CvPlayer::changeSpecialistExtraYieldBaseThreshold(int iChange)
+{
+	m_iSpecialistExtraYieldBaseThreshold = (m_iSpecialistExtraYieldBaseThreshold + iChange);
+}
+
+//Leoreth
+int CvPlayer::getSpecialistExtraYieldEraThreshold() const
+{
+	return m_iSpecialistExtraYieldEraThreshold;
+}
+
+//Leoreth
+void CvPlayer::changeSpecialistExtraYieldEraThreshold(int iChange)
+{
+	m_iSpecialistExtraYieldEraThreshold = (m_iSpecialistExtraYieldEraThreshold + iChange);
+}
 
 CvCity* CvPlayer::getCapitalCity() const
 {
@@ -13816,6 +13865,34 @@ void CvPlayer::changeSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eI
 	}
 }
 
+//Leoreth
+int CvPlayer::getSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2) const
+{
+	FAssertMsg(eIndex1 >= 0, "eIndex1 expected to be >= 0");
+	FAssertMsg(eIndex1 < GC.getNumSpecialistInfos(), "eIndex1 expected to be < GC.getNumSpecialistInfos()");
+	FAssertMsg(eIndex2 >= 0, "eIndex2 expected to be >= 0");
+	FAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 expected to be < NUM_YIELD_TYPES");
+	return m_ppaaiSpecialistThresholdExtraYield[eIndex1][eIndex2];
+}
+
+//Leoreth
+void CvPlayer::changeSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange)
+{
+	FAssertMsg(eIndex1 >= 0, "eIndex1 expected to be >= 0");
+	FAssertMsg(eIndex1 < GC.getNumSpecialistInfos(), "eIndex1 expected to be < GC.getNumSpecialistInfos()");
+	FAssertMsg(eIndex2 >= 0, "eIndex2 expected to be >= 0");
+	FAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 expected to be < NUM_YIELD_TYPES");
+
+	if (iChange != 0)
+	{
+		m_ppaaiSpecialistThresholdExtraYield[eIndex1][eIndex2] = (m_ppaaiSpecialistThresholdExtraYield[eIndex1][eIndex2] + iChange);
+		FAssert(getSpecialistThresholdExtraYield(eIndex1, eIndex2) >= 0);
+
+		updateExtraSpecialistYield();
+
+		AI_makeAssignWorkDirty();
+	}
+}
 
 int CvPlayer::getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const
 {
@@ -17760,6 +17837,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeStateReligionBuildingProductionModifier(GC.getCivicInfo(eCivic).getStateReligionBuildingProductionModifier() * iChange);
 	changeStateReligionFreeExperience(GC.getCivicInfo(eCivic).getStateReligionFreeExperience() * iChange);
 	changeExpInBorderModifier(GC.getCivicInfo(eCivic).getExpInBorderModifier() * iChange);
+	changeSpecialistExtraYieldBaseThreshold(GC.getCivicInfo(eCivic).getSpecialistExtraYieldBaseThreshold() * iChange); //Leoreth
+	changeSpecialistExtraYieldEraThreshold(GC.getCivicInfo(eCivic).getSpecialistExtraYieldEraThreshold() * iChange); //Leoreth
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -17769,7 +17848,10 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
 		{
 			changeSpecialistExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange)); //Leoreth
+			changeSpecialistThresholdExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistThresholdExtraYield(iI) * iChange)); //Leoreth
 		}
+
+		
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)

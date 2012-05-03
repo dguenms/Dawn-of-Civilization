@@ -8412,7 +8412,55 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
-	return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex));
+	return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex)));
+}
+
+int CvCity::getExtraSpecialistThresholdYield(YieldTypes eIndex, SpecialistTypes eSpecialist) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
+	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
+	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
+	if (isSpecialistExtraYieldThreshold())
+	{
+		return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, eIndex)));
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+bool CvCity::isSpecialistExtraYieldThreshold() const
+{
+	CvPlot* pLoopPlot;
+	int iCount = 0;
+	int iBaseThreshold = GET_PLAYER(getOwner()).getSpecialistExtraYieldBaseThreshold();
+	int iEraThreshold = GET_PLAYER(getOwner()).getSpecialistExtraYieldEraThreshold();
+
+	return true;
+
+	if (iBaseThreshold == 0 && iEraThreshold == 0)
+	{
+		return false;
+	}
+
+	for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		pLoopPlot = getCityIndexPlot(iI);
+
+		if (pLoopPlot->getWorkingCity() == this)
+		{
+			iCount++;
+		}
+	}
+
+	if (iCount <= iBaseThreshold + iEraThreshold * GET_PLAYER(getOwner()).getCurrentEra())
+	{
+		return true;
+	}
+
+	return false;
 }
 
 
@@ -8421,6 +8469,7 @@ void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 	int iOldYield;
 	int iNewYield;
 	int iI;
+	TCHAR szOut[1024];
 
 	FAssertMsg(eYield >= 0, "eYield expected to be >= 0");
 	FAssertMsg(eYield < NUM_YIELD_TYPES, "eYield expected to be < NUM_YIELD_TYPES");
@@ -8432,6 +8481,19 @@ void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
 		iNewYield += getExtraSpecialistYield(eYield, ((SpecialistTypes)iI));
+		iNewYield += getExtraSpecialistThresholdYield(eYield, ((SpecialistTypes)iI));
+
+		if (getOwner() == ITALY)
+		{
+			sprintf(szOut, "specialist %d, yield %d, getExtraSpecialistThresholdYield() = %d", iI, (int)eYield, getExtraSpecialistThresholdYield(eYield, ((SpecialistTypes)iI)));
+			GC.getGameINLINE().logMsg(szOut);
+
+			sprintf(szOut, "number of specialists %d: %d", iI, getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI));
+			GC.getGameINLINE().logMsg(szOut);
+
+			sprintf(szOut, "specialist %d, yield %d, getSpecialistThresholdExtraYield() = %d", iI, (int)eYield, GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(((SpecialistTypes)iI), eYield));
+			GC.getGameINLINE().logMsg(szOut);
+		}
 	}
 
 	if (iOldYield != iNewYield)

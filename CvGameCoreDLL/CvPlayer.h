@@ -586,6 +586,14 @@ public:
 	int getStateReligionFreeExperience() const;																																// Exposed to Python
 	void changeStateReligionFreeExperience(int iChange);
 
+	//Leoreth
+	int getSpecialistExtraYieldBaseThreshold() const;
+	void changeSpecialistExtraYieldBaseThreshold(int iChange);
+
+	//Leoreth
+	int getSpecialistExtraYieldEraThreshold() const;
+	void changeSpecialistExtraYieldEraThreshold(int iChange);
+
 	DllExport CvCity* getCapitalCity() const;																																	// Exposed to Python
 	void setCapitalCity(CvCity* pNewCapitalCity);
 
@@ -825,6 +833,10 @@ public:
 
 	int getSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2) const;										// Exposed to Python
 	void changeSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange);
+
+	// Leoreth
+	int getSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2) const;
+	void changeSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange);
 
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
@@ -1242,6 +1254,8 @@ protected:
 	int m_iStateReligionUnitProductionModifier;
 	int m_iStateReligionBuildingProductionModifier;
 	int m_iStateReligionFreeExperience;
+	int m_iSpecialistExtraYieldBaseThreshold; //Leoreth
+	int m_iSpecialistExtraYieldEraThreshold; //Leoreth
 	int m_iCapitalCityID;
 	int m_iCitiesLost;
 	int m_iWinsVsBarbs;
@@ -1358,6 +1372,7 @@ protected:
 	CivicTypes* m_paeCivics;
 
 	int** m_ppaaiSpecialistExtraYield;
+	int** m_ppaaiSpecialistThresholdExtraYield; //Leoreth
 	int** m_ppaaiImprovementYieldChange;
 
 	CLinkList<int> m_groupCycle;

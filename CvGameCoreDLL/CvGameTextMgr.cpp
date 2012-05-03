@@ -4142,6 +4142,15 @@ void CvGameTextMgr::parseSpecialistHelp(CvWStringBuffer &szHelpString, Specialis
 			else
 			{
 				aiYields[iI] = GET_PLAYER((pCity != NULL) ? pCity->getOwnerINLINE() : GC.getGameINLINE().getActivePlayer()).specialistYield(eSpecialist, ((YieldTypes)iI));
+				
+				// Leoreth: (city states effect)
+				if (pCity != NULL)
+				{
+					if (pCity->isSpecialistExtraYieldThreshold())
+					{
+						aiYields[iI] += GET_PLAYER(pCity->getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, ((YieldTypes)iI));
+					}
+				}
 			}
 		}
 
@@ -5059,6 +5068,26 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 
 	// Leoreth: Specialist Yield
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST").GetCString(), GC.getCivicInfo(eCivic).getSpecialistExtraYieldArray());
+
+	// Leoreth: Specialist Threshold Yield
+	int iBaseThreshold = GC.getCivicInfo(eCivic).getSpecialistExtraYieldBaseThreshold();
+	int iEraThreshold = GC.getCivicInfo(eCivic).getSpecialistExtraYieldEraThreshold();
+	if (iBaseThreshold != 0 || iEraThreshold != 0)
+	{
+		CvWString szEnd;
+		if (bPlayerContext)
+		{
+			int iCurrentEra = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCurrentEra();
+			szEnd = gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD", iBaseThreshold + iCurrentEra * iEraThreshold).GetCString();
+		}
+		else
+		{
+			szEnd = gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD", iBaseThreshold).GetCString();
+		}
+
+		setYieldChangeHelp(szHelpText, L"", L"", szEnd, GC.getCivicInfo(eCivic).getSpecialistThresholdExtraYieldArray());
+	}
+
 
 	//	Largest City Happiness
 	if (GC.getCivicInfo(eCivic).getLargestCityHappiness() != 0)

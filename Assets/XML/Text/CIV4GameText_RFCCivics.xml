@@ -491,5 +491,9 @@
 		<Tag>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Tag>
 		<English>No state religion. No unhappiness from non-state religions; increased scientific research</English>
 	</TEXT>
-
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD</Tag>
+		<English>[SPACE]per Specialist for every city that works at most %d1 land tiles</English>
+		<German>[SPACE]pro Spezialist für jede Stadt, die höchstens %d1 Landfelder bearbeitet</German>
+	</TEXT>
 </Civ4GameText>
