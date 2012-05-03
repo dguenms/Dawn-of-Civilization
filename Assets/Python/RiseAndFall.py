@@ -3635,12 +3635,35 @@ class RiseAndFall:
 	
 		for iTargetCiv in targetCivList:
 			if iTargetCiv == utils.getHumanID():
+				askCityList = []
+				sAskCities = ""
+				sPlayer = pPlayer.getCivilizationAdjectiveKey()
+				for tPlot in targetList:
+					x, y = tPlot
+					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
+						askCityList.append(tPlot)
+						#sAskCities += gc.getMap().plot(x, y).getPlotCity().getName() + " "
+						
+				if len(askCityList) > 0:
+					x, y = askCityList[0]
+					sAskCities = gc.getMap().plot(x, y).getPlotCity().getName()
+					
+				for tPlot in askCityList:
+					x, y = tPlot
+					if tPlot != askCityList[0]:
+						if tPlot != askCityList[len(askCityList)-1]:
+							sAskCities += ", " + gc.getMap().plot(x, y).getPlotCity().getName()
+						else:
+							sAskCities += "and " + gc.getMap().plot(x, y).getPlotCity().getName()
+						
+				iAskGold = len(askCityList) * 200
+						
                 		popup = Popup.PyPopup(7625, EventContextTypes.EVENTCONTEXT_ALL)
-                		popup.setHeaderString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_TITLE", ()))
-                		popup.setBodyString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_MESSAGE", ()))
+                		popup.setHeaderString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_TITLE", (sPlayer,)))
+                		popup.setBodyString(CyTranslator().getText("TXT_KEY_ASKCOLONIALCITY_MESSAGE", (sPlayer, iAskGold, sAskCities)))
 				popup.addButton(CyTranslator().getText("TXT_KEY_POPUP_YES", ()))
 				popup.addButton(CyTranslator().getText("TXT_KEY_POPUP_NO", ()))
-				argsList = (iPlayer, targetList)
+				argsList = (iPlayer, askCityList)
 				utils.setTempEventList(argsList)
                 		popup.launch(False)
 			else:

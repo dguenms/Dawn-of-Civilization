@@ -5358,6 +5358,8 @@ m_iStateReligionUnitProductionModifier(0),
 m_iStateReligionBuildingProductionModifier(0),
 m_iStateReligionFreeExperience(0),
 m_iExpInBorderModifier(0),
+m_iSpecialistExtraYieldBaseThreshold(0), //Leoreth
+m_iSpecialistExtraYieldEraThreshold(0), //Leoreth
 m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
@@ -5377,6 +5379,7 @@ m_piCommerceModifier(NULL),
 m_piCapitalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
 m_piSpecialistExtraYield(NULL), //Leoreth
+m_piSpecialistThresholdExtraYield(NULL), //Leoreth
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiFeatureHappinessChanges(NULL),
@@ -5405,6 +5408,7 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piCapitalCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield); //Leoreth
+	SAFE_DELETE_ARRAY(m_piSpecialistThresholdExtraYield); //Leoreth
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
@@ -5625,6 +5629,18 @@ int CvCivicInfo::getExpInBorderModifier() const
 	return m_iExpInBorderModifier;
 }
 
+// Leoreth
+int CvCivicInfo::getSpecialistExtraYieldBaseThreshold() const
+{
+	return m_iSpecialistExtraYieldBaseThreshold;
+}
+
+// Leoreth
+int CvCivicInfo::getSpecialistExtraYieldEraThreshold() const
+{
+	return m_iSpecialistExtraYieldEraThreshold;
+}
+
 bool CvCivicInfo::isMilitaryFoodProduction() const
 {
 	return m_bMilitaryFoodProduction;
@@ -5782,6 +5798,20 @@ int* CvCivicInfo::getSpecialistExtraYieldArray() const
 	return m_piSpecialistExtraYield;
 }
 
+//Leoreth
+int CvCivicInfo::getSpecialistThresholdExtraYield(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piSpecialistThresholdExtraYield ? m_piSpecialistThresholdExtraYield[i] : -1;
+}
+
+//Leoreth
+int* CvCivicInfo::getSpecialistThresholdExtraYieldArray() const
+{
+	return m_piSpecialistThresholdExtraYield;
+}
+
 int CvCivicInfo::getBuildingHappinessChanges(int i) const
 {
 	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
@@ -5880,6 +5910,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionBuildingProductionModifier);
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
+	stream->Read(&m_iSpecialistExtraYieldBaseThreshold); //Leoreth
+	stream->Read(&m_iSpecialistExtraYieldEraThreshold); //Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -5924,6 +5956,11 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield);
 	m_piSpecialistExtraYield = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piSpecialistExtraYield);
+
+	//Leoreth
+	SAFE_DELETE_ARRAY(m_piSpecialistThresholdExtraYield);
+	m_piSpecialistThresholdExtraYield = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield);
 
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	m_paiBuildingHappinessChanges = new int[GC.getNumBuildingClassInfos()];
@@ -6015,6 +6052,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iStateReligionBuildingProductionModifier);
 	stream->Write(m_iStateReligionFreeExperience);
 	stream->Write(m_iExpInBorderModifier);
+	stream->Write(m_iSpecialistExtraYieldBaseThreshold); //Leoreth
+	stream->Write(m_iSpecialistExtraYieldEraThreshold); //Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6038,6 +6077,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piCapitalCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistExtraYield); //Leoreth
+	stream->Write(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield); //Leoreth
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 	stream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
@@ -6195,6 +6235,19 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piSpecialistExtraYield, NUM_YIELD_TYPES);
+	}
+
+	//Leoreth
+	pXML->GetChildXmlValByName(&m_iSpecialistExtraYieldBaseThreshold, "iSpecialistExtraYieldBaseThreshold");
+	pXML->GetChildXmlValByName(&m_iSpecialistExtraYieldEraThreshold, "iSpecialistExtraYieldEraThreshold");
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "SpecialistThresholdExtraYields"))
+	{
+		pXML->SetYields(&m_piSpecialistThresholdExtraYield);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piSpecialistThresholdExtraYield, NUM_YIELD_TYPES);
 	}
 
 	pXML->SetVariableListTagPair(&m_pabHurry, "Hurrys", sizeof(GC.getHurryInfo((HurryTypes)0)), GC.getNumHurryInfos());

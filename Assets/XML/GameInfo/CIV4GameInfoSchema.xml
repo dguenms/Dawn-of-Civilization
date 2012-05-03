@@ -687,6 +687,11 @@
 	<ElementType name="SpecialistExtraYields" content="eltOnly"> <!-- Leoreth -->
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="iSpecialistExtraYieldBaseThreshold" content="textOnly" dt:type="int"/>
+	<ElementType name="iSpecialistExtraYieldEraThreshold" content="textOnly" dt:type="int"/>
+	<ElementType name="SpecialistThresholdExtraYields" content="eltOnly"> <!-- Leoreth -->
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="HurryType" content="textOnly"/>
 	<ElementType name="bHurry" content="textOnly" dt:type="boolean"/>
 	<ElementType name="Hurry" content="eltOnly">
@@ -819,6 +824,9 @@
 		<element type="CapitalCommerceModifiers"/>
 		<element type="SpecialistExtraCommerces"/>
 		<element type="SpecialistExtraYields" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iSpecialistExtraYieldBaseThreshold" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iSpecialistExtraYieldEraThreshold" minOccurs="0"/> <!-- Leoreth -->
+		<element type="SpecialistThresholdExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Hurrys"/>
 		<element type="SpecialBuildingNotRequireds"/>
 		<element type="SpecialistValids"/>

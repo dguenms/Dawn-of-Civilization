@@ -1299,11 +1299,11 @@ class Victory:
                 elif (iPlayer == iFrance):
                         if (pFrance.isAlive()):
                             
-				# Leoreth: have 20000 culture in Paris in 1700 AD
+				# Leoreth: have 25000 culture in Paris in 1700 AD
                                 if (iGameTurn == getTurnForYear(1700)):
 					pParis = gc.getMap().plot(55, 50)
 					if pParis.isCity():
-						if pParis.getPlotCity().getCulture(iFrance) >= utils.getTurns(20000):
+						if pParis.getPlotCity().getCulture(iFrance) >= utils.getTurns(25000):
 							self.setGoal(iFrance, 0, 1)
 						else:
 							self.setGoal(iFrance, 0, 0)
@@ -1343,7 +1343,7 @@ class Victory:
 
 
                                 if (iGameTurn == getTurnForYear(1730)):
-                                        if (self.getGoal(iEngland, 1) == -1):
+                                        if (self.getGoal(iEngland, 0) == -1):
                                                 self.setGoal(iEngland, 0, 0)
 
 				# Leoreth: Total of 25 Frigates or Ships of the Line, and sink 50 enemy ships
@@ -3059,41 +3059,20 @@ class Victory:
 				aHelp.append(self.getIcon(iBestCiv == iCarthage) + 'Largest map: ' + CyTranslator().getText(str(gc.getPlayer(iBestCiv).getCivilizationShortDescriptionKey()),()))
 
 		elif iPlayer == iRome:
-			if not pRome.isReborn():
-				if iGoal == 0:
-					iBarracks = self.getNumBuildings(iRome, con.iBarracks)
-					iAqueducts = self.getNumBuildings(iRome, con.iAqueduct)
-					iAmphitheatres = self.getNumBuildings(iRome, con.iColosseum)
-					aHelp.append(self.getIcon(iBarracks >= 5) + 'Barracks: ' + str(iBarracks) + '/5,' + self.getIcon(iAqueducts >= 5) + 'Aqueducts: ' + str(iAqueducts) + '/5,' + self.getIcon(iAmphitheatres >= 5) + 'Amphitheatres: ' + str(iAmphitheatres) + '/5')
-				elif iGoal == 1:                              
-                               		bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iSpain)][iSpain], tCoreAreasBR[utils.getReborn(iSpain)][iSpain], 2)
-                                	bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[utils.getReborn(iFrance)][iFrance], 3)
-                                	bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iEngland)][iEngland], tCoreAreasBR[utils.getReborn(iEngland)][iEngland], 1)
-                                	bCarthage = self.checkOwnedArea(iRome, tCarthageTL, tCarthageBR, 2)
-					bByzantium = self.checkOwnedArea(iRome, tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium], 4)
-					bEgypt = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt], 2)
-					aHelp.append(self.getIcon(bSpain) + '2 cities in Spain ' + self.getIcon(bFrance) + '3 cities in France ' + self.getIcon(bEngland) + '1 city in England')
-					aHelp.append(self.getIcon(bCarthage) + '2 cities in Carthage ' + self.getIcon(bByzantium) + '4 cities in Greece and Anatolia ' + self.getIcon(bEgypt) + '2 cities in Egypt')
-			else:
-				if iGoal == 0:
-					bBanking = (self.getItalianTechs(0) == 1)
-					bEducation = (self.getItalianTechs(1) == 1)
-					bRadio = (self.getItalianTechs(2) == 1)
-					bFascism = (self.getItalianTechs(3) == 1)
-					aHelp.append(self.getIcon(bBanking) + 'Banking ' + self.getIcon(bEducation) + 'Education ' + self.getIcon(bRadio) + 'Radio ' + self.getIcon(bFascism) + 'Fascism')
-				elif iGoal == 1:
-					iUniversities = self.getItalianUniversities()
-					aHelp.append(self.getIcon(iUniversities >= 3) + 'Univiersities built: ' + str(iUniversities) + '/3')
-				elif iGoal == 2:
-					bGreece = self.checkOwnedCiv(iRome, iGreece)
-					bEthiopia = self.checkOwnedCiv(iRome, iEthiopia)
-					bLibya = self.checkOwnedArea(iRome, tLibyaTL, tLibyaBR, 1)
-					for iCiv in range(con.iNumPlayers):
-						if (iCiv != iRome):
-							if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
-								bLibya = False
-					aHelp.append(self.getIcon(bGreece) + 'Greece ' + self.getIcon(bLibya) + 'Libya ' + self.getIcon(bEthiopia) + 'Ethiopia')
-				
+			if iGoal == 0:
+				iBarracks = self.getNumBuildings(iRome, con.iBarracks)
+				iAqueducts = self.getNumBuildings(iRome, con.iAqueduct)
+				iAmphitheatres = self.getNumBuildings(iRome, con.iColosseum)
+				aHelp.append(self.getIcon(iBarracks >= 5) + 'Barracks: ' + str(iBarracks) + '/5,' + self.getIcon(iAqueducts >= 5) + 'Aqueducts: ' + str(iAqueducts) + '/5,' + self.getIcon(iAmphitheatres >= 5) + 'Amphitheatres: ' + str(iAmphitheatres) + '/5')
+			elif iGoal == 1:                              
+				bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iSpain)][iSpain], tCoreAreasBR[utils.getReborn(iSpain)][iSpain], 2)
+				bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[utils.getReborn(iFrance)][iFrance], 3)
+				bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iEngland)][iEngland], tCoreAreasBR[utils.getReborn(iEngland)][iEngland], 1)
+				bCarthage = self.checkOwnedArea(iRome, tCarthageTL, tCarthageBR, 2)
+				bByzantium = self.checkOwnedArea(iRome, tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium], 4)
+				bEgypt = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt], 2)
+				aHelp.append(self.getIcon(bSpain) + '2 cities in Spain ' + self.getIcon(bFrance) + '3 cities in France ' + self.getIcon(bEngland) + '1 city in England')
+				aHelp.append(self.getIcon(bCarthage) + '2 cities in Carthage ' + self.getIcon(bByzantium) + '4 cities in Greece and Anatolia ' + self.getIcon(bEgypt) + '2 cities in Egypt')	
 
 		elif iPlayer == iJapan:
 			if iGoal == 0:
@@ -3254,7 +3233,7 @@ class Victory:
 					iCulture = pParis.getPlotCity().getCulture(iFrance)
 				else:
 					iCulture = 0
-				aHelp.append(self.getIcon(iCulture >= utils.getTurns(20000)) + 'Culture in Paris: ' + str(iCulture) + '/' + str(utils.getTurns(20000)))
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(25000)) + 'Culture in Paris: ' + str(iCulture) + '/' + str(utils.getTurns(25000)))
 			elif iGoal == 1:
 				iEurope = self.countControlledTiles(iFrance, con.tEuropeTL, con.tEuropeBR, True)
 				iEurope += self.countControlledTiles(iFrance, con.tEasternEuropeTL, con.tEasternEuropeBR, True)
@@ -3401,6 +3380,26 @@ class Victory:
 				iGold = pInca.getGold()
 				aHelp.append(self.getIcon(iGold >= utils.getTurns(3000)) + 'Gold in treasury: ' + str(iGold) + '/' + str(utils.getTurns(3000)))
 
+		elif iPlayer == iItaly:
+			if iGoal == 0:
+				bBanking = (self.getItalianTechs(0) == 1)
+				bEducation = (self.getItalianTechs(1) == 1)
+				bRadio = (self.getItalianTechs(2) == 1)
+				bFascism = (self.getItalianTechs(3) == 1)
+				aHelp.append(self.getIcon(bBanking) + 'Banking ' + self.getIcon(bEducation) + 'Education ' + self.getIcon(bRadio) + 'Radio ' + self.getIcon(bFascism) + 'Fascism')
+			elif iGoal == 1:
+				iUniversities = self.getItalianUniversities()
+				aHelp.append(self.getIcon(iUniversities >= 3) + 'Univiersities built: ' + str(iUniversities) + '/3')
+			elif iGoal == 2:
+				bGreece = self.checkOwnedCiv(iRome, iGreece)
+				bEthiopia = self.checkOwnedCiv(iRome, iEthiopia)
+				bLibya = self.checkOwnedArea(iRome, tLibyaTL, tLibyaBR, 1)
+				for iCiv in range(con.iNumPlayers):
+					if (iCiv != iRome):
+						if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
+							bLibya = False
+				aHelp.append(self.getIcon(bGreece) + 'Greece ' + self.getIcon(bLibya) + 'Libya ' + self.getIcon(bEthiopia) + 'Ethiopia')
+				
 		elif iPlayer == iMongolia:
 			if iGoal == 1:
 				iRazedCities = self.getRazedByMongols()	
