@@ -1314,7 +1314,7 @@ class Victory:
 				if iGameTurn == getTurnForYear(1800):
 					iEurope = self.countControlledTiles(iFrance, con.tEuropeTL, con.tEuropeBR, True)
 					iEurope += self.countControlledTiles(iFrance, con.tEasternEuropeTL, con.tEasternEuropeBR, True)
-					iNorthAmerica = self.countControlledTiles(iFrance, con.tNorthAmericaTL, con.tNorthAmericaBr, True)
+					iNorthAmerica = self.countControlledTiles(iFrance, con.tNorthAmericaTL, con.tNorthAmericaBR, True)
 							
 					fEurope = iEurope * 100.0 / (con.iEuropeTiles + con.iEasternEuropeTiles)
 					fNorthAmerica = iNorthAmerica * 100.0 / con.iNorthAmericaTiles
