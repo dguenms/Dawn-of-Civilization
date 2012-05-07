@@ -4253,12 +4253,12 @@ class RiseAndFall:
 			utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 4)
                 if (iCiv == iPersia):
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
-                        utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iBombard, iCiv, tPlot, 3)
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 		if (iCiv == iIndia):
 			utils.makeUnit(con.iCuirassier, iCiv, tPlot, 3)
 			utils.makeUnit(con.iMusketman, iCiv, tPlot, 8)
-			utils.makeUnit(con.iCannon, iCiv, tPlot, 5)
+			utils.makeUnit(con.iBombard, iCiv, tPlot, 5)
 			utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 3)
 			#if not gc.getPlayer(0).isPlayable():
 			#	utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
