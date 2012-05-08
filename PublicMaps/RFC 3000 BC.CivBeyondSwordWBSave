@@ -321,7 +321,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
-	StateReligion=RELIGION_CHRISTIANITY                       
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer

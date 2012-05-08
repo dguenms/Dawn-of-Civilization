@@ -2873,12 +2873,38 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	    }
 	    // end tile stability info text
 
+		// Leoreth: display UHV requirement info
+	    long result3 = -1;
+        CyArgsList argsList3;
+        argsList3.add(pPlot->getX());
+        argsList3.add(pPlot->getY());
+        argsList3.add(GC.getGameINLINE().getActivePlayer());
+        gDLL->getPythonIFace()->callFunction(PYScreensModule, "getUHVTileInfo", argsList3.makeFunctionArgs(), &result3);
+        int iUHVTileInfoKey = (int)result3;
+
+		TCHAR displayText[1024];
+
+		if (pPlot->getPlotType() == PLOT_LAND || pPlot->getPlotType() == PLOT_HILLS)
+		{
+			if (iUHVTileInfoKey != -1)
+			{
+				sprintf(displayText, "TXT_KEY_UHV_AREA_%d", iUHVTileInfoKey);
+
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_CYAN_TEXT")));
+				szString.append(gDLL->getText(displayText));
+				szString.append(CvWString::format(ENDCOLR));
+				szString.append(NEWLINE);
+			}
+		}
+		// end UHV requirement info
+
+
 		//Leoreth: display region, only bugfix purposes
-		if (!pPlot->isWater())
+		/*if (!pPlot->isWater())
 		{
 			szString.append(pPlot->getRegionName());
 			szString.append(NEWLINE);
-		}
+		}*/
 
 		eRevealOwner = pPlot->getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true);
 

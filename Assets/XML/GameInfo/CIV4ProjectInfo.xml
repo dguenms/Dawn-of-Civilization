@@ -466,7 +466,7 @@
 			<iVictoryDelayPercent>0</iVictoryDelayPercent>
 			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers/>
-			<CreateSound/>
+			<CreateSound>AS2D_CITYCAPTURE</CreateSound>
 			<MovieDefineTag/>
 		</ProjectInfo>
 	</ProjectInfos>

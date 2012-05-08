@@ -2,7 +2,7 @@
 # GOVERNMENT
 	- Tyranny
 	- Dynasticism (Monarchy): +1 happiness per military unit
-	- City States (Code of Laws): +1 specialist for all cities within three tiles of the capital, +100% number of cities maintenance
+	- City States (Code of Laws): +1 food per specialist for every city that works at most 7 land tiles, +100% number of cities maintenance
 	- Theocracy (Theology): +2 happiness with state religion, +2 XP in cities with state religion, no foreign religion spread
 	- Autocracy (Nationalism): +2 happiness with barracks, can draft 2 units
 	- Republic (Philosophy): +50% GP birth, +100% cottage growth, +25% war weariness
@@ -176,3 +176,11 @@
 	- Colonize Sibera by 1700 AD
 	- Be first to complete the Manhattan Project and the Apollo Project and build the Trans-Sibirian Railway by 1920 AD
 	- Have friendly relations with 5 communist civilizations by 1950 AD
+# new Italian UP: +1 free specialist for all cities until the Industrial Era
+# the tile tooltip now also contains information on territorial UHVs
+# Catholicism spreads to Scandinavia around 900 AD
+# New Italian UHV:
+	- Build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD
+	- Have three cities with influential culture by 1600 AD
+	- Control 75% of the Mediterranean in 1930 AD
+# no religious unhappiness for Hindu/Buddhist and Confucian/Taoist religion pairs
