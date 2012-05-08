@@ -20,6 +20,7 @@ utils = RFCUtils.RFCUtils()
 iIndonesia = con.iIndonesia
 iArabia = con.iArabia
 iRussia = con.iRussia
+iVikings = con.iVikings
 iNumPlayers = con.iNumPlayers
 iNumTotalPlayers = con.iNumTotalPlayers
 iBarbarian = con.iBarbarian
@@ -205,6 +206,10 @@ class Religions:
 				self.spreadReligion(self.selectRandomCityCiv(iIndonesia), 1, iMissionary_Islamic)
 				
 		# (Orthodox) Christianity spreads to Russia
+		if iGameTurn == getTurnForYear(900) - 5 + (utils.getSeed() % 10):
+			for i in range(2):
+				self.spreadReligion(self.selectRandomCityCiv(iVikings), 1, iMissionary_Christian)
+		
 		if iGameTurn == getTurnForYear(988):
 			for i in range(2):
 				self.spreadReligion(self.selectRandomCityCiv(iRussia), 1, iMissionary_Orthodox)

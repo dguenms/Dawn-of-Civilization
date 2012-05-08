@@ -61,6 +61,112 @@ import RFCUtils
 import Victory
 vic = Victory.Victory()
 utils = RFCUtils.RFCUtils()
+
+tCoreAreasTL = con.tCoreAreasTL
+tCoreAreasBR = con.tCoreAreasBR
+tNormalAreasTL = con.tNormalAreasTL
+tNormalAreasBR = con.tNormalAreasBR
+tAmericasTL = con.tAmericasTL
+tAmericasBR = con.tAmericasBR
+tSAmericaTL = (24, 3)
+tSAmericaBR = (43, 32)
+tNCAmericaTL = (3, 33)
+tNCAmericaBR = (37, 63)
+tCAmericaTL = (12, 33)
+tCAmericaBR = (33, 43)
+tSiberiaTL = (82, 50)
+tSiberiaBR = (112, 64)
+tNECanadaTL = (22, 50)
+tNECanadaBR = (37, 60)
+tLouisianaTL = (19, 42)
+tLouisianaBR = (24, 50)
+tEastCoastTL = (25, 42)
+tEastCoastBR = (35, 52)
+tSouthAfricaTL = (61, 10)
+tSouthAfricaBR = (72, 18)
+tAustraliaTL = (103, 10)
+tAustraliaBR = (118, 22)
+tScandinaviaTL = (57, 55)
+tScandinaviaBR = (65, 65)
+tNearEastTL = (70, 37)
+tNearEastBR = (78, 45)
+tCarthageTL = (50, 36)
+tCarthageBR = (61, 39)
+tAfricaTL = (45, 10)
+tAfricaBR = (76, 39)
+tAsiaTL = (73, 29)
+tAsiaBR = (121, 64)
+tOceaniaTL = (99, 5)
+tOceaniaBR = (123, 28)
+tMediterraneanTL = (51, 36)
+tMediterraneanBR = (73, 47)
+tMediterraneanExceptions = ((51,36),(51,46),(52,46),(53,46),(53,47),(67,47),(67,46),(73,44),(73,45),(72,45),(71,44),(70,44),(73,36))
+tHokkaidoTL = (115, 50)
+tHokkaidoBR = (116, 52)
+tHonshuTL = (112, 44)
+tHonshuBR = (116, 49)
+tBalkansTL = (64, 40)
+tBalkansBR = (68, 47)
+tBlackSeaTL = (67, 44)
+tBlackSeaBR = (76, 50)
+tMesopotamiaTL = (73, 37)
+tMesopotamiaBR = (78, 42)
+tFranceTL = (51, 47)
+tEuropeTL = (44, 40)
+tEuropeBR = (68, 65)
+##tNubiaTL = (67, 29)
+##tNubiaBR = (74, 32)
+##tEastAfricaTL = (67, 20)
+##tEastAfricaBR = (77, 28)
+tSomaliaTL = (73, 24)
+tSomaliaBR = (77, 29)
+tSubeqAfricaTL = (60, 10)
+tSubeqAfricaBR = (72, 29)
+tBrazilTL = (32, 14)
+tBrazilBR = (43, 30)
+tLibyaTL = (59, 35)
+tLibyaBR = (66, 37)
+tBalkansTL = (64, 40)
+tBalkansBR = (68, 47)
+tNorthAfricaTL = (58, 32)
+tNorthAfricaBR = (71, 38)
+tNearEastTL = (69, 37)
+tNearEastBR = (76, 45)
+
+tManchuriaTL = (104, 50)
+tManchuriaBR = (112, 55)
+tKoreaTL = (108, 45)
+tKoreaBR = (110, 49)
+tChinaTL = (99, 39)
+tChinaBR = (107, 49)
+tIndochinaTL = (97, 31)
+tIndochinaBR = (103, 38)
+tIndonesiaTL = (98, 24)
+tIndonesiaBR = (109, 30)
+tPhilippinesTL = (108, 30)
+tPhilippinesBR = (110, 36)
+
+tSouthAsiaTL = (88, 24)
+tSouthAsiaBR = (110, 38)
+
+tVienna = (63, 49)
+tCairo = (69, 34)
+tMecca = (75, 33)
+tBaghdad = (77, 40)
+
+lEasternMediterranean = [(58, 39), (58, 38), (58, 37), (59, 37), (60, 37), (61, 37), (61, 36), (62, 36), (63, 36), (64, 36), (65, 36), (66, 36), (67, 36), (68, 36), (69, 36), (70, 36), (71, 36), (65, 37), (66, 37), (72, 37), (73, 37), (73, 38), (73, 39), (73, 40), (73, 41), (73, 42), (70, 42), (71, 42), (72, 42), (69, 43), (70, 43), (69, 44), (68, 45), (67, 44), (67, 45), (66, 44), (65, 43), (66, 43), (65, 42), (66, 42), (67, 42), (67, 41), (65, 40), (66, 40)]
+lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44), (74, 44), (75, 44), (76, 44), (76, 45), (76, 46), (76, 47), (75, 47), (74, 48), (75, 48), (72, 48), (74, 49), (73, 49), (71, 49), (69, 49), (69, 50), (70, 50), (71, 50), (72, 50), (73, 50), (68, 49), (68, 48), (67, 45), (67, 46), (67, 47), (67, 48), (68, 45)]
+
+tSafavidMesopotamiaTL = (75, 39)
+tSafavidMesopotamiaBR = (79, 43)
+tTransoxaniaTL = (82, 42)
+tTransoxaniaBR = (86, 49)
+tNWIndiaTL = (86, 37)
+tNWIndiaBR = (91, 43)
+
+lSiberianCoast = [(109, 50), (109, 51), (110, 51), (111, 51), (112, 52), (114, 54), (113, 55), (111, 54), (111, 55), (110, 55), (110, 58), (111, 58)]
+
+
 def getStability(argsList):
         return utils.getStability(argsList[0])
 def countAchievedGoals(argsList):
@@ -951,6 +1057,332 @@ def isNeighbor(argsList):
 	iNeighbor = argsList[1]
 	if iNeighbor in con.lNeighbours[iPlayer]: return 1
 	else: return 0
+	
+#Leoreth
+def getUHVTileInfo(argsList):
+	x = argsList[0]
+	y = argsList[1]
+	iPlayer = argsList[2]
+	
+	if iPlayer == con.iGreece:
+		tlx, tly = con.tCoreAreasTL[0][con.iEgypt]
+		brx, bry = con.tCoreAreasBR[0][con.iEgypt]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iEgypt]:
+			return 0
+			
+		tlx, tly = con.tCoreAreasTL[0][con.iCarthage]
+		brx, bry = con.tCoreAreasBR[0][con.iCarthage]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iCarthage]:
+			return 1
+			
+		tlx, tly = con.tCoreAreasTL[0][con.iBabylonia]
+		brx, bry = con.tCoreAreasBR[0][con.iBabylonia]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iBabylonia]:
+			return 2
+			
+		tlx, tly = con.tCoreAreasTL[0][con.iPersia]
+		brx, bry = con.tCoreAreasBR[0][con.iPersia]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iPersia]:
+			return 3
+			
+	elif iPlayer == con.iPersia and gc.getPlayer(con.iPersia).isReborn():
+		tlx, tly = tSafavidMesopotamiaTL
+		brx, bry = tSafavidMesopotamiaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 4
+			
+		tlx, tly = tTransoxaniaTL
+		brx, bry = tTransoxaniaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 5
+			
+		tlx, tly = tNWIndiaTL
+		brx, bry = tNWIndiaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 6
+			
+	elif iPlayer == con.iCarthage or iPlayer == con.iItaly:	
+		tlx, tly = tMediterraneanTL
+		brx, bry = tMediterraneanBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in tMediterraneanExceptions:
+			return 7
+			
+	elif iPlayer == con.iRome:	
+		tlx, tly = con.tCoreAreasTL[0][con.iSpain]
+		brx, bry = con.tCoreAreasBR[0][con.iSpain]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 8
+				
+		tlx, tly = tFranceTL
+		brx, bry = con.tNormalAreasBR[0][con.iFrance]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 9
+				
+		tlx, tly = con.tCoreAreasTL[0][con.iEngland]
+		brx, bry = con.tCoreAreasBR[0][con.iEngland]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 10
+				
+		tlx, tly = tCarthageTL
+		brx, bry = tCarthageBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 11
+				
+		tlx, tly = con.tCoreAreasTL[0][con.iByzantium]
+		brx, bry = con.tCoreAreasBR[0][con.iByzantium]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 12
+			
+		tlx, tly = con.tCoreAreasTL[0][con.iEgypt]
+		brx, bry = con.tCoreAreasBR[0][con.iEgypt]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 13
+
+	elif iPlayer == con.iJapan:		
+		tlx, tly = tKoreaTL
+		brx, bry = tKoreaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 14
+					
+		tlx, tly = tManchuriaTL
+		brx, bry = tManchuriaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 15
+					
+		tlx, tly = tChinaTL
+		brx, bry = tChinaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 16
+					
+		tlx, tly = tIndochinaTL
+		brx, bry = tIndochinaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 17
+					
+		tlx, tly = tIndonesiaTL
+		brx, bry = tIndonesiaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 18
+					
+		tlx, tly = tPhilippinesTL
+		brx, bry = tPhilippinesBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 19
+			
+	elif iPlayer == con.iEthiopia:
+		bAfrica = False
+				
+		tlx, tly = tSomaliaTL
+		brx, bry = tSomaliaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			bAfrica = True
+					
+		tlx, tly = tSubeqAfricaTL
+		brx, bry = tSubeqAfricaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			bAfrica = True
+			
+		if bAfrica: return 20
+		
+	elif iPlayer == con.iByzantium:		
+		tlx, tly = tBalkansTL
+		brx, bry = tBalkansBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 21
+					
+		tlx, tly = tNorthAfricaTL
+		brx, bry = tNorthAfricaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 22
+					
+		tlx, tly = tNearEastTL
+		brx, bry = tNearEastBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 23
+			
+	elif iPlayer == con.iArabia:	
+		tlx, tly = con.tCoreAreasTL[0][con.iEgypt]
+		brx, bry = con.tCoreAreasBR[0][con.iEgypt]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 24
+				
+		tlx, tly = tCarthageTL
+		brx, bry = tCarthageBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 25
+				
+		tlx, tly = con.tCoreAreasTL[0][con.iBabylonia]
+		brx, bry = con.tCoreAreasBR[0][con.iBabylonia]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 26
+				
+		tlx, tly = con.tCoreAreasTL[0][con.iPersia]
+		brx, bry = con.tCoreAreasBR[0][con.iPersia]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 27
+				
+		tlx, tly = con.tCoreAreasTL[0][con.iSpain]
+		brx, bry = con.tCoreAreasBR[0][con.iSpain]
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 28
+			
+	elif iPlayer == con.iFrance:
+		bEurope = False
+	
+		tlx, tly = con.tEuropeTL
+		brx, bry = con.tEuropeBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			bEurope = True
+			
+		tlx, tly = con.tEasternEuropeTL
+		brx, bry = con.tEasternEuropeBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			bEurope = True
+			
+		if bEurope: return 29
+				
+		tlx, tly = con.tNorthAmericaTL
+		brx, bry = con.tNorthAmericaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 30
+			
+	elif iPlayer == con.iEngland:		
+		tlx, tly = con.tNorthAmericaTL
+		brx, bry = con.tNorthAmericaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 31
+					
+		tlx, tly = con.tSouthCentralAmericaTL
+		brx, bry = con.tSouthCentralAmericaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 32
+					
+		tlx, tly = tAfricaTL
+		brx, bry = tAfricaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 33
+					
+		tlx, tly = tAsiaTL
+		brx, bry = tAsiaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 34
+					
+		tlx, tly = tOceaniaTL
+		brx, bry = tOceaniaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 35
+			
+	elif iPlayer == con.iGermany:
+		tlx, tly = con.tCoreAreasTL[0][con.iFrance]
+		brx, bry = con.tCoreAreasBR[0][con.iFrance]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iFrance]:
+			return 36
+			
+		tlx, tly = con.tCoreAreasTL[0][con.iItaly]
+		brx, bry = con.tCoreAreasBR[0][con.iItaly]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iItaly]:
+			return 37
+			
+		tlx, tly = con.tCoreAreasTL[0][con.iRussia]
+		brx, bry = con.tCoreAreasBR[0][con.iRussia]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iRussia]:
+			return 38
+			
+		tlx, tly = con.tCoreAreasTL[0][con.iEngland]
+		brx, bry = con.tCoreAreasBR[0][con.iEngland]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iEngland]:
+			return 39
+			
+		tlx, tly = con.tCoreAreasTL[0][coniVikings]
+		brx, bry = con.tCoreAreasBR[0][con.iVikings]
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iVikings]:
+			return 40
+			
+	elif iPlayer == con.iRussia:
+		tlx, tly = tSiberiaTL
+		brx, bry = tSiberiaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 41
+			
+	elif iPlayer == con.iInca:
+		bSAmerica = False
+		
+		tlx, tly = tSAmericaTL
+		brx, bry = tSAmericaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			bSAmerica = True
+			
+		tlx, tly = tBrazilTL
+		brx, bry = tBrazilBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			bSAmerica = False
+			
+		if bSAmerica: return 42
+		
+	#elif iPlayer == con.iItaly:
+	#	tlx, tly = con.tCoreAreasTL[0][con.iGreece]
+	#	brx, bry = con.tCoreAreasBR[0][con.iGreece]
+	#	if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iGreece]:
+	#		return 43
+	#		
+	#	tlx, tly = con.tCoreAreasTL[0][con.iEthiopia]
+	#	brx, bry = con.tCoreAreasBR[0][con.iEthiopia]
+	#	if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iEthiopia]:
+	#		return 44
+	#		
+	#	tlx, tly = tLibyaTL
+	#	brx, bry = tLibyaBR
+	#	if x >= tlx and x <= brx and y >= tly and y <= bry:
+	#		return 45
+			
+	elif iPlayer == con.iAztecs:
+		tlx, tly = tCAmericaTL
+		brx, bry = tCAmericaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 46
+			
+	elif iPlayer == con.iTurkey:
+		if (x,y) in lEasternMediterranean:
+			return 47
+			
+		if (x,y) in lBlackSea:
+			return 48
+			
+		cx, cy = tCairo
+		if x >= cx-1 and x <= cx+1 and y >= cy-1 and y <= cy+1:
+			return 49
+				
+		cx, cy = tMecca
+		if x >= cx-1 and x <= cx+1 and y >= cy-1 and y <= cy+1:
+			return 50
+				
+		cx, cy = tBaghdad
+		if x >= cx-1 and x <= cx+1 and y >= cy-1 and y <= cy+1:
+			return 51
+				
+		cx, cy = tVienna
+		if x >= cx-1 and x <= cx+1 and y >= cy-1 and y <= cy+1:
+			return 52
+			
+	elif iPlayer == con.iThailand:
+		tlx, tly = tSouthAsiaTL
+		brx, bry = tSouthAsiaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 53
+			
+	elif iPlayer == con.iAmerica:
+		tlx, tly = tNCAmericaTL
+		brx, bry = tNCAmericaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 54
+			
+	return -1
+		
+			
+		
+		
+			
+		
 
 
 #######################################################################################

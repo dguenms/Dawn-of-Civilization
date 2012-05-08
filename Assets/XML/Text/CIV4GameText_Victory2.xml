@@ -446,9 +446,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS2</Tag>
-		<English>Be first to complete the Manhattan Project and Apollo Program and build the Trans-Siberian Railway by 1920 AD</English>
+		<English>Build the Trans-Siberian Railway by 1920 AD and be first to complete the Manhattan Project and Apollo Program</English>
 		<French>Construire le programme Apollo avant 1950 ap. J.-C.</French>
-		<German>Seien Sie die erste Zivilisation, die das Manhattan-Projekt und Apollo-Programm vervollständigt, und bauen Sie die transsibirische Eisenbahn bis 1920 n. Chr.</German>
+		<German>Bauen Sie die transsibirische Eisenbahn bis 1920 n. Chr. und seien Sie die erste Zivilisation, die das Manhattan-Projekt und Apollo-Programm vervollständigt</German>
 		<Italian>Costruisci il Programma Apollo entro il 1950 d.C.</Italian>
 		<Spanish>Concluir el Programa Apollo antes del 1950 d. C.</Spanish>
 	</TEXT>
@@ -582,17 +582,292 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1</Tag>
-		<English>Be the first to discover Banking, Education, Radio and Fascism</English>
-		<German>Erforschen Sie vor allen anderen Zivilisationen Bankwesen, Bildungswesen, Radio und Faschismus</German>
+		<English>Build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD</English>
+		<German>Bauen Sie bis zum Jahr 1500 n. Chr. die San Marco Basilica, die Sixtinische Kapelle und den Schiefen Turm</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA2</Tag>
-		<English>Build three universities by 1570 AD</English>
-		<German>Bauen Sie drei Universitäten bis 1570 n. Chr.</German>
+		<English>Have three cities with influential culture by 1600 AD</English>
+		<German>Haben Sie drei Städte mit einflussreicher Kultur bis zum Jahr 1600 n. Chr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA3</Tag>
-		<English>Control Greece, Libya and Ethiopia in 1930 AD</English>
-		<German>Kontrollieren Sie Griechenland, Libyen und Äthiopien im Jahr 1930 n. Chr.</German>
+		<English>Control 75% of the Mediterranean in 1930 AD</English>
+		<German>Kontrollieren Sie 75% der Mittelmeerküste im Jahr 1930 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_0</Tag>
+		<English>Egypt</English>
+		<German>Ägypten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_1</Tag>
+		<English>Phoenicia</English>
+		<German>Phönizien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_2</Tag>
+		<English>Babylonia</English>
+		<German>Babylonien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_3</Tag>
+		<English>Persia</English>
+		<German>Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_4</Tag>
+		<English>Mesopotamia</English>
+		<German>Mesopotamien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_5</Tag>
+		<English>Transoxania</English>
+		<German>Transoxanien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_6</Tag>
+		<English>Northwest India</English>
+		<German>Nordwestindien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_7</Tag>
+		<English>Mediterranean</English>
+		<German>Mittelmeerküste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_8</Tag>
+		<English>Spain</English>
+		<German>Spanien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_9</Tag>
+		<English>France</English>
+		<German>Frankreich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_10</Tag>
+		<English>England</English>
+		<German>England</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_11</Tag>
+		<English>Carthage</English>
+		<German>Karthago</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_12</Tag>
+		<English>Greece and Anatolia</English>
+		<German>Griechenland und Anatolien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_13</Tag>
+		<English>Egypt</English>
+		<German>Ägypten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_14</Tag>
+		<English>Korea</English>
+		<German>Korea</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_15</Tag>
+		<English>Manchuria</English>
+		<German>Mandschurei</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_16</Tag>
+		<English>China</English>
+		<German>China</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_17</Tag>
+		<English>Indochina</English>
+		<German>Indochina</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_18</Tag>
+		<English>Indonesia</English>
+		<German>Indonesien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_19</Tag>
+		<English>Philippines</English>
+		<German>Philippinen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_20</Tag>
+		<English>Ethiopia and Subequatorial Africa</English>
+		<German>Äthiopien und Subäquatorialafrika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_21</Tag>
+		<English>Balkans</English>
+		<German>Balkan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_22</Tag>
+		<English>North Africa</English>
+		<German>Nordafrika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_23</Tag>
+		<English>Near East</English>
+		<German>Naher Osten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_24</Tag>
+		<English>Egypt</English>
+		<German>Ägypten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_25</Tag>
+		<English>Maghreb</English>
+		<German>Maghreb</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_26</Tag>
+		<English>Mesopotamia</English>
+		<German>Mesopotamien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_27</Tag>
+		<English>Persia</English>
+		<German>Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_28</Tag>
+		<English>Spain</English>
+		<German>Spanien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_29</Tag>
+		<English>Europe</English>
+		<German>Europe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_30</Tag>
+		<English>North America</English>
+		<German>Nordamerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_31</Tag>
+		<English>North America</English>
+		<German>Nordamerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_32</Tag>
+		<English>South and Central America</English>
+		<German>Süd- und Mittelamerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_33</Tag>
+		<English>Africa</English>
+		<German>Afrika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_34</Tag>
+		<English>Asia</English>
+		<German>Asien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_35</Tag>
+		<English>Australia and Oceania</English>
+		<German>Australien und Ozeanien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_36</Tag>
+		<English>France</English>
+		<German>Frankreich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_37</Tag>
+		<English>Italy</English>
+		<German>Italien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_38</Tag>
+		<English>Russia</English>
+		<German>Russland</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_39</Tag>
+		<English>England</English>
+		<German>England</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_40</Tag>
+		<English>Scandinavia</English>
+		<German>Skandinavien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_41</Tag>
+		<English>Siberia</English>
+		<German>Sibirien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_42</Tag>
+		<English>South America (except Brazil)</English>
+		<German>Südamerika (außer Brasilien)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_43</Tag>
+		<English>Greece</English>
+		<German>Griechenland</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_44</Tag>
+		<English>Ethiopia</English>
+		<German>Äthiopien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_45</Tag>
+		<English>Libya</English>
+		<German>Libyen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_46</Tag>
+		<English>Central America, Carribean and Southern USA</English>
+		<German>Mittelamerika, Karibik und südliche USA</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_47</Tag>
+		<English>Eastern Mediterranean</English>
+		<German>Östliche Mittelmeerküste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_48</Tag>
+		<English>Black Sea</English>
+		<German>Schwarzes Meer</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_49</Tag>
+		<English>Cairo</English>
+		<German>Kairo</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_50</Tag>
+		<English>Mecca</English>
+		<German>Mekka</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_51</Tag>
+		<English>Baghdad</English>
+		<German>Bagdad</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_52</Tag>
+		<English>Vienna</English>
+		<German>Wien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_53</Tag>
+		<English>South Asia</English>
+		<German>Südasien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_54</Tag>
+		<English>North and Central America</English>
+		<German>Nord- und Mittelamerika</German>
 	</TEXT>
 </Civ4GameText>

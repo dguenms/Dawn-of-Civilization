@@ -855,12 +855,12 @@ class RFCUtils:
                 self.clearPlague(iCiv)
                 iNumLoyalCities = 0
                 iCounter = gc.getGame().getSorenRandNum(6, 'random start')
-                iNumPlayerCities = len(PyPlayer(iCiv).getCityList()) #needs to be assigned cause it changes dinamically
+                iNumPlayerCities = len(PyPlayer(iCiv).getCityList()) #needs to be assigned cause it changes dynamically
                 for pyCity in PyPlayer(iCiv).getCityList():
                         #print("iCounter",iCounter)
 			city = pyCity.GetCy()
-                        tCoords = (city.getX(), city.getY())
-                        pCurrent = gc.getMap().plot(tCoords[0], tCoords[1])
+			tCoords = (city.getX(), city.getY())
+			pCurrent = gc.getMap().plot(tCoords[0], tCoords[1])
                         #loyal cities for the human player
                         #print(bAssignOneCity,iNumLoyalCities,1+(iNumPlayerCities-1)/6,pyCity.GetCy().isCapital(),iCounter%6 == 0)
 			# Leoreth: Byzantine UP: cities in normal area immune to collapse [expires for AI after the MA]
@@ -931,7 +931,7 @@ class RFCUtils:
                                 self.flipUnitsInCityAfter(self.getTempFlippingCity(), iNewCiv)
                                 iCounter += 1                                      
                                 self.flipUnitsInArea([tCoords[0]-1,tCoords[1]-1], [tCoords[0]+1,tCoords[1]+1], iNewCiv, iCiv, False, True)
-                if (not bAssignOneCity and not (iCiv == con.iByzantium and gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval and (x,y) == con.tCapitals[0][con.iByzantium])):
+                if (not bAssignOneCity and not (iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and not self.isAVassal(con.iByzantium) and (bAssignOneCity or gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval))):
                         #self.flipUnitsInArea([0,0], [123,67], iNewCiv1, iCiv, False, True) #causes a bug: if a unit was inside another city's civ, when it becomes independent or barbarian, may raze it
                         self.killUnitsInArea([0,0], [123,67], iCiv)
                         self.resetUHV(iCiv)

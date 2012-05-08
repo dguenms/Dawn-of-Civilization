@@ -8,6 +8,7 @@ import Popup
 #import cPickle as pickle
 from StoredData import sd # edead
 import Consts as con
+import Victory as vic
 import RFCUtils
 utils = RFCUtils.RFCUtils()
 
@@ -177,6 +178,8 @@ tNWIndiaTL = (86, 37)
 tNWIndiaBR = (91, 43)
 
 lSiberianCoast = [(109, 50), (109, 51), (110, 51), (111, 51), (112, 52), (114, 54), (113, 55), (111, 54), (111, 55), (110, 55), (110, 58), (111, 58)]
+
+iMediterraneanTiles = 263
 
 # initialise player variables
 iEgypt = con.iEgypt
@@ -404,12 +407,6 @@ class Victory:
 
 	def setItalianTechs(self, i, iNewValue):
 		sd.scriptDict['lItalianTechs'][i] = iNewValue
-
-	def increaseItalianUniversities(self):
-		sd.scriptDict['iItalianUniversities'] += 1
-
-	def getItalianUniversities(self):
-		return sd.scriptDict['iItalianUniversities']
 
 	def getNumKoreanSinks(self):
 		return sd.scriptDict['iNumKoreanSinks']
@@ -1405,7 +1402,7 @@ class Victory:
                                                         
                                 if (iGameTurn == getTurnForYear(1940)):
                                         bFrance = self.checkOwnedCiv(iGermany, iFrance)
-                                        bRome = self.checkOwnedCiv(iGermany, iRome)
+                                        bRome = self.checkOwnedCiv(iGermany, iItaly)
                                         bRussia = self.checkOwnedCiv(iGermany, iRussia)
                                         bEngland = self.checkOwnedCiv(iGermany, iEngland)                                        
                                         bScandinavia = self.checkOwnedCiv(iGermany, iVikings)
@@ -1692,22 +1689,31 @@ class Victory:
 
 		elif iPlayer == iItaly:
 			if pItaly.isAlive():
+			
+				if iGameTurn == getTurnForYear(1500):
+					if self.getGoal(iItaly, 0) == -1:
+						self.setGoal(iItaly, 0, 0)
+			
+				if iGameTurn < getTurnForYear(1600):
+					iCount = 0
+					cityList = PyPlayer(iPlayer).getCityList()
+					for city in cityList:
+						pCity = city.GetCy()
+						if pCity.getCultureLevel() >= 4:
+							iCount += 1
+							
+					if iCount >= 3:
+						self.setGoal(iItaly, 1, 1)
 
-				if iGameTurn == getTurnForYear(1570):
+				if iGameTurn == getTurnForYear(1600):
 					if self.getGoal(iItaly, 1) == -1:
 						self.setGoal(iItaly, 1, 0)
 
 				if (iGameTurn == getTurnForYear(1930)):
-					bGreece = self.checkOwnedCiv(iItaly, iGreece)
-					bEthiopia = self.checkOwnedCiv(iItaly, iEthiopia)
-					bLibya = self.checkOwnedArea(iItaly, tLibyaTL, tLibyaBR, 1)
-
-					for iCiv in range(con.iNumPlayers):
-						if (iCiv != iItaly):
-							if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
-								bLibya = False
-
-					if bGreece and bEthiopia and bLibya:
+					iMediterranean = self.countControlledTiles(iItaly, tMediterraneanTL, tMediterraneanBR, False, tMediterraneanExceptions)
+					fMediterranean = iMediterranean * 100.0 / iMediterraneanTiles
+					
+					if fMediterranean >= 75.0:
 						self.setGoal(iItaly, 2, 1)
 					else:
 						self.setGoal(iItaly, 2, 0)
@@ -2252,38 +2258,58 @@ class Victory:
 				self.setGoal(iGreece, 0, 1)
 
 
-		# Italian UHV: Banking, Education, Radio, Fascism
-		if iTech == con.iBanking:
-			if self.getItalianTechs(0) == -1:
-				if iPlayer == iItaly:
-					self.setItalianTechs(0, 1)
-				else:
-					self.setGoal(iItaly, 0, 0)
+		# Italian UHV: Banking, Patronage, Education, Radio, Electricity, Fascism
+		#if iTech == con.iBanking:
+		#	if self.getItalianTechs(0) == -1:
+		#		if iPlayer == iItaly:
+		#			self.setItalianTechs(0, 1)
+		#		else:
+		#			print "Italian UHV: banking discovered by player " + str(iPlayer)
+		#			self.setGoal(iItaly, 0, 0)
+					
+		#elif iTech == con.iPatronage:
+		#	if self.getItalianTechs(1) == -1:
+		#		if iPlayer == iItaly:
+		#			self.setItalianTechs(1, 1)
+		#		else:
+		#			print "Italian UHV: patronage discovered by player " + str(iPlayer)
+		#			self.setGoal(iItaly, 0, 0)
 
-		elif iTech == con.iEducation:
-			if self.getItalianTechs(1) == -1:
-				if iPlayer == iItaly:
-					self.setItalianTechs(1, 1)
-				else:
-					self.setGoal(iItaly, 0, 0)
+		#elif iTech == con.iEducation:
+		#	if self.getItalianTechs(2) == -1:
+		#		if iPlayer == iItaly:
+		#			self.setItalianTechs(2, 1)
+		#		else:
+		#			print "Italian UHV: education discovered by player " + str(iPlayer)
+		#			self.setGoal(iItaly, 0, 0)
+					
+		#elif iTech == con.iElectricity:
+		#	if self.getItalianTechs(3) == -1:
+		#		if iPlayer == iItaly:
+		#			self.setItalianTechs(3, 1)
+		#		else:
+		#			print "Italian UHV: electricity discovered by player " + str(iPlayer)
+		#			self.setGoal(iItaly, 0, 0)
 
-		elif iTech == con.iRadio:
-			if self.getItalianTechs(2) == -1:
-				if iPlayer == iItaly:
-					self.setItalianTechs(2, 1)
-				else:
-					self.setGoal(iItaly, 0, 0)
+		#elif iTech == con.iRadio:
+		#	if self.getItalianTechs(4) == -1:
+		#		if iPlayer == iItaly:
+		#			self.setItalianTechs(4, 1)
+		#		else:
+		#			print "Italian UHV: radio discovered by player " + str(iPlayer)
+		#			self.setGoal(iItaly, 0, 0)
 
-		elif iTech == con.iFascism:
-			if self.getItalianTechs(3) == -1:
-				if iPlayer == iItaly:
-					self.setItalianTechs(3, 1)
-				else:
-					self.setGoal(iItaly, 0, 0)
+		#elif iTech == con.iFascism:
+		#	if self.getItalianTechs(5) == -1:
+		#		if iPlayer == iItaly:
+		#			self.setItalianTechs(5, 1)
+		#		else:
+		#			print "Italian UHV: fascism discovered by player " + str(iPlayer)
+		#			self.setGoal(iItaly, 0, 0)
 
-		if iTech in [con.iBanking, con.iEducation, con.iRadio, con.iFascism] and self.getGoal(iItaly, 0):
-			if self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1:
-				self.setGoal(iItaly, 0, 1)
+		#if iTech in [con.iBanking, con.iPatronage, con.iEducation, con.iElectricity, con.iRadio, con.iFascism] and self.getGoal(iItaly, 0) == -1:
+		#	if self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1 and self.getItalianTechs(4) == 1 and self.getItalianTechs(5) == 1:
+		#		self.setGoal(iItaly, 0, 1)
 					
 		# Korean UHV: Printing Press
 		if iTech == con.iPrintingPress:
@@ -2481,14 +2507,14 @@ class Victory:
 						self.setGoal(iKorea, 0, 0)     
 
 
-		elif (iPlayer == iRome):
-			if (pRome.isAlive() and pRome.isReborn()):
-				if (self.getGoal(iRome, 1) == -1):
-					if (iGameTurn <= getTurnForYear(1570)):
-						if iBuilding == con.iUniversity:
-							self.increaseItalianUniversities()
-							if self.getItalianUniversities() == 3:
-								self.setGoal(iRome, 1, 1)
+		#elif (iPlayer == iItaly):
+		#	if (pItaly.isAlive()):
+		#		if (self.getGoal(iItaly, 1) == -1):
+		#			if (iGameTurn <= getTurnForYear(1570)):
+		#				if iBuilding == con.iUniversity:
+		#					self.increaseItalianUniversities()
+		#					if self.getItalianUniversities() == 3:
+		#						self.setGoal(iItaly, 1, 1)
 
                 elif (iPlayer == iAmerica):
                         if (pAmerica.isAlive()):
@@ -2508,17 +2534,14 @@ class Victory:
 					if iBuilding == con.iIslamicCathedral:
 						if self.getNumBuildings(iMughals, con.iIslamicCathedral) >= 3:
 							self.setGoal(iMughals, 0, 1)
-							
-				if self.getGoal(iMughals, 1) == -1:
-					if iBuilding in [con.iTajMahal, con.iRedFort, con.iHarmandirSahib]:
-						bTajMahal = self.getNumBuildings(iMughals, con.iTajMahal) > 0
-						bRedFort = self.getNumBuildings(iMughals, con.iRedFort) > 0
-						bHarmandirSahib = self.getNumBuildings(iMughals, con.iHarmandirSahib) > 0
-						if bTajMahal and bRedFort and bHarmandirSahib:
-							self.setGoal(iMughals, 1, 1)
-							
+				
 		if iBuilding in [con.iTajMahal, con.iRedFort, con.iHarmandirSahib]:
-			if iPlayer != iMughals and self.getGoal(iMughals, 1) == -1:
+			if iPlayer == iMughals:
+				if self.getGoal(iMughals, 1) == -1:
+					self.setWondersBuilt(iMughals, self.getWondersBuilt(iMughals) + 1)
+				if self.getWondersBuilt(iMughals) == 3:
+					self.setGoal(iMughals, 1, 1)
+			else:
 				self.setGoal(iMughals, 1, 0)
 		
 		if iBuilding in [con.iNotreDame, con.iVersailles, con.iStatueOfLiberty, con.iEiffelTower]:
@@ -2529,6 +2552,15 @@ class Victory:
 					self.setGoal(iFrance, 2, 1)
 			else:
 				self.setGoal(iFrance, 2, 0)
+				
+		if iBuilding in [con.iSanMarcoBasilica, con.iSistineChapel, con.iLeaningTower]:
+			if iPlayer == iItaly:
+				if self.getGoal(iItaly, 0) == -1:
+					self.setWondersBuilt(iItaly, self.getWondersBuilt(iItaly) + 1)
+				if self.getWondersBuilt(iItaly) == 3:
+					self.setGoal(iItaly, 0, 1)
+			else:
+				self.setGol(iItaly, 0, 0)
 
 
 
@@ -2857,7 +2889,7 @@ class Victory:
 				iBestCulture = iTempCulture
 		return pBestCity
 		
-	def countControlledTiles(self, iPlayer, tTL, tBR, bVassals=False):
+	def countControlledTiles(self, iPlayer, tTL, tBR, bVassals=False, lExceptions=[]):
 		lValidOwners = [iPlayer]
 		iCount = 0
 		
@@ -2869,7 +2901,7 @@ class Victory:
 		for x in range(tTL[0], tBR[0]+1):
 			for y in range(tTL[1], tBR[1]+1):
 				plot = gc.getMap().plot(x, y)
-				if not plot.isWater() and plot.getOwner() in lValidOwners:
+				if not plot.isWater() and not (x,y) in lExceptions and plot.getOwner() in lValidOwners:
 					iCount += 1
 					
 		return iCount
@@ -3294,7 +3326,7 @@ class Victory:
 				aHelp.append(self.getIcon(iCounter >= 7) + 'Great people in Berlin: ' + str(iCounter) + '/7')
 			elif iGoal == 1:
                                	bFrance = self.checkOwnedCiv(iGermany, iFrance)
-                                bRome = self.checkOwnedCiv(iGermany, iRome)
+                                bRome = self.checkOwnedCiv(iGermany, iItaly)
                                 bRussia = self.checkOwnedCiv(iGermany, iRussia)
                                 bEngland = self.checkOwnedCiv(iGermany, iEngland)                                        
                                 bScandinavia = self.checkOwnedCiv(iGermany, iVikings)
@@ -3382,23 +3414,22 @@ class Victory:
 
 		elif iPlayer == iItaly:
 			if iGoal == 0:
-				bBanking = (self.getItalianTechs(0) == 1)
-				bEducation = (self.getItalianTechs(1) == 1)
-				bRadio = (self.getItalianTechs(2) == 1)
-				bFascism = (self.getItalianTechs(3) == 1)
-				aHelp.append(self.getIcon(bBanking) + 'Banking ' + self.getIcon(bEducation) + 'Education ' + self.getIcon(bRadio) + 'Radio ' + self.getIcon(bFascism) + 'Fascism')
+				bSanMarcoBasilica = (self.getNumBuildings(iItaly, con.iSanMarcoBasilica) > 0)
+				bSistineChapel = (self.getNumBuildings(iItaly, con.iSistineChapel) > 0)
+				bLeaningTower = (self.getNumBuildings(iItaly, con.iLeaningTower) > 0)
+				aHelp.append(self.getIcon(bSanMarcoBasilica) + 'San Marco Basilica ' + self.getIcon(bSistineChapel) + 'Sistine Chapel ' + self.getIcon(bLeaningTower) + 'Leaning Tower')
 			elif iGoal == 1:
-				iUniversities = self.getItalianUniversities()
-				aHelp.append(self.getIcon(iUniversities >= 3) + 'Univiersities built: ' + str(iUniversities) + '/3')
+				iCount = 0
+				cityList = PyPlayer(iPlayer).getCityList()
+				for city in cityList:
+					pCity = city.GetCy()
+					if pCity.getCultureLevel() >= 4:
+						iCount += 1
+				aHelp.append(self.getIcon(iCount >= 3) + 'Cities with influential culture: ' + str(iCount) + '/3')
 			elif iGoal == 2:
-				bGreece = self.checkOwnedCiv(iRome, iGreece)
-				bEthiopia = self.checkOwnedCiv(iRome, iEthiopia)
-				bLibya = self.checkOwnedArea(iRome, tLibyaTL, tLibyaBR, 1)
-				for iCiv in range(con.iNumPlayers):
-					if (iCiv != iRome):
-						if self.checkOwnedArea(iCiv, tLibyaTL, tLibyaBR, 1):
-							bLibya = False
-				aHelp.append(self.getIcon(bGreece) + 'Greece ' + self.getIcon(bLibya) + 'Libya ' + self.getIcon(bEthiopia) + 'Ethiopia')
+				iMediterranean = self.countControlledTiles(iItaly, tMediterraneanTL, tMediterraneanBR, False, tMediterraneanExceptions)
+				fMediterranean = iMediterranean * 100.0 / iMediterraneanTiles
+				aHelp.append(self.getIcon(fMediterranean >= 75.0) + 'Mediterranean territory: ' + (u"%.2f%%" % fMediterranean) + '/75%')
 				
 		elif iPlayer == iMongolia:
 			if iGoal == 1:

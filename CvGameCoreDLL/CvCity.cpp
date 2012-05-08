@@ -6793,18 +6793,22 @@ int CvCity::getReligionBadHappiness() const
 int CvCity::getReligionHappiness(ReligionTypes eReligion) const
 {
 	int iHappiness;
+	ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
 
 	iHappiness = 0;
 
 	if (isHasReligion(eReligion))
 	{
-		if (eReligion == GET_PLAYER(getOwnerINLINE()).getStateReligion())
+		if (eReligion == eStateReligion)
 		{
 			iHappiness += GET_PLAYER(getOwnerINLINE()).getStateReligionHappiness();
 		}
 		else
 		{
-			iHappiness += GET_PLAYER(getOwnerINLINE()).getNonStateReligionHappiness();
+			// Leoreth: no religion unhappiness from syncretic pairs Hinduism/Buddhism and Confucianism/Taoism
+			bool bSyncretism = ((eStateReligion == HINDUISM && eReligion == BUDDHISM) || (eStateReligion == BUDDHISM && eReligion == HINDUISM) || (eStateReligion == CONFUCIANISM && eReligion == TAOISM) || (eStateReligion == TAOISM && eReligion == CONFUCIANISM));
+			if (!bSyncretism)
+				iHappiness += GET_PLAYER(getOwnerINLINE()).getNonStateReligionHappiness();
 		}
 	}
 
@@ -7354,12 +7358,9 @@ int CvCity::getFreeSpecialist() const
     int iItalianSpecialists = 0;
 	int iCoreSpecialists = 0;
 
-    if (getOwner() == ROME && GET_PLAYER((PlayerTypes)ROME).isReborn() && GET_PLAYER((PlayerTypes)ROME).getCurrentEra() < 4)
+    if (getOwner() == ITALY && GET_PLAYER((PlayerTypes)ITALY).getCurrentEra() < 4)
     {
-        if (findPopulationRank() <= 3)
-        {
-            iItalianSpecialists++;
-        }
+		iItalianSpecialists = 1;
     }
 
 	//Leoreth: handle free specialists for core here for simplicity
@@ -8438,8 +8439,6 @@ bool CvCity::isSpecialistExtraYieldThreshold() const
 	int iBaseThreshold = GET_PLAYER(getOwner()).getSpecialistExtraYieldBaseThreshold();
 	int iEraThreshold = GET_PLAYER(getOwner()).getSpecialistExtraYieldEraThreshold();
 
-	return true;
-
 	if (iBaseThreshold == 0 && iEraThreshold == 0)
 	{
 		return false;
@@ -8482,18 +8481,6 @@ void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 	{
 		iNewYield += getExtraSpecialistYield(eYield, ((SpecialistTypes)iI));
 		iNewYield += getExtraSpecialistThresholdYield(eYield, ((SpecialistTypes)iI));
-
-		if (getOwner() == ITALY)
-		{
-			sprintf(szOut, "specialist %d, yield %d, getExtraSpecialistThresholdYield() = %d", iI, (int)eYield, getExtraSpecialistThresholdYield(eYield, ((SpecialistTypes)iI)));
-			GC.getGameINLINE().logMsg(szOut);
-
-			sprintf(szOut, "number of specialists %d: %d", iI, getSpecialistCount((SpecialistTypes)iI) + getFreeSpecialistCount((SpecialistTypes)iI));
-			GC.getGameINLINE().logMsg(szOut);
-
-			sprintf(szOut, "specialist %d, yield %d, getSpecialistThresholdExtraYield() = %d", iI, (int)eYield, GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(((SpecialistTypes)iI), eYield));
-			GC.getGameINLINE().logMsg(szOut);
-		}
 	}
 
 	if (iOldYield != iNewYield)

@@ -844,6 +844,10 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCarthage, (58, 39), 2)
                         utils.makeUnit(con.iWarElephant, iCarthage, (58, 39), 2)
 			
+		if iGameTurn == getTurnForYear(476):
+			if pItaly.isHuman() and pRome.isAlive():
+				utils.killAndFragmentCiv(iRome, iIndependent, iIndependent2, -1, False)
+			
                 #Colonists
                 if (iGameTurn == getTurnForYear(-850)):
                         self.giveEarlyColonists(iGreece)
@@ -2313,7 +2317,7 @@ class RiseAndFall:
 			if pRome.isAlive():
 				return
 				
-			cityList = utils.getCoreCityList(iCiv, 1)
+			cityList = utils.getCoreCityList(iRome, 0)
                         
 			iIndependentCities = 0
 

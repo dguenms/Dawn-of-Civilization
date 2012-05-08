@@ -5475,6 +5475,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									iValue /= 5;
 								}
 
+								/*if (GC.getGameINLINE().getActivePlayer() == ITALY)
+								{
+									if (iI == BANKING)
+										iValue /= 2;
+									if (iI == EDUCATION && getID() == CHINA)
+										iValue /= 2;
+								}*/
+
 
 								switch (getID())
 								{
@@ -5521,7 +5529,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue *= 2;
                                         iValue /= 3;
                                     }
-									if (iI == OPTICS || iI == ASTRONOMY || iI == LIBERALISM || iI == THEOLOGY)
+									if (iI == OPTICS || iI == ASTRONOMY || iI == LIBERALISM || iI == THEOLOGY || iI == BANKING || iI == EDUCATION)
 										iValue /= 4;
 									break;
 								case BABYLONIA:
@@ -5631,6 +5639,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                 case BYZANTIUM:
                                     if (iI == OPTICS || iI == GUNPOWDER || iI == ASTRONOMY)
                                         iValue /= 2;
+									else if (iI == BANKING)
+										iValue /= 5;
                                     break;
 								case VIKING:
 									if (iI == MACHINERY || iI == CIVIL_SERVICE)
@@ -5644,7 +5654,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 3;
 									}*/
 									if (iI == BANKING) {
-									    iValue /= 2;
+									    iValue /= 5;
 									}
 									break;
 								case KHMER:

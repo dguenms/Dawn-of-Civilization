@@ -80,7 +80,7 @@
 			<TechPrereq>TECH_REFORMATION</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ORTHODOX_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
-			<iSpreadFactor>100</iSpreadFactor>
+			<iSpreadFactor>70</iSpreadFactor>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
