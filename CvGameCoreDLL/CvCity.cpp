@@ -8448,7 +8448,7 @@ bool CvCity::isSpecialistExtraYieldThreshold() const
 	{
 		pLoopPlot = getCityIndexPlot(iI);
 
-		if (pLoopPlot->getWorkingCity() == this)
+		if (pLoopPlot->getWorkingCity() == this && pLoopPlot->isBeingWorked() && !pLoopPlot->isWater())
 		{
 			iCount++;
 		}
