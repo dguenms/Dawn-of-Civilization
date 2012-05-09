@@ -1699,7 +1699,7 @@ class Victory:
 					cityList = PyPlayer(iPlayer).getCityList()
 					for city in cityList:
 						pCity = city.GetCy()
-						if pCity.getCultureLevel() >= 4:
+						if pCity.getCultureLevel() >= 5:
 							iCount += 1
 							
 					if iCount >= 3:
@@ -3423,7 +3423,7 @@ class Victory:
 				cityList = PyPlayer(iPlayer).getCityList()
 				for city in cityList:
 					pCity = city.GetCy()
-					if pCity.getCultureLevel() >= 4:
+					if pCity.getCultureLevel() >= 5:
 						iCount += 1
 				aHelp.append(self.getIcon(iCount >= 3) + 'Cities with influential culture: ' + str(iCount) + '/3')
 			elif iGoal == 2:
