@@ -31556,7 +31556,7 @@
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
 			<TechTypes>
-				<PrereqTech>TECH_EDUCATION</PrereqTech>
+				<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
 			</TechTypes>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses/>
