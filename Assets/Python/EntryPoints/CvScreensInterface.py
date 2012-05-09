@@ -1085,7 +1085,7 @@ def getUHVTileInfo(argsList):
 		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iPersia]:
 			return 3
 			
-	elif iPlayer == con.iPersia and gc.getPlayer(con.iPersia).isReborn():
+	elif iPlayer == con.iPersia and CyGlobalContext().getPlayer(con.iPersia).isReborn():
 		tlx, tly = tSafavidMesopotamiaTL
 		brx, bry = tSafavidMesopotamiaBR
 		if x >= tlx and x <= brx and y >= tly and y <= bry:
