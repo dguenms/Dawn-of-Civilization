@@ -8454,6 +8454,8 @@ bool CvCity::isSpecialistExtraYieldThreshold() const
 		}
 	}
 
+	iCount--; // city tile shouldn't count
+
 	if (iCount <= iBaseThreshold + iEraThreshold * GET_PLAYER(getOwner()).getCurrentEra())
 	{
 		return true;
