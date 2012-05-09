@@ -1086,7 +1086,7 @@ class Victory:
 					if self.getGoal(iVikings, 1) == -1:
 						self.setGoal(iVikings, 1, 0)
 						
-				if self.getVikingGold() >= utils.getTurns(2000):
+				if self.getVikingGold() >= utils.getTurns(3000) and self.getGoal(iVikings, 2) == -1:
 					self.setGoal(iVikings, 2, 1)
 
                                 if (iGameTurn == getTurnForYear(1500)):
@@ -3181,7 +3181,7 @@ class Victory:
 				aHelp.append(self.getIcon(bEuropeanCore) + 'Controlling a European core')
 			elif iGoal == 2:
 				iGold = self.getVikingGold()
-				aHelp.append(self.getIcon(iGold >= utils.getTurns(2000)) + 'Acquired gold: ' + str(iGold) + '/'+str(utils.getTurns(2000)))
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(3000)) + 'Acquired gold: ' + str(iGold) + '/'+str(utils.getTurns(3000)))
 			
 
 		elif iPlayer == iArabia:

@@ -2668,10 +2668,10 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	int iCap = 3;
 	//if (iMaxEra >= 5 && iGameTurn > 420) //modern && year > 1940
 	if (iMaxEra >= 5 && iGameTurn > getTurnForYear(1940)) //modern && year > 1940 // edead
-		iCap = 4 + GC.getGameINLINE().countCivPlayersAlive()/17 + (bTech? 1:0); //16 Warlords, 13 vanilla (higher because of the addition of bTech)
+		iCap = 4 + GC.getGameINLINE().countCivPlayersAlive()/20 + (bTech? 1:0); //16 Warlords, 13 vanilla (higher because of the addition of bTech)
 	//else if (iMaxEra >= 4 && iGameTurn > 355) //industrial && year > 1800
 	else if (iMaxEra >= 4 && iGameTurn > getTurnForYear(1800)) //industrial && year > 1800
-		iCap = 3 + GC.getGameINLINE().countCivPlayersAlive()/17 + (bTech? 1:0);
+		iCap = 3 + GC.getGameINLINE().countCivPlayersAlive()/20 + (bTech? 1:0);
 	/*char buf3[50];
 	sprintf(buf3, "totalNodes: %d; iCap: %d; civsArray: [%d,%d,%d,%d,%d]", totalNodes, iCap, civsArray[0], civsArray[1], civsArray[2], civsArray[16], civsArray[26]);
 	GC.getGameINLINE().logMsg(buf3);*/
