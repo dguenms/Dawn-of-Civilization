@@ -6037,6 +6037,13 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 		if (AI_getMemoryCount(ePlayer, MEMORY_NUKED_US) > 0)
 			iRefuseDuration /= 2;
 		//Rhye - end
+		
+
+		// Leoreth: new French UP
+		if (getID() == FRANCE)
+		{
+			iRefuseDuration /= 2;
+		}
 
 		if (GET_TEAM(getTeam()).AI_getAtWarCounter(GET_PLAYER(ePlayer).getTeam()) < iRefuseDuration)
 		{
@@ -6207,14 +6214,14 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 
 	iAttitude += GC.getHandicapInfo(GET_PLAYER(ePlayer).getHandicapType()).getAttitudeChange();
 
-	//Rhye - start UP
-	if (ePlayer == FRANCE) {    // Leoreth - unaffected by Italy respawn
+	//Rhye - start UP (replaced by Leoreth)
+	/*if (ePlayer == FRANCE) {    // Leoreth - unaffected by Italy respawn
 		if ((getID() != ROME) && (getID() != GREECE)
 			&& (getID() != SPAIN) && (getID() != ENGLAND) && (getID() != HOLY_ROME) && (getID() != RUSSIA)
 			&& (getID() != VIKING)
 			&& (getID() != NETHERLANDS) && (getID() != PORTUGAL) && (getID() != GERMANY))
 			iAttitude += 8;
-	}
+	}*/
 	//Rhye - end UP
 
 	//Leoreth: Thai UP
@@ -10838,7 +10845,51 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iValue -= 40;
 		}
 
-		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || (getID() == ROME && GET_PLAYER((PlayerTypes)ROME).isReborn()))
+		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
+		{
+			iValue += 40;
+		}
+	}
+
+	// Leoreth: specialist threshold extra yield
+	if (getSpecialistExtraYieldBaseThreshold() > 0 || getSpecialistExtraYieldEraThreshold() > 0)
+	{
+		//GC.getGameINLINE().logMsg("Begin AI free core specialist.");
+		int iLoop;
+		int iX;
+		int iY;
+		CvCity* pLoopCity;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			int iPopulation = pLoopCity->getPopulation();
+			if (pLoopCity->isCoastal(20))
+			{
+				iPopulation -= 3;
+			}
+
+			if (iPopulation <= getSpecialistExtraYieldBaseThreshold() + getSpecialistExtraYieldEraThreshold() * getCurrentEra())
+			{
+				for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+				{
+					int iMultiplier = 3;
+
+					if (iI == YIELD_PRODUCTION)
+						iMultiplier = (AI_avoidScience()? 6 : 2);
+					else if (iI == YIELD_COMMERCE)
+						iMultiplier = (AI_avoidScience()? 1 : 2);
+
+					iValue += pLoopCity->getSpecialistPopulation() * iMultiplier;
+				}
+			}
+		}
+		//GC.getGameINLINE().logMsg("End AI free core specialist.");
+
+		if (getID() == MALI || getID() == EGYPT)
+		{
+			iValue -= 40;
+		}
+
+		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
 		{
 			iValue += 40;
 		}
@@ -12381,7 +12432,19 @@ void CvPlayerAI::AI_doCounter()
 				{
 					if (GC.getLeaderHeadInfo(getPersonalityType()).getMemoryDecayRand(iJ) > 0)
 					{
-						if (GC.getGameINLINE().getSorenRandNum(GC.getLeaderHeadInfo(getPersonalityType()).getMemoryDecayRand(iJ), "Memory Decay") == 0)
+						int iMemoryDecayRand = GC.getLeaderHeadInfo(getPersonalityType()).getMemoryDecayRand(iJ);
+
+						// Leoreth: new French UP
+						if (iI == FRANCE)
+						{
+							if (iJ != MEMORY_GIVE_HELP && iJ != MEMORY_ACCEPT_DEMAND && iJ != MEMORY_ACCEPTED_RELIGION && iJ != MEMORY_ACCEPTED_CIVIC && iJ != MEMORY_ACCEPTED_JOIN_WAR && iJ != MEMORY_ACCEPTED_STOP_TRADING && iJ != MEMORY_TRADED_TECH_TO_US && iJ != MEMORY_VOTED_FOR_US && iJ != MEMORY_EVENT_GOOD_TO_US && iJ != MEMORY_LIBERATED_CITIES)
+							{
+								iMemoryDecayRand *= 2;
+								iMemoryDecayRand /= 3;
+							}
+						}
+
+						if (GC.getGameINLINE().getSorenRandNum(iMemoryDecayRand, "Memory Decay") == 0)
 						{
 							AI_changeMemoryCount(((PlayerTypes)iI), ((MemoryTypes)iJ), -1);
 						}

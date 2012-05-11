@@ -92,6 +92,18 @@ lMombasa = [71, 22, 1100, 0] #231
 lKazan = [77, 55, 1200, 0] #241
 lKongo = [62, 20, 1483, 0] #278
 
+# do some research on dates here
+tMinorStates = (
+	(633, 1400, 96, 43, [con.iArcher, con.iSwordsman]),	# Tibet
+	(-75, 1600, 89, 46, [con.iHorseArcher]),		# Kashgar
+	(-75, 1600, 85, 47, [con.iHorseArcher]),		# Samarkand
+	(-300, 600, 91, 31, [con.iArcher, con.iSwordsman, con.iWarElephant]), # Chola
+	(-300, 600, 92, 33, [con.iArcher, con.iSwordsman, con.iWarElephant]), # Chola
+	(-300, 900, 105, 49, [con.iHorseArcher, con.iSwordsman]), # Manchu
+	(1100, 1500, 60, 44, [con.iPikeman, con.iLongbowman]), # Rome late
+	(0, 1100, 60, 44, [con.iSpearman, con.iArcher]), # Rome early
+)
+
 
 
 #handicap level modifier
@@ -119,6 +131,18 @@ class Barbs:
             
                 #handicap level modifier
                 iHandicap = (gc.getGame().getHandicapType() - 1)
+		
+		# Leoreth: buff certain cities if independent / barbarian (imported from SoI)
+		if iGameTurn % 20 == 10:
+			for tMinorCity in tMinorStates:
+				if iGameTurn > getTurnForYear(tMinorCity[0]) and iGameTurn < getTurnForYear(tMinorCity[1]):
+					plot = gc.getMap().plot(tMinorCity[2], tMinorCity[3])
+					iOwner = plot.getOwner()
+					if plot.isCity() and plot.getNumUnits() < 4 and iOwner >= con.iNumPlayers:
+						lUnitList = tMinorCity[4]
+						iRand = gc.getGame().getSorenRandNum(len(lUnitList), 'random unit')
+						iUnit = lUnitList[iRand]
+						utils.makeUnit(iUnit, iOwner, (tMinorCity[2], tMinorCity[3]), 1)
 
 		# Leoreth: Tibet
 		if iGameTurn == getTurnForYear(lLhasa[2]):
