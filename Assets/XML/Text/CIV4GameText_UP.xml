@@ -158,17 +158,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_FRA</Tag>
-		<English>The Power of the Entente:</English>
+		<English>The Power of Diplomacy:</English>
 		<French>Le Pouvoir de l'Entente :</French>
-		<German>Die Macht des Entente:</German>
+		<German>Die Macht der Diplomatie:</German>
 		<Italian>Il potere dell'entente:</Italian>
 		<Spanish>El poder de la entente:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_FRA2</Tag>
-		<English>Other civilizations have a friendlier attitude</English>
+		<English>Other civilizations are quicker to forget about your past transgressions</English>
 		<French>Les autres civilisations ont une attitude plus amicale</French>
-		<German>Freundlichere Haltung seitens anderer Zivilisationen</German>
+		<German>Andere Zivilisationen vergessen Ihre früheren Vergehen schneller</German>
 		<Italian>Le altre civilt&#224; hanno un atteggiamento più amichevole</Italian>
 		<Spanish>Las dem&#225;s civilizaciones mantienen una actitud m&#225;s amistosa</Spanish>
 	</TEXT>

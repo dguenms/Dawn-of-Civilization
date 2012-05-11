@@ -155,16 +155,15 @@
 # Dutch Dikes now require Replaceable Parts
 # Made Italy selectable from the start, not a rebirth of Rome anymore
 # Leaning Tower now also requires Philosophy
-# Education is now a medieval tech
 # Italian Art Studio now gives +25% culture instead of extra happiness
 # Statue of Liberty now requires coastal access
 # New Viking UHV:
 	- Control the core of another European civilization in 1050 AD
 	- Found a city in America by 1100 AD
-	- Acquire 2000 gold by pillaging, conquering cities and sinking ships by 1500 AD
+	- Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
 # New Viking UP: Additional gold from pillaging, conquering cities and sinking ships
 # New French UHV:
-	- Have 20000 culture in Paris in 1700 AD
+	- Have 25000 culture in Paris in 1700 AD
 	- Control or vassalize 50% of Europe and North America in 1800 AD
 	- Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD
 # The first Japanese goal now requires only 18000 culture
@@ -184,3 +183,6 @@
 	- Have three cities with influential culture by 1600 AD
 	- Control 75% of the Mediterranean in 1930 AD
 # no religious unhappiness for Hindu/Buddhist and Confucian/Taoist religion pairs
+# no foreign culture anger from independent culture
+# certain cities get additional defenders when controlled by barbarians or independents (Chola, Tibet, Manchu, Rome)
+# new French UP: The Power of Diplomacy: Other civilizations are quicker to forget about your past transgressions

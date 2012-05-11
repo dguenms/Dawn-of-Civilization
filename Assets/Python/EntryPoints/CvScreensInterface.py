@@ -1293,7 +1293,7 @@ def getUHVTileInfo(argsList):
 		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iEngland]:
 			return 39
 			
-		tlx, tly = con.tCoreAreasTL[0][coniVikings]
+		tlx, tly = con.tCoreAreasTL[0][con.iVikings]
 		brx, bry = con.tCoreAreasBR[0][con.iVikings]
 		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iVikings]:
 			return 40

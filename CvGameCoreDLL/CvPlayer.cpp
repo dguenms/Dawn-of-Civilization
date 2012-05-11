@@ -18207,6 +18207,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iStateReligionUnitProductionModifier);
 	pStream->Read(&m_iStateReligionBuildingProductionModifier);
 	pStream->Read(&m_iStateReligionFreeExperience);
+	pStream->Read(&m_iSpecialistExtraYieldBaseThreshold); //Leoreth
+	pStream->Read(&m_iSpecialistExtraYieldEraThreshold); //Leoreth
 	pStream->Read(&m_iCapitalCityID);
 	pStream->Read(&m_iCitiesLost);
 	pStream->Read(&m_iWinsVsBarbs);
@@ -18319,6 +18321,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	for (iI=0;iI<GC.getNumSpecialistInfos();iI++)
 	{
 		pStream->Read(NUM_YIELD_TYPES, m_ppaaiSpecialistExtraYield[iI]);
+		pStream->Read(NUM_YIELD_TYPES, m_ppaaiSpecialistThresholdExtraYield[iI]); //Leoreth
 	}
 
 	for (iI=0;iI<GC.getNumImprovementInfos();iI++)
@@ -18715,6 +18718,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iStateReligionUnitProductionModifier);
 	pStream->Write(m_iStateReligionBuildingProductionModifier);
 	pStream->Write(m_iStateReligionFreeExperience);
+	pStream->Write(m_iSpecialistExtraYieldBaseThreshold); //Leoreth
+	pStream->Write(m_iSpecialistExtraYieldEraThreshold); //Leoreth
 	pStream->Write(m_iCapitalCityID);
 	pStream->Write(m_iCitiesLost);
 	pStream->Write(m_iWinsVsBarbs);
@@ -18827,6 +18832,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	for (iI=0;iI<GC.getNumSpecialistInfos();iI++)
 	{
 		pStream->Write(NUM_YIELD_TYPES, m_ppaaiSpecialistExtraYield[iI]);
+		pStream->Write(NUM_YIELD_TYPES, m_ppaaiSpecialistThresholdExtraYield[iI]); //Leoreth
 	}
 
 	for (iI=0;iI<GC.getNumImprovementInfos();iI++)
