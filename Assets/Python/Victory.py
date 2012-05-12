@@ -2150,12 +2150,12 @@ class Victory:
                 #                                if (iGameTurn <= getTurnForYear(1745)):
                 #                                        self.setGoal(iMaya, 2, 0)
                                         
-                elif (iPlayer == iRussia):
-                        if (pRussia.isAlive()):
-                                if (bConquest):
-                                        if (self.getGoal(iRussia, 2) == -1):
-                                                if (iGameTurn <= getTurnForYear(1950)):
-                                                        self.setGoal(iRussia, 2, 0)
+                #elif (iPlayer == iRussia):
+                #        if (pRussia.isAlive()):
+                #                if (bConquest):
+                #                        if (self.getGoal(iRussia, 2) == -1):
+                #                                if (iGameTurn <= getTurnForYear(1950)):
+                #                                        self.setGoal(iRussia, 2, 0)
 
 		elif (iPlayer == iEngland):
                         if (iGameTurn <= getTurnForYear(1730)):
