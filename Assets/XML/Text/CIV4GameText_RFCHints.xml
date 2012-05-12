@@ -191,9 +191,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_24</Tag>
-		<English>Combining police state and free speech isn't a good idea.</English>
+		<English>Combining Totalitarianism and Universal Suffrage isn't a good idea.</English>
 		<French>Il est déconseillé d'instaurer la liberté d'expression dans un état policier.</French>
-		<German>Die Kombination von Polizeistaat und Meinungsfreiheit ist keine gute Idee.</German>
+		<German>Die Kombination von Totalitarismus und Allgemeines Wahlrecht ist keine gute Idee.</German>
 		<Italian>Combinare lo stato di polizia con la libert&#224; di parola non &#232; una buona idea.</Italian>
 		<Spanish>Combinar Estado policial y Libertad de expresi&#243;n no es una buena idea.</Spanish>
 	</TEXT>
@@ -387,7 +387,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_6</Tag>
-		<English>Pagan Temples cannot be built in cities that have a religion, and spreading religions replace Pagan Temples with their own.</English>
+		<English>Pagan Temples cannot be built in cities that have a religion, and when a religion spreads to a city with a Pagan Temple, it is replaced by that religion's temple instead.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_7</Tag>
@@ -407,7 +407,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_11</Tag>
-		<English>To play as Italy, play another civilization until they spawn in the 12th century, then take control of them. You can even switch if you have done that already.</English>
+		<English>Related religions like Hinduism and Buddhism or Confucianism and Taoism don't create unhappiness if the one of them is your state religion</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_12</Tag>
@@ -415,7 +415,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_13</Tag>
-		<English>Adopt the Vassalage civic to gain access to Levies, Knights and Castles.</English>
+		<English>Adopt the Vassalage civic to gain access to Levies.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_14</Tag>

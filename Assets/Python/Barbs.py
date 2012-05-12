@@ -369,7 +369,7 @@ class Barbs:
                 #self.foundCity(iCeltia, lInverness, "Inbhir Nis", iGameTurn, 2, -1, -1)
 		#self.foundCity(iCeltia, lEdinburgh, "Dun Eideann", iGameTurn, 2, -1, -1)
                 #self.foundCity(iNative, lChichenItza, "Chichen Itza", iGameTurn, 1, -1, -1)
-                self.foundCity(iBarbarian, lBaku, "Bak&#252;", iGameTurn, 2, con.iArcher, -1)
+                #self.foundCity(iBarbarian, lBaku, "Bak&#252;", iGameTurn, 2, con.iArcher, -1)
                 self.foundCity(iBarbarian, lLhasa, "Lasa", iGameTurn, 2, -1, -1)
                 #bLhasaResult = self.foundCity(iBarbarian, lLhasa, "Lasa", iGameTurn, 2, -1, -1)
                 #if (bLhasaResult == False):

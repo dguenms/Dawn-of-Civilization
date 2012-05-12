@@ -930,7 +930,7 @@ class RiseAndFall:
                         CyInterface().addMessage(CyGame().getActivePlayer(), True , con.iDuration, CyTranslator().getText("TXT_KEY_SELJUK_HORDES", ()), "", 1 , "", ColorTypes(con.iRed),0,0,False,False)
 
 		if iGameTurn == getTurnForYear(1070 + utils.getSeed()/10 - 5): #Linkman226- Seljuks
-                        tSpawnPlots = ((77,41), (74, 43), (73, 40))
+                        tSpawnPlots = ((77,41), (74, 43), (72, 44))
                         for plot in tSpawnPlots:
 				spawnPlot = utils.getFreePlot(plot[0], plot[1])
                                 utils.makeUnitAI(con.iSeljukGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
@@ -4079,7 +4079,7 @@ class RiseAndFall:
                 if (iCiv == iKhmer):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
-                        utils.makeUnit(con.iKhmerBallistaElephant, iCiv, tPlot, 2)
+                        utils.makeUnitAI(con.iKhmerBallistaElephant, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
                         utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
 			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)

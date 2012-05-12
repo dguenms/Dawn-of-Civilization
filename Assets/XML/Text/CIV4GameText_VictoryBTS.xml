@@ -54,9 +54,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM1</Tag>
-		<English>Control Shwedagon Paya, Borobudur and Wat Preah Pisnulok in 1450 AD</English>
+		<English>Build four Buddhist and Hindu Monasteries and Angkor Wat by 1200 AD</English>
 		<French>Avoir plus de 12000 en Culture en 1450 ap. J.-C.</French>
-		<German>Kontrollieren Sie im Jahr 1450 n. Chr. Shwedagon Paya, Borobudur und Wat Preah Pisnulok</German>
+		<German>Bauen Sie bis zum Jahr 1200 n. Chr. vier Buddhistische und Hinduistische Klöster und Angkor Wat</German>
 		<Italian>Devi avere più di 12.000 cultura nel 1450 d.C.</Italian>
 		<Spanish>Conseguir una cultura superior a 12.000 en el 1450 d. C.</Spanish>
 	</TEXT>
@@ -70,9 +70,25 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM3</Tag>
-		<English>Spread Buddhism and Hinduism to 35% combined after 1000 AD</English>
+		<English>Have 8000 culture by 1450 AD</English>
 		<French>Répandre le Bouddhisme à 30%</French>
-		<German>Sorgen Sie für eine zusammen genommen 35%-ige Verbreitung des Buddhismus und Hinduismus nach 1000 n. Chr.</German>
+		<German>Haben Sie bis zum Jahr 1450 n. Chr. 8000 Kulturpunkte</German>
+		<Italian>Diffondi il buddismo al 30%</Italian>
+		<Spanish>Propagar el Budismo al 30%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM3_EPIC</Tag>
+		<English>Have 12000 culture by 1450 AD</English>
+		<French>Répandre le Bouddhisme à 30%</French>
+		<German>Haben Sie bis zum Jahr 1450 n. Chr. 12000 Kulturpunkte</German>
+		<Italian>Diffondi il buddismo al 30%</Italian>
+		<Spanish>Propagar el Budismo al 30%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM3_MARATHON</Tag>
+		<English>Have 24000 culture by 1450 AD</English>
+		<French>Répandre le Bouddhisme à 30%</French>
+		<German>Haben Sie bis zum Jahr 1450 n. Chr. 24000 Kulturpunkte</German>
 		<Italian>Diffondi il buddismo al 30%</Italian>
 		<Spanish>Propagar el Budismo al 30%</Spanish>
 	</TEXT>
