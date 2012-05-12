@@ -186,3 +186,8 @@
 # no foreign culture anger from independent culture
 # certain cities get additional defenders when controlled by barbarians or independents (Chola, Tibet, Manchu, Rome)
 # new French UP: The Power of Diplomacy: Other civilizations are quicker to forget about your past transgressions
+# New Khmer UHV:
+	- Build four Buddhist and Hindu monasteries and Angkor Wat by 1200 AD
+	- Have an average city size of 10 in 1450 AD
+	- Have 8000 culture by 1450 AD
+# New third Indian goal: Control 20% of the world's population in 1200 AD

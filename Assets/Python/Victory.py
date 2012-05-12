@@ -637,20 +637,34 @@ class Victory:
 					else:
 						self.setGoal(iIndia, 0, 0)     
                                                                 
-                                if (iGameTurn == getTurnForYear(1200)):
-                                        iPop = pIndia.getRealPopulation()
-                                        #iPop = pIndia.getTotalPopulation()
-                                        #print ("india pop", pIndia.getTotalPopulation(), pIndia.getRealPopulation())
-                                        bFirst = True
-                                        for iCiv in range(iNumPlayers):
-                                                #print ("other pop", iCiv, gc.getPlayer(iCiv).getTotalPopulation(), gc.getPlayer(iCiv).getRealPopulation())
-                                                if (iPop < gc.getPlayer(iCiv).getRealPopulation()):
-                                                        bFirst = False
-                                                        break
-                                        if (bFirst):                                                
-                                                self.setGoal(iIndia, 2, 1)
-                                        else:
-                                                self.setGoal(iIndia, 2, 0)
+                                #if (iGameTurn == getTurnForYear(1200)):
+                                #        iPop = pIndia.getRealPopulation()
+                                #        #iPop = pIndia.getTotalPopulation()
+                                #        #print ("india pop", pIndia.getTotalPopulation(), pIndia.getRealPopulation())
+                                #        bFirst = True
+                                #        for iCiv in range(iNumPlayers):
+                                #                #print ("other pop", iCiv, gc.getPlayer(iCiv).getTotalPopulation(), gc.getPlayer(iCiv).getRealPopulation())
+                                #                if (iPop < gc.getPlayer(iCiv).getRealPopulation()):
+                                #                        bFirst = False
+                                #                        break
+                                #        if (bFirst):                                                
+                                #                self.setGoal(iIndia, 2, 1)
+                                #        else:
+                                #                self.setGoal(iIndia, 2, 0)
+				
+				
+				if iGameTurn == getTurnForYear(1200):
+					totalPop = gc.getGame().getTotalPopulation()
+					ourPop = teamIndia.getTotalPopulation()
+					if (totalPop > 0):
+						popPercent = (ourPop * 100.0) / totalPop
+					else:
+						popPercent = 0.0
+
+					if popPercent >= 20.0:
+						self.setGoal(iIndia, 2, 1)
+					else:
+						self.setGoal(iIndia, 2, 0)
 
 				if iGameTurn == getTurnForYear(700):
 					if self.getGoal(iIndia, 1) == -1:
@@ -1149,23 +1163,28 @@ class Victory:
 
                 elif (iPlayer == iKhmer):
                         if (pKhmer.isAlive()):
+				
+				if iGameTurn == getTurnForYear(1200):
+					if self.getGoal(iKhmer, 0) == -1:
+						self.setGoal(iKhmer, 0, 0)
 
-                                #if (iGameTurn == getTurnForYear(1450)):
-                                #        print ("khmer culture", pKhmer.countTotalCulture())
-                                #        if (pKhmer.countTotalCulture() >= utils.getTurns(12000)):
-                                #                self.setGoal(iKhmer, 0, 1)
-                                #        else:
-                                #                self.setGoal(iKhmer, 0, 0)
+                                if (iGameTurn == getTurnForYear(1450)):
+					if self.getGoal(iKhmer, 2) == -1:
+						self.setGoal(iKhmer, 2, 0)
+						
+				if self.getGoal(iKhmer, 2) == -1:
+                                        if (pKhmer.countTotalCulture() >= utils.getTurns(8000)):
+                                                self.setGoal(iKhmer, 2, 1)
 
 				# Leoreth: new first goal: control Shwedagon Paya, Borobudur and Wat Preah Pisnulok in 1450 AD
-				if iGameTurn == getTurnForYear(1450):
-					bShwedagon = (self.getNumBuildings(iKhmer, con.iShwedagonPaya) > 0)
-					bBorobudur = (self.getNumBuildings(iKhmer, con.iBorobudur) > 0)
-					bAngkorWat = (self.getNumBuildings(iKhmer, con.iAngkorWat) > 0)
-					if bShwedagon and bBorobudur and bAngkorWat:
-						self.setGoal(iKhmer, 0, 1)
-					else:
-						self.setGoal(iKhmer, 0, 0)
+				#if iGameTurn == getTurnForYear(1450):
+				#	bShwedagon = (self.getNumBuildings(iKhmer, con.iShwedagonPaya) > 0)
+				#	bBorobudur = (self.getNumBuildings(iKhmer, con.iBorobudur) > 0)
+				#	bAngkorWat = (self.getNumBuildings(iKhmer, con.iAngkorWat) > 0)
+				#	if bShwedagon and bBorobudur and bAngkorWat:
+				#		self.setGoal(iKhmer, 0, 1)
+				#	else:
+				#		self.setGoal(iKhmer, 0, 0)
 
                                                 
                                 if (iGameTurn == getTurnForYear(1450)):
@@ -1184,11 +1203,11 @@ class Victory:
                                         #                self.setGoal(iKhmer, 1, 0)
 
 
-                                if self.getGoal(iKhmer, 2) == -1 and iGameTurn >= getTurnForYear(1000):
-                                        religionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism) + gc.getGame().calculateReligionPercent(con.iHinduism)
-                                        #print ("religionPercent", religionPercent)
-                                        if (religionPercent >= 35.0):
-                                                self.setGoal(iKhmer, 2, 1)
+                                #if self.getGoal(iKhmer, 2) == -1 and iGameTurn >= getTurnForYear(1000):
+                                #        religionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism) + gc.getGame().calculateReligionPercent(con.iHinduism)
+                                #        #print ("religionPercent", religionPercent)
+                                #        if (religionPercent >= 35.0):
+                                #                self.setGoal(iKhmer, 2, 1)
 
 		elif (iPlayer == iIndonesia):
 			if (pIndonesia.isAlive()):
@@ -2534,6 +2553,13 @@ class Victory:
 					if iBuilding == con.iIslamicCathedral:
 						if self.getNumBuildings(iMughals, con.iIslamicCathedral) >= 3:
 							self.setGoal(iMughals, 0, 1)
+							
+		elif iPlayer == iKhmer:
+			if pKhmer.isAlive():
+				if self.getGoal(iKhmer, 0) == 1:
+					if iBuilding in [con.iBuddhistMonastery, con.iHinduMonastery]:
+						if self.getWondersBuilt(iKhmer) >= 1 and self.getNumBuildings(iKhmer, con.iBuddhistMonastery) >= 4 and self.getNumBuildings(iKhmer, con.iHinduMonastery) >= 4:
+							self.setGoal(iKhmer, 0, 1)
 				
 		if iBuilding in [con.iTajMahal, con.iRedFort, con.iHarmandirSahib]:
 			if iPlayer == iMughals:
@@ -2561,6 +2587,15 @@ class Victory:
 					self.setGoal(iItaly, 0, 1)
 			else:
 				self.setGoal(iItaly, 0, 0)
+				
+		if iBuilding == con.iAngkorWat:
+			if iPlayer == iKhmer:
+				if self.getGoal(iKhmer, 0) == -1:
+					self.setWondersBuilt(iKhmer, 1)
+					if self.getNumBuildings(iKhmer, con.iBuddhistMonastery) >= 4 and self.getNumBuildings(iKhmer, con.iHinduMonastery) >= 4:
+						self.setGoal(iKhmer, 0, 1)
+			else:
+				self.setGoal(iKhmer, 0, 0)
 
 
 
@@ -2979,9 +3014,13 @@ class Victory:
 					iCounter += self.getNumBuildings(iIndia, iTemple)
 				aHelp.append(self.getIcon(iCounter >= 20) + 'Temples built: ' + str(iCounter) + '/20')
 			elif iGoal == 2:
-				iHighestCiv = self.getHighestPopulationCiv(iIndia)
-				bHighest = (iHighestCiv == iIndia)
-				aHelp.append(self.getIcon(bHighest) + 'Civilization with the largest population: ' + CyTranslator().getText(str(gc.getPlayer(iHighestCiv).getCivilizationShortDescriptionKey()),()))
+				totalPop = gc.getGame().getTotalPopulation()
+				ourPop = teamIndia.getTotalPopulation()
+				if (totalPop > 0):
+					popPercent = (ourPop * 100.0) / totalPop
+				else:
+					popPercent = 0.0
+				aHelp.append(self.getIcon(popPercent >= 20.0) + 'Percentage of world population: ' + (u"%.2f%%" % popPercent) + '/20%')
 
 		elif iPlayer == iChina:
 			if iGoal == 0:
@@ -3204,10 +3243,10 @@ class Victory:
 
 		elif iPlayer == iKhmer:
 			if iGoal == 0:
-				bShwedagon = (self.getNumBuildings(iKhmer, con.iShwedagonPaya) > 0)
-				bBorobudur = (self.getNumBuildings(iKhmer, con.iBorobudur) > 0)
-				bAngkorWat = (self.getNumBuildings(iKhmer, con.iAngkorWat) > 0)
-				aHelp.append(self.getIcon(bShwedagon) + 'Shwedagon Paya ' + self.getIcon(bBorobudur) + 'Borobudur ' + self.getIcon(bAngkorWat) + 'Wat Preah Pisnulok')
+				iBuddhism = self.getNumBuildings(iKhmer, con.iBuddhistMonastery)
+				iHinduism = self.getNumBuildings(iKhmer, con.iHinduMonastery)
+				bAngkorWat = (self.getWondersBuilt(iKhmer) >= 1)
+				aHelp.append(self.getIcon(iBuddhism >= 4) + 'Buddhist monasteries: ' + str(iBuddhism) + '/4 ' + self.getIcon(iHinduism >= 4) + 'Hindu monasteries: ' + str(iHinduism) + '/4 ' + self.getIcon(bAngkorWat) + 'Angkor Wat')
 			elif iGoal == 1:
 				apCityList = PyPlayer(iKhmer).getCityList()
                                 iTotalPopulation = 0
@@ -3219,8 +3258,8 @@ class Victory:
 					fPopPerCity = 0
 				aHelp.append(self.getIcon(fPopPerCity >= 10.0) + 'Average population per city: ' + str(fPopPerCity) + '/10')
 			elif iGoal == 2:
-                                fReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism) + gc.getGame().calculateReligionPercent(con.iHinduism)
-				aHelp.append(self.getIcon(fReligionPercent >= 35.0) + 'Buddhism and Hinduism spread to: ' + (u"%.2f%%" % fReligionPercent) + '/30 %')
+				iCulture = pKhmer.countTotalCulture()
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(8000)) + 'Total culture: ' + str(iCulture) + '/' + str(utils.getTurns(8000)))
 
 		elif iPlayer == iIndonesia:
 			if iGoal == 0:
