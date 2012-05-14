@@ -793,7 +793,7 @@ class Victory:
 				else:
 					if iGameTurn == getTurnForYear(1650):
 						iCount = 0
-						for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iEngland, iRussia, iNetherlands, iPortugal]:
+						for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iEngland, iRussia, iNetherlands, iPortugal, iItaly]:
 							if teamPersia.isOpenBorders(iEurociv):
 								iCount += 1
 						if iCount >= 6:
@@ -2696,7 +2696,7 @@ class Victory:
 	def onVassalState(self, iMaster, iVassal):
 		if iMaster == iHolyRome:
 			iCount = 0
-			for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPortugal, iNetherlands]:
+			for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPortugal, iItaly, iNetherlands]:
 				if utils.getMaster(iCiv) == iHolyRome:
 					iCount += 1
 			if iCount >= 3:

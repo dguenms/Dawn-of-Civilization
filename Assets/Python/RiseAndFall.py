@@ -3620,7 +3620,7 @@ class RiseAndFall:
 
 	def handleColonialAcquisition(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		targetList = utils.getColonialTargets(iPlayer)
+		targetList = utils.getColonialTargets(iPlayer, True)
 		targetCivList = []
 
 		iGold = len(targetList) * 200
