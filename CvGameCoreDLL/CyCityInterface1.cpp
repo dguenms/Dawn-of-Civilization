@@ -480,5 +480,7 @@ void CyCityPythonInterface1(python::class_<CyCity>& x)
 
 		.def("changeBuildingCommerceChange", &CyCity::changeBuildingCommerceChange, "void (int eBuildingClass, int eCommerce, int iChange)")
 		.def("updateBuildingCommerce", &CyCity::updateBuildingCommerce, "void ()")
+
+		.def("getRegionID", &CyCity::getRegionID, "int ()")
 		;
 }

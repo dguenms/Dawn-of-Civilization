@@ -184,6 +184,8 @@ public:
 	void changePopulation(int iChange);
 	long getRealPopulation();
 
+	int getRegionID(); //Leoreth
+
 	int getHighestPopulation();
 	void setHighestPopulation(int iNewValue);
 	int getWorkingPopulation();

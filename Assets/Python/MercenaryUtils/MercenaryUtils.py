@@ -2957,32 +2957,97 @@ class Mercenary:
         #Rhye - start continents
 	def canHireUnit(self, iPlayer):
                 #return True
-                teamPlayer = gc.getTeam(gc.getPlayer(iPlayer).getTeam())
-                for iLoopGroup in range (len(con.lCivGroups)):
-                        if (iPlayer in con.lCivGroups[iLoopGroup]):
-                                for iLoopCiv in range (con.iNumMajorPlayers):
-                                        bValid = False
-                                        if (iLoopCiv in con.lCivGroups[iLoopGroup]):
-                                                bValid = True
-                                        else:
-                                                if (teamPlayer.canContact(iLoopCiv)):
-                                                        if (iPlayer in con.lCivBioOldWorld):
-                                                                if (iLoopCiv in con.lCivBioOldWorld):
-                                                                        bValid = True
-                                                        elif (iPlayer in con.lCivBioNewWorld):
-                                                                if (iLoopCiv in con.lCivBioOldWorld):
-                                                                        apCityList = PyPlayer(iLoopCiv).getCityList()
-                                                                        for pCity in apCityList:
-                                                                                if (pCity.GetCy().getX() <= 43): #beginning of Americas
-                                                                                        if (gc.getGame().getGameTurn() >= pCity.GetCy().getGameTurnFounded() + 15):
-                                                                                                bValid = True
-                                        if (bValid):
-                                                apCityList = PyPlayer(iLoopCiv).getCityList()
-                                                for pCity in apCityList:			
-                                                        if (pCity.GetCy().canTrain(self.getUnitInfoID(),False,False) or (iPlayer in con.lCivBioOldWorld and self.getUnitInfoID() == con.iHolyRomanLandsknecht and pCity.GetCy().canTrain(con.iPikeman,False,False))):
-                                                                #print ("city true", pCity.GetCy().getName(),self.getUnitInfoID())
-                                                                return True
-                return False
+                #teamPlayer = gc.getTeam(gc.getPlayer(iPlayer).getTeam())
+                #for iLoopGroup in range (len(con.lCivGroups)):
+                #        if (iPlayer in con.lCivGroups[iLoopGroup]):
+                #                for iLoopCiv in range (con.iNumMajorPlayers):
+                #                        bValid = False
+                #                        if (iLoopCiv in con.lCivGroups[iLoopGroup]):
+                #                                bValid = True
+                #                        else:
+                #                                if (teamPlayer.canContact(iLoopCiv)):
+                #                                        if (iPlayer in con.lCivBioOldWorld):
+                #                                                if (iLoopCiv in con.lCivBioOldWorld):
+                #                                                        bValid = True
+                #                                        elif (iPlayer in con.lCivBioNewWorld):
+                #                                                if (iLoopCiv in con.lCivBioOldWorld):
+                #                                                        apCityList = PyPlayer(iLoopCiv).getCityList()
+                #                                                        for pCity in apCityList:
+                #                                                                if (pCity.GetCy().getX() <= 43): #beginning of Americas
+                #                                                                        if (gc.getGame().getGameTurn() >= pCity.GetCy().getGameTurnFounded() + 15):
+                #                                                                                bValid = True
+                ##                        if (bValid):
+                #                                apCityList = PyPlayer(iLoopCiv).getCityList()
+                #                                for pCity in apCityList:			
+                #                                        if (pCity.GetCy().canTrain(self.getUnitInfoID(),False,False) or (iPlayer in con.lCivBioOldWorld and self.getUnitInfoID() == con.iHolyRomanLandsknecht and pCity.GetCy().canTrain(con.iPikeman,False,False))):
+                #                                                #print ("city true", pCity.GetCy().getName(),self.getUnitInfoID())
+                #                                                return True
+		
+		# Leoreth: special treatment for new world and unique units, similar to SoI
+		
+		unitType = self.getUnitInfoID()
+		iStateReligion = gc.getPlayer(iPlayer).getStateReligion()
+		bNewWorldDiscovered = (sd.scriptDict['lNewWorld'][0] != -1)
+		
+		regionList = []
+		cityList = PyPlayer(iPlayer).getCityList()
+		for pCity in cityList:
+			city = pCity.GetCy()
+			regionList.append(city.getRegionID())
+			
+		bNewWorldOnly = True
+		for iRegion in regionList:
+			if iRegion not in con.mercRegions[con.iArea_SouthAmerica] or iRegion not in con.mercRegions[con.iArea_NorthAmerica]:
+				bNewWorldOnly = False
+				
+		if bNewWorldOnly and not bNewWorldDiscovered:
+			if not gc.getPlayer(iPlayer).canTrain(unitType, False, False):
+				return False
+				
+		if unitType == con.iIncanQuechua:
+			return con.rPeru in regionList or (gc.getPlayer(iPlayer).canContact(con.iInca) and (bNewWorldOnly or bNewWorldDiscovered))
+		elif unitType == con.iAztecJaguar:
+			return con.rMesoamerica in regionList or (gc.getPlayer(iPlayer).canContact(con.iAztecs) and (bNewWorldOnly or bNewWorldDiscovered))
+		elif unitType == con.iMayaHolkan:
+			return con.rMesoamerica in regionList or (gc.getPlayer(iPlayer).canContact(con.iMaya) and (bNewWorldOnly or bNewWorldDiscovered))
+			
+		elif unitType in [con.iCelticGallicWarrior, con.iVikingBerserker, con.iHolyRomanLandsknecht, con.iFrenchMusketeer]:
+			return set(regionList) & con.mercRegions[con.iArea_Europe]
+		elif unitType == con.iRomePraetorian:
+			return (gc.getPlayer(con.iRome).isAlive() or gc.getPlayer(con.iByzantium).isAlive()) and (set(regionList) & con.mercRegions[con.iArea_Europe] or con.rAnatolia in regionList)
+		elif unitType == con.iGreekPhalanx:
+			return gc.getPlayer(con.iGreece).isAlive() and set(regionList) & con.mercRegions[con.iArea_Europe]
+		elif unitType in [con.iSumerianVulture, con.iBabylonBowman]:
+			return gc.getPlayer(con.iBabylonia).isAlive() and con.rMesopotamia in regionList
+		elif unitType == con.iNativeAmericanDogSoldier:
+			return set(regionList) & con.mercRegions[con.iArea_NorthAmerica]
+		elif unitType in [con.iJapanSamurai, con.iChinaChokonu, con.iThaiChangSuek, con.iKhmerBallistaElephant]:
+			return set(regionList) & con.mercRegions[con.iArea_EastAsia]
+		elif unitType in [con.iIranianQizilbash, con.iOttomanJanissary, con.iArabiaCamelArcher, con.iSeljukGhulamWarrior]:
+			return iStateReligion == con.iIslam and set(regionList) & con.mercRegions[con.iArea_MiddleEast]
+		elif unitType in [con.iZuluImpi, con.iEthiopianOromoWarrior, con.iMaliSkirmisher]:
+			return set(regionList) & con.mercRegions[con.iArea_Africa]
+		elif unitType == con.iEgyptWarChariot:
+			return gc.getPlayer(con.iEgypt).isAlive() and (con.rEgypt in regionList or con.rMesopotamia in regionList or con.rMaghreb in regionList)
+		elif unitType == con.iPersiaWarChariot:
+			return gc.getPlayer(con.iPersia).isAlive() and set(regionList) & con.mercRegions[con.iArea_MiddleEast]
+		elif unitType == con.iCarthageNumidianCavalry:
+			return con.rMaghreb in regionList or con.rEgypt in regionList
+		elif unitType == con.iMongolKeshik:
+			return gc.getPlayer(con.iMongolia).isAlive()
+		elif unitType == con.iByzantineCataphract:
+			return iStateReligion in [con.iCatholicism, con.iOrthodoxy] and (set(regionList) & con.mercRegions[con.iArea_Europe] or con.rAnatolia in regionList)
+		elif unitType == con.iSpanishConquistador:
+			return iStateReligion == con.iCatholicism and bNewWorldDiscovered
+		elif unitType == con.iRussiaCossack:
+			return con.rRussia in regionList or con.rSiberia in regionList
+		elif unitType == con.iMughalSiegeElephant:
+			return set(regionList) & con.mercRegions[con.iArea_India]
+			
+		elif unitType in [con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha]:
+			return False
+		
+                return True
         #Rhye - end
 	
 	def getMercenaryMaintenanceCost(self):
