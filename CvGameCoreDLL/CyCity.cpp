@@ -2333,3 +2333,11 @@ void CyCity::changeBuildingCommerceChange(int eBuildingClass, int eCommerce, int
 		m_pCity->changeBuildingCommerceChange((BuildingClassTypes)eBuildingClass, (CommerceTypes) eCommerce, iChange);
 	}
 }
+
+int CyCity::getRegionID()
+{
+	if (m_pCity)
+	{
+		return m_pCity->getRegionID();
+	}
+}
