@@ -1468,11 +1468,14 @@ class RFCUtils:
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
 				self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 
-	def getColonialTargets(self, iPlayer):
+	def getColonialTargets(self, iPlayer, bEmpty=False):
 		if iPlayer == con.iSpain or iPlayer == con.iFrance:
 			iNumCities = 1
 		else:
 			iNumCities = 3
+			
+		if iPlayer == con.iPortugal and self.getHumanID() == con.iPortugal:
+			iNumCities = 5
 
 		lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 		id = lCivList.index(iPlayer)
@@ -1485,6 +1488,8 @@ class RFCUtils:
 			if gc.getMap().plot(x, y).isCity():
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() != iPlayer:
 					cityList.append((x, y))
+			elif bEmpty:
+				cityList.append((x,y))
 
 		targetList = []
 

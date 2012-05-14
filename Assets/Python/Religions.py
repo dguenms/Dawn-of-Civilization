@@ -85,7 +85,7 @@ tQufuTL = (102, 44)
 tQufuBR = (106, 46)
 tMecca = (75, 33)
 
-lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 80, 50, 50, 90, 20, 80, 50, 50, 95, 75, 30, 55, 80, 10, 50, 95, 50, 50, 50, 50, 50, 50, 25, 20]
+lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 80, 50, 50, 90, 20, 80, 50, 50, 95, 75, 30, 40, 80, 10, 50, 95, 50, 90, 50, 50, 50, 50, 50, 25, 20]
 
 lOrthodoxFounders = (con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia, con.iRome)
 lOrthodoxEast = [con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia]
