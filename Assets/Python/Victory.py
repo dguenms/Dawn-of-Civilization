@@ -3246,7 +3246,7 @@ class Victory:
 				iBuddhism = self.getNumBuildings(iKhmer, con.iBuddhistMonastery)
 				iHinduism = self.getNumBuildings(iKhmer, con.iHinduMonastery)
 				bAngkorWat = (self.getWondersBuilt(iKhmer) >= 1)
-				aHelp.append(self.getIcon(iBuddhism >= 4) + 'Buddhist monasteries: ' + str(iBuddhism) + '/4 ' + self.getIcon(iHinduism >= 4) + 'Hindu monasteries: ' + str(iHinduism) + '/4 ' + self.getIcon(bAngkorWat) + 'Angkor Wat')
+				aHelp.append(self.getIcon(iBuddhism >= 4) + 'Buddhist monasteries: ' + str(iBuddhism) + '/4 ' + self.getIcon(iHinduism >= 4) + 'Hindu monasteries: ' + str(iHinduism) + '/4 ' + self.getIcon(bAngkorWat) + 'Wat Preah Pisnulok')
 			elif iGoal == 1:
 				apCityList = PyPlayer(iKhmer).getCityList()
                                 iTotalPopulation = 0
