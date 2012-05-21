@@ -6258,6 +6258,16 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				}
 			}
 		}
+		else if (eBuilding == SANMARCO || eBuilding == SISTINECHAPEL || eBuilding == LEANINGTOWER)
+		{
+			if (GET_PLAYER((PlayerTypes)ITALY).isHuman())
+			{
+				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[ITALY])+5)
+				{
+					return false;
+				}
+			}
+		}
 	}
 
 	return true;

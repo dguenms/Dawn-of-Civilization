@@ -25,7 +25,7 @@
 	- Forced Labor (Masonry): Can hurry with population
 	- Mercantilism (Banking): +1 specialist, no foreign trade
 	- Free Market (Economics): +1 trade route, +50% trade route yield, +25% corporation yield
-	- State Property (Communism): +50% production to commerce rate, +1 food for workshop, watermill, +1 production per specialist, no corporations
+	- State Property (Communism): +50% production to commerce rate, +1 food for workshop, watermill, +1 production per specialist, no more than one corporation per city
 	- Environmentalism (Ecology): -30% unhealthiness, +1 unhappiness from Nuclear Plant, +2 commerce for windmill
 # RELIGION
 	- Animism: +1 unhappiness per non-state religion
