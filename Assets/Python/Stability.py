@@ -417,7 +417,7 @@ class Stability:
                 
                 if (iGameTurn % utils.getTurns(3) != 0):
                         iNewBaseStability = self.getPartialBaseStability(iPlayer)
-                        iEconomy = pPlayer.calculateTotalYield(YieldTypes.YIELD_COMMERCE) - pPlayer.calculateInflatedCosts() #used later
+                        iEconomy = pPlayer.calculateTotalCommerce() - pPlayer.calculateInflatedCosts() #used later
                         iIndustry = pPlayer.calculateTotalYield(YieldTypes.YIELD_PRODUCTION) #used later
                         iAgriculture = pPlayer.calculateTotalYield(YieldTypes.YIELD_FOOD) #used later
                         iPopulation = pPlayer.getRealPopulation() #used later                        
@@ -997,7 +997,7 @@ class Stability:
                                 iNewBaseStability += max(0, min(10,(iImports+iExports)/(2*iEraModifier+1) -iImportExportOffset))
                                 #print("iNewBaseStability import/export check + civic 6th column commonwealth", iNewBaseStability, iPlayer)
 
-                        iEconomy = pPlayer.calculateTotalYield(YieldTypes.YIELD_COMMERCE) - pPlayer.calculateInflatedCosts()
+                        iEconomy = pPlayer.calculateTotalCommerce() - pPlayer.calculateInflatedCosts()
                         iIndustry = pPlayer.calculateTotalYield(YieldTypes.YIELD_PRODUCTION)
                         iAgriculture = pPlayer.calculateTotalYield(YieldTypes.YIELD_FOOD)
                         iPopulation = pPlayer.getRealPopulation()

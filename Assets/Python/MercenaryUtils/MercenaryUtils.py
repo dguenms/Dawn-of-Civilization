@@ -21,6 +21,8 @@ import cPickle as pickle
 import Consts as con #Rhye
 import RFCUtils #Rhye
 
+from StoredData import sd
+
 ################# SD-UTILITY-PACK ###################
 import SdToolKit
 sdEcho         = SdToolKit.sdEcho

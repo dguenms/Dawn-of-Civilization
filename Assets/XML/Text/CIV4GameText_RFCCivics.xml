@@ -150,9 +150,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEPRESSION</Tag>
-		<English>[ICON_BULLET]Risk of Great Depression</English>
+		<English>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Risk of Great Depression</English>
 		<French>[ICON_BULLET]Risque de Grande Dépression</French>
-		<German>[ICON_BULLET]Risiko einer Gro&#223;en Depression</German>
+		<German>[ICON_BULLET]Maximal eine Kapitalgesellschaft pro Stadt[ICON_BULLET]Risiko einer Gro&#223;en Depression</German>
 		<Italian>[ICON_BULLET]Rischio di Grande Depressione.</Italian>
 		<Spanish>[ICON_BULLET]Riesgo de Gran Depresi&#243;n</Spanish>
 	</TEXT>

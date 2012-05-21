@@ -126,7 +126,13 @@ class Companies:
 		
 		# State Property
 		if owner.getCivics(3) == con.iStateProperty:
-			return -1
+			bOtherCorp = False
+			for iLoopCorporation in range(con.iNumCorporations):
+				if city.isHasCorporation(iLoopCorporation) and iLoopCorporation != iCompany:
+					bOtherCorp = True
+					break
+			if bOtherCorp:
+				return -1
 
 		# Mercantilism increases likeliness for trading company
 		if iCompany == iTradingCompany and owner.getCivics(3) == con.iMercantilism:
@@ -266,10 +272,10 @@ class Companies:
 		#	iValue += 1
 		
 		# threshold
-		if iValue < 2: return -1
+		if iValue < 4: return -1
 		
 		# spread it out
-		iValue -= owner.countCorporations(iCompany)
+		iValue -= owner.countCorporations(iCompany)*2
 		
 		return iValue
 
