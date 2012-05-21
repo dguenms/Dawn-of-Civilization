@@ -305,7 +305,7 @@ class UniquePowers:
 
 		if iStateReligion >= 0:
 			for iReligion in range(con.iNumReligions):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
-				if city.isHasReligion(iReligion) and not city.isHolyCity():
+				if city.isHasReligion(iReligion) and not city.isHolyCityByType(iReligion):
 					city.setHasReligion(iReligion, False, False, False)
 				if city.hasBuilding(iTemple + iReligion*4):
 					city.setHasRealBuilding((iTemple + iReligion*4), False)
@@ -322,7 +322,7 @@ class UniquePowers:
 
                 if (iStateReligion >= 0):
 			for iReligion in range(con.iNumReligions):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
-				if city.isHasReligion(iReligion) and not city.isHolyCity():
+				if city.isHasReligion(iReligion) and not city.isHolyCityByType(iReligion):
 					city.setHasReligion(iReligion, False, False, False)
 				if city.hasBuilding(iTemple + iReligion*4):
 					city.setHasRealBuilding((iTemple + iReligion*4), False)
