@@ -3721,7 +3721,7 @@ class RiseAndFall:
 			pOwner = gc.getPlayer(iOwner)
 			iStateReligion = pOwner.getStateReligion()
 			
-			utils.debugTextPopup("Persecution performed by player: "+str(iOwner))
+			#utils.debugTextPopup("Persecution performed by player: "+str(iOwner))
 			
 			for iReligion in range(con.iNumReligions):
 				if city.isHasReligion(iReligion) and iReligion != iStateReligion and not city.isHolyCityByType(iReligion):
@@ -5261,6 +5261,10 @@ class RiseAndFall:
                                 teamHolland.setHasTech(con.iEducation, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iPaper, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iAstronomy, True, iCiv, False, False)
+                                teamHolland.setHasTech(con.iAesthetics, True, iCiv, False, False)
+                                teamHolland.setHasTech(con.iLiterature, True, iCiv, False, False)
+                                teamHolland.setHasTech(con.iDrama, True, iCiv, False, False)
+                                teamHolland.setHasTech(con.iPatronage, True, iCiv, False, False)
                         if (iCiv == iMali):
                                 teamMali.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamMali.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

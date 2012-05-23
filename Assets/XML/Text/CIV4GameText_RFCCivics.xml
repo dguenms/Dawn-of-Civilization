@@ -150,17 +150,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEPRESSION</Tag>
-		<English>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Risk of Great Depression</English>
+		<English>[ICON_BULLET]Risk of Great Depression</English>
 		<French>[ICON_BULLET]Risque de Grande Dépression</French>
-		<German>[ICON_BULLET]Maximal eine Kapitalgesellschaft pro Stadt[ICON_BULLET]Risiko einer Gro&#223;en Depression</German>
+		<German>Risiko einer Gro&#223;en Depression</German>
 		<Italian>[ICON_BULLET]Rischio di Grande Depressione.</Italian>
 		<Spanish>[ICON_BULLET]Riesgo de Gran Depresi&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POST_COMMUNISM</Tag>
-		<English>[ICON_BULLET]Post-communist crisis in case of economic system switch</English>
+		<English>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Post-communist crisis in case of economic system switch</English>
 		<French>[ICON_BULLET]Crise post-communiste en cas de changement de système économique</French>
-		<German>[ICON_BULLET]Post-kommunistische Krise im Falle eines Wirtschaftssystemwechsels</German>
+		<German>[ICON_BULLET]Maximal eine Kapitalgesellschaft pro Stadt[ICON_BULLET][ICON_BULLET]Post-kommunistische Krise im Falle eines Wirtschaftssystemwechsels</German>
 		<Italian>[ICON_BULLET]Crisi post-comunista in caso di cambio di sistema economico.</Italian>
 		<Spanish>[ICON_BULLET]Crisis post-comunista en caso de cambio de sistema econ&#243;mico</Spanish>
 	</TEXT>

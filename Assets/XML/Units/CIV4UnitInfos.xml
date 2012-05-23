@@ -17680,8 +17680,11 @@
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>TECH_GUNPOWDER</PrereqTech>
 			<TechTypes/>
-			<BonusType>BONUS_IRON</BonusType>
-			<PrereqBonuses/>
+			<BonusType>NONE</BonusType>
+			<PrereqBonuses>
+				<BonusType>BONUS_IRON</BonusType>
+				<BonusType>BONUS_COPPER</BonusType>
+			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>

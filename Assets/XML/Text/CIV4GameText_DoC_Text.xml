@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TCC_ACQUIRE</Tag>
+		<English>Will offer %d1 gold to %s2 for their cities of %s3. Their refusal will lead to war.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TCC_COLONIZE</Tag>
+		<English>Will offer %d1 gold to our colonists to settle %s2.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TCC_NO_CITIES</Tag>
+		<English>There are no cities that your armies could conquer.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TCC_CONQUEST</Tag>
+		<English>Will draft armies to attack %s1 to conquer their cities of %s2.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REFORMATION_EMBRACE</Tag>
+		<English>State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring %d1 gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REFORMATION_TOLERATE_STATE</Tag>
+		<English>Your state religion remains Catholic. Protestantism can spread to your cities and even replace Catholicism.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REFORMATION_TOLERATE</Tag>
+		<English>Protestantism can spread to your cities and even replace Catholicism.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_REFORMATION_COUNTER</Tag>
+		<English>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</English>
+	</TEXT>
+</Civ4GameText>

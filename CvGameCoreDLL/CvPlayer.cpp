@@ -4807,7 +4807,7 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 		}
 		//Rhye - end UP (Turkish)
 
-		
+
 		if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
 		{
 			// Leoreth: else they can't raze cities in NA due to the "always 100% American culture" effect
@@ -5328,7 +5328,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	}
 
 	//Leoreth: in case of one city, allow it, so spawning players can't be pushed out and denied their capital
-	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && (isHuman()? true : isFoundedFirstCity())) 
+	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && (isHuman()? true : isFoundedFirstCity()))
 	{
 		return false;
 	}
@@ -6080,19 +6080,13 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
-			if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-			{
-				startingEra = startingEraFoundAstronomy[getID()];
-			}else
-			{
-				if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-				{
-					startingEra = startingEraFound600AD[getID()];
-				}else
-				{
-					startingEra = startingEraFound[getID()];
-				}
-			}
+            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+            {
+                startingEra = currentEra600AD[getID()];
+            }else
+            {
+                startingEra = currentEra[getID()];
+            }
 		}else if (getID() == NATIVE)
 		{
 			startingEra = 0;
@@ -8541,7 +8535,7 @@ void CvPlayer::revolution(CivicTypes* paeNewCivics, bool bForce)
 	{
 		gDLL->getInterfaceIFace()->setDirty(Popup_DIRTY_BIT, true); // to force an update of the civic chooser popup
 	}
-	
+
 	CvEventReporter::getInstance().revolution(getID()); // edead
 }
 
@@ -8803,7 +8797,7 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 			if (eReligion == (ReligionTypes)ORTHODOXY && !pLoopCity->isCapital())
 				iValue = 1;
-			
+
 			if (eReligion == (ReligionTypes)PROTESTANTISM)
 			{
 				int iRegion = pLoopCity->getRegionID();
@@ -10498,7 +10492,7 @@ void CvPlayer::changeProcessModifier(int iChange)
 		m_iProcessModifier += iChange;
 
 		updateProductionToCommerceModifier();
-		
+
 		updateCommerce();
 
 		AI_makeAssignWorkDirty();
@@ -17861,7 +17855,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 			changeSpecialistThresholdExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistThresholdExtraYield(iI) * iChange)); //Leoreth
 		}
 
-		
+
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -18763,7 +18757,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 
 	//Leoreth
 	pStream->Write(m_bReborn);
-	
+
 	//Leoreth: stability (not active yet)
 	pStream->Write(m_iBaseStabilityLastTurn);
 	pStream->Write(m_iPartialBaseStability);
@@ -24727,7 +24721,7 @@ void CvPlayer::doStability()
 						iNumOwnCities += 1;
 					}
 				}
-				
+
 				for (pLoopCity = GET_PLAYER((PlayerTypes)iLoopCiv).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iLoopCiv).nextCity(&iLoop))
 				{
 					long result = -1;
@@ -24805,7 +24799,7 @@ void CvPlayer::doStability()
 		}
 
 		// parameter here
-		
+
 		int iExpansionStability = iNewBaseStability - iForeignStability;
 		sprintf(szOut, "DLL: Player %d expansion stability: %d", iPlayer, iNewBaseStability);
 		GC.getGameINLINE().logMsg(szOut);
@@ -25285,7 +25279,7 @@ void CvPlayer::doStability()
 						}
 					}
 				}
-				
+
 				int iOutputCityCivic = iTempCityStability - iOutputCityHappy;
 				sprintf(szOut, "DLL: Player %d City %d civic stability: %d", iPlayer, iCount, iOutputCityCivic);
 				GC.getGameINLINE().logMsg(szOut);
@@ -25332,7 +25326,7 @@ void CvPlayer::doStability()
 						}
 					}
 				}
-				
+
 				int iOutputCityCulture = iTempCityStability - iOutputCityHappy - iOutputCityCivic;
 				sprintf(szOut, "DLL: Player %d City %d culture stability: %d", iPlayer, iCount, iOutputCityCulture);
 				GC.getGameINLINE().logMsg(szOut);
@@ -25358,7 +25352,7 @@ void CvPlayer::doStability()
 		}
 
 		// parameter here
-		
+
 		int iCityStability = iNewBaseStability - iCoreStability - iForeignStability - iExpansionStability - iCivicStability;
 		sprintf(szOut, "DLL: Player %d city stability: %d", iPlayer, iNewBaseStability);
 		GC.getGameINLINE().logMsg(szOut);
@@ -25537,7 +25531,7 @@ void CvPlayer::doStability()
 		}
 
 		setGreatDepressionCountdown(getGreatDepressionCountdown() - 1);
-		
+
 		bool bQuit = false;
 		if (getGreatDepressionCountdown() == 0)
 			bQuit = true;
@@ -25654,7 +25648,7 @@ void CvPlayer::doStability()
 	}
 
 	// parameter here
-	
+
 	if (getNumCities() >= 8)
 	{
 		iNewBaseStability -= (getNumCities() - 5) * (getNumCities() - 5) / 9;

@@ -35392,7 +35392,7 @@
 			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<ObsoleteTech>TECH_COMBUSTION</ObsoleteTech>
 			<PrereqTech>TECH_CHEMISTRY</PrereqTech>
 			<TechTypes>

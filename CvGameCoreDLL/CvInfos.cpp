@@ -10328,6 +10328,16 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 			iFinalResult = result * 90 / 100;
 	}
 
+	// bonus for Netherlands and Germany in the beginning
+	if (pl == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
+	{
+	    iFinalResult /= 2;
+	}
+	else if (pl == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
+	{
+	    iFinalResult /= 2;
+	}
+
 	return iFinalResult;
 }
 //Rhye - end

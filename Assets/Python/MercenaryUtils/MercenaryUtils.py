@@ -3021,17 +3021,17 @@ class Mercenary:
 			return gc.getPlayer(con.iGreece).isAlive() and set(regionList) & con.mercRegions[con.iArea_Europe]
 		elif unitType in [con.iSumerianVulture, con.iBabylonBowman]:
 			return gc.getPlayer(con.iBabylonia).isAlive() and con.rMesopotamia in regionList
-		elif unitType == con.iNativeAmericanDogSoldier:
+		elif unitType == con.iNativeAmericaDogSoldier:
 			return set(regionList) & con.mercRegions[con.iArea_NorthAmerica]
 		elif unitType in [con.iJapanSamurai, con.iChinaChokonu, con.iThaiChangSuek, con.iKhmerBallistaElephant]:
 			return set(regionList) & con.mercRegions[con.iArea_EastAsia]
-		elif unitType in [con.iIranianQizilbash, con.iOttomanJanissary, con.iArabiaCamelArcher, con.iSeljukGhulamWarrior]:
+		elif unitType in [con.iIranianQizilbash, con.iOttomanJanissary, con.iArabiaCamelarcher, con.iSeljukGhulamWarrior]:
 			return iStateReligion == con.iIslam and set(regionList) & con.mercRegions[con.iArea_MiddleEast]
 		elif unitType in [con.iZuluImpi, con.iEthiopianOromoWarrior, con.iMaliSkirmisher]:
 			return set(regionList) & con.mercRegions[con.iArea_Africa]
 		elif unitType == con.iEgyptWarChariot:
 			return gc.getPlayer(con.iEgypt).isAlive() and (con.rEgypt in regionList or con.rMesopotamia in regionList or con.rMaghreb in regionList)
-		elif unitType == con.iPersiaWarChariot:
+		elif unitType == con.iPersiaImmortal:
 			return gc.getPlayer(con.iPersia).isAlive() and set(regionList) & con.mercRegions[con.iArea_MiddleEast]
 		elif unitType == con.iCarthageNumidianCavalry:
 			return con.rMaghreb in regionList or con.rEgypt in regionList

@@ -114,6 +114,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC</Tag>
-		<English>Emirate of </English>
+		<English>Emirate of %s1</English>
 	</TEXT>
 </Civ4GameText>

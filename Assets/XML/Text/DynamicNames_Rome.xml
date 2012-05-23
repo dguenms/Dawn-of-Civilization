@@ -82,7 +82,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_VASSAL_GENERIC</Tag>
-		<English>Province of </English>
+		<English>Province of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_SOVIET_VASSAL</Tag>

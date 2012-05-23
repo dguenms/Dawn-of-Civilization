@@ -58,7 +58,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_VASSAL_GENERIC</Tag>
-		<English>French </English>
+		<English>French %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_FRENCH_VASSAL</Tag>

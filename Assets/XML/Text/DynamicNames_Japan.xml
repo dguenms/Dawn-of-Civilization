@@ -34,7 +34,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPANESE_VASSAL_GENERIC</Tag>
-		<English>Co-Prosperity </English>
+		<English>Co-Prosperity %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_JAPANESE_VASSAL</Tag>

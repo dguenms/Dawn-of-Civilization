@@ -66,7 +66,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_VASSAL_GENERIC</Tag>
-		<English>Dominion of </English>
+		<English>Dominion of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_ENGLISH_VASSAL</Tag>

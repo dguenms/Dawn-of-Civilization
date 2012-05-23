@@ -21630,7 +21630,7 @@
 	</Script2DSound>
 	<Script2DSound>
 		<ScriptID>AS2D_DIPLO_AFONSO</ScriptID>
-		<SoundID>DIPLO_DIPLO_AFONSO</SoundID>
+		<SoundID>DIPLO_AFONSO</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
 		<iMinVolume>75</iMinVolume>
 		<iMaxVolume>75</iMaxVolume>

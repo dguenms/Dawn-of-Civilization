@@ -23,6 +23,7 @@ gc = CyGlobalContext()
 localText = CyTranslator()
 utils = RFCUtils.RFCUtils()
 rel = Religions.Religions()
+localText = CyTranslator()
 
 
 ######## BLESSED SEA ###########
@@ -4321,16 +4322,14 @@ def canChooseTradingCompanyConquerors1(argsList):
 def getTradingCompanyConquerors1HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
-
-	text = 'Will offer '
+	
+	sTargetCivs = ''
+	sTargetCities = ''
 
 	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 	id = lCivList.index(iPlayer)
 
 	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
-
-	text += str(len(targetList) * 200)
-	text += ' gold to '
 
 	targetCivList = []
 
@@ -4344,26 +4343,22 @@ def getTradingCompanyConquerors1HelpText(argsList):
 	if len(targetCivList) > 0:
 		for iCiv in targetCivList:
 			if targetCivList.index(iCiv) != 0:
-				text += ', '
-			text += CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
-
-		text += ' for their cities of '
-	else:
-		text += 'our colonists to settle '
+				sTargetCivs += ', '
+			sTargetCivs += CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
 
 	for tPlot in targetList:
 		x, y = tPlot
 		if targetList.index(tPlot) != 0:
-			text += ', '
+			sTargetCities += ', '
 		if gc.getMap().plot(x, y).isCity():
-			text += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
+			sTargetCities += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
 		else:
-			text += tCityMap[gc.getPlayer(iPlayer).getReborn()][iPlayer][67-y][x]
+			sTargetCities += tCityMap[gc.getPlayer(iPlayer).getReborn()][iPlayer][67-y][x]
 
 	if len(targetCivList) > 0:
-		text += '. Their refusal will lead to war.'
+		text = localText.getText("TXT_KEY_EVENT_TCC_ACQUIRE", (len(targetList) * 200, sTargetCivs, sTargetCities))
 	else:
-		text += '.'
+		text = localText.getText("TXT_KEY_EVENT_TCC_COLONIZE", (len(targetList) * 200, sTargetCities))
 
 	return text
 
@@ -4432,8 +4427,9 @@ def canChooseTradingCompanyConquerors2(argsList):
 def getTradingCompanyConquerors2HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
-
-	text = 'Will draft armies to attack '
+	
+	sTargetCivs = ''
+	sTargetCities = ''
 
 	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 	id = lCivList.index(iPlayer)
@@ -4449,25 +4445,21 @@ def getTradingCompanyConquerors2HelpText(argsList):
 				targetCivList.append(iTargetCiv)
 
 	if len(targetCivList) == 0:
-		return 'There are no cities that your armies could conquer.'
+		return localText.getText("TXT_KEY_EVENT_TCC_NO_CITIES", ())
 
 	for iCiv in targetCivList:
 		if targetCivList.index(iCiv) != 0:
-			text += ', '
-		text += CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
-
-	text += ' to conquer their cities of '
+			sTargetCivs += ', '
+		sTargetCivs += CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
 
 	for tPlot in targetList:
 		x, y = tPlot
 		if targetList.index(tPlot) != 0:
-			text += ', '
+			sTargetCities += ', '
 		if gc.getMap().plot(x, y).isCity():
-			text += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
+			sTargetCities += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
 
-	text += '.'
-
-	return text
+	return localText.getText("TXT_KEY_EVENT_TCC_CONQUEST", (sTargetCivs, sTargetCities))
 
 def doTradingCompanyConquerors2(argsList):
 	kTriggeredData = argsList[1]
@@ -4489,7 +4481,11 @@ def doTradingCompanyConquerors2(argsList):
 				tSeaPlot = (i, j)
 				break
 
-	utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
+	if tSeaPlot != -1:
+		if iPlayer == con.iNetherlands:
+			utils.makeUnit(con.iNetherlandsOostindievaarder, iPlayer, tSeaPlot, 1)
+		else:
+			utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
 	
 ######## Reformation (Leoreth) ########
 
@@ -4531,9 +4527,7 @@ def getReformation1HelpText(argsList):
 		if city.GetCy().isHasReligion(con.iChristianity):
 			iNumCatholicCities += 1
 
-	text = 'State religion and most of your cities will change to Protestantism. Catholicism can remain in larger cities. Seizing control of Church assets in Catholic cities is expected to bring '+str(iNumCatholicCities*100)+' gold to your treasury. If you have founded Protestantism, a shrine will be built in its holy city. Catholic civilizations may declare war on you to stop the Reformation.'
-
-	return text
+	return localText.getText("TXT_KEY_EVENT_REFORMATION_EMBRACE", (iNumCatholicCities * 100,))
 	
 def doReformation1(argsList):
 	kTriggeredData = argsList[1]
@@ -4545,9 +4539,10 @@ def doReformation1(argsList):
 	if pHolyCity.getOwner() == iPlayer:
 		pHolyCity.setNumRealBuilding(con.iJewishShrine, 1)
 	
-	for iCiv in range(con.iNumPlayers):
-		if sd.scriptDict['lReformationDecision'][iCiv] == 2:
-			gc.getTeam(iCiv).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
+	if iPlayer != con.iNetherlands:
+		for iCiv in range(con.iNumPlayers):
+			if sd.scriptDict['lReformationDecision'][iCiv] == 2:
+				gc.getTeam(iCiv).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 	
 def canChooseReformation2(argsList):
 	return True
@@ -4555,15 +4550,11 @@ def canChooseReformation2(argsList):
 def getReformation2HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
-	
-	text = ''
 
 	if gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity:
-		text += 'Your state religion remains Catholic. '
+		return localText.getText("TXT_KEY_EVENT_REFORMATION_TOLERATE_STATE", ())
 		
-	text += 'Protestantism can spread to your cities and even replace Catholicism.'
-
-	return text
+	return localText.getText("TXT_KEY_EVENT_REFORMATION_TOLERATE", ())
 	
 def doReformation2(argsList):
 	kTriggeredData = argsList[1]
@@ -4581,9 +4572,7 @@ def getReformation3HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 
-	text = 'Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.'
-
-	return text
+	return localText.getText("TXT_KEY_EVENT_REFORMATION_COUNTER", ())
 	
 def doReformation3(argsList):
 	kTriggeredData = argsList[1]

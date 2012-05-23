@@ -57,6 +57,10 @@
 		<English>Habsburg Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMAN_CONFEDERATION</Tag>
+		<English>German Confederation</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_SHORT_DESC</Tag>
 		<English>Austria</English>
 	</TEXT>
