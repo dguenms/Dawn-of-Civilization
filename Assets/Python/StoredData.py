@@ -148,6 +148,7 @@ class StoredData:
 				    'iEthiopianControl' : -1,
 				    'iVikingGold' : 0,
 				    'lRussianProjects' : [-1, -1, -1],
+				    'lDutchColonies' : [],
                                     #------------Stability
                                     'lBaseStabilityLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                                     'lPartialBaseStability': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
