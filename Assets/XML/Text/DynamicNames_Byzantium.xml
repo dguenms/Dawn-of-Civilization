@@ -58,7 +58,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_VASSAL_GENERIC</Tag>
-		<English>Exarchate of </English>
+		<English>Exarchate of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_BYZANTINE_VASSAL</Tag>

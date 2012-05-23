@@ -236,21 +236,21 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_6</Description>
 		</HintInfo>
-		<HintInfo>
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_7</Description>
-		</HintInfo>
+		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_8</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_9</Description>
 		</HintInfo>
-		<HintInfo>
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_10</Description>
-		</HintInfo>
-		<HintInfo>
+		</HintInfo-->
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_11</Description>
-		</HintInfo>
+		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_12</Description>
 		</HintInfo>
@@ -321,9 +321,9 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_33</Description>
 		</HintInfo>
-		<HintInfo>
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_34</Description>
-		</HintInfo>
+		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_35</Description>
 		</HintInfo>
@@ -339,9 +339,9 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_39</Description>
 		</HintInfo>
-		<HintInfo>
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_40</Description>
-		</HintInfo>
+		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_41</Description>
 		</HintInfo>
@@ -487,6 +487,12 @@
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_23</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_24</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_25</Description>
 		</HintInfo>
 	</HintInfos>
 </Civ4Hints>

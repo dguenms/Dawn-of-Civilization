@@ -159,9 +159,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_20</Tag>
-		<English>Transition to capitalism will cause a period of instability.</English>
+		<English>Transition from state property to another economic system will cause a period of instability.</English>
 		<French>Le passage au capitalisme provoquera une période d'instabilité.</French>
-		<German>Durch den Wechsel zum Kapitalismus wird eine Phase der Instabilität ausgelöst.</German>
+		<German>Durch den Wechsel vom Staatseigentum zu einem anderen Wirtschaftssystem wird eine Phase der Instabilität ausgelöst.</German>
 		<Italian>Il passaggio al capitalismo causer&#224; un periodo di instabilit&#224;.</Italian>
 		<Spanish>La transici&#243;n al capitalismo producir&#225; un periodo de inestabilidad.</Spanish>
 	</TEXT>
@@ -456,5 +456,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_23</Tag>
 		<English>When a UHV goal asks to control a civilization, you need to own more cities in their core than they do.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_24</Tag>
+		<English>Areas that are relevant to your UHV are displayed in light blue in the tile tooltip.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_25</Tag>
+		<English>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the SVN version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</English>
 	</TEXT>
 </Civ4GameText>

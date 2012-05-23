@@ -191,3 +191,14 @@
 	- Have an average city size of 10 in 1450 AD
 	- Have 8000 culture by 1450 AD
 # New third Indian goal: Control 20% of the world's population in 1200 AD
+# New second Dutch goal: Conquer 7 European colonies by 1750 AD
+# Netherlands start with more cultural techs
+# Mercenaries separated by region and period more intuintively
+# Bombards can now also be built with copper
+# Netherlands and Germany get a tech boost in their early years
+# new Spanish UHV:
+	- Be first to found a city in America
+	- Control a total of 10 silver and gold resources by 1650 AD
+	- Spread Catholicism to 40% and allow no Protestant civilization in Europe in 1700 AD
+# disabled the exile mechanic
+# added new hints, removed obsolete ones

@@ -11008,14 +11008,14 @@
 		<SoundData>
 			<SoundID>DIPLO_AFONSO</SoundID>
 			<Filename>Sounds/Diplomacy/Afonso</Filename>
-			<LoadType>STREAMED</LoadType>
+			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>DIPLO_MARIA</SoundID>
 			<Filename>Sounds/Diplomacy/Maria</Filename>
-			<LoadType>STREAMED</LoadType>
+			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>

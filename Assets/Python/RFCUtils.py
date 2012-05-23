@@ -1474,7 +1474,7 @@ class RFCUtils:
 		else:
 			iNumCities = 3
 			
-		if iPlayer == con.iPortugal and self.getHumanID() == con.iPortugal:
+		if iPlayer == con.iPortugal and self.getHumanID() != con.iPortugal:
 			iNumCities = 5
 
 		lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
@@ -1488,8 +1488,8 @@ class RFCUtils:
 			if gc.getMap().plot(x, y).isCity():
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() != iPlayer:
 					cityList.append((x, y))
-			elif bEmpty:
-				cityList.append((x,y))
+			#elif bEmpty:
+			#	cityList.append((x,y))
 
 		targetList = []
 
@@ -1501,7 +1501,7 @@ class RFCUtils:
 					targetList.append(cityList[iRand])
 					cityList.remove(cityList[iRand])
 
-		if len(targetList) == 0:
+		while len(targetList) < iNumCities and bEmpty:
 			for i in range(iNumCities):
 				iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random free plot')
 				print 'iRand = '+str(iRand)

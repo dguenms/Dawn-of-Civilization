@@ -58,7 +58,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_VASSAL_GENERIC</Tag>
-		<English>Viceroyalty of </English>
+		<English>Viceroyalty of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_SPANISH_VASSAL</Tag>

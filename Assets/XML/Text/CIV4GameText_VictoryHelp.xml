@@ -229,6 +229,10 @@
 		<English>Largest empire: </English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_PROTESTANTS</Tag>
+		<English>No Protestant civilizations in Europe</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CITY_CULTURE</Tag>
 		<English>Culture in %s1_city: %d2 / %d3</English>
 	</TEXT>

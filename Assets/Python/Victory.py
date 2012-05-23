@@ -1302,20 +1302,41 @@ class Victory:
 							self.setGoal(iSpain, 1, 1)
 					else:
 						self.setGoal(iSpain, 1, 0)
-
-				# Leoreth: Have the largest empire of the world in 1760 AD
-				if (iGameTurn == getTurnForYear(1760)):
-					iSpanishLand = pSpain.getTotalLand()
-					bLargest = True
+						
+				# Leoreth: spread Catholicism to 40% and don't allow Protestant civilizations in Europe in 1700 AD
+				if iGameTurn == getTurnForYear(1700):
+					fReligionPercent = gc.getGame().calculateReligionPercent(con.iChristianity)
 					
-					for iCiv in range(0,iNumMajorPlayers):
-						if (gc.getPlayer(iCiv).getTotalLand() > iSpanishLand):
-							bLargest = False
-
-					if bLargest:
+					bNoProtestants = True
+					for iCiv in range(iNumPlayers):
+						if gc.getPlayer(iCiv).getStateReligion() == con.iJudaism:
+							cityList = PyPlayer(iCiv).getCityList()
+							for city in cityList:
+								pCity = city.GetCy()
+								if utils.isPlotInArea((pCity.getX(), pCity.getY()), con.tEuropeTL, con.tEuropeBR) or utils.isPlotInArea((pCity.getX(), pCity.getY()), con.tEasternEuropeTL, con.tEasternEuropeBR):
+									bNoProtestants = True
+									break
+									break
+									
+					if bNoProtestants and fReligionPercent >= 40.0:
 						self.setGoal(iSpain, 2, 1)
 					else:
 						self.setGoal(iSpain, 2, 0)
+						
+
+				# Leoreth: Have the largest empire of the world in 1760 AD
+				#if (iGameTurn == getTurnForYear(1760)):
+				#	iSpanishLand = pSpain.getTotalLand()
+				#	bLargest = True
+				#	
+				#	for iCiv in range(0,iNumMajorPlayers):
+				#		if (gc.getPlayer(iCiv).getTotalLand() > iSpanishLand):
+				#			bLargest = False
+
+				#	if bLargest:
+				#		self.setGoal(iSpain, 2, 1)
+				#	else:
+				#		self.setGoal(iSpain, 2, 0)
                             
                         
                 elif (iPlayer == iFrance):
@@ -1508,7 +1529,7 @@ class Victory:
 
 				if ( iGameTurn <= getTurnForYear(1745) and self.getGoal( iNetherlands, 0 ) == - 1 ):
 					pPlot = gc.getMap().plot( con.tCapitals[utils.getReborn(iNetherlands)][iNetherlands][0], con.tCapitals[utils.getReborn(iNetherlands)][iNetherlands][1])
-					if ( pPlot.isCity() ):
+					if ( pPlot.isCity() and pPlot.getPlotCity().getOwner() == iNetherlands ):
 						iGMerchant = CvUtil.findInfoTypeNum(gc.getSpecialistInfo, gc.getNumSpecialistInfos(), "SPECIALIST_GREAT_MERCHANT")
 						if ( pPlot.getPlotCity().getFreeSpecialistCount(iGMerchant) >= 3 ):
 							self.setGoal( iNetherlands, 0, 1 )
@@ -1517,7 +1538,7 @@ class Victory:
 						self.setGoal( iNetherlands, 0, 0 )   
 
 
-				if iGameTurn == getTurnForYear(1750):
+				if iGameTurn == getTurnForYear(1745):
 					if self.getGoal(iNetherlands, 1) == -1:
 						self.setGoal(iNetherlands, 1, 0)
 
@@ -3321,9 +3342,21 @@ class Victory:
 			
 				aHelp.append(self.getIcon(iGold + iSilver >= 10) + localText.getText("TXT_KEY_VICTORY_GOLD_SILVER_RESOURCES", (iGold + iSilver, 10)))
 			elif iGoal == 2:
-				iLargestEmpireCiv = self.getLargestEmpireCiv(iSpain)
-				aHelp.append(self.getIcon(iLargestEmpireCiv == iSpain) + localText.getText("TXT_KEY_VICTORY_LARGEST_EMPIRE_CIV", ()) + CyTranslator().getText(str(gc.getPlayer(iLargestEmpireCiv).getCivilizationShortDescriptionKey()),()))
-
+				fReligionPercent = gc.getGame().calculateReligionPercent(con.iChristianity)
+					
+				bNoProtestants = True
+				for iCiv in range(iNumPlayers):
+					if gc.getPlayer(iCiv).getStateReligion() == con.iJudaism:
+						cityList = PyPlayer(iCiv).getCityList()
+						for city in cityList:
+							pCity = city.GetCy()
+							if utils.isPlotInArea((pCity.getX(), pCity.getY()), con.tEuropeTL, con.tEuropeBR) or utils.isPlotInArea((pCity.getX(), pCity.getY()), con.tEasternEuropeTL, con.tEasternEuropeBR):
+								bNoProtestants = True
+								break
+								break
+								
+				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(con.iChristianity).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(40))) + ' ' + self.getIcon(bNoProtestants) + localText.getText("TXT_KEY_VICTORY_NO_PROTESTANTS", ()))
+				
 		elif iPlayer == iFrance:
 			if iGoal == 0:
 				pParis = gc.getMap().plot(55, 50)
@@ -3420,7 +3453,7 @@ class Victory:
 			if iGoal == 0:
 				iGMerchant = CvUtil.findInfoTypeNum(gc.getSpecialistInfo, gc.getNumSpecialistInfos(), "SPECIALIST_GREAT_MERCHANT")
 				pPlot = gc.getMap().plot(57, 53)
-				if pPlot.isCity():
+				if pPlot.isCity() and pPlot.getPlotCity().getOwner() == iNetherlands:
 					iMerchants = pPlot.getPlotCity().getFreeSpecialistCount(iGMerchant)
 				else:
 					iMerchants = 0

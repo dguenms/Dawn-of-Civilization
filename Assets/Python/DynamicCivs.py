@@ -789,7 +789,7 @@ class DynamicCivs:
 		if sInsert == "":
 			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, ()))
 		else:
-			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, ()) + " " + localText.getText(str(sInsert), ()))
+			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, (sInsert,)))
 			
 	def setCivName(self, iCiv, sName, sShort, sAdjective):
 		gc.getPlayer(iCiv).setCivName(localText.getText(sName, ()), localText.getText(sShort, ()), localText.getText(sAdjective, ()))
@@ -969,6 +969,10 @@ class DynamicCivs:
 			elif iPlayer == iAmerica:
 				if iCivic2 == con.iAgrarianism or iCivic3 == con.iForcedLabor:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
+					return
+			elif iPlayer == iHolyRome:
+				if iGameTurn < getTurnForYear(1700):
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_GERMAN_CONFEDERATION")
 					return
 		
 		
