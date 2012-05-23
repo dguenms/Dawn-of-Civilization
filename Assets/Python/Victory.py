@@ -457,10 +457,10 @@ class Victory:
 		sd.scriptDict['lRussianProjects'][i] = iNewValue
 		
 	def getDutchColonies(self):
-		return sd.scriptDict['lDutchColonies']
+		return sd.scriptDict['iDutchColonies']
 		
-	def addDutchColony(self, tPlot):
-		sd.scriptDict['lDutchColonies'].append(tPlot)
+	def changeDutchColonies(self, iChange):
+		sd.scriptDict['iDutchColonies'] += iChange
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -2199,19 +2199,15 @@ class Victory:
                                         if (bNAmerica and bSCAmerica and bAfrica and bAsia and bOceania):
                                                 self.setGoal(iEngland, 0, 1)   
 						
-		elif iPlayer == iNetherlands:
+		if playerType == iNetherlands:
 			if owner in [iSpain, iFrance, iEngland, iPortugal, iVikings, iItaly, iRussia, iGermany, iHolyRome]:
 				x = city.getX()
 				y = city.getY()
-				bColony = True
-				if x >= con.tEuropeTL[0] and x <= con.tEuropeBR[0] and y >= con.tEuropeTL[1] and y <= con.tEuropeBR[1]:
-					bColony = False
-				elif x >= con.tEasternEuropeTL[0] and x <= con.tEasternEuropeBR[0] and y >= con.tEasternEuropeTL[1] and y <= con.tEasternEuropeBR[1]:
-					bColony = False
+				bColony = (city.getRegionID() not in [con.rBritain, con.rIberia, con.rItaly, con.rBalkans, con.rEurope, con.rScandinavia, con.rRussia])
 					
-				if bColony and (x, y) not in self.getDutchColonies():
-					self.addDutchColony((x, y))
-					if len(self.getDutchColonies()) >= 7:
+				if bColony and bConquest:
+					self.changeDutchColonies(1)
+					if self.getDutchColonies() >= 4:
 						self.setGoal(iNetherlands, 1, 1)
 
         def onCityRazed(self, iPlayer):
@@ -3459,8 +3455,8 @@ class Victory:
 					iMerchants = 0
 				aHelp.append(self.getIcon(iMerchants >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_MERCHANTS_IN_CITY", ("Amsterdam", iMerchants, 3)))
 			elif iGoal == 1:
-				iColonies = len(self.getDutchColonies())
-				aHelp.append(self.getIcon(iColonies >= 7) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_COLONIES_CONQUERED", (iColonies, 7)))
+				iColonies = self.getDutchColonies()
+				aHelp.append(self.getIcon(iColonies >= 4) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_COLONIES_CONQUERED", (iColonies, 4)))
 			elif iGoal == 2:
 				iSpices = pNetherlands.getNumAvailableBonuses(con.iSpices)
 				aHelp.append(self.getIcon(iSpices >= 7) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_SPICE_RESOURCES", (iSpices, 7)))

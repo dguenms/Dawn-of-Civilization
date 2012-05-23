@@ -479,7 +479,7 @@ class Religions:
 			pHolyCity.setNumRealBuilding(con.iJewishShrine, 1)
 			
 		# Make Netherlands spawn as Protestant if it's already founded
-		if not gc.getPlayer(con.iNetherlands).isAlive():
+		if gc.getGame().getGameTurn() < getTurnForYear(con.tBirth[con.iNetherlands]):
 			gc.getPlayer(con.iNetherlands).setLastStateReligion(con.iProtestantism)
 
         def reformationchoice(self, iCiv):
