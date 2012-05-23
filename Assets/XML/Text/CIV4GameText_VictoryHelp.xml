@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_ACCOMPLISHED</Tag>
+		<English>Goal accomplished!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_FAILED</Tag>
+		<English>Goal failed!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TOTAL_CULTURE</Tag>
+		<English>Total culture: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HINDU_SHRINE</Tag>
+		<English>Hindu Shrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BUDDHIST_SHRINE</Tag>
+		<English>Buddhist Shrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TEMPLES_BUILT</Tag>
+		<English>Temples built: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION</Tag>
+		<English>Percentage of world population: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_NUM_CONFUCIAN_ACADEMIES</Tag>
+		<English>Confucian Academies: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_NUM_TAOIST_PAGODAS</Tag>
+		<English>Taoist Pagodas: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOLDEN_AGES</Tag>
+		<English>Golden Ages: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_POPULOUS_CITY</Tag>
+		<English>Most populous city: %s1_city</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_CULTURED_CITY</Tag>
+		<English>Most cultured city: %s1_city</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY</Tag>
+		<English>Percentage of world territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_WONDERS</Tag>
+		<English>Wonders: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_SHRINES</Tag>
+		<English>Shrines: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OPEN_BORDERS</Tag>
+		<English>Open border agreements: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRANSOXANIA</Tag>
+		<English>Transoxania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NORTHWEST_INDIA</Tag>
+		<English>Northwest India</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_CULTURED_CITY_VALUE</Tag>
+		<English>Most cultured city: %s1_city (%d2 / %d1)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MEDITERRANEAN_CITIES</Tag>
+		<English>Mediterranean cities: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_DYE_RESOURCES</Tag>
+		<English>Available dye resources: %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_MAP</Tag>
+		<English>Largest map: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_BARRACKS</Tag>
+		<English>Barracks: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_AQUEDUCTS</Tag>
+		<English>Aqueducts: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_AMPHITHEATRES</Tag>
+		<English>Amphitheatres: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_SPAIN</Tag>
+		<English>2 cities in Spain</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_FRANCE</Tag>
+		<English>3 cities in France</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND</Tag>
+		<English>1 city in England</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE</Tag>
+		<English>2 cities in Carthage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM</Tag>
+		<English>4 cities in Greece and Anatolia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_EGYPT</Tag>
+		<English>2 cities in Egypt</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MANCHURIA</Tag>
+		<English>Manchuria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_INDOCHINA</Tag>
+		<English>Indochina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PHILIPPINES</Tag>
+		<English>Philippines</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES</Tag>
+		<English>Available incense resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT</Tag>
+		<English>Currently no European colonies in East and Subequatorial Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_1500</Tag>
+		<English>No European colonies in East and Subequatorial Africa in 1500 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_1910</Tag>
+		<English>No European colonies in East and Subequatorial Africa in 1910 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK</Tag>
+		<English>Enemy ships sunk: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TOTAL_GOLD</Tag>
+		<English>Gold in treasury: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BALKANS</Tag>
+		<English>Balkans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NORTH_AFRICA</Tag>
+		<English>North Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NEAR_EAST</Tag>
+		<English>Near East</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EUROPEAN_CORE</Tag>
+		<English>Controlling a European core</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ACQUIRED_GOLD</Tag>
+		<English>Acquired gold: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_ADVANCED_CIV</Tag>
+		<English>Most advanced civilization: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MAGHREB</Tag>
+		<English>Maghreb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MESOPOTAMIA</Tag>
+		<English>Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT</Tag>
+		<English>%s1_religion spread to: %s2 / %s3%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES</Tag>
+		<English>Buddhist monasteries: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES</Tag>
+		<English>Hindu monasteries: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION</Tag>
+		<English>Average city population: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_POPULATION_CIV</Tag>
+		<English>Civilization with the largest population: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES</Tag>
+		<English>Owned happiness resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOLD_SILVER_RESOURCES</Tag>
+		<English>Gold and silver resources secured: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_EMPIRE_CIV</Tag>
+		<English>Largest empire: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_CULTURE</Tag>
+		<English>Culture in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EUROPEAN_TERRITORY</Tag>
+		<English>European territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY</Tag>
+		<English>North American territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_NORTH_AMERICA</Tag>
+		<English>5 cities in North America</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_ASIA</Tag>
+		<English>5 cities in Asia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_AFRICA</Tag>
+		<English>4 cities in Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_SOUTH_AMERICA</Tag>
+		<English>3 cities in South America, Central America and the Caribbean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_OCEANIA</Tag>
+		<English>3 cities in Australia and Oceania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAVY_SIZE</Tag>
+		<English>Total of frigates and ships of the line: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FIRST_ENTER_INDUSTRIAL</Tag>
+		<English>First to enter the Industrial Era</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FIRST_ENTER_MODERN</Tag>
+		<English>First to enter the Modern Era</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_VASSALS</Tag>
+		<English>Number of vassals: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY</Tag>
+		<English>Great people in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SCANDINAVIA</Tag>
+		<English>Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA</Tag>
+		<English>7 cities in Siberia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY</Tag>
+		<English>Railroad from Moscow to a Siberian port</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COMMUNIST_BROTHERS</Tag>
+		<English>Communist brothers: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_MERCHANTS_IN_CITY</Tag>
+		<English>Great merchants in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EUROPEAN_COLONIES_CONQUERED</Tag>
+		<English>European colonies conquered: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_SPICE_RESOURCES</Tag>
+		<English>Available spice resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RICHEST_CIVILIZATION</Tag>
+		<English>Richest civilization: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES</Tag>
+		<English>Extra-European colonies founded: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_SOUTH_AMERICAN_COLONIES</Tag>
+		<English>No European colonies in South America (except Brazil)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE</Tag>
+		<English>Cities with influential culture: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MEDITERRANEAN_TERRITORY</Tag>
+		<English>Mediterranean territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_CITIES_RAZED</Tag>
+		<English>Cities razed: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOSQUES_BUILT</Tag>
+		<English>Mosques built: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENSLAVED_UNITS</Tag>
+		<English>Enslaved units: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_CENTRAL_AMERICAN_COLONIES</Tag>
+		<English>No European colonies in Central America, Southern USA and the Caribbean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_WONDERS_CAPITAL</Tag>
+		<English>Wonders in capital: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EASTERN_MEDITERRANEAN</Tag>
+		<English>Eastern Mediterranean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BLACK_SEA</Tag>
+		<English>Black Sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAIRO</Tag>
+		<English>Cairo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MECCA</Tag>
+		<English>Mecca</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BAGHDAD</Tag>
+		<English>Baghdad</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_VIENNA</Tag>
+		<English>Vienna</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_POWERFUL_CIV</Tag>
+		<English>Most powerful civilization: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_SOUTH_ASIAN_COLONIES</Tag>
+		<English>No foreign colonies in South Asia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_AMERICAN_COLONIES</Tag>
+		<English>No European colonies in North and Central America and the Caribbean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OIL_SECURED</Tag>
+		<English>Oil resources secured: %d1 / %d2</English>
+	</TEXT>
+</Civ4GameText>
