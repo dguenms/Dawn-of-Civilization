@@ -386,7 +386,7 @@ class CvRFCEventHandler:
 
                 self.com.onCityAcquired(city) #Communications
 
-                self.vic.onCityAcquired(owner, playerType, bConquest) #Victory
+                self.vic.onCityAcquired(owner, playerType, bConquest, city) #Victory
 
 		self.corp.onCityAcquired(argsList) #Companies
 
