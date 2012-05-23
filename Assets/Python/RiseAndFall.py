@@ -4146,7 +4146,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 3)
                 if (iCiv == iHolland):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-                        utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
+                        utils.makeUnit(con.iMusketman, iCiv, tPlot, 6)
+			utils.makeUnit(con.iBombard, iCiv, tPlot, 2)
                         #utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, tPlot, 1)
@@ -5264,6 +5265,7 @@ class RiseAndFall:
                                 teamHolland.setHasTech(con.iAesthetics, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iLiterature, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iDrama, True, iCiv, False, False)
+                                teamHolland.setHasTech(con.iMusic, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iPatronage, True, iCiv, False, False)
                         if (iCiv == iMali):
                                 teamMali.setHasTech(con.iMining, True, iCiv, False, False)
