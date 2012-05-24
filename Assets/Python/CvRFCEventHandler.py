@@ -318,7 +318,7 @@ class CvRFCEventHandler:
 			self.up.turkishUP(city, playerType, owner)
 		elif playerType in lTradingCompanyList:
 			if (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(playerType)]:
-				self.up.turkishUP(city, playerType, owner)
+				self.up.tradingCompanyCulture(city, playerType, owner)
 
                 if (playerType < iNumMajorPlayers):
                          utils.spreadMajorCulture(playerType, city.getX(), city.getY())

@@ -3622,6 +3622,7 @@ class RiseAndFall:
 		pPlayer = gc.getPlayer(iPlayer)
 		targetList = utils.getColonialTargets(iPlayer, True)
 		targetCivList = []
+		settlerList = []
 
 		iGold = len(targetList) * 200
 
@@ -3631,11 +3632,12 @@ class RiseAndFall:
 				iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
 				if not iTargetCiv in targetCivList:
 					targetCivList.append(iTargetCiv)
+			else:
+				settlerList.append((x,y))
 
-		if len(targetCivList) == 0:
-			for tPlot in targetList:
-				x, y = tPlot
-				utils.colonialAcquisition(iPlayer, x, y)
+		for tPlot in settlerList:
+			x, y = tPlot
+			utils.colonialAcquisition(iPlayer, x, y)
 	
 		for iTargetCiv in targetCivList:
 			if iTargetCiv == utils.getHumanID():
