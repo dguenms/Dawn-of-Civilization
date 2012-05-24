@@ -689,4 +689,20 @@ class UniquePowers:
 			iCount += 1
 			
 		return iCount
+		
+	
+        def tradingCompanyCulture(self, city, iCiv, iPreviousOwner):
+               
+                for x in range(city.getX()-1, city.getX()+2):
+                        for y in range(city.getY()-1, city.getY()+2):
+                                pCurrent = gc.getMap().plot( x, y )
+                                if (x == city.getX() and y == city.getY()):
+                                        utils.convertPlotCulture(pCurrent, iCiv, 51, False)
+                                elif (pCurrent.isCity()):
+                                        pass
+                                elif (utils.calculateDistance(x, y, city.getX(), city.getY()) == 1):
+                                        utils.convertPlotCulture(pCurrent, iCiv, 65, True)
+                                else:
+					if pCurrent.getOwner() == iPreviousOwner:
+						utils.convertPlotCulture(pCurrent, iCiv, 15, False)
                         

@@ -1313,8 +1313,8 @@ class Victory:
 							cityList = PyPlayer(iCiv).getCityList()
 							for city in cityList:
 								pCity = city.GetCy()
-								if utils.isPlotInArea((pCity.getX(), pCity.getY()), con.tEuropeTL, con.tEuropeBR) or utils.isPlotInArea((pCity.getX(), pCity.getY()), con.tEasternEuropeTL, con.tEasternEuropeBR):
-									bNoProtestants = True
+								if pCity.getRegionID() in [con.rIberia, con.rBritain, con.rItaly, con.rEurope, con.rBalkans, con.rScandinavia, con.rRussia]:
+									bNoProtestants = False
 									break
 									break
 									

@@ -4297,7 +4297,7 @@ def canTriggerTradingCompanyConquerors(argsList):
 	id = lCivList.index(iPlayer)
 
 	# Leoreth: dirty solution: determine that turn's target cities during this check
-	targetList = utils.getColonialTargets(iPlayer)
+	targetList = utils.getColonialTargets(iPlayer, True)
 	
 	sd.scriptDict['tTradingCompanyConquerorsTargets'][id].extend(targetList)
 
@@ -4372,6 +4372,7 @@ def doTradingCompanyConquerors1(argsList):
 
 	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
 	targetCivList = []
+	settlerList = []
 
 	iGold = len(targetList) * 200
 
@@ -4381,15 +4382,18 @@ def doTradingCompanyConquerors1(argsList):
 			iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
 			if not iTargetCiv in targetCivList:
 				targetCivList.append(iTargetCiv)
+		else:
+			settlerList.append((x,y))
 
-	if len(targetCivList) == 0:
-		for tPlot in targetList:
-			x, y = tPlot
-			utils.colonialAcquisition(iPlayer, x, y)
+	for tPlot in settlerList:
+		x, y = tPlot
+		utils.colonialAcquisition(iPlayer, x, y)
 	
 	for iTargetCiv in targetCivList:
 		iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
-		if iRand >= con.tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
+		if iTargetCiv >= con.iNumPlayers:
+			bAccepted = True
+		elif iRand >= con.tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
 			bAccepted = True
 		else:
 			bAccepted = False
@@ -4454,9 +4458,9 @@ def getTradingCompanyConquerors2HelpText(argsList):
 
 	for tPlot in targetList:
 		x, y = tPlot
-		if targetList.index(tPlot) != 0:
-			sTargetCities += ', '
 		if gc.getMap().plot(x, y).isCity():
+			if targetList.index(tPlot) != 0:
+				sTargetCities += ', '
 			sTargetCities += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
 
 	return localText.getText("TXT_KEY_EVENT_TCC_CONQUEST", (sTargetCivs, sTargetCities))
@@ -4472,7 +4476,8 @@ def doTradingCompanyConquerors2(argsList):
 
 	for tPlot in targetList:
 		x, y = tPlot
-		utils.colonialConquest(iPlayer, x, y)
+		if gc.getMap().plot(x, y).isCity():
+			utils.colonialConquest(iPlayer, x, y)
 
 	x, y = targetList[0]
 	for i in range(x-1, x+2):
