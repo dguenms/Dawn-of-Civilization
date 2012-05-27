@@ -749,6 +749,9 @@ class Stability:
 #                                iNewBaseStability += max(-7,2*(3 - pPlayer.getNumCities()))
 #                                #print("iNewBaseStability civic single 3",iNewBaseStability, iPlayer)
 
+			if (iCivic1 == con.iRepresentation):
+				iNewBaseStability += max(-8, 2*(4 - pPlayer.getNumCities()))
+
 			if (iCivic0 == con.iRepublic): #Republic
 				iNewBaseStability += max(-5,5 - pPlayer.getNumCities())	#threshold=5, cap=-5
 

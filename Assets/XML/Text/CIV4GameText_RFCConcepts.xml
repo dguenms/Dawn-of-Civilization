@@ -264,6 +264,88 @@ Netherlands: three cities in Indonesia</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS_PEDIA</Tag>
-		<English>[H1]Conditional Spawns[\H1][PARAGRAPH:2]Certain civilizations in Dawn of Civilization only spawn when the right conditions are met. These civilizations are Byzantium, Italy and Thailand. Their requirements are listed below:[NEWLINE][BOLD]Byzantium:[\BOLD] Only spawns if Rome is alive and controls at least two cities outside of its core. [NEWLINE][BOLD]Italy:[\BOLD] Only spawns if there are at least as many cities controlled by independents as by other players. [NEWLINE][BOLD]Thailand:[\BOLD] Only spawns if the Khmer are dead or sufficiently unstable. This threshold less strict when the player is controlling the Khmer.</English>
+		<English>[H1]Conditional Spawns[\H1][PARAGRAPH:2]Certain civilizations in Dawn of Civilization only spawn when the right conditions are met. These civilizations are Byzantium, Italy and Thailand. Their requirements are listed below:[NEWLINE][NEWLINE][BOLD]Byzantium:[\BOLD] Only spawns if Rome is alive and controls at least two cities outside of its core.[NEWLINE][BOLD]Italy:[\BOLD] Only spawns if there is at least one independent city on the Italian peninsula. [NEWLINE][BOLD]Thailand:[\BOLD] Only spawns if the Khmer are dead or sufficiently unstable. This threshold less strict when the player is controlling the Khmer.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Tag>
+		<English>Tile Stability Display</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_STABILITY_TOOLTIP_PEDIA</Tag>
+		<English>[H1]Tile Stability Display[\H1][PARAGRAPH:2]In Dawn of Civilization, the stability effect of a specific tile is displayed in the tooltip when you hover over it on the map. The stability categories of tiles are Core (dark green), Historical (light green), Contested (yellow), Foreign (orange) and Foreign Core (red). The colors associated with the categories match those of the stability maps released for RFC.[PARAGRAPH:2]The stability category of a tile influences your expansion stability in multiple ways, depending on the circumstances.[NEWLINE][NEWLINE][BOLD]Core Area:[\BOLD][NEWLINE][ICON_BULLET]No stability penalty for covering with your culture[NEWLINE][ICON_BULLET]Foreign cities here cause a stability penalty[NEWLINE][ICON_BULLET]You can collapse if you're completely pushed out of your core area[NEWLINE][ICON_BULLET]The core area is identical with your flip zone at the game's start[NEWLINE][NEWLINE][BOLD]Historical Area:[\BOLD][NEWLINE][ICON_BULLET]No stability penalty for covering with your culture[NEWLINE][NEWLINE][BOLD]Contested Area:[\BOLD][NEWLINE][ICON_BULLET]No stability penalty for covering with your culture[NEWLINE][ICON_BULLET]Small penalty for owning cities[NEWLINE][ICON_BULLET]Risk of respawn of another civilization[NEWLINE][NEWLINE][BOLD]Foreign Area:[\BOLD][NEWLINE][ICON_BULLET]Stability penalty for covering with your culture[NEWLINE][NEWLINE][BOLD]Foreign Core Area:[\BOLD][NEWLINE][ICON_BULLET]Stability penalty for covering with your culture[NEWLINE][ICON_BULLET]Larger penalty for owning cities[NEWLINE][ICON_BULLET]Risk of respawn of another civilization</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CIVIC_STABILITY</Tag>
+		<English>Civic Stability Effects</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CIVIC_STABILITY_PEDIA</Tag>
+		<English>[H1]Civic Stability Effects[\H1][PARAGRAPH:2]One of the most obscure elements of Rhye's and Fall of Civilization has always been the stability system. New players often don't know what makes their empires collapse or have no idea how to counteract bad stability. While Rhye has intentionally hidden some factors for stability from the player, at least there have been several stability guides for the vanilla mod.[PARAGRAPH:2]Dawn of Civilization has made heavy changes on the civic system, so everything from these guides is not very helpful in this case. This is what this guide focuses on; other aspects of stability, aside from civic choices, have remained unchanged, so everything you already know from RFC still holds true.[PARAGRAPH:2]The general rule of thumb still remains the same, though: simply try to imagine a historical society in your current year with your current civics. Common sense can tell you a lot about what is a good idea and what is not. If there's still something counterintuitive going on, that's what this guide is for.[NEWLINE][NEWLINE][H2]Basics[\H2][NEWLINE]Most of the influence civics have on your stability can be broken down into three questions:[NEWLINE][ICON_BULLET]How do my civics get along with each other?[NEWLINE][ICON_BULLET]How viable are my civics for my current time?[NEWLINE][ICON_BULLET]How viable are my civics for my empire's size?[NEWLINE][NEWLINE]
+		[H2]1. Civic Combinations[\H2]
+		[BOLD]Positive Combinations:[\BOLD]
+[ICON_BULLET]Autocracy + Totalitarianism[TAB][TAB]+10
+[ICON_BULLET]Totalitarianism + State Property[TAB]+5
+[ICON_BULLET]Totalitarianism + Secularism[TAB][TAB]+3
+[ICON_BULLET]Supreme Council + State Property[TAB]+7
+[ICON_BULLET]Republic + Secularism[TAB][TAB][TAB]+2
+[ICON_BULLET]Republic + Universal Suffrage[TAB][TAB]+4
+[ICON_BULLET]Theocracy + Fanaticism[TAB][TAB][TAB]+4
+[ICON_BULLET]Egalitarianism + Secularism[TAB][TAB]+3
+[ICON_BULLET]Vassalage + Agrarianism[TAB][TAB][TAB]+3
+[ICON_BULLET]Dynasticism + Vassalage[TAB][TAB][TAB]+3
+[ICON_BULLET]City States + Mercantilism[TAB][TAB][TAB]+3
+[ICON_BULLET]Absolutism + Mercantilism[TAB][TAB]+3
+[ICON_BULLET]Capitalism + Free Market[TAB][TAB][TAB]+2
+[NEWLINE][BOLD]Negative Combinations:[\BOLD]
+[ICON_BULLET]State Property + Agrarianism[TAB][TAB]-7
+[ICON_BULLET]State Property + Capitalism[TAB][TAB]-7
+[ICON_BULLET]Supreme Council + Dynasticism[TAB]-4
+[ICON_BULLET]Supreme Council + Theocracy[TAB][TAB]-4
+[ICON_BULLET]Tyranny + Absolutism[TAB][TAB][TAB]-4
+[ICON_BULLET]Tyranny + Universal Suffrage[TAB][TAB]-4
+[ICON_BULLET]Theocracy + Secularism[TAB][TAB][TAB]-8
+[ICON_BULLET]Theocracy + Egalitarianism[TAB][TAB]-3
+[ICON_BULLET]City States + Vassalage[TAB][TAB][TAB]-2
+[ICON_BULLET]City States + not Urbanization[TAB][TAB]-3
+[H2]2a. Civic modifiers depending on era[\H2]
+A few civics have different effects according to the era you're in.[NEWLINE]
+[ICON_BULLET]Vassalage:[TAB][TAB]Medieval era: +3[NEWLINE][TAB][TAB][TAB][TAB]All other eras: -3
+[ICON_BULLET]Theocracy:[TAB][TAB]Industrial era and later: -5
+[ICON_BULLET]Pantheon:[TAB][TAB]Ancient and Classical era: +3[NEWLINE][TAB][TAB][TAB][TAB]All other eras: -3
+[ICON_BULLET]City States:[TAB][TAB]Medieval era and later: -4
+[ICON_BULLET]Representation:[TAB]Industrial era and later: +3
+[H2]2b. Civic modifiers depending on discovered techs[\H2]
+The effects of some civics change after certain techs are discovered, implying new social ideals or developments that make older forms of government obsolete.[NEWLINE]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Universal Suffrage[COLOR_REVERT] gives +3 stability after the discovery of [COLOR_TECH_TEXT]Democracy[COLOR_REVERT]
+[ICON_BULLET]Every Society civic except [COLOR_HIGHLIGHT_TEXT]Egalitarianism[COLOR_REVERT] gives -3 stability after the discovery of [COLOR_TECH_TEXT]Communism[COLOR_REVERT]
+[ICON_BULLET]Every Government civic except [COLOR_HIGHLIGHT_TEXT]Republic[COLOR_REVERT] gives -3 stability after the discovery of [COLOR_TECH_TEXT]Constitution[COLOR_REVERT]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Forced Labor[COLOR_REVERT] gives +3 stability until the discovery of [COLOR_TECH_TEXT]Democracy[COLOR_REVERT]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Forced Labor[COLOR_REVERT] gives -3 stability after the discovery of [COLOR_TECH_TEXT]Democracy[COLOR_REVERT], unless you are also running [COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Self-Sufficiency[COLOR_REVERT] gives -5 stability after the discovery of [COLOR_TECH_TEXT]Economics[COLOR_REVERT]
+[H2]3. Civic modifiers depending on empire size[\H2]
+Some civics are better suited for the government of smaller states, while others are helpful with great empires.[NEWLINE]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Absolutism[COLOR_REVERT] gives +5 stability if you have 5 cities or less, but reduces your stability by -1 for every extra city if you have more, up to a maximum of -7
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Republic[COLOR_REVERT] adds +5 stability, subtracted by the number of your cities, capped at -5. So Republic is only advantageous if you have less than five cities.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Representation[COLOR_REVERT] reduces your stability by -2 for every city above 4, up to a maximum of -8.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT] adds +1 for every five cities you control, up to a maximum of +10.
+[H2]Miscellaneous effects[\H2]
+There are some other effects that don't fall into the above categories.[NEWLINE]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Autocracy[COLOR_REVERT] gives you +3 stability for every civilization you're at war with.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Fanaticism[COLOR_REVERT] gives you +3 stability for every civilization you're at war with and that doesn't share your state religion.[NEWLINE]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Dynasticism[COLOR_REVERT] caps your stability at -50.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] caps your stability at -40.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tyranny[COLOR_REVERT] gives you +20 stability if you are below -60 stability.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Republic[COLOR_REVERT] gives you +5 stability if you are above +30 stability.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Universal Suffrage[COLOR_REVERT] gives you +5 stability if you are above +50 stability.[NEWLINE]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT] halves the negative effects of angry population in your cities.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT] doubles the positive effect of building jails.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Autocracy[COLOR_REVERT] has a lower threshold after which foreign culture in your cities negatively affects your stability.[NEWLINE]
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Fanaticism[COLOR_REVERT] create negative stability if there are non-state religions in your cities.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Pantheon[COLOR_REVERT] creates extra negative stability for religions in your cities.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] creates extra stability for cities that only have your state religion.[NEWLINE]
+[ICON_BULLET]A Great Depression can be triggered while running [COLOR_HIGHLIGHT_TEXT]Free Market[COLOR_REVERT]. [COLOR_HIGHLIGHT_TEXT]State Property[COLOR_REVERT] prevents its spread to your civilization, while [COLOR_HIGHLIGHT_TEXT]Mercantilism[COLOR_REVERT] lowers its effect on your stability.[NEWLINE]
+[ICON_BULLET]A Post-Communist Crisis is triggered by switching from [COLOR_HIGHLIGHT_TEXT]State Property[COLOR_REVERT] to another economic civic.[NEWLINE]
+[ICON_BULLET]Switching from any Organization civic except [COLOR_HIGHLIGHT_TEXT]Representation[COLOR_REVERT] to [COLOR_HIGHLIGHT_TEXT]Universal Suffrage[COLOR_REVERT] causes a period of instability.[PARAGRAPH:2][BOLD]Note that because of the complexity of the stability algorithm, you shouldn't expect the numbers listed in this guide to align with the numbers in your civics category in the financial advisor or even your overall stability. The numbers are for comparative uses only.[\BOLD]
+</English>
 	</TEXT>
 </Civ4GameText>

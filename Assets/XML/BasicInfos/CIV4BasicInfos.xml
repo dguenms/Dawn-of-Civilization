@@ -33,6 +33,16 @@
 			<Civilopedia>TXT_KEY_CONCEPT_STABILITY_PEDIA</Civilopedia>
 		</ConceptInfo>
 		<ConceptInfo>
+			<Type>CONCEPT_STABILITY_TOOLTIP</Type>
+			<Description>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_STABILITY_TOOLTIP_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_CIVIC_STABILITY</Type>
+			<Description>TXT_KEY_CONCEPT_CIVIC_STABILITY</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_CIVIC_STABILITY_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
 			<Type>CONCEPT_CONGRESSES</Type>
 			<Description>TXT_KEY_CONCEPT_CONGRESSES</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_CONGRESSES_PEDIA</Civilopedia>
