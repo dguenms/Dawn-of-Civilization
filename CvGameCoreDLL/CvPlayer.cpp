@@ -25014,6 +25014,12 @@ void CvPlayer::doStability()
 			changeStabilityCategory(STABILITY_CIVIC_CITIES, std::max(-5, 5 - getNumCities()));
 		}
 
+		if (eCivic1 == CIVIC_REPRESENTATION)
+		{
+			iNewBaseStability += std::max(-8, 2 * (4 - getNumCities()));
+			changeStabilityCategory(STABILITY_CIVIC_CITIES, std::max(-8, 2 * (4 - getNumCities())));
+		}
+
 		if (eCivic2 == CIVIC_TOTALITARIANISM)
 		{
 			iNewBaseStability += std::max(10, getNumCities()/5);
