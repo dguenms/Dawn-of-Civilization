@@ -1021,7 +1021,7 @@ def isForeignCorePlot(argsList):
 	y = argsList[1]
 	iResult = 0
 	for iCiv in range(con.iNumPlayers):
-		if CyGlobalContext().getPlayer(iCiv).isAlive():
+		if CyGlobalContext().getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]):
 			reborn = utils.getReborn(iCiv)
 			if (x >= con.tCoreAreasTL[reborn][iCiv][0] and x <= con.tCoreAreasBR[reborn][iCiv][0] and y >= con.tCoreAreasTL[reborn][iCiv][1] and y <= con.tCoreAreasBR[reborn][iCiv][1] and not (x, y) in con.tExceptions[reborn][iCiv]):
 				iResult = 1
