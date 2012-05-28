@@ -1694,7 +1694,7 @@ class Victory:
                                                        if (iLoopCiv != iPortugal):
                                                                 if (teamPortugal.isOpenBorders(iLoopCiv)):
                                                                        iCount += 1
-                                                if (iCount >= 12):                                                                    
+                                                if (iCount >= 14):                                                                    
                                                         self.setGoal(iPortugal, 1, 1)
                                                 else:
                                                         self.setGoal(iPortugal, 1, 0)
@@ -2379,6 +2379,24 @@ class Victory:
 					self.setGoal(iKorea, 1, 1)
 				else:
 					self.setGoal(iKorea, 1, 0)
+			
+		# English UHV: be first to enter the Industrial and Modern eras
+		if self.getGoal(iEngland, 2) == -1 and iGameTurn >= getTurnForYear(1400):
+			if gc.getTechInfo(iTech).getEra() == iIndustrial:
+				if self.getEnglishEras(0) == -1:
+					if iPlayer == iEngland:
+						self.setEnglishEras(0, 1)
+						if self.getEnglishEras(1) == 1:
+							self.setGoal(iEngland, 2, 1)
+					else:
+						self.setGoal(iEngland, 2, 0)
+				elif self.getEnglishEras(1) == -1:
+					if iPlayer == iEngland:
+						self.setEnglishEras(1, 1)
+						if self.getEnglishEras(0) == 1:
+							self.setGoal(iEngland, 2, 1)
+					else:
+						self.setGoal(iEngland, 2, 0)
 
                 if (iPlayer == iJapan):
                         if (pJapan.isAlive()):
@@ -2414,40 +2432,43 @@ class Victory:
 
 
 
-                elif (iPlayer == iEngland):
-                        if (pEngland.isAlive()):
-                                if (iGameTurn >= getTurnForYear(1300)):
-                                        if (self.getGoal(iEngland, 2) == -1):
-                                                englishEra = pEngland.getCurrentEra()
-                                                if (englishEra == iIndustrial):
-                                                        if (self.getEnglishEras(0) == -1): #just entered
-                                                                bFirst = True
-                                                                for iCiv in range(iNumPlayers):
-                                                                        if (iCiv != iEngland):
-                                                                                if (gc.getPlayer(iCiv).getCurrentEra() == iIndustrial):
-                                                                                        bFirst = False
-                                                                                        break
-                                                                if (bFirst):
-                                                                        self.setEnglishEras(0, 1)
-                                                                else:
-                                                                        self.setEnglishEras(0, 0)
-                                                if (englishEra == iModern):
-                                                        if (self.getEnglishEras(1) == -1): #just entered
-                                                                bFirst = True
-                                                                for iCiv in range(iNumPlayers):
-                                                                        if (iCiv != iEngland):
-                                                                                if (gc.getPlayer(iCiv).getCurrentEra() == iModern):
-                                                                                        bFirst = False
-                                                                                        break
-                                                                if (bFirst):
-                                                                        self.setEnglishEras(1, 1)
-                                                                        if (self.getEnglishEras(0) == 1):
-                                                                                self.setGoal(iEngland, 2, 1)
-                                                                        else:
-                                                                                self.setGoal(iEngland, 2, 0)
-                                                                else:
-                                                                        self.setEnglishEras(1, 0)
-                                                                        self.setGoal(iEngland, 2, 0)
+                #elif (iPlayer == iEngland):
+                #        if (pEngland.isAlive()):
+                #                if (iGameTurn >= getTurnForYear(1300)):
+                #                        if (self.getGoal(iEngland, 2) == -1):
+                #                                englishEra = pEngland.getCurrentEra()
+		#				utils.debugTextPopup("Era entered: "+str(englishEra))
+                #                                if (englishEra == iIndustrial):
+		#					utils.debugTextPopup("Entered Industrial Era")
+                #                                        if (self.getEnglishEras(0) == -1): #just entered
+                #                                                bFirst = True
+                #                                                for iCiv in range(iNumPlayers):
+                #                                                        if (iCiv != iEngland):
+                #                                                                if (gc.getPlayer(iCiv).getCurrentEra() == iIndustrial):
+                #                                                                        bFirst = False
+                #                                                                        break
+                #                                               if (bFirst):
+		#							utils.debugTextPopup("First to enter Industrial Era")
+                #                                                        self.setEnglishEras(0, 1)
+                #                                                else:
+                #                                                        self.setEnglishEras(0, 0)
+                #                                if (englishEra == iModern):
+                #                                        if (self.getEnglishEras(1) == -1): #just entered
+                #                                                bFirst = True
+                #                                                for iCiv in range(iNumPlayers):
+                #                                                        if (iCiv != iEngland):
+                #                                                                if (gc.getPlayer(iCiv).getCurrentEra() == iModern):
+                #                                                                        bFirst = False
+                #                                                                        break
+                #                                                if (bFirst):
+                #                                                        self.setEnglishEras(1, 1)
+                #                                                        if (self.getEnglishEras(0) == 1):
+                #                                                                self.setGoal(iEngland, 2, 1)
+                #                                                        else:
+                #                                                                self.setGoal(iEngland, 2, 0)
+                #                                                else:
+                #                                                        self.setEnglishEras(1, 0)
+                #                                                        self.setGoal(iEngland, 2, 0)
 
                                                                         
 
@@ -3492,7 +3513,7 @@ class Victory:
                                 	if (iLoopCiv != iPortugal):
                                 		if (teamPortugal.isOpenBorders(iLoopCiv)):
                                 			iCount += 1
-				aHelp.append(self.getIcon(iCount >= 12) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 12)))
+				aHelp.append(self.getIcon(iCount >= 14) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 14)))
 			elif iGoal == 2:
 				iColonies = self.getPortugueseColonies()
 				aHelp.append(self.getIcon(iColonies >= 15) + localText.getText("TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES", (iColonies, 15)))

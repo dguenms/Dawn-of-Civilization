@@ -202,3 +202,6 @@
 	- Spread Catholicism to 40% and allow no Protestant civilization in Europe in 1700 AD
 # disabled the exile mechanic
 # added new hints, removed obsolete ones
+# added concept entries to explain the tile stability display and stability effects from civics
+# second Portuguese goal now requires 14 open border agreements
+# dead civs don't appear in the scoreboard anymore

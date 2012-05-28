@@ -2968,6 +2968,10 @@ class CvMainInterface:
 						j = gc.getMAX_CIV_PLAYERS() - 1
 						while (j > -1):
 							ePlayer = gc.getGame().getRankPlayer(j)
+							
+							if not gc.getPlayer(ePlayer).isAlive():
+								j = j-1
+								continue
 
 							if (not CyInterface().isScoresMinimized() or gc.getGame().getActivePlayer() == ePlayer):
                                                                 #if (gc.getPlayer(ePlayer).isAlive() and not gc.getPlayer(ePlayer).isMinorCiv()): #Rhye
