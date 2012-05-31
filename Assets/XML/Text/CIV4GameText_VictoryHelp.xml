@@ -210,7 +210,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION</Tag>
-		<English>Average city population: %s1 / %s2%%</English>
+		<English>Average city population: %s1 / %s2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HIGHEST_POPULATION_CIV</Tag>

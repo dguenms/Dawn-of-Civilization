@@ -1198,7 +1198,7 @@ class Victory:
                                         iTotalPopulation = 0
                                         for pCity in apCityList:			
                                                 iTotalPopulation += pCity.getPopulation()
-                                        if len(apCityList) > 0 and (iTotalPopulation / len(apCityList) >= 10):
+                                        if len(apCityList) > 0 and (iTotalPopulation * 1.00 / len(apCityList) >= 10.0):
                                                 self.setGoal(iKhmer, 1, 1)
                                         else:
                                                 self.setGoal(iKhmer, 1, 0)                                        
@@ -3309,17 +3309,17 @@ class Victory:
 				iBuddhism = self.getNumBuildings(iKhmer, con.iBuddhistMonastery)
 				iHinduism = self.getNumBuildings(iKhmer, con.iHinduMonastery)
 				bAngkorWat = (self.getWondersBuilt(iKhmer) >= 1)
-				aHelp.append(self.getIcon(iBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iBuddhism, 4)) + ' ' + self.getIcon(iHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_HINDU_MONSTERIES", (iHinduism, 4)) + ' ' + self.getIcon(bAngkorWat) + localText.getText("TXT_KEY_BUILDING_ANGKOR_WAT", ()))
+				aHelp.append(self.getIcon(iBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iBuddhism, 4)) + ' ' + self.getIcon(iHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES", (iHinduism, 4)) + ' ' + self.getIcon(bAngkorWat) + localText.getText("TXT_KEY_BUILDING_ANGKOR_WAT", ()))
 			elif iGoal == 1:
 				apCityList = PyPlayer(iKhmer).getCityList()
                                 iTotalPopulation = 0
                                 for pCity in apCityList:			
                                 	iTotalPopulation += pCity.getPopulation()
 				if len(apCityList) > 0:
-                                	fPopPerCity = iTotalPopulation / len(apCityList)
+                                	fPopPerCity = iTotalPopulation * 1.00 / len(apCityList)
 				else:
 					fPopPerCity = 0
-				aHelp.append(self.getIcon(fPopPerCity >= 10.0) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", (str(u"%.2f%%" % fPopPerCity), str(10))))
+				aHelp.append(self.getIcon(fPopPerCity >= 10.0) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", (str(u"%.2f" % fPopPerCity), str(10))))
 			elif iGoal == 2:
 				iCulture = pKhmer.countTotalCulture()
 				aHelp.append(self.getIcon(iCulture >= utils.getTurns(8000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(8000))))
