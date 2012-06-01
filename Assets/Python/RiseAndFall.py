@@ -838,7 +838,7 @@ class RiseAndFall:
 				utils.updateMinorTechs(iSeljuks, iBarbarian)
 
                 #Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
-                if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820)):
+                if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) + 5 - (utils.getSeed() % 10)):
                         utils.makeUnit(con.iSettler, iCarthage, (58, 39), 1)
                         utils.makeUnit(con.iArcher, iCarthage, (58, 39), 2)
                         utils.makeUnit(con.iWorker, iCarthage, (58, 39), 2)
@@ -1613,6 +1613,11 @@ class RiseAndFall:
                                                         bSafe = True
                                         #print ("iCiv", iCiv, "bSafe", bSafe)
                                         if (bSafe == False):
+					
+						# don't let Carthage die this way
+						if iCiv == iCarthage:
+							return
+					
                                                 bVassal = False
                                                 for iMaster in range(con.iNumPlayers):
                                                         if (teamCiv.isVassal(iMaster)):
@@ -4854,7 +4859,7 @@ class RiseAndFall:
 			if iCiv == iIndia:
 				lIndianTechs = [con.iMysticism, con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, \
 						con.iHunting, con.iMining, con.iWriting, con.iMeditation, con.iAnimalHusbandry, \
-						con.iBronzeWorking, con.iArchery, con.iSailing, con.iIronWorking]
+						con.iBronzeWorking, con.iArchery, con.iSailing]
 				for iTech in lIndianTechs:
 					teamIndia.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iGreece):

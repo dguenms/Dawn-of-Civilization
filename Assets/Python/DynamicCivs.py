@@ -898,7 +898,7 @@ class DynamicCivs:
                 iGameTurn = gc.getGame().getGameTurn()
                 bAnarchy = pPlayer.isAnarchy()
 		bEmpire = self.isEmpire(iPlayer)
-		bCityStates = (iCivic0 == con.iCityStates or not gc.getTeam(pPlayer.getTeam()).isHasTech(con.iCodeOfLaws))
+		bCityStates = (iCivic0 == con.iCityStates)
 		bTheocracy = (iCivic0 == con.iTheocracy)
 		bResurrected = (self.getResurrections(iPlayer) > 0)
 		iAnarchyTurns = self.getAnarchyTurns(iPlayer)
@@ -906,6 +906,10 @@ class DynamicCivs:
 		iGameEra = gc.getGame().getCurrentEra()
 		# count number of resurrections (use to determine transition to medieval Egypt, Saudi-Arabia etc.)
 		# count anarchy turns (use for different dynasties, e.g. China or Egypt)
+		
+		if iPlayer in [iRome, iCarthage, iGreece, iIndia, iMaya, iAztec]:
+			if not gc.getTeam(iPlayer).isHasTech(con.iCodeOfLaws):
+				bCityStates = True
 		
                 bWar = False
                 for iTarget in range(iNumMajorPlayers):
@@ -1066,15 +1070,15 @@ class DynamicCivs:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_ZHOU")
 						return
 					elif iEra == iClassical:
-						if iAnarchyTurns <= 1:
+						if iGameTurn < getTurnForYear(0):
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QIN")
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_HAN")
 						return
 					elif iEra == iMedieval:
-						if iAnarchyTurns <= 2:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
-						elif teamChina.isHasTech(con.iPaper):
+						#if iAnarchyTurns <= 2:
+						#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
+						if teamChina.isHasTech(con.iPaper) and teamChina.isHasTech(con.iGunpowder):
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SONG")
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_TANG")

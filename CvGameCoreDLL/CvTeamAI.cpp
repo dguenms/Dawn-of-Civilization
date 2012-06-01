@@ -1382,6 +1382,7 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 	int iTechTradeKnownPercent;
 	int iKnownCount;
 	int iPossibleKnownCount;
+	int iChinaThreshold; //Leoreth: techs known regardless of contact to limit the Chinese
 	int iI, iJ;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
@@ -1420,6 +1421,7 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 
 	iKnownCount = 0;
 	iPossibleKnownCount = 0;
+	iChinaThreshold = 0;
 
 	for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
 	{
@@ -1435,6 +1437,11 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 					}
 
 					iPossibleKnownCount++;
+				}
+
+				if (GET_TEAM((TeamTypes)iI).isHasTech(eTech))
+				{
+					iChinaThreshold++;
 				}
 			}
 		}
