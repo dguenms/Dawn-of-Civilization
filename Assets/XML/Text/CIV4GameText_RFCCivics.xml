@@ -476,6 +476,10 @@
 		<English>Extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PANTHEON_STRATEGY</Tag>
+		<English>Can build classical wonders; extra happiness from pagan temples; extra unhappiness from non-state religions</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Tag>
 		<English>Can build missionaries without monasteries; cities with state religion construct buildings faster; extra unhappiness from non-state religions</English>
 	</TEXT>
