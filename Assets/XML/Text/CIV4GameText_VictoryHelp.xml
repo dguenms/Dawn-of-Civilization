@@ -37,11 +37,11 @@
 		<English>Percentage of world population: %s1 / %s2%%</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_PERCENTAGE_NUM_CONFUCIAN_ACADEMIES</Tag>
+		<Tag>TXT_KEY_VICTORY_NUM_CONFUCIAN_ACADEMIES</Tag>
 		<English>Confucian Academies: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_PERCENTAGE_NUM_TAOIST_PAGODAS</Tag>
+		<Tag>TXT_KEY_VICTORY_NUM_TAOIST_PAGODAS</Tag>
 		<English>Taoist Pagodas: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>

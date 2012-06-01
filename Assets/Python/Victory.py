@@ -3105,7 +3105,7 @@ class Victory:
 			if iGoal == 0:
 				iConfucianCounter = self.getNumBuildings(iChina, con.iConfucianCathedral)
 				iTaoistCounter = self.getNumBuildings(iChina, con.iTaoistCathedral)
-				aHelp.append(self.getIcon(iConfucianCounter >= 2) + localText.getText("TXT_KEY_VICTORY_CONFUCIAN_ACADEMIES", (iConfucianCounter, 2)) + ' ' + self.getIcon(iTaoistCounter >= 2) + localText.getText("TXT_KEY_VICTORY_TAOIST_PAGODAS", (iTaoistCounter, 2)))
+				aHelp.append(self.getIcon(iConfucianCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_CONFUCIAN_ACADEMIES", (iConfucianCounter, 2)) + ' ' + self.getIcon(iTaoistCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_TAOIST_PAGODAS", (iTaoistCounter, 2)))
 			elif iGoal == 1:
 				bCompass = (self.getChineseTechs(0) == 1)
 				bPaper = (self.getChineseTechs(1) == 1)
