@@ -907,7 +907,7 @@ class DynamicCivs:
 		# count number of resurrections (use to determine transition to medieval Egypt, Saudi-Arabia etc.)
 		# count anarchy turns (use for different dynasties, e.g. China or Egypt)
 		
-		if iPlayer in [iRome, iCarthage, iGreece, iIndia, iMaya, iAztec]:
+		if iPlayer in [iRome, iCarthage, iGreece, iIndia, iMaya, iAztecs]:
 			if not gc.getTeam(iPlayer).isHasTech(con.iCodeOfLaws):
 				bCityStates = True
 		
