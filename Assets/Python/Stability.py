@@ -507,7 +507,7 @@ class Stability:
                                 iMaxPlotsAbroad = 32
 			
 			# Leoreth: nerf Korean stability, and city states civic
-			if iPlayer == con.iKorea or iCivic0 == con.iCityStates:
+			if iPlayer == con.iKorea:
 				iMaxPlotsAbroad /= 2
                         
                         iNumPlotsAbroad = max(0,self.getOwnedPlotsLastTurn(iPlayer)-iMaxPlotsAbroad*2/3)                        
@@ -733,10 +733,16 @@ class Stability:
 			if (iCivic0 == con.iCityStates):
 				if (pPlayer.getCurrentEra() > con.iClassical):
 					iNewBaseStability -= 4
+				if pPlayer.getCurrentEra() >= con.iIndustrial:
+					iNewBaseStability -= 4
 
 			if (iCivic1 == con.iRepresentation): #Representation
 				if (pPlayer.getCurrentEra() >= con.iIndustrial):	#Bonus in industrial or later
 					iNewBaseStability += 3
+					
+			if iCivic0 == con.iRepublic:
+				if pPlayer.getCurrentEra() == con.iMedieval:
+					iNewBaseStability -= 10
 
                         if (iCivic1 == con.iAbsolutism): #Absolutism			#threshold=5, cap=-7
                                 if (pPlayer.getNumCities() <= 5):
@@ -754,6 +760,10 @@ class Stability:
 
 			if (iCivic0 == con.iRepublic): #Republic
 				iNewBaseStability += max(-5,5 - pPlayer.getNumCities())	#threshold=5, cap=-5
+				
+			if iCivic0 == con.iCityStates:
+				if pPlayer.getNumCities() > 4:
+					iNewBaseStability -= min(20, (pPlayer.getNumCities() - 4) * 4)
 
                         if (iCivic2 == con.iTotalitarianism): #Totalitarianism
                                 iNewBaseStability += min(10, pPlayer.getNumCities()/5) #slightly counterbalances the effect of number of cities (below)

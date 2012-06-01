@@ -24408,6 +24408,36 @@ bool CvPlayer::isHasBuilding(BuildingTypes eIndex)
     return (countNumBuildings(eIndex) > 0);
 }
 
+EraTypes CvPlayer::getSoundtrackEra()
+{
+	ReligionTypes eStateReligion = getStateReligion();
+	EraTypes eCurrentEra = getCurrentEra();
+
+	if (eStateReligion == CONFUCIANISM || eStateReligion == TAOISM || eStateReligion == BUDDHISM || eStateReligion == HINDUISM)
+	{
+		if (eCurrentEra == ERA_CLASSICAL || eCurrentEra == ERA_MEDIEVAL || eCurrentEra == ERA_RENAISSANCE)
+		{
+			return (EraTypes)ERA_EAST_ASIA;
+		}
+	}
+	else if (eStateReligion == ISLAM || eStateReligion == ZOROASTRIANISM)
+	{
+		if (eCurrentEra == ERA_MEDIEVAL || eCurrentEra == ERA_RENAISSANCE)
+		{
+			return (EraTypes)ERA_MIDDLE_EAST;
+		}
+	}
+	else if (eStateReligion == NO_RELIGION)
+	{
+		if (eCurrentEra == ERA_MEDIEVAL)
+		{
+			return (EraTypes)ERA_CLASSICAL;
+		}
+	}
+
+	return eCurrentEra;
+}
+
 
 int CvPlayer::getBaseStabilityLastTurn()
 {
@@ -24773,7 +24803,7 @@ void CvPlayer::doStability()
 			iMaxPlotsAbroad = 32;
 
 		// nerf Korea, City States civic
-		if (iPlayer == KOREA || eCivic0 == CIVIC_CITY_STATES)
+		if (iPlayer == KOREA)
 			iMaxPlotsAbroad /= 2;
 
 		int iNumPlotsAbroad = std::max(0, GET_PLAYER(ePlayer).getOwnedPlotsLastTurn() - iMaxPlotsAbroad*2/3);
@@ -24982,6 +25012,11 @@ void CvPlayer::doStability()
 				iNewBaseStability -= 4;
 				changeStabilityCategory(STABILITY_CIVIC_ERA, -4);
 			}
+			if (getCurrentEra() >= ERA_INDUSTRIAL)
+			{
+				iNewBaseStability -= 4;
+				changeStabilityCategory(STABILITY_CIVIC_ERA, -4);
+			}
 		}
 
 		if (eCivic1 == CIVIC_REPRESENTATION)
@@ -24990,6 +25025,15 @@ void CvPlayer::doStability()
 			{
 				iNewBaseStability += 3;
 				changeStabilityCategory(STABILITY_CIVIC_ERA, 3);
+			}
+		}
+
+		if (eCivic0 == CIVIC_REPUBLIC)
+		{
+			if (getCurrentEra() == ERA_MEDIEVAL)
+			{
+				iNewBaseStability -= 10;
+				changeStabilityCategory(STABILITY_CIVIC_ERA, -10);
 			}
 		}
 
@@ -25018,6 +25062,15 @@ void CvPlayer::doStability()
 		{
 			iNewBaseStability += std::max(-8, 2 * (4 - getNumCities()));
 			changeStabilityCategory(STABILITY_CIVIC_CITIES, std::max(-8, 2 * (4 - getNumCities())));
+		}
+
+		if (eCivic0 == CIVIC_CITY_STATES)
+		{
+			if (getNumCities() > 4)
+			{
+				iNewBaseStability -= std::min(20, (getNumCities() - 4)*4);
+				changeStabilityCategory(STABILITY_CIVIC_CITIES, std::min(20, (getNumCities() - 4)*4));
+			}
 		}
 
 		if (eCivic2 == CIVIC_TOTALITARIANISM)

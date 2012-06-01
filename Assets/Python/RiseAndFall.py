@@ -254,7 +254,7 @@ class RiseAndFall:
                 return sd.scriptDict['lAstronomyTurn'][iCiv]
 
         def setAstronomyTurn( self, iCiv, iNewValue ):
-                sd.scriptDict['lAstronomyTurn'][iCiv] = iNewValue
+		sd.scriptDict['lAstronomyTurn'][iCiv] = iNewValue
 
         def getNumCities( self, iCiv ):
                 return sd.scriptDict['lNumCities'][iCiv]
@@ -2359,6 +2359,22 @@ class RiseAndFall:
                         tBottomRight = tCoreAreasBR[reborn][iCiv]
                         tBroaderTopLeft = tBroaderAreasTL[reborn][iCiv]
                         tBroaderBottomRight = tBroaderAreasBR[reborn][iCiv]
+			
+			if iCiv == iThailand:
+				x, y = con.tCapitals[0][iKhmer]
+				if gc.getMap().plot(x, y).isCity():
+					angkor = gc.getMap().plot(x, y).getPlotCity()
+					bWonder = False
+					for iBuilding in range(con.iNumBuildings):
+						if angkor.isHasRealBuilding(iBuilding) and isWorldWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType()):
+							bWonder = True
+							break
+					if bWonder and utils.getHumanID() != iThailand:
+						print "Thais flip Angkor instead to save its wonders."
+						angkor.setName("Ayutthaya", False)
+						x, y = tCapital
+						tCapital = (x-1, y+1)
+						gc.getMap().plot(x-1, y+1).setFeatureType(-1, 0)
 
 			#if iCiv == iChina and utils.getHumanID() != iChina:
 			#	if not gc.getPlayer(0).isPlayable():
@@ -2526,6 +2542,8 @@ class RiseAndFall:
                 iCiv = self.getDeleteMode(0)
                 print ("deleteMode after", iCurrentPlayer)
                 tCapital = con.tCapitals[utils.getReborn(iCiv)][iCiv]
+			
+		
                 if (iCurrentPlayer == iCiv):
                         if(iCiv == iCarthage):
                                 for x in range(tCapital[0] - 2, tCapital[0] + 2):        # from x-2 to x+1
@@ -2593,6 +2611,7 @@ class RiseAndFall:
             
                     
         def birthInFreeRegion(self, iCiv, tCapital, tTopLeft, tBottomRight):
+	
                 startingPlot = gc.getMap().plot( tCapital[0], tCapital[1] )
                 if (self.getFlipsDelay(iCiv) == 0):
                         iFlipsDelay = self.getFlipsDelay(iCiv) + 2
@@ -4082,8 +4101,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                         utils.makeUnitAI(con.iKhmerBallistaElephant, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-                        utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
 			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
+                        utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
@@ -4174,8 +4193,9 @@ class RiseAndFall:
                         utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
                         utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
 			if utils.getHumanID() != iTurkey:
-				utils.makeUnit(con.iBombard, iCiv, tPlot, 2)
-				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 4)
+				utils.makeUnit(con.iBombard, iCiv, tPlot, 3)
+				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 5)
+				utils.makeUnit(con.iKnight, iCiv, tPlot, 2)
                 if (iCiv == iPortugal):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
@@ -4229,7 +4249,8 @@ class RiseAndFall:
 			if utils.getHumanID() == iMughals:
 				utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
 		if iCiv == iThailand:
-			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			if not gc.getMap().plot(con.tCapitals[0][iKhmer][0], con.tCapitals[0][iKhmer][1]).isCity():
+				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
 			utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
 			utils.makeUnit(con.iThaiChangSuek, iCiv, tPlot, 2)

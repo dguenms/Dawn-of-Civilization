@@ -2348,12 +2348,12 @@
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GRAND_CANAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.2</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Incan_Terrace/Incan_Terrace.nif</NIF>
+			<bAnimated>1</bAnimated>
+			<fScale>1.66</fScale>
+			<fInterfaceScale>0.48</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Canal/river.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Granary.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,4</Button>
+			<Button>Art/Interface/Buttons/Wonders/grand_canal.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_KGB</Type>

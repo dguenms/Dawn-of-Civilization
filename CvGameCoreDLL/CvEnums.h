@@ -963,6 +963,7 @@ enum LeaderHeadTypes			// Exposed to Python
 };
 
 // Used for managing Art Differences based on nationality
+// Leoreth: used only for ECS stuff
 enum ArtStyleTypes				// Exposed to Python
 {
 	NO_ARTSTYLE = -1,

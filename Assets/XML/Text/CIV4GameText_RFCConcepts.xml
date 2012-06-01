@@ -312,8 +312,9 @@ A few civics have different effects according to the era you're in.[NEWLINE]
 [ICON_BULLET]Vassalage:[TAB][TAB]Medieval era: +3[NEWLINE][TAB][TAB][TAB][TAB]All other eras: -3
 [ICON_BULLET]Theocracy:[TAB][TAB]Industrial era and later: -5
 [ICON_BULLET]Pantheon:[TAB][TAB]Ancient and Classical era: +3[NEWLINE][TAB][TAB][TAB][TAB]All other eras: -3
-[ICON_BULLET]City States:[TAB][TAB]Medieval era and later: -4
+[ICON_BULLET]City States:[TAB][TAB]Medieval and Renaissance era: -4[NEWLINE][TAB][TAB][TAB][TAB]Industrial era and later: extra -4
 [ICON_BULLET]Representation:[TAB]Industrial era and later: +3
+[ICON_BULLET]Republic:[TAB][TAB]Medieval era: -10
 [H2]2b. Civic modifiers depending on discovered techs[\H2]
 The effects of some civics change after certain techs are discovered, implying new social ideals or developments that make older forms of government obsolete.[NEWLINE]
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Universal Suffrage[COLOR_REVERT] gives +3 stability after the discovery of [COLOR_TECH_TEXT]Democracy[COLOR_REVERT]
@@ -327,8 +328,9 @@ Some civics are better suited for the government of smaller states, while others
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Absolutism[COLOR_REVERT] gives +5 stability if you have 5 cities or less, but reduces your stability by -1 for every extra city if you have more, up to a maximum of -7
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Republic[COLOR_REVERT] adds +5 stability, subtracted by the number of your cities, capped at -5. So Republic is only advantageous if you have less than five cities.
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Representation[COLOR_REVERT] reduces your stability by -2 for every city above 4, up to a maximum of -8.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]City States[COLOR_REVERT] reduces your stability by -4 for every city above 4, up to a maximum of -20.
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT] adds +1 for every five cities you control, up to a maximum of +10.
-[H2]Miscellaneous effects[\H2]
+[H2]4. Miscellaneous effects[\H2]
 There are some other effects that don't fall into the above categories.[NEWLINE]
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Autocracy[COLOR_REVERT] gives you +3 stability for every civilization you're at war with.
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Fanaticism[COLOR_REVERT] gives you +3 stability for every civilization you're at war with and that doesn't share your state religion.[NEWLINE]
