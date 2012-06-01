@@ -5,7 +5,7 @@
 	- City States (Code of Laws): +1 food per specialist for every city that works at most 7 land tiles, +100% number of cities maintenance
 	- Theocracy (Theology): +2 happiness with state religion, +2 XP in cities with state religion, no foreign religion spread
 	- Autocracy (Nationalism): +2 happiness with barracks, can draft 2 units
-	- Republic (Philosophy): +50% GP birth, +100% cottage growth, +25% war weariness
+	- Republic (Philosophy): +40% GP birth, +100% cottage growth, +25% war weariness
 # ORGANIZATION
 	- Direct Rule
 	- Vassalage (Feudalism): extra free units, +2 XP per unit, -25% number of cities upkeep
@@ -31,7 +31,7 @@
 	- Animism: +1 unhappiness per non-state religion
 	- Pantheon (Polytheism): no state religion, can build classical wonders, +1 happiness with Pagan Temple, +1 unhappiness per non-state religion
 	- Organized Religion (Monotheism): +25% building construction with state religion, can always train missionaries, +1 unhappiness per non-state religion
-	- Scholasticism (Literature): +30% great people birth, +1 unhappiness per non-state religion
+	- Scholasticism (Literature): +35% great people birth in cities with state religion, +1 unhappiness per non-state religion
 	- Fanaticism (Divine Right): +25% unit training speed with state religion, +2 unhappiness per non-state religion
 	- Secularism (Liberalism): +10% science
 # EXPANSION
@@ -188,10 +188,10 @@
 # new French UP: The Power of Diplomacy: Other civilizations are quicker to forget about your past transgressions
 # New Khmer UHV:
 	- Build four Buddhist and Hindu monasteries and Angkor Wat by 1200 AD
-	- Have an average city size of 10 in 1450 AD
+	- Have an average city size of 12 by 1450 AD
 	- Have 8000 culture by 1450 AD
 # New third Indian goal: Control 20% of the world's population in 1200 AD
-# New second Dutch goal: Conquer 7 European colonies by 1750 AD
+# New second Dutch goal: Conquer 4 European colonies by 1745 AD
 # Netherlands start with more cultural techs
 # Mercenaries separated by region and period more intuintively
 # Bombards can now also be built with copper
@@ -205,3 +205,9 @@
 # added concept entries to explain the tile stability display and stability effects from civics
 # second Portuguese goal now requires 14 open border agreements
 # dead civs don't appear in the scoreboard anymore
+# Thais now flip Angkor as Ayutthaya if there's at least one wonder in the city (AI only)
+# Added a popup that notifies you if a UHV goal fails
+# Added culture dynamic soundtracks: a new set of middle eastern and east asian pieces was added and is played depending on era and state religion:
+	- Islam or Zoroastrianism in Medieval or Renaissance era: Middle Eastern soundtrack
+	- Confucianism, Taoism, Hinduism or Buddhism in Classical to Renaissance eras: East Asian soundtrack
+	- No state religion in Medieval era: Classical era soundtrack

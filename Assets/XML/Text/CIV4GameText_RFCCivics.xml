@@ -416,6 +416,10 @@
 		<English>Can draft three units per turn; barracks produce extra happiness</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AGRARIANISM_STRATEGY</Tag>
+		<English>Extra commerce from plantations and pastures; slower GP birth rate; slower cottage growth</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPITALISM_STRATEGY</Tag>
 		<English>Extra commerce from towns; can spend gold to finish production</English>
 	</TEXT>

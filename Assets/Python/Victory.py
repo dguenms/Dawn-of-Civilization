@@ -1,3 +1,4 @@
+
 # Rhye's and Fall of Civilization - Historical Victory Goals
 
 
@@ -326,6 +327,9 @@ class Victory:
 
         def setGoal( self, i, j, iNewValue ):
                 sd.scriptDict['lGoals'][i][j] = iNewValue
+		
+		if iNewValue == 0 and utils.getHumanID() == i:
+			utils.debugTextPopup(localText.getText("TXT_KEY_VICTORY_VICTORY_GOAL_FAILED_ANNOUNCE", (j+1,)))
 
         def getReligionFounded( self, iCiv ):
                 return sd.scriptDict['lReligionFounded'][iCiv]
@@ -1145,9 +1149,7 @@ class Victory:
 
 				# Leoreth: new first Arabian goal: be the most advanced civ in 1300 AD
 				if iGameTurn == getTurnForYear(1300):
-					if self.getMostAdvancedCiv(iArabia) == iArabia:
-						self.setGoal(iArabia, 0, 1)
-					else:
+					if self.getGoal(iArabia, 0) == -1:
 						self.setGoal(iArabia, 0, 0)
 
 
@@ -1177,6 +1179,8 @@ class Victory:
                                 if (iGameTurn == getTurnForYear(1450)):
 					if self.getGoal(iKhmer, 2) == -1:
 						self.setGoal(iKhmer, 2, 0)
+					if self.getGoal(iKhmer, 1) == -1:
+						self.setGoal(iKhmer, 1, 0)
 						
 				if self.getGoal(iKhmer, 2) == -1:
                                         if (pKhmer.countTotalCulture() >= utils.getTurns(8000)):
@@ -1193,12 +1197,12 @@ class Victory:
 				#		self.setGoal(iKhmer, 0, 0)
 
                                                 
-                                if (iGameTurn == getTurnForYear(1450)):
+                                if self.getGoal(iKhmer, 1) == -1:
                                         apCityList = PyPlayer(iKhmer).getCityList()
                                         iTotalPopulation = 0
                                         for pCity in apCityList:			
                                                 iTotalPopulation += pCity.getPopulation()
-                                        if len(apCityList) > 0 and (iTotalPopulation * 1.00 / len(apCityList) >= 10.0):
+                                        if len(apCityList) > 0 and (iTotalPopulation * 1.00 / len(apCityList) >= 12.0):
                                                 self.setGoal(iKhmer, 1, 1)
                                         else:
                                                 self.setGoal(iKhmer, 1, 0)                                        
@@ -1359,7 +1363,7 @@ class Victory:
 					iEasternEurope, iTotalEasternEurope = self.countControlledTiles(iFrance, con.tEasternEuropeTL, con.tEasternEuropeBR, True)
 					iNorthAmerica, iTotalNorthAmerica = self.countControlledTiles(iFrance, con.tNorthAmericaTL, con.tNorthAmericaBR, True)
 							
-					fEurope = (iEurope + iEasternEurope) * 100.0 / (con.iEasternEurope, iTotalEasternEurope)
+					fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
 					fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
 					
 					if (fEurope >= 50.0 and fNorthAmerica >= 50.0):
@@ -1874,7 +1878,7 @@ class Victory:
 				if iGameTurn == getTurnForYear(1700):
 					bestCity = self.calculateTopCityPopulation(101, 33)
 					if bestCity != -1:
-						if bestCity.getOwner() == iThailand and bestCity.getX() == 101 and bestCity.getY() == 33:
+						if bestCity.getOwner() == iThailand and bestCity.getX() in [101, 102] and bestCity.getY() == 33:
 							self.setGoal(iThailand, 1, 1)
 						else:
 							self.setGoal(iThailand, 1, 0)
@@ -2379,6 +2383,18 @@ class Victory:
 					self.setGoal(iKorea, 1, 1)
 				else:
 					self.setGoal(iKorea, 1, 0)
+					
+		# Arabian UHV: discover all medieval techs by 1300 AD
+		if iPlayer == iArabia and self.getGoal(iArabia, 0) == -1:
+			if gc.getTechInfo(iTech).getEra() == con.iMedieval:
+				bAllMedieval = True
+				for iLoopTech in range(con.iNumTechs):
+					if gc.getTechInfo(iLoopTech).getEra() == con.iMedieval:
+						if not teamArabia.isHasTech(iLoopTech) and iLoopTech != iTech:
+							bAllMedieval = False
+							break
+				if bAllMedieval:
+					self.setGoal(iArabia, 0, 1)
 			
 		# English UHV: be first to enter the Industrial and Modern eras
 		if self.getGoal(iEngland, 2) == -1 and iGameTurn >= getTurnForYear(1400):
@@ -3319,7 +3335,7 @@ class Victory:
                                 	fPopPerCity = iTotalPopulation * 1.00 / len(apCityList)
 				else:
 					fPopPerCity = 0
-				aHelp.append(self.getIcon(fPopPerCity >= 10.0) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", (str(u"%.2f" % fPopPerCity), str(10))))
+				aHelp.append(self.getIcon(fPopPerCity >= 12.0) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", (str(u"%.2f" % fPopPerCity), str(12))))
 			elif iGoal == 2:
 				iCulture = pKhmer.countTotalCulture()
 				aHelp.append(self.getIcon(iCulture >= utils.getTurns(8000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(8000))))
@@ -3623,7 +3639,7 @@ class Victory:
 				aHelp.append(self.getIcon(iCount >= 8) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 8)))
 			elif iGoal == 1:
 				pBestCity = self.calculateTopCityPopulation(101, 33)
-				bBestCity = (pBestCity.getOwner() == iThailand and pBestCity.getX() == 101 and pBestCity.getY() == 33)
+				bBestCity = (pBestCity.getOwner() == iThailand and pBestCity.getX() in [101, 102] and pBestCity.getY() == 33)
 				aHelp.append(self.getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
 			elif iGoal == 2:
 				bSouthAsia = self.isAreaFreeOfCivs(tSouthAsiaTL, tSouthAsiaBR, [iIndia, iKhmer, iIndonesia, iMughals, iThailand])

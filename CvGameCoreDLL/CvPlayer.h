@@ -1165,6 +1165,8 @@ public:
 	void setStabilityCategory(StabilityTypes eStabilityType, int iValue);
 	void resetStabilityCategories();
 
+	EraTypes getSoundtrackEra();
+
 protected:
 
 	int m_iStartingX;

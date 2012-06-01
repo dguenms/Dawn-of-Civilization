@@ -4177,7 +4177,12 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					}
 					if (kBuilding.getRiverPlotYieldChange(iI) > 0)
 					{
-						iTempValue += (kBuilding.getRiverPlotYieldChange(iI) * countNumRiverPlots() * 4 * (iI == 0 ? 3 : 1)); // Leoreth: emphasize river food yield more
+						if (getOwner() == CHINA && iI == 2)
+							iTempValue += 100;
+						else if (getOwner() == AZTEC && iI == 0)
+							iTempValue += 100;
+
+						iTempValue += (kBuilding.getRiverPlotYieldChange(iI) * countNumRiverPlots() * 4 * (iI == 0 ? 5 : 1) * (iI == 2 ? 2 : 1)); // Leoreth: emphasize river food / commerce yield more
 					}
 					iTempValue += (kBuilding.getGlobalSeaPlotYieldChange(iI) * kOwner.countNumCoastalCities() * 8);
 					iTempValue += (kBuilding.getYieldChange(iI) * 6);
@@ -4253,7 +4258,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 					if (kBuilding.getRiverPlotYieldChange(YIELD_FOOD) > 0)
 					{
-						iValue += (kBuilding.getRiverPlotYieldChange(YIELD_FOOD) * countNumRiverPlots() * 4);
+						iValue += (kBuilding.getRiverPlotYieldChange(YIELD_FOOD) * countNumRiverPlots() * 8); // Leoreth: emphasise river food
 					}
 				}
 

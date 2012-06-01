@@ -4247,6 +4247,162 @@ LeaderHeadTypes CvCity::getPersonalityType() const
 
 ArtStyleTypes CvCity::getArtStyleType() const
 {
+	/* Leoreth: art style here */
+	int ecs = GC.getDefineINT("ETHNIC_CITY_STYLES");
+	int id = getRegionID();
+
+	/*if (ecs == 1)
+	{
+		if (getOwnerINLINE() == NATIVE)
+		{
+			if (id == REGION_ALASKA || id == REGION_CANADA || id == REGION_UNITED_STATES)
+			{
+				return (ArtStyleTypes)ARTSTYLE_NATIVE_AMERICA;
+			}
+			else if (id == REGION_MESOAMERICA || id == REGION_CARIBBEAN)
+			{
+				return (ArtStyleTypes)ARTSTYLE_MESO_AMERICA;
+			}
+			else if (id == REGION_BRAZIL || id == REGION_ARGENTINA || id == REGION_PERU || id == REGION_COLOMBIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_SOUTH_AMERICA;
+			}
+			else if (id == REGION_ETHIOPIA || id == REGION_WEST_AFRICA || id == REGION_SOUTH_AFRICA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_AFRICA;
+			}
+		}
+		else if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2 || getOwnerINLINE() == BARBARIAN)
+		{
+			if (id == REGION_ALASKA || id == REGION_CANADA || id == REGION_UNITED_STATES || id == REGION_BRITAIN)
+			{
+				return (ArtStyleTypes)ARTSTYLE_ANGLO_AMERICA;
+			}
+			else if (id == REGION_MESOAMERICA || id == REGION_CARIBBEAN)
+			{
+				if (getOriginalOwner() == AZTEC || getOriginalOwner() == MAYA)
+				{
+					return (ArtStyleTypes)ARTSTYLE_MESO_AMERICA;
+				}
+				else
+				{
+					return (ArtStyleTypes)ARTSTYLE_IBERIA;
+				}
+			}
+			else if (id == REGION_BRAZIL || id == REGION_ARGENTINA || id == REGION_PERU || id == REGION_COLOMBIA)
+			{
+				if (getOriginalOwner() == INCA)
+				{
+					return (ArtStyleTypes)ARTSTYLE_SOUTH_AMERICA;
+				}
+				else
+				{
+					return (ArtStyleTypes)ARTSTYLE_IBERIA;
+				}
+			}
+			else if (id == REGION_ETHIOPIA || id == REGION_WEST_AFRICA || id == REGION_SOUTH_AFRICA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_AFRICA;
+			}
+			else if (id == REGION_IBERIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_IBERIA;
+			}
+			else if (id == REGION_ITALY || id == REGION_BALKANS)
+			{
+				return (ArtStyleTypes)ARTSTYLE_GRECO_ROMAN;
+			}
+			else if (id == REGION_MAGHREB)
+			{
+				if (isHasReligion((ReligionTypes)ISLAM))
+				{
+					return (ArtStyleTypes)ARTSTYLE_ARABIA;
+				}
+				else
+				{
+					return (ArtStyleTypes)ARTSTYLE_GRECO_ROMAN;
+				}
+			}
+			else if (id == REGION_ANATOLIA)
+			{
+				if (isHasReligion((ReligionTypes)ISLAM))
+				{
+					return (ArtStyleTypes)ARTSTYLE_CRESCENT;
+				}
+				else
+				{
+					return (ArtStyleTypes)ARTSTYLE_GRECO_ROMAN;
+				}
+			}
+			else if (id == REGION_EUROPE)
+			{
+				return (ArtStyleTypes)ARTSTYLE_EUROPE;
+			}
+			else if (id == REGION_SCANDINAVIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_NORSE;
+			}
+			else if (id == REGION_RUSSIA || id == REGION_SIBERIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_RUSSIA;
+			}
+			else if (id == REGION_MESOPOTAMIA || id == PERSIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_CRESCENT;
+			}
+			else if (id == REGION_ARABIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_ARABIA;
+			}
+			else if (id == REGION_EGYPT)
+			{
+				if (isHasReligion((ReligionTypes)ISLAM))
+				{
+					return (ArtStyleTypes)ARTSTYLE_ARABIA;
+				}
+				else if (GC.getGameINLINE().getGameTurnYear() < 0)
+				{
+					return (ArtStyleTypes)ARTSTYLE_EGYPT;
+				}
+				else
+				{
+					return (ArtStyleTypes)ARTSTYLE_GRECO_ROMAN;
+				}
+			}
+			else if (id == REGION_INDIA || id == REGION_DECCAN)
+			{
+				if (isHasReligion((ReligionTypes)ISLAM))
+				{
+					return (ArtStyleTypes)ARTSTYLE_CRESCENT;
+				}
+				else
+				{
+					return (ArtStyleTypes)ARTSTYLE_INDIA;
+				}
+			}
+			else if (id == REGION_INDOCHINA || id == REGION_INDONESIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_SOUTH_EAST_ASIA;
+			}
+			else if (id == REGION_CHINA || id == REGION_MANCHURIA || id == REGION_TIBET || id == REGION_KOREA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_ASIA;
+			}
+			else if (id == REGION_JAPAN)
+			{
+				return (ArtStyleTypes)ARTSTYLE_JAPAN;
+			}
+			else if (id == REGION_CENTRAL_ASIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_MONGOLIA;
+			}
+			else if (id == REGION_AUSTRALIA || id == REGION_OCEANIA)
+			{
+				return (ArtStyleTypes)ARTSTYLE_SOUTH_PACIFIC;
+			}
+		}
+	}*/
+
 	return GET_PLAYER(getOwnerINLINE()).getArtStyleType();
 }
 

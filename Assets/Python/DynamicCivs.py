@@ -1420,7 +1420,7 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_RUSSIA_EMPIRE")
 				return
 		
-			if iEra == iMedieval:
+			if iEra == iMedieval and not bEmpire:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_RUSSIA_MUSCOVY")
 				return
 				

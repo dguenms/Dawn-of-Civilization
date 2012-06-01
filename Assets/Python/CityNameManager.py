@@ -8418,12 +8418,18 @@ class CityNameManager:
 				city = pCity.GetCy()
 				if (city.getName() == 'Kostantiniyye'):
 					city.setName('Istanbul', False)
-		if (iPlayer == iRome and gc.getPlayer(iPlayer).isReborn() and era == con.iIndustrial):
+		if (iPlayer == iItaly and era == con.iIndustrial):
 			cityList = PyPlayer(iPlayer).getCityList()
 			for pCity in cityList:
 				city = pCity.GetCy()
 				if (city.getName() == 'Fiorenza'):
 					city.setName('Firenze', False)
+				elif city.getName() == 'Roma':
+					if gc.getGame().getActivePlayer() != iItaly:
+						oldCapital = gc.getPlayer(iItaly).getCapitalCity()
+						city.setHasRealBuilding(con.iPalace, True)
+						oldCapital.setHasRealBuilding(con.iPalace, False)
+                                        	break    	
 		if (iPlayer == iKorea and era == con.iModern):
 			cityList = PyPlayer(iPlayer).getCityList()
 			for pCity in cityList:

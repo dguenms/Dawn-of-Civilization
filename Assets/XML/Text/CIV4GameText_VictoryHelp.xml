@@ -13,6 +13,10 @@
 		<English>Goal failed!</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE</Tag>
+		<English>You have failed goal %d1 of your historical victory!</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TOTAL_CULTURE</Tag>
 		<English>Total culture: %d1 / %d2</English>
 	</TEXT>
