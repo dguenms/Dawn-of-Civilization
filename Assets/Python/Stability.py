@@ -893,7 +893,7 @@ class Stability:
                                         	        iTempCityStability -= 1
                                         	#if (city.healthRate(False, 0) < 0):
                                         	#        iTempCityStability -= 1
-                                        	if (city.getReligionBadHappiness() > 0):
+                                        	if (city.getReligionBadHappiness() > 0 and iCivic4 != con.iScholasticism):
                                         	        iTempCityStability -= 1
                                         	if (city.getLargestCityHappiness() < 0):
                                         	        iTempCityStability -= 1
@@ -908,7 +908,7 @@ class Stability:
        	                               		        iTempCityStability -= 2
                	                       		#if (city.healthRate(False, 0) < 0):
                        	               		#        iTempCityStability -= 2
-       	                	       		if (city.getReligionBadHappiness() > 0):
+       	                	       		if (city.getReligionBadHappiness() > 0 and iCivic4 != con.iScholasticism):
                                			        iTempCityStability -= 2
                                       		if (city.getLargestCityHappiness() < 0):
                                      		        iTempCityStability -= 2
@@ -930,17 +930,12 @@ class Stability:
                                                 else:
                                                         continue
                                                     
-                                        if (iCivic4 == con.iFanaticism or iCivic4 == con.iOrganizedReligion): #Patriarchate or Organized Religion
-                                                iCounter = 0
-                                                for iLoop in range(con.iNumReligions):                                    
-                                                        if (city.isHasReligion(iLoop) and pPlayer.getStateReligion() != iLoop):
-                                                                iTempCityStability -= 1
 
 					if (iCivic4 == con.iPantheon): #Pantheon
                                                 iCounter = 0
                                                 for iLoop in range(con.iNumReligions):                                    
                                                         if (city.isHasReligion(iLoop)):
-                                                                iTempCityStability -= 2
+                                                                iTempCityStability -= 1
 
 					if (iCivic0 == con.iTheocracy): #Theocracy
 						iCounter = 1

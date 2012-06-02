@@ -264,7 +264,7 @@ Netherlands: three cities in Indonesia</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS_PEDIA</Tag>
-		<English>[H1]Conditional Spawns[\H1][PARAGRAPH:2]Certain civilizations in Dawn of Civilization only spawn when the right conditions are met. These civilizations are Byzantium, Italy and Thailand. Their requirements are listed below:[NEWLINE][NEWLINE][BOLD]Byzantium:[\BOLD] Only spawns if Rome is alive and controls at least two cities outside of its core.[NEWLINE][BOLD]Italy:[\BOLD] Only spawns if there is at least one independent city on the Italian peninsula. [NEWLINE][BOLD]Thailand:[\BOLD] Only spawns if the Khmer are dead or sufficiently unstable. This threshold less strict when the player is controlling the Khmer.</English>
+		<English>[H1]Conditional Spawns[\H1][PARAGRAPH:2]Certain civilizations in Dawn of Civilization only spawn when the right conditions are met. These civilizations are Byzantium, Italy and Thailand. Their requirements are listed below:[NEWLINE][NEWLINE][BOLD]Byzantium:[\BOLD] Does not spawn if Rome is dead or Greece is alive. If the player controls Rome, Byzantium doesn't spawn if Rome's stability is 20 or higher.[NEWLINE][BOLD]Italy:[\BOLD] Only spawns if there is at least one independent city on the Italian peninsula. [NEWLINE][BOLD]Thailand:[\BOLD] Only spawns if the Khmer are dead or sufficiently unstable. This threshold less strict when the player is controlling the Khmer.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Tag>
@@ -342,7 +342,7 @@ There are some other effects that don't fall into the above categories.[NEWLINE]
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT] halves the negative effects of angry population in your cities.
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT] doubles the positive effect of building jails.
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Autocracy[COLOR_REVERT] has a lower threshold after which foreign culture in your cities negatively affects your stability.[NEWLINE]
-[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Fanaticism[COLOR_REVERT] create negative stability if there are non-state religions in your cities.
+[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Scholasticism[COLOR_REVERT] prevents unhappiness from non-state religions from lowering your stability.
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Pantheon[COLOR_REVERT] creates extra negative stability for religions in your cities.
 [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] creates extra stability for cities that only have your state religion.[NEWLINE]
 [ICON_BULLET]A Great Depression can be triggered while running [COLOR_HIGHLIGHT_TEXT]Free Market[COLOR_REVERT]. [COLOR_HIGHLIGHT_TEXT]State Property[COLOR_REVERT] prevents its spread to your civilization, while [COLOR_HIGHLIGHT_TEXT]Mercantilism[COLOR_REVERT] lowers its effect on your stability.[NEWLINE]

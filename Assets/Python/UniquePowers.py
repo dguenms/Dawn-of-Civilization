@@ -94,6 +94,8 @@ teamMongolia = gc.getTeam(pMongolia.getTeam())
 pRome = gc.getPlayer(iRome)
 teamRome = gc.getTeam(pRome.getTeam())
 
+pGreece = gc.getPlayer(iGreece)
+
 
 tRussianTopLeft = (65, 49)
 tRussianBottomRight = (121, 65)
@@ -237,7 +239,10 @@ class UniquePowers:
 					self.setRomanWar(iCiv, 1)
 					if (iCiv in con.lCivGroups[2]) or (iCiv in con.lCivGroups[3]):
 						print ("Roman conquest triggered.")
-						self.romanConquestUP(iCiv)
+						iNumTargets = 1
+						if utils.getHumanID() != iRome and iCiv == iPersia: iNumTargets = 2
+						
+						self.romanConquestUP(iCiv, iNumTargets)
 						print ("Roman conquest completed.")
 
 #        def romanCombatUP(self, argsList):
@@ -259,28 +264,50 @@ class UniquePowers:
 #			
 #                        CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_TRIUMPH", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
-	def romanConquestUP(self, iEnemy):
+	def romanConquestUP(self, iEnemy, iNumTargets=1):
 
 		#pEnemy = gc.getPlayer(iEnemy)
 
-		print ("Getting random target city.")
-		pTargetCity = utils.getRandomCity(iEnemy)
-		tPlot = con.tCapitals[0][iRome]
+		#print ("Getting random target city.")
+		#pTargetCity = utils.getRandomCity(iEnemy)
+		#tPlot = con.tCapitals[0][iRome]
+		
+		lEnemyCities = []
+		
+		print "Getting closest city."
+		cityList = PyPlayer(iEnemy).getCityList()
+		for city in cityList:
+			pCity = city.GetCy()
+			iDist = utils.calculateDistance(pCity.getX(), pCity.getY(), pRome.getCapitalCity().getX(), pRome.getCapitalCity().getY())
+			lEnemyCities.append((iDist, pCity))
+			
+		lEnemyCities.sort()
+		
+		for i in range(iNumTargets):
+			if len(lEnemyCities) > 0:
+				pTargetCity = lEnemyCities.pop(0)[1]
+				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iRome)
+				
+				iExtra = 0
+				if utils.getHumanID() != iRome and utils.getHumanID() != iEnemy: iExtra = 1
+				
+				utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2+iExtra)
+				utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1+iExtra*2)
 
-		if (pTargetCity != -1):
-			print ("City found, searching free land plot.")
-			tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
-		else:
-			print ("No plot found, spawning in Roma instead.")
+		#if (pTargetCity != -1):
+		#	print ("City found, searching free land plot.")
+		#	tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
+		#else:
+		#	print ("No plot found, spawning in Roma instead.")
 
 		# weaken the effect if human player is Rome
-		if (utils.getHumanID() == iRome):
-			utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-			utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-		else:
-			utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-			utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-		print ("Units created.")
+		#if (utils.getHumanID() == iRome):
+		#	utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+		#	utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+		#else:
+		#	utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+		#	utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+		#print ("Units created.")
 
 		#utils.makeUnit(con.iRomePraetorian, iRome, tPlot, 3)
 		#utils.makeUnit(con.iCatapult, iRome, tPlot, 2)
@@ -288,6 +315,29 @@ class UniquePowers:
 		CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS",(gc.getPlayer(iEnemy).getCivilizationShortDescriptionKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		print ("Message displayed.")
+		
+	def greekConquestUP(self, iEnemy, iNumTargets=1):
+		lEnemyCities = []
+		
+		print "Getting closest city."
+		cityList = PyPlayer(iEnemy).getCityList()
+		for city in cityList:
+			pCity = city.GetCy()
+			iDist = utils.calculateDistance(pCity.getX(), pCity.getY(), pGreece.getCapitalCity().getX(), pGreece.getCapitalCity().getY())
+			lEnemyCities.append((iDist, pCity))
+			
+		lEnemyCities.sort()
+		
+		for i in range(iNumTargets):
+			if len(lEnemyCities) > 0:
+				pTargetCity = lEnemyCities.pop(0)[1]
+				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iRome)
+				
+				iExtra = 0
+				if utils.getHumanID() != iGreece and utils.getHumanID() != iEnemy: iExtra = 1
+				
+				utils.makeUnitAI(con.iGreekPhalanx, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2+iExtra*2)
+				utils.makeUnitAI(con.iCatapult, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1+iExtra*2)
 
 
 #------------------ARABIAN U.P.-------------------

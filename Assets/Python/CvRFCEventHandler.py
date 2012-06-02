@@ -193,6 +193,8 @@ class CvRFCEventHandler:
                 
 		#Leoreth
 		eventManager.addEventHandler("greatPersonBorn", self.onGreatPersonBorn)
+		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
+		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
                
                 self.eventManager = eventManager
 
@@ -353,7 +355,7 @@ class CvRFCEventHandler:
                 #                        utils.killAndFragmentCiv(iCeltia, iIndependent, iIndependent2, -1, False)
 
 		#kill Seljuks
-		if owner == iSeljuks and gc.getPlayer(iSeljuks).isAlive():
+		if owner == iSeljuks and gc.getPlayer(iSeljuks).isAlive() and gc.getGame().getGameTurnYear() >= 1250:
 			if city.isCapital() or gc.getPlayer(iSeljuks).getNumCities() <= 2:
 				print "Killed Seljuks"
 				utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
@@ -372,7 +374,7 @@ class CvRFCEventHandler:
 			if gc.getPlayer(iCarthage).isAlive() and utils.getHumanID() != iCarthage:
 				x, y = 58, 39
 				if gc.getMap().plot(x, y).isCity():
-					if gc.getMap().plot(x, y).getPlotCity.getOwner() == iCarthage:
+					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iCarthage:
 						utils.makeUnit(con.iWarElephant, iCarthage, (x, y), 3)
 						utils.makeUnit(con.iSwordsman, iCarthage, (x, y), 2)
 						utils.makeUnit(con.iCatapult, iCarthage, (x, y), 4)
@@ -380,7 +382,22 @@ class CvRFCEventHandler:
 						utils.makeUnit(con.iBireme, iCarthage, (x, y), 3)
 						utils.makeUnit(con.iSettler, iCarthage, (x, y), 1)
 						if gc.getPlayer(iRome).isAlive():
-							gc.getPlayer(iCarthage).declareWar(iRome)
+							gc.getTeam(iCarthage).declareWar(iRome, True, WarPlanTypes.WARPLAN_LIMITED)
+							
+		# Leoreth: help Byzantium/Constantinople
+		if playerType == con.iByzantium and (city.getX(), city.getY()) == con.tCapitals[0][con.iByzantium] and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
+			if city.getPopulation() < 5:
+				city.setPopulation(5)
+				
+			city.setHasRealBuilding(con.iBarracks, True)
+			city.setHasRealBuilding(con.iWalls, True)
+			city.setHasRealBuilding(con.iLibrary, True)
+			city.setHasRealBuilding(con.iMarket, True)
+			city.setHasRealBuilding(con.iGranary, True)
+			city.setHasRealBuilding(con.iHarbor, True)
+			city.setHasRealBuilding(con.iForge, True)
+			
+			city.setHasRealBuilding(con.iJewishTemple + 4*gc.getPlayer(playerType).getStateReligion(), True)
 
                 
                 if (bConquest):
@@ -470,6 +487,20 @@ class CvRFCEventHandler:
 					gc.getMap().plot(x,y).getPlotCity().setHasRealBuilding(con.iPalace, False)
 				self.dc.setCivAdjective(iOwner, "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
 				self.dc.setCivShortDesc(iOwner, "TXT_KEY_CIV_CARTHAGE_SHORT_DESC")
+				
+		if iOwner == con.iByzantium and (city.getX(), city.getY()) == con.tCapitals[0][con.iByzantium] and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
+			if city.getPopulation() < 5:
+				city.setPopulation(5)
+				
+			city.setHasRealBuilding(con.iBarracks, True)
+			city.setHasRealBuilding(con.iWalls, True)
+			city.setHasRealBuilding(con.iLibrary, True)
+			city.setHasRealBuilding(con.iMarket, True)
+			city.setHasRealBuilding(con.iGranary, True)
+			city.setHasRealBuilding(con.iHarbor, True)
+			city.setHasRealBuilding(con.iForge, True)
+			
+			city.setHasRealBuilding(con.iJewishTemple + 4*gc.getPlayer(iOwner).getStateReligion(), True)
 
 
                 if (self.vic.getNewWorld(0) == -1):
@@ -539,6 +570,7 @@ class CvRFCEventHandler:
                         return
         
                 self.vic.onReligionFounded(iReligion, iFounder)
+		self.rel.onReligionFounded(iReligion, iFounder)
         
                 if (iFounder < con.iNumPlayers):
                         self.sta.onReligionFounded(iFounder)
@@ -617,6 +649,20 @@ class CvRFCEventHandler:
 		
 		if iPlayer == con.iVikings and iGold > 0:
 			self.vic.onCityCaptureGold(iPlayer, iGold)
+			
+	def onUnitCreated(self, argsList):
+		utils.debugTextPopup("Unit created")
+		pUnit = argsList
+		
+		if pUnit.getUnitType() == con.iSettler and pUnit.getOwner() == iChina:
+			utils.handleChineseCities(pUnit)
+			
+	def onUnitBuilt(self, argsList):
+		#utils.debugTextPopup("Unit built")
+		city, unit = argsList
+		
+		if unit.getUnitType() == con.iSettler and city.getOwner() == iChina:
+			utils.handleChineseCities(unit)
 			
 	
 		
