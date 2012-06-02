@@ -211,3 +211,12 @@
 	- Islam or Zoroastrianism in Medieval or Renaissance era: Middle Eastern soundtrack
 	- Confucianism, Taoism, Hinduism or Buddhism in Classical to Renaissance eras: East Asian soundtrack
 	- No state religion in Medieval era: Classical era soundtrack
+# Seljuk Ghulam warriors now get +25% against knights
+# scrípted conquerors for Greece and Rome to help them create their historical empires
+# Catholicism spreads faster through the Mediterranean after it is founded
+# Byzantium can only spawn when Rome is alive and Greece is dead (if the player controls Rome, the Roman stability must also be lower than 20)
+# Greece automatically collapses during Byzantium's autoplay
+# 3000 BC Byzantium starts with more techs, units and is Constantinople is guaranteed a certain size and infrastructure
+# Rome doesn't go to war with Byzantium over the cities they flip
+# added a semi-scripting routine to help China's city placement
+# Jerusalem cannot be razed anymore

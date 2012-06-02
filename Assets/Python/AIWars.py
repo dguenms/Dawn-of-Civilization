@@ -7,12 +7,14 @@ import Popup
 #import cPickle as pickle
 import Consts as con
 import RFCUtils
+import UniquePowers
 from StoredData import sd # edead
 
 # globals
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer	# LOQ
 utils = RFCUtils.RFCUtils()
+up = UniquePowers.UniquePowers()
 
 ### Constants ###
 
@@ -29,6 +31,22 @@ iIndependent = con.iIndependent
 iIndependent2 = con.iIndependent2
 iNumTotalPlayers = con.iNumTotalPlayers
 
+iRomeCarthageYear = -220
+iRomeGreeceYear = -150
+iRomePersiaYear = -100
+iRomeCeltiaYear = -50
+iRomeEgyptYear = 0
+
+iAlexanderYear = -340
+
+iRome = con.iRome
+iCarthage = con.iCarthage
+iGreece = con.iGreece
+iPersia = con.iPersia
+iCeltia = con.iCeltia
+iEgypt = con.iEgypt
+iBabylonia = con.iBabylonia
+
   
 class AIWars:
 
@@ -43,7 +61,14 @@ class AIWars:
 
         def setNextTurnAIWar( self, iNewValue ):
                 sd.scriptDict['iNextTurnAIWar'] = iNewValue
+		
+	def getRomanWar(self, iPlayer):
+		return sd.scriptDict['lRomanWars'][iPlayer]
+		
+	def setRomanWar(self, iPlayer, iNewValue):
+		sd.scriptDict['lRomanWars'][iPlayer] = iNewValue
 
+		
         def setup(self):
                 iTurn = getTurnForYear(-600)
                 if (not gc.getPlayer(0).isPlayable()):  #late start condition
@@ -73,6 +98,55 @@ class AIWars:
                 if (iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50)):
                         utils.minorWars(con.iCeltia)
 			utils.minorWars(con.iSeljuks)
+		
+		if utils.getHumanID() != iGreece and gc.getPlayer(iGreece).isAlive():
+			if iGameTurn == getTurnForYear(iAlexanderYear) - 5 + (utils.getSeed() % 10):
+				if gc.getPlayer(iBabylonia).isAlive():
+					gc.getTeam(iGreece).declareWar(iBabylonia, True, WarPlanTypes.WARPLAN_TOTAL)
+					up.greekConquestUP(iBabylonia, 2)
+					
+			if iGameTurn == getTurnForYear(iAlexanderYear) - 5 + (utils.getSeed() % 10):
+				if gc.getPlayer(iEgypt).isAlive():
+					gc.getTeam(iGreece).declareWar(iEgypt, True, WarPlanTypes.WARPLAN_TOTAL)
+					up.greekConquestUP(iEgypt, 2)
+					
+			if iGameTurn == getTurnForYear(iAlexanderYear) - 5 + (utils.getSeed() % 10):
+				if gc.getPlayer(iPersia).isAlive():
+					gc.getTeam(iGreece).declareWar(iPersia, True, WarPlanTypes.WARPLAN_TOTAL)
+					up.greekConquestUP(iPersia, 2)
+		
+		if utils.getHumanID() != iRome and gc.getPlayer(iRome).isAlive():
+			if iGameTurn == getTurnForYear(iRomeCarthageYear) - 5 + (utils.getSeed() % 10):
+				if self.getRomanWar(iCarthage) != 1 and gc.getPlayer(iCarthage).isAlive():
+					gc.getTeam(iRome).declareWar(iCarthage, True, WarPlanTypes.WARPLAN_TOTAL)
+					self.setRomanWar(iCarthage, 1)
+					up.romanConquestUP(iCarthage, 2)
+				
+			if iGameTurn == getTurnForYear(iRomeGreeceYear) - 5 + (utils.getSeed() % 10):
+				if self.getRomanWar(iGreece) != 1 and gc.getPlayer(iGreece).isAlive():
+					gc.getTeam(iRome).declareWar(iGreece, True, WarPlanTypes.WARPLAN_TOTAL)
+					self.setRomanWar(iGreece, 1)
+					iExtra = 0
+					if utils.getHumanID() != iGreece: iExtra = 1
+					up.romanConquestUP(iGreece, 2+iExtra)
+					
+			if iGameTurn == getTurnForYear(iRomePersiaYear) - 5 + (utils.getSeed() % 10):
+				if self.getRomanWar(iPersia) != 1 and gc.getPlayer(iPersia).isAlive():
+					gc.getTeam(iRome).declareWar(iPersia, True, WarPlanTypes.WARPLAN_LIMITED)
+					self.setRomanWar(iPersia, 1)
+					up.romanConquestUP(iPersia, 2)
+					
+			if iGameTurn == getTurnForYear(iRomeCeltiaYear) - 5 + (utils.getSeed() % 10):
+				if self.getRomanWar(iCeltia) != 1 and gc.getPlayer(iCeltia).isAlive():
+					gc.getTeam(iRome).declareWar(iCeltia, True, WarPlanTypes.WARPLAN_TOTAL)
+					self.setRomanWar(iCeltia, 1)
+					up.romanConquestUP(iCeltia, 2)
+					
+			if iGameTurn == getTurnForYear(iRomeEgyptYear) - 5 + (utils.getSeed() % 10):
+				if self.getRomanWar(iEgypt) != 1 and gc.getPlayer(iEgypt).isAlive():
+					gc.getTeam(iEgypt).declareWar(iEgypt, True, WarPlanTypes.WARPLAN_TOTAL)
+					self.setRomanWar(iEgypt, 1)
+					up.romanConquestUP(iEgypt, 2)
                         
                 if (iGameTurn == getTurnForYear(1500) or iGameTurn == getTurnForYear(1850)):
                         for iLoopCiv in range( iNumPlayers ):
@@ -103,7 +177,7 @@ class AIWars:
                                 if (numCivsAtWar*100/gc.getGame().countCivPlayersAlive() > 50): #more than half at war with someone
                                         print("Skipping AIWar (WW)")
                                         self.setNextTurnAIWar(iGameTurn + iMinInterval + gc.getGame().getSorenRandNum(iMaxInterval-iMinInterval, 'random turn'))
-                                        return                                                             
+                                        return
                             
                         iCiv, iTargetCiv = self.pickCivs()
                         if (iTargetCiv >= 0 and iTargetCiv <= iNumTotalPlayers):

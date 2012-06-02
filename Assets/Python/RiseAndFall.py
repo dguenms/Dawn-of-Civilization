@@ -847,12 +847,21 @@ class RiseAndFall:
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
 				utils.killAndFragmentCiv(iRome, iIndependent, iIndependent2, -1, False)
+				
+		if iGameTurn == getTurnForYear(-50):
+			if pByzantium.isHuman() and pGreece.isAlive():
+				utils.killAndFragmentCiv(iGreece, iIndependent, iIndependent2, -1, False)
 			
                 #Colonists
                 if (iGameTurn == getTurnForYear(-850)):
                         self.giveEarlyColonists(iGreece)
-                if (iGameTurn == getTurnForYear(-600)): # removed their colonists because of the Qart-Hadasht spawn
+                if (iGameTurn == getTurnForYear(-700)): # removed their colonists because of the Qart-Hadasht spawn
                         self.giveEarlyColonists(iCarthage)
+			
+		if iGameTurn == getTurnForYear(-600):
+			self.giveEarlyColonists(iRome)
+		if iGameTurn == getTurnForYear(-400):
+			self.giveEarlyColonists(iRome)
  
                 if (iGameTurn >= getTurnForYear(860) and iGameTurn <= getTurnForYear(1250)):
                         if (iGameTurn % utils.getTurns(10) == 9):
@@ -2301,14 +2310,8 @@ class RiseAndFall:
                 # Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
                         if iCiv == iByzantium:
-                                bRomanExpansion = False
-				if pRome.isAlive():
-	                                cityList = utils.getCoreCityList(iRome, 0)
-					if pRome.getNumCities() - len(cityList) >= 2:	# more than two cities outside of core
-						bRomanExpansion = True
-
-                                if (not bRomanExpansion):
-                                        return
+				if not pRome.isAlive() or pGreece.isAlive() or (utils.getHumanID() == iRome and utils.getStability(iRome) >= 20):
+					return
 
 			elif iCiv == iThailand:
 				if utils.getHumanID() != iKhmer:
@@ -2388,8 +2391,8 @@ class RiseAndFall:
 				tTopLeft = (81, 45) # 6 more west, 1 more south
 			if iCiv == iTurkey and utils.getHumanID() != iTurkey and not pByzantium.isAlive():
 				tTopLeft = (67, 41) # two more west
-			if iCiv == iByzantium and utils.getHumanID() == iGreece:
-				tTopLeft = (68, 38) # exclude the European part
+			#if iCiv == iByzantium and utils.getHumanID() == iGreece:
+			#	tTopLeft = (68, 38) # exclude the European part
 			if iCiv == iPersia and utils.getHumanID() != iPersia:
 				tTopLeft = (72, 37) # include Assyria and Anatolia
 				
@@ -2997,13 +3000,13 @@ class RiseAndFall:
                                                 #iConvertedCitiesCount += 1
                                                 #self.flipPopup(iCiv, tTopLeft, tBottomRight)
                                 #case 3: other
-                                elif (not loopCity.isCapital()):   #utils.debugTextPopup( 'OTHER' )                                
+                                elif (not loopCity.isCapital() or (iOwner == iIndia and iCiv == iMughals)):   #utils.debugTextPopup( 'OTHER' )                                
                                         if (iConvertedCitiesCount < 6): #there won't be more than 5 flips in the area
                                                 #utils.debugTextPopup( 'iConvertedCities OK' )
                                                 iCultureChange = 50
                                                 if (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[iCiv]) + 5): #if we're during a birth
                                                         rndNum = gc.getGame().getSorenRandNum(100, 'odds')
-                                                        if (rndNum >= tAIStopBirthThreshold[iOwner]) and not (iCiv == con.iGermany and utils.getHumanID() != con.iGermany):
+                                                        if (rndNum >= tAIStopBirthThreshold[iOwner]) and not (iCiv == con.iGermany and utils.getHumanID() != con.iGermany) and not (iCiv == iByzantium and iOwner == iRome):
                                                                 print (iOwner, "stops birth", iCiv, "rndNum:", rndNum, "threshold:", tAIStopBirthThreshold[iOwner])
                                                                 if (not gc.getTeam(gc.getPlayer(iOwner).getTeam()).isAtWar(iCiv)):                                                                        
                                                                         gc.getTeam(gc.getPlayer(iOwner).getTeam()).declareWar(iCiv, False, -1)
@@ -3242,6 +3245,15 @@ class RiseAndFall:
                         capital = gc.getPlayer(iCiv).getCapitalCity()
                         tCapital = (capital.getX(), capital.getY())
                         tSeaPlot = self.findSeaPlots(tCapital, 1, iCiv)
+			
+			if iCiv == iRome:
+				cityList = PyPlayer(iCiv).getCityList()
+				for city in cityList:
+					pCity = city.GetCy()
+					if pCity.getRegionID() == con.rIberia:
+						tCapital = (pCity.getX(), pCity.getY())
+						break
+			
                         if (tSeaPlot):
                                 gc.getPlayer(iCiv).initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
@@ -3853,7 +3865,7 @@ class RiseAndFall:
                         result = plotList[rndNum]
                         if (result):
                                 self.createAdditionalUnits(iCiv, result)
-                                self.unitsBetrayal(iCiv, iHuman, tCoreAreasTL[utils.getReborn(iCiv)][iCiv], tCoreAreasBR[utils.getReborn(iCiv)][iCiv], result)
+                                self.unitsBetrayal(iCiv, iHuman, tCoreAreasTL[utils.getReborn(iCiv)][iCiv], tCoreAreasBR[utils.getReborn(iCiv)][iCiv], result, con.tExceptions)
 
 
 
@@ -3878,7 +3890,7 @@ class RiseAndFall:
 
 
 
-        def unitsBetrayal( self, iNewOwner, iOldOwner, tTopLeft, tBottomRight, tPlot ):
+        def unitsBetrayal( self, iNewOwner, iOldOwner, tTopLeft, tBottomRight, tPlot, lExceptions=() ):
                 #print ("iNewOwner", iNewOwner, "iOldOwner", iOldOwner, "tPlot", tPlot)
                 if (gc.getPlayer(self.getOldCivFlip()).isHuman()):
                         CyInterface().addMessage(self.getOldCivFlip(), False, con.iDuration, CyTranslator().getText("TXT_KEY_FLIP_BETRAYAL", ()), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
@@ -3886,19 +3898,20 @@ class RiseAndFall:
                         CyInterface().addMessage(self.getNewCivFlip(), False, con.iDuration, CyTranslator().getText("TXT_KEY_FLIP_BETRAYAL_NEW", ()), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
-                                killPlot = gc.getMap().plot(x,y)
-                                iNumUnitsInAPlot = killPlot.getNumUnits()
-                                if (iNumUnitsInAPlot):                                                                  
-                                        for i in range(iNumUnitsInAPlot):                                                
-                                                unit = killPlot.getUnit(i)
-                                                if (unit.getOwner() == iOldOwner):
-                                                        rndNum = gc.getGame().getSorenRandNum(100, 'betrayal')
-                                                        if (rndNum >= iBetrayalThreshold):
-                                                                if (unit.getDomainType() == 2): #land unit
-                                                                        iUnitType = unit.getUnitType()
-                                                                        unit.kill(False, iNewOwner)
-                                                                        utils.makeUnit(iUnitType, iNewOwner, tPlot, 1)
-                                                                        i = i - 1
+				if (x, y) not in lExceptions:
+					killPlot = gc.getMap().plot(x,y)
+					iNumUnitsInAPlot = killPlot.getNumUnits()
+					if (iNumUnitsInAPlot):                                                                  
+						for i in range(iNumUnitsInAPlot):                                                
+							unit = killPlot.getUnit(i)
+							if (unit.getOwner() == iOldOwner):
+								rndNum = gc.getGame().getSorenRandNum(100, 'betrayal')
+								if (rndNum >= iBetrayalThreshold):
+									if (unit.getDomainType() == 2): #land unit
+										iUnitType = unit.getUnitType()
+										unit.kill(False, iNewOwner)
+										utils.makeUnit(iUnitType, iNewOwner, tPlot, 1)
+										i = i - 1
 
 
 
@@ -4070,7 +4083,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 3)
                 if (iCiv == iByzantium):
-                        utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 4)
+			utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			if gc.getGame().isReligionFounded(con.iOrthodoxy):
@@ -4081,6 +4095,8 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(con.iGalley, iByzantium, tSeaPlot, 2)
 				utils.makeUnit(con.iTrireme, iByzantium, tSeaPlot, 2)
+				if not gc.getPlayer(0).isPlayable():
+					utils.makeUnit(con.iWorkBoat, iByzantium, tSeaPlot, 1)
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 4)
@@ -4101,7 +4117,10 @@ class RiseAndFall:
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                         utils.makeUnit(con.iArabiaCamelarcher, iCiv, tPlot, 2)
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 1)             
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 1)    
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
                 if (iCiv == iKhmer):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
@@ -4357,6 +4376,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iByzantium):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)                              
                 if (iCiv == iArabia):
@@ -4984,36 +5004,43 @@ class RiseAndFall:
                                 teamMaya.setHasTech(con.iWriting, True, iCiv, False, False)
                                 teamMaya.setHasTech(con.iHunting, True, iCiv, False, False)
                         if (iCiv == iByzantium):
-                                teamByzantium.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                #teamByzantium.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                #teamByzantium.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                #teamByzantium.setHasTech(con.iGuilds, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamByzantium.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iMining, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iIronWorking, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iMachinery, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iMysticism, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iPolytheism, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iMasonry, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iPriesthood, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iMonotheism, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iTheology, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iMonarchy, True, iCiv, False, False)
+				#teamByzantium.setHasTech(con.iDivineRight, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iFishing, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iSailing, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iTheWheel, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iPottery, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iAgriculture, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iWriting, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+				#teamByzantium.setHasTech(con.iFeudalism, True, iCiv, False, False)
+				#teamByzantium.setHasTech(con.iGuilds, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iAlphabet, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iMathematics, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iConstruction, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iCurrency, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iHunting, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iArchery, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iLiterature, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iDrama, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iAesthetics, True, iCiv, False, False)
+				#teamByzantium.setHasTech(con.iEngineering, True, iCiv, False, False)
+				#teamByzantium.setHasTech(con.iMusic, True, iCiv, False, False)
+				#teamByzantium.setHasTech(con.iPhilosophy, True, iCiv, False, False)
+				#teamByzantium.setHasTech(con.iCalendar, True, iCiv, False, False)
                         if (iCiv == iVikings):
                                 teamVikings.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamVikings.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

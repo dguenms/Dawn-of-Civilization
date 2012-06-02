@@ -4824,6 +4824,12 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 		{
 			return false;
 		}
+
+		//Leoreth: protect Jerusalem
+		if (pCity->getX() == 73 && pCity->getY() == 38)
+		{
+			return false;
+		}
 	}
 
 	//Rhye - start
@@ -11611,6 +11617,9 @@ void CvPlayer::verifyAlive()
 
 	if (isAlive())
 	{
+		// Leoreth: keep Seljuks alive early on to avoid exploits
+		if (getID() == SELJUKS && GC.getGameINLINE().getGameTurnYear() < 1250) return;
+
 		bKill = false;
 
 		if (!bKill)
@@ -25249,7 +25258,7 @@ void CvPlayer::doStability()
 				{
 					if (pLoopCity->angryPopulation(0) > 0)
 						iTempCityStability -= 1;
-					if (pLoopCity->getReligionBadHappiness() > 0)
+					if (pLoopCity->getReligionBadHappiness() > 0 && eCivic4 != CIVIC_SCHOLASTICISM)
 						iTempCityStability -= 1;
 					if (pLoopCity->getLargestCityHappiness() < 0)
 						iTempCityStability -= 1;
@@ -25264,7 +25273,7 @@ void CvPlayer::doStability()
 				{
 					if (pLoopCity->angryPopulation(0) > 0)
 						iTempCityStability -= 2;
-					if (pLoopCity->getReligionBadHappiness() > 0)
+					if (pLoopCity->getReligionBadHappiness() > 0 && eCivic4 != CIVIC_SCHOLASTICISM)
 						iTempCityStability -= 2;
 					if (pLoopCity->getLargestCityHappiness() < 0)
 						iTempCityStability -= 2;
@@ -25296,25 +25305,14 @@ void CvPlayer::doStability()
 					}
 				}
 
-				// city civic effects
-				if (eCivic4 == CIVIC_FANATICISM || eCivic4 == CIVIC_ORGANIZED_RELIGION)
-				{
-					for (int iReligion = 0; iReligion < NUM_RELIGIONS; iReligion++)
-					{
-						if (pLoopCity->isHasReligion((ReligionTypes)iReligion) && getStateReligion() != (ReligionTypes)iReligion)
-						{
-							iTempCityStability -= 1;
-						}
-					}
-				}
-
+				
 				if (eCivic4 == CIVIC_PANTHEON)
 				{
 					for (int iReligion = 0; iReligion < NUM_RELIGIONS; iReligion++)
 					{
 						if (pLoopCity->isHasReligion((ReligionTypes)iReligion))
 						{
-							iTempCityStability -= 2;
+							iTempCityStability -= 1;
 						}
 					}
 				}

@@ -5600,6 +5600,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                     }
                                     if (iI == MACHINERY)
                                         iValue /= 2;
+									if (iI == DIVINERIGHT)
+										iValue /= 4;
 									break;
 								case JAPAN:
 									if (iI == CONSTRUCTION)

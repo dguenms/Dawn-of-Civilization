@@ -32,6 +32,9 @@ tCol = (
 '150,150,150',
 '128,128,128')
 
+lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 39), (104, 39)]
+# Beijing, Kaifeng, Luoyang, Shanghai, Hangzhou, Guangzhou, Haojing
+
 class RFCUtils:
 
         #Rise and fall, stability
@@ -255,8 +258,8 @@ class RFCUtils:
 		x, y = tPlot
 		plotList = []
 
-		for i in range(x - 2, x + 3):        
-                        for j in range(y - 2, y + 3):	
+		for i in range(x - 1, x + 2):        
+                        for j in range(y - 1, y + 2):	
                                 pCurrent = gc.getMap().plot( i, j )
                                 if (not pCurrent.isWater() and not pCurrent.isPeak()):
                                         if ( not pCurrent.isUnit() ):
@@ -286,7 +289,7 @@ class RFCUtils:
                         if (result):                                                        
                         	return ((result.getX(), result.getY()))
 		# if no plot is found, return that player's capital
-                return con.tCapital[iPlayer]
+                return con.tCapitals[0][iPlayer]
 
 
 
@@ -1601,6 +1604,25 @@ class RFCUtils:
 					
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		return lFreePlots[iRand]
+		
+	def handleChineseCities(self, pUnit):
+		iRand = gc.getGame().getSorenRandNum(len(lChineseCities), 'Random city')
+		
+		for i in range(len(lChineseCities)):
+			iIndex = (iRand + i) % len(lChineseCities)
+			tPlot = lChineseCities[iIndex]
+			
+			x, y = tPlot
+			bFree = True
+			for j in range(x-1, x+2):
+				for k in range(y-1, y+2):
+					if gc.getMap().plot(j, k).isCity():
+						bFree = False
+						
+			if bFree:
+				gc.getPlayer(con.iChina).found(x, y)
+				pUnit.kill(False, con.iBarbarian)
+				return
 		
 	
 			

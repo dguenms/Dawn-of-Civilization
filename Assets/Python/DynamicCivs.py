@@ -859,7 +859,7 @@ class DynamicCivs:
 	def isEmpire(self, iPlayer):
 		iThreshold = 6
 		
-		if iPlayer == iCarthage: iThreshold = 2
+		if iPlayer == iCarthage: iThreshold = 3
 		elif iPlayer == iIndonesia: iThreshold = 4
 		elif iPlayer == iKorea: iThreshold = 3
 		elif iPlayer == iRussia: iThreshold = 8
@@ -1167,7 +1167,7 @@ class DynamicCivs:
 					return
 					
 		elif iPlayer == iCarthage:	# change adjectives and short desc here too
-			if bEmpire and not bCityStates:
+			if bEmpire:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_EMPIRE")
 				return
 		
@@ -1186,16 +1186,12 @@ class DynamicCivs:
 				return
 		
 			if bEmpire:
-				if bCityStates:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")
-					return
-				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_EMPIRE")
-					return
-			else:
-				if bCityStates:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")
-					return
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_EMPIRE")
+				return
+				
+			if bCityStates:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")
+				return
 					
 		elif iPlayer == iJapan:
 			if bEmpire or iCivic1 == con.iAbsolutism or iEra >= iIndustrial: # Absolutism

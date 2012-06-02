@@ -3016,9 +3016,10 @@ class Victory:
 		for x in range(tTL[0], tBR[0]+1):
 			for y in range(tTL[1], tBR[1]+1):
 				plot = gc.getMap().plot(x, y)
-				iTotal += 1
-				if not plot.isWater() and not (x,y) in lExceptions and plot.getOwner() in lValidOwners:
-					iCount += 1
+				if not plot.isWater() and not (x,y) in lExceptions:
+					iTotal += 1
+					if plot.getOwner() in lValidOwners:
+						iCount += 1
 					
 		return iCount, iTotal
 		
@@ -3440,7 +3441,7 @@ class Victory:
 				aHelp.append(self.getIcon(bApostolicPalace) + localText.getText("TXT_KEY_BUILDING_APOSTOLIC_PALACE", ()) + ' ' + self.getIcon(bHolySepulchre) + localText.getText("TXT_KEY_BUILDING_CHRISTIAN_SHRINE", ()))
 			elif iGoal == 2:
 				iCount = 0
-				for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPortugal, iNetherlands]:
+				for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPortugal, iItaly, iNetherlands]:
 					if utils.getMaster(iCiv) == iHolyRome:
 						iCount += 1
 				aHelp.append(self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_VASSALS", (iCount, 3)))
