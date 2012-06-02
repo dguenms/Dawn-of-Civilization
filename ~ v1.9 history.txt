@@ -15,7 +15,7 @@
 	- Universal Suffrage (Democracy): +1 production for towns, +2 happiness in largest cities
 # SOCIETY
 	- Tribalism
-	- Agrarianism (Calendar): +2 commerce for pastures and plantations, -25% great people birth, -50% cottage growth
+	- Agrarianism (Calendar): +2 commerce for pastures and plantations, -1 trade route, -50% cottage growth
 	- Urbanization (Guilds): +50% worker speed, +1 production from workshops
 	- Capitalism (Economics): +2 commerce for towns, can hurry with gold
 	- Totalitarianism (Fascism): -50% war weariness, +25% espionage, +25% unit production
