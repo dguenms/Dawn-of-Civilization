@@ -661,7 +661,7 @@ class CvRFCEventHandler:
 		#utils.debugTextPopup("Unit built")
 		city, unit = argsList
 		
-		if unit.getUnitType() == con.iSettler and city.getOwner() == iChina:
+		if unit.getUnitType() == con.iSettler and city.getOwner() == iChina and utils.getHumanID() != iChina:
 			utils.handleChineseCities(unit)
 			
 	
