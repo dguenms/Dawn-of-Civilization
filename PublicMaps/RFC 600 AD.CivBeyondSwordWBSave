@@ -38338,6 +38338,7 @@ BeginPlot
 	RiverWEDirection=1
 	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
+	ImprovementType=IMPROVEMENT_PASTURE
 	PlotType=1
 EndPlot
 BeginPlot
@@ -38756,7 +38757,7 @@ EndPlot
 BeginPlot
 	x=100,y=45
 	BonusType=BONUS_IRON
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	RouteType=ROUTE_ROAD
@@ -39130,7 +39131,7 @@ EndPlot
 BeginPlot
 	x=101,y=42
 	BonusType=BONUS_RICE
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -39146,6 +39147,7 @@ BeginPlot
 	x=101,y=44
 	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
+	ImprovementType=IMPROVEMENT_FARM
 	PlotType=2
 EndPlot
 BeginPlot
@@ -39565,6 +39567,7 @@ EndPlot
 BeginPlot
 	x=102,y=46
 	BonusType=BONUS_PIG
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -39582,6 +39585,7 @@ BeginPlot
 		CityOwner=35
 		CityName=Beijing
 		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -39945,7 +39949,7 @@ EndPlot
 BeginPlot
 	x=103,y=42
 	BonusType=BONUS_RICE
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -39969,6 +39973,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_TAOIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
@@ -39987,6 +39992,7 @@ BeginPlot
 	isWOfRiver
 	RiverNSDirection=0
 	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -40357,6 +40363,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_DEER
+	ImprovementType=IMPROVEMENT_CAMP
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -40384,12 +40391,14 @@ EndPlot
 BeginPlot
 	x=104,y=47
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=104,y=48
 	BonusType=BONUS_HORSE
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -40728,6 +40737,7 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		Player35Culture=10
@@ -40770,6 +40780,7 @@ BeginPlot
 		CityOwner=35
 		CityName=Nanjing
 		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -41134,6 +41145,7 @@ EndPlot
 BeginPlot
 	x=106,y=38
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -41164,6 +41176,7 @@ EndPlot
 BeginPlot
 	x=106,y=43
 	BonusType=BONUS_RICE
+	ImprovementType=IMPROVEMENT_FARM
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
@@ -41539,6 +41552,7 @@ BeginPlot
 		CityOwner=35
 		CityName=Hangzhou
 		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
@@ -41917,6 +41931,7 @@ EndPlot
 BeginPlot
 	x=108,y=40
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -41933,6 +41948,7 @@ EndPlot
 BeginPlot
 	x=108,y=43
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
