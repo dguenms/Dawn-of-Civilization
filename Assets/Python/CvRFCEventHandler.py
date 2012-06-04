@@ -501,6 +501,20 @@ class CvRFCEventHandler:
 			city.setHasRealBuilding(con.iForge, True)
 			
 			city.setHasRealBuilding(con.iJewishTemple + 4*gc.getPlayer(iOwner).getStateReligion(), True)
+			
+		if iOwner == con.iChina and (city.getX(), city.getY()) == con.tCapitals[0][con.iChina] and gc.getGame().getGameTurn() <= getTurnForYear(600)+3 and not gc.getPlayer(0).isPlayable():
+			city.setPopulation(4)
+			
+			city.setHasRealBuilding(con.iConfucianTemple, True)
+			city.setHasRealBuilding(con.iChineseTaixue, True)
+			city.setHasRealBuilding(con.iBarracks, True)
+			city.setHasRealBuilding(con.iForge, True)
+			
+		if iOwner == con.iNetherlands and (city.getX(), city.getY()) == con.tCapitals[0][con.iNetherlands] and gc.getGame().getGameTurn() <= getTurnForYear(1500)+3:
+			city.setPopulation(8)
+			
+			for iBuilding in [con.iLibrary, con.iBarracks, con.iGrocer, con.iBank, con.iColosseum, con.iTheatre, con.iJewishTemple+4*gc.getPlayer(con.iNetherlands).getStateReligion()]:
+				city.setHasRealBuilding(iBuilding, True)
 
 
                 if (self.vic.getNewWorld(0) == -1):

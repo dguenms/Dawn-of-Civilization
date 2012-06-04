@@ -1623,6 +1623,22 @@ class RFCUtils:
 				gc.getPlayer(con.iChina).found(x, y)
 				pUnit.kill(False, con.iBarbarian)
 				return
+				
+	def prepareCapital(self, iPlayer, city, iSize, lBuildings=[], lReligions=[], b600ADOnly=False):
+	
+		if gc.getPlayer(0).isPlayable() and b600ADOnly: return
+		if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])+3: return
+		if (city.getX(), city.getY()) != con.tCapitals[0][iPlayer]: return
+	
+		if city.getPopulation() < iSize:
+			city.setPopulation(iSize)
+			
+		for iReligion in lReligions:
+			city.setHasReligion(iReligion, True, False, False)
+			
+		for iBuilding in lBuildings:
+			city.setHasRealBuilding(iBuilding, True)
+			
 		
 	
 			

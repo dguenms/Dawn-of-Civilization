@@ -220,3 +220,6 @@
 # Rome doesn't go to war with Byzantium over the cities they flip
 # added a semi-scripting routine to help China's city placement
 # Jerusalem cannot be razed anymore
+# China starts with more improvements in 600 AD
+# preplaced Chengdu and Shenyang in the 600 AD scenario
+# Amsterdam starts with an appropriate city size and several buildings

@@ -765,6 +765,25 @@ class RiseAndFall:
                                 else:
                                         pCurrent.setCulture(iIndependent2, 0, True)
                                         pCurrent.setOwner(-1)
+					
+		pIndependent.found(99, 41)
+		utils.makeUnit(con.iArcher, iIndependent, (99, 41), 1)
+		pChengdu = gc.getMap().plot(99, 41).getPlotCity()
+		pChengdu.setName("Chengdu", False)
+		pChengdu.setPopulation(2)
+		pChengdu.setHasReligion(con.iConfucianism, True, False, False)
+		pChengdu.setHasRealBuilding(con.iGranary, True)
+		
+		pBarbarian.found(105, 49)
+		utils.makeUnit(con.iArcher, iBarbarian, (105, 49), 1)
+		pShenyang = gc.getMap().plot(105, 49).getPlotCity()
+		pShenyang.setName("Simiyan hoton", False)
+		pShenyang.setPopulation(2)
+		pShenyang.setHasReligion(con.iConfucianism, True, False, False)
+		pShenyang.setHasRealBuilding(con.iGranary, True)
+		pShenyang.setHasRealBuilding(con.iWalls, True)
+		pShenyang.setHasRealBuilding(con.iConfucianTemple, True)
+		
                 
                 
 
