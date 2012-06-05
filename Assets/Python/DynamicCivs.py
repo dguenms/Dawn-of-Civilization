@@ -928,6 +928,11 @@ class DynamicCivs:
 			if iMaster == iGermany and pMasterPlayer.getCivics(2) == con.iTotalitarianism:
 				self.setCivDesc(iPlayer, self.naziVassals[iPlayer])
 				return
+				
+			# special cases
+			if iMaster == iRome and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ROMAN_VASSAL")
+				return
 			
 			if iMaster in self.specificVassalNames and not pMasterPlayer.isReborn():
 				if iPlayer in self.specificVassalNames[iMaster]:

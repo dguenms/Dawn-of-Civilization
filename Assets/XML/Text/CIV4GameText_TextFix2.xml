@@ -1339,5 +1339,29 @@
 		<English>"We Love the Consul Day"</English>
 		<German>"Konsul-Feiertag"</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VOTE_FREE_SPEECH</Tag>
+		<English>U.N. Resolution #3445 (Global Civic - Republic)</English>
+		<French>R&#233;solution de l'ONU n&#176; 3445 (Doctrine mondiale - libert&#233; d'expression)</French>
+		<German>U.N.-Resolution Nr. 3445 (Globale Staatsform - Republik)</German>
+		<Italian>Mozione #3445 dell'ONU (Libert&#224; di parola globale)</Italian>
+		<Spanish>Resoluci&#243;n n&#186; 3445 de la ONU (principio mundial - Libertad de expresi&#243;n)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VOTE_EMANCIPATION</Tag>
+		<English>U.N. Resolution #743 (Global Civic - Egalitarianism)</English>
+		<French>R&#233;solution de l'ONU n&#176; 743 (Doctrine mondiale - &#233;mancipation)</French>
+		<German>U.N.-Resolution Nr. 743 (Globale Staatsform - Egalitarianism)</German>
+		<Italian>Mozione #743 dell'ONU (Emancipazione globale)</Italian>
+		<Spanish>Resoluci&#243;n n&#186; 743 de la ONU (principio mundial - Emancipaci&#243;n)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VOTE_FREE_RELIGION</Tag>
+		<English>U.N. Resolution #427 (Global Civic - Secularism)</English>
+		<French>R&#233;solution de l'ONU n&#176; 427 (Doctrine mondiale - libert&#233; de culte)</French>
+		<German>U.N.-Resolution Nr. 427 (Globale Staatsform - Sekularismus)</German>
+		<Italian>Mozione #427 dell'ONU (Libert&#224; di religione globale)</Italian>
+		<Spanish>Resoluci&#243;n n&#186; 427 de la ONU (principio mundial - Libertad religiosa)</Spanish>
+	</TEXT>
 
 </Civ4GameText>

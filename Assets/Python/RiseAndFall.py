@@ -1642,8 +1642,9 @@ class RiseAndFall:
                                         #print ("iCiv", iCiv, "bSafe", bSafe)
                                         if (bSafe == False):
 					
-						# don't let Carthage die this way
-						if iCiv == iCarthage:
+						# don't let Carthage die this way, unless neither Sur or Carthage are controlled
+						capital = gc.getPlayer(iCiv).getCapitalCity()
+						if iCiv == iCarthage and ((capital.getX(), capital.getY()) == con.tCapitals[0][iCarthage] or (capital.getX(), capital.getY()) == (58, 39)):
 							return
 					
                                                 bVassal = False
