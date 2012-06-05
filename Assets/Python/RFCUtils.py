@@ -498,17 +498,22 @@ class RFCUtils:
                                                 pass
                                         else:
                                                 j = 0
+						oldCapital = gc.getPlayer(iOldOwner).getCapitalCity()
                                                 for i in range(iNumUnitsInAPlot):                                                        
                                                         unit = killPlot.getUnit(j)
                                                         #print ("killplot", x, y, unit.getUnitType(), unit.getOwner(), "j", j)
                                                         if (unit.getOwner() == iOldOwner):
-                                                                unit.kill(False, con.iBarbarian)
-                                                                if (bKillSettlers):
-                                                                        if ((unit.getUnitType() > iSettler)):
-                                                                                self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
-                                                                else:
-                                                                        if ((unit.getUnitType() >= iSettler)): #skip animals
-                                                                                self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
+								# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
+								if iNewOwner == con.iItaly and iOldOwner < con.iNumPlayers:
+									unit.setXYOld(oldCapital.getX(), oldCapital.getY())
+								else:
+									unit.kill(False, con.iBarbarian)
+									if (bKillSettlers):
+										if ((unit.getUnitType() > iSettler)):
+											self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
+									else:
+										if ((unit.getUnitType() >= iSettler)): #skip animals
+											self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
                                                         else:
                                                                 j += 1
                                                 tempPlot = gc.getMap().plot(0,67)

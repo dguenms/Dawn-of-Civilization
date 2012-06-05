@@ -2482,7 +2482,7 @@ class RiseAndFall:
                                                                         break
                                 print ("bDeleteEverything", bDeleteEverything)
                                 if (not gc.getMap().plot(tCapital[0], tCapital[1]).isOwned()):
-                                        if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand): #dangerous starts
+                                        if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand or iCiv == iItaly): #dangerous starts
                                                 self.setDeleteMode(0, iCiv)
                                         self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
                                 elif (bDeleteEverything):
