@@ -345,6 +345,11 @@
 		<German>Die mongolischen Horden sind in unser Territorium eingefallen!</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INVADERS_HUMAN</Tag>
+		<English>%s1 armies have invaded our territory!</English>
+		<German>%s1 Armeen sind in unser Territorium eingefallen!</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_COLONY</Tag>
 		<English>Colony of %s1</English>
 	</TEXT>
@@ -359,7 +364,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCHISM_MESSAGE</Tag>
-		<English>The institution of papacy has already existed for several centuries. However, his claim to be the sole representative of God on Earth is threatening our own theological authority. Many clergymen in our civilization are also worried that his interpretation of the Word of God has strayed to far from the true origins of Christianity. Shall we heed their call to separate from the Catholic Church in a Great Schism and follow Orthodox Christianity instead?</English>
+		<English>The institution of papacy has already existed for several centuries. However, the Pope's claim to be the sole representative of God on Earth is threatening our own theological authority. Many clergymen in our civilization are also worried that his interpretation of the Word of God has strayed too far from the true origins of Christianity. Shall we heed their call to separate from the Catholic Church in a Great Schism and follow Orthodox Christianity instead?</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ASKCOLONIALCITY_TITLE</Tag>

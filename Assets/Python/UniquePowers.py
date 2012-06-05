@@ -338,6 +338,9 @@ class UniquePowers:
 				
 				utils.makeUnitAI(con.iGreekPhalanx, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2+iExtra*2)
 				utils.makeUnitAI(con.iCatapult, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1+iExtra*2)
+				
+		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_GREEK_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+		
 
 
 #------------------ARABIAN U.P.-------------------

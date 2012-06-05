@@ -6957,6 +6957,11 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 		if (!GET_PLAYER((PlayerTypes)getID()).isHuman())
 		{
 			iProductionNeeded = iProductionNeeded * 3 / 4;
+
+			if (getID() == GREECE || getID() == BABYLONIA)
+			{
+			    iProductionNeeded = iProductionNeeded * 3 / 4;
+			}
 		}
 
 	}
@@ -25305,7 +25310,7 @@ void CvPlayer::doStability()
 					}
 				}
 
-				
+
 				if (eCivic4 == CIVIC_PANTHEON)
 				{
 					for (int iReligion = 0; iReligion < NUM_RELIGIONS; iReligion++)

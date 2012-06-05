@@ -2970,6 +2970,13 @@ class RiseAndFall:
                                 	if ( pCurrent.isCity()):
                                         	if (pCurrent.getPlotCity().getOwner() != iCiv):
                                                 	cityList.append(pCurrent.getPlotCity())
+							
+		# Leoreth: Byzantium also flips Roman cities in the eastern half of the empire outside of its core (Egypt, Mesopotamia)
+		if iCiv == iByzantium and pRome.isAlive():
+			for pCity in PyPlayer(iRome).getCityList():
+				city = pCity.GetCy()
+				if city.getRegionID() == con.rEgypt or city.getRegionID() == con.rMesopotamia:
+					cityList.append(city)
 
                 #Exceptions
                	#reborn = utils.getReborn(iCiv)
@@ -4114,7 +4121,7 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(con.iGalley, iByzantium, tSeaPlot, 2)
 				utils.makeUnit(con.iTrireme, iByzantium, tSeaPlot, 2)
-				if not gc.getPlayer(0).isPlayable():
+				if gc.getPlayer(0).isPlayable():
 					utils.makeUnit(con.iWorkBoat, iByzantium, tSeaPlot, 1)
                 if (iCiv == iVikings):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
