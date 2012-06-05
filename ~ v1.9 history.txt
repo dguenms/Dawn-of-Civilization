@@ -223,3 +223,4 @@
 # China starts with more improvements in 600 AD
 # preplaced Chengdu and Shenyang in the 600 AD scenario
 # Amsterdam starts with an appropriate city size and several buildings
+# Italy cannot flip armies of major civilizations to prevent it from absorbing French or German armies
