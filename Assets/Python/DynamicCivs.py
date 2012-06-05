@@ -1646,6 +1646,10 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iShivaji)
 				return
 				
+			if tPlayer.isHasTech(con.iMathematics):
+				self.setLeader(iPlayer, con.iChandragupta)
+				return
+				
 		elif iPlayer == iChina:
 		
 			if self.isCommunist(iPlayer) or self.isDemocratic(iPlayer) and iEra >= con.iIndustrial:
@@ -1795,6 +1799,9 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iHolyRome:
+		
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iFrancis)
 		
 			if iEra >= con.iRenaissance:
 				self.setLeader(iPlayer, con.iCharles)

@@ -34281,8 +34281,6 @@
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_ROMAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName>Tarpeia</UniqueName><!-- legendary -->
-				<UniqueName>Aquilia Severa</UniqueName><!-- 3rd BC -->
 				<UniqueName>Augustinus</UniqueName><!-- 4th -->
 				<UniqueName>Aurelius Ambrosius</UniqueName><!-- 4th -->
 				<UniqueName>Eusebius</UniqueName><!-- 4th -->

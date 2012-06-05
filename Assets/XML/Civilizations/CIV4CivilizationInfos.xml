@@ -2277,7 +2277,7 @@
 			<ShortDescription>TXT_KEY_CIV_IRAN_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_IRAN_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_IRAN_PEDIA</Civilopedia>		
-			<DefaultPlayerColor>PLAYERCOLOR_PINK</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_IRAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
@@ -3708,7 +3708,7 @@
 			<Adjective>TXT_KEY_CIV_PERSIA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_PERSIA_PEDIA</Civilopedia>
 			<!-- Rhye -->
-			<DefaultPlayerColor>PLAYERCOLOR_PINK</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PERSIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>

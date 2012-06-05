@@ -334,7 +334,7 @@ class Religions:
 ##ORTHODOXY
 
 	def canFoundOrthodoxy(self, iPlayer):
-		return gc.getPlayer(iPlayer).isAlive() and gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity
+		return gc.getPlayer(iPlayer).isAlive() and gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity and gc.getPlayer(iPlayer).countNumBuildings(con.iApostolicPalace) == 0
 
 	def foundOrthodoxy(self, iPopeCiv):
 		if gc.getGame().isReligionFounded(con.iOrthodoxy): return
@@ -350,6 +350,7 @@ class Religions:
 		if self.canFoundOrthodoxy(con.iByzantium): iFounder = con.iByzantium
 		elif self.canFoundOrthodoxy(con.iGreece): iFounder = con.iGreece
 		elif self.canFoundOrthodoxy(con.iRussia): iFounder = con.iRussia
+		elif self.canFoundOrthodoxy(con.iRome): iFounder = con.iRome
 		elif self.canFoundOrthodoxy(con.iEthiopia): iFounder = con.iEthiopia
 		elif self.canFoundOrthodoxy(con.iEgypt): iFounder = con.iEgypt
 		elif self.canFoundOrthodoxy(con.iCarthage): iFounder = con.iCarthage
@@ -361,21 +362,21 @@ class Religions:
                 gc.getPlayer(iFounder).foundReligion(con.iOrthodoxy, con.iOrthodoxy, True)
                 gc.getPlayer(iFounder).getCapitalCity().setNumRealBuilding(con.iOrthodoxShrine, 1)
 		
-		if con.tBirth[utils.getHumanID()] <= getTurnForYear(gc.getGame().getGameTurnYear()) and gc.getPlayer(utils.getHumanID()).getStateReligion() == con.iChristianity:
+		if gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[utils.getHumanID()]) and gc.getPlayer(utils.getHumanID()).getStateReligion() == con.iChristianity:
 			self.showPopup(7626, CyTranslator().getText("TXT_KEY_SCHISM_TITLE", ()), CyTranslator().getText("TXT_KEY_SCHISM_MESSAGE", ()), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
 		
 		if iFounder in lOrthodoxEast:
 			for iCiv in lOrthodoxEast:
-				if gc.getPlayer(iCiv).isAlive(): self.schism(iCiv)
+				if gc.getPlayer(iCiv).isAlive() and utils.getHumanID() != iCiv: self.schism(iCiv)
 		elif iFounder in lOrthodoxMiddle:
 			for iCiv in lOrthodoxMiddle:
-				if gc.getPlayer(iCiv).isAlive(): self.schism(iCiv)
+				if gc.getPlayer(iCiv).isAlive() and utils.getHumanID() != iCiv: self.schism(iCiv)
 		elif iFounder in lOrthodoxWest:
 			for iCiv in lOrthodoxWest:
-				if gc.getPlayer(iCiv).isAlive(): self.schism(iCiv)
+				if gc.getPlayer(iCiv).isAlive() and utils.getHumanID() != iCiv: self.schism(iCiv)
 		else:
 			for iCiv in range(con.iNumPlayers):
-				if gc.getPlayer(iCiv).isAlive(): self.schism(iCiv)
+				if gc.getPlayer(iCiv).isAlive() and utils.getHumanID() != iCiv: self.schism(iCiv)
 				
 		for iCiv in [con.iEthiopia, con.iGreece, con.iByzantium, con.iRussia]:
 			if not gc.getPlayer(iCiv).isAlive():
@@ -390,7 +391,8 @@ class Religions:
 		for city in cityList:
 			pCity = city.GetCy()
 			if pCity.isHasReligion(iChristianity):
-				pCity.setHasReligion(iChristianity, False, False, False)
+				if not pCity.isHolyCityByType(iChristianity):
+					pCity.setHasReligion(iChristianity, False, False, False)
 			
 				for iBuilding in [con.iTemple, con.iCathedral, con.iMonastery]:
 					if pCity.isHasBuilding(iBuilding + 4*iChristianity):

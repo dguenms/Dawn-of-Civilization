@@ -5487,12 +5487,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								switch (getID())
 								{
 								case EGYPT:
-									if (iI == WRITING || iI == SAILING || iI == MONOTHEISM)
+									if (iI == WRITING || iI == SAILING)
 										iValue /= 3;
 									if (iI == MEDITATION || iI == PRIESTHOOD)
 										iValue /= 5;
 									if (iI == MASONRY)
 										iValue *= 3;
+                                    if (iI == MONOTHEISM)
+                                        iValue /= 5;
 									break;
 								case INDIA:
 									if (iI == MEDITATION || iI == PRIESTHOOD)
@@ -5588,7 +5590,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case ROME:
                                     if (iI == MEDITATION || iI == CALENDAR)
                                         iValue /= 2;
-                                    if (iI == MONOTHEISM)
+                                    if (iI == MONOTHEISM && GET_PLAYER((PlayerTypes)PERSIA).isAlive())
                                         iValue *= 2;
                                     if (iI == THEOLOGY)
                                         iValue *= 3;
@@ -6043,7 +6045,7 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 		if (AI_getMemoryCount(ePlayer, MEMORY_NUKED_US) > 0)
 			iRefuseDuration /= 2;
 		//Rhye - end
-		
+
 
 		// Leoreth: new French UP
 		if (getID() == FRANCE)
@@ -6413,12 +6415,12 @@ int CvPlayerAI::AI_getSameReligionAttitude(PlayerTypes ePlayer) const
 	{
 		bSameReligion = true;
 	}
-	
+
 	if (((getStateReligion() == CONFUCIANISM) && (GET_PLAYER(ePlayer).getStateReligion() == TAOISM)) || ((getStateReligion() == TAOISM) && (GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM)))
 	{
 		bSameReligion = true;
 	}
-	
+
 	//if ((getStateReligion() != NO_RELIGION) && (getStateReligion() == GET_PLAYER(ePlayer).getStateReligion()))
 	if (bSameReligion)
 	// edead: end
