@@ -117,6 +117,10 @@
 		<English>Province of Syria</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_ROMAN_VASSAL</Tag>
+		<English>Province of Africa</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_ROMAN_VASSAL</Tag>
 		<English>Province of Aethiopia</English>
 	</TEXT>
