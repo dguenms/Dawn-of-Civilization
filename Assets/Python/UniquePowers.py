@@ -186,14 +186,14 @@ class UniquePowers:
                 if (iGameTurn >= getTurnForYear(con.tBirth[iAmerica])+utils.getTurns(5) and ((self.getImmigrationTurnLength() != 0) or ((gc.getGame().getSorenRandNum(30, 'random') % 20) == 0 and gc.getPlayer(iAmerica).isAlive()))):
                         self.americanUP()
 
-		if iGameTurn == getTurnForYear(con.tBirth[iRome]+1):
-			for iCiv in range(iNumActivePlayers):
-				if teamRome.isAtWar(iCiv):
-					self.setRomanWar(iCiv, -1)
+		#if iGameTurn == getTurnForYear(con.tBirth[iRome]+1):
+		#	for iCiv in range(iNumActivePlayers):
+		#		if teamRome.isAtWar(iCiv):
+		#			self.setRomanWar(iCiv, -1)
 
-		if (iGameTurn >= getTurnForYear(con.tBirth[iRome])+2):
-			print("Check Roman war")
-			self.checkRomanWar()
+		#if (iGameTurn >= getTurnForYear(con.tBirth[iRome])+2):
+		#	print("Check Roman war")
+		#	self.checkRomanWar()
 
                 #if (iGameTurn >= getTurnForYear(1190)):
                 #if (iGameTurn >= 0): #debug
@@ -221,29 +221,41 @@ class UniquePowers:
 #------------------ROMAN UP-----------------------
 
 	def checkRomanWar(self):
-
-		if gc.getPlayer(iRome).isReborn():
-			return
-		
-		for iCiv in range(iNumActivePlayers):
-			#print("Roman war status with "+gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()+": "+str(self.getRomanWar(iCiv)))
-			if self.getRomanWar(iCiv) == -1:
-				#print("Roman war status -1 with "+str(iCiv))
-				if (not teamRome.isAtWar(iCiv)):
-					print("Set Roman war to 0.")
-					self.setRomanWar(iCiv, 0)
-			elif self.getRomanWar(iCiv) == 0:
-				#print("Roman war status 0 with "+str(iCiv))
-				if teamRome.isAtWar(iCiv):
-					#print("Set Roman War to 1")
-					self.setRomanWar(iCiv, 1)
-					if (iCiv in con.lCivGroups[2]) or (iCiv in con.lCivGroups[3]):
-						print ("Roman conquest triggered.")
-						iNumTargets = 1
-						if utils.getHumanID() != iRome and iCiv == iPersia: iNumTargets = 2
+	
+		if self.getRomanWar(iCiv) == 0:
+			if iCiv in con.lCivGroups[2] or iCiv in con.lCivGroups[3] or (iCiv == iCeltia and utils.getHumanID() != iRome):
+				iNumTargets = 1
+				
+				if utils.getHumanID() != iRome:
+					if iCiv in [iCarthage, iPersia, iCeltia, iEgypt]:
+						iNumTargets = 2
+					elif iCiv == iGreece and utils.getHumanID() != iGreece:
+						iNumTargets = 3
 						
-						self.romanConquestUP(iCiv, iNumTargets)
-						print ("Roman conquest completed.")
+				self.romanConquestUP(iCiv, iNumTargets)
+
+		#if gc.getPlayer(iRome).isReborn():
+		#	return
+		#
+		#for iCiv in range(iNumActivePlayers):
+		#	#print("Roman war status with "+gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()+": "+str(self.getRomanWar(iCiv)))
+		#	if self.getRomanWar(iCiv) == -1:
+		#		#print("Roman war status -1 with "+str(iCiv))
+		#		if (not teamRome.isAtWar(iCiv)):
+		#			print("Set Roman war to 0.")
+		#			self.setRomanWar(iCiv, 0)
+		#	elif self.getRomanWar(iCiv) == 0:
+		#		#print("Roman war status 0 with "+str(iCiv))
+		#		if teamRome.isAtWar(iCiv):
+		#			#print("Set Roman War to 1")
+		#			self.setRomanWar(iCiv, 1)
+		#			if (iCiv in con.lCivGroups[2]) or (iCiv in con.lCivGroups[3]):
+		#				print ("Roman conquest triggered.")
+		#				iNumTargets = 1
+		#				if utils.getHumanID() != iRome and iCiv == iPersia: iNumTargets = 2
+		#				
+		#				self.romanConquestUP(iCiv, iNumTargets)
+		#				print ("Roman conquest completed.")
 
 #        def romanCombatUP(self, argsList):
 #
