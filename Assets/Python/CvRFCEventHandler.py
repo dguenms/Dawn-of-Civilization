@@ -195,6 +195,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("greatPersonBorn", self.onGreatPersonBorn)
 		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
+		eventManager.addEventHandler("changeWar", self.onChangeWar)
                
                 self.eventManager = eventManager
 
@@ -559,6 +560,13 @@ class CvRFCEventHandler:
                 self.sta.onCombatResult(argsList)
                 self.rnf.immuneMode(argsList)
 		self.up.vikingUP(argsList)
+		
+	def onChangeWar(self, argsList):
+		bWar, iActiveTeam, iPassiveTeam = argsList
+		
+		if bWar:
+			if iActiveTeam == con.iRome:
+				self.up.checkRomanWar()
 
 
 

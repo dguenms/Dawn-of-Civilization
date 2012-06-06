@@ -1069,8 +1069,8 @@
 		</ColorVal>
 		<ColorVal>
 			<Type>COLOR_PLAYER_DARK_ROT_GREEN</Type>
-			<fRed>0.18</fRed>
-			<fGreen>0.35</fGreen>
+			<fRed>0.24</fRed>
+			<fGreen>0.4</fGreen>
 			<fBlue>0.00</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
