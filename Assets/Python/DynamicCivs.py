@@ -1651,9 +1651,9 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iShivaji)
 				return
 				
-			if tPlayer.isHasTech(con.iMathematics):
-				self.setLeader(iPlayer, con.iChandragupta)
-				return
+			#if tPlayer.isHasTech(con.iMathematics):
+			#	self.setLeader(iPlayer, con.iChandragupta)
+			#	return
 				
 		elif iPlayer == iChina:
 		
