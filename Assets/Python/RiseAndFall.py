@@ -3964,7 +3964,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
 		if (iCiv == iKorea):
-			for iUnit in [con.iHorseArcher, con.iSwordsman]:
+			for iUnit in [con.iHorseArcher, con.iCrossbowman]:
 				utils.makeUnit(iUnit, iCiv, tPlot, 2)
                 if (iCiv == iMaya):
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
@@ -4111,7 +4111,8 @@ class RiseAndFall:
 			utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 1)
 			if utils.getHumanID() != iKorea:
-				utils.makeUnit(con.iAxeman, iCiv, tPlot, 3)
+				utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
+				utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
                 if (iCiv == iMaya):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 3)

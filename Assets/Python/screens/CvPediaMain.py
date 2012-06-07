@@ -484,7 +484,6 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
                         tList.pop(con.iNumBonuses) #marsh
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
-			tList.pop(con.iDummy)
 			tList.pop(con.iAlpArslan)
 			tList.pop(con.iChiangKaishek)
 			#tList.pop(con.iFrancis)

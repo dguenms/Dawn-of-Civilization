@@ -507,8 +507,8 @@ class Stability:
                                 iMaxPlotsAbroad = 32
 			
 			# Leoreth: nerf Korean stability, and city states civic
-			if iPlayer == con.iKorea:
-				iMaxPlotsAbroad /= 2
+			#if iPlayer == con.iKorea:
+			#	iMaxPlotsAbroad /= 2
                         
                         iNumPlotsAbroad = max(0,self.getOwnedPlotsLastTurn(iPlayer)-iMaxPlotsAbroad*2/3)                        
                         iNewBaseStability -= iNumPlotsAbroad*2/7

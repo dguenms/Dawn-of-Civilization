@@ -190,7 +190,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MOST_ADVANCED_CIV</Tag>
-		<English>Most advanced civilization: </English>
+		<English>Most advanced civilization: %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MAGHREB</Tag>

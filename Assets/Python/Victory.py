@@ -1150,7 +1150,10 @@ class Victory:
 				# Leoreth: new first Arabian goal: be the most advanced civ in 1300 AD
 				if iGameTurn == getTurnForYear(1300):
 					if self.getGoal(iArabia, 0) == -1:
-						self.setGoal(iArabia, 0, 0)
+						if self.getMostAdvancedCiv(iArabia) == iArabia:
+							self.setGoal(iArabia, 0, 1)
+						else:
+							self.setGoal(iArabia, 0, 0)
 
 
                             
@@ -1160,7 +1163,7 @@ class Victory:
                                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
 						bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
 						bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-						bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
+						bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain], con.tExceptions[0][iSpain])
                                                 if (bEgypt and bMaghreb and bMesopotamia and bPersia and bSpain):
                                                         self.setGoal(iArabia, 1, 1)
                                 elif (iGameTurn > getTurnForYear(1300)):
@@ -2385,16 +2388,16 @@ class Victory:
 					self.setGoal(iKorea, 1, 0)
 					
 		# Arabian UHV: discover all medieval techs by 1300 AD
-		if iPlayer == iArabia and self.getGoal(iArabia, 0) == -1:
-			if gc.getTechInfo(iTech).getEra() == con.iMedieval:
-				bAllMedieval = True
-				for iLoopTech in range(con.iNumTechs):
-					if gc.getTechInfo(iLoopTech).getEra() == con.iMedieval:
-						if not teamArabia.isHasTech(iLoopTech) and iLoopTech != iTech:
-							bAllMedieval = False
-							break
-				if bAllMedieval:
-					self.setGoal(iArabia, 0, 1)
+		#if iPlayer == iArabia and self.getGoal(iArabia, 0) == -1:
+		#	if gc.getTechInfo(iTech).getEra() == con.iMedieval:
+		#		bAllMedieval = True
+		#		for iLoopTech in range(con.iNumTechs):
+		#			if gc.getTechInfo(iLoopTech).getEra() == con.iMedieval:
+		#				if not teamArabia.isHasTech(iLoopTech) and iLoopTech != iTech:
+		#					bAllMedieval = False
+		#					break
+		#		if bAllMedieval:
+		#			self.setGoal(iArabia, 0, 1)
 			
 		# English UHV: be first to enter the Industrial and Modern eras
 		if self.getGoal(iEngland, 2) == -1 and iGameTurn >= getTurnForYear(1400):
@@ -2891,14 +2894,14 @@ class Victory:
 
 	# Leoreth: new implementation of the Arabian conquest goal
 	# all cities in the area must now be held either by you or one of your vassals
-	def isControlledOrVassalized(self, iPlayer, tTopLeft, tBottomRight):
+	def isControlledOrVassalized(self, iPlayer, tTopLeft, tBottomRight, tExceptions=()):
 		bControlled = False
 		lOwnerList = []
 		lValidOwners = [iPlayer]
 		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.cityPlots, iPlayer)
 		for tPlot in lCityPlotList:
 			x, y = tPlot
-			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList:
+			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList and (x,y) not in tExceptions:
 				lOwnerList.append(gc.getMap().plot(x,y).getPlotCity().getOwner())
 		for iCiv in range(con.iNumPlayers):
 			if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iPlayer):
@@ -2932,13 +2935,20 @@ class Victory:
 			if gc.getTeam(iCiv).isHasTech(iTech):
 				iCount += 1
 		return iCount
+		
+	def getTotalTechValue(self, iCiv):
+		iValue = 0
+		for iTech in range(con.iNumTechs):
+			if gc.getTeam(iCiv).isHasTech(iTech):
+				iValue += gc.getTechInfo(iTech).getResearchCost()
+		return iValue
 
 	def getMostAdvancedCiv(self, iCiv):
 		iBestCiv = iCiv
-		iBestTechs = self.getNumTechs(iCiv)
+		iBestTechs = self.getTotalTechValue(iCiv)
 		for iLoopCiv in range(con.iNumPlayers):
 			if gc.getPlayer(iLoopCiv).isAlive():
-				iTempTechs = self.getNumTechs(iLoopCiv)
+				iTempTechs = self.getTotalTechValue(iLoopCiv)
 				if iTempTechs > iBestTechs:
 					iBestCiv = iLoopCiv
 					iBestTechs = iTempTechs
@@ -3309,13 +3319,13 @@ class Victory:
 		elif iPlayer == iArabia:
 			if iGoal == 0:
 				iMostAdvancedCiv = self.getMostAdvancedCiv(iArabia)
-				aHelp.append(self.getIcon(iMostAdvancedCiv == iArabia) + localText.getText("TXT_KEY_VICTORY_MOST_ADVANCED_CIV", ()) + CyTranslator().getText(str(gc.getPlayer(iMostAdvancedCiv).getCivilizationShortDescriptionKey()),()))
+				aHelp.append(self.getIcon(iMostAdvancedCiv == iArabia) + localText.getText("TXT_KEY_VICTORY_MOST_ADVANCED_CIV", (str(gc.getPlayer(iMostAdvancedCiv).getCivilizationShortDescriptionKey()),)))
 			elif iGoal == 1:
                                 bEgypt = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iEgypt], con.tCoreAreasBR[0][iEgypt])
                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
 				bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
 				bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-				bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain])
+				bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain], con.tExceptions[0][iSpain])
 				aHelp.append(self.getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + self.getIcon(bMaghreb) + localText.getText("TXT_KEY_VICTORY_MAGHREB", ()) + ' ' + self.getIcon(bSpain) + localText.getText("TXT_KEY_CIV_SPAIN_SHORT_DESC", ()))
 				aHelp.append(self.getIcon(bMesopotamia) + localText.getText("TXT_KEY_VICTORY_MESOPOTAMIA", ()) + ' ' + self.getIcon(bPersia) + localText.getText("TXT_KEY_CIV_PERSIA_SHORT_DESC", ()))
 			elif iGoal == 2:

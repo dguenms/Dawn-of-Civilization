@@ -205,7 +205,7 @@
 			<Description>TXT_KEY_LEADER_ALEXANDER</Description>
 			<Civilopedia>TXT_KEY_LEADER_ALEXANDER_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_ALEXANDER</ArtDefineTag>
-			<iWonderConstructRand>20</iWonderConstructRand>
+			<iWonderConstructRand>40</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -213,7 +213,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>5</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>20</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>50</iMaxWarRand>
@@ -228,7 +228,7 @@
 			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
 			<!-- Rhye -->
-			<iRazeCityProb>40</iRazeCityProb>
+			<iRazeCityProb>15</iRazeCityProb>
 			<iBuildUnitProb>35</iBuildUnitProb>
 			<iBaseAttackOddsChange>4</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
@@ -260,7 +260,7 @@
 			<iFavoriteCivicAttitudeChangeLimit>2</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
 			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
 			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StrategicBonusRefuseAttitudeThreshold>
 			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HappinessBonusRefuseAttitudeThreshold>
 			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HealthBonusRefuseAttitudeThreshold>
@@ -750,7 +750,7 @@
 			<iEspionageWeight>90</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>6</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>20</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>15</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>200</iMaxWarRand>
@@ -796,7 +796,7 @@
 			<iFavoriteCivicAttitudeChangeLimit>4</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
 			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
 			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StrategicBonusRefuseAttitudeThreshold>
 			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HappinessBonusRefuseAttitudeThreshold>
 			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HealthBonusRefuseAttitudeThreshold>
@@ -815,7 +815,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_SCHOLASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -1302,7 +1302,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>15</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>40</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>50</iMaxWarRand>
@@ -5103,7 +5103,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>20</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<!-- Rhye -->
@@ -5150,7 +5150,7 @@
 			<iFavoriteCivicAttitudeChangeLimit>2</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
 			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
 			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StrategicBonusRefuseAttitudeThreshold>
 			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HappinessBonusRefuseAttitudeThreshold>
 			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HealthBonusRefuseAttitudeThreshold>
@@ -5656,7 +5656,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>20</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>50</iMaxWarRand>
@@ -5702,7 +5702,7 @@
 			<iFavoriteCivicAttitudeChangeLimit>2</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
 			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
 			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StrategicBonusRefuseAttitudeThreshold>
 			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HappinessBonusRefuseAttitudeThreshold>
 			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HealthBonusRefuseAttitudeThreshold>
@@ -9433,7 +9433,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>10</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>40</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>25</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>200</iMaxWarRand>
@@ -9479,7 +9479,7 @@
 			<iFavoriteCivicAttitudeChangeLimit>4</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
 			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
 			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StrategicBonusRefuseAttitudeThreshold>
 			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HappinessBonusRefuseAttitudeThreshold>
 			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HealthBonusRefuseAttitudeThreshold>
@@ -9986,7 +9986,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>25</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>100</iMaxWarRand>
@@ -10032,7 +10032,7 @@
 			<iFavoriteCivicAttitudeChangeLimit>2</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
 			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
 			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StrategicBonusRefuseAttitudeThreshold>
 			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HappinessBonusRefuseAttitudeThreshold>
 			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HealthBonusRefuseAttitudeThreshold>
@@ -12729,7 +12729,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>5</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>40</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>50</iMaxWarRand>
@@ -12776,7 +12776,7 @@
 			<iFavoriteCivicAttitudeChangeLimit>3</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
 			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
 			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StrategicBonusRefuseAttitudeThreshold>
 			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HappinessBonusRefuseAttitudeThreshold>
 			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HealthBonusRefuseAttitudeThreshold>
@@ -13299,7 +13299,7 @@
 			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
 			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
 			<iSameReligionAttitudeChangeLimit>6</iSameReligionAttitudeChangeLimit>
-			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeChange>-1</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
 			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
@@ -13328,7 +13328,7 @@
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</ConvertReligionRefuseAttitudeThreshold>
 			<!-- Rhye - start -->
-			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
+			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_FURIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_ANNOYED</VassalRefuseAttitudeThreshold>
@@ -20981,7 +20981,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
-			<FavoriteReligion>NONE</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -21994,7 +21994,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>40</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>25</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>200</iMaxWarRand>
@@ -22023,7 +22023,7 @@
 			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
 			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
 			<iSameReligionAttitudeChangeLimit>5</iSameReligionAttitudeChangeLimit>
-			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeChange>-1</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
 			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
@@ -22040,7 +22040,7 @@
 			<iFavoriteCivicAttitudeChangeLimit>1</iFavoriteCivicAttitudeChangeLimit>
 			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
 			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold>
 			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StrategicBonusRefuseAttitudeThreshold>
 			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HappinessBonusRefuseAttitudeThreshold>
 			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</HealthBonusRefuseAttitudeThreshold>
@@ -22052,7 +22052,7 @@
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
 			<!-- Rhye - start -->
-			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_PLEASED</OpenBordersRefuseAttitudeThreshold>
+			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_ANNOYED</VassalRefuseAttitudeThreshold>
@@ -24234,7 +24234,7 @@
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
 			<!-- Rhye - start -->
-			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_PLEASED</OpenBordersRefuseAttitudeThreshold>
+			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_ANNOYED</VassalRefuseAttitudeThreshold>
@@ -25360,7 +25360,7 @@
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_PLEASED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</PermanentAllianceRefuseAttitudeThreshold>
-			<VassalRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</VassalRefuseAttitudeThreshold>
+			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
@@ -29844,7 +29844,7 @@
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
 			<!-- Rhye - start -->
-			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
+			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</VassalRefuseAttitudeThreshold>
@@ -41808,7 +41808,7 @@
 			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
 			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
 			<iSameReligionAttitudeChangeLimit>4</iSameReligionAttitudeChangeLimit>
-			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeChange>0</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
 			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
@@ -41836,7 +41836,7 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
+			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</VassalRefuseAttitudeThreshold>
@@ -42780,7 +42780,7 @@
 			<iEspionageWeight>90</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>6</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>60</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>35</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>200</iMaxWarRand>
@@ -43349,7 +43349,7 @@
 			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
 			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
 			<iSameReligionAttitudeChangeLimit>5</iSameReligionAttitudeChangeLimit>
-			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeChange>-1</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
 			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
@@ -48373,7 +48373,7 @@
 					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
-		</LeaderHeadInfo>>
+		</LeaderHeadInfo>
 		<LeaderHeadInfo>
 			<Type>LEADER_CHANDRAGUPTA</Type>
 			<Description>TXT_KEY_LEADER_CHANDRAGUPTA</Description>
@@ -48387,7 +48387,7 @@
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>6</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>10</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>10</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>200</iMaxWarRand>
@@ -48416,7 +48416,7 @@
 			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
 			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
 			<iSameReligionAttitudeChangeLimit>5</iSameReligionAttitudeChangeLimit>
-			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeChange>0</iDifferentReligionAttitudeChange>
 			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
 			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
 			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>

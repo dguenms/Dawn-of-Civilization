@@ -888,7 +888,7 @@ tCoreAreasTL = (
 (59, 41), #Rome
 (111, 41), #Japan
 (69, 27), #Ethiopia
-(108, 45), #Korea
+(107, 45), #Korea
 (20, 35), #Maya
 (64, 38), #Byzantium
 (57, 57), #Vikings
@@ -923,7 +923,7 @@ tCoreAreasTL = (
 (58, 45), #Rome		# ITALY (now doesn't include southern italy because that apparently causes a crash with Byzantine or independent Naples?)
 (111, 41), #Japan
 (69, 27), #Ethiopia
-(108, 45), #Korea
+(107, 45), #Korea
 (20, 35), #Maya
 (64, 41), #Byzantium
 (57, 57), #Vikings
@@ -1040,7 +1040,7 @@ tExceptions = (  #for RiseAndFall
 ((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
 (), #Khmer
 ((100, 31), (100, 30), (101, 29)), #Indonesia
-(), #Spain
+((49, 41), (49, 42), (49, 43), (49, 44)), #Spain
 ((55, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50), (53, 46), (52, 46), (51, 46), (57, 46)), #France
 (), #England
 ((62, 47), (63, 47), (64, 47), (58, 51), (58, 52), (58, 53), (57, 53), (65, 55), (66, 55), (66, 56)),  #Holy Rome
@@ -2116,7 +2116,7 @@ iImmunity = 20
 
 #leaders
 
-iNumLeaders = 91
+iNumLeaders = 90
 (iLeaderBarbarian, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
 iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iGilgamesh, iHammurabi, iHannibal, iHatshepsut,
 iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, iLouis, iMansaMusa, iMao,
@@ -2125,7 +2125,7 @@ iSaladin, iShaka, iSittingBull, iStalin, iSuleiman, iSuryavarman, iTokugawa, iVi
 iZaraYaqob, iJimmu, iMeiji, iAkbar, iHiram, iHaileSelassie, iGustav, iAbuBakr, iMongkut, iElishat,
 iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonso, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
 iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShivaji,
-iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iDummy, iChandragupta) = range(iNumLeaders)
+iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iChandragupta) = range(iNumLeaders)
 
 iCleopatra = iHatshepsut
 iSargon = iGilgamesh
