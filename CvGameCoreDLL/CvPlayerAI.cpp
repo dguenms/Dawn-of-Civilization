@@ -5594,7 +5594,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue *= 2;
                                     if (iI == THEOLOGY)
                                         iValue *= 3;
-                                    if (iI == LITERATURE)
+                                    if (iI == LITERATURE || iI == CODEOFLAWS || iI == MONARCHY)
                                         iValue *= 2;
                                     if (iI == CONSTRUCTION) {
                                         iValue *= 3;
@@ -6513,9 +6513,12 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 
 	//Rhye - start (modified by Leoreth)
 	if (getCurrentEra() == 2) //medieval
-		iAttitude *= 3;
-	else if (getCurrentEra() == 3) //renaissance
 		iAttitude *= 2;
+	else if (getCurrentEra() == 3) //renaissance
+	{
+		iAttitude *= 3;
+		iAttitude /= 2;
+	}
 	//else if (getCurrentEra() <= 1 || getCurrentEra() == 5) //ancient, classical and modern
 		//iAttitude *= 2;
 	//renaissance and industrial = default

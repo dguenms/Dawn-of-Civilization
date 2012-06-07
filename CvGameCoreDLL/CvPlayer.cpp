@@ -24817,8 +24817,8 @@ void CvPlayer::doStability()
 			iMaxPlotsAbroad = 32;
 
 		// nerf Korea, City States civic
-		if (iPlayer == KOREA)
-			iMaxPlotsAbroad /= 2;
+		//if (iPlayer == KOREA)
+		//	iMaxPlotsAbroad /= 2;
 
 		int iNumPlotsAbroad = std::max(0, GET_PLAYER(ePlayer).getOwnedPlotsLastTurn() - iMaxPlotsAbroad*2/3);
 		iNewBaseStability -= iNumPlotsAbroad*2/7;

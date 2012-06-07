@@ -10552,7 +10552,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		//if (pl == CHINA)
 		//	iFinalResearchPercent = researchPercent * 102 / 100;
 		if (pl == INDIA && GC.getGameINLINE().getActivePlayer() != INDIA)
-            iFinalResearchPercent = researchPercent * 108 / 100;
+            iFinalResearchPercent = researchPercent * 100 / 100;
 		if (pl == BABYLONIA)
 			iFinalResearchPercent = researchPercent * 140 / 100;
 		if (pl == MAYA)												// Maya UP
@@ -10564,8 +10564,10 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		if (GET_PLAYER((PlayerTypes)pl).isHuman())
 			iFinalResearchPercent = researchPercent * (researchModifier[pl] + std::min(GET_PLAYER((PlayerTypes)pl).getCurrentEra() - 1, 3) * 5) / 100;
 		else
-			if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 2)
+			if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 1)
 				iFinalResearchPercent = researchPercent * (researchModifier[pl]-35) / 100;
+            else if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 2)
+                iFinalResearchPercent = researchPercent * (researchModifier[pl]-25) / 100;
 	}
 
 	/*if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)

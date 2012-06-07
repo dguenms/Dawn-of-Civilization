@@ -1637,7 +1637,7 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iBaibars)
 				return
 				
-			if iEra >= con.iClassical:
+			if tPlayer.isHasTech(con.iLiterature):
 				self.setLeader(iPlayer, con.iCleopatra)
 				return
 				
@@ -1871,7 +1871,7 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iAtaturk)
 				return
 				
-			if iEra >= con.iRenaissance:
+			if tPlayer.isHasTech(con.iPatronage):
 				self.setLeader(iPlayer, con.iSuleiman)
 				return
 				
