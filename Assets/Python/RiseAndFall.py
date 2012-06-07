@@ -2978,6 +2978,12 @@ class RiseAndFall:
 				city = pCity.GetCy()
 				if city.getRegionID() == con.rEgypt or city.getRegionID() == con.rMesopotamia:
 					cityList.append(city)
+					
+		# Leoreth: remove capital locations
+		for city in cityList:
+			if city.getOwner() < con.iNumPlayers:
+				if (city.getX(), city.getY()) == con.tCapitals[0][city.getOwner()] and city.isCapital():
+					cityList.remove(city)
 
                 #Exceptions
                	#reborn = utils.getReborn(iCiv)
@@ -4284,10 +4290,12 @@ class RiseAndFall:
                         utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 6)
 			if utils.getHumanID() != iMongolia: 
                         	utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 4)
-                        utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
-			utils.makeUnitAI(con.iScout, iCiv, tPlot, UnitAITypes.UNITAI_EXPLORE, 2)
-			if utils.getHumanID() == iChina and gc.getPlayer(iEgypt).isPlayable():
 				utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
+				utils.makeUnitAI(con.iBombard, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+                        utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 2)
+			utils.makeUnitAI(con.iScout, iCiv, tPlot, UnitAITypes.UNITAI_EXPLORE, 2)
+			#if utils.getHumanID() == iChina and gc.getPlayer(iEgypt).isPlayable():
+			#	utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
                 if (iCiv == iAztecs):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iAztecJaguar, iCiv, tPlot, 4)

@@ -119,22 +119,14 @@ class AIWars:
 			if iGameTurn == getTurnForYear(iRomeCarthageYear) - 5 + (utils.getSeed() % 10):
 				if self.getRomanWar(iCarthage) != 1 and gc.getPlayer(iCarthage).isAlive():
 					gc.getTeam(iRome).declareWar(iCarthage, True, WarPlanTypes.WARPLAN_TOTAL)
-					self.setRomanWar(iCarthage, 1)
-					up.romanConquestUP(iCarthage, 2)
 				
 			if iGameTurn == getTurnForYear(iRomeGreeceYear) - 5 + (utils.getSeed() % 10):
 				if self.getRomanWar(iGreece) != 1 and gc.getPlayer(iGreece).isAlive():
 					gc.getTeam(iRome).declareWar(iGreece, True, WarPlanTypes.WARPLAN_TOTAL)
-					self.setRomanWar(iGreece, 1)
-					iExtra = 0
-					if utils.getHumanID() != iGreece: iExtra = 1
-					up.romanConquestUP(iGreece, 2+iExtra)
 					
 			if iGameTurn == getTurnForYear(iRomePersiaYear) - 5 + (utils.getSeed() % 10):
 				if self.getRomanWar(iPersia) != 1 and gc.getPlayer(iPersia).isAlive():
 					gc.getTeam(iRome).declareWar(iPersia, True, WarPlanTypes.WARPLAN_LIMITED)
-					self.setRomanWar(iPersia, 1)
-					up.romanConquestUP(iPersia, 2)
 					
 			if iGameTurn == getTurnForYear(iRomeCeltiaYear) - 5 + (utils.getSeed() % 10):
 				if self.getRomanWar(iCeltia) != 1 and gc.getPlayer(iCeltia).isAlive():
@@ -145,8 +137,6 @@ class AIWars:
 			if iGameTurn == getTurnForYear(iRomeEgyptYear) - 5 + (utils.getSeed() % 10):
 				if self.getRomanWar(iEgypt) != 1 and gc.getPlayer(iEgypt).isAlive():
 					gc.getTeam(iEgypt).declareWar(iEgypt, True, WarPlanTypes.WARPLAN_TOTAL)
-					self.setRomanWar(iEgypt, 1)
-					up.romanConquestUP(iEgypt, 2)
                         
                 if (iGameTurn == getTurnForYear(1500) or iGameTurn == getTurnForYear(1850)):
                         for iLoopCiv in range( iNumPlayers ):

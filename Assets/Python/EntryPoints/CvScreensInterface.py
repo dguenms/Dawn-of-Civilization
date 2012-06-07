@@ -1104,7 +1104,7 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == con.iCarthage or iPlayer == con.iItaly:	
 		tlx, tly = tMediterraneanTL
 		brx, bry = tMediterraneanBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in tMediterraneanExceptions:
+		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in tMediterraneanExceptions and CyGlobalContext().getMap().plot(x,y).isCoastalLand():
 			return 7
 			
 	elif iPlayer == con.iRome:	

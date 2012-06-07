@@ -729,7 +729,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CHANDRAGUPTA</Type>
-			<Button>art/LeaderHeads/MauryaFINAL/Btn_Maurya.dds</Button>
+			<Button>,art/LeaderHeads/MauryaFINAL/Btn_Maurya.dds</Button>
 			<NIF>art/LeaderHeads/MauryaFINAL/Tachnechobrus.nif</NIF>
 			<KFM>art/LeaderHeads/MauryaFINAL/Tachnechobrus.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/MauryaFINAL/Tachnechobrus.nif</NoShaderNIF>

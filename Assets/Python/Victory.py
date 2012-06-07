@@ -1366,7 +1366,7 @@ class Victory:
 					fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
 					fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
 					
-					if (fEurope >= 50.0 and fNorthAmerica >= 50.0):
+					if (fEurope >= 40.0 and fNorthAmerica >= 40.0):
 						self.setGoal(iFrance, 1, 1)
 					else:
 						self.setGoal(iFrance, 1, 0)
@@ -1765,10 +1765,10 @@ class Victory:
 						self.setGoal(iItaly, 1, 0)
 
 				if (iGameTurn == getTurnForYear(1930)):
-					iMediterranean, iTotalMediterranean = self.countControlledTiles(iItaly, tMediterraneanTL, tMediterraneanBR, False, tMediterraneanExceptions)
+					iMediterranean, iTotalMediterranean = self.countControlledTiles(iItaly, tMediterraneanTL, tMediterraneanBR, False, tMediterraneanExceptions, True)
 					fMediterranean = iMediterranean * 100.0 / iTotalMediterranean
 					
-					if fMediterranean >= 75.0:
+					if fMediterranean >= 65.0:
 						self.setGoal(iItaly, 2, 1)
 					else:
 						self.setGoal(iItaly, 2, 0)
@@ -3003,7 +3003,7 @@ class Victory:
 				iBestCulture = iTempCulture
 		return pBestCity
 		
-	def countControlledTiles(self, iPlayer, tTL, tBR, bVassals=False, lExceptions=[]):
+	def countControlledTiles(self, iPlayer, tTL, tBR, bVassals=False, lExceptions=[], bCoastalOnly=False):
 		lValidOwners = [iPlayer]
 		iCount = 0
 		iTotal = 0
@@ -3017,6 +3017,7 @@ class Victory:
 			for y in range(tTL[1], tBR[1]+1):
 				plot = gc.getMap().plot(x, y)
 				if not plot.isWater() and not (x,y) in lExceptions:
+					if bCoastalOnly and not gc.getMap().plot(x,y).isCoastalLand(): continue
 					iTotal += 1
 					if plot.getOwner() in lValidOwners:
 						iCount += 1
@@ -3405,7 +3406,7 @@ class Victory:
 				iNorthAmerica, iTotalNorthAmerica = self.countControlledTiles(iFrance, con.tNorthAmericaTL, con.tNorthAmericaBR, True)
 				fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
 				fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
-				aHelp.append(self.getIcon(fEurope >= 50.0) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_TERRITORY", (str(u"%.2f%%" % fEurope), str(50))) + ' ' + self.getIcon(fNorthAmerica >= 50.0) + localText.getText("TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY", (str(u"%.2f%%" % fNorthAmerica), str(50))))
+				aHelp.append(self.getIcon(fEurope >= 40.0) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_TERRITORY", (str(u"%.2f%%" % fEurope), str(40))) + ' ' + self.getIcon(fNorthAmerica >= 40.0) + localText.getText("TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY", (str(u"%.2f%%" % fNorthAmerica), str(40))))
 			elif iGoal == 2:	# not entirely correct, this counts conquered ones as well
 				bNotreDame = (self.getNumBuildings(iFrance, con.iNotreDame) > 0)
 				bVersailles = (self.getNumBuildings(iFrance, con.iVersailles) > 0)
@@ -3563,9 +3564,9 @@ class Victory:
 						iCount += 1
 				aHelp.append(self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE", (iCount, 5)))
 			elif iGoal == 2:
-				iMediterranean, iTotalMediterranean = self.countControlledTiles(iItaly, tMediterraneanTL, tMediterraneanBR, False, tMediterraneanExceptions)
+				iMediterranean, iTotalMediterranean = self.countControlledTiles(iItaly, tMediterraneanTL, tMediterraneanBR, False, tMediterraneanExceptions, True)
 				fMediterranean = iMediterranean * 100.0 / iTotalMediterranean
-				aHelp.append(self.getIcon(fMediterranean >= 75.0) + localText.getText("TXT_KEY_VICTORY_MEDITERRANEAN_TERRITORY", (str(u"%.2f%%" % fMediterranean), str(75))))
+				aHelp.append(self.getIcon(fMediterranean >= 65.0) + localText.getText("TXT_KEY_VICTORY_MEDITERRANEAN_TERRITORY", (str(u"%.2f%%" % fMediterranean), str(65))))
 				
 		elif iPlayer == iMongolia:
 			if iGoal == 1:
