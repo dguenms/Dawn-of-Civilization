@@ -124,6 +124,12 @@ class Resources:
 
 			gc.getMap().plot(57, 46).setBonusType(iWine) #Savoy
 			gc.getMap().plot(57, 45).setBonusType(iClam) #Savoy
+			
+		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
+		if iGameTurn == getTurnForYear(con.tBirth[con.iMongolia]):
+			for tPlot in [(101, 48), (100, 49), (100, 50), (99, 50)]:
+				x, y = tPlot
+				gc.getMap().plot(x, y).setRouteType(iRoad)
 
                 if (iGameTurn == getTurnForYear(1250)):
                         gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam

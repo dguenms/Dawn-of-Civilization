@@ -267,30 +267,6 @@ class CvRFCEventHandler:
 				s += str(gc.getMap().plot(x,68-y).getArea()) + ", "
 			print s
 			s = ""
-			
-		iCount = 0
-		for x in range(con.tEuropeTL[0], con.tEuropeBR[0]+1):
-			for y in range(con.tEuropeTL[1], con.tEuropeBR[1]+1):
-				if not gc.getMap().plot(x, y).isWater(): iCount += 1
-		
-		if iCount != con.iEuropeTiles:
-			utils.debugTextPopup('Europe: '+str(iCount))
-			
-		iCount = 0
-		for x in range(con.tEasternEuropeTL[0], con.tEasternEuropeBR[0]+1):
-			for y in range(con.tEasternEuropeTL[1], con.tEasternEuropeBR[1]+1):
-				if not gc.getMap().plot(x, y).isWater(): iCount += 1
-			
-		if iCount != con.iEasternEuropeTiles:
-			utils.debugTextPopup('Eastern Europe: '+str(iCount))
-			
-		iCount = 0
-		for x in range(con.tNorthAmericaTL[0], con.tNorthAmericaBR[0]+1):
-			for y in range(con.tNorthAmericaTL[1], con.tNorthAmericaBR[1]+1):
-				if not gc.getMap().plot(x, y).isWater(): iCount += 1
-			
-		if iCount != con.iNorthAmericaTiles:
-			utils.debugTextPopup('North America: '+str(iCount))
                 
 
                 #Mercenaries - start
@@ -566,7 +542,7 @@ class CvRFCEventHandler:
 		
 		if bWar:
 			if iActiveTeam == con.iRome:
-				self.up.checkRomanWar()
+				self.up.checkRomanWar(iPassiveTeam)
 
 
 
@@ -675,9 +651,6 @@ class CvRFCEventHandler:
 	def onUnitCreated(self, argsList):
 		utils.debugTextPopup("Unit created")
 		pUnit = argsList
-		
-		if pUnit.getUnitType() == con.iSettler and pUnit.getOwner() == iChina:
-			utils.handleChineseCities(pUnit)
 			
 	def onUnitBuilt(self, argsList):
 		#utils.debugTextPopup("Unit built")

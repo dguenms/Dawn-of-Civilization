@@ -29047,7 +29047,7 @@
 			<FreeStartEra>NONE</FreeStartEra>
 			<!-- Rhye -->
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
-			<ObsoleteTech>NONE</ObsoleteTech>
+			<ObsoleteTech>TECH_GUNPOWDER</ObsoleteTech>
 			<!-- Rhye -->
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<TechTypes/>

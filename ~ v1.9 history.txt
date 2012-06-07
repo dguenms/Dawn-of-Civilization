@@ -224,3 +224,6 @@
 # preplaced Chengdu and Shenyang in the 600 AD scenario
 # Amsterdam starts with an appropriate city size and several buildings
 # Italy cannot flip armies of major civilizations to prevent it from absorbing French or German armies
+# new Persian coat of arms and color, same for Iran
+# new leaders: Francis I for HRE, Chandragupta Vikramaditya for India
+# Great Wall expires with Gunpowder

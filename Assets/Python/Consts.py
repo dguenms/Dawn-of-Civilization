@@ -83,11 +83,11 @@ tEuropeBR = (68, 65)
 iEuropeTiles = 297
 
 tEasternEuropeTL = (69, 48)
-tEasternEuropeBR = (79, 64)
+tEasternEuropeBR = (73, 64)
 iEasternEuropeTiles = 154
 
 tNorthAmericaTL = (10, 40)
-tNorthAmericaBR = (37, 57)
+tNorthAmericaBR = (37, 54)
 iNorthAmericaTiles = 297
 
 tSouthCentralAmericaTL = (13, 3)
@@ -2116,7 +2116,7 @@ iImmunity = 20
 
 #leaders
 
-iNumLeaders = 90
+iNumLeaders = 91
 (iLeaderBarbarian, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
 iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iGilgamesh, iHammurabi, iHannibal, iHatshepsut,
 iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, iLouis, iMansaMusa, iMao,
@@ -2125,7 +2125,7 @@ iSaladin, iShaka, iSittingBull, iStalin, iSuleiman, iSuryavarman, iTokugawa, iVi
 iZaraYaqob, iJimmu, iMeiji, iAkbar, iHiram, iHaileSelassie, iGustav, iAbuBakr, iMongkut, iElishat,
 iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonso, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
 iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShivaji,
-iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iChandragupta) = range(iNumLeaders)
+iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iDummy, iChandragupta) = range(iNumLeaders)
 
 iCleopatra = iHatshepsut
 iSargon = iGilgamesh
