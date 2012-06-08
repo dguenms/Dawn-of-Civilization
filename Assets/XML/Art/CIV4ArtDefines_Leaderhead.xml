@@ -735,5 +735,13 @@
 			<NoShaderNIF>art/LeaderHeads/MauryaFINAL/Tachnechobrus.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/MauryaFINAL/Tachnechobrus_Background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_IBN_TUGHLUQ</Type>
+			<Button>Art/Leaderheads/Qutbuddin/Tughluq.dds</Button>
+			<NIF>art/Leaderheads/Qutbuddin/qutb.nif</NIF>
+			<KFM>art/Leaderheads/Qutbuddin/montezuma.kfm</KFM>
+			<NoShaderNIF>art/Leaderheads/Qutbuddin/qutb.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Qutbuddin/brennus_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

@@ -752,7 +752,7 @@ class DynamicCivs:
 			iItaly : con.iCavour,
 			iMongolia : con.iGenghisKhan,
 			iAztecs : con.iMontezuma,
-			iMughals : con.iAkbar,
+			iMughals : con.iTughluq,
 			iTurkey : con.iMehmed,
 			iThailand : con.iNaresuan,
 			iGermany : con.iFrederick,
@@ -1863,7 +1863,10 @@ class DynamicCivs:
 			return
 			
 		elif iPlayer == iMughals:
-			return
+			
+			if tPlayer.isHasTech(con.iPatronage):
+				self.setLeader(iPlayer, con.iAkbar)
+				return
 			
 		elif iPlayer == iTurkey:
 		
