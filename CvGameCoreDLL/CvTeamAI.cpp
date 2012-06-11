@@ -4187,7 +4187,7 @@ void CvTeamAI::AI_doWar()
 									if (canDeclareWar((TeamTypes)iI))
 									{
 										// Leoreth: Thai UP: AI doesn't declare war on pleased
-										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)) && !(iI == THAILAND && AI_getAttitude((TeamTypes)iI) >= ATTITUDE_PLEASED))
+										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)) /*&& !(iI == THAILAND && AI_getAttitude((TeamTypes)iI) >= ATTITUDE_PLEASED)*/)
 										{
 											int iDefensivePower = (GET_TEAM((TeamTypes)iI).getDefensivePower() * 2) / 3;
 

@@ -5531,7 +5531,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue *= 2;
                                         iValue /= 3;
                                     }
-									if (iI == OPTICS || iI == ASTRONOMY || iI == LIBERALISM || iI == THEOLOGY || iI == BANKING || iI == EDUCATION)
+									if (iI == OPTICS || iI == ASTRONOMY || iI == LIBERALISM || iI == THEOLOGY || iI == BANKING || iI == EDUCATION || iI == ECONOMICS)
 										iValue /= 4;
 									break;
 								case BABYLONIA:
@@ -6513,11 +6513,11 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 
 	//Rhye - start (modified by Leoreth)
 	if (getCurrentEra() == 2) //medieval
-		iAttitude *= 2;
+		iAttitude *= 3;
 	else if (getCurrentEra() == 3) //renaissance
 	{
-		iAttitude *= 3;
-		iAttitude /= 2;
+		iAttitude *= 2;
+		//iAttitude /= 2;
 	}
 	//else if (getCurrentEra() <= 1 || getCurrentEra() == 5) //ancient, classical and modern
 		//iAttitude *= 2;

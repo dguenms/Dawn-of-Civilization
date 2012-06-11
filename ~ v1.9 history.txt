@@ -35,7 +35,7 @@
 	- Fanaticism (Divine Right): +25% unit training speed with state religion, +2 unhappiness per non-state religion
 	- Secularism (Liberalism): +10% science
 # EXPANSION
-	- added Confederation: respawns on your territory is less likely
+	- added Imperialism: respawns on your territory are less likely, lower penalty for controlling foreign cores
 
 # Germany split into two civilizations: Holy Rome (spawn: 840 AD) and Germany (spawn: 1700 AD)
 # Holy Roman UHV:
@@ -54,15 +54,16 @@
 # French UU is now a Heavy Cannon (replaces Cannon)
 
 # Stability of capitulated civs is reset
-# Byzantine UP now protects cities in their normal area from collapse and secession
+# Byzantine UP now protects cities in their normal area from collapse and secession as long as Constantinople is controlled
 # The game checks for collapse more often, to make up for the increased number of active civs
 # The first Ethiopian goal requires them to found Catholicism now
 # Luxury Industry now requires Electricity
-# Changed La Mezquita to +1 research per specialist
+# Changed La Mezquita to 2 free priests
 # Arabian UHV now requires them to conquer or vassalize Spain as well
 # Allowed the AI to start wonders the player requires for his UHV only after his spawn
 
-# Included Orthodoxy as a religion, which will be founded by the civ that controls Jerusalem when the Apostolic Palace is built (or in the 9-11th century if it's not built by then)
+# Included Orthodoxy as a religion, which will be founded when the Apostolic Palace is built (or in the 9-11th century, depending on what happens first)
+# The holy city is assigned according to a priority list that begins with historically Orthodox civilizations. You need to be alive, Catholic and not own the Apostolic Palace to get it
 # The Arab UP doesn't automatically build Mosques anymore
 # AI capitals get relocated should they lose and recover their original capital
 
@@ -86,7 +87,7 @@
 # reduced Spanish Citadel cost to 50%, removed the stone modifier
 # Harmandir Sahib now gets double production speed from gold
 # Increased Ironclad moves to 4
-# Replaced Redcoats' bonus against gunpowder units by collateral damage
+# Replaced Redcoats' bonus against gunpowder units with collateral damage
 # Coal Plants now require Electricity
 # Civs with the lowest stability now get checked for collapse first, instead of older civs
 # Cities of collapsing civs are less likely to flip to other civs
@@ -114,10 +115,10 @@
 # Added the Empire State Building wonder (Steel, Industrialism): +1 gold per population
 # Changed Ho Trai from +1 happiness with state religion to +25% culture
 # Thai Chang Suek now also have +50% attack against Riflemen
-# Added the Grand Canal wonder (Machinery, Calendar): +2 commerce per river tile for its city, expires with Replaceable Parts
+# Added the Grand Canal wonder (Machinery, Calendar, Confucianism): +2 commerce per river tile for its city, expires with Replaceable Parts
 # Added the Floating Gardens wonder (Construction, Corn): +1 food per river tile for its city, expires with Optics
-# Added the Trafalgar Square wonder (Chemistry, Astronomy, naval unit with level three or higher): +5 XP and +50% for naval units, expires with Combustion
-# Sphinx now enables Great Prophets to creat great works like Great Artists
+# Added the Trafalgar Square wonder (Chemistry, Astronomy, naval unit with level three or higher): +5 XP and +50% production for naval units, expires with Combustion
+# Sphinx now enables Great Prophets to create great works like Great Artists
 # great work now produces 800 culture per game era
 # Kremlin now requires Gunpowder, expires with Communism and gives +2 espionage per state religion building
 # Westminster Palace expires with Fiber Optics
@@ -128,7 +129,6 @@
 # Negative relation modifiers between Orthodoxy and Protestantism or Catholicism halved
 # no stability penalty from foreign culture with Egalitarianism
 # religion spread now always removes pagan temples, but only replaces them with temples of your state religion
-# Thai UP changed: all AIs don't declare war on pleased
 # players cannot declare war on recently (re)spawned civs
 # reduced number of Spanish colonists, they already reliably get Mexico and Peru now
 # reduced Agrarianism bonus to +1 commerce for Pastures and Plantation
@@ -176,12 +176,12 @@
 	- Be first to complete the Manhattan Project and the Apollo Project and build the Trans-Sibirian Railway by 1920 AD
 	- Have friendly relations with 5 communist civilizations by 1950 AD
 # new Italian UP: +1 free specialist for all cities until the Industrial Era
-# the tile tooltip now also contains information on territorial UHVs
+# the tile tooltip now also contains information on territorial UHV goals
 # Catholicism spreads to Scandinavia around 900 AD
 # New Italian UHV:
 	- Build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD
 	- Have three cities with influential culture by 1600 AD
-	- Control 75% of the Mediterranean in 1930 AD
+	- Control 65% of the Mediterranean in 1930 AD
 # no religious unhappiness for Hindu/Buddhist and Confucian/Taoist religion pairs
 # no foreign culture anger from independent culture
 # certain cities get additional defenders when controlled by barbarians or independents (Chola, Tibet, Manchu, Rome)
@@ -225,5 +225,6 @@
 # Amsterdam starts with an appropriate city size and several buildings
 # Italy cannot flip armies of major civilizations to prevent it from absorbing French or German armies
 # new Persian coat of arms and color, same for Iran
-# new leaders: Francis I for HRE, Chandragupta Vikramaditya for India
+# new leaders: Francis I for HRE, Chandragupta Vikramaditya for India, Muhammad ibn Tughluq for Mughals
 # Great Wall expires with Gunpowder
+# several changes to Canada

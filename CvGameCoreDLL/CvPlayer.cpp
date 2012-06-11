@@ -21397,6 +21397,11 @@ bool CvPlayer::canTrigger(EventTriggerTypes eTrigger, PlayerTypes ePlayer, Relig
 		return false;
 	}
 
+	if (GET_PLAYER((PlayerTypes)getID()).isMinorCiv() || GET_PLAYER((PlayerTypes)ePlayer).isMinorCiv())
+	{
+		return false;
+	}
+
 	CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 	CvEventTriggerInfo& kTrigger = GC.getEventTriggerInfo(eTrigger);
 

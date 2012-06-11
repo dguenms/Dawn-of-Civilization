@@ -374,6 +374,8 @@ class CvRFCEventHandler:
 			city.setHasRealBuilding(con.iHarbor, True)
 			city.setHasRealBuilding(con.iForge, True)
 			
+			city.setName("Konstantinoupolis", False)
+			
 			city.setHasRealBuilding(con.iJewishTemple + 4*gc.getPlayer(playerType).getStateReligion(), True)
 
                 
