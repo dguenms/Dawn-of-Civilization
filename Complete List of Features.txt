@@ -304,7 +304,7 @@ NEW CIVILIZATIONS
 # added playable Byzantium
 	# spawn in 330 AD in Constantinople (or from the start in the 600 AD scenario)
 	# only spawns when Greece is dead and Rome is alive (and has negative stability if player controlled)
-	# Leaderhead: Justinian I (removed from Rome)
+	# Leaderhead: Justinian I (removed from Rome), Basil II
 	# Unique Unit: Cataphract (Knight with +1 strength, +25% vs. melee)
 	# Unique Building: Hippodrome (Theatre with more happiness from culture and horses)
 	# Unique Power: The Power of the Metropolis: Normal area immune to collapse and secession while Constantinople is controlled

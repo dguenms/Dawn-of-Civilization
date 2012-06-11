@@ -1738,7 +1738,10 @@ class DynamicCivs:
 			return
 			
 		elif iPlayer == iByzantium:
-			return
+			
+			if iGameTurn >= getTurnForYear(1000):
+				self.setLeader(iPlayer, con.iBasil)
+				return
 			
 		elif iPlayer == iVikings:
 		
