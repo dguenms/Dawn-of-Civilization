@@ -225,6 +225,6 @@
 # Amsterdam starts with an appropriate city size and several buildings
 # Italy cannot flip armies of major civilizations to prevent it from absorbing French or German armies
 # new Persian coat of arms and color, same for Iran
-# new leaders: Francis I for HRE, Chandragupta Vikramaditya for India, Muhammad ibn Tughluq for Mughals
+# new leaders: Francis I for HRE, Chandragupta Vikramaditya for India, Muhammad ibn Tughluq for Mughals, Basil II for Byzantium
 # Great Wall expires with Gunpowder
 # several changes to Canada

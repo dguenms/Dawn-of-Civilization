@@ -188,7 +188,7 @@
 			<NIF>art/LeaderHeads/Kublai_Khan/kublai_khan.nif</NIF>
 			<KFM>art/LeaderHeads/Kublai_Khan/kublai_khan.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Kublai_Khan/kublai_khan_noshader.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Qin_Shi_Huang/qin_shi_huang_BG.kfm</BackgroundKFM>
+			<BackgroundKFM>art/LeaderHeads/Kublai_Khan/qin_shi_huang_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SALADIN</Type>
@@ -729,7 +729,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CHANDRAGUPTA</Type>
-			<Button>,art/LeaderHeads/MauryaFINAL/Btn_Maurya.dds</Button>
+			<Button>art/LeaderHeads/MauryaFINAL/Btn_Maurya.dds</Button>
 			<NIF>art/LeaderHeads/MauryaFINAL/Tachnechobrus.nif</NIF>
 			<KFM>art/LeaderHeads/MauryaFINAL/Tachnechobrus.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/MauryaFINAL/Tachnechobrus.nif</NoShaderNIF>
@@ -742,6 +742,22 @@
 			<KFM>art/Leaderheads/Qutbuddin/montezuma.kfm</KFM>
 			<NoShaderNIF>art/Leaderheads/Qutbuddin/qutb.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Qutbuddin/brennus_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CLEOPATRA</Type>
+			<Button>art/Leaderheads/Cleopatra/cleopatra.dds</Button>
+			<NIF>art/Leaderheads/Cleopatra/isabella.nif</NIF>
+			<KFM>Art/LeaderHeads/Isabella/isabella.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Cleopatra/isabella_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Cleopatra/isabella_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BASIL</Type>
+			<Button>Art/Leaderheads/Basil/Basil.dds</Button>
+			<NIF>Art/Leaderheads/Basil/basil.nif</NIF>
+			<KFM>Art/Leaderheads/Basil/huayna_capac.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Basil/basil.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Justinian/Justinian_Background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

@@ -491,7 +491,7 @@
 				<EraInfoSoundtrack>AS2D_SONG_CIV_III_MOD_MID_EAST</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_SONG_CONQUESTS_MID_EAST</EraInfoSoundtrack>
 				<!--EraInfoSoundtrack>AS2D_ARABIC_SOUNDTRACK1</EraInfoSoundtrack-->
-				<EraInfoSoundtrack>AS2D_CROSSROADS</EraInfoSoundtrack>
+				<!--EraInfoSoundtrack>AS2D_CROSSROADS</EraInfoSoundtrack-->
 				<EraInfoSoundtrack>AS2D_GODS_OF_OLD</EraInfoSoundtrack>
 			</EraInfoSoundtracks>
 			<CitySoundscapes>
