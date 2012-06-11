@@ -420,7 +420,7 @@ tRebirthArea = (
 tResurrectionIntervals = (
 [(900, 1300), (1800, 2020)], #Egypt
 [(1600, 1800), (1900, 2020)], #India
-[(1360, 2020)], #China
+[(1500, 2020)], #China
 [], #Babylonia
 [(1820, 2020)], #Greece
 [(220, 650), (1500, 2020)], #Persia

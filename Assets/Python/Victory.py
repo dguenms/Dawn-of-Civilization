@@ -1365,7 +1365,7 @@ class Victory:
 					iEurope, iTotalEurope = self.countControlledTiles(iFrance, con.tEuropeTL, con.tEuropeBR, True)
 					iEasternEurope, iTotalEasternEurope = self.countControlledTiles(iFrance, con.tEasternEuropeTL, con.tEasternEuropeBR, True)
 					iNorthAmerica, iTotalNorthAmerica = self.countControlledTiles(iFrance, con.tNorthAmericaTL, con.tNorthAmericaBR, True)
-							
+					
 					fEurope = (iEurope + iEasternEurope) * 100.0 / (iTotalEurope + iTotalEasternEurope)
 					fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
 					

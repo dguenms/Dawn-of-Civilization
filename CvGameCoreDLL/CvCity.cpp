@@ -13885,6 +13885,11 @@ bool CvCity::canApplyEvent(EventTypes eEvent, const EventTriggeredData& kTrigger
 {
 	CvEventInfo& kEvent = GC.getEventInfo(eEvent);
 
+	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).isMinorCiv())
+	{
+		return false;
+	}
+
 	if (!kEvent.isCityEffect() && !kEvent.isOtherPlayerCityEffect())
 	{
 		return true;

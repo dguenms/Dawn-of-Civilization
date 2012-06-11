@@ -1,5 +1,5 @@
 RFC Dawn of Civilization
-Complete List of Features (as of version 1.8)
+Complete List of Features (as of version 1.9)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
@@ -48,6 +48,22 @@ GAME MECHANICS
 # Seljuk and independent cities immediately flip to Turkey to offset their lack of starting settlers
 # former city garrisons get pushed out before they flip to certain civs (Italy, Turkey) to prevent them from becoming too strong
 # building a Trading Company as Portugal, Spain, France, England, Netherlands gives you the option to acquire Asian cities in your civs historical area by force or gold
+# the stability of capitulated civs is reset
+# the game now checks for collapse more often, to make up for the increased number of civs
+# instead of the oldest civilizations, the civilization with the lowest stability is checked for collapse first
+# cities of collapsing civilizations are less likely to flip to neighbouring civilizations due to cultural influence
+# disorder in conquered cities limited to four turns
+# you cannot declare war on recently (re)spawned civilizations
+# respawned civilizations are immune to collapse in their first ten turns
+# the plague doesn't reduce the level of cottages anymore (except towns), but instead destroys all progress to the next level
+# cash hurrying is now 25% cheaper except for the civilization with the highest commerce output
+# no foreign culture unhappiness from independent culture
+# mercenaries are distributed by regions of the world more intuitively
+# disabled the exile mechanic
+# random events don't involve minor civilizations
+# Greece automatically collapses during Byzantium's autoplay
+# Rome automatically collapses during Italy's autoplay
+# Jerusalem cannot be razed anymore
 
 BALANCE
 # more Keshiks for Mongolia on spawn
@@ -67,6 +83,15 @@ BALANCE
 # England and Netherlands found larger cities with more starting buildings after discovering Astronomy
 # Extra barbarian spawns north of Byzantium (Cumans, Pechenegs, Bulgarians)
 # Extra barbarian spawns west of India (Hephtalites, Kushana)
+# The AI can't start wonders before the player's birth if they are required for his UHV
+# Prohibited outside culture from entering Tibet
+# Great Works now create 800 culture per era
+# reduced number of Spanish colonists
+# helped Russia and America along to reach their historical "frontiers"
+# Germany and Netherlands get a research boost in their early years
+# scripted conquerors for Greece and Rome to help them create their historical empires
+# Constantinople and Amsterdam start with a larger population and more buildings
+# Italy cannot flip units from other civilizations to prevent it from becoming too strong by absorbing the German or French Italian army
 
 INTERFACE
 # Great people births are displayed again
@@ -82,7 +107,18 @@ INTERFACE
 # slave revolts are now referred to as peasant revolts
 # added an SoI style UHV progress display
 # "be first to discover" goals now immediately fail when someone beats you to one of its techs
-# Disabled the "tributary" vassal names with the industrial era
+# disabled the "tributary" vassal names with the industrial era
+# the tile tooltips now displays the relevant areas for your territorial UHV goals
+# competition between corporations is now properly displayed
+# the stability effects of civics are explained in the concept section of the civilopedia
+# dead civilizations don't appear on the scoreboard anymore
+# added a popup that notifies you when a UHV goal fails
+# moved the whole game text to XML text keys to allow for translations into other languages
+# added religion specific soundtracks:
+	# Christian civilizations play the normal soundtrack
+	# Muslim and Zoroastrian civilizations play a new middle eastern soundtrack in the medieval and Renaissance eras
+	# Hindu, Buddhist, Confucian and Taoist civilizations play a new far eastern soundtrack in the classical, medieval and Renaissance eras
+	# civs without a state religion play the classical era soundtrack in the middle ages
 
 GRAPHICS
 # China has a light yellow color now (Zulu from BtS)
@@ -93,12 +129,14 @@ GRAPHICS
 # Phoenicia's color changed to a lighter purple
 # smoothed/replaced religion icons
 # suitable graphics for Zoroastrian missionaries
+# Persia/Iran's color changed to light orange (Celts in BtS) with red as secondary color
+# Persia's coat of arms changed to the Achaemenid eagle
 
 MAP
 # Moved some food resources out of Inverness' radius
 # Changed peaks to hills/plains in China, Spain, Turkey, Bohemia, Cuba
 # Cyprus is now a copper hill
-# moved resources to make certain locations more appealing, including Oslo, Hamburg and Barcelona
+# moved r+esources to make certain locations more appealing, including Oslo, Hamburg and Barcelona
 # added gems in Namibia and Afghanistan
 # Added ivory near Carthage and wheat near Tripolis
 # changed marble in China to stone
@@ -138,9 +176,17 @@ MAP
 # independent Ankara spawns in 1000 BC
 # independent Varanasi and Indraprastha appear shortly before the Indian spawn
 # jungle in Vietnam appears before the Thai spawn
+# added new resources:
+	# Coffee (Yemen, Ethiopia, later Colombia, Java and Brazil)
+	# Tobacco (Kentucky, Virginia, Cuba, later Rumelia)
+	# Tea (West Bengal, Burma, South China, replaces some spice resources)
+# minor map adjustments in Colombia, Brazil, Sri Lanka, Mexico, Caribbean, California
+# China starts with some improvements in the 600 AD scenario
+# Chengdu and Shenyang placed from the start in the 600 AD scenario
+# several changes to Canada
 
 CIVILIZATIONS
-# Updated UP for Egypt: it now enables Monarchy, Serfdom and Pantheon
+# Updated UP for Egypt: it now enables Monarchy, S+erfdom and Pantheon
 # New UP for Japan: The Power of Honor - unit promotions are available 50% faster
 # New UP for England: The Power of Indirect Rule - no city distance and colony maintenance
 # New UP for Mongolia: The Power of the Horde - every captured city spawns Keshiks according to its size
@@ -148,7 +194,6 @@ CIVILIZATIONS
 # The Vikings now spawn at Oslo instead of Nidaros/Trondheim
 # The Viking dynamic civilization names now change to Sweden after the Renaissance
 # The Khmer spawn with Angkor at the coast
-# The Germans now spawn at Wien/Vienna
 # The Dutch now spawn in 1500 AD with appropriate techs and an adapted UHV
 # German dynamic names: "Free Socialist Republic of Germany" when communist, "German Democratic Republic" when vassal of Russia
 # The Turks now spawn with 3 missionaries and 0 settlers
@@ -170,42 +215,70 @@ CIVILIZATIONS
 # Mayan UP expires with the medieval era
 # the Japanese capital moves to Tokyo when entering the Industrial Era (AI only)
 # Khmer are Hindu now (starting religion, Suryavarman's preference)
-# Seljuks and Mughals spread their state religion on conquest
+# Seljuks and AI Mughals spread their state religion on conquest
 # Byzantium now spawns if Rome is alive and controls at least two cities outside of its core
-# The European part of Byzantium's core does not flip if the player controls Greece
-# Some AI civilizations flip a larger area on spawn (Mongolia, Persia, Turkey, America)
+# the European part of Byzantium's core does not flip if the player controls Greece
+# some AI civilizations flip a larger area on spawn (Mongolia, Persia, Turkey, America)
+# all culture in American cities in North America counts as American
+# the Greek UP now expires after the Classical era
+# when people migrate to an American city due to their UP, all worked cottages increase by one level
+# the time between American UP effects now depends on their civics (Republic, Capitalism, Free Market and Secularism help)
+# new Viking UP: The Power of Raids: Additional gold from pillaging, conquering cities and sinking ships
+# new French UP: The Power of Diplomacy: Other civilizations are quicker to forget about your past transgressions
+# the Thais now flip Angkor if it has at least one wonder
 
 UHVs
 # First Dutch goal changed to: settle three merchants in Amsterdam by 1745 AD
 # The Phoenician goal requires 4 dye resources
 # Removed the circumnavigation goal for Greece, Phoenicia and England
-# Removed the "allow no French, English and Dutch cities in the Americas in 1700" goal for Spain
-# Removed the "no cities lost to Barbarians and Mongols" goal for China
 # New Greek goal: control Egypt, Phoenicia, Babylonia and Persia by 330 BC
 # New Phoenician goal: have the largest map of the world in 200 AD
-# New English goal: control a total of 25 frigates or ships of the line combined in 1800 AD
-# New Spanish goal: have the largest empire of the world in 1760 AD
-# Modified Spanish goal: control Aztecs and Inca in 1700 AD
 # New Chinese UHV:
 	# Build two Buddhist Stupas and two Confucian Academies by 1000 AD
 	# Be first to discover Compass, Paper, Gunpowder and Printing Press
 	# Experience four golden ages by 1800 AD
 # New Ottoman UHV:
-	# Have four wonders in your capitals in 1550 AD
+	# Have four wonders in your capital in 1550 AD
 	# Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna in 1700 AD
 	# Have the world's largest military power in 1800 AD
-# New first Japanese goal: Have more than 24000 culture in 1600 AD
+# New first Japanese goal: Have more than 18000 culture in 1600 AD
 # New second Japanese goal: Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and Philippines in 1940 AD
-# New first Khmer goal: Control Shwedagon Paya, Wat Preah Pisnulok and Borobudur in 1450 AD
-# New third Khmer goal: Spread Hinduism and Buddhism to 35% combined
 # New third Maya goal: Get a great general by 1600 AD
-# New first Indian goal: control the Buddhist and the Hindu shrine in 250 BC
-# New second Indian goal: build 20 temples by 700 AD
+# New Indian UHV:
+	# Control the Buddhist and the Hindu shrine in 250 BC
+	# Build 20 temples by 700 AD
+	# Control 20% of the world's population in 1200 AD
 # New first Arabian goal: be the most advanced civ in 1300 AD
-# New second Arabian goal: control or vassalize Egypt, the Maghreb, Mesopotamia and Persia in 1300 AD
-# New second Ethiopian goal: acquire three incense resources by 600 AD
-# Ethiopia's third goal now requires no European colonies in both 1500 AD and 1910 AD
-# England's second goal now requires them to found or conquer four cities on every continent
+# New second Arabian goal: control or vassalize Spain, Egypt, the Maghreb, Mesopotamia and Persia in 1300 AD
+# New Ethiopian UHV:
+	# Found Catholicism
+	# Acquire three incense resources by 600 AD
+	# Allow no European colonies in Ethiopia and Subsaharan Africa in 1500 AD and 1910 AD
+# New Viking UHV:
+	# Control the core of another European civilization in 1050 AD
+	# Found a city in America by 1100 AD
+	# Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
+# New French UHV:
+	# Have 25000 culture in Paris in 1700 AD
+	# Control or vassalize 50% of Europe and North America in 1800 AD
+	# Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD
+# New English UHV:
+	# Colonize every continent by 1730 [North America: 5, Asia: 5, Africa: 4, South/Central America and Caribbean: 3, Australia/Oceania: 3]
+	# Have a total of 25 frigates and ships of the line and sink 50 enemy ships in 1800 AD
+	# Be first to enter the Industrial and Modern eras
+# New Russian UHV:
+	# Colonize Sibera by 1700 AD
+	# Be first to complete the Manhattan Project and the Apollo Project and build the Trans-Sibirian Railway by 1920 AD
+	# Have friendly relations with 5 communist civilizations by 1950 AD
+# New Khmer UHV:
+	# Build four Buddhist and Hindu monasteries and Angkor Wat by 1200 AD
+	# Have an average city size of 12 by 1450 AD
+	# Have 8000 culture by 1450 AD
+# new Spanish UHV:
+	# Be first to found a city in America
+	# Control a total of 10 silver and gold resources by 1650 AD
+	# Spread Catholicism to 40% and allow no Protestant civilization in Europe in 1700 AD
+# the second Portuguese goal now requires 14 open border agreements
 
 NEW CIVILIZATIONS
 # Replaced Carthage with Phoenicia
@@ -214,25 +287,27 @@ NEW CIVILIZATIONS
 	# Unique Building: Glassmith (Forge): no engineer slot, +1 trade route
 	# Unique Unit: Bireme (Galley): +50% against Trireme, can enter rival territory
 	# changed version of Carthage's UHV (see "UHVs")
-# added Italy as a Roman "rebirth"
-	# Rebirth in 1167 AD in Lombardy
+# added Italy
+	# spawn in 1167 AD in Tuscany
+	# only spawns if there is at least one independent city on the Italian peninsula
 	# Leaderhead: Cavour
 	# Coat of Arms: Lion of Mark
 	# distinctive city names and dynamic civ names
 	# own overlay maps (settler, stability, AI wars)
 	# Unique Unit: Bersagliere (Infantry with movement 2)
-	# Unique Building: Art Studio (Forge with +1 happiness from marble and dye, one artist slot)
+	# Unique Building: Art Studio (Forge with +25% culture, one artist slot)
 	# Unique Power: The Power of Renaissance - Free specialist for your three largest cities
 	# Unique Historical Victory:
-		# Be the first to discover Banking, Education, Radio and Fascism
-		# Build three universities by 1570 AD
-		# Control Greece, Libya and Ethiopia in 1930 AD
+		# Build San Marco Basilica, Sistine Chapel and the Leaning Tower by 1500 AD
+		# Have three cities with influential culture by 1600 AD
+		# Control 65% of the Mediterranean in 1930 AD
 # added playable Byzantium
 	# spawn in 330 AD in Constantinople (or from the start in the 600 AD scenario)
+	# only spawns when Greece is dead and Rome is alive (and has negative stability if player controlled)
 	# Leaderhead: Justinian I (removed from Rome)
 	# Unique Unit: Cataphract (Knight with +1 strength, +25% vs. melee)
 	# Unique Building: Hippodrome (Theatre with more happiness from culture and horses)
-	# Unique Power: The Power of Byzantine Diplomacy - every city creates +2 espionage points per culture level
+	# Unique Power: The Power of the Metropolis: Normal area immune to collapse and secession while Constantinople is controlled
 	# Unique Historical Victory:
 		# Own 5000 gold in 1000 AD
 		# Make Constantinople the world's largest and most cultured city in 1200 AD
@@ -260,13 +335,33 @@ NEW CIVILIZATIONS
 # added Thailand
 	# Spawn 1350 AD in Ayutthaya if Khmer are sufficiently unstable
 	# Leaderhead: Naresuan
-	# Unique Unit: Chang Suek (Knight with +50% vs. cavalry, requires only ivory)
-	# Unique Building: Ho Trai (Library with +1 happiness with Buddhism)
+	# Unique Unit: Chang Suek (Knight with +50% vs. cavalry and Rifleman, requires only ivory)
+	# Unique Building: Ho Trai (Library with +25% culture)
 	# Unique Power: The Power of Embassies: Better relations with civilizations you have established embassies with
 	# Unique Historical Victory:
 		# Have open borders with 8 civilizations in 1650 AD
 		# Make Ayutthaya the world's most populous city in 1700 AD
 		# Allow no foreign powers in Southeast Asia in 1900 AD
+# added Prussia/Germany
+	# Spawn 1700 AD in Berlin
+	# Leaderheads: Frederick, Bismarck
+	# Unique Unit: Panzer (Tank)
+	# Unique Building: Assembly Plant (Factory)
+	# Unique Power: The Power of Technique: -50% unit upgrade cost
+	# Unique Historical Victory:
+		# Have seven great persons in Berlin in 1900 AD
+		# Control Italy, France, Scandinavia, England and Russia in 1940 AD
+		# Be first to complete the tech tree
+# replaced Germany with HRE/Austria
+	# Spawn 840 AD in Frankfurt
+	# Leaderheads: Barbarossa, Charles V, Francis I
+	# Unique Unit: Landsknecht (Pikeman)
+	# Unique Building: Rathaus (Courthouse)
+	# Unique Power: The Power of the Emperor: Double votes in Apostolic Palace elections
+	# Unique Historical Victory:
+		# Control the Apostolic Palace and the Church of the Holy Sepulchre in 1200 AD
+		# Found Protestantism
+		# Have three European vassals in 1500 AD
 # added Iran as a Persian "rebirth"
 	# Rebirth in 1500 AD in Esfahan
 	# Leaderheads: Abbas, Khomeini
@@ -277,17 +372,25 @@ NEW CIVILIZATIONS
 		# Have open borders with 6 European civilizations in 1650 AD
 		# Control Mesopotamia, Transoxania and Northwestern India in 1750 AD
 		# Have a city with at least 20000 culture in 1800 AD
-# added unplayable Mughals
+# added playable Mughals
 	# Spawn in 1206 AD in Delhi
-	# Leaderhead: Akbar
+	# Leaderhead: Muhammad ibn Tughluq, Akbar
 	# Unique Unit: Siege Elephant (Cannon with +25% city attack)
-	# Unique Building: Mausoleum (Jail with +2 happiness)
+	# Unique Building: Mausoleum (Jail with +1 free artist)
+	# Unique Power: The Power of Tolerance: No unhappiness from non-state religions
+	# Unique Historical Victory:
+		# Build three Islamic Mosques by 1500 AD
+		# Build the Red Fort, Harmandir Sahib and Taj Mahal by 1660 AD
+		# Have 50000 culture in 1750 AD
 # added unplayable Seljuks
 	# Spawn in 1040 AD and 1070 AD with armies in the middle east
 	# Unique Unit: Ghulam Warrior (Knight with +50% vs. Pikemen)
 
 TECHNOLOGIES
-# Communism now requires Assembly Line
+# Communism now requires Steam Power, Scientific Method and Liberalism
+# added the Patronage tech, requires Guilds and Music, first to discover gets a great artist, allows various wonders
+# Music doesn't give a free great artist for the first civilization that discovers it anymore
+# Electricity now only adds +1 commerce to watermills
 
 UNITS
 # The Greek unique unit was renamed from Phalanx to Hoplite
@@ -305,14 +408,23 @@ UNITS
 # Longbowmen now require Guilds
 # Legions now receive +25% against axemen
 # Anti-Tank-Infantry now requires Rocketry
+# New unit: Bombard (strength 8, +25% against cities), requires Gunpowder and Iron or Copper
+# Cannons now require Rifling, strength 12
+# The French unique unit is now a Heavy Cannon (replaces Cannon), +50% against gunpowder and siege units
+# increased the speed of Ironclads to 4
+# Replaced Redcoats' bonus against gunpowder units with collateral damage
+# Spanish Conquistadors only get +50% attack against Axeman, Spearman, Swordsman instead of all melee units
 
 BUILDINGS
 # Monument was renamed Pagan Temple, expires with Divine Right and gives +1 happiness with the Pantheon civic (see "civics")
 # Persia's Apothecary is now called Bazaar and replaces Market
 # The Viking Trading Post now also offers a merchant slot
 # France's Salon is now a Theatre instead of an Observatory and as +20% great people birth
-# Germany's Assembly Plant now adds a free engineer instead of additional engineer slots
-# Castles now require the Vassalage civic
+# Germany's Assembly Plant now adds additional unit construction speed
+# Spanish citadels are now built twice as fast, but lose the stone modifier
+# Coal Plants now require Electricity
+# Portuguese Feitorias now require Astronomy and Banking
+# Dutch Dikes now require Replaceable Parts
 
 WONDERS
 # Added special prerequisites to enforce a more historical placement of wonders
@@ -325,7 +437,6 @@ WONDERS
 	# Classical wonders (require the Pantheon civic): Parthenon, Oracle, Colossus, Mausoleum, Statue of Zeus, Temple of Artemis, Great Library, Great Cothon, Pantheon*, Pyramids, Sphinx*, Hanging Gardens, Ishtar Gare
 	# New World wonders (require Corn): Temple of Kukulkan
 # The Apostolic Palace requires state religion and moves the Holy City to where it is built
-# The Leaning Tower was replaced with the Pantheon
 # Stonehenge was replaced with the Great Sphinx
 # Moai Statues were replaced with the Great Cothon
 # Renamed Kremlin to St. Basil's Cathedral
@@ -333,48 +444,54 @@ WONDERS
 # Masjid al-Haram, the Muslim shrine, now has appropriate graphics
 # Added All Saint's Church as Protestant Shrine
 # Added Adur Farnbag as Zoroastrian Shrine
-# Added the Temple of Solomon (Monotheism): doubled shrine revenue limit)
+# Added the Temple of Solomon (Monotheism): doubled shrine revenue limit
 # Added Ishtar Gate (Priesthood): +100% enemy war weariness
 # Added Theodosian Walls (Construction): -100% bombard damage pre gunpowder, doesn't create GPP
 # Added Terracotta Army (Pottery): +25% unit production, barbarians give unlimited experience and great general points
-# Added La Mezquita (Theology): +2 research per specialist
+# Added La Mezquita (Theology): +2 free priests
 # Added Dome of the Rock (Divine Right): -50% war weariness
 # Added Topkapi Palace (Civil Service, Engineering): can draft one extra unit
 # Added Brandenburg Gate (Nationalism, Rifling): +100% great general rate within cultural borders
-# Added Westminster Palace (Democracy, Corporation): -33% hurry costs
+# Added Westminster Palace (Democracy, Corporation): -33% hurry costs, expires with Fiber Optics
 # Added Blue Mosque (Music, Engineering): no unhappiness in this city
-# Added Borobudur (Aesthetics, Machinery, Islam): +1 artist slot for every priest slot
+# Added Borobudur (Aesthetics, Machinery, Islam): artists can be hired using priest slots
 # Added Harmandir Sahib (Military Tradition): +2 experience in state religion cities
 # Added Himeji Castle (Feudalism): units start with drill I, city garrison I, amount of gold pillaged doubled
 # Added Khajuraho (Monotheism, Aesthetics): +100% construction speed of religious buildings
-# Added Porcelain Tower (Banking): +1 trade route, all trade routes count as foreign and intercontinental, +20% trade route yield per civ without open borders treaty
-# Added The Great Bath (Pottery): provides fresh water, cities start with one additional population
+# Added Porcelain Tower (Banking): +1 trade route, all trade routes count as foreign and intercontinental, +2 free merchants
 # Added The Red Fort (Philosophy, Engineering): +2 free specialists
-# Changed the effect of Statue of Zeus: +25% unit training speed in cities with pagan temples
+# Added Versailles (Patronage, Divine Right): starts a golden age
+# Added Empire States Building (Steel, Industrialism): +1 gold per population point
+# Added The Grand Canal (Calendar, Machinery): +2 gold per river tile for its city, expires with Replaceable Parts
+# Added The Floating Gardens (Construction, Corn): +1 food per river tile for its city, expires with Optics
+# Added Trafalgar Square (Chemistry, Astronomy, naval unit with level three or higher): +5 XP and +50% production for naval units, expires with Combustion
+# Added Lubyanka (Communism): +2 espionage per specialist
+# Changed Hagia Sophia to the Orthodox shrine
+# Changed the effect of Statue of Zeus: +25% unit training speed in cities with pagan temples, expires with Theology now
 # Changed the effect of Pyramids: -33% hurry costs
-# Changed the effect of the Great Sphinx: adds 5 artist slots
-# Changed the effect of the Parthenon: allows all government civics
-# Changed the effect of Hagia Sophia: +50% great people birth in all cities
-# Changed the effect of St. Basil's Cathedral: +2 espionage per specialist
-# Changed the effect of Hanging Gardens: +3 health in its city
-# The Hanging Gardens now require Masonry and Agriculture
-# The Parthenon now expires with Theology
+# Changed the effect of the Great Sphinx: great prophets can create great works like great artists
+# Changed the effect of the Parthenon: allows all government civics, expires with Theology now
+# Changed the effect of St. Basil's Cathedral: requires Gunpowder, +2 espionage per religious building, expires with Communism
+# Changed the effect of Hanging Gardens: requires Masonry and Agriculture, +3 health in its city
+# The Leaning Tower requires Patronage and Philosophy now
+# The Sistine Chapel requires Patronage now
 # Great Library expires with Divine Right
+# Great Wall expires with Gunpowder
+# The Statue of Liberty now requires coastal access
 
 LEADERHEADS
-# China: added Tang Taizong, Hongwu and Cixi
+# China: added Tang Taizong and Hongwu
 # Egypt: added Cleopatra (Hatshepsut), Baibars and Nasser
 # Babylonia: renamed Gilgamesh to Sargon (of Akkad)
-# India: added Akbar
-# Phoenicia: added Elishat/Dido
-# Japan: added Jimmu and Meiji
+# India: added Chandragupta and Shivaji Bhosle
+# Phoenicia: added Hiram
+# Japan: added Kammu and Meiji
 # Ethiopia: added Haile selassie
 # Arabia: added Abu Bakr
 # Vikings: added Gustav Adolph
 # Spain: added Philip II
 # France: added Charlemagne (Otto I removed from Germany)
 # England: added Alfred the Great
-# Germany: added Charles V
 # Russia: added Yaroslav the Wise and Nicholas II
 # Portugal: added Afonso Henriques and Maria II
 # Turkey: added Mustafa Kemal Atatürk
@@ -383,66 +500,88 @@ LEADERHEADS
 # Added unique diplomacy music to Maria II and Afonso Henriques
 
 RELIGION
-# Reformation modmod by Panopticon
+# Modified version of Panopticon's Reformation modmod
 	# Judaism replaced with Protestantism
 	# Christianity replaced with Catholicism
 	# Reformation triggered by the first Catholic civ to discover Printing Press
-	# If the player is Catholic, he is asked to convert, which yields 500 gold
+# All civilizations with Catholic state religion are asked if they want to convert to Protestantism. The player has three choices:
+	# Embrace the Reformation: state religion becomes Protestantism, cities convert to Protestantism, Catholicism can remain in larger cities, 100 gold per Catholic city, if this civ has founded Protestantism, it gets the shrine for free, Catholic civs may declare war
+	# Tolerate the new sects: State religion remains Catholic, Protestantism spreads to your cities and can even replace Catholicism
+	# Join the Counter-Reformation: State religion remains Catholic, Protestantism only rarely spreads to your cities, you declare war on all civs that embraced the Reformation
 	# AI civilizations convert based on their historical inclination (high chance for Netherlands, low chance for Spain)
 # Added Zoroastrianism (founded with Monarchy, Persia spawns with it)
-# readded Confucianism, Zoroastrianism is now an eighth religion
 # Zoroastrianism stops to spread on its own after 1000 AD
 # Buddhism is founded by building a Hindu temple instead of discovering a tech
 # Varanasi founds Hinduism ~2000 BC unless the player controls India
-# Related religions like Hinduism and Buddhism or Confucianism and Taoism create smaller diplomacy penalties
-
+# Related religions like Hinduism and Buddhism or Confucianism and Taoism or Orthodoxy and either Catholicism or Protestantism create smaller diplomacy penalties
+# Added Orthodoxy
+	# founded when the Apostolic Palace is built
+	# holy city assigned according to priority list beginning with historically Orthodox civs
+	# to be eligible for the holy city, you need to be alive, Catholic and not control the Apostolic Palace
+# Non-state religions create additional unhappiness unless you are running Secularism
+# No unhappiness from Hinduism when Buddhism is state religion and vice versa, same for Confucianism and Taoism
+# Spread of religions removes pagan temples, they're replaced by state religion temples if the spreading religion is your state religion
+# Added a persecution project that allows you to remove non-state religions from your cities (except holy cities)
+# The Netherlands now properly spawn with Protestantism if it's already founded
+# Buddhism spreads to China around 100 AD
+# Increased spread of Catholicism around the Mediterranean after it's founded
+# Catholicism spreads to Scandinavia around 900 AD
 
 CIVICS
 # Complete rework of the civic system (except the expansion category)
 # New five categories: Government, Organization, Society, Economy, Religion
 # Government:
 	1. Tyranny (standard)
-	2. Monarchy (Monarchy): +1 happiness per military unit
-	3. Theocracy (Theology): +2 experience and +1 happiness with state religion, no foreign religion spread
-	4. Autocracy (Nationalism): +2 happiness with barracks, can draft military units
-	5. Republic (Philosophy): +100% cottage growth, +50% great people birth
+	2. Dynasticism (Monarchy): +1 happiness per military unit
+	3. City States (Code of Laws): +1 food per specialist in all cities that work at most 7 land tiles, +100% number of cities maintenance
+	4. Theocracy (Theology): +2 experience and +2 happiness with state religion, no foreign religion spread
+	5. Autocracy (Nationalism): +2 happiness with barracks, can draft military units
+	6. Republic (Philosophy): +100% cottage growth, +40% great people birth, +25% war weariness
 # Organization:
 	1. Direct Rule (standard)
-	2. Vassalage (Feudalism): +50% worker speed, can train Knights and Levies
-	3. Absolutism (Civil Service): +33% production and commerce in the capital city
-	4. Representation (Constitution): +3 research per specialist, +2 happiness in biggest cities
-	5. Parliamentarism (Democracy): +1 hammer in towns, unhappiness in all civs without Parliament
+	2. Vassalage (Feudalism): extra free units, +2 XP per unit, -25% number of cities upkeep
+	3. Absolutism (Civil Service): +40% production and commerce in the capital city
+	4. Representation (Constitution): +2 research per specialist
+	5. Supreme Council (Communism): No city distance maintenance
+	6. Universal Suffrage (Democracy): +1 hammer in towns, +2 happiness in largest cities
 # Society:
 	1. Tribalism (standard)
-	2. Aristocracy (Code of Laws): Lower unit maintenance, +2 unit experience
-	3. Capitalism (Liberalism): +1 commerce in towns and villages, can spend gold to finish production, chance to trigger economic crisises
-	4. Totalitarianism (Fascism): +25% military unit production, -50% war weariness, +25% espionage
-	5. Socialism (Communism): Unlimited scientists, merchants, engineers and artists
+	2. Agrarianism (Calendar): +1 commerce for pastures and +2 commerce for plantations, -1 trade route, -50% cottage growth
+	3. Urbanization (Guilds): +50% worker speed, +1 production from workshops
+	4. Capitalism (Economics): +2 commerce for towns, can hurry with gold, +10% commerce
+	5. Totalitarianism (Fascism): -50% war weariness, +25% espionage, +25% unit production
+	6. Egalitarianism (Democracy): Unlimited artist, merchant, scientist
 # Economy:
-	1. Self-sufficiency (standard)
-	2. Forced Labor (Masonry): can sacrifice population to finish production
-	3. Mercantilism (Banking): +1 free specialist, +1 commerce in cottages and workshops, no foreign trade routes, no foreign corporations, less impact of foreign economic crisises
-	4. State Property (Socialism): +10% production, +1 food and hammer in workshops and watermills, no number of cities maintenance, no corporations, immune to foreign economic crisises
-	5. Free Market (Economics): +1 trade routes, +50% trade route yield
+	1. Self-Sufficiency (standard)
+	2. Forced Labor (Masonry): Can hurry with population
+	3. Mercantilism (Banking): +1 specialist, no foreign trade
+	4. Free Market (Economics): +1 trade route, +25% trade route yield, risk of a great depression
+	5. State Property (Communism): +50% production to commerce rate, +1 food for workshop, watermill, +1 production per specialist, no more than one corporation per city
+	6. Environmentalism (Ecology): -30% unhealthiness, +1 unhappiness from Nuclear Plant, +2 commerce for windmill
 # Religion:
-	1. Animism (standard)
-	2. Pantheon (Polytheism): +1 happiness from monument, no state religion, can build classical wonders
-	3. Patriarchate (Monotheism): +25% building production with state religion, missionaries without moasteries
-	4. State Church (Divine Right): unlimited priests, +50% great people birth with state religion
-	5. Secularism (Liberalism): +10% research, +1 happiness per religion, no state religion
+	1. Animism (standard): +1 unhappiness per non-state religion
+	2. Pantheon (Polytheism): no state religion, can build classical wonders, +1 happiness with Pagan Temple, +1 unhappiness per non-state religion
+	3. Organized Religion (Monotheism): +25% building construction with state religion, can always train missionaries, +1 unhappiness per non-state religion
+	4. Scholasticism (Literature): +35% great people birth in cities with state religion, +1 unhappiness per non-state religion
+	5. Fanaticism (Divine Right): +25% unit training speed with state religion, +2 unhappiness per non-state religion
+	6. Secularism (Liberalism): +10% science
+# Expansion
+	- added the Imperialism civic (requires Nationalism): reduced penalty from controlling foreign cores, reduced likeliness of respawns on your territory
 
 CORPORATIONS
 # Corporation headquarters and executives removed, corporations spread on their own to cities that fulfill its conditions
 # Corporation spread influenced by amount of consumed resources, civics and buildings in the city
 # Silk Route and Trading Company only spread to appropriate historical regions
+# The Trading Company building allows the spread of Trading Company to its city
 # New set of corporations:
 	# Silk Route (Currency): silk, cotton, incense -> food, gold
-	# Trading Company (Astronomy): spices, sugar, ivory, banana -> food, gold
+	# Trading Company (Astronomy): spices, sugar, ivory, banana, coffee, tobacco, tea -> food, gold
 	# Cereal Industry (Biology): wheat, rice, corn -> food
 	# Fishing Industry (Refrigeration): fish, clam, crab -> food
+	# Textile Industry (Steam Power): sheep, silk, cotton, dye -> gold, production
 	# Steel Industry (Steel): iron, copper, coal, aluminum -> production
 	# Oil Industry (Combustion): oil -> gold
-	# Luxury Industry (Industrialism): gold, silver, gems -> gold, culture
+	# Luxury Industry (Electricity): gold, silver, gems -> gold, culture
 	# Computer Industry (Computers): copper, aluminum, oil -> research
 
 AI
@@ -454,9 +593,15 @@ AI
 # reduced Babylonia's likeliness to build settlers
 # increased Babylonia's likeliness to research Polytheism
 # AI doesn't found cities on food resources anymore
-# reduced China's inclination to research Liberalism and Engineering
+# reduced China's inclination to research Liberalism, Engineering, Economics and Astronomy
 # recently respawned civs don't vassalize
 # encouraged Arabian leaders to build wonders (and Turkish to a lesser extent)
+# Peter and Catherine care less about religion to prevent Orthodoxy from making them overly hostile
+# Classical leaders now monopolize less to allow for more tech trade in this era
+# Encouraged Muslim leaders to trade techs more despite religious differences
+# wars and peace with minor civs are now disregarded by the AI when considering to become a vassal
+# minor civs don't use nukes anymore
+# added a semi-scripting routine to help China place its cities
 
 BUGFIXES
 # included 3Miro's fixes to the bugs that rendered settlers and large unit stacks unable to move, respectively

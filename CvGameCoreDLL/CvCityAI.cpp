@@ -5059,7 +5059,7 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 
 	if (eProject == GC.getInfoTypeForString("PROJECT_PERSECUTION"))
 	{
-		if (GET_PLAYER(getOwnerINLINE()).isStateReligion())
+		if (GET_PLAYER(getOwnerINLINE()).isStateReligion() && getReligionBadHappiness() != 0)
 		{
 			int iNonStateReligions = 0;
 			for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)

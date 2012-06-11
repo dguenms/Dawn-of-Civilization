@@ -5754,7 +5754,7 @@ EndPlot
 BeginPlot
 	x=14,y=53
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=14,y=54
@@ -6144,9 +6144,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=56
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -6513,13 +6512,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=16,y=55
-	BonusType=BONUS_SWAMP
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
 	RiverNSDirection=0
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -6888,16 +6886,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=17,y=54
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=55
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -7996,9 +7991,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=51
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -8009,9 +8003,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=53
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	BonusType=BONUS_IRON
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -8376,16 +8369,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=51
-	BonusType=BONUS_SWAMP
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=21,y=52
-	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -9884,6 +9875,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=53
+	BonusType=BONUS_SWAMP
+	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -10256,6 +10249,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=53
+	BonusType=BONUS_SWAMP
+	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -10617,11 +10612,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=52
+	BonusType=BONUS_SWAMP
+	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=27,y=53
+	BonusType=BONUS_SWAMP
+	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot

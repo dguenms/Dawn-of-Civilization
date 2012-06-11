@@ -42795,7 +42795,7 @@
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>20</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>5</iBuildUnitProb>
+			<iBuildUnitProb>2</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange>
@@ -43335,7 +43335,7 @@
 			<iDemandRebukedSneakProb>80</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>0</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>25</iBuildUnitProb>
+			<iBuildUnitProb>5</iBuildUnitProb>
 			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>-2</iWorseRankDifferenceAttitudeChange>
