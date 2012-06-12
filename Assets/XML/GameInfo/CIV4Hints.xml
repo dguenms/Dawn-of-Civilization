@@ -494,5 +494,23 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_25</Description>
 		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_26</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_27</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_28</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_29</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_30</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_31</Description>
+		</HintInfo>
 	</HintInfos>
 </Civ4Hints>
