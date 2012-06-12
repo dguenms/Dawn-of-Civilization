@@ -894,6 +894,7 @@ class CvRFCEventHandler:
             
                 iReligion, iOwner, pSpreadCity = argsList
                 self.sta.onReligionSpread(iReligion, iOwner)
+		#self.cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
 
 		#Leoreth: if state religion spreads, pagan temples are replaced with its temple. For other religions, they're simply removed.         
 		if pSpreadCity.isHasBuilding(con.iObelisk):

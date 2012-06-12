@@ -465,4 +465,28 @@
 		<Tag>TXT_KEY_HINT_DOC_25</Tag>
 		<English>Dawn of Civilization is still actively developed. You can get the latest bugfixes and additions by using the SVN version of the mod. Visit the forum under http://forums.civfanatics.com/forumdisplay.php?f=452 to find out how.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_26</Tag>
+		<English>Building the Apostolic Palace triggers a Schism between Catholic and Orthodox Christianity. An Eastern Christian civilization will receive the Orthodox holy city and all Catholic civilizations will be asked to convert to Orthodoxy.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_27</Tag>
+		<English>Great works (created by great artists) now produce 800 culture per game era.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_28</Tag>
+		<English>Complete the persecution project to remove non-state religions from your cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_29</Tag>
+		<English>Confused about the expansion and civic stability rules? Look them up under the Concepts section in the Civilopedia!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_30</Tag>
+		<English>The soundtracks you hear during the Classical, Medieval and Renaissance eras depends on your state religion.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_31</Tag>
+		<English>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</English>
+	</TEXT>
 </Civ4GameText>

@@ -230,7 +230,20 @@ class UniquePowers:
 					if iCiv in [iCarthage, iPersia, iCeltia, iEgypt]:
 						iNumTargets = 2
 					elif iCiv == iGreece and utils.getHumanID() != iGreece:
-						iNumTargets = 3
+						bEgypt = False
+						cityList = PyPlayer(iGreece).getCityList()
+						
+						for pCity in cityList:
+							city = pCity.GetCy()
+							if city.getRegionID() == con.rEgypt:
+								bEgypt = True
+								break
+								
+						if bEgypt:
+							iNumTargets = 2
+							self.romanConquestUP(iCiv, iNumTargets, [con.rEgypt])
+						else:
+							iNumTargets = 3
 						
 				self.romanConquestUP(iCiv, iNumTargets)
 				self.setRomanWar(iCiv, 1)
@@ -277,7 +290,7 @@ class UniquePowers:
 #			
 #                        CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_TRIUMPH", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
-	def romanConquestUP(self, iEnemy, iNumTargets=1):
+	def romanConquestUP(self, iEnemy, iNumTargets=1, lPreferredTargetRegions=[]):
 
 		#pEnemy = gc.getPlayer(iEnemy)
 
@@ -286,6 +299,7 @@ class UniquePowers:
 		#tPlot = con.tCapitals[0][iRome]
 		
 		lEnemyCities = []
+		lPreferredCities = []
 		
 		print "Getting closest city."
 		cityList = PyPlayer(iEnemy).getCityList()
@@ -293,6 +307,11 @@ class UniquePowers:
 			pCity = city.GetCy()
 			iDist = utils.calculateDistance(pCity.getX(), pCity.getY(), pRome.getCapitalCity().getX(), pRome.getCapitalCity().getY())
 			lEnemyCities.append((iDist, pCity))
+			if pCity.getRegionID() in lPreferredTargetRegions:
+				lPreferredCities.append((iDist, pCity))
+				
+		if len(lPreferredCities) > 0:
+			lEnemyCities = lPreferredCities
 			
 		lEnemyCities.sort()
 		

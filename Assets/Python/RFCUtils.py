@@ -1450,20 +1450,20 @@ class RFCUtils:
 		elif iCiv in [con.iFrance, con.iEngland, con.iNetherlands]:
 			iNumUnits = 2
 		if gc.getMap().plot(x,y).isCity():
-			if gc.getMap().plot(x,y).getPlotCity().getOwner() != self.getHumanID():
-				self.flipCity((x,y), False, True, iCiv, [])
-				self.makeUnit(con.iWorker, iCiv, (x,y), iNumUnits)
-				if gc.getTeam(iCiv).isHasTech(con.iRifling):
-					if iCiv == con.iEngland:
-						self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), iNumUnits)
-					else:
-						self.makeUnit(con.iRifleman, iCiv, (x,y), iNumUnits)
+			#if gc.getMap().plot(x,y).getPlotCity().getOwner() != self.getHumanID():
+			self.flipCity((x,y), False, True, iCiv, [])
+			self.makeUnit(con.iWorker, iCiv, (x,y), iNumUnits)
+			if gc.getTeam(iCiv).isHasTech(con.iRifling):
+				if iCiv == con.iEngland:
+					self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), iNumUnits)
 				else:
-					self.makeUnit(con.iMusketman, iCiv, (x,y), iNumUnits)
-				if gc.getPlayer(iCiv).getStateReligion() != -1:
-					self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+					self.makeUnit(con.iRifleman, iCiv, (x,y), iNumUnits)
 			else:
-				self.colonialConquest(iCiv, x, y)
+				self.makeUnit(con.iMusketman, iCiv, (x,y), iNumUnits)
+			if gc.getPlayer(iCiv).getStateReligion() != -1:
+				self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+			#else:
+			#	self.colonialConquest(iCiv, x, y)
 		else:
 			gc.getMap().plot(x,y).setCulture(iCiv, 10, True)
 			gc.getMap().plot(x,y).setOwner(iCiv)
