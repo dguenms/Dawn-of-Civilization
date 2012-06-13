@@ -136,7 +136,7 @@ class AIWars:
 					
 			if iGameTurn == getTurnForYear(iRomeEgyptYear) - 5 + (utils.getSeed() % 10):
 				if self.getRomanWar(iEgypt) != 1 and gc.getPlayer(iEgypt).isAlive():
-					gc.getTeam(iEgypt).declareWar(iEgypt, True, WarPlanTypes.WARPLAN_TOTAL)
+					gc.getTeam(iRome).declareWar(iEgypt, True, WarPlanTypes.WARPLAN_TOTAL)
                         
                 if (iGameTurn == getTurnForYear(1500) or iGameTurn == getTurnForYear(1850)):
                         for iLoopCiv in range( iNumPlayers ):
