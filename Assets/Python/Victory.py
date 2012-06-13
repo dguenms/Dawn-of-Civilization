@@ -1207,8 +1207,8 @@ class Victory:
                                                 iTotalPopulation += pCity.getPopulation()
                                         if len(apCityList) > 0 and (iTotalPopulation * 1.00 / len(apCityList) >= 12.0):
                                                 self.setGoal(iKhmer, 1, 1)
-                                        else:
-                                                self.setGoal(iKhmer, 1, 0)                                        
+                                        #else:
+                                        #       self.setGoal(iKhmer, 1, 0)                                        
                                         #bestCity = self.calculateTopCityPopulation(102, 34)                                        #if (bestCity != -1):
                                         #        if (bestCity.getOwner() == iKhmer and bestCity.getX() == 102 and bestCity.getY() == 34):
                                         #                self.setGoal(iKhmer, 1, 1)
