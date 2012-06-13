@@ -4251,7 +4251,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 	int ecs = GC.getDefineINT("ETHNIC_CITY_STYLES");
 	int id = getRegionID();
 
-	/*if (ecs == 1)
+	if (ecs == 1)
 	{
 		if (getOwnerINLINE() == NATIVE)
 		{
@@ -4272,7 +4272,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 				return (ArtStyleTypes)ARTSTYLE_AFRICA;
 			}
 		}
-		else if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2 || getOwnerINLINE() == BARBARIAN)
+		else if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2 || getOwnerINLINE() == BARBARIAN || (getOwnerINLINE() == MONGOLIA && getOriginalOwner() != MONGOLIA))
 		{
 			if (id == REGION_ALASKA || id == REGION_CANADA || id == REGION_UNITED_STATES || id == REGION_BRITAIN)
 			{
@@ -4360,7 +4360,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 				{
 					return (ArtStyleTypes)ARTSTYLE_ARABIA;
 				}
-				else if (GC.getGameINLINE().getGameTurnYear() < 0)
+				else if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
 				{
 					return (ArtStyleTypes)ARTSTYLE_EGYPT;
 				}
@@ -4401,7 +4401,14 @@ ArtStyleTypes CvCity::getArtStyleType() const
 				return (ArtStyleTypes)ARTSTYLE_SOUTH_PACIFIC;
 			}
 		}
-	}*/
+		else if (getOwnerINLINE() == MONGOLIA)
+		{
+			if (getPopulation() >= 5)
+			{
+				return GET_PLAYER((PlayerTypes)CHINA).getArtStyleType();
+			}
+		}
+	}
 
 	return GET_PLAYER(getOwnerINLINE()).getArtStyleType();
 }
@@ -9357,6 +9364,8 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
+	int iMinorCulture = 0;
+
 	// Leoreth: all culture American cities in North America counts as American
 	if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
 	{
@@ -9378,7 +9387,19 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 		}
 	}
 
-	return m_aiCulture[eIndex] / 100;
+	// Leoreth: absorb independent culture
+	if (eIndex != getOwnerINLINE() && (eIndex == INDEPENDENT || eIndex == INDEPENDENT2))
+	{
+		return 0;
+	}
+
+	if (eIndex != INDEPENDENT)
+		iMinorCulture += m_aiCulture[INDEPENDENT];
+
+	if (eIndex != INDEPENDENT2)
+		iMinorCulture += m_aiCulture[INDEPENDENT2];
+
+	return (m_aiCulture[eIndex] + iMinorCulture) / 100;
 }
 
 int CvCity::getCultureTimes100(PlayerTypes eIndex) const

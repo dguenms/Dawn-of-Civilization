@@ -32,7 +32,6 @@ GAME MECHANICS
 # reduced the intervals between early AI wars
 # added a routine that removes Christianity from Anatolia when Byzantium collapses
 # added a Mongol horde event that spawns armies for AI Mongolia at the Russian, Persian and Seljuk borders
-# scripted spread of Islam to Indonesia around 1500 AD
 # religion spread turns pagan temples into temples of the new religion
 # pagan temples can't be built in cities with religions
 # resurrected civs get predertemined capitals
@@ -316,7 +315,7 @@ NEW CIVILIZATIONS
 	# spawn 50 BC in Hanseong/Seoul (or from the start in the 600 AD scenario)
 	# Leaderhead: Wang Kon (Ming Taizu removed from China)
 	# Unique Unit: Hwacha (Catapult with +50% against melee)
-	# Unique Building: Seowon (University with +35% research)
+	# Unique Building: Seowon (University with Paper requirement)
 	# Unique Power: The Power of Kobuksons: Naval units start with Drill I and Drill II
 	# Unique Historical Victory:
 		# Build a Buddhist Stupa and a Confucian Academy by 1200 AD
@@ -376,7 +375,7 @@ NEW CIVILIZATIONS
 	# Spawn in 1206 AD in Delhi
 	# Leaderhead: Muhammad ibn Tughluq, Akbar
 	# Unique Unit: Siege Elephant (Cannon with +25% city attack)
-	# Unique Building: Mausoleum (Jail with +1 free artist)
+	# Unique Building: Mausoleum (Jail with +1 free artist, requires Patronage)
 	# Unique Power: The Power of Tolerance: No unhappiness from non-state religions
 	# Unique Historical Victory:
 		# Build three Islamic Mosques by 1500 AD
@@ -511,6 +510,7 @@ RELIGION
 	# AI civilizations convert based on their historical inclination (high chance for Netherlands, low chance for Spain)
 # Added Zoroastrianism (founded with Monarchy, Persia spawns with it)
 # Zoroastrianism stops to spread on its own after 1000 AD
+# Islam spreads to Indonesia around 1500 AD
 # Buddhism is founded by building a Hindu temple instead of discovering a tech
 # Varanasi founds Hinduism ~2000 BC unless the player controls India
 # Related religions like Hinduism and Buddhism or Confucianism and Taoism or Orthodoxy and either Catholicism or Protestantism create smaller diplomacy penalties

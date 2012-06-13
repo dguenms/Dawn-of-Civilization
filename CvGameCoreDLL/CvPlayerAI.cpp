@@ -12450,7 +12450,7 @@ void CvPlayerAI::AI_doCounter()
 						{
 							if (iJ != MEMORY_GIVE_HELP && iJ != MEMORY_ACCEPT_DEMAND && iJ != MEMORY_ACCEPTED_RELIGION && iJ != MEMORY_ACCEPTED_CIVIC && iJ != MEMORY_ACCEPTED_JOIN_WAR && iJ != MEMORY_ACCEPTED_STOP_TRADING && iJ != MEMORY_TRADED_TECH_TO_US && iJ != MEMORY_VOTED_FOR_US && iJ != MEMORY_EVENT_GOOD_TO_US && iJ != MEMORY_LIBERATED_CITIES)
 							{
-								iMemoryDecayRand *= 2;
+								//iMemoryDecayRand *= 2;
 								iMemoryDecayRand /= 3;
 							}
 						}

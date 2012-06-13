@@ -9020,7 +9020,7 @@
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>NONE</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
-			<PrereqTech>TECH_EDUCATION</PrereqTech>
+			<PrereqTech>TECH_PAPER</PrereqTech>
 			<TechTypes/>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses/>
@@ -9135,7 +9135,7 @@
 			</CommerceChangeDoubleTimes>
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
-				<iCommerce>35</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
 			<GlobalCommerceModifiers/>
 			<SpecialistExtraCommerces/>
@@ -14252,7 +14252,7 @@
 			<FreeStartEra>ERA_MODERN</FreeStartEra>
 			<MaxStartEra>NONE</MaxStartEra>
 			<ObsoleteTech>NONE</ObsoleteTech>
-			<PrereqTech>TECH_CONSTITUTION</PrereqTech>
+			<PrereqTech>TECH_PATRONAGE</PrereqTech>
 			<TechTypes/>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses/>
@@ -32008,7 +32008,11 @@
 			<RiverPlotYieldChanges/>
 			<GlobalSeaPlotYieldChanges/>
 			<YieldChanges/>
-			<CommerceChanges/>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</CommerceChanges>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>

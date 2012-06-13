@@ -228,3 +228,5 @@
 # new leaders: Francis I for HRE, Chandragupta Vikramaditya for India, Muhammad ibn Tughluq for Mughals, Basil II for Byzantium
 # Great Wall expires with Gunpowder
 # several changes to Canada
+# Seowon now only requires Paper, but only gives +25% science
+# Mausoleum now only requires Patronage
