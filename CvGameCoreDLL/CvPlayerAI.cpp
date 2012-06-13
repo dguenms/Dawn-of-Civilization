@@ -11358,6 +11358,18 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 	//GC.getGameINLINE().logMsg("End AI civic value.");
 
+	//Leoreth: less premature Republics
+	if (eCivic == CIVIC_REPUBLIC)
+	{
+		if (getCurrentEra() < ERA_INDUSTRIAL)
+		{
+			if (getStateReligion() != NO_RELIGION && getStateReligion() != PROTESTANTISM)
+			{
+				iValue /= 2;
+			}
+		}
+	}
+
 	return iValue;
 }
 
