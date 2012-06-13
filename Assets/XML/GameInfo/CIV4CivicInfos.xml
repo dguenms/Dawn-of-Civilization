@@ -1683,7 +1683,7 @@
 			<Type>CIVIC_STATE_PROPERTY</Type>
 			<Description>TXT_KEY_CIVIC_STATE_PROPERTY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_STATE_PROPERTY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_STATE_PROPERY_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_CIVIC_STATE_PROPERTY_STRATEGY</Strategy>
 			<Help>TXT_KEY_CIVIC_POST_COMMUNISM</Help>
 			<Button>,Art/Interface/Buttons/Civics/State_Property.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,5,3</Button>
 			<TechPrereq>TECH_UTOPIA</TechPrereq>
