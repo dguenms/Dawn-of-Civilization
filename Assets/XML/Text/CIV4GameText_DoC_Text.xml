@@ -35,4 +35,8 @@
 		<Tag>TXT_KEY_EVENT_REFORMATION_COUNTER</Tag>
 		<English>Your state religion remains Catholic. Protestantism will only spread to some of your larger cities. You will declare war on all civilizations that decided to convert to Protestantism.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMBASSY_GENERIC</Tag>
+		<English>Embassy</English>
+	</TEXT>
 </Civ4GameText>

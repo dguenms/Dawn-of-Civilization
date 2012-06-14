@@ -5,7 +5,7 @@
 	- City States (Code of Laws): +1 food per specialist for every city that works at most 7 land tiles, +100% number of cities maintenance
 	- Theocracy (Theology): +2 happiness with state religion, +2 XP in cities with state religion, no foreign religion spread
 	- Autocracy (Nationalism): +2 happiness with barracks, can draft 2 units
-	- Republic (Philosophy): +40% GP birth, +100% cottage growth, +25% war weariness
+	- Republic (Liberalism): +40% GP birth, +100% cottage growth, +25% war weariness
 # ORGANIZATION
 	- Direct Rule
 	- Vassalage (Feudalism): extra free units, +2 XP per unit, -25% number of cities upkeep
@@ -31,7 +31,7 @@
 	- Animism: +1 unhappiness per non-state religion
 	- Pantheon (Polytheism): no state religion, can build classical wonders, +1 happiness with Pagan Temple, +1 unhappiness per non-state religion
 	- Organized Religion (Monotheism): +25% building construction with state religion, can always train missionaries, +1 unhappiness per non-state religion
-	- Scholasticism (Literature): +35% great people birth in cities with state religion, +1 unhappiness per non-state religion
+	- Scholasticism (Philosophy): +35% great people birth in cities with state religion, +1 unhappiness per non-state religion
 	- Fanaticism (Divine Right): +25% unit training speed with state religion, +2 unhappiness per non-state religion
 	- Secularism (Liberalism): +10% science
 # EXPANSION
@@ -236,4 +236,5 @@
 # cities founded by respawned civs now start with more appropriate buildings and sizes
 # The Apostolic Palace now expires with Nationalism
 # Gunships are now amphibious
-# Stealth Destroyers can now detect submarines
+# Stealth Destroyers can now detect submarines and bombard cities
+# Not all embassies are displayed in the tech info display

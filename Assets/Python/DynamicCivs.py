@@ -1430,6 +1430,10 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iNetherlands:
+			if bCityStates:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_DESC_DEMOCRATIC")
+				return
+		
 			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iNetherlands], con.tCoreAreasBR[0][iNetherlands], con.tExceptions[0][iNetherlands]):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_EXILE")
 				return
@@ -1583,7 +1587,7 @@ class DynamicCivs:
 			# Kingdom of Prussia as default
 			
 		elif iPlayer == iAmerica:
-			if iCivic3 == con.iForcedLabor or iCivic2 == con.iAgrarianism:	# Forced Labor
+			if iCivic3 == con.iForcedLabor or iCivic2 == con.iAgrarianism:	# Forced Labor/Agrarianism
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
 				return
 				
