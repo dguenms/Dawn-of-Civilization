@@ -486,6 +486,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
 			tList.pop(con.iAlpArslan)
 			tList.pop(con.iChiangKaishek)
+			tList.pop(con.iCixi)
 			#tList.pop(con.iFrancis)
 			#tList.pop(con.iBarbarossa)
 			tList.pop(con.iElishat)
