@@ -1,0 +1,52 @@
+CREDITS
+
+BASE MODS
+# Rhye's and Fall of Civilization by Rhye
+# RFC Epic/Marathon by embryodead for speed optimizations and different game speeds
+# The Sword of Islam by embryodead for various interface improvements, corporation spread changes, middle eastern graphics and many miscellaneous features
+# Reformation modmod by Panopticon for the basis of the Reformation event
+# Project Synthesis by Linkman for the Seljuks and Middle Eastern Mongol conquerors
+
+LEADERHEADS
+# melcher kürzer: Catherine the Great, Isabella
+# veBear: Baibars, Hayam Wuruk, Suharto
+# saibotlieh: Nicholas II, Maria II, Cleopatra
+# The Capo: Gustav Adolph, Cavour, Charles V, Nasser, Yaroslav, Mongkut, Afonso, Hitler, Chandragupta
+# IgorS: Charles V, Nasser, Yaroslav, Mongkut, Afonso
+# Amra: Naresuan (Ramkhamhaeng), Hiram, Akbar, Basil, Francis
+# Ekmek: Meiji, Ataturk, Cixi, Khomeini, Mussolini, Akbar, Basil, Hitler
+# cfkane: Afonso, Barbarossa (Arthur)
+# Methyl Orange: Jimmu
+# mechaerik: Franco
+# Flintlock1415: Alfred
+# PW90: Philipp
+# charle88: Philipp
+# Darkstyx: Hongwu (Sejong)
+# mourndraken: Mussolini
+# C.Roland: Mussolini
+# Wyz_sub10: Basil
+# Farsight: Shivaji
+# embryodead: Shivaji (Bhoja)
+# Triver: Dharmasetu (Gajah Mada)
+# Bernie14: Hitler, Haile Selassie
+# The Coyote: Hitler
+# Smeagolheart: Hitler
+# Chuggi: Hitler
+# Firaxis: Qin Shi Huang, Taizong (Chinese release)
+
+From mods, without explicit mention of the original creators
+# The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)
+
+MODULES
+# Himeji Castle, Empire State Building: Voyhkah
+
+MISCELLANEOUS
+# Corossol: Phoenicia
+# veBear: Indonesia
+# 3Miro: fixes in the stack and settler AI
+
+FEEDBACK AND RESEARCH
+iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43 and many others
+
+There has been so much valuable feedback to this mod which I'm really thankful for. I hope you're not offended if you miss yourself in this quickly compiled list and I hereby thank you anonymously.
+If someone feels he should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.
