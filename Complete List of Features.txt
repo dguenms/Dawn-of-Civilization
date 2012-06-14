@@ -8,7 +8,7 @@ GAME MECHANICS
 # Plague can only reduce units to 50% health, never kill them
 # The Temple of Solomon spawns with Yerushalayim
 # Added civ specific great people names (for all civs except Portugal, Khmer, Maya)
-# Dynamic civilization names adapted to the new civics
+# More diverse dynamic civilization names: greater variety of names and conditions
 # added a civic-specific leader switch mechanic:
 	# Germany and Spain switch to Hitler and Franco when fascist, respectively
 	# China and Russia switch to Mao and Stalin when communist, respectively
@@ -63,6 +63,9 @@ GAME MECHANICS
 # Greece automatically collapses during Byzantium's autoplay
 # Rome automatically collapses during Italy's autoplay
 # Jerusalem cannot be razed anymore
+## Capitals are not safe from resurrection anymore, only cities on your original starting plot
+## Airports connect cities
+## cities founded by respawned civs now start with more appropriate buildings and sizes
 
 BALANCE
 # more Keshiks for Mongolia on spawn
@@ -413,6 +416,8 @@ UNITS
 # increased the speed of Ironclads to 4
 # Replaced Redcoats' bonus against gunpowder units with collateral damage
 # Spanish Conquistadors only get +50% attack against Axeman, Spearman, Swordsman instead of all melee units
+## Gunships start with Amphibious
+## Stealth Destroyers can bombard cities
 
 BUILDINGS
 # Monument was renamed Pagan Temple, expires with Divine Right and gives +1 happiness with the Pantheon civic (see "civics")
@@ -426,7 +431,7 @@ BUILDINGS
 # Dutch Dikes now require Replaceable Parts
 
 WONDERS
-# Added special prerequisites to enforce a more historical placement of wonders
+# Added special prerequisites to ensure a more historical placement of wonders
 	# Catholic wonders: Hagia Sophia, Sistine Chapel, Apostolic Palace, Notre Dame, Cristo Redentor, Theodosian Walls
 	# Muslim wonders: University of Sankore, Spiral Minaret, La Mezquita, Dome of the Rock, Topkapi Palace, Blue Mosque, The Red Fort
 	# Buddhist wonders: Shwedagon Paya, Himeji Castle
@@ -476,11 +481,12 @@ WONDERS
 # The Sistine Chapel requires Patronage now
 # Great Library expires with Divine Right
 # Great Wall expires with Gunpowder
-# The Statue of Liberty now requires coastal access
+## The Apostolic Palace expires with Nationalism
+# The Statue of Liberty now requires coastal access and Republic
 
 LEADERHEADS
 # China: added Tang Taizong and Hongwu
-# Egypt: added Cleopatra (Hatshepsut), Baibars and Nasser
+# Egypt: added Cleopatra, Baibars and Nasser
 # Babylonia: renamed Gilgamesh to Sargon (of Akkad)
 # India: added Chandragupta and Shivaji Bhosle
 # Phoenicia: added Hiram
@@ -495,7 +501,7 @@ LEADERHEADS
 # Portugal: added Afonso Henriques and Maria II
 # Turkey: added Mustafa Kemal Atatürk
 # Added generic first contact texts so leaders are not mute when you meet them
-# Added unique diplomacy texts to Yaroslav, Nicholas II, Cixi, Khomeini, Ataturk
+# Added unique diplomacy texts to Yaroslav, Nicholas II, Khomeini, Ataturk
 # Added unique diplomacy music to Maria II and Afonso Henriques
 
 RELIGION
@@ -533,7 +539,8 @@ CIVICS
 # Government:
 	1. Tyranny (standard)
 	2. Dynasticism (Monarchy): +1 happiness per military unit
-	3. City States (Code of Laws): +1 food per specialist in all cities that work at most 7 land tiles, +100% number of cities maintenance
+	3. City States (Code of Laws): +1 food per specialist in all cities that work at most 7 land tiles, +100% number of cities maintenance 
+           [note: the extra food only applies to specialists that aren't hired because of unlimited specialist effects such as Egalitarianism, this is not displayed for individual specialists]
 	4. Theocracy (Theology): +2 experience and +2 happiness with state religion, no foreign religion spread
 	5. Autocracy (Nationalism): +2 happiness with barracks, can draft military units
 	6. Republic (Philosophy): +100% cottage growth, +40% great people birth, +25% war weariness
@@ -606,5 +613,5 @@ AI
 BUGFIXES
 # included 3Miro's fixes to the bugs that rendered settlers and large unit stacks unable to move, respectively
 # Keshiks now cause flanking damage as intended
-
+## Stealth Destroyers now detect Submarines as (probably) intended
 

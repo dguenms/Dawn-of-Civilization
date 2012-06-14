@@ -1409,18 +1409,26 @@ class RFCUtils:
 		bRifling = gc.getTeam(iCiv).isHasTech(con.iRifling)
 		iTargetCiv = gc.getMap().plot(x,y).getPlotCity().getOwner()
 		lFreePlots = []
+		
+		#print self.getCivName(iCiv) + ' initiated colonial conquest against ' + self.getCivName(iTargetCiv)
 
 		for i in range(x-1, x+2):
 			for j in range(y-1, y+2):
 				current = gc.getMap().plot(i, j)
 				if not current.isCity() and not current.isPeak() and not current.isWater():
 					lFreePlots.append((i,j))
+					
+		#print 'free plots found'
 
 		if iTargetCiv != -1:
 			gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_TOTAL)
+			
+		#print 'declared war against target civ'
 
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		tPlot = lFreePlots[iRand]
+		
+		#print 'found random plot'
 
 		if iCiv in [con.iSpain, con.iPortugal, con.iNetherlands]:
 			iNumUnits = 2
@@ -1442,6 +1450,8 @@ class RFCUtils:
 				self.makeUnit(con.iRifleman, iCiv, tPlot, 2*iNumUnits)
 		else:
 			self.makeUnit(con.iMusketman, iCiv, tPlot, 2*iNumUnits)
+			
+		#print 'created units, colonial conquest complete'
 
 
 	def colonialAcquisition(self, iCiv, x, y):
@@ -1643,6 +1653,9 @@ class RFCUtils:
 			
 		for iBuilding in lBuildings:
 			city.setHasRealBuilding(iBuilding, True)
+			
+	def getCivName(self, iCiv):
+		return CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()), ())
 			
 		
 	

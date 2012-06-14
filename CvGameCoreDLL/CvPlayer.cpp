@@ -5625,7 +5625,11 @@ void CvPlayer::found(int iX, int iY)
 
 				if (getID() < NUM_MAJOR_PLAYERS)
 				{
-					if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
+				    if (GET_PLAYER((PlayerTypes)getID()).isReborn() || GET_PLAYER((PlayerTypes)getID()).getLatestRebellionTurn() > getTurnForYear(startingTurnYear[getID()])+5)
+				    {
+				        startingEra = startingEraRespawn[getID()];
+				    }
+					else if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
 					{
 						startingEra = startingEraFoundAstronomy[getID()];
 					}else
@@ -5644,7 +5648,7 @@ void CvPlayer::found(int iX, int iY)
 				}
 
 				// handle respawns explicitly here (overwrite)
-				if (GET_PLAYER((PlayerTypes)getID()).isReborn())
+				/*if (GET_PLAYER((PlayerTypes)getID()).isReborn())
 				{
 					/*if (getID() == ROME)
 					{
@@ -5652,11 +5656,11 @@ void CvPlayer::found(int iX, int iY)
 							startingEra = 3;
 						else
 							startingEra = 2;
-					}*/
+					}
 
 					if (getID() == PERSIA)
 						startingEra = 3;
-				}
+				}*/
 
 				if (startingEra >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
 				//if (GC.getGameINLINE().getStartEra() >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())

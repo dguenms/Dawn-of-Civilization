@@ -427,7 +427,7 @@ tResurrectionIntervals = (
 [], #Carthage
 [], #Rome
 [(1800, 2020)], #Japan
-[(1850, 2020)], #Ethiopia
+[(1270, 1520), (1850, 1930)], #Ethiopia
 [(1800, 2020)], #Korea
 [], #Maya
 [(1100, 1280)], #Byzantium
@@ -447,7 +447,7 @@ tResurrectionIntervals = (
 [(1850, 2020)], #Italy
 [(1910, 2020)], #Mongolia
 [(1700, 2020)], #Aztec
-[], #Mughals
+[(1940, 2020)], #Mughals
 [(1700, 2020)], #Turkey
 [(1700, 2020)], #Thailand
 [(1870, 2020)], #Germany

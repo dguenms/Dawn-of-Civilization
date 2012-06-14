@@ -187,7 +187,7 @@
 # certain cities get additional defenders when controlled by barbarians or independents (Chola, Tibet, Manchu, Rome)
 # new French UP: The Power of Diplomacy: Other civilizations are quicker to forget about your past transgressions
 # New Khmer UHV:
-	- Build four Buddhist and Hindu monasteries and Angkor Wat by 1200 AD
+	- Build four Buddhist and Hindu monasteries and Wat Preah Pisnulok by 1200 AD
 	- Have an average city size of 12 by 1450 AD
 	- Have 8000 culture by 1450 AD
 # New third Indian goal: Control 20% of the world's population in 1200 AD
@@ -230,3 +230,10 @@
 # several changes to Canada
 # Seowon now only requires Paper, but only gives +25% science
 # Mausoleum now only requires Patronage
+# Capitals aren't safe from resurrections any more, only cities on original starting plot
+# City States bonus does not apply to specialist than could only be hired because of free specialist effects such as Egalitarianism (not displayed for individual specialists)
+# Airports connect cities
+# cities founded by respawned civs now start with more appropriate buildings and sizes
+# The Apostolic Palace now expires with Nationalism
+# Gunships are now amphibious
+# Stealth Destroyers can now detect submarines
