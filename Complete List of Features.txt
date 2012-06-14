@@ -121,6 +121,7 @@ INTERFACE
 	# Muslim and Zoroastrian civilizations play a new middle eastern soundtrack in the medieval and Renaissance eras
 	# Hindu, Buddhist, Confucian and Taoist civilizations play a new far eastern soundtrack in the classical, medieval and Renaissance eras
 	# civs without a state religion play the classical era soundtrack in the middle ages
+# The Paper and Civil Service techs don't list all embassies, instead only mention the ability to build embassies in general
 
 GRAPHICS
 # China has a light yellow color now (Zulu from BtS)

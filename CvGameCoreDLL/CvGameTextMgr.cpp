@@ -5544,8 +5544,12 @@ void CvGameTextMgr::setTechHelp(CvWStringBuffer &szBuffer, TechTypes eTech, bool
 					{
 						if (GC.getBuildingInfo(eLoopBuilding).getPrereqAndTech() == eTech)
 						{
+						    // Leoreth: don't display all embassies
+						    if (eLoopBuilding > NUM_BUILDINGS_PLAGUE)
+                                continue;
+
 							szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_TECH_CAN_CONSTRUCT").c_str());
-							szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), GC.getBuildingInfo(eLoopBuilding).getDescription());
+							szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), (eLoopBuilding == NUM_BUILDINGS_PLAGUE ? gDLL->getText("TXT_KEY_BUILDING_EMBASSY_GENERIC").c_str() : GC.getBuildingInfo(eLoopBuilding).getDescription()));
 							setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", bFirst);
 							bFirst = false;
 						}
@@ -5555,8 +5559,12 @@ void CvGameTextMgr::setTechHelp(CvWStringBuffer &szBuffer, TechTypes eTech, bool
 							{
 								if (GC.getBuildingInfo(eLoopBuilding).getPrereqAndTechs(iJ) == eTech)
 								{
+								    // Leoreth: don't display all embassies
+								    if (eLoopBuilding > NUM_BUILDINGS_PLAGUE)
+                                        continue;
+
 									szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_TECH_CAN_CONSTRUCT").c_str());
-									szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), GC.getBuildingInfo(eLoopBuilding).getDescription());
+									szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), (eLoopBuilding == NUM_BUILDINGS_PLAGUE ? gDLL->getText("TXT_KEY_BUILDING_EMBASSY_GENERIC").c_str() : GC.getBuildingInfo(eLoopBuilding).getDescription()));
 									setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", bFirst);
 									bFirst = false;
 									break;
