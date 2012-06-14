@@ -1215,26 +1215,30 @@ class RiseAndFall:
                         if (con.tRebirth[iCiv] != -1):
                                 if (iGameTurn == getTurnForYear(con.tRebirth[iCiv]) and not gc.getPlayer(iCiv).isAlive()):
                                         
-                                        if iCiv == iRome:
-                                                cityList = utils.getCoreCityList(iCiv, 1)
-                                                
-                                                iCitiesTotal = 0
-                                                iIndependentCities = 0
+                                        #if iCiv == iRome:
+                                        #        cityList = utils.getCoreCityList(iCiv, 1)
+                                        #        
+                                        #        iCitiesTotal = 0
+                                        #        iIndependentCities = 0
 
-                                                for pCity in cityList:
-                                                        iCitiesTotal += 1
-                                                        if not pCity.getOwner() < con.iNumPlayers:
-                                                                iIndependentCities += 1
+                                        #        for pCity in cityList:
+                                        #                iCitiesTotal += 1
+                                        #                if not pCity.getOwner() < con.iNumPlayers:
+                                        #                        iIndependentCities += 1
                                                 
                                                 # italy needs at least half of all core cities independent -> break when there are less
-                                                if iIndependentCities > 0:
-                                                        print "No Italy spawn"
-                                                        break
+                                        #        if iIndependentCities > 0:
+                                        #                print "No Italy spawn"
+                                        #                break
+							
                                 
                                         pCiv = gc.getPlayer(iCiv)
                                         if con.tRebirthCiv[iCiv] != -1:
                                                 pCiv.setCivilizationType(con.tRebirthCiv[iCiv])
                                         x, y = con.tRebirthPlot[iCiv]
+					
+					# reset diplomacy
+					pCiv.AI_reset()
 					
 					if iCiv in con.rebirthLeaders:
 						if pCiv.getLeader() != con.rebirthLeaders[iCiv]:
@@ -1875,6 +1879,9 @@ class RiseAndFall:
 					
 				if (iDeadCiv == iRome and pItaly.isAlive()) or (iDeadCiv == iItaly and pRome.isAlive()):
 					bPossible = False
+					
+				if (iDeadCiv == iGreece and pByzantium.isAlive()) or (iDeadCiv == iByzantium and pGreece.isAlive()):
+					bPossible = False
 
 				# make Byzantium return in the 13th century if Turkey is player controlled (obsolete due to their new UP)
 				#if iDeadCiv == iByzantium and utils.getHumanID() == iTurkey and iGameTurn >= getTurnForYear(1200) and iGameTurn <= getTurnForYear(con.tBirth[iTurkey]):
@@ -1931,7 +1938,7 @@ class RiseAndFall:
                                                                                                             cityList.append(pCurrent.getPlotCity())
                                                                                                             #print (iDeadCiv, pCurrent.getPlotCity().getName(), pCurrent.getPlotCity().getOwner(), "2", cityList)
                                                                                         elif (iOwnerStability < 0):
-                                                                                                if (not city.isWeLoveTheKingDay() and not city.isCapital() and (not (city.getX() == tCapitals[utils.getReborn(iOwner)][iOwner][0] and city.getY() == tCapitals[utils.getReborn(iOwner)][iOwner][1]))):
+                                                                                                if (not city.isWeLoveTheKingDay() and (not (city.getX() == tCapitals[utils.getReborn(iOwner)][iOwner][0] and city.getY() == tCapitals[utils.getReborn(iOwner)][iOwner][1]))): # removed: and not city.isCapital()  Leoreth
                                                                                                         if (gc.getPlayer(iOwner).getNumCities() > 0): #this check is needed, otherwise game crashes
                                                                                                                 capital = gc.getPlayer(iOwner).getCapitalCity()
                                                                                                                 iDistance = utils.calculateDistance(x, y, capital.getX(), capital.getY())
@@ -2000,6 +2007,23 @@ class RiseAndFall:
                                 bHuman = False
                                 iHuman = utils.getHumanID()
                                 print ("RESURRECTION", gc.getPlayer(iDeadCiv).getCivilizationAdjective(0))
+				
+				# Leoreth: reset diplomacy
+				gc.getPlayer(iDeadCiv).AI_reset()
+				
+				# Leoreth: move Mongolian capital back to Qara Qorum in case of Chinese respawn
+				#if iDeadCiv == iChina:
+				#	if pMongolia.isAlive():
+				#		if pMongolia.getCapitalCity().getName() == "Khanbaliq":
+				#			oldCapital = pMongolia.getCapitalCity()
+				#			x, y = con.tCapitals[0][iMongolia]
+				#			if gc.getMap().plot(x, y).isCity():
+				#				newCapital = gc.getMap().plot(x,y).getPlotCity()
+				#			else:
+				#				cityList = PyPlayer(iMongolia).getCityList()
+				#				newCapital = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')].GetCy()
+				#			newCapital.setHasRealBuilding(con.iPalace, True)
+				#			oldCapital.setHasRealBuilding(con.iPalace, False)
                                 
                                 for k0 in range(len(cityList)):
                                         iOwner = cityList[k0].getOwner()
@@ -2045,10 +2069,10 @@ class RiseAndFall:
                                                 bOwnerVassal = teamOwner.isAVassal()
                                                 bOwnerHumanVassal = teamOwner.isVassal(iHuman)
 
-                                                if (iOwner not in ownersList): #assignment of techs must be done before the creation of garrisons
-                                                        for t in range(con.iNumTechs):
-                                                                if (teamOwner.isHasTech(t)): 
-                                                                        teamDeadCiv.setHasTech(t, True, iDeadCiv, False, False)
+                                                #if (iOwner not in ownersList): #assignment of techs must be done before the creation of garrisons
+                                                 #       for t in range(con.iNumTechs):
+                                                  #              if (teamOwner.isHasTech(t)): 
+                                                   #                     teamDeadCiv.setHasTech(t, True, iDeadCiv, False, False)
 
                                                 if (iOwner == iBarbarian or iOwner == iIndependent or iOwner == iIndependent2 or iOwner == iNative):
                                                         utils.cultureManager((cityList[k].getX(),cityList[k].getY()), 100, iDeadCiv, iOwner, False, True, True)
@@ -3610,7 +3634,7 @@ class RiseAndFall:
 					print("Beyond deadline.")
 
 	def onEconomicsDiscovered(self, iCiv):
-		print "On Economics discovered."
+		print "On Economics discovered. Civ: "+CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()), ())
 
 		if utils.getHumanID() != iCiv and not utils.isAVassal(iCiv):
 			if iCiv in [iFrance, iEngland, iNetherlands]:

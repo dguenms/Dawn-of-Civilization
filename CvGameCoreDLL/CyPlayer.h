@@ -528,6 +528,7 @@ public:
 	void setReborn();
 	void updateTradeRoutes();
 	int getWarMapValue(int x, int y);
+	void AI_reset();
 
 	// Leoreth: stability (not active yet)
 	int getStability();

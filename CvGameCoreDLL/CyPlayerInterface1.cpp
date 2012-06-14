@@ -465,6 +465,7 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("setReborn", &CyPlayer::setReborn, "void ()")
 		.def("updateTradeRoutes", &CyPlayer::updateTradeRoutes, "void ()")
 		.def("getWarMapValue", &CyPlayer::getWarMapValue, "void (int x, int y)")
+		.def("AI_reset", &CyPlayer::AI_reset, "void ()")
 
 		// Leoreth: stability (not active yet)
 		.def("getStability", &CyPlayer::getStability, "int ()")

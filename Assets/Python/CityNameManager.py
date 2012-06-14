@@ -8378,14 +8378,14 @@ class CityNameManager:
 			cityList = PyPlayer(iPlayer).getCityList()
 			for pCity in cityList:
 				city = pCity.GetCy()
-				if (city.getName() == 'Haithabu'):
-					city.setName('Hamburg', False)
 				if city.getName() == 'Wien':
 					if gc.getGame().getActivePlayer() != iHolyRome:
 						oldCapital = gc.getPlayer(iHolyRome).getCapitalCity()
 						city.setHasRealBuilding(con.iPalace, True)
 						oldCapital.setHasRealBuilding(con.iPalace, False)
-                                        	break
+				if (city.getName() == 'Haithabu'):
+					city.setName('Hamburg', False)
+                                        break
                 if (iPlayer == iRussia and era >= con.iRenaissance):
                         cityList = PyPlayer(iPlayer).getCityList()
                         for pCity in cityList:
@@ -8454,18 +8454,28 @@ class CityNameManager:
 				city = pCity.GetCy()
 				if city.getName() == 'Dagou':
 					city.setName('Gaoxiong', False)
+					break
 		if iPlayer == iThailand and era == con.iIndustrial:
 			cityList = PyPlayer(iPlayer).getCityList()
 			for pCity in cityList:
 				city = pCity.GetCy()
 				if city.getName() == 'Ayutthaya':
 					city.setName('Bangkok', False)
+					break
 		if iPlayer == iIndia and era == con.iMedieval:
 			cityList = PyPlayer(iPlayer).getCityList()
 			for pCity in cityList:
 				city = pCity.GetCy()
 				if city.getName() == 'Indraprastha':
 					city.setName('Dilli', False)
+					break
+		if iPlayer in [iIndia, iMughals, iEngland] and era == con.iIndustrial:
+			cityList = PyPlayer(iPlayer).getCityList()
+			for pCity in cityList:
+				city = pCity.GetCy()
+				if city.getName() == 'Daibul':
+					city.setName('Karachi', False)
+					break
 					
 	def onReligionSpread(self, iReligion, iPlayer, city):
 		

@@ -4408,6 +4408,13 @@ ArtStyleTypes CvCity::getArtStyleType() const
 				return GET_PLAYER((PlayerTypes)CHINA).getArtStyleType();
 			}
 		}
+		else if (getOwnerINLINE() == AZTEC || getOwnerINLINE() == MAYA || getOwnerINLINE() == INCA)
+		{
+		    if (GET_PLAYER(getOwnerINLINE()).getStateReligion() == CATHOLICISM)
+		    {
+		        return (ArtStyleTypes)ARTSTYLE_IBERIA;
+		    }
+		}
 	}
 
 	return GET_PLAYER(getOwnerINLINE()).getArtStyleType();
@@ -5540,7 +5547,7 @@ CvPlotGroup* CvCity::plotGroup(PlayerTypes ePlayer) const
 
 bool CvCity::isConnectedTo(CvCity* pCity) const
 {
-	return plot()->isConnectedTo(pCity);
+	return (plot()->isConnectedTo(pCity) || (getMaxAirlift() > 0 && pCity->getMaxAirlift() > 0)); // Leoreth: airports connect cities
 }
 
 
@@ -7362,7 +7369,7 @@ void CvCity::changeExtraTradeRoutes(int iChange)
 int CvCity::getTradeRouteModifier() const
 {
 	int iResult = m_iTradeRouteModifier;
-	
+
     // Leoreth - new Phoenician UP: the power of seafaring, +50% trade route yield.
     if (getOwner() == CARTHAGE)
         iResult += 50;
@@ -8587,7 +8594,7 @@ int CvCity::getExtraSpecialistThresholdYield(YieldTypes eIndex, SpecialistTypes 
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
 	if (isSpecialistExtraYieldThreshold())
 	{
-		return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, eIndex)));
+		return ((std::min(getSpecialistCount(eSpecialist), getMaxSpecialistCount(eSpecialist)) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, eIndex)));
 	}
 	else
 	{
@@ -12384,7 +12391,7 @@ void CvCity::doCulture()
 					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 40 / 100, false, true);
 				}
 			}
-		
+
 	}
 	//Rhye - end
 

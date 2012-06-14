@@ -449,6 +449,7 @@ extern int healthMultiplier[34];
 extern int startingEraFound[34];
 extern int startingEraFound600AD[34];
 extern int startingEraFoundAstronomy[34];
+extern int startingEraRespawn[34];
 extern int unitCostModifier2[34];
 extern int wonderCostModifier[34];
 extern int buildingCostModifier[34];

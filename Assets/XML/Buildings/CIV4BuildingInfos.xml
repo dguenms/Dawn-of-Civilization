@@ -31368,7 +31368,7 @@
 			<VictoryPrereq>VICTORY_DIPLOMATIC</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
-			<ObsoleteTech>TECH_MASS_MEDIA</ObsoleteTech>
+			<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			<PrereqTech>TECH_THEOLOGY</PrereqTech>
 			<TechTypes/>
 			<Bonus>NONE</Bonus>

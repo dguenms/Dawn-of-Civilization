@@ -2452,3 +2452,9 @@ void CyPlayer::setLatestRebellionTurn(int iNewValue)
 	if (m_pPlayer)
 		m_pPlayer->setLatestRebellionTurn(iNewValue);
 }
+
+void CyPlayer::AI_reset()
+{
+    if (m_pPlayer)
+        m_pPlayer->AI_reset(false);
+}
