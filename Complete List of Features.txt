@@ -95,6 +95,7 @@ BALANCE
 # scripted conquerors for Greece and Rome to help them create their historical empires
 # Constantinople and Amsterdam start with a larger population and more buildings
 # Italy cannot flip units from other civilizations to prevent it from becoming too strong by absorbing the German or French Italian army
+# less barbarian horse archers spawn in Mongolia after the Great Wall is built, to help Korea
 
 INTERFACE
 # Great people births are displayed again

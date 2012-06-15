@@ -4134,6 +4134,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
 			utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 1)
+			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 1)
 			if utils.getHumanID() != iKorea:
 				utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
 				utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
@@ -5044,9 +5045,10 @@ class RiseAndFall:
                                 teamEthiopia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamEthiopia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
 			if (iCiv == iKorea):
-				lKoreanTechs = [con.iMining, con.iAgriculture, con.iBronzeWorking, con.iMysticism, con.iPolytheism, con.iMeditation, con.iPriesthood, \
-						con.iMonotheism, con.iMasonry, con.iFishing, con.iSailing, con.iMonarchy, con.iTheWheel, con.iPottery, \
-						con.iWriting, con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iCalendar]
+				lKoreanTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMysticism, con.iPolytheism, \
+						con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, con.iSailing, con.iTheWheel, con.iPottery, \
+						con.iAgriculture, con.iWriting, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iHunting, con.iArchery, \
+						con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics]
 				for iTech in lKoreanTechs:
 					teamKorea.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iMaya):
