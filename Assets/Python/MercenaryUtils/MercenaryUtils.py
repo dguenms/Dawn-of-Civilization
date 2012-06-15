@@ -1693,7 +1693,8 @@ class MercenaryUtils:
 		sdSetVal("Mercenaries Mod", "MercenaryData", MERCENARY_NAMES, mercenaryNames)
 		#print("Mercenaries Mod", "MercenaryData", MERCENARY_NAMES, mercenaryNames)
 		
-		
+		CyInterface().addMessage(gc.getActivePlayer().getID(), False, con.iDuration, CyTranslator().getText("TXT_KEY_NEW_MERCENARIES", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+
 	# Removes the number of mercenaries	specified by iCount
 	def removeMercenariesFromPool(self, iCount):
 
@@ -3047,7 +3048,7 @@ class Mercenary:
 		elif unitType == con.iMughalSiegeElephant:
 			return set(regionList) & con.mercRegions[con.iArea_India]
 		elif unitType == con.iWarElephant:
-			return (not (set(regionList) & con.mercRegions[con.iArea_Europe])) or gc.getPlayer(iPlayer).getCurrentEra() <= con.iClassical
+			return gc.getPlayer(iPlayer).getCurrentEra() <= con.iClassical or set(regionList) & con.mercRegions[con.iArea_MiddleEast] or set(regionList) & con.mercRegions[con.iArea_EastAsia] or set(regionList) & con.mercRegions[con.iArea_Africa]
 			
 		elif unitType in [con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek]:
 			return False

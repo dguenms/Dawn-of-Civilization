@@ -2043,7 +2043,7 @@ mercRegions = {
 	iArea_MiddleEast : set([rAnatolia, rMesopotamia, rArabia, rEgypt, rMaghreb, rPersia, rCentralAsia]),
 	iArea_India : set([rIndia, rDeccan]),
 	iArea_EastAsia : set([rIndochina, rIndonesia, rChina, rKorea, rJapan, rManchuria, rTibet]),
-	iArea_Africa : set([rEgypt, rMaghreb, rEthiopia, rSouthAfrica]),
+	iArea_Africa : set([rEgypt, rMaghreb, rEthiopia, rSouthAfrica, rWestAfrica]),
 	iArea_SouthAmerica : set([rCaribbean, rMesoamerica, rBrazil, rArgentina, rPeru, rColombia]),
 	iArea_NorthAmerica : set([rCanada, rAlaska, rUnitedStates]),
 }
