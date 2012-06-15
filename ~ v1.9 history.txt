@@ -238,3 +238,5 @@
 # Gunships are now amphibious
 # Stealth Destroyers can now detect submarines and bombard cities
 # Not all embassies are displayed in the tech info display
+# more intuitive mercenary names depending on world region and era
+# the game displays if there are new mercenaries available for hiring

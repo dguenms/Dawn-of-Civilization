@@ -63,9 +63,10 @@ GAME MECHANICS
 # Greece automatically collapses during Byzantium's autoplay
 # Rome automatically collapses during Italy's autoplay
 # Jerusalem cannot be razed anymore
-## Capitals are not safe from resurrection anymore, only cities on your original starting plot
-## Airports connect cities
-## cities founded by respawned civs now start with more appropriate buildings and sizes
+# Capitals are not safe from resurrection anymore, only cities on your original starting plot
+# Airports connect cities
+# cities founded by respawned civs now start with more appropriate buildings and sizes
+# mercenary names now depend on game era and world region to create more realistical names
 
 BALANCE
 # more Keshiks for Mongolia on spawn
@@ -122,6 +123,7 @@ INTERFACE
 	# Hindu, Buddhist, Confucian and Taoist civilizations play a new far eastern soundtrack in the classical, medieval and Renaissance eras
 	# civs without a state religion play the classical era soundtrack in the middle ages
 # The Paper and Civil Service techs don't list all embassies, instead only mention the ability to build embassies in general
+# The game now displays when there are new mercenaries available for hiring
 
 GRAPHICS
 # China has a light yellow color now (Zulu from BtS)
@@ -139,7 +141,7 @@ MAP
 # Moved some food resources out of Inverness' radius
 # Changed peaks to hills/plains in China, Spain, Turkey, Bohemia, Cuba
 # Cyprus is now a copper hill
-# moved r+esources to make certain locations more appealing, including Oslo, Hamburg and Barcelona
+# moved resources to make certain locations more appealing, including Oslo, Hamburg and Barcelona
 # added gems in Namibia and Afghanistan
 # Added ivory near Carthage and wheat near Tripolis
 # changed marble in China to stone
