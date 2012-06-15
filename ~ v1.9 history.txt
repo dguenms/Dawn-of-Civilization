@@ -240,3 +240,5 @@
 # Not all embassies are displayed in the tech info display
 # more intuitive mercenary names depending on world region and era
 # the game displays if there are new mercenaries available for hiring
+# less barbarians horse archers spawn in Mongolia after the Great Wall is built to help Korea
+# better starting techs for 3000 BC Korea to make it competitive with 600 AD Korea

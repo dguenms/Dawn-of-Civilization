@@ -131,6 +131,7 @@ class Barbs:
             
                 #handicap level modifier
                 iHandicap = (gc.getGame().getHandicapType() - 1)
+		bGreatWall = (gc.getPlayer(con.iChina).isAlive() and gc.getPlayer(iChina).countNumBuildings(con.iGreatWall) > 0)
 		
 		# Leoreth: buff certain cities if independent / barbarian (imported from SoI)
 		if iGameTurn % 20 == 10:
@@ -188,9 +189,13 @@ class Barbs:
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn < getTurnForYear(300)):
                         self.spawnUnits( iBarbarian, (94, 48), (107, 54), con.iHorseArcher, 2 + iHandicap*2, iGameTurn, 8, 0, utils.outerInvasion, 0)
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(900)):
-                        self.spawnUnits( iBarbarian, (91, 50), (107, 54), con.iHorseArcher, 3 + iHandicap*2, iGameTurn, 7, 0, utils.outerInvasion, 0)
+			iNumUnits = 3 + iHandicap*2
+			if bGreatWall: iNumUnits = 2
+                        self.spawnUnits( iBarbarian, (91, 50), (107, 54), con.iHorseArcher, iNumUnits, iGameTurn, 7, 0, utils.outerInvasion, 0)
                 if (iGameTurn > getTurnForYear(900) and iGameTurn <= getTurnForYear(1100)):
-                        self.spawnUnits( iBarbarian, (94, 48), (107, 54), con.iHorseArcher, 2 + iHandicap, iGameTurn, 6, 0, utils.outerInvasion, 0)
+			iNumUnits = 2 + iHandicap
+			if bGreatWall: iNumUnits = iHandicap
+                        self.spawnUnits( iBarbarian, (94, 48), (107, 54), con.iHorseArcher, iNumUnits, iGameTurn, 6, 0, utils.outerInvasion, 0)
                         
                 #tibet
                 if (iGameTurn >= getTurnForYear(-350) and iGameTurn <= getTurnForYear(1100)):
