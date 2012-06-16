@@ -2012,18 +2012,18 @@ class RiseAndFall:
 				gc.getPlayer(iDeadCiv).AI_reset()
 				
 				# Leoreth: move Mongolian capital back to Qara Qorum in case of Chinese respawn
-				#if iDeadCiv == iChina:
-				#	if pMongolia.isAlive():
-				#		if pMongolia.getCapitalCity().getName() == "Khanbaliq":
-				#			oldCapital = pMongolia.getCapitalCity()
-				#			x, y = con.tCapitals[0][iMongolia]
-				#			if gc.getMap().plot(x, y).isCity():
-				#				newCapital = gc.getMap().plot(x,y).getPlotCity()
-				#			else:
-				#				cityList = PyPlayer(iMongolia).getCityList()
-				#				newCapital = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')].GetCy()
-				#			newCapital.setHasRealBuilding(con.iPalace, True)
-				#			oldCapital.setHasRealBuilding(con.iPalace, False)
+				if iDeadCiv == iChina:
+					if pMongolia.isAlive():
+						if pMongolia.getCapitalCity().getName() == "Khanbaliq":
+							oldCapital = pMongolia.getCapitalCity()
+							x, y = con.tCapitals[0][iMongolia]
+							if gc.getMap().plot(x, y).isCity() and gc.getMap().plot(x, y).getPlotCity().getOwner() == iMongolia:
+								newCapital = gc.getMap().plot(x,y).getPlotCity()
+							else:
+								cityList = PyPlayer(iMongolia).getCityList()
+								newCapital = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')].GetCy()
+							newCapital.setHasRealBuilding(con.iPalace, True)
+							oldCapital.setHasRealBuilding(con.iPalace, False)
                                 
                                 for k0 in range(len(cityList)):
                                         iOwner = cityList[k0].getOwner()
@@ -2386,6 +2386,16 @@ class RiseAndFall:
                                 x, y = con.tCapitals[0][iCiv]
                                 gc.getMap().plot(x,y).setOwner(iCiv)
                                 #self.createStartingUnits(iCiv, (x-1,y))
+				
+			# Leoreth: so Mughals can flip Pataliputra
+			if iCiv == iMughals:
+				if pIndia.isAlive() and utils.getHumanID() != iIndia:
+					if pIndia.getCapitalCity().getName() == "Pataliputra":
+						oldCapital = pIndia.getCapitalCity()
+						cityList = PyPlayer(iMongolia).getCityList()
+						newCapital = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')].GetCy()
+						newCapital.setHasRealBuilding(con.iPalace, True)
+						oldCapital.setHasRealBuilding(con.iPalace, False)
 
                 if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
 

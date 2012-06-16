@@ -182,7 +182,7 @@ MAP
 # independent Ankara spawns in 1000 BC
 # independent Varanasi and Indraprastha appear shortly before the Indian spawn
 # jungle in Vietnam appears before the Thai spawn
-# added new resources:
+# added new happiness resources:
 	# Coffee (Yemen, Ethiopia, later Colombia, Java and Brazil)
 	# Tobacco (Kentucky, Virginia, Cuba, later Rumelia)
 	# Tea (West Bengal, Burma, South China, replaces some spice resources)
@@ -190,9 +190,10 @@ MAP
 # China starts with some improvements in the 600 AD scenario
 # Chengdu and Shenyang placed from the start in the 600 AD scenario
 # several changes to Canada
+# added horses and fur to Manchuria
 
 CIVILIZATIONS
-# Updated UP for Egypt: it now enables Monarchy, S+erfdom and Pantheon
+# Updated UP for Egypt: it now enables Dynasticism, Forced Labor and Pantheon
 # New UP for Japan: The Power of Honor - unit promotions are available 50% faster
 # New UP for England: The Power of Indirect Rule - no city distance and colony maintenance
 # New UP for Mongolia: The Power of the Horde - every captured city spawns Keshiks according to its size
@@ -536,6 +537,7 @@ RELIGION
 # Buddhism spreads to China around 100 AD
 # Increased spread of Catholicism around the Mediterranean after it's founded
 # Catholicism spreads to Scandinavia around 900 AD
+# Confucianism spreads to Korea around 400 AD
 
 CIVICS
 # Complete rework of the civic system (except the expansion category)
