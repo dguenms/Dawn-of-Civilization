@@ -131,7 +131,7 @@ class Barbs:
             
                 #handicap level modifier
                 iHandicap = (gc.getGame().getHandicapType() - 1)
-		bGreatWall = (gc.getPlayer(con.iChina).isAlive() and gc.getPlayer(iChina).countNumBuildings(con.iGreatWall) > 0)
+		bGreatWall = (gc.getPlayer(con.iChina).isAlive() and gc.getPlayer(con.iChina).countNumBuildings(con.iGreatWall) > 0)
 		
 		# Leoreth: buff certain cities if independent / barbarian (imported from SoI)
 		if iGameTurn % 20 == 10:
