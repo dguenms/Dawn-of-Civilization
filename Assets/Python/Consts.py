@@ -236,7 +236,7 @@ tBirth = (
 # Leoreth: stability penalty from this date on
 tFall = (
 -343,
-1206,
+600, # end of Gupta Empire
 1271,
 -539,
 -146,

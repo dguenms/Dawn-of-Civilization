@@ -242,3 +242,5 @@
 # the game displays if there are new mercenaries available for hiring
 # less barbarians horse archers spawn in Mongolia after the Great Wall is built to help Korea
 # better starting techs for 3000 BC Korea to make it competitive with 600 AD Korea
+# Confucianism spreads to Korea around 400 AD
+# Added horses and fur in Manchuria

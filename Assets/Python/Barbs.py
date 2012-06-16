@@ -79,6 +79,7 @@ lPagan = [98, 36, 107, 0] #148
 lBaku = [77, 45, 600, 0] #180
 lLhasa = [96, 43, 633, 0] #184
 #lAngkor = [102, 34, 802, 0] #201
+lVienna = [63, 49, 800, 0]
 lHanoi = [101, 37, 866, 0] #208
 lTucume = [24, 26, 900, 0] #211
 lKiev = [69, 52, 900, 0] #211
@@ -386,6 +387,7 @@ class Barbs:
                 #self.foundCity(lJelling, "Jelling", iGameTurn, 1, -1, -1)
                 if (gc.getPlayer(0).isPlayable()):  #late start condition
                         self.foundCity(iCeltia, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
+			self.foundCity(iIndependent, lVienna, "Wien", iGameTurn, 1, con.iLongbowman, 1)
                 else:
                         self.foundCity(iIndependent, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
                 #self.foundCity(lNidaros, "Nidaros", iGameTurn, 1, -1, -1)

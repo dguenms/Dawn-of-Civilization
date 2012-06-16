@@ -7881,7 +7881,7 @@ class CityNameManager:
                                                         pCity.GetCy().setHasRealBuilding((0), False) #palace
                         if (sName == 'Shash' or sName == 'Cheshih' or sName == 'Binkath'):
                                 city.setName('Chach', False)
-                        if (sName == 'Shenyang' or sName == "Shin'you"):
+                        if (sName == 'Shenyang' or sName == "Shin'you" or sName == 'Simiyan hoton'):
                                 city.setName('Mukden', False)
                         if (sName == 'Tbilisi' or sName == 'Tiphlis'):
                                 city.setName('Tiflis', False)

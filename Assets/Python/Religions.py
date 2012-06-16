@@ -224,6 +224,10 @@ class Religions:
 		if iGameTurn == getTurnForYear(100) - 5 + (utils.getSeed() % 10):
 			for i in range(3):
 				self.spreadReligion(self.selectRandomCityCiv(con.iChina), 1, iMissionary_Buddhist)
+				
+		# spread Confucianism to Korea
+		if iGameTurn == getTurnForYear(400) - 5 + (utils.getSeed() % 5):
+			self.spreadReligion(self.selectRandomCityCiv(con.iKorea), 1, iMissionary_Confucian)
 			
 
 

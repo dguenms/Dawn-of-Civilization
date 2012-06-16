@@ -39996,6 +39996,7 @@ BeginPlot
 	isWOfRiver
 	RiverNSDirection=0
 	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_HORSE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -40008,6 +40009,7 @@ BeginPlot
 	x=105,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
+	BonusType=BONUS_FUR
 	PlotType=2
 EndPlot
 BeginPlot

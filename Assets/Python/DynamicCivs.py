@@ -1088,7 +1088,7 @@ class DynamicCivs:
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_TANG")
 						return
-					elif iEra == iRenaissance:
+					elif tPlayer.isHasTech(con.iAstronomy):
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
 						return
 					elif iEra >= iIndustrial:
@@ -1669,7 +1669,7 @@ class DynamicCivs:
 			#	self.setLeader(iPlayer, con.iCixi)
 			#	return
 				
-			if iEra >= con.iRenaissance or bResurrected:
+			if tPlayer.isHasTech(con.iAstronomy) or bResurrected:
 				self.setLeader(iPlayer, con.iHongwu)
 				return
 				
