@@ -4594,7 +4594,7 @@ int CvCity::getCulturePercentAnger() const
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_PLAYER((PlayerTypes)iI).isMinorCiv() && iI != INDEPENDENT && iI != INDEPENDENT2)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() != getTeam())
 			{
