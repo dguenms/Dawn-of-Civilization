@@ -9395,7 +9395,7 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 	}
 
 	// Leoreth: absorb independent culture
-	if (eIndex != getOwnerINLINE() && (eIndex == INDEPENDENT || eIndex == INDEPENDENT2))
+	/*if (eIndex != getOwnerINLINE() && (eIndex == INDEPENDENT || eIndex == INDEPENDENT2))
 	{
 		return 0;
 	}
@@ -9404,9 +9404,9 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 		iMinorCulture += m_aiCulture[INDEPENDENT];
 
 	if (eIndex != INDEPENDENT2)
-		iMinorCulture += m_aiCulture[INDEPENDENT2];
+		iMinorCulture += m_aiCulture[INDEPENDENT2];*/
 
-	return (m_aiCulture[eIndex] + iMinorCulture) / 100;
+	return (m_aiCulture[eIndex]/* + iMinorCulture*/) / 100;
 }
 
 int CvCity::getCultureTimes100(PlayerTypes eIndex) const
