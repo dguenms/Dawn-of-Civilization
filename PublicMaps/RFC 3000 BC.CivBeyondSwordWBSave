@@ -108,52 +108,52 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_ASOKA
-	CivType=CIVILIZATION_INDIA                 
-	Team=1                 
-	PlayableCiv=1
-	StateReligion=RELIGION_HINDUISM
-	Handicap=HANDICAP_PRINCE                 
-EndPlayer
-BeginPlayer
 	LeaderType=LEADER_QIN_SHI_HUANG
 	CivType=CIVILIZATION_CHINA                 
-	Team=2                 
+	Team=1                 
 	PlayableCiv=1                 
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HAMMURABI
 	CivType=CIVILIZATION_BABYLONIA                 
-	Team=3                 
+	Team=2               
 	PlayableCiv=1                 
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_PERICLES
 	CivType=CIVILIZATION_GREECE                 
-	Team=4                 
+	Team=3                
 	PlayableCiv=1   
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON            
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_CYRUS
-	CivType=CIVILIZATION_PERSIA                 
-	Team=5                 
-	PlayableCiv=1                  
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM               
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
-	StateReligion=RELIGION_ZOROASTRIANISM
+	LeaderType=LEADER_ASOKA
+	CivType=CIVILIZATION_INDIA                 
+	Team=4                
+	PlayableCiv=1
+	StateReligion=RELIGION_HINDUISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HANNIBAL
 	CivType=CIVILIZATION_CARTHAGE                 
-	Team=6                 
+	Team=5                
 	PlayableCiv=1                                 
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON 
+	Handicap=HANDICAP_PRINCE                 
+EndPlayer
+BeginPlayer
+	LeaderType=LEADER_CYRUS
+	CivType=CIVILIZATION_PERSIA                 
+	Team=6                 
+	PlayableCiv=1                  
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM               
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	StateReligion=RELIGION_ZOROASTRIANISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -166,19 +166,9 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_TOKUGAWA
-	CivType=CIVILIZATION_JAPAN                 
-	Team=8                 
-	PlayableCiv=1                    
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM               
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
-	StateReligion=RELIGION_BUDDHISM
-	Handicap=HANDICAP_PRINCE                 
-EndPlayer
-BeginPlayer
 	LeaderType=LEADER_ZARA_YAQOB
 	CivType=CIVILIZATION_ETHIOPIA                 
-	Team=9                 
+	Team=8                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	               
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
@@ -188,7 +178,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_WANGKON
 	CivType=CIVILIZATION_KOREA
-	Team=10
+	Team=9
 	PlayableCiv=1                   
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM               
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
@@ -198,7 +188,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_PACAL
 	CivType=CIVILIZATION_MAYA                 
-	Team=11                 
+	Team=10               
 	PlayableCiv=1                                 
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR         
 	Handicap=HANDICAP_PRINCE                 
@@ -206,7 +196,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM                 
-	Team=12                 
+	Team=11                 
 	PlayableCiv=1     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
@@ -214,6 +204,16 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
 	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_SUBJUGATION
 	StateReligion=RELIGION_CHRISTIANITY
+	Handicap=HANDICAP_PRINCE                 
+EndPlayer
+BeginPlayer
+	LeaderType=LEADER_TOKUGAWA
+	CivType=CIVILIZATION_JAPAN                 
+	Team=12                 
+	PlayableCiv=1                    
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM               
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -325,22 +325,9 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_WILLEM_VAN_ORANJE
-	CivType=CIVILIZATION_NETHERLANDS                 
-	Team=22	
-	PlayableCiv=1                          
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION	
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
-	StateReligion=RELIGION_CHRISTIANITY                         
-	Handicap=HANDICAP_PRINCE                 
-EndPlayer
-BeginPlayer
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI                 
-	Team=23                 
+	Team=22                 
 	PlayableCiv=1              
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR             
@@ -349,7 +336,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL                 
-	Team=24                 
+	Team=23                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION	
@@ -362,7 +349,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA                 
-	Team=25                 
+	Team=24                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
@@ -372,7 +359,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_CAVOUR
 	CivType=CIVILIZATION_ITALY
-	Team=26
+	Team=25
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
@@ -385,7 +372,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL                 
-	Team=27               
+	Team=26               
 	PlayableCiv=1                        
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR              
@@ -394,7 +381,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC                 
-	Team=28                
+	Team=27                
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR                    
@@ -403,7 +390,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_AKBAR
 	CivType=CIVILIZATION_MUGHALS
-	Team=29
+	Team=28
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
@@ -416,7 +403,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN                 
-	Team=30                
+	Team=29                
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM	
@@ -429,7 +416,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_NARESUAN
 	CivType=CIVILIZATION_THAILAND
-	Team=31
+	Team=30
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
@@ -438,6 +425,19 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_PRINCE
+EndPlayer
+BeginPlayer
+	LeaderType=LEADER_WILLEM_VAN_ORANJE
+	CivType=CIVILIZATION_NETHERLANDS                 
+	Team=31	
+	PlayableCiv=1                          
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_URBANIZATION	
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_CHRISTIANITY                         
+	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FREDERICK
