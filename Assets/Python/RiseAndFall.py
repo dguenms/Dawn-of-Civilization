@@ -172,8 +172,8 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (3, 3, 1, 2, 3, 2, 2, 1, 5, 1, 0, 0, 0, 9, 8, 7, 6, 5, 4, 3, 2, 2, 9, 2, 3, 3, 2, 1, 0, 0, 0, 0, 0, 0)
-                                                                                   #ma po in it mo az mu tu th ge am
+tDifference = (40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40)
+              #eg  in  ch  ba  gr  pe  ph  ro  ja  et  ko  ma  by  vi  ar  kh  in  sp  fr  en  hr  ru  ne  ma  po  in  it  mo  az  mu  tu  th  ge  am
 
 # starting locations coordinates
 tCapitals = con.tCapitals

@@ -24,22 +24,26 @@ typedef list<char*> LISTCHAR;
 #define NUM_BUILDINGTYPES_PLAGUE	(128)
 
 #define NUM_MAJOR_PLAYERS		(34)
+#define NUM_PL					(34)
+#define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
+#define NUM_CIVS				(40)
+
 
 enum MyCivs
 {
  EGYPT,
- INDIA,
  CHINA,
  BABYLONIA,
  GREECE,
- PERSIA,
+ INDIA,
  CARTHAGE,
+ PERSIA,
  ROME,
- JAPAN,
  ETHIOPIA,
  KOREA,
  MAYA,
  BYZANTIUM,
+ JAPAN,
  VIKING,
  ARABIA,
  KHMER,
@@ -49,7 +53,6 @@ enum MyCivs
  ENGLAND,
  HOLY_ROME,
  RUSSIA,
- NETHERLANDS,
  MALI,
  PORTUGAL,
  INCA,
@@ -59,6 +62,7 @@ enum MyCivs
  MUGHALS,
  TURKEY,
  THAILAND,
+ NETHERLANDS,
  GERMANY,
  AMERICA,
  INDEPENDENT,
@@ -419,56 +423,56 @@ enum ECSArtStyles
 extern int startingTurn[];
 extern int startingTurnYear[]; // edead
 extern int fallTurnYear[];
-extern char loadingTime[40][4];
-extern char loadingTime600AD[40][4];
-extern char startingYear[40][6];
-extern bool startingEra[40];
-extern char startingYear600AD[40][6];
-extern bool startingEra600AD[40];
+extern char loadingTime[NUM_CIVS][4];
+extern char loadingTime600AD[NUM_CIVS][4];
+extern char startingYear[NUM_CIVS][6];
+extern bool startingEra[NUM_CIVS];
+extern char startingYear600AD[NUM_CIVS][6];
+extern bool startingEra600AD[NUM_CIVS];
 
-extern int takenTiles[34];
-extern int distanceSubtrahend[34];
-extern int distanceSubtrahendAstronomy[34];
-extern int distanceMultiply[34];
-extern int distanceMultiplyAstronomy[34];
-extern int compactEmpireModifierArray[34];
-extern int compactEmpireModifierAstronomy[34];
-extern int targetCityValueDivisor[34];
+extern int takenTiles[NUM_PL];
+extern int distanceSubtrahend[NUM_PL];
+extern int distanceSubtrahendAstronomy[NUM_PL];
+extern int distanceMultiply[NUM_PL];
+extern int distanceMultiplyAstronomy[NUM_PL];
+extern int compactEmpireModifierArray[NUM_PL];
+extern int compactEmpireModifierAstronomy[NUM_PL];
+extern int targetCityValueDivisor[NUM_PL];
 
-extern int eraModifierInit[34];
-extern int eraModifierInitAstronomy[34];
-extern int cultureModifier[34];
+extern int eraModifierInit[NUM_PL];
+extern int eraModifierInitAstronomy[NUM_PL];
+extern int cultureModifier[NUM_PL];
 
-extern int unitCostModifier[34];
-extern int researchModifier[34];
-extern int distanceMaintenanceModifier[34];
-extern int numMaintenanceModifier[34];
-extern int civicUpkeepModifier[34];
-extern int healthMultiplier[34];
+extern int unitCostModifier[NUM_PL];
+extern int researchModifier[NUM_PL];
+extern int distanceMaintenanceModifier[NUM_PL];
+extern int numMaintenanceModifier[NUM_PL];
+extern int civicUpkeepModifier[NUM_PL];
+extern int healthMultiplier[NUM_PL];
 
-extern int startingEraFound[34];
-extern int startingEraFound600AD[34];
-extern int startingEraFoundAstronomy[34];
-extern int startingEraRespawn[34];
-extern int unitCostModifier2[34];
-extern int wonderCostModifier[34];
-extern int buildingCostModifier[34];
-extern int inflationRateModifier[34];
-extern int greatPeopleThresholdArray[34];
-extern int currentEra[34];
-extern int currentEra600AD[34];
-extern int growthThreshold[34];
+extern int startingEraFound[NUM_PL];
+extern int startingEraFound600AD[NUM_PL];
+extern int startingEraFoundAstronomy[NUM_PL];
+extern int startingEraRespawn[NUM_PL];
+extern int unitCostModifier2[NUM_PL];
+extern int wonderCostModifier[NUM_PL];
+extern int buildingCostModifier[NUM_PL];
+extern int inflationRateModifier[NUM_PL];
+extern int greatPeopleThresholdArray[NUM_PL];
+extern int currentEra[NUM_PL];
+extern int currentEra600AD[NUM_PL];
+extern int growthThreshold[NUM_PL];
 
 //extern int militaryBonus[2][18];
-extern char uniquePower[40][2][16];
-extern char uniqueGoals[40][3][18];
-extern char rating[40][6][15];
+extern char uniquePower[NUM_CIVS][2][16];
+extern char uniqueGoals[NUM_CIVS][3][18];
+extern char rating[NUM_CIVS][6][15];
 
 extern int turnPlayed[40]; // modify for new player
 extern int civSpreadFactor[40][9]; // s.o.
-extern int borders[34][34];
+extern int borders[NUM_PL][NUM_PL];
 extern int regionMap[68][124];
-extern int settlersMaps[2][34][68][124];
-extern int warMaps[2][34][68][124];
+extern int settlersMaps[2][NUM_PL][68][124];
+extern int warMaps[2][NUM_PL][68][124];
 
 
