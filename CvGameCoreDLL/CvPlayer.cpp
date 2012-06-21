@@ -7128,6 +7128,13 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 	}
 	//Rhye - end
 
+	// Leoreth: cheaper palace in earlier eras, more expensive later
+	if (eBuilding == GC.getInfoTypeForString("BUILDING_PALACE"))
+	{
+		// half in ancient, the same in medieval, +50% in industrial, +100% in future
+		iProductionNeeded = iProductionNeeded * (2 + getCurrentEra()) / 4;
+	}
+
 	return std::max(1, iProductionNeeded);
 }
 

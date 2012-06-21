@@ -17,17 +17,17 @@ int startingTurnYear[NUM_PL] = {-3000, -3000, -3000, -1600, -1500, -1200, -844, 
 
 int fallTurnYear[NUM_PL] = {-343, 1271, -539, -146, 600, -146, 651, 476, 960, 1255, 900, 1204, 2020, 1300, 1258, 1200, 1500, 2020, 2020, 2020, 1648, 2020, 1600, 2020, 1533, 2020, 1368, 1521, 1725, 2020, 2020, 2020, 2020, 2020};
 
-//Alphabetical order:		  	  AME	ARA		AZT		BAB		BYZ		CAR		XXX		CHI		EGY		ENG		ETH		FRA		GER		GRE		HRE		INC		IND		INO		IRA		ITA		JAP		KHM		KOR		MAL		MAY		MON		MUG		XXX		HOL		TUR		PER		POR		ROM		RUS		SEL		SPA		XXX		THA		VIK		XXX
+//Alphabetical order:		  			AME		ARA		AZT		BAB		BYZ		CAR		XXX		CHI		EGY		ENG		ETH		FRA		GER		GRE		HRE		INC		IND		INO		IRA		ITA		JAP		KHM		KOR		MAL		MAY		MON		MUG		XXX		HOL		TUR		PER		POR		ROM		RUS		SEL		SPA		XXX		THA		VIK		XXX
 char loadingTime[NUM_CIVS][4] =       {"60",	"20",	"35",	"0",	"15",	"5",	"X",	"0",	"0",	"30",	"10",   "25",	"50",	"2",	"30",	"35",	"2",	"15",	"35",	"35",	"20",	"20",	"15",	"35",	"15",	"35",	"35",	"X",	"40",	"35",	"5",	"35",	"5",	"30",	"X",	"25",	"X",	"35",	"20",	"X"};
 char loadingTime600AD[NUM_CIVS][4] =  {"30",	"2",	"15",	"0",	"0",	"0",	"X",	"0",	"0",	"10",	"0",    "5",	"25",	"0",	"10",	"15",	"0",	"2",	"20",	"15",	"0",	"2",	"0",	"15",	"0",	"15",	"15",	"X",	"20",	"15",	"0",	"15",	"0",	"10",	"X",	"5",	"X",	"15",	"0",	"X"};
 char startingYear[NUM_CIVS][6] =      {"1775 ","620 ","1200 ","3000 ","330 ",	"1200 ","XXX ",	"3000 ","3000 ","820 ",	"295 ", "750 ",	"1700 ","1600 ","840 ",	"1150 ","1500 ","700 ", "1500",	"1167 ","525 ",	"660 ",	"50 ",	"980 ",	"65 ",	"1190 ","1206 ","XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"545 ",	"XXX "};
-bool startingEra[NUM_CIVS] =		    {true,	true,	true,	false,	true,	false,	false,	false,	false,	true,	false,   true,	true,	false,	true,	true,	false,	true,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
+bool startingEra[NUM_CIVS] =		  {true,	true,	true,	false,	true,	false,	false,	false,	false,	true,	false,   true,	true,	false,	true,	true,	false,	true,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
 char startingYear600AD[NUM_CIVS][6] = {"1775 ","620 ","1200 ","3000 ","600 ",	"1200 ","XXX ",	"600 ",	"3000 ","820 ",	"295 ", "750 ",	"1700 ","1600 ","840 ",	"1150 ","1500 ","700 ",	"1500 ","1167 ","600 ",	"660 ",	"600 ",	"980 ",	"65 ",	"1190 ","1206 ",	"XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"600 ",	"XXX "};
 bool startingEra600AD[NUM_CIVS] =		{true,	true,	true,	false,	true,	false,	false,	true,	false,	true,	false,   true,	true,	false,	true,	true,	false,	true,	true,	true,	true,	true,	true,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
 
 //Leoreth: relocate most civ modifiers here (respawns like Italy not included!)
 // CvPlayerAI.cpp
-//										    EGY	CHI	BAB	GRE	IND CAR PER ROM	ETH	KOR	MAY BYZ JAP VIK ARA	KHM INO SPA FRA ENG HRE RUS MAL POR INC ITA MON AZT MUG	TUR THA HOL GER AME
+//											   EGY CHI BAB GRE IND CAR PER ROM ETH KOR MAY BYZ JAP VIK ARA KHM INO SPA FRA ENG HRE RUS MAL POR INC ITA MON AZT MUG TUR THA HOL GER AME
 int takenTiles[NUM_PL] =					{	13, 13, 14, 13, 13, 12, 13, 13, 13, 18, 12, 10, 13, 13, 12, 13, 13, 13, 13, 13, 12,  7, 10, 15, 10, 18, 10, 13, 15, 13, 13, 15, 12, 13 }; // default: 13
 int distanceSubtrahend[NUM_PL] =			{	 4,  4,  3,  3,  3,  4,  4,  3,  4,  5,  3,  3,  3,  4,  4,  4,  4,  3,  3,  3,  3,  5,  3,  4,  3,  5,  4,  4,  4,  3,  4,  4,  3,  5 }; // default: 4
 int distanceSubtrahendAstronomy[NUM_PL] =	{	 4,  4,  3,  3,  3,  4,  4,  3,  4,  5,  3,  3,  3,  4,  4,  4,  4,  4,  4,  4,  4,  5,  3,  4,  3,  5,  4,  4,  4,  3,  4,  4,  4,  5 };
@@ -38,13 +38,13 @@ int compactEmpireModifierAstronomy[NUM_PL]= {	40, 80, 40, 10, 20, 20, 40, 30, 40
 int targetCityValueDivisor[NUM_PL] =		{  100,100,100, 50,100,100,100, 33, 66,100,100,100,100, 66, 66,100,100, 33, 33, 33, 33, 33,100, 33,100,100, 10,100,100,100,100, 33, 33, 33 }; // default: 100
 
 // CvCity.cpp
-//											EGY	CHI	BAB	GRE	IND CAR PER ROM	ETH	KOR	MAY BYZ JAP VIK ARA	KHM INO SPA FRA ENG HRE RUS MAL POR INC ITA MON AZT	MUG TUR THA HOL GER AME
+//												EGY	CHI	BAB	GRE	IND CAR PER ROM	ETH	KOR	MAY BYZ JAP VIK ARA	KHM INO SPA FRA ENG HRE RUS MAL POR INC ITA MON AZT	MUG TUR THA HOL GER AME
 int eraModifierInit[NUM_PL] =				{    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  3 };
 int eraModifierInitAstronomy[NUM_PL] =		{	 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  1,  2,  2,  3,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  3,  3 };
 int cultureModifier[NUM_PL] =				{   90, 80, 80,100, 80,100,100,100, 90, 50,100,100, 90,130,110,120,120,125,160,130,128,130,130,147,140,150,135,140,125,150,130,165,150,165 }; // default: 40
 
 // CvHandicapInfos.cpp
-//										   EGY CHI BAB GRE IND CAR PER ROM ETH KOR MAY BYZ JAP VIK ARA KHM INO SPA FRA ENG HRE RUS MAL POR INC ITA MON AZT MUG TUR THA HOL GER AME
+//											   EGY CHI BAB GRE IND CAR PER ROM ETH KOR MAY BYZ JAP VIK ARA KHM INO SPA FRA ENG HRE RUS MAL POR INC ITA MON AZT MUG TUR THA HOL GER AME
 int unitCostModifier[NUM_PL] =				{  135,120,120,110,135,125,100,110,113,100,110,110,113, 90,105, 90, 90,110, 97,100, 95, 75, 95, 93,100,100, 75, 95, 110,80, 90, 90,  0, 75 }; //Germany for debug reasons (75 before)
 int researchModifier[NUM_PL] =				{  135,127,125,135,125, 90,100,135,110, 90,115,140, 98, 70,115, 90,100, 73, 72, 72, 74, 63,110, 75, 79, 72, 76, 87, 120,75, 80, 63, 58, 58 };
 int distanceMaintenanceModifier[NUM_PL] =	{  100,100,110, 90,100, 65, 90, 40,100,120,100, 80, 95, 70, 70, 80, 80, 55, 50,  0, 70, 50, 80, 50, 60, 70, 48, 70, 70, 60, 80, 45, 60, 60 }; //includes English UP
@@ -53,7 +53,7 @@ int civicUpkeepModifier[NUM_PL] =			{  110,105,100, 80,102, 70, 70, 75, 80, 80, 
 int healthMultiplier[NUM_PL] =				{    2,  1,  1,  4,  1,  7,  5,  7,  6,  5,  6,  6,  3,  6,  3,  6,  6,  6,  4,  6,  6,  6,  4,  6,  4,  6,  6,  4,  6,  6,  6,  6,  7,  4 }; //don't forget India's -1
 
 // CvPlayer.cpp
-//											EGY	CHI	BAB	GRE	IND PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG HRE RUS HOL MAL POR INC ITA MON AZT MUG TUR THA GER AME
+//											    EGY	CHI	BAB	GRE	IND PER CAR ROM	JAP	ETH	KOR	MAY BYZ VIK ARA	KHM INO SPA FRA ENG HRE RUS HOL MAL POR INC ITA MON AZT MUG TUR THA GER AME
 int startingEraFound[NUM_PL] =				{    0,  0,  0,  1,  0,  1,  1,  1,  2,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  4,  3,  3,  3,  2,  3,  3,  3,  3,  3,  4,  4 };		//in found and canConstruct
 int startingEraFound600AD[NUM_PL] =			{    0,  2,  0,  1,  0,  1,  1,  1,  2,  1,  2,  1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  4,  3,  3,  3,  2,  3,  3,  3,  3,  3,  4,  4 };
 int startingEraFoundAstronomy[NUM_PL] =		{    0,  2,  0,  1,  0,  1,  1,  1,  2,  1,  2,  1,  1,  2,  2,  2,  2,  3,  3,  4,  3,  3,  4,  3,  3,  3,  3,  3,  3,  3,  3,  3,  4,  4 };

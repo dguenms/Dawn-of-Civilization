@@ -261,6 +261,8 @@ public:
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 
+	int getRegionID();
+
 private:
 	CvPlot* m_pPlot;
 };
