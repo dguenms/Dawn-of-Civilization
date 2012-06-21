@@ -1051,3 +1051,9 @@ void CyPlot::setScriptData(std::string szNewValue)
 	if (m_pPlot)
 		m_pPlot->setScriptData(szNewValue.c_str());
 }
+
+//Leoreth
+int CyPlot::getRegionID()
+{
+	return m_pPlot ? m_pPlot->getRegionID() : -1;
+}

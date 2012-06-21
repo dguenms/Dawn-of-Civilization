@@ -425,6 +425,9 @@ def getRandomMercenaryName(iCiv, iUnitType, bContractOut): #Rhye
 			if iRegion not in regionList:
 				regionList.append(iRegion)
 				
+		if len(cityList) == 0:
+			regionList.append(gc.getMap().plot(con.tCapitals[0][iCiv][0], con.tCapitals[0][iCiv][1]).getRegionID())
+				
 		if set(regionList) & con.mercRegions[con.iArea_NorthAmerica]:
 			mercenaryPool.extend(mercenaryNamesNorthAmerica)
 		if set(regionList) & set([con.rMesoamerica, con.rCaribbean]):
@@ -456,10 +459,12 @@ def getRandomMercenaryName(iCiv, iUnitType, bContractOut): #Rhye
 				mercenaryPool.extend(mercenaryNamesMiddleEastMedieval)
 			if set(regionList) & set([con.rIndonesia, con.rIndochina]):
 				mercenaryPool.extend(mercenaryNamesSouthEastAsiaMedieval)
-				
-		iNameID = mercenaryPool[gc.getGame().getMapRand().get(len(mercenaryPool), 'random mercenary name')]
 		
-		firstTempName = mercenaryNames[iNameID]
+		if len(mercenaryPool) > 0:
+			iNameID = mercenaryPool[gc.getGame().getMapRand().get(len(mercenaryPool), 'random mercenary name')]
+			firstTempName = mercenaryNames[iNameID]
+		else:
+			firstTempName = ""
 		
 		
 		firstName = CyTranslator().getText(firstTempName, ())

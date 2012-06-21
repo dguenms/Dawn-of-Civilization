@@ -255,5 +255,8 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 
 		.def("getScriptData", &CyPlot::getScriptData, "str () - Get stored custom data")
 		.def("setScriptData", &CyPlot::setScriptData, "void (str) - Set stored custom data")
+
+		//Leoreth
+		.def("getRegionID", &CyPlot::getRegionID, "int ()")
 	;
 }

@@ -329,7 +329,7 @@ class Victory:
                 sd.scriptDict['lGoals'][i][j] = iNewValue
 		
 		if iNewValue == 0 and utils.getHumanID() == i:
-			utils.debugTextPopup(localText.getText("TXT_KEY_VICTORY_VICTORY_GOAL_FAILED_ANNOUNCE", (j+1,)))
+			utils.debugTextPopup(localText.getText("TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE", (j+1,)))
 
         def getReligionFounded( self, iCiv ):
                 return sd.scriptDict['lReligionFounded'][iCiv]
