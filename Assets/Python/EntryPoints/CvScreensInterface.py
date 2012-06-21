@@ -1067,23 +1067,23 @@ def getUHVTileInfo(argsList):
 	iPlayer = argsList[2]
 	
 	if iPlayer == con.iGreece:
-		tlx, tly = con.tCoreAreasTL[0][con.iEgypt]
-		brx, bry = con.tCoreAreasBR[0][con.iEgypt]
+		tlx, tly = con.tNormalAreasTL[0][con.iEgypt]
+		brx, bry = con.tNormalAreasBR[0][con.iEgypt]
 		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iEgypt]:
 			return 0
 			
-		tlx, tly = con.tCoreAreasTL[0][con.iCarthage]
-		brx, bry = con.tCoreAreasBR[0][con.iCarthage]
+		tlx, tly = con.tNormalAreasTL[0][con.iCarthage]
+		brx, bry = con.tNormalAreasBR[0][con.iCarthage]
 		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iCarthage]:
 			return 1
 			
-		tlx, tly = con.tCoreAreasTL[0][con.iBabylonia]
-		brx, bry = con.tCoreAreasBR[0][con.iBabylonia]
+		tlx, tly = con.tNormalAreasTL[0][con.iBabylonia]
+		brx, bry = con.tNormalAreasBR[0][con.iBabylonia]
 		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iBabylonia]:
 			return 2
 			
-		tlx, tly = con.tCoreAreasTL[0][con.iPersia]
-		brx, bry = con.tCoreAreasBR[0][con.iPersia]
+		tlx, tly = con.tNormalAreasTL[0][con.iPersia]
+		brx, bry = con.tNormalAreasBR[0][con.iPersia]
 		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iPersia]:
 			return 3
 			
@@ -1275,29 +1275,29 @@ def getUHVTileInfo(argsList):
 			return 35
 			
 	elif iPlayer == con.iGermany:
-		tlx, tly = con.tCoreAreasTL[0][con.iFrance]
-		brx, bry = con.tCoreAreasBR[0][con.iFrance]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iFrance]:
+		tlx, tly = con.tNormalAreasTL[0][con.iFrance]
+		brx, bry = con.tNormalAreasBR[0][con.iFrance]
+		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iFrance]:
 			return 36
 			
-		tlx, tly = con.tCoreAreasTL[0][con.iItaly]
-		brx, bry = con.tCoreAreasBR[0][con.iItaly]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iItaly]:
+		tlx, tly = con.tNormalAreasTL[0][con.iItaly]
+		brx, bry = con.tNormalAreasBR[0][con.iItaly]
+		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iItaly]:
 			return 37
 			
-		tlx, tly = con.tCoreAreasTL[0][con.iRussia]
-		brx, bry = con.tCoreAreasBR[0][con.iRussia]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iRussia]:
+		tlx, tly = con.tNormalAreasTL[0][con.iRussia]
+		brx, bry = con.tNormalAreasBR[0][con.iRussia]
+		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iRussia]:
 			return 38
 			
-		tlx, tly = con.tCoreAreasTL[0][con.iEngland]
-		brx, bry = con.tCoreAreasBR[0][con.iEngland]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iEngland]:
+		tlx, tly = con.tNormalAreasTL[0][con.iEngland]
+		brx, bry = con.tNormalAreasBR[0][con.iEngland]
+		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iEngland]:
 			return 39
 			
-		tlx, tly = con.tCoreAreasTL[0][con.iVikings]
-		brx, bry = con.tCoreAreasBR[0][con.iVikings]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iVikings]:
+		tlx, tly = con.tNormalAreasTL[0][con.iVikings]
+		brx, bry = con.tNormalAreasBR[0][con.iVikings]
+		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iVikings]:
 			return 40
 			
 	elif iPlayer == con.iRussia:

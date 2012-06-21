@@ -1477,7 +1477,7 @@ class Victory:
 						if self.getRussianProjects(0) == -1:
 							self.setGoal(iRussia, 1, 0)
 							
-				if teamRussia.isHasTech(con.iRailroad) and self.getGoal(iRussia) == -1 and self.getRussianProjects(0) == -1:
+				if teamRussia.isHasTech(con.iRailroad) and self.getGoal(iRussia, 1) == -1 and self.getRussianProjects(0) == -1:
 					bRailroad = False
 					for tCoast in lSiberianCoast:
 						if self.isConnectedByRailroad(iRussia, con.tCapitals[0][iRussia][0], con.tCapitals[0][iRussia][1], tCoast[0], tCoast[1]):
