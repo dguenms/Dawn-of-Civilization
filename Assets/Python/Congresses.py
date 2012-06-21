@@ -969,11 +969,11 @@ class Congresses:
                                 if (reqCity.getNumWorldWonders() > 0):
                                         iResult -= 2*reqCity.getNumWorldWonders()                                
                                 #factor 13 - French UP
-                                if (iCiv in lCivGroups[0]):
-                                        if (iActiveCiv == iFrance):
-                                                iResult += 6
-                                        if (iOwner == iFrance):
-                                                iResult -= 9
+                                #if (iCiv in lCivGroups[0]):
+                                #        if (iActiveCiv == iFrance):
+                                #                iResult += 6
+                                #        if (iOwner == iFrance):
+                                #                iResult -= 9
 
                                 #factor - master and vassal                                                
                                 if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iActiveCiv):

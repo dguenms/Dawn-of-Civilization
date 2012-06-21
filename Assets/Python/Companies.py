@@ -127,7 +127,7 @@ class Companies:
 		# State Property
 		if owner.getCivics(3) == con.iStateProperty:
 			bOtherCorp = False
-			for iLoopCorporation in range(con.iNumCorporations):
+			for iLoopCorporation in range(iNumCompanies):
 				if city.isHasCorporation(iLoopCorporation) and iLoopCorporation != iCompany:
 					bOtherCorp = True
 					break
