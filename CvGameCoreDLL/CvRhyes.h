@@ -26,7 +26,7 @@ typedef list<char*> LISTCHAR;
 #define NUM_MAJOR_PLAYERS		(34)
 #define NUM_PL					(34)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
-#define NUM_CIVS				(40)
+#define NUM_CIVS				(46)
 
 
 enum MyCivs
@@ -468,8 +468,8 @@ extern char uniquePower[NUM_CIVS][2][16];
 extern char uniqueGoals[NUM_CIVS][3][18];
 extern char rating[NUM_CIVS][6][15];
 
-extern int turnPlayed[40]; // modify for new player
-extern int civSpreadFactor[40][9]; // s.o.
+extern int turnPlayed[NUM_PL+NUM_MINORS]; // modify for new player
+extern int civSpreadFactor[NUM_PL+NUM_MINORS][9]; // s.o.
 extern int borders[NUM_PL][NUM_PL];
 extern int regionMap[68][124];
 extern int settlersMaps[2][NUM_PL][68][124];

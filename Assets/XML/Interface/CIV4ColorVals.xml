@@ -1088,5 +1088,33 @@
 			<fBlue>0.941</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MIDDLE_PINK</Type>
+			<fRed>0.78</fRed>
+			<fGreen>0.04</fGreen>
+			<fBlue>0.24</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MIDDLE_PINK_TEXT</Type>
+			<fRed>1.00</fRed>
+			<fGreen>0.12</fGreen>
+			<fBlue>0.4</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_KHAKI</Type>
+			<fRed>0.20</fRed>
+			<fGreen>0.25</fGreen>
+			<fBlue>0.05</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_KHAKI_TEXT</Type>
+			<fRed>0.20</fRed>
+			<fGreen>0.25</fGreen>
+			<fBlue>0.05</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

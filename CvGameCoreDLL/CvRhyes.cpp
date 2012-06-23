@@ -17,13 +17,13 @@ int startingTurnYear[NUM_PL] = {-3000, -3000, -3000, -1600, -1500, -1200, -844, 
 
 int fallTurnYear[NUM_PL] = {-343, 1271, -539, -146, 600, -146, 651, 476, 960, 1255, 900, 1204, 2020, 1300, 1258, 1200, 1500, 2020, 2020, 2020, 1648, 2020, 1600, 2020, 1533, 2020, 1368, 1521, 1725, 2020, 2020, 2020, 2020, 2020};
 
-//Alphabetical order:		  			AME		ARA		AZT		BAB		BYZ		CAR		XXX		CHI		EGY		ENG		ETH		FRA		GER		GRE		HRE		INC		IND		INO		IRA		ITA		JAP		KHM		KOR		MAL		MAY		MON		MUG		XXX		HOL		TUR		PER		POR		ROM		RUS		SEL		SPA		XXX		THA		VIK		XXX
-char loadingTime[NUM_CIVS][4] =       {"60",	"20",	"35",	"0",	"15",	"5",	"X",	"0",	"0",	"30",	"10",   "25",	"50",	"2",	"30",	"35",	"2",	"15",	"35",	"35",	"20",	"20",	"15",	"35",	"15",	"35",	"35",	"X",	"40",	"35",	"5",	"35",	"5",	"30",	"X",	"25",	"X",	"35",	"20",	"X"};
-char loadingTime600AD[NUM_CIVS][4] =  {"30",	"2",	"15",	"0",	"0",	"0",	"X",	"0",	"0",	"10",	"0",    "5",	"25",	"0",	"10",	"15",	"0",	"2",	"20",	"15",	"0",	"2",	"0",	"15",	"0",	"15",	"15",	"X",	"20",	"15",	"0",	"15",	"0",	"10",	"X",	"5",	"X",	"15",	"0",	"X"};
-char startingYear[NUM_CIVS][6] =      {"1775 ","620 ","1200 ","3000 ","330 ",	"1200 ","XXX ",	"3000 ","3000 ","820 ",	"295 ", "750 ",	"1700 ","1600 ","840 ",	"1150 ","1500 ","700 ", "1500",	"1167 ","525 ",	"660 ",	"50 ",	"980 ",	"65 ",	"1190 ","1206 ","XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"545 ",	"XXX "};
-bool startingEra[NUM_CIVS] =		  {true,	true,	true,	false,	true,	false,	false,	false,	false,	true,	false,   true,	true,	false,	true,	true,	false,	true,	true,	true,	true,	true,	false,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
-char startingYear600AD[NUM_CIVS][6] = {"1775 ","620 ","1200 ","3000 ","600 ",	"1200 ","XXX ",	"600 ",	"3000 ","820 ",	"295 ", "750 ",	"1700 ","1600 ","840 ",	"1150 ","1500 ","700 ",	"1500 ","1167 ","600 ",	"660 ",	"600 ",	"980 ",	"65 ",	"1190 ","1206 ",	"XXX ",	"1500 ","1280 ","850 ",	"1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"600 ",	"XXX "};
-bool startingEra600AD[NUM_CIVS] =		{true,	true,	true,	false,	true,	false,	false,	true,	false,	true,	false,   true,	true,	false,	true,	true,	false,	true,	true,	true,	true,	true,	true,	true,	true,	true,	true,	false,	true,	true,	false,	true,	false,	true,	true,	true,	false,	true,	true,	false};   //AD or BC
+//Alphabetical order:		  			AME		ARA		AZT		BAB		BYZ		CAR		XXX		CHI		EGY		ENG		ETH		FRA		GER		GRE		HAR     HRE		INC		IND		INO		IRA		ITA		JAP		KHM		KON     KOR		MAL		MAY		MON		MOO     MUG		XXX		HOL		TUR		PER		POL     POR		ROM		RUS		SEL		SPA		XXX		TAM     THA		TIB     VIK		XXX
+char loadingTime[NUM_CIVS][4] =       {"60",	"20",	"35",	"0",	"15",	"5",	"X",	"0",	"0",	"30",	"10",   "25",	"50",	"2",	"0",    "30",	"35",	"2",	"15",	"35",	"35",	"20",	"20",	"35",   "15",	"35",	"15",	"35",	"15",   "35",	"X",	"40",	"35",	"5",	"30",   "35",	"5",	"30",	"X",	"25",	"X",	"35",	"10",   "20",   "20",	"X"};
+char loadingTime600AD[NUM_CIVS][4] =  {"30",	"2",	"15",	"0",	"0",	"0",	"X",	"0",	"0",	"10",	"0",    "5",	"25",	"0",	"0",    "10",	"15",	"0",	"2",	"20",	"15",	"0",	"2",	"15",   "0",	"15",	"0",	"15",	"2",    "15",	"X",	"20",	"15",	"0",	"15",   "15",	"0",	"10",	"X",	"5",	"X",	"15",	"10",   "2",    "0",	"X"};
+char startingYear[NUM_CIVS][6] =      {"1775 ","620 ","1200 ","3000 ","330 ",	"1200 ","XXX ",	"3000 ","3000 ","820 ",	"295 ", "750 ",	"1700 ","1600 ","3000 ","840 ",	"1150 ","1500 ","700 ", "1500",	"1167 ","525 ",	"660 ",	"1390 ","50 ",	"980 ",	"65 ",	"1190 ","711 ", "1206 ","XXX ",	"1500 ","1280 ","850 ",	"1025 ","1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"300 ", "630 ", "545 ",	"XXX "};
+bool startingEra[NUM_CIVS] =		  {true,	true,	true,	false,	true,	false,	false,	false,	false,	true,	false,   true,	true,	false,	false,  true,	true,	false,	true,	true,	true,	true,	true,	true,   false,	true,	true,	true,	true,   true,	false,	true,	true,	false,	true,   true,	false,	true,	true,	true,	false,	true,	false,  true,   true,	false};   //AD or BC
+char startingYear600AD[NUM_CIVS][6] = {"1775 ","620 ","1200 ","3000 ","600 ",	"1200 ","XXX ",	"600 ",	"3000 ","820 ",	"295 ", "750 ",	"1700 ","1600 ","3000 ","840 ",	"1150 ","1500 ","700 ",	"1500 ","1167 ","600 ",	"660 ",	"1390 ","600 ",	"980 ",	"65 ",	"1190 ","711 ","1206 ",	"XXX ",	"1500 ","1280 ","850 ",	"1025 ","1130 ","760 ",	"860 ",	"XXX ",	"720 ",	"XXX ","1350 ",	"300 ", "630 ", "600 ",	"XXX "};
+bool startingEra600AD[NUM_CIVS] =		{true,	true,	true,	false,	true,	false,	false,	true,	false,	true,	false,   true,	true,	false,	false,  true,	true,	false,	true,	true,	true,	true,	true,	true,   true,	true,	true,	true,	true,   true,	false,	true,	true,	false,	true,   true,	false,	true,	true,	true,	false,	true,	false,  true,   true,	false};   //AD or BC
 
 //Leoreth: relocate most civ modifiers here (respawns like Italy not included!)
 // CvPlayerAI.cpp
@@ -83,6 +83,7 @@ char uniquePower[NUM_CIVS][2][16]  = {
 	{"TXT_KEY_UP_FRA", "TXT_KEY_UP_FRA2"},
 	{"TXT_KEY_UP_GER", "TXT_KEY_UP_GER2"},
 	{"TXT_KEY_UP_GRE", "TXT_KEY_UP_GRE2"},
+	{"TXT_KEY_UP_HAR", "TXT_KEY_UP_HAR2"},
 	{"TXT_KEY_UP_HRE", "TXT_KEY_UP_HRE2"},
 	{"TXT_KEY_UP_INC", "TXT_KEY_UP_INC2"},
 	{"TXT_KEY_UP_IND", "TXT_KEY_UP_IND2"},
@@ -91,22 +92,27 @@ char uniquePower[NUM_CIVS][2][16]  = {
 	{"TXT_KEY_UP_ITA", "TXT_KEY_UP_ITA2"},
 	{"TXT_KEY_UP_JAP", "TXT_KEY_UP_JAP2"},
 	{"TXT_KEY_UP_KHM", "TXT_KEY_UP_KHM2"},
+	{"TXT_KEY_UP_KON", "TXT_KEY_UP_KON2"},
 	{"TXT_KEY_UP_KOR", "TXT_KEY_UP_KOR2"},
 	{"TXT_KEY_UP_MAL", "TXT_KEY_UP_MAL2"},
 	{"TXT_KEY_UP_MAY", "TXT_KEY_UP_MAY2"},
 	{"TXT_KEY_UP_MON", "TXT_KEY_UP_MON2"},
+	{"TXT_KEY_UP_MOO", "TXT_KEY_UP_MOO2"},
 	{"TXT_KEY_UP_MUG", "TXT_KEY_UP_MUG2"},
 	{"XXX", "XXX"},
 	{"TXT_KEY_UP_HOL", "TXT_KEY_UP_HOL2"},
 	{"TXT_KEY_UP_TUR", "TXT_KEY_UP_TUR2"},
 	{"TXT_KEY_UP_PER", "TXT_KEY_UP_PER2"},
+	{"TXT_KEY_UP_POL", "TXT_KEY_UP_POL2"},
 	{"TXT_KEY_UP_POR", "TXT_KEY_UP_POR2"},
 	{"TXT_KEY_UP_ROM", "TXT_KEY_UP_ROM2"},
 	{"TXT_KEY_UP_RUS", "TXT_KEY_UP_RUS2"},
 	{"XXX", "XXX"},
 	{"TXT_KEY_UP_SPA", "TXT_KEY_UP_SPA2"},
 	{"XXX", "XXX"},
+	{"TXT_KEY_UP_TAM", "TXT_KEY_UP_TAM2"},
 	{"TXT_KEY_UP_THA", "TXT_KEY_UP_THA2"},
+	{"TXT_KEY_UP_TIB", "TXT_KEY_UP_TIB2"},
 	{"TXT_KEY_UP_VIK", "TXT_KEY_UP_VIK2"},
 	{"XXX", "XXX"}};
 
@@ -126,6 +132,7 @@ char uniqueGoals[NUM_CIVS][3][18]  = {
 	{"TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"},
 	{"TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"},
 	{"TXT_KEY_UHV_GRE1", "TXT_KEY_UHV_GRE2", "TXT_KEY_UHV_GRE3"},
+	{"TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"},
 	{"TXT_KEY_UHV_HRE1", "TXT_KEY_UHV_HRE2", "TXT_KEY_UHV_HRE3"},
 	{"TXT_KEY_UHV_INC1", "TXT_KEY_UHV_INC2", "TXT_KEY_UHV_INC3"},
 	{"TXT_KEY_UHV_IND1", "TXT_KEY_UHV_IND2", "TXT_KEY_UHV_IND3"},
@@ -134,22 +141,27 @@ char uniqueGoals[NUM_CIVS][3][18]  = {
 	{"TXT_KEY_UHV_ITA1", "TXT_KEY_UHV_ITA2", "TXT_KEY_UHV_ITA3"},
 	{"TXT_KEY_UHV_JAP1", "TXT_KEY_UHV_JAP2", "TXT_KEY_UHV_JAP3"},
 	{"TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"},
+	{"TXT_KEY_UHV_KON1", "TXT_KEY_UHV_KON2", "TXT_KEY_UHV_KON3"},
 	{"TXT_KEY_UHV_KOR1", "TXT_KEY_UHV_KOR2", "TXT_KEY_UHV_KOR3"},
 	{"TXT_KEY_UHV_MAL1", "TXT_KEY_UHV_MAL2", "TXT_KEY_UHV_MAL3"},
 	{"TXT_KEY_UHV_MAY1", "TXT_KEY_UHV_MAY2", "TXT_KEY_UHV_MAY3"},
 	{"TXT_KEY_UHV_MON1", "TXT_KEY_UHV_MON2", "TXT_KEY_UHV_MON3"},
+	{"TXT_KEY_UHV_MOO1", "TXT_KEY_UHV_MOO2", "TXT_KEY_UHV_MOO3"},
 	{"TXT_KEY_UHV_MUG1", "TXT_KEY_UHV_MUG2", "TXT_KEY_UHV_MUG3"},
 	{"XXX", "XXX", "XXX"},
 	{"TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"},
 	{"TXT_KEY_UHV_TUR1", "TXT_KEY_UHV_TUR2", "TXT_KEY_UHV_TUR3"},
 	{"TXT_KEY_UHV_PER1", "TXT_KEY_UHV_PER2", "TXT_KEY_UHV_PER3"},
+	{"TXT_KEY_UHV_POL1", "TXT_KEY_UHV_POL2", "TXT_KEY_UHV_POL3"},
 	{"TXT_KEY_UHV_POR1", "TXT_KEY_UHV_POR2", "TXT_KEY_UHV_POR3"},
 	{"TXT_KEY_UHV_ROM1", "TXT_KEY_UHV_ROM2", "TXT_KEY_UHV_ROM3"},
 	{"TXT_KEY_UHV_RUS1", "TXT_KEY_UHV_RUS2", "TXT_KEY_UHV_RUS3"},
 	{"XXX", "XXX", "XXX"},
 	{"TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"},
 	{"XXX", "XXX", "XXX"},
+	{"TXT_KEY_UHV_TAM1", "TXT_KEY_UHV_TAM2", "TXT_KEY_UHV_TAM3"},
 	{"TXT_KEY_UHV_THA1", "TXT_KEY_UHV_THA2", "TXT_KEY_UHV_THA3"},
+	{"TXT_KEY_UHV_TIB1", "TXT_KEY_UHV_TIB2", "TXT_KEY_UHV_TIB3"},
 	{"TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"},
 	{"XXX", "XXX", "XXX"}};
 
@@ -185,6 +197,8 @@ char rating[NUM_CIVS][6][15]  = {
 	{"TXT_KEY_4STARS", "TXT_KEY_5STARS", "TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS"},
 //Greece
 	{"TXT_KEY_3STARS", "TXT_KEY_2STARS", "TXT_KEY_5STARS", "TXT_KEY_2STARS", "TXT_KEY_4STARS" },
+//Harappans
+	{"TXT_KEY_1STAR", "TXT_KEY_2STARS", "TXT_KEY_3STARS", "TXT_KEY_5STARS", "TXT_KEY_2STARS" },
 //Holy Rome
 	{"TXT_KEY_2STARS", "TXT_KEY_5STARS", "TXT_KEY_2STARS", "TXT_KEY_5STARS", "TXT_KEY_3STARS" },
 //Inca
@@ -201,6 +215,8 @@ char rating[NUM_CIVS][6][15]  = {
 	{"TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS", "TXT_KEY_4STARS" },
 //Khmer
 	{"TXT_KEY_3STARS", "TXT_KEY_2STARS", "TXT_KEY_4STARS", "TXT_KEY_3STARS", "TXT_KEY_2STARS"},
+//Kongo
+	{"TXT_KEY_2STARS", "TXT_KEY_2STARS", "TXT_KEY_2STARS", "TXT_KEY_3STARS", "TXT_KEY_2STARS" },
 //Korea
 	{"TXT_KEY_3STARS", "TXT_KEY_1STAR", "TXT_KEY_3STARS", "TXT_KEY_5STARS", "TXT_KEY_2STARS"},
 //Mali
@@ -209,6 +225,8 @@ char rating[NUM_CIVS][6][15]  = {
 	{"TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_1STAR"},
 //Mongolia
 	{"TXT_KEY_1STAR", "TXT_KEY_4STARS", "TXT_KEY_2STARS", "TXT_KEY_4STARS", "TXT_KEY_4STARS" },
+//Moors
+	{"TXT_KEY_3STARS", "TXT_KEY_2STARS", "TXT_KEY_4STARS", "TXT_KEY_4STARS", "TXT_KEY_4STARS" },
 //Mughals
 	{"TXT_KEY_3STARS", "TXT_KEY_2STARS", "TXT_KEY_4STARS", "TXT_KEY_5STARS", "TXT_KEY_5STARS"},
 //
@@ -219,6 +237,8 @@ char rating[NUM_CIVS][6][15]  = {
 	{"TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_5STARS", "TXT_KEY_3STARS", "TXT_KEY_2STARS" },
 //Persia
 	{"TXT_KEY_2STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS", "TXT_KEY_2STARS", "TXT_KEY_4STARS" },
+//Poland
+	{"TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS", "TXT_KEY_2STARS" },
 //Portugal
 	{"TXT_KEY_4STARS", "TXT_KEY_2STARS", "TXT_KEY_2STARS", "TXT_KEY_5STARS", "TXT_KEY_1STAR"},
 //Rome
@@ -231,8 +251,12 @@ char rating[NUM_CIVS][6][15]  = {
 	{"TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS", "TXT_KEY_3STARS" },
 //
 	{"XXX", "XXX", "XXX", "XXX", "XXX"},
+//Tamils
+	{"TXT_KEY_5STARS", "TXT_KEY_1STAR", "TXT_KEY_4STARS", "TXT_KEY_3STARS", "TXT_KEY_2STARS" },
 //Thailand
 	{"TXT_KEY_3STARS", "TXT_KEY_2STARS", "TXT_KEY_4STARS", "TXT_KEY_4STARS", "TXT_KEY_2STARS"},
+//Tibet
+	{"TXT_KEY_2STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS", "TXT_KEY_1STAR", "TXT_KEY_1STAR" },
 //Vikings
 	{"TXT_KEY_2STARS", "TXT_KEY_3STARS", "TXT_KEY_2STARS", "TXT_KEY_3STARS", "TXT_KEY_4STARS" },
 //

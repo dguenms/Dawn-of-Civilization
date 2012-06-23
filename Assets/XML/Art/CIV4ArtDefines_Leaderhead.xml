@@ -759,5 +759,53 @@
 			<NoShaderNIF>Art/Leaderheads/Basil/basil.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Justinian/Justinian_Background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_VATAVELLI</Type>
+			<Button>Art/Leaderheads/Priestking/Vatavelli.dds</Button>
+			<NIF>Art/Leaderheads/Priestking/cyrus.nif</NIF>
+			<KFM>Art/Leaderheads/Priestking/cyrus.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Priestking/cyrus.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Priestking/cyrus_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_RAHMAN</Type>
+			<Button>Art/Leaderheads/Rahman/Rahman.dds</Button>
+			<NIF>Art/Leaderheads/Rahman/Zara Yaqob.nif</NIF>
+			<KFM>Art/Leaderheads/Rahman/Zara Yaqob.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Rahman/Zara Yaqob_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Rahman/Zara Yaqob_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SOBIESKI</Type>
+			<Button>Art/Leaderheads/Sobieski/Sobieski_Button.dds</Button>
+			<NIF>Art/Leaderheads/Sobieski/sobieski.nif</NIF>
+			<KFM>Art/Leaderheads/Sobieski/sobieski.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Sobieski/sobieski.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Sobieski/sobieski_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_LOBSANG_GYATSO</Type>
+			<Button>Art/Leaderheads/Lobsang/Button_Dalai_Lama.dds</Button>
+			<NIF>Art/Leaderheads/Lobsang/dalailama.nif</NIF>
+			<KFM>Art/Leaderheads/Lobsang/Mao_tse_tung.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Lobsang/dalailama.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Lobsang/Mao_tse_tung_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_RAJENDRA</Type>
+			<Button>Art/LeaderHeads/rajendra/rajendra.dds</Button>
+			<NIF>art/LeaderHeads/rajendra/Justinian.nif</NIF>
+			<KFM>art/LeaderHeads/rajendra/Justinian.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/rajendra/Justinian_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/rajendra/Justinian_Background.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_MBEMBA</Type>
+			<Button>Art/Leaderheads/Mbemba/Button_Mbemba.dds</Button>
+			<NIF>Art/Leaderheads/Mbemba/Arawak.nif</NIF>
+			<KFM>Art/Leaderheads/Mbemba/Arawak.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Mbemba/Arawak.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Mbemba/kublai_khan_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
