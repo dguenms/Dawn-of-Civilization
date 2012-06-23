@@ -2233,6 +2233,12 @@ void CvGame::update()
 			break;
 		case BABYLONIA:
 			break;
+		case KOREA:
+            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+                break;
+		case BYZANTIUM:
+            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+				break;
 		case JAPAN:
 			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 				break;
@@ -2242,20 +2248,14 @@ void CvGame::update()
 		//case ARABIA:
 			//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 				//break;
+		case GREECE:
 		case INDIA:
 			//break;
-		case GREECE:
-		case PERSIA:
 		case CARTHAGE:
+		case PERSIA:
 		case ROME:
 		case ETHIOPIA:
-		case KOREA:
-            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-                break;
 		case MAYA:
-		case BYZANTIUM:
-            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-				break;
 		case ARABIA:
 		case KHMER:
 		case INDONESIA:
@@ -3491,7 +3491,7 @@ void CvGame::reviveActivePlayer()
 		//Rhye - end
 
 		//GET_PLAYER(getActivePlayer()).initUnit(((UnitTypes)0), 0, 0); //Rhye
-		GET_PLAYER(getActivePlayer()).initUnit(((UnitTypes)82), 0, 0); //Rhye (catapult)
+		GET_PLAYER(getActivePlayer()).initUnit(((UnitTypes)GC.getInfoTypeForString("UNIT_CATAPULT")), 0, 0); //Rhye (catapult)
 		//logMsg("init catapult in 00"); //Rhye
 	}
 }

@@ -407,7 +407,7 @@ def getRandomMercenaryName(iCiv, iUnitType, bContractOut): #Rhye
 	if (bContractOut):
                 firstName = gc.getPlayer(iCiv).getCivilizationAdjective(0)
 	elif iUniqueUnitCiv != -1:
-		firstTempName = gc.getPlayer(iUniqueUnitCiv).getCivilizationAdjectiveKey()
+		firstTempName = str(gc.getPlayer(iUniqueUnitCiv).getCivilizationAdjective(0))
 		firstName = CyTranslator().getText(firstTempName, ())
 	else:
 		#if (iCiv in lCivGroups[4]):
