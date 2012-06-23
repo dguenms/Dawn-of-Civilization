@@ -5504,12 +5504,6 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                     if (iI == MONOTHEISM)
                                         iValue /= 5;
 									break;
-								case INDIA:
-									if (iI == MEDITATION || iI == PRIESTHOOD)
-										iValue *= 20;
-									if (iI == WRITING  || iI == MONOTHEISM || iI == MONARCHY || iI == CALENDAR || iI == MATHEMATICS)
-										iValue /= 3;
-									break;
 								case CHINA:
 									if (iI == MEDITATION || iI == MONOTHEISM || iI == FISHING)
 										iValue /= 2;
@@ -5579,13 +5573,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									//1800 - end
 									break;
-								case PERSIA:
-									if (iI == THEOLOGY)
-										iValue /= 2;
-									if (iI == FISSION) {
-										iValue *= 4;
+								case INDIA:
+									if (iI == MEDITATION || iI == PRIESTHOOD)
+										iValue *= 20;
+									if (iI == WRITING  || iI == MONOTHEISM || iI == MONARCHY || iI == CALENDAR || iI == MATHEMATICS)
 										iValue /= 3;
-									}
 									break;
 								case CARTHAGE:
 									if (iI == COMPASS)
@@ -5594,6 +5586,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									if (iI == HORSEBACK_RIDING || iI == CONSTRUCTION)
 										iValue *= 3;
+									break;
+								case PERSIA:
+									if (iI == THEOLOGY)
+										iValue /= 2;
+									if (iI == FISSION) {
+										iValue *= 4;
+										iValue /= 3;
+									}
 									break;
 								case ROME:
                                     if (iI == MEDITATION || iI == CALENDAR)
@@ -5612,22 +5612,6 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue /= 2;
 									if (iI == DIVINERIGHT)
 										iValue /= 4;
-									break;
-								case JAPAN:
-									if (iI == CONSTRUCTION)
-										iValue /= 4;
-									if (iI == GUNPOWDER)
-										iValue /= 3;
-									if (iI == MACHINERY || iI == GUILDS)
-										iValue /= 2;
-									if (iI == OPTICS)
-										iValue /= 4;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == LIBERALISM)
-										iValue /= 2;
-									if (iI == FEUDALISM)
-										iValue *= 4;
-									if (iI == ROBOTICS)
-										iValue *= 4;
 									break;
 								case ETHIOPIA:
 									if (iI == MONOTHEISM)
@@ -5654,6 +5638,22 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									else if (iI == BANKING)
 										iValue /= 5;
                                     break;
+								case JAPAN:
+									if (iI == CONSTRUCTION)
+										iValue /= 4;
+									if (iI == GUNPOWDER)
+										iValue /= 3;
+									if (iI == MACHINERY || iI == GUILDS)
+										iValue /= 2;
+									if (iI == OPTICS)
+										iValue /= 4;
+									if (iI == ASTRONOMY || iI == RIFLING || iI == LIBERALISM)
+										iValue /= 2;
+									if (iI == FEUDALISM)
+										iValue *= 4;
+									if (iI == ROBOTICS)
+										iValue *= 4;
+									break;
 								case VIKING:
 									if (iI == MACHINERY || iI == CIVIL_SERVICE)
 										iValue *= 3;
@@ -5769,16 +5769,6 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									}
 									break;
-								case NETHERLANDS:
-									if (iI == MEDITATION)
-										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS)
-										iValue *= 2;
-									if (iI == CHEMISTRY) {
-										iValue *= 3;
-										iValue /= 2;
-									}
-									break;
 								case MALI:
 									if (iI == PAPER)
 										iValue *= 3;
@@ -5839,6 +5829,16 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									if (iI == MACHINERY || iI == GUNPOWDER || iI == GUILDS)
 										iValue /= 2;
+									break;
+								case NETHERLANDS:
+									if (iI == MEDITATION)
+										iValue /= 2;
+									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS)
+										iValue *= 2;
+									if (iI == CHEMISTRY) {
+										iValue *= 3;
+										iValue /= 2;
+									}
 									break;
 								case GERMANY:
 									if (iI == COMBUSTION || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == FASCISM)

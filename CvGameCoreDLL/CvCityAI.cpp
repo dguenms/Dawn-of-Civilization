@@ -2353,12 +2353,6 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)FEUDALISM))
 			aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
-	case INDIA:
-		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
-		aiUnitAIVal[UNITAI_ICBM] *= 2;
-		aiUnitAIVal[UNITAI_SETTLE] /= 20;
-		break;
 	case CHINA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
@@ -2380,8 +2374,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		break;
-	case PERSIA:
-		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+	case INDIA:
+		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
+		aiUnitAIVal[UNITAI_ICBM] *= 2;
+		aiUnitAIVal[UNITAI_SETTLE] /= 20;
 		break;
 	case CARTHAGE:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
@@ -2390,23 +2387,13 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)OPTICS))
 				aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		break;
+	case PERSIA:
+		aiUnitAIVal[UNITAI_ATTACK] *= 2;
+		break;
 	case ROME:      // leave unit AI unchanged so far
         aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
         aiUnitAIVal[UNITAI_COUNTER] *= 2;
 		break;
-	case JAPAN:
-		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)INDUSTRIALISM))
-				aiUnitAIVal[UNITAI_ATTACK_SEA] /= 3;
-		else
-				aiUnitAIVal[UNITAI_ATTACK_SEA] *= 3;
-		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
-		aiUnitAIVal[UNITAI_EXPLORE] /= 4;
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 4;
-		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
-		aiUnitAIVal[UNITAI_SETTLE] *= 2;
-		aiUnitAIVal[UNITAI_SETTLE] /= 3;
-		break;
-	case ETHIOPIA:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
@@ -2429,6 +2416,19 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
         aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
+	case JAPAN:
+		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)INDUSTRIALISM))
+				aiUnitAIVal[UNITAI_ATTACK_SEA] /= 3;
+		else
+				aiUnitAIVal[UNITAI_ATTACK_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE] /= 4;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 4;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLE] *= 2;
+		aiUnitAIVal[UNITAI_SETTLE] /= 3;
+		break;
+	case ETHIOPIA:
 	case VIKING:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
@@ -2506,19 +2506,6 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_RESERVE] *= 2;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
 		break;
-	case NETHERLANDS:
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
-		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
-		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-			aiUnitAIVal[UNITAI_SETTLE] *= 2;
-		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
-		aiUnitAIVal[UNITAI_WORKER_SEA] *= 3;
-		aiUnitAIVal[UNITAI_WORKER_SEA] /= 2;
-		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
-		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
-		break;
 	case MALI:
 		break;
 	case MUGHALS:
@@ -2570,6 +2557,19 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case THAILAND:
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
+		break;
+	case NETHERLANDS:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+			aiUnitAIVal[UNITAI_SETTLE] *= 2;
+		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
+		aiUnitAIVal[UNITAI_WORKER_SEA] *= 3;
+		aiUnitAIVal[UNITAI_WORKER_SEA] /= 2;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		break;
 	case GERMANY:
 		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
@@ -2977,29 +2977,13 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 3;
 											}
 										break;
-									case INDIA:
-										if (iI == ANGKORWAT) iTempValue *= 2;
-										else if (iI == PARTHENON) iTempValue /= 3;
-										else if (iI == ZEUS) iTempValue /= 2;
-										else if (iI == TAJMAHAL) iTempValue *= 3;
-										else if (iI == PAYA) iTempValue *= 2;
-										else if (iI == KHAJURAHO) iTempValue *= 2;
-										else if (iI == HARMANDIR_SAHIB) iTempValue *= 2;
-										else if (iI == BOROBUDUR) {
-											iTempValue *= 3;
-											iTempValue /= 2;
-										}
-										else {
-											iTempValue *= 2;
-											iTempValue /= 3;
-											}
-										break;
 									case CHINA:
 										if (iI == FORBIDDENPALACE || iI == GRAND_CANAL) iTempValue *= 4;
 										else if (iI == GREATWALL) iTempValue *= 8;
 										else if (iI == GREATDAM || iI == TERRACOTTA || iI == PORCELAIN) iTempValue *= 2;
 										else if (iI == HANGINGGARDEN || iI == HIMEJI) iTempValue /= 3;
 										else if (iI == APOSTOLIC) iTempValue /= 2;
+										break;
 									case BABYLONIA:
 										if (iI == HANGINGGARDEN || iI == ISHTAR) iTempValue *= 5;
 										else if (iI == SPIRALMINARET) iTempValue *= 2;
@@ -3010,6 +2994,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										} else {
 											iTempValue /= 4;
 										}
+										break;
 									case GREECE:
 										if (iI == GREATLIBRARY) {
 														iTempValue *= 3;
@@ -3028,20 +3013,22 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 3;
 											}
 										break;
-									case PERSIA:
-										if (iI == HANGINGGARDEN) {
-														iTempValue *= 3;
-														iTempValue /= 2;
+									case INDIA:
+										if (iI == ANGKORWAT) iTempValue *= 2;
+										else if (iI == PARTHENON) iTempValue /= 3;
+										else if (iI == ZEUS) iTempValue /= 2;
+										else if (iI == TAJMAHAL) iTempValue *= 3;
+										else if (iI == PAYA) iTempValue *= 2;
+										else if (iI == KHAJURAHO) iTempValue *= 2;
+										else if (iI == HARMANDIR_SAHIB) iTempValue *= 2;
+										else if (iI == BOROBUDUR) {
+											iTempValue *= 3;
+											iTempValue /= 2;
 										}
-										if (iI == COLOSSUS) {
-														iTempValue *= 3;
-														iTempValue /= 2;
-										}
-										if (iI == ORACLE) {
-														iTempValue *= 3;
-														iTempValue /= 2;
-										}
-										else if (iI == MAUSOLLOS) iTempValue *= 3;
+										else {
+											iTempValue *= 2;
+											iTempValue /= 3;
+											}
 										break;
 									case CARTHAGE:
 										if (iI == GREATLIGHTHOUSE) {
@@ -3056,6 +3043,21 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
                                                         iTempValue *= 2;
 										}
 										else if (iI == APOSTOLIC) iTempValue *= 2;
+										break;
+									case PERSIA:
+										if (iI == HANGINGGARDEN) {
+														iTempValue *= 3;
+														iTempValue /= 2;
+										}
+										if (iI == COLOSSUS) {
+														iTempValue *= 3;
+														iTempValue /= 2;
+										}
+										if (iI == ORACLE) {
+														iTempValue *= 3;
+														iTempValue /= 2;
+										}
+										else if (iI == MAUSOLLOS) iTempValue *= 3;
 										break;
 									case ROME:      // leave unchanged for Italy
                                         if (iI == FLAVIANAMPHITHEATRE || iI == LEANINGTOWER || iI == SISTINECHAPEL || iI == SANMARCO)
@@ -3101,11 +3103,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 4;
 											}
 										break;*/
-									case JAPAN:
-										if (iI == GREATWALL) iTempValue /= 10;
-										else if (iI == APOSTOLIC) iTempValue /= 2;
-										else if (iI == HIMEJI) iTempValue *= 3;
-										break;
 									case ETHIOPIA:
 										if (iI == APOSTOLIC) iTempValue *= 3;
 										break;
@@ -3118,6 +3115,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
                                         if (iI == THEODOSIAN) iTempValue *= 3;
                                         else if (iI == NOTREDAME || iI == SISTINECHAPEL) iTempValue /= 2;
                                         break;
+									case JAPAN:
+										if (iI == GREATWALL) iTempValue /= 10;
+										else if (iI == APOSTOLIC) iTempValue /= 2;
+										else if (iI == HIMEJI) iTempValue *= 3;
+										break;
 									case VIKING:
 										if (iI == CHANNELTUNNEL) {
 														iTempValue *= 3;
@@ -3215,21 +3217,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 4;
 										}
 										break;
-									case NETHERLANDS:
-										if (iI == NOTREDAME) { //Notre Dame
-														iTempValue *= 3;
-														iTempValue /= 2;
-										}
-										else if (iI == TRADINGCOMPANY) iTempValue *= 6;
-										else if (iI == NATIONALGALLERY) iTempValue *= 3;
-										else if (iI == WEMBLEY) iTempValue *= 3;
-										else if (iI == CHANNELTUNNEL) iTempValue *= 2;
-										else if (iI == APOSTOLIC) iTempValue *= 2;
-										else {
-											iTempValue *= 3;
-											iTempValue /= 4;
-										}
-										break;
 									case MALI:
 										if (iI == SANKORE)	iTempValue *= 4;
 										break;
@@ -3284,6 +3271,21 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 2;
 											iTempValue /= 3;
 											}
+										break;
+									case NETHERLANDS:
+										if (iI == NOTREDAME) { //Notre Dame
+														iTempValue *= 3;
+														iTempValue /= 2;
+										}
+										else if (iI == TRADINGCOMPANY) iTempValue *= 6;
+										else if (iI == NATIONALGALLERY) iTempValue *= 3;
+										else if (iI == WEMBLEY) iTempValue *= 3;
+										else if (iI == CHANNELTUNNEL) iTempValue *= 2;
+										else if (iI == APOSTOLIC) iTempValue *= 2;
+										else {
+											iTempValue *= 3;
+											iTempValue /= 4;
+										}
 										break;
 									case GERMANY:
 										if (iI == IRONWORKS) { //Iron Works
@@ -4775,8 +4777,6 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				case EGYPT:
 					iValue -= 1;
 					break;
-				case INDIA:
-					break;
 				case CHINA:
 					break;
 				case BABYLONIA:
@@ -4784,16 +4784,15 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				case GREECE:
 					iValue += 1;
 					break;
-				case PERSIA:
+				case INDIA:
 					break;
 				case CARTHAGE:
 					iValue += 1;
 					break;
+				case PERSIA:
+					break;
 				case ROME:  // leave unchanged for Italy so far
 					iValue += 1;
-					break;
-				case JAPAN:
-					iValue -= 2;
 					break;
 				case ETHIOPIA:
 					break;
@@ -4806,6 +4805,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
                 case BYZANTIUM:
                     iValue += 1;
                     break;
+				case JAPAN:
+					iValue -= 2;
+					break;
 				case VIKING:
 					break;
 				case KHMER:
@@ -4830,9 +4832,6 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					break;
 				case RUSSIA:
 					iValue += 1;
-					break;
-				case NETHERLANDS:
-					iValue += 2;
 					break;
 				case MALI:
 					break;
@@ -4859,6 +4858,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					break;
 				case THAILAND:
 					iValue += 1;
+					break;
+				case NETHERLANDS:
+					iValue += 2;
 					break;
 				case GERMANY:
 					iValue -= 1;

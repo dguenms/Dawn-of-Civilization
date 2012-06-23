@@ -7528,10 +7528,6 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 80 + 2*(int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //90
 		iRate /= 100;
 		break;
-	case INDIA:
-		iRate *= 90 + 2*(int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //90
-		iRate /= 100;
-		break;
 	case CHINA:
 		iRate *= 75 + 3*(int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //90
 		iRate /= 100;
@@ -7544,11 +7540,15 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 90 + (int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //95
 		iRate /= 100;
 		break;
-	case PERSIA:
-		iRate *= 100 + (int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //105
+	case INDIA:
+		iRate *= 90 + 2*(int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //90
 		iRate /= 100;
 		break;
 	case CARTHAGE:
+		iRate *= 100 + (int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //105
+		iRate /= 100;
+		break;
+	case PERSIA:
 		iRate *= 100 + (int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //105
 		iRate /= 100;
 		break;
@@ -7557,10 +7557,6 @@ int CvUnit::workRate(bool bMax) const
             iRate *= 120;
         else
             iRate *= 140;   // Leoreth - Renaissance Italy
-		iRate /= 100;
-		break;
-	case JAPAN:
-		iRate *= 110 + (int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //115
 		iRate /= 100;
 		break;
 	case ETHIOPIA:
@@ -7579,6 +7575,10 @@ int CvUnit::workRate(bool bMax) const
         iRate *= 90;
         iRate /= 100;
         break;
+	case JAPAN:
+		iRate *= 110 + (int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //115
+		iRate /= 100;
+		break;
 	case VIKING:
 		iRate *= 120;
 		iRate /= 100;
@@ -7615,10 +7615,6 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 135;
 		iRate /= 100;
 		break;
-	case NETHERLANDS:
-		iRate *= 130;
-		iRate /= 100;
-		break;
 	case MALI:
 		iRate *= 90;
 		iRate /= 100;
@@ -7653,6 +7649,10 @@ int CvUnit::workRate(bool bMax) const
 		break;
 	case THAILAND:
 		iRate *= 110;
+		iRate /= 100;
+		break;
+	case NETHERLANDS:
+		iRate *= 130;
 		iRate /= 100;
 		break;
 	case GERMANY:

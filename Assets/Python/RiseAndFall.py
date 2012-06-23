@@ -1029,7 +1029,7 @@ class RiseAndFall:
 ##                self.initBirth(iGameTurn, con.tBirth[iAmerica], iAmerica)
                         
                 if (gc.getPlayer(0).isPlayable()):
-                        iFirstSpawn = iIndia
+                        iFirstSpawn = iGreece
                 else:
                         iFirstSpawn = iArabia
                 for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
@@ -4627,6 +4627,7 @@ class RiseAndFall:
 
                 utils.makeUnit(iSettler, iEgypt, tCapitals[0][iEgypt], 1)
                 utils.makeUnit(iWarrior, iEgypt, tCapitals[0][iEgypt], 1)
+		utils.makeUnit(con.iCatapult, iEgypt, tCapitals[0][iEgypt], 1)
 
 		if ( pIndia.isHuman() ):
                     utils.makeUnit(iSettler, iIndia, tCapitals[0][iIndia], 1)

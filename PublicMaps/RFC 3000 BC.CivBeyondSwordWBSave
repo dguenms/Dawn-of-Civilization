@@ -13,10 +13,6 @@ BeginTeam
 	Tech=TECH_AGRICULTURE                 
 EndTeam
 BeginTeam                 
-	Tech=TECH_MYSTICISM                 
-	Tech=TECH_MINING                 
-EndTeam
-BeginTeam                 
 	Tech=TECH_AGRICULTURE                 
 	Tech=TECH_MINING                 
 EndTeam
@@ -28,6 +24,10 @@ BeginTeam
 	Tech=TECH_ARCHERY
 EndTeam
 BeginTeam                 
+EndTeam
+BeginTeam                 
+	Tech=TECH_MYSTICISM                 
+	Tech=TECH_MINING                 
 EndTeam
 BeginTeam
 EndTeam
