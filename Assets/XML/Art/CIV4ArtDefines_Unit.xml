@@ -6366,5 +6366,140 @@
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
 		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_TAMIL_DHARANI</Type>
+			<Button>Art/Units/Tamil Dharani/Button_Dharani.dds</Button>
+			<fScale>0.08</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Tamil Dharani/wargalley_chola.nif</NIF>
+			<KFM>Art/Units/Galley/Galley.kfm</KFM>
+			<SHADERNIF>Art/Units/Tamil Dharani/wargalley_chola.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/CaravelShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>0.25</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_TIBETAN_KHAMPA</Type>
+			<Button>Art/Interface/Buttons/Units/Khampa.dds</Button>
+			<fScale>0.42</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Unique/Mongol/Keshik/MongelKeshik.nif</NIF>
+			<KFM>Art/Units/Unique/Mongol/Keshik/MongelKeshik.kfm</KFM>
+			<SHADERNIF>Art/Units/Unique/Mongol/Keshik/MongelKeshik_FX.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
+				<ShadowAttachNode>HorseBip Spine1</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_POLISH_WINGED_HUSSAR</Type>
+			<Button>Art/Units/Polish Husarski/Button_Husarski.dds</Button>
+			<fScale>0.42</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Polish Husarski/Winged Hussar.nif</NIF>
+			<KFM>Art/Units/Unique/Mongol/Keshik/MongelKeshik.kfm</KFM>
+			<SHADERNIF>Art/Units/Polish Husarski/Winged Hussar.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_KONGO_POMBOS</Type>
+			<Button>Art/Units/Kongolese Pombos/Button_Pombos.dds</Button>
+			<fScale>0.44</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Kongolese Pombos/zulumace_fx.nif</NIF>
+			<KFM>Art/Units/Unique_NativeAmerica_DogSoldier/Dogsoldier.kfm</KFM>
+			<SHADERNIF>Art/Units/Kongolese Pombos/zulumace_fx.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_MOORISH_CAMEL_GUNNER</Type>
+			<Button>Art/Units/Camel Gunner/CamelGunner_Btn.dds</Button>
+			<fScale>0.39</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Camel Gunner/CamelGunner.nif</NIF>
+			<KFM>Art/Units/Camel Gunner/CamelGunner.kfm</KFM>
+			<SHADERNIF>Art/Units/Camel Gunner/CamelGunner.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/HorseShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bActAsRanged>1</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop/>
+				<AudioRunTypeEnd/>
+			</AudioRunSounds>
+		</UnitArtInfo>
 	</UnitArtInfos>
 </Civ4ArtDefines>

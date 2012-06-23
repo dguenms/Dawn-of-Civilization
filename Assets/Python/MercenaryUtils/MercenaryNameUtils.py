@@ -378,10 +378,15 @@ mercenaryEuropeanNames = [
 def getUniqueUnitCiv(iUnitType):
 
 	iUnitClassType = gc.getUnitInfo(iUnitType).getUnitClassType()
-	for iPlayer in range(con.iNumPlayers):
-		if iUnitType == gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationUnits(iUnitClassType):
-			return iPlayer
-			
+	iDefaultUnit = gc.getUnitClassInfo(iUnitClassType).getDefaultUnitIndex()
+	
+	if iDefaultUnit == iUnitType:
+		return -1
+	else:
+		for iPlayer in range(con.iNumPlayers):
+			if iUnitType == gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationUnits(iUnitClassType):
+				return iPlayer
+				
 	return -1
 
 
@@ -401,8 +406,9 @@ def getRandomMercenaryName(iCiv, iUnitType, bContractOut): #Rhye
 
 	if (bContractOut):
                 firstName = gc.getPlayer(iCiv).getCivilizationAdjective(0)
-	#elif iUniqueUnitCiv != -1:
-	#	firstName = gc.getPlayer(iUniqueUnitCiv).getCivilizationAdjectiveKey()
+	elif iUniqueUnitCiv != -1:
+		firstTempName = gc.getPlayer(iUniqueUnitCiv).getCivilizationAdjectiveKey()
+		firstName = CyTranslator().getText(firstTempName, ())
 	else:
 		#if (iCiv in lCivGroups[4]):
 		#	firstTempName = mercenaryAfricanNames[gc.getGame().getMapRand().get(len(mercenaryAfricanNames), "Random Name")]

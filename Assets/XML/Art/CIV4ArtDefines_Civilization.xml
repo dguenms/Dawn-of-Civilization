@@ -310,5 +310,41 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Safavid_Lion2.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_MOORS</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Minor.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Moon.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_TAMILS</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Tamils.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Tamil.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_TIBET</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Tibet.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Tibet.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_POLAND</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Poland.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Poland.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_HARAPPANS</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Harappa.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Harappa.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_KONGO</Type>
+			<Button>,Art/Interface/Buttons/Civilizations/Kongo.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Kongo.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

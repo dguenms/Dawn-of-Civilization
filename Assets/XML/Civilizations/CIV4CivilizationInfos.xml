@@ -959,10 +959,6 @@
 					<LeaderName>LEADER_CHINESE_LEADER</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
-				<Leader>
-					<LeaderName>LEADER_CIXI</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
 			</Leaders>
 			<DerivativeCiv>NONE</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_CHINA_SELECT</CivilizationSelectionSound>
@@ -1764,6 +1760,100 @@
 			<DerivativeCiv>CIVILIZATION_BYZANTIUM</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_GREECE_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_GREECE_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_HARAPPANS</Type>
+			<Description>TXT_KEY_CIV_HARAPPANS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_HARAPPANS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_HARAPPANS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_HARAPPANS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_GREEN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_HARAPPANS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> <!-- Rhye -->
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Harappa</City>
+				<City>Mohenjodaro</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
+					<BuildingType>BUILDING_HARAPPAN_BATH</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_WARRIOR</UnitClassType>
+					<UnitType>UNIT_HARAPPAN_MILITIA</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_INDIAN_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_INDIAN_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_GENERAL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs>
+				<FreeTech>
+					<TechType>TECH_THE_WHEEL</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+				<FreeTech>
+					<TechType>TECH_AGRICULTURE</TechType>
+					<bFreeTech>1</bFreeTech>
+				</FreeTech>
+			</FreeTechs>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_VATAVELLI</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_INDIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_INDIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_HOLY_ROMAN</Type>
@@ -2751,6 +2841,102 @@
 			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_KONGO</Type>
+			<Description>TXT_KEY_CIV_KONGO_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_KONGO_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_KONGO_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_KONGO_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_KHAKI</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_KONGO</ArtDefineTag>
+			<!-- Rhye -->
+			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Mbanza Kongo</City>
+				<City>Luanda</City>
+				<City>Kinshasa</City>
+				<City>Loubomo</City>
+				<City>Matadi</City>
+				<City>Cabinda</City>
+				<City>Bandundu</City>
+				<City>Madingou</City>
+				<City>Mindouli</City>
+				<City>Kimpese</City>
+				<City>N'dalatando</City>
+				<City>Uige</City>
+				<City>Massango</City>
+				<City>Boma</City>
+				<City>Tshela</City>
+				<City>Negage</City>
+				<City>Mossendjo</City>
+				<City>Djambala</City>
+				<City>Mushie</City>
+				<City>Songo</City>
+				<City>Kikwit</City>
+				<City>Kutu</City>
+				<City>Bolobo</City>
+				<City>Gamboma</City>
+				<City>Mushie</City>
+				<City>Kasongo-Lunda</City>
+				<City>Popokabaka</City>
+				<City>Idiofa</City>
+				<City>Bulungu</City>
+				<City>Malanje</City>
+				<City>Caxito</City>
+				<City>Inongo</City>
+				<City>Sibiti</City>
+				<City>Soyo</City>
+				<City>Muanda</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingType>BUILDING_KONGO_MBWADI</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_MACEMAN</UnitClassType>
+					<UnitType>UNIT_KONGO_POMBOS</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<!-- Rhye -->
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_MBEMBA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_ZULU_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ZULU_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_KOREA</Type>
 			<Description>TXT_KEY_CIV_KOREA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_KOREA_SHORT_DESC</ShortDescription>
@@ -3216,6 +3402,137 @@
 			<DerivativeCiv>CIVILIZATION_CHINA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_MONGOL_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_MONGOL_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_MOORS</Type>
+			<Description>TXT_KEY_CIV_MOORS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_MOORS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_MOORS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_MOORS_PEDIA</Civilopedia>
+			<!-- Rhye -->
+			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BROWN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_MOORS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<!-- Mauretania -->
+				<City>Tanjah</City>				<!-- Tingis/Tangier -->
+				<City>Sabta</City>				<!-- Abyla/Septem/Ceuta -->
+				<City>Tamuda</City>				<!-- Tetouan -->
+				<City>Lixus</City>				<!-- Larache -->
+				<City>Sala</City>				<!-- Chellah/Kenitra -->
+				<City>Banasa</City>
+				<City>Walili</City>				<!-- Volubilis -->
+				<City>Mogador</City>			<!-- Essaouira -->
+				<!-- Numidia -->
+				<City>Cirta</City>				<!-- Constantine -->
+				<City>Rusicada</City>			<!-- Skikda -->
+				<City>Timgad</City>				<!-- Batna -->
+				<City>Hippo</City>				<!-- Bona/Annaba -->
+				<City>Thugga</City>				<!-- Dougga -->
+				<City>Tunis</City>
+				<City>Sharshal</City>			<!-- Jol/Caesaria/Cherchell -->
+				<City>Rusadir</City>			<!-- Melilla -->
+				<!-- Interior -->
+				<City>Ghadames</City>
+				<City>Sijilmasa</City>
+				<City>Tamanrasset</City>
+				<City>Abalessa</City>
+				<!-- Arab Conquest -->
+				<City>Kairouan</City>
+				<!-- Morocco -->
+				<City>Anfa</City>				<!-- Casablanca -->
+				<City>Fez</City>
+				<City>Basra</City>
+				<City>Meknes</City>
+				<City>Aghmat</City>
+				<!-- Almoravid -->
+				<City>Marrakesh</City>
+				<City>Rabat</City>
+				<City>Tagrart</City>			<!-- Tlemsen/Timinsan -->
+				<!-- Almohad -->
+				<City>Algiers</City>
+				<City>Uhran</City>				<!-- Oran -->
+				<City>Safaqis</City>			<!-- Sfax -->
+				<City>Mahdia</City>
+				<!-- Later Cities -->
+				<City>Ghardaia</City>
+				<City>Tindouf</City>
+				<City>Oujda</City>
+				<City>Safi</City>
+				<City>Agadir</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
+					<BuildingType>BUILDING_MOORISH_NORIA</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CUIRASSIER</UnitClassType>
+					<UnitType>UNIT_MOORISH_CAMEL_GUNNER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_ARABIAN_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_ARABIAN_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ARABIAN_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ARABIAN_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ARABIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_GENERAL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<!-- Rhye -->
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_RAHMAN</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_ARABIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ARABIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_MUGHALS</Type>
@@ -3847,6 +4164,138 @@
 			<DerivativeCiv>CIVILIZATION_ARABIA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_PERSIA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_PERSIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_POLAND</Type>
+			<Description>TXT_KEY_CIV_POLAND_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_POLAND_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_POLAND_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_POLAND_PEDIA</Civilopedia>
+			<!-- Rhye -->
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_PINK</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_POLAND</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Warsaw</City>
+				<City>Krakow</City>
+				<City>Gdansk</City>
+				<City>Poznan</City>
+				<City>Lodz</City>
+				<City>Lublin</City>
+				<City>Gdynia</City>
+				<City>Wroclaw</City>
+				<City>Gniezno</City>
+				<City>Szczecin</City>
+				<City>Bydgoszcz</City>
+				<City>Opole</City>
+				<City>Elblag</City>
+				<City>Plock</City>
+				<City>Breslau</City>
+				<City>Katowice</City>
+				<City>Bialystok</City>
+				<City>Lemburg</City>
+				<City>Czestochowa</City>
+				<City>Legnica</City>
+				<City>Sosnowiec</City>
+				<City>Radom</City>
+				<City>Torun</City>
+				<City>Kielce</City>
+				<City>Gilwice</City>
+				<City>Zabrze</City>
+				<City>Bytom</City>
+				<City>Bielsko-Biala</City>
+				<City>Olsztyn</City>
+				<City>Rzeszow</City>
+				<City>Ruda Slaska</City>
+				<City>Rybnik</City>
+				<City>Nowe Tychy</City>
+				<City>Dabrowa Gornicza</City>
+				<City>Walbrzych</City>
+				<City>Gorzow Wielkopolski</City>
+				<City>Wloclawek</City>
+				<City>Zielona Gora</City>
+				<City>Tarnow</City>
+				<City>Chorzow</City>
+				<City>Kalisz</City>
+				<City>Koszalin</City>
+				<City>Slupsk</City>
+				<City>Jaworzno</City>
+				<City>Jastrzebie Zdroi</City>
+				<City>Jelenia Gora</City>
+				<City>Nowy Sacz</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_POLISH_SEJMIK</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CUIRASSIER</UnitClassType>
+					<UnitType>UNIT_POLISH_WINGED_HUSSAR</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_GREAT_GENERAL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<!-- Rhye -->
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_SOBIESKI</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_POLAND_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_POLAND_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_PORTUGAL</Type>
@@ -4520,6 +4969,124 @@
 			<CivilizationActionSound>AS3D_SUMERIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_TAMILS</Type>
+			<Description>TXT_KEY_CIV_TAMILS_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_TAMILS_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_TAMILS_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_TAMILS_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BLUE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_TAMILS</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> <!-- Rhye -->
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Cholapuram</City>
+				<City>Thanjavur</City>
+				<City>Pazhaiyaarai</City>
+				<City>Madurai</City>
+				<City>Poompuhar</City>
+				<City>Vengi</City>
+				<City>Nagapattinam</City>
+				<City>Urayur</City>
+				<City>Kanchipuram</City>
+				<City>Mabappalam</City>
+				<City>Kalyani</City>
+				<City>Kadaram</City>
+				<City>Polonaruwa</City>
+				<City>Korkai</City>
+				<City>Kandai</City>
+				<City>Panni</City>
+				<City>Rohana</City>
+				<City>Koppam</City>
+				<City>Kudai Sangamam</City>
+				<City>Belur</City>
+				<City>Sendamangalam</City>
+				<City>Chidambaram</City>
+				<City>Darasuram</City>
+				<City>Tanjore</City>
+				<City>Mamallapuram</City>
+				<City>Sravana</City>
+				<City>Balligave</City>
+				<City>Bhubaneswar</City>
+				<City>Ratnagiri</City>
+				<City>Malkhed</City>
+				<City>Sringeri</City>
+				<City>Warangal</City>
+				<City>Kotte</City>
+				<City>Polonnaruva</City>
+				<City>Anuradhapura</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
+					<BuildingType>BUILDING_TAMIL_SANGAM</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
+					<UnitType>UNIT_TAMIL_DHARANI</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_INDIAN_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_INDIAN_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_GENERAL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_RAJENDRA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_INDIA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_INDIA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_THAILAND</Type>
 			<Description>TXT_KEY_CIV_THAILAND_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_THAILAND_SHORT_DESC</ShortDescription>
@@ -4640,13 +5207,150 @@
 			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_TIBET</Type>
+			<Description>TXT_KEY_CIV_TIBET_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_TIBET_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_TIBET_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_TIBET_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_DARK_PINK</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_TIBET</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Lhasa</City>
+				<City>Xigaze</City>
+				<City>Gyaze</City>
+				<City>Amdo</City>
+				<City>Gar</City>
+				<City>Ladakh</City>
+				<City>Qamdo</City>
+				<City>Golmud</City>
+				<City>Nyingchi</City>
+				<City>Nyalam</City>
+				<City>Nagqu</City>
+				<City>Gangtok</City>
+				<City>Kangmar</City>
+				<City>Tingri</City>
+				<City>Da Qaidam</City>
+				<City>Zhongba</City>
+				<City>Gerze</City>
+				<City>Dagze</City>
+				<City>Sakya</City>
+				<City>Jyekundo</City>
+				<City>Barkam</City>
+				<City>Gartse</City>
+				<City>Pelbar</City>
+				<City>Lhatse</City>
+				<City>Nedong</City>
+				<City>Kangding</City>
+				<City>Shannan</City>
+				<City>Dongco</City>
+				<City>Yushu</City>
+				<City>Machen</City>
+				<City>Chumda</City>
+				<City>Xegar</City>
+				<City>Raka</City>
+				<City>Wujang</City>
+				<City>Sumzom</City>
+				<City>Bomi</City>
+				<City>Deqen</City>
+				<City>Toba</City>
+				<City>Tangmai</City>
+				<City>Guncang</City>
+				<City>Langgar</City>
+				<City>Xagquka</City>
+				<City>Pagri</City>
+				<City>Bamda</City>
+				<City>Rawu</City>
+				<City>Rongxar</City>
+				<City>Wuli</City>
+				<City>Xaidulla</City>
+				<City>Oma</City>
+				<City>Kangtog</City>
+				<City>Chengele</City>
+				<City>Chumatang</City>
+				<City>Zhigung</City>
+				<City>Dagzhuka</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
+					<BuildingType>BUILDING_TIBETAN_GOMPA</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
+					<UnitType>UNIT_TIBETAN_KHAMPA</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_CHINESE_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_CHINESE_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_CHINESE_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_CHINESE_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_CHINESE_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_GENERAL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_LOBSANG_GYATSO</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_CHINA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_VIKING</Type>
 			<Description>TXT_KEY_CIV_VIKING_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_VIKING_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_VIKING_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CHANGED_CIV_VIKING_PEDIA</Civilopedia>
 			<!-- Rhye -->
-			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BLUE</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_VIKINGS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>

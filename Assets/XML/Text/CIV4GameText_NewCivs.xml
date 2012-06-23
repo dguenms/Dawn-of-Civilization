@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_DESC</Tag>
+		<English>The Moors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_SHORT_DESC</Tag>
+		<English>Moors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_ADJECTIVE</Tag>
+		<English>Moorish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_RAHMAN</Tag>
+		<English>Abd-ar-Rahman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MOORISH_CAMEL_GUNNER</Tag>
+		<English>Camel Gunner</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOORISH_NORIA</Tag>
+		<English>Noria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_DESC</Tag>
+		<English>The Tamils</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_SHORT_DESC</Tag>
+		<English>Tamils</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_ADJECTIVE</Tag>
+		<English>Tamil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_RAJENDRA</Tag>
+		<English>Rajendra Chola</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI</Tag>
+		<English>Dharani</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAMIL_SANGAM</Tag>
+		<English>Sangam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBET_DESC</Tag>
+		<English>The Tibetans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBET_SHORT_DESC</Tag>
+		<English>Tibet</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBET_ADJECTIVE</Tag>
+		<English>Tibetan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_LOBSANG_GYATSO</Tag>
+		<English>Lobsang Gyatso</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TIBETAN_KHAMPA</Tag>
+		<English>Khampa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA</Tag>
+		<English>Gompa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_DESC</Tag>
+		<English>The Polish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_SHORT_DESC</Tag>
+		<English>Poland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_ADJECTIVE</Tag>
+		<English>Polish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SOBIESKI</Tag>
+		<English>Sobieski</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_POLISH_WINGED_HUSSAR</Tag>
+		<English>Winged Hussar</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POLISH_SEJMIK</Tag>
+		<English>Sejmik</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HARAPPANS_DESC</Tag>
+		<English>The Harappans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HARAPPANS_SHORT_DESC</Tag>
+		<English>Harappa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HARAPPANS_ADJECTIVE</Tag>
+		<English>Harappan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_VATAVELLI</Tag>
+		<English>Vatavelli</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HARAPPAN_MILITIA</Tag>
+		<English>Militia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HARAPPAN_BATH</Tag>
+		<English>Bath</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KONGO_DESC</Tag>
+		<English>The Kongolese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KONGO_SHORT_DESC</Tag>
+		<English>Kongo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KONGO_ADJECTIVE</Tag>
+		<English>Kongolese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MBEMBA</Tag>
+		<English>Mbemba</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KONGO_POMBOS</Tag>
+		<English>Pombos</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KONGO_MBWADI</Tag>
+		<English>Mbwadi</English>
+	</TEXT>
+</Civ4GameText>
