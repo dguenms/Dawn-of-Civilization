@@ -479,8 +479,8 @@ class Stability:
 			if (iCivic5 == con.iImperialism):
 				for iOwnedCiv in range(iNumPlayers):
 					reborn = utils.getReborn(iOwnedCiv)
-					dummy1, plotList1 = utils.squareSearch( tNormalAreasTL[reborn][iOwnedCiv], tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iActiveCiv )
-					dummy2, plotList2 = utils.squareSearch( tNormalAreasTL[reborn][iOwnedCiv], tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iOwnedCiv )
+					dummy1, plotList1 = utils.squareSearch( con.tNormalAreasTL[reborn][iOwnedCiv], con.tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iPlayer )
+					dummy2, plotList2 = utils.squareSearch( con.tNormalAreasTL[reborn][iOwnedCiv], con.tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iOwnedCiv )
 					if ((len(plotList1) >= 2 and len(plotList1) > len(plotList2)) or (len(plotList1) >= 1 and not gc.getPlayer(iOwnedCiv).isAlive())):
 						iNewBaseStability += 2*len(plotList1)
 

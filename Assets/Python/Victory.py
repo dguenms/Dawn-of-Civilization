@@ -1000,7 +1000,7 @@ class Victory:
 			if pTamils.isAlive():
 			
 				if iGameTurn == getTurnForYear(800):
-					if pTamils.getGold() >= getTurns(3000) and pTamils.getTotalCulture() >= getTurns(2000):
+					if pTamils.getGold() >= utils.getTurns(3000) and pTamils.getTotalCulture() >= getTurns(2000):
 						self.setGoal(iTamils, 0, 1)
 					else:
 						self.setGoal(iTamils, 0, 0)
@@ -2228,7 +2228,7 @@ class Victory:
                 #                                if (iGameTurn <= getTurnForYear(1950)):
                 #                                        self.setGoal(iRussia, 2, 0)
 
-		elif (iPlayer == iEngland):
+		if (playerType == iEngland):
                         if (iGameTurn <= getTurnForYear(1730)):
                                         bNAmerica = self.checkOwnedArea(iEngland, con.tNorthAmericaTL, con.tNorthAmericaBR, 5)
                                         bSCAmerica = self.checkOwnedArea(iEngland, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR, 3)
@@ -2940,7 +2940,8 @@ class Victory:
 		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.cityPlots, iPlayer)
 		for tPlot in lCityPlotList:
 			x, y = tPlot
-			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList and (x,y) not in tExceptions:
+			iOwner = gc.getMap().plot(x,y).getPlotCity().getOwner()
+			if iOwner not in lOwnerList and iOwner < con.iNumPlayers and (x,y) not in tExceptions:
 				lOwnerList.append(gc.getMap().plot(x,y).getPlotCity().getOwner())
 		for iCiv in range(con.iNumPlayers):
 			if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iPlayer):
