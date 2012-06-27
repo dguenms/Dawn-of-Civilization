@@ -47,6 +47,7 @@ iGreece = con.iGreece
 iPersia = con.iPersia
 iCarthage = con.iCarthage
 iRome = con.iRome
+iTamils = con.iTamils
 iJapan = con.iJapan
 iEthiopia = con.iEthiopia
 iKorea = con.iKorea
@@ -94,6 +95,7 @@ pGreece = gc.getPlayer(iGreece)
 pPersia = gc.getPlayer(iPersia)
 pCarthage = gc.getPlayer(iCarthage)
 pRome = gc.getPlayer(iRome)
+pTamils = gc.getPlayer(iTamils)
 pJapan = gc.getPlayer(iJapan)
 pEthiopia = gc.getPlayer(iEthiopia)
 pKorea = gc.getPlayer(iKorea)
@@ -136,6 +138,7 @@ teamGreece = gc.getTeam(pGreece.getTeam())
 teamPersia = gc.getTeam(pPersia.getTeam())
 teamCarthage = gc.getTeam(pCarthage.getTeam())
 teamRome = gc.getTeam(pRome.getTeam())
+teamTamils = gc.getTeam(pTamils.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
 teamEthiopia = gc.getTeam(pEthiopia.getTeam())
 teamKorea = gc.getTeam(pKorea.getTeam())
@@ -172,8 +175,8 @@ teamBarbarian = gc.getTeam(pBarbarian.getTeam())
 
 
 #for not allowing new civ popup if too close
-tDifference = (40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40)
-              #eg  in  ch  ba  gr  pe  ph  ro  ja  et  ko  ma  by  vi  ar  kh  in  sp  fr  en  hr  ru  ne  ma  po  in  it  mo  az  mu  tu  th  ge  am
+tDifference = (40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40)
+              #eg  in  ch  ba  gr  pe  ph  ro  ta  ja  et  ko  ma  by  vi  ar  kh  in  sp  fr  en  hr  ru  ne  ma  po  in  it  mo  az  mu  tu  th  ge  am
 
 # starting locations coordinates
 tCapitals = con.tCapitals
@@ -635,6 +638,9 @@ class RiseAndFall:
                         utils.setGoal(iRome, 0, 0)
                         utils.setGoal(iRome, 1, 0)
                         utils.setGoal(iRome, 2, 0)
+			utils.setGoal(iTamils, 0, 0)
+			utils.setGoal(iTamils, 1, 0)
+			utils.setGoal(iTamils, 2, 0)
                         utils.setGoal(iEthiopia, 0, 0)
                         utils.setGoal(iEthiopia, 1, 0)
                         utils.setGoal(iEthiopia, 2, 0)
@@ -657,6 +663,7 @@ class RiseAndFall:
                 pRome.changeGold(100)
                 pPersia.changeGold(200)
                 pJapan.changeGold(100)
+		pTamils.changeGold(200)
                 pEthiopia.changeGold(100)
 		pKorea.changeGold(200)
                 pMaya.changeGold(200)
@@ -3994,6 +4001,9 @@ class RiseAndFall:
                 if (iCiv == iJapan):
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
+		if iCiv == iTamils:
+			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
                 if (iCiv == iEthiopia):
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
@@ -4130,6 +4140,18 @@ class RiseAndFall:
 			if utils.getHumanID() != iJapan:
 				utils.makeUnit(con.iCrossbowman, iJapan, tCapitals[0][iJapan], 2)
 				utils.makeUnit(con.iJapanSamurai, iJapan, tCapitals[0][iJapan], 3)
+		if iCiv == iTamils:
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(con.iSpearman, iCiv, tPlot, 1)
+			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
+			tSeaPlot = self.findSeaPlots(tCapitals[0][iTamils], 1, iTamils)
+			if (tSeaPlot):
+				utils.makeUnit(con.iWorkBoat, iTamils, tSeaPlot, 1)
+				utils.makeUnit(con.iGalley, iTamils, tSeaPlot, 1)
+				utils.makeUnit(con.iSettler, iTamils, tSeaPlot, 1)
+				utils.makeUnit(con.iArcher, iTamils, tSeaPlot, 1)
                 if (iCiv == iEthiopia):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
@@ -4439,10 +4461,12 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iJapan):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
+		if iCiv == iTamils:
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iEthiopia):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 		if (iCiv == iKorea):
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iMaya):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iByzantium):
@@ -4627,7 +4651,6 @@ class RiseAndFall:
 
                 utils.makeUnit(iSettler, iEgypt, tCapitals[0][iEgypt], 1)
                 utils.makeUnit(iWarrior, iEgypt, tCapitals[0][iEgypt], 1)
-		utils.makeUnit(con.iCatapult, iEgypt, tCapitals[0][iEgypt], 1)
 
 		if ( pIndia.isHuman() ):
                     utils.makeUnit(iSettler, iIndia, tCapitals[0][iIndia], 1)
@@ -4654,6 +4677,9 @@ class RiseAndFall:
                 if ( pJapan.isHuman() ):
                     utils.makeUnit(iSettler, iJapan, tCapitals[0][iJapan], 1)
                     utils.makeUnit(iWarrior, iJapan, tCapitals[0][iJapan], 1)
+		if ( pTamils.isHuman() ):
+		    utils.makeUnit(iSettler, iTamils, tCapitals[0][iTamils], 1)
+		    utils.makeUnit(iWarrior, iTamils, tCapitals[0][iTamils], 1)
                 if ( pEthiopia.isHuman() ):
                     utils.makeUnit(iSettler, iEthiopia, tCapitals[0][iEthiopia], 1)
                     utils.makeUnit(iWarrior, iEthiopia, tCapitals[0][iEthiopia], 1)
@@ -5036,6 +5062,13 @@ class RiseAndFall:
 						  con.iAnimalHusbandry]
 				for iTech in lJapaneseTechs:
 					teamJapan.setHasTech(iTech, True, iCiv, False, False)
+			if iCiv == iTamils:
+				lTamilTechs = [con.iMining, con.iBronzeWorking, con.iMysticism, con.iPolytheism, con.iMeditation, con.iPriesthood,
+						con.iMasonry, con.iFishing, con.iSailing, con.iMonarchy, con.iTheWheel, con.iPottery, con.iWriting,
+						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iAgriculture,
+						con.iAesthetics, con.iIronWorking]
+				for iTech in lTamilTechs:
+					teamTamils.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iEthiopia):
                                 teamEthiopia.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamEthiopia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

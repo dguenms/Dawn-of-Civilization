@@ -10569,7 +10569,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 			else if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 2)
 				iAIChinaBonus = 15;
 			else if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() > 2)
-				iAIChinaBonus = -20;
+				iAIChinaBonus = -40;
 
 		iFinalResearchPercent = researchPercent * (researchModifier[pl] - iAIChinaBonus + std::min(GET_PLAYER((PlayerTypes)pl).getCurrentEra() - 1, 3) * 5) / 100;
 

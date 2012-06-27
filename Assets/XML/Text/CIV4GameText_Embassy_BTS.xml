@@ -91,4 +91,9 @@
 		<English>Holy Roman Embassy</English>
 		<German>Heilig-Römische Botschaft</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAM_EMBASSY</Tag>
+		<English>Tamil Embassy</English>
+		<German>Tamilische Botschaft</German>
+	</TEXT>
 </Civ4GameText>

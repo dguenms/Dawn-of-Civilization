@@ -6704,8 +6704,8 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 		}
 	}
 
-	if (getID() == CHINA && !GET_PLAYER((PlayerTypes)CHINA).isHuman())
-		iProductionNeeded = iProductionNeeded * 80 / 100;
+	//if (getID() == CHINA && !GET_PLAYER((PlayerTypes)CHINA).isHuman())
+	//	iProductionNeeded = iProductionNeeded * 80 / 100;
 
 	//Rhye - start (modern units cost more)
 	if (eUnit == 4) { //Settler

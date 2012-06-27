@@ -5515,7 +5515,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 4;
 									if (iI == WRITING && (!(GET_PLAYER((PlayerTypes)BABYLONIA).isHuman()) || GET_TEAM((TeamTypes)BABYLONIA).isHasTech((TechTypes)WRITING)))
 										iValue *= 4;	// fair conditions for the Babylonian UHV, otherwise even more luck dependent
-									if (iI == GUNPOWDER || iI == PAPER || iI == PRINTING_PRESS)
+									if (iI == GUNPOWDER || iI == PAPER || iI == PRINTING_PRESS || iI == COMPASS)
 										iValue *= 2;
 									if (iI == CIVIL_SERVICE) {
 										iValue *= 3;
@@ -5533,8 +5533,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue *= 2;
                                         iValue /= 3;
                                     }
-									if (iI == OPTICS || iI == ASTRONOMY || iI == LIBERALISM || iI == THEOLOGY || iI == BANKING || iI == EDUCATION || iI == ECONOMICS)
+									if (iI == OPTICS || iI == ASTRONOMY || iI == THEOLOGY || iI == BANKING || iI == EDUCATION || iI == ECONOMICS)
 										iValue /= 4;
+									if (iI == LIBERALISM)
+										iValue /= 10;
 									break;
 								case BABYLONIA:
 									if (iI == MEDITATION || iI == CALENDAR || iI == MONOTHEISM)
@@ -5612,6 +5614,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue /= 2;
 									if (iI == DIVINERIGHT)
 										iValue /= 4;
+									break;
+								case TAMILS:
+									if (iI == METALCASTING || iI == COMPASS || iI == CALENDAR)
+										iValue *= 2;
 									break;
 								case ETHIOPIA:
 									if (iI == MONOTHEISM)
@@ -5726,11 +5732,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									if (iI == ASTRONOMY || iI == RIFLING)
 										iValue *= 2;
-									if (iI == LITERATURE || iI == DRAMA || iI == GUILDS || iI == ECONOMICS || iI == LIBERALISM || iI == CHEMISTRY) {
+									if (iI == LITERATURE || iI == DRAMA || iI == GUILDS || iI == ECONOMICS || iI == CHEMISTRY) {
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == DIVINERIGHT) {
+									if (iI == DIVINERIGHT || iI == LIBERALISM) {
 										iValue *= 2;
 									}
 									if (iI == COMMUNISM)
@@ -5833,7 +5839,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case NETHERLANDS:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS)
+									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS || iI == LIBERALISM)
 										iValue *= 2;
 									if (iI == CHEMISTRY) {
 										iValue *= 3;

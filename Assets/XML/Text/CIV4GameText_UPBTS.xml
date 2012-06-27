@@ -164,4 +164,14 @@
 		<English>No unhappiness from non-state religions</English>
 		<German>Keine Unzufriedenheit durch Nicht-Staatsreligionen</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TAM</Tag>
+		<English>The Power of Thalassocracy:</English>
+		<German>Die Macht der Thalassokratie:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TAM2</Tag>
+		<English>Extra commerce on coast and ocean tiles</English>
+		<German>Zusätzlicher Kommerz auf Küsten- und Ozeanfeldern</German>
+	</TEXT>
 </Civ4GameText>

@@ -8594,7 +8594,7 @@ int CvCity::getExtraSpecialistThresholdYield(YieldTypes eIndex, SpecialistTypes 
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
 	if (isSpecialistExtraYieldThreshold())
 	{
-		return ((std::min(getSpecialistCount(eSpecialist), getMaxSpecialistCount(eSpecialist)) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, eIndex)));
+		return ((std::min(getSpecialistCount(eSpecialist), (eSpecialist != GC.getInfoTypeForString("SPECIALIST_CITIZEN")? getMaxSpecialistCount(eSpecialist) : getSpecialistCount(eSpecialist))) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, eIndex)));
 	}
 	else
 	{

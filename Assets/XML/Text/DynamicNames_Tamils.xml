@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_DESC</Tag>
+		<English>The Tamils</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_DESC_PEOPLES</Tag>
+		<English>Tamil Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_DESC_DEFAULT</Tag>
+		<English>Chola Empire</English>
+	</TEXT>
+</Civ4GameText>
