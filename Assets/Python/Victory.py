@@ -182,6 +182,11 @@ lSiberianCoast = [(109, 50), (109, 51), (110, 51), (111, 51), (112, 52), (114, 5
 
 iMediterraneanTiles = 263
 
+tDeccanTL = (88, 28)
+tDeccanBR = (94, 36)
+tSrivijayaTL = (98, 25)
+tSrivijayaBR = (105, 29)
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -192,6 +197,7 @@ iPersia = con.iPersia
 iCarthage = con.iCarthage
 iRome = con.iRome
 iJapan = con.iJapan
+iTamils = con.iTamils
 iEthiopia = con.iEthiopia
 iKorea = con.iKorea
 iMaya = con.iMaya
@@ -238,6 +244,7 @@ pPersia = gc.getPlayer(iPersia)
 pCarthage = gc.getPlayer(iCarthage)
 pRome = gc.getPlayer(iRome)
 pJapan = gc.getPlayer(iJapan)
+pTamils = gc.getPlayer(iTamils)
 pEthiopia = gc.getPlayer(iEthiopia)
 pKorea = gc.getPlayer(iKorea)
 pMaya = gc.getPlayer(iMaya)
@@ -279,6 +286,7 @@ teamPersia = gc.getTeam(pPersia.getTeam())
 teamCarthage = gc.getTeam(pCarthage.getTeam())
 teamRome = gc.getTeam(pRome.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
+teamTamils = gc.getTeam(pTamils.getTeam())
 teamEthiopia = gc.getTeam(pEthiopia.getTeam())
 teamKorea = gc.getTeam(pKorea.getTeam())
 teamMaya = gc.getTeam(pMaya.getTeam())
@@ -465,6 +473,12 @@ class Victory:
 		
 	def changeDutchColonies(self, iChange):
 		sd.scriptDict['iDutchColonies'] += iChange
+		
+	def getNumTamilSinks(self):
+		return sd.scriptDict['iNumTamilSinks']
+		
+	def setNumTamilSinks(self, iNewValue):
+		sd.scriptDict['iNumTamilSinks'] = iNewValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -980,6 +994,24 @@ class Victory:
 ##                                if (iGameTurn == getTurnForYear(1850)):      
 ##                                        if (self.getGoal(iJapan, 2) == -1): #see onCityAcquired()
 ##                                                self.setGoal(iJapan, 2, 1)
+
+
+		elif iPlayer == iTamils:
+			if pTamils.isAlive():
+			
+				if iGameTurn == getTurnForYear(800):
+					if pTamils.getGold() >= getTurns(3000) and pTamils.getTotalCulture() >= getTurns(2000):
+						self.setGoal(iTamils, 0, 1)
+					else:
+						self.setGoal(iTamils, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1000):
+					bDeccan = self.isControlledOrVassalized(iTamils, tDeccanTL, tDeccanBR)
+					bSrivijaya = self.isControlledOrVassalized(iTamils, tSrivijayaTL, tSrivijayaBR)
+					if bDeccan and bSrivijaya:
+						self.setGoal(iTamils, 1, 1)
+					else:
+						self.setGoal(iTamils, 1, 0)
                                         
 
 
@@ -2741,6 +2773,13 @@ class Victory:
 					self.setNumKoreanSinks(self.getNumKoreanSinks() + 1)
 					if (self.getNumKoreanSinks() == 20):
 						self.setGoal(iKorea, 2, 1)
+						
+		if iPlayer == iTamils:
+			if self.getGoal(iTamils, 2) == -1:
+				if cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAN_SEA"):
+					self.setNumTamilSinks(self.getNumTamilSinks() + 1)
+					if self.getNumTamilsSinks() == 25:
+						self.setGoal(iTamils, 2, 1)
 
 	def onGreatPersonBorn(self, argsList):
 		pUnit, iPlayer, pCity = argsList
@@ -3572,7 +3611,7 @@ class Victory:
 					pCity = city.GetCy()
 					if pCity.getCultureLevel() >= 5:
 						iCount += 1
-				aHelp.append(self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE", (iCount, 5)))
+				aHelp.append(self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE", (iCount, 3)))
 			elif iGoal == 2:
 				iMediterranean, iTotalMediterranean = self.countControlledTiles(iItaly, tMediterraneanTL, tMediterraneanBR, False, tMediterraneanExceptions, True)
 				fMediterranean = iMediterranean * 100.0 / iTotalMediterranean

@@ -145,7 +145,7 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_LIGHT_BLUE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_BLUE</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_LIGHT_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_BLUE_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>

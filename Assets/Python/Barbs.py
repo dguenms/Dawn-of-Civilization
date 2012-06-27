@@ -398,8 +398,9 @@ class Barbs:
                 self.foundCity(iBarbarian, lKazan, "Kazan", iGameTurn, 2, con.iHorseArcher, 1)
                 self.foundCity(iNative, lKongo, "Mbanza Kongo", iGameTurn, 1, con.iZuluImpi, 1)
 
-		self.foundCity(iIndependent, lThanjavur, "Madura", iGameTurn, 1, con.iWarElephant, 1)
-		self.foundCity(iIndependent, lMadras, "Kanchipuram", iGameTurn, 2, con.iWarElephant, 2)
+		if not gc.getPlayer(con.iTamils).isAlive():
+			self.foundCity(iIndependent, lThanjavur, "Tanjapuri", iGameTurn, 1, con.iWarElephant, 1)
+			self.foundCity(iIndependent, lMadras, "Kanchipuram", iGameTurn, 2, con.iWarElephant, 2)
 
 		self.foundCity(iIndependent, lVaranasi, "Varanasi", iGameTurn, 1, con.iWarrior, 1)
 		self.foundCity(iIndependent, lIndraprastha, "Indraprastha", iGameTurn, 1, con.iWarrior, 1)

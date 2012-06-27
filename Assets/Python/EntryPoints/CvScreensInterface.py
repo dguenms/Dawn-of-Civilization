@@ -58,10 +58,9 @@ g_bIsScreenActive = -1
 from StoredData import sd
 import Consts as con
 import RFCUtils
-import Victory
+import Victory as vic
 import CityNameManager
 cnm = CityNameManager.CityNameManager()
-vic = Victory.Victory()
 utils = RFCUtils.RFCUtils()
 
 tCoreAreasTL = con.tCoreAreasTL
@@ -1045,13 +1044,13 @@ def isBroaderPlot(argsList):
 def onTechStolen(argsList):
 	iPlayer = argsList[0]
 	iTech = argsList[1]
-	vic.onTechStolen(iPlayer, iTech)
+	vic.Victory().onTechStolen(iPlayer, iTech)
 	return 1
 
 #Leoreth
 def onGreatGeneralBorn(argsList):
 	iPlayer = argsList[0]
-	vic.onGreatGeneralBorn(iPlayer)
+	vic.Victory().onGreatGeneralBorn(iPlayer)
 	return 1
 	
 def isNeighbor(argsList):
@@ -1377,6 +1376,17 @@ def getUHVTileInfo(argsList):
 		brx, bry = tNCAmericaBR
 		if x >= tlx and x <= brx and y >= tly and y <= bry:
 			return 54
+			
+	elif iPlayer == con.iTamils:
+		tlx, tly = vic.tDeccanTL
+		brx, bry = vic.tDeccanBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 55
+			
+		tlx, tly = vic.tSrivijayaTL
+		brx, bry = vic.tSrivijayaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 56
 			
 	return -1
 		

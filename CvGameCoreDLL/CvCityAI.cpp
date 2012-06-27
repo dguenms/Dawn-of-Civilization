@@ -2399,6 +2399,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
+	case TAMILS:
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
+		break;
+	case ETHIOPIA:
+		break;
     case KOREA:
         aiUnitAIVal[UNITAI_EXPLORE] /= 2;
         aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
@@ -2428,7 +2434,6 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
-	case ETHIOPIA:
 	case VIKING:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
@@ -2981,7 +2986,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == FORBIDDENPALACE || iI == GRAND_CANAL) iTempValue *= 4;
 										else if (iI == GREATWALL) iTempValue *= 8;
 										else if (iI == GREATDAM || iI == TERRACOTTA || iI == PORCELAIN) iTempValue *= 2;
-										else if (iI == HANGINGGARDEN || iI == HIMEJI) iTempValue /= 3;
+										else if (iI == HANGINGGARDEN || iI == HIMEJI || iI == BOROBUDUR) iTempValue /= 3;
 										else if (iI == APOSTOLIC) iTempValue /= 2;
 										break;
 									case BABYLONIA:
@@ -3103,6 +3108,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 4;
 											}
 										break;*/
+									case TAMILS:
+										if (iI == KHAJURAHO) iTempValue *= 2;
+										break;
 									case ETHIOPIA:
 										if (iI == APOSTOLIC) iTempValue *= 3;
 										break;
@@ -4793,6 +4801,8 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					break;
 				case ROME:  // leave unchanged for Italy so far
 					iValue += 1;
+					break;
+				case TAMILS:
 					break;
 				case ETHIOPIA:
 					break;

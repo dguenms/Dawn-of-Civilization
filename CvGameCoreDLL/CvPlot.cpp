@@ -6398,6 +6398,15 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		}
 		//Rhye - end UP
 
+		// Leoreth: Tamil UP
+		if (ePlayer == TAMILS)
+		{
+			if (isWater())
+			{
+				iYield += GC.getBonusInfo((BonusTypes)21).getYieldChange(eYield);
+			}
+		}
+
 		// Leoreth: possible mall effect: +1 commerce on cottages
 		/*if (ePlayer == AMERICA)
 		{

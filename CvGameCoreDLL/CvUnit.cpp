@@ -7559,6 +7559,10 @@ int CvUnit::workRate(bool bMax) const
             iRate *= 140;   // Leoreth - Renaissance Italy
 		iRate /= 100;
 		break;
+	case TAMILS:
+		iRate *= 100;
+		iRate /= 100;
+		break;
 	case ETHIOPIA:
 		iRate *= 100;
 		iRate /= 100;

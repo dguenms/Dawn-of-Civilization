@@ -49,6 +49,10 @@ class Resources:
 
                 if (iGameTurn == 5): #otherwise it's picked by Portugal at the beginning
                         gc.getMap().plot(49, 43).setImprovementType(con.iHut)
+			
+		# Tamils - make dynamic later
+		if iGameTurn == getTurnForYear(-300):
+			gc.getMap().plot(90, 29).setBonusType(iFish)
 
                 #Orka: Silk Road
                 if (iGameTurn == getTurnForYear(-200)): 

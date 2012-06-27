@@ -3050,7 +3050,7 @@ class Mercenary:
 		elif unitType == con.iWarElephant:
 			return gc.getPlayer(iPlayer).getCurrentEra() <= con.iClassical or set(regionList) & con.mercRegions[con.iArea_MiddleEast] or set(regionList) & con.mercRegions[con.iArea_EastAsia] or set(regionList) & con.mercRegions[con.iArea_Africa]
 			
-		elif unitType in [con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek]:
+		elif unitType in [con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek, con.iHarappanMilitia, con.iTibetanKhampa, con.iKongoPombos, con.iPolishWingedHussar, con.iMoorishCamelGunner]:
 			return False
 		
                 return True

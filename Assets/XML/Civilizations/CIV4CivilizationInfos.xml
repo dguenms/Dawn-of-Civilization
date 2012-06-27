@@ -2496,7 +2496,7 @@
 			<Adjective>TXT_KEY_CIV_ITALY_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_ITALY_PEDIA</Civilopedia>
 			<!-- Rhye -->
-			<DefaultPlayerColor>PLAYERCOLOR_DARK_RED</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_ITALY</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ITALY</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>

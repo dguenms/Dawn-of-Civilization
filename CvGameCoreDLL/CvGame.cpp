@@ -2254,6 +2254,7 @@ void CvGame::update()
 		case CARTHAGE:
 		case PERSIA:
 		case ROME:
+		case TAMILS:
 		case ETHIOPIA:
 		case MAYA:
 		case ARABIA:

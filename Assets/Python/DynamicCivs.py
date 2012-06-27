@@ -26,6 +26,7 @@ iPersia = con.iPersia
 iCarthage = con.iCarthage
 iPhoenicia = con.iPhoenicia
 iRome = con.iRome
+iTamils = con.iTamils
 iJapan = con.iJapan
 iEthiopia = con.iEthiopia
 iKorea = con.iKorea
@@ -74,6 +75,7 @@ pPersia = gc.getPlayer(iPersia)
 pCarthage = gc.getPlayer(iCarthage)
 pRome = gc.getPlayer(iRome)
 pJapan = gc.getPlayer(iJapan)
+pTamils = gc.getPlayer(iTamils)
 pEthiopia = gc.getPlayer(iEthiopia)
 pKorea = gc.getPlayer(iKorea)
 pMaya = gc.getPlayer(iMaya)
@@ -116,6 +118,7 @@ teamPersia = gc.getTeam(pPersia.getTeam())
 teamCarthage = gc.getTeam(pCarthage.getTeam())
 teamRome = gc.getTeam(pRome.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
+teamTamils = gc.getTeam(pTamils.getTeam())
 teamEthiopia = gc.getTeam(pEthiopia.getTeam())
 teamKorea = gc.getTeam(pKorea.getTeam())
 teamMaya = gc.getTeam(pMaya.getTeam())
@@ -181,6 +184,7 @@ class DynamicCivs:
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEFAULT",
                         iRome : "TXT_KEY_CIV_ROME_DESC_DEFAULT",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEFAULT",
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEFAULT",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_DEFAULT",
                         iKorea : "TXT_KEY_CIV_KOREA_DESC_DEFAULT",
                         iMaya : "TXT_KEY_CIV_MAYA_DESC_DEFAULT",
@@ -218,6 +222,7 @@ class DynamicCivs:
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES",
                         iRome : "TXT_KEY_CIV_ROME_DESC_PEOPLES",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_PEOPLES",
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_PEOPLES",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_PEOPLES",
                         iKorea : "TXT_KEY_CIV_KOREA_DESC_PEOPLES",
                         iMaya : "TXT_KEY_CIV_MAYA_DESC_PEOPLES",
@@ -336,6 +341,7 @@ class DynamicCivs:
 				iKhmer : "TXT_KEY_CIV_KHMER_JAPANESE_VASSAL",
 				iMongolia : "TXT_KEY_CIV_MONGOLIA_JAPANESE_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_JAPANESE_VASSAL",},
+			#iTamils - none so far
 			#iEthiopia - none so far
 			
 			#iKorea - none so far
@@ -540,6 +546,7 @@ class DynamicCivs:
                         iRome : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
 			iItaly : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
                         iJapan : "TXT_KEY_CIV_JAPAN_SOVIET_VASSAL",
+			iTamils : "TXT_KEY_CIV_TAMILS_SOVIET_VASSAL",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_SOVIET_VASSAL",
                         iKorea : "TXT_KEY_CIV_KOREA_SOVIET_VASSAL",
                         iMaya : "TXT_KEY_CIV_MAYA_SOVIET_VASSAL",
@@ -577,6 +584,7 @@ class DynamicCivs:
                         iRome : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
 			iItaly : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
                         iJapan : "TXT_KEY_CIV_JAPAN_NAZI_VASSAL",
+			iTamils : "TXT_KEY_CIV_TAMILS_NAZI_VASSAL",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_NAZI_VASSAL",
                         iKorea : "TXT_KEY_CIV_KOREA_NAZI_VASSAL",
                         iMaya : "TXT_KEY_CIV_MAYA_NAZI_VASSAL",
@@ -613,6 +621,7 @@ class DynamicCivs:
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_DESC_FASCIST",
                         iRome : "TXT_KEY_CIV_ROME_DESC_FASCIST",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_FASCIST",
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_FASCIST",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_FASCIST",
                         iKorea : "TXT_KEY_CIV_KOREA_DESC_FASCIST",
                         iMaya : "TXT_KEY_CIV_MAYA_DESC_FASCIST",
@@ -650,6 +659,7 @@ class DynamicCivs:
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_DESC_COMMUNIST",
                         iRome : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_COMMUNIST",
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_COMMUNIST",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_COMMUNIST",
                         iKorea : "TXT_KEY_CIV_KOREA_DESC_COMMUNIST",
                         iMaya : "TXT_KEY_CIV_MAYA_DESC_COMMUNIST",
@@ -687,6 +697,7 @@ class DynamicCivs:
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_DESC_DEMOCRATIC",
                         iRome : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEMOCRATIC",
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEMOCRATIC",
                         iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_DEMOCRATIC",
                         iKorea : "TXT_KEY_CIV_KOREA_DESC_DEMOCRATIC",
                         iMaya : "TXT_KEY_CIV_MAYA_DESC_DEMOCRATIC",
@@ -732,6 +743,7 @@ class DynamicCivs:
 			iCarthage : con.iHiram,
 			iRome : con.iJuliusCaesar,
 			iJapan : con.iJimmu,
+			iTamils : con.iRajendra,
 			iEthiopia : con.iZaraYaqob,
 			iKorea : con.iWangKon,
 			iMaya : con.iPacal,
@@ -1071,16 +1083,15 @@ class DynamicCivs:
 		elif iPlayer == iChina:
 			if not bResurrected:
 				if bEmpire:
-					if iEra == iAncient:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_ZHOU")
+					if iEra >= iIndustrial:
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")
 						return
-					elif iEra == iClassical:
-						if iGameTurn < getTurnForYear(0):
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QIN")
-						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_HAN")
+						
+					if iEra == iRenaissance and iGameTurn >= getTurnForYear(1350):
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
 						return
-					elif iEra == iMedieval:
+						
+					if iEra == iMedieval:
 						#if iAnarchyTurns <= 2:
 						#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
 						if teamChina.isHasTech(con.iPaper) and teamChina.isHasTech(con.iGunpowder):
@@ -1088,11 +1099,16 @@ class DynamicCivs:
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_TANG")
 						return
-					elif tPlayer.isHasTech(con.iAstronomy):
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
+						
+					if iEra == iClassical:
+						if iGameTurn < getTurnForYear(0):
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QIN")
+						else:
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_HAN")
 						return
-					elif iEra >= iIndustrial:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")
+				
+					if iEra == iAncient:
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_ZHOU")
 						return
 			else:
 				if bEmpire:
@@ -1669,7 +1685,7 @@ class DynamicCivs:
 			#	self.setLeader(iPlayer, con.iCixi)
 			#	return
 				
-			if tPlayer.isHasTech(con.iAstronomy) or bResurrected:
+			if (iEra >= con.iRenaissance and iGameTurn >= getTurnForYear(1350)) or bResurrected:
 				self.setLeader(iPlayer, con.iHongwu)
 				return
 				

@@ -870,4 +870,14 @@
 		<English>North and Central America</English>
 		<German>Nord- und Mittelamerika</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_55</Tag>
+		<English>Deccan</English>
+		<German>Deccan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_56</Tag>
+		<English>Srivijaya</English>
+		<German>Srivijaya</German>
+	</TEXT>
 </Civ4GameText>
