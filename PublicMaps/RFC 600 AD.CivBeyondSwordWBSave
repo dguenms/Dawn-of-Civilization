@@ -35171,6 +35171,7 @@ BeginPlot
 	RiverWEDirection=1
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_IVORY
 	PlotType=2
 EndPlot
 BeginPlot
@@ -35946,6 +35947,7 @@ EndPlot
 BeginPlot
 	x=93,y=28
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_IRON
 	PlotType=1
 EndPlot
 BeginPlot
@@ -35982,7 +35984,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=35
-	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -41629,6 +41630,7 @@ BeginPlot
 	x=107,y=52
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_OIL
 	PlotType=2
 EndPlot
 BeginPlot

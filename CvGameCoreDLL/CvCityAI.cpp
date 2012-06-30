@@ -2378,7 +2378,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
-		aiUnitAIVal[UNITAI_SETTLE] /= 20;
+		aiUnitAIVal[UNITAI_SETTLE] /= 100;
 		break;
 	case CARTHAGE:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 2;
@@ -2986,7 +2986,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == FORBIDDENPALACE || iI == GRAND_CANAL) iTempValue *= 4;
 										else if (iI == GREATWALL) iTempValue *= 8;
 										else if (iI == GREATDAM || iI == TERRACOTTA || iI == PORCELAIN) iTempValue *= 2;
-										else if (iI == HANGINGGARDEN || iI == HIMEJI || iI == BOROBUDUR) iTempValue /= 3;
+										else if (iI == HANGINGGARDEN || iI == HIMEJI || iI == BOROBUDUR || iI == BRANDENBURG) iTempValue /= 3;
 										else if (iI == APOSTOLIC) iTempValue /= 2;
 										break;
 									case BABYLONIA:
@@ -5071,9 +5071,36 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 
 	if (eProject == GC.getInfoTypeForString("PROJECT_PERSECUTION"))
 	{
-		if (GET_PLAYER(getOwnerINLINE()).isStateReligion() && getReligionBadHappiness() != 0)
+		if (GET_PLAYER(getOwnerINLINE()).getPersecutionCountdown() > 0)
 		{
-			int iNonStateReligions = 0;
+			return 0;
+		}
+
+		if (GET_PLAYER(getOwnerINLINE()).calculateForeignReligionWeight() <= 35 - abs(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getLeader()).getDifferentReligionAttitudeChange())*10 - (GET_PLAYER(getOwnerINLINE()).getCurrentEra() == 2? 10 : 0))
+		{
+			return 0;
+		}
+
+		if (GET_PLAYER(getOwnerINLINE()).isStateReligion() && getReligionBadHappiness() > 0)
+		{
+			iValue += 5*getReligionBadHappiness();
+
+			iValue += abs(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getLeader()).getDifferentReligionAttitudeChange())*5;
+
+			iValue -= 15;
+
+			if (getHurryAngerTimer() > 0)
+			{
+				iValue -= 5;
+			}
+
+			if (GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)0) == CIVIC_THEOCRACY || GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)4) == CIVIC_FANATICISM)
+			{
+				iValue += 5;
+			}
+
+
+			/*int iNonStateReligions = 0;
 			for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
 			{
 				ReligionTypes eReligion = (ReligionTypes)iI;
@@ -5094,7 +5121,7 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 
 				iValue += abs(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getLeader()).getDifferentReligionAttitudeChange())*5;
 				iValue -= 10;
-			}
+			}*/
 		}
 	}
 

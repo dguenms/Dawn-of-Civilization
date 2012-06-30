@@ -11377,7 +11377,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 		if (getCurrentEra() < ERA_INDUSTRIAL)
 		{
-			if (getStateReligion() != NO_RELIGION && getStateReligion() != PROTESTANTISM)
+			if (getID() != AMERICA && getID() != NETHERLANDS)
 			{
 				iValue /= 2;
 			}
@@ -15952,6 +15952,12 @@ int CvPlayerAI::AI_getStrategyHash() const
                             {
                                 iMissionary += 10;
                             }
+							else
+							{
+								// Leoreth: less inclined to proselytize to someone who has recently persecuted
+								if (GET_PLAYER((PlayerTypes)iI).getPersecutionCountdown() > 0)
+								iMissionary -= 20;
+							}
                         }
                     }
                 }

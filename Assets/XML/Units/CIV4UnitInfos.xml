@@ -21181,24 +21181,14 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_CAPE_COAST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs>
 				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<PassableTech>TECH_OPTICS</PassableTech>
+					<PassableTech>TECH_ASTRONOMY</PassableTech>
 				</TerrainPassableTech>
 			</TerrainPassableTechs>
-			<FeaturePassableTechs>
-				<FeaturePassableTech>
-					<FeatureType>FEATURE_CAPE_COAST</FeatureType>
-					<PassableTech>TECH_OPTICS</PassableTech>
-				</FeaturePassableTech>
-			</FeaturePassableTechs>
+			<FeaturePassableTechs/>
 			<iCombat>4</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iAirCombat>0</iAirCombat>
@@ -21234,7 +21224,7 @@
 			<iBombardRate>0</iBombardRate>
 			<SpecialCargo>NONE</SpecialCargo>
 			<DomainCargo>DOMAIN_LAND</DomainCargo>
-			<iCargo>1</iCargo>
+			<iCargo>2</iCargo>
 			<iConscription>0</iConscription>
 			<iCultureGarrison>0</iCultureGarrison>
 			<iExtraCost>0</iExtraCost>

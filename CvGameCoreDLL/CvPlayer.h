@@ -1166,6 +1166,10 @@ public:
 	void resetStabilityCategories();
 
 	EraTypes getSoundtrackEra();
+	
+	int getPersecutionCountdown();
+	void setPersecutionCountdown(int iNewValue);
+	int calculateForeignReligionWeight();
 
 protected:
 
@@ -1313,6 +1317,8 @@ protected:
 	int m_iLatestRebellionTurn;
 	//StabilityList m_stabilityList;
 
+	int m_iPersecutionCountdown;
+
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;
 	EraTypes m_eCurrentEra;
@@ -1442,6 +1448,7 @@ protected:
 	void getResourceLayerColors(GlobeLayerResourceOptionTypes eOption, std::vector<NiColorA>& aColors, std::vector<CvPlotIndicatorData>& aIndicators) const;  // used by Globeview resource layer
 	void getReligionLayerColors(ReligionTypes eSelectedReligion, std::vector<NiColorA>& aColors, std::vector<CvPlotIndicatorData>& aIndicators) const;  // used by Globeview religion layer
 	void getCultureLayerColors(std::vector<NiColorA>& aColors, std::vector<CvPlotIndicatorData>& aIndicators) const;  // used by Globeview culture layer
+
 };
 
 #endif

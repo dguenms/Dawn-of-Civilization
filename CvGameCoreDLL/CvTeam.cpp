@@ -5993,6 +5993,12 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 		if (GC.getBuildingInfo((BuildingTypes) iI).getObsoleteTech() == eTech)
 		{
 			changeObsoleteBuildingCount(((BuildingTypes)iI), iChange);
+
+			// Leoreth: obsolete vote source when wonder obsoletes
+			if (GC.getBuildingInfo((BuildingTypes)iI).getVoteSourceType() != -1)
+			{
+				GC.getGameINLINE().changeDiploVote((VoteSourceTypes)GC.getBuildingInfo((BuildingTypes)iI).getVoteSourceType(), -1);
+			}
 		}
 
 		if (GC.getBuildingInfo((BuildingTypes) iI).getSpecialBuildingType() != NO_SPECIALBUILDING)

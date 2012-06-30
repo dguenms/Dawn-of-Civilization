@@ -6314,7 +6314,7 @@
 			<Type>ART_DEF_UNIT_BOMBARD</Type>
 			<Button>Art/Interface/Buttons/Units/Bombard.dds</Button>
 			<fScale>0.40</fScale>
-			<fInterfaceScale>1.5</fInterfaceScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Bombard/BombardB.nif</NIF>

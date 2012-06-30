@@ -571,6 +571,9 @@ class RiseAndFall:
 		utils.debugTextPopup("iPersecutedReligion: "+str(gc.getReligionInfo(iPersecutedReligion).getText()))
 		
 		city.setHasReligion(iPersecutedReligion, False, True, True)
+		city.setHasRealBuilding(con.iTemple + 4*iPersecutedReligion, False)
+		city.setHasRealBuilding(con.iMonastery + 4*iPersecutedReligion, False)
+		city.setHasRealBuilding(con.iCathedral + 4*iPersecutedReligion, False)
 		city.changeOccupationTimer(2)
 		city.changeHurryAngerTimer(city.hurryAngerLength(0))
 		
@@ -3847,8 +3850,19 @@ class RiseAndFall:
 			
 			if iPersecutedReligion > -1:
 				city.setHasReligion(iPersecutedReligion, False, True, True)
+				city.setHasRealBuilding(con.iTemple + 4*iPersecutedReligion, False)
+				city.setHasRealBuilding(con.iMonastery + 4*iPersecutedReligion, False)
+				city.setHasRealBuilding(con.iCathedral + 4*iPersecutedReligion, False)
+				
 				city.changeOccupationTimer(2)
 				city.changeHurryAngerTimer(city.hurryAngerLength(0))
+				
+				iCountdown = 10
+				iCountdown -= abs(gc.getLeaderheadInfo(gc.getPlayer(iOwner).getLeader()).getDifferentReligionAttitudeChange())
+				
+				if gc.getPlayer(iOwner).getCivics(0) == con.iTheocracy or gc.getPlayer(iOwner).getCivics(4) == con.iFanaticism:
+					iCountdown -= 2
+				
 				CyInterface().addMessage(city.getOwner(), True, con.iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 				
 			gc.getTeam(pOwner.getTeam()).changeProjectCount(con.iPersecutionProject, -1)
@@ -4143,9 +4157,14 @@ class RiseAndFall:
 		if iCiv == iTamils:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
-			utils.makeUnit(con.iSpearman, iCiv, tPlot, 1)
+			utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
+			if utils.getHumanID() != iTamils:
+				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+				utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+				utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
+				utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tCapitals[0][iTamils], 1, iTamils)
 			if (tSeaPlot):
 				utils.makeUnit(con.iWorkBoat, iTamils, tSeaPlot, 1)

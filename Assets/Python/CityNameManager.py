@@ -7589,7 +7589,7 @@ class CityNameManager:
                                 city.setName('Marseille', False)
                         if (sName == 'Munich'):
                                 city.setName('M&#252;nchen', False)
-                        if (sName == 'Jakaruta' or sName == 'Jayakarta'):
+                        if (sName == 'Jakaruta' or sName == 'Jayakarta' or sName == 'Sundapura'):
                                 city.setName('Batavia', False)
                         if (sName == 'Singapura' or sName == 'Xinjiapo' or sName == 'Singapur' or sName == 'Shounantou'):
                                 city.setName('Singapore', False)
