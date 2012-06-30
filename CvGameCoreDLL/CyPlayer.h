@@ -529,6 +529,7 @@ public:
 	void updateTradeRoutes();
 	int getWarMapValue(int x, int y);
 	void AI_reset();
+	void setPersecutionCountdown(int iNewValue);
 
 	// Leoreth: stability (not active yet)
 	int getStability();

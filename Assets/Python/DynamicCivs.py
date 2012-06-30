@@ -1671,7 +1671,7 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iShivaji)
 				return
 				
-			if tPlayer.isHasTech(con.iMathematics):
+			if tPlayer.isHasTech(con.iCurrency):
 				self.setLeader(iPlayer, con.iChandragupta)
 				return
 				

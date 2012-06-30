@@ -6076,7 +6076,7 @@
 			<iGlobalHappiness>0</iGlobalHappiness>
 			<iStateReligionHappiness>0</iStateReligionHappiness>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iMilitaryProductionModifier>10</iMilitaryProductionModifier>
+			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
 			<iSpaceProductionModifier>0</iSpaceProductionModifier>
 			<iGlobalSpaceProductionModifier>0</iGlobalSpaceProductionModifier>
 			<iTradeRoutes>0</iTradeRoutes>
@@ -27573,8 +27573,8 @@
 			<iAreaHealth>0</iAreaHealth>
 			<iGlobalHealth>0</iGlobalHealth>
 			<iHappiness>0</iHappiness>
-			<iAreaHappiness>2</iAreaHappiness>
-			<iGlobalHappiness>0</iGlobalHappiness>
+			<iAreaHappiness>0</iAreaHappiness>
+			<iGlobalHappiness>2</iGlobalHappiness>
 			<iStateReligionHappiness>0</iStateReligionHappiness>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
 			<iMilitaryProductionModifier>0</iMilitaryProductionModifier>
@@ -28293,8 +28293,8 @@
 			<iNukeModifier>0</iNukeModifier>
 			<iNukeExplosionRand>0</iNukeExplosionRand>
 			<iFreeSpecialist>0</iFreeSpecialist>
-			<iAreaFreeSpecialist>1</iAreaFreeSpecialist>
-			<iGlobalFreeSpecialist>0</iGlobalFreeSpecialist>
+			<iAreaFreeSpecialist>0</iAreaFreeSpecialist>
+			<iGlobalFreeSpecialist>1</iGlobalFreeSpecialist>
 			<iMaintenanceModifier>0</iMaintenanceModifier>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iGlobalWarWearinessModifier>0</iGlobalWarWearinessModifier>
@@ -34642,7 +34642,7 @@
 			<!-- Rhye -->
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<ObsoleteTech>TECH_FIBER_OPTICS</ObsoleteTech>
-			<PrereqTech>TECH_CORPORATION</PrereqTech>
+			<PrereqTech>TECH_RAILROAD</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_DEMOCRACY</PrereqTech>
 			</TechTypes>
@@ -35393,7 +35393,7 @@
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<ObsoleteTech>NONE</ObsoleteTech>
+			<ObsoleteTech>TECH_RIFLING</ObsoleteTech>
 			<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			<TechTypes/>
 			<Bonus>NONE</Bonus>
@@ -35525,7 +35525,7 @@
 			<BonusHappinessChanges/>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_STONE</BonusType>
+					<BonusType>BONUS_COPPER</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
@@ -35540,7 +35540,7 @@
 			<ImprovementFreeSpecialists/>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>

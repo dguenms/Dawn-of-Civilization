@@ -2458,3 +2458,9 @@ void CyPlayer::AI_reset()
     if (m_pPlayer)
         m_pPlayer->AI_reset(false);
 }
+
+void CyPlayer::setPersecutionCountdown(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setPersecutionCountdown(iNewValue);
+}

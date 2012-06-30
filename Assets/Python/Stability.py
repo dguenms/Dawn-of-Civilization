@@ -961,7 +961,7 @@ class Stability:
                                                                                 break
                                                                 else:
                                                                         if (pCurrent.getCulture(iLoop)*100/pCurrent.getCulture(iPlayer) >= 15):
-                                                                                if (iPlayer == con.iTurkey or iPlayer == con.iAmerica or iPlayer == con.iPortugal or iPlayer == con.iNetherlands): #they have too much foreign culture
+                                                                                if (iPlayer == con.iTurkey or iPlayer == con.iAmerica or iPlayer == con.iPortugal or iPlayer == con.iNetherlands or iPlayer == con.iNetherlands): #they have too much foreign culture
                                                                                         iTempCityStability -= 1
                                                                                 else:
                                                                                         iTempCityStability -= 2

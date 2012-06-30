@@ -562,6 +562,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iStatePropertyCountdown = 0;
 	m_iDemocracyCountdown = 0;
 	m_iLatestRebellionTurn = 0;
+	m_iPersecutionCountdown = 0;
 
 	m_eID = eID;
 	updateTeamType();
@@ -2899,6 +2900,11 @@ void CvPlayer::doTurn()
 	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
 
 	AI_doTurnPost();
+
+	if (getPersecutionCountdown() > 0)
+	{
+		setPersecutionCountdown(getPersecutionCountdown() - 1);
+	}
 
 	CvEventReporter::getInstance().endPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
 
@@ -6729,6 +6735,9 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded *= 146;
 			iProductionNeeded /= 100;
 		}
+
+		if (getID() == INDIA)
+			iProductionNeeded *= 2;
 	}
 	else if (eUnit == 5) { //Worker
 		if (getCurrentEra() == 2) { //medieval
@@ -25890,6 +25899,45 @@ void CvPlayer::resetStabilityCategories()
 		setStabilityCategory((StabilityTypes)i, 0);
 	}*/
 	int i = 0;
+}
+
+int CvPlayer::getPersecutionCountdown()
+{
+	return m_iPersecutionCountdown;
+}
+
+void CvPlayer::setPersecutionCountdown(int iNewValue)
+{
+	m_iPersecutionCountdown = iNewValue;
+}
+
+int CvPlayer::calculateForeignReligionWeight()
+{
+	int iWeight = 0;
+	ReligionTypes eStateReligion = getStateReligion();
+
+	CvCity* pLoopCity;
+	int iLoop;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			ReligionTypes eReligion = (ReligionTypes)iI;
+
+			if ((eStateReligion == BUDDHISM && eReligion == HINDUISM) || (eStateReligion == HINDUISM && eReligion == BUDDHISM) || (eStateReligion == CONFUCIANISM && eReligion == TAOISM) || (eStateReligion == TAOISM && eReligion == CONFUCIANISM))
+			{
+				continue;
+			}
+
+			if (pLoopCity->isHasReligion(eReligion))
+			{
+				iWeight += civSpreadFactor[getID()][eStateReligion] - civSpreadFactor[getID()][eReligion];
+			}
+		}
+	}
+
+	return std::max(0, iWeight / 100);
+
 }
 
 

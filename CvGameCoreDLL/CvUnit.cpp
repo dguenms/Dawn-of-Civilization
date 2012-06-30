@@ -288,10 +288,13 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	}
 	//Rhye - end
 
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HIMEJI) && getUnitCombatType() >= 1 && getUnitCombatType() <= 6)
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HIMEJI) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)RIFLING))
 	{
-		setHasPromotion(((PromotionTypes)26), true); //citygarrison1
-		setHasPromotion(((PromotionTypes)29), true); //drill1
+		if (getUnitCombatType() == 1 || getUnitCombatType() == 3) // melee and archery
+		{
+			setHasPromotion(((PromotionTypes)26), true); //citygarrison1
+			setHasPromotion(((PromotionTypes)29), true); //drill1
+		}
 	}
 
 	if (getDomainType() == DOMAIN_LAND)
@@ -6849,6 +6852,13 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 		return 0;
 	}
 
+	//Rhye - start UP
+	if (getOwnerINLINE() == GERMANY)
+	{
+		return 0;
+	}
+	//Rhye - end UP
+
 	iPrice = GC.getDefineINT("BASE_UNIT_UPGRADE_COST");
 
 	iPrice += (std::max(0, (GET_PLAYER(getOwnerINLINE()).getProductionNeeded(eUnit) - GET_PLAYER(getOwnerINLINE()).getProductionNeeded(getUnitType()))) * GC.getDefineINT("UNIT_UPGRADE_COST_PER_PRODUCTION"));
@@ -6863,13 +6873,6 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 	}
 
 	iPrice -= (iPrice * getUpgradeDiscount()) / 100;
-
-	//Rhye - start UP
-	if (getOwnerINLINE() == GERMANY)
-	{
-		iPrice /= 2;
-	}
-	//Rhye - end UP
 
 	return iPrice;
 }

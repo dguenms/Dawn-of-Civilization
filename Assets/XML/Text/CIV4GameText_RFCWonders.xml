@@ -1034,8 +1034,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Tag>
-		<English>[ICON_BULLET]New units start with City Garrison I and Drill I[NEWLINE][ICON_BULLET]Amount of [ICON_GOLD]looted doubled</English>
-		<German>[ICON_BULLET]Neue Einheiten starten mit Garnison I und Drill I[NEWLINE][ICON_BULLET]Menge des geplünderten [ICON_GOLD]verdoppelt</German>
+		<English>[ICON_BULLET]New melee and archery units start with City Garrison I and Drill I[NEWLINE][ICON_BULLET]Amount of [ICON_GOLD]looted doubled</English>
+		<German>[ICON_BULLET]Neue Nahkampf- und Pfeil- und Bogeneinheiten starten mit Garnison I und Drill I[NEWLINE][ICON_BULLET]Menge des geplünderten [ICON_GOLD]verdoppelt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER</Tag>

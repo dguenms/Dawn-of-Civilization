@@ -54,6 +54,7 @@ iGreece = con.iGreece
 iPersia = con.iPersia
 iCarthage = con.iCarthage
 iRome = con.iRome
+iTamils = con.iTamils
 iJapan = con.iJapan
 iByzantium = con.iByzantium
 iVikings = con.iVikings
@@ -375,6 +376,8 @@ class UniquePowers:
 				
 		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_GREEK_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		
+	def tamilConquerUP(self, iEnemy, iNumTargets=1):
+		return
 
 
 #------------------ARABIAN U.P.-------------------

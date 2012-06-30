@@ -7291,8 +7291,8 @@
 			<Civilopedia>TXT_KEY_LEADER_FREDERICK_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_FREDERICK</ArtDefineTag>
 			<iWonderConstructRand>20</iWonderConstructRand>
-			<iBaseAttitude>1</iBaseAttitude>
-			<iBasePeaceWeight>8</iBasePeaceWeight>
+			<iBaseAttitude>0</iBaseAttitude>
+			<iBasePeaceWeight>6</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
 			<iWarmongerRespect>0</iWarmongerRespect>
 			<iEspionageWeight>90</iEspionageWeight>
@@ -7301,7 +7301,7 @@
 			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
-			<iMaxWarRand>200</iMaxWarRand>
+			<iMaxWarRand>125</iMaxWarRand>
 			<iMaxWarNearbyPowerRatio>100</iMaxWarNearbyPowerRatio>
 			<iMaxWarDistantPowerRatio>50</iMaxWarDistantPowerRatio>
 			<iMaxWarMinAdjacentLandPercent>2</iMaxWarMinAdjacentLandPercent>
@@ -7313,7 +7313,7 @@
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>0</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>20</iBuildUnitProb>
+			<iBuildUnitProb>35</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange>
@@ -7361,16 +7361,20 @@
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<!-- Rhye - end -->
-			<iVassalPowerModifier>0</iVassalPowerModifier>
+			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SECULARISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-					<iFlavor>10</iFlavor>
+					<iFlavor>8</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
 			<ContactRands>
@@ -7696,11 +7700,11 @@
 				</NoWarAttitudeProb>
 				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
-					<iNoWarProb>70</iNoWarProb>
+					<iNoWarProb>50</iNoWarProb>
 				</NoWarAttitudeProb>
 				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
-					<iNoWarProb>100</iNoWarProb>
+					<iNoWarProb>85</iNoWarProb>
 				</NoWarAttitudeProb>
 				<NoWarAttitudeProb>
 					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
@@ -7709,7 +7713,7 @@
 			</NoWarAttitudeProbs>
 			<UnitAIWeightModifiers>
 				<UnitAIWeightModifier>
-					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<UnitAIType>UNITAI_COLLATERAL</UnitAIType>
 					<iWeightModifier>100</iWeightModifier>
 				</UnitAIWeightModifier>
 			</UnitAIWeightModifiers>
