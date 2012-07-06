@@ -11,6 +11,8 @@ from StoredData import sd # edead
 import Consts as con
 import Victory as vic
 import RFCUtils
+import time # Leoreth: benchmarking
+import heapq # Leoreth
 utils = RFCUtils.RFCUtils()
 
 # globals
@@ -1510,12 +1512,7 @@ class Victory:
 							self.setGoal(iRussia, 1, 0)
 							
 				if teamRussia.isHasTech(con.iRailroad) and self.getGoal(iRussia, 1) == -1 and self.getRussianProjects(0) == -1:
-					bRailroad = False
-					for tCoast in lSiberianCoast:
-						if self.isConnectedByRailroad(iRussia, con.tCapitals[0][iRussia][0], con.tCapitals[0][iRussia][1], tCoast[0], tCoast[1]):
-							bRailroad = True
-							break
-					if bRailroad:
+					if self.isConnectedByRailroad(iRussia, con.tCapitals[0][iRussia], lSiberianCoast):
 						self.setRussianProjects(0, 1)
 						if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
 							self.setGoal(iRussia, 1, 1)
@@ -3074,28 +3071,34 @@ class Victory:
 					
 		return iCount, iTotal
 		
-	def isConnectedByRailroad(self, iPlayer, iStartX, iStartY, iTargetX, iTargetY):
+	def isConnectedByRailroad(self, iPlayer, tStart, lTargetList):
+		if len(lTargetList) == 0:
+			return False
+		
+		iStartX, iStartY = tStart
+		iTargetX, iTargetY = lTargetList[0]
 		startPlot = gc.getMap().plot(iStartX, iStartY)
+		
 		if not (startPlot.isCity() and startPlot.getOwner() == iPlayer): return False
 		
-		lNodes = [(-utils.calculateDistance(iStartX, iStartY, iTargetX, iTargetY), iStartX, iStartY)]
+		iRailroad = gc.getInfoTypeForString("ROUTE_RAILROAD")
+		lNodes = [(utils.calculateDistance(iStartX, iStartY, iTargetX, iTargetY), iStartX, iStartY)]
+		heapq.heapify(lNodes)
 		lVisitedNodes = []
 		
 		while len(lNodes) > 0:
-			h, x, y = lNodes[0]
-			lNodes.remove((h, x, y))
+			h, x, y = heapq.heappop(lNodes)
 			lVisitedNodes.append((h, x, y))
 			
 			for i in range(x-1, x+2):
 				for j in range(y-1, y+2):
 					plot = gc.getMap().plot(i, j)
-					if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == gc.getInfoTypeForString("ROUTE_RAILROAD")):
-						if (i, j) == (iTargetX, iTargetY): return True
-						tTuple = (-utils.calculateDistance(i, j, iTargetX, iTargetY), i, j)
+					if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == iRailroad):
+						if (i, j) in lTargetList: return True
+						tTuple = (utils.calculateDistance(i, j, iTargetX, iTargetY), i, j)
 						if not tTuple in lVisitedNodes:
-							lNodes.append(tTuple)
-						
-			lNodes.sort()
+							if not tTuple in lNodes:
+								heapq.heappush(lNodes, tTuple)
 			
 		return False
 
@@ -3522,7 +3525,11 @@ class Victory:
 				bSiberia = self.checkFoundedArea(iRussia, tSiberiaTL, tSiberiaBR, 7)
 				aHelp.append(self.getIcon(bSiberia) + localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", ()))
 			elif iGoal == 1:
-				bSiberianRailway = (self.getRussianProjects(0) == 1)
+				fStart = time.clock()
+				bSiberianRailway = self.isConnectedByRailroad(iRussia, con.tCapitals[0][iRussia], lSiberianCoast) #(self.getRussianProjects(0) == 1)
+				fEnd = time.clock()
+				fElapsed = fEnd - fStart
+				utils.debugTextPopup("Russian railroad time elapsed: "+str(fElapsed*1000)+" ms.")
 				bManhattanProject = (self.getRussianProjects(1) == 1)
 				bApolloProgram = (self.getRussianProjects(2) == 1)
 				aHelp.append(self.getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()) + ' ' + self.getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + self.getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()))

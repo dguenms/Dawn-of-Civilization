@@ -5400,6 +5400,8 @@ class CityNameManager:
 				city.setName('Nikopolis', False)
 			if sName == 'Akko' or sName == 'Akkon' or sName == 'Akka':
 				city.setName('Akre', False)
+			elif sName == 'Ancyra' or sName == 'Ankuwash' or sName == 'Angora':
+				city.setName('Ankyra', False)
 
                 if (iNewOwner == iCarthage): 
                         if (sName == 'Byblos' or sName == 'Jbeil'):
@@ -5494,7 +5496,7 @@ class CityNameManager:
 				city.setName('Berenice', False)
 			if sName == 'Ikonion':
 				city.setName('Iconium', False)
-			if sName == 'Ankyra':
+			if sName == 'Ankyra' or sName == 'Angora' or sName == 'Ankuwash':
 				city.setName('Ancyra', False)
 			if sName == 'Antiokeia tes Pisidias':
 				city.setName('Antiochia Pisidiae', False)
