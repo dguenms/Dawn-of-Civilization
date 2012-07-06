@@ -49,6 +49,7 @@ iCeltia = con.iCeltia
 iEgypt = con.iEgypt
 iBabylonia = con.iBabylonia
 iTamils = con.iTamils
+iIndonesia = con.iIndonesia
 
   
 class AIWars:

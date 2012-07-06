@@ -396,4 +396,16 @@
 		<Tag>TXT_KEY_VICTORY_OIL_SECURED</Tag>
 		<English>Oil resources secured: %d1 / %d2</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DECCAN</Tag>
+		<English>Deccan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SRIVIJAYA</Tag>
+		<English>Srivijaya</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRADE_GOLD</Tag>
+		<English>Gold from trade: %d1 / %d2</English>
+	</TEXT>
 </Civ4GameText>

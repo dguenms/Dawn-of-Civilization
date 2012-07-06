@@ -4346,7 +4346,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 			{
 				return (ArtStyleTypes)ARTSTYLE_RUSSIA;
 			}
-			else if (id == REGION_MESOPOTAMIA || id == PERSIA)
+			else if (id == REGION_MESOPOTAMIA || id == REGION_PERSIA)
 			{
 				return (ArtStyleTypes)ARTSTYLE_CRESCENT;
 			}

@@ -324,8 +324,8 @@ class UniquePowers:
 				iExtra = 0
 				if utils.getHumanID() != iRome and utils.getHumanID() != iEnemy: iExtra = 1
 				
-				utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2+iExtra)
-				utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1+iExtra*2)
+				utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2+iExtra)
+				utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1+iExtra*2)
 
 		#if (pTargetCity != -1):
 		#	print ("City found, searching free land plot.")
@@ -371,13 +371,33 @@ class UniquePowers:
 				iExtra = 0
 				if utils.getHumanID() != iGreece and utils.getHumanID() != iEnemy: iExtra = 1
 				
-				utils.makeUnitAI(con.iGreekPhalanx, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2+iExtra*2)
-				utils.makeUnitAI(con.iCatapult, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1+iExtra*2)
+				utils.makeUnitAI(con.iGreekPhalanx, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2+iExtra*2)
+				utils.makeUnitAI(con.iCatapult, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1+iExtra*2)
 				
 		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_GREEK_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		
-	def tamilConquerUP(self, iEnemy, iNumTargets=1):
-		return
+	def tamilConquestUP(self, iEnemy, iNumTargets=1):
+		lEnemyCities = []
+		
+		print "Getting closest city."
+		cityList = PyPlayer(iEnemy).getCityList()
+		for city in cityList:
+			pCity = city.GetCy()
+			iDist = utils.calculateDistance(pCity.getX(), pCity.getY(), pGreece.getCapitalCity().getX(), pGreece.getCapitalCity().getY())
+			lEnemyCities.append((iDist, pCity))
+			
+		lEnemyCities.sort()
+		
+		for i in range(iNumTargets):
+			if len(lEnemyCities) > 0:
+				pTargetCity = lEnemyCities.pop(0)[1]
+				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iRome)
+				
+				utils.makeUnitAI(con.iSwordsman, iTamils, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+				utils.makeUnitAI(con.iWarElephant, iTamils, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+				utils.makeUnitAI(con.iCatapult, iTamils, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+				
+		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_TAMIL_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
 
 #------------------ARABIAN U.P.-------------------

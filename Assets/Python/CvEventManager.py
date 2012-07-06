@@ -161,6 +161,7 @@ class CvEventManager:
 			'postCommunism'			: self.onPostCommunism,
 			'democracyTransition'		: self.onDemocracyTransition,
 			'cityCaptureGold'		: self.onCityCaptureGold,
+			'tradeMission'			: self.onTradeMission,
 		}
 
 		################## Events List ###############################
@@ -1125,3 +1126,6 @@ class CvEventManager:
 		
 	def onCityCaptureGold(self, argsList):
 		city, iPlayer, iGold = argsList
+		
+	def onTradeMission(self, argsList):
+		iPlayer, iGold = argsList

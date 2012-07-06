@@ -18296,6 +18296,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iDemocracyCountdown);
 	pStream->Read(&m_iLatestRebellionTurn);
 
+	pStream->Read(&m_iPersecutionCountdown);
+
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
 	pStream->Read((int*)&m_eCurrentEra);
@@ -18807,6 +18809,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iStatePropertyCountdown);
 	pStream->Write(m_iDemocracyCountdown);
 	pStream->Write(m_iLatestRebellionTurn);
+
+	pStream->Write(m_iPersecutionCountdown);
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);

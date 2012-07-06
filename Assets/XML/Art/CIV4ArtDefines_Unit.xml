@@ -6369,7 +6369,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TAMIL_DHARANI</Type>
 			<Button>Art/Units/Tamil Dharani/Button_Dharani.dds</Button>
-			<fScale>0.08</fScale>
+			<fScale>0.14</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>

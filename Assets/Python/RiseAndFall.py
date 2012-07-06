@@ -4161,8 +4161,8 @@ class RiseAndFall:
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
 			if utils.getHumanID() != iTamils:
-				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-				utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+				#utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+				#utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
 				utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
 				utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tCapitals[0][iTamils], 1, iTamils)

@@ -186,6 +186,8 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("cityGrowth", self.onCityGrowth)
 		eventManager.addEventHandler("unitPillage", self.onUnitPillage)
 		eventManager.addEventHandler("cityCaptureGold", self.onCityCaptureGold)
+		eventManager.addEventHandler("playerGoldTrade", self.onPlayerGoldTrade)
+		eventManager.addEventHandler("tradeMission", self.onTradeMission)
 		
 		#Leoreth: stability events
 		eventManager.addEventHandler("greatDepression", self.onGreatDepression)
@@ -650,6 +652,18 @@ class CvRFCEventHandler:
 		
 		if iPlayer == con.iVikings and iGold > 0:
 			self.vic.onCityCaptureGold(iPlayer, iGold)
+			
+	def onPlayerGoldTrade(self, argsList):
+		iFromPlayer, iToPlayer, iGold = argsList
+		
+		if iToPlayer == con.iTamils:
+			self.vic.onPlayerGoldTrade(iToPlayer, iGold)
+			
+	def onTradeMission(self, argsList):
+		iPlayer, iGold = argsList
+		
+		if iPlayer == con.iTamils:
+			self.vic.onTradeMission(iPlayer, iGold)
 			
 	def onUnitCreated(self, argsList):
 		utils.debugTextPopup("Unit created")

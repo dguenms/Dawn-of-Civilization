@@ -364,6 +364,11 @@
 		<German>Die Griechen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_GREEK_CONQUESTS_TARGET</Tag>
+		<English>The Tamils have fielded an army to conquer our civilization!</English>
+		<German>Die Tamilen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_MONGOL_HORDE</Tag>
 		<English>Your successful conquests have made your horde grow!</English>
 		<German>Eure erfolgreichen Eroberungen haben Eure Horde wachsen lassen!</German>

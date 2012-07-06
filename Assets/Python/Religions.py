@@ -258,6 +258,7 @@ class Religions:
                         for pyCity in PyPlayer(iCiv).getCityList():
                                 cityList.append(pyCity.GetCy())
                         iCity = gc.getGame().getSorenRandNum(len(cityList), 'random city')
+			if len(cityList) == 0: return False
                         city = cityList[iCity]
                         return (city.getX(), city.getY())
                 return False
@@ -324,6 +325,7 @@ class Religions:
 
 
         def spreadReligion(self, tCoords, iNum, iMissionary):
+		if not tCoords or not gc.getMap().plot(tCoords[0], tCoords[1]).isCity(): return
                 city = gc.getMap().plot( tCoords[0], tCoords[1] ).getPlotCity()
                 #print city
                 #print city.getOwner()

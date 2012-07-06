@@ -127,6 +127,8 @@ public:
 	void postCommunism(PlayerTypes ePlayer); // Leoreth
 	void democracyTransition(PlayerTypes ePlayer); // Leoreth
 
+	void tradeMission(PlayerTypes ePlayer, int iGold); // Leoreth
+
 	DllExport void preSave();
 
 	DllExport void getGameStatistics(std::vector<CvStatBase*>& aStats);

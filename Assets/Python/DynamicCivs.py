@@ -1087,7 +1087,7 @@ class DynamicCivs:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")
 						return
 						
-					if iEra == iRenaissance and iGameTurn >= getTurnForYear(1350):
+					if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
 						return
 						
@@ -1685,7 +1685,7 @@ class DynamicCivs:
 			#	self.setLeader(iPlayer, con.iCixi)
 			#	return
 				
-			if (iEra >= con.iRenaissance and iGameTurn >= getTurnForYear(1350)) or bResurrected:
+			if (iEra >= con.iRenaissance and iGameTurn >= getTurnForYear(1400)) or bResurrected:
 				self.setLeader(iPlayer, con.iHongwu)
 				return
 				

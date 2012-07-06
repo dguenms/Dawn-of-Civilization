@@ -481,6 +481,12 @@ class Victory:
 		
 	def setNumTamilSinks(self, iNewValue):
 		sd.scriptDict['iNumTamilSinks'] = iNewValue
+		
+	def getTamilTradeGold(self):
+		return sd.scriptDict['iTamilTradeGold']
+		
+	def changeTamilTradeGold(self, iChange):
+		sd.scriptDict['iTamilTradeGold'] += iChange
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -1002,7 +1008,7 @@ class Victory:
 			if pTamils.isAlive():
 			
 				if iGameTurn == getTurnForYear(800):
-					if pTamils.getGold() >= utils.getTurns(3000) and pTamils.getTotalCulture() >= getTurns(2000):
+					if pTamils.getGold() >= utils.getTurns(3000) and pTamils.countTotalCulture() >= utils.getTurns(2000):
 						self.setGoal(iTamils, 0, 1)
 					else:
 						self.setGoal(iTamils, 0, 0)
@@ -1014,7 +1020,30 @@ class Victory:
 						self.setGoal(iTamils, 1, 1)
 					else:
 						self.setGoal(iTamils, 1, 0)
-                                        
+						
+				if iGameTurn <= getTurnForYear(1200):
+					iTradeGold = 0
+					
+					# gold from city trade routes
+					iTradeCommerce = 0
+					cityList = PyPlayer(iTamils).getCityList()
+					for pCity in cityList:
+						city = pCity.GetCy()
+						iTradeCommerce += city.getTradeYield(2)
+					iTradeGold = iTradeCommerce * pTamils.getCommercePercent(0) / 100
+					
+					# gold from per turn gold trade
+					for iCiv in range(con.iNumPlayers):
+						iTradeGold += pTamils.getGoldPerTurnByPlayer(iCiv)
+						
+					self.changeTamilTradeGold(iTradeGold)
+					
+					if self.getTamilTradeGold() >= utils.getTurns(4000):
+						self.setGoal(iTamils, 2, 1)
+						
+				if iGameTurn == getTurnForYear(1200):
+					if self.getGoal(iTamils, 2) == -1:
+						self.setGoal(iTamils, 2, 0)
 
 
                 elif (iPlayer == iEthiopia):
@@ -1506,7 +1535,7 @@ class Victory:
                                                 self.setGoal(iRussia, 0, 0)
 						
 				# Leoreth: build the Trans-Siberian Railroad by 1930
-				if iGameTurn == getTurnForYear(1930):
+				if iGameTurn == getTurnForYear(1920):
 					if self.getGoal(iRussia, 1) == -1:
 						if self.getRussianProjects(0) == -1:
 							self.setGoal(iRussia, 1, 0)
@@ -2771,12 +2800,12 @@ class Victory:
 					if (self.getNumKoreanSinks() == 20):
 						self.setGoal(iKorea, 2, 1)
 						
-		if iPlayer == iTamils:
-			if self.getGoal(iTamils, 2) == -1:
-				if cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAN_SEA"):
-					self.setNumTamilSinks(self.getNumTamilSinks() + 1)
-					if self.getNumTamilsSinks() == 25:
-						self.setGoal(iTamils, 2, 1)
+		#if iPlayer == iTamils:
+		#	if self.getGoal(iTamils, 2) == -1:
+		#		if cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAN_SEA"):
+		#			self.setNumTamilSinks(self.getNumTamilSinks() + 1)
+		#			if self.getNumTamilsSinks() == 25:
+		#				self.setGoal(iTamils, 2, 1)
 
 	def onGreatPersonBorn(self, argsList):
 		pUnit, iPlayer, pCity = argsList
@@ -2827,6 +2856,14 @@ class Victory:
 	def onCityCaptureGold(self, iPlayer, iGold):
 		if iPlayer == iVikings:
 			self.changeVikingGold(iGold)
+			
+	def onPlayerGoldTrade(self, iPlayer, iGold):
+		if iPlayer == iTamils:
+			self.changeTamilTradeGold(iGold)
+			
+	def onTradeMission(self, iPlayer, iGold):
+		if iPlayer == iTamils:
+			self.changeTamilTradeGold(iGold)
                                        
 
 
@@ -3296,6 +3333,20 @@ class Victory:
 				aHelp.append(self.getIcon(bKorea) + localText.getText("TXT_KEY_CIV_KOREA_SHORT_DESC", ()) + ' ' + self.getIcon(bManchuria) + localText.getText("TXT_KEY_VICTORY_MANCHURIA", ()) + ' ' + self.getIcon(bChina) + localText.getText("TXT_KEY_CIV_CHINA_SHORT_DESC", ()))
 				aHelp.append(self.getIcon(bIndochina) + localText.getText("TXT_KEY_VICTORY_INDOCHINA", ()) + ' ' + self.getIcon(bIndonesia) + localText.getText("TXT_KEY_CIV_INDONESIA_SHORT_DESC", ()) + ' ' + self.getIcon(bPhilippines) + localText.getText("TXT_KEY_VICTORY_PHILIPPINES", ()))
 		
+		elif iPlayer == iTamils:
+			if iGoal == 0:
+				iGold = pTamils.getGold()
+				iCulture = pTamils.countTotalCulture()
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(3000))))
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(2000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(2000))))
+			elif iGoal == 1:
+				bDeccan = self.isControlledOrVassalized(iTamils, tDeccanTL, tDeccanBR)
+				bSrivijaya = self.isControlledOrVassalized(iTamils, tSrivijayaTL, tSrivijayaBR)
+				aHelp.append(self.getIcon(bDeccan) + localText.getText("TXT_KEY_VICTORY_DECCAN", ()) + ' ' + self.getIcon(bSrivijaya) + localText.getText("TXT_KEY_VICTORY_SRIVIJAYA", ()))
+			elif iGoal == 2:
+				iGold = self.getTamilTradeGold()
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iGold, utils.getTurns(4000))))
+		
                 elif iPlayer == iEthiopia:
 			if iGoal == 1:
 				iNumIncense = pEthiopia.getNumAvailableBonuses(con.iIncense)
@@ -3525,11 +3576,7 @@ class Victory:
 				bSiberia = self.checkFoundedArea(iRussia, tSiberiaTL, tSiberiaBR, 7)
 				aHelp.append(self.getIcon(bSiberia) + localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", ()))
 			elif iGoal == 1:
-				fStart = time.clock()
-				bSiberianRailway = self.isConnectedByRailroad(iRussia, con.tCapitals[0][iRussia], lSiberianCoast) #(self.getRussianProjects(0) == 1)
-				fEnd = time.clock()
-				fElapsed = fEnd - fStart
-				utils.debugTextPopup("Russian railroad time elapsed: "+str(fElapsed*1000)+" ms.")
+				bSiberianRailway = (self.getRussianProjects(0) == 1)
 				bManhattanProject = (self.getRussianProjects(1) == 1)
 				bApolloProgram = (self.getRussianProjects(2) == 1)
 				aHelp.append(self.getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()) + ' ' + self.getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + self.getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()))

@@ -6373,6 +6373,19 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	if (bCity)
 	{
 		iYield = std::max(iYield, GC.getYieldInfo(eYield).getMinCity());
+
+		// Leoreth (edead): city counts as correct improvement wrt. bonus yields
+		if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS)
+		{
+			for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+			{
+				if (GC.getImprovementInfo((ImprovementTypes)iImprovement).isImprovementBonusMakesValid(getBonusType(GET_PLAYER(ePlayer).getTeam())))
+				{
+					iYield += calculateImprovementYieldChange((ImprovementTypes)iImprovement, eYield, ePlayer);
+					break;
+				}
+			}
+		}
 	}
 
 	iYield += GC.getGameINLINE().getPlotExtraYield(m_iX, m_iY, eYield);

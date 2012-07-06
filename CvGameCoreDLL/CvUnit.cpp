@@ -337,6 +337,9 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getOwnerINLINE(), szBuffer, getX_INLINE(), getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_UNIT_TEXT"));
 	}
 
+	//Leoreth: region dependent art for independent units
+	m_originalArtStyle = (UnitArtStyleTypes)getOriginalArtStyle(GC.getMap().plot(iX, iY)->getRegionID());
+
 	AI_init(eUnitAI);
 
 /*************************************************************************************************/
@@ -444,6 +447,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_eCapturingPlayer = NO_PLAYER;
 	m_eUnitType = eUnit;
 	m_pUnitInfo = (NO_UNIT != m_eUnitType) ? &GC.getUnitInfo(m_eUnitType) : NULL;
+	m_originalArtStyle = (UnitArtStyleTypes)-1;
 	m_iBaseCombat = (NO_UNIT != m_eUnitType) ? m_pUnitInfo->getCombat() : 0;
 	m_eLeaderUnitType = NO_UNIT;
 	m_iCargoCapacity = (NO_UNIT != m_eUnitType) ? m_pUnitInfo->getCargoSpace() : 0;
@@ -6059,6 +6063,8 @@ bool CvUnit::trade()
 	}
 
 	GET_PLAYER(getOwnerINLINE()).changeGold(getTradeGold(plot()));
+
+	CvEventReporter::getInstance().tradeMission(getOwnerINLINE(), getTradeGold(plot()));
 
 	if (plot()->isActiveVisible(false))
 	{
@@ -13013,6 +13019,11 @@ void CvUnit::applyEvent(EventTypes eEvent)
 
 const CvArtInfoUnit* CvUnit::getArtInfo(int i, EraTypes eEra) const
 {
+	if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2 || getOwnerINLINE() == BARBARIAN)
+	{
+		return m_pUnitInfo->getArtInfo(i, eEra, m_originalArtStyle);
+	}
+
 	return m_pUnitInfo->getArtInfo(i, eEra, (UnitArtStyleTypes) GC.getCivilizationInfo(getCivilizationType()).getUnitArtStyleType());
 }
 
@@ -13229,4 +13240,132 @@ int CvUnit::getSelectionSoundScript() const
 		iScriptId = GC.getCivilizationInfo(getCivilizationType()).getSelectionSoundScriptId();
 	}
 	return iScriptId;
+}
+
+int CvUnit::getOriginalArtStyle(int regionID)
+{
+	int id = regionID;
+
+	if (id == REGION_ALASKA || id == REGION_CANADA || id == REGION_UNITED_STATES || id == REGION_BRITAIN)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ENGLAND).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_MESOAMERICA || id == REGION_CARIBBEAN)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)AZTEC).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_BRAZIL || id == REGION_ARGENTINA || id == REGION_PERU || id == REGION_COLOMBIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INCA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_ETHIOPIA || id == REGION_WEST_AFRICA || id == REGION_SOUTH_AFRICA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)NATIVE).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_IBERIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)SPAIN).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_ITALY || id == REGION_BALKANS)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ROME).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_MAGHREB)
+	{
+		if (GC.getGameINLINE().getGameTurnYear() > startingTurnYear[ARABIA])
+		{
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ARABIA).getCivilizationType()).getUnitArtStyleType();
+		}
+		else
+		{
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)CARTHAGE).getCivilizationType()).getUnitArtStyleType();
+		}
+	}
+	else if (id == REGION_ANATOLIA)
+	{
+		if (GET_PLAYER((PlayerTypes)BYZANTIUM).isAlive() && !(GET_PLAYER((PlayerTypes)SELJUKS).isAlive() || GET_PLAYER((PlayerTypes)TURKEY).isAlive()))
+		{
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)BYZANTIUM).getCivilizationType()).getUnitArtStyleType();
+		}
+		else
+		{
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)TURKEY).getCivilizationType()).getUnitArtStyleType();
+		}
+	}
+	else if (id == REGION_EUROPE)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INDEPENDENT).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_SCANDINAVIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)VIKING).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_RUSSIA || id == REGION_SIBERIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)RUSSIA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_PERSIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)PERSIA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_MESOPOTAMIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)BABYLONIA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_ARABIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ARABIA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_EGYPT)
+	{
+		if (GC.getGameINLINE().getGameTurnYear() > startingTurnYear[ARABIA])
+		{
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ARABIA).getCivilizationType()).getUnitArtStyleType();
+		}
+		else
+		{
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)EGYPT).getCivilizationType()).getUnitArtStyleType();
+		}
+	}
+	else if (id == REGION_INDIA)
+	{
+		if (GET_PLAYER((PlayerTypes)MUGHALS).isAlive())
+		{
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)MUGHALS).getCivilizationType()).getUnitArtStyleType();
+		}
+		else
+		{
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INDIA).getCivilizationType()).getUnitArtStyleType();
+		}
+	}
+	else if (id == REGION_DECCAN)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INDIA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_INDOCHINA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)KHMER).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_INDONESIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INDONESIA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_CHINA || id == REGION_MANCHURIA || id == REGION_TIBET)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)CHINA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_KOREA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)KOREA).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_JAPAN)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)JAPAN).getCivilizationType()).getUnitArtStyleType();
+	}
+	else if (id == REGION_CENTRAL_ASIA)
+	{
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)MONGOLIA).getCivilizationType()).getUnitArtStyleType();
+	}
+	
+	return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INDEPENDENT).getCivilizationType()).getUnitArtStyleType();
 }
