@@ -5580,6 +5580,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 20;
 									if (iI == WRITING  || iI == MONOTHEISM || iI == MONARCHY || iI == CALENDAR || iI == MATHEMATICS)
 										iValue /= 3;
+									if (iI == ENGINEERING || iI == THEOLOGY || iI == CIVIL_SERVICE)
+										iValue /= 2;
 									break;
 								case CARTHAGE:
 									if (iI == COMPASS)

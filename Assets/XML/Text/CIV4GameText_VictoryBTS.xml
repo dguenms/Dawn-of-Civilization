@@ -297,7 +297,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM3</Tag>
-		<English>Sink 25 enemy ships</English>
-		<German>Versenken Sie 25 gegnerische Schiffe</German>
+		<English>Acquire 4000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
+		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 4000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM3_EPIC</Tag>
+		<English>Acquire 6000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
+		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 6000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM3_MARATHON</Tag>
+		<English>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
+		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 12000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
 	</TEXT>
 </Civ4GameText>

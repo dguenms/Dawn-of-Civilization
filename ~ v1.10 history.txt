@@ -1,0 +1,16 @@
+# resorted the playable civilizations according to spawn date
+# palace costs scale with era
+# Himeji castle only gives promotions to Melee and Archery units, expires with Rifling and gets faster production with Copper
+# Westminster Palace now requires Railroad and Democracy
+# The German UP now allows free unit upgrades
+# Added oil in Manchuria
+# moved ivory in South India
+# added iron on Sri Lanka
+# continental wonder effects now affect the whole globe
+# oil wells give one additional production and commerce
+# persecution now also removes associated religious buildings
+# reworked persecution AI: even zealous leaders now don't continually persecute until there's no foreign religion left anymore
+# reworked missionary AI: less likely to pursue missionary strategies if potential targets are persecuting
+# made Frederick more aggressive
+# Assembly Plant now gives +25% unit production
+# cities count as correct improvement wrt. bonus plot yields (i.e. you don't lose yields when you build cities on bonuses!)

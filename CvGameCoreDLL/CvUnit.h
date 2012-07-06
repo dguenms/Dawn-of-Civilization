@@ -847,6 +847,9 @@ protected:
 	UnitTypes m_eLeaderUnitType;
 	CvUnitInfo *m_pUnitInfo;
 
+	//Leoreth
+	UnitArtStyleTypes m_originalArtStyle;
+
 	IDInfo m_combatUnit;
 	IDInfo m_transportUnit;
 
@@ -886,6 +889,8 @@ protected:
 	void resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition& kBattle);
 	void resolveAirCombat(CvUnit* pInterceptor, CvPlot* pPlot, CvAirMissionDefinition& kBattle);
 	void checkRemoveSelectionAfterAttack();
+
+	int getOriginalArtStyle(int regionID);
 };
 
 #endif

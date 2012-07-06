@@ -445,6 +445,12 @@ void CvEventReporter::democracyTransition(PlayerTypes ePlayer)
 	m_kPythonEventMgr.reportDemocracyTransition(ePlayer);
 }
 
+// Leoreth: trade mission (great merchants)
+void CvEventReporter::tradeMission(PlayerTypes ePlayer, int iGold)
+{
+	m_kPythonEventMgr.reportTradeMission(ePlayer, iGold);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

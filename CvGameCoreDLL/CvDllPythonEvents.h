@@ -97,6 +97,8 @@ public:
 	void reportPostCommunism(PlayerTypes ePlayer); //Leoreth
 	void reportDemocracyTransition(PlayerTypes ePlayer); //Leoreth
 
+	void reportTradeMission(PlayerTypes ePlayer, int iGold); //Leoreth
+
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
 	void reportPlayerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPlayer, int iAmount);
