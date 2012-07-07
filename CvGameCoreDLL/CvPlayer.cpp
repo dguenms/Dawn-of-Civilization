@@ -2811,7 +2811,7 @@ const TCHAR* CvPlayer::getUnitButton(UnitTypes eUnit) const
 void CvPlayer::doTurn()
 {
 	PROFILE_FUNC();
-	GC.getGameINLINE().logMsg("player doTurn", getID()); //Rhye
+	GC.getGameINLINE().logMsg("player doTurn: %d", getID()); //Rhye
 
 	//Rhye - start
 	if (turnPlayed[getID()] == 1)
@@ -2909,6 +2909,7 @@ void CvPlayer::doTurn()
 	CvEventReporter::getInstance().endPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
 
 	turnPlayed[getID()] = 1; //Rhye
+	GC.getGameINLINE().logMsg("player end turn: %d", getID()); //Rhye
 }
 
 

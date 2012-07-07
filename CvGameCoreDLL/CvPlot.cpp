@@ -6381,8 +6381,15 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			{
 				if (GC.getImprovementInfo((ImprovementTypes)iImprovement).isImprovementBonusMakesValid(getBonusType(GET_PLAYER(ePlayer).getTeam())))
 				{
-					iYield += calculateImprovementYieldChange((ImprovementTypes)iImprovement, eYield, ePlayer);
-					break;
+					for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
+					{
+						if (GC.getBuildInfo((BuildTypes)iBuild).getImprovement() == iImprovement && GET_TEAM((TeamTypes)ePlayer).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes)iBuild).getTechPrereq()))
+						{
+							iYield += calculateImprovementYieldChange((ImprovementTypes)iImprovement, eYield, ePlayer);
+							break;
+							break;
+						}
+					}
 				}
 			}
 		}
