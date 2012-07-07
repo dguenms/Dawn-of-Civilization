@@ -2358,6 +2358,10 @@ class RiseAndFall:
                 print 'init birth in: '+str(iBirthYear)
 		iHuman = utils.getHumanID()
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
+		
+		if iCiv == iTurkey:
+			if pSeljuks.isAlive():
+				utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
                 
                 lConditionalCivs = [iByzantium, iMughals, iThailand]
 
@@ -2763,11 +2767,17 @@ class RiseAndFall:
 
                 else: #starting units have already been placed, now the second part
 		
+			if iCiv == iTurkey: print 'Turkey check 1'
                         iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, tTopLeft, tBottomRight)
+			if iCiv == iTurkey: print 'Turkey check 2'
                         self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
-                        utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
+			if iCiv == iTurkey: print 'Turkey check 3'
+                        utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
+			if iCiv == iTurkey: print 'Turkey check 4'   
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+			if iCiv == iTurkey: print 'Turkey check 5'
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+			if iCiv == iTurkey: print 'Turkey check 6'
 
 			#if iCiv == iHolyRome and utils.getHumanID() != iHolyRome:
 			#	utils.makeUnit(con.iSettler, iCiv, (63, 49), 1)
@@ -2780,6 +2790,7 @@ class RiseAndFall:
 				self.germanSpawn()
    
                         print ("utils.flipUnitsInArea()") 
+			if iCiv == iTurkey: print 'Turkey check 7'
                         #cover plots revealed by the lion
                         plotZero = gc.getMap().plot( 0, 0 )                        
                         if (plotZero.getNumUnits()):
@@ -2801,14 +2812,17 @@ class RiseAndFall:
                         gc.getMap().plot(122, 2).setRevealed(iCiv, False, True, -1);
                         gc.getMap().plot(123, 2).setRevealed(iCiv, False, True, -1);
                         print ("Plots covered")
+			if iCiv == iTurkey: print 'Turkey check 8'
 
                         if (gc.getPlayer(iCiv).getNumCities() > 0):
                                 capital = gc.getPlayer(iCiv).getCapitalCity()
                                 self.createStartingWorkers(iCiv, (capital.getX(), capital.getY()))
+			if iCiv == iTurkey: print 'Turkey check 9'
 
                         if (iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID()): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
 				print "Flip Popup: free region"
                                 self.flipPopup(iCiv, tTopLeft, tBottomRight)
+			if iCiv == iTurkey: print 'Turkey check 10'
 
                         
         def birthInForeignBorders(self, iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight):
@@ -2826,18 +2840,21 @@ class RiseAndFall:
 				city.setHasRealBuilding(con.iCourthouse, True)
 				if city.isCoastal(20): city.setHasRealBuilding(con.iHarbor, True)
                 
+		if iCiv == iTurkey: print 'Turkey check 1'
                 iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, tTopLeft, tBottomRight)
                 self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
 
                 #now starting units must be placed
                 if (iNumAICitiesConverted > 0):
                         #utils.debugTextPopup( 'iConverted OK for placing units' )
+			if iCiv == iTurkey: print 'Turkey check 1'
                         dummy1, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.ownedCityPlots, iCiv )        
                         rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching any city just flipped')
                         #print ("rndNum for starting units", rndNum)
                         if (len(plotList)):
                                 result = plotList[rndNum]
                                 if (result):
+					if iCiv == iTurkey: print 'Turkey check 2'
                                         self.createStartingUnits(iCiv, result)
                                         #utils.debugTextPopup( 'birthInForeignBorders after a flip' )
                                         self.assignTechs(iCiv)
@@ -2854,6 +2871,7 @@ class RiseAndFall:
                 else:   #search another place
                         dummy, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.goodPlots, [] )
                         rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching another free plot')
+			if iCiv == iTurkey: print 'Turkey check 3'
                         if (len(plotList)):
                                 result = plotList[rndNum]
                                 if (result):
@@ -2874,6 +2892,7 @@ class RiseAndFall:
                                                 self.assignTechs(iCiv)
                                                 utils.setPlagueCountdown(iCiv, -con.iImmunity)
                                                 utils.clearPlague(iCiv)
+			if iCiv == iTurkey: print 'Turkey check 4'
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 

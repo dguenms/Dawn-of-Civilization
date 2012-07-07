@@ -387,7 +387,7 @@ class AIWars:
 ##                                        lTargetCivs[iLoopCiv] /= 2
                                 
                         #spare them
-                        if (iLoopCiv == con.iNetherlands or iLoopCiv == con.iPortugal):
+                        if (iLoopCiv == con.iNetherlands or iLoopCiv == con.iPortugal or iLoopCiv == con.iItaly):
                                 lTargetCivs[iLoopCiv] *= 4
                                 lTargetCivs[iLoopCiv] /= 5
                         #no suicide

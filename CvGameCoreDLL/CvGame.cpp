@@ -5873,7 +5873,7 @@ void CvGame::addGreatPersonBornName(const CvWString& szName)
 void CvGame::doTurn()
 {
 	PROFILE_BEGIN("CvGame::doTurn()");
-	//logMsg("doTurn"); //Rhye
+	logMsg("doTurn: %d", getGameTurn()); //Rhye
 	int aiShuffle[MAX_PLAYERS];
 	int iLoopPlayer;
 	int iI;
@@ -5898,8 +5898,10 @@ void CvGame::doTurn()
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
+		GC.getGameINLINE().logMsg("doTurn iterate player: %d", iI); //Rhye
 		if (GET_TEAM((TeamTypes)iI).isAlive())
 		{
+			GC.getGameINLINE().logMsg("doTurn iterate alive player: %d", iI); //Rhye
 			GET_TEAM((TeamTypes)iI).doTurn();
 		}
 	}
