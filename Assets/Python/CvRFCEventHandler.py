@@ -62,6 +62,7 @@ iRussia = con.iRussia
 iNetherlands = con.iNetherlands
 iHolland = con.iHolland
 iMali = con.iMali
+iPoland = con.iPoland
 iPortugal = con.iPortugal
 iInca = con.iInca
 iItaly = con.iItaly

@@ -4583,6 +4583,12 @@ int CvCity::getCulturePercentAnger() const
 	int iCulture;
 	int iI;
 
+	//Leoreth: Polish UP
+	if (getOwnerINLINE() == POLAND)
+	{
+		return 0;
+	}
+
 	iTotalCulture = plot()->countTotalCulture();
 
 	if (iTotalCulture == 0)

@@ -951,7 +951,7 @@ class Stability:
 					print "PYTHON: Player " + str(iPlayer) + " City " + str(iCount) + " civic stability: " + str(iOutputCityCivic)
                                                                 
                                         for iLoop in range(iNumTotalPlayers+1):		# no penalties from foreign culture with Egalitarianism?
-                                                if (iLoop != iPlayer):
+                                                if (iLoop != iPlayer and iPlayer != con.iPoland):	# Polish UP
                                                         if (pCurrent.getCulture(iLoop) > 0):
                                                                 if (pCurrent.getCulture(iPlayer) == 0): #division by zero may happen
                                                                         iTempCityStability -= 2
@@ -961,7 +961,7 @@ class Stability:
                                                                                 break
                                                                 else:
                                                                         if (pCurrent.getCulture(iLoop)*100/pCurrent.getCulture(iPlayer) >= 15):
-                                                                                if (iPlayer == con.iTurkey or iPlayer == con.iAmerica or iPlayer == con.iPortugal or iPlayer == con.iNetherlands or iPlayer == con.iNetherlands): #they have too much foreign culture
+                                                                                if (iPlayer == con.iTurkey or iPlayer == con.iAmerica or iPlayer == con.iPortugal or iPlayer == con.iNetherlands or iPlayer == con.iGermany): #they have too much foreign culture
                                                                                         iTempCityStability -= 1
                                                                                 else:
                                                                                         iTempCityStability -= 2

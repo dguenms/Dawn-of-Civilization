@@ -354,9 +354,9 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_44</Description>
 		</HintInfo>
-		<HintInfo>
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_45</Description>
-		</HintInfo>
+		</HintInfo-->
 		<!-- Rhye - start -->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_47</Description>
