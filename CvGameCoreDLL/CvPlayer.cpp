@@ -2567,10 +2567,10 @@ const wchar* CvPlayer::getCivilizationDescriptionKey() const
 
 const wchar* CvPlayer::getCivilizationShortDescription(uint uiForm) const
 {
-	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	/*if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
 	{
 		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_SHORT_DESC");
-	}
+	}*/
 
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivShortDesc(getID(), uiForm).empty())

@@ -10731,6 +10731,7 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 				if (iIndex != CITY_HOME_PLOT)
 				{
 					changeWorkingPopulation(1);
+					updateExtraSpecialistYield(); //Leoreth: city states
 				}
 
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
@@ -10746,6 +10747,7 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 				if (iIndex != CITY_HOME_PLOT)
 				{
 					changeWorkingPopulation(-1);
+					updateExtraSpecialistYield(); //Leoreth: city states
 				}
 
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
