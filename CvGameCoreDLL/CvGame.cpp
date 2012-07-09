@@ -2267,6 +2267,7 @@ void CvGame::update()
 		case RUSSIA:
 		case NETHERLANDS:
 		case MALI:
+		case POLAND:
 		case TURKEY:
 		case PORTUGAL:
 		case INCA:

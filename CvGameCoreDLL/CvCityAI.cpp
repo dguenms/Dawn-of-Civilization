@@ -2513,6 +2513,11 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case MALI:
 		break;
+	case POLAND:
+		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] /= 3;
+		break;
 	case MUGHALS:
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
@@ -3231,6 +3236,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case TURKEY:
 										if (iI == TOPKAPI || iI == BLUE_MOSQUE) iTempValue *= 4;
 										else if (iI == TAJMAHAL || iI == RED_FORT) iTempValue /= 4;
+										break;
+									case POLAND:
 										break;
 									case PORTUGAL:
 										if (iI == NOTREDAME) {
@@ -4844,6 +4851,8 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iValue += 1;
 					break;
 				case MALI:
+					break;
+				case POLAND:
 					break;
 				case PORTUGAL:
 					iValue += 2;

@@ -69,7 +69,8 @@ tPool3 = (con.iEgypt,
 	  con.iMughals,
 	  con.iGermany,
 	  con.iThailand,
-	  con.iTamils)
+	  con.iTamils,
+	  con.iPoland)
 
 
 class Communications:

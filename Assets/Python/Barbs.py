@@ -387,9 +387,9 @@ class Barbs:
                 #self.foundCity(lJelling, "Jelling", iGameTurn, 1, -1, -1)
                 if (gc.getPlayer(0).isPlayable()):  #late start condition
                         self.foundCity(iCeltia, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
-			self.foundCity(iIndependent, lVienna, "Wien", iGameTurn, 1, con.iLongbowman, 1)
                 else:
                         self.foundCity(iIndependent, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
+		self.foundCity(iIndependent, lVienna, "Wien", iGameTurn, 1, con.iLongbowman, 1)
                 #self.foundCity(lNidaros, "Nidaros", iGameTurn, 1, -1, -1)
                 #self.foundCity(iNative, lZimbabwe, "Zimbabwe", iGameTurn, 1, con.iZuluImpi, 1)
                 self.foundCity(iNative, lQuelimane, "Quelimane", iGameTurn, 1, con.iZuluImpi, 1)

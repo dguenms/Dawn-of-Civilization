@@ -23,8 +23,8 @@ typedef list<char*> LISTCHAR;
 #define NUM_BUILDINGS_PLAGUE		(198)
 #define NUM_BUILDINGTYPES_PLAGUE	(128)
 
-#define NUM_MAJOR_PLAYERS		(35)
-#define NUM_PL					(35)
+#define NUM_MAJOR_PLAYERS		(36)
+#define NUM_PL					(36)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(46)
 
@@ -55,6 +55,7 @@ enum MyCivs
  HOLY_ROME,
  RUSSIA,
  MALI,
+ POLAND,
  PORTUGAL,
  INCA,
  ITALY,

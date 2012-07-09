@@ -2467,7 +2467,8 @@ class Victory:
 							self.setGoal(iEngland, 2, 1)
 					else:
 						self.setGoal(iEngland, 2, 0)
-				elif self.getEnglishEras(1) == -1:
+			elif gc.getTechInfo(iTech).getEra() == iModern:
+				if self.getEnglishEras(1) == -1:
 					if iPlayer == iEngland:
 						self.setEnglishEras(1, 1)
 						if self.getEnglishEras(0) == 1:

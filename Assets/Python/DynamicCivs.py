@@ -44,6 +44,7 @@ iRussia = con.iRussia
 iNetherlands = con.iNetherlands
 iHolland = con.iHolland
 iMali = con.iMali
+iPoland = con.iPoland
 iTurkey = con.iTurkey
 iPortugal = con.iPortugal
 iInca = con.iInca
@@ -92,6 +93,7 @@ pRussia = gc.getPlayer(iRussia)
 pNetherlands = gc.getPlayer(iNetherlands)
 pHolland = gc.getPlayer(iHolland)
 pMali = gc.getPlayer(iMali)
+pPoland = gc.getPlayer(iPoland)
 pTurkey = gc.getPlayer(iTurkey)
 pPortugal = gc.getPlayer(iPortugal)
 pInca = gc.getPlayer(iInca)
@@ -135,6 +137,7 @@ teamRussia = gc.getTeam(pRussia.getTeam())
 teamNetherlands = gc.getTeam(pNetherlands.getTeam())
 teamHolland = gc.getTeam(pHolland.getTeam())
 teamMali = gc.getTeam(pMali.getTeam())
+teamPoland = gc.getTeam(pPoland.getTeam())
 teamTurkey = gc.getTeam(pTurkey.getTeam())
 teamPortugal = gc.getTeam(pPortugal.getTeam())
 teamInca = gc.getTeam(pInca.getTeam())
@@ -200,6 +203,7 @@ class DynamicCivs:
                         iRussia : "TXT_KEY_CIV_RUSSIA_DESC_DEFAULT",
                         iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_DEFAULT",
                         iMali : "TXT_KEY_CIV_MALI_DESC_DEFAULT",
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_DEFAULT",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_DEFAULT",
                         iInca : "TXT_KEY_CIV_INCA_DESC_DEFAULT",
 			iItaly : "TXT_KEY_CIV_ITALY_DESC_DEFAULT",
@@ -238,6 +242,7 @@ class DynamicCivs:
                         iRussia : "TXT_KEY_CIV_RUSSIA_DESC_PEOPLES",
                         iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_PEOPLES",
                         iMali : "TXT_KEY_CIV_MALI_DESC_PEOPLES",
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_PEOPLES",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_PEOPLES",
                         iInca : "TXT_KEY_CIV_INCA_DESC_PEOPLES",
 			iItaly : "TXT_KEY_CIV_ITALY_DESC_PEOPLES",
@@ -463,6 +468,7 @@ class DynamicCivs:
 				iInca : "TXT_KEY_CIV_INCA_PORTUGUESE_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_PORTUGUESE_VASSAL"},
 			#iMali - none so far
+			#iPoland - none so far
 			#iInca - none so far
 			iMongolia : {
 				iThailand : "TXT_KEY_CIV_THAILAND_MONGOL_VASSAL",
@@ -562,6 +568,7 @@ class DynamicCivs:
                         iRussia : "TXT_KEY_CIV_RUSSIA_SOVIET_VASSAL",
                         iNetherlands : "TXT_KEY_CIV_NETHERLANDS_SOVIET_VASSAL",
                         iMali : "TXT_KEY_CIV_MALI_SOVIET_VASSAL",
+			iPoland : "TXT_KEY_CIV_POLAND_SOVIET_VASSAL",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_SOVIET_VASSAL",
                         iInca : "TXT_KEY_CIV_INCA_SOVIET_VASSAL",
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_SOVIET_VASSAL",
@@ -600,6 +607,7 @@ class DynamicCivs:
                         iRussia : "TXT_KEY_CIV_RUSSIA_NAZI_VASSAL",
                         iNetherlands : "TXT_KEY_CIV_NETHERLANDS_NAZI_VASSAL",
                         iMali : "TXT_KEY_CIV_MALI_NAZI_VASSAL",
+			iPoland : "TXT_KEY_CIV_POLAND_NAZI_VASSAL",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_NAZI_VASSAL",
                         iInca : "TXT_KEY_CIV_INCA_NAZI_VASSAL",
                         iMongolia : "TXT_KEY_CIV_MONGOLIA_NAZI_VASSAL",
@@ -637,6 +645,7 @@ class DynamicCivs:
                         iRussia : "TXT_KEY_CIV_RUSSIA_DESC_FASCIST",
                         iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_FASCIST",
                         iMali : "TXT_KEY_CIV_MALI_DESC_FASCIST",
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_FASCIST",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_FASCIST",
                         iInca : "TXT_KEY_CIV_INCA_DESC_FASCIST",
 			iItaly : "TXT_KEY_CIV_ROME_DESC_FASCIST",
@@ -675,6 +684,7 @@ class DynamicCivs:
                         iRussia : "TXT_KEY_CIV_RUSSIA_DESC_COMMUNIST",
                         iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_COMMUNIST",
                         iMali : "TXT_KEY_CIV_MALI_DESC_COMMUNIST",
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_COMMUNIST",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_COMMUNIST",
                         iInca : "TXT_KEY_CIV_INCA_DESC_COMMUNIST",
 			iItaly : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",
@@ -713,6 +723,7 @@ class DynamicCivs:
                         iRussia : "TXT_KEY_CIV_RUSSIA_DESC_DEMOCRATIC",
                         iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_DEMOCRATIC",
                         iMali : "TXT_KEY_CIV_MALI_DESC_DEMOCRATIC",
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_DEMOCRATIC",
                         iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_DEMOCRATIC",
                         iInca : "TXT_KEY_CIV_INCA_DESC_DEMOCRATIC",
 			iItaly : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",
@@ -759,6 +770,7 @@ class DynamicCivs:
 			iRussia : con.iYaroslav,
 			iNetherlands : con.iWillemVanOranje,
 			iMali : con.iMansaMusa,
+			iPoland : con.iSobieski,
 			iPortugal : con.iAfonso,
 			iInca : con.iHuaynaCapac,
 			iItaly : con.iCavour,
@@ -1476,6 +1488,8 @@ class DynamicCivs:
 				
 			# Empire as default
 			
+		# Poland - none so far
+			
 		elif iPlayer == iPortugal:
 			if utils.isPlotInArea(tCapitalCoords, tBrazilTL, tBrazilBR):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_BRAZIL")
@@ -1858,6 +1872,9 @@ class DynamicCivs:
 			return
 			
 		elif iPlayer == iMali:
+			return
+			
+		elif iPlayer == iPoland:
 			return
 			
 		elif iPlayer == iPortugal:
