@@ -3135,7 +3135,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 				}
 			}
 		}
-		
+
 		if (!bValid)
 		{
 			eBestPlayer = NO_PLAYER;
@@ -6375,7 +6375,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		iYield = std::max(iYield, GC.getYieldInfo(eYield).getMinCity());
 
 		// Leoreth (edead): city counts as correct improvement wrt. bonus yields
-		if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS)
+		if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && eYield != (YieldTypes)0)
 		{
 			for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 			{

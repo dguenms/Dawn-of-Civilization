@@ -4303,6 +4303,8 @@ class RiseAndFall:
                 if (iCiv == iEngland):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 3)
+			if utils.getHumanID() != iEngland:
+				utils.makeUnit(con.iMaceman, iCiv, tPlot, 3)
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
@@ -5514,43 +5516,11 @@ class RiseAndFall:
                                 teamMali.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamMali.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
 			if iCiv == iPoland:
-                                teamPortugal.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iGuilds, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                #teamPortugal.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iEngineering, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
 				lPolishTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism,
 						con.iPolytheism, con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iFishing,
 						con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iFeudalism,
 						con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, con.iAnimalHusbandry,
-						con.iHorsebackRiding]
+						con.iHorsebackRiding, con.iMeditation, con.iAesthetics, con.iLiterature, con.iCalendar, con.iCivilService]
 				for iTech in lPolishTechs:
 					teamPoland.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iTurkey):
