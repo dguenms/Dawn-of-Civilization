@@ -444,7 +444,7 @@ tResurrectionIntervals = (
 [], #Carthage
 [(220, 650), (1500, 2020)], #Persia
 [], #Rome
-[(1565, 1800)], #Tamils
+[], #Tamils
 [(1270, 1520), (1850, 1930)], #Ethiopia
 [(1800, 2020)], #Korea
 [], #Maya
@@ -1015,7 +1015,7 @@ tCoreAreasBR = (
 (55, 46), #Spain
 (57, 52), #France
 (54, 60), #England   57 without Scotland
-(65, 54), #Holy Rome
+(65, 55), #Holy Rome #54 excludes Holstein, don't do this because of Kopenhagen
 (74, 57), #Russia
 (57, 31), #Mali
 (67, 54), #Poland
@@ -1867,11 +1867,11 @@ tResurrectionProb = (
 100, #China
 30, #Babylonia
 60, #Greece
-100, #India
+20, #India
 30, #Carthage
 60, #Persia
 65, #Rome
-40, #Tamils
+20, #Tamils
 80, #Ethopia
 80, #Korea
 30, #Maya

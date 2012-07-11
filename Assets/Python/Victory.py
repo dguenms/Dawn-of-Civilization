@@ -216,6 +216,7 @@ iRussia = con.iRussia
 iNetherlands = con.iNetherlands
 iHolland = con.iHolland
 iMali = con.iMali
+iPoland = con.iPoland
 iTurkey = con.iTurkey
 iPortugal = con.iPortugal
 iInca = con.iInca
@@ -263,6 +264,7 @@ pRussia = gc.getPlayer(iRussia)
 pNetherlands = gc.getPlayer(iNetherlands)
 pHolland = gc.getPlayer(iHolland)
 pMali = gc.getPlayer(iMali)
+pPoland = gc.getPlayer(iPoland)
 pTurkey = gc.getPlayer(iTurkey)
 pPortugal = gc.getPlayer(iPortugal)
 pInca = gc.getPlayer(iInca)
@@ -305,6 +307,7 @@ teamRussia = gc.getTeam(pRussia.getTeam())
 teamNetherlands = gc.getTeam(pNetherlands.getTeam())
 teamHolland = gc.getTeam(pHolland.getTeam())
 teamMali = gc.getTeam(pMali.getTeam())
+teamPoland = gc.getTeam(pPoland.getTeam())
 teamTurkey = gc.getTeam(pTurkey.getTeam())
 teamPortugal = gc.getTeam(pPortugal.getTeam())
 teamInca = gc.getTeam(pInca.getTeam())
@@ -1648,6 +1651,29 @@ class Victory:
                                                 self.setGoal(iMali, 2, 1)
                                         else:
                                                 self.setGoal(iMali, 2, 0)
+						
+		elif iPlayer == iPoland:
+			if pPoland.isAlive():
+			
+				if iGameTurn == getTurnForYear(1350):
+					cityList = self.getMostPopulousCities(iPoland, 3)
+					iCount = 0
+					bComplete = False
+					for city in cityList:
+						if city.getPopulation() >= 12:
+							iCount += 1
+						if iCount >= 3:
+							bComplete = True
+							break
+							
+					if bComplete:
+						self.setGoal(iPoland, 0, 1)
+					else:
+						self.setGoal(iPoland, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1600):
+					if self.getGoal(iPoland, 2) == -1:
+						self.setGoal(iPoland, 2, 0)
 
                 elif (iPlayer == iTurkey):
                         if (pTurkey.isAlive()):
@@ -2382,6 +2408,14 @@ class Victory:
 		if iTech in [con.iLiterature, con.iDrama, con.iPhilosophy] and self.getGoal(iGreece, 0) == -1:
 			if self.getGreekTechs(0) == 1 and self.getGreekTechs(1) == 1 and self.getGreekTechs(2) == 1:
 				self.setGoal(iGreece, 0, 1)
+				
+		# Polish UHV: Liberalism
+		if iTech == con.iLiberalism:
+			if self.getGoal(iPoland, 1) == -1:
+				if iPlayer == iPoland:
+					self.setGoal(iPoland, 1, 1)
+				else:
+					self.setGoal(iPoland, 1, 0)
 
 
 		# Italian UHV: Banking, Patronage, Education, Radio, Electricity, Fascism
@@ -2697,10 +2731,19 @@ class Victory:
 							
 		elif iPlayer == iKhmer:
 			if pKhmer.isAlive():
-				if self.getGoal(iKhmer, 0) == 1:
+				if self.getGoal(iKhmer, 0) == -1:
 					if iBuilding in [con.iBuddhistMonastery, con.iHinduMonastery]:
 						if self.getWondersBuilt(iKhmer) >= 1 and self.getNumBuildings(iKhmer, con.iBuddhistMonastery) >= 4 and self.getNumBuildings(iKhmer, con.iHinduMonastery) >= 4:
 							self.setGoal(iKhmer, 0, 1)
+							
+		elif iPlayer == iPoland:
+			if pPoland.isAlive():
+				if self.getGoal(iPoland, 2) == -1:
+					if iBuilding == con.iChristianCathedral or iBuilding == con.iOrthodoxCathedral:
+						bCatholicCathedral = (self.getNumBuildings(iPoland, con.iChristianCathedral) > 0)
+						bOrthodoxCathedral = (self.getNumBuildings(iPoland, con.iOrthodoxCathedral) > 0)
+						if bCatholicCathedral and bOrthodoxCathedral:
+							self.setGoal(iPoland, 2, 1)
 				
 		if iBuilding in [con.iTajMahal, con.iRedFort, con.iHarmandirSahib]:
 			if iPlayer == iMughals:
@@ -3139,6 +3182,25 @@ class Victory:
 								heapq.heappush(lNodes, tTuple)
 			
 		return False
+		
+	def getMostPopulousCities(self, iPlayer, iNumCities):
+		pCityList = PyPlayer(iPlayer).getCityList()
+		cityList = []
+		for pCity in pCityList:
+			city = pCity.GetCy()
+			cityList.append((city.getPopulation, city))
+			
+		cityList.sort()
+		
+		while len(cityList) > iNumCities:
+			cityList.remove(cityList[0])
+			
+		#cityList.reverse()
+		resultList = []
+		for tTuple in cityList:
+			resultList.append(tTuple[1])
+			
+		return resultList
 
 
 	def getIcon(self, bVal):
@@ -3616,6 +3678,21 @@ class Victory:
 				iGold = pMali.getGold()
 				aHelp.append(self.getIcon(iGold >= utils.getTurns(16000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(16000))))
 
+		elif iPlayer == iPoland:
+			if iGoal == 0:
+				cityList = self.getMostPopulousCities(iPoland, 3)
+				bCity1 = (len(cityList) > 0)
+				bCity2 = (len(cityList) > 1)
+				bCity3 = (len(cityList) > 2)
+				if not bCity1: aHelp.append(self.getIcon(False) + localText.getText("TXT_KEY_VICTORY_NO_CITIES", ()))
+				if bCity1: aHelp.append(self.getIcon(cityList[0].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[0].getName(), cityList[0].getPopulation(), 12)))
+				if bCity2: aHelp.append(self.getIcon(cityList[1].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[1].getName(), cityList[1].getPopulation(), 12)))
+				if bCity3: aHelp.append(self.getIcon(cityList[2].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[2].getName(), cityList[2].getPopulation(), 12)))
+			elif iGoal == 2:
+				bCatholicCathedral = (self.getNumBuildings(iPoland, con.iChristianCathedral) > 0)
+				bOrthodoxCathedral = (self.getNumBuildings(iPoland, con.iOrthodoxCathedral) > 0)
+				aHelp.append(self.getIcon(bCatholicCathedral) + localText.getText("TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL", ()) + ' ' + self.getIcon(bOrthodoxCathedral) + localText.getText("TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL", ()))	
+				
 		elif iPlayer == iPortugal:
 			if iGoal == 0:
 				lRevealedMap = con.l0Array

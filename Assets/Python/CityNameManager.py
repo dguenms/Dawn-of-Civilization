@@ -1134,7 +1134,7 @@ tCityMap1 = (
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-‘Ishbunah",	"Al-‘Ishbunah",	"Qurtuba",	"Qurtuba",	"-1",	"Al-Mariyat",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Inebahti",	"Inebahti",	"Atina",	"-1",	"-1",	"Izmir",	"Antalya",	"-1",	"Al-Iskandarun",	"Halab",	"Halab",	"Mosul",	"Mosul",	"Hamadan",	"-1",	"Tahran",	"Tahran",	"Damghan",	"Her&#225;t",	"Her&#225;t",	"Ghazni",	"Ghazni",	"-1",	"Islamabad",	"Srinagar",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"‘Uhshunubah",	"‘Uhshunubah",	"Granada",	"Granada",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Riv&#224;h",	"-1",	"-1",	"-1",	"-1",	"Atina",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-Ladhiqiyah",	"Hama",	"Al-Raqqah",	"Baghdad",	"Baghdad",	"Hamadan",	"Hamadan",	"-1",	"Isfah&#225;n",	"Isfah&#225;n",	"Farah",	"Farah",	"Qandahar",	"-1",	"Peshawar",	"Peshawar",	"Delhi",	"Delhi",	"Delhi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Granada",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Bal'Harm",	"Kasr'Yanni",	"-1",	"-1",	"-1",	"Anavarin",	"Anavarin",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Bayrut",	"Dimashq",	"Ar-Rutbah",	"Baghdad",	"Baghdad",	"Dezful",	"Ahwaz",	"Shapur",	"Yazd",	"Yazd",	"Farah",	"-1",	"Qandahar",	"-1",	"Peshawar",	"Peshawar",	"Delhi",	"Delhi",	"Delhi",	"Lakhnau",	"Azimabad",	"Azimabad",	"Dhaka",	"Dhaka",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Wahran",	"Al-Jazair",	"Al-Jazair",	"Qusantinah",	"Tunis",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Lefkosa",	"Lefkosa",	"-1",	"-1",	"-1",	"Bayrut",	"Dimashq",	"Ar-Rutbah",	"An-Najaf",	"Al-Basrah",	"Al-Basrah",	"Ahwaz",	"Bushehr",	"Yazd",	"Yazd",	"Kirman",	"Kirman",	"Zahedan",	"Zahedan",	"Mult&#225;n",	"Mult&#225;n",	"Delhi",	"Delhi",	"Delhi",	"Lakhnau",	"Varanasi",	"Azimabad",	"Dhaka",	"Dhaka",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Wahran",	"Al-Jazair",	"Al-Jazair",	"Qusantinah",	"Tunis",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Rabd al-Handaq",	"Rabd al-Handaq",	"-1",	"-1",	"-1",	"Bayrut",	"Dimashq",	"Ar-Rutbah",	"An-Najaf",	"Al-Basrah",	"Al-Basrah",	"Ahwaz",	"Bushehr",	"Yazd",	"Yazd",	"Kirman",	"Kirman",	"Zahedan",	"Zahedan",	"Mult&#225;n",	"Mult&#225;n",	"Delhi",	"Delhi",	"Delhi",	"Lakhnau",	"Varanasi",	"Azimabad",	"Dhaka",	"Dhaka",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tanger",	"-1",	"Wahran",	"Wahran",	"-1",	"Djelfa",	"-1",	"Safaqis",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-Quds",	"'Amman",	"'Amman",	"An-Najaf",	"Al-Kuwait",	"-1",	"-1",	"-1",	"Shiraz",	"Shiraz",	"Kirman",	"Kirman",	"Zahedan",	"Zahedan",	"Mult&#225;n",	"Mult&#225;n",	"Ujjaini",	"Ujjaini",	"Bhopal",	"Varanasi",	"Varanasi",	"Kolkata",	"Kolkata",	"-1",	"Chittagong",	"Chittagong",	"Mandalay",	"Hanoi",	"Hanoi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"F&#232;s",	"F&#232;s",	"B&#232char",	"B&#232char",	"Djelfa",	"Djelfa",	"Qabis",	"Tarabulus",	"Tarabulus",	"Misratah",	"-1",	"-1",	"-1",	"Bangazi",	"Tubruq",	"-1",	"-1",	"-1",	"-1",	"-1",	"Gazzah",	"Al-Quds",	"'Amman",	"'Amman",	"Rafah",	"Al-Kuwait",	"Al-Kuwait",	"-1",	"-1",	"-1",	"Shiraz",	"Hormuz",	"Chabahar",	"Chabahar",	"Daibul",	"Daibul",	"Surat",	"Ujjaini",	"Bhopal",	"Bhopal",	"Raipur",	"Raipur",	"Kolkata",	"-1",	"-1",	"-1",	"Pagan",	"Pagan",	"Hanoi",	"Hanoi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-Rabat",	"Al-Rabat",	"-1",	"F&#232;s",	"B&#232char",	"B&#232char",	"Ouargla",	"Ouargla",	"Ghadamis",	"Ghadamis",	"Al-Qariyah",	"Surt",	"Surt",	"Al-Uqaylah",	"Al-Uqaylah",	"Bangazi",	"Tubruq",	"Al-Iskandariya",	"Al-Iskandariya",	"Damanh&#250;t",	"Damanh&#250;t",	"Rafah",	"-1",	"Tabuk",	"Madinah",	"Madinah",	"Buraydah",	"Buraydah",	"Al-Qatif",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Daibul",	"-1",	"Mumbai",	"D&#233;vagiri",	"D&#233;vagiri",	"Hyderabad",	"Raipur",	"Raipur",	"Visakhapatnam",	"-1",	"-1",	"-1",	"Pagan",	"Yangon",	"Tavoy",	"Than Hoa",	"Hue",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
@@ -2238,7 +2238,7 @@ tCityMap1 = (
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Otranto",	"-1",	"Inebahti",	"Inebahti",	"Atina",	"-1",	"-1",	"Bodrum",	"Antalya",	"-1",	"Adana",	"Urfa",	"Diyarbakir",	"Van",	"Mar&#225;ge",	"Mar&#225;ge",	"-1",	"Raj",	"Raj",	"Damrhan",	"Her&#225;t",	"Her&#225;t",	"Rhazni",	"Rhazni",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Atina",	"-1",	"-1",	"-1",	"-1",	"-1",	"Iskenderun",	"Halep",	"Musul",	"Musul",	"Bagdat",	"Alamut",	"Alamut",	"-1",	"Isfah&#225;n",	"Isfah&#225;n",	"Farah",	"Farah",	"Peshawar",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Anavarin",	"Anavarin",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Antakya",	"Sam",	"Haditha",	"Bagdat",	"Bagdat",	"Dezful",	"Ahwaz",	"Shapur",	"Yazd",	"Yazd",	"Farah",	"-1",	"Peshawar",	"-1",	"Lahore",	"Lahore",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tlemcen",	"Cezayir",	"Cezayir",	"Tunus",	"Tunus",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Lefkosa",	"Lefkosa",	"-1",	"-1",	"-1",	"Beyrut",	"Sam",	"Ar-Rutbah",	"Necef",	"Basra",	"Basra",	"Ahwaz",	"Bushehr",	"Siraz",	"Siraz",	"Kirman",	"Kirman",	"Zarani",	"Multan",	"Multan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tlemcen",	"Cezayir",	"Cezayir",	"Tunus",	"Tunus",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kandiye",	"Kandiye",	"-1",	"-1",	"-1",	"Beyrut",	"Sam",	"Ar-Rutbah",	"Necef",	"Basra",	"Basra",	"Ahwaz",	"Bushehr",	"Siraz",	"Siraz",	"Kirman",	"Kirman",	"Zarani",	"Multan",	"Multan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tanger",	"-1",	"Tlemcen",	"Tlemcen",	"-1",	"Djelfa",	"-1",	"Safakes",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Kud&#252;s",	"Kud&#252;s",	"Amman",	"Necef",	"Kuveyt",	"-1",	"-1",	"-1",	"Siraz",	"Siraz",	"Kirman",	"Kirman",	"Zarani",	"Multan",	"Multan",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"F&#232;s",	"F&#232;s",	"B&#232char",	"B&#232char",	"Djelfa",	"Djelfa",	"Gabes",	"Trablus",	"Trablus",	"Misratah",	"-1",	"-1",	"-1",	"Tobruk",	"Tobruk",	"-1",	"-1",	"-1",	"-1",	"-1",	"Gazzah",	"Kud&#252;s",	"Amman",	"Amman",	"Rafah",	"Kuveyt",	"Kuveyt",	"-1",	"-1",	"-1",	"Hormuz",	"Chabahar",	"Chabahar",	"Mirat ul Memalik",	"Mirat ul Memalik",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-Rabat",	"Al-Rabat",	"-1",	"F&#232;s",	"B&#232char",	"B&#232char",	"Ouargla",	"Ouargla",	"Ghadamis",	"Ghadamis",	"Al-Qariyah",	"Surt",	"Surt",	"Bingazi",	"Bingazi",	"Tobruk",	"Tobruk",	"Iskenderiye",	"Iskenderiye",	"Damanh&#250;t",	"Damanh&#250;t",	"Rafah",	"-1",	"Akabe",	"Medine",	"Medine",	"Buraydah",	"Buraydah",	"Hofuf",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Mirat ul Memalik",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
@@ -3413,7 +3413,7 @@ tCityMap2 = (
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Hemeroscopion",	"-1",	"-1",	"-1",	"Hyknusa",	"-1",	"-1",	"-1",	"Poseidonia",	"Taras",	"-1",	"Delphoi",	"Delphoi",	"Athenai",	"-1",	"-1",	"Halikarnassos",	"Attaleia",	"-1",	"Tarsos",	"Edessa",	"Edessa",	"Tigranocerta",	"Tigranocerta",	"Epiphaneia",	"-1",	"Europos",	"Europos",	"Hekatompylos",	"Alexandreia Areion",	"Alexandreia Areion",	"Alexandreia Gazhaka",	"Alexandreia Gazhaka",	"-1",	"Taxila",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Mainake",	"Mainake",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Rhegion",	"-1",	"-1",	"-1",	"-1",	"Athenai",	"-1",	"-1",	"-1",	"-1",	"-1",	"Alexandreia ad Issum",	"Dura-Europos",	"Dura-Europos",	"Seleukeia",	"Seleukeia",	"Epifania",	"Epifania",	"-1",	"Gabai",	"Gabai",	"Alexandreia Prophtasia",	"Alexandreia Prophtasia",	"Alexandreia Arachoton",	"-1",	"Alexandreia Bucephala",	"Alexandreia Bucephala",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Mainake",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Akragas",	"Syrakousai",	"-1",	"-1",	"-1",	"Sparte",	"Korinthos",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Antiokheia Megale",	"Damaskos",	"Dura-Europos",	"Seleukeia",	"Seleukeia",	"Laodikeia",	"Seleukeia Susiana",	"Seleukeia Susiana",	"Pasargadai",	"Pasargadai",	"Alexandreia Prophtasia",	"-1",	"Alexandreia Arachoton",	"-1",	"Alexandreia Bucephala",	"Alexandreia Bucephala",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Iol",	"Iol",	"Hippo",	"Karkhedon",	"Karkhedon",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Knossos",	"Knossos",	"-1",	"-1",	"-1",	"Tyros",	"Damaskos",	"Antiokheia tes Semiramis",	"Antiokheia tes Semiramis",	"Alexandreia Charax",	"Alexandreia Charax",	"Seleukeia Susiana",	"Seleukeia Susiana",	"Persepolis",	"Persepolis",	"Alexandreia tes Charmanias",	"Alexandreia tes Charmanias",	"Alexandreia Oreiton",	"Alexandreia Oreiton",	"Alexandreia Opiana",	"Alexandreia Opiana",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Iol",	"Iol",	"Hippo",	"Karkhedon",	"Karkhedon",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Heraklion",	"Heraklion",	"-1",	"-1",	"-1",	"Tyros",	"Damaskos",	"Antiokheia tes Semiramis",	"Antiokheia tes Semiramis",	"Alexandreia Charax",	"Alexandreia Charax",	"Seleukeia Susiana",	"Seleukeia Susiana",	"Persepolis",	"Persepolis",	"Alexandreia tes Charmanias",	"Alexandreia tes Charmanias",	"Alexandreia Oreiton",	"Alexandreia Oreiton",	"Alexandreia Opiana",	"Alexandreia Opiana",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tingi",	"-1",	"Rusadir",	"Rusadir",	"-1",	"-1",	"-1",	"Karkhedon",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Antiokheia Hippos",	"Antiokheia Hippos",	"Antiokheia tes Semiramis",	"-1",	"Alexandreia Charax",	"-1",	"-1",	"-1",	"Persepolis",	"Persepolis",	"Alexandreia tes Charmanias",	"Alexandreia tes Charmanias",	"Alexandreia Oreiton",	"Alexandreia Oreiton",	"Alexandreia Opiana",	"Alexandreia Opiana",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Zama",	"Tacape",	"Sabratha",	"Oea",	"Lepcis",	"-1",	"-1",	"-1",	"Berenikis",	"Kyrene",	"-1",	"-1",	"-1",	"-1",	"-1",	"Gaza",	"Antiokheia Hippos",	"Petra",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Harmozeia",	"Harmozeia",	"Gwadar",	"Gwadar",	"Alexandreia tes Indias",	"Pattala",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Lixos",	"Lixos",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Lepcis",	"Lepcis",	"Automala",	"Automala",	"Berenikis",	"Kyrene",	"Alexandreia",	"Alexandreia",	"Naucratis",	"Arsinoe",	"Raphia",	"-1",	"Petra",	"Petra",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Alexandreia tes Indias",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
@@ -5541,6 +5541,8 @@ class CityNameManager:
 				city.setName('Akre', False)
 			elif sName == 'Ancyra' or sName == 'Ankuwash' or sName == 'Angora':
 				city.setName('Ankyra', False)
+			elif sName == 'Heraklion' or sName == 'Candia' or sName == 'Chandax' or sName == 'Rabd al-Handaq' or sName == 'Kandiye':
+				city.setName('Iraklion', False)
 
                 if (iNewOwner == iCarthage): 
                         if (sName == 'Byblos' or sName == 'Jbeil'):
@@ -6194,6 +6196,10 @@ class CityNameManager:
 				city.setName('Kairo', False)
 			if sName == 'Ineb Hedj':
 				city.setName('Memphis', False)
+			elif sName == 'Rabd al-Handaq' or sName == 'Candia' or sName == 'Kandiye':
+				city.setName('Chandax', False)
+			elif sName == 'Iraklion':
+				city.setName('Heraklion', False)
 
                 if (iNewOwner == iVikings): 
                         if (sName == 'Byzantion' or sName == 'Constantinopolis' or sName == 'Konstantinoupolis' or sName == 'Istanbul' or sName == 'Kostantiniyye' or sName == 'Konstantinopel' or sName == "Konstantinopol'" or sName == "Car'grad" or sName == 'Stambul'):
@@ -6512,6 +6518,8 @@ class CityNameManager:
 				city.setName('Peshawar', False)
 			if sName == 'Indraprastha':
 				city.setName('Delhi', False)
+			elif sName == 'Chandax' or sName == 'Candia' or sName == 'Iraklion' or sName == 'Heraklion' or sName == 'Kandiye':
+				city.setName('Rabd al-Handaq', False)
 
                 if (iNewOwner == iKhmer or iNewOwner == iThailand): 
                         if (sName == 'Malacca' or sName == 'Malakka' or sName == 'Malaca'):
@@ -7450,7 +7458,7 @@ class CityNameManager:
                                 city.setName('Sarajevo', False)
                         if sName == 'Aldeigjuborg':
                                 city.setName('Staraja Ladoga', False)
-                        if (sName == 'Nowgorod' or sName == 'Holmg&#229;rd'):
+                        if (sName == 'Nowgorod' or sName == 'Holmg&#229;rd' or sName == 'Nowogr&#243;d'):
                                 city.setName('Novgorod', False)
                         if sName == 'K&#246;nug&#229;rd':
                                 city.setName('Kiev', False)
@@ -7458,7 +7466,7 @@ class CityNameManager:
                                 city.setName('Gdansk', False)
                         if (sName == 'K&#246;nigsberg' or sName == 'Calininopolis'):
                                 city.setName('Kaliningrad', False)
-                        if sName == 'Moskau':
+                        if sName == 'Moskau' or sName == 'Moskwa':
                                 city.setName('Moskva', False)
                         if (sName == 'Tyras' or sName == 'Moncastrum' or sName == 'Akkerman' or sName == 'Wei&#223;enburg' or sName == 'Asperon'):
                                 city.setName('Tiraspol', False) #Belgorod-Dnestrovskiy
@@ -7510,7 +7518,7 @@ class CityNameManager:
                                 city.setName('Zadar', False) 
                         if (sName == 'Vienne' or sName == 'Wien' or sName == 'Vindobona' or sName == 'Viyana'):
                                 city.setName('Vena', False)
-                        if sName == 'Memel':
+                        if sName == 'Memel' or sName == 'Klaipeda':
                                 city.setName('Klajpeda', False)
                         if (sName == 'Warschau' or sName == 'Varsovia'):
                                 city.setName('Warszawa', False)
@@ -7556,7 +7564,7 @@ class CityNameManager:
                                 city.setName('Tallin', False)
                         if (sName == 'Kauen'):
                                 city.setName('Kovno', False)
-                        if (sName == 'Wilna'):
+                        if (sName == 'Wilna' or sName == 'Wilno'):
                                 city.setName("Vil'na", False)
                         if (sName == 'Stettin'):
                                 city.setName('Szczecin', False)
@@ -7640,7 +7648,7 @@ class CityNameManager:
                                 city.setName("Kazan'", False)
                         if (sName == 'Ufu'):
                                 city.setName("Ufa", False)
-			if (sName == 'Kyiv' or sName == 'Kiew'):
+			if (sName == 'Kyiv' or sName == 'Kiew' or sName == 'Kij&#243w'):
 				city.setName('Kiev', False)
 			if sName == 'Silistre' or sName == 'Durostulon' or sName == 'Durostorum':
 				city.setName('Drastar', False)
@@ -7792,6 +7800,34 @@ class CityNameManager:
                                 city.setName('Harare', False)
                         if (sName == 'Conakry'):
                                 city.setName('Konakiri', False)
+				
+		if iNewOwner == iPoland:
+			if sName == 'Krakau':
+				city.setName("Krak&#243;w", False)
+			elif sName == 'Warschau':
+				city.setName("Warsawa", False)
+			elif sName == 'Memel' or sName == 'Klaipeda':
+				city.setName('Klajpeda', False)
+			elif sName == 'K&#246;nigsberg' or sName == 'Kaliningrad':
+				city.setName('Kr&#243;lewiec', False)
+			elif sName == 'Posen':
+				city.setName('Poznan', False)
+			elif sName == 'Danzig':
+				city.setName('Gdansk', False)
+			elif sName == 'Vilnius' or sName == 'Wilna' or sName == "Vil'na":
+				city.setName('Wilno', False)
+			elif sName == 'Lemberg' or sName == "L'viv" or sName == "L'vov":
+				city.setName('Lwow', False)
+			elif sName == 'Kiew' or sName == 'Kiev' or sName == 'Kyiv':
+				city.setName('Kij&#243;w', False)
+			elif sName == 'Stettin':
+				city.setName('Szczecin', False)
+			elif sName == 'Kauen' or sName == 'Kovno':
+				city.setName('Kowno', False)
+			elif sName == 'Moskva' or sName == 'Moskau':
+				city.setName('Moskwa', False)
+			elif sName == 'Novgorod':
+				city.setName('Nowogr&#243;d', False)
 
                 if (iNewOwner == iPortugal): 
                         if (sName == 'Sint-Helena' or sName == 'Saint Helena'):
@@ -8147,6 +8183,8 @@ class CityNameManager:
 				city.setName('Preveza', False)
 			if sName == 'Monemvasia' or sName == 'Menek&#351;e':
 				city.setName('Malvasia', False)
+			elif sName == 'Iraklion' or sName == 'Heraklion' or sName == 'Chandax' or sName == 'Rabd al-Handaq' or sName == 'Kandiye':
+				city.setName('Candia', False)
 
                 if (iNewOwner == iMongolia): 
                         if (sName == 'Marakanda' or sName == 'Samarqand' or sName == 'Samarkant' or sName == 'Samarcande' or sName == 'Samarcanda' or sName == 'Afrasiyab'):
@@ -8405,6 +8443,8 @@ class CityNameManager:
 				city.setName('Akka', False)
 			if sName == 'Damietta' or sName == 'Tamiat' or sName == 'Domyat':
 				city.setName('Dimyat', False)
+			elif sName == 'Candia' or sName == 'Chandax' or sName == 'Rabd al-Handaq' or sName == 'Iraklion' or sName == 'Heraklion':
+				city.setName('Kandiye', False)
 			#if sName == 'Tebriz':
 			#	if iNewOwner == iSeljuks:
                          #               formerCapital = gc.getPlayer(iSeljuks).getCapitalCity()
