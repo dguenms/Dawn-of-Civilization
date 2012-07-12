@@ -1903,7 +1903,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 		for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
 		{
-			if (iLoopTeam != getID())
+			if (iLoopTeam != getID() && iLoopTeam != INDEPENDENT && iLoopTeam != INDEPENDENT2)
 			{
 				CvTeamAI& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
 

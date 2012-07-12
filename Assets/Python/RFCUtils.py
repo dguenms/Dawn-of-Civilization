@@ -827,7 +827,10 @@ class RFCUtils:
                 pCiv = gc.getPlayer(iNewOwner)
 
                 if (gc.getTeam(pCiv.getTeam()).isHasTech(con.iAssemblyLine) and gc.getTeam(pCiv.getTeam()).isHasTech(con.iRifling)):
-                        iUnitType = con.iInfantry
+			if iNewOwner == con.iItaly:
+				iUnitType = con.iBersagliere
+			else:
+				iUnitType = con.iInfantry
                 elif (gc.getTeam(pCiv.getTeam()).isHasTech(con.iRifling)):
                         if (iNewOwner != con.iEngland):
                                 iUnitType = con.iRifleman

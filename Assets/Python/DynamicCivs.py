@@ -453,14 +453,16 @@ class DynamicCivs:
 				iFrance : "TXT_KEY_CIV_FRANCE_HOLY_ROMAN_VASSAL",
 				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_HOLY_ROMAN_VASSAL",
 				iByzantium : "TXT_KEY_CIV_BYZANTIUM_HOLY_ROMAN_VASSAL",
-				iItaly : "TXT_KEY_CIV_ITALY_HOLY_ROMAN_VASSAL"},
+				iItaly : "TXT_KEY_CIV_ITALY_HOLY_ROMAN_VASSAL",
+				iPoland : "TXT_KEY_CIV_POLAND_HOLY_ROMAN_VASSAL"},
 			iNetherlands : {
 				iIndonesia : "TXT_KEY_CIV_INDONESIA_DUTCH_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_DUTCH_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_DUTCH_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_DUTCH_VASSAL"},
 			iRussia: {
-				iAmerica : "TXT_KEY_CIV_AMERICA_RUSSIAN_VASSAL"},
+				iAmerica : "TXT_KEY_CIV_AMERICA_RUSSIAN_VASSAL",
+				iPoland : "TXT_KEY_CIV_POLAND_RUSSIAN_VASSAL"},
 			iPortugal : {
 				iIndia : "TXT_KEY_CIV_INDIA_PORTUGUESE_VASSAL",
 				iIndonesia : "TXT_KEY_CIV_INDONESIA_PORTUGUESE_VASSAL",
@@ -518,7 +520,8 @@ class DynamicCivs:
 				iAztecs : "TXT_KEY_CIV_AZTECS_GERMAN_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_GERMAN_VASSAL",
 				iMali : "TXT_KEY_CIV_MALI_GERMAN_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_GERMAN_VASSAL"},
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_GERMAN_VASSAL",
+				iPoland : "TXT_KEY_CIV_POLAND_GERMAN_VASSAL"},
 			iAmerica : {
 				iEngland : "TXT_KEY_CIV_ENGLAND_AMERICAN_VASSAL",
 				iJapan : "TXT_KEY_CIV_JAPAN_AMERICAN_VASSAL",
@@ -894,6 +897,7 @@ class DynamicCivs:
 		elif iPlayer == iItaly: iThreshold = 4
 		elif iPlayer == iInca: iThreshold = 3
 		elif iPlayer == iMongolia: iThreshold = 10
+		elif iPlayer == iPoland: iThreshold = 3
 			
 		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
 		
@@ -956,6 +960,9 @@ class DynamicCivs:
 			# special cases
 			if iMaster == iRome and iPlayer == iCarthage and capital.getX() < 73:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ROMAN_VASSAL")
+				return
+			if iMaster == iHolyRome and iPlayer == iPoland and iGameEra >= con.iIndustrial:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_AUSTRIAN_VASSAL")
 				return
 			
 			if iMaster in self.specificVassalNames and not pMasterPlayer.isReborn():
@@ -1488,7 +1495,16 @@ class DynamicCivs:
 				
 			# Empire as default
 			
-		# Poland - none so far
+		elif iPlayer == iPoland:
+			if bEmpire:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_EMPIRE")
+				return
+				
+			if capital.getName() == 'Kowno' or capital.getName() == 'Medvegalis' or capital.getName() == 'Klajpeda' or capital.getName == 'Wilno' or capital.getName() == 'Riga':
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_LITHUANIA")
+				return
+				
+			# Kingdom as default
 			
 		elif iPlayer == iPortugal:
 			if utils.isPlotInArea(tCapitalCoords, tBrazilTL, tBrazilBR):
