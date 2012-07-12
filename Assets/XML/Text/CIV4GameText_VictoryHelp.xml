@@ -416,4 +416,8 @@
 		<Tag>TXT_KEY_VICTORY_CITY_SIZE</Tag>
 		<English>%s1_city: %d2 / %d3</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS</Tag>
+		<English>Christian Cathedrals built: %d1 / %d2</English>
+	</TEXT>
 </Civ4GameText>

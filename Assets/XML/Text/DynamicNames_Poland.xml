@@ -16,4 +16,48 @@
 		<Tag>TXT_KEY_CIV_POLAND_DESC_DEFAULT</Tag>
 		<English>Kingdom of Poland</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_EMPIRE</Tag>
+		<English>Polish-Lithuanian Commonwealth</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_DESC_DEMOCRATIC</Tag>
+		<English>Republic of Poland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_DESC_COMMUNIST</Tag>
+		<English>People's Republic of Poland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_DESC_FASCIST</Tag>
+		<English>Sanacja Poland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_SOVIET_VASSAL</Tag>
+		<English>Soviet Poland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_NAZI_VASSAL</Tag>
+		<English>General Government</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_GERMAN_VASSAL</Tag>
+		<English>South Prussia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_HOLY_ROMAN_VASSAL</Tag>
+		<English>Duchy of Poland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_AUSTRIAN_VASSAL</Tag>
+		<English>Kingdom of Galicia and Lodomeria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_RUSSIAN_VASSAL</Tag>
+		<English>Congress Poland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_LITHUANIA</Tag>
+		<English>Grand Duchy of Lithuania</English>
+	</TEXT>
 </Civ4GameText>

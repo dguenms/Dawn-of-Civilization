@@ -916,7 +916,7 @@ void CvPlayerAI::AI_updateFoundValues(bool bStartingLoc) const
 
 			if (pLoopPlot->isRevealed(getTeam(), false))// || AI_isPrimaryArea(pLoopPlot->area()))
 			{
-				long lResult=-1;
+				/*long lResult=-1;
 				if(GC.getUSE_GET_CITY_FOUND_VALUE_CALLBACK())
 				{
 					CyArgsList argsList;
@@ -927,13 +927,13 @@ void CvPlayerAI::AI_updateFoundValues(bool bStartingLoc) const
 				}
 
 				if (lResult == -1)
-				{
+				{*/
 					iValue = AI_foundValue(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE());
-				}
+				/*}
 				else
 				{
 					iValue = lResult;
-				}
+				}*/
 
 				pLoopPlot->setFoundValue(getID(), iValue);
 
@@ -1748,11 +1748,20 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int iGreed;
 	int iNumAreaCities;
 
+	//Leoreth: very dirty hack
+	if (getID() == HOLY_ROME && (iX == 59 || iX == 60) && iY == 53)
+	{
+	    iX = 61;
+	}
+
+
 	pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
     int tempX = pPlot->getX_INLINE();
 	int tempY = pPlot->getY_INLINE();
     int reborn = GET_PLAYER(getID()).getReborn();
+
+    int iSettlerMapValue = settlersMaps[reborn][getID()][EARTH_Y - 1 - iY][iX];
 
     // Leoreth: settler map entry of 1000 (never used by Rhye) to force a city no matter the environment
     //if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] == 1000)
@@ -1767,6 +1776,15 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	if (iX == 57 && iY == 50)
 	{
 		return 0;
+	}
+
+	//Leoreth: if Poland exists, prevent HRE from founding cities in its core
+	if (getID() == HOLY_ROME && GET_PLAYER((PlayerTypes)POLAND).isPlayable() /* better option later when it exists */)
+	{
+	    if (iX >= 63 && iY >= 49)
+	    {
+	        return 0;
+	    }
 	}
 
 	bIsCoastal = pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN());
@@ -1859,7 +1877,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 				if (pLoopPlot != NULL)
 				{
-					if (pLoopPlot->plotCheck(PUF_isOtherTeam, getID()) != NULL)
+					if (pLoopPlot->plotCheck(PUF_isOtherTeam, getID()) != NULL && iSettlerMapValue < 800)
 					{
 						return 0;
 					}
@@ -1910,7 +1928,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 		return 0;
 	}*/
-	if (iOwnedTiles > (NUM_CITY_PLOTS *2/3)) //+1?
+	if (iOwnedTiles > (NUM_CITY_PLOTS *2/3) && iSettlerMapValue < 800) //+1?
 	{
 		return 0;
 	}
@@ -2293,7 +2311,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 		return 0;
 	}*/
-	if (iTakenTiles > (NUM_CITY_PLOTS *2/3) && iResourceValue < 250)
+	if (iTakenTiles > (NUM_CITY_PLOTS *2/3) && iResourceValue < 250 && iSettlerMapValue < 800)
 	{
 		return 0;
 	}
@@ -2538,7 +2556,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 		return 0;
 	}*/
-	if (iTeammateTakenTiles > (NUM_CITY_PLOTS *2/3))
+	if (iTeammateTakenTiles > (NUM_CITY_PLOTS *2/3) && iSettlerMapValue < 800)
 	{
 		return 0;
 	}
@@ -3149,11 +3167,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 				iValue /= 4;
 				break;
 			case ENGLAND:
-				iValue *= 4;
+				iValue *= 5;
 				iValue /= 3;
 				break;
 			case NETHERLANDS:
-				iValue *= 4;
+				iValue *= 5;
 				iValue /= 3;
 				break;
 			case PORTUGAL:
@@ -3365,6 +3383,12 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	if (pCity->isHolyCity())
 	{
 		iValue += 2;
+	}
+
+	//Leoreth: even more emphasis on city of own state religion, for more wars about Rome especially
+	if (pCity->isHolyCity(getStateReligion()))
+	{
+	    iValue += 3;
 	}
 
 	if (pCity->isEverOwned(getID()))
@@ -10088,7 +10112,7 @@ int CvPlayerAI::AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) co
     if ((bHoly && bState) || (bHoly && !bHolyState && (getStateReligion() != NO_RELIGION)))
     {
         iCount += ((pArea->getNumCities() * 2) - (pArea->countHasReligion(eReligion) * 3));
-        iCount /= 8;
+        iCount /= 16; //Leoreth: /8 before, waste less time spreading religions
 
         iCount = std::max(0, iCount);
 
@@ -18117,6 +18141,7 @@ void CvPlayerAI::AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int
 	CvPlot* pLoopPlot;
 	int iLoopX, iLoopY;
 	int iValue;
+	int iSettlerMapValue = settlersMaps[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][EARTH_Y - 1 - iY][iX];
 
 	for (iLoopX = -iOuterRadius; iLoopX <= iOuterRadius; iLoopX++)
 	{
@@ -18127,7 +18152,7 @@ void CvPlayerAI::AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int
 			{
 				if (stepDistance(0, 0, iLoopX, iLoopY) <= iInnerRadius)
 				{
-					if (!((iLoopX == 0) && (iLoopY == 0)))
+					if (!((iLoopX == 0) && (iLoopY == 0)) && iSettlerMapValue < 800)
 					{
 						pLoopPlot->setFoundValue(getID(), 0);
 					}
@@ -18136,7 +18161,7 @@ void CvPlayerAI::AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int
 				{
 					if ((pLoopPlot != NULL) && (pLoopPlot->isRevealed(getTeam(), false)))
 					{
-						long lResult=-1;
+						/*long lResult=-1;
 						if(GC.getUSE_GET_CITY_FOUND_VALUE_CALLBACK())
 						{
 							CyArgsList argsList;
@@ -18147,13 +18172,13 @@ void CvPlayerAI::AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int
 						}
 
 						if (lResult == -1)
-						{
+						{*/
 							iValue = AI_foundValue(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE());
-						}
+						/*}
 						else
 						{
 							iValue = lResult;
-						}
+						}*/
 
 						pLoopPlot->setFoundValue(getID(), iValue);
 

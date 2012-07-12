@@ -3708,7 +3708,9 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_PHYSICS</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs/>
+			<AndPreReqs>
+				<PrereqTech>TECH_STEAM_POWER</PrereqTech>
+			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_ELECTRICITY_QUOTE</Quote>
 			<Sound>AS2D_TECH_ELECTRICITY</Sound>
 			<SoundMP>AS2D_TECH_MP_ELECTRICITY</SoundMP>
@@ -5984,6 +5986,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_CORPORATION</PrereqTech>
+				<PrereqTech>TECH_RAILROAD</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_ASSEMBLY_LINE_QUOTE</Quote>
 			<Sound>AS2D_TECH_ASSEMBLINE</Sound>

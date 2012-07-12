@@ -13,4 +13,18 @@
 # reworked missionary AI: less likely to pursue missionary strategies if potential targets are persecuting
 # made Frederick more aggressive
 # Assembly Plant now gives +25% unit production
-# cities count as correct improvement wrt. bonus plot yields (i.e. you don't lose yields when you build cities on bonuses!)
+# cities count as correct improvement wrt. bonus plot yields (i.e. you don't lose yields when you build cities on bonuses!), except for food
+# added Poland
+# added another wheat in Hungary, moved Silesian wheat north
+# removed peak in the Balkans
+# added Belgrade to the 600 AD scenario
+# missionary success probability abroad is now determined by the civ-specific religion spread rates. This means that missionaries shouldn't produce unrealistic religion spread anymore (like Orthodox Europe)
+# Apostolic Palace doesn't give +25% defense anymore
+# Rome starts without a Castle in the 600 AD scenario
+# Holy Rome doesn't settle the Baltic if Poland is in the game
+# Fixed the display of "Austria" in global declaration of war messages
+# The AI will build less missionaries to convert other civilizations to make up for the generally reduced chances
+# The AI will target the holy city of its own state religion more
+# Encouraged the Holy Roman AI to conquer Italy
+# Assembly Line now requires Railroad
+# Electricity now requires Steam Power

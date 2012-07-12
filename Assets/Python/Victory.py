@@ -490,6 +490,12 @@ class Victory:
 		
 	def changeTamilTradeGold(self, iChange):
 		sd.scriptDict['iTamilTradeGold'] += iChange
+		
+	def getPolishTechs(self, i):
+		return sd.scriptDict['lPolishTechs'][i]
+		
+	def setPolishTechs(self, i, iNewValue):
+		sd.scriptDict['lPolishTechs'][i] = iNewValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -2409,13 +2415,24 @@ class Victory:
 			if self.getGreekTechs(0) == 1 and self.getGreekTechs(1) == 1 and self.getGreekTechs(2) == 1:
 				self.setGoal(iGreece, 0, 1)
 				
-		# Polish UHV: Liberalism
+		# Polish UHV: Liberalism and Astronomy
 		if iTech == con.iLiberalism:
-			if self.getGoal(iPoland, 1) == -1:
+			if self.getPolishTechs(0) == -1:
 				if iPlayer == iPoland:
-					self.setGoal(iPoland, 1, 1)
+					self.setPolishTechs(0, 1)
 				else:
 					self.setGoal(iPoland, 1, 0)
+					
+		elif iTech == con.iAstronomy:
+			if self.getPolishTechs(1) == -1:
+				if iPlayer == iPoland:
+					self.setPolishTechs(1, 1)
+				else:
+					self.setGoal(iPoland, 1, 0)
+					
+		if iTech in [con.iLiberalism, con.iAstronomy] and self.getGoal(iPoland, 1) == -1:
+			if self.getPolishTechs(0) == 1 and self.getPolishTechs(1) == 1:
+				self.setGoal(iPoland, 1, 1)
 
 
 		# Italian UHV: Banking, Patronage, Education, Radio, Electricity, Fascism
@@ -2739,11 +2756,14 @@ class Victory:
 		elif iPlayer == iPoland:
 			if pPoland.isAlive():
 				if self.getGoal(iPoland, 2) == -1:
-					if iBuilding == con.iChristianCathedral or iBuilding == con.iOrthodoxCathedral:
-						bCatholicCathedral = (self.getNumBuildings(iPoland, con.iChristianCathedral) > 0)
-						bOrthodoxCathedral = (self.getNumBuildings(iPoland, con.iOrthodoxCathedral) > 0)
-						if bCatholicCathedral and bOrthodoxCathedral:
+					if iBuilding in [con.iChristianCathedral, con.iOrthodoxCathedral, con.iJewishCathedral]:
+						self.setWondersBuilt(iPoland, self.getWondersBuilt(iPoland) + 1)
+						iCatholic = self.getNumBuildings(iPoland, con.iChristianCathedral)
+						iOrthodox = self.getNumBuildings(iPoland, con.iOrthodoxCathedral)
+						iProtestant = self.getNumBuildings(iPoland, con.iJewishCathedral)
+						if self.getWondersBuilt(iPoland) >= 3 and iCatholc+iOrthodox+iProtestant >= 3:
 							self.setGoal(iPoland, 2, 1)
+					
 				
 		if iBuilding in [con.iTajMahal, con.iRedFort, con.iHarmandirSahib]:
 			if iPlayer == iMughals:
@@ -3188,14 +3208,14 @@ class Victory:
 		cityList = []
 		for pCity in pCityList:
 			city = pCity.GetCy()
-			cityList.append((city.getPopulation, city))
+			cityList.append((city.getPopulation(), city))
 			
 		cityList.sort()
 		
 		while len(cityList) > iNumCities:
 			cityList.remove(cityList[0])
 			
-		#cityList.reverse()
+		cityList.reverse()
 		resultList = []
 		for tTuple in cityList:
 			resultList.append(tTuple[1])
@@ -3688,10 +3708,16 @@ class Victory:
 				if bCity1: aHelp.append(self.getIcon(cityList[0].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[0].getName(), cityList[0].getPopulation(), 12)))
 				if bCity2: aHelp.append(self.getIcon(cityList[1].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[1].getName(), cityList[1].getPopulation(), 12)))
 				if bCity3: aHelp.append(self.getIcon(cityList[2].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[2].getName(), cityList[2].getPopulation(), 12)))
+			elif iGoal == 1:
+				bLiberalism = (self.getPolishTechs(0) == 1)
+				bAstronomy = (self.getPolishTechs(1) == 1)
+				aHelp.append(self.getIcon(bLiberalism) + localText.getText("TXT_KEY_TECH_LIBERALISM", ()) + ' ' + self.getIcon(bAstronomy) + localText.getText("TXT_KEY_TECH_ASTRONOMY", ()))
 			elif iGoal == 2:
-				bCatholicCathedral = (self.getNumBuildings(iPoland, con.iChristianCathedral) > 0)
-				bOrthodoxCathedral = (self.getNumBuildings(iPoland, con.iOrthodoxCathedral) > 0)
-				aHelp.append(self.getIcon(bCatholicCathedral) + localText.getText("TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL", ()) + ' ' + self.getIcon(bOrthodoxCathedral) + localText.getText("TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL", ()))	
+				iCatholic = self.getNumBuildings(iPoland, con.iChristianCathedral)
+				iOrthodox = self.getNumBuildings(iPoland, con.iOrthodoxCathedral)
+				iProtestant = self.getNumBuildings(iPoland, con.iJewishCathedral)
+				iCathedrals = min(self.getWondersBuilt(iPoland), iCatholc+iOrthodox+iProtestant)
+				aHelp.append(self.getIcon(iCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS", (iCathedrals, 3)))	
 				
 		elif iPlayer == iPortugal:
 			if iGoal == 0:

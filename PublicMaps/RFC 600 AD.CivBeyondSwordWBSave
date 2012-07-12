@@ -22903,7 +22903,6 @@ BeginPlot
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_CASTLE
 		BuildingType=BUILDING_ROMAN_FORUM
 		BuildingType=BUILDING_FLAVIAN_AMPHITHEATRE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
@@ -24945,10 +24944,13 @@ BeginPlot
 	RiverNSDirection=2
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=36
+	EndUnit	
 	BeginCity
 		CityOwner=36
 		CityName=Belgrad
-		CityPopulation=1
+		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_ORTHODOXY
 		Player36Culture=1

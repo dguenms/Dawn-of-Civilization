@@ -5488,8 +5488,13 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 		if (pCity->getTeam() != getTeam())
 		{
-			iSpreadProb /= 2;
+			//iSpreadProb /= 2;
+			// Leoreth: use civ specific spread probabilities instead, should prevent unrealistic spread through missionaries
+			iSpreadProb *= civSpreadFactor[(int)pCity->getTeam()][(int)eReligion];
+			iSpreadProb /= 400;
 		}
+
+
 
 		bool bSuccess;
 
@@ -13370,6 +13375,6 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	{
 		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)MONGOLIA).getCivilizationType()).getUnitArtStyleType();
 	}
-	
+
 	return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INDEPENDENT).getCivilizationType()).getUnitArtStyleType();
 }
