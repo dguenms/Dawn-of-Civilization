@@ -1842,7 +1842,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/TeamColor/FlagDECAL_Labarum.dds</Button>
+			<Button>,Art/Interface/Buttons/Civilizations/Maya.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,2,4</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_VIK_EMBASSY</Type>
