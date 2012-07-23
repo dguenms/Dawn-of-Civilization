@@ -189,6 +189,13 @@ tDeccanBR = (94, 36)
 tSrivijayaTL = (98, 25)
 tSrivijayaBR = (105, 29)
 
+tIberiaTL = (49, 40)
+tIberiaBR = (55, 46)
+tMaghrebTL = (49, 35)
+tMaghrebBR = (58, 39)
+tWestAfricaTL = (48, 26)
+tWestAfricaBR = (56, 32)
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -208,6 +215,7 @@ iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
 iIndonesia = con.iIndonesia
+iMoors = con.iMoors
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland
@@ -256,6 +264,7 @@ pVikings = gc.getPlayer(iVikings)
 pArabia = gc.getPlayer(iArabia)
 pKhmer = gc.getPlayer(iKhmer)
 pIndonesia = gc.getPlayer(iIndonesia)
+pMoors = gc.getPlayer(iMoors)
 pSpain = gc.getPlayer(iSpain)
 pFrance = gc.getPlayer(iFrance)
 pEngland = gc.getPlayer(iEngland)
@@ -299,6 +308,7 @@ teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
 teamIndonesia = gc.getTeam(pIndonesia.getTeam())
+teamMoors = gc.getTeam(pMoors.getTeam())
 teamSpain = gc.getTeam(pSpain.getTeam())
 teamFrance = gc.getTeam(pFrance.getTeam())
 teamEngland = gc.getTeam(pEngland.getTeam())
@@ -518,6 +528,10 @@ class Victory:
                         return True
                 else:
                         return False
+			
+	def getNumCitiesInArea(self, iPlayer, tTopLeft, tBottomRight):
+		dummy, plotList = utils.squareSearch(tTopLeft, tBottomRight, utils.ownedCityPlots, iPlayer)
+		return len(plotList)
 
 
         def checkOwnedAreaAdjacentArea(self, iActiveCiv, tTopLeft, tBottomRight, iThreshold, tPlotArea):
@@ -1149,13 +1163,6 @@ class Victory:
 					bNorthAfrica = self.checkOwnedArea(iByzantium, tNorthAfricaTL, tNorthAfricaBR, 3)
 					bNearEast = self.checkOwnedArea(iByzantium, tNearEastTL, tNearEastBR, 3)
 
-					if bBalkans:
-						print "Third Byzantine goal: Balkans."
-					if bNorthAfrica:
-						print "Third Byzantine goal: North Africa."
-					if bNearEast:
-						print "Third Byzantine goal: Near East."
-
 					if (bBalkans and bNorthAfrica and bNearEast):
 						self.setGoal(iByzantium, 2, 1)
 					else:
@@ -1328,6 +1335,52 @@ class Victory:
 						self.setGoal(iIndonesia, 2, 1)
 					else:
 						self.setGoal(iIndonesia, 2, 0)
+						
+		elif iPlayer == iMoors:
+			if pMoors.isAlive():
+			
+				if iGameTurn == getTurnForYear(1000):
+					bCommerce = False
+					mostCommercialCity = self.calculateTopCityCommerce(51, 41)
+					if (mostCommercialCity != -1):
+                                                if (mostCommercialCity.getOwner() == iMoors and mostCommercialCity.getX() == 51 and mostCommercialCity.getY() == 41):
+                                                        bCommerce = True
+
+					bLargest = False
+					largestCity = self.calculateTopCityPopulation(51, 41)                                        
+                                        if (largestCity != -1):
+                                                if (largestCity.getOwner() == iMoors and largestCity.getX() == 51 and largestCity.getY() == 41):
+                                                        bLargest = True
+
+					if (bCommerce and bLargest):
+						self.setGoal(iMoors, 0, 1)
+					else:
+						self.setGoal(iMoors, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1200):
+					bIberia = self.checkOwnedArea(iMoors, tIberiaTL, tIberiaBR, 3)
+					bMaghreb = self.checkOwnedArea(iMoors, tMaghrebTL, tMaghrebBR, 3)
+					bWestAfrica = self.checkOwnedArea(iMoors, tWestAfricaTL, tWestAfricaBR, 3)
+					
+					if bIberia and bMaghreb and bWestAfrica:
+						self.setGoal(iMoors, 1, 1)
+					else:
+						self.setGoal(iMoors, 1, 0)
+						
+				if iGameTurn == getTurnForYear(1300):
+					plot = gc.getMap().plot(51, 41)
+					iCounter = 0
+					if plot.isCity:
+						capital = plot.getPlotCity()
+						for iSpecialist in range(gc.getNumSpecialistInfos()):
+							if iSpecialist in [7, 9, 11]: #prophet, scientist, engineer
+								iCounter += capital.getFreeSpecialistCount(iSpecialist)
+					if iCounter >= 5:
+						self.setGoal(iMoors, 2, 1)
+					else:
+						self.setGoal(iMoors, 2, 1)
+					
+				
 						
                         
                 elif (iPlayer == iSpain):
@@ -1543,7 +1596,7 @@ class Victory:
                                         if (self.getGoal(iRussia, 0) == -1):
                                                 self.setGoal(iRussia, 0, 0)
 						
-				# Leoreth: build the Trans-Siberian Railroad by 1930
+				# Leoreth: build the Trans-Siberian Railroad by 1920
 				if iGameTurn == getTurnForYear(1920):
 					if self.getGoal(iRussia, 1) == -1:
 						if self.getRussianProjects(0) == -1:
@@ -2954,6 +3007,30 @@ class Victory:
                                                 iBestCityValue = iTotalCityValue
                         return bestCity
                 return -1
+		
+	def calculateTopCityCommerce(self, x, y):
+                iBestCityValue = 0
+		if gc.getMap().plot(x,y).isCity():
+                	pCurrent = gc.getMap().plot(x,y)
+		else:
+			for iCiv in range(con.iNumPlayers):
+				if gc.getPlayer(iCiv).isAlive():
+					pCurrent = gc.getPlayer(iCiv).getCapitalCity().plot()
+					break
+                if (pCurrent.isCity()):
+                        bestCity = pCurrent.getPlotCity()
+                        for iPlayerLoop in range(gc.getMAX_PLAYERS()):
+                                apCityList = PyPlayer(iPlayerLoop).getCityList()
+
+                                for pCity in apCityList:
+                                        iTotalCityValue = pCity.GetCy().getYieldRate(2)
+                                        #iTotalCityValue = (pCity.getCulture() / 5) + (pCity.getFoodRate() + pCity.getProductionRate() \
+                                        #	+ pCity.calculateGoldRate())) * pCity.getPopulation()
+                                        if (iTotalCityValue > iBestCityValue and not pCity.isBarbarian()):
+                                                bestCity = pCity
+                                                iBestCityValue = iTotalCityValue
+                        return bestCity
+                return -1
 
 
         def calculateTopCityPopulation(self, x, y):
@@ -3052,13 +3129,14 @@ class Victory:
 			bControlled = False			# someone who's not your vassal holds at least one city
 		return bControlled
 
-	def isControlled(self, iPlayer, tTopLeft, tBottomRight):
+	def isControlled(self, iPlayer, tTopLeft, tBottomRight, tExceptions=()):
 		bControlled = False
 		lOwnerList = []
 		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.cityPlots, iPlayer)
 		for tPlot in lCityPlotList:
 			x, y = tPlot
-			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList:
+			iOwner = gc.getMap().plot(x,y).getPlotCity().getOwner()
+			if iOwner not in lOwnerList and iOwner < con.iNumPlayers and tPlot not in tExceptions:
 				lOwnerList.append(gc.getMap().plot(x,y).getPlotCity().getOwner())
 		if iPlayer in lOwnerList:
 			bControlled = True
@@ -3392,14 +3470,14 @@ class Victory:
 				iAmphitheatres = self.getNumBuildings(iRome, con.iColosseum)
 				aHelp.append(self.getIcon(iBarracks >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iBarracks, 5)) + ' ' + self.getIcon(iAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iAqueducts, 5)) + ' ' + self.getIcon(iAmphitheatres >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iAmphitheatres, 5)))
 			elif iGoal == 1:                              
-				bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iSpain)][iSpain], tCoreAreasBR[utils.getReborn(iSpain)][iSpain], 2)
-				bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[utils.getReborn(iFrance)][iFrance], 3)
-				bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[utils.getReborn(iEngland)][iEngland], tCoreAreasBR[utils.getReborn(iEngland)][iEngland], 1)
-				bCarthage = self.checkOwnedArea(iRome, tCarthageTL, tCarthageBR, 2)
-				bByzantium = self.checkOwnedArea(iRome, tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium], 4)
-				bEgypt = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt], 2)
-				aHelp.append(self.getIcon(bSpain) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", ()) + ' ' + self.getIcon(bFrance) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", ()) + ' ' + self.getIcon(bEngland) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", ()))
-				aHelp.append(self.getIcon(bCarthage) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE", ()) + ' ' + self.getIcon(bByzantium) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM", ()) + ' ' + self.getIcon(bEgypt) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", ()))	
+				iCitiesSpain = self.getNumCitiesInArea(iRome, tCoreAreasTL[utils.getReborn(iSpain)][iSpain], tCoreAreasBR[utils.getReborn(iSpain)][iSpain])
+				iCitiesFrance = self.getNumCitiesInArea(iRome, tFranceTL, tNormalAreasBR[utils.getReborn(iFrance)][iFrance])
+				iCitiesEngland = self.getNumCitiesInArea(iRome, tCoreAreasTL[utils.getReborn(iEngland)][iEngland], tCoreAreasBR[utils.getReborn(iEngland)][iEngland])
+				iCitiesCarthage = self.getNumCitiesInArea(iRome, tCarthageTL, tCarthageBR)
+				iCitiesByzantium = self.getNumCitiesInArea(iRome, tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium])
+				iCitiesEgypt = self.getNumCitiesInArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt])
+				aHelp.append(self.getIcon(iCitiesSpain >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", (iCitiesSpain, 2)) + ' ' + self.getIcon(iCitiesFrance >= 3) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", (iCitiesFrance, 3)) + ' ' + self.getIcon(iCitiesEngland >= 1) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", (iCitiesEngland, 1)))
+				aHelp.append(self.getIcon(iCitiesCarthage >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE", (iCitiesCarthage, 2)) + ' ' + self.getIcon(iCitiesByzantium >= 4) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM", (iCitiesByzantium, 4)) + ' ' + self.getIcon(iCitiesEgypt >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", (iCitiesEgypt, 2)))	
 
 		elif iPlayer == iJapan:
 			if iGoal == 0:
@@ -3474,10 +3552,10 @@ class Victory:
 				bBestCultureCity = (pBestCultureCity.getOwner() == iByzantium and pBestCultureCity.getX() == 68 and pBestCultureCity.getY() == 45)
 				aHelp.append(self.getIcon(bBestPopCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestPopCity.getName(),)) + ' ' + self.getIcon(bBestCultureCity) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY", (pBestCultureCity.getName(),)))
 			elif iGoal == 2:
-				bBalkans = self.checkOwnedArea(iByzantium, tBalkansTL, tBalkansBR, 3)
-				bNorthAfrica = self.checkOwnedArea(iByzantium, tNorthAfricaTL, tNorthAfricaBR, 3)
-				bNearEast = self.checkOwnedArea(iByzantium, tNearEastTL, tNearEastBR, 3)
-				aHelp.append(self.getIcon(bBalkans) + localText.getText("TXT_KEY_VICTORY_BALKANS", ()) + ' ' + self.getIcon(bNorthAfrica) + localText.getText("TXT_KEY_VICTORY_NORTH_AFRICA", ()) + ' ' + self.getIcon(bNearEast) + localText.getText("TXT_KEY_VICTORY_NEAR_EAST", ()))
+				iBalkans = self.getNumCitiesInArea(iByzantium, tBalkansTL, tBalkansBR)
+				iNorthAfrica = self.getNumCitiesInArea(iByzantium, tNorthAfricaTL, tNorthAfricaBR)
+				iNearEast = self.getNumCitiesInArea(iByzantium, tNearEastTL, tNearEastBR)
+				aHelp.append(self.getIcon(iBalkans >= 3) + localText.getText("TXT_KEY_VICTORY_BALKANS", (iBalkans, 3)) + ' ' + self.getIcon(iNorthAfrica >= 3) + localText.getText("TXT_KEY_VICTORY_NORTH_AFRICA", (iNorthAfrica, 3)) + ' ' + self.getIcon(iNearEast >= 3) + localText.getText("TXT_KEY_VICTORY_NEAR_EAST", (iNearEast, 3)))
 
 		elif iPlayer == iVikings:
 			if iGoal == 0:
@@ -3550,6 +3628,28 @@ class Victory:
 					popPercent = 0.0
 				aHelp.append(self.getIcon(popPercent >= 9.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(9))))
 
+		elif iPlayer == iMoors:
+			if iGoal == 0:          	
+				pBestPopCity = self.calculateTopCityPopulation(51, 41)
+				bBestPopCity = (pBestPopCity.getOwner() == iMoors and pBestPopCity.getX() == 51 and pBestPopCity.getY() == 41)
+				pBestCommerceCity = self.calculateTopCityCommerce(51, 41)
+				bBestCommerceCity = (pBestCommerceCity.getOwner() == iMoors and pBestCommerceCity.getX() == 51 and pBestCommerceCity.getY() == 41)
+				aHelp.append(self.getIcon(bBestPopCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestPopCity.getName(),)) + ' ' + self.getIcon(bBestCommerceCity) + localText.getText("TXT_KEY_VICTORY_BEST_COMMERCE_CITY", (pBestCommerceCity.getName(),)))
+			elif iGoal == 1:
+				iIberia = self.getNumCitiesInArea(iMoors, tIberiaTL, tIberiaBR)
+				iMaghreb = self.getNumCitiesInArea(iMoors, tMaghrebTL, tMaghrebBR)
+				iWestAfrica = self.getNumCitiesInArea(iMoors, tWestAfricaTL, tWestAfricaBR)
+				aHelp.append(self.getIcon(iIberia >= 3) + localText.getText("TXT_KEY_VICTORY_IBERIA", (iIberia, 3)) + ' ' + self.getIcon(iMaghreb >= 3) + localText.getText("TXT_KEY_VICTORY_MAGHREB_MOORS", (iMaghreb, 3)) + ' ' + self.getIcon(iWestAfrica >= 3) + localText.getText("TXT_KEY_VICTORY_WEST_AFRICA", (iWestAfrica, 3)))
+			elif iGoal == 2:
+				plot = gc.getMap().plot(51, 41)
+				iCounter = 0
+				if plot.isCity:
+					capital = plot.getPlotCity()
+					for iSpecialist in range(gc.getNumSpecialistInfos()):
+						if iSpecialist in [7, 9, 11]: #prophet, scientist, engineer
+							iCounter += capital.getFreeSpecialistCount(iSpecialist)
+				aHelp.append(self.getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
+			
 		elif iPlayer == iSpain:
 			if iGoal == 1:
 				iGold = pSpain.getNumAvailableBonuses(con.iGold) - pSpain.getBonusImport(con.iGold)
@@ -3603,14 +3703,14 @@ class Victory:
 
 		elif iPlayer == iEngland:
 			if iGoal == 0:
-				bNAmerica = self.checkOwnedArea(iEngland, con.tNorthAmericaTL, con.tNorthAmericaBR, 5)
-				bSCAmerica = self.checkOwnedArea(iEngland, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR, 3)
-				bAfrica = self.checkOwnedArea(iEngland, tAfricaTL, tAfricaBR, 4)
-				bAsia = self.checkOwnedArea(iEngland, tAsiaTL, tAsiaBR, 5)
-				bOceania = self.checkOwnedArea(iEngland, tOceaniaTL, tOceaniaBR, 3)
-				aHelp.append(self.getIcon(bNAmerica) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_NORTH_AMERICA", ()) + ' ' + self.getIcon(bAsia) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_ASIA", ()) + ' ' + self.getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_AFRICA", ()))
-				aHelp.append(self.getIcon(bSCAmerica) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_SOUTH_AMERICA", ()))
-				aHelp.append(self.getIcon(bOceania) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_OCEANIA", ()))
+				iNAmerica = self.getNumCitiesInArea(iEngland, con.tNorthAmericaTL, con.tNorthAmericaBR)
+				iSCAmerica = self.getNumCitiesInArea(iEngland, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR)
+				iAfrica = self.getNumCitiesInArea(iEngland, tAfricaTL, tAfricaBR)
+				iAsia = self.getNumCitiesInArea(iEngland, tAsiaTL, tAsiaBR)
+				iOceania = self.getNumCitiesInArea(iEngland, tOceaniaTL, tOceaniaBR)
+				aHelp.append(self.getIcon(iNAmerica >= 5) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_NORTH_AMERICA", (iNAmerica, 5)) + ' ' + self.getIcon(iAsia >= 5) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_ASIA", (iAsia, 5)) + ' ' + self.getIcon(iAfrica >= 4) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_AFRICA", (iAfrica, 4)))
+				aHelp.append(self.getIcon(iSCAmerica >= 3) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_SOUTH_AMERICA", (iSCAmerica, 3)))
+				aHelp.append(self.getIcon(iOceania >= 3) + localText.getText("TXT_KEY_VICTORY_ENGLAND_CONTROL_OCEANIA", (iOceania, 3)))
 			elif iGoal == 1:
 				iCShipOfTheLine = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_SHIP_OF_THE_LINE')
 				iCFrigate = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_FRIGATE')
@@ -3716,7 +3816,7 @@ class Victory:
 				iCatholic = self.getNumBuildings(iPoland, con.iChristianCathedral)
 				iOrthodox = self.getNumBuildings(iPoland, con.iOrthodoxCathedral)
 				iProtestant = self.getNumBuildings(iPoland, con.iJewishCathedral)
-				iCathedrals = min(self.getWondersBuilt(iPoland), iCatholc+iOrthodox+iProtestant)
+				iCathedrals = min(self.getWondersBuilt(iPoland), iCatholic+iOrthodox+iProtestant)
 				aHelp.append(self.getIcon(iCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS", (iCathedrals, 3)))	
 				
 		elif iPlayer == iPortugal:

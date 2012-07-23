@@ -80,6 +80,8 @@ lBaku = [77, 45, 600, 0] #180
 lLhasa = [96, 43, 633, 0] #184
 #lAngkor = [102, 34, 802, 0] #201
 lVienna = [63, 49, 800, 0]
+lHamburg = [59, 53, 830, 0]
+lLubeck = [60, 53, 830, 0]
 lHanoi = [101, 37, 866, 0] #208
 lTucume = [24, 26, 900, 0] #211
 lKiev = [69, 52, 900, 0] #211
@@ -418,6 +420,12 @@ class Barbs:
 		self.foundCity(iBarbarian, lShenyang, "Simiyan hoton", iGameTurn, 2, con.iChariot, 2)
 
 		self.foundCity(iIndependent, lAnkara, "Ankuwash", iGameTurn, 2, con.iArcher, 2)
+		
+		if utils.getHumanID() != con.iHolyRome:
+			if utils.getSeed() % 3 == 0:
+				self.foundCity(iIndependent, lLubeck, "L&#252;beck", iGameTurn, 1, con.iArcher, 1)
+			else:
+				self.foundCity(iIndependent, lHamburg, "Hamburg", iGameTurn, 1, con.iArcher, 1)
 
 
                 #self.foundCity(iBarbarian, [59, 50, 146, 0], "Germanii", iGameTurn, 1, con.iArcher, 1)

@@ -96,4 +96,9 @@
 		<English>Tamil Embassy</English>
 		<German>Tamilische Botschaft</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOO_EMBASSY</Tag>
+		<English>Moorish Embassy</English>
+		<German>Maurische Botschaft</German>
+	</TEXT>
 </Civ4GameText>

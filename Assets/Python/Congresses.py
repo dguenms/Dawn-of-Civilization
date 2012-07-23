@@ -42,6 +42,7 @@ iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
 iIndonesia = con.iIndonesia
+iMoors = con.iMoors
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland

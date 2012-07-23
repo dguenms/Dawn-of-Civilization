@@ -2260,6 +2260,7 @@ void CvGame::update()
 		case ARABIA:
 		case KHMER:
 		case INDONESIA:
+		case MOORS:
 		case SPAIN:
 		case FRANCE:
 		case ENGLAND:

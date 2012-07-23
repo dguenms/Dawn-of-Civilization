@@ -312,7 +312,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_MOORS</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Minor.dds</Button>
+			<Button>,Art/Interface/Buttons/Civilizations/Moors.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Moon.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>

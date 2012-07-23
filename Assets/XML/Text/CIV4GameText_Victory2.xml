@@ -880,4 +880,19 @@
 		<English>Srivijaya</English>
 		<German>Srivijaya</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_57</Tag>
+		<English>Iberia</English>
+		<German>Iberia</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_58</Tag>
+		<English>Maghreb</English>
+		<German>Maghreb</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_59</Tag>
+		<English>West Africa</English>
+		<German>West Africa</German>
+	</TEXT>
 </Civ4GameText>

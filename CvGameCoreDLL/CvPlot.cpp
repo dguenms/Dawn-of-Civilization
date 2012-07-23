@@ -6257,6 +6257,15 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
+	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food
+	if (ePlayer == MOORS)
+	{
+		if ((int)eYield == 0 && iYield > 0 && getTerrainType() == GC.getInfoTypeForString("TERRAIN_PLAINS"))
+		{
+			iYield += 1;
+		}
+	}
+
 	return iYield;
 }
 
@@ -6374,7 +6383,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	{
 		iYield = std::max(iYield, GC.getYieldInfo(eYield).getMinCity());
 
-		// Leoreth (edead): city counts as correct improvement wrt. bonus yields
+		// Leoreth (edead): city counts as correct improvement wrt. bonus yields, except food
 		if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && eYield != (YieldTypes)0)
 		{
 			for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
@@ -6525,6 +6534,14 @@ int CvPlot::getCulture(PlayerTypes eIndex) const
 	if (NULL == m_aiCulture)
 	{
 		return 0;
+	}
+
+	if (eIndex == VIKING && GC.getGameINLINE().getGameTurnYear() < 1000)
+	{
+		if (getY_INLINE() == 53 && (getX_INLINE() == 59 || getX_INLINE() == 60 || getX_INLINE() == 61))
+		{
+			return 0;
+		}
 	}
 
 	return m_aiCulture[eIndex];

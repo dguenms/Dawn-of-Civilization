@@ -184,4 +184,14 @@
 		<English>No unhappiness or instability from foreign culture</English>
 		<German>Keine Unzufriedenheit oder Instabilität durch fremde Kultur</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MOO</Tag>
+		<English>The Power of Irrigation:</English>
+		<German>Die Macht der Bewässerung:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MOO2</Tag>
+		<English>Improvements that yield food give one extra food on plains tiles</English>
+		<German>Verbesserungen, die Nahrung produzieren, geben eine zusätzliche Nahrungseinheit auf Ebenenfeldern</German>
+	</TEXT>
 </Civ4GameText>
