@@ -4,6 +4,7 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers
 import Consts as con
+import Victory as vic
 from StoredData import sd
 import RFCUtils
 import CityNameManager
@@ -36,6 +37,7 @@ iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
 iIndonesia = con.iIndonesia
+iMoors = con.iMoors
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland
@@ -85,6 +87,7 @@ pVikings = gc.getPlayer(iVikings)
 pArabia = gc.getPlayer(iArabia)
 pKhmer = gc.getPlayer(iKhmer)
 pIndonesia = gc.getPlayer(iIndonesia)
+pMoors = gc.getPlayer(iMoors)
 pSpain = gc.getPlayer(iSpain)
 pFrance = gc.getPlayer(iFrance)
 pEngland = gc.getPlayer(iEngland)
@@ -129,6 +132,7 @@ teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
 teamIndonesia = gc.getTeam(pIndonesia.getTeam())
+teamMoors = gc.getTeam(pMoors.getTeam())
 teamSpain = gc.getTeam(pSpain.getTeam())
 teamFrance = gc.getTeam(pFrance.getTeam())
 teamEngland = gc.getTeam(pEngland.getTeam())
@@ -196,6 +200,7 @@ class DynamicCivs:
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_DEFAULT",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_DEFAULT",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_DEFAULT",
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_DEFAULT",
                         iSpain : "TXT_KEY_CIV_SPAIN_DESC_DEFAULT",
                         iFrance : "TXT_KEY_CIV_FRANCE_DESC_DEFAULT",
                         iEngland : "TXT_KEY_CIV_ENGLAND_DESC_DEFAULT",
@@ -235,6 +240,7 @@ class DynamicCivs:
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_PEOPLES",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_PEOPLES",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_PEOPLES",
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_PEOPLES",
                         iSpain : "TXT_KEY_CIV_SPAIN_DESC_PEOPLES",
                         iFrance : "TXT_KEY_CIV_FRANCE_DESC_PEOPLES",
                         iEngland : "TXT_KEY_CIV_ENGLAND_DESC_PEOPLES",
@@ -380,6 +386,7 @@ class DynamicCivs:
 				iThailand : "TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL",},
 			#iKhmer - none so far
 			#iIndonesia - none so far
+			#iMoors - none so far
 			iSpain : {
 				iCarthage : "TXT_KEY_CIV_PHOENICIA_SPANISH_VASSAL",
 				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_SPANISH_VASSAL",
@@ -457,6 +464,8 @@ class DynamicCivs:
 				iPoland : "TXT_KEY_CIV_POLAND_HOLY_ROMAN_VASSAL"},
 			iNetherlands : {
 				iIndonesia : "TXT_KEY_CIV_INDONESIA_DUTCH_VASSAL",
+				iMali : "TXT_KEY_CIV_MALI_DUTCH_VASSAL",
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_DUTCH_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_DUTCH_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_DUTCH_VASSAL"},
@@ -564,6 +573,7 @@ class DynamicCivs:
                         iArabia : "TXT_KEY_CIV_ARABIA_SOVIET_VASSAL",
                         iKhmer : "TXT_KEY_CIV_KHMER_SOVIET_VASSAL",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_SOVIET_VASSAL",
+			iMoors : "TXT_KEY_CIV_MOORS_SOVIET_VASSAL",
                         iSpain : "TXT_KEY_CIV_SPAIN_SOVIET_VASSAL",
                         iFrance : "TXT_KEY_CIV_FRANCE_SOVIET_VASSAL",
                         iEngland : "TXT_KEY_CIV_ENGLAND_SOVIET_VASSAL",
@@ -603,6 +613,7 @@ class DynamicCivs:
                         iArabia : "TXT_KEY_CIV_ARABIA_NAZI_VASSAL",
                         iKhmer : "TXT_KEY_CIV_KHMER_NAZI_VASSAL",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_NAZI_VASSAL",
+			iMoors : "TXT_KEY_CIV_MOORS_NAZI_VASSAL",
                         iSpain : "TXT_KEY_CIV_SPAIN_NAZI_VASSAL",
                         iFrance : "TXT_KEY_CIV_FRANCE_NAZI_VASSAL",
                         iEngland : "TXT_KEY_CIV_ENGLAND_NAZI_VASSAL",
@@ -641,6 +652,7 @@ class DynamicCivs:
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_FASCIST",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_FASCIST",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_FASCIST",
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_FASCIST",
                         iSpain : "TXT_KEY_CIV_SPAIN_DESC_FASCIST",
                         iFrance : "TXT_KEY_CIV_FRANCE_DESC_FASCIST",
                         iEngland : "TXT_KEY_CIV_ENGLAND_DESC_FASCIST",
@@ -680,6 +692,7 @@ class DynamicCivs:
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_COMMUNIST",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_COMMUNIST",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_COMMUNIST",
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_COMMUNIST",
                         iSpain : "TXT_KEY_CIV_SPAIN_DESC_COMMUNIST",
                         iFrance : "TXT_KEY_CIV_FRANCE_DESC_COMMUNIST",
                         iEngland : "TXT_KEY_CIV_ENGLAND_DESC_COMMUNIST",
@@ -719,6 +732,7 @@ class DynamicCivs:
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_DEMOCRATIC",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_DEMOCRATIC",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_DEMOCRATIC",
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_DEMOCRATIC",
                         iSpain : "TXT_KEY_CIV_SPAIN_DESC_DEMOCRATIC",
                         iFrance : "TXT_KEY_CIV_FRANCE_DESC_DEMOCRATIC",
                         iEngland : "TXT_KEY_CIV_ENGLAND_DESC_DEMOCRATIC",
@@ -766,6 +780,7 @@ class DynamicCivs:
 			iArabia : con.iAbuBakr,
 			iKhmer : con.iSuryavarman,
 			iIndonesia : con.iDharmasetu,
+			iMoors : con.iRahman,
 			iSpain : con.iIsabella,
 			iFrance : con.iCharlemagne,
 			iEngland : con.iAlfred,
@@ -1356,6 +1371,31 @@ class DynamicCivs:
 				return
 			
 			# generic name as default
+			
+		elif iPlayer == iMoors:
+			bAndalusia = utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR)
+			
+			if bCityStates:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_TAIFAS")
+				return
+			
+			if bEmpire and iEra <= iRenaissance:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_EMPIRE")
+				return
+				
+			if bTheocracy and iReligion == con.iIslam:
+				if bAndalusia:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CALIPHATE")
+					return
+					
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_CALIPHATE")
+				return
+				
+			if bAndalusia:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CORDOBA")
+				return
+				
+			# Kingdom of Morocco as default
 
 		elif iPlayer == iSpain:
 			if iReligion == con.iIslam:
@@ -1369,18 +1409,25 @@ class DynamicCivs:
 			if (capital.getName() == "Barcelona" or capital.getName() == "Valencia") and iEra == iMedieval:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_ARAGON")
 				return
+				
+			bSpain = True
+			if pMoors.isAlive():
+				moorishCapital = gc.getPlayer(iMoors).getCapitalCity()
+				if utils.isPlotInArea((moorishCapital.getX(), moorishCapital.getY()), vic.tIberiaTL, vic.tIberiaBR):
+					bSpain = False
+			
+			if iGameTurn > getTurnForYear(con.tBirth[iPortugal]):
+				if not pPortugal.isAlive() and bSpain:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")
+					return
+			
+				pPortugueseCapital = gc.getPlayer(iPortugal).getCapitalCity()	
+				if not utils.isPlotInArea((pPortugueseCapital.getX(), pPortugueseCapital.getY()), con.tCoreAreasTL[0][iPortugal], con.tCoreAreasBR[0][iPortugal], con.tExceptions[0][iPortugal]) and bSpain:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")
+					return
 		
-			if not tPlayer.isHasTech(con.iOptics):
+			if not bSpain:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_CASTILLE")
-				return
-			
-			if not pPortugal.isAlive():
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")
-				return
-			
-			pPortugueseCapital = gc.getPlayer(iPortugal).getCapitalCity()	
-			if not utils.isPlotInArea((pPortugueseCapital.getX(), pPortugueseCapital.getY()), con.tCoreAreasTL[0][iPortugal], con.tCoreAreasBR[0][iPortugal], con.tExceptions[0][iPortugal]):
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")
 				return
 				
 		elif iPlayer == iFrance:
@@ -1496,7 +1543,7 @@ class DynamicCivs:
 			# Empire as default
 			
 		elif iPlayer == iPoland:
-			if bEmpire:
+			if bEmpire and iEra >= con.iRenaissance:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_EMPIRE")
 				return
 				

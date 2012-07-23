@@ -16,4 +16,16 @@
 		<Tag>TXT_KEY_CIV_TAMILS_DESC_DEFAULT</Tag>
 		<English>Chola Empire</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_DESC_DEMOCRATIC</Tag>
+		<English>Republic of Tamil Nadu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_DESC_COMMUNIST</Tag>
+		<English>Tamil People's Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_DESC_FASCIST</Tag>
+		<English>Dravidian Empire</English>
+	</TEXT>
 </Civ4GameText>

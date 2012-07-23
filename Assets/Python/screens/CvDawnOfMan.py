@@ -145,6 +145,9 @@ class CvDawnOfMan:
 
 		if not gc.getPlayer(0).isPlayable() and CyGame().getActivePlayer() in [con.iChina, con.iJapan, con.iKorea, con.iByzantium]:
 			textKey = "TXT_KEY_DAWN_OF_MAN_LATE_%d" %(CyGame().getActiveTeam())
+			
+		#Leoreth: temporarily disable DoM texts
+		textKey = "Dawn of Man text temporarily disabled."
 
 		bodyString = localText.getText(textKey, (self.player.getCivilizationAdjectiveKey(), self.player.getNameKey())) # edead
 

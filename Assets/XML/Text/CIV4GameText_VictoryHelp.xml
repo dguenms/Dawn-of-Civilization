@@ -110,27 +110,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_SPAIN</Tag>
-		<English>2 cities in Spain</English>
+		<English>Spain: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_FRANCE</Tag>
-		<English>3 cities in France</English>
+		<English>France: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND</Tag>
-		<English>1 city in England</English>
+		<English>England: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE</Tag>
-		<English>2 cities in Carthage</English>
+		<English>Carthage: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM</Tag>
-		<English>4 cities in Greece and Anatolia</English>
+		<English>Greece and Anatolia: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_EGYPT</Tag>
-		<English>2 cities in Egypt</English>
+		<English>Egypt: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MANCHURIA</Tag>
@@ -170,15 +170,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_BALKANS</Tag>
-		<English>Balkans</English>
+		<English>Balkans: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NORTH_AFRICA</Tag>
-		<English>North Africa</English>
+		<English>North Africa: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NEAR_EAST</Tag>
-		<English>Near East</English>
+		<English>Near East: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_EUROPEAN_CORE</Tag>
@@ -250,23 +250,23 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_NORTH_AMERICA</Tag>
-		<English>5 cities in North America</English>
+		<English>North America: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_ASIA</Tag>
-		<English>5 cities in Asia</English>
+		<English>Asia: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_AFRICA</Tag>
-		<English>4 cities in Africa</English>
+		<English>Africa: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_SOUTH_AMERICA</Tag>
-		<English>3 cities in South America, Central America and the Caribbean</English>
+		<English>South America, Central America and the Caribbean: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_OCEANIA</Tag>
-		<English>3 cities in Australia and Oceania</English>
+		<English>Australia and Oceania: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAVY_SIZE</Tag>
@@ -419,5 +419,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS</Tag>
 		<English>Christian Cathedrals built: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS</Tag>
+		<English>Great prophets, scientists and engineers in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_IBERIA</Tag>
+		<English>Iberia: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MAGHREB_MOORS</Tag>
+		<English>Maghreb: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_WEST_AFRICA</Tag>
+		<English>West Africa: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BEST_COMMERCE_CITY</Tag>
+		<English>Most commerce in: %s1_city</English>
 	</TEXT>
 </Civ4GameText>

@@ -9638,6 +9638,8 @@ int CvCity::getRevoltTestProbability() const
 		else if (getX_INLINE() == 68 && getY_INLINE() == 45) //Constantinopolis
 			result /= 16;
 	}
+	if (getX_INLINE() == 63 && getY_INLINE() == 49) //Vienna
+			result /= 16;
 
 	if (getX_INLINE() == 59 && getY_INLINE() == 53) //Hamburg
 			result /= 8;

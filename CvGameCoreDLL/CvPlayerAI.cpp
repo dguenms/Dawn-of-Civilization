@@ -1748,12 +1748,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int iGreed;
 	int iNumAreaCities;
 
-	//Leoreth: very dirty hack
-	if (getID() == HOLY_ROME && (iX == 59 || iX == 60) && iY == 53)
-	{
-	    iX = 61;
-	}
-
 
 	pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
@@ -5721,6 +5715,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									else if (iI == OPTICS)
 										iValue /= 2;
 									break;
+								case MOORS:
+									if (iI == OPTICS)
+										iValue /= 2;
+									if (iI == CIVIL_SERVICE)
+										iValue *= 2;
 								case SPAIN:
 									if (iI == MEDITATION)
 										iValue /= 2;
@@ -10942,7 +10941,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
 		{
-			iValue += 40;
+			iValue += 80;
 		}
 	}
 
@@ -18230,9 +18229,10 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 			CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 			if (pLoopPlot->isRevealed(getTeam(), false))
 			{
-				if (settlersMaps[reborn][getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] >= 90) //Rhye
+				if (settlersMaps[reborn][getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] > 90) //Rhye
 				{ //Rhye
 				iValue = pLoopPlot->getFoundValue(getID());
+
 				if (iValue > iMinFoundValueThreshold)
 				{
 					if (!AI_isPlotCitySite(pLoopPlot))

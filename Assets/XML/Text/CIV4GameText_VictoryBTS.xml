@@ -325,4 +325,19 @@
 		<English>Build three Christian Cathedrals by 1600 AD</English>
 		<German>Bauen Sie bis zum Jahr 1600 n. Chr. drei christliche Kathedralen</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO1</Tag>
+		<English>Make Cordoba the most populous city and leading commercial center of the world in 1000 AD</English>
+		<German>Machen Sie Cordoba im Jahr 1000 n. Chr. zur bevölkerungsreichsten Stadt und kommerziellen Zentrum der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO2</Tag>
+		<English>Control three cities in Iberia, the Maghreb and West Africa in 1200 AD</English>
+		<German>Kontrollieren Sie im Jahr 1200 n. Chr. drei Städte in Iberien, dem Maghreb und Westafrika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO3</Tag>
+		<English>Settle a total of five great prophets, scientists or engineers in Cordoba in 1300 AD</English>
+		<German>Siedeln Sie im Jahr 1300 n. Chr. insgesamt fünf große Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
+	</TEXT>
 </Civ4GameText>

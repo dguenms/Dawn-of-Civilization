@@ -2988,8 +2988,11 @@ class Mercenary:
                 #                                                return True
 		
 		# Leoreth: special treatment for new world and unique units, similar to SoI
-		
 		unitType = self.getUnitInfoID()
+		
+		if unitType in [con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek, con.iHarappanMilitia, con.iTibetanKhampa, con.iKongoPombos, con.iPolishWingedHussar, con.iMoorishCamelGunner, con.iSeljukGhulamWarrior]:
+			return False
+			
 		iStateReligion = gc.getPlayer(iPlayer).getStateReligion()
 		bNewWorldDiscovered = (sd.scriptDict['lNewWorld'][0] != -1)
 		
@@ -3050,8 +3053,7 @@ class Mercenary:
 		elif unitType == con.iWarElephant:
 			return gc.getPlayer(iPlayer).getCurrentEra() <= con.iClassical or set(regionList) & con.mercRegions[con.iArea_MiddleEast] or set(regionList) & con.mercRegions[con.iArea_EastAsia] or set(regionList) & con.mercRegions[con.iArea_Africa]
 			
-		elif unitType in [con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek, con.iHarappanMilitia, con.iTibetanKhampa, con.iKongoPombos, con.iPolishWingedHussar, con.iMoorishCamelGunner, con.iSeljukGhulamWarrior]:
-			return False
+		
 		
                 return True
         #Rhye - end

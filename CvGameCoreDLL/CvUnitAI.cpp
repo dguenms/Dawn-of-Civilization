@@ -12444,7 +12444,7 @@ bool CvUnitAI::AI_found()
 		CvPlot* pCitySitePlot = GET_PLAYER(getOwnerINLINE()).AI_getCitySite(iI);
 
 		//Rhye - start
-		if (settlersMaps[GET_PLAYER(getOwnerINLINE()).getReborn()][getOwnerINLINE()][EARTH_Y -1 -pCitySitePlot->getY_INLINE()][pCitySitePlot->getX_INLINE()] < 150) //so high?
+		if (settlersMaps[GET_PLAYER(getOwnerINLINE()).getReborn()][getOwnerINLINE()][EARTH_Y -1 -pCitySitePlot->getY_INLINE()][pCitySitePlot->getX_INLINE()] < 90) //so high?
 			return false;
 		//Rhye - end
 
@@ -12463,6 +12463,7 @@ bool CvUnitAI::AI_found()
 								iValue = pCitySitePlot->getFoundValue(getOwnerINLINE());
 								iValue *= 1000;
 								iValue /= (iPathTurns + 1);
+
 								if (iValue > iBestFoundValue)
 								{
 									iBestFoundValue = iValue;

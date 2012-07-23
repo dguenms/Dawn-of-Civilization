@@ -61,6 +61,7 @@ iVikings = con.iVikings
 iArabia = con.iArabia
 iKhmer = con.iKhmer
 iIndonesia = con.iIndonesia
+iMoors = con.iMoors
 iSpain = con.iSpain
 iFrance = con.iFrance
 iEngland = con.iEngland
@@ -641,9 +642,9 @@ class UniquePowers:
 
 	def mongolUP(self, city):
 		if (city.getPopulation() >= 7):
-			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 2)
+			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 2)
 		elif (city.getPopulation() >= 4):
-			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1)
+			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 1)
 
 		if utils.getHumanID() != iMongolia:
 			utils.makeUnitAI(con.iLongbowman, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_CITY_DEFENSE, 1)

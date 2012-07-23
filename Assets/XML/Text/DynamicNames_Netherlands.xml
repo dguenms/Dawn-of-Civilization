@@ -53,6 +53,14 @@
 		<English>Dutch East Indies</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MALI_DUTCH_VASSAL</Tag>
+		<English>Dutch West Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_DUTCH_VASSAL</Tag>
+		<English>Dutch East Africa</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_DUTCH_VASSAL</Tag>
 		<English>Dutch Mexico</English>
 	</TEXT>
