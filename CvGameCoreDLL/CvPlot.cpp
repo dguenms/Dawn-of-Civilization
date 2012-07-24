@@ -2780,7 +2780,7 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	else
 	{
 	//Rhye - start (some units ignore desert cost)
-		if (((pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_EGYPT_WARCHARIOT")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_PERSIA_IMMORTAL")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_CARTHAGE_NUMIDIAN_CAVALRY")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_ARABIA_CAMELARCHER"))) && (getTerrainType() == 2)) //war chariot, immortal, numidian cavalry and camel archer in desert
+		if (((pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_EGYPT_WARCHARIOT")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_PERSIA_IMMORTAL")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_CARTHAGE_NUMIDIAN_CAVALRY")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_ARABIA_CAMELARCHER")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_MOORISH_CAMEL_GUNNER"))) && (getTerrainType() == 2)) //war chariot, immortal, numidian cavalry and camel archer in desert
 		{
 			iRegularCost = 1;
 		}
