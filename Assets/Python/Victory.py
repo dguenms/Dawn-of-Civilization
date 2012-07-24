@@ -3441,7 +3441,7 @@ class Victory:
 				elif iGoal == 2:
 					pBestCity = self.getMostCulturedCity(iPersia)
 					iCulture = pBestCity.getCulture(iPersia)
-					aHelp.append(self.getIcon(iCulture >= utils.getTurns(20000)) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY_SPECIFIC", (pBestCity.getName(), iCulture, utils.getTurns(20000))))
+					aHelp.append(self.getIcon(iCulture >= utils.getTurns(20000)) + localText.getText("TXT_KEY_VICTORY_MOST_CULTURED_CITY_VALUE", (pBestCity.getName(), iCulture, utils.getTurns(20000))))
 
 		elif iPlayer == iCarthage:
 			if iGoal == 0:

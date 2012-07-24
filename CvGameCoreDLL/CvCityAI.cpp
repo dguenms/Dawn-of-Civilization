@@ -3147,7 +3147,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case ARABIA:
 										//if (iI == HAGIASOPHIA) iTempValue *= 2;
-										if (iI == TOPKAPI || iI == MEZQUITA) iTempValue /= 3;
+										if (iI == TOPKAPI || iI == MEZQUITA) iTempValue /= 5;
 										else if (iI == SPIRALMINARET || iI == DOMEROCK) iTempValue *= 4;
 										else {
 											iTempValue *= 2;
