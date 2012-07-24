@@ -2421,7 +2421,7 @@ class RiseAndFall:
 		
 		for i in [x-1, x, x+1]:
 			for j in [y-1, y, y+1]:
-				if iCiv not in [iFrance, iAmerica, iPoland, iThailand] and gc.getMap().plot(i,j).isCity():
+				if iCiv not in [iFrance, iAmerica, iPoland, iThailand, iMoors] and gc.getMap().plot(i,j).isCity():
 					bCapitalSettled = True
 					tCapital = (i,j)
 					break

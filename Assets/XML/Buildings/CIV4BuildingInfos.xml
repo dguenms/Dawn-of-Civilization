@@ -33727,7 +33727,9 @@
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<ObsoleteTech>TECH_CONSTITUTION</ObsoleteTech>
 			<PrereqTech>TECH_THEOLOGY</PrereqTech>
-			<TechTypes/>
+			<TechTypes>
+				<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
+			</TechTypes>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses>NONE</PrereqBonuses>
 			<ProductionTraits/>
