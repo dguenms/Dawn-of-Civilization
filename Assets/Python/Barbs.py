@@ -79,6 +79,7 @@ lPagan = [98, 36, 107, 0] #148
 lBaku = [77, 45, 600, 0] #180
 lLhasa = [96, 43, 633, 0] #184
 #lAngkor = [102, 34, 802, 0] #201
+lMarrakesh = [51, 37, 680, 0]
 lVienna = [63, 49, 800, 0]
 lHamburg = [59, 53, 830, 0]
 lLubeck = [60, 53, 830, 0]
@@ -426,6 +427,9 @@ class Barbs:
 				self.foundCity(iIndependent, lLubeck, "L&#252;beck", iGameTurn, 1, con.iArcher, 1)
 			else:
 				self.foundCity(iIndependent, lHamburg, "Hamburg", iGameTurn, 1, con.iArcher, 1)
+				
+		if gc.getPlayer(0).isPlayable():
+			self.foundCity(iIndependent, lMarrakesh, "Marrakus", iGameTurn, 1, con.iCrossbowman, 1)
 
 
                 #self.foundCity(iBarbarian, [59, 50, 146, 0], "Germanii", iGameTurn, 1, con.iArcher, 1)

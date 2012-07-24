@@ -926,8 +926,8 @@ class RiseAndFall:
 				marrakesh = gc.getMap().plot(x,y).getPlotCity()
 				marrakesh.setHasReligion(con.iIslam, True, False, False)
 				
-			utils.makeUnit(con.iSettler, marrakesh.getOwner(), (x,y), 1)
-			utils.makeUnit(con.iWorker, marrakesh.getOwner(), (x,y), 3)
+				utils.makeUnit(con.iSettler, marrakesh.getOwner(), (x,y), 1)
+				utils.makeUnit(con.iWorker, marrakesh.getOwner(), (x,y), 3)
 				
 		if iGameTurn == getTurnForYear(1040):	# Leoreth: first Seljuk wave (flips independents, spawns armies for players)
 			tEsfahan = utils.getFreePlot(81, 41)
