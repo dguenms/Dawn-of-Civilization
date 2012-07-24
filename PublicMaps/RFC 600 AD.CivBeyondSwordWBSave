@@ -21012,6 +21012,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
+		ReligionType=RELIGION_CHRISTIANITY
 		Player38Culture=1
 	EndCity
 EndPlot
