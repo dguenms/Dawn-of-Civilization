@@ -26,8 +26,6 @@ EndTeam
 BeginTeam                 
 EndTeam
 BeginTeam                 
-	Tech=TECH_MYSTICISM                 
-	Tech=TECH_MINING                 
 EndTeam
 BeginTeam
 EndTeam
