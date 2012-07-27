@@ -6,17 +6,17 @@
 from CvPythonExtensions import *
 gc = CyGlobalContext()
 
-l0Array =       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-l0ArrayActive = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-l0ArrayTotal =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0Array =       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0ArrayActive = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+l0ArrayTotal =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-lm1Array =      [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+lm1Array =      [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
 
 # initialise player variables to player IDs from WBS
-iNumPlayers = 37
+iNumPlayers = 38
 (iEgypt, iChina, iBabylonia, iGreece, iIndia, iCarthage, iPersia, iRome, iTamils, iEthiopia, iKorea, iMaya, iByzantium, 
 iJapan, iVikings, iArabia, iKhmer, iIndonesia, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iMali, iPoland, iPortugal, 
-iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iNetherlands, iGermany, iAmerica) = range(iNumPlayers)
+iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany, iAmerica) = range(iNumPlayers)
 
 iHolland = iNetherlands
 iDelhi = iMughals
@@ -52,24 +52,24 @@ lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iMoors, iSpain, iFrance, iE
                 [iIndia, iChina, iPersia, iJapan, iTamils, iKorea, iByzantium, iKhmer, iIndonesia, iRussia, iMongolia, iMughals, iThailand], #Asian
                 [iEgypt, iBabylonia, iPersia, iArabia, iTurkey, iCarthage], #MiddleEastern
                 [iEgypt, iGreece, iCarthage, iRome, iByzantium, iMoors], #Mediterranean
-                [iEgypt, iCarthage, iEthiopia, iMali], #African
+                [iEgypt, iCarthage, iEthiopia, iMali, iCongo], #African
                 [iMaya, iInca, iAztecs, iAmerica]] #American
 
 lCivStabilityGroups = [[iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany],  #Euros
                 [iIndia, iChina, iJapan, iKorea, iKhmer, iIndonesia, iMongolia, iThailand, iTamils], #Asian
                 [iBabylonia, iPersia, iArabia, iTurkey, iMughals], #MiddleEastern
-                [iEgypt, iGreece, iCarthage, iRome, iEthiopia, iByzantium, iMoors, iMali], #Mediterranean
+                [iEgypt, iGreece, iCarthage, iRome, iEthiopia, iByzantium, iMoors, iMali, iCongo], #Mediterranean
                 [iMaya, iInca, iAztecs, iAmerica]] #American
 		
 lTechGroups = [[iRome, iGreece, iByzantium, iVikings, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany, iAmerica], #Europe and NA
-	       [iEgypt, iBabylonia, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMali, iTurkey, iMughals, iTamils], #Middle East
+	       [iEgypt, iBabylonia, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMali, iTurkey, iMughals, iTamils, iCongo], #Middle East
 	       [iChina, iKorea, iJapan, iKhmer, iIndonesia, iMongolia, iThailand], #Far East
 	       [iMaya, iInca, iAztecs]] #Native America
 
 
 lCivBioOldWorld = [iEgypt, iIndia, iChina, iBabylonia, iGreece, iPersia, iCarthage, iRome, iJapan, iTamils, \
                    iEthiopia, iKorea, iByzantium, iVikings, iArabia, iKhmer, iIndonesia, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, \
-                   iNetherlands, iMali, iTurkey, iPoland, iPortugal, iItaly, iMongolia, iAmerica, iMughals, iThailand, iGermany, \
+                   iNetherlands, iMali, iTurkey, iPoland, iPortugal, iItaly, iMongolia, iAmerica, iMughals, iThailand, iCongo, iGermany, \
                    iIndependent, iIndependent2, iCeltia, iBarbarian]
 lCivBioNewWorld = [iMaya, iInca, iAztecs] #, iNative]
 
@@ -122,7 +122,7 @@ lNeighbours = [
 [iIndia, iBabylonia, iGreece, iByzantium, iTurkey, iMongolia, iCarthage, iMughals], #Persia
 [iEgypt, iBabylonia, iGreece, iCarthage, iSpain, iFrance, iHolyRome, iPortugal, iItaly, iGermany], #Rome
 [iIndia, iKhmer, iIndonesia, iMughals, iThailand], #Tamils
-[iEgypt, iArabia, iMali], #Ethiopia
+[iEgypt, iArabia, iMali, iCongo], #Ethiopia
 [iChina, iKorea, iMongolia], #Korea
 [iSpain, iInca, iAztecs, iAmerica], #Maya
 [iEgypt, iBabylonia, iGreece, iPersia, iArabia, iRussia], #Byzantium
@@ -137,7 +137,7 @@ lNeighbours = [
 [iRome, iVikings, iSpain, iFrance, iHolyRome, iNetherlands, iGermany], #England
 [iRome, iVikings, iFrance, iEngland, iNetherlands, iItaly, iPoland, iGermany], #Holy Rome
 [iPersia, iByzantium, iVikings, iPoland, iTurkey, iMongolia, iGermany], #Russia
-[iEgypt, iCarthage, iEthiopia, iMoors], #Mali
+[iEgypt, iCarthage, iEthiopia, iMoors, iCongo], #Mali
 [iVikings, iHolyRome, iRussia, iGermany], #Poland
 [iCarthage, iRome, iSpain, iFrance], #Portugal
 [iSpain, iAztecs, iAmerica], #Inca
@@ -147,6 +147,7 @@ lNeighbours = [
 [iIndia, iPersia, iTamils], #Mughals
 [iBabylonia, iGreece, iPersia, iByzantium, iRussia, iMongolia, iCarthage], #Turkey
 [iIndia, iChina, iJapan, iIndonesia, iKhmer, iTamils], #Thailand
+[iEthiopia, iMali], #Congo
 [iVikings, iFrance, iEngland, iHolyRome, iGermany], #Netherlands
 [iRome, iVikings, iFrance, iEngland, iHolyRome, iRussia, iPoland, iNetherlands], #Germany
 [iJapan, iSpain, iFrance, iEngland, iRussia, iInca, iAztecs] #America
@@ -188,6 +189,7 @@ lOlderNeighbours = [
 [iIndia, iIndia, iPersia], #Mughals
 [iBabylonia, iGreece, iPersia, iByzantium], #Turkey
 [iIndia, iChina, iJapan, iKhmer, iIndonesia], #Thailand
+[], #Congo
 [iRome, iHolyRome], #Netherlands
 [iHolyRome, iPoland], #Germany
 [iSpain, iFrance, iEngland, iNetherlands, iPortugal, iAztecs, iMaya] #America
@@ -231,6 +233,7 @@ tBirth = (
 1206,					# Mughals
 1280, # 249, #1280AD (1071AD)		# Turkey
 1350,					# Thailand
+1390,					# Congo
 1500, # 281, #922AD # Leoreth: 1500 AD	# Netherlands
 1701,					# Germany
 1775, # 346, #1775AD #332 for 1733AD	# America
@@ -278,6 +281,7 @@ tFall = (
 1725,					# Mughals
 2020,					# Turkey
 2020,					# Thailand
+1800,					# Congo
 2020,					# Netherlands
 2020,					# Germany
 2020)					# America
@@ -319,6 +323,7 @@ tRebirth = (
 -1,				# Mughals
 -1,				# Turkey
 -1,				# Thailand
+-1,				# Congo
 -1,				# Netherlands
 -1,				# Germany
 -1)				# America
@@ -400,6 +405,7 @@ tRebirthPlot = (
 -1,		# Mughals
 -1,		# Turkey
 -1,		# Thailand
+-1,		# Congo
 -1,		# Netherlands
 -1,		# Germany
 -1)		# America
@@ -439,6 +445,7 @@ tRebirthArea = (
 -1,			# Mughals
 -1,			# Turkey
 -1,			# Thailand
+-1,			# Congo
 -1,			# Netherlands
 -1,			# Germany
 -1)			# America
@@ -478,6 +485,7 @@ tResurrectionIntervals = (
 [(1940, 2020)], #Mughals
 [(1700, 2020)], #Turkey
 [(1700, 2020)], #Thailand
+[],		#Congo
 [(1700, 2020)], #Netherlands
 [(1870, 2020)], #Germany
 [(1770, 2020)] #America
@@ -517,7 +525,8 @@ tYear = (
 ("1200 ", "TXT_KEY_AD"),	# Aztecs
 ("1206 ", "TXT_KEY_AD"),	# Mughals
 ("1280 ", "TXT_KEY_AD"),	# Turkey
-("1380 ", "TXT_KEY_AD"),	# Thailand
+("1350 ", "TXT_KEY_AD"),	# Thailand
+("1390 ", "TXT_KEY_AD"),	# Congo
 ("1500 ", "TXT_KEY_AD"),	# Netherlands
 ("1701 ", "TXT_KEY_AD"),	# Germany
 ("1775 ", "TXT_KEY_AD"))	# America
@@ -560,6 +569,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_MUG1", "TXT_KEY_UHV_MUG2", "TXT_KEY_UHV_MUG3_MARATHON"),
 ("TXT_KEY_UHV_TUR1", "TXT_KEY_UHV_TUR2", "TXT_KEY_UHV_TUR3"),
 ("TXT_KEY_UHV_THA1", "TXT_KEY_UHV_THA2", "TXT_KEY_UHV_THA3"),
+("TXT_KEY_UHV_KON1", "TXT_KEY_UHV_KON2", "TXT_KEY_UHV_KON3"),
 ("TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"),
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3")
@@ -599,6 +609,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_MUG1", "TXT_KEY_UHV_MUG2", "TXT_KEY_UHV_MUG3_EPIC"),
 ("TXT_KEY_UHV_TUR1", "TXT_KEY_UHV_TUR2", "TXT_KEY_UHV_TUR3"),
 ("TXT_KEY_UHV_THA1", "TXT_KEY_UHV_THA2", "TXT_KEY_UHV_THA3"),
+("TXT_KEY_UHV_KON1", "TXT_KEY_UHV_KON2", "TXT_KEY_UHV_KON3"),
 ("TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"),
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3")
@@ -638,6 +649,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_MUG1", "TXT_KEY_UHV_MUG2", "TXT_KEY_UHV_MUG3"),
 ("TXT_KEY_UHV_TUR1", "TXT_KEY_UHV_TUR2", "TXT_KEY_UHV_TUR3"),
 ("TXT_KEY_UHV_THA1", "TXT_KEY_UHV_THA2", "TXT_KEY_UHV_THA3"),
+("TXT_KEY_UHV_KON1", "TXT_KEY_UHV_KON2", "TXT_KEY_UHV_KON3"),
 ("TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"),
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3")
@@ -680,6 +692,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_MUG1", "TXT_KEY_UHV_MUG2", "TXT_KEY_UHV_MUG3_MARATHON"),
 ("TXT_KEY_UHV_TUR1", "TXT_KEY_UHV_TUR2", "TXT_KEY_UHV_TUR3"),
 ("TXT_KEY_UHV_THA1", "TXT_KEY_UHV_THA2", "TXT_KEY_UHV_THA3"),
+("TXT_KEY_UHV_KON1", "TXT_KEY_UHV_KON2", "TXT_KEY_UHV_KON3"),
 ("TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"),
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3")
@@ -719,6 +732,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_MUG1", "TXT_KEY_UHV_MUG2", "TXT_KEY_UHV_MUG3_EPIC"),
 ("TXT_KEY_UHV_TUR1", "TXT_KEY_UHV_TUR2", "TXT_KEY_UHV_TUR3"),
 ("TXT_KEY_UHV_THA1", "TXT_KEY_UHV_THA2", "TXT_KEY_UHV_THA3"),
+("TXT_KEY_UHV_KON1", "TXT_KEY_UHV_KON2", "TXT_KEY_UHV_KON3"),
 ("TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"),
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3")
@@ -758,6 +772,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_MUG1", "TXT_KEY_UHV_MUG2", "TXT_KEY_UHV_MUG3"),
 ("TXT_KEY_UHV_TUR1", "TXT_KEY_UHV_TUR2", "TXT_KEY_UHV_TUR3"),
 ("TXT_KEY_UHV_THA1", "TXT_KEY_UHV_THA2", "TXT_KEY_UHV_THA3"),
+("TXT_KEY_UHV_KON1", "TXT_KEY_UHV_KON2", "TXT_KEY_UHV_KON3"),
 ("TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"),
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3")
@@ -846,6 +861,7 @@ tCapitals = (
 (90, 40), #tDelhi
 (70, 43), #tSogut ((72, 43), #tKonya  #71?)
 (101, 33), #Ayutthaya
+(62, 20), #Mbanza Kongo
 (57, 53), #tAmsterdam
 (62, 52), #Berlin
 (27, 46) #tWashington
@@ -889,6 +905,7 @@ tCapitals = (
 (90, 40), #Delhi
 (70, 43), #tSogut ((72, 43), #tKonya  #71?)
 (101, 33), #Ayutthaya
+(62, 20), #Mbanza Kongo
 (57, 53), #tAmsterdam
 (62, 52), #Berlin
 (27, 46) #tWashington
@@ -923,6 +940,7 @@ tReserveCapitals = (
 (), 
 (),
 (), #((49, 42), (49, 44)) #tLisboa
+(),
 (),
 (),
 (),
@@ -971,6 +989,7 @@ tCoreAreasTL = (
 (86, 38), #Mughals
 (69, 41), #Turkey
 (100, 32), #Thailand
+(62, 20), #Congo
 (56, 52), #Holland
 (58, 49), #Germany
 (25, 43) #America
@@ -1009,6 +1028,7 @@ tCoreAreasTL = (
 (86, 37), #Mughals
 (69, 41), #Turkey
 (100, 32), #Thailand
+(62, 20), #Congo
 (56, 52), #Holland
 (58, 49), #Germany
 (25, 43) #America
@@ -1049,6 +1069,7 @@ tCoreAreasBR = (
 (94, 43), #Mughals
 (77, 48), #Turkey
 (103, 36), #Thailand
+(62, 20), #Congo
 (58, 53), #Holland
 (66, 54), #Germany
 (32, 50) #America
@@ -1087,6 +1108,7 @@ tCoreAreasBR = (
 (94, 43), #Mughals
 (77, 48), #Turkey
 (103, 36), #Thailand
+(62, 20), #Congo
 (58, 53), #Holland
 (66, 54), #Germany
 (32, 50) #America
@@ -1128,6 +1150,7 @@ tExceptions = (  #for RiseAndFall
 ((92, 43), (93, 42), (93, 43), (94, 42), (94, 43)), #Mughals
 ((68, 48), (68, 49), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (74, 42), (75, 42), (80, 47), (80, 48), (80, 49), (67, 42), (67, 41)), #Turkey
 (), #Thailand
+(), #Congo
 ((57, 51), (58, 51)), #Holland
 ((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (58, 52), (58, 53)),  #Germany
 ((25, 48), (25, 49), (26, 48), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50))#America
@@ -1165,6 +1188,7 @@ tExceptions = (  #for RiseAndFall
 ((92, 43)), #Mughals
 ((68, 48), (68, 49), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (74, 42), (75, 42), (80, 47), (80, 48), (80, 49)), #Turkey
 (), #Thailand
+(), #Congo
 ((57, 51), (58, 51)), #Holland
 ((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51)),  #Germany
 ((25, 48), (25, 49), (26, 48), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50))#America
@@ -1209,6 +1233,7 @@ tNormalAreasTL = (
 (86, 37), #Mughals
 (68, 42), #Turkey
 (98, 26), #Thailand
+(62, 20), #Congo
 (56, 51), #Holland
 (59, 48), #Germany
 (11, 43) #America
@@ -1247,6 +1272,7 @@ tNormalAreasTL = (
 (86, 37), #Mughals
 (68, 42), #Turkey
 (98, 26), #Thailand
+(62, 20), #Congo
 (56, 51), #Holland
 (59, 48), #Germany
 (11, 43) #America
@@ -1287,6 +1313,7 @@ tNormalAreasBR = (
 (94, 43), #Mughals
 (78, 49), #Turkey
 (103, 37), #Thailand
+(62, 20), #Congo
 (58, 53), #Holland
 (66, 54), #Germany
 (31, 49) #America
@@ -1325,6 +1352,7 @@ tNormalAreasBR = (
 (94, 43), #Mughals
 (78, 49), #Turkey
 (103, 37), #Thailand
+(62, 20), #Congo
 (58, 53), #Holland
 (66, 54), #Germany
 (31, 49) #America
@@ -1366,6 +1394,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 (), #Mughals
 (), #Turkey
 (), #Thailand
+(), #Congo
 (), #Holland
 (), #Germany
 () #America
@@ -1403,6 +1432,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 (), #Mughals
 (), #Turkey
 (), #Thailand
+(), #Congo
 (), #Holland
 (), #Germany
 () #America
@@ -1445,6 +1475,7 @@ tBroaderAreasTL = (
 (86, 37), #Mughals
 (68, 42), #Turkey
 (97, 25), #Thailand
+(62, 20), #Congo
 (56, 51), #Holland
 (55, 46), #Germany
 (10, 42) #America
@@ -1483,6 +1514,7 @@ tBroaderAreasTL = (
 (86, 37), #Mughals
 (68, 42), #Turkey
 (97, 25), #Thailand
+(62, 20), #Congo
 (56, 51), #Holland
 (55, 46), #Germany
 (10, 42) #America
@@ -1523,6 +1555,7 @@ tBroaderAreasBR = (
 (94, 43), #Mughals
 (86, 49), #Turkey
 (105, 39), #Thailand
+(62, 20), #Congo
 (58, 53), #Holland
 (67, 56), #Germany
 (37, 56) #America
@@ -1561,6 +1594,7 @@ tBroaderAreasBR = (
 (94, 43), #Mughals
 (86, 49), #Turkey
 (105, 39), #Thailand
+(62, 20), #Congo
 (58, 53), #Holland
 (67, 56), #Germany
 (37, 56) #America
@@ -1602,6 +1636,7 @@ tRespawnCapitals = (
 (85, 37), #Karachi
 (68, 45), #Istanbul
 -1,		# Thailand
+-1,		# Congo
 -1,		# Netherlands
 -1,		# Germany
 -1)		# America
@@ -1642,6 +1677,7 @@ tRespawnTL = (
 (85, 37), #Mughals
 -1,		# Turkey
 -1,		# Thailand
+-1,		# Congo
 -1,		# Netherlands
 -1,		# Germany
 -1)		# America
@@ -1681,6 +1717,7 @@ tRespawnBR = (
 (88, 43), #Mughals
 -1,		# Turkey
 -1,		# Thailand
+-1,		# Congo
 -1,		# Netherlands
 -1,		# Germany
 -1)		# America
@@ -1705,7 +1742,7 @@ tHire = (
 50, #Arabia
 30, #Khmer
 60, #Indonesia
-50, #Moors
+80, #Moors
 50, #Spain
 50, #France
 50, #England
@@ -1721,6 +1758,7 @@ tHire = (
 50, #Mughals
 50, #Turkey
 30, #Thailand
+60, #Congo
 10, #Holland
 60, #Germany
 50, #America
@@ -1769,6 +1807,7 @@ lEnemyCivsOnSpawn = [
 [iIndia, iIndia], #Mughals
 [iEgypt,iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia,iByzantium,iByzantium,iByzantium], #Turkey
 [iKhmer, iKhmer], #Thailand
+[], #Congo
 [], #Netherlands
 [iHolyRome, iPoland], #Germany
 [iIndependent,iIndependent2] #America
@@ -1810,6 +1849,7 @@ lTotalWarOnSpawn = [
 [iIndia], #Mughals
 [iArabia, iEgypt], #Turkey
 [iKhmer], #Thailand
+[], #Congo
 [], #Netherlands
 [], #Germany
 [], #America
@@ -1852,6 +1892,7 @@ tAggressionLevel = (
 1, #Mughals
 2, #Turkey
 0, #Thailand
+0, #Congo
 0, #Holland
 2, #Germany
 2, #America
@@ -1894,6 +1935,7 @@ tAIStopBirthThreshold = (
     70, #Mughals
     70, #Turkey
     80, #Thailand
+    80, #Congo
     80, #Holland
     80, #Germany
     50, #America
@@ -1940,6 +1982,7 @@ tResurrectionProb = (
 80, #Mughals
 100, #Turkey
 100, #Thailand
+20, #Congo
 100, #Holland
 100, #Germany
 100, #America
@@ -1984,6 +2027,7 @@ tPatienceThreshold = (
 35, #Mughals
 35, #Turkey
 30, #Thailand
+20, #Congo
 30, #Holland
 20, #Germany
 30, #America
@@ -2026,6 +2070,7 @@ tMaxColonists = (
 0, #Mughals
 0, #Turkey
 0, #Thailand
+0, #Congo
 6, #Holland
 2, #Germany
 0) #America
@@ -2091,6 +2136,7 @@ iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAir
 iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iGreatGeneral, iGreatSpy,
 iBireme, iBersagliere, iLevy) = range(iNumUnits)
 
+iCongoPombos = iKongoPombos
 iCamelArcher = iArabiaCamelarcher
 iConquistador = iSpanishConquistador
 iWorkBoat = iWorkboat
@@ -2153,7 +2199,7 @@ iNumBuildingsEmbassy = iNumBuildingsPlague+iNumPlayers
 (iEgyEmbassy, iChiEmbassy, iBabEmbassy, iGreEmbassy, iIndEmbassy, iCarEmbassy, iPerEmbassy, iRomEmbassy, iTamEmbassy, iEthEmbassy, 
 iKorEmbassy, iMayEmbassy, iByzEmbassy, iJapEmbassy, iVikEmbassy, iAraEmbassy, iKhmEmbassy, iInoEmbassy, iMooEmbassy, iSpaEmbassy,
 iFraEmbassy, iEngEmbassy, HreEmbassy, iRusEmbassy, iMalEmbassy, iPolEmbassy, iPorEmbassy, iIncEmbassy, iItaEmbassy, iMonEmbassy, 
-iAztEmbassy, iMugEmbassy, iTurEmbassy, iThaEmbassy, iHolEmbassy, iGerEmbassy, iAmeEmbassy) = range(iNumBuildingsPlague, iNumBuildingsPlague+iNumPlayers)
+iAztEmbassy, iMugEmbassy, iTurEmbassy, iThaEmbassy, iConEmbassy, iHolEmbassy, iGerEmbassy, iAmeEmbassy) = range(iNumBuildingsPlague, iNumBuildingsPlague+iNumPlayers)
 
 #Civics
 iNumCivics = 36
@@ -2318,6 +2364,7 @@ tIsActiveOnLateStart = (
 1,	# Mughals
 1,	# Turkey
 1,	# Thailand
+1,	# Congo
 1,	# Netherlands
 1,	# Germany
 1,	# America

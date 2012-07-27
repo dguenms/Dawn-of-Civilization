@@ -2277,6 +2277,7 @@ void CvGame::update()
 		case MUGHALS:
 		case AZTEC:
 		case THAILAND:
+		case CONGO:
 		case GERMANY:
 		case AMERICA:
 			//if (getGameTurn() == 0 || (getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition

@@ -2158,6 +2158,12 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 
 
 	//Rhye - start switch for the UHV
+	if (eBuilding == RED_FORT)
+		if (getOwnerINLINE() != MUGHALS)
+			if (GET_PLAYER((PlayerTypes)MUGHALS).isHuman())
+				if (!GET_PLAYER((PlayerTypes)MUGHALS).isAlive())
+					return false;
+
 	if (eBuilding == CHICHENITZA)
 		if (getOwnerINLINE() != MAYA) {
 			if (GET_PLAYER((PlayerTypes)MAYA).isHuman()) {
@@ -6433,7 +6439,9 @@ void CvCity::updateFeatureHealth()
 				}
 				else
 				{
-					iNewBadHealth += GC.getFeatureInfo(eFeature).getHealthPercent();
+					// Leoreth: Congo UP: no unhealthiness from jungle and marsh
+					if (!(getOwnerINLINE() == CONGO && (eFeature == GC.getInfoTypeForString("FEATURE_JUNGLE") || eFeature == GC.getInfoTypeForString("FEATURE_MUD"))))
+						iNewBadHealth += GC.getFeatureInfo(eFeature).getHealthPercent();
 				}
 			}
 		}
@@ -12804,8 +12812,24 @@ void CvCity::doReligion()
 
 									if (iSpread > 0)
 									{
-										iSpread /= std::max(1, (((GC.getDefineINT("RELIGION_SPREAD_DISTANCE_DIVISOR") * plotDistance(getX_INLINE(), getY_INLINE(), pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE())) / GC.getMapINLINE().maxPlotDistance()) - 5));
+										bool bDistanceReduction = true;
 
+										//Leoreth: allow Congo to get Catholicism for the UHV
+										if (getOwnerINLINE() == CONGO && iI == CATHOLICISM && GET_PLAYER((PlayerTypes)CONGO).getStateReligion() != CATHOLICISM)
+											bDistanceReduction = false;
+
+										//Leoreth: Christianity spreads easier to the New World
+										if (iI == CATHOLICISM || iI == PROTESTANTISM)
+										{
+											if (getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA || getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CARIBBEAN || getRegionID() == REGION_MESOAMERICA || getRegionID() == REGION_BRAZIL || getRegionID() == REGION_ARGENTINA || getRegionID() == REGION_PERU || getRegionID() == REGION_COLOMBIA)
+											{
+												bDistanceReduction = false;
+											}
+										}
+
+										if (bDistanceReduction)
+											iSpread /= std::max(1, (((GC.getDefineINT("RELIGION_SPREAD_DISTANCE_DIVISOR") * plotDistance(getX_INLINE(), getY_INLINE(), pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE())) / GC.getMapINLINE().maxPlotDistance()) - 5));
+										
 										//iSpread /= (getReligionCount() + 1);
 
 										iRandThreshold = std::max(iRandThreshold, iSpread);

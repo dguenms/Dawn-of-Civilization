@@ -424,9 +424,9 @@ class Barbs:
 		
 		if utils.getHumanID() != con.iHolyRome:
 			if utils.getSeed() % 3 == 0:
-				self.foundCity(iIndependent, lLubeck, "L&#252;beck", iGameTurn, 1, con.iArcher, 1)
+				self.foundCity(iIndependent, lLubeck, "L&#252;beck", iGameTurn, 2, con.iCrossbowman, 1)
 			else:
-				self.foundCity(iIndependent, lHamburg, "Hamburg", iGameTurn, 1, con.iArcher, 1)
+				self.foundCity(iIndependent, lHamburg, "Hamburg", iGameTurn, 2, con.iCrossbowman, 1)
 				
 		if gc.getPlayer(0).isPlayable():
 			self.foundCity(iIndependent, lMarrakesh, "Marrakus", iGameTurn, 1, con.iCrossbowman, 1)

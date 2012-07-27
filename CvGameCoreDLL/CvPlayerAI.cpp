@@ -1772,6 +1772,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		return 0;
 	}
 
+	//Leoreth: prevent HRE from founding Bremen
+	if (iX == 58 && iY == 53)
+	{
+		return 0;
+	}
+
 	//Leoreth: if Poland exists, prevent HRE from founding cities in its core
 	if (getID() == HOLY_ROME && GET_PLAYER((PlayerTypes)POLAND).isPlayable() /* better option later when it exists */)
 	{
@@ -5716,8 +5722,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									break;
 								case MOORS:
-									if (iI == OPTICS)
-										iValue /= 2;
+									if (iI == OPTICS || iI == GUILDS)
+										iValue /= 4;
 									if (iI == CIVIL_SERVICE)
 										iValue *= 2;
 								case SPAIN:

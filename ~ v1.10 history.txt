@@ -28,3 +28,7 @@
 # Encouraged the Holy Roman AI to conquer Italy
 # Assembly Line now requires Railroad
 # Electricity now requires Steam Power
+# added Moors
+# added Congo
+# The Red Fort now requires Patronage and Engineering
+# spread probability of Catholicism and Protestantism ignores distance penalties for cities in the New World

@@ -191,7 +191,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO2</Tag>
-		<English>Improvements that yield food give one extra food on plains tiles</English>
-		<German>Verbesserungen, die Nahrung produzieren, geben eine zusätzliche Nahrungseinheit auf Ebenenfeldern</German>
+		<English>Improvements that yield food give one extra food on plains tiles until the Renaissance</English>
+		<German>Verbesserungen, die Nahrung produzieren, geben eine zusätzliche Nahrungseinheit auf Ebenenfeldern bis zur Renaissance</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KON</Tag>
+		<English>The Power of the Tropics:</English>
+		<German>Die Macht der Tropen:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KON2</Tag>
+		<English>Jungles and marshes yield extra food and production and cause no unhealthiness</English>
+		<German>Dschungel und Marschen geben zusätzliche Nahrung und Produktion und verursachen keine Krankheit</German>
 	</TEXT>
 </Civ4GameText>
