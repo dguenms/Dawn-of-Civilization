@@ -233,6 +233,7 @@ iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
 iThailand = con.iThailand
+iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
@@ -282,6 +283,7 @@ pMongolia = gc.getPlayer(iMongolia)
 pAztecs = gc.getPlayer(iAztecs)
 pMughals = gc.getPlayer(iMughals)
 pThailand = gc.getPlayer(iThailand)
+pCongo = gc.getPlayer(iCongo)
 pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
 pIndependent = gc.getPlayer(iIndependent)
@@ -326,6 +328,7 @@ teamMongolia = gc.getTeam(pMongolia.getTeam())
 teamAztecs = gc.getTeam(pAztecs.getTeam())
 teamMughals = gc.getTeam(pMughals.getTeam())
 teamThailand = gc.getTeam(pThailand.getTeam())
+teamCongo = gc.getTeam(pCongo.getTeam())
 teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
@@ -506,6 +509,12 @@ class Victory:
 		
 	def setPolishTechs(self, i, iNewValue):
 		sd.scriptDict['lPolishTechs'][i] = iNewValue
+		
+	def getCongoSlaveCounter(self):
+		return sd.scriptDict['iCongoSlaveCounter']
+		
+	def changeCongoSlaveCounter(self, iChange):
+		sd.scriptDict['iCongoSlaveCounter'] += iChange
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -1375,10 +1384,10 @@ class Victory:
 						for iSpecialist in range(gc.getNumSpecialistInfos()):
 							if iSpecialist in [7, 9, 11]: #prophet, scientist, engineer
 								iCounter += capital.getFreeSpecialistCount(iSpecialist)
-					if iCounter >= 5:
+					if iCounter >= 4:
 						self.setGoal(iMoors, 2, 1)
 					else:
-						self.setGoal(iMoors, 2, 1)
+						self.setGoal(iMoors, 2, 0)
 					
 				
 						
@@ -2037,6 +2046,22 @@ class Victory:
 						self.setGoal(iThailand, 2, 1)
 					else:
 						self.setGoal(iThailand, 2, 0)
+						
+		
+		elif iPlayer == iCongo:
+			if pCongo.isAlive():
+			
+				if self.getGoal(iCongo, 0) == -1:
+					if self.getApostolicVotePercent(iCongo) >= 10.0:
+						self.setGoal(iCongo, 0, 1)
+			
+				if iGameTurn == getTurnForYear(1650):
+					if self.getGoal(iCongo, 0) == -1:
+						self.setGoal(iCongo, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1800):
+					if self.getGoal(iCongo, 1) == -1:
+						self.setGoal(iCongo, 1, 0)
 
 
                         
@@ -2360,7 +2385,7 @@ class Victory:
 					if self.getDutchColonies() >= 4:
 						self.setGoal(iNetherlands, 1, 1)
 
-        def onCityRazed(self, iPlayer):
+        def onCityRazed(self, iPlayer, city):
 
                 if (not gc.getGame().isVictoryValid(7)): #7 == historical
                         return
@@ -2689,6 +2714,13 @@ class Victory:
                                                 self.setGoal(iAztecs, 2, 1)                                        
                                 else:
                                         self.setGoal(iAztecs, 2, 0)
+					
+		if self.getGoal(iCongo, 2) == -1:
+			iEra = gc.getTechInfo(iTech).getEra()
+			if iEra == iIndustrial and iPlayer == iCongo:
+				self.setGoal(iCongo, 2, 1)
+			if iEra == iModern and iPlayer != iCongo:
+				self.setGoal(iCongo, 2, 0)
                                                 
 
 
@@ -2981,6 +3013,14 @@ class Victory:
 	def onTradeMission(self, iPlayer, iGold):
 		if iPlayer == iTamils:
 			self.changeTamilTradeGold(iGold)
+			
+	def onUnitGifted(self, iOwner, iReceiver, unit):
+		if iOwner == iCongo:
+			if unit.getUnitType() == con.iWorker:
+				if pCongo.getCivics(3) == con.iForcedLabor and gc.getPlayer(iReceiver).getCivics(3) == con.iForcedLabor:
+					self.changeCongoSlaveCounter(1)
+					if self.getCongoSlaveCounter() >= 30:
+						self.setGoal(iCongo, 1, 1)
                                        
 
 
@@ -3299,6 +3339,15 @@ class Victory:
 			resultList.append(tTuple[1])
 			
 		return resultList
+		
+	def getApostolicVotePercent(self, iPlayer):
+		iTotal = 0
+		for iCiv in range(con.iNumPlayers):
+			iTotal += gc.getPlayer(iCiv).getVotes(14, 1)
+			
+		fPercent = gc.getPlayer(iPlayer).getVotes(14, 1) * 100.0 / iTotal
+		
+		return fPercent
 
 
 	def getIcon(self, bVal):
@@ -3955,6 +4004,13 @@ class Victory:
 				bSouthAsia = self.isAreaFreeOfCivs(tSouthAsiaTL, tSouthAsiaBR, [iIndia, iKhmer, iIndonesia, iMughals, iThailand])
 				aHelp.append(self.getIcon(bSouthAsia) + localText.getText("TXT_KEY_VICTORY_NO_SOUTH_ASIAN_COLONIES", ()))
 				
+		elif iPlayer == iCongo:
+			if iGoal == 0:
+				fPercent = self.getApostolicVotePercent(iCongo)
+				aHelp.append(self.getIcon(fPercent >= 10.0) + localText.getText("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", (str(u"%.2f%%" % fPercent), str(10))))
+			elif iGoal == 1:
+				iSlaves = self.getCongoSlaveCounter()
+				aHelp.append(self.getIcon(iSlaves >= 30) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, 30)))
 
 		elif iPlayer == iAmerica:
 			if iGoal == 0:

@@ -87,7 +87,8 @@ tMecca = (75, 33)
 
 lCatholicCivs = [con.iCarthage, con.iRome, con.iRome, con.iGreece, con.iGreece, con.iByzantium, con.iByzantium]
 
-lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 80, 50, 50, 90, 20, 80, 50, 50, 95, 75, 30, 40, 80, 10, 50, 95, 50, 90, 50, 50, 50, 50, 50, 25, 20]
+		     #eg  in  ch  ba  gr  pe  ph  ro  ta  ja  et  ko  ma  by  vi  ar  kh  in  mo  sp  fr  en  hr  ru  ne  ma  po  po  in  it  mo  az  mu  tu  th  co  ge  am
+lReformationMatrix = [80, 50, 50, 50, 80, 50, 50, 95, 50, 50, 80, 50, 50, 90, 20, 80, 50, 50, 50, 95, 75, 30, 40, 80, 10, 50, 80, 95, 50, 90, 50, 50, 50, 50, 50, 80, 25, 20]
 
 lOrthodoxFounders = (con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia, con.iRome)
 lOrthodoxEast = [con.iByzantium, con.iGreece, con.iRussia, con.iEthiopia, con.iEgypt, con.iCarthage, con.iPersia, con.iBabylonia]

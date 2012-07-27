@@ -6165,6 +6165,18 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		if (getFeatureType() != NO_FEATURE)
 		{
 			iYield += GC.getFeatureInfo(getFeatureType()).getYieldChange(eYield);
+
+			//Leoreth: Congo UP: +1 food, +1 production on jungle and marsh tiles
+			if (getOwnerINLINE() == CONGO)
+			{
+				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") || getFeatureType() == GC.getInfoTypeForString("FEATURE_MUD"))
+				{
+					if ((int)eYield == 0 || (int)eYield == 1)
+					{
+						iYield += 1;
+					}
+				}
+			}
 		}
 	}
 
@@ -6257,8 +6269,8 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 		}
 	}
 
-	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food
-	if (ePlayer == MOORS)
+	// Leoreth: Moorish UP: +1 food on plains for all improvements that add food until the Renaissance
+	if (ePlayer == MOORS && GET_PLAYER(ePlayer).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		if ((int)eYield == 0 && iYield > 0 && getTerrainType() == GC.getInfoTypeForString("TERRAIN_PLAINS"))
 		{

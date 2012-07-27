@@ -440,4 +440,12 @@
 		<Tag>TXT_KEY_VICTORY_BEST_COMMERCE_CITY</Tag>
 		<English>Most commerce in: %s1_city</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT</Tag>
+		<English>Votes in the Apostolic Palace: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SLAVES_TRADED</Tag>
+		<English>Slaves traded: %d1 / %d2</English>
+	</TEXT>
 </Civ4GameText>

@@ -2573,6 +2573,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case THAILAND:
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
 		break;
+	case CONGO:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 4;
+		break;
 	case NETHERLANDS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
@@ -3178,6 +3181,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case MOORS:
 										if (iI == MEZQUITA) iTempValue *= 5;
+										else if (iI == SPIRALMINARET || iI == TOPKAPI || iI == BLUE_MOSQUE) iTempValue /= 3;
 										break;
 									case SPAIN:
 										if (iI == NOTREDAME || iI == MEZQUITA) {
@@ -3294,6 +3298,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 2;
 											iTempValue /= 3;
 											}
+										break;
+									case CONGO:
+										iTempValue /= 2;
 										break;
 									case NETHERLANDS:
 										if (iI == NOTREDAME) { //Notre Dame
@@ -4888,6 +4895,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					break;
 				case THAILAND:
 					iValue += 1;
+					break;
+				case CONGO:
+					iValue -= 2;
 					break;
 				case NETHERLANDS:
 					iValue += 2;

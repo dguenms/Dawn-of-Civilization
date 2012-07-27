@@ -5301,7 +5301,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 
 	pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
-	long lResult=0;
+	/*long lResult=0;
 	if(GC.getUSE_CANNOT_FOUND_CITY_CALLBACK())
 	{
 		CyArgsList argsList;
@@ -5314,7 +5314,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		{
 			return false;
 		}
-	}
+	}*/
 
 	if (GC.getGameINLINE().isFinalInitialized())
 	{
@@ -5332,7 +5332,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		return false;
 	}
 
-	if (pPlot->getFeatureType() != NO_FEATURE)
+	if (pPlot->getFeatureType() != NO_FEATURE && getID() != CONGO)	//Leoreth: Congolese UP: can found in jungle
 	{
 		if (GC.getFeatureInfo(pPlot->getFeatureType()).isNoCity())
 		{

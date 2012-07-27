@@ -337,7 +337,22 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3</Tag>
-		<English>Settle a total of five great prophets, scientists or engineers in Cordoba in 1300 AD</English>
-		<German>Siedeln Sie im Jahr 1300 n. Chr. insgesamt fünf große Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
+		<English>Settle a total of four great prophets, scientists or engineers in Cordoba in 1300 AD</English>
+		<German>Siedeln Sie im Jahr 1300 n. Chr. insgesamt vier große Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KON1</Tag>
+		<English>Acquire 10% of the votes in the Apostolic Palace by 1650 AD</English>
+		<German>Erreichen sie bis zum Jahr 1650 n. Chr. 10% der Stimmen im Apostolischen Palast</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KON2</Tag>
+		<English>Gift 30 workers to other civilizations while you are both running Forced Labor by 1800 AD</English>
+		<German>Verschenken Sie bis zum Jahr 1800 n. Chr. 30 Arbeiter an andere Zivilisationen, während sie beide Zwangsarbeit einsetzen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KON3</Tag>
+		<English>Enter the Industrial Era before anyone enters the Modern Era</English>
+		<German>Erreichen sie das Industriezeitalter, bevor irgendjemand die Moderne erreicht</German>
 	</TEXT>
 </Civ4GameText>

@@ -31,6 +31,7 @@ import Communications
 import Companies
 import DynamicCivs
         
+
 gc = CyGlobalContext()        
 #iBetrayalCheaters = 15
 
@@ -72,6 +73,7 @@ iAztecs = con.iAztecs
 iMughals = con.iMughals
 iTurkey = con.iTurkey
 iThailand = con.iThailand
+iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
@@ -201,6 +203,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
 		eventManager.addEventHandler("changeWar", self.onChangeWar)
+		eventManager.addEventHandler("unitGifted", self.onUnitGifted)
                
                 self.eventManager = eventManager
 
@@ -666,6 +669,11 @@ class CvRFCEventHandler:
 		
 		if iPlayer == con.iTamils:
 			self.vic.onTradeMission(iPlayer, iGold)
+			
+	def onUnitGifted(self, argsList):
+		pUnit, iOwner, pPlot = argsList
+		if iOwner == con.iCongo:
+			self.vic.onUnitGifted(iOwner, pPlot.getOwner(), pUnit)
 			
 	def onUnitCreated(self, argsList):
 		utils.debugTextPopup("Unit created")

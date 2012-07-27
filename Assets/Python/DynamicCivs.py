@@ -55,6 +55,7 @@ iMongolia = con.iMongolia
 iAztecs = con.iAztecs
 iMughals = con.iMughals
 iThailand = con.iThailand
+iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
 iNumPlayers = con.iNumPlayers
@@ -105,6 +106,7 @@ pMongolia = gc.getPlayer(iMongolia)
 pAztecs = gc.getPlayer(iAztecs)
 pMughals = gc.getPlayer(iMughals)
 pThailand = gc.getPlayer(iThailand)
+pCongo = gc.getPlayer(iCongo)
 pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
 pSeljuks = gc.getPlayer(iSeljuks)
@@ -150,6 +152,7 @@ teamMongolia = gc.getTeam(pMongolia.getTeam())
 teamAztecs = gc.getTeam(pAztecs.getTeam())
 teamMughals = gc.getTeam(pMughals.getTeam())
 teamThailand = gc.getTeam(pThailand.getTeam())
+teamCongo = gc.getTeam(pCongo.getTeam())
 teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamSeljuks = gc.getTeam(pSeljuks.getTeam())
@@ -217,6 +220,7 @@ class DynamicCivs:
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_DEFAULT",
                         iTurkey : "TXT_KEY_CIV_TURKEY_DESC_DEFAULT",
 			iThailand : "TXT_KEY_CIV_THAILAND_DESC_DEFAULT",
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEFAULT",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEFAULT",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEFAULT",
                 }
@@ -257,6 +261,7 @@ class DynamicCivs:
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_PEOPLES",
                         iTurkey : "TXT_KEY_CIV_TURKEY_DESC_PEOPLES",
 			iThailand : "TXT_KEY_CIV_THAILAND_DESC_PEOPLES",
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_PEOPLES",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_PEOPLES",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_PEOPLES",
                 }
@@ -523,6 +528,7 @@ class DynamicCivs:
 			iMughals : {
 				iIndia : "TXT_KEY_CIV_INDIA_MUGHAL_VASSAL"},
 			#iThailand - none so far
+			#iCongo - none so far
 			iGermany : {
 				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_GERMAN_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_GERMAN_VASSAL",
@@ -589,6 +595,7 @@ class DynamicCivs:
                         iTurkey : "TXT_KEY_CIV_TURKEY_SOVIET_VASSAL",
 			iMughals : "TXT_KEY_CIV_MUGHALS_SOVIET_VASSAL",
 			iThailand : "TXT_KEY_CIV_THAILAND_SOVIET_VASSAL",
+			iCongo : "TXT_KEY_CIV_CONGO_SOVIET_VASSAL",
 			iGermany : "TXT_KEY_CIV_GERMANY_SOVIET_VASSAL",
                         iAmerica : "TXT_KEY_CIV_AMERICA_SOVIET_VASSAL",
                 }
@@ -629,6 +636,7 @@ class DynamicCivs:
                         iTurkey : "TXT_KEY_CIV_TURKEY_NAZI_VASSAL",
 			iMughals : "TXT_KEY_CIV_MUGHALS_NAZI_VASSAL",
 			iThailand : "TXT_KEY_CIV_THAILAND_NAZI_VASSAL",
+			iCongo : "TXT_KEY_CIV_CONGO_NAZI_VASSAL",
 			iGermany : "TXT_KEY_CIV_GERMANY_NAZI_VASSAL",
                         iAmerica : "TXT_KEY_CIV_AMERICA_NAZI_VASSAL",
                 }
@@ -669,6 +677,7 @@ class DynamicCivs:
                         iTurkey : "TXT_KEY_CIV_TURKEY_DESC_FASCIST",
 			iMughals: "TXT_KEY_CIV_MUGHALS_DESC_FASCIST",
 			iThailand : "TXT_KEY_CIV_THAILAND_DESC_FASCIST",
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_FASCIST",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_FASCIST",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_FASCIST",
                 }
@@ -709,6 +718,7 @@ class DynamicCivs:
                         iTurkey : "TXT_KEY_CIV_TURKEY_DESC_COMMUNIST",
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_COMMUNIST",
 			iThailand : "TXT_KEY_CIV_THAILAND_DESC_COMMUNIST",
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_COMMUNIST",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_COMMUNIST",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_COMMUNIST",
                 }
@@ -749,6 +759,7 @@ class DynamicCivs:
                         iTurkey : "TXT_KEY_CIV_TURKEY_DESC_DEMOCRATIC",
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_DEMOCRATIC",
 			iThailand : "TXT_KEY_CIV_THAILAND_DESC_DEMOCRATIC",
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEMOCRATIC",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEMOCRATIC",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEMOCRATIC",
                 }
@@ -797,6 +808,7 @@ class DynamicCivs:
 			iMughals : con.iTughluq,
 			iTurkey : con.iMehmed,
 			iThailand : con.iNaresuan,
+			iCongo : con.iMbemba,
 			iGermany : con.iFrederick,
 			iAmerica : con.iWashington
 		}
@@ -913,6 +925,7 @@ class DynamicCivs:
 		elif iPlayer == iInca: iThreshold = 3
 		elif iPlayer == iMongolia: iThreshold = 10
 		elif iPlayer == iPoland: iThreshold = 3
+		elif iPlayer == iMoors: iThreshold = 4
 			
 		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
 		
@@ -1378,10 +1391,6 @@ class DynamicCivs:
 			if bCityStates:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_TAIFAS")
 				return
-			
-			if bEmpire and iEra <= iRenaissance:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_EMPIRE")
-				return
 				
 			if bTheocracy and iReligion == con.iIslam:
 				if bAndalusia:
@@ -1389,6 +1398,10 @@ class DynamicCivs:
 					return
 					
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_CALIPHATE")
+				return
+			
+			if bEmpire and iEra <= iRenaissance:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_EMPIRE")
 				return
 				
 			if bAndalusia:

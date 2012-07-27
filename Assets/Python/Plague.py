@@ -408,6 +408,7 @@ class Plague:
             
 
         def infectCity(self, city):
+		if city.getOwner() == con.iCongo and gc.getGame().getGameTurnYear() <= 1650: return	# Leoreth: don't let plague mess up the UHV
                 #print ("infected", city.getName())
                 city.setHasRealBuilding(iPlague, True)
                 if (gc.getPlayer(city.getOwner()).isHuman()):

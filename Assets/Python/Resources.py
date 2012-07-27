@@ -35,6 +35,7 @@ iCoffee = con.iCoffee
 iTea = con.iTea
 iTobacco = con.iTobacco
 iSpices = con.iSpices
+iIvory = con.iIvory
 
 iCottage = con.iCottage
 iSilk = con.iSilk
@@ -126,7 +127,11 @@ class Resources:
                         gc.getMap().plot(67, 11).setBonusType(iSugar) #South Africa
 
                         gc.getMap().plot(66, 23).setBonusType(iBanana) #Central Africa
-                        gc.getMap().plot(67, 21).setBonusType(iBanana) #Central Africa
+                        gc.getMap().plot(64, 20).setBonusType(iBanana) #Central Africa
+			
+			gc.getMap().plot(61, 22).setBonusType(iCotton) #Congo
+			gc.getMap().plot(63, 19).setBonusType(iIvory) #Congo
+			gc.getMap().plot(61, 24).setBonusType(iIvory) #Cameroon
 
 			gc.getMap().plot(57, 46).setBonusType(iWine) #Savoy
 			gc.getMap().plot(57, 45).setBonusType(iClam) #Savoy

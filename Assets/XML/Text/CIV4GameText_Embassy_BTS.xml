@@ -101,4 +101,9 @@
 		<English>Moorish Embassy</English>
 		<German>Maurische Botschaft</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KON_EMBASSY</Tag>
+		<English>Congolese Embassy</English>
+		<German>Kongolesische Botschaft</German>
+	</TEXT>
 </Civ4GameText>
