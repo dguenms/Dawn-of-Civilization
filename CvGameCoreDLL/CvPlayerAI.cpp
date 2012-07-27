@@ -5729,8 +5729,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case SPAIN:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == OPTICS)
+									if (iI == RIFLING || iI == OPTICS)
 										iValue *= 2;
+									if (iI == ASTRONOMY)
+										iValue *= 3;
 									if (iI == GUILDS || iI == GUNPOWDER || iI == CHEMISTRY) {
 										iValue *= 3;
 										iValue /= 2;
@@ -5742,8 +5744,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case FRANCE:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS || iI == PATRONAGE)
+									if (iI == RIFLING || iI == ECONOMICS || iI == PATRONAGE)
 										iValue *= 2;
+									if (iI == ASTRONOMY)
+										iValue *= 3;
 									if (iI == DRAMA || iI == MUSIC || iI == GUILDS || iI == CHEMISTRY) {
 										iValue *= 3;
 										iValue /= 2;
@@ -5759,9 +5763,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case ENGLAND:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ECONOMICS)
+									if (iI == ECONOMICS || iI == ASTRONOMY)
 										iValue *= 3;
-									if (iI == ASTRONOMY || iI == RIFLING)
+									if (iI == RIFLING)
 										iValue *= 2;
 									if (iI == LITERATURE || iI == DRAMA || iI == GUILDS || iI == ECONOMICS || iI == CHEMISTRY) {
 										iValue *= 3;
@@ -5830,8 +5834,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case PORTUGAL:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING)
+									if (iI == RIFLING)
 										iValue *= 2;
+									if (iI == ASTRONOMY)
+										iValue *= 3;
 									break;
 								case INCA:
 									if (iI == CONSTRUCTION || iI == CALENDAR)
