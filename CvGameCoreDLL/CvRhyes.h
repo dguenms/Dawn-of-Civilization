@@ -18,7 +18,7 @@ typedef list<char*> LISTCHAR;
 
 #define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
 
-#define BEGIN_WONDERS				(127)
+#define BEGIN_WONDERS				(125)
 //#define NUM_WONDERS				(186)
 #define NUM_BUILDINGS_PLAGUE		(198)
 #define NUM_BUILDINGTYPES_PLAGUE	(128)
