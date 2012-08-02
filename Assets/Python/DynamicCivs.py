@@ -1708,6 +1708,9 @@ class DynamicCivs:
 				
 	
 	def checkLeader(self, iPlayer):
+	
+		# Leoreth: fix crashes?
+		return
         
                 if iPlayer >= iNumPlayers: return
 		

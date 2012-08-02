@@ -1806,7 +1806,7 @@ lEnemyCivsOnSpawn = [
 [iMaya], #Aztec
 [iIndia, iIndia], #Mughals
 [iEgypt,iEgypt,iBabylonia,iGreece,iGreece,iArabia,iArabia,iArabia,iByzantium,iByzantium,iByzantium], #Turkey
-[iKhmer, iKhmer], #Thailand
+[iKhmer, iKhmer, iKhmer], #Thailand
 [], #Congo
 [], #Netherlands
 [iHolyRome, iPoland], #Germany
