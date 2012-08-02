@@ -3697,7 +3697,7 @@ class Victory:
 					for iSpecialist in range(gc.getNumSpecialistInfos()):
 						if iSpecialist in [7, 9, 11]: #prophet, scientist, engineer
 							iCounter += capital.getFreeSpecialistCount(iSpecialist)
-				aHelp.append(self.getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
+				aHelp.append(self.getIcon(iCounter >= 4) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 4)))
 			
 		elif iPlayer == iSpain:
 			if iGoal == 1:
