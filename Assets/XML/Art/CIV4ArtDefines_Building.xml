@@ -1802,7 +1802,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Tamils.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Tamils.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ETH_EMBASSY</Type>
@@ -1882,7 +1882,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Indonesia.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Indonesia.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MOO_EMBASSY</Type>
@@ -1892,7 +1892,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Moors.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Moors.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SPA_EMBASSY</Type>
@@ -1982,7 +1982,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Poland.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Poland.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_POR_EMBASSY</Type>

@@ -597,6 +597,10 @@ class RiseAndFall:
         def setup(self):            
 
                 #self.setupBirthTurnModifiers() (causes a crash on civ switch)
+		
+		print 'con.iNumBuildings = '+str(con.iNumBuildings)
+		print 'plague building id = '+str(gc.getInfoTypeForString("BUILDING_PLAGUE"))
+		print 'plague building class id = '+str(gc.getInfoTypeForString("BUILDINGCLASS_PLAGUE"))
 
                 if (not gc.getPlayer(0).isPlayable()): #late start condition
                         self.clear600ADChina()
@@ -2620,7 +2624,7 @@ class RiseAndFall:
                         for y in range(con.tBroaderAreasTL[reborn][iCiv][1], con.tBroaderAreasBR[reborn][iCiv][1]+1):
                                 gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
                         
-                if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and ((iHuman not in con.lNeighbours[iCiv] and getTurnForYear(con.tBirth[iCiv]) - getTurnForYear(con.tBirth[iHuman]) >= 0) or getTurnForYear(con.tBirth[iCiv]) - getTurnForYear(con.tBirth[iHuman]) >= utils.getTurns(25) ):
+                if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and ((iHuman not in con.lNeighbours[iCiv] and getTurnForYear(con.tBirth[iCiv]) - getTurnForYear(con.tBirth[iHuman]) > 0) or getTurnForYear(con.tBirth[iCiv]) - getTurnForYear(con.tBirth[iHuman]) >= utils.getTurns(25) ):
                         self.newCivPopup(iCiv)
 
 
@@ -5427,6 +5431,7 @@ class RiseAndFall:
                                 teamSpain.setHasTech(con.iMeditation, True, iCiv, False, False)
                                 teamSpain.setHasTech(con.iCalendar, True, iCiv, False, False)
                                 teamSpain.setHasTech(con.iCompass, True, iCiv, False, False)
+                                teamSpain.setHasTech(con.iEngineering, True, iCiv, False, False)
                         if (iCiv == iFrance):
                                 teamFrance.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamFrance.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

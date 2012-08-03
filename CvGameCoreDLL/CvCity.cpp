@@ -2136,7 +2136,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	//Rhye - start (embassy)
 	if (eBuilding >= NUM_BUILDINGS_PLAGUE)
 	{
-		return false;
+		//return false;
 
 		if (getOwnerINLINE() >= NUM_MAJOR_PLAYERS)
 			return false;

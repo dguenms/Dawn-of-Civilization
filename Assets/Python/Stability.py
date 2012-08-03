@@ -1316,8 +1316,11 @@ class Stability:
                                                         self.setStability(playerType, self.getStability(playerType) + 3 )
 							gc.getPlayer(playerType).changeStability(3) # test DLL
                                                         self.setParameter(playerType, iParDiplomacyE, True, +3) 
-                                if (city.getX() == tCapitals[utils.getReborn(owner)][owner][0] and city.getY() == tCapitals[utils.getReborn(owner)][owner][1] and owner != con.iMoors): # Leoreth: allow them to survive being pushed out of Iberia
-                                        iTotalCityLostModifier += 20
+                                if (city.getX() == tCapitals[utils.getReborn(owner)][owner][0] and city.getY() == tCapitals[utils.getReborn(owner)][owner][1]):
+					if (owner == con.iMoors): #Leoreth: reduced penalty so they can survive being pushed out of Iberia
+						iTotalCityLostModifier += 10
+					else:
+						iTotalCityLostModifier += 20
                                 if (playerType == con.iBarbarian or playerType == con.iCeltia or playerType == con.iSeljuks):
                                         iTotalCityLostModifier += 1                        
                         self.setParameter(owner, iParExpansionE, True, -iTotalCityLostModifier) 

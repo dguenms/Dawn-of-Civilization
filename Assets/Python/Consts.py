@@ -1921,7 +1921,7 @@ tAIStopBirthThreshold = (
     80, #Indonesia
     80, #Moors
     80, #Spain  #60 in vanilla and Warlords
-    80, #France #60 in vanilla and Warlords
+    0, #France #60 in vanilla and Warlords
     50, #England
     80, #Holy Rome #70 in vanilla and Warlords
     50, #Russia

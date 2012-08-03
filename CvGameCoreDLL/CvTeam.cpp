@@ -2050,6 +2050,15 @@ bool CvTeam::isVotingMember(VoteSourceTypes eVoteSource) const
 		return false;
 	//Rhye - end
 
+	//Leoreth: Apostolic Palace has only full members
+	if ((int)eVoteSource == 1)
+	{
+		if (!isFullMember(eVoteSource))
+		{
+			return false;
+		}
+	}
+
 	return (getVotes(NO_VOTE, eVoteSource) > 0);
 }
 
