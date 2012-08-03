@@ -9444,7 +9444,8 @@ bool CvUnitAI::AI_lead(std::vector<UnitAITypes>& aeUnitAITypes)
 			{
 				if (pLoopUnit->AI_getUnitAIType() == aeUnitAITypes[iI] || NO_UNITAI == aeUnitAITypes[iI])
 				{
-					if (canLead(pLoopUnit->plot(), pLoopUnit->getID()))
+					// Leoreth: AI doesn't consider mercenaries for great generals
+					if (canLead(pLoopUnit->plot(), pLoopUnit->getID()) && !pLoopUnit->isHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_MERCENARY")))
 					{
 						if (AI_plotValid(pLoopUnit->plot()))
 						{

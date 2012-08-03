@@ -32,3 +32,6 @@
 # added Congo
 # The Red Fort now requires Patronage and Engineering
 # spread probability of Catholicism and Protestantism ignores distance penalties for cities in the New World
+# Spanish spawn moved to 910 AD, Andalusia excluded from core
+# The AI won't join generals to mercenaries anymore
+# The Apostolic Palace now only has full members (i.e. Catholic state religion only)

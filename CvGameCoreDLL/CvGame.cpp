@@ -4582,7 +4582,6 @@ bool CvGame::isDebugMode() const
 
 void CvGame::toggleDebugMode()
 {
-	GC.getGameINLINE().logMsg("Debug mode 1");
 	m_bDebugMode = ((m_bDebugMode) ? false : true);
 	updateDebugModeCache();
 
@@ -4590,16 +4589,12 @@ void CvGame::toggleDebugMode()
 	GC.getMapINLINE().updateSymbols();
 	GC.getMapINLINE().updateMinimapColor();
 
-	GC.getGameINLINE().logMsg("Debug mode 2");
-
 	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
-
-	GC.getGameINLINE().logMsg("Debug mode 3");
 
 	//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
@@ -4614,8 +4609,6 @@ void CvGame::toggleDebugMode()
 		gDLL->getEngineIFace()->PopFogOfWar();
 	}
 	gDLL->getEngineIFace()->setFogOfWarFromStack();
-
-	GC.getGameINLINE().logMsg("Debug mode 4");
 }
 
 void CvGame::updateDebugModeCache()
