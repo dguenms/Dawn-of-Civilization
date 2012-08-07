@@ -1871,7 +1871,7 @@
 		<!-- SILK crops -->
 		<ArtRef Name="art:silk_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Silk/Silk_LSystem.nif::2x2_01_Silk_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -1882,7 +1882,7 @@
 		</ArtRef>
 		<ArtRef Name="art:silk_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Silk/Silk_LSystem.nif::2x2_01_Silk_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -1892,7 +1892,7 @@
 		</ArtRef>
 		<ArtRef Name="art:silk_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Silk/Silk_LSystem.nif::2x2_01_Silk_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -1903,7 +1903,7 @@
 		<!-- SILK improvement crap -->
 		<ArtRef Name="art:SILK_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Silk/Silk_LSystem.nif::1x3_01_Rack_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
@@ -1911,7 +1911,7 @@
 		</ArtRef>
 		<ArtRef Name="art:SILK_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Silk/Silk_LSystem.nif::1x3_01_Rack_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
@@ -1935,7 +1935,7 @@
 		<ArtRef Name="art:dye_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Dye/Dye_LSystem.nif::2x2_01_Dye_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -1948,7 +1948,7 @@
 		<ArtRef Name="art:dye_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Dye/Dye_LSystem.nif::2x2_01_Dye_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -1962,7 +1962,7 @@
 		<ArtRef Name="art:dye_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Dye/Dye_LSystem.nif::2x2_01_Dye_NotWorked</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -1975,7 +1975,7 @@
 		<!-- DYE improvement crap -->
 		<ArtRef Name="art:DYE_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Dye/Dye_LSystem.nif::1x3_01_Rack_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
@@ -1983,7 +1983,7 @@
 		</ArtRef>
 		<ArtRef Name="art:DYE_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Dye/Dye_LSystem.nif::1x3_01_Rack_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
@@ -2005,7 +2005,7 @@
 		<ArtRef Name="art:spice_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -2017,7 +2017,7 @@
 		<ArtRef Name="art:Spice_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -2030,7 +2030,7 @@
 		<ArtRef Name="art:Spice_crop">
 			<!-- when in the rough ... there's anotehr in 3x2 for farms -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -2042,7 +2042,7 @@
 		<!-- Spice improvement crap -->
 		<ArtRef Name="art:SPICE_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::1x3_01_Rack_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
@@ -2050,7 +2050,7 @@
 		</ArtRef>
 		<ArtRef Name="art:SPICE_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::1x3_01_Rack_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
@@ -2077,7 +2077,7 @@
 		<ArtRef Name="art:olives_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Olives/Olives.nif::2x2_01_Olives_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_OLIVES</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -2089,7 +2089,7 @@
 		<ArtRef Name="art:Olives_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Olives/Olives.nif::2x2_01_Olives_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_OLIVES</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -2133,7 +2133,7 @@
 		<ArtRef Name="art:cotton_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cotton/Cotton.nif::2x2_01_Sugar_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -2145,7 +2145,7 @@
 		<ArtRef Name="art:Cotton_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cotton/Cotton.nif::2x2_01_Sugar_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -2170,7 +2170,7 @@
 		<!-- Cotton improvement crap -->
 		<ArtRef Name="art:COTTON_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cotton/Cotton.nif::1x3_01_Rack_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
@@ -2178,7 +2178,7 @@
 		</ArtRef>
 		<ArtRef Name="art:COTTON_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Cotton/Cotton.nif::1x3_01_Rack_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
@@ -2188,7 +2188,7 @@
 		<ArtRef Name="art:tobacco_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Tobacco/Tobacco.nif::2x2_01_Tobacco_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -2200,7 +2200,7 @@
 		<ArtRef Name="art:Tobacco_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Tobacco/Tobacco.nif::2x2_01_Tobacco_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -2225,7 +2225,7 @@
 		<!-- Tobacco improvement crap -->
 		<ArtRef Name="art:TOBACCO_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Tobacco/Tobacco.nif::1x3_01_Rack_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
@@ -2233,7 +2233,7 @@
 		</ArtRef>
 		<ArtRef Name="art:TOBACCO_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Tobacco/Tobacco.nif::1x3_01_Rack_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
@@ -2243,7 +2243,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_01_Sugar_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -2256,7 +2256,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_02_Sugar_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -2269,7 +2269,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_01_Sugar_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -2283,7 +2283,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_02_Sugar_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -2297,7 +2297,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_01_Sugar_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -2310,7 +2310,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_02_Sugar_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -2323,7 +2323,7 @@
 		<!-- SUGAR improvement crap -->
 		<ArtRef Name="art:SUGAR_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::1x3_01_Rack_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
@@ -2333,7 +2333,7 @@
 		</ArtRef>
 		<ArtRef Name="art:SUGAR_PLANTATION_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::1x3_01_Rack_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
@@ -2411,7 +2411,7 @@
 		</ArtRef>
 		<!-- General plantation -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES,!BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -2421,7 +2421,7 @@
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES,!BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -2433,7 +2433,7 @@
 		<!-- SILK -->
 		<ArtRef Name="art:silk_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Silk/Silk_LSystem.nif::2x2_01_Silk_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -2443,7 +2443,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- ancient worked silk plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
@@ -2459,7 +2459,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- modern worked silk plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
@@ -2474,7 +2474,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient silk plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
@@ -2490,7 +2490,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern silk plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SILK</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SILK_PLANTATION_SPINNER</Attribute>
@@ -2513,7 +2513,7 @@
 		<!-- Dye -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient dye plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">iCropArea:24</Attribute>
 			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
@@ -2529,7 +2529,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked modern dye plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">iCropArea:24</Attribute>
 			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
@@ -2544,7 +2544,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient dye plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
@@ -2560,7 +2560,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern dye plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">szExtra:art:DYE_PLANTATION_POOL</Attribute>
@@ -2586,7 +2586,7 @@
 		<ArtRef Name="art:dye_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Dye/Dye_LSystem.nif::2x2_01_Dye_NotWorked</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -2599,7 +2599,7 @@
 		<!-- Spices -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient spices plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_GRINDER</Attribute>
@@ -2616,7 +2616,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient spices plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_GRINDER</Attribute>
@@ -2632,7 +2632,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient spices plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_GRINDER</Attribute>
@@ -2649,7 +2649,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern spices plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_GRINDER</Attribute>
@@ -2677,7 +2677,7 @@
 		<ArtRef Name="art:Spice_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -2689,7 +2689,7 @@
 		<!-- Olives -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient olives plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_OLIVES</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:OLIVES_PLANTATION_PRESS</Attribute>
@@ -2705,7 +2705,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient olives plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_OLIVES</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:OLIVES_PLANTATION_PRESS</Attribute>
@@ -2720,7 +2720,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient olives plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_OLIVES</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:OLIVES_PLANTATION_PRESS</Attribute>
@@ -2736,7 +2736,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern olives plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_OLIVES</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:OLIVES_PLANTATION_PRESS</Attribute>
@@ -2775,7 +2775,7 @@
 		<!-- Cotton -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient cotton plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
@@ -2791,7 +2791,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient cotton plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
@@ -2806,7 +2806,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient cotton plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
@@ -2822,7 +2822,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern cotton plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:COTTON_PLANTATION_RACK</Attribute>
@@ -2861,7 +2861,7 @@
 		<!-- Tobacco -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient tobacco plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
@@ -2877,7 +2877,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient tobacco plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
@@ -2892,7 +2892,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient tobacco plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
@@ -2908,7 +2908,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern tobacco plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TOBACCO</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
 			<Attribute Class="Scalar">szExtra:art:TOBACCO_PLANTATION_RACK</Attribute>
@@ -2947,7 +2947,7 @@
 		<!-- Sugar -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient sugar plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">iCropArea:2</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
@@ -2963,7 +2963,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked modern sugar plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">iCropArea:2</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
@@ -2979,7 +2979,7 @@
 
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient sugar plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">iCropArea:2</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
@@ -2995,7 +2995,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked modern sugar plantation -->
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">iCropArea:2</Attribute>
 			<Attribute Class="Scalar">szExtra:art:SUGAR_PLANTATION_POOL</Attribute>
@@ -3021,7 +3021,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_01_Sugar_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -3035,7 +3035,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_02_Sugar_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -3048,7 +3048,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_01_Sugar_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -3062,7 +3062,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_02_Sugar_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -3076,7 +3076,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_01_Sugar_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -3089,7 +3089,7 @@
 		<ArtRef Name="art:sugar_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Sugar/Sugar_LSystem.nif::2x2_02_Sugar_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SUGAR</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -3208,7 +3208,7 @@
 		<Height>4</Height>
 		<ArtRef Name="art:dye_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Dye/Dye_LSystem.nif::4x4_01_Dye_NotWorked</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -3221,7 +3221,7 @@
 		<ArtRef Name="art:dye_crop">
 			<!-- another variation-->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Dye/Dye_LSystem.nif::4x4_02_Dye_NotWorked</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_DYE</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -3897,7 +3897,7 @@
 		<To Name="BLeaf_4x2"/>
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_B">
-		<Attribute Class="Improvement">IMPROVEMENT_PLANTATION</Attribute>
+		<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 		<Attribute Class="Bonus">BONUS_SILK</Attribute>
 		<Attribute Class="RegionTest">0</Attribute>
 		<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
@@ -3965,7 +3965,7 @@
 		<To Name="BLeaf_3x2"/>
 	</LProduction>
 	<LProduction From="Node_3x2">
-		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM,!IMPROVEMENT_WINERY,!IMPROVEMENT_PLANTATION</Attribute>
+		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM,!IMPROVEMENT_WINERY,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 		<Attribute Class="RegionTest">0</Attribute>
 		<To Name="Node_2x1">
 			<Translate>-1,0</Translate>
@@ -3977,7 +3977,7 @@
 	</LProduction>
 	<LProduction From="Node_3x2">
 		<Attribute Class="RegionTest">0</Attribute>
-		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM,!IMPROVEMENT_WINERY,!IMPROVEMENT_PLANTATION</Attribute>
+		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM,!IMPROVEMENT_WINERY,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 		<To Name="Node_2x2">
 			<Translate>-0.5,0</Translate>
 		</To>

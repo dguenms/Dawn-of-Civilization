@@ -4359,10 +4359,10 @@ class RiseAndFall:
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 4)
 			utils.makeUnit(con.iKnight, iCiv, tPlot, 2)
 			if utils.getHumanID() != iSpain:
-				utils.makeUnit(con.iKnight, iCiv, tPlot, 1)
-				utils.makeUnit(con.iPikeman, iCiv, tPlot, 1)
+				#utils.makeUnit(con.iKnight, iCiv, tPlot, 1)
+				#utils.makeUnit(con.iPikeman, iCiv, tPlot, 1)
 				utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
+			#utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                         if (not gc.getPlayer(0).isPlayable()): #late start condition
                                 utils.makeUnit(con.iWorker, iCiv, tPlot, 1) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)
@@ -5428,10 +5428,10 @@ class RiseAndFall:
                                 teamSpain.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamSpain.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamSpain.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMeditation, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iCompass, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iEngineering, True, iCiv, False, False)
+                                #teamSpain.setHasTech(con.iMeditation, True, iCiv, False, False)
+                                #teamSpain.setHasTech(con.iCalendar, True, iCiv, False, False)
+                                #teamSpain.setHasTech(con.iCompass, True, iCiv, False, False)
+                                #teamSpain.setHasTech(con.iEngineering, True, iCiv, False, False)
                         if (iCiv == iFrance):
                                 teamFrance.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamFrance.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

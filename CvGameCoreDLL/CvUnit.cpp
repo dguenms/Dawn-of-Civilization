@@ -5721,6 +5721,21 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 		return false;
 	}
 
+	//Leoreth: no slavery in the motherland, needs forced labor
+	if (getUnitType() == GC.getInfoTypeForString("UNIT_SLAVE"))
+	{
+		if (GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR)
+		{
+			return false;
+		}
+
+		int rid = pCity->getRegionID();
+		if (rid == REGION_BRITAIN || rid == REGION_IBERIA || rid == REGION_MAGHREB || rid == REGION_ITALY || rid == REGION_EUROPE || rid == REGION_RUSSIA || rid == REGION_SCANDINAVIA || rid == REGION_BALKANS || rid == REGION_ANATOLIA)
+		{
+			return false;
+		}
+	}
+
 	return true;
 }
 
@@ -6056,6 +6071,21 @@ bool CvUnit::canTrade(const CvPlot* pPlot, bool bTestVisible) const
 		}
 	}
 
+	//Leoreth: slave trade only with Catholics and Protestants who run forced labor
+	if (getUnitClassType() == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+	{
+		PlayerTypes eOwner = pCity->getOwner();
+		if (GET_PLAYER(eOwner).getStateReligion() != CATHOLICISM && GET_PLAYER(eOwner).getStateReligion() != PROTESTANTISM)
+		{
+			return false;
+		}
+
+		if (GET_PLAYER(eOwner).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR)
+		{
+			return false;
+		}
+	}
+
 	return true;
 }
 
@@ -6074,6 +6104,12 @@ bool CvUnit::trade()
 	if (plot()->isActiveVisible(false))
 	{
 		NotifyEntity(MISSION_TRADE);
+	}
+
+	// Leoreth: slave trade
+	if (getUnitClassType() == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+	{
+		setCapturingPlayer(plot()->getOwner());
 	}
 
 	kill(true);

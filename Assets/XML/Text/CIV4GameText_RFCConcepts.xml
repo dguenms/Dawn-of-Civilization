@@ -350,4 +350,21 @@ There are some other effects that don't fall into the above categories.[NEWLINE]
 [ICON_BULLET]Switching from any Organization civic except [COLOR_HIGHLIGHT_TEXT]Representation[COLOR_REVERT] to [COLOR_HIGHLIGHT_TEXT]Universal Suffrage[COLOR_REVERT] causes a period of instability.[PARAGRAPH:2][BOLD]Note that because of the complexity of the stability algorithm, you shouldn't expect the numbers listed in this guide to align with the numbers in your civics category in the financial advisor or even your overall stability. The numbers are for comparative uses only.[\BOLD]
 </English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_SLAVERY</Tag>
+		<English>Slavery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_SLAVERY_PEDIA</Tag>
+		<English>[H1]Slavery[\H1][PARAGRAPH:2]Dawn of Civilization aims to represent the transatlantic slave trade as part of the Columbian Exchange. To this purpose, the slave unit has been added. This is a special type of unit that cannot be built. Instead, they can be created using a draft-like mechanic that is available to all cities in Sub-Saharan Africa, as long as you are running the Forced Labor civic. The purpose of the slave unit varies depending on the civilization that created it:[NEWLINE]
+[BOLD]African civilizations: Ethiopia, Mali, Congo[\BOLD]
+[PARAGRAPH:2]Slaves created by African civilizations can be sold to Catholic or Protestant civilizations that run the Forced Labor civic, yielding a small amount of gold, similar to trade missions available to Great Merchants. The civilization they're sold to receives one of their slave units in return. Barring colonizing Sub-Saharan Africa, this is the usual way for these civilizations to get access to slaves.[NEWLINE]
+[BOLD]The Aztecs[\BOLD]
+[PARAGRAPH:2]The Aztecs also have a special slave unit, which can be created every time they win a battle due to their Unique Power. Aztec slaves work like standard slaves (see below) but can also be sacrificed to temporarily increase happiness in a city.[NEWLINE]
+[BOLD]Other civilizations[\BOLD]
+[PARAGRAPH:2]The slave units of all other civilizations can serve two purposes, which are available as long as you are running Forced Labor:
+[ICON_BULLET]Build a slave plantation: the slave can build a slave plantation on all tiles that have a resource which requires a plantation, yielding +1 [ICON_PRODUCTION] and +2 [ICON_COMMERCE] compared to a normal plantation. The slave is used in the process, similar to a work boat.
+[ICON_BULLET]Join city as a slave specialist: the slave can permanently join the city as a slave specialist, yielding 1 [ICON_PRODUCTION]. This is not possible on the European continent.
+		</English>
+	</TEXT>
 </Civ4GameText>

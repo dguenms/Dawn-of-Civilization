@@ -1834,8 +1834,14 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 	{
 		if (pHeadSelectedCity->getConscriptUnit() != NO_UNIT)
 		{
+			//Leoreth: enslavement
+			UnitTypes eConscriptUnit = pHeadSelectedCity->getConscriptUnit();
+
+			//if (pHeadSelectedCity->canEnslave())
+			//	eConscriptUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE"));
+
 			CvWString szTemp;
-			szTemp.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_UNIT_TEXT"), GC.getUnitInfo(pHeadSelectedCity->getConscriptUnit()).getDescription());
+			szTemp.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_UNIT_TEXT"), GC.getUnitInfo(eConscriptUnit).getDescription());
 			szBuffer.assign(szTemp);
 
 			iConscriptPopulation = pHeadSelectedCity->getConscriptPopulation();

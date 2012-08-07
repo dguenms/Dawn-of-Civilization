@@ -39,4 +39,24 @@
 		<Tag>TXT_KEY_BUILDING_EMBASSY_GENERIC</Tag>
 		<English>Embassy</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ENSLAVE</Tag>
+		<English>ENSLAVE</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SLAVE</Tag>
+		<English>Slave</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_SLAVE_PLANTATION</Tag>
+		<English>Build Slave Plantation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION</Tag>
+		<English>Slave Plantation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_SLAVE</Tag>
+		<English>Slave</English>
+	</TEXT>
 </Civ4GameText>

@@ -1398,7 +1398,10 @@ class CvMainInterface:
 				iBtnH = 30
 
 				# Conscript button
-				szText = "<font=1>" + localText.getText("TXT_KEY_DRAFT", ()) + "</font>"
+				if pHeadSelectedCity.canEnslave(True):
+					szText = "<font=1>" + localText.getText("TXT_KEY_ENSLAVE", ()) + "</font>" #Leoreth
+				else:
+					szText = "<font=1>" + localText.getText("TXT_KEY_DRAFT", ()) + "</font>"
 				screen.setButtonGFC( "Conscript", szText, "", iBtnX, iBtnY, iBtnW, iBtnH, WidgetTypes.WIDGET_CONSCRIPT, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
 				screen.setStyle( "Conscript", "Button_CityT1_Style" )
 				screen.hide( "Conscript" )
@@ -1509,7 +1512,7 @@ class CvMainInterface:
 
 				# Conscript Button Show
 				screen.show( "Conscript" )
-				if (pHeadSelectedCity.canConscript()):
+				if (pHeadSelectedCity.canConscript() or pHeadSelectedCity.canEnslave(False)): #Leoreth
 					screen.enable( "Conscript", True )
 				else:
 					screen.enable( "Conscript", False )
@@ -3409,6 +3412,13 @@ class CvMainInterface:
 		if(inputClass.getFunctionName() == "MercenaryManagerButton"):
 			mercenaryManager.interfaceScreen()
 		# < Mercenaries End   >
+		
+		# Leoreth: enslave option
+		if inputClass.getFunctionName() == "Conscript":
+			pCity = CyInterface().getHeadSelectedCity()
+			if pCity.canEnslave(True):
+				pCity.conscript()
+			#utils.debugTextPopup("Enslave")
 
 		return 0
 	

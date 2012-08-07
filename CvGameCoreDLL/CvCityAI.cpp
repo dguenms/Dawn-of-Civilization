@@ -6326,6 +6326,34 @@ void CvCityAI::AI_doDraft(bool bForce)
 		return;
 	}
 
+	if (canEnslave())
+	{
+		int iConscriptPop = getConscriptPopulation();
+		int iHappyDiff = GC.getDefineINT("CONSCRIPT_POP_ANGER") - iConscriptPop;
+
+		if (angryPopulation(iHappyDiff) == 0)
+		{
+			if (2 * getPopulation() < getHighestPopulation())
+			{
+				if (getOwnerINLINE() == MALI || getOwnerINLINE() == CONGO || getOwnerINLINE() == ETHIOPIA || getOwnerINLINE() == NATIVE)
+				{
+					if (2 * getYieldRate((YieldTypes)0) > getYieldRate((YieldTypes)2))
+					{
+						conscript();
+						return;
+					}
+				}
+				else
+				{
+					conscript();
+					return;
+				}
+			}
+		}
+		
+		return;
+	}
+
 	if (canConscript())
 	{
 	    if (GC.getUnitInfo(getConscriptUnit()).getCombat() > 5)

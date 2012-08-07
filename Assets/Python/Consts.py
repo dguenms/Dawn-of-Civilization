@@ -218,7 +218,7 @@ tBirth = (
 655, # 187, #657AD			# Khmer
 700,					# Indonesia
 711,					# Moors
-910, # 193, #718AD			# Spain
+722, # 193, #718AD			# Spain
 750, # 196, #751AD			# France
 820, # 203, #829AD			# England
 840, # 205, #843AD			# Holy Rome
@@ -511,7 +511,7 @@ tYear = (
 ("660 ", "TXT_KEY_AD"),		# Khmer
 ("700 ", "TXT_KEY_AD"),		# Indonesia
 ("711 ", "TXT_KEY_AD"),		# Moors
-("910 ", "TXT_KEY_AD"),		# Spain
+("722 ", "TXT_KEY_AD"),		# Spain
 ("750 ", "TXT_KEY_AD"),		# France
 ("820 ", "TXT_KEY_AD"),		# England
 ("840 ", "TXT_KEY_AD"),		# Holy Rome
@@ -1792,7 +1792,7 @@ lEnemyCivsOnSpawn = [
 [], #Khmer
 [iKhmer, iKhmer], #Indonesia
 [], #Moors
-[iMoors, iMoors], #Spain
+[], #Spain
 [], #France
 [], #England
 [iRome,iArabia,iArabia], #Holy Rome
@@ -1921,7 +1921,7 @@ tAIStopBirthThreshold = (
     80, #Indonesia
     80, #Moors
     80, #Spain  #60 in vanilla and Warlords
-    0, #France #60 in vanilla and Warlords
+    80, #France #60 in vanilla and Warlords
     50, #England
     80, #Holy Rome #70 in vanilla and Warlords
     50, #Russia
@@ -2118,7 +2118,7 @@ iNumTechsFuture = iNumTechs+1
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 134
+iNumUnits = 137
 (iLion, iBear, iPanther, iWolf, iSettler, iWorker, iIndianFastWorker, iScout, iExplorer, iSpy, iJewishMissionary,
 iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary,
 iZoroastrianMissionary, iWarrior, iIncanQuechua, iHarappanMilitia, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
@@ -2134,7 +2134,7 @@ iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboa
 iGalleon, iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iFrigate, iShipOfTheLine, iIronclad, iTransport, iDestroyer, iBattleship,
 iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, iJetFighter, iBomber,
 iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iGreatGeneral, iGreatSpy,
-iBireme, iBersagliere, iLevy) = range(iNumUnits)
+iBireme, iBersagliere, iLevy, iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
 
 iCongoPombos = iKongoPombos
 iCamelArcher = iArabiaCamelarcher
@@ -2209,6 +2209,14 @@ iTribalism, iAgrarianism, iUrbanization, iCapitalism, iTotalitarianism, iEgalita
 iSelfSufficiency, iForcedLabor, iMercantilism, iFreeMarket, iStateProperty, iEnvironmentalism,
 iAnimism, iPantheon, iOrganizedReligion, iScholasticism, iFanaticism, iSecularism,
 iSubjugation, iViceroyalty, iResettlement, iOccupation, iImperialism, iCommonwealth) = range(iNumCivics)
+
+#Stability Display
+iNumStabilityTypes = 33
+(iStabilityDiplomacy, iStabilityNeighbor, iStabilityVassal, iStabilityImperialism, iStabilityContacts, iStabilityExpansion, iStabilityOuterExpansion,
+iStabilityOccupiedCore, iStabilityCivics, iStabilityCivicEra, iStabilityCivicCities, iStabilityCivicCap, iStabilityCivicTech, iStabilityForeignCoreCities,
+iStabilityCityHappiness, iStabilityCityCivics, iStabilityCityCulture, iStabilityCityTotal, iStabilityTrade, iStabilityEconomy, iStabilityHappiness,
+iStabilityEconomyExtra, iStabilityGreatDepression, iStabilityForeignGreatDepression, iStabilityPostCommunism, iStabilityDemocracyTransition, 
+iStabilityNumCities, iStabilityCombat, iStabilityCombatExtra, iStabilityAnarchy, iStabilityGoldenAge, iStabilityFall, iStabilityBase) = range(iNumStabilityTypes)
 
 #Regions
 iNumRegions = 38

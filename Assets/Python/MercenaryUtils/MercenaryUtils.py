@@ -2990,7 +2990,7 @@ class Mercenary:
 		# Leoreth: special treatment for new world and unique units, similar to SoI
 		unitType = self.getUnitInfoID()
 		
-		if unitType in [con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek, con.iHarappanMilitia, con.iTibetanKhampa, con.iKongoPombos, con.iPolishWingedHussar, con.iMoorishCamelGunner, con.iSeljukGhulamWarrior]:
+		if unitType in [con.iByzantineCataphract, con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek, con.iHarappanMilitia, con.iTibetanKhampa, con.iKongoPombos, con.iPolishWingedHussar, con.iMoorishCamelGunner, con.iSeljukGhulamWarrior]:
 			return False
 			
 		iStateReligion = gc.getPlayer(iPlayer).getStateReligion()

@@ -487,8 +487,8 @@ class UniquePowers:
                 # Only enslave land units!!
                 if (cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_LAND")):
                         iRandom = gc.getGame().getSorenRandNum(100, 'capture chance')
-                        if (iRandom < 50):
-                                pNewUnit = pWinningPlayer.initUnit(con.iWorker, pWinningUnit.getX(), pWinningUnit.getY(), UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
+                        if (iRandom < 25):
+                                pNewUnit = pWinningPlayer.initUnit(con.iAztecSlave, pWinningUnit.getX(), pWinningUnit.getY(), UnitAITypes.UNITAI_ENGINEER, DirectionTypes.DIRECTION_SOUTH)
                                 CyInterface().addMessage(pWinningPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Interface/Buttons/units/worker.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
                                 CyInterface().addMessage(pLosingPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_LOSE", ()),'SND_REVOLTEND',1,'Art/Interface/Buttons/units/worker.dds',ColorTypes(7),pWinningUnit.getX(),pWinningUnit.getY(),True,True)		
                                 if (pLosingUnit.getOwner() in con.lCivGroups[0]):
