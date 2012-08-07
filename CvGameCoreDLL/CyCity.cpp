@@ -2341,3 +2341,11 @@ int CyCity::getRegionID()
 		return m_pCity->getRegionID();
 	}
 }
+
+bool CyCity::canEnslave(bool bGeneral)
+{
+	if (m_pCity)
+	{
+		return m_pCity->canEnslave(bGeneral);
+	}
+}

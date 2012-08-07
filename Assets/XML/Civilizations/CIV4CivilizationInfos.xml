@@ -316,6 +316,10 @@
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_AZTEC_GREAT_GENERAL</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
+					<UnitType>UNIT_AZTEC_SLAVE</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -1326,6 +1330,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_ETHIOPIAN_GREAT_GENERAL</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
+					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -2901,6 +2909,10 @@
 					<UnitClassType>UNITCLASS_MACEMAN</UnitClassType>
 					<UnitType>UNIT_KONGO_POMBOS</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
+					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -3129,6 +3141,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_MALI_GREAT_GENERAL</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
+					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -3740,6 +3756,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
 					<UnitType>UNIT_NATIVE_AMERICA_DOG_SOLDIER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
+					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -5518,6 +5538,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
 					<UnitType>UNIT_ZULU_IMPI</UnitType>
+				<Unit>
+					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
+					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
+				</Unit>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>

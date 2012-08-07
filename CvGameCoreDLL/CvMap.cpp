@@ -368,7 +368,6 @@ void CvMap::updateVisibility()
 
 	for (iI = 0; iI < numPlotsINLINE(); iI++)
 	{
-		GC.getGameINLINE().logMsg("updateVisibility() plot id: %d", iI);
 		plotByIndexINLINE(iI)->updateVisibility();
 	}
 }

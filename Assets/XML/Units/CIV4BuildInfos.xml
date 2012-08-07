@@ -329,6 +329,26 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildPlantation.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,9</Button>
 		</BuildInfo>
 		<BuildInfo>
+			<Type>BUILD_SLAVE_PLANTATION</Type>
+			<Description>TXT_KEY_BUILD_SLAVE_PLANTATION</Description>
+			<Help/>
+			<PrereqTech>TECH_CALENDAR</PrereqTech>
+			<!-- Rhye  -->
+			<iTime>0</iTime>
+			<iCost>0</iCost>
+			<bKill>1</bKill>
+			<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
+			<RouteType>NONE</RouteType>
+			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<FeatureStructs/>
+			<HotKey>KB_P</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>1</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildPlantation.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,9</Button>
+		</BuildInfo>
+		<BuildInfo>
 			<Type>BUILD_QUARRY</Type>
 			<Description>TXT_KEY_BUILD_QUARRY</Description>
 			<Help/>

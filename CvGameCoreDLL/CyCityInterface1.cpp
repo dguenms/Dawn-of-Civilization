@@ -482,5 +482,6 @@ void CyCityPythonInterface1(python::class_<CyCity>& x)
 		.def("updateBuildingCommerce", &CyCity::updateBuildingCommerce, "void ()")
 
 		.def("getRegionID", &CyCity::getRegionID, "int ()")
+		.def("canEnslave", &CyCity::canEnslave, "bool (bool bGeneral)")
 		;
 }

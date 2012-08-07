@@ -35,3 +35,8 @@
 # Spanish spawn moved to 910 AD, Andalusia excluded from core
 # The AI won't join generals to mercenaries anymore
 # The Apostolic Palace now only has full members (i.e. Catholic state religion only)
+# added slaves
+	# can be drafted it in Sub-Saharan Africa while running Forced Labor
+	# African civs can sell their slaves to Europeans
+	# All others can use slaves to build slave plantations for increased yields or settle them as slaves in the city for extra production
+# changed the Aztec UP to give slaves now instead of workers

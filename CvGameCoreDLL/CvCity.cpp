@@ -1985,6 +1985,12 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	    }
 	}
 
+	// Leoreth: can't train slaves
+	if (GC.getUnitInfo(eUnit).getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+	{
+		return false;
+	}
+
 	return true;
 }
 
@@ -3684,6 +3690,12 @@ UnitTypes CvCity::getConscriptUnit() const
 		eBestUnit = ((UnitTypes)lConscriptUnit);
 	}
 
+	//Leoreth: enslavement
+	if (canEnslave(true))
+	{
+		eBestUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE"));
+	}
+
 	return eBestUnit;
 }
 
@@ -3776,7 +3788,12 @@ bool CvCity::canConscript() const
 CvUnit* CvCity::initConscriptedUnit()
 {
 	UnitAITypes eCityAI = NO_UNITAI;
+
 	UnitTypes eConscriptUnit = getConscriptUnit();
+
+	TCHAR szOut[1024];
+	sprintf(szOut, "Conscript unit ID: %d", (int)eConscriptUnit);
+	GC.getGame().logMsg(szOut);
 
 	if (NO_UNIT == eConscriptUnit)
 	{
@@ -3820,10 +3837,13 @@ CvUnit* CvCity::initConscriptedUnit()
 
 void CvCity::conscript()
 {
-	if (!canConscript())
+	if (!canConscript() && !canEnslave())
 	{
 		return;
 	}
+	
+	CvUnit* pUnit = initConscriptedUnit();
+	FAssertMsg(pUnit != NULL, "pUnit expected to be assigned (not NULL)");
 
 	changePopulation(-(getConscriptPopulation()));
 	changeConscriptAngerTimer(flatConscriptAngerLength());
@@ -3831,9 +3851,6 @@ void CvCity::conscript()
 	setDrafted(true);
 
 	GET_PLAYER(getOwnerINLINE()).changeConscriptCount(1);
-
-	CvUnit* pUnit = initConscriptedUnit();
-	FAssertMsg(pUnit != NULL, "pUnit expected to be assigned (not NULL)");
 
 	if (NULL != pUnit)
 	{
@@ -3843,6 +3860,8 @@ void CvCity::conscript()
 		}
 	}
 }
+
+
 
 
 int CvCity::getBonusHealth(BonusTypes eBonus) const
@@ -14924,4 +14943,47 @@ int CvCity::getRegionID() const
 bool CvCity::isMiddleEast() const
 {
 	return (getRegionID() == REGION_PERSIA || getRegionID() == REGION_MESOPOTAMIA || getRegionID() == REGION_ANATOLIA || (getX_INLINE() == 68 && getY_INLINE() == 45));
+}
+
+bool CvCity::canEnslave() const
+{
+	return canEnslave(false);
+}
+
+bool CvCity::canEnslave(bool bGeneral) const
+{
+	if (GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)3) == CIVIC_FORCED_LABOR && GET_PLAYER(getOwnerINLINE()).getMaxConscript() <= 0)
+	{
+		if (getRegionID() == REGION_WEST_AFRICA || getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_ETHIOPIA)
+		{
+			if (bGeneral)
+			{
+				return true;
+			}
+
+			if (isDisorder())
+			{
+				return false;
+			}
+
+			if (isDrafted())
+			{
+				return false;
+			}
+
+			if (getPopulation() <= 2)
+			{
+				return false;
+			}
+
+			if (getPopulation() < GC.getDefineINT("CONSCRIPT_MIN_CITY_POPULATION")+2)
+			{
+				return false;
+			}
+
+			return true;
+		}
+	}
+
+	return false;
 }

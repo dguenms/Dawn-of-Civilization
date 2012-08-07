@@ -37,6 +37,9 @@ LEADERHEADS
 From mods, without explicit mention of the original creators
 # The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)
 
+OTHER GRAPHICS
+# Slave unit: RFC Classical World by srpt
+
 MODULES
 # Himeji Castle, Empire State Building: Voyhkah
 

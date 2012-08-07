@@ -875,6 +875,8 @@ public:
 
 	//Leoreth
 	bool isMiddleEast() const;
+	bool canEnslave() const;
+	bool canEnslave(bool bGeneral) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

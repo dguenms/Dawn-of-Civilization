@@ -2906,23 +2906,24 @@ class Victory:
 
                 iGameTurn = gc.getGame().getGameTurn()
 
-                if (iProject == con.iApolloProgram):
-                        if (iPlayer == iRussia):
-				if self.getGoal(iRussia, 1) == -1:
-					self.setRussianProjects(2, 1)
-					if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
-						self.setGoal(iRussia, 1, 1)
-			else:
-				self.setGoal(iRussia, 1, 0)
+		if self.getGoal(iRussia, 1) == -1:
+			if (iProject == con.iApolloProgram):
+				if (iPlayer == iRussia):
+					if self.getGoal(iRussia, 1) == -1:
+						self.setRussianProjects(2, 1)
+						if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
+							self.setGoal(iRussia, 1, 1)
+				else:
+					self.setGoal(iRussia, 1, 0)
 				
-		elif iProject == con.iManhattanProject:
-			if iPlayer == iRussia:
-				if self.getGoal(iRussia, 1) == -1:
-					self.setRussianProjects(1, 1)
-					if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
-						self.setGoal(iRussia, 1, 1)
-			else:
-				self.setGoal(iRussia, 1, 0)
+			elif iProject == con.iManhattanProject:
+				if iPlayer == iRussia:
+					if self.getGoal(iRussia, 1) == -1:
+						self.setRussianProjects(1, 1)
+						if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
+							self.setGoal(iRussia, 1, 1)
+				else:
+					self.setGoal(iRussia, 1, 0)
 
 
 
