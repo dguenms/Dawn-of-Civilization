@@ -7094,7 +7094,7 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 	}
 
 	// Leoreth: classical wonders that require Pantheon (only civic prereq so far)
-	if (kBuilding.getPrereqCivic() == 21)
+	if (kBuilding.getPrereqCivic() == CIVIC_PANTHEON)
 	{
 	    szBuffer.append(NEWLINE);
 	    szBuffer.append(gDLL->getText("TXT_KEY_PANTHEON_REQUIREMENT"));
