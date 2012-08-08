@@ -2336,16 +2336,18 @@ void CyCity::changeBuildingCommerceChange(int eBuildingClass, int eCommerce, int
 
 int CyCity::getRegionID()
 {
-	if (m_pCity)
-	{
-		return m_pCity->getRegionID();
-	}
+	return m_pCity ? m_pCity->getRegionID() : -1;
 }
 
 bool CyCity::canEnslave(bool bGeneral)
 {
+	return m_pCity ? m_pCity->canEnslave(bGeneral) : false;
+}
+
+void CyCity::setWeLoveTheKingDay(bool bNewValue)
+{
 	if (m_pCity)
 	{
-		return m_pCity->canEnslave(bGeneral);
+		m_pCity->setWeLoveTheKingDay(bNewValue);
 	}
 }

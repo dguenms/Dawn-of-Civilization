@@ -1307,5 +1307,9 @@
 			<Type>INTERFACE_AUTOMATE</Type>
 			<Path>Art/Interface/Buttons/Actions/Automate.dds</Path>
 		</InterfaceArtInfo>
+		<InterfaceArtInfo>
+			<Type>INTERFACE_SACRIFICE</Type>
+			<Path>,Art/Interface/Buttons/Buildings/Courthouse.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,2,2</Path>
+		</InterfaceArtInfo>
 	</InterfaceArtInfos>
 </Civ4ArtDefines>

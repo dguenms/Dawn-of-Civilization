@@ -1652,6 +1652,17 @@ class CvMainInterface:
 						screen.show( "BottomButtonContainer" )
 						
 						iCount = iCount + 1
+												
+					pUnit = g_pSelectedUnit
+					iUnitType = pUnit.getUnitType()
+					pUnitOwner = gc.getPlayer(pUnit.getOwner())
+					if pUnitOwner.isTurnActive():
+						if iUnitType == con.iAztecSlave:
+							if gc.getMap().plot(pUnit.getX(), pUnit.getY()).isCity():
+								if gc.getMap().plot(pUnit.getX(), pUnit.getY()).getPlotCity().getOwner() == pUnit.getOwner():
+									screen.appendMultiListButton( "BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo("INTERFACE_SACRIFICE").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 300, 300, False )
+									screen.show( "BottomButtonContainer" )
+									iCount = iCount + 1
 					
 					# < Mercenaries Start >					
 					if(not self.repainting):
@@ -3419,6 +3430,16 @@ class CvMainInterface:
 			if pCity.canEnslave(True):
 				pCity.conscript()
 			#utils.debugTextPopup("Enslave")
+			
+		# Leoreth: sacrifice Aztec slaves
+		if (inputClass.getNotifyCode() == 11 and inputClass.getData1() == 300 and inputClass.getData2() == 300):
+			self.pPushedButtonUnit = g_pSelectedUnit
+			iX = self.pPushedButtonUnit.getX()
+			iY = self.pPushedButtonUnit.getY()
+			city = gc.getMap().plot(iX, iY).getPlotCity()
+			city.changeHappinessTimer(5)
+			city.setWeLoveTheKingDay(True)
+			self.pPushedButtonUnit.kill(false, city.getOwner())
 
 		return 0
 	

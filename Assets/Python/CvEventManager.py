@@ -1128,4 +1128,4 @@ class CvEventManager:
 		city, iPlayer, iGold = argsList
 		
 	def onTradeMission(self, argsList):
-		iPlayer, iGold = argsList
+		iUnitType, iPlayer, iGold = argsList

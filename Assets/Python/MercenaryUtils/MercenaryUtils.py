@@ -3010,6 +3010,9 @@ class Mercenary:
 		if bNewWorldOnly and not bNewWorldDiscovered:
 			if not gc.getPlayer(iPlayer).canTrain(unitType, False, False):
 				return False
+			if len(cityList) > 0:
+				if not gc.getPlayer(iPlayer).getCapitalCity().canTrain(unitType, False, False):
+					return False
 				
 		if unitType == con.iIncanQuechua:
 			return con.rPeru in regionList or (gc.getPlayer(iPlayer).canContact(con.iInca) and (bNewWorldOnly or bNewWorldDiscovered))

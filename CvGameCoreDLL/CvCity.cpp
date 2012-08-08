@@ -1135,7 +1135,8 @@ void CvCity::doTurn()
 	}
 	else
 	{
-		setWeLoveTheKingDay(false);
+		if (getHappinessTimer() == 0) //Leoreth
+			setWeLoveTheKingDay(false);
 	}
 
 	// ONEVENT - Do turn
