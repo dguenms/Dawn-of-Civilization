@@ -3863,6 +3863,17 @@ void CvUnitAI::AI_merchantMove()
 {
 	PROFILE_FUNC();
 
+	//Leoreth: so slaves don't bother with the other considerations
+	if (!isGoldenAge())
+	{
+		if(AI_trade(0))
+		{
+			return;
+		}
+
+		getGroup()->pushMission(MISSION_SKIP);
+	}
+
 	if (AI_construct())
 	{
 		return;

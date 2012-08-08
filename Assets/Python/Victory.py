@@ -3014,14 +3014,18 @@ class Victory:
 	def onTradeMission(self, iPlayer, iGold):
 		if iPlayer == iTamils:
 			self.changeTamilTradeGold(iGold)
+		elif iPlayer == iCongo:
+			self.changeCongoSlaveCounter(iGold)
+			if self.getGoal(iCongo, 1) == 1 and self.getCongoSlaveCounter(iGold) >= 1000:
+				self.setGoal(iCongo, 1, 1)
 			
-	def onUnitGifted(self, iOwner, iReceiver, unit):
-		if iOwner == iCongo:
-			if unit.getUnitType() == con.iWorker:
-				if pCongo.getCivics(3) == con.iForcedLabor and gc.getPlayer(iReceiver).getCivics(3) == con.iForcedLabor:
-					self.changeCongoSlaveCounter(1)
-					if self.getCongoSlaveCounter() >= 30:
-						self.setGoal(iCongo, 1, 1)
+	#def onUnitGifted(self, iOwner, iReceiver, unit):
+	#	if iOwner == iCongo:
+	#		if unit.getUnitType() == con.iWorker:
+	#			if pCongo.getCivics(3) == con.iForcedLabor and gc.getPlayer(iReceiver).getCivics(3) == con.iForcedLabor:
+	#				self.changeCongoSlaveCounter(1)
+	#				if self.getCongoSlaveCounter() >= 30:
+	#					self.setGoal(iCongo, 1, 1)
                                        
 
 
@@ -4011,7 +4015,7 @@ class Victory:
 				aHelp.append(self.getIcon(fPercent >= 10.0) + localText.getText("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", (str(u"%.2f%%" % fPercent), str(10))))
 			elif iGoal == 1:
 				iSlaves = self.getCongoSlaveCounter()
-				aHelp.append(self.getIcon(iSlaves >= 30) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, 30)))
+				aHelp.append(self.getIcon(iSlaves >= 1000) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, 1000)))
 
 		elif iPlayer == iAmerica:
 			if iGoal == 0:

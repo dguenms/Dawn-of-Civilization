@@ -1659,6 +1659,21 @@ class RFCUtils:
 			
 	def getCivName(self, iCiv):
 		return CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()), ())
+		
+	def moveSlaveToNewWorld(self, iPlayer, unit):
+		lEurope = [con.rBritain, con.rIberia, con.rEurope, con.rItaly, con.rScandinavia, con.rRussia, con.rBalkans, con.rAnatolia, con.rMaghreb]
+		
+		lColonies = []
+		for city in PyPlayer(iPlayer).getCityList():
+			if city.GetCy().getRegionID() not in lEurope:
+				lColonies.append(city)
+				
+		if len(lColonies) == 0: return
+		
+		iRand = gc.getGame().getSorenRandNum(len(lColonies), 'random colony')
+		city = lColonies[iRand].GetCy()
+		
+		unit.setXYOld(city.getX(), city.getY())
 			
 		
 	
