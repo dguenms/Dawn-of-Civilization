@@ -6099,7 +6099,7 @@ bool CvUnit::trade()
 
 	GET_PLAYER(getOwnerINLINE()).changeGold(getTradeGold(plot()));
 
-	CvEventReporter::getInstance().tradeMission(getOwnerINLINE(), getTradeGold(plot()));
+	CvEventReporter::getInstance().tradeMission(getUnitType(), getOwnerINLINE(), getTradeGold(plot()));
 
 	if (plot()->isActiveVisible(false))
 	{

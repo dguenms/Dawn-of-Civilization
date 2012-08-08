@@ -27914,7 +27914,7 @@
 			<iWorkRate>100</iWorkRate>
 			<iBaseDiscover>0</iBaseDiscover>
 			<iDiscoverMultiplier>0</iDiscoverMultiplier>
-			<iBaseHurry>0</iBaseHurry>
+			<iBaseHurry>20</iBaseHurry>
 			<iHurryMultiplier>0</iHurryMultiplier>
 			<iBaseTrade>0</iBaseTrade>
 			<iTradeMultiplier>0</iTradeMultiplier>

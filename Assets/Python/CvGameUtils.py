@@ -6,9 +6,11 @@
 import CvUtil
 from CvPythonExtensions import *
 import CvEventInterface
+import RFCUtils
 
 # globals
 gc = CyGlobalContext()
+utils = RFCUtils.RFCUtils()
 
 class CvGameUtils:
 	"Miscellaneous game functions"
@@ -440,6 +442,11 @@ class CvGameUtils:
 		
 	def getWidgetHelp(self, argsList):
 		eWidgetType, iData1, iData2, bOption = argsList
+		
+		iType = WidgetTypes.WIDGET_GENERAL
+		if (eWidgetType == iType):
+			if (iData1 == 300):
+				return CyTranslator().getText("TXT_KEY_BUTTON_SACRIFICE", (utils.getTurns(5), utils.getTurns(5)))
 		
 		return u""
 		

@@ -59,4 +59,8 @@
 		<Tag>TXT_KEY_SPECIALIST_SLAVE</Tag>
 		<English>Slave</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</English>
+	</TEXT>
 </Civ4GameText>

@@ -186,6 +186,7 @@ public:
 
 	int getRegionID(); //Leoreth
 	bool canEnslave(bool bGeneral); //Leoreth
+	void setWeLoveTheKingDay(bool bNewValue); //Leoreth
 
 	int getHighestPopulation();
 	void setHighestPopulation(int iNewValue);
