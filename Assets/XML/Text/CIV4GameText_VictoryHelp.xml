@@ -446,6 +446,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SLAVES_TRADED</Tag>
-		<English>Slaves traded: %d1 / %d2</English>
+		<English>Gold from slave trade: %d1 / %d2</English>
 	</TEXT>
 </Civ4GameText>

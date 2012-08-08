@@ -203,7 +203,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
 		eventManager.addEventHandler("changeWar", self.onChangeWar)
-		eventManager.addEventHandler("unitGifted", self.onUnitGifted)
+		#eventManager.addEventHandler("unitGifted", self.onUnitGifted)
                
                 self.eventManager = eventManager
 
@@ -665,15 +665,18 @@ class CvRFCEventHandler:
 			self.vic.onPlayerGoldTrade(iToPlayer, iGold)
 			
 	def onTradeMission(self, argsList):
-		iPlayer, iGold = argsList
+		iUnitType, iPlayer, iGold = argsList
 		
 		if iPlayer == con.iTamils:
 			self.vic.onTradeMission(iPlayer, iGold)
+		elif iPlayer == con.iCongo:
+			if iUnitType == con.iNativeSlave:
+				self.vic.onTradeMission(iPlayer, iGold)
 			
 	def onUnitGifted(self, argsList):
 		pUnit, iOwner, pPlot = argsList
-		if iOwner == con.iCongo:
-			self.vic.onUnitGifted(iOwner, pPlot.getOwner(), pUnit)
+		#if iOwner == con.iCongo:
+		#	self.vic.onUnitGifted(iOwner, pPlot.getOwner(), pUnit)
 			
 	def onUnitCreated(self, argsList):
 		utils.debugTextPopup("Unit created")
@@ -685,6 +688,10 @@ class CvRFCEventHandler:
 		
 		if unit.getUnitType() == con.iSettler and city.getOwner() == iChina and utils.getHumanID() != iChina:
 			utils.handleChineseCities(unit)
+			
+		#help AI by moving new slaves to the new world
+		if unit.getUnitType() == con.iSlave and city.getRegionID() in [con.rIberia, con.rBritain, con.rEurope, con.rScandinavia, con.rRussia, con.rItaly, con.rBalkans, con.rMaghreb, con.rAnatolia] and utils.getHumanID() != city.getOwner():
+			utils.moveSlaveToNewWorld(city.getOwner(), unit)
 			
 	
 		
