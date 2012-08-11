@@ -3771,7 +3771,7 @@ class RiseAndFall:
 										lFreePlots.append((i, j))
 									
 				for iEnemy in lEnemyCivs:
-					gc.getTeam(iCiv).declareWar(iEnemy)
+					gc.getTeam(iCiv).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
 									
 				if iCount > 0:
 					for i in range(iCount):
@@ -3804,6 +3804,7 @@ class RiseAndFall:
 						iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random spawn plot')
 						tPlot = lFreePlots[iRand]
 						i, j = tPlot
+						gc.getTeam(iRussia).declareWar(pPlot.getOwner(), True, WarPlanTypes.WARPLAN_LIMITED)
 						utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
 						utils.makeUnitAI(con.iCannon, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				else:

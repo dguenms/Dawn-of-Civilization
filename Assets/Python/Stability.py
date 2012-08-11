@@ -1225,7 +1225,7 @@ class Stability:
 
                 if (self.getCombatResultTempModifier(iPlayer) != 0):
                         iTempExpansionThreshold = iNewBaseStability
-			pPlayer.changeStabilityCategory(con.iStabilityType, -pPlayer.getStabilityCategory(con.iStabilityCombat))
+			pPlayer.changeStabilityCategory(con.iStabilityCombat, -pPlayer.getStabilityCategory(con.iStabilityCombat))
                         iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCombat, max(-20, min(20,self.getCombatResultTempModifier(iPlayer))))
                         self.setParameter(iPlayer, iParExpansion1, True, iNewBaseStability - iTempExpansionThreshold) 
                         #print("iNewBaseStability combat result", iNewBaseStability, iPlayer)
@@ -1372,6 +1372,8 @@ class Stability:
 			#gc.getPlayer(owner).changeStability(-iTotalCityLostModifier) # test DLL
                         #print("Stability - city lost", iTotalCityLostModifier, owner)
                         
+		iPlayer = playerType
+			
                 if (playerType < con.iNumPlayers):
                         iTempExpansionThreshold = self.getStability(playerType)
                         if (iGameTurn == getTurnForYear(con.tBirth[playerType]) or iGameTurn == getTurnForYear(con.tBirth[playerType])+1 or iGameTurn == getTurnForYear(con.tBirth[playerType])+2):
