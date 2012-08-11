@@ -61,7 +61,7 @@ class Stability:
         def getStability( self, iCiv ):
                 return sd.scriptDict['lStability'][iCiv]
 
-        def setStability( self, iCiv, iNewValue ):
+        def setStability( self, iCiv, iNewValue):
                 sd.scriptDict['lStability'][iCiv] = iNewValue
 
         def getStatePropertyCountdown( self, iCiv ):
@@ -147,6 +147,10 @@ class Stability:
 
         def setLastRecordedStabilityStuff( self, iParameter, iNewValue ):
                 sd.scriptDict['lLastRecordedStabilityStuff'][iParameter] = iNewValue
+		
+	def changeStabilityCategory(self, pPlayer, iStabilityType, iChange):
+		pPlayer.changeStabilityCategory(iStabilityType, iChange)
+		return iChange
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -225,39 +229,41 @@ class Stability:
 
                         
                 for iPlayer in range(iNumPlayers):
+		
+			pPlayer = gc.getPlayer(iPlayer)
                         
                         if (gc.getPlayer(iPlayer).isAlive()):
                                 iTempNormalizationThreshold = self.getStability(iPlayer)
 
                                 if (iGameTurn > getTurnForYear(1760) and iGameTurn % utils.getTurns(12) == 7):
                                         if (self.getStability(iPlayer) < 40):
-                                                self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-						gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityCap, 1) )
+						#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                                 elif (iGameTurn > getTurnForYear(-1000) and iGameTurn % utils.getTurns(22) == 7):
                                         if (self.getStability(iPlayer) < 20 and self.getStability(iPlayer) >= -50):
-                                                self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-						gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityCap, 1) )
+						#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                                 if (iGameTurn % utils.getTurns(10) == 8):
                                         if (self.getStability(iPlayer) < -50):
-                                                self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-						gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityCap, 1) )
+						#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                                 if (iGameTurn % utils.getTurns(10) == 9):
                                         if (self.getStability(iPlayer) > 50):
-                                                self.setStability(iPlayer, self.getStability(iPlayer) - 1 )
-						gc.getPlayer(iPlayer).changeStability(-1) # test DLL
+                                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityCap, -1) )
+						#gc.getPlayer(iPlayer).changeStability(-1) # test DLL
                                 if (iGameTurn > getTurnForYear(-1000) and iGameTurn % utils.getTurns(12) == 5):
                                         iPermanentModifier = self.getStability(iPlayer) - self.getBaseStabilityLastTurn(iPlayer)
                                         if (iPermanentModifier > 15):
-                                                self.setStability(iPlayer, self.getStability(iPlayer) - 1 )
-						gc.getPlayer(iPlayer).changeStability(-1) # test DLL
+                                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityCap, -1) )
+						#gc.getPlayer(iPlayer).changeStability(-1) # test DLL
                                         elif (iPermanentModifier < -40):
-                                                self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-						gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityCap, 1) )
+						#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                                 if (iGameTurn % utils.getTurns(20) == 1):
                                         if (gc.getPlayer(iPlayer).isHuman()):
                                                 iHandicap = (gc.getGame().getHandicapType() - 1)
-                                                self.setStability(iPlayer, self.getStability(iPlayer) + iHandicap )
-						gc.getPlayer(iPlayer).changeStability(iHandicap) # test DLL
+                                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityDifficulty, iHandicap) )
+						#gc.getPlayer(iPlayer).changeStability(iHandicap) # test DLL
                                 
                                 #print("stability wave", self.getStability(iPlayer) - iTempNormalizationThreshold)
                                 self.setParameter(iPlayer, iParDiplomacyE, True, self.getStability(iPlayer) - iTempNormalizationThreshold)
@@ -284,8 +290,8 @@ class Stability:
                                 iTempNormalizationThreshold = self.getStability(iPlayer)
                                 for j in range(len(con.lCivStabilityGroups)):
                                         if (iPlayer in con.lCivStabilityGroups[j]):
-                                                self.setStability(iPlayer, (self.getStability(iPlayer) + lContinentModifier[j]))
-						gc.getPlayer(iPlayer).changeStability(lContinentModifier[j]) # test DLL
+                                                self.setStability(iPlayer, (self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityNormalization, lContinentModifier[j])))
+						#gc.getPlayer(iPlayer).changeStability(lContinentModifier[j]) # test DLL
                                 self.setParameter(iPlayer, iParDiplomacyE, True, self.getStability(iPlayer) - iTempNormalizationThreshold)
 
 
@@ -308,6 +314,8 @@ class Stability:
                         if (gc.getPlayer(iPlayer).isAlive()):
                                iDifferences += abs(self.getStability(iPlayer) - iMean)
                 iSigma = iDifferences/iNumAlive
+		
+		lStabilityArray = [self.getStability(iLoopCiv) for iLoopCiv in range(con.iNumPlayers)]
 
                 #print ("mean=", iMean, "sigma=", iSigma)
                 
@@ -394,6 +402,9 @@ class Stability:
                                                 self.setParameter(iMonitorPlayer, iParCivicsE, True, 1)
                                         else: 
                                                 self.setParameter(iMonitorPlayer, iParCivicsE, True, -1)
+						
+		for iLoopCiv in range(con.iNumPlayers):
+			gc.getPlayer(iLoopCiv).changeStabilityCategory(con.iStabilityNormalization, self.getStability(iLoopCiv) - lStabilityArray[iLoopCiv])
 
                 #print("parametersE after ", self.getStabilityParameters(iParDiplomacyE), self.getStabilityParameters(iParEconomyE), self.getStabilityParameters(iParCitiesE), self.getStabilityParameters(iParCivicsE), self.getStabilityParameters(iParExpansionE))
                 #self.setParameter(iPlayer, iParDiplomacyE, True, self.getStability(iMonitorPlayer) - iTempNormalizationThreshold)
@@ -438,8 +449,9 @@ class Stability:
 
                 else:   #every 3 turns
                         iNewBaseStability = 0
+			pPlayer.resetStabilityCategories()
                
-                        iNewBaseStability += 10*teamPlayer.getDefensivePactTradingCount()
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityDiplomacy, 10*teamPlayer.getDefensivePactTradingCount())
                         if (teamPlayer.getDefensivePactTradingCount() > 0):
                                 #print("iNewBaseStability defensive pact",iNewBaseStability, iPlayer)
                                 pass
@@ -448,7 +460,7 @@ class Stability:
                         #        iNewBaseStability += 10
                         #        #print("iNewBaseStability permanent alliance",iNewBaseStability, iPlayer)
                         
-                        iNewBaseStability += 2*teamPlayer.getOpenBordersTradingCount()
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityDiplomacy, 2*teamPlayer.getOpenBordersTradingCount())
                         #print("iNewBaseStability open borders",iNewBaseStability, iPlayer)
 
                         for iLoopCiv in range (iNumPlayers):
@@ -456,23 +468,23 @@ class Stability:
                                         if (gc.getPlayer(iLoopCiv).isAlive()):
                                                 if (self.getStability(iLoopCiv) < -20):
                                                         if (self.getStability(iPlayer) >= 0):
-                                                                iNewBaseStability -= 5
+                                                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityNeighbor, -5)
                                                                 #print("iNewBaseStability neighbours", iNewBaseStability, iPlayer)
                                                                 break
                                 
                         for iLoopCiv in range( iNumPlayers ):                                
                                 if (teamPlayer.isVassal(iLoopCiv)):
-                                        iNewBaseStability += 10                                
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityVassal, 10)                           
                                         #print("iNewBaseStability vassal",iNewBaseStability, iPlayer)
-                                        iNewBaseStability += min(5,max(-6,self.getStability(iLoopCiv)/4))
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityVassal, min(5,max(-6,self.getStability(iLoopCiv)/4)))
                                         break
 
                         for iLoopCiv2 in range( iNumPlayers ):                                
                                 if (gc.getTeam(gc.getPlayer(iLoopCiv2).getTeam()).isVassal(iPlayer)):
-                                        iNewBaseStability += min(3,max(-3,self.getStability(iLoopCiv2)/4))                             
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityVassal, min(3,max(-3,self.getStability(iLoopCiv2)/4)))                             
                                         #print("iNewBaseStability master",iNewBaseStability, iPlayer)
                                         if (iCivic5 == con.iViceroyalty):
-                                                iNewBaseStability += 4
+                                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityVassal, 4)
                                                 #print("iNewBaseStability civic 6th column viceroyalty",iNewBaseStability, iPlayer)
 						
 			#Leoreth: imperialism: extra stability for controlling foreign cores:
@@ -482,13 +494,13 @@ class Stability:
 					dummy1, plotList1 = utils.squareSearch( con.tNormalAreasTL[reborn][iOwnedCiv], con.tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iPlayer )
 					dummy2, plotList2 = utils.squareSearch( con.tNormalAreasTL[reborn][iOwnedCiv], con.tNormalAreasBR[reborn][iOwnedCiv], utils.ownedCityPlots, iOwnedCiv )
 					if ((len(plotList1) >= 2 and len(plotList1) > len(plotList2)) or (len(plotList1) >= 1 and not gc.getPlayer(iOwnedCiv).isAlive())):
-						iNewBaseStability += 2*len(plotList1)
+						iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityImperialism, 2*len(plotList1))
 
                         iNumContacts = 0
                         for iLoopCiv3 in range( iNumPlayers ):     
                                 if (pPlayer.canContact(iLoopCiv3) and iLoopCiv3 != iPlayer):
                                         iNumContacts += 1
-                        iNewBaseStability -= (iNumContacts/3 - 4)
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityContacts, -(iNumContacts/3 - 4))
                         #print("iNewBaseStability contacts",iNewBaseStability, iPlayer)
                         
                         self.setParameter(iPlayer, iParDiplomacy3, False, iNewBaseStability) 
@@ -511,20 +523,20 @@ class Stability:
 			#	iMaxPlotsAbroad /= 2
                         
                         iNumPlotsAbroad = max(0,self.getOwnedPlotsLastTurn(iPlayer)-iMaxPlotsAbroad*2/3)                        
-                        iNewBaseStability -= iNumPlotsAbroad*2/7
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityExpansion, -iNumPlotsAbroad*2/7)
 			
 			iMaxPlotsAbroad -= self.getOwnedForeignCitiesLastTurn(iPlayer)*3
 			
 			iNumOuterPlotsAbroad = max(0, self.getOwnedOuterPlotsLastTurn(iPlayer)-iMaxPlotsAbroad/2)
-			iNewBaseStability -= iNumOuterPlotsAbroad/4
+			iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityOuterExpansion, -iNumOuterPlotsAbroad/4)
 			
                         #if (not gc.getPlayer(iPlayer).isHuman()):
                         #        iNewBaseStability += iNumPlotsAbroad*1/14
                         #print("iNewBaseStability number of owned plots abroad",iNewBaseStability, iPlayer)
                         if (self.getOwnedCitiesLastTurn(iPlayer) <= 20):
-                                iNewBaseStability -= self.getOwnedCitiesLastTurn(iPlayer)*7
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityOccupiedCore, -self.getOwnedCitiesLastTurn(iPlayer)*7)
                         else:
-                                iNewBaseStability -= (self.getOwnedCitiesLastTurn(iPlayer)-6)*10
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityOccupiedCore, -(self.getOwnedCitiesLastTurn(iPlayer)-6)*10)
                         #print("iNewBaseStability number of cities in homeland not owned", self.getOwnedCitiesLastTurn(iPlayer), iNewBaseStability, iPlayer)
                         self.setParameter(iPlayer, iParExpansion3, False, iNewBaseStability - iTempExpansionThreshold)
 			
@@ -646,109 +658,109 @@ class Stability:
 
 			# authoritarian civics
 			if (iCivic0 == con.iAutocracy and iCivic2 == con.iTotalitarianism):
-				iNewBaseStability += 10
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 10)
 				
 			if (iCivic2 == con.iTotalitarianism and iCivic3 == con.iStateProperty):
-				iNewBaseStability += 5
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 5)
 				
 			if (iCivic2 == con.iTotalitarianism and iCivic1 == con.iUniversalSuffrage):
-				iNewBaseStability -= 10
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, -10)
 				
 			if (iCivic2 == con.iTotalitarianism and iCivic4 == con.iSecularism):
-				iNewBaseStability += 3
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 3)
 				
 			# communist civics
 			if (iCivic1 == con.iSupremeCouncil and iCivic3 == con.iStateProperty):
-				iNewBaseStability += 7
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 7)
 				
 			if (iCivic3 == con.iStateProperty and iCivic2 in [con.iCapitalism, con.iAgrarianism]):
-				iNewBaseStability -= 7
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, -7)
 				
 			if (iCivic1 == con.iSupremeCouncil and iCivic0 in [con.iDynasticism, con.iTheocracy]):
-				iNewBaseStability -= 4
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, -4)
 				
 			# democratic civics
 			if (iCivic0 == con.iRepublic and iCivic4 == con.iSecularism):
-				iNewBaseStability += 2
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 2)
 				
 			if (iCivic0 == con.iTyranny and iCivic1 in [con.iAbsolutism, con.iUniversalSuffrage]):
-				iNewBaseStability -= 4
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, -4)
 				
 			if (iCivic0 == con.iRepublic and iCivic1 == con.iUniversalSuffrage):
-				iNewBaseStability += 4
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 4)
 				
 			# religious civics
 			if (iCivic0 == con.iTheocracy and iCivic4 == con.iFanaticism):
-				iNewBaseStability += 4
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 4)
 				
 			if (iCivic0 == con.iTheocracy and iCivic4 == con.iSecularism):
-				iNewBaseStability -= 8
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, -8)
 				
 			if (iCivic0 == con.iTheocracy and iCivic2 == con.iEgalitarianism):
-				iNewBaseStability -= 3
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, -3)
 				
 			if (iCivic2 == con.iEgalitarianism and iCivic4 == con.iSecularism):
-				iNewBaseStability += 3
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 3)
 				
 			# monarchist civics
 			if (iCivic1 == con.iVassalage and iCivic3 == con.iAgrarianism):
-				iNewBaseStability += 3
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 3)
 				
 			if (iCivic0 == con.iDynasticism and iCivic1 == con.iVassalage):
-				iNewBaseStability += 3
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 3)
 				
 			# other
 			if (iCivic0 == con.iCityStates and iCivic1 == con.iVassalage):
-				iNewBaseStability -= 2
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, -2)
 				
 			if (iCivic0 == con.iCityStates and iCivic2 != con.iUrbanization):
-				iNewBaseStability -= 3
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, -3)
 				
 			if (iCivic0 == con.iCityStates and iCivic3 == con.iMercantilism):
-				iNewBaseStability += 3
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 3)
 				
 			if (iCivic1 == con.iAbsolutism and iCivic3 == con.iMercantilism):
-				iNewBaseStability += 3
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 3)
 				
 			if (iCivic2 == con.iCapitalism and iCivic3 == con.iFreeMarket):
-				iNewBaseStability += 2
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivics, 2)
 
                         if (iCivic1 == con.iVassalage): #vassalage
                                 if (pPlayer.getCurrentEra() == con.iMedieval):	#Bonus in medieval, Penalty in others
-                                        iNewBaseStability += 3
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, 3)
                                 else:
-                                        iNewBaseStability -= 3
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, -3)
                                 #print("iNewBaseStability civic single 1",iNewBaseStability, iPlayer)
 
 			if (iCivic0 == con.iTheocracy): #Theocracy
 				if (pPlayer.getCurrentEra() >= con.iIndustrial):	#Penalty in industrial or later
-					iNewBaseStability -= 5
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, -5)
 
 			if (iCivic4 == con.iPantheon): #Pantheon
 				if (pPlayer.getCurrentEra() <= con.iClassical):	#Bonus in classical and ancient, penalty in others
-					iNewBaseStability += 3
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, 3)
 				else:
-					iNewBaseStability -= 3
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, -3)
 					
 			if (iCivic0 == con.iCityStates):
 				if (pPlayer.getCurrentEra() > con.iClassical):
-					iNewBaseStability -= 4
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, -4)
 				if pPlayer.getCurrentEra() >= con.iIndustrial:
-					iNewBaseStability -= 4
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, -4)
 
 			if (iCivic1 == con.iRepresentation): #Representation
 				if (pPlayer.getCurrentEra() >= con.iIndustrial):	#Bonus in industrial or later
-					iNewBaseStability += 3
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, 3)
 					
 			if iCivic0 == con.iRepublic:
 				if pPlayer.getCurrentEra() == con.iMedieval:
-					iNewBaseStability -= 10
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicEra, -10)
 
                         if (iCivic1 == con.iAbsolutism): #Absolutism			#threshold=5, cap=-7
                                 if (pPlayer.getNumCities() <= 5):
-                                        iNewBaseStability += 5
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicCities, 5)
                                 else:
-                                        iNewBaseStability += max(-7,(5 - pPlayer.getNumCities()))
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicCities, max(-7,(5 - pPlayer.getNumCities())))
                                 #print("iNewBaseStability civic single 2",iNewBaseStability, iPlayer)
 
 #                        if (iCivic0 == 2): #represent
@@ -756,28 +768,28 @@ class Stability:
 #                                #print("iNewBaseStability civic single 3",iNewBaseStability, iPlayer)
 
 			if (iCivic1 == con.iRepresentation):
-				iNewBaseStability += max(-8, 2*(4 - pPlayer.getNumCities()))
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicCities, max(-8, 2*(4 - pPlayer.getNumCities())))
 
 			if (iCivic0 == con.iRepublic): #Republic
-				iNewBaseStability += max(-5,5 - pPlayer.getNumCities())	#threshold=5, cap=-5
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicCities, max(-5,5 - pPlayer.getNumCities()))	#threshold=5, cap=-5
 				
 			if iCivic0 == con.iCityStates:
 				if pPlayer.getNumCities() > 4:
-					iNewBaseStability -= min(20, (pPlayer.getNumCities() - 4) * 4)
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicCities, -min(20, (pPlayer.getNumCities() - 4) * 4))
 
                         if (iCivic2 == con.iTotalitarianism): #Totalitarianism
-                                iNewBaseStability += min(10, pPlayer.getNumCities()/5) #slightly counterbalances the effect of number of cities (below)
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicCities, min(10, pPlayer.getNumCities()/5)) #slightly counterbalances the effect of number of cities (below)
 
                                 #print("iNewBaseStability civic single 4",iNewBaseStability, iPlayer)
                                 
                         if (iCivic0 == con.iAutocracy): #Autocracy
-                                iNewBaseStability += 3*teamPlayer.getAtWarCount(True)
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityDiplomacy, 3*teamPlayer.getAtWarCount(True))
                                 #print("iNewBaseStability civic single 5",iNewBaseStability, iPlayer)
 				
 			if iCivic4 == con.iFanaticism:
 				for iEnemyCiv in range(con.iNumPlayers):
 					if teamPlayer.isAtWar(iEnemyCiv) and pPlayer.getStateReligion() != gc.getPlayer(iEnemyCiv).getStateReligion():
-						iNewBaseStability += 3
+						iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityDiplomacy, 3)
 
                         if (iCivic0 == con.iTyranny): #Tyranny
                                 if (self.getStability(iPlayer) < -60):
@@ -805,16 +817,16 @@ class Stability:
 
                         if (iCivic0 == con.iRepublic): #Republic
                                 if (self.getStability(iPlayer) > 30):
-                                        iNewBaseStability += 5
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicCap, 5)
                                         #print("iNewBaseStability civic first column 5",iNewBaseStability, iPlayer)
 
 			if (iCivic1 == con.iUniversalSuffrage): #Parliament
 				if (self.getStability(iPlayer) > 50):
-					iNewBaseStability += 5
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicCap, 5)
                                         
                         if (teamPlayer.isHasTech(con.iDemocracy)):
                                 if (iCivic1 == con.iUniversalSuffrage): #Parliament
-                                        iNewBaseStability += 3
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicTech, 3)
                                         #print("iNewBaseStability universal suffrage",iNewBaseStability, iPlayer)
 
 #                                if (iCivic2 != 14): #emancipation
@@ -823,26 +835,26 @@ class Stability:
 
                         if (teamPlayer.isHasTech(con.iCommunism)):
                                 if (not iCivic2 == con.iEgalitarianism): #not Egalitarianism
-                                        iNewBaseStability -= 3
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicTech, -3)
                                         #print("iNewBaseStability free speech",iNewBaseStability, iPlayer)
 
 			if (teamPlayer.isHasTech(con.iConstitution)):
                                 if (iCivic0 != con.iRepublic): #Republic
-                                        iNewBaseStability -= 3
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicTech, -3)
                                         #print("iNewBaseStability free speech",iNewBaseStability, iPlayer)
 
                         if (teamPlayer.isHasTech(con.iMasonry) and not teamPlayer.isHasTech(con.iDemocracy)):
                                 if (iCivic3 == con.iForcedLabor): #Serfdom
-                                        iNewBaseStability += 3
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicTech, 3)
                                         #print("iNewBaseStability slavery",iNewBaseStability, iPlayer)
 					
 			if teamPlayer.isHasTech(con.iDemocracy) and not iCivic2 == con.iTotalitarianism:
 				if iCivic3 == con.iForcedLabor:
-					iNewBaseStability -= 3
+					iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicTech, -3)
                                 
                         if (iCivic3 == con.iSelfSufficiency): #Self-sufficiency
                                 if (teamPlayer.isHasTech(con.iEconomics)):
-                                        iNewBaseStability -= 5
+                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCivicTech, -5)
                                         #print("iNewBaseStability decentralization",iNewBaseStability, iPlayer)    
                                         
                         self.setParameter(iPlayer, iParCivics3, False, iNewBaseStability - iTempCivicThreshold)
@@ -863,12 +875,12 @@ class Stability:
                                                 if (iX >= con.tNormalAreasTL[reborn][iLoop][0] and iX <= con.tNormalAreasBR[reborn][iLoop][0] and \
                                                     iY >= con.tNormalAreasTL[reborn][iLoop][1] and iY <= con.tNormalAreasBR[reborn][iLoop][1]):
                                                         if (gc.getPlayer(iPlayer).getSettlersMaps( 67-iY, iX ) < 150):
-                                                                iNewBaseStability -= 3
+                                                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityForeignCoreCities, -3)
                                                                 self.setParameter(iPlayer, iParExpansion3, True, -3)                                                                
                                                                 #print("city owned in unstable area: -3", pLoopCity.GetCy().getName(), iPlayer)
                                                                 break
                                                         else:
-                                                                iNewBaseStability -= 1
+                                                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityForeignCoreCities, -1)
                                                                 self.setParameter(iPlayer, iParExpansion3, True, -1)
                                                                 #print("city owned in unstable area: -1", pLoopCity.GetCy().getName(), iPlayer)
                                                                 break
@@ -921,6 +933,8 @@ class Stability:
 							
 					iOutputCityHappy = iTempCityStability
 					print "PYTHON: Player " + str(iPlayer) + " City " + str(iCount) + " happy stability: " + str(iOutputCityHappy)
+					
+					self.changeStabilityCategory(pPlayer, con.iStabilityCityHappiness, iOutputCityHappy)
 
                                         if (iTempCityStability <= -5): #middle check, for optimization
                                                 iTotalTempCityStability += max(-5,iTempCityStability)
@@ -949,6 +963,8 @@ class Stability:
 								
 					iOutputCityCivic = iTempCityStability - iOutputCityHappy
 					print "PYTHON: Player " + str(iPlayer) + " City " + str(iCount) + " civic stability: " + str(iOutputCityCivic)
+					
+					self.changeStabilityCategory(pPlayer, con.iStabilityCityCivics, iOutputCityCivic)
                                                                 
                                         for iLoop in range(iNumTotalPlayers+1):		# no penalties from foreign culture with Egalitarianism?
                                                 if (iLoop != iPlayer and iPlayer != con.iPoland):	# Polish UP
@@ -971,6 +987,7 @@ class Stability:
 					iOutputCityCulture = iTempCityStability - iOutputCityCivic - iOutputCityHappy
 					print "PYTHON: Player " + str(iPlayer) + " City " + str(iCount) + " culture stability: " + str(iOutputCityCulture)
 
+					self.changeStabilityCategory(pPlayer, con.iStabilityCityCulture, iOutputCityCulture)
                                         
                                         if (iTempCityStability < 0):
                                                 iTotalTempCityStability += max(-5,iTempCityStability)
@@ -980,7 +997,7 @@ class Stability:
                                                 break
 				
                         if (iTotalTempCityStability < 0):
-                                iNewBaseStability += max(-12, iTotalTempCityStability)
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCityTotal, max(-12, iTotalTempCityStability))
                                 #print("iNewBaseStability city check", iNewBaseStability, iPlayer)
                         self.setParameter(iPlayer, iParCities3, False, iTotalTempCityStability)
 			
@@ -999,10 +1016,10 @@ class Stability:
                         if (iEraModifier >= 3):
                                 iEraModifier += 1
                         if (iCivic5 != con.iCommonwealth):
-                                iNewBaseStability += min(10,(iImports+iExports)/(2*iEraModifier+1) -iImportExportOffset)
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityTrade, min(10,(iImports+iExports)/(2*iEraModifier+1) -iImportExportOffset))
                                 #print("iNewBaseStability import/export check", iNewBaseStability, iPlayer)
                         else:
-                                iNewBaseStability += max(0, min(10,(iImports+iExports)/(2*iEraModifier+1) -iImportExportOffset))
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityTrade, max(0, min(10,(iImports+iExports)/(2*iEraModifier+1) -iImportExportOffset)))
                                 #print("iNewBaseStability import/export check + civic 6th column commonwealth", iNewBaseStability, iPlayer)
 
                         iEconomy = pPlayer.calculateTotalCommerce() - pPlayer.calculateInflatedCosts()
@@ -1026,15 +1043,15 @@ class Stability:
                                 iAgriculture *= 75 #3
                                 iAgriculture /= 100 #5
                         
-                        iNewBaseStability += min(8,max(-8,(iAgriculture*100000/iPopulation - 8 + (iEraModifier - 3)*2)))
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityEconomy, min(8,max(-8,(iAgriculture*100000/iPopulation - 8 + (iEraModifier - 3)*2))))
                         #print("iNewBaseStability Agriculture/Population check", iNewBaseStability, iPlayer)
                         iMaxEconomyGain = 3
                         iMaxEconomyLoss = -3
                         if (iCivic5 != con.iCommonwealth):
-                                iNewBaseStability += min(iMaxEconomyGain,max(iMaxEconomyLoss,(iEconomy*100000/iPopulation - 5 + (iEraModifier - 3)*2))) #less important cos it's already counted in other parameters
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityEconomy, min(iMaxEconomyGain,max(iMaxEconomyLoss,(iEconomy*100000/iPopulation - 5 + (iEraModifier - 3)*2)))) #less important cos it's already counted in other parameters
                                 #print("iNewBaseStability Economy/Population check", iNewBaseStability, iPlayer)
                         else:
-                                iNewBaseStability += min(iMaxEconomyGain,max(0,(iEconomy*100000/iPopulation - 5 + (iEraModifier - 3)*2)))
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityEconomy, min(iMaxEconomyGain,max(0,(iEconomy*100000/iPopulation - 5 + (iEraModifier - 3)*2))))
                                 #print("iNewBaseStability Economy/Population check + civic 6th column commonwealth", iNewBaseStability, iPlayer)
 
                         self.setParameter(iPlayer, iParEconomy3, False, iNewBaseStability - iTempEconomyThreshold)
@@ -1047,7 +1064,7 @@ class Stability:
                         if (pPlayer.calculateTotalCityHappiness() > 0):
                                 iHappiness = int((1.0 * pPlayer.calculateTotalCityHappiness()) / (pPlayer.calculateTotalCityHappiness() + \
                                                 pPlayer.calculateTotalCityUnhappiness()) * 100) - 60			
-                        iNewBaseStability += iHappiness/10
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityHappiness, iHappiness/10)
                         self.setParameter(iPlayer, iParCities3, True, iHappiness/10)                        
                         #print("iNewBaseStability happiness check", iNewBaseStability, iPlayer)
 
@@ -1064,6 +1081,10 @@ class Stability:
                 #every turn
 
                 if (iGameTurn >= getTurnForYear(con.tBirth[iPlayer])+utils.getTurns(15)):
+		
+			# Leoreth: reset
+			pPlayer.changeStabilityCategory(con.iStabilityEconomyExtra, -pPlayer.getStabilityCategory(con.iStabilityEconomyExtra))
+		
                         self.setGNPnew(iPlayer, self.getGNPnew(iPlayer) + (iEconomy + 4*iIndustry + 2*iAgriculture)/7)
                         if (iGameTurn % utils.getTurns(3) == 2):
                                 iTempEconomyThreshold = self.getStability(iPlayer)
@@ -1092,9 +1113,11 @@ class Stability:
                                                           
                                 if (self.getGNPnew(iPlayer) < self.getGNPold(iPlayer)):
                                         self.setStability(iPlayer, self.getStability(iPlayer) + max(-iMaxShrink, iNegativeGrowth))
+					self.changeStabilityCategory(pPlayer, con.iStabilityEconomyExtra, max(-iMaxShrink, iNegativeGrowth))
                                         #print("Stability - GNP check", iNegativeGrowth, iPlayer)
                                 elif (self.getGNPnew(iPlayer) >= self.getGNPold(iPlayer)):
                                         self.setStability(iPlayer, self.getStability(iPlayer) + min(iMaxGrowth, iPositiveGrowth))
+					self.changeStabilityCategory(pPlayer, con.iStabilityEconomyExtra, max(iMaxGrowth, iPositiveGrowth))
                                         #print("Stability - GNP check", iPositiveGrowth, iPlayer)
                                 
                                 self.setParameter(iPlayer, iParEconomyE, True, self.getStability(iPlayer) - iTempEconomyThreshold)
@@ -1113,7 +1136,9 @@ class Stability:
                                                                 
                 iTempEconomyThreshold = iNewBaseStability
                 if (self.getGreatDepressionCountdown(iPlayer) > 0):
-                        iNewBaseStability -= (15 + min(15, iDifference))
+			pPlayer.changeStabilityCategory(con.iStabilityGreatDepression, -pPlayer.getStabilityCategory(con.iStabilityGreatDepression))
+		
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityGreatDepression, -(15 + min(15, iDifference)))
                         if (iPlayer == utils.getHumanID()):
                                 CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_GREAT_DEPRESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
                         #print("iNewBaseStability civic single 5: great depression",iNewBaseStability, iPlayer)
@@ -1136,7 +1161,7 @@ class Stability:
                                                 if (iLoopCiv != iPlayer):
                                                         self.setGreatDepressionCountdown(iLoopCiv, -20) ##set turns of immunity for the other civs
 
-                if (iGameTurn % utils.getTurns(3) == 2):
+                if (iGameTurn % utils.getTurns(3) == 2 and not pPlayer.isGoldenAge()): #Leoreth: avoid stability loss from economic downturn after golden ages
                         self.setGNPold(iPlayer, self.getGNPnew(iPlayer))
                         self.setGNPnew(iPlayer, 0)
 
@@ -1144,10 +1169,11 @@ class Stability:
                         for iLoopCiv in range(iNumPlayers):
                                 if (teamPlayer.isOpenBorders(iLoopCiv)):
                                         if (self.getGreatDepressionCountdown(iLoopCiv) > 0):
+						pPlayer.changeStabilityCategory(con.iStabilityForeignGreatDepression, -pPlayer.getStabilityCategory(con.iStabilityForeignGreatDepression))
                                                 if (iCivic3 == con.iMercantilism): #mercantilism
-                                                        iNewBaseStability -= 4
+                                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityForeignGreatDepression, -4)
                                                 else:
-                                                        iNewBaseStability -= 10
+                                                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityForeignGreatDepression, -10)
                                                 #print("acquired great depression", iPlayer, "from", iLoopCiv)                        
                                                 #print("iNewBaseStability: acquired great depression",iNewBaseStability, iPlayer)                        
                                                 if (iPlayer == utils.getHumanID()):
@@ -1163,7 +1189,8 @@ class Stability:
                         if (self.getStatePropertyCountdown(iPlayer) == -1 and iCivic3 != con.iStateProperty): #switched
                                 self.setStatePropertyCountdown(iPlayer, 8) #8 turns
                         if (self.getStatePropertyCountdown(iPlayer) > 0):
-                                iNewBaseStability -= 25
+				pPlayer.changeStabilityCategory(con.iStabilityPostCommunism, -pPlayer.getStabilityCategory(con.iStabilityPostCommunism))
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityPostCommunism, -25)
                                 self.setStatePropertyCountdown(iPlayer, self.getStatePropertyCountdown(iPlayer)-1)
                                 if (iPlayer == utils.getHumanID()):
                                         CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_POST_COMMUNISM", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
@@ -1177,7 +1204,8 @@ class Stability:
                         if (self.getDemocracyCountdown(iPlayer) == -1 and iCivic1 == con.iUniversalSuffrage): #switched to parliament
                                 self.setDemocracyCountdown(iPlayer, 7) #7 turns
                         if (self.getDemocracyCountdown(iPlayer) > 0):
-                                iNewBaseStability -= 20
+				pPlayer.changeStabilityCategory(con.iStabilityDemocracyTransition, -pPlayer.getStabilityCategory(con.iStabilityDemocracyTransition))
+                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityDemocracyTransition, -20)
                                 self.setDemocracyCountdown(iPlayer, self.getDemocracyCountdown(iPlayer)-1)
                                 if (iPlayer == utils.getHumanID()):
                                         CyInterface().addMessage(iPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_PERIOD", ()) + " " + CyTranslator().getText("TXT_KEY_STABILITY_DEMOCRACY", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
@@ -1189,18 +1217,21 @@ class Stability:
                 if (iNumPlayerCities < 8):
                         pass
                 else:
-                        iNewBaseStability -= (iNumPlayerCities-5)*(iNumPlayerCities-5)/9
+			pPlayer.changeStabilityCategory(con.iStabilityNumCities, -pPlayer.getStabilityCategory(con.iStabilityNumCities))
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityNumCities, -(iNumPlayerCities-5)*(iNumPlayerCities-5)/9)
                         #print("iNewBaseStability number of cities",iNewBaseStability, iPlayer)
                 self.setParameter(iPlayer, iParExpansion1, False, iNewBaseStability - iTempExpansionThreshold)
 
 
                 if (self.getCombatResultTempModifier(iPlayer) != 0):
                         iTempExpansionThreshold = iNewBaseStability
-                        iNewBaseStability += max(-20, min(20,self.getCombatResultTempModifier(iPlayer)))
+			pPlayer.changeStabilityCategory(con.iStabilityType, -pPlayer.getStabilityCategory(con.iStabilityCombat))
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCombat, max(-20, min(20,self.getCombatResultTempModifier(iPlayer))))
                         self.setParameter(iPlayer, iParExpansion1, True, iNewBaseStability - iTempExpansionThreshold) 
                         #print("iNewBaseStability combat result", iNewBaseStability, iPlayer)
                         if (self.getCombatResultTempModifier(iPlayer) <= -4 -(iEraModifier/2)): #great loss
                                 self.setStability(iPlayer, self.getStability(iPlayer) -1)
+				self.changeStabilityCategory(pPlayer, con.iStabilityCombatExtra, -1)
                                 self.setParameter(iPlayer, iParDiplomacyE, True, -1)
                                 #print("Stability: combat result - great loss", self.getCombatResultTempModifier(iPlayer), iPlayer)
                         if (abs(self.getCombatResultTempModifier(iPlayer)) >= 4):
@@ -1212,18 +1243,21 @@ class Stability:
                         iTempCivicsThreshold = self.getStability(iPlayer)
                         if (self.getStability(iPlayer) > 24):
                                 #print("Stability: anarchy permanent", self.getStability(iPlayer) - self.getStability(iPlayer)/8, iPlayer)
-                                self.setStability(iPlayer, self.getStability(iPlayer) - self.getStability(iPlayer)/8/utils.getTurns(1)) # edead: penalty scaling                               
+                                self.setStability(iPlayer, self.getStability(iPlayer) - self.getStability(iPlayer)/8/utils.getTurns(1)) # edead: penalty scaling       
+				self.changeStabilityCategory(pPlayer, con.iStabilityAnarchy, -self.getStability(iPlayer)/8/utils.getTurns(1))
                         else:
                                 #print("Stability: anarchy permanent", 3, iPlayer)
                                 self.setStability(iPlayer, self.getStability(iPlayer)-3/utils.getTurns(1)) # edead: penalty scaling
+				self.changeStabilityCategory(pPlayer, con.iStabilityAnarchy, -3/utils.getTurns(1))
                         self.setParameter(iPlayer, iParCivicsE, True, self.getStability(iPlayer) - iTempCivicsThreshold)
-                        iNewBaseStability -= (self.getStability(iPlayer)+30)/2
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityAnarchy, -(self.getStability(iPlayer)+30)/2)
                         self.setParameter(iPlayer, iParCivics1, True, -(self.getStability(iPlayer)+30)/2) 
                         #print("iNewBaseStability anarchy",iNewBaseStability, iPlayer)
                         
 
                 if (pPlayer.isGoldenAge()):
-                        iNewBaseStability += 20
+			pPlayer.changeStabilityCategory(con.iStabilityGoldenAge, -pPlayer.getStabilityCategory(con.iStabilityGoldenAge))
+                        iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityGoldenAge, 20)
                         #print("iNewBaseStability golden",iNewBaseStability, iPlayer)
                         self.setParameter(iPlayer, iParEconomy1, True, 20)
 
@@ -1236,10 +1270,12 @@ class Stability:
 				if gc.getPlayer(iNeighbour).isHuman() and gc.getPlayer(iNeighbour).isAlive():
 					bHumanNeighbour = True
 
+			pPlayer.changeStabilityCategory(con.iStabilityFall, -pPlayer.getStabilityCategory(con.iStabilityFall))
+			
 			if bHumanNeighbour:
-				iNewBaseStability -= min(10, iGameTurn - getTurnForYear(con.tFall[pPlayer.getID()]))
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityFall, -min(10, iGameTurn - getTurnForYear(con.tFall[pPlayer.getID()])))
 			else:
-				iNewBaseStability -= min(20, iGameTurn - getTurnForYear(con.tFall[pPlayer.getID()]))
+				iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityFall, -min(20, iGameTurn - getTurnForYear(con.tFall[pPlayer.getID()])))
                 
                 
                   
@@ -1251,6 +1287,9 @@ class Stability:
                         self.setStability(iPlayer, -80)
                 if (self.getStability(iPlayer) > 80):
                         self.setStability(iPlayer, 80)
+			
+		pPlayer.changeStabilityCategory(con.iStabilityBase, -pPlayer.getStabilityCategory(con.iStabilityBase))
+		self.changeStabilityCategory(pPlayer, con.iStabilityBase, iNewBaseStability)
                         
                 self.setBaseStabilityLastTurn(iPlayer, iNewBaseStability)
 		
@@ -1262,6 +1301,10 @@ class Stability:
 			print "PYTHON: Performed LONG stability calculation for player "+str(iPlayer)+" in "+str(fElapsed*1000)+" ms."
 		else:
 			print "PYTHON: Performed SHORT stability calculation for player "+str(iPlayer)+" in "+str(fElapsed*1000)+" ms."
+			
+		#if iPlayer == utils.getHumanID():
+		#	for i in range(con.iNumStabilityTypes):
+		#		utils.debugTextPopup(str(pPlayer.getStabilityCategory(i)))
                                  
 
 
@@ -1271,21 +1314,21 @@ class Stability:
                 iTempExpansionThreshold = self.getStability(iPlayer)
                 iGameTurn = gc.getGame().getGameTurn()
                 if (iGameTurn <= getTurnForYear(con.tBirth[iPlayer]) + utils.getTurns(20)):
-                        self.setStability(iPlayer, self.getStability(iPlayer) + 3 )
-			gc.getPlayer(iPlayer).changeStability(3) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesBuilt, 3))
+			#gc.getPlayer(iPlayer).changeStability(3) # test DLL
                 else:
-                        self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-			gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesBuilt, 1) )
+			#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                 #print("Stability - city built", iPlayer)
                 if (gc.getPlayer(iPlayer).getNumCities() == 1):
-                        self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-			gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesBuilt, 1) )
+			#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                         #print("Stability - capital built", iPlayer)
                 if (gc.getPlayer(iPlayer).getCivics(5) == con.iResettlement):
                         capital = gc.getPlayer(iPlayer).getCapitalCity()
                         iDistance = utils.calculateDistance(x, y, capital.getX(), capital.getY())
                         if (iDistance >= 15):
-                                self.setStability(iPlayer, self.getStability(iPlayer) + 2 )
+                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesBuilt, 2) )
 				gc.getPlayer(iPlayer).changeStability(2) # test DLL
                                 #print("Stability - civic 6th column resettlement", iPlayer)
                 self.setParameter(iPlayer, iParExpansionE, True, self.getStability(iPlayer) - iTempExpansionThreshold) 
@@ -1325,36 +1368,37 @@ class Stability:
                                         iTotalCityLostModifier += 1                        
                         self.setParameter(owner, iParExpansionE, True, -iTotalCityLostModifier) 
                         self.setStability(owner, self.getStability(owner) - iTotalCityLostModifier )
-			gc.getPlayer(owner).changeStability(-iTotalCityLostModifier) # test DLL
+			gc.getPlayer(owner).changeStabilityCategory(con.iStabilityCitiesLost, -iTotalCityLostModifier)
+			#gc.getPlayer(owner).changeStability(-iTotalCityLostModifier) # test DLL
                         #print("Stability - city lost", iTotalCityLostModifier, owner)
                         
                 if (playerType < con.iNumPlayers):
                         iTempExpansionThreshold = self.getStability(playerType)
                         if (iGameTurn == getTurnForYear(con.tBirth[playerType]) or iGameTurn == getTurnForYear(con.tBirth[playerType])+1 or iGameTurn == getTurnForYear(con.tBirth[playerType])+2):
-                                self.setStability(playerType, self.getStability(playerType) + 3)
-				gc.getPlayer(playerType).changeStability(3) # test DLL
+                                self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesConquered, 3))
+				#gc.getPlayer(playerType).changeStability(3) # test DLL
                         elif (owner >= con.iNumPlayers):
-                                self.setStability(playerType, self.getStability(playerType) + max(0,min(5,(12 - gc.getPlayer(playerType).getNumCities())/2)) )
-				gc.getPlayer(playerType).changeStability(max(0, min(5, (12 - gc.getPlayer(playerType).getNumCities())/2))) # test DLL
+                                self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesConquered, max(0,min(5,(12 - gc.getPlayer(playerType).getNumCities())/2))) )
+				#gc.getPlayer(playerType).changeStability(max(0, min(5, (12 - gc.getPlayer(playerType).getNumCities())/2))) # test DLL
                         else:
-                                self.setStability(playerType, self.getStability(playerType) + max(0,min(5,(12 - gc.getPlayer(playerType).getNumCities())/2)) )
-				gc.getPlayer(playerType).changeStability(max(0, min(5, (12 - gc.getPlayer(playerType).getNumCities())/2))) # test DLL
+                                self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesConquered, max(0,min(5,(12 - gc.getPlayer(playerType).getNumCities())/2))) )
+				#gc.getPlayer(playerType).changeStability(max(0, min(5, (12 - gc.getPlayer(playerType).getNumCities())/2))) # test DLL
                         #print("Stability - city acquired", playerType)
                         #Persian UP
                         if (playerType == con.iPersia and utils.getReborn(playerType) == 0 and gc.getPlayer(playerType).getCivics(5) != con.iOccupation):
                                 if (bConquest):                                
-                                        self.setStability(playerType, self.getStability(playerType) + 2)
-					gc.getPlayer(playerType).changeStability(2) # test DLL
+                                        self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesConquered, 2))
+					#gc.getPlayer(playerType).changeStability(2) # test DLL
                         
                         if (gc.getPlayer(playerType).getCivics(5) == con.iOccupation):
                                 if (bConquest):
-                                        self.setStability(playerType, self.getStability(playerType) + 2 )
-					gc.getPlayer(playerType).changeStability(2) # test DLL
+                                        self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesConquered, 2) )
+					#gc.getPlayer(playerType).changeStability(2) # test DLL
                                         #print("iNewBaseStability civic 6th column occupation",playerType)
                         if (owner < con.iNumPlayers):
                                 if (city.getX() == tCapitals[utils.getReborn(owner)][owner][0] and city.getY() == tCapitals[utils.getReborn(owner)][owner][1]):
-                                        self.setStability(playerType, self.getStability(playerType) + 3)
-					gc.getPlayer(playerType).changeStability(3) # test DLL
+                                        self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesConquered, 3))
+					#gc.getPlayer(playerType).changeStability(3) # test DLL
                                         #print("Stability - capital city acquired", playerType)
                         self.setParameter(playerType, iParExpansionE, True, self.getStability(playerType) - iTempExpansionThreshold) 
                             
@@ -1366,21 +1410,23 @@ class Stability:
         def onCityRazed(self, iOwner, playerType, city):
             
                 if (iOwner < con.iNumPlayers):      
-                        self.setStability(iOwner, self.getStability(iOwner) - 3 )
-			gc.getPlayer(iOwner).changeStability(-3) # test DLL
+                        self.setStability(iOwner, self.getStability(iOwner) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesRazed, -3) )
+			#gc.getPlayer(iOwner).changeStability(-3) # test DLL
                         #print("Stability - city razed", -3, iOwner)
                         self.setParameter(iOwner, iParExpansionE, True, - 3)
 
                 if (playerType < con.iNumPlayers):
                         iTempExpansionThreshold = self.getStability(playerType)                 
                         if (gc.getPlayer(playerType).getCivics(5) == con.iOccupation):
-                                self.setStability(playerType, self.getStability(playerType) - 2 ) #balance the +2 and makes 0 for city razed
-				gc.getPlayer(playerType).changeStability(-2) # test DLL
+                                self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesConquered, -2) ) #balance the +2 and makes 0 for city razed
+				#gc.getPlayer(playerType).changeStability(-2) # test DLL
                         self.setParameter(playerType, iParExpansionE, True, self.getStability(playerType) - iTempExpansionThreshold) 
 
 
                                                 
         def onImprovementDestroyed(self, owner):
+	
+		return
 
                 if (owner < con.iNumPlayers and owner >= 0):
                         pass
@@ -1410,8 +1456,8 @@ class Stability:
                     #iTech == con.iRailroad or \
                     iTech == con.iIndustrialism or \
                     iTech == con.iRocketry):
-                        self.setStability(iPlayer, self.getStability(iPlayer) - 2 )
-			gc.getPlayer(iPlayer).changeStability(-2) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityTech, -2) )
+			#gc.getPlayer(iPlayer).changeStability(-2) # test DLL
                         #print("Stability - tech acquired --", iTech, iPlayer)
                 elif (iTech == con.iTheology or \
                     iTech == con.iFeudalism or \
@@ -1421,8 +1467,8 @@ class Stability:
                     iTech == con.iIronWorking or \
                     iTech == con.iRifling or \
                     iTech == con.iAssemblyLine):
-                        self.setStability(iPlayer, self.getStability(iPlayer) - 1 )
-			gc.getPlayer(iPlayer).changeStability(-1) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityTech, -1) )
+			#gc.getPlayer(iPlayer).changeStability(-1) # test DLL
                         #print("Stability - tech acquired -", iTech, iPlayer)                        
                 elif (iTech == con.iMysticism  or \
                     iTech == con.iMeditation or \
@@ -1452,8 +1498,8 @@ class Stability:
                     iTech == con.iMachinery or \
                     iTech == con.iEngineering or \
                     iTech == con.iRefrigeration):
-                        self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-			gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityTech, 1) )
+			#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                         #print("Stability - tech acquired +", iTech, iPlayer)
                 else:
                         #self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
@@ -1467,15 +1513,15 @@ class Stability:
                                     iPlayer == con.iEngland or \
                                     iPlayer == con.iNetherlands or \
                                     iPlayer == con.iPortugal):
-                                        self.setStability(iPlayer, self.getStability(iPlayer) + 3 ) #need them alive for accurate colonization
-					gc.getPlayer(iPlayer).changeStability(3) # test DLL
+                                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityTech, 3) ) #need them alive for accurate colonization
+					#gc.getPlayer(iPlayer).changeStability(3) # test DLL
                                         print ("stability bonus for colonizers", iPlayer)
                 if (iTech == con.iAstronomy or iTech == con.iMilitaryTradition):
                         if (not gc.getPlayer(iPlayer).isHuman()):
                                 if (iPlayer == con.iGermany or \
                                     iPlayer == con.iRussia):
-                                        self.setStability(iPlayer, self.getStability(iPlayer) + 2 )
-					gc.getPlayer(iPlayer).changeStability(2) # test DLL
+                                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityTech, 2) )
+					#gc.getPlayer(iPlayer).changeStability(2) # test DLL
 
                 self.setParameter(iPlayer, iParCivicsE, True, self.getStability(iPlayer) - iTempCivicsThreshold)
 
@@ -1483,16 +1529,16 @@ class Stability:
 
                 iTempCitiesThreshold = self.getStability(iPlayer)
                 if (iBuilding == con.iPalace): #palace
-                        self.setStability(iPlayer, self.getStability(iPlayer) - 10 )
-			gc.getPlayer(iPlayer).changeStability(-10) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, -10) )
+			#gc.getPlayer(iPlayer).changeStability(-10) # test DLL
                         #print("Stability - palace built", iPlayer)
                 elif (iBuilding > con.iPalace and iBuilding <= con.iForbiddenPalace): #palaces
-                        self.setStability(iPlayer, self.getStability(iPlayer) + 5 )
-			gc.getPlayer(iPlayer).changeStability(5) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 5) )
+			#gc.getPlayer(iPlayer).changeStability(5) # test DLL
                         #print("Stability - palace built", iPlayer)
                 elif (iBuilding >= con.iHeroicEpic and iBuilding <= con.iOlympicPark): #wonder
-                        self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-			gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 1) )
+			#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                         #print("Stability - wonder built", iPlayer)
                         if (self.getGreatDepressionCountdown(iPlayer) >= 2):
                                 self.setGreatDepressionCountdown(iPlayer, self.getGreatDepressionCountdown(iPlayer)-2)
@@ -1500,30 +1546,30 @@ class Stability:
                 elif (iBuilding == con.iJail or iBuilding == con.iIndianMausoleum): #jail
                         if (self.getStability(iPlayer) < 20):
                                 if (gc.getPlayer(iPlayer).getCivics(2) == con.iTotalitarianism): #Totalitarianism
-                                        self.setStability(iPlayer, self.getStability(iPlayer) + 2 )
-					gc.getPlayer(iPlayer).changeStability(2) # test DLL
+                                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 2) )
+					#gc.getPlayer(iPlayer).changeStability(2) # test DLL
                                 else:
-                                        self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-					gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 1) )
+					#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                         #print("Stability - jail built", iPlayer)
-                elif (iBuilding == con.iCourthouse or iBuilding == con.iAztecSacrificialAltar or iBuilding == con.iSumerianZiggurat): #courthouse
+                elif (iBuilding == con.iCourthouse or iBuilding == con.iAztecSacrificialAltar or iBuilding == con.iHolyRomanRathaus or iBuilding == con.iPolishSejmik ): #courthouse
                         if (not city.hasBuilding(con.iPalace) and not city.hasBuilding(con.iForbiddenPalace) and not city.hasBuilding(con.iSummerPalace)):
                                 if (self.getStability(iPlayer) < 0):
-                                        self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-					gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 1) )
+					#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                                         #print("Stability - courthouse built", iPlayer)
                 elif (iBuilding == con.iInterpol):
                         if (self.getStability(iPlayer) < 20):
-                                self.setStability(iPlayer, self.getStability(iPlayer) + 2 )
-				gc.getPlayer(iPlayer).changeStability(2) # test DLL
+                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 2) )
+				#gc.getPlayer(iPlayer).changeStability(2) # test DLL
                 elif (iBuilding == con.iNationalSecurity):
                         if (self.getStability(iPlayer) < -10):
-                                self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-				gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 1) )
+				#gc.getPlayer(iPlayer).changeStability(1) # test DLL
                 elif (iBuilding == con.iIntelligenceAgency):
                         if (self.getStability(iPlayer) < -40):
-                                self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
-				gc.getPlayer(iPlayer).changeStability(1) # test DLL
+                                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 1) )
+				#gc.getPlayer(iPlayer).changeStability(1) # test DLL
 
                 self.setParameter(iPlayer, iParCitiesE, True, self.getStability(iPlayer) - iTempCitiesThreshold)
 
@@ -1533,8 +1579,8 @@ class Stability:
                             
         def onProjectBuilt(self, iPlayer, iProject):
             
-                if (iProject <= con.iApolloProgram ): #no SS parts
-                        self.setStability(iPlayer, self.getStability(iPlayer) + 1 )
+                if (iProject <= con.iApolloProgram and iProject != con.iProjectPersecution): #no SS parts
+                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 1) )
                         self.setParameter(iPlayer, iParCitiesE, True, 2)
                         #print("Stability - project built", iPlayer)
                 #pass
@@ -1550,26 +1596,28 @@ class Stability:
 
                 if (iWinningPlayer < con.iNumPlayers):  
                         self.setCombatResultTempModifier(iWinningPlayer, self.getCombatResultTempModifier(iWinningPlayer) + 1 )
-			gc.getPlayer(iWinningPlayer).changeCombatResultTempModifier(1) # test DLL
+			#gc.getPlayer(iWinningPlayer).changeCombatResultTempModifier(1) # test DLL
                         #print("Stability - iWinningPlayer", self.getCombatResultTempModifier(iWinningPlayer), iWinningPlayer)
                 if (iLosingPlayer < con.iNumPlayers):  
                         self.setCombatResultTempModifier(iLosingPlayer, self.getCombatResultTempModifier(iLosingPlayer) - 2 )
-			gc.getPlayer(iLosingPlayer).changeCombatResultTempModifier(-2) # test DLL
+			#gc.getPlayer(iLosingPlayer).changeCombatResultTempModifier(-2) # test DLL
                         #print("Stability - iLosingPlayer", self.getCombatResultTempModifier(iLosingPlayer), iLosingPlayer)
 
 
         def onReligionFounded(self, iPlayer):
 
-                self.setStability(iPlayer, self.getStability(iPlayer) - 2 )
-		gc.getPlayer(iPlayer).changeStability(2) # test DLL
+                self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityReligion, -2) )
+		#gc.getPlayer(iPlayer).changeStability(2) # test DLL
                 self.setParameter(iPlayer, iParCitiesE, True, -2)
                 #print("Stability - onReligionFounded", iPlayer)
 
 
         def onCorporationFounded(self, iPlayer):
+	
+		return
 
                 self.setStability(iPlayer, self.getStability(iPlayer) - 2 )
-		gc.getPlayer(iPlayer).changeStability(-2) # test DLL
+		#gc.getPlayer(iPlayer).changeStability(-2) # test DLL
                 self.setParameter(iPlayer, iParCitiesE, True, -2)
                 #print("Stability - onCorporationFounded", iPlayer)
 		
@@ -1589,8 +1637,8 @@ class Stability:
                                 for iLoopCiv in range(iNumPlayers):
                                         if (gc.getTeam(pPlayer.getTeam()).isAtWar(iLoopCiv)):
                                                 if (gc.getPlayer(iLoopCiv).getStateReligion() == iReligion):
-                                                        self.setStability(iPlayer, self.getStability(iPlayer) - 1 )
-							gc.getPlayer(iPlayer).changeStability(-1) # test DLL
+                                                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityReligion, -1) )
+							#gc.getPlayer(iPlayer).changeStability(-1) # test DLL
                                                         self.setParameter(iPlayer, iParCitiesE, True, -1)
                                                         #print("Stability - onReligionSpread", iPlayer)
                                                         break

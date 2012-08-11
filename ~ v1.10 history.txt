@@ -40,3 +40,6 @@
 	# African civs can sell their slaves to Europeans
 	# All others can use slaves to build slave plantations for increased yields or settle them as slaves in the city for extra production
 # changed the Aztec UP to give slaves now instead of workers
+# added a stability tab to the interior advisor to give a more detailed rundown of stability factors
+# Great Cothon now creates great merchant points
+# Economic growth isn't measured against a previous golden age anymore to avoid excessive penalties afterwards

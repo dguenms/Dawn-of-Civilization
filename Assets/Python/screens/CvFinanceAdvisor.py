@@ -10,6 +10,7 @@ import CvScreenEnums
 import MercenaryUtils
 # < Mercenaries End   >
 
+import Consts as con
 import RFCUtils #Rhye
 utils = RFCUtils.RFCUtils() #Rhye
 
@@ -22,9 +23,14 @@ localText = CyTranslator()
 objMercenaryUtils = MercenaryUtils.MercenaryUtils()
 # < Mercenaries End >
 
+FINANCE_SCREEN = 0
+STABILITY_SCREEN = 1
+
 class CvFinanceAdvisor:
 
 	def __init__(self):
+		self.iScreen = -1
+		self.iDefaultScreen = 0
 		self.SCREEN_NAME = "FinanceAdvisor"
 		self.DEBUG_DROPDOWN_ID =  "FinanceAdvisorDropdownWidget"
 		self.WIDGET_ID = "FinanceAdvisorWidget"
@@ -62,13 +68,41 @@ class CvFinanceAdvisor:
 		self.X_PARAMETERS4 = self.X_PARAMETERS3 + self.PARAMETERS_WIDTH + 20 #Rhye
 		self.X_PARAMETERS5 = self.X_PARAMETERS4 + self.PARAMETERS_WIDTH + 20 #Rhye
 		
+		#Leoreth
+		self.X_LINK = 50
+		self.DX_LINK = 220
+		self.Y_LINK = 726
+		
+		self.X_STABILITY = self.X_SLIDERS
+		self.DX_STABILITY = 333
+		
+		self.DY_STABILITY = 6*self.Y_SPACING
+		
+		self.STABILITY_PANE_WIDTH = self.PANE_WIDTH*7/8
 		
 		self.nWidgetCount = 0
+		
+	def killScreen(self):
+		if (self.iScreen >= 0):
+			screen = self.getScreen()
+			screen.hideScreen()
+			self.iScreen = -1
+		return
 
 	def getScreen(self):
 		return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.FINANCE_ADVISOR)
 
-	def interfaceScreen (self):
+	def interfaceScreen(self, iScreen):
+	
+		if (iScreen < 0):
+			if (self.iScreen < 0):
+				iScreen = self.iDefaultScreen
+			else:
+				iScreen = self.iScreen
+				
+		if (self.iScreen != iScreen):	
+			self.killScreen()
+			self.iScreen = iScreen
 
 		self.iActiveLeader = CyGame().getActivePlayer()
 
@@ -102,11 +136,9 @@ class CvFinanceAdvisor:
 
 		# draw the contents
 		self.drawContents()
-
-	def drawContents(self):
 		
-		self.deleteAllWidgets()
-
+	def drawFinance(self):
+	
 		# Create a new screen, called FinanceAdvisor, using the file FinanceAdvisor.py for input
 		screen = self.getScreen()
 	
@@ -363,6 +395,374 @@ class CvFinanceAdvisor:
 		yLocation += 1.5 * self.Y_SPACING
 		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_FINANCIAL_ADVISOR_EXPENSES", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_EXPENSES + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iExpenses) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_EXPENSES + self.PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+		
+		return 0
+		
+	def drawStability(self):
+	
+		screen = self.getScreen()
+		pPlayer = gc.getPlayer(self.iActiveLeader)
+		
+		iDiplomacy = pPlayer.getStabilityCategory(con.iStabilityDiplomacy)
+		iNeighbors = pPlayer.getStabilityCategory(con.iStabilityNeighbor)
+		iContacts = pPlayer.getStabilityCategory(con.iStabilityContacts)
+		iVassals = pPlayer.getStabilityCategory(con.iStabilityVassal)
+		iDiplomacyTotal = iDiplomacy + iNeighbors + iContacts + iVassals
+		
+		iCitiesBuilt = pPlayer.getStabilityCategory(con.iStabilityCitiesBuilt)
+		iCityTerritory = pPlayer.getStabilityCategory(con.iStabilityExpansion)
+		iOuterTerritory = pPlayer.getStabilityCategory(con.iStabilityOuterExpansion)
+		iOccupiedCore = pPlayer.getStabilityCategory(con.iStabilityOccupiedCore) + pPlayer.getStabilityCategory(con.iStabilityForeignCoreCities) + pPlayer.getStabilityCategory(con.iStabilityImperialism)
+		iExpansionTotal = iCitiesBuilt + iCityTerritory + iOuterTerritory + iOccupiedCore
+		
+		iCivicCombinations = pPlayer.getStabilityCategory(con.iStabilityCivics)
+		iCivicNumberCities = pPlayer.getStabilityCategory(con.iStabilityCivicCities)
+		iCivicEra = pPlayer.getStabilityCategory(con.iStabilityCivicEra)
+		iCivicTechs = pPlayer.getStabilityCategory(con.iStabilityCivicTech)
+		iCivicsTotal = iCivicCombinations + iCivicNumberCities + iCivicEra + iCivicTechs
+		
+		iEconomy = pPlayer.getStabilityCategory(con.iStabilityEconomy) + pPlayer.getStabilityCategory(con.iStabilityEconomyExtra)
+		iTrade = pPlayer.getStabilityCategory(con.iStabilityTrade)
+		iEconomyTotal = iEconomy + iTrade
+		
+		iCityHappiness = pPlayer.getStabilityCategory(con.iStabilityCityHappiness)
+		iCityCivics = pPlayer.getStabilityCategory(con.iStabilityCityCivics)
+		iCityCulture = pPlayer.getStabilityCategory(con.iStabilityCityCulture)
+		iCitiesTotal = pPlayer.getStabilityCategory(con.iStabilityCityTotal)
+		
+		iCombat = pPlayer.getStabilityCategory(con.iStabilityCombat) + pPlayer.getStabilityCategory(con.iStabilityCombatExtra)
+		iCitiesConquered = pPlayer.getStabilityCategory(con.iStabilityCitiesConquered)
+		iCitiesLost = pPlayer.getStabilityCategory(con.iStabilityCitiesLost)
+		iCitiesRazed = pPlayer.getStabilityCategory(con.iStabilityCitiesRazed)
+		iWarfareTotal = iCombat + iCitiesConquered + iCitiesLost + iCitiesRazed
+		
+		iBuildings = pPlayer.getStabilityCategory(con.iStabilityBuildings)
+		iHappiness = pPlayer.getStabilityCategory(con.iStabilityHappiness)
+		iTech = pPlayer.getStabilityCategory(con.iStabilityTech)
+		iReligion = pPlayer.getStabilityCategory(con.iStabilityReligion)
+		iSocietyTotal = iBuildings + iHappiness + iTech + iReligion
+		
+		iAnarchy = pPlayer.getStabilityCategory(con.iStabilityAnarchy)
+		iGreatDepression = pPlayer.getStabilityCategory(con.iStabilityGreatDepression)
+		iForeignGreatDepression = pPlayer.getStabilityCategory(con.iStabilityForeignGreatDepression)
+		iPostCommunism = pPlayer.getStabilityCategory(con.iStabilityPostCommunism)
+		iDemocracyTransition = pPlayer.getStabilityCategory(con.iStabilityDemocracyTransition)
+		iGoldenAge = pPlayer.getStabilityCategory(con.iStabilityGoldenAge)
+		iFall = pPlayer.getStabilityCategory(con.iStabilityFall) + pPlayer.getStabilityCategory(con.iStabilityHit)
+		
+		iNormalization = pPlayer.getStabilityCategory(con.iStabilityNormalization)
+		iDifficulty = pPlayer.getStabilityCategory(con.iStabilityDifficulty)
+		iCap = pPlayer.getStabilityCategory(con.iStabilityCap) + pPlayer.getStabilityCategory(con.iStabilityCivicCap)
+		
+		
+		iStability = utils.getStability(self.iActiveLeader)
+                if (iStability < -40):
+                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_COLLAPSING", ())
+                elif (iStability >= -40 and iStability < -20):
+                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_UNSTABLE", ())
+                elif (iStability >= -20 and iStability < 0):
+                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_SHAKY", ())
+                elif (iStability >= 0 and iStability < 20):
+                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_STABLE", ())
+                elif (iStability >= 20 and iStability < 40):
+                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_SOLID", ())
+                elif (iStability >= 40):
+                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_VERYSOLID", ())
+
+                number = str(iStability)
+                if (iStability > 0):
+                        number = '+' + number
+                szTempBuffer = szTempBuffer + " (" + number + ")"
+	
+		stabilityPanel = self.getNextWidgetName()
+		screen.addPanel(stabilityPanel, u"", "", True, True, self.X_SLIDERS, self.Y_TREASURY, self.X_EXPENSES + self.PANE_WIDTH - self.X_SLIDERS, self.H_TREASURY, PanelStyles.PANEL_STYLE_MAIN )
+		screen.setLabel(self.getNextWidgetName(), stabilityPanel, u"<font=4>" + localText.getText("TXT_KEY_STABILITY_TITLE", (szTempBuffer, )) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, (self.X_SLIDERS + self.PANE_WIDTH + self.X_EXPENSES)/2, self.Y_TREASURY + self.H_TREASURY/2 - self.Y_SPACING/2, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_HELP_FINANCE_GOLD_RESERVE, -1, -1 )
+
+		
+		yLocation = self.Y_LOCATION
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_DIPLOMACY_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iDiplomacyTotal) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_DIPLOMACY", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iDiplomacy) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_NEIGHBORS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iNeighbors) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CONTACTS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iContacts) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_VASSALS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iVassals) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		yLocation = self.Y_LOCATION
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY + self.DX_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_EXPANSION_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iExpansionTotal) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITIES_BUILT", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCitiesBuilt) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITY_TERRITORY", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCityTerritory) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_OUTER_TERRITORY", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iOuterTerritory) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_OCCUPIED_CORE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iOccupiedCore) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		yLocation = self.Y_LOCATION
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY + 2*self.DX_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CIVICS_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCivicsTotal) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CIVIC_COMBINATIONS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCivicCombinations) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CIVIC_NUMBER_CITIES", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCivicNumberCities) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CIVIC_ERA", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCivicEra) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CIVIC_TECH", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCivicTechs) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		
+		yLocation = self.Y_LOCATION + self.DY_STABILITY
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_ECONOMY_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iEconomyTotal) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_ECONOMY", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iEconomy) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_TRADE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iTrade) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		yLocation = self.Y_LOCATION + self.DY_STABILITY
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY + self.DX_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITIES_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCitiesTotal) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITY_HAPPINESS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCityHappiness) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITY_CIVICS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCityCivics) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITY_CULTURE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCityCulture) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		yLocation = self.Y_LOCATION + self.DY_STABILITY
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY + 2*self.DX_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_WARFARE_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iWarfareTotal) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_COMBAT", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCombat) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITIES_CONQUERED", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCitiesConquered) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITIES_LOST", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCitiesLost) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CITIES_RAZED", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCitiesRazed) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		yLocation = self.Y_LOCATION + 2*self.DY_STABILITY
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_SOCIETY_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iSocietyTotal) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_BUILDINGS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iBuildings) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_HAPPINESS", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iHappiness) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_RELIGION", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iReligion) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_TECH", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iTech) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+
+			
+		yLocation = self.Y_LOCATION + 2*self.DY_STABILITY
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY + self.DX_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_MISC_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_ANARCHY", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iAnarchy) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		if iGreatDepression != 0:
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_GREAT_DEPRESSION", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iGreatDepression) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			yLocation += self.Y_SPACING
+		
+		if iGreatDepression != 0:
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_GREAT_DEPRESSION", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iGreatDepression) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			yLocation += self.Y_SPACING
+		
+		if iForeignGreatDepression != 0:
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_FOREIGN_GREAT_DEPRESSION", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iForeignGreatDepression) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			yLocation += self.Y_SPACING
+		
+		if iPostCommunism != 0:
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_POST_COMMUNISM", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iPostCommunism) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			yLocation += self.Y_SPACING
+		
+		if iDemocracyTransition != 0:
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_DEMOCRACY_TRANSITION", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iDemocracyTransition) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			yLocation += self.Y_SPACING
+		
+		if iGoldenAge != 0:
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_GOLDEN_AGE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iGoldenAge) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			yLocation += self.Y_SPACING
+		
+		if iFall != 0:
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_FALL", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iFall) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+			yLocation += self.Y_SPACING
+			
+		yLocation = self.Y_LOCATION + 2*self.DY_STABILITY
+		
+		screen.addPanel(self.getNextWidgetName(), u"", "", True, True, self.X_STABILITY + 2*self.DX_STABILITY, yLocation-3, self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_SUMMARY_TITLE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 5 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(utils.getStability(self.iActiveLeader)) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_BASE", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(pPlayer.getStabilityCategory(con.iStabilityBase)) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_NORMALIZATION", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iNormalization) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_DIFFICULTY", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iDifficulty) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CAP", ()) + "</font>", CvUtil.FONT_LEFT_JUSTIFY, 10 + self.X_STABILITY + 2*self.DX_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(iCap) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		yLocation += self.Y_SPACING
+		
+		#szMainPanel = self.getNextWidgetName()
+		#screen.addPanel(szMainPanel, u"", "", True, True, self.X_STABILITY, yLocation, 2*self.DX_STABILITY + self.STABILITY_PANE_WIDTH + self.TEXT_MARGIN, self.DY_STABILITY, PanelStyles.PANEL_STYLE_MAIN )
+		#screen.setLabel(self.getNextWidgetName(), szMainPanel, u"<font=4>" + localText.getText("TXT_KEY_STABILITY_BASE_TITLE", ()).upper() + " " + str(pPlayer.getStabilityCategory(con.iStabilityBase)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, (self.X_SLIDERS + self.PANE_WIDTH + self.X_EXPENSES)/2, yLocation + self.Y_SPACING*3/2, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+		#yLocation += 2*self.Y_SPACING
+		
+		#screen.setLabel(self.getNextWidgetName(), szMainPanel, u"<font=4>" + localText.getText("TXT_KEY_STABILITY_ADVISOR_TITLE", ()).upper() + " " + str(utils.getStability(self.iActiveLeader)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, (self.X_SLIDERS + self.PANE_WIDTH + self.X_EXPENSES)/2, yLocation + self.Y_SPACING, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+		
+		
+		#for i in range(16):
+		#	textKey = "TXT_KEY_STABILITY_%d" %(i)
+		#	screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText(textKey, ()) + ":" + "</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_STABILITY + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		#	screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(pPlayer.getStabilityCategory(i)) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + self.PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		#	yLocation += self.Y_SPACING
+			
+		#yLocation = self.Y_LOCATION
+		#for i in range(16, con.iNumStabilityTypes):
+		#	textKey = "TXT_KEY_STABILITY_%d" %(i)
+		#	screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText(textKey, ()) + ":" + "</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_STABILITY + 400 + self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		#	screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + unicode(pPlayer.getStabilityCategory(i)) + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_STABILITY + 400 + self.PANE_WIDTH - self.TEXT_MARGIN, yLocation + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, self.iActiveLeader, 1)
+		#	yLocation += self.Y_SPACING
+		
+		
+		
+	
+		return 0
+
+	def drawContents(self):
+	
+		if self.iScreen < 0:
+			return
+		
+		self.deleteAllWidgets()
+
+		# Create a new screen, called FinanceAdvisor, using the file FinanceAdvisor.py for input
+		screen = self.getScreen()
+		
+		if self.iScreen == FINANCE_SCREEN:
+			self.drawFinance()
+		elif self.iScreen == STABILITY_SCREEN:
+			self.drawStability()
+		
+		xLink = self.X_LINK
+		
+		szFinanceId = self.getNextWidgetName()
+		if (self.iScreen != FINANCE_SCREEN):
+			screen.setText(szFinanceId, "", u"<font=4>" + localText.getText("TXT_KEY_FINANCE_ADVISOR_FINANCE", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, FINANCE_SCREEN, -1)
+		else:
+			screen.setText(szFinanceId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FINANCE_ADVISOR_FINANCE", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, -1, -1)
+		xLink += self.DX_LINK
+		
+		szStabilityId = self.getNextWidgetName()
+		if (self.iScreen != STABILITY_SCREEN):
+			screen.setText(szStabilityId, "", u"<font=4>" + localText.getText("TXT_KEY_FINANCE_ADVISOR_STABILITY", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, STABILITY_SCREEN, -1)
+		else:
+			screen.setText(szStabilityId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FINANCE_ADVISOR_STABILITY", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, -1, -1)
+		xLink += self.DX_LINK
 
 		return 0
 		

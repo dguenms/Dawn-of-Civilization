@@ -545,6 +545,10 @@ public:
 	int getLatestRebellionTurn();
 	void setLatestRebellionTurn(int iNewValue);
 
+	int getStabilityCategory(int iStabilityType);
+	void changeStabilityCategory(int iStabilityType, int iChange);
+	void resetStabilityCategories();
+
 private:
 	CvPlayer* m_pPlayer;
 };

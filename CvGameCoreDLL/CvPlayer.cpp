@@ -54,7 +54,7 @@ CvPlayer::CvPlayer()
 	m_aiCommerceFlexibleCount = new int[NUM_COMMERCE_TYPES];
 	m_aiGoldPerTurnByPlayer = new int[MAX_PLAYERS];
 	m_aiEspionageSpendingWeightAgainstTeam = new int[MAX_TEAMS];
-	//m_aiStabilityCategories = new int[NUM_STABILITY_TYPES]; //Leoreth
+	m_aiStabilityCategories = new int[NUM_STABILITY_TYPES]; //Leoreth
 
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
@@ -125,7 +125,7 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiEspionageSpendingWeightAgainstTeam);
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
-	//SAFE_DELETE_ARRAY(m_aiStabilityCategories); //Leoreth
+	SAFE_DELETE_ARRAY(m_aiStabilityCategories); //Leoreth
 }
 
 
@@ -409,7 +409,7 @@ void CvPlayer::uninit()
 
 	clearDiplomacy();
 
-	resetStabilityCategories(); // Leoreth
+	resetStabilityCategories(true); // Leoreth
 }
 
 
@@ -11602,6 +11602,8 @@ void CvPlayer::setAlive(bool bNewValue)
 			killCities();
 			killAllDeals();
 
+			resetStabilityCategories(true); //Leoreth
+
 			setTurnActive(false);
 
 			gDLL->endMPDiplomacy();
@@ -18322,6 +18324,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceFlexibleCount);
 	pStream->Read(MAX_PLAYERS, m_aiGoldPerTurnByPlayer);
 	pStream->Read(MAX_TEAMS, m_aiEspionageSpendingWeightAgainstTeam);
+	pStream->Read(NUM_STABILITY_TYPES, m_aiStabilityCategories); //Leoreth
 
 	pStream->Read(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Read(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -18835,6 +18838,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceFlexibleCount);
 	pStream->Write(MAX_PLAYERS, m_aiGoldPerTurnByPlayer);
 	pStream->Write(MAX_TEAMS, m_aiEspionageSpendingWeightAgainstTeam);
+	pStream->Write(NUM_STABILITY_TYPES, m_aiStabilityCategories); //Leoreth
 
 	pStream->Write(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Write(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -24650,7 +24654,7 @@ void CvPlayer::doStability()
 	double cpuTime;
 	TCHAR szOut[1024];
 
-	resetStabilityCategories();
+	resetStabilityCategories(false);
 
 	GC.getGameINLINE().logMsg("Player stability calculation started.");
 
@@ -25874,36 +25878,39 @@ void CvPlayer::setLatestRebellionTurn(int iNewValue)
 	m_iLatestRebellionTurn = iNewValue;
 }
 
-/*int CvPlayer::getStabilityCategory(int i)
+int CvPlayer::getStabilityCategory(int i)
 {
 	return m_aiStabilityCategories[i];
 }
 
 int* CvPlayer::getStabilityCategoryArray()
 {
-	//return m_aiStabilityCategories;
-	return
-}*/
-
-void CvPlayer::setStabilityCategory(StabilityTypes eStabilityType, int iValue)
-{
-	//m_aiStabilityCategories[(int)eStabilityType] = iValue;
-	iValue *= 2;
+	return m_aiStabilityCategories;
 }
 
-void CvPlayer::changeStabilityCategory(StabilityTypes eStabilityType, int iChange)
+void CvPlayer::setStabilityCategory(int iStabilityType, int iValue)
 {
-	//m_aiStabilityCategories[(int)eStabilityType] += iChange;
-	iChange *= 2;
+	m_aiStabilityCategories[iStabilityType] = iValue;
 }
 
-void CvPlayer::resetStabilityCategories()
+void CvPlayer::changeStabilityCategory(int iStabilityType, int iChange)
 {
-	/*for (int i = 0; i < NUM_STABILITY_TYPES; i++)
+	m_aiStabilityCategories[iStabilityType] += iChange;
+}
+
+void CvPlayer::resetStabilityCategories(bool bAll)
+{
+	int iThreshold = STABILITY_NORMALIZATION;
+
+	if (bAll)
 	{
-		setStabilityCategory((StabilityTypes)i, 0);
-	}*/
-	int i = 0;
+		iThreshold = NUM_STABILITY_TYPES;
+	}
+
+	for (int i = 0; i < iThreshold; i++)
+	{
+		setStabilityCategory(i, 0);
+	}
 }
 
 int CvPlayer::getPersecutionCountdown()

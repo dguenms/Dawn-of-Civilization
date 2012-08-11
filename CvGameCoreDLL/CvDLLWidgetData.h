@@ -74,6 +74,7 @@ public:
 	void doPediaDescription(CvWidgetDataStruct &widgetDataStruct);
 	void doGotoTurnEvent(CvWidgetDataStruct &widgetDataStruct);
 	void doForeignAdvisor(CvWidgetDataStruct &widgetDataStruct);
+	void doFinanceAdvisor(CvWidgetDataStruct &widgetDataStruct);
 	void doPediaConstructJump(CvWidgetDataStruct &widgetDataStruct);
 	void doPediaTrainJump(CvWidgetDataStruct &widgetDataStruct);
 	void doPediaBuildJump(CvWidgetDataStruct &widgetDataStruct);

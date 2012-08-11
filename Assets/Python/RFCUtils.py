@@ -127,7 +127,8 @@ class RFCUtils:
 
                 if (iHandicap == 0):
                         self.setStability(iCiv, 20)
-			gc.getPlayer(iCiv).setStability(20) # test DLL
+			gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, 20)
+			#gc.getPlayer(iCiv).setStability(20) # test DLL
                         self.setParameter(iCiv, con.iParCitiesE, True, 4)
                         self.setParameter(iCiv, con.iParCivicsE, True, 4)
                         self.setParameter(iCiv, con.iParDiplomacyE, True, 4)
@@ -135,7 +136,8 @@ class RFCUtils:
                         self.setParameter(iCiv, con.iParExpansionE, True, 4) 
                 elif (iHandicap == 1):
                         self.setStability(iCiv, 5)
-			gc.getPlayer(iCiv).setStability(5) # test DLL
+			gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, 5)
+			#gc.getPlayer(iCiv).setStability(5) # test DLL
                         self.setParameter(iCiv, con.iParCitiesE, True, 1)
                         self.setParameter(iCiv, con.iParCivicsE, True, 1)
                         self.setParameter(iCiv, con.iParDiplomacyE, True, 1)
@@ -143,7 +145,8 @@ class RFCUtils:
                         self.setParameter(iCiv, con.iParExpansionE, True, 1) 
                 elif (iHandicap == 2):
                         self.setStability(iCiv, -10)
-			gc.getPlayer(iCiv).setStability(-10) # test DLL
+			gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, -10)
+			#gc.getPlayer(iCiv).setStability(-10) # test DLL
                         self.setParameter(iCiv, con.iParCitiesE, True, -2)
                         self.setParameter(iCiv, con.iParCivicsE, True, -2)
                         self.setParameter(iCiv, con.iParDiplomacyE, True, -2)

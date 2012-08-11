@@ -63,4 +63,337 @@
 		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FINANCE_ADVISOR_FINANCE</Tag>
+		<English>FINANCE</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FINANCE_ADVISOR_STABILITY</Tag>
+		<English>STABILITY</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_0</Tag>
+		<English>Diplomacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_1</Tag>
+		<English>Neighbors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_2</Tag>
+		<English>Vassals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_3</Tag>
+		<English>Imperialism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_4</Tag>
+		<English>Contacts</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_5</Tag>
+		<English>Expansion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_6</Tag>
+		<English>Outer Expansion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_7</Tag>
+		<English>Occupied Core</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_8</Tag>
+		<English>Civic Combinations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_9</Tag>
+		<English>Civic Era</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_10</Tag>
+		<English>Civic Number of Cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_11</Tag>
+		<English>Civic Cap</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_12</Tag>
+		<English>Civic Techs</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_13</Tag>
+		<English>Foreign Core Cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_14</Tag>
+		<English>City Happiness</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_15</Tag>
+		<English>City Civics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_16</Tag>
+		<English>City Culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_17</Tag>
+		<English>Total City Stability</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_18</Tag>
+		<English>Trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_19</Tag>
+		<English>Economy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_20</Tag>
+		<English>Happiness</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_21</Tag>
+		<English>Economy Extra</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_22</Tag>
+		<English>Great Depression</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_23</Tag>
+		<English>Foreign Great Depression</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_24</Tag>
+		<English>Post-Communist Crisis</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_25</Tag>
+		<English>Transition to Democracy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_26</Tag>
+		<English>Number of Cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_27</Tag>
+		<English>Combat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_28</Tag>
+		<English>Combat Extra</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_29</Tag>
+		<English>Anarchy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_30</Tag>
+		<English>Golden Age</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_31</Tag>
+		<English>Fall</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_32</Tag>
+		<English>Base Stability</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DIPLOMACY_TITLE</Tag>
+		<English>FOREIGN</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_EXPANSION_TITLE</Tag>
+		<English>EXPANSION</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CIVICS_TITLE</Tag>
+		<English>CIVICS</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ECONOMY_TITLE</Tag>
+		<English>ECONOMY</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITIES_TITLE</Tag>
+		<English>CITIES</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_MISC_TITLE</Tag>
+		<English>MISCELLANEOUS</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_WARFARE_TITLE</Tag>
+		<English>WARFARE</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_SOCIETY_TITLE</Tag>
+		<English>SOCIETY</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_SUMMARY_TITLE</Tag>
+		<English>SUMMARY</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_TITLE</Tag>
+		<English>STABILITY: %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_BASE</Tag>
+		<English>Base Stability</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_NORMALIZATION</Tag>
+		<English>Normalization</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DIFFICULTY</Tag>
+		<English>Difficulty Level</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CAP</Tag>
+		<English>Stability Limits</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_OVERALL</Tag>
+		<English>Overall Stability</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DIPLOMACY</Tag>
+		<English>Diplomacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_NEIGHBORS</Tag>
+		<English>Neighbors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CONTACTS</Tag>
+		<English>Contacts</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_VASSALS</Tag>
+		<English>Vassals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITIES_BUILT</Tag>
+		<English>Cities Built</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITY_TERRITORY</Tag>
+		<English>City Territory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_OUTER_TERRITORY</Tag>
+		<English>Outer Territory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_OCCUPIED_CORE</Tag>
+		<English>Occupied Core</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_OCCUPIED_FOREIGN_CORE</Tag>
+		<English>Occupied Foreign Core</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CIVIC_COMBINATIONS</Tag>
+		<English>Combinations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CIVIC_NUMBER_CITIES</Tag>
+		<English>Number of Cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CIVIC_ERA</Tag>
+		<English>Era</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CIVIC_TECH</Tag>
+		<English>Technologies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ECONOMY</Tag>
+		<English>Economy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_TRADE</Tag>
+		<English>Trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITY_HAPPINESS</Tag>
+		<English>Happiness</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITY_CIVICS</Tag>
+		<English>Civics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITY_CULTURE</Tag>
+		<English>Culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_COMBAT</Tag>
+		<English>Combat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITIES_CONQUERED</Tag>
+		<English>Cities Conquered</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITIES_LOST</Tag>
+		<English>Cities Lost</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITIES_RAZED</Tag>
+		<English>Cities Razed</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_HAPPINESS</Tag>
+		<English>Happiness</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_BUILDINGS</Tag>
+		<English>Buildings</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_RELIGION</Tag>
+		<English>Religion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_TECH</Tag>
+		<English>Technology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ANARCHY</Tag>
+		<English>Anarchy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION</Tag>
+		<English>Great Depression</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_FOREIGN_GREAT_DEPRESSION</Tag>
+		<English>Great Depression (foreign)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_POST_COMMUNISM</Tag>
+		<English>Post-Communist Crisis</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DEMOCRACY_TRANSITION</Tag>
+		<English>Transition to Democracy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_GOLDEN_AGE</Tag>
+		<English>Golden Age</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_FALL</Tag>
+		<English>Historicity</English>
+	</TEXT>
+	
 </Civ4GameText>
