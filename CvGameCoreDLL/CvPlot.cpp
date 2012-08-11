@@ -6409,6 +6409,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 							iYield += calculateImprovementYieldChange((ImprovementTypes)iImprovement, eYield, ePlayer);
 							break;
 							break;
+							break;
+							break;
 						}
 					}
 				}

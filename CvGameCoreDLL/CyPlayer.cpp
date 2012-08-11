@@ -2464,3 +2464,20 @@ void CyPlayer::setPersecutionCountdown(int iNewValue)
 	if (m_pPlayer)
 		m_pPlayer->setPersecutionCountdown(iNewValue);
 }
+
+int CyPlayer::getStabilityCategory(int iStabilityType)
+{
+	return m_pPlayer ? m_pPlayer->getStabilityCategory(iStabilityType) : -1;
+}
+
+void CyPlayer::changeStabilityCategory(int iStabilityType, int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeStabilityCategory(iStabilityType, iChange);
+}
+
+void CyPlayer::resetStabilityCategories()
+{
+	if (m_pPlayer)
+		m_pPlayer->resetStabilityCategories(false);
+}

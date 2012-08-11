@@ -2211,12 +2211,14 @@ iAnimism, iPantheon, iOrganizedReligion, iScholasticism, iFanaticism, iSecularis
 iSubjugation, iViceroyalty, iResettlement, iOccupation, iImperialism, iCommonwealth) = range(iNumCivics)
 
 #Stability Display
-iNumStabilityTypes = 33
+iNumStabilityTypes = 44
 (iStabilityDiplomacy, iStabilityNeighbor, iStabilityVassal, iStabilityImperialism, iStabilityContacts, iStabilityExpansion, iStabilityOuterExpansion,
 iStabilityOccupiedCore, iStabilityCivics, iStabilityCivicEra, iStabilityCivicCities, iStabilityCivicCap, iStabilityCivicTech, iStabilityForeignCoreCities,
 iStabilityCityHappiness, iStabilityCityCivics, iStabilityCityCulture, iStabilityCityTotal, iStabilityTrade, iStabilityEconomy, iStabilityHappiness,
 iStabilityEconomyExtra, iStabilityGreatDepression, iStabilityForeignGreatDepression, iStabilityPostCommunism, iStabilityDemocracyTransition, 
-iStabilityNumCities, iStabilityCombat, iStabilityCombatExtra, iStabilityAnarchy, iStabilityGoldenAge, iStabilityFall, iStabilityBase) = range(iNumStabilityTypes)
+iStabilityNumCities, iStabilityCombat, iStabilityCombatExtra, iStabilityAnarchy, iStabilityGoldenAge, iStabilityFall, iStabilityBase, iStabilityNormalization,
+iStabilityCitiesBuilt, iStabilityCitiesLost, iStabilityCitiesConquered, iStabilityCitiesRazed, iStabilityTech, iStabilityBuildings,
+iStabilityReligion, iStabilityDifficulty, iStabilityCap, iStabilityHit) = range(iNumStabilityTypes)
 
 #Regions
 iNumRegions = 38

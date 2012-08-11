@@ -828,6 +828,10 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 		doForeignAdvisor(widgetDataStruct);
 		break;
 
+	case WIDGET_FINANCE_ADVISOR:
+		doFinanceAdvisor(widgetDataStruct);
+		break;
+
 	case WIDGET_DEAL_KILL:
 		doDealKill(widgetDataStruct);
 		break;
@@ -1011,6 +1015,7 @@ bool CvDLLWidgetData::isLink(const CvWidgetDataStruct &widgetDataStruct) const
 	case WIDGET_PEDIA_MAIN:
 	case WIDGET_TURN_EVENT:
 	case WIDGET_FOREIGN_ADVISOR:
+	case WIDGET_FINANCE_ADVISOR:
 	case WIDGET_PEDIA_DESCRIPTION:
 	case WIDGET_PEDIA_DESCRIPTION_NO_HELP:
 	case WIDGET_MINIMAP_HIGHLIGHT:
@@ -1596,6 +1601,13 @@ void CvDLLWidgetData::doForeignAdvisor(CvWidgetDataStruct &widgetDataStruct)
 	CyArgsList argsList;
 	argsList.add(widgetDataStruct.m_iData1);
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "showForeignAdvisorScreen", argsList.makeFunctionArgs());
+}
+
+void CvDLLWidgetData::doFinanceAdvisor(CvWidgetDataStruct &widgetDataStruct)
+{
+	CyArgsList argsList;
+	argsList.add(widgetDataStruct.m_iData1);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "showFinanceAdvisor", argsList.makeFunctionArgs());
 }
 
 //

@@ -626,13 +626,16 @@ class RiseAndFall:
 			pSeljuks.changeGold(250)
                         if (not pVikings.isHuman()):
                                 utils.setStability(iVikings, utils.getStability(iVikings) + 2)
-				gc.getPlayer(iVikings).changeStability(2) # test DLL
+				pVikings.changeStabilityCategory(con.iStabilityDifficulty, 2)
+				#gc.getPlayer(iVikings).changeStability(2) # test DLL
                         if (not pChina.isHuman()):
                                 utils.setStability(iChina, utils.getStability(iChina) + 3)
-				gc.getPlayer(iChina).changeStability(3) # test DLL
+				pChina.changeStabilityCategory(con.iStabilityDifficulty, 3)
+				#gc.getPlayer(iChina).changeStability(3) # test DLL
                         if (not pJapan.isHuman()):
                                 utils.setStability(iJapan, utils.getStability(iJapan) + 4)
-				gc.getPlayer(iJapan).changeStability(4) # test DLL
+				pJapan.changeStabilityCategory(con.iStabilityDifficulty, 4)
+				#gc.getPlayer(iJapan).changeStability(4) # test DLL
                         utils.setGoal(iEgypt, 0, 0)
                         utils.setGoal(iEgypt, 1, 0)
                         utils.setGoal(iEgypt, 2, 0)
@@ -666,8 +669,10 @@ class RiseAndFall:
                 else:
                         if (not pChina.isHuman()):
                                 utils.setStability(iChina, utils.getStability(iChina) + 2)
+				pChina.changeStabilityCategory(con.iStabilityDifficulty, 2)
                         if (not pIndia.isHuman()):
                                 utils.setStability(iIndia, utils.getStability(iIndia) + 2)
+				pChina.changeStabilityCategory(con.iStabilityDifficulty, 2)
                         pIndependent.changeGold(50)
                         pIndependent2.changeGold(50)
                         pNative.changeGold(100)
@@ -1355,7 +1360,8 @@ class RiseAndFall:
                                         utils.setBaseStabilityLastTurn(iCiv, 0) # test DLL
 					gc.getPlayer(iCiv).setBaseStabilityLastTurn(0)
                                         utils.setStability(iCiv, 10)            #the new civs start as slightly stable
-					gc.getPlayer(iCiv).setStability(10) # test DLL
+					gc.getPlayer(iCiv).changeStabilityCategory(con.iDifficulty, 10)
+					#gc.getPlayer(iCiv).setStability(10) # test DLL
                                         utils.setPlagueCountdown(iCiv, -10)
                                         utils.clearPlague(iCiv)
                                         sd.scriptDict['lGoals'][iCiv][0] = -1
@@ -1881,7 +1887,8 @@ class RiseAndFall:
                                                                                            CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
                                                 #print ("SECESSION", gc.getPlayer(iPlayer).getCivilizationAdjective(0), splittingCity.getName()) #causes c++ exception??
                                                 utils.setStability(iPlayer, utils.getStability(iPlayer) + 2) #to counterbalance the stability hit on city acquired event, leading to a chain reaction
-						gc.getPlayer(iPlayer).changeStability(2) # test DLL
+						gc.getPlayer(iPlayer).changeStabilityCategory(con.iStabilityCitiesLost, 2)
+						#gc.getPlayer(iPlayer).changeStability(2) # test DLL
                                         return #just 1 secession per turn
 
 
@@ -2185,7 +2192,8 @@ class RiseAndFall:
                                 utils.setBaseStabilityLastTurn(iDeadCiv, 0)
 				gc.getPlayer(iDeadCiv).setBaseStabilityLastTurn(0) # test DLL
                                 utils.setStability(iDeadCiv, 10) ##the new civs start as slightly stable
-				gc.getPlayer(iDeadCiv).setStability(10) # test DLL
+				gc.getPlayer(iDeadCiv).changeStabilityCategory(con.iStabilityDifficulty, 10)
+				#gc.getPlayer(iDeadCiv).setStability(10) # test DLL
                                 utils.setPlagueCountdown(iDeadCiv, -10)
                                 utils.clearPlague(iDeadCiv)                                
                                 self.convertBackCulture(iDeadCiv)
@@ -3462,7 +3470,8 @@ class RiseAndFall:
                                         iColonistsAlreadyGiven = self.getColonistsAlreadyGiven(iCiv) + 1
                                         self.setColonistsAlreadyGiven(iCiv, iColonistsAlreadyGiven)
                                         utils.setStability(iCiv, utils.getStability(iCiv) + 1)
-					gc.getPlayer(iCiv).changeStability(1) # test DLL
+					gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, 1)
+					#gc.getPlayer(iCiv).changeStability(1) # test DLL
                                         print ("colonists", iCiv)
 
                 #part2: upgrade galleys to galleons, just once
@@ -5920,7 +5929,8 @@ class RiseAndFall:
                                         if (iLoop == utils.getHumanID()):
                                                 bHuman = True                                        
                                         utils.setStability(iLoop, utils.getStability(iLoop)-3)
-					gc.getPlayer(iLoop).changeStability(-3)
+					gc.getPlayer(iLoop).changeStabilityCategory(con.iStabilityHit, -3)
+					#gc.getPlayer(iLoop).changeStability(-3)
                         if (bHuman):
                                 utils.setStabilityParameters(con.iParDiplomacyE, utils.getStabilityParameters(con.iParDiplomacyE)-3)
 

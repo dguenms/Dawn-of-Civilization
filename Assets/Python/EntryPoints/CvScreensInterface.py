@@ -240,9 +240,9 @@ def showForeignAdvisorScreen(argsList):
 		foreignAdvisor.interfaceScreen(argsList[0])
 
 financeAdvisor = CvFinanceAdvisor.CvFinanceAdvisor()
-def showFinanceAdvisor():
+def showFinanceAdvisor(argsList):
 	if (-1 != CyGame().getActivePlayer()):
-		financeAdvisor.interfaceScreen()
+		financeAdvisor.interfaceScreen(argsList[0])
 
 domesticAdvisor = CvDomesticAdvisor.CvDomesticAdvisor()
 def showDomesticAdvisor(argsList):

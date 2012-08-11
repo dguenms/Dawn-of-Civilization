@@ -1159,11 +1159,11 @@ public:
 	void addToStabilityList(StabilityTypes eStabilityType, int iValue);
 	void clearStabilityList();*/
 
-	/*int getStabilityCategory(int i);
-	int* getStabilityCategoryArray();*/
-	void changeStabilityCategory(StabilityTypes eStabilityType, int iChange);
-	void setStabilityCategory(StabilityTypes eStabilityType, int iValue);
-	void resetStabilityCategories();
+	int getStabilityCategory(int i);
+	int* getStabilityCategoryArray();
+	void changeStabilityCategory(int iStabilityType, int iChange);
+	void setStabilityCategory(int iStabilityType, int iValue);
+	void resetStabilityCategories(bool bAll);
 
 	EraTypes getSoundtrackEra();
 	
@@ -1343,7 +1343,7 @@ protected:
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;
 
-	//int* m_aiStabilityCategories; //Leoreth
+	int* m_aiStabilityCategories; //Leoreth
 
 	bool* m_abFeatAccomplished;
 	bool* m_abOptions;
