@@ -8623,6 +8623,10 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
+
+	if (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
+		return 0;
+
 	return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex)));
 }
 
@@ -8632,7 +8636,7 @@ int CvCity::getExtraSpecialistThresholdYield(YieldTypes eIndex, SpecialistTypes 
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
-	if (isSpecialistExtraYieldThreshold())
+	if (isSpecialistExtraYieldThreshold() && eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
 	{
 		return ((std::min(getSpecialistCount(eSpecialist), (eSpecialist != GC.getInfoTypeForString("SPECIALIST_CITIZEN")? getMaxSpecialistCount(eSpecialist) : getSpecialistCount(eSpecialist))) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, eIndex)));
 	}
@@ -8785,7 +8789,7 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 
 	iBaseCommerceRate = getCommerceFromPercent(eIndex, getYieldRate(YIELD_COMMERCE) * 100);
 
-	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople()) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
+	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople() - getFreeSpecialistCount((SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
 	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
 
 	return iBaseCommerceRate;

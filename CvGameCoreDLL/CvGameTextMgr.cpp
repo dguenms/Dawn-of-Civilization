@@ -4161,7 +4161,7 @@ void CvGameTextMgr::parseSpecialistHelp(CvWStringBuffer &szHelpString, Specialis
 
 		for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 		{
-			if (GC.getGameINLINE().getActivePlayer() == NO_PLAYER)
+			if (GC.getGameINLINE().getActivePlayer() == NO_PLAYER || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
 			{
 				aiYields[iI] = GC.getSpecialistInfo(eSpecialist).getYieldChange(iI);
 			}
@@ -4172,7 +4172,7 @@ void CvGameTextMgr::parseSpecialistHelp(CvWStringBuffer &szHelpString, Specialis
 				// Leoreth: (city states effect)
 				if (pCity != NULL)
 				{
-					if (pCity->isSpecialistExtraYieldThreshold())
+					if (pCity->isSpecialistExtraYieldThreshold() && eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
 					{
 						aiYields[iI] += GET_PLAYER(pCity->getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, ((YieldTypes)iI));
 					}
@@ -4184,7 +4184,7 @@ void CvGameTextMgr::parseSpecialistHelp(CvWStringBuffer &szHelpString, Specialis
 
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; ++iI)
 		{
-			if (GC.getGameINLINE().getActivePlayer() == NO_PLAYER)
+			if (GC.getGameINLINE().getActivePlayer() == NO_PLAYER || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
 			{
 				aiCommerces[iI] = GC.getSpecialistInfo(eSpecialist).getCommerceChange(iI);
 			}
@@ -12117,7 +12117,7 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 	szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_SLIDER_PERCENT_FLOAT", owner.getCommercePercent(eCommerceType), city.getYieldRate(YIELD_COMMERCE), szRate.GetCString(), info.getChar()));
 	szBuffer.append(NEWLINE);
 
-	int iSpecialistCommerce = city.getSpecialistCommerce(eCommerceType) + (city.getSpecialistPopulation() + city.getNumGreatPeople()) * owner.getSpecialistExtraCommerce(eCommerceType);
+	int iSpecialistCommerce = city.getSpecialistCommerce(eCommerceType) + (city.getSpecialistPopulation() + city.getNumGreatPeople() - city.getFreeSpecialistCount((SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))) * owner.getSpecialistExtraCommerce(eCommerceType);
 	if (0 != iSpecialistCommerce)
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_SPECIALIST_COMMERCE", iSpecialistCommerce, info.getChar(), L"TXT_KEY_CONCEPT_SPECIALISTS"));
