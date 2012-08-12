@@ -4329,7 +4329,7 @@ class RiseAndFall:
 		if iCiv == iTibet:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
-			utils.makeUnit(con.iTibetanKhampa, iCiv, tPlot, 1)
+			utils.makeUnit(con.iTibetanKhampa, iCiv, tPlot, 2)
 			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
                 if (iCiv == iKhmer):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
@@ -5393,7 +5393,7 @@ class RiseAndFall:
 				lTibetanTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, con.iMasonry, \
 						con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, \
 						con.iWriting, con.iCodeOfLaws, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, \
-						con.iAnimalHusbandry, con.iHorsebackRiding, con.iCalendar, con.iMeditation, con.iSailing]
+						con.iAnimalHusbandry, con.iHorsebackRiding, con.iCalendar, con.iMeditation, con.iSailing, con.iTheology]
 				for iTech in lTibetanTechs:
 					teamTibet.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iKhmer):

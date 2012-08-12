@@ -1276,7 +1276,7 @@ class Victory:
 						self.setGoal(iTibet, 1, 0)
 						
 					iReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism)
-					if iReligionPercent >= 40.0:
+					if iReligionPercent >= 30.0:
 						self.setGoal(iTibet, 1, 1)
 						
 				if self.getGoal(iTibet, 2) == -1:
@@ -3688,7 +3688,7 @@ class Victory:
 				aHelp.append(self.getIcon(iNumCities >= 5) + localText.getText("TXT_KEY_VICTORY_CITIES_ACQUIRED", (iNumCities, 5)))
 			elif iGoal == 1:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism)
-				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(con.iBuddhism).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(40))))
+				aHelp.append(self.getIcon(fReligionPercent >= 30.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(con.iBuddhism).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(30))))
 			elif iGoal == 2:
 				lhasaPlot = gc.getMap().plot(96, 43)
 				iCounter = 0
