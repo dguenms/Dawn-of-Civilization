@@ -2451,6 +2451,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_MISSIONARY] *= 2;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
 		break;
+	case TIBET:
+		aiUnitAIVal[UNITAI_MISSIONARY] *= 5;
+		break;
 	case KHMER:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
 		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
@@ -3156,6 +3159,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 2;
 											iTempValue /= 3;
 											}
+										break;
+									case TIBET:
 										break;
 									case KHMER:
 										if (iI == ANGKORWAT) iTempValue *= 3;
@@ -4841,6 +4846,9 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iValue -= 2;
 					break;
 				case VIKING:
+					break;
+				case TIBET:
+					iValue -= 2;
 					break;
 				case KHMER:
 					break;

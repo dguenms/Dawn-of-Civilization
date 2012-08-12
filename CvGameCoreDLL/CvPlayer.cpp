@@ -13248,6 +13248,18 @@ bool CvPlayer::isUnitClassMaxedOut(UnitClassTypes eIndex, int iExtra) const
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumUnitClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
 
+	// Tibetan UP: unlimited missionaries
+	if (getID() == TIBET)
+	{
+		for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			if (GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eIndex)).getReligionSpreads(iI) > 0)
+			{
+				return false;
+			}
+		}
+	}
+
 	if (!isNationalUnitClass(eIndex))
 	{
 		return false;

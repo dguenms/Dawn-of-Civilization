@@ -1865,6 +1865,16 @@
 			<Button>,Art/Interface/Buttons/Civilizations/Arabia.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,2,5</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TIB_EMBASSY</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Civilizations/Tibet.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_KHM_EMBASSY</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>

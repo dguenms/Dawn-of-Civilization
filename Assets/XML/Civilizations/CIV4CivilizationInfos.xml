@@ -5232,7 +5232,7 @@
 			<ShortDescription>TXT_KEY_CIV_TIBET_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_TIBET_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_TIBET_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_DARK_PINK</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_MAROON</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TIBET</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>

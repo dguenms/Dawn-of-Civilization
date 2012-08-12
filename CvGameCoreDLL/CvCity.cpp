@@ -12407,8 +12407,8 @@ void CvCity::doCulture()
 						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
 
 					// Leoreth: buff Lhasa to help it against cultural takeover
-					if (getRegionID() == REGION_TIBET)
-						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
+					//if (getRegionID() == REGION_TIBET)
+					//	changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
 				}else if (getOwnerINLINE() == NATIVE)
 				{
 					if (hasActiveWorldWonder()) {

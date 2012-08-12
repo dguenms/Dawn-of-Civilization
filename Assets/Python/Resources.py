@@ -119,6 +119,11 @@ class Resources:
 			CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
 			CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
 			
+		# Leoreth: prepare Tibet
+		if iGameTurn == getTurnForYear(630)-1 and gc.getPlayer(con.iTibet).isPlayable(): #check existence later
+			gc.getMap().plot(95, 43).setBonusType(iWheat)
+			gc.getMap().plot(97, 44).setBonusType(iHorse)
+			
                     
                 if (iGameTurn == getTurnForYear(1100)):
                         #gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt

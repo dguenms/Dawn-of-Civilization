@@ -53,6 +53,7 @@ iMaya = con.iMaya
 iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
+iTibet = con.iTibet
 iKhmer = con.iKhmer
 iIndonesia = con.iIndonesia
 iMoors = con.iMoors

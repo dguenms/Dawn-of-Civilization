@@ -150,20 +150,20 @@ class Barbs:
 						utils.makeUnit(iUnit, iOwner, (tMinorCity[2], tMinorCity[3]), 1)
 
 		# Leoreth: Tibet
-		if iGameTurn == getTurnForYear(lLhasa[2]):
-			x, y = lLhasa[0], lLhasa[1]
-			if not gc.getMap().plot(x, y).isCity():
-				gc.getMap().plot(x, y).setOwner(iBarbarian)
-				gc.getPlayer(iBarbarian).found(x, y)
-			if gc.getMap().plot(x, y).isCity():
-				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iBarbarian:
-					gc.getMap().plot(x, y).getPlotCity().setCulture(iBarbarian, 1000, True)
-					gc.getMap().plot(x, y).getPlotCity().setName("Lhasa", False)
-
-			lTibet = [(93, 42), (93, 43), (93, 44), (94, 42), (94, 43), (94, 44), (95, 42), (95, 43), (95, 44), (96, 42), (96, 43), (96, 44), (92, 43), (95, 45), (96, 45), (97, 45), (97, 44), (97, 43)]
-			for tPlot in lTibet:
-				x, y = tPlot
-				utils.convertPlotCulture(gc.getMap().plot(x, y), con.iBarbarian, 100, False)
+		#if iGameTurn == getTurnForYear(lLhasa[2]):
+		#	x, y = lLhasa[0], lLhasa[1]
+		#	if not gc.getMap().plot(x, y).isCity():
+		#		gc.getMap().plot(x, y).setOwner(iBarbarian)
+		#		gc.getPlayer(iBarbarian).found(x, y)
+		#	if gc.getMap().plot(x, y).isCity():
+		#		if gc.getMap().plot(x, y).getPlotCity().getOwner() == iBarbarian:
+		#			gc.getMap().plot(x, y).getPlotCity().setCulture(iBarbarian, 1000, True)
+		#			gc.getMap().plot(x, y).getPlotCity().setName("Lhasa", False)
+#
+#			lTibet = [(93, 42), (93, 43), (93, 44), (94, 42), (94, 43), (94, 44), (95, 42), (95, 43), (95, 44), (96, 42), (96, 43), (96, 44), (92, 43), (95, 45), (96, 45), (97, 45), (97, 44), (97, 43)]
+#			for tPlot in lTibet:
+#				x, y = tPlot
+#				utils.convertPlotCulture(gc.getMap().plot(x, y), con.iBarbarian, 100, False)
 
                 #debug
                 #if (iGameTurn % 50 == 1):

@@ -35,6 +35,7 @@ iMaya = con.iMaya
 iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
+iTibet = con.iTibet
 iKhmer = con.iKhmer
 iIndonesia = con.iIndonesia
 iMoors = con.iMoors
@@ -86,6 +87,7 @@ pMaya = gc.getPlayer(iMaya)
 pByzantium = gc.getPlayer(iByzantium)
 pVikings = gc.getPlayer(iVikings)
 pArabia = gc.getPlayer(iArabia)
+pTibet = gc.getPlayer(iTibet)
 pKhmer = gc.getPlayer(iKhmer)
 pIndonesia = gc.getPlayer(iIndonesia)
 pMoors = gc.getPlayer(iMoors)
@@ -132,6 +134,7 @@ teamMaya = gc.getTeam(pMaya.getTeam())
 teamByzantium = gc.getTeam(pByzantium.getTeam())
 teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
+teamTibet = gc.getTeam(pTibet.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
 teamIndonesia = gc.getTeam(pIndonesia.getTeam())
 teamMoors = gc.getTeam(pMoors.getTeam())
@@ -201,6 +204,7 @@ class DynamicCivs:
                         iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT",
                         iVikings : "TXT_KEY_CIV_VIKINGS_DESC_DEFAULT",
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_DEFAULT",
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_DEFAULT",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_DEFAULT",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_DEFAULT",
 			iMoors : "TXT_KEY_CIV_MOORS_DESC_DEFAULT",
@@ -242,6 +246,7 @@ class DynamicCivs:
                         iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_PEOPLES",
                         iVikings : "TXT_KEY_CIV_VIKINGS_DESC_PEOPLES",
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_PEOPLES",
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_PEOPLES",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_PEOPLES",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_PEOPLES",
 			iMoors : "TXT_KEY_CIV_MOORS_DESC_PEOPLES",
@@ -389,6 +394,7 @@ class DynamicCivs:
 				iTurkey : "TXT_KEY_CIV_TURKEY_ARABIAN_VASSAL",
 				iMughals : "TXT_KEY_CIV_MUGHALS_ARABIAN_VASSAL",
 				iThailand : "TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL",},
+			#iTibet - none so far
 			#iKhmer - none so far
 			#iIndonesia - none so far
 			#iMoors - none so far
@@ -578,6 +584,7 @@ class DynamicCivs:
                         iVikings : "TXT_KEY_CIV_VIKINGS_SOVIET_VASSAL",
                         iArabia : "TXT_KEY_CIV_ARABIA_SOVIET_VASSAL",
                         iKhmer : "TXT_KEY_CIV_KHMER_SOVIET_VASSAL",
+			iTibet : "TXT_KEY_CIV_TIBET_SOVIET_VASSAL",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_SOVIET_VASSAL",
 			iMoors : "TXT_KEY_CIV_MOORS_SOVIET_VASSAL",
                         iSpain : "TXT_KEY_CIV_SPAIN_SOVIET_VASSAL",
@@ -618,6 +625,7 @@ class DynamicCivs:
                         iByzantium : "TXT_KEY_CIV_BYZANTIUM_NAZI_VASSAL",
                         iVikings : "TXT_KEY_CIV_VIKINGS_NAZI_VASSAL",
                         iArabia : "TXT_KEY_CIV_ARABIA_NAZI_VASSAL",
+			iTibet : "TXT_KEY_CIV_TIBET_NAZI_VASSAL",
                         iKhmer : "TXT_KEY_CIV_KHMER_NAZI_VASSAL",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_NAZI_VASSAL",
 			iMoors : "TXT_KEY_CIV_MOORS_NAZI_VASSAL",
@@ -658,6 +666,7 @@ class DynamicCivs:
                         iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_FASCIST",
                         iVikings : "TXT_KEY_CIV_VIKINGS_DESC_FASCIST",
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_FASCIST",
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_FASCIST",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_FASCIST",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_FASCIST",
 			iMoors : "TXT_KEY_CIV_MOORS_DESC_FASCIST",
@@ -699,6 +708,7 @@ class DynamicCivs:
                         iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_COMMUNIST",
                         iVikings : "TXT_KEY_CIV_VIKINGS_DESC_COMMUNIST",
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_COMMUNIST",
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_COMMUNIST",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_COMMUNIST",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_COMMUNIST",
 			iMoors : "TXT_KEY_CIV_MOORS_DESC_COMMUNIST",
@@ -740,6 +750,7 @@ class DynamicCivs:
                         iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_DEMOCRATIC",
                         iVikings : "TXT_KEY_CIV_VIKINGS_DESC_DEMOCRATIC",
                         iArabia : "TXT_KEY_CIV_ARABIA_DESC_DEMOCRATIC",
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_DEMOCRATIC",
                         iKhmer : "TXT_KEY_CIV_KHMER_DESC_DEMOCRATIC",
                         iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_DEMOCRATIC",
 			iMoors : "TXT_KEY_CIV_MOORS_DESC_DEMOCRATIC",
@@ -789,6 +800,7 @@ class DynamicCivs:
 			iByzantium : con.iJustinian,
 			iVikings : con.iRagnar,
 			iArabia : con.iAbuBakr,
+			iTibet : con.iLobsangGyatso,
 			iKhmer : con.iSuryavarman,
 			iIndonesia : con.iDharmasetu,
 			iMoors : con.iRahman,
@@ -866,7 +878,7 @@ class DynamicCivs:
 			if not gc.getPlayer(iPlayer).isHuman():
 				self.setLeader(iPlayer, self.startingLeaders[iPlayer])
 			
-				if gc.getPlayer(iEgypt).isPlayable() and iPlayer in self.lateStartingLeaders:
+				if not gc.getPlayer(iEgypt).isPlayable() and iPlayer in self.lateStartingLeaders:
 					self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
 			
 		if not gc.getPlayer(iEgypt).isPlayable():
@@ -925,7 +937,8 @@ class DynamicCivs:
 		elif iPlayer == iInca: iThreshold = 3
 		elif iPlayer == iMongolia: iThreshold = 10
 		elif iPlayer == iPoland: iThreshold = 3
-		elif iPlayer == iMoors: iThreshold = 4
+		elif iPlayer == iMoors: iThreshold = 3
+		elif iPlayer == iTibet: iThreshold = 2
 			
 		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
 		
@@ -1354,6 +1367,13 @@ class DynamicCivs:
 				return
 				
 			# Arabian Sultanates as default, Arabian leaders should prefer Theocracy
+			
+		elif iPlayer == iTibet:
+			if bEmpire:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TIBET_EMPIRE")
+				return
+				
+			# Kingdom of Tibet as default
 			
 		elif iPlayer == iKhmer:
 			if iEra <= iRenaissance and capital.getName() == "Angkor":
@@ -2019,6 +2039,10 @@ class DynamicCivs:
 			if iGameTurn >= getTurnForYear(1850):
 				self.setLeader(iPlayer, con.iLincoln)
 				return
+				
+		if not gc.getPlayer(0).isPlayable() and iPlayer in self.lateStartingLeaders:
+			self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
+			return
 				
 		self.setLeader(iPlayer, self.startingLeaders[iPlayer])
 		

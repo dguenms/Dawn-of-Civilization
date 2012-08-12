@@ -290,7 +290,7 @@ class Stability:
                                 iTempNormalizationThreshold = self.getStability(iPlayer)
                                 for j in range(len(con.lCivStabilityGroups)):
                                         if (iPlayer in con.lCivStabilityGroups[j]):
-                                                self.setStability(iPlayer, (self.getStability(iPlayer) + self.changeStabilityCategory(pPlayer, con.iStabilityNormalization, lContinentModifier[j])))
+                                                self.setStability(iPlayer, (self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityNormalization, lContinentModifier[j])))
 						#gc.getPlayer(iPlayer).changeStability(lContinentModifier[j]) # test DLL
                                 self.setParameter(iPlayer, iParDiplomacyE, True, self.getStability(iPlayer) - iTempNormalizationThreshold)
 
@@ -1412,7 +1412,7 @@ class Stability:
         def onCityRazed(self, iOwner, playerType, city):
             
                 if (iOwner < con.iNumPlayers):      
-                        self.setStability(iOwner, self.getStability(iOwner) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesRazed, -3) )
+                        self.setStability(iOwner, self.getStability(iOwner) + self.changeStabilityCategory(gc.getPlayer(playerType), con.iStabilityCitiesRazed, -3) )
 			#gc.getPlayer(iOwner).changeStability(-3) # test DLL
                         #print("Stability - city razed", -3, iOwner)
                         self.setParameter(iOwner, iParExpansionE, True, - 3)
@@ -1420,7 +1420,7 @@ class Stability:
                 if (playerType < con.iNumPlayers):
                         iTempExpansionThreshold = self.getStability(playerType)                 
                         if (gc.getPlayer(playerType).getCivics(5) == con.iOccupation):
-                                self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityCitiesConquered, -2) ) #balance the +2 and makes 0 for city razed
+                                self.setStability(playerType, self.getStability(playerType) + self.changeStabilityCategory(gc.getPlayer(playerType), con.iStabilityCitiesConquered, -2) ) #balance the +2 and makes 0 for city razed
 				#gc.getPlayer(playerType).changeStability(-2) # test DLL
                         self.setParameter(playerType, iParExpansionE, True, self.getStability(playerType) - iTempExpansionThreshold) 
 

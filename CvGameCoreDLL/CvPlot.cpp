@@ -3110,7 +3110,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 	}
 
 	// Leoreth: no culture from cities in other regions in certain cases (at the moment: Tibet)
-	if (eBestPlayer != NO_PLAYER && eBestPlayer != BARBARIAN)
+	/*if (eBestPlayer != NO_PLAYER && eBestPlayer != BARBARIAN)
 	{
 		bValid = true;
 		if (getRegionID() == REGION_TIBET)
@@ -3140,7 +3140,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 		{
 			eBestPlayer = NO_PLAYER;
 		}
-	}
+	}*/
 	// edead: end
 
 	return eBestPlayer;

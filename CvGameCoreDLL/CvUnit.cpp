@@ -2304,6 +2304,19 @@ bool CvUnit::canEnterTerritory(TeamTypes eTeam, bool bIgnoreRightOfPassage) cons
 		}
 	}
 
+	//Leoreth: Tibetan UP
+	if (getOwnerINLINE() == TIBET)
+	{
+		for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			if (GC.getUnitInfo(getUnitType()).getReligionSpreads(iI) > 0)
+			{
+				return true;
+			}
+		}
+	}
+
+
 	//Rhye - start UP (Dutch) - Leoreth: removed
 	//if (getOwnerINLINE() == NETHERLANDS && DOMAIN_SEA == getDomainType())
 	//	return true;
@@ -7639,6 +7652,10 @@ int CvUnit::workRate(bool bMax) const
 		break;
 	case ARABIA:
 		iRate *= 100;
+		iRate /= 100;
+		break;
+	case TIBET:
+		iRate *= 120;
 		iRate /= 100;
 		break;
 	case KHMER:

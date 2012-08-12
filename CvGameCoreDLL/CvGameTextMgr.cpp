@@ -6533,14 +6533,31 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 
 	if (isNationalUnitClass(eUnitClass))
 	{
-		if (pCity == NULL)
+		bool bTibetanMissionary = false;
+
+		if (ePlayer == TIBET)
 		{
-			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_NATIONAL_UNIT_ALLOWED", GC.getUnitClassInfo(eUnitClass).getMaxPlayerInstances()));
+			for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+			{
+				if (GC.getUnitInfo(eUnit).getReligionSpreads(iI) > 0)
+				{
+					bTibetanMissionary = true;
+					break;
+				}
+			}
 		}
-		else
+
+		if (!bTibetanMissionary)
 		{
-			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_NATIONAL_UNIT_LEFT", (GC.getUnitClassInfo(eUnitClass).getMaxPlayerInstances() - (ePlayer != NO_PLAYER ? GET_PLAYER(ePlayer).getUnitClassCountPlusMaking(eUnitClass) : 0))));
+			if (pCity == NULL)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_UNIT_NATIONAL_UNIT_ALLOWED", GC.getUnitClassInfo(eUnitClass).getMaxPlayerInstances()));
+			}
+			else
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_UNIT_NATIONAL_UNIT_LEFT", (GC.getUnitClassInfo(eUnitClass).getMaxPlayerInstances() - (ePlayer != NO_PLAYER ? GET_PLAYER(ePlayer).getUnitClassCountPlusMaking(eUnitClass) : 0))));
+			}
 		}
 	}
 

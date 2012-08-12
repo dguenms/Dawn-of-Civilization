@@ -448,4 +448,12 @@
 		<Tag>TXT_KEY_VICTORY_SLAVES_TRADED</Tag>
 		<English>Gold from slave trade: %d1 / %d2</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITIES_ACQUIRED</Tag>
+		<English>Cities acquired: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED</Tag>
+		<English>Great prophets settled in %s1_city: %d2 / %d3</English>
+	</TEXT>
 </Civ4GameText>

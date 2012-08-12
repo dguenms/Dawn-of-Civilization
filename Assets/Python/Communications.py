@@ -72,7 +72,8 @@ tPool3 = (con.iEgypt,
 	  con.iTamils,
 	  con.iPoland,
 	  con.iMoors,
-	  con.iCongo)
+	  con.iCongo,
+	  con.iTibet)
 
 
 class Communications:
