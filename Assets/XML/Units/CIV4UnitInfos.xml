@@ -14410,7 +14410,7 @@
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<iCost>50</iCost>
+			<iCost>60</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -14433,10 +14433,10 @@
 			<TerrainImpassables/>
 			<!-- Rhye -->
 			<FeatureImpassables>
-				<FeatureImpassable>
+				<!--FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
+				</FeatureImpassable-->
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
 					<bFeatureImpassable>1</bFeatureImpassable>
@@ -14469,12 +14469,7 @@
 			<TerrainDefenses/>
 			<FeatureAttacks/>
 			<FeatureDefenses/>
-			<UnitClassAttackMods>
-				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_CATAPULT</UnitClassType>
-					<iUnitClassMod>50</iUnitClassMod>
-				</UnitClassAttackMod>
-			</UnitClassAttackMods>
+			<UnitClassAttackMods/>
 			<UnitClassDefenseMods/>
 			<UnitCombatMods/>
 			<UnitCombatCollateralImmunes/>

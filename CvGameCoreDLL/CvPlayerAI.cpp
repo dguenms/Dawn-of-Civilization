@@ -5705,6 +5705,12 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									}
 									break;
+								case TIBET:
+									if (iI == PHILOSOPHY)
+										iValue *= 3;
+									if (iI == ENGINEERING || iI == PAPER || iI == THEOLOGY)
+										iValue *= 2;
+									break;
 								case KHMER:
 									if (iI == PHILOSOPHY)
 										iValue *= 3;

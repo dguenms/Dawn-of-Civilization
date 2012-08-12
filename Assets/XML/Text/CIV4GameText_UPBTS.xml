@@ -204,4 +204,14 @@
 		<English>Jungles and marshes yield extra food and production and cause no unhealthiness</English>
 		<German>Dschungel und Marschen geben zusätzliche Nahrung und Produktion und verursachen keine Krankheit</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TIB</Tag>
+		<English>The Power of Missionaries:</English>
+		<German>Die Macht der Missionare:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TIB2</Tag>
+		<English>Can train unlimited missionaries; Missionaries can enter foreign territory</English>
+		<German>Kann unbegrenzt Missionare ausbilden; Missionare können fremdes Territorium betreten</German>
+	</TEXT>
 </Civ4GameText>

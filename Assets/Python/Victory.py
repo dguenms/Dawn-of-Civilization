@@ -78,6 +78,8 @@ iIndustrial = con.iIndustrial
 iModern = con.iModern
 iFuture = con.iFuture
 
+iGreatProphet = 7
+
 tCoreAreasTL = con.tCoreAreasTL
 tCoreAreasBR = con.tCoreAreasBR
 tNormalAreasTL = con.tNormalAreasTL
@@ -213,6 +215,7 @@ iMaya = con.iMaya
 iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
+iTibet = con.iTibet
 iKhmer = con.iKhmer
 iIndonesia = con.iIndonesia
 iMoors = con.iMoors
@@ -263,6 +266,7 @@ pMaya = gc.getPlayer(iMaya)
 pByzantium = gc.getPlayer(iByzantium)
 pVikings = gc.getPlayer(iVikings)
 pArabia = gc.getPlayer(iArabia)
+pTibet = gc.getPlayer(iTibet)
 pKhmer = gc.getPlayer(iKhmer)
 pIndonesia = gc.getPlayer(iIndonesia)
 pMoors = gc.getPlayer(iMoors)
@@ -308,6 +312,7 @@ teamMaya = gc.getTeam(pMaya.getTeam())
 teamByzantium = gc.getTeam(pByzantium.getTeam())
 teamVikings = gc.getTeam(pVikings.getTeam())
 teamArabia = gc.getTeam(pArabia.getTeam())
+teamTibet = gc.getTeam(pTibet.getTeam())
 teamKhmer = gc.getTeam(pKhmer.getTeam())
 teamIndonesia = gc.getTeam(pIndonesia.getTeam())
 teamMoors = gc.getTeam(pMoors.getTeam())
@@ -1257,6 +1262,32 @@ class Victory:
                                 elif (iGameTurn > getTurnForYear(1300)):
                                         if (self.getGoal(iArabia, 1) == -1):
                                                         self.setGoal(iArabia, 1, 0)
+							
+							
+		elif iPlayer == iTibet:
+			if pTibet.isAlive():
+			
+				if iGameTurn == getTurnForYear(1000):
+					if self.getGoal(iTibet, 0) == -1:
+						self.setGoal(iTibet, 0, 0)
+						
+				if self.getGoal(iTibet, 1) == -1:				
+					if iGameTurn == getTurnForYear(1400):
+						self.setGoal(iTibet, 1, 0)
+						
+					iReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism)
+					if iReligionPercent >= 40.0:
+						self.setGoal(iTibet, 1, 1)
+						
+				if self.getGoal(iTibet, 2) == -1:
+					if iGameTurn == getTurnForYear(1700):
+						self.setGoal(iTibet, 2, 0)
+						
+					plotLhasa = gc.getMap().plot(con.tCapitals[0][iTibet][0], con.tCapitals[0][iTibet][1])
+					if plotLhasa.isCity():
+						lhasa = plotLhasa.getPlotCity()
+						if lhasa.getFreeSpecialistCount(iGreatProphet) >= 5:
+							self.setGoal(iTibet, 2, 1)
 
 
 
@@ -2246,6 +2277,11 @@ class Victory:
                                         if (self.getPortugueseColonies() >= 15):
                                                 self.setGoal(iPortugal, 2, 1)
 						
+		elif iPlayer == iTibet:
+			if self.getGoal(iTibet, 0) == -1:
+				if pTibet.getNumCities() >= 5:
+					self.setGoal(iTibet, 0, 1)
+						
                 #if (self.getGoal(iNetherlands, 1) == -1):
                 #        if (city.getX() >= tAustraliaTL[0] and city.getX() <= tAustraliaBR[0] and city.getY() >= tAustraliaTL[1] and city.getY() <= tAustraliaBR[1]):
                 #                if iPlayer == iNetherlands:
@@ -2384,6 +2420,11 @@ class Victory:
 					self.changeDutchColonies(1)
 					if self.getDutchColonies() >= 4:
 						self.setGoal(iNetherlands, 1, 1)
+						
+		if playerType == iTibet:
+			if self.getGoal(iTibet, 0) == -1:
+				if pTibet.getNumCities() >= 5:
+					self.setGoal(iTibet, 0, 1)
 
         def onCityRazed(self, iPlayer, city):
 
@@ -3016,7 +3057,7 @@ class Victory:
 			self.changeTamilTradeGold(iGold)
 		elif iPlayer == iCongo:
 			self.changeCongoSlaveCounter(iGold)
-			if self.getGoal(iCongo, 1) == 1 and self.getCongoSlaveCounter(iGold) >= 1000:
+			if self.getGoal(iCongo, 1) == -1 and self.getCongoSlaveCounter(iGold) >= utils.getTurns(1500):
 				self.setGoal(iCongo, 1, 1)
 			
 	#def onUnitGifted(self, iOwner, iReceiver, unit):
@@ -3641,6 +3682,22 @@ class Victory:
                                 fReligionPercent = gc.getGame().calculateReligionPercent(con.iIslam)
 				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(con.iIslam).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(40))))
 
+		elif iPlayer == iTibet:
+			if iGoal == 0:
+				iNumCities = pTibet.getNumCities()
+				aHelp.append(self.getIcon(iNumCities >= 5) + localText.getText("TXT_KEY_VICTORY_CITIES_ACQUIRED", (iNumCities, 5)))
+			elif iGoal == 1:
+                                fReligionPercent = gc.getGame().calculateReligionPercent(con.iBuddhism)
+				aHelp.append(self.getIcon(fReligionPercent >= 40.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(con.iBuddhism).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(40))))
+			elif iGoal == 2:
+				lhasaPlot = gc.getMap().plot(96, 43)
+				iCounter = 0
+				if lhasaPlot.isCity():
+					lhasa = lhasaPlot.getPlotCity()
+					if lhasa.getFreeSpecialistCount(iGreatProphet) > 0:
+						iCounter = lhasa.getFreeSpecialistCount(iGreatProphet)
+				aHelp.append(self.getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED", ("Lhasa", iCounter, 5)))
+				
 		elif iPlayer == iKhmer:
 			if iGoal == 0:
 				iBuddhism = self.getNumBuildings(iKhmer, con.iBuddhistMonastery)
@@ -4015,7 +4072,7 @@ class Victory:
 				aHelp.append(self.getIcon(fPercent >= 10.0) + localText.getText("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", (str(u"%.2f%%" % fPercent), str(10))))
 			elif iGoal == 1:
 				iSlaves = self.getCongoSlaveCounter()
-				aHelp.append(self.getIcon(iSlaves >= 1000) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, 1000)))
+				aHelp.append(self.getIcon(iSlaves >= utils.getTurns(1500)) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, utils.getTurns(1500))))
 
 		elif iPlayer == iAmerica:
 			if iGoal == 0:

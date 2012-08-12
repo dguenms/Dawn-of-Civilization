@@ -2258,6 +2258,7 @@ void CvGame::update()
 		case ETHIOPIA:
 		case MAYA:
 		case ARABIA:
+		case TIBET:
 		case KHMER:
 		case INDONESIA:
 		case MOORS:

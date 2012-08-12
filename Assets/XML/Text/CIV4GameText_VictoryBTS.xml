@@ -347,12 +347,37 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KON2</Tag>
-		<English>Gain 1000 gold through slave trade by 1800 AD</English>
-		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 1000 Gold durch Sklavenhandel</German>
+		<English>Gain 1500 gold through slave trade by 1800 AD</English>
+		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 1500 Gold durch Sklavenhandel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KON2_EPIC</Tag>
+		<English>Gain 2750 gold through slave trade by 1800 AD</English>
+		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 2750 Gold durch Sklavenhandel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KON2_MARATHON</Tag>
+		<English>Gain 4500 gold through slave trade by 1800 AD</English>
+		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 4500 Gold durch Sklavenhandel</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KON3</Tag>
 		<English>Enter the Industrial Era before anyone enters the Modern Era</English>
 		<German>Erreichen sie das Industriezeitalter, bevor irgendjemand die Moderne erreicht</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB1</Tag>
+		<English>Acquire 5 cities by 1000 AD</English>
+		<German>Erlangen Sie bis zum Jahr 1000 n. Chr. 5 St‰dte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB2</Tag>
+		<English>Spread Buddhism to 40% by 1400 AD</English>
+		<German>Verbreiten Sie bis zum Jahr 1400 n. Chr. den Buddhismus auf 40%</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB3</Tag>
+		<English>Settle 5 great prophets in Lhasa by 1700 AD</English>
+		<German>Siedeln Sie bis zum Jahr 1700 n. Chr. 5 groﬂe Propheten in Lhasa an</German>
 	</TEXT>
 </Civ4GameText>

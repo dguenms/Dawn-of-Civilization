@@ -76,6 +76,10 @@
 		<English>Gompa</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIB_EMB</Tag>
+		<English>Tibetan Embassy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_DESC</Tag>
 		<English>The Polish</English>
 	</TEXT>
