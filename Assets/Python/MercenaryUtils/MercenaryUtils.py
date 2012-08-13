@@ -3000,11 +3000,12 @@ class Mercenary:
 		cityList = PyPlayer(iPlayer).getCityList()
 		for pCity in cityList:
 			city = pCity.GetCy()
-			regionList.append(city.getRegionID())
+			if city.getRegionID() not in regionList:
+				regionList.append(city.getRegionID())
 			
 		bNewWorldOnly = True
 		for iRegion in regionList:
-			if iRegion not in con.mercRegions[con.iArea_SouthAmerica] or iRegion not in con.mercRegions[con.iArea_NorthAmerica]:
+			if iRegion not in [con.rCanada, con.rAlaska, con.rUnitedStates, con.rCaribbean, con.rMesoamerica, con.rBrazil, con.rArgentina, con.rPeru, con.rColombia]:
 				bNewWorldOnly = False
 				
 		if bNewWorldOnly and not bNewWorldDiscovered:
