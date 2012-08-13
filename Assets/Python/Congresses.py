@@ -40,6 +40,7 @@ iMaya = con.iMaya
 iByzantium = con.iByzantium
 iVikings = con.iVikings
 iArabia = con.iArabia
+iTibet = con.iTibet
 iKhmer = con.iKhmer
 iIndonesia = con.iIndonesia
 iMoors = con.iMoors
@@ -412,14 +413,16 @@ class Congresses:
                 pHuman = gc.getPlayer(iHuman)
                 
                 iTempThreshold = 200
-                iGoldRequired = (2*pHuman.getGold() + 2*pCiv.getGold())/4 - 70
+                #iGoldRequired = (2*pHuman.getGold() + 2*pCiv.getGold())/4 - 70
+		iGoldRequired = (pHuman.getGold() + 4*pCiv.getGold())/10 # iOnlySignIn / Leoreth
                 if (gc.getPlayer(iCiv).AI_isFinancialTrouble()):
                         iGoldRequired *= 3
                         iGoldRequired /= 5
                 if (iGoldRequired < 50):
                         iGoldRequired = 50
                 iSoggezione = gc.getGame().getPlayerRank(iCiv) - gc.getGame().getPlayerRank(iHuman)
-                iSoggezioneModifier = min(100, abs(iSoggezione)*(100/((iNumPlayers/2)+5))) + 100
+                #iSoggezioneModifier = min(100, abs(iSoggezione)*(100/((iNumPlayers/2)+5))) + 100
+		iSoggezioneModifier = min(80, abs(iSoggezione)*(80/8)) + 100 # iOnlySignIn / Leoreth
                 if (iSoggezione > 0):
                         iTempThreshold = iGoldRequired*100/iSoggezioneModifier
                 if (iSoggezione < 0):
@@ -989,6 +992,12 @@ class Congresses:
                                         iResult -= 10                                                
                                 #factor 14 - generic modifier
                                         iResult += 3 
+					
+				# Leoreth: French UP
+				if iActiveCiv == iFrance:
+					iResult += 10
+					
+					
                                 #factor 15a - owner
                                 if (iOwner == iCiv):
                                         iResult = -30

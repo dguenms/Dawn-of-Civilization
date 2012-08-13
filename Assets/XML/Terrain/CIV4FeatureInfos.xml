@@ -348,7 +348,7 @@
 			<Civilopedia>TXT_KEY_FEATURE_FLOOD_PLAINS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_FLOOD_PLAINS</ArtDefineTag>
 			<YieldChanges>
-				<iYieldChange>3</iYieldChange>
+				<iYieldChange>2</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>

@@ -43,3 +43,7 @@
 # added a stability tab to the interior advisor to give a more detailed rundown of stability factors
 # Great Cothon now creates great merchant points
 # Economic growth isn't measured against a previous golden age anymore to avoid excessive penalties afterwards
+# added Tibet
+# flood plains yield -1 food
+# can build farms on flood plains with Agriculture
+# independents can't circumnavigate anymore

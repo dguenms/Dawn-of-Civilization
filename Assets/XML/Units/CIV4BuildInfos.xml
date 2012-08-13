@@ -77,7 +77,7 @@
 				<FeatureStruct>
 					<!-- Rhye - start -->
 					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_AGRICULTURE</PrereqTech>
 					<iTime>500</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
