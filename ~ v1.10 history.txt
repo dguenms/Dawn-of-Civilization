@@ -47,3 +47,9 @@
 # flood plains yield -1 food
 # can build farms on flood plains with Agriculture
 # independents can't circumnavigate anymore
+# the French UP now actually lets diplomatic penalties decay twice as fast, prevents other civs from refusing to talk to them and lets other civs vote for them in congresses more often
+# rebalanced the bribe mechanic for congresses according to iOnlySignIn's suggestions
+# Academies now require Literature
+# significantly reduced Roman unit costs
+# Legions now cost the same as ordinary swordsmen
+# Legions can build roman roads, which provide +1 extra movement with Masonry (i.e. become equivalent to normal roads with Engineering)

@@ -6107,7 +6107,7 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 		// Leoreth: new French UP
 		if (getID() == FRANCE)
 		{
-			iRefuseDuration /= 2;
+			iRefuseDuration = 0;
 		}
 
 		if (GET_TEAM(getTeam()).AI_getAtWarCounter(GET_PLAYER(ePlayer).getTeam()) < iRefuseDuration)
@@ -12514,19 +12514,25 @@ void CvPlayerAI::AI_doCounter()
 					{
 						int iMemoryDecayRand = GC.getLeaderHeadInfo(getPersonalityType()).getMemoryDecayRand(iJ);
 
+						bool bFrenchUP = false;
+
 						// Leoreth: new French UP
 						if (iI == FRANCE)
 						{
 							if (iJ != MEMORY_GIVE_HELP && iJ != MEMORY_ACCEPT_DEMAND && iJ != MEMORY_ACCEPTED_RELIGION && iJ != MEMORY_ACCEPTED_CIVIC && iJ != MEMORY_ACCEPTED_JOIN_WAR && iJ != MEMORY_ACCEPTED_STOP_TRADING && iJ != MEMORY_TRADED_TECH_TO_US && iJ != MEMORY_VOTED_FOR_US && iJ != MEMORY_EVENT_GOOD_TO_US && iJ != MEMORY_LIBERATED_CITIES)
 							{
 								//iMemoryDecayRand *= 2;
-								iMemoryDecayRand /= 3;
+								//iMemoryDecayRand /= 3;
+								if (AI_getMemoryCount(((PlayerTypes)iI), ((MemoryTypes)iJ)) > 1)
+								{
+									bFrenchUP = true;
+								}
 							}
 						}
 
 						if (GC.getGameINLINE().getSorenRandNum(iMemoryDecayRand, "Memory Decay") == 0)
 						{
-							AI_changeMemoryCount(((PlayerTypes)iI), ((MemoryTypes)iJ), -1);
+							AI_changeMemoryCount(((PlayerTypes)iI), ((MemoryTypes)iJ), bFrenchUP ? -2 : -1);
 						}
 					}
 				}

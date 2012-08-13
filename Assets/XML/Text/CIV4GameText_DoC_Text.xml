@@ -395,5 +395,13 @@
 		<Tag>TXT_KEY_STABILITY_FALL</Tag>
 		<English>Historicity</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ROUTE_ROMAN_ROAD</Tag>
+		<English>Roman Road</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_PROD_ROME</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</English>
+	</TEXT>
 	
 </Civ4GameText>

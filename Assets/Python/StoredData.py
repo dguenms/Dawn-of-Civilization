@@ -4,6 +4,7 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers  
 import cPickle as pickle
+import Consts as con
 
 # globals
 gc = CyGlobalContext()
@@ -34,19 +35,19 @@ class StoredData:
                                     'tTempBottomRight': -1,
                                     'iSpawnWar': 0, #if 1, add units and declare war. If >=2, do nothing
                                     'bAlreadySwitched': False,
-                                    'lColonistsAlreadyGiven': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #active players
-                                    'lAstronomyTurn': [1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500], #active players
-                                    'lNumCities': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #total players to contain Byzantium too
-                                    'lLastTurnAlive': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #total players to contain Byzantium too
-                                    'lSpawnDelay': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #active players
-                                    'lFlipsDelay': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    'lColonistsAlreadyGiven': [0 for i in range(con.iNumPlayers)], #active players
+                                    'lAstronomyTurn': [1500 for i in range(con.iNumPlayers)], #active players
+                                    'lNumCities': [0 for i in range(con.iNumTotalPlayers)], #total players to contain Byzantium too
+                                    'lLastTurnAlive': [0 for i in range(con.iNumTotalPlayers)], #total players to contain Byzantium too
+                                    'lSpawnDelay': [0 for i in range(con.iNumPlayers)], #active players
+                                    'lFlipsDelay': [0 for i in range(con.iNumPlayers)],
                                     'iBetrayalTurns': 0,
-                                    'lLatestRebellionTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    'lLatestRebellionTurn': [0 for i in range(con.iNumPlayers)],
                                     'iRebelCiv': 0,
                                     'lExileData': [-1, -1, -1, -1, -1],
                                     'tTempFlippingCity': -1,
                                     'lCheatersCheck': [0, -1],
-                                    'lBirthTurnModifier': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    'lBirthTurnModifier': [0 for i in range(con.iNumPlayers)],
                                     'lDeleteMode': [-1, -1, -1], #first is a bool, the other values are capital coordinates
                                     'lFirstContactConquerors': [0, 0, 0], #maya, inca, aztecs
 				    'lFirstContactMongols': [0, 0, 0, 0, 0], #india, persia, byzantium, arabia, russia
@@ -54,83 +55,44 @@ class StoredData:
 				    'tTempFlippingCity': (0, 0),
 				    'tTradingCompanyConquerorsTargets': ([], [], [], [], []),
 				    'iOttomanSpawnTurn': -1,
-				    'lAnarchyTurns': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				    'lResurrections': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				    'lAnarchyTurns': [0 for i in range(con.iNumPlayers)],
+				    'lResurrections': [0 for i in range(con.iNumPlayers)],
                                      #------------Religions
                                     'iSeed': -1,
-				    'lReformationDecision': [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+				    'lReformationDecision': [-1 for i in range(con.iNumPlayers)],
                                     #------------UP
                                     'iImmigrationTurnLength': 0,
                                     'iImmigrationCurrentTurn': 0,
                                     'iLatestFlipTurn': 0,
                                     'lLatestRazeData': [-1, -1, -1, -1, -1],
 				    'iRomanVictories': 0,
-				    'lRomanWars': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    #------------AIWars
-                                    'lAttackingCivsArray': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, -1, 0, 0, 0, 0],
+				    #------------AIWars
+                                    'lAttackingCivsArray': [0 for i in range(con.iNumPlayers)], #original RFC had -1 here somewhere??
                                     'iNextTurnAIWar': -1,
                                     #------------Congresses
                                     'bCongressEnabled': False,
                                     'iCivsWithNationalism': 0,
                                     'bUNbuilt': False,
-                                    'lInvitedNations': [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
-                                    'lVotes': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lTempActiveCiv': [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
-                                    'lTempReqCity': [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+                                    'lInvitedNations': [False for i in range(con.iNumPlayers)],
+                                    'lVotes': [0 for i in range(con.iNumPlayers)],
+                                    'lTempActiveCiv': [-1 for i in range(con.iNumPlayers)],
+                                    'lTempReqCity': [-1 for i in range(con.iNumPlayers)],
                                     'iLoopIndex': 0,
                                     'lTempReqCityHuman': [-1, -1, -1, -1, -1],
                                     'tempReqCityNI': -1,
                                     'tempActiveCivNI': -1,
-                                    'lTempAttackingCivsNI': [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
+                                    'lTempAttackingCivsNI': [False for i in range(con.iNumPlayers)],
                                     'iNumNationsTemp': 0,
                                     'lBribe' : [-1, -1, -1],
-                                    'lCivsToBribe': [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+                                    'lCivsToBribe': [-1 for i in range(con.iNumPlayers)],
                                     'tTempFlippingCityCongress': -1,
-                                    'lMemory': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #total players + barbarians (minors and barbs are not used, but necessary for not going out of range)
+                                    'lMemory': [0 for i in range(con.iNumTotalPlayersB)], #total players + barbarians (minors and barbs are not used, but necessary for not going out of range)
                                     #------------Plague
-                                    'lPlagueCountdown': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #total players + barbarians
+                                    'lPlagueCountdown': [0 for i in range(con.iNumTotalPlayersB)], #total players + barbarians
                                     'lGenericPlagueDates': [-1, -1, -1, -1],# -1],
-                                    'lFirstContactPlague': [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False], #total players + barbarians
+                                    'lFirstContactPlague': [False for i in range(con.iNumTotalPlayersB)], #total players + barbarians
                                      #------------Victories
-                                    'lGoals': [[-1, -1, -1],
-					       [-1, -1, -1],
-					       [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-					       [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-					       [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-					       [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-					       [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-					       [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-					       [-1, -1, -1],
-					       [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1],
-                                               [-1, -1, -1]],
+                                    'lGoals': [[-1, -1, -1] for i in range(con.iNumPlayers)],
                                     'lReligionFounded': [-1, -1, -1, -1, -1, -1, -1, -1],
                                     'iEnslavedUnits': 0,
                                     'iRazedByMongols': 0,
@@ -142,8 +104,8 @@ class StoredData:
                                     #'iMediterraneanColonies': 0,
                                     'iPortugueseColonies': 0,
                                     'iFrenchColonies': 0,
-                                    'lWondersBuilt': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'l2OutOf3': [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
+                                    'lWondersBuilt': [0 for i in range(con.iNumPlayers)],
+                                    'l2OutOf3': [False for i in range(con.iNumPlayers)],
 				    'iChineseGoldenAges' : 0,
 				    'lItalianTechs': [-1, -1, -1, -1, -1, -1],
 				    'iNumKoreanSinks': 0,
@@ -159,19 +121,19 @@ class StoredData:
 				    'lPolishTechs' : [-1, -1],
 				    'iCongoSlaveCounter' : 0,
                                     #------------Stability
-                                    'lBaseStabilityLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lPartialBaseStability': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lStability': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lOwnedPlotsLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lOwnedOuterPlotsLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lOwnedForeignCitiesLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lOwnedCitiesLastTurn': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lCombatResultTempModifier': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lGNPold': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lGNPnew': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lGreatDepressionCountdown': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lStatePropertyCountdown': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                                    'lDemocracyCountdown': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                    'lBaseStabilityLastTurn': [0 for i in range(con.iNumPlayers)],
+                                    'lPartialBaseStability': [0 for i in range(con.iNumPlayers)],
+                                    'lStability': [0 for i in range(con.iNumPlayers)],
+                                    'lOwnedPlotsLastTurn': [0 for i in range(con.iNumPlayers)],
+                                    'lOwnedOuterPlotsLastTurn': [0 for i in range(con.iNumPlayers)],
+                                    'lOwnedForeignCitiesLastTurn': [0 for i in range(con.iNumPlayers)],
+                                    'lOwnedCitiesLastTurn': [0 for i in range(con.iNumPlayers)],
+                                    'lCombatResultTempModifier': [0 for i in range(con.iNumPlayers)],
+                                    'lGNPold': [0 for i in range(con.iNumPlayers)],
+                                    'lGNPnew': [0 for i in range(con.iNumPlayers)],
+                                    'lGreatDepressionCountdown': [0 for i in range(con.iNumPlayers)],
+                                    'lStatePropertyCountdown': [0 for i in range(con.iNumPlayers)],
+                                    'lDemocracyCountdown': [0 for i in range(con.iNumPlayers)],
                                     'lStabilityParameters': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #2+3+2+3+3
                                     'lLastRecordedStabilityStuff': [0, 0, 0, 0, 0, 0], # total + 5 parameters
 				}

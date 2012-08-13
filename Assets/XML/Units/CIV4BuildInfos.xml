@@ -27,6 +27,26 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildRoad.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,8</Button>
 		</BuildInfo>
 		<BuildInfo>
+			<Type>BUILD_ROMAN_ROAD</Type>
+			<Description>TXT_KEY_BUILD_ROAD</Description>
+			<Help/>
+			<PrereqTech>TECH_THE_WHEEL</PrereqTech>
+			<!-- Rhye -->
+			<iTime>300</iTime>
+			<iCost>0</iCost>
+			<bKill>0</bKill>
+			<ImprovementType>NONE</ImprovementType>
+			<RouteType>ROUTE_ROMAN_ROAD</RouteType>
+			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
+			<FeatureStructs/>
+			<HotKey>KB_R</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>Art/Interface/Buttons/BuildPavedRoad.dds</Button>
+		</BuildInfo>
+		<BuildInfo>
 			<Type>BUILD_RAILROAD</Type>
 			<Description>TXT_KEY_BUILD_RAILROAD</Description>
 			<Help/>
