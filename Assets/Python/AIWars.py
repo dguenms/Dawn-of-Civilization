@@ -65,12 +65,6 @@ class AIWars:
 
         def setNextTurnAIWar( self, iNewValue ):
                 sd.scriptDict['iNextTurnAIWar'] = iNewValue
-		
-	def getRomanWar(self, iPlayer):
-		return sd.scriptDict['lRomanWars'][iPlayer]
-		
-	def setRomanWar(self, iPlayer, iNewValue):
-		sd.scriptDict['lRomanWars'][iPlayer] = iNewValue
 
 		
         def setup(self):
@@ -121,30 +115,29 @@ class AIWars:
 		
 		if utils.getHumanID() != iRome and gc.getPlayer(iRome).isAlive():
 			if iGameTurn == getTurnForYear(iRomeCarthageYear) - 5 + (utils.getSeed() % 10):
-				if self.getRomanWar(iCarthage) != 1 and gc.getPlayer(iCarthage).isAlive():
+				if gc.getPlayer(iCarthage).isAlive():
 					gc.getTeam(iRome).declareWar(iCarthage, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.doRomanWar(iCiv)
+					up.doRomanWar(iCarthage)
 				
 			if iGameTurn == getTurnForYear(iRomeGreeceYear) - 5 + (utils.getSeed() % 10):
-				if self.getRomanWar(iGreece) != 1 and gc.getPlayer(iGreece).isAlive():
+				if gc.getPlayer(iGreece).isAlive():
 					gc.getTeam(iRome).declareWar(iGreece, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.doRomanWar(iCiv)
+					up.doRomanWar(iGreece)
 					
 			if iGameTurn == getTurnForYear(iRomePersiaYear) - 5 + (utils.getSeed() % 10):
-				if self.getRomanWar(iPersia) != 1 and gc.getPlayer(iPersia).isAlive():
+				if gc.getPlayer(iPersia).isAlive():
 					gc.getTeam(iRome).declareWar(iPersia, True, WarPlanTypes.WARPLAN_LIMITED)
-					up.doRomanWar(iCiv)
+					up.doRomanWar(iPersia)
 					
 			if iGameTurn == getTurnForYear(iRomeCeltiaYear) - 5 + (utils.getSeed() % 10):
-				if self.getRomanWar(iCeltia) != 1 and gc.getPlayer(iCeltia).isAlive():
+				if gc.getPlayer(iCeltia).isAlive():
 					gc.getTeam(iRome).declareWar(iCeltia, True, WarPlanTypes.WARPLAN_TOTAL)
-					self.setRomanWar(iCeltia, 1)
 					up.romanConquestUP(iCeltia, 2)
 					
 			if iGameTurn == getTurnForYear(iRomeEgyptYear) - 5 + (utils.getSeed() % 10):
-				if self.getRomanWar(iEgypt) != 1 and gc.getPlayer(iEgypt).isAlive():
+				if gc.getPlayer(iEgypt).isAlive():
 					gc.getTeam(iRome).declareWar(iEgypt, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.doRomanWar(iCiv)
+					up.doRomanWar(iEgypt)
 					
 		if utils.getHumanID() != iTamils and gc.getPlayer(iTamils).isAlive():
 			if iGameTurn == getTurnForYear(iCholaSumatraYear) - 10 + (utils.getSeed() % 10):

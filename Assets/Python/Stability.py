@@ -1627,8 +1627,7 @@ class Stability:
 		if iVassal == con.iByzantium: return
 	
 		if bCapitulated and self.getStability(iVassal) < -10:
-			self.setStability(iVassal, -10)
-			gc.getPlayer(iVassal).setStability(-10)
+			self.setStability(iVassal, min(self.getStability(iVassal)+10, 0))
 
 
         def onReligionSpread(self, iReligion, iPlayer):

@@ -1682,6 +1682,27 @@ class RFCUtils:
 		city = lColonies[iRand].GetCy()
 		
 		unit.setXYOld(city.getX(), city.getY())
+		
+	def clearSlaves(self, iPlayer):
+		for x in range(124):
+			for y in range(68):
+				plot = gc.getMap().plot(x, y)
+				if plot.getOwner() == iPlayer:
+					if plot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"):
+						plot.setImprovementType(gc.getInfoTypeForString("IMPROVEMENT_PLANTATION"))
+					if plot.isCity():
+						self.removeSlaves(plot.getPlotCity())
+						
+		lSlaves = []
+		for unit in PyPlayer(iPlayer).getUnitList():
+			if unit.GetCy().getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_SLAVE"):
+				lSlaves.append(unit.GetCy())
+				
+		for slave in lSlaves:
+			slave.kill(con.iBarbarian, False)
+			
+	def removeSlaves(self, city):
+		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
 			
 		
 	
