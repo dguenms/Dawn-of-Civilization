@@ -4682,6 +4682,7 @@ class RiseAndFall:
                 utils.makeUnit(iSettler, iChina, tCapitals[0][iChina], 1)
                 utils.makeUnit(con.iSwordsman, iChina, tCapitals[0][iChina], 2)
                 utils.makeUnit(con.iArcher, iChina, tCapitals[0][iChina], 1)
+		utils.makeUnitAI(con.iSpearman, iChina, tCapitals[0][iChina], UnitAITypes.UNITAI_CITY_DEFENSE, 1)
                 utils.makeUnit(con.iChinaChokonu, iChina, tCapitals[0][iChina], 2)
                 utils.makeUnit(con.iHorseArcher, iChina, tCapitals[0][iChina], 1)
                 utils.makeUnit(con.iWorker, iChina, tCapitals[0][iChina], 2)

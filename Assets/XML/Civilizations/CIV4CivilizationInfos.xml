@@ -5307,7 +5307,7 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_CHINESE_PROPHET</UnitType>
+					<UnitType>UNIT_TIBETAN_PROPHET</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
