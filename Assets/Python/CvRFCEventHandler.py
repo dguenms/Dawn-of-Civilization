@@ -312,6 +312,10 @@ class CvRFCEventHandler:
                          utils.spreadMajorCulture(playerType, city.getX(), city.getY())
 
                 self.sta.onCityAcquired(owner,playerType,city,bConquest,bTrade)
+		
+		#remove slaves if unable to practice slavery
+		if gc.getPlayer(playerType).getCivics(2) != con.iAgrarianism and gc.getPlayer(playerType).getCivics(3) != con.iForcedLabor:
+			utils.removeSlaves(city)
 
 		#kill Byzantium
 		if owner == iByzantium and gc.getPlayer(iByzantium).isAlive():
@@ -617,6 +621,9 @@ class CvRFCEventHandler:
 		
 		if iPlayer < iNumPlayers:
 			self.dc.onRevolution(iPlayer)
+			
+		if gc.getPlayer(iPlayer).getCivics(2) != con.iAgrarianism and gc.getPlayer(iPlayer).getCivics(3) != con.iForcedLabor:
+			utils.clearSlaves(iPlayer)
 			
 	def onCityGrowth(self, argsList):
 		'City Population Growth'
