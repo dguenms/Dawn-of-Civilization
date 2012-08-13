@@ -3436,6 +3436,15 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 		}
 	}
 
+	// Leoreth: new Roman UP
+	if (getOwnerINLINE() == ROME)
+	{
+		if (GET_PLAYER(getOwnerINLINE()).getCapitalCity()->isHasRealBuilding(eBuilding))
+		{
+			iMultiplier += 30;
+		}
+	}
+
 	return std::max(0, iMultiplier);
 }
 

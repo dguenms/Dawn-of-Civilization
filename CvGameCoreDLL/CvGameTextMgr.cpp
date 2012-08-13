@@ -11898,6 +11898,18 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 				}
 			}
 		}
+
+		// Leoreth: display Roman UP
+		if (city.getOwnerINLINE() == ROME)
+		{
+			if (GET_PLAYER(city.getOwnerINLINE()).getCapitalCity()->isHasRealBuilding(eBuilding))
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_ROME", 30));
+				szBuffer.append(NEWLINE);
+				iBaseModifier += 30;
+			}
+		}
+
 	}
 
 	ProjectTypes eProject = city.getProductionProject();

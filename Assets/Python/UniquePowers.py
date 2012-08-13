@@ -167,12 +167,6 @@ class UniquePowers:
 	def getRomanVictories(self):
 		return sd.scriptDict['iRomanVictories']
 
-	def getRomanWar(self, iPlayer):
-		return sd.scriptDict['lRomanWars'][iPlayer]
-
-	def setRomanWar(self, iPlayer, iValue):
-		sd.scriptDict['lRomanWars'][iPlayer] = iValue
-
 #######################################
 ### Main methods (Event-Triggered) ###
 #####################################  
@@ -222,33 +216,27 @@ class UniquePowers:
 
 #------------------ROMAN UP-----------------------
 
-	def checkRomanWar(self, iCiv):
+	def doRomanWar(self, iCiv):
 	
-		if self.getRomanWar(iCiv) == 0:
-			if iCiv in con.lCivGroups[2] or iCiv in con.lCivGroups[3] or (iCiv == iCeltia and utils.getHumanID() != iRome):
-				iNumTargets = 1
-				
-				if utils.getHumanID() != iRome:
-					if iCiv in [iCarthage, iPersia, iCeltia, iEgypt]:
-						iNumTargets = 2
-					elif iCiv == iGreece and utils.getHumanID() != iGreece:
-						bEgypt = False
-						cityList = PyPlayer(iGreece).getCityList()
-						
-						for pCity in cityList:
-							city = pCity.GetCy()
-							if city.getRegionID() == con.rEgypt:
-								bEgypt = True
-								break
-								
-						if bEgypt:
-							iNumTargets = 2
-							self.romanConquestUP(iCiv, iNumTargets, [con.rEgypt])
-						else:
-							iNumTargets = 3
-						
-				self.romanConquestUP(iCiv, iNumTargets)
-				self.setRomanWar(iCiv, 1)
+		if iCiv in [iCarthage, iPersia, iCeltia, iEgypt]:
+			iNumTargets = 2
+		elif iCiv == iGreece and utils.getHumanID() != iGreece:
+			bEgypt = False
+			cityList = PyPlayer(iGreece).getCityList()
+			
+			for pCity in cityList:
+				city = pCity.GetCy()
+				if city.getRegionID() == con.rEgypt:
+					bEgypt = True
+					break
+					
+			if bEgypt:
+				iNumTargets = 2
+				self.romanConquestUP(iCiv, iNumTargets, [con.rEgypt])
+			else:
+				iNumTargets = 3
+			
+		self.romanConquestUP(iCiv, iNumTargets)
 
 		#if gc.getPlayer(iRome).isReborn():
 		#	return
