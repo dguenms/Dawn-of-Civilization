@@ -5507,11 +5507,14 @@ bool CvUnit::spread(ReligionTypes eReligion)
 			iSpreadProb /= 400;
 		}
 
-
-
 		bool bSuccess;
 
 		iSpreadProb += (((GC.getNumReligionInfos() - pCity->getReligionCount()) * (100 - iSpreadProb)) / GC.getNumReligionInfos());
+
+		if (getOwnerINLINE() == TIBET)
+		{
+			iSpreadProb += (100 - iSpreadProb)/2;
+		}
 
 		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < iSpreadProb)
 		{

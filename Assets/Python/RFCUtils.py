@@ -403,17 +403,22 @@ class RFCUtils:
 
 
         #RiseAndFall, Religions, Congresses, UniquePowers
-        def makeUnit(self, iUnit, iPlayer, tCoords, iNum): #by LOQ
+        def makeUnit(self, iUnit, iPlayer, tCoords, iNum, sAdj=""): #by LOQ
                 'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
                 for i in range(iNum):
                         player = gc.getPlayer(iPlayer)
-                        player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+                        unit = player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+			if sAdj != "":
+				unit.setName(CyTranslator().getText(sAdj) + ' ' + unit.getName())
 
-	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum): #by LOQ, modified by Leoreth
+	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum, sAdj=""): #by LOQ, modified by Leoreth
                 'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
                 for i in range(iNum):
                         player = gc.getPlayer(iPlayer)
-                        player.initUnit(iUnit, tCoords[0], tCoords[1], iAI, DirectionTypes.DIRECTION_SOUTH)
+                        unit = player.initUnit(iUnit, tCoords[0], tCoords[1], iAI, DirectionTypes.DIRECTION_SOUTH)
+			if sAdj != "":
+				unit.setName(CyTranslator().getText(sAdj) + ' ' + unit.getName())
+				
 
         #RiseAndFall, Religions, Congresses
         def getHumanID(self):
@@ -872,7 +877,7 @@ class RFCUtils:
                 iNumPlayerCities = len(PyPlayer(iCiv).getCityList()) #needs to be assigned cause it changes dynamically
 		x = gc.getPlayer(iCiv).getCapitalCity().getX()
 		y = gc.getPlayer(iCiv).getCapitalCity().getY()
-		bByzantineUP = (iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and not self.isAVassal(con.iByzantium) and (bAssignOneCity or gc.getPlayer(con.iByzantium).getCurrentEra() <= con.iMedieval))
+		bByzantineUP = (iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and not self.isAVassal(con.iByzantium) and (bAssignOneCity or gc.getGame().getGameTurn() >= (getTurnForYear(1450) - 5 + (utils.getSeed() % 10))  ))
                 for pyCity in PyPlayer(iCiv).getCityList():
                         #print("iCounter",iCounter)
 			city = pyCity.GetCy()

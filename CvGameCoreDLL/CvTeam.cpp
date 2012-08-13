@@ -5793,7 +5793,7 @@ void CvTeam::testCircumnavigated()
 	bool bFoundVisible;
 	int iX, iY;
 
-	if (isBarbarian())
+	if (isBarbarian() || isMinorCiv()) //Leoreth: no independents
 	{
 		return;
 	}
