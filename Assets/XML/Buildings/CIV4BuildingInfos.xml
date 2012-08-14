@@ -40154,7 +40154,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_EMBASSY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_EMBASSY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TIB_EMBASSY</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_CHI_EMBASSY</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>

@@ -10,7 +10,7 @@ import RFCUtils # edead
 # globals
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
-
+utils = RFCUtils.RFCUtils()
 
 ### Constants ###
 
@@ -51,8 +51,8 @@ class Resources:
                 if (iGameTurn == 5): #otherwise it's picked by Portugal at the beginning
                         gc.getMap().plot(49, 43).setImprovementType(con.iHut)
 			
-		# Tamils - make dynamic later
-		if iGameTurn == getTurnForYear(-300)-1:
+		# Tamils
+		if iGameTurn == getTurnForYear(-300)-1 and utils.getPlayerEnabled(con.iTamils):
 			gc.getMap().plot(90, 29).setBonusType(iFish)
 
                 #Orka: Silk Road
@@ -120,7 +120,7 @@ class Resources:
 			CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
 			
 		# Leoreth: prepare Tibet
-		if iGameTurn == getTurnForYear(630)-1 and gc.getPlayer(con.iTibet).isPlayable(): #check existence later
+		if iGameTurn == getTurnForYear(630)-1 and utils.getPlayerEnabled(con.iTibet):
 			gc.getMap().plot(95, 43).setBonusType(iWheat)
 			gc.getMap().plot(97, 44).setBonusType(iHorse)
 			

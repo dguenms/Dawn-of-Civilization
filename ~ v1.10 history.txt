@@ -44,8 +44,6 @@
 # Great Cothon now creates great merchant points
 # Economic growth isn't measured against a previous golden age anymore to avoid excessive penalties afterwards
 # added Tibet
-# flood plains yield -1 food
-# can build farms on flood plains with Agriculture
 # independents can't circumnavigate anymore
 # the French UP now actually lets diplomatic penalties decay twice as fast, prevents other civs from refusing to talk to them and lets other civs vote for them in congresses more often
 # rebalanced the bribe mechanic for congresses according to iOnlySignIn's suggestions
@@ -53,3 +51,6 @@
 # significantly reduced Roman unit costs
 # Legions now cost the same as ordinary swordsmen
 # Legions can build roman roads, which provide +1 extra movement with Masonry (i.e. become equivalent to normal roads with Engineering)
+# renamed Tokugawa to Oda Nobunaga and made him less isolationist
+# Netherlands spawn in 1580 AD now
+# added a feature to disable or randomize the spawn of Tamils, Tibet, Moors, Poland and Congo
