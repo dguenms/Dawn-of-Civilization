@@ -1109,8 +1109,8 @@ def getUHVTileInfo(argsList):
 			return 7
 			
 	elif iPlayer == con.iRome:	
-		tlx, tly = con.tCoreAreasTL[0][con.iSpain]
-		brx, bry = con.tCoreAreasBR[0][con.iSpain]
+		tlx, tly = con.tNormalAreasTL[0][con.iSpain]
+		brx, bry = con.tNormalAreasBR[0][con.iSpain]
 		if x >= tlx and x <= brx and y >= tly and y <= bry:
 			return 8
 				
@@ -1222,8 +1222,8 @@ def getUHVTileInfo(argsList):
 		if x >= tlx and x <= brx and y >= tly and y <= bry:
 			return 27
 				
-		tlx, tly = con.tCoreAreasTL[0][con.iSpain]
-		brx, bry = con.tCoreAreasBR[0][con.iSpain]
+		tlx, tly = con.tNormalAreasTL[0][con.iSpain]
+		brx, bry = con.tNormalAreasBR[0][con.iSpain]
 		if x >= tlx and x <= brx and y >= tly and y <= bry:
 			return 28
 			

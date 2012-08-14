@@ -961,7 +961,7 @@ class Victory:
 						self.setGoal(iRome, 0, 0)  
                                     
 				if (iGameTurn == getTurnForYear(320)):                                              
-					bSpain = self.checkOwnedArea(iRome, tCoreAreasTL[0][iSpain], tCoreAreasBR[0][iSpain], 2)
+					bSpain = self.checkOwnedArea(iRome, tNormalAreasTL[0][iSpain], tNormalAreasBR[0][iSpain], 2)
 					bFrance = self.checkOwnedArea(iRome, tFranceTL, tNormalAreasBR[0][iFrance], 3)
 					bEngland = self.checkOwnedArea(iRome, tCoreAreasTL[0][iEngland], tCoreAreasBR[0][iEngland], 1)
 					bCarthage = self.checkOwnedArea(iRome, tCarthageTL, tCarthageBR, 2)
@@ -2072,7 +2072,7 @@ class Victory:
 						self.setGoal(iThailand, 1, 0)
 
 				if iGameTurn == getTurnForYear(1900):
-					bSouthAsia = self.isAreaFreeOfCivs(tSouthAsiaTL, tSouthAsiaBR, [iIndia, iKhmer, iIndonesia, iMughals, iThailand])
+					bSouthAsia = self.isAreaFreeOfCivs(tSouthAsiaTL, tSouthAsiaBR, [iIndia, iTamils, iKhmer, iIndonesia, iMughals, iThailand])
 					if bSouthAsia:
 						self.setGoal(iThailand, 2, 1)
 					else:

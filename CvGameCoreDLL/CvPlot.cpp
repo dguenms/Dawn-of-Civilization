@@ -5040,6 +5040,15 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 		}
 		// Sanguo Mod Performance, end
 
+		// Leoreth: gain plot control over slave plantation without being able to practice slavery
+		if (getImprovementType() == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"))
+		{
+			if (GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR)
+			{
+				setImprovementType((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_PLANTATION"));
+			}
+		}
+
 		updateSymbols();
 	}
 }
@@ -6705,6 +6714,11 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	if (eIndex == KOREA && getX_INLINE() == 108 && getY_INLINE() == 48)
+	{
+		return 82393;
+	}
 
 	if (NULL == m_aiFoundValue)
 	{

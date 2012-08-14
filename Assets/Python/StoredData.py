@@ -57,6 +57,7 @@ class StoredData:
 				    'iOttomanSpawnTurn': -1,
 				    'lAnarchyTurns': [0 for i in range(con.iNumPlayers)],
 				    'lResurrections': [0 for i in range(con.iNumPlayers)],
+				    'lPlayerEnabled': [True for i in con.lSecondaryCivs],
                                      #------------Religions
                                     'iSeed': -1,
 				    'lReformationDecision': [-1 for i in range(con.iNumPlayers)],

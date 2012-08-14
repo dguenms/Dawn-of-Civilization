@@ -237,7 +237,7 @@ tBirth = (
 1280, # 249, #1280AD (1071AD)		# Turkey
 1350,					# Thailand
 1390,					# Congo
-1500, # 281, #922AD # Leoreth: 1500 AD	# Netherlands
+1580, # 281, #922AD # Leoreth: 1500 AD	# Netherlands
 1701,					# Germany
 1775, # 346, #1775AD #332 for 1733AD	# America
 -3000, # 0,
@@ -2437,3 +2437,5 @@ tTradingCompanyPlotLists = (
 [(82, 34), (89, 33), (90, 31), (101, 29), (105, 39), (93, 28), (71, 17), (69, 13), (54, 26), (62, 20)], #Portugal
 [(99, 28), (99, 27), (100, 27), (100, 26), (101, 26), (104, 25), (105, 25), (106, 25), (107, 24), (104, 27), (105, 27), (106, 27), (104, 28), (106, 28), (105, 29), (106, 29)] #Netherlands
 )
+
+lSecondaryCivs = [iTamils, iTibet, iMoors, iPoland, iCongo]

@@ -368,6 +368,12 @@ class RiseAndFall:
 	def getFirstContactMongols(self, iCiv):
 		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 		return sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)]
+		
+	def setPlayerEnabled(self, iCiv, bNewValue):
+		sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)] = bNewValue
+		
+	def getPlayerEnabled(self, iCiv):
+		return sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
                 
 ###############
 ### Popups ###
@@ -601,9 +607,11 @@ class RiseAndFall:
 
                 #self.setupBirthTurnModifiers() (causes a crash on civ switch)
 		
-		print 'con.iNumBuildings = '+str(con.iNumBuildings)
-		print 'plague building id = '+str(gc.getInfoTypeForString("BUILDING_PLAGUE"))
-		print 'plague building class id = '+str(gc.getInfoTypeForString("BUILDINGCLASS_PLAGUE"))
+		#print 'con.iNumBuildings = '+str(con.iNumBuildings)
+		#print 'plague building id = '+str(gc.getInfoTypeForString("BUILDING_PLAGUE"))
+		#print 'plague building class id = '+str(gc.getInfoTypeForString("BUILDINGCLASS_PLAGUE"))
+		
+		self.determineEnabledPlayers()
 
                 if (not gc.getPlayer(0).isPlayable()): #late start condition
                         self.clear600ADChina()
@@ -2397,6 +2405,10 @@ class RiseAndFall:
                 print 'init birth in: '+str(iBirthYear)
 		iHuman = utils.getHumanID()
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
+		
+		if iCiv in con.lSecondaryCivs:
+			if not self.getPlayerEnabled(iCiv):
+				return
 		
 		if iCiv == iTurkey:
 			if pSeljuks.isAlive():
@@ -4378,7 +4390,10 @@ class RiseAndFall:
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
 			utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 4)
-			utils.makeUnit(con.iKnight, iCiv, tPlot, 2)
+			if self.getPlayerEnabled(iMoors):
+				utils.makeUnit(con.iKnight, iCiv, tPlot, 2)
+			else:
+				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			if utils.getHumanID() != iSpain:
 				#utils.makeUnit(con.iKnight, iCiv, tPlot, 1)
 				#utils.makeUnit(con.iPikeman, iCiv, tPlot, 1)
@@ -4423,7 +4438,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 3)
                 if (iCiv == iHolland):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+                        utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 6)
 			utils.makeUnit(con.iBombard, iCiv, tPlot, 2)
                         #utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
@@ -4433,9 +4448,11 @@ class RiseAndFall:
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
                                 pHolland.initUnit(con.iNetherlandsOostindievaarder, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-                                utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
+                                utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                                 utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
-                                utils.makeUnit(con.iNetherlandsOostindievaarder, iCiv, tSeaPlot, 1)
+                                pHolland.initUnit(con.iNetherlandsOostindievaarder, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+				utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
                                 utils.makeUnit(con.iCaravel, iCiv, tSeaPlot, 2)
                 if (iCiv == iMali):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
@@ -5632,6 +5649,7 @@ class RiseAndFall:
                                 teamHolland.setHasTech(con.iDrama, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iMusic, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iPatronage, True, iCiv, False, False)
+                                teamHolland.setHasTech(con.iLiberalism, True, iCiv, False, False)
                         if (iCiv == iMali):
                                 teamMali.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamMali.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -6045,6 +6063,51 @@ class RiseAndFall:
 		for x in range(con.tCoreAreasTL[0][iHolyRome][0], con.tCoreAreasBR[0][iHolyRome][0]+1):
 			for y in range(con.tCoreAreasTL[0][iHolyRome][1], con.tCoreAreasBR[0][iHolyRome][1]+2):
 				gc.getMap().plot(x,y).setCulture(iVikings, 0, True)
+				
+	def determineEnabledPlayers(self):
+	
+		iHuman = utils.getHumanID()
+		
+		if iHuman != iIndia and iHuman != iIndonesia:
+			iRand = gc.getDefineINT("PLAYER_OCCURENCE_TAMILS")
+			
+			if iRand <= 0:
+				self.setPlayerEnabled(iTamils, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Tamils enabled?') != 0:
+				self.setPlayerEnabled(iTamils, False)
+				
+		if iHuman != iChina and iHuman != iIndia and iHuman != iMughals:
+			iRand = gc.getDefineINT("PLAYER_OCCURENCE_TIBET")
+			
+			if iRand <= 0:
+				self.setPlayerEnabled(iTibet, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Tibet enabled?') != 0:
+				self.setPlayerEnabled(iTibet, False)
+				
+		if iHuman != iSpain and iHuman != iMali:
+			iRand = gc.getDefineINT("PLAYER_OCCURENCE_MOORS")
+			
+			if iRand <= 0:
+				self.setPlayerEnabled(iMoors, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Moors enabled?') != 0:
+				self.setPlayerEnabled(iMoors, False)
+				
+		if iHuman != iHolyRome and iHuman != iGermany and iHuman != iRussia:
+			iRand = gc.getDefineINT("PLAYER_OCCURENCE_POLAND")
+			
+			if iRand <= 0:
+				self.setPlayerEnabled(iPoland, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Poland enabled?') != 0:
+				self.setPlayerEnabled(iPoland, False)
+				
+		if iHuman != iMali and iHuman != iPortugal:
+			iRand = gc.getDefineINT("PLAYER_OCCURENCE_CONGO")
+			
+			if iRand <= 0:
+				self.setPlayerEnabled(iCongo, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
+				self.setPlayerEnabled(iCongo, False)
+		
 		
 
 

@@ -11062,6 +11062,55 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>DIPLO_RAJENDRA</SoundID>
+			<Filename>Sounds/Diplomacy/Rajendra</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_LOBSANG</SoundID>
+			<Filename>Sounds/Diplomacy/Lobsang</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_RAHMAN</SoundID>
+			<Filename>Sounds/Diplomacy/Rahman</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_SOBIESKI</SoundID>
+			<Filename>Sounds/Diplomacy/Sobieski</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_TANG_TAIZONG</SoundID>
+			<Filename>Sounds/Diplomacy/Tang_Taizong</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_HONGWU</SoundID>
+			<Filename>Sounds/Diplomacy/Hongwu</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>DIPLO_BAIBARS</SoundID>
+			<Filename>Sounds/Diplomacy/Baibars</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SND_POLAND_SELECT</SoundID>
 			<Filename>Sounds/Units/PolandSelect</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>

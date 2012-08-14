@@ -108,6 +108,12 @@ class RFCUtils:
 		
 	def getTempEventList( self ):
 		return sd.scriptDict['lTempEventList']
+		
+	def setPlayerEnabled(self, iCiv, bNewValue):
+		sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)] = bNewValue
+		
+	def getPlayerEnabled(self, iCiv):
+		return sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
 
 #######################################
 
@@ -877,7 +883,7 @@ class RFCUtils:
                 iNumPlayerCities = len(PyPlayer(iCiv).getCityList()) #needs to be assigned cause it changes dynamically
 		x = gc.getPlayer(iCiv).getCapitalCity().getX()
 		y = gc.getPlayer(iCiv).getCapitalCity().getY()
-		bByzantineUP = (iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and not self.isAVassal(con.iByzantium) and (bAssignOneCity or gc.getGame().getGameTurn() >= (getTurnForYear(1450) - 5 + (utils.getSeed() % 10))  ))
+		bByzantineUP = (iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and not self.isAVassal(con.iByzantium) and (bAssignOneCity or gc.getGame().getGameTurn() >= (getTurnForYear(1450) - 5 + (self.getSeed() % 10))  ))
                 for pyCity in PyPlayer(iCiv).getCityList():
                         #print("iCounter",iCounter)
 			city = pyCity.GetCy()
@@ -1695,8 +1701,8 @@ class RFCUtils:
 						
 		lSlaves = []
 		for unit in PyPlayer(iPlayer).getUnitList():
-			if unit.GetCy().getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_SLAVE"):
-				lSlaves.append(unit.GetCy())
+			if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_SLAVE"):
+				lSlaves.append(unit)
 				
 		for slave in lSlaves:
 			slave.kill(con.iBarbarian, False)
