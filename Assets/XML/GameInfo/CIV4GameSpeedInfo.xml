@@ -28,7 +28,7 @@
 			<iUnitHurryPercent>300</iUnitHurryPercent>
 			<iUnitTradePercent>300</iUnitTradePercent>
 			<iUnitGreatWorkPercent>300</iUnitGreatWorkPercent>
-			<iGoldenAgePercent>200</iGoldenAgePercent>
+			<iGoldenAgePercent>300</iGoldenAgePercent> <!-- Leoreth: up from 200 -->
 			<iHurryPercent>33</iHurryPercent>
 			<iHurryConscriptAngerPercent>300</iHurryConscriptAngerPercent>
 			<iInflationPercent>23</iInflationPercent>
@@ -94,7 +94,7 @@
 			<iUnitHurryPercent>150</iUnitHurryPercent>
 			<iUnitTradePercent>150</iUnitTradePercent>
 			<iUnitGreatWorkPercent>150</iUnitGreatWorkPercent>
-			<iGoldenAgePercent>125</iGoldenAgePercent>
+			<iGoldenAgePercent>150</iGoldenAgePercent> <!-- Leoreth: up from 150 -->
 			<iHurryPercent>66</iHurryPercent>
 			<iHurryConscriptAngerPercent>150</iHurryConscriptAngerPercent>
 			<iInflationPercent>30</iInflationPercent>

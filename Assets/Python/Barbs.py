@@ -386,7 +386,7 @@ class Barbs:
                 #self.foundCity(iIndependent2, lAngkor, "Angkor", iGameTurn, 1, -1, -1)
                 self.foundCity(iBarbarian, lHanoi, "Hanoi", iGameTurn, 2, -1, -1)
                 self.foundCity(iNative, lTucume, "Tucume", iGameTurn, 1, -1, -1)
-		self.foundCity(iIndependent, lKiev, "Kyiv", iGameTurn, 2, con.iLongbowman, 2)
+		self.foundCity(iIndependent, lKiev, "Kyiv", iGameTurn, 2, con.iLongbowman, 2, [con.iOrthodoxy])
                 #self.foundCity(lJelling, "Jelling", iGameTurn, 1, -1, -1)
                 if (gc.getPlayer(0).isPlayable()):  #late start condition
                         self.foundCity(iCeltia, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
@@ -444,7 +444,7 @@ class Barbs:
                 'Returns a city at coordinates tCoords.'
                 return CyGlobalContext().getMap().plot(tCoords[0], tCoords[1]).getPlotCity()
 
-        def foundCity(self, iCiv, lCity, name, iTurn, iPopulation, iUnitType, iNumUnits):
+        def foundCity(self, iCiv, lCity, name, iTurn, iPopulation, iUnitType, iNumUnits, lReligions=[]):
                 if ((iTurn == getTurnForYear(lCity[2]) + lCity[3]) and (lCity[3]<10)): # conversion from years - edead
                         #print self.checkRegion(tUr)
                         bResult, lCity[3] = self.checkRegion(lCity)
@@ -464,6 +464,8 @@ class Barbs:
                                 if (iNumUnits > 0):
                                         self.makeUnit(iUnitType, iCiv, (lCity[0], lCity[1]), iNumUnits, 0)
 					print "Units created"
+				for iReligion in lReligions:
+					self.getCity((lCity[0], lCity[1])).setHasReligion(iReligion, True)
                                 return True
                         if (bResult == False) and (lCity[3] == -1):
                                 return False

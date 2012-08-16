@@ -5819,6 +5819,29 @@ void CvPlot::updateCityRoute(bool bUpdatePlotGroup)
 
 		eCityRoute = GET_PLAYER(getOwnerINLINE()).getBestRoute();
 
+		bool bRomanRoadAround = false;
+		for (int iI = std::max(0, getX_INLINE()-1); iI < std::min(getX_INLINE()+1, EARTH_X)+1; iI++)
+		{
+			for (int iJ = std::max(0, getY_INLINE()-1); iJ < std::min(getY_INLINE()+1, EARTH_X)+1; iJ++)
+			{
+				if (GC.getMap().plot(iI, iJ)->getRouteType() == (RouteTypes)GC.getInfoTypeForString("ROUTE_ROMAN_ROAD"))
+				{
+					bRomanRoadAround = true;
+					break;
+					break;
+				}
+			}
+		}
+
+		//Leoreth: no Roman roads for everyone
+		if (getOwnerINLINE() != ROME && !bRomanRoadAround)
+		{
+			if (eCityRoute == GC.getInfoTypeForString("ROUTE_ROMAN_ROAD"))
+			{
+				eCityRoute = (RouteTypes)GC.getInfoTypeForString("ROUTE_ROAD");
+			}
+		}
+
 		if (eCityRoute == NO_ROUTE)
 		{
 			eCityRoute = ((RouteTypes)(GC.getDefineINT("INITIAL_CITY_ROUTE_TYPE")));

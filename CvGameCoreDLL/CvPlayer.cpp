@@ -24473,11 +24473,25 @@ EraTypes CvPlayer::getSoundtrackEra()
 	ReligionTypes eStateReligion = getStateReligion();
 	EraTypes eCurrentEra = getCurrentEra();
 
-	if (eStateReligion == CONFUCIANISM || eStateReligion == TAOISM || eStateReligion == BUDDHISM || eStateReligion == HINDUISM)
+	if (eStateReligion == CONFUCIANISM || eStateReligion == TAOISM)
 	{
 		if (eCurrentEra == ERA_CLASSICAL || eCurrentEra == ERA_MEDIEVAL || eCurrentEra == ERA_RENAISSANCE)
 		{
 			return (EraTypes)ERA_EAST_ASIA;
+		}
+	}
+	else if (eStateReligion == BUDDHISM || eStateReligion == HINDUISM)
+	{
+		if (eCurrentEra == ERA_CLASSICAL || eCurrentEra == ERA_MEDIEVAL || eCurrentEra == ERA_RENAISSANCE)
+		{
+			if (getID() == CHINA || getID() == MONGOLIA || getID() == JAPAN || getID() == KOREA)
+			{
+				return (EraTypes)ERA_EAST_ASIA;
+			}
+			else
+			{
+				return (EraTypes)ERA_SOUTH_ASIA;
+			}
 		}
 	}
 	else if (eStateReligion == ISLAM || eStateReligion == ZOROASTRIANISM)

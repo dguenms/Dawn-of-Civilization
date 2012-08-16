@@ -41,6 +41,8 @@ iAlexanderYear = -340
 
 iCholaSumatraYear = 1030
 
+iSpainMoorsYear = 1200
+
 iRome = con.iRome
 iCarthage = con.iCarthage
 iGreece = con.iGreece
@@ -50,6 +52,8 @@ iEgypt = con.iEgypt
 iBabylonia = con.iBabylonia
 iTamils = con.iTamils
 iIndonesia = con.iIndonesia
+iSpain = con.iSpain
+iMoors = con.iMoors
 
   
 class AIWars:
@@ -144,6 +148,11 @@ class AIWars:
 				if gc.getPlayer(iIndonesia).isAlive():
 					gc.getTeam(iTamils).declareWar(iIndonesia, True, WarPlanTypes.WARPLAN_TOTAL)
 					up.tamilConquestUP(iTamils, 2)
+					
+		if utils.getHumanID() != iSpain and gc.getPlayer(iSpain).isAlive():
+			if iGameTurn == getTurnForYear(iSpainMoorsYear) - 10 + (utils.getSeed() % 10):
+				if gc.getPlayer(iMoors).isAlive() and (gc.getPlayer(iMoors).getCapitalCity().getX(), gc.getPlayer(iMoors).getCapitalCity().getY()) == con.tCapitals[0][iMoors]:
+					gc.getTeam(iSpain).declareWar(iMoors, True, WarPlanTypes.WARPLAN_TOTAL)
                         
                 if (iGameTurn == getTurnForYear(1500) or iGameTurn == getTurnForYear(1850)):
                         for iLoopCiv in range( iNumPlayers ):
