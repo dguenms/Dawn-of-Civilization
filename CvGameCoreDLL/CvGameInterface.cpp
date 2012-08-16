@@ -2519,17 +2519,14 @@ int CvGame::getNextSoundtrack(EraTypes eLastEra, int iLastSoundtrack) const
 	CvEraInfo& kCurrentEra = GC.getEraInfo(eCurEra);
 	if (kCurrentEra.getNumSoundtracks() == 0)
 	{
-		GC.getGame().logMsg("No soundtrack available.");
 		return -1;
 	}
 	else if (kCurrentEra.getNumSoundtracks() == 1 || (eLastEra != eCurEra && kCurrentEra.isFirstSoundtrackFirst()))
 	{
-		GC.getGame().logMsg("First soundtrack.");
 		return kCurrentEra.getSoundtracks(0);
 	}
 	else 
 	{
-		GC.getGame().logMsg("Random soundtrack.");
 		return kCurrentEra.getSoundtracks(GC.getASyncRand().get(kCurrentEra.getNumSoundtracks(), "Pick Song ASYNC"));
 	}
 }

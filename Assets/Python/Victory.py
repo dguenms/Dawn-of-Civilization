@@ -1754,7 +1754,7 @@ class Victory:
 		elif iPlayer == iPoland:
 			if pPoland.isAlive():
 			
-				if iGameTurn == getTurnForYear(1350):
+				if iGameTurn == getTurnForYear(1400):
 					cityList = self.getMostPopulousCities(iPoland, 3)
 					iCount = 0
 					bComplete = False
@@ -2534,24 +2534,24 @@ class Victory:
 			if self.getGreekTechs(0) == 1 and self.getGreekTechs(1) == 1 and self.getGreekTechs(2) == 1:
 				self.setGoal(iGreece, 0, 1)
 				
-		# Polish UHV: Liberalism and Astronomy
+		# Polish UHV: Liberalism
 		if iTech == con.iLiberalism:
-			if self.getPolishTechs(0) == -1:
+			if self.getGoal(iPoland, 1) == -1:
 				if iPlayer == iPoland:
-					self.setPolishTechs(0, 1)
+					self.setGoal(iPoland, 1, 1)
 				else:
 					self.setGoal(iPoland, 1, 0)
 					
-		elif iTech == con.iAstronomy:
-			if self.getPolishTechs(1) == -1:
-				if iPlayer == iPoland:
-					self.setPolishTechs(1, 1)
-				else:
-					self.setGoal(iPoland, 1, 0)
+		#elif iTech == con.iAstronomy:
+		#	if self.getPolishTechs(1) == -1:
+		#		if iPlayer == iPoland:
+		#			self.setPolishTechs(1, 1)
+		#		else:
+		#			self.setGoal(iPoland, 1, 0)
 					
-		if iTech in [con.iLiberalism, con.iAstronomy] and self.getGoal(iPoland, 1) == -1:
-			if self.getPolishTechs(0) == 1 and self.getPolishTechs(1) == 1:
-				self.setGoal(iPoland, 1, 1)
+		#if iTech in [con.iLiberalism, con.iAstronomy] and self.getGoal(iPoland, 1) == -1:
+		#	if self.getPolishTechs(0) == 1 and self.getPolishTechs(1) == 1:
+		#		self.setGoal(iPoland, 1, 1)
 
 
 		# Italian UHV: Banking, Patronage, Education, Radio, Electricity, Fascism
@@ -2887,7 +2887,7 @@ class Victory:
 						iCatholic = self.getNumBuildings(iPoland, con.iChristianCathedral)
 						iOrthodox = self.getNumBuildings(iPoland, con.iOrthodoxCathedral)
 						iProtestant = self.getNumBuildings(iPoland, con.iJewishCathedral)
-						if self.getWondersBuilt(iPoland) >= 3 and iCatholc+iOrthodox+iProtestant >= 3:
+						if self.getWondersBuilt(iPoland) >= 3 and iCatholic+iOrthodox+iProtestant >= 3:
 							self.setGoal(iPoland, 2, 1)
 					
 				
@@ -3919,10 +3919,10 @@ class Victory:
 				if bCity1: aHelp.append(self.getIcon(cityList[0].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[0].getName(), cityList[0].getPopulation(), 12)))
 				if bCity2: aHelp.append(self.getIcon(cityList[1].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[1].getName(), cityList[1].getPopulation(), 12)))
 				if bCity3: aHelp.append(self.getIcon(cityList[2].getPopulation() >= 12) + localText.getText("TXT_KEY_VICTORY_CITY_SIZE", (cityList[2].getName(), cityList[2].getPopulation(), 12)))
-			elif iGoal == 1:
-				bLiberalism = (self.getPolishTechs(0) == 1)
-				bAstronomy = (self.getPolishTechs(1) == 1)
-				aHelp.append(self.getIcon(bLiberalism) + localText.getText("TXT_KEY_TECH_LIBERALISM", ()) + ' ' + self.getIcon(bAstronomy) + localText.getText("TXT_KEY_TECH_ASTRONOMY", ()))
+			#elif iGoal == 1:
+			#	bLiberalism = (self.getPolishTechs(0) == 1)
+			#	bAstronomy = (self.getPolishTechs(1) == 1)
+			#	aHelp.append(self.getIcon(bLiberalism) + localText.getText("TXT_KEY_TECH_LIBERALISM", ()) + ' ' + self.getIcon(bAstronomy) + localText.getText("TXT_KEY_TECH_ASTRONOMY", ()))
 			elif iGoal == 2:
 				iCatholic = self.getNumBuildings(iPoland, con.iChristianCathedral)
 				iOrthodox = self.getNumBuildings(iPoland, con.iOrthodoxCathedral)
