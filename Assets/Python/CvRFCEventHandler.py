@@ -307,6 +307,8 @@ class CvRFCEventHandler:
 		elif playerType in lTradingCompanyList:
 			if (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(playerType)]:
 				self.up.tradingCompanyCulture(city, playerType, owner)
+		elif playerType == con.iSpain and (city.getX(), city.getY()) == con.tCapitals[0][con.iMoors]:
+			self.up.tradingCompanyCulture(city, playerType, owner)
 
                 if (playerType < iNumMajorPlayers):
                          utils.spreadMajorCulture(playerType, city.getX(), city.getY())

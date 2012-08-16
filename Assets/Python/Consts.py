@@ -1781,7 +1781,7 @@ tHire = (
 90, #Tibet
 30, #Khmer
 60, #Indonesia
-80, #Moors
+90, #Moors
 50, #Spain
 50, #France
 50, #England

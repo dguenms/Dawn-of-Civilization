@@ -4461,7 +4461,8 @@ class RiseAndFall:
 		if iCiv == iPoland:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
 			utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iMaceman, iCiv, tPlot, 1)
 			if utils.getHumanID() != iPoland:
 				utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
@@ -4669,7 +4670,7 @@ class RiseAndFall:
                 if (iCiv == iMali):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 		if iCiv == iPoland:
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iTurkey):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 4)
                         #utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
@@ -5449,7 +5450,7 @@ class RiseAndFall:
 			if iCiv == iMoors:
 				lMoorishTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, con.iMasonry, \
 						con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, \
-						con.iWriting, con.iCodeOfLaws, con.iFeudalism, con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, \
+						con.iWriting, con.iCodeOfLaws, con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, \
 						con.iAnimalHusbandry, con.iHorsebackRiding, con.iLiterature, con.iAesthetics, con.iCalendar, con.iMeditation, con.iSailing, con.iPhilosophy]
 				for iTech in lMoorishTechs:
 					teamMoors.setHasTech(iTech, True, iCiv, False, False)

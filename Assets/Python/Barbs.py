@@ -63,6 +63,7 @@ lLyon = [56, 47, -350, 0] #117
 lShenyang = [105, 49, -300, 0]
 lBordeaux = [53, 48, -300, 0] #121
 lThanjavur = [91, 31, -300, 0]
+lThanjavur = [91, 31, -300, 0]
 lMadras = [92, 33, -325, 0]
 lCartagena = [54, 42, -230, 0] #125
 lArtaxata = [77, 44, -190,0] #128
@@ -465,7 +466,7 @@ class Barbs:
                                         self.makeUnit(iUnitType, iCiv, (lCity[0], lCity[1]), iNumUnits, 0)
 					print "Units created"
 				for iReligion in lReligions:
-					self.getCity((lCity[0], lCity[1])).setHasReligion(iReligion, True)
+					self.getCity((lCity[0], lCity[1])).setHasReligion(iReligion, True, False, False)
                                 return True
                         if (bResult == False) and (lCity[3] == -1):
                                 return False

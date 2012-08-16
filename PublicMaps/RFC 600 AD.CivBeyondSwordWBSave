@@ -22589,6 +22589,7 @@ BeginPlot
 	RiverNSDirection=0
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_HORSE
 	PlotType=2
 EndPlot
 BeginPlot

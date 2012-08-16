@@ -5750,10 +5750,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case FRANCE:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == RIFLING || iI == ECONOMICS || iI == PATRONAGE)
+									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS || iI == PATRONAGE)
 										iValue *= 2;
-									if (iI == ASTRONOMY)
-										iValue *= 3;
 									if (iI == DRAMA || iI == MUSIC || iI == GUILDS || iI == CHEMISTRY) {
 										iValue *= 3;
 										iValue /= 2;
