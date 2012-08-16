@@ -354,6 +354,7 @@ enum MyEras
 	ERA_FUTURE,
 	ERA_MIDDLE_EAST,
 	ERA_EAST_ASIA,
+	ERA_SOUTH_ASIA,
 };
 
 enum Regions
