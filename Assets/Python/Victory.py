@@ -2056,7 +2056,7 @@ class Victory:
 						if iCiv != iThailand:
 							if teamThailand.isOpenBorders(iCiv):
 								iCount += 1
-					if iCount >= 8:
+					if iCount >= 10:
 						self.setGoal(iThailand, 0, 1)
 					else:
 						self.setGoal(iThailand, 0, 0)
@@ -4057,13 +4057,13 @@ class Victory:
                                 	if (iLoopCiv != iThailand):
                                 		if (teamThailand.isOpenBorders(iLoopCiv)):
                                 			iCount += 1
-				aHelp.append(self.getIcon(iCount >= 8) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 8)))
+				aHelp.append(self.getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 10)))
 			elif iGoal == 1:
 				pBestCity = self.calculateTopCityPopulation(101, 33)
 				bBestCity = (pBestCity.getOwner() == iThailand and pBestCity.getX() in [101, 102] and pBestCity.getY() == 33)
 				aHelp.append(self.getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
 			elif iGoal == 2:
-				bSouthAsia = self.isAreaFreeOfCivs(tSouthAsiaTL, tSouthAsiaBR, [iIndia, iKhmer, iIndonesia, iMughals, iThailand])
+				bSouthAsia = self.isAreaFreeOfCivs(tSouthAsiaTL, tSouthAsiaBR, [iIndia, iTamils, iKhmer, iIndonesia, iMughals, iThailand])
 				aHelp.append(self.getIcon(bSouthAsia) + localText.getText("TXT_KEY_VICTORY_NO_SOUTH_ASIAN_COLONIES", ()))
 				
 		elif iPlayer == iCongo:

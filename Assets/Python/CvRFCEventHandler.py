@@ -504,7 +504,7 @@ class CvRFCEventHandler:
 			city.setHasRealBuilding(con.iBarracks, True)
 			city.setHasRealBuilding(con.iForge, True)
 			
-		if iOwner == con.iNetherlands and (city.getX(), city.getY()) == con.tCapitals[0][con.iNetherlands] and gc.getGame().getGameTurn() <= getTurnForYear(1500)+3:
+		if iOwner == con.iNetherlands and (city.getX(), city.getY()) == con.tCapitals[0][con.iNetherlands] and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
 			city.setPopulation(8)
 			
 			for iBuilding in [con.iLibrary, con.iBarracks, con.iGrocer, con.iBank, con.iColosseum, con.iTheatre, con.iJewishTemple+4*gc.getPlayer(con.iNetherlands).getStateReligion()]:
@@ -527,7 +527,8 @@ class CvRFCEventHandler:
                     #iOwner == con.iCarthage or \
                     iOwner == con.iVikings or \
                     iOwner == con.iPortugal or \
-                    iOwner == con.iNetherlands):    
+                    iOwner == con.iNetherlands or \
+		    iOwner == con.iTibet):    
                         self.vic.onCityBuilt(city, iOwner) #Victory
 
                 if (iOwner < con.iNumPlayers):

@@ -54,3 +54,5 @@
 # renamed Tokugawa to Oda Nobunaga and made him less isolationist
 # Netherlands spawn in 1580 AD now
 # added a feature to disable or randomize the spawn of Tamils, Tibet, Moors, Poland and Congo
+# Thailand's third UHV now also allows for the Tamils in South Asia
+# Thailand's first UHV goal now requires 10 civilizations to account for the addition of Tibet and Tamils

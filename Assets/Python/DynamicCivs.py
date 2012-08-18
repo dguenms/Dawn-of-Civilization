@@ -1412,20 +1412,20 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_TAIFAS")
 				return
 				
-			if bTheocracy and iReligion == con.iIslam:
-				if bAndalusia:
+			if bAndalusia:
+				if bEmpire:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CALIPHATE")
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_CALIPHATE")
-				return
-			
-			if bEmpire and iEra <= iRenaissance:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CORDOBA")
 				return
 				
-			if bAndalusia:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CORDOBA")
+			if bEmpire and iEra <= iRenaissance:
+				if bTheocracy and iReligion == con.iIslam:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_CALIPHATE")
+					return
+					
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_EMPIRE")
 				return
 				
 			# Kingdom of Morocco as default

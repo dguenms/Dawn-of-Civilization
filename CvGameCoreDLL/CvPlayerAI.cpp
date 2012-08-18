@@ -3444,6 +3444,10 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 			iValue += 5;
 	}
 
+	//Leoreth: more barbarian pressure against India
+	if (getID() == BARBARIAN && pCity->getOwner() == INDIA)
+		iValue += 2;
+
 	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
 		iValue += 2;
 	//Rhye - end
@@ -5919,6 +5923,15 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 3;
 									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
 										iValue /= 4;
+								}
+
+								// Leoreth: don't research Theology before player Ethiopia is even alive
+								if (GC.getGameINLINE().getActivePlayer() == ETHIOPIA && GC.getGameINLINE().getGameTurnYear() < startingTurnYear[ETHIOPIA])
+								{
+									if (iI == THEOLOGY)
+									{
+										iValue /= 10;
+									}
 								}
 
 								iValue = std::max(1, iValue);
