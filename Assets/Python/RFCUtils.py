@@ -1709,6 +1709,11 @@ class RFCUtils:
 			
 	def removeSlaves(self, city):
 		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
+		
+	def getRandomEntry(self, list):
+		if len(list) == 0: return False
+		
+		return list[gc.getGame().getSorenRandNum(len(list), 'Random entry')]
 			
 		
 	

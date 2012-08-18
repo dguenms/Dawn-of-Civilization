@@ -1997,7 +1997,7 @@ tResurrectionProb = (
 60, #Greece
 20, #India
 30, #Carthage
-60, #Persia
+70, #Persia
 65, #Rome
 20, #Tamils
 80, #Ethopia
