@@ -1178,15 +1178,15 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMITH</Tag>	<!-- missing translations -->
-		<English>Glassmith</English>
+		<Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER</Tag>	<!-- missing translations -->
+		<English>Glassmaker</English>
 		<French>
 			<Text></Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Glasschmiede</Text>
+			<Text>Glasmacher</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>

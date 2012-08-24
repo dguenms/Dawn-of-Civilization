@@ -56,3 +56,12 @@
 # added a feature to disable or randomize the spawn of Tamils, Tibet, Moors, Poland and Congo
 # Thailand's third UHV now also allows for the Tamils in South Asia
 # Thailand's first UHV goal now requires 10 civilizations to account for the addition of Tibet and Tamils
+# Redesigned barbarians, new spawn types with different spawning patterns and unit AIs
+# Historically and regionally appropriate adjectives for barbarians
+# New units for barbarians only: Celtic Cidainh, Hittite Huluganni, Nubian Medjay, Kushan Asvaka, Songhai Farari, Iroquois Mohawk, Sioux Mounted Brave
+# New Huscarl graphics
+# Impis cannot pass deserts anymore
+# resources on selected islands (Mediterranean, Caribbean) can now be connected without building forts on them
+# new Phoenician UU: African War Elephant (War Elephant, requires only Horseback Riding, starts with Shock)
+# new Phoenician UB: Glassmaker (Market with +1 trade route, +50% trade route yield)
+# reverted the Phoenician UP to the Power of Mercenaries: -50% mercenary hire and upkeep cost

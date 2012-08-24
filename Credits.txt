@@ -6,6 +6,7 @@ BASE MODS
 # The Sword of Islam by embryodead for various interface improvements, corporation spread changes, middle eastern graphics and many miscellaneous features
 # Reformation modmod by Panopticon for the basis of the Reformation event
 # Project Synthesis by Linkman for the Seljuks and Middle Eastern Mongol conquerors
+# The History Rewritten mod for the Tamil, Tibetan, Moorish, Polish and Congolese civilizations
 
 LEADERHEADS
 # melcher kürzer: Catherine the Great, Isabella
@@ -36,6 +37,9 @@ LEADERHEADS
 
 From mods, without explicit mention of the original creators
 # The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)
+
+UNITS
+# History Rewritten mod: Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave and Huscarl graphics
 
 OTHER GRAPHICS
 # Slave unit: RFC Classical World by srpt

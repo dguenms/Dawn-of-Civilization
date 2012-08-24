@@ -311,7 +311,7 @@ class CvRFCEventHandler:
 			self.up.tradingCompanyCulture(city, playerType, owner)
 
                 if (playerType < iNumMajorPlayers):
-                         utils.spreadMajorCulture(playerType, city.getX(), city.getY())
+			utils.spreadMajorCulture(playerType, city.getX(), city.getY())
 
                 self.sta.onCityAcquired(owner,playerType,city,bConquest,bTrade)
 		
@@ -505,10 +505,12 @@ class CvRFCEventHandler:
 			city.setHasRealBuilding(con.iForge, True)
 			
 		if iOwner == con.iNetherlands and (city.getX(), city.getY()) == con.tCapitals[0][con.iNetherlands] and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
-			city.setPopulation(8)
+			city.setPopulation(9)
 			
 			for iBuilding in [con.iLibrary, con.iBarracks, con.iGrocer, con.iBank, con.iColosseum, con.iTheatre, con.iJewishTemple+4*gc.getPlayer(con.iNetherlands).getStateReligion()]:
 				city.setHasRealBuilding(iBuilding, True)
+				
+			gc.getPlayer(con.iNetherlands).AI_updateFoundValues(False)
 
 
                 if (self.vic.getNewWorld(0) == -1):

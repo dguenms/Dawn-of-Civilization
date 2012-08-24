@@ -90,7 +90,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AVAILABLE_DYE_RESOURCES</Tag>
-		<English>Available dye resources: %d2</English>
+		<English>Available dye resources: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_LARGEST_MAP</Tag>

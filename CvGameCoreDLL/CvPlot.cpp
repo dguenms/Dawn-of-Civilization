@@ -3788,7 +3788,17 @@ bool CvPlot::isTradeNetworkConnected(const CvPlot* pPlot, TeamTypes eTeam) const
 		}
 	}
 
-	if (isCity(true, eTeam))
+	bool bBonusIsland = false;
+	for (int iI = 0; iI < NUM_BONUS_ISLANDS; iI++)
+	{
+		if (getX_INLINE() == bonusIslandsX[iI] && getY_INLINE() == bonusIslandsY[iI])
+		{
+			bBonusIsland = true;
+			break;
+		}
+	}
+
+	if (isCity(true, eTeam) || bBonusIsland)
 	{
 		if (pPlot->isNetworkTerrain(eTeam))
 		{
@@ -3798,7 +3808,7 @@ bool CvPlot::isTradeNetworkConnected(const CvPlot* pPlot, TeamTypes eTeam) const
 
 	if (isNetworkTerrain(eTeam))
 	{
-		if (pPlot->isCity(true, eTeam))
+		if (pPlot->isCity(true, eTeam) || bBonusIsland)
 		{
 			return true;
 		}
@@ -6759,7 +6769,7 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return iValue;
 	}
 
-	if (m_aiFoundValue[eIndex] == -1)
+	if (m_aiFoundValue[eIndex] == -1 || eIndex == NETHERLANDS)
 	{
 		/*long lResult=-1;
 		if(GC.getUSE_GET_CITY_FOUND_VALUE_CALLBACK())
