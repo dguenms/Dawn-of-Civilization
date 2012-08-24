@@ -5236,7 +5236,7 @@ class RiseAndFall:
                                 #teamCarthage.setHasTech(con.iMetalCasting, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iMysticism, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                #teamCarthage.setHasTech(con.iPriesthood, True, iCiv, False, False)
+                                teamCarthage.setHasTech(con.iPriesthood, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iMasonry, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iFishing, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iSailing, True, iCiv, False, False)
@@ -5247,7 +5247,7 @@ class RiseAndFall:
                                 #teamCarthage.setHasTech(con.iAlphabet, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iHunting, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iArchery, True, iCiv, False, False)
-                                #teamCarthage.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+                                teamCarthage.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 #teamCarthage.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
                         if (iCiv == iRome):
                                 teamRome.setHasTech(con.iMining, True, iCiv, False, False)
