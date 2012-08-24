@@ -232,7 +232,7 @@ class Barbs:
 		#Kushana
 		if iGameTurn >= getTurnForYear(30) and iGameTurn <= getTurnForYear(220):
 			#self.spawnUnits(iBarbarian, (84, 40), (87, 43), con.iSwordsman, 1, iGameTurn, 6-iHandicap, 3, utils.internalInvasion, 0)
-			self.checkSpawn(iBarbarian, con.iSwordsman, 3+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 8, 3, ["TXT_KEY_ADJECTIVE_KUSHANA"])
+			self.checkSpawn(iBarbarian, con.iKushanAsvaka, 3+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 8, 3, ["TXT_KEY_ADJECTIVE_KUSHANA"])
 
 		#Hephtalites
 		if iGameTurn >= getTurnForYear(400) and iGameTurn <= getTurnForYear(550):
@@ -268,7 +268,7 @@ class Barbs:
 		# Leoreth: Barbarians in Anatolia (Hittites), replace Hattusas spawn
 		if (iGameTurn >= getTurnForYear(-2000) and iGameTurn <= getTurnForYear(-800)):
 			#self.spawnUnits( iBarbarian, (68, 42), (74, 45), con.iChariot, 2 + iHandicap, iGameTurn, 14, 0, utils.outerInvasion, 1)
-			self.checkSpawn(iBarbarian, con.iChariot, 2 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 12, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
+			self.checkSpawn(iBarbarian, con.iHittiteHuluganni, 2 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 12, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
                         
                 #barbarians in europe
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(470)):

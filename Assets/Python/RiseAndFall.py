@@ -2598,7 +2598,7 @@ class RiseAndFall:
                                                         #self.moveOutUnits(x, y, tCapital[0], tCapital[1])
                                                         for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
                                                                 if (iCiv != iLoopCiv):
-                                                                        utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iLoopCiv, True, False)
+                                                                        utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iLoopCiv, True, False, con.tExceptions[0][iCiv])
                                                         if (pCurrent.isCity()):
                                                                 pCurrent.eraseAIDevelopment() #new function, similar to erase but won't delete rivers, resources and features()
                                                         for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well

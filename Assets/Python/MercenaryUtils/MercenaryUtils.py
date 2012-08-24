@@ -45,6 +45,8 @@ PyPlayer = PyHelpers.PyPlayer
 PyGame = PyHelpers.PyGame()
 PyInfo = PyHelpers.PyInfo
 
+lUnavailableUnits = [con.iByzantineCataphract, con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek, con.iHarappanMilitia, con.iTibetanKhampa, con.iKongoPombos, con.iPolishWingedHussar, con.iMoorishCamelGunner, con.iSeljukGhulamWarrior, con.iCelticCidainh, con.iHittiteHuluganni, con.iKushanAsvaka, con.iMandeFarari]
+
 AVAILABLE_MERCENARIES = "AvailableMercenaries"
 HIRED_MERCENARIES = "HiredMercenaries"
 MERCENARY_GROUPS = "MercenaryGroups"
@@ -475,6 +477,7 @@ class MercenaryUtils:
                                 #Rhye - end
 				
 				# The random type of unit that will be created
+				#while (iUnitType == -1 or iUnitType in lUnavailableUnits):
 				iUnitType = gc.getGame().getMapRand().get(gc.getNumUnitInfos(), "Random Unit Info")
 
 				# Get the PyUnitInfo for the iUnitType
@@ -2993,7 +2996,7 @@ class Mercenary:
 		# Leoreth: special treatment for new world and unique units, similar to SoI
 		unitType = self.getUnitInfoID()
 		
-		if unitType in [con.iByzantineCataphract, con.iEnglishRedcoat, con.iAmericanNavySeal, con.iFrenchHeavyCannon, con.iGermanPanzer, con.iKoreanHwacha, con.iThaiChangSuek, con.iHarappanMilitia, con.iTibetanKhampa, con.iKongoPombos, con.iPolishWingedHussar, con.iMoorishCamelGunner, con.iSeljukGhulamWarrior]:
+		if unitType in lUnavailableUnits:
 			return False
 			
 		iStateReligion = gc.getPlayer(iPlayer).getStateReligion()
@@ -3033,7 +3036,7 @@ class Mercenary:
 			return gc.getPlayer(con.iGreece).isAlive() and set(regionList) & con.mercRegions[con.iArea_Europe]
 		elif unitType in [con.iSumerianVulture, con.iBabylonBowman]:
 			return gc.getPlayer(con.iBabylonia).isAlive() and con.rMesopotamia in regionList
-		elif unitType == con.iNativeAmericaDogSoldier:
+		elif unitType in [con.iNativeAmericaDogSoldier, con.iIroquoisMohawk, con.iSiouxMountedBrave]:
 			return set(regionList) & con.mercRegions[con.iArea_NorthAmerica]
 		elif unitType in [con.iJapanSamurai, con.iChinaChokonu, con.iThaiChangSuek, con.iKhmerBallistaElephant]:
 			return set(regionList) & con.mercRegions[con.iArea_EastAsia]
@@ -3047,6 +3050,8 @@ class Mercenary:
 			return gc.getPlayer(con.iPersia).isAlive() and set(regionList) & con.mercRegions[con.iArea_MiddleEast]
 		elif unitType == con.iCarthageNumidianCavalry:
 			return con.rMaghreb in regionList or con.rEgypt in regionList
+		elif unitType == con.iNubianMedjay:
+			return con.rEgypt in regionList or con.rEthiopia in regionList
 		elif unitType == con.iMongolKeshik:
 			return gc.getPlayer(con.iMongolia).isAlive()
 		elif unitType == con.iByzantineCataphract:
