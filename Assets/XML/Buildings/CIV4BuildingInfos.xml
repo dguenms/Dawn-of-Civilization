@@ -31195,7 +31195,7 @@
 			<BonusHappinessChanges/>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
-					<BonusType>BONUS_STONE</BonusType>
+					<BonusType>BONUS_MARBLE</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>

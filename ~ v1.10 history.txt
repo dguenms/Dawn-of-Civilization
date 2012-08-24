@@ -65,3 +65,6 @@
 # new Phoenician UU: African War Elephant (War Elephant, requires only Horseback Riding, starts with Shock)
 # new Phoenician UB: Glassmaker (Market with +1 trade route, +50% trade route yield)
 # reverted the Phoenician UP to the Power of Mercenaries: -50% mercenary hire and upkeep cost
+# gave additional starting techs to Phoenicia
+# fixed the Persian spawning zone with regards to Phoenicia
+# The Great Cothon is now built faster with marble
