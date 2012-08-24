@@ -7,7 +7,6 @@
 # Babylonia now in CvPlayer::getCapitalYieldModifier(); +33% production and commerce in the capital after Code of Laws
 #Greece CvCity:getGreatPeopleRate()
 #Carthage in MercenaryUtils.py and CvMercenarymanager.py
-# Phoenicia now in CvCity::getTradeRouteModifier()
 #Persia (USED TO BE in CvHandicapInfo::getDistanceMaintenancePercentByID(); THEN in RiseAndFall.py, collapseCapitals()), NOW in Stability.py, onCityAcquired()
 #Rome in CvPlot::movementCost()
 #Japan, Spain and England in CvUnit::init(). Turkey used to be there as well

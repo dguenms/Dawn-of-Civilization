@@ -22,17 +22,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR</Tag>
-		<English>The Power of Seafaring:</English>
+		<English>The Power of Mercenaries:</English>
 		<French>Le Pouvoir des Mercenaires :</French>
-		<German>Die Macht der Seefahrt:</German>
+		<German>Die Macht der Söldner:</German>
 		<Italian>Il potere dei mercenari:</Italian>
 		<Spanish>El poder de los mercenarios:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR2</Tag>
-		<English>Trade route yields increased by 50%</English>
+		<English>Mercenaries hire and maintenance costs halved</English>
 		<French>Coûts de recrutement et d'entretien des mercenaires divisés par deux</French>
-		<German>Einnahmen durch Handelsrouten um 50% erhöht</German>
+		<German>Halbierte Sold- und Unterhaltskosten für Söldner</German>
 		<Italian>Dimezzati i costi di assunzione e mantenimento dei mercenari</Italian>
 		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
 	</TEXT>

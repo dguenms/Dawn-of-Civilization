@@ -2953,7 +2953,10 @@ class Mercenary:
 	
 		#return int(self.iHireCost*g_dHireCostModifier)
 		iResult = int(self.iHireCost*g_dHireCostModifier) + g_dBaseHireCost #Rhye
-		# Leoreth - removed Carthaginian UP
+		
+		if iPlayer == con.iCarthage:
+			iResult /= 2
+		
 		return iResult	
         #Rhye - end Carthaginian UP
 
@@ -3088,7 +3091,9 @@ class Mercenary:
 		#return int((math.ceil(self.getLevel() * math.pi) + math.ceil(self.getHireCost() * 0.05))*g_dMaintenanceCostModifier)
 		#iResult = int((math.ceil(self.getLevel() * math.pi) + math.ceil(self.getHireCost() * 0.05))*dMaintenanceCostModifier) + g_dBaseMaintenanceCost #Rhye
 		iResult = int((math.ceil(self.getLevel() * 3) + math.ceil(self.getHireCostXPlayer(iPlayer) * 0.05))*dMaintenanceCostModifier) + g_dBaseMaintenanceCost #Rhye
-		# Leoreth - removed Carthaginian UP
+		
+		if iPlayer == con.iCarthage: iResult /= 2
+		
 		return iResult
         #Rhye - end Carthaginian UP
 

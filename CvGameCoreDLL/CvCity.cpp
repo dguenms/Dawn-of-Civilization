@@ -7420,8 +7420,8 @@ int CvCity::getTradeRouteModifier() const
 	int iResult = m_iTradeRouteModifier;
 
     // Leoreth - new Phoenician UP: the power of seafaring, +50% trade route yield.
-    if (getOwner() == CARTHAGE)
-        iResult += 50;
+    //if (getOwner() == CARTHAGE)
+    //    iResult += 50;
 
 	//Leoreth: Porcelain Tower effect (removed)
 	/*if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))

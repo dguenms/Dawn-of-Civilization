@@ -415,7 +415,7 @@ class RFCUtils:
                         player = gc.getPlayer(iPlayer)
                         unit = player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			if sAdj != "":
-				unit.setName(CyTranslator().getText(sAdj) + ' ' + unit.getName())
+				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
 
 	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum, sAdj=""): #by LOQ, modified by Leoreth
                 'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
@@ -423,7 +423,7 @@ class RFCUtils:
                         player = gc.getPlayer(iPlayer)
                         unit = player.initUnit(iUnit, tCoords[0], tCoords[1], iAI, DirectionTypes.DIRECTION_SOUTH)
 			if sAdj != "":
-				unit.setName(CyTranslator().getText(sAdj) + ' ' + unit.getName())
+				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
 				
 
         #RiseAndFall, Religions, Congresses

@@ -1,4 +1,5 @@
 
+
 # Rhye's and Fall of Civilization - Historical Victory Goals
 
 
@@ -862,7 +863,7 @@ class Victory:
 				else:
 					if iGameTurn == getTurnForYear(1650):
 						iCount = 0
-						for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iEngland, iRussia, iNetherlands, iPortugal, iItaly]:
+						for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iEngland, iRussia, iPoland, iNetherlands, iPortugal, iItaly]:
 							if teamPersia.isOpenBorders(iEurociv):
 								iCount += 1
 						if iCount >= 6:
@@ -3034,7 +3035,7 @@ class Victory:
 	def onVassalState(self, iMaster, iVassal):
 		if iMaster == iHolyRome:
 			iCount = 0
-			for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPortugal, iItaly, iNetherlands]:
+			for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPoland, iPortugal, iItaly, iNetherlands]:
 				if utils.getMaster(iCiv) == iHolyRome:
 					iCount += 1
 			if iCount >= 3:
@@ -3524,7 +3525,7 @@ class Victory:
 			else:
 				if iGoal == 0:
 					iCount = 0
-					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iGermany, iRussia, iPortugal, iNetherlands]:
+					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iGermany, iRussia, iPoland, iPortugal, iNetherlands]:
 						if teamPersia.isOpenBorders(iEurociv):
 							iCount += 1
 					aHelp.append(self.getIcon(iCount >= 6) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 6)))
@@ -3840,7 +3841,7 @@ class Victory:
 				aHelp.append(self.getIcon(bApostolicPalace) + localText.getText("TXT_KEY_BUILDING_APOSTOLIC_PALACE", ()) + ' ' + self.getIcon(bHolySepulchre) + localText.getText("TXT_KEY_BUILDING_CHRISTIAN_SHRINE", ()))
 			elif iGoal == 2:
 				iCount = 0
-				for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPortugal, iItaly, iNetherlands]:
+				for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPoland, iPortugal, iItaly, iNetherlands]:
 					if utils.getMaster(iCiv) == iHolyRome:
 						iCount += 1
 				aHelp.append(self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_VASSALS", (iCount, 3)))

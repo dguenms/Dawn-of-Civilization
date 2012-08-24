@@ -2453,7 +2453,7 @@ class RiseAndFall:
 		
 		for i in [x-1, x, x+1]:
 			for j in [y-1, y, y+1]:
-				if iCiv not in [iFrance, iAmerica, iPoland, iThailand, iMoors] and gc.getMap().plot(i,j).isCity():
+				if iCiv == iItaly and gc.getMap().plot(i,j).isCity():
 					bCapitalSettled = True
 					tCapital = (i,j)
 					break
@@ -2583,7 +2583,7 @@ class RiseAndFall:
                                                                         break
                                 print ("bDeleteEverything", bDeleteEverything)
                                 if (not gc.getMap().plot(tCapital[0], tCapital[1]).isOwned()):
-                                        if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand or iCiv == iItaly): #dangerous starts
+                                        if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand or iCiv == iItaly or iCiv == iCarthage): #dangerous starts
                                                 self.setDeleteMode(0, iCiv)
 					if bBirthInCapital:
 						self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
@@ -3892,6 +3892,15 @@ class RiseAndFall:
 						bAccepted = False
 				else:
 					bAccepted = True
+				
+				iNumCities = 0
+				for tPlot in targetList:
+					x, y = tPlot
+					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
+						iNumCities += 1
+						
+				if iNumCities >= gc.getPlayer(iTargetCiv).getNumCities():
+					bAccepted = False
 
 				for tPlot in targetList:
 					x, y = tPlot
@@ -4107,7 +4116,7 @@ class RiseAndFall:
                 if (iCiv == iPersia):
                         utils.makeUnit(con.iPersiaImmortal, iCiv, tPlot, 4)
                 if (iCiv == iCarthage):
-                        utils.makeUnit(con.iCarthageNumidianCavalry, iCiv, tPlot, 4)
+                        utils.makeUnit(con.iCarthaginianWarElephant, iCiv, tPlot, 1)
                 if (iCiv == iRome):
                         utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 4)
                 if (iCiv == iJapan):
@@ -4228,15 +4237,16 @@ class RiseAndFall:
                 if (iCiv == iCarthage):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+                        utils.makeUnit(con.iSpearman, iCiv, tPlot, 1)
                         #utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
                         #utils.makeUnit(con.iCarthageNumidianCavalry, iCiv, tPlot, 3)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
-                                pCarthage.initUnit(con.iBireme, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+                                pCarthage.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
                                 utils.makeUnit(con.iArcher, iCiv, tSeaPlot, 1)
-                                pCarthage.initUnit(con.iBireme, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
+                                pCarthage.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 pCarthage.initUnit(con.iTrireme, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
                 if (iCiv == iRome):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
@@ -4448,11 +4458,11 @@ class RiseAndFall:
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
                                 pHolland.initUnit(con.iNetherlandsOostindievaarder, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-                                utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-                                utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
+                                utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
+                                utils.makeUnit(con.iLongbowman, iCiv, tSeaPlot, 1)
                                 pHolland.initUnit(con.iNetherlandsOostindievaarder, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-				utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
+				utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
+				utils.makeUnit(con.iLongbowman, iCiv, tSeaPlot, 1)
                                 utils.makeUnit(con.iCaravel, iCiv, tSeaPlot, 2)
                 if (iCiv == iMali):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 3)
@@ -5650,7 +5660,7 @@ class RiseAndFall:
                                 teamHolland.setHasTech(con.iDrama, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iMusic, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iPatronage, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iLiberalism, True, iCiv, False, False)
+                                #teamHolland.setHasTech(con.iLiberalism, True, iCiv, False, False)
                         if (iCiv == iMali):
                                 teamMali.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamMali.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

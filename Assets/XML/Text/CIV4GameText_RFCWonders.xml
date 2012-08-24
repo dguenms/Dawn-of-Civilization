@@ -557,31 +557,6 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 	</TEXT>
-	<!-- added by Leoreth -->
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PERSIAN_APOTHECARY</Tag>
-		<English>Bazaar</English>
-		<French>
-			<Text>Bazar</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Basar</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Bazar</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Bazar:Bazares</Text>	<!-- stupid internet translation -->
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-	</TEXT>
 
 	<!-- Confucianism -> Zoroastrianism rename by Leoreth -->
 	<TEXT>
@@ -634,14 +609,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>	<!-- translations missing -->
-		<English>Zoroastrian Fire Temple</English>
+		<English>Zoroastrian Royal Fire</English>
 		<French>
 			<Text></Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Zoroastrischer Feuertempel</Text>
+			<Text>Zoroastrisches Königsfeuer</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>

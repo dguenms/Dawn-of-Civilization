@@ -645,14 +645,14 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
-					<BuildingType>BUILDING_PHOENICIAN_GLASSMITH</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingType>BUILDING_PHOENICIAN_GLASSMAKER</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_GALLEY</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_BIREME</UnitType>
+					<UnitClassType>UNITCLASS_WAR_ELEPHANT</UnitClassType>
+					<UnitType>UNIT_CARTHAGINIAN_WAR_ELEPHANT</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>

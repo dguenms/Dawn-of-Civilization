@@ -510,13 +510,24 @@ class Stability:
 
 
                         iTempExpansionThreshold = iNewBaseStability
-
+			
+			
                         iMaxPlotsAbroad = 36
                         iHandicap = gc.getGame().getHandicapType()
-                        if (iHandicap == 0):
-                                iMaxPlotsAbroad = 40
-                        elif (iHandicap == 2):
-                                iMaxPlotsAbroad = 32
+			if utils.getHumanID() == iPlayer:
+				if (iHandicap == 0):
+					iMaxPlotsAbroad = 40
+				elif (iHandicap == 2):
+					iMaxPlotsAbroad = 32
+			else:
+				if iHandicap == 2:
+					iMaxPlotsAbroad = 40
+				elif iHandicap == 0:
+					iMaxPlotsAbroad = 32
+				
+				if iGameTurn < getTurnForYear(con.tFall[iPlayer]):
+					iMaxPlotsAbroad *= 3
+					iMaxPlotsAbroad /= 2
 			
 			# Leoreth: nerf Korean stability, and city states civic
 			#if iPlayer == con.iKorea:

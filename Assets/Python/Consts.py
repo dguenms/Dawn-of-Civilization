@@ -2164,18 +2164,18 @@ iNumTechsFuture = iNumTechs+1
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 137
+iNumUnits = 145
 (iLion, iBear, iPanther, iWolf, iSettler, iWorker, iIndianFastWorker, iScout, iExplorer, iSpy, iJewishMissionary,
 iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary,
 iZoroastrianMissionary, iWarrior, iIncanQuechua, iHarappanMilitia, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
 iAxeman, iGreekPhalanx, iSumerianVulture, iNativeAmericaDogSoldier, iMaceman, iJapanSamurai, iVikingBerserker, iIranianQizilbash, iKongoPombos, 
 iSpearman, iZuluImpi, iMayaHolkan, iPikeman, iHolyRomanLandsknecht, iMusketman, iFrenchMusketeer, iOttomanJanissary,
-iEthiopianOromoWarrior, iRifleman, iEnglishRedcoat, iGrenadier, iAtInfantry, iInfantry, iSamInfantry, iMobileSam,
-iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMaliSkirmisher, iBabylonBowman, iLongbowman,
-iCrossbowman, iChinaChokonu, iChariot, iEgyptWarChariot, iPersiaImmortal, iHorseArcher, iCarthageNumidianCavalry,
-iMongolKeshik, iTibetanKhampa, iKnight, iArabiaCamelarcher, iByzantineCataphract, iSeljukGhulamWarrior, iThaiChangSuek, iSpanishConquistador, 
-iCuirassier,  iMoorishCamelGunner, iPolishWingedHussar, iCavalry, iRussiaCossack, iWarElephant, iKhmerBallistaElephant, iTank, iGermanPanzer, 
-iModernArmor, iGunship, iCatapult, iKoreanHwacha, iTrebuchet, iBombard, iMughalSiegeElephant,
+iEthiopianOromoWarrior, iIroquoisMohawk, iRifleman, iEnglishRedcoat, iGrenadier, iAtInfantry, iInfantry, iSamInfantry, iMobileSam,
+iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMaliSkirmisher, iBabylonBowman, iNubianMedjay, iLongbowman,
+iCrossbowman, iChinaChokonu, iChariot, iEgyptWarChariot, iCelticCidainh, iHittiteHuluganni, iPersiaImmortal, iHorseArcher, iCarthageNumidianCavalry,
+iMongolKeshik, iTibetanKhampa, iKnight, iArabiaCamelarcher, iByzantineCataphract, iSeljukGhulamWarrior, iThaiChangSuek, iMandeFarari, iSpanishConquistador, 
+iKushanAsvaka, iSiouxMountedBrave, iCuirassier,  iMoorishCamelGunner, iPolishWingedHussar, iCavalry, iRussiaCossack, iWarElephant, iKhmerBallistaElephant, 
+iCarthaginianWarElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha, iTrebuchet, iBombard, iMughalSiegeElephant,
 iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iTrireme, iCaravel, iPortugalCarrack, iTamilDharani,
 iGalleon, iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iFrigate, iShipOfTheLine, iIronclad, iTransport, iDestroyer, iBattleship,
 iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, iJetFighter, iBomber,
