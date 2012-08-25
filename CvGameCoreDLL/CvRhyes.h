@@ -27,7 +27,7 @@ typedef list<char*> LISTCHAR;
 #define NUM_PL					(39)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(46)
-#define NUM_BONUS_ISLANDS		(8)
+#define NUM_BONUS_ISLANDS		(10)
 
 enum MyCivs
 {

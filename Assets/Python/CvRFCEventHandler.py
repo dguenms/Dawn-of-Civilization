@@ -477,8 +477,16 @@ class CvRFCEventHandler:
 				if not gc.getPlayer(con.iCarthage).isHuman():
 					x = gc.getPlayer(con.iCarthage).getCapitalCity().getX()
 					y = gc.getPlayer(con.iCarthage).getCapitalCity().getY()
-					gc.getMap().plot(58,39).getPlotCity().setHasRealBuilding(con.iPalace, True)
+					carthage = gc.getMap().plot(58,39).getPlotCity()
+					carthage.setHasRealBuilding(con.iPalace, True)
 					gc.getMap().plot(x,y).getPlotCity().setHasRealBuilding(con.iPalace, False)
+					
+					carthage.setPopulation(3)
+					
+					utils.makeUnitAI(con.iWorkboat, con.iCarthage, (58, 39), UnitAITypes.UNITAI_WORKER_SEA, 1)
+					utils.makeUnitAI(con.iGalley, con.iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
+					utils.makeUnitAI(con.iSettler, con.iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
+					
 				self.dc.setCivAdjective(iOwner, "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
 				self.dc.setCivShortDesc(iOwner, "TXT_KEY_CIV_CARTHAGE_SHORT_DESC")
 				

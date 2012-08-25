@@ -510,11 +510,11 @@ class Victory:
 	def changeTamilTradeGold(self, iChange):
 		sd.scriptDict['iTamilTradeGold'] += iChange
 		
-	def getPolishTechs(self, i):
-		return sd.scriptDict['lPolishTechs'][i]
+	def getRomanTechs(self, i):
+		return sd.scriptDict['lRomanTechs'][i]
 		
-	def setPolishTechs(self, i, iNewValue):
-		sd.scriptDict['lPolishTechs'][i] = iNewValue
+	def setRomanTechs(self, i, iNewValue):
+		sd.scriptDict['lRomanTechs'][i] = iNewValue
 		
 	def getCongoSlaveCounter(self):
 		return sd.scriptDict['iCongoSlaveCounter']
@@ -890,21 +890,52 @@ class Victory:
 
                 elif (iPlayer == iCarthage):
                         if (pCarthage.isAlive()):
+			
+				# Leoreth: first goal: build a Palace and the Great Cothon in Carthage by 300 BC
+				if self.getGoal(iCarthage, 0) == -1:
+					if iGameTurn <= getTurnForYear(-300):
+						capital = pCarthage.getCapitalCity()
+						bPalace = (capital.getX(), capital.getY()) == (58, 39)
+						bGreatCothon = False
+						carthagePlot = gc.getMap().plot(58, 39)
+						if carthagePlot.isCity:
+							if carthagePlot.getPlotCity().isHasRealBuilding(con.iGreatCothon):
+								bGreatCothon = True
+						if bPalace and bGreatCothon:
+							self.setGoal(iCarthage, 0, 1)
+					else:
+						self.setGoal(iCarthage, 0, 0)
+						
+				# Leoreth: second goal: control Italy and Iberia in 100 BC
+				if iGameTurn == getTurnForYear(-100):
+					bItaly = self.isControlled(iCarthage, con.tNormalAreasTL[0][iItaly], con.tNormalAreasBR[0][iItaly], [(62, 47), (63, 47), (63, 46)])
+					bIberia = self.isControlled(iCarthage, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iIberia])
+					if bItaly and bIberia:
+						self.setGoal(iCarthage, 1, 1)
+					else:
+						self.setGoal(iCarthage, 1, 0)
+				
+				# Leoreth: third goal: have the highest commerce output in the world in 200 AD
+				if iGameTurn == getTurnForYear(200):
+					if self.getHighestCommerceCiv(iCarthage) == iCarthage:
+						self.setGoal(iCarthage, 2, 1)
+					else:
+						self.setGoal(iCarthage, 2, 0)
 
 
-                                if (self.getGoal(iCarthage, 1) == -1):
-                                        if (iGameTurn <= getTurnForYear(200)):
-                                                #if (pCarthage.countOwnedBonuses(con.iDye) + pCarthage.getBonusImport(con.iDye) >= 3):
-                                                if (pCarthage.getNumAvailableBonuses(con.iDye) >= 4):
-                                                        self.setGoal(iCarthage, 1, 1)
-                                        else:
-                                                self.setGoal(iCarthage, 1, 0)
+#                                if (self.getGoal(iCarthage, 1) == -1):
+#                                        if (iGameTurn <= getTurnForYear(200)):
+#                                                #if (pCarthage.countOwnedBonuses(con.iDye) + pCarthage.getBonusImport(con.iDye) >= 3):
+#                                                if (pCarthage.getNumAvailableBonuses(con.iDye) >= 4):
+#                                                        self.setGoal(iCarthage, 1, 1)
+#                                        else:
+#                                                self.setGoal(iCarthage, 1, 0)
                                                 
-                                if (iGameTurn == getTurnForYear(-100)):                                              
-                                        if (self.checkOwnedCoastalAreaExceptions(iCarthage, tMediterraneanTL, tMediterraneanBR, tMediterraneanExceptions, 5)):
-                                                self.setGoal(iCarthage, 0, 1)
-                                        else:
-                                                self.setGoal(iCarthage, 0, 0)   
+#                                if (iGameTurn == getTurnForYear(-100)):                                              
+#                                        if (self.checkOwnedCoastalAreaExceptions(iCarthage, tMediterraneanTL, tMediterraneanBR, tMediterraneanExceptions, 5)):
+#                                                self.setGoal(iCarthage, 0, 1)
+#                                        else:
+#                                                self.setGoal(iCarthage, 0, 0)   
                                 #if (self.getGoal(iCarthage, 1) == -1):
                                 #        if (iGameTurn == getTurnForYear(350)+1):
                                 #                self.setGoal(iCarthage, 1, 0)
@@ -918,23 +949,23 @@ class Victory:
 #                                                        self.setGoal(iCarthage, 2, 0)
 				
 				# Leoreth: new third UHV condition: have the largest map of the world in 200 AD
-				if (iGameTurn == getTurnForYear(200)):
-                                        lRevealedMap = con.l0Array
-                                        for iCiv in range(iNumPlayers):
-                                                for x in range(124):
-                                                        for y in range(68):
-                                                                if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
-                                                                      lRevealedMap[iCiv] += 1
-                                        bBestMap = True
-                                        for iCiv in range(iNumPlayers):
-                                                if (lRevealedMap[iCarthage] < lRevealedMap[iCiv]):                                                        
-                                                        bBestMap = False
-                                                        break
-
-                                        if (bBestMap == True):
-                                                self.setGoal(iCarthage, 2, 1)
-                                        else:
-                                                self.setGoal(iCarthage, 2, 0)
+#				if (iGameTurn == getTurnForYear(200)):
+#                                        lRevealedMap = con.l0Array
+#                                        for iCiv in range(iNumPlayers):
+#                                                for x in range(124):
+#                                                        for y in range(68):
+#                                                                if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
+#                                                                      lRevealedMap[iCiv] += 1
+#                                        bBestMap = True
+#                                        for iCiv in range(iNumPlayers):
+#                                                if (lRevealedMap[iCarthage] < lRevealedMap[iCiv]):                                                        
+#                                                        bBestMap = False
+#                                                        break
+#
+#                                        if (bBestMap == True):
+#                                                self.setGoal(iCarthage, 2, 1)
+#                                        else:
+#                                                self.setGoal(iCarthage, 2, 0)
 
                 elif (iPlayer == iRome):
                         if (pRome.isAlive()):
@@ -975,9 +1006,9 @@ class Victory:
 						self.setGoal(iRome, 1, 0)
 
                                                 
-				if (iGameTurn == getTurnForYear(1000)):      
-					if (self.getGoal(iRome, 2) == -1): #see onCityAcquired()
-						self.setGoal(iRome, 2, 1)
+				#if (iGameTurn == getTurnForYear(1000)):      
+				#	if (self.getGoal(iRome, 2) == -1): #see onCityAcquired()
+				#		self.setGoal(iRome, 2, 1)
 
 
                         
@@ -1257,7 +1288,7 @@ class Victory:
                                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
 						bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
 						bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-						bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain], con.tExceptions[0][iSpain])
+						bSpain = self.isControlledOrVassalized(iArabia, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iSpain])
                                                 if (bEgypt and bMaghreb and bMesopotamia and bPersia and bSpain):
                                                         self.setGoal(iArabia, 1, 1)
                                 elif (iGameTurn > getTurnForYear(1300)):
@@ -2371,13 +2402,13 @@ class Victory:
                 #                                        if (playerType == iBarbarian or playerType == iMongolia):
                 #                                                self.setGoal(iChina, 1, 0)   
 
-                if (iPlayer == iRome):
-                        if (pRome.isAlive()):
-                                if (bConquest):
-                                        if (self.getGoal(iRome, 2) == -1):
-                                                if (iGameTurn <= getTurnForYear(1000)):
-                                                        if (playerType == iBarbarian):
-                                                                self.setGoal(iRome, 2, 0)
+                #if (iPlayer == iRome):
+                #        if (pRome.isAlive()):
+                #                if (bConquest):
+                #                        if (self.getGoal(iRome, 2) == -1):
+                #                                if (iGameTurn <= getTurnForYear(1000)):
+                #                                        if (playerType == iBarbarian):
+                #                                                self.setGoal(iRome, 2, 0)
 
 ##                elif (iPlayer == iJapan):
 ##                        if (pJapan.isAlive()):
@@ -2534,6 +2565,32 @@ class Victory:
 		if iTech in [con.iLiterature, con.iDrama, con.iPhilosophy] and self.getGoal(iGreece, 0) == -1:
 			if self.getGreekTechs(0) == 1 and self.getGreekTechs(1) == 1 and self.getGreekTechs(2) == 1:
 				self.setGoal(iGreece, 0, 1)
+				
+		# Roman UHV: Theology, Machinery and Civil Service
+		if iTech == con.iTheology:
+			if self.getRomanTechs(0) == -1:
+				if iPlayer == iRome:
+					self.setRomanTechs(0, 1)
+				else:
+					self.setGoal(iRome, 2, 0)
+		
+		elif iTech == con.iMachinery:
+			if self.getRomanTechs(1) == -1:
+				if iPlayer == iRome:
+					self.setRomanTechs(1, 1)
+				else:
+					self.setGoal(iRome, 2, 0)
+					
+		elif iTech == con.iCivilService:
+			if self.getRomanTechs(2) == -1:
+				if iPlayer == iRome:
+					self.setRomanTechs(2, 1)
+				else:
+					self.setGoal(iRome, 2, 0)
+					
+		if iTech in [con.iTheology, con.iMachinery, con.iCivilService] and self.getGoal(iRome, 2) == -1:
+			if self.getRomanTechs(0) == 1 and self.getRomanTechs(1) == 1 and self.getRomanTechs(2) == 1:
+				self.setGoal(iRome, 2, 1)
 				
 		# Polish UHV: Liberalism
 		if iTech == con.iLiberalism:
@@ -2938,6 +2995,10 @@ class Victory:
                                                         self.setGoal(iMaya, 1, 1)
                         else:
                                 self.setGoal(iMaya, 1, 0)
+				
+		if iBuilding == con.iGreatCothon:
+			if iPlayer != iCarthage:
+				self.setGoal(iCarthage, 0, 0)
 
 
                             
@@ -3282,6 +3343,16 @@ class Victory:
 				iBestCiv = iLoopCiv
 				iBestPower = iTempPower
 		return iBestCiv
+		
+	def getHighestCommerceCiv(self, iCiv):
+		iBestCiv = iCiv
+		iBestCommerce = gc.getPlayer(iCiv).calculateTotalCommerce()
+		for iLoopCiv in range(con.iNumPlayers):
+			iTempCommerce = gc.getPlayer(iLoopCiv).calculateTotalCommerce()
+			if iTempCommerce > iBestCommerce:
+				iBestCiv = iLoopCiv
+				iBestCommerce = iTempCommerce
+		return iBestCiv
 
 	#Leoreth: checks if the given tile or one of its neighbors contain a city owned by iCiv
 	def controlsCity(self, iCiv, tPlot):
@@ -3541,23 +3612,22 @@ class Victory:
 
 		elif iPlayer == iCarthage:
 			if iGoal == 0:
-				iNumCities = self.getNumberOfCoastalAreaCities(iCarthage, tMediterraneanTL, tMediterraneanBR, tMediterraneanExceptions)
-				aHelp.append(self.getIcon(iNumCities >= 5) + localText.getText("TXT_KEY_VICTORY_MEDITERRANEAN_CITIES", (iNumCities, 5)))
+				capital = pCarthage.getCapitalCity()
+				bPalace = (capital.getX(), capital.getY()) == (58, 39)
+				bGreatCothon = False
+				carthagePlot = gc.getMap().plot(58, 39)
+				if carthagePlot.isCity:
+					if carthagePlot.getPlotCity().isHasRealBuilding(con.iGreatCothon):
+						bGreatCothon = True
+				aHelp.append(self.getIcon(bPalace) + localText.getText("TXT_KEY_BUILDING_PALACE", ()) + ' ' + self.getIcon(bGreatCothon) + localText.getText("TXT_KEY_BUILDING_MOAI_STATUES", ()))
 			elif iGoal == 1:
-				iDye = pCarthage.getNumAvailableBonuses(con.iDye)
-				aHelp.append(self.getIcon(iDye >= 4) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_DYE_RESOURCES", (iDye, 4)))
+				bItaly = self.isControlled(iCarthage, con.tNormalAreasTL[0][iItaly], con.tNormalAreasBR[0][iItaly], [(62, 47), (63, 47), (63, 46)])
+				bIberia = self.isControlled(iCarthage, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iSpain])
+				aHelp.append(self.getIcon(bItaly) + localText.getText("TXT_KEY_VICTORY_ITALY", ()) + ' ' + self.getIcon(bIberia) + localText.getText("TXT_KEY_VICTORY_IBERIA_CARTHAGE", ()))
 			elif iGoal == 2:
-				lRevealedMap = con.l0Array
-				for iCiv in range(iNumPlayers):
-                                	for x in range(124):
-                                		for y in range(68):
-                                			if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
-                                				lRevealedMap[iCiv] += 1
-				iBestCiv = iCarthage
-				for iCiv in range(iNumPlayers):
-					if lRevealedMap[iCiv] > lRevealedMap[iBestCiv] and gc.getPlayer(iCiv).isAlive():
-						iBestCiv = iCiv
-				aHelp.append(self.getIcon(iBestCiv == iCarthage) + localText.getText("TXT_KEY_VICTORY_LARGEST_MAP", ()) + CyTranslator().getText(str(gc.getPlayer(iBestCiv).getCivilizationShortDescriptionKey()),()))
+				iHighestCommerceCiv = self.getHighestCommerceCiv(iCarthage)
+				aHelp.append(self.getIcon(iHighestCommerceCiv == iCarthage) + localText.getText("TXT_KEY_VICTORY_HIGHEST_COMMERCE_CIV", (str(gc.getPlayer(iHighestCommerceCiv).getCivilizationShortDescriptionKey()),)))
+				
 
 		elif iPlayer == iRome:
 			if iGoal == 0:
@@ -3566,7 +3636,7 @@ class Victory:
 				iAmphitheatres = self.getNumBuildings(iRome, con.iColosseum)
 				aHelp.append(self.getIcon(iBarracks >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iBarracks, 5)) + ' ' + self.getIcon(iAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iAqueducts, 5)) + ' ' + self.getIcon(iAmphitheatres >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iAmphitheatres, 5)))
 			elif iGoal == 1:                              
-				iCitiesSpain = self.getNumCitiesInArea(iRome, tCoreAreasTL[utils.getReborn(iSpain)][iSpain], tCoreAreasBR[utils.getReborn(iSpain)][iSpain])
+				iCitiesSpain = self.getNumCitiesInArea(iRome, tNormalAreasTL[utils.getReborn(iSpain)][iSpain], tNormalAreasBR[utils.getReborn(iSpain)][iSpain])
 				iCitiesFrance = self.getNumCitiesInArea(iRome, tFranceTL, tNormalAreasBR[utils.getReborn(iFrance)][iFrance])
 				iCitiesEngland = self.getNumCitiesInArea(iRome, tCoreAreasTL[utils.getReborn(iEngland)][iEngland], tCoreAreasBR[utils.getReborn(iEngland)][iEngland])
 				iCitiesCarthage = self.getNumCitiesInArea(iRome, tCarthageTL, tCarthageBR)
@@ -3574,7 +3644,12 @@ class Victory:
 				iCitiesEgypt = self.getNumCitiesInArea(iRome, tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt])
 				aHelp.append(self.getIcon(iCitiesSpain >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", (iCitiesSpain, 2)) + ' ' + self.getIcon(iCitiesFrance >= 3) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", (iCitiesFrance, 3)) + ' ' + self.getIcon(iCitiesEngland >= 1) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", (iCitiesEngland, 1)))
 				aHelp.append(self.getIcon(iCitiesCarthage >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE", (iCitiesCarthage, 2)) + ' ' + self.getIcon(iCitiesByzantium >= 4) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM", (iCitiesByzantium, 4)) + ' ' + self.getIcon(iCitiesEgypt >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", (iCitiesEgypt, 2)))	
-
+			elif iGoal == 2:
+				bTheology = (self.getRomanTechs(0) == 1)
+				bMachinery = (self.getRomanTechs(1) == 1)
+				bCivilService = (self.getRomanTechs(2) == 1)
+				aHelp.append(self.getIcon(bTheology) + localText.getText("TXT_KEY_TECH_THEOLOGY", ()) + ' ' + self.getIcon(bMachinery) + localText.getText("TXT_KEY_TECH_MACHINERY", ()) + ' ' + self.getIcon(bCivilService) + localText.getText("TXT_KEY_TECH_CIVIL_SERVICE", ()))
+				
 		elif iPlayer == iJapan:
 			if iGoal == 0:
 				iCulture = pJapan.countTotalCulture()
@@ -3676,7 +3751,7 @@ class Victory:
                                 bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
 				bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
 				bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-				bSpain = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iSpain], con.tCoreAreasBR[0][iSpain], con.tExceptions[0][iSpain])
+				bSpain = self.isControlledOrVassalized(iArabia, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iSpain])
 				aHelp.append(self.getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + self.getIcon(bMaghreb) + localText.getText("TXT_KEY_VICTORY_MAGHREB", ()) + ' ' + self.getIcon(bSpain) + localText.getText("TXT_KEY_CIV_SPAIN_SHORT_DESC", ()))
 				aHelp.append(self.getIcon(bMesopotamia) + localText.getText("TXT_KEY_VICTORY_MESOPOTAMIA", ()) + ' ' + self.getIcon(bPersia) + localText.getText("TXT_KEY_CIV_PERSIA_SHORT_DESC", ()))
 			elif iGoal == 2:
