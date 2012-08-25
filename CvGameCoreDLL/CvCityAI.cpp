@@ -2989,10 +2989,10 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									switch (getOwnerINLINE())
 									{
 									case EGYPT:
-										if (iI == PYRAMID) iTempValue *= 4;
+										if (iI == PYRAMID) iTempValue *= 5;
 										else if (iI == GREATLIBRARY) iTempValue *= 3;
 										else if (iI == GREATLIGHTHOUSE) iTempValue *= 3;
-										else if (iI == STONEHENGE) iTempValue *= 2;
+										else if (iI == STONEHENGE) iTempValue *= 3;
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;
@@ -3026,6 +3026,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == PARTHENON) iTempValue *= 3;
 										else if (iI == ARTEMIS) iTempValue *= 3;
 										else if (iI == ZEUS) iTempValue *= 3;
+										else if (iI == MOAI) iTempValue /= 4;
 										//else if (iI == HAGIASOPHIA) iTempValue *= 2;
 										else if (iI == OLYMPICPARK) iTempValue *= 2;
 										else if (iI == APOSTOLIC) iTempValue *= 5;
@@ -3061,7 +3062,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 														iTempValue /= 2;
 										}
 										else if (iI == MOAI) {
-                                                        iTempValue *= 2;
+                                                        iTempValue *= 3;
 										}
 										else if (iI == APOSTOLIC) iTempValue *= 2;
 										break;

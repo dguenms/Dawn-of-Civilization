@@ -119,7 +119,7 @@ class StoredData:
 				    'iDutchColonies' : 0,
 				    'iNumTamilSinks' : 0,
 				    'iTamilTradeGold' : 0,
-				    'lPolishTechs' : [-1, -1],
+				    'lRomanTechs' : [-1, -1, -1],
 				    'iCongoSlaveCounter' : 0,
                                     #------------Stability
                                     'lBaseStabilityLastTurn': [0 for i in range(con.iNumPlayers)],

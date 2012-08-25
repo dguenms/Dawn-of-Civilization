@@ -97,6 +97,18 @@
 		<English>Largest map: </English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_IBERIA_CARTHAGE</Tag>
+		<English>Iberia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ITALY</Tag>
+		<English>Italy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_COMMERCE_CIV</Tag>
+		<English>Highest commerce: %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_BARRACKS</Tag>
 		<English>Barracks: %d1 / %d2</English>
 	</TEXT>
@@ -110,7 +122,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_SPAIN</Tag>
-		<English>Spain: %d1 / %d2</English>
+		<English>Iberia: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_FRANCE</Tag>

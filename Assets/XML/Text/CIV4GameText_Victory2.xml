@@ -248,15 +248,15 @@
 		<Tag>TXT_KEY_UHV_ROM2</Tag>
 		<English>Control in 320 AD (Turn 162) all the area historically known as the Roman Empire</English>
 		<French>Contrôler tout le territoire connu historiquement comme l'Empire romain d'Occident en 470 ap. J.-C. (Tour 172)</French>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. (Runde 172) das gesamte historische Gebiet des Weströmischen Reiches</German>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. (Runde 172) das gesamte historische Gebiet des Römischen Reiches</German>
 		<Italian>Devi controllare, nel 470 d.C. (turno 172), tutta l'area storicamente conosciuta come Impero Romano d'Occidente</Italian>
 		<Spanish>Controlar toda la zona conocida hist&#243;ricamente como Imperio Romano de occidente en el 470 d. C. (turno 172)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3</Tag>
-		<English>Never lose a city to barbarians before 1000 AD</English>
+		<English>Be the first to discover Theology, Machinery and Civil Service</English>
 		<French>Ne perdre aucune ville aux barbares avant 1000 ap. J.-C.</French>
-		<German>Verlieren Sie bis zum Jahr 1000 n. Chr. keine einzige Stadt an die Barbaren</German>
+		<German>Enforschen Sie vor allen anderen Zivilisationen Theologie, Maschinen und Öffentliche Verwaltung</German>
 		<Italian>I barbari non devono conquistare alcuna tua citt&#224; prima del 1000 d.C.</Italian>
 		<Spanish>No perder una ciudad a manos de los b&#225;rbaros antes del 1000 d. C.</Spanish>
 	</TEXT>
@@ -637,8 +637,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_8</Tag>
-		<English>Spain</English>
-		<German>Spanien</German>
+		<English>Iberia</English>
+		<German>Iberien</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_9</Tag>

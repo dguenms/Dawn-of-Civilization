@@ -2200,14 +2200,14 @@ iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobac
 iNumBuildings = 197
 (iPalace, iGreatPalace, iForbiddenPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iBarracks, iZuluIkhanda, iStable,
 iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iMoorishNoria, iHarappanBath,
-iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCarthageCothon, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
+iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
 iForge, iMaliMint, iFactory, iGermanAssemblyPlant, iCoalPlant, iJapaneseShalePlant, iHydroPlant, iNuclearPlant,
 iIndustrialPark, iObelisk, iEgyptianObelisk, iEthiopianStele, iNativeAmericaTotem, iIndonesianCandi, iPublicTransportation, iAcademy,
 iLibrary, iArabianMadrassa, iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, 
 iRussianResearchInstitute, iTheatre, iFrenchSalon, iByzantineHippodrome, iChinesePavillion, iColosseum, iGreekOdeon, iMayaBallCourt,
-iBabylonGarden, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iKongoMbwadi,iGrocer, iBank, iEnglishStockExchange,
-iSupermarket, iAmericanMall, iCourthouse, iAztecSacrificialAltar, iHolyRomanRathaus, iSumerianZiggurat, iPolishSejmik, iJail, iIndianMausoleum,
-iLevee, iNetherlandsDike, iIntelligenceAgency, iNationalSecurity, iJewishTemple, iJewishCathedral, iJewishMonastery,
+iBabylonGarden, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iKongoMbwadi, iPhoenicianGlassmaker, iGrocer, iBank, 
+iEnglishStockExchange, iSupermarket, iAmericanMall, iCourthouse, iAztecSacrificialAltar, iHolyRomanRathaus, iSumerianZiggurat, iPolishSejmik, iJail, 
+iIndianMausoleum, iLevee, iNetherlandsDike, iIntelligenceAgency, iNationalSecurity, iJewishTemple, iJewishCathedral, iJewishMonastery,
 iJewishShrine, iChristianTemple, iChristianCathedral, iChristianMonastery, iChristianShrine, 
 iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iIslamicTemple, iIslamicCathedral,
 iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, 
@@ -2232,6 +2232,7 @@ iScotlandYard = iInterpol
 iChichenItza = iTempleOfKukulkan
 iBroadway = iWembley
 iRocknroll = iGraceland
+iGreatCothon = iMoaiStatues
 
 iTemple = iJewishTemple #generic
 iCathedral = iJewishCathedral #generic
