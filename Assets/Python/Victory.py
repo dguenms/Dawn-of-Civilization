@@ -970,25 +970,16 @@ class Victory:
                 elif (iPlayer == iRome):
                         if (pRome.isAlive()):
 
-				if (iGameTurn <= getTurnForYear(200)):
+				if (iGameTurn <= getTurnForYear(100)):
 					if (self.getGoal(iRome, 0) == -1):
-						iCounterBarracks = 0
-						iCounterAqueduct = 0
-						iCounterColosseum = 0
-						cityList = PyPlayer(iRome).getCityList()                                        
-						for city in cityList:
-							if (city.hasBuilding(con.iBarracks)):
-								iCounterBarracks += 1
-							if (city.hasBuilding(con.iAqueduct)):
-								iCounterAqueduct += 1
-							if (city.hasBuilding(con.iColosseum)):
-								iCounterColosseum += 1
-##                                               	if (not city.isConnectedToCapital(iRome)):
-##                                         	                bConditions = False
-						if (iCounterBarracks >= 5 and iCounterAqueduct >= 5 and iCounterColosseum >= 5):
+						iBarracks = self.getNumBuildings(iRome, con.iBarracks)
+						iAqueducts = self.getNumBuildings(iRome, con.iAqueduct)
+						iAmphitheatres = self.getNumBuildings(iRome, con.iColosseum)
+						iForums = self.getNumBuildings(iRome, con.iRomanForum)
+						if iBarracks >= 6 and iAqueducts >= 5 and iAmphitheatres >= 4 and iForums >= 3:
 							self.setGoal(iRome, 0, 1)
                                                         
-				if (iGameTurn == getTurnForYear(200)+1):
+				if (iGameTurn == getTurnForYear(100)+1):
 					if (self.getGoal(iRome, 0) == -1):
 						self.setGoal(iRome, 0, 0)  
                                     
@@ -3634,7 +3625,8 @@ class Victory:
 				iBarracks = self.getNumBuildings(iRome, con.iBarracks)
 				iAqueducts = self.getNumBuildings(iRome, con.iAqueduct)
 				iAmphitheatres = self.getNumBuildings(iRome, con.iColosseum)
-				aHelp.append(self.getIcon(iBarracks >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iBarracks, 5)) + ' ' + self.getIcon(iAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iAqueducts, 5)) + ' ' + self.getIcon(iAmphitheatres >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iAmphitheatres, 5)))
+				iForums = self.getNumBuildings(iRome, con.iRomanForum)
+				aHelp.append(self.getIcon(iBarracks >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iBarracks, 6)) + ' ' + self.getIcon(iAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iAqueducts, 5)) + ' ' + self.getIcon(iAmphitheatres >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iAmphitheatres, 4)) + ' ' + self.getIcon(iForums >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iForums, 3)))
 			elif iGoal == 1:                              
 				iCitiesSpain = self.getNumCitiesInArea(iRome, tNormalAreasTL[utils.getReborn(iSpain)][iSpain], tNormalAreasBR[utils.getReborn(iSpain)][iSpain])
 				iCitiesFrance = self.getNumCitiesInArea(iRome, tFranceTL, tNormalAreasBR[utils.getReborn(iFrance)][iFrance])
