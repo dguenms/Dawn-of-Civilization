@@ -181,9 +181,9 @@ class Companies:
 		
 		# various bonuses
 		if iCompany == iSilkRoute:
-			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0 or city.getNumRealBuilding(con.iIranianCaravanserai) > 0 or city.getNumRealBuilding(con.iKongoMbwadi) > 0 or city.getNumRealBuilding(con.iPhoenicianGlassmaker) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iGrocer) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iHarbor) > 0 or city.getNumRealBuilding(con.iCarthageCothon) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
 
 		elif iCompany == iTradingCompany:
 			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
@@ -198,11 +198,11 @@ class Companies:
 
 		elif iCompany == iFishingIndustry:
 			if city.getNumRealBuilding(con.iLighthouse) > 0 or city.getNumRealBuilding(con.iVikingTradingPost) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iHarbor) > 0 or city.getNumRealBuilding(con.iCarthageCothon) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0: iValue += 1
 			
 		elif iCompany == iTextileIndustry:
-			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0 or city.getNumRealBuilding(con.iIranianCaravanserai) > 0 or city.getNumRealBuilding(con.iKongoMbwadi) > 0 or city.getNumRealBuilding(con.iPhoenicianGlassmaker) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iFactory) > 0 or city.getNumRealBuilding(con.iGermanAssemblyPlant) > 0: iValue += 1
 
 		elif iCompany == iSteelIndustry:
@@ -225,7 +225,7 @@ class Companies:
 		elif iCompany == iComputerIndustry:
 			if city.getNumRealBuilding(con.iFactory) > 0 or city.getNumRealBuilding(con.iGermanAssemblyPlant) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iLaboratory) > 0 or city.getNumRealBuilding(con.iRussianResearchInstitute) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iUniversity) > 0 or city.getNumRealBuilding(con.iKoreanSeowon) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iUniversity) > 0 or city.getNumRealBuilding(con.iKoreanSeowon) > 0 or city.getNumRealBuilding(con.iTibetanGompa) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iChannelTunnel) > 0: iValue += 3
 
 		# trade routes
