@@ -121,6 +121,10 @@
 		<English>Amphitheatres: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_FORUMS</Tag>
+		<English>Forums: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_SPAIN</Tag>
 		<English>Iberia: %d1 / %d2</English>
 	</TEXT>

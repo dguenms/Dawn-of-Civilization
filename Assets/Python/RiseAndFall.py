@@ -900,11 +900,11 @@ class RiseAndFall:
 				utils.updateMinorTechs(iSeljuks, iBarbarian)
 
                 #Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
-                if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) + 5 - (utils.getSeed() % 10)):
+                if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) - (utils.getSeed() % 10)):
                         utils.makeUnit(con.iSettler, iCarthage, (58, 39), 1)
                         utils.makeUnit(con.iArcher, iCarthage, (58, 39), 2)
                         utils.makeUnit(con.iWorker, iCarthage, (58, 39), 2)
-                        utils.makeUnit(con.iWarElephant, iCarthage, (58, 39), 2)
+                        utils.makeUnit(con.iCarthaginianWarElephant, iCarthage, (58, 39), 2)
 			
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
