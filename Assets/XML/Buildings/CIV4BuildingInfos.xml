@@ -16745,7 +16745,7 @@
 			<Type>BUILDING_JEWISH_SHRINE</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_JEWISH_SHRINE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_JEWISH_SHRINE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_PROTESTANT_SHRINE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_SHRINE</ArtDefineTag>
@@ -18189,7 +18189,7 @@
 			<Type>BUILDING_ORTHODOX_SHRINE</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ORTHODOX_SHRINE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ORTHODOX_SHRINE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_HAGIA_SOPHIA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ORTHODOX_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HAGIA_SOPHIA</ArtDefineTag>
@@ -33000,7 +33000,7 @@
 			<Type>BUILDING_TEMPLE_OF_SALOMON</Type>
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_TEMPLE_OF_SALOMON</Description>
-			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_SALOMON_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_JEWISH_SHRINE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TEMPLE_OF_SALOMON_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_SALOMON</ArtDefineTag>
