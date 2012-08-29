@@ -909,7 +909,7 @@ class Victory:
 				# Leoreth: second goal: control Italy and Iberia in 100 BC
 				if iGameTurn == getTurnForYear(-100):
 					bItaly = self.isControlled(iCarthage, con.tNormalAreasTL[0][iItaly], con.tNormalAreasBR[0][iItaly], [(62, 47), (63, 47), (63, 46)])
-					bIberia = self.isControlled(iCarthage, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iIberia])
+					bIberia = self.isControlled(iCarthage, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iSpain])
 					if bItaly and bIberia:
 						self.setGoal(iCarthage, 1, 1)
 					else:
@@ -917,7 +917,7 @@ class Victory:
 				
 				# Leoreth: third goal: have the highest commerce output in the world in 200 AD
 				if iGameTurn == getTurnForYear(200):
-					if self.getHighestCommerceCiv(iCarthage) == iCarthage:
+					if self.getHighestAverageCommerceCiv(iCarthage) == iCarthage:
 						self.setGoal(iCarthage, 2, 1)
 					else:
 						self.setGoal(iCarthage, 2, 0)
@@ -3335,11 +3335,11 @@ class Victory:
 				iBestPower = iTempPower
 		return iBestCiv
 		
-	def getHighestCommerceCiv(self, iCiv):
+	def getHighestAverageCommerceCiv(self, iCiv):
 		iBestCiv = iCiv
-		iBestCommerce = gc.getPlayer(iCiv).calculateTotalCommerce()
+		iBestCommerce = gc.getPlayer(iCiv).calculateTotalCommerce() / gc.getPlayer(iCiv).getNumCities()
 		for iLoopCiv in range(con.iNumPlayers):
-			iTempCommerce = gc.getPlayer(iLoopCiv).calculateTotalCommerce()
+			iTempCommerce = gc.getPlayer(iLoopCiv).calculateTotalCommerce() / gc.getPlayer(iCiv).getNumCities()
 			if iTempCommerce > iBestCommerce:
 				iBestCiv = iLoopCiv
 				iBestCommerce = iTempCommerce
@@ -3616,7 +3616,7 @@ class Victory:
 				bIberia = self.isControlled(iCarthage, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iSpain])
 				aHelp.append(self.getIcon(bItaly) + localText.getText("TXT_KEY_VICTORY_ITALY", ()) + ' ' + self.getIcon(bIberia) + localText.getText("TXT_KEY_VICTORY_IBERIA_CARTHAGE", ()))
 			elif iGoal == 2:
-				iHighestCommerceCiv = self.getHighestCommerceCiv(iCarthage)
+				iHighestCommerceCiv = self.getHighestAverageCommerceCiv(iCarthage)
 				aHelp.append(self.getIcon(iHighestCommerceCiv == iCarthage) + localText.getText("TXT_KEY_VICTORY_HIGHEST_COMMERCE_CIV", (str(gc.getPlayer(iHighestCommerceCiv).getCivilizationShortDescriptionKey()),)))
 				
 

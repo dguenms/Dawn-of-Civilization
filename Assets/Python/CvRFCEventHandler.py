@@ -360,21 +360,6 @@ class CvRFCEventHandler:
 			else:
 				if (city.getX(), city.getY()) == con.tRespawnCapitals[playerType]:
 					utils.relocateCapital(playerType, city)
-					
-		# Leoreth: help Carthage
-		if owner == iCarthage and city.getX() == con.tCapitals[0][iCarthage][0] and city.getY() == con.tCapitals[0][iCarthage][1]:
-			if gc.getPlayer(iCarthage).isAlive() and utils.getHumanID() != iCarthage:
-				x, y = 58, 39
-				if gc.getMap().plot(x, y).isCity():
-					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iCarthage:
-						utils.makeUnit(con.iWarElephant, iCarthage, (x, y), 3)
-						utils.makeUnit(con.iSwordsman, iCarthage, (x, y), 2)
-						utils.makeUnit(con.iCatapult, iCarthage, (x, y), 4)
-						utils.makeUnit(con.iTrireme, iCarthage, (x, y), 2)
-						utils.makeUnit(con.iBireme, iCarthage, (x, y), 3)
-						utils.makeUnit(con.iSettler, iCarthage, (x, y), 1)
-						if gc.getPlayer(iRome).isAlive():
-							gc.getTeam(iCarthage).declareWar(iRome, True, WarPlanTypes.WARPLAN_LIMITED)
 							
 		# Leoreth: help Byzantium/Constantinople
 		if playerType == con.iByzantium and (city.getX(), city.getY()) == con.tCapitals[0][con.iByzantium] and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:

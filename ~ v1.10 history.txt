@@ -68,3 +68,4 @@
 # gave additional starting techs to Phoenicia
 # fixed the Persian spawning zone with regards to Phoenicia
 # The Great Cothon is now built faster with marble
+# all War Elephant units now have -25% city attack and only +25% against cavalry

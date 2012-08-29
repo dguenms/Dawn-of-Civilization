@@ -3639,6 +3639,10 @@ class RiseAndFall:
                                                                 utils.makeUnitAI(con.iJapanSamurai, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         elif (iOldWorldCiv == iVikings):
                                                                 utils.makeUnitAI(con.iVikingBerserker, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
+							elif iOldWorldCiv == iPersia and pPersia.isReborn():
+                                                                utils.makeUnitAI(con.iIranianQizilbash, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
+							elif iOldWorldCiv == iCongo:
+                                                                utils.makeUnitAI(con.iKongoPombos, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                         else:
                                                                 utils.makeUnitAI(con.iMaceman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
                                                 else:
