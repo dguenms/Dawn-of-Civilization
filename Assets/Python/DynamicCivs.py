@@ -925,7 +925,7 @@ class DynamicCivs:
 	def isEmpire(self, iPlayer):
 		iThreshold = 6
 		
-		if iPlayer == iCarthage: iThreshold = 3
+		if iPlayer == iCarthage: iThreshold = 4
 		elif iPlayer == iIndonesia: iThreshold = 4
 		elif iPlayer == iKorea: iThreshold = 3
 		elif iPlayer == iRussia: iThreshold = 8
@@ -1015,7 +1015,7 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, self.genericVassalNames[iMaster], pPlayer.getCivilizationShortDescriptionKey())
 				return
 				
-			if iPlayer in [iMali, iEthiopia, iAztecs, iInca, iMaya]:
+			if iPlayer in [iMali, iEthiopia, iCongo, iAztecs, iInca, iMaya]:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_COLONY", pPlayer.getCivilizationShortDescriptionKey())
 				return
 				
@@ -1248,17 +1248,22 @@ class DynamicCivs:
 					return
 					
 		elif iPlayer == iCarthage:	# change adjectives and short desc here too
+			if capital.getX() >= 66:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PHOENICIA_CITY_STATES")
+				self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_PHOENICIA_SHORT_DESC")
+				self.setCivAdjective(iPlayer, "TXT_KEY_CIV_PHOENICIA_ADJECTIVE")
+				return
+				
+			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_SHORT_DESC")
+			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
+				
 			if bEmpire:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_EMPIRE")
 				return
 		
-			if capital.getX() >= 73:	# Tyre
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PHOENICIA_CITY_STATES")
+			if bCityStates:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_CITY_STATES")
 				return
-			else:
-				if bCityStates:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_CITY_STATES")
-					return
 			# make Carthaginian Kingdom default
 			
 		elif iPlayer == iRome:
@@ -2120,8 +2125,7 @@ class DynamicCivs:
 		self.checkName(iPlayer)
 			
 	def onCityBuilt(self, iOwner):
-		if gc.getPlayer(iOwner).getNumCities() in [0, 1, 2, 3, 6]:
-			self.checkName(iOwner)
+		self.checkName(iOwner)
 
         def checkTurn(self, iGameTurn): # called only once every ten turns
                 for iPlayer in range(iNumPlayers):
