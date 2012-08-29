@@ -853,7 +853,12 @@ class RFCUtils:
                         else:
                                 iUnitType = con.iEnglishRedcoat
                 elif (gc.getTeam(pCiv.getTeam()).isHasTech(con.iGunpowder)):
-                        iUnitType = con.iMusketman
+			if iNewOwner == con.iTurkey:
+				iUnitType = con.iOttomanJanissary
+			elif iNewOwner == con.iEthiopia:
+				iUnitType = con.iEthiopianOromoWarrior
+			else:
+				iUnitType = con.iMusketman
                 else:
                         iUnitType = con.iLongbowman
 
@@ -1499,7 +1504,10 @@ class RFCUtils:
 			self.makeUnit(con.iSettler, iCiv, (x,y), 1)
 			self.makeUnit(con.iWorker, iCiv, (x,y), 2)
 			if gc.getTeam(iCiv).isHasTech(con.iRifling):
-				self.makeUnit(con.iRifleman, iCiv, (x,y), 2)
+				if iCiv == con.iEngland:
+					self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), 2)
+				else:
+					self.makeUnit(con.iRifleman, iCiv, (x,y), 2)
 			else:
 				self.makeUnit(con.iMusketman, iCiv, (x,y), 2)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
