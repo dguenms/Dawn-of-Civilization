@@ -106,7 +106,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HIGHEST_COMMERCE_CIV</Tag>
-		<English>Highest commerce: %s1</English>
+		<English>Highest commerce per city: %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_BARRACKS</Tag>
