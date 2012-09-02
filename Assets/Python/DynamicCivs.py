@@ -1519,7 +1519,7 @@ class DynamicCivs:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_EMPIRE")
 					return
 					
-				lEuroCivs = [iVikings, iSpain, iFrance, iEngland, iRome, iPortugal, iNetherlands]
+				lEuroCivs = [iVikings, iSpain, iFrance, iEngland, iRome, iItaly, iPoland, iPortugal, iNetherlands]
 				iCounter = 0
 				
 				for iLoopCiv in lEuroCivs:

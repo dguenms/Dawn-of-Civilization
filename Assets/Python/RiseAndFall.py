@@ -3116,7 +3116,7 @@ class RiseAndFall:
 		if iCiv == iByzantium and pRome.isAlive():
 			for pCity in PyPlayer(iRome).getCityList():
 				city = pCity.GetCy()
-				if city.getRegionID() == con.rEgypt or city.getRegionID() == con.rMesopotamia:
+				if city.getRegionID() in [con.rEgypt, con.rEthiopia, con.rPersia, con.rMesopotamia]:
 					cityList.append(city)
 					
 		# Leoreth: remove capital locations
