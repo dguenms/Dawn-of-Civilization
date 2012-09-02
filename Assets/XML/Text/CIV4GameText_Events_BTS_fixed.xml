@@ -1863,7 +1863,7 @@
 		<German>Die Erfindung der Druckerpresse hat eine Welle neuer Doktrinen ausgelöst. Reformer aus der gesamten katholischen Welt fordern die Autorität des Papstes über theologische Fragen heraus. Wie sollen wir reagieren?</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENTTRIGGER_TRADING_COMPANY_CONQUERORS</Tag>
+		<Tag>TXT_KEY_EVENTTRIGGER_REFORMATION</Tag>
 		<English>The Reformation has reached the %s1_civ_adjective civilization.</English>
 		<German>Die Reformation hat die %s1:1 Zivilisation erreicht.</German>
 	</TEXT>

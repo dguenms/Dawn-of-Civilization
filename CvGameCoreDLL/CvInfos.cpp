@@ -10582,6 +10582,14 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
                 iFinalResearchPercent = researchPercent * (researchModifier[pl]-25) / 100;*/
 	}
 
+	if (pl == CARTHAGE)
+	{
+		if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)
+		{
+			iFinalResearchPercent = researchPercent * 90 / 100;
+		}
+	}
+
 	/*if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)
 	{
 		if (pl == INDIA)

@@ -714,6 +714,11 @@ class CvRFCEventHandler:
 		if iBuildingType == con.iApostolicPalace:
 			print "Found Orthodoxy"
 			self.rel.foundOrthodoxy(iOwner)
+			
+			# Leoreth: build shrine in 3000 BC scenario during HRE autoplay to provide a challenge
+			if gc.getPlayer(0).isPlayable() and utils.getHumanID() == con.iHolyRome and gc.getGame().getGameTurnYear() < 840:
+				gc.getGame().getHolyCity().setHasRealBuilding(con.iChristianShrine, True)
+			
 			gc.getGame().setHolyCity(con.iChristianity, city, False)
 
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect

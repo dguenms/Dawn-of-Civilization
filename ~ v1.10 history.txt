@@ -69,3 +69,4 @@
 # fixed the Persian spawning zone with regards to Phoenicia
 # The Great Cothon is now built faster with marble
 # all War Elephant units now have -25% city attack and only +25% against cavalry
+# scripted the HRE autoplay in the 3000 BC scenario so that the Apostolic Palace and Catholic Shrine are already present
