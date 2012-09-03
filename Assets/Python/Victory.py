@@ -3336,10 +3336,20 @@ class Victory:
 		return iBestCiv
 		
 	def getHighestAverageCommerceCiv(self, iCiv):
+		iNumCities = gc.getPlayer(iCiv).getNumCities()
 		iBestCiv = iCiv
-		iBestCommerce = gc.getPlayer(iCiv).calculateTotalCommerce() / gc.getPlayer(iCiv).getNumCities()
+		
+		if iNumCities == 0:
+			iBestCommerce = 0
+		else:
+			iBestCommerce = gc.getPlayer(iCiv).calculateTotalCommerce() / iNumCities
+			
 		for iLoopCiv in range(con.iNumPlayers):
-			iTempCommerce = gc.getPlayer(iLoopCiv).calculateTotalCommerce() / gc.getPlayer(iCiv).getNumCities()
+			iTempCities = gc.getPlayer(iLoopCiv).getNumCities()
+			if iTempCities == 0:
+				iTempCommerce = 0
+			else:
+				iTempCommerce = gc.getPlayer(iLoopCiv).calculateTotalCommerce() / iTempCities
 			if iTempCommerce > iBestCommerce:
 				iBestCiv = iLoopCiv
 				iBestCommerce = iTempCommerce
