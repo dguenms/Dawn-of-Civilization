@@ -397,6 +397,9 @@ class Barbs:
                         if (iGameTurn % 18 == 9):
                                 if (gc.getMap().plot(30, 13).getNumUnits() == 0):
                                         self.makeUnit(con.iNativeAmericaDogSoldier, iBarbarian, (30, 13), 3 + iHandicap, 1)
+					
+		if iGameTurn >= getTurnForYear(1700) and iGameTurn <= getTurnForYear(1880):
+			self.checkSpawn(iBarbarian, con.iSiouxMountedBrave, 3 + iHandicap, (17, 44), (22, 52), self.spawnNomads, iGameTurn, 10 - iHandicap, 2)
                         
                 #pirates in the Caribbean
                 if (iGameTurn >= getTurnForYear(1600) and iGameTurn <= getTurnForYear(1800)):

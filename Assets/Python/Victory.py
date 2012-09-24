@@ -1383,7 +1383,7 @@ class Victory:
 					for iBonus in lHappinessBonuses:
 						if pIndonesia.getNumAvailableBonuses(iBonus) > 0:
 							iCounter += 1
-					if iCounter >= 9:
+					if iCounter >= 10:
 						self.setGoal(iIndonesia, 1, 1)
 
 				if iGameTurn == getTurnForYear(1940):
@@ -3807,7 +3807,7 @@ class Victory:
 				for iBonus in lHappinessBonuses:
 					if pIndonesia.getNumAvailableBonuses(iBonus) > 0:
 						iCounter += 1
-				aHelp.append(self.getIcon(iCounter >= 9) + localText.getText("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", (iCounter, 9)))
+				aHelp.append(self.getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES", (iCounter, 10)))
 			elif iGoal == 2:
 				totalPop = gc.getGame().getTotalPopulation()
 				ourPop = teamIndonesia.getTotalPopulation()

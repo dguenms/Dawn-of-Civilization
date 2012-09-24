@@ -2094,7 +2094,7 @@ class RiseAndFall:
 				lTechPeers = []
 				for lRegionList in con.lTechGroups:
 					if iDeadCiv in lRegionList:
-						lTechPeers = lRegionList
+						lTechPeers = list(lRegionList)
 						
 				for iPeerCiv in lTechPeers:
 					if not gc.getPlayer(iPeerCiv).isAlive():

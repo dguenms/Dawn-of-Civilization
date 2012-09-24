@@ -655,7 +655,7 @@ class CvRFCEventHandler:
 	def onUnitPillage(self, argsList):
 		unit, iImprovement, iRoute, iPlayer, iGold = argsList
 		
-		if iPlayer == con.iVikings and iGold > 0 and iImprovement != -1:
+		if iPlayer == con.iVikings and iGold > 0 and iImprovement != -1 and iGold < 1000:
 			self.vic.onUnitPillage(iPlayer, iGold)
 			
 	def onCityCaptureGold(self, argsList):
