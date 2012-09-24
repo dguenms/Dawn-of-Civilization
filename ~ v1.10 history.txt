@@ -48,8 +48,7 @@
 # the French UP now actually lets diplomatic penalties decay twice as fast, prevents other civs from refusing to talk to them and lets other civs vote for them in congresses more often
 # rebalanced the bribe mechanic for congresses according to iOnlySignIn's suggestions
 # Academies now require Literature
-# significantly reduced Roman unit costs
-# Legions now cost the same as ordinary swordsmen
+# reduced Roman unit costs
 # Legions can build roman roads, which provide +1 extra movement with Masonry (i.e. become equivalent to normal roads with Engineering)
 # renamed Tokugawa to Oda Nobunaga and made him less isolationist
 # Netherlands spawn in 1580 AD now
@@ -67,6 +66,8 @@
 # reverted the Phoenician UP to the Power of Mercenaries: -50% mercenary hire and upkeep cost
 # gave additional starting techs to Phoenicia
 # fixed the Persian spawning zone with regards to Phoenicia
-# The Great Cothon is now built faster with marble
 # all War Elephant units now have -25% city attack and only +25% against cavalry
 # scripted the HRE autoplay in the 3000 BC scenario so that the Apostolic Palace and Catholic Shrine are already present
+# Vikings found Roskilde instead of Kobenhavn, renamed in the Renaissance
+# increased the required resources for the second Indonesian goal to 10
+# changed the marble in Tunisia to stone

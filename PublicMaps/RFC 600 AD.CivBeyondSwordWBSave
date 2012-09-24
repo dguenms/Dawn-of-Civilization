@@ -22117,7 +22117,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=38
-	BonusType=BONUS_MARBLE
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	RouteType=ROUTE_ROAD
