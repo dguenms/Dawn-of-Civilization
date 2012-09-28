@@ -318,6 +318,8 @@ class CvRFCEventHandler:
 		#remove slaves if unable to practice slavery
 		if gc.getPlayer(playerType).getCivics(2) != con.iAgrarianism and gc.getPlayer(playerType).getCivics(3) != con.iForcedLabor:
 			utils.removeSlaves(city)
+		else:
+			utils.freeSlaves(city, playerType)
 
 		#kill Byzantium
 		if owner == iByzantium and gc.getPlayer(iByzantium).isAlive():

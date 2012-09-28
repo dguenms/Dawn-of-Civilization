@@ -232,6 +232,7 @@
 				<iCommerce>12</iCommerce>
 			</Commerces>
 			<iExperience>0</iExperience>
+			<iHappiness>1</iHappiness>
 			<Flavors/>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -394,11 +395,12 @@
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
 			<Yields>
 				<iYield>0</iYield>
-				<iYield>1</iYield>
+				<iYield>2</iYield>
 				<iYield>0</iYield>
 			</Yields>
 			<Commerces/>
 			<iExperience>0</iExperience>
+			<iHappiness>-1</iHappiness>
 			<Flavors/>
 			<HotKey/>
 			<bAltDown>0</bAltDown>

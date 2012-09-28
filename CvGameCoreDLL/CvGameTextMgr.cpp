@@ -4196,6 +4196,19 @@ void CvGameTextMgr::parseSpecialistHelp(CvWStringBuffer &szHelpString, Specialis
 
 		setCommerceChangeHelp(szHelpString, L"", L"", L"", aiCommerces);
 
+		int iHappinessChange = GC.getSpecialistInfo(eSpecialist).getHappiness();
+		if (iHappinessChange != 0)
+		{
+			if (iHappinessChange > 0)
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_GOOD_HAPPINESS", iHappinessChange));
+			}
+			else
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_BAD_HAPPINESS", -iHappinessChange));
+			}
+		}
+
 		if (GC.getSpecialistInfo(eSpecialist).getExperience() > 0)
 		{
 			szHelpString.append(NEWLINE);
@@ -9139,6 +9152,19 @@ void CvGameTextMgr::setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		}
 		iOldAnger = iNewAnger;
 
+		/*TCHAR debug[256];
+		sprintf(debug, "Bad happiness: %d", city.getSpecialistBadHappiness());
+
+		szBuffer.append(gDLL->getText(debug));
+		szBuffer.append(NEWLINE);*/
+
+		iAnger = city.getSpecialistBadHappiness();
+		if (iAnger > 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_ANGER_SPECIALISTS", iAnger));
+			szBuffer.append(NEWLINE);
+		}
+
 		iNewAnger -= std::min(0, city.getCommerceHappiness());
 		iAnger = ((iNewAnger - iOldAnger) + std::min(0, iOldAnger));
 		if (iAnger > 0)
@@ -9183,6 +9209,8 @@ void CvGameTextMgr::setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 		iOldAnger = iNewAnger;
+
+		iOldAnger += city.getSpecialistBadHappiness();
 
 		szBuffer.append(L"-----------------------\n");
 
@@ -9265,6 +9293,21 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		{
 			iTotalHappy += iHappy;
 			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_RELIGIOUS_FREEDOM", iHappy));
+			szBuffer.append(NEWLINE);
+		}
+
+		/*TCHAR debug[256];
+		sprintf(debug, "Good happiness: %d", city.getSpecialistGoodHappiness());
+
+		szBuffer.append(gDLL->getText(debug));
+		szBuffer.append(NEWLINE);*/
+
+		// Leoreth
+		iHappy = city.getSpecialistGoodHappiness();
+		if (iHappy > 0)
+		{
+			iTotalHappy += iHappy;
+			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_SPECIALISTS", iHappy));
 			szBuffer.append(NEWLINE);
 		}
 
@@ -11395,6 +11438,11 @@ void CvGameTextMgr::getTradeString(CvWStringBuffer& szBuffer, const TradeData& t
 	case TRADE_RELIGION:
 		szBuffer.assign(CvWString::format(L"%s", GC.getReligionInfo((ReligionTypes)tradeData.m_iData).getDescription()));
 		break;
+	// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
+	case TRADE_SLAVE:
+		szBuffer.assign(CvWString::format(L"%s", GET_PLAYER(ePlayer1).getUnit(tradeData.m_iData)->getName().GetCString()));
+		break;
+	// edead: end
 	default:
 		FAssert(false);
 		break;

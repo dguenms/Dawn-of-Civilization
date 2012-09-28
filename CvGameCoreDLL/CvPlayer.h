@@ -1095,6 +1095,7 @@ public:
 	void resetRelations( PlayerTypes ePlayer ); //Rhye
 	void reinit( PlayerTypes eID, LeaderHeadTypes prevLeader, bool doReset );  //Rhye
 	void processCivNames(); //Rhye - dynamic civ names - not jdog's
+	DenialTypes AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const; // edead (from Advanced Diplomacy by Afforess)
 
 	//DllExport int getCivicPreference(int column); // Leoreth
 	bool isReborn(); // Leoreth

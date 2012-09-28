@@ -248,6 +248,7 @@ public:
 	int getMissionType() const;							// Exposed to Python
 	void setMissionType(int iNewType);
 	int getExperience() const;				// Exposed to Python
+	int getHappiness() const; // Leoreth
 
 	bool isVisible() const;				// Exposed to Python
 
@@ -271,6 +272,7 @@ protected:
 	int m_iGreatPeopleRateChange;		// Exposed to Python
 	int m_iMissionType;
 	int m_iExperience;
+	int m_iHappiness; // Leoreth
 
 	bool m_bVisible;				// Exposed to Python
 
@@ -964,6 +966,8 @@ public:
 	bool getFreePromotions(int i) const;		// Exposed to Python
 	int getLeaderPromotion() const;   // Exposed to Python
 	int getLeaderExperience() const;				// Exposed to Python
+
+	bool isSlave() const; // Leoreth
 
 	// Sanguo Mod Performance start, added by poyuzhe 07.27.09
 	std::vector<int> getUpgradeUnitClassTypes() const;

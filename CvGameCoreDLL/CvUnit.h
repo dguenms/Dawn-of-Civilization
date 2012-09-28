@@ -731,6 +731,10 @@ public:
 
 	bool verifyStackValid();
 
+	// edead / Afforess (Leoreth)
+	bool canTradeUnit(PlayerTypes eReceivingPlayer);
+	void tradeUnit(PlayerTypes eReceivingPlayer);
+
 	DllExport const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;										// Exposed to Python
 	DllExport const TCHAR* getButton() const;										// Exposed to Python
 	DllExport int getGroupSize() const;

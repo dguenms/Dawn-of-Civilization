@@ -10,6 +10,10 @@
 		<DefineName>NO_AUTOSAVE_DURING_AUTOPLAY</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>AI_SLAVE_VALUE</DefineName>
+		<iDefineIntVal>100</iDefineIntVal>
+	</Define>
 	<!--
 		Leoreth: define how often these optional civs should appear
 			value=0	Civilization never appears

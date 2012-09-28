@@ -4419,6 +4419,20 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 	case TRADE_PEACE_TREATY:
 		return true;
 		break;
+
+	// edead: start Relic trade based on Afforess' Advanced Diplomacy
+   case TRADE_SLAVE:
+        CvUnit* pUnitTraded = getUnit(item.m_iData);
+        CvCity* pTheirCapitalCity = GET_PLAYER(eWhoTo).getCapitalCity();
+		if (pUnitTraded != NULL)
+		{
+			if (GC.getUnitInfo(pUnitTraded->getUnitType()).isSlave() && (pTheirCapitalCity != NULL))
+			{
+				return true;
+			}
+		}
+        break;
+	// edead: end
 	}
 
 	return false;
@@ -4497,6 +4511,16 @@ DenialTypes CvPlayer::getTradeDenial(PlayerTypes eWhoTo, TradeData item) const
 
 	case TRADE_PEACE_TREATY:
 		break;
+
+	// edead: start Relic trade based on Afforess' Advanced Diplomacy
+	case TRADE_SLAVE:
+		CvUnit* pUnit = getUnit(item.m_iData);
+		if (pUnit != NULL)
+		{
+			return AI_slaveTrade(pUnit, eWhoTo);
+		}
+		break;
+	// edead: end
 	}
 
 	return NO_DENIAL;
@@ -23610,6 +23634,20 @@ void CvPlayer::buildTradeTable(PlayerTypes eOtherPlayer, CLinkList<TradeData>& o
 				}
 			}
 			break;
+
+		// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
+		case TRADE_SLAVE:
+            for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+            {
+                setTradeItem(&item, TRADE_SLAVE, pLoopUnit->getID());
+                if (canTradeItem(eOtherPlayer, item))
+                {
+                    bFoundItemUs = true;
+                    ourList.insertAtEnd(item);
+                }
+            }
+            break;
+		// edead: end
 		}
 	}
 }
@@ -23651,6 +23689,13 @@ bool CvPlayer::getHeadingTradeString(PlayerTypes eOtherPlayer, TradeableItems eI
 	case TRADE_RELIGION:
 		szString = gDLL->getText("TXT_KEY_TRADE_CONVERT");
 		break;
+
+	// edead: start Relic trade (Leoreth)
+	case TRADE_SLAVE:
+        szString = gDLL->getText("TXT_KEY_TRADE_SLAVE");
+        break;
+	// edead: end
+
 	default:
 		szString.clear();
 		return false;
@@ -23810,6 +23855,28 @@ bool CvPlayer::getItemTradeString(PlayerTypes eOtherPlayer, bool bOffer, bool bS
 		}
 		szIcon = GC.getReligionInfo((ReligionTypes)zTradeData.m_iData).getButton();
 		break;
+
+	// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
+    case TRADE_SLAVE:
+        {
+            CvUnit* pUnit = NULL;
+            if (bOffer)
+            {
+                pUnit = GET_PLAYER(eOtherPlayer).getUnit(zTradeData.m_iData);
+            }
+            else
+            {
+                pUnit = getUnit(zTradeData.m_iData);
+            }
+            if (pUnit != NULL)
+            {
+                CvWStringBuffer szTemp;
+				szString.Format(L"%s", pUnit->getName().GetCString());
+				szIcon = GC.getUnitInfo((UnitTypes)pUnit->getUnitType()).getButton();
+            }
+        }
+        break;
+	// edead: end
 	default:
 		szString.clear();
 		return false;
@@ -26196,3 +26263,68 @@ int CvPlayer::calculateForeignReligionWeight()
 }
 //Rhye - end
 */
+
+// Relic trade based on Afforess' Advanced Diplomacy
+DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
+{
+
+	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAtWar(getTeam()))
+	{
+		return NO_DENIAL;
+	}
+	
+	if (GET_TEAM(getTeam()).isVassal(GET_PLAYER(ePlayer).getTeam()))
+	{
+		return NO_DENIAL;
+	}
+	
+	if (GET_PLAYER(ePlayer).getTeam() == getTeam())
+	{
+		return NO_DENIAL;
+	}
+
+	if (getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR)
+	{
+		return DENIAL_UNKNOWN;
+	}
+
+	if (GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR && GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM && GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM)
+	{
+		return DENIAL_UNKNOWN;
+	}
+	
+	/*if ((GC.getUnitInfo(pUnit->getUnitType()).getStateReligion() != GET_PLAYER(ePlayer).getStateReligion()) && (GC.getUnitInfo(pUnit->getUnitType()).getOrStateReligion() != GET_PLAYER(ePlayer).getStateReligion()))
+	{
+		return DENIAL_UNKNOWN;
+	}
+
+	if ((GC.getUnitInfo(pUnit->getUnitType()).getStateReligion() == getStateReligion()) || (GC.getUnitInfo(pUnit->getUnitType()).getOrStateReligion() == getStateReligion()))
+	{
+		return DENIAL_UNKNOWN;
+	}*/
+
+	if (isHuman())
+	{
+		return NO_DENIAL;
+	}
+
+	if (GET_TEAM(getTeam()).AI_getWorstEnemy() == GET_PLAYER(ePlayer).getTeam())
+	{
+		return DENIAL_WORST_ENEMY;
+	}
+
+	if (GET_TEAM(getTeam()).AI_isSneakAttackPreparing(GET_PLAYER(ePlayer).getTeam()))
+	{
+		return DENIAL_MYSTERY;
+	}
+
+	AttitudeTypes eAttitude = AI_getAttitude(ePlayer);
+
+	if (eAttitude <= ATTITUDE_FURIOUS)
+	{
+		return DENIAL_ATTITUDE;
+	}
+
+	return NO_DENIAL;
+}
+// edead: end

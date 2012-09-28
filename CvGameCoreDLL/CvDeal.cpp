@@ -702,6 +702,7 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 	CvPlot* pLoopPlot;
 	bool bSave;
 	int iI;
+	CvUnit* pUnit; // edead
 
 	bSave = false;
 
@@ -743,6 +744,16 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 			pCity->doTask(TASK_GIFT, eToPlayer);
 		}
 		break;
+
+	// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
+	case TRADE_SLAVE:
+        pUnit = GET_PLAYER(eFromPlayer).getUnit(trade.m_iData);
+        if (pUnit != NULL)
+        {
+            pUnit->tradeUnit(eToPlayer);
+        }
+        break;
+	// edead: end
 
 	case TRADE_GOLD:
 		GET_PLAYER(eFromPlayer).changeGold(-(trade.m_iData));
@@ -919,6 +930,7 @@ void CvDeal::endTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eToP
 
 	case TRADE_CITIES:
 	case TRADE_GOLD:
+	case TRADE_SLAVE: // edead
 		FAssert(false);
 		break;
 

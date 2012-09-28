@@ -3520,6 +3520,7 @@ void CvDLLWidgetData::parseTradeItem(CvWidgetDataStruct &widgetDataStruct, CvWSt
 	PlayerTypes eWhoTo = NO_PLAYER;
 	DenialTypes eDenial;
 	PlayerTypes eWhoDenies;
+	CvUnit* pUnit;
 
 	szBuffer.clear();
 
@@ -3609,6 +3610,13 @@ void CvDLLWidgetData::parseTradeItem(CvWidgetDataStruct &widgetDataStruct, CvWSt
 		case TRADE_PEACE_TREATY:
 			szBuffer.append(gDLL->getText("TXT_KEY_TRADE_PEACE_TREATY", GC.getDefineINT("PEACE_TREATY_LENGTH")));
 			break;
+		// edead: start Relic trade based on Afforess' Advanced Diplomacy
+		case TRADE_SLAVE:
+			pUnit = GET_PLAYER(eWhoFrom).getUnit(widgetDataStruct.m_iData2);
+            GAMETEXT.setUnitHelp(szBuffer, pUnit, true);
+			eWhoDenies = (widgetDataStruct.m_bOption ? eWhoFrom : eWhoTo);
+			break;
+		// edead: end
 		}
 
 		setTradeItem(&item, ((TradeableItems)(widgetDataStruct.m_iData1)), widgetDataStruct.m_iData2);
