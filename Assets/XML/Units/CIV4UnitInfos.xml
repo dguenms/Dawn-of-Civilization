@@ -29293,8 +29293,8 @@
 			<iDiscoverMultiplier>0</iDiscoverMultiplier>
 			<iBaseHurry>0</iBaseHurry>
 			<iHurryMultiplier>0</iHurryMultiplier>
-			<iBaseTrade>20</iBaseTrade>
-			<iTradeMultiplier>10</iTradeMultiplier>
+			<iBaseTrade>0</iBaseTrade>
+			<iTradeMultiplier>0</iTradeMultiplier>
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>

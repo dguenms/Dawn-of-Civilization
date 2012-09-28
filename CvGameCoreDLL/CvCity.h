@@ -877,6 +877,10 @@ public:
 	bool isMiddleEast() const;
 	bool canEnslave() const;
 	bool canEnslave(bool bGeneral) const;
+	int getSpecialistGoodHappiness() const;
+	int getSpecialistBadHappiness() const;
+	void changeSpecialistGoodHappiness(int iChange);
+	void changeSpecialistBadHappiness(int iChange);
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1033,6 +1037,10 @@ protected:
 	int m_iCitySizeBoost;
 	int m_iSpecialistFreeExperience;
 	int m_iEspionageDefenseModifier;
+
+	//Leoreth
+	int m_iSpecialistGoodHappiness;
+	int m_iSpecialistBadHappiness;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

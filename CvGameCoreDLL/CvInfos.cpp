@@ -831,7 +831,8 @@ m_bVisible(false),
 m_piYieldChange(NULL),
 m_piCommerceChange(NULL),
 m_piFlavorValue(NULL),
-m_iExperience(0)
+m_iExperience(0),
+m_iHappiness(0)
 {
 }
 
@@ -877,6 +878,12 @@ bool CvSpecialistInfo::isVisible() const
 int CvSpecialistInfo::getExperience() const
 {
 	return m_iExperience;
+}
+
+// Leoreth
+int CvSpecialistInfo::getHappiness() const
+{
+	return m_iHappiness;
 }
 
 // Arrays
@@ -959,6 +966,8 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 	}
 
 	pXML->GetChildXmlValByName(&m_iExperience, "iExperience");
+
+	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 
 	pXML->SetVariableListTagPair(&m_piFlavorValue, "Flavors", GC.getFlavorTypes(), GC.getNumFlavorTypes());
 
@@ -3776,6 +3785,11 @@ int CvUnitInfo::getCommandType() const
 void CvUnitInfo::setCommandType(int iNewType)
 {
 	m_iCommandType = iNewType;
+}
+
+bool CvUnitInfo::isSlave() const
+{
+	return (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SLAVE"));
 }
 
 

@@ -979,6 +979,7 @@
 	<ElementType name="iOrderPriority" content="textOnly" dt:type="int"/>
 	<ElementType name="bVisible" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iGreatPeopleRateChange" content="textOnly" dt:type="int"/>
+	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="SpecialistInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -992,6 +993,7 @@
 		<element type="Yields"/>
 		<element type="Commerces"/>
 		<element type="iExperience"/>
+		<element type="iHappiness" minOccurs="0"/>
 		<element type="Flavors"/>
 		<element type="HotKey"/>
 		<element type="bAltDown"/>

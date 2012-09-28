@@ -7288,6 +7288,15 @@ int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pLis
 		case TRADE_RELIGION:
 			iValue += AI_religionTradeVal(((ReligionTypes)(pNode->m_data.m_iData)), ePlayer);
 			break;
+		// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
+		case TRADE_SLAVE:
+			CvUnit* pUnit = GET_PLAYER(ePlayer).getUnit(pNode->m_data.m_iData);
+			if (pUnit != NULL)
+			{
+				iValue += AI_slaveTradeVal(pUnit);
+			}
+            break;
+		// edead: end
 		}
 	}
 
@@ -7530,6 +7539,36 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 				}
 			}
 		}
+		
+		// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
+		for (pNode = pOurInventory->head(); pNode && iHumanDealWeight > iAIDealWeight; pNode = pOurInventory->next(pNode))
+		{
+			if (!pNode->m_data.m_bOffering && !pNode->m_data.m_bHidden)
+			{
+				if (pNode->m_data.m_eItemType == TRADE_SLAVE)
+				{
+					FAssert(canTradeItem(ePlayer, pNode->m_data));
+
+					if (getTradeDenial(ePlayer, pNode->m_data) == NO_DENIAL)
+					{
+						CvUnit* pUnit = getUnit(pNode->m_data.m_iData);
+						if (pUnit != NULL)
+						{
+							iWeight = GET_PLAYER(ePlayer).AI_slaveTradeVal(pUnit);
+							if (iWeight > 0)
+							{
+								if (iHumanDealWeight >= (iAIDealWeight + iWeight))
+								{
+									iAIDealWeight += iWeight;
+									pOurCounter->insertAtEnd(pNode->m_data);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		// edead: end
 
 		int iGoldWeight = iAIDealWeight - iHumanDealWeight;
 
@@ -19186,5 +19225,30 @@ void CvPlayerAI::AI_invalidatePlotDangerCache(int iIndex)
 	}
 }
 // Sanguo Mod Performance, end
+int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
+{
+	if (!(GC.getUnitInfo(pUnit->getUnitType()).isSlave()))
+	{
+		return 0;
+	}
 
+	/*int iValue = GC.getDefineINT("AI_SLAVE_VALUE");
 
+	if (GC.getUnitInfo(pUnit->getUnitType()).getStateReligion() == getStateReligion() || GC.getUnitInfo(pUnit->getUnitType()).getOrStateReligion() == getStateReligion())
+	{
+		iValue *= 100 + (5 * AI_getFlavorValue((FlavorTypes)1));
+		iValue /= 100;
+	}
+
+	if (GET_TEAM(getTeam()).isAtWar(GET_PLAYER(pUnit->getOwner()).getTeam()))
+	{
+		iValue /= 5;
+		iValue *= 4;
+	}
+
+	return iValue;*/
+
+	return GC.getDefineINT("AI_SLAVE_VALUE");
+}
+
+// edead: end

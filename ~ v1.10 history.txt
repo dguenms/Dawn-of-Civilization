@@ -71,3 +71,5 @@
 # Vikings found Roskilde instead of Kobenhavn, renamed in the Renaissance
 # increased the required resources for the second Indonesian goal to 10
 # changed the marble in Tunisia to stone
+# great artists give +1 happiness
+# slaves give +2 production and +1 unhappiness

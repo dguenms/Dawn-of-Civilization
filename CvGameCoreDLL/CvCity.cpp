@@ -613,6 +613,10 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iSpecialistFreeExperience = 0;
 	m_iEspionageDefenseModifier = 0;
 
+	// Leoreth
+	m_iSpecialistGoodHappiness = 0;
+	m_iSpecialistBadHappiness = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -4261,6 +4265,16 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 	updateExtraSpecialistYield();
 
 	changeSpecialistFreeExperience(GC.getSpecialistInfo(eSpecialist).getExperience() * iChange);
+
+	int iHappinessChange = GC.getSpecialistInfo(eSpecialist).getHappiness();
+	if (iHappinessChange > 0)
+	{
+		changeSpecialistGoodHappiness(iHappinessChange * iChange);
+	}
+	else
+	{
+		changeSpecialistBadHappiness(-iHappinessChange * iChange);
+	}
 }
 
 
@@ -4853,6 +4867,7 @@ int CvCity::unhappyLevel(int iExtra) const
 		iUnhappiness -= std::min(0, GC.getHandicapInfo(getHandicapType()).getHappyBonusByID(getOwner()));
 		iUnhappiness += std::max(0, getVassalUnhappiness());
 		iUnhappiness += std::max(0, getEspionageHappinessCounter());
+		iUnhappiness += std::max(0, getSpecialistBadHappiness()); // Leoreth
 	}
 
 	return std::max(0, iUnhappiness);
@@ -4873,6 +4888,7 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, getFeatureGoodHappiness());
 	iHappiness += std::max(0, getBonusGoodHappiness());
 	iHappiness += std::max(0, getReligionGoodHappiness());
+	iHappiness += std::max(0, getSpecialistGoodHappiness()); // Leoreth
 	iHappiness += std::max(0, getCommerceHappiness());
 	iHappiness += std::max(0, area()->getBuildingHappiness(getOwnerINLINE()));
 	iHappiness += std::max(0, GET_PLAYER(getOwnerINLINE()).getBuildingHappiness());
@@ -15000,4 +15016,24 @@ bool CvCity::canEnslave(bool bGeneral) const
 	}
 
 	return false;
+}
+
+int CvCity::getSpecialistGoodHappiness() const
+{
+	return m_iSpecialistGoodHappiness;
+}
+
+int CvCity::getSpecialistBadHappiness() const
+{
+	return m_iSpecialistBadHappiness;
+}
+
+void CvCity::changeSpecialistGoodHappiness(int iChange)
+{
+	m_iSpecialistGoodHappiness += iChange;
+}
+
+void CvCity::changeSpecialistBadHappiness(int iChange)
+{
+	m_iSpecialistBadHappiness += iChange;
 }

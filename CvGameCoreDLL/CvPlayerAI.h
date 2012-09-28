@@ -285,7 +285,6 @@ public:
 	int AI_getTotalCityThreat() const;
 	int AI_getTotalFloatingDefenseNeeded() const;
 	
-	
 	int AI_getTotalAreaCityThreat(CvArea* pArea) const;
 	int AI_countNumAreaHostileUnits(CvArea* pArea, bool bPlayer, bool bTeam, bool bNeutral, bool bHostile) const;
 	int AI_getTotalFloatingDefendersNeeded(CvArea* pArea) const;
@@ -343,6 +342,8 @@ public:
 	void AI_invalidateAttitudeCache(PlayerTypes ePlayer);
 	void AI_invalidatePlotDangerCache(int iPlotIndex);
 	// Sanguo Mod Performance, end
+	
+	int  AI_slaveTradeVal(CvUnit* pUnit) const; // edead/Afforess
 
 	// for serialization
   virtual void read(FDataStreamBase* pStream);

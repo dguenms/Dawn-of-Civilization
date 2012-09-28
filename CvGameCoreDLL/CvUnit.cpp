@@ -13442,3 +13442,68 @@ int CvUnit::getOriginalArtStyle(int regionID)
 
 	return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)INDEPENDENT).getCivilizationType()).getUnitArtStyleType();
 }
+
+// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
+bool CvUnit::canTradeUnit(PlayerTypes eReceivingPlayer)
+{
+	if (eReceivingPlayer == NO_PLAYER || eReceivingPlayer >= NUM_MAJOR_PLAYERS || getOwnerINLINE() >= NUM_MAJOR_PLAYERS)
+	{
+		return false;
+	}
+
+	CvCity* pFirstCapital = GET_PLAYER(eReceivingPlayer).getCapitalCity();
+	CvCity* pSecondCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
+
+	if (pFirstCapital == NULL || pSecondCapital == NULL)
+	{
+		return false;
+	}
+
+	return true;
+}
+	
+void CvUnit::tradeUnit(PlayerTypes eReceivingPlayer)
+{
+	CvUnit* pTradeUnit;
+	CvWString szBuffer;
+	CvCity* pBestCity;
+	PlayerTypes eOwner;
+	
+	eOwner = getOwnerINLINE();
+	
+	if (eReceivingPlayer != NO_PLAYER)
+	{
+		pBestCity = GET_PLAYER(eReceivingPlayer).getCapitalCity();
+
+		if (!GET_PLAYER(eReceivingPlayer).isHuman())
+		{
+			std::vector<CvCity*> cityList;
+			
+			int iLoop;
+			for (CvCity* pCity = GET_PLAYER(eReceivingPlayer).firstCity(&iLoop); NULL != pCity; pCity = GET_PLAYER(eReceivingPlayer).nextCity(&iLoop))
+			{
+				switch (pCity->getRegionID())
+					case REGION_ALASKA:
+					case REGION_UNITED_STATES:
+					case REGION_CANADA:
+					case REGION_MESOAMERICA:
+					case REGION_CARIBBEAN:
+					case REGION_BRAZIL:
+					case REGION_ARGENTINA:
+					case REGION_PERU:
+					case REGION_COLOMBIA:
+						cityList.push_back(pCity);
+			}
+
+			int iRand = GC.getGame().getSorenRandNum(cityList.size(), "Select random colony.");
+			pBestCity = cityList[iRand];
+		}
+
+		pTradeUnit = GET_PLAYER(eReceivingPlayer).initUnit(getUnitType(), pBestCity->getX_INLINE(), pBestCity->getY_INLINE(), AI_getUnitAIType());
+		pTradeUnit->convert(this);
+		
+		szBuffer = gDLL->getText("TXT_KEY_MISC_TRADED_UNIT_TO_YOU", GET_PLAYER(eOwner).getNameKey(), pTradeUnit->getNameKey());
+		gDLL->getInterfaceIFace()->addMessage(pTradeUnit->getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_UNITGIFTED", MESSAGE_TYPE_INFO, pTradeUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pTradeUnit->getX_INLINE(), pTradeUnit->getY_INLINE(), true, true);
+	 }
+}
+// edead (end)

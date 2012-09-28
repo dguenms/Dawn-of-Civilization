@@ -1830,6 +1830,7 @@ enum TradeableItems						// Exposed to Python
 	TRADE_EMBARGO,
 	TRADE_CIVIC,
 	TRADE_RELIGION,
+	TRADE_SLAVE, // Leoreth
 
 #ifdef _USRDLL
 	NUM_TRADEABLE_HEADINGS,

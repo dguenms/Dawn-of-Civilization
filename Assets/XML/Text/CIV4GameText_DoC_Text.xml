@@ -535,5 +535,38 @@
 		<Tag>TXT_KEY_UNIT_CARTHAGINIAN_WAR_ELEPHANT</Tag>
 		<English>African War Elephant</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_GOOD_HAPPINESS</Tag>
+		<English>, %D1_Change[ICON_HAPPY]</English>
+		<German>, %D1_Change[ICON_HAPPY]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_BAD_HAPPINESS</Tag>
+		<English>, %D1_Change[ICON_UNHAPPY]</English>
+		<German>, %D1_Change[ICON_UNHAPPY]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HAPPY_SPECIALISTS</Tag>
+		<English>%D1_Change[ICON_HAPPY]: "Settled artists entertain us!"</English>
+		<German>%D1_Change[ICON_HAPPY]: "Angesiedelte Künstler unterhalten uns!"</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ANGER_SPECIALISTS</Tag>
+		<English>%D1_Change[ICON_UNHAPPY]: "Our slaves are longing for freedom!"</English>
+		<German>%D1_Change[ICON_UNHAPPY]: "Unsere Sklaven sehnen sich nach Freiheit!"</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_SLAVE</Tag>
+		<English>Slave Trade</English>
+		<German>Sklavenhandel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_TRADED_UNIT_TO_YOU</Tag>
+		<English>%s1 has traded %s2 to you.</English>
+		<French>%s1 vous a vendu [NUM2:un:une:des:des] %s2.</French>
+		<German>%s1 hat %s2 an Dich verkauft.</German>
+		<Italian>%s1 has traded %s2 to you.</Italian>
+		<Spanish>%s1 has traded %s2 to you.</Spanish>
+	</TEXT>
 	
 </Civ4GameText>

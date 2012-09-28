@@ -1444,7 +1444,7 @@ class RFCUtils:
 					
 		#print 'free plots found'
 
-		if iTargetCiv != -1:
+		if iTargetCiv != -1 and not gc.getTeam(iCiv).isAtWar(iTargetCiv):
 			gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_TOTAL)
 			
 		#print 'declared war against target civ'
@@ -1719,6 +1719,11 @@ class RFCUtils:
 			
 	def removeSlaves(self, city):
 		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
+		
+	def freeSlaves(self, city, iPlayer):
+		iNumSlaves = city.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"))
+		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
+		self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(iSlave)).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
 		
 	def getRandomEntry(self, list):
 		if len(list) == 0: return False
