@@ -237,6 +237,12 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 	{
 		for (pNode = pFirstList->head(); pNode; pNode = pFirstList->next(pNode))
 		{
+			// Leoreth: to prevent a crash caused by a war triggered by tech trades and the subsequent peace treaty
+			if (atWar(eFirstTeam, eSecondTeam))
+			{
+				break;
+			}
+
 			bSave = startTrade(pNode->m_data, getFirstPlayer(), getSecondPlayer());
 
 			if (bSave)
@@ -250,6 +256,12 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 	{
 		for (pNode = pSecondList->head(); pNode; pNode = pSecondList->next(pNode))
 		{
+			// Leoreth: to prevent a crash caused by a war triggered by tech trades and the subsequent peace treaty
+			if (atWar(eFirstTeam, eSecondTeam))
+			{
+				break;
+			}
+
 			bSave = startTrade(pNode->m_data, getSecondPlayer(), getFirstPlayer());
 
 			if (bSave)
