@@ -73,3 +73,8 @@
 # changed the marble in Tunisia to stone
 # great artists give +1 happiness
 # slaves give +2 production and +1 unhappiness
+# allowed slave trade via the diplomacy interface
+# Arabia doesn't settle the Sahara anymore
+# Aztecs don't settle Northern Mexico anymore
+# Pombos replace Impis as African natives during the late game
+# Defeating Impis and Pombos has a 10% chance to give a slave

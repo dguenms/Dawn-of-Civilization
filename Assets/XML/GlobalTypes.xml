@@ -71,6 +71,7 @@
 		<ContactType>CONTACT_TRADE_TECH</ContactType>
 		<ContactType>CONTACT_TRADE_BONUS</ContactType>
 		<ContactType>CONTACT_TRADE_MAP</ContactType>
+		<ContactType>CONTACT_TRADE_SLAVE</ContactType>
 	</ContactTypes>
 	<DiplomacyPowerTypes>
 		<!--Changes must be reflected in CvEnums.h-->

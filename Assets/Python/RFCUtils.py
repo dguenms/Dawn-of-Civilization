@@ -1722,15 +1722,18 @@ class RFCUtils:
 		
 	def freeSlaves(self, city, iPlayer):
 		iNumSlaves = city.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"))
-		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
-		self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(con.iSlave)).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
+		if iNumSlaves > 0:
+			city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
+			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(con.iSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
 		
 	def getRandomEntry(self, list):
 		if len(list) == 0: return False
 		
 		return list[gc.getGame().getSorenRandNum(len(list), 'Random entry')]
 			
-		
+	def getUniqueUnitType(self, iPlayer, iUnitClass):
+		pPlayer = gc.getPlayer(iPlayer)
+		return gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
 	
 			
 	

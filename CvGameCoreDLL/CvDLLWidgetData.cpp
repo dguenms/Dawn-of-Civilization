@@ -1892,15 +1892,25 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 			{
 				bFirst = true;
 
-				for (iI = 0; iI < GC.getNumCivicInfos(); iI++)
+				// Leoreth: if enslaving possible, show the correct requirement civic
+				if (pHeadSelectedCity->canEnslave())
 				{
-					if (getWorldSizeMaxConscript((CivicTypes)iI) > 0)
+					szTempBuffer = NEWLINE + gDLL->getText("TXT_KEY_REQUIRES");
+					setListHelp(szBuffer, szTempBuffer, GC.getCivicInfo((CivicTypes)CIVIC_FORCED_LABOR).getDescription(), gDLL->getText("TXT_KEY_OR").c_str(), bFirst);
+					bFirst = false;
+				}
+				else
+				{
+					for (iI = 0; iI < GC.getNumCivicInfos(); iI++)
 					{
-						szTempBuffer = NEWLINE + gDLL->getText("TXT_KEY_REQUIRES");
-						setListHelp(szBuffer, szTempBuffer, GC.getCivicInfo((CivicTypes)iI).getDescription(), gDLL->getText("TXT_KEY_OR").c_str(), bFirst);
-						bFirst = false;
-					}
-				}		
+						if (getWorldSizeMaxConscript((CivicTypes)iI) > 0)
+						{
+							szTempBuffer = NEWLINE + gDLL->getText("TXT_KEY_REQUIRES");
+							setListHelp(szBuffer, szTempBuffer, GC.getCivicInfo((CivicTypes)iI).getDescription(), gDLL->getText("TXT_KEY_OR").c_str(), bFirst);
+							bFirst = false;
+						}
+					}	
+				}
 
 				if (!bFirst)
 				{
