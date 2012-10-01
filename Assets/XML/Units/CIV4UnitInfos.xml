@@ -29071,7 +29071,7 @@
 			<Capture>UNITCLASS_SLAVE</Capture>
 			<Combat>NONE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ENGINEER</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_SLAVE</Description>
@@ -29249,7 +29249,7 @@
 			<Capture>UNITCLASS_SLAVE</Capture>
 			<Combat>NONE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_MERCHANT</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_SLAVE</Description>
