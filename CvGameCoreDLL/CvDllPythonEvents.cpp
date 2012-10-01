@@ -1230,6 +1230,21 @@ void CvDllPythonEvents::reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer
 	}
 }
 
+// Leoreth: slave trade (amount of gold received)
+void CvDllPythonEvents::reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("playerSlaveTrade");
+
+		eventData.add((int)ePlayer);
+		eventData.add(iGold);
+
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

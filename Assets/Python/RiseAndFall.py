@@ -1007,7 +1007,8 @@ class RiseAndFall:
 			print 'Seljuk target player list: '+str(targetPlayerList)
 			for iPlayer in targetPlayerList:
                                 teamSeljuks.declareWar(iPlayer, True, WarPlanTypes.WARPLAN_TOTAL)
-                        CyInterface().addMessage(CyGame().getActivePlayer(), True , con.iDuration, CyTranslator().getText("TXT_KEY_SELJUK_HORDES", ()), "", 1 , "", ColorTypes(con.iRed),0,0,False,False)
+			if utils.getHumanID() in con.lCivGroups[2]:
+				CyInterface().addMessage(CyGame().getActivePlayer(), True , con.iDuration, CyTranslator().getText("TXT_KEY_SELJUK_HORDES", ()), "", 1 , "", ColorTypes(con.iRed),0,0,False,False)
 
 		if iGameTurn == getTurnForYear(1070 + utils.getSeed()/10 - 5): #Linkman226- Seljuks
                         tSpawnPlots = ((77,41), (74, 43), (72, 44))
@@ -1044,7 +1045,8 @@ class RiseAndFall:
                         	utils.makeUnitAI(con.iMongolKeshik, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier)
 				utils.makeUnitAI(con.iHorseArcher, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier)
 				utils.makeUnitAI(con.iTrebuchet, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-                        	CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iSeljuks).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+				if utils.getHumanID() in con.lCivGroups[1]:
+					CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iSeljuks).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
                 if iGameTurn == getTurnForYear(1230 + utils.getSeed()/10 + 3): #Linkman226- Mongol Conquerors for Seljuks
 			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
                         	tPlot = utils.getFreeNeighborPlot((83, 42))
@@ -3749,7 +3751,7 @@ class RiseAndFall:
 
 					if utils.getHumanID() == iTeamX:
 						CyInterface().addMessage(iTeamX, True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE_HUMAN", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-					else:
+					elif gc.getTeam(gc.getPlayer(utils.getHumanID()).getTeam()).canContact(iTeamX):
 						CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iTeamX).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 				else:
 					print("Beyond deadline.")

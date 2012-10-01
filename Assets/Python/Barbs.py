@@ -413,8 +413,9 @@ class Barbs:
 			utils.makeUnitAI(con.iIroquoisMohawk, iBarbarian, (26, 48), UnitAITypes.UNITAI_CITY_DEFENSE, 3 + iHandicap)
 			
 		if iGameTurn >= getTurnForYear(1500) and iGameTurn <= getTurnForYear(1780):
-			if gc.getMap().plot(26, 48).getNumUnits() == 0:
-				utils.makeUnitAI(con.iIroquoisMohawk, iBarbarian, (26, 48), UnitAITypes.UNITAI_CITY_DEFENSE, 2 + iHandicap)
+			if iGameTurn % 15 == 0:
+				if gc.getMap().plot(26, 48).getNumUnits() == 0:
+					utils.makeUnitAI(con.iIroquoisMohawk, iBarbarian, (26, 48), UnitAITypes.UNITAI_CITY_DEFENSE, 3 + iHandicap)
 				
 			#self.checkSpawn(iBarbarian, con.iIroquoisMohawk, 2 + iHandicap, (24, 46), (28, 51), self.spawnNatives, iGameTurn, 10 - iHandicap, 6)
 			

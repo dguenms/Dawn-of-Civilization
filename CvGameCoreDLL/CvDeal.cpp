@@ -233,6 +233,11 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 		}
 	}
 
+	bool bFirstSlaves = false;
+	bool bSecondSlaves = false;
+	int iFirstGold = 0;
+	int iSecondGold = 0;
+
 	if (pFirstList != NULL)
 	{
 		for (pNode = pFirstList->head(); pNode; pNode = pFirstList->next(pNode))
@@ -248,6 +253,16 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 			if (bSave)
 			{
 				insertAtEndFirstTrades(pNode->m_data);
+			}
+
+			if (pNode->m_data.m_eItemType == TRADE_SLAVE)
+			{
+				bFirstSlaves = true;
+			}
+
+			if (pNode->m_data.m_eItemType == TRADE_GOLD)
+			{
+				iFirstGold += pNode->m_data.m_iData;
 			}
 		}
 	}
@@ -268,7 +283,28 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 			{
 				insertAtEndSecondTrades(pNode->m_data);
 			}
+
+			if (pNode->m_data.m_eItemType == TRADE_SLAVE)
+			{
+				bSecondSlaves = true;
+			}
+
+			if (pNode->m_data.m_eItemType == TRADE_GOLD)
+			{
+				iSecondGold += pNode->m_data.m_iData;
+			}
 		}
+	}
+
+	// Python Event
+	if (bFirstSlaves)
+	{
+		CvEventReporter::getInstance().playerSlaveTrade(getFirstPlayer(), iSecondGold);
+	}
+
+	if (bSecondSlaves)
+	{
+		CvEventReporter::getInstance().playerSlaveTrade(getSecondPlayer(), iFirstGold);
 	}
 
 	bAlliance = false;

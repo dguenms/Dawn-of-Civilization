@@ -1960,34 +1960,146 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	// Leoreth - build settlers only in cities on the same continent as the capital until the discovery of Astronomy
 	if((int)eUnit == 4) // settler
 	{
-	    if (!GET_TEAM((TeamTypes)getOwner()).isHasTech((TechTypes)ASTRONOMY))
-	    {
-	        if (plot()->getArea() != GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea())
-	        {
-				int englandID = GC.getMap().plot(53, 54)->getArea();
-				int irelandID = GC.getMap().plot(49, 56)->getArea();
-				int europeID = GC.getMap().plot(55, 50)->getArea();
-				bool bVikingEnglandException = false;
-				if (plot()->getArea() == englandID || plot()->getArea() == irelandID)
-				{
-					if (GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea() == europeID)
-					{
-						bVikingEnglandException = true;
-					}
-				}
-				if (plot()->getArea() == europeID && GET_PLAYER(getOwner()).getCapitalCity()->plot()->getArea() == englandID)
-				{
-					bVikingEnglandException = true;
-				}
-				if (!bVikingEnglandException)
-				{
-					if ((int)getOwner() != CARTHAGE && (int)getOwner() != BYZANTIUM && (int)getOwner() != TURKEY && (int)getOwner() != ARABIA && (int)getOwner() != INDONESIA)
-					{
-					    return false;
-					}
-				}
-            }
-	    }
+		int iCapitalRegion = GET_PLAYER(getOwner()).getCapitalCity()->getRegionID();
+		int iRegion = getRegionID();
+
+		int iCapitalContinent = -1;
+		int iCityContinent = -1;
+
+		switch (iCapitalRegion)
+		{
+			case REGION_BRITAIN:
+			case REGION_IBERIA:
+			case REGION_ITALY:
+			case REGION_BALKANS:
+			case REGION_SCANDINAVIA:
+			case REGION_EUROPE:
+			case REGION_RUSSIA:
+				iCapitalContinent = 0;	// Europe = 0
+				break;
+			case REGION_ANATOLIA:
+			case REGION_MESOPOTAMIA:
+			case REGION_ARABIA:
+			case REGION_EGYPT:
+			case REGION_MAGHREB:
+			case REGION_PERSIA:
+				iCapitalContinent = 1; // Middle East = 1
+				break;
+			case REGION_INDIA:
+			case REGION_DECCAN:
+			case REGION_INDOCHINA:
+			case REGION_INDONESIA:
+			case REGION_CHINA:
+			case REGION_KOREA:
+			case REGION_JAPAN:
+			case REGION_MANCHURIA:
+			case REGION_TIBET:
+			case REGION_CENTRAL_ASIA:
+			case REGION_SIBERIA:
+				iCapitalContinent = 2;	// East Asia = 2
+				break;
+			case REGION_AUSTRALIA:
+			case REGION_OCEANIA:
+				iCapitalContinent = 3;	// Australia = 3
+				break;
+			case REGION_ETHIOPIA:
+			case REGION_WEST_AFRICA:
+			case REGION_SOUTH_AFRICA:
+				iCapitalContinent = 4;	// Africa = 4;
+				break;
+			case REGION_CANADA:
+			case REGION_ALASKA:
+			case REGION_UNITED_STATES:
+			case REGION_CARIBBEAN:
+			case REGION_MESOAMERICA:
+				iCapitalContinent = 5;	// North America = 5
+				break;
+			case REGION_BRAZIL:
+			case REGION_ARGENTINA:
+			case REGION_PERU:
+			case REGION_COLOMBIA:
+				iCapitalContinent = 6;	// South America = 6
+				break;
+			default:
+				FAssert(false);
+				break;
+		}
+
+		
+		switch (iRegion)
+		{
+			case REGION_BRITAIN:
+			case REGION_IBERIA:
+			case REGION_ITALY:
+			case REGION_BALKANS:
+			case REGION_SCANDINAVIA:
+			case REGION_EUROPE:
+			case REGION_RUSSIA:
+				iCityContinent = 0;	// Europe = 0
+				break;
+			case REGION_ANATOLIA:
+			case REGION_MESOPOTAMIA:
+			case REGION_ARABIA:
+			case REGION_EGYPT:
+			case REGION_MAGHREB:
+			case REGION_PERSIA:
+				iCityContinent = 1; // Middle East = 1
+				break;
+			case REGION_INDIA:
+			case REGION_DECCAN:
+			case REGION_INDOCHINA:
+			case REGION_INDONESIA:
+			case REGION_CHINA:
+			case REGION_KOREA:
+			case REGION_JAPAN:
+			case REGION_MANCHURIA:
+			case REGION_TIBET:
+			case REGION_CENTRAL_ASIA:
+			case REGION_SIBERIA:
+				iCityContinent = 2;	// East Asia = 2
+				break;
+			case REGION_AUSTRALIA:
+			case REGION_OCEANIA:
+				iCityContinent = 3;	// Australia = 3
+				break;
+			case REGION_ETHIOPIA:
+			case REGION_WEST_AFRICA:
+			case REGION_SOUTH_AFRICA:
+				iCityContinent = 4;	// Africa = 4;
+				break;
+			case REGION_CANADA:
+			case REGION_ALASKA:
+			case REGION_UNITED_STATES:
+			case REGION_CARIBBEAN:
+			case REGION_MESOAMERICA:
+				iCityContinent = 5;	// North America = 5
+				break;
+			case REGION_BRAZIL:
+			case REGION_ARGENTINA:
+			case REGION_PERU:
+			case REGION_COLOMBIA:
+				iCityContinent = 6;	// South America = 6
+				break;
+			default:
+				FAssert(false);
+				break;
+		}
+
+		bool bException = false;
+
+		if (iCapitalRegion == REGION_RUSSIA && iRegion == REGION_SIBERIA)
+		{
+			bException = true;
+		}
+		else if ((iCapitalRegion == REGION_ANATOLIA || iCapitalRegion == REGION_BALKANS) && (iCityContinent == 0 || iCityContinent == 1))
+		{
+			bException = true;
+		}
+
+		if (iCapitalContinent != iCityContinent && !bException)
+		{
+			return false;
+		}
 	}
 
 	// Leoreth: can't train slaves

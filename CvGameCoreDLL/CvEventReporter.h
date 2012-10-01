@@ -128,6 +128,7 @@ public:
 	void democracyTransition(PlayerTypes ePlayer); // Leoreth
 
 	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iGold); // Leoreth
+	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
 
 	DllExport void preSave();
 

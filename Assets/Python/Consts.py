@@ -50,7 +50,7 @@ iCivTibet, iCivViking, iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, 
 #for Congresses and Victory
 lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iItaly, iPoland, iPortugal, iGermany],  #Euros
                 [iIndia, iChina, iPersia, iJapan, iTamils, iKorea, iByzantium, iTibet, iKhmer, iIndonesia, iRussia, iMongolia, iMughals, iThailand], #Asian
-                [iEgypt, iBabylonia, iPersia, iArabia, iTurkey, iCarthage], #MiddleEastern
+                [iEgypt, iBabylonia, iPersia, iByzantium, iArabia, iTurkey, iCarthage], #MiddleEastern
                 [iEgypt, iGreece, iCarthage, iRome, iByzantium, iMoors], #Mediterranean
                 [iEgypt, iCarthage, iEthiopia, iMali, iCongo], #African
                 [iMaya, iInca, iAztecs, iAmerica]] #American

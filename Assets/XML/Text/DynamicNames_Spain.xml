@@ -89,6 +89,10 @@
 		<English>Spanish East Indies</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_SPANISH_VASSAL</Tag>
+		<English>Spanish Protectorate of Morocco</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_SPANISH_VASSAL</Tag>
 		<English>Autonomous Community of France</English>
 	</TEXT>

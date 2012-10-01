@@ -451,6 +451,12 @@ void CvEventReporter::tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iG
 	m_kPythonEventMgr.reportTradeMission(unitID, ePlayer, iGold);
 }
 
+// Leoreth: slave trade (amount of gold received)
+void CvEventReporter::playerSlaveTrade(PlayerTypes ePlayer, int iGold)
+{
+	m_kPythonEventMgr.reportPlayerSlaveTrade(ePlayer, iGold);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();
