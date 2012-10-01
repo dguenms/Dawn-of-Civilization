@@ -14167,7 +14167,7 @@ void CvPlayerAI::AI_doDiplo()
 								
 									// edead: start Relic trade based on Afforess' Advanced Diplomacy
 									//if (GET_TEAM(getTeam()).getLeaderID() == getID())
-									/*{
+									{
 										if (AI_getContactTimer(((PlayerTypes)iI), CONTACT_TRADE_SLAVE) == 0)
 										{
 											if (GC.getGameINLINE().getSorenRandNum(GC.getLeaderHeadInfo(getPersonalityType()).getContactRand(CONTACT_TRADE_SLAVE), "AI Diplo Trade Relic") == 0)
@@ -14235,7 +14235,7 @@ void CvPlayerAI::AI_doDiplo()
 												//}
 											}
 										}
-									}*/
+									}
 									// edead: end
 
 									if (AI_getContactTimer(((PlayerTypes)iI), CONTACT_TRADE_BONUS) == 0)
@@ -19305,23 +19305,29 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 		return 0;
 	}
 
-	/*int iValue = GC.getDefineINT("AI_SLAVE_VALUE");
-
-	if (GC.getUnitInfo(pUnit->getUnitType()).getStateReligion() == getStateReligion() || GC.getUnitInfo(pUnit->getUnitType()).getOrStateReligion() == getStateReligion())
+	if (getID() == MALI || getID() == CONGO)
 	{
-		iValue *= 100 + (5 * AI_getFlavorValue((FlavorTypes)1));
-		iValue /= 100;
+		return 0;
 	}
 
-	if (GET_TEAM(getTeam()).isAtWar(GET_PLAYER(pUnit->getOwner()).getTeam()))
+	int iValue = GC.getDefineINT("AI_SLAVE_VALUE");
+
+	if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == PORTUGAL || getID() == NETHERLANDS)
 	{
-		iValue /= 5;
-		iValue *= 4;
+		iValue *= 2;
 	}
 
-	return iValue;*/
+	if (getStateReligion() != CATHOLICISM)
+	{
+		iValue /= 2;
+	}
 
-	return GC.getDefineINT("AI_SLAVE_VALUE");
+	if (!GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
+	{
+		iValue /= 2;
+	}
+
+	return iValue;
 }
 
 // edead: end

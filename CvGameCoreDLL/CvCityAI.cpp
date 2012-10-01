@@ -6340,23 +6340,29 @@ void CvCityAI::AI_doDraft(bool bForce)
 		int iConscriptPop = getConscriptPopulation();
 		int iHappyDiff = GC.getDefineINT("CONSCRIPT_POP_ANGER") - iConscriptPop;
 
-		if (angryPopulation(iHappyDiff) == 0)
+		if (angryPopulation(iHappyDiff) == 0 || angryPopulation(0) > 0) // either no unhappiness risk, or there is unhappiness already anyway
 		{
-			if (2 * getPopulation() < getHighestPopulation())
+			bool bWait = false;
+
+			if (!bWait)
 			{
-				if (getOwnerINLINE() == MALI || getOwnerINLINE() == CONGO || getOwnerINLINE() == ETHIOPIA || getOwnerINLINE() == NATIVE)
+				if (getConscriptAngerTimer() > 0)
 				{
-					if (2 * getYieldRate((YieldTypes)0) > getYieldRate((YieldTypes)2))
-					{
-						conscript();
-						return;
-					}
+					bWait = true;
 				}
-				else
+			}
+
+			if (!bWait)
+			{
+				if (2 * (getPopulation() - iConscriptPop) < getHighestPopulation())
 				{
-					conscript();
-					return;
+					bWait = true;
 				}
+			}
+
+			if (!bWait)
+			{
+				conscript();
 			}
 		}
 		

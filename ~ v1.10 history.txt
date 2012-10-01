@@ -78,3 +78,8 @@
 # Aztecs don't settle Northern Mexico anymore
 # Pombos replace Impis as African natives during the late game
 # Defeating Impis and Pombos has a 10% chance to give a slave
+# AI will offer slave trades on its own now
+# Readjusted the AI value of slaves, highest value for Catholic colonial civs that have researched Astronomy
+# Invasion events are now only displayed in the global log if you have contact to the target
+# Redesigned the "no settlers on different continents before Astronomy" rule to take actual continents into account, not different islands
+# Independents can't trigger conquerors anymore

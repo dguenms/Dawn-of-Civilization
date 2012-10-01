@@ -3104,28 +3104,16 @@ class Victory:
 	def onPlayerGoldTrade(self, iPlayer, iGold):
 		if iPlayer == iTamils:
 			self.changeTamilTradeGold(iGold)
-		elif iPlayer == iCongo:
+			
+	def onPlayerSlaveTrade(self, iPlayer, iGold):
+		if iPlayer == iCongo:
 			self.changeCongoSlaveCounter(iGold)
-			if self.getGoal(iCongo, 1) == -1 and self.getCongoSlaveCounter() >= utils.getTurns(1500):
+			if self.getGoal(iCongo, 1) == -1 and self.getCongoSlaveCounter() >= utils.getTurns(1000):
 				self.setGoal(iCongo, 1, 1)
 			
 	def onTradeMission(self, iPlayer, iGold):
 		if iPlayer == iTamils:
 			self.changeTamilTradeGold(iGold)
-		#elif iPlayer == iCongo:
-		#	self.changeCongoSlaveCounter(iGold)
-		#	if self.getGoal(iCongo, 1) == -1 and self.getCongoSlaveCounter(iGold) >= utils.getTurns(1500):
-		#		self.setGoal(iCongo, 1, 1)
-			
-	#def onUnitGifted(self, iOwner, iReceiver, unit):
-	#	if iOwner == iCongo:
-	#		if unit.getUnitType() == con.iWorker:
-	#			if pCongo.getCivics(3) == con.iForcedLabor and gc.getPlayer(iReceiver).getCivics(3) == con.iForcedLabor:
-	#				self.changeCongoSlaveCounter(1)
-	#				if self.getCongoSlaveCounter() >= 30:
-	#					self.setGoal(iCongo, 1, 1)
-                                       
-
 
         def calculateTopCityCulture(self, x, y):
                 iBestCityValue = 0
@@ -4154,7 +4142,7 @@ class Victory:
 				aHelp.append(self.getIcon(fPercent >= 10.0) + localText.getText("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", (str(u"%.2f%%" % fPercent), str(10))))
 			elif iGoal == 1:
 				iSlaves = self.getCongoSlaveCounter()
-				aHelp.append(self.getIcon(iSlaves >= utils.getTurns(1500)) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, utils.getTurns(1500))))
+				aHelp.append(self.getIcon(iSlaves >= utils.getTurns(1000)) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, utils.getTurns(1000))))
 
 		elif iPlayer == iAmerica:
 			if iGoal == 0:

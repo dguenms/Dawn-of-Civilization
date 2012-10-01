@@ -162,6 +162,7 @@ class CvEventManager:
 			'democracyTransition'		: self.onDemocracyTransition,
 			'cityCaptureGold'		: self.onCityCaptureGold,
 			'tradeMission'			: self.onTradeMission,
+			'playerSlaveTrade'		: self.onPlayerSlaveTrade,
 		}
 
 		################## Events List ###############################
@@ -1129,3 +1130,6 @@ class CvEventManager:
 		
 	def onTradeMission(self, argsList):
 		iUnitType, iPlayer, iGold = argsList
+		
+	def onPlayerSlaveTrade(self, argsList):
+		iPlayer, iGold = argsList

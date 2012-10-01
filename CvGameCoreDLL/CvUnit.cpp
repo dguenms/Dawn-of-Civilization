@@ -13483,6 +13483,7 @@ void CvUnit::tradeUnit(PlayerTypes eReceivingPlayer)
 			for (CvCity* pCity = GET_PLAYER(eReceivingPlayer).firstCity(&iLoop); NULL != pCity; pCity = GET_PLAYER(eReceivingPlayer).nextCity(&iLoop))
 			{
 				switch (pCity->getRegionID())
+				{
 					case REGION_ALASKA:
 					case REGION_UNITED_STATES:
 					case REGION_CANADA:
@@ -13493,13 +13494,24 @@ void CvUnit::tradeUnit(PlayerTypes eReceivingPlayer)
 					case REGION_PERU:
 					case REGION_COLOMBIA:
 						cityList.push_back(pCity);
+						break;
+
+					default:
+						FAssert(false);
+						break;
+				}
 			}
 
-			int iRand = GC.getGame().getSorenRandNum(cityList.size(), "Select random colony.");
-			pBestCity = cityList[iRand];
+			if (cityList.size() > 0)
+			{
+				int iRand = GC.getGame().getSorenRandNum(cityList.size(), "Select random colony.");
+				pBestCity = cityList[iRand];
+			}
 		}
 
-		pTradeUnit = GET_PLAYER(eReceivingPlayer).initUnit(getUnitType(), pBestCity->getX_INLINE(), pBestCity->getY_INLINE(), AI_getUnitAIType());
+		UnitTypes unitType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(eReceivingPlayer).getCivilizationType()).getCivilizationUnits(GC.getUnitInfo(getUnitType()).getUnitClassType());
+
+		pTradeUnit = GET_PLAYER(eReceivingPlayer).initUnit(unitType, pBestCity->getX_INLINE(), pBestCity->getY_INLINE(), AI_getUnitAIType());
 		pTradeUnit->convert(this);
 		
 		szBuffer = gDLL->getText("TXT_KEY_MISC_TRADED_UNIT_TO_YOU", GET_PLAYER(eOwner).getNameKey(), pTradeUnit->getNameKey());
