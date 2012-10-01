@@ -431,7 +431,7 @@ class CvRFCEventHandler:
                 self.pla.onCityRazed(city,iPlayer) #Plague
                         
                 if (iPlayer == con.iMongolia):
-                        self.vic.onCityRazed(iPlayer) #Victory
+                        self.vic.onCityRazed(city, iPlayer) #Victory
 
 
 
@@ -552,6 +552,17 @@ class CvRFCEventHandler:
                 self.rnf.immuneMode(argsList)
 		self.up.vikingUP(argsList)
 		
+		pWinningUnit, pLosingUnit = argsList
+		
+		if pLosingUnit.getOwner() in [con.iBarbarian, con.iNative] and pLosingUnit.getUnitType() in [con.iZuluImpi, con.iKongoPombos]:
+			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
+				iRand = gc.getGame().getSorenRandNum(10, "Caught slaves?")
+				if iRand == 1:
+					iNewUnit = utils.getUniqueUnitType(pWinningUnit.getOwner(), gc.getUnitInfo(con.iSlave).getUnitClassType())
+					utils.makeUnit(iNewUnit, pWinningUnit.getOwner(), (pWinningUnit.getX(), pWinningUnit.getY()), 1)
+					CyInterface().addMessage(pWinningUnit.getOwner(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
+
+		
 	def onChangeWar(self, argsList):
 		bWar, iActiveTeam, iPassiveTeam = argsList
 		
@@ -622,7 +633,7 @@ class CvRFCEventHandler:
 		if iPlayer < iNumPlayers:
 			self.dc.onRevolution(iPlayer)
 			
-		if gc.getPlayer(iPlayer).getCivics(2) != con.iAgrarianism and gc.getPlayer(iPlayer).getCivics(3) != con.iForcedLabor:
+		if gc.getPlayer(iPlayer).getCivics(2) != con.iAgrarianism and gc.getPlayer(iPlayer).getCivics(3) != con.iForcedLabor and gc.getPlayer(iPlayer).getCivics(3) != con.iMercantilism:
 			utils.clearSlaves(iPlayer)
 			
 	def onCityGrowth(self, argsList):
@@ -671,15 +682,17 @@ class CvRFCEventHandler:
 		
 		if iToPlayer == con.iTamils:
 			self.vic.onPlayerGoldTrade(iToPlayer, iGold)
+		elif iToPlayer == con.iCongo:
+			self.vic.onPlayerGoldTrade(iToPlayer, iGold)
 			
 	def onTradeMission(self, argsList):
 		iUnitType, iPlayer, iGold = argsList
 		
 		if iPlayer == con.iTamils:
 			self.vic.onTradeMission(iPlayer, iGold)
-		elif iPlayer == con.iCongo:
-			if iUnitType == con.iNativeSlave:
-				self.vic.onTradeMission(iPlayer, iGold)
+		#elif iPlayer == con.iCongo:
+		#	if iUnitType == con.iNativeSlave:
+		#		self.vic.onTradeMission(iPlayer, iGold)
 			
 	def onUnitGifted(self, argsList):
 		pUnit, iOwner, pPlot = argsList

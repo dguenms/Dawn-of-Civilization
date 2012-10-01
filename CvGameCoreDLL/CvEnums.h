@@ -1904,6 +1904,7 @@ enum ContactTypes							// Exposed to Python
 	CONTACT_TRADE_TECH,
 	CONTACT_TRADE_BONUS,
 	CONTACT_TRADE_MAP,
+	CONTACT_TRADE_SLAVE, // Leoreth
 
 	NUM_CONTACT_TYPES
 };

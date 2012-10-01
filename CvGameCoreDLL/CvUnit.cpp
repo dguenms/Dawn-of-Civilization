@@ -5740,7 +5740,7 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 	//Leoreth: no slavery in the motherland, needs forced labor
 	if (getUnitType() == GC.getInfoTypeForString("UNIT_SLAVE"))
 	{
-		if (GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR)
+		if (GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR && GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM)
 		{
 			return false;
 		}
@@ -6122,11 +6122,11 @@ bool CvUnit::trade()
 		NotifyEntity(MISSION_TRADE);
 	}
 
-	// Leoreth: slave trade
-	if (getUnitClassType() == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+	// Leoreth: slave trade -- deprecated
+	/*if (getUnitClassType() == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
 	{
 		setCapturingPlayer(plot()->getOwner());
-	}
+	}*/
 
 	kill(true);
 

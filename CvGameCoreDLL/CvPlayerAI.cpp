@@ -14164,6 +14164,79 @@ void CvPlayerAI::AI_doDiplo()
 											}
 										}
 									}
+								
+									// edead: start Relic trade based on Afforess' Advanced Diplomacy
+									//if (GET_TEAM(getTeam()).getLeaderID() == getID())
+									/*{
+										if (AI_getContactTimer(((PlayerTypes)iI), CONTACT_TRADE_SLAVE) == 0)
+										{
+											if (GC.getGameINLINE().getSorenRandNum(GC.getLeaderHeadInfo(getPersonalityType()).getContactRand(CONTACT_TRADE_SLAVE), "AI Diplo Trade Relic") == 0)
+											{
+												//if (GET_TEAM(getTeam()).isHasEmbassy(GET_PLAYER((PlayerTypes)iI).getTeam()))
+												//{
+													CvUnit* pSlave = NULL;
+
+													for (CvUnit* pLoopUnit = GET_PLAYER((PlayerTypes)iI).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER((PlayerTypes)iI).nextUnit(&iLoop))
+													{
+														if (pLoopUnit->canTradeUnit(getID()))
+														{
+															setTradeItem(&item, TRADE_SLAVE, pLoopUnit->getID());
+															//if they can trade the worker to us
+															if (GET_PLAYER((PlayerTypes)iI).canTradeItem(getID(), item, true))
+															{
+																pSlave = pLoopUnit;
+																break;
+															}
+														}
+													}
+													if (pSlave != NULL)
+													{
+														iTheirValue = GET_PLAYER((PlayerTypes)iI).AI_slaveTradeVal(pSlave);
+														iGold = AI_maxGoldTrade((PlayerTypes)iI);
+														if (iGold >= iTheirValue && iTheirValue > 0)
+														{
+															setTradeItem(&item, TRADE_GOLD, iTheirValue);
+															//if we can trade the gold to them
+															if (canTradeItem((PlayerTypes)iI, item, true))
+															{
+																ourList.clear();
+																theirList.clear();
+
+																setTradeItem(&item, TRADE_GOLD, iTheirValue);
+																ourList.insertAtEnd(item);
+																	
+																setTradeItem(&item, TRADE_SLAVE, pSlave->getID());
+																theirList.insertAtEnd(item);
+
+																if (GET_PLAYER((PlayerTypes)iI).isHuman())
+																{
+																	if (!(abContacted[GET_PLAYER((PlayerTypes)iI).getTeam()]))
+																	{
+																		AI_changeContactTimer(((PlayerTypes)iI), CONTACT_TRADE_SLAVE, GC.getLeaderHeadInfo(getPersonalityType()).getContactDelay(CONTACT_TRADE_SLAVE));
+																		pDiplo = new CvDiploParameters(getID());
+																		FAssertMsg(pDiplo != NULL, "pDiplo must be valid");
+																		pDiplo->setDiploComment((DiploCommentTypes)GC.getInfoTypeForString("AI_DIPLOCOMMENT_OFFER_DEAL"));
+																		pDiplo->setAIContact(true);
+																		pDiplo->setOurOfferList(theirList);
+																		pDiplo->setTheirOfferList(ourList);
+																		//If using RevDCM, use AI_beginDiplomacy, otherwise, use gDLL->beginDiplomacy()
+																		gDLL->beginDiplomacy(pDiplo, (PlayerTypes)iI);
+																		//AI_beginDiplomacy(pDiplo, (PlayerTypes)iI);
+																		abContacted[GET_PLAYER((PlayerTypes)iI).getTeam()] = true;
+																	}
+																}
+																else
+																{
+																	GC.getGameINLINE().implementDeal(getID(), ((PlayerTypes)iI), &ourList, &theirList);
+																}
+															}
+														}
+													}
+												//}
+											}
+										}
+									}*/
+									// edead: end
 
 									if (AI_getContactTimer(((PlayerTypes)iI), CONTACT_TRADE_BONUS) == 0)
 									{

@@ -3104,14 +3104,18 @@ class Victory:
 	def onPlayerGoldTrade(self, iPlayer, iGold):
 		if iPlayer == iTamils:
 			self.changeTamilTradeGold(iGold)
+		elif iPlayer == iCongo:
+			self.changeCongoSlaveCounter(iGold)
+			if self.getGoal(iCongo, 1) == -1 and self.getCongoSlaveCounter() >= utils.getTurns(1500):
+				self.setGoal(iCongo, 1, 1)
 			
 	def onTradeMission(self, iPlayer, iGold):
 		if iPlayer == iTamils:
 			self.changeTamilTradeGold(iGold)
-		elif iPlayer == iCongo:
-			self.changeCongoSlaveCounter(iGold)
-			if self.getGoal(iCongo, 1) == -1 and self.getCongoSlaveCounter(iGold) >= utils.getTurns(1500):
-				self.setGoal(iCongo, 1, 1)
+		#elif iPlayer == iCongo:
+		#	self.changeCongoSlaveCounter(iGold)
+		#	if self.getGoal(iCongo, 1) == -1 and self.getCongoSlaveCounter(iGold) >= utils.getTurns(1500):
+		#		self.setGoal(iCongo, 1, 1)
 			
 	#def onUnitGifted(self, iOwner, iReceiver, unit):
 	#	if iOwner == iCongo:

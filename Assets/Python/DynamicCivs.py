@@ -656,7 +656,7 @@ class DynamicCivs:
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_FASCIST",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_FASCIST",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_FASCIST",
-                        iCarthage : "TXT_KEY_CIV_CARTHAGE_DESC_FASCIST",
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_FASCIST",
                         iRome : "TXT_KEY_CIV_ROME_DESC_FASCIST",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_FASCIST",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_FASCIST",
@@ -698,7 +698,7 @@ class DynamicCivs:
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_COMMUNIST",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_COMMUNIST",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_COMMUNIST",
-                        iCarthage : "TXT_KEY_CIV_CARTHAGE_DESC_COMMUNIST",
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST",
                         iRome : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_COMMUNIST",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_COMMUNIST",
@@ -740,7 +740,7 @@ class DynamicCivs:
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_DEMOCRATIC",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_DEMOCRATIC",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEMOCRATIC",
-                        iCarthage : "TXT_KEY_CIV_CARTHAGE_DESC_DEMOCRATIC",
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEMOCRATIC",
                         iRome : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEMOCRATIC",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEMOCRATIC",
@@ -1024,12 +1024,18 @@ class DynamicCivs:
 		
 		# Communism
 		if self.isCommunist(iPlayer):
+			if iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_COMMUNIST")
+				return
 			if iPlayer in self.communistNames:
 				self.setCivDesc(iPlayer, self.communistNames[iPlayer])
 				return
 				
 		# Fascism
 		if self.isFascist(iPlayer):
+			if iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_FASCIST")
+				return
 			if iPlayer in self.fascistNames:
 				self.setCivDesc(iPlayer, self.fascistNames[iPlayer])
 				return
@@ -1054,6 +1060,10 @@ class DynamicCivs:
 			elif iPlayer == iHolyRome:
 				if iGameTurn < getTurnForYear(1700):
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_GERMAN_CONFEDERATION")
+					return
+			elif iPlayer == iCarthage:
+				if capital.getX() < 73:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_DEMOCRATIC")
 					return
 		
 		
