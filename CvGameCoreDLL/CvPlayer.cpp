@@ -26283,6 +26283,11 @@ DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
 		return NO_DENIAL;
 	}
 
+	if (ePlayer == CONGO || ePlayer == MALI)
+	{
+		return DENIAL_NO_GAIN;
+	}
+
 	if (getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR)
 	{
 		return DENIAL_UNKNOWN;
