@@ -337,8 +337,12 @@
 		<English>Richest civilization: </English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COLONIAL_RESOURCES</Tag>
+		<English>Available colonial resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES</Tag>
-		<English>Extra-European colonies founded: %d1 / %d2</English>
+		<English>Colonies in Brazil, Africa and Asia: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NO_SOUTH_AMERICAN_COLONIES</Tag>

@@ -2096,24 +2096,33 @@ class RiseAndFall:
 				lTechPeers = []
 				for lRegionList in con.lTechGroups:
 					if iDeadCiv in lRegionList:
-						lTechPeers = list(lRegionList)
+						for iPeerCiv in lRegionList:
+							if iPeerCiv != iDeadCiv and gc.getPlayer(iPeerCiv).isAlive():
+								lTechPeers.append(iPeerCiv)
 						
-				for iPeerCiv in lTechPeers:
-					if not gc.getPlayer(iPeerCiv).isAlive():
-						lTechPeers.remove(iPeerCiv)
+				#for iPeerCiv in lTechPeers:
+				#	if not gc.getPlayer(iPeerCiv).isAlive():
+				#		lTechPeers.remove(iPeerCiv)
 						
-				lTechPeers.append(iBarbarian)
-				lTechPeers.append(iIndependent)
-				lTechPeers.append(iIndependent2)
+				#lTechPeers.append(iBarbarian)
+				if len(lTechPeers) == 0:
+					lTechPeers.append(iIndependent)
+					lTechPeers.append(iIndependent2)
 				
 				iThreshold = len(lTechPeers) / 2
 				
+				if iDeadCiv == iEgypt:
+					utils.debugTextPopup(str(lTechPeers))
+				
 				for iTech in range(con.iNumTechs):
 					iCount = 0
+					if iThreshold < 1:
+						iCount = 1
 					for iPeerCiv in lTechPeers:
 						if gc.getTeam(iPeerCiv).isHasTech(iTech):
 							iCount += 1
 					if iCount >= iThreshold:
+						if iDeadCiv == iEgypt: utils.debugTextPopup(gc.getTechInfo(iTech).getText())
 						teamDeadCiv.setHasTech(iTech, True, iDeadCiv, False, False)
 					
 

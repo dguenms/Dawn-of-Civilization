@@ -61,8 +61,8 @@ lCivStabilityGroups = [[iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia,
                 [iEgypt, iGreece, iCarthage, iRome, iEthiopia, iByzantium, iMoors, iMali, iCongo], #Mediterranean
                 [iMaya, iInca, iAztecs, iAmerica]] #American
 		
-lTechGroups = [[iRome, iGreece, iByzantium, iVikings, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany, iAmerica], #Europe and NA
-	       [iEgypt, iBabylonia, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMali, iTurkey, iMughals, iTamils, iCongo], #Middle East
+lTechGroups = [[iRome, iGreece, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany, iAmerica], #Europe and NA
+	       [iEgypt, iBabylonia, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMoors, iMali, iTurkey, iMughals, iTamils, iCongo], #Middle East
 	       [iChina, iKorea, iJapan, iTibet, iKhmer, iIndonesia, iMongolia, iThailand], #Far East
 	       [iMaya, iInca, iAztecs]] #Native America
 

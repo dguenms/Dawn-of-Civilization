@@ -83,3 +83,6 @@
 # Invasion events are now only displayed in the global log if you have contact to the target
 # Redesigned the "no settlers on different continents before Astronomy" rule to take actual continents into account, not different islands
 # Independents can't trigger conquerors anymore
+# North American barbarians only start to spawn if cities are present in their area
+# renamed "The Malinese" to "The Mandinka" and changed their adjective to "Mande"
+# American Malls are now available with Electricity and have a merchant slot
