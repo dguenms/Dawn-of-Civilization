@@ -1044,7 +1044,7 @@ class DynamicCivs:
 		# Democracy (includes Islamic Republics)
 		if self.isDemocratic(iPlayer):
 			if iPlayer == iMughals:
-				if iCurrentEra <= con.iRenaissance:
+				if iEra <= con.iRenaissance:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MUGHALS_REPUBLIC_MEDIEVAL")
 					return
 			elif iPlayer == iVikings:

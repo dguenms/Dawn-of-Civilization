@@ -1881,39 +1881,60 @@ class Victory:
                 elif (iPlayer == iPortugal):
                         if (pPortugal.isAlive()):
 
-                                if (iGameTurn == getTurnForYear(1500)):
-                                        lRevealedMap = con.l0Array
-                                        for iCiv in range(iNumPlayers):
-						if gc.getPlayer(iCiv).isAlive():
-	                                                for x in range(124):
-        	                                                for y in range(68):
-                	                                                if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
-                        	                                              lRevealedMap[iCiv] += 1
-                                        bBestMap = True
-                                        for iCiv in range(iNumPlayers):
-                                                if (lRevealedMap[iPortugal] < lRevealedMap[iCiv]):                                                        
-                                                        bBestMap = False
-                                                        break
+                                #if (iGameTurn == getTurnForYear(1500)):
+                                #        lRevealedMap = con.l0Array
+                                #        for iCiv in range(iNumPlayers):
+				#		if gc.getPlayer(iCiv).isAlive():
+	                        #                        for x in range(124):
+        	                #                                for y in range(68):
+                	        #                                        if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
+                        	#                                              lRevealedMap[iCiv] += 1
+                                #        bBestMap = True
+                                #        for iCiv in range(iNumPlayers):
+                                #                if (lRevealedMap[iPortugal] < lRevealedMap[iCiv]):                                                        
+                                #                        bBestMap = False
+                                #                        break
 
-                                        if (bBestMap == True):
-                                                self.setGoal(iPortugal, 0, 1)
-                                        else:
-                                                self.setGoal(iPortugal, 0, 0)
+                                #        if (bBestMap == True):
+                                #                self.setGoal(iPortugal, 0, 1)
+                                #        else:
+                                #                self.setGoal(iPortugal, 0, 0)
 
-                                if (self.getGoal(iPortugal, 1) == -1):
-                                        if (iGameTurn == getTurnForYear(1650)):
-                                                iCount = 0
-                                                for iLoopCiv in range(iNumMajorPlayers):
-                                                       if (iLoopCiv != iPortugal):
-                                                                if (teamPortugal.isOpenBorders(iLoopCiv)):
-                                                                       iCount += 1
-                                                if (iCount >= 14):                                                                    
-                                                        self.setGoal(iPortugal, 1, 1)
-                                                else:
-                                                        self.setGoal(iPortugal, 1, 0)
+				# first goal: have open borders with 14 civilizations by 1550 AD
+                                if (self.getGoal(iPortugal, 0) == -1):
+					iCount = 0
+					for iLoopCiv in range(iNumMajorPlayers):
+					       if (iLoopCiv != iPortugal):
+							if (teamPortugal.isOpenBorders(iLoopCiv)):
+							       iCount += 1
+					if (iCount >= 14):                                                                    
+						self.setGoal(iPortugal, 0, 1)
 
-                                    
-
+				if iGameTurn == getTurnForYear(1550):
+					if self.getGoal(iPortugal, 0) == -1:
+						self.setGoal(iPortugal, 0, 0)
+						
+				# second goal: acquire 12 colonial resources by 1650 AD
+				if self.getGoal(iPortugal, 1) == -1:
+					iCount = 0
+					for iBonus in [con.iBanana, con.iSpices, con.iSugar, con.iCoffee, con.iTea]:
+						iCount += pPortugal.getNumAvailableBonuses(iBonus)
+					if iCount >= 12:
+						self.setGoal(iPortugal, 1, 1)
+						
+				if iGameTurn == getTurnForYear(1650):
+					if self.getGoal(iPortugal, 1) == -1:
+						self.setGoal(iPortugal, 1, 0)
+						
+				# third goal: control 15 cities in Brazil, Africa and Asia in 1700 AD
+				if iGameTurn == getTurnForYear(1700):
+					iCount = self.getNumCitiesInArea(iPortugal, tBrazilTL, tBrazilBR)
+					iCount += self.getNumCitiesInArea(iPortugal, tAfricaTL, tAfricaBR)
+					iCount += self.getNumCitiesInArea(iPortugal, tAsiaTL, tAsiaBR)
+					if iCount >= 15:
+						self.setGoal(iPortugal, 2, 1)
+					else:
+						self.setGoal(iPortugal, 2, 0)
 
                             
                         
@@ -4002,27 +4023,21 @@ class Victory:
 				
 		elif iPlayer == iPortugal:
 			if iGoal == 0:
-				lRevealedMap = con.l0Array
-				for iCiv in range(iNumPlayers):
-					if gc.getPlayer(iCiv).isAlive():
-	                                	for x in range(124):
-        	                        		for y in range(68):
-                	                			if (gc.getMap().plot(x, y).isRevealed(iCiv, False)):
-                        	        				lRevealedMap[iCiv] += 1
-				iBestCiv = iPortugal
-				for iCiv in range(iNumPlayers):
-					if lRevealedMap[iCiv] > lRevealedMap[iBestCiv]:
-						iBestCiv = iCiv
-				aHelp.append(self.getIcon(iBestCiv == iPortugal) + localText.getText("TXT_KEY_VICTORY_LARGEST_MAP", ()) + CyTranslator().getText(str(gc.getPlayer(iBestCiv).getCivilizationShortDescriptionKey()),()))
-			elif iGoal == 1:
 				iCount = 0
                                 for iLoopCiv in range(iNumMajorPlayers):
                                 	if (iLoopCiv != iPortugal):
                                 		if (teamPortugal.isOpenBorders(iLoopCiv)):
                                 			iCount += 1
 				aHelp.append(self.getIcon(iCount >= 14) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 14)))
+			elif iGoal == 1:
+				iCount = 0
+				for iBonus in [con.iBanana, con.iSpices, con.iSugar, con.iTobacco, con.iTea, con.iCoffee]:
+					iCount += pPortugal.getNumAvailableBonuses(iBonus)
+				aHelp.append(self.getIcon(iCount >= 12) + localText.getText("TXT_KEY_VICTORY_COLONIAL_RESOURCES", (iCount, 12)))
 			elif iGoal == 2:
-				iColonies = self.getPortugueseColonies()
+				iColonies = self.getNumCitiesInArea(iPortugal, tBrazilTL, tBrazilBR)
+				iColonies += self.getNumCitiesInArea(iPortugal, tAfricaTL, tAfricaBR)
+				iColonies += self.getNumCitiesInArea(iPortugal, tAsiaTL, tAsiaBR)
 				aHelp.append(self.getIcon(iColonies >= 15) + localText.getText("TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES", (iColonies, 15)))
 
 		elif iPlayer == iInca:

@@ -106,4 +106,9 @@
 		<English>Congolese Embassy</English>
 		<German>Kongolesische Botschaft</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIB_EMBASSY</Tag>
+		<English>Tibetan Embassy</English>
+		<German>Tibetische Botschaft</German>
+	</TEXT>
 </Civ4GameText>
