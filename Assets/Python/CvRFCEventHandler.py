@@ -686,10 +686,10 @@ class CvRFCEventHandler:
 			self.vic.onPlayerGoldTrade(iToPlayer, iGold)
 			
 	def onTradeMission(self, argsList):
-		iUnitType, iPlayer, iGold = argsList
+		iUnitType, iPlayer, iX, iY, iGold = argsList
 		
-		if iPlayer == con.iTamils:
-			self.vic.onTradeMission(iPlayer, iGold)
+		if iPlayer == con.iTamils or iPlayer == con.iMali:
+			self.vic.onTradeMission(iPlayer, iX, iY, iGold)
 		
 	def onPlayerSlaveTrade(self, argsList):
 		iPlayer, iGold = argsList

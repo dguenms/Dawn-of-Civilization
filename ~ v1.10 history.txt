@@ -32,7 +32,7 @@
 # added Congo
 # The Red Fort now requires Patronage and Engineering
 # spread probability of Catholicism and Protestantism ignores distance penalties for cities in the New World
-# Spanish spawn moved to 910 AD, Andalusia excluded from core
+# Andalusia excluded from Spanish core
 # The AI won't join generals to mercenaries anymore
 # The Apostolic Palace now only has full members (i.e. Catholic state religion only)
 # added slaves
@@ -62,7 +62,7 @@
 # Impis cannot pass deserts anymore
 # resources on selected islands (Mediterranean, Caribbean) can now be connected without building forts on them
 # new Phoenician UU: African War Elephant (War Elephant, requires only Horseback Riding, starts with Shock)
-# new Phoenician UB: Glassmaker (Market with +1 trade route, +50% trade route yield)
+# new Phoenician UB: Glassmaker (Market with +50% trade route yield)
 # reverted the Phoenician UP to the Power of Mercenaries: -50% mercenary hire and upkeep cost
 # gave additional starting techs to Phoenicia
 # fixed the Persian spawning zone with regards to Phoenicia
@@ -86,3 +86,9 @@
 # North American barbarians only start to spawn if cities are present in their area
 # renamed "The Malinese" to "The Mandinka" and changed their adjective to "Mande"
 # American Malls are now available with Electricity and have a merchant slot
+# new Portuguese UHV
+# naval units can't be flipped anymore and are destroyed instead
+# instead of receiving a settler from the trading company event, the AI immediately founds a city, to avoid culture problems
+# removed fish north of Ireland
+# added stone north of Timbuktu
+# new Mande UHV

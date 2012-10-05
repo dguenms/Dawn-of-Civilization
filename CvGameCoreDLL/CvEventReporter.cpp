@@ -446,9 +446,9 @@ void CvEventReporter::democracyTransition(PlayerTypes ePlayer)
 }
 
 // Leoreth: trade mission (great merchants)
-void CvEventReporter::tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iGold)
+void CvEventReporter::tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold)
 {
-	m_kPythonEventMgr.reportTradeMission(unitID, ePlayer, iGold);
+	m_kPythonEventMgr.reportTradeMission(unitID, ePlayer, iX, iY, iGold);
 }
 
 // Leoreth: slave trade (amount of gold received)

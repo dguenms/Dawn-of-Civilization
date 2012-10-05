@@ -127,7 +127,7 @@ public:
 	void postCommunism(PlayerTypes ePlayer); // Leoreth
 	void democracyTransition(PlayerTypes ePlayer); // Leoreth
 
-	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iGold); // Leoreth
+	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); // Leoreth
 	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
 
 	DllExport void preSave();

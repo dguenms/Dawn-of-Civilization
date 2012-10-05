@@ -124,7 +124,7 @@
 		<Italian>Devi controllare, nel 470 d.C., tutta l'area storicamente conosciuta come Impero Romano d'Occidente</Italian>
 		<Spanish>Controlar toda la zona conocida hist&#243;ricamente como Imperio Romano de occidente en el 470 d. C.</Spanish>
 	</TEXT>
-	<TEXT>
+	<!--TEXT>
 		<Tag>TXT_KEY_UHV_MAL2_EPIC</Tag>
 		<English>Have 6000 gold in 1500 AD</English>
 		<French>Avoir 6000 en or en 1500 ap. J.-C.</French>
@@ -163,7 +163,7 @@
 		<German>Verfügen Sie im Jahr 1700 n. Chr. über 4.500 Gold</German>
 		<Italian>Devi avere 4500 oro nel 1700 d.C.</Italian>
 		<Spanish>Tener 4.500 monedas de oro en el 1700 d. C.</Spanish>
-	</TEXT>
+	</TEXT-->
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC2_MARATHON</Tag>
 		<English>Have 9000 gold in 1700 AD</English>

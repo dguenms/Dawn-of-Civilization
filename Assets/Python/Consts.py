@@ -797,6 +797,56 @@ tGoals2 = (
 
 tGoals = (tGoals1, tGoals2)
 
+# Dawn of Man texts
+dawnOfMan = {
+iEgypt		:	"TXT_KEY_DOM_EGYPT",
+iIndia		:	"TXT_KEY_DOM_INDIA",
+iChina		:	"TXT_KEY_DOM_CHINA",
+iBabylonia	:	"TXT_KEY_DOM_BABYLONIA",
+iGreece		:	"TXT_KEY_DOM_GREECE",
+iCarthage	:	"TXT_KEY_DOM_PHOENICIA",
+iPersia		:	"TXT_KEY_DOM_PERSIA",
+iRome		:	"TXT_KEY_DOM_ROME",
+iTamils		:	"TXT_KEY_DOM_TAMILS",
+iEthiopia	:	"TXT_KEY_DOM_ETHIOPIA",
+iJapan		:	"TXT_KEY_DOM_JAPAN",
+iKorea		:	"TXT_KEY_DOM_KOREA",
+iMaya		:	"TXT_KEY_DOM_MAYA",
+iByzantium	:	"TXT_KEY_DOM_BYZANTIUM",
+iVikings	:	"TXT_KEY_DOM_VIKINGS",
+iArabia		:	"TXT_KEY_DOM_ARABIA",
+iTibet		:	"TXT_KEY_DOM_TIBET",
+iMoors		:	"TXT_KEY_DOM_MOORS",
+iIndonesia	:	"TXT_KEY_DOM_INDONESIA",
+iKhmer		:	"TXT_KEY_DOM_KHMER",
+iSpain		:	"TXT_KEY_DOM_SPAIN",
+iFrance		:	"TXT_KEY_DOM_FRANCE",
+iEngland	:	"TXT_KEY_DOM_ENGLAND",
+iHolyRome	:	"TXT_KEY_DOM_HOLY_ROME",
+iRussia		:	"TXT_KEY_DOM_RUSSIA",
+iMali		:	"TXT_KEY_DOM_MALI",
+iPoland		:	"TXT_KEY_DOM_POLAND",
+iItaly		:	"TXT_KEY_DOM_ITALY",
+iPortugal	:	"TXT_KEY_DOM_PORTUGAL",
+iInca		:	"TXT_KEY_DOM_INCA",
+iAztecs		:	"TXT_KEY_DOM_AZTECS",
+iMongolia	:	"TXT_KEY_DOM_MONGOLIA",
+iMughals	:	"TXT_KEY_DOM_MUGHALS",
+iTurkey		:	"TXT_KEY_DOM_TURKEY",
+iThailand	:	"TXT_KEY_DOM_THAILAND",
+iCongo		:	"TXT_KEY_DOM_CONGO",
+iNetherlands	:	"TXT_KEY_DOM_NETHERLANDS",
+iGermany	:	"TXT_KEY_DOM_GERMANY",
+iAmerica	:	"TXT_KEY_DOM_AMERICA",
+}
+
+dawnOfManLate = {
+iChina		:	"TXT_KEY_DOM_CHINA_LATE",
+iJapan		:	"TXT_KEY_DOM_JAPAN_LATE",
+iKorea		:	"TXT_KEY_DOM_KOREA_LATE",
+iByzantium	:	"TXT_KEY_DOM_BYZANTIUM_LATE",
+}
+
 
 iEurope = gc.getMap().plot(55, 50).getArea()
 iAfrica = gc.getMap().plot(72, 29).getArea()

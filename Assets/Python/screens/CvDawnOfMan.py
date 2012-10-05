@@ -141,13 +141,12 @@ class CvDawnOfMan:
 		
 		#Leoreth: imported individual texts from Sword of Islam (edead)
 		pActivePlayer = gc.getPlayer(CyGame().getActivePlayer())
-		textKey = "TXT_KEY_DAWN_OF_MAN_%d" %(CyGame().getActiveTeam()) # edead - civ-specific dawn of man
+		#textKey = "TXT_KEY_DAWN_OF_MAN_%d" %(CyGame().getActiveTeam()) # edead - civ-specific dawn of man
+		textKey = con.dawnOfMan[CyGame().getActiveTeam()]
 
 		if not gc.getPlayer(0).isPlayable() and CyGame().getActivePlayer() in [con.iChina, con.iJapan, con.iKorea, con.iByzantium]:
-			textKey = "TXT_KEY_DAWN_OF_MAN_LATE_%d" %(CyGame().getActiveTeam())
-			
-		#Leoreth: temporarily disable DoM texts
-		textKey = "Dawn of Man text temporarily disabled."
+			#textKey = "TXT_KEY_DAWN_OF_MAN_LATE_%d" %(CyGame().getActiveTeam())
+			textKey = con.dawnOfManLate[CyGame().getActiveTeam()]
 
 		bodyString = localText.getText(textKey, (self.player.getCivilizationAdjectiveKey(), self.player.getNameKey())) # edead
 

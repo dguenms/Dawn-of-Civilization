@@ -524,6 +524,11 @@ class RFCUtils:
 									unit.setXYOld(oldCapital.getX(), oldCapital.getY())
 								else:
 									unit.kill(False, con.iBarbarian)
+									
+									# Leoreth: can't flip naval units anymore
+									if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
+										continue
+									
 									if (bKillSettlers):
 										if ((unit.getUnitType() > iSettler)):
 											self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
@@ -1501,7 +1506,10 @@ class RFCUtils:
 		else:
 			gc.getMap().plot(x,y).setCulture(iCiv, 10, True)
 			gc.getMap().plot(x,y).setOwner(iCiv)
-			self.makeUnit(con.iSettler, iCiv, (x,y), 1)
+			if self.getHumanID() == iCiv:
+				self.makeUnit(con.iSettler, iCiv, (x,y), 1)
+			else:
+				gc.getPlayer(iCiv).found(x, y)
 			self.makeUnit(con.iWorker, iCiv, (x,y), 2)
 			if gc.getTeam(iCiv).isHasTech(con.iRifling):
 				if iCiv == con.iEngland:
