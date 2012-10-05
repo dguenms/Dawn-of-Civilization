@@ -2111,8 +2111,8 @@ class RiseAndFall:
 				
 				iThreshold = len(lTechPeers) / 2
 				
-				if iDeadCiv == iEgypt:
-					utils.debugTextPopup(str(lTechPeers))
+				#if iDeadCiv == iEgypt:
+				#	utils.debugTextPopup(str(lTechPeers))
 				
 				for iTech in range(con.iNumTechs):
 					iCount = 0
@@ -2122,7 +2122,7 @@ class RiseAndFall:
 						if gc.getTeam(iPeerCiv).isHasTech(iTech):
 							iCount += 1
 					if iCount >= iThreshold:
-						if iDeadCiv == iEgypt: utils.debugTextPopup(gc.getTechInfo(iTech).getText())
+						#if iDeadCiv == iEgypt: utils.debugTextPopup(gc.getTechInfo(iTech).getText())
 						teamDeadCiv.setHasTech(iTech, True, iDeadCiv, False, False)
 					
 

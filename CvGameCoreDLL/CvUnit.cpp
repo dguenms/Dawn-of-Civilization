@@ -6051,6 +6051,12 @@ int CvUnit::getTradeGold(const CvPlot* pPlot) const
 	iGold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitTradePercent();
 	iGold /= 100;
 
+	// Leoreth: to help Mali
+	if (pCity->isHolyCity())
+	{
+		iGold = std::min(iGold*2, 2000);
+	}
+
 	return std::max(0, iGold);
 }
 
@@ -6115,7 +6121,7 @@ bool CvUnit::trade()
 
 	GET_PLAYER(getOwnerINLINE()).changeGold(getTradeGold(plot()));
 
-	CvEventReporter::getInstance().tradeMission(getUnitType(), getOwnerINLINE(), getTradeGold(plot()));
+	CvEventReporter::getInstance().tradeMission(getUnitType(), getOwnerINLINE(), getX(), getY(), getTradeGold(plot()));
 
 	if (plot()->isActiveVisible(false))
 	{

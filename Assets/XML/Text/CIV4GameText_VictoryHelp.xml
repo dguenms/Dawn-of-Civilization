@@ -476,4 +476,8 @@
 		<Tag>TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED</Tag>
 		<English>Great prophets settled in %s1_city: %d2 / %d3</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SANKORE_PROPHETS</Tag>
+		<English>Great prophets settled in the Sankore city: %d1 / %d2</English>
+	</TEXT>
 </Civ4GameText>

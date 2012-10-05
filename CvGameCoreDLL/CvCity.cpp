@@ -2098,7 +2098,10 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 
 		if (iCapitalContinent != iCityContinent && !bException)
 		{
-			return false;
+			if (!GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)ASTRONOMY))
+			{
+				return false;
+			}
 		}
 	}
 

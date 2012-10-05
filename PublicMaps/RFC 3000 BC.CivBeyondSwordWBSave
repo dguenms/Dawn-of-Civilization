@@ -372,7 +372,8 @@ BeginPlayer
 	Team=25                 
 	PlayableCiv=1              
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR             
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR  
+	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -18836,7 +18837,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=59
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -20918,6 +20918,7 @@ EndPlot
 BeginPlot
 	x=55,y=32
 	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_STONE
 	PlotType=2
 EndPlot
 BeginPlot

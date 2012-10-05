@@ -521,6 +521,12 @@ class Victory:
 		
 	def changeCongoSlaveCounter(self, iChange):
 		sd.scriptDict['iCongoSlaveCounter'] += iChange
+		
+	def getMaliGold(self):
+		return sd.scriptDict['bMaliGold']
+		
+	def setMaliGold(self, bValue):
+		sd.scriptDict['bMaliGold'] = bValue
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -1745,34 +1751,68 @@ class Victory:
                 elif (iPlayer == iMali):
                         if (pMali.isAlive()):
 
-                                if (iGameTurn == getTurnForYear(1300)-10): #temporary fix, they use too many specialist and make Mali UHV very hard
-                                        if (not pFrance.isHuman()):
-                                                if (pFrance.getGold() > utils.getTurns(2000)):
-                                                        pFrance.setGold(pFrance.getGold()*50/100)
-                                                elif (pFrance.getGold() > utils.getTurns(1000)):
-                                                        pFrance.setGold(pFrance.getGold()*70/100)
+                                #if (iGameTurn == getTurnForYear(1300)-10): #temporary fix, they use too many specialist and make Mali UHV very hard
+                                #        if (not pFrance.isHuman()):
+                                #                if (pFrance.getGold() > utils.getTurns(2000)):
+                                #                        pFrance.setGold(pFrance.getGold()*50/100)
+                                #                elif (pFrance.getGold() > utils.getTurns(1000)):
+                                #                        pFrance.setGold(pFrance.getGold()*70/100)
                                                         
 
-                                if (iGameTurn == getTurnForYear(1300)):
-                                        iGold = pMali.getGold()
-                                        for iCiv in range(iNumPlayers):
-                                                if (iCiv != iMali and gc.getPlayer(iCiv).isAlive()):
-                                                        if (gc.getPlayer(iCiv).getGold() > iGold):
-                                                               self.setGoal(iMali, 0, 0)
-                                                               return
-                                        self.setGoal(iMali, 0, 1)
+                                #if (iGameTurn == getTurnForYear(1300)):
+                                #        iGold = pMali.getGold()
+                                #        for iCiv in range(iNumPlayers):
+                                #                if (iCiv != iMali and gc.getPlayer(iCiv).isAlive()):
+                                #                        if (gc.getPlayer(iCiv).getGold() > iGold):
+                                #                               self.setGoal(iMali, 0, 0)
+                                #                               return
+                                #        self.setGoal(iMali, 0, 1)
                                  
-                                if (iGameTurn == getTurnForYear(1500)):
-                                        if (pMali.getGold() >= utils.getTurns(4000)):
-                                                self.setGoal(iMali, 1, 1)
-                                        else:
-                                                self.setGoal(iMali, 1, 0)
+                                #if (iGameTurn == getTurnForYear(1500)):
+                                #        if (pMali.getGold() >= utils.getTurns(4000)):
+                                #                self.setGoal(iMali, 1, 1)
+                                #        else:
+                                #                self.setGoal(iMali, 1, 0)
                                                 
-                                if (iGameTurn == getTurnForYear(1700)):
-                                        if (pMali.getGold() >= utils.getTurns(16000)):
-                                                self.setGoal(iMali, 2, 1)
-                                        else:
-                                                self.setGoal(iMali, 2, 0)
+                                #if (iGameTurn == getTurnForYear(1700)):
+                                #        if (pMali.getGold() >= utils.getTurns(16000)):
+                                #                self.setGoal(iMali, 2, 1)
+                                #        else:
+                                #                self.setGoal(iMali, 2, 0)
+				
+				# first goal: conduct a trade mission to your holy city by 1350 AD
+				if iGameTurn == getTurnForYear(1350):
+					if self.getGoal(iMali, 0) == -1:
+						self.setGoal(iMali, 0, 0)
+						
+				if self.getGoal(iMali, 1) == -1:
+					#iGreatProphet = gc.getInfoTypeForString("SPECIALIST_GREAT_PRIEST")
+					for pCity in PyPlayer(iMali).getCityList():
+						city = pCity.GetCy()
+						if city.isHasRealBuilding(con.iSankore):
+							if city.getFreeSpecialistCount(iGreatProphet) >= 1:
+								self.setGoal(iMali, 1, 1)
+								break
+								
+				# second goal: build the University of Sankore and settle two great prophets in its city
+				if iGameTurn == getTurnForYear(1500):
+					if self.getGoal(iMali, 1) == -1:
+						self.setGoal(iMali, 1, 0)
+						
+				# third goal: have 6000 gold in 1500 AD and 15000 gold in 1700 AD
+				if iGameTurn == getTurnForYear(1500):
+					if pMali.getGold() >= utils.getTurns(5000):
+						self.setMaliGold(True)
+					else:
+						self.setGoal(iMali, 2, 0)
+						
+				if iGameTurn == getTurnForYear(1700):
+					if pMali.getGold() >= utils.getTurns(15000):
+						if self.getMaliGold():
+							self.setGoal(iMali, 2, 1)
+					else:
+						self.setGoal(iMali, 2, 0)
+				
 						
 		elif iPlayer == iPoland:
 			if pPoland.isAlive():
@@ -2314,12 +2354,12 @@ class Victory:
                                         if (bSiberia):
                                                 self.setGoal(iRussia, 0, 1)
 
-                elif (iPlayer == iPortugal):
-                        if (self.getGoal(iPortugal, 2) == -1):
-                                if (not (city.getX() >= tEuropeTL[0] and city.getX() <= tEuropeBR[0] and city.getY() >= tEuropeTL[1] and city.getY() <= tEuropeBR[1])):
-                                        self.setPortugueseColonies(self.getPortugueseColonies() + 1)
-                                        if (self.getPortugueseColonies() >= 15):
-                                                self.setGoal(iPortugal, 2, 1)
+                #elif (iPlayer == iPortugal):
+                #        if (self.getGoal(iPortugal, 2) == -1):
+                #                if (not (city.getX() >= tEuropeTL[0] and city.getX() <= tEuropeBR[0] and city.getY() >= tEuropeTL[1] and city.getY() <= tEuropeBR[1])):
+                #                        self.setPortugueseColonies(self.getPortugueseColonies() + 1)
+                #                        if (self.getPortugueseColonies() >= 15):
+                #                                self.setGoal(iPortugal, 2, 1)
 						
 		elif iPlayer == iTibet:
 			if self.getGoal(iTibet, 0) == -1:
@@ -3011,6 +3051,10 @@ class Victory:
 		if iBuilding == con.iGreatCothon:
 			if iPlayer != iCarthage:
 				self.setGoal(iCarthage, 0, 0)
+				
+		if iBuilding == con.iSankore:
+			if iPlayer != iMali:
+				self.setGoal(iMali, 1, 0)
 
 
                             
@@ -3132,9 +3176,21 @@ class Victory:
 			if self.getGoal(iCongo, 1) == -1 and self.getCongoSlaveCounter() >= utils.getTurns(1000):
 				self.setGoal(iCongo, 1, 1)
 			
-	def onTradeMission(self, iPlayer, iGold):
+	def onTradeMission(self, iPlayer, iX, iY, iGold):
 		if iPlayer == iTamils:
 			self.changeTamilTradeGold(iGold)
+			
+		elif iPlayer == iMali:
+			iStateReligion = pMali.getStateReligion()
+			#utils.debugTextPopup('Mande state religion ' + str(gc.getReligionInfo(iStateReligion).getText()))
+			if iStateReligion != -1:
+				pHolyCity = gc.getGame().getHolyCity(iStateReligion)
+				
+				#utils.debugTextPopup('Holy city: ' + str(pHolyCity.getX()) + ', ' + str(pHolyCity.getY()))
+				#utils.debugTextPopup('Trader location: ' + str(iX) + ', ' + str(iY))
+				
+				if pHolyCity.getX() == iX and pHolyCity.getY() == iY:
+					self.setGoal(iMali, 0, 1)
 
         def calculateTopCityCulture(self, x, y):
                 iBestCityValue = 0
@@ -3990,15 +4046,32 @@ class Victory:
 				aHelp.append(self.getIcon(iSpices >= 7) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_SPICE_RESOURCES", (iSpices, 7)))
 
 		elif iPlayer == iMali:
-			if iGoal == 0:
-				iMostGoldCiv = self.getMostGoldCiv(iMali)
-				aHelp.append(self.getIcon(iMostGoldCiv == iMali) + localText.getText("TXT_KEY_VICTORY_RICHEST_CIVILIZATION", ()) + CyTranslator().getText(str(gc.getPlayer(iMostGoldCiv).getCivilizationShortDescriptionKey()),()))
-			elif iGoal == 1:
-				iGold = pMali.getGold()
-				aHelp.append(self.getIcon(iGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(4000))))
+			if iGoal == 1:
+				bSankore = False
+				iProphets = 0
+				#iGreatProphet = gc.getInfoTypeForString("SPECIALIST_GREAT_PRIEST")
+				for pCity in PyPlayer(iMali).getCityList():
+					city = pCity.GetCy()
+					if city.isHasRealBuilding(con.iSankore):
+						bSankore = True
+						iProphets = city.getFreeSpecialistCount(iGreatProphet)
+						break
+				aHelp.append(self.getIcon(bSankore) + localText.getText("TXT_KEY_BUILDING_SANKORE", ()) + ' ' + self.getIcon(iProphets >= 1) + localText.getText("TXT_KEY_VICTORY_SANKORE_PROPHETS", (iProphets, 1)))
 			elif iGoal == 2:
 				iGold = pMali.getGold()
-				aHelp.append(self.getIcon(iGold >= utils.getTurns(16000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(16000))))
+				if self.getMaliGold():
+					aHelp.append(self.getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED", ()) + ' ' + self.getIcon(iGold >= utils.getTurns(15000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(15000))))
+				else:
+					aHelp.append(self.getIcon(iGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(5000))) + ' ' + self.getIcon(iGold >= utils.getTurns(15000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(15000))))
+			#if iGoal == 0:
+			#	iMostGoldCiv = self.getMostGoldCiv(iMali)
+			#	aHelp.append(self.getIcon(iMostGoldCiv == iMali) + localText.getText("TXT_KEY_VICTORY_RICHEST_CIVILIZATION", ()) + CyTranslator().getText(str(gc.getPlayer(iMostGoldCiv).getCivilizationShortDescriptionKey()),()))
+			#elif iGoal == 1:
+			#	iGold = pMali.getGold()
+			#	aHelp.append(self.getIcon(iGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(4000))))
+			#elif iGoal == 2:
+			#	iGold = pMali.getGold()
+			#	aHelp.append(self.getIcon(iGold >= utils.getTurns(16000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(16000))))
 
 		elif iPlayer == iPoland:
 			if iGoal == 0:

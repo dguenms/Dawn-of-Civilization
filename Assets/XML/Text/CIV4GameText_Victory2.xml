@@ -462,25 +462,41 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL1</Tag>
-		<English>Have the most gold in the world in 1300 AD</English>
+		<English>Conduct a trade mission to your holy city by 1350 AD</English>
 		<French>Avoir le plus d'or en 1300 ap. J.-C.</French>
-		<German>Verfügen Sie im Jahr 1300 n. Chr. weltweit über das meiste Gold</German>
+		<German>Führen Sie bis zum Jahr 1350 n. Chr. eine Handelsmission zu Ihrer heiligen Stadt durch</German>
 		<Italian>Devi avere la più grossa quantità di oro al mondo nel 1300 d.C.</Italian>
 		<Spanish>Tener más oro que nadie en el 1300 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL2</Tag>
-		<English>Have 4000 gold in 1500 AD</English>
+		<English>Build the University of Sankore and settle a great prophet in its city by 1500 AD</English>
 		<French>Avoir 4000 en or en 1500 ap. J.-C.</French>
-		<German>Verfügen Sie im Jahr 1500 n. Chr. über 4.000 Gold</German>
+		<German>Bauen Sie bis zum Jahr die Universität von Sankore und siedeln Sie einen großen Propheten in ihrer Stadt an</German>
 		<Italian>Devi avere 4.000 oro nel 1500 d.C.</Italian>
 		<Spanish>Tener 4.000 monedas de oro en el 1500 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL3</Tag>
-		<English>Have 16000 gold in 1700 AD</English>
+		<English>Have 5000 gold in 1500 AD and 15000 gold in 1700 AD</English>
 		<French>Avoir 16000 en or en 1700 ap. J.-C.</French>
-		<German>Verfügen Sie im Jahr 1700 n. Chr. über 16.000 Gold</German>
+		<German>Verfügen Sie im Jahr 1500 n. Chr. über 5000 Gold und im Jahr 1700 n. Chr. über 15.000 Gold</German>
+		<Italian>Devi avere 16.000 oro nel 1700 d.C.</Italian>
+		<Spanish>Tener 16.000 monedas de oro en el 1700 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL3_EPIC</Tag>
+		<English>Have 7500 gold in 1500 AD and 27500 gold in 1700 AD</English>
+		<French>Avoir 16000 en or en 1700 ap. J.-C.</French>
+		<German>Verfügen Sie im Jahr 1500 n. Chr. über 7500 Gold und im Jahr 1700 n. Chr. über 27.500 Gold</German>
+		<Italian>Devi avere 16.000 oro nel 1700 d.C.</Italian>
+		<Spanish>Tener 16.000 monedas de oro en el 1700 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL3_MARATHON</Tag>
+		<English>Have 15000 gold in 1500 AD and 45000 gold in 1700 AD</English>
+		<French>Avoir 16000 en or en 1700 ap. J.-C.</French>
+		<German>Verfügen Sie im Jahr 1500 n. Chr. über 15000 Gold und im Jahr 1700 n. Chr. über 45.000 Gold</German>
 		<Italian>Devi avere 16.000 oro nel 1700 d.C.</Italian>
 		<Spanish>Tener 16.000 monedas de oro en el 1700 d. C.</Spanish>
 	</TEXT>

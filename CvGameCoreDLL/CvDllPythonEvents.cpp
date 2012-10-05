@@ -1215,7 +1215,7 @@ void CvDllPythonEvents::reportDemocracyTransition(PlayerTypes ePlayer)
 }
 
 // Leoreth: trade mission (great merchant)
-void CvDllPythonEvents::reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iGold)
+void CvDllPythonEvents::reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold)
 {
 	if (preEvent())
 	{
@@ -1224,6 +1224,8 @@ void CvDllPythonEvents::reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer
 
 		eventData.add((int)unitID);
 		eventData.add((int)ePlayer);
+		eventData.add((int)iX);
+		eventData.add((int)iY);
 		eventData.add(iGold);
 
 		postEvent(eventData);
