@@ -445,7 +445,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Tag>
-		<English>Free specialist for all cities close to your capital; increased city maintenance</English>
+		<English>Specialists produce food if city works less than seven tiles; increased city maintenance</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SELF_SUFFICIENCY_STRATEGY</Tag>

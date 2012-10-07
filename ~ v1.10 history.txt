@@ -92,3 +92,4 @@
 # removed fish north of Ireland
 # added stone north of Timbuktu
 # new Mande UHV
+# reduced Russian Research Institute to one free scientist

@@ -156,4 +156,20 @@
 		<Tag>TXT_KEY_DOM_AMERICA</Tag>
 		<English>It is the year 1776 AD. Discontent with foreign domination, the people in the American colonies have risen up in revolution to found their own nation. However, their fledgling republic is still in danger of being reclaimed by European colonial powers and has to surpass its former masters to fulfill its manifest destiny.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_TAMILS</Tag>
+		<English>It is the year 300 BC. With the development of their Sangam literature, the Tamil culture rises to the south of India. Their position close to both China and Rome as well as the availability of valuable spices have made the local dynasties of the Cheras, Pandyans and Cholas affluent centers of trade.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_MOORS</Tag>
+		<English>It is the year 711 AD. The Berbers and Arabs of the Maghreb have crossed the Strait of Gibraltar and defeated the Visigoths to establish the Emirate of Cordoba in Al-Andalus, driving the Iberian Christians to the northern coast of Asturias.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_POLAND</Tag>
+		<English>It is the year 1025 AD. After the Christianization of the West Slavs in 966, the first Polish ruler is coronated as king. Fertile lands promise urban growth, while pagan neighbors to the north and declining Orthodox polities to the east offer opportunities for expansion.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_CONGO</Tag>
+		<English>It is the year 1390 AD. The Kingdom of Kongo emerges after the unification of several tribal polities in the Congo delta just when European powers start to expand their influence in Africa. It must try to keep its independence by both religious and economic means.</English>
+	</TEXT>
 </Civ4GameText>

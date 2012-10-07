@@ -6303,6 +6303,16 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				}
 			}
 		}
+		else if (eBuilding == SANKORE)
+		{
+			if (GET_PLAYER((PlayerTypes)MALI).isHuman())
+			{
+				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(1400))
+				{
+					return false;
+				}
+			}
+		}
 	}
 
 	return true;
