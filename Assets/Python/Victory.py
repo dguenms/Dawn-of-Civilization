@@ -921,9 +921,9 @@ class Victory:
 					else:
 						self.setGoal(iCarthage, 1, 0)
 				
-				# Leoreth: third goal: have the highest commerce output in the world in 200 AD
+				# Leoreth: third goal: have 5000 gold in 200 AD
 				if iGameTurn == getTurnForYear(200):
-					if self.getHighestAverageCommerceCiv(iCarthage) == iCarthage:
+					if pCarthage.getGold >= utils.getTurns(5000):
 						self.setGoal(iCarthage, 2, 1)
 					else:
 						self.setGoal(iCarthage, 2, 0)
@@ -3695,8 +3695,8 @@ class Victory:
 				bIberia = self.isControlled(iCarthage, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iSpain])
 				aHelp.append(self.getIcon(bItaly) + localText.getText("TXT_KEY_VICTORY_ITALY", ()) + ' ' + self.getIcon(bIberia) + localText.getText("TXT_KEY_VICTORY_IBERIA_CARTHAGE", ()))
 			elif iGoal == 2:
-				iHighestCommerceCiv = self.getHighestAverageCommerceCiv(iCarthage)
-				aHelp.append(self.getIcon(iHighestCommerceCiv == iCarthage) + localText.getText("TXT_KEY_VICTORY_HIGHEST_COMMERCE_CIV", (str(gc.getPlayer(iHighestCommerceCiv).getCivilizationShortDescriptionKey()),)))
+				iGold = pCarthage.getGold()
+				aHelp.append(self.getIcon(iGold >= utils.getTurns()) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(5000))))
 				
 
 		elif iPlayer == iRome:

@@ -2105,7 +2105,7 @@ class RiseAndFall:
 				#		lTechPeers.remove(iPeerCiv)
 						
 				#lTechPeers.append(iBarbarian)
-				if len(lTechPeers) == 0:
+				if len(lTechPeers) < 2:
 					lTechPeers.append(iIndependent)
 					lTechPeers.append(iIndependent2)
 				
@@ -2116,8 +2116,8 @@ class RiseAndFall:
 				
 				for iTech in range(con.iNumTechs):
 					iCount = 0
-					if iThreshold < 1:
-						iCount = 1
+					#if iThreshold < 1:
+					#	iCount = 1
 					for iPeerCiv in lTechPeers:
 						if gc.getTeam(iPeerCiv).isHasTech(iTech):
 							iCount += 1

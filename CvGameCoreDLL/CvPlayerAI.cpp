@@ -3416,6 +3416,18 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	//Leoreth: take war maps into account here as well
 	iValue += warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] / 2;
 
+	// Leoreth: no Poland, don't conquer Central Asia
+	if (getID() == POLAND)
+	{
+		if (pCity->getOwner() >= NUM_PL)
+		{
+			if (warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] == 0)
+			{
+				iValue /= 2;
+			}
+		}
+	}
+
 	if (getID() == MONGOLIA)
 	{
 		if (pCity->getOwner() == CHINA)

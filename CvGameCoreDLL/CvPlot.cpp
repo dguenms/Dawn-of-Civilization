@@ -6436,6 +6436,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	if (bCity)
 	{
 		iYield = std::max(iYield, GC.getYieldInfo(eYield).getMinCity());
+		int iAppliedImprovement = -1;
 
 		// Leoreth (edead): city counts as correct improvement wrt. bonus yields, except food
 		if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && eYield != (YieldTypes)0)
@@ -6448,15 +6449,21 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 					{
 						if (GC.getBuildInfo((BuildTypes)iBuild).getImprovement() == iImprovement && GET_TEAM((TeamTypes)ePlayer).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes)iBuild).getTechPrereq()))
 						{
-							iYield += calculateImprovementYieldChange((ImprovementTypes)iImprovement, eYield, ePlayer);
-							break;
-							break;
-							break;
-							break;
+							if (GC.getBuildInfo((BuildTypes)iBuild).isKill())
+							{
+								iAppliedImprovement = iImprovement;
+								break;
+								break;
+							}
 						}
 					}
 				}
 			}
+		}
+
+		if (iAppliedImprovement != -1)
+		{
+			iYield += calculateImprovementYieldChange((ImprovementTypes)iAppliedImprovement, eYield, ePlayer);
 		}
 	}
 
