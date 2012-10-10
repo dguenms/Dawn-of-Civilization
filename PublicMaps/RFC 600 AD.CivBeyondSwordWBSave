@@ -19911,7 +19911,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=49
-	BonusType=BONUS_WHEAT
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -20261,20 +20261,21 @@ BeginPlot
 	x=53,y=45
 	isWOfRiver
 	RiverNSDirection=2
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=53,y=46
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=53,y=47
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_WINE
 	PlotType=2
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -21050,11 +21051,11 @@ EndPlot
 BeginPlot
 	x=55,y=46
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=2
 EndPlot
 BeginPlot
 	x=55,y=47
-	BonusType=BONUS_HORSE
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	RouteType=ROUTE_ROAD
@@ -21066,7 +21067,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=49
-	BonusType=BONUS_WINE
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -21443,7 +21443,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=48
-	BonusType=BONUS_IRON
+	BonusType=BONUS_WINE
 	isWOfRiver
 	RiverNSDirection=2
 	TerrainType=TERRAIN_GRASS
@@ -21810,6 +21810,7 @@ EndPlot
 BeginPlot
 	x=57,y=48
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_IRON
 	PlotType=1
 EndPlot
 BeginPlot
@@ -40039,7 +40040,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=41
-	BonusType=BONUS_TEA
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -40447,6 +40447,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=41
+	BonusType=BONUS_TEA
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

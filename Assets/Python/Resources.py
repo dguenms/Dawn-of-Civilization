@@ -124,6 +124,9 @@ class Resources:
 			gc.getMap().plot(95, 43).setBonusType(iWheat)
 			gc.getMap().plot(97, 44).setBonusType(iHorse)
 			
+		if iGameTurn == getTurnForYear(900):
+			gc.getMap().plot(71, 34).setBonusType(con.iIron)
+			
                     
                 if (iGameTurn == getTurnForYear(1100)):
                         #gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt

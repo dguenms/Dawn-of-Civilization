@@ -5410,7 +5410,8 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 							}
 						}
 
-						for (iI = 0; iI < GC.getNumCorporationInfos(); ++iI)
+						// Leoreth: don't found corporations from techs
+						/*for (iI = 0; iI < GC.getNumCorporationInfos(); ++iI)
 						{
 							if (GC.getCorporationInfo((CorporationTypes)iI).getTechPrereq() == eIndex)
 							{
@@ -5450,7 +5451,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 									}
 								}
 							}
-						}
+						}*/
 					}
 				}
 			}

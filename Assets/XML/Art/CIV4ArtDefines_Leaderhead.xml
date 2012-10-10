@@ -797,7 +797,7 @@
 			<NIF>art/LeaderHeads/rajendra/Justinian.nif</NIF>
 			<KFM>art/LeaderHeads/rajendra/Justinian.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/rajendra/Justinian_NONSHADER.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/rajendra/Justinian_Background.kfm</BackgroundKFM>
+			<BackgroundKFM>art/LeaderHeads/rajendra/kublai_khan_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_MBEMBA</Type>
@@ -806,6 +806,46 @@
 			<KFM>Art/Leaderheads/Mbemba/Arawak.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/Mbemba/Arawak.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Mbemba/kublai_khan_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_HARUN</Type>
+			<Button>Art/Leaderheads/Harun al-Rashid/btn_lh_arabia_harun.dds</Button>
+			<NIF>Art/Leaderheads/Harun al-Rashid/julius_caesar.nif</NIF>
+			<KFM>Art/Leaderheads/Harun al-Rashid/julius_caesar.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Harun al-Rashid/julius_caesar.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Harun al-Rashid/cyrus_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_YAQUB</Type>
+			<Button>Art/LeaderHeads/Idris2/Button_Idris2.dds</Button>
+			<NIF>Art/LeaderHeads/Idris2/Suleiman.nif</NIF>
+			<KFM>Art/LeaderHeads/Idris2/Suleiman.kfm</KFM>
+			<NoShaderNIF>Art/LeaderHeads/Idris2/Suleiman_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>Art/LeaderHeads/Idris2/Suleiman_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SONGTSEN</Type>
+			<Button>Art/Leaderheads/Songtsen/Btn_Ogedei.dds</Button>
+			<NIF>Art/Leaderheads/Songtsen/yu.nif</NIF>
+			<KFM>Art/Leaderheads/Songtsen/wang_kon.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Songtsen/yu.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Songtsen/Wang_Kon_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CASIMIR</Type>
+			<Button>Art/Leaderheads/Casimir/Btn_LH_Poland_Casimir.dds</Button>
+			<NIF>Art/Leaderheads/Casimir/casimir.nif</NIF>
+			<KFM>Art/Leaderheads/Casimir/casimir.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Casimir/casimir.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Casimir/casimir_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_LORENZO</Type>
+			<Button>art/LeaderHeads/Sforza/btn_lh_genoa_boccanegra.dds</Button>
+			<NIF>art/LeaderHeads/Sforza/Charlemagne.nif</NIF>
+			<KFM>art/LeaderHeads/Sforza/Charlemagne.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Sforza/Charlemagne.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Sforza/Charlemagne_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

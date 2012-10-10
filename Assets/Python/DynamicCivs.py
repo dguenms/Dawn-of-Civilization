@@ -291,6 +291,7 @@ class DynamicCivs:
 				iByzantium : "TXT_KEY_CIV_BYZANTIUM_CHINESE_VASSAL",
 				iVikings : "TXT_KEY_CIV_VIKINGS_CHINESE_VASSAL",
 				iArabia : "TXT_KEY_CIV_ARABIA_CHINESE_VASSAL",
+				iTibet : "TXT_KEY_CIV_TIBET_CHINESE_VASSAL",
 				iKhmer : "TXT_KEY_CIV_KHMER_CHINESE_VASSAL",
 				iIndonesia : "TXT_KEY_CIV_INDONESIA_CHINESE_VASSAL",
 				iSpain : "TXT_KEY_CIV_SPAIN_CHINESE_VASSAL",
@@ -406,7 +407,7 @@ class DynamicCivs:
 				iVikings : "TXT_KEY_CIV_VIKINGS_SPANISH_VASSAL",
 				iKhmer : "TXT_KEY_CIV_KHMER_SPANISH_VASSAL",
 				iIndonesia : "TXT_KEY_CIV_INDONESIA_SPANISH_VASSAL",
-				iIndonesia : "TXT_KEY_CIV_MOORS_SPANISH_VASSAL",
+				iMoors : "TXT_KEY_CIV_MOORS_SPANISH_VASSAL",
 				iFrance : "TXT_KEY_CIV_FRANCE_SPANISH_VASSAL",
 				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_SPANISH_VASSAL",
 				iMali : "TXT_KEY_CIV_MALI_SPANISH_VASSAL",
@@ -800,8 +801,8 @@ class DynamicCivs:
 			iMaya : con.iPacal,
 			iByzantium : con.iJustinian,
 			iVikings : con.iRagnar,
-			iArabia : con.iAbuBakr,
-			iTibet : con.iLobsangGyatso,
+			iArabia : con.iHarun,
+			iTibet : con.iSongtsen,
 			iKhmer : con.iSuryavarman,
 			iIndonesia : con.iDharmasetu,
 			iMoors : con.iRahman,
@@ -812,10 +813,10 @@ class DynamicCivs:
 			iRussia : con.iYaroslav,
 			iNetherlands : con.iWillemVanOranje,
 			iMali : con.iMansaMusa,
-			iPoland : con.iSobieski,
+			iPoland : con.iCasimir,
 			iPortugal : con.iAfonso,
 			iInca : con.iHuaynaCapac,
-			iItaly : con.iCavour,
+			iItaly : con.iLorenzo,
 			iMongolia : con.iGenghisKhan,
 			iAztecs : con.iMontezuma,
 			iMughals : con.iTughluq,
@@ -936,7 +937,7 @@ class DynamicCivs:
 		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
 		elif iPlayer == iItaly: iThreshold = 4
 		elif iPlayer == iInca: iThreshold = 3
-		elif iPlayer == iMongolia: iThreshold = 10
+		elif iPlayer == iMongolia: iThreshold = 6
 		elif iPlayer == iPoland: iThreshold = 3
 		elif iPlayer == iMoors: iThreshold = 3
 		elif iPlayer == iTibet: iThreshold = 2
@@ -1451,8 +1452,18 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_SULTANATE")
 				return
 				
+			bSpain = True
+			if pMoors.isAlive():
+				moorishCapital = gc.getPlayer(iMoors).getCapitalCity()
+				if utils.isPlotInArea((moorishCapital.getX(), moorishCapital.getY()), vic.tIberiaTL, vic.tIberiaBR):
+					bSpain = False
+				
 			if bEmpire and iEra > iMedieval:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_EMPIRE")
+				if bSpain:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_EMPIRE")
+					return
+					
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_CASTILIAN_EMPIRE")
 				return
 				
 			if (capital.getName() == "Barcelona" or capital.getName() == "Valencia") and iEra == iMedieval:
@@ -1779,7 +1790,7 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iNasser)
 				return
 			
-			if bResurrected:
+			if bResurrected or not gc.getPlayer(0).isPlayable():
 				self.setLeader(iPlayer, con.iBaibars)
 				return
 				
@@ -1901,6 +1912,12 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iSaladin)
 				return
 				
+		elif iPlayer == iTibet:
+		
+			if iGameTurn >= getTurnForYear(1500):
+				self.setLeader(iPlayer, con.iLobsangGyatso)
+				return
+				
 		elif iPlayer == iKhmer:
 			return
 			
@@ -1912,6 +1929,14 @@ class DynamicCivs:
 				
 			if bEmpire:
 				self.setLeader(iPlayer, con.iHayamWuruk)
+				return
+				
+		elif iPlayer == iMoors:
+			
+			bAndalusia = utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR)
+			
+			if not bAndalusia:
+				self.setLeader(iPlayer, con.iYaqub)
 				return
 				
 		elif iPlayer == iSpain:
@@ -1987,7 +2012,10 @@ class DynamicCivs:
 			return
 			
 		elif iPlayer == iPoland:
-			return
+		
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iSobieski)
+				return
 			
 		elif iPlayer == iPortugal:
 		
@@ -2003,11 +2031,14 @@ class DynamicCivs:
 			return
 			
 		elif iPlayer == iItaly:
-			return
+		
+			if iEra >= con.iIndustrial:
+				self.setLeader(iPlayer, con.iCavour)
+				return
 			
 		elif iPlayer == iMongolia:
 		
-			if iEra >= con.iRenaissance:
+			if iGameTurn >= getTurnForYear(1400):
 				self.setLeader(iPlayer, con.iKublaiKhan)
 				return
 				

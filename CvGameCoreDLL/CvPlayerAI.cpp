@@ -5751,9 +5751,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case SPAIN:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == RIFLING || iI == OPTICS)
-										iValue *= 2;
-									if (iI == ASTRONOMY)
+									if (iI == OPTICS || iI == ASTRONOMY)
+										iValue *= 5;
+									if (iI == RIFLING)
 										iValue *= 3;
 									if (iI == GUILDS || iI == GUNPOWDER || iI == CHEMISTRY) {
 										iValue *= 3;
@@ -5766,7 +5766,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case FRANCE:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS || iI == PATRONAGE)
+									if (iI == ASTRONOMY || iI == ECONOMICS || iI == PATRONAGE)
 										iValue *= 2;
 									if (iI == DRAMA || iI == MUSIC || iI == GUILDS || iI == CHEMISTRY) {
 										iValue *= 3;
@@ -5779,6 +5779,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 5;
 										iValue /= 4;
 									}
+									if (iI == RIFLING)
+										iValue *= 3;
 									break;
 								case ENGLAND:
 									if (iI == MEDITATION)
@@ -5786,7 +5788,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == ECONOMICS || iI == ASTRONOMY)
 										iValue *= 3;
 									if (iI == RIFLING)
-										iValue *= 2;
+										iValue *= 3;
 									if (iI == LITERATURE || iI == DRAMA || iI == GUILDS || iI == ECONOMICS || iI == CHEMISTRY) {
 										iValue *= 3;
 										iValue /= 2;
@@ -5806,7 +5808,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == DIVINERIGHT) {
+									if (iI == DIVINERIGHT || iI == RIFLING) {
 										iValue *= 2;
 									}
 									if (iI == FISSION) {
@@ -5817,7 +5819,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case RUSSIA:
 									if (iI == COMMUNISM)
 										iValue *= 3;
-									if (iI == MILITARY_SCIENCE)
+									if (iI == MILITARY_SCIENCE || iI == RIFLING)
 										iValue *= 2;
 									if (iI == MEDITATION)
 										iValue /= 2;
@@ -5856,8 +5858,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									if (iI == RIFLING)
 										iValue *= 2;
-									if (iI == ASTRONOMY)
-										iValue *= 3;
+									if (iI == ASTRONOMY || iI == OPTICS)
+										iValue *= 5;
 									break;
 								case INCA:
 									if (iI == CONSTRUCTION || iI == CALENDAR)
@@ -5870,7 +5872,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									break;
 								case ITALY:
-                                    if (iI == RADIO || iI == FASCISM || iI == BANKING || iI == OPTICS || iI == PATRONAGE)
+                                    if (iI == RADIO || iI == FASCISM || iI == BANKING || iI == OPTICS || iI == PATRONAGE || iI == RIFLING)
                                         iValue *= 2;
                                     if (iI == FISSION){
                                         iValue *= 5;
@@ -11486,6 +11488,14 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			{
 				iValue /= 2;
 			}
+		}
+	}
+
+	if (eCivic == CIVIC_DYNASTICISM)
+	{
+		if (getID() == NETHERLANDS)
+		{
+			iValue /= 2;
 		}
 	}
 
