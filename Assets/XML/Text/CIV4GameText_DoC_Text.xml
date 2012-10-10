@@ -572,5 +572,13 @@
 		<Italian>%s1 has traded %s2 to you.</Italian>
 		<Spanish>%s1 has traded %s2 to you.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_FIRST_DISCOVER_INCORPORATES</Tag>
+		<English>[ICON_BULLET]Required for the spread of[SPACE]</English>
+		<French>[ICON_BULLET]Le premier &#224; d&#233;couvrir fonde[SPACE]</French>
+		<German>[ICON_BULLET]Notwendig zur Verbreitung von[SPACE]</German>
+		<Italian>[ICON_BULLET]Il primo a scoprire fonda[SPACE]</Italian>
+		<Spanish>[ICON_BULLET]El primero en descubrir se incorpora[SPACE]</Spanish>
+	</TEXT>
 	
 </Civ4GameText>

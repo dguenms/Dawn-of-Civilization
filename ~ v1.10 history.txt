@@ -77,7 +77,7 @@
 # Arabia doesn't settle the Sahara anymore
 # Aztecs don't settle Northern Mexico anymore
 # Pombos replace Impis as African natives during the late game
-# Defeating Impis and Pombos has a 10% chance to give a slave
+# Defeating Impis and Pombos has a 20% chance to give a slave
 # AI will offer slave trades on its own now
 # Readjusted the AI value of slaves, highest value for Catholic colonial civs that have researched Astronomy
 # Invasion events are now only displayed in the global log if you have contact to the target
@@ -93,3 +93,9 @@
 # added stone north of Timbuktu
 # new Mande UHV
 # reduced Russian Research Institute to one free scientist
+# Buddhism is autofounded during the autoplay if not founded already around 100 AD
+# autowar on spawn doesn't affect human players
+# tech requirements for corporations are now displayed
+# Luxury Industry also consumes marble now
+# iron appears in Egypt in 900 AD
+# Mongolia starts with Gunpowder and bombards

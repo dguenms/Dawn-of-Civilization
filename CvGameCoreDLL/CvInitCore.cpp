@@ -1294,7 +1294,7 @@ const CvWString & CvInitCore::getCivShortDesc(PlayerTypes eID, uint uiForm) cons
 	}
 	else
 	{
-		m_szTemp = "";
+		m_szTemp = "()"; // Leoreth: debug, remove afterwards
 	}
 
 	return m_szTemp;

@@ -2567,10 +2567,10 @@ const wchar* CvPlayer::getCivilizationDescriptionKey() const
 
 const wchar* CvPlayer::getCivilizationShortDescription(uint uiForm) const
 {
-	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	/*if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
 	{
 		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_AUSTRIA_SHORT_DESC");
-	}
+	}*/
 
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivShortDesc(getID(), uiForm).empty())
@@ -2599,10 +2599,10 @@ const wchar* CvPlayer::getCivilizationShortDescription(uint uiForm) const
 
 const wchar* CvPlayer::getCivilizationShortDescriptionKey() const
 {
-	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	/*if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
 	{
 		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_AUSTRIA_SHORT_DESC");
-	}
+	}*/
 
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivShortDescKey(getID()).empty())
@@ -2631,10 +2631,10 @@ const wchar* CvPlayer::getCivilizationShortDescriptionKey() const
 
 const wchar* CvPlayer::getCivilizationAdjective(uint uiForm) const
 {
-	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	/*if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
 	{
 		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_ADJECTIVE");
-	}
+	}*/
 
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivAdjective(getID(), uiForm).empty())
@@ -2662,10 +2662,10 @@ const wchar* CvPlayer::getCivilizationAdjective(uint uiForm) const
 
 const wchar* CvPlayer::getCivilizationAdjectiveKey() const
 {
-	if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
+	/*if (getID() == HOLY_ROME && GC.getGameINLINE().getGameTurnYear() >= 1700)
 	{
 		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_ADJECTIVE");
-	}
+	}*/
 
 	//Rhye (jdog) -  start ---------------------
 	if (GC.getInitCore().getCivAdjectiveKey(getID()).empty())

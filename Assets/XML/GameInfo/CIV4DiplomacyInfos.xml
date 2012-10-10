@@ -80,6 +80,10 @@
 							<LeaderType>LEADER_ABU_BAKR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
+						<Leader>
+							<LeaderType>LEADER_HARUN</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
@@ -998,6 +1002,38 @@
 						</Leader>
 						<Leader>
 							<LeaderType>LEADER_RAJENDRA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_LOBSANG_GYATSO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_SONGTSEN</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_CASIMIR</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_SOBIESKI</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_RAHMAN</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_YAQUB</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_MBEMBA</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+						<Leader>
+							<LeaderType>LEADER_LORENZO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>

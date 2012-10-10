@@ -155,4 +155,20 @@
 		<Tag>TXT_KEY_BUILDING_KONGO_MBWADI</Tag>
 		<English>Mbwadi</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CASIMIR</Tag>
+		<English>Casimir III</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SONGTSEN</Tag>
+		<English>Songtsen Gampo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_HARUN</Tag>
+		<English>Harun al-Rashid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_YAQUB</Tag>
+		<English>Yaqub al-Mansur</English>
+	</TEXT>
 </Civ4GameText>

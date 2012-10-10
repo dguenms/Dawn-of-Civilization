@@ -41,6 +41,10 @@
 		<English>Kingdom of Castille</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SPAIN_CASTILIAN_EMPIRE</Tag>
+		<English>Castilian Empire</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_IBERIA</Tag>
 		<English>Kingdom of Iberia</English>
 	</TEXT>

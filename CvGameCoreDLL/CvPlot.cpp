@@ -6449,7 +6449,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 					{
 						if (GC.getBuildInfo((BuildTypes)iBuild).getImprovement() == iImprovement && GET_TEAM((TeamTypes)ePlayer).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes)iBuild).getTechPrereq()))
 						{
-							if (GC.getBuildInfo((BuildTypes)iBuild).isKill())
+							if (!GC.getBuildInfo((BuildTypes)iBuild).isKill())
 							{
 								iAppliedImprovement = iImprovement;
 								break;
@@ -6792,6 +6792,9 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		//{
 		m_aiFoundValue[eIndex] = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, true);
 		//}
+
+		if (eIndex == NETHERLANDS)
+			m_aiFoundValue[eIndex] = abs(m_aiFoundValue[eIndex]);
 
 		if (m_aiFoundValue[eIndex] > area()->getBestFoundValue(eIndex))
 		{

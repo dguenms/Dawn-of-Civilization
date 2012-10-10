@@ -395,8 +395,8 @@ class Barbs:
                 if (iGameTurn >= getTurnForYear(1400) and iGameTurn <= getTurnForYear(1800)):
                         #self.spawnUnits( iNative, (11, 44), (33, 51), con.iNativeAmericaDogSoldier, 3 + iHandicap, iGameTurn, 8, 0, utils.outerInvasion, 1)
                         #self.spawnUnits( iNative, (11, 44), (33, 51), con.iNativeAmericaDogSoldier, 3 + iHandicap, iGameTurn, 8, 4, utils.outerInvasion, 1)
-			self.checkSpawn(iBarbarian, con.iNativeAmericaDogSoldier, 2 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 16, 0)
-			self.checkSpawn(iBarbarian, con.iNativeAmericaDogSoldier, 2 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 16, 8)
+			self.checkSpawn(iBarbarian, con.iNativeAmericaDogSoldier, 2 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 0)
+			self.checkSpawn(iBarbarian, con.iNativeAmericaDogSoldier, 2 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 6)
                 if (iGameTurn >= getTurnForYear(1300) and iGameTurn <= getTurnForYear(1600)):
                         if (iGameTurn % 18 == 0):
                                 if (gc.getMap().plot(27, 29).getNumUnits() == 0):
@@ -405,11 +405,11 @@ class Barbs:
                                 if (gc.getMap().plot(30, 13).getNumUnits() == 0):
                                         self.makeUnit(con.iNativeAmericaDogSoldier, iBarbarian, (30, 13), 3 + iHandicap, 1)
 					
-		if iGameTurn >= getTurnForYear(1700) and iGameTurn <= getTurnForYear(1880):
-			self.checkSpawn(iBarbarian, con.iSiouxMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 14 - iHandicap, 2)
+		if iGameTurn >= getTurnForYear(1700) and iGameTurn <= getTurnForYear(1900):
+			self.checkSpawn(iBarbarian, con.iSiouxMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
 			
-		if iGameTurn >= getTurnForYear(1500) and iGameTurn <= getTurnForYear(1780):
-			self.checkSpawn(iBarbarian, con.iIroquoisMohawk, 2 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 10 - iHandicap, 6)
+		if iGameTurn >= getTurnForYear(1500) and iGameTurn <= getTurnForYear(1850):
+			self.checkSpawn(iBarbarian, con.iIroquoisMohawk, 2 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
 			
 			
                 #pirates in the Caribbean

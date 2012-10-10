@@ -558,7 +558,7 @@ class CvRFCEventHandler:
 		if pLosingUnit.getOwner() in [con.iBarbarian, con.iNative] and pLosingUnit.getUnitType() in [con.iZuluImpi, con.iKongoPombos]:
 			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
 				if gc.getPlayer(pWinningUnit.getOwner()).getCivics(3) == con.iForcedLabor:
-					iRand = gc.getGame().getSorenRandNum(10, "Caught slaves?")
+					iRand = gc.getGame().getSorenRandNum(5, "Caught slaves?")
 					if iRand == 1:
 						iNewUnit = utils.getUniqueUnitType(pWinningUnit.getOwner(), gc.getUnitInfo(con.iSlave).getUnitClassType())
 						utils.makeUnit(iNewUnit, pWinningUnit.getOwner(), (pWinningUnit.getX(), pWinningUnit.getY()), 1)

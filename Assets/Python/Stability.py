@@ -173,7 +173,9 @@ class Stability:
 
 
         def checkTurn(self, iGameTurn):
-
+	
+		# REMOVE IMMEDIATELY
+		self.setStability(con.iMongolia, 0)
 
                 #moved here with its own stored value to save loading time (scrolls the map only once instead of every player)
                 if (iGameTurn % utils.getTurns(6) == 0): #3 is too short to detect any change; must be a multiple of 3 anyway
@@ -876,6 +878,8 @@ class Stability:
 
                         iTotalTempCityStability = 0
                         apCityList = PyPlayer(iPlayer).getCityList()
+			
+			iForeignCoreCities = 0
 
                         for pLoopCity in apCityList:
                                 iX = pLoopCity.GetCy().getX()
@@ -886,15 +890,20 @@ class Stability:
                                                 if (iX >= con.tNormalAreasTL[reborn][iLoop][0] and iX <= con.tNormalAreasBR[reborn][iLoop][0] and \
                                                     iY >= con.tNormalAreasTL[reborn][iLoop][1] and iY <= con.tNormalAreasBR[reborn][iLoop][1]):
                                                         if (gc.getPlayer(iPlayer).getSettlersMaps( 67-iY, iX ) < 150):
-                                                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityForeignCoreCities, -3)
-                                                                self.setParameter(iPlayer, iParExpansion3, True, -3)                                                                
+								iForeignCoreCities += 3                                                                
                                                                 #print("city owned in unstable area: -3", pLoopCity.GetCy().getName(), iPlayer)
                                                                 break
                                                         else:
-                                                                iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityForeignCoreCities, -1)
-                                                                self.setParameter(iPlayer, iParExpansion3, True, -1)
+								iForeignCoreCities += 1
                                                                 #print("city owned in unstable area: -1", pLoopCity.GetCy().getName(), iPlayer)
                                                                 break
+								
+			if iPlayer == con.iMongolia:
+				iForeignCoreCities *= 2
+				iForeignCoreCities /= 3
+								
+			iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityForeignCoreCities, -iForeignCoreCities)
+			self.setParameter(iPlayer, iParExpansion3, True, -iForeignCoreCities)
 								
 			iOutputCoreStability = iNewBaseStability - iOutputForeignStability - iOutputExpansionStability - iOutputCivicStability
 			print "PYTHON: Player " + str(iPlayer) + " core stability: " + str(iNewBaseStability)
@@ -997,6 +1006,10 @@ class Stability:
 							
 					iOutputCityCulture = iTempCityStability - iOutputCityCivic - iOutputCityHappy
 					print "PYTHON: Player " + str(iPlayer) + " City " + str(iCount) + " culture stability: " + str(iOutputCityCulture)
+					
+					if iPlayer == con.iMongolia:
+						iOutputCityCulture *= 2
+						iOutputCityCulture /= 3
 
 					self.changeStabilityCategory(pPlayer, con.iStabilityCityCulture, iOutputCityCulture)
                                         
@@ -1006,6 +1019,9 @@ class Stability:
                                         
                                         if (iTotalTempCityStability <= -12): #middle check, for optimization
                                                 break
+						
+			if iPlayer == con.iMongolia:
+				iTotalTempCityStability -= iOutputCityCulture
 				
                         if (iTotalTempCityStability < 0):
                                 iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCityTotal, max(-12, iTotalTempCityStability))
@@ -1645,7 +1661,7 @@ class Stability:
 
                 if (iPlayer < iNumPlayers):  
                         pPlayer = gc.getPlayer(iPlayer)
-                        if (pPlayer.getStateReligion() != iReligion):
+                        if (pPlayer.getStateReligion() != iReligion and iPlayer != con.iMongolia):
                                 for iLoopCiv in range(iNumPlayers):
                                         if (gc.getTeam(pPlayer.getTeam()).isAtWar(iLoopCiv)):
                                                 if (gc.getPlayer(iLoopCiv).getStateReligion() == iReligion):

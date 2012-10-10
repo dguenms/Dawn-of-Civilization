@@ -185,6 +185,10 @@
 		<English>Tributary Mughal State</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBET_CHINESE_VASSAL</Tag>
+		<English>Tributary Xizang State</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_SOVIET_VASSAL</Tag>
 		<English>Chinese Soviet Republic</English>
 	</TEXT>
