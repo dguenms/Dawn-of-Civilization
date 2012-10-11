@@ -99,3 +99,4 @@
 # Luxury Industry also consumes marble now
 # iron appears in Egypt in 900 AD
 # Mongolia starts with Gunpowder and bombards
+# Goody huts are placed randomly in the vicinity of their original location

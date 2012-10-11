@@ -612,6 +612,7 @@ class RiseAndFall:
 		#print 'plague building class id = '+str(gc.getInfoTypeForString("BUILDINGCLASS_PLAGUE"))
 		
 		self.determineEnabledPlayers()
+		
 
                 if (not gc.getPlayer(0).isPlayable()): #late start condition
                         self.clear600ADChina()
@@ -725,6 +726,7 @@ class RiseAndFall:
 		pCongo.changeGold(300)
 		pGermany.changeGold(800)
                 pAmerica.changeGold(1500)
+		
                
            
                 # display welcome message
@@ -857,6 +859,39 @@ class RiseAndFall:
 
                 #debug
                 #print('Reached turn '+repr(iGameTurn))
+		
+		
+		# Leoreth: randomly place goody huts
+		if iGameTurn == 3:
+			self.placeHut((49, 40), (54, 46)) # Iberia
+			self.placeHut((57, 41), (61, 56)) # Denmark / Northern Germany
+			self.placeHut((48, 55), (49, 58)) # Ireland
+			self.placeHut((50, 53), (54, 60)) # Britain
+			self.placeHut((57, 57), (65, 65)) # Scandinavia
+			self.placeHut((73, 53), (81, 58)) # Russia
+			self.placeHut((81, 43), (86, 47)) # Transoxania
+			self.placeHut((88, 30), (94, 36)) # Deccan
+			self.placeHut((110, 40), (113, 43)) # Shikoku
+			self.placeHut((114, 49), (116, 52)) # Hokkaido
+			self.placeHut((85, 53), (99, 59)) # Siberia
+			self.placeHut((103, 24), (109, 29)) # Indonesia
+			self.placeHut((107, 19), (116, 22)) # Northern Australia
+			self.placeHut((114, 10), (118, 17)) # Western Australia
+			self.placeHut((120, 5), (123, 11)) # New Zealand
+			self.placeHut((59, 25), (67, 28)) # Central Africa
+			self.placeHut((68, 17), (72, 23)) # East Africa
+			self.placeHut((65, 10), (70, 16)) # South Africa
+			self.placeHut((22, 48), (29, 51)) # Great Lakes
+			self.placeHut((18, 44), (22, 52)) # Great Plains
+			self.placeHut((34, 25), (39, 29)) # Amazonas Delta
+			self.placeHut((33, 9), (37, 15)) # Parana Delta
+			self.placeHut((25, 36), (32, 39)) # Caribbean
+			
+			if gc.getPlayer(0).isPlayable():
+				self.placeHut((101, 38), (107, 41)) # Southern China
+				self.placeHut((62, 45), (67, 50)) # Balkans
+				self.placeHut((69, 42), (76, 46)) # Asia Minor
+			
 		
 		if iGameTurn == getTurnForYear(con.tBirth[iSpain])-1:
 			if not gc.getPlayer(0).isPlayable():
@@ -6135,6 +6170,27 @@ class RiseAndFall:
 				self.setPlayerEnabled(iCongo, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
 				self.setPlayerEnabled(iCongo, False)
+				
+	def placeHut(self, tTL, tBR):
+		plotList = []
+		
+		for x in range(tTL[0], tBR[0]+1):
+			for y in range(tTL[1], tBR[1]+1):
+				plot = gc.getMap().plot(x,y)
+				if plot.isFlatlands() or plot.isHills():
+					if plot.getFeatureType() != gc.getInfoTypeForString("FEATURE_MUD"):
+						plotList.append((x,y))
+		
+		if not plotList:
+			utils.debugTextPopup('List empty.')
+			return
+		
+		tPlot = utils.getRandomEntry(plotList)
+		i, j = tPlot
+		
+		gc.getMap().plot(i, j).setImprovementType(con.iHut)
+		
+	
 		
 		
 
