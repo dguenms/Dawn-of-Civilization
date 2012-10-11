@@ -8025,7 +8025,7 @@ BeginPlot
 	RiverNSDirection=2
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=20,y=48
@@ -9871,7 +9871,7 @@ BeginPlot
 	BonusType=BONUS_TOBACCO
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=25,y=39
@@ -11049,7 +11049,7 @@ BeginPlot
 	x=28,y=48
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=28,y=49
@@ -13566,7 +13566,7 @@ BeginPlot
 	x=35,y=12
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=35,y=13
@@ -14472,7 +14472,7 @@ BeginPlot
 	x=37,y=28
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=37,y=29
@@ -18487,7 +18487,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=48,y=57
@@ -19588,7 +19588,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=51,y=59
@@ -22612,7 +22612,7 @@ BeginPlot
 	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=59,y=56
@@ -23870,7 +23870,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=62,y=61
@@ -24077,7 +24077,7 @@ BeginPlot
 	x=63,y=27
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=63,y=28
@@ -25028,7 +25028,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=65,y=48
@@ -25234,7 +25234,7 @@ BeginPlot
 	x=66,y=14
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=66,y=15
@@ -26119,7 +26119,7 @@ BeginPlot
 	x=68,y=20
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=68,y=21
@@ -26734,7 +26734,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=69,y=44
@@ -27385,7 +27385,7 @@ BeginPlot
 	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=71,y=23
@@ -30676,7 +30676,7 @@ BeginPlot
 	x=79,y=55
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=79,y=56
@@ -35408,7 +35408,7 @@ BeginPlot
 	RiverNSDirection=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=91,y=55
@@ -41556,7 +41556,7 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=107,y=25
@@ -43551,7 +43551,7 @@ BeginPlot
 	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=112,y=42
@@ -44175,7 +44175,7 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=114,y=21
@@ -44342,7 +44342,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=114,y=51
@@ -44908,7 +44908,7 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=116,y=15
@@ -47011,7 +47011,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=122,y=11
