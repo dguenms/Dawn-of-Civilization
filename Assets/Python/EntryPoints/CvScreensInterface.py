@@ -1415,6 +1415,22 @@ def getUHVTileInfo(argsList):
 		if x >= tlx and x <= brx and y >= tly and y <= bry:
 			return 59
 			
+	elif iPlayer == con.iPortugal:		
+		tlx, tly = tAfricaTL
+		brx, bry = tAfricaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 33
+					
+		tlx, tly = tAsiaTL
+		brx, bry = tAsiaBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 34
+					
+		tlx, tly = tBrazilTL
+		brx, bry = tBrazilBR
+		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			return 60
+			
 	return -1
 		
 def getCityName(self, argsList):

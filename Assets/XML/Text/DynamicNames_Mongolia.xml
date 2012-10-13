@@ -33,6 +33,14 @@
 		<English>Mongol Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_TIMURID</Tag>
+		<English>Timurid Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_CHAGATAI</Tag>
+		<English>Chagatai Khanate</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_YUAN</Tag>
 		<English>Yuan Empire</English>
 	</TEXT>

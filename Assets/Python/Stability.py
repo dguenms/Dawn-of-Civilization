@@ -173,9 +173,6 @@ class Stability:
 
 
         def checkTurn(self, iGameTurn):
-	
-		# REMOVE IMMEDIATELY
-		self.setStability(con.iMongolia, 0)
 
                 #moved here with its own stored value to save loading time (scrolls the map only once instead of every player)
                 if (iGameTurn % utils.getTurns(6) == 0): #3 is too short to detect any change; must be a multiple of 3 anyway

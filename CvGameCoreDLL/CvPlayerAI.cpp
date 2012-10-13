@@ -5660,6 +5660,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case TAMILS:
 									if (iI == METALCASTING || iI == COMPASS || iI == CALENDAR)
 										iValue *= 2;
+									if (iI == LIBERALISM || iI == EDUCATION || iI == RIFLING)
+										iValue /= 2;
 									break;
 								case ETHIOPIA:
 									if (iI == MONOTHEISM)
@@ -5819,7 +5821,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case RUSSIA:
 									if (iI == COMMUNISM)
 										iValue *= 3;
-									if (iI == MILITARY_SCIENCE || iI == RIFLING)
+									if (iI == MILITARY_SCIENCE || iI == RIFLING || iI == MILITARY_TRADITION)
 										iValue *= 2;
 									if (iI == MEDITATION)
 										iValue /= 2;
@@ -19327,7 +19329,7 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 		return 0;
 	}
 
-	if (getID() == MALI || getID() == CONGO)
+	if (getID() == MALI || getID() == CONGO || getID() == ETHIOPIA)
 	{
 		return 0;
 	}

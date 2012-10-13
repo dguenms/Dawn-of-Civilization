@@ -489,4 +489,32 @@
 		<Tag>TXT_KEY_HINT_DOC_31</Tag>
 		<English>AI Romans and Greeks will receive armies to conquer the Mediterranean and Mesopotamia. Be prepared!</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_32</Tag>
+		<English>Settling a city on a resource will yield full production and commerce, as if the appropriate improvement had been built on the tile.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_33</Tag>
+		<English>Slaves can be created using the "enslave" button in cities in Sub-Saharan Africa while using Forced Labor.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_34</Tag>
+		<English>Defeating Impis and Pombos on your territory while using Forced Labor has a chance to create a slave unit.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_35</Tag>
+		<English>All civilizations except Ethiopia, Mali and Congo can use slave units to build slave plantations for additional production and commerce or settle them as specialists for additional production at the cost of unhappiness.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_36</Tag>
+		<English>Slaves can be traded like any other item in the diplomacy interface.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_37</Tag>
+		<English>Slave plantations and slave specialists are removed if you don't use either Forced Labor, Agrarianism or Mercantilism.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_38</Tag>
+		<English>Goody huts are placed randomly at the beginning of the game.</English>
+	</TEXT>
 </Civ4GameText>

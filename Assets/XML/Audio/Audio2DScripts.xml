@@ -21816,8 +21816,8 @@
 		<ScriptID>AS2D_DIPLO_RAJENDRA</ScriptID>
 		<SoundID>DIPLO_RAJENDRA</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>45</iMinVolume>
+		<iMaxVolume>45</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -21862,8 +21862,8 @@
 		<ScriptID>AS2D_DIPLO_RAHMAN</ScriptID>
 		<SoundID>DIPLO_RAHMAN</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>50</iMinVolume>
+		<iMaxVolume>50</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>

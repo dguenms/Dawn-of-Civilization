@@ -484,12 +484,14 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
                         tList.pop(con.iNumBonuses) #marsh
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
+			tList.pop(con.iVatavelli)
 			tList.pop(con.iAlpArslan)
 			tList.pop(con.iChiangKaishek)
 			tList.pop(con.iCixi)
 			#tList.pop(con.iFrancis)
 			#tList.pop(con.iBarbarossa)
 			tList.pop(con.iElishat)
+			tList.pop(con.iAbuBakr)
                         #tList.pop(con.iWangKon) #wang kon
                         tList.pop(con.iSittingBull) #sitt.b.
                         tList.pop(con.iShaka) #shaka   
@@ -509,6 +511,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         tList.pop(con.iCivNativeAmericans) #nat.Am.
                         #tList.pop(con.iCivKorea) #korea                  
                         #tList.pop(con.iCivHolyRoman) #hre
+			tList.pop(con.iCivHarappa)
                        	tList.pop(con.iCivCelt) #celts
                         #tList.pop(con.iCivByzantium) #byzantium
                         pass
@@ -516,15 +519,19 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         #removed in CvPediaBuilding.py
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT):
-                    	for i in range(186+1):	#remove unique GPs (currently 31 civs with 6 GPs each -> 6*31=186, +1 for tibetan great prophet)
+                    	for i in range(198+1):	#remove unique GPs (currently 33 civs with 6 GPs each -> 6*33=198, +1 for tibetan great prophet)
 				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
+			tList.pop(con.iAztecSlave)
+			tList.pop(con.iNativeSlave)
+			tList.pop(con.iBireme)
 			#tList.pop(83) #Hwacha
                         #tList.pop(71) #Cataphract  
                         #tList.pop(con.iHolyRomanLandsknecht) #Landsknecht
-                        tList.pop(con.iZuluImpi) #Impi
-                        tList.pop(con.iNativeAmericaDogSoldier) #DogSoldier                          
-                        tList.pop(con.iSumerianVulture) #Vulture
+                        #tList.pop(con.iZuluImpi) #Impi
+                        #tList.pop(con.iNativeAmericaDogSoldier) #DogSoldier                          
+                        #tList.pop(con.iSumerianVulture) #Vulture
                         tList.pop(con.iCelticGallicWarrior) #GallicWarrior
+			tList.pop(con.iHarappanMilitia)
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT):
                         tList.pop(1) #water worked

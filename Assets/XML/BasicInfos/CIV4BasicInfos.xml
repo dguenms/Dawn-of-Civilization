@@ -76,6 +76,11 @@
 			<Civilopedia>TXT_KEY_CONCEPT_REFORMATION_PEDIA</Civilopedia>
 		</ConceptInfo>		
 		<ConceptInfo>
+			<Type>CONCEPT_SCHISM</Type>
+			<Description>TXT_KEY_CONCEPT_SCHISM</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_SCHISM_PEDIA</Civilopedia>
+		</ConceptInfo>		
+		<ConceptInfo>
 			<Type>CONCEPT_TRADING_COMPANY_CONQUERORS</Type>
 			<Description>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS_PEDIA</Civilopedia>
