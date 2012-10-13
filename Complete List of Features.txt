@@ -3,7 +3,7 @@ Complete List of Features (as of version 1.10)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
-This version corresponds to SVN revision 445.
+This version corresponds to SVN revision 446.
 
 GAME MECHANICS
 # enabled Epic/Marathon speeds (RFCMarathon modmod by embryodead)
