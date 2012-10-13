@@ -2917,6 +2917,30 @@
 					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
 					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_GREAT_GENERAL</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -3625,27 +3649,27 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_INDIAN_PROPHET</UnitType>
+					<UnitType>UNIT_PERSIAN_PROPHET</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_INDIAN_ARTIST</UnitType>
+					<UnitType>UNIT_PERSIAN_ARTIST</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_INDIAN_SCIENTIST</UnitType>
+					<UnitType>UNIT_PERSIAN_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_INDIAN_MERCHANT</UnitType>
+					<UnitType>UNIT_PERSIAN_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+					<UnitType>UNIT_PERSIAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
-					<UnitType>UNIT_INDIAN_GREAT_GENERAL</UnitType>
+					<UnitType>UNIT_PERSIAN_GREAT_GENERAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -4268,27 +4292,27 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_PROPHET</UnitType>
+					<UnitType>UNIT_POLISH_PROPHET</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_ARTIST</UnitType>
+					<UnitType>UNIT_POLISH_ARTIST</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_SCIENTIST</UnitType>
+					<UnitType>UNIT_POLISH_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_MERCHANT</UnitType>
+					<UnitType>UNIT_POLISH_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_ENGINEER</UnitType>
+					<UnitType>UNIT_POLISH_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_GREAT_GENERAL</UnitType>
+					<UnitType>UNIT_POLISH_GREAT_GENERAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>

@@ -48,8 +48,8 @@ class Resources:
         def checkTurn(self, iGameTurn):
 
 
-                if (iGameTurn == 5): #otherwise it's picked by Portugal at the beginning
-                        gc.getMap().plot(49, 43).setImprovementType(con.iHut)
+                #if (iGameTurn == 5): #otherwise it's picked by Portugal at the beginning
+                #        gc.getMap().plot(49, 43).setImprovementType(con.iHut)
 			
 		# Tamils
 		if iGameTurn == getTurnForYear(-300)-1 and utils.getPlayerEnabled(con.iTamils):
@@ -123,7 +123,8 @@ class Resources:
 		if iGameTurn == getTurnForYear(630)-1 and utils.getPlayerEnabled(con.iTibet):
 			gc.getMap().plot(95, 43).setBonusType(iWheat)
 			gc.getMap().plot(97, 44).setBonusType(iHorse)
-			
+		
+		# Leoreth: for respawned Egypt
 		if iGameTurn == getTurnForYear(900):
 			gc.getMap().plot(71, 34).setBonusType(con.iIron)
 			

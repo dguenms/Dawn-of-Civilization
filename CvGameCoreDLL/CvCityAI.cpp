@@ -3253,7 +3253,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case TURKEY:
 										if (iI == TOPKAPI || iI == BLUE_MOSQUE) iTempValue *= 4;
-										else if (iI == TAJMAHAL || iI == RED_FORT) iTempValue /= 4;
+										else if (iI == TAJMAHAL || iI == RED_FORT || iI == KREMLIN) iTempValue /= 4;
 										break;
 									case POLAND:
 										break;

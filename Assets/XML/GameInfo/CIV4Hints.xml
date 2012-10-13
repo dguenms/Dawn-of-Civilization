@@ -512,5 +512,26 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_31</Description>
 		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_32</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_33</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_34</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_35</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_36</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_37</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_38</Description>
+		</HintInfo>
 	</HintInfos>
 </Civ4Hints>

@@ -309,12 +309,12 @@ class Barbs:
                 #barbarians in central asia
                 if (iGameTurn >= getTurnForYear(-1600) and iGameTurn < getTurnForYear(-850)):
                         #self.spawnUnits( iBarbarian, (74, 34), (68, 48), con.iChariot, 2 + iHandicap, iGameTurn, 6-iHandicap, 2, utils.outerInvasion, 0)
-			self.checkSpawn(iBarbarian, con.iChariot, 2 + iHandicap, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+			self.checkSpawn(iBarbarian, con.iSumerianVulture, 2 + iHandicap, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
                 if (iGameTurn >= getTurnForYear(-850) and iGameTurn < getTurnForYear(300)):
                         #self.spawnUnits( iBarbarian, (73, 34), (79, 49), con.iChariot, 1 + iHandicap, iGameTurn, 7-iHandicap, 2, utils.outerInvasion, 0)
                         #self.spawnUnits( iBarbarian, (73, 34), (79, 49), con.iHorseArcher, 1 + iHandicap, iGameTurn, 7-iHandicap, 2, utils.outerInvasion, 0)
-			self.checkSpawn(iBarbarian, con.iChariot, 1 + iHandicap, (73, 34), (78, 44), self.spawnNomads, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
-			self.checkSpawn(iBarbarian, con.iHorseArcher, 2 + iHandicap, (73, 34), (78, 44), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
+			self.checkSpawn(iBarbarian, con.iSumerianVulture, 1 + iHandicap, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+			self.checkSpawn(iBarbarian, con.iHorseArcher, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(700)):
                         if (gc.getPlayer(0).isPlayable()):  #late start condition
                                 #self.spawnUnits( iBarbarian, (78, 42), (88, 50), con.iHorseArcher, 3 + iHandicap, iGameTurn, 8-iHandicap, 2, utils.outerInvasion, 0)

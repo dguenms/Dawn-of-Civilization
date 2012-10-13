@@ -435,6 +435,7 @@ class DynamicCivs:
 				iHolyRome : "TXT_KEY_CIV_GERMANY_FRENCH_VASSAL",
 				iRussia : "TXT_KEY_CIV_RUSSIA_FRENCH_VASSAL",
 				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_FRENCH_VASSAL",
+				iPoland : "TXT_KEY_CIV_POLAND_FRENCH_VASSAL",
 				iMali : "TXT_KEY_CIV_MALI_FRENCH_VASSAL",
 				iPortugal : "TXT_KEY_CIV_PORTUGAL_FRENCH_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_FRENCH_VASSAL",
@@ -1665,14 +1666,21 @@ class DynamicCivs:
 			if bEmpire:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_EMPIRE")
 				return
-			else:
-				if capital.getX() >= 99 and capital.getY() <= 43:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_YUAN")
-					return
-			
-				if iEra == iMedieval:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_KHAMAG")
-					return
+				
+			if capital.getX() >= 99 and capital.getY() <= 43:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_YUAN")
+				return
+				
+			if capital.getName() == 'Samarkand' or capital.getName() == 'Samarqand' or capital.getName() == 'Merv' or capital.getName() == 'Marv':
+				if pMongolia.getStateReligion() == con.iIslam:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_TIMURID")
+				else:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_CHAGATAI")
+				return
+		
+			if iEra == iMedieval:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_KHAMAG")
+				return
 					
 			# Mongol State as default
 			

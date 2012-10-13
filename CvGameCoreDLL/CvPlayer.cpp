@@ -26293,7 +26293,13 @@ DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
 		return NO_DENIAL;
 	}
 
-	if (ePlayer == CONGO || ePlayer == MALI)
+	if (ePlayer == CONGO || ePlayer == MALI || ePlayer == ETHIOPIA)
+	{
+		return DENIAL_NO_GAIN;
+	}
+
+	// don't buy back slaves they've just bought
+	if (GET_PLAYER(ePlayer).AI_getContactTimer(getID(), CONTACT_TRADE_SLAVE) > 0)
 	{
 		return DENIAL_NO_GAIN;
 	}

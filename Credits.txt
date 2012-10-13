@@ -3,10 +3,10 @@ CREDITS
 BASE MODS
 # Rhye's and Fall of Civilization by Rhye
 # RFC Epic/Marathon by embryodead for speed optimizations and different game speeds
-# The Sword of Islam by embryodead for various interface improvements, corporation spread changes, middle eastern graphics and many miscellaneous features
+# The Sword of Islam by embryodead for various interface improvements, corporation spread changes, middle eastern graphics and many miscellaneous features (including unit trade and city plot yields)
 # Reformation modmod by Panopticon for the basis of the Reformation event
 # Project Synthesis by Linkman for the Seljuks and Middle Eastern Mongol conquerors
-# The History Rewritten mod for the Tamil, Tibetan, Moorish, Polish and Congolese civilizations
+# The History Rewritten mod for the Tamil, Tibetan, Moorish, Polish and Congolese civilizations including units, buildings and leaders
 
 LEADERHEADS
 # melcher kürzer: Catherine the Great, Isabella
@@ -34,6 +34,7 @@ LEADERHEADS
 # Smeagolheart: Hitler
 # Chuggi: Hitler
 # Firaxis: Qin Shi Huang, Taizong (Chinese release)
+# Novator: Lorenzo de' Medici (Simone Boccanegra)
 
 From mods, without explicit mention of the original creators
 # The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)
@@ -51,9 +52,10 @@ MISCELLANEOUS
 # Corossol: Phoenicia
 # veBear: Indonesia
 # 3Miro: fixes in the stack and settler AI
+# Mef: map changes in France
 
 FEEDBACK AND RESEARCH
-iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43 and many others
+iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others
 
 There has been so much valuable feedback to this mod which I'm really thankful for. I hope you're not offended if you miss yourself in this quickly compiled list and I hereby thank you anonymously.
 If someone feels he should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.

@@ -338,7 +338,7 @@ class CvPediaBuilding:
 				#listBuildings.append(iBuilding)
 				#iCount += 1
 				# Leoreth: don't display embassies and corporation headquarters
-                                if (iBuilding != con.iPlague and iBuilding not in range(con.iEgyEmbassy,con.iAmeEmbassy+1)):
+                                if (iBuilding not in [con.iPlague, con.iBabylonGarden, con.iHarappanBath, con.iChinesePavillion, con.iNativeAmericaTotem] and iBuilding not in range(con.iEgyEmbassy,con.iAmeEmbassy+1)):
                                         listBuildings.append(iBuilding)
                                         iCount += 1
 				#Rhye - end
