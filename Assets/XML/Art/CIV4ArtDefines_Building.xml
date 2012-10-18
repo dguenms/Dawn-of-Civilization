@@ -290,11 +290,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ITALIAN_ART_STUDIO</Type>
-			<LSystem>LSYSTEM_2x1</LSystem>
+			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>1.31</fScale>
-			<fInterfaceScale>0.47</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Forge/Forge.nif</NIF>
+			<fScale>20.00</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Artworkshop/artworkshop.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,16</Button>
 		</BuildingArtInfo>
@@ -2485,6 +2485,5 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Bath/Button_Bath.dds</Button>
 		</BuildingArtInfo>
-
 	</BuildingArtInfos>
 </Civ4ArtDefines>

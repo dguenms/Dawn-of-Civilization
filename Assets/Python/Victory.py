@@ -923,7 +923,7 @@ class Victory:
 				
 				# Leoreth: third goal: have 5000 gold in 200 AD
 				if iGameTurn == getTurnForYear(200):
-					if pCarthage.getGold >= utils.getTurns(5000):
+					if pCarthage.getGold() >= utils.getTurns(5000):
 						self.setGoal(iCarthage, 2, 1)
 					else:
 						self.setGoal(iCarthage, 2, 0)
@@ -1172,7 +1172,7 @@ class Victory:
 
                                 if (iGameTurn == getTurnForYear(1600)):      
                                         if (self.getGoal(iMaya, 2) == -1): #see onGreatPersonBorn()
-                                                self.setGoal(iMaya, 2, 1)
+                                                self.setGoal(iMaya, 2, 0)
 
 		elif (iPlayer == iByzantium):
 			if (pByzantium.isAlive()):

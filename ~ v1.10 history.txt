@@ -162,4 +162,5 @@
 # Mongolia starts with Gunpowder and bombards
 # goody huts are placed randomly in the vicinity of their original location
 # stability categories removed from the financial advisor due to the new stability advisor
-# changed St. Basil's Cathedral's tech requirement to Military 
+# changed St. Basil's Cathedral's tech requirement to Military Tradition
+# changed Camel Archers from +25% against cavalry to 35% withdrawal chance
