@@ -89,8 +89,12 @@
 		<English>Emirate of Kampuchea</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_MOORS_ARABIAN_VASSAL</Tag>
 		<English>Emirate of Al-Andalus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL</Tag>
+		<English>Emirate of Esbanya</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NETHERLANDS_ARABIAN_VASSAL</Tag>

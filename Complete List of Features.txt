@@ -3,7 +3,7 @@ Complete List of Features (as of version 1.10)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
-This version corresponds to SVN revision 446.
+This version corresponds to SVN revision 447.
 
 GAME MECHANICS
 # enabled Epic/Marathon speeds (RFCMarathon modmod by embryodead)
@@ -514,15 +514,13 @@ UNITS
 # The Greek unique unit was renamed from Phalanx to Hoplite
 # The Ethiopian unique unit as renamed from Oromo Warrior to Askari
 # The Viking unique unit was renamed from Berserker to Huscarl and its graphics changed accordingly
-# The Arabian unique unit, the Camel Archer, now has +25% against mounted units
+# The Arabian unique unit, the Camel Archer, now has 35% withdrawal chance
 # The French unique unit was changed from Musketeer to Culverin, a Cannon with +25% against gunpowder and siege units
 # The German unique unit, the Panzer, now requires Oil and starts with Mobility instead of Commando
 # Airships now require Combustion
 # Replaced Macemen with Longswordsmen (same stats)
 # New unit: Levy (strength 6, +25% against mounted units, produced with food, requires Feudalism and Vassalage)
-# Knights now require Feudalism and Vassalage
-# Camel Archers and Keshiks now require Feudalism, but not Vassalage
-# Cataphracts still require Machinery and no Vassalage
+# Knights, Camel Archers and Keshiks now require Feudalism
 # Longbowmen now require Guilds
 # Legions now receive +25% against axemen
 # Anti-Tank-Infantry now requires Rocketry
