@@ -271,12 +271,13 @@ class CvRFCEventHandler:
                 self.aiw.setup()
                 self.rnf.warOnSpawn()
 
-		s = ""
-		for y in range(68):
-			for x in range(124):
-				s += str(gc.getMap().plot(x,68-y).getArea()) + ", "
-			print s
-			s = ""
+		#s = ""
+		#for y in range(68):
+		#	for x in range(124):
+		#		s += str(gc.getMap().plot(x,68-y).getArea()) + ", "
+		#	print s
+		#	s = ""
+		
                 
 
                 #Mercenaries - start
