@@ -3,7 +3,7 @@ Complete List of Features (as of version 1.10)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
-This version corresponds to SVN revision 447.
+This version corresponds to SVN revision 448.
 
 GAME MECHANICS
 # enabled Epic/Marathon speeds (RFCMarathon modmod by embryodead)
@@ -167,6 +167,7 @@ GRAPHICS
 # Persia/Iran's color changed to light orange (Celts in BtS) with red as secondary color
 # Persia's coat of arms changed to the Achaemenid eagle
 # Viking color changed to light purple, as in BtS
+# added a new loading screen
 
 MAP
 # Moved some food resources out of Inverness' radius
