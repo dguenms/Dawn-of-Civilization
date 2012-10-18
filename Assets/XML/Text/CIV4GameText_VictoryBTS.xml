@@ -14,9 +14,25 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2</Tag>
-		<English>Acquire 3 incense resources by 600 AD</English>
+		<English>Acquire 3 incense resources by 600 AD (Turn 181)</English>
 		<French>Aucune colonie européenne en Afrique orientale et subéquatoriale en 1500 ap. J.-C.</French>
-		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
+		<German>Erlangen Sie bis 600 n. Chr. (Runde 181) 3 Weihrauch-Ressourcen</German>
+		<Italian>Non permettere alcuna colonia europea nell'Africa orientale e subequatoriale nel 1500 d.C.</Italian>
+		<Spanish>Asegurarse de que no existan colonias europeas en África ecuatorial y oriental en el 1500 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2_EPIC</Tag>
+		<English>Acquire 3 incense resources by 600 AD (Turn 278)</English>
+		<French>Aucune colonie européenne en Afrique orientale et subéquatoriale en 1500 ap. J.-C.</French>
+		<German>Erlangen Sie bis 600 n. Chr. (Runde 278) 3 Weihrauch-Ressourcen</German>
+		<Italian>Non permettere alcuna colonia europea nell'Africa orientale e subequatoriale nel 1500 d.C.</Italian>
+		<Spanish>Asegurarse de que no existan colonias europeas en África ecuatorial y oriental en el 1500 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2_MARATHON</Tag>
+		<English>Acquire 3 incense resources by 600 AD (Turn 549)</English>
+		<French>Aucune colonie européenne en Afrique orientale et subéquatoriale en 1500 ap. J.-C.</French>
+		<German>Erlangen Sie bis 600 n. Chr. (Runde 549) 3 Weihrauch-Ressourcen</German>
 		<Italian>Non permettere alcuna colonia europea nell'Africa orientale e subequatoriale nel 1500 d.C.</Italian>
 		<Spanish>Asegurarse de que no existan colonias europeas en África ecuatorial y oriental en el 1500 d. C.</Spanish>
 	</TEXT>
@@ -33,6 +49,22 @@
 		<English>Discover Calendar by 600 AD (Turn 181)</English>
 		<French>Découvrir le calendrier avant 600 ap. J.-C. (Tour 181)</French>
 		<German>Erforschen Sie bis zum Jahr 600 n. Chr. (Runde 181) die Technologie Kalender</German>
+		<Italian>Scopri il calendario entro il 600 d.C. (turno 181)</Italian>
+		<Spanish>Descubrir el Calendario antes del 600 d. C. (turno 181)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY1_EPIC</Tag>
+		<English>Discover Calendar by 600 AD (Turn 278)</English>
+		<French>Découvrir le calendrier avant 600 ap. J.-C. (Tour 181)</French>
+		<German>Erforschen Sie bis zum Jahr 600 n. Chr. (Runde 278) die Technologie Kalender</German>
+		<Italian>Scopri il calendario entro il 600 d.C. (turno 181)</Italian>
+		<Spanish>Descubrir el Calendario antes del 600 d. C. (turno 181)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY1_MARATHON</Tag>
+		<English>Discover Calendar by 600 AD (Turn 549)</English>
+		<French>Découvrir le calendrier avant 600 ap. J.-C. (Tour 181)</French>
+		<German>Erforschen Sie bis zum Jahr 600 n. Chr. (Runde 549) die Technologie Kalender</German>
 		<Italian>Scopri il calendario entro il 600 d.C. (turno 181)</Italian>
 		<Spanish>Descubrir el Calendario antes del 600 d. C. (turno 181)</Spanish>
 	</TEXT>

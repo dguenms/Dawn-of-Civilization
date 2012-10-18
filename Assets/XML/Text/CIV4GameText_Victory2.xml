@@ -142,9 +142,25 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_IND1</Tag>
-		<English>Control the shrines of Hinduism and Buddhism in 100 BC</English>
+		<English>Control the shrines of Hinduism and Buddhism in 100 BC (Turn 134)</English>
 		<French>Fonder le Bouddhisme et l'Hindouisme</French>
-		<German>Kontrollieren Sie die Schreine des Hinduismus und Buddhismus im Jahr 100 v. Chr.</German>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. (Runde 134) die Schreine des Hinduismus und Buddhismus</German>
+		<Italian>Fonda buddismo e induismo</Italian>
+		<Spanish>Fundar el Budismo y el Hinduismo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND1_EPIC</Tag>
+		<English>Control the shrines of Hinduism and Buddhism in 100 BC (Turn 208)</English>
+		<French>Fonder le Bouddhisme et l'Hindouisme</French>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. (Runde 208) die Schreine des Hinduismus und Buddhismus</German>
+		<Italian>Fonda buddismo e induismo</Italian>
+		<Spanish>Fundar el Budismo y el Hinduismo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND1_MARATHON</Tag>
+		<English>Control the shrines of Hinduism and Buddhism in 100 BC (Turn 408)</English>
+		<French>Fonder le Bouddhisme et l'Hindouisme</French>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. (Runde 408) die Schreine des Hinduismus und Buddhismus</German>
 		<Italian>Fonda buddismo e induismo</Italian>
 		<Spanish>Fundar el Budismo y el Hinduismo</Spanish>
 	</TEXT>
@@ -205,10 +221,42 @@
 		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C. (turno 124)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_EPIC</Tag>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC (Turn 193)</English>
+		<French>Construire l'Oracle, le Parthénon, le Colosse et le Temple d'Artémis avant 250 av. J.-C. (Tour 124)</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. (Runde 193) das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C. (turno 124)</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C. (turno 124)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_MARATHON</Tag>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC (Turn 378)</English>
+		<French>Construire l'Oracle, le Parthénon, le Colosse et le Temple d'Artémis avant 250 av. J.-C. (Tour 124)</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. (Runde 378) das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C. (turno 124)</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C. (turno 124)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE3</Tag>
-		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC (Turn 119)</English>
 		<French>Etre le premier à faire le tour du monde</French>
-		<German>Kontrollieren Sie im Jahr 330 v.Chr. Ägypten, Phönizien, Babylonien und Persien</German>
+		<German>Kontrollieren Sie im Jahr 330 v.Chr. (Runde 119) Ägypten, Phönizien, Babylonien und Persien</German>
+		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>
+		<Spanish>Ser el primero en circunnavegar el globo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3_EPIC</Tag>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC (Turn 185)</English>
+		<French>Etre le premier à faire le tour du monde</French>
+		<German>Kontrollieren Sie im Jahr 330 v.Chr. (Runde 185) Ägypten, Phönizien, Babylonien und Persien</German>
+		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>
+		<Spanish>Ser el primero en circunnavegar el globo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3_MARATHON</Tag>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC (Turn 362)</English>
+		<French>Etre le premier à faire le tour du monde</French>
+		<German>Kontrollieren Sie im Jahr 330 v.Chr. (Runde 362) Ägypten, Phönizien, Babylonien und Persien</German>
 		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>
 		<Spanish>Ser el primero en circunnavegar el globo</Spanish>
 	</TEXT>
@@ -221,10 +269,42 @@
 		<Spanish>Controlar el 8% del territorio mundial antes del 140 d. C. (turno 150)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1_EPIC</Tag>
+		<English>Control 8% of world territory by 140 AD (Turn 232)</English>
+		<French>Contrôler 8% du territoire mondial avant 140 ap. J.-C. (Tour 150)</French>
+		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. (Runde 232) 8% der Weltkarte</German>
+		<Italian>Devi controllare l'8% del territorio mondiale entro il 140 d.C. (turno 150)</Italian>
+		<Spanish>Controlar el 8% del territorio mundial antes del 140 d. C. (turno 150)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1_MARATHON</Tag>
+		<English>Control 8% of world territory by 140 AD (Turn 456)</English>
+		<French>Contrôler 8% du territoire mondial avant 140 ap. J.-C. (Tour 150)</French>
+		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. (Runde 456) 8% der Weltkarte</German>
+		<Italian>Devi controllare l'8% del territorio mondiale entro il 140 d.C. (turno 150)</Italian>
+		<Spanish>Controlar el 8% del territorio mundial antes del 140 d. C. (turno 150)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_PER2</Tag>
 		<English>Control 7 world wonders by 350 AD (Turn 164)</English>
 		<French>Contrôler 7 merveilles du monde avant 350 ap. J.-C. (Tour 164)</French>
 		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. (Runde 164) 7 Weltwunder</German>
+		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C. (turno 164)</Italian>
+		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C. (turno 164)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2_EPIC</Tag>
+		<English>Control 7 world wonders by 350 AD (Turn 253)</English>
+		<French>Contrôler 7 merveilles du monde avant 350 ap. J.-C. (Tour 164)</French>
+		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. (Runde 253) 7 Weltwunder</German>
+		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C. (turno 164)</Italian>
+		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C. (turno 164)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2_MARATHON</Tag>
+		<English>Control 7 world wonders by 350 AD (Turn 498)</English>
+		<French>Contrôler 7 merveilles du monde avant 350 ap. J.-C. (Tour 164)</French>
+		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. (Runde 498) 7 Weltwunder</German>
 		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C. (turno 164)</Italian>
 		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C. (turno 164)</Spanish>
 	</TEXT>
@@ -237,10 +317,42 @@
 		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C. (turno 164)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3_EPIC</Tag>
+		<English>Control 2 holy city shrines in 350 AD (Turn 253)</English>
+		<French>Contrôler 2 autels de villes saintes en 350 ap. J.-C. (Tour 164)</French>
+		<German>Kontrollieren Sie im Jahr 350 n. Chr. (Runde 253) 2 heilige Schreine</German>
+		<Italian>Devi controllare 2 santuari della Città Santa nel 350 d.C. (turno 164)</Italian>
+		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C. (turno 164)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3_MARATHON</Tag>
+		<English>Control 2 holy city shrines in 350 AD (Turn 498)</English>
+		<French>Contrôler 2 autels de villes saintes en 350 ap. J.-C. (Tour 164)</French>
+		<German>Kontrollieren Sie im Jahr 350 n. Chr. (Runde 498) 2 heilige Schreine</German>
+		<Italian>Devi controllare 2 santuari della Città Santa nel 350 d.C. (turno 164)</Italian>
+		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C. (turno 164)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1</Tag>
-		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD (Turn 148)</English>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD (Turn 147)</English>
 		<French>Construire 5 Casernes, 5 Aqueducs, 5 amphithéâtres avant 200 ap. J.-C. (Tour 154)</French>
-		<German>Bauen Sie bis zum Jahr 100 n. Chr. (Runde 148) 6 Kasernen, 5 Aquädukte, 4 Amphitheater und 3 Foren</German>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. (Runde 147) 6 Kasernen, 5 Aquädukte, 4 Amphitheater und 3 Foren</German>
+		<Italian>Devi costruire 5 caserme, 5 acquedotti e 5 anfiteatri entro il 200 d.C. (turno 154)</Italian>
+		<Spanish>Construir 5 cuarteles, 5 acueductos y 5 anfiteatros antes del 200 d. C. (turno 154)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1_EPIC</Tag>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD (Turn 228)</English>
+		<French>Construire 5 Casernes, 5 Aqueducs, 5 amphithéâtres avant 200 ap. J.-C. (Tour 154)</French>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. (Runde 228) 6 Kasernen, 5 Aquädukte, 4 Amphitheater und 3 Foren</German>
+		<Italian>Devi costruire 5 caserme, 5 acquedotti e 5 anfiteatri entro il 200 d.C. (turno 154)</Italian>
+		<Spanish>Construir 5 cuarteles, 5 acueductos y 5 anfiteatros antes del 200 d. C. (turno 154)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1_MARATHON</Tag>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD (Turn 448)</English>
+		<French>Construire 5 Casernes, 5 Aqueducs, 5 amphithéâtres avant 200 ap. J.-C. (Tour 154)</French>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. (Runde 448) 6 Kasernen, 5 Aquädukte, 4 Amphitheater und 3 Foren</German>
 		<Italian>Devi costruire 5 caserme, 5 acquedotti e 5 anfiteatri entro il 200 d.C. (turno 154)</Italian>
 		<Spanish>Construir 5 cuarteles, 5 acueductos y 5 anfiteatros antes del 200 d. C. (turno 154)</Spanish>
 	</TEXT>
@@ -248,7 +360,23 @@
 		<Tag>TXT_KEY_UHV_ROM2</Tag>
 		<English>Control in 320 AD (Turn 162) all the area historically known as the Roman Empire</English>
 		<French>Contrôler tout le territoire connu historiquement comme l'Empire romain d'Occident en 470 ap. J.-C. (Tour 172)</French>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. (Runde 172) das gesamte historische Gebiet des Römischen Reiches</German>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. (Runde 162) das gesamte historische Gebiet des Römischen Reiches</German>
+		<Italian>Devi controllare, nel 470 d.C. (turno 172), tutta l'area storicamente conosciuta come Impero Romano d'Occidente</Italian>
+		<Spanish>Controlar toda la zona conocida hist&#243;ricamente como Imperio Romano de occidente en el 470 d. C. (turno 172)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2_EPIC</Tag>
+		<English>Control in 320 AD (Turn 250) all the area historically known as the Roman Empire</English>
+		<French>Contrôler tout le territoire connu historiquement comme l'Empire romain d'Occident en 470 ap. J.-C. (Tour 172)</French>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. (Runde 250) das gesamte historische Gebiet des Römischen Reiches</German>
+		<Italian>Devi controllare, nel 470 d.C. (turno 172), tutta l'area storicamente conosciuta come Impero Romano d'Occidente</Italian>
+		<Spanish>Controlar toda la zona conocida hist&#243;ricamente como Imperio Romano de occidente en el 470 d. C. (turno 172)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2_MARATHON</Tag>
+		<English>Control in 320 AD (Turn 492) all the area historically known as the Roman Empire</English>
+		<French>Contrôler tout le territoire connu historiquement comme l'Empire romain d'Occident en 470 ap. J.-C. (Tour 172)</French>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. (Runde 492) das gesamte historische Gebiet des Römischen Reiches</German>
 		<Italian>Devi controllare, nel 470 d.C. (turno 172), tutta l'area storicamente conosciuta come Impero Romano d'Occidente</Italian>
 		<Spanish>Controlar toda la zona conocida hist&#243;ricamente como Imperio Romano de occidente en el 470 d. C. (turno 172)</Spanish>
 	</TEXT>
