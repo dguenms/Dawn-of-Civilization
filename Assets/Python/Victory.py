@@ -2538,6 +2538,7 @@ class Victory:
 				if iPlayer == iChina:
 					self.setChineseTechs(0, 1)
 				else:
+					self.setChineseTechs(0, 0)
 					self.setGoal(iChina, 1, 0)
 
 		elif iTech == con.iPaper:
@@ -2545,6 +2546,7 @@ class Victory:
 				if iPlayer == iChina:
 					self.setChineseTechs(1, 1)
 				else:
+					self.setChineseTechs(1, 0)
 					self.setGoal(iChina, 1, 0)
 
 		elif iTech == con.iGunpowder:
@@ -2552,6 +2554,7 @@ class Victory:
 				if iPlayer == iChina:
 					self.setChineseTechs(2, 1)
 				else:
+					self.setChineseTechs(2, 0)
 					self.setGoal(iChina, 1, 0)
 
 		elif iTech == con.iPrintingPress:
@@ -2559,6 +2562,7 @@ class Victory:
 				if iPlayer == iChina:
 					self.setChineseTechs(3, 1)
 				else:
+					self.setChineseTechs(3, 0)
 					self.setGoal(iChina, 1, 0)
 
 		if iTech in [con.iCompass, con.iPaper, con.iGunpowder, con.iPrintingPress] and self.getGoal(iChina, 1) == -1:
@@ -2571,6 +2575,7 @@ class Victory:
 				if iPlayer == iBabylonia:
 					self.setBabylonianTechs(0, 1)
 				else:
+					self.setBabylonianTechs(0, 0)
 					self.setGoal(iBabylonia, 0, 0)
 
 		elif iTech == con.iCodeOfLaws:
@@ -2578,6 +2583,7 @@ class Victory:
 				if iPlayer == iBabylonia:
 					self.setBabylonianTechs(1, 1)
 				else:
+					self.setBabylonianTechs(1, 0)
 					self.setGoal(iBabylonia, 0, 0)
 
 		elif iTech == con.iMonarchy:
@@ -2585,6 +2591,7 @@ class Victory:
 				if iPlayer == iBabylonia:
 					self.setBabylonianTechs(2, 1)
 				else:
+					self.setBabylonianTechs(2, 0)
 					self.setGoal(iBabylonia, 0, 0)
 
 		if iTech in [con.iWriting, con.iCodeOfLaws, con.iMonarchy] and self.getGoal(iBabylonia, 0) == -1:
@@ -2598,6 +2605,7 @@ class Victory:
 				if iPlayer == iGreece:
 					self.setGreekTechs(0, 1)
 				else:
+					self.setGreekTechs(0, 0)
 					self.setGoal(iGreece, 0, 0)
 
 		elif iTech == con.iDrama:
@@ -2605,6 +2613,7 @@ class Victory:
 				if iPlayer == iGreece:
 					self.setGreekTechs(1, 1)
 				else:
+					self.setGreekTechs(1, 0)
 					self.setGoal(iGreece, 0, 0)
 
 		elif iTech == con.iPhilosophy:
@@ -2612,6 +2621,7 @@ class Victory:
 				if iPlayer == iGreece:
 					self.setGreekTechs(2, 1)
 				else:
+					self.setGreekTechs(2, 0)
 					self.setGoal(iGreece, 0, 0)
 
 		if iTech in [con.iLiterature, con.iDrama, con.iPhilosophy] and self.getGoal(iGreece, 0) == -1:
@@ -2624,6 +2634,7 @@ class Victory:
 				if iPlayer == iRome:
 					self.setRomanTechs(0, 1)
 				else:
+					self.setRomanTechs(0, 0)
 					self.setGoal(iRome, 2, 0)
 		
 		elif iTech == con.iMachinery:
@@ -2631,6 +2642,7 @@ class Victory:
 				if iPlayer == iRome:
 					self.setRomanTechs(1, 1)
 				else:
+					self.setRomanTechs(1, 0)
 					self.setGoal(iRome, 2, 0)
 					
 		elif iTech == con.iCivilService:
@@ -2638,6 +2650,7 @@ class Victory:
 				if iPlayer == iRome:
 					self.setRomanTechs(2, 1)
 				else:
+					self.setRomanTechs(2, 0)
 					self.setGoal(iRome, 2, 0)
 					
 		if iTech in [con.iTheology, con.iMachinery, con.iCivilService] and self.getGoal(iRome, 2) == -1:

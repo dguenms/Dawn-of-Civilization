@@ -1347,7 +1347,7 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iVikings:
-			if iReligion == -1:
+			if iReligion == -1 and not teamVikings.isHasTech(con.iLiberalism):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS")
 				return
 			else:
