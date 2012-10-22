@@ -165,3 +165,4 @@
 # changed St. Basil's Cathedral's tech requirement to Military Tradition
 # changed Camel Archers from +25% against cavalry to 35% withdrawal chance
 # added a new loading screen
+# modified the minimap to display territory more transparently over water

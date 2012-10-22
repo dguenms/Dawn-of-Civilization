@@ -3,7 +3,7 @@ Complete List of Features (as of version 1.10)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
-This version corresponds to SVN revision 449.
+This version corresponds to SVN revision 450.
 
 GAME MECHANICS
 # enabled Epic/Marathon speeds (RFCMarathon modmod by embryodead)
@@ -79,7 +79,7 @@ GAME MECHANICS
 	# defeating Pombos and Impis on your territory while running Forced Labor has a chance to give a slave unit
 	# slaves can be sold in the diplomacy negotiation table
 	# native African civs cannot sell slaves
-	# others can build slave plantations (+1 production and +2 commerce over regular plantations, consumes the slave) or settle them as specialists (+2 production, +1 happiness)
+	# others can build slave plantations (+1 production and +2 commerce over regular plantations, consumes the slave) or settle them as specialists (+2 production, +1 unhappiness)
 	# switching out of Forced Labor, Agrarianism, Mercantilism removes all slave plantations and specialists
 	# conquering a city with slave specialists turns them into slave units again
 # independents can't circumnavigate or receive conquerors anymore
@@ -154,6 +154,7 @@ INTERFACE
 # respawns and horde events are only displayed for civs that have contact to the respective civilizations
 # tech requirements for corporations are now displayed in the Civilopedia
 # stability categories removed from the financial advisor due to the new stability advisor
+# modified the minimap to display territory more transparently on water
 
 GRAPHICS
 # China has a light yellow color now (Zulu from BtS)
@@ -275,7 +276,7 @@ CIVILIZATIONS
 # new Viking UP: The Power of Raids: Additional gold from pillaging, conquering cities and sinking ships
 # new French UP: The Power of Diplomacy: Negative opinions of other civilizations decay twice as fast, nobody can refuse to talk to you, higher chance to get votes in Congresses
 # the Thais now flip Angkor if it has at least one wonder
-# changed the Aztec UP to give slaves instead of workers, Aztec slaves can also serve as workers, hurry buildings or be sacrificed for temporary happiness
+# changed the Aztec UP to give slaves instead of workers, Aztec slaves can also hurry buildings or be sacrificed for temporary happiness
 # Mali is now known as the Mandinka and their adjective is Mande
 
 UHVs

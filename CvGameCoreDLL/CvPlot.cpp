@@ -28,6 +28,7 @@
 #include "CvRhyes.h" //Rhye
 
 #define STANDARD_MINIMAP_ALPHA		(0.6f)
+#define STANDARD_MINIMAP_ALPHA_TRANSPARENT	(0.4f)
 
 
 // Public Functions...
@@ -736,7 +737,7 @@ void CvPlot::updateMinimapColor()
 		return;
 	}
 
-	gDLL->getInterfaceIFace()->setMinimapColor(MINIMAPMODE_TERRITORY, getX_INLINE(), getY_INLINE(), plotMinimapColor(), STANDARD_MINIMAP_ALPHA);
+	gDLL->getInterfaceIFace()->setMinimapColor(MINIMAPMODE_TERRITORY, getX_INLINE(), getY_INLINE(), plotMinimapColor(), (!isOwned() || !isWater()) ? STANDARD_MINIMAP_ALPHA : STANDARD_MINIMAP_ALPHA_TRANSPARENT);
 }
 
 
@@ -5051,11 +5052,14 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 		// Sanguo Mod Performance, end
 
 		// Leoreth: gain plot control over slave plantation without being able to practice slavery
-		if (getImprovementType() == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"))
+		if (eNewValue != NO_PLAYER)
 		{
-			if (GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM)
+			if (getImprovementType() == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"))
 			{
-				setImprovementType((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_PLANTATION"));
+				if (GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM)
+				{
+					setImprovementType((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_PLANTATION"));
+				}
 			}
 		}
 
@@ -8995,7 +8999,8 @@ ColorTypes CvPlot::plotMinimapColor()
 			}
 		}
 
-		if ((getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) != NO_PLAYER) && !isRevealedBarbarian())
+		//if ((getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) != NO_PLAYER) && !isRevealedBarbarian())
+		if (/*!isWater() &&*/ (getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true) != NO_PLAYER) && !isRevealedBarbarian()) // edead
 		{
 			return ((ColorTypes)(GC.getPlayerColorInfo(GET_PLAYER(getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true)).getPlayerColor()).getColorTypePrimary()));
 		}

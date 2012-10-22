@@ -2095,6 +2095,10 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 		{
 			bException = true;
 		}
+		else if ((iCapitalRegion == REGION_IBERIA && iRegion == REGION_MAGHREB) || (iCapitalRegion == REGION_MAGHREB && iRegion == REGION_IBERIA))
+		{
+			bException = true;
+		}
 
 		if (iCapitalContinent != iCityContinent && !bException)
 		{
