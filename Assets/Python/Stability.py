@@ -1605,7 +1605,7 @@ class Stability:
                             
         def onProjectBuilt(self, iPlayer, iProject):
             
-                if (iProject <= con.iApolloProgram and iProject != con.iProjectPersecution): #no SS parts
+                if (iProject <= con.iApolloProgram and iProject != con.iPersecutionProject): #no SS parts
                         self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, 1) )
                         self.setParameter(iPlayer, iParCitiesE, True, 2)
                         #print("Stability - project built", iPlayer)
@@ -1685,65 +1685,74 @@ class Stability:
 			
 			iCollapsingCiv = lCollapsingCivs[0][0]
 			
-			if iCollapsingCiv != utils.getHumanID():
-				if gc.getPlayer(utils.getHumanID()).canContact(iCollapsingCiv):
-                                                        	CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iCollapsingCiv).getCivilizationDescription(0) + " " + \
-                                                        	                                    CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-				if iGameTurn < getTurnForYear(1400):
-					utils.pickFragmentation(iCollapsingCiv, iIndependent, iIndependent2, iBarbarian, False)
-				else:
-					utils.pickFragmentation(iCollapsingCiv, iIndependent, iIndependent2, -1, False)
+			self.handleCollapse(iCollapsingCiv, iGameTurn)
+			
+			if iCollapsingCiv == con.iByzantium:
+				if len(lCollapsingCivs) > 1:
+					self.handleCollapse(lCollapsingCivs[1][0], iGameTurn)
+			
+	def handleCollapse(self, iCollapsingCiv, iGameTurn):
+			
+		if iCollapsingCiv != utils.getHumanID():
+			if gc.getPlayer(utils.getHumanID()).canContact(iCollapsingCiv):
+							CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iCollapsingCiv).getCivilizationDescription(0) + " " + \
+											    CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+			if iGameTurn < getTurnForYear(1400):
+				utils.pickFragmentation(iCollapsingCiv, iIndependent, iIndependent2, iBarbarian, False)
 			else:
-				if gc.getPlayer(iCollapsingCiv).getNumCities() > -1:
-					CyInterface().addMessage(iCollapsingCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-					utils.pickFragmentation(iCollapsingCiv, iIndependent, iIndependent2, -1, True)
-					utils.setStartingStabilityParameters(iCollapsingCiv)
-					self.setGNPold(iCollapsingCiv, 0)
-					self.setGNPnew(iCollapsingCiv, 0)
+				utils.pickFragmentation(iCollapsingCiv, iIndependent, iIndependent2, -1, False)
+		else:
+			if gc.getPlayer(iCollapsingCiv).getNumCities() > -1:
+				CyInterface().addMessage(iCollapsingCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+				utils.pickFragmentation(iCollapsingCiv, iIndependent, iIndependent2, -1, True)
+				utils.setStartingStabilityParameters(iCollapsingCiv)
+				self.setGNPold(iCollapsingCiv, 0)
+				self.setGNPnew(iCollapsingCiv, 0)
 				
-					
-		
-                        #for iPlayer in range(iNumPlayers):
-                        #        if (gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(con.tBirth[iPlayer]) + utils.getTurns(25) and not gc.getPlayer(iPlayer).isGoldenAge()):
-                        #                if (self.getStability(iPlayer) < -40): #civil war
-						#if iPlayer == con.iByzantium and gc.getPlayer(iPlayer).getCapitalCity().getX() == con.tCapitals[0][iPlayer][0] and gc.getPlayer(iPlayer).getCapitalCity().getY() == con.tCapitals[0][iPlayer][1] and gc.getPlayer(con.iByzantium).getCurrentEra() <= 2:
-						#	print "Byzantine Collapse prevented by UP, foreign cities secede"
-						#	secedingCities = []
-						#	citylist = PyPlayer(iPlayer).getCityList()
-						#	for pCity in citylist:
-						#		if gc.getPlayer(iPlayer).getSettlersMaps(67-pCity.getY(),pCity.getX()) < 90:
-						#			secedingCities.append(pCity)
-						#	for pCity in secedingCities:
-						#		iNewCiv = con.iIndependent + (pCity.getX() % 2)
-                                                #		utils.cultureManager((pCity.getX(),pCity.getY()), 50, iNewCiv, iPlayer, False, True, True)
-                                                #		utils.flipUnitsInCityBefore((pCity.getX(),pCity.getY()), iNewCiv, iPlayer)
-						#                sd.scriptDict['tempFlippingCity'] = (pCity.getX(),pCity.getY())                            
-                                                #		utils.flipCity((pCity.getX(),pCity.getY()), 0, 0, iNewCiv, [iPlayer])   #by trade because by conquest may raze the city
-                                                #		utils.flipUnitsInCityAfter(sd.scriptDict['tempFlippingCity'], iNewCiv)
-                                                #		if (iPlayer == utils.getHumanID()):
-                                                #        		CyInterface().addMessage(iPlayer, True, con.iDuration, pCity.getName() + " " + \
-                                                #                                           		CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
-                                                #		#print ("SECESSION", gc.getPlayer(iPlayer).getCivilizationAdjective(0), splittingCity.getName()) #causes c++ exception??
-                                                #		utils.setStability(iPlayer, utils.getStability(iPlayer) + 2) #to counterbalance the stability hit on city acquired event, leading to a chain reaction
-						#else:
-                        #                        print ("COLLAPSE: CIVIL WAR", gc.getPlayer(iPlayer).getCivilizationAdjective(0))
-                        #                        if (iPlayer != utils.getHumanID()):
-                        #                        	if (gc.getPlayer(utils.getHumanID()).canContact(iPlayer)):
-                        #                                	CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iPlayer).getCivilizationDescription(0) + " " + \
-                        #                                	                                    CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-                        #                        	if (iGameTurn < getTurnForYear(1400)):
-                        #                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, iBarbarian, False)
-                        #                        	else:
-                        #                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, -1, False)
-                        #                        else:
-                        #                        	if (gc.getPlayer(iPlayer).getNumCities() > 1):
-                        #                                	CyInterface().addMessage(iPlayer, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-                        #                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, -1, True)
-                        #                                	utils.setStartingStabilityParameters(iPlayer)
-                        #                                	self.setGNPold(iPlayer, 0)
-                        #                                	self.setGNPnew(iPlayer, 0)
-                        #                                        
-                        #                        return
+			
+				
+	
+		#for iPlayer in range(iNumPlayers):
+		#        if (gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(con.tBirth[iPlayer]) + utils.getTurns(25) and not gc.getPlayer(iPlayer).isGoldenAge()):
+		#                if (self.getStability(iPlayer) < -40): #civil war
+					#if iPlayer == con.iByzantium and gc.getPlayer(iPlayer).getCapitalCity().getX() == con.tCapitals[0][iPlayer][0] and gc.getPlayer(iPlayer).getCapitalCity().getY() == con.tCapitals[0][iPlayer][1] and gc.getPlayer(con.iByzantium).getCurrentEra() <= 2:
+					#	print "Byzantine Collapse prevented by UP, foreign cities secede"
+					#	secedingCities = []
+					#	citylist = PyPlayer(iPlayer).getCityList()
+					#	for pCity in citylist:
+					#		if gc.getPlayer(iPlayer).getSettlersMaps(67-pCity.getY(),pCity.getX()) < 90:
+					#			secedingCities.append(pCity)
+					#	for pCity in secedingCities:
+					#		iNewCiv = con.iIndependent + (pCity.getX() % 2)
+					#		utils.cultureManager((pCity.getX(),pCity.getY()), 50, iNewCiv, iPlayer, False, True, True)
+					#		utils.flipUnitsInCityBefore((pCity.getX(),pCity.getY()), iNewCiv, iPlayer)
+					#                sd.scriptDict['tempFlippingCity'] = (pCity.getX(),pCity.getY())                            
+					#		utils.flipCity((pCity.getX(),pCity.getY()), 0, 0, iNewCiv, [iPlayer])   #by trade because by conquest may raze the city
+					#		utils.flipUnitsInCityAfter(sd.scriptDict['tempFlippingCity'], iNewCiv)
+					#		if (iPlayer == utils.getHumanID()):
+					#        		CyInterface().addMessage(iPlayer, True, con.iDuration, pCity.getName() + " " + \
+					#                                           		CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
+					#		#print ("SECESSION", gc.getPlayer(iPlayer).getCivilizationAdjective(0), splittingCity.getName()) #causes c++ exception??
+					#		utils.setStability(iPlayer, utils.getStability(iPlayer) + 2) #to counterbalance the stability hit on city acquired event, leading to a chain reaction
+					#else:
+		#                        print ("COLLAPSE: CIVIL WAR", gc.getPlayer(iPlayer).getCivilizationAdjective(0))
+		#                        if (iPlayer != utils.getHumanID()):
+		#                        	if (gc.getPlayer(utils.getHumanID()).canContact(iPlayer)):
+		#                                	CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iPlayer).getCivilizationDescription(0) + " " + \
+		#                                	                                    CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+		#                        	if (iGameTurn < getTurnForYear(1400)):
+		#                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, iBarbarian, False)
+		#                        	else:
+		#                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, -1, False)
+		#                        else:
+		#                        	if (gc.getPlayer(iPlayer).getNumCities() > 1):
+		#                                	CyInterface().addMessage(iPlayer, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+		#                                	utils.pickFragmentation(iPlayer, iIndependent, iIndependent2, -1, True)
+		#                                	utils.setStartingStabilityParameters(iPlayer)
+		#                                	self.setGNPold(iPlayer, 0)
+		#                                	self.setGNPnew(iPlayer, 0)
+		#                                        
+		#                        return
 
 
 

@@ -137,6 +137,10 @@ class Companies:
 		# Mercantilism increases likeliness for trading company
 		if iCompany == iTradingCompany and owner.getCivics(3) == con.iMercantilism:
 			iValue += 2
+			
+		# Tribalism increases likeliness for silk route
+		if iCompany == iSilkRoute and owner.getCivics(2) == con.iTribalism:
+			iValue += 2
 
 		# Free Market increases likeliness for all companies
 		if owner.getCivics(3) == con.iFreeMarket:

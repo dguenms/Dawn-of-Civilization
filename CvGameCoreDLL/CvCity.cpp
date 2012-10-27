@@ -12650,7 +12650,9 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 						{
 							if (pLoopPlot->isPotentialCityWorkForArea(area()))
 							{
-								pLoopPlot->changeCulture(ePlayer, (((eCultureLevel - iCultureRange) * iFreeCultureRate) + iCultureRate + 1), (bUpdate || !(pLoopPlot->isOwned())));
+								int iChange = ((eCultureLevel - iCultureRange) * iFreeCultureRate) + iCultureRate + 1;
+								if (ePlayer == ITALY) iChange /= 2;
+								pLoopPlot->changeCulture(ePlayer, iChange, (bUpdate || !(pLoopPlot->isOwned())));
 							}
 						}
 					}
