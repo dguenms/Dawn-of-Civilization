@@ -1873,7 +1873,12 @@ class RiseAndFall:
                 for j in range(iRndnum, iRndnum + iNumPlayers):
                         iPlayer = j % iNumPlayers   
                         if (gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(con.tBirth[iPlayer]) + utils.getTurns(30)):
-                                if (utils.getStability(iPlayer) >= -400 and utils.getStability(iPlayer) < -20): #secession (-400 for any very low value, instead of -40)
+				iStability = utils.getStability(iPlayer)
+				
+				if gc.getPlayer(iPlayer).getCivics(5) == con.iImperialism:
+					iStability += 15
+				
+                                if (iStability >= -400 and iStability < -20): #secession (-400 for any very low value, instead of -40)
 
                                         cityList = []
                                         apCityList = PyPlayer(iPlayer).getCityList()
@@ -2021,7 +2026,7 @@ class RiseAndFall:
 										if utils.getCivsWithNationalism() == 0:
 											iOwnerStability += 10
 										elif gc.getPlayer(iOwner).getCivics(5) == con.iImperialism: # Confederation civic effect
-											iOwnerStability += 15
+											iOwnerStability += 25
                                                                                 if (not gc.getPlayer(iOwner).isHuman()):
                                                                                         iMinNumCitiesOwner = 2
                                                                                         iOwnerStability -= 20

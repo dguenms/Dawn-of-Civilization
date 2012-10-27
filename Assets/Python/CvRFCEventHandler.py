@@ -433,7 +433,7 @@ class CvRFCEventHandler:
                 self.pla.onCityRazed(city,iPlayer) #Plague
                         
                 if (iPlayer == con.iMongolia):
-                        self.vic.onCityRazed(city, iPlayer) #Victory
+                        self.vic.onCityRazed(iPlayer, city) #Victory
 
 
 
