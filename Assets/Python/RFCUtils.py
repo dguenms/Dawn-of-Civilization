@@ -595,6 +595,10 @@ class RFCUtils:
                                                 pNewOwner.acquireCity(city, True, False)
                                         else: #trade
                                                 pNewOwner.acquireCity(city, False, True)
+						
+					# Leoreth: reset unhappiness timers
+					city.changeHurryAngerTimer(-city.getHurryAngerTimer())
+					city.changeConscriptAngerTimer(-city.getConscriptAngerTimer())
                                                 
                                         return True
                 return False

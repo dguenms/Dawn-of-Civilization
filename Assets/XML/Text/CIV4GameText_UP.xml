@@ -294,11 +294,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AME2</Tag>
-		<English>Population migrates from other civilizations to American cities</English>
+		<English>Additional happiness from running Republic, Capitalism and Free Market</English>
 		<French>Les populations des autres civilisations migrent vers les villes américaines</French>
-		<German>Einwanderung der Bevölkerung anderer Zivilisationen in amerikanische Städte</German>
+		<German>Zusätzliche Zufriedenheit unter Republik, Kapitalismus und Freiem Markt</German>
 		<Italian>La popolazione migra dalle altre civilt&#224; nelle citt&#224; americane</Italian>
 		<Spanish>La poblaci&#243;n emigra de otras civilizaciones a las ciudades estadounidenses</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</English>
+		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn</French>
+		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn In Allen Städten</German>
+		<Italian>[ICON_BULLET]%D1_Change%F2_HappyOrUn</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change %F2_HappyOrUn</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_EMIGRATION</Tag>

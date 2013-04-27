@@ -3046,12 +3046,12 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 									{
 									    if (pBestCity != NULL)
 									    {
-                                            if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1 || abs(pBestCity->getX() - getX()) == 1 || abs(pBestCity->getY() - getY()) == 1) // Leoreth: spare the first ring around the city to help small civs (except if it's the first ring of a master's city
-                                                iPriority += 5; // priority ranges from 0 to 4 -> give priority to Masters of a Vassal
+										if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1 || abs(pBestCity->getX() - getX()) == 1 || abs(pBestCity->getY() - getY()) == 1) // Leoreth: spare the first ring around the city to help small civs (except if it's the first ring of a master's city
+											iPriority += 5; // priority ranges from 0 to 4 -> give priority to Masters of a Vassal
 									    }else
 									    {
-									        if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1)
-                                                iPriority += 5;
+										if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1)
+											iPriority += 5;
 									    }
 									}
 

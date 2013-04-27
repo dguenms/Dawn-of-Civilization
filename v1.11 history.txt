@@ -1,0 +1,6 @@
+# changed American UP to +2 happiness from running Republic, Capitalism and Free Market (respectively)
+# changed American Mall from +20% gold to +10% commerce
+# changed American UU to Minuteman (replaces Rifleman, costs 80 instead of 110 hammers)
+# American UP now applies all New World cities for civilizations that have their capital in the New World
+# Unhappiness from slavery or conscription reset on city flip
+# The Statue of Liberty is now placed in water
