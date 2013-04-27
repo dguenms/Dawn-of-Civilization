@@ -4266,7 +4266,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 3)
-                        utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iAmericanMinuteman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
 
 
@@ -4624,7 +4624,7 @@ class RiseAndFall:
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 5)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iRifleman, iCiv, tPlot, 4)
+                        utils.makeUnit(con.iAmericanMinuteman, iCiv, tPlot, 4)
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
                         self.addMissionary(iCiv, (23, 40), (33, 52), tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
@@ -4633,7 +4633,7 @@ class RiseAndFall:
                                 utils.makeUnit(con.iGalleon, iCiv, tSeaPlot, 2)
                                 utils.makeUnit(con.iFrigate, iCiv, tSeaPlot, 1)
 			if utils.getHumanID() != iAmerica:
-				utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+				utils.makeUnitAI(con.iAmericanMinuteman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 
         def createRespawnUnits(self, iCiv, tPlot):
                 if (iCiv == iRome):
