@@ -19335,8 +19335,15 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	}
 
 	int iValue = GC.getDefineINT("AI_SLAVE_VALUE");
+	PlayerTypes eOwner = pUnit->getOwner();
 
 	if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == PORTUGAL || getID() == NETHERLANDS)
+	{
+		iValue *= 2;
+	}
+
+	// colonial civs also sell at higher prices to avoid buy and resell exploits
+	if (eOwner == SPAIN || eOwner == FRANCE || eOwner == ENGLAND || eOwner == PORTUGAL || eOwner == NETHERLANDS)
 	{
 		iValue *= 2;
 	}

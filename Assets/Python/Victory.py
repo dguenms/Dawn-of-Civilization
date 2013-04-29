@@ -1957,7 +1957,7 @@ class Victory:
 				# second goal: acquire 12 colonial resources by 1650 AD
 				if self.getGoal(iPortugal, 1) == -1:
 					iCount = 0
-					for iBonus in [con.iBanana, con.iSpices, con.iSugar, con.iCoffee, con.iTea]:
+					for iBonus in [con.iBanana, con.iSpices, con.iSugar, con.iCoffee, con.iTea, con.iTobacco]:
 						iCount += pPortugal.getNumAvailableBonuses(iBonus)
 					if iCount >= 12:
 						self.setGoal(iPortugal, 1, 1)
