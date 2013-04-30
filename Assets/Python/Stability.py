@@ -895,9 +895,9 @@ class Stability:
                                                                 #print("city owned in unstable area: -1", pLoopCity.GetCy().getName(), iPlayer)
                                                                 break
 								
-			if iPlayer == con.iMongolia:
-				iForeignCoreCities *= 2
-				iForeignCoreCities /= 3
+			#if iPlayer == con.iMongolia:
+			#	iForeignCoreCities *= 2
+			#	iForeignCoreCities /= 3
 								
 			iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityForeignCoreCities, -iForeignCoreCities)
 			self.setParameter(iPlayer, iParExpansion3, True, -iForeignCoreCities)
@@ -1004,9 +1004,9 @@ class Stability:
 					iOutputCityCulture = iTempCityStability - iOutputCityCivic - iOutputCityHappy
 					print "PYTHON: Player " + str(iPlayer) + " City " + str(iCount) + " culture stability: " + str(iOutputCityCulture)
 					
-					if iPlayer == con.iMongolia:
-						iOutputCityCulture *= 2
-						iOutputCityCulture /= 3
+					#if iPlayer == con.iMongolia:
+					#	iOutputCityCulture *= 2
+					#	iOutputCityCulture /= 3
 
 					self.changeStabilityCategory(pPlayer, con.iStabilityCityCulture, iOutputCityCulture)
                                         
@@ -1017,8 +1017,8 @@ class Stability:
                                         if (iTotalTempCityStability <= -12): #middle check, for optimization
                                                 break
 						
-			if iPlayer == con.iMongolia:
-				iTotalTempCityStability -= iOutputCityCulture
+			#if iPlayer == con.iMongolia:
+			#	iTotalTempCityStability -= iOutputCityCulture
 				
                         if (iTotalTempCityStability < 0):
                                 iNewBaseStability += self.changeStabilityCategory(pPlayer, con.iStabilityCityTotal, max(-12, iTotalTempCityStability))
