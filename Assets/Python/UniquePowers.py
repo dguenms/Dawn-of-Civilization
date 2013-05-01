@@ -787,7 +787,7 @@ class UniquePowers:
 			if pPlayer.getCapitalCity().getRegionID() in con.lNewWorld:
 				for city in PyPlayer(iPlayer).getCityList():
 					pCity = city.GetCy()
-					if pCity in con.lNewWorld:
+					if pCity.getRegionID() in con.lNewWorld:
 						lCityList.append(pCity)
 						
 		return lCityList
