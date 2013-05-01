@@ -5,3 +5,4 @@
 # Unhappiness from slavery or conscription reset on city flip
 # The Statue of Liberty is now placed in water
 # fixed the buy/resell exploit in slave trade
+# fixed the French UP: the French now refuse to talk to other civs as intended
