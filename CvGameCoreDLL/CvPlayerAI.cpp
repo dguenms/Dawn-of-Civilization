@@ -6132,7 +6132,7 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 
 
 		// Leoreth: new French UP
-		if (getID() == FRANCE)
+		if (ePlayer == FRANCE)
 		{
 			iRefuseDuration = 0;
 		}
@@ -11498,6 +11498,15 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		if (getID() == NETHERLANDS)
 		{
 			iValue /= 2;
+		}
+	}
+
+	// Leoreth: take American UP into account
+	if (getID() == AMERICA)
+	{
+		if (eCivic == CIVIC_REPUBLIC || eCivic == CIVIC_CAPITALISM || eCivic == CIVIC_FREE_MARKET)
+		{
+			iValue += 100;
 		}
 	}
 
