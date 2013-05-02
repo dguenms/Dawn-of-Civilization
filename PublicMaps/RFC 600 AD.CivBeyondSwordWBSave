@@ -41115,7 +41115,8 @@ EndPlot
 BeginPlot
 	x=106,y=14
 	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	BonusType=BONUS_GOLD
+	PlotType=1
 EndPlot
 BeginPlot
 	x=106,y=15
@@ -41124,7 +41125,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=16
-	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -43417,6 +43417,7 @@ EndPlot
 BeginPlot
 	x=112,y=15
 	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_URANIUM
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43761,7 +43762,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=12
-	BonusType=BONUS_URANIUM
 	isWOfRiver
 	RiverNSDirection=2
 	TerrainType=TERRAIN_PLAINS
@@ -43795,12 +43795,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=18
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_COPPER
 	PlotType=2
 EndPlot
 BeginPlot
 	x=113,y=19
-	BonusType=BONUS_COPPER
 	isWOfRiver
 	RiverNSDirection=0
 	TerrainType=TERRAIN_GRASS
@@ -44185,7 +44185,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=22
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -44570,7 +44570,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=21
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -45305,6 +45305,7 @@ EndPlot
 BeginPlot
 	x=117,y=21
 	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_FISH
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45995,6 +45996,7 @@ EndPlot
 BeginPlot
 	x=119,y=18
 	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_CLAM
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46386,6 +46388,7 @@ BeginPlot
 	x=120,y=25
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_COPPER
 	PlotType=2
 EndPlot
 BeginPlot

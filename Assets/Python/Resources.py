@@ -235,6 +235,7 @@ class Resources:
                 if (iGameTurn == getTurnForYear(1850)):
                         gc.getMap().plot(12, 45).setBonusType(iWine) #California
                         gc.getMap().plot(31, 10).setBonusType(iWine) #Andes
+			gc.getMap().plot(113, 12).setBonusType(iWine) #Barossa Valley, Australia
 
                         gc.getMap().plot(114, 11).setBonusType(iSheep) #Australia
                         gc.getMap().plot(116, 13).setBonusType(iSheep) #Australia
