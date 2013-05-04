@@ -310,17 +310,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_EMIGRATION</Tag>
-		<English>A part of our population is emigrating to America!</English>
+		<English>A part of our population from %s1 is emigrating to the New World!</English>
 		<French>Une partie de notre population émigre en Amérique !</French>
-		<German>Ein Teil unserer Bevölkerung wandert nach Amerika aus!</German>
+		<German>Ein Teil unserer Bevölkerung aus %s1 wandert in die Neue Welt aus!</German>
 		<Italian>Parte della nostra popolazione emigra in America!</Italian>
 		<Spanish>¡Parte de nuestra poblaci&#243;n est&#225; emigrando a Estados Unidos!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IMMIGRATION</Tag>
-		<English>Our population is growing due to immigrants from the Old World!</English>
+		<English>Our population in %s1 is growing due to immigrants from the Old World!</English>
 		<French>Notre population augmente grâce aux immigrants du Vieux Monde !</French>
-		<German>Wir profitieren von einem Bevölkerungszuwachs durch Einwanderer aus der Alten Welt!</German>
+		<German>Unsere Bevölkerung in %s1 wächst durch Einwanderer aus der Alten Welt!</German>
 		<Italian>La nostra popolazione sta crescendo grazie agli immigranti dal vecchio mondo!</Italian>
 		<Spanish>¡Nuestra poblaci&#243;n est&#225; creciendo como consecuencia de la inmigraci&#243;n procedente del Viejo Mundo!</Spanish>
 	</TEXT>
