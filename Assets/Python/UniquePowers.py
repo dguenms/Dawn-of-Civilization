@@ -648,7 +648,7 @@ class UniquePowers:
 			
 	def doImmigration(self):
 	
-		utils.debugTextPopup("doImmigration()")
+		#utils.debugTextPopup("doImmigration()")
 	
 		# get available migration and immigration cities
 		lSourceCities = []
@@ -673,9 +673,9 @@ class UniquePowers:
 		sourceCity = lSourceCities[0][0]
 		targetCity = lTargetCities[0][0]
 		
-		utils.debugTextPopup(str([(x.getName(), y) for (x,y) in lTargetCities]))
-		utils.debugTextPopup("Target city: "+targetCity.getName())
-		utils.debugTextPopup("Source city: "+sourceCity.getName())
+		#utils.debugTextPopup(str([(x.getName(), y) for (x,y) in lTargetCities]))
+		#utils.debugTextPopup("Target city: "+targetCity.getName())
+		#utils.debugTextPopup("Source city: "+sourceCity.getName())
 		
 		if sourceCity and targetCity:
 		
