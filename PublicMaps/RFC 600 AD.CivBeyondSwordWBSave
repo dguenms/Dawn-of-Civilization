@@ -39460,12 +39460,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=12
+	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=102,y=13
-	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -39911,8 +39911,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=17
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=103,y=18
@@ -40704,8 +40704,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=16
+	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_DESERT
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=105,y=17
@@ -41145,7 +41146,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=20
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -41482,7 +41482,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=11
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -41513,7 +41512,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=17
-	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -42716,7 +42714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=22
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -43082,7 +43080,7 @@ BeginPlot
 	x=111,y=21
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -43401,7 +43399,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=12
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -43755,15 +43753,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=113,y=11
-	isWOfRiver
-	RiverNSDirection=2
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=113,y=12
 	isWOfRiver
 	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -44116,7 +44114,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=10
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -44504,12 +44502,15 @@ BeginPlot
 	x=115,y=10
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
+	isWOfRiver
+	RiverNSDirection=2
 	PlotType=2
 EndPlot
 BeginPlot
 	x=115,y=11
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=115,y=12
@@ -44564,7 +44565,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=20
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -44933,7 +44934,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=19
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_SUGAR
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -45236,6 +45238,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=9
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -45251,7 +45254,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=12
-	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -45259,6 +45261,8 @@ EndPlot
 BeginPlot
 	x=117,y=13
 	TerrainType=TERRAIN_GRASS
+	isNOfRiver
+	RiverWEDirection=1
 	PlotType=0
 EndPlot
 BeginPlot
@@ -45287,7 +45291,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=18
-	BonusType=BONUS_SUGAR
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -45305,7 +45308,7 @@ EndPlot
 BeginPlot
 	x=117,y=21
 	TerrainType=TERRAIN_COAST
-	BonusType=BONUS_FISH
+	BonusType=BONUS_CLAM
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45622,7 +45625,9 @@ EndPlot
 BeginPlot
 	x=118,y=14
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_COAL
+	PlotType=1
 EndPlot
 BeginPlot
 	x=118,y=15
@@ -45635,6 +45640,8 @@ BeginPlot
 	x=118,y=16
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
+	isNOfRiver
+	RiverWEDirection=1
 	PlotType=2
 EndPlot
 BeginPlot
@@ -45964,7 +45971,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=119,y=12
-	BonusType=BONUS_CRAB
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -45996,7 +46003,7 @@ EndPlot
 BeginPlot
 	x=119,y=18
 	TerrainType=TERRAIN_COAST
-	BonusType=BONUS_CLAM
+	BonusType=BONUS_CRAB
 	PlotType=3
 EndPlot
 BeginPlot

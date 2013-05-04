@@ -62,8 +62,7 @@ class StoredData:
                                     'iSeed': -1,
 				    'lReformationDecision': [-1 for i in range(con.iNumPlayers)],
                                     #------------UP
-                                    'iImmigrationTurnLength': 0,
-                                    'iImmigrationCurrentTurn': 0,
+                                    'iImmigrationTimer': 0,
                                     'iLatestFlipTurn': 0,
                                     'lLatestRazeData': [-1, -1, -1, -1, -1],
 				    'iRomanVictories': 0,
