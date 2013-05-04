@@ -9559,10 +9559,10 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
-	int iMinorCulture = 0;
+	//int iMinorCulture = 0;
 
 	// Leoreth: all culture American cities in North America counts as American
-	if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
+	/*if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
 	{
 		if (eIndex == (PlayerTypes)AMERICA)
 		{
@@ -9580,7 +9580,7 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 		{
 			return 0;
 		}
-	}
+	}*/
 
 	// Leoreth: absorb independent culture
 	/*if (eIndex != getOwnerINLINE() && (eIndex == INDEPENDENT || eIndex == INDEPENDENT2))
@@ -9603,7 +9603,7 @@ int CvCity::getCultureTimes100(PlayerTypes eIndex) const
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
 	// Leoreth: all culture American cities in North America counts as American
-	if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
+	/*if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
 	{
 		if (eIndex == (PlayerTypes)AMERICA)
 		{
@@ -9621,7 +9621,7 @@ int CvCity::getCultureTimes100(PlayerTypes eIndex) const
 		{
 			return 0;
 		}
-	}
+	}*/
 
 	return m_aiCulture[eIndex];
 }
