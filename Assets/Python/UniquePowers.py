@@ -693,7 +693,7 @@ class UniquePowers:
 				for j in range(y-2, y+3):
 					pCurrent = gc.getMap().plot(i, j)
 					if pCurrent.getWorkingCity() == targetCity:
-						pCurrent.changeUpgradeProgress(10)
+						pCurrent.changeUpgradeProgress(utils.getTurns(10))
 						
 			# migration brings culture
 			targetPlot = gc.getMap().plot(x, y)
