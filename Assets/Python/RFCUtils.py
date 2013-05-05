@@ -1748,8 +1748,40 @@ class RFCUtils:
 	def getUniqueUnitType(self, iPlayer, iUnitClass):
 		pPlayer = gc.getPlayer(iPlayer)
 		return gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
-	
-			
+		
+	def getBestInfantry(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		lInfantryList = [con.iInfantry, con.iRifleman, con.iMusketman, con.iMaceman, con.iCrossbowman, con.iSwordsman, con.iAxeman, con.iWarrior]
+		
+		for iBaseUnit in lInfrantryList:
+			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
+			if pPlayer.canTrain(iUnit, False, False):
+				return iUnit
+				
+		return False
+		
+	def getBestCavalry(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		lCavalryList = [con.iCavalry, con.iCuirassier, con.iKnight, con.iHorseArcher, con.iChariot]
+		
+		for iBaseUnit in lCavalryList:
+			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
+			if pPlayer.canTrain(iUnit, False, False):
+				return iUnit
+				
+		return False
+		
+	def getBestSiege(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		lSiegeList = [con.iCannon, con.iBombard, con.iTrebuchet, con.iCatapult]
+		
+		for iBaseUnit in lSiegeList:
+			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
+			if pPlayer.canTrain(iUnit, False, False):
+				return iUnit
+				
+		return False
+				
 	
 	
 	
