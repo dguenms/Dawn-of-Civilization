@@ -732,12 +732,14 @@ class RiseAndFall:
                 # display welcome message
                 #self.displayWelcomePopup()
 
-                #center camera on Egyptian units
+                # Leoreth: make sure to select the Egyptian settler
                 if (pEgypt.isHuman()):
-                        plotEgypt = gc.getMap().plot(tCapitals[0][iEgypt][0], tCapitals[0][iEgypt][1])   
-                        unit = plotEgypt.getUnit(0)
-                        unit.centerCamera()
-                        #print (unit)
+                        plotEgypt = gc.getMap().plot(tCapitals[0][iEgypt][0], tCapitals[0][iEgypt][1])  
+			for i in range(plotEgypt.getNumUnits()):
+				unit = plotEgypt.getUnit(i)
+				if unit.getUnitType() == con.iSettler:
+					CyInterface().selectUnit(unit, true, false, false)
+					break
 
         def prepareConstantinople(self):
                 plot = con.tCapitals[0][iByzantium]

@@ -145,11 +145,11 @@ class CvInfoScreen:
 		self.X_LEGEND_MARGIN	= 10
 		self.Y_LEGEND_MARGIN	= 5
 		self.X_LEGEND_LINE	= self.X_LEGEND_MARGIN
-		self.Y_LEGEND_LINE	= self.Y_LEGEND_MARGIN + 9  # to center it relative to the text
+		self.Y_LEGEND_LINE	= self.Y_LEGEND_MARGIN + 9 + 75 # Leoreth # to center it relative to the text
 		self.W_LEGEND_LINE	= 30
 		self.X_LEGEND_TEXT	= self.X_LEGEND_LINE + self.W_LEGEND_LINE + 10
-		self.Y_LEGEND_TEXT	= self.Y_LEGEND_MARGIN
-		self.H_LEGEND_TEXT	= 16
+		self.Y_LEGEND_TEXT	= self.Y_LEGEND_MARGIN + 75 # Leoreth
+		self.H_LEGEND_TEXT	= 14 #16
 
 		self.TOTAL_SCORE	= 0
 		self.ECONOMY_SCORE	= 1
@@ -636,7 +636,7 @@ class CvInfoScreen:
 
 	    self.LEGEND_PANEL_ID = self.getNextWidgetName()
 	    screen.addPanel( self.LEGEND_PANEL_ID, "", "", true, true
-			   , self.X_LEGEND, self.Y_LEGEND, self.W_LEGEND, self.H_LEGEND
+			   , self.X_LEGEND, self.Y_LEGEND + 80, self.W_LEGEND, self.H_LEGEND - 80
 			   , PanelStyles.PANEL_STYLE_IN
 			   )
 	    self.LEGEND_CANVAS_ID = self.getNextWidgetName()
@@ -653,7 +653,7 @@ class CvInfoScreen:
 
 	    # Dropdown Box
 	    self.szGraphDropdownWidget = self.getNextWidgetName()
-	    screen.addDropDownBoxGFC(self.szGraphDropdownWidget, self.X_DEMO_DROPDOWN, self.Y_DEMO_DROPDOWN, self.W_DEMO_DROPDOWN, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+	    screen.addDropDownBoxGFC(self.szGraphDropdownWidget, self.X_DEMO_DROPDOWN, self.Y_DEMO_DROPDOWN - 20, self.W_DEMO_DROPDOWN, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT) # Leoreth
 	    screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_SCORE, 0, 0, False )
 	    screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_ECONOMY, 1, 1, False )
 	    screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_INDUSTRY, 2, 2, False )
@@ -664,7 +664,7 @@ class CvInfoScreen:
 
 	    self.dropDownTurns = []
 	    self.szTurnsDropdownWidget = self.getNextWidgetName()
-	    screen.addDropDownBoxGFC(self.szTurnsDropdownWidget, self.X_ZOOM_DROPDOWN, self.Y_ZOOM_DROPDOWN, self.W_ZOOM_DROPDOWN, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+	    screen.addDropDownBoxGFC(self.szTurnsDropdownWidget, self.X_ZOOM_DROPDOWN, self.Y_ZOOM_DROPDOWN - 25, self.W_ZOOM_DROPDOWN, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT) # Leoreth
 	    start = CyGame().getStartTurn()
 	    now   = CyGame().getGameTurn()
 	    nTurns = now - start - 1

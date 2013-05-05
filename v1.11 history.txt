@@ -1,10 +1,19 @@
 # changed American UP to +2 happiness from running Republic, Capitalism and Free Market (respectively)
 # changed American Mall from +20% gold to +10% commerce
-# changed American UU to Minuteman (replaces Rifleman, costs 80 instead of 110 hammers)
-# American UP now applies all New World cities for civilizations that have their capital in the New World
+# changed American UU to Minuteman (replaces Rifleman, costs 80 instead of 110 hammers), starts with March
 # Unhappiness from slavery or conscription reset on city flip
 # The Statue of Liberty is now placed in water
 # fixed the buy/resell exploit in slave trade
 # fixed the French UP: the French now refuse to talk to other civs as intended
 # map improvements in Australia for realism and better city locations
 # fixed the Mongolian stability, they should collapse easier now
+# adjusted the statistics screen legend so it can fit all civs
+# introduced generic immigration mechanic to replace America's old UP
+	# occurs every 3-7 turns
+	# potential target cities are cities in the New World (Americas + Australia) owned by a civ with its capital in the New World
+	# cities of Native American civs cannot be target cities
+	# potential source cities are cities in the Old World with its owner capital in the Old World
+	# immigration occurs from the source city with most excess unhappiness to the target city with the highest sum of excess happiness and food surplus divided by two
+	# the migration notification is now more visible, mentions the target/source city and marks them on the map
+# Egypt's settler is now selected at the beginning of the game
+# The German Panzer now starts with Leadership (+100% experience) instead of Mobility
