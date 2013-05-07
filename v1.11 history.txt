@@ -17,3 +17,7 @@
 	# the migration notification is now more visible, mentions the target/source city and marks them on the map
 # Egypt's settler is now selected at the beginning of the game
 # The German Panzer now starts with Leadership (+100% experience) instead of Mobility
+# added the Empire State Building to the American wonder goal
+# included an option to ignore the UHV goals of AI civs to improve speed
+# streamlined various parts of the victory checks to improve speed
+# rewrote certain wonder goals so that they fail when another civ constructs one of their wonders

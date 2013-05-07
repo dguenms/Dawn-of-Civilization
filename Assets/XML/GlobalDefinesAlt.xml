@@ -10,6 +10,12 @@
 		<DefineName>NO_AUTOSAVE_DURING_AUTOPLAY</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
+	<!-- Leoreth: if set to 1, UHV goals are not checked for AI civilizations so they can never complete them (increases speed)
+		      set to 0 to reenable them -->
+	<Define>
+		<DefineName>NO_AI_UHV_CHECKS</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
 	<Define>
 		<DefineName>AI_SLAVE_VALUE</DefineName>
 		<iDefineIntVal>100</iDefineIntVal>
