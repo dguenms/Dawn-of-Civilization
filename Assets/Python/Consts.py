@@ -6,12 +6,6 @@
 from CvPythonExtensions import *
 gc = CyGlobalContext()
 
-l0Array =       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-l0ArrayActive = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-l0ArrayTotal =  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-lm1Array =      [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
-
 # initialise player variables to player IDs from WBS
 iNumPlayers = 39
 (iEgypt, iChina, iBabylonia, iGreece, iIndia, iCarthage, iPersia, iRome, iTamils, iEthiopia, iKorea, iMaya, iByzantium, iJapan, 
@@ -38,6 +32,12 @@ iSeljuks = iNumPlayers+4
 iNumTotalPlayers = iNumPlayers+5
 iBarbarian = iNumPlayers+5
 iNumTotalPlayersB = iBarbarian+1
+
+l0Array =       [0 for i in range(iNumPlayers)]
+l0ArrayActive = [0 for i in range(iNumPlayers)]
+l0ArrayTotal =  [0 for i in range(iNumTotalPlayers)]
+
+lm1Array =      [-1 for i in range(iNumPlayers)]
 
 # civilizations, not players
 iNumCivilizations = 51

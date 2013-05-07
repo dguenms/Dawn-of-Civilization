@@ -257,28 +257,16 @@ class CvRFCEventHandler:
 
         def onGameStart(self, argsList):
                 'Called at the start of the game'
-                #self.data.setupScriptData()
 		
-		print "Topkapi Palace ID: "+str(con.iTopkapiPalace)
-		print "Class Plague ID: "+str(gc.getInfoTypeForString("BUILDINGCLASS_PLAGUE"))
-		
-                sd.setup() # edead
+		sd.setup() # edead
                 self.rnf.setup()
                 self.rel.setup()
                 self.pla.setup()
 		self.dc.setup()
                 self.sta.setup()
                 self.aiw.setup()
+		self.vic.setup() # Leoreth
                 self.rnf.warOnSpawn()
-
-		#s = ""
-		#for y in range(68):
-		#	for x in range(124):
-		#		s += str(gc.getMap().plot(x,68-y).getArea()) + ", "
-		#	print s
-		#	s = ""
-		
-                
 
                 #Mercenaries - start
                 global objMercenaryUtils        
