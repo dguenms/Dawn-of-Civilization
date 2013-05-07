@@ -663,11 +663,18 @@ class Victory:
 		global bIgnoreAI
 		bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
 	
+		utils.debugTextPopup("bIgnoreAI: "+str(bIgnoreAI))
+	
 		if bIgnoreAI:
 			for iPlayer in range(con.iNumPlayers):
 				if utils.getHumanID() != iPlayer:
 					for iGoal in range(3):
 						self.setGoal(iPlayer, iGoal, 0)
+						
+	def load(self):
+	
+		global bIgnoreAI
+		bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
 						
 
         def checkTurn(self, iGameTurn):
@@ -695,6 +702,7 @@ class Victory:
 			
 		# Leoreth: don't check AI civilizations to improve speed
 		if utils.getHumanID() != iPlayer and bIgnoreAI:
+			utils.debugTextPopup("Ignored goal check for civ "+str(iPlayer))
 			return
                 
                 if (iPlayer == iEgypt):
