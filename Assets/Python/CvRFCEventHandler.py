@@ -1044,6 +1044,7 @@ class CvRFCEventHandler:
         def onLoadGame(self, argsList):
 
                 sd.load() # edead: load & unpickle script data
+		self.vic.load()
 
                 if ((not gc.getTeam(gc.getActivePlayer().getTeam()).isHasTech(con.iNationalism)) and gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[utils.getHumanID()])): #Rhye
 
