@@ -3812,6 +3812,9 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 			gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
 		}
 
+		// report event to Python, along with some other key state (Leoreth: moved before diplomacy in case the event starts a war)
+		CvEventReporter::getInstance().firstContact(getID(), eIndex);
+
 		if (GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR))
 		{
 			if (isHuman() && getID() != eIndex)
@@ -3839,13 +3842,15 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 										{
 											if (GET_PLAYER((PlayerTypes)iI).isHuman())
 											{
-												if (m_abHasEverMet[iI] == false) { //Rhye	
+												// Rhye
+												if (!m_abHasEverMet[iI]) 
+												{	
 													pDiplo = new CvDiploParameters(getLeaderID());
 													FAssertMsg(pDiplo != NULL, "pDiplo must be valid");
 													pDiplo->setDiploComment((DiploCommentTypes)GC.getInfoTypeForString("AI_DIPLOCOMMENT_FIRST_CONTACT"));
 													pDiplo->setAIContact(true);
 													gDLL->beginDiplomacy(pDiplo, ((PlayerTypes)iI));
-												} //Rhye
+												}
 											}
 										}
 									}
@@ -3858,9 +3863,6 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 		}
 
 		m_abHasEverMet[eIndex] = true; //Rhye
-
-		// report event to Python, along with some other key state
-		CvEventReporter::getInstance().firstContact(getID(), eIndex);
 	}
 }
 

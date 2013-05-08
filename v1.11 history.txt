@@ -21,3 +21,5 @@
 # included an option to ignore the UHV goals of AI civs to improve speed
 # streamlined various parts of the victory checks to improve speed
 # rewrote certain wonder goals so that they fail when another civ constructs one of their wonders
+# added marble near Wahran
+# if the first contact between two civs triggers a war (American or Mongol conquerors) there is no diplomacy screen anymore

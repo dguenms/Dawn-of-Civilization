@@ -12,6 +12,7 @@ import Consts as con
 import CityNameManager 
 import Victory as vic
 import DynamicCivs
+from operator import itemgetter
 
 
 ################
@@ -3561,220 +3562,122 @@ class RiseAndFall:
 
 
         def onFirstContact(self, iTeamX, iHasMetTeamY):
-                if (gc.getGame().getGameTurn() < getTurnForYear(1800) and gc.getGame().getGameTurn() > getTurnForYear(600)): #>181 necessary, must be later than the game initialization
-                        iOldWorldCiv = -1
-                        iNewWorldCiv = -1
-                        #if (iTeamX in con.lCivBioOldWorld and iHasMetTeamY in con.lCivBioNewWorld):
-                        #        iOldWorldCiv = iTeamX
-                        #        iNewWorldCiv = iHasMetTeamY
-                        if (iTeamX in con.lCivBioNewWorld and iHasMetTeamY in con.lCivBioOldWorld):
-                                iNewWorldCiv = iTeamX
-                                iOldWorldCiv = iHasMetTeamY
-                        #print ("iOldWorldCiv", iOldWorldCiv, "iNewWorldCiv", iNewWorldCiv)
-                        if (iOldWorldCiv != -1 and iNewWorldCiv != -1):
-                                
-                                iIndex = -1
-                                if (iNewWorldCiv == iMaya):
-                                        iIndex = 0
-                                elif (iNewWorldCiv == iInca):
-                                        iIndex = 1
-                                elif (iNewWorldCiv == iAztecs):
-                                        iIndex = 2
-                                        
-                                bAlreadyContacted = False
-                                if (self.getFirstContactConquerors(iIndex) == 1):
-                                        bAlreadyContacted = True
-                                if (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[con.iAztecs]) + 10): #no "come back later" exploit
-                                        self.setFirstContactConquerors(iIndex, 1)
-                                        return
-                                        
-                                #print ("bAlreadyContacted", bAlreadyContacted)
-                                if (bAlreadyContacted == False and iIndex != -1):        
-
-                                        tContactZoneTL = [0, 0]
-                                        tContactZoneBR = [1, 1]
-                                        tContactPlot = [-1, -1]
-                                        tArrivalPlot = [-1, -1]
-
-                                        if (iNewWorldCiv == iMaya):
-                                                tContactZoneTL = [15, 30]
-                                                tContactZoneBR = [34, 42]
-                                        if (iNewWorldCiv == iAztecs):
-                                                tContactZoneTL = [11, 31]
-                                                tContactZoneBR = [34, 43]
-                                        if (iNewWorldCiv == iInca):
-                                                tContactZoneTL = [21, 11]
-                                                tContactZoneBR = [36, 40]
-
-                                        self.setFirstContactConquerors(iIndex, 1)
-                                        print ("1st contact", iNewWorldCiv, iOldWorldCiv)
+	
+		iGameTurn = gc.getGame().getGameTurn()
+		
+		if iGameTurn > getTurnForYear(600) and iGameTurn < getTurnForYear(1800):
+			if iTeamX in con.lCivBioNewWorld and iHasMetTeamY in con.lCivBioOldWorld:
+				iNewWorldCiv = iTeamX
+				iOldWorldCiv = iHasMetTeamY
+				
+				iIndex = con.lCivBioNewWorld.index(iNewWorldCiv)
+				
+				bAlreadyContacted = (self.getFirstContactConquerors(iIndex) == 1)
+				
+				# avoid "return later" exploit
+				if iGameTurn <= getTurnForYear(con.tBirth[con.iAztecs])+10:
+					self.setFirstContactConquerors(iIndex, 1)
+					return
+					
+				if not bAlreadyContacted:
+					if iNewWorldCiv == iMaya:
+                                                tContactZoneTL = (15, 30)
+                                                tContactZoneBR = (34, 42)
+                                        elif iNewWorldCiv == iAztecs:
+                                                tContactZoneTL = (11, 31)
+                                                tContactZoneBR = (34, 43)
+                                        elif iNewWorldCiv == iInca:
+                                                tContactZoneTL = (21, 11)
+                                                tContactZoneBR = (36, 40)
+						
+					self.setFirstContactConquerors(iIndex, 1)
+					
+					# change some terrain to end isolation
                                         if (iNewWorldCiv == iInca):
                                                 gc.getMap().plot(27, 30).setFeatureType(-1, 0)
                                                 gc.getMap().plot(28, 31).setFeatureType(-1, 0)
                                                 gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
                                         if (iNewWorldCiv == iAztecs):
-                                                gc.getMap().plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)  #debug
-
-                                            
-                                        #print ("tContactZoneTL", tContactZoneTL, "tContactZoneBR", tContactZoneBR)
+                                                gc.getMap().plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
+						
+					lContactPlots = []
+					lArrivalPlots = []
                                         for x in range(tContactZoneTL[0], tContactZoneBR[0]+1):
                                                 for y in range(tContactZoneTL[1], tContactZoneBR[1]+1):
-                                                        pCurrent = gc.getMap().plot( x, y )
-                                                        if (pCurrent.isVisible(iNewWorldCiv, False) and pCurrent.isVisible(iOldWorldCiv, False)):
-                                                                tContactPlot[0] = x
-                                                                tContactPlot[1] = y
-                                                                print ("1st contact in", x, y)
-                                                                break
-##                                                        if (pCurrent.isVisible(iNewWorldCiv, False)):
-##                                                                iNumUnitsInAPlot = pCurrent.getNumUnits()
-##                                                                print ("pCurrent", x, y, pCurrent.getNumUnits())
-##                                                                if (iNumUnitsInAPlot):                                                                  
-##                                                                        for i in range(iNumUnitsInAPlot):                                                
-##                                                                                unit = pCurrent.getUnit(i)
-##                                                                                print ("unit.getOwner()", unit.getOwner())
-##                                                                                if (unit.getOwner() == iOldWorldCiv):
-##                                                                                        tContactPlot[0] = x
-##                                                                                        tContactPlot[1] = y
-##                                                                                        print ("1st contact")
-##                                                                                        break
-                                        #print ("tContactPlot", tContactPlot)
-                                        if (tContactPlot != [-1, -1]):
-                                                iMinDistance = 100
-                                                for x in range(tContactZoneTL[0], tContactZoneBR[0]+1):
-                                                        for y in range(tContactZoneTL[1], tContactZoneBR[1]+1):
-                                                                pCurrent = gc.getMap().plot( x, y )
-                                                                #print ("XY", x, y)
-                                                                if (pCurrent.getOwner() == iNewWorldCiv and not pCurrent.isCity()):
-                                                                        if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                                                                                #print ("hills or flat")
-                                                                                if ((pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getTerrainType() != con.iMarsh) and not (x == 25 and y == 32)): #(25,32) is sometimes blocked                                                                  
-                                                                                        iDistance = utils.calculateDistance(x, y, tContactPlot[0], tContactPlot[1])
-                                                                                        #print ("Distance", x, y, iDistance)
-                                                                                        if (iDistance < iMinDistance):
-                                                                                                iMinDistance = iDistance
-                                                                                                tArrivalPlot[0] = x
-                                                                                                tArrivalPlot[1] = y
-
-                                        #print ("tArrivalPlot", tArrivalPlot)
-                                        if (tArrivalPlot != [-1, -1]):
-                                                print ("conquerors triggered in", tArrivalPlot)
-                                                teamOldWorldCiv = gc.getTeam(gc.getPlayer(iOldWorldCiv).getTeam())
-
-                                                iModifier1 = 0
-                                                if ((iNewWorldCiv == iInca or gc.getPlayer(iNewWorldCiv).getNumCities() > 4) and not gc.getPlayer(iNewWorldCiv).isHuman()):
-                                                        iModifier1 = 1
-                                                if (gc.getPlayer(iNewWorldCiv).getNumCities() > 6 and gc.getPlayer(iNewWorldCiv).isHuman()):
-                                                        iModifier1 = 1
-
-                                                iModifier2 = 0
-                                                if (not gc.getPlayer(iOldWorldCiv).isHuman() and not gc.getPlayer(iNewWorldCiv).isHuman()):
-                                                        iModifier2 = 1
-
-                                                if (not gc.getPlayer(iOldWorldCiv).isHuman()):
-                                                        teamOldWorldCiv.declareWar(iNewWorldCiv, False, -1)
-
-                                                if (teamOldWorldCiv.isHasTech(con.iRifling)):
-                                                        if (iOldWorldCiv == iEngland):
-                                                                utils.makeUnitAI(con.iEnglishRedcoat, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                        else:
-                                                                utils.makeUnitAI(con.iRifleman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                elif (teamOldWorldCiv.isHasTech(con.iGunpowder)):
-                                                        #if (iOldWorldCiv == iFrance):
-                                                        #        utils.makeUnitAI(con.iFrenchMusketeer, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 1 + iModifier2)
-                                                        if (iOldWorldCiv == iTurkey):
-                                                                utils.makeUnitAI(con.iOttomanJanissary, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-							elif iOldWorldCiv == iEthiopia:
-								utils.makeUnitAI(con.iEthiopianAskari, iOldWorldCiv, tArrivalPlor, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                        else:
-                                                                utils.makeUnitAI(con.iMusketman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                elif (teamOldWorldCiv.isHasTech(con.iCivilService)):
-                                                        if (iOldWorldCiv == iJapan):
-                                                                utils.makeUnitAI(con.iJapanSamurai, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                        elif (iOldWorldCiv == iVikings):
-                                                                utils.makeUnitAI(con.iVikingBerserker, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-							elif iOldWorldCiv == iPersia and pPersia.isReborn():
-                                                                utils.makeUnitAI(con.iIranianQizilbash, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-							elif iOldWorldCiv == iCongo:
-                                                                utils.makeUnitAI(con.iKongoPombos, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                        else:
-                                                                utils.makeUnitAI(con.iMaceman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                else:
-                                                        if (iOldWorldCiv == iChina):
-                                                                utils.makeUnitAI(con.iChinaChokonu, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                        else:
-                                                                utils.makeUnitAI(con.iCrossbowman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
-                                                
-						if iOldWorldCiv == iHolyRome:
-							utils.makeUnitAI(con.iHolyRomanLandsknecht, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-                                                else:
-							utils.makeUnitAI(con.iPikeman, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+                                                        plot = gc.getMap().plot(x, y)
+							if plot.isVisible(iNewWorldCiv, False) and plot.isVisible(iOldWorldCiv, False):
+								lContactPlots.append((x,y))
+							if plot.getOwner() == iNewWorldCiv and not plot.isCity():
+								if plot.isFlatlands() or plot.isHills():
+									if not plot.getFeatureType() == con.iJungle and not plot.getTerrainType() == con.iMarsh and (x,y) != (25, 32):
+										lArrivalPlots.append((x,y))
+								
+					if lContactPlots and lArrivalPlots:
+						tContactPlot = utils.getRandomEntry(lContactPlots)
+						lDistancePlots = [(tuple, utils.calculateDistance(tuple[0], tuple[1], tContactPlot[0], tContactPlot[1])) for tuple in lArrivalPlots]
+						lDistancePlots.sort(key=itemgetter(1))
+						tArrivalPlot = lDistancePlots[0][0]
 						
-						if teamOldWorldCiv.isHasTech(con.iRifling):
-							if iOldWorldCiv == iFrance:
-								utils.makeUnitAI(con.iFrenchHeavyCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier1 + iModifier2)
-							else:
-								utils.makeUnitAI(con.iCannon, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier1 + iModifier2)
-                                                elif (teamOldWorldCiv.isHasTech(con.iGunpowder)):
-							if iOldWorldCiv == iMughals:
-	                                                        utils.makeUnitAI(con.iMughalSiegeElephant, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier1 + iModifier2)
-							else:
-								utils.makeUnitAI(con.iBombard, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier1 + iModifier2)
-                                                else:
-                                                        utils.makeUnitAI(con.iCatapult, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier1 + iModifier2)
-
-                                                if (iOldWorldCiv == iSpain and teamOldWorldCiv.isHasTech(con.iGunpowder)):
-                                                        utils.makeUnitAI(con.iConquistador, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier1)
-                                                else:
-                                                        if (teamOldWorldCiv.isHasTech(con.iFeudalism)):
-                                                                if (iOldWorldCiv == iArabia):
-                                                                        utils.makeUnitAI(con.iCamelArcher, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier1)
-                                                                elif (iOldWorldCiv == iMongolia):
-                                                                        utils.makeUnitAI(con.iMongolKeshik, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier1)
-                                                                else:
-                                                                        utils.makeUnitAI(con.iKnight, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier1)
-
-                                                if (iNewWorldCiv == iInca):
-                                                        utils.makeUnitAI(con.iIncanQuechua, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-                                                elif (iNewWorldCiv == iAztecs):
-                                                        utils.makeUnitAI(con.iAztecJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-                                                        utils.makeUnitAI(con.iMayaHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-                                                elif (iNewWorldCiv == iMaya):
-                                                        utils.makeUnitAI(con.iMayaHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-                                                        utils.makeUnitAI(con.iAztecJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-
-                                                teamNewWorldCiv = gc.getTeam(gc.getPlayer(iNewWorldCiv).getTeam())
-                                                teamOldWorldCiv = gc.getTeam(gc.getPlayer(iOldWorldCiv).getTeam())
-                                                bVassal = False
-                                                for iMaster in range(con.iNumMajorPlayers):
-                                                        if (teamOldWorldCiv.isVassal(iMaster)):
-                                                                bVassal = True
-                                                                break
-                                                if (not bVassal):
-                                                        teamNewWorldCiv.setAtWar(iOldWorldCiv, True)
-                                                        teamOldWorldCiv.setAtWar(iNewWorldCiv, True)
-                                                        teamOldWorldCiv.AI_setWarPlan(iNewWorldCiv, 5)
+						utils.debugTextPopup(str(lDistancePlots))
+						utils.debugTextPopup("Arrival Plot: "+str(tArrivalPlot))
+						utils.debugTextPopup("Contact Plot: "+str(tContactPlot))
+						
+						pNewWorldCiv = gc.getPlayer(iNewWorldCiv)
+						teamOldWorldCiv = gc.getTeam(gc.getPlayer(iOldWorldCiv).getTeam())
+						
+						iModifier1 = 0
+						iModifier2 = 0
+						
+						if utils.getHumanID() == iNewWorldCiv:
+							if pNewWorldCiv.getNumCities() > 6: iModifier1 = 1
+						else:
+							if iNewWorldCiv == iInca or pNewWorldCiv.getNumCities() > 4: iModifier1 = 1
+							if utils.getHumanID() != iOldWorldCiv: iModifier2 = 1
+							
+						teamOldWorldCiv.declareWar(iNewWorldCiv, True, WarPlanTypes.WARPLAN_TOTAL)
+						
+						iInfantry = utils.getBestInfantry(iOldWorldCiv)
+						iCounter = utils.getBestCounter(iOldWorldCiv)
+						iCavalry = utils.getBestCavalry(iOldWorldCiv)
+						iSiege = utils.getBestSiege(iOldWorldCiv)
+						
+						if iInfantry:
+							utils.makeUnitAI(iInfantry, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
+						
+						if iCounter:
+							utils.makeUnitAI(iCounter, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+							
+						if iSiege:
+							utils.makeUnitAI(iSiege, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier1 + iModifier2)
+							
+						if iCavalry:
+							utils.makeUnitAI(iCavalry, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier1)
+							
+						if iNewWorldCiv == iInca:
+							utils.makeUnitAI(con.iIncanQuechua, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+						elif iNewWorldCiv == iAztecs:
+							utils.makeUnitAI(con.iAztecJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+							utils.makeUnitAI(con.iMayaHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+						elif iNewWorldCiv == iMaya:
+							utils.makeUnitAI(con.iMayaHolkan, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+							utils.makeUnitAI(con.iAztecJaguar, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
                                                 
-                                                if (gc.getPlayer(iNewWorldCiv).isHuman()):
+                                                if utils.getHumanID() == iNewWorldCiv:
                                                         CyInterface().addMessage(iNewWorldCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_NEWWORLD", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-                                                if (gc.getPlayer(iOldWorldCiv).isHuman()):
+                                                if utils.getHumanID() == iOldWorldCiv:
                                                         CyInterface().addMessage(iOldWorldCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_FIRST_CONTACT_OLDWORLD", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-
+							
 		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
-			print("AI Mongolia makes contact with somebody")
 			if iTeamX in [iPersia, iByzantium, iRussia]:
-				print("New contact is a valid target")
 				if gc.getGame().getGameTurn() < getTurnForYear(1500) and self.getFirstContactMongols(iTeamX) == 0:
 
 					self.setFirstContactMongols(iTeamX, 1)
 		
 					teamTarget = gc.getTeam(iTeamX)
 
-					teamMongolia.setAtWar(iTeamX, True)
-					teamTarget.setAtWar(iMongolia, True)
-					teamMongolia.AI_setWarPlan(iTeamX, 5)	# necessary?
-					print("Mongolian war set against "+gc.getPlayer(iTeamX).getCivilizationDescriptionKey())
-
+					teamMongolia.declareWar(iTeamX, True, WarPlanTypes.WARPLAN_TOTAL)
+					
 					lPlotList = []
 					lTargetList = []
 					iWesternLimit = 75
@@ -3795,7 +3698,6 @@ class RiseAndFall:
 							lPlotList.remove(lPlotList[iRand])
 
 					for tPlot in lTargetList:
-						print ("Plot found, place units.")
 						utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 						utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 						utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
@@ -3804,8 +3706,6 @@ class RiseAndFall:
 						CyInterface().addMessage(iTeamX, True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE_HUMAN", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 					elif gc.getTeam(gc.getPlayer(utils.getHumanID()).getTeam()).canContact(iTeamX):
 						CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iTeamX).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-				else:
-					print("Beyond deadline.")
 
 	def onEconomicsDiscovered(self, iCiv):
 		print "On Economics discovered. Civ: "+CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()), ())
@@ -3928,7 +3828,7 @@ class RiseAndFall:
 						if tPlot != askCityList[len(askCityList)-1]:
 							sAskCities += ", " + gc.getMap().plot(x, y).getPlotCity().getName()
 						else:
-							sAskCities += "and " + gc.getMap().plot(x, y).getPlotCity().getName()
+							sAskCities += CyTranslator().getText("TXT_KEY_AND") + gc.getMap().plot(x, y).getPlotCity().getName()
 						
 				iAskGold = len(askCityList) * 200
 						
@@ -4450,7 +4350,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
-				utils.makeUnit(con.iTrireme, iCiv, tSeaPlot, 1)
+				utils.makeUnit(con.iGalley, iCiv, tSeaPlot, 1)
 				utils.makeUnit(con.iWorkboat, iCiv, tSeaPlot, 1)
 				#utils.makeUnit(con.iGalley, iCiv, tSeaPlot, 1)
 				#utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
