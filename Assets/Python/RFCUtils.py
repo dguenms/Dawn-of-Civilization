@@ -393,6 +393,8 @@ class RFCUtils:
                 dy = abs(y2-y1)
                 return max(dx, dy)
 
+	def calculateDistanceTuples(self, t1, t2):
+		return self.calculateDistance(t1[0], t1[1], t2[0], t2[1])
 
             
         #RiseAndFall
@@ -1445,48 +1447,31 @@ class RFCUtils:
 		iTargetCiv = gc.getMap().plot(x,y).getPlotCity().getOwner()
 		lFreePlots = []
 		
-		#print self.getCivName(iCiv) + ' initiated colonial conquest against ' + self.getCivName(iTargetCiv)
-
 		for i in range(x-1, x+2):
 			for j in range(y-1, y+2):
 				current = gc.getMap().plot(i, j)
 				if not current.isCity() and not current.isPeak() and not current.isWater():
 					lFreePlots.append((i,j))
 					
-		#print 'free plots found'
-
 		if iTargetCiv != -1 and not gc.getTeam(iCiv).isAtWar(iTargetCiv):
 			gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_TOTAL)
 			
-		#print 'declared war against target civ'
-
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		tPlot = lFreePlots[iRand]
 		
-		#print 'found random plot'
-
 		if iCiv in [con.iSpain, con.iPortugal, con.iNetherlands]:
 			iNumUnits = 2
 		elif iCiv in [con.iFrance, con.iEngland]:
 			iNumUnits = 3
-		
-		if bRifling:
-			if iCiv == con.iFrance:
-				self.makeUnit(con.iFrenchHeavyCannon, iCiv, tPlot, iNumUnits)
-			else:
-				self.makeUnit(con.iCannon, iCiv, tPlot, iNumUnits)
-		else:
-			self.makeUnit(con.iBombard, iCiv, tPlot, iNumUnits)
-
-		if bRifling:
-			if iCiv == con.iEngland:
-				self.makeUnit(con.iEnglishRedcoat, iCiv, tPlot, 2*iNumUnits)
-			else:
-				self.makeUnit(con.iRifleman, iCiv, tPlot, 2*iNumUnits)
-		else:
-			self.makeUnit(con.iMusketman, iCiv, tPlot, 2*iNumUnits)
 			
-		#print 'created units, colonial conquest complete'
+		iSiege = self.getBestSiege(iCiv)
+		iInfantry = self.getBestInfantry(iCiv)
+		
+		if iSiege:
+			self.makeUnit(iSiege, iCiv, tPlot, iNumUnits)
+			
+		if iInfantry:
+			self.makeUnit(iInfantry, iCiv, tPlot, 2*iNumUnits)
 
 
 	def colonialAcquisition(self, iCiv, x, y):
@@ -1495,20 +1480,13 @@ class RFCUtils:
 		elif iCiv in [con.iFrance, con.iEngland, con.iNetherlands]:
 			iNumUnits = 2
 		if gc.getMap().plot(x,y).isCity():
-			#if gc.getMap().plot(x,y).getPlotCity().getOwner() != self.getHumanID():
 			self.flipCity((x,y), False, True, iCiv, [])
 			self.makeUnit(con.iWorker, iCiv, (x,y), iNumUnits)
-			if gc.getTeam(iCiv).isHasTech(con.iRifling):
-				if iCiv == con.iEngland:
-					self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), iNumUnits)
-				else:
-					self.makeUnit(con.iRifleman, iCiv, (x,y), iNumUnits)
-			else:
-				self.makeUnit(con.iMusketman, iCiv, (x,y), iNumUnits)
+			iInfantry = self.getBestInfantry(iCiv)
+			if iInfantry:
+				self.makeUnit(iInfantry, iCiv, (x,y), iNumUnits)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
 				self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
-			#else:
-			#	self.colonialConquest(iCiv, x, y)
 		else:
 			gc.getMap().plot(x,y).setCulture(iCiv, 10, True)
 			gc.getMap().plot(x,y).setOwner(iCiv)
@@ -1517,13 +1495,9 @@ class RFCUtils:
 			else:
 				gc.getPlayer(iCiv).found(x, y)
 			self.makeUnit(con.iWorker, iCiv, (x,y), 2)
-			if gc.getTeam(iCiv).isHasTech(con.iRifling):
-				if iCiv == con.iEngland:
-					self.makeUnit(con.iEnglishRedcoat, iCiv, (x,y), 2)
-				else:
-					self.makeUnit(con.iRifleman, iCiv, (x,y), 2)
-			else:
-				self.makeUnit(con.iMusketman, iCiv, (x,y), 2)
+			iInfantry = self.getBestInfantry(iCiv)
+			if iInfantry:
+				self.makeUnit(iInfantry, iCiv, (x,y), 2)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
 				self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 
@@ -1547,8 +1521,6 @@ class RFCUtils:
 			if gc.getMap().plot(x, y).isCity():
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() != iPlayer:
 					cityList.append((x, y))
-			#elif bEmpty:
-			#	cityList.append((x,y))
 
 		targetList = []
 
@@ -1560,8 +1532,6 @@ class RFCUtils:
 					targetList.append(cityList[iRand])
 					cityList.remove(cityList[iRand])
 
-		#if len(targetList) == 0:
-		#	for i in range(iNumCities):
 		if bEmpty:
 			while len(targetList) < iNumCities:
 				iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random free plot')
@@ -1753,7 +1723,7 @@ class RFCUtils:
 		pPlayer = gc.getPlayer(iPlayer)
 		lInfantryList = [con.iInfantry, con.iRifleman, con.iMusketman, con.iMaceman, con.iCrossbowman, con.iSwordsman, con.iAxeman, con.iWarrior]
 		
-		for iBaseUnit in lInfrantryList:
+		for iBaseUnit in lInfantryList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
@@ -1782,6 +1752,15 @@ class RFCUtils:
 				
 		return False
 				
-	
+	def getBestCounter(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		lCounterList = [con.iMarine, con.iGrenadier, con.iPikeman, con.iSpearman]
+		
+		for iBaseUnit in lCounterList:
+			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
+			if pPlayer.canTrain(iUnit, False, False):
+				return iUnit
+				
+		return False
 	
 	

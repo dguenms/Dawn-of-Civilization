@@ -20991,6 +20991,7 @@ EndPlot
 BeginPlot
 	x=55,y=37
 	TerrainType=TERRAIN_DESERT
+	BonusType=BONUS_MARBLE
 	PlotType=2
 EndPlot
 BeginPlot
