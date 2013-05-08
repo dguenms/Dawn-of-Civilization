@@ -2475,6 +2475,8 @@ class Victory:
                 if (not gc.getGame().isVictoryValid(7)): #7 == historical
                         return
 			
+		bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
+			
 		if utils.getHumanID() != playerType and bIgnoreAI:
 			return
 
