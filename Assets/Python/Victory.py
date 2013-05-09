@@ -3208,7 +3208,7 @@ class Victory:
 	def onVassalState(self, iMaster, iVassal):
 	
 		# Leoreth: ignore AI civs to improve speed
-		if bIgnoreAI and utils.getHumanID() != iPlayer:
+		if bIgnoreAI and utils.getHumanID() != iMaster:
 			return
 	
 		if iMaster == iHolyRome:

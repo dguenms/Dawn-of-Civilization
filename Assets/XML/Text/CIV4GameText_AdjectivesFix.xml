@@ -929,7 +929,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Tag>
-		<English>Zoroastrian</English>
+		<English>
+			<Text>Zoroastrianism</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</English>
 		<German>
 			<Text>Zoroastrisch:zoroastrischen:zoroastrische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>

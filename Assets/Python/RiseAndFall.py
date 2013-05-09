@@ -3618,9 +3618,9 @@ class RiseAndFall:
 						lDistancePlots.sort(key=itemgetter(1))
 						tArrivalPlot = lDistancePlots[0][0]
 						
-						utils.debugTextPopup(str(lDistancePlots))
-						utils.debugTextPopup("Arrival Plot: "+str(tArrivalPlot))
-						utils.debugTextPopup("Contact Plot: "+str(tContactPlot))
+						#utils.debugTextPopup(str(lDistancePlots))
+						#utils.debugTextPopup("Arrival Plot: "+str(tArrivalPlot))
+						#utils.debugTextPopup("Contact Plot: "+str(tContactPlot))
 						
 						pNewWorldCiv = gc.getPlayer(iNewWorldCiv)
 						teamOldWorldCiv = gc.getTeam(gc.getPlayer(iOldWorldCiv).getTeam())
