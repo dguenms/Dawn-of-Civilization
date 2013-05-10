@@ -2476,6 +2476,12 @@ void CyPlayer::changeStabilityCategory(int iStabilityType, int iChange)
 		m_pPlayer->changeStabilityCategory(iStabilityType, iChange);
 }
 
+void CyPlayer::setStabilityCategory(int iStabilityType, int iValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setStabilityCategory(iStabilityType, iValue);
+}
+
 void CyPlayer::resetStabilityCategories()
 {
 	if (m_pPlayer)

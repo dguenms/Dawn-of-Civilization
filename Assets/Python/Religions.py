@@ -512,7 +512,7 @@ class Religions:
 		for iCiv in range(iNumPlayers):
 			if self.getReformationDecision(iCiv) == 2:
 				for iTargetCiv in range(iNumPlayers):
-					if self.getReformationDecision(iTargetCiv) == 0 and utils.getHumanID() != iTargetCiv and iTargetCiv != con.iNetherlands: # protect the Dutch or they'll get crushed
+					if self.getReformationDecision(iTargetCiv) == 0 and utils.getHumanID() != iTargetCiv and iTargetCiv != con.iNetherlands and not utils.isAVassal(iTargetCiv): # protect the Dutch or they'll get crushed
 						gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
 						print "Religious war: "+str(iCiv)+" declares war on "+str(iTargetCiv)
 						

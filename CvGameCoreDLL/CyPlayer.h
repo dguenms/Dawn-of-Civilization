@@ -547,6 +547,7 @@ public:
 
 	int getStabilityCategory(int iStabilityType);
 	void changeStabilityCategory(int iStabilityType, int iChange);
+	void setStabilityCategory(int iStabilityType, int iValue);
 	void resetStabilityCategories();
 
 private:

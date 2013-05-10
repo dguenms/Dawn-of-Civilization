@@ -3185,6 +3185,15 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	}
 	//Rhye - end
 
+	// Leoreth: more English settlements in North America
+	if (getID() == ENGLAND)
+	{
+		if (pArea->getID() == GC.getMap().plot(27, 46)->getArea()) // Washington tile
+		{
+			iValue *= 2;
+		}
+	}
+
 	if (!bStartingLoc)
 	{
 		int iFoodSurplus = std::max(0, iSpecialFoodPlus - iSpecialFoodMinus);
@@ -5787,9 +5796,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case ENGLAND:
 									if (iI == MEDITATION)
 										iValue /= 2;
-									if (iI == ECONOMICS || iI == ASTRONOMY)
-										iValue *= 3;
-									if (iI == RIFLING)
+									if (iI == ASTRONOMY)
+										iValue *= 4;
+									if (iI == RIFLING || iI == ECONOMICS)
 										iValue *= 3;
 									if (iI == LITERATURE || iI == DRAMA || iI == GUILDS || iI == ECONOMICS || iI == CHEMISTRY) {
 										iValue *= 3;

@@ -758,8 +758,8 @@ void CvCityAI::AI_chooseProduction()
     int iMaxSettlers = 0;
     if (!bFinancialTrouble)
     {
-     	//iMaxSettlers= std::min((GET_PLAYER(getOwnerINLINE()).getNumCities() + 1) / 2, iNumAreaCitySites + iNumWaterAreaCitySites); //Rhye
-		iMaxSettlers= std::min((GET_PLAYER(getOwnerINLINE()).getNumCities() + 2) / 3, iNumAreaCitySites + iNumWaterAreaCitySites); //Rhye
+     	iMaxSettlers= std::min((GET_PLAYER(getOwnerINLINE()).getNumCities() + 1) / 2, iNumAreaCitySites + iNumWaterAreaCitySites); //Rhye
+		//iMaxSettlers= std::min((GET_PLAYER(getOwnerINLINE()).getNumCities() + 2) / 3, iNumAreaCitySites + iNumWaterAreaCitySites); //Rhye
      	if (bLandWar || bAssault)
      	{
      		iMaxSettlers = (iMaxSettlers + 2) / 3;
@@ -1340,6 +1340,13 @@ void CvCityAI::AI_chooseProduction()
 			if (bAssault)
 			{
 				iSettlerSeaNeeded = std::min(1, iSettlerSeaNeeded);
+			}
+
+			// Leoreth: more settlers for colonial civs
+			if (getOwner() == ENGLAND || getOwner() == FRANCE || getOwner() == NETHERLANDS || getOwner() == SPAIN || getOwner() == PORTUGAL)
+			{
+				iSettlerSeaNeeded *= 3;
+				iSettlerSeaNeeded /= 2;
 			}
 
 			if (kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA) < iSettlerSeaNeeded)
