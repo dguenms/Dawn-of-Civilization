@@ -245,12 +245,12 @@ class CvReplayScreen:
 		while (iLoopTurn <= self.iTurn):
 			iTotalScore = 0
 			for iLoopPlayer in range(self.replayInfo.getNumPlayers()):
-				if gc.getPlayer(iLoopPlayer).isMinor(): continue # Leoreth
+				if gc.getPlayer(iLoopPlayer).isMinorCiv(): continue # Leoreth
 				iTotalScore += self.replayInfo.getPlayerScore(iLoopPlayer, iLoopTurn)
 			if (iTotalScore > 0):
 				iScore = iTotalScore
 				for iLoopPlayer in range(self.replayInfo.getNumPlayers()):
-					if gc.getPlayer(iLoopPlayer).isMinor(): continue # Leoreth
+					if gc.getPlayer(iLoopPlayer).isMinorCiv(): continue # Leoreth
 					screen.addGraphData(self.szGraph, iLoopTurn, (1.0 * iScore) / iTotalScore, iLoopPlayer)
 					iScore -= self.replayInfo.getPlayerScore(iLoopPlayer, iLoopTurn)
 			iLoopTurn += 1

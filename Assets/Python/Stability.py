@@ -922,7 +922,7 @@ class Stability:
                                         	        iTempCityStability -= 1
                                         	#if (city.healthRate(False, 0) < 0):
                                         	#        iTempCityStability -= 1
-                                        	if (city.getReligionBadHappiness() > 0 and iCivic4 != con.iScholasticism):
+                                        	if (city.getReligionBadHappiness() > 0 and iCivic4 not in [con.iScholasticism, con.iSecularism]):
                                         	        iTempCityStability -= 1
                                         	if (city.getLargestCityHappiness() < 0):
                                         	        iTempCityStability -= 1
@@ -937,7 +937,7 @@ class Stability:
        	                               		        iTempCityStability -= 2
                	                       		#if (city.healthRate(False, 0) < 0):
                        	               		#        iTempCityStability -= 2
-       	                	       		if (city.getReligionBadHappiness() > 0 and iCivic4 != con.iScholasticism):
+       	                	       		if (city.getReligionBadHappiness() > 0 and iCivic4 not in [con.iScholasticism, iSecularism]):
                                			        iTempCityStability -= 2
                                       		if (city.getLargestCityHappiness() < 0):
                                      		        iTempCityStability -= 2
@@ -1079,6 +1079,9 @@ class Stability:
                                 #print("iNewBaseStability Economy/Population check + civic 6th column commonwealth", iNewBaseStability, iPlayer)
 
                         self.setParameter(iPlayer, iParEconomy3, False, iNewBaseStability - iTempEconomyThreshold)
+			
+			# Leoreth: use old way to do economy values
+			pPlayer.setStabilityCategory(con.iStabilityEconomy, iNewBaseStability - iTempEconomyThreshold)
 
                         iDifference = (iIndustry*1000000/iPopulation) - (iEconomy*1000000/iPopulation)
 
@@ -1107,7 +1110,8 @@ class Stability:
                 if (iGameTurn >= getTurnForYear(con.tBirth[iPlayer])+utils.getTurns(15)):
 		
 			# Leoreth: reset
-			pPlayer.changeStabilityCategory(con.iStabilityEconomyExtra, -pPlayer.getStabilityCategory(con.iStabilityEconomyExtra))
+			#pPlayer.changeStabilityCategory(con.iStabilityEconomyExtra, -pPlayer.getStabilityCategory(con.iStabilityEconomyExtra))
+			pPlayer.setStabilityCategory(con.iStabilityEconomyExtra, 0)
 		
                         self.setGNPnew(iPlayer, self.getGNPnew(iPlayer) + (iEconomy + 4*iIndustry + 2*iAgriculture)/7)
                         if (iGameTurn % utils.getTurns(3) == 2):
@@ -1141,10 +1145,13 @@ class Stability:
                                         #print("Stability - GNP check", iNegativeGrowth, iPlayer)
                                 elif (self.getGNPnew(iPlayer) >= self.getGNPold(iPlayer)):
                                         self.setStability(iPlayer, self.getStability(iPlayer) + min(iMaxGrowth, iPositiveGrowth))
-					self.changeStabilityCategory(pPlayer, con.iStabilityEconomyExtra, max(iMaxGrowth, iPositiveGrowth))
+					self.changeStabilityCategory(pPlayer, con.iStabilityEconomyExtra, min(iMaxGrowth, iPositiveGrowth))
                                         #print("Stability - GNP check", iPositiveGrowth, iPlayer)
                                 
                                 self.setParameter(iPlayer, iParEconomyE, True, self.getStability(iPlayer) - iTempEconomyThreshold)
+				
+				# Leoreth: use old way to determine economy values
+				pPlayer.setStabilityCategory(con.iStabilityEconomyExtra, self.getStability(iPlayer) - iTempEconomyThreshold)
 
 
                                 if (self.getGreatDepressionCountdown(iPlayer) == 0):   #great depression checked when GNP can be compared
@@ -1658,7 +1665,7 @@ class Stability:
 
                 if (iPlayer < iNumPlayers):  
                         pPlayer = gc.getPlayer(iPlayer)
-                        if (pPlayer.getStateReligion() != iReligion and iPlayer != con.iMongolia):
+                        if (pPlayer.getStateReligion() != iReligion and iPlayer != con.iMongolia and gc.getPlayer(iPlayer).getCivics(4) != con.iSecularism):
                                 for iLoopCiv in range(iNumPlayers):
                                         if (gc.getTeam(pPlayer.getTeam()).isAtWar(iLoopCiv)):
                                                 if (gc.getPlayer(iLoopCiv).getStateReligion() == iReligion):

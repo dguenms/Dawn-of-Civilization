@@ -484,6 +484,7 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 
 		.def("getStabilityCategory", &CyPlayer::getStabilityCategory, "int (int iStabilityType)")
 		.def("changeStabilityCategory", &CyPlayer::changeStabilityCategory, "void (int iStabilityType, int iChange)")
+		.def("setStabilityCategory", &CyPlayer::setStabilityCategory, "void (int iStabilityType, int iValue)")
 		.def("resetStabilityCategories", &CyPlayer::resetStabilityCategories, "void ()")
 		;
 }
