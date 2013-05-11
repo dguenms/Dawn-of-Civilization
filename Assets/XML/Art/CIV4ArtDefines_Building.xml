@@ -2397,11 +2397,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_FLOATING_GARDENS</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
+			<LSystem>LSYSTEM_RIVER</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.2</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Incan_Terrace/Incan_Terrace.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Dutch_Dike/Dutch_Dike.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Granary.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,4</Button>
 		</BuildingArtInfo>

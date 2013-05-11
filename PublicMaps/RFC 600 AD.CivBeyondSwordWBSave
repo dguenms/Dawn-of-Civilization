@@ -425,7 +425,8 @@ BeginPlayer
 	Team=31               
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR                 
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -6463,7 +6464,7 @@ BeginPlot
 	isWOfRiver
 	RiverNSDirection=0
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=38
@@ -6838,7 +6839,7 @@ EndPlot
 BeginPlot
 	x=17,y=36
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=17,y=37
@@ -7212,7 +7213,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=37
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	PlotType=1
 EndPlot
 BeginPlot

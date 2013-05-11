@@ -37062,6 +37062,7 @@
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
+			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -37069,8 +37070,8 @@
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
+			<ObsoleteTech>NONE</ObsoleteTech>
+			<PrereqTech>TECH_CALENDAR</PrereqTech>
 			<TechTypes/>
 			<Bonus>NONE</Bonus>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
@@ -37089,7 +37090,7 @@
 			<bBorderObstacle>0</bBorderObstacle>
 			<bTeamShare>1</bTeamShare>
 			<bWater>0</bWater>
-			<bRiver>0</bRiver>
+			<bRiver>1</bRiver>
 			<bPower>0</bPower>
 			<bDirtyPower>0</bDirtyPower>
 			<bAreaCleanPower>0</bAreaCleanPower>
@@ -37108,7 +37109,7 @@
 			<bPrereqReligion>0</bPrereqReligion>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>0</iAIWeight>
-			<iCost>300</iCost>
+			<iCost>450</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -37201,7 +37202,12 @@
 			<ConstructSound/>
 			<BonusHealthChanges/>
 			<BonusHappinessChanges/>
-			<BonusProductionModifiers/>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<UnitCombatFreeExperiences/>
 			<DomainFreeExperiences/>
 			<DomainProductionModifiers/>
