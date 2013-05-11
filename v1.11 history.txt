@@ -23,3 +23,7 @@
 # rewrote certain wonder goals so that they fail when another civ constructs one of their wonders
 # added marble near Wahran
 # if the first contact between two civs triggers a war (American or Mongol conquerors) there is no diplomacy screen anymore
+# terrain changes in Mexico to allow for a larger Tenochtitlan/Mexico City
+# new Floating Gardens: requires river, corn and Calendar, increased cost but accelerated with Stone, flat +6 food
+# made Montezuma more focused on growth
+# made Hongwu more focused on building units
