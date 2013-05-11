@@ -2575,7 +2575,7 @@ class Victory:
 		
 		# Leoreth: ignore AI civs to improve speed 
 		# important: include all civs with tech goals in list so that the check is made for all players to catch failed goals
-		if bIgnoreAI and utils.getHumanID() not in [iChina, iBabylonia, iGreece, iRome, iPoland, iKorea, iEngland, iJapan, iGermany, iMaya, iAztecs, iCongo]:
+		if bIgnoreAI and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iChina, iBabylonia, iGreece, iRome, iPoland, iKorea, iEngland, iJapan, iGermany, iMaya, iAztecs, iCongo]:
 			return
 		
 		# Chinese UHV: Compass, Paper, Gunpowder, Printing Press
@@ -2942,7 +2942,7 @@ class Victory:
 			
 		# Leoreth: ignore AI civs to improve speed
 		# important: add all civs with wonder goals to the list so their failure will be checked
-		if bIgnoreAI and utils.getHumanID() not in [iEgypt, iGreece, iCarthage, iMaya, iKhmer, iFrance, iMali, iItaly, iMughals, iAmerica]:
+		if bIgnoreAI and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iEgypt, iGreece, iCarthage, iMaya, iKhmer, iFrance, iMali, iItaly, iMughals, iAmerica]:
 			return
 
                 iGameTurn = gc.getGame().getGameTurn()
