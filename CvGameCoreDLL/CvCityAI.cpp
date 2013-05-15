@@ -3088,7 +3088,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										else if (iI == MAUSOLLOS) iTempValue *= 3;
 										break;
-									case ROME:      // leave unchanged for Italy
+									case ROME:
                                         if (iI == FLAVIANAMPHITHEATRE || iI == LEANINGTOWER || iI == SISTINECHAPEL || iI == SANMARCO)
                                         {
                                             iTempValue *= 3;
@@ -3291,7 +3291,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case AZTEC:
 										if (iI == CHICHENITZA) iTempValue *= 3;
-										else if (iI == FLOATING_GARDENS) iTempValue *= 12;
+										else if (iI == FLOATING_GARDENS)
+										{
+											iTempValue *= 4;
+											iValue += 200;
+										}
 										break;
 									case MUGHALS:
 										if (iI == TAJMAHAL || iI == RED_FORT) iTempValue *= 4;
@@ -4224,8 +4228,6 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					if (kBuilding.getRiverPlotYieldChange(iI) > 0)
 					{
 						if (getOwner() == CHINA && iI == 2)
-							iTempValue += 100;
-						else if (getOwner() == AZTEC && iI == 0)
 							iTempValue += 100;
 
 						iTempValue += (kBuilding.getRiverPlotYieldChange(iI) * countNumRiverPlots() * 4 * (iI == 0 ? 5 : 1) * (iI == 2 ? 2 : 1)); // Leoreth: emphasize river food / commerce yield more

@@ -2606,8 +2606,8 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>CIVILIZATION_ROME</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_ROME_SELECT</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_ROME_ORDER</CivilizationActionSound>
+			<CivilizationSelectionSound>AS3D_ITALY_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ITALY_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 
 		<CivilizationInfo>

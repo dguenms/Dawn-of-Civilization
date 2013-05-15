@@ -11125,6 +11125,20 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>SND_ITALY_SELECT</SoundID>
+			<Filename>Sounds/Units/ItalySelect</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_ITALY_ORDER</SoundID>
+			<Filename>Sounds/Units/ItalyOrder</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SONG_CHRISTIAN_1</SoundID>
 			<Filename>Sounds/Soundtrack/Christian/Christian1</Filename>
 			<LoadType>STREAMED</LoadType>

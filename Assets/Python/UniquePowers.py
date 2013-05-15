@@ -670,14 +670,14 @@ class UniquePowers:
 		lSourceCities.sort(key=itemgetter(1), reverse=True)
 		lTargetCities.sort(key=itemgetter(1), reverse=True)
 		
-		sourceCity = lSourceCities[0][0]
-		targetCity = lTargetCities[0][0]
-		
 		#utils.debugTextPopup(str([(x.getName(), y) for (x,y) in lTargetCities]))
 		#utils.debugTextPopup("Target city: "+targetCity.getName())
 		#utils.debugTextPopup("Source city: "+sourceCity.getName())
 		
-		if sourceCity and targetCity:
+		if lSourceCities and lTargetCities:
+		
+			sourceCity = lSourceCities[0][0]
+			targetCity = lTargetCities[0][0]
 		
 			sourceCity.changePopulation(-1)
 			targetCity.changePopulation(1)
@@ -715,7 +715,6 @@ class UniquePowers:
 				CyInterface().addMessage(iSourcePlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_EMIGRATION", (sourceCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(con.iSettler).getButton(), ColorTypes(con.iYellow), sourceCity.getX(), sourceCity.getY(), True, True)
 			elif utils.getHumanID() == iTargetPlayer:
 				CyInterface().addMessage(iTargetPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_IMMIGRATION", (targetCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(con.iSettler).getButton(), ColorTypes(con.iYellow), x, y, True, True)
-				
 	
                                         
         def selectRandomCitySourceCiv(self, iCiv):
