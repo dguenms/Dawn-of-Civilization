@@ -2399,7 +2399,7 @@
 			<Type>ART_DEF_BUILDING_FLOATING_GARDENS</Type>
 			<LSystem>LSYSTEM_RIVER</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
+			<fScale>0.6</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Dutch_Dike/Dutch_Dike.nif</NIF>
 			<KFM/>
