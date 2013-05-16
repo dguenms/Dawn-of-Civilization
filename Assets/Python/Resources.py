@@ -198,6 +198,11 @@ class Resources:
                         gc.getMap().plot(106, 50).setBonusType(iCorn) #Manchuria
 			
 			gc.getMap().plot(92, 35).setBonusType(iSpices) #Deccan
+			
+			# remove floodplains in Transoxania
+			for tuple in [(82, 47), (83, 46), (85, 49)]:
+				x, y = tuple
+				gc.getMap().plot(x, y).setFeatureType(-1, 0)
                        
 
                 if (iGameTurn == getTurnForYear(1700)):

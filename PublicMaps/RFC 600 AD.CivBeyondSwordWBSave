@@ -31755,6 +31755,7 @@ BeginPlot
 	isWOfRiver
 	RiverNSDirection=0
 	TerrainType=TERRAIN_DESERT
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	PlotType=2
 EndPlot
 BeginPlot
@@ -32114,7 +32115,6 @@ BeginPlot
 		BuildingType=BUILDING_STABLE
 		Player39Culture=1
 	EndCity
-
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -32122,6 +32122,7 @@ BeginPlot
 	isWOfRiver
 	RiverNSDirection=0
 	TerrainType=TERRAIN_DESERT
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	PlotType=2
 EndPlot
 BeginPlot
@@ -32470,6 +32471,18 @@ EndPlot
 BeginPlot
 	x=84,y=41
 	TerrainType=TERRAIN_PLAINS
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=40
+	EndUnit
+	BeginCity
+		CityOwner=40
+		CityName=Herat
+		CityPopulation=4
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_GROCER
+		Player40Culture=10
+	EndCity
 	PlotType=2
 EndPlot
 BeginPlot
@@ -32883,18 +32896,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=40
-	EndUnit
-	BeginCity
-		CityOwner=40
-		CityName=Kandahar
-		CityPopulation=4
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
-		Player40Culture=10
-	EndCity
 EndPlot
 BeginPlot
 	x=85,y=42
@@ -32905,6 +32906,7 @@ EndPlot
 BeginPlot
 	x=85,y=43
 	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_GEMS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -32956,6 +32958,7 @@ BeginPlot
 	x=85,y=49
 	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_DESERT
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33293,7 +33296,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=43
-	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -33655,16 +33657,6 @@ BeginPlot
 	x=87,y=40
 	BonusType=BONUS_MARBLE
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=87,y=41
-	isWOfRiver
-	RiverNSDirection=2
-	isNOfRiver
-	RiverWEDirection=3
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
 	BeginUnit
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=39
 	EndUnit
@@ -33676,13 +33668,23 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=39
-		CityName=Purushapura
+		CityName=Lavapuri
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		Player39Culture=50
 	EndCity
+	PlotType=2
+EndPlot
+BeginPlot
+	x=87,y=41
+	isWOfRiver
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=87,y=42
@@ -39502,6 +39504,7 @@ EndPlot
 BeginPlot
 	x=102,y=19
 	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_OIL
 	PlotType=3
 EndPlot
 BeginPlot
@@ -40302,6 +40305,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=13
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -44161,16 +44166,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=18
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=114,y=19
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -44930,12 +44931,14 @@ EndPlot
 BeginPlot
 	x=116,y=17
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=116,y=18
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=116,y=19
@@ -45286,7 +45289,8 @@ EndPlot
 BeginPlot
 	x=117,y=16
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	PlotType=1
 EndPlot
 BeginPlot
 	x=117,y=17
@@ -46008,7 +46012,6 @@ EndPlot
 BeginPlot
 	x=119,y=18
 	TerrainType=TERRAIN_COAST
-	BonusType=BONUS_CRAB
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46359,6 +46362,7 @@ EndPlot
 BeginPlot
 	x=120,y=17
 	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_CRAB
 	PlotType=3
 EndPlot
 BeginPlot

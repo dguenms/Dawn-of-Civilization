@@ -28,3 +28,6 @@
 # made Montezuma more focused on growth
 # made Hongwu more focused on building units
 # the Aztecs now start with Pantheon
+# 600 AD scenario now with Herat instead of Kandahar and Lahore instead of Peshawar
+# moved Afghan gems 1W to be in range of Herat
+# additional flood plains in Transoxania, disappear in 1600 AD
