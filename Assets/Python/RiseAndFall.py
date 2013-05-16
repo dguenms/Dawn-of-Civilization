@@ -395,6 +395,7 @@ class RiseAndFall:
 
         def eventApply7614(self, popupReturn):
                 if( popupReturn.getButtonClicked() == 0 ): # 1st button
+			iPreviousPlayer = utils.getHumanID()
                         iOldHandicap = gc.getActivePlayer().getHandicapType()
                         gc.getActivePlayer().setHandicapType(gc.getPlayer(self.getNewCiv()).getHandicapType())
                         gc.getGame().setActivePlayer(self.getNewCiv(), False)
@@ -416,6 +417,11 @@ class RiseAndFall:
                                                 if (city.getOwner() == self.getNewCiv()):
                                                         city.setInfoDirty(True)
                                                         city.setLayoutDirty(True)
+							
+			if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
+				for i in range(3):
+					vic.setGoal(iPreviousCiv, i, 0)
+					vic.setGoal(self.getNewCiv(), i, -1)
                                                                                                        
                         #CyInterface().addImmediateMessage("first button", "")
                 #elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
@@ -1416,9 +1422,11 @@ class RiseAndFall:
 					#gc.getPlayer(iCiv).setStability(10) # test DLL
                                         utils.setPlagueCountdown(iCiv, -10)
                                         utils.clearPlague(iCiv)
-                                        sd.scriptDict['lGoals'][iCiv][0] = -1
-                                        sd.scriptDict['lGoals'][iCiv][1] = -1
-                                        sd.scriptDict['lGoals'][iCiv][2] = -1
+					
+					if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
+						for i in range(3):
+							vic.setGoal(iCiv, i, 0)
+					
                                         if (iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID()): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
 						print "Flip Popup: free region"
 						self.flipPopup(iCiv, tTopLeft, tBottomRight)
