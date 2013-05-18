@@ -420,8 +420,8 @@ class RiseAndFall:
 							
 			if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
 				for i in range(3):
-					vic.setGoal(iPreviousCiv, i, 0)
-					vic.setGoal(self.getNewCiv(), i, -1)
+					sd.scriptDict['lGoals'][iPreviousCiv][i] = 0
+					sd.scriptDict['lGoals'][self.getNewCiv()][i] = -1
                                                                                                        
                         #CyInterface().addImmediateMessage("first button", "")
                 #elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
@@ -1425,7 +1425,7 @@ class RiseAndFall:
 					
 					if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
 						for i in range(3):
-							vic.setGoal(iCiv, i, 0)
+							sd.scriptDict['lGoals'][iCiv][i] = 0
 					
                                         if (iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID()): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
 						print "Flip Popup: free region"
