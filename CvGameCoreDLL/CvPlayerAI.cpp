@@ -10890,7 +10890,6 @@ CivicTypes CvPlayerAI::AI_bestCivic(CivicOptionTypes eCivicOption) const
 int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 {
 	PROFILE_FUNC();
-	//GC.getGameINLINE().logMsg("Begin AI civic value.");
 
 	bool bWarPlan;
 	int iConnectedForeignCities;
@@ -11129,19 +11128,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iTempValue = kCivic.getHappyPerMilitaryUnit() * 3;
 	if (iTempValue != 0)
 	{
-		//Rhye - start switch
 		//iValue += (getNumCities() * 9 * AI_getHappinessWeight(isCivic(eCivic) ? -iTempValue : iTempValue, 1)) / 100; //Rhye
-		int iModifier = 7;
-		switch (getID())
-		{
-			case JAPAN:
-				iModifier = 8;
-				break;
-			default:
-				iModifier = 7;
-				break;
-		}
-		iValue += (getNumCities() * iModifier * AI_getHappinessWeight(isCivic(eCivic) ? -iTempValue : iTempValue, 1)) / 100; //Rhye
+		iValue += (getNumCities() * 6 * AI_getHappinessWeight(isCivic(eCivic) ? -iTempValue : iTempValue, 1)) / 100; //Rhye
 		//Rhye - end
 	}
 

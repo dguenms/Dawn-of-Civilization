@@ -638,6 +638,7 @@
 	<ElementType name="iGoldPerUnit" content="textOnly" dt:type="int"/>
 	<ElementType name="iGoldPerMilitaryUnit" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappyPerMilitaryUnit" content="textOnly" dt:type="int"/>
+	<ElementType name="iMilitaryHappinessLimit" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="bMilitaryFoodProduction" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iMaxConscript" content="textOnly" dt:type="int"/>
 	<ElementType name="bNoUnhealthyPopulation" content="textOnly" dt:type="boolean"/>
@@ -790,6 +791,7 @@
 		<element type="iGoldPerUnit"/>
 		<element type="iGoldPerMilitaryUnit"/>
 		<element type="iHappyPerMilitaryUnit"/>
+		<element type="iMilitaryHappinessLimit" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bMilitaryFoodProduction"/>
 		<element type="iMaxConscript"/>
 		<element type="bNoUnhealthyPopulation"/>

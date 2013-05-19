@@ -1347,11 +1347,11 @@ def getUHVTileInfo(argsList):
 	#	if x >= tlx and x <= brx and y >= tly and y <= bry:
 	#		return 45
 			
-	elif iPlayer == con.iAztecs:
-		tlx, tly = tCAmericaTL
-		brx, bry = tCAmericaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
-			return 46
+	#elif iPlayer == con.iAztecs:
+	#	tlx, tly = tCAmericaTL
+	#	brx, bry = tCAmericaBR
+	#	if x >= tlx and x <= brx and y >= tly and y <= bry:
+	#		return 46
 			
 	elif iPlayer == con.iTurkey:
 		if (x,y) in lEasternMediterranean:

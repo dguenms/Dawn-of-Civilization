@@ -441,6 +441,10 @@ public:
 	int getHappyPerMilitaryUnit() const;																																			// Exposed to Python
 	void changeHappyPerMilitaryUnit(int iChange);
 
+	//Leoreth
+	int getMilitaryHappinessLimit() const;
+	void changeMilitaryHappinessLimit(int iChange);
+
 	int getMilitaryFoodProductionCount() const;
 	bool isMilitaryFoodProduction() const;																																		// Exposed to Python
 	void changeMilitaryFoodProductionCount(int iChange);
@@ -1219,6 +1223,7 @@ protected:
 	int m_iExtraUnitCost;
 	int m_iNumMilitaryUnits;
 	int m_iHappyPerMilitaryUnit;
+	int m_iMilitaryHappinessLimit; //Leoreth
 	int m_iMilitaryFoodProductionCount;
 	int m_iConscriptCount;
 	int m_iMaxConscript;

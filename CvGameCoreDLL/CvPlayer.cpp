@@ -468,6 +468,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iExtraUnitCost = 0;
 	m_iNumMilitaryUnits = 0;
 	m_iHappyPerMilitaryUnit = 0;
+	m_iMilitaryHappinessLimit = 0; //Leoreth
 	m_iMilitaryFoodProductionCount = 0;
 	m_iConscriptCount = 0;
 	m_iMaxConscript = 0;
@@ -10306,6 +10307,24 @@ void CvPlayer::changeHappyPerMilitaryUnit(int iChange)
 }
 
 
+// Leoreth
+int CvPlayer::getMilitaryHappinessLimit() const
+{
+	return m_iMilitaryHappinessLimit;
+}
+
+
+void CvPlayer::changeMilitaryHappinessLimit(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iMilitaryHappinessLimit = (m_iMilitaryHappinessLimit + iChange);
+
+		AI_makeAssignWorkDirty();
+	}
+}
+
+
 int CvPlayer::getMilitaryFoodProductionCount() const
 {
 	return m_iMilitaryFoodProductionCount;
@@ -17916,6 +17935,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeGoldPerUnit(GC.getCivicInfo(eCivic).getGoldPerUnit() * iChange);
 	changeGoldPerMilitaryUnit(GC.getCivicInfo(eCivic).getGoldPerMilitaryUnit() * iChange);
 	changeHappyPerMilitaryUnit(GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit() * iChange);
+	changeMilitaryHappinessLimit(GC.getCivicInfo(eCivic).getMilitaryHappinessLimit() * iChange); //Leoreth
 	changeMilitaryFoodProductionCount((GC.getCivicInfo(eCivic).isMilitaryFoodProduction()) ? iChange : 0);
 	changeMaxConscript(getWorldSizeMaxConscript(eCivic) * iChange);
 	changeNoUnhealthyPopulationCount((GC.getCivicInfo(eCivic).isNoUnhealthyPopulation()) ? iChange : 0);
@@ -18264,6 +18284,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iExtraUnitCost);
 	pStream->Read(&m_iNumMilitaryUnits);
 	pStream->Read(&m_iHappyPerMilitaryUnit);
+	pStream->Read(&m_iMilitaryHappinessLimit); //Leoreth
 	pStream->Read(&m_iMilitaryFoodProductionCount);
 	pStream->Read(&m_iConscriptCount);
 	pStream->Read(&m_iMaxConscript);
@@ -18778,6 +18799,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iExtraUnitCost);
 	pStream->Write(m_iNumMilitaryUnits);
 	pStream->Write(m_iHappyPerMilitaryUnit);
+	pStream->Write(m_iMilitaryHappinessLimit); //Leoreth
 	pStream->Write(m_iMilitaryFoodProductionCount);
 	pStream->Write(m_iConscriptCount);
 	pStream->Write(m_iMaxConscript);

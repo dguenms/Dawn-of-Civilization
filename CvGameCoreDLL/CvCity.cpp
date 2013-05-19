@@ -6829,7 +6829,16 @@ void CvCity::changeBonusBadHealth(int iChange)
 
 int CvCity::getMilitaryHappinessUnits() const
 {
-	return m_iMilitaryHappinessUnits;
+	int iMilitaryHappinessLimit = GET_PLAYER(getOwnerINLINE()).getMilitaryHappinessLimit();
+
+	if (iMilitaryHappinessLimit > 0)
+	{
+		return std::min(m_iMilitaryHappinessUnits, iMilitaryHappinessLimit);
+	}
+	else
+	{
+		return m_iMilitaryHappinessUnits;
+	}
 }
 
 
