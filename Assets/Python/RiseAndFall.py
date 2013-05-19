@@ -998,6 +998,14 @@ class RiseAndFall:
 				utils.makeUnit(con.iSettler, marrakesh.getOwner(), (x,y), 1)
 				utils.makeUnit(con.iWorker, marrakesh.getOwner(), (x,y), 3)
 				
+		# Leoreth: help human with Aztec UHV - prevent super London getting in the way
+		if iGameTurn == getTurnForYear(1500) and utils.getHumanID() == iAztecs:
+			plot = gc.getMap().plot(con.tCapitals[iEngland][0], con.tCapitals[iEngland][1])
+			if plot.isCity():
+				city = plot.getPlotCity()
+				if city.getPopulation() > 14:
+					city.changePopulation(-3)
+				
 		if iGameTurn == getTurnForYear(1040):	# Leoreth: first Seljuk wave (flips independents, spawns armies for players)
 			tEsfahan = utils.getFreePlot(81, 41)
 			esfahan = gc.getMap().plot(tEsfahan[0], tEsfahan[1])

@@ -31,3 +31,7 @@
 # 600 AD scenario now with Herat instead of Kandahar and Lahore instead of Peshawar
 # moved Afghan gems 1W to be in range of Herat
 # additional flood plains in Transoxania, disappear in 1600 AD
+# happiness from Dynasticism is capped at 8
+# Theocracy now allows to hire unlimited priests
+# Totalitarianism now allows to hire unlimited spies
+# Autocracy now gives +3 happiness from barracks

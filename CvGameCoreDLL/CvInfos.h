@@ -1338,6 +1338,7 @@ public:
 	int getGoldPerUnit() const;				// Exposed to Python
 	int getGoldPerMilitaryUnit() const;				// Exposed to Python
 	int getHappyPerMilitaryUnit() const;				// Exposed to Python
+	int getMilitaryHappinessLimit() const; //Leoreth
 	int getLargestCityHappiness() const;					// Exposed to Python
 	int getWarWearinessModifier() const;					// Exposed to Python
 	int getFreeSpecialist() const;				// Exposed to Python
@@ -1435,6 +1436,7 @@ protected:
 	int m_iGoldPerUnit;
 	int m_iGoldPerMilitaryUnit;
 	int m_iHappyPerMilitaryUnit;
+	int m_iMilitaryHappinessLimit; //Leoreth
 	int m_iLargestCityHappiness;
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;

@@ -2284,6 +2284,8 @@ iBroadway = iWembley
 iRocknroll = iGraceland
 iGreatCothon = iMoaiStatues
 
+iPaganTemple = iObelisk
+
 iTemple = iJewishTemple #generic
 iCathedral = iJewishCathedral #generic
 iMonastery = iJewishMonastery #generic

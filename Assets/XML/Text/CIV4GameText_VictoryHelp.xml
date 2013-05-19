@@ -480,4 +480,12 @@
 		<Tag>TXT_KEY_VICTORY_SANKORE_PROPHETS</Tag>
 		<English>Great prophets settled in the Sankore city: %d1 / %d2</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_TEMPLES</Tag>
+		<English>Pagan Temples: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_ALTARS</Tag>
+		<English>Sacrificial Altars: %d1 / %d2</English>
+	</TEXT>
 </Civ4GameText>

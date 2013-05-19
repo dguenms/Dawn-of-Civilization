@@ -2136,30 +2136,40 @@ class Victory:
                 elif (iPlayer == iAztecs):
                         if (pAztecs.isAlive()):
                             
-                                if (self.getGoal(iAztecs, 0) == -1):
-                                        if (self.getEnslavedUnits() >= 5):
-                                                self.setGoal(iAztecs, 0, 1)   
+                                #if (self.getGoal(iAztecs, 0) == -1):
+                                #        if (self.getEnslavedUnits() >= 5):
+                                #                self.setGoal(iAztecs, 0, 1)   
                                             
-                                if (iGameTurn == getTurnForYear(1700)):
-                                        bCAmerica = True
-                                        for iEuroCiv in range(iNumPlayers):
-                                                if (iEuroCiv in con.lCivGroups[0]):
-                                                        if (self.checkNotOwnedArea(iEuroCiv, tCAmericaTL, tCAmericaBR) == False):
-                                                                bCAmerica = False
-                                                                break
-                                        if (bCAmerica):
-                                                self.setGoal(iAztecs, 1, 1)
-                                        else:
-                                                self.setGoal(iAztecs, 1, 0)          
+                                #if (iGameTurn == getTurnForYear(1700)):
+                                #        bCAmerica = True
+                                #        for iEuroCiv in range(iNumPlayers):
+                                #                if (iEuroCiv in con.lCivGroups[0]):
+                                #                        if (self.checkNotOwnedArea(iEuroCiv, tCAmericaTL, tCAmericaBR) == False):
+                                #                                bCAmerica = False
+                                #                                break
+                                #        if (bCAmerica):
+                                #                self.setGoal(iAztecs, 1, 1)
+                                #        else:
+                                #                self.setGoal(iAztecs, 1, 0)      
 
+				if iGameTurn == getTurnForYear(1520):
+					bestCity = self.calculateTopCityPopulation(18, 37)
+					if bestCity != -1:
+						if bestCity.getOwner() == iAztecs and bestCity.getX() == 18 and bestCity.getY() == 37:
+							self.setGoal(iAztecs, 0, 1)
+						else:
+							self.setGoal(iAztecs, 0, 0)
+					else:
+						self.setGoal(iAztecs, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1650):
+					if self.getGoal(iAztecs, 1) == -1:
+						self.setGoal(iAztecs, 1, 0)
+						
+				if self.getGoal(iAztecs, 2) == -1:
+					if self.getEnslavedUnits() >= 20:
+						self.setGoal(iAztecs, 2, 1)
 
-##                                if (iGameTurn == getTurnForYear(1820)):
-##                                        bestCity = self.calculateTopCityPopulation(18, 37)
-##                                        if (bestCity != -1):
-##                                                if (bestCity.getOwner() == iAztecs and bestCity.getX() == 18 and bestCity.getY() == 37):
-##                                                        self.setGoal(iAztecs, 2, 1)
-##                                                else:
-##                                                        self.setGoal(iAztecs, 2, 0)
 
 		elif iPlayer == iThailand:
 			if pThailand.isAlive():
@@ -3008,6 +3018,16 @@ class Victory:
 					if iBuilding == con.iIslamicCathedral:
 						if self.getNumBuildings(iMughals, con.iIslamicCathedral) >= 3:
 							self.setGoal(iMughals, 0, 1)
+							
+		# Aztecs: build 6 pagan temples and sacrificial altars
+		elif iPlayer == iAztecs:
+			if pAztecs.isAlive():
+				if self.getGoal(iAztecs, 1) == -1:
+					if iBuilding in [con.iPaganTemple, con.iAztecSacrificialAltar]:
+						iTemples = self.getNumBuildings(iAztecs, con.iPaganTemple)
+						iAltars = self.getNumBuildings(iAztecs, con.iAztecSacrificialAltar)
+						if iTemples >= 6 and iAltars >= 6:
+							self.setGoal(iAztecs, 1, 1)
 							
 		# goals for wonders (fail if someone else completes the building)
 				
@@ -4239,16 +4259,16 @@ class Victory:
 
 		elif iPlayer == iAztecs:
 			if iGoal == 0:
-				iEnslavedUnits = self.getEnslavedUnits()
-				aHelp.append(self.getIcon(iEnslavedUnits >= 5) + localText.getText("TXT_KEY_VICTORY_ENSLAVED_UNITS", (iEnslavedUnits, 5)))
+				pBestCity = self.calculateTopCityPopulation(18, 37)
+				bBestCity = (pBestCity.getOwner() == iAztecs and pBestCity.getX() == 18 and pBestCity.getY() == 37)
+				aHelp.append(self.getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
 			elif iGoal == 1:
-                                bCAmerica = True
-                                for iEuroCiv in range(iNumPlayers):
-                                	if (iEuroCiv in con.lCivGroups[0]):
-                                		if (self.checkNotOwnedArea(iEuroCiv, tCAmericaTL, tCAmericaBR) == False):
-                                			bCAmerica = False
-                                			break
-				aHelp.append(self.getIcon(bCAmerica) + localText.getText("TXT_KEY_VICTORY_NO_CENTRAL_AMERICAN_COLONIES", ()))
+				iTemples = self.getNumBuildings(iAztecs, con.iPaganTemple)
+				iAltars = self.getNumBuildings(iAztecs, con.iAztecSacrificialAltar)
+				aHelp.append(self.getIcon(iTemples >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_TEMPLES", (iTemples, 6)) + " " + self.getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_ALTARS", (iAltars, 6)))
+			elif iGoal == 2:
+				iEnslavedUnits = self.getEnslavedUnits()
+				aHelp.append(self.getIcon(iEnslavedUnits >= 20) + localText.getText("TXT_KEY_VICTORY_ENSLAVED_UNITS", (iEnslavedUnits, 20)))
 
 		elif iPlayer == iTurkey:
 			if iGoal == 0:

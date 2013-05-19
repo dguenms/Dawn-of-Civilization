@@ -5358,6 +5358,7 @@ m_iFreeMilitaryUnitsPopulationPercent(0),
 m_iGoldPerUnit(0),
 m_iGoldPerMilitaryUnit(0),
 m_iHappyPerMilitaryUnit(0),
+m_iMilitaryHappinessLimit(0), //Leoreth
 m_iLargestCityHappiness(0),
 m_iWarWearinessModifier(0),
 m_iFreeSpecialist(0),
@@ -5570,6 +5571,12 @@ int CvCivicInfo::getGoldPerMilitaryUnit() const
 int CvCivicInfo::getHappyPerMilitaryUnit() const
 {
 	return m_iHappyPerMilitaryUnit;
+}
+
+// Leoreth
+int CvCivicInfo::getMilitaryHappinessLimit() const
+{
+	return m_iMilitaryHappinessLimit;
 }
 
 int CvCivicInfo::getLargestCityHappiness() const
@@ -5910,6 +5917,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iGoldPerUnit);
 	stream->Read(&m_iGoldPerMilitaryUnit);
 	stream->Read(&m_iHappyPerMilitaryUnit);
+	stream->Read(&m_iMilitaryHappinessLimit); //Leoreth
 	stream->Read(&m_iLargestCityHappiness);
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iFreeSpecialist);
@@ -6052,6 +6060,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iGoldPerUnit);
 	stream->Write(m_iGoldPerMilitaryUnit);
 	stream->Write(m_iHappyPerMilitaryUnit);
+	stream->Write(m_iMilitaryHappinessLimit); //Leoreth
 	stream->Write(m_iLargestCityHappiness);
 	stream->Write(m_iWarWearinessModifier);
 	stream->Write(m_iFreeSpecialist);
@@ -6154,6 +6163,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iGoldPerUnit, "iGoldPerUnit");
 	pXML->GetChildXmlValByName(&m_iGoldPerMilitaryUnit, "iGoldPerMilitaryUnit");
 	pXML->GetChildXmlValByName(&m_iHappyPerMilitaryUnit, "iHappyPerMilitaryUnit");
+	pXML->GetChildXmlValByName(&m_iMilitaryHappinessLimit, "iMilitaryHappinessLimit"); //Leoreth
 	pXML->GetChildXmlValByName(&m_bMilitaryFoodProduction, "bMilitaryFoodProduction");
 	pXML->GetChildXmlValByName(&m_iMaxConscript, "iMaxConscript");
 	pXML->GetChildXmlValByName(&m_bNoUnhealthyPopulation, "bNoUnhealthyPopulation");
