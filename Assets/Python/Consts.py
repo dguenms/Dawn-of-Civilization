@@ -1054,7 +1054,7 @@ tCoreAreasTL = (
 (49, 26), #Mali
 (63, 50), #Poland
 (44, 42), #Portugal
-(24, 18), #Inca
+(26, 20), #Inca
 (58, 45), #Italy
 (87, 46), #Mongolia
 (15, 36), #Aztecs
@@ -1094,7 +1094,7 @@ tCoreAreasTL = (
 (49, 26), #Mali
 (63, 50), #Poland
 (44, 42), #Portugal
-(24, 18), #Inca
+(26, 20), #Inca
 (58, 45), #Italy
 (87, 46), #Mongolia
 (12, 33), #Mexico
@@ -2250,8 +2250,8 @@ iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobac
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 198
-(iPalace, iGreatPalace, iForbiddenPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iBarracks, iZuluIkhanda, iStable,
+iNumBuildings = 199
+(iPalace, iGreatPalace, iForbiddenPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
 iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iMoorishNoria, iHarappanBath,
 iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
 iForge, iMaliMint, iFactory, iGermanAssemblyPlant, iCoalPlant, iJapaneseShalePlant, iHydroPlant, iNuclearPlant,

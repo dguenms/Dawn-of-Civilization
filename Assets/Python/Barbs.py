@@ -81,11 +81,13 @@ lBaku = [77, 45, 600, 0] #180
 lLhasa = [96, 43, 633, 0] #184
 #lAngkor = [102, 34, 802, 0] #201
 lMarrakesh = [51, 37, 680, 0]
+lTiwanaku = [30, 20, 700, 0]
 lVienna = [63, 49, 800, 0]
 lHamburg = [59, 53, 830, 0]
 lLubeck = [60, 53, 830, 0]
 lHanoi = [101, 37, 866, 0] #208
 lTucume = [24, 26, 900, 0] #211
+lChanChan = [25, 23, 900, 0]
 lKiev = [69, 52, 900, 0] #211
 lJelling = [59, 55, 980, 0] #219
 lDublin = [49, 56, 990, 0] #220
@@ -460,7 +462,11 @@ class Barbs:
                 #        self.foundCity(iBarbarian, (lLhasa[0] - 1, lLhasa[1] - 1, lLhasa[2], lLhasa[3]), "Lhasa", iGameTurn, 2, -1, -1) #try to found it nearby
                 #self.foundCity(iIndependent2, lAngkor, "Angkor", iGameTurn, 1, -1, -1)
                 self.foundCity(iBarbarian, lHanoi, "Hanoi", iGameTurn, 2, -1, -1)
-                self.foundCity(iNative, lTucume, "Tucume", iGameTurn, 1, -1, -1)
+		
+		self.foundCity(iNative, lTiwanaku, "Tiwanaku", iGameTurn, 1, con.iArcher, 1)
+                self.foundCity(iNative, lTucume, "Tucume", iGameTurn, 1, con.iArcher, 2)
+		self.foundCity(iNative, lChanChan, "Chan Chan", iGameTurn, 2, con.iArcher, 2)
+		
 		self.foundCity(iIndependent, lKiev, "Kyiv", iGameTurn, 2, con.iLongbowman, 2, [con.iOrthodoxy])
                 #self.foundCity(lJelling, "Jelling", iGameTurn, 1, -1, -1)
                 if (gc.getPlayer(0).isPlayable()):  #late start condition
@@ -498,7 +504,7 @@ class Barbs:
 		self.foundCity(iIndependent, lAnkara, "Ankuwash", iGameTurn, 2, con.iArcher, 2)
 		
 		if utils.getHumanID() != con.iHolyRome:
-			if utils.getSeed() % 3 == 0:
+			if utils.getSeed() % 4 == 0:
 				self.foundCity(iIndependent, lLubeck, "L&#252;beck", iGameTurn, 2, con.iCrossbowman, 1)
 			else:
 				self.foundCity(iIndependent, lHamburg, "Hamburg", iGameTurn, 2, con.iCrossbowman, 1)
@@ -512,6 +518,11 @@ class Barbs:
 
 		if iGameTurn == getTurnForYear(-3000):
 			gc.getMap().plot(lJerusalem[0], lJerusalem[1]).getPlotCity().setHasRealBuilding(con.iTempleOfSalomon, True)
+			
+		if iGameTurn == getTurnForYear(con.tBirth[con.iInca]):
+			if utils.getHumanID() == con.iInca:
+				utils.makeUnit(con.iIncanQuechua, iNative, (lTucume[0], lTucume[1]), 1)
+				utils.makeUnit(con.iIncanQuechua, iNative, (lChanChan[0], lChanChan[1]), 1)
 
 
 

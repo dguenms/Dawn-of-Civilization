@@ -4494,10 +4494,9 @@ class RiseAndFall:
                                 utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
                                 utils.makeUnit(con.iGalley, iCiv, tSeaPlot, 1)
                 if (iCiv == iInca):
-                        utils.makeUnit(con.iSettler, iCiv, tPlot, 4)
-                        utils.makeUnit(con.iScout, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iIncanQuechua, iCiv, tPlot, 4)
-                        utils.makeUnit(con.iArcher, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+                        utils.makeUnit(con.iIncanQuechua, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
 		if iCiv == iItaly:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
