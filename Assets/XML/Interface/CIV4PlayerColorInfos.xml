@@ -388,5 +388,11 @@
 			<ColorTypeSecondary>COLOR_PLAYER_ORANGE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_MAROON_TEXT</TextColorType>
 		</PlayerColorInfo>
+		<PlayerColorInfo>
+			<Type>PLAYERCOLOR_MEXICO</Type>
+			<ColorTypePrimary>COLOR_X_OLIVEDRAB</ColorTypePrimary>
+			<ColorTypeSecondary>COLOR_PLAYER_RED</ColorTypeSecondary>
+			<TextColorType>COLOR_X_OLIVEDRAB</TextColorType>
+		</PlayerColorInfo>
 	</PlayerColorInfos>
 </Civ4PlayerColorInfos>

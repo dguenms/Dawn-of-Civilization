@@ -603,6 +603,9 @@ class RFCUtils:
 					iConscriptAngerTime = city.getConscriptAngerTimer()
 					city.changeHurryAngerTimer(-iHurryAngerTime)
 					city.changeConscriptAngerTimer(-iConscriptAngerTime)
+					
+					city.setInfoDirty(True)
+					city.setLayoutDirty(True)
                                                 
                                         return True
                 return False
@@ -1762,5 +1765,22 @@ class RFCUtils:
 				return iUnit
 				
 		return False
+		
+	def getPlotList(self, tTL, tBR, tExceptions=()):
+		lResults = []
+		
+		for x in range(tTL[0], tBR[0]+1):
+			for y in range(tTL[1], tTL[1]+1):
+				if (x,y) not in tExceptions:
+					lResults.append((x,y))
+					
+		return lResults
+		
+	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange):
 	
+		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, True, False, False)
+		self.flipUnitsInCityBefore((x, y), iCiv, iOwner)
+		self.setTempFlippingCity((x, y))
+		self.flipCity((x, y), 0, 0, iCiv, [iOwner])
+		self.flipUnitsInCityAfter(self.getTempFlippingCity(), iCiv)
 	

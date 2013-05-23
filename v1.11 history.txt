@@ -35,3 +35,10 @@
 # Theocracy now allows to hire unlimited priests
 # Totalitarianism now allows to hire unlimited spies
 # Autocracy now gives +3 happiness from barracks
+# fixed the capital ruins on civ switch bug
+# added Coffee in the Congo
+# a Horse resource spawns in Mexico in 1800 AD
+# added a scripted respawn for the Aztecs as Mexico in 1810
+	# Unique Unit: Rurales (Cavalry with -20 cost, can fortify, starts with Combat I)
+	# Unique Building: Charreada Arena (Amphitheatre with +1 happiness with Horse, +2 experience for mounted units)
+	# Unique Power: Arid Agriculture (can build farms on hills)

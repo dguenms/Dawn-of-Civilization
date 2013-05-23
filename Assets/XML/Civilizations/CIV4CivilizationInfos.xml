@@ -3338,6 +3338,92 @@
 			<CivilizationActionSound>AS3D_MAYA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_MEXICO</Type>
+			<Description>TXT_KEY_CIV_MEXICO_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_MEXICO_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_MEXICO_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_MEXICO_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_GREEN</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_MEXICO</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICA</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Toluca</City>
+				<City>Queretaro</City>
+				<City>Morelia</City>
+				<City>Villahermosa</City>
+				<City>Culiacan</City>
+				<City>Cancun</City>
+				<City>Matamoros</City>
+				<City>La Paz</City>
+				<City>Mexicali</City>
+				<City>Nogales</City>
+				<City>Leon</City>
+				<City>Los Mochis</City>
+				<City>Reynosa</City>
+				<City>Puerto Vallarta</City>
+				<City>Chetumal</City>
+				<City>Zacatecas</City>
+				<City>Palenque</City>
+				<City>Santa Rosalia</City>
+				<City>Alamos</City>
+				<City>Manzanillo</City>
+				<City>Rosarito</City>
+				<City>San Felipe</City>
+				<City>San Ignacio</City>
+				<City>Cabo San Lucas</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_COLOSSEUM</BuildingClassType>
+					<BuildingType>BUILDING_MEXICO_CHARREADA</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
+					<UnitType>UNIT_MEXICO_RURALES</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses/>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_CARDENAS</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_JUAREZ</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_SANTA_ANNA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_SPAIN_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_SPAIN_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_MONGOL</Type>
 			<Description>TXT_KEY_CIV_MONGOL_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_MONGOL_SHORT_DESC</ShortDescription>

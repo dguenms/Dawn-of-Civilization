@@ -2926,14 +2926,14 @@ class Victory:
                                                                 self.setGoal(iGermany, 2, 0) 
                                                         
 
-                elif (iPlayer == iAztecs):
-                        if (self.getGoal(iAztecs, 2) == -1):
-                                if (iGameTurn <= getTurnForYear(1860)):                            
-                                        aztecEra = pAztecs.getCurrentEra()
-                                        if (aztecEra == iIndustrial):
-                                                self.setGoal(iAztecs, 2, 1)                                        
-                                else:
-                                        self.setGoal(iAztecs, 2, 0)
+                #elif (iPlayer == iAztecs):
+                #        if (self.getGoal(iAztecs, 2) == -1):
+                #                if (iGameTurn <= getTurnForYear(1860)):                            
+                #                        aztecEra = pAztecs.getCurrentEra()
+                #                        if (aztecEra == iIndustrial):
+                #                                self.setGoal(iAztecs, 2, 1)                                        
+                #                else:
+                #                        self.setGoal(iAztecs, 2, 0)
 					
 		if self.getGoal(iCongo, 2) == -1:
 			iEra = gc.getTechInfo(iTech).getEra()
@@ -4083,7 +4083,7 @@ class Victory:
 				x, y = con.tCapitals[utils.getReborn(iGermany)][iGermany]
 				plot = gc.getMap().plot(x, y)
 				iCounter = 0
-				if plot.isCity:
+				if plot.isCity():
 					capital = plot.getPlotCity()
 					for iSpecialist in range(gc.getNumSpecialistInfos()):
 						if iSpecialist >= 7: # great priest

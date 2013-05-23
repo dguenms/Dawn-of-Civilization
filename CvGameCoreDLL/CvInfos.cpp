@@ -10350,6 +10350,8 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 			//iFinalResult = result * 100 / 100;
 		if (pl == PERSIA)
 			iFinalResult = result * 90 / 100;
+		else if (pl == AZTEC)
+			iFinalResult = result * 90 / 100;
 	}
 
 	// bonus for Netherlands and Germany in the beginning
@@ -10626,6 +10628,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 			//iFinalResearchPercent = researchPercent * 92 / 100;
 		if (pl == PERSIA)
 			iFinalResearchPercent = researchPercent * 90 / 100;
+		else if (pl == AZTEC)
+			iFinalResearchPercent = researchPercent * 80 / 100;
 	}
 
 	return iFinalResearchPercent;

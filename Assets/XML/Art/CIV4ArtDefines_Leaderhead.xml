@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http:/www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
 <!-- Sid Meier's Civilization 4 -->
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
@@ -846,6 +846,30 @@
 			<KFM>art/LeaderHeads/Sforza/Charlemagne.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Sforza/Charlemagne.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Sforza/Charlemagne_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SANTA_ANNA</Type>
+			<Button>art/leaderheads/SantaAnna/btn_lh_santaanna.dds</Button>
+			<NIF>art/leaderheads/SantaAnna/santaanna.nif</NIF>
+			<KFM>art/leaderheads/SantaAnna/santaanna.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/SantaAnna/santaanna.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/SantaAnna/santaanna_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_JUAREZ</Type>
+			<Button>art/leaderheads/Juarez/btn_lh_Juarez.dds</Button>
+			<NIF>art/leaderheads/Juarez/Juarez.nif</NIF>
+			<KFM>art/leaderheads/Juarez/Juarez.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Juarez/Juarez.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Juarez/Juarez_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CARDENAS</Type>
+			<Button>art/leaderheads/Cardenas/Cardenas.dds</Button>
+			<NIF>art/leaderheads/Cardenas/NewEarth.nif</NIF>
+			<KFM>art/leaderheads/Cardenas/napoleon.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Cardenas/NewEarth_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Cardenas/napoleon_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

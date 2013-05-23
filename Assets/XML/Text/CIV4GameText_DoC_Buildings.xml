@@ -53,4 +53,16 @@
 		<Tag>TXT_KEY_BUILDING_HARAPPAN_BATH_PEDIA</Tag>
 		<English>The ancient Indus Valley Civilization of Northwest South Asia, including Pakistan and parts of India, was prominent in hydraulic engineering, and had many water supply and sanitation devices that were the first of their kind.[PARAGRAPH:1]Among other things, they contain the world's earliest known system of flush toilets. These existed in many homes, and were connected to a common sewerage pipe. Most houses also had private wells. City walls functioned as a barrier against floods.[PARAGRAPH:1]Mohenjo-daro is one of the best excavated and studied settlements from this civilization. The Great Bath might be the first of its kind in pre-historic period. This ancient town had more than 700 wells, and most houses in Mohenjo-daro had one private well.[PARAGRAPH:1]Dholavira, located in Gujarat, India, had a series of water storing tanks and step wells, and its water management system has been called "unique". Dholavira had at least five baths, size of one is comparable with Great Bath, Mohenjadaro.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA</Tag>
+		<English>Charreada Arena</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA_STRATEGY</Tag>
+		<English>A [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT] (the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT]) increases a city's happiness and its happiness output from using the culture slider. It will also provide extra experience to your mounted units.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA_PEDIA</Tag>
+		<English>[TAB]A charreada is a Mexican-style rodeo that is different from other rodeos. The Mexican cowboy or cowgirl is known as a charro or charra. In an American rodeo the competitors race against the clock, so the emphasis is on speed in any given event. On the other hand, in a Mexican charreada the excellent style and skills of the rider or roper are emphasized, and only one event is timed.[PARAGRAPH:1]Charrería (a word encompassing all aspects of the art) came to Mexico from Salamanca, Spain, in the 16th century. Interesting is the fact that when the Spaniards first settled in Mexico they were under the orders of the ruler to raise horses, but not to allow the Mexicans to ride them. By 1528 the Spaniards had very large cattle-raising estates. They soon found it necessary to employ the Mexicans as vaqueros or herdsman, and the natives soon became excellent horsemen. Small landholders, known as rancheros or ranchers, were the first genuine charros and invented charreadas.[PARAGRAPH:1]</English>
+	</TEXT>
 </Civ4GameText>
