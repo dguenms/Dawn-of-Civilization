@@ -2054,8 +2054,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType>
-					<BuildingType>BUILDING_INCAN_TERRACE</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_CASTLE</BuildingClassType>
+					<BuildingType>BUILDING_INCAN_TAMBO</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

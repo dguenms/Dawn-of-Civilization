@@ -11654,7 +11654,7 @@ EndPlot
 BeginPlot
 	x=30,y=20
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=21
