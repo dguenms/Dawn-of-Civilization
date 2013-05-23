@@ -214,4 +214,14 @@
 		<English>Can train unlimited missionaries; Missionaries can enter foreign territory</English>
 		<German>Kann unbegrenzt Missionare ausbilden; Missionare können fremdes Territorium betreten</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MEX</Tag>
+		<English>The Power of Arid Agriculture:</English>
+		<German>Die Macht der Ariden Landwirtschaft:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MEX2</Tag>
+		<English>Can build farms on hills</English>
+		<German>Kann Farmen auf Hügeln errichten</German>
+	</TEXT>
 </Civ4GameText>

@@ -106,4 +106,16 @@
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN_STRATEGY</Tag>
 		<English>The Minuteman is the American replacement for the Rifleman. They only cost as much as Musketmen to produce.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MEXICO_RURALES</Tag>
+		<English>Rurales</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MEXICO_RURALES_STRATEGY</Tag>
+		<English>This unit marks the transition from melee to gunpowder-based cavalry. The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT] (the Mexican replacement for the [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT]) is the strongest land unit until the entrance of the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT]. It is slightly less expensive and receives the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MEXICO_RURALES_PEDIA</Tag>
+		<English>[TAB]Rurales was the name commonly used to designate the Mexican Guardia Rural (Rural Guard): a force of mounted police or gendarmerie that existed between 1861 and 1914. In modern Mexico the name is applied to members of a part-time rural defence corps.[PARAGRAPH:1]The image of the Rurales as a ruthless and efficient organisation, which seldom took prisoners under the notorious ley fuga and inevitably got its man, was deliberately fostered under the Porfirian regime. However, research during the 1970s involving detailed examination of the records of the corps indicated that the Rurales were neither as effective nor as brutal as regime publicists had suggested. Never numbering more than about 4,000 men located in small detachments, the Rurales were too thinly spread to ever completely eliminate unrest in the Mexican countryside. They did however impose a superficial order, especially in the central regions around Mexico City, which encouraged the foreign investment sought by Díaz and his científico advisers . To a certain extent the regime saw the Rurales as a counterweight to the much larger Federal army and in the later years of the regime they were increasingly used to control industrial unrest, in addition to their traditional task of patrolling country areas.</English>
+	</TEXT>
 </Civ4GameText>

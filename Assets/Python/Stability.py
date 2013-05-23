@@ -524,9 +524,9 @@ class Stability:
 				elif iHandicap == 0:
 					iMaxPlotsAbroad = 32
 				
-				if iGameTurn < getTurnForYear(con.tFall[iPlayer]):
-					iMaxPlotsAbroad *= 3
-					iMaxPlotsAbroad /= 2
+				if iGameTurn >= getTurnForYear(con.tFall[iPlayer]):
+					iMaxPlotsAbroad *= 2
+					iMaxPlotsAbroad /= 3
 			
 			# Leoreth: nerf Korean stability, and city states civic
 			#if iPlayer == con.iKorea:

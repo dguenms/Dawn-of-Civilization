@@ -23833,6 +23833,7 @@ BeginPlot
 	x=63,y=21
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_COFFEE
 	PlotType=1
 EndPlot
 BeginPlot

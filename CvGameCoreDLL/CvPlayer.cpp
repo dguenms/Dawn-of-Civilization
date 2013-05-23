@@ -6153,6 +6153,9 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 			if (getID() == PERSIA)
 				startingEra = 3;
+
+			if (getID() == AZTEC)
+				startingEra = 4;
 		}
 
 		if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
@@ -8006,6 +8009,8 @@ int CvPlayer::calculateInflationRate() const
 			iRate = iRatePercent * 84 / 100;
 		if (getID() == PERSIA)
 			iRate = iRatePercent * 75 / 100;
+		if (getID() == AZTEC)
+			iRate = iRatePercent * 67 / 100;
 	}
 
 	//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
@@ -9398,6 +9403,8 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			result = iThreshold * 77 / 100;
 		if (getID() == PERSIA)
 			result = iThreshold * 80 / 100;
+		if (getID() == AZTEC)
+			result = iThreshold * 70 / 100;
 	}
 
 	if (getID() == ETHIOPIA)

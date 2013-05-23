@@ -1130,5 +1130,19 @@
 			<fBlue>0.25</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_X_OLIVEDRAB</Type>
+			<fRed>0.42</fRed>
+			<fGreen>0.56</fGreen>
+			<fBlue>0.14</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_RED</Type>
+			<fRed>0.86</fRed>
+			<fGreen>0.02</fGreen>
+			<fBlue>0.02</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

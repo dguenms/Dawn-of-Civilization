@@ -2008,10 +2008,11 @@ class DynamicCivs:
 				return
 				
 			if iEra >= con.iRenaissance:
-				if iGameTurn >= getTurnForYear(1700):
+				if iGameTurn >= getTurnForYear(1750):
 					self.setLeader(iPlayer, con.iCatherine)
-				else:
-					self.setLeader(iPlayer, con.iPeter)
+					return
+				
+				self.setLeader(iPlayer, con.iPeter)
 				return
 				
 		elif iPlayer == iNetherlands:
@@ -2052,7 +2053,18 @@ class DynamicCivs:
 				return
 				
 		elif iPlayer == iAztecs:
-			return
+			
+			if pPlayer.isReborn():
+				if bMonarchy or self.isFascist(iPlayer):
+					self.setLeader(iPlayer, con.iSantaAnna)
+					return
+					
+				if iEra >= con.iModern:
+					self.setLeader(iPlayer, con.iCardenas)
+					return
+					
+				self.setLeader(iPlayer, con.iJuarez)
+				return
 			
 		elif iPlayer == iMughals:
 			

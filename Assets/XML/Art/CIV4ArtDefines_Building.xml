@@ -2485,5 +2485,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Bath/Button_Bath.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MEXICO_CHARREADA</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.85</fScale>
+			<fInterfaceScale>0.75</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Charreada/GruumshTemple.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Charreada/Charreada.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

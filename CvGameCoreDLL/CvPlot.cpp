@@ -2162,13 +2162,14 @@ bool CvPlot::canHaveBonus(BonusTypes eBonus, bool bIgnoreLatitude) const
 bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, bool bPotential) const
 {
 	CvPlot* pLoopPlot;
-	bool bValid;
+	bool bValid, bMexico;
 	int iI;
 
 	FAssertMsg(eImprovement != NO_IMPROVEMENT, "Improvement is not assigned a valid value");
 	FAssertMsg(getTerrainType() != NO_TERRAIN, "TerrainType is not assigned a valid value");
 
 	bValid = false;
+	bMexico = false;
 
 	if (isCity())
 	{
@@ -2183,6 +2184,12 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	if (GC.getImprovementInfo(eImprovement).isWater() != isWater())
 	{
 		return false;
+	}
+
+	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
+	if (eTeam == AZTEC && GET_PLAYER((PlayerTypes)AZTEC).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM"))
+	{
+		bMexico = true;
 	}
 
 	if (getFeatureType() != NO_FEATURE)
@@ -2203,7 +2210,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		return false;
 	}
 
-	if (GC.getImprovementInfo(eImprovement).isRequiresFlatlands() && !isFlatlands())
+	if (GC.getImprovementInfo(eImprovement).isRequiresFlatlands() && !isFlatlands() && !bMexico) // Mexican UP
 	{
 		return false;
 	}
@@ -2272,7 +2279,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
-		if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI))
+		if (calculateNatureYield(((YieldTypes)iI), eTeam) < GC.getImprovementInfo(eImprovement).getPrereqNatureYield(iI) && !bMexico) // Mexican UP
 		{
 			return false;
 		}

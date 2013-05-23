@@ -236,6 +236,9 @@ class Resources:
 			gc.getMap().plot(39, 16).setBonusType(iFish) #Brazil
 			
 			gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
+			
+		if iGameTurn == getTurnForYear(1800):
+			gc.getMap().plot(17, 41).setBonusType(iHorse) # Mexico
 
                 if (iGameTurn == getTurnForYear(1850)):
                         gc.getMap().plot(12, 45).setBonusType(iWine) #California
