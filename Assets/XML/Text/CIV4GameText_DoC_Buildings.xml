@@ -69,4 +69,20 @@
 		<Tag>TXT_KEY_BUILDING_INCAN_TAMBO</Tag>
 		<English>Tambo</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU</Tag>
+		<English>Machu Picchu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU_PEDIA</Tag>
+		<English>[TAB]Machu Picchu (Quechua: Machu Pikchu "Old Peak") is a pre-Columbian Inca city located at 2,430 m altitude on a mountain ridge above the Urubamba Valley in Peru, about 70 km northwest of Cusco. Machu Picchu is probably the most familiar symbol of the Inca Empire. It is often referred to as "The Lost City of the Incas". The site was designated as a World Heritage Site in 1983 when it was described as "an absolute masterpiece of architecture and a unique testimony to the Inca civilization".</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT] provides 2[ICON_GOLD] for every [COLOR_HIGHLIGHT_TEXT]Peak[COLOR_REVERT] in city radius.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU_HELP</Tag>
+		<English>[ICON_BULLET]Provides +2[ICON_GOLD] Per Peak In City Radius</English>
+	</TEXT>
 </Civ4GameText>

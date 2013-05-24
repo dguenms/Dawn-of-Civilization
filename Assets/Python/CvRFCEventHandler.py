@@ -736,6 +736,14 @@ class CvRFCEventHandler:
 		if iBuildingType == con.iEmpireState:
 			iPop = city.getPopulation()
 			city.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE"), 0, iPop)
+			
+		# Leoreth: Machu Picchu
+		if iBuildingType == con.iMachuPicchu:
+			iNumPeaks = 0
+			for i in range(21):
+				if city.getCityIndexPlot(i).isPeak():
+					iNumPeaks += 1
+			city.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_MACHU_PICCHU"), 0, iNumPeaks * 2)
 
 		# Leoreth: found Buddhism when a Hindu temple is built
 		if iBuildingType == con.iHinduTemple:

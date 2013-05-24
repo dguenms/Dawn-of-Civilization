@@ -155,20 +155,20 @@
 		<German>Verfügen Sie im Jahr 1700 n. Chr. über 48.000 Gold</German>
 		<Italian>Devi avere 48.000 oro nel 1700 d.C.</Italian>
 		<Spanish>Tener 48.000 monedas de oro en el 1700 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_INC2_EPIC</Tag>
-		<English>Have 4500 gold in 1700 AD</English>
-		<French>Avoir 4500 en or en 1700 ap. J.-C.</French>
-		<German>Verfügen Sie im Jahr 1700 n. Chr. über 4.500 Gold</German>
-		<Italian>Devi avere 4500 oro nel 1700 d.C.</Italian>
-		<Spanish>Tener 4.500 monedas de oro en el 1700 d. C.</Spanish>
 	</TEXT-->
 	<TEXT>
+		<Tag>TXT_KEY_UHV_INC2_EPIC</Tag>
+		<English>Have 3750 gold in 1550 AD</English>
+		<French>Avoir 4500 en or en 1700 ap. J.-C.</French>
+		<German>Verfügen Sie im Jahr 1550 n. Chr. über 3.750 Gold</German>
+		<Italian>Devi avere 4500 oro nel 1700 d.C.</Italian>
+		<Spanish>Tener 4.500 monedas de oro en el 1700 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_INC2_MARATHON</Tag>
-		<English>Have 9000 gold in 1700 AD</English>
+		<English>Have 7500 gold in 1550 AD</English>
 		<French>Avoir 9000 en or en 1700 ap. J.-C.</French>
-		<German>Verfügen Sie im Jahr 1700 n. Chr. über 9.000 Gold</German>
+		<German>Verfügen Sie im Jahr 1550 n. Chr. über 7.500 Gold</German>
 		<Italian>Devi avere 9000 oro nel 1700 d.C.</Italian>
 		<Spanish>Tener 9.000 monedas de oro en el 1700 d. C.</Spanish>
 	</TEXT>

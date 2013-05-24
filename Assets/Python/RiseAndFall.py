@@ -4495,8 +4495,10 @@ class RiseAndFall:
                                 utils.makeUnit(con.iGalley, iCiv, tSeaPlot, 1)
                 if (iCiv == iInca):
                         utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
-                        utils.makeUnit(con.iIncanQuechua, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iIncanQuechua, iCiv, tPlot, 4)
                         utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
+			if utils.getHumanID() != iInca:
+				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 		if iCiv == iItaly:
 			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
@@ -5783,6 +5785,7 @@ class RiseAndFall:
                                 teamInca.setHasTech(con.iCurrency, True, iCiv, False, False)
                                 teamInca.setHasTech(con.iHunting, True, iCiv, False, False)
                                 teamInca.setHasTech(con.iArchery, True, iCiv, False, False)
+				teamInca.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                         if (iCiv == iMongolia):
                                 teamMongolia.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamMongolia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

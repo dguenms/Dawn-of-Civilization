@@ -42,3 +42,14 @@
 	# Unique Unit: Rurales (Cavalry with -20 cost, can fortify, starts with Combat I)
 	# Unique Building: Charreada Arena (Amphitheatre with +1 happiness with Horse, +2 experience for mounted units)
 	# Unique Power: Arid Agriculture (can build farms on hills)
+# harbors can now be built in cities situated at lakes
+# added the Machu Picchu wonder: +2 gold per peak tile in city radius
+# reduced Incan starting units and settlers
+# Chan Chan and Tiwanaku spawn before the Incans appear
+# reduced the Incan core to only include the vicinity of Qusqu
+# opened up the Altiplano basin and placed sheep (alpacas) and stone there
+# new Incan UB: Tambo (replaces Castle, requires Construction, +2 culture)
+# new Incan UHV:
+	# Build five Tambos and a road along the Andean Coast by 1500 AD
+	# Have 2500 gold in 1550 AD
+	# Secure a total of eight gold, silver and gem resources by 1700 AD

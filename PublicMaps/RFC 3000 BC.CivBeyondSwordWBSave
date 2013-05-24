@@ -409,7 +409,8 @@ BeginPlayer
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR          
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR     
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
@@ -10874,8 +10875,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=20
-	BonusType=BONUS_STONE
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -11636,6 +11636,7 @@ EndPlot
 BeginPlot
 	x=30,y=20
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_STONE
 	PlotType=1
 EndPlot
 BeginPlot
@@ -12020,8 +12021,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=19
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_SHEEP
+	PlotType=1
 EndPlot
 BeginPlot
 	x=31,y=20
