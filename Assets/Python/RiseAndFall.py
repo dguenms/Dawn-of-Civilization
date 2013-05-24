@@ -3591,6 +3591,9 @@ class RiseAndFall:
 	
 		iGameTurn = gc.getGame().getGameTurn()
 		
+		# no conquerors for minor civs
+		if iHasMetTeamX >= con.iNumPlayers: return
+		
 		if iGameTurn > getTurnForYear(600) and iGameTurn < getTurnForYear(1800):
 			if iTeamX in con.lCivBioNewWorld and iHasMetTeamY in con.lCivBioOldWorld:
 				iNewWorldCiv = iTeamX

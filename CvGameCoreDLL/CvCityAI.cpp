@@ -3301,6 +3301,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 4;
 											iValue += 200;
 										}
+										else if (iI == MACHU_PICCHU) iTempValue /= 4;
 										break;
 									case MUGHALS:
 										if (iI == TAJMAHAL || iI == RED_FORT) iTempValue *= 4;
