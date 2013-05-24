@@ -1317,19 +1317,8 @@ def getUHVTileInfo(argsList):
 			return 41
 			
 	elif iPlayer == con.iInca:
-		bSAmerica = False
-		
-		tlx, tly = tSAmericaTL
-		brx, bry = tSAmericaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
-			bSAmerica = True
-			
-		tlx, tly = tBrazilTL
-		brx, bry = tBrazilBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
-			bSAmerica = False
-			
-		if bSAmerica: return 42
+		if (x, y) in vic.lAndeanCoast:
+			return 42
 		
 	#elif iPlayer == con.iItaly:
 	#	tlx, tly = con.tCoreAreasTL[0][con.iGreece]

@@ -463,7 +463,7 @@ class Barbs:
                 #self.foundCity(iIndependent2, lAngkor, "Angkor", iGameTurn, 1, -1, -1)
                 self.foundCity(iBarbarian, lHanoi, "Hanoi", iGameTurn, 2, -1, -1)
 		
-		self.foundCity(iNative, lTiwanaku, "Tiwanaku", iGameTurn, 1, con.iArcher, 1)
+		self.foundCity(iNative, lTiwanaku, "Tiwanaku", iGameTurn, 1, -1, -1)
                 self.foundCity(iNative, lTucume, "Tucume", iGameTurn, 1, con.iArcher, 2)
 		self.foundCity(iNative, lChanChan, "Chan Chan", iGameTurn, 2, con.iArcher, 2)
 		

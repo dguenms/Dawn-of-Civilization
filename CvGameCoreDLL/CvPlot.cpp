@@ -2187,7 +2187,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	}
 
 	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
-	if (eTeam == AZTEC && GET_PLAYER((PlayerTypes)AZTEC).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM"))
+	if (eTeam == AZTEC && GET_PLAYER((PlayerTypes)AZTEC).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
 	{
 		bMexico = true;
 	}

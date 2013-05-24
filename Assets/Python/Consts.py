@@ -2250,7 +2250,7 @@ iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobac
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 199
+iNumBuildings = 200
 (iPalace, iGreatPalace, iForbiddenPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
 iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iMoorishNoria, iHarappanBath,
 iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
@@ -2275,7 +2275,7 @@ iSankore, iGreatWall, iStatueOfZeus, iMausoleumOfMaussollos, iCristoRedentor, iS
 iLeaningTower, iOlympicPark, iTempleOfSalomon, iIshtarGate, iTheodosianWalls, iTerracottaArmy, iMezquita, iDomeOfTheRock,
 iTopkapiPalace, iBrandenburgGate, iSanMarcoBasilica, iWestminster, iItalianArtStudio, iBorobudur, iKhajuraho,
 iHimejiCastle, iPorcelainTower, iHarmandirSahib, iBlueMosque, iRedFort, iVersailles, iTrafalgarSquare, iEmpireState,
-iGrandCanal, iFloatingGardens, iLubyanka) = range(iNumBuildings)
+iGrandCanal, iFloatingGardens, iLubyanka, iMachuPicchu) = range(iNumBuildings)
 
 iSummerPalace = iGreatPalace
 iHeroicEpic = iFlavianAmphitheatre

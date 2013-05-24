@@ -3276,6 +3276,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case INCA:
 										if (iI == CHICHENITZA) iTempValue *= 2;
+										if (iI == MACHU_PICCHU)
+										{
+											iTempValue *= 4;
+											iValue += 200;
+										}
 										break;
 									case ITALY:
                                         if (iI == FLAVIANAMPHITHEATRE || iI == LEANINGTOWER || iI == SISTINECHAPEL || iI == SANMARCO)

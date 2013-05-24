@@ -2495,5 +2495,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Charreada/Charreada.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MACHU_PICCHU</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>3</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Machu Picchu/macchu_picchu.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Machu Picchu/Machu.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

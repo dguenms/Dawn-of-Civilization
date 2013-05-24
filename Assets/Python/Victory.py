@@ -197,6 +197,8 @@ tMaghrebBR = (58, 39)
 tWestAfricaTL = (48, 26)
 tWestAfricaBR = (56, 32)
 
+lAndeanCoast = [(25, 29), (24, 28), (24, 27), (24, 26), (24, 25), (25, 24), (25, 23), (26, 22), (27, 21), (28, 20), (29, 19), (30, 18), (30, 17), (30, 16), (30, 15), (30, 14)]
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -2011,35 +2013,31 @@ class Victory:
                 elif (iPlayer == iInca):
                         if (pInca.isAlive()):
 
-                                if (iGameTurn == getTurnForYear(1600)):
-                                        bSAmerica = True
-                                        for iEuroCiv in range(iNumPlayers):
-                                                if (iEuroCiv in con.lCivGroups[0]):
-                                                        if (self.checkNotOwnedArea_Skip(iEuroCiv, tSAmericaTL, tSAmericaBR, tBrazilTL, tBrazilBR) == False):
-                                                                bSAmerica = False
-                                                                break
-                                        if (bSAmerica):
-                                                self.setGoal(iInca, 0, 1)
-                                        else:
-                                                self.setGoal(iInca, 0, 0)                                                
-
-                                if (iGameTurn == getTurnForYear(1700)):
-                                        if (pInca.getGold() >= utils.getTurns(3000)):
-                                                self.setGoal(iInca, 1, 1)
-                                        else:
-                                                self.setGoal(iInca, 1, 0)
-                                                
-                                if (iGameTurn == getTurnForYear(1800)):
-                                        bSAmerica = True
-                                        for iEuroCiv in range(iNumPlayers):
-                                                if (iEuroCiv in con.lCivGroups[0]):
-                                                        if (self.checkNotOwnedArea_Skip(iEuroCiv, tSAmericaTL, tSAmericaBR, tBrazilTL, tBrazilBR) == False):
-                                                                bSAmerica = False
-                                                                break
-                                        if (bSAmerica):
-                                                self.setGoal(iInca, 2, 1)
-                                        else:
-                                                self.setGoal(iInca, 2, 0)    
+                                if self.getGoal(iInca, 0) == -1:
+					if self.isRoad(iInca, lAndeanCoast) and self.getNumBuildings(iInca, con.iIncanTambo) >= 5:
+						self.setGoal(iInca, 0, 1)
+						
+				if iGameTurn == getTurnForYear(1500):
+					if self.getGoal(iInca, 0) == -1:
+						self.setGoal(iInca, 0, 0)
+					
+				if iGameTurn == getTurnForYear(1550):
+					if pInca.getGold() >= utils.getTurns(2500):
+						self.setGoal(iInca, 1, 1)
+					else:
+						self.setGoal(iInca, 1, 0)
+						
+				if self.getGoal(iInca, 2) == -1:
+					iGold = pInca.getNumAvailableBonuses(con.iGold) - pInca.getBonusImport(con.iGold)
+					iSilver = pInca.getNumAvailableBonuses(con.iSilver) - pInca.getBonusImport(con.iSilver)
+					iGems = pInca.getNumAvailableBonuses(con.iGems) - pInca.getBonusImport(con.iGems)
+									
+					if iGold + iSilver + iGems >= 8:
+						self.setGoal(iInca, 1, 1)
+						
+				if iGameTurn == getTurnForYear(1700):
+					if self.getGoal(iInca, 2) == -1:
+						self.setGoal(iInca, 2, 0)
 
 
 		elif iPlayer == iItaly:
@@ -3029,6 +3027,14 @@ class Victory:
 						if iTemples >= 6 and iAltars >= 6:
 							self.setGoal(iAztecs, 1, 1)
 							
+		# Inca: build 5 tambos and a road along the Andean coast
+		elif iPlayer == iInca:
+			if pInca.isAlive():
+				if self.setGoal(iInca, 0) == -1:
+					if iBuilding == con.iIncanTambo:
+						if self.isRoad(iInca, lAndeanCoast) and self.getNumBuildings(iInca, con.iIncanTambo) >= 5:
+							self.setGoal(iInca, 0, 1)
+							
 		# goals for wonders (fail if someone else completes the building)
 				
 		# Egypt: build the Pyramids, the Great Library and the Great Lighthouse
@@ -3622,6 +3628,20 @@ class Victory:
 		fPercent = gc.getPlayer(iPlayer).getVotes(14, 1) * 100.0 / iTotal
 		
 		return fPercent
+		
+	def isRoad(self, iPlayer, lPlotList):
+	
+		iRoad = gc.getInfoTypeForString("ROUTE_ROAD")
+		
+		for tPlot in lPlotList:
+			x, y = tPlot
+			plot = gc.getMap().plot(x, y)
+			if plot.getOwner() != iPlayer:
+				return False
+			if not plot.getRouteType() == iRoad and not plot.isCity():
+				return False
+				
+		return True
 
 
 	def getIcon(self, bVal):
@@ -4200,17 +4220,18 @@ class Victory:
 				aHelp.append(self.getIcon(iColonies >= 15) + localText.getText("TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES", (iColonies, 15)))
 
 		elif iPlayer == iInca:
-			if iGoal == 0 or iGoal == 2:
-				bSAmerica = True
-                                for iEuroCiv in range(iNumPlayers):
-                                	if (iEuroCiv in con.lCivGroups[0]):
-                                		if (self.checkNotOwnedArea_Skip(iEuroCiv, tSAmericaTL, tSAmericaBR, tBrazilTL, tBrazilBR) == False):
-                                			bSAmerica = False
-                                			break
-				aHelp.append(self.getIcon(bSAmerica) + localText.getText("TXT_KEY_VICTORY_NO_SOUTH_AMERICAN_COLONIES", ()))
+			if iGoal == 0:
+				bRoad = self.isRoad(iInca, lAndeanCoast)
+				iTambos = self.getNumBuildings(iInca, con.iIncanTambo)
+				aHelp.append(self.getIcon(bRoad) + localText.getText("TXT_KEY_VICTORY_ANDEAN_ROAD", ()) + ' ' + self.getIcon(iTambos >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_TAMBOS", (iTambos, 5)))
 			elif iGoal == 1:
 				iGold = pInca.getGold()
-				aHelp.append(self.getIcon(iGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(3000))))
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(2500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(2500))))
+			elif iGoal == 2:
+				iGold = pInca.getNumAvailableBonuses(con.iGold) - pInca.getBonusImport(con.iGold)
+				iSilver = pInca.getNumAvailableBonuses(con.iSilver) - pInca.getBonusImport(con.iSilver)
+				iGems = pInca.getNumAvailableBonuses(con.iGems) - pInca.getBonusImport(con.iGems)
+				aHelp.append(self.getIcon(iGold + iSilver + iGems >= 8) + localText.getText("TXT_KEY_VICTORY_GOLD_SILVER_GEMS_RESOURCES", (iGold + iSilver + iGems, 8)))
 
 		elif iPlayer == iItaly:
 			if iGoal == 0:

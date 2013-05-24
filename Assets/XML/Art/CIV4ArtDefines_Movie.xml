@@ -334,5 +334,9 @@
 			<Type>ART_DEF_MOVIE_KGB</Type>
 			<Path>Art/Movies/Wonders/KGB.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MACHU_PICCHU</Type>
+			<Path>Art/Movies/Wonders/Machu Picchu.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

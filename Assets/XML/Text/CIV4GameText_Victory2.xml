@@ -630,25 +630,25 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC1</Tag>
-		<English>Ensure there are no European settlements in South America (except Brazil) in 1600 AD</English>
+		<English>Build five Tambos and a road along the Andean Coast by 1500 AD</English>
 		<French>Aucune colonie européenne en Amérique du sud (sauf le Brésil) en 1600 ap. J.-C.</French>
-		<German>Lassen Sie im Jahr 1600 n. Chr. keine europäischen Siedlungen in Südamerika (mit Ausnahme von Brasilien) zu</German>
+		<German>Bauen Sie bis zum Jahr 1500 n. Chr. fünf Tambos und eine Straße entlang der Andenküste</German>
 		<Italian>Non permettere alcuna colonia europea nel Sud America (eccetto il Brasile) nel 1600 d.C.</Italian>
 		<Spanish>Asegurarse de que no haya colonias europeas en América del Sur (excepto el Brasil) en el 1600 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC2</Tag>
-		<English>Have 3000 gold in 1700 AD</English>
+		<English>Have 2500 gold in 1550 AD</English>
 		<French>Avoir 3000 en or en 1700 ap. J.-C.</French>
-		<German>Verfügen Sie im Jahr 1700 n. Chr. über 3.000 Gold</German>
+		<German>Verfügen Sie im Jahr 1550 n. Chr. über 2.500 Gold</German>
 		<Italian>Devi avere 3000 oro nel 1700 d.C.</Italian>
 		<Spanish>Tener 3.000 monedas de oro en el 1700 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC3</Tag>
-		<English>Ensure there are no European settlements in South America (except Brazil)  in 1800 AD</English>
+		<English>Secure a total of 8 gold, silver and gems resources by 1700 AD</English>
 		<French>Aucune colonie européenne en Amérique du sud  (sauf le Brésil) en 1800 ap. J.-C.</French>
-		<German>Lassen Sie im Jahr 1800 n. Chr. keine europäischen Siedlungen in Südamerika (mit Ausnahme von Brasilien) zu</German>
+		<German>Erschließen Sie bis zum Jahr 1700 n. Chr. insgesamt 8 Gold-, Silver- und Edelsteinvorkommen</German>
 		<Italian>Non permettere alcuna colonia europea nel Sud America (eccetto il Brasile)  nel 1800 d.C.</Italian>
 		<Spanish>Asegurarse de que no haya colonias europeas en América del Sur  (excepto el Brasil) en el 1800 d. C.</Spanish>
 	</TEXT>
@@ -951,8 +951,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_42</Tag>
-		<English>South America (except Brazil)</English>
-		<German>Südamerika (außer Brasilien)</German>
+		<English>Andean Coast</English>
+		<German>Andenküste</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_43</Tag>

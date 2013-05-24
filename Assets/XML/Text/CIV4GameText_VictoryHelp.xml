@@ -488,4 +488,16 @@
 		<Tag>TXT_KEY_VICTORY_NUM_ALTARS</Tag>
 		<English>Sacrificial Altars: %d1 / %d2</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_TAMBOS</Tag>
+		<English>Tambos: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANDEAN_ROAD</Tag>
+		<English>Road along the Andean Coast</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOLD_SILVER_GEMS_RESOURCES</Tag>
+		<English>Gold, silver and gem resources secured: %d1 / %d2</English>
+	</TEXT>
 </Civ4GameText>
