@@ -3030,7 +3030,7 @@ class Victory:
 		# Inca: build 5 tambos and a road along the Andean coast
 		elif iPlayer == iInca:
 			if pInca.isAlive():
-				if self.setGoal(iInca, 0) == -1:
+				if self.getGoal(iInca, 0) == -1:
 					if iBuilding == con.iIncanTambo:
 						if self.isRoad(iInca, lAndeanCoast) and self.getNumBuildings(iInca, con.iIncanTambo) >= 5:
 							self.setGoal(iInca, 0, 1)
