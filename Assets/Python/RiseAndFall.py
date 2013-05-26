@@ -2610,6 +2610,9 @@ class RiseAndFall:
 				tTopLeft = (72, 37) # include Assyria and Anatolia
 			if iCiv == iSpain and utils.getHumanID() != iSpain:
 				tBottomRight = (55, 46)
+			if iCiv == iInca and utils.getHumanID() != iInca:
+				tTopLeft = (26, 19)
+				tBottomRight = (31, 24)
 				
                     
                         if (self.getFlipsDelay(iCiv) == 0): #city hasn't already been founded)

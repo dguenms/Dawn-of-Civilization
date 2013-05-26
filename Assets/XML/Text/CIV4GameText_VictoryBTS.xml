@@ -412,4 +412,19 @@
 		<English>Settle 5 great prophets in Lhasa by 1700 AD</English>
 		<German>Siedeln Sie bis zum Jahr 1700 n. Chr. 5 große Propheten in Lhasa an</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX1</Tag>
+		<English>Control 6 cities in Central America and 6 cities in Western North America in 1850 AD</English>
+		<German>Kontrollieren Sie im Jahr 1850 n. Chr. 6 Städte in Mittelamerika und 6 Städte im westlichen Nordamerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX2</Tag>
+		<English>Have the largest Catholic population in the world in 1920 AD</English>
+		<German>Haben Sie im Jahr 1920 n. Chr. die größte katholische Bevölkerung der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX3</Tag>
+		<English>Make Mexico City the largest city in the world in 1960 AD</English>
+		<German>Machen Sie Mexico-Stadt im Jahr 1960 n. Chr. zur größten Stadt der Welt</German>
+	</TEXT>
 </Civ4GameText>

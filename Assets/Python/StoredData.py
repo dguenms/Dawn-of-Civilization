@@ -93,6 +93,7 @@ class StoredData:
                                     'lFirstContactPlague': [False for i in range(con.iNumTotalPlayersB)], #total players + barbarians
                                      #------------Victories
                                     'lGoals': [[-1, -1, -1] for i in range(con.iNumPlayers)],
+				    'bIgnoreAI': False,
                                     'lReligionFounded': [-1, -1, -1, -1, -1, -1, -1, -1],
                                     'iEnslavedUnits': 0,
                                     'iRazedByMongols': 0,
