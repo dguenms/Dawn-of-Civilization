@@ -6154,9 +6154,3 @@ class RiseAndFall:
 		i, j = tPlot
 		
 		gc.getMap().plot(i, j).setImprovementType(con.iHut)
-		
-	
-		
-		
-
-

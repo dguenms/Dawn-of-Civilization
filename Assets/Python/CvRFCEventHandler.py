@@ -604,9 +604,9 @@ class CvRFCEventHandler:
 		print "Check 1 passed"
 		iMaster, iVassal, bVassal, bCapitulated = argsList
 		
-		if iVassal == con.iAztecs:
-			gc.getPlayer(con.iAztecs).setReborn()
-		elif iVassal == con.iInca:
+		#if iVassal == con.iAztecs:
+		#	gc.getPlayer(con.iAztecs).setReborn()
+		if iVassal == con.iInca:
 			gc.getPlayer(con.iInca).setReborn()
 		
 		self.dc.onVassalState(argsList)
