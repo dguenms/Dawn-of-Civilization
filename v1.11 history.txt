@@ -42,6 +42,10 @@
 	# Unique Unit: Rurales (Cavalry with -20 cost, can fortify, starts with Combat I)
 	# Unique Building: Charreada Arena (Amphitheatre with +1 happiness with Horse, +2 experience for mounted units)
 	# Unique Power: Arid Agriculture (can build farms on hills)
+	# Unique Historical Victory:
+		# Control 6 cities in Central America and 6 cities in Western North America in 1850 AD
+		# Have the largest Catholic population in the world in 1920 AD
+		# Make Mexico City the largest city in the world in 1960 AD
 # harbors can now be built in cities situated at lakes
 # added the Machu Picchu wonder: +2 gold per peak tile in city radius
 # reduced Incan starting units and settlers
@@ -52,4 +56,6 @@
 # new Incan UHV:
 	# Build five Tambos and a road along the Andean Coast by 1500 AD
 	# Have 2500 gold in 1550 AD
-	# Secure a total of eight gold, silver and gem resources by 1700 AD
+	# Control 60% of South America in 1700 AD
+# minor civs will not receive conquerors anymore
+# minor civs and barbarians are now generally forbidden from building wonders

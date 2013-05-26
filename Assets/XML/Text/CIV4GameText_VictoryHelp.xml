@@ -497,7 +497,19 @@
 		<English>Road along the Andean Coast</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_GOLD_SILVER_GEMS_RESOURCES</Tag>
-		<English>Gold, silver and gem resources secured: %d1 / %d2</English>
+		<Tag>TXT_KEY_VICTORY_SOUTH_AMERICAN_TERRITORY</Tag>
+		<English>South American territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CENTRAL_AMERICAN_CITIES</Tag>
+		<English>Central America: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_WESTERN_NORTH_AMERICA_CITIES</Tag>
+		<English>Western North America: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_RELIGION_CIV</Tag>
+		<English>Civilization with the largest Catholic population: </English>
 	</TEXT>
 </Civ4GameText>

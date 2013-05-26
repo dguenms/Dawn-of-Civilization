@@ -87,6 +87,7 @@ tAmericasTL = con.tAmericasTL
 tAmericasBR = con.tAmericasBR
 tSAmericaTL = (24, 3)
 tSAmericaBR = (43, 32)
+tSouthAmericaExceptions = ((24, 31), (25, 32))
 tNCAmericaTL = (3, 33)
 tNCAmericaBR = (37, 63)
 tCAmericaTL = (12, 33)
@@ -198,6 +199,13 @@ tWestAfricaTL = (48, 26)
 tWestAfricaBR = (56, 32)
 
 lAndeanCoast = [(25, 29), (24, 28), (24, 27), (24, 26), (24, 25), (25, 24), (25, 23), (26, 22), (27, 21), (28, 20), (29, 19), (30, 18), (30, 17), (30, 16), (30, 15), (30, 14)]
+
+tCentralAmericaTL = (12, 31)
+tCentralAmericaBR = (25, 41)
+tCentralAmericaExceptions = ((25, 38), (25, 41))
+
+tWesternNorthAmericaTL = (11, 43)
+tWesternNorthAmericaBR = (21, 50)
 
 # initialise player variables
 iEgypt = con.iEgypt
@@ -526,6 +534,12 @@ class Victory:
 		
 	def setMaliGold(self, bValue):
 		sd.scriptDict['bMaliGold'] = bValue
+		
+	def setIgnoreAI(self, bValue):
+		sd.scriptDict['bIgnoreAI'] = bValue
+		
+	def isIgnoreAI(self):
+		return sd.scriptDict['bIgnoreAI']
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -661,22 +675,14 @@ class Victory:
                         return False
 			
 	def setup(self):
-	
-		global bIgnoreAI
 		bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
-	
-		#utils.debugTextPopup("bIgnoreAI: "+str(bIgnoreAI))
+		self.setIgnoreAI(bIgnoreAI)
 	
 		if bIgnoreAI:
 			for iPlayer in range(con.iNumPlayers):
 				if utils.getHumanID() != iPlayer:
 					for iGoal in range(3):
 						self.setGoal(iPlayer, iGoal, 0)
-						
-	def load(self):
-	
-		global bIgnoreAI
-		bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
 						
 
         def checkTurn(self, iGameTurn):
@@ -703,7 +709,7 @@ class Victory:
 			return
 			
 		# Leoreth: don't check AI civilizations to improve speed
-		if utils.getHumanID() != iPlayer and bIgnoreAI:
+		if utils.getHumanID() != iPlayer and self.isIgnoreAI():
 			#utils.debugTextPopup("Ignored goal check for civ "+str(iPlayer))
 			return
                 
@@ -2027,18 +2033,14 @@ class Victory:
 					else:
 						self.setGoal(iInca, 1, 0)
 						
-				if self.getGoal(iInca, 2) == -1:
-					iGold = pInca.getNumAvailableBonuses(con.iGold) - pInca.getBonusImport(con.iGold)
-					iSilver = pInca.getNumAvailableBonuses(con.iSilver) - pInca.getBonusImport(con.iSilver)
-					iGems = pInca.getNumAvailableBonuses(con.iGems) - pInca.getBonusImport(con.iGems)
-									
-					if iGold + iSilver + iGems >= 8:
-						self.setGoal(iInca, 1, 1)
-						
 				if iGameTurn == getTurnForYear(1700):
-					if self.getGoal(iInca, 2) == -1:
+					iControl, iTotal = self.countControlledTiles(iInca, tSAmericaTL, tSAmericaBR, False, tSouthAmericaExceptions)
+					fControl = iControl * 100.0 / iTotal
+					
+					if fControl >= 60.0:
+						self.setGoal(iInca, 2, 1)
+					else:
 						self.setGoal(iInca, 2, 0)
-
 
 		elif iPlayer == iItaly:
 			if pItaly.isAlive():
@@ -2133,41 +2135,52 @@ class Victory:
                         
                 elif (iPlayer == iAztecs):
                         if (pAztecs.isAlive()):
-                            
-                                #if (self.getGoal(iAztecs, 0) == -1):
-                                #        if (self.getEnslavedUnits() >= 5):
-                                #                self.setGoal(iAztecs, 0, 1)   
-                                            
-                                #if (iGameTurn == getTurnForYear(1700)):
-                                #        bCAmerica = True
-                                #        for iEuroCiv in range(iNumPlayers):
-                                #                if (iEuroCiv in con.lCivGroups[0]):
-                                #                        if (self.checkNotOwnedArea(iEuroCiv, tCAmericaTL, tCAmericaBR) == False):
-                                #                                bCAmerica = False
-                                #                                break
-                                #        if (bCAmerica):
-                                #                self.setGoal(iAztecs, 1, 1)
-                                #        else:
-                                #                self.setGoal(iAztecs, 1, 0)      
+				if not pAztecs.isReborn():
 
-				if iGameTurn == getTurnForYear(1520):
-					bestCity = self.calculateTopCityPopulation(18, 37)
-					if bestCity != -1:
-						if bestCity.getOwner() == iAztecs and bestCity.getX() == 18 and bestCity.getY() == 37:
+					if iGameTurn == getTurnForYear(1520):
+						bestCity = self.calculateTopCityPopulation(18, 37)
+						if bestCity != -1:
+							if bestCity.getOwner() == iAztecs and bestCity.getX() == 18 and bestCity.getY() == 37:
+								self.setGoal(iAztecs, 0, 1)
+							else:
+								self.setGoal(iAztecs, 0, 0)
+						else:
+							self.setGoal(iAztecs, 0, 0)
+							
+					if iGameTurn == getTurnForYear(1650):
+						if self.getGoal(iAztecs, 1) == -1:
+							self.setGoal(iAztecs, 1, 0)
+							
+					if self.getGoal(iAztecs, 2) == -1:
+						if self.getEnslavedUnits() >= 20:
+							self.setGoal(iAztecs, 2, 1)
+							
+				else:
+					
+					if iGameTurn == getTurnForYear(1850):
+						iCentralAmerica = self.getNumCitiesInArea(iAztecs, tCentralAmericaTL, tCentralAmericaBR)
+						iWesternNorthAmerica = self.getNumCitiesInArea(iAztecs, tWesternNorthAmericaTL, tWesternNorthAmericaBR)
+						
+						if iCentralAmerica >= 6 and iWesternNorthAmerica >= 6:
 							self.setGoal(iAztecs, 0, 1)
 						else:
 							self.setGoal(iAztecs, 0, 0)
-					else:
-						self.setGoal(iAztecs, 0, 0)
-						
-				if iGameTurn == getTurnForYear(1650):
-					if self.getGoal(iAztecs, 1) == -1:
-						self.setGoal(iAztecs, 1, 0)
-						
-				if self.getGoal(iAztecs, 2) == -1:
-					if self.getEnslavedUnits() >= 20:
-						self.setGoal(iAztecs, 2, 1)
-
+							
+					if iGameTurn == getTurnForYear(1920):
+						if self.getLargestReligionCiv(iAztecs, con.iCatholicism) == iAztecs:
+							self.setGoal(iAztecs, 1, 1)
+						else:
+							self.setGoal(iAztecs, 1, 0)
+							
+					if iGameTurn == getTurnForYear(1960): 
+						bestCity = self.calculateTopCityCulture(18, 37)
+						if bestCity != -1:
+							if bestCity.getOwner() == iAztecs and bestCity.getX() == 18 and bestCity.getY() == 37:
+								self.setGoal(iAztecs, 2, 1)
+							else:
+								self.setGoal(iAztecs, 2, 0)
+						else:
+							self.setGoal(iAztecs, 2, 0)
 
 		elif iPlayer == iThailand:
 			if pThailand.isAlive():
@@ -2316,7 +2329,7 @@ class Victory:
                         return
 			
 		# Leoreth: don't check AI civs to improve speed
-		if utils.getHumanID() != iPlayer and bIgnoreAI:
+		if utils.getHumanID() != iPlayer and self.isIgnoreAI():
 			return
                     
                 iGameTurn = gc.getGame().getGameTurn()
@@ -2483,9 +2496,7 @@ class Victory:
                 if (not gc.getGame().isVictoryValid(7)): #7 == historical
                         return
 			
-		bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
-			
-		if utils.getHumanID() != playerType and bIgnoreAI:
+		if utils.getHumanID() != playerType and self.isIgnoreAI():
 			return
 
                 iPlayer = owner
@@ -2561,7 +2572,7 @@ class Victory:
                 if (not gc.getGame().isVictoryValid(7)): #7 == historical
                         return
 			
-		if utils.getHumanID() != iPlayer and bIgnoreAI:
+		if utils.getHumanID() != iPlayer and self.isIgnoreAI():
 			return
 
                 if (iPlayer == iMongolia):
@@ -2583,7 +2594,7 @@ class Victory:
 		
 		# Leoreth: ignore AI civs to improve speed 
 		# important: include all civs with tech goals in list so that the check is made for all players to catch failed goals
-		if bIgnoreAI and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iChina, iBabylonia, iGreece, iRome, iPoland, iKorea, iEngland, iJapan, iGermany, iMaya, iAztecs, iCongo]:
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iChina, iBabylonia, iGreece, iRome, iPoland, iKorea, iEngland, iJapan, iGermany, iMaya, iAztecs, iCongo]:
 			return
 		
 		# Chinese UHV: Compass, Paper, Gunpowder, Printing Press
@@ -2950,7 +2961,7 @@ class Victory:
 			
 		# Leoreth: ignore AI civs to improve speed
 		# important: add all civs with wonder goals to the list so their failure will be checked
-		if bIgnoreAI and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iEgypt, iGreece, iCarthage, iMaya, iKhmer, iFrance, iMali, iItaly, iMughals, iAmerica]:
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iEgypt, iGreece, iCarthage, iMaya, iKhmer, iFrance, iMali, iItaly, iMughals, iAmerica]:
 			return
 
                 iGameTurn = gc.getGame().getGameTurn()
@@ -3019,7 +3030,7 @@ class Victory:
 							
 		# Aztecs: build 6 pagan temples and sacrificial altars
 		elif iPlayer == iAztecs:
-			if pAztecs.isAlive():
+			if pAztecs.isAlive() and not pAztecs.isReborn():
 				if self.getGoal(iAztecs, 1) == -1:
 					if iBuilding in [con.iPaganTemple, con.iAztecSacrificialAltar]:
 						iTemples = self.getNumBuildings(iAztecs, con.iPaganTemple)
@@ -3134,7 +3145,7 @@ class Victory:
 			
 		# Leoreth: ignore AI civs to improve speed
 		# only if human isn't Russia, but for all players so that the Russian goal can fail
-		if bIgnoreAI and utils.getHumanID() != iRussia:
+		if self.isIgnoreAI() and utils.getHumanID() != iRussia:
 			return
 
                 iGameTurn = gc.getGame().getGameTurn()
@@ -3172,7 +3183,7 @@ class Victory:
                 iPlayer = pWinningPlayer.getID()
 		
 		# Leoreth: ignore AI civs to improve speed
-		if bIgnoreAI and utils.getHumanID() != iPlayer:
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer:
 			return
 
                 if (iPlayer == iEngland):
@@ -3213,7 +3224,7 @@ class Victory:
 	def onGreatGeneralBorn(self, iPlayer):
 	
 		# Leoreth: ignore AI civs to improve speed
-		if bIgnoreAI and utils.getHumanID() != iPlayer:
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer:
 			return
 
 		# Leoreth: new third goal for Maya: get a great general by 1600 AD
@@ -3234,7 +3245,7 @@ class Victory:
 	def onVassalState(self, iMaster, iVassal):
 	
 		# Leoreth: ignore AI civs to improve speed
-		if bIgnoreAI and utils.getHumanID() != iMaster:
+		if self.isIgnoreAI() and utils.getHumanID() != iMaster:
 			return
 	
 		if iMaster == iHolyRome:
@@ -3259,7 +3270,7 @@ class Victory:
 			
 	def onPlayerSlaveTrade(self, iPlayer, iGold):
 	
-		if bIgnoreAI and utils.getHumanID() != iPlayer: return
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer: return
 	
 		if iPlayer == iCongo:
 			self.changeCongoSlaveCounter(iGold)
@@ -3269,7 +3280,7 @@ class Victory:
 	def onTradeMission(self, iPlayer, iX, iY, iGold):
 	
 		# Leoreth: ignore AI civs to improve speed
-		if bIgnoreAI and utils.getHumanID() != iPlayer:
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer:
 			return
 	
 		if iPlayer == iTamils:
@@ -3642,6 +3653,45 @@ class Victory:
 				return False
 				
 		return True
+		
+	def getPopulationByReligion(self, iPlayer, iReligion):
+		iTotalPopulation = 0
+		cityList = PyPlayer(iPlayer).getCityList()
+		
+		for pCity in cityList:
+			city = pCity.GetCy()
+			if city.isHasReligion(iReligion):
+				bOtherReligion = False
+				for iLoopReligion in range(con.iNumReligions):
+					if iLoopReligion != iReligion and city.isHasReligion(iLoopReligion):
+						bOtherReligion = True
+						break
+						
+				iCityPopulation = city.getRealPopulation()
+				
+				if bOtherReligion:
+					if gc.getPlayer(iPlayer).getStateReligion() == iReligion:
+						iCityPopulation *= 2
+						iCityPopulation /= 3
+					else:
+						iCityPopulation /= 2
+						
+				iTotalPopulation += iCityPopulation
+				
+		return iTotalPopulation
+		
+	def getLargestReligionCiv(self, iCiv, iReligion):
+		iBestPopulation = self.getPopulationByReligion(iCiv, iReligion)
+		iBestCiv = iCiv
+		
+		for iLoopCiv in range(con.iNumPlayers):
+			if utils.isPastBirth(iLoopCiv) and gc.getPlayer(iLoopCiv).isAlive():
+				iTempPopulation = self.getPopulationByReligion(iLoopCiv, iReligion)
+				if iTempPopulation > iBestPopulation:
+					iBestPopulation = iTempPopulation
+					iBestCiv = iLoopCiv
+					
+		return iBestCiv
 
 
 	def getIcon(self, bVal):
@@ -4228,10 +4278,9 @@ class Victory:
 				iGold = pInca.getGold()
 				aHelp.append(self.getIcon(iGold >= utils.getTurns(2500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(2500))))
 			elif iGoal == 2:
-				iGold = pInca.getNumAvailableBonuses(con.iGold) - pInca.getBonusImport(con.iGold)
-				iSilver = pInca.getNumAvailableBonuses(con.iSilver) - pInca.getBonusImport(con.iSilver)
-				iGems = pInca.getNumAvailableBonuses(con.iGems) - pInca.getBonusImport(con.iGems)
-				aHelp.append(self.getIcon(iGold + iSilver + iGems >= 8) + localText.getText("TXT_KEY_VICTORY_GOLD_SILVER_GEMS_RESOURCES", (iGold + iSilver + iGems, 8)))
+				iControl, iTotal = self.countControlledTiles(iInca, tSAmericaTL, tSAmericaBR, False, tSouthAmericaExceptions)
+				fControl = iControl * 100.0 / iTotal
+				aHelp.append(self.getIcon(fControl >= 60.0) + localText.getText("TXT_KEY_VICTORY_SOUTH_AMERICAN_TERRITORY", (str(u"%.2f%%" % fControl), str(60))))
 
 		elif iPlayer == iItaly:
 			if iGoal == 0:
@@ -4279,18 +4328,32 @@ class Victory:
 				aHelp.append(self.getIcon(iCulture >= utils.getTurns(50000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(50000))))
 
 		elif iPlayer == iAztecs:
-			if iGoal == 0:
-				pBestCity = self.calculateTopCityPopulation(18, 37)
-				bBestCity = (pBestCity.getOwner() == iAztecs and pBestCity.getX() == 18 and pBestCity.getY() == 37)
-				aHelp.append(self.getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
-			elif iGoal == 1:
-				iTemples = self.getNumBuildings(iAztecs, con.iPaganTemple)
-				iAltars = self.getNumBuildings(iAztecs, con.iAztecSacrificialAltar)
-				aHelp.append(self.getIcon(iTemples >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_TEMPLES", (iTemples, 6)) + " " + self.getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_ALTARS", (iAltars, 6)))
-			elif iGoal == 2:
-				iEnslavedUnits = self.getEnslavedUnits()
-				aHelp.append(self.getIcon(iEnslavedUnits >= 20) + localText.getText("TXT_KEY_VICTORY_ENSLAVED_UNITS", (iEnslavedUnits, 20)))
-
+			if not pAztecs.isReborn():
+				if iGoal == 0:
+					pBestCity = self.calculateTopCityPopulation(18, 37)
+					bBestCity = (pBestCity.getOwner() == iAztecs and pBestCity.getX() == 18 and pBestCity.getY() == 37)
+					aHelp.append(self.getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
+				elif iGoal == 1:
+					iTemples = self.getNumBuildings(iAztecs, con.iPaganTemple)
+					iAltars = self.getNumBuildings(iAztecs, con.iAztecSacrificialAltar)
+					aHelp.append(self.getIcon(iTemples >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_TEMPLES", (iTemples, 6)) + " " + self.getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_ALTARS", (iAltars, 6)))
+				elif iGoal == 2:
+					iEnslavedUnits = self.getEnslavedUnits()
+					aHelp.append(self.getIcon(iEnslavedUnits >= 20) + localText.getText("TXT_KEY_VICTORY_ENSLAVED_UNITS", (iEnslavedUnits, 20)))
+			else:
+				if iGoal == 0:
+					iCentralAmerica = self.getNumCitiesInArea(iAztecs, tCentralAmericaTL, tCentralAmericaBR)
+					iWesternNorthAmerica = self.getNumCitiesInArea(iAztecs, tWesternNorthAmericaTL, tWesternNorthAmericaBR)
+					aHelp.append(self.getIcon(iCentralAmerica >= 6) + localText.getText("TXT_KEY_VICTORY_CENTRAL_AMERICAN_CITIES", (iCentralAmerica, 6)) + ' ' + self.getIcon(iWesternNorthAmerica >= 6) + localText.getText("TXT_KEY_VICTORY_WESTERN_NORTH_AMERICA_CITIES", (iWesternNorthAmerica, 6)))
+				elif iGoal == 1:
+					iLargestReligionCiv = self.getLargestReligionCiv(iAztecs, con.iCatholicism)
+					bLargestReligionCiv = (iLargestReligionCiv == iAztecs)
+					aHelp.append(self.getIcon(bLargestReligionCiv) + localText.getText("TXT_KEY_VICTORY_LARGEST_RELIGION_CIV", ()) + localText.getText(str(gc.getPlayer(iLargestReligionCiv).getCivilizationShortDescriptionKey()),()))
+				elif iGoal == 2:
+					pBestCity = self.calculateTopCityPopulation(18, 37)
+					bBestCity = (pBestCity.getOwner() == iAztecs and pBestCity.getX() == 18 and pBestCity.getY() == 37)
+					aHelp.append(self.getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
+					
 		elif iPlayer == iTurkey:
 			if iGoal == 0:
 				capital = pTurkey.getCapitalCity()

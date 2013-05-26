@@ -62,6 +62,7 @@ import Victory as vic
 import CityNameManager
 cnm = CityNameManager.CityNameManager()
 utils = RFCUtils.RFCUtils()
+gc = CyGlobalContext()
 
 tCoreAreasTL = con.tCoreAreasTL
 tCoreAreasBR = con.tCoreAreasBR
@@ -1319,28 +1320,25 @@ def getUHVTileInfo(argsList):
 	elif iPlayer == con.iInca:
 		if (x, y) in vic.lAndeanCoast:
 			return 42
-		
-	#elif iPlayer == con.iItaly:
-	#	tlx, tly = con.tCoreAreasTL[0][con.iGreece]
-	#	brx, bry = con.tCoreAreasBR[0][con.iGreece]
-	#	if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iGreece]:
-	#		return 43
-	#		
-	#	tlx, tly = con.tCoreAreasTL[0][con.iEthiopia]
-	#	brx, bry = con.tCoreAreasBR[0][con.iEthiopia]
-	#	if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iEthiopia]:
-	#		return 44
-	#		
-	#	tlx, tly = tLibyaTL
-	#	brx, bry = tLibyaBR
-	#	if x >= tlx and x <= brx and y >= tly and y <= bry:
-	#		return 45
 			
-	#elif iPlayer == con.iAztecs:
-	#	tlx, tly = tCAmericaTL
-	#	brx, bry = tCAmericaBR
-	#	if x >= tlx and x <= brx and y >= tly and y <= bry:
-	#		return 46
+		tlx, tly = vic.tSAmericaTL
+		brx, bry = vic.tSAmericaBR
+		if tlx <= x <= brx and tly <= y <= bry and (x, y) not in vic.tSouthAmericaExceptions:
+			return 43
+			
+	elif iPlayer == con.iAztecs:
+		if gc.getPlayer(con.iAztecs).isReborn():
+			tlx, tly = vic.tCentralAmericaTL
+			brx, bry = vic.tCentralAmericaBR
+			if tlx <= x <= brx and tly <= y <= bry and (x, y) not in vic.tCentralAmericaExceptions:
+				return 44
+				
+			tlx, tly = vic.tWesternNorthAmericaTL
+			brx, bry = vic.tWesternNorthAmericaBR
+			if tlx <= x <= brx and tly <= y <= bry:
+				return 45
+		
+	# IMPORTANT: ID 46 is unused and available!
 			
 	elif iPlayer == con.iTurkey:
 		if (x,y) in lEasternMediterranean:

@@ -5912,6 +5912,15 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		return false;
 	}
 
+	// Leoreth: minors and barbarians cannot construct wonders
+	if (isMinorCiv() || isBarbarian())
+	{
+		if (isWorldWonderClass(eBuildingClass))
+		{
+			return false;
+		}
+	}
+
 	if (!bIgnoreCost)
 	{
 		if (GC.getBuildingInfo(eBuilding).getProductionCost() == -1)

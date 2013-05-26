@@ -1064,7 +1064,7 @@ class RFCUtils:
                 return False
 
         #Barbs, RiseAndFall
-        def squareSearch( self, tTopLeft, tBottomRight, function, argsList ): #by LOQ
+        def squareSearch( self, tTopLeft, tBottomRight, function, argsList, tExceptions = () ): #by LOQ
                 """Searches all tile in the square from tTopLeft to tBottomRight and calls function for
                 every tile, passing argsList. The function called must return a tuple: (1) a result, (2) if
                 a plot should be painted and (3) if the search should continue."""
@@ -1784,3 +1784,5 @@ class RFCUtils:
 		self.flipCity((x, y), 0, 0, iCiv, [iOwner])
 		self.flipUnitsInCityAfter(self.getTempFlippingCity(), iCiv)
 	
+	def isPastBirth(self, iCiv):
+		return (gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]))

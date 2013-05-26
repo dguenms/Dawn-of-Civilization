@@ -646,9 +646,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC3</Tag>
-		<English>Secure a total of 8 gold, silver and gems resources by 1700 AD</English>
+		<English>Control 60% of South America in 1700 AD</English>
 		<French>Aucune colonie européenne en Amérique du sud  (sauf le Brésil) en 1800 ap. J.-C.</French>
-		<German>Erschließen Sie bis zum Jahr 1700 n. Chr. insgesamt 8 Gold-, Silver- und Edelsteinvorkommen</German>
+		<German>Kontrollieren Sie im Jahr 1700 n. Chr. 60% von Südamerika</German>
 		<Italian>Non permettere alcuna colonia europea nel Sud America (eccetto il Brasile)  nel 1800 d.C.</Italian>
 		<Spanish>Asegurarse de que no haya colonias europeas en América del Sur  (excepto el Brasil) en el 1800 d. C.</Spanish>
 	</TEXT>
@@ -951,29 +951,29 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_42</Tag>
-		<English>Andean Coast</English>
-		<German>Andenküste</German>
+		<English>Andean Coast, South America</English>
+		<German>Andenküste, Südamerika</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_43</Tag>
-		<English>Greece</English>
-		<German>Griechenland</German>
+		<English>South America</English>
+		<German>Südamerika</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_44</Tag>
-		<English>Ethiopia</English>
-		<German>Äthiopien</German>
+		<English>Central America</English>
+		<German>Mittelamerika</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_45</Tag>
-		<English>Libya</English>
-		<German>Libyen</German>
+		<English>Western North America</English>
+		<German>Westliches Nordamerika</German>
 	</TEXT>
-	<TEXT>
+	<!--TEXT>
 		<Tag>TXT_KEY_UHV_AREA_46</Tag>
 		<English>Central America, Carribean and Southern USA</English>
 		<German>Mittelamerika, Karibik und südliche USA</German>
-	</TEXT>
+	</TEXT-->
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_47</Tag>
 		<English>Eastern Mediterranean</English>
