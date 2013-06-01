@@ -379,7 +379,7 @@ class RFCUtils:
                         y = city.getY()
                         for iActiveCiv in range( iNumActivePlayers ):
                                 if (gc.getPlayer(iActiveCiv).isAlive() and not gc.getPlayer(iActiveCiv).isHuman()):
-                                        if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-y, x ) >= 90):
+                                        if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-y, x ) >= 90 or gc.getPlayer(iActiveCiv).getWarMapValue(x, y) >= 6):
                                                 if (not teamMinor.isAtWar(iActiveCiv)):
                                                         teamMinor.declareWar(iActiveCiv, False, WarPlanTypes.WARPLAN_LIMITED)
                                                         print ("Minor war", city.getName(), gc.getPlayer(iActiveCiv).getCivilizationAdjective(0))
@@ -712,7 +712,16 @@ class RFCUtils:
                                                 city.setCulture(iMajorCiv, iMinorCityCulture/iDen, True)
                                                 
                                                 iMinorPlotCulture = pCurrent.getCulture(iMinor)
-                                                pCurrent.setCulture(iMajorCiv, iMinorPlotCulture/iDen, True)                                
+                                                pCurrent.setCulture(iMajorCiv, iMinorPlotCulture/iDen, True)
+						
+		plot = gc.getMap().plot(iX, iY)
+		if plot.isCity():
+			city = plot.getPlotCity()
+			iCulture = 0
+			for iMinor in range(con.iNumPlayers, con.iNumTotalPlayersB):
+				iCulture += city.getCulture(iMinor)
+				city.setCulture(iMinor, 0, True)
+			city.changeCulture(iMajorCiv, iCulture, True)
 
         #UniquePowers
         def convertPlotCulture(self, pCurrent, iCiv, iPercent, bOwner):
@@ -858,25 +867,7 @@ class RFCUtils:
                 iNumUnitsInAPlot = plotCity.getNumUnits()
                 pCiv = gc.getPlayer(iNewOwner)
 
-                if (gc.getTeam(pCiv.getTeam()).isHasTech(con.iAssemblyLine) and gc.getTeam(pCiv.getTeam()).isHasTech(con.iRifling)):
-			if iNewOwner == con.iItaly:
-				iUnitType = con.iBersagliere
-			else:
-				iUnitType = con.iInfantry
-                elif (gc.getTeam(pCiv.getTeam()).isHasTech(con.iRifling)):
-                        if (iNewOwner != con.iEngland):
-                                iUnitType = con.iRifleman
-                        else:
-                                iUnitType = con.iEnglishRedcoat
-                elif (gc.getTeam(pCiv.getTeam()).isHasTech(con.iGunpowder)):
-			if iNewOwner == con.iTurkey:
-				iUnitType = con.iOttomanJanissary
-			elif iNewOwner == con.iEthiopia:
-				iUnitType = con.iEthiopianOromoWarrior
-			else:
-				iUnitType = con.iMusketman
-                else:
-                        iUnitType = con.iLongbowman
+                iUnitType = self.getBestDefender(iNewOwner)
 
                 self.makeUnit(iUnitType, iNewOwner, [tCityPlot[0], tCityPlot[1]], iNumUnits)
 
@@ -1050,15 +1041,13 @@ class RFCUtils:
         #AIWars, by CyberChrist
 
         def isNoVassal(self, iCiv):
-                iMaster = 0
-                for iMaster in range (iNumTotalPlayers):
+                for iMaster in range(iNumTotalPlayers):
                         if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iMaster)):
                                 return False
                 return True
 
         def isAVassal(self, iCiv):
-                iMaster = 0
-                for iMaster in range (iNumTotalPlayers):
+                for iMaster in range(iNumTotalPlayers):
                         if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iMaster)):
                                 return True
                 return False
@@ -1766,6 +1755,17 @@ class RFCUtils:
 				
 		return False
 		
+	def getBestDefender(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		lDefenderList = [con.iInfantry, con.iMachineGun, con.iRifleman, con.iLongbowman, con.iCrossbowman, con.iArcher, con.iWarrior]
+		
+		for iBaseUnit in lDefenderList:
+			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
+			if pPlayer.canTrain(iUnit, False, False):
+				return iUnit
+				
+		return False
+		
 	def getPlotList(self, tTL, tBR, tExceptions=()):
 		lResults = []
 		
@@ -1776,9 +1776,9 @@ class RFCUtils:
 					
 		return lResults
 		
-	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange):
+	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False):
 	
-		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, True, False, False)
+		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
 		self.flipUnitsInCityBefore((x, y), iCiv, iOwner)
 		self.setTempFlippingCity((x, y))
 		self.flipCity((x, y), 0, 0, iCiv, [iOwner])
@@ -1786,3 +1786,9 @@ class RFCUtils:
 	
 	def isPastBirth(self, iCiv):
 		return (gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]))
+		
+	def getCityList(self, iCiv):
+		return [pCity.GetCy() for pCity in PyPlayer(iCiv).getCityList()]
+		
+	def isNeighbor(self, iCiv1, iCiv2):
+		return (gc.getPlayer(iCiv1).AI_calculateStolenCityRadiusPlots(iCiv2) > 0 or gc.getPlayer(iCiv2).AI_calculateStolenCityRadiusPlots(iCiv1))

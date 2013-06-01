@@ -1,5 +1,3 @@
-
-
 # Rhye's and Fall of Civilization - Historical Victory Goals
 
 
@@ -1318,17 +1316,15 @@ class Victory:
 
                             
                                 if (iGameTurn == getTurnForYear(1300)):
-                                        if (self.getGoal(iArabia, 1) == -1):
-                                                bEgypt = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iEgypt], con.tCoreAreasBR[0][iEgypt])
-                                                bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
-						bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
-						bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
-						bSpain = self.isControlledOrVassalized(iArabia, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iSpain])
-                                                if (bEgypt and bMaghreb and bMesopotamia and bPersia and bSpain):
-                                                        self.setGoal(iArabia, 1, 1)
-                                elif (iGameTurn > getTurnForYear(1300)):
-                                        if (self.getGoal(iArabia, 1) == -1):
-                                                        self.setGoal(iArabia, 1, 0)
+					bEgypt = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iEgypt], con.tCoreAreasBR[0][iEgypt])
+					bMaghreb = self.isControlledOrVassalized(iArabia, tCarthageTL, tCarthageBR)
+					bMesopotamia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iBabylonia], con.tCoreAreasBR[0][iBabylonia])
+					bPersia = self.isControlledOrVassalized(iArabia, con.tCoreAreasTL[0][iPersia], con.tCoreAreasBR[0][iPersia])
+					bSpain = self.isControlledOrVassalized(iArabia, con.tNormalAreasTL[0][iSpain], con.tNormalAreasBR[0][iSpain])
+					if (bEgypt and bMaghreb and bMesopotamia and bPersia and bSpain):
+						self.setGoal(iArabia, 1, 1)
+					else:
+						self.setGoal(iArabia, 1, 0)
 							
 							
 		elif iPlayer == iTibet:
@@ -2476,13 +2472,13 @@ class Victory:
                 #                self.setGoal(iEthiopia, 0, 0)
 				
 		if iReligion == con.iJudaism:
-			if iPlayer == iHolyRome:
+			if iPlayer == iHolyRome and self.getGoal(iHolyRome, 1) == -1:
 				self.setGoal(iHolyRome, 1, 1)
 			else:
 				self.setGoal(iHolyRome, 1, 0)
 				
 		if iReligion == con.iChristianity:
-			if iPlayer == iEthiopia:
+			if iPlayer == iEthiopia and self.getGoal(iEthiopia, 0) == -1:
 				self.setGoal(iEthiopia, 0, 1)
 			else:
 				self.setGoal(iEthiopia, 0, 0)

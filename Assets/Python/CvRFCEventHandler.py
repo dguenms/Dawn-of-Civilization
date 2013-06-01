@@ -526,6 +526,15 @@ class CvRFCEventHandler:
 			if not gc.getGame().isReligionFounded(con.iIslam):
 				if (city.getX(), city.getY()) == (75, 33):
 					self.rel.foundReligion((75, 33), con.iIslam)
+				
+		# Leoreth: free defender and worker for AI colonies
+		if iOwner in con.lCivGroups[0]:
+			if city.getRegionID() not in con.mercRegions[con.iArea_Europe]:
+				if utils.getHumanID() != iOwner:
+					x = city.getX()
+					y = city.getY()
+					utils.createGarrisons((x,y), iOwner, 1)
+					utils.makeUnit(con.iWorker, iOwner, (x,y), 1)
 
         def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'
