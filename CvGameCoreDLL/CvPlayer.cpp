@@ -7690,6 +7690,15 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 {
 	int iSupport;
 
+	// Leoreth: help AIs, especially those that start with large stacks, so they don't disband them
+	if (!isHuman())
+	{
+		if (GC.getGame().getGameTurn() < getTurnForYear(startingTurnYear[getID()]) + getTurns(20))
+		{
+			return 0;
+		}
+	}
+
 	iFreeUnits = GC.getHandicapInfo(getHandicapType()).getFreeUnits();
 
 	iFreeUnits += getBaseFreeUnits();

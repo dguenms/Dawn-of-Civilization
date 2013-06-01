@@ -2335,8 +2335,9 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		int iActualFoundValue = pPlot->getFoundValue(eActivePlayer);
 		int iCalcFoundValue = GET_PLAYER(eActivePlayer).AI_foundValue(pPlot->getX_INLINE(), pPlot->getY_INLINE(), -1, false);
 		int iStartingFoundValue = GET_PLAYER(eActivePlayer).AI_foundValue(pPlot->getX_INLINE(), pPlot->getY_INLINE(), -1, true);
+		int iSettlerMapValue = GET_PLAYER(eActivePlayer).getSettlersMaps(67 - pPlot->getY_INLINE(), pPlot->getX_INLINE());
 
-		szTempBuffer.Format(L"\nFound Value: %d, (%d, %d)", iActualFoundValue, iCalcFoundValue, iStartingFoundValue);
+		szTempBuffer.Format(L"\nFound Value: %d, (%d, %d)\nSetter Map Value: %d", iActualFoundValue, iCalcFoundValue, iStartingFoundValue, iSettlerMapValue); //Leoreth
 		szString.append(szTempBuffer);
 
 		CvCity* pWorkingCity = pPlot->getWorkingCity();

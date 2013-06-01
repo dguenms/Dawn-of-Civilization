@@ -59,3 +59,9 @@
 	# Control 60% of South America in 1700 AD
 # minor civs will not receive conquerors anymore
 # minor civs and barbarians are now generally forbidden from building wonders
+# European AI civs receive a free defender and worker when founding colonies
+# AIs now properly target independents in their war target areas
+# Mongol Keshiks now start with Formation and ignore city defenses
+# Dog Soldiers only receive +75% against melee units
+# Rework of the resurrection mechanic: more accurate starting techs, new civs receives an army, city infrastructure
+# Culture of minor civs converted at city conquest
