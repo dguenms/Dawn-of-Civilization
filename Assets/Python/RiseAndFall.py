@@ -2017,7 +2017,7 @@ class RiseAndFall:
 						lCityList = self.getResurrectionCities(iLoopCiv)
 						utils.debugTextPopup("Player: "+str(iLoopCiv)+", iMinCities: "+str(iMinNumCities)+", iNumCities: "+str(len(lCityList)))
 						if len(lCityList) >= iMinNumCities:
-							utils.debugTextPopup("Resurrection: "+str(iLoopCiv))
+							#utils.debugTextPopup("Resurrection: "+str(iLoopCiv))
 							self.doResurrection(iLoopCiv, lCityList)
 							return
 							
@@ -2051,8 +2051,8 @@ class RiseAndFall:
 					if plot.isCity():
 						lPotentialCities.append(plot.getPlotCity())
 						
-		utils.debugTextPopup("Potential cities: "+str([city.getName() for city in lPotentialCities]))
-		print("Potential cities: "+str([city.getName() for city in lPotentialCities]))
+		#utils.debugTextPopup("Potential cities: "+str([city.getName() for city in lPotentialCities]))
+		#print("Potential cities: "+str([city.getName() for city in lPotentialCities]))
 						
 		for k in range(len(lPotentialCities)):
 			city = lPotentialCities[k]
@@ -2082,8 +2082,8 @@ class RiseAndFall:
 			
 				# owner stability below -10: city always flips
 				if iOwnerStability < -10:
-					utils.debugTextPopup(str(len(lFlippingCities)))
-					print str(len(lFlippingCities))
+					#utils.debugTextPopup(str(len(lFlippingCities)))
+					#print str(len(lFlippingCities))
 					lFlippingCities.append(city)
 					
 				# owner stability below 10: city flips if far away from their capital, or is capital spot of the dead civ
@@ -2091,15 +2091,15 @@ class RiseAndFall:
 					ownerCapital = gc.getPlayer(iOwner).getCapitalCity()
 					iDistance = utils.calculateDistance(city.getX(), city.getY(), ownerCapital.getX(), ownerCapital.getY())
 					if bCapital or iDistance >= 8:
-						utils.debugTextPopup(str(len(lFlippingCities)))
-						print str(len(lFlippingCities))
+						#utils.debugTextPopup(str(len(lFlippingCities)))
+						#print str(len(lFlippingCities))
 						lFlippingCities.append(city)
 					
 				# owner stability below 20: only capital spot flips
 				elif iOwnerStability < 20:
 					if bCapital:
-						utils.debugTextPopup(str(len(lFlippingCities)))
-						print str(len(lFlippingCities))
+						#utils.debugTextPopup(str(len(lFlippingCities)))
+						#print str(len(lFlippingCities))
 						lFlippingCities.append(city)
 						
 			# if only up to two cities wouldn't flip, they flip as well
