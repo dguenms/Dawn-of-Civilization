@@ -277,6 +277,9 @@ public:
 	bool isEventActive(int /*EventTriggerTypes*/ eTrigger);
 	void doControl(int iControl);
 
+	// Leoreth
+	bool isNeighbors(int /*PlayerTypes*/ ePlayer1, int /*PlayerTypes*/ ePlayer2);
+
 protected:
 	CvGame* m_pGame;
 };

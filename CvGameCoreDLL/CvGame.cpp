@@ -9972,3 +9972,9 @@ void CvGame::normalization()
 				if (iVariation > 0)
 				{*/
 }
+
+// Leoreth
+bool CvGame::isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const
+{
+	return (GET_PLAYER(ePlayer1).AI_calculateStolenCityRadiusPlots(ePlayer2) > 0 || GET_PLAYER(ePlayer2).AI_calculateStolenCityRadiusPlots(ePlayer1) > 0);
+}

@@ -1184,3 +1184,8 @@ void CyGame::doControl(int iControl)
 		m_pGame->doControl((ControlTypes) iControl);
 	}
 }
+
+bool CyGame::isNeighbors(int ePlayer1, int ePlayer2)
+{
+	return m_pGame ? m_pGame->isNeighbors((PlayerTypes)ePlayer1, (PlayerTypes)ePlayer2) : false;
+}

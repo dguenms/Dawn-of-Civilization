@@ -267,6 +267,8 @@ void CyGamePythonInterface()
 
 		.def("isEventActive", &CyGame::isEventActive, "bool (int /*EventTriggerTypes*/ eTrigger)")
 		.def("doControl", &CyGame::doControl, "void (int /*ControlTypes*/ iControl)")
+
+		.def("isNeighbors", &CyGame::isNeighbors, "bool (int iPlayer1, int iPlayer2)")
 		;
 
 	python::class_<CyDeal>("CyDeal")
