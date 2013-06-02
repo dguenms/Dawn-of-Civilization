@@ -5582,7 +5582,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue *= 2;
                                         iValue /= 3;
                                     }
-									if (iI == OPTICS || iI == ASTRONOMY || iI == THEOLOGY || iI == BANKING || iI == EDUCATION || iI == ECONOMICS)
+									if (iI == OPTICS || iI == ASTRONOMY || iI == THEOLOGY || iI == BANKING || iI == EDUCATION || iI == ECONOMICS || iI == MILITARY_TRADITION)
 										iValue /= 4;
 									if (iI == LIBERALISM)
 										iValue /= 10;
@@ -5894,6 +5894,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == PAPER) {
 										iValue *= 3;
 										iValue /= 2;
+									}
+									if (iI == MILITARY_TRADITION)
+									{
+										iValue /= 4;
 									}
 									break;
 								case AZTEC:

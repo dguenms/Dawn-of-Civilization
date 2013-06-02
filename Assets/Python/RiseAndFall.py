@@ -2015,7 +2015,7 @@ class RiseAndFall:
 					iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll')
 					if iRespawnRoll + iNationalismModifier - 10 >= con.tResurrectionProb[iLoopCiv]:
 						lCityList = self.getResurrectionCities(iLoopCiv)
-						utils.debugTextPopup("Player: "+str(iLoopCiv)+", iMinCities: "+str(iMinNumCities)+", iNumCities: "+str(len(lCityList)))
+						#utils.debugTextPopup("Player: "+str(iLoopCiv)+", iMinCities: "+str(iMinNumCities)+", iNumCities: "+str(len(lCityList)))
 						if len(lCityList) >= iMinNumCities:
 							#utils.debugTextPopup("Resurrection: "+str(iLoopCiv))
 							self.doResurrection(iLoopCiv, lCityList)
@@ -2183,7 +2183,7 @@ class RiseAndFall:
 			
 			# Leoreth: rebuild some city infrastructure
 			for iBuilding in range(con.iNumBuildings):
-				if pPlayer.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra():
+				if pPlayer.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not utils.isUniqueBuilding(iBuilding):
 					newCity.setHasRealBuilding(iBuilding, True)
 				
 			if bCapital:
@@ -2253,10 +2253,10 @@ class RiseAndFall:
 						lSourceCivs.append(iPeer)
 				
 		# direct neighbors (India can benefit from England etc), can count twice
-		#for iPeer in range(con.iNumPlayers):
-		#	if iPeer != iPlayer and gc.getPlayer(iPeer).isAlive():
-		#		if utils.isNeighbor(iPlayer, iPeer):
-		#			lSourceCivs.append(iPeer)
+		for iPeer in range(con.iNumPlayers):
+			if iPeer != iPlayer and gc.getPlayer(iPeer).isAlive():
+				if utils.isNeighbor(iPlayer, iPeer):
+					lSourceCivs.append(iPeer)
 		
 		
 		for iTech in range(con.iNumTechs):

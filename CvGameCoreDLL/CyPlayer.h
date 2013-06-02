@@ -494,7 +494,6 @@ public:
 	int AI_getExtraGoldTarget() const;
 	void AI_setExtraGoldTarget(int iNewValue);
 
-
 	int getScoreHistory(int iTurn) const;
 	int getEconomyHistory(int iTurn) const;
 	int getIndustryHistory(int iTurn) const;

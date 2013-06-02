@@ -553,6 +553,9 @@ public:
 
 	DllExport void handleDiplomacySetAIComment(DiploCommentTypes eComment) const;
 
+	// Leoreth
+	bool isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const;
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;

@@ -1791,4 +1791,17 @@ class RFCUtils:
 		return [pCity.GetCy() for pCity in PyPlayer(iCiv).getCityList()]
 		
 	def isNeighbor(self, iCiv1, iCiv2):
-		return (gc.getPlayer(iCiv1).AI_calculateStolenCityRadiusPlots(iCiv2) > 0 or gc.getPlayer(iCiv2).AI_calculateStolenCityRadiusPlots(iCiv1))
+		return gc.getGame().isNeighbors(iCiv1, iCiv2)
+						
+	def isUniqueBuilding(self, iBuilding):
+		if (isWorldWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())):
+			return true			
+
+		if (isTeamWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())):
+			return true
+
+		if (isNationalWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())): #Rhye - should be changed to move embassies to regular buildings
+			return true
+
+		# Regular building
+		return false
