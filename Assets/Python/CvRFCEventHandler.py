@@ -16,7 +16,7 @@ import RiseAndFall
 import Barbs                
 import Religions        
 import Resources        
-import CityNameManager  
+import CityNameManager as cnm
 import UniquePowers     
 import AIWars           
 import Congresses
@@ -214,7 +214,7 @@ class CvRFCEventHandler:
                 self.barb = Barbs.Barbs()
                 self.rel = Religions.Religions()
                 self.res = Resources.Resources()
-                self.cnm = CityNameManager.CityNameManager()
+                self.cnm = cnm.CityNameManager()
                 self.up = UniquePowers.UniquePowers()
                 self.aiw = AIWars.AIWars()
                 self.cong = Congresses.Congresses()
@@ -281,7 +281,9 @@ class CvRFCEventHandler:
                 owner,playerType,city,bConquest,bTrade = argsList
 		lTradingCompanyList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
                 #CvUtil.pyPrint('City Acquired Event: %s' %(city.getName()))
-                self.cnm.renameCities(city, playerType)
+                #self.cnm.renameCities(city, playerType)
+		
+		cnm.onCityAcquired(city, playerType)
                 
                 if (playerType == con.iArabia):
                         self.up.arabianUP(city)
@@ -432,7 +434,7 @@ class CvRFCEventHandler:
                 iOwner = city.getOwner()
                 
                 if (iOwner < con.iNumActivePlayers): 
-                        self.cnm.assignName(city)
+                        cnm.onCityBuilt(city)
 
 
                 #Rhye - delete culture of barbs and minor civs to prevent weird unhappiness
