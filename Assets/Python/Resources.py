@@ -239,6 +239,7 @@ class Resources:
 			
 		if iGameTurn == getTurnForYear(1800):
 			gc.getMap().plot(17, 41).setBonusType(iHorse) # Mexico
+			gc.getMap().plot(16, 42).setBonusType(con.iIron) # Mexico
 
                 if (iGameTurn == getTurnForYear(1850)):
                         gc.getMap().plot(12, 45).setBonusType(iWine) #California

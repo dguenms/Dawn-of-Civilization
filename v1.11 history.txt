@@ -65,3 +65,6 @@
 # Dog Soldiers only receive +75% against melee units
 # Rework of the resurrection mechanic: more accurate starting techs, new civs receives an army, city infrastructure
 # Culture of minor civs converted at city conquest
+# Mexico renames all flipped cities to location-appropriate names
+# complete rework of the City Name Manager, for improved speed and multiple languages per civ
+# slave plantations cannot be built on jungles or forests anymore

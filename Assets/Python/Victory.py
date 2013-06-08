@@ -199,7 +199,7 @@ tWestAfricaBR = (56, 32)
 lAndeanCoast = [(25, 29), (24, 28), (24, 27), (24, 26), (24, 25), (25, 24), (25, 23), (26, 22), (27, 21), (28, 20), (29, 19), (30, 18), (30, 17), (30, 16), (30, 15), (30, 14)]
 
 tCentralAmericaTL = (12, 31)
-tCentralAmericaBR = (25, 41)
+tCentralAmericaBR = (25, 42)
 tCentralAmericaExceptions = ((25, 38), (25, 41))
 
 tWesternNorthAmericaTL = (11, 43)

@@ -9,7 +9,7 @@ from StoredData import sd # edead
 import CvTranslator
 import RFCUtils
 import Consts as con
-import CityNameManager 
+import CityNameManager as cnm
 import Victory as vic
 import DynamicCivs
 from operator import itemgetter
@@ -1461,6 +1461,12 @@ class RiseAndFall:
 						pPersia.setCivics(3, con.iForcedLabor)
 						pPersia.setCivics(4, con.iFanaticism)
 					elif iCiv == iAztecs:
+						if gc.getMap().plot(18, 37).isCity() and gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(con.iFloatingGardens).getBuildingClassType()) == 0:
+							gc.getMap().plot(18, 37).setHasRealBuilding(con.iFloatingGardens, True)
+						for city in utils.getCityList(iAztecs):
+							sName = cnm.tCityMap[1][iAztecs][67-city.getY()][city.getX()]
+							if sName != "-1":
+								city.setName(sName, False)
 						pAztecs.setLastStateReligion(con.iChristianity)
 						pAztecs.setCivics(0, con.iRepublic)
 						pAztecs.setCivics(1, con.iRepresentation)
@@ -2183,7 +2189,7 @@ class RiseAndFall:
 			
 			# Leoreth: rebuild some city infrastructure
 			for iBuilding in range(con.iNumBuildings):
-				if pPlayer.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not utils.isUniqueBuilding(iBuilding):
+				if pPlayer.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not utils.isUniqueBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getPrereqReligion() == -1:
 					newCity.setHasRealBuilding(iBuilding, True)
 				
 			if bCapital:
