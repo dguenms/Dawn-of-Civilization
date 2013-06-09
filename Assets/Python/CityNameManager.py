@@ -14,9 +14,6 @@ PyPlayer = PyHelpers.PyPlayer
 
 ### Constants ###
 
-
-
-
 # initialise player variables to player IDs from WBS
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -78,6 +75,222 @@ iLangFrench, iLangEnglish, iLangGerman, iLangRussian, iLangDutch,
 iLangMalian, iLangPolish, iLangPortuguese, iLangQuechua, iLangItalian, 
 iLangMongolian, iLangAztec, iLangTurkish, iLangThai, iLangCongolese, 
 iLangPrussian, iLangAmerican, iLangCeltic, iLangMexican) = range(iNumLanguages)
+
+# methods
+
+def getLanguages(iCiv):
+
+	pCiv = gc.getPlayer(iCiv)
+
+	if iCiv == iEgypt:
+		if pCiv.getStateReligion() == con.iIslam: return (iLangEgyptianArabic, iLangArabian)
+		return (iLangEgyptian,)
+	elif iCiv == iChina: return (iLangChinese,)
+	elif iCiv == iBabylonia: return (iLangBabylonian,)
+	elif iCiv == iIndia: return (iLangIndian,)
+	elif iCiv == iGreece: return (iLangGreek,)
+	elif iCiv == iCarthage: return (iLangPhoenician,)
+	elif iCiv == iPersia: 
+		if utils.isReborn(iCiv): return (iLangArabian, iLangPersian)
+		return (iLangPersian,)
+	elif iCiv == iRome: return (iLangLatin,)
+	elif iCiv == iTamils: return (iLangIndian,)
+	elif iCiv == iEthiopia: return (iLangEthiopian,)
+	elif iCiv == iKorea: return (iLangKorean, iLangChinese)
+	elif iCiv == iMaya: return (iLangMayan,)
+	elif iCiv == iByzantium: return (iLangByzantine, iLangLatin)
+	elif iCiv == iJapan: return (iLangJapanese,)
+	elif iCiv == iVikings: return (iLangViking,)
+	elif iCiv == iArabia: return (iLangArabian,)
+	elif iCiv == iTibet: return (iLangTibetan, iLangChinese,)
+	elif iCiv == iKhmer: return (iLangKhmer, iLangIndonesian)
+	elif iCiv == iIndonesia: return (iLangIndonesian, iLangKhmer)
+	elif iCiv == iMoors: return (iLangArabian,)
+	elif iCiv == iSpain: return (iLangSpanish,)
+	elif iCiv == iFrance: return (iLangFrench,)
+	elif iCiv == iEngland: return (iLangEnglish,)
+	elif iCiv == iHolyRome: return (iLangGerman,)
+	elif iCiv == iRussia: return (iLangRussian,)
+	elif iCiv == iMali: return (iLangMalian,)
+	elif iCiv == iPoland: return (iLangPolish, iLangRussian)
+	elif iCiv == iPortugal: return (iLangPortuguese, iLangSpanish)
+	elif iCiv == iInca: return (iLangQuechua,)
+	elif iCiv == iItaly: return (iLangItalian,)
+	elif iCiv == iMongolia: return (iLangMongolian, iLangChinese)
+	elif iCiv == iAztecs: 
+		if utils.isReborn(iCiv): return (iLangMexican, iLangSpanish)
+		return (iLangAztec,)
+	elif iCiv == iMughals: return (iLangPersian, iLangArabian, iLangIndian)
+	elif iCiv == iTurkey: return (iLangTurkish, iLangArabian)
+	elif iCiv == iThailand: return (iLangThai, iLangKhmer, iLangIndonesian)
+	elif iCiv == iCongo: return (iLangCongolese,)
+	elif iCiv == iNetherlands: return (iLangDutch,)
+	elif iCiv == iGermany: return (iLangPrussian, iLangGerman,)
+	elif iCiv == iAmerica: return (iLangAmerican, iLangEnglish)
+	elif iCiv == iCeltia: return (iLangCeltic,)
+	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
+	else: return -1
+
+def getFoundName(iCiv, tPlot):
+	x, y = tPlot
+	tLanguages = getLanguages(iCiv)
+	if tLanguages == -1: return "-1"
+	
+	for i in range(len(tLanguages)):
+		iLanguage = tLanguages[i]
+		if iLanguage in dFoundMaps:
+			sName = dFoundMaps[iLanguage][67-y][x]
+			if sName != "-1":
+				return sName
+				
+	return "-1"
+	
+def getRenameName(iCiv, sName):
+	tLanguages = getLanguages(iCiv)
+	if tLanguages == -1: return "-1"
+	
+	for i in range(len(tLanguages)):
+		iLanguage = tLanguages[i]
+		if sName in tRenames[iLanguage]:
+			return tRenames[iLanguage][sName]
+			
+	return "-1"
+	
+def onCityBuilt(city):
+
+	iOwner = city.getOwner()
+	x = city.getX()
+	y = city.getY()
+	
+	sNewName = getFoundName(iOwner, (x,y))
+	
+	if sNewName != "-1":
+		city.setName(sNewName, False)
+		
+def onCityAcquired(city, iNewOwner):
+
+	sOldName = city.getName()
+	sNewName = ""
+	
+	if sOldName == 'Inbhir Nis' and iNewOwner != iCeltia: sNewName = 'Inverness'
+	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwner != iCelta: sNewName = 'Edinburgh'
+	elif sOldName in ['Aquincum', 'Ak Ink', 'Buda'] and iNewOwner not in [iRome, iTurkey]: sNewName = 'Budapest'
+	elif sOldName in ['Takao', 'Gaoxiong'] and iNewOwner >= iNumPlayers: sNewName = 'Kaohsiung'
+	elif sOldName == 'Momba&#231;a' and iNewOwner != iPortugal: sNewName = 'Mombasa'
+	elif sOldName == 'Toranaro' and iNewOwner not in [iJapan, iFrance]: sNewName = 'Tolanaro'
+	elif sOldName == 'Kerimane' and iNewOwner != iJapan: sNewName = 'Quelimane'
+	elif sOldName == 'Sofara' and iNewOwner != iJapan: sNewName = 'Sofala'
+	elif sOldName == 'Indraprastha' and iNewOwner == iIndia: sNewName = 'Dilli'
+	
+	if sNewName != "":
+		city.setName(sNewName, False)
+		return
+	
+	sNewName = getRenameName(iNewOwner, sOldName)
+	
+	if sNewName != "-1":
+		city.setName(sNewName, False)
+		
+def applySovietNames():
+	for city in utils.getCityList(iRussia):
+		sOldName = city.getName()
+		sNewName = ""
+		
+		if sOldName == 'Caricyn': sNewName = 'Stalingrad'
+		elif sOldName == 'Sankt-Peterburg': sNewName = 'Leningrad'
+		elif sOldName == "Tver'": sNewName = 'Kalinin'
+		elif sOldName == 'Ekaterinburg': sNewName = 'Sverdlovsk'
+		elif sOldName == 'Nizhnij Novgorod': sNewName = 'Gorki'
+		elif sOldName == 'Samara': sNewName = 'Kujbyshev'
+		elif sOldName == "Car'grad": sNewName = "Konstantinopol'"
+		elif sOldName == 'Bobrujsk': sNewName = 'Stalink'
+		elif sOldName == 'Vjatka': sNewName = 'Kirov'
+		elif sOldName == 'Bavly': sNewName = "Oktjabr'skij"
+		elif sOldName == 'Sumin': sNewName = 'Sumy'
+		elif sOldName == 'Sjangan': sNewName = 'Gon Kong'
+		
+		if sNewName != "":
+			city.setName(sNewName, False)
+			
+def onTechAcquired(iCiv):
+	pCiv = gc.getPlayer(iCiv)
+	lCities = utils.getCityList(iCiv)
+	
+	iEra = pCiv.getCurrentEra()
+	
+	if iEra == con.iMedieval:
+		if iCiv in [iChina, iMongolia, iJapan]:
+			for city in lCities:
+				if city.getName() == "Chang'an": city.setName("Xi'an", False)
+				elif city.getName() == 'Zhongdu': city.setName('Beijing', False)
+		elif iCiv == iIndia:
+			for city in lCities:
+				if city.getName() == 'Indraprastha': city.setName('Dilli', False)
+	elif iEra == con.iRenaissance:
+		if iCiv in [iIndia, iArabia, iTurkey]:
+			for city in lCities:
+				if city.getName() == 'Pataliputra': city.setName('Patna', False)
+		elif iCiv in [iChina, iMongolia, iJapan]:
+			for city in lCities:
+				if city.getName() == 'Haojing': city.setName('Aomen', False)
+		elif iCiv == iVikings:
+			for city in lCities:
+				if city.getName() == 'Nidaros': city.setName('Trondheim', False)
+				elif city.getName() == 'Roskilde': city.setName('K&#248;benhavn', False)
+		elif iCiv == iHolyRome:
+			for city in lCities:
+				if city.getName() == 'Haithabu': city.setName('Hamburg', False)
+		elif iCiv == iRussia:
+			for city in lCities:
+				if city.getName() == 'Novokholmogory': city.setName("Arkhangel'sk", False)
+				elif city.getName() == 'Spas na Kholmu': city.setName('Krasnyj Kholm', False)
+		elif iCiv == iIndonesia:
+			for city in lCities:
+				if city.getName() == 'Tumasik': city.setName('Singapura', False)
+				elif city.getName() == 'Sundapura': city.setName('Jayakarta', False)
+				
+		if iCiv in [iRussia, iHolyRome, iGermany, iPoland]:
+			for city in lCities:
+				if city.getName() == 'Buda': city.setName('Budapest', False)
+	elif iEra == con.iIndustrial:
+		if iCiv in [iEngland, iSpain, iAmerica]:
+			for city in lCities:
+				if city.getName() == 'Yax Mutal': city.setName('Tikal', False)
+		elif iCiv == iJapan:
+			for city in lCities:
+				if city.getName() == 'Edo': city.setName('Toukyou', False)
+		elif iCiv == iRussia:
+			if pCiv.getCivics(3) == con.iStateProperty: applySovietNames()
+		elif iCiv == iTurkey:
+			for city in lCities:
+				if city.getName() == 'Kostantiniyye': city.setName('Istanbul', False)
+		elif iCiv == iItaly:
+			for city in lCities:
+				if city.getName() == 'Fiorenza': city.setName('Firenze', False)
+		elif iCiv == iChina:
+			for city in lCities:
+				if city.getName() == 'Dagou': city.setName('Gaoxiong', False)
+		elif iCiv == iThailand:
+			for city in lCities:
+				if city.getName() == 'Ayutthaya': city.setName('Bangkok', False)
+				
+		if iCiv in [iEngland, iIndia, iMughals]:
+			for city in lCities:
+				if city.getName() == 'Daibul': city.setName('Karachi', False)
+	elif iEra == con.iModern:
+		if iCiv in [iTurkey, iIndependent, iIndependent2, iBarbarian, iSeljuk]:
+			for city in lCities:
+				if city.getName() == 'Angora': city.setName('Ankara', False)
+		elif iCiv in [iKorea, iChina, iJapan]:
+			for city in lCities:
+				if city.getName() == 'Hanseong': city.setName('Seoul', False)
+				
+def onReligionSpread(iReligion, iCiv, city):
+
+	if iCiv == iIndonesia:
+		if iReligion == con.iIslam:
+			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
+
 
 # city coordinates
 
@@ -1087,16 +1300,16 @@ iLangArabian :
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Bambalunah",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Jajce",	"Bosna Saraj",	"-1",	"Edirne",	"Edirne",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tiflis",	"Tiflis",	"-1",	"-1",	"-1",	"Urgenc",	"Bukhara",	"Merv",	"Merv",	"Balkh",	"Balkh",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Burtuqal",	"Burtuqal",	"-1",	"Tudela",	"-1",	"Saraqustah",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Iskodra",	"Belgrad",	"-1",	"Edirne",	"Bizantiya",	"-1",	"-1",	"-1",	"Sinop",	"Sinop",	"-1",	"-1",	"Tiflis",	"Tiflis",	"-1",	"-1",	"Sebzewar",	"Sebzewar",	"Nishapur",	"Merv",	"Merv",	"Balkh",	"Balkh",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Burtuqal",	"Burtuqal",	"Tulaytulah",	"Tudela",	"Tudela",	"Saraqustah",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Dira&#231;",	"Tiran",	"Selanik",	"Selanik",	"-1",	"Bursa",	"Izmit",	"Ankara",	"Ankara",	"Samsun",	"Tarabizun",	"Tarabizun",	"-1",	"Tebriz",	"Tebriz",	"-1",	"-1",	"Sebzewar",	"-1",	"Nishapur",	"B&#226;mi&#226;n",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-‘Ishbunah",	"Al-‘Ishbunah",	"Tulaytulah",	"Al-Magrit",	"Al-Mariyat",	"Balansiyyah",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tiran",	"-1",	"-1",	"-1",	"Izmir",	"Izmir",	"Isparta",	"Konya",	"Kayseri",	"Kayseri",	"-1",	"-1",	"-1",	"Tebriz",	"Rasht",	"-1",	"-1",	"-1",	"Her&#225;t",	"Her&#225;t",	"Kabul",	"Kabul",	"-1",	"Islamabad",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-‘Ishbunah",	"Al-‘Ishbunah",	"Qurtubah",	"Qurtubah",	"-1",	"Al-Mariyat",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Inebahti",	"Inebahti",	"Atina",	"-1",	"-1",	"Izmir",	"Antalya",	"-1",	"Al-Iskandarun",	"Halab",	"Halab",	"Mosul",	"Mosul",	"Hamadan",	"-1",	"Tahran",	"Tahran",	"Damghan",	"Her&#225;t",	"Her&#225;t",	"Ghazni",	"Ghazni",	"-1",	"Islamabad",	"Srinagar",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"‘Uhshunubah",	"‘Uhshunubah",	"Qurtubah",	"Qurtubah",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Riv&#224;h",	"-1",	"-1",	"-1",	"-1",	"Atina",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-Ladhiqiyah",	"Hama",	"Al-Raqqah",	"Baghdad",	"Baghdad",	"Hamadan",	"Hamadan",	"-1",	"Isfah&#225;n",	"Isfah&#225;n",	"Farah",	"Farah",	"Qandahar",	"-1",	"Peshawar",	"Peshawar",	"Delhi",	"Delhi",	"Delhi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-'Ishbunah",	"Al-'Ishbunah",	"Tulaytulah",	"Al-Magrit",	"Al-Mariyat",	"Balansiyyah",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tiran",	"-1",	"-1",	"-1",	"Izmir",	"Izmir",	"Isparta",	"Konya",	"Kayseri",	"Kayseri",	"-1",	"-1",	"-1",	"Tebriz",	"Rasht",	"-1",	"-1",	"-1",	"Her&#225;t",	"Her&#225;t",	"Kabul",	"Kabul",	"-1",	"Islamabad",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-'Ishbunah",	"Al-'Ishbunah",	"Qurtubah",	"Qurtubah",	"-1",	"Al-Mariyat",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Inebahti",	"Inebahti",	"Atina",	"-1",	"-1",	"Izmir",	"Antalya",	"-1",	"Al-Iskandarun",	"Halab",	"Halab",	"Mosul",	"Mosul",	"Hamadan",	"-1",	"Tahran",	"Tahran",	"Damghan",	"Her&#225;t",	"Her&#225;t",	"Ghazni",	"Ghazni",	"-1",	"Islamabad",	"Srinagar",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"'Uhshunubah",	"'Uhshunubah",	"Qurtubah",	"Qurtubah",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Riv&#224;h",	"-1",	"-1",	"-1",	"-1",	"Atina",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-Ladhiqiyah",	"Hama",	"Al-Raqqah",	"Baghdad",	"Baghdad",	"Hamadan",	"Hamadan",	"-1",	"Isfah&#225;n",	"Isfah&#225;n",	"Farah",	"Farah",	"Qandahar",	"-1",	"Peshawar",	"Peshawar",	"Delhi",	"Delhi",	"Delhi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Granada",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Bal'Harm",	"Kasr'Yanni",	"-1",	"-1",	"-1",	"Anavarin",	"Anavarin",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Bayrut",	"Dimashq",	"Ar-Rutbah",	"Baghdad",	"Baghdad",	"Dezful",	"Ahwaz",	"Shapur",	"Yazd",	"Yazd",	"Farah",	"-1",	"Qandahar",	"-1",	"Peshawar",	"Peshawar",	"Delhi",	"Delhi",	"Delhi",	"Lakhnau",	"Azimabad",	"Azimabad",	"Dhaka",	"Dhaka",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Wahran",	"Al-Jazair",	"Al-Jazair",	"Qusantinah",	"Tunis",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Rabd al-Handaq",	"Rabd al-Handaq",	"-1",	"-1",	"-1",	"Bayrut",	"Dimashq",	"Ar-Rutbah",	"An-Najaf",	"Al-Basrah",	"Al-Basrah",	"Ahwaz",	"Bushehr",	"Yazd",	"Yazd",	"Kirman",	"Kirman",	"Zahedan",	"Zahedan",	"Mult&#225;n",	"Mult&#225;n",	"Delhi",	"Delhi",	"Delhi",	"Lakhnau",	"Varanasi",	"Azimabad",	"Dhaka",	"Dhaka",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Tanger",	"-1",	"Wahran",	"Wahran",	"-1",	"Djelfa",	"-1",	"Safaqis",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-Quds",	"'Amman",	"'Amman",	"An-Najaf",	"Al-Kuwait",	"-1",	"-1",	"-1",	"Shiraz",	"Shiraz",	"Kirman",	"Kirman",	"Zahedan",	"Zahedan",	"Mult&#225;n",	"Mult&#225;n",	"Ujjaini",	"Ujjaini",	"Bhopal",	"Varanasi",	"Varanasi",	"Kolkata",	"Kolkata",	"-1",	"Chittagong",	"Chittagong",	"Mandalay",	"Hanoi",	"Hanoi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"F&#232;s",	"F&#232;s",	"B&#232char",	"B&#232char",	"Djelfa",	"Djelfa",	"Qabis",	"Tarabulus",	"Tarabulus",	"Misratah",	"-1",	"-1",	"-1",	"Bangazi",	"Tubruq",	"-1",	"-1",	"-1",	"-1",	"-1",	"Gazzah",	"Al-Quds",	"'Amman",	"'Amman",	"Rafah",	"Al-Kuwait",	"Al-Kuwait",	"-1",	"-1",	"-1",	"Shiraz",	"Hormuz",	"Chabahar",	"Chabahar",	"Daibul",	"Daibul",	"Surat",	"Ujjaini",	"Bhopal",	"Bhopal",	"Raipur",	"Raipur",	"Kolkata",	"-1",	"-1",	"-1",	"Pagan",	"Pagan",	"Hanoi",	"Hanoi",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Al-Rabat",	"Al-Rabat",	"-1",	"F&#232;s",	"B&#232char",	"B&#232char",	"Ouargla",	"Ouargla",	"Ghadamis",	"Ghadamis",	"Al-Qariyah",	"Surt",	"Surt",	"Al-Uqaylah",	"Al-Uqaylah",	"Bangazi",	"Tubruq",	"Al-Iskandariya",	"Al-Iskandariya",	"Damanh&#250;t",	"Damanh&#250;t",	"Rafah",	"-1",	"Tabuk",	"Madinah",	"Madinah",	"Buraydah",	"Buraydah",	"Al-Qatif",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Daibul",	"-1",	"Mumbai",	"D&#233;vagiri",	"D&#233;vagiri",	"Hyderabad",	"Raipur",	"Raipur",	"Visakhapatnam",	"-1",	"-1",	"-1",	"Pagan",	"Yangon",	"Tavoy",	"Than Hoa",	"Hue",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Agad&#237;r",	"Marrakis",	"-1",	"Ouarzazata",	"-1",	"-1",	"-1",	"Ouargla",	"Ouargla",	"Ghadamis",	"Ghadamis",	"Al-Qariyah",	"Al-Qariyah",	"Waddan",	"Waddan",	"Al-Jawf",	"Al-Jawf",	"Siwah",	"Siwah",	"Al-Qahirah",	"Al-Qahirah",	"Al-Ghardaqah",	"-1",	"-1",	"Tabuk",	"Makkah",	"Makkah",	"Ar-Riyad",	"Ar-Riyad",	"Ad-Dammam",	"Ad-Dammam",	"-1",	"Suh&#225;r",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Mumbai",	"Kalyani",	"Hyderabad",	"Hyderabad",	"Orugallu",	"Visakhapatnam",	"Visakhapatnam",	"-1",	"-1",	"-1",	"Yangon",	"-1",	"-1",	"Chiang Mai",	"Indrapura",	"Vijaya",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
-(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Agad&#237;r",	"Agad&#237;r",	"Marrakis",	"Ouarzazata",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Awbari",	"Awbari",	"Sabha",	"Sabha",	"Waddan",	"Waddan",	"Al-Jawf",	"Al-Jawf",	"Siwah",	"Siwah",	"Al-Qahirah",	"Fust&#225;t",	"Al-Ghardaqah",	"Al-Ghardaqah",	"-1",	"-1",	"Makkah",	"Makkah",	"Makkah",	"Ar-Riyad",	"Harad",	"Ad-Dammam",	"Dubai",	"Dubai",	"Masqat",	"-1",	"-1",	"-1",	"-1",	"-1",	"Govapuri",	"Kalyani",	"Bengaluru",	"Bengaluru",	"Chennai",	"Pitikapuram",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Sukhothai",	"Bang Makok",	"Angkor",	"-1",	"-1",	"-1",	"-1",	"-1",	"Maynilad",	"Maynilad",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Agad&#237;r",	"Marrakus",	"-1",	"Ouarzazata",	"-1",	"-1",	"-1",	"Ouargla",	"Ouargla",	"Ghadamis",	"Ghadamis",	"Al-Qariyah",	"Al-Qariyah",	"Waddan",	"Waddan",	"Al-Jawf",	"Al-Jawf",	"Siwah",	"Siwah",	"Al-Qahirah",	"Al-Qahirah",	"Al-Ghardaqah",	"-1",	"-1",	"Tabuk",	"Makkah",	"Makkah",	"Ar-Riyad",	"Ar-Riyad",	"Ad-Dammam",	"Ad-Dammam",	"-1",	"Suh&#225;r",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Mumbai",	"Kalyani",	"Hyderabad",	"Hyderabad",	"Orugallu",	"Visakhapatnam",	"Visakhapatnam",	"-1",	"-1",	"-1",	"Yangon",	"-1",	"-1",	"Chiang Mai",	"Indrapura",	"Vijaya",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
+(	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Agad&#237;r",	"Agad&#237;r",	"Marrakus",	"Ouarzazata",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Awbari",	"Awbari",	"Sabha",	"Sabha",	"Waddan",	"Waddan",	"Al-Jawf",	"Al-Jawf",	"Siwah",	"Siwah",	"Al-Qahirah",	"Fust&#225;t",	"Al-Ghardaqah",	"Al-Ghardaqah",	"-1",	"-1",	"Makkah",	"Makkah",	"Makkah",	"Ar-Riyad",	"Harad",	"Ad-Dammam",	"Dubai",	"Dubai",	"Masqat",	"-1",	"-1",	"-1",	"-1",	"-1",	"Govapuri",	"Kalyani",	"Bengaluru",	"Bengaluru",	"Chennai",	"Pitikapuram",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Sukhothai",	"Bang Makok",	"Angkor",	"-1",	"-1",	"-1",	"-1",	"-1",	"Maynilad",	"Maynilad",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Abu-Simbel",	"Al-Uqsur",	"Al-Uqsur",	"Al-Uqsur",	"-1",	"-1",	"-1",	"-1",	"Makkah",	"Makkah",	"Najran",	"Harad",	"Salalah",	"Salalah",	"Masqat",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Govapuri",	"Bengaluru",	"Chennai",	"Chennai",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Bang Makok",	"Bang Makok",	"Angkor",	"Panduranga",	"-1",	"-1",	"-1",	"-1",	"-1",	"Maynilad",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Abu-Simbel",	"Al-Uqsur",	"Al-Uqsur",	"Aswan",	"Hala'ib",	"Hala'ib",	"-1",	"-1",	"Jazan",	"Jazan",	"Najran",	"Al-Mukalla",	"Saih&#250;t",	"Salalah",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Cochin",	"Cochin",	"Tanjapuri",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Phuket",	"-1",	"Phnom Penh",	"-1",	"-1",	"-1",	"-1",	"-1",	"Iloilo",	"-1",	"Davao",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Aswan",	"Aswan",	"-1",	"Hala'ib",	"-1",	"-1",	"-1",	"-1",	"Sana'a",	"Al-Mukalla",	"Saih&#250;t",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Cochin",	"Tanjapuri",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Singapura",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"Davao",	"Davao",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
@@ -2672,223 +2885,6 @@ iLangMexican :
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	),
 (	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	"-1",	)),
 }
-
-
-def getLanguages(iCiv):
-
-	pCiv = gc.getPlayer(iCiv)
-
-	if iCiv == iEgypt:
-		if pCiv.getStateReligion() == con.iIslam: return (iLangEgyptianArabic, iLangArabian)
-		return (iLangEgyptian,)
-	elif iCiv == iChina: return (iLangChinese,)
-	elif iCiv == iBabylonia: return (iLangBabylonian,)
-	elif iCiv == iIndia: return (iLangIndian,)
-	elif iCiv == iGreece: return (iLangGreek,)
-	elif iCiv == iCarthage: return (iLangPhoenician,)
-	elif iCiv == iPersia: 
-		if utils.isReborn(iCiv): return (iLangArabian, iLangPersian)
-		return (iLangPersian,)
-	elif iCiv == iRome: return (iLangLatin,)
-	elif iCiv == iTamils: return (iLangIndian,)
-	elif iCiv == iEthiopia: return (iLangEthiopian,)
-	elif iCiv == iKorea: return (iLangKorean, iLangChinese)
-	elif iCiv == iMaya: return (iLangMayan,)
-	elif iCiv == iByzantium: return (iLangByzantine, iLangLatin)
-	elif iCiv == iJapan: return (iLangJapanese,)
-	elif iCiv == iVikings: return (iLangViking,)
-	elif iCiv == iArabia: return (iLangArabian,)
-	elif iCiv == iTibet: return (iLangTibetan, iLangChinese,)
-	elif iCiv == iKhmer: return (iLangKhmer, iLangIndonesian)
-	elif iCiv == iIndonesia: return (iLangIndonesian, iLangKhmer)
-	elif iCiv == iMoors: return (iLangArabian,)
-	elif iCiv == iSpain: return (iLangSpanish,)
-	elif iCiv == iFrance: return (iLangFrench,)
-	elif iCiv == iEngland: return (iLangEnglish,)
-	elif iCiv == iHolyRome: return (iLangGerman,)
-	elif iCiv == iRussia: return (iLangRussian,)
-	elif iCiv == iMali: return (iLangMalian,)
-	elif iCiv == iPoland: return (iLangPolish, iLangRussian)
-	elif iCiv == iPortugal: return (iLangPortuguese, iLangSpanish)
-	elif iCiv == iInca: return (iLangQuechua,)
-	elif iCiv == iItaly: return (iLangItalian,)
-	elif iCiv == iMongolia: return (iLangMongolian, iLangChinese)
-	elif iCiv == iAztecs: 
-		if utils.isReborn(iCiv): return (iLangMexican, iLangSpanish)
-		return (iLangAztec,)
-	elif iCiv == iMughals: return (iLangPersian, iLangArabian, iLangIndian)
-	elif iCiv == iTurkey: return (iLangTurkish, iLangArabian)
-	elif iCiv == iThailand: return (iLangThai, iLangKhmer, iLangIndonesian)
-	elif iCiv == iCongo: return (iLangCongolese,)
-	elif iCiv == iNetherlands: return (iLangDutch,)
-	elif iCiv == iGermany: return (iLangPrussian, iLangGerman,)
-	elif iCiv == iAmerica: return (iLangAmerican, iLangEnglish)
-	elif iCiv == iCeltia: return (iLangCeltic,)
-	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
-	else: return -1
-
-def getFoundName(iCiv, tPlot):
-	x, y = tPlot
-	tLanguages = getLanguages(iCiv)
-	if tLanguages == -1: return "-1"
-	
-	for i in range(len(tLanguages)):
-		iLanguage = tLanguages[i]
-		if iLanguage in dFoundMaps:
-			sName = dFoundMaps[iLanguage][67-y][x]
-			if sName != "-1":
-				return sName
-				
-	return "-1"
-	
-def getRenameName(iCiv, sName):
-	tLanguages = getLanguages(iCiv)
-	if tLanguages == -1: return "-1"
-	
-	for i in range(len(tLanguages)):
-		iLanguage = tLanguages[i]
-		if sName in tRenames[iLanguage]:
-			return tRenames[iLanguage][sName]
-			
-	return "-1"
-	
-def onCityBuilt(city):
-
-	iOwner = city.getOwner()
-	x = city.getX()
-	y = city.getY()
-	
-	sNewName = getFoundName(iOwner, (x,y))
-	
-	if sNewName != "-1":
-		city.setName(sNewName, False)
-		
-def onCityAcquired(city, iNewOwner):
-
-	sOldName = city.getName()
-	sNewName = ""
-	
-	if sOldName == 'Inbhir Nis' and iNewOwner != iCeltia: sNewName = 'Inverness'
-	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwner != iCelta: sNewName = 'Edinburgh'
-	elif sOldName in ['Aquincum', 'Ak Ink', 'Buda'] and iNewOwner not in [iRome, iTurkey]: sNewName = 'Budapest'
-	elif sOldName in ['Takao', 'Gaoxiong'] and iNewOwner >= iNumPlayers: sNewName = 'Kaohsiung'
-	elif sOldName == 'Momba&#231;a' and iNewOwner != iPortugal: sNewName = 'Mombasa'
-	elif sOldName == 'Toranaro' and iNewOwner not in [iJapan, iFrance]: sNewName = 'Tolanaro'
-	elif sOldName == 'Kerimane' and iNewOwner != iJapan: sNewName = 'Quelimane'
-	elif sOldName == 'Sofara' and iNewOwner != iJapan: sNewName = 'Sofala'
-	elif sOldName == 'Indraprastha' and iNewOwner == iIndia: sNewName = 'Dilli'
-	
-	if sNewName != "":
-		city.setName(sNewName, False)
-		return
-	
-	sNewName = getRenameName(iNewOwner, sOldName)
-	
-	if sNewName != "-1":
-		city.setName(sNewName, False)
-		
-def applySovietNames():
-	for city in utils.getCityList(iRussia):
-		sOldName = city.getName()
-		sNewName = ""
-		
-		if sOldName == 'Caricyn': sNewName = 'Stalingrad'
-		elif sOldName == 'Sankt-Peterburg': sNewName = 'Leningrad'
-		elif sOldName == "Tver'": sNewName = 'Kalinin'
-		elif sOldName == 'Ekaterinburg': sNewName = 'Sverdlovsk'
-		elif sOldName == 'Nizhnij Novgorod': sNewName = 'Gorki'
-		elif sOldName == 'Samara': sNewName = 'Kujbyshev'
-		elif sOldName == "Car'grad": sNewName = "Konstantinopol'"
-		elif sOldName == 'Bobrujsk': sNewName = 'Stalink'
-		elif sOldName == 'Vjatka': sNewName = 'Kirov'
-		elif sOldName == 'Bavly': sNewName = "Oktjabr'skij"
-		elif sOldName == 'Sumin': sNewName = 'Sumy'
-		elif sOldName == 'Sjangan': sNewName = 'Gon Kong'
-		
-		if sNewName != "":
-			city.setName(sNewName, False)
-			
-def onTechAcquired(iCiv):
-	pCiv = gc.getPlayer(iCiv)
-	lCities = utils.getCityList(iCiv)
-	
-	iEra = pCiv.getCurrentEra()
-	
-	if iEra == con.iMedieval:
-		if iCiv in [iChina, iMongolia, iJapan]:
-			for city in lCities:
-				if city.getName() == "Chang'an": city.setName("Xi'an", False)
-				elif city.getName() == 'Zhongdu': city.setName('Beijing', False)
-		elif iCiv == iIndia:
-			for city in lCities:
-				if city.getName() == 'Indraprastha': city.setName('Dilli', False)
-	elif iEra == con.iRenaissance:
-		if iCiv in [iIndia, iArabia, iTurkey]:
-			for city in lCities:
-				if city.getName() == 'Pataliputra': city.setName('Patna', False)
-		elif iCiv in [iChina, iMongolia, iJapan]:
-			for city in lCities:
-				if city.getName() == 'Haojing': city.setName('Aomen', False)
-		elif iCiv == iVikings:
-			for city in lCities:
-				if city.getName() == 'Nidaros': city.setName('Trondheim', False)
-				elif city.getName() == 'Roskilde': city.setName('K&#248;benhavn', False)
-		elif iCiv == iHolyRome:
-			for city in lCities:
-				if city.getName() == 'Haithabu': city.setName('Hamburg', False)
-		elif iCiv == iRussia:
-			for city in lCities:
-				if city.getName() == 'Novokholmogory': city.setName("Arkhangel'sk", False)
-				elif city.getName() == 'Spas na Kholmu': city.setName('Krasnyj Kholm', False)
-		elif iCiv == iIndonesia:
-			for city in lCities:
-				if city.getName() == 'Tumasik': city.setName('Singapura', False)
-				elif city.getName() == 'Sundapura': city.setName('Jayakarta', False)
-				
-		if iCiv in [iRussia, iHolyRome, iGermany, iPoland]:
-			for city in lCities:
-				if city.getName() == 'Buda': city.setName('Budapest', False)
-	elif iEra == con.iIndustrial:
-		if iCiv in [iEngland, iSpain, iAmerica]:
-			for city in lCities:
-				if city.getName() == 'Yax Mutal': city.setName('Tikal', False)
-		elif iCiv == iJapan:
-			for city in lCities:
-				if city.getName() == 'Edo': city.setName('Toukyou', False)
-		elif iCiv == iRussia:
-			if pCiv.getCivics(3) == con.iStateProperty: applySovietNames()
-		elif iCiv == iTurkey:
-			for city in lCities:
-				if city.getName() == 'Kostantiniyye': city.setName('Istanbul', False)
-		elif iCiv == iItaly:
-			for city in lCities:
-				if city.getName() == 'Fiorenza': city.setName('Firenze', False)
-		elif iCiv == iChina:
-			for city in lCities:
-				if city.getName() == 'Dagou': city.setName('Gaoxiong', False)
-		elif iCiv == iThailand:
-			for city in lCities:
-				if city.getName() == 'Ayutthaya': city.setName('Bangkok', False)
-				
-		if iCiv in [iEngland, iIndia, iMughals]:
-			for city in lCities:
-				if city.getName() == 'Daibul': city.setName('Karachi', False)
-	elif iEra == con.iModern:
-		if iCiv in [iTurkey, iIndependent, iIndependent2, iBarbarian, iSeljuk]:
-			for city in lCities:
-				if city.getName() == 'Angora': city.setName('Ankara', False)
-		elif iCiv in [iKorea, iChina, iJapan]:
-			for city in lCities:
-				if city.getName() == 'Hanseong': city.setName('Seoul', False)
-				
-def onReligionSpread(iReligion, iCiv, city):
-
-	if iCiv == iIndonesia:
-		if iReligion == con.iIslam:
-			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
-		
-
-		
 	
 tRenames = (
 # Egyptian
