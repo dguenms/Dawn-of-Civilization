@@ -4819,7 +4819,35 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	if (eBuilding >= NUM_BUILDINGS_PLAGUE)
 	{
 		int iOtherCiv = (int)eBuilding - NUM_BUILDINGS_PLAGUE;
-		iValue += 5; //from 3 to 7 (max=35) //change to 4 in vanilla and warlords as there is no espionage points there
+		int iCloseness = borders[(int)getOwnerINLINE()][iOtherCiv];
+
+		if (iCloseness < 3 || GET_PLAYER(getOwnerINLINE()).AI_calculateStolenCityRadiusPlots((PlayerTypes)iOtherCiv) > 0 || GET_PLAYER((PlayerTypes)iOtherCiv).AI_calculateStolenCityRadiusPlots(getOwnerINLINE()))
+		{
+			return 0;
+		}
+
+		if (GET_PLAYER(getOwnerINLINE()).calculateScore(false) < GET_PLAYER((PlayerTypes)iOtherCiv).calculateScore(false))
+		{
+			iValue += 5;
+		}
+
+		if (GET_PLAYER(getOwnerINLINE()).AI_getAttitude((PlayerTypes)iOtherCiv) >= ATTITUDE_PLEASED)
+		{
+			iValue += 5;
+		}
+
+		if (iCloseness == 5)
+		{
+			iValue += 5;
+		}
+
+		// so they use their UP
+		if (getOwnerINLINE() == THAILAND)
+		{
+			iValue += 10;
+		}
+
+		/*iValue += 5; //from 3 to 7 (max=35) //change to 4 in vanilla and warlords as there is no espionage points there
 
 		//Rhye - start switch
 		if (!GET_PLAYER(getOwnerINLINE()).isHuman())
@@ -4935,12 +4963,12 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				default:
 					iValue = 0;
 					break;
-			}
+			}*/
 		//Rhye - end
 
 
-		iValue *= (borders[(int)getOwnerINLINE()][iOtherCiv] +1);
-		iValue /= 4;
+		//iValue *= (borders[(int)getOwnerINLINE()][iOtherCiv] +1);
+		//iValue /= 4;
 		if (GET_PLAYER((PlayerTypes)(iOtherCiv)).isHuman())
 			iValue /= 2;
 
@@ -4954,7 +4982,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 			pLoopCityPlot = GC.getMapINLINE().plotSorenINLINE(pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE());
 			if (pLoopCityPlot->isVisible((TeamTypes)iOtherCiv, false))
 			{
-				iValue /= 3;
+				return 0;
 				bHoly = true;
 				break;
 			}
@@ -4970,7 +4998,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				pLoopOtherCityPlot = GC.getMapINLINE().plotSorenINLINE(pLoopOtherCity->getX_INLINE(), pLoopOtherCity->getY_INLINE());
 				if (pLoopOtherCityPlot->isVisible(getTeam(), false))
 				{
-					iValue /= 2;
+					return 0;
 					break;
 				}
 			}

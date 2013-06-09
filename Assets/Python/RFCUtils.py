@@ -1805,3 +1805,22 @@ class RFCUtils:
 
 		# Regular building
 		return false
+		
+	def isReborn(self, iPlayer):
+		return gc.getPlayer(iPlayer).isReborn()
+		
+	def moveCapital(self, iPlayer, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		if plot.isCity():
+			newCapital = plot.getPlotCity()
+		else:
+			return
+	
+		oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
+			
+		if newCapital.getID() == oldCapital.getID(): return
+		
+		oldCapital.setHasRealBuilding(con.iPalace, False)
+		newCapital.setHasRealBuilding(con.iPalace, True)

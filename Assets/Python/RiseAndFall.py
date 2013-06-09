@@ -1475,99 +1475,9 @@ class RiseAndFall:
 						pAztecs.setCivics(4, con.iOrganizedReligion)
 
 #############################################################################################################
-                        
-                        
-                #debug
-                #self.resurrection(iGameTurn)          
-                #self.resurrectionFromBarbs(iGameTurn)
-
 
         def checkPlayerTurn(self, iGameTurn, iPlayer):
 		return
-                #switch leader on first anarchy if early leader is different from primary one, and in a late game anarchy period to a late leader              
-##                if (len(tLeaders[iPlayer]) > 1):
-##                        if (tEarlyLeaders[iPlayer] != tLeaders[iPlayer][0]):
-##                                if (iGameTurn > tBirth[iPlayer]+3 and iGameTurn < tBirth[iPlayer]+50):
-##                                        if (gc.getPlayer(iPlayer).getAnarchyTurns() != 0):                                        
-##                                                gc.getPlayer(iPlayer).setLeader(tLeaders[iPlayer][0])
-##                                                print ("leader early switch:", tLeaders[iPlayer][0], "in civ", iPlayer)                        
-##                        elif (iGameTurn >= tLateLeaders[iPlayer][1]):
-##                                if (tLateLeaders[iPlayer][0] != tLeaders[iPlayer][0]):   
-##                                        if (gc.getPlayer(iPlayer).getAnarchyTurns() != 0):                                                                                     
-##                                                gc.getPlayer(iPlayer).setLeader(tLateLeaders[iPlayer][0])
-##                                                print ("leader late switch:", tLateLeaders[iPlayer][0], "in civ", iPlayer) 
-#                if (len(tLeaders[iPlayer]) > 1):
-#                        if (len(tLateLeaders[iPlayer]) > 5):
-#                                if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][5])):
-#                                        self.switchLateLeaders(iPlayer, 4)
-#                                elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
-#                                        self.switchLateLeaders(iPlayer, 0)
-#                        else:
-#                                if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
-#                                        self.switchLateLeaders(iPlayer, 0)
-        
-                # Leoreth: determine if communist or fascist leader is possible
-                #bCommunist = False
-                #bFascist = False
-                #if iGameTurn >= getTurnForYear(1700) and iGameTurn % 5 == 0:
-                #        bCommunist = False
-                #        bFascist = False
-                #        iCivic2 = gc.getPlayer(iPlayer).getCivics(2)
-                #        iCivic3 = gc.getPlayer(iPlayer).getCivics(3)
-                #        if con.tFascistLeaders[iPlayer] != -1 and iCivic2 == con.iTotalitarianism:       #Totalitarianism and no Republic
-                #                bFascist = True
-                #        if con.tCommunistLeaders[iPlayer] != -1 and iCivic3 == con.iStateProperty:      #State Property
-                #                bCommunist = True
-
-                # Leoreth: if communist or fascist leader possible, switch to those
-                #          if not, use the usual leader succession order (also for switching back)
-                #if bFascist:
-                #        gc.getPlayer(iPlayer).setLeader(con.tFascistLeaders[iPlayer])
-                #elif bCommunist:
-                #        gc.getPlayer(iPlayer).setLeader(con.tCommunistLeaders[iPlayer])
-                #elif utils.getReborn(iPlayer) == 0:
-                #        if (not gc.getPlayer(iPlayer).isReborn()):
-                #                if (len(tLeaders[iPlayer]) > 1):
-                #                        if (len(tLateLeaders[iPlayer]) > 9):
-                #                                if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][9])):
-                #                                        self.switchLateLeaders(iPlayer, 8)
-                #                                elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][5])):
-                #                                        self.switchLateLeaders(iPlayer, 4)
-                #                                elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
-                #                                        self.switchLateLeaders(iPlayer, 0)
-                #                        elif (len(tLateLeaders[iPlayer]) > 5):
-                #                                if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][5])):
-                #                                        self.switchLateLeaders(iPlayer, 4)
-                #                                elif (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
-                #                                        self.switchLateLeaders(iPlayer, 0)
-                #                        else:
-                #                                if (iGameTurn >= getTurnForYear(tLateLeaders[iPlayer][1])):
-                #                                        self.switchLateLeaders(iPlayer, 0)
-                #        else:
-                #                if len(con.tRebirthLeaders[iPlayer]) > 1:
-                #                        if iGameTurn >= getTurnForYear(con.tRebirthLeaders[iPlayer][1]):
-                #                                gc.getPlayer(iPlayer).setLeader(con.tRebirthLeaders[iPlayer][2])
-                #                        else:
-                #                                gc.getPlayer(iPlayer).setLeader(con.tRebirthLeaders[iPlayer][0])
-                #                else:
-                #                        gc.getPlayer(iPlayer).setLeader(con.tRebirthLeaders[iPlayer][0])
-
-        #def switchLateLeaders(self, iPlayer, iLeaderIndex):
-        #        if (tLateLeaders[iPlayer][iLeaderIndex] != gc.getPlayer(iPlayer).getLeader()):
-        #                iThreshold = tLateLeaders[iPlayer][iLeaderIndex+2]
-        #                if (gc.getPlayer(iPlayer).getCurrentEra() >= tLateLeaders[iPlayer][iLeaderIndex+3]):
-        #                        iThreshold *= 2
-        #                if (gc.getPlayer(iPlayer).getAnarchyTurns() != 0 or \
-        #                    utils.getPlagueCountdown(iPlayer) > 0 or \
-        #                    utils.getGreatDepressionCountdown(iPlayer) > 0 or \
-        #                    utils.getStability(iPlayer) <= -10 or \
-        #                    gc.getGame().getSorenRandNum(100, 'die roll') < iThreshold):
-        #                        gc.getPlayer(iPlayer).setLeader(tLateLeaders[iPlayer][iLeaderIndex])
-        #                        print ("leader late switch:", tLateLeaders[iPlayer][iLeaderIndex], "in civ", iPlayer)
-        #                        if (gc.getPlayer(iPlayer).getLeader() == con.iStalin):
-        #                                CityNameManager.CityNameManager().sovietNames()
-            
-            
 
         def fragmentIndependents(self):
 

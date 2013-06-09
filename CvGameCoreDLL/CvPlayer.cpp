@@ -8508,13 +8508,15 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 			return true;
 		}
 	}
+
 	//Rhye - start UP
 	if (getID() == EGYPT)
-		if ((eCivic == (CivicTypes)DYNASTICISM) || (eCivic == (CivicTypes)FORCED_LABOR) || (eCivic == (CivicTypes)PANTHEON))
+		if (eCivic == CIVIC_DYNASTICISM || eCivic == CIVIC_FORCED_LABOR || eCivic == CIVIC_PANTHEON)
 			return true;
-	/*if (getID() == NETHERLANDS)
-		if (eCivic == (CivicTypes)REPUBLIC)
-			return true;*/
+	if (getID() == PORTUGAL)
+		if (eCivic == CIVIC_RESETTLEMENT)
+			if (GET_TEAM(GET_PLAYER(getID()).getTeam()).isHasTech((TechTypes)OPTICS))
+				return true;
 	//Rhye - end UP
 
 	if (!isHasCivicOption((CivicOptionTypes)(GC.getCivicInfo(eCivic).getCivicOptionType())) && !(GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getCivicInfo(eCivic).getTechPrereq()))))

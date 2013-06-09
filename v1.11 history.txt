@@ -68,3 +68,7 @@
 # Mexico renames all flipped cities to location-appropriate names
 # complete rework of the City Name Manager, for improved speed and multiple languages per civ
 # slave plantations cannot be built on jungles or forests anymore
+# prevented the AI to build the embassy of civs it shares borders with, and made the construction of embassies less likely in general
+# renamed Incan Quechuas to Aucacs
+# removed Viking war on spawn against Holy Rome
+# new Portuguese UP: The Power of Exploration: Ocean Trade and Resettlement are allowed with Optics

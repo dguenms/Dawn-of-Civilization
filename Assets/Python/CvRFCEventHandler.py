@@ -214,7 +214,6 @@ class CvRFCEventHandler:
                 self.barb = Barbs.Barbs()
                 self.rel = Religions.Religions()
                 self.res = Resources.Resources()
-                self.cnm = cnm.CityNameManager()
                 self.up = UniquePowers.UniquePowers()
                 self.aiw = AIWars.AIWars()
                 self.cong = Congresses.Congresses()
@@ -281,7 +280,6 @@ class CvRFCEventHandler:
                 owner,playerType,city,bConquest,bTrade = argsList
 		lTradingCompanyList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
                 #CvUtil.pyPrint('City Acquired Event: %s' %(city.getName()))
-                #self.cnm.renameCities(city, playerType)
 		
 		cnm.onCityAcquired(city, playerType)
                 
@@ -306,6 +304,12 @@ class CvRFCEventHandler:
 			utils.spreadMajorCulture(playerType, city.getX(), city.getY())
 
                 self.sta.onCityAcquired(owner,playerType,city,bConquest,bTrade)
+		
+		# relocate capitals
+		if playerType == con.iTurkey and (city.getX(), city.getY()) == (68, 45):
+			utils.moveCapital(con.iTurkey, (68, 45)) # Kostantiniyye
+		elif playerType == con.iMongolia and (city.getX(), city.getY()) == (102, 47):
+			utils.moveCapital(con.iMongolia, (102, 47)) # Khanbaliq
 		
 		#remove slaves if unable to practice slavery
 		if gc.getPlayer(playerType).getCivics(2) != con.iAgrarianism and gc.getPlayer(playerType).getCivics(3) != con.iForcedLabor:
@@ -857,7 +861,6 @@ class CvRFCEventHandler:
                         self.rnf.deleteMode(iPlayer)
                         
                 self.pla.checkPlayerTurn(iGameTurn, iPlayer)
-		#self.cnm.checkPlayerTurn(iGameTurn, iPlayer)
 
                 if (gc.getPlayer(iPlayer).isAlive()):
                         self.vic.checkPlayerTurn(iGameTurn, iPlayer)
@@ -963,7 +966,8 @@ class CvRFCEventHandler:
             
                 iReligion, iOwner, pSpreadCity = argsList
                 self.sta.onReligionSpread(iReligion, iOwner)
-		#self.cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
+		
+		cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
 
 		#Leoreth: if state religion spreads, pagan temples are replaced with its temple. For other religions, they're simply removed.         
 		if pSpreadCity.isHasBuilding(con.iObelisk):
@@ -986,16 +990,18 @@ class CvRFCEventHandler:
         def onTechAcquired(self, argsList):
 
                 #print ("onTechAcquired", argsList)
-                iPlayer = argsList[2]
+                iTech, iTeam, iPlayer, bAnnounce = argsList
 
                 iHuman = utils.getHumanID()
+		
+		iEra = gc.getTechInfo(iTech).getEra()
                 
                 if (not gc.getPlayer(0).isPlayable() and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
                         return
                 
                 if (gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])):                            
                 	self.vic.onTechAcquired(argsList[0], argsList[2])
-                        self.cnm.onTechAcquired(argsList[2])
+                        cnm.onTechAcquired(argsList[2])
 
                 if (gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer]) and iPlayer < con.iNumPlayers):
                         self.rel.onTechAcquired(argsList[0], argsList[2])
@@ -1051,7 +1057,16 @@ class CvRFCEventHandler:
                                         screen.hide("MercenaryManagerButton")
                                         CyInterface().addMessage(iHuman, False, con.iDuration, CyTranslator().getText("TXT_KEY_MERCENARIES_DISABLED", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
                                 
-        #Rhye - end
+			#Rhye - end
+	
+		if iPlayer == con.iJapan and iEra == con.iIndustrial:
+			utils.moveCapital(iPlayer, (116, 46)) # Toukyou
+		elif iPlayer == con.iItaly and iEra == con.iIndustrial:
+			utils.moveCapital(iPlayer, (60, 44)) # Roma
+		elif iPlayer == con.iVikings and iEra == con.iRenaissance:
+			utils.moveCapital(iPlayer, (63, 58)) # Stockholm
+		elif iPlayer == con.iHolyRome and iEra == con.iRenaissance:
+			utils.moveCapital(iPlayer, (63, 49)) # Wien
                 
 
         def onPreSave(self, argsList):

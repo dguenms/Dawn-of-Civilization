@@ -277,12 +277,12 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 				setHasPromotion(((PromotionTypes)34), true); //barrage2
 			}
 		break;*/
-	case PORTUGAL:
+	/*case PORTUGAL:
 		if (getUnitCombatType() == 8) //naval
 			{
 				setHasPromotion(((PromotionTypes)39), true); //sentry
 			}
-		break;
+		break;*/
 	default:
 		break;
 	}

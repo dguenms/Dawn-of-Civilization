@@ -7,7 +7,7 @@ import Consts as con
 import Victory as vic
 from StoredData import sd
 import RFCUtils
-import CityNameManager
+import CityNameManager as cnm
 utils = RFCUtils.RFCUtils()
 import time
 
@@ -2000,7 +2000,7 @@ class DynamicCivs:
 			if not bMonarchy and iEra >= iIndustrial:
 				self.setLeader(iPlayer, con.iStalin)
 				if self.isCommunist(iPlayer):
-                                        CityNameManager.CityNameManager().sovietNames()
+                                        cnm.applySovietNames()
 				return
 				
 			if iEra >= con.iIndustrial:
