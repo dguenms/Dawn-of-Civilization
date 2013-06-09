@@ -306,10 +306,11 @@ class CvRFCEventHandler:
                 self.sta.onCityAcquired(owner,playerType,city,bConquest,bTrade)
 		
 		# relocate capitals
-		if playerType == con.iTurkey and (city.getX(), city.getY()) == (68, 45):
-			utils.moveCapital(con.iTurkey, (68, 45)) # Kostantiniyye
-		elif playerType == con.iMongolia and (city.getX(), city.getY()) == (102, 47):
-			utils.moveCapital(con.iMongolia, (102, 47)) # Khanbaliq
+		if utils.getHumanID() != playerType:
+			if playerType == con.iTurkey and (city.getX(), city.getY()) == (68, 45):
+				utils.moveCapital(con.iTurkey, (68, 45)) # Kostantiniyye
+			elif playerType == con.iMongolia and (city.getX(), city.getY()) == (102, 47):
+				utils.moveCapital(con.iMongolia, (102, 47)) # Khanbaliq
 		
 		#remove slaves if unable to practice slavery
 		if gc.getPlayer(playerType).getCivics(2) != con.iAgrarianism and gc.getPlayer(playerType).getCivics(3) != con.iForcedLabor:
@@ -1059,14 +1060,15 @@ class CvRFCEventHandler:
                                 
 			#Rhye - end
 	
-		if iPlayer == con.iJapan and iEra == con.iIndustrial:
-			utils.moveCapital(iPlayer, (116, 46)) # Toukyou
-		elif iPlayer == con.iItaly and iEra == con.iIndustrial:
-			utils.moveCapital(iPlayer, (60, 44)) # Roma
-		elif iPlayer == con.iVikings and iEra == con.iRenaissance:
-			utils.moveCapital(iPlayer, (63, 58)) # Stockholm
-		elif iPlayer == con.iHolyRome and iEra == con.iRenaissance:
-			utils.moveCapital(iPlayer, (63, 49)) # Wien
+		if utils.getHumanID() != iPlayer:
+			if iPlayer == con.iJapan and iEra == con.iIndustrial:
+				utils.moveCapital(iPlayer, (116, 46)) # Toukyou
+			elif iPlayer == con.iItaly and iEra == con.iIndustrial:
+				utils.moveCapital(iPlayer, (60, 44)) # Roma
+			elif iPlayer == con.iVikings and iEra == con.iRenaissance:
+				utils.moveCapital(iPlayer, (63, 58)) # Stockholm
+			elif iPlayer == con.iHolyRome and iEra == con.iRenaissance:
+				utils.moveCapital(iPlayer, (63, 49)) # Wien
                 
 
         def onPreSave(self, argsList):
