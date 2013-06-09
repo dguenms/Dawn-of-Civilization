@@ -59,8 +59,7 @@ from StoredData import sd
 import Consts as con
 import RFCUtils
 import Victory as vic
-import CityNameManager
-cnm = CityNameManager.CityNameManager()
+import CityNameManager as cnm
 utils = RFCUtils.RFCUtils()
 gc = CyGlobalContext()
 
@@ -1423,9 +1422,7 @@ def getUHVTileInfo(argsList):
 def getCityName(self, argsList):
 	iPlayer, x, y = argsList
 	
-	iReborn = utils.getReborn(iPlayer)
-	
-	result = cnm.tCityMap[iReborn][iPlayer][67-y][x]
+	result = cnm.getFoundName(iPlayer, (x,y))
 	
 	if result == -1:
 		return ""
