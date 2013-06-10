@@ -214,6 +214,7 @@ class UniquePowers:
 	
 		if iCiv in [iCarthage, iPersia, iCeltia, iEgypt]:
 			iNumTargets = 2
+			self.romanConquestUP(iCiv, iNumTargets)
 		elif iCiv == iGreece and utils.getHumanID() != iGreece:
 			bEgypt = False
 			cityList = PyPlayer(iGreece).getCityList()
@@ -230,7 +231,7 @@ class UniquePowers:
 			else:
 				iNumTargets = 3
 			
-		self.romanConquestUP(iCiv, iNumTargets)
+			self.romanConquestUP(iCiv, iNumTargets)
 
 		#if gc.getPlayer(iRome).isReborn():
 		#	return
