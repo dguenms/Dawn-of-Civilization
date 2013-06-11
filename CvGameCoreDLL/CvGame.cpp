@@ -2281,6 +2281,7 @@ void CvGame::update()
 		case CONGO:
 		case GERMANY:
 		case AMERICA:
+		case BRAZIL:
 			//if (getGameTurn() == 0 || (getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition
 			if (getGameTurn() == 0 || (getGameTurn() == getTurnForYear(600) && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition // edead
 			{

@@ -59,6 +59,7 @@ iThailand = con.iThailand
 iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
+iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
 iNumActivePlayers = con.iNumActivePlayers
@@ -111,6 +112,7 @@ pThailand = gc.getPlayer(iThailand)
 pCongo = gc.getPlayer(iCongo)
 pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
+pBrazil = gc.getPlayer(iBrazil)
 pSeljuks = gc.getPlayer(iSeljuks)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
@@ -158,6 +160,7 @@ teamThailand = gc.getTeam(pThailand.getTeam())
 teamCongo = gc.getTeam(pCongo.getTeam())
 teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
+teamBrazil = gc.getTeam(pBrazil.getTeam())
 teamSeljuks = gc.getTeam(pSeljuks.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
@@ -227,6 +230,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEFAULT",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEFAULT",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEFAULT",
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEFAULT",
                 }
 		
 		self.peopleNames = {
@@ -269,6 +273,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_PEOPLES",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_PEOPLES",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_PEOPLES",
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_PEOPLES",
                 }
 				
 		self.specificVassalNames = {
@@ -553,7 +558,8 @@ class DynamicCivs:
 				iGermany : "TXT_KEY_CIV_GERMANY_AMERICAN_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_AMERICAN_VASSAL",
 				iKorea : "TXT_KEY_CIV_KOREA_AMERICAN_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_AMERICAN_VASSAL",}
+				iAztecs : "TXT_KEY_CIV_AZTECS_AMERICAN_VASSAL",},
+			# Brazil - none so far
 		}
 		
 		self.genericVassalNames = {
@@ -609,6 +615,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_SOVIET_VASSAL",
 			iGermany : "TXT_KEY_CIV_GERMANY_SOVIET_VASSAL",
                         iAmerica : "TXT_KEY_CIV_AMERICA_SOVIET_VASSAL",
+			iBrazil : "TXT_KEY_CIV_BRAZIL_SOVIET_VASSAL",
                 }
 		
 		self.naziVassals = {
@@ -651,6 +658,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_NAZI_VASSAL",
 			iGermany : "TXT_KEY_CIV_GERMANY_NAZI_VASSAL",
                         iAmerica : "TXT_KEY_CIV_AMERICA_NAZI_VASSAL",
+			iBrazil : "TXT_KEY_CIV_BRAZIL_NAZI_VASSAL",
                 }
 
                 self.fascistNames = {
@@ -693,6 +701,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_FASCIST",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_FASCIST",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_FASCIST",
+			iBrazil : "TXT_KEY_CIV_BRAZI_DESC_FASCIST",
                 }
 
                 self.communistNames = {
@@ -735,6 +744,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_COMMUNIST",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_COMMUNIST",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_COMMUNIST",
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_COMMUNIST",
                 }
 
                 self.democraticNames = {
@@ -777,6 +787,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEMOCRATIC",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEMOCRATIC",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEMOCRATIC",
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEMOCRATIC",
                 }
 		
 		self.modernIslamNames = {
@@ -826,7 +837,8 @@ class DynamicCivs:
 			iThailand : con.iNaresuan,
 			iCongo : con.iMbemba,
 			iGermany : con.iFrederick,
-			iAmerica : con.iWashington
+			iAmerica : con.iWashington,
+			iBrazil : con.iDomPedro,
 		}
 		
 		self.lateStartingLeaders = {
@@ -1754,6 +1766,11 @@ class DynamicCivs:
 				return
 				
 			# Empire of Columbia as default
+			
+		elif iPlayer == iBrazil:
+			if bEmpire:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BRAZIL_EMPIRE")
+				return
 		
 		#if iPlayer == iCarthage:
 		#	self.setCivName(iPlayer, self.defaultNames[iPlayer], "TXT_KEY_CIV_CARTHAGE_SHORT_DESC", "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
@@ -2107,6 +2124,9 @@ class DynamicCivs:
 			if iGameTurn >= getTurnForYear(1850):
 				self.setLeader(iPlayer, con.iLincoln)
 				return
+				
+		elif iPlayer == iBrazil:
+			return
 				
 		if not gc.getPlayer(0).isPlayable() and iPlayer in self.lateStartingLeaders:
 			self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])

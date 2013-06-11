@@ -7755,6 +7755,10 @@ int CvUnit::workRate(bool bMax) const
 		iRate *= 150;
 		iRate /= 100;
 		break;
+	case BRAZIL:
+		iRate *= 100;
+		iRate /= 100;
+		break;
 	default:
 		iRate *= 80;
 		iRate /= 100;
@@ -9697,7 +9701,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 
 		if (pOldCity != NULL)
 		{
-			if (isMilitaryHappiness())
+			if (isMilitaryHappiness() && pOldCity->getOwner() == getOwner()) // Leoreth: military happiness not for other players
 			{
 				pOldCity->changeMilitaryHappinessUnits(-1);
 			}
@@ -9848,7 +9852,7 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 
 		if (pNewCity != NULL)
 		{
-			if (isMilitaryHappiness())
+			if (isMilitaryHappiness() && pNewCity->getOwner() == getOwner()) // Leoreth: military happiness not for other players
 			{
 				pNewCity->changeMilitaryHappinessUnits(1);
 			}

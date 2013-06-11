@@ -73,7 +73,8 @@ tPool3 = (con.iEgypt,
 	  con.iPoland,
 	  con.iMoors,
 	  con.iCongo,
-	  con.iTibet)
+	  con.iTibet,
+	  con.iBrazil)
 
 
 class Communications:
@@ -224,9 +225,9 @@ class Communications:
 
                 for iLoopCiv in range (iNumMajorPlayers):
                         if (city.hasBuilding(iNumBuildingsPlague + iLoopCiv)):
-				#print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)
+				print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)
                                 city.setHasRealBuilding(iNumBuildingsPlague + iLoopCiv, False)
-				#print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)+" passed."
+				print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)+" passed."
                                 print ("embassy deleted on city acquired", city.getName())
         
 

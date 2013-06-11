@@ -6765,7 +6765,8 @@ m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
 m_ppaiSpecialistYieldChange(NULL),
-m_ppaiBonusYieldModifier(NULL)
+m_ppaiBonusYieldModifier(NULL),
+m_ppaiBonusCommerceModifier(NULL) //Leoreth
 {
 }
 //------------------------------------------------------------------------------------------------------
@@ -6828,8 +6829,10 @@ CvBuildingInfo::~CvBuildingInfo()
 		for(int i=0;i<GC.getNumBonusInfos();i++)
 		{
 			SAFE_DELETE_ARRAY(m_ppaiBonusYieldModifier[i]);
+			SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier[i]); // Leoreth
 		}
 		SAFE_DELETE_ARRAY(m_ppaiBonusYieldModifier);
+		SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier); // Leoreth
 	}
 }
 
@@ -7798,6 +7801,23 @@ int* CvBuildingInfo::getBonusYieldModifierArray(int i) const
 	return m_ppaiBonusYieldModifier[i];
 }
 
+// Leoreth
+int CvBuildingInfo::getBonusCommerceModifier(int i, int j) const
+{
+	FAssertMsg(i < GC.getNumBonusInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppaiBonusCommerceModifier ? m_ppaiBonusCommerceModifier[i][j] : -1;
+}
+
+int* CvBuildingInfo::getBonusCommerceModifierArray(int i) const
+{
+	FAssertMsg(i < GC.getNumBonusInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppaiBonusCommerceModifier[i];
+}
+
 const TCHAR* CvBuildingInfo::getButton() const
 {
 	const CvArtInfoBuilding * pBuildingArtInfo;
@@ -8145,6 +8165,16 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 		SAFE_DELETE_ARRAY(m_ppaiBonusYieldModifier);
 	}
 
+	// Leoreth
+	if (m_ppaiBonusCommerceModifier != NULL)
+	{
+		for (i = 0; i < GC.getNumBonusInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier);
+	}
+
 	m_ppaiBonusYieldModifier = new int*[GC.getNumBonusInfos()];
 	for(i=0;i<GC.getNumBonusInfos();i++)
 	{
@@ -8330,6 +8360,12 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	for(i=0;i<GC.getNumBonusInfos();i++)
 	{
 		stream->Write(NUM_YIELD_TYPES, m_ppaiBonusYieldModifier[i]);
+	}
+
+	// Leoreth
+	for (i = 0; i < GC.getNumBonusInfos(); i++)
+	{
+		stream->Write(NUM_COMMERCE_TYPES, m_ppaiBonusCommerceModifier[i]);
 	}
 }
 
@@ -8883,6 +8919,49 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 					else
 					{
 						pXML->InitList(&m_ppaiBonusYieldModifier[k], NUM_YIELD_TYPES);
+					}
+
+				}
+
+				if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+				{
+					break;
+				}
+			}
+
+			// set the current xml node to it's parent node
+			gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+		}
+
+		// set the current xml node to it's parent node
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	// Leoreth
+	pXML->Init2DIntList(&m_ppaiBonusCommerceModifier, GC.getNumBonusInfos(), NUM_COMMERCE_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"BonusCommerceModifiers"))
+	{
+		iNumChildren = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+
+		if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"BonusCommerceModifier"))
+		{
+			for(j=0;j<iNumChildren;j++)
+			{
+				pXML->GetChildXmlValByName(szTextVal, "BonusType");
+				k = pXML->FindInInfoClass(szTextVal);
+				if (k > -1)
+				{
+					// delete the array since it will be reallocated
+					SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier[k]);
+					if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CommerceModifiers"))
+					{
+						// call the function that sets the yield change variable
+						pXML->SetCommerce(&m_ppaiBonusCommerceModifier[k]);
+						gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+					}
+					else
+					{
+						pXML->InitList(&m_ppaiBonusCommerceModifier[k], NUM_COMMERCE_TYPES);
 					}
 
 				}

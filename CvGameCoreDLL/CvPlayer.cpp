@@ -24811,7 +24811,7 @@ void CvPlayer::setDemocracyCountdown(int iNewValue)
 	m_iDemocracyCountdown = iNewValue;
 }
 
-void CvPlayer::doStability()
+/*void CvPlayer::doStability()
 {
 	// benchmark the method
 	clock_t start, end;
@@ -26030,7 +26030,7 @@ void CvPlayer::doStability()
 	}
 
 
-}
+}*/
 
 int CvPlayer::getLatestRebellionTurn()
 {

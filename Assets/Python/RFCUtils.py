@@ -599,10 +599,14 @@ class RFCUtils:
                                                 pNewOwner.acquireCity(city, False, True)
 						
 					# Leoreth: reset unhappiness timers
-					iHurryAngerTime = city.getHurryAngerTimer()
-					iConscriptAngerTime = city.getConscriptAngerTimer()
-					city.changeHurryAngerTimer(-iHurryAngerTime)
-					city.changeConscriptAngerTimer(-iConscriptAngerTime)
+					#iHurryAngerTime = city.getHurryAngerTimer()
+					#iConscriptAngerTime = city.getConscriptAngerTimer()
+					
+					#if iHurryAngerTime > 0:
+					#	city.changeHurryAngerTimer(-iHurryAngerTime)
+						
+					#if iConscriptAngerTime > 0:
+					#	city.changeConscriptAngerTimer(-iConscriptAngerTime)
 					
 					city.setInfoDirty(True)
 					city.setLayoutDirty(True)

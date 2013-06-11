@@ -1157,7 +1157,7 @@ public:
 	int getLatestRebellionTurn();
 	void setLatestRebellionTurn(int iNewValue);
 
-	void doStability();
+	//void doStability();
 
 	/*StabilityList getStabilityList();
 	void setStabilityList(StabilityList);

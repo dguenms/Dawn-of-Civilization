@@ -5831,13 +5831,15 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == COMMUNISM)
 										iValue *= 3;
 									if (iI == MILITARY_SCIENCE || iI == RIFLING || iI == MILITARY_TRADITION)
-										iValue *= 2;
+										iValue *= 3;
 									if (iI == MEDITATION)
 										iValue /= 2;
 									if (iI == LITERATURE || iI == MUSIC) {
 										iValue *= 3;
 										iValue /= 2;
 									}
+									if (iI == PHILOSOPHY || iI == PRINTING_PRESS || iI == LIBERALISM || iI == CONSTITUTION || iI == DEMOCRACY)
+										iValue /= 2;
 									if (iI == FISSION) {
 										iValue *= 5;
 										iValue /= 4;
@@ -5938,6 +5940,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 									if (iI == RAILROAD)
 										iValue *= 3;
+									break;
+								case BRAZIL:
+									if (iI == RADIO || iI == PLASTICS || iI == ELECTRICITY || iI == COMBUSTION)
+										iValue *= 2;
 									break;
 								default:
 									if (iI == POLYTHEISM || iI == MONOTHEISM)

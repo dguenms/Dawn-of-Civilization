@@ -204,6 +204,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("greatPersonBorn", self.onGreatPersonBorn)
 		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
+		eventManager.addEventHandler("plotFeatureRemoved", self.onPlotFeatureRemoved)
 		#eventManager.addEventHandler("changeWar", self.onChangeWar)
 		#eventManager.addEventHandler("unitGifted", self.onUnitGifted)
                
@@ -643,6 +644,9 @@ class CvRFCEventHandler:
 		if gc.getPlayer(iPlayer).getCivics(2) != con.iAgrarianism and gc.getPlayer(iPlayer).getCivics(3) != con.iForcedLabor and gc.getPlayer(iPlayer).getCivics(3) != con.iMercantilism:
 			utils.clearSlaves(iPlayer)
 			
+		if iPlayer in [con.iEgypt]:
+			cnm.onRevolution(iPlayer)
+			
 	def onCityGrowth(self, argsList):
 		'City Population Growth'
 		pCity = argsList[0]
@@ -764,7 +768,21 @@ class CvRFCEventHandler:
 		# Leoreth: found Buddhism when a Hindu temple is built
 		if iBuildingType == con.iHinduTemple:
 			self.rel.foundBuddhism(city)
-
+			
+	def onPlotFeatureRemoved(self, argsList):
+		plot, city, iFeature = argsList
+		
+		if plot.getOwner() == con.iBrazil:
+			iGold = 0
+			
+			if iFeature == con.iForest: iGold = 15
+			elif iFeature == con.iJungle: iGold = 20
+			
+			if iGold > 0:
+				gc.getPlayer(con.iBrazil).changeGold(iGold)
+				
+				if utils.getHumanID() == con.iBrazil:
+					CyInterface().addMessage(con.iBrazil, False, con.iDuration, CyTranslator().getText("TXT_KEY_DEFORESTATION_EVENT", (gc.getFeatureInfo(iFeature).getText(), city.getName(), iGold)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getCommerceInfo(0).getButton(), ColorTypes(con.iWhite), plot.getX(), plot.getY(), True, True)
 
         def onProjectBuilt(self, argsList):
                 city, iProjectType = argsList

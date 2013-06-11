@@ -50,6 +50,7 @@ CvCity::CvCity()
 	m_aiReligionCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCorporationCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCommerceRateModifier = new int[NUM_COMMERCE_TYPES];
+	m_aiBonusCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
 	m_aiCommerceHappinessPer = new int[NUM_COMMERCE_TYPES];
 	m_aiDomainFreeExperience = new int[NUM_DOMAIN_TYPES];
 	m_aiDomainProductionModifier = new int[NUM_DOMAIN_TYPES];
@@ -134,6 +135,7 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiReligionCommerce);
 	SAFE_DELETE_ARRAY(m_aiCorporationCommerce);
 	SAFE_DELETE_ARRAY(m_aiCommerceRateModifier);
+	SAFE_DELETE_ARRAY(m_aiBonusCommerceRateModifier); //Leoreth
 	SAFE_DELETE_ARRAY(m_aiCommerceHappinessPer);
 	SAFE_DELETE_ARRAY(m_aiDomainFreeExperience);
 	SAFE_DELETE_ARRAY(m_aiDomainProductionModifier);
@@ -242,7 +244,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		}
 	}
 
-	changeMilitaryHappinessUnits(pPlot->plotCount(PUF_isMilitaryHappiness));
+	changeMilitaryHappinessUnits(pPlot->plotCount(PUF_isMilitaryHappiness, (int)getOwnerINLINE())); // Leoreth: no military happiness for other players
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
@@ -656,6 +658,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiReligionCommerce[iI] = 0;
 		m_aiCorporationCommerce[iI] = 0;
 		m_aiCommerceRateModifier[iI] = 0;
+		m_aiBonusCommerceRateModifier[iI] = 0; // Leoreth
 		m_aiCommerceHappinessPer[iI] = 0;
 	}
 
@@ -2294,6 +2297,12 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		if (getOwnerINLINE() != MUGHALS)
 			if (GET_PLAYER((PlayerTypes)MUGHALS).isHuman())
 				if (!GET_PLAYER((PlayerTypes)MUGHALS).isAlive())
+					return false;
+
+	if (eBuilding == WEMBLEY || eBuilding == GREATDAM || eBuilding == CRISTO)
+		if (getOwnerINLINE() != BRAZIL)
+			if (GET_PLAYER((PlayerTypes)BRAZIL).isHuman())
+				if (!GET_PLAYER((PlayerTypes)BRAZIL).isAlive())
 					return false;
 
 	if (eBuilding == CHICHENITZA)
@@ -4069,6 +4078,22 @@ int CvCity::getBonusYieldRateModifier(YieldTypes eIndex, BonusTypes eBonus) cons
 	return iModifier;
 }
 
+// Leoreth
+int CvCity::getBonusCommerceRateModifier(CommerceTypes eIndex, BonusTypes eBonus) const
+{
+	int iModifier;
+	int iI;
+
+	iModifier = 0;
+
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		iModifier += getNumActiveBuilding((BuildingTypes)iI) * GC.getBuildingInfo((BuildingTypes)iI).getBonusCommerceModifier(eBonus, eIndex);
+	}
+
+	return iModifier;
+}
+
 
 void CvCity::processBonus(BonusTypes eBonus, int iChange)
 {
@@ -4126,6 +4151,11 @@ void CvCity::processBonus(BonusTypes eBonus, int iChange)
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		changeBonusYieldRateModifier(((YieldTypes)iI), (getBonusYieldRateModifier(((YieldTypes)iI), eBonus) * iChange));
+	}
+
+	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
+	{
+		changeBonusCommerceRateModifier(((CommerceTypes)iI), (getBonusCommerceRateModifier(((CommerceTypes)iI), eBonus) * iChange));
 	}
 }
 
@@ -4266,6 +4296,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 				{
 					changeBonusYieldRateModifier(((YieldTypes)iJ), (GC.getBuildingInfo(eBuilding).getBonusYieldModifier(iI, iJ) * iChange));
+				}
+
+				// Leoreth
+				for (iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+				{
+					changeBonusCommerceRateModifier(((CommerceTypes)iJ), (GC.getBuildingInfo(eBuilding).getBonusCommerceModifier(iI, iJ) * iChange));
 				}
 			}
 		}
@@ -8641,6 +8677,39 @@ void CvCity::changeBonusYieldRateModifier(YieldTypes eIndex, int iChange)
 }
 
 
+// Leoreth
+int CvCity::getBonusCommerceRateModifier(CommerceTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+	return m_aiBonusCommerceRateModifier[eIndex];
+}
+
+
+void CvCity::changeBonusCommerceRateModifier(CommerceTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+
+	if (iChange != 0)
+	{
+		m_aiBonusCommerceRateModifier[eIndex] = (m_aiBonusCommerceRateModifier[eIndex] + iChange);
+		FAssert(getCommerceRate(eIndex) >= 0);
+
+		GET_PLAYER(getOwnerINLINE()).invalidateCommerceRankCache(eIndex);
+
+		updateCommerce(eIndex);
+
+		AI_setAssignWorkDirty(true);
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			setInfoDirty(true);
+		}
+	}
+}
+
+
 int CvCity::getTradeYield(YieldTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
@@ -8951,7 +9020,7 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 
 int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 {
-	return std::max(0, (getCommerceRateModifier(eIndex) + GET_PLAYER(getOwnerINLINE()).getCommerceRateModifier(eIndex) + ((isCapital()) ? GET_PLAYER(getOwnerINLINE()).getCapitalCommerceRateModifier(eIndex) : 0) + 100));
+	return std::max(0, (getCommerceRateModifier(eIndex) + GET_PLAYER(getOwnerINLINE()).getCommerceRateModifier(eIndex) + ((isCapital()) ? GET_PLAYER(getOwnerINLINE()).getCapitalCommerceRateModifier(eIndex) : 0) + getBonusCommerceRateModifier(eIndex) + 100)); // Leoreth
 }
 
 
@@ -9293,22 +9362,31 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 	FAssertMsg(eCorporation < GC.getNumCorporationInfos(), "GC.getNumCorporationInfos expected to be >= 0");
 
 	int iCommerce = 0;
+	int iNumBonuses = 0;
 
 	if (isActiveCorporation(eCorporation) && !isDisorder())
 	{
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
-			if (NO_BONUS != eBonus && getNumBonuses(eBonus) > 0)
+			iNumBonuses = getNumBonuses(eBonus);
+
+			// Leoreth: Brazilian UP (sugar counts as oil for oil industry)
+			if (getOwner() == BRAZIL && eBonus == BONUS_OIL)
 			{
-				// Leoreth: Dutch UP
-				if (getOwner() == (PlayerTypes)NETHERLANDS && eCorporation == (CorporationTypes)1) // trading company
-				{
-					iCommerce += 2 * (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * getNumBonuses(eBonus) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-				}else{
-					iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * getNumBonuses(eBonus) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-					//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12,getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
-				}
+				iNumBonuses += getNumBonuses(BONUS_SUGAR);
+			}
+
+			// Leoreth: Dutch UP (double yield from trading company)
+			if (getOwner() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+			{
+				iNumBonuses *= 2;
+			}
+
+			if (NO_BONUS != eBonus && iNumBonuses > 0)
+			{
+				iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
+				//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12,getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			}
 		}
 	}
@@ -13283,6 +13361,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiReligionCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCorporationCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRateModifier);
+	pStream->Read(NUM_COMMERCE_TYPES, m_aiBonusCommerceRateModifier); // Leoreth
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);
@@ -13521,6 +13600,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiReligionCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCorporationCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRateModifier);
+	pStream->Write(NUM_COMMERCE_TYPES, m_aiBonusCommerceRateModifier); // Leoreth
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);

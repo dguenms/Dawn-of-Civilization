@@ -18,15 +18,15 @@ typedef list<char*> LISTCHAR;
 
 #define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
 
-#define BEGIN_WONDERS				(127) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(128) // increment if normal building (not for wonders) is added
 //#define NUM_WONDERS				(186)
-#define NUM_BUILDINGS_PLAGUE		(201) // always increment when a building is added
-#define NUM_BUILDINGTYPES_PLAGUE	(129) // increment when a building class is created
+#define NUM_BUILDINGS_PLAGUE		(202) // always increment when a building is added except embassies
+#define NUM_BUILDINGTYPES_PLAGUE	(129) // increment when a building class is created except embassies
 
-#define NUM_MAJOR_PLAYERS		(39)
-#define NUM_PL					(39)
+#define NUM_MAJOR_PLAYERS		(40)
+#define NUM_PL					(40)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
-#define NUM_CIVS				(47)
+#define NUM_CIVS				(48)
 #define NUM_BONUS_ISLANDS		(10)
 
 enum MyCivs
@@ -70,6 +70,7 @@ enum MyCivs
  NETHERLANDS,
  GERMANY,
  AMERICA,
+ BRAZIL,
  INDEPENDENT,
  INDEPENDENT2,
  NATIVE,
@@ -269,47 +270,6 @@ enum MyReligions
 	NUM_RELIGIONS
 };
 
-enum MyBonuses
-{
-	BONUS_ALUMINUM,
-	BONUS_COAL,
-	BONUS_COPPER,
-	BONUS_HORSE,
-	BONUS_IRON,
-	BONUS_MARBLE,
-	BONUS_OIL,
-	BONUS_STONE,
-	BONUS_URANIUM,
-	BONUS_BANANA,
-	BONUS_CLAM,
-	BONUS_CORN,
-	BONUS_COW,
-	BONUS_CRAB,
-	BONUS_DEER,
-	BONUS_FISH,
-	BONUS_PIG,
-	BONUS_RICE,
-	BONUS_SHEEP,
-	BONUS_WHEAT,
-	BONUS_DYE,
-	BONUS_FUR,
-	BONUS_GEMS,
-	BONUS_GOLD,
-	BONUS_INCENSE,
-	BONUS_IVORY,
-	BONUS_SILK,
-	BONUS_SILVER,
-	BONUS_SPICES,
-	BONUS_SUGAR,
-	BONUS_WINE,
-	BONUS_WHALE,
-	BONUS_DRAMA,
-	BONUS_MUSIC,
-	BONUS_MOVIES,
-	BONUS_COTTON,
-	BONUS_SWAMP
-};
-
 enum MyCivics
 {
 	TYRANNY,
@@ -429,7 +389,7 @@ enum ECSArtStyles
 
 extern int startingTurn[];
 extern int startingTurnYear[]; // edead
-extern int fallTurnYear[];
+//extern int fallTurnYear[];
 extern char loadingTime[NUM_CIVS][4];
 extern char loadingTime600AD[NUM_CIVS][4];
 extern char startingYear[NUM_CIVS][6];

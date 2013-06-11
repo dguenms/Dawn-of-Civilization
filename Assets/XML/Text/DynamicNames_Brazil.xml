@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DESC</Tag>
+		<English>The Brazilians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DESC_PEOPLES</Tag>
+		<English>Brazilian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DESC_DEFAULT</Tag>
+		<English>Kingdom of Brazil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DESC_DEMOCRATIC</Tag>
+		<English>Federative Republic of Brazil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DESC_COMMUNIST</Tag>
+		<English>Socialist Republic of Brazil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DESC_FASCIST</Tag>
+		<English>United States of Brazil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_EMPIRE</Tag>
+		<English>Empire of Brazil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_SOVIET_VASSAL</Tag>
+		<English>Soviet Brazil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_NAZI_VASSAL</Tag>
+		<English>German Brazil</English>
+	</TEXT>
+</Civ4GameText>

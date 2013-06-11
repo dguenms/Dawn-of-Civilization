@@ -80,6 +80,7 @@ iThailand = con.iThailand
 iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
+iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
 iNumActivePlayers = con.iNumActivePlayers
@@ -132,6 +133,7 @@ pThailand = gc.getPlayer(iThailand)
 pCongo = gc.getPlayer(iCongo)
 pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
+pBrazil = gc.getPlayer(iBrazil)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
 pNative = gc.getPlayer(iNative)
@@ -179,6 +181,7 @@ teamThailand = gc.getTeam(pThailand.getTeam())
 teamCongo = gc.getTeam(pCongo.getTeam())
 teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
+teamBrazil = gc.getTeam(pBrazil.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
 teamNative = gc.getTeam(pNative.getTeam())
@@ -733,7 +736,7 @@ class RiseAndFall:
 		pCongo.changeGold(300)
 		pGermany.changeGold(800)
                 pAmerica.changeGold(1500)
-		
+		pBrazil.changeGold(1600)
                
            
                 # display welcome message
@@ -1062,7 +1065,7 @@ class RiseAndFall:
 			if utils.getHumanID() in con.lCivGroups[2]:
 				CyInterface().addMessage(CyGame().getActivePlayer(), True , con.iDuration, CyTranslator().getText("TXT_KEY_SELJUK_HORDES", ()), "", 1 , "", ColorTypes(con.iRed),0,0,False,False)
 
-		if iGameTurn == getTurnForYear(1070 + utils.getSeed()/10 - 5): #Linkman226- Seljuks
+		if iGameTurn == getTurnForYear(1070 + utils.getSeed()%10 - 5): #Linkman226- Seljuks
                         tSpawnPlots = ((77,41), (74, 43), (72, 44))
                         for plot in tSpawnPlots:
 				spawnPlot = utils.getFreePlot(plot[0], plot[1])
@@ -1072,7 +1075,7 @@ class RiseAndFall:
                                 pSeljuks.setLastStateReligion(con.iIslam)
 				teamSeljuks.declareWar(iByzantium, True, WarPlanTypes.WARPLAN_TOTAL)
 
-		if iGameTurn == getTurnForYear(1230 + utils.getSeed()/10): #Linkman226- Mongol Conquerors for Seljuks
+		if iGameTurn == getTurnForYear(1230 + utils.getSeed()%10): #Linkman226- Mongol Conquerors for Seljuks
 			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
                         	tPlot = utils.getFreePlot(84, 46)
 				targetAreaTL = (73, 38)
@@ -1099,43 +1102,20 @@ class RiseAndFall:
 				utils.makeUnitAI(con.iTrebuchet, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				if utils.getHumanID() in con.lCivGroups[1]:
 					CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iSeljuks).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-                if iGameTurn == getTurnForYear(1230 + utils.getSeed()/10 + 3): #Linkman226- Mongol Conquerors for Seljuks
+                if iGameTurn == getTurnForYear(1230 + utils.getSeed()%10 + 3): #Linkman226- Mongol Conquerors for Seljuks
 			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
                         	tPlot = utils.getFreeNeighborPlot((83, 42))
                         	utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-					
-					
-
-
-                        
-                #birth of civs
-##                if (gc.getPlayer(0).isPlayable()): #late start condition
-##                        self.initBirth(iGameTurn, con.tBirth[iGreece], iGreece)
-##                        self.initBirth(iGameTurn, con.tBirth[iPersia], iPersia)    
-##                        self.initBirth(iGameTurn, con.tBirth[iCarthage], iCarthage)
-##                        self.initBirth(iGameTurn, con.tBirth[iRome], iRome)
-##                        self.initBirth(iGameTurn, con.tBirth[iJapan], iJapan)
-##                        self.initBirth(iGameTurn, con.tBirth[iEthiopia], iEthiopia)
-##                        self.initBirth(iGameTurn, con.tBirth[iMaya], iMaya)
-##                        self.initBirth(iGameTurn, con.tBirth[iVikings], iVikings)
-##                        self.initBirth(iGameTurn, con.tBirth[iArabia], iArabia)
-##                self.initBirth(iGameTurn, con.tBirth[iKhmer], iKhmer)
-##                self.initBirth(iGameTurn, con.tBirth[iSpain], iSpain)
-##                self.initBirth(iGameTurn, con.tBirth[iFrance], iFrance)
-##                self.initBirth(iGameTurn, con.tBirth[iEngland], iEngland)
-##                self.initBirth(iGameTurn, con.tBirth[iGermany], iGermany)
-##                self.initBirth(iGameTurn, con.tBirth[iRussia], iRussia)
-##                self.initBirth(iGameTurn, con.tBirth[iNetherlands], iNetherlands)
-##                self.initBirth(iGameTurn, con.tBirth[iMali], iMali)
-##                self.initBirth(iGameTurn, con.tBirth[iTurkey], iTurkey)
-##                self.initBirth(iGameTurn, con.tBirth[iPortugal], iPortugal)
-##                self.initBirth(iGameTurn, con.tBirth[iInca], iInca)
-##                self.initBirth(iGameTurn, con.tBirth[iMongolia], iMongolia)
-##                self.initBirth(iGameTurn, con.tBirth[iAztecs], iAztecs)
-##                self.initBirth(iGameTurn, con.tBirth[iAmerica], iAmerica)
-                        
+				
+				
+		# Leoreth: make sure Aztecs are dead in 1700 if a civ that spawns from that point is selected
+		if iGameTurn == getTurnForYear(1700)-2:
+			if utils.getHumanID() >= iGermany and pAztecs.isAlive():
+				utils.killAndFragmentCiv(iAztecs, iIndependent, iIndependent2, -1, False)
+				
+				
                 if (gc.getPlayer(0).isPlayable()):
                         iFirstSpawn = iGreece
                 else:
@@ -1462,11 +1442,10 @@ class RiseAndFall:
 						pPersia.setCivics(4, con.iFanaticism)
 					elif iCiv == iAztecs:
 						if gc.getMap().plot(18, 37).isCity() and gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(con.iFloatingGardens).getBuildingClassType()) == 0:
-							gc.getMap().plot(18, 37).setHasRealBuilding(con.iFloatingGardens, True)
-						for city in utils.getCityList(iAztecs):
-							sName = cnm.tCityMap[1][iAztecs][67-city.getY()][city.getX()]
-							if sName != "-1":
-								city.setName(sName, False)
+							gc.getMap().plot(18, 37).getPlotCity().setHasRealBuilding(con.iFloatingGardens, True)
+						
+						cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
+						
 						pAztecs.setLastStateReligion(con.iChristianity)
 						pAztecs.setCivics(0, con.iRepublic)
 						pAztecs.setCivics(1, con.iRepresentation)
@@ -2368,7 +2347,7 @@ class RiseAndFall:
 			if pSeljuks.isAlive():
 				utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
                 
-                lConditionalCivs = [iByzantium, iMughals, iThailand]
+                lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil]
 
                 # Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -4082,6 +4061,10 @@ class RiseAndFall:
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 3)
                         utils.makeUnit(con.iAmericanMinuteman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
+		elif iCiv == iBrazil:
+			utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
 
 
         def createStartingUnits( self, iCiv, tPlot ):
@@ -4451,6 +4434,19 @@ class RiseAndFall:
                                 utils.makeUnit(con.iFrigate, iCiv, tSeaPlot, 1)
 			if utils.getHumanID() != iAmerica:
 				utils.makeUnitAI(con.iAmericanMinuteman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+		if iCiv == iBrazil:
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			utils.makeUnit(con.iGrenadier, iCiv, tPlot, 3)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
+			self.addMissionary(iCiv, con.tCoreAreasTL[0][iBrazil], con.tCoreAreasBR[0][iBrazil], tPlot, 1)
+			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
+				utils.makeUnit(con.iGalleon, iCiv, tSeaPlot, 2)
+				utils.makeUnit(con.iFrigate, iCiv, tSeaPlot, 3)
+			if utils.getHumanID() != iBrazil:
+				utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 
         def createRespawnUnits(self, iCiv, tPlot):
                 if (iCiv == iRome):
@@ -4590,6 +4586,8 @@ class RiseAndFall:
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iAmerica):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 4)
+		if iCiv == iBrazil:
+			utils.makeUnit(con.iBrazilianLenhador, iCiv, tPlot, 4)
 
         def create600ADstartingUnits( self ):
 
@@ -4733,6 +4731,9 @@ class RiseAndFall:
                 if ( pAmerica.isHuman() ):
                     utils.makeUnit(iSettler, iAmerica, tCapitals[0][iAmerica], 1)
                     utils.makeUnit(iWarrior, iAmerica, tCapitals[0][iAmerica], 1)
+		if pBrazil.isHuman():
+			utils.makeUnit(iSettler, iBrazil, tCapitals[0][iBrazil], 1)
+			utils.makeUnit(iWarrior, iBrazil, tCapitals[0][iBrazil], 1)
 
 
         def create4000BCstartingUnits( self ):
@@ -4855,6 +4856,9 @@ class RiseAndFall:
                 if ( pAmerica.isHuman() ):
                     utils.makeUnit(iSettler, iAmerica, tCapitals[0][iAmerica], 1)
                     utils.makeUnit(iWarrior, iAmerica, tCapitals[0][iAmerica], 1)
+		if pBrazil.isHuman():
+			utils.makeUnit(iSettler, iBrazil, tCapitals[0][iBrazil], 1)
+			utils.makeUnit(iWarrior, iBrazil, tCapitals[0][iBrazil], 1)
 
 
 
@@ -5771,6 +5775,16 @@ class RiseAndFall:
                                                 teamAmerica.setHasTech(x, True, iCiv, False, False)
                                 teamAmerica.setHasTech(con.iSteamPower, True, iCiv, False, False)
 				teamAmerica.setHasTech(con.iScientificMethod, True, iCiv, False, False)
+			if iCiv == iBrazil:
+				lBrazilTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
+						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
+						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
+						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
+						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
+						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, \
+						con.iNationalism, con.iDemocracy, con.iSteamPower]
+				for iTech in lBrazilTechs:
+					teamBrazil.setHasTech(iTech, True, iCiv, False, False)
                 else:
                         if (iCiv == iRome):
                                 teamRome.setHasTech(con.iMining, True, iCiv, False, False)

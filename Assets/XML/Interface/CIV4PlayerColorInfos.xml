@@ -220,7 +220,7 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_MIDDLE_GREEN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_MIDDLE_GREEN</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_CYAN_TEXT</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_MIDDLE_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
