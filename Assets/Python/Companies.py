@@ -24,7 +24,7 @@ iNumCompanies = 9
 tCompanyTechs = (con.iCurrency, con.iAstronomy, con.iBiology, con.iRefrigeration, con.iSteamPower, con.iSteel, con.iCombustion, con.iElectricity, con.iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
-lTradingCompanyCivs = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+lTradingCompanyCivs = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands, con.iVikings] # Vikings too now
 
 tSilkRouteTL = (80, 46)
 tSilkRouteBR = (99, 52)
@@ -255,6 +255,10 @@ class Companies:
 					iTempValue += city.getNumBonuses(iBonus) * 2
 		if not bFound: return -1
 		iValue += iTempValue
+		
+		# Brazilian UP: sugar counts as oil for Oil Industry
+		if owner.getID() == con.iBrazil and iCompany == iOilIndustry:
+			iValue += city.getNumBonuses(con.iSugar) * 3
 		
 		# competition
 		if iCompany == iCerealIndustry and city.isHasCorporation(iFishingIndustry): iValue /= 2

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+
+<!-- Civilization Infos -->
+
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DESC</Tag>
+		<English>The Brazilians</English>
+		<French>The Brazilians</French>
+		<German>The Brazilians</German>
+		<Italian>The Brazilians</Italian>
+		<Spanish>The Brazilians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_SHORT_DESC</Tag>
+		<English>Brazil</English>
+		<French>Brazil</French>
+		<German>Brazil</German>
+		<Italian>Brazil</Italian>
+		<Spanish>Brazil</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_ADJECTIVE</Tag>
+		<English>Brazilian</English>
+		<French>Brazilian</French>
+		<German>Brazilian</German>
+		<Italian>Brazilian</Italian>
+		<Spanish>Brazilian</Spanish>
+	</TEXT>
+	
+<!-- Leader Infos -->
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_DOM_PEDRO</Tag>
+		<English>Pedro II</English>
+		<French>Pedro II</French>
+		<German>Pedro II</German>
+		<Italian>Pedro II</Italian>
+		<Spanish>Pedro II</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_DOM_PEDRO_PEDIA</Tag>
+		<English>[H1]Dom Pedro II[\H1][NEWLINE][BOLD]Second and Last Emperor of Brazil[\BOLD][NEWLINE][BOLD]Lived: [\BOLD]Dec. 1825 - Dec. 1891[NEWLINE][PARAGRAPH:2][BOLD]Background:[\BOLD][NEWLINE][TAB]Dom Pedro II was the second and last ruler of the Empire of Brazil, reigning for over 58 years. Born in Rio de Janeiro, he was the seventh child of Emperor Dom Pedro I of Brazil and Empress Dona Maria Leopoldina and thus a member of the Brazilian branch of the House of Braganza. His father's abrupt abdication and flight to Europe in 1831 left a five-year-old Pedro II as Emperor and led to a grim and lonely childhood and adolescence. Obliged to spend his time studying in preparation for rule, he knew only brief moments of happiness and encountered few friends of his age. His experiences with court intrigues and political disputes during this period greatly affected his later character. Pedro II grew into a man with a strong sense of duty and devotion toward his country and his people. On the other hand, he increasingly resented his role as monarch.[PARAGRAPH:2]Inheriting an Empire on the verge of disintegration, Pedro II turned Portuguese-speaking Brazil into an emerging power in the international arena. The nation grew to be distinguished from its Hispanic neighbors on account of its political stability, zealously guarded freedom of speech, respect for civil rights, vibrant economic growth and especially for its form of government: a functional, representative parliamentary monarchy. Brazil was also victorious in three international conflicts (the Platine War, the Uruguayan War and the Paraguayan War) under his rule, as well as prevailing in several other international disputes and domestic tensions. Pedro II steadfastly pushed through the abolition of slavery despite opposition from powerful political and economic interests. A savant in his own right, the Emperor established a reputation as a vigorous sponsor of learning, culture and the sciences. He won the respect and admiration of scholars such as Charles Darwin, Victor Hugo and Friedrich Nietzsche, and was a friend to Richard Wagner, Louis Pasteur and Henry Wadsworth Longfellow, among others.[PARAGRAPH:2]Although there was no desire for a change in the form of government among most Brazilians, the Emperor was overthrown in a sudden coup d'état that had almost no support outside a clique of military leaders who desired a form of republic headed by a dictator. Pedro II had become weary of emperorship and despaired over the monarchy's future prospects, despite its overwhelming popular support. He allowed no prevention of his ouster and did not support any attempt to restore the monarchy. He spent the last two years of his life in exile in Europe, living alone on very little money.[PARAGRAPH:2]The reign of Pedro II thus came to an unusual end-he was overthrown while highly regarded by the people and at the pinnacle of his popularity, and some of his accomplishments were soon brought to naught as Brazil slipped into a long period of weak governments, dictatorships, and constitutional and economic crises. The men who had exiled him soon began to see in him a model for the Brazilian republic. A few decades after his death, his reputation was restored and his remains were returned to Brazil as those of a national hero. This reputation has lasted to the present day. Historians have regarded the Emperor in an extremely positive light, and he is usually ranked as the greatest Brazilian.[PARAGRAPH:1]</English>
+		<French>INSERT</French>
+		<German>INSERT</German>
+		<Italian>INSERT</Italian>
+		<Spanish>INSERT</Spanish>
+	</TEXT>
+
+<!-- UU and UB -->
+
+
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BRAZILIAN_LENHADOR</Tag>
+		<English>Lenhador</English>
+		<French>Lenhador</French>
+		<German>Lenhador</German>
+		<Italian>Lenhador</Italian>
+		<Spanish>Lenhador</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_DEFORESTATION</Tag>
+		<English>Deforestation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BRAZILIAN_LENHADOR_HELP</Tag>
+		<English>[ICON_BULLET]Create Production and Gold when Removing Jungles and Forests</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DEFORESTATION_EVENT</Tag>
+		<English>Removing a %s1 near your city of %s2 has created %d3 [ICON_GOLD] for your treasury.</English>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRA_EMBASSY</Tag>
+		<English>Brazilian Embassy</English>
+		<French>Brazilian Embassy</French>
+		<German>Brazilian Embassy</German>
+		<Italian>Brazilian Embassy</Italian>
+		<Spanish>Brazilian Embassy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA</Tag>
+		<English>Fazenda</English>
+		<French>Fazenda</French>
+		<German>Fazenda</German>
+		<Italian>Fazenda</Italian>
+		<Spanish>Fazenda</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_PEDIA</Tag>
+		<English>[TAB]In the mid-19th century, Brazil had been undergoing an economic transformation brought about by a new export crop: coffee. Coffee provided a new basis for agricultural expansion in southern Brazil. In the provinces of Rio de Janeiro and then São Paulo, coffee estates, or fazendas, began to spread toward the interior as new lands were opened. By 1850, coffee made up more than 50% of Brazil's exports, and more than half of world coffee production.[PARAGRAPH:1]Along with the expansion of coffee growing came an intensification of slavery in Brazil, as the country's primary form of labor. More than 1.4 million Africans were forced to be slaves in Brazil in the last 50 years of the slave trade, and even after the trans-Atlantic slave trade ended, slavery continued until 1888.[PARAGRAPH:1]Because of the increased profit from the trade of coffee, the years after 1850 saw considerable growth and prosperity in Brazil. Dom Pedro II proved to be an enlightened man of middle-class habits who was anxious to reign over a tranquil and progressive nation, even if that tranquility was based on slave labor. Railroads, steamships and the telegraph were introduced to Brazil, all paid for by the money the fazendas supplied from their coffee crop. In growing cities such as Rio de Janeiro and São Paulo, merchants, lawyers, a middle class, and an urban working class grew, once again paid for by the money coming from the fazendas.[PARAGRAPH:1]</English>
+		<French>[TAB]In the mid-19th century, Brazil had been undergoing an economic transformation brought about by a new export crop: coffee. Coffee provided a new basis for agricultural expansion in southern Brazil. In the provinces of Rio de Janeiro and then São Paulo, coffee estates, or fazendas, began to spread toward the interior as new lands were opened. By 1850, coffee made up more than 50% of Brazil's exports, and more than half of world coffee production.[PARAGRAPH:1]Along with the expansion of coffee growing came an intensification of slavery in Brazil, as the country's primary form of labor. More than 1.4 million Africans were forced to be slaves in Brazil in the last 50 years of the slave trade, and even after the trans-Atlantic slave trade ended, slavery continued until 1888.[PARAGRAPH:1]Because of the increased profit from the trade of coffee, the years after 1850 saw considerable growth and prosperity in Brazil. Dom Pedro II proved to be an enlightened man of middle-class habits who was anxious to reign over a tranquil and progressive nation, even if that tranquility was based on slave labor. Railroads, steamships and the telegraph were introduced to Brazil, all paid for by the money the fazendas supplied from their coffee crop. In growing cities such as Rio de Janeiro and São Paulo, merchants, lawyers, a middle class, and an urban working class grew, once again paid for by the money coming from the fazendas.[PARAGRAPH:1]</French>
+		<German>[TAB]In the mid-19th century, Brazil had been undergoing an economic transformation brought about by a new export crop: coffee. Coffee provided a new basis for agricultural expansion in southern Brazil. In the provinces of Rio de Janeiro and then São Paulo, coffee estates, or fazendas, began to spread toward the interior as new lands were opened. By 1850, coffee made up more than 50% of Brazil's exports, and more than half of world coffee production.[PARAGRAPH:1]Along with the expansion of coffee growing came an intensification of slavery in Brazil, as the country's primary form of labor. More than 1.4 million Africans were forced to be slaves in Brazil in the last 50 years of the slave trade, and even after the trans-Atlantic slave trade ended, slavery continued until 1888.[PARAGRAPH:1]Because of the increased profit from the trade of coffee, the years after 1850 saw considerable growth and prosperity in Brazil. Dom Pedro II proved to be an enlightened man of middle-class habits who was anxious to reign over a tranquil and progressive nation, even if that tranquility was based on slave labor. Railroads, steamships and the telegraph were introduced to Brazil, all paid for by the money the fazendas supplied from their coffee crop. In growing cities such as Rio de Janeiro and São Paulo, merchants, lawyers, a middle class, and an urban working class grew, once again paid for by the money coming from the fazendas.[PARAGRAPH:1]</German>
+		<Italian>[TAB]In the mid-19th century, Brazil had been undergoing an economic transformation brought about by a new export crop: coffee. Coffee provided a new basis for agricultural expansion in southern Brazil. In the provinces of Rio de Janeiro and then São Paulo, coffee estates, or fazendas, began to spread toward the interior as new lands were opened. By 1850, coffee made up more than 50% of Brazil's exports, and more than half of world coffee production.[PARAGRAPH:1]Along with the expansion of coffee growing came an intensification of slavery in Brazil, as the country's primary form of labor. More than 1.4 million Africans were forced to be slaves in Brazil in the last 50 years of the slave trade, and even after the trans-Atlantic slave trade ended, slavery continued until 1888.[PARAGRAPH:1]Because of the increased profit from the trade of coffee, the years after 1850 saw considerable growth and prosperity in Brazil. Dom Pedro II proved to be an enlightened man of middle-class habits who was anxious to reign over a tranquil and progressive nation, even if that tranquility was based on slave labor. Railroads, steamships and the telegraph were introduced to Brazil, all paid for by the money the fazendas supplied from their coffee crop. In growing cities such as Rio de Janeiro and São Paulo, merchants, lawyers, a middle class, and an urban working class grew, once again paid for by the money coming from the fazendas.[PARAGRAPH:1]</Italian>
+		<Spanish>[TAB]In the mid-19th century, Brazil had been undergoing an economic transformation brought about by a new export crop: coffee. Coffee provided a new basis for agricultural expansion in southern Brazil. In the provinces of Rio de Janeiro and then São Paulo, coffee estates, or fazendas, began to spread toward the interior as new lands were opened. By 1850, coffee made up more than 50% of Brazil's exports, and more than half of world coffee production.[PARAGRAPH:1]Along with the expansion of coffee growing came an intensification of slavery in Brazil, as the country's primary form of labor. More than 1.4 million Africans were forced to be slaves in Brazil in the last 50 years of the slave trade, and even after the trans-Atlantic slave trade ended, slavery continued until 1888.[PARAGRAPH:1]Because of the increased profit from the trade of coffee, the years after 1850 saw considerable growth and prosperity in Brazil. Dom Pedro II proved to be an enlightened man of middle-class habits who was anxious to reign over a tranquil and progressive nation, even if that tranquility was based on slave labor. Railroads, steamships and the telegraph were introduced to Brazil, all paid for by the money the fazendas supplied from their coffee crop. In growing cities such as Rio de Janeiro and São Paulo, merchants, lawyers, a middle class, and an urban working class grew, once again paid for by the money coming from the fazendas.[PARAGRAPH:1]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_STRATEGY</Tag>
+		<English>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that inreases your wealth when controlling plantation resources.</English>
+		<French>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</French>
+		<German>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</German>
+		<Italian>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</Italian>
+		<Spanish>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</Spanish>
+	</TEXT>
+
+<!-- CityList -->
+
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BRASILIA</Tag>
+		<English>Brasilia</English>
+		<French>Brasilia</French>
+		<German>Brasilia</German>
+		<Italian>Brasilia</Italian>
+		<Spanish>Brasilia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_PORTO_ALEGRE</Tag>
+		<English>Porto Alegre</English>
+		<French>Porto Alegre</French>
+		<German>Porto Alegre</German>
+		<Italian>Porto Alegre</Italian>
+		<Spanish>Porto Alegre</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_SALVADOR</Tag>
+		<English>Salvador</English>
+		<French>Salvador</French>
+		<German>Salvador</German>
+		<Italian>Salvador</Italian>
+		<Spanish>Salvador</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_RECIFE</Tag>
+		<English>Recife</English>
+		<French>Recife</French>
+		<German>Recife</German>
+		<Italian>Recife</Italian>
+		<Spanish>Recife</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BELO_HORIZONTE</Tag>
+		<English>Belo Horizonte</English>
+		<French>Belo Horizonte</French>
+		<German>Belo Horizonte</German>
+		<Italian>Belo Horizonte</Italian>
+		<Spanish>Belo Horizonte</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_MANAUS</Tag>
+		<English>Manaus</English>
+		<French>Manaus</French>
+		<German>Manaus</German>
+		<Italian>Manaus</Italian>
+		<Spanish>Manaus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_FORTALEZA</Tag>
+		<English>Fortaleza</English>
+		<French>Fortaleza</French>
+		<German>Fortaleza</German>
+		<Italian>Fortaleza</Italian>
+		<Spanish>Fortaleza</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_SAO_LUIS</Tag>
+		<English>São Luís</English>
+		<French>São Luís</French>
+		<German>São Luís</German>
+		<Italian>São Luís</Italian>
+		<Spanish>São Luís</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BELEM</Tag>
+		<English>Belém</English>
+		<French>Belém</French>
+		<German>Belém</German>
+		<Italian>Belém</Italian>
+		<Spanish>Belém</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_CURITIBA</Tag>
+		<English>Curitiba</English>
+		<French>Curitiba</French>
+		<German>Curitiba</German>
+		<Italian>Curitiba</Italian>
+		<Spanish>Curitiba</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_GOIANIA</Tag>
+		<English>Goiânia</English>
+		<French>Goiânia</French>
+		<German>Goiânia</German>
+		<Italian>Goiânia</Italian>
+		<Spanish>Goiânia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_CAMPINAS</Tag>
+		<English>Campinas</English>
+		<French>Campinas</French>
+		<German>Campinas</German>
+		<Italian>Campinas</Italian>
+		<Spanish>Campinas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_DUQUE_DE_CAXIAS</Tag>
+		<English>Duque de Caxias</English>
+		<French>Duque de Caxias</French>
+		<German>Duque de Caxias</German>
+		<Italian>Duque de Caxias</Italian>
+		<Spanish>Duque de Caxias</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_GUARULHOS</Tag>
+		<English>Guarulhos</English>
+		<French>Guarulhos</French>
+		<German>Guarulhos</German>
+		<Italian>Guarulhos</Italian>
+		<Spanish>Guarulhos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NATAL</Tag>
+		<English>Natal</English>
+		<French>Natal</French>
+		<German>Natal</German>
+		<Italian>Natal</Italian>
+		<Spanish>Natal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_CUIABA</Tag>
+		<English>Cuiabá</English>
+		<French>Cuiabá</French>
+		<German>Cuiabá</German>
+		<Italian>Cuiabá</Italian>
+		<Spanish>Cuiabá</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_ARACAJU</Tag>
+		<English>Aracaju</English>
+		<French>Aracaju</French>
+		<German>Aracaju</German>
+		<Italian>Aracaju</Italian>
+		<Spanish>Aracaju</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_SAO_JOSE</Tag>
+		<English>São José</English>
+		<French>São José</French>
+		<German>São José</German>
+		<Italian>São José</Italian>
+		<Spanish>São José</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_SOROCABA</Tag>
+		<English>Sorocaba</English>
+		<French>Sorocaba</French>
+		<German>Sorocaba</German>
+		<Italian>Sorocaba</Italian>
+		<Spanish>Sorocaba</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NITEROI</Tag>
+		<English>Niterói</English>
+		<French>Niterói</French>
+		<German>Niterói</German>
+		<Italian>Niterói</Italian>
+		<Spanish>Niterói</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_FLORIANOPOLIS</Tag>
+		<English>Florianópolis</English>
+		<French>Florianópolis</French>
+		<German>Florianópolis</German>
+		<Italian>Florianópolis</Italian>
+		<Spanish>Florianópolis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_VILA_VELHA</Tag>
+		<English>Vila Velha</English>
+		<French>Vila Velha</French>
+		<German>Vila Velha</German>
+		<Italian>Vila Velha</Italian>
+		<Spanish>Vila Velha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_MACAPA</Tag>
+		<English>Macapá</English>
+		<French>Macapá</French>
+		<German>Macapá</German>
+		<Italian>Macapá</Italian>
+		<Spanish>Macapá</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_PORTO_VELHO</Tag>
+		<English>Porto Velho</English>
+		<French>Porto Velho</French>
+		<German>Porto Velho</German>
+		<Italian>Porto Velho</Italian>
+		<Spanish>Porto Velho</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_VITORIA</Tag>
+		<English>Vitória</English>
+		<French>Vitória</French>
+		<German>Vitória</German>
+		<Italian>Vitória</Italian>
+		<Spanish>Vitória</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_RIO_BRANCO</Tag>
+		<English>Rio Branco</English>
+		<French>Rio Branco</French>
+		<German>Rio Branco</German>
+		<Italian>Rio Branco</Italian>
+		<Spanish>Rio Branco</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BOA_VISTA</Tag>
+		<English>Boa Vista</English>
+		<French>Boa Vista</French>
+		<German>Boa Vista</German>
+		<Italian>Boa Vista</Italian>
+		<Spanish>Boa Vista</Spanish>
+	</TEXT>
+</Civ4GameText>

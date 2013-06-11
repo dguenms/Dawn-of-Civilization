@@ -139,6 +139,7 @@ public:
 	int getBonusHappiness(BonusTypes eBonus) const;															// Exposed to Python - getBonusHappiness
 	int getBonusPower(BonusTypes eBonus, bool bDirty) const;										// Exposed to Python 
 	int getBonusYieldRateModifier(YieldTypes eIndex, BonusTypes eBonus) const;	// Exposed to Python 
+	int getBonusCommerceRateModifier(CommerceTypes eIndex, BonusTypes eBonus) const; // Leoreth
 
 	void processBonus(BonusTypes eBonus, int iChange);
 	void processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolete = false);
@@ -596,6 +597,10 @@ public:
 
 	int getBonusYieldRateModifier(YieldTypes eIndex) const;											// Exposed to Python 
 	void changeBonusYieldRateModifier(YieldTypes eIndex, int iChange);
+
+	// Leoreth
+	int getBonusCommerceRateModifier(CommerceTypes eIndex) const;
+	void changeBonusCommerceRateModifier(CommerceTypes eIndex, int iChange);
 
 	int getTradeYield(YieldTypes eIndex) const;																	// Exposed to Python
 	int totalTradeModifier(CvCity* pOtherCity = NULL) const;																							// Exposed to Python
@@ -1065,6 +1070,7 @@ protected:
 	int* m_aiYieldRateModifier;
 	int* m_aiPowerYieldRateModifier;
 	int* m_aiBonusYieldRateModifier;
+	int* m_aiBonusCommerceRateModifier; // Leoreth
 	int* m_aiTradeYield;
 	int* m_aiCorporationYield;
 	int* m_aiExtraSpecialistYield;

@@ -76,6 +76,7 @@ iAztecs = con.iAztecs
 iThailand = con.iThailand
 iGermany = con.iGermany
 iAmerica = con.iAmerica
+iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
 #iHolland = con.iHolland

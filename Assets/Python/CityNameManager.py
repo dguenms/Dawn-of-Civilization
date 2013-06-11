@@ -55,6 +55,7 @@ iThailand = con.iThailand
 iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
+iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
 iNumActivePlayers = con.iNumActivePlayers
@@ -127,6 +128,7 @@ def getLanguages(iCiv):
 	elif iCiv == iNetherlands: return (iLangDutch,)
 	elif iCiv == iGermany: return (iLangPrussian, iLangGerman,)
 	elif iCiv == iAmerica: return (iLangAmerican, iLangEnglish)
+	elif iCiv == iBrazil: return (iLangPortuguese, iLangSpanish)
 	elif iCiv == iCeltia: return (iLangCeltic,)
 	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
 	else: return -1
@@ -155,6 +157,18 @@ def getRenameName(iCiv, sName):
 			return tRenames[iLanguage][sName]
 			
 	return "-1"
+	
+def updateCityNames(iCiv):
+	for city in utils.getCityList(iCiv):
+		sNewName = getRenameName(iCiv, city.getName())
+		if sNewName != "-1":
+			city.setName(sNewName, False)
+			
+def updateCityNamesFound(iCiv):
+	for city in utils.getCityList(iCiv):
+		sNewName = getFoundName(iCiv, (city.getX(), city.getY()))
+		if sNewName != "-1":
+			city.setName(sNewName, False)
 	
 def onCityBuilt(city):
 
@@ -290,6 +304,11 @@ def onReligionSpread(iReligion, iCiv, city):
 	if iCiv == iIndonesia:
 		if iReligion == con.iIslam:
 			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
+			
+def onRevolution(iCiv):
+
+	if iCiv == iEgypt:
+		updateCityNames(iCiv)
 
 
 # city coordinates
@@ -5029,6 +5048,7 @@ tRenames = (
 	'Vena'			:	'Vienne',
 	'Vindobona'		:	'Vienne',
 	'Viyana'		:	'Vienne',
+	'Wieden'		:	'Vienne',
 	'Arguim'		:	'Arguin',
 	'Corunha'		:	'La Corogne',
 	'The Groyne'		:	'La Corogne',
@@ -5120,6 +5140,19 @@ tRenames = (
 	'Marrakesh'		:	'Marrakech',
 	'Marraquech'		:	'Marrakech',
 	'Marrakesch'		:	'Marrakech',
+	'Belgrad'		:	'Belgrade',
+	'Beograd'		:	'Belgrade',
+	'Singidun'		:	'Belgrade',
+	'Singidunon'		:	'Belgrade',
+	'Singidunum'		:	'Belgrade',
+	'Constantinopolis'	:	'Constantinople',
+	'Konstantinoupolis'	:	'Constantinople',
+	'Kostantiniyye'		:	'Constantinople',
+	'Konstantinopel'	:	'Constantinople',
+	'Qustantiniyah'		:	'Constantinople',
+	"Konstantinopol'"	:	'Constantinople',
+	"Car'grad"		:	'Constantinople',
+	'Miklagard'		:	'Constantinople',
 	'Yaunde'		:	'Yaound&#233;',
 	'Garua'			:	'Garoua',
 	'Duala'			:	'Douala',
@@ -6237,6 +6270,7 @@ tRenames = (
 	'Diospolis Magna'	:	'Tebe',
 	'Ineb Hedj'		:	'Menphi',
 	'Memphis'		:	'Menphi',
+	'Vibo Valentia'		:	'Taranto',
 	'Poseidonia'		:	'Napoli',
 	'Paestum'		:	'Napoli',
 	'Pompeii'		:	'Napoli',
@@ -6591,6 +6625,7 @@ tRenames = (
 	"Konstantinopol'"	:	'Kostantiniyye',
 	"Car'grad"		:	'Kostantiniyye',
 	'Constantinopoli'	:	'Kostantiniyye',
+	'Constantinople'	:	'Kostantiniyye',
 	'Stambul'		:	'Istanbul',
 	'Nicomedia'		:	'Izmit',
 	'Pergamon'		:	'Bergama',
@@ -6917,6 +6952,8 @@ tRenames = (
 	'Nova Lisboa'		:	'Huambo',
 	'Mo&#231;&#226;medes'	:	'Namibe',
 	'S&#225; de Bandeira'	:	'Lubango',},
+# Prussia (settler map only)
+{},
 # America
 {	'Charles Town'		:	'Charleston',
 	'Fort Caroline'		:	'Jacksonville',

@@ -353,5 +353,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_GoldenEagle.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_BRAZIL</Type>
+			<Button>Art/Interface/Buttons/Civilizations/brazil_btn.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Globe.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

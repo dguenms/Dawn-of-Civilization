@@ -2614,6 +2614,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ATTACK_AIR] *= 2;
 		aiUnitAIVal[UNITAI_DEFENSE_AIR] *= 2;
 		break;
+	case BRAZIL:
+		aiUnitAIVal[UNITAI_WORKER] *= 2;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
 	default:
 		break;
 	}
@@ -3349,7 +3353,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == BRANDENBURG) iTempValue *= 3;
 										break;
 									case AMERICA:
-										if (iI == STATUEOFLIBERTY) iTempValue *= 2;
+										if (iI == STATUEOFLIBERTY) iTempValue *= 3;
 										//else if (iI == BROADWAY) iTempValue *= 2;
 										else if (iI == GRACELAND) iTempValue *= 2;
 										else if (iI == HOLLYWOOD) iTempValue *= 3;
@@ -3362,6 +3366,9 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 4;
 										}
 										break;
+									case BRAZIL:
+										if (iI == CRISTO) iTempValue *= 3;
+										if (iI == GREATDAM || iI == WEMBLEY) iTempValue *= 2;
 									case CELTIA:
 										if (iI == STONEHENGE) iTempValue *= 4;
 										break;

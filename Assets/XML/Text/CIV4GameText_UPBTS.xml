@@ -224,4 +224,14 @@
 		<English>Can build farms on hills</English>
 		<German>Kann Farmen auf Hügeln errichten</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BRA</Tag>
+		<English>The Power of Ethanol:</English>
+		<German>Die Macht des Ethanols:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BRA2</Tag>
+		<English>Sugar counts as oil for Oil Industry</English>
+		<German>Zucker zählt als Öl für die Ölindustrie</German>
+	</TEXT>
 </Civ4GameText>

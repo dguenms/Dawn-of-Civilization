@@ -63,6 +63,20 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
+							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_PEDRO_II</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
 							<LeaderType>LEADER_HAILE_SELASSIE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -1108,6 +1122,20 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
+							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_PEDRO_II</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
 							<LeaderType>LEADER_WASHINGTON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -1906,6 +1934,20 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
+							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_PEDRO_II</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
 							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -2674,6 +2716,33 @@
 						<Text>AI_DIPLO_GREETINGS_ATT_FR_14</Text>
 						<Text>AI_DIPLO_GREETINGS_ATT_FR_15</Text>
 						<Text>AI_DIPLO_GREETINGS_ATT_FR_16</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes>
+						<Attitude>
+							<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+					</Attitudes>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_PEDRO_II</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -4165,6 +4234,29 @@
 						<Text>AI_DIPLO_GREETINGS_ATT_FUR_14</Text>
 						<Text>AI_DIPLO_GREETINGS_ATT_FUR_15</Text>
 						<Text>AI_DIPLO_GREETINGS_ATT_FUR_16</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes>
+						<Attitude>
+							<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+						<Attitude>
+							<AttitudeType>ATTITUDE_FURIOUS</AttitudeType>
+							<bAttitudeType>1</bAttitudeType>
+						</Attitude>
+					</Attitudes>
+					<DiplomacyPowers/>
+					<DiplomacyText>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_PEDRO_II</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -6258,6 +6350,25 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
+							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers>
+						<DiplomacyPower>
+							<DiplomacyPowerType>DIPLOMACYPOWER_WEAKER</DiplomacyPowerType>
+							<bDiplomacyPowerType>1</bDiplomacyPowerType>
+						</DiplomacyPower>
+					</DiplomacyPowers>
+					<DiplomacyText>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_PEDRO_II</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
 							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -7203,6 +7314,25 @@
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_5</Text>
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_6</Text>
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_7</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers>
+						<DiplomacyPower>
+							<DiplomacyPowerType>DIPLOMACYPOWER_EQUAL</DiplomacyPowerType>
+							<bDiplomacyPowerType>1</bDiplomacyPowerType>
+						</DiplomacyPower>
+					</DiplomacyPowers>
+					<DiplomacyText>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_PEDRO_II</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -8159,6 +8289,25 @@
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_6</Text>
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_7</Text>
 						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_8</Text>
+					</DiplomacyText>
+				</Response>
+				<Response>
+					<Civilizations/>
+					<Leaders>
+						<Leader>
+							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<bLeaderType>1</bLeaderType>
+						</Leader>
+					</Leaders>
+					<Attitudes/>
+					<DiplomacyPowers>
+						<DiplomacyPower>
+							<DiplomacyPowerType>DIPLOMACYPOWER_STRONGER</DiplomacyPowerType>
+							<bDiplomacyPowerType>1</bDiplomacyPowerType>
+						</DiplomacyPower>
+					</DiplomacyPowers>
+					<DiplomacyText>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_PEDRO_II</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>

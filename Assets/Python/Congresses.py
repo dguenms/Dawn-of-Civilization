@@ -63,6 +63,7 @@ iMughals = con.iMughals
 iThailand = con.iThailand
 iGermany = con.iGermany
 iAmerica = con.iAmerica
+iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
 iNumActivePlayers = con.iNumActivePlayers

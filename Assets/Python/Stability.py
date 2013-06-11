@@ -1562,7 +1562,8 @@ class Stability:
 
                 iTempCitiesThreshold = self.getStability(iPlayer)
                 if (iBuilding == con.iPalace): #palace
-                        self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, -10) )
+			if gc.getPlayer(iPlayer).getSettlersMaps(67-city.getY(), city.getX()) < 90:
+				self.setStability(iPlayer, self.getStability(iPlayer) + self.changeStabilityCategory(gc.getPlayer(iPlayer), con.iStabilityBuildings, -10) )
 			#gc.getPlayer(iPlayer).changeStability(-10) # test DLL
                         #print("Stability - palace built", iPlayer)
                 elif (iBuilding > con.iPalace and iBuilding <= con.iForbiddenPalace): #palaces

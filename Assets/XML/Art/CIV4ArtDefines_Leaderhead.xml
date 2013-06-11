@@ -871,5 +871,13 @@
 			<NoShaderNIF>art/leaderheads/Cardenas/NewEarth_noshader.nif</NoShaderNIF>
 			<BackgroundKFM>art/leaderheads/Cardenas/napoleon_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_DOM_PEDRO</Type>
+			<Button>art/Leaderheads/DomPedro/Btn_LH_Pedro.dds</Button>
+			<NIF>art/Leaderheads/DomPedro/napoleon.nif</NIF>
+			<KFM>art/Leaderheads/DomPedro/napoleon.kfm</KFM>
+			<NoShaderNIF>art/Leaderheads/DomPedro/napoleon.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/DomPedro/napoleon_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

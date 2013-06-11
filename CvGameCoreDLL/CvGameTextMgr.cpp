@@ -6042,7 +6042,7 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 		}
 	}
 
-	if (iCount > ((GC.getNumBuildInfos() * 3) / 4))
+	if (iCount > 0) //((GC.getNumBuildInfos() * 3) / 4))
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_IMPROVE_PLOTS"));
@@ -7666,6 +7666,7 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 	{
 		szFirstBuffer = gDLL->getText("TXT_KEY_BUILDING_WITH_BONUS", GC.getBonusInfo((BonusTypes) iI).getTextKeyWide());
 		setYieldChangeHelp(szBuffer, L"", L"", szFirstBuffer, kBuilding.getBonusYieldModifierArray(iI), true);
+		setCommerceChangeHelp(szBuffer, L"", L"", szFirstBuffer, kBuilding.getBonusCommerceModifierArray(iI), true); // Leoreth
 	}
 
 	for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)
@@ -12293,6 +12294,9 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 			}
 		}
 	}
+
+	iBuildingMod += city.getBonusCommerceRateModifier(eCommerceType); // Leoreth
+
 	if (0 != iBuildingMod)
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_BUILDINGS", iBuildingMod, info.getChar()));

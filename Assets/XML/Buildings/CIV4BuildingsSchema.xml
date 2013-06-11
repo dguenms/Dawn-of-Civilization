@@ -348,8 +348,15 @@
 		<element type="BonusType"/>
 		<element type="YieldModifiers"/>
 	</ElementType>
+	<ElementType name="BonusCommerceModifier" content="eltOnly">
+		<element type="BonusType"/>
+		<element type="CommerceModifiers"/>
+	</ElementType>
 	<ElementType name="BonusYieldModifiers" content="eltOnly">
 		<element type="BonusYieldModifier" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="BonusCommerceModifiers" content="eltOnly">
+		<element type="BonusCommerceModifier" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="ImprovementFreeSpecialist" content="eltOnly">
 		<element type="ImprovementType"/>
@@ -539,6 +546,7 @@
 		<element type="BuildingClassNeededs"/>
 		<element type="SpecialistYieldChanges"/>
 		<element type="BonusYieldModifiers"/>
+		<element type="BonusCommerceModifiers" minOccurs="0"/>
 		<element type="ImprovementFreeSpecialists"/>
 		<element type="Flavors"/>
 		<element type="HotKey"/>

@@ -1178,7 +1178,8 @@ bool PUF_isAnimal( const CvUnit* pUnit, int iData1, int iData2)
 
 bool PUF_isMilitaryHappiness(const CvUnit* pUnit, int iData1, int iData2)
 {
-	return pUnit->isMilitaryHappiness();
+	 // Leoreth: in case of cities, check if city owner equals unit owner -> no military happiness for other players
+	return (pUnit->isMilitaryHappiness() && (iData1 == -1 || pUnit->getOwner() == (PlayerTypes)iData1));
 }
 
 bool PUF_isInvestigate(const CvUnit* pUnit, int iData1, int iData2)

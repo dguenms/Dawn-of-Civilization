@@ -72,3 +72,12 @@
 # renamed Incan Quechuas to Aucacs
 # removed Viking war on spawn against Holy Rome
 # new Portuguese UP: The Power of Exploration: Ocean Trade and Resettlement are allowed with Optics
+# building a palace now only hurts your stability when doing so in ahistorical tiles
+# units from other civs don't create happiness when running Dynasticism anymore
+# Added the Brazilian civilization
+	# Spawn: 1822 AD
+	# Capital: Rio de Janeiro
+	# Leader: Dom Pedro II
+	# Unique Unit: Lenhador (Worker with Woodsman II, creates production and gold from chopping jungles and forests
+	# Unique Building: Fazenda (Grocer with +5% with Banana, Sugar, Spices, Tobacco and Coffee, +1 health with coffee)
+	# Unique Power: Ethanol (sugar counts as oil for the Oil Industry)
