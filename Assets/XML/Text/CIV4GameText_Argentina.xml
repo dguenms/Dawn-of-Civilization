@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_DESC</Tag>
+		<English>The Argentinians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_SHORT_DESC</Tag>
+		<English>Argentina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_ADJECTIVE</Tag>
+		<English>Argentine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SANMARTIN</Tag>
+		<English>San Martín</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_PERON</Tag>
+		<English>Perón</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_PEDIA</Tag>
+		<English>Argentina is a sovereign state, organized as a representative and federal republic,located in the southeastern corner of America. Its territory is divided into 23 provinces and one autonomous city, Buenos Aires, which is the nation's capital and seat of the federal government. Its mainland, covers much of South America, it borders with Bolivia and Paraguay on the north, with Brazil on the north-east, with Chile in the west and south, with Uruguay on the east and with the Atlantic Ocean on the west. The last Spanish viceroy, who ruled from Buenos Aires, was deposed the 25 of May of 1810 and the First Board government was organized. The 9th of July of 1816 Argentina formally proclaimed its independence in Tucumán as a free and sovereign country.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SANMARTIN_PEDIA</Tag>
+		<English>[H1]José de San Martín[\H1][NEWLINE][BOLD]Liberator of America[\BOLD][NEWLINE][NEWLINE][BOLD]Lived:[\BOLD] Born in Yapeyú, Argentina, on February 25th of 1778, and died in Boulogne-sur-Mer, France, August 17th of 1850.[NEWLINE][PARAGRAPH:2][BOLD]Background:[\BOLD][NEWLINE][TAB] His campaigns were decisive for the independence of Argentina, Chile and Peru. In Spain he joined the Spanish army who fought the Napoleonic domination of the peninsula, noting in the battle of Bailen and Albuera. In Buenos Aires was entrusted with the creation of the Horse Grenadiers Regiment who resisted a realistic attack during the Battle of San Lorenzo. From the city of Mendoza he began his plan for the final liberation of South America: after creating the Army of the Andes he crossed the Andes and liberated Chile in the battles of Chacabuco and Maipu. Taking control of Chilean vessels, he attacked the center of the Spanish power in South America, Lima, which declared its independence in 1821. He met with Simón Bolívar at Guayaquil, and after having an interview with him, San Martin gave up his army to him under the condition of completing the liberation of Peru. San Martin, along with Bolivar are the most important liberators of South America's Spanish colonies. In Argentina is recognized as the founding father and is considered a national hero and patriot. In Peru, it is recognized as the liberator of the country, with the title "Founder of Peru's Freedom", "Founder of the Republic" and "Generalissimo of the Army." In Chile he is recognized as the General Captain of it's army.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_PERON_PEDIA</Tag>
+		<English>[H1]Juan Domingo Perón[\H1][NEWLINE][BOLD]President of Argentina[\BOLD][NEWLINE][NEWLINE][BOLD]Lived:[\BOLD] Born in Lobos, Argentina, on October 8th of 1895, and died in Olivos, the on July 1st of 1974.[NEWLINE][PARAGRAPH:2][BOLD]Background:[\BOLD][NEWLINE][TAB] He was elected President of Argentina in three occasions. The first time he was elected president was on February 24th of 1946, for the period 1946-1952. He was reelected on November 11th of 1951, for the period 1952-1958, which failed to complete due to a military coup that overthrew him on September 16th of 1955. Finally, after 18 years in exile, he returned to Argentina and was elected president for the third time on September 23th of 1973 for the period 1973-1979, which he could not complete because of his death.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY</Tag>
+		<English>Grenadier Cavalry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY_PEDIA</Tag>
+		<English>José de San Martín reached the La Plata River on March 9th of 1812 with the rank of Cavalry Lieutenant Commander, presenting to the goverment the need of creating a cavalry corps, in which human quality would be more important than quantity. He created a disciplined and modern cavalry equipped with the spirit to fight the well prepared royalists forces applying the new french cavalry tactics, seeking to emulate, in some way, the elite corps of Napoleon's conquering army, the french horse grenadiers.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY_STRATEGY</Tag>
+		<English>This is a mounted unit specialized against Riflemen.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARGENTINE_REFRIGERATION_PLANT</Tag>
+		<English>Cold Storage Plant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FRIGORIFICO_PEDIA</Tag>
+		<English>A cold storage plant is an industrial plant in which meat or vegetables are stored for later marketing. Meat from animals (cattle, pigs, fish, birds) after slaughter follow a natural process: the attack of microorganisms, which, at room temperature, degrade tissues. The meat is no longer edible in 2-3 days. Keeping the meat at low temperatures, the process of deterioration can be avoided, and so, meat can be consumed several months after the slaughter. Offering the fruits and meats for a longer period of time has an economic and alimentary importance. For this, the products are stored in refrigerated rooms at a suitable temperature and humidity, what allows the consumption of the products long after they were harvested.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FRIGORIFICO_STRATEGY</Tag>
+		<English>Unique Argentinian building which replaces the supermarket. Provides additional gold with cow, pig and sheep.</English>
+	</TEXT>
+</Civ4GameText>
+

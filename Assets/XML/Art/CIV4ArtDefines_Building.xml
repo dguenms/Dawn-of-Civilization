@@ -2525,5 +2525,15 @@
 			<KFM/>
 			<Button>Art/Interface/Buttons/Builds/BuildPlantation.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ARGENTINE_REFRIGERATION_PLANT</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>.9</fScale>
+			<fInterfaceScale>.75</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Refrigeration Plant/Industrial_Park.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Refrigeration Plant/Refrigeration Plant.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

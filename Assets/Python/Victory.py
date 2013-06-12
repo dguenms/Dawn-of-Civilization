@@ -2275,7 +2275,23 @@ class Victory:
                                                 if (iCounter >= 10):
                                                         self.setGoal(iAmerica, 2, 1)
                                         else:
-                                                self.setGoal(iAmerica, 2, 0)                                                
+                                                self.setGoal(iAmerica, 2, 0)  
+
+		
+		elif iPlayer == iBrazil:
+			if pBrazil.isAlive():
+			
+				if iGameTurn == getTurnForYear(1880):
+					if self.countImprovements(iBrazil, con.iSlavePlantation) >= 10 and self.countImprovement(iBrazil, con.iPasture) >= 4:
+						self.setGoal(iBrazil, 0, 1)
+					else:
+						self.setGoal(iBrazil, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1950):
+					if self.countImprovements(iBrazil, con.iForestPreserve) >= 20 and pBrazil.getCapitalCity().isHasRealBuilding(con.iNationalPark):
+						self.setGoal(iBrazil, 2, 1)
+					else:
+						self.setGoal(iBrazil, 2, 0)
 
 
                 #generic checks
@@ -2960,7 +2976,7 @@ class Victory:
 			
 		# Leoreth: ignore AI civs to improve speed
 		# important: add all civs with wonder goals to the list so their failure will be checked
-		if self.isIgnoreAI() and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iEgypt, iGreece, iCarthage, iMaya, iKhmer, iFrance, iMali, iItaly, iMughals, iAmerica]:
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iEgypt, iGreece, iCarthage, iMaya, iKhmer, iFrance, iMali, iItaly, iMughals, iAmerica, iBrazil]:
 			return
 
                 iGameTurn = gc.getGame().getGameTurn()
@@ -3134,6 +3150,16 @@ class Victory:
 					self.setGoal(iAmerica, 1, 1)
 			else:
 				self.setGoal(iAmerica, 1, 0)
+				
+		# Brazil: build Wembley, Cristo Redentor and the Three Gorges Dam
+		if iBuilding in [con.iWembley, con.iCristoRedentor, con.iThreeGorgesDam]:
+			if iPlayer == iBrazil:
+				if self.getGoal(iBrazil, 1) == -1:
+					self.setWondersBuilt(iBrazil, self.getWondersBuilt(iBrazil) + 1)
+				if self.getWondersBuilt(iBrazil) == 3:
+					self.setGoal(iBrazil, 1, 1)
+			else:
+				self.setGoal(iBrazil, 1, 0)
 
 
                             
@@ -3691,6 +3717,15 @@ class Victory:
 					iBestCiv = iLoopCiv
 					
 		return iBestCiv
+		
+	def countImprovements(self, iCiv, iImprovement):
+		iCount = 0
+		for x in range(128):
+			for y in range(68):
+				plot = gc.getMap().plot(x, y)
+				if plot.getOwner() == iCiv and plot.getImprovementType() == iImprovement:
+					iCount += 1
+		return iCount
 
 
 	def getIcon(self, bVal):
@@ -4424,6 +4459,23 @@ class Victory:
                                 			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iAmerica)):
                                 				iCounter += gc.getPlayer(iCiv).getNumAvailableBonuses(con.iOil) - gc.getPlayer(iCiv).getBonusImport(con.iOil)
 				aHelp.append(self.getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_OIL_SECURED", (iCounter, 10)))
+				
+		elif iPlayer == iBrazil:
+			if iGoal == 0:
+				iSlavePlantations = self.countImprovements(iBrazil, con.iSlavePlantation)
+				iPastures = self.countImprovements(iBrazil, con.iPasture)
+				aHelp.append(self.getIcon(iSlavePlantations >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iSlavePlantation).getText(), iSlavePlantations, 20)) + ' ' + self.getIcon(iPastures >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iPasture).getText(), iPastures, 4)))
+			elif iGoal == 1:
+				bWembley = (self.getNumBuildings(iBrazil, con.iWembley) > 0)
+				bCristoRedentor = (self.getNumBuildings(iBrazil, con.iCristoRedentor) > 0)
+				bThreeGorgesDam = (self.getNumBuildings(iBrazil, con.iThreeGorgesDam) > 0)
+				aHelp.append(self.getIcon(bWembley) + localText.getText("TXT_KEY_BUILDING_BROADWAY", ()) + ' ' + self.getIcon(bCristoRedentor) + localText.getText("TXT_KEY_BUILDING_CRISTO_REDENTOR", ()) + ' ' + self.getIcon(bThreeGorgesDam) + localText.getText("TXT_KEY_BUILDING_GREAT_DAM", ()))
+			elif iGoal == 2:
+				iForestPreserves = self.countImprovements(iBrazil, con.iForestPreserve)
+				bNationalPark = False
+				capital = pBrazil.getCapitalCity()
+				if capital: bNationalPark = capital.isHasRealBuilding(con.iNationalPark)
+				aHelp.append(self.getIcon(iForestPreserves >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iForestPreserve).getText(), iForestPreserves, 20)) + ' ' + self.getIcon(bNationalPark) + localText.getText("TXT_KEY_VICTORY_NATIONAL_PARK_CAPITAL", ()))
 		
 		return aHelp
 

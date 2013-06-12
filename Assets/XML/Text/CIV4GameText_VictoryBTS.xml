@@ -427,4 +427,19 @@
 		<English>Make Mexico City the largest city in the world in 1960 AD</English>
 		<German>Machen Sie Mexico-Stadt im Jahr 1960 n. Chr. zur größten Stadt der Welt</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA1</Tag>
+		<English>Control 10 Slave Plantations and 4 Pastures in 1880 AD</English>
+		<German>Kontrollieren Sie im Jahr 1880 n. Chr. 10 Sklaven-Plantagen und 4 Weideländer</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA2</Tag>
+		<English>Build Wembley, Cristo Redentor and the Three Gorges Dam</English>
+		<German>Bauen Sie Wembley, Cristo Redentor und den Drei-Schluchten-Damm</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA3</Tag>
+		<English>Control 20 Forest Preserves and have a National Park in your capital in 1950 AD</English>
+		<German>Kontrollieren Sie im Jahr 1880 n. Chr. 20 Waldschutzgebiete und einen Nationalpark in Ihrer Hauptstadt</German>
+	</TEXT>
 </Civ4GameText>
