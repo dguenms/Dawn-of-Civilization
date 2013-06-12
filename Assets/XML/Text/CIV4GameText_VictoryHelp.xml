@@ -512,4 +512,12 @@
 		<Tag>TXT_KEY_VICTORY_LARGEST_RELIGION_CIV</Tag>
 		<English>Civilization with the largest Catholic population: </English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_IMPROVEMENTS</Tag>
+		<English>%s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NATIONAL_PARK_CAPITAL</Tag>
+		<English>National Park in capital</English>
+	</TEXT>
 </Civ4GameText>

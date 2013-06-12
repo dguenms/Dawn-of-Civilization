@@ -234,6 +234,86 @@
 			<CivilizationActionSound>AS3D_ARABIA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_ARGENTINA</Type>
+			<Description>TXT_KEY_CIV_ARGENTINA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_ARGENTINA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_ARGENTINA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_ARGENTINA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_VERY_LIGHT_BLUE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_ARGENTINA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Buenos Aires</City>
+				<City>Santa Fe</City>
+				<City>La Pampa</City>
+				<City>Entre Rios</City>
+				<City>Cordoba</City>
+				<City>Tucuman</City>
+				<City>Mendoza</City>
+				<City>Corrientes</City>
+				<City>Misiones</City>
+				<City>Chaco</City>
+				<City>Formosa</City>
+				<City>Jujuy</City>
+				<City>Salta</City>
+				<City>San Luis</City>
+				<City>San Juan</City>
+				<City>Santiago del Estero</City>
+				<City>Catamarca</City>
+				<City>La Rioja</City>
+				<City>Neuquen</City>
+				<City>Rio Negro</City>
+				<City>Santa Cruz</City>
+				<City>Chubut</City>
+				<City>Tierra del Fuego</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SUPERMARKET</BuildingClassType>
+					<BuildingType>BUILDING_ARGENTINE_REFRIGERATION_PLANT</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GRENADIER_CAVALRY</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_PERON</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_SPAIN_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_SPAIN_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_AZTEC</Type>
 			<Description>TXT_KEY_CIV_AZTEC_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_AZTEC_SHORT_DESC</ShortDescription>

@@ -6042,7 +6042,7 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 		}
 	}
 
-	if (iCount > 0) //((GC.getNumBuildInfos() * 3) / 4))
+	if (iCount > 5) //((GC.getNumBuildInfos() * 3) / 4))
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_IMPROVE_PLOTS"));

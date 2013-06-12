@@ -81,3 +81,8 @@
 	# Unique Unit: Lenhador (Worker with Woodsman II, creates production and gold from chopping jungles and forests
 	# Unique Building: Fazenda (Grocer with +5% with Banana, Sugar, Spices, Tobacco and Coffee, +1 health with coffee)
 	# Unique Power: Ethanol (sugar counts as oil for the Oil Industry)
+	# Unique Historical Victory:
+		# Control 10 slave plantations and 4 pastures in 1880 AD
+		# Build Wembley, Cristo Redentor and the Three Gorges Dam
+		# Control 20 Forest Preserves and build a National Park in your capital in 1950 AD
+# National Parks give +8 health instead of completely removing unhealth
