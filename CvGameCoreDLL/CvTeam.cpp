@@ -179,6 +179,8 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 	m_iRiverTradeCount = 0;
 	m_iEspionagePointsEver = 0;
 
+	m_iTotalTechValue = 0; // Leoreth
+
 	m_bMapCentering = false;
 	m_bCapitulated = false;
 
@@ -2680,6 +2682,11 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	int iMultiplier = 5;
 	if (GET_PLAYER((PlayerTypes)getID()).isHuman())
 		iMultiplier = 8;
+
+	// Leoreth: larger penalty for tech leader
+	//if (GC.getGame().getTechRank(getID()) == 0)
+	//	iMultiplier += 4;
+
 	if (iNumCities > 10)
 	{
 		iCost *= 100 + iMultiplier*(iNumCities-10);
@@ -2776,6 +2783,12 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 			}
 		}
 	}
+
+	// Leoreth: larger tech discount for last third of the civs
+	/*if (GC.getGame().getTechRank(getID()) >= MAX_CIV_TEAMS * 2 / 3)
+	{
+		modifier *= 2;
+	}*/
 
 	if (bAstronomy) {
 		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
@@ -5231,6 +5244,9 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 	FAssertMsg(ePlayer >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds (invalid Index)");
 
+	// Leoreth: update total tech value
+	changeTotalTechValue(bNewValue ? GC.getTechInfo(eIndex).getResearchCost() : -GC.getTechInfo(eIndex).getResearchCost());
+
 	if (isHasTech(eIndex) != bNewValue)
 	{
 		if (GC.getTechInfo(eIndex).isRepeat())
@@ -6473,6 +6489,8 @@ void CvTeam::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iRiverTradeCount);
 	pStream->Read(&m_iEspionagePointsEver);
 
+	pStream->Read(&m_iTotalTechValue); // Leoreth
+
 	pStream->Read(&m_bMapCentering);
 	pStream->Read(&m_bCapitulated);
 
@@ -6583,6 +6601,8 @@ void CvTeam::write(FDataStreamBase* pStream)
 	pStream->Write(m_iEnemyWarWearinessModifier);
 	pStream->Write(m_iRiverTradeCount);
 	pStream->Write(m_iEspionagePointsEver);
+
+	pStream->Write(m_iTotalTechValue); // Leoreth
 
 	pStream->Write(m_bMapCentering);
 	pStream->Write(m_bCapitulated);
@@ -6745,3 +6765,16 @@ int CvTeam::getPlayerMemberListSize() const
 	return m_aePlayerMembers.size();
 }
 // Sanguo Mod Performance, end
+
+// Leoreth
+int CvTeam::getTotalTechValue() const
+{
+	return m_iTotalTechValue;
+}
+
+void CvTeam::changeTotalTechValue(int iChange)
+{
+	m_iTotalTechValue += iChange;
+
+	GC.getGame().updateTechRanks();
+}

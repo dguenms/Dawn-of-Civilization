@@ -43,6 +43,9 @@ CvGame::CvGame()
 	m_aiTeamRank = new int[MAX_TEAMS];						// Ordered by team ID...
 	m_aiTeamScore = new int[MAX_TEAMS];						// Ordered by team ID...
 
+	// Leoreth
+	m_aiTechRankTeam = new int[MAX_TEAMS];
+
 	m_paiUnitCreatedCount = NULL;
 	m_paiUnitClassCreatedCount = NULL;
 	m_paiBuildingClassCreatedCount = NULL;
@@ -81,6 +84,9 @@ CvGame::~CvGame()
 	SAFE_DELETE_ARRAY(m_aiRankTeam);
 	SAFE_DELETE_ARRAY(m_aiTeamRank);
 	SAFE_DELETE_ARRAY(m_aiTeamScore);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_aiTechRankTeam);
 }
 
 
@@ -493,6 +499,8 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 		m_aiRankTeam[iI] = 0;
 		m_aiTeamRank[iI] = 0;
 		m_aiTeamScore[iI] = 0;
+
+		m_aiTechRankTeam[iI] = 0; // Leoreth
 	}
 
 	if (!bConstructorCall)
@@ -2281,6 +2289,7 @@ void CvGame::update()
 		case CONGO:
 		case GERMANY:
 		case AMERICA:
+		case ARGENTINA:
 		case BRAZIL:
 			//if (getGameTurn() == 0 || (getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition
 			if (getGameTurn() == 0 || (getGameTurn() == getTurnForYear(600) && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition // edead
@@ -2296,6 +2305,56 @@ void CvGame::update()
 		}
 		//Rhye - end
 	}
+}
+
+
+void CvGame::updateTechRanks()
+{
+	int iValue;
+	int iBestValue;
+	int iI, iJ;
+
+	TeamTypes eBestTeam;
+	bool abTeamRanked[MAX_TEAMS];
+
+	for (iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		abTeamRanked[iI] = false;
+	}
+
+	for (iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		iBestValue = MIN_INT;
+		eBestTeam = NO_TEAM;
+
+		for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
+		{
+			if (!abTeamRanked[iJ])
+			{
+				iValue = GET_TEAM((TeamTypes)iJ).getTotalTechValue();
+
+				if (iValue >= iBestValue)
+				{
+					iBestValue = iValue;
+					eBestTeam = (TeamTypes)iJ;
+				}
+			}
+		}
+
+		abTeamRanked[eBestTeam] = true;
+
+		setTechRank(iI, eBestTeam);
+	}
+}
+
+void CvGame::setTechRank(int iRank, TeamTypes eTeam)
+{
+	m_aiTechRankTeam[(int)eTeam] = iRank;
+}
+
+int CvGame::getTechRank(TeamTypes eTeam) const
+{
+	return m_aiTechRankTeam[(int)eTeam];
 }
 
 
@@ -8154,6 +8213,9 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read(MAX_TEAMS, m_aiTeamRank);
 	pStream->Read(MAX_TEAMS, m_aiTeamScore);
 
+	// Leoreth
+	pStream->Read(MAX_TEAMS, m_aiTechRankTeam);
+
 	pStream->Read(GC.getNumUnitInfos(), m_paiUnitCreatedCount);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassCreatedCount);
 	pStream->Read(GC.getNumBuildingClassInfos(), m_paiBuildingClassCreatedCount);
@@ -8369,6 +8431,9 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(MAX_TEAMS, m_aiRankTeam);
 	pStream->Write(MAX_TEAMS, m_aiTeamRank);
 	pStream->Write(MAX_TEAMS, m_aiTeamScore);
+
+	// Leoreth
+	pStream->Write(MAX_TEAMS, m_aiTechRankTeam);
 
 	pStream->Write(GC.getNumUnitInfos(), m_paiUnitCreatedCount);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassCreatedCount);

@@ -14,7 +14,7 @@
 			<BonusClassType>BONUSCLASS_MODERN</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_ALUMINUM</ArtDefineTag>
 			<TechReveal>TECH_INDUSTRIALISM</TechReveal>
-			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechCityTrade>TECH_ELECTRICITY</TechCityTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>

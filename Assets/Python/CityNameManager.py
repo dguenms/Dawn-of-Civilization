@@ -55,6 +55,7 @@ iThailand = con.iThailand
 iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
+iArgentina = con.iArgentina
 iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
@@ -128,6 +129,7 @@ def getLanguages(iCiv):
 	elif iCiv == iNetherlands: return (iLangDutch,)
 	elif iCiv == iGermany: return (iLangPrussian, iLangGerman,)
 	elif iCiv == iAmerica: return (iLangAmerican, iLangEnglish)
+	elif iCiv == iArgentina: return (iLangSpanish,)
 	elif iCiv == iBrazil: return (iLangPortuguese, iLangSpanish)
 	elif iCiv == iCeltia: return (iLangCeltic,)
 	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
@@ -292,7 +294,7 @@ def onTechAcquired(iCiv):
 			for city in lCities:
 				if city.getName() == 'Daibul': city.setName('Karachi', False)
 	elif iEra == con.iModern:
-		if iCiv in [iTurkey, iIndependent, iIndependent2, iBarbarian, iSeljuk]:
+		if iCiv in [iTurkey, iIndependent, iIndependent2, iBarbarian, iSeljuks]:
 			for city in lCities:
 				if city.getName() == 'Angora': city.setName('Ankara', False)
 		elif iCiv in [iKorea, iChina, iJapan]:
@@ -6146,7 +6148,7 @@ tRenames = (
 # Portugal
 {	'Sint-Helena'		:	'Santa Helena',
 	'Saint Helena'		:	'Santa Helena',
-	'Saint Louis'		:	'Sa&#245;o Lu&#237;s',
+	'Saint Louis'		:	'Sa&#245; Lu&#237;s',
 	'Mauritsstad'		:	'Recife',
 	'Fort Schoonenburgh'	:	'Fortaleza',
 	'Fort Willoughby'	:	'Paramaribo',

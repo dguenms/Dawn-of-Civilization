@@ -457,6 +457,11 @@ public:
 	uint getNumReplayMessages() const;
 	ColorTypes getReplayMessageColor(uint i) const;
 
+	//Leoreth
+	void updateTechRanks();
+	int getTechRank(TeamTypes eTeam) const;
+	void setTechRank(int iRank, TeamTypes eTeam);
+
 	DllExport virtual void read(FDataStreamBase* pStream);
 	DllExport virtual void write(FDataStreamBase* pStream);
 	DllExport virtual void writeReplay(FDataStreamBase& stream, PlayerTypes ePlayer);
@@ -609,6 +614,9 @@ protected:
 	int* m_aiRankTeam;						// Ordered by rank...
 	int* m_aiTeamRank;						// Ordered by team ID...
 	int* m_aiTeamScore;						// Ordered by team ID...
+
+	// Leoreth
+	int* m_aiTechRankTeam;
 
 	int* m_paiUnitCreatedCount;
 	int* m_paiUnitClassCreatedCount;

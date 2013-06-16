@@ -86,3 +86,23 @@
 		# Build Wembley, Cristo Redentor and the Three Gorges Dam
 		# Control 20 Forest Preserves and build a National Park in your capital in 1950 AD
 # National Parks give +8 health instead of completely removing unhealth
+# removed slave specialist icon from the city screen
+# enabled trading company spread for Vikings
+# broader conditions for fascism and communism so that their dynamic names appear more often
+# Added the Argentine civilization
+	# Spawn: 1810 AD
+	# Capital: Buenos Aires
+	# Leaders: San Martin, Peron
+	# Unique Unit: Grenadier Cavalry (Cavalry with +25% against Rifleman)
+	# Unique Building: Cold Storage Plant (Supermarket with +10% with Cow, Pig, Sheep)
+	# Unique Power: Justicialism (+1 happiness per 10% culture rate)
+	# Unique Historical Victory:
+		# Settle 2 great generals in your capital in 1900 AD
+		# Have the largest commerce per capita in the world in 1930 AD
+		# Have 25000 culture in Buenos Aires in 1960 AD
+# the least advanced third of all civilizations now gets an additional benefit from already discovered techs
+# removed extra happiness from sheep and cotton from the Congolese Mbwadi
+# Congolese Mbwadi now gives +10% gold with sheep, cotton and silk
+# You now need Electricity to access Aluminum
+# Wembley now requires Radio
+# the number of settlers a civ receives on spawn depends on the number of cities already present in their core

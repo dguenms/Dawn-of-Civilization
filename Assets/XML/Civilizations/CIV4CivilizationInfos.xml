@@ -302,10 +302,15 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_PERON</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_SAN_MARTIN</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
@@ -643,6 +648,7 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>

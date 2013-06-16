@@ -520,4 +520,12 @@
 		<Tag>TXT_KEY_VICTORY_NATIONAL_PARK_CAPITAL</Tag>
 		<English>National Park in capital</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_GENERALS_CAPITAL</Tag>
+		<English>Great Generals in capital: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_COMMERCE_PER_CAPITA</Tag>
+		<English>Highest commerce per capita: %s1</English>
+	</TEXT>
 </Civ4GameText>
