@@ -246,6 +246,7 @@ iThailand = con.iThailand
 iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
+iArgentina = con.iArgentina
 iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
@@ -298,6 +299,7 @@ pThailand = gc.getPlayer(iThailand)
 pCongo = gc.getPlayer(iCongo)
 pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
+pArgentina = gc.getPlayer(iArgentina)
 pBrazil = gc.getPlayer(iBrazil)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
@@ -345,6 +347,7 @@ teamThailand = gc.getTeam(pThailand.getTeam())
 teamCongo = gc.getTeam(pCongo.getTeam())
 teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
+teamArgentina = gc.getTeam(pArgentina.getTeam())
 teamBrazil = gc.getTeam(pBrazil.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
@@ -1677,7 +1680,7 @@ class Victory:
 					if plot.isCity:
 						capital = plot.getPlotCity()
 						for iSpecialist in range(gc.getNumSpecialistInfos()):
-							if iSpecialist >= 7: # great priest
+							if iSpecialist >= 7 and iSpecialist != gc.getNumSpecialistInfos()-1: # great priest, slave
 								iCounter += capital.getFreeSpecialistCount(iSpecialist)
 					if iCounter >= 7:
 						self.setGoal(iGermany, 0, 1)
@@ -2276,6 +2279,33 @@ class Victory:
                                                         self.setGoal(iAmerica, 2, 1)
                                         else:
                                                 self.setGoal(iAmerica, 2, 0)  
+						
+		elif iPlayer == iArgentina:
+			if pArgentina.isAlive():
+			
+				if iGameTurn == getTurnForYear(1900):
+					capital = pArgentina.getCapitalCity()
+					iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
+					if capital.getFreeSpecialistCount(iGreatGeneral) >= 2:
+						self.setGoal(iArgentina, 0, 1)
+					else:
+						self.setGoal(iArgentina, 0, 0)
+						
+				if iGameTurn == getTurnForYear(1930):
+					if self.getHighestCommercePerCapitalCiv(iArgentina) == iArgentina:
+						self.setGoal(iArgentina, 1, 1)
+					else:
+						self.setGoal(iArgentina, 1, 0)
+			
+				if iGameTurn == getTurnForYear(1960):
+					pBuenosAires = gc.getMap().plot(con.tCapitals[0][iArgentina][0], con.tCapitals[0][iArgentina][1])
+					if pBuenosAires.isCity():
+						if pBuenosAires.getPlotCity().getCulture() >= utils.getTurns(25000):
+							self.setGoal(iArgentina, 2, 1)
+						else:
+							self.setGoal(iArgentina, 2, 0)
+					else:
+						self.setGoal(iArgentina, 2, 0)
 
 		
 		elif iPlayer == iBrazil:
@@ -3535,21 +3565,21 @@ class Victory:
 				iBestPower = iTempPower
 		return iBestCiv
 		
-	def getHighestAverageCommerceCiv(self, iCiv):
-		iNumCities = gc.getPlayer(iCiv).getNumCities()
+	def getHighestCommercePerCapitaCiv(self, iCiv):
+		iPopulation = gc.getPlayer(iCiv).getTotalPopulation()
 		iBestCiv = iCiv
 		
-		if iNumCities == 0:
+		if iPopulation == 0:
 			iBestCommerce = 0
 		else:
-			iBestCommerce = gc.getPlayer(iCiv).calculateTotalCommerce() / iNumCities
+			iBestCommerce = gc.getPlayer(iCiv).calculateTotalCommerce() / iPopulation
 			
 		for iLoopCiv in range(con.iNumPlayers):
-			iTempCities = gc.getPlayer(iLoopCiv).getNumCities()
-			if iTempCities == 0:
+			iPopulation = gc.getPlayer(iLoopCiv).getTotalPopulation()
+			if iPopulation == 0:
 				iTempCommerce = 0
 			else:
-				iTempCommerce = gc.getPlayer(iLoopCiv).calculateTotalCommerce() / iTempCities
+				iTempCommerce = gc.getPlayer(iLoopCiv).calculateTotalCommerce() / iPopulation
 			if iTempCommerce > iBestCommerce:
 				iBestCiv = iLoopCiv
 				iBestCommerce = iTempCommerce
@@ -4460,11 +4490,26 @@ class Victory:
                                 				iCounter += gc.getPlayer(iCiv).getNumAvailableBonuses(con.iOil) - gc.getPlayer(iCiv).getBonusImport(con.iOil)
 				aHelp.append(self.getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_OIL_SECURED", (iCounter, 10)))
 				
+		elif iPlayer == iArgentina:
+			if iGoal == 0:
+				capital = pArgentina.getCapitalCity()
+				iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
+				iGenerals = capital.getFreeSpecialistCount(iGreatGeneral)
+				aHelp.append(self.getIcon(iGenerals >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS_CAPITAL", (Generals, 2)))
+			elif iGoal == 1:
+				iHighestCommercePerCapitaCiv = self.getHighestCommercePerCapitaCiv(iArgentina)
+				aHelp.append(self.getIcon(iHighestCommercePerCapitaCiv == iArgentina) + localText.getText("TXT_KEY_HIGHEST_COMMERCE_PER_CAPITA_CIV", (localText.getText(str(gc.getPlayer(iHighestCommercePerCapitaCiv).getCivilizationShortDescriptionKey()),()))))
+			elif iGoal == 2:
+				pBuenosAires = gc.getMap().plot(con.tCapitals[0][iArgentina][0], con.tCapitals[0][iArgentina][1])
+				iCulture = 0
+				if pBuenosAires.isCity(): iCulture = pBuenosAires.getPlotCity().getCulture()
+				aHelp.append(self.getIcon(iCulture >= utils.getTurns(25000)) + localText.getText("TXT_KEY_VICTORY_CITY_CULTURE", ("Buenos Aires", iCulture, utils.getTurns(25000))))
+				
 		elif iPlayer == iBrazil:
 			if iGoal == 0:
 				iSlavePlantations = self.countImprovements(iBrazil, con.iSlavePlantation)
 				iPastures = self.countImprovements(iBrazil, con.iPasture)
-				aHelp.append(self.getIcon(iSlavePlantations >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iSlavePlantation).getText(), iSlavePlantations, 20)) + ' ' + self.getIcon(iPastures >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iPasture).getText(), iPastures, 4)))
+				aHelp.append(self.getIcon(iSlavePlantations >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iSlavePlantation).getText(), iSlavePlantations, 10)) + ' ' + self.getIcon(iPastures >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iPasture).getText(), iPastures, 4)))
 			elif iGoal == 1:
 				bWembley = (self.getNumBuildings(iBrazil, con.iWembley) > 0)
 				bCristoRedentor = (self.getNumBuildings(iBrazil, con.iCristoRedentor) > 0)

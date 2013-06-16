@@ -59,6 +59,7 @@ iThailand = con.iThailand
 iCongo = con.iCongo
 iGermany = con.iGermany
 iAmerica = con.iAmerica
+iArgentina = con.iArgentina
 iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
@@ -112,6 +113,7 @@ pThailand = gc.getPlayer(iThailand)
 pCongo = gc.getPlayer(iCongo)
 pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
+pArgentina = gc.getPlayer(iArgentina)
 pBrazil = gc.getPlayer(iBrazil)
 pSeljuks = gc.getPlayer(iSeljuks)
 pIndependent = gc.getPlayer(iIndependent)
@@ -160,6 +162,7 @@ teamThailand = gc.getTeam(pThailand.getTeam())
 teamCongo = gc.getTeam(pCongo.getTeam())
 teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
+teamArgentina = gc.getTeam(pArgentina.getTeam())
 teamBrazil = gc.getTeam(pBrazil.getTeam())
 teamSeljuks = gc.getTeam(pSeljuks.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
@@ -230,6 +233,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEFAULT",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEFAULT",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEFAULT",
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_DEFAULT",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEFAULT",
                 }
 		
@@ -273,6 +277,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_PEOPLES",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_PEOPLES",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_PEOPLES",
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_PEOPLES",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_PEOPLES",
                 }
 				
@@ -422,7 +427,8 @@ class DynamicCivs:
 				iAztecs : "TXT_KEY_CIV_AZTECS_SPANISH_VASSAL",
 				iMughals : "TXT_KEY_CIV_MUGHALS_SPANISH_VASSAL",
 				iThailand : "TXT_KEY_CIV_THAILAND_SPANISH_VASSAL",
-				iAmerica : "TXT_KEY_CIV_AMERICA_SPANISH_VASSAL"},
+				iAmerica : "TXT_KEY_CIV_AMERICA_SPANISH_VASSAL",
+				iArgentina : "TXT_KEY_CIV_ARGENTINA_SPANISH_VASSAL"},
 			iFrance : {
 				iEgypt : "TXT_KEY_CIV_EGYPT_FRENCH_VASSAL",
 				iBabylonia : "TXT_KEY_CIV_BABYLONIA_FRENCH_VASSAL",
@@ -559,7 +565,9 @@ class DynamicCivs:
 				iMaya : "TXT_KEY_CIV_MAYA_AMERICAN_VASSAL",
 				iKorea : "TXT_KEY_CIV_KOREA_AMERICAN_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_AMERICAN_VASSAL",},
-			# Brazil - none so far
+			# Argentina - none so far
+			iBrazil : {
+				iArgentina : "TXT_KEY_CIV_ARGENTINA_BRAZILIAN_VASSAL",},
 		}
 		
 		self.genericVassalNames = {
@@ -615,6 +623,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_SOVIET_VASSAL",
 			iGermany : "TXT_KEY_CIV_GERMANY_SOVIET_VASSAL",
                         iAmerica : "TXT_KEY_CIV_AMERICA_SOVIET_VASSAL",
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_SOVIET_VASSAL",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_SOVIET_VASSAL",
                 }
 		
@@ -658,6 +667,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_NAZI_VASSAL",
 			iGermany : "TXT_KEY_CIV_GERMANY_NAZI_VASSAL",
                         iAmerica : "TXT_KEY_CIV_AMERICA_NAZI_VASSAL",
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_NAZI_VASSAL",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_NAZI_VASSAL",
                 }
 
@@ -701,6 +711,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_FASCIST",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_FASCIST",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_FASCIST",
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_FASCIST",
 			iBrazil : "TXT_KEY_CIV_BRAZI_DESC_FASCIST",
                 }
 
@@ -744,6 +755,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_COMMUNIST",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_COMMUNIST",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_COMMUNIST",
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_COMMUNIST",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_COMMUNIST",
                 }
 
@@ -787,6 +799,7 @@ class DynamicCivs:
 			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEMOCRATIC",
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEMOCRATIC",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEMOCRATIC",
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_DEMOCRATIC",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEMOCRATIC",
                 }
 		
@@ -838,6 +851,7 @@ class DynamicCivs:
 			iCongo : con.iMbemba,
 			iGermany : con.iFrederick,
 			iAmerica : con.iWashington,
+			iArgentina : con.iSanMartin,
 			iBrazil : con.iDomPedro,
 		}
 		
@@ -923,18 +937,24 @@ class DynamicCivs:
 	def isCommunist(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
 		iCivic3 = pPlayer.getCivics(3)
+		iCivic1 = pPlayer.getCivics(1)
 		
-		if iCivic3 == con.iStateProperty:
+		if iCivic3 == con.iStateProperty or iCivic1 == con.iSupremeCouncil:
 			return True
 			
 		return False
 		
 	def isFascist(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
+		iCivic0 = pPlayer.getCivics(0)
+		iCivic1 = pPlayer.getCivics(1)
 		iCivic2 = pPlayer.getCivics(2)
 		
 		if iCivic2 == con.iTotalitarianism:
 			return True
+			
+		if iCivic1 == con.iAutocracy and iCivic1 not in [con.iRepresentation, con.iUniversalSuffrage]:
+			return
 			
 		return False
 		
@@ -1767,6 +1787,16 @@ class DynamicCivs:
 				
 			# Empire of Columbia as default
 			
+		elif iPlayer == iArgentina:
+			if bEmpire:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARGENTINA_EMPIRE")
+				return
+				
+			if tCapitalCoords != con.tCapitals[0][iArgentina]:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARGENTINA_CONFEDERATION")
+				return
+			
+			
 		elif iPlayer == iBrazil:
 			if bEmpire:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BRAZIL_EMPIRE")
@@ -2123,6 +2153,12 @@ class DynamicCivs:
 				
 			if iGameTurn >= getTurnForYear(1850):
 				self.setLeader(iPlayer, con.iLincoln)
+				return
+				
+		elif iPlayer == iArgentina:
+		
+			if iEra >= con.iModern:
+				self.setLeader(iPlayer, con.iPeron)
 				return
 				
 		elif iPlayer == iBrazil:

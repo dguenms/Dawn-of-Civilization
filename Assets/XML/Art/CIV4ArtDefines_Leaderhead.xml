@@ -880,12 +880,12 @@
 			<BackgroundKFM>art/LeaderHeads/DomPedro/napoleon_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_SANMARTIN</Type>
-			<Button>Art/interface/LeaderHeads/BotonSanMartin.dds</Button>
-			<NIF>art/interface/LeaderHeads/RetratoSanMartin.dds</NIF>
-			<KFM/>
-			<NoShaderNIF/>
-			<BackgroundKFM/>
+			<Type>ART_DEF_LEADER_SAN_MARTIN</Type>
+			<Button>Art/Leaderheads/Peron/Btn_LH_Peron.dds</Button>
+			<NIF>Art/LeaderHeads/Jose_SanMartin/Jose_SanMartin.nif</NIF>
+			<KFM>Art/LeaderHeads/Jose_SanMartin/Jose_SanMartin.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Jose_SanMartin/Jose_SanMartin.nif</NoShaderNIF>
+			<BackgroundKFM>Art/LeaderHeads/Jose_SanMartin/Jose_SanMartin_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_PERON</Type>

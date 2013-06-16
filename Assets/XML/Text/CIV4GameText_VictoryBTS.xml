@@ -442,4 +442,29 @@
 		<English>Control 20 Forest Preserves and have a National Park in your capital in 1950 AD</English>
 		<German>Kontrollieren Sie im Jahr 1880 n. Chr. 20 Waldschutzgebiete und einen Nationalpark in Ihrer Hauptstadt</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG1</Tag>
+		<English>Settle 2 Great Generals in your capital in 1900 AD</English>
+		<German>Siedeln Sie im Jahr 1900 n. Chr. 2 Große Generäle in Ihrer Hauptstadt an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG2</Tag>
+		<English>Have the highest commerce per capita in the world in 1930 AD</English>
+		<German>Haben Sie im Jahr 1930 n. Chr. den höchsten Kommerzwert pro Kopf in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG3</Tag>
+		<English>Have 25000 culture in Buenos Aires in 1960 AD</English>
+		<German>Haben Sie im Jahr 1960 n. Chr. 25.000 Kultur in Buenos Aires</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG3_EPIC</Tag>
+		<English>Have 37500 culture in Buenos Aires in 1960 AD</English>
+		<German>Haben Sie im Jahr 1960 n. Chr. 37.500 Kultur in Buenos Aires</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG3_MARATHON</Tag>
+		<English>Have 75000 culture in Buenos Aires in 1960 AD</English>
+		<German>Haben Sie im Jahr 1960 n. Chr. 75.000 Kultur in Buenos Aires</German>
+	</TEXT>
 </Civ4GameText>

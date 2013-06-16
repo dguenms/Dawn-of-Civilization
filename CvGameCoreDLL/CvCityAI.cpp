@@ -2614,6 +2614,9 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ATTACK_AIR] *= 2;
 		aiUnitAIVal[UNITAI_DEFENSE_AIR] *= 2;
 		break;
+	case ARGENTINA:
+		aiUnitAIVal[UNITAI_ATTACK_CITY] *= 2;
+		break;
 	case BRAZIL:
 		aiUnitAIVal[UNITAI_WORKER] *= 2;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
@@ -3366,9 +3369,13 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue /= 4;
 										}
 										break;
+									case ARGENTINA:
+										if (iI == WEMBLEY) iTempValue *= 2;
+										break;
 									case BRAZIL:
 										if (iI == CRISTO) iTempValue *= 3;
 										if (iI == GREATDAM || iI == WEMBLEY) iTempValue *= 2;
+										break;
 									case CELTIA:
 										if (iI == STONEHENGE) iTempValue *= 4;
 										break;

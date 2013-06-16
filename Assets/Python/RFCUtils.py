@@ -1828,3 +1828,23 @@ class RFCUtils:
 		
 		oldCapital.setHasRealBuilding(con.iPalace, False)
 		newCapital.setHasRealBuilding(con.iPalace, True)
+		
+	def createSettlers(self, iPlayer, iTargetCities):
+		iNumCities = 0
+		bCapital = False
+		tTL = con.tCoreAreasTL[0][iPlayer]
+		tBR = con.tCoreAreasBR[0][iPlayer]
+		
+		for x in range(tTL[0], tBR[0]+1):
+			for y in range(tTL[1], tBR[1]+1):
+				if (x,y) not in con.tExceptions[0][iPlayer]:
+					if gc.getMap().plot(x, y).isCity():
+						iNumCities += 1
+						
+		x, y = con.tCapitals[0][iPlayer]
+		if gc.getMap().plot(x, y).isCity(): bCapital = True
+		
+		if iNumCities < iTargetCities:
+			self.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], iTargetCities - iNumCities)
+		else:
+			if not bCapital: self.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], 1)

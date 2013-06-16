@@ -338,6 +338,10 @@ public:
 	DllExport int getProjectPartNumber(ProjectTypes projectType, bool bAssert) const;
 	DllExport bool hasLaunched() const;
 
+	// Leoreth
+	int getTotalTechValue() const;
+	void changeTotalTechValue(int iChange);
+
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;
 	virtual void AI_doTurnPre() = 0;
@@ -397,6 +401,8 @@ protected:
 	int m_iEnemyWarWearinessModifier;
 	int m_iRiverTradeCount;
 	int m_iEspionagePointsEver;
+
+	int m_iTotalTechValue; // Leoreth
 
 	bool m_bMapCentering;
 	bool m_bCapitulated;

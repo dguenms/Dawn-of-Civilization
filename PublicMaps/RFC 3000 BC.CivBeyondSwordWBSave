@@ -77,6 +77,8 @@ BeginTeam
 EndTeam
 BeginTeam                 
 EndTeam
+BeginTeam
+EndTeam
 BeginTeam                 
 EndTeam
 BeginTeam                 
@@ -534,9 +536,22 @@ BeginPlayer
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
+	LeaderType=LEADER_SAN_MARTIN
+	CivType=CIVILIZATION_ARGENTINA
+	Team=39
+	PlayableCiv=1
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_AUTOCRACY
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CAPITALISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_CHRISTIANITY
+	Handicap=HANDICAP_PRINCE
+EndPlayer
+BeginPlayer
 	LeaderType=LEADER_DOM_PEDRO
 	CivType=CIVILIZATION_BRAZIL
-	Team=39
+	Team=40
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
@@ -550,7 +565,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
-	Team=40         
+	Team=41      
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -559,7 +574,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
-	Team=41    
+	Team=42
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -568,7 +583,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_NATIVE
 	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
-	Team=42             
+	Team=43       
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -576,7 +591,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT                 
-	Team=43          
+	Team=44
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_PRINCE                 
@@ -590,7 +605,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
 	CivicOption=CIVICOPTION_EXPANSION, Civic=CIVIC_OCCUPATION
 	MinorNationStatus=1
-	Team=44
+	Team=45
 	PlayableCiv=0
 	Handicap=HANDICAP_PRINCE
 EndPlayer

@@ -5941,6 +5941,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == RAILROAD)
 										iValue *= 3;
 									break;
+								case ARGENTINA:
+									if (iI == MASS_MEDIA || iI == ELECTRICITY || iI == FASCISM)
+										iValue *= 2;
+									if (iI == REFRIGERATION)
+										iValue *= 3;
 								case BRAZIL:
 									if (iI == RADIO || iI == PLASTICS || iI == ELECTRICITY || iI == COMBUSTION)
 										iValue *= 2;

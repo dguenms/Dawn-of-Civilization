@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_DESC</Tag>
+		<English>The Argentina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_DESC_PEOPLES</Tag>
+		<English>Argentine Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_DESC_DEFAULT</Tag>
+		<English>United Provinces of the River Plate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_DESC_DEMOCRATIC</Tag>
+		<English>Argentine Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_DESC_COMMUNIST</Tag>
+		<English>Argentine Socialist Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_DESC_FASCIST</Tag>
+		<English>Argentine Junta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_EMPIRE</Tag>
+		<English>Argentine Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_CONFEDERATION</Tag>
+		<English>Argentine Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_SPANISH_VASSAL</Tag>
+		<English>Viceroyalty of the Rio de la Plata</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_BRAZILIAN_VASSAL</Tag>
+		<English>Transplatine Province</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_SOVIET_VASSAL</Tag>
+		<English>Soviet Argentina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGENTINA_NAZI_VASSAL</Tag>
+		<English>German Argentina</English>
+	</TEXT>
+</Civ4GameText>

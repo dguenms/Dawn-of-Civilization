@@ -390,7 +390,7 @@
 			<Strategy>TXT_KEY_SPECIALIST_SLAVE_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Slave.dds</Texture>
-			<bVisible>1</bVisible>
+			<bVisible>0</bVisible>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
 			<Yields>

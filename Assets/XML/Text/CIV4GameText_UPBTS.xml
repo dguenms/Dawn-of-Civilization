@@ -234,4 +234,14 @@
 		<English>Sugar counts as oil for Oil Industry</English>
 		<German>Zucker zählt als Öl für die Ölindustrie</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ARG</Tag>
+		<English>The Power of Justicialism:</English>
+		<German>Die Macht des Justizialismus:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_ARG2</Tag>
+		<English>One extra [ICON_HAPPY] per 10% [ICON_CULTURE] Rate</English>
+		<German>Eine zusätzliche [ICON_HAPPY] pro 10% [ICON_CULTURE] Rate</German>
+	</TEXT>
 </Civ4GameText>
