@@ -1040,26 +1040,25 @@ class CvRFCEventHandler:
                         self.cong.onTechAcquired(argsList[0], argsList[2])
 
                 if (argsList[0] == con.iAstronomy):
-			self.rnf.onAstronomyDiscovered(argsList[2])
-                        if (iPlayer == con.iSpain or \
-                            iPlayer == con.iFrance or \
-                            iPlayer == con.iEngland or \
-                            iPlayer == con.iGermany or \
-                            iPlayer == con.iVikings or \
-                            iPlayer == con.iNetherlands or \
-                            iPlayer == con.iPortugal):  
-                                self.rnf.setAstronomyTurn(iPlayer, gc.getGame().getGameTurn())
+			self.rnf.earlyTradingCompany(iPlayer)
+			
+			if iPlayer in [con.iSpain, con.iFrance, con.iEngland, con.iGermany, con.iVikings, con.iNetherlands, con.iPortugal]:
+				self.rnf.setAstronomyTurn(iPlayer, gc.getGame().getGameTurn())
+				
                 if (argsList[0] == con.iCompass):
                         if (iPlayer == con.iVikings):
                                 gc.getMap().plot(49, 62).setTerrainType(con.iCoast, True, True)
+				
                 if (argsList[0] == con.iMedicine):
                         self.pla.onTechAcquired(argsList[0], argsList[2])
 
-		if (argsList[0] == con.iEconomics):
-			self.rnf.onEconomicsDiscovered(argsList[2])
-			
 		if argsList[0] == con.iRailroad:
 			self.rnf.onRailroadDiscovered(argsList[2])
+			
+		if iTech in [con.iEconomics, con.iRifling]:
+			teamPlayer = gc.getTeam(iPlayer)
+			if teamPlayer.isHasTech(con.iEconomics) and teamPlayer.isHasTech(con.iRifling):
+				self.rnf.lateTradingCompany(iPlayer)
                     
                 if (gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iHuman])):
 

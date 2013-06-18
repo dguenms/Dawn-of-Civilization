@@ -3625,16 +3625,12 @@ class RiseAndFall:
 					elif gc.getTeam(gc.getPlayer(utils.getHumanID()).getTeam()).canContact(iTeamX):
 						CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iTeamX).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
-	def onEconomicsDiscovered(self, iCiv):
-		print "On Economics discovered. Civ: "+CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()), ())
-
+	def lateTradingCompany(self, iCiv):
 		if utils.getHumanID() != iCiv and not utils.isAVassal(iCiv):
 			if iCiv in [iFrance, iEngland, iNetherlands]:
 				self.handleColonialConquest(iCiv)
 
-	def onAstronomyDiscovered(self, iCiv):
-		print "On Astronomy discovered."
-
+	def earlyTradingCompany(self, iCiv):
 		if utils.getHumanID() != iCiv and not utils.isAVassal(iCiv):
 			if iCiv in [iSpain, iPortugal]:
 				self.handleColonialAcquisition(iCiv)
