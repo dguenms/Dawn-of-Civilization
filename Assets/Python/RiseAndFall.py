@@ -2933,9 +2933,6 @@ class RiseAndFall:
                 startingPlot = (tCapital[0], tCapital[1])
 		iOwner = iPreviousOwner
                 #iOwner = gc.getMap().plot(tCapital[0], tCapital[1]).getOwner()
-		
-		utils.debugTextPopup("Birth in capital: iCiv: " + str(iCiv))
-		utils.debugTextPopup("Birth in capital: iOwner: " + str(iOwner))
 
                 if self.getFlipsDelay(iCiv) == 0:
 
@@ -2945,11 +2942,9 @@ class RiseAndFall:
 
                                 # flip capital instead of spawning starting units
                                 utils.flipCity(tCapital, False, True, iCiv, ())
-				utils.debugTextPopup("Birth in capital: culture before: " + str(gc.getMap().plot(tCapital[0], tCapital[1]).getCulture(iCiv)))
-                                #utils.cultureManager(tCapital, 100, iCiv, iOwner, True, False, False)
+				#utils.cultureManager(tCapital, 100, iCiv, iOwner, True, False, False)
 				utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
-				utils.debugTextPopup("Birth in capital: culture after: " + str(gc.getMap().plot(tCapital[0], tCapital[1]).getCulture(iCiv)))
-                                self.convertSurroundingPlotCulture(iCiv, (tCapital[0]-1,tCapital[1]-1), (tCapital[0]+1,tCapital[1]+1))
+				self.convertSurroundingPlotCulture(iCiv, (tCapital[0]-1,tCapital[1]-1), (tCapital[0]+1,tCapital[1]+1))
                                 
                                 #cover plots revealed
                                 #self.coverPlots(con.iFlipX, con.iFlipY, iCiv)
