@@ -411,13 +411,15 @@ class RFCUtils:
 
 
         #RiseAndFall, Religions, Congresses, UniquePowers
-        def makeUnit(self, iUnit, iPlayer, tCoords, iNum, sAdj=""): #by LOQ
+        def makeUnit(self, iUnit, iPlayer, tCoords, iNum, sAdj="", iExp = 0): #by LOQ
                 'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
                 for i in range(iNum):
                         player = gc.getPlayer(iPlayer)
                         unit = player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 			if sAdj != "":
 				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
+			if iExp > 0:
+				unit.changeExperience(iExp, 100)
 
 	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum, sAdj=""): #by LOQ, modified by Leoreth
                 'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
@@ -721,11 +723,15 @@ class RFCUtils:
 		plot = gc.getMap().plot(iX, iY)
 		if plot.isCity():
 			city = plot.getPlotCity()
-			iCulture = 0
+			iCityCulture = 0
+			iPlotCulture = 0
 			for iMinor in range(con.iNumPlayers, con.iNumTotalPlayersB):
-				iCulture += city.getCulture(iMinor)
+				iCityCulture += city.getCulture(iMinor)
+				iPlotCulture += plot.getCulture(iMinor)
 				city.setCulture(iMinor, 0, True)
-			city.changeCulture(iMajorCiv, iCulture, True)
+				plot.setCulture(iMinor, 0, True)
+			city.changeCulture(iMajorCiv, iCityCulture, True)
+			plot.changeCulture(iMajorCiv, iPlotCulture, True)
 
         #UniquePowers
         def convertPlotCulture(self, pCurrent, iCiv, iPercent, bOwner):
@@ -1848,3 +1854,10 @@ class RFCUtils:
 			self.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], iTargetCities - iNumCities)
 		else:
 			if not bCapital: self.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], 1)
+			
+	def getSortedList(self, lList, function, bReverse = False):
+		return lList.sort(key=lambda element: function(element), reverse=bReverse)
+		
+	def getHighestEntry(self, lList, function):
+		lSortedList = self.getSortedList(lList, function, True)
+		return (lSortedList[0], function(lSortedList[0]))

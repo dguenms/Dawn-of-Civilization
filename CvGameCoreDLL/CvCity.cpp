@@ -9568,19 +9568,21 @@ int CvCity::getCommerceHappinessPer(CommerceTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
 
-	// Argentine UP: The Power of Justicialism (+1 happiness per 10% culture)
-	if (getOwnerINLINE() == ARGENTINA && eIndex == COMMERCE_CULTURE)
-	{
-		return m_aiCommerceHappinessPer[eIndex] + 100;
-	}
-
 	return m_aiCommerceHappinessPer[eIndex];
 }
 
 
 int CvCity::getCommerceHappinessByType(CommerceTypes eCommerce) const
 {
-	return ((getCommerceHappinessPer(eCommerce) * GET_PLAYER(getOwnerINLINE()).getCommercePercent(eCommerce)) / 100);
+	int iHappiness = ((getCommerceHappinessPer(eCommerce) * GET_PLAYER(getOwnerINLINE()).getCommercePercent(eCommerce)) / 100);
+
+	// Argentine UP: Justicialism (+1 happiness per 10% culture rate)
+	if (getOwnerINLINE() == ARGENTINA && eCommerce == COMMERCE_CULTURE)
+	{
+		iHappiness += GET_PLAYER(getOwnerINLINE()).getCommercePercent(eCommerce) / 101;
+	}
+
+	return iHappiness;
 }
 
 

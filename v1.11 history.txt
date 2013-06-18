@@ -106,3 +106,9 @@
 # You now need Electricity to access Aluminum
 # Wembley now requires Radio
 # the number of settlers a civ receives on spawn depends on the number of cities already present in their core
+# removed and relocated some marshes in South America
+# additional resources spawn in Argentina in 1850 AD
+# late trading company conquerors are triggered by discovering Economics and Rifling for the AI
+# Economics requires Astronomy now
+# The Eiffel Tower now requires Electricity and Steel
+# Portuguese Carracks start with Sentry

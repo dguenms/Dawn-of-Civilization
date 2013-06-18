@@ -2403,7 +2403,8 @@ class RiseAndFall:
                 if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
                         if iCiv in lConditionalCivs or bCapitalSettled:
                                 x, y = tCapital
-                                gc.getMap().plot(x,y).setOwner(iCiv)
+                                #gc.getMap().plot(x,y).setOwner(iCiv)
+				utils.convertPlotCulture(gc.getMap().plot(x,y), iCiv, 100, True)
                                 #self.createStartingUnits(iCiv, (x-1,y))
 				
 			# Leoreth: so Mughals can flip Pataliputra
@@ -2476,6 +2477,10 @@ class RiseAndFall:
 			if iCiv == iInca and utils.getHumanID() != iInca:
 				tTopLeft = (26, 19)
 				tBottomRight = (31, 24)
+			if iCiv == iArgentina and utils.getHumanID() != iArgentina:
+				tTopLeft = (29, 3)
+				
+			iPreviousOwner = gc.getMap().plot(tCapital[0], tCapital[1]).getOwner()
 				
                     
                         if (self.getFlipsDelay(iCiv) == 0): #city hasn't already been founded)
@@ -2530,7 +2535,7 @@ class RiseAndFall:
                                         if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand or iCiv == iItaly or iCiv == iCarthage): #dangerous starts
                                                 self.setDeleteMode(0, iCiv)
 					if bBirthInCapital:
-						self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
+						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
 						self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
                                 elif (bDeleteEverything and not bBirthInCapital):
@@ -2550,12 +2555,12 @@ class RiseAndFall:
                                                                         pCurrent.setCulture(iLoopCiv, 0, True)
                                                         pCurrent.setOwner(-1)
 					if bBirthInCapital:
-						self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
+						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
 						self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
                                 else:                    
 					if bBirthInCapital:
-						self.birthInCapital(iCiv, tCapital, tTopLeft, tBottomRight)
+						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
 						self.birthInForeignBorders(iCiv, tTopLeft, tBottomRight, tBroaderTopLeft, tBroaderBottomRight)
 						
@@ -2923,10 +2928,14 @@ class RiseAndFall:
 			self.germanSpawn()
 
         #Leoreth - adapted from SoI's birthConditional method by embryodead
-        def birthInCapital(self, iCiv, tCapital, tTopLeft, tBottomRight):
+        def birthInCapital(self, iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight):
 
                 startingPlot = (tCapital[0], tCapital[1])
-                iOwner = gc.getMap().plot(tCapital[0], tCapital[1]).getOwner()
+		iOwner = iPreviousOwner
+                #iOwner = gc.getMap().plot(tCapital[0], tCapital[1]).getOwner()
+		
+		utils.debugTextPopup("Birth in capital: iCiv: " + str(iCiv))
+		utils.debugTextPopup("Birth in capital: iOwner: " + str(iOwner))
 
                 if self.getFlipsDelay(iCiv) == 0:
 
@@ -2936,7 +2945,10 @@ class RiseAndFall:
 
                                 # flip capital instead of spawning starting units
                                 utils.flipCity(tCapital, False, True, iCiv, ())
-                                utils.cultureManager(tCapital, 100, iCiv, iOwner, True, False, False)
+				utils.debugTextPopup("Birth in capital: culture before: " + str(gc.getMap().plot(tCapital[0], tCapital[1]).getCulture(iCiv)))
+                                #utils.cultureManager(tCapital, 100, iCiv, iOwner, True, False, False)
+				utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
+				utils.debugTextPopup("Birth in capital: culture after: " + str(gc.getMap().plot(tCapital[0], tCapital[1]).getCulture(iCiv)))
                                 self.convertSurroundingPlotCulture(iCiv, (tCapital[0]-1,tCapital[1]-1), (tCapital[0]+1,tCapital[1]+1))
                                 
                                 #cover plots revealed
@@ -2960,7 +2972,7 @@ class RiseAndFall:
 
                                 #print ("starting units in", tCapital[0], tCapital[1])
                                 print ("birthConditional: starting units in", tCapital[0], tCapital[1])
-                                utils.cultureManager(tCapital, 100, iCiv, iOwner, True, False, False)
+                                #utils.cultureManager(tCapital, 100, iCiv, iOwner, True, False, False)
                                 self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
 
                                 utils.setPlagueCountdown(iCiv, -con.iImmunity)
@@ -2997,8 +3009,10 @@ class RiseAndFall:
                                 gc.getMap().plot(123, 2).setRevealed(iCiv, False, True, -1)
                                 print ("Plots covered")
 				
+				utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
+				
 				# notify dynamic names
-				dc.checkName(iCiv)
+				dc.onCityAcquired((iCiv, iOwner, gc.getMap().plot(tCapital[0], tCapital[1]).getPlotCity(), False, True))
 
                 else:           # starting units have already been placed, now to the second part
 
@@ -3040,6 +3054,8 @@ class RiseAndFall:
                         if iNumHumanCitiesToConvert > 0:
 				print "Flip Popup: in capital"
                                 self.flipPopup(iCiv, plotList)
+				
+			utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
 			
                                 
 
@@ -4486,8 +4502,8 @@ class RiseAndFall:
 		if iCiv == iArgentina:
 			#utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			utils.createSettlers(iCiv, 2)
-			utils.makeUnit(con.iRifleman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iArgentineGrenadierCavalry, iCiv, tPlot, 2)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iArgentineGrenadierCavalry, iCiv, tPlot, 3)
 			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:

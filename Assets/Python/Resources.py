@@ -240,6 +240,12 @@ class Resources:
 		if iGameTurn == getTurnForYear(1800):
 			gc.getMap().plot(17, 41).setBonusType(iHorse) # Mexico
 			gc.getMap().plot(16, 42).setBonusType(con.iIron) # Mexico
+			
+			gc.getMap().plot(31, 10).setBonusType(iWine) # Mendoza, Argentina
+			gc.getMap().plot(31, 6).setBonusType(iSheep) # Pampas, Argentina
+			
+			gc.getMap().plot(36, 18).setBonusType(iCorn) # Sao Paulo
+			gc.getMap().plot(42, 18).setBonusType(iFish) # Rio de Janeiro
 
                 if (iGameTurn == getTurnForYear(1850)):
                         gc.getMap().plot(12, 45).setBonusType(iWine) #California
@@ -263,6 +269,8 @@ class Resources:
 			
 			gc.getMap().plot(1, 38).setBonusType(iSugar) #Hawaii
 			gc.getMap().plot(5, 36).setBonusType(iBanana) #Hawaii
+			
+			
 			
 			# flood plains in California
 			for tPlot in [(11, 46), (11, 47), (11, 48)]:

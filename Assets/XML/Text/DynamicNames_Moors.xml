@@ -17,6 +17,26 @@
 		<English>Kingdom of Morocco</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_DESC_DEMOCRATIC</Tag>
+		<English>Moroccan Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_DESC_COMMUNIST</Tag>
+		<English>Socialist Republic of Morocco</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_DESC_FASCIST</Tag>
+		<English>Moroccan State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_NAZI_VASSAL</Tag>
+		<English>German Maghreb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_SOVIET_VASSAL</Tag>
+		<English>Soviet Morocco</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MOORS_CALIPHATE</Tag>
 		<English>Caliphate of Córdoba</English>
 	</TEXT>

@@ -205,6 +205,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
 		eventManager.addEventHandler("plotFeatureRemoved", self.onPlotFeatureRemoved)
+		eventManager.addEventHandler("cityAcquiredAndKept", self.onCityAcquiredAndKept)
 		#eventManager.addEventHandler("changeWar", self.onChangeWar)
 		#eventManager.addEventHandler("unitGifted", self.onUnitGifted)
                
@@ -300,9 +301,6 @@ class CvRFCEventHandler:
 				self.up.tradingCompanyCulture(city, playerType, owner)
 		elif playerType == con.iSpain and (city.getX(), city.getY()) == con.tCapitals[0][con.iMoors]:
 			self.up.tradingCompanyCulture(city, playerType, owner)
-
-                if (playerType < iNumMajorPlayers):
-			utils.spreadMajorCulture(playerType, city.getX(), city.getY())
 
                 self.sta.onCityAcquired(owner,playerType,city,bConquest,bTrade)
 		
@@ -404,6 +402,13 @@ class CvRFCEventHandler:
 		self.dc.onCityAcquired(argsList) #DynamicCivs
                 
                 return 0
+		
+	def onCityAcquiredAndKept(self, argsList):
+	
+		playerType, city = argsList
+
+                if (playerType < iNumMajorPlayers):
+			utils.spreadMajorCulture(playerType, city.getX(), city.getY())
 
         def onCityRazed(self, argsList):
                 #'City Razed'
