@@ -1648,11 +1648,11 @@ class DynamicCivs:
 			# Kingdom as default
 			
 		elif iPlayer == iPortugal:
-			if utils.isPlotInArea(tCapitalCoords, tBrazilTL, tBrazilBR):
+			if utils.isPlotInArea(tCapitalCoords, tBrazilTL, tBrazilBR) and not gc.getPlayer(iBrazil).isAlive():
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_BRAZIL")
 				return
 				
-			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iPortugal], con.tCoreAreasBR[0][iPortugal], con.tExceptions[0][iPortugal]):
+			if not utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_EXILE")
 				return
 		
