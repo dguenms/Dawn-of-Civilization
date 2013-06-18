@@ -4494,15 +4494,16 @@ class Victory:
 			if iGoal == 0:
 				capital = pArgentina.getCapitalCity()
 				iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
-				iGenerals = capital.getFreeSpecialistCount(iGreatGeneral)
-				aHelp.append(self.getIcon(iGenerals >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS_CAPITAL", (Generals, 2)))
+				iGenerals = 0
+				if not capital.isNone(): iGenerals = capital.getFreeSpecialistCount(iGreatGeneral)
+				aHelp.append(self.getIcon(iGenerals >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS_CAPITAL", (iGenerals, 2)))
 			elif iGoal == 1:
 				iHighestCommercePerCapitaCiv = self.getHighestCommercePerCapitaCiv(iArgentina)
-				aHelp.append(self.getIcon(iHighestCommercePerCapitaCiv == iArgentina) + localText.getText("TXT_KEY_HIGHEST_COMMERCE_PER_CAPITA_CIV", (localText.getText(str(gc.getPlayer(iHighestCommercePerCapitaCiv).getCivilizationShortDescriptionKey()),()))))
+				aHelp.append(self.getIcon(iHighestCommercePerCapitaCiv == iArgentina) + localText.getText("TXT_KEY_VICTORY_HIGHEST_COMMERCE_PER_CAPITA", (localText.getText(str(gc.getPlayer(iHighestCommercePerCapitaCiv).getCivilizationShortDescriptionKey()),()),)))
 			elif iGoal == 2:
 				pBuenosAires = gc.getMap().plot(con.tCapitals[0][iArgentina][0], con.tCapitals[0][iArgentina][1])
 				iCulture = 0
-				if pBuenosAires.isCity(): iCulture = pBuenosAires.getPlotCity().getCulture()
+				if pBuenosAires.isCity(): iCulture = pBuenosAires.getPlotCity().getCulture(iArgentina)
 				aHelp.append(self.getIcon(iCulture >= utils.getTurns(25000)) + localText.getText("TXT_KEY_VICTORY_CITY_CULTURE", ("Buenos Aires", iCulture, utils.getTurns(25000))))
 				
 		elif iPlayer == iBrazil:

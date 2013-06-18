@@ -3189,6 +3189,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_BANKING</PrereqTech>
+				<PrereqTech>TECH_ASTRONOMY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_ECONOMICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_ECONOMICS</Sound>

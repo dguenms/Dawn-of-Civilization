@@ -288,7 +288,7 @@ tFall = (
 2020,					# Italy
 1368,					# Mongolia
 1521,					# Aztecs
-1725,					# Mughals
+1640,					# Mughals
 2020,					# Turkey
 2020,					# Thailand
 1800,					# Congo

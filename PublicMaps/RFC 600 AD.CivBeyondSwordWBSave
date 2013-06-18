@@ -528,7 +528,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_AUTOCRACY
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CAPITALISM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_MARKET
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_CHRISTIANITY
 	Handicap=HANDICAP_PRINCE
@@ -12882,8 +12882,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=22
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_SWAMP
+	FeatureType=FEATURE_MUD, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -13272,8 +13273,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=21
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_SWAMP
+	FeatureType=FEATURE_MUD, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -13284,8 +13286,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=23
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_SWAMP
+	FeatureType=FEATURE_MUD, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -13667,11 +13670,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=20
-	BonusType=BONUS_SWAMP
 	isWOfRiver
 	RiverNSDirection=2
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -13690,10 +13692,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=23
+	BonusType=BONUS_SWAMP
 	isWOfRiver
 	RiverNSDirection=0
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_MUD, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -14039,16 +14042,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=17
-	BonusType=BONUS_SWAMP
 	isWOfRiver
 	RiverNSDirection=2
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=36,y=18
-	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -14061,9 +14062,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=20
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -14087,8 +14087,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=24
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_SWAMP
+	FeatureType=FEATURE_MUD, FeatureVariety=0
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
@@ -14419,22 +14420,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=17
-	BonusType=BONUS_SWAMP
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=37,y=18
-	BonusType=BONUS_SWAMP
 	isWOfRiver
 	RiverNSDirection=2
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -14455,22 +14454,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=22
-	BonusType=BONUS_SWAMP
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
 	RiverNSDirection=0
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=37,y=23
-	BonusType=BONUS_SWAMP
 	isWOfRiver
 	RiverNSDirection=0
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
