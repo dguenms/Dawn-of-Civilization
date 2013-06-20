@@ -304,6 +304,9 @@ class CvRFCEventHandler:
 
                 self.sta.onCityAcquired(owner,playerType,city,bConquest,bTrade)
 		
+                if (playerType < iNumMajorPlayers):
+			utils.spreadMajorCulture(playerType, city.getX(), city.getY())
+		
 		# relocate capitals
 		if utils.getHumanID() != playerType:
 			if playerType == con.iTurkey and (city.getX(), city.getY()) == (68, 45):
@@ -405,10 +408,12 @@ class CvRFCEventHandler:
 		
 	def onCityAcquiredAndKept(self, argsList):
 	
-		playerType, city = argsList
+		pass
+	
+	#	playerType, city = argsList
 
-                if (playerType < iNumMajorPlayers):
-			utils.spreadMajorCulture(playerType, city.getX(), city.getY())
+         #       if (playerType < iNumMajorPlayers):
+	#		utils.spreadMajorCulture(playerType, city.getX(), city.getY())
 
         def onCityRazed(self, argsList):
                 #'City Razed'
