@@ -700,7 +700,8 @@ class RFCUtils:
 
 
         #handler
-        def spreadMajorCulture(self, iMajorCiv, iX, iY):                
+        def spreadMajorCulture(self, iMajorCiv, iX, iY):  
+		
                 for x in range(iX-4, iX+5):        # from x-4 to x+4
                         for y in range(iY-4, iY+5):	# from y-4 to y+4
                                 pCurrent = gc.getMap().plot(x, y)
@@ -720,18 +721,18 @@ class RFCUtils:
                                                 iMinorPlotCulture = pCurrent.getCulture(iMinor)
                                                 pCurrent.setCulture(iMajorCiv, iMinorPlotCulture/iDen, True)
 						
-		plot = gc.getMap().plot(iX, iY)
-		if plot.isCity():
-			city = plot.getPlotCity()
-			iCityCulture = 0
-			iPlotCulture = 0
-			for iMinor in range(con.iNumPlayers, con.iNumTotalPlayersB):
-				iCityCulture += city.getCulture(iMinor)
-				iPlotCulture += plot.getCulture(iMinor)
-				city.setCulture(iMinor, 0, True)
-				plot.setCulture(iMinor, 0, True)
-			city.changeCulture(iMajorCiv, iCityCulture, True)
-			plot.changeCulture(iMajorCiv, iPlotCulture, True)
+		#plot = gc.getMap().plot(iX, iY)
+		#if plot.isCity():
+		#	city = plot.getPlotCity()
+		#	iCityCulture = 0
+		#	iPlotCulture = 0
+		#	for iMinor in range(con.iNumPlayers, con.iNumTotalPlayersB):
+		#		iCityCulture += city.getCulture(iMinor)
+		#		iPlotCulture += plot.getCulture(iMinor)
+		#		city.setCulture(iMinor, 0, True)
+		#		plot.setCulture(iMinor, 0, True)
+		#	city.changeCulture(iMajorCiv, iCityCulture, True)
+		#	plot.changeCulture(iMajorCiv, iPlotCulture, True)
 
         #UniquePowers
         def convertPlotCulture(self, pCurrent, iCiv, iPercent, bOwner):

@@ -1834,6 +1834,10 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		GC.getGameINLINE().updatePlotGroups();
 	}
 
+	// Leoreth: check here before the Python event modifies culture
+	eHighestCulturePlayer = pNewCity->getLiberationPlayer(true);
+	bRaze = canRaze(pNewCity);
+
 	CvEventReporter::getInstance().cityAcquired(eOldOwner, getID(), pNewCity, bConquest, bTrade);
 
 	SAFE_DELETE_ARRAY(pabHasReligion);
@@ -1879,8 +1883,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			else
 			{
 				//popup raze option
-				eHighestCulturePlayer = pNewCity->getLiberationPlayer(true);
-				bRaze = canRaze(pNewCity);
+				//eHighestCulturePlayer = pNewCity->getLiberationPlayer(true);
+				//bRaze = canRaze(pNewCity);
 				bGift = ((eHighestCulturePlayer != NO_PLAYER)
 						&& (eHighestCulturePlayer != getID())
 						&& ((getTeam() == GET_PLAYER(eHighestCulturePlayer).getTeam())
@@ -4833,23 +4837,23 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 		}
 
 		//Rhye - start UP (Turkish)
-		if (getID() == TURKEY)
+		/*if (getID() == TURKEY)
 		{
 			return true;
-		}
+		}*/
 		//Rhye - end UP (Turkish)
 
 
-		if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
+		/*if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
 		{
 			// Leoreth: else they can't raze cities in NA due to the "always 100% American culture" effect
-			if (getID() == AMERICA && pCity->getOriginalOwner() != AMERICA)
+			/*if (getID() == AMERICA && pCity->getOriginalOwner() != AMERICA)
 			{
 				return true;
-			}
+			}*/
 
-			return false;
-		}
+			//return false;
+		//}
 
 		//Leoreth: protect holy cities
 		if (pCity->isHolyCity())

@@ -112,3 +112,4 @@
 # Economics requires Astronomy now
 # The Eiffel Tower now requires Electricity and Steel
 # Portuguese Carracks start with Sentry
+# no AI conquerors against their own masters anymore
