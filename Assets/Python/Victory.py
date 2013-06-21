@@ -3286,18 +3286,19 @@ class Victory:
 		if self.isIgnoreAI() and utils.getHumanID() != iPlayer:
 			return
 		
+		pUnitInfo = gc.getUnitInfo(pUnit.getUnitType())
 		iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
 		
 		# Maya third goal: get a great general
 		if iPlayer == iMaya:
 			if self.getGoal(iMaya, 2) == -1:
-				if pUnit.getGreatPeoples(iGreatGeneral):
+				if pUnitInfo.getGreatPeoples(iGreatGeneral):
 					self.setGoal(iMaya, 2, 1)
 					
 		# Mexican second goal: get three great generals
 		if iPlayer == iAztecs and utils.isReborn(iPlayer):
 			if self.getGoal(iAztecs, 1) == -1:
-				if pUnit.getGreatPeoples(iGreatGeneral):
+				if pUnitInfo.getGreatPeoples(iGreatGeneral):
 					if gc.getPlayer(iPlayer).getGreatGeneralsCreated() >= 3:	
 						self.setGoal(iAztecs, 1, 1)
 		
