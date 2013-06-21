@@ -212,7 +212,8 @@ BeginPlayer
 	CivType=CIVILIZATION_MAYA                 
 	Team=11               
 	PlayableCiv=1                                 
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR         
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR    
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
