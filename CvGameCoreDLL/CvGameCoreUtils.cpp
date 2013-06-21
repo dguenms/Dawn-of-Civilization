@@ -2118,6 +2118,15 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 
 // edead: end
 
+// Leoreth: identify the active scenario
+
+ScenarioTypes getScenario()
+{
+	if (GET_PLAYER((PlayerTypes)0).isPlayable()) return SCENARIO_3000BC;
+
+	return SCENARIO_600AD;
+}
+
 // these string functions should only be used under chipotle cheat code (not internationalized)
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType)

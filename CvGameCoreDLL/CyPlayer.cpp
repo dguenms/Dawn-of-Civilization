@@ -2251,6 +2251,12 @@ int CyPlayer::getEspionageHistory(int iTurn) const
 	return (NULL != m_pPlayer ? m_pPlayer->getEspionageHistory(iTurn) : 0);
 }
 
+// Leoreth
+int CyPlayer::getTechHistory(int iTurn) const
+{
+	return (NULL != m_pPlayer ? m_pPlayer->getTechHistory(iTurn) : 0);
+}
+
 std::string CyPlayer::getScriptData() const
 {
 	return m_pPlayer ? m_pPlayer->getScriptData() : "";

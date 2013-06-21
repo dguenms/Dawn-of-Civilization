@@ -414,13 +414,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX1</Tag>
-		<English>Control 6 cities in Central America and 6 cities in Western North America in 1850 AD</English>
-		<German>Kontrollieren Sie im Jahr 1850 n. Chr. 6 Städte in Mittelamerika und 6 Städte im westlichen Nordamerika</German>
+		<English>Build three cathedrals of your state religion by 1880 AD</English>
+		<German>Bauen Sie bis zum Jahr 1880 n. Chr. drei Kathedralen Ihrer Staatsreligion</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX2</Tag>
-		<English>Have the largest Catholic population in the world in 1920 AD</English>
-		<German>Haben Sie im Jahr 1920 n. Chr. die größte katholische Bevölkerung der Welt</German>
+		<English>Create three great generals by 1920 AD</English>
+		<German>Erstellen Sie bis zum Jahr 1920 n. Chr. drei Große Generäle</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX3</Tag>
@@ -450,21 +450,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG2</Tag>
 		<English>Have the highest commerce per capita in the world in 1930 AD</English>
-		<German>Haben Sie im Jahr 1930 n. Chr. den höchsten Kommerzwert pro Kopf in der Welt</German>
+		<German>Haben Sie im Jahr 1930 n. Chr. den höchsten Kommerz pro Kopf in der Welt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG3</Tag>
-		<English>Have 25000 culture in Buenos Aires in 1960 AD</English>
-		<German>Haben Sie im Jahr 1960 n. Chr. 25.000 Kultur in Buenos Aires</German>
+		<English>Have 25000 culture in Buenos Aires by 1960 AD</English>
+		<German>Haben Sie bis zum Jahr 1960 n. Chr. 25.000 Kultur in Buenos Aires</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG3_EPIC</Tag>
-		<English>Have 37500 culture in Buenos Aires in 1960 AD</English>
-		<German>Haben Sie im Jahr 1960 n. Chr. 37.500 Kultur in Buenos Aires</German>
+		<English>Have 37500 culture in Buenos Aires by 1960 AD</English>
+		<German>Haben Sie bis zum Jahr 1960 n. Chr. 37.500 Kultur in Buenos Aires</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG3_MARATHON</Tag>
-		<English>Have 75000 culture in Buenos Aires in 1960 AD</English>
-		<German>Haben Sie im Jahr 1960 n. Chr. 75.000 Kultur in Buenos Aires</German>
+		<English>Have 75000 culture in Buenos Aires by 1960 AD</English>
+		<German>Haben Sie bis zum Jahr 1960 n. Chr. 75.000 Kultur in Buenos Aires</German>
 	</TEXT>
 </Civ4GameText>

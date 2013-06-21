@@ -378,6 +378,7 @@ class RiseAndFall:
 		
 	def setPlayerEnabled(self, iCiv, bNewValue):
 		sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)] = bNewValue
+		if bNewValue == False: gc.getPlayer(iCiv).getPlayable(False)
 		
 	def getPlayerEnabled(self, iCiv):
 		return sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
@@ -627,10 +628,10 @@ class RiseAndFall:
 		self.determineEnabledPlayers()
 		
 
-                if (not gc.getPlayer(0).isPlayable()): #late start condition
+                if utils.getScenario() == con.i600AD: #late start condition
                         self.clear600ADChina()
 
-                if (gc.getPlayer(0).isPlayable()): #late start condition
+                if utils.getScenario() == con.i3000BC: #late start condition
                         self.create4000BCstartingUnits()
                 else:
                         self.prepareConstantinople()
@@ -640,7 +641,7 @@ class RiseAndFall:
                 #self.setEarlyLeaders()
 
 
-                if (not gc.getPlayer(0).isPlayable()): #late start condition
+                if utils.getScenario() == con.i600AD: #late start condition
                         self.assign600ADTechs()
                         pChina.changeGold(300)
                         pJapan.changeGold(150)
@@ -878,7 +879,7 @@ class RiseAndFall:
 		
 		
 		# Leoreth: randomly place goody huts
-		if (not gc.getPlayer(0).isPlayable() and iGameTurn == getTurnForYear(600)+3) or iGameTurn == getTurnForYear(-3000)+3:
+		if (utils.getScenario() == con.i600AD and iGameTurn == getTurnForYear(600)+3) or iGameTurn == getTurnForYear(-3000)+3:
 			self.placeHut((49, 40), (54, 46)) # Iberia
 			self.placeHut((57, 51), (61, 56)) # Denmark / Northern Germany
 			self.placeHut((48, 55), (49, 58)) # Ireland
@@ -903,14 +904,14 @@ class RiseAndFall:
 			self.placeHut((33, 9), (37, 15)) # Parana Delta
 			self.placeHut((25, 36), (32, 39)) # Caribbean
 			
-			if gc.getPlayer(0).isPlayable():
+			if utils.getScenario() == con.i3000BC:
 				self.placeHut((101, 38), (107, 41)) # Southern China
 				self.placeHut((62, 45), (67, 50)) # Balkans
 				self.placeHut((69, 42), (76, 46)) # Asia Minor
 			
 		
 		if iGameTurn == getTurnForYear(con.tBirth[iSpain])-1:
-			if not gc.getPlayer(0).isPlayable():
+			if utils.getScenario() == con.i600AD:
 				pMassilia = gc.getMap().plot(56, 46)
 				if pMassilia.isCity():
 					pMassilia.getPlotCity().setCulture(pMassilia.getPlotCity().getOwner(), 1, True)
@@ -1120,7 +1121,7 @@ class RiseAndFall:
 				utils.killAndFragmentCiv(iAztecs, iIndependent, iIndependent2, -1, False)
 				
 				
-                if (gc.getPlayer(0).isPlayable()):
+                if utils.getScenario() == con.i3000BC:
                         iFirstSpawn = iGreece
                 else:
                         iFirstSpawn = iArabia
@@ -1131,7 +1132,7 @@ class RiseAndFall:
 
 
                 if (iGameTurn == getTurnForYear(600)):
-                        if (not gc.getPlayer(0).isPlayable()):  #late start condition
+                        if utils.getScenario() == con.i600AD:  #late start condition
                                 print ("late start")
 				if utils.getHumanID() != iChina:
 					tTopLeft = (99, 39) # 4 tiles further south
@@ -1373,6 +1374,14 @@ class RiseAndFall:
 					
 					lRebirthPlots = utils.getPlotList(tTopLeft, tBottomRight, tExceptions)
 					
+					# exclude American territory for Mexico
+					if iCiv == iAztecs:
+						for tPlot in lRebirthPlots:
+							x, y = tPlot
+							plot = gc.getMap().plot(x, y)
+							if plot.getOwner() == iAmerica and not utils.isPlotInArea(tPlot, con.tCoreAreas[1][iAztecs], con.tCoreAreasBR[1][iAztecs], con.tExceptions[1][iAztecs]):
+								tExceptions += (tPlot,)
+					
 					seljukUnits = []
 					lCities = []
 					for tPlot in lRebirthPlots:
@@ -1409,7 +1418,7 @@ class RiseAndFall:
 							utils.createGarrisons((x, y), iCiv)
 							
 					# convert plot culture
-					self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
+					self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight, tExceptions)
 					
 					# adjust starting stability
 					utils.setBaseStabilityLastTurn(iCiv, 0)
@@ -1610,7 +1619,7 @@ class RiseAndFall:
                 #lNumCitiesNew = con.l0Array
                 lNumCitiesNew = con.l0ArrayTotal #for late start
                 for iCiv in range(iNumTotalPlayers):
-                        if (iCiv < iNumActivePlayers or (iCiv == iCeltia and not gc.getPlayer(0).isPlayable()) or iCiv == iSeljuks): #late start condition
+                        if (iCiv < iNumActivePlayers or (iCiv == iCeltia and utils.getScenario() == con.i600AD) or iCiv == iSeljuks): #late start condition
                                 pCiv = gc.getPlayer(iCiv)
                                 teamCiv = gc.getTeam(pCiv.getTeam())
                                 if (pCiv.isAlive()):
@@ -2356,6 +2365,10 @@ class RiseAndFall:
 				utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
                 
                 lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina]
+		
+		if iCiv in [iBrazil, iArgentina]:
+			iColonyPlayer = utils.getColonyPlayer(iCiv)
+			utils.debugTextPopup('Colonial spawn of civ ' + str(iCiv) + ', colony civ: ' + str(iColonyPlayer))
 
                 # Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -2369,6 +2382,13 @@ class RiseAndFall:
 						return
 				else:
 					if utils.getStability(iKhmer) > -10:
+						return
+						
+			if iCiv in [iArgentina, iBrazil]:
+				#iColonyPlayer = utils.getColonyPlayer(iCiv)
+				#utils.debugTextPopup('Colonial spawn of civ ' + iCiv + ', colony civ: ' + str(iColonyPlayer))
+				if iColonyPlayer >= 0:
+					if utils.getStability(iColonyPlayer) >= 20:
 						return
 						
 		if utils.getHumanID() != iCiv and iCiv == iItaly:
@@ -3190,11 +3210,13 @@ class RiseAndFall:
 
 
 
-        def convertSurroundingPlotCulture(self, iCiv, tTopLeft, tBottomRight):
+        def convertSurroundingPlotCulture(self, iCiv, tTopLeft, tBottomRight, tExceptions = False):
                 
+		if not tExceptions: tExceptions = con.tExceptions[utils.getReborn(iCiv)][iCiv]
+		
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if not (x,y) in tExceptions[utils.getReborn(iCiv)][iCiv]:
+				if not (x,y) in tExceptions:
 	                                pCurrent = gc.getMap().plot( x, y )
         	                        if (not pCurrent.isCity()):
                 	                        utils.convertPlotCulture(pCurrent, iCiv, 100, False)
@@ -3863,7 +3885,7 @@ class RiseAndFall:
 	
         def warOnSpawn(self):
                 for iCiv in range(iNumMajorPlayers):
-                        if (not gc.getPlayer(0).isPlayable() and con.tIsActiveOnLateStart[iCiv]==0): #late start condition
+                        if (utils.getScenario() == con.i600AD and con.tIsActiveOnLateStart[iCiv]==0): #late start condition
                                 continue #skip          
                         pCiv = gc.getPlayer(iCiv)
                         teamCiv = gc.getTeam(pCiv.getTeam())
@@ -3872,7 +3894,7 @@ class RiseAndFall:
                                 iMin = 10 #can be set to 100 for skipping human player
                         if (gc.getGame().getSorenRandNum(100, 'first roll') >= iMin):
                                 for iLoopCiv in con.lEnemyCivsOnSpawn[iCiv]:
-                                        if (not gc.getPlayer(0).isPlayable() and con.tIsActiveOnLateStart[iLoopCiv]==0): #late start condition
+                                        if (utils.getScenario() == con.i600AD and con.tIsActiveOnLateStart[iLoopCiv]==0): #late start condition
                                                 continue #skip
 					if utils.getHumanID() == iCiv and iLoopCiv not in con.lTotalWarOnSpawn[iCiv]:
 						continue
@@ -4208,7 +4230,7 @@ class RiseAndFall:
 			if tSeaPlot:
 				utils.makeUnit(con.iGalley, iByzantium, tSeaPlot, 2)
 				utils.makeUnit(con.iTrireme, iByzantium, tSeaPlot, 2)
-				if gc.getPlayer(0).isPlayable():
+				if utils.getScenario() == con.i3000BC:
 					utils.makeUnit(con.iWorkBoat, iByzantium, tSeaPlot, 1)
                 if (iCiv == iVikings):
                         #utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
@@ -4292,7 +4314,9 @@ class RiseAndFall:
 				utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
                 if (iCiv == iSpain):
                         #utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
-			utils.createSettlers(iCiv, 3)
+			iSpanishSettlers = 2
+			if utils.getHumanID() != iSpain: iSpanishSettlers = 3
+			utils.createSettlers(iCiv, iSpanishSettlers)
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 1)
 			utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 4)
@@ -4306,7 +4330,7 @@ class RiseAndFall:
 				utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
 			#utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
-                        if (not gc.getPlayer(0).isPlayable()): #late start condition
+                        if utils.getScenario() == con.i600AD: #late start condition
                                 utils.makeUnit(con.iWorker, iCiv, tPlot, 1) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)
                 if (iCiv == iFrance):
                         #utils.makeUnit(con.iSettler, iCiv, tPlot, 2)
@@ -6114,6 +6138,22 @@ class RiseAndFall:
 				self.setPlayerEnabled(iCongo, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
 				self.setPlayerEnabled(iCongo, False)
+				
+		if iHuman != iSpain:
+			iRand = gc.getDefineINT("PLAYER_OCCURENCE_ARGENTINA")
+			
+			if iRand <= 0:
+				self.setPlayerEnabled(iArgentina, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Argentina enabled?') != 0:
+				self.setPlayerEnabled(iArgentina, False)
+				
+		if iHuman != iPortugal:
+			iRand = gc.getDefineINT("PLAYER_OCCURENCE_BRAZIL")
+			
+			if iRand <= 0:
+				self.setPlayerEnabled(iBrazil, False)
+			elif gc.getGame().getSorenRandNum(iRand, 'Brazil enabled?') != 0:
+				self.setPlayerEnabled(iBrazil, False)
 				
 	def placeHut(self, tTL, tBR):
 		plotList = []

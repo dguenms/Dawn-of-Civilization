@@ -3852,14 +3852,16 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			}
 		szInfoText.append(szBuffer);
 
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) { //late start condition
+		if (getScenario() == SCENARIO_3000BC)
+		{
 			szText = startingYear[eCivilization];
 			if (startingEra[eCivilization])
 				szText += gDLL->getText("TXT_KEY_AD");
 			else
 				szText += gDLL->getText("TXT_KEY_BC");
-			}
-		else {
+		}
+		else 
+		{
 			szText = startingYear600AD[eCivilization];
 			if (startingEra600AD[eCivilization])
 				szText += gDLL->getText("TXT_KEY_AD");
@@ -3882,7 +3884,7 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		if (bDawnOfMan)
 		{
 			szText = gDLL->getText("TXT_KEY_LOADING_TIME") + " ";
-			if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+			if (getScenario() == SCENARIO_3000BC) //late start condition
 				szText = szText + loadingTime[eCivilization];
 			else
 				szText = szText + loadingTime600AD[eCivilization];

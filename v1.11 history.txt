@@ -43,8 +43,8 @@
 	# Unique Building: Charreada Arena (Amphitheatre with +1 happiness with Horse, +2 experience for mounted units)
 	# Unique Power: Arid Agriculture (can build farms on hills)
 	# Unique Historical Victory:
-		# Control 6 cities in Central America and 6 cities in Western North America in 1850 AD
-		# Have the largest Catholic population in the world in 1920 AD
+		# Build three cathedrals of your state religion by 1880 AD
+		# Create three great generals by 1920 AD
 		# Make Mexico City the largest city in the world in 1960 AD
 # harbors can now be built in cities situated at lakes
 # added the Machu Picchu wonder: +2 gold per peak tile in city radius
@@ -78,7 +78,7 @@
 	# Spawn: 1822 AD
 	# Capital: Rio de Janeiro
 	# Leader: Dom Pedro II
-	# Unique Unit: Lenhador (Worker with Woodsman II, creates production and gold from chopping jungles and forests
+	# Unique Unit: Madeireiro (Worker with Woodsman II, creates production and gold from chopping jungles and forests
 	# Unique Building: Fazenda (Grocer with +5% with Banana, Sugar, Spices, Tobacco and Coffee, +1 health with coffee)
 	# Unique Power: Ethanol (sugar counts as oil for the Oil Industry)
 	# Unique Historical Victory:
@@ -113,3 +113,7 @@
 # The Eiffel Tower now requires Electricity and Steel
 # Portuguese Carracks start with Sentry
 # no AI conquerors against their own masters anymore
+# American cities outside of the Mexican core ignored by Mexican flip
+# made Argentina and Brazil optional civs
+# Mexico, Argentina and Brazil now have conditional spawns based on the stability of their owners
+# added a tech history graph to the demographics advisor

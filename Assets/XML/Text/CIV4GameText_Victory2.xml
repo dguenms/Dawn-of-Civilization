@@ -959,7 +959,7 @@
 		<English>South America</English>
 		<German>Südamerika</German>
 	</TEXT>
-	<TEXT>
+	<!--TEXT>
 		<Tag>TXT_KEY_UHV_AREA_44</Tag>
 		<English>Central America</English>
 		<German>Mittelamerika</German>
@@ -969,7 +969,7 @@
 		<English>Western North America</English>
 		<German>Westliches Nordamerika</German>
 	</TEXT>
-	<!--TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_46</Tag>
 		<English>Central America, Carribean and Southern USA</English>
 		<German>Mittelamerika, Karibik und südliche USA</German>

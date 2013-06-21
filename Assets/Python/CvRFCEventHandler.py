@@ -499,7 +499,7 @@ class CvRFCEventHandler:
 			
 			city.setHasRealBuilding(con.iJewishTemple + 4*gc.getPlayer(iOwner).getStateReligion(), True)
 			
-		if iOwner == con.iChina and (city.getX(), city.getY()) == con.tCapitals[0][con.iChina] and gc.getGame().getGameTurn() <= getTurnForYear(600)+3 and not gc.getPlayer(0).isPlayable():
+		if iOwner == con.iChina and (city.getX(), city.getY()) == con.tCapitals[0][con.iChina] and gc.getGame().getGameTurn() <= getTurnForYear(600)+3 and utils.getScenario() == con.i600AD:
 			city.setPopulation(4)
 			
 			city.setHasRealBuilding(con.iConfucianTemple, True)
@@ -608,7 +608,7 @@ class CvRFCEventHandler:
 
 		print 'Religion founded: '+str(iReligion)
 
-                if (not gc.getPlayer(0).isPlayable() and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
+                if (utils.getScenario() == con.i600AD and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
                         return
         
                 self.vic.onReligionFounded(iReligion, iFounder)
@@ -733,8 +733,8 @@ class CvRFCEventHandler:
 			utils.handleChineseCities(unit)
 			
 		#help AI by moving new slaves to the new world
-		if unit.getUnitType() == con.iSlave and city.getRegionID() in [con.rIberia, con.rBritain, con.rEurope, con.rScandinavia, con.rRussia, con.rItaly, con.rBalkans, con.rMaghreb, con.rAnatolia] and utils.getHumanID() != city.getOwner():
-			utils.moveSlaveToNewWorld(city.getOwner(), unit)
+		#if unit.getUnitType() == con.iSlave and city.getRegionID() in [con.rIberia, con.rBritain, con.rEurope, con.rScandinavia, con.rRussia, con.rItaly, con.rBalkans, con.rMaghreb, con.rAnatolia] and utils.getHumanID() != city.getOwner():
+		#	utils.moveSlaveToNewWorld(city.getOwner(), unit)
 			
 	
 		
@@ -753,7 +753,7 @@ class CvRFCEventHandler:
 			self.rel.foundOrthodoxy(iOwner)
 			
 			# Leoreth: build shrine in 3000 BC scenario during HRE autoplay to provide a challenge
-			if gc.getPlayer(0).isPlayable() and utils.getHumanID() == con.iHolyRome and gc.getGame().getGameTurnYear() < 840:
+			if utils.getScenario() == con.i3000BC and utils.getHumanID() == con.iHolyRome and gc.getGame().getGameTurnYear() < 840:
 				gc.getGame().getHolyCity().setHasRealBuilding(con.iChristianShrine, True)
 			
 			gc.getGame().setHolyCity(con.iChristianity, city, False)
@@ -1025,7 +1025,7 @@ class CvRFCEventHandler:
 		
 		iEra = gc.getTechInfo(iTech).getEra()
                 
-                if (not gc.getPlayer(0).isPlayable() and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
+                if (utils.getScenario() == con.i600AD and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
                         return
                 
                 if (gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])):                            

@@ -46,6 +46,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getPowerHistory", &CyPlayer::getPowerHistory, "int (int iTurn)")
 		.def("getCultureHistory", &CyPlayer::getCultureHistory, "int (int iTurn)")
 		.def("getEspionageHistory", &CyPlayer::getEspionageHistory, "int (int iTurn)")
+		.def("getTechHistory", &CyPlayer::getTechHistory, "int (int iTurn)") // Leoreth
 
 		.def("getScriptData", &CyPlayer::getScriptData, "str () - Get stored custom data (via pickle)")
 		.def("setScriptData", &CyPlayer::setScriptData, "void (str) - Set stored custom data (via pickle)")

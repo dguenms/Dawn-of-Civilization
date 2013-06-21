@@ -47,4 +47,12 @@
 		<DefineName>PLAYER_OCCURENCE_CONGO</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
+	<Define>
+		<DefineName>PLAYER_OCCURENCE_ARGENTINA</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
+	</Define>
+	<Define>
+		<DefineName>PLAYER_OCCURENCE_BRAZIL</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
+	</Define>
 </Civ4Defines>

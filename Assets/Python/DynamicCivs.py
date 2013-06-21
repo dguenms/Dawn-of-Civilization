@@ -908,10 +908,10 @@ class DynamicCivs:
 			if not gc.getPlayer(iPlayer).isHuman():
 				self.setLeader(iPlayer, self.startingLeaders[iPlayer])
 			
-				if not gc.getPlayer(iEgypt).isPlayable() and iPlayer in self.lateStartingLeaders:
+				if utils.getScenario() == con.i600AD and iPlayer in self.lateStartingLeaders:
 					self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
 			
-		if not gc.getPlayer(iEgypt).isPlayable():
+		if utils.getScenario() == con.i600AD:
 			self.changeAnarchyTurns(iChina, 3)
 			self.setCivDesc(iByzantium, "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT")
 
@@ -1846,7 +1846,7 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iNasser)
 				return
 			
-			if bResurrected or not gc.getPlayer(0).isPlayable():
+			if bResurrected or utils.getScenario() == con.i600AD:
 				self.setLeader(iPlayer, con.iBaibars)
 				return
 				
@@ -2164,7 +2164,7 @@ class DynamicCivs:
 		elif iPlayer == iBrazil:
 			return
 				
-		if not gc.getPlayer(0).isPlayable() and iPlayer in self.lateStartingLeaders:
+		if utils.getScenario() == con.i600AD and iPlayer in self.lateStartingLeaders:
 			self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
 			return
 				

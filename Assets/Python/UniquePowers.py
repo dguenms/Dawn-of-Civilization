@@ -461,6 +461,8 @@ class UniquePowers:
 		
                 if (pWinningPlayer.getID() != iAztecs):
                         return
+			
+		if utils.isReborn(iAztecs): return
 
                 pLosingPlayer = gc.getPlayer(pLosingUnit.getOwner())
                 cLosingUnit = PyHelpers.PyInfo.UnitInfo(pLosingUnit.getUnitType())

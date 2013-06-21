@@ -99,7 +99,7 @@ class Resources:
                 if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
                         gc.getMap().plot(53, 51).setBonusType(iDye) #France
                         gc.getMap().plot(53, 55).setBonusType(iDye) #England
-                if (not gc.getPlayer(0).isPlayable()): #late start condition
+                if utils.getScenario() == con.i600AD: #late start condition
                         if (iGameTurn == getTurnForYear(600)): 
                                 gc.getMap().plot(53, 51).setBonusType(iDye) #France
                                 gc.getMap().plot(53, 55).setBonusType(iDye) #England
@@ -112,7 +112,7 @@ class Resources:
 			gc.getMap().plot(51, 36).setBonusType(-1)
 
 		# Leoreth: replicate silk route in 600 AD
-		if iGameTurn == getTurnForYear(600) and not gc.getPlayer(0).isPlayable():
+		if iGameTurn == getTurnForYear(600) and utils.getScenario() == con.i600AD:
                         CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan                               
                         CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan
                         CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei

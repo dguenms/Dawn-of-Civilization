@@ -1834,10 +1834,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		GC.getGameINLINE().updatePlotGroups();
 	}
 
-	// Leoreth: check here before the Python event modifies culture
-	eHighestCulturePlayer = pNewCity->getLiberationPlayer(true);
-	bRaze = canRaze(pNewCity);
-
 	CvEventReporter::getInstance().cityAcquired(eOldOwner, getID(), pNewCity, bConquest, bTrade);
 
 	SAFE_DELETE_ARRAY(pabHasReligion);
@@ -1883,8 +1879,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			else
 			{
 				//popup raze option
-				//eHighestCulturePlayer = pNewCity->getLiberationPlayer(true);
-				//bRaze = canRaze(pNewCity);
+				eHighestCulturePlayer = pNewCity->getLiberationPlayer(true);
+				bRaze = canRaze(pNewCity);
 				bGift = ((eHighestCulturePlayer != NO_PLAYER)
 						&& (eHighestCulturePlayer != getID())
 						&& ((getTeam() == GET_PLAYER(eHighestCulturePlayer).getTeam())
@@ -2900,6 +2896,7 @@ void CvPlayer::doTurn()
 	updatePowerHistory(GC.getGameINLINE().getGameTurn(), getPower());
 	updateCultureHistory(GC.getGameINLINE().getGameTurn(), countTotalCulture());
 	updateEspionageHistory(GC.getGameINLINE().getGameTurn(), GET_TEAM(getTeam()).getEspionagePointsEver());
+	updateTechHistory(GC.getGameINLINE().getGameTurn(), GET_TEAM(getTeam()).getTotalTechValue()); // Leoreth
 	expireMessages();  // turn log
 
 	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
@@ -4844,7 +4841,7 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 		//Rhye - end UP (Turkish)
 
 
-		/*if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
+		if (pCity->calculateTeamCulturePercent(getTeam()) >= GC.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD"))
 		{
 			// Leoreth: else they can't raze cities in NA due to the "always 100% American culture" effect
 			/*if (getID() == AMERICA && pCity->getOriginalOwner() != AMERICA)
@@ -4852,8 +4849,8 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 				return true;
 			}*/
 
-			//return false;
-		//}
+			return false;
+		}
 
 		//Leoreth: protect holy cities
 		if (pCity->isHolyCity())
@@ -5670,7 +5667,7 @@ void CvPlayer::found(int iX, int iY)
 						startingEra = startingEraFoundAstronomy[getID()];
 					}else
 					{
-						if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+						if (getScenario() == SCENARIO_600AD)
 						{
 							startingEra = startingEraFound600AD[getID()];
 						}else
@@ -6135,7 +6132,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
-            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+            if (getScenario() == SCENARIO_600AD)
             {
                 startingEra = currentEra600AD[getID()];
             }else
@@ -6147,7 +6144,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			startingEra = 0;
 		}else
 		{
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+			if (getScenario() == SCENARIO_600AD)
 				startingEra = 2;
 			else
 				startingEra = 0;
@@ -6171,7 +6168,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				startingEra = 4;
 		}
 
-		if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+		if (getScenario() == SCENARIO_600AD) //late start condition
 			if (getID() < VIKING)
 				startingEra = 2;
 
@@ -8019,7 +8016,7 @@ int CvPlayer::calculateInflationRate() const
 	}
 
 	// handle several special effects explicitly here (overwrite)
-	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+	if (getScenario() == SCENARIO_600AD)
 	{
 		if (getID() == ARABIA)
 			iRate = iRatePercent * 115 / 100;
@@ -9437,7 +9434,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			result = iThreshold * 80 / 100;
 	}
 
-	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+	if (getScenario() == SCENARIO_600AD) //late start condition
 		if (getID() < VIKING) {
 			result *= 87;
 			result /= 100;
@@ -12369,7 +12366,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
+			if (getScenario() == SCENARIO_600AD)
 			{
 				startEra = currentEra600AD[getID()];
 			}else
@@ -14983,6 +14980,21 @@ int CvPlayer::getEspionageHistory(int iTurn) const
 void CvPlayer::updateEspionageHistory(int iTurn, int iBestEspionage)
 {
 	m_mapEspionageHistory[iTurn] = iBestEspionage;
+}
+
+int CvPlayer::getTechHistory(int iTurn) const
+{
+	CvTurnScoreMap::const_iterator it = m_mapTechHistory.find(iTurn);
+	if (it != m_mapTechHistory.end())
+	{
+		return it->second;
+	}
+	return 0;
+}
+
+void CvPlayer::updateTechHistory(int iTurn, int iBestTech)
+{
+	m_mapTechHistory[iTurn] = iBestTech;
 }
 
 std::string CvPlayer::getScriptData() const
@@ -18655,6 +18667,20 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	}
 
 	{
+		m_mapTechHistory.clear();
+		uint iSize;
+		pStream->Read(&iSize);
+		for (uint i = 0; i < iSize; i++)
+		{
+			int iTurn;
+			int iScore;
+			pStream->Read(&iTurn);
+			pStream->Read(&iScore);
+			m_mapTechHistory[iTurn] = iScore;
+		}
+	}
+
+	{
 		m_mapEventsOccured.clear();
 		uint iSize;
 		pStream->Read(&iSize);
@@ -19165,6 +19191,17 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	}
 
 	{
+		uint iSize = m_mapTechHistory.size();
+		pStream->Write(iSize);
+		CvTurnScoreMap::iterator it;
+		for (it = m_mapTechHistory.begin(); it != m_mapTechHistory.end(); ++it)
+		{
+			pStream->Write(it->first);
+			pStream->Write(it->second);
+		}
+	}
+
+	{
 		uint iSize = m_mapEventsOccured.size();
 		pStream->Write(iSize);
 		CvEventMap::iterator it;
@@ -19273,10 +19310,10 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 		incrementGreatGeneralsCreated();
 
 		//Leoreth: trigger for created generals (Maya UHV)
-		long result = -1;
+		/*long result = -1;
 		CyArgsList argsList;
 		argsList.add(getID());
-	    gDLL->getPythonIFace()->callFunction(PYScreensModule, "onGreatGeneralBorn", argsList.makeFunctionArgs(), &result);
+	    gDLL->getPythonIFace()->callFunction(PYScreensModule, "onGreatGeneralBorn", argsList.makeFunctionArgs(), &result);*/
 
 		changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
 
@@ -23468,7 +23505,7 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 		}
 	}
 
-	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+	if (getScenario() == SCENARIO_600AD) //late start condition
 		if (getID() < VIKING) {
 			iThreshold *= 80;
 			iThreshold /= 100;
