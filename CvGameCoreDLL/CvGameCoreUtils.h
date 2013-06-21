@@ -353,6 +353,8 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 int getTurns(int iTurns);
 // edead: end
 
+ScenarioTypes getScenario(); // Leoreth
+
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);

@@ -2159,19 +2159,27 @@ class Victory:
 							
 				else:
 					
-					if iGameTurn == getTurnForYear(1850):
-						iCentralAmerica = self.getNumCitiesInArea(iAztecs, tCentralAmericaTL, tCentralAmericaBR)
-						iWesternNorthAmerica = self.getNumCitiesInArea(iAztecs, tWesternNorthAmericaTL, tWesternNorthAmericaBR)
-						
-						if iCentralAmerica >= 6 and iWesternNorthAmerica >= 6:
-							self.setGoal(iAztecs, 0, 1)
-						else:
+					#if iGameTurn == getTurnForYear(1850):
+					#	iCentralAmerica = self.getNumCitiesInArea(iAztecs, tCentralAmericaTL, tCentralAmericaBR)
+					#	iWesternNorthAmerica = self.getNumCitiesInArea(iAztecs, tWesternNorthAmericaTL, tWesternNorthAmericaBR)
+					#	
+					#	if iCentralAmerica >= 6 and iWesternNorthAmerica >= 6:
+					#		self.setGoal(iAztecs, 0, 1)
+					#	else:
+					#		self.setGoal(iAztecs, 0, 0)
+					
+					if iGameTurn == getTurnForYear(1880):
+						if self.getGoal(iAztecs, 0) == -1:
 							self.setGoal(iAztecs, 0, 0)
 							
+					#if iGameTurn == getTurnForYear(1920):
+					#	if self.getLargestReligionCiv(iAztecs, con.iCatholicism) == iAztecs:
+					#		self.setGoal(iAztecs, 1, 1)
+					#	else:
+					#		self.setGoal(iAztecs, 1, 0)
+					
 					if iGameTurn == getTurnForYear(1920):
-						if self.getLargestReligionCiv(iAztecs, con.iCatholicism) == iAztecs:
-							self.setGoal(iAztecs, 1, 1)
-						else:
+						if self.getGoal(iAztecs, 1) == -1:
 							self.setGoal(iAztecs, 1, 0)
 							
 					if iGameTurn == getTurnForYear(1960): 
@@ -2297,14 +2305,14 @@ class Victory:
 					else:
 						self.setGoal(iArgentina, 1, 0)
 			
-				if iGameTurn == getTurnForYear(1960):
+				if self.getGoal(iArgentina, 2) == -1:
 					pBuenosAires = gc.getMap().plot(con.tCapitals[0][iArgentina][0], con.tCapitals[0][iArgentina][1])
 					if pBuenosAires.isCity():
 						if pBuenosAires.getPlotCity().getCulture() >= utils.getTurns(25000):
 							self.setGoal(iArgentina, 2, 1)
-						else:
-							self.setGoal(iArgentina, 2, 0)
-					else:
+							
+				if iGameTurn == getTurnForYear(1960):
+					if self.getGoal(iArgentina, 2) == -1:
 						self.setGoal(iArgentina, 2, 0)
 
 		
@@ -3082,6 +3090,17 @@ class Victory:
 						iAltars = self.getNumBuildings(iAztecs, con.iAztecSacrificialAltar)
 						if iTemples >= 6 and iAltars >= 6:
 							self.setGoal(iAztecs, 1, 1)
+					
+		# Mexico: build three cathedrals of your state religion
+			if pAztecs.isAlive() and pAztecs.isReborn():
+				if self.getGoal(iAztecs, 0) == -1:
+					iStateReligion = pAztecs.getStateReligion()
+					if iStateReligion >= 0:
+						iCathedral = con.iCathedral + 4*iStateReligion
+						if iBuilding == iCathedral:
+							if self.getNumBuildings(iAztecs, iCathedral) >= 3:
+								self.setGoal(iAztecs, 0, 1)
+							
 							
 		# Inca: build 5 tambos and a road along the Andean coast
 		elif iPlayer == iInca:
@@ -3263,17 +3282,24 @@ class Victory:
 	def onGreatPersonBorn(self, argsList):
 		pUnit, iPlayer, pCity = argsList
 		
-		iGameTurn = gc.getGame().getGameTurn()
+		# Leoreth: ignore AI civs to improve speed
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer:
+			return
 		
-		# Leoreth: new first goal for Japan: three great generals by 1600 AD
-		#if iPlayer == iJapan:
-		#	if pUnit.getUnitClassType() == CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_GREAT_GENERAL'):
-		#		if sd.getGoal(iJapan, 1) == -1:
-		#			if gc.getGame().getGameTurn() <= getTurnForYear(1600):
-		#				sd.setNumGenerals(sd.getNumGenerals() + 1)
-		#				if sd.getNumGenerals() == 3:
-		#					sd.setGoal(iJapan, 0, 1)
-
+		iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
+		
+		# Maya third goal: get a great general
+		if iPlayer == iMaya:
+			if self.getGoal(iMaya, 2) == -1:
+				if pUnit.getGreatPeoples(iGreatGeneral):
+					self.setGoal(iMaya, 2, 1)
+					
+		# Mexican second goal: get three great generals
+		if iPlayer == iAztecs and utils.isReborn(iPlayer):
+			if self.getGoal(iAztecs, 1) == -1:
+				if pUnit.getGreatPeoples(iGreatGeneral):
+					if gc.getPlayer(iPlayer).getGreatGeneralsCreated() >= 3:	
+						self.setGoal(iAztecs, 1, 1)
 		
 
 	def onGreatGeneralBorn(self, iPlayer):

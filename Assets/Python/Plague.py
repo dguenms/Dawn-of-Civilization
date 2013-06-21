@@ -71,7 +71,7 @@ class Plague:
 ##                self.setGenericPlagueDates(2, 225 + gc.getGame().getSorenRandNum(30, 'Variation') - 15) #1340
 ##                self.setGenericPlagueDates(3, 277 + gc.getGame().getSorenRandNum(30, 'Variation') - 15) #1630
 ##                self.setGenericPlagueDates(4, 340 + gc.getGame().getSorenRandNum(30, 'Variation') - 15) #1850 ca
-                if (gc.getPlayer(0).isPlayable()):  #late start condition
+                if utils.getScenario() == con.i3000BC:  #late start condition
                         self.setGenericPlagueDates(0, getTurnForYear(400) + gc.getGame().getSorenRandNum(40, 'Variation') - 20) #turn 170
                 else:
                         self.setGenericPlagueDates(0, 80) #safe value

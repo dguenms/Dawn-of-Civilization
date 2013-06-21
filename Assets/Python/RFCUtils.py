@@ -37,7 +37,7 @@ lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 3
 
 class RFCUtils:
 
-        #Rise and fall, stability
+	#Rise and fall, stability
         def getLastTurnAlive( self, iCiv ):
                 return sd.scriptDict['lLastTurnAlive'][iCiv]
 
@@ -1655,7 +1655,7 @@ class RFCUtils:
 				
 	def prepareCapital(self, iPlayer, city, iSize, lBuildings=[], lReligions=[], b600ADOnly=False):
 	
-		if gc.getPlayer(0).isPlayable() and b600ADOnly: return
+		if self.getScenario() == con.i3000BC and b600ADOnly: return
 		if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])+3: return
 		if (city.getX(), city.getY()) != con.tCapitals[0][iPlayer]: return
 	
@@ -1781,11 +1781,21 @@ class RFCUtils:
 		lResults = []
 		
 		for x in range(tTL[0], tBR[0]+1):
-			for y in range(tTL[1], tTL[1]+1):
+			for y in range(tTL[1], tBR[1]+1):
 				if (x,y) not in tExceptions:
 					lResults.append((x,y))
 					
 		return lResults
+		
+	def getAreaCities(self, tTL, tBR, tExceptions=()):
+		lCities = []
+		lPlotList = self.getPlotList(tTL, tBR, tExceptions)
+		
+		for tPlot in lPlotList:
+			x, y = tPlot
+			plot = gc.getMap().plot(x, y)
+			if plot.isCity(): lCities.append(plot.getPlotCity())
+		return lCities
 		
 	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False):
 	
@@ -1857,8 +1867,38 @@ class RFCUtils:
 			if not bCapital: self.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], 1)
 			
 	def getSortedList(self, lList, function, bReverse = False):
-		return lList.sort(key=lambda element: function(element), reverse=bReverse)
+		return sorted(lList, key=lambda element: function(element), reverse=bReverse)
 		
 	def getHighestEntry(self, lList, function):
 		lSortedList = self.getSortedList(lList, function, True)
-		return (lSortedList[0], function(lSortedList[0]))
+		return lSortedList[0]
+		
+	def getColonyPlayer(self, iCiv):
+		tCoreTL = con.tCoreAreasTL[0][iCiv]
+		tCoreBR = con.tCoreAreasBR[0][iCiv]
+		tExceptions = con.tExceptions[0][iCiv]
+		lCities = self.getAreaCities(tCoreTL, tCoreBR, tExceptions)
+		lPlayers = []
+		lPlayerNumbers = [0 for i in range(con.iNumPlayers)]
+		
+		for city in lCities: lPlayers.append(city.getOwner())
+		
+		for i in range(len(lPlayerNumbers)): lPlayerNumbers[i] = lPlayers.count(i)
+		
+		self.debugTextPopup('lPlayerNumbers before: ' + str(lPlayerNumbers))
+		
+		iHighestEntry = self.getHighestEntry(lPlayerNumbers, lambda x: x)
+		
+		self.debugTextPopup('lPlayerNumbers after: ' + str(lPlayerNumbers))
+		self.debugTextPopup('Highest entry: ' + str(iHighestEntry))
+		
+		if iHighestEntry == 0: return -1
+		
+		self.debugTextPopup('Colony player: ' + str(lPlayerNumbers.index(iHighestEntry)))
+		
+		return lPlayerNumbers.index(iHighestEntry)
+		
+	def getScenario(self):
+		if gc.getPlayer(con.iEgypt).isPlayable(): return con.i3000BC
+		
+		return con.i600AD

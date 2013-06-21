@@ -2896,4 +2896,12 @@ enum StabilityTypes
 	NUM_STABILITY_TYPES,
 };
 
+// Leoreth
+enum ScenarioTypes
+{
+	SCENARIO_3000BC,
+	SCENARIO_600AD,
+	NUM_SCENARIO_TYPES,
+};
+
 #endif	// CVENUMS_h

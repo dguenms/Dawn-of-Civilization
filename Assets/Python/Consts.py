@@ -2593,4 +2593,6 @@ tTradingCompanyPlotLists = (
 [(99, 28), (99, 27), (100, 27), (100, 26), (101, 26), (104, 25), (105, 25), (106, 25), (107, 24), (104, 27), (105, 27), (106, 27), (104, 28), (106, 28), (105, 29), (106, 29)] #Netherlands
 )
 
-lSecondaryCivs = [iTamils, iTibet, iMoors, iPoland, iCongo]
+lSecondaryCivs = [iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
+
+(i3000BC, i600AD) = range(2)

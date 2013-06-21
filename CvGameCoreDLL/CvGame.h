@@ -676,11 +676,6 @@ protected:
 	void doVoteResults();
 	void doVoteSelection();
 
-	//Leoreth
-	void doStability();
-	void continentsNormalization();
-	void normalization();
-
 	void createBarbarianCities();
 	void createBarbarianUnits();
 	void createAnimals();

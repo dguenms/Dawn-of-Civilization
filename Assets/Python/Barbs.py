@@ -318,11 +318,11 @@ class Barbs:
 			self.checkSpawn(iBarbarian, con.iSumerianVulture, 1 + iHandicap, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
 			self.checkSpawn(iBarbarian, con.iHorseArcher, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(700)):
-                        if (gc.getPlayer(0).isPlayable()):  #late start condition
+                        if utils.getScenario() == con.i3000BC:  #late start condition
                                 #self.spawnUnits( iBarbarian, (78, 42), (88, 50), con.iHorseArcher, 3 + iHandicap, iGameTurn, 8-iHandicap, 2, utils.outerInvasion, 0)
 				self.checkSpawn(iBarbarian, con.iHorseArcher, 3 + iHandicap, (78, 42), (88, 50), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
                 if (iGameTurn > getTurnForYear(700) and iGameTurn <= getTurnForYear(1040)):
-                        if (gc.getPlayer(0).isPlayable()):  #late start condition
+                        if utils.getScenario() == con.i3000BC:  #late start condition
                                 #self.spawnUnits( iBarbarian, (78, 42), (90, 52), con.iHorseArcher, 2 + iHandicap, iGameTurn, 6-iHandicap, 2, utils.outerInvasion, 0)
 				self.checkSpawn(iBarbarian, con.iHorseArcher, 2 + iHandicap, (78, 42), (90, 52), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
                         
@@ -336,7 +336,7 @@ class Barbs:
                         #self.spawnUnits( iBarbarian, (54, 31), (67, 35), con.iHorseArcher, 1, iGameTurn, 9-iHandicap, 3, utils.outerInvasion, 0)
 			self.checkSpawn(iBarbarian, con.iCarthageNumidianCavalry, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
                 if (iGameTurn >= getTurnForYear(50) and iGameTurn < getTurnForYear(900)):
-                        if (gc.getPlayer(0).isPlayable()):  #late start condition
+                        if utils.getScenario() == con.i3000BC:  #late start condition
                                 #self.spawnUnits( iBarbarian, (54, 31), (67, 35), con.iHorseArcher, 2, iGameTurn, 10-iHandicap, 5, utils.outerInvasion, 0)
                                 #self.spawnUnits( iBarbarian, (56, 29), (70, 33), con.iCamelArcher, 2 + iHandicap, iGameTurn, 10, 0, utils.outerInvasion, 0)
 				self.checkSpawn(iBarbarian, con.iCarthageNumidianCavalry, 4 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
@@ -357,11 +357,11 @@ class Barbs:
 		#		self.checkSpawn(iNative, con.iZuluImpi, 3 + iHandicap, (58, 24), (72, 31), self.spawnNatives, iGameTurn, 6, 4)
 		if iGameTurn >= getTurnForYear(-800) and iGameTurn <= getTurnForYear(1300):
 			iNumUnits = 1 + iHandicap
-			if gc.getPlayer(0).isPlayable(): iNumUnits += 1
+			if utils.getScenario() == con.i3000BC: iNumUnits += 1
 			if iGameTurn >= getTurnForYear(400): iNumUnits += 2
 			self.checkSpawn(iBarbarian, con.iNubianMedjay, iNumUnits, (66, 28), (71, 34), self.spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
                 if (iGameTurn >= getTurnForYear(450) and iGameTurn <= getTurnForYear(1600)):
-                        if (gc.getPlayer(0).isPlayable()):  #late start condition
+                        if utils.getScenario() == con.i3000BC:
                                 #self.spawnUnits( iNative, (60, 10), (72, 27), con.iZuluImpi, 3 + iHandicap, iGameTurn, 10, 4, utils.outerInvasion, 1)
 				self.checkSpawn(iNative, con.iZuluImpi, 3 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 10, 4)
                         else:
@@ -385,7 +385,7 @@ class Barbs:
                 if (iGameTurn >= getTurnForYear(600) and iGameTurn <= getTurnForYear(1100)):
                         #self.spawnUnits( iBarbarian, (15, 38), (24, 47), con.iNativeAmericaDogSoldier, 2 + iHandicap, iGameTurn, 20, 0, utils.outerInvasion, 1)
 			self.checkSpawn(iBarbarian, con.iNativeAmericaDogSoldier, 2 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
-                        if (gc.getPlayer(0).isPlayable()):  #late start condition
+                        if utils.getScenario() == con.i3000BC:  #late start condition
                                 #self.spawnUnits( iBarbarian, (15, 38), (24, 47), con.iAztecJaguar, 3, iGameTurn, 16 - 2*iHandicap, 10, utils.outerInvasion, 0)
 				self.checkSpawn(iBarbarian, con.iAztecJaguar, 3, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
                         else:  #late start condition
@@ -469,7 +469,7 @@ class Barbs:
 		
 		self.foundCity(iIndependent, lKiev, "Kyiv", iGameTurn, 2, con.iLongbowman, 2, [con.iOrthodoxy])
                 #self.foundCity(lJelling, "Jelling", iGameTurn, 1, -1, -1)
-                if (gc.getPlayer(0).isPlayable()):  #late start condition
+                if utils.getScenario() == con.i3000BC:
                         self.foundCity(iCeltia, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
                 else:
                         self.foundCity(iIndependent, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
@@ -509,7 +509,7 @@ class Barbs:
 			else:
 				self.foundCity(iIndependent, lHamburg, "Hamburg", iGameTurn, 2, con.iCrossbowman, 1)
 				
-		if gc.getPlayer(0).isPlayable():
+		if utils.getScenario() == con.i3000BC:
 			self.foundCity(iIndependent, lMarrakesh, "Marrakus", iGameTurn, 1, con.iCrossbowman, 1)
 
 

@@ -134,7 +134,7 @@ class CvDawnOfMan:
 		pActivePlayer = gc.getPlayer(CyGame().getActivePlayer())
 
 		#year = CyGameTextMgr().getTimeStr(gc.getGame().getGameTurn(), false)
-		if (not gc.getPlayer(0).isPlayable() and CyGame().getActiveTeam() <= con.iArabia):  #late start condition
+		if (utils.getScenario() == con.i600AD and CyGame().getActiveTeam() <= con.iArabia):  #late start condition
                         year = "600 " + CyTranslator().getText("TXT_KEY_AD", ())
                 else:
                         year = con.tYear[CyGame().getActiveTeam()][0] + CyTranslator().getText(con.tYear[CyGame().getActiveTeam()][1], ())
@@ -144,7 +144,7 @@ class CvDawnOfMan:
 		#textKey = "TXT_KEY_DAWN_OF_MAN_%d" %(CyGame().getActiveTeam()) # edead - civ-specific dawn of man
 		textKey = con.dawnOfMan[CyGame().getActiveTeam()]
 
-		if not gc.getPlayer(0).isPlayable() and CyGame().getActivePlayer() in [con.iChina, con.iJapan, con.iKorea, con.iByzantium]:
+		if utils.getScenario() == con.i600AD and CyGame().getActivePlayer() in [con.iChina, con.iJapan, con.iKorea, con.iByzantium]:
 			#textKey = "TXT_KEY_DAWN_OF_MAN_LATE_%d" %(CyGame().getActiveTeam())
 			textKey = con.dawnOfManLate[CyGame().getActiveTeam()]
 
@@ -174,7 +174,7 @@ class CvDawnOfMan:
             
 ##Rhye - begin
 		if (getTurnForYear(con.tBirth[CyGame().getActiveTeam()]) == 0 or \
-                    (not gc.getPlayer(0).isPlayable() and CyGame().getActiveTeam() <= con.iArabia)):  #late start condition
+                    (utils.getScenario() == con.i600AD and CyGame().getActiveTeam() <= con.iArabia)):  #late start condition
 			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
 			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, 1)
 			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (0,)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -190,7 +190,7 @@ class CvDawnOfMan:
                         screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
 
                         exponent = 1 + iNumAutoPlayTurns/utils.getTurns(190)
-                        if (gc.getPlayer(0).isPlayable()):  #late start condition
+                        if utils.getScenario() == con.i3000BC:  #late start condition
                                 screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, float(math.pow(iGameTurn, exponent)) / float(math.pow(iNumAutoPlayTurns, exponent)))
                         else:
                                 screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, float(math.pow(iGameTurn-getTurnForYear(600), exponent)) / float(math.pow(iNumAutoPlayTurns-getTurnForYear(600), exponent)))

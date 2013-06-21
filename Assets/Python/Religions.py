@@ -127,7 +127,7 @@ class Religions:
 			
 		#Leoreth: script the Apostolic Palace and Church of the Holy Sepulchre for the player HRE victory in the 3000 BC scenario
 		if iGameTurn == getTurnForYear(840) - 5 - utils.getSeed() % 10:
-			if gc.getPlayer(0).isPlayable() and utils.getHumanID() == con.iHolyRome:
+			if utils.getScenario() == con.i3000BC and utils.getHumanID() == con.iHolyRome:
 				pHolyCity = gc.getGame().getHolyCity(con.iChristianity)
 				if not pHolyCity.isHasRealBuilding(con.iApostolicPalace):
 					pHolyCity.setHasRealBuilding(con.iChristianShrine, True)

@@ -87,7 +87,8 @@ class CvInfoScreen:
 		self.POWER_SCORE	= 4
 		self.CULTURE_SCORE	= 5
 		self.ESPIONAGE_SCORE	= 6
-		self.NUM_SCORES		= 7
+		self.TECH_SCORE		= 7
+		self.NUM_SCORES		= 8
 		self.RANGE_SCORES	= range(self.NUM_SCORES)
 
 		self.scoreCache	= []
@@ -158,6 +159,7 @@ class CvInfoScreen:
 		self.POWER_SCORE	= 4
 		self.CULTURE_SCORE	= 5
 		self.ESPIONAGE_SCORE	= 6
+		self.TECH_SCORE		= 7
 
 ############################################### DEMOGRAPHICS ###############################################
 
@@ -369,6 +371,7 @@ class CvInfoScreen:
 		self.TEXT_POWER = localText.getText("TXT_KEY_POWER", ())
 		self.TEXT_CULTURE = localText.getObjectText("TXT_KEY_COMMERCE_CULTURE", 0)
 		self.TEXT_ESPIONAGE = localText.getObjectText("TXT_KEY_ESPIONAGE_CULTURE", 0)
+		self.TEXT_TECH = localText.getText("TXT_KEY_CONCEPT_TECHNOLOGY", ())
 
 		self.TEXT_VALUE = localText.getText("TXT_KEY_DEMO_SCREEN_VALUE_TEXT", ())
 		self.TEXT_RANK = localText.getText("TXT_KEY_DEMO_SCREEN_RANK_TEXT", ())
@@ -661,6 +664,7 @@ class CvInfoScreen:
 	    screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_POWER, 4, 4, False )
 	    screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_CULTURE, 5, 5, False )
 	    screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_ESPIONAGE, 6, 6, False )
+	    screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_TECH, 7, 7, False )
 
 	    self.dropDownTurns = []
 	    self.szTurnsDropdownWidget = self.getNextWidgetName()
@@ -761,6 +765,8 @@ class CvInfoScreen:
 		return gc.getPlayer(iPlayer).getCultureHistory(iTurn)
 	    elif (scoreType == self.ESPIONAGE_SCORE):
 		return gc.getPlayer(iPlayer).getEspionageHistory(iTurn)
+	    elif (scoreType == self.TECH_SCORE):
+		return gc.getPlayer(iPlayer).getTechHistory(iTurn)
 
 	# Requires the cache to be built
 	def getHistory(self, scoreType, iPlayer, iRelTurn):
@@ -2341,6 +2347,9 @@ class CvInfoScreen:
 
 					elif (iSelected == 6):
 						self.iGraphTabID = self.ESPIONAGE_SCORE
+						
+					elif (iSelected == 7):
+						self.iGraphTabID = self.TECH_SCORE
 
 					self.drawGraph()
 

@@ -73,7 +73,7 @@ class AIWars:
 		
         def setup(self):
                 iTurn = getTurnForYear(-600)
-                if (not gc.getPlayer(0).isPlayable()):  #late start condition
+                if utils.getScenario() == con.i600AD:  #late start condition
                         iTurn = getTurnForYear(900)
                 self.setNextTurnAIWar(iTurn + gc.getGame().getSorenRandNum(iMaxIntervalEarly-iMinIntervalEarly, 'random turn'))
 

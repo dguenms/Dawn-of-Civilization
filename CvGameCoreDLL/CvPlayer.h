@@ -943,6 +943,9 @@ public:
 	int getEspionageHistory(int iTurn) const;																							// Exposed to Python
 	void updateEspionageHistory(int iTurn, int iBestEspionage);
 
+	int getTechHistory(int iTurn) const;
+	void updateTechHistory(int iTurn, int iBestTech);
+
 	// Script data needs to be a narrow string for pickling in Python
 	std::string getScriptData() const;																									// Exposed to Python
 	void setScriptData(std::string szNewValue);																					// Exposed to Python
@@ -1423,6 +1426,8 @@ protected:
 	CvTurnScoreMap m_mapPowerHistory;
 	CvTurnScoreMap m_mapCultureHistory;
 	CvTurnScoreMap m_mapEspionageHistory;
+
+	CvTurnScoreMap m_mapTechHistory;
 
 	void doGold();
 	void doResearch();

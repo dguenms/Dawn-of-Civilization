@@ -1046,12 +1046,6 @@ def onTechStolen(argsList):
 	iTech = argsList[1]
 	vic.Victory().onTechStolen(iPlayer, iTech)
 	return 1
-
-#Leoreth
-def onGreatGeneralBorn(argsList):
-	iPlayer = argsList[0]
-	vic.Victory().onGreatGeneralBorn(iPlayer)
-	return 1
 	
 def isNeighbor(argsList):
 	iPlayer = argsList[0]
@@ -1324,20 +1318,8 @@ def getUHVTileInfo(argsList):
 		brx, bry = vic.tSAmericaBR
 		if tlx <= x <= brx and tly <= y <= bry and (x, y) not in vic.tSouthAmericaExceptions:
 			return 43
-			
-	elif iPlayer == con.iAztecs:
-		if gc.getPlayer(con.iAztecs).isReborn():
-			tlx, tly = vic.tCentralAmericaTL
-			brx, bry = vic.tCentralAmericaBR
-			if tlx <= x <= brx and tly <= y <= bry and (x, y) not in vic.tCentralAmericaExceptions:
-				return 44
-				
-			tlx, tly = vic.tWesternNorthAmericaTL
-			brx, bry = vic.tWesternNorthAmericaBR
-			if tlx <= x <= brx and tly <= y <= bry:
-				return 45
 		
-	# IMPORTANT: ID 46 is unused and available!
+	# IMPORTANT: IDs 44-46 are unused and available!
 			
 	elif iPlayer == con.iTurkey:
 		if (x,y) in lEasternMediterranean:

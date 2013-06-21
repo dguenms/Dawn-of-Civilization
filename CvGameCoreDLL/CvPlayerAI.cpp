@@ -3987,7 +3987,7 @@ bool CvPlayerAI::AI_isFinancialTrouble() const
 		//if (iGameTurn == startingTurn[getID()] || iGameTurn == startingTurn[getID()] + 1 || iGameTurn == startingTurn[getID()] + 2)
 		if (iGameTurn == getTurnForYear(startingTurnYear[getID()]) || iGameTurn == getTurnForYear(startingTurnYear[getID()]) + 1 || iGameTurn == getTurnForYear(startingTurnYear[getID()]) + 2) //edead
 			return false;
-		if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+		if (getScenario() == SCENARIO_600AD) //late start condition
 			//if (iGameTurn <= 181+2)
 			if (iGameTurn <= getTurnForYear(600)+2) // edead
 				return false;

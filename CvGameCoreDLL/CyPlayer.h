@@ -502,6 +502,8 @@ public:
 	int getCultureHistory(int iTurn) const;
 	int getEspionageHistory(int iTurn) const;
 
+	int getTechHistory(int iTurn) const; // Leoreth
+
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 
