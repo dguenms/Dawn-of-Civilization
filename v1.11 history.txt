@@ -117,3 +117,4 @@
 # made Argentina and Brazil optional civs
 # Mexico, Argentina and Brazil now have conditional spawns based on the stability of their owners
 # added a tech history graph to the demographics advisor
+# free buildings when founding a city from the previous era

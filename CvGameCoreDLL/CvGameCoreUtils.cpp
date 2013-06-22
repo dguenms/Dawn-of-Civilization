@@ -2122,9 +2122,25 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 
 ScenarioTypes getScenario()
 {
-	if (GET_PLAYER((PlayerTypes)0).isPlayable()) return SCENARIO_3000BC;
+	if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) return SCENARIO_3000BC;
 
-	return SCENARIO_600AD;
+	if (GET_PLAYER((PlayerTypes)BYZANTIUM).isPlayable()) return SCENARIO_600AD;
+
+	return SCENARIO_1700AD;
+}
+
+int getScenarioStartYear()
+{
+	ScenarioTypes eScenario = getScenario();
+
+	if (eScenario == SCENARIO_3000BC) return -3000;
+	else if (eScenario == SCENARIO_600AD) return 600;
+	else return 1700;
+}
+
+int getScenarioStartTurn()
+{
+	return getTurnForYear(getScenarioStartYear());
 }
 
 // these string functions should only be used under chipotle cheat code (not internationalized)

@@ -908,12 +908,15 @@ class DynamicCivs:
 			if not gc.getPlayer(iPlayer).isHuman():
 				self.setLeader(iPlayer, self.startingLeaders[iPlayer])
 			
-				if utils.getScenario() == con.i600AD and iPlayer in self.lateStartingLeaders:
+				# no difference between leaders in 600AD and 1700AD as of now
+				if utils.getScenario() >= con.i600AD and iPlayer in self.lateStartingLeaders:
 					self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
 			
 		if utils.getScenario() == con.i600AD:
 			self.changeAnarchyTurns(iChina, 3)
 			self.setCivDesc(iByzantium, "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT")
+			
+		# Leoreth: might need to do stuff for the 1700AD scenario here
 
         def setDetermineds(self, iPlayer, szName="", szFlag=""):
                 pPlayer = gc.getPlayer(iPlayer)
@@ -1846,7 +1849,7 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iNasser)
 				return
 			
-			if bResurrected or utils.getScenario() == con.i600AD:
+			if bResurrected or utils.getScenario() >= con.i600AD:
 				self.setLeader(iPlayer, con.iBaibars)
 				return
 				
@@ -2164,7 +2167,8 @@ class DynamicCivs:
 		elif iPlayer == iBrazil:
 			return
 				
-		if utils.getScenario() == con.i600AD and iPlayer in self.lateStartingLeaders:
+		# no difference in leaders between 600AD and 1700AD scenarios as of now
+		if utils.getScenario() >= con.i600AD and iPlayer in self.lateStartingLeaders:
 			self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
 			return
 				

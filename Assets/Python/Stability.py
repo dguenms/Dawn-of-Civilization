@@ -269,7 +269,7 @@ class Stability:
 
 
 
-                if (((iGameTurn > getTurnForYear(-600) and utils.getScenario() == con.i3000BC) or (iGameTurn > getTurnForYear(600)+utils.getTurns(20) and utils.getScenario() == con.i600AD)) and iGameTurn % utils.getTurns(20) == 15): #late start condition
+                if (((iGameTurn > getTurnForYear(-600) and utils.getScenario() == con.i3000BC) or (iGameTurn > utils.getScenarioStartTurn()+utils.getTurns(20) and utils.getScenario() >= con.i600AD)) and iGameTurn % utils.getTurns(20) == 15): #late start condition
                 #if (iGameTurn > 0): #debug
                         self.continentsNormalization(iGameTurn)
                         self.normalization(iGameTurn)

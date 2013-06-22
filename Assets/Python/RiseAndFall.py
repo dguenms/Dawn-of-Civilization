@@ -861,53 +861,43 @@ class RiseAndFall:
                                         iNextCiv = iCiv+j+1
                                         if (getTurnForYear(con.tBirth[iCiv])+self.getBirthTurnModifier(iCiv) == getTurnForYear(con.tBirth[iNextCiv])+self.getBirthTurnModifier(iNextCiv)):
                                                 self.setBirthTurnModifier(iNextCiv, (self.getBirthTurnModifier(iNextCiv)+1))
-
-
-
-        #def setEarlyLeaders(self):
-        #        for i in range(iNumActivePlayers):
-        #                if (tEarlyLeaders[i] != tLeaders[i][0]):
-        #                        if (not gc.getPlayer(i).isHuman()):
-        #                                gc.getPlayer(i).setLeader(tEarlyLeaders[i])
-        #                                print ("leader starting switch:", tEarlyLeaders[i], "in civ", i)
                                 
                 
         def checkTurn(self, iGameTurn):
-
-                #debug
-                #print('Reached turn '+repr(iGameTurn))
-		
-		
+	
 		# Leoreth: randomly place goody huts
-		if (utils.getScenario() == con.i600AD and iGameTurn == getTurnForYear(600)+3) or iGameTurn == getTurnForYear(-3000)+3:
-			self.placeHut((49, 40), (54, 46)) # Iberia
-			self.placeHut((57, 51), (61, 56)) # Denmark / Northern Germany
-			self.placeHut((48, 55), (49, 58)) # Ireland
-			self.placeHut((50, 53), (54, 60)) # Britain
-			self.placeHut((57, 57), (65, 65)) # Scandinavia
-			self.placeHut((73, 53), (81, 58)) # Russia
-			self.placeHut((81, 43), (86, 47)) # Transoxania
-			self.placeHut((88, 30), (94, 36)) # Deccan
-			self.placeHut((110, 40), (113, 43)) # Shikoku
-			self.placeHut((114, 49), (116, 52)) # Hokkaido
-			self.placeHut((85, 53), (99, 59)) # Siberia
-			self.placeHut((103, 24), (109, 29)) # Indonesia
-			self.placeHut((107, 19), (116, 22)) # Northern Australia
-			self.placeHut((114, 10), (118, 17)) # Western Australia
-			self.placeHut((120, 5), (123, 11)) # New Zealand
-			self.placeHut((59, 25), (67, 28)) # Central Africa
-			self.placeHut((68, 17), (72, 23)) # East Africa
-			self.placeHut((65, 10), (70, 16)) # South Africa
-			self.placeHut((22, 48), (29, 51)) # Great Lakes
-			self.placeHut((18, 44), (22, 52)) # Great Plains
-			self.placeHut((34, 25), (39, 29)) # Amazonas Delta
-			self.placeHut((33, 9), (37, 15)) # Parana Delta
-			self.placeHut((25, 36), (32, 39)) # Caribbean
+		if iGameTurn == utils.getScenarioStartTurn()+3:
 			
 			if utils.getScenario() == con.i3000BC:
 				self.placeHut((101, 38), (107, 41)) # Southern China
 				self.placeHut((62, 45), (67, 50)) # Balkans
 				self.placeHut((69, 42), (76, 46)) # Asia Minor
+			
+			if utils.getScenario() <= con.i600AD:
+				self.placeHut((49, 40), (54, 46)) # Iberia
+				self.placeHut((57, 51), (61, 56)) # Denmark / Northern Germany
+				self.placeHut((48, 55), (49, 58)) # Ireland
+				self.placeHut((50, 53), (54, 60)) # Britain
+				self.placeHut((57, 57), (65, 65)) # Scandinavia
+				self.placeHut((73, 53), (81, 58)) # Russia
+				self.placeHut((81, 43), (86, 47)) # Transoxania
+				self.placeHut((88, 30), (94, 36)) # Deccan
+				self.placeHut((110, 40), (113, 43)) # Shikoku
+				self.placeHut((114, 49), (116, 52)) # Hokkaido
+				self.placeHut((85, 53), (99, 59)) # Siberia
+				self.placeHut((103, 24), (109, 29)) # Indonesia
+				self.placeHut((68, 17), (72, 23)) # East Africa
+				self.placeHut((65, 10), (70, 16)) # South Africa
+				self.placeHut((22, 48), (29, 51)) # Great Lakes
+				self.placeHut((18, 44), (22, 52)) # Great Plains
+				self.placeHut((34, 25), (39, 29)) # Amazonas Delta
+				self.placeHut((33, 9), (37, 15)) # Parana Delta
+				self.placeHut((25, 36), (32, 39)) # Caribbean
+			
+			self.placeHut((107, 19), (116, 22)) # Northern Australia
+			self.placeHut((114, 10), (118, 17)) # Western Australia
+			self.placeHut((120, 5), (123, 11)) # New Zealand
+			self.placeHut((59, 25), (67, 28)) # Central Africa
 			
 		
 		if iGameTurn == getTurnForYear(con.tBirth[iSpain])-1:
@@ -1123,8 +1113,11 @@ class RiseAndFall:
 				
                 if utils.getScenario() == con.i3000BC:
                         iFirstSpawn = iGreece
-                else:
+                elif utils.getScenario() == con.i600AD:
                         iFirstSpawn = iArabia
+		else:
+			iFirstSpawn = iAmerica
+			
                 for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
                         if (iGameTurn >= getTurnForYear(con.tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(con.tBirth[iLoopCiv]) + 6):
                                 self.initBirth(iGameTurn, con.tBirth[iLoopCiv], iLoopCiv)
@@ -3885,7 +3878,7 @@ class RiseAndFall:
 	
         def warOnSpawn(self):
                 for iCiv in range(iNumMajorPlayers):
-                        if (utils.getScenario() == con.i600AD and con.tIsActiveOnLateStart[iCiv]==0): #late start condition
+                        if utils.getScenario() > con.tLatestActiveScenario[iCiv]:
                                 continue #skip          
                         pCiv = gc.getPlayer(iCiv)
                         teamCiv = gc.getTeam(pCiv.getTeam())
@@ -3894,7 +3887,7 @@ class RiseAndFall:
                                 iMin = 10 #can be set to 100 for skipping human player
                         if (gc.getGame().getSorenRandNum(100, 'first roll') >= iMin):
                                 for iLoopCiv in con.lEnemyCivsOnSpawn[iCiv]:
-                                        if (utils.getScenario() == con.i600AD and con.tIsActiveOnLateStart[iLoopCiv]==0): #late start condition
+                                        if utils.getScenario() > con.tLatestActiveScenario[iCiv]:
                                                 continue #skip
 					if utils.getHumanID() == iCiv and iLoopCiv not in con.lTotalWarOnSpawn[iCiv]:
 						continue
@@ -4325,10 +4318,7 @@ class RiseAndFall:
 			else:
 				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			if utils.getHumanID() != iSpain:
-				#utils.makeUnit(con.iKnight, iCiv, tPlot, 1)
-				#utils.makeUnit(con.iPikeman, iCiv, tPlot, 1)
 				utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
-			#utils.makeUnit(con.iCatapult, iCiv, tPlot, 2)
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                         if utils.getScenario() == con.i600AD: #late start condition
                                 utils.makeUnit(con.iWorker, iCiv, tPlot, 1) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)

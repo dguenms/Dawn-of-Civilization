@@ -354,6 +354,8 @@ int getTurns(int iTurns);
 // edead: end
 
 ScenarioTypes getScenario(); // Leoreth
+int getScenarioStartYear(); // Leoreth
+int getScenarioStartTurn(); // Leoreth
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);

@@ -1653,9 +1653,11 @@ class RFCUtils:
 				pUnit.kill(False, con.iBarbarian)
 				return
 				
-	def prepareCapital(self, iPlayer, city, iSize, lBuildings=[], lReligions=[], b600ADOnly=False):
+	def prepareCapital(self, iPlayer, city, iSize, lBuildings=[], lReligions=[], iScenario=False):
 	
-		if self.getScenario() == con.i3000BC and b600ADOnly: return
+		if iScenario:
+			if utils.getScenario() != iScenario: return
+		
 		if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])+3: return
 		if (city.getX(), city.getY()) != con.tCapitals[0][iPlayer]: return
 	
@@ -1901,4 +1903,13 @@ class RFCUtils:
 	def getScenario(self):
 		if gc.getPlayer(con.iEgypt).isPlayable(): return con.i3000BC
 		
-		return con.i600AD
+		if gc.getPlayer(con.iByzantium).isPlayable(): return con.i600AD
+		
+		return con.i1700AD
+		
+	def getScenarioStartYear(self):
+		lStartYears = [-3000, 600, 1700]
+		return lStartYears[self.getScenario()]
+		
+	def getScenarioStartTurn(self):
+		return getTurnForYear(self.getScenarioStartYear())

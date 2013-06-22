@@ -3987,10 +3987,12 @@ bool CvPlayerAI::AI_isFinancialTrouble() const
 		//if (iGameTurn == startingTurn[getID()] || iGameTurn == startingTurn[getID()] + 1 || iGameTurn == startingTurn[getID()] + 2)
 		if (iGameTurn == getTurnForYear(startingTurnYear[getID()]) || iGameTurn == getTurnForYear(startingTurnYear[getID()]) + 1 || iGameTurn == getTurnForYear(startingTurnYear[getID()]) + 2) //edead
 			return false;
-		if (getScenario() == SCENARIO_600AD) //late start condition
+		//if (getScenario() == SCENARIO_600AD) //late start condition
 			//if (iGameTurn <= 181+2)
-			if (iGameTurn <= getTurnForYear(600)+2) // edead
-				return false;
+			//if (iGameTurn <= getTurnForYear(600)+2) // edead
+				//return false;
+		if (iGameTurn <= getScenarioStartTurn()+2)
+			return false;
 		//Rhye - end
 		int iNetCommerce = 1 + getCommerceRate(COMMERCE_GOLD) + getCommerceRate(COMMERCE_RESEARCH) + std::max(0, getGoldPerTurn());
 		int iNetExpenses = calculateInflatedCosts() + std::min(0, getGoldPerTurn());
