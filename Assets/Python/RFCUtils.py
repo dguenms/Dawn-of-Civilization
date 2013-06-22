@@ -1887,16 +1887,9 @@ class RFCUtils:
 		
 		for i in range(len(lPlayerNumbers)): lPlayerNumbers[i] = lPlayers.count(i)
 		
-		self.debugTextPopup('lPlayerNumbers before: ' + str(lPlayerNumbers))
-		
 		iHighestEntry = self.getHighestEntry(lPlayerNumbers, lambda x: x)
 		
-		self.debugTextPopup('lPlayerNumbers after: ' + str(lPlayerNumbers))
-		self.debugTextPopup('Highest entry: ' + str(iHighestEntry))
-		
 		if iHighestEntry == 0: return -1
-		
-		self.debugTextPopup('Colony player: ' + str(lPlayerNumbers.index(iHighestEntry)))
 		
 		return lPlayerNumbers.index(iHighestEntry)
 		
