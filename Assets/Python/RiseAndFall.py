@@ -2359,11 +2359,7 @@ class RiseAndFall:
                 
                 lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina]
 		
-		if iCiv in [iBrazil, iArgentina]:
-			iColonyPlayer = utils.getColonyPlayer(iCiv)
-			utils.debugTextPopup('Colonial spawn of civ ' + str(iCiv) + ', colony civ: ' + str(iColonyPlayer))
-
-                # Leoreth: extra checks for conditional civs
+		# Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
                         if iCiv == iByzantium:
 				if not pRome.isAlive() or pGreece.isAlive() or (utils.getHumanID() == iRome and utils.getStability(iRome) >= 20):
@@ -2378,8 +2374,7 @@ class RiseAndFall:
 						return
 						
 			if iCiv in [iArgentina, iBrazil]:
-				#iColonyPlayer = utils.getColonyPlayer(iCiv)
-				#utils.debugTextPopup('Colonial spawn of civ ' + iCiv + ', colony civ: ' + str(iColonyPlayer))
+				iColonyPlayer = utils.getColonyPlayer(iCiv)
 				if iColonyPlayer >= 0:
 					if utils.getStability(iColonyPlayer) >= 20:
 						return
