@@ -10326,7 +10326,7 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 {
 	int result = m_iUnitCostPercent;
 
-	if (getScenario() == SCENARIO_600AD) { //late start condition
+	if (getScenario() >= SCENARIO_600AD) { //late start condition
 		if (pl < VIKING) {
 			result *= 90;
 			result /= 100;
@@ -10496,7 +10496,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 	}
 
 	if (pl < VIKING) {
-		if (getScenario() == SCENARIO_600AD) { //late start condition
+		if (getScenario() >= SCENARIO_600AD) { //late start condition
 			researchPercent *= 88;
 			researchPercent /= 100;
 			if (pl == CHINA || pl == JAPAN) {
@@ -10511,7 +10511,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		}
 	}
 
-	if (getScenario() == SCENARIO_600AD) { //late start condition - apparently it goes too fast from 600AD
+	if (getScenario() >= SCENARIO_600AD) { //late start condition - apparently it goes too fast from 600AD
 		researchPercent *= 108;
 		researchPercent /= 100;
 	}
@@ -10725,7 +10725,7 @@ int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
 {
 	int result = m_iDistanceMaintenancePercent;
 
-	if (getScenario() == SCENARIO_600AD) //late start condition
+	if (getScenario() >= SCENARIO_600AD) //late start condition
 		if (pl < VIKING) {
 			result *= 85;
 			result /= 100;
@@ -10840,7 +10840,7 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 {
 	int result = m_iNumCitiesMaintenancePercent;
 
-	if (getScenario() == SCENARIO_600AD) //late start condition
+	if (getScenario() >= SCENARIO_600AD) //late start condition
 		if (pl < VIKING) {
 			result *= 80;
 			result /= 100;
@@ -10970,7 +10970,7 @@ int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
 {
 	int result = m_iCivicUpkeepPercent;
 
-	if (getScenario() == SCENARIO_600AD) //late start condition
+	if (getScenario() >= SCENARIO_600AD) //late start condition
 		if (pl < VIKING) {
 			result *= 90;
 			result /= 100;
@@ -11207,7 +11207,7 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 		result -= 1;
 	}
 
-	if (getScenario() == SCENARIO_600AD) { //late start condition
+	if (getScenario() >= SCENARIO_600AD) { //late start condition
 		if (pl < VIKING && result < 5) {
 			result += 1;
 		}

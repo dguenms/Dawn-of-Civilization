@@ -427,9 +427,20 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	}
 
 	if (getScenario() == SCENARIO_600AD) //late start condition
-		if (getOwnerINLINE() < VIKING) {
+	{
+		if (getOwnerINLINE() < VIKING) 
+		{
 			eraModifier = 1;
 		}
+	}
+
+	if (getScenario() == SCENARIO_1700AD)
+	{
+		if (getOwnerINLINE() < GERMANY)
+		{
+			eraModifier = 2;
+		}
+	}
 
     //Leoreth: Great Bath effect
     /*if (GET_PLAYER(eOwner).isHasBuilding((BuildingTypes)GREAT_BATH) && !GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)CONSTRUCTION))
@@ -9901,7 +9912,7 @@ int CvCity::getRevoltTestProbability() const
 			break;
 	}
 
-	if (getScenario() == SCENARIO_600AD) { //late start condition
+	if (getScenario() >= SCENARIO_600AD) { //late start condition
 		if (getX_INLINE() == 59 && getY_INLINE() == 47) //Mediolanum
 			result /= 8;
 		else if (getX_INLINE() == 60 && getY_INLINE() == 47) //Venice
@@ -12634,7 +12645,7 @@ void CvCity::doCulture()
 					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * cultureModifier[getOwnerINLINE()] / 100, false, true);
 				}else if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2)
 				{
-					if (getScenario() == SCENARIO_600AD) { //late start condition
+					if (getScenario() >= SCENARIO_600AD) { //late start condition
 						if (getX_INLINE() == 57 && getY_INLINE() == 46) //Marseilles
 							if (getCulture(getOwnerINLINE()) < 1)
 								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
@@ -12660,7 +12671,7 @@ void CvCity::doCulture()
 							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true); }
 				}else if (getOwnerINLINE() == CELTIA)
 				{
-					if (getScenario() == SCENARIO_600AD) { //late start condition (Byzantium)
+					if (getScenario() >= SCENARIO_600AD) { //late start condition (Byzantium)
 						if (getX_INLINE() == 73 && getY_INLINE() == 41) //Alexandretta
 							if (getCulture(getOwnerINLINE()) < 1)
 								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);

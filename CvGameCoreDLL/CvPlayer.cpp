@@ -5662,20 +5662,31 @@ void CvPlayer::found(int iX, int iY)
 				    {
 				        startingEra = startingEraRespawn[getID()];
 				    }
-					else if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
+					else 
 					{
-						startingEra = startingEraFoundAstronomy[getID()];
-					}else
-					{
-						if (getScenario() == SCENARIO_600AD)
-						{
+						if (getScenario() == SCENARIO_1700AD)
+							startingEra = startingEraFound1700AD[getID()];
+						else if (getScenario() == SCENARIO_600AD)
 							startingEra = startingEraFound600AD[getID()];
-						}else
-						{
+						else
 							startingEra = startingEraFound[getID()];
+					}
+
+					if (GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
+					{
+						if (startingEraFoundAstronomy[getID()] > startingEra)
+						{
+							startingEra = startingEraFoundAstronomy[getID()];
 						}
 					}
-				}else
+
+					// Leoreth: at least one after the current era
+					if (getCurrentEra()-1 > startingEra)
+					{
+						startingEra = getCurrentEra()-1;
+					}
+				}
+				else
 				{
 					startingEra = 0;
 				}
@@ -6132,19 +6143,28 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
-            if (getScenario() == SCENARIO_600AD)
+			if (getScenario() == SCENARIO_1700AD)
+			{
+				startingEra = currentEra1700AD[getID()];
+			}
+            else if (getScenario() == SCENARIO_600AD)
             {
                 startingEra = currentEra600AD[getID()];
-            }else
+            }
+			else
             {
                 startingEra = currentEra[getID()];
             }
-		}else if (getID() == NATIVE)
+		}
+		else if (getID() == NATIVE)
 		{
 			startingEra = 0;
-		}else
+		}
+		else
 		{
-			if (getScenario() == SCENARIO_600AD)
+			if (getScenario() == SCENARIO_1700AD)
+				startingEra = 3;
+			else if (getScenario() == SCENARIO_600AD)
 				startingEra = 2;
 			else
 				startingEra = 0;
@@ -6167,6 +6187,10 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			if (getID() == AZTEC)
 				startingEra = 4;
 		}
+
+		if (getScenario() == SCENARIO_1700AD)
+			if (getID() < GERMANY)
+				startingEra = 3;
 
 		if (getScenario() == SCENARIO_600AD) //late start condition
 			if (getID() < VIKING)
@@ -8016,11 +8040,11 @@ int CvPlayer::calculateInflationRate() const
 	}
 
 	// handle several special effects explicitly here (overwrite)
-	if (getScenario() == SCENARIO_600AD)
+	/*if (getScenario() == SCENARIO_600AD)
 	{
 		if (getID() == ARABIA)
 			iRate = iRatePercent * 115 / 100;
-	}
+	}*/
 
 	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
 	{
@@ -9434,7 +9458,7 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 			result = iThreshold * 80 / 100;
 	}
 
-	if (getScenario() == SCENARIO_600AD) //late start condition
+	if (getScenario() >= SCENARIO_600AD) //late start condition
 		if (getID() < VIKING) {
 			result *= 87;
 			result /= 100;
@@ -12366,10 +12390,15 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
-			if (getScenario() == SCENARIO_600AD)
+			if (getScenario() == SCENARIO_1700AD)
+			{
+				startEra = currentEra1700AD[getID()];
+			}
+			else if (getScenario() == SCENARIO_600AD)
 			{
 				startEra = currentEra600AD[getID()];
-			}else
+			}
+			else
 			{
 				startEra = currentEra[getID()];
 			}
@@ -23505,7 +23534,7 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 		}
 	}
 
-	if (getScenario() == SCENARIO_600AD) //late start condition
+	if (getScenario() >= SCENARIO_600AD) //late start condition
 		if (getID() < VIKING) {
 			iThreshold *= 80;
 			iThreshold /= 100;

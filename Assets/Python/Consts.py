@@ -832,7 +832,7 @@ tGoals2 = (
 tGoals = (tGoals1, tGoals2)
 
 # Dawn of Man texts
-dawnOfMan = {
+dawnOfMan3000BC = {
 iEgypt		:	"TXT_KEY_DOM_EGYPT",
 iIndia		:	"TXT_KEY_DOM_INDIA",
 iChina		:	"TXT_KEY_DOM_CHINA",
@@ -876,12 +876,17 @@ iArgentina	:	"TXT_KEY_DOM_ARGENTINA",
 iBrazil		:	"TXT_KEY_DOM_BRAZIL",
 }
 
-dawnOfManLate = {
+dawnOfMan600AD = {
 iChina		:	"TXT_KEY_DOM_CHINA_LATE",
 iJapan		:	"TXT_KEY_DOM_JAPAN_LATE",
 iKorea		:	"TXT_KEY_DOM_KOREA_LATE",
 iByzantium	:	"TXT_KEY_DOM_BYZANTIUM_LATE",
 }
+
+dawnOfMan1700AD = {
+}
+
+lDawnOfMan = [dawnOfMan3000BC, dawnOfMan600AD, dawnOfMan1700AD]
 
 
 iEurope = gc.getMap().plot(55, 50).getArea()
@@ -2595,4 +2600,52 @@ tTradingCompanyPlotLists = (
 
 lSecondaryCivs = [iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
 
-(i3000BC, i600AD) = range(2)
+(i3000BC, i600AD, i1700AD) = range(3)
+
+tLatestActiveScenario = (
+i3000BC, 	# Egypt
+i1700AD,	# China
+i3000BC,	# Babylonia
+i3000BC,	# Greece
+i3000BC,	# India
+i3000BC,	# Phoenicia
+i3000BC,	# Persia
+i3000BC,	# Rome
+i3000BC,	# Tamils
+i3000BC,	# Ethiopia
+i1700AD,	# Korea
+i3000BC,	# Maya
+i600AD,		# Byzantium
+i1700AD,	# Japan
+i1700AD,	# Vikings
+i600AD,		# Arabia
+i600AD,		# Tibet
+i600AD,		# Khmer
+i600AD,		# Indonesia
+i600AD,		# Moors
+i1700AD,	# Spain
+i1700AD,	# France
+i1700AD,	# England
+i1700AD,	# Holy Rome
+i1700AD,	# Russia
+i600AD,		# Mali
+i1700AD,	# Poland
+i1700AD,	# Portugal
+i600AD,		# Inca
+i600AD,		# Italy
+i600AD,		# Mongolia
+i600AD,		# Aztecs
+i1700AD,	# Mughals
+i1700AD,	# Turkey
+i1700AD,	# Thailand
+i1700AD,	# Congo
+i1700AD,	# Netherlands
+i1700AD,	# Germany
+i1700AD,	# America
+i1700AD,	# Argentina
+i1700AD,	# Brazil
+i1700AD,	# Independent
+i1700AD,	# Independent
+i1700AD,	# Natives
+i3000BC,	# Celts
+i600AD)		# Seljuks

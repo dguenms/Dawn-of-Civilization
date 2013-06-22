@@ -212,6 +212,14 @@ void CvGame::init(HandicapTypes eHandicap)
 			setGameTurn(getGameTurnForYear(600, -3000, GC.getInitCore().getCalendar(), GC.getInitCore().getGameSpeed()));
 		}
 	}
+
+	if (getScenario() == SCENARIO_1700AD)
+	{
+		if (getGameTurn() == 321)
+		{
+			setGameTurn(getGameTurnForYear(1700, -3000, GC.getInitCore().getCalendar(), GC.getInitCore().getGameSpeed()));
+		}
+	}
 	//edead: end
 
 	if (getGameTurn() == 0)
@@ -2242,16 +2250,16 @@ void CvGame::update()
 		case BABYLONIA:
 			break;
 		case KOREA:
-            if (getScenario() == SCENARIO_600AD) //late start condition
+            if (getScenario() >= SCENARIO_600AD) //late start condition
                 break;
 		case BYZANTIUM:
             if (getScenario() == SCENARIO_600AD) //late start condition
 				break;
 		case JAPAN:
-			if (getScenario() == SCENARIO_600AD) //late start condition
+			if (getScenario() >= SCENARIO_600AD) //late start condition
 				break;
 		case VIKING:
-			if (getScenario() == SCENARIO_600AD) //late start condition
+			if (getScenario() >= SCENARIO_600AD) //late start condition
 				break;
 		//case ARABIA:
 			//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
@@ -2271,28 +2279,55 @@ void CvGame::update()
 		case INDONESIA:
 		case MOORS:
 		case SPAIN:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case FRANCE:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case ENGLAND:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case HOLY_ROME:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case RUSSIA:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case NETHERLANDS:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case MALI:
 		case POLAND:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case TURKEY:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case PORTUGAL:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case INCA:
 		case ITALY:
 		case MONGOLIA:
 		case MUGHALS:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case AZTEC:
 		case THAILAND:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case CONGO:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case GERMANY:
+			if (getScenario() == SCENARIO_1700AD)
+				break;
 		case AMERICA:
 		case ARGENTINA:
 		case BRAZIL:
 			//if (getGameTurn() == 0 || (getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition
-			if (getGameTurn() == 0 || (getGameTurn() == getTurnForYear(600) && getScenario() == SCENARIO_600AD)) //late start condition // edead
+			//if (getGameTurn() == 0 || (getGameTurn() == getTurnForYear(600) && getScenario() == SCENARIO_600AD)) //late start condition // edead
+			if (getGameTurn() == getScenarioStartTurn())
 			{
 				setAIAutoPlay(1);
 			}

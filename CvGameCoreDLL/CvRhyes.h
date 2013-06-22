@@ -29,57 +29,6 @@ typedef list<char*> LISTCHAR;
 #define NUM_CIVS				(49)
 #define NUM_BONUS_ISLANDS		(10)
 
-enum MyCivs
-{
- EGYPT,
- CHINA,
- BABYLONIA,
- GREECE,
- INDIA,
- CARTHAGE,
- PERSIA,
- ROME,
- TAMILS,
- ETHIOPIA,
- KOREA,
- MAYA,
- BYZANTIUM,
- JAPAN,
- VIKING,
- ARABIA,
- TIBET,
- KHMER,
- INDONESIA,
- MOORS,
- SPAIN,
- FRANCE,
- ENGLAND,
- HOLY_ROME,
- RUSSIA,
- MALI,
- POLAND,
- PORTUGAL,
- INCA,
- ITALY,
- MONGOLIA,
- AZTEC,
- MUGHALS,
- TURKEY,
- THAILAND,
- CONGO,
- NETHERLANDS,
- GERMANY,
- AMERICA,
- ARGENTINA,
- BRAZIL,
- INDEPENDENT,
- INDEPENDENT2,
- NATIVE,
- CELTIA,
- SELJUKS,
- BARBARIAN
-};
-
 enum MyTechs
 {
  MYSTICISM,
@@ -393,10 +342,13 @@ extern int startingTurnYear[]; // edead
 //extern int fallTurnYear[];
 extern char loadingTime[NUM_CIVS][4];
 extern char loadingTime600AD[NUM_CIVS][4];
+extern char loadingTime1700AD[NUM_CIVS][4];
 extern char startingYear[NUM_CIVS][6];
 extern bool startingEra[NUM_CIVS];
 extern char startingYear600AD[NUM_CIVS][6];
 extern bool startingEra600AD[NUM_CIVS];
+extern char startingYear1700AD[NUM_CIVS][6];
+extern bool startingEra1700AD[NUM_CIVS];
 
 extern int takenTiles[NUM_PL];
 extern int distanceSubtrahend[NUM_PL];
@@ -420,6 +372,7 @@ extern int healthMultiplier[NUM_PL];
 
 extern int startingEraFound[NUM_PL];
 extern int startingEraFound600AD[NUM_PL];
+extern int startingEraFound1700AD[NUM_PL];
 extern int startingEraFoundAstronomy[NUM_PL];
 extern int startingEraRespawn[NUM_PL];
 extern int unitCostModifier2[NUM_PL];
@@ -429,6 +382,7 @@ extern int inflationRateModifier[NUM_PL];
 extern int greatPeopleThresholdArray[NUM_PL];
 extern int currentEra[NUM_PL];
 extern int currentEra600AD[NUM_PL];
+extern int currentEra1700AD[NUM_PL];
 extern int growthThreshold[NUM_PL];
 
 extern int bonusIslandsX[NUM_BONUS_ISLANDS];

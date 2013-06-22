@@ -3860,10 +3860,18 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			else
 				szText += gDLL->getText("TXT_KEY_BC");
 		}
-		else 
+		else if (getScenario() == SCENARIO_600AD)
 		{
 			szText = startingYear600AD[eCivilization];
 			if (startingEra600AD[eCivilization])
+				szText += gDLL->getText("TXT_KEY_AD");
+			else
+				szText += gDLL->getText("TXT_KEY_BC");
+		}
+		else
+		{
+			szText = startingYear1700AD[eCivilization];
+			if (startingEra1700AD[eCivilization])
 				szText += gDLL->getText("TXT_KEY_AD");
 			else
 				szText += gDLL->getText("TXT_KEY_BC");
@@ -3886,8 +3894,10 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			szText = gDLL->getText("TXT_KEY_LOADING_TIME") + " ";
 			if (getScenario() == SCENARIO_3000BC) //late start condition
 				szText = szText + loadingTime[eCivilization];
-			else
+			else if (getScenario() == SCENARIO_600AD)
 				szText = szText + loadingTime600AD[eCivilization];
+			else
+				szText = szText + loadingTime1700AD[eCivilization];
 			szText += " " + gDLL->getText("TXT_KEY_MINUTES");
 			szText += NEWLINE;
 			swprintf(szBuffer, L"%s", szText.GetCString());

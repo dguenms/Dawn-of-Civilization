@@ -610,6 +610,9 @@ class CvRFCEventHandler:
 
                 if (utils.getScenario() == con.i600AD and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
                         return
+			
+		if utils.getScenario() == con.i1700AD and gc.getGame().getGameTurn() == getTurnForYear(1700):
+			return
         
                 self.vic.onReligionFounded(iReligion, iFounder)
 		self.rel.onReligionFounded(iReligion, iFounder)
@@ -1027,6 +1030,9 @@ class CvRFCEventHandler:
                 
                 if (utils.getScenario() == con.i600AD and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
                         return
+			
+		if utils.getScenario() == con.i1700AD and gc.getGame().getGameTurn() == getTurnForYear(1700):
+			return
                 
                 if (gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])):                            
                 	self.vic.onTechAcquired(argsList[0], argsList[2])

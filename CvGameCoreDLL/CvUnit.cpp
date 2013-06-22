@@ -7768,7 +7768,7 @@ int CvUnit::workRate(bool bMax) const
 		iRate /= 100;
 		break;
 	}
-	if (getScenario() == SCENARIO_600AD) //late start condition
+	if (getScenario() >= SCENARIO_600AD) //late start condition
 		if (getOwnerINLINE() < VIKING) {
 			iRate *= 105;
 			iRate /= 100;

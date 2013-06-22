@@ -195,7 +195,7 @@ class CvReligionScreen:
 
                                 year = CyGame().getTurnYear(gc.getGame().getReligionGameTurnFounded(i))
 
-                                if (utils.getScenario() == con.i600AD and i != 2):  #late start condition (2 == Islam)
+                                if (utils.getScenario() >= con.i600AD and i != 2):  #late start condition (2 == Islam)
                                         szFounded = localText.getText("TXT_KEY_AGE_BRONZE", ())
                                 else:
                                 

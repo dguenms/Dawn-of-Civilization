@@ -99,7 +99,7 @@ class Resources:
                 if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
                         gc.getMap().plot(53, 51).setBonusType(iDye) #France
                         gc.getMap().plot(53, 55).setBonusType(iDye) #England
-                if utils.getScenario() == con.i600AD: #late start condition
+                if utils.getScenario() >= con.i600AD: #late start condition
                         if (iGameTurn == getTurnForYear(600)): 
                                 gc.getMap().plot(53, 51).setBonusType(iDye) #France
                                 gc.getMap().plot(53, 55).setBonusType(iDye) #England
