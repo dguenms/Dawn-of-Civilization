@@ -197,6 +197,7 @@ def onCityAcquired(city, iNewOwner):
 	elif sOldName == 'Kerimane' and iNewOwner != iJapan: sNewName = 'Quelimane'
 	elif sOldName == 'Sofara' and iNewOwner != iJapan: sNewName = 'Sofala'
 	elif sOldName == 'Indraprastha' and iNewOwner == iIndia: sNewName = 'Dilli'
+	elif sOldName == 'Singidunon' and iNewOwner != iByzantium: sNewName = 'Belgrad'
 	
 	if sNewName != "":
 		city.setName(sNewName, False)
@@ -4054,6 +4055,7 @@ tRenames = (
 	'Durazzo'		:	'Dyrrachion',
 	'Preveza'		:	'Nikopolis',
 	'Actia Nicopolis'	:	'Nikopolis',
+	'Athinai'		:	'Athinai',
 	'Athenae'		:	'Athinai',
 	'Atina'			:	'Athinai',
 	'Athen'			:	'Athinai',
@@ -4070,6 +4072,7 @@ tRenames = (
 	'Thessalonica'		:	'Thessalonike',
 	'Thessaloniki'		:	'Thessalonike',
 	'Sel&#226;nik'		:	'Thessalonike',
+	'Konstantinoupolis'	:	'Konstantinoupolis',
 	'Byzantion'		:	'Konstantinoupolis',
 	'Miklagard'		:	'Konstantinoupolis',
 	'Bizantiya'		:	'Konstantinoupolis',
@@ -4145,6 +4148,7 @@ tRenames = (
 	'Milid'			:	'Malateia',
 	'Melitene'		:	'Malateia',
 	'Urfa'			:	'Edessa',
+	'Damaskos'		:	'Damaskos',
 	'Damascus'		:	'Damaskos',
 	'Dimashq'		:	'Damaskos',
 	'Sam'			:	'Damaskos',
@@ -4154,6 +4158,7 @@ tRenames = (
 	'Akka'			:	'Akkon',
 	'Akko'			:	'Akkon',
 	'Akre'			:	'Akkon',
+	'Hierousalem'		:	'Hierousalem',
 	'Jerusalem'		:	'Hierousalem',
 	'Qods'			:	'Hierousalem',
 	'Kud&#252;s'		:	'Hierousalem',

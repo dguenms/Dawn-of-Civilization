@@ -619,134 +619,10 @@ class RiseAndFall:
 
         def setup(self):            
 
-                #self.setupBirthTurnModifiers() (causes a crash on civ switch)
+                self.determineEnabledPlayers()
 		
-		#print 'con.iNumBuildings = '+str(con.iNumBuildings)
-		#print 'plague building id = '+str(gc.getInfoTypeForString("BUILDING_PLAGUE"))
-		#print 'plague building class id = '+str(gc.getInfoTypeForString("BUILDINGCLASS_PLAGUE"))
+		self.initScenario()
 		
-		self.determineEnabledPlayers()
-		
-
-                if utils.getScenario() == con.i600AD: #late start condition
-                        self.clear600ADChina()
-
-                if utils.getScenario() == con.i3000BC: #late start condition
-                        self.create4000BCstartingUnits()
-                else:
-                        self.prepareConstantinople()
-                        self.create600ADstartingUnits()
-                        self.flip600ADByzantium()
-                #self.assign4000BCtechs()
-                #self.setEarlyLeaders()
-
-
-                if utils.getScenario() == con.i600AD: #late start condition
-                        self.assign600ADTechs()
-                        pChina.changeGold(300)
-                        pJapan.changeGold(150)
-                        pIndependent.changeGold(100)
-                        pIndependent2.changeGold(100)
-                        pNative.changeGold(300)
-                        pCeltia.changeGold(500)
-			pSeljuks.changeGold(250)
-                        if (not pVikings.isHuman()):
-                                utils.setStability(iVikings, utils.getStability(iVikings) + 2)
-				pVikings.changeStabilityCategory(con.iStabilityDifficulty, 2)
-				#gc.getPlayer(iVikings).changeStability(2) # test DLL
-                        if (not pChina.isHuman()):
-                                utils.setStability(iChina, utils.getStability(iChina) + 3)
-				pChina.changeStabilityCategory(con.iStabilityDifficulty, 3)
-				#gc.getPlayer(iChina).changeStability(3) # test DLL
-                        if (not pJapan.isHuman()):
-                                utils.setStability(iJapan, utils.getStability(iJapan) + 4)
-				pJapan.changeStabilityCategory(con.iStabilityDifficulty, 4)
-				#gc.getPlayer(iJapan).changeStability(4) # test DLL
-                        utils.setGoal(iEgypt, 0, 0)
-                        utils.setGoal(iEgypt, 1, 0)
-                        utils.setGoal(iEgypt, 2, 0)
-                        utils.setGoal(iIndia, 0, 0)
-                        utils.setGoal(iIndia, 1, 0)
-                        utils.setGoal(iIndia, 2, 0)
-                        utils.setGoal(iBabylonia, 0, 0)
-                        utils.setGoal(iBabylonia, 1, 0)
-                        utils.setGoal(iBabylonia, 2, 0)
-                        utils.setGoal(iGreece, 0, 0)
-                        utils.setGoal(iGreece, 1, 0)
-                        utils.setGoal(iGreece, 2, 0)
-                        utils.setGoal(iPersia, 0, 0)
-                        utils.setGoal(iPersia, 1, 0)
-                        utils.setGoal(iPersia, 2, 0)
-                        utils.setGoal(iCarthage, 0, 0)
-                        utils.setGoal(iCarthage, 1, 0)
-                        utils.setGoal(iCarthage, 2, 0)
-                        utils.setGoal(iRome, 0, 0)
-                        utils.setGoal(iRome, 1, 0)
-                        utils.setGoal(iRome, 2, 0)
-			utils.setGoal(iTamils, 0, 0)
-			utils.setGoal(iTamils, 1, 0)
-			utils.setGoal(iTamils, 2, 0)
-                        utils.setGoal(iEthiopia, 0, 0)
-                        utils.setGoal(iEthiopia, 1, 0)
-                        utils.setGoal(iEthiopia, 2, 0)
-                        utils.setGoal(iMaya, 0, 0)
-                        utils.setGoal(iMaya, 1, 0)
-                        utils.setGoal(iMaya, 2, 0)
-                else:
-                        if (not pChina.isHuman()):
-                                utils.setStability(iChina, utils.getStability(iChina) + 2)
-				pChina.changeStabilityCategory(con.iStabilityDifficulty, 2)
-                        if (not pIndia.isHuman()):
-                                utils.setStability(iIndia, utils.getStability(iIndia) + 2)
-				pChina.changeStabilityCategory(con.iStabilityDifficulty, 2)
-                        pIndependent.changeGold(50)
-                        pIndependent2.changeGold(50)
-                        pNative.changeGold(100)
-                               
-                # set starting gold
-		pIndia.changeGold(80)
-                pGreece.changeGold(100)
-                pCarthage.changeGold(200)
-                pRome.changeGold(100)
-                pPersia.changeGold(200)
-                pJapan.changeGold(100)
-		pTamils.changeGold(200)
-                pEthiopia.changeGold(100)
-		pKorea.changeGold(200)
-                pMaya.changeGold(200)
-                pByzantium.changeGold(400)
-                pVikings.changeGold(150)
-                pArabia.changeGold(300)
-		pTibet.changeGold(50)
-                pKhmer.changeGold(200)
-		pIndonesia.changeGold(300)
-		pMoors.changeGold(200)
-                pSpain.changeGold(200)
-                pFrance.changeGold(150)    
-                pEngland.changeGold(200)
-                pHolyRome.changeGold(150)
-                pRussia.changeGold(200)
-                pNetherlands.changeGold(600)
-                pMali.changeGold(600)
-		pPoland.changeGold(100)
-                pPortugal.changeGold(200)
-                pInca.changeGold(700)
-		pItaly.changeGold(350)
-                pMongolia.changeGold(250) 
-                pAztecs.changeGold(600)
-		pMughals.changeGold(400)
-                pTurkey.changeGold(300)
-		pThailand.changeGold(800)
-		pCongo.changeGold(300)
-		pGermany.changeGold(800)
-                pAmerica.changeGold(1500)
-		pArgentina.changeGold(1200)
-		pBrazil.changeGold(1600)
-               
-           
-                # display welcome message
-                #self.displayWelcomePopup()
-
                 # Leoreth: make sure to select the Egyptian settler
                 if (pEgypt.isHuman()):
                         plotEgypt = gc.getMap().plot(tCapitals[0][iEgypt][0], tCapitals[0][iEgypt][1])  
@@ -755,8 +631,79 @@ class RiseAndFall:
 				if unit.getUnitType() == con.iSettler:
 					CyInterface().selectUnit(unit, true, false, false)
 					break
+					
+	def initScenario(self):
+	
+		if utils.getScenario() == con.i3000BC:
+			self.create4000BCstartingUnits()
+			self.set3000BCStability()
+			
+		if utils.getScenario() == con.i600AD:
+			self.create600ADstartingUnits()
+			self.assign600ADTechs()
+			self.assign600ADGold()
+			self.set600ADStability()
+			
+			self.clear600ADChina()
+			self.prepareConstantinople()
+			self.flip600ADByzantium()
+		
+		self.assign3000BCGold()	
+		self.invalidateUHVs()
+		
+	def assign3000BCGold(self):
+	
+		for iPlayer in range(con.iNumTotalPlayers):
+			gc.getPlayer(iPlayer).changeGold(con.tStartingGold[iPlayer])
+			
+	def assign600ADGold(self):
+	
+		pChina.changeGold(300)
+		pJapan.changeGold(150)
+		
+		pIndependent.changeGold(50)
+		pIndependent2.changeGold(50)
+		pNative.changeGold(200)
+		pSeljuks.changeGold(250)
+		
+	def set3000BCStability(self):
+	
+		if utils.getHumanID() != iChina:
+			utils.setStability(iChina, utils.getStability(iChina) + 2)
+			pChina.changeStabilityCategory(con.iStabilityDifficulty, 2)
+		if utils.getHumanID() != iIndia:
+			utils.setStability(iIndia, utils.getStability(iIndia) + 2)
+			pIndia.changeStabilityCategory(con.iStabilityDifficulty, 2)
+			
+	def set600ADStability(self):
+	
+		if utils.getHumanID() != iVikings:
+			utils.setStability(iVikings, utils.getStability(iVikings) + 2)
+			pVikings.changeStabilityCategory(con.iStabilityDifficulty, 2)
+		if utils.getHumanID() != iChina:
+			utils.setStability(iChina, utils.getStability(iChina) + 3)
+			pChina.changeStabilityCategory(con.iStabilityDifficulty, 3)
+		if utils.getHumanID() != iJapan:
+			utils.setStability(iJapan, utils.getStability(iJapan) + 4)
+			pJapan.changeStabilityCategory(con.iStabilityDifficulty, 4)
 
+	def invalidateUHVs(self):
+	
+		for iPlayer in range(con.iNumPlayers):
+			if not gc.getPlayer(iPlayer).isPlayable():
+				for i in range(3):
+					utils.setGoal(iPlayer, i, 0)
+			
         def prepareConstantinople(self):
+	
+		lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, con.iGrocer, con.iHarbor, \
+			      con.iOrthodoxTemple, con.iByzantineHippodrome, con.iOrthodoxShrine, con.iTheodosianWalls]
+		city = utils.foundCapital(iByzantium, con.tCapitals[0][iByzantium], 'Konstantinoupolis', 4, 250, lBuildings, [con.iChristianity, con.iOrthodoxy])
+		
+		gc.getGame().setHolyCity(con.iOrthodoxy, city, False)
+		
+		return
+	
                 plot = con.tCapitals[0][iByzantium]
                 pByzantium.found(plot[0], plot[1])
                 constantinople = CyGlobalContext().getMap().plot(plot[0], plot[1]).getPlotCity()
@@ -783,6 +730,10 @@ class RiseAndFall:
 		gc.getGame().setHolyCity(con.iOrthodoxy, constantinople, False)
 
         def flip600ADByzantium(self):
+	
+		self.startingFlip(iByzantium, [((62, 37), (76, 45)), ((66, 34), (70, 37))])
+		return
+	
                 BL = (62, 37)
                 TR = (76, 45)
 
@@ -794,6 +745,14 @@ class RiseAndFall:
 
                 self.convertSurroundingCities(iByzantium, BL, TR)
                 self.convertSurroundingPlotCulture(iByzantium, BL, TR)
+			
+	def startingFlip(self, iPlayer, lRegionList):
+	
+		for tuple in lRegionList:
+			tTL = tuple[0]
+			tBR = tuple[1]
+			self.convertSurroundingCities(iPlayer, tTL, tBR)
+			self.convertSurroundingPlotCulture(iPlayer, tTL, tBR)
 
 
         def clear600ADChina(self):
