@@ -1331,7 +1331,7 @@ class RiseAndFall:
 						for tPlot in lRebirthPlots:
 							x, y = tPlot
 							plot = gc.getMap().plot(x, y)
-							if plot.getOwner() == iAmerica and not utils.isPlotInArea(tPlot, con.tCoreAreas[1][iAztecs], con.tCoreAreasBR[1][iAztecs], con.tExceptions[1][iAztecs]):
+							if plot.getOwner() == iAmerica and not utils.isPlotInArea(tPlot, con.tCoreAreasTL[1][iAztecs], con.tCoreAreasBR[1][iAztecs], con.tExceptions[1][iAztecs]):
 								tExceptions += (tPlot,)
 					
 					seljukUnits = []
@@ -1367,7 +1367,7 @@ class RiseAndFall:
 						if city.getOwner() == utils.getHumanID():
 							x = city.getX()
 							y = city.getY()
-							utils.createGarrisons((x, y), iCiv)
+							utils.createGarrisons((x, y), iCiv, 1)
 							
 					# convert plot culture
 					self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight, tExceptions)
