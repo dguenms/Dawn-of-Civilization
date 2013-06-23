@@ -5,6 +5,8 @@ import PyHelpers
 import CvUtil
 import ScreenInput
 import CvScreenEnums
+import RFCUtils
+import Consts as con
 
 PyPlayer = PyHelpers.PyPlayer
 
@@ -12,6 +14,8 @@ PyPlayer = PyHelpers.PyPlayer
 gc = CyGlobalContext()
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
+
+utils = RFCUtils.RFCUtils()
 
 class CvReligionScreen:
 	"Religion Advisor Screen"

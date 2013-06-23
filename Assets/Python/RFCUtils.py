@@ -1653,13 +1653,20 @@ class RFCUtils:
 				pUnit.kill(False, con.iBarbarian)
 				return
 				
-	def prepareCapital(self, iPlayer, city, iSize, lBuildings=[], lReligions=[], iScenario=False):
+	def foundCapital(self, iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligions=[], iScenario=False):
 	
 		if iScenario:
 			if utils.getScenario() != iScenario: return
 		
-		if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])+3: return
-		if (city.getX(), city.getY()) != con.tCapitals[0][iPlayer]: return
+		#if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])+3: return
+		
+		x, y = tPlot
+		gc.getPlayer(iPlayer).found(x, y)
+		
+		city = gc.getMap().plot(x, y).getPlotCity()
+		
+		city.setCulture(iPlayer, iCulture, True)
+		city.setName(sName, False)
 	
 		if city.getPopulation() < iSize:
 			city.setPopulation(iSize)
@@ -1669,6 +1676,8 @@ class RFCUtils:
 			
 		for iBuilding in lBuildings:
 			city.setHasRealBuilding(iBuilding, True)
+			
+		return city
 			
 	def getCivName(self, iCiv):
 		return CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()), ())

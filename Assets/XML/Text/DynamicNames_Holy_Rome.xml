@@ -9,6 +9,10 @@
 		<English>The Germans</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRIA_DESC</Tag>
+		<English>The Austrians</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_PEOPLES</Tag>
 		<English>Germanic Peoples</English>
 	</TEXT>

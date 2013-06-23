@@ -1896,6 +1896,56 @@ tRespawnBR = (
 -1,		# Argentina
 -1)		# Brazil
 
+# starting gold in 3000 BC
+tStartingGold = (
+0,	# Egypt
+0,	# China
+0,	# Babylonia
+100,	# Greece
+80,	# India
+200,	# Carthage
+200,	# Persia
+100,	# Rome
+200,	# Tamils
+100,	# Ethiopia
+200,	# Korea
+200,	# Maya
+400,	# Byzantium
+100,	# Japan
+150,	# Viking
+300,	# Arabia
+50,	# Tibet
+200,	# Khmer
+300,	# Indonesia
+200,	# Moors
+200,	# Spain
+150,	# France
+200,	# England
+150,	# Holy Rome
+200,	# Russia
+600,	# Mali
+100,	# Poland
+200,	# Portugal
+700,	# Inca
+350,	# Italy
+250,	# Mongolia
+600,	# Aztecs
+400,	# Mughals
+300,	# Turkey
+800,	# Thailand
+300,	# Congo
+600,	# Netherlands
+800,	# Germany
+1500,	# America
+1200,	# Argentina
+1600,	# Brazil
+50,	# Independent
+50,	# Independent
+100,	# Native
+0,	# Celtia
+0,	# Seljuks
+)
+
 #Mercenaries. Higher number = less likely to hire
 tHire = (
 10, #Egypt
