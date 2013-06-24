@@ -5868,6 +5868,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									}
 									break;
+								case POLAND:
+									if (iI == MUSIC || iI == CONSTITUTION || iI == ASTRONOMY)
+										iValue *= 2;
+									if (iI == MILITARY_TRADITION || iI == LIBERALISM)
+										iValue *= 3;
 								case PORTUGAL:
 									if (iI == MEDITATION)
 										iValue /= 2;

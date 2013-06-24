@@ -633,6 +633,9 @@ class RiseAndFall:
 					break
 					
 	def initScenario(self):
+			
+		self.foundCapitals()
+		self.flipStartingTerritory()
 	
 		if utils.getScenario() == con.i3000BC:
 			self.create4000BCstartingUnits()
@@ -644,9 +647,8 @@ class RiseAndFall:
 			self.assign600ADGold()
 			self.set600ADStability()
 			
-			self.clear600ADChina()
-			self.prepareConstantinople()
-			self.flip600ADByzantium()
+		if utils.getScenario() == con.i1700AD:
+			self.create1700ADstartingUnits()
 		
 		self.assign3000BCGold()	
 		self.invalidateUHVs()
@@ -693,69 +695,177 @@ class RiseAndFall:
 			if not gc.getPlayer(iPlayer).isPlayable():
 				for i in range(3):
 					utils.setGoal(iPlayer, i, 0)
+					
+	def foundCapitals(self):
+	
+		if utils.getScenario() == con.i600AD:
+		
+			# Byzantium
+			tCapital = con.tCapitals[0][iByzantium]
+			lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, con.iGrocer, \
+				      con.iOrthodoxTemple, con.iByzantineHippodrome, con.iOrthodoxShrine, con.iTheodosianWalls]
+			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [con.iChristianity, con.iOrthodoxy])
+			gc.getGame().setHolyCity(con.iOrthodoxy, city, False)
 			
-        def prepareConstantinople(self):
-	
-		lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, con.iGrocer, con.iHarbor, \
-			      con.iOrthodoxTemple, con.iByzantineHippodrome, con.iOrthodoxShrine, con.iTheodosianWalls]
-		city = utils.foundCapital(iByzantium, con.tCapitals[0][iByzantium], 'Konstantinoupolis', 4, 250, lBuildings, [con.iChristianity, con.iOrthodoxy])
+			# China
+			self.prepareChina()
+			tCapital = con.tCapitals[0][iChina]
+			lBuildings = [con.iConfucianTemple, con.iChineseTaixue, con.iBarracks, con.iForge]
+			utils.foundCapital(iChina, tCapital, "Xi'an", 4, 100, lBuildings, [con.iConfucianism, con.iTaoism])
+			
+		if utils.getScenario() == con.i1700AD:
 		
-		gc.getGame().setHolyCity(con.iOrthodoxy, city, False)
+			return
 		
-		return
+			# China
+			self.prepareChina()
+			tCapital = con.tBeijing
+			utils.foundCapital(iChina, tCapital, 'Beijing', 10, 100)
+			
+			# Korea
+			tCapital = con.tCapitals[0][iKorea]
+			utils.foundCapital(iKorea, tCapital, 'Hanseong', 8, 100)
+			
+			# Japan
+			tCapital = con.tCapitals[0][iJapan]
+			utils.foundCapital(iJapan, tCapital, 'Kyoutou', 10, 100)
+			
+			# Sweden
+			tCapital = con.tStockholm
+			utils.foundCapital(iVikings, tCapital, 'Stockholm', 8, 100)
+			
+			# Spain
+			tCapital = con.tCapitals[0][iSpain]
+			utils.foundCapital(iSpain, tCapital, 'Madrid', 8, 100)
+			
+			# France
+			tCapital = con.tCapitals[0][iFrance]
+			utils.foundCapital(iFrance, tCapital, 'Paris', 12, 100)
+			
+			# London
+			tCapital = con.tCapitals[0][iEngland]
+			utils.foundCapital(iEngland, tCapital, 'London', 12, 100)
+			
+			# Austria
+			tCapital = con.tVienna
+			utils.foundCapital(iHolyRome, tCapital, 'Wien', 10, 100)
+			
+			# Russia
+			tCapital = con.tCapitals[0][iRussia]
+			utils.foundCapital(iRussia, tCapital, 'Moskva', 10, 100)
+			
+			# Poland
+			tCapital = con.tCapitals[0][iPoland]
+			utils.foundCapital(iPoland, tCapital, 'Krakow', 8, 100)
+			
+			# Portugal
+			tCapital = con.tCapitals[0][iPortugal]
+			utils.foundCapital(iPortugal, tCapital, 'Lisboa', 10, 100)
+			
+			# Mughals
+			tCapital = con.tCapitals[0][iMughals]
+			utils.foundCapital(iMughals, tCapital, 'Delhi', 12, 100)
+			
+			# Turkey
+			tCapital = con.tIstanbul
+			utils.foundCapital(iTurkey, tCapital, 'Kostantiniyye', 12, 100)
+			
+			# Thailand
+			tCapital = con.tCapitals[0][iThailand]
+			utils.foundCapital(iThailand, tCapital, 'Ayutthaya', 12, 100)
+			
+			# Congo
+			tCapital = con.tCapitals[0][iCongo]
+			utils.foundCapital(iCongo, tCapital, 'Mbanza Kongo', 8, 100)
+			
+			# Netherlands
+			tCapital = con.tCapitals[0][iNetherlands]
+			utils.foundCapital(iNetherlands, tCapital, 'Amsterdam', 12, 100)
+			
+			# Germany
+			tCapital = con.tCapitals[0][iGermany]
+			utils.foundCapital(iGermany, tCapital, 'Berlin', 10, 100)
+			
+	def flipStartingTerritory(self):
 	
-                plot = con.tCapitals[0][iByzantium]
-                pByzantium.found(plot[0], plot[1])
-                constantinople = CyGlobalContext().getMap().plot(plot[0], plot[1]).getPlotCity()
-                
-                CyGlobalContext().getMap().plot(plot[0], plot[1]).setCulture(iByzantium, 250, True)
-
-                constantinople.setName("Konstantinoupolis", False)
-                constantinople.setPopulation(4)
-                constantinople.setHasRealBuilding(con.iWalls, True)
-                constantinople.setHasRealBuilding(con.iCastle, True)
-                constantinople.setHasRealBuilding(con.iBarracks, True)
-                constantinople.setHasRealBuilding(con.iStable, True)
-                constantinople.setHasRealBuilding(con.iGranary, True)
-                constantinople.setHasRealBuilding(con.iLibrary, True)
-                constantinople.setHasRealBuilding(con.iMarket, True)
-                constantinople.setHasRealBuilding(con.iGrocer, True)
-                constantinople.setHasRealBuilding(con.iHarbor, True)
-                constantinople.setHasRealBuilding(con.iOrthodoxTemple, True)
-                constantinople.setHasRealBuilding(con.iByzantineHippodrome, True)
-                constantinople.setHasRealBuilding(con.iOrthodoxShrine, True)
-                constantinople.setHasRealBuilding(con.iTheodosianWalls, True)
-                constantinople.setHasReligion(con.iChristianity, True, False, False)
-                constantinople.setHasReligion(con.iOrthodoxy, True, False, False)
-		gc.getGame().setHolyCity(con.iOrthodoxy, constantinople, False)
-
-        def flip600ADByzantium(self):
-	
-		self.startingFlip(iByzantium, [((62, 37), (76, 45)), ((66, 34), (70, 37))])
-		return
-	
-                BL = (62, 37)
-                TR = (76, 45)
-
-                self.convertSurroundingCities(iByzantium, BL, TR)
-                self.convertSurroundingPlotCulture(iByzantium, BL, TR)
-
-                BL = (66, 34)
-                TR = (70, 37)
-
-                self.convertSurroundingCities(iByzantium, BL, TR)
-                self.convertSurroundingPlotCulture(iByzantium, BL, TR)
+		if utils.getScenario() == con.i600AD:
+		
+			# Byzantium
+			tTL1 = (62, 37)
+			tBR1 = (76, 45)
+			tTL2 = (66, 34)
+			tBR2 = (70, 37)
+			self.startingFlip(iByzantium, [(tTL1, tBR1), (tTL2, tBR2)])
+			
+			# China
+			tTL = tCoreAreasTL[0][iChina]
+			tBR = tCoreAreasBR[0][iChina]
+			if utils.getHumanID() != iChina: tTL = (99, 39) # 4 tiles further south
+			self.startingFlip(iChina, [(tTL, tBR)])
+			
+		if utils.getScenario() == con.i1700AD:
+		
+			return
+		
+			# China
+			lList = []
+			tTL = (99, 37)
+			tBR = (108, 47)
+			tExceptions = ((99, 37), (100, 37), (101, 37), (99, 38), (100, 38), (101, 38), (102, 38), (99, 39), (100, 39), (101, 39), (108, 47))
+			lList.append((tTL, tBR, tExceptions))
+			tTL = (94, 42)
+			tBR = (98, 45)
+			lList.append((tTL, tBR))
+			tTL = (100, 48)
+			tBR = (109, 52)
+			tExceptions = ((100, 49), (100, 50), (107, 49), (108, 49), (107, 48), (107, 48))
+			lList.append((tTL, tBR, tExceptions))
+			self.startingFlip(iChina, lList)
+			
+			# Korea
+			tTL = (107, 45)
+			tBR = (110, 49)
+			self.startingFlip(iKorea, [(tTL, tBR)])
+			
+			# Japan
+			tTL = (111, 41)
+			tBR = (116, 52)
+			tExceptions = ((111, 51), (111, 52), (112, 52))
+			self.startingFlip(iJapan, [(tTL, tBR, tExceptions)])
+			
+			# Sweden
+			lList = []
+			tTL = (61, 55)
+			tBR = (68, 64)
+			tExceptions = ((61, 62), (62, 63), (63, 64), (65, 54), (66, 54), (67, 54), (68, 54), (65, 55), (66, 55), (67, 55), (68, 55), (66, 56), (67, 56), (68, 56), (68, 57))
+			lList.append((tTL, tBR, tExceptions))
+			self.startingFlip(iVikings, lList)
+			
+			# Spain
+			lList = []
+			tTL = (49, 40)
+			tBR = (55, 46)
+			tExceptions = ((49, 41), (49, 42), (49, 43), (49, 44), (50, 41), (50, 42), (50, 43), (50, 44), (55, 46))
+			lList.append((tTL, tBR, tExceptions))
+			tTL = (14, 35)
+			tBR = (19, 43)
+			lList.append((tTL, tBR))
+			tTL = (21, 36)
+			tBR = (32, 39)
+			
 			
 	def startingFlip(self, iPlayer, lRegionList):
 	
 		for tuple in lRegionList:
 			tTL = tuple[0]
 			tBR = tuple[1]
-			self.convertSurroundingCities(iPlayer, tTL, tBR)
-			self.convertSurroundingPlotCulture(iPlayer, tTL, tBR)
+			tExceptions = ()
+			if len(tuple) > 2: tExceptions = tuple[2]
+			self.convertSurroundingCities(iPlayer, tTL, tBR, tExceptions)
+			self.convertSurroundingPlotCulture(iPlayer, tTL, tBR, tExceptions)
 
 
-        def clear600ADChina(self):
+        def prepareChina(self):
                 pGuiyang = gc.getMap().plot(102, 41)
                 #pBarbarian.raze(pGuiyang.getPlotCity())
                 pGuiyang.getPlotCity().kill()
@@ -763,11 +873,18 @@ class RiseAndFall:
                 pGuiyang.setRouteType(-1)
                 pGuiyang.setFeatureType(con.iForest, 0)
 
-		pXian = gc.getMap().plot(100, 44)
-		pXian.getPlotCity().kill()
-		pXian.setImprovementType(-1)
-		pXian.setRouteType(-1)
-		pXian.setFeatureType(con.iForest, 0)
+		if utils.getScenario() == con.i600AD:
+			pXian = gc.getMap().plot(100, 44)
+			pXian.getPlotCity().kill()
+			pXian.setImprovementType(-1)
+			pXian.setRouteType(-1)
+			pXian.setFeatureType(con.iForest, 0)
+			
+		if utils.getScenario() == con.i1700AD:
+			pBeijing = gc.getMap().plot(con.tBeijing[0], con.tBeijing[1])
+			pBeijing.getPlotCity().kill()
+			pBeijing.setImprovementType(-1)
+			pBeijing.setRouteType(-1)
 
                 tCultureRegionTL = (98, 37)
                 tCultureRegionBR = (109, 49)
@@ -795,15 +912,16 @@ class RiseAndFall:
 		pChengdu.setHasReligion(con.iConfucianism, True, False, False)
 		pChengdu.setHasRealBuilding(con.iGranary, True)
 		
-		pBarbarian.found(105, 49)
-		utils.makeUnit(con.iArcher, iBarbarian, (105, 49), 1)
-		pShenyang = gc.getMap().plot(105, 49).getPlotCity()
-		pShenyang.setName("Simiyan hoton", False)
-		pShenyang.setPopulation(2)
-		pShenyang.setHasReligion(con.iConfucianism, True, False, False)
-		pShenyang.setHasRealBuilding(con.iGranary, True)
-		pShenyang.setHasRealBuilding(con.iWalls, True)
-		pShenyang.setHasRealBuilding(con.iConfucianTemple, True)
+		if utils.getScenario() == con.i600AD:
+			pBarbarian.found(105, 49)
+			utils.makeUnit(con.iArcher, iBarbarian, (105, 49), 1)
+			pShenyang = gc.getMap().plot(105, 49).getPlotCity()
+			pShenyang.setName("Simiyan hoton", False)
+			pShenyang.setPopulation(2)
+			pShenyang.setHasReligion(con.iConfucianism, True, False, False)
+			pShenyang.setHasRealBuilding(con.iGranary, True)
+			pShenyang.setHasRealBuilding(con.iWalls, True)
+			pShenyang.setHasRealBuilding(con.iConfucianTemple, True)
 		
                 
                 
@@ -4627,17 +4745,126 @@ class RiseAndFall:
 			utils.makeUnit(con.iBrazilianLenhador, iCiv, tPlot, 3)
 		if iCiv == iArgentina:
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
+			
+	def create1700ADstartingUnits(self):
+	
+		# China
+		tCapital = con.tBeijing
+		utils.makeUnit(con.iMusketman, iChina, tCapital, 12)
+		utils.makeUnit(con.iBombard, iChina, tCapital, 5)
+		
+		# Korea
+		tCapital = tCapitals[0][iKorea]
+		utils.makeUnit(con.iMusketman, iKorea, tCapital, 6)
+		utils.makeUnit(con.iBombard, iKorea, tCapital, 4)
+		
+		# Japan
+		tCapital = tCapitals[0][iJapan]
+		utils.makeUnit(con.iMusketman, iJapan, tCapital, 10)
+		utils.makeUnit(con.iBombard, iJapan, tCapital, 4)
+		
+		# Vikings
+		tCapital = con.tStockholm
+		utils.makeUnit(con.iRifleman, iVikings, tCapital, 8)
+		utils.makeUnit(con.iGrenadier, iVikings, tCapital, 2)
+		utils.makeUnit(con.iCannon, iVikings, tCapital, 4)
+		
+		# Spain
+		tCapital = tCapitals[0][iSpain]
+		utils.makeUnit(con.iRifleman, iSpain, tCapital, 6)
+		utils.makeUnit(con.iSpanishConquistador, iSpain, tCapital, 4)
+		utils.makeUnit(con.iGrenadier, iSpain, tCapital, 2)
+		utils.makeUnit(con.iCannon, iSpain, tCapital, 2)
+		
+		# France
+		tCapital = tCapitals[0][iFrance]
+		utils.makeUnit(con.iRifleman, iFrance, tCapital, 10)
+		utils.makeUnit(con.iGrenadier, iFrance, tCapital, 2)
+		utils.makeUnit(con.iFrenchHeavyCannon, iFrance, tCapital, 5)
+		
+		# England
+		tCapital = tCapitals[0][iEngland]
+		utils.makeUnit(con.iEnglishRedcoat, iEngland, tCapital, 8)
+		utils.makeUnit(con.iGrenadier, iEngland, tCapital, 2)
+		utils.makeUnit(con.iCannon, iEngland, tCapital, 4)
+		
+		# Austria
+		tCapital = con.tVienna
+		utils.makeUnit(con.iRifleman, iHolyRome, tCapital, 6)
+		utils.makeUnit(con.iGrenadier, iHolyRome, tCapital, 2)
+		utils.makeUnit(con.iCannon, iHolyRome, tCapital, 2)
+		
+		# Russia
+		tCapital = tCapitals[0][iRussia]
+		utils.makeUnit(con.iMusketman, iRussia, tCapital, 8)
+		utils.makeUnit(con.iGrenadier, iRussia, tCapital, 2)
+		utils.makeUnit(con.iCuirassier, iRussia, tCapital, 4)
+		utils.makeUnit(con.iBombard, iRussia, tCapital, 4)
+		
+		# Poland
+		tCapital = con.tWarsaw
+		utils.makeUnit(con.iMusketman, iPoland, tCapital, 4)
+		utils.makeUnit(con.iPolishWingedHussar, iPoland, tCapital, 6)
+		utils.makeUnit(con.iBombard, iPoland, tCapital, 2)
+		
+		# Portugal
+		tCapital = tCapitals[0][iPortugal]
+		utils.makeUnit(con.iRifleman, iPortugal, tCapital, 6)
+		utils.makeUnit(con.iGrenadier, iPortugal, tCapital, 2)
+		utils.makeUnit(con.iCannon, iPortugal, tCapital, 2)
+		
+		# Mughals
+		tCapital = tCapitals[0][iMughals]
+		utils.makeUnit(con.iMusketman, iMughals, tCapital, 8)
+		utils.makeUnit(con.iPikeman, iMughals, tCapital, 2)
+		utils.makeUnit(con.iMughalSiegeElephant, iMughals, tCapital, 4)
+		
+		# Turkey
+		tCapital = con.tIstanbul
+		utils.makeUnit(con.iOttomanJanissary, iTurkey, tCapital, 10)
+		utils.makeUnit(con.iCuirassier, iTurkey, tCapital, 4)
+		utils.makeUnit(con.iBombard, iTurkey, tCapital, 5)
+		
+		# Thailand
+		tCapital = tCapitals[0][iThailand]
+		utils.makeUnit(con.iMusketman, iThailand, tCapital, 4)
+		utils.makeUnit(con.iPikeman, iThailand, tCapital, 2)
+		utils.makeUnit(con.iThaiChangSuek, iThailand, tCapital, 4)
+		utils.makeUnit(con.iBombard, iThailand, tCapital, 2)
+		
+		# Congo
+		tCapital = tCapitals[0][iCongo]
+		utils.makeUnit(con.iCongoPombos, iCongo, tCapital, 6)
+		utils.makeUnit(con.iCatapult, iCongo, tCapital, 4)
+		utils.makeUnit(con.iLongbowman, iCongo, tCapital, 2)
+		
+		# Netherlands
+		tCapital = tCapitals[0][iNetherlands]
+		utils.makeUnit(con.iRifleman, iNetherlands, tCapital, 4)
+		utils.makeUnit(con.iGrenadier, iNetherlands, tCapital, 4)
+		utils.makeUnit(con.iBombard, iNetherlands, tCapital, 2)
+		
+		# Prussia
+		tCapital = tCapitals[0][iGermany]
+		utils.makeUnit(con.iRifleman, iGermany, tCapital, 8)
+		utils.makeUnit(con.iGrenadier, iGermany, tCapital, 2)
+		utils.makeUnit(con.iCannon, iGermany, tCapital, 6)
+		
+		for iPlayer in [iAmerica, iArgentina, iBrazil]:
+			if utils.getHumanID() == iPlayer:
+				utils.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], 1)
+				utils.makeUnit(iWarrior, iPlayer, con.tCapitals[0][iPlayer], 1)
 
         def create600ADstartingUnits( self ):
 
-                utils.makeUnit(iSettler, iChina, tCapitals[0][iChina], 1)
+                #utils.makeUnit(iSettler, iChina, tCapitals[0][iChina], 1)
                 utils.makeUnit(con.iSwordsman, iChina, tCapitals[0][iChina], 2)
                 utils.makeUnit(con.iArcher, iChina, tCapitals[0][iChina], 1)
 		utils.makeUnitAI(con.iSpearman, iChina, tCapitals[0][iChina], UnitAITypes.UNITAI_CITY_DEFENSE, 1)
                 utils.makeUnit(con.iChinaChokonu, iChina, tCapitals[0][iChina], 2)
                 utils.makeUnit(con.iHorseArcher, iChina, tCapitals[0][iChina], 1)
                 utils.makeUnit(con.iWorker, iChina, tCapitals[0][iChina], 2)
-		utils.makeUnit(con.iConfucianMissionary, iChina, tCapitals[0][iChina], 1)
+		#utils.makeUnit(con.iConfucianMissionary, iChina, tCapitals[0][iChina], 1)
                 
                 utils.makeUnit(iSettler, iJapan, tCapitals[0][iJapan], 3)
 		utils.makeUnit(con.iBuddhistMissionary, iJapan, tCapitals[0][iJapan], 3)
