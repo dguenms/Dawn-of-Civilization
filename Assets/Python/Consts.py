@@ -93,6 +93,13 @@ iNorthAmericaTiles = 297
 tSouthCentralAmericaTL = (13, 3)
 tSouthCentralAmericaBR = (41, 39)
 
+# new capital locations
+tVienna = (63, 49)
+tWarsaw = (66, 52)
+tStockholm = (63, 58)
+tIstanbul = (68, 45)
+tBeijing = (102, 47)
+tEsfahan = (81, 41)
 
 #for messages
 iDuration = 14

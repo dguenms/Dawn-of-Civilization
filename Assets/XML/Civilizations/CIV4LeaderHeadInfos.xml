@@ -34645,7 +34645,7 @@
 			<Description>TXT_KEY_LEADER_BARBAROSSA</Description>
 			<Civilopedia>TXT_KEY_LEADER_BARBAROSSA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_BARBAROSSA</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<iWonderConstructRand>20</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
 			<iBasePeaceWeight>8</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -34668,7 +34668,7 @@
 			<iDemandRebukedSneakProb>60</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
 			<!-- Rhye -->
-			<iRazeCityProb>30</iRazeCityProb>
+			<iRazeCityProb>10</iRazeCityProb>
 			<iBuildUnitProb>25</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
@@ -34729,7 +34729,7 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -52431,6 +52431,10 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>

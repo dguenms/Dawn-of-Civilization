@@ -4814,15 +4814,15 @@ int CvCity::getCulturePercentAnger() const
 		return 0;
 	}
 
-	//Leoreth: Polish UP
-	if (getOwnerINLINE() == POLAND)
+	//Leoreth: Polish UP - disabled
+	/*if (getOwnerINLINE() == POLAND)
 	{
 	    int iPolishCulture = plot()->getCulture((PlayerTypes)POLAND);
 	    if (iPolishCulture * 100 / iTotalCulture >= 50)
 	    {
             return 0;
 	    }
-	}
+	}*/
 
 	iAngryCulture = 0;
 

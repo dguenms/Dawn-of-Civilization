@@ -118,3 +118,7 @@
 # Mexico, Argentina and Brazil now have conditional spawns based on the stability of their owners
 # added a tech history graph to the demographics advisor
 # free buildings when founding a city from at least from the previous era
+# improved Polish settler map
+# new Polish UP: free cultural control of historical tiles in city radius
+# Poland now focuses more on researching Military Tradition, Astronomy and Liberalism
+# the Polish Sejmik now also gives +2 happiness

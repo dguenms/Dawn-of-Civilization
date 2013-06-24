@@ -3050,7 +3050,8 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 
 					if (pLoopCity != NULL)
 					{
-						if (pLoopCity->getTeam() == GET_PLAYER(eBestPlayer).getTeam() || GET_TEAM(GET_PLAYER(eBestPlayer).getTeam()).isVassal(pLoopCity->getTeam()))
+						// includes Polish UP: free control over historical tiles
+						if (pLoopCity->getTeam() == GET_PLAYER(eBestPlayer).getTeam() || GET_TEAM(GET_PLAYER(eBestPlayer).getTeam()).isVassal(pLoopCity->getTeam()) || (pLoopCity->getTeam() == POLAND && GET_PLAYER(POLAND).getSettlersMaps(67-getY_INLINE(), getX_INLINE()) >= 90))
 						{
 							if (getCulture(pLoopCity->getOwnerINLINE()) > 0)
 							{
@@ -3064,7 +3065,8 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 									    {
 										if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1 || abs(pBestCity->getX() - getX()) == 1 || abs(pBestCity->getY() - getY()) == 1) // Leoreth: spare the first ring around the city to help small civs (except if it's the first ring of a master's city
 											iPriority += 5; // priority ranges from 0 to 4 -> give priority to Masters of a Vassal
-									    }else
+									    }
+										else
 									    {
 										if (abs(pLoopCity->getX() - getX()) > 1 || abs(pLoopCity->getY() - getY()) > 1)
 											iPriority += 5;
