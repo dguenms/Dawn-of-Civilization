@@ -4753,6 +4753,12 @@ class RiseAndFall:
 		utils.makeUnit(con.iMusketman, iChina, tCapital, 12)
 		utils.makeUnit(con.iBombard, iChina, tCapital, 5)
 		
+		# Persia
+		tCapital = con.tEsfahan
+		utils.makeUnit(con.iMusketman, iPersia, tCapital, 6)
+		utils.makeUnit(con.iIranianQizilbash, iPersia, tCapital, 6)
+		utils.makeUnit(con.iBombard, iPersia, tCapital, 4)
+		
 		# Korea
 		tCapital = tCapitals[0][iKorea]
 		utils.makeUnit(con.iMusketman, iKorea, tCapital, 6)
@@ -4802,7 +4808,7 @@ class RiseAndFall:
 		utils.makeUnit(con.iBombard, iRussia, tCapital, 4)
 		
 		# Poland
-		tCapital = con.tWarsaw
+		tCapital = tCapitals[0][iPoland]
 		utils.makeUnit(con.iMusketman, iPoland, tCapital, 4)
 		utils.makeUnit(con.iPolishWingedHussar, iPoland, tCapital, 6)
 		utils.makeUnit(con.iBombard, iPoland, tCapital, 2)
