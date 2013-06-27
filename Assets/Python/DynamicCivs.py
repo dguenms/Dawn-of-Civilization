@@ -916,6 +916,10 @@ class DynamicCivs:
 			self.changeAnarchyTurns(iChina, 3)
 			self.setCivDesc(iByzantium, "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT")
 			
+		if utils.getScenario():
+			for iPlayer in [iChina, iPersia, iKorea, iJapan, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iPoland, iPortugal, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany]:
+				self.checkName(iPlayer)
+			
 		# Leoreth: might need to do stuff for the 1700AD scenario here
 
         def setDetermineds(self, iPlayer, szName="", szFlag=""):

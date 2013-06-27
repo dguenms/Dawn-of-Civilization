@@ -268,6 +268,7 @@ class CvRFCEventHandler:
                 self.aiw.setup()
 		self.vic.setup() # Leoreth
                 self.rnf.warOnSpawn()
+		#self.res.setup()
 
                 #Mercenaries - start
                 global objMercenaryUtils        

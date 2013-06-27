@@ -138,9 +138,10 @@ class Resources:
                         gc.getMap().plot(66, 23).setBonusType(iBanana) #Central Africa
                         gc.getMap().plot(64, 20).setBonusType(iBanana) #Central Africa
 			
-			gc.getMap().plot(61, 22).setBonusType(iCotton) #Congo
-			gc.getMap().plot(63, 19).setBonusType(iIvory) #Congo
-			gc.getMap().plot(61, 24).setBonusType(iIvory) #Cameroon
+			if utils.getPlayerEnabled(con.iCongo):
+				gc.getMap().plot(61, 22).setBonusType(iCotton) #Congo
+				gc.getMap().plot(63, 19).setBonusType(iIvory) #Congo
+				gc.getMap().plot(61, 24).setBonusType(iIvory) #Cameroon
 
 			gc.getMap().plot(57, 46).setBonusType(iWine) #Savoy
 			gc.getMap().plot(57, 45).setBonusType(iClam) #Savoy
@@ -161,6 +162,7 @@ class Resources:
 		if (iGameTurn == getTurnForYear(1500)):
 			gc.getMap().plot(36, 54).setFeatureType(4, 2) #Forest in Newfoundland
 			gc.getMap().plot(36, 54).setTerrainType(3, True, True) #Tundra in Newfoundland
+			gc.getMap().plot(36, 54).setBonusType(-1) #remove marsh in Newfoundland
 			
 			gc.getMap().plot(56, 54).setBonusType(iFish) #Amsterdam
                         
