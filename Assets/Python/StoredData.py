@@ -29,6 +29,7 @@ class StoredData:
                 self.scriptDict = {      #------------RiseAndFall
 				    'lTempEventList' : [],
                                     'iNewCiv': -1,
+				    'iRespawnCiv' : -1,
                                     'iNewCivFlip': -1,
                                     'iOldCivFlip': -1,
                                     'tTempTopLeft': -1,

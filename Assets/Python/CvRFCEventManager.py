@@ -64,7 +64,8 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
             #7624 : ('ReformationEvent', self.relEventApply7624, self.relEventBegin7624),
 	    7625 : ('AskColonialCityEvent', self.rnfEventApply7625, self.rnfEventBegin7625),
 	    7626 : ('OrthodoxyEvent', self.relEventApply7626, self.relEventBegin7626),
-	    7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627)
+	    7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
+	    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628)
         }
 
         # --> INSERT EVENT HANDLER INITIALIZATION HERE <--
@@ -260,5 +261,11 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
 	    self.rnf.eventApply7627(popupReturn)
 	    
     def rnfEventBegin7627(self):
+	    pass
+	    
+    def rnfEventApply7628(self, playerID, netUserData, popupReturn):
+	    self.rnf.eventApply7628(popupReturn)
+	   
+    def rnfEventBegin7628(self):
 	    pass
 	    

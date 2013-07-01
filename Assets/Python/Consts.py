@@ -488,7 +488,7 @@ tResurrectionIntervals = (
 [(1500, 2020)], #China
 [], #Babylonia
 [(1820, 2020)], #Greece
-[(1600, 1800), (1900, 2020)], #India
+[(1900, 2020)], #India
 [], #Carthage
 [(220, 650), (1500, 2020)], #Persia
 [], #Rome
@@ -891,6 +891,22 @@ iByzantium	:	"TXT_KEY_DOM_BYZANTIUM_LATE",
 }
 
 dawnOfMan1700AD = {
+iChina		:	"TXT_KEY_DOM_CHINA_1700AD",
+iKorea		:	"TXT_KEY_DOM_KOREA_1700AD",
+iJapan		:	"TXT_KEY_DOM_JAPAN_1700AD",
+iVikings	:	"TXT_KEY_DOM_SWEDEN_1700AD",
+iSpain		:	"TXT_KEY_DOM_SPAIN_1700AD",
+iFrance		:	"TXT_KEY_DOM_FRANCE_1700AD",
+iEngland	:	"TXT_KEY_DOM_ENGLAND_1700AD",
+iHolyRome	:	"TXT_KEY_DOM_AUSTRIA_1700AD",
+iRussia		:	"TXT_KEY_DOM_RUSSIA_1700AD",
+iPoland		:	"TXT_KEY_DOM_POLAND_1700AD",
+iPortugal	:	"TXT_KEY_DOM_PORTUGAL_1700AD",
+iMughals	:	"TXT_KEY_DOM_MUGHALS_1700AD",
+iTurkey		:	"TXT_KEY_DOM_TURKEY_1700AD",
+iThailand	:	"TXT_KEY_DOM_THAILAND_1700AD",
+iCongo		:	"TXT_KEY_DOM_CONGO_1700AD",
+iNetherlands	:	"TXT_KEY_DOM_NETHERLANDS_1700AD",
 }
 
 lDawnOfMan = [dawnOfMan3000BC, dawnOfMan600AD, dawnOfMan1700AD]
@@ -2587,6 +2603,7 @@ iSanMartin, iPeron) = range(iNumLeaders)
 
 iCleopatra = iHatshepsut
 iSargon = iGilgamesh
+iOdaNobunaga = iTokugawa
 
 resurrectionLeaders = {
 	iChina : iHongwu,

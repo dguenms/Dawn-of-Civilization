@@ -350,7 +350,9 @@ class Barbs:
                 self.foundCity(iNative, lTucume, "Tucume", iGameTurn, 1, con.iArcher, 2)
 		self.foundCity(iNative, lChanChan, "Chan Chan", iGameTurn, 2, con.iArcher, 2)
 		
-		self.foundCity(iIndependent, lKiev, "Kyiv", iGameTurn, 2, con.iLongbowman, 2, [con.iOrthodoxy])
+		lKievReligions = []
+		if gc.getGame().isReligionFounded(con.iOrthodoxy): lKievReligions = [con.iOrthodoxy]
+		self.foundCity(iIndependent, lKiev, "Kyiv", iGameTurn, 2, con.iLongbowman, 2, lKievReligions)
                 if utils.getScenario() == con.i3000BC:
                         self.foundCity(iCeltia, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
                 else:
