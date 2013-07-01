@@ -859,6 +859,22 @@ class DynamicCivs:
 			iChina : con.iTaizong
 		}
 		
+		self.l1700ADLeaders = {
+			iChina : con.iHongwu,
+			iPersia : con.iAbbas,
+			iJapan : con.iTokugawa,
+			iVikings : con.iGustav,
+			iSpain : con.iPhilip,
+			iFrance : con.iLouis,
+			iEngland : con.iVictoria,
+			iHolyRome : con.iFrancis,
+			iRussia : con.iPeter,
+			iPortugal : con.iJoao,
+			iMughals : con.iAkbar,
+			iTurkey : con.iSuleiman,
+			iGermany : con.iFrederick,
+		}
+		
 	def getAnarchyTurns(self, iPlayer):
 		return sd.scriptDict['lAnarchyTurns'][iPlayer]
 		
@@ -908,9 +924,11 @@ class DynamicCivs:
 			if not gc.getPlayer(iPlayer).isHuman():
 				self.setLeader(iPlayer, self.startingLeaders[iPlayer])
 			
-				# no difference between leaders in 600AD and 1700AD as of now
-				if utils.getScenario() >= con.i600AD and iPlayer in self.lateStartingLeaders:
+				if utils.getScenario() == con.i600AD and iPlayer in self.lateStartingLeaders:
 					self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
+					
+				if utils.getScenario() == con.i1700AD and iPlayer in self.l1700ADLeaders:
+					self.setLeader(iPlayer, self.l1700ADLeaders[iPlayer])
 			
 		if utils.getScenario() == con.i600AD:
 			self.changeAnarchyTurns(iChina, 3)
@@ -970,7 +988,7 @@ class DynamicCivs:
 		
 		if iPlayer == iCarthage: iThreshold = 4
 		elif iPlayer == iIndonesia: iThreshold = 4
-		elif iPlayer == iKorea: iThreshold = 3
+		elif iPlayer == iKorea: iThreshold = 4
 		elif iPlayer == iRussia: iThreshold = 8
 		elif iPlayer == iHolyRome and gc.getPlayer(iHolyRome).isReborn(): iThreshold = 3
 		elif iPlayer == iHolyRome: iThreshold = 4
@@ -1096,6 +1114,10 @@ class DynamicCivs:
 				elif capital.getName() == "Kobenhavn":
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK_REPUBLIC")
 					return
+			elif iPlayer == iPoland:
+				if iEra <= con.iIndustrial:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_EMPIRE")
+					return
 			elif iPlayer == iAmerica:
 				if iCivic2 == con.iAgrarianism or iCivic3 == con.iForcedLabor:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
@@ -1196,7 +1218,7 @@ class DynamicCivs:
 		elif iPlayer == iChina:
 			if not bResurrected:
 				if bEmpire:
-					if iEra >= iIndustrial:
+					if iEra >= iIndustrial or utils.getScenario() == con.i1700AD:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")
 						return
 						
@@ -1283,15 +1305,7 @@ class DynamicCivs:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_EMPIRE")
 						return
 			else:
-				if iReligion == con.iIslam and bTheocracy:
-					if iEra <= iRenaissance:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_SAFAVID_CALIPHATE")
-					elif iEra == iIndustrial:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_QAJAR_CALIPHATE")
-					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_PAHLAVI_CALIPHATE")
-					return
-				elif bEmpire:
+				if bEmpire:
 					if iEra <= iRenaissance:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_SAFAVID_EMPIRE")
 					elif iEra == iIndustrial:
@@ -1355,7 +1369,7 @@ class DynamicCivs:
 				if bEmpire:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_GOGURYEO")
 					return
-			if iEra <= iRenaissance:
+			if iEra < iRenaissance:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_GORYEO")
 				return
 			else:
@@ -2032,7 +2046,7 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iChurchill)
 				return
 				
-			if iEra >= con.iIndustrial:
+			if iEra >= con.iIndustrial or utils.getScenario() == con.i1700AD:
 				self.setLeader(iPlayer, con.iVictoria)
 				return
 				
@@ -2171,9 +2185,12 @@ class DynamicCivs:
 		elif iPlayer == iBrazil:
 			return
 				
-		# no difference in leaders between 600AD and 1700AD scenarios as of now
-		if utils.getScenario() >= con.i600AD and iPlayer in self.lateStartingLeaders:
+		if utils.getScenario() == con.i600AD and iPlayer in self.lateStartingLeaders:
 			self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
+			return
+			
+		if utils.getScenario() == con.i1700AD and iPlayer in self.l1700ADLeaders:
+			self.setLeader(iPlayer, self.l1700ADLeaders[iPlayer])
 			return
 				
 		self.setLeader(iPlayer, self.startingLeaders[iPlayer])

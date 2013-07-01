@@ -1565,8 +1565,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	iGameTurnFounded = pOldCity->getGameTurnFounded();
 	iPopulation = pOldCity->getPopulation();
 	iHighestPopulation = pOldCity->getHighestPopulation();
-	iHurryAngerTimer = pOldCity->getHurryAngerTimer();
-	iConscriptAngerTimer = pOldCity->getConscriptAngerTimer();
+	iHurryAngerTimer = 0; //pOldCity->getHurryAngerTimer(); // Leoreth: don't keep the unhappiness
+	iConscriptAngerTimer = 0; //pOldCity->getConscriptAngerTimer(); // Leoreth: don't keep the unhappiness
 	iDefyResolutionAngerTimer = pOldCity->getDefyResolutionAngerTimer();
 	iOccupationTimer = pOldCity->getOccupationTimer();
 	szName = pOldCity->getNameKey();
@@ -4752,6 +4752,10 @@ void CvPlayer::findNewCapital()
 	}
 
 	pOldCapital = getCapitalCity();
+	int iOldCapitalArea = -1;
+	
+	if (pOldCapital != NULL)
+		pOldCapital->getArea();
 
 	iBestValue = 0;
 	pBestCity = NULL;
@@ -4774,6 +4778,12 @@ void CvPlayer::findNewCapital()
 
 				if (getID() == ARABIA)
 					iValue += (pLoopCity->isHolyCity())? 25 : 0;
+
+				// Leoreth: prefer cities on the same continent
+				if (pLoopCity->getArea() == iOldCapitalArea)
+				{
+					iValue *= 10;
+				}
 
 				iValue *= (pLoopCity->calculateCulturePercent(getID()) + 100);
 				iValue /= 100;

@@ -528,4 +528,12 @@
 		<Tag>TXT_KEY_VICTORY_HIGHEST_COMMERCE_PER_CAPITA</Tag>
 		<English>Highest commerce per capita: %s1</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_GENERALS</Tag>
+		<English>Great Generals created: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_STATE_RELIGION_CATHEDRALS</Tag>
+		<English>%s1 Cathedrals built: %d2 / %d3</English>
+	</TEXT>
 </Civ4GameText>

@@ -10413,7 +10413,7 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 		iFinalResult = result * unitCostModifier[pl] / 100;
 	}else if (pl == INDEPENDENT || pl == INDEPENDENT2)
 	{
-		iFinalResult = result * 130 / 100;
+		iFinalResult = 0;
 	}else if (pl == SELJUKS)
 	{
 		iFinalResult = 50 / 100;
@@ -10511,9 +10511,15 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		}
 	}
 
-	if (getScenario() >= SCENARIO_600AD) { //late start condition - apparently it goes too fast from 600AD
+	if (getScenario() == SCENARIO_600AD) { //late start condition - apparently it goes too fast from 600AD
 		researchPercent *= 108;
 		researchPercent /= 100;
+	}
+
+	if (getScenario() == SCENARIO_1700AD)
+	{
+		researchPercent *= 12;
+		researchPercent /= 10;
 	}
 
 	//Leoreth: delay the tech penalty a little to give Babylonia more time if it's player controlled

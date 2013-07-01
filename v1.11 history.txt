@@ -122,3 +122,9 @@
 # new Polish UP: free cultural control of historical tiles in city radius
 # Poland now focuses more on researching Military Tradition, Astronomy and Liberalism
 # the Polish Sejmik now also gives +2 happiness
+# independents pay no unit upkeep
+# Argentina, Mexico and Brazil have a dynamic state religion based on the religions in their core
+# moved Indian respawn into the 20th century
+# AI conquerors start with additional experience
+# new capital locations should now prefer city on the same continent instead of far away colonies
+# included a 1700 AD scenario

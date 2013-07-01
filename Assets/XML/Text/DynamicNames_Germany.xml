@@ -29,6 +29,10 @@
 		<English>Third Reich</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_SOVIET_VASSAL</Tag>
+		<English>German Democratic Republic</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_EMPIRE</Tag>
 		<English>German Empire</English>
 	</TEXT>

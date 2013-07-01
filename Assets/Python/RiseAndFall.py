@@ -229,6 +229,12 @@ class RiseAndFall:
 
         def setNewCiv( self, iNewValue ):
                 sd.scriptDict['iNewCiv'] = iNewValue
+		
+	def getRespawnCiv(self):
+		return sd.scriptDict['iRespawnCiv']
+		
+	def setRespawnCiv(self, iNewValue):
+		sd.scriptDict['iRespawnCiv'] = iNewValue
 
         def getNewCivFlip( self ):
                 return sd.scriptDict['iNewCivFlip']
@@ -402,37 +408,44 @@ class RiseAndFall:
 
         def eventApply7614(self, popupReturn):
                 if( popupReturn.getButtonClicked() == 0 ): # 1st button
-			iPreviousCiv = utils.getHumanID()
-                        iOldHandicap = gc.getActivePlayer().getHandicapType()
-                        gc.getActivePlayer().setHandicapType(gc.getPlayer(self.getNewCiv()).getHandicapType())
-                        gc.getGame().setActivePlayer(self.getNewCiv(), False)
-                        gc.getPlayer(self.getNewCiv()).setHandicapType(iOldHandicap)
-                        utils.setStartingStabilityParameters(self.getNewCiv())
-                        for iMaster in range(con.iNumPlayers):
-                                if (gc.getTeam(gc.getPlayer(self.getNewCiv()).getTeam()).isVassal(iMaster)):
-                                        gc.getTeam(gc.getPlayer(self.getNewCiv()).getTeam()).setVassal(iMaster, False, False)
-                        self.setAlreadySwitched(True)
-                        gc.getPlayer(self.getNewCiv()).setPlayable(True)
+			self.handleNewCiv(self.getNewCiv())
+			
+	def respawnPopup(self, iCiv):
+		self.showPopup(7628, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
+                self.setRespawnCiv(iCiv)
+		
+	def eventApply7628(self, popupReturn):
+		if popupReturn.getButtonClicked() == 0:
+			self.handleNewCiv(self.getRespawnCiv())
+		
+	def handleNewCiv(self, iCiv):
+		iPreviousCiv = utils.getHumanID()
+		iOldHandicap = gc.getActivePlayer().getHandicapType()
+		gc.getActivePlayer().setHandicapType(gc.getPlayer(iCiv).getHandicapType())
+		gc.getGame().setActivePlayer(iCiv, False)
+		gc.getPlayer(iCiv).setHandicapType(iOldHandicap)
+		utils.setStartingStabilityParameters(iCiv)
+		for iMaster in range(con.iNumPlayers):
+			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iMaster)):
+				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)
+		self.setAlreadySwitched(True)
+		gc.getPlayer(iCiv).setPlayable(True)
 
-                        pPlayer = gc.getPlayer(self.getNewCiv())
-                        pCity, iter = pPlayer.firstCity(true)
+		pPlayer = gc.getPlayer(iCiv)
+		pCity, iter = pPlayer.firstCity(true)
 
-                        for x in range(0, 124):
-                                for y in range(0, 168):
-                                        if (gc.getMap().plot(x,y).isCity()):
-                                                city = gc.getMap().plot( x,y ).getPlotCity()
-                                                if (city.getOwner() == self.getNewCiv()):
-                                                        city.setInfoDirty(True)
-                                                        city.setLayoutDirty(True)
-							
-			if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
-				for i in range(3):
-					sd.scriptDict['lGoals'][iPreviousCiv][i] = 0
-					sd.scriptDict['lGoals'][self.getNewCiv()][i] = -1
-                                                                                                       
-                        #CyInterface().addImmediateMessage("first button", "")
-                #elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
-                        #CyInterface().addImmediateMessage("second button", "")
+		for x in range(0, 124):
+			for y in range(0, 168):
+				if (gc.getMap().plot(x,y).isCity()):
+					city = gc.getMap().plot( x,y ).getPlotCity()
+					if (city.getOwner() == iCiv):
+						city.setInfoDirty(True)
+						city.setLayoutDirty(True)
+						
+		if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
+			for i in range(3):
+				sd.scriptDict['lGoals'][iPreviousCiv][i] = 0
+				sd.scriptDict['lGoals'][iCiv][i] = -1
 
         def flipPopup(self, iNewCiv, tTopLeft, tBottomRight):
                 iHuman = utils.getHumanID()
@@ -649,6 +662,13 @@ class RiseAndFall:
 			
 		if utils.getScenario() == con.i1700AD:
 			self.create1700ADstartingUnits()
+			self.assign1700ADTechs()
+			self.assign1700ADGold()
+			self.init1700ADDiplomacy()
+			self.set1700ADStability()
+			
+			pPersia.setReborn()
+			pHolyRome.setReborn()
 		
 		self.assign3000BCGold()	
 		self.invalidateUHVs()
@@ -667,6 +687,42 @@ class RiseAndFall:
 		pIndependent2.changeGold(50)
 		pNative.changeGold(200)
 		pSeljuks.changeGold(250)
+		
+	def assign1700ADGold(self):
+	
+		pChina.changeGold(300)
+		pJapan.changeGold(100)
+		
+		pSpain.changeGold(200)
+		pFrance.changeGold(250)
+		pEngland.changeGold(400)
+		pRussia.changeGold(150)
+		pPoland.changeGold(100)
+		pPortugal.changeGold(250)
+		pMughals.changeGold(-200)
+		pTurkey.changeGold(-100)
+		pThailand.changeGold(-500)
+		pNetherlands.changeGold(200)
+		
+	def init1700ADDiplomacy(self):
+	
+		self.changeAttitudeExtra(iPersia, iTurkey, -4)
+		self.changeAttitudeExtra(iPersia, iMughals, -2)
+		self.changeAttitudeExtra(iChina, iKorea, 2)
+		self.changeAttitudeExtra(iVikings, iRussia, -2)
+		self.changeAttitudeExtra(iSpain, iPortugal, 2)
+		self.changeAttitudeExtra(iFrance, iEngland, -4)
+		self.changeAttitudeExtra(iFrance, iNetherlands, 2)
+		self.changeAttitudeExtra(iEngland, iPortugal, 2)
+		self.changeAttitudeExtra(iEngland, iMughals, -2)
+		self.changeAttitudeExtra(iHolyRome, iTurkey, -4)
+		self.changeAttitudeExtra(iRussia, iTurkey, -2)
+		self.changeAttitudeExtra(iPortugal, iNetherlands, -2)
+	
+	def changeAttitudeExtra(self, iPlayer1, iPlayer2, iValue):
+	
+		gc.getPlayer(iPlayer1).AI_changeAttitudeExtra(iPlayer2, iValue)
+		gc.getPlayer(iPlayer2).AI_changeAttitudeExtra(iPlayer1, iValue)
 		
 	def set3000BCStability(self):
 	
@@ -688,6 +744,17 @@ class RiseAndFall:
 		if utils.getHumanID() != iJapan:
 			utils.setStability(iJapan, utils.getStability(iJapan) + 4)
 			pJapan.changeStabilityCategory(con.iStabilityDifficulty, 4)
+			
+	def set1700ADStability(self):
+	
+		utils.setStability(iTurkey, utils.getStability(iTurkey) + 10)
+		pChina.changeStabilityCategory(con.iStabilityDifficulty, 10)
+		
+		utils.setStability(iSpain, utils.getStability(iSpain) + 15)
+		pSpain.changeStabilityCategory(con.iStabilityDifficulty, 15)
+		
+		utils.setStability(iEngland, utils.getStability(iEngland) + 5)
+		pEngland.changeStabilityCategory(con.iStabilityDifficulty, 5)
 
 	def invalidateUHVs(self):
 	
@@ -713,79 +780,6 @@ class RiseAndFall:
 			lBuildings = [con.iConfucianTemple, con.iChineseTaixue, con.iBarracks, con.iForge]
 			utils.foundCapital(iChina, tCapital, "Xi'an", 4, 100, lBuildings, [con.iConfucianism, con.iTaoism])
 			
-		if utils.getScenario() == con.i1700AD:
-		
-			return
-		
-			# China
-			self.prepareChina()
-			tCapital = con.tBeijing
-			utils.foundCapital(iChina, tCapital, 'Beijing', 10, 100)
-			
-			# Korea
-			tCapital = con.tCapitals[0][iKorea]
-			utils.foundCapital(iKorea, tCapital, 'Hanseong', 8, 100)
-			
-			# Japan
-			tCapital = con.tCapitals[0][iJapan]
-			utils.foundCapital(iJapan, tCapital, 'Kyoutou', 10, 100)
-			
-			# Sweden
-			tCapital = con.tStockholm
-			utils.foundCapital(iVikings, tCapital, 'Stockholm', 8, 100)
-			
-			# Spain
-			tCapital = con.tCapitals[0][iSpain]
-			utils.foundCapital(iSpain, tCapital, 'Madrid', 8, 100)
-			
-			# France
-			tCapital = con.tCapitals[0][iFrance]
-			utils.foundCapital(iFrance, tCapital, 'Paris', 12, 100)
-			
-			# London
-			tCapital = con.tCapitals[0][iEngland]
-			utils.foundCapital(iEngland, tCapital, 'London', 12, 100)
-			
-			# Austria
-			tCapital = con.tVienna
-			utils.foundCapital(iHolyRome, tCapital, 'Wien', 10, 100)
-			
-			# Russia
-			tCapital = con.tCapitals[0][iRussia]
-			utils.foundCapital(iRussia, tCapital, 'Moskva', 10, 100)
-			
-			# Poland
-			tCapital = con.tCapitals[0][iPoland]
-			utils.foundCapital(iPoland, tCapital, 'Krakow', 8, 100)
-			
-			# Portugal
-			tCapital = con.tCapitals[0][iPortugal]
-			utils.foundCapital(iPortugal, tCapital, 'Lisboa', 10, 100)
-			
-			# Mughals
-			tCapital = con.tCapitals[0][iMughals]
-			utils.foundCapital(iMughals, tCapital, 'Delhi', 12, 100)
-			
-			# Turkey
-			tCapital = con.tIstanbul
-			utils.foundCapital(iTurkey, tCapital, 'Kostantiniyye', 12, 100)
-			
-			# Thailand
-			tCapital = con.tCapitals[0][iThailand]
-			utils.foundCapital(iThailand, tCapital, 'Ayutthaya', 12, 100)
-			
-			# Congo
-			tCapital = con.tCapitals[0][iCongo]
-			utils.foundCapital(iCongo, tCapital, 'Mbanza Kongo', 8, 100)
-			
-			# Netherlands
-			tCapital = con.tCapitals[0][iNetherlands]
-			utils.foundCapital(iNetherlands, tCapital, 'Amsterdam', 12, 100)
-			
-			# Germany
-			tCapital = con.tCapitals[0][iGermany]
-			utils.foundCapital(iGermany, tCapital, 'Berlin', 10, 100)
-			
 	def flipStartingTerritory(self):
 	
 		if utils.getScenario() == con.i600AD:
@@ -802,56 +796,6 @@ class RiseAndFall:
 			tBR = tCoreAreasBR[0][iChina]
 			if utils.getHumanID() != iChina: tTL = (99, 39) # 4 tiles further south
 			self.startingFlip(iChina, [(tTL, tBR)])
-			
-		if utils.getScenario() == con.i1700AD:
-		
-			return
-		
-			# China
-			lList = []
-			tTL = (99, 37)
-			tBR = (108, 47)
-			tExceptions = ((99, 37), (100, 37), (101, 37), (99, 38), (100, 38), (101, 38), (102, 38), (99, 39), (100, 39), (101, 39), (108, 47))
-			lList.append((tTL, tBR, tExceptions))
-			tTL = (94, 42)
-			tBR = (98, 45)
-			lList.append((tTL, tBR))
-			tTL = (100, 48)
-			tBR = (109, 52)
-			tExceptions = ((100, 49), (100, 50), (107, 49), (108, 49), (107, 48), (107, 48))
-			lList.append((tTL, tBR, tExceptions))
-			self.startingFlip(iChina, lList)
-			
-			# Korea
-			tTL = (107, 45)
-			tBR = (110, 49)
-			self.startingFlip(iKorea, [(tTL, tBR)])
-			
-			# Japan
-			tTL = (111, 41)
-			tBR = (116, 52)
-			tExceptions = ((111, 51), (111, 52), (112, 52))
-			self.startingFlip(iJapan, [(tTL, tBR, tExceptions)])
-			
-			# Sweden
-			lList = []
-			tTL = (61, 55)
-			tBR = (68, 64)
-			tExceptions = ((61, 62), (62, 63), (63, 64), (65, 54), (66, 54), (67, 54), (68, 54), (65, 55), (66, 55), (67, 55), (68, 55), (66, 56), (67, 56), (68, 56), (68, 57))
-			lList.append((tTL, tBR, tExceptions))
-			self.startingFlip(iVikings, lList)
-			
-			# Spain
-			lList = []
-			tTL = (49, 40)
-			tBR = (55, 46)
-			tExceptions = ((49, 41), (49, 42), (49, 43), (49, 44), (50, 41), (50, 42), (50, 43), (50, 44), (55, 46))
-			lList.append((tTL, tBR, tExceptions))
-			tTL = (14, 35)
-			tBR = (19, 43)
-			lList.append((tTL, tBR))
-			tTL = (21, 36)
-			tBR = (32, 39)
 			
 			
 	def startingFlip(self, iPlayer, lRegionList):
@@ -1426,10 +1370,14 @@ class RiseAndFall:
                                                         utils.makeUnit(con.iSettler, iCiv, (x,y), 1)
                                         
                                         self.createRespawnUnits(iCiv, (x,y))
+					
+					# for colonial civs, set dynamic state religion
+					if iCiv == iAztecs:
+						self.setStateReligion(iCiv)
 
                                         self.assignTechs(iCiv)
                                         if (iGameTurn >= getTurnForYear(con.tBirth[gc.getGame().getActivePlayer()])):
-                                                self.newCivPopup(iCiv)
+                                                self.respawnPopup(iCiv)
 
 					self.setLatestRebellionTurn(iCiv, getTurnForYear(con.tRebirth[iCiv]))
 					
@@ -2452,7 +2400,7 @@ class RiseAndFall:
 						
 			if iCiv in [iArgentina, iBrazil]:
 				iColonyPlayer = utils.getColonyPlayer(iCiv)
-				if iColonyPlayer >= 0:
+				if iColonyPlayer >= 0 and iColonyPlayer not in [iArgentina, iBrazil]:
 					if utils.getStability(iColonyPlayer) >= 20:
 						return
 						
@@ -2674,13 +2622,15 @@ class RiseAndFall:
                                 print ( "setBirthType again: flips" )
 				self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
 				
-				
-
                 # Leoreth: reveal all broader plots on spawn
                 reborn = utils.getReborn(iCiv)
                 for x in range(con.tBroaderAreasTL[reborn][iCiv][0], con.tBroaderAreasBR[reborn][iCiv][0]+1):
                         for y in range(con.tBroaderAreasTL[reborn][iCiv][1], con.tBroaderAreasBR[reborn][iCiv][1]+1):
                                 gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
+				
+		# Leoreth: conditional state religion for colonial civs
+		if iCiv in [iArgentina, iBrazil]:
+			self.setStateReligion(iCiv)
                         
                 if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and ((iHuman not in con.lNeighbours[iCiv] and getTurnForYear(con.tBirth[iCiv]) - getTurnForYear(con.tBirth[iHuman]) > 0) or getTurnForYear(con.tBirth[iCiv]) - getTurnForYear(con.tBirth[iHuman]) >= utils.getTurns(25) ):
                         self.newCivPopup(iCiv)
@@ -3708,7 +3658,7 @@ class RiseAndFall:
 						CyInterface().addMessage(utils.getHumanID(), True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iTeamX).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
 	def lateTradingCompany(self, iCiv):
-		if utils.getHumanID() != iCiv and not utils.isAVassal(iCiv):
+		if utils.getHumanID() != iCiv and not utils.isAVassal(iCiv) and utils.getScenario() != con.i1700AD:
 			if iCiv in [iFrance, iEngland, iNetherlands]:
 				self.handleColonialConquest(iCiv)
 
@@ -3949,6 +3899,10 @@ class RiseAndFall:
 	
 	
         def warOnSpawn(self):
+	
+		if utils.getScenario() == con.i1700AD:
+			return
+	
                 for iCiv in range(iNumMajorPlayers):
                         if utils.getScenario() > con.tLatestActiveScenario[iCiv]:
                                 continue #skip          
@@ -4771,39 +4725,33 @@ class RiseAndFall:
 		
 		# Vikings
 		tCapital = con.tStockholm
-		utils.makeUnit(con.iRifleman, iVikings, tCapital, 8)
-		utils.makeUnit(con.iGrenadier, iVikings, tCapital, 2)
-		utils.makeUnit(con.iCannon, iVikings, tCapital, 4)
+		utils.makeUnit(con.iMusketman, iVikings, tCapital, 8)
+		utils.makeUnit(con.iBombard, iVikings, tCapital, 4)
 		
 		# Spain
 		tCapital = tCapitals[0][iSpain]
-		utils.makeUnit(con.iRifleman, iSpain, tCapital, 6)
+		utils.makeUnit(con.iMusketman, iSpain, tCapital, 6)
 		utils.makeUnit(con.iSpanishConquistador, iSpain, tCapital, 4)
-		utils.makeUnit(con.iGrenadier, iSpain, tCapital, 2)
-		utils.makeUnit(con.iCannon, iSpain, tCapital, 2)
+		utils.makeUnit(con.iBombard, iSpain, tCapital, 2)
 		
 		# France
 		tCapital = tCapitals[0][iFrance]
 		utils.makeUnit(con.iRifleman, iFrance, tCapital, 10)
-		utils.makeUnit(con.iGrenadier, iFrance, tCapital, 2)
 		utils.makeUnit(con.iFrenchHeavyCannon, iFrance, tCapital, 5)
 		
 		# England
 		tCapital = tCapitals[0][iEngland]
 		utils.makeUnit(con.iEnglishRedcoat, iEngland, tCapital, 8)
-		utils.makeUnit(con.iGrenadier, iEngland, tCapital, 2)
 		utils.makeUnit(con.iCannon, iEngland, tCapital, 4)
 		
 		# Austria
 		tCapital = con.tVienna
 		utils.makeUnit(con.iRifleman, iHolyRome, tCapital, 6)
-		utils.makeUnit(con.iGrenadier, iHolyRome, tCapital, 2)
 		utils.makeUnit(con.iCannon, iHolyRome, tCapital, 2)
 		
 		# Russia
 		tCapital = tCapitals[0][iRussia]
 		utils.makeUnit(con.iMusketman, iRussia, tCapital, 8)
-		utils.makeUnit(con.iGrenadier, iRussia, tCapital, 2)
 		utils.makeUnit(con.iCuirassier, iRussia, tCapital, 4)
 		utils.makeUnit(con.iBombard, iRussia, tCapital, 4)
 		
@@ -4815,13 +4763,12 @@ class RiseAndFall:
 		
 		# Portugal
 		tCapital = tCapitals[0][iPortugal]
-		utils.makeUnit(con.iRifleman, iPortugal, tCapital, 6)
-		utils.makeUnit(con.iGrenadier, iPortugal, tCapital, 2)
-		utils.makeUnit(con.iCannon, iPortugal, tCapital, 2)
+		utils.makeUnit(con.iMusketman, iPortugal, tCapital, 6)
+		utils.makeUnit(con.iBombard, iPortugal, tCapital, 2)
 		
 		# Mughals
 		tCapital = tCapitals[0][iMughals]
-		utils.makeUnit(con.iMusketman, iMughals, tCapital, 8)
+		utils.makeUnit(con.iMusketman, iMughals, tCapital, 6)
 		utils.makeUnit(con.iPikeman, iMughals, tCapital, 2)
 		utils.makeUnit(con.iMughalSiegeElephant, iMughals, tCapital, 4)
 		
@@ -4846,15 +4793,13 @@ class RiseAndFall:
 		
 		# Netherlands
 		tCapital = tCapitals[0][iNetherlands]
-		utils.makeUnit(con.iRifleman, iNetherlands, tCapital, 4)
-		utils.makeUnit(con.iGrenadier, iNetherlands, tCapital, 4)
+		utils.makeUnit(con.iRifleman, iNetherlands, tCapital, 5)
 		utils.makeUnit(con.iBombard, iNetherlands, tCapital, 2)
 		
 		# Prussia
 		tCapital = tCapitals[0][iGermany]
 		utils.makeUnit(con.iRifleman, iGermany, tCapital, 8)
-		utils.makeUnit(con.iGrenadier, iGermany, tCapital, 2)
-		utils.makeUnit(con.iCannon, iGermany, tCapital, 6)
+		utils.makeUnit(con.iCannon, iGermany, tCapital, 5)
 		
 		for iPlayer in [iAmerica, iArgentina, iBrazil]:
 			if utils.getHumanID() == iPlayer:
@@ -5137,7 +5082,122 @@ class RiseAndFall:
 		if pBrazil.isHuman():
 			utils.makeUnit(iSettler, iBrazil, tCapitals[0][iBrazil], 1)
 			utils.makeUnit(iWarrior, iBrazil, tCapitals[0][iBrazil], 1)
-
+			
+			
+	def assign1700ADTechs(self):
+	
+		lMedievalTechs = [con.iFishing, con.iTheWheel, con.iAgriculture, con.iHunting, con.iMysticism, con.iMining,
+				  con.iSailing, con.iPottery, con.iAnimalHusbandry, con.iArchery, con.iMeditation, con.iPolytheism, con.iMasonry,
+				  con.iHorsebackRiding, con.iPriesthood, con.iMonotheism, con.iBronzeWorking,
+				  con.iWriting, con.iMetalCasting, con.iIronWorking,
+				  con.iAesthetics, con.iMathematics, con.iAlphabet, con.iMonarchy, con.iCompass,
+				  con.iLiterature, con.iCalendar, con.iConstruction, con.iCurrency, con.iMachinery,
+				  con.iDrama, con.iEngineering, con.iCodeOfLaws, con.iFeudalism,
+				  con.iMusic, con.iPhilosophy, con.iCivilService, con.iTheology, con.iOptics,
+				  con.iPatronage, con.iDivineRight, con.iPaper, con.iGuilds,
+				  con.iEducation, con.iBanking, con.iGunpowder]
+				  
+		lChineseTechs = [con.iPrintingPress, con.iAstronomy]
+		lChineseTechs.extend(lMedievalTechs)
+		for iTech in lChineseTechs:
+			teamChina.setHasTech(iTech, True, iChina, False, False)
+			
+		lPersianTechs = [con.iMilitaryTradition, con.iPrintingPress, con.iAstronomy, con.iLiberalism]
+		lPersianTechs.extend(lMedievalTechs)
+		for iTech in lPersianTechs:
+			teamPersia.setHasTech(iTech, True, iPersia, False, False)
+			
+		lKoreanTechs = [con.iPrintingPress]
+		lKoreanTechs.extend(lMedievalTechs)
+		for iTech in lKoreanTechs:
+			teamKorea.setHasTech(iTech, True, iKorea, False, False)
+			
+		lJapaneseTechs = [con.iMilitaryTradition, con.iPrintingPress]
+		lJapaneseTechs.extend(lMedievalTechs)
+		for iTech in lJapaneseTechs:
+			teamJapan.setHasTech(iTech, True, iJapan, False, False)
+			
+		lSwedishTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iMilitaryScience, con.iReplaceableParts, con.iLiberalism, con.iAstronomy]
+		lSwedishTechs.extend(lMedievalTechs)
+		for iTech in lSwedishTechs:
+			teamVikings.setHasTech(iTech, True, iVikings, False, False)
+			
+		lSpanishTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iMilitaryScience, con.iReplaceableParts, con.iLiberalism, con.iAstronomy]
+		lSpanishTechs.extend(lMedievalTechs)
+		for iTech in lSpanishTechs:
+			teamSpain.setHasTech(iTech, True, iSpain, False, False)
+			
+		lFrenchTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iMilitaryScience, con.iReplaceableParts, con.iRifling, con.iLiberalism,
+				con.iAstronomy]
+		lFrenchTechs.extend(lMedievalTechs)
+		for iTech in lFrenchTechs:
+			teamFrance.setHasTech(iTech, True, iFrance, False, False)
+			
+		lEnglishTechs = [con.iPrintingPress, con.iMilitaryScience, con.iReplaceableParts, con.iRifling, con.iLiberalism,
+				 con.iConstitution, con.iAstronomy]
+		lEnglishTechs.extend(lMedievalTechs)
+		for iTech in lEnglishTechs:
+			teamEngland.setHasTech(iTech, True, iEngland, False, False)
+			
+		lAustrianTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iMilitaryScience, con.iReplaceableParts, con.iRifling,
+				  con.iAstronomy]
+		lAustrianTechs.extend(lMedievalTechs)
+		for iTech in lAustrianTechs:
+			teamHolyRome.setHasTech(iTech, True, iHolyRome, False, False)
+			
+		lRussianTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iMilitaryScience, con.iReplaceableParts]
+		lRussianTechs.extend(lMedievalTechs)
+		for iTech in lRussianTechs:
+			teamRussia.setHasTech(iTech, True, iRussia, False, False)
+			
+		lPolishTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iReplaceableParts, con.iAstronomy, con.iLiberalism,
+				con.iConstitution]
+		lPolishTechs.extend(lMedievalTechs)
+		for iTech in lPolishTechs:
+			teamPoland.setHasTech(iTech, True, iPoland, False, False)
+			
+		lPortugueseTechs = [con.iPrintingPress, con.iMilitaryScience, con.iReplaceableParts, con.iAstronomy,
+				    con.iLiberalism]
+		lPortugueseTechs.extend(lMedievalTechs)
+		for iTech in lPortugueseTechs:
+			teamPortugal.setHasTech(iTech, True, iPortugal, False, False)
+			
+		lMughalTechs = [con.iPrintingPress, con.iAstronomy, con.iLiberalism, con.iConstitution]
+		lMughalTechs.extend(lMedievalTechs)
+		for iTech in lMughalTechs:
+			teamMughals.setHasTech(iTech, True, iMughals, False, False)
+			
+		lTurkishTechs = [con.iPrintingPress, con.iMilitaryScience, con.iReplaceableParts, con.iMilitaryTradition]
+		lTurkishTechs.extend(lMedievalTechs)
+		for iTech in lTurkishTechs:
+			teamTurkey.setHasTech(iTech, True, iTurkey, False, False)
+			
+		lThaiTechs = [con.iPrintingPress]
+		lThaiTechs.extend(lMedievalTechs)
+		for iTech in lThaiTechs:
+			teamThailand.setHasTech(iTech, True, iThailand, False, False)
+			
+		lCongoleseTechs = []
+		lCongoleseTechs.extend(lMedievalTechs)
+		lCongoleseTechs.remove(con.iBanking)
+		lCongoleseTechs.remove(con.iEducation)
+		lCongoleseTechs.remove(con.iGunpowder)
+		lCongoleseTechs.remove(con.iDivineRight)
+		lCongoleseTechs.remove(con.iOptics)
+		for iTech in lCongoleseTechs:
+			teamCongo.setHasTech(iTech, True, iCongo, False, False)
+			
+		lDutchTechs = [con.iPrintingPress, con.iMilitaryScience, con.iReplaceableParts, con.iRifling, con.iLiberalism, con.iConstitution,
+			       con.iAstronomy]
+		lDutchTechs.extend(lMedievalTechs)
+		for iTech in lDutchTechs:
+			teamNetherlands.setHasTech(iTech, True, iNetherlands, False, False)
+			
+		lGermanTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iMilitaryScience, con.iReplaceableParts, con.iRifling, con.iLiberalism,
+				con.iConstitution, con.iAstronomy]
+		lGermanTechs.extend(lMedievalTechs)
+		for iTech in lGermanTechs:
+			teamGermany.setHasTech(iTech, True, iGermany, False, False)
 
 
         def assign600ADTechs( self ):
@@ -6350,3 +6410,17 @@ class RiseAndFall:
 		i, j = tPlot
 		
 		gc.getMap().plot(i, j).setImprovementType(con.iHut)
+		
+	def setStateReligion(self, iCiv):
+		iReborn = utils.getReborn(iCiv)
+		lCities = utils.getAreaCities(con.tCoreAreasTL[iReborn][iCiv], con.tCoreAreasBR[iReborn][iCiv], con.tExceptions[iReborn][iCiv])
+		lReligions = [0 for i in range(con.iNumReligions)]
+		
+		for city in lCities:
+			for iReligion in range(con.iNumReligions):
+				if city.isHasReligion(iReligion): lReligions[iReligion] += 1
+				
+		iHighestEntry = utils.getHighestEntry(lReligions)
+		
+		if iHighestEntry > 0:
+			gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))

@@ -679,6 +679,37 @@ class Victory:
                         return False
 			
 	def setup(self):
+	
+		# 1700AD scenario: handle dates that have already been passed
+		if utils.getScenario() == con.i1700AD:
+			for i in range(3):
+				utils.setGoal(iChina, i, 0)
+				utils.setGoal(iKorea, i, 0)
+				utils.setGoal(iVikings, i, 0)
+				utils.setGoal(iSpain, i, 0)
+				utils.setGoal(iHolyRome, i, 0)
+				utils.setGoal(iRussia, i, 0)
+				utils.setGoal(iPoland, i, 0)
+				utils.setGoal(iPortugal, i, 0)
+				utils.setGoal(iMughals, i, 0)
+				utils.setGoal(iTurkey, i, 0)
+				utils.setGoal(iThailand, i, 0)
+				
+			
+			utils.setGoal(iPersia, 0, 1)
+			utils.setGoal(iJapan, 0, 1)
+			utils.setGoal(iFrance, 0, 1)
+			# England
+			utils.setGoal(iCongo, 0, 1)
+			# Netherlands
+			
+			# help Congo
+			self.changeCongoSlaveCounter(500)
+			
+			# help Netherlands
+			self.changeDutchColonies(2)
+			
+		# ignore AI goals
 		bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
 		self.setIgnoreAI(bIgnoreAI)
 	
@@ -691,19 +722,9 @@ class Victory:
 
         def checkTurn(self, iGameTurn):
 
-                #debug
-                #self.setGoal(iEgypt, 0, 1)
-                #self.setGoal(iEgypt, 1, 1)
-                #self.setGoal(iEgypt, 2, 1)
-
                 pass
-                #for iCiv in range(iNumPlayers):
-                #    print (iCiv, self.getGoal(iCiv, 0), self.getGoal(iCiv, 1), self.getGoal(iCiv, 2))
 
-
-                    
-       	
-        def checkPlayerTurn(self, iGameTurn, iPlayer):
+	def checkPlayerTurn(self, iGameTurn, iPlayer):
 
 
                 if (not gc.getGame().isVictoryValid(7)): #7 == historical
@@ -2300,7 +2321,7 @@ class Victory:
 						self.setGoal(iArgentina, 0, 0)
 						
 				if iGameTurn == getTurnForYear(1930):
-					if self.getHighestCommercePerCapitalCiv(iArgentina) == iArgentina:
+					if self.getHighestCommercePerCapitaCiv(iArgentina) == iArgentina:
 						self.setGoal(iArgentina, 1, 1)
 					else:
 						self.setGoal(iArgentina, 1, 0)
@@ -2308,7 +2329,7 @@ class Victory:
 				if self.getGoal(iArgentina, 2) == -1:
 					pBuenosAires = gc.getMap().plot(con.tCapitals[0][iArgentina][0], con.tCapitals[0][iArgentina][1])
 					if pBuenosAires.isCity():
-						if pBuenosAires.getPlotCity().getCulture() >= utils.getTurns(25000):
+						if pBuenosAires.getPlotCity().getCulture(iArgentina) >= utils.getTurns(25000):
 							self.setGoal(iArgentina, 2, 1)
 							
 				if iGameTurn == getTurnForYear(1960):
@@ -4433,18 +4454,20 @@ class Victory:
 					aHelp.append(self.getIcon(iEnslavedUnits >= 20) + localText.getText("TXT_KEY_VICTORY_ENSLAVED_UNITS", (iEnslavedUnits, 20)))
 			else:
 				if iGoal == 0:
-					iCentralAmerica = self.getNumCitiesInArea(iAztecs, tCentralAmericaTL, tCentralAmericaBR)
-					iWesternNorthAmerica = self.getNumCitiesInArea(iAztecs, tWesternNorthAmericaTL, tWesternNorthAmericaBR)
-					aHelp.append(self.getIcon(iCentralAmerica >= 6) + localText.getText("TXT_KEY_VICTORY_CENTRAL_AMERICAN_CITIES", (iCentralAmerica, 6)) + ' ' + self.getIcon(iWesternNorthAmerica >= 6) + localText.getText("TXT_KEY_VICTORY_WESTERN_NORTH_AMERICA_CITIES", (iWesternNorthAmerica, 6)))
+					iNumCathedrals = 0
+					iStateReligion = pAztecs.getStateReligion()
+					if iStateReligion >= 0:
+						iCathedral = con.iCathedral + 4*iStateReligion
+						iNumCathedrals = self.getNumBuildings(iAztecs, iCathedral)
+					aHelp.append(self.getIcon(iNumCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_STATE_RELIGION_CATHEDRALS", (gc.getReligionInfo(iStateReligion).getAdjectiveKey(), iNumCathedrals, 3)))
 				elif iGoal == 1:
-					iLargestReligionCiv = self.getLargestReligionCiv(iAztecs, con.iCatholicism)
-					bLargestReligionCiv = (iLargestReligionCiv == iAztecs)
-					aHelp.append(self.getIcon(bLargestReligionCiv) + localText.getText("TXT_KEY_VICTORY_LARGEST_RELIGION_CIV", ()) + localText.getText(str(gc.getPlayer(iLargestReligionCiv).getCivilizationShortDescriptionKey()),()))
+					iGenerals = pAztecs.getGreatGeneralsCreated()
+					aHelp.append(self.getIcon(iGenerals >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS", (iGenerals, 3)))
 				elif iGoal == 2:
 					pBestCity = self.calculateTopCityPopulation(18, 37)
 					bBestCity = (pBestCity.getOwner() == iAztecs and pBestCity.getX() == 18 and pBestCity.getY() == 37)
 					aHelp.append(self.getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
-					
+	
 		elif iPlayer == iTurkey:
 			if iGoal == 0:
 				capital = pTurkey.getCapitalCity()

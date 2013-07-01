@@ -1470,11 +1470,14 @@ class RFCUtils:
 		iSiege = self.getBestSiege(iCiv)
 		iInfantry = self.getBestInfantry(iCiv)
 		
+		iExp = 0
+		if self.getHumanID() != iCiv: iExp = 2
+		
 		if iSiege:
-			self.makeUnit(iSiege, iCiv, tPlot, iNumUnits)
+			self.makeUnit(iSiege, iCiv, tPlot, iNumUnits, '', 2)
 			
 		if iInfantry:
-			self.makeUnit(iInfantry, iCiv, tPlot, 2*iNumUnits)
+			self.makeUnit(iInfantry, iCiv, tPlot, 2*iNumUnits, '', 2)
 
 
 	def colonialAcquisition(self, iCiv, x, y):
@@ -1849,6 +1852,8 @@ class RFCUtils:
 			newCapital = plot.getPlotCity()
 		else:
 			return
+			
+		if newCapital.getOwner() != iPlayer: return
 	
 		oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
 			
@@ -1880,7 +1885,7 @@ class RFCUtils:
 	def getSortedList(self, lList, function, bReverse = False):
 		return sorted(lList, key=lambda element: function(element), reverse=bReverse)
 		
-	def getHighestEntry(self, lList, function):
+	def getHighestEntry(self, lList, function = lambda x: x):
 		lSortedList = self.getSortedList(lList, function, True)
 		return lSortedList[0]
 		
