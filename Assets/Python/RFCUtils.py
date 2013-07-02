@@ -901,14 +901,14 @@ class RFCUtils:
                 self.resetUHV(iCiv)
 
         def killAndFragmentCiv(self, iCiv, iNewCiv1, iNewCiv2, iNewCiv3, bAssignOneCity):
-                print("Fragmentation into:", iNewCiv1, iNewCiv2, iNewCiv3)
+		print("Fragmentation into:", iNewCiv1, iNewCiv2, iNewCiv3)
                 self.clearPlague(iCiv)
                 iNumLoyalCities = 0
                 iCounter = gc.getGame().getSorenRandNum(6, 'random start')
                 iNumPlayerCities = len(PyPlayer(iCiv).getCityList()) #needs to be assigned cause it changes dynamically
 		x = gc.getPlayer(iCiv).getCapitalCity().getX()
 		y = gc.getPlayer(iCiv).getCapitalCity().getY()
-		bByzantineUP = (iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and not self.isAVassal(con.iByzantium) and (bAssignOneCity or gc.getGame().getGameTurn() >= (getTurnForYear(1450) - 5 + (self.getSeed() % 10))  ))
+		bByzantineUP = (iCiv == con.iByzantium and (x,y) == con.tCapitals[0][con.iByzantium] and not self.isAVassal(con.iByzantium) and (bAssignOneCity or gc.getGame().getGameTurn() <= (getTurnForYear(1450) - 5 + (self.getSeed() % 10))  ))
                 for pyCity in PyPlayer(iCiv).getCityList():
                         #print("iCounter",iCounter)
 			city = pyCity.GetCy()

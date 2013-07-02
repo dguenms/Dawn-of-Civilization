@@ -1226,7 +1226,7 @@ class DynamicCivs:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
 						return
 						
-					if iEra == iMedieval:
+					if iEra <= iRenaissance:
 						#if iAnarchyTurns <= 2:
 						#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
 						if teamChina.isHasTech(con.iPaper) and teamChina.isHasTech(con.iGunpowder):

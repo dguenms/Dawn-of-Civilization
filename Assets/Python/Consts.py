@@ -249,7 +249,7 @@ tBirth = (
 1350,					# Thailand
 1390,					# Congo
 1580, # 281, #922AD # Leoreth: 1500 AD	# Netherlands
-1701,					# Germany
+1700,					# Germany
 1775, # 346, #1775AD #332 for 1733AD	# America
 1810,					# Argentina
 1822,					# Brazil
@@ -2413,6 +2413,7 @@ iConquistador = iSpanishConquistador
 iWorkBoat = iWorkboat
 iHeavySwordsman = iMaceman
 iEthiopianAskari = iEthiopianOromoWarrior
+iDutchEastIndiaman = iNetherlandsOostindievaarder
 
 # initialise bonuses variables to bonuses IDs from WBS
 iNumBonuses = 39

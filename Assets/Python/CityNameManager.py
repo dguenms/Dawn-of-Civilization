@@ -157,6 +157,8 @@ def getRenameName(iCiv, sName):
 		iLanguage = tLanguages[i]
 		if sName in tRenames[iLanguage]:
 			return tRenames[iLanguage][sName]
+		if sName in tRenames[iLanguage].values():	# don't need to keep identical renames in the dictionary to avoid a secondary language overwriting it
+			return "-1"
 			
 	return "-1"
 	
@@ -4623,7 +4625,7 @@ tRenames = (
 	'Batavia'		:	'Jakarta',
 	'Jakaruta'		:	'Jakarta',
 	'Manira'		:	'Manila',},
-# Spain, Mexico
+# Spain, Mexico, Argentina
 {	'Barshiluna'		:	'Barcelona',
 	'Marrakus'		:	'Marraquech',
 	'Marakech'		:	'Marraquech',
@@ -5582,6 +5584,7 @@ tRenames = (
 	'Venise'		:	'Venedig',
 	'Venecia'		:	'Venedig',
 	'Venice'		:	'Venedig',
+	'Venezia'		:	'Venedig',
 	'Arguim'		:	'Arguin',
 	'Pokesu'		:	'Gro&#223; Friedrichsburg',
 	'Fort Hollandia'	:	'Gro&#233; Friedrichsburg',
@@ -5729,6 +5732,7 @@ tRenames = (
 	'Odessus'		:	'Varna',
 	'Naissos'		:	'Nish',
 	'Naissus'		:	'Nish',
+	'Almarikh'		:	'Alma-Ata',
 	'Philippopolis'		:	'Plovdiv',
 	'Marakanda'		:	'Samarkand',
 	'Samarkant'		:	'Samarkand',
