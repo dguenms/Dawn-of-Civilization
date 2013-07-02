@@ -753,8 +753,11 @@ class RiseAndFall:
 		utils.setStability(iSpain, utils.getStability(iSpain) + 15)
 		pSpain.changeStabilityCategory(con.iStabilityDifficulty, 15)
 		
-		utils.setStability(iEngland, utils.getStability(iEngland) + 5)
-		pEngland.changeStabilityCategory(con.iStabilityDifficulty, 5)
+		utils.setStability(iEngland, utils.getStability(iEngland) + 8)
+		pEngland.changeStabilityCategory(con.iStabilityDifficulty, 8)
+		
+		utils.setStability(iNetherlands, utils.getStability(iNetherlands) + 4)
+		pNetherlands.changeStabilityCategory(con.iStabilityDifficulty, 4)
 
 	def invalidateUHVs(self):
 	
@@ -4743,6 +4746,7 @@ class RiseAndFall:
 		tCapital = tCapitals[0][iEngland]
 		utils.makeUnit(con.iEnglishRedcoat, iEngland, tCapital, 8)
 		utils.makeUnit(con.iCannon, iEngland, tCapital, 4)
+		utils.makeUnit(con.iGalleon, iEngland, tCapital, 4)
 		
 		# Austria
 		tCapital = con.tVienna
@@ -4765,6 +4769,7 @@ class RiseAndFall:
 		tCapital = tCapitals[0][iPortugal]
 		utils.makeUnit(con.iMusketman, iPortugal, tCapital, 6)
 		utils.makeUnit(con.iBombard, iPortugal, tCapital, 2)
+		utils.makeUnit(con.iGalleon, iPortugal, tCapital, 3)
 		
 		# Mughals
 		tCapital = tCapitals[0][iMughals]
@@ -4795,6 +4800,7 @@ class RiseAndFall:
 		tCapital = tCapitals[0][iNetherlands]
 		utils.makeUnit(con.iRifleman, iNetherlands, tCapital, 5)
 		utils.makeUnit(con.iBombard, iNetherlands, tCapital, 2)
+		utils.makeUnit(con.iDutchEastIndiaman, iNetherlands, tCapital, 3)
 		
 		# Prussia
 		tCapital = tCapitals[0][iGermany]
