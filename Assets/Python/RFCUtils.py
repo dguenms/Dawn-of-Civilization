@@ -1811,6 +1811,13 @@ class RFCUtils:
 			if plot.isCity(): lCities.append(plot.getPlotCity())
 		return lCities
 		
+	def getAreaCitiesCiv(self, iCiv, tTL, tBR, tExceptions=()):
+		lCities = []
+		for city in self.getAreaCities(tTL, tBR, tExceptions):
+			if city.getOwner() == iCiv:
+				lCities.append(city)
+		return lCities
+		
 	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False):
 	
 		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)

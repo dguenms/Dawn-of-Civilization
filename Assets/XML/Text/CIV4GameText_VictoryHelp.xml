@@ -536,4 +536,8 @@
 		<Tag>TXT_KEY_VICTORY_STATE_RELIGION_CATHEDRALS</Tag>
 		<English>%s1 Cathedrals built: %d2 / %d3</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_ARTISTS_SETTLED</Tag>
+		<English>Great artists settled in %s1: %d2 / %d3</English>
+	</TEXT>
 </Civ4GameText>

@@ -10121,11 +10121,32 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_SETTLE
 	EndUnit
 	BeginCity
 		CityOwner=22
@@ -11488,6 +11509,20 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
 	BeginUnit
 		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
 		Damage=0
@@ -13117,6 +13152,7 @@ BeginPlot
 	x=31,y=14
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
+	TeamReveal=20,
 EndPlot
 BeginPlot
 	x=31,y=15
@@ -20793,6 +20829,7 @@ BeginPlot
 	x=48,y=57
 	BonusType=BONUS_SHEEP
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,20,21,22,36,42,
@@ -22577,6 +22614,7 @@ BeginPlot
 	x=52,y=45
 	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=14,20,21,22,27,36,42,
@@ -22654,6 +22692,7 @@ BeginPlot
 	x=52,y=55
 	BonusType=BONUS_HORSE
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,20,21,22,36,37,42,
@@ -22668,6 +22707,7 @@ EndPlot
 BeginPlot
 	x=52,y=57
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=14,20,21,22,36,42,
@@ -22676,6 +22716,7 @@ BeginPlot
 	x=52,y=58
 	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=14,20,21,22,36,42,
@@ -23062,6 +23103,7 @@ BeginPlot
 	x=53,y=44
 	BonusType=BONUS_SHEEP
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=14,20,21,22,27,36,42,
@@ -23209,6 +23251,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
 		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_OBSERVATORY
@@ -23219,8 +23262,9 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		BuildingType=BUILDING_JEWISH_CATHEDRAL
-		BuildingType=BUILDING_ACADEMY
 		ReligionType=RELIGION_JUDAISM
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player22Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,36,37,
@@ -23229,6 +23273,7 @@ BeginPlot
 	x=53,y=55
 	BonusType=BONUS_DYE
 	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,20,21,22,36,37,
@@ -23238,6 +23283,7 @@ BeginPlot
 	BonusType=BONUS_DEER
 	ImprovementType=IMPROVEMENT_CAMP
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,20,21,22,36,
@@ -23698,6 +23744,7 @@ BeginPlot
 	x=54,y=53
 	BonusType=BONUS_COW
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,20,21,22,36,37,
@@ -23712,6 +23759,7 @@ BeginPlot
 	x=54,y=55
 	BonusType=BONUS_WHEAT
 	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,20,21,22,36,37,
@@ -24140,6 +24188,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_OBSERVATORY
@@ -24151,7 +24200,6 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
-		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_NOTRE_DAME
 		BuildingType=BUILDING_VERSAILLES
 		ReligionType=RELIGION_CHRISTIANITY
@@ -25096,9 +25144,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_COLOSSEUM
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
@@ -25108,6 +25154,10 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CHRISTIANITY
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player36Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,41,42,
@@ -25470,6 +25520,7 @@ BeginPlot
 	x=58,y=43
 	BonusType=BONUS_SHEEP
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=14,20,21,22,23,33,36,37,41,42,
@@ -26046,6 +26097,12 @@ BeginPlot
 		BuildingType=BUILDING_LEANING_TOWER
 		BuildingType=BUILDING_SAN_MARCO
 		ReligionType=RELIGION_CHRISTIANITY
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_ENGINEER
+		FreeSpecialistType=SPECIALIST_GREAT_ENGINEER
 		Player23Culture=10
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,41,42,
@@ -26181,6 +26238,8 @@ BeginPlot
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CHRISTIANITY
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player37Culture=25
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,41,42,
@@ -26616,6 +26675,8 @@ BeginPlot
 		BuildingType=BUILDING_APOSTOLIC_PALACE
 		ReligionType=RELIGION_CHRISTIANITY
 		HolyCityReligionType=RELIGION_CHRISTIANITY
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player21Culture=6
 		Player23Culture=10
 		Player42Culture=100
@@ -26731,7 +26792,7 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=42
+		UnitType=UNIT_RIFLEMAN, UnitOwner=41
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -26799,13 +26860,6 @@ BeginPlot
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=42
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginCity
 		CityOwner=41
@@ -27190,8 +27244,16 @@ BeginPlot
 	x=61,y=45
 	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=42
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
 	TeamReveal=14,20,21,22,23,33,36,37,41,42,
 EndPlot
 BeginPlot
@@ -27635,6 +27697,7 @@ BeginPlot
 	x=62,y=41
 	BonusType=BONUS_DYE
 	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=14,20,21,22,23,33,36,37,41,42,
@@ -28229,62 +28292,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
 	BeginCity
 		CityOwner=23
 		CityName=Wien
@@ -29343,90 +29350,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
 	BeginCity
 		CityOwner=26
 		CityName=Krak&#243;w
@@ -29881,6 +29804,7 @@ BeginPlot
 	x=66,y=40
 	BonusType=BONUS_MARBLE
 	ImprovementType=IMPROVEMENT_QUARRY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=23,33,41,
@@ -29974,6 +29898,7 @@ BeginPlot
 	x=66,y=52
 	BonusType=BONUS_COW
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,23,24,26,36,37,42,
@@ -29982,6 +29907,7 @@ BeginPlot
 	x=66,y=53
 	BonusType=BONUS_HORSE
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,23,24,26,37,42,
@@ -30441,6 +30367,7 @@ BeginPlot
 	x=67,y=42
 	BonusType=BONUS_WINE
 	ImprovementType=IMPROVEMENT_WINERY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=23,33,41,
@@ -30538,6 +30465,7 @@ BeginPlot
 	x=67,y=55
 	isNOfRiver
 	RiverWEDirection=3
+	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,23,24,26,37,42,
@@ -30573,6 +30501,7 @@ EndPlot
 BeginPlot
 	x=67,y=60
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,24,37,41,42,
@@ -30919,6 +30848,7 @@ BeginPlot
 	x=68,y=39
 	BonusType=BONUS_WINE
 	ImprovementType=IMPROVEMENT_WINERY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=33,41,
@@ -31141,6 +31071,7 @@ BeginPlot
 	x=68,y=60
 	BonusType=BONUS_COPPER
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	TeamReveal=14,24,42,
@@ -32015,6 +31946,7 @@ BeginPlot
 	x=70,y=42
 	BonusType=BONUS_WHEAT
 	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=33,41,
@@ -32495,6 +32427,7 @@ BeginPlot
 	x=71,y=40
 	BonusType=BONUS_COPPER
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=0,33,41,
@@ -34549,6 +34482,10 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_SHRINE
 		ReligionType=RELIGION_ISLAM
 		HolyCityReligionType=RELIGION_ISLAM
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player33Culture=10
 	EndCity
 	TeamReveal=33,41,42,
@@ -34686,6 +34623,7 @@ BeginPlot
 	x=75,y=49
 	BonusType=BONUS_SHEEP
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,33,41,42,
@@ -35546,6 +35484,8 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_SPIRAL_MINARET
 		ReligionType=RELIGION_ISLAM
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player33Culture=10
 	EndCity
 	TeamReveal=6,33,41,42,
@@ -36945,6 +36885,7 @@ BeginPlot
 	RiverWEDirection=3
 	BonusType=BONUS_STONE
 	ImprovementType=IMPROVEMENT_QUARRY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	TeamReveal=24,42,
@@ -36953,6 +36894,7 @@ BeginPlot
 	x=80,y=53
 	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=24,42,
@@ -37499,6 +37441,7 @@ EndPlot
 BeginPlot
 	x=81,y=61
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	TeamReveal=24,
@@ -37976,6 +37919,7 @@ BeginPlot
 	x=82,y=62
 	BonusType=BONUS_GEMS
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	TeamReveal=24,
@@ -40511,6 +40455,20 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_CANNON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
@@ -40524,8 +40482,10 @@ BeginPlot
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
 		Player22Culture=10
@@ -41947,7 +41907,6 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		BuildingType=BUILDING_KHAJURAHO
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
 		Player22Culture=3
@@ -42380,6 +42339,20 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_CANNON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
@@ -42394,7 +42367,9 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
 		Player22Culture=10
@@ -42470,7 +42445,7 @@ BeginPlot
 	x=92,y=41
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=22,32,41,42,
+	TeamReveal=1,22,32,41,42,
 EndPlot
 BeginPlot
 	x=92,y=42
@@ -43320,6 +43295,27 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=22
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_CANNON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
@@ -43341,7 +43337,9 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
 		Player22Culture=10
@@ -43406,6 +43404,10 @@ BeginPlot
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		HolyCityReligionType=RELIGION_BUDDHISM
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player1Culture=2
 		Player22Culture=3
 		Player32Culture=100
@@ -44251,19 +44253,22 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
+		UnitType=UNIT_MUSKETMAN, UnitOwner=41
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=41
 		CityName=Lasa
 		CityPopulation=4
-		ProductionUnit=UNIT_WARRIOR
-		ReligionType=RELIGION_BUDDHISM
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player1Culture=10
+		Player41Culture=11
 	EndCity
 	TeamReveal=1,32,41,42,
 EndPlot
@@ -45536,7 +45541,7 @@ BeginPlot
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=11
+		Player1Culture=9
 	EndCity
 	TeamReveal=1,41,42,
 EndPlot
@@ -45884,7 +45889,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=50
 	EndCity
 	TeamReveal=36,41,42,
 EndPlot
@@ -46445,6 +46450,8 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		BuildingType=BUILDING_ANGKOR_WAT
 		ReligionType=RELIGION_BUDDHISM
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
+		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player34Culture=100
 	EndCity
 	TeamReveal=1,20,27,34,36,41,
@@ -47083,6 +47090,7 @@ BeginPlot
 		CityPopulation=9
 		ProductionBuilding=BUILDING_BARRACKS
 		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_FORBIDDEN_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
@@ -47092,9 +47100,10 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_CATHEDRAL
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		BuildingType=BUILDING_TAOIST_TEMPLE
+		BuildingType=BUILDING_GREAT_WALL
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=102
+		Player1Culture=100
 	EndCity
 	TeamReveal=1,42,
 EndPlot
@@ -47525,7 +47534,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player1Culture=11
+		Player1Culture=10
 	EndCity
 	TeamReveal=1,42,
 EndPlot
@@ -47923,7 +47932,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player41Culture=10
+		Player41Culture=50
 	EndCity
 	TeamReveal=34,36,41,42,
 EndPlot
@@ -48321,7 +48330,7 @@ BeginPlot
 	x=105,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=36,
+	TeamReveal=36,41,
 EndPlot
 BeginPlot
 	x=105,y=23
@@ -48550,13 +48559,10 @@ BeginPlot
 	BeginCity
 		CityOwner=1
 		CityName=Shenyang
-		CityPopulation=7
-		ProductionBuilding=BUILDING_BARRACKS
+		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		ReligionType=RELIGION_CONFUCIANISM
 		Player1Culture=10
 	EndCity
 	TeamReveal=1,10,41,42,
@@ -48796,7 +48802,7 @@ BeginPlot
 	x=106,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=36,
+	TeamReveal=36,41,
 EndPlot
 BeginPlot
 	x=106,y=23
@@ -49253,7 +49259,7 @@ BeginPlot
 	x=107,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=36,
+	TeamReveal=36,41,
 EndPlot
 BeginPlot
 	x=107,y=23
@@ -49401,7 +49407,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=11
+		Player1Culture=10
 	EndCity
 	TeamReveal=1,10,13,41,42,
 EndPlot
@@ -49695,12 +49701,13 @@ BeginPlot
 	x=108,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=41,
 EndPlot
 BeginPlot
 	x=108,y=23
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=36,
+	TeamReveal=36,41,
 EndPlot
 BeginPlot
 	x=108,y=24
@@ -49720,20 +49727,35 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=36
+		UnitType=UNIT_MUSKETMAN, UnitOwner=41
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=41
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=41
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=36
+		CityOwner=41
 		CityName=Makassar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
+		Player41Culture=50
 	EndCity
 	TeamReveal=36,41,
 EndPlot
@@ -50169,12 +50191,13 @@ BeginPlot
 	x=109,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=41,
 EndPlot
 BeginPlot
 	x=109,y=23
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=36,
+	TeamReveal=36,41,
 EndPlot
 BeginPlot
 	x=109,y=24
@@ -50642,12 +50665,13 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	TeamReveal=41,
 EndPlot
 BeginPlot
 	x=110,y=23
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=36,
+	TeamReveal=36,41,
 EndPlot
 BeginPlot
 	x=110,y=24
@@ -51053,12 +51077,13 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	TeamReveal=41,
 EndPlot
 BeginPlot
 	x=111,y=23
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=36,
+	TeamReveal=36,41,
 EndPlot
 BeginPlot
 	x=111,y=24
@@ -51491,7 +51516,7 @@ BeginPlot
 	x=112,y=26
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=36,
+	TeamReveal=36,41,
 EndPlot
 BeginPlot
 	x=112,y=27
@@ -52052,6 +52077,8 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		BuildingType=BUILDING_HIMEJI_CASTLE
 		ReligionType=RELIGION_BUDDHISM
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player13Culture=100
 	EndCity
 	TeamReveal=10,13,41,

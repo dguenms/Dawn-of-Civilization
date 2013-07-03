@@ -267,7 +267,7 @@ class CvRFCEventHandler:
                 self.sta.setup()
                 self.aiw.setup()
 		self.vic.setup() # Leoreth
-                self.rnf.warOnSpawn()
+                #self.rnf.warOnSpawn()
 		#self.res.setup()
 
                 #Mercenaries - start
@@ -645,8 +645,8 @@ class CvRFCEventHandler:
 		if bCapitulated:
 			self.sta.onVassalState(iVassal, bCapitulated)
 		
-		if iMaster == iHolyRome:
-			self.vic.onVassalState(iMaster, iVassal)
+		#if iMaster == iHolyRome:
+		#	self.vic.onVassalState(iMaster, iVassal)
 
 	def onRevolution(self, argsList):
 		'Called at the start of a revolution'

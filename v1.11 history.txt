@@ -117,7 +117,7 @@
 # made Argentina and Brazil optional civs
 # Mexico, Argentina and Brazil now have conditional spawns based on the stability of their owners
 # added a tech history graph to the demographics advisor
-# free buildings when founding a city from at least from the previous era
+# free buildings when founding a city from at least the previous era
 # improved Polish settler map
 # new Polish UP: free cultural control of historical tiles in city radius
 # Poland now focuses more on researching Military Tradition, Astronomy and Liberalism
@@ -128,3 +128,10 @@
 # AI conquerors start with additional experience
 # new capital locations should now prefer city on the same continent instead of far away colonies
 # included a 1700 AD scenario
+# Infantry no longer receives +25% against gunpowder units
+# India cannot respawn while the Mughals are alive
+# new third HRE goal: settle three great artists in Vienna by 1700 AD
+# Forbidden Palace now also reduces civic upkeep by 50%
+# wars on spawn now only start when the spawn actually happens
+# Mughals as an English vassal are called British Raj if India is not alive
+# pass over the Andes in Bolivia opens when the Incan conquerors arrive

@@ -369,6 +369,8 @@ class Victory:
                 return sd.scriptDict['lGoals'][i][j]
 
         def setGoal( self, i, j, iNewValue ):
+		if iNewValue == 1 and self.getGoal(i, j) == -1: return
+	
                 sd.scriptDict['lGoals'][i][j] = iNewValue
 		
 		if iNewValue == 0 and utils.getHumanID() == i:
@@ -1678,9 +1680,21 @@ class Victory:
 					else:
 						self.setGoal(iHolyRome, 0, 0)
 						
-				if iGameTurn == getTurnForYear(1600) and self.getGoal(iHolyRome, 1) == -1:
-					self.setGoal(iHolyRome, 2, 0)
-
+				#if iGameTurn == getTurnForYear(1600) and self.getGoal(iHolyRome, 1) == -1:
+				#	self.setGoal(iHolyRome, 2, 0)
+				
+				if self.getGoal(iHolyRome, 2) == -1:
+					x, y = con.tVienna
+					pVienna = gc.getMap().plot(x, y)
+					iGreatArtists = 0
+					if pVienna.isCity():
+						iGreatArtists = pVienna.getPlotCity().getFreeSpecialistCount(con.iGreatArtist)
+					if iGreatArtists >= 3:
+						self.setGoal(iHolyRome, 2, 1)
+						
+				if iGameTurn == getTurnForYear(1700):
+					if self.getGoal(iHolyRome, 2) == -1:
+						self.setGoal(iHolyRome, 2, 0)
 
                 elif (iPlayer == iGermany):
                         if (pGermany.isAlive()):
@@ -3348,17 +3362,19 @@ class Victory:
 		
 	def onVassalState(self, iMaster, iVassal):
 	
+		# method isn't called anymore
+	
 		# Leoreth: ignore AI civs to improve speed
 		if self.isIgnoreAI() and utils.getHumanID() != iMaster:
 			return
 	
-		if iMaster == iHolyRome:
-			iCount = 0
-			for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPoland, iPortugal, iItaly, iNetherlands]:
-				if utils.getMaster(iCiv) == iHolyRome:
-					iCount += 1
-			if iCount >= 3:
-				self.setGoal(iHolyRome, 2, 1)
+		#if iMaster == iHolyRome:
+		#	iCount = 0
+		#	for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPoland, iPortugal, iItaly, iNetherlands]:
+		##		if utils.getMaster(iCiv) == iHolyRome:
+		#			iCount += 1
+		#	if iCount >= 3:
+		#		self.setGoal(iHolyRome, 2, 1)
 				
 	def onUnitPillage(self, iPlayer, iGold):
 		if iPlayer == iVikings:
@@ -4262,11 +4278,11 @@ class Victory:
 				bHolySepulchre = self.getNumBuildings(iHolyRome, con.iChristianShrine) > 0
 				aHelp.append(self.getIcon(bApostolicPalace) + localText.getText("TXT_KEY_BUILDING_APOSTOLIC_PALACE", ()) + ' ' + self.getIcon(bHolySepulchre) + localText.getText("TXT_KEY_BUILDING_CHRISTIAN_SHRINE", ()))
 			elif iGoal == 2:
-				iCount = 0
-				for iCiv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iRussia, iPoland, iPortugal, iItaly, iNetherlands]:
-					if utils.getMaster(iCiv) == iHolyRome:
-						iCount += 1
-				aHelp.append(self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_VASSALS", (iCount, 3)))
+				iGreatArtists = 0
+				pVienna = gc.getMap().plot(con.tVienna[0], con.tVienna[1])
+				if pVienna.isCity():
+					iGreatArtists = pVienna.getPlotCity().getFreeSpecialistCount(con.iGreatArtist)
+				aHelp.append(self.getIcon(iGreatArtists >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_SETTLED", ('Vienna', iGreatArtists, 3)))
 				
 		elif iPlayer == iGermany:
 			if iGoal == 0:
