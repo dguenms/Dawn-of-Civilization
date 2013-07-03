@@ -100,6 +100,9 @@ tStockholm = (63, 58)
 tIstanbul = (68, 45)
 tBeijing = (102, 47)
 tEsfahan = (81, 41)
+tHamburg = (59, 53)
+tMilan = (59, 47)
+tBaghdad = (77, 40)
 
 #for messages
 iDuration = 14
@@ -2485,6 +2488,11 @@ iTribalism, iAgrarianism, iUrbanization, iCapitalism, iTotalitarianism, iEgalita
 iSelfSufficiency, iForcedLabor, iMercantilism, iFreeMarket, iStateProperty, iEnvironmentalism,
 iAnimism, iPantheon, iOrganizedReligion, iScholasticism, iFanaticism, iSecularism,
 iSubjugation, iViceroyalty, iResettlement, iOccupation, iImperialism, iCommonwealth) = range(iNumCivics)
+
+#Specialists
+iNumSpecialists = 15
+(iCitizen, iPriest, iArtist, iScientist, iMerchant, iEngineer, iSpy, iGreatPriest, iGreatArtist, iGreatScientist, iGreatMerchant,
+iGreatEngineer, iGreatGeneral, iGreatSpy, iSettledSlave) = range(iNumSpecialists)
 
 #Stability Display
 iNumStabilityTypes = 44

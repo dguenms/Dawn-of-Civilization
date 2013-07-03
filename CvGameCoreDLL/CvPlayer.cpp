@@ -6215,8 +6215,12 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	}
 
 	//Rhye - start
-	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
+	if (getScenario() >= SCENARIO_600AD) //late start condition
 		if ((eBuilding >= PYRAMID && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == ZEUS || eBuilding == MAUSOLLOS || eBuilding == KHAJURAHO || iI == ISHTAR)
+			return false;
+
+	if (getScenario() == SCENARIO_1700AD)
+		if (eBuilding == GREATWALL || eBuilding == MACHU_PICCHU)
 			return false;
 	//Rhye - end
 

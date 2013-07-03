@@ -747,17 +747,20 @@ class RiseAndFall:
 			
 	def set1700ADStability(self):
 	
-		utils.setStability(iTurkey, utils.getStability(iTurkey) + 10)
-		pChina.changeStabilityCategory(con.iStabilityDifficulty, 10)
+		utils.setStability(iTurkey, utils.getStability(iTurkey) + 15)
+		pChina.changeStabilityCategory(con.iStabilityDifficulty, 15)
 		
 		utils.setStability(iSpain, utils.getStability(iSpain) + 15)
 		pSpain.changeStabilityCategory(con.iStabilityDifficulty, 15)
 		
-		utils.setStability(iEngland, utils.getStability(iEngland) + 8)
-		pEngland.changeStabilityCategory(con.iStabilityDifficulty, 8)
+		utils.setStability(iEngland, utils.getStability(iEngland) + 12)
+		pEngland.changeStabilityCategory(con.iStabilityDifficulty, 12)
 		
 		utils.setStability(iNetherlands, utils.getStability(iNetherlands) + 4)
 		pNetherlands.changeStabilityCategory(con.iStabilityDifficulty, 4)
+		
+		utils.setStability(iPortugal, utils.getStability(iPortugal) + 6)
+		pPortugal.changeStabilityCategory(con.iStabilityDifficulty, 6)
 
 	def invalidateUHVs(self):
 	
@@ -782,6 +785,62 @@ class RiseAndFall:
 			tCapital = con.tCapitals[0][iChina]
 			lBuildings = [con.iConfucianTemple, con.iChineseTaixue, con.iBarracks, con.iForge]
 			utils.foundCapital(iChina, tCapital, "Xi'an", 4, 100, lBuildings, [con.iConfucianism, con.iTaoism])
+			
+		if utils.getScenario() == con.i1700AD:
+			
+			# London
+			x, y = con.tCapitals[0][iEngland]
+			pLondon = gc.getMap().plot(x, y).getPlotCity()
+			pLondon.changeFreeSpecialistCount(con.iGreatMerchant, 1)
+			
+			# Netherlands
+			x, y = con.tCapitals[0][iNetherlands]
+			pAmsterdam = gc.getMap().plot(x, y).getPlotCity()
+			pAmsterdam.changeFreeSpecialistCount(con.iGreatMerchant, 2)
+			
+			# Hamburg
+			x, y = con.tHamburg
+			pHamburg = gc.getMap().plot(x, y).getPlotCity()
+			pHamburg.changeFreeSpecialistCount(con.iGreatMerchant, 1)
+			
+			# Milan
+			x, y = con.tMilan
+			pMilan = gc.getMap().plot(x, y).getPlotCity()
+			pMilan.changeFreeSpecialistCount(con.iGreatMerchant, 2)
+			pMilan.changeFreeSpecialistCount(con.iGreatEngineer, 1)
+			
+			# Kyoto
+			x, y = con.tCapitals[0][iJapan]
+			pKyoto = gc.getMap().plot(x, y).getPlotCity()
+			pKyoto.changeFreeSpecialistCount(con.iGreatMerchant, 1)
+			
+			# Mecca
+			pMecca = gc.getGame().getHolyCity(con.iIslam)
+			pMecca.changeFreeSpecialistCount(con.iGreatPriest, 2)
+			
+			# Rome
+			x, y = con.tCapitals[0][iRome]
+			pRome = gc.getMap().plot(x, y).getPlotCity()
+			pRome.changeFreeSpecialistCount(con.iGreatPriest, 1)
+			
+			# Baghdad
+			x, y = con.tBaghdad
+			pBaghdad = gc.getMap().plot(x, y).getPlotCity()
+			pBaghdad.changeFreeSpecialistCount(con.iGreatPriest, 1)
+			
+			# Pataliputra
+			pPataliputra = gc.getGame().getHolyCity(con.iHinduism)
+			pPataliputra.changeFreeSpecialistCount(con.iGreatPriest, 2)
+			
+			# Lhasa
+			x, y = con.tCapitals[0][iTibet]
+			pLhasa = gc.getMap().plot(x, y).getPlotCity()
+			pLhasa.changeFreeSpecialistCount(con.iGreatPriest, 2)
+			
+			# Ayutthaya
+			x, y = con.tCapitals[0][iThailand]
+			pAyutthaya = gc.getMap().plot(x, y).getPlotCity()
+			pAyutthaya.changeFreeSpecialistCount(con.iGreatPriest, 1)
 			
 	def flipStartingTerritory(self):
 	

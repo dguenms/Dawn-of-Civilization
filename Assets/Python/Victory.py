@@ -2321,7 +2321,8 @@ class Victory:
 						self.setGoal(iArgentina, 0, 0)
 						
 				if iGameTurn == getTurnForYear(1930):
-					if self.getHighestCommercePerCapitaCiv(iArgentina) == iArgentina:
+					pHighestCommerceCity = self.calculateHighestCommerceCity()
+					if pHighestCommerceCity.getOwner() == iArgentina:
 						self.setGoal(iArgentina, 1, 1)
 					else:
 						self.setGoal(iArgentina, 1, 0)
@@ -3804,6 +3805,13 @@ class Victory:
 				if plot.getOwner() == iCiv and plot.getImprovementType() == iImprovement:
 					iCount += 1
 		return iCount
+		
+	def calculateHighestCommerceCity(self):
+		lCities = []
+		for iPlayer in range(con.iNumPlayers):
+			lCities.extend(utils.getCityList(iPlayer))
+		pHighestCommerceCity = utils.getHighestEntry(lCities, lambda x: x.getCommerceRate(0) + x.getCommerceRate(1) + x.getCommerceRate(2) + x.getCommerceRate(3))
+		return pHighestCommerceCity
 
 
 	def getIcon(self, bVal):
@@ -4548,8 +4556,8 @@ class Victory:
 				if not capital.isNone(): iGenerals = capital.getFreeSpecialistCount(iGreatGeneral)
 				aHelp.append(self.getIcon(iGenerals >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS_CAPITAL", (iGenerals, 2)))
 			elif iGoal == 1:
-				iHighestCommercePerCapitaCiv = self.getHighestCommercePerCapitaCiv(iArgentina)
-				aHelp.append(self.getIcon(iHighestCommercePerCapitaCiv == iArgentina) + localText.getText("TXT_KEY_VICTORY_HIGHEST_COMMERCE_PER_CAPITA", (localText.getText(str(gc.getPlayer(iHighestCommercePerCapitaCiv).getCivilizationShortDescriptionKey()),()),)))
+				pHighestCommerceCity = self.calculateHighestCommerceCity()
+				aHelp.append(self.getIcon(pHighestCommerceCity.getOwner() == iArgentina) + localText.getText("TXT_KEY_VICTORY_BEST_COMMERCE_CITY", (pHighestCommerceCity.getName(),)))
 			elif iGoal == 2:
 				pBuenosAires = gc.getMap().plot(con.tCapitals[0][iArgentina][0], con.tCapitals[0][iArgentina][1])
 				iCulture = 0

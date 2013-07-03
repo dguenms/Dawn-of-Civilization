@@ -36,6 +36,7 @@ iTea = con.iTea
 iTobacco = con.iTobacco
 iSpices = con.iSpices
 iIvory = con.iIvory
+iIron = con.iIron
 
 iCottage = con.iCottage
 iSilk = con.iSilk
@@ -245,6 +246,7 @@ class Resources:
 			
 			gc.getMap().plot(31, 10).setBonusType(iWine) # Mendoza, Argentina
 			gc.getMap().plot(31, 6).setBonusType(iSheep) # Pampas, Argentina
+			gc.getMap().plot(32, 11).setBonusType(iIron) # Argentina
 			
 			gc.getMap().plot(36, 18).setBonusType(iCorn) # Sao Paulo
 			gc.getMap().plot(42, 18).setBonusType(iFish) # Rio de Janeiro
