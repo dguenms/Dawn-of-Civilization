@@ -377,6 +377,7 @@
 			<Description>TXT_KEY_BUILDING_GREAT_PALACE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_GREAT_PALACE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_GREAT_PALACE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_FORBIDDEN_PALACE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREAT_PALACE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_FORBIDDEN_PALACE</MovieDefineTag>

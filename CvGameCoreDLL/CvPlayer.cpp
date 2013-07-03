@@ -6220,7 +6220,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			return false;
 
 	if (getScenario() == SCENARIO_1700AD)
-		if (eBuilding == GREATWALL || eBuilding == MACHU_PICCHU)
+		if (eBuilding == GREATWALL || eBuilding == MACHU_PICCHU || eBuilding == KHAJURAHO)
 			return false;
 	//Rhye - end
 
@@ -13929,6 +13929,12 @@ int CvPlayer::getCivicUpkeep(CivicTypes* paeCivics, bool bIgnoreAnarchy) const
 	for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
 	{
 		iTotalUpkeep += getSingleCivicUpkeep(paeCivics[iI], bIgnoreAnarchy);
+	}
+
+	// Leoreth: Forbidden Palace effect
+	if (getBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)FORBIDDENPALACE).getBuildingClassType()) > 0)
+	{
+		iTotalUpkeep /= 2;
 	}
 
 	return iTotalUpkeep;

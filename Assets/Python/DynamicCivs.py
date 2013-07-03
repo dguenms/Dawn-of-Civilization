@@ -1066,6 +1066,9 @@ class DynamicCivs:
 			if iMaster == iHolyRome and iPlayer == iPoland and iGameEra >= con.iIndustrial:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_AUSTRIAN_VASSAL")
 				return
+			if iMaster == iEngland and iPlayer == iMughals and not gc.getPlayer(iIndia).isAlive():
+				self.setCivDesc(iPlayer, self.specificVassalNames[iEngland][iIndia])
+				return
 			
 			if iMaster in self.specificVassalNames and not pMasterPlayer.isReborn():
 				if iPlayer in self.specificVassalNames[iMaster]:
@@ -1187,9 +1190,9 @@ class DynamicCivs:
 					return
 					
 		elif iPlayer == iIndia:
-			if bReborn or bResurrected:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
-				return
+			#if bReborn or bResurrected:
+			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
+			#	return
 				
 			if iReligion == con.iIslam:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_SULTANATE")

@@ -1261,4 +1261,9 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 		<Tag>TXT_KEY_BUILDING_STONEHENGE_PEDIA</Tag>
 		<English>[TAB]The Great Sphinx of Giza, commonly referred to as the Sphinx, is a limestone statue of a reclining or couchant sphinx (a mythical creature with a lion's body and a human head) that stands on the Giza Plateau on the west bank of the Nile in Giza, Egypt.[PARAGRAPH:1]It is the largest monolith statue in the world, standing 73.5 metres (241 ft) long, 19.3 metres (63 ft) wide, and 20.22 m (66.34 ft) high. It is the oldest known monumental sculpture, and is commonly believed to have been built by ancient Egyptians of the Old Kingdom during the reign of the pharaoh Khafra (c. 2558–2532 BC).</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FORBIDDEN_PALACE_HELP</Tag>
+		<English>[ICON_BULLET]Civic Upkeep Reduced by 50%</English>
+		<German>[ICON_BULLET]Staatsformen-Unterhalt um 50% reduziert</German>
+	</TEXT>
 </Civ4GameText>

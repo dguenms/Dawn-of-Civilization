@@ -93,6 +93,12 @@ iNorthAmericaTiles = 297
 tSouthCentralAmericaTL = (13, 3)
 tSouthCentralAmericaBR = (41, 39)
 
+tCanadaTL = (10, 49)
+tCanadaBR = (37, 58)
+
+tAustraliaTL = (103, 5)
+tAustraliaBR = (123, 22)
+
 # new capital locations
 tVienna = (63, 49)
 tWarsaw = (66, 52)
@@ -1136,7 +1142,7 @@ tCoreAreasTL = (
 (56, 52), #Holland
 (58, 49), #Germany
 (25, 43), #America
-(31,  9), #Buenos Aires
+(31, 3), #Buenos Aires
 (36, 14), #Brazil
 ),
 ((66, 30), #Egypt
@@ -1178,7 +1184,7 @@ tCoreAreasTL = (
 (56, 52), #Holland
 (58, 49), #Germany
 (25, 43), #America
-(31,  9), #Buenos Aires
+(31, 3), #Buenos Aires
 (36, 14), #Brazil
 )) 
 
@@ -1797,7 +1803,7 @@ tRespawnCapitals = (
 (102, 47), #Beijing
 -1,		# Babylonia
 -1,		# Greece
-(88, 36), #Mumbai
+(90, 40), #Delhi
 -1,		# Phoenicia
 (81, 41), #Esfahan
 -1,		# Rome
@@ -1841,7 +1847,7 @@ tRespawnTL = (
 (99, 39), #China
 -1,		# Babylonia
 -1,		# Greece
-(88, 29), #India
+-1,		#India
 -1,		# Phoenicia
 -1,		# Persia
 -1,		# Rome
@@ -1884,7 +1890,7 @@ tRespawnBR = (
 (107, 47), #China
 -1,		# Babylonia
 -1,		# Greece
-(94, 37), #India
+-1, 		#India
 -1,		# Phoenicia
 -1,		# Persia
 -1,		# Rome
