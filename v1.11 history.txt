@@ -98,7 +98,7 @@
 	# Unique Power: Justicialism (+1 happiness per 10% culture rate)
 	# Unique Historical Victory:
 		# Settle 2 great generals in your capital in 1900 AD
-		# Have the largest commerce per capita in the world in 1930 AD
+		# Control the city with the highest commerce output in 1930 AD
 		# Have 25000 culture in Buenos Aires in 1960 AD
 # the least advanced third of all civilizations now gets an additional benefit from already discovered techs
 # removed extra happiness from sheep and cotton from the Congolese Mbwadi
