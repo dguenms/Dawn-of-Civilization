@@ -933,12 +933,12 @@ class DynamicCivs:
 		if utils.getScenario() == con.i600AD:
 			self.changeAnarchyTurns(iChina, 3)
 			self.setCivDesc(iByzantium, "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT")
+		elif utils.getScenario() == con.i1700AD:
+			self.changeResurrections(iEgypt, 1)
 			
-		if utils.getScenario():
+		if utils.getScenario() == con.i1700AD:
 			for iPlayer in [iChina, iPersia, iKorea, iJapan, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iPoland, iPortugal, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany]:
 				self.checkName(iPlayer)
-			
-		# Leoreth: might need to do stuff for the 1700AD scenario here
 
         def setDetermineds(self, iPlayer, szName="", szFlag=""):
                 pPlayer = gc.getPlayer(iPlayer)
@@ -1144,7 +1144,7 @@ class DynamicCivs:
 				
 		# Handle other names specifically
 		if iPlayer == iEgypt:
-			if bResurrected:
+			if bResurrected and self.getResurrections(iPlayer) < 2:
 				if bTheocracy and iReligion == con.iIslam:
 					if iEra <= iMedieval:
 						if pArabia.isAlive():
@@ -1687,6 +1687,14 @@ class DynamicCivs:
 			# Kingdom as default
 			
 		elif iPlayer == iInca:
+			if bResurrected:
+				if capital.getName() == 'La Paz':
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_BOLIVIA")
+					return
+					
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_PERU")
+				return
+		
 			if bEmpire:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_EMPIRE")
 				return
@@ -2059,7 +2067,7 @@ class DynamicCivs:
 				
 		elif iPlayer == iHolyRome:
 		
-			if iEra >= con.iIndustrial:
+			if iEra >= con.iIndustrial or utils.getScenario() == con.i1700AD:
 				self.setLeader(iPlayer, con.iFrancis)
 		
 			if iEra >= con.iRenaissance:

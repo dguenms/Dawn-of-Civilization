@@ -2286,7 +2286,8 @@ class Victory:
                                                         if (self.checkNotOwnedArea(iEuroCiv, tNCAmericaTL, tNCAmericaBR) == False):
                                                                 bAmericas = False
                                                                 break
-                                        if (bAmericas):
+					bMexico = self.isControlledOrVassalized(iAmerica, con.tCoreAreasTL[1][iAztecs], con.tCoreAreasBR[1][iAztecs], con.tExceptions[1][iAztecs])
+                                        if bAmericas and bMexico:
                                                 self.setGoal(iAmerica, 0, 1)
                                         else:
                                                 self.setGoal(iAmerica, 0, 0)
@@ -4548,7 +4549,8 @@ class Victory:
                         			if (self.checkNotOwnedArea(iEuroCiv, tNCAmericaTL, tNCAmericaBR) == False):
                         				bAmericas = False
                         				break
-				aHelp.append(self.getIcon(bAmericas) + localText.getText("TXT_KEY_VICTORY_NO_NORTH_AMERICAN_COLONIES", ()))
+				bMexico = self.isControlledOrVassalized(iAmerica, con.tCoreAreasTL[1][iAztecs], con.tCoreAreasBR[1][iAztecs], con.tExceptions[1][iAztecs])
+				aHelp.append(self.getIcon(bAmericas) + localText.getText("TXT_KEY_VICTORY_NO_NORTH_AMERICAN_COLONIES", ()) + ' ' + self.getIcon(bMexico) + localText.getText("TXT_KEY_CIV_MEXICO_SHORT_DESC", ()))
 			elif iGoal == 1:	# not entirely correct, you actually have to build them, this counts conquered ones as well
 				bUnitedNations = (self.getNumBuildings(iAmerica, con.iUnitedNations) > 0)
 				bStatueOfLiberty = (self.getNumBuildings(iAmerica, con.iStatueOfLiberty) > 0)

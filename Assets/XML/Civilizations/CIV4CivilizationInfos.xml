@@ -281,6 +281,30 @@
 					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
 					<UnitType>UNIT_ARGENTINE_GRENADIER_CAVALRY</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GREAT_GENERAL</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -1144,6 +1168,75 @@
 			<CivilizationSelectionSound>AS3D_CHINA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
+		<!--CivilizationInfo>
+			<Type>CIVILIZATION_COLOMBIA</Type>
+			<Description>TXT_KEY_CIV_COLOMBIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_COLOMBIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_COLOMBIA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_COLOMBIA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_PURPLE</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_COLOMBIA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Santo Tomas</City>
+				<City>Magangue</City>
+				<City>Guayaquil</City>
+				<City>Maracaibo</City>
+				<City>Puerto Cabello</City>
+				<City>Popayan</City>
+				<City>Angostura</City>
+				<City>Santiago de Cali</City>
+				<City>Tuja</City>
+				<City>Medellin</City>
+				<City>Santa Marta</City>
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_GROCER</BuildingClassType>
+					<BuildingType>BUILDING_COLOMBIAN_HACIENDA</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_ALBION_LEGION</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_SUBJUGATION</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_BOLIVAR</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>NONE</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_SPAIN_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_SPAIN_ORDER</CivilizationActionSound>
+		</CivilizationInfo-->
 		<CivilizationInfo>			
 			<Type>CIVILIZATION_EGYPT</Type>
 			<Description>TXT_KEY_CIV_EGYPT_DESC</Description>

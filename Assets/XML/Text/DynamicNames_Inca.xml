@@ -40,4 +40,12 @@
 		<Tag>TXT_KEY_CIV_INCA_EMPIRE</Tag>
 		<English>Four Incan Regions</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_BOLIVIA</Tag>
+		<English>Republic of Bolivia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_PERU</Tag>
+		<English>Republic of Peru</English>
+	</TEXT>
 </Civ4GameText>

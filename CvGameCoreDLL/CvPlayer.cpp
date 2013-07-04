@@ -4430,7 +4430,11 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		{
 			if (GC.getUnitInfo(pUnitTraded->getUnitType()).isSlave() && (pTheirCapitalCity != NULL))
 			{
-				return true;
+				// make sure slaves aren't on sea
+				if (!pUnitTraded->isCargo() || pUnitTraded->canUnload())
+				{
+					return true;
+				}
 			}
 		}
         break;
@@ -13934,7 +13938,8 @@ int CvPlayer::getCivicUpkeep(CivicTypes* paeCivics, bool bIgnoreAnarchy) const
 	// Leoreth: Forbidden Palace effect
 	if (getBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)FORBIDDENPALACE).getBuildingClassType()) > 0)
 	{
-		iTotalUpkeep /= 2;
+		iTotalUpkeep *= 2;
+		iTotalUpkeep /= 3;
 	}
 
 	return iTotalUpkeep;

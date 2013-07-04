@@ -798,6 +798,10 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
         pUnit = GET_PLAYER(eFromPlayer).getUnit(trade.m_iData);
         if (pUnit != NULL)
         {
+			if (pUnit->isCargo()) // Leoreth: should fix the invisible slave bug
+			{
+				pUnit->unload();
+			}
             pUnit->tradeUnit(eToPlayer);
         }
         break;
