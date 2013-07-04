@@ -4498,6 +4498,8 @@ def canTriggerReformation(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
 	
+	if utils.getScenario() == con.i1700AD: return False
+	
 	if utils.getHumanID() != iPlayer: return False
 	
 	bCatholicCity = False
@@ -4511,8 +4513,6 @@ def canTriggerReformation(argsList):
 	if gc.getGame().isReligionFounded(con.iJudaism):
 		if gc.getGame().getReligionGameTurnFounded(con.iJudaism)+2 < gc.getGame().getGameTurn():
 			return False
-	
-	#if gc.getPlayer(iPlayer) != con.iChristianity: return False
 
 	return gc.getGame().isReligionFounded(con.iJudaism)
 

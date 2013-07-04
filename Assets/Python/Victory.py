@@ -369,7 +369,7 @@ class Victory:
                 return sd.scriptDict['lGoals'][i][j]
 
         def setGoal( self, i, j, iNewValue ):
-		if iNewValue == 1 and self.getGoal(i, j) == -1: return
+		if iNewValue == 1 and self.getGoal(i, j) == 0: return
 	
                 sd.scriptDict['lGoals'][i][j] = iNewValue
 		
@@ -2357,7 +2357,7 @@ class Victory:
 			if pBrazil.isAlive():
 			
 				if iGameTurn == getTurnForYear(1880):
-					if self.countImprovements(iBrazil, con.iSlavePlantation) >= 10 and self.countImprovement(iBrazil, con.iPasture) >= 4:
+					if self.countImprovements(iBrazil, con.iSlavePlantation) >= 10 and self.countImprovements(iBrazil, con.iPasture) >= 4:
 						self.setGoal(iBrazil, 0, 1)
 					else:
 						self.setGoal(iBrazil, 0, 0)
