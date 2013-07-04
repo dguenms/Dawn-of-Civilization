@@ -2069,6 +2069,7 @@ class DynamicCivs:
 		
 			if iEra >= con.iIndustrial or utils.getScenario() == con.i1700AD:
 				self.setLeader(iPlayer, con.iFrancis)
+				return
 		
 			if iEra >= con.iRenaissance:
 				self.setLeader(iPlayer, con.iCharles)
