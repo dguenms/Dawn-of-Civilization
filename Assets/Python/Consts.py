@@ -414,7 +414,7 @@ tRebirthPlot = (
 -1,		# Tamils
 -1,		# Ethiopia
 -1,		# Korea
--1,		# Maya
+(27, 29),	# Gran Colombia - Bogota # Maya
 -1,		# Byzantium
 -1,		# Japan
 -1,		# Vikings
@@ -457,7 +457,7 @@ tRebirthArea = (
 -1,			# Tamils
 -1,			# Ethiopia
 -1,			# Korea
--1,			# Maya
+((23, 25), (31, 32)),	# Gran Colombia - Ecuador, Colombia, Venezuela, Panama
 -1,			# Byzantium
 -1,			# Japan
 -1,			# Vikings
@@ -496,7 +496,7 @@ tResurrectionIntervals = (
 [(900, 1300), (1800, 2020)], #Egypt
 [(1500, 2020)], #China
 [], #Babylonia
-[(1820, 2020)], #Greece
+[(1800, 2020)], #Greece
 [(1900, 2020)], #India
 [], #Carthage
 [(220, 650), (1500, 2020)], #Persia
@@ -1229,7 +1229,7 @@ tCoreAreasBR = (
 (66, 54), #Germany
 (32, 50), #America
 (36, 13), #Argentina
-(43, 28), #Brazil
+(43, 27), #Brazil
 ),
 ((70, 36), #Egypt
 (107, 47), #China
@@ -1271,7 +1271,7 @@ tCoreAreasBR = (
 (66, 54), #Germany
 (32, 50), #America
 (36, 13), #Argentina
-(43, 28), #Brazil
+(43, 27), #Brazil
 ))
 
 
@@ -1827,7 +1827,7 @@ tRespawnCapitals = (
 -1,		# Mali
 -1,		# Poland
 -1,		# Portugal
--1,		# Inca
+(26, 22), #Lima
 (59, 41), #Rome	# Italy
 -1,		# Mongolia
 -1,		# Aztecs
@@ -1871,7 +1871,7 @@ tRespawnTL = (
 -1,		# Mali
 -1,		# Poland
 -1,		# Portugal
--1,		# Inca
+(25, 16), # Peru
 -1,		# Italy
 -1,		# Mongolia
 -1,		# Aztecs
@@ -1914,7 +1914,7 @@ tRespawnBR = (
 -1,		# Mali
 -1,		# Poland
 -1,		# Portugal
--1,		# Inca
+(33, 25), # Peru
 -1,		# Italy	
 -1,		# Mongolia
 -1,		# Aztecs

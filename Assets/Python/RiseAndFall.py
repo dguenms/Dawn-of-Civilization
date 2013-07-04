@@ -739,14 +739,18 @@ class RiseAndFall:
 		self.changeAttitudeExtra(iPersia, iMughals, -2)
 		self.changeAttitudeExtra(iChina, iKorea, 2)
 		self.changeAttitudeExtra(iVikings, iRussia, -2)
+		self.changeAttitudeExtra(iVikings, iTurkey, -2)
 		self.changeAttitudeExtra(iSpain, iPortugal, 2)
 		self.changeAttitudeExtra(iFrance, iEngland, -4)
 		self.changeAttitudeExtra(iFrance, iNetherlands, 2)
+		self.changeAttitudeExtra(iFrance, iTurkey, -2)
 		self.changeAttitudeExtra(iEngland, iPortugal, 2)
 		self.changeAttitudeExtra(iEngland, iMughals, -2)
+		self.changeAttitudeExtra(iEngland, iTurkey, -2)
 		self.changeAttitudeExtra(iHolyRome, iTurkey, -4)
-		self.changeAttitudeExtra(iRussia, iTurkey, -2)
+		self.changeAttitudeExtra(iRussia, iTurkey, -4)
 		self.changeAttitudeExtra(iPortugal, iNetherlands, -2)
+		self.changeAttitudeExtra(iNetherlands, iTurkey, -2)
 		
 		teamEngland.declareWar(iMughals, False, WarPlanTypes.WARPLAN_TOTAL)
 	
@@ -838,6 +842,8 @@ class RiseAndFall:
 			x, y = con.tHamburg
 			pHamburg = gc.getMap().plot(x, y).getPlotCity()
 			pHamburg.changeFreeSpecialistCount(con.iGreatMerchant, 1)
+			pHamburg.setCulture(iNetherlands, 0, True)
+			gc.getMap().plot(x, y).setCulture(iNetherlands, 0, True)
 			
 			# Milan
 			x, y = con.tMilan
@@ -2238,6 +2244,9 @@ class RiseAndFall:
 		utils.makeUnit(utils.getBestCavalry(iPlayer), iPlayer, (x,y), iArmySize)
 		utils.makeUnit(utils.getBestCounter(iPlayer), iPlayer, (x,y), iArmySize)
 		utils.makeUnit(utils.getBestSiege(iPlayer), iPlayer, (x,y), iArmySize + iNumCities)
+		
+		# set state religion based on religions in the area
+		self.setStateReligion(iPlayer)
 			
 		CyInterface().addMessage(iHuman, True, con.iDuration, CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pPlayer.getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
 		
@@ -3775,6 +3784,7 @@ class RiseAndFall:
 				
 				x, y = tVladivostok
 				pPlot = gc.getMap().plot(x, y)
+				utils.convertPlotCulture(pPlot, iRussia, 100, True)
 				if pPlot.isCity():
 					if pPlot.getPlotCity().getOwner() != iRussia:
 						for i in range(x-1, x+2):
@@ -3790,7 +3800,8 @@ class RiseAndFall:
 						utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
 						utils.makeUnitAI(con.iCannon, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				else:
-					utils.makeUnit(con.iSettler, iCiv, tVladivostok, 1)
+					#utils.makeUnit(con.iSettler, iCiv, tVladivostok, 1)
+					pRussia.found(x, y)
 					utils.makeUnit(con.iRifleman, iCiv, tVladivostok, 2)
 					
 
@@ -4830,9 +4841,11 @@ class RiseAndFall:
 		
 		# Congo
 		tCapital = tCapitals[0][iCongo]
+		utils.makeUnit(con.iSettler, iCongo, tCapital, 1)
 		utils.makeUnit(con.iCongoPombos, iCongo, tCapital, 6)
-		utils.makeUnit(con.iCatapult, iCongo, tCapital, 4)
+		utils.makeUnit(con.iCatapult, iCongo, tCapital, 2)
 		utils.makeUnit(con.iLongbowman, iCongo, tCapital, 2)
+		utils.makeUnit(con.iNativeSlave, iCongo, tCapital, 5)
 		
 		# Netherlands
 		tCapital = tCapitals[0][iNetherlands]
@@ -5242,6 +5255,10 @@ class RiseAndFall:
 		lGermanTechs.extend(lMedievalTechs)
 		for iTech in lGermanTechs:
 			teamGermany.setHasTech(iTech, True, iGermany, False, False)
+			
+		for iTech in lMedievalTechs:
+			teamIndependent.setHasTech(iTech, True, iIndependent, False, False)
+			teamIndependent2.setHasTech(iTech, True, iIndependent2, False, False)
 
 
         def assign600ADTechs( self ):

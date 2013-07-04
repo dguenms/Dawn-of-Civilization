@@ -6,6 +6,7 @@ import PyHelpers
 import Popup
 import Consts as con
 import RFCUtils
+from StoredData import sd
 
 # globals
 gc = CyGlobalContext()
@@ -80,6 +81,9 @@ iLangPrussian, iLangAmerican, iLangCeltic, iLangMexican) = range(iNumLanguages)
 
 # methods
 
+def isResurrected(iCiv):
+	return (sd.scriptDict['lResurrections'][iCiv] > 0)
+
 def getLanguages(iCiv):
 
 	pCiv = gc.getPlayer(iCiv)
@@ -116,7 +120,9 @@ def getLanguages(iCiv):
 	elif iCiv == iMali: return (iLangMalian,)
 	elif iCiv == iPoland: return (iLangPolish, iLangRussian)
 	elif iCiv == iPortugal: return (iLangPortuguese, iLangSpanish)
-	elif iCiv == iInca: return (iLangQuechua,)
+	elif iCiv == iInca: 
+		if isResurrected(iCiv): return (iLangSpanish,)
+		return (iLangQuechua,)
 	elif iCiv == iItaly: return (iLangItalian,)
 	elif iCiv == iMongolia: return (iLangMongolian, iLangChinese)
 	elif iCiv == iAztecs: 

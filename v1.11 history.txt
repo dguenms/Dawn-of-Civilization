@@ -135,3 +135,6 @@
 # wars on spawn now only start when the spawn actually happens
 # Mughals as an English vassal are called British Raj if India is not alive
 # pass over the Andes in Bolivia opens when the Incan conquerors arrive
+# adjusted Incan respawn to suit Peru more
+# fixed the invisible/unselectable slaves after trade bug
+# the first American goal now also requires to control or vassalize Mexico

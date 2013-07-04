@@ -1263,7 +1263,7 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FORBIDDEN_PALACE_HELP</Tag>
-		<English>[ICON_BULLET]Civic Upkeep Reduced by 50%</English>
-		<German>[ICON_BULLET]Staatsformen-Unterhalt um 50% reduziert</German>
+		<English>[ICON_BULLET]Civic Upkeep Reduced by 33%</English>
+		<German>[ICON_BULLET]Staatsformen-Unterhalt um 33% reduziert</German>
 	</TEXT>
 </Civ4GameText>
