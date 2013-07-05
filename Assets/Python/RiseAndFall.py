@@ -1240,7 +1240,7 @@ class RiseAndFall:
 			iFirstSpawn = iAmerica
 			
                 for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
-                        if (iGameTurn >= getTurnForYear(con.tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(con.tBirth[iLoopCiv]) + 6):
+                        if (iGameTurn >= getTurnForYear(con.tBirth[iLoopCiv]) - 3 and iGameTurn <= getTurnForYear(con.tBirth[iLoopCiv]) + 6):
                                 self.initBirth(iGameTurn, con.tBirth[iLoopCiv], iLoopCiv)
 
 
