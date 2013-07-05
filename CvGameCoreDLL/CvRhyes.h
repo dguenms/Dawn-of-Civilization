@@ -26,7 +26,7 @@ typedef list<char*> LISTCHAR;
 #define NUM_MAJOR_PLAYERS		(41)
 #define NUM_PL					(41)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
-#define NUM_CIVS				(49)
+#define NUM_CIVS				(50)
 #define NUM_BONUS_ISLANDS		(11)
 
 enum MyTechs

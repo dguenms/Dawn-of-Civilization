@@ -1069,6 +1069,9 @@ class DynamicCivs:
 			if iMaster == iEngland and iPlayer == iMughals and not gc.getPlayer(iIndia).isAlive():
 				self.setCivDesc(iPlayer, self.specificVassalNames[iEngland][iIndia])
 				return
+			if iMaster == iSpain and iPlayer == iMaya and bReborn:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_SPANISH_VASSAL")
+				return
 			
 			if iMaster in self.specificVassalNames and not pMasterPlayer.isReborn():
 				if iPlayer in self.specificVassalNames[iMaster]:
@@ -1088,6 +1091,9 @@ class DynamicCivs:
 		
 		# Communism
 		if self.isCommunist(iPlayer):
+			if iPlayer == iMaya and bReborn:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_COMMUNIST")
+				return
 			if iPlayer == iCarthage and capital.getX() < 73:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_COMMUNIST")
 				return
@@ -1097,6 +1103,9 @@ class DynamicCivs:
 				
 		# Fascism
 		if self.isFascist(iPlayer):
+			if iPlayer == iMaya and bReborn:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_FASCIST")
+				return
 			if iPlayer == iCarthage and capital.getX() < 73:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_FASCIST")
 				return
@@ -1132,6 +1141,10 @@ class DynamicCivs:
 			elif iPlayer == iCarthage:
 				if capital.getX() < 73:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_DEMOCRATIC")
+					return
+			elif iPlayer == iMaya:
+				if bReborn:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_DEMOCRATIC")
 					return
 		
 		
@@ -1383,6 +1396,14 @@ class DynamicCivs:
 				return
 				
 		#elif iPlayer == iMaya: # city states are default
+		elif iPlayer == iMaya:
+			if bReborn:
+				if bEmpire:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_EMPIRE")
+					return
+					
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_DEFAULT")
+				return
 				
 		elif iPlayer == iByzantium:
 			if pRome.isAlive() and not pRome.isReborn():

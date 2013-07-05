@@ -138,3 +138,14 @@
 # adjusted Incan respawn to suit Peru more
 # fixed the invisible/unselectable slaves after trade bug
 # the first American goal now also requires to control or vassalize Mexico
+# Added the Colombian civilization as a Maya respawn
+	# Respawn: 1814 AD
+	# Capital: Bogotá
+	# Leader: Bolivar
+	# Unique Unit: Albion Legion (Grenadier with 2 moves, starts with City Raider I)
+	# Unique Building: Hacienda (Grocer with +25% gold with Coffee)
+	# Unique Power: The Power of the Liberator (no resistance in conquered cities in Latin America)
+	# Unique Historical Victory:
+		# Allow no European colonies in Latin America in 1860 AD
+		# Control South America in 1920 AD
+		# Acquire 5000 gold by selling resources by 1950 AD

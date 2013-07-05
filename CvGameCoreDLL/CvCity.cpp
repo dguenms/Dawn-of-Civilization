@@ -13101,7 +13101,16 @@ void CvCity::doReligion()
 										//Leoreth: Christianity spreads easier to the New World
 										if (iI == CATHOLICISM || iI == PROTESTANTISM)
 										{
-											if (getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA || getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CARIBBEAN || getRegionID() == REGION_MESOAMERICA || getRegionID() == REGION_BRAZIL || getRegionID() == REGION_ARGENTINA || getRegionID() == REGION_PERU || getRegionID() == REGION_COLOMBIA)
+											if (getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA || getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CARIBBEAN || getRegionID() == REGION_MESOAMERICA || getRegionID() == REGION_BRAZIL || getRegionID() == REGION_ARGENTINA || getRegionID() == REGION_PERU || getRegionID() == REGION_COLOMBIA || getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_AUSTRALIA)
+											{
+												bDistanceReduction = false;
+											}
+										}
+
+										// same for Orthodoxy in Siberia
+										if (iI == ORTHODOXY)
+										{
+											if (getRegionID() == REGION_SIBERIA)
 											{
 												bDistanceReduction = false;
 											}

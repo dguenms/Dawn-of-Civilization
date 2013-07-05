@@ -1240,7 +1240,7 @@ class RiseAndFall:
 			iFirstSpawn = iAmerica
 			
                 for iLoopCiv in range(iFirstSpawn, iNumMajorPlayers):
-                        if (iGameTurn >= getTurnForYear(con.tBirth[iLoopCiv]) - 3 and iGameTurn <= getTurnForYear(con.tBirth[iLoopCiv]) + 6):
+                        if (iGameTurn >= getTurnForYear(con.tBirth[iLoopCiv]) - 2 and iGameTurn <= getTurnForYear(con.tBirth[iLoopCiv]) + 6):
                                 self.initBirth(iGameTurn, con.tBirth[iLoopCiv], iLoopCiv)
 
 
@@ -1472,7 +1472,7 @@ class RiseAndFall:
                                         self.createRespawnUnits(iCiv, (x,y))
 					
 					# for colonial civs, set dynamic state religion
-					if iCiv == iAztecs:
+					if iCiv in [iAztecs, iMaya]:
 						self.setStateReligion(iCiv)
 
                                         self.assignTechs(iCiv)
@@ -1577,12 +1577,18 @@ class RiseAndFall:
 						
 						cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
 						
-						pAztecs.setLastStateReligion(con.iChristianity)
 						pAztecs.setCivics(0, con.iRepublic)
 						pAztecs.setCivics(1, con.iRepresentation)
 						pAztecs.setCivics(2, con.iCapitalism)
 						pAztecs.setCivics(3, con.iMercantilism)
 						pAztecs.setCivics(4, con.iOrganizedReligion)
+					elif iCiv == iMaya:
+						pMaya.setCivics(0, con.iAutocracy)
+						pMaya.setCivics(1, con.iRepresentation)
+						pMaya.setCivics(2, con.iCapitalism)
+						pMaya.setCivics(3, con.iMercantilism)
+						pMaya.setCivics(4, con.iOrganizedReligion)
+						gc.getMap().plot(28, 31).setFeatureType(-1, 0)
 
 #############################################################################################################
 
@@ -3990,7 +3996,7 @@ class RiseAndFall:
 				if utils.getHumanID() == iLoopCiv: iLoopMin += 10
 				
 				if gc.getGame().getSorenRandNum(100, 'Check spawn war') >= iLoopMin:
-					iWarPlan = WarPlanTypes.WARPLAN_LIMITED
+					iWarPlan = -1
 					if iLoopCiv in con.lTotalWarOnSpawn[iCiv]:
 						iWarPlan = WarPlanTypes.WARPLAN_TOTAL
 					teamCiv.declareWar(iLoopCiv, False, iWarPlan)
@@ -4631,6 +4637,11 @@ class RiseAndFall:
 			utils.makeUnit(con.iMexicoRurales, iCiv, tPlot, 4)
 			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
 			utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+		if iCiv == iMaya:
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 5)
+			utils.makeUnit(con.iColombianAlbionLegion, iCiv, tPlot, 5)
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
@@ -6293,6 +6304,15 @@ class RiseAndFall:
 						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage]
 				for iTech in lMexicanTechs:
 					teamAztecs.setHasTech(iTech, True, iCiv, False, False)
+			if iCiv == iMaya:
+				lColombianTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
+						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
+						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
+						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
+						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
+						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage]
+				for iTech in lColombianTechs:
+					teamMaya.setHasTech(iTech, True, iCiv, False, False)
 
                 self.hitNeighboursStability(iCiv)
 

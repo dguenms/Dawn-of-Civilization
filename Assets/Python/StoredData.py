@@ -123,6 +123,7 @@ class StoredData:
 				    'lRomanTechs' : [-1, -1, -1],
 				    'iCongoSlaveCounter' : 0,
 				    'bMaliGold' : False,
+				    'iColombianTradeGold' : 0,
                                     #------------Stability
                                     'lBaseStabilityLastTurn': [0 for i in range(con.iNumPlayers)],
                                     'lPartialBaseStability': [0 for i in range(con.iNumPlayers)],

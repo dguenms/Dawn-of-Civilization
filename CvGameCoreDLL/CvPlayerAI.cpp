@@ -12957,6 +12957,12 @@ void CvPlayerAI::AI_doCivics()
 		return;
 	}
 
+	// Leoreth: don't immediately switch after respawn
+	if (getLatestRebellionTurn() >= GC.getGame().getGameTurn() - 2)
+	{
+		return;
+	}
+
 	FAssertMsg(AI_getCivicTimer() == 0, "AI Civic timer is expected to be 0");
 
 	paeBestCivic = new CivicTypes[GC.getNumCivicOptionInfos()];
@@ -15537,6 +15543,12 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 	// Leoreth: AI disband all units otherwise, and gets conquered at spawn
 	if (getID() == GERMANY)
 		return false;
+
+	// don't disband immediately after respawn
+	if (getLatestRebellionTurn() >= GC.getGame().getGameTurn() - 2)
+	{
+		return false;
+	}
 
 	for(pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 	{

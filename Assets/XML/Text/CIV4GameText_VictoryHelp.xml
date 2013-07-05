@@ -540,4 +540,16 @@
 		<Tag>TXT_KEY_VICTORY_GREAT_ARTISTS_SETTLED</Tag>
 		<English>Great artists settled in %s1: %d2 / %d3</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_LATIN_AMERICAN_COLONIES</Tag>
+		<English>No European colonies in Latin America</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA</Tag>
+		<English>South America</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES</Tag>
+		<English>Gold from trading resources: %d1 / %d2</English>
+	</TEXT>
 </Civ4GameText>
