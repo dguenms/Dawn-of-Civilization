@@ -2102,7 +2102,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Argentina.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,5</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Argentina.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BRA_EMBASSY</Type>
@@ -2112,7 +2112,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/brazil_btn.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,5</Button>
+			<Button>Art/Interface/Buttons/Civilizations/brazil_btn.dds</Button>
 		</BuildingArtInfo>
 		<!-- Rhye - end -->
 		<BuildingArtInfo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_DESC</Tag>
+		<English>The Colombians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_SHORT_DESC</Tag>
+		<English>Colombia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_ADJECTIVE</Tag>
+		<English>Colombian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_BOLIVAR</Tag>
+		<English>Bolivar</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COLOMBIAN_ALBION_LEGION</Tag>
+		<English>Albion Legion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COLOMBIAN_ALBION_LEGION_STRATEGY</Tag>
+		<English>This grenadier replacement is very mobile and especially effective against cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA</Tag>
+		<English>Hacienda</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA_STRATEGY</Tag>
+		<English>Unique Colombian building which replaces the Grocer. It provides additional gold with Coffee.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COL_EMBASSY</Tag>
+		<English>Colombian Embassy</English>
+	</TEXT>
+</Civ4GameText>
+

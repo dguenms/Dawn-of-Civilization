@@ -1168,13 +1168,13 @@
 			<CivilizationSelectionSound>AS3D_CHINA_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_CHINA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
-		<!--CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_COLOMBIA</Type>
 			<Description>TXT_KEY_CIV_COLOMBIA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_COLOMBIA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_COLOMBIA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_COLOMBIA_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_PURPLE</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_INDIGO</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_COLOMBIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
@@ -1236,7 +1236,7 @@
 			<DerivativeCiv>NONE</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_SPAIN_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_SPAIN_ORDER</CivilizationActionSound>
-		</CivilizationInfo-->
+		</CivilizationInfo>
 		<CivilizationInfo>			
 			<Type>CIVILIZATION_EGYPT</Type>
 			<Description>TXT_KEY_CIV_EGYPT_DESC</Description>

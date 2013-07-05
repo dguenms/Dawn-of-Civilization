@@ -244,4 +244,14 @@
 		<English>One extra [ICON_HAPPY] per 10% [ICON_CULTURE] Rate</English>
 		<German>Eine zusätzliche [ICON_HAPPY] pro 10% [ICON_CULTURE] Rate</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_COL</Tag>
+		<English>The Power of the Liberator:</English>
+		<German>Die Macht des Befreiers:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_COL2</Tag>
+		<English>No City Resistance on Conquest in Latin America</English>
+		<German>Keinen Widerstand in eroberten Städten in Lateinamerika</German>
+	</TEXT>
 </Civ4GameText>

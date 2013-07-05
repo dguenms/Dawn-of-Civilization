@@ -119,7 +119,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_AGRARIANISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
 	StateReligion=RELIGION_CONFUCIANISM            
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
@@ -36551,7 +36551,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=42
-		CityName=Patliputra
+		CityName=Pataliputra
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY

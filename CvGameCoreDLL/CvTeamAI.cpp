@@ -1888,8 +1888,8 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			}
 		}
 	//Rhye - start
-	iMasterPower *= 3;
-	iMasterPower /= 2;
+	//iMasterPower *= 3;
+	//iMasterPower /= 2;
 	//Rhye - end
 
 	//Rhye - start (lower the first turns)

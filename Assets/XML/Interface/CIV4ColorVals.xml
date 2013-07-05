@@ -1158,5 +1158,12 @@
 			<fBlue>0.02</fBlue>
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
+		<ColorVal>
+			<Type>COLOR_PLAYER_MIDDLE_INDIGO</Type>
+			<fRed>0.35</fRed>
+			<fGreen>0.10</fGreen>
+			<fBlue>0.93</fBlue>
+			<fAlpha>1.00</fAlpha>
+		</ColorVal>
 	</ColorVals>
 </Civ4ColorVals>

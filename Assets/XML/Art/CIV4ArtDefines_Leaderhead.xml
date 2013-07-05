@@ -892,8 +892,16 @@
 			<Button>Art/Leaderheads/Peron/Btn_LH_Peron.dds</Button>
 			<NIF>Art/Leaderheads/Peron/peron.nif</NIF>
 			<KFM>Art/Leaderheads/Peron/george_washington.kfm</KFM>
-			<NoShaderNIF>Art/Leaderheads/Peron/george_washington.kfm</NoShaderNIF>
+			<NoShaderNIF>Art/Leaderheads/Peron/peron.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Peron/washington_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BOLIVAR</Type>
+			<Button>Art/Leaderheads/Bolivar/Btn_LH_Bolivar.dds</Button>
+			<NIF>Art/Leaderheads/Bolivar/Bolivar.nif</NIF>
+			<KFM>Art/Leaderheads/Bolivar/Bolivar.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Bolivar/Bolivar.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Bolivar/Bolivar_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

@@ -389,6 +389,12 @@ class CvRFCEventHandler:
                         if (self.rnf.getExileData(0) == city.getX() and self.rnf.getExileData(1) == city.getY()):
                                 if (playerType == utils.getHumanID() and self.rnf.getExileData(2) != -1):
                                         self.rnf.escape(city)
+		
+			# Colombian UP: no resistance in conquered cities in Latin America
+			if playerType == con.iMaya and gc.getPlayer(playerType).isReborn():
+				if utils.isPlotInArea((city.getX(), city.getY()), con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR):
+					city.setOccupationTimer(0)
+					
                 if (bTrade):
                         for i in range (con.iScotlandYard +1 - con.iHeroicEpic):
                                 iNationalWonder = i + con.iHeroicEpic
@@ -409,12 +415,9 @@ class CvRFCEventHandler:
 		
 	def onCityAcquiredAndKept(self, argsList):
 	
+		iPlayer, city = argsList
+		
 		pass
-	
-	#	playerType, city = argsList
-
-         #       if (playerType < iNumMajorPlayers):
-	#		utils.spreadMajorCulture(playerType, city.getX(), city.getY())
 
         def onCityRazed(self, argsList):
                 #'City Razed'

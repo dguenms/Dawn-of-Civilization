@@ -546,6 +546,12 @@ class Victory:
 		
 	def isIgnoreAI(self):
 		return sd.scriptDict['bIgnoreAI']
+		
+	def getColombianTradeGold(self):
+		return sd.scriptDict['iColombianTradeGold']
+		
+	def changeColombianTradeGold(self, iChange):
+		sd.scriptDict['iColombianTradeGold'] += iChange
                 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -1226,18 +1232,55 @@ class Victory:
 
                 elif (iPlayer == iMaya):
                         if (pMaya.isAlive()):
+			
+				if not pMaya.isReborn():
 
-                                if (iGameTurn == getTurnForYear(600)+1):
-                                        if (self.getGoal(iMaya, 0) == -1): #see onTechAcquired()                                        
-                                                self.setGoal(iMaya, 0, 0)
+					if (iGameTurn == getTurnForYear(600)+1):
+						if (self.getGoal(iMaya, 0) == -1): #see onTechAcquired()                                        
+							self.setGoal(iMaya, 0, 0)
 
-                                if (iGameTurn == getTurnForYear(900)+1):
-                                        if (self.getGoal(iMaya, 1) == -1): #see onBuildingBuilt()
-                                                self.setGoal(iMaya, 1, 0)
+					if (iGameTurn == getTurnForYear(900)+1):
+						if (self.getGoal(iMaya, 1) == -1): #see onBuildingBuilt()
+							self.setGoal(iMaya, 1, 0)
 
-                                if (iGameTurn == getTurnForYear(1600)):      
-                                        if (self.getGoal(iMaya, 2) == -1): #see onGreatPersonBorn()
-                                                self.setGoal(iMaya, 2, 0)
+					if (iGameTurn == getTurnForYear(1600)):      
+						if (self.getGoal(iMaya, 2) == -1): #see onGreatPersonBorn()
+							self.setGoal(iMaya, 2, 0)
+							
+				else:
+				
+					if iGameTurn == getTurnForYear(1860):
+						bLatinAmerica = True
+						for iEuroCiv in con.lCivGroups[0]:
+							if not self.checkNotOwnedArea(iEuroCiv, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR):
+								bLatinAmerica = False
+								break
+						if bLatinAmerica:
+							self.setGoal(iMaya, 0, 1)
+						else:
+							self.setGoal(iMaya, 0, 0)
+							
+					if iGameTurn == getTurnForYear(1920):
+						if self.isControlled(iMaya, tSAmericaTL, tSAmericaBR, tSouthAmericaExceptions):
+							self.setGoal(iMaya, 1, 1)
+						else:
+							self.setGoal(iMaya, 1, 0)
+							
+					if self.getGoal(iMaya, 2) == -1:
+						iTradeGold = 0
+						
+						for iLoopCiv in range(con.iNumPlayers):
+							iTradeGold += pMaya.getGoldPerTurnByPlayer(iLoopCiv)
+							
+						self.changeColombianTradeGold(iTradeGold)
+						
+						if self.getColombianTradeGold() >= utils.getTurns(5000):
+							self.setGoal(iMaya, 2, 1)
+							
+					if iGameTurn == getTurnForYear(1950):
+						if self.getGoal(iMaya, 2) == -1:
+							self.setGoal(iMaya, 2, 0)
+					
 
 		elif (iPlayer == iByzantium):
 			if (pByzantium.isAlive()):
@@ -4075,7 +4118,22 @@ class Victory:
 				aHelp.append(self.getIcon(iNumSinks >= 20) + localText.getText("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", (iNumSinks, 20)))
 
 		# Maya goals have no stages
-
+		elif iPlayer == iMaya:
+			if pMaya.isReborn():
+				if iGoal == 0:
+					bLatinAmerica = True
+					for iEuroCiv in con.lCivGroups[0]:
+						if not self.checkNotOwnedArea(iEuroCiv, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR):
+							bLatinAmerica = False
+							break
+					aHelp.append(self.getIcon(bLatinAmerica) + localText.getText("TXT_KEY_VICTORY_NO_LATIN_AMERICAN_COLONIES", ()))
+				elif iGoal == 1:
+					bSouthAmerica = self.isControlled(iMaya, tSAmericaTL, tSAmericaBR, tSouthAmericaExceptions)
+					aHelp.append(self.getIcon(bSouthAmerica) + localText.getText("TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA", ()))
+				elif iGoal == 2:
+					iTradeGold = self.getColombianTradeGold()
+					aHelp.append(self.getIcon(iTradeGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES", (iTradeGold, utils.getTurns(5000))))
+					
 		elif iPlayer == iByzantium:
 			if iGoal == 0:
 				iGold = pByzantium.getGold()

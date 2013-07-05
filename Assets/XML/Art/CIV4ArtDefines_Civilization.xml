@@ -365,5 +365,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_Argentina.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_COLOMBIA</Type> <!-- blue/purple 5a19ed -->
+			<Button>Art/Interface/Buttons/Civilizations/Colombia.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Colombia.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

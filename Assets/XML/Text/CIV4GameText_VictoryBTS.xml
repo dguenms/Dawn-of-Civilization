@@ -467,4 +467,29 @@
 		<English>Have 75000 culture in Buenos Aires by 1960 AD</English>
 		<German>Haben Sie bis zum Jahr 1960 n. Chr. 75.000 Kultur in Buenos Aires</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL1</Tag>
+		<English>Allow no European colonies in Latin America in 1860 AD</English>
+		<German>Lassen sie im Jahr 1860 n. Chr. keine europäischen Kolonien in Lateinamerika zu</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL2</Tag>
+		<English>Control South America in 1920 AD</English>
+		<German>Kontrollieren Sie im Jahr 1920 n. Chr. Südamerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3</Tag>
+		<English>Acquire 5000 gold by selling resources by 1950 AD</English>
+		<German>Erhalten Sie bis zum Jahr 1950 n. Chr. 5000 Gold durch den Verkauf von Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3_EPIC</Tag>
+		<English>Acquire 7500 gold by selling resources by 1950 AD</English>
+		<German>Erhalten Sie bis zum Jahr 1950 n. Chr. 7500 Gold durch den Verkauf von Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3_MARATHON</Tag>
+		<English>Acquire 15000 gold by selling resources by 1950 AD</English>
+		<German>Erhalten Sie bis zum Jahr 1950 n. Chr. 15000 Gold durch den Verkauf von Ressourcen</German>
+	</TEXT>
 </Civ4GameText>
