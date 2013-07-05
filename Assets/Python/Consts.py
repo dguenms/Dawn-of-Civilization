@@ -252,7 +252,7 @@ tBirth = (
 1150, # 236, #1150AD			# Inca
 1167, # Italy				# Italy
 1190, # 240, #1190AD			# Mongolia
-1200, # 241, #1195AD			# Aztecs
+1195, # 241, #1195AD			# Aztecs
 1206,					# Mughals
 1280, # 249, #1280AD (1071AD)		# Turkey
 1350,					# Thailand
