@@ -741,6 +741,9 @@ class Victory:
 		if iPlayer >= con.iNumPlayers:
 			return
 			
+		if iGameTurn == utils.getScenarioStartTurn():
+			return
+			
 		# Leoreth: don't check AI civilizations to improve speed
 		if utils.getHumanID() != iPlayer and self.isIgnoreAI():
 			#utils.debugTextPopup("Ignored goal check for civ "+str(iPlayer))

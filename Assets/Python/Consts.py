@@ -897,6 +897,7 @@ iChina		:	"TXT_KEY_DOM_CHINA_LATE",
 iJapan		:	"TXT_KEY_DOM_JAPAN_LATE",
 iKorea		:	"TXT_KEY_DOM_KOREA_LATE",
 iByzantium	:	"TXT_KEY_DOM_BYZANTIUM_LATE",
+iVikings	:	"TXT_KEY_DOM_VIKINGS_LATE",
 }
 
 dawnOfMan1700AD = {

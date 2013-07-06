@@ -55,4 +55,14 @@
 		<DefineName>PLAYER_OCCURENCE_BRAZIL</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
+	
+	<!-- Disable the respawn by setting the value to 0 -->
+	<Define>
+		<DefineName>PLAYER_REBIRTH_MEXICO</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>PLAYER_REBIRTH_COLOMBIA</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
 </Civ4Defines>

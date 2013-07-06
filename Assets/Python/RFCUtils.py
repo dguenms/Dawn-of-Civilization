@@ -420,6 +420,9 @@ class RFCUtils:
 				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
 			if iExp > 0:
 				unit.changeExperience(iExp, 100)
+				
+		if iPlayer == con.iItaly and iUnit == con.iWorker:
+			utils.debugTextPopup('Italian Warrior')
 
 	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum, sAdj=""): #by LOQ, modified by Leoreth
                 'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
@@ -830,7 +833,7 @@ class RFCUtils:
 						y = pCity.getY()
 						self.relocateGarrisons((x,y), pCity.getOwner())
 						self.relocateSeaGarrisons((x,y), pCity.getOwner())
-						self.createGarrisons((x,y), iPlayer, 2)
+						self.createGarrisons((x,y), pCity.getOwner(), 2)
 				else:
 					iNumUnits = plot.getNumUnits()
 					j = 0

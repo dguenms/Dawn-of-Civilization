@@ -26530,3 +26530,8 @@ DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
 	return NO_DENIAL;
 }
 // edead: end
+
+bool CvPlayer::canEnslave() const
+{
+	return (getCivics((CivicOptionTypes)3) == CIVIC_FORCED_LABOR && getMaxConscript() <= 0);
+}

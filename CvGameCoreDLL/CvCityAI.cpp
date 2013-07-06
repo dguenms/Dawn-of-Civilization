@@ -6394,6 +6394,12 @@ void CvCityAI::AI_doDraft(bool bForce)
 
 	if (canEnslave())
 	{
+		if (bForce)
+		{
+			conscript();
+			return;
+		}
+
 		int iConscriptPop = getConscriptPopulation();
 		int iHappyDiff = GC.getDefineINT("CONSCRIPT_POP_ANGER") - iConscriptPop;
 
