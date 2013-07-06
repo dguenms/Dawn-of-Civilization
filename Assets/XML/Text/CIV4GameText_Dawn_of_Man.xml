@@ -21,6 +21,10 @@
 		<English>It is the year 600 AD. After the Han Dynasty had collapsed, civil war between the Chinese kingdoms ensued. Only 11 years ago Emperor Wen of Sui managed to reunite China and reclaim the Mandate of Heaven. But the power of the Sui Dynasty is not completely consolidated, and the old challenges of China remain.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_CHINA_1700AD</Tag>
+		<English>It is the year 1700 AD. After the Ming Dynasty has collapsed under peasant revolts, the Jurchens of Manchuria have conquered China and established the Qing Dynasty. With Manchuria, Xinjiang and Tibet under imperial control, China has reached the greatest extent in history, and the rule of the Kangxi Emperor promises another golden era.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_BABYLONIA</Tag>
 		<English>It is the year 3000 BC. The fertile crescent of Mesopotamia is home of the first urbanized cultures in the history of mankind and known as the cradle of civilization. Though the cities of Sumer and Akkad are thriving, with the emergence of Babylon, they will soon be overshadowed by the greatest metropolis of its time.</English>
 	</TEXT>
@@ -31,6 +35,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PERSIA</Tag>
 		<English>It is the year 844 BC. Persia has always been home to warlike peoples, but now the Achaemenid dynasty provides them with the unifying force to form an organized empire. While the Persian plateau is not particularly wealthy, it has rich and defenseless neighbors in India in the east and Mesopotamia in the west to conquer on their way to become the world's greatest empire.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_PERSIA_1700AD</Tag>
+		<English>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1500 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PHOENICIA</Tag>
@@ -49,6 +57,10 @@
 		<English>It is the year 600 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_JAPAN_1700AD</Tag>
+		<English>It is the year 1700 AD. Under the Tokugawa Shogunate, Japan has been at peace for almost a century now. But contact with European traders threatens to disturb the achieved balance again, and even the complete seclusion under the Sakoku cannot preserve it forever. Japan will have to open itself to the world ...</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_ETHIOPIA</Tag>
 		<English>It is the year 295 BC. The Ethiopian highlands are exceptionally fertile due to its temperate climate, but also quite remote from other civilizations. This changes when the major trade routes between the Roman Empire and Indians shift to the Red Sea, allowing the Ethiopian kingdom of Aksum to flourish.</English>
 	</TEXT>
@@ -59,6 +71,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KOREA_LATE</Tag>
 		<English>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has expanded the influence of Korean civilization into Manchuria. But now that China is reunited again, they have to be careful to protect their independence for the future.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KOREA_1700AD</Tag>
+		<English>It is the year 1700 AD. The Kingdom of Joseon has faced both invasion from Japan and the Manchu, who now control the entire Chinese Empire. Now a period of relative peace and economic and cultural renaissance has begun, but with two powerful neighbors and Western imperialism on the rise, it can only last for so long ...</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MAYA</Tag>
@@ -75,6 +91,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_VIKINGS</Tag>
 		<English>It is the year 551 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also the Mediterranean and even the New World make good targets for either plunder or settlement.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_VIKINGS_LATE</Tag>
+		<English>It is the year 600 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Vikings have to turn to lands across the sea. Not only the coasts of the North Sea, but also the Mediterranean and even the New World make good targets for either plunder or settlement.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_SWEDEN_1700AD</Tag>
+		<English>It is the year 1700 AD. The Kingdom of Sweden is the most formidable of the Scandinavian powers and has managed to establish an empire by acquiring Finland. Still, its expansion has also created enemies, and rivals like Denmark-Norway, Poland and especially Russia might seek to curb Swedish power ...</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_ARABIA</Tag>
@@ -97,24 +121,48 @@
 		<English>It is the year 718 AD. Arabs from the Ummayad Caliphate have overrun almost all of Iberia and put an end to Visigoth rule. Now the Spanish Kingdom of Asturias is founded in the mountainous north, seeking to restore Christian control over Iberia and expand it beyond.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_SPAIN_1700AD</Tag>
+		<English>It is the year 1700 AD. The Spanish Empire is in a state of decline. Income from the American colonies is diminishing, the cultural flourishing of the last century has come to an end, and now the ruling Habsburg dynasty is about to die out. The conflict over the Spanish succession is about to consume Europe ...</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_FRANCE</Tag>
 		<English>It is the year 751 AD. After the collapse of the Western Roman Empire, the Merovingian Frankish Empire became the major Christian power in Europe. With the coronation of Pepin from the Carolingian dynasty, the Franks have come another step closer to reclaim Rome's legacy and dominate Christian Europe.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_FRANCE_1700AD</Tag>
+		<English>It is the year 1700 AD. France under the rule of Louis XIV is at the height of its power and the dominating cultural and military power in continental Europe. After extending its borders and winning the Thirty Years War, the impeding end of the Spanish Habsburgs presents another opportunity to expand French power.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_ENGLAND</Tag>
 		<English>It is the year 829 AD. After the migration of Germanic peoples to Britain, the island has been divided between several Celtic, Norse and Anglo-Saxon kingdoms. Now the King of Wessex has been crowned Bretwalda and thus ruler of all of England. Now unified, the English people can turn their eyes from their island across the sea and gain rule of the waves.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_ENGLAND_1700AD</Tag>
+		<English>It is the year 1700 AD. The Glorious Revolution has restored stability to the British thrones and paved the way to the Acts of Union. With its colonial holdings in the Americas and India growing, the British crown will be able to establish a world-wide empire and challenge the French dominance over Europe.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_HOLY_ROME</Tag>
 		<English>It is the year 843 AD. The Treaty of Verdun brings the final separation of the Frankish Empire into West and East Francia. The eastern half is dominated by German peoples, and not only would its German kings break with the Romantic Frankish culture, but also claim its imperial title and the continuation of the Holy Roman Empire.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_AUSTRIA_1700AD</Tag>
+		<English>It is the year 1700 AD. Despite the setbacks during the Thirty Years War, the victory at the Siege of Vienna allowed the Habsburg Monarchy to drive back the Turks and secure their holdings in the Balkans. The beginning of the Austrian baroque let arts and architecture flourish, but the weakness of the Spanish line may lead to another war soon ...</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_RUSSIA</Tag>
 		<English>It is the year 860 AD. Varangian travelers among the amber road between Scandinavia and Byzantium begin to set up states along their routes. Quickly mingling with their Slavic subjects, they would become the Rus and set out to settle the vast areas of Eastern Europe and beyond.</English>
+	</TEXT>>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_RUSSIA_1700AD</Tag>
+		<English>It is the year 1700 AD. Under the rule of Peter the Great Russia is on the path of modernization. Sweden has just been defeated and the foundation of Sankt-Peterburg secured a window to the east for Russia. With the advance into Siberia, the Russian Empire is now the largest in the world.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_NETHERLANDS</Tag>
 		<English>It is the year 1581 AD. Situated at the confluence of Europe's most important trade routes, the Netherlands are the most populated and wealthiest region of the continent. Far too long this wealth has gone to foreign powers, but now, after long wars, the Dutch people have finally reached independence and established a Republic.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NETHERLANDS_1700AD</Tag>
+		<English>It is the year 1700 AD. Since their independence at the end of the Eighty Years war, the Netherlands have entered a Golden Age and become the European center of trade, industry, culture and science. This wealth however has created envy in the rising neighboring powers of France and Great Britain, and the Dutch will need to keep their colonial empire together to maintain their wealth.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MALI</Tag>
@@ -123,6 +171,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PORTUGAL</Tag>
 		<English>It is the year 1128 AD. Portugal has just defeated Spain and gained independence. Situated at the western end of Europe, the kingdom is in an excellent position to send ships to ports all over the world and control the trade of all of Europe, Africa and Asia.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_PORTUGAL_</Tag>
+		<English>It is the year 1700 AD. In the last century, Portugal has regained its independence from the Spanish crown. Many of its colonial possessions have been lost to the Dutch, but Brazil is still under Portuguese control and promises wealth for the future.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_INCA</Tag>
@@ -175,5 +227,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOM_CONGO</Tag>
 		<English>It is the year 1390 AD. The Kingdom of Kongo emerges after the unification of several tribal polities in the Congo delta just when European powers start to expand their influence in Africa. It must try to keep its independence by both religious and economic means.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_ARGENTINA</Tag>
+		<English>It is the year 1810 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_BRAZIL</Tag>
+		<English>It is the year 1822 AD. After the revolution in Portugal threatens Brazilian sovereignty with in the United Kingdom, Dom Pedro of Brazil declares an independent empire. The Brazil's rich plantations as well as the Amazon rainforest promise wealth for the future, but also demand preservation.</English>
 	</TEXT>
 </Civ4GameText>

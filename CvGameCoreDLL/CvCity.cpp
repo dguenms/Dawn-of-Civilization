@@ -15232,7 +15232,7 @@ bool CvCity::canEnslave() const
 
 bool CvCity::canEnslave(bool bGeneral) const
 {
-	if (GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)3) == CIVIC_FORCED_LABOR && GET_PLAYER(getOwnerINLINE()).getMaxConscript() <= 0)
+	if (GET_PLAYER(getOwnerINLINE()).canEnslave())
 	{
 		if (getRegionID() == REGION_WEST_AFRICA || getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_ETHIOPIA)
 		{

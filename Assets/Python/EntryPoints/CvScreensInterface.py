@@ -1399,6 +1399,14 @@ def getUHVTileInfo(argsList):
 		if x >= tlx and x <= brx and y >= tly and y <= bry:
 			return 60
 			
+	elif iPlayer == con.iMaya:
+		if utils.isReborn(iPlayer):
+			if utils.isPlotInArea((x, y), con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR):
+				return 32
+				
+			if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
+				return 43
+			
 	return -1
 		
 def getCityName(self, argsList):

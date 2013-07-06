@@ -204,7 +204,6 @@
 		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE</Tag>
 		<English>Protectorate of %s1</English>
 	</TEXT>
-	
 	<TEXT>
 		<Tag>TXT_KEY_SCHISM_TITLE</Tag>
 		<English>The Great Schism</English>
@@ -221,6 +220,4 @@
 		<Tag>TXT_KEY_ASKCOLONIALCITY_MESSAGE</Tag>
 		<English>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
 	</TEXT>
-
-
 </Civ4GameText>

@@ -17724,6 +17724,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=37
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -18066,10 +18067,11 @@ EndPlot
 BeginPlot
 	x=47,y=36
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=47,y=37
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -18077,6 +18079,7 @@ BeginPlot
 	x=47,y=38
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_SUGAR
 	PlotType=2
 EndPlot
 BeginPlot
@@ -18404,11 +18407,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=35
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=48,y=36
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -20567,6 +20572,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=25
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

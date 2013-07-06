@@ -869,6 +869,7 @@ class DynamicCivs:
 			iEngland : con.iVictoria,
 			iHolyRome : con.iFrancis,
 			iRussia : con.iPeter,
+			iPoland : con.iSobieski,
 			iPortugal : con.iJoao,
 			iMughals : con.iAkbar,
 			iTurkey : con.iSuleiman,
@@ -2124,7 +2125,7 @@ class DynamicCivs:
 			
 		elif iPlayer == iPoland:
 		
-			if iEra >= con.iRenaissance:
+			if iEra >= con.iRenaissance or utils.getScenario() == con.i1700AD:
 				self.setLeader(iPlayer, con.iSobieski)
 				return
 			

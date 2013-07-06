@@ -19902,6 +19902,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=37
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=20,22,27,36,42,
@@ -20283,11 +20284,12 @@ EndPlot
 BeginPlot
 	x=47,y=36
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	PlotType=1
 	TeamReveal=20,22,27,36,41,42,
 EndPlot
 BeginPlot
 	x=47,y=37
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=20,22,27,36,42,
@@ -20683,12 +20685,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=35
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=20,22,27,36,41,
 EndPlot
 BeginPlot
 	x=48,y=36
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=20,22,27,36,41,42,
@@ -21198,7 +21202,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=20
-		CityName=A Coru&#241;a
+		CityName=La Coru&#241;a
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -23486,6 +23490,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=25
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=20,22,27,36,42,
@@ -36985,7 +36990,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=24
-		CityName=Vorkuta
+		CityName=Obdorsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
