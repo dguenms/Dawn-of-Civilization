@@ -10431,6 +10431,8 @@ int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
 			iFinalResult = result * 90 / 100;
 		else if (pl == AZTEC)
 			iFinalResult = result * 90 / 100;
+		else if (pl == MAYA)
+			iFinalResult = result * 90 / 100;
 	}
 
 	// bonus for Netherlands and Germany in the beginning
@@ -10718,6 +10720,8 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 			iFinalResearchPercent = researchPercent * 90 / 100;
 		else if (pl == AZTEC)
 			iFinalResearchPercent = researchPercent * 80 / 100;
+		else if (pl == MAYA)
+			iFinalResearchPercent = researchPercent * 80 / 100;
 	}
 
 	return iFinalResearchPercent;
@@ -10937,6 +10941,15 @@ int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
 			iFinalResult = result * 60 / 100;
 		else
 			iFinalResult = result * 30 / 100;
+	}
+
+	// handle respawned civs explicitly here (overwrite)
+	if (pl == MAYA)
+	{
+		if (GET_PLAYER((PlayerTypes)pl).isReborn())
+		{
+			iFinalResult = result * 85 / 100;
+		}
 	}
 
 	// handle respawned civs explicitly here (overwrite)
