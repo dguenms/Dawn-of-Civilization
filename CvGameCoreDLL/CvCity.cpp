@@ -424,6 +424,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 				eraModifier = 2;
 			}
 		}
+
+		if (getOwnerINLINE() == AZTEC)
+			eraModifier = 3;
+
+		if (getOwnerINLINE() == MAYA)
+			eraModifier = 3;
 	}
 
 	if (getScenario() == SCENARIO_600AD) //late start condition
@@ -12636,6 +12642,10 @@ void CvCity::doCulture()
 				//	changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
 				if (getOwnerINLINE() == PERSIA)
 					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
+				else if (getOwnerINLINE() == AZTEC)
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 140 / 100, false, true);
+				else if (getOwnerINLINE() == MAYA)
+					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 140 / 100, false, true);
 				else
 					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 40 / 100, false, true);
 			}else

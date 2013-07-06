@@ -6200,6 +6200,9 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 			if (getID() == AZTEC)
 				startingEra = 4;
+
+			if (getID() == MAYA)
+				startingEra = 4;
 		}
 
 		if (getScenario() == SCENARIO_1700AD)
@@ -6781,6 +6784,12 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 	{
 		if (getID() == ROME)
 			iProductionNeeded = iProductionNeeded * 110 / 100;
+		if (getID() == PERSIA)
+			iProductionNeeded = iProductionNeeded * 90 / 100;
+		if (getID() == AZTEC)
+			iProductionNeeded = iProductionNeeded * 85 / 100;
+		if (getID() == MAYA)
+			iProductionNeeded = iProductionNeeded * 85 / 100;
 	}else
 	{
 		if (getID() < NUM_MAJOR_PLAYERS)
@@ -7043,6 +7052,12 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 		{
 			if (getID() == ROME)
 				iProductionNeeded = iProductionNeeded * 90 / 100;
+			if (getID() == PERSIA)
+				iProductionNeeded = iProductionNeeded * 85 / 100;
+			if (getID() == AZTEC)
+				iProductionNeeded = iProductionNeeded * 90 / 100;
+			if (getID() == MAYA)
+				iProductionNeeded = iProductionNeeded * 90 / 100;
 		}else
 		{
 			if (getID() < NUM_MAJOR_PLAYERS)
@@ -7211,7 +7226,11 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 			if (getID() == ROME)
 				iProductionNeeded = iProductionNeeded * 80 / 100;
 			if (getID() == PERSIA)
-				iProductionNeeded = iProductionNeeded * 90 / 100;
+				iProductionNeeded = iProductionNeeded * 80 / 100;
+			if (getID() == AZTEC)
+				iProductionNeeded = iProductionNeeded * 80 / 100;
+			if (getID() == MAYA)
+				iProductionNeeded = iProductionNeeded * 80 / 100;
 		}else
 		{
 			if (getID() < NUM_MAJOR_PLAYERS)
@@ -8071,6 +8090,8 @@ int CvPlayer::calculateInflationRate() const
 		if (getID() == PERSIA)
 			iRate = iRatePercent * 75 / 100;
 		if (getID() == AZTEC)
+			iRate = iRatePercent * 67 / 100;
+		if (getID() == MAYA)
 			iRate = iRatePercent * 67 / 100;
 	}
 
@@ -23546,6 +23567,10 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 			iThreshold = iThreshold * 73 / 100;
 		else if (getID() == PERSIA)
 			iThreshold = iThreshold * 72 / 100;
+		else if (getID() == AZTEC)
+			iThreshold = iThreshold * 68 / 100;
+		else if (getID() == MAYA)
+			iThreshold = iThreshold * 68 / 100;
 		else
 			iThreshold = iThreshold * 130 / 100;
 	}else
