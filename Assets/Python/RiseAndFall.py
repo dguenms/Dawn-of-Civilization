@@ -1896,8 +1896,8 @@ class RiseAndFall:
 					if bCapital:
 						lFlippingCities.append(city)
 						
-			# if only up to two cities wouldn't flip, they flip as well
-			if len(lFlippingCities) + 2 >= len(lPotentialCities):
+			# if only up to two cities wouldn't flip, they flip as well (but at least one city has to flip already, else the respawn fails)
+			if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0:
 				lFlippingCities = lPotentialCities
 				
 		return lFlippingCities
