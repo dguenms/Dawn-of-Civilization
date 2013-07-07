@@ -757,6 +757,12 @@ class RiseAndFall:
 		utils.setStability(iPortugal, utils.getStability(iPortugal) + 6)
 		pPortugal.changeStabilityCategory(con.iStabilityDifficulty, 6)
 		
+		utils.setStability(iHolyRome, utils.getStability(iHolyRome) - 5)
+		pHolyRome.changeStabilityCategory(con.iStabilityDifficulty, -5)
+
+		utils.setStability(iRussia, utils.getStability(iRussia) + 6)
+		pRussia.changeStabilityCategory(con.iStabilityDifficulty, 6)
+		
 		for iPlayer in range(con.iNumPlayers):
 			if utils.getHumanID() == iPlayer: continue
 			utils.setStability(iPlayer, utils.getStability(iPlayer) + 10)
@@ -2448,9 +2454,6 @@ class RiseAndFall:
 		# Leoreth: conditional state religion for colonial civs
 		if iCiv in [iArgentina, iBrazil]:
 			self.setStateReligion(iCiv)
-			
-		# Leoreth: start wars on spawn when the spawn actually happens
-		self.startWarsOnSpawn(iCiv)
                         
                 if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and ((iHuman not in con.lNeighbours[iCiv] and getTurnForYear(con.tBirth[iCiv]) - getTurnForYear(con.tBirth[iHuman]) > 0) or getTurnForYear(con.tBirth[iCiv]) - getTurnForYear(con.tBirth[iHuman]) >= utils.getTurns(25) ):
                         self.newCivPopup(iCiv)
@@ -3972,6 +3975,9 @@ class RiseAndFall:
 				utils.makeUnit(con.iFrigate, iCiv, tSeaPlot, 3)
 			if utils.getHumanID() != iBrazil:
 				utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+				
+		# Leoreth: start wars on spawn when the spawn actually happens
+		self.startWarsOnSpawn(iCiv)
 
         def createRespawnUnits(self, iCiv, tPlot):
                 if (iCiv == iRome):
