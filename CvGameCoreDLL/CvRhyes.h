@@ -18,9 +18,9 @@ typedef list<char*> LISTCHAR;
 
 #define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
 
-#define BEGIN_WONDERS				(129) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(130) // increment if normal building (not for wonders) is added
 //#define NUM_WONDERS				(186)
-#define NUM_BUILDINGS_PLAGUE		(203) // always increment when a building is added except embassies
+#define NUM_BUILDINGS_PLAGUE		(204) // always increment when a building is added except embassies
 #define NUM_BUILDINGTYPES_PLAGUE	(129) // increment when a building class is created except embassies
 
 #define NUM_MAJOR_PLAYERS		(41)
