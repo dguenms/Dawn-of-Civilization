@@ -971,15 +971,15 @@
 	</TEXT>
 
 	<TEXT>
-		<Tag>TXT_KEY_EFFECT_SOLOMON</Tag>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_SALOMON_HELP</Tag>
 		<English>[ICON_BULLET]Doubles the revenue limit of all your shrines</English>
 		<German>[ICON_BULLET]Verdoppelt die Einnahmegrenze aller Ihrer Schreine</German>
 	</TEXT>
 
 	<TEXT>
-		<Tag>TXT_KEY_EFFECT_APOSTOLIC_PALACE</Tag>
-		<English>[ICON_BULLET]Moves its religion's holy city to where it is built</English>
-		<German>[ICON_BULLET]Verlegt die heilige Stadt seiner Religion in seinen Bauort</German>
+		<Tag>TXT_KEY_BUILDING_APOSTOLIC_PALACE_HELP</Tag>
+		<English>[ICON_BULLET]Relocates the Catholic holy city</English>
+		<German>[ICON_BULLET]Verlegt die heilige Stadt des Katholizismus</German>
 	</TEXT>
 
 	<TEXT>
@@ -989,7 +989,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_BOROBUDUR</Tag>
-		<English>[ICON_BULLET]Artists can also be hired using priest slots.</English>
+		<English>[ICON_BULLET]Artists can also be hired using Priest slots.</English>
 		<German>[ICON_BULLET]Künstler können auch mithilfe von Priesterstellen eingestellt werden.</German>
 	</TEXT>
 	<TEXT>

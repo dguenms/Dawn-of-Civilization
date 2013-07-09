@@ -85,4 +85,12 @@
 		<Tag>TXT_KEY_BUILDING_MACHU_PICCHU_HELP</Tag>
 		<English>[ICON_BULLET]Provides +2[ICON_GOLD] per Peak in City Radius</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_WATER</Tag>
+		<English>[ICON_BULLET]Requires Access to Coast</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_RIVER</Tag>
+		<English>[ICON_BULLET]Requires a River</English>
+	</TEXT>
 </Civ4GameText>

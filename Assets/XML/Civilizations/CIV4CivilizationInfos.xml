@@ -1228,6 +1228,30 @@
 					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
 					<UnitType>UNIT_COLOMBIAN_ALBION_LEGION</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_GREAT_GENERAL</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>

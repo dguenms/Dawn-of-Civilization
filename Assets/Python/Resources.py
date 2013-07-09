@@ -241,15 +241,18 @@ class Resources:
 			gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
 			
 		if iGameTurn == getTurnForYear(1800):
-			gc.getMap().plot(17, 41).setBonusType(iHorse) # Mexico
-			gc.getMap().plot(16, 42).setBonusType(con.iIron) # Mexico
+			if gc.getDefineINT("PLAYER_RESPAWN_MEXICO") != 0:
+				gc.getMap().plot(17, 41).setBonusType(iHorse) # Mexico
+				gc.getMap().plot(16, 42).setBonusType(con.iIron) # Mexico
 			
-			gc.getMap().plot(31, 10).setBonusType(iWine) # Mendoza, Argentina
-			gc.getMap().plot(31, 6).setBonusType(iSheep) # Pampas, Argentina
-			gc.getMap().plot(32, 11).setBonusType(iIron) # Argentina
+			if utils.getPlayerEnabled(con.iArgentina):
+				gc.getMap().plot(31, 10).setBonusType(iWine) # Mendoza, Argentina
+				gc.getMap().plot(31, 6).setBonusType(iSheep) # Pampas, Argentina
+				gc.getMap().plot(32, 11).setBonusType(iIron) # Argentina
 			
-			gc.getMap().plot(36, 18).setBonusType(iCorn) # Sao Paulo
-			gc.getMap().plot(42, 18).setBonusType(iFish) # Rio de Janeiro
+			if utils.getPlayerEnabled(con.iBrazil):
+				gc.getMap().plot(36, 18).setBonusType(iCorn) # Sao Paulo
+				gc.getMap().plot(42, 18).setBonusType(iFish) # Rio de Janeiro
 
                 if (iGameTurn == getTurnForYear(1850)):
                         gc.getMap().plot(12, 45).setBonusType(iWine) #California
@@ -260,7 +263,8 @@ class Resources:
                         gc.getMap().plot(116, 13).setBonusType(iSheep) #Australia
                         gc.getMap().plot(121, 6).setBonusType(iSheep) #New Zealand
 
-                        gc.getMap().plot(19, 41).setBonusType(iHorse) #Mexico
+			if gc.getDefineINT("PLAYER_RESPAWN_MEXICO") != 0:
+				gc.getMap().plot(19, 41).setBonusType(iHorse) #Mexico
 
                         gc.getMap().plot(58, 47).setBonusType(iRice) #Vercelli
                         gc.getMap().plot(12, 49).setBonusType(iRice) #California
@@ -280,22 +284,3 @@ class Resources:
 			for tPlot in [(11, 46), (11, 47), (11, 48)]:
 				x, y = tPlot
 				gc.getMap().plot(x,y).setFeatureType(3, 0)
-
-
-
-
-                
-                #setImprovementType(ImprovementType eNewValue)
-                #setPlotType(PlotType eNewValue, BOOL bRecalculate, BOOL bRebuildGraphics)
-                #setTerrainType(TerrainType eNewValue, BOOL bRecalculate, BOOL bRebuildGraphics)
-
-
-                        
-
-
-            
-
-
-
-
-                        

@@ -153,4 +153,5 @@
 # the Mexican and Colombian rebirths can be disabled in GlobalDefinesAlt.xml
 # added additional capes around the Canaries and the Gold Coast to delay the circumnavigation of Africa
 # opened the Canary Islands for settlement
-# added some Dawn of Man texts
+# minor civs cannot take goody huts
+# civilopedia now better displays building requirements (civics, coast, river)

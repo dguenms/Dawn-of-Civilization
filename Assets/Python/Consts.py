@@ -902,6 +902,7 @@ iVikings	:	"TXT_KEY_DOM_VIKINGS_LATE",
 
 dawnOfMan1700AD = {
 iChina		:	"TXT_KEY_DOM_CHINA_1700AD",
+iPersia		:	"TXT_KEY_DOM_PERSIA_1700AD",
 iKorea		:	"TXT_KEY_DOM_KOREA_1700AD",
 iJapan		:	"TXT_KEY_DOM_JAPAN_1700AD",
 iVikings	:	"TXT_KEY_DOM_SWEDEN_1700AD",
@@ -1021,7 +1022,7 @@ tCapitals = (
 (91, 31), #Thanjavur
 (72, 29), #tAksum
 (109, 46), #tSeoul
-(22, 35), #tTikal
+(27, 29), #Bogota
 (68, 45), #tConstantinople
 (113, 45), #tKyoto
 #(61, 62), #tNidaros
@@ -1157,7 +1158,7 @@ tCoreAreasTL = (
 (90, 28), #Tamils
 (69, 27), #Ethiopia
 (107, 45), #Korea
-(20, 35), #Maya
+(25, 27), #Colombia
 (64, 41), #Byzantium
 (111, 41), #Japan
 (57, 57), #Vikings
@@ -1243,7 +1244,7 @@ tCoreAreasBR = (
 (93, 34), #Tamils
 (73, 30), #Ethiopia
 (110, 49), #Korea
-(23, 37), #Maya
+(29, 32), #Colombia
 (74, 45), #Byzantium
 (116, 49), #Japan
 (70, 65), #Vikings
@@ -1420,7 +1421,7 @@ tNormalAreasTL = (
 (90, 28), #Tamils
 (68, 25), #Ethiopia
 (108, 45), #Korea
-(20, 32), #Maya
+(24, 26), #Colombia
 (64, 40), #Byzantium
 (111, 41), #Japan
 (57, 55), #Vikings
@@ -1506,7 +1507,7 @@ tNormalAreasBR = (
 (93, 34), #Tamils
 (77, 30), #Ethiopia
 (110, 49), #Korea
-(23, 37), #Maya
+(29, 32), #Colombia
 (72, 45), #Byzantium
 (116, 52), #Japan
 (67, 65), #Vikings
@@ -1680,7 +1681,7 @@ tBroaderAreasTL = (
 (90, 28), #Tamils
 (67, 21), #Ethiopia
 (106, 45), #Korea
-(19, 30), #Maya
+(33, 32), #Colombia
 (64, 38), #Byzantium
 (110, 40), #Japan
 (57, 55), #Vikings
@@ -1766,7 +1767,7 @@ tBroaderAreasBR = (
 (93, 34), #Tamils
 (77, 30), #Ethiopia
 (110, 52), #Korea
-(26, 37), #Maya
+(33, 32), #Colombia
 (74, 45), #Byzantium
 (116, 56), #Japan
 (71, 65), #Vikings

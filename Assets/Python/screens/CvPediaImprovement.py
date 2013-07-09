@@ -222,7 +222,7 @@ class CvPediaImprovement:
 		screen.attachLabel(panelName, "", "  ")
 		
 		for iBuild in range(gc.getNumBuildInfos()):
-			if (gc.getBuildInfo(iBuild).getImprovement() == self.iImprovement):	 
+			if (gc.getBuildInfo(iBuild).getImprovement() == self.iImprovement and not gc.getBuildInfo(iBuild).isGraphicalOnly()):	 
 				iTech = gc.getBuildInfo(iBuild).getTechPrereq()
 				if (iTech > -1):
 					screen.attachImageButton( panelName, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False )

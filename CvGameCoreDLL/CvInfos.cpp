@@ -10665,10 +10665,16 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 		//if (pl == CHINA)
 		//	iFinalResearchPercent = researchPercent * 102 / 100;
 		if (pl == INDIA)
+		{
 			if (GC.getGameINLINE().getActivePlayer() != INDIA)
+			{
 				iFinalResearchPercent = researchPercent * 110 / 100;
+			}
 			else
+			{
 				iFinalResearchPercent = researchPercent * 125 / 100;
+			}
+		}
 		if (pl == BABYLONIA)
 			iFinalResearchPercent = researchPercent * 140 / 100;
 		if (pl == MAYA)												// Maya UP
@@ -12164,6 +12170,9 @@ bool CvBuildInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iTime, "iTime");
 	pXML->GetChildXmlValByName(&m_iCost, "iCost");
 	pXML->GetChildXmlValByName(&m_bKill, "bKill");
+
+	//Leoreth
+	pXML->GetChildXmlValByName(&m_bGraphicalOnly, "bGraphicalOnly");
 
 	pXML->GetChildXmlValByName(szTextVal, "ImprovementType");
 	m_iImprovement = pXML->FindInInfoClass(szTextVal);

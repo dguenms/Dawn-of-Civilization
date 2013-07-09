@@ -7156,27 +7156,6 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 		} //Rhye (embassy)
 	}
 
-	// Leoreth: classical wonders that require Pantheon (only civic prereq so far)
-	if (kBuilding.getPrereqCivic() == CIVIC_PANTHEON)
-	{
-	    szBuffer.append(NEWLINE);
-	    szBuffer.append(gDLL->getText("TXT_KEY_PANTHEON_REQUIREMENT"));
-	}
-
-	// Leoreth: display the effect of the Temple of Solomon (shrine revenue limit doubled)
-	if (eBuilding == SOLOMON)
-	{
-	    szBuffer.append(NEWLINE);
-	    szBuffer.append(gDLL->getText("TXT_KEY_EFFECT_SOLOMON"));
-	}
-
-    //Leoreth: display the holy city allocation effect of Apostolic Palace
-    if (eBuilding == APOSTOLIC)
-    {
-        szBuffer.append(NEWLINE);
-        szBuffer.append(gDLL->getText("TXT_KEY_EFFECT_APOSTOLIC_PALACE"));
-    }
-
 	if (kBuilding.getGlobalReligionCommerce() != NO_RELIGION)
 	{
 		szFirstBuffer = gDLL->getText("TXT_KEY_BUILDING_PER_CITY_WITH", GC.getReligionInfo((ReligionTypes) kBuilding.getGlobalReligionCommerce()).getChar());
@@ -7899,6 +7878,18 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 				}
 			}
 		}
+	}
+
+	if (kBuilding.isWater())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_WATER"));
+	}
+
+	if (kBuilding.isRiver())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_RIVER"));
 	}
 
 	//Rhye - start comment
@@ -10535,6 +10526,8 @@ void CvGameTextMgr::buildImprovementString(CvWStringBuffer &szBuffer, TechTypes 
 {
 	bool bTechFound;
 	int iJ;
+
+	if (GC.getBuildInfo((BuildTypes)iImprovement).isGraphicalOnly()) return;
 
 	bTechFound = false;
 
