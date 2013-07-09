@@ -173,7 +173,7 @@
 		<English>It is the year 1128 AD. Portugal has just defeated Spain and gained independence. Situated at the western end of Europe, the kingdom is in an excellent position to send ships to ports all over the world and control the trade of all of Europe, Africa and Asia.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_PORTUGAL_</Tag>
+		<Tag>TXT_KEY_DOM_PORTUGAL_1700AD</Tag>
 		<English>It is the year 1700 AD. In the last century, Portugal has regained its independence from the Spanish crown. Many of its colonial possessions have been lost to the Dutch, but Brazil is still under Portuguese control and promises wealth for the future.</English>
 	</TEXT>
 	<TEXT>
@@ -197,12 +197,24 @@
 		<English>It is the year 1206 AD. Although Muslim rulers have occasionally raided India for centuries, the foundation of the Delhi Sultanate by Muhammad of Ghor marks the establishment of Islam as a political power on the subcontinent. Their successors, including the Muslim Mughal dynasty, would spread their faith all over India and erect its greatest architectural wonders since ancient times.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_MUGHALS_1700AD</Tag>
+		<English>It is the year 1700 AD. The Mughal Empire has reached its zenith. While culture and architecture are still thriving, the Mughals are falling behind in military power and the gains of various European powers on India's coasts are starting to become threatening ...</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_TURKEY</Tag>
 		<English>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_TURKEY_1700AD</Tag>
+		<English>It is the year 1700 AD. With the defeat at the Siege of Vienna, the military expansion of the Ottoman Empire has come to an end and it is on the defensive against the growing power of Austria and Russia. This change in the balance of power leads to increased cultural contact and exchange with the Europeans and a flowering of Ottoman culture.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_THAILAND</Tag>
 		<English>It is the year 1350 AD. The collapse of the Khmer Empire has allowed the Thai people to claim hegemony over South East Asia. They were able to raze the Khmer capital of Angkor and found their own kingdom west of it, in Ayutthaya.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_THAILAND_1700AD</Tag>
+		<English>It is the year 1700 AD. With excellent relations with the new European powers in South Asia and controlling one of the largest cities in the world, the Kingdom of Ayutthaya is in an advantageous condition. However, the threat from their Burmese neighbors is beginning to grow and even the Europeans might consider colonization ...</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_GERMANY</Tag>
@@ -225,8 +237,16 @@
 		<English>It is the year 1025 AD. After the Christianization of the West Slavs in 966, the first Polish ruler is coronated as king. Fertile lands promise urban growth, while pagan neighbors to the north and declining Orthodox polities to the east offer opportunities for expansion.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_POLAND_1700AD</Tag>
+		<English>It is the year 1700 AD. Cossack uprisings and the Swedish deluge have severely weakened the Polish-Lithuanian Commonwealth, and the decentralized political system is incapable of reform. Encircled by the growing powers of Prussia, Austria and Russia, the very independence of Poland is in danger ...</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_CONGO</Tag>
 		<English>It is the year 1390 AD. The Kingdom of Kongo emerges after the unification of several tribal polities in the Congo delta just when European powers start to expand their influence in Africa. It must try to keep its independence by both religious and economic means.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_CONGO_1700AD</Tag>
+		<English>It is the year 1700 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and often the slave trade remains as the only viable source of income.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_ARGENTINA</Tag>

@@ -5306,7 +5306,7 @@ void CvPlayer::doGoody(CvPlot* pPlot, CvUnit* pUnit)
 	FAssertMsg(pPlot->isGoody(), "pPlot->isGoody is expected to be true");
 
 	pPlot->removeGoody();
-	if (!isBarbarian())
+	if (!isBarbarian() && !isMinorCiv()) // Leoreth: minors cannot take goodies
 	{
 		for (int iI = 0; iI < GC.getDefineINT("NUM_DO_GOODY_ATTEMPTS"); iI++)
 		{

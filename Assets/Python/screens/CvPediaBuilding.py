@@ -258,6 +258,11 @@ class CvPediaBuilding:
 						bFirst = false
 					screen.attachImageButton( panelName, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iPrereq, -1, False )
 				
+		# Leoreth: add civic button
+		iPrereq = gc.getBuildingInfo(self.iBuilding).getPrereqCivic()
+		if iPrereq >= 0:
+			screen.attachImageButton(panelName, "", gc.getCivicInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIVIC, iPrereq, -1, False)
+				
 		# add religion button
 		iPrereq = gc.getBuildingInfo(self.iBuilding).getPrereqReligion()
 		if (iPrereq >= 0):
@@ -338,7 +343,7 @@ class CvPediaBuilding:
 				#listBuildings.append(iBuilding)
 				#iCount += 1
 				# Leoreth: don't display embassies and corporation headquarters
-                                if (iBuilding not in [con.iPlague, con.iBabylonGarden, con.iHarappanBath, con.iChinesePavillion, con.iNativeAmericaTotem] and iBuilding not in range(con.iEgyEmbassy,con.iBraEmbassy+1)):
+                                if (iBuilding not in [con.iPlague, con.iBabylonGarden, con.iHarappanBath, con.iChinesePavillion, con.iNativeAmericaTotem] and iBuilding not in range(con.iEgyEmbassy,con.iBraEmbassy+1) and not gc.getBuildingInfo(iBuilding).isGraphicalOnly()):
                                         listBuildings.append(iBuilding)
                                         iCount += 1
 				#Rhye - end
