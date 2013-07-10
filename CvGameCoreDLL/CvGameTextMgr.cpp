@@ -9692,6 +9692,22 @@ void CvGameTextMgr::setReligionHelp(CvWStringBuffer &szBuffer, ReligionTypes eRe
 			}
 		}
 	}
+
+	if (eReligion == PROTESTANTISM)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_RELIGION_REFORMATION"));
+	}
+	else if (eReligion == ORTHODOXY)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_RELIGION_FOUND_ORTHODOXY"));
+	}
+	else if (eReligion == BUDDHISM)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_RELIGION_FOUND_BUDDHISM"));
+	}
 }
 
 void CvGameTextMgr::setReligionHelpCity(CvWStringBuffer &szBuffer, ReligionTypes eReligion, CvCity *pCity, bool bCityScreen, bool bForceReligion, bool bForceState, bool bNoStateReligion)

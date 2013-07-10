@@ -6254,7 +6254,7 @@ void CvGame::doHolyCity()
 			{
 				if (GET_TEAM((TeamTypes)iJ).isAlive())
 				{
-					if (GET_TEAM((TeamTypes)iJ).isHasTech((TechTypes)(GC.getReligionInfo((ReligionTypes)iI).getTechPrereq())))
+					if (GC.getReligionInfo((ReligionTypes)iI).getTechPrereq() != -1 && GET_TEAM((TeamTypes)iJ).isHasTech((TechTypes)(GC.getReligionInfo((ReligionTypes)iI).getTechPrereq())))
 					{
 						if (GET_TEAM((TeamTypes)iJ).getNumCities() > 0)
 						{

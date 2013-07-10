@@ -8928,7 +8928,8 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			}
 			if ((pLoopCity->getX() == 60 && pLoopCity->getY() == 44) || (pLoopCity->getX() == 73 && pLoopCity->getY() == 38)) //Rome or Jerusalem
 			{
-				iValue *= 2;
+				if (eReligion == CATHOLICISM || eReligion == ORTHODOXY || eReligion == ISLAM)
+					iValue *= 2;
 				//iValue /= 3;
 			}
 			if (pLoopCity->getX() == 59 && pLoopCity->getY() == 47) //Milan
@@ -8941,10 +8942,12 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			}
 			if (pLoopCity->getX() == 92 && pLoopCity->getY() == 39) //Varanasi
 			{
-				iValue *= 4;
+				if (eReligion == HINDUISM || eReligion == BUDDHISM)
+					iValue *= 4;
 			}
 			if (pLoopCity->getX() == 72 && pLoopCity->getY() == 29 && pLoopCity->getOwner() == (PlayerTypes)ETHIOPIA) //Aksum
-				iValue *= 4;
+				if (eReligion == CATHOLICISM)
+					iValue *= 4;
 			if (eReligion == (ReligionTypes)ZOROASTRIANISM && pLoopCity->getX() == 82 && pLoopCity->getY() == 39) //Parsa
 				iValue *= 8;
 

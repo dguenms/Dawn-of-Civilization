@@ -797,58 +797,58 @@ class RiseAndFall:
 			# London
 			x, y = con.tCapitals[0][iEngland]
 			pLondon = gc.getMap().plot(x, y).getPlotCity()
-			pLondon.changeFreeSpecialistCount(con.iGreatMerchant, 1)
+			pLondon.setFreeSpecialistCount(con.iGreatMerchant, 1)
 			
 			# Netherlands
 			x, y = con.tCapitals[0][iNetherlands]
 			pAmsterdam = gc.getMap().plot(x, y).getPlotCity()
-			pAmsterdam.changeFreeSpecialistCount(con.iGreatMerchant, 2)
+			pAmsterdam.setFreeSpecialistCount(con.iGreatMerchant, 2)
 			
 			# Hamburg
 			x, y = con.tHamburg
 			pHamburg = gc.getMap().plot(x, y).getPlotCity()
-			pHamburg.changeFreeSpecialistCount(con.iGreatMerchant, 1)
+			pHamburg.setFreeSpecialistCount(con.iGreatMerchant, 1)
 			pHamburg.setCulture(iNetherlands, 0, True)
 			gc.getMap().plot(x, y).setCulture(iNetherlands, 0, True)
 			
 			# Milan
 			x, y = con.tMilan
 			pMilan = gc.getMap().plot(x, y).getPlotCity()
-			pMilan.changeFreeSpecialistCount(con.iGreatMerchant, 2)
-			pMilan.changeFreeSpecialistCount(con.iGreatEngineer, 1)
+			pMilan.setFreeSpecialistCount(con.iGreatMerchant, 2)
+			pMilan.setFreeSpecialistCount(con.iGreatEngineer, 1)
 			
 			# Kyoto
 			x, y = con.tCapitals[0][iJapan]
 			pKyoto = gc.getMap().plot(x, y).getPlotCity()
-			pKyoto.changeFreeSpecialistCount(con.iGreatMerchant, 1)
+			pKyoto.setFreeSpecialistCount(con.iGreatMerchant, 1)
 			
 			# Mecca
 			pMecca = gc.getGame().getHolyCity(con.iIslam)
-			pMecca.changeFreeSpecialistCount(con.iGreatPriest, 2)
+			pMecca.setFreeSpecialistCount(con.iGreatPriest, 2)
 			
 			# Rome
 			x, y = con.tCapitals[0][iRome]
 			pRome = gc.getMap().plot(x, y).getPlotCity()
-			pRome.changeFreeSpecialistCount(con.iGreatPriest, 1)
+			pRome.setFreeSpecialistCount(con.iGreatPriest, 1)
 			
 			# Baghdad
 			x, y = con.tBaghdad
 			pBaghdad = gc.getMap().plot(x, y).getPlotCity()
-			pBaghdad.changeFreeSpecialistCount(con.iGreatPriest, 1)
+			pBaghdad.setFreeSpecialistCount(con.iGreatPriest, 1)
 			
 			# Pataliputra
 			pPataliputra = gc.getGame().getHolyCity(con.iHinduism)
-			pPataliputra.changeFreeSpecialistCount(con.iGreatPriest, 2)
+			pPataliputra.setFreeSpecialistCount(con.iGreatPriest, 2)
 			
 			# Lhasa
 			x, y = con.tCapitals[0][iTibet]
 			pLhasa = gc.getMap().plot(x, y).getPlotCity()
-			pLhasa.changeFreeSpecialistCount(con.iGreatPriest, 2)
+			pLhasa.setFreeSpecialistCount(con.iGreatPriest, 2)
 			
 			# Ayutthaya
 			x, y = con.tCapitals[0][iThailand]
 			pAyutthaya = gc.getMap().plot(x, y).getPlotCity()
-			pAyutthaya.changeFreeSpecialistCount(con.iGreatPriest, 1)
+			pAyutthaya.setFreeSpecialistCount(con.iGreatPriest, 1)
 			
 	def flipStartingTerritory(self):
 	

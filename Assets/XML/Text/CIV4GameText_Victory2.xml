@@ -959,12 +959,12 @@
 		<English>South America</English>
 		<German>Südamerika</German>
 	</TEXT>
-	<!--TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_44</Tag>
 		<English>Central America</English>
 		<German>Mittelamerika</German>
 	</TEXT>
-	<TEXT>
+	<!--TEXT>
 		<Tag>TXT_KEY_UHV_AREA_45</Tag>
 		<English>Western North America</English>
 		<German>Westliches Nordamerika</German>

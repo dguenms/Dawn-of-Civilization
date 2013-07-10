@@ -1099,7 +1099,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	// Leoreth: protect recently spawned civs for ten turns to avoid early attack exploits
 	if (eTeam < NUM_MAJOR_PLAYERS)
 	{
-		if (GC.getGameINLINE().getGameTurn() - getTurnForYear(startingTurnYear[(int)eTeam]) < 10 || GC.getGameINLINE().getGameTurn() - GET_PLAYER((PlayerTypes)eTeam).getLatestRebellionTurn() < 10)
+		if (GC.getGameINLINE().getGameTurn() - getScenarioStartTurn() > 10 && (GC.getGameINLINE().getGameTurn() - getTurnForYear(startingTurnYear[(int)eTeam]) < 10 || GC.getGameINLINE().getGameTurn() - GET_PLAYER((PlayerTypes)eTeam).getLatestRebellionTurn() < 10))
 		{
 			return false;
 		}
@@ -5360,7 +5360,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					{
 						for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 						{
-							if (GC.getReligionInfo((ReligionTypes)iI).getTechPrereq() == eIndex)
+							if (GC.getReligionInfo((ReligionTypes)iI).getTechPrereq() == eIndex && eIndex != -1)
 							{
 
 								iBestValue = MAX_INT;
