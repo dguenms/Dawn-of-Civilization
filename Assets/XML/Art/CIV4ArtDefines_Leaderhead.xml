@@ -881,7 +881,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SAN_MARTIN</Type>
-			<Button>Art/Leaderheads/Peron/Btn_LH_Peron.dds</Button>
+			<Button>Art/Leaderheads/Jose_SanMartin/SanMartin.dds</Button>
 			<NIF>Art/LeaderHeads/Jose_SanMartin/Jose_SanMartin.nif</NIF>
 			<KFM>Art/LeaderHeads/Jose_SanMartin/Jose_SanMartin.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Jose_SanMartin/Jose_SanMartin.nif</NoShaderNIF>

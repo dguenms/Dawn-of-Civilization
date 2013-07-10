@@ -11,7 +11,7 @@
 			<Description>TXT_KEY_RELIGION_JUDAISM</Description>
 			<Adjective>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_JUDAISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_REFORMATION</TechPrereq>
+			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_JEWISH_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
 			<iSpreadFactor>100</iSpreadFactor>
@@ -77,7 +77,7 @@
 			<Description>TXT_KEY_RELIGION_ORTHODOXY</Description>
 			<Adjective>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ORTHODOXY_PEDIA</Civilopedia>
-			<TechPrereq>TECH_REFORMATION</TechPrereq>
+			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ORTHODOX_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>70</iSpreadFactor>
@@ -176,7 +176,7 @@
 			<Adjective>TXT_KEY_RELIGION_BUDDHISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_BUDDHISM_PEDIA</Civilopedia>
 			<!-- Rhye -->
-			<TechPrereq>TECH_BUDDHISM</TechPrereq>
+			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_BUDDHIST_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>2</iFreeUnits>
 			<iSpreadFactor>140</iSpreadFactor> <!-- Rhye -->

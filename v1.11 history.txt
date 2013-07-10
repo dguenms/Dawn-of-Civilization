@@ -44,7 +44,7 @@
 	# Unique Power: Arid Agriculture (can build farms on hills)
 	# Unique Historical Victory:
 		# Build three cathedrals of your state religion by 1880 AD
-		# Create three great generals by 1920 AD
+		# Create three great generals by 1940 AD
 		# Make Mexico City the largest city in the world in 1960 AD
 # harbors can now be built in cities situated at lakes
 # added the Machu Picchu wonder: +2 gold per peak tile in city radius
@@ -155,3 +155,4 @@
 # opened the Canary Islands for settlement
 # minor civs cannot take goody huts
 # civilopedia now better displays building requirements (civics, coast, river)
+# civilopedia now better displays religion requirements

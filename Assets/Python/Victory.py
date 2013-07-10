@@ -696,7 +696,6 @@ class Victory:
 				utils.setGoal(iVikings, i, 0)
 				utils.setGoal(iSpain, i, 0)
 				utils.setGoal(iHolyRome, i, 0)
-				utils.setGoal(iRussia, i, 0)
 				utils.setGoal(iPoland, i, 0)
 				utils.setGoal(iPortugal, i, 0)
 				utils.setGoal(iMughals, i, 0)
@@ -708,6 +707,7 @@ class Victory:
 			utils.setGoal(iJapan, 0, 1)
 			utils.setGoal(iFrance, 0, 1)
 			# England
+			utils.setGoal(iRussia, 0, 1)
 			utils.setGoal(iCongo, 0, 1)
 			# Netherlands
 			
@@ -2259,7 +2259,7 @@ class Victory:
 					#	else:
 					#		self.setGoal(iAztecs, 1, 0)
 					
-					if iGameTurn == getTurnForYear(1920):
+					if iGameTurn == getTurnForYear(1940):
 						if self.getGoal(iAztecs, 1) == -1:
 							self.setGoal(iAztecs, 1, 0)
 							

@@ -31,4 +31,16 @@ Der Begründer des Zarathustrismus war Zarathustra (griech. Zoroaster), über dess
 Obwohl die Zoroastrier mehrere Gottheiten (z. B. Anahita oder Mithra) kennen, ist die Religion grundsätzlich vom Dualismus zwischen Ahura Mazda und Ahriman geprägt: "Und im Anbeginn waren diese beiden Geister, die Zwillinge, die nach ihrem eigenen Worte das Gute und das Böse im Denken, Reden und Tun heißen. Zwischen ihnen haben die Guthandelnden richtig gewählt." In der Spätantike war unter den Sassaniden die zurvanistische Variante des Zoroastrismus weit verbreitet, in der der gute und der böse Geist als die Kinder der "unendlichen Zeit" (Zurvan/Zervan) galten.
 Der Zoroastrismus ist eine Schriftreligion und basiert auf der heiligen Schrift Avesta. Gottesbilder sind dem Zoroastrismus fremd. Er kennt allerdings Feuertempel.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_REFORMATION</Tag>
+		<English>[ICON_BULLET]Founding Protestantism triggers the Reformation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_FOUND_ORTHODOXY</Tag>
+		<English>[ICON_BULLET]Founded when the Apostolic Palace is built</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_FOUND_BUDDHISM</Tag>
+		<English>[ICON_BULLET]Founded when a Hindu Temple is built</English>
+	</TEXT>
 </Civ4GameText>
