@@ -632,6 +632,7 @@ class RiseAndFall:
 			self.init1700ADDiplomacy()
 			self.set1700ADStability()
 			self.prepareColonists()
+			self.adjust1700ADCulture()
 			
 			pPersia.setReborn()
 			pHolyRome.setReborn()
@@ -649,6 +650,14 @@ class RiseAndFall:
 			
 		for city in lCities:
 			city.setCulture(city.getOwner(), utils.getTurns(city.getCulture(city.getOwner())), True)
+			
+	def adjust1700ADCulture(self):
+	
+		for x in range(124):
+			for y in range(68):
+				plot = gc.getMap().plot(x, y)
+				if plot.getOwner() != -1:
+					utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
 			
 	def prepareColonists(self):
 	
@@ -798,6 +807,11 @@ class RiseAndFall:
 			x, y = con.tCapitals[0][iEngland]
 			pLondon = gc.getMap().plot(x, y).getPlotCity()
 			pLondon.setFreeSpecialistCount(con.iGreatMerchant, 1)
+			
+			# Paris
+			x, y = con.tCapitals[0][iFrance]
+			pParis = gc.getMap().plot(x, y).getPlotCity()
+			pParis.setFreeSpecialistCount(con.iGreatScientist, 1)
 			
 			# Netherlands
 			x, y = con.tCapitals[0][iNetherlands]
@@ -4145,6 +4159,7 @@ class RiseAndFall:
 		tCapital = tCapitals[0][iJapan]
 		utils.makeUnit(con.iMusketman, iJapan, tCapital, 10)
 		utils.makeUnit(con.iBombard, iJapan, tCapital, 4)
+		if utils.getHumanID() != iJapan: utils.makeUnit(con.iSettler, iJapan, tCapital, 1)
 		
 		# Vikings
 		tCapital = con.tStockholm
@@ -4181,7 +4196,7 @@ class RiseAndFall:
 		utils.makeUnit(con.iBombard, iRussia, tCapital, 4)
 		
 		# Poland
-		tCapital = tCapitals[0][iPoland]
+		tCapital = con.tWarsaw
 		utils.makeUnit(con.iMusketman, iPoland, tCapital, 4)
 		utils.makeUnit(con.iPolishWingedHussar, iPoland, tCapital, 6)
 		utils.makeUnit(con.iBombard, iPoland, tCapital, 2)
@@ -4545,7 +4560,7 @@ class RiseAndFall:
 			teamSpain.setHasTech(iTech, True, iSpain, False, False)
 			
 		lFrenchTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iMilitaryScience, con.iReplaceableParts, con.iRifling, con.iLiberalism,
-				con.iAstronomy]
+				con.iAstronomy, con.iConstitution]
 		lFrenchTechs.extend(lMedievalTechs)
 		for iTech in lFrenchTechs:
 			teamFrance.setHasTech(iTech, True, iFrance, False, False)

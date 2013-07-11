@@ -100,9 +100,9 @@ tAustraliaTL = (103, 5)
 tAustraliaBR = (123, 22)
 
 # new capital locations
-tVienna = (63, 49)
-tWarsaw = (66, 52)
-tStockholm = (63, 58)
+tVienna = (62, 49)
+tWarsaw = (65, 52)
+tStockholm = (63, 59)
 tIstanbul = (68, 45)
 tBeijing = (102, 47)
 tEsfahan = (81, 41)
@@ -991,7 +991,7 @@ tCapitals = (
 (53, 54), #tLondon
 #(62, 52), #tBerlin
 #(63, 49), #tVienna
-(59, 50), #Frankfurt
+(59, 51), #Frankfurt
 (73, 54), #tMoskow
 (53, 31), #tTimbuktu
 (65, 51), #Krakow
@@ -1005,7 +1005,7 @@ tCapitals = (
 (101, 33), #Ayutthaya
 (62, 20), #Mbanza Kongo
 (57, 53), #tAmsterdam
-(62, 52), #Berlin
+(62, 53), #Berlin
 (27, 46), #tWashington
 (34, 11), #Buenos Aires
 (41, 18), #Rio de Janeiro
@@ -1037,7 +1037,7 @@ tCapitals = (
 (55, 50), #tParis
 (53, 54), #tLondon
 #(62, 52), #tBerlin
-(63, 49), #tVienna
+(62, 49), #tVienna
 #(59, 50), #Frankfurt
 (73, 54), #tMoskow
 (53, 31), #tTimbuktu
@@ -1052,7 +1052,7 @@ tCapitals = (
 (101, 33), #Ayutthaya
 (62, 20), #Mbanza Kongo
 (57, 53), #tAmsterdam
-(62, 52), #Berlin
+(62, 53), #Berlin
 (27, 46), #tWashington
 (34, 11), #Buenos Aires
 (41, 18), #Rio de Janeiro
@@ -1824,7 +1824,7 @@ tRespawnCapitals = (
 -1,		# Spain
 -1,		# France
 -1,		# England
-(63, 49), #Vienna
+(62, 49), #Vienna
 -1,		# Russia
 -1,		# Mali
 -1,		# Poland
