@@ -25782,7 +25782,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=29
-	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -30678,6 +30677,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=55
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

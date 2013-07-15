@@ -1119,7 +1119,7 @@ tCoreAreasTL = (
 (20, 35), #Maya
 (64, 38), #Byzantium
 (111, 41), #Japan
-(57, 57), #Vikings
+(58, 56), #Vikings
 (67, 30), #Arabia	73,30
 (92, 41), #Tibet
 (100, 32), #Khmer
@@ -1161,7 +1161,7 @@ tCoreAreasTL = (
 (25, 27), #Colombia
 (64, 41), #Byzantium
 (111, 41), #Japan
-(57, 57), #Vikings
+(58, 56), #Vikings
 (73, 30), #Arabia
 (92, 41), #Tibet
 (100, 32), #Khmer
@@ -1205,7 +1205,7 @@ tCoreAreasBR = (
 (23, 37), #Maya
 (74, 45), #Byzantium
 (116, 49), #Japan
-(70, 65), #Vikings
+(64, 62), #Vikings
 (80, 40), #Arabia	81,39
 (98, 45), #Tibet
 (103, 36), #Khmer
@@ -1214,10 +1214,10 @@ tCoreAreasBR = (
 (53, 46), #Spain
 (57, 52), #France
 (54, 60), #England   57 without Scotland
-(65, 54), #Holy Rome
-(74, 57), #Russia
+(64, 54), #Holy Rome
+(74, 58), #Russia
 (57, 31), #Mali
-(67, 54), #Poland
+(67, 55), #Poland
 (50, 44), #Portugal
 (29, 24), #Inca
 (63, 47), #Italy
@@ -1227,8 +1227,8 @@ tCoreAreasBR = (
 (77, 48), #Turkey
 (103, 36), #Thailand
 (65, 22), #Congo
-(58, 53), #Holland
-(66, 54), #Germany
+(58, 54), #Holland
+(66, 55), #Germany
 (32, 50), #America
 (36, 13), #Argentina
 (43, 27), #Brazil
@@ -1247,7 +1247,7 @@ tCoreAreasBR = (
 (29, 32), #Colombia
 (74, 45), #Byzantium
 (116, 49), #Japan
-(70, 65), #Vikings
+(64, 62), #Vikings
 (81, 39), #Arabia
 (98, 45), #Tibet
 (103, 36), #Khmer
@@ -1257,9 +1257,9 @@ tCoreAreasBR = (
 (57, 52), #France
 (54, 60), #England   57 without Scotland
 (66, 50), #Holy Rome
-(74, 57), #Russia
+(74, 58), #Russia
 (57, 31), #Mali
-(67, 54), #Poland
+(67, 55), #Poland
 (50, 44), #Portugal
 (29, 24), #Inca
 (63, 47), #Italy
@@ -1269,8 +1269,8 @@ tCoreAreasBR = (
 (77, 48), #Turkey
 (103, 36), #Thailand
 (65, 22), #Congo
-(58, 53), #Holland
-(66, 54), #Germany
+(58, 54), #Holland
+(66, 55), #Germany
 (32, 50), #America
 (36, 13), #Argentina
 (43, 27), #Brazil
@@ -1292,7 +1292,7 @@ tExceptions = (  #for RiseAndFall
 (), #Maya
 (), #Byzantium
 (), #Japan
-((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
+(), #Vikings
 ((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
 ((98, 42),), #Tibet
 (), #Khmer
@@ -1301,7 +1301,7 @@ tExceptions = (  #for RiseAndFall
 ((49, 41), (49, 42), (49, 43), (49, 44)), #Spain
 ((55, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50), (53, 46), (52, 46), (51, 46), (57, 46)), #France
 (), #England
-((62, 47), (63, 47), (64, 47), (58, 51), (58, 52), (58, 53), (57, 53), (65, 55), (66, 55), (66, 56)),  #Holy Rome
+((64, 51), (64, 52), (64, 53), (64, 54)),  #Holy Rome
 ((68, 58), (69, 58), (70, 58), (65, 55), (66, 55), (66, 56)), #Russia
 (), #Mali
 ((63, 50), (64, 50)), #Poland
@@ -1315,7 +1315,7 @@ tExceptions = (  #for RiseAndFall
 (), #Thailand
 (), #Congo
 ((57, 51), (58, 51)), #Holland
-((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (58, 52), (58, 53)),  #Germany
+((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (58, 52), (58, 53), (62, 51), (63, 51)),  #Germany
 ((25, 48), (25, 49), (26, 48), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50)), #America
 ((35, 12), (35, 13), (36, 12), (36, 13)), #Argentina
 (), #Brazil
@@ -1334,7 +1334,7 @@ tExceptions = (  #for RiseAndFall
 (), #Maya
 (), #Byzantium
 (), #Japan
-((59, 55), (60, 55), (62, 55), (59, 56), (62, 56), (63, 56)), #Vikings
+(), #Vikings
 ((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
 ((98, 42),), #Tibet
 (), #Khmer
@@ -1357,7 +1357,7 @@ tExceptions = (  #for RiseAndFall
 (), #Thailand
 (), #Congo
 ((57, 51), (58, 51)), #Holland
-((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51)),  #Germany
+((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (62, 51), (63, 51)),  #Germany
 ((25, 48), (25, 49), (26, 48), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50)), #America
 ((35, 12), (35, 13), (36, 12), (36, 13)), #Argentina
 (), #Brazil
@@ -1382,7 +1382,7 @@ tNormalAreasTL = (
 (20, 32), #Maya
 (64, 40), #Byzantium
 (111, 41), #Japan
-(57, 55), #Vikings
+(58, 56), #Vikings
 (72, 30), #Arabia
 (92, 41), #Tibet
 (98, 26), #Khmer
@@ -1424,7 +1424,7 @@ tNormalAreasTL = (
 (24, 26), #Colombia
 (64, 40), #Byzantium
 (111, 41), #Japan
-(57, 55), #Vikings
+(58, 56), #Vikings
 (73, 30), #Arabia
 (92, 41), #Tibet
 (98, 26), #Khmer
@@ -1480,7 +1480,7 @@ tNormalAreasBR = (
 (65, 54), #Holy Rome
 (83, 62), #Russia
 (60, 33), #Mali
-(67, 54), #Poland
+(69, 55), #Poland
 (50, 44), #Portugal
 (30, 29), #Inca
 (63, 47), #Italy
@@ -1490,8 +1490,8 @@ tNormalAreasBR = (
 (78, 49), #Turkey
 (103, 37), #Thailand
 (65, 22), #Congo
-(58, 53), #Holland
-(66, 54), #Germany
+(58, 54), #Holland
+(66, 55), #Germany
 (31, 49), #America
 (36, 15), #Argentina
 (43, 28), #Brazil
@@ -1522,7 +1522,7 @@ tNormalAreasBR = (
 (66, 50), #Holy Rome
 (83, 62), #Russia
 (60, 33), #Mali
-(67, 54), #Poland
+(69, 55), #Poland
 (50, 44), #Portugal
 (30, 29), #Inca
 (63, 47), #Italy
@@ -1532,8 +1532,8 @@ tNormalAreasBR = (
 (78, 49), #Turkey
 (103, 37), #Thailand
 (65, 22), #Congo
-(58, 53), #Holland
-(66, 54), #Germany
+(58, 54), #Holland
+(66, 55), #Germany
 (31, 49), #America
 (36, 15), #Argentina
 (43, 28), #Brazil
@@ -1555,7 +1555,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 (), #Maya
 (), #Byzantium
 ((111, 52), (112, 52), (111, 51)), #Japan
-((65, 55), (66, 55), (67, 55), (66, 56), (67, 56)), #Vikings
+((65, 56), (66, 56), (67, 56), (66, 57), (67, 57)), #Vikings
 ((81, 38), (82, 38), (82, 37)),  #Arabia
 (), #Tibet
 (), #Khmer
@@ -1596,7 +1596,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 (), #Maya
 (), #Byzantium
 ((111, 52), (112, 52), (111, 51)), #Japan
-((65, 55), (66, 55), (67, 55), (66, 56), (67, 56)), #Vikings
+((65, 56), (66, 56), (67, 56), (66, 57), (67, 57)), #Vikings
 ((81, 38), (82, 38), (82, 37)),  #Arabia
 (), #Tibet
 (), #Khmer
@@ -1642,7 +1642,7 @@ tBroaderAreasTL = (
 (19, 30), #Maya
 (58, 34), #Byzantium
 (110, 40), #Japan
-(57, 55), #Vikings
+(58, 56), #Vikings
 (64, 30), #Arabia
 (92, 41), #Tibet
 (97, 25), #Khmer
@@ -1651,7 +1651,7 @@ tBroaderAreasTL = (
 (49, 38), #Spain
 (49, 44), #France
 (48, 53), #England
-(55, 46), #Holy Rome
+(58, 43), #Holy Rome
 (65, 48), #Russia
 (48, 21), #Mali
 (63, 50), #Poland
@@ -1684,7 +1684,7 @@ tBroaderAreasTL = (
 (33, 32), #Colombia
 (64, 38), #Byzantium
 (110, 40), #Japan
-(57, 55), #Vikings
+(58, 56), #Vikings
 (64, 30), #Arabia
 (92, 41), #Tibet
 (97, 25), #Khmer
@@ -1737,10 +1737,10 @@ tBroaderAreasBR = (
 (55, 46), #Spain
 (61, 52), #France
 (54, 60), #England
-(66, 56), #Holy Rome
+(64, 54), #Holy Rome
 (92, 59), #Russia
 (67, 32), #Mali
-(67, 54), #Poland
+(67, 55), #Poland
 (51, 45), #Portugal
 (30, 27), #Inca
 (65, 47), #Italy
@@ -1750,8 +1750,8 @@ tBroaderAreasBR = (
 (86, 49), #Turkey
 (105, 39), #Thailand
 (65, 22), #Congo
-(58, 53), #Holland
-(67, 56), #Germany
+(58, 54), #Holland
+(67, 57), #Germany
 (37, 56), #America
 (36, 15), #Argentina
 (43, 28), #Brazil
@@ -1782,7 +1782,7 @@ tBroaderAreasBR = (
 (66, 50), #Holy Rome
 (92, 59), #Russia
 (67, 32), #Mali
-(67, 54), #Poland
+(67, 55), #Poland
 (51, 45), #Portugal
 (30, 27), #Inca
 (65, 47), #Italy
@@ -1792,8 +1792,8 @@ tBroaderAreasBR = (
 (86, 49), #Turkey
 (105, 39), #Thailand
 (65, 22), #Congo
-(58, 53), #Holland
-(67, 56), #Germany
+(58, 54), #Holland
+(67, 57), #Germany
 (37, 56), #America
 (36, 15), #Argentina
 (43, 28), #Brazil

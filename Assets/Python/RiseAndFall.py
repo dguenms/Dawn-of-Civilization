@@ -792,7 +792,7 @@ class RiseAndFall:
 			tCapital = con.tCapitals[0][iByzantium]
 			lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, con.iGrocer, \
 				      con.iOrthodoxTemple, con.iByzantineHippodrome, con.iOrthodoxShrine, con.iTheodosianWalls]
-			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [con.iChristianity, con.iOrthodoxy])
+			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 100, lBuildings, [con.iChristianity, con.iOrthodoxy])
 			gc.getGame().setHolyCity(con.iOrthodoxy, city, False)
 			
 			# China

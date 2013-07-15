@@ -154,7 +154,7 @@ class Resources:
 				gc.getMap().plot(x, y).setRouteType(iRoad)
 
                 if (iGameTurn == getTurnForYear(1250)):
-                        gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
+                        #gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
 			gc.getMap().plot(96, 37).setBonusType(iFish)  #Calcutta/Dhaka/Pagan
 
 		if iGameTurn == getTurnForYear(1350):
@@ -166,6 +166,8 @@ class Resources:
 			gc.getMap().plot(36, 54).setBonusType(-1) #remove marsh in Newfoundland
 			
 			gc.getMap().plot(56, 54).setBonusType(iFish) #Amsterdam
+			gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
+			gc.getMap().plot(58, 52).setBonusType(iCow) #Amsterdam
                         
                 if (iGameTurn == getTurnForYear(1600)):
                         gc.getMap().plot(28, 46).setBonusType(iCow) #Washington area
@@ -239,6 +241,8 @@ class Resources:
 			gc.getMap().plot(39, 16).setBonusType(iFish) #Brazil
 			
 			gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
+			
+			gc.getMap().plot(70, 59).setBonusType(con.iDeer)
 			
 		if iGameTurn == getTurnForYear(1800):
 			if gc.getDefineINT("PLAYER_RESPAWN_MEXICO") != 0:
