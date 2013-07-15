@@ -156,3 +156,5 @@
 # minor civs cannot take goody huts
 # civilopedia now better displays building requirements (civics, coast, river)
 # civilopedia now better displays religion requirements
+# pastures and plantation yield +1 commerce with railroads
+# pastures yield +1 food with Refrigeration

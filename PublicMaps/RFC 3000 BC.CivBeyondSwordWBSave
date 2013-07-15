@@ -30280,6 +30280,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=55
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
