@@ -3373,7 +3373,7 @@ class Victory:
 		iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
 		
 		# Maya third goal: get a great general
-		if iPlayer == iMaya:
+		if iPlayer == iMaya and not utils.isReborn(iMaya):
 			if self.getGoal(iMaya, 2) == -1:
 				if pUnitInfo.getGreatPeoples(iGreatGeneral):
 					self.setGoal(iMaya, 2, 1)

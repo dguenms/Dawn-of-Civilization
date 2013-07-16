@@ -6782,12 +6782,7 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return 82393;
 	}
 
-	if (NULL == m_aiFoundValue)
-	{
-		return 0;
-	}
-
-	if (getX_INLINE() == 101 && getY_INLINE() == 37)
+	if ((getX_INLINE() == 101 && getY_INLINE() == 37) || (GET_PLAYER(eIndex).getSettlersMaps(EARTH_Y-1-getY_INLINE(), getX_INLINE()) >= 800))
 	{
 		int iValue = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, false);
 		if (iValue > area()->getBestFoundValue(eIndex))
@@ -6796,6 +6791,11 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		}
 
 		return iValue;
+	}
+
+	if (NULL == m_aiFoundValue)
+	{
+		return 0;
 	}
 
 	if (m_aiFoundValue[eIndex] == -1 || eIndex == NETHERLANDS)

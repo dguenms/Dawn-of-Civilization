@@ -37,7 +37,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_BYZANTIUM</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Russia.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,2,4</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Byzantium.dds</Button>
 			<!-- Rhye -->			
 			<Path>Art/Interface/TeamColor/FlagDECAL_Labarum.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
@@ -59,7 +59,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_CHINA</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/China.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,5,5</Button>
+			<Button>Art/Interface/Buttons/Civilizations/China.dds</Button>
 			<!-- Rhye -->
 			<Path>Art/Interface/TeamColor/FlagDECAL_Dragon3.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
@@ -72,7 +72,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_ENGLAND</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/England.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,7,5</Button>
+			<Button>Art/Interface/Buttons/Civilizations/England.dds</Button>
 			<!-- Rhye -->
 			<Path>Art/Interface/TeamColor/FlagDECAL_lions.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
@@ -141,7 +141,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_KOREA</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Spain.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,4,1</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Korea.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Ihwamun.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -274,7 +274,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_ITALY</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Rome.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,7,6</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Italy.dds</Button>
 			<!-- Rhye -->
 			<Path>Art/Interface/TeamColor/FlagDECAL_Lion_of_Marc.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
@@ -348,14 +348,14 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_MEXICO</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/Aztec.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,5</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Mexico.dds</Button>
 			<!-- Rhye -->
 			<Path>Art/Interface/TeamColor/FlagDECAL_GoldenEagle.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_BRAZIL</Type>
-			<Button>Art/Interface/Buttons/Civilizations/brazil_btn.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Brazil.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Globe.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>

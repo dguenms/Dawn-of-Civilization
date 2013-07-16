@@ -301,7 +301,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FORCED_LABOR
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SCHOLASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_PRINCE
 EndPlayer
@@ -33606,13 +33605,6 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=0
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ANIMAL
-	EndUnit
-	BeginUnit
 		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=33
 		Damage=0
 		Level=1, Experience=0
@@ -34197,13 +34189,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_LION, UnitOwner=0
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ANIMAL
-	EndUnit
 	BeginUnit
 		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=33
 		Damage=0

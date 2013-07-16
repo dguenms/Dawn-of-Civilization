@@ -1618,6 +1618,8 @@ class RFCUtils:
 	def relocateCapital(self, iPlayer, newCapital):
 		oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
 		
+		if (oldCapital.getX(), oldCapital.getY()) == con.tNewCapitals[iPlayer]: return
+		
 		newCapital.setHasRealBuilding(con.iPalace, True)
 		oldCapital.setHasRealBuilding(con.iPalace, False)
 		

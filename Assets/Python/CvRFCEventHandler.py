@@ -320,11 +320,12 @@ class CvRFCEventHandler:
 				
 		# Leoreth: relocate capital for AI if reacquired:
 		if utils.getHumanID() != iPlayer and iPlayer < con.iNumPlayers:
+			tCity = (city.getX(), city.getY())
 			if sd.scriptDict['lResurrections'][iPlayer] == 0:
-				if (city.getX(), city.getY()) == con.tCapitals[utils.getReborn(iPlayer)][iPlayer]:
+				if tCity == con.tCapitals[utils.getReborn(iPlayer)][iPlayer]:
 					utils.relocateCapital(iPlayer, city)
 			else:
-				if (city.getX(), city.getY()) == con.tRespawnCapitals[iPlayer]:
+				if tCity == con.tRespawnCapitals[iPlayer]:
 					utils.relocateCapital(iPlayer, city)
 					
 		# Leoreth: help Byzantium/Constantinople
