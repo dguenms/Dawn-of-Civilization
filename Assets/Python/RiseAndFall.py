@@ -792,7 +792,7 @@ class RiseAndFall:
 			tCapital = con.tCapitals[0][iByzantium]
 			lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, con.iGrocer, \
 				      con.iOrthodoxTemple, con.iByzantineHippodrome, con.iOrthodoxShrine, con.iTheodosianWalls]
-			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 100, lBuildings, [con.iChristianity, con.iOrthodoxy])
+			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [con.iChristianity, con.iOrthodoxy])
 			gc.getGame().setHolyCity(con.iOrthodoxy, city, False)
 			
 			# China
@@ -1290,6 +1290,7 @@ class RiseAndFall:
 		if con.tRebirthCiv[iCiv] != -1:
 			pCiv.setCivilizationType(con.tRebirthCiv[iCiv])
 		x, y = con.tRebirthPlot[iCiv]
+		plot = gc.getMap().plot(x,y)
 		
 		# disable Mexico and Colombia
 		if iCiv == iAztecs and gc.getDefineINT("PLAYER_REBIRTH_MEXICO") == 0: return
@@ -1323,18 +1324,24 @@ class RiseAndFall:
 				if gc.getMap().plot(i,j).isCity():
 					bFree = False
 
-		if gc.getMap().plot(x,y).getNumUnits() > 0:
+		if plot.getNumUnits() > 0:
 			bFree = False
 
 		# if city present, flip it. If plot is free, found it. Else give settler.
-		if gc.getMap().plot(x,y).isCity():
-			utils.completeCityFlip(x, y, iCiv, gc.getMap().plot(x, y).getPlotCity().getOwner(), 100)
+		if plot.isCity():
+			utils.completeCityFlip(x, y, iCiv, plot.getPlotCity().getOwner(), 100)
 		else:
-			utils.convertPlotCulture(gc.getMap().plot(x,y), iCiv, 100, True)
+			utils.convertPlotCulture(plot, iCiv, 100, True)
 			if bFree:
 				pCiv.found(x,y)
 			else:
 				utils.makeUnit(con.iSettler, iCiv, (x,y), 1)
+				
+		# make sure there is a palace in the city
+		if plot.isCity():
+			capital = plot.getPlotCity()
+			if not capital.hasBuilding(con.iPalace):
+				capital.setHasRealBuilding(con.iPalace, True)
 		
 		self.createRespawnUnits(iCiv, (x,y))
 		

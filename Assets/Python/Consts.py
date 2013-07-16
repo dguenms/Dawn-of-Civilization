@@ -1799,6 +1799,50 @@ tBroaderAreasBR = (
 (43, 28), #Brazil
 ))
 
+# Leoreth: new capital locations if changed during the game
+tRespawnCapitals = (
+-1,		# Egypt
+-1,		# China
+-1,		# Babylonia
+-1,		# Greece
+-1,		# India
+-1,		# Phoenicia
+-1,		# Persia
+-1,		# Rome
+-1,		# Tamils
+-1,		# Ethiopia
+-1,		# Korea
+-1,		# Maya
+-1,		# Byzantium
+(116, 46), #Tokyo
+(63, 58), #Stockholm
+-1,		# Arabia
+-1,		# Tibet
+-1,		# Khmer
+-1,		# Indonesia
+-1,		# Moors
+-1,		# Spain
+-1,		# France
+-1,		# England
+(62, 49), #Vienna
+-1,		# Russia
+-1,		# Mali
+-1,		# Poland
+-1,		# Portugal
+-1,		# Inca
+(59, 41), #Rome	# Italy
+(102, 47), # Khanbaliq
+-1,		# Aztecs
+-1,		# Mughals
+(68, 45), #Istanbul
+-1,		# Thailand
+-1,		# Congo
+-1,		# Netherlands
+-1,		# Germany
+-1,		# America
+-1, 		# Argentina
+-1)		# Brazil
+
 #Leoreth: respawn areas and capitals similar to SoI
 tRespawnCapitals = (
 (69, 35), #Al-Qahira
