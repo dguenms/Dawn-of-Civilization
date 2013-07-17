@@ -1800,7 +1800,7 @@ tBroaderAreasBR = (
 ))
 
 # Leoreth: new capital locations if changed during the game
-tRespawnCapitals = (
+tNewCapitals = (
 -1,		# Egypt
 -1,		# China
 -1,		# Babylonia

@@ -1778,6 +1778,11 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		return 0;
 	}
 
+	if (iX == 62 && (iY == 51 || iY == 52 || iY == 54))
+	{
+		return 0;
+	}
+
 	//Leoreth: if Poland exists, prevent HRE from founding cities in its core
 	if (getID() == HOLY_ROME && GET_PLAYER((PlayerTypes)POLAND).isPlayable() /* better option later when it exists */)
 	{
