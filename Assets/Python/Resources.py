@@ -245,7 +245,7 @@ class Resources:
 			gc.getMap().plot(70, 59).setBonusType(con.iDeer)
 			
 		if iGameTurn == getTurnForYear(1800):
-			if gc.getDefineINT("PLAYER_RESPAWN_MEXICO") != 0:
+			if gc.getDefineINT("PLAYER_REBIRTH_MEXICO") != 0:
 				gc.getMap().plot(17, 41).setBonusType(iHorse) # Mexico
 				gc.getMap().plot(16, 42).setBonusType(con.iIron) # Mexico
 			
