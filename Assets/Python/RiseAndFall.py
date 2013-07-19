@@ -2685,7 +2685,7 @@ class RiseAndFall:
                                 result = plotList[rndNum]
                                 if (result):
                                         self.createStartingUnits(iCiv, result)
-                                        elf.assignTechs(iCiv)
+                                        self.assignTechs(iCiv)
                                         utils.setPlagueCountdown(iCiv, -con.iImmunity)
                                         utils.clearPlague(iCiv)
                         else:
