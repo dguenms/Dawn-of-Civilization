@@ -3654,14 +3654,12 @@ class Victory:
 	# only allow the civs in lCivList in the area
 	def isAreaFreeOfCivs(self, tTopLeft, tBottomRight, lCivList):
 		lOwnerList = []
-		dummy, lCityPlotList = utils.squareSearch(tTopLeft, tBottomRight, utils.cityPlots, lCivList[0])
-		for tPlot in lCityPlotList:
-			x, y = tPlot
-			if gc.getMap().plot(x,y).getPlotCity().getOwner() not in lOwnerList:
-				lOwnerList.append(gc.getMap().plot(x,y).getPlotCity().getOwner())
-		for iCiv in lOwnerList:
-			if iCiv in lCivList or iCiv >= con.iNumPlayers:
-				lOwnerList.remove(iCiv)
+		lCities = utils.getAreaCities(tTopLeft, tBottomRight)
+		for city in lCities:
+			iOwner = city.getOwner()
+			if iOwner not in lCivList and iOwner < con.iNumPlayers:
+				if iOwner not in lOwnerList:
+					lOwnerList.append(iOwner)
 		if len(lOwnerList) == 0:
 			return True
 		else:
