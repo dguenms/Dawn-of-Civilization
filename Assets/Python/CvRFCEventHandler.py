@@ -300,7 +300,7 @@ class CvRFCEventHandler:
 				if utils.getStability(iByzantium) < -40:
 					if iOwner != utils.getHumanID():
 						if gc.getPlayer(utils.getHumanID()).canContact(iByzantium):
-							CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iOwner).getCivilizationDescription(0) + ' ' + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, Truem)
+							CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iOwner).getCivilizationDescription(0) + ' ' + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 						if gc.getGame().getGameTurn() < getTurnForYear(1400):
 							utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, iBarbarian, False)
 						else:
