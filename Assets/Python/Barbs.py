@@ -33,70 +33,46 @@ teamCeltia = gc.getTeam(pCeltia.getTeam())
 iBarbarian = con.iBarbarian
 pBarbarian = gc.getPlayer(iBarbarian)
 teamBarbarian = gc.getTeam(pBarbarian.getTeam())
-      
 
-# city coordinates, spawn 1st turn and retries
-# converted to years (3rd col.), last col. stays the same(turns) - edead
-lUr = [77, 38, -3000, 0] #0
-lJerusalem = [73, 38, -3000, 0] #0
-lBabylon = [76, 40, -3000, 0] #0
-lSusa = [79, 40, -3000, 0] #0
-lTyre = [73, 40, -3000, 0] #0 / 2700BC #turn10
-lKnossos = [69, 39, -2600, 0] #13
-lHattusas = [73, 43, -2000, 0] #34
-lSamarkand = [85, 47, -2000, 0] #34
-lNineveh = [76, 42, -1800, 0] #42
-lVaranasi = [92, 39, -2000, 0]
-lIndraprastha = [90, 40, -2000, 0]
-lGadir = [51, 40, -1100, 0] #70
-lLepcis = [61, 37, -1100, 0] #70
-lBeijing = [102, 47, -1000, 0]
-lAnkara = [72, 44, -1000, 0]
-lCarthage = [58, 39, -814, 0] #86
-lGordion = [71, 43, -800, 0] #87
-lPalermo = [60, 40, -760, 0] #94-5
-lMilan = [59, 47, -760, 0] #94-5
-lAugsburg = [60, 49, -760, 0] #94-5
-lRusadir = [54, 38, -650, 0] #97
-lLyon = [56, 47, -350, 0] #117
-#lAxum = [72, 29, -300, 0] #121
-lShenyang = [105, 49, -300, 0]
-lBordeaux = [53, 48, -300, 0] #121
-lThanjavur = [91, 31, -300, 0]
-lMadras = [92, 33, -325, 0]
-lCartagena = [54, 42, -230, 0] #125
-lArtaxata = [77, 44, -190,0] #128
-lDunhuang = [95, 47, -100, 0] #133 Orka
-lKashgar = [89, 46, -75, 0] #133 Orka
-lLutetia = [55, 50, -50, 0] #137
-#lSeoul = [109, 46, -25, 0] #139
-#lTikal = [22, 35, 60, 0] #145
-lSanaa = [76, 30, 100, 0] #147
-lPagan = [98, 36, 107, 0] #148
-#lInverness = [52, 60, 400, 0] #167
-#lEdinburgh = [52, 59, 400, 0] #167
-#lChichenItza = [23, 37, 445, 0] #170
-lBaku = [77, 45, 600, 0] #180
-lLhasa = [96, 43, 633, 0] #184
-#lAngkor = [102, 34, 802, 0] #201
-lMarrakesh = [51, 37, 680, 0]
-lTiwanaku = [30, 20, 700, 0]
-lVienna = [63, 49, 800, 0]
-lHamburg = [59, 54, 830, 0]
-lLubeck = [60, 54, 830, 0]
-lHanoi = [101, 37, 866, 0] #208
-lTucume = [24, 26, 900, 0] #211
-lChanChan = [25, 23, 900, 0]
-lKiev = [69, 52, 900, 0] #211
-lJelling = [59, 55, 980, 0] #219
-lDublin = [49, 56, 990, 0] #220
-lNidaros = [61, 62, 1000, 0] #221
-lZimbabwe = [69, 15, 1000, 0] #221
-lQuelimane = [71, 17, 1000, 0] #221
-lUppsala = [63, 58, 1070, 0] #228
-lMombasa = [71, 22, 1100, 0] #231
-lKazan = [77, 55, 1200, 0] #241
-lKongo = [62, 20, 1483, 0] #278
+# Spawning cities (Leoreth)
+# Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
+tMinorCities = (
+(-3000, (73, 38), iIndependent, 'Yerushalayim', 2, con.iArcher, 3),	# Jerusalem
+(-3000, (79, 40), iIndependent2, 'Shushan', 1, con.iArcher, 1), 	# Susa
+(-2000, (85, 47), iIndependent, 'Afrosiyab', 1, con.iArcher, 1), 	# Samarkand
+(-2000, (92, 39), iIndependent, 'Varanasi', 1, con.iWarrior, 1), 	# Varanasi
+(-2000, (90, 40), iIndependent, 'Indraprastha', 1, con.iWarrior, 1),	# Delhi
+(-1000, (102, 47), iIndependent, 'Zhongdu', 2, con.iSpearman, 1),	# Beijing
+(-1000, (72, 44), iIndependent, 'Ankuwash', 2, con.iArcher, 2),		# Ankara
+(-760, (59, 47), iCeltia, 'Melpum', 2, con.iArcher, 2),			# Milan
+(-350, (56, 47), iCeltia, 'Lugodunon', 2, -1, -1),			# Lyon
+(-325, (92, 33), iIndependent, 'Kanchipuram', 2, con.iArcher, 1),	# Madras
+(-300, (105, 49), iBarbarian, 'Simiyan hoton', 2, con.iChariot, 2),	# Shenyang
+(-300, (53, 48), iCeltia, 'Burdigala', 2, -1, -1),			# Bordeaux
+(-300, (91, 31), iIndependent, 'Tanjapuri', 1, con.iWarElephant, 1),	# Thanjavur
+(-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
+(-100, (95, 47), iBarbarian, 'Dunhuang', 2, con.iArcher, 1),		# Dunhuang
+(-75, (89, 46), iBarbarian, 'Kashgar', 2, con.iArcher, 1),		# Kashgar
+(-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
+(100, (76, 30), iIndependent, "Sana'a", 1, -1, -1),			# Sana'a
+(107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
+(633, (96, 43), iBarbarian, 'Rasa', 2, con.iTibetanKhampa, 1),		# Lhasa
+(680, (51, 57), iIndependent, 'Marrakus', 1, con.iCrossbowman, 1),	# Marrakesh
+(700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
+(800, con.tVienna, iIndependent, 'Vindobona', 1, con.iLongbowman, 1),	# Wien
+(830, (59, 54), iIndependent, 'Hamburg', 2, con.iCrossbowman, 1),	# Hamburg
+(830, (60, 54), iIndependent, 'L&#252;beck', 2, con.iCrossbowman, 1),	# Lübeck
+(866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
+(900, (24, 26), iNative, 'Tucume', 1, con.iArcher, 2),			# Tucume
+(900, (25, 23), iNative, 'Chan Chan', 2, con.iArcher, 2),		# Chan Chan
+(900, (69, 52), iIndependent, 'Kyiv', 2, con.iLongbowman, 2),		# Kiev
+(990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
+(1000, (61, 63), iIndependent2, 'Nidaros', 1, con.iVikingBerserker, 1),	# Trondheim
+(1000, (71, 17), iNative, 'Quelimane', 1, con.iZuluImpi, 1),		# Quelimane
+(1100, (71, 20), iNative, 'Mombasa', 1, con.iZuluImpi, 1),		# Mombasa
+(1200, (77, 55), iBarbarian, 'Qazan', 2, con.iHorseArcher, 1),		# Kazan
+(1483, (62, 20), iNative, 'Mbanza Kongo', 1, con.iCongoPombos, 1),	# Mbanza Kongo
+)
 
 # do some research on dates here
 tMinorStates = (
@@ -110,12 +86,8 @@ tMinorStates = (
 	(0, 1100, 60, 44, [con.iSpearman, con.iArcher]), # Rome early
 )
 
-
-
 #handicap level modifier
 iHandicapOld = (gc.getGame().getHandicapType() - 1)
-
-
 
 class Barbs:
 
@@ -330,110 +302,107 @@ class Barbs:
                 if (iGameTurn >= getTurnForYear(1500) and iGameTurn <= getTurnForYear(1900)):
                         self.checkSpawn(iBarbarian, con.iPrivateer, 1, (72, 24), (110, 36), self.spawnPirates, iGameTurn, 8, 0)
 
-
-
-                self.foundCity(iIndependent, lJerusalem, "Yerushalayim", iGameTurn, 2, con.iArcher, 3)                        
-                self.foundCity(iIndependent2, lSusa, "Shushan", iGameTurn, 1, con.iArcher, 1)
-                self.foundCity(iIndependent, lSamarkand, "Afrasiyab", iGameTurn, 1, con.iArcher, 1)
-                self.foundCity(iCeltia, lMilan, "Melpum", iGameTurn, 2, con.iArcher, 2)
-                self.foundCity(iCeltia, lLyon, "Lugodunon", iGameTurn, 2, -1, -1)
-                self.foundCity(iCeltia, lBordeaux, "Burdigala", iGameTurn, 2, -1, -1)
-                self.foundCity(iIndependent2, lArtaxata, "Artashat", iGameTurn, 1, -1, -1)
-                self.foundCity(iCeltia, lLutetia, "Lutetia", iGameTurn, 2, -1, -1)
-                self.foundCity(iIndependent, lSanaa, "Sana'a", iGameTurn, 1, -1, -1)
-                self.foundCity(iIndependent2, lPagan, "Pagan", iGameTurn, 2, -1, -1)
-                self.foundCity(iBarbarian, lLhasa, "Lasa", iGameTurn, 2, -1, -1)
-                self.foundCity(iBarbarian, lHanoi, "Hanoi", iGameTurn, 2, -1, -1)
-		
-		self.foundCity(iNative, lTiwanaku, "Tiwanaku", iGameTurn, 1, -1, -1)
-                self.foundCity(iNative, lTucume, "Tucume", iGameTurn, 1, con.iArcher, 2)
-		self.foundCity(iNative, lChanChan, "Chan Chan", iGameTurn, 2, con.iArcher, 2)
-		
-		lKievReligions = []
-		if gc.getGame().isReligionFounded(con.iOrthodoxy): lKievReligions = [con.iOrthodoxy]
-		self.foundCity(iIndependent, lKiev, "Kyiv", iGameTurn, 2, con.iLongbowman, 2, lKievReligions)
-                if utils.getScenario() == con.i3000BC:
-                        self.foundCity(iCeltia, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
-                else:
-                        self.foundCity(iIndependent, lDublin, "&#193;th Cliath", iGameTurn, 1, -1, -1)
-		self.foundCity(iIndependent, lVienna, "Wien", iGameTurn, 1, con.iLongbowman, 1)
-                self.foundCity(iNative, lQuelimane, "Quelimane", iGameTurn, 1, con.iZuluImpi, 1)
-                self.foundCity(iNative, lMombasa, "Mombasa", iGameTurn, 1, con.iZuluImpi, 1)
-                self.foundCity(iBarbarian, lKazan, "Kazan", iGameTurn, 2, con.iHorseArcher, 1)
-                self.foundCity(iNative, lKongo, "Mbanza Kongo", iGameTurn, 1, con.iZuluImpi, 1)
-
-		if utils.getHumanID() != con.iTamils:
-			self.foundCity(iIndependent, lMadras, "Kanchipuram", iGameTurn, 2, con.iArcher, 1)
-			
-		if not gc.getPlayer(con.iTamils).isAlive():
-			self.foundCity(iIndependent, lThanjavur, "Tanjapuri", iGameTurn, 1, con.iWarElephant, 1)
-
-		self.foundCity(iIndependent, lVaranasi, "Varanasi", iGameTurn, 1, con.iWarrior, 1)
-		self.foundCity(iIndependent, lIndraprastha, "Indraprastha", iGameTurn, 1, con.iWarrior, 1)
-
-                if ( self.foundCity(iBarbarian, lDunhuang, "Dunhuang", iGameTurn, 1, con.iArcher, 1) ): #Orka                    
-                        if (not gc.getPlayer(con.iChina).isHuman()): #Orka     
-                                self.makeUnit(con.iHorseArcher, con.iChina, (99, 46), 3, 1)     
-                self.foundCity(iBarbarian, lKashgar, "Kashgar", iGameTurn, 1, con.iArcher, 1) #Orka
-
-		if utils.getHumanID() != con.iChina:
-			self.foundCity(iIndependent, lBeijing, "Zhongdu", iGameTurn, 2, con.iSpearman, 1)
-
-		self.foundCity(iBarbarian, lShenyang, "Simiyan hoton", iGameTurn, 2, con.iChariot, 2)
-
-		self.foundCity(iIndependent, lAnkara, "Ankuwash", iGameTurn, 2, con.iArcher, 2)
-		
-		if utils.getHumanID() != con.iHolyRome:
-			if utils.getSeed() % 4 == 0:
-				self.foundCity(iIndependent, lLubeck, "L&#252;beck", iGameTurn, 2, con.iCrossbowman, 1)
-			else:
-				self.foundCity(iIndependent, lHamburg, "Hamburg", iGameTurn, 2, con.iCrossbowman, 1)
-				
-		if utils.getScenario() == con.i3000BC:
-			self.foundCity(iIndependent, lMarrakesh, "Marrakus", iGameTurn, 1, con.iCrossbowman, 1)
-
+		if iGameTurn < getTurnForYear(tMinorCities[len(tMinorCities)-1][0])+10:
+			self.foundMinorCities(iGameTurn)
 
                 if iGameTurn == getTurnForYear(-3000):
-			gc.getMap().plot(lJerusalem[0], lJerusalem[1]).getPlotCity().setHasRealBuilding(con.iTempleOfSalomon, True)
+			gc.getMap().plot(73, 38).getPlotCity().setHasRealBuilding(con.iTempleOfSalomon, True)
 			
 		if iGameTurn == getTurnForYear(con.tBirth[con.iInca]):
 			if utils.getHumanID() == con.iInca:
-				utils.makeUnit(con.iIncanQuechua, iNative, (lTucume[0], lTucume[1]), 1)
-				utils.makeUnit(con.iIncanQuechua, iNative, (lChanChan[0], lChanChan[1]), 1)
-
-
-
-        def getCity(self, tCoords): #by LOQ
-                'Returns a city at coordinates tCoords.'
-                return CyGlobalContext().getMap().plot(tCoords[0], tCoords[1]).getPlotCity()
-
-        def foundCity(self, iCiv, lCity, name, iTurn, iPopulation, iUnitType, iNumUnits, lReligions=[]):
-                if ((iTurn == getTurnForYear(lCity[2]) + lCity[3]) and (lCity[3]<10)): # conversion from years - edead
-                        #print self.checkRegion(tUr)
-                        bResult, lCity[3] = self.checkRegion(lCity)
-			print ("bResult: "+repr(bResult))
-                        if (bResult == True):
-                                pCiv = gc.getPlayer(iCiv)
-				print ("Attempting to found city "+name+" with "+repr(lCity))
-				# the code gets to this point, then crashes
-                                pCiv.found(lCity[0], lCity[1])
-				# this point is not reached anymore
-				print "City founded"
-                                self.getCity((lCity[0], lCity[1])).setName(name, False)
-				print "Name set"
-                                if (iPopulation != 1):
-                                        self.getCity((lCity[0], lCity[1])).setPopulation(iPopulation)
-					print "Population set"
-                                if (iNumUnits > 0):
-                                        self.makeUnit(iUnitType, iCiv, (lCity[0], lCity[1]), iNumUnits, 0)
-					print "Units created"
-				for iReligion in lReligions:
-					self.getCity((lCity[0], lCity[1])).setHasReligion(iReligion, True, False, False)
-                                return True
-                        if (bResult == False) and (lCity[3] == -1):
-                                return False
-                               
-
+				utils.makeUnit(con.iIncanQuechua, iNative, (24, 26), 1)
+				utils.makeUnit(con.iIncanQuechua, iNative, (25, 23), 1)
+				
+	def foundMinorCities(self, iGameTurn):
+		for i in range(len(tMinorCities)):
+			iYear, tPlot, iPlayer, sName, iPopulation, iUnitType, iNumUnits = tMinorCities[i]
+			#utils.debugTextPopup('Attempt to found: '+sName+' in '+str(iGameTurn))
+			if iGameTurn < getTurnForYear(iYear):
+				#utils.debugTextPopup('Too early to found this city.')
+				return
+			if iGameTurn > getTurnForYear(iYear)+10: 
+				#utils.debugTextPopup('Too late to found this city.')
+				continue
+			
+			x, y = tPlot
+			plot = gc.getMap().plot(x, y)
+			if plot.isCity(): 
+				#utils.debugTextPopup('Plot already has city.')
+				continue
+			
+			# special cases
+			if not self.canFoundCity(sName): 
+				#utils.debugTextPopup('City cannot be founded.')
+				continue
+			
+			lReligions = []
+			bForceSpawn = False
+			
+			if sName == 'Kyiv': lReligions = [con.iOrthodoxy, con.iCatholicism]
+			if iPlayer == iCeltia and utils.getScenario() != con.i3000BC: iPlayer = iIndependent
+			
+			if not self.isFreePlot(tPlot, bForceSpawn): 
+				#utils.debugTextPopup('Plot is not free.')
+				continue
+		
+			#utils.debugTextPopup('Found city.')
+			self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions)
+		
+	def canFoundCity(self, sName):
+		if sName == 'Kanchipuram' and utils.getHumanID() == con.iTamils: return False
+		elif sName == 'Tanjapuri' and gc.getPlayer(con.iTamils).isAlive(): return False
+		elif sName == 'Zhongdu' and utils.getHumanID() == con.iChina: return False
+		elif sName == 'Hamburg' and (utils.getHumanID() == con.iHolyRome or utils.getSeed() % 4 == 0): return False
+		elif sName == 'L&#252;beck' and (utils.getHumanID() == con.iHolyRome or utils.getSeed() % 4 != 0): return False
+		elif sName == 'Marrakus' and utils.getScenario() != con.i3000BC: return False
+		
+		return True
+	
+	def foundCity(self, iPlayer, tPlot, sName, iPopulation, iUnitType = -1, iNumUnits = -1, lReligions = []):
+		pPlayer = gc.getPlayer(iPlayer)
+		x, y = tPlot
+		pPlayer.found(x, y)
+		city = gc.getMap().plot(x, y).getPlotCity()
+		
+		city.setName(sName, False)
+		city.setPopulation(iPopulation)
+		
+		if iNumUnits > 0 and iUnitType > 0:
+			utils.makeUnit(iUnitType, iPlayer, tPlot, iNumUnits)
+			
+		for iReligion in lReligions:
+			if gc.getGame().isReligionFounded(iReligion):
+				city.setHasReligion(iReligion, True, False, False)
+				
+	def isFreePlot(self, tPlot, bIgnoreCulture = False):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		# no cultural control over the tile
+		if plot.isOwned() and plot.getOwner() < con.iNumPlayers and not bIgnoreCulture:
+			return False
+			
+		# no unit on the tile except minors
+		iNumUnits = plot.getNumUnits()
+		for i in range(iNumUnits):
+			unit = plot.getUnit(i)
+			if unit.getOwner() < con.iNumPlayers and not bIgnoreCulture:
+				return False
+				
+		# no player unit or city in adjacent tiles
+		for i in range(x-1, x+2):
+			for j in range(y-1, y+2):
+				currentPlot = gc.getMap().plot(x, y)
+				if currentPlot.isCity():
+					return False
+				iNumUnits = currentPlot.getNumUnits()
+				for k in range(iNumUnits):
+					unit = currentPlot.getUnit(k)
+					if unit.getOwner() == utils.getHumanID():
+						return False
+						
+		return True
+			
         def checkRegion(self, tCity):
                 cityPlot = gc.getMap().plot(tCity[0], tCity[1])
                 iNumUnitsInAPlot = cityPlot.getNumUnits()

@@ -158,3 +158,4 @@
 # civilopedia now better displays religion requirements
 # pastures and plantation yield +1 commerce with railroads
 # pastures yield +1 food with Refrigeration
+# changed Winged Hussar's 50% against gunpowder units to +50% attack strength against Musketman, Rifleman

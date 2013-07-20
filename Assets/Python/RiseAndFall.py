@@ -438,10 +438,12 @@ class RiseAndFall:
 						city.setInfoDirty(True)
 						city.setLayoutDirty(True)
 						
+		for i in range(3):
+			utils.setGoal(iCiv, i, -1)
+						
 		if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
 			for i in range(3):
-				sd.scriptDict['lGoals'][iPreviousCiv][i] = 0
-				sd.scriptDict['lGoals'][iCiv][i] = -1
+				utils.setGoal(iPreviousCiv, i, 0)
 
         def flipPopup(self, iNewCiv, tTopLeft, tBottomRight):
                 iHuman = utils.getHumanID()
