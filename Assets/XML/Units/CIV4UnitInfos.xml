@@ -18242,14 +18242,18 @@
 			<TerrainDefenses/>
 			<FeatureAttacks/>
 			<FeatureDefenses/>
-			<UnitClassAttackMods/>
+			<UnitClassAttackMods>
+				<UnitClassAttackMod>
+					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<iUnitClassMod>50</iUnitClassMod>
+				</UnitClassAttackMod>
+				<UnitClassAttackMod>
+					<UnitClassType>UNITCLASS_RIFLEMAN</UnitClassType>
+					<iUnitClassMod>50</iUnitClassMod>
+				</UnitClassAttackMod>
+			</UnitClassAttackMods>
 			<UnitClassDefenseMods/>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
+			<UnitCombatMods/>
 			<UnitCombatCollateralImmunes/>
 			<DomainMods/>
 			<BonusProductionModifiers/>
