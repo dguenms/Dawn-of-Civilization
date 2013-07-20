@@ -63,6 +63,7 @@ tMinorCities = (
 (830, (59, 54), iIndependent, 'Hamburg', 2, con.iCrossbowman, 1),	# Hamburg
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, con.iCrossbowman, 1),	# Lübeck
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
+(880, (65, 48), iIndependent2, 'Buda', 3, con.iHorseArcher, 3),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, con.iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, con.iArcher, 2),		# Chan Chan
 (900, (69, 52), iIndependent, 'Kyiv', 2, con.iLongbowman, 2),		# Kiev
@@ -293,8 +294,7 @@ class Barbs:
 			
 		if iGameTurn >= getTurnForYear(1500) and iGameTurn <= getTurnForYear(1850):
 			self.checkSpawn(iBarbarian, con.iIroquoisMohawk, 2 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
-			
-			
+				
                 #pirates in the Caribbean
                 if (iGameTurn >= getTurnForYear(1600) and iGameTurn <= getTurnForYear(1800)):
                         self.checkSpawn(iBarbarian, con.iPrivateer, 1, (24, 32), (35, 46), self.spawnPirates, iGameTurn, 5, 0)
@@ -316,36 +316,25 @@ class Barbs:
 	def foundMinorCities(self, iGameTurn):
 		for i in range(len(tMinorCities)):
 			iYear, tPlot, iPlayer, sName, iPopulation, iUnitType, iNumUnits = tMinorCities[i]
-			#utils.debugTextPopup('Attempt to found: '+sName+' in '+str(iGameTurn))
-			if iGameTurn < getTurnForYear(iYear):
-				#utils.debugTextPopup('Too early to found this city.')
-				return
-			if iGameTurn > getTurnForYear(iYear)+10: 
-				#utils.debugTextPopup('Too late to found this city.')
-				continue
+			if iGameTurn < getTurnForYear(iYear): return
+			if iGameTurn > getTurnForYear(iYear)+10: continue
 			
 			x, y = tPlot
 			plot = gc.getMap().plot(x, y)
-			if plot.isCity(): 
-				#utils.debugTextPopup('Plot already has city.')
-				continue
+			if plot.isCity(): continue
 			
 			# special cases
-			if not self.canFoundCity(sName): 
-				#utils.debugTextPopup('City cannot be founded.')
-				continue
+			if not self.canFoundCity(sName): continue
 			
 			lReligions = []
 			bForceSpawn = False
 			
 			if sName == 'Kyiv': lReligions = [con.iOrthodoxy, con.iCatholicism]
 			if iPlayer == iCeltia and utils.getScenario() != con.i3000BC: iPlayer = iIndependent
+			if sName == 'Buda': bForceSpawn = True
 			
-			if not self.isFreePlot(tPlot, bForceSpawn): 
-				#utils.debugTextPopup('Plot is not free.')
-				continue
+			if not self.isFreePlot(tPlot, bForceSpawn): continue
 		
-			#utils.debugTextPopup('Found city.')
 			self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions)
 		
 	def canFoundCity(self, sName):
@@ -361,18 +350,22 @@ class Barbs:
 	def foundCity(self, iPlayer, tPlot, sName, iPopulation, iUnitType = -1, iNumUnits = -1, lReligions = []):
 		pPlayer = gc.getPlayer(iPlayer)
 		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		plot.setOwner(iPlayer)
 		pPlayer.found(x, y)
-		city = gc.getMap().plot(x, y).getPlotCity()
 		
-		city.setName(sName, False)
-		city.setPopulation(iPopulation)
-		
-		if iNumUnits > 0 and iUnitType > 0:
-			utils.makeUnit(iUnitType, iPlayer, tPlot, iNumUnits)
+		if plot.isCity():
+			city = gc.getMap().plot(x, y).getPlotCity()
 			
-		for iReligion in lReligions:
-			if gc.getGame().isReligionFounded(iReligion):
-				city.setHasReligion(iReligion, True, False, False)
+			city.setName(sName, False)
+			city.setPopulation(iPopulation)
+			
+			if iNumUnits > 0 and iUnitType > 0:
+				utils.makeUnit(iUnitType, iPlayer, tPlot, iNumUnits)
+				
+			for iReligion in lReligions:
+				if gc.getGame().isReligionFounded(iReligion):
+					city.setHasReligion(iReligion, True, False, False)
 				
 	def isFreePlot(self, tPlot, bIgnoreCulture = False):
 		x, y = tPlot
