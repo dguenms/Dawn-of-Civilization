@@ -866,6 +866,10 @@ class RiseAndFall:
 			pAyutthaya = gc.getMap().plot(x, y).getPlotCity()
 			pAyutthaya.setFreeSpecialistCount(con.iGreatPriest, 1)
 			
+			# Chengdu
+			pChengdu = gc.getMap().plot(99, 41).getPlotCity()
+			pChengdu.setCulture(con.iChina, 10, True)
+			
 	def flipStartingTerritory(self):
 	
 		if utils.getScenario() == con.i600AD:
@@ -2281,7 +2285,8 @@ class RiseAndFall:
 						
 			if iCiv in [iArgentina, iBrazil]:
 				iColonyPlayer = utils.getColonyPlayer(iCiv)
-				if iColonyPlayer >= 0 and iColonyPlayer not in [iArgentina, iBrazil]:
+				if iColonyPlayer < 0: return
+				elif iColonyPlayer not in [iArgentina, iBrazil]:
 					if utils.getStability(iColonyPlayer) >= 20:
 						return
 						
@@ -2334,9 +2339,6 @@ class RiseAndFall:
                         tBottomRight = tCoreAreasBR[reborn][iCiv]
                         tBroaderTopLeft = tBroaderAreasTL[reborn][iCiv]
                         tBroaderBottomRight = tBroaderAreasBR[reborn][iCiv]
-			
-			if iCiv == iHolyRome:
-				self.holyRomanSpawn()
 			
 			if iCiv == iThailand:
 				x, y = con.tCapitals[0][iKhmer]
@@ -2569,9 +2571,6 @@ class RiseAndFall:
                                 print ("starting units in", tCapital[0], tCapital[1])
                                 self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
 				
-				if iCiv == iHolyRome:
-					self.holyRomanSpawn()
-
 				if iCiv == iTurkey:
 					sd.scriptDict['iOttomanSpawnTurn'] = gc.getGame().getGameTurn()
 			
@@ -2726,6 +2725,7 @@ class RiseAndFall:
 
                                 # flip capital instead of spawning starting units
                                 utils.flipCity(tCapital, False, True, iCiv, ())
+				gc.getMap().plot(tCapital[0], tCapital[1]).getPlotCity().setHasRealBuilding(con.iPalace, True)
 				utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
 				self.convertSurroundingPlotCulture(iCiv, (tCapital[0]-1,tCapital[1]-1), (tCapital[0]+1,tCapital[1]+1))
                                 
@@ -3267,8 +3267,17 @@ class RiseAndFall:
 						utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
 						utils.makeUnitAI(con.iCannon, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				else:
-					pRussia.found(x, y)
-					utils.makeUnit(con.iRifleman, iCiv, tVladivostok, 2)
+					bFree = True
+					
+					for i in range(x-1, x+2):
+						for j in range(y-1, y+2):
+							bFree = False
+							break
+					
+					if bFree:
+						pRussia.found(x, y)
+						utils.makeUnit(con.iRifleman, iCiv, tVladivostok, 2)
+						utils.makeUnit(con.iRifleman, iCiv, tVladivostok, 2)
 					
 
 
@@ -3955,13 +3964,13 @@ class RiseAndFall:
 			utils.makeUnit(con.iCongoPombos, iCiv, tPlot, 2)
 		if iCiv == iGermany:
 			utils.createSettlers(iCiv, 4)
-			utils.makeUnit(con.iJewishMissionary, iCiv, tPlot, 2)
-			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
+			utils.makeUnit(con.iJewishMissionary, iCiv, tPlot, 2, "", 2)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3, "", 2)
 			utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
-			utils.makeUnit(con.iCannon, iCiv, tPlot, 3)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 3, "", 2)
 			if utils.getHumanID() != iGermany:
-				utils.makeUnit(con.iRifleman, iCiv, tPlot, 10)
-				utils.makeUnit(con.iCannon, iCiv, tPlot, 5)
+				utils.makeUnit(con.iRifleman, iCiv, tPlot, 10, "", 2)
+				utils.makeUnit(con.iCannon, iCiv, tPlot, 5, "", 2)
                 if (iCiv == iAmerica):
 			utils.createSettlers(iCiv, 8)
                         utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
@@ -3977,15 +3986,18 @@ class RiseAndFall:
 				utils.makeUnitAI(con.iAmericanMinuteman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 		if iCiv == iArgentina:
 			utils.createSettlers(iCiv, 2)
-			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
-			utils.makeUnit(con.iArgentineGrenadierCavalry, iCiv, tPlot, 3)
-			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
-			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3, "", 2)
+			utils.makeUnit(con.iArgentineGrenadierCavalry, iCiv, tPlot, 3, "", 2)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 2, "", 2)
+			tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(con.iGalleon, iCiv, tSeaPlot, 1)
 				utils.makeUnit(con.iFrigate, iCiv, tSeaPlot, 2)
 			if utils.getHumanID() != iArgentina:
 				utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+				utils.makeUnit(con.iRifleman, iCiv, tPlot, 2, "", 2)
+				utils.makeUnit(con.iArgentineGrenadierCavalry, iCiv, tPlot, 2, "", 2)
+				utils.makeUnit(con.iCannon, iCiv, tPlot, 2, "", 2)
 		if iCiv == iBrazil:
 			utils.createSettlers(iCiv, 5)
 			utils.makeUnit(con.iGrenadier, iCiv, tPlot, 3)
@@ -4017,15 +4029,19 @@ class RiseAndFall:
 			utils.makeUnit(con.iBombard, iCiv, tPlot, 5)
 			utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 3)			
 		if iCiv == iAztecs:
-			utils.makeUnit(con.iMexicoRurales, iCiv, tPlot, 4)
-			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
-			utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+			utils.makeUnit(con.iMexicoRurales, iCiv, tPlot, 4, "", 2)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5, "", 2)
+			utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2, "", 2)
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3, "", 2)
 		if iCiv == iMaya:
-			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
-			utils.makeUnit(con.iCannon, iCiv, tPlot, 5)
-			utils.makeUnit(con.iColombianAlbionLegion, iCiv, tPlot, 5)
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5, "", 2)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 5, "", 2)
+			utils.makeUnit(con.iColombianAlbionLegion, iCiv, tPlot, 5, "", 2)
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3, "", 2)
+                        tSeaPlot = self.findSeaPlots(tPlot, 3, iCiv)
+			if tSeaPlot:
+				utils.makeUnit(con.iGalleon, iCiv, tSeaPlot, 1)
+				utils.makeUnit(con.iFrigate, iCiv, tSeaPlot, 1)
 
         def addMissionary(self, iCiv, tTopLeft, tBottomRight, tPlot, iNumber):
                 lReligions = [0 for i in range(con.iNumReligions)]
@@ -5628,7 +5644,8 @@ class RiseAndFall:
 						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
 						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
 						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
-						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, con.iNationalism]
+						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, 
+						con.iNationalism, con.iSteamPower, con.iDemocracy]
 				for iTech in lColombianTechs:
 					teamMaya.setHasTech(iTech, True, iCiv, False, False)
 
@@ -5726,9 +5743,14 @@ class RiseAndFall:
 		dc.setCivAdjective(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
 		
 	def holyRomanSpawn(self):
-		for x in range(con.tCoreAreasTL[0][iHolyRome][0], con.tCoreAreasBR[0][iHolyRome][0]+1):
-			for y in range(con.tCoreAreasTL[0][iHolyRome][1], con.tCoreAreasBR[0][iHolyRome][1]+2):
-				gc.getMap().plot(x,y).setCulture(iVikings, 0, True)
+		plot = gc.getMap().plot(60, 56)
+		if plot.isCity(): plot.getPlotCity().setCulture(iVikings, 5, True)
+		#for x in range(con.tCoreAreasTL[0][iHolyRome][0], con.tCoreAreasBR[0][iHolyRome][0]+1):
+		#	for y in range(con.tCoreAreasTL[0][iHolyRome][1], con.tCoreAreasBR[0][iHolyRome][1]+2):
+		#		gc.getMap().plot(x,y).setCulture(iVikings, 0, True)
+		#utils.debugTextPopup('holy roman spawn')
+		
+		
 				
 	def determineEnabledPlayers(self):
 	

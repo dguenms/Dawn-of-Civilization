@@ -956,24 +956,24 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_43</Tag>
-		<English>South America</English>
-		<German>Südamerika</German>
+		<English>Peru, South America</English>
+		<German>Peru, Südamerika</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_44</Tag>
-		<English>Central America</English>
-		<German>Mittelamerika</German>
+		<English>Gran Columbia, South America</English>
+		<German>Großkolumbien, Südamerika</German>
 	</TEXT>
-	<!--TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_45</Tag>
-		<English>Western North America</English>
-		<German>Westliches Nordamerika</German>
+		<English>Guayanas, South America</English>
+		<German>Guayanas, Südamerika</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_46</Tag>
-		<English>Central America, Carribean and Southern USA</English>
-		<German>Mittelamerika, Karibik und südliche USA</German>
-	</TEXT-->
+		<English>Caribbean</English>
+		<German>Karibik</German>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_47</Tag>
 		<English>Eastern Mediterranean</English>
@@ -1043,5 +1043,10 @@
 		<Tag>TXT_KEY_UHV_AREA_60</Tag>
 		<English>Brazil</English>
 		<German>Brasilien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_61</Tag>
+		<English>South America</English>
+		<German>Südamerika</German>
 	</TEXT>
 </Civ4GameText>

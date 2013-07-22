@@ -146,7 +146,7 @@
 	# Unique Building: Hacienda (Grocer with +25% gold with Coffee)
 	# Unique Power: The Power of the Liberator (no resistance in conquered cities in Latin America)
 	# Unique Historical Victory:
-		# Allow no European colonies in Latin America in 1860 AD
+		# Allow no European colonies in Peru, Gran Colombia, the Guayanas and the Caribbean in 1870 AD
 		# Control South America in 1920 AD
 		# Acquire 5000 gold by selling resources by 1950 AD
 # Seljuk army decays around the time of the Mongol expansion
@@ -159,3 +159,4 @@
 # pastures and plantation yield +1 commerce with railroads
 # pastures yield +1 food with Refrigeration
 # changed Winged Hussar's 50% against gunpowder units to +50% attack strength against Musketman, Rifleman
+# Argentina and Brazil don't spawn if their core is empty

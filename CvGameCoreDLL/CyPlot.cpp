@@ -1057,3 +1057,14 @@ int CyPlot::getRegionID()
 {
 	return m_pPlot ? m_pPlot->getRegionID() : -1;
 }
+
+bool CyPlot::isCore(int ePlayer)
+{
+	return m_pPlot ? m_pPlot->isCore((PlayerTypes)ePlayer) : -1;
+}
+
+void CyPlot::setCore(int ePlayer, bool bReborn, bool bNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setCore((PlayerTypes)ePlayer, bReborn, bNewValue);
+}

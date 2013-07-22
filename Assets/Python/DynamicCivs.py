@@ -991,8 +991,7 @@ class DynamicCivs:
 		elif iPlayer == iIndonesia: iThreshold = 4
 		elif iPlayer == iKorea: iThreshold = 4
 		elif iPlayer == iRussia: iThreshold = 8
-		elif iPlayer == iHolyRome and gc.getPlayer(iHolyRome).isReborn(): iThreshold = 3
-		elif iPlayer == iHolyRome: iThreshold = 4
+		elif iPlayer == iHolyRome: iThreshold = 3
 		elif iPlayer == iGermany: iThreshold = 4
 		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
 		elif iPlayer == iItaly: iThreshold = 4

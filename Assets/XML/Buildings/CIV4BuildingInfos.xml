@@ -24108,7 +24108,6 @@
 			<Description>TXT_KEY_BUILDING_NATIONAL_PARK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_PARK_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_NATIONAL_PARK_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_NATIONAL_PARK_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_PARK</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>

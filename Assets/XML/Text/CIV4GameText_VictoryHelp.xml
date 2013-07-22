@@ -541,8 +541,20 @@
 		<English>Great artists settled in %s1: %d2 / %d3</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NO_LATIN_AMERICAN_COLONIES</Tag>
-		<English>No European colonies in South and Central America</English>
+		<Tag>TXT_KEY_VICTORY_NO_COLONIES_PERU</Tag>
+		<English>No colonies in Peru</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_COLONIES_GRAN_COLOMBIA</Tag>
+		<English>No colonies in Gran Colombia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_COLONIES_GUAYANAS</Tag>
+		<English>No colonies in the Guayanas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_COLONIES_CARIBBEAN</Tag>
+		<English>No colonies in the Caribbean</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA</Tag>

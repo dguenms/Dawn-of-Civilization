@@ -1318,8 +1318,6 @@ def getUHVTileInfo(argsList):
 		brx, bry = vic.tSAmericaBR
 		if tlx <= x <= brx and tly <= y <= bry and (x, y) not in vic.tSouthAmericaExceptions:
 			return 43
-		
-	# IMPORTANT: IDs 45-46 are unused and available!
 			
 	elif iPlayer == con.iTurkey:
 		if (x,y) in lEasternMediterranean:
@@ -1401,11 +1399,22 @@ def getUHVTileInfo(argsList):
 			
 	elif iPlayer == con.iMaya:
 		if utils.isReborn(iPlayer):
-			if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
+			if utils.isPlotInArea((x, y), vic.tPeruTL, vic.tPeruBR):
 				return 43
 				
-			if utils.isPlotInArea((x, y), con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR):
+			if utils.isPlotInArea((x, y), vic.tGranColombiaTL, vic.tGranColombiaBR):
 				return 44
+				
+			if utils.isPlotInArea((x, y), vic.tGuayanasTL, vic.tGuayanasBR):
+				return 45
+				
+			if utils.isPlotInArea((x, y), vic.tCaribbeanTL, vic.tCaribbeanBR):
+				return 46
+				
+			if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
+				return 61
+				
+			# continue with ID 62
 			
 	return -1
 		
