@@ -244,6 +244,16 @@ class CvRFCEventHandler:
                 self.sta.setup()
                 self.aiw.setup()
 		self.vic.setup() # Leoreth
+		
+		# Leoreth: set DLL core values
+		for x in range(124):
+			for y in range(68):
+				plot = gc.getMap().plot(x, y)
+				for iPlayer in range(con.iNumPlayers):
+					if utils.isPlotInArea((x, y), con.tCoreAreasTL[0][iPlayer], con.tCoreAreasBR[0][iPlayer], con.tExceptions[0][iPlayer]):
+						plot.setCore(iPlayer, False, True)
+					if utils.isPlotInArea((x, y), con.tCoreAreasTL[1][iPlayer], con.tCoreAreasBR[1][iPlayer], con.tExceptions[1][iPlayer]):
+						plot.setCore(iPlayer, True, True)
                 
                 #Mercenaries - start
                 global objMercenaryUtils        
@@ -469,6 +479,11 @@ class CvRFCEventHandler:
 					y = city.getY()
 					utils.createGarrisons((x,y), iOwner, 1)
 					utils.makeUnit(con.iWorker, iOwner, (x,y), 1)
+					
+		# Holy Rome founds its capital
+		if iOwner == con.iHolyRome:
+			if gc.getPlayer(con.iHolyRome).getNumCities() == 1:
+				self.rnf.holyRomanSpawn()
 
         def onPlayerChangeStateReligion(self, argsList):
 		'Player changes his state religion'

@@ -44526,8 +44526,8 @@
 			<Type>UNIT_NORSE_PROPHET</Type>
 			<UniqueNames>
 				<UniqueName>Ansgar</UniqueName><!-- 9th -->
-				<UniqueName>Haraldr Bl�tonn</UniqueName><!-- 10th -->
-				<UniqueName>Sveinn Tj�guskegg</UniqueName><!-- 10th -->
+				<UniqueName>Haraldr Bl&#225;tonn</UniqueName><!-- 10th -->
+				<UniqueName>Sveinn Tj&#250;guskegg</UniqueName><!-- 10th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -50275,12 +50275,12 @@
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_FRENCH_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName>Pierre Ab�lard</UniqueName><!-- 12th -->
+				<UniqueName>Pierre Ab&#233;lard</UniqueName><!-- 12th -->
 				<UniqueName>Louis IX</UniqueName><!-- 13th -->
 				<UniqueName>Jeanne d'Arc</UniqueName><!-- 15th -->
 				<UniqueName>Jean Calvin</UniqueName><!-- 16th -->
 				<UniqueName>Albert Schweitzer</UniqueName><!-- 20th -->
-				<UniqueName>Marcel L�gaut</UniqueName><!-- 20th -->
+				<UniqueName>Marcel L&#233;gaut</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -56061,7 +56061,7 @@
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_PORTUGUESE_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName>Ant�nio de Lisboa</UniqueName><!-- 13th -->
+				<UniqueName>Ant&#243;nio de Lisboa</UniqueName><!-- 13th -->
 				<UniqueName>Isabel de Arag&#227;o</UniqueName><!-- 14th -->
 				<UniqueName>Jo&#227;o de Deus</UniqueName><!-- 16th -->
 				<UniqueName>Jo&#227;o de Brito</UniqueName><!-- 17th -->
@@ -56280,7 +56280,7 @@
 				<UniqueName>Fern&#227;o Lopes</UniqueName><!-- 15th -->
 				<UniqueName>Nuno Gon&#231;ales</UniqueName><!-- 15th -->
 				<UniqueName>Lu&#237;s de Cam&#245;es</UniqueName><!-- 16th -->
-				<UniqueName>Ant�nio Ferreira</UniqueName><!-- 16th -->
+				<UniqueName>Ant&#243;nio Ferreira</UniqueName><!-- 16th -->
 				<UniqueName>Jo&#227;o de Barros</UniqueName><!-- 16th -->
 				<UniqueName>Machado de Castro</UniqueName><!-- 18th -->
 			</UniqueNames>
@@ -56843,7 +56843,7 @@
 				<UniqueName>Mateus Fernandes</UniqueName><!-- 15th -->
 				<UniqueName>Diogo de Boitaca</UniqueName><!-- 16th -->
 				<UniqueName>Jo&#227;o Antunes</UniqueName><!-- 17th -->
-				<UniqueName>�lvaro Siza Vieira</UniqueName><!-- 20th -->
+				<UniqueName>&#193;lvaro Siza Vieira</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -58582,7 +58582,7 @@
 			<UniqueNames>
 				<UniqueName>Dante Alighieri</UniqueName><!-- 13th -->
 				<UniqueName>Giovanni Boccaccio</UniqueName><!-- 14th -->
-				<UniqueName>Niccol� Machiavelli</UniqueName><!-- 15th -->
+				<UniqueName>Niccol&#242; Machiavelli</UniqueName><!-- 15th -->
 				<UniqueName>Donatello</UniqueName><!-- 15th -->
 				<UniqueName>Michelangelo</UniqueName><!-- 16th -->
 				<UniqueName>Raphael</UniqueName><!-- 16th -->
@@ -60109,7 +60109,7 @@
 			<Type>UNIT_MONGOLIAN_MERCHANT</Type>
 			<UniqueNames>
 				<UniqueName>Hulagu</UniqueName><!-- 13th -->
-				<UniqueName>G�y�k</UniqueName><!-- 13th -->
+				<UniqueName>G&#252;y&#252;k</UniqueName><!-- 13th -->
 				<UniqueName>Mengu-Timur</UniqueName><!-- 13th -->
 				<UniqueName>Gaykhatu</UniqueName><!-- 13th -->
 				<UniqueName>Altan</UniqueName><!-- 16th -->
@@ -60480,7 +60480,7 @@
 				<UniqueName>Toghril</UniqueName><!-- 12th -->
 				<UniqueName>Ogodei</UniqueName><!-- 13th -->
 				<UniqueName>Chagatai</UniqueName><!-- 13th -->
-				<UniqueName>Möngke</UniqueName><!-- 13th -->
+				<UniqueName>M&#246;ngke</UniqueName><!-- 13th -->
 				<UniqueName>Timur-e Lang</UniqueName><!-- 14th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -62039,8 +62039,8 @@
 			<Type>UNIT_TURKISH_ARTIST</Type>
 			<UniqueNames>
 				<UniqueName>Yunus Emre</UniqueName><!-- 13th -->
-				<UniqueName>Hay�l�</UniqueName><!-- 16th -->
-				<UniqueName>G�l Baba</UniqueName><!-- 16th -->
+				<UniqueName>Hay&#226;l&#238;</UniqueName><!-- 16th -->
+				<UniqueName>G&#252;l Baba</UniqueName><!-- 16th -->
 				<UniqueName>Mehmet Akif Ersoy</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -62225,7 +62225,7 @@
 				<UniqueName>Qazi Zada</UniqueName><!-- 14th -->
 				<UniqueName>Cahit Arf</UniqueName><!-- 20th -->
 				<UniqueName>Oktay Sinanoglu</UniqueName><!-- 20th -->
-				<UniqueName>Feza Gürsey</UniqueName><!-- 20th -->
+				<UniqueName>Feza G&#252;rsey</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -62412,7 +62412,7 @@
 			<Type>UNIT_TURKISH_MERCHANT</Type>
 			<UniqueNames>
 				<UniqueName>Evliya Celebi</UniqueName><!-- 17th -->
-				<UniqueName>Abd�lmecid</UniqueName><!-- 19th -->
+				<UniqueName>Abd&#252;lmecid</UniqueName><!-- 19th -->
 				<UniqueName>Hormuzd Rassam</UniqueName><!-- 20th -->
 				<UniqueName>Nejat Eczacibashi</UniqueName><!-- 20th -->
 				<UniqueName>Aydin Dogan</UniqueName><!-- 20th -->
@@ -69131,11 +69131,11 @@
 			<UniqueNames>
 				<UniqueName>Jose Hernandez</UniqueName>
 				<UniqueName>Carlos Gardel</UniqueName>
-				<UniqueName>Eva Perón</UniqueName>
+				<UniqueName>Eva Per&#243;n</UniqueName>
 				<UniqueName>Jorge Luis Borges</UniqueName>
 				<UniqueName>Antonio Berni</UniqueName>
 				<UniqueName>Daniel Barenboim</UniqueName>
-				<UniqueName>Juan José Campanella</UniqueName>
+				<UniqueName>Juan Jos&#233; Campanella</UniqueName>
 				<UniqueName>Gustavo Cerati</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -69319,8 +69319,8 @@
 			<UniqueNames>
 				<UniqueName>Francisco Moreno</UniqueName>
 				<UniqueName>Luis Federico Leloir</UniqueName>
-				<UniqueName>László Bíro</UniqueName>
-				<UniqueName>René Favaloro</UniqueName>
+				<UniqueName>L&#225;szl&#243; B&#237;ro</UniqueName>
+				<UniqueName>Ren&#233; Favaloro</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -69506,7 +69506,7 @@
 			<Class>UNITCLASS_MERCHANT</Class>
 			<Type>UNIT_ARGENTINE_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName>José ber Gelbard</UniqueName>
+				<UniqueName>Jos&#233; ber Gelbard</UniqueName>
 				<UniqueName>Roberto Aleman</UniqueName>
 				<UniqueName>Jorge Wehbe</UniqueName>
 				<UniqueName>Aldo Ferrer</UniqueName>
@@ -69694,7 +69694,7 @@
 			<UniqueNames>
 				<UniqueName>Luis Huergo</UniqueName>
 				<UniqueName>Amancio Williams</UniqueName>
-				<UniqueName>César Pelli</UniqueName>
+				<UniqueName>C&#233;sar Pelli</UniqueName>
 				<UniqueName>Clorindo Testa</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -69878,9 +69878,9 @@
 			<UniqueNames>
 				<UniqueName>Cornelio Saavedra</UniqueName>
 				<UniqueName>Manuel Belgrano</UniqueName>
-				<UniqueName>Juan José Castelli</UniqueName>
-				<UniqueName>Martín Miguel de Güemes</UniqueName>
-				<UniqueName>José Gervasio Artigas</UniqueName>
+				<UniqueName>Juan Jos&#233; Castelli</UniqueName>
+				<UniqueName>Mart&#237;n Miguel de G&#252;emes</UniqueName>
+				<UniqueName>Jos&#233; Gervasio Artigas</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -70067,8 +70067,8 @@
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_BRAZILIAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName>Antônio Conselheiro</UniqueName>
-				<UniqueName>Hélder Câmara</UniqueName>
+				<UniqueName>Ant&#244;nio Conselheiro</UniqueName>
+				<UniqueName>H&#233;lder C&#244;mara</UniqueName>
 				<UniqueName>Chico Xavier</UniqueName>
 				<UniqueName>Edir Macedo</UniqueName>
 			</UniqueNames>
@@ -70284,7 +70284,7 @@
 			<Type>UNIT_BRAZILIAN_ARTIST</Type>
 			<UniqueNames>
 				<UniqueName>Aleijadinho</UniqueName>
-				<UniqueName>Antônio Carlos Gomes</UniqueName>
+				<UniqueName>Ant&#244;nio Carlos Gomes</UniqueName>
 				<UniqueName>Machado de Assis</UniqueName>
 				<UniqueName>Tom Jobim</UniqueName>
 				<UniqueName>Romero Britto</UniqueName>
@@ -70472,7 +70472,7 @@
 				<UniqueName>Carlos Chagas</UniqueName>
 				<UniqueName>Alberto Santos-Dumont</UniqueName>
 				<UniqueName>Urbano Ernesto Stumpf</UniqueName>
-				<UniqueName>Aziz Ab'Sáber</UniqueName>
+				<UniqueName>Aziz Ab'S&#225;ber</UniqueName>
 				<UniqueName>Marcelo Gleiser</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -70843,8 +70843,8 @@
 			<Class>UNITCLASS_ENGINEER</Class>
 			<Type>UNIT_BRAZILIAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName>André Rebouças</UniqueName>
-				<UniqueName>Cândido Rondon</UniqueName>
+				<UniqueName>Andr&#233; Rebouças</UniqueName>
+				<UniqueName>C&#226;ndido Rondon</UniqueName>
 				<UniqueName>Oscar Niemeyer</UniqueName>
 				<UniqueName>Norberto Odebrecht</UniqueName>
 			</UniqueNames>
@@ -71028,7 +71028,7 @@
 			<Type>UNIT_BRAZILIAN_GREAT_GENERAL</Type>
 			<UniqueNames>
 				<UniqueName>Duque de Caxias</UniqueName>
-				<UniqueName>Almirante Tamandaré</UniqueName>
+				<UniqueName>Almirante Tamandar&#233;</UniqueName>
 				<UniqueName>Mascarenhas de Morais</UniqueName>
 				<UniqueName>Eurico Gaspar Dutra</UniqueName>
 				<UniqueName>Artur da Costa e Silva</UniqueName>
@@ -71218,12 +71218,12 @@
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_COLOMBIAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName>Felix Restrepo Mejía</UniqueName>
+				<UniqueName>Felix Restrepo Mej&#237;a</UniqueName>
 				<UniqueName>Camillo Torres Restrepo</UniqueName>
-				<UniqueName>Alfonso López Trujillo</UniqueName>
-				<UniqueName>Julio Enrique Dávila</UniqueName>
-				<UniqueName>María Luisa Piraquive</UniqueName>
-				<UniqueName>César Castellanos</UniqueName>
+				<UniqueName>Alfonso L&#243;pez Trujillo</UniqueName>
+				<UniqueName>Julio Enrique D&#225;vila</UniqueName>
+				<UniqueName>Mar&#237;a Luisa Piraquive</UniqueName>
+				<UniqueName>C&#233;sar Castellanos</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -71438,7 +71438,7 @@
 			<UniqueNames>
 				<UniqueName>Gabriel Garcia Marquez</UniqueName>
 				<UniqueName>Rodrigo Arenas</UniqueName>
-				<UniqueName>Álvaro Mutis</UniqueName>
+				<UniqueName>&#193;lvaro Mutis</UniqueName>
 				<UniqueName>Fernando Botero</UniqueName>
 				<UniqueName>Rafael Orozco</UniqueName>
 				<UniqueName>Rodrigo Garcia</UniqueName>
@@ -71623,9 +71623,9 @@
 			<Class>UNITCLASS_SCIENTIST</Class>
 			<Type>UNIT_COLOMBIAN_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName>José Jéronimo Triana</UniqueName>
+				<UniqueName>Jos&#233; J&#233;ronimo Triana</UniqueName>
 				<UniqueName>Julio Garavito Armero</UniqueName>
-				<UniqueName>Rodolfo Llinás</UniqueName>
+				<UniqueName>Rodolfo Llin&#225;s</UniqueName>
 				<UniqueName>Jorge Reynolds Pombo</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -71813,7 +71813,7 @@
 			<Type>UNIT_COLOMBIAN_MERCHANT</Type>
 			<UniqueNames>
 				<UniqueName>Julio Mario Santo Domingo Pumarejo</UniqueName>
-				<UniqueName>Carlos Ardila Lülle</UniqueName>
+				<UniqueName>Carlos Ardila L&#252;lle</UniqueName>
 				<UniqueName>Luis Carlos Sarmiento Angulo</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -72179,7 +72179,7 @@
 			<Type>UNIT_COLOMBIAN_GREAT_GENERAL</Type>
 			<UniqueNames>
 				<UniqueName>Antonia Santos</UniqueName>
-				<UniqueName>Antonio Nariño</UniqueName>
+				<UniqueName>Antonio Nari&#241;o</UniqueName>
 				<UniqueName>Francisco de Paula Santander</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -72368,13 +72368,13 @@
 			<Type>UNIT_MEXICAN_PROPHET</Type>
 			<UniqueNames>
 				<UniqueName>Juan Diego</UniqueName>
-				<UniqueName>Felipe de Jesús</UniqueName>
+				<UniqueName>Felipe de Jes&#250;s</UniqueName>
 				<UniqueName>Francisco Javier Clavijero</UniqueName>
-				<UniqueName>Rafael Guízar Valencia</UniqueName>
-				<UniqueName>Cristóbal Magallanes Jara</UniqueName>
+				<UniqueName>Rafael Gu&#237;zar Valencia</UniqueName>
+				<UniqueName>Crist&#243;bal Magallanes Jara</UniqueName>
 				<UniqueName>Miguel Pro</UniqueName>
 				<UniqueName>Samuel Ruiz</UniqueName>
-				<UniqueName>Javier Lozano Barragán</UniqueName>
+				<UniqueName>Javier Lozano Barrag&#225;n</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -72587,13 +72587,13 @@
 			<Class>UNITCLASS_ARTIST</Class>
 			<Type>UNIT_MEXICAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName>José Clemente Orozco</UniqueName>
+				<UniqueName>Jos&#233; Clemente Orozco</UniqueName>
 				<UniqueName>Diego Rivera</UniqueName>
 				<UniqueName>Frida Kahlo</UniqueName>
 				<UniqueName>Octavio Paz</UniqueName>
 				<UniqueName>Pedro Infante</UniqueName>
 				<UniqueName>Carlos Fuentes</UniqueName>
-				<UniqueName>Vicente Fernández</UniqueName>
+				<UniqueName>Vicente Fern&#225;ndez</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -72777,7 +72777,7 @@
 				<UniqueName>Gabino Barreda</UniqueName>
 				<UniqueName>Manuel Sandoval Vallarta</UniqueName>
 				<UniqueName>Ricardo Miledi</UniqueName>
-				<UniqueName>Mario José Molina</UniqueName>
+				<UniqueName>Mario Jos&#233; Molina</UniqueName>
 				<UniqueName>Rodolfo Neri Vela</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -72964,13 +72964,13 @@
 			<Class>UNITCLASS_MERCHANT</Class>
 			<Type>UNIT_MEXICAN_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName>Lucas Alamán</UniqueName>
-				<UniqueName>Víctor Urquidi</UniqueName>
-				<UniqueName>Jerónimo Arango</UniqueName>
+				<UniqueName>Lucas Alam&#225;n</UniqueName>
+				<UniqueName>V&#237;ctor Urquidi</UniqueName>
+				<UniqueName>Jer&#243;nimo Arango</UniqueName>
 				<UniqueName>Carlos Slim</UniqueName>
 				<UniqueName>Everardo Elizondo</UniqueName>
-				<UniqueName>Alberto Baillères</UniqueName>
-				<UniqueName>Emilio Azcárraga Jean</UniqueName>
+				<UniqueName>Alberto Baill&#232;res</UniqueName>
+				<UniqueName>Emilio Azc&#225;rraga Jean</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -73151,11 +73151,11 @@
 			<Class>UNITCLASS_ENGINEER</Class>
 			<Type>UNIT_MEXICAN_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName>José Villagrán García</UniqueName>
-				<UniqueName>Luis Barragán</UniqueName>
+				<UniqueName>Jos&#233; Villagr&#225;n Garc&#237;a</UniqueName>
+				<UniqueName>Luis Barrag&#225;n</UniqueName>
 				<UniqueName>Juan O'Gorman</UniqueName>
 				<UniqueName>Mario Pani</UniqueName>
-				<UniqueName>Pedro Ramírez Vázquez</UniqueName>
+				<UniqueName>Pedro Ram&#237;rez V&#225;zquez</UniqueName>
 				<UniqueName>Bernardo Quintana Arrioja</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -73338,8 +73338,8 @@
 			<Type>UNIT_MEXICAN_GREAT_GENERAL</Type>
 			<UniqueNames>
 				<UniqueName>Miguel Hidalgo</UniqueName>
-				<UniqueName>Agustín de Iturbide</UniqueName>
-				<UniqueName>Porfirio Díaz</UniqueName>
+				<UniqueName>Agust&#237;n de Iturbide</UniqueName>
+				<UniqueName>Porfirio D&#237;az</UniqueName>
 				<UniqueName>Pancho Villa</UniqueName>
 				<UniqueName>Emiliano Zapata Salazar</UniqueName>
 			</UniqueNames>

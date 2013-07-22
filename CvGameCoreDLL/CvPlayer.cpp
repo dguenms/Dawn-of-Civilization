@@ -4862,8 +4862,10 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 			{
 				return true;
 			}*/
-
-			return false;
+			if (getID() != TURKEY)
+			{
+				return false;
+			}
 		}
 
 		//Leoreth: protect holy cities

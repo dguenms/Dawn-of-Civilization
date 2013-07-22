@@ -195,7 +195,7 @@ public:
 
 	bool isValidDomainForLocation(const CvUnit& unit) const;																					// Exposed to Python
 	bool isValidDomainForAction(const CvUnit& unit) const;																						// Exposed to Python
-	bool isImpassable() const;																															// Exposed to Python
+	bool isImpassable() const;																													// Exposed to Python
 
 	DllExport int getX() const;																																				// Exposed to Python
 #ifdef _USRDLL
@@ -491,6 +491,8 @@ public:
 	//Leoreth
 	int getRegionID() const;
 	CvWString getRegionName() const;
+	bool isCore(PlayerTypes ePlayer) const;
+	void setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue);
 
 protected:
 
@@ -546,6 +548,10 @@ protected:
 
 	bool* m_abRiverCrossing;	// bit vector
 	bool* m_abRevealed;
+
+	// Leoreth: initialized by Python at the beginning of the game
+	bool* m_abCore;
+	bool* m_abRebornCore;
 
 	short* /*ImprovementTypes*/ m_aeRevealedImprovementType;
 	short* /*RouteTypes*/ m_aeRevealedRouteType;

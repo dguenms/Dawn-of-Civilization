@@ -47,6 +47,8 @@ CvPlot::CvPlot()
 	m_aiRevealedOwner = NULL;
 	m_abRiverCrossing = NULL;
 	m_abRevealed = NULL;
+	m_abCore = NULL; // Leoreth
+	m_abRebornCore = NULL; // Leoreth
 	m_aeRevealedImprovementType = NULL;
 	m_aeRevealedRouteType = NULL;
 	m_paiBuildProgress = NULL;
@@ -122,6 +124,8 @@ void CvPlot::uninit()
 
 	SAFE_DELETE_ARRAY(m_abRiverCrossing);
 	SAFE_DELETE_ARRAY(m_abRevealed);
+	SAFE_DELETE_ARRAY(m_abCore); // Leoreth
+	SAFE_DELETE_ARRAY(m_abRebornCore); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_aeRevealedImprovementType);
 	SAFE_DELETE_ARRAY(m_aeRevealedRouteType);
@@ -3013,7 +3017,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 			{
 				//Rhye - start (core territories of modern civs are not invaded by old civs' culture dominance)
 				if (iI < NUM_MAJOR_PLAYERS) {
-					if (settlersMaps[GET_PLAYER((PlayerTypes)iI).getReborn()][iI][EARTH_Y - 1 - getY_INLINE()][getX_INLINE()] >= 500)
+					if (isCore((PlayerTypes)iI))
 						if (!isCity())
 							iCulture *= 4;
 						//else
@@ -9175,6 +9179,23 @@ void CvPlot::read(FDataStreamBase* pStream)
 		pStream->Read(cCount, m_abRevealed);
 	}
 
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_abCore);
+	pStream->Read(&cCount);
+	if (cCount > 0)
+	{
+		m_abCore = new bool[cCount];
+		pStream->Read(cCount, m_abCore);
+	}
+	
+	SAFE_DELETE_ARRAY(m_abRebornCore);
+	pStream->Read(&cCount);
+	if (cCount > 0)
+	{
+		m_abCore = new bool[cCount];
+		pStream->Read(cCount, m_abRebornCore);
+	}
+
 	SAFE_DELETE_ARRAY(m_aeRevealedImprovementType);
 	pStream->Read(&cCount);
 	if (cCount > 0)
@@ -9441,6 +9462,27 @@ void CvPlot::write(FDataStreamBase* pStream)
 	{
 		pStream->Write((char)MAX_TEAMS);
 		pStream->Write(MAX_TEAMS, m_abRevealed);
+	}
+
+	// Leoreth
+	if (NULL == m_abCore)
+	{
+		pStream->Write((char)0);
+	}
+	else
+	{
+		pStream->Write((char)NUM_MAJOR_PLAYERS);
+		pStream->Write(NUM_MAJOR_PLAYERS, m_abCore);
+	}
+	
+	if (NULL == m_abRebornCore)
+	{
+		pStream->Write((char)0);
+	}
+	else
+	{
+		pStream->Write((char)NUM_MAJOR_PLAYERS);
+		pStream->Write(NUM_MAJOR_PLAYERS, m_abRebornCore);
 	}
 
 	if (NULL == m_aeRevealedImprovementType)
@@ -10577,4 +10619,66 @@ CvWString CvPlot::getRegionName() const
 	sprintf(szBuffer, "TXT_KEY_REGION_%d", regionMap[EARTH_Y - 1 - getY_INLINE()][getX_INLINE()]);
 	szResult = gDLL->getText(szBuffer);
 	return gDLL->getText(szResult);
+}
+
+
+bool CvPlot::isCore(PlayerTypes ePlayer) const
+{
+	FAssertMsg(eTeam >= 0, "eTeam is expected to be non-negative (invalid Index)");
+	FAssertMsg(eTeam < MAX_TEAMS, "eTeam is expected to be within maximum bounds (invalid Index)");
+
+	if (GET_PLAYER(ePlayer).isReborn())
+	{
+		if (NULL == m_abRebornCore)
+		{
+			return false;
+		}
+
+		return m_abRebornCore[ePlayer];
+	}
+	else
+	{
+		if (NULL == m_abCore)
+		{
+			return false;
+		}
+
+		return m_abCore[ePlayer];
+	}
+}
+
+
+void CvPlot::setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue)
+{
+	int iI;
+
+	FAssertMsg(eTeam >= 0, "eTeam is expected to be non-negative (invalid Index)");
+	FAssertMsg(eTeam < MAX_TEAMS, "eTeam is expected to be within maximum bounds (invalid Index)");
+
+	if (bReborn)
+	{
+		if (NULL == m_abRebornCore)
+		{
+			m_abRebornCore = new bool[NUM_MAJOR_PLAYERS];
+			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
+			{
+				m_abRebornCore[iI] = false;
+			}
+		}
+
+		m_abRebornCore[ePlayer] = bNewValue;
+	}
+	else
+	{
+		if (NULL == m_abCore)
+		{
+			m_abCore = new bool[NUM_MAJOR_PLAYERS];
+			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
+			{
+				m_abCore[iI] = false;
+			}
+		}
+
+		m_abCore[ePlayer] = bNewValue;
+	}
 }

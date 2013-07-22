@@ -258,5 +258,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 
 		//Leoreth
 		.def("getRegionID", &CyPlot::getRegionID, "int ()")
+		.def("isCore", &CyPlot::isCore, "bool (int ePlayer)")
+		.def("setCore", &CyPlot::setCore, "void (int ePlayer, bool bNewValue)")
 	;
 }

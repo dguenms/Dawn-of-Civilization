@@ -205,6 +205,15 @@ tCentralAmericaExceptions = ((25, 38), (25, 41))
 tWesternNorthAmericaTL = (11, 43)
 tWesternNorthAmericaBR = (21, 50)
 
+tPeruTL = (25, 16)
+tPeruBR = (32, 24)
+tGranColombiaTL = (21, 25)
+tGranColombiaBR = (32, 35)
+tGuayanasTL = (33, 27)
+tGuayanasBR = (37, 31)
+tCaribbeanTL = (25, 33)
+tCaribbeanBR = (33, 39)
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -1252,13 +1261,17 @@ class Victory:
 							
 				else:
 				
-					if iGameTurn == getTurnForYear(1860):
-						bLatinAmerica = True
+					if iGameTurn == getTurnForYear(1870):
+						bPeru = True
+						bGranColombia = True
+						bGuayanas = True
+						bCaribbean = True
 						for iEuroCiv in con.lCivGroups[0]:
-							if not self.checkNotOwnedArea(iEuroCiv, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR):
-								bLatinAmerica = False
-								break
-						if bLatinAmerica:
+							if bPeru and not self.checkNotOwnedArea(iEuroCiv, tPeruTL, tPeruBR): bPeru = False
+							if bGranColombia and not self.checkNotOwnedArea(iEuroCiv, tGranColombiaTL, tGranColombiaBR): bGranColombia = False
+							if bGuayanas and not self.checkNotOwnedArea(iEuroCiv, tGuayanasTL, tGuayanasBR): bGuayanas = False
+							if bCaribbean and not self.checkNotOwnedArea(iEuroCiv, tCaribbeanTL, tCaribbeanBR): bCaribbean = False
+						if bPeru and bGrandColombia and bGuayanas and bCaribbean:
 							self.setGoal(iMaya, 0, 1)
 						else:
 							self.setGoal(iMaya, 0, 0)
@@ -4034,7 +4047,6 @@ class Victory:
 			elif iGoal == 2:
 				iGold = pCarthage.getGold()
 				aHelp.append(self.getIcon(iGold >= utils.getTurns()) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(5000))))
-				
 
 		elif iPlayer == iRome:
 			if iGoal == 0:
@@ -4122,12 +4134,17 @@ class Victory:
 		elif iPlayer == iMaya:
 			if pMaya.isReborn():
 				if iGoal == 0:
-					bLatinAmerica = True
+					bPeru = True
+					bGranColombia = True
+					bGuayanas = True
+					bCaribbean = True
 					for iEuroCiv in con.lCivGroups[0]:
-						if not self.checkNotOwnedArea(iEuroCiv, con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR):
-							bLatinAmerica = False
-							break
-					aHelp.append(self.getIcon(bLatinAmerica) + localText.getText("TXT_KEY_VICTORY_NO_LATIN_AMERICAN_COLONIES", ()))
+						if bPeru and not self.checkNotOwnedArea(iEuroCiv, tPeruTL, tPeruBR): bPeru = False
+						if bGranColombia and not self.checkNotOwnedArea(iEuroCiv, tGranColombiaTL, tGrandColombiaBR): bGranColombia = False
+						if bGuayanas and not self.checkNotOwnedArea(iEuroCiv, tGuayanasTL, tGuayanasBR): bGuayanas = False
+						if bCaribbean and not self.checkNotOwnedArea(iEuroCiv, tCaribbeanTL, tCaribbeanBR): bCaribbean = False
+					aHelp.append(self.getIcon(bPeru) + localText.getText("TXT_KEY_VICTORY_NO_COLONIES_PERU", ()) + ' ' + self.getIcon(bGranColombia) + localText.getText("TXT_KEY_VICTORY_NO_COLONIES_GRAN_COLOMBIA", ()))
+					aHelp.append(self.getIcon(bGuayanas) + localText.getText("TXT_KEY_VICTORY_NO_COLONIES_GUAYANAS", ()) + ' ' + self.getIcon(bCaribbean) + localText.getText("TXT_KEY_VICTORY_NO_COLONIES_CARIBBEAN", ()))
 				elif iGoal == 1:
 					bSouthAmerica = self.isControlled(iMaya, tSAmericaTL, tSAmericaBR, tSouthAmericaExceptions)
 					aHelp.append(self.getIcon(bSouthAmerica) + localText.getText("TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA", ()))

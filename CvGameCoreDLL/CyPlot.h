@@ -261,7 +261,10 @@ public:
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 
+	// Leoreth
 	int getRegionID();
+	bool isCore(int ePlayer);
+	void setCore(int ePlayer, bool bReborn, bool bNewValue);
 
 private:
 	CvPlot* m_pPlot;

@@ -248,6 +248,9 @@ class Resources:
 			if gc.getDefineINT("PLAYER_REBIRTH_MEXICO") != 0:
 				gc.getMap().plot(17, 41).setBonusType(iHorse) # Mexico
 				gc.getMap().plot(16, 42).setBonusType(con.iIron) # Mexico
+				
+			if gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") != 0:
+				gc.getMap().plot(28, 31).setBonusType(con.iIron) # Colombia
 			
 			if utils.getPlayerEnabled(con.iArgentina):
 				gc.getMap().plot(31, 10).setBonusType(iWine) # Mendoza, Argentina
@@ -266,9 +269,6 @@ class Resources:
                         gc.getMap().plot(114, 11).setBonusType(iSheep) #Australia
                         gc.getMap().plot(116, 13).setBonusType(iSheep) #Australia
                         gc.getMap().plot(121, 6).setBonusType(iSheep) #New Zealand
-
-			if gc.getDefineINT("PLAYER_RESPAWN_MEXICO") != 0:
-				gc.getMap().plot(19, 41).setBonusType(iHorse) #Mexico
 
                         gc.getMap().plot(58, 47).setBonusType(iRice) #Vercelli
                         gc.getMap().plot(12, 49).setBonusType(iRice) #California
