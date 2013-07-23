@@ -9192,7 +9192,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	pStream->Read(&cCount);
 	if (cCount > 0)
 	{
-		m_abCore = new bool[cCount];
+		m_abRebornCore = new bool[cCount];
 		pStream->Read(cCount, m_abRebornCore);
 	}
 
