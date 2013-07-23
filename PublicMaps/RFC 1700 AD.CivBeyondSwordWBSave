@@ -112,6 +112,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HONGWU
+	LeaderName=Kangxi
 	CivType=CIVILIZATION_CHINA                 
 	Team=1                 
 	PlayableCiv=1                       

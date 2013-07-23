@@ -1,0 +1,168 @@
+# playable civilizations are sorted according to spawn date
+# palace costs scale with era
+# Himeji Castle only gives promotions to Melee and Archery units, expires with Rifling and gets faster production with Copper
+# Westminster Palace now requires Railroad and Democracy
+# the German UP now allows free unit upgrades
+# added oil in Manchuria
+# moved ivory in South India
+# added iron on Sri Lanka
+# added the Tamils as a playable civilization
+	# Spawn: 300 BC at Tanjavur
+	# Leader: Rajendra Chola
+	# Color: Light Blue
+	# Unique Power: The Power of Thalassocracy: +1 commerce on sea tiles
+	# Unique Unit: Dharani (Caravel with 2 cargo, requires Compass, cannot enter Ocean tiles until Astronomy)
+	# Unique Building: Sangam (Library with one additional artist slot)
+	# Unique Historical Victory:
+		# Have 3000 gold and 2000 culture in 800 AD
+		# Control or vassalize the Deccan and Srivijaya in 1000 AD
+		# Acquire 4000 gold by trade by 1200 AD
+# changed the Viking color to light purple
+# continental wonder effects now affect the whole globe
+# oil wells give one additional production and commerce
+# persecution now also removes associated religious buildings
+# reworked persecution AI: even zealous leaders now don't continually persecute until there's no foreign religion left anymore
+# reworked missionary AI: less likely to pursue missionary strategies if potential targets are persecuting
+# made Frederick more aggressive
+# Assembly Plant now gives +25% unit production
+# cities count as correct improvement with regard to bonus plot yields (i.e. you don't lose yields when you build cities on resources!), except for food
+# added Poland as a playable civilization
+	# Spawn: 1025 AD at Krakow
+	# Leaders: Casimir III, Sobieski
+	# Color: Amaranth
+	# Unique Power: The Power of Golden Liberty: reduced penalties from foreign culture
+	# Unique Unit: Winged Hussar (Cuirassier with +50% against gunpowder units)
+	# Unique Building: Sejmik (Courthouse +10% gold)
+	# Unique Historical Victory:
+		# Have three cities with 12 population by 1400 AD
+		# Be first to discover Liberalism
+		# Build three Christian cathedrals by 1600 AD
+# added another wheat in Hungary, moved Silesian wheat north
+# removed peak in the Balkans
+# added Belgrade to the 600 AD scenario
+# missionary success probability abroad is now determined by the civ-specific religion spread rates. This means that missionaries shouldn't produce unrealistic religion spread anymore (like Orthodox Europe)
+# Apostolic Palace doesn't give +25% defense anymore
+# Rome starts without a Castle in the 600 AD scenario
+# Holy Rome doesn't settle the Baltic if Poland is in the game
+# fixed the display of "Austria" in global declaration of war messages
+# the AI will build less missionaries to convert other civilizations to make up for the generally reduced chances
+# the AI will target the holy city of its own state religion more
+# encouraged the Holy Roman AI to conquer Italy
+# Assembly Line now requires Railroad
+# Electricity now requires Steam Power
+# added the Moors as a playable civilization
+	# Spawn: 711 AD at Cordoba
+	# Leaders: Abd-ar-Rahman III, Yaqub al-Mansur
+	# Color: Light Brown
+	# Unique Power: The Power of Irrigation: improvements that increase food give an additional food on plains tiles
+	# Unique Unit: Camel Gunner (Cuirassier with strength 11, requires Gunpowder)
+	# Unique Building: Noria (Aqueduct with +2 production)
+	# Unique Historical Victory:
+		# Make Cordoba the largest city and largest commercial center of the world in 1000 AD
+		# Control three cities in Iberia, the Maghreb and West Africa in 1200 AD
+		# Settle four great prophets, scientists or engineers in Cordoba by 1300 AD
+# added Congo as a playable civilization
+	# Spawn: 1390 AD at Mbanza Kongo
+	# Leader: Mbemba
+	# Color: Khaki
+	# Unique Power: The Power of the Tropics: +1 food and production and no unhealthiness on jungle and marsh tiles
+	# Unique Unit: Pombos (Heavy Swordsman with +50% against gunpowder units)
+	# Unique Building: Mbwadi (Market with +1 happiness from cotton, sheep, fur)
+	# Unique Historical Victory:
+		# Have 10% of the votes in the Apostolic Palace by 1650 AD
+		# Acquire 1000 gold by slave trade by 1800 AD
+		# Enter the Industrial Era before anyone enters the Modern era
+# The Red Fort now requires Patronage and Engineering
+# spread probability of Catholicism and Protestantism ignores distance penalties for cities in the New World
+# Andalusia excluded from Spanish core
+# the AI won't join generals to mercenaries anymore
+# the Apostolic Palace now only has full members (i.e. Catholic state religion only)
+# added slave units
+	# can be created by using the enslave button in cities in Sub-Saharan Africa while running Forced Labor
+	# defeating Pombos and Impis on your territory while running Forced Labor has a chance to give a slave unit
+	# slaves can be sold in the diplomacy negotiation table
+	# native African civs cannot sell slaves
+	# others can build slave plantations (+1 production and +2 commerce over regular plantations, consumes the slave) or settle them as specialists (+2 production, +1 happiness)
+	# switching out of Forced Labor, Agrarianism, Mercantilism removes all slave plantations and specialists
+	# conquering a city with slave specialists turns them into slave units again
+# changed the Aztec UP to give slaves now instead of workers, Aztec slaves can be sacrificed for happiness or hurry buildings
+# added a stability tab to the interior advisor to give a more detailed rundown of stability factors
+# Great Cothon now creates great merchant points
+# economic growth isn't measured against a previous golden age anymore to avoid excessive penalties afterwards
+# added Tibet as a playable civilization
+	# Spawn: 630 AD at Lhasa
+	# Leader: Songtsen Gampo, Lobsang Gyatso
+	# Color: purple
+	# Unique Power: The Power of Missionaries: missionaries can enter foreign territory and are not limited in numbers
+	# Unique Unit: Khampa (Horse Archer with +100% city attack, can enter foreign territory)
+	# Unique Building: Gompa (University with +10% research, one free priest, one priest slot, +20% defense, requires Paper and Engineering)
+	# Unique Historical Victory:
+		# Acquire five cities by 1000 AD
+		# Spread Buddhism to 30% by 1400 AD
+		# Settle five great prophets in Lhasa by 1700 AD
+# independents can't circumnavigate anymore
+# the French UP now actually lets diplomatic penalties decay twice as fast, prevents other civs from refusing to talk to them and lets other civs vote for them in congresses more often
+# rebalanced the bribe mechanic for congresses according to iOnlySignIn's suggestions
+# Academies now require Literature
+# reduced Roman unit costs
+# Legions can build Roman roads, which provide +1 extra movement with Masonry (i.e. become equivalent to normal roads with Engineering)
+# renamed Tokugawa to Oda Nobunaga and made him less isolationist
+# Netherlands spawn in 1580 AD now
+# added a feature to disable or randomize the spawn of Tamils, Tibet, Moors, Poland and Congo
+# Thailand's third UHV now also allows the Tamils in South Asia
+# Thailand's first UHV goal now requires 10 civilizations to account for the addition of Tibet and Tamils
+# redesigned barbarians, new spawn types with different spawning patterns and unit AIs
+# historically and regionally appropriate adjectives for barbarians
+# new units for barbarians only: Celtic Cidainh, Hittite Huluganni, Nubian Medjay, Kushan Asvaka, Songhai Farari, Iroquois Mohawk, Sioux Mounted Brave
+# new Huscarl graphics
+# Impis cannot pass deserts anymore
+# resources on selected islands (Mediterranean, Caribbean) can now be connected without building forts on them
+# new Phoenician UU: African War Elephant (War Elephant, requires only Horseback Riding, starts with Shock)
+# new Phoenician UB: Glassmaker (Market with +50% trade route yield)
+# reverted the Phoenician UP to the Power of Mercenaries: -50% mercenary hire and upkeep cost
+# additional starting techs for Phoenicia
+# new Phoenician UHV:
+	# Build a palace and the Great Cothon in Carthage by 300 BC
+	# Control Italy and Iberia in 100 BC
+	# Have 5000 gold in 200 AD
+# fixed the Persian spawning zone with regards to Phoenicia
+# all War Elephant units now have -25% city attack and only +25% against cavalry
+# scripted the HRE autoplay in the 3000 BC scenario so that the Apostolic Palace and Catholic Shrine are already present
+# Vikings found Roskilde instead of Kobenhavn, renamed in the Renaissance
+# increased the required resources for the second Indonesian goal to 10
+# changed the marble in Tunisia to stone
+# great artists give +1 happiness
+# Arabia doesn't settle the Sahara anymore
+# Aztecs don't settle Northern Mexico anymore
+# Pombos replace Impis as African natives during the late game
+# invasion events are now only displayed in the global log if you have contact to the target
+# redesigned the "no settlers on different continents before Astronomy" rule to take actual continents into account, not different islands
+# Independents can't trigger conquerors anymore
+# North American barbarians only start to spawn if cities are present in their area
+# renamed "The Malinese" to "The Mandinka" and changed their adjective to "Mande"
+# American Malls are now available with Electricity and have a merchant slot
+# new Portuguese UHV:
+	# Have open borders with 14 civilizations by 1550 AD
+	# Acquire 12 trading company resources by 1650 AD
+	# Control 15 colonies in Brazil, Africa and Asia in 1700 AD
+# naval units can't be flipped anymore and are destroyed instead
+# instead of receiving a settler from the trading company event, the AI immediately founds a city, to avoid culture problems
+# removed fish north of Ireland
+# added stone north of Timbuktu
+# new Mande UHV:
+	# Conduct a trade mission to your holy city by 1350 AD
+	# Build the University of Sankore and settle a great prophet in its city by 1500 AD
+	# Have 5000 gold in 1500 AD and 15000 gold in 1700 AD
+# reduced Russian Research Institute to one free scientist
+# Buddhism is autofounded during the autoplay if not founded already around 100 AD
+# human players don't start the game at war anymore
+# tech requirements for corporations are now displayed in the civilopedia
+# Luxury Industry also consumes marble now
+# iron appears in Egypt in 900 AD
+# Mongolia starts with Gunpowder and bombards
+# goody huts are placed randomly in the vicinity of their original location
+# stability categories removed from the financial advisor due to the new stability advisor
+# changed St. Basil's Cathedral's tech requirement to Military Tradition
+# changed Camel Archers from +25% against cavalry to 35% withdrawal chance
+# added a new loading screen
+# modified the minimap to display territory more transparently over water

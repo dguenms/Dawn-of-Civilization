@@ -28,6 +28,10 @@
 # made Montezuma more focused on growth
 # made Hongwu more focused on building units
 # the Aztecs now start with Pantheon
+# new Aztec UHV:
+	# Make Tenochtitlan the largest city in the world in 1520 AD
+	# Build 6 pagan temples and sacrificial altars by 1650 AD
+	# Enslave 20 European units
 # 600 AD scenario now with Herat instead of Kandahar and Lahore instead of Peshawar
 # moved Afghan gems 1W to be in range of Herat
 # additional flood plains in Transoxania, disappear in 1600 AD
@@ -78,7 +82,7 @@
 	# Spawn: 1822 AD
 	# Capital: Rio de Janeiro
 	# Leader: Dom Pedro II
-	# Unique Unit: Madeireiro (Worker with Woodsman II, creates production and gold from chopping jungles and forests
+	# Unique Unit: Madeireiro (Worker with Woodsman II, creates production and gold from chopping jungles and forests)
 	# Unique Building: Fazenda (Grocer with +5% with Banana, Sugar, Spices, Tobacco and Coffee, +1 health with coffee)
 	# Unique Power: Ethanol (sugar counts as oil for the Oil Industry)
 	# Unique Historical Victory:
@@ -115,7 +119,7 @@
 # no AI conquerors against their own masters anymore
 # American cities outside of the Mexican core ignored by Mexican flip
 # made Argentina and Brazil optional civs
-# Mexico, Argentina and Brazil now have conditional spawns based on the stability of their owners
+# Argentina and Brazil now have conditional spawns based on the stability of their owners
 # added a tech history graph to the demographics advisor
 # free buildings when founding a city from at least the previous era
 # improved Polish settler map
@@ -123,7 +127,7 @@
 # Poland now focuses more on researching Military Tradition, Astronomy and Liberalism
 # the Polish Sejmik now also gives +2 happiness
 # independents pay no unit upkeep
-# Argentina, Mexico and Brazil have a dynamic state religion based on the religions in their core
+# Argentina, Mexico, Colombia and Brazil have a dynamic state religion based on the religions in their core
 # moved Indian respawn into the 20th century
 # AI conquerors start with additional experience
 # new capital locations should now prefer city on the same continent instead of far away colonies
