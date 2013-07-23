@@ -1271,7 +1271,7 @@ class Victory:
 							if bGranColombia and not self.checkNotOwnedArea(iEuroCiv, tGranColombiaTL, tGranColombiaBR): bGranColombia = False
 							if bGuayanas and not self.checkNotOwnedArea(iEuroCiv, tGuayanasTL, tGuayanasBR): bGuayanas = False
 							if bCaribbean and not self.checkNotOwnedArea(iEuroCiv, tCaribbeanTL, tCaribbeanBR): bCaribbean = False
-						if bPeru and bGrandColombia and bGuayanas and bCaribbean:
+						if bPeru and bGranColombia and bGuayanas and bCaribbean:
 							self.setGoal(iMaya, 0, 1)
 						else:
 							self.setGoal(iMaya, 0, 0)
@@ -4140,7 +4140,7 @@ class Victory:
 					bCaribbean = True
 					for iEuroCiv in con.lCivGroups[0]:
 						if bPeru and not self.checkNotOwnedArea(iEuroCiv, tPeruTL, tPeruBR): bPeru = False
-						if bGranColombia and not self.checkNotOwnedArea(iEuroCiv, tGranColombiaTL, tGrandColombiaBR): bGranColombia = False
+						if bGranColombia and not self.checkNotOwnedArea(iEuroCiv, tGranColombiaTL, tGranColombiaBR): bGranColombia = False
 						if bGuayanas and not self.checkNotOwnedArea(iEuroCiv, tGuayanasTL, tGuayanasBR): bGuayanas = False
 						if bCaribbean and not self.checkNotOwnedArea(iEuroCiv, tCaribbeanTL, tCaribbeanBR): bCaribbean = False
 					aHelp.append(self.getIcon(bPeru) + localText.getText("TXT_KEY_VICTORY_NO_COLONIES_PERU", ()) + ' ' + self.getIcon(bGranColombia) + localText.getText("TXT_KEY_VICTORY_NO_COLONIES_GRAN_COLOMBIA", ()))

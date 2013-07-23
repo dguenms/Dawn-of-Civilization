@@ -1,5 +1,5 @@
 RFC Dawn of Civilization Version 1.0
-by Daniel Günther (Leoreth on civfanatics.com)
+by Leoreth (civfanatics.com)
 
 This is a modmod for Rhye's and Fall of Civilization.
 

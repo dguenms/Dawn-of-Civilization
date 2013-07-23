@@ -3266,7 +3266,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	iValue /= 100;
 
 	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] <= 3)
-		iValue /= 2;
+		return 0;
 	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] <= 60)
 		iValue /= 2;
 	/*if (settlersMaps[getID()][EARTH_Y - 1 - tempY][tempX] >= 200) {

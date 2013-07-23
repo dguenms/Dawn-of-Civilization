@@ -14,7 +14,7 @@ GAME MECHANICS
 # added a civic-specific leader switch mechanic:
 	# Germany and Spain switch to Hitler and Franco when fascist, respectively
 	# China and Russia switch to Mao and Stalin when communist, respectively
-	# Cixi and Nicholas II added as non-communist leaders
+	# Hongwu and Nicholas II added as non-communist leaders
 # Added the "rebirth" mechanism: some dead civs respawn as another civilization at a certain date (e.g. Rome as Italy), if the civ is still alive, no rebirth happens
 # civilizations are more likely to collapse after a certain historical date (e.g. Rome after 476 AD)
 # adapted the civic requirement mechanic for buildings and units from Sword of Islam
@@ -49,6 +49,7 @@ GAME MECHANICS
 # Seljuk and independent cities immediately flip to Turkey to offset their lack of starting settlers
 # former city garrisons get pushed out before they flip to certain civs (Italy, Turkey) to prevent them from becoming too strong
 # building a Trading Company as Portugal, Spain, France, England, Netherlands gives you the option to acquire Asian cities in your civs historical area by force or gold
+# the AI receives these conquerors when discovering Astronomy (Portugal, Spain) or Economics and Rifling (England, France, Netherlands)
 # the stability of capitulated civs is reset
 # the game now checks for collapse more often, to make up for the increased number of civs
 # instead of the oldest civilizations, the civilization with the lowest stability is checked for collapse first
@@ -87,6 +88,23 @@ GAME MECHANICS
 # resources on small islands can be connected to the trade network without forts
 # settled great artists give +1 happiness
 # human players don't start the game at war with anyone anymore
+# unhappiness from conscription and slavery is reset on city conquest
+# culture from minor civs in your cities does not contribute to "we wish to join our motherland" unhappiness anymore
+# added a generic immigration mechanic for civs with their capital in the new world to replace the old American UP
+# included an option to ignore UHV checks for AI civs to improve speed (enabled by default)
+# minor civs cannot receive conquerors anymore
+# minor civs and barbarians cannot build wonders
+# redesign of the resurrection mechanic: more accurate starting techs, new civs receives an army and city infrastructure
+# culture of minor civs converted on city conquest
+# complete redesign of the City Name Manager, for improved speed and multiple or shared languages
+# slave plantations cannot be built in jungles and forests anymore
+# building a palace on historical territory doesn't cause a stability hit
+# founded cities receive at least all free buildings from the previous era
+# new capital locations now prefer cities on the same continent over colonies
+# India cannot respawn as long as the Mughals are still alive
+# wars on spawn only start when the spawn actually happens
+# minor civs cannot take goody huts
+# Pastures and Plantations now yield +1 gold with railroads
 
 BALANCE
 # more Keshiks for Mongolia on spawn
@@ -121,6 +139,11 @@ BALANCE
 # instead of receiving a settler from the trading company event, the AI immediately founds the city to avoid that the tile is covered by foreign culture
 # Buddhism is autofounded around 100 AD if it doesn't exist already, to help the Korean UHV
 # The existence of the Catholic shrine and the Apostolic Palace is guaranteed at the time of the German spawn to preserve the challenge of their UHV
+# European AI civs receive a free worker and defender when founding a colony
+# the least advanced third of all civilizations gets an additional benefit from already discovered techs
+# the number of settlers a civ receives on spawn depends on the number of cities about to flip
+# independents pay no unit upkeep
+# AI conquerors start with extra experience
 
 INTERFACE
 # Great people births are displayed again
@@ -155,6 +178,12 @@ INTERFACE
 # tech requirements for corporations are now displayed in the Civilopedia
 # stability categories removed from the financial advisor due to the new stability advisor
 # modified the minimap to display territory more transparently on water
+# Egypt's settler is now selected at the beginning of the game
+# you are now properly notified when you fail a wonder goal
+# if the first contact between two civilizations triggers a war, there is no diplomacy screen anymore
+# added a tech history graph to the demographics advisor screen
+# Civilopedia now better displays building requirements (civics, river, water)
+# Civilopedia now better displays religion requirements
 
 GRAPHICS
 # China has a light yellow color now (Zulu from BtS)
@@ -188,6 +217,8 @@ MAP
 	# Northern Chile
 	# Cape of Good Hope
 	# around Newfoundland to deny access to the rest of America
+	# Canary Islands
+	# Gold Coast
 # added swamp in Newfoundland to deny access to the rest of America
 # excluded Detroit from America's spawn area
 # independent Kyiv spawns in 900 AD with 2 longbowmen
@@ -215,7 +246,7 @@ MAP
 # independent Varanasi and Indraprastha appear shortly before the Indian spawn
 # jungle in Vietnam appears before the Thai spawn
 # added new happiness resources:
-	# Coffee (Yemen, Ethiopia, later Colombia, Java and Brazil)
+	# Coffee (Yemen, Ethiopia, later Congo, Colombia, Java and Brazil)
 	# Tobacco (Kentucky, Virginia, Cuba, later Rumelia)
 	# Tea (West Bengal, Burma, South China, replaces some spice resources)
 # minor map adjustments in Colombia, Brazil, Sri Lanka, Mexico, Caribbean, California
@@ -234,6 +265,19 @@ MAP
 # added stone north of Timbuktu
 # iron appears in Egypt in 900 AD
 # goody huts are placed randomly in the vicinity of their original position at the beginning of the game
+# map improvements in Australia for realism and better city locations
+# added marble near Wahran
+# changed the terrain in Mexico to allow for a larger Tenochtitlan
+# 600 AD map now starts with Herat and Lahore instead of Kandahar and Peshawar
+# additional flood plains in Transoxania, disappear in 1600 AD
+# horse (Mexico) and iron (Mexico, Colombia, Argentina) spawn if the respective civs are present
+# Chan Chan and Tiwanaku spawn before the Inca appear
+# opened up the Altiplano basin and placed sheep (alpacas) and stone there
+# removed and relocated some marshes in the Amazon rainforest
+# included a new scenario starting in 1700 AD
+# pass over the Andes opens in Bolivia when the Incan conquerors arrive
+# added additional capes around the Canaries and the Gold Coast to delay the circumnavigation of Africa
+# opened the Canary Islands for settlement
 
 CIVILIZATIONS
 # Updated UP for Egypt: it now enables Dynasticism, Forced Labor and Pantheon
@@ -278,6 +322,15 @@ CIVILIZATIONS
 # the Thais now flip Angkor if it has at least one wonder
 # changed the Aztec UP to give slaves instead of workers, Aztec slaves can also hurry buildings or be sacrificed for temporary happiness
 # Mali is now known as the Mandinka and their adjective is Mande
+# new American UP: The Power of the American Dream: +2 happiness each while running Republic, Capitalism and Free Market
+# American UB (Mall) now has +10% commerce instead of +20% gold
+# new American UU: Minuteman (replaces Rifleman), costs 80 instead of 110 hammers, starts with March
+# reduced Incan starting units and settlers
+# reduced the Incan core to only include the vicinity of Qusqu
+# new Inca UB: Tambo (replaces Castle, requires Construction, +2 culture)
+# new Portuguese UP: Ocean Trade and Resettlement are allowed with Optics
+# Argentina, Mexico, Colombia and Brazil have a dynamic state religion based on the religions in their core
+# adjusted the Incan respawn to suit Peru more
 
 UHVs
 # First Dutch goal changed to: settle three merchants in Amsterdam by 1745 AD
@@ -341,11 +394,21 @@ UHVs
 	# Conduct a trade mission to your holy city in 1350 AD
 	# Build the University of Sankore and settle a great prophet in its city by 1500 AD
 	# Have 5000 gold in 1500 AD and 15000 gold in 1700 AD
+# the first American goal now also requires to control or vassalize Mexico
+# the second American goal now includes the Empire State Building
+# new Aztec UHV:
+	# Make Tenochtitlan the largest city in the world in 1520 AD
+	# Build 6 pagan temples and 6 sacrificial altars by 1650 AD
+	# Enslave 20 European units
+# new Incan UHV:
+	# Build five Tambos and a road along the Andean coast by 1500 AD
+	# Have 2500 gold in 1550 AD
+	# Control 60% of South America in 1700 AD
 
 NEW CIVILIZATIONS
 # Replaced Carthage with Phoenicia
 	# Spawn 1200 BC at Sur
-	# The Power of Mercenaries - -50% mercenary costs
+	# The Power of Mercenaries: -50% mercenary costs
 	# Unique Building: Glassmaker (Market): +50% trade route yield
 	# Unique Unit: African War Elephant (War Elephant): requires only Horseback Riding, starts with Shock
 	# changed version of Carthage's UHV (see "UHVs")
@@ -423,7 +486,7 @@ NEW CIVILIZATIONS
 	# Unique Historical Victory:
 		# Control the Apostolic Palace and the Church of the Holy Sepulchre in 1200 AD
 		# Found Protestantism
-		# Have three European vassals in 1500 AD
+		# Settle three great artists in Vienna by 1700 AD
 # added Iran as a Persian "rebirth"
 	# Rebirth in 1500 AD in Esfahan
 	# Leader: Abbas, Khomeini
@@ -462,9 +525,9 @@ NEW CIVILIZATIONS
 	# Spawn 1025 AD at Krakow
 	# Leaders: Casimir III, Sobieski
 	# Color: Amaranth
-	# Unique Unit: Winged Hussar (Cuirassier with +50% against gunpowder units)
-	# Unique Building: Sejmik (Courthouse +10% gold)
-	# Unique Power: The Power of Golden Liberty: reduced penalties from foreign culture
+	# Unique Unit: Winged Hussar (Cuirassier with +50% attack against Musketman, Rifleman)
+	# Unique Building: Sejmik (Courthouse with +10% gold and +2 happiness)
+	# Unique Power: The Power of Golden Liberty: free cultural control over historical tiles (other players may keep the first ring around their cities)
 	# Unique Historical Victory:
 		# Have three cities with 12 population by 1400 AD
 		# Be first to discover Liberalism
@@ -485,7 +548,7 @@ NEW CIVILIZATIONS
 	# Leader: Mbemba
 	# Color: Khaki
 	# Unique Unit: Pombos (Heavy Swordsman with +50% against gunpowder units)
-	# Unique Building: Mbwadi (Market with +1 happiness from cotton, sheep, fur)
+	# Unique Building: Mbwadi (Market with +10% gold with cotton, sheep, silk)
 	# Unique Power: The Power of the Tropics: +1 food and production and no unhealthiness on jungle and marsh tiles
 	# Unique Historical Victory:
 		# Have 10% of the votes in the Apostolic Palace by 1650 AD
@@ -502,7 +565,53 @@ NEW CIVILIZATIONS
 		# Acquire five cities by 1000 AD
 		# Spread Buddhism to 30% by 1400 AD
 		# Settle five great prophets in Lhasa by 1700 AD
-# the spawn of the Tamils, Tibet, Moors, Poland and Congo can be disabled or randomized by editing GlobalDefinesAlt.xml
+# added Mexico as an Aztec "rebirth"
+	# Respawn 1810 AD at Ciudad de México
+	# Leaders: Juarez, Santa Anna, Cardenas
+	# Color: Green
+	# Unique Unit: Rurales (Cavalry with -20 cost, can fortify, starts with Combat I)
+	# Unique Building: Charreada Arena (Amphitheatre with +1 happiness with Horse, +2 experience for mounted units)
+	# Unique Power: The Power of Arid Agriculture: can build farms on hills
+	# Unique Historical Victory:
+		# Build three cathedrals of your state religion by 1880 AD
+		# Create three great generals by 1940 AD
+		# Make Mexico City the largest city in the world in 1960 AD
+# added Brazil
+	# Spawn 1822 AD at Rio de Janeiro
+	# Leaders: Dom Pedro II
+	# Color: light green
+	# Unique Unit: Madeirero (Worker, starts with Woodsman II, chopping jungles and forests creates production and gold)
+	# Unique Building: Fazenda (Grocer with +5% gold with Banana, Spice, Sugar, Coffee, Tobacco, +1 health with Coffee)
+	# Unique Power: The Power of Ethanol: Sugar counts as Oil for the Oil Industry corporation
+	# Unique Historical Victory:
+		# Control 10 slave plantations and 4 pastures in 1880 AD
+		# Build Wembley, Cristo Redentor and the Three Gorges Dam
+		# Control 20 Forest Preserves and have a National Park in your capital in 1950 AD
+# added Argentina
+	# Spawn 1810 at Buenos Aires
+	# Leaders: San Martin, Peron
+	# Color: light blue
+	# Unique Unit: Grenadier Cavalry (Cavalry with +25% against Rifleman)
+	# Unique Building: Cold Storage Plant (Supermarket with +10% gold from Cow, Pig, Sheep)
+	# Unique Power: The Power of Justicialism: +1 happiness per 10% culture rate
+	# Unique Historical Victory:
+		# Settle 2 great generals in your capital in 1900 AD
+		# Control the city with the highest commerce output in 1930 AD
+		# Have 25000 culture in Buenos Aires in 1960 AD
+# added Colombia as a Maya "rebirth"
+	# Respawn 1814 AD at Bogotá
+	# Leader: Bolivar
+	# Color: purple
+	# Unique Unit: Albion Legion (Grenadier with 2 moves, starts with City Attack I)
+	# Unique Building: Hacienda (Grocer with +25% gold with Coffee)
+	# Unique Power: The Power of the Liberator: No resistance in conquered cities in Latin America
+	# Unique Historical Victory:
+		# Allow no European colonies in Peru, Gran Colombia, the Guayanas and the Caribbean in 1870 AD
+		# Control South America in 1920 AD
+		# Acquire 5000 gold by selling resources by 1950 AD
+# the spawn of the Tamils, Tibet, Moors, Poland, Congo, Argentina and Brazil can be disabled or randomized by editing GlobalDefinesAlt.xml
+# the rebirth of Mexico and Colombia can be disabled in CvGlobalDefinesAlt.xml
+# Argentina and Brazil do not spawn if their core is empty
 
 TECHNOLOGIES
 # Communism now requires Steam Power, Scientific Method and Liberalism
@@ -511,6 +620,9 @@ TECHNOLOGIES
 # Electricity now only adds +1 commerce to watermills
 # Assembly Line now also requires Railroad
 # Electricity now also requires Steam Power
+# Electricity is now required to access Aluminum
+# Economics now requires Astronomy
+# Pastures now yield +1 food with Refrigeration
 
 UNITS
 # The Greek unique unit was renamed from Phalanx to Hoplite
@@ -518,7 +630,7 @@ UNITS
 # The Viking unique unit was renamed from Berserker to Huscarl and its graphics changed accordingly
 # The Arabian unique unit, the Camel Archer, now has 35% withdrawal chance
 # The French unique unit was changed from Musketeer to Culverin, a Cannon with +25% against gunpowder and siege units
-# The German unique unit, the Panzer, now requires Oil and starts with Mobility instead of Commando
+# The German unique unit, the Panzer, now requires Oil and starts with Leadership instead of Commando
 # Airships now require Combustion
 # Replaced Macemen with Longswordsmen (same stats)
 # New unit: Levy (strength 6, +25% against mounted units, produced with food, requires Feudalism and Vassalage)
@@ -538,6 +650,11 @@ UNITS
 # new units for barbarians only: Hittite Huluganni, Nubian Medjay, Kushan Ashvaka, Songhai Farari, Iroquois Mohawk, Sioux Mounted Brave
 # Impis cannot pass deserts anymore
 # all War Elephant units have -25% city attack and only +25% against cavalry
+# Infantry does not receive +25% against gunpowder units anymore
+# Mongol Keshiks now start with Formation and ignore city defenses
+# Dog Soldiers only receive +75% against melee units
+# The Incan unique unit was renamed from Quechua to Aucac
+# Portuguese Carracks start with Sentry now
 
 BUILDINGS
 # Monument was renamed Pagan Temple, expires with Divine Right and gives +1 happiness with the Pantheon civic (see "civics")
@@ -552,6 +669,8 @@ BUILDINGS
 # Academies now require Literature
 # American Malls now require Electricity and have one merchant slot
 # Russian Research Institutes have only one scientist slot
+# Harbors can be built on all bodies of water, regardless of size
+# National Parks now give +8 health instead of completely removing unhealthiness
 
 WONDERS
 # continental wonder effects now affect the whole map
@@ -562,8 +681,8 @@ WONDERS
 	# Hindu wonders: Taj Mahal, Harmandir Sahib, Khajuraho, The Great Bath, Wat Preah Pisnulok
 	# Confucian wonders: Great Wall, Terracotta Army, Porcelain Tower
 	# Zoroastrian wonders: Mausoleum of Maussollos
-	# Classical wonders (require the Pantheon civic): Parthenon, Oracle, Colossus, Mausoleum, Statue of Zeus, Temple of Artemis, Great Library, Great Cothon, Pantheon*, Pyramids, Sphinx*, Hanging Gardens, Ishtar Gare
-	# New World wonders (require Corn): Temple of Kukulkan
+	# Classical wonders (require the Pantheon civic): Parthenon, Oracle, Colossus, Mausoleum, Statue of Zeus, Temple of Artemis, Great Library, Great Cothon, Pyramids, Sphinx*, Hanging Gardens, Ishtar Gate, Floating Gardens, Machu Picchu
+	# New World wonders (require Corn): Temple of Kukulkan, Floating Gardens, Machu Picchu
 # The Apostolic Palace requires state religion and moves the Holy City to where it is built
 # Stonehenge was replaced with the Great Sphinx
 # Moai Statues were replaced with the Great Cothon
@@ -591,7 +710,7 @@ WONDERS
 # Added Versailles (Patronage, Divine Right): starts a golden age
 # Added Empire States Building (Steel, Industrialism): +1 gold per population point
 # Added The Grand Canal (Calendar, Machinery): +2 gold per river tile for its city, expires with Replaceable Parts
-# Added The Floating Gardens (Construction, Corn): +1 food per river tile for its city, expires with Optics
+# Added The Floating Gardens (Calendar, river): +6 food for its city
 # Added Trafalgar Square (Chemistry, Astronomy, naval unit with level three or higher): +5 XP and +50% production for naval units, expires with Combustion
 # Added Lubyanka (Communism): +2 espionage per specialist
 # Changed Hagia Sophia to the Orthodox shrine
@@ -607,6 +726,10 @@ WONDERS
 # Great Wall expires with Gunpowder
 # The Apostolic Palace expires with Nationalism and doesn't give +25% city defense anymore
 # The Statue of Liberty now requires coastal access and Republic
+# Added Macchu Pichu (Construction): +2 gold for every peak in city radius
+# Wembley now also requires Radio
+# The Eiffel Tower now requires Electricity and Steel
+# The Forbidden Palace now also reduces civic upkeep by 33%
 
 LEADERHEADS
 # China: added Tang Taizong and Hongwu
@@ -665,11 +788,11 @@ CIVICS
 # New five categories: Government, Organization, Society, Economy, Religion
 # Government:
 	1. Tyranny (standard)
-	2. Dynasticism (Monarchy): +1 happiness per military unit
+	2. Dynasticism (Monarchy): +1 happiness per military unit, capped at +8
 	3. City States (Code of Laws): +1 food per specialist in all cities that work at most 7 land tiles, +100% number of cities maintenance 
            [note: the extra food only applies to specialists that aren't hired because of unlimited specialist effects such as Egalitarianism, this is not displayed for individual specialists]
-	4. Theocracy (Theology): +2 experience and +2 happiness with state religion, no foreign religion spread
-	5. Autocracy (Nationalism): +2 happiness with barracks, can draft military units
+	4. Theocracy (Theology): +2 experience and +2 happiness with state religion, no foreign religion spread, unlimited priests
+	5. Autocracy (Nationalism): +3 happiness with barracks, can draft military units
 	6. Republic (Philosophy): +100% cottage growth, +40% great people birth, +25% war weariness
 # Organization:
 	1. Direct Rule (standard)
@@ -683,7 +806,7 @@ CIVICS
 	2. Agrarianism (Calendar): +1 commerce for pastures and +2 commerce for plantations, -1 trade route, -50% cottage growth
 	3. Urbanization (Guilds): +50% worker speed, +1 production from workshops
 	4. Capitalism (Economics): +2 commerce for towns, can hurry with gold, +10% commerce
-	5. Totalitarianism (Fascism): -50% war weariness, +25% espionage, +25% unit production
+	5. Totalitarianism (Fascism): -50% war weariness, +25% espionage, +25% unit production, unlimited spies
 	6. Egalitarianism (Democracy): Unlimited artist, merchant, scientist
 # Economy:
 	1. Self-Sufficiency (standard)
@@ -700,7 +823,7 @@ CIVICS
 	5. Fanaticism (Divine Right): +25% unit training speed with state religion, +2 unhappiness per non-state religion
 	6. Secularism (Liberalism): +10% science
 # Expansion
-	- added the Imperialism civic (requires Nationalism): reduced penalty from controlling foreign cores, reduced likeliness of respawns on your territory
+	# added the Imperialism civic (requires Nationalism): reduced penalty from controlling foreign cores, reduced likeliness of respawns on your territory
 
 CORPORATIONS
 # Corporation headquarters and executives removed, corporations spread on their own to cities that fulfill its conditions
@@ -737,8 +860,11 @@ AI
 # minor civs don't use nukes anymore
 # added a semi-scripting routine to help China place its cities
 # reduced the overzealous settling of Arabia and Aztecs in unsuitable locations
+# AIs now properly target independents in their war target areas
+# prevented the AI from building the embassy of civs it shares a border with, and made the construction of embassies less likely in general
 
 BUGFIXES
 # included 3Miro's fixes to the bugs that rendered settlers and large unit stacks unable to move, respectively
 # Keshiks now cause flanking damage as intended
 # Stealth Destroyers now detect Submarines as (probably) intended
+# Units from other civs don't create military happiness anymore
