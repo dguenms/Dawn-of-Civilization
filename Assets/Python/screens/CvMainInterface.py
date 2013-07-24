@@ -10,18 +10,6 @@ import time
 import Consts as con #Rhye
 import RFCUtils #Rhye
 
-# < Mercenaries Start >
-import CvMercenaryManager
-#import CvConfigParser #Rhye
-import MercenaryUtils
-#import CvMercenaryModGameUtils #Rhye
-import CvGameInterface
-
-objMercenaryUtils = MercenaryUtils.MercenaryUtils()
-gameUtils = CvGameInterface.gameUtils()
-
-# < Mercenaries End   >
-
 # globals
 utils = RFCUtils.RFCUtils() #Rhye
 gc = CyGlobalContext()
@@ -114,32 +102,11 @@ g_iTimeTextCounter = 0
 
 g_pSelectedUnit = 0
 
-# < Mercenaries Start >
-
-mercenaryManager = CvMercenaryManager.CvMercenaryManager(CvScreenEnums.MERCENARY_MANAGER)
-
-# This value also controls the "Mercenary Manager" button and when it should be displayed.
-# Default value is "ERA_ANCIENT"
-#Rhye - start (was causing an assert)
-#g_iStartingEra = gc.getInfoTypeForString("ERA_ANCIENT")
-g_iStartingEra = 0
-#Rhye - end
-
-# Change this to false to allow contracting out units outside of cities.
-# Default value is true
-g_bRequireCityUnitContractCreation = true
-
-# < Mercenaries End >
-
 class CvMainInterface:
 	"Main Interface Screen"
 
 	#m_iNumPlotListButtons = (CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE ).getXResolution() - (iMultiListXL+iMultiListXR) - 68) / 34 #Rhye (bugfix)
         m_iNumPlotListButtons = 800 #Rhye (bugfix)
-        
-	# < Mercenaries Start >
-	repainting = false
-	# < Mercenaries End   >
 
 	def numPlotListButtons(self):
 		return self.m_iNumPlotListButtons
@@ -161,13 +128,6 @@ class CvMainInterface:
 		global MAX_DISPLAYABLE_TRADE_ROUTES
 		global MAX_BONUS_ROWS
 		global MAX_CITIZEN_BUTTONS
-
-		# < Mercenaries Start >
-		global g_iStartingEra
-		global g_bRequireCityUnitContractCreation 
-
-		self.repainting=false
-		# < Mercenaries End   >
 						
 		if ( CyGame().isPitbossHost() ):
 			return
@@ -192,21 +152,6 @@ class CvMainInterface:
 		g_NumProjectInfos = gc.getNumProjectInfos()
 		g_NumProcessInfos = gc.getNumProcessInfos()
 		g_NumActionInfos = gc.getNumActionInfos()
-
-		# < Mercenaries Start >
-
-		# Load the Mercenaries Mod Config INI file containing all of the configuration information
-		#Rhye - start comment
-##		config = CvConfigParser.CvConfigParser("Mercenaries Mod Config.ini")
-##		
-##		# If we actually were able to open the "Mercenaries Mod Config.ini" file then read in the values.
-##		# otherwise we'll keep the default values that were set at the top of this file.
-##		if(config != None):
-##			g_iStartingEra = gc.getInfoTypeForString(config.get("Mercenaries Mod","Starting Era","ERA_ANCIENT"))
-##			g_bRequireCityUnitContractCreation = config.getboolean("Mercenaries Mod", "Require City Unit Contract Creation", true)
-                #Rhye - end comment
-		# < Mercenaries End   >
-
 		
 		# Help Text Area
 		screen.setHelpTextArea( 350, FontTypes.SMALL_FONT, 7, yResolution - 172, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150 )
@@ -294,14 +239,6 @@ class CvMainInterface:
 		screen.setImageButton( "TurnLogButton", "", iBtnX, iBtnY - 2, iBtnWidth, iBtnWidth, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TURN_LOG).getActionInfoIndex(), -1 )
 		screen.setStyle( "TurnLogButton", "Button_HUDLog_Style" )
 		screen.hide( "TurnLogButton" )
-
-		# < Mercenaries Start >
-		iBtnX += iBtnAdvance
-		# Set the mercenary manager button in the interface
-		screen.setImageButton( "MercenaryManagerButton", ArtFileMgr.getInterfaceArtInfo("INTERFACE_MERCENARIES_MANAGER").getPath(), iBtnX, iBtnY - 1, iBtnWidth, iBtnWidth, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TURN_LOG).getActionInfoIndex(), -1 )
-		# Hide the mercenary manager button 
-		screen.hide( "MercenaryManagerButton" )
-		# < Mercenaries End >
 		
 		iBtnX = xResolution - 277
 		
@@ -921,9 +858,6 @@ class CvMainInterface:
 			screen.hide( "InterfaceTopCenter" )
 			screen.hide( "InterfaceTopRight" )
 			screen.hide( "TurnLogButton" )
-			# < Mercenaries Start >
-			screen.hide( "MercenaryManagerButton" )
-			# < Mercenaries End >
 			screen.hide( "EspionageAdvisorButton" )
 			screen.hide( "DomesticAdvisorButton" )
 			screen.hide( "ForeignAdvisorButton" )
@@ -946,9 +880,6 @@ class CvMainInterface:
 			screen.hide( "InterfaceTopCenter" )
 			screen.hide( "InterfaceTopRight" )
 			screen.hide( "TurnLogButton" )
-			# < Mercenaries Start >
-			screen.hide( "MercenaryManagerButton" )
-			# < Mercenaries End >
 			screen.hide( "EspionageAdvisorButton" )
 			screen.hide( "DomesticAdvisorButton" )
 			screen.hide( "ForeignAdvisorButton" )
@@ -971,17 +902,6 @@ class CvMainInterface:
 			screen.show( "InterfaceTopCenter" )
 			screen.show( "InterfaceTopRight" )
 			screen.show( "TurnLogButton" )
-			# < Mercenaries Start >
-			# Show the mercenary manager button if the player has at least one city and they are in the
-			# correct era.
-			if(gc.getActivePlayer().getNumCities() > 0 and gc.getActivePlayer().getCurrentEra() >= g_iStartingEra):
-                                #Rhye - start
-                                #screen.show( "MercenaryManagerButton" )
-                                teamPlayer = gc.getTeam(gc.getActivePlayer().getTeam())
-                                if (not teamPlayer.isHasTech(con.iNationalism)): 
-                                        screen.show( "MercenaryManagerButton" )
-                                #Rhye - end					
-			# < Mercenaries End >
 			screen.show( "EspionageAdvisorButton" )
 			screen.show( "DomesticAdvisorButton" )
 			screen.show( "ForeignAdvisorButton" )
@@ -994,17 +914,6 @@ class CvMainInterface:
 			screen.show( "VictoryAdvisorButton" )
 			screen.show( "InfoAdvisorButton" )
 			screen.moveToFront( "TurnLogButton" )
-			# < Mercenaries Start >
-			# move the mercenary manager button to the front if the player has at least one city and they are in the
-			# correct era.
-			if(gc.getActivePlayer().getNumCities() > 0 and gc.getActivePlayer().getCurrentEra() >= g_iStartingEra):
-                                #Rhye - start
-                                #screen.moveToFront( "MercenaryManagerButton" )
-                                teamPlayer = gc.getTeam(gc.getActivePlayer().getTeam())
-                                if (not teamPlayer.isHasTech(con.iNationalism)): 
-                                        screen.moveToFront( "MercenaryManagerButton" )
-                                #Rhye - end
-			# < Mercenaries End >
 			screen.moveToFront( "EspionageAdvisorButton" )
 			screen.moveToFront( "DomesticAdvisorButton" )
 			screen.moveToFront( "ForeignAdvisorButton" )
@@ -1049,17 +958,6 @@ class CvMainInterface:
 			screen.show( "InterfaceTopCenter" )
 			screen.show( "InterfaceTopRight" )
 			screen.show( "TurnLogButton" )
-			# < Mercenaries Start >
-			# Show the mercenary manager button if the player has at least one city and they are in the
-			# correct era.
-			if(gc.getActivePlayer().getNumCities() > 0 and gc.getActivePlayer().getCurrentEra() >= g_iStartingEra):
-                                #Rhye - start
-                                #screen.show( "MercenaryManagerButton" )
-                                teamPlayer = gc.getTeam(gc.getActivePlayer().getTeam())
-                                if (not teamPlayer.isHasTech(con.iNationalism)): 
-                                        screen.show( "MercenaryManagerButton" )
-                                #Rhye - end
-			# < Mercenaries End >
 			screen.show( "EspionageAdvisorButton" )
 			screen.show( "DomesticAdvisorButton" )
 			screen.show( "ForeignAdvisorButton" )
@@ -1072,17 +970,6 @@ class CvMainInterface:
 			screen.show( "VictoryAdvisorButton" )
 			screen.show( "InfoAdvisorButton" )			
 			screen.moveToFront( "TurnLogButton" )
-			# < Mercenaries Start >
-			# Move the mercenary manager button to the front if the player has at least one city and they are in the
-			# correct era.
-			if(gc.getActivePlayer().getNumCities() > 0 and gc.getActivePlayer().getCurrentEra() >= g_iStartingEra):
-                                #Rhye - start
-                                #screen.moveToFront( "MercenaryManagerButton" )
-                                teamPlayer = gc.getTeam(gc.getActivePlayer().getTeam())
-                                if (not teamPlayer.isHasTech(con.iNationalism)): 
-                                        screen.moveToFront( "MercenaryManagerButton" )
-                                #Rhye - end
-			# < Mercenaries End >
 			screen.moveToFront( "EspionageAdvisorButton" )
 			screen.moveToFront( "DomesticAdvisorButton" )
 			screen.moveToFront( "ForeignAdvisorButton" )
@@ -1105,17 +992,6 @@ class CvMainInterface:
 			screen.show( "InterfaceTopCenter" )
 			screen.show( "InterfaceTopRight" )
 			screen.show( "TurnLogButton" )
-			# < Mercenaries Start >
-			# Show the mercenary manager button if the player has at least one city and they are in the
-			# correct era.
-			if(gc.getActivePlayer().getNumCities() > 0 and gc.getActivePlayer().getCurrentEra() >= g_iStartingEra):
-                                #Rhye - start
-                                #screen.show( "MercenaryManagerButton" )
-                                teamPlayer = gc.getTeam(gc.getActivePlayer().getTeam())
-                                if (not teamPlayer.isHasTech(con.iNationalism)): 
-                                        screen.show( "MercenaryManagerButton" )
-                                #Rhye - end
-			# < Mercenaries End >
 			screen.show( "EspionageAdvisorButton" )
 			screen.show( "DomesticAdvisorButton" )
 			screen.show( "ForeignAdvisorButton" )
@@ -1128,17 +1004,6 @@ class CvMainInterface:
 			screen.show( "VictoryAdvisorButton" )
 			screen.show( "InfoAdvisorButton" )
 			screen.moveToFront( "TurnLogButton" )
-			# < Mercenaries Start >
-			# Move the mercenary manager button to the front if the player has at least one city and they are in the
-			# correct era.
-			if(gc.getActivePlayer().getNumCities() > 0 and gc.getActivePlayer().getCurrentEra() >= g_iStartingEra):
-                                #Rhye - start
-                                #screen.moveToFront( "MercenaryManagerButton" )
-                                teamPlayer = gc.getTeam(gc.getActivePlayer().getTeam())
-                                if (not teamPlayer.isHasTech(con.iNationalism)): 
-                                        screen.moveToFront( "MercenaryManagerButton" )
-                                #Rhye - end
-			# < Mercenaries End >
 			screen.moveToFront( "EspionageAdvisorButton" )
 			screen.moveToFront( "DomesticAdvisorButton" )
 			screen.moveToFront( "ForeignAdvisorButton" )
@@ -1664,54 +1529,6 @@ class CvMainInterface:
 									screen.show( "BottomButtonContainer" )
 									iCount = iCount + 1
 					
-					# < Mercenaries Start >					
-					if(not self.repainting):
-						self.repainting=true
- 
-						b=false
-
-						while(not b):
-							try:
-						
-								# Show the contract out unit and fire mercenary buttons only if the player has at least one city and
-								# and the current player era is at or beyond the configured starting era.
-								if(gc.getActivePlayer().getNumCities() > 0 and gc.getActivePlayer().getCurrentEra() >= g_iStartingEra):
-
-                                                                        #print (gc.getActivePlayer().getName(), "=?", gc.getPlayer(gc.getGame().getActivePlayer()).getName()) #Rhye
-                                					teamPlayer = gc.getTeam(gc.getActivePlayer().getTeam()) #Rhye
-                                					if (not teamPlayer.isHasTech(con.iNationalism)):  #Rhye
-
-                                                                                bCreateContract = true
-                                                                                
-                                                                                # If the require city unit contract creation and the unit is not in a city then
-                                                                                # don't show the create contract button for the unit
-                                                                                if(g_bRequireCityUnitContractCreation and not g_pSelectedUnit.plot().isCity()):
-                                                                                        bCreateContract = false
-                                                                                        
-                                                                                # Show the contract out unit button only if the selected unit can be contracted out and if the 
-                                                                                # selected unit isn't already a mercenary.
-                                                                                #Rhye - start comment
-                                                                                #if(objMercenaryUtils.canContractOutUnit(gc.getUnitInfo(g_pSelectedUnit.getUnitType())) and not objMercenaryUtils.isMercenary(g_pSelectedUnit) and bCreateContract):
-                                                                                #        screen.appendMultiListButton( "BottomButtonContainer", "Art/Interface/Buttons/Actions/ContractOutUnit.dds", 0, WidgetTypes.WIDGET_ACTION, CvMercenaryModGameUtils.CONTRACT_OUT_UNIT, -1, False )
-                                                                                #        screen.show( "BottomButtonContainer" )
-                                                                                #        iCount = iCount + 1
-                                                                                
-                                                                                # Show the fire mercenary button only if the selected unit information is a mercenary.
-                                                                                #if(objMercenaryUtils.isMercenary(g_pSelectedUnit)):
-                                                                                #        screen.appendMultiListButton( "BottomButtonContainer", "Art/Interface/Buttons/Actions/FireMercenary.dds", 0, WidgetTypes.WIDGET_ACTION, CvMercenaryModGameUtils.FIRE_MERCENARY, -1, False )
-                                                                                #        screen.show( "BottomButtonContainer" )
-                                                                                #        iCount = iCount + 1
-                                                                                #Rhye - end comment
-								b = true
-
-							except:
-								gameUtils.initActionButtonNumbers()
-								pass		
-
-						self.repainting=false						
-
-					# < Mercenaries End >
-					
 		elif (CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY):
 		
 			self.setMinimapButtonVisibility(True)
@@ -1941,17 +1758,7 @@ class CvMainInterface:
 			screen.show( "TimeText" )
 			
 			if (gc.getPlayer(ePlayer).isAlive()):
-			
-				
-				#szText = gc.getEraInfo(gc.getPlayer(ePlayer).getCurrentEra()).getDescription()
-				#screen.setLabel( "EraText", "Background", szText, CvUtil.FONT_RIGHT_JUSTIFY, 245, 8, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-				#screen.show( "EraText" ) #Rhye
-				
-				# < Mercenaries Start >
-				#szText = CyGameTextMgr().getGoldStr(ePlayer)
-				# Get the new modified gold string
-				szText = mercenaryManager.getGoldText(ePlayer)
-				# < Mercenaries End   >
+				szText = CyGameTextMgr().getGoldStr(ePlayer)
 				screen.setLabel( "GoldText", "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 12, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 				screen.show( "GoldText" )
 				
@@ -3418,11 +3225,6 @@ class CvMainInterface:
 
 	# Will handle the input for this screen...
 	def handleInput (self, inputClass):
-		# < Mercenaries Start >
-		# Handle the case where the "Mercenary Manager" button is pressed. 
-		if(inputClass.getFunctionName() == "MercenaryManagerButton"):
-			mercenaryManager.interfaceScreen()
-		# < Mercenaries End   >
 		
 		# Leoreth: enslave option
 		if inputClass.getFunctionName() == "Conscript":
