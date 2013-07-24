@@ -2024,57 +2024,6 @@ tStartingGold = (
 0,	# Seljuks
 )
 
-#Mercenaries. Higher number = less likely to hire
-tHire = (
-10, #Egypt
-30, #China
-30, #Babylonia
-50, #Greece
-30, #India
-10, #Carthage
-20, #Persia
-30, #Rome
-30, #Tamils
-30, #Ethiopia
-60, #Korea
-30, #Maya
-10, #Byzantium
-60, #Japan
-60, #Viking
-50, #Arabia
-90, #Tibet
-30, #Khmer
-60, #Indonesia
-90, #Moors
-50, #Spain
-50, #France
-50, #England
-60, #Holy Rome
-60, #Russia
-30, #Mali
-40, #Poland
-60, #Portugal
-30, #Inca
-10, #Italy
-70, #Mongolia
-30, #Aztec
-50, #Mughals
-50, #Turkey
-30, #Thailand
-60, #Congo
-10, #Holland
-60, #Germany
-50, #America
-30, #Argentina
-50, #Brazil
-100,
-100,
-100,
-100,
-100) #Barbs
-
-
-
 #rnf. Some civs have a double entry, for a higher chance
 lEnemyCivsOnSpawn = [
 [], #Egypt

@@ -48,10 +48,6 @@ import ScreenInput as PyScreenInput
 from CvScreenEnums import *
 from CvPythonExtensions import *
 
-# < Mercenaries Mod Start >
-import CvMercenaryManager
-# < Mercenaries Mod End >
-
 g_bIsScreenActive = -1
 
 #Rhye - start
@@ -321,11 +317,6 @@ victoryScreen = CvVictoryScreen.CvVictoryScreen(VICTORY_SCREEN)
 def showVictoryScreen():
 	if (-1 != CyGame().getActivePlayer()):
 		victoryScreen.interfaceScreen()
-# < Mercenaries Mod Start >
-mercenaryManager = CvMercenaryManager.CvMercenaryManager(MERCENARY_MANAGER)
-def showMercenaryManager():
-	mercenaryManager.interfaceScreen()	
-# < Mercenaries Mod End   >
 
 #################################################
 ## Civilopedia
@@ -1493,9 +1484,6 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					DEBUG_INFO_SCREEN : debugInfoScreen,
 				
 				# add new screens here
-					# < Mercenaries Mod Start > 
-					MERCENARY_MANAGER: mercenaryManager,
-					# < Mercenaries Mod End   >
 				}
 
 #######################################################################################

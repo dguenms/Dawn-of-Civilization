@@ -135,7 +135,7 @@
 # Infantry no longer receives +25% against gunpowder units
 # India cannot respawn while the Mughals are alive
 # new third HRE goal: settle three great artists in Vienna by 1700 AD
-# Forbidden Palace now also reduces civic upkeep by 50%
+# Forbidden Palace now also reduces civic upkeep by 33%
 # wars on spawn now only start when the spawn actually happens
 # Mughals as an English vassal are called British Raj if India is not alive
 # pass over the Andes in Bolivia opens when the Incan conquerors arrive
