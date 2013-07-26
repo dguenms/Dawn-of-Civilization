@@ -98,10 +98,10 @@
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN</Tag>
 		<English>Minuteman</English>
 	</TEXT>
-	<TEXT>
+	<!--TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN_PEDIA</Tag>
 		<English>Needs to be written.</English>
-	</TEXT>
+	</TEXT-->
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AMERICAN_MINUTEMAN_STRATEGY</Tag>
 		<English>The Minuteman is the American replacement for the Rifleman. They only cost as much as Musketmen to produce.</English>

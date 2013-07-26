@@ -142,40 +142,8 @@
 			</DiploVotes>
 		</VoteInfo>
 		<VoteInfo>
-			<Type>VOTE_UNIVERSAL_SUFFRAGE</Type>
-			<Description>TXT_KEY_VOTE_UNIVERSAL_SUFFRAGE</Description>
-			<iPopulationThreshold>51</iPopulationThreshold>
-			<bCityVoting>0</bCityVoting>
-			<bCivVoting>0</bCivVoting>
-			<iMinVoters>3</iMinVoters>
-			<iStateReligionVotePercent>0</iStateReligionVotePercent>
-			<iTradeRoutes>0</iTradeRoutes>
-			<bSecretaryGeneral>0</bSecretaryGeneral>
-			<bVictory>0</bVictory>
-			<bFreeTrade>0</bFreeTrade>
-			<bNoNukes>0</bNoNukes>
-			<bDefensivePact>0</bDefensivePact>
-			<bOpenBorders>0</bOpenBorders>
-			<bForcePeace>0</bForcePeace>
-			<bForceNoTrade>0</bForceNoTrade>
-			<bForceWar>0</bForceWar>
-			<bAssignCity>0</bAssignCity>
-			<ForceCivics>
-				<ForceCivic>
-					<CivicType>CIVIC_UNIVERSAL_SUFFRAGE</CivicType>
-					<bForce>1</bForce>
-				</ForceCivic>
-			</ForceCivics>
-			<DiploVotes>
-				<DiploVote>
-					<DiploVoteType>DIPLOVOTE_UN</DiploVoteType>
-					<bValid>1</bValid>
-				</DiploVote>
-			</DiploVotes>
-		</VoteInfo>
-		<VoteInfo>
-			<Type>VOTE_FREE_SPEECH</Type>
-			<Description>TXT_KEY_VOTE_FREE_SPEECH</Description>
+			<Type>VOTE_REPUBLIC</Type>
+			<Description>TXT_KEY_VOTE_REPUBLIC</Description>
 			<iPopulationThreshold>51</iPopulationThreshold>
 			<bCityVoting>0</bCityVoting>
 			<bCivVoting>0</bCivVoting>
@@ -206,8 +174,8 @@
 			</DiploVotes>
 		</VoteInfo>
 		<VoteInfo>
-			<Type>VOTE_EMANCIPATION</Type>
-			<Description>TXT_KEY_VOTE_EMANCIPATION</Description>
+			<Type>VOTE_EGALITARIANISM</Type>
+			<Description>TXT_KEY_VOTE_EGALITARIANISM</Description>
 			<iPopulationThreshold>51</iPopulationThreshold>
 			<bCityVoting>0</bCityVoting>
 			<bCivVoting>0</bCivVoting>
@@ -227,6 +195,38 @@
 			<ForceCivics>
 				<ForceCivic>
 					<CivicType>CIVIC_EGALITARIANISM</CivicType>
+					<bForce>1</bForce>
+				</ForceCivic>
+			</ForceCivics>
+			<DiploVotes>
+				<DiploVote>
+					<DiploVoteType>DIPLOVOTE_UN</DiploVoteType>
+					<bValid>1</bValid>
+				</DiploVote>
+			</DiploVotes>
+		</VoteInfo>
+		<VoteInfo>
+			<Type>VOTE_PUBLIC_WELFARE</Type>
+			<Description>TXT_KEY_VOTE_PUBLIC_WELFARE</Description>
+			<iPopulationThreshold>51</iPopulationThreshold>
+			<bCityVoting>0</bCityVoting>
+			<bCivVoting>0</bCivVoting>
+			<iMinVoters>3</iMinVoters>
+			<iStateReligionVotePercent>0</iStateReligionVotePercent>
+			<iTradeRoutes>0</iTradeRoutes>
+			<bSecretaryGeneral>0</bSecretaryGeneral>
+			<bVictory>0</bVictory>
+			<bFreeTrade>0</bFreeTrade>
+			<bNoNukes>0</bNoNukes>
+			<bDefensivePact>0</bDefensivePact>
+			<bOpenBorders>0</bOpenBorders>
+			<bForcePeace>0</bForcePeace>
+			<bForceNoTrade>0</bForceNoTrade>
+			<bForceWar>0</bForceWar>
+			<bAssignCity>0</bAssignCity>
+			<ForceCivics>
+				<ForceCivic>
+					<CivicType>CIVIC_PUBLIC_WELFARE</CivicType>
 					<bForce>1</bForce>
 				</ForceCivic>
 			</ForceCivics>

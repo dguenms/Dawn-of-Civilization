@@ -69,7 +69,8 @@ public:
 
 	CvSelectionGroup* cycleSelectionGroups(CvUnit* pUnit, bool bForward, bool bWorkers, bool* pbWrap);
 
-	bool hasTrait(TraitTypes eTrait) const;																																			// Exposed to Python
+	bool hasTrait(TraitTypes eTrait) const; // Exposed to Python
+	bool hasCivic(CivicTypes eCivic) const;
 	DllExport bool isHuman() const;																																							// Exposed to Python
 	DllExport void updateHuman();
 	DllExport bool isBarbarian() const;																																					// Exposed to Python
@@ -776,6 +777,10 @@ public:
 	int getExtraBuildingHealth(BuildingTypes eIndex) const;																				// Exposed to Python
 	void changeExtraBuildingHealth(BuildingTypes eIndex, int iChange);
 
+	// Leoreth
+	int getBuildingProductionModifier(BuildingTypes eIndex) const;
+	void changeBuildingProductionModifier(BuildingTypes eIndex, int iChange);
+
 	int getFeatureHappiness(FeatureTypes eIndex) const;																								// Exposed to Python
 	void changeFeatureHappiness(FeatureTypes eIndex, int iChange);
 
@@ -1367,6 +1372,7 @@ protected:
 	int* m_paiFreeBuildingCount;
 	int* m_paiExtraBuildingHappiness;
 	int* m_paiExtraBuildingHealth;
+	int* m_paiBuildingProductionModifiers; // Leoreth
 	int** m_paiExtraBuildingYield;
 	int** m_paiExtraBuildingCommerce;
 	int* m_paiFeatureHappiness;

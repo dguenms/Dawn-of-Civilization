@@ -5226,6 +5226,43 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	//  Building Production (Leoreth)
+	for (iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
+	{
+		int iProductionModifier = GC.getCivicInfo(eCivic).getBuildingProductionModifier(iI);
+		if (iProductionModifier != 0)
+		{
+			if (bPlayerContext && NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+			{
+				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationBuildings(iI);
+				if (NO_BUILDING != eBuilding)
+				{
+					szHelpText.append(NEWLINE);
+					if (iProductionModifier == 100)
+					{
+						szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION", GC.getBuildingInfo(eBuilding).getTextKeyWide()));
+					}
+					else
+					{
+						szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER", iProductionModifier, GC.getBuildingInfo(eBuilding).getTextKeyWide()));
+					}
+				}
+			}
+			else
+			{
+				szHelpText.append(NEWLINE);
+				if (iProductionModifier == 100)
+				{
+					szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION", GC.getBuildingClassInfo((BuildingClassTypes)iI).getTextKeyWide()));
+				}
+				else
+				{
+					szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER", iProductionModifier, GC.getBuildingClassInfo((BuildingClassTypes)iI).getTextKeyWide()));
+				}
+			}
+		}
+	}
+
 	//	Feature Happiness
 	iLast = 0;
 
@@ -8074,6 +8111,53 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 				}
 			}
 		}
+
+		// Civic production modifier (Leoreth)
+		for (int iI = 0; iI < GC.getNumCivicInfos(); ++iI)
+		{
+			CivicTypes eCivic = (CivicTypes)iI;
+			int iProductionModifier = GC.getCivicInfo(eCivic).getBuildingProductionModifier(kBuilding.getBuildingClassType());
+			if (iProductionModifier != 0)
+			{
+				if (pCity != NULL)
+				{
+					if (GET_PLAYER(pCity->getOwnerINLINE()).hasCivic(eCivic))
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
+					}
+					else
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_COLOR_NEGATIVE"));
+					}
+				}
+				if (!bCivilopediaText)
+				{
+					szBuffer.append(L" (");
+				}
+				else
+				{
+					szTempBuffer.Format(L"\n%c", gDLL->getSymbolID(BULLET_CHAR), szTempBuffer);
+					szBuffer.append(szTempBuffer);
+				}
+				if (iProductionModifier == 100)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_DOUBLE_SPEED_WITH", GC.getCivicInfo(eCivic).getTextKeyWide()));
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_BUILDS_FASTER_WITH", iProductionModifier, GC.getCivicInfo(eCivic).getTextKeyWide()));
+				}
+				if (!bCivilopediaText)
+				{
+					szBuffer.append(L')');
+				}
+				if (pCity != NULL)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+				}
+			}
+		}
+
 
 		if (kBuilding.getObsoleteTech() != NO_TECH)
 		{
@@ -11937,6 +12021,15 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 					iBaseModifier += iTraitMod;
 				}
 			}
+		}
+
+		// Civic (Leoreth)
+		int iCivicMod = GET_PLAYER(city.getOwnerINLINE()).getBuildingProductionModifier(eBuilding);
+		if (0 != iCivicMod)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_CIVIC", iCivicMod, building.getTextKeyWide()));
+			szBuffer.append(NEWLINE);
+			iBaseModifier += iCivicMod;
 		}
 
 		// Wonder

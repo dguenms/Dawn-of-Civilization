@@ -5397,6 +5397,7 @@ m_piSpecialistExtraYield(NULL), //Leoreth
 m_piSpecialistThresholdExtraYield(NULL), //Leoreth
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
+m_paiBuildingProductionModifiers(NULL), //Leoreth
 m_paiFeatureHappinessChanges(NULL),
 m_pabHurry(NULL),
 m_pabSpecialBuildingNotRequired(NULL),
@@ -5426,6 +5427,7 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piSpecialistThresholdExtraYield); //Leoreth
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
+	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); //Leoreth
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	SAFE_DELETE_ARRAY(m_pabSpecialBuildingNotRequired);
@@ -5847,6 +5849,14 @@ int CvCivicInfo::getBuildingHealthChanges(int i) const
 	return m_paiBuildingHealthChanges ? m_paiBuildingHealthChanges[i] : -1;
 }
 
+// Leoreth
+int CvCivicInfo::getBuildingProductionModifier(int i) const
+{
+	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_paiBuildingProductionModifiers ? m_paiBuildingProductionModifiers[i] : -1;
+}
+
 int CvCivicInfo::getFeatureHappinessChanges(int i) const
 {
 	FAssertMsg(i < GC.getNumFeatureInfos(), "Index out of bounds");
@@ -5992,6 +6002,11 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	m_paiBuildingHealthChanges = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers);
+	m_paiBuildingProductionModifiers = new int[GC.getNumBuildingClassInfos()];
+	stream->Read(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers);
+
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
 	m_paiFeatureHappinessChanges = new int[GC.getNumFeatureInfos()];
 	stream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
@@ -6103,6 +6118,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield); //Leoreth
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
+	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers); //Leoreth
 	stream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
 	stream->Write(GC.getNumHurryInfos(), m_pabHurry);
 	stream->Write(GC.getNumSpecialBuildingInfos(), m_pabSpecialBuildingNotRequired);
@@ -6280,6 +6296,10 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->SetVariableListTagPair(&m_paiBuildingHappinessChanges, "BuildingHappinessChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 	pXML->SetVariableListTagPair(&m_paiBuildingHealthChanges, "BuildingHealthChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
+
+	// Leoreth
+	pXML->SetVariableListTagPair(&m_paiBuildingProductionModifiers, "BuildingProductionModifiers", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
+
 	pXML->SetVariableListTagPair(&m_paiFeatureHappinessChanges, "FeatureHappinessChanges", sizeof(GC.getFeatureInfo((FeatureTypes)0)), GC.getNumFeatureInfos());
 
 	// initialize the boolean list to the correct size and all the booleans to false
@@ -8526,7 +8546,6 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	}
 
 	pXML->SetVariableListTagPair(&m_piProductionTraits, "ProductionTraits", sizeof(GC.getTraitInfo((TraitTypes)0)), GC.getNumTraitInfos());
-
 	pXML->SetVariableListTagPair(&m_piHappinessTraits, "HappinessTraits", sizeof(GC.getTraitInfo((TraitTypes)0)), GC.getNumTraitInfos());
 
 	pXML->GetChildXmlValByName(szTextVal, "NoBonus");
@@ -10152,7 +10171,9 @@ bool CvVictoryInfo::read(CvXMLLoadUtility* pXML)
 CvHurryInfo::CvHurryInfo() :
 m_iGoldPerProduction(0),
 m_iProductionPerPopulation(0),
-m_bAnger(false)
+m_bAnger(false),
+m_bUnits(false),
+m_bBuildings(false)
 {
 }
 
@@ -10182,6 +10203,16 @@ bool CvHurryInfo::isAnger() const
 	return m_bAnger;
 }
 
+bool CvHurryInfo::isUnits() const
+{
+	return m_bUnits;
+}
+
+bool CvHurryInfo::isBuildings() const
+{
+	return m_bBuildings;
+}
+
 bool CvHurryInfo::read(CvXMLLoadUtility* pXML)
 {
 	if (!CvInfoBase::read(pXML))
@@ -10193,6 +10224,8 @@ bool CvHurryInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iProductionPerPopulation, "iProductionPerPopulation");
 
 	pXML->GetChildXmlValByName(&m_bAnger, "bAnger");
+	pXML->GetChildXmlValByName(&m_bUnits, "bUnits");
+	pXML->GetChildXmlValByName(&m_bBuildings, "bBuildings");
 
 	return true;
 }

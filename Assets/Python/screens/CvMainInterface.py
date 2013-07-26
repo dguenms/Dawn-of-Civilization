@@ -589,7 +589,8 @@ class CvMainInterface:
 			szButtonID = "CityTab" + str(i)
 			szHideList.append( szButtonID )
 					
-		for i in range( g_NumHurryInfos ):
+		#for i in range( g_NumHurryInfos ):
+		for i in range(2):
 			szButtonID = "Hurry" + str(i)
 			szHideList.append( szButtonID )
 
@@ -1228,7 +1229,8 @@ class CvMainInterface:
 			screen.hide( szButtonID )
 
 		# Hurry button show...
-		for i in range( g_NumHurryInfos ):
+		#for i in range( g_NumHurryInfos ):
+		for i in range(2):
 			szButtonID = "Hurry" + str(i)
 			screen.hide( szButtonID )
 
@@ -1282,7 +1284,9 @@ class CvMainInterface:
 
 				iBtnX += iBtnW
 
-				screen.setButtonGFC( "Hurry1", "", "", iBtnX, iBtnY, iBtnW, iBtnH, WidgetTypes.WIDGET_HURRY, 1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
+				i = 2
+				if pHeadSelectedCity.isProductionUnit(): i = 1
+				screen.setButtonGFC( "Hurry1", "", "", iBtnX, iBtnY, iBtnW, iBtnH, WidgetTypes.WIDGET_HURRY, i, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
 				screen.setStyle( "Hurry1", "Button_CityC2_Style" )
 				screen.hide( "Hurry1" )
 			
@@ -1370,10 +1374,22 @@ class CvMainInterface:
 					screen.show( szButtonID )
 
 				# Hurry button show...
-				for i in range( g_NumHurryInfos ):
-					szButtonID = "Hurry" + str(i)
-					screen.show( szButtonID )
-					screen.enable( szButtonID, pHeadSelectedCity.canHurry(i, False) )
+				#for i in range( g_NumHurryInfos ):
+				#	szButtonID = "Hurry" + str(i)
+				#	screen.show( szButtonID )
+				#	screen.enable( szButtonID, pHeadSelectedCity.canHurry(i, False) )
+				
+				# Slavery button
+				szButtonID = "Hurry0"
+				screen.show(szButtonID)
+				screen.enable(szButtonID, pHeadSelectedCity.canHurry(0, False))
+				
+				# Mercenary/Public Welfare button
+				szButtonID = "Hurry1"
+				screen.show(szButtonID)
+				i = 2
+				if pHeadSelectedCity.isProductionUnit(): i = 1
+				screen.enable(szButtonID, pHeadSelectedCity.canHurry(i, False))
 
 				# Conscript Button Show
 				screen.show( "Conscript" )

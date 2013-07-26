@@ -205,7 +205,7 @@ class CvRFCEventHandler:
 				utils.moveCapital(con.iMongolia, (102, 47)) # Khanbaliq
 				
 		# remove slaves if unable to practice slavery
-		if gc.getPlayer(iPlayer).getCivics(2) != con.iAgrarianism and gc.getPlayer(iPlayer).getCivics(3) != con.iForcedLabor:
+		if gc.getPlayer(iPlayer).getCivics(2) != con.iCivicAgrarianism and gc.getPlayer(iPlayer).getCivics(2) != con.iCivicSlavery:
 			utils.removeSlaves(city)
 		else:
 			utils.freeSlaves(city, iPlayer)
@@ -410,7 +410,7 @@ class CvRFCEventHandler:
 		# catch slaves by defeating native and barbarian Pombos or Impis
 		if pLosingUnit.getOwner() in [con.iBarbarian, con.iNative] and pLosingUnit.getUnitType() in [con.iZuluImpi, con.iKongoPombos]:
 			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
-				if gc.getPlayer(pWinningUnit.getOwner()).getCivics(3) == con.iForcedLabor:
+				if gc.getPlayer(pWinningUnit.getOwner()).getCivics(2) == con.iCivicSlavery:
 					iRand = gc.getGame().getSorenRandNum(5, "Caught slaves?")
 					if iRand == 1:
 						iNewUnit = utils.getUniqueUnitType(pWinningUnit.getOwner(), gc.getUnitInfo(con.iSlave).getUnitClassType())
@@ -458,7 +458,7 @@ class CvRFCEventHandler:
 		if iPlayer < iNumPlayers:
 			self.dc.onRevolution(iPlayer)
 			
-		if gc.getPlayer(iPlayer).getCivics(2) != con.iAgrarianism and gc.getPlayer(iPlayer).getCivics(3) != con.iForcedLabor and gc.getPlayer(iPlayer).getCivics(3) != con.iMercantilism:
+		if gc.getPlayer(iPlayer).getCivics(2) != con.iCivicAgrarianism and gc.getPlayer(iPlayer).getCivics(2) != con.iCivicSlavery and gc.getPlayer(iPlayer).getCivics(3) != con.iCivicMercantilism:
 			utils.clearSlaves(iPlayer)
 			
 		if iPlayer in [con.iEgypt]:
@@ -678,7 +678,7 @@ class CvRFCEventHandler:
 		#Leoreth: if state religion spreads, pagan temples are replaced with its temple. For other religions, they're simply removed.         
 		if pSpreadCity.isHasBuilding(con.iObelisk):
 			pSpreadCity.setHasRealBuilding(con.iObelisk, False)
-			if gc.getPlayer(iOwner).getCivics(4) != con.iPantheon and gc.getPlayer(iOwner).getStateReligion() == iReligion and gc.getTeam(iOwner).isHasTech(con.iPriesthood):
+			if gc.getPlayer(iOwner).getCivics(4) != con.iCivicPantheon and gc.getPlayer(iOwner).getStateReligion() == iReligion and gc.getTeam(iOwner).isHasTech(con.iPriesthood):
 				pSpreadCity.setHasRealBuilding(con.iJewishTemple+4*iReligion, True)
                                 CyInterface().addMessage(iOwner, True, con.iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REPLACED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()), str(gc.getBuildingInfo(con.iJewishTemple+4*iReligion).getText()))), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 			else:

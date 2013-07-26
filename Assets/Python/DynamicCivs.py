@@ -953,9 +953,9 @@ class DynamicCivs:
 		iCivic0 = pPlayer.getCivics(0)
 		iCivic1 = pPlayer.getCivics(1)
 		
-		if iCivic0 == con.iRepublic:
+		if iCivic0 == con.iCivicRepublic:
 			return True
-		if iCivic0 == con.iAutocracy and (iCivic1 == con.iRepresentation or iCivic1 == con.iUniversalSuffrage):
+		if iCivic0 == con.iCivicAutocracy and (iCivic1 == con.iCivicRepresentation or iCivic1 == con.iCivicEgalitarianism):
 			return True
 			
 		return False
@@ -963,9 +963,8 @@ class DynamicCivs:
 	def isCommunist(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
 		iCivic3 = pPlayer.getCivics(3)
-		iCivic1 = pPlayer.getCivics(1)
 		
-		if iCivic3 == con.iStateProperty or iCivic1 == con.iSupremeCouncil:
+		if iCivic3 == con.iCivicCentralPlanning:
 			return True
 			
 		return False
@@ -974,18 +973,17 @@ class DynamicCivs:
 		pPlayer = gc.getPlayer(iPlayer)
 		iCivic0 = pPlayer.getCivics(0)
 		iCivic1 = pPlayer.getCivics(1)
-		iCivic2 = pPlayer.getCivics(2)
 		
-		if iCivic2 == con.iTotalitarianism:
+		if iCivic1 == con.iCivicTotalitarianism:
 			return True
 			
-		if iCivic1 == con.iAutocracy and iCivic1 not in [con.iRepresentation, con.iUniversalSuffrage]:
-			return
+		if iCivic0 == con.iCivicAutocracy and iCivic1 not in [con.iCivicRepresentation, con.iCivicEgalitarianism]:
+			return True
 			
 		return False
 		
 	def isEmpire(self, iPlayer):
-		iThreshold = 6
+		iThreshold = 5
 		
 		if iPlayer == iCarthage: iThreshold = 4
 		elif iPlayer == iIndonesia: iThreshold = 4
@@ -1028,8 +1026,8 @@ class DynamicCivs:
                 iGameTurn = gc.getGame().getGameTurn()
                 bAnarchy = pPlayer.isAnarchy()
 		bEmpire = self.isEmpire(iPlayer)
-		bCityStates = (iCivic0 == con.iCityStates)
-		bTheocracy = (iCivic0 == con.iTheocracy)
+		bCityStates = (iCivic0 == con.iCivicCityStates)
+		bTheocracy = (iCivic0 == con.iCivicTheocracy)
 		bResurrected = (self.getResurrections(iPlayer) > 0)
 		iAnarchyTurns = self.getAnarchyTurns(iPlayer)
 		iEra = pPlayer.getCurrentEra()
@@ -1052,10 +1050,10 @@ class DynamicCivs:
                 
                 # by vassalage
                 if bVassal:
-			if iMaster == iRussia and pMasterPlayer.getCivics(3) == con.iStateProperty:
+			if iMaster == iRussia and pMasterPlayer.getCivics(3) == con.iCivicCentralPlanning:
 				self.setCivDesc(iPlayer, self.sovietVassals[iPlayer])
 				return
-			if iMaster == iGermany and pMasterPlayer.getCivics(2) == con.iTotalitarianism:
+			if iMaster == iGermany and pMasterPlayer.getCivics(1) == con.iCivicTotalitarianism:
 				self.setCivDesc(iPlayer, self.naziVassals[iPlayer])
 				return
 				
@@ -1363,7 +1361,7 @@ class DynamicCivs:
 				return
 					
 		elif iPlayer == iJapan:
-			if bEmpire or iCivic1 == con.iAbsolutism or iEra >= iIndustrial: # Absolutism
+			if bEmpire or iCivic1 == con.iCivicAbsolutism or iEra >= iIndustrial: # Absolutism
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_JAPAN_EMPIRE")
 				return
 				
@@ -1582,7 +1580,7 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EXILE")
 				return
 		
-			if (iEra > iRenaissance and bEmpire) or iCivic0 == 3:	# Autocracy
+			if (iEra > iRenaissance and bEmpire) or iCivic0 == con.iCivicAutocracy:	# Autocracy
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EMPIRE")
 				return
 				
@@ -1613,7 +1611,7 @@ class DynamicCivs:
 		elif iPlayer == iHolyRome:
 			if bEmpire:
 				if pGermany.isAlive():
-					if iCivic1 == con.iRepresentation:
+					if iCivic1 == con.iCivicRepresentation:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_HUNGARY")
 						return
 						
@@ -1834,7 +1832,7 @@ class DynamicCivs:
 			# Kingdom of Prussia as default
 			
 		elif iPlayer == iAmerica:
-			if iCivic3 == con.iForcedLabor or iCivic2 == con.iAgrarianism:	# Forced Labor/Agrarianism
+			if iCivic2 == con.iCivicSlavery or iCivic2 == con.iCivicAgrarianism:	# Slavery/Agrarianism
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
 				return
 				
@@ -1884,8 +1882,8 @@ class DynamicCivs:
                 iCivic4 = pPlayer.getCivics(4)
                 iGameTurn = gc.getGame().getGameTurn()
 		bEmpire = self.isEmpire(iPlayer)
-		bCityStates = (iCivic0 == con.iCityStates or not gc.getTeam(pPlayer.getTeam()).isHasTech(con.iCodeOfLaws))
-		bTheocracy = (iCivic0 == con.iTheocracy)
+		bCityStates = (iCivic0 == con.iCivicCityStates or not gc.getTeam(pPlayer.getTeam()).isHasTech(con.iCodeOfLaws))
+		bTheocracy = (iCivic0 == con.iCivicTheocracy)
 		bResurrected = (self.getResurrections(iPlayer) > 0)
 		bMonarchy = not (self.isCommunist(iPlayer) or self.isFascist(iPlayer) or self.isDemocratic(iPlayer))
 		iAnarchyTurns = self.getAnarchyTurns(iPlayer)

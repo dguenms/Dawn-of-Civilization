@@ -322,12 +322,56 @@
 		<English>[ICON_BULLET]Extra stability for controlling foreign cores[NEWLINE][ICON_BULLET]Reduced likeliness of respawns on your territory</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_INDUSTRIALISM</Tag>
+		<English>Industrialism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE</Tag>
+		<English>Public Welfare</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_GUILDS</Tag>
+		<English>Guilds</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING</Tag>
+		<English>Central Planning</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MILITIA</Tag>
+		<English>Militia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WARRIOR_CODE</Tag>
+		<English>Warrior Code</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCENARIES</Tag>
+		<English>Mercenaries</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_LEVY_ARMIES</Tag>
+		<English>Levy Armies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_STANDING_ARMY</Tag>
+		<English>Standing Army</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CONSCRIPTION_TITLE</Tag>
+		<English>Conscription</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
 		<English>Organization</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_SOCIETY</Tag>
 		<English>Society</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_MILITARY</Tag>
+		<English>Military</English>
 	</TEXT>
 	
 	<TEXT>
@@ -345,6 +389,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS</Tag>
 		<English>[ICON_BULLET]%D1_Change free specialist for all cities within the third ring of your capital</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION</Tag>
+		<English>[ICON_BULLET]Double Production Speed for [LINK=literal]%s1_unit_or_building[\LINK]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER</Tag>
+		<English>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_PROD_CIVIC</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for %s2_unit_or_building from Civics</English>
 	</TEXT>
 
 	<!-- Pantheon requirement for classical wonders -->
@@ -503,5 +559,13 @@
 		<Tag>TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD</Tag>
 		<English>[SPACE]per Specialist for every city that works at most %d1 land tiles</English>
 		<German>[SPACE]pro Spezialist für jede Stadt, die höchstens %d1 Landfelder bearbeitet</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HURRY_GOLD_BUILDINGS</Tag>
+		<English>Can Spend Gold to Finish Building Production in a City</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HURRY_GOLD_UNITS</Tag>
+		<English>Can Spend Gold to Finish Unit Production in a City</English>
 	</TEXT>
 </Civ4GameText>

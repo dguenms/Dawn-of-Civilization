@@ -65,6 +65,7 @@ CvPlayer::CvPlayer()
 	m_paiFreeBuildingCount = NULL;
 	m_paiExtraBuildingHappiness = NULL;
 	m_paiExtraBuildingHealth = NULL;
+	m_paiBuildingProductionModifiers = NULL; // Leoreth
 	m_paiFeatureHappiness = NULL;
 	m_paiUnitClassCount = NULL;
 	m_paiUnitClassMaking = NULL;
@@ -335,6 +336,7 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paiFreeBuildingCount);
 	SAFE_DELETE_ARRAY(m_paiExtraBuildingHappiness);
 	SAFE_DELETE_ARRAY(m_paiExtraBuildingHealth);
+	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiFeatureHappiness);
 	SAFE_DELETE_ARRAY(m_paiUnitClassCount);
 	SAFE_DELETE_ARRAY(m_paiUnitClassMaking);
@@ -667,11 +669,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_paiExtraBuildingHappiness = new int [GC.getNumBuildingInfos()];
 		FAssertMsg(m_paiExtraBuildingHealth==NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingHealth");
 		m_paiExtraBuildingHealth = new int [GC.getNumBuildingInfos()];
+		FAssertMsg(m_paiBuildingProductionModifiers==NULL, "about to leak memory, CvPlayer::m_paiBuildingProductionModifiers");
+		m_paiBuildingProductionModifiers = new int[GC.getNumBuildingInfos()];
 		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 		{
 			m_paiFreeBuildingCount[iI] = 0;
 			m_paiExtraBuildingHappiness[iI] = 0;
 			m_paiExtraBuildingHealth[iI] = 0;
+			m_paiBuildingProductionModifiers[iI] = 0;
 		}
 
 		FAssertMsg(m_paiFeatureHappiness==NULL, "about to leak memory, CvPlayer::m_paiFeatureHappiness");
@@ -7336,6 +7341,9 @@ int CvPlayer::getProductionModifier(BuildingTypes eBuilding) const
 		}
 	}
 
+	// Leoreth: civics
+	iMultiplier += getBuildingProductionModifier(eBuilding);
+
 	// Khajuraho effect
 	if (GET_PLAYER((PlayerTypes)getID()).isHasBuilding((BuildingTypes)KHAJURAHO))
 	{
@@ -8577,12 +8585,12 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 
 	//Rhye - start UP
 	if (getID() == EGYPT)
-		if (eCivic == CIVIC_DYNASTICISM || eCivic == CIVIC_FORCED_LABOR || eCivic == CIVIC_PANTHEON)
+		if (eCivic == CIVIC_DYNASTICISM || eCivic == CIVIC_SLAVERY || eCivic == CIVIC_PANTHEON)
 			return true;
-	if (getID() == PORTUGAL)
+	/*if (getID() == PORTUGAL)
 		if (eCivic == CIVIC_RESETTLEMENT)
 			if (GET_TEAM(GET_PLAYER(getID()).getTeam()).isHasTech((TechTypes)OPTICS))
-				return true;
+				return true;*/
 	//Rhye - end UP
 
 	if (!isHasCivicOption((CivicOptionTypes)(GC.getCivicInfo(eCivic).getCivicOptionType())) && !(GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getCivicInfo(eCivic).getTechPrereq()))))
@@ -13378,6 +13386,24 @@ void CvPlayer::changeExtraBuildingHealth(BuildingTypes eIndex, int iChange)
 	}
 }
 
+// Leoreth
+int CvPlayer::getBuildingProductionModifier(BuildingTypes eIndex) const
+{
+	return m_paiBuildingProductionModifiers[eIndex];
+}
+
+void CvPlayer::changeBuildingProductionModifier(BuildingTypes eIndex, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_paiBuildingProductionModifiers[eIndex] += iChange;
+
+		if (getTeam() == GC.getGameINLINE().getActiveTeam())
+		{
+			gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+		}
+	}
+}
 
 int CvPlayer::getFeatureHappiness(FeatureTypes eIndex) const
 {
@@ -18110,6 +18136,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		{
 			changeExtraBuildingHappiness(eOurBuilding, (GC.getCivicInfo(eCivic).getBuildingHappinessChanges(iI) * iChange));
 			changeExtraBuildingHealth(eOurBuilding, (GC.getCivicInfo(eCivic).getBuildingHealthChanges(iI) * iChange));
+			changeBuildingProductionModifier(eOurBuilding, (GC.getCivicInfo(eCivic).getBuildingProductionModifier(iI) * iChange)); // Leoreth
 		}
 	}
 
@@ -18540,6 +18567,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumBuildingInfos(), m_paiFreeBuildingCount);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHappiness);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
+	pStream->Read(GC.getNumBuildingInfos(), m_paiBuildingProductionModifiers); // Leoreth
 	pStream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassMaking);
@@ -19069,6 +19097,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumBuildingInfos(), m_paiFreeBuildingCount);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHappiness);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
+	pStream->Write(GC.getNumBuildingInfos(), m_paiBuildingProductionModifiers); // Leoreth
 	pStream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassMaking);
@@ -26490,12 +26519,12 @@ DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
 		return DENIAL_NO_GAIN;
 	}
 
-	if (getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR)
+	if (getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY)
 	{
 		return DENIAL_UNKNOWN;
 	}
 
-	if (GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR && GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM && GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM)
+	if (GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY && GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM && GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM)
 	{
 		return DENIAL_UNKNOWN;
 	}
@@ -26538,5 +26567,11 @@ DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
 
 bool CvPlayer::canEnslave() const
 {
-	return (getCivics((CivicOptionTypes)3) == CIVIC_FORCED_LABOR && getMaxConscript() <= 0);
+	return (getCivics((CivicOptionTypes)3) == CIVIC_SLAVERY && getMaxConscript() <= 0);
+}
+
+bool CvPlayer::hasCivic(CivicTypes eCivic) const
+{
+	int iCivic = (int)eCivic;
+	return (getCivics((CivicOptionTypes)(iCivic % 6)) == eCivic);
 }

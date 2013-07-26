@@ -720,6 +720,9 @@ class Victory:
 			utils.setGoal(iCongo, 0, 1)
 			# Netherlands
 			
+			# French goal needs to be winnable
+			self.setWondersBuilt(iFrance, 2)
+			
 			# help Congo
 			self.changeCongoSlaveCounter(500)
 			
@@ -1820,7 +1823,7 @@ class Victory:
 					iCount = 0
 					for iCiv in range(con.iNumPlayers):
 						pPlayer = gc.getPlayer(iCiv)
-						if iCiv != iRussia and pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(1) == con.iSupremeCouncil or pPlayer.getCivics(3) == con.iStateProperty):
+						if iCiv != iRussia and pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(3) == con.iCivicCentralPlanning):
 							iCount += 1
 					
 					if iCount >= 5:

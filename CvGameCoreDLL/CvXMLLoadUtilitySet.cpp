@@ -1954,7 +1954,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(int **ppiList, const TCHAR* szRoot
 				if(!(iNumSibs <= iInfoBaseLength))
 				{
 					char	szMessage[1024];
-					sprintf( szMessage, "There are more siblings than memory allocated for them in CvXMLLoadUtility::SetVariableListTagPair \n Current XML file is: %s", GC.getCurrentXMLFile().GetCString());
+					sprintf( szMessage, "There are more siblings than memory allocated for them in CvXMLLoadUtility::SetVariableListTagPair \n Current XML file is: %s, \n Number of siblings: %d \n Allocated memory: %d", GC.getCurrentXMLFile().GetCString(), iNumSibs, iInfoBaseLength);
 					gDLL->MessageBox(szMessage, "XML Error");
 				}
 				if (gDLL->getXMLIFace()->SetToChild(m_pFXml))

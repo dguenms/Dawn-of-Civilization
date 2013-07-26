@@ -1,0 +1,38 @@
+# removed the mercenary mechanic
+# new civics:
+	# GOVERNMENT
+	  1. Dynasticism: +1 happiness per military unit (+3 max)
+	  2. City States: +1 food per specialist, +100% number of cities upkeep
+	  3. Theocracy: +2 happiness with state religion, unlimited priests, +2 experience with state religion
+	  4. Autocracy: +3 happiness with barracks, can draft 1 unit, +50% great general rate, +25% espionage
+	  5. Republic: +50% great people rate, +100% cottage growth
+	# ORGANIZATION:
+	  1. Vassalage: +2 experience, +2 happiness with Castle
+	  2. Absolutism: +40% production and commerce in capital
+	  3. Representation: +1 free specialist
+	  4. Totalitarianism: +1 happiness per military unit (+5 max), no city distance upkeep, unlimited spies
+	  5. Egalitarianism: +2 happiness in largest cities, +1 production from town, unhappiness for civs without Egalitarianism
+	# LABOR
+	  1. Slavery: can hurry with population, +1 commerce from plantation, slave plantation
+	  2. Agrarianism: +1 commerce from farm
+	  3. Capitalism: +2 commerce from town, +10% commerce
+	  4. Industrialism: +1 production from workshop, watermill, unlimited engineers
+	  5. Public Welfare: unlimited artist, scientist, merchant, +2 science per specialist, can hurry buildings with gold
+	# ECONOMY
+	  1. Guilds: +1 gold per specialist, +1 production from workshop
+	  2. Mercantilism: no foreign trade routes, +25% trade route yield, +25% gold in capital, +1 commerce from workshop
+	  3. Free Market: +1 trade route, increased corporation spread
+	  4. Central Planning: +1 production per specialist, +1 food from workshop, watermill
+	  5. Environmentalism: -30% pollution, +2 gold from windmill, forest preserve, +1 happiness with Public Transportation
+	# RELIGION
+	  1. Pantheon: +1 happiness with Pagan Temple, can construct classical wonders
+	  2. Organized Religion: +25% building speed with state religion, allows missionaries
+	  3. Scholasticism: +25% great people birth with state religion
+	  4. Fanaticism: +25% unit production with state religion, no foreign religion spread
+	  5. Secularism: +10% research, no religious unhappiness, no state religion
+	# MILITARY
+	  1. Warrior Code: -50% war weariness
+	  2. Mercenaries: can hurry units with gold, +1 gold upkeep per unit
+	  3. Levy Armies: +50% improvement speed, additional free units
+	  4. Standing Army: +25% unit production, +2 experience
+	  5. Conscription: can draft 2 units, +50% experience within own borders

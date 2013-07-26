@@ -1731,8 +1731,8 @@ class RiseAndFall:
                         if (gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(con.tBirth[iPlayer]) + utils.getTurns(30)):
 				iStability = utils.getStability(iPlayer)
 				
-				if gc.getPlayer(iPlayer).getCivics(5) == con.iImperialism:
-					iStability += 15
+				#if gc.getPlayer(iPlayer).getCivics(5) == con.iImperialism:
+				#	iStability += 15
 				
                                 if (iStability >= -400 and iStability < -20): #secession (-400 for any very low value, instead of -40)
 
