@@ -1048,7 +1048,7 @@
 			<iWeight>500</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_FORCED_LABOR</Civic>
+			<Civic>CIVIC_SLAVERY</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>4</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -7585,7 +7585,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_UNIVERSAL_SUFFRAGE</Civic>
+			<Civic>CIVIC_PUBLIC_WELFARE</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -13693,7 +13693,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_UNIVERSAL_SUFFRAGE</Civic>
+			<Civic>CIVIC_EGALITARIANISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -15560,7 +15560,7 @@
 			<iWeight>0</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_FORCED_LABOR</Civic>
+			<Civic>CIVIC_SLAVERY</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>4</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -16235,7 +16235,7 @@
 			<iWeight>120</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_UNIVERSAL_SUFFRAGE</Civic>
+			<Civic>CIVIC_ENVIRONMENTALISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -17017,7 +17017,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_STATE_PROPERTY</Civic>
+			<Civic>CIVIC_TOTALITARIANISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>

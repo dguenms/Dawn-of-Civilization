@@ -4683,7 +4683,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_UNIVERSAL_SUFFRAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_EGALITARIANISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -8022,7 +8022,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_UNIVERSAL_SUFFRAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_EGALITARIANISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -10199,7 +10199,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_MARKET</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MERCENARIES</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -12424,7 +12424,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_RESETTLEMENT</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MERCANTILISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -14079,7 +14079,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_URBANIZATION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_GUILDS</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -15733,7 +15733,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FREE_MARKET</FavoriteCivic>
+			<FavoriteCivic>CIVIC_GUILDS</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -16290,7 +16290,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_STATE_PROPERTY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CENTRAL_PLANNING</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -20192,7 +20192,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FORCED_LABOR</FavoriteCivic>
+			<FavoriteCivic>CIVIC_SLAVERY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -24037,7 +24037,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_STATE_PROPERTY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CENTRAL_PLANNING</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -34158,7 +34158,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_VICEROYALTY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -43469,7 +43469,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_URBANIZATION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_GUILDS</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
@@ -47519,7 +47519,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>5</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_FORCED_LABOR</FavoriteCivic>
+			<FavoriteCivic>CIVIC_SLAVERY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>

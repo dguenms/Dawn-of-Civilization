@@ -1469,7 +1469,7 @@ def canTriggerInterstate(argsList):
 	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	if not player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_EGALITARIANISM')):
+	if not player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_PUBLIC_WELFARE')):
 		return false
 	
 	return true
@@ -3171,7 +3171,7 @@ def canTriggerEsteemedPlaywright(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	# If source civ is operating this Civic, disallow the event to trigger.
-	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_FORCED_LABOR')):
+	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_SLAVERY')):
 		return false
 
 	return true

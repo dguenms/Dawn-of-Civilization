@@ -105,7 +105,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -213,7 +213,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -326,7 +326,7 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -456,7 +456,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -581,7 +581,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -696,7 +696,7 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -925,7 +925,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1038,7 +1038,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1168,7 +1168,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1273,7 +1273,7 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1413,7 +1413,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1538,7 +1538,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1675,7 +1675,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1787,7 +1787,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1926,7 +1926,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2070,7 +2070,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2168,7 +2168,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2298,7 +2298,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2425,7 +2425,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2557,7 +2557,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2798,7 +2798,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2910,7 +2910,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3025,7 +3025,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3153,7 +3153,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3277,7 +3277,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3381,7 +3381,7 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3511,7 +3511,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3639,7 +3639,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3741,7 +3741,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3855,7 +3855,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3990,7 +3990,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4126,7 +4126,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4240,7 +4240,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4366,7 +4366,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4478,7 +4478,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4617,7 +4617,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4761,7 +4761,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4889,7 +4889,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5027,7 +5027,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5130,7 +5130,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5319,7 +5319,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5436,7 +5436,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5554,7 +5554,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5670,7 +5670,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5811,7 +5811,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5925,7 +5925,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6030,7 +6030,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6117,7 +6117,7 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6207,7 +6207,7 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6306,7 +6306,7 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6446,7 +6446,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -7144,7 +7144,7 @@
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
-				<CivicType>CIVIC_SUBJUGATION</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>

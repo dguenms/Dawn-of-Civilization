@@ -1929,3 +1929,6 @@ class RFCUtils:
 		
 	def getScenarioStartTurn(self):
 		return getTurnForYear(self.getScenarioStartYear())
+		
+	def hasCivic(self, iPlayer, iCivic):
+		return (gc.getPlayer(iPlayer).getCivics(iCivic % 6) == iCivic)

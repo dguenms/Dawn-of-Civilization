@@ -2483,12 +2483,12 @@ iAztEmbassy, iMugEmbassy, iTurEmbassy, iThaEmbassy, iConEmbassy, iHolEmbassy, iG
 
 #Civics
 iNumCivics = 36
-(iTyranny, iDynasticism, iCityStates, iTheocracy, iAutocracy, iRepublic,
-iDirectRule, iVassalage, iAbsolutism, iRepresentation, iSupremeCouncil, iUniversalSuffrage,
-iTribalism, iAgrarianism, iUrbanization, iCapitalism, iTotalitarianism, iEgalitarianism,
-iSelfSufficiency, iForcedLabor, iMercantilism, iFreeMarket, iStateProperty, iEnvironmentalism,
-iAnimism, iPantheon, iOrganizedReligion, iScholasticism, iFanaticism, iSecularism,
-iSubjugation, iViceroyalty, iResettlement, iOccupation, iImperialism, iCommonwealth) = range(iNumCivics)
+(iCivicTyranny, iCivicDynasticism, iCivicCityStates, iCivicTheocracy, iCivicAutocracy, iCivicRepublic,
+iCivicDirectRule, iCivicVassalage, iCivicAbsolutism, iCivicRepresentation, iCivicTotalitarianism, iCivicEgalitarianism,
+iCivicTribalism, iCivicSlavery, iCivicAgrarianism, iCivicCapitalism, iCivicIndustrialism, iCivicPublicWelfare,
+iCivicSelfSufficiency, iCivicGuilds, iCivicMercantilism, iCivicFreeMarket, iCivicCentralPlanning, iCivicEnvironmentalism,
+iCivicAnimism, iCivicPantheon, iCivicOrganizedReligion, iCivicScholasticism, iCivicFanaticism, iCivicSecularism,
+iCivicMilita, iCivicWarriorCode, iCivicMercenaries, iCivicLevyArmies, iCivicProfessionalArmies, iCivicConscription) = range(iNumCivics)
 
 #Specialists
 iNumSpecialists = 15

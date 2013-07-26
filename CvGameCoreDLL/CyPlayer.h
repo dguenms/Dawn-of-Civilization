@@ -531,6 +531,7 @@ public:
 	int getWarMapValue(int x, int y);
 	void AI_reset();
 	void setPersecutionCountdown(int iNewValue);
+	bool hasCivic(int iCivic);
 
 	// Leoreth: stability (not active yet)
 	int getStability();

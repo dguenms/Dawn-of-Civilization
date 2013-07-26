@@ -568,12 +568,16 @@
 	<ElementType name="iGoldPerProduction" content="textOnly" dt:type="int"/>
 	<ElementType name="iProductionPerPopulation" content="textOnly" dt:type="int"/>
 	<ElementType name="bAnger" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bUnits" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bBuildings" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="HurryInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
 		<element type="iGoldPerProduction"/>
 		<element type="iProductionPerPopulation"/>
 		<element type="bAnger"/>
+		<element type="bUnits"/> <!-- Leoreth -->
+		<element type="bBuildings"/> <!-- Leoreth -->
 		<element type="Button"/>
 	</ElementType>
 	<ElementType name="HurryInfos" content="eltOnly">
@@ -737,6 +741,16 @@
 	<ElementType name="BuildingHealthChanges" content="eltOnly">
 		<element type="BuildingHealthChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<!-- Leoreth -->
+	<ElementType name="iProductionModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="BuildingProductionModifier" content="eltOnly">
+		<element type="BuildingType"/>
+		<element type="iProductionModifier"/>
+	</ElementType>
+	<ElementType name="BuildingProductionModifiers" content="eltOnly">
+		<element type="BuildingProductionModifier" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<!-- Leoreth -->
 	<ElementType name="FeatureType" content="textOnly"/>
 	<ElementType name="FeatureHappinessChange" content="eltOnly">
 		<element type="FeatureType"/>
@@ -834,6 +848,7 @@
 		<element type="SpecialistValids"/>
 		<element type="BuildingHappinessChanges"/>
 		<element type="BuildingHealthChanges"/>
+		<element type="BuildingProductionModifiers" minOccurs="0"/> <!-- Leoreth -->
 		<element type="FeatureHappinessChanges"/>
 		<element type="ImprovementYieldChanges"/>
 		<element type="WeLoveTheKing"/>

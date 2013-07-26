@@ -1394,6 +1394,7 @@ public:
 	int* getSpecialistThresholdExtraYieldArray() const; //Leoreth
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
 	int getBuildingHealthChanges(int i) const;				// Exposed to Python
+	int getBuildingProductionModifier(int i) const;	//Leoreth
 	int getFeatureHappinessChanges(int i) const;				// Exposed to Python
 
 	bool isHurry(int i) const;													// Exposed to Python
@@ -1482,6 +1483,7 @@ protected:
 	int* m_piSpecialistThresholdExtraYield; //Leoreth
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
+	int* m_paiBuildingProductionModifiers; //Leoreth
 	int* m_paiFeatureHappinessChanges;
 
 	bool* m_pabHurry;
@@ -2351,6 +2353,8 @@ class CvHurryInfo :
 		int getProductionPerPopulation() const;		// Exposed to Python
 
 		bool isAnger() const;											// Exposed to Python
+		bool isUnits() const; // Leoreth
+		bool isBuildings() const; // Leoreth
 
 		bool read(CvXMLLoadUtility* pXML);
 
@@ -2361,6 +2365,8 @@ class CvHurryInfo :
 		int m_iProductionPerPopulation;
 
 		bool m_bAnger;
+		bool m_bUnits; // Leoreth
+		bool m_bBuildings; // Leoreth
 
 };
 

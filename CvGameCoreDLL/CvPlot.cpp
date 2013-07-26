@@ -5078,7 +5078,7 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 		{
 			if (getImprovementType() == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"))
 			{
-				if (GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)3) != CIVIC_FORCED_LABOR && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM)
+				if (GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY && GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM)
 				{
 					setImprovementType((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_PLANTATION"));
 				}

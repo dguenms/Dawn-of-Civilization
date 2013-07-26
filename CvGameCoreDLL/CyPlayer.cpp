@@ -2493,3 +2493,8 @@ void CyPlayer::resetStabilityCategories()
 	if (m_pPlayer)
 		m_pPlayer->resetStabilityCategories(false);
 }
+
+bool CyPlayer::hasCivic(int iCivic)
+{
+	return m_pPlayer ? m_pPlayer->hasCivic((CivicTypes)iCivic) : false;
+}

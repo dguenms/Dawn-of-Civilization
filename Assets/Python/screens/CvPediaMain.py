@@ -519,11 +519,12 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         #removed in CvPediaBuilding.py
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT):
-                    	for i in range(198+1):	#remove unique GPs (currently 33 civs with 6 GPs each -> 6*33=198, +1 for tibetan great prophet)
+                    	for i in range(222+1):	#remove unique GPs (currently 37 civs with 6 GPs each -> 6*33=198, +1 for tibetan great prophet)
 				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
 			tList.pop(con.iAztecSlave)
 			tList.pop(con.iNativeSlave)
 			tList.pop(con.iBireme)
+			tList.pop(con.iAmericanNavySeal)
 			#tList.pop(83) #Hwacha
                         #tList.pop(71) #Cataphract  
                         #tList.pop(con.iHolyRomanLandsknecht) #Landsknecht

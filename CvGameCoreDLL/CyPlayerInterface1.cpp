@@ -467,6 +467,7 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getWarMapValue", &CyPlayer::getWarMapValue, "void (int x, int y)")
 		.def("AI_reset", &CyPlayer::AI_reset, "void ()")
 		.def("setPersecutionCountdown", &CyPlayer::setPersecutionCountdown, "void (int iNewValue)")
+		.def("hasCivic", &CyPlayer::hasCivic, "bool (int iCivic)")
 
 		// Leoreth: stability (not active yet)
 		.def("getStability", &CyPlayer::getStability, "int ()")

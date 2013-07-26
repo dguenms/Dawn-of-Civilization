@@ -1896,7 +1896,7 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 				if (pHeadSelectedCity->canEnslave(true))
 				{
 					szTempBuffer = NEWLINE + gDLL->getText("TXT_KEY_REQUIRES");
-					setListHelp(szBuffer, szTempBuffer, GC.getCivicInfo((CivicTypes)CIVIC_FORCED_LABOR).getDescription(), gDLL->getText("TXT_KEY_OR").c_str(), bFirst);
+					setListHelp(szBuffer, szTempBuffer, GC.getCivicInfo((CivicTypes)CIVIC_SLAVERY).getDescription(), gDLL->getText("TXT_KEY_OR").c_str(), bFirst);
 					bFirst = false;
 				}
 				else
