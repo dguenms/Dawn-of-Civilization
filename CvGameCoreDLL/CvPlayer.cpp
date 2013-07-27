@@ -2877,7 +2877,8 @@ void CvPlayer::doTurn()
 		pLoopCity->doTurn();
 	}
 
-	if (getGoldenAgeTurns() > 0)
+	// Leoreth: anarchy doesn't cost golden age turns
+	if (getGoldenAgeTurns() > 0 && !isAnarchy())
 	{
 		changeGoldenAgeTurns(-1);
 	}
