@@ -1287,7 +1287,10 @@
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
 			<!-- Rhye - end -->
-			<YieldModifiers/>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>10</iYield>
+			</YieldModifiers>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
 			<CommerceModifiers/>
@@ -1410,7 +1413,7 @@
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
 				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_PUBLIC_TRANSPORTATION</BuildingType>
+					<BuildingType>BUILDINGCLASS_HOSPITAL</BuildingType>
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
@@ -1663,7 +1666,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_FREE_MARKET_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_FREE_MARKET_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Civics/Free_Market.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,8,1</Button>
-			<TechPrereq>TECH_ECONOMICS</TechPrereq>
+			<TechPrereq>TECH_CORPORATION</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iAIWeight>0</iAIWeight>
@@ -2518,6 +2521,10 @@
 			<BuildingHealthChanges/>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_BARRACKS</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_STABLE</BuildingType>
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
@@ -2754,7 +2761,7 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,16</Button>
 			<TechPrereq>TECH_NATIONALISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iAIWeight>0</iAIWeight>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -2812,12 +2819,6 @@
 			<SpecialistValids/>
 			<BuildingHappinessChanges/>
 			<BuildingHealthChanges/>
-			<BuildingProductionModifiers>
-				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_BARRACKS</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
-				</BuildingProductionModifier>
-			</BuildingProductionModifiers>
 			<FeatureHappinessChanges/>
 			<ImprovementYieldChanges/>
 			<WeLoveTheKing/>
