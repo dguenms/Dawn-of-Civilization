@@ -376,11 +376,11 @@
 	
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORPORATION_COMMERCE</Tag>
-		<English>[ICON_BULLET]Increases commerce created by corporations by %D1_Mod%%</English>
+		<English>[ICON_BULLET]%D1_Mod%% Corporation Commerce</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POLLUTION_MODIFIER</Tag>
-		<English>[ICON_BULLET]Changes unhealthiness by %D1_Mod%%</English>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_UNHEALTHY]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PROCESS_MODIFIER</Tag>
