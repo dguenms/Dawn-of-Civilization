@@ -5012,6 +5012,7 @@ class RiseAndFall:
 				teamByzantium.setHasTech(con.iLiterature, True, iCiv, False, False)
 				teamByzantium.setHasTech(con.iDrama, True, iCiv, False, False)
 				teamByzantium.setHasTech(con.iAesthetics, True, iCiv, False, False)
+				teamByzantium.setHasTech(con.iCalendar, True, iCiv, False, False)
                         if (iCiv == iVikings):
                                 teamVikings.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamVikings.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -5142,6 +5143,7 @@ class RiseAndFall:
                                 teamSpain.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamSpain.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamSpain.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+                                teamSpain.setHasTech(con.iCalendar, True, iCiv, False, False)
                         if (iCiv == iFrance):
                                 teamFrance.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamFrance.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -5171,6 +5173,7 @@ class RiseAndFall:
                                 teamFrance.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamFrance.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamFrance.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+                                teamFrance.setHasTech(con.iCalendar, True, iCiv, False, False)
                         if (iCiv == iEngland):
                                 teamEngland.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamEngland.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -5200,6 +5203,7 @@ class RiseAndFall:
                                 teamEngland.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamEngland.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamEngland.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+                                teamEngland.setHasTech(con.iCalendar, True, iCiv, False, False)
                         if (iCiv == iHolyRome):
                                 teamHolyRome.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamHolyRome.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -5229,6 +5233,7 @@ class RiseAndFall:
                                 teamHolyRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamHolyRome.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
                                 teamHolyRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
+                                teamHolyRome.setHasTech(con.iCalendar, True, iCiv, False, False)
                         if (iCiv == iRussia):
                                 teamRussia.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamRussia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -5256,6 +5261,7 @@ class RiseAndFall:
                                 teamRussia.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamRussia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamRussia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+                                teamRussia.setHasTech(con.iCalendar, True, iCiv, False, False)
                         if (iCiv == iHolland):
                                 teamHolland.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamHolland.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
