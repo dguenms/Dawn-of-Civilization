@@ -17,7 +17,7 @@ import RFCUtils
 utils = RFCUtils.RFCUtils()
 import CvScreenEnums #Rhye
 import Victory
-import Stability
+import Stability as sta
 import Plague
 import Communications
 import Companies
@@ -93,20 +93,16 @@ class CvRFCEventHandler:
                 eventManager.addEventHandler("cityRazed", self.onCityRazed) #Stability
                 eventManager.addEventHandler("cityBuilt", self.onCityBuilt) #Stability
                 eventManager.addEventHandler("combatResult", self.onCombatResult) #Stability
-                #eventManager.addEventHandler("changeWar", self.onChangeWar)
+                eventManager.addEventHandler("changeWar", self.onChangeWar)
                 eventManager.addEventHandler("religionFounded",self.onReligionFounded) #Victory
                 eventManager.addEventHandler("buildingBuilt",self.onBuildingBuilt) #Victory
                 eventManager.addEventHandler("projectBuilt",self.onProjectBuilt) #Victory
                 eventManager.addEventHandler("BeginPlayerTurn", self.onBeginPlayerTurn)
-                eventManager.addEventHandler("EndPlayerTurn", self.onEndPlayerTurn)
-                eventManager.addEventHandler("EndGameTurn", self.onEndGameTurn) #Stability
                 eventManager.addEventHandler("kbdEvent",self.onKbdEvent)
                 eventManager.addEventHandler("OnLoad",self.onLoadGame) #edead: StoredData
                 eventManager.addEventHandler("techAcquired",self.onTechAcquired) #Stability
-                #eventManager.addEventHandler("improvementDestroyed",self.onImprovementDestroyed) #Stability
                 eventManager.addEventHandler("religionSpread",self.onReligionSpread) #Stability
                 eventManager.addEventHandler("firstContact",self.onFirstContact)
-                eventManager.addEventHandler("corporationFounded",self.onCorporationFounded) #Stability
                 eventManager.addEventHandler("OnPreSave",self.onPreSave) #edead: StoredData
 		eventManager.addEventHandler("playerChangeStateReligion", self.onPlayerChangeStateReligion)
 		eventManager.addEventHandler("vassalState", self.onVassalState)
@@ -125,6 +121,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("plotFeatureRemoved", self.onPlotFeatureRemoved)
 		#eventManager.addEventHandler("changeWar", self.onChangeWar)
 		#eventManager.addEventHandler("unitGifted", self.onUnitGifted)
+		eventManager.addEventHandler("goldenAge", self.onGoldenAge)
                
                 self.eventManager = eventManager
 
@@ -137,7 +134,6 @@ class CvRFCEventHandler:
                 self.aiw = AIWars.AIWars()
                 self.cong = Congresses.Congresses()
                 self.vic = Victory.Victory()
-                self.sta = Stability.Stability()
                 self.pla = Plague.Plague()
                 self.com = Communications.Communications()
                 self.corp = Companies.Companies()
@@ -152,7 +148,6 @@ class CvRFCEventHandler:
                 self.rel.setup()
                 self.pla.setup()
 		self.dc.setup()
-                self.sta.setup()
                 self.aiw.setup()
 		self.vic.setup() # Leoreth
 		
@@ -175,6 +170,9 @@ class CvRFCEventHandler:
                 
 		cnm.onCityAcquired(city, iPlayer)
 		
+		if bConquest:
+			sta.onCityAcquired(city, iOwner, iPlayer)
+		
 		if iPlayer == con.iArabia:
 			self.up.arabianUP(city)
 		elif iPlayer == con.iTurkey:
@@ -192,9 +190,7 @@ class CvRFCEventHandler:
 		elif iPlayer == con.iSpain and (city.getX(), city.getY()) == con.tCapitals[0][con.iMoors]:
 			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
 			
-                self.sta.onCityAcquired(iOwner, iPlayer, city, bConquest, bTrade)
-		
-		if iPlayer < iNumMajorPlayers:
+                if iPlayer < iNumMajorPlayers:
 			utils.spreadMajorCulture(iPlayer, city.getX(), city.getY())
 		
 		# relocate capitals
@@ -288,8 +284,7 @@ class CvRFCEventHandler:
         def onCityRazed(self, argsList):
                 city, iPlayer = argsList
 
-                self.sta.onCityRazed(city.getOwner(),iPlayer,city)
-		self.dc.onCityRazed(argsList)
+                self.dc.onCityRazed(argsList)
 		self.pla.onCityRazed(city,iPlayer) #Plague
                         
                 if iPlayer == con.iMongolia:
@@ -311,6 +306,8 @@ class CvRFCEventHandler:
 
                 if iOwner < iNumMajorPlayers:
                         utils.spreadMajorCulture(iOwner, city.getX(), city.getY())
+			if gc.getPlayer(iOwner).getNumCities() < 2:
+				gc.getPlayer(iOwner).AI_updateFoundValues(False); # fix for settler maps not updating after 1st city is founded
 
 		if iOwner == con.iTurkey:
                         self.up.turkishUP(city, iOwner, -1)
@@ -369,7 +366,6 @@ class CvRFCEventHandler:
 			self.vic.onCityBuilt(city, iOwner)
 			
                 if iOwner < con.iNumPlayers:
-                        self.sta.onCityBuilt(iOwner, city.getX(), city.getY() )
 			self.dc.onCityBuilt(iOwner)
 
 		if iOwner == con.iArabia:
@@ -401,7 +397,6 @@ class CvRFCEventHandler:
         def onCombatResult(self, argsList):
                 self.up.aztecUP(argsList)
 		self.vic.onCombatResult(argsList)
-                self.sta.onCombatResult(argsList)
                 self.rnf.immuneMode(argsList)
 		self.up.vikingUP(argsList)
 		
@@ -427,33 +422,24 @@ class CvRFCEventHandler:
         
                 self.vic.onReligionFounded(iReligion, iFounder)
 		self.rel.onReligionFounded(iReligion, iFounder)
-        
-                if iFounder < con.iNumPlayers:
-                        self.sta.onReligionFounded(iFounder)
-
-
-	def onCorporationFounded(self, argsList):
-		'Corporation Founded'
-		iCorporation, iFounder = argsList
-		
-                if iFounder < con.iNumPlayers:
-                        self.sta.onCorporationFounded(iFounder)
 
         def onVassalState(self, argsList):
 		'Vassal State'
 		iMaster, iVassal, bVassal, bCapitulated = argsList
 		
+		if bCapitulated:
+			sta.onVassalState(iMaster, iVassal)
+		
 		if iVassal == con.iInca:
 			gc.getPlayer(con.iInca).setReborn()
 		
 		self.dc.onVassalState(argsList)
-		
-		if bCapitulated:
-			self.sta.onVassalState(iVassal, bCapitulated)
 
 	def onRevolution(self, argsList):
 		'Called at the start of a revolution'
 		iPlayer = argsList[0]
+		
+		sta.onRevolution(iPlayer)
 		
 		if iPlayer < iNumPlayers:
 			self.dc.onRevolution(iPlayer)
@@ -527,9 +513,11 @@ class CvRFCEventHandler:
                 iOwner = city.getOwner()
                 self.vic.onBuildingBuilt(city.getOwner(), iBuildingType)
                 if iOwner < con.iNumPlayers:
-                        self.sta.onBuildingBuilt(iOwner, iBuildingType, city)
                         self.com.onBuildingBuilt(iOwner, iBuildingType, city)
                 self.cong.onBuildingBuilt(iOwner, iBuildingType, city)
+		
+		if isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
+			sta.onWonderBuilt(iOwner, iBuildingType)
 
 		# Leoreth: Apostolic Palace moves holy city
 		if iBuildingType == con.iApostolicPalace:
@@ -580,16 +568,11 @@ class CvRFCEventHandler:
         def onProjectBuilt(self, argsList):
                 city, iProjectType = argsList
                 self.vic.onProjectBuilt(city.getOwner(), iProjectType)
-                if (city.getOwner() < con.iNumPlayers):
-                        self.sta.onProjectBuilt(city.getOwner(), iProjectType)
 			
 		self.rnf.onProjectBuilt(city, iProjectType)
 
         def onImprovementDestroyed(self, argsList):
-                pass
-                #iImprovement, iOwner, iX, iY = argsList
-                #if (iOwner < con.iNumPlayers):
-                #        self.sta.onImprovementDestroyed(iOwner)           
+		pass
                 
         def onBeginGameTurn(self, argsList):
                 iGameTurn = argsList[0]
@@ -603,7 +586,6 @@ class CvRFCEventHandler:
                 self.cong.checkTurn(iGameTurn)
                 self.pla.checkTurn(iGameTurn)
                 self.vic.checkTurn(iGameTurn)
-                self.sta.checkTurn(iGameTurn)
                 self.com.checkTurn(iGameTurn)
 		self.corp.checkTurn(iGameTurn)
 		
@@ -623,15 +605,8 @@ class CvRFCEventHandler:
                 if (gc.getPlayer(iPlayer).isAlive()):
                         self.vic.checkPlayerTurn(iGameTurn, iPlayer)
 
-                if (gc.getPlayer(iPlayer).isAlive() and iPlayer < con.iNumPlayers and gc.getPlayer(iPlayer).getNumCities() > 0):
-                        self.sta.updateBaseStability(iGameTurn, iPlayer)
-
                 if (gc.getPlayer(iPlayer).isAlive() and iPlayer < con.iNumPlayers and not gc.getPlayer(iPlayer).isHuman()):
                         self.rnf.checkPlayerTurn(iGameTurn, iPlayer) #for leaders switch
-        
-        def onEndPlayerTurn(self, argsList):
-
-                iGameTurn, iPlayer = argsList
 
 	def onGreatPersonBorn(self, argsList):
 		'Great Person Born'
@@ -640,6 +615,8 @@ class CvRFCEventHandler:
 		infoUnit = pUnit.getUnitClassType()
 
 		self.vic.onGreatPersonBorn(argsList)
+		
+		sta.onGreatPersonBorn(iPlayer)
 		
 		# Check if we should even show the popup:
 		if pUnit.isNone() or pCity.isNone():
@@ -651,27 +628,9 @@ class CvRFCEventHandler:
 		# Pass the civilization and unit type along to the renamer
 		#pUnit.setName(CivSpecificGreatPeopleModNameUtils.generateCivilizationName(iCivilizationType, infoUnit))
 
-
-        def onEndGameTurn(self, argsList):
-            
-                iGameTurn = argsList[0]
-                self.sta.checkImplosion(iGameTurn)
-		
-		# Leoreth: test stability on divergences every 5 turns
-		if iGameTurn % utils.getTurns(5) == 0:
-			for iPlayer in range(con.iNumPlayers):
-				if gc.getPlayer(iPlayer).isAlive():
-					print "PYTHON: Player " + str(iPlayer) + " base stability: " + str(self.sta.getBaseStabilityLastTurn(iPlayer))
-					print "DLL: Player " + str(iPlayer) + " base stability: " + str(gc.getPlayer(iPlayer).getBaseStabilityLastTurn())
-					#lStabilityList = gc.getPlayer(iPlayer).getStabilityList()
-					#for tStabilityTuple in lStabilityList:
-					#	print str(tStabilityTuple)
-
-
         def onReligionSpread(self, argsList):
             
                 iReligion, iOwner, pSpreadCity = argsList
-                self.sta.onReligionSpread(iReligion, iOwner)
 		
 		cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
 
@@ -705,6 +664,8 @@ class CvRFCEventHandler:
 			
 		if utils.getScenario() == con.i1700AD and gc.getGame().getGameTurn() == getTurnForYear(1700):
 			return
+			
+		sta.onTechAcquired(iPlayer, iTech)
                 
                 if (gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])):                            
                 	self.vic.onTechAcquired(argsList[0], argsList[2])
@@ -714,8 +675,6 @@ class CvRFCEventHandler:
                         self.rel.onTechAcquired(argsList[0], argsList[2])
                 
                 if (gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer]) and iPlayer < con.iNumPlayers):
-                        self.sta.onTechAcquired(argsList[0], argsList[2])
-
                         if (gc.getGame().getGameTurn() > getTurnForYear(1700)):
                                 self.aiw.forgetMemory(argsList[0], argsList[2])
 
@@ -762,6 +721,16 @@ class CvRFCEventHandler:
         def onLoadGame(self, argsList):
 
                 sd.load() # edead: load & unpickle script data
+		
+	def onChangeWar(self, argsList):
+		bWar, iTeam, iOtherTeam = argsList
+		
+		sta.onChangeWar(bWar, iTeam, iOtherTeam)
+			
+	def onGoldenAge(self, argsList):
+		iPlayer = argsList[0]
+		
+		sta.onGoldenAge(iPlayer)
 
         def onKbdEvent(self, argsList):
                 'keypress handler - return 1 if the event was consumed'

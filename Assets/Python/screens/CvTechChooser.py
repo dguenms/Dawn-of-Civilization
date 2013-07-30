@@ -487,6 +487,8 @@ class CvTechChooser:
 
 			# Improvements
 			for j in range(gc.getNumBuildInfos()):
+				if gc.getBuildInfo(j).isGraphicalOnly(): continue
+			
 				bTechFound = 0;
 
 				if (gc.getBuildInfo(j).getTechPrereq() == -1):

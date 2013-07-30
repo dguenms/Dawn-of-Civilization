@@ -619,20 +619,20 @@ class RiseAndFall:
 	
 		if utils.getScenario() == con.i3000BC:
 			self.create4000BCstartingUnits()
-			self.set3000BCStability()
+			#self.set3000BCStability()
 			
 		if utils.getScenario() == con.i600AD:
 			self.create600ADstartingUnits()
 			self.assign600ADTechs()
 			self.assign600ADGold()
-			self.set600ADStability()
+			#self.set600ADStability()
 			
 		if utils.getScenario() == con.i1700AD:
 			self.create1700ADstartingUnits()
 			self.assign1700ADTechs()
 			self.assign1700ADGold()
 			self.init1700ADDiplomacy()
-			self.set1700ADStability()
+			#self.set1700ADStability()
 			self.prepareColonists()
 			self.adjust1700ADCulture()
 			

@@ -265,6 +265,7 @@ public:
 	int getRegionID();
 	bool isCore(int ePlayer);
 	void setCore(int ePlayer, bool bReborn, bool bNewValue);
+	int getSettlerMapValue(int ePlayer);
 
 private:
 	CvPlot* m_pPlot;

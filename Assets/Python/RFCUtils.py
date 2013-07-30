@@ -1932,3 +1932,6 @@ class RFCUtils:
 		
 	def hasCivic(self, iPlayer, iCivic):
 		return (gc.getPlayer(iPlayer).getCivics(iCivic % 6) == iCivic)
+		
+	def getUniqueBuilding(self, iPlayer, iBuilding):
+		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(gc.getBuildingInfo(iBuilding).getBuildingClassType())

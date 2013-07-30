@@ -1068,3 +1068,8 @@ void CyPlot::setCore(int ePlayer, bool bReborn, bool bNewValue)
 	if (m_pPlot)
 		m_pPlot->setCore((PlayerTypes)ePlayer, bReborn, bNewValue);
 }
+
+int CyPlot::getSettlerMapValue(int ePlayer)
+{
+	return m_pPlot ? m_pPlot->getSettlerMapValue((PlayerTypes)ePlayer) : -1;
+}

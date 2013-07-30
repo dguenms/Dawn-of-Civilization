@@ -125,6 +125,7 @@ class StoredData:
 				    'bMaliGold' : False,
 				    'iColombianTradeGold' : 0,
                                     #------------Stability
+				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
                                     'lBaseStabilityLastTurn': [0 for i in range(con.iNumPlayers)],
                                     'lPartialBaseStability': [0 for i in range(con.iNumPlayers)],
                                     'lStability': [0 for i in range(con.iNumPlayers)],
@@ -142,6 +143,12 @@ class StoredData:
                                     'lLastRecordedStabilityStuff': [0, 0, 0, 0, 0, 0], # total + 5 parameters
 				}
                 self.save()
+		
+	def getStabilityLevel(iPlayer):
+		return self.scriptDict['lStabilityLevels'][iPlayer]
+		
+	def setStabilityLevel(iPlayer, iStabilityLevel):
+		self.scriptDict['lStabilityLevels'][iPlayer] = iStabilityLevel
 
 # All modules import the following single instance, not the class
 

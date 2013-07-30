@@ -200,7 +200,7 @@ def onCityAcquired(city, iNewOwner):
 	
 	if sOldName == 'Inbhir Nis' and iNewOwner != iCeltia: sNewName = 'Inverness'
 	elif sOldName == 'D&#249;n &#200;ideann' and iNewOwner != iCelta: sNewName = 'Edinburgh'
-	elif sOldName in ['Aquincum', 'Ak Ink', 'Buda'] and iNewOwner not in [iRome, iTurkey]: sNewName = 'Budapest'
+	elif sOldName in ['Aquincum', 'Ak Ink'] and iNewOwner not in [iRome, iTurkey]: sNewName = 'Buda'
 	elif sOldName in ['Takao', 'Gaoxiong'] and iNewOwner >= iNumPlayers: sNewName = 'Kaohsiung'
 	elif sOldName == 'Momba&#231;a' and iNewOwner != iPortugal: sNewName = 'Mombasa'
 	elif sOldName == 'Toranaro' and iNewOwner not in [iJapan, iFrance]: sNewName = 'Tolanaro'
@@ -287,7 +287,7 @@ def onTechAcquired(iCiv):
 			for city in lCities:
 				if city.getName() == 'Edo': city.setName('Toukyou', False)
 		elif iCiv == iRussia:
-			if pCiv.getCivics(3) == con.iStateProperty: applySovietNames()
+			if pCiv.getCivics(3) == con.iCivicCentralPlanning: applySovietNames()
 		elif iCiv == iTurkey:
 			for city in lCities:
 				if city.getName() == 'Kostantiniyye': city.setName('Istanbul', False)

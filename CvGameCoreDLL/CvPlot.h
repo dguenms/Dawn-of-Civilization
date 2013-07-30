@@ -493,6 +493,7 @@ public:
 	CvWString getRegionName() const;
 	bool isCore(PlayerTypes ePlayer) const;
 	void setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue);
+	int getSettlerMapValue(PlayerTypes ePlayer) const;
 
 protected:
 

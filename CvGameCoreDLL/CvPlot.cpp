@@ -6627,7 +6627,7 @@ int CvPlot::getCulture(PlayerTypes eIndex) const
 
 	if (eIndex == VIKING && GC.getGameINLINE().getGameTurnYear() < 1000)
 	{
-		if (getY_INLINE() == 53 && (getX_INLINE() == 59 || getX_INLINE() == 60 || getX_INLINE() == 61))
+		if (getY_INLINE() == 54 && (getX_INLINE() == 59 || getX_INLINE() == 60 || getX_INLINE() == 61))
 		{
 			return 0;
 		}
@@ -10681,4 +10681,10 @@ void CvPlot::setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue)
 
 		m_abCore[ePlayer] = bNewValue;
 	}
+}
+
+// Leoreth
+int CvPlot::getSettlerMapValue(PlayerTypes ePlayer) const
+{
+	return GET_PLAYER(ePlayer).getSettlersMaps(67 - getY_INLINE(), getX_INLINE());
 }
