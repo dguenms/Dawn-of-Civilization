@@ -1666,7 +1666,7 @@
 	</Define>
 	<Define>
 		<DefineName>SHIP_BLOCKADE_RANGE</DefineName>
-		<iDefineIntVal>3</iDefineIntVal>
+		<iDefineIntVal>2</iDefineIntVal> <!-- Leoreth: down from 3 -->
 	</Define>
 	<Define>
 		<DefineName>PATH_DAMAGE_WEIGHT</DefineName>

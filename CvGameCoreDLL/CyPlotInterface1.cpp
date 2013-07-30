@@ -260,5 +260,6 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("getRegionID", &CyPlot::getRegionID, "int ()")
 		.def("isCore", &CyPlot::isCore, "bool (int ePlayer)")
 		.def("setCore", &CyPlot::setCore, "void (int ePlayer, bool bNewValue)")
+		.def("getSettlerMapValue", &CyPlot::getSettlerMapValue, "int (int ePlayer)")
 	;
 }

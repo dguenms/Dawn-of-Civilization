@@ -37,3 +37,5 @@
 	  4. Standing Army (Military Tradition, high): +25% unit production, +2 experience
 	  5. Conscription (Nationalism, low): can draft 2 units, +50% experience within own borders
 # anarchy doesn't cost golden age turns
+# reduced blockade range to 2
+# the number of bonus resources that can influence your corporation yield is capped at 12 per type

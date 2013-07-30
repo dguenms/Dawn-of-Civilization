@@ -39,7 +39,405 @@ iParExpansion3 = con.iParExpansion3
 iParExpansion1 = con.iParExpansion1
 iParExpansionE = con.iParExpansionE
 
+def onCityAcquired(city, iOwner, iPlayer):
+	checkStability(iOwner)
+	
+def onTechAcquired(iPlayer, iTech):
+	checkStability(iPlayer)
+	
+def onVassalState(iMaster, iVassal):
+	checkStability(iVassal)
+	checkStability(iMaster, True)
+	
+def onChangeWar(bWar, iTeam, iOtherTeam):
+	checkStability(iTeam, not bWar)
+	checkStability(iOtherTeam, not bWar)
+	
+def onRevolution(iPlayer):
+	checkStability(iPlayer)
+	
+def onWonderBuilt(iPlayer, iBuildingType):
+	checkStability(iPlayer, True)
+	
+def onGoldenAge(iPlayer):
+	checkStability(iPlayer, True)
+	
+def onGreatPersonBorn(iPlayer):
+	checkStability(iPlayer, True)
 
+def getStabilityLevel(iPlayer):
+	return sd.getStabilityLevel(iPlayer)
+	
+def setStabilityLevel(iPlayer, iStabilityLevel):
+	sd.setStabilityLevel(iPlayer, iStabilityLevel)
+
+def checkStability(iPlayer, bPositive = False):
+	pPlayer = gc.getPlayer(iPlayer)
+	iGameTurn = gc.getGame().getGameTurn()
+
+	# immune to stability checks right after birth
+	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < 20:
+		return
+		
+	# immune to stability checks in golden ages and anarchy
+	if pPlayer.isGoldenAge() or pPlayer.isAnarchy():
+		return
+		
+	iStability = calculateStability(iPlayer)
+	
+	
+def calculateStability(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	tPlayer = gc.getTeam(pPlayer.getTeam())
+
+	iExpansionStability = 0
+	iEconomyStability = 0
+	iDomesticStability = 0
+	iForeignStability = 0
+	iMilitaryStability = 0
+	
+	# Collect required data
+	iReborn = utils.getReborn(iPlayer)
+	iStateReligion = pPlayer.getStateReligion()
+	iCurrentEra = pPlayer.getCurrentEra()
+	iNumTotalCities = pPlayer.getNumCities()
+	iPlayerScore = pPlayer.getScoreHistory(iGameTurn)
+	
+	iCivicGovernment = pPlayer.getCivics(0)
+	iCivicOrganization = pPlayer.getCivics(1)
+	iCivicLabor = pPlayer.getCivics(2)
+	iCivicEconomy = pPlayer.getCivics(3)
+	iCivicReligion = pPlayer.getCivics(4)
+	iCivicMilitary = pPlayer.getCivics(5)
+	
+	iCorePopulation = 0
+	iPeripheryPopulation = 0
+	iTotalCoreCities = 0
+	iOccupiedCoreCities = 0
+	
+	iStateReligionCities = 0
+	iOnlyStateReligionCities = 0
+	iNonStateReligionCities = 0
+	
+	iUnhappyCities = 0
+	
+	for city in utils.getCityList(iPlayer):
+		iPopulation = city.getPopulation()
+		iModifier = 0
+		x = city.getX()
+		y = city.getY()
+		plot = gc.getMap().plot(x,y)
+		
+		bTotalitarianism = (iCivicOrganization == con.iCivicTotalitarianism)
+		bCityStates = (iCivicGovernment == con.iCivicCityStates)
+		
+		bForeignCore = False
+		for iLoopPlayer in range(con.iNumPlayers):
+			if plot.isCore(iLoopPlayer):
+				bForeignCore = True
+				break
+		
+		# Expansion
+		if plot.isCore():
+			iCorePopulation += 4 * iPopulation
+		else:
+			# ahistorical tiles
+			if plot.getSettlerMapValue(iPlayer) < 90: iModifier += 2
+			
+			# colonies with Totalitarianism
+			if bTotalitarianism and plot.getSettlerMapValue(iPlayer) >= 90: iModifier += 1
+			
+			# not original owner
+			if city.getOriginalOwner() != iPlayer and not bTotalitarianism: iModifier += 1
+			
+			# not majority culture
+			if plot.getCulture(iPlayer) * 2 < plot.countTotalCulture() and not bTotalitarianism: iModifier += 1
+			
+			# foreign core
+			if bForeignCore: iModifier += 1
+			
+			# City States
+			if bCityStates: iModifier += 2
+			
+			# Courthouse
+			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, con.iCourthouse)): iModifier -= 1
+			
+			# Jail
+			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, con.iJail)): iModifier -= 1
+			
+			# cap
+			if iModifier < 1: iModifier = 1
+			
+			iPeripheryPopulation += iModifier * iPopulation
+			
+		# Religions
+		bNonStateReligion = False
+		for iReligion in range(con.iNumReligions):
+			if iReligion != iStateReligion and city.isHasReligion(iReligion):
+				if not self.isTolerated(iPlayer, iReligion):
+					bNonStateReligion = True
+					break
+				
+		if city.isHasReligion(iStateReligion):
+			iStateReligionCities += 1
+			if not bNonStateReligion: iOnlyStateReligionCities += 1
+				
+		if bNonStateReligion: iNonStateReligionCities += 1
+		
+		# Happiness
+		if city.angryPopulation(0) > 0: iUnhappyCities += 1
+			
+	for city in utils.getAreaCities(iPlayer):
+		iTotalCoreCities += 1
+		if city.getOwner() != iPlayer:
+			iOccupiedCoreCities += 1
+			
+	iCurrentCommerce = pPlayer.getEconomyHistory(iGameTurn)
+	iPreviousCommerce = pPlayer.getEconomyHistory(iGameTurn - 10)
+			
+	iCurrentCommerceRank = calculateCommerceRank(iPlayer, iGameTurn)
+	iPreviousCommerceRank = calculateCommerceRank(iPlayer, iGameTurn - 10)
+	
+	iHappiness = pPlayer.calculateTotalCityHappiness()
+	iUnhappiness = pPlayer.calculateTotalCityUnhappiness()
+	
+	iCurrentPower = pPlayer.getPowerHistory(iGameTurn)
+	iPreviousPower = pPlayer.getPowerHistory(iGameTurn - 10)
+	
+	iCurrentPowerRank = calculatePowerRank(iPlayer, iGameTurn)
+	iPreviousPowerRank = calculatePowerRank(iPlayer, iGameTurn - 10)
+	
+	# EXPANSION
+	iExpansionStability = 0
+	
+	# Core vs. Periphery Populations
+	if iCorePopulation > iPeripheryPopulation:
+		iModifier = 1
+	else:
+		iModifier = 5
+		
+	iExpansionStability += iModifier * (iCorePopulation - iPeripheryPopulation) / (iCorePopulation + iPeripheryPopulation)
+	
+	# Control over own core
+	iExpansionStability -= 20 * iOccupiedCoreCities / iTotalCoreCities
+	
+	# ECONOMY
+	iEconomyStability = 0
+	
+	# Economic growth
+	iCommerceDifference = iCurrentCommerce - iPreviousCommerce
+	iPercentChange = 100 * iCommerceDifference / iPreviousCommerce
+	
+	iEconomicGrowthStability = iPercentChange - 5
+	if iEconomicGrowthStability > 10: iEconomicGrowthStability = 10
+	elif iEconomicGrowthStability < -10: iEconomicGrowthStability = -10
+	iEconomyStability += iEconomicGrowthStability
+	
+	# Relative wealth
+	iRankDifference = iCurrentCommerceRank - iPreviousCommerceRank
+	iEconomyStability += iRankDifference
+	
+	# Economic systems
+	iEconomicSystemStability = 0
+	bMercantilism = (iCivicEconomy == con.iCivicMercantilism)
+	bCentralPlanning = (iCivicEconomy == con.iCivicCentralPlanning)
+	if bMercantilism or bCentralPlanning:
+		for iLoopPlayer in range(con.iNumPlayers):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			if tPlayer.isOpenBorders(iLoopPlayer):
+				if bMercantilism:
+					if pLoopPlayer.getEconomyHistory(iGameTurn) > iCurrentCommerce:
+						iEconomicSystemStability -= 5
+				if bCentralPlanning:
+					if pLoopPlayer.getCivics(3) == con.iCivicFreeMarket:
+						iEconomicSystemStability -= 5
+	iEconomyStability += iEconomicSystemStability
+					
+	# DOMESTIC
+	iDomesticStability = 0
+	
+	# Happiness
+	iHappinessStability = (iHappiness - iUnhappiness) / pPlayer.getTotalPopulation()
+	iHappinessStability -= iUnhappyCities
+	iDomesticStability += iHappinessStability
+	
+	# Civics (combinations)
+	iCivicStability = 0
+	
+	if iCivicOrganization == con.iCivicTotalitarianism:
+		if iCivicGovernment == con.iCivicAutocracy: iCivicStability += 5
+		if iCivicEconomy == con.iCivicCentralPlanning: CivicStability += 3
+		if iCivicReligion != con.iCivicSecularism: iCivicStability -= 3
+		if iCivicMilitary == con.iCivicConscription: iCivicStability += 2
+	
+	if iCivicEconomy == con.iCivicCentralPlanning:
+		if iCivicLabor == con.iCivicIndustrialism: iCivicStability += 2
+		elif iCivicLabor != con.iCivicPublicWelfare: iCivicStability -= 3
+		
+	if iCivicOrganization == con.iCivicEgalitarianism:
+		if iCivicGovernment == con.iCivicRepublic: iCivicStability += 1
+		if iCivicLabor != con.iCivicPublicWelfare: iCivicStability -= 3
+		if iCivicEconomy == con.iCivicEnvironmentalism: iCivicStability += 2
+		if iCivicReligion == con.iCivicSecularism: iCivicStability += 2
+		
+	if iCivicLabor == con.iCivicCapitalism:	
+		if iCivicEconomy == con.iCivicFreeMarket: iCivicStability += 3
+		if iCivicEconomy == con.iCivicGuilds: iCivicStability -= 3
+		
+	if iCivicEconomy == con.iCivicEnviromentalism:
+		if iCivicLabor == con.iCivicIndustrialism: iCivicStability -= 3
+		
+	if iCivicGovernment == con.iCivicTheocracy:
+		if iCivicReligion == con.iCivicFanaticism: iCivicStability += 3
+		if iCivicReligion == con.iCivicSecularism: iCivicStability -= 5
+		if iCivicOrganization == con.iCivicEgalitarianism: iCivicStability -= 2
+		
+	if iCivicOrganization == con.iCivicVassalage:
+		if iCivicMilitary in [con.iCivicWarriorCode, con.iCivicLevyArmies]: iCivicStability += 3
+		else: iCivicStability -= 5
+		if iCivicEconomy in [con.iCivicCapitalism, con.iCivicIndustrialism, con.iCivicPublicWelfare]: iCivicStability -= 3
+	
+		if iCurrentEra == con.iMedieval:
+			if iCivicGovernment == con.iCivicDynasticism: iCivicStability += 2
+			if iCivicLabor == con.iCivicAgrarianism: iCivicStability += 3
+			
+	if iCivicGovernment == con.iCivicCityStates:
+		if iCivicOrganization in [con.iCivicVassalage, con.iCivicAbsolutism, con.iCivicEgalitarianism]: iCivicStability -= 2
+		if iCivicEconomy == con.iCivicGuilds: iCivicStability += 2
+		elif iCivicEconomy != con.iCivicMercantilism: iCivicStability -= 3
+		if iCivicMilitary in [con.iCivicMilitia, con.iCivicMercenaries]: iCivicStability += 2
+		else: iCivicStability -= 3
+		
+	if iCivicOrganization == con.iCivicAbsolutism:
+		if iCivicGovernment == con.iCivicRepublic: iCivicStability -= 3
+		if iCivicEconomy == con.iCivicMercantilism: iCivicStability += 3
+		
+	iCivicCombinationStability = iCivicStability
+	iCivicStability = 0
+	
+	# Civics (eras and techs)
+	if iCivicOrganization == con.iCivicVassalage:
+		if iCurrentEra == con.iMedieval: iCivicStability += 2
+		else: iCivicStability -= 3
+		
+	if iCivicGovernment == con.iCivicTheocracy:
+		if iCurrentEra >= con.iIndustrial: iCivicStability -= 3
+		
+	if iCivicReligion == con.iPantheon:
+		if iCurrentEra <= con.iClassical: iCivicStability += 2
+		else: iCivicStability -= 2 * iCurrentEra
+		
+	if iCivicGovernment == con.iCivicCityStates:
+		if iCurrentEra <= con.iClassical: iCivicStability += 2
+		elif iCurrentEra >= con.iIndustrial: iCivicStability -= 3
+		
+	if tPlayer.isHasTech(con.iDemocracy):
+		if iCivicOrganization not in [con.iCivicRepresentation, con.iCivicEgalitarianism]: iCivicStability -= 2
+		if iCivicLabor not in [con.iCivicSlavery, con.iCivicAgrarianism] and iCivicOrganization != con.iCivicTotalitarianism: iCivicStability -= 3
+		
+	if tPlayer.isHasTech(con.iUtopia):
+		if iCivicOrganization in [con.iCivicEgalitarianism, con.iCivicTotalitarianism]: iCivicStability -= 3
+		
+	if tPlayer.isHasTech(con.iEconomics):
+		if iCivicEconomy in [con.iCivicSelfSufficiency, con.iCivicGuilds]: iCivicStability -= 3
+		if iCivicLabor == con.iCivicSlavery and iCivicOrganization != con.iTotalitarianism: iCivicStability -= 3
+	
+	iCivicEraTechStability = iCivicStability
+	iDomesticStability += iCivicCombinationStability + iCivicEraTechStability
+	
+	# Religion
+	iReligionStability = 0
+	
+	iHeathenRatio = 100 * iNonStateReligionCities / iNumTotalCities
+	iHeathenThreshold = 30
+	if iCivicReligion == con.iCivicFanaticism: iHeathenThreshold = 0
+	
+	if iHeathenRatio > iHeathenThreshold:
+		iReligionStability -= (iHeathenRatio - iHeathenThreshold) / 10
+		
+	if iStateReligion != -1:
+		iStateReligionRatio = 100 * iStateReligionCities / iNumTotalCities
+		iReligionStability += (iStateReligionRatio - 70) / 10
+	
+		if iCivicGovernment == con.iCivicTheocracy:
+			iOnlyStateReligionRatio = 100 * iOnlyStateReligionCities / iNumTotalCities
+			iReligionStability += iOnlyStateReligionRatio / 20
+		
+	iDomesticStability += iReligionStability
+	
+	# FOREIGN
+	iForeignStability = 0
+	iNeighborStability = 0
+	iVassalStability = 0
+	iDefensivePactStability = 0
+	iRelationsStability = 0
+	iWarStability = 0
+	
+	for iLoopPlayer in range(con.iNumPlayers):
+		pLoopPlayer = gc.getPlayer(iLoopPlayer)
+		tLoopPlayer = gc.getTeam(pLoopPlayer.getTeam())
+		iLoopScore = pLoopPlayer.getScoreHistory(iGameTurn)
+	
+		# neighbor stability
+		if utils.isNeighbor(iPlayer, iLoopPlayer) or iLoopPlayer in con.lNeighbors[iPlayer]:
+			if tPlayer.isOpenBorders(iLoopPlayer):
+				if self.getStabilityLevel(iLoopPlayer) == con.iStabilityUnstable: iNeighborStability -= 3
+				elif self.getStabilityLevel(iLoopPlayer) == con.iStabilityCollapsing: iNeighborStability -= 5
+				
+		# vassal stability
+		if tLoopPlayer.isVassal(iPlayer):
+			if self.getStabilityLevel(iLoopPlayer) == con.iStabilityCollapsing: iVassalStability -= 5
+			elif self.getStabilityLevel(iLoopPlayer) == con.iStabilitySolid: iVassalStability += 3
+			
+		# defensive pacts
+		if tPlayer.isDefensivePact(iLoopPlayer):
+			if iLoopScore > iPlayerScore: iDefensivePactStability += 5
+			
+		# bad relations
+		if tLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS: iRelationsStability -= 2
+		
+		# worst enemies
+		if tLoopPlayer.AI_getWorstEnemy() == iPlayer:
+			if iLoopScore > iPlayerScore: iBadRelationsStability -= 5
+			
+		# wars
+		if iCivicGovernment == con.iCivicAutocracy:
+			if utils.isNeighbor(iPlayer, iLoopPlayer) and tPlayer.isAtWar(iLoopPlayer): iWarStability += 3
+		if iCivicReligion == con.iFanaticism:
+			if pLoopPlayer.getStateReligion() != iStateReligion: iWarStability += 3
+			else: iWarStability -= 2
+			
+	iForeignStability += iNeighborStability + iVassalStability + iDefensivePactStability + iBadRelationStability + iWarStability
+	
+	iStability = iExpansionStability + iEconomyStability + iDomesticStability + iForeignStability + iMilitaryStability
+
+def calculateCommerceRank(iPlayer, iTurn):
+
+	lCommerceValues = utils.getSortedList([i for i in range(con.iNumPlayers)], lambda x : gc.getPlayer(x).getEconomyHistory(iTurn), True)
+	return lCommerceValues.index(iPlayer)
+	
+def calculatePowerRank(iPlayer, iTurn):
+
+	lPowerValues = utils.getSortedList([i for i in range(con.iNumPlayers)], lambda x : gc.getPlayer(x).getPowerHistory(iTurn), True)
+	return lPowerValues.index(iPlayer)
+	
+def isTolerated(iPlayer, iReligion):
+	pPlayer = gc.getPlayer(iPlayer)
+	iStateReligion = pPlayer.getStateReligion()
+	
+	# Secularism civic
+	if pPlayer.getCivics(4) == con.iCivicSecularism: return True
+	
+	# Mughal UP
+	if iPlayer == con.iMughals: return True
+	
+	# Exceptions
+	if iStateReligion == con.iConfucianism and iReligion == con.iTaoism: return True
+	if iStateReligion == con.iTaoism and iReligion == con.iConfucianism: return True
+	if iStateReligion == con.iHinduism and iReligion == con.iBuddhism: return True
+	if iStateReligion == con.iBuddhism and iReligion == con.iHinduism: return True
+	
+	return False
 
 class Stability:
 
