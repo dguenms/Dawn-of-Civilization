@@ -1418,9 +1418,9 @@ class RiseAndFall:
 		self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight, tExceptions)
 		
 		# adjust starting stability
-		utils.setBaseStabilityLastTurn(iCiv, 0)
-		utils.setStability(iCiv, 10)
-		gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, 10)
+		#utils.setBaseStabilityLastTurn(iCiv, 0)
+		#utils.setStability(iCiv, 10)
+		#gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, 10)
 		
 		# reset plague
 		utils.setPlagueCountdown(iCiv, -10)
@@ -1797,7 +1797,7 @@ class RiseAndFall:
                                                                                            CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
                                                 #print ("SECESSION", gc.getPlayer(iPlayer).getCivilizationAdjective(0), splittingCity.getName()) #causes c++ exception??
                                                 utils.setStability(iPlayer, utils.getStability(iPlayer) + 2) #to counterbalance the stability hit on city acquired event, leading to a chain reaction
-						gc.getPlayer(iPlayer).changeStabilityCategory(con.iStabilityCitiesLost, 2)
+						#gc.getPlayer(iPlayer).changeStabilityCategory(con.iStabilityCitiesLost, 2)
 						#gc.getPlayer(iPlayer).changeStability(2) # test DLL
                                         return #just 1 secession per turn
 
@@ -2044,7 +2044,7 @@ class RiseAndFall:
 			
 		utils.setBaseStabilityLastTurn(iPlayer, 0)
 		utils.setStability(iPlayer, 10)
-		pPlayer.changeStabilityCategory(con.iStabilityDifficulty, 10)
+		#pPlayer.changeStabilityCategory(con.iStabilityDifficulty, 10)
 		
 		utils.setPlagueCountdown(iPlayer, -10)
 		utils.clearPlague(iPlayer)
@@ -3043,7 +3043,7 @@ class RiseAndFall:
 					self.changeColonistsAlreadyGiven(iCiv, 1)
 					
 					utils.setStability(iCiv, utils.getStability(iCiv) + 1)
-					pCiv.changeStabilityCategory(con.iStabilityDifficulty, 1)
+					#pCiv.changeStabilityCategory(con.iStabilityDifficulty, 1)
 					
 
         def onFirstContact(self, iTeamX, iHasMetTeamY):
@@ -5665,7 +5665,7 @@ class RiseAndFall:
                                         if (iLoop == utils.getHumanID()):
                                                 bHuman = True                                        
                                         utils.setStability(iLoop, utils.getStability(iLoop)-3)
-					gc.getPlayer(iLoop).changeStabilityCategory(con.iStabilityHit, -3)
+					#gc.getPlayer(iLoop).changeStabilityCategory(con.iStabilityHit, -3)
 					#gc.getPlayer(iLoop).changeStability(-3)
                         if (bHuman):
                                 utils.setStabilityParameters(con.iParDiplomacyE, utils.getStabilityParameters(con.iParDiplomacyE)-3)

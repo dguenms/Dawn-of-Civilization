@@ -1,7 +1,7 @@
 # removed the mercenary mechanic
 # new civics:
 	# GOVERNMENT
-	  1. Dynasticism (Monarchy, medium): +1 happiness per military unit (+3 max)
+	  1. Dynasticism (Monarchy, medium): +1 happiness per military unit (+4 max)
 	  2. City States (Literature, high): +1 food per specialist, +100% number of cities upkeep
 	  3. Theocracy (Theology, high): +2 happiness with state religion, unlimited priests, +2 experience with state religion
 	  4. Autocracy (Nationalism, none): +3 happiness with barracks, can draft 1 unit, +50% great general rate, +25% espionage
@@ -10,30 +10,30 @@
 	  1. Vassalage (Feudalism, medium): +2 experience, +2 happiness with Castle
 	  2. Absolutism (Civil Service, high): +40% production and commerce in capital
 	  3. Representation (Constitution, medium): +1 free specialist
-	  4. Totalitarianism (Fascism, none): +1 happiness per military unit (+5 max), no city distance upkeep, unlimited spies
+	  4. Totalitarianism (Fascism, none): +1 happiness per military unit (+4 max), no city distance upkeep, unlimited spies
 	  5. Egalitarianism (Democracy, medium): +2 happiness in largest cities, +1 production from town, unhappiness for civs without Egalitarianism
 	# LABOR
 	  1. Slavery (Masonry, medium): can hurry with population, +1 commerce from plantation, slave plantation
 	  2. Agrarianism (Calendar, low): +1 commerce from farm
-	  3. Capitalism (Economics, medium): +2 commerce from town, +10% commerce
-	  4. Industrialism (Industrialism, medium): +1 production from workshop, watermill, unlimited engineers, +10% production
-	  5. Public Welfare (Communism, high): unlimited artist, scientist, merchant, +2 science per specialist, can hurry buildings with gold, double production for University, Hospital
+	  3. Capitalism (Economics, medium): +2 commerce from town, +10% commerce, can hurry buildings with gold
+	  4. Industrialism (Steel, medium): +1 production from workshop, watermill, unlimited engineers, +10% production
+	  5. Public Welfare (Communism, high): unlimited artist, scientist, merchant, +2 science per specialist, double production for University, Hospital
 	# ECONOMY
 	  1. Guilds (Guilds, low): +1 gold per specialist, +1 production from workshop
 	  2. Mercantilism (Banking, high): no foreign trade routes, +25% trade route yield, +25% gold in capital, +1 commerce from workshop
-	  3. Free Market (Corporation, medium): +1 trade route, increased corporation spread
+	  3. Free Market (Corporation, medium): +1 trade route, increased corporation spread, +25% corporation commerce
 	  4. Central Planning (Communism, high): +1 production per specialist, +1 food from workshop, watermill, double production for Factory, Coal Plant
-	  5. Environmentalism (Ecology, medium): -30% pollution, +2 gold from windmill, forest preserve, +1 happiness with Public Transportation, double production for Recycling Center, Hydro Plant
+	  5. Environmentalism (Ecology, medium): -30% pollution, +2 commerce from windmill, forest preserve, +1 happiness with Public Transportation, double production for Recycling Center, Hydro Plant
 	# RELIGION
 	  1. Pantheon (Polytheism, medium): +1 happiness with Pagan Temple, can construct classical wonders
-	  2. Organized Religion (Monotheism, high): +25% building speed with state religion, allows missionaries
-	  3. Scholasticism (Philosophy, medium): +25% great people birth with state religion
+	  2. Organized Religion (Monotheism, high): +25% building speed with state religion
+	  3. Scholasticism (Philosophy, medium): +25% great people birth with state religion, allows missionaries
 	  4. Fanaticism (Divine Right, low): +25% unit production with state religion, no foreign religion spread
 	  5. Secularism (Liberalism, low): +10% research, no religious unhappiness, no state religion
 	# MILITARY
-	  1. Warrior Code (Horseback Riding, none): -50% war weariness, double production for Barracks, Stable
+	  1. Warrior Code (Horseback Riding, low): -50% war weariness, double production for Barracks, Stable
 	  2. Mercenaries (Currency, medium): can hurry units with gold, +1 gold upkeep per unit
-	  3. Levy Armies (Feudalism, low): +50% improvement speed, additional free units
+	  3. Levy Armies (Feudalism, low): +50% improvement speed, additional free units, unit production with food
 	  4. Standing Army (Military Tradition, high): +25% unit production, +2 experience
 	  5. Conscription (Nationalism, low): can draft 2 units, +50% experience within own borders
 # anarchy doesn't cost golden age turns

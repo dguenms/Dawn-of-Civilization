@@ -72,6 +72,8 @@ def setStabilityLevel(iPlayer, iStabilityLevel):
 	sd.setStabilityLevel(iPlayer, iStabilityLevel)
 
 def checkStability(iPlayer, bPositive = False):
+	return
+
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 
@@ -87,6 +89,7 @@ def checkStability(iPlayer, bPositive = False):
 	
 	
 def calculateStability(iPlayer):
+	iGameTurn = gc.getGame().getGameTurn()
 	pPlayer = gc.getPlayer(iPlayer)
 	tPlayer = gc.getTeam(pPlayer.getTeam())
 
@@ -187,7 +190,7 @@ def calculateStability(iPlayer):
 		# Happiness
 		if city.angryPopulation(0) > 0: iUnhappyCities += 1
 			
-	for city in utils.getAreaCities(iPlayer):
+	for city in utils.getAreaCities(con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer]):
 		iTotalCoreCities += 1
 		if city.getOwner() != iPlayer:
 			iOccupiedCoreCities += 1

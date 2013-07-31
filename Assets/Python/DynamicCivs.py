@@ -1129,7 +1129,7 @@ class DynamicCivs:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_EMPIRE")
 					return
 			elif iPlayer == iAmerica:
-				if iCivic2 == con.iAgrarianism or iCivic3 == con.iForcedLabor:
+				if iCivic2 == con.iCivicAgrarianism or iCivic2 == con.iCivicSlavery:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
 					return
 			elif iPlayer == iHolyRome:
