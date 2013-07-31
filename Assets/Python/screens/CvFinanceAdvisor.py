@@ -376,6 +376,8 @@ class CvFinanceAdvisor:
 		screen = self.getScreen()
 		pPlayer = gc.getPlayer(self.iActiveLeader)
 		
+		return
+		
 		iDiplomacy = pPlayer.getStabilityCategory(con.iStabilityDiplomacy)
 		iNeighbors = pPlayer.getStabilityCategory(con.iStabilityNeighbor)
 		iContacts = pPlayer.getStabilityCategory(con.iStabilityContacts)

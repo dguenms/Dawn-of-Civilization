@@ -126,6 +126,8 @@ class RFCUtils:
                             self.setStabilityParameters(iParameter, 0 + iAmount)
 
         def setStartingStabilityParameters(self, iCiv):
+		return
+	
                 iHandicap = gc.getGame().getHandicapType()
 
                 for i in range(con.iNumStabilityParameters):
