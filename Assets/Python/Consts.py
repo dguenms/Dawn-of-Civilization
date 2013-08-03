@@ -2488,7 +2488,7 @@ iCivicDirectRule, iCivicVassalage, iCivicAbsolutism, iCivicRepresentation, iCivi
 iCivicTribalism, iCivicSlavery, iCivicAgrarianism, iCivicCapitalism, iCivicIndustrialism, iCivicPublicWelfare,
 iCivicSelfSufficiency, iCivicGuilds, iCivicMercantilism, iCivicFreeMarket, iCivicCentralPlanning, iCivicEnvironmentalism,
 iCivicAnimism, iCivicPantheon, iCivicOrganizedReligion, iCivicScholasticism, iCivicFanaticism, iCivicSecularism,
-iCivicMilita, iCivicWarriorCode, iCivicMercenaries, iCivicLevyArmies, iCivicProfessionalArmies, iCivicConscription) = range(iNumCivics)
+iCivicMilitia, iCivicWarriorCode, iCivicMercenaries, iCivicLevyArmies, iCivicStandingArmy, iCivicConscription) = range(iNumCivics)
 
 #Specialists
 iNumSpecialists = 15

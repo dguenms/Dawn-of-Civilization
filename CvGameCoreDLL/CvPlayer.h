@@ -1036,6 +1036,7 @@ public:
 	DllExport bool hasSpaceshipArrived() const;
 
 	bool canEnslave() const;
+	TeamTypes getWorstEnemy() const;
 
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;

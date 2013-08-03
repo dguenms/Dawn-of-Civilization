@@ -223,6 +223,9 @@ public:
 	int AI_getAtPeaceCounter(int /*TeamTypes*/ eTeam) const;
 	int AI_getWarSuccess(int /*TeamTypes*/ eIndex) const;
 
+	// Leoreth
+	//int AI_getWorstEnemy() const;
+
 protected:
 
 	CvTeam* m_pTeam;

@@ -2280,7 +2280,7 @@ class Victory:
 							self.setGoal(iAztecs, 1, 0)
 							
 					if iGameTurn == getTurnForYear(1960): 
-						bestCity = self.calculateTopCityCulture(18, 37)
+						bestCity = self.calculateTopCityPopulation(18, 37)
 						if bestCity != -1:
 							if bestCity.getOwner() == iAztecs and bestCity.getX() == 18 and bestCity.getY() == 37:
 								self.setGoal(iAztecs, 2, 1)
@@ -4679,7 +4679,4 @@ class Victory:
 				aHelp.append(self.getIcon(iForestPreserves >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iForestPreserve).getText(), iForestPreserves, 20)) + ' ' + self.getIcon(bNationalPark) + localText.getText("TXT_KEY_VICTORY_NATIONAL_PARK_CAPITAL", ()))
 		
 		return aHelp
-
-
-
-
+		

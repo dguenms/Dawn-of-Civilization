@@ -532,6 +532,7 @@ public:
 	void AI_reset();
 	void setPersecutionCountdown(int iNewValue);
 	bool hasCivic(int iCivic);
+	int getWorstEnemy();
 
 	// Leoreth: stability (not active yet)
 	int getStability();

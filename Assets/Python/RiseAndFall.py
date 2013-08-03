@@ -4450,8 +4450,8 @@ class RiseAndFall:
                     utils.makeUnit(iSettler, iEthiopia, tCapitals[0][iEthiopia], 1)
                     utils.makeUnit(iWarrior, iEthiopia, tCapitals[0][iEthiopia], 1)
 		if ( pKorea.isHuman() ):
-                    utils.makeUnit(iSettler, iKorea, tCapitals[0][iEthiopia], 1)
-                    utils.makeUnit(iWarrior, iKorea, tCapitals[0][iEthiopia], 1)
+                    utils.makeUnit(iSettler, iKorea, tCapitals[0][iKorea], 1)
+                    utils.makeUnit(iWarrior, iKorea, tCapitals[0][iKorea], 1)
                 if ( pMaya.isHuman() ):
                     utils.makeUnit(iSettler, iMaya, tCapitals[0][iMaya], 1)
                     utils.makeUnit(iWarrior, iMaya, tCapitals[0][iMaya], 1)
