@@ -26576,3 +26576,8 @@ bool CvPlayer::hasCivic(CivicTypes eCivic) const
 	int iCivic = (int)eCivic;
 	return (getCivics((CivicOptionTypes)(iCivic % 6)) == eCivic);
 }
+
+TeamTypes CvPlayer::getWorstEnemy() const
+{
+	return GET_TEAM(getTeam()).AI_getWorstEnemy();
+}

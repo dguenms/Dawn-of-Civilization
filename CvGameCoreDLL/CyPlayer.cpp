@@ -2498,3 +2498,8 @@ bool CyPlayer::hasCivic(int iCivic)
 {
 	return m_pPlayer ? m_pPlayer->hasCivic((CivicTypes)iCivic) : false;
 }
+
+int CyPlayer::getWorstEnemy()
+{
+	return m_pPlayer ? m_pPlayer->getWorstEnemy() : false;
+}

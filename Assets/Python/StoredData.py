@@ -144,10 +144,10 @@ class StoredData:
 				}
                 self.save()
 		
-	def getStabilityLevel(iPlayer):
+	def getStabilityLevel(self, iPlayer):
 		return self.scriptDict['lStabilityLevels'][iPlayer]
 		
-	def setStabilityLevel(iPlayer, iStabilityLevel):
+	def setStabilityLevel(self, iPlayer, iStabilityLevel):
 		self.scriptDict['lStabilityLevels'][iPlayer] = iStabilityLevel
 
 # All modules import the following single instance, not the class
