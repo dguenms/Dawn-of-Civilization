@@ -102,6 +102,13 @@ g_iTimeTextCounter = 0
 
 g_pSelectedUnit = 0
 
+tStabilitySymbols = (
+FontSymbols.UNSTABLE_CHAR,
+FontSymbols.UNSTABLE_CHAR,
+FontSymbols.STABLE_CHAR,
+FontSymbols.STABLE_CHAR,
+FontSymbols.SOLID_CHAR,)
+
 class CvMainInterface:
 	"Main Interface Screen"
 
@@ -2908,38 +2915,41 @@ class CvMainInterface:
                                                                                 #Rhye - start stability
                                                                                 if (gc.getPlayer(ePlayer).isAlive()):
                                                                                         if (ePlayer < con.iNumMajorPlayers): #in case byzantium is major
-                                                                                                iStability = utils.getStability(ePlayer)
-                                                                                                if (iStability < -40):
+												iStabilityLevel = utils.getStabilityLevel(ePlayer)
+												szBuffer += ' - ' + unichr(CyGame().getSymbolID(tStabilitySymbols[iStabilityLevel]))
+											
+                                                                                                #iStability = utils.getStability(ePlayer)
+                                                                                                #if (iStability < -40):
                                                                                                         #szTempBuffer = localText.getText("TXT_KEY_STABILITY_COLLAPSING", ())
-                                                                                                        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 3)
+                                                                                                #        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 3)
                                                                                                         #if (gc.getPlayer(ePlayer).isHuman()):
                                                                                                         #        szTempBuffer = szTempBuffer + " (" + localText.getText("TXT_KEY_STABILITY_COLLAPSING", ()) + ")"
-                                                                                                elif (iStability >= -40 and iStability < -20):
+                                                                                                #elif (iStability >= -40 and iStability < -20):
                                                                                                         #szTempBuffer = localText.getText("TXT_KEY_STABILITY_UNSTABLE", ())
-                                                                                                        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 3)
+                                                                                                #        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 3)
                                                                                                         #if (gc.getPlayer(ePlayer).isHuman()):
                                                                                                         #        szTempBuffer = szTempBuffer + " (" + localText.getText("TXT_KEY_STABILITY_UNSTABLE", ()) + ")"
-                                                                                                elif (iStability >= -20 and iStability < 0):
+                                                                                                #elif (iStability >= -20 and iStability < 0):
                                                                                                         #szTempBuffer = localText.getText("TXT_KEY_STABILITY_SHAKY", ())
-                                                                                                        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 4)
+                                                                                                #        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 4)
                                                                                                         #if (gc.getPlayer(ePlayer).isHuman()):
                                                                                                         #        szTempBuffer = szTempBuffer + " (" + localText.getText("TXT_KEY_STABILITY_SHAKY", ()) + ")"
-                                                                                                elif (iStability >= 0 and iStability < 20):
+                                                                                                #elif (iStability >= 0 and iStability < 20):
                                                                                                         #szTempBuffer = localText.getText("TXT_KEY_STABILITY_STABLE", ())
-                                                                                                        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 4)
+                                                                                                #        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 4)
                                                                                                         #if (gc.getPlayer(ePlayer).isHuman()):
                                                                                                         #        szTempBuffer = szTempBuffer + " (" + localText.getText("TXT_KEY_STABILITY_STABLE", ()) + ")"
-                                                                                                elif (iStability >= 20 and iStability < 40):
+                                                                                                #elif (iStability >= 20 and iStability < 40):
                                                                                                         #szTempBuffer = localText.getText("TXT_KEY_STABILITY_SOLID", ())
-                                                                                                        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 5)
+                                                                                                #        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 5)
                                                                                                         #if (gc.getPlayer(ePlayer).isHuman()):
                                                                                                         #        szTempBuffer = szTempBuffer + " (" + localText.getText("TXT_KEY_STABILITY_SOLID", ()) + ")"
-                                                                                                elif (iStability >= 40):
+                                                                                                #elif (iStability >= 40):
                                                                                                         #szTempBuffer = localText.getText("TXT_KEY_STABILITY_VERYSOLID", ())
-                                                                                                        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 5)
+                                                                                                #        szTempBuffer = unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 5)
                                                                                                         #if (gc.getPlayer(ePlayer).isHuman()):
                                                                                                         #        szTempBuffer = szTempBuffer + " (" + localText.getText("TXT_KEY_STABILITY_VERYSOLID", ()) + ")"
-                                                                                                szBuffer = szBuffer + " - " + szTempBuffer
+                                                                                                #szBuffer = szBuffer + " - " + szTempBuffer
                                                                                 #Rhye - end stability
                                                                                         
                                                                                 szBuffer = szBuffer + "</font>"
