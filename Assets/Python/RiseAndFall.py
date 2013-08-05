@@ -3454,6 +3454,7 @@ class RiseAndFall:
 		if gc.getGame().getSorenRandNum(100, 'Trigger spawn wars') >= iMin:
 			for iLoopCiv in con.lEnemyCivsOnSpawn[iCiv]:
 				if utils.isAVassal(iLoopCiv): continue
+				if not gc.getPlayer(iLoopCiv).isAlive(): continue
 				if utils.getHumanID() == iCiv and iLoopCiv not in con.lTotalWarOnSpawn[iCiv]: continue
 				
 				iLoopMin = 50

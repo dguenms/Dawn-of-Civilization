@@ -1937,3 +1937,6 @@ class RFCUtils:
 		
 	def getUniqueBuilding(self, iPlayer, iBuilding):
 		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(gc.getBuildingInfo(iBuilding).getBuildingClassType())
+		
+	def getStabilityLevel(self, iPlayer):
+		return sd.getStabilityLevel(iPlayer)
