@@ -124,7 +124,7 @@ def checkStability(iPlayer, bPositive = False):
 	setStabilityLevel(iPlayer, iStabilityLevel)
 			
 def triggerCrisis(iPlayer, iStabilityLevel, iCrisisType, lStabilityTypes):
-	sText = gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + ' is experiencing a ' + tCrisisLevels[iStabilityLevel] + ' ' + tCrisisTypes[iCrisisType] + ' crisis!' + '\n' + str(lStabilityTypes)
+	sText = gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + ' is experiencing a ' + tCrisisLevels[iStabilityLevel] + ' ' + tCrisisTypes[iCrisisType] + ' crisis!'
 	#CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 	utils.debugTextPopup(sText)
 	
@@ -182,13 +182,13 @@ def calculateStability(iPlayer):
 		
 		bForeignCore = False
 		for iLoopPlayer in range(con.iNumPlayers):
-			if plot.isCore(iLoopPlayer):
+			if iLoopPlayer != iPlayer and plot.isCore(iLoopPlayer):
 				bForeignCore = True
 				break
 		
 		# Expansion
 		if plot.isCore(iPlayer):
-			iCorePopulation += 4 * iPopulation
+			iCorePopulation += (2 + iCurrentEra) * iPopulation
 		else:
 			# ahistorical tiles
 			if plot.getSettlerMapValue(iPlayer) < 90: iModifier += 2
@@ -317,9 +317,9 @@ def calculateStability(iPlayer):
 		if iEconomicGrowthStability > 10: iEconomicGrowthStability = 20
 		elif iEconomicGrowthStability < -10: iEconomicGrowthStability = -20
 		
-		if iPercentChange > 5:
+		if iPercentChange > 10:
 			sEconomyString += localText.getText('TXT_KEY_STABILITY_ECONOMIC_GROWTH', (iEconomicGrowthStability,))
-		elif iPercentChange >= 0 and iPercentChange != 5:
+		elif iPercentChange >= 0 and iPercentChange != 10:
 			sEconomyString += localText.getText('TXT_KEY_STABILITY_ECONOMIC_STAGNATION', (iEconomicGrowthStability,))
 		else:
 			sEconomyString += localText.getText('TXT_KEY_STABILITY_ECONOMIC_DECLINE', (iEconomicGrowthStability,))
@@ -366,7 +366,7 @@ def calculateStability(iPlayer):
 	iHappinessStability = 0
 	
 	if pPlayer.getTotalPopulation(): 
-		iHappinessStability += (iHappiness - iUnhappiness) / pPlayer.getTotalPopulation()
+		iHappinessStability += (iHappiness - iUnhappiness) / pPlayer.getTotalPopulation() # divide by cities and use another constant modifier? It's easy to stack excess happiness without much population
 	iHappinessStability -= iUnhappyCities
 	
 	if iHappinessStability > 0:
@@ -517,8 +517,9 @@ def calculateStability(iPlayer):
 		# neighbor stability
 		if utils.isNeighbor(iPlayer, iLoopPlayer) or iLoopPlayer in con.lNeighbours[iPlayer]:
 			if tPlayer.isOpenBorders(iLoopPlayer):
-				if getStabilityLevel(iLoopPlayer) == con.iStabilityUnstable: iNeighborStability -= 3
-				elif getStabilityLevel(iLoopPlayer) == con.iStabilityCollapsing: iNeighborStability -= 5
+				#if getStabilityLevel(iLoopPlayer) == con.iStabilityUnstable: iNeighborStability -= 3
+				#elif getStabilityLevel(iLoopPlayer) == con.iStabilityCollapsing: iNeighborStability -= 5
+				if getStabilityLevel(iLoopPlayer) == con.iStabilityCollapsing: iNeighborStability -= 5
 				
 		# vassal stability
 		if tLoopPlayer.isVassal(iPlayer):
@@ -540,8 +541,9 @@ def calculateStability(iPlayer):
 		if bAutocracy:
 			if utils.isNeighbor(iPlayer, iLoopPlayer) and tPlayer.isAtWar(iLoopPlayer): iWarStability += 3
 		if bFanaticism:
-			if pLoopPlayer.getStateReligion() != iStateReligion: iWarStability += 3
-			else: iWarStability -= 2
+			if tPlayer.isAtWar(iLoopPlayer):
+				if pLoopPlayer.getStateReligion() != iStateReligion: iWarStability += 3
+				else: iWarStability -= 2
 			
 	if iNeighborStability < 0:
 		sForeignString += localText.getText('TXT_KEY_STABILITY_NEIGHBORS', (iNeighborStability,))
@@ -580,20 +582,6 @@ def calculateStability(iPlayer):
 			iOurSuccess = tPlayer.AI_getWarSuccess(iLoopPlayer)
 			iTheirSuccess = gc.getTeam(iLoopPlayer).AI_getWarSuccess(iPlayer)
 			iCombinedSuccess = iOurSuccess + iTheirSuccess
-			
-			#if iOurSuccess == 0 and iTheirSuccess == 0:
-			#	iWarSuccessStability = 0
-			#elif iTheirSuccess == 0:
-			#	iWarSuccessStability += 15
-			#elif iOurSuccess == 0:
-			#	iWarSuccessStability -= 30
-			#elif iOurSuccess > iTheirSuccess:
-			#	iWarSuccessStability += (100 * iOurSuccess / iTheirSuccess - 100) / 20
-			#	if iWarSuccessStability > 15: iWarSuccessStability = 15
-			#else:
-			#	iWarSuccessStability -= (100 * iTheirSuccess / iOurSuccess - 100) / 10
-			#	if iWarSuccessStability < -30: iWarSuccessStability = -30
-			
 			
 			if iCombinedSuccess < 20:
 				iOurPercentage = 0 # war too insignificant (takes care of division by zero as well)
