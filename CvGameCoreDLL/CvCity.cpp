@@ -3709,6 +3709,12 @@ bool CvCity::canHurry(HurryTypes eHurry, bool bTestVisible) const
 			return false;
 		}
 
+		// non-military units cannot be hurried
+		if (isProductionUnit() && !GC.getUnitInfo(getProductionUnit()).isMilitaryProduction())
+		{
+			return false;
+		}
+
 		if (GET_PLAYER(getOwnerINLINE()).getGold() < hurryGold(eHurry))
 		{
 			return false;

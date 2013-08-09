@@ -152,7 +152,7 @@
 		<Tag>TXT_KEY_CIVIC_DEPRESSION</Tag>
 		<English>[ICON_BULLET]Risk of Great Depression</English>
 		<French>[ICON_BULLET]Risque de Grande Dépression</French>
-		<German>Risiko einer Gro&#223;en Depression</German>
+		<German>[ICON_BULLET]Risiko einer Gro&#223;en Depression</German>
 		<Italian>[ICON_BULLET]Rischio di Grande Depressione.</Italian>
 		<Spanish>[ICON_BULLET]Riesgo de Gran Depresi&#243;n</Spanish>
 	</TEXT>
@@ -566,6 +566,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HURRY_GOLD_UNITS</Tag>
-		<English>Can Spend Gold to Finish Unit Production in a City</English>
+		<English>Can Spend Gold to Finish Military Unit Production in a City</English>
 	</TEXT>
 </Civ4GameText>
