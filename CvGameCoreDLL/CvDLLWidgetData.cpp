@@ -3246,15 +3246,10 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 			GAMETEXT.getEspionageString(szBuffer, ((PlayerTypes)widgetDataStruct.m_iData1), GC.getGameINLINE().getActivePlayer());
 
 			//Rhye - start
-			if ((int)widgetDataStruct.m_iData1 < NUM_MAJOR_PLAYERS) {
-				if (GET_TEAM((TeamTypes)widgetDataStruct.m_iData1).isVassal(GC.getGameINLINE().getActiveTeam())) {
-					parseCompleteStabilityInfo(widgetDataStruct, szBuffer);
-					parseHistoricalVictoryInfo(widgetDataStruct, szBuffer);
-				}
-				else {
-					parseIncompleteStabilityInfo(widgetDataStruct, szBuffer);
-					parseHistoricalVictoryInfo(widgetDataStruct, szBuffer);
-				}
+			if ((int)widgetDataStruct.m_iData1 < NUM_MAJOR_PLAYERS)
+			{
+				parseCompleteStabilityInfo(widgetDataStruct, szBuffer);
+				parseHistoricalVictoryInfo(widgetDataStruct, szBuffer);
 			}
 			//Rhye - end
 
@@ -3289,33 +3284,18 @@ void CvDLLWidgetData::parseCompleteStabilityInfo(CvWidgetDataStruct &widgetDataS
 	long result = 0;
 	CyArgsList argsList;
 	argsList.add((PlayerTypes)widgetDataStruct.m_iData1);
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "getStability", argsList.makeFunctionArgs(), &result);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "getStabilityLevel", argsList.makeFunctionArgs(), &result);
 	int iResult = (int)result;
-	if (iResult < -40) {
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
-		szBuffer.append(" ");
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_COLLAPSING"));
-	}
-	else if (iResult < -20) {
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
-		szBuffer.append(" ");
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_UNSTABLE"));
-	}
-	else if (iResult < -0) {
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
-		szBuffer.append(" ");
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SHAKY"));
-	}
-	else if (iResult < 20) {
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
-		szBuffer.append(" ");
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_STABLE"));
-	}
-	else {
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
-		szBuffer.append(" ");
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SOLID"));
-	}
+
+	szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
+	szBuffer.append(" ");
+
+	if (iResult == 0) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_COLLAPSING"));
+	else if (iResult == 1) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_UNSTABLE"));
+	else if (iResult == 2) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SHAKY"));
+	else if (iResult == 3) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_STABLE"));
+	else szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SOLID"));
+
 	szBuffer.append(NEWLINE);
 }
 

@@ -123,10 +123,6 @@ public:
 
 	void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
 
-	void greatDepression(PlayerTypes ePlayer, bool bAcquired); // Leoreth
-	void postCommunism(PlayerTypes ePlayer); // Leoreth
-	void democracyTransition(PlayerTypes ePlayer); // Leoreth
-
 	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); // Leoreth
 	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
 

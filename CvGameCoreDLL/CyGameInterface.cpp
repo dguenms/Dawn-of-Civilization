@@ -269,6 +269,7 @@ void CyGamePythonInterface()
 		.def("doControl", &CyGame::doControl, "void (int /*ControlTypes*/ iControl)")
 
 		.def("isNeighbors", &CyGame::isNeighbors, "bool (int iPlayer1, int iPlayer2)")
+		.def("isCheatingEnabled", &CyGame::isCheatingEnabled, "bool ()")
 		;
 
 	python::class_<CyDeal>("CyDeal")

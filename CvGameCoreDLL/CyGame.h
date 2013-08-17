@@ -279,6 +279,7 @@ public:
 
 	// Leoreth
 	bool isNeighbors(int /*PlayerTypes*/ ePlayer1, int /*PlayerTypes*/ ePlayer2);
+	bool isCheatingEnabled() const;
 
 protected:
 	CvGame* m_pGame;

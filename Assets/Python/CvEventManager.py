@@ -157,9 +157,6 @@ class CvEventManager:
 			'playerChangeStateReligion'	: self.onPlayerChangeStateReligion,
 			'vassalState'			: self.onVassalState,
 			'revolution'			: self.onRevolution,
-			'greatDepression'		: self.onGreatDepression,
-			'postCommunism'			: self.onPostCommunism,
-			'democracyTransition'		: self.onDemocracyTransition,
 			'cityCaptureGold'		: self.onCityCaptureGold,
 			'tradeMission'			: self.onTradeMission,
 			'playerSlaveTrade'		: self.onPlayerSlaveTrade,
@@ -1113,16 +1110,6 @@ class CvEventManager:
 
 	def onRevolution(self, argsList):
 		'Revolution has started'
-		iPlayer = argsList[0]
-	
-	def onGreatDepression(self, argsList):
-		iPlayer = argsList[0]
-		bAcquired = argsList[1]
-			
-	def onPostCommunism(self, argsList):
-		iPlayer = argsList[0]
-		
-	def onDemocracyTransition(self, argsList):
 		iPlayer = argsList[0]
 		
 	def onCityCaptureGold(self, argsList):

@@ -1397,6 +1397,11 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 				iRazeValue -= 30;
 			}
 
+		/*if (getID() == MONGOLIA && iX == 103 && iY == 44)
+		{
+			iRazeValue += 50;
+		}*/
+
 		if (getID() == NATIVE || isBarbarian()) {
 				iRazeValue *= 2;
 				iRazeValue += 30;
@@ -3646,6 +3651,15 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	if (bRandomize)
 	{
 		iValue += GC.getGameINLINE().getSorenRandNum(((pCity->getPopulation() / 2) + 1), "AI Target City Value");
+	}
+
+	// Leoreth: try to help Mongolia to conquer China
+	if (getID() == MONGOLIA)
+	{
+		if (pCity->getX() == 103 && pCity->getY() == 44)
+		{
+			return -1000000;
+		}
 	}
 
 	return iValue;

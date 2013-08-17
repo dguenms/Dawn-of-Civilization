@@ -2041,7 +2041,7 @@ lEnemyCivsOnSpawn = [
 [], #Maya
 [iGreece, iPersia], #Byzantium
 [], #Japan
-[iRome,iArabia,iSpain,iEngland,iEngland,iFrance,iFrance,iCeltia,iIndependent,iIndependent2], #Vikings
+[iEngland,iEngland,iFrance,iIndependent,iIndependent2], #Vikings
 [iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Tibet
 [], #Khmer

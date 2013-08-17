@@ -1171,49 +1171,6 @@ void CvDllPythonEvents::reportRevolution(PlayerTypes ePlayerID)
 }
 // edead: end
 
-// Leoreth: great depression (stability)
-void CvDllPythonEvents::reportGreatDepression(PlayerTypes ePlayer, bool bAcquired)
-{
-	if (preEvent())
-	{
-		CyArgsList eventData;
-		eventData.add("greatDepression");
-
-		eventData.add((int)ePlayer);
-		eventData.add(bAcquired);
-
-		postEvent(eventData);
-	}
-}
-
-// Leoreth: post communist crisis (stability)
-void CvDllPythonEvents::reportPostCommunism(PlayerTypes ePlayer)
-{
-	if (preEvent())
-	{
-		CyArgsList eventData;
-		eventData.add("postCommunism");
-
-		eventData.add((int)ePlayer);
-
-		postEvent(eventData);
-	}
-}
-
-// Leoreth: transition to democracy (stability)
-void CvDllPythonEvents::reportDemocracyTransition(PlayerTypes ePlayer)
-{
-	if (preEvent())
-	{
-		CyArgsList eventData;
-		eventData.add("democracyTransition");
-
-		eventData.add((int)ePlayer);
-
-		postEvent(eventData);
-	}
-}
-
 // Leoreth: trade mission (great merchant)
 void CvDllPythonEvents::reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold)
 {

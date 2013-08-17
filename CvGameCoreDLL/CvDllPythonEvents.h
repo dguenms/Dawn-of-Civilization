@@ -93,10 +93,6 @@ public:
 	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
 	void reportRevolution(PlayerTypes ePlayerID); //edead
 
-	void reportGreatDepression(PlayerTypes ePlayer, bool bAcquired); //Leoreth
-	void reportPostCommunism(PlayerTypes ePlayer); //Leoreth
-	void reportDemocracyTransition(PlayerTypes ePlayer); //Leoreth
-
 	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); //Leoreth
 	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); //Leoreth
 

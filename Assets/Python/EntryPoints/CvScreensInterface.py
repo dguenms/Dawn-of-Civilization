@@ -166,8 +166,13 @@ lSiberianCoast = [(109, 50), (109, 51), (110, 51), (111, 51), (112, 52), (114, 5
 
 def getStability(argsList):
         return utils.getStability(argsList[0])
+	
+def getStabilityLevel(argsList):
+	return sd.getStabilityLevel(argsList[0])
+	
 def countAchievedGoals(argsList):
         return utils.countAchievedGoals(argsList[0])
+	
 def resetStabilityParameters(argsList):
         for i in range(con.iNumStabilityParameters):
                 utils.setStabilityParameters(i, 0)

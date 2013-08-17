@@ -592,6 +592,11 @@ void CyGame::changeDiploVote(int /*VoteSourceTypes*/ eVoteSource, int iChange)
 		m_pGame->changeDiploVote((VoteSourceTypes)eVoteSource, iChange);
 }
 
+bool CyGame::isCheatingEnabled() const
+{
+	return (gDLL->getChtLvl() > 0);
+}
+
 bool CyGame::isDebugMode() const
 {
 	return m_pGame ? m_pGame->isDebugMode() : false;
