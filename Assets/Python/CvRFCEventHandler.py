@@ -104,7 +104,6 @@ class CvRFCEventHandler:
                 eventManager.addEventHandler("religionSpread",self.onReligionSpread) #Stability
                 eventManager.addEventHandler("firstContact",self.onFirstContact)
                 eventManager.addEventHandler("OnPreSave",self.onPreSave) #edead: StoredData
-		eventManager.addEventHandler("playerChangeStateReligion", self.onPlayerChangeStateReligion)
 		eventManager.addEventHandler("vassalState", self.onVassalState)
 		eventManager.addEventHandler("revolution", self.onRevolution)
 		eventManager.addEventHandler("cityGrowth", self.onCityGrowth)
@@ -113,14 +112,13 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("playerGoldTrade", self.onPlayerGoldTrade)
 		eventManager.addEventHandler("tradeMission", self.onTradeMission)
 		eventManager.addEventHandler("playerSlaveTrade", self.onPlayerSlaveTrade)
+		eventManager.addEventHandler("playerChangeStateReligion", self.onPlayerChangeStateReligion)
 		                
 		#Leoreth
 		eventManager.addEventHandler("greatPersonBorn", self.onGreatPersonBorn)
 		eventManager.addEventHandler("unitCreated", self.onUnitCreated)
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
 		eventManager.addEventHandler("plotFeatureRemoved", self.onPlotFeatureRemoved)
-		#eventManager.addEventHandler("changeWar", self.onChangeWar)
-		#eventManager.addEventHandler("unitGifted", self.onUnitGifted)
 		eventManager.addEventHandler("goldenAge", self.onGoldenAge)
                
                 self.eventManager = eventManager
@@ -289,6 +287,8 @@ class CvRFCEventHandler:
                         
                 if iPlayer == con.iMongolia:
                         self.vic.onCityRazed(iPlayer, city) #Victory
+			
+		sta.onCityRazed(iPlayer)
 
         def onCityBuilt(self, argsList):
                 city = argsList[0]
@@ -393,6 +393,8 @@ class CvRFCEventHandler:
 		
 		if iPlayer < iNumPlayers:
 			self.dc.onPlayerChangeStateReligion(argsList)
+			
+		sta.onPlayerChangeStateReligion(iPlayer)
 
         def onCombatResult(self, argsList):
                 self.up.aztecUP(argsList)
@@ -518,6 +520,9 @@ class CvRFCEventHandler:
 		
 		if isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
 			sta.onWonderBuilt(iOwner, iBuildingType)
+			
+		if iBuildingType == con.iPalace:
+			sta.onPalaceMoved(iOwner)
 
 		# Leoreth: Apostolic Palace moves holy city
 		if iBuildingType == con.iApostolicPalace:
@@ -588,6 +593,8 @@ class CvRFCEventHandler:
                 self.vic.checkTurn(iGameTurn)
                 self.com.checkTurn(iGameTurn)
 		self.corp.checkTurn(iGameTurn)
+		
+		sta.checkTurn()
 		
 		if iGameTurn % 10 == 0:
                         self.dc.checkTurn(iGameTurn)

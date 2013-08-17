@@ -401,9 +401,10 @@ class RFCUtils:
             
         #RiseAndFall
         def debugTextPopup(self, strText):
-                popup = Popup.PyPopup()
-                popup.setBodyString( strText )
-                popup.launch()		
+		if gc.getGame().isCheatingEnabled():
+			popup = Popup.PyPopup()
+			popup.setBodyString( strText )
+			popup.launch()		
 
         #RiseAndFall
         def updateMinorTechs( self, iMinorCiv, iMajorCiv):                
@@ -1617,6 +1618,10 @@ class RFCUtils:
 		
 		return (x >= tlx and x <= brx and y >= tly and y <= bry and tPlot not in lExceptions)
 		
+	def isPlotInCore(self, iPlayer, tPlot):
+		iReborn = utils.getReborn(iPlayer)
+		return self.isPlotInArea(tPlot, con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer])
+		
 	def relocateCapital(self, iPlayer, newCapital):
 		oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
 		
@@ -1824,11 +1829,16 @@ class RFCUtils:
 		
 	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False):
 	
+		plot = gc.getMap().plot(x, y)
+		plot.setRevealed(iCiv, False, True, -1)
+	
 		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
 		self.flipUnitsInCityBefore((x, y), iCiv, iOwner)
 		self.setTempFlippingCity((x, y))
 		self.flipCity((x, y), 0, 0, iCiv, [iOwner])
 		self.flipUnitsInCityAfter(self.getTempFlippingCity(), iCiv)
+		
+		plot.setRevealed(iCiv, True, True, -1)
 	
 	def isPastBirth(self, iCiv):
 		return (gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]))
@@ -1940,3 +1950,10 @@ class RFCUtils:
 		
 	def getStabilityLevel(self, iPlayer):
 		return sd.getStabilityLevel(iPlayer)
+		
+	def getRespawnArea(self, iPlayer):
+		if con.tRespawnTL[iPlayer] != -1:
+			return con.tRespawnTL[iPlayer], con.tRespawnBR[iPlayer], []
+			
+		iReborn = self.getReborn(iPlayer)
+		return con.tNormalAreasTL[iReborn][iPlayer], con.tNormalAreasBR[iReborn][iPlayer], con.tNormalAreasSubtract[iReborn][iPlayer]

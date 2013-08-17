@@ -126,6 +126,8 @@ class StoredData:
 				    'iColombianTradeGold' : 0,
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
+				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
+				    # outdated
                                     'lBaseStabilityLastTurn': [0 for i in range(con.iNumPlayers)],
                                     'lPartialBaseStability': [0 for i in range(con.iNumPlayers)],
                                     'lStability': [0 for i in range(con.iNumPlayers)],
@@ -149,6 +151,12 @@ class StoredData:
 		
 	def setStabilityLevel(self, iPlayer, iStabilityLevel):
 		self.scriptDict['lStabilityLevels'][iPlayer] = iStabilityLevel
+		
+	def getCrisisCountdown(self, iPlayer):
+		return self.scriptDict['lCrisisCountdown'][iPlayer]
+		
+	def changeCrisisCountdown(self, iPlayer, iChange):
+		self.scriptDict['lCrisisCountdown'][iPlayer] += iChange
 
 # All modules import the following single instance, not the class
 

@@ -3710,7 +3710,7 @@ bool CvCity::canHurry(HurryTypes eHurry, bool bTestVisible) const
 		}
 
 		// non-military units cannot be hurried
-		if (isProductionUnit() && !GC.getUnitInfo(getProductionUnit()).isMilitaryProduction())
+		if (isProductionUnit() && !GC.getUnitInfo(getProductionUnit()).isMilitaryProduction() && hurryGold(eHurry) > 0)
 		{
 			return false;
 		}
@@ -8043,8 +8043,8 @@ void CvCity::setOccupationTimer(int iNewValue)
 
 void CvCity::changeOccupationTimer(int iChange)
 {
-	//Leoreth: occupation time capped at 4
-	setOccupationTimer(std::min(getOccupationTimer() + iChange, 4));
+	//Leoreth: occupation time capped at 5
+	setOccupationTimer(std::min(getOccupationTimer() + iChange, 5));
 }
 
 
@@ -9927,15 +9927,20 @@ int CvCity::getRevoltTestProbability() const
 	int result = (GC.getDefineINT("REVOLT_TEST_PROB") * (100 - iBestModifier)) / 100;
 	switch (getOwnerINLINE())
 	{
+		case MONGOLIA:
+			result *= 0;
+			break;
 		case TURKEY:
 			result /= 2;
 			break;
 		case NATIVE:
 			result *= 3;
 			result /= 2;
+			break;
 		case CELTIA:
 			result *= 3;
 			result /= 2;
+			break;
 		case INDEPENDENT:
 		case INDEPENDENT2:
 		case BARBARIAN:

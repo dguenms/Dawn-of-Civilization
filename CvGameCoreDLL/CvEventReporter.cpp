@@ -427,24 +427,6 @@ void CvEventReporter::vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVa
 	m_kPythonEventMgr.reportVassalState(eMaster, eVassal, bVassal, bCapitulated);
 }
 
-// Leoreth: great depression (stability)
-void CvEventReporter::greatDepression(PlayerTypes ePlayer, bool bAcquired)
-{
-	m_kPythonEventMgr.reportGreatDepression(ePlayer, bAcquired);
-}
-
-// Leoreth: post communist crisis (stability)
-void CvEventReporter::postCommunism(PlayerTypes ePlayer)
-{
-	m_kPythonEventMgr.reportPostCommunism(ePlayer);
-}
-
-// Leoreth: transition to democracy (stability)
-void CvEventReporter::democracyTransition(PlayerTypes ePlayer)
-{
-	m_kPythonEventMgr.reportDemocracyTransition(ePlayer);
-}
-
 // Leoreth: trade mission (great merchants)
 void CvEventReporter::tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold)
 {
