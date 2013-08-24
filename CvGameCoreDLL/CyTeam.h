@@ -224,7 +224,7 @@ public:
 	int AI_getWarSuccess(int /*TeamTypes*/ eIndex) const;
 
 	// Leoreth
-	//int AI_getWorstEnemy() const;
+	void setOpenBorders(int eTeam, bool bNewValue);
 
 protected:
 

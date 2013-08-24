@@ -2499,9 +2499,17 @@ iGreatEngineer, iGreatGeneral, iGreatSpy, iSettledSlave) = range(iNumSpecialists
 iNumStabilityLevels = 5
 (iStabilityCollapsing, iStabilityUnstable, iStabilityShaky, iStabilityStable, iStabilitySolid) = range(iNumStabilityLevels)
 
-#StabilityTypes
+#Stability Types
 iNumStabilityTypes = 5
 (iStabilityExpansion, iStabilityEconomy, iStabilityDomestic, iStabilityForeign, iStabilityMilitary) = range(iNumStabilityTypes)
+
+#Stability Parameters
+iNumStabilityParameters = 18
+(iParameterCorePeriphery,														# Expansion
+iParameterEconomicGrowth, iParameterPercentChange, iParameterBaselinePercent, iParameterMercantilism, iParameterCentralPlanning,	# Economy
+iParameterHappiness, iParameterCivicCombinations, iParameterCivicsEraTech, iParameterReligion,						# Domestic
+iParameterNeighbors, iParameterVassals, iParameterDefensivePacts, iParameterRelations, iParameterAutocracy, iParameterFanaticism,	# Foreign
+iParameterWarSuccess, iParameterMilitaryStrength) = range(iNumStabilityParameters)							# Military
 
 #Stability Display
 #iNumStabilityTypes = 44
@@ -2598,7 +2606,6 @@ iParEconomyE = 9
 iParExpansion3 = 10
 iParExpansion1 = 11
 iParExpansionE = 12
-iNumStabilityParameters = 13
 
 #Plague
 iImmunity = 20

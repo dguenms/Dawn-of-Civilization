@@ -45,6 +45,7 @@ CvGame::CvGame()
 
 	// Leoreth
 	m_aiTechRankTeam = new int[MAX_TEAMS];
+	m_aiStabilityParameters = new int[NUM_PARAMETERS];
 
 	m_paiUnitCreatedCount = NULL;
 	m_paiUnitClassCreatedCount = NULL;
@@ -87,6 +88,7 @@ CvGame::~CvGame()
 
 	// Leoreth
 	SAFE_DELETE_ARRAY(m_aiTechRankTeam);
+	SAFE_DELETE_ARRAY(m_aiStabilityParameters);
 }
 
 
@@ -509,6 +511,11 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 		m_aiTeamScore[iI] = 0;
 
 		m_aiTechRankTeam[iI] = 0; // Leoreth
+	}
+
+	for (iI = 0; iI < NUM_PARAMETERS; iI++)
+	{
+		m_aiStabilityParameters[iI] = 0;
 	}
 
 	if (!bConstructorCall)
@@ -8252,6 +8259,7 @@ void CvGame::read(FDataStreamBase* pStream)
 
 	// Leoreth
 	pStream->Read(MAX_TEAMS, m_aiTechRankTeam);
+	pStream->Read(NUM_PARAMETERS, m_aiStabilityParameters);
 
 	pStream->Read(GC.getNumUnitInfos(), m_paiUnitCreatedCount);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassCreatedCount);
@@ -8471,6 +8479,7 @@ void CvGame::write(FDataStreamBase* pStream)
 
 	// Leoreth
 	pStream->Write(MAX_TEAMS, m_aiTechRankTeam);
+	pStream->Write(NUM_PARAMETERS, m_aiStabilityParameters);
 
 	pStream->Write(GC.getNumUnitInfos(), m_paiUnitCreatedCount);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassCreatedCount);
@@ -9745,4 +9754,14 @@ bool CvGame::pythonIsBonusIgnoreLatitudes() const
 bool CvGame::isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const
 {
 	return (GET_PLAYER(ePlayer1).AI_calculateStolenCityRadiusPlots(ePlayer2) > 0 || GET_PLAYER(ePlayer2).AI_calculateStolenCityRadiusPlots(ePlayer1) > 0);
+}
+
+int CvGame::getStabilityParameter(ParameterTypes eParameter) const
+{
+	return m_aiStabilityParameters[eParameter];
+}
+
+void CvGame::setStabilityParameter(ParameterTypes eParameter, int iNewValue)
+{
+	m_aiStabilityParameters[eParameter] = iNewValue;
 }

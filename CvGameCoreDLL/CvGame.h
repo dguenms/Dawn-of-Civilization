@@ -462,6 +462,9 @@ public:
 	int getTechRank(TeamTypes eTeam) const;
 	void setTechRank(int iRank, TeamTypes eTeam);
 
+	int getStabilityParameter(ParameterTypes eParameter) const;
+	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);
+
 	DllExport virtual void read(FDataStreamBase* pStream);
 	DllExport virtual void write(FDataStreamBase* pStream);
 	DllExport virtual void writeReplay(FDataStreamBase& stream, PlayerTypes ePlayer);
@@ -617,6 +620,7 @@ protected:
 
 	// Leoreth
 	int* m_aiTechRankTeam;
+	int* m_aiStabilityParameters;
 
 	int* m_paiUnitCreatedCount;
 	int* m_paiUnitClassCreatedCount;

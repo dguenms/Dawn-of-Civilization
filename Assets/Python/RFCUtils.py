@@ -1619,8 +1619,12 @@ class RFCUtils:
 		return (x >= tlx and x <= brx and y >= tly and y <= bry and tPlot not in lExceptions)
 		
 	def isPlotInCore(self, iPlayer, tPlot):
-		iReborn = utils.getReborn(iPlayer)
+		iReborn = self.getReborn(iPlayer)
 		return self.isPlotInArea(tPlot, con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer])
+		
+	def isPlotInNormal(self, iPlayer, tPlot):
+		iReborn = self.getReborn(iPlayer)
+		return self.isPlotInArea(tPlot, con.tNormalAreasTL[iReborn][iPlayer], con.tNormalAreasBR[iReborn][iPlayer], con.tNormalAreasSubtract[iReborn][iPlayer])
 		
 	def relocateCapital(self, iPlayer, newCapital):
 		oldCapital = gc.getPlayer(iPlayer).getCapitalCity()

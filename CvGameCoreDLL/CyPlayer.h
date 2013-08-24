@@ -533,25 +533,8 @@ public:
 	void setPersecutionCountdown(int iNewValue);
 	bool hasCivic(int iCivic);
 	int getWorstEnemy();
-
-	// Leoreth: stability (not active yet)
-	int getStability();
-	void setStability(int iNewValue);
-	void changeStability(int iChange);
-	int getGreatDepressionCountdown();
-	void setGreatDepressionCountdown(int iNewValue);
-	int getCombatResultTempModifier();
-	void setCombatResultTempModifier(int iNewValue);
-	void changeCombatResultTempModifier(int iChange);
-	int getBaseStabilityLastTurn();
-	void setBaseStabilityLastTurn(int iNewValue);
 	int getLatestRebellionTurn();
-	void setLatestRebellionTurn(int iNewValue);
-
-	int getStabilityCategory(int iStabilityType);
-	void changeStabilityCategory(int iStabilityType, int iChange);
-	void setStabilityCategory(int iStabilityType, int iValue);
-	void resetStabilityCategories();
+	void setLatestRebellionTurn(int iTurn);
 
 private:
 	CvPlayer* m_pPlayer;

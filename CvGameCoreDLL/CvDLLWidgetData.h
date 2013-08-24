@@ -204,6 +204,13 @@ public:
 	void parseLeaderLineHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseCommerceModHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 
+	// Leoreth
+	void parseStabilityExpansionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void parseStabilityEconomyHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void parseStabilityDomesticHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void parseStabilityForeignHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void parseStabilityMilitaryHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+
 protected:
 	
 	static CvDLLWidgetData* m_pInst;

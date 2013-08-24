@@ -199,4 +199,132 @@
 		<Tag>TXT_KEY_STABILITY_FOREIGN_CORE_AREA</Tag>
 		<English>Foreign Core Area</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CATEGORY_EXPANSION</Tag>
+		<English>Expansion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CATEGORY_ECONOMY</Tag>
+		<English>Economy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CATEGORY_DOMESTIC</Tag>
+		<English>Domestic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CATEGORY_FOREIGN</Tag>
+		<English>Foreign</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CATEGORY_MILITARY</Tag>
+		<English>Military</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FINANCE_ADVISOR_STABILITY_HEAD</Tag>
+		<English>%s1 Stability:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FINANCE_ADVISOR_STABILITY</Tag>
+		<English>%s1[NEWLINE]------------------------[NEWLINE]Total %s2 Stability: %s3%d4</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE</Tag>
+		<English>Overextension</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ECONOMIC_GROWTH</Tag>
+		<English>Economic Growth</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ECONOMIC_STAGNATION</Tag>
+		<English>Economic Stagnation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ECONOMIC_DECLINE</Tag>
+		<English>Recession</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_MERCANTILISM_TRADE_RICHER</Tag>
+		<English>Mercantilism: Trade with Wealthier Civilizations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CENTRAL_PLANNING_TRADE_FREE_MARKET</Tag>
+		<English>Central Planning: Trade with Free Market Civilizations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_HAPPINESS</Tag>
+		<English>Happiness</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_COMPATIBLE_CIVICS</Tag>
+		<English>Compatible Civics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CONTEMPORARY_CIVICS</Tag>
+		<English>Contemporary Civics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_RELIGIOUS_UNITY</Tag>
+		<English>Religious Unity</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_UNHAPPINESS</Tag>
+		<English>Unhappiness</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_INCOMPATIBLE_CIVICS</Tag>
+		<English>Incompatible Civics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_OUTDATED_CIVICS</Tag>
+		<English>Outdated Civics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_RELIGIOUS_DISUNITY</Tag>
+		<English>Religious Disunity</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_STABLE_VASSALS</Tag>
+		<English>Stable Vassals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DEFENSIVE_PACTS</Tag>
+		<English>Defensive Pacts</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_WARS_AUTOCRACY</Tag>
+		<English>Autocracy: Waging Wars</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_WARS_HEATHENS</Tag>
+		<English>Fanaticism: Fighting Heathens</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_NEIGHBORS</Tag>
+		<English>Collapsing Neighbors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_UNSTABLE_VASSALS</Tag>
+		<English>Unstable Vassals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_BAD_RELATIONS</Tag>
+		<English>Bad Relations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH</Tag>
+		<English>Fanaticism: Fighting Brothers of Faith</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_WINNING_WARS</Tag>
+		<English>Winning Wars</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_LOSING_WARS</Tag>
+		<English>Losing Wars</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_LOSING_STRENGTH</Tag>
+		<English>Losing Military Strength</English>
+	</TEXT>
 </Civ4GameText>

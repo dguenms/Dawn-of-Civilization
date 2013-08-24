@@ -10,6 +10,8 @@ import Consts as con
 import RFCUtils #Rhye
 utils = RFCUtils.RFCUtils() #Rhye
 
+from StoredData import sd
+
 # globals
 gc = CyGlobalContext()
 ArtFileMgr = CyArtFileMgr()
@@ -35,14 +37,14 @@ class CvFinanceAdvisor:
 		self.H_SCREEN = 768
 		self.Y_TITLE = 12
 		self.BORDER_WIDTH = 4
-		self.PANE_HEIGHT = 450 #450 #Rhye
+		self.PANE_HEIGHT = 380 #450 #Rhye
 		self.PANE_WIDTH = 283
 		self.X_SLIDERS = 50
 		self.X_INCOME = 373
 		self.X_EXPENSES = 696
-		self.Y_TREASURY = 90 #90 #Rhye
+		self.Y_TREASURY = 70 #90 #Rhye
 		self.H_TREASURY = 60 #100 #Rhye
-		self.Y_LOCATION = 160 #230 #Rhye
+		self.Y_LOCATION = 140 #230 #Rhye
 		self.Y_SPACING = 30
 		self.TEXT_MARGIN = 15
 		self.Z_BACKGROUND = -2.1
@@ -50,15 +52,15 @@ class CvFinanceAdvisor:
 		self.DZ = -0.2
 		self.X_EXIT = 994
 		self.Y_EXIT = 726
-		self.Y_STABILITY = 620 #Rhye
-		self.Y_PARAMETERS = 550 #Rhye
-		self.H_PARAMETERS = 140 #Rhye
-		self.PARAMETERS_WIDTH = 170 #Rhye
+		self.Y_STABILITY = 520 #Rhye
+		self.Y_PARAMETERS = 580 #Rhye
+		self.H_PARAMETERS = 120 #Rhye
+		self.PARAMETERS_WIDTH = 180 #Rhye
 		self.X_PARAMETERS1 = self.X_SLIDERS #Rhye
-		self.X_PARAMETERS2 = self.X_PARAMETERS1 + self.PARAMETERS_WIDTH + 20 #Rhye
-		self.X_PARAMETERS3 = self.X_PARAMETERS2 + self.PARAMETERS_WIDTH + 20 #Rhye
-		self.X_PARAMETERS4 = self.X_PARAMETERS3 + self.PARAMETERS_WIDTH + 20 #Rhye
-		self.X_PARAMETERS5 = self.X_PARAMETERS4 + self.PARAMETERS_WIDTH + 20 #Rhye
+		self.X_PARAMETERS2 = self.X_PARAMETERS1 + self.PARAMETERS_WIDTH + 7 #Rhye
+		self.X_PARAMETERS3 = self.X_PARAMETERS2 + self.PARAMETERS_WIDTH + 7 #Rhye
+		self.X_PARAMETERS4 = self.X_PARAMETERS3 + self.PARAMETERS_WIDTH + 7 #Rhye
+		self.X_PARAMETERS5 = self.X_PARAMETERS4 + self.PARAMETERS_WIDTH + 7 #Rhye
 		
 		#Leoreth
 		self.X_LINK = 50
@@ -137,27 +139,20 @@ class CvFinanceAdvisor:
 		player = gc.getPlayer(self.iActiveLeader)
 
 		ePlayer = self.iActiveLeader #Rhye
-		#Rhye - start
-		iStability = utils.getStability(ePlayer)
-                if (iStability < -40):
-                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_COLLAPSING", ())
-                elif (iStability >= -40 and iStability < -20):
-                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_UNSTABLE", ())
-                elif (iStability >= -20 and iStability < 0):
-                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_SHAKY", ())
-                elif (iStability >= 0 and iStability < 20):
-                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_STABLE", ())
-                elif (iStability >= 20 and iStability < 40):
-                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_SOLID", ())
-                elif (iStability >= 40):
-                        szTempBuffer = localText.getText("TXT_KEY_STABILITY_VERYSOLID", ())
-
-                if (gc.getPlayer(ePlayer).isHuman()):
-                        number = str(iStability)
-                        if (iStability > 0):
-                                number = '+' + number
-                        szTempBuffer = szTempBuffer + " (" + number + ") " + unichr(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 8 + utils.getArrow(0))
-		#Rhye - end
+		
+		iStabilityLevel = utils.getStabilityLevel(ePlayer)
+		
+		if iStabilityLevel == con.iStabilityCollapsing: szTempBuffer = localText.getText("TXT_KEY_STABILITY_COLLAPSING", ())
+		elif iStabilityLevel == con.iStabilityUnstable: szTempBuffer = localText.getText("TXT_KEY_STABILITY_UNSTABLE", ())
+		elif iStabilityLevel == con.iStabilityShaky: szTempBuffer = localText.getText("TXT_KEY_STABILITY_SHAKY", ())
+		elif iStabilityLevel == con.iStabilityStable: szTempBuffer = localText.getText("TXT_KEY_STABILITY_STABLE", ())
+		elif iStabilityLevel == con.iStabilitySolid: szTempBuffer = localText.getText("TXT_KEY_STABILITY_SOLID", ())
+		
+		iValue = sd.getLastStability()
+		sValue = str(iValue)
+		if iValue > 0: sValue = '+' + sValue
+		
+		szTempBuffer += ' (' + sValue + ') ' + unichr(CyGame().getSymbolID(FontSymbols.EQUAL_CHAR) + sd.getLastDifference())
 	
 		numCities = player.getNumCities()	
 					
@@ -194,6 +189,32 @@ class CvFinanceAdvisor:
 		screen.addPanel(szStabilityPanel, u"", "", True, True, self.X_SLIDERS, self.Y_STABILITY, self.X_EXPENSES + self.PANE_WIDTH - self.X_SLIDERS, self.H_TREASURY, PanelStyles.PANEL_STYLE_MAIN )
 		screen.setLabel(self.getNextWidgetName(), szStabilityPanel, u"<font=4>" + localText.getText("TXT_KEY_STABILITY_ADVISOR_TITLE", ()).upper() + " " + szTempBuffer + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, (self.X_SLIDERS + self.PANE_WIDTH + self.X_EXPENSES)/2, self.Y_STABILITY + self.H_TREASURY/2 - self.Y_SPACING/2, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 
+		szCategoryPanel1 = self.getNextWidgetName()
+		screen.addPanel(szCategoryPanel1, u"", "", True, True, self.X_PARAMETERS1, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_EXPANSION", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS1 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_EXPANSION, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel1, u"<font=4>" + str(sd.getStabilityCategoryValue(0)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS1 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_EXPANSION, ePlayer, -1)
+		
+		szCategoryPanel2 = self.getNextWidgetName()
+		screen.addPanel(szCategoryPanel2, u"", "", True, True, self.X_PARAMETERS2, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_ECONOMY", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS2 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_ECONOMY, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel2, u"<font=4>" + str(sd.getStabilityCategoryValue(1)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS2 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_ECONOMY, ePlayer, -1)
+		
+		szCategoryPanel3 = self.getNextWidgetName()
+		screen.addPanel(szCategoryPanel3, u"", "", True, True, self.X_PARAMETERS3, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_DOMESTIC", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS3 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_DOMESTIC, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel3, u"<font=4>" + str(sd.getStabilityCategoryValue(2)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS3 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_DOMESTIC, ePlayer, -1)
+		
+		szCategoryPanel4 = self.getNextWidgetName()
+		screen.addPanel(szCategoryPanel4, u"", "", True, True, self.X_PARAMETERS4, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_FOREIGN", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS4 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_FOREIGN, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel4, u"<font=4>" + str(sd.getStabilityCategoryValue(3)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS4 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_FOREIGN, ePlayer, -1)
+		
+		szCategoryPanel5 = self.getNextWidgetName()
+		screen.addPanel(szCategoryPanel5, u"", "", True, True, self.X_PARAMETERS5, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
+		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_MILITARY", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS5 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_MILITARY, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel5, u"<font=4>" + str(sd.getStabilityCategoryValue(4)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS5 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_MILITARY, ePlayer, -1)
+		
+		
 		#szParametersPanel1 = self.getNextWidgetName()
 		#screen.addPanel(szParametersPanel1, u"", "", True, True, self.X_PARAMETERS1, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN )
 		#screen.setLabel(self.getNextWidgetName(), "Background",  u"<font=3>" + localText.getText("TXT_KEY_STABILITY_PARAMETER_CITIES", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS1 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
@@ -718,26 +739,28 @@ class CvFinanceAdvisor:
 		# Create a new screen, called FinanceAdvisor, using the file FinanceAdvisor.py for input
 		screen = self.getScreen()
 		
-		if self.iScreen == FINANCE_SCREEN:
-			self.drawFinance()
-		elif self.iScreen == STABILITY_SCREEN:
-			self.drawStability()
+		#if self.iScreen == FINANCE_SCREEN:
+		#	self.drawFinance()
+		#elif self.iScreen == STABILITY_SCREEN:
+		#	self.drawStability()
 		
-		xLink = self.X_LINK
+		self.drawFinance()
 		
-		szFinanceId = self.getNextWidgetName()
-		if (self.iScreen != FINANCE_SCREEN):
-			screen.setText(szFinanceId, "", u"<font=4>" + localText.getText("TXT_KEY_FINANCE_ADVISOR_FINANCE", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, FINANCE_SCREEN, -1)
-		else:
-			screen.setText(szFinanceId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FINANCE_ADVISOR_FINANCE", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, -1, -1)
-		xLink += self.DX_LINK
+		#xLink = self.X_LINK
 		
-		szStabilityId = self.getNextWidgetName()
-		if (self.iScreen != STABILITY_SCREEN):
-			screen.setText(szStabilityId, "", u"<font=4>" + localText.getText("TXT_KEY_FINANCE_ADVISOR_STABILITY", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, STABILITY_SCREEN, -1)
-		else:
-			screen.setText(szStabilityId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FINANCE_ADVISOR_STABILITY", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, -1, -1)
-		xLink += self.DX_LINK
+		#szFinanceId = self.getNextWidgetName()
+		#if (self.iScreen != FINANCE_SCREEN):
+		#	screen.setText(szFinanceId, "", u"<font=4>" + localText.getText("TXT_KEY_FINANCE_ADVISOR_FINANCE", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, FINANCE_SCREEN, -1)
+		#else:
+		#	screen.setText(szFinanceId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FINANCE_ADVISOR_FINANCE", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, -1, -1)
+		#xLink += self.DX_LINK
+		
+		#szStabilityId = self.getNextWidgetName()
+		#if (self.iScreen != STABILITY_SCREEN):
+		#	screen.setText(szStabilityId, "", u"<font=4>" + localText.getText("TXT_KEY_FINANCE_ADVISOR_STABILITY", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, STABILITY_SCREEN, -1)
+		#else:
+		#	screen.setText(szStabilityId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FINANCE_ADVISOR_STABILITY", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FINANCE_ADVISOR, -1, -1)
+		#xLink += self.DX_LINK
 
 		return 0
 		

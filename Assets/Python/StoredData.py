@@ -127,6 +127,9 @@ class StoredData:
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
+				    'iLastStability' : 0,
+				    'iLastDifference' : 0,
+				    'lStabilityCategoryValues' : [0, 0, 0, 0, 0],
 				    # outdated
                                     'lBaseStabilityLastTurn': [0 for i in range(con.iNumPlayers)],
                                     'lPartialBaseStability': [0 for i in range(con.iNumPlayers)],
@@ -157,6 +160,24 @@ class StoredData:
 		
 	def changeCrisisCountdown(self, iPlayer, iChange):
 		self.scriptDict['lCrisisCountdown'][iPlayer] += iChange
+		
+	def getLastStability(self):
+		return self.scriptDict['iLastStability']
+		
+	def setLastStability(self, iNewValue):
+		self.scriptDict['iLastStability'] = iNewValue		
+		
+	def getLastDifference(self):
+		return -self.scriptDict['iLastDifference']
+		
+	def setLastDifference(self, iNewValue):
+		self.scriptDict['iLastDifference'] = iNewValue
+		
+	def getStabilityCategoryValue(self, iCategory):
+		return self.scriptDict['lStabilityCategoryValues'][iCategory]
+		
+	def setStabilityCategoryValue(self, iCategory, iNewValue):
+		self.scriptDict['lStabilityCategoryValues'][iCategory] = iNewValue
 
 # All modules import the following single instance, not the class
 

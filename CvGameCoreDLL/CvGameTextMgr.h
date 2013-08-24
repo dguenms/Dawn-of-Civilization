@@ -150,6 +150,9 @@ public:
 	DllExport void buildHintsList(CvWStringBuffer& szBuffer);
 	DllExport void buildBuildingRequiresString(CvWStringBuffer& szBuffer, BuildingTypes eBuilding, bool bCivilopediaText, bool bTechChooserText, const CvCity* pCity);
 
+	// Leoreth
+	DllExport void buildStabilityParameterString(CvWStringBuffer& szBuffer, int iStabilityCategory);
+
 	DllExport void buildCityBillboardIconString( CvWStringBuffer& szBuffer, CvCity* pCity);
 	DllExport void buildCityBillboardCityNameString( CvWStringBuffer& szBuffer, CvCity* pCity);
 	DllExport void buildCityBillboardProductionString( CvWStringBuffer& szBuffer, CvCity* pCity);
