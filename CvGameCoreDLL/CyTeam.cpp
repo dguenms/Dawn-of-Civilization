@@ -988,7 +988,8 @@ int CyTeam::AI_getWarSuccess(int /*TeamTypes*/ eIndex) const
 }
 
 // Leoreth
-/*int CyTeam::AI_getWorstEnemy() const
+void CyTeam::setOpenBorders(int eTeam, bool bNewValue)
 {
-	return m_pTeam ? (int)m_pTeam->AI_getWorstEnemy() : -1;
-}*/
+	if (m_pTeam)
+		m_pTeam->setOpenBorders((TeamTypes)eTeam, bNewValue);
+}

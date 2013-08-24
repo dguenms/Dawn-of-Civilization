@@ -54,7 +54,6 @@ CvPlayer::CvPlayer()
 	m_aiCommerceFlexibleCount = new int[NUM_COMMERCE_TYPES];
 	m_aiGoldPerTurnByPlayer = new int[MAX_PLAYERS];
 	m_aiEspionageSpendingWeightAgainstTeam = new int[MAX_TEAMS];
-	m_aiStabilityCategories = new int[NUM_STABILITY_TYPES]; //Leoreth
 
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
@@ -410,8 +409,6 @@ void CvPlayer::uninit()
 	clearPopups();
 
 	clearDiplomacy();
-
-	resetStabilityCategories(true); // Leoreth
 }
 
 
@@ -550,20 +547,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 	//Leoreth
 	m_bReborn = false;
-
-	m_iBaseStabilityLastTurn = 0;
-	m_iPartialBaseStability = 0;
-	m_iStability = 0;
-	m_iOwnedPlotsLastTurn = 0;
-	m_iOwnedOuterPlotsLastTurn = 0;
-	m_iOwnedForeignCitiesLastTurn = 0;
-	m_iOwnedCitiesLastTurn = 0;
-	m_iCombatResultTempModifier = 0;
-	m_iGNPold = 0;
-	m_iGNPnew = 0;
-	m_iGreatDepressionCountdown = 0;
-	m_iStatePropertyCountdown = 0;
-	m_iDemocracyCountdown = 0;
 	m_iLatestRebellionTurn = 0;
 	m_iPersecutionCountdown = 0;
 
@@ -11769,8 +11752,6 @@ void CvPlayer::setAlive(bool bNewValue)
 			killCities();
 			killAllDeals();
 
-			resetStabilityCategories(true); //Leoreth
-
 			setTurnActive(false);
 
 			gDLL->endMPDiplomacy();
@@ -18509,23 +18490,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 
 	//Leoreth
 	pStream->Read(&m_bReborn);
-
-	//Leoreth: stability (not active yet)
-	pStream->Read(&m_iBaseStabilityLastTurn);
-	pStream->Read(&m_iPartialBaseStability);
-	pStream->Read(&m_iStability);
-	pStream->Read(&m_iOwnedPlotsLastTurn);
-	pStream->Read(&m_iOwnedOuterPlotsLastTurn);
-	pStream->Read(&m_iOwnedForeignCitiesLastTurn);
-	pStream->Read(&m_iOwnedCitiesLastTurn);
-	pStream->Read(&m_iCombatResultTempModifier);
-	pStream->Read(&m_iGNPold);
-	pStream->Read(&m_iGNPnew);
-	pStream->Read(&m_iGreatDepressionCountdown);
-	pStream->Read(&m_iStatePropertyCountdown);
-	pStream->Read(&m_iDemocracyCountdown);
 	pStream->Read(&m_iLatestRebellionTurn);
-
 	pStream->Read(&m_iPersecutionCountdown);
 
 	pStream->Read((int*)&m_eID);
@@ -18551,7 +18516,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceFlexibleCount);
 	pStream->Read(MAX_PLAYERS, m_aiGoldPerTurnByPlayer);
 	pStream->Read(MAX_TEAMS, m_aiEspionageSpendingWeightAgainstTeam);
-	pStream->Read(NUM_STABILITY_TYPES, m_aiStabilityCategories); //Leoreth
 
 	pStream->Read(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Read(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -19040,23 +19004,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 
 	//Leoreth
 	pStream->Write(m_bReborn);
-
-	//Leoreth: stability (not active yet)
-	pStream->Write(m_iBaseStabilityLastTurn);
-	pStream->Write(m_iPartialBaseStability);
-	pStream->Write(m_iStability);
-	pStream->Write(m_iOwnedPlotsLastTurn);
-	pStream->Write(m_iOwnedOuterPlotsLastTurn);
-	pStream->Write(m_iOwnedForeignCitiesLastTurn);
-	pStream->Write(m_iOwnedCitiesLastTurn);
-	pStream->Write(m_iCombatResultTempModifier);
-	pStream->Write(m_iGNPold);
-	pStream->Write(m_iGNPnew);
-	pStream->Write(m_iGreatDepressionCountdown);
-	pStream->Write(m_iStatePropertyCountdown);
-	pStream->Write(m_iDemocracyCountdown);
 	pStream->Write(m_iLatestRebellionTurn);
-
 	pStream->Write(m_iPersecutionCountdown);
 
 	pStream->Write(m_eID);
@@ -19081,7 +19029,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceFlexibleCount);
 	pStream->Write(MAX_PLAYERS, m_aiGoldPerTurnByPlayer);
 	pStream->Write(MAX_TEAMS, m_aiEspionageSpendingWeightAgainstTeam);
-	pStream->Write(NUM_STABILITY_TYPES, m_aiStabilityCategories); //Leoreth
 
 	pStream->Write(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Write(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -24802,167 +24749,6 @@ EraTypes CvPlayer::getSoundtrackEra()
 	return eCurrentEra;
 }
 
-
-int CvPlayer::getBaseStabilityLastTurn()
-{
-	return m_iBaseStabilityLastTurn;
-}
-
-void CvPlayer::setBaseStabilityLastTurn(int iNewValue)
-{
-	m_iBaseStabilityLastTurn = iNewValue;
-}
-
-int CvPlayer::getPartialBaseStability()
-{
-	return m_iPartialBaseStability;
-}
-
-void CvPlayer::setPartialBaseStability(int iNewValue)
-{
-	m_iPartialBaseStability = iNewValue;
-}
-
-int CvPlayer::getStability()
-{
-	return m_iStability;
-}
-
-void CvPlayer::setStability(int iNewValue)
-{
-	m_iStability = iNewValue;
-}
-
-void CvPlayer::changeStability(int iChange)
-{
-	m_iStability += iChange;
-}
-
-int CvPlayer::getOwnedPlotsLastTurn()
-{
-	return m_iOwnedPlotsLastTurn;
-}
-
-void CvPlayer::setOwnedPlotsLastTurn(int iNewValue)
-{
-	m_iOwnedPlotsLastTurn = iNewValue;
-}
-
-void CvPlayer::changeOwnedPlotsLastTurn(int iChange)
-{
-	m_iOwnedPlotsLastTurn += iChange;
-}
-
-int CvPlayer::getOwnedOuterPlotsLastTurn()
-{
-	return m_iOwnedOuterPlotsLastTurn;
-}
-
-void CvPlayer::setOwnedOuterPlotsLastTurn(int iNewValue)
-{
-	m_iOwnedOuterPlotsLastTurn = iNewValue;
-}
-
-void CvPlayer::changeOwnedOuterPlotsLastTurn(int iChange)
-{
-	m_iOwnedOuterPlotsLastTurn += iChange;
-}
-
-int CvPlayer::getOwnedForeignCitiesLastTurn()
-{
-	return m_iOwnedForeignCitiesLastTurn;
-}
-
-void CvPlayer::setOwnedForeignCitiesLastTurn(int iNewValue)
-{
-	m_iOwnedForeignCitiesLastTurn = iNewValue;
-}
-
-void CvPlayer::changeOwnedForeignCitiesLastTurn(int iChange)
-{
-	m_iOwnedForeignCitiesLastTurn += iChange;
-}
-
-int CvPlayer::getOwnedCitiesLastTurn()
-{
-	return m_iOwnedCitiesLastTurn;
-}
-
-void CvPlayer::setOwnedCitiesLastTurn(int iNewValue)
-{
-	m_iOwnedCitiesLastTurn = iNewValue;
-}
-
-void CvPlayer::changeOwnedCitiesLastTurn(int iChange)
-{
-	m_iOwnedCitiesLastTurn += iChange;
-}
-
-int CvPlayer::getCombatResultTempModifier()
-{
-	return m_iCombatResultTempModifier;
-}
-
-void CvPlayer::setCombatResultTempModifier(int iNewValue)
-{
-	m_iCombatResultTempModifier = iNewValue;
-}
-
-void CvPlayer::changeCombatResultTempModifier(int iChange)
-{
-	m_iCombatResultTempModifier += iChange;
-}
-
-int CvPlayer::getGNPold()
-{
-	return m_iGNPold;
-}
-
-void CvPlayer::setGNPold(int iNewValue)
-{
-	m_iGNPold = iNewValue;
-}
-
-int CvPlayer::getGNPnew()
-{
-	return m_iGNPnew;
-}
-
-void CvPlayer::setGNPnew(int iNewValue)
-{
-	m_iGNPnew = iNewValue;
-}
-
-int CvPlayer::getGreatDepressionCountdown()
-{
-	return m_iGreatDepressionCountdown;
-}
-
-void CvPlayer::setGreatDepressionCountdown(int iNewValue)
-{
-	m_iGreatDepressionCountdown = iNewValue;
-}
-
-int CvPlayer::getStatePropertyCountdown()
-{
-	return m_iStatePropertyCountdown;
-}
-
-void CvPlayer::setStatePropertyCountdown(int iNewValue)
-{
-	m_iStatePropertyCountdown = iNewValue;
-}
-
-int CvPlayer::getDemocracyCountdown()
-{
-	return m_iDemocracyCountdown;
-}
-
-void CvPlayer::setDemocracyCountdown(int iNewValue)
-{
-	m_iDemocracyCountdown = iNewValue;
-}
-
 int CvPlayer::getLatestRebellionTurn()
 {
 	return m_iLatestRebellionTurn;
@@ -24991,21 +24777,6 @@ void CvPlayer::setStabilityCategory(int iStabilityType, int iValue)
 void CvPlayer::changeStabilityCategory(int iStabilityType, int iChange)
 {
 	m_aiStabilityCategories[iStabilityType] += iChange;
-}
-
-void CvPlayer::resetStabilityCategories(bool bAll)
-{
-	int iThreshold = STABILITY_NORMALIZATION;
-
-	if (bAll)
-	{
-		iThreshold = NUM_STABILITY_TYPES;
-	}
-
-	for (int i = 0; i < iThreshold; i++)
-	{
-		setStabilityCategory(i, 0);
-	}
 }
 
 int CvPlayer::getPersecutionCountdown()

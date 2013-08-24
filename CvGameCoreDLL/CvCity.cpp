@@ -8015,8 +8015,8 @@ void CvCity::setOccupationTimer(int iNewValue)
 {
 	bool bOldOccupation;
 
-	//Leoreth: cap city disorder at 4 turns
-	iNewValue = std::min(iNewValue, 4);
+	//Leoreth: cap city disorder at 5 turns
+	iNewValue = std::min(iNewValue, 5);
 
 	if (getOccupationTimer() != iNewValue)
 	{

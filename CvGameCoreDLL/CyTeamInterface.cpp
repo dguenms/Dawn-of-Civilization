@@ -216,6 +216,6 @@ void CyTeamPythonInterface()
 		.def("AI_getWarSuccess", &CyTeam::AI_getWarSuccess, "int (TeamTypes)")
 
 		// Leoreth
-		//.def("AI_getWorstEnemy", &CyTeam::AI_getWorstEnemy, "int ()")
+		.def("setOpenBorders", &CyTeam::setOpenBorders, "void (int eTeam, bool bNewValue")
 		;
 }

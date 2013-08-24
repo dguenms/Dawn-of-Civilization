@@ -1097,7 +1097,7 @@ class RiseAndFall:
 				marrakesh.setHasReligion(con.iIslam, True, False, False)
 				
 				utils.makeUnit(con.iSettler, marrakesh.getOwner(), (x,y), 1)
-				utils.makeUnit(con.iWorker, marrakesh.getOwner(), (x,y), 3)
+				utils.makeUnit(con.iWorker, marrakesh.getOwner(), (x,y), 1)
 				
 		# Leoreth: help human with Aztec UHV - prevent super London getting in the way
 		if iGameTurn == getTurnForYear(1500) and utils.getHumanID() == iAztecs:
@@ -4122,7 +4122,7 @@ class RiseAndFall:
 		if (iCiv == iIndonesia):
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 		if iCiv == iMoors:
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iSpain):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iFrance):
@@ -5044,6 +5044,7 @@ class RiseAndFall:
                                 teamVikings.setHasTech(con.iHunting, True, iCiv, False, False)
                                 teamVikings.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamVikings.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+                                teamVikings.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
                         if (iCiv == iArabia):
                                 teamArabia.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamArabia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

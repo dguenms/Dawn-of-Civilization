@@ -11828,6 +11828,313 @@ void CvGameTextMgr::buildFinanceCityMaintString(CvWStringBuffer& szBuffer, Playe
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_CITY_MAINT_COST", iDistanceMaint, iNumCityMaint, iColonyMaint, iCorporationMaint, player.getTotalMaintenance()));
 }
 
+// Leoreth: stability display
+void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int iStabilityCategory)
+{
+	CvWString szStabilityParameters;
+	CvWString szStabilityType;
+	CvWString szColor;
+	CvGame& game = GC.getGame();
+	int iTotalStability = 0;
+
+	// Expansion
+	if (iStabilityCategory == 0)
+	{
+		int iParameterCorePeriphery = game.getStabilityParameter(PARAMETER_CORE_PERIPHERY);
+
+		iTotalStability = iParameterCorePeriphery;
+
+		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_EXPANSION");
+
+		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
+		szStabilityParameters += szColor;
+
+		if (iParameterCorePeriphery > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_POSITIVE").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR SETCOLR, TEXT_COLOR("COLOR_RED"));
+		szStabilityParameters += szColor;
+
+		if (iParameterCorePeriphery < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR);
+		szStabilityParameters += szColor;
+	}
+
+	// Economy
+	else if (iStabilityCategory == 1)
+	{
+		int iParameterEconomicGrowth = game.getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
+		int iParameterPercentChange = game.getStabilityParameter(PARAMETER_PERCENT_CHANGE);
+		int iParameterBaselinePercent = game.getStabilityParameter(PARAMETER_BASELINE_PERCENT);
+		int iParameterMercantilism = game.getStabilityParameter(PARAMETER_MERCANTILISM);
+		int iParameterCentralPlanning = game.getStabilityParameter(PARAMETER_CENTRAL_PLANNING);
+
+		iTotalStability = iParameterEconomicGrowth + iParameterMercantilism + iParameterCentralPlanning;
+
+		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_ECONOMY");
+
+		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
+		szStabilityParameters += szColor;
+
+		if (iParameterEconomicGrowth != 0 && iParameterPercentChange > iParameterBaselinePercent)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_GROWTH").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR SETCOLR, TEXT_COLOR("COLOR_RED"));
+		szStabilityParameters += szColor;
+
+		if (iParameterEconomicGrowth != 0 && iParameterPercentChange <= iParameterBaselinePercent)
+		{
+			if (iParameterPercentChange >= 0)
+			{
+				CvWString szTemp;
+				szTemp.Format(L"%d: %s", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_STAGNATION").GetCString());
+				szStabilityParameters += NEWLINE + szTemp;
+			}
+			else
+			{
+				CvWString szTemp;
+				szTemp.Format(L"%d: %s", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_DECLINE").GetCString());
+				szStabilityParameters += NEWLINE + szTemp;
+			}
+		}
+
+		if (iParameterMercantilism < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterMercantilism, gDLL->getText("TXT_KEY_STABILITY_MERCANTILISM_TRADE_RICHER").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterCentralPlanning < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterCentralPlanning, gDLL->getText("TXT_KEY_STABILITY_CENTRAL_PLANNING_TRADE_FREE_MARKET").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR);
+		szStabilityParameters += szColor;
+	}
+
+	// Domestic
+	else if (iStabilityCategory == 2)
+	{
+		int iParameterHappiness = game.getStabilityParameter(PARAMETER_HAPPINESS);
+		int iParameterCivicCombinations = game.getStabilityParameter(PARAMETER_CIVIC_COMBINATIONS);
+		int iParameterCivicsEraTech = game.getStabilityParameter(PARAMETER_CIVICS_ERA_TECH);
+		int iParameterReligion = game.getStabilityParameter(PARAMETER_RELIGION);
+
+		iTotalStability = iParameterHappiness + iParameterCivicCombinations + iParameterCivicsEraTech + iParameterReligion;
+
+		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_DOMESTIC");
+
+		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
+		szStabilityParameters += szColor;
+
+		if (iParameterHappiness > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterHappiness, gDLL->getText("TXT_KEY_STABILITY_HAPPINESS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterCivicCombinations > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterCivicCombinations, gDLL->getText("TXT_KEY_STABILITY_COMPATIBLE_CIVICS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterCivicsEraTech > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterCivicsEraTech, gDLL->getText("TXT_KEY_STABILITY_CONTEMPORARY_CIVICS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterReligion > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterReligion, gDLL->getText("TXT_KEY_STABILITY_RELIGIOUS_UNITY").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR SETCOLR, TEXT_COLOR("COLOR_RED"));
+		szStabilityParameters += szColor;
+
+		if (iParameterHappiness < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterHappiness, gDLL->getText("TXT_KEY_STABILITY_UNHAPPINESS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterCivicCombinations < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterCivicCombinations, gDLL->getText("TXT_KEY_STABILITY_INCOMPATIBLE_CIVICS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterCivicsEraTech < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterCivicsEraTech, gDLL->getText("TXT_KEY_STABILITY_OUTDATED_CIVICS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterReligion < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterReligion, gDLL->getText("TXT_KEY_STABILITY_RELIGIOUS_DISUNITY").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR);
+		szStabilityParameters += szColor;
+	}
+
+	// Foreign
+	else if (iStabilityCategory == 3)
+	{
+		int iParameterNeighbors = game.getStabilityParameter(PARAMETER_NEIGHBORS);
+		int iParameterVassals = game.getStabilityParameter(PARAMETER_VASSALS);
+		int iParameterDefensivePacts = game.getStabilityParameter(PARAMETER_DEFENSIVE_PACTS);
+		int iParameterRelations = game.getStabilityParameter(PARAMETER_RELATIONS);
+		int iParameterAutocracy = game.getStabilityParameter(PARAMETER_AUTOCRACY);
+		int iParameterFanaticism = game.getStabilityParameter(PARAMETER_FANATICISM);
+
+		iTotalStability = iParameterNeighbors + iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterAutocracy + iParameterFanaticism;
+
+		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_FOREIGN");
+
+		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
+		szStabilityParameters += szColor;
+
+		if (iParameterVassals > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterVassals, gDLL->getText("TXT_KEY_STABILITY_STABLE_VASSALS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterDefensivePacts > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterDefensivePacts, gDLL->getText("TXT_KEY_STABILITY_DEFENSIVE_PACTS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterAutocracy > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterAutocracy, gDLL->getText("TXT_KEY_STABILITY_WARS_AUTOCRACY").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterFanaticism > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterFanaticism, gDLL->getText("TXT_KEY_STABILITY_WARS_HEATHENS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR SETCOLR, TEXT_COLOR("COLOR_RED"));
+		szStabilityParameters += szColor;
+
+		if (iParameterNeighbors < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterNeighbors, gDLL->getText("TXT_KEY_STABILITY_NEIGHBORS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterVassals < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterVassals, gDLL->getText("TXT_KEY_STABILITY_UNSTABLE_VASSALS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterRelations < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterRelations, gDLL->getText("TXT_KEY_STABILITY_BAD_RELATIONS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterFanaticism < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterFanaticism, gDLL->getText("TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR);
+		szStabilityParameters += szColor;
+	}
+
+	// Military
+	else if (iStabilityCategory == 4)
+	{
+		int iParameterWarSuccess = game.getStabilityParameter(PARAMETER_WAR_SUCCESS);
+		int iParameterMilitaryStrength = game.getStabilityParameter(PARAMETER_MILITARY_STRENGTH);
+
+		iTotalStability = iParameterWarSuccess + iParameterMilitaryStrength;
+
+		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_MILITARY");
+
+		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
+		szStabilityParameters += szColor;
+
+		if (iParameterWarSuccess > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterWarSuccess, gDLL->getText("TXT_KEY_STABILITY_WINNING_WARS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR SETCOLR, TEXT_COLOR("COLOR_RED"));
+		szStabilityParameters += szColor;
+
+		if (iParameterWarSuccess < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterWarSuccess, gDLL->getText("TXT_KEY_STABILITY_LOSING_WARS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterMilitaryStrength < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterMilitaryStrength, gDLL->getText("TXT_KEY_STABILITY_LOSING_STRENGTH").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		szColor.Format(ENDCOLR);
+		szStabilityParameters += szColor;
+	}
+
+	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_STABILITY_HEAD", szStabilityType.GetCString()));
+
+	szBuffer.append(NEWLINE);
+	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_STABILITY", szStabilityParameters.GetCString(), szStabilityType.GetCString(), (iTotalStability > 0 ? "+" : ""), iTotalStability));
+}
+
 void CvGameTextMgr::buildFinanceCivicUpkeepString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer)
 {
 	if (NO_PLAYER == ePlayer)

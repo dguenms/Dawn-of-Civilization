@@ -448,6 +448,27 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseFinanceGoldReserve(widgetDataStruct, szBuffer);
 		break;
 
+	// Leoreth
+	case WIDGET_HELP_STABILITY_EXPANSION:
+		parseStabilityExpansionHelp(widgetDataStruct, szBuffer);
+		break;
+
+	case WIDGET_HELP_STABILITY_ECONOMY:
+		parseStabilityEconomyHelp(widgetDataStruct, szBuffer);
+		break;
+
+	case WIDGET_HELP_STABILITY_DOMESTIC:
+		parseStabilityDomesticHelp(widgetDataStruct, szBuffer);
+		break;
+
+	case WIDGET_HELP_STABILITY_FOREIGN:
+		parseStabilityForeignHelp(widgetDataStruct, szBuffer);
+		break;
+
+	case WIDGET_HELP_STABILITY_MILITARY:
+		parseStabilityMilitaryHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_PEDIA_JUMP_TO_TECH:
 		parseTechEntryHelp(widgetDataStruct, szBuffer);
 		break;
@@ -4635,3 +4656,27 @@ void CvDLLWidgetData::parseScoreHelp(CvWidgetDataStruct& widgetDataStruct, CvWSt
 	GAMETEXT.setScoreHelp(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1);
 }
 
+void CvDLLWidgetData::parseStabilityExpansionHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	GAMETEXT.buildStabilityParameterString(szBuffer, 0);
+}
+
+void CvDLLWidgetData::parseStabilityEconomyHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	GAMETEXT.buildStabilityParameterString(szBuffer, 1);
+}
+
+void CvDLLWidgetData::parseStabilityDomesticHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	GAMETEXT.buildStabilityParameterString(szBuffer, 2);
+}
+
+void CvDLLWidgetData::parseStabilityForeignHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	GAMETEXT.buildStabilityParameterString(szBuffer, 3);
+}
+
+void CvDLLWidgetData::parseStabilityMilitaryHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	GAMETEXT.buildStabilityParameterString(szBuffer, 4);
+}

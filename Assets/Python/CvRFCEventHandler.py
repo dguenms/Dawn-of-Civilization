@@ -207,7 +207,7 @@ class CvRFCEventHandler:
 		# Byzantine UP: kill Byzantium if they are collapsing and use their capital
 		if iOwner == iByzantium and gc.getPlayer(iByzantium).isAlive():
 			if (city.getX(), city.getY()) == (68, 45):
-				if utils.getStability(iByzantium) < -40:
+				if utils.getStabilityLevel(iByzantium) == con.iStabilityCollapsing:
 					if iOwner != utils.getHumanID():
 						if gc.getPlayer(utils.getHumanID()).canContact(iByzantium):
 							CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iOwner).getCivilizationDescription(0) + ' ' + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
@@ -752,6 +752,5 @@ class CvRFCEventHandler:
 
                 #Stability Cheat
                 if self.rnf.getCheatMode() and theKey == int(InputTypes.KB_S) and self.eventManager.bAlt and self.eventManager.bShift:
-                        print("SHIFT-ALT-S") #boosts stability by +10 for the human player
-                        utils.setStability(utils.getHumanID(), utils.getStability(utils.getHumanID())+10)
-			gc.getPlayer(utils.getHumanID()).changeStability(10) # test DLL
+                        print("SHIFT-ALT-S") #increases stability by one level
+			utils.setStabilityLevel(utils.getHumanID(), min(5, utils.getStabilityLevel(utils.getHumanID()) + 1))

@@ -2391,74 +2391,6 @@ int CyPlayer::getWarMapValue(int x, int y)
 	return m_pPlayer ? m_pPlayer->getWarMapValue(x, y) : -1;
 }
 
-// Leoreth: stability (not active yet)
-int CyPlayer::getStability()
-{
-	return m_pPlayer ? m_pPlayer->getStability() : -1;
-}
-
-void CyPlayer::setStability(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setStability(iNewValue);
-}
-
-void CyPlayer::changeStability(int iChange)
-{
-	if (m_pPlayer)
-		m_pPlayer->changeStability(iChange);
-}
-
-int CyPlayer::getGreatDepressionCountdown()
-{
-	return m_pPlayer ? m_pPlayer->getGreatDepressionCountdown() : -1;
-}
-
-void CyPlayer::setGreatDepressionCountdown(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setGreatDepressionCountdown(iNewValue);
-}
-
-int CyPlayer::getCombatResultTempModifier()
-{
-	return m_pPlayer ? m_pPlayer->getCombatResultTempModifier() : -1;
-}
-
-void CyPlayer::setCombatResultTempModifier(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setCombatResultTempModifier(iNewValue);
-}
-
-void CyPlayer::changeCombatResultTempModifier(int iChange)
-{
-	if (m_pPlayer)
-		m_pPlayer->changeCombatResultTempModifier(iChange);
-}
-
-int CyPlayer::getBaseStabilityLastTurn()
-{
-	return m_pPlayer ? m_pPlayer->getBaseStabilityLastTurn() : -1;
-}
-
-void CyPlayer::setBaseStabilityLastTurn(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setBaseStabilityLastTurn(iNewValue);
-}
-
-int CyPlayer::getLatestRebellionTurn()
-{
-	return m_pPlayer ? m_pPlayer->getLatestRebellionTurn() : -1;
-}
-
-void CyPlayer::setLatestRebellionTurn(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setLatestRebellionTurn(iNewValue);
-}
-
 void CyPlayer::AI_reset()
 {
     if (m_pPlayer)
@@ -2471,29 +2403,6 @@ void CyPlayer::setPersecutionCountdown(int iNewValue)
 		m_pPlayer->setPersecutionCountdown(iNewValue);
 }
 
-int CyPlayer::getStabilityCategory(int iStabilityType)
-{
-	return m_pPlayer ? m_pPlayer->getStabilityCategory(iStabilityType) : -1;
-}
-
-void CyPlayer::changeStabilityCategory(int iStabilityType, int iChange)
-{
-	if (m_pPlayer)
-		m_pPlayer->changeStabilityCategory(iStabilityType, iChange);
-}
-
-void CyPlayer::setStabilityCategory(int iStabilityType, int iValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setStabilityCategory(iStabilityType, iValue);
-}
-
-void CyPlayer::resetStabilityCategories()
-{
-	if (m_pPlayer)
-		m_pPlayer->resetStabilityCategories(false);
-}
-
 bool CyPlayer::hasCivic(int iCivic)
 {
 	return m_pPlayer ? m_pPlayer->hasCivic((CivicTypes)iCivic) : false;
@@ -2502,4 +2411,15 @@ bool CyPlayer::hasCivic(int iCivic)
 int CyPlayer::getWorstEnemy()
 {
 	return m_pPlayer ? m_pPlayer->getWorstEnemy() : false;
+}
+
+int CyPlayer::getLatestRebellionTurn()
+{
+	return m_pPlayer ? m_pPlayer->getLatestRebellionTurn() : -1;
+}
+
+void CyPlayer::setLatestRebellionTurn(int iTurn)
+{
+	if (m_pPlayer)
+		m_pPlayer->setLatestRebellionTurn(iTurn);
 }

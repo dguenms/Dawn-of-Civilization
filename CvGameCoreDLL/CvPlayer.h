@@ -1118,68 +1118,14 @@ public:
     void setReborn(); // Leoreth
     bool isHasBuilding(BuildingTypes eIndex); // Leoreth
 	DllExport int getWarMapValue(int x, int y); //Leoreth
-	
-	// Leoreth: stability (not active yet)
-	int getBaseStabilityLastTurn();
-	void setBaseStabilityLastTurn(int iNewValue);
-
-	int getPartialBaseStability();
-	void setPartialBaseStability(int iNewValue);
-
-	int getStability();
-	void setStability(int iNewValue);
-	void changeStability(int iChange);
-
-	int getOwnedPlotsLastTurn();
-	void setOwnedPlotsLastTurn(int iNewValue);
-	void changeOwnedPlotsLastTurn(int iChange);
-
-	int getOwnedOuterPlotsLastTurn();
-	void setOwnedOuterPlotsLastTurn(int iNewValue);
-	void changeOwnedOuterPlotsLastTurn(int iChange);
-
-	int getOwnedForeignCitiesLastTurn();
-	void setOwnedForeignCitiesLastTurn(int iNewValue);
-	void changeOwnedForeignCitiesLastTurn(int iChange);
-
-	int getOwnedCitiesLastTurn();
-	void setOwnedCitiesLastTurn(int iNewValue);
-	void changeOwnedCitiesLastTurn(int iChange);
-
-	int getCombatResultTempModifier();
-	void setCombatResultTempModifier(int iNewValue);
-	void changeCombatResultTempModifier(int iChange);
-
-	int getGNPold();
-	void setGNPold(int iNewValue);
-
-	int getGNPnew();
-	void setGNPnew(int iNewValue);
-
-	int getGreatDepressionCountdown();
-	void setGreatDepressionCountdown(int iNewValue);
-
-	int getStatePropertyCountdown();
-	void setStatePropertyCountdown(int iNewValue);
-
-	int getDemocracyCountdown();
-	void setDemocracyCountdown(int iNewValue);
 
 	int getLatestRebellionTurn();
 	void setLatestRebellionTurn(int iNewValue);
-
-	//void doStability();
-
-	/*StabilityList getStabilityList();
-	void setStabilityList(StabilityList);
-	void addToStabilityList(StabilityTypes eStabilityType, int iValue);
-	void clearStabilityList();*/
 
 	int getStabilityCategory(int i);
 	int* getStabilityCategoryArray();
 	void changeStabilityCategory(int iStabilityType, int iChange);
 	void setStabilityCategory(int iStabilityType, int iValue);
-	void resetStabilityCategories(bool bAll);
 
 	EraTypes getSoundtrackEra();
 	
@@ -1316,24 +1262,7 @@ protected:
 
 	// Leoreth
 	bool m_bReborn;
-
-	// Leoreth: stability (not active yet)
-	int m_iBaseStabilityLastTurn;
-	int m_iPartialBaseStability;
-	int m_iStability;
-	int m_iOwnedPlotsLastTurn;
-	int m_iOwnedOuterPlotsLastTurn;
-	int m_iOwnedForeignCitiesLastTurn;
-	int m_iOwnedCitiesLastTurn;
-	int m_iCombatResultTempModifier;
-	int m_iGNPold;
-	int m_iGNPnew;
-	int m_iGreatDepressionCountdown;
-	int m_iStatePropertyCountdown;
-	int m_iDemocracyCountdown;
 	int m_iLatestRebellionTurn;
-	//StabilityList m_stabilityList;
-
 	int m_iPersecutionCountdown;
 
 	PlayerTypes m_eID;
