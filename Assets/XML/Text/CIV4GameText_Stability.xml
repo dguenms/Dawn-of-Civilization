@@ -327,4 +327,112 @@
 		<Tag>TXT_KEY_STABILITY_LOSING_STRENGTH</Tag>
 		<English>Losing Military Strength</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_MESSAGE</Tag>
+		<English>Our civilization is experiencing a %s1 %s2 crisis!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_EXPANSION</Tag>
+		<English>territorial</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_ECONOMY</Tag>
+		<English>economic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_DOMESTIC</Tag>
+		<English>domestic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_FOREIGN</Tag>
+		<English>diplomatic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_TYPE_MILITARY</Tag>
+		<English>military</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_MINOR</Tag>
+		<English>minor</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_MODERATE</Tag>
+		<English>moderate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_SEVERE</Tag>
+		<English>severe</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_TERMINAL</Tag>
+		<English>terminal</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITY_INDEPENDENCE</Tag>
+		<English>%s1 has declared independence!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITY_CHANGED_OWNER</Tag>
+		<English>%s1 has joined the %s2 civilization!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US</Tag>
+		<English>%s1 has joined our civilization!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_FOREIGN_SECESSION</Tag>
+		<English>We are losing control over our foreign territory!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_COLLAPSE_TO_CORE</Tag>
+		<English>We are losing control over our entire empire!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_ECONOMIC_CRISIS</Tag>
+		<English>The economic crisis is paralyzing our civilization!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_LOST_COMMERCE</Tag>
+		<English>Due to our economic crisis we have lost %d1[ICON_GOLD] and %d2[ICON_RESEARCH]!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DOWNGRADE_COTTAGES</Tag>
+		<English>The economic crisis is impeding our cottage growth!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_REMOVE_GPP</Tag>
+		<English>The economic crisis is preventing the emergence of great people!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DOMESTIC_CRISIS</Tag>
+		<English>Our civilization is descending into a period of civil war!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_SECEDE_UNHAPPY</Tag>
+		<English>Unhappy cities are leaving our civilization!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CANCEL_TRADE</Tag>
+		<English>%s1 has canceled their open borders agreement with us!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CANCEL_DEFENSIVE_PACT</Tag>
+		<English>%s1 has canceled their defensive pact with us!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CANCEL_PEACE_VASSAL</Tag>
+		<English>%s1 no longer wishes to be our vassal!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CANCEL_CAPITULATION</Tag>
+		<English>%s1 no longer recognizes our overlordship and declares sovereignty!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_REMOVE_DEFENSES</Tag>
+		<English>The military crisis leaves our cities without effective defenses!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_UNIT_DESERTION</Tag>
+		<English>The military crisis led to the desertion of %d1 units!</English>
+	</TEXT>
 </Civ4GameText>
