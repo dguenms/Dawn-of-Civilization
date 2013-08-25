@@ -125,7 +125,7 @@ class StoredData:
 				    'bMaliGold' : False,
 				    'iColombianTradeGold' : 0,
                                     #------------Stability
-				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
+				    'lStabilityLevels': [con.iStabilityStable for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
 				    'iLastStability' : 0,
 				    'iLastDifference' : 0,
