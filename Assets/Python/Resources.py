@@ -105,12 +105,13 @@ class Resources:
                                 gc.getMap().plot(53, 51).setBonusType(iDye) #France
                                 gc.getMap().plot(53, 55).setBonusType(iDye) #England
 
-		# Leoreth: remove floodplains in Sudan and ivory in Morocco
+		# Leoreth: remove floodplains in Sudan and ivory in Morocco and Tunisia
 		if iGameTurn == getTurnForYear(550):
 			gc.getMap().plot(67, 30).setFeatureType(-1, 0)
 			gc.getMap().plot(67, 31).setFeatureType(-1, 0)
 			
 			gc.getMap().plot(51, 36).setBonusType(-1)
+			gc.getMap().plot(58, 37).setBonusType(-1)
 
 		# Leoreth: replicate silk route in 600 AD
 		if iGameTurn == getTurnForYear(600) and utils.getScenario() == con.i600AD:
