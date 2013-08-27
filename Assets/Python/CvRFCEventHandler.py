@@ -208,25 +208,16 @@ class CvRFCEventHandler:
 		if iOwner == iByzantium and gc.getPlayer(iByzantium).isAlive():
 			if (city.getX(), city.getY()) == (68, 45):
 				if utils.getStabilityLevel(iByzantium) == con.iStabilityCollapsing:
-					if iOwner != utils.getHumanID():
-						if gc.getPlayer(utils.getHumanID()).canContact(iByzantium):
-							CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iOwner).getCivilizationDescription(0) + ' ' + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-						if gc.getGame().getGameTurn() < getTurnForYear(1400):
-							utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, iBarbarian, False)
-						else:
-							utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, -1, False)
-					else:
-						if gc.getPlayer(iByzantium).getNumCities() > 1:
-                                        		CyInterface().addMessage(iByzantium, True, con.iDuration, CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR_HUMAN", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-                                                	utils.pickFragmentation(iByzantium, iIndependent, iIndependent2, -1, True)
-                                                	utils.setStartingStabilityParameters(iByzantium)
-                                                	sd.scriptDict['lGNPold'][iByzantium] = 0
-                                                	sd.scriptDict['lGNPnew'][iByzantium] = 0
+					if gc.getPlayer(utils.getHumanID()).canContact(iByzantium):
+						CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iOwner).getCivilizationDescription(0) + ' ' + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+					sta.completeCollapse(iByzantium)
+					
 							
 		# kill Seljuks
 		if iOwner == iSeljuks and gc.getPlayer(iSeljuks).isAlive() and gc.getGame().getGameTurnYear() >= 1250:
 			if city.isCapital() or gc.getPlayer(iSeljuks).getNumCities() <= 2:
-				utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
+				sta.completeCollapse(iSeljuks)
+				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
 				
 		# Leoreth: relocate capital for AI if reacquired:
 		if utils.getHumanID() != iPlayer and iPlayer < con.iNumPlayers:

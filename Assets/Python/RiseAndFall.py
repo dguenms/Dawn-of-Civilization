@@ -13,6 +13,7 @@ import CityNameManager as cnm
 import Victory as vic
 import DynamicCivs
 from operator import itemgetter
+import Stability as sta
 
 
 ################
@@ -1064,11 +1065,13 @@ class RiseAndFall:
 			
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
-				utils.killAndFragmentCiv(iRome, iIndependent, iIndependent2, -1, False)
+				sta.completeCollapse(iRome)
+				#utils.killAndFragmentCiv(iRome, iIndependent, iIndependent2, -1, False)
 				
 		if iGameTurn == getTurnForYear(-50):
 			if pByzantium.isHuman() and pGreece.isAlive():
-				utils.killAndFragmentCiv(iGreece, iIndependent, iIndependent2, -1, False)
+				sta.completeCollapse(iGreece)
+				#utils.killAndFragmentCiv(iGreece, iIndependent, iIndependent2, -1, False)
 			
                 #Colonists
                 if (iGameTurn == getTurnForYear(-850)):
@@ -1221,7 +1224,8 @@ class RiseAndFall:
 		# Leoreth: make sure Aztecs are dead in 1700 if a civ that spawns from that point is selected
 		if iGameTurn == getTurnForYear(1700)-2:
 			if utils.getHumanID() >= iGermany and pAztecs.isAlive():
-				utils.killAndFragmentCiv(iAztecs, iIndependent, iIndependent2, -1, False)
+				sta.completeCollapse(iAztecs)
+				#utils.killAndFragmentCiv(iAztecs, iIndependent, iIndependent2, -1, False)
 				
 				
                 if utils.getScenario() == con.i3000BC:
@@ -1280,7 +1284,7 @@ class RiseAndFall:
                         self.secession(iGameTurn)
 
 		if iGameTurn % utils.getTurns(15) == 10:
-			self.checkResurrection(iGameTurn)
+			sta.checkResurrection(iGameTurn)
 			
 		# Leoreth: check for scripted rebirths
 		for iCiv in range(con.iNumPlayers):
@@ -1559,7 +1563,9 @@ class RiseAndFall:
                                                                                 iLostCities = iLostCities + 1                                                
                                         if (iLostCities*2 > iNumCities and iNumCities > 0): #if more than one third is captured, the civ collapses
                                                 print ("COLLAPSE BY BARBS", gc.getPlayer(iCiv).getCivilizationAdjective(0))
-                                                utils.pickFragmentation(iCiv, iIndependent, iIndependent2, iBarbarian, False)
+						sta.completeCollapse(iCiv)
+						utils.debugTextPopup('Collapse by barbarians: ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0))
+                                                #utils.pickFragmentation(iCiv, iIndependent, iIndependent2, iBarbarian, False)
 
         def collapseGeneric(self, iGameTurn):
                 lNumCitiesNew = con.l0ArrayTotal #for late start
@@ -1579,7 +1585,9 @@ class RiseAndFall:
                                                                                 bVassal = True
                                                                                 break
                                                                 if (not bVassal):
-                                                                        utils.pickFragmentation(iCiv, iIndependent, iIndependent2, -1, False)
+									sta.completeCollapse(iCiv)
+									utils.debugTextPopup('Generic collapse : ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0))
+                                                                        #utils.pickFragmentation(iCiv, iIndependent, iIndependent2, -1, False)
                                                 else:
                                                         self.setNumCities(iCiv, lNumCitiesNew[iCiv])
 
@@ -1626,7 +1634,9 @@ class RiseAndFall:
                                                                 break
                                                 if (not bVassal):
                                                         print ("COLLAPSE: MOTHERLAND", gc.getPlayer(iCiv).getCivilizationAdjective(0))
-                                                        utils.pickFragmentation(iCiv, iIndependent, iIndependent2, -1, False)
+							utils.debugTextPopup('Collapse motherland: ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0))
+							sta.completeCollapse(iCiv)
+                                                        #utils.pickFragmentation(iCiv, iIndependent, iIndependent2, -1, False)
                                                 return
                         
 
@@ -1804,354 +1814,6 @@ class RiseAndFall:
 						#gc.getPlayer(iPlayer).changeStabilityCategory(con.iStabilityCitiesLost, 2)
 						#gc.getPlayer(iPlayer).changeStability(2) # test DLL
                                         return #just 1 secession per turn
-
-
-	def checkResurrection(self, iGameTurn):
-	
-		iNationalismModifier = min(20, 4 * utils.getCivsWithNationalism())
-		
-		iRand = gc.getGame().getSorenRandNum(iNumPlayers, 'random starting civ')
-		bDeadCivFound = False
-		
-		# iterate all civs starting with a random civ
-		for i in range(iRand, iRand + iNumPlayers):
-			iLoopCiv = i % iNumPlayers
-			bPossible = False
-			iMinNumCities = 2
-			
-			# special case Netherlands: need only one city to respawn (Amsterdam)
-			if iLoopCiv == iNetherlands:
-				iMinNumCities = 1
-			
-			# check if the civ can be reborn at this date
-			if len(con.tResurrectionIntervals[iLoopCiv]) > 0:
-				for tInterval in con.tResurrectionIntervals[iLoopCiv]:
-					iStart, iEnd = tInterval
-					if getTurnForYear(iStart) <= iGameTurn <= getTurnForYear(iEnd):
-						bPossible = True
-						break
-						
-			# Thailand cannot respawn when Khmer is alive and vice versa
-			if iLoopCiv == iThailand and pKhmer.isAlive(): bPossible = False
-			if iLoopCiv == iKhmer and pThailand.isAlive(): bPossible = False
-			
-			# Rome cannot respawn when Italy is alive and vice versa
-			if iLoopCiv == iRome and pItaly.isAlive(): bPossible = False
-			if iLoopCiv == iItaly and pRome.isAlive(): bPossible = False
-			
-			# Greece cannot respawn when Byzantium is alive and vice versa
-			if iLoopCiv == iGreece and pByzantium.isAlive(): bPossible = False
-			if iLoopCiv == iByzantium and pGreece.isAlive(): bPossible = False
-			
-			# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
-			if iLoopCiv == iIndia and pMughals.isAlive(): bPossible = False
-			
-			if bPossible and not gc.getPlayer(iLoopCiv).isAlive() and iGameTurn > utils.getLastTurnAlive(iLoopCiv) + utils.getTurns(20):
-				if con.tRebirth[iLoopCiv] == -1:
-					iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll')
-					if iRespawnRoll + iNationalismModifier - 10 >= con.tResurrectionProb[iLoopCiv]:
-						lCityList = self.getResurrectionCities(iLoopCiv)
-						if len(lCityList) >= iMinNumCities:
-							self.doResurrection(iLoopCiv, lCityList)
-							return
-							
-	def getResurrectionCities(self, iPlayer):
-	
-		pPlayer = gc.getPlayer(iPlayer)
-		teamPlayer = gc.getTeam(iPlayer)
-		iReborn = utils.getReborn(iPlayer)
-		lPotentialCities = []
-		lFlippingCities = []
-		
-		iMinNumCitiesOwner = 3
-		
-		tTopLeft = con.tNormalAreasTL[iReborn][iPlayer]
-		tBottomRight = con.tNormalAreasBR[iReborn][iPlayer]
-		tExceptions = con.tNormalAreasSubtract[iReborn][iPlayer]
-		tCapital = con.tCapitals[iReborn][iPlayer]
-		
-		if con.tRespawnTL[iPlayer] != -1:
-			tTopLeft = con.tRespawnTL[iPlayer]
-			tBottomRight = con.tRespawnBR[iPlayer]
-			tExceptions = ()
-			
-		if con.tRespawnCapitals[iPlayer] != -1:
-			tCapital = con.tRespawnCapitals[iPlayer]
-			
-		for x in range(tTopLeft[0], tBottomRight[0]+1):
-			for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if (x, y) not in tExceptions:
-					plot = gc.getMap().plot(x, y)
-					if plot.isCity():
-						lPotentialCities.append(plot.getPlotCity())
-						
-		for k in range(len(lPotentialCities)):
-			city = lPotentialCities[k]
-			iOwner = city.getOwner()
-			
-			print str(city.getName())
-			
-			# barbarian and minor cities always flip
-			if iOwner >= iNumPlayers:
-				lFlippingCities.append(city)
-				continue
-				
-			iOwnerStability = utils.getStability(iOwner)
-			bCapital = ((city.getX(), city.getY()) == tCapital)
-			
-			# flips are less likely before Nationalism
-			if utils.getCivsWithNationalism() == 0:
-				iOwnerStability += 10
-			elif pPlayer.getCivics(5) == con.iImperialism: # Imperialism effect
-				iOwnerStability += 20
-				
-			if utils.getHumanID() != iOwner:
-				iMinNumCitiesOwner = 2
-				iOwnerStability -= 20
-				
-			if gc.getPlayer(iOwner).getNumCities() >= iMinNumCitiesOwner:
-			
-				# owner stability below -10: city always flips
-				if iOwnerStability < -10:
-					lFlippingCities.append(city)
-					
-				# owner stability below 10: city flips if far away from their capital, or is capital spot of the dead civ
-				elif iOwnerStability < 10:
-					ownerCapital = gc.getPlayer(iOwner).getCapitalCity()
-					iDistance = utils.calculateDistance(city.getX(), city.getY(), ownerCapital.getX(), ownerCapital.getY())
-					if bCapital or iDistance >= 8:
-						lFlippingCities.append(city)
-					
-				# owner stability below 20: only capital spot flips
-				elif iOwnerStability < 20:
-					if bCapital:
-						lFlippingCities.append(city)
-						
-			# if only up to two cities wouldn't flip, they flip as well (but at least one city has to flip already, else the respawn fails)
-			if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0:
-				lFlippingCities = lPotentialCities
-				
-		return lFlippingCities
-		
-	def doResurrection(self, iPlayer, lCityList):
-	
-		pPlayer = gc.getPlayer(iPlayer)
-		teamPlayer = gc.getTeam(iPlayer)
-	
-		self.setRebelCiv(iPlayer)
-		
-		for iOtherCiv in range(con.iNumPlayers):
-			teamPlayer.makePeace(iOtherCiv)
-			
-			if teamPlayer.isVassal(iOtherCiv):
-				gc.getTeam(iOtherCiv).freeVassal(iPlayer)
-				
-			if gc.getTeam(iOtherCiv).isVassal(iPlayer):
-				teamPlayer.freeVassal(iOtherCiv)
-			
-		self.setNumCities(iPlayer, 0)
-		
-		pPlayer.AI_reset()
-		
-		iHuman = utils.getHumanID()
-				
-		# assign technologies
-		lTechs = self.getResurrectionTechs(iPlayer)
-		for iTech in lTechs:
-			teamPlayer.setHasTech(iTech, True, iPlayer, False, False)
-			
-		# determine army size
-		iNumCities = len(lCityList)
-		iGarrison = 2
-		iArmySize = pPlayer.getCurrentEra()
-		
-		self.setLatestRebellionTurn(iPlayer, gc.getGame().getGameTurn())
-			
-		# add former colonies that are still free
-		for iMinor in range(iNumPlayers, con.iNumTotalPlayersB): # including barbarians
-			if gc.getPlayer(iMinor).isAlive():
-				for city in utils.getCityList(iMinor):
-					if city.getOriginalOwner() == iPlayer:
-						x = city.getX()
-						y = city.getY()
-						if pPlayer.getSettlersMaps(67-y, x) >= 90:
-							if city not in lCityList:
-								lCityList.append(city)
-
-		lOwners = []
-		
-		for city in lCityList:
-			iOwner = city.getOwner()
-			pOwner = gc.getPlayer(iOwner)
-			
-			x = city.getX()
-			y = city.getY()
-			
-			bCapital = city.isCapital()
-			
-			if pOwner.isBarbarian() or pOwner.isMinorCiv():
-				utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True)
-				utils.flipUnitsInArea((x-2, y-2), (x+2, y+2), iPlayer, iOwner, True, False)
-		
-			else:
-				utils.cultureManager((x, y), 75, iPlayer, iOwner, False, True, True)
-				utils.pushOutGarrisons((x, y), iOwner)
-				utils.relocateSeaGarrisons((x, y), iOwner)
-				self.setTempFlippingCity((x, y))
-				utils.flipCity((x, y), 0, 0, iPlayer, [iOwner])
-				utils.createGarrisons(self.getTempFlippingCity(), iPlayer, iGarrison)
-				
-			newCity = gc.getMap().plot(x, y).getPlotCity()
-			
-			# Leoreth: rebuild some city infrastructure
-			for iBuilding in range(con.iNumBuildings):
-				if pPlayer.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not utils.isUniqueBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getPrereqReligion() == -1:
-					newCity.setHasRealBuilding(iBuilding, True)
-				
-			if bCapital:
-				self.relocateCapital(iOwner)
-				
-			if iOwner not in lOwners:
-				lOwners.append(iOwner)
-				
-		for iOwner in lOwners:
-			teamOwner = gc.getTeam(iOwner)
-			bOwnerHumanVassal = teamOwner.isVassal(iHuman)
-		
-			if iOwner != iHuman and iOwner != iPlayer and iOwner != iBarbarian:
-				iRand = gc.getGame().getSorenRandNum(100, 'Stop birth')
-				
-				if iRand >= tAIStopBirthThreshold[iOwner] and not bOwnerHumanVassal:
-					teamOwner.declareWar(iPlayer, False, -1)
-				else:
-					teamOwner.makePeace(iPlayer)
-				
-		self.relocateCapital(iPlayer, True)
-		
-		# give the new civ a starting army
-		capital = pPlayer.getCapitalCity()
-		x = capital.getX()
-		y = capital.getY()
-		
-		utils.makeUnit(utils.getBestInfantry(iPlayer), iPlayer, (x,y), 2 * iArmySize + iNumCities)
-		utils.makeUnit(utils.getBestCavalry(iPlayer), iPlayer, (x,y), iArmySize)
-		utils.makeUnit(utils.getBestCounter(iPlayer), iPlayer, (x,y), iArmySize)
-		utils.makeUnit(utils.getBestSiege(iPlayer), iPlayer, (x,y), iArmySize + iNumCities)
-		
-		# set state religion based on religions in the area
-		self.setStateReligion(iPlayer)
-			
-		CyInterface().addMessage(iHuman, True, con.iDuration, CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pPlayer.getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
-		
-		if iHuman in lOwners:
-			self.rebellionPopup(iPlayer)
-			
-		utils.setBaseStabilityLastTurn(iPlayer, 0)
-		utils.setStability(iPlayer, 10)
-		#pPlayer.changeStabilityCategory(con.iStabilityDifficulty, 10)
-		
-		utils.setPlagueCountdown(iPlayer, -10)
-		utils.clearPlague(iPlayer)
-		self.convertBackCulture(iPlayer)
-		
-		# resurrection leaders
-		if iPlayer in con.resurrectionLeaders:
-			if pPlayer.getLeader() != con.resurrectionLeaders[iPlayer]:
-				pPlayer.setLeader(con.resurrectionLeaders[iPlayer])
-				
-		# Leoreth: report to dynamic civs
-		dc.onCivRespawn(iPlayer, lOwners)
-		
-		return
-		
-	def getResurrectionTechs(self, iPlayer):
-		pPlayer = gc.getPlayer(iPlayer)
-		iCurrentEra = gc.getGame().getCurrentEra()
-		lTechList = []
-		lSourceCivs = []
-		
-		# same tech group
-		for lRegionList in con.lTechGroups:
-			if iPlayer in lRegionList:
-				for iPeer in lRegionList:
-					if iPeer != iPlayer and gc.getPlayer(iPeer).isAlive():
-						lSourceCivs.append(iPeer)
-				
-		# direct neighbors (India can benefit from England etc), can count twice
-		for iPeer in range(con.iNumPlayers):
-			if iPeer != iPlayer and gc.getPlayer(iPeer).isAlive():
-				if utils.isNeighbor(iPlayer, iPeer):
-					lSourceCivs.append(iPeer)
-					
-		# use independents as source civs in case no other can be found
-		if len(lSourceCivs) == 0:
-			lSourceCivs.append(iIndependent)
-			lSourceCivs.append(iIndependent2)
-		
-		for iTech in range(con.iNumTechs):
-			
-			# all techs from previous eras for free
-			if gc.getTechInfo(iTech).getEra() < iCurrentEra:
-				lTechList.append(iTech)
-				continue
-				
-			# at least half of the source civs know this technology
-			iCount = 0
-			for iOtherCiv in lSourceCivs:
-				if gc.getTeam(iOtherCiv).isHasTech(iTech):
-					iCount += 1
-					
-			if 2 * iCount >= len(lSourceCivs):
-				lTechList.append(iTech)
-				
-		return lTechList
-		
-	def relocateCapital(self, iPlayer, bResurrection = False):
-		tCapital = tCapitals[utils.getReborn(iPlayer)][iPlayer]
-		oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
-		
-		if bResurrection and con.tRespawnCapitals[iPlayer] != -1:
-			tCapital = con.tRespawnCapitals[iPlayer]
-			
-		x, y = tCapital
-		if gc.getMap().plot(x, y).isCity():
-			newCapital = gc.getMap().plot(x, y).getPlotCity()
-			
-		else:
-			lBestCities = [(city, max(0, 500-city.getGameTurnFounded()) + city.getPopulation()*5) for city in utils.getCityList(iPlayer)]
-			lBestCities.sort(key=itemgetter(1), reverse=True)
-			
-			newCapital = lBestCities[0][0]
-			
-		oldCapital.setHasRealBuilding(con.iPalace, False)
-		newCapital.setHasRealBuilding(con.iPalace, True)
-
-        def convertBackCulture(self, iCiv):
-                tTopLeft = tNormalAreasTL[utils.getReborn(iCiv)][iCiv]
-                tBottomRight = tNormalAreasBR[utils.getReborn(iCiv)][iCiv]  
-
-		if con.tRespawnTL[iCiv] != -1:
-			tTopLeft = con.tRespawnTL[iCiv]
-			tBottomRight = con.tRespawnBR[iCiv]
-			
-		for x in range(tTopLeft[0], tBottomRight[0]+1):
-			for y in range(tTopLeft[1], tBottomRight[1]+1):
-				plot = gc.getMap().plot(x, y)
-				if plot.isCity():
-					city = plot.getPlotCity()
-					if city.getOwner() == iCiv:
-						iCulture = 0
-						for iMinor in range(iNumPlayers, con.iNumTotalPlayersB):
-							iCulture += city.getCulture(iMinor)
-							city.setCulture(iMinor, 0, True)
-						city.changeCulture(iCiv, iCulture, True)
-				elif plot.isCityRadius() and plot.getOwner() == iCiv:
-					iCulture = 0
-					for iMinor in range(iNumPlayers, con.iNumTotalPlayersB):
-						iCulture += plot.getCulture(iMinor)
-						plot.setCulture(iMinor, 0, True)
-					plot.changeCulture(iCiv, iCulture, True)
-					
 					
         def processConstantinople(self):
                 asiaID = gc.getMap().plot(69, 44).area().getID()
@@ -2269,7 +1931,8 @@ class RiseAndFall:
 		
 		if iCiv == iTurkey:
 			if pSeljuks.isAlive():
-				utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
+				sta.completeCollapse(iSeljuks)
+				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
                 
                 lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina]
 		
@@ -3805,7 +3468,7 @@ class RiseAndFall:
 				utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(con.iArcher, iCiv, tSeaPlot, 1)
 		if iCiv == iMoors:
-			utils.createSettlers(iCiv, 1)
+			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iSpearman, iCiv, tPlot, 1)
