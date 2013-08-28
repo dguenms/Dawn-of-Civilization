@@ -48,7 +48,7 @@ def onCityAcquired(city, iOwner, iPlayer):
 		checkBarbarianCollapse(iOwner)
 	
 def onCityRazed(iPlayer):
-	if utils.getHumanID() == iPlayer: checkStability(iPlayer, False, -10)
+	if utils.getHumanID() == iPlayer: checkStability(iPlayer)
 	
 def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
@@ -207,7 +207,7 @@ def checkLostCoreCollapse(iPlayer):
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		completeCollapse(iPlayer)
 
-def checkStability(iPlayer, bPositive = False, iModifier = 0):
+def checkStability(iPlayer, bPositive = False):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	
@@ -248,7 +248,7 @@ def checkStability(iPlayer, bPositive = False, iModifier = 0):
 	sd.setLastDifference(0)
 	
 	# it's easier to lose stability and harder to gain it at higher levels -> prevent "falling through the levels"
-	iThreshold = 5 * (iStabilityLevel - 2) - iModifier - 5
+	iThreshold = 5 * (iStabilityLevel - 2) - 5
 	
 	if iGameTurn > getTurnForYear(con.tFall[iPlayer]):
 		iThreshold += 5 * iStabilityLevel
