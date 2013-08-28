@@ -217,5 +217,7 @@ void CyTeamPythonInterface()
 
 		// Leoreth
 		.def("setOpenBorders", &CyTeam::setOpenBorders, "void (int eTeam, bool bNewValue")
+		.def("setDefensivePact", &CyTeam::setDefensivePact, "void (int eTeam, bool bNewValue")
+		.def("isCapitulated", &CyTeam::isCapitulated, "bool ()")
 		;
 }

@@ -42,7 +42,7 @@
 			<iAnimalBonus>-20</iAnimalBonus>
 			<iBarbarianBonus>-10</iBarbarianBonus>
 			<iAIAnimalBonus>-20</iAIAnimalBonus>
-			<iAIBarbarianBonus>20</iAIBarbarianBonus>
+			<iAIBarbarianBonus>0</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -54,7 +54,7 @@
 			<iAIDeclareWarProb>120</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>110</iAIGrowthPercent>
-			<iAITrainPercent>125</iAITrainPercent>
+			<iAITrainPercent>100</iAITrainPercent>
 			<iAIWorldTrainPercent>110</iAIWorldTrainPercent>
 			<iAIConstructPercent>115</iAIConstructPercent>
 			<iAIWorldConstructPercent>120</iAIWorldConstructPercent>
@@ -143,7 +143,7 @@
 			<iAnimalBonus>-10</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>-10</iAIAnimalBonus>
-			<iAIBarbarianBonus>25</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-10</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -153,9 +153,9 @@
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
 			<iBarbarianDefenders>2</iBarbarianDefenders>
 			<iAIDeclareWarProb>140</iAIDeclareWarProb>
-			<iAIWorkRateModifier>20</iAIWorkRateModifier>
+			<iAIWorkRateModifier>25</iAIWorkRateModifier>
 			<iAIGrowthPercent>90</iAIGrowthPercent>
-			<iAITrainPercent>110</iAITrainPercent>
+			<iAITrainPercent>90</iAITrainPercent>
 			<iAIWorldTrainPercent>90</iAIWorldTrainPercent>
 			<iAIConstructPercent>85</iAIConstructPercent>
 			<iAIWorldConstructPercent>100</iAIWorldConstructPercent>
@@ -231,7 +231,7 @@
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>10</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>30</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-20</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -243,7 +243,7 @@
 			<iAIDeclareWarProb>160</iAIDeclareWarProb>
 			<iAIWorkRateModifier>50</iAIWorkRateModifier>
 			<iAIGrowthPercent>70</iAIGrowthPercent>
-			<iAITrainPercent>100</iAITrainPercent>
+			<iAITrainPercent>80</iAITrainPercent>
 			<iAIWorldTrainPercent>70</iAIWorldTrainPercent>
 			<iAIConstructPercent>65</iAIConstructPercent>
 			<iAIWorldConstructPercent>80</iAIWorldConstructPercent>

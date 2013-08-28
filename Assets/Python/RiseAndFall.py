@@ -733,52 +733,15 @@ class RiseAndFall:
 		
 	def set3000BCStability(self):
 	
-		if utils.getHumanID() != iChina:
-			utils.setStability(iChina, utils.getStability(iChina) + 2)
-			pChina.changeStabilityCategory(con.iStabilityDifficulty, 2)
-		if utils.getHumanID() != iIndia:
-			utils.setStability(iIndia, utils.getStability(iIndia) + 2)
-			pIndia.changeStabilityCategory(con.iStabilityDifficulty, 2)
+		return
 			
 	def set600ADStability(self):
 	
-		if utils.getHumanID() != iVikings:
-			utils.setStability(iVikings, utils.getStability(iVikings) + 2)
-			pVikings.changeStabilityCategory(con.iStabilityDifficulty, 2)
-		if utils.getHumanID() != iChina:
-			utils.setStability(iChina, utils.getStability(iChina) + 3)
-			pChina.changeStabilityCategory(con.iStabilityDifficulty, 3)
-		if utils.getHumanID() != iJapan:
-			utils.setStability(iJapan, utils.getStability(iJapan) + 4)
-			pJapan.changeStabilityCategory(con.iStabilityDifficulty, 4)
-			
+		return
+		
 	def set1700ADStability(self):
 	
-		utils.setStability(iTurkey, utils.getStability(iTurkey) + 15)
-		pChina.changeStabilityCategory(con.iStabilityDifficulty, 15)
-		
-		utils.setStability(iSpain, utils.getStability(iSpain) + 15)
-		pSpain.changeStabilityCategory(con.iStabilityDifficulty, 15)
-		
-		utils.setStability(iEngland, utils.getStability(iEngland) + 12)
-		pEngland.changeStabilityCategory(con.iStabilityDifficulty, 12)
-		
-		utils.setStability(iNetherlands, utils.getStability(iNetherlands) + 4)
-		pNetherlands.changeStabilityCategory(con.iStabilityDifficulty, 4)
-		
-		utils.setStability(iPortugal, utils.getStability(iPortugal) + 6)
-		pPortugal.changeStabilityCategory(con.iStabilityDifficulty, 6)
-		
-		utils.setStability(iHolyRome, utils.getStability(iHolyRome) - 5)
-		pHolyRome.changeStabilityCategory(con.iStabilityDifficulty, -5)
-
-		utils.setStability(iRussia, utils.getStability(iRussia) + 6)
-		pRussia.changeStabilityCategory(con.iStabilityDifficulty, 6)
-		
-		for iPlayer in range(con.iNumPlayers):
-			if utils.getHumanID() == iPlayer: continue
-			utils.setStability(iPlayer, utils.getStability(iPlayer) + 10)
-			gc.getPlayer(iPlayer).changeStabilityCategory(con.iStabilityDifficulty, 10)
+		return
 
 	def invalidateUHVs(self):
 	
@@ -1274,12 +1237,12 @@ class RiseAndFall:
 #                        self.fragmentBarbarians(iGameTurn)
                         
                 #fall of civs
-                if (iGameTurn >= getTurnForYear(200) and iGameTurn % utils.getTurns(4) == 0):
-                        self.collapseByBarbs(iGameTurn)                                        
-                if (iGameTurn >= getTurnForYear(-2000) and iGameTurn % utils.getTurns(18) == 0): #used to be 15 in vanilla, because we must give some time for vassal states to form
-                        self.collapseGeneric(iGameTurn)
-                if (iGameTurn >= getTurnForYear(-2000) and iGameTurn % utils.getTurns(13) == 7): #used to be 8 in vanilla, because we must give some time for vassal states to form
-                        self.collapseMotherland(iGameTurn)
+                #if (iGameTurn >= getTurnForYear(200) and iGameTurn % utils.getTurns(4) == 0):
+                #        self.collapseByBarbs(iGameTurn)                                        
+                #if (iGameTurn >= getTurnForYear(-2000) and iGameTurn % utils.getTurns(18) == 0): #used to be 15 in vanilla, because we must give some time for vassal states to form
+                #        self.collapseGeneric(iGameTurn)
+                #if (iGameTurn >= getTurnForYear(-2000) and iGameTurn % utils.getTurns(13) == 7): #used to be 8 in vanilla, because we must give some time for vassal states to form
+                #        self.collapseMotherland(iGameTurn)
                 if (iGameTurn > getTurnForYear(300) and iGameTurn % utils.getTurns(10) == 6):
                         self.secession(iGameTurn)
 
@@ -1421,14 +1384,12 @@ class RiseAndFall:
 		# convert plot culture
 		self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight, tExceptions)
 		
-		# adjust starting stability
-		#utils.setBaseStabilityLastTurn(iCiv, 0)
-		#utils.setStability(iCiv, 10)
-		#gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, 10)
-		
 		# reset plague
 		utils.setPlagueCountdown(iCiv, -10)
 		utils.clearPlague(iCiv)
+		
+		# adjust starting stability
+		sd.setStabilityLevel(iCiv, con.iStabilityStable)
 		
 		# ask human player for flips
 		if iHumanCities > 0 and iCiv != utils.getHumanID():
@@ -1743,12 +1704,8 @@ class RiseAndFall:
                 for j in range(iRndnum, iRndnum + iNumPlayers):
                         iPlayer = j % iNumPlayers   
                         if (gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(con.tBirth[iPlayer]) + utils.getTurns(30)):
-				iStability = utils.getStability(iPlayer)
 				
-				#if gc.getPlayer(iPlayer).getCivics(5) == con.iImperialism:
-				#	iStability += 15
-				
-                                if (iStability >= -400 and iStability < -20): #secession (-400 for any very low value, instead of -40)
+				if sd.getStabilityLevel(iPlayer) == con.iStabilityCollapsing:
 
                                         cityList = []
                                         apCityList = PyPlayer(iPlayer).getCityList()
@@ -1809,11 +1766,8 @@ class RiseAndFall:
                                                 if (iPlayer == utils.getHumanID()):
                                                         CyInterface().addMessage(iPlayer, True, con.iDuration, splittingCity.getName() + " " + \
                                                                                            CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(con.iOrange), -1, -1, True, True)
-                                                #print ("SECESSION", gc.getPlayer(iPlayer).getCivilizationAdjective(0), splittingCity.getName()) #causes c++ exception??
-                                                utils.setStability(iPlayer, utils.getStability(iPlayer) + 2) #to counterbalance the stability hit on city acquired event, leading to a chain reaction
-						#gc.getPlayer(iPlayer).changeStabilityCategory(con.iStabilityCitiesLost, 2)
-						#gc.getPlayer(iPlayer).changeStability(2) # test DLL
-                                        return #just 1 secession per turn
+                                                
+                                        return
 					
         def processConstantinople(self):
                 asiaID = gc.getMap().plot(69, 44).area().getID()
@@ -1939,22 +1893,22 @@ class RiseAndFall:
 		# Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
                         if iCiv == iByzantium:
-				if not pRome.isAlive() or pGreece.isAlive() or (utils.getHumanID() == iRome and utils.getStability(iRome) >= 20):
+				if not pRome.isAlive() or pGreece.isAlive() or (utils.getHumanID() == iRome and utils.getStabilityLevel(iRome) == con.iStabilitySolid):
 					return
 
 			elif iCiv == iThailand:
 				if utils.getHumanID() != iKhmer:
-					if utils.getStability(iKhmer) > 10:
+					if sd.getStabilityLevel(iKhmer) > con.iStabilityShaky:
 						return
 				else:
-					if utils.getStability(iKhmer) > -10:
+					if sd.getStabilityLevel(iKhmer) > con.iStabilityUnstable:
 						return
 						
 			if iCiv in [iArgentina, iBrazil]:
 				iColonyPlayer = utils.getColonyPlayer(iCiv)
 				if iColonyPlayer < 0: return
 				elif iColonyPlayer not in [iArgentina, iBrazil]:
-					if utils.getStability(iColonyPlayer) >= 20:
+					if sd.getStabilityLevel(iColonyPlayer) > con.iStabilityStable:
 						return
 						
 		if utils.getHumanID() != iCiv and iCiv == iItaly:
@@ -2708,9 +2662,6 @@ class RiseAndFall:
 					utils.makeUnit(con.iWorker, iCiv, tSeaPlot, 1)
 					
 					self.changeColonistsAlreadyGiven(iCiv, 1)
-					
-					utils.setStability(iCiv, utils.getStability(iCiv) + 1)
-					#pCiv.changeStabilityCategory(con.iStabilityDifficulty, 1)
 					
 
         def onFirstContact(self, iTeamX, iHasMetTeamY):
@@ -5333,11 +5284,7 @@ class RiseAndFall:
                                 if (gc.getPlayer(iLoop).isAlive()):
                                         if (iLoop == utils.getHumanID()):
                                                 bHuman = True                                        
-                                        utils.setStability(iLoop, utils.getStability(iLoop)-3)
-					#gc.getPlayer(iLoop).changeStabilityCategory(con.iStabilityHit, -3)
-					#gc.getPlayer(iLoop).changeStability(-3)
-                        if (bHuman):
-                                utils.setStabilityParameters(con.iParDiplomacyE, utils.getStabilityParameters(con.iParDiplomacyE)-3)
+                                        utils.setStabilityLevel(iLoop, max(0, utils.getStabilityLevel(iLoop) - 1))
 
 	def arabianSpawn(self):
         	plotBaghdad = gc.getMap().plot(77,40)

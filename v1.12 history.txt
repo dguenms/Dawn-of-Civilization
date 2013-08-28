@@ -47,3 +47,4 @@
 	# at every check your stability level can increase or decrease depending on your value, and a crisis may occur
 	# the severity of a crisis depends on your stability level, while the effects depend on the stability category with the lowest value
 	# a terminal crisis (possible only at unstable or collapsing) results in a complete collapse
+# adjusted difficulty settings to increase AI unit production and remove their maluses against barbarians

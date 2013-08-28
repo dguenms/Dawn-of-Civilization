@@ -125,7 +125,6 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiEspionageSpendingWeightAgainstTeam);
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
-	SAFE_DELETE_ARRAY(m_aiStabilityCategories); //Leoreth
 }
 
 
@@ -166,11 +165,6 @@ void CvPlayer::init(PlayerTypes eID)
 	if ((GC.getInitCore().getSlotStatus(getID()) == SS_TAKEN) || (GC.getInitCore().getSlotStatus(getID()) == SS_COMPUTER))
 	{
 		setAlive(true);
-
-		//resetStabilityCategories(); // Leoreth
-
-		//sprintf(szOut, "Player %d set alive reached\n", eID);
-		//GC.getGameINLINE().logMsg(szOut);
 
 		if (GC.getGameINLINE().isOption(GAMEOPTION_RANDOM_PERSONALITIES))
 		{
@@ -354,8 +348,6 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_pabLoyalMember);
 
 	SAFE_DELETE_ARRAY(m_paeCivics);
-
-	//SAFE_DELETE_ARRAY(m_aiStabilityCategories); //Leoreth
 
 	m_triggersFired.clear();
 
@@ -18627,18 +18619,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 		}
 	}
 
-	/*{
-		clearStabilityList();
-		StabilityList::_Alloc::size_type iSize;
-		pStream->Read(&iSize);
-		for (StabilityList::_Alloc::size_type i = 0; i < iSize; i++)
-		{
-			char* string;
-			int iValue;
-			changeStabilityCategory(string, iValue);
-		}
-	}*/
-
 	{
 		uint iSize;
 		pStream->Read(&iSize);
@@ -24757,26 +24737,6 @@ int CvPlayer::getLatestRebellionTurn()
 void CvPlayer::setLatestRebellionTurn(int iNewValue)
 {
 	m_iLatestRebellionTurn = iNewValue;
-}
-
-int CvPlayer::getStabilityCategory(int i)
-{
-	return m_aiStabilityCategories[i];
-}
-
-int* CvPlayer::getStabilityCategoryArray()
-{
-	return m_aiStabilityCategories;
-}
-
-void CvPlayer::setStabilityCategory(int iStabilityType, int iValue)
-{
-	m_aiStabilityCategories[iStabilityType] = iValue;
-}
-
-void CvPlayer::changeStabilityCategory(int iStabilityType, int iChange)
-{
-	m_aiStabilityCategories[iStabilityType] += iChange;
 }
 
 int CvPlayer::getPersecutionCountdown()

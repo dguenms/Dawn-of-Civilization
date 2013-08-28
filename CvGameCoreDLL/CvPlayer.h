@@ -1122,11 +1122,6 @@ public:
 	int getLatestRebellionTurn();
 	void setLatestRebellionTurn(int iNewValue);
 
-	int getStabilityCategory(int i);
-	int* getStabilityCategoryArray();
-	void changeStabilityCategory(int iStabilityType, int iChange);
-	void setStabilityCategory(int iStabilityType, int iValue);
-
 	EraTypes getSoundtrackEra();
 	
 	int getPersecutionCountdown();
@@ -1288,8 +1283,6 @@ protected:
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;
-
-	int* m_aiStabilityCategories; //Leoreth
 
 	bool* m_abFeatAccomplished;
 	bool* m_abOptions;
