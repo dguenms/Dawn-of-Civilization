@@ -164,28 +164,12 @@ tNWIndiaBR = (91, 43)
 lSiberianCoast = [(109, 50), (109, 51), (110, 51), (111, 51), (112, 52), (114, 54), (113, 55), (111, 54), (111, 55), (110, 55), (110, 58), (111, 58)]
 
 
-def getStability(argsList):
-        return utils.getStability(argsList[0])
-	
 def getStabilityLevel(argsList):
 	return sd.getStabilityLevel(argsList[0])
 	
 def countAchievedGoals(argsList):
         return utils.countAchievedGoals(argsList[0])
 	
-def resetStabilityParameters(argsList):
-        for i in range(con.iNumStabilityParameters):
-                utils.setStabilityParameters(i, 0)
-		gc.getPlayer(i).setStability(0) # test stability
-        utils.setLastRecordedStabilityStuff(0, 0)
-        utils.setLastRecordedStabilityStuff(1, 0)
-        utils.setLastRecordedStabilityStuff(2, 0)
-        utils.setLastRecordedStabilityStuff(3, 0)
-        utils.setLastRecordedStabilityStuff(4, 0)
-        utils.setLastRecordedStabilityStuff(5, 0)
-                
-#Rhye - end
-
 
 def toggleSetNoScreens():
 	global g_bIsScreenActive

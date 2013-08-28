@@ -130,22 +130,7 @@ class StoredData:
 				    'iLastStability' : 0,
 				    'iLastDifference' : 0,
 				    'lStabilityCategoryValues' : [0, 0, 0, 0, 0],
-				    # outdated
-                                    'lBaseStabilityLastTurn': [0 for i in range(con.iNumPlayers)],
-                                    'lPartialBaseStability': [0 for i in range(con.iNumPlayers)],
-                                    'lStability': [0 for i in range(con.iNumPlayers)],
-                                    'lOwnedPlotsLastTurn': [0 for i in range(con.iNumPlayers)],
-                                    'lOwnedOuterPlotsLastTurn': [0 for i in range(con.iNumPlayers)],
-                                    'lOwnedForeignCitiesLastTurn': [0 for i in range(con.iNumPlayers)],
-                                    'lOwnedCitiesLastTurn': [0 for i in range(con.iNumPlayers)],
-                                    'lCombatResultTempModifier': [0 for i in range(con.iNumPlayers)],
-                                    'lGNPold': [0 for i in range(con.iNumPlayers)],
-                                    'lGNPnew': [0 for i in range(con.iNumPlayers)],
-                                    'lGreatDepressionCountdown': [0 for i in range(con.iNumPlayers)],
-                                    'lStatePropertyCountdown': [0 for i in range(con.iNumPlayers)],
-                                    'lDemocracyCountdown': [0 for i in range(con.iNumPlayers)],
-                                    'lStabilityParameters': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], #2+3+2+3+3
-                                    'lLastRecordedStabilityStuff': [0, 0, 0, 0, 0, 0], # total + 5 parameters
+				    'lNumPreviousCities' : [0 for i in range(con.iNumPlayers)],
 				}
                 self.save()
 		
@@ -178,6 +163,12 @@ class StoredData:
 		
 	def setStabilityCategoryValue(self, iCategory, iNewValue):
 		self.scriptDict['lStabilityCategoryValues'][iCategory] = iNewValue
+		
+	def getNumPreviousCities(self, iPlayer):
+		return self.scriptDict['lNumPreviousCities'][iPlayer]
+		
+	def setNumPreviousCities(self, iPlayer, iNewValue):
+		self.scriptDict['lNumPreviousCities'][iPlayer] = iNewValue
 
 # All modules import the following single instance, not the class
 

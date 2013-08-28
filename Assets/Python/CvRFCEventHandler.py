@@ -585,7 +585,7 @@ class CvRFCEventHandler:
                 self.com.checkTurn(iGameTurn)
 		self.corp.checkTurn(iGameTurn)
 		
-		sta.checkTurn()
+		sta.checkTurn(iGameTurn)
 		
 		if iGameTurn % 10 == 0:
                         self.dc.checkTurn(iGameTurn)

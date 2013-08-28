@@ -225,6 +225,8 @@ public:
 
 	// Leoreth
 	void setOpenBorders(int eTeam, bool bNewValue);
+	void setDefensivePact(int eTeam, bool bNewValue);
+	bool isCapitulated();
 
 protected:
 

@@ -186,7 +186,7 @@ class Companies:
 		# various bonuses
 		if iCompany == iSilkRoute:
 			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0 or city.getNumRealBuilding(con.iIranianCaravanserai) > 0 or city.getNumRealBuilding(con.iKongoMbwadi) > 0 or city.getNumRealBuilding(con.iPhoenicianGlassmaker) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iGrocer) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iGrocer) > 0 or city.getNumRealBuilding(con.iBrazilianFazenda) > 0 or city.getNumRealBuilding(con.iColombianHacienda) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
 
 		elif iCompany == iTradingCompany:
@@ -197,13 +197,13 @@ class Companies:
 
 		elif iCompany == iCerealIndustry:
 			if city.getNumRealBuilding(con.iGranary) > 0 or city.getNumRealBuilding(con.iIncanTerrace) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iGrocer) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iGrocer) > 0 or city.getNuamRealBuilding(con.iBrazilianFazenda) > 0 or city.getNumRealBuilding(con.iColombianHacienda) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0 or city.getNumRealBuilding(con.iArgentineRefrigerationPlant) > 0: iValue += 1
 
 		elif iCompany == iFishingIndustry:
 			if city.getNumRealBuilding(con.iLighthouse) > 0 or city.getNumRealBuilding(con.iVikingTradingPost) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0 or city.getNumRealBuilding(con.iArgentineRefrigerationPlant) > 0: iValue += 1
 			
 		elif iCompany == iTextileIndustry:
 			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0 or city.getNumRealBuilding(con.iIranianCaravanserai) > 0 or city.getNumRealBuilding(con.iKongoMbwadi) > 0 or city.getNumRealBuilding(con.iPhoenicianGlassmaker) > 0: iValue += 1

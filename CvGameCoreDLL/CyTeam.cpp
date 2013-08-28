@@ -993,3 +993,14 @@ void CyTeam::setOpenBorders(int eTeam, bool bNewValue)
 	if (m_pTeam)
 		m_pTeam->setOpenBorders((TeamTypes)eTeam, bNewValue);
 }
+
+void CyTeam::setDefensivePact(int eTeam, bool bNewValue)
+{
+	if (m_pTeam)
+		m_pTeam->setDefensivePact((TeamTypes)eTeam, bNewValue);
+}
+
+bool CyTeam::isCapitulated()
+{
+	return m_pTeam ? m_pTeam->isCapitulated() : false;
+}

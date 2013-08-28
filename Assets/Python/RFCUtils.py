@@ -61,36 +61,6 @@ class RFCUtils:
 
         def setTempFlippingCity( self, tNewValue ):
                 sd.scriptDict['tempFlippingCity'] = tNewValue
-
-        def getStability( self, iCiv ):
-                return sd.scriptDict['lStability'][iCiv]
-
-        def setStability( self, iCiv, iNewValue ):
-                sd.scriptDict['lStability'][iCiv] = iNewValue
-
-        def getBaseStabilityLastTurn( self, iCiv ):
-                return sd.scriptDict['lBaseStabilityLastTurn'][iCiv]
-
-        def setBaseStabilityLastTurn( self, iCiv, iNewValue ):
-                sd.scriptDict['lBaseStabilityLastTurn'][iCiv] = iNewValue
-
-        def getStabilityParameters( self, iParameter ):
-                return sd.scriptDict['lStabilityParameters'][iParameter]
-
-        def setStabilityParameters( self, iParameter, iNewValue ):
-                sd.scriptDict['lStabilityParameters'][iParameter] = iNewValue
-
-        def getGreatDepressionCountdown( self, iCiv ):
-                return sd.scriptDict['lGreatDepressionCountdown'][iCiv]
-
-        def setGreatDepressionCountdown( self, iCiv, iNewValue ):
-                sd.scriptDict['lGreatDepressionCountdown'][iCiv] = iNewValue
-                                
-        def getLastRecordedStabilityStuff( self, iParameter ):
-                return sd.scriptDict['lLastRecordedStabilityStuff'][iParameter]
-
-        def setLastRecordedStabilityStuff( self, iParameter, iNewValue ):
-                sd.scriptDict['lLastRecordedStabilityStuff'][iParameter] = iNewValue
                 
         #Plague
         def getPlagueCountdown( self, iCiv ):
@@ -116,123 +86,7 @@ class RFCUtils:
 		return sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
 
 #######################################
-
-        #Stability, RiseNFall, CvFinanceAdvisor
-        def setParameter(self, iPlayer, iParameter, bPreviousAmount, iAmount):
-            if (gc.getPlayer(iPlayer).isHuman()):
-                    if (bPreviousAmount):
-                            self.setStabilityParameters(iParameter, self.getStabilityParameters(iParameter) + iAmount)
-                    else:
-                            self.setStabilityParameters(iParameter, 0 + iAmount)
-
-        def setStartingStabilityParameters(self, iCiv):
-		return
-	
-                iHandicap = gc.getGame().getHandicapType()
-
-                for i in range(con.iNumStabilityParameters):
-                        self.setStabilityParameters(i, 0)
-
-                if (iHandicap == 0):
-                        self.setStability(iCiv, 20)
-			gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, 20)
-			#gc.getPlayer(iCiv).setStability(20) # test DLL
-                        self.setParameter(iCiv, con.iParCitiesE, True, 4)
-                        self.setParameter(iCiv, con.iParCivicsE, True, 4)
-                        self.setParameter(iCiv, con.iParDiplomacyE, True, 4)
-                        self.setParameter(iCiv, con.iParEconomyE, True, 4)
-                        self.setParameter(iCiv, con.iParExpansionE, True, 4) 
-                elif (iHandicap == 1):
-                        self.setStability(iCiv, 5)
-			gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, 5)
-			#gc.getPlayer(iCiv).setStability(5) # test DLL
-                        self.setParameter(iCiv, con.iParCitiesE, True, 1)
-                        self.setParameter(iCiv, con.iParCivicsE, True, 1)
-                        self.setParameter(iCiv, con.iParDiplomacyE, True, 1)
-                        self.setParameter(iCiv, con.iParEconomyE, True, 1)
-                        self.setParameter(iCiv, con.iParExpansionE, True, 1) 
-                elif (iHandicap == 2):
-                        self.setStability(iCiv, -10)
-			gc.getPlayer(iCiv).changeStabilityCategory(con.iStabilityDifficulty, -10)
-			#gc.getPlayer(iCiv).setStability(-10) # test DLL
-                        self.setParameter(iCiv, con.iParCitiesE, True, -2)
-                        self.setParameter(iCiv, con.iParCivicsE, True, -2)
-                        self.setParameter(iCiv, con.iParDiplomacyE, True, -2)
-                        self.setParameter(iCiv, con.iParEconomyE, True, -2)
-                        self.setParameter(iCiv, con.iParExpansionE, True, -2) 
-
-
-
-
-        #CvFinanceAdvisor
-        def getParCities(self):
-            if (self.getStabilityParameters(con.iParCitiesE) > 7):
-                    return self.getStabilityParameters(con.iParCities3) + self.getStabilityParameters(con.iParCitiesE) - gc.getActivePlayer().getCurrentEra()
-            elif (self.getStabilityParameters(con.iParCitiesE) < -7):
-                    return self.getStabilityParameters(con.iParCities3) + self.getStabilityParameters(con.iParCitiesE) + gc.getActivePlayer().getCurrentEra()
-            else:
-                    return self.getStabilityParameters(con.iParCities3) + self.getStabilityParameters(con.iParCitiesE)
-
-        def getParCivics(self):
-            if (self.getStabilityParameters(con.iParCivicsE) > 7):
-                    return self.getStabilityParameters(con.iParCivics3) + self.getStabilityParameters(con.iParCivics1) + self.getStabilityParameters(con.iParCivicsE) - gc.getActivePlayer().getCurrentEra()
-            elif (self.getStabilityParameters(con.iParCivicsE) < -7):
-                    return self.getStabilityParameters(con.iParCivics3) + self.getStabilityParameters(con.iParCivics1) + self.getStabilityParameters(con.iParCivicsE) + gc.getActivePlayer().getCurrentEra()
-            else:
-                    return self.getStabilityParameters(con.iParCivics3) + self.getStabilityParameters(con.iParCivics1) + self.getStabilityParameters(con.iParCivicsE)
-
-        def getParDiplomacy(self):
-            if (self.getStabilityParameters(con.iParDiplomacyE) > 7):
-                    return self.getStabilityParameters(con.iParDiplomacy3) + self.getStabilityParameters(con.iParDiplomacyE) - gc.getActivePlayer().getCurrentEra()
-            elif (self.getStabilityParameters(con.iParDiplomacyE) < -7):
-                    return self.getStabilityParameters(con.iParDiplomacy3) + self.getStabilityParameters(con.iParDiplomacyE) + gc.getActivePlayer().getCurrentEra()
-            else:
-                    return self.getStabilityParameters(con.iParDiplomacy3) + self.getStabilityParameters(con.iParDiplomacyE)
-
-                
-        def getParEconomy(self):
-            #print ("ECO", self.getStabilityParameters(con.iParEconomy3), self.getStabilityParameters(con.iParEconomy1), self.getStabilityParameters(con.iParEconomyE))
-            if (self.getStabilityParameters(con.iParEconomyE) > 7):
-                    return self.getStabilityParameters(con.iParEconomy3) + self.getStabilityParameters(con.iParEconomy1) + self.getStabilityParameters(con.iParEconomyE) - gc.getActivePlayer().getCurrentEra()
-            elif (self.getStabilityParameters(con.iParEconomyE) < -7):
-                    return self.getStabilityParameters(con.iParEconomy3) + self.getStabilityParameters(con.iParEconomy1) + self.getStabilityParameters(con.iParEconomyE) + gc.getActivePlayer().getCurrentEra()
-            else:
-                    return self.getStabilityParameters(con.iParEconomy3) + self.getStabilityParameters(con.iParEconomy1) + self.getStabilityParameters(con.iParEconomyE)
-                
-        def getParExpansion(self):
-            if (self.getStabilityParameters(con.iParExpansionE) > 7):
-                    return self.getStabilityParameters(con.iParExpansion3) + self.getStabilityParameters(con.iParExpansion1) + self.getStabilityParameters(con.iParExpansionE) - gc.getActivePlayer().getCurrentEra()
-            elif (self.getStabilityParameters(con.iParExpansionE) < -7):
-                    return self.getStabilityParameters(con.iParExpansion3) + self.getStabilityParameters(con.iParExpansion1) + self.getStabilityParameters(con.iParExpansionE) + gc.getActivePlayer().getCurrentEra()
-            else:
-                    return self.getStabilityParameters(con.iParExpansion3) + self.getStabilityParameters(con.iParExpansion1) + self.getStabilityParameters(con.iParExpansionE)
-
-        def getArrow(self, iParameter):
-            if (iParameter == 0):
-                    if (self.getStability(self.getHumanID()) >= self.getLastRecordedStabilityStuff(iParameter) + 6):
-                            return 1
-                    elif (self.getStability(self.getHumanID()) <= self.getLastRecordedStabilityStuff(iParameter) - 6):
-                            return -1
-                    else:
-                            return 0
-            else:
-                    if (iParameter == 1):
-                            iNewValue = self.getParCities()
-                    elif (iParameter == 2):
-                            iNewValue = self.getParCivics()
-                    elif (iParameter == 3):
-                            iNewValue = self.getParEconomy()
-                    elif (iParameter == 4):
-                            iNewValue = self.getParExpansion()
-                    elif (iParameter == 5):
-                            iNewValue = self.getParDiplomacy()
-                    if (iNewValue >= self.getLastRecordedStabilityStuff(iParameter) + 4):
-                            return 1
-                    elif (iNewValue <= self.getLastRecordedStabilityStuff(iParameter) - 4):
-                            return -1
-                    else:
-                            return 0
-
+			    
         #Victory
         def countAchievedGoals(self, iPlayer):
                 iResult = 0
@@ -1954,6 +1808,9 @@ class RFCUtils:
 		
 	def getStabilityLevel(self, iPlayer):
 		return sd.getStabilityLevel(iPlayer)
+		
+	def setStabilityLevel(self, iPlayer, iNewValue):
+		sd.setStabilityLevel(iPlayer, iNewValue)
 		
 	def getRespawnArea(self, iPlayer):
 		if con.tRespawnTL[iPlayer] != -1:

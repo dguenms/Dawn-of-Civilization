@@ -30,13 +30,22 @@ tCrisisTypes = (
 "TXT_KEY_STABILITY_CRISIS_TYPE_MILITARY",
 )
 
-def checkTurn():
+def checkTurn(iGameTurn):
 	for iPlayer in range(con.iNumPlayers):
 		if getCrisisCountdown(iPlayer) > 0:
 			changeCrisisCountdown(iPlayer, -1)
+			
+	if iGameTurn % utils.getTurns(12) == 0:
+		for iPlayer in range(con.iNumPlayers):
+			checkLostCitiesCollapse(iPlayer)
 
 def onCityAcquired(city, iOwner, iPlayer):
 	checkStability(iOwner)
+	
+	checkLostCoreCollapse(iOwner)
+	
+	if iPlayer == con.iBarbarian:
+		checkBarbarianCollapse(iOwner)
 	
 def onCityRazed(iPlayer):
 	if utils.getHumanID() == iPlayer: checkStability(iPlayer, False, -10)
@@ -47,6 +56,9 @@ def onTechAcquired(iPlayer, iTech):
 def onVassalState(iMaster, iVassal):
 	checkStability(iVassal)
 	checkStability(iMaster, True)
+	
+	# reupdate number of cities so vassals survive losing cities
+	sd.setNumPreviousCities(iVassal, gc.getPlayer(iVassal).getNumCities())
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
 	checkStability(iTeam, not bWar)
@@ -76,11 +88,124 @@ def getStabilityLevel(iPlayer):
 def setStabilityLevel(iPlayer, iStabilityLevel):
 	sd.setStabilityLevel(iPlayer, iStabilityLevel)
 	
+def incrementStability(iPlayer):
+	sd.setStabilityLevel(iPlayer, min(con.iStabilitySolid, sd.getStabilityLevel(iPlayer) + 1))
+	
+def decrementStability(iPlayer):
+	sd.setStabilityLevel(iPlayer, max(con.iStabilityCollapsing, sd.getStabilityLevel(iPlayer) - 1))
+	
 def getCrisisCountdown(iPlayer):
 	return sd.getCrisisCountdown(iPlayer)
 	
 def changeCrisisCountdown(iPlayer, iChange):
 	sd.changeCrisisCountdown(iPlayer, iChange)
+	
+def checkBarbarianCollapse(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iGameTurn = gc.getGame().getGameTurn()
+	
+	# must not be dead
+	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
+		return
+		
+	# only for major civs
+	if iPlayer >= con.iNumPlayers:
+		return
+		
+	# immune right after scenario start
+	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
+		return
+		
+	# immune right after birth
+	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < utils.getTurns(20):
+		return
+		
+	# immune right after resurrection
+	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
+		return
+		
+	iNumCities = pPlayer.getNumCities()
+	iLostCities = 0
+	
+	for city in utils.getCityList(con.iBarbarian):
+		if city.getOriginalOwner() == iPlayer:
+			iLostCities += 1
+			
+	# lost more than half of your cities to barbarians: collapse
+	if iLostCities > iNumCities:
+		utils.debugTextPopup('Collapse by barbarians: ' + pPlayer.getCivilizationShortDescription(0))
+		completeCollapse(iPlayer)
+		
+	# lost at least a quarter of your cities to barbarians: lose stability
+	elif 2 * iLostCities > iNumCities:
+		utils.debugTextPopup('Lost stability to barbarians: ' + pPlayer.getCivilizationShortDescription(0))
+		decrementStability(iPlayer)
+		
+def checkLostCitiesCollapse(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iGameTurn = gc.getGame().getGameTurn()
+	
+	# must not be dead
+	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
+		return
+		
+	# only for major civs
+	if iPlayer >= con.iNumPlayers:
+		return
+		
+	# immune right after scenario start
+	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
+		return
+		
+	# immune right after birth
+	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < utils.getTurns(20):
+		return
+		
+	# immune right after resurrection
+	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
+		return
+		
+	iNumCurrentCities = pPlayer.getNumCities()
+	iNumPreviousCities = sd.getNumPreviousCities(iPlayer)
+	
+	# half or less cities than 12 turns ago: collapse
+	if 2 * iNumCurrentCities <= iNumPreviousCities:
+		utils.debugTextPopup('Collapse by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
+		completeCollapse(iPlayer)
+		
+	sd.setNumPreviousCities(iPlayer, iNumCurrentCities)
+	
+def checkLostCoreCollapse(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iGameTurn = gc.getGame().getGameTurn()
+	
+	# must not be dead
+	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
+		return
+		
+	# only for major civs
+	if iPlayer >= con.iNumPlayers:
+		return
+		
+	# immune right after scenario start
+	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
+		return
+		
+	# immune right after birth
+	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < utils.getTurns(20):
+		return
+		
+	# immune right after resurrection
+	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
+		return
+		
+	iReborn = utils.getReborn(iPlayer)
+	lCities = utils.getAreaCitiesCiv(iPlayer, con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer])
+	
+	# completely pushed out of core: collapse
+	if len(lCities) == 0:
+		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
+		completeCollapse(iPlayer)
 
 def checkStability(iPlayer, bPositive = False, iModifier = 0):
 	pPlayer = gc.getPlayer(iPlayer)
@@ -106,6 +231,10 @@ def checkStability(iPlayer, bPositive = False, iModifier = 0):
 	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < utils.getTurns(20):
 		return
 		
+	# immune right after resurrection
+	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
+		return
+		
 	# immune to stability checks in golden ages and anarchy
 	if pPlayer.isGoldenAge() or pPlayer.isAnarchy():
 		return
@@ -122,7 +251,7 @@ def checkStability(iPlayer, bPositive = False, iModifier = 0):
 	iThreshold = 5 * (iStabilityLevel - 2) - iModifier - 5
 	
 	if iGameTurn > getTurnForYear(con.tFall[iPlayer]):
-		iThreshold += 10
+		iThreshold += 5 * iStabilityLevel
 	
 	if iStability > iThreshold + 10:
 		iStabilityLevel = min(iStabilityLevel + 1, con.iStabilitySolid)
@@ -327,7 +456,7 @@ def secedeCities(iPlayer, lCities):
 				
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
-			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer:
+			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and iOriginalOwner < con.iNumPlayers:
 				iClaim = iOriginalOwner
 				utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: original owner.')
 				
@@ -645,7 +774,7 @@ def unitDesertion(iPlayer, iDivisor):
 		y = unit.getY()
 		plot = gc.getMap().plot(x, y)
 		
-		unit.kill(False, iPlayer)
+		unit.kill(False, con.iBarbarian)#iPlayer)
 		
 	if utils.getHumanID() == iPlayer:
 		sText = localText.getText("TXT_KEY_STABILITY_UNIT_DESERTION", (len(lDesertingUnits),))
@@ -1264,9 +1393,9 @@ def checkResurrection(iGameTurn):
 			if con.tRebirth[iLoopCiv] == -1:
 				iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll')
 				if iRespawnRoll + iNationalismModifier - 10 >= con.tResurrectionProb[iLoopCiv]:
-					lCityList = self.getResurrectionCities(iLoopCiv)
+					lCityList = getResurrectionCities(iLoopCiv)
 					if len(lCityList) >= iMinNumCities:
-						self.doResurrection(iLoopCiv, lCityList)
+						doResurrection(iLoopCiv, lCityList)
 						return
 						
 def getResurrectionCities(iPlayer):
@@ -1306,38 +1435,36 @@ def getResurrectionCities(iPlayer):
 		print str(city.getName())
 		
 		# barbarian and minor cities always flip
-		if iOwner >= iNumPlayers:
+		if iOwner >= con.iNumPlayers:
 			lFlippingCities.append(city)
 			continue
 			
-		iOwnerStability = utils.getStability(iOwner)
+		iOwnerStability = utils.getStabilityLevel(iOwner)
 		bCapital = ((city.getX(), city.getY()) == tCapital)
 		
 		# flips are less likely before Nationalism
 		if utils.getCivsWithNationalism() == 0:
-			iOwnerStability += 10
-		elif pPlayer.getCivics(5) == con.iImperialism: # Imperialism effect
-			iOwnerStability += 20
+			iOwnerStability += 1
 			
 		if utils.getHumanID() != iOwner:
 			iMinNumCitiesOwner = 2
-			iOwnerStability -= 20
+			iOwnerStability -= 1
 			
 		if gc.getPlayer(iOwner).getNumCities() >= iMinNumCitiesOwner:
 		
 			# owner stability below -10: city always flips
-			if iOwnerStability < -10:
+			if iOwnerStability < con.iStabilityShaky:
 				lFlippingCities.append(city)
 				
 			# owner stability below 10: city flips if far away from their capital, or is capital spot of the dead civ
-			elif iOwnerStability < 10:
+			elif iOwnerStability < con.iStabilityStable:
 				ownerCapital = gc.getPlayer(iOwner).getCapitalCity()
 				iDistance = utils.calculateDistance(city.getX(), city.getY(), ownerCapital.getX(), ownerCapital.getY())
 				if bCapital or iDistance >= 8:
 					lFlippingCities.append(city)
 				
 			# owner stability below 20: only capital spot flips
-			elif iOwnerStability < 20:
+			elif iOwnerStability < con.iStabilitySolid:
 				if bCapital:
 					lFlippingCities.append(city)
 					
@@ -1460,9 +1587,7 @@ def doResurrection(iPlayer, lCityList):
 	if iHuman in lOwners:
 		self.rebellionPopup(iPlayer)
 		
-	utils.setBaseStabilityLastTurn(iPlayer, 0)
-	utils.setStability(iPlayer, 10)
-	#pPlayer.changeStabilityCategory(con.iStabilityDifficulty, 10)
+	sd.setStabilityLevel(iPlayer, con.iStabilityStable)
 	
 	utils.setPlagueCountdown(iPlayer, -10)
 	utils.clearPlague(iPlayer)

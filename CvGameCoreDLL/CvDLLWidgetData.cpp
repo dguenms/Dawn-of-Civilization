@@ -3320,35 +3320,6 @@ void CvDLLWidgetData::parseCompleteStabilityInfo(CvWidgetDataStruct &widgetDataS
 	szBuffer.append(NEWLINE);
 }
 
-void CvDLLWidgetData::parseIncompleteStabilityInfo(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer) {
-	long result = 0;
-	CyArgsList argsList;
-	argsList.add((PlayerTypes)widgetDataStruct.m_iData1);
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "getStability", argsList.makeFunctionArgs(), &result);
-	int iResult = (int)result;
-	szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
-	szBuffer.append(" ");
-	if (iResult < -20) {		
-		//szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_LOW"));
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_UNSTABLE"));
-		szBuffer.append(" / ");
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_COLLAPSING"));
-	}
-	else if (iResult < 20) {
-		//szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_AVERAGE"));
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_STABLE"));
-		szBuffer.append(" / ");
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SHAKY"));
-	}
-	else {
-		//szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_HIGH"));
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SOLID"));
-		szBuffer.append(" / ");
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_VERYSOLID"));
-	}
-	szBuffer.append(NEWLINE);
-}
-
 void CvDLLWidgetData::parseHistoricalVictoryInfo(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer) {
 	long result = -1;
 	CyArgsList argsList;
