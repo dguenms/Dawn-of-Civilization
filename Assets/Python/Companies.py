@@ -197,7 +197,7 @@ class Companies:
 
 		elif iCompany == iCerealIndustry:
 			if city.getNumRealBuilding(con.iGranary) > 0 or city.getNumRealBuilding(con.iIncanTerrace) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iGrocer) > 0 or city.getNuamRealBuilding(con.iBrazilianFazenda) > 0 or city.getNumRealBuilding(con.iColombianHacienda) > 0: iValue += 1
+			if city.getNumRealBuilding(con.iGrocer) > 0 or city.getNumRealBuilding(con.iBrazilianFazenda) > 0 or city.getNumRealBuilding(con.iColombianHacienda) > 0: iValue += 1
 			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0 or city.getNumRealBuilding(con.iArgentineRefrigerationPlant) > 0: iValue += 1
 
 		elif iCompany == iFishingIndustry:
