@@ -435,4 +435,8 @@
 		<Tag>TXT_KEY_STABILITY_UNIT_DESERTION</Tag>
 		<English>The military crisis led to the desertion of %d1 units!</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_LOST_TERRITORY</Tag>
+		<English>We have lost control over our territory around %s1!</English>
+	</TEXT>
 </Civ4GameText>

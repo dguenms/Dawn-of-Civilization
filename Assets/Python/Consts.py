@@ -198,16 +198,16 @@ lOlderNeighbours = [
 [iRome], #France
 [], #England
 [iGreece, iRome, iVikings], #Holy Rome
-[iPersia, iGreece], #Russia
-[iCarthage, iEthiopia], #Mali
+[iPersia, iGreece, iByzantium], #Russia
+[iCarthage, iEthiopia, iArabia, iMoors], #Mali
 [iVikings, iHolyRome], #Poland
 [iCarthage, iRome], #Portugal
 [], #Inca
 [iByzantium, iHolyRome], #Italy
-[iChina, iJapan, iKorea, iTibet, iKhmer, iRussia], #Mongolia
+[iChina, iJapan, iKorea, iArabia, iTibet, iKhmer, iRussia], #Mongolia
 [iMaya], #Aztec
-[iIndia, iIndia, iPersia, iTibet], #Mughals
-[iBabylonia, iGreece, iPersia, iByzantium], #Turkey
+[iIndia, iPersia, iArabia, iTibet], #Mughals
+[iBabylonia, iGreece, iPersia, iByzantium, iArabia], #Turkey
 [iIndia, iChina, iJapan, iKhmer, iIndonesia], #Thailand
 [], #Congo
 [iRome, iHolyRome], #Netherlands
@@ -287,7 +287,7 @@ tFall = (
 1204, #fourth crusade			# Byzantium
 2020,					# Japan
 1300,					# Vikings
-1258,					# Arabia
+900,					# Arabia
 1500,					# Tibet
 1200, # earlier so that the Thai can spawn # Khmer
 1500,					# Indonesia
@@ -1109,7 +1109,7 @@ tCoreAreasTL = (
 (99, 43), #China 
 (75, 38), #Babylonia
 (65, 39), #Greece
-(87, 33), #India
+(87, 36), #India
 (71, 39), #Carthage
 (79, 37), #Persia
 (59, 41), #Rome
@@ -1195,7 +1195,7 @@ tCoreAreasBR = (
 (107, 47), #China
 (77, 42), #Babylonia
 (70, 44), #Greece
-(94, 40), #India
+(96, 40), #India
 (74, 41), #Carthage
 (85, 44), #Persia
 (63, 47), #Rome

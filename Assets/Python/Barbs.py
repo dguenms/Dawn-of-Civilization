@@ -57,7 +57,7 @@ tMinorCities = (
 (100, (76, 30), iIndependent, "Sana'a", 1, -1, -1),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (633, (96, 43), iBarbarian, 'Rasa', 2, con.iTibetanKhampa, 1),		# Lhasa
-(680, (51, 57), iIndependent, 'Marrakus', 1, con.iCrossbowman, 1),	# Marrakesh
+(680, (51, 37), iIndependent, 'Marrakus', 1, con.iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
 (800, con.tVienna, iIndependent, 'Vindobona', 1, con.iLongbowman, 1),	# Wien
 (830, (59, 54), iIndependent, 'Hamburg', 2, con.iCrossbowman, 1),	# Hamburg
@@ -316,15 +316,23 @@ class Barbs:
 	def foundMinorCities(self, iGameTurn):
 		for i in range(len(tMinorCities)):
 			iYear, tPlot, iPlayer, sName, iPopulation, iUnitType, iNumUnits = tMinorCities[i]
-			if iGameTurn < getTurnForYear(iYear): return
-			if iGameTurn > getTurnForYear(iYear)+10: continue
+			if iGameTurn < getTurnForYear(iYear): 
+				if sName == 'Marrakus': utils.debugTextPopup('Too early: ' + str(gc.getGame().getGameTurnYear()))
+				return
+			if iGameTurn > getTurnForYear(iYear)+10: 
+				if sName == 'Marrakus': utils.debugTextPopup('Too late: ' + str(gc.getGame().getGameTurnYear()))
+				continue
 			
 			x, y = tPlot
 			plot = gc.getMap().plot(x, y)
-			if plot.isCity(): continue
+			if plot.isCity(): 
+				if sName == 'Marrakus': utils.debugTextPopup('Already city on plot: ' + plot.getPlotCity().getName())
+				continue
 			
 			# special cases
-			if not self.canFoundCity(sName): continue
+			if not self.canFoundCity(sName): 
+				if sName == 'Marrakus': utils.debugTextPopup('Special case: cannot be founded.')
+				continue
 			
 			lReligions = []
 			bForceSpawn = False
@@ -333,7 +341,9 @@ class Barbs:
 			if iPlayer == iCeltia and utils.getScenario() != con.i3000BC: iPlayer = iIndependent
 			if sName == 'Buda': bForceSpawn = True
 			
-			if not self.isFreePlot(tPlot, bForceSpawn): continue
+			if not self.isFreePlot(tPlot, bForceSpawn): 
+				if sName == 'Marrakus': utils.debugTextPopup('Plot is not free.')
+				continue
 		
 			self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions)
 		
@@ -343,7 +353,7 @@ class Barbs:
 		elif sName == 'Zhongdu' and utils.getHumanID() == con.iChina: return False
 		elif sName == 'Hamburg' and (utils.getHumanID() == con.iHolyRome or utils.getSeed() % 4 == 0): return False
 		elif sName == 'L&#252;beck' and (utils.getHumanID() == con.iHolyRome or utils.getSeed() % 4 != 0): return False
-		elif sName == 'Marrakus' and utils.getScenario() != con.i3000BC: return False
+		#elif sName == 'Marrakus' and utils.getScenario() != con.i3000BC: return False
 		
 		return True
 	
