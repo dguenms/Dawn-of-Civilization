@@ -1818,3 +1818,11 @@ class RFCUtils:
 			
 		iReborn = self.getReborn(iPlayer)
 		return con.tNormalAreasTL[iReborn][iPlayer], con.tNormalAreasBR[iReborn][iPlayer], con.tNormalAreasSubtract[iReborn][iPlayer]
+		
+	def showPopup(self, popupID, title, message, labels):
+                popup = Popup.PyPopup(popupID, EventContextTypes.EVENTCONTEXT_ALL)
+                popup.setHeaderString(title)
+                popup.setBodyString(message)
+                for i in labels:
+                    popup.addButton( i )
+                popup.launch(False)

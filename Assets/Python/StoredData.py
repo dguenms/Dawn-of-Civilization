@@ -125,7 +125,7 @@ class StoredData:
 				    'bMaliGold' : False,
 				    'iColombianTradeGold' : 0,
                                     #------------Stability
-				    'lStabilityLevels': [con.iStabilityStable for i in range(con.iNumPlayers)],
+				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
 				    'iLastStability' : 0,
 				    'iLastDifference' : 0,
@@ -169,6 +169,18 @@ class StoredData:
 		
 	def setNumPreviousCities(self, iPlayer, iNewValue):
 		self.scriptDict['lNumPreviousCities'][iPlayer] = iNewValue
+		
+	def getRebelCiv(self):
+		return self.scriptDict['iRebelCiv']
+		
+	def setRebelCiv(self, iNewValue):
+		self.scriptDict['iRebelCiv'] = iNewValue
+		
+	def getTempFlippingCity(self):
+		return self.scriptDict['tTempFlippingCity']
+		
+	def setTempFlippingCity(self, tNewValue):
+		self.scriptDict['tTempFlippingCity'] = tNewValue
 
 # All modules import the following single instance, not the class
 
