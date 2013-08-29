@@ -63,8 +63,9 @@ def onVassalState(iMaster, iVassal):
 	sd.setNumPreviousCities(iVassal, gc.getPlayer(iVassal).getNumCities())
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
-	checkStability(iTeam, not bWar)
-	checkStability(iOtherTeam, not bWar)
+	if iTeam < con.iNumPlayers and iOtherTeam < con.iNumPlayers:
+		checkStability(iTeam, not bWar)
+		checkStability(iOtherTeam, not bWar)
 	
 def onRevolution(iPlayer):
 	checkStability(iPlayer)
@@ -565,11 +566,11 @@ def collapseToCore(iPlayer):
 		plot = gc.getMap().plot(city.getX(), city.getY())
 		if not plot.isCore(iPlayer):
 			lNonCoreCities.append(city)
-		if plot.getSettlerMapValue(iPlayer) < 90:
-			lAhistoricalCities.append(city)
+			if plot.getSettlerMapValue(iPlayer) < 90:
+				lAhistoricalCities.append(city)
 			
 	# start by seceding ahistorical cities
-	if lAhistoricalCities:
+	if len(lAhistoricalCities) > 2:
 			
 		# notify owner
 		if utils.getHumanID() == iPlayer:
@@ -579,7 +580,7 @@ def collapseToCore(iPlayer):
 		# secede all foreign cities
 		secedeCities(iPlayer, lAhistoricalCities)
 		
-	# if all cities are historical, secede non core cities
+	# if almost all cities are historical, secede non core cities
 	elif lNonCoreCities:
 			
 		# notify owner
@@ -624,7 +625,7 @@ def loseTerritory(iPlayer):
 		
 	lHighestEntry = utils.getHighestEntry(lTakenTiles, lambda x : len(x))
 	
-	for plot in lHighestEntry:
+	for plot in lTakenTiles[lTakenTiles.index(lHighestEntry)]:
 		utils.convertPlotCulture(plot, iPlayer, 0, True)
 		
 	# notify owner
@@ -1318,7 +1319,7 @@ def calculateStability(iPlayer):
 			iTheirSuccess = gc.getTeam(iLoopPlayer).AI_getWarSuccess(iPlayer)
 			iCombinedSuccess = iOurSuccess + iTheirSuccess
 			
-			# war score should decay over time by some means, otherwise it's too attractive to stay at a war where you're doing well
+			# war score should decay over time by some means, otherwise it's too attractive to stay in a war where you're doing well
 			
 			if iCombinedSuccess < 20:
 				iOurPercentage = 0 # war too insignificant (takes care of division by zero as well)
