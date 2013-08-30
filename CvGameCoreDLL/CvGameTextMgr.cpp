@@ -11840,7 +11840,7 @@ void CvGameTextMgr::buildStabilityString(CvWStringBuffer& szBuffer, int iCrisisI
 		szTemp.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
 		szStability += szTemp;
 
-		szTemp.Format(L"%s", gDLL->getText("TXT_KEY_STABILITY_CRISIS_IMMINENT"));
+		szTemp.Format(gDLL->getText("TXT_KEY_STABILITY_CRISIS_IMMINENT"));
 		szStability += szTemp;
 	}
 	else
@@ -11848,11 +11848,11 @@ void CvGameTextMgr::buildStabilityString(CvWStringBuffer& szBuffer, int iCrisisI
 		szTemp.Format(SETCOLR, TEXT_COLOR("COLOR_WHITE"));
 		szStability += szTemp;
 
-		szTemp.Format(L"%s", gDLL->getText("TXT_KEY_STABILITY_NO_CRISIS_IMMINENT"));
+		szTemp.Format(gDLL->getText("TXT_KEY_STABILITY_NO_CRISIS_IMMINENT"));
 		szStability += szTemp;
 	}
 
-	szTemp.Format(ENDCOLR);
+	szTemp.Format(NEWLINE);
 	szStability += szTemp;
 
 	szBuffer.append(szStability.GetCString());

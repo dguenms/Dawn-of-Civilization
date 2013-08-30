@@ -182,10 +182,11 @@ class Barbs:
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(50)):
                         self.checkSpawn(iBarbarian, con.iTrireme, 1, (49, 37), (72, 44), self.spawnPirates, iGameTurn, 8, 0)
                 #pirates in Barbary coast
-                if (iGameTurn >= getTurnForYear(50) and iGameTurn <= getTurnForYear(700)):
-                        self.checkSpawn(iBarbarian, con.iTrireme, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 18, 0)
-                if (iGameTurn >= getTurnForYear(700) and iGameTurn <= getTurnForYear(1400)):
-                        self.checkSpawn(iBarbarian, con.iTrireme, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 8, 0)
+		if not gc.getPlayer(con.iMoors).isAlive():
+			if (iGameTurn >= getTurnForYear(50) and iGameTurn <= getTurnForYear(700)):
+				self.checkSpawn(iBarbarian, con.iTrireme, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 18, 0)
+			if (iGameTurn >= getTurnForYear(700) and iGameTurn <= getTurnForYear(1400)):
+				self.checkSpawn(iBarbarian, con.iTrireme, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 8, 0)
                 #pirates in Indian ocean
                 if (iGameTurn >= getTurnForYear(-650) and iGameTurn <= getTurnForYear(700)):
                         self.checkSpawn(iBarbarian, con.iTrireme, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 18, 0)
