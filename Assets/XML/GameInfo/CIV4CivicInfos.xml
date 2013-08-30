@@ -530,6 +530,7 @@
 			<Description>TXT_KEY_CIVIC_VASSALAGE</Description>
 			<Civilopedia>TXT_KEY_CIVIC_VASSALAGE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Strategy>
+			<Help>TXT_KEY_CIVIC_VASSALAGE_HELP</Help>
 			<Button>,Art/Interface/Buttons/Civics/Vassalage.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,4</Button>
 			<TechPrereq>TECH_FEUDALISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
@@ -752,6 +753,7 @@
 			<Description>TXT_KEY_CIVIC_TOTALITARIANISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_TOTALITARIANISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_TOTALITARIANISM_STRATEGY</Strategy>
+			<Help>TXT_KEY_CIVIC_TOTALITARIANISM_HELP</Help>
 			<Button>,Art/Interface/Buttons/Civics/Police_State.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,5,2</Button>
 			<TechPrereq>TECH_FASCISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
@@ -1579,6 +1581,7 @@
 			<Description>TXT_KEY_CIVIC_MERCANTILISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_MERCANTILISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_MERCANTILISM_STRATEGY</Strategy>
+			<Help>TXT_KEY_CIVIC_MERCANTILISM_HELP</Help>
 			<Button>,Art/Interface/Buttons/Civics/Mercantilism.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,4,3</Button>
 			<TechPrereq>TECH_BANKING</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
@@ -1837,6 +1840,7 @@
 			<Description>TXT_KEY_CIVIC_ENVIRONMENTALISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_ENVIRONMENTALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_ENVIRONMENTALISM_STRATEGY</Strategy>
+			<Help>TXT_KEY_CIVIC_ENVIRONMENTALISM_HELP</Help>
 			<Button>,Art/Interface/Buttons/Civics/Environmentalism.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,7,1</Button>
 			<TechPrereq>TECH_ECOLOGY</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
@@ -2458,6 +2462,7 @@
 			<Description>TXT_KEY_CIVIC_WARRIOR_CODE</Description>
 			<Civilopedia>TXT_KEY_CIVIC_WARRIOR_CODE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_WARRIOR_CODE_STRATEGY</Strategy>
+			<Help>TXT_KEY_CIVIC_WARRIOR_CODE_HELP</Help>
 			<Button>,Art/Interface/Buttons/Units/HorseArcher.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,7</Button>
 			<TechPrereq>TECH_HORSEBACK_RIDING</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>

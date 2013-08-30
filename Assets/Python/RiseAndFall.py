@@ -427,6 +427,7 @@ class RiseAndFall:
 				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)
 		self.setAlreadySwitched(True)
 		gc.getPlayer(iCiv).setPlayable(True)
+		sd.setCrisisImminent(False)
 
 		pPlayer = gc.getPlayer(iCiv)
 		pCity, iter = pPlayer.firstCity(true)
@@ -1549,8 +1550,8 @@ class RiseAndFall:
 												
 					# Leoreth: Byzantine UP: cities in normal area are immune to secession
 					if iPlayer == iByzantium:
-						tlx, tly = con.tNormalAreasTL[utils.getReborn(iByzantium)][iByzantium]
-						brx, bry = con.tNormalAreasBR[utils.getReborn(iByzantium)][iByzantium]
+						tlx, tly = con.tCoreAreasTL[utils.getReborn(iByzantium)][iByzantium]
+						brx, bry = con.tCoreAreasBR[utils.getReborn(iByzantium)][iByzantium]
 						for city in cityList:
 							x = city.getX()
 							y = city.getY()

@@ -86,9 +86,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_PER2</Tag>
-		<English>+2 additional Stability Points for each city conquered</English>
+		<English>No stability penalties for controlling foreign cores</English>
 		<French>+2 points de stabilité par ville conquise</French>
-		<German>+2 zusätzliche Stabilitätspunkte für jede eroberte Stadt</German>
+		<German>Keine Stabilitäts-Mali für die Kontrolle fremder Kernregionen</German>
 		<Italian>+2 punti stabilit&#224; addizionali per ogni citt&#224; conquistata</Italian>
 		<Spanish>+2 puntos de estabilidad adicionales por cada ciudad conquistada</Spanish>
 	</TEXT>

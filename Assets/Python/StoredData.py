@@ -131,6 +131,7 @@ class StoredData:
 				    'iLastDifference' : 0,
 				    'lStabilityCategoryValues' : [0, 0, 0, 0, 0],
 				    'lNumPreviousCities' : [0 for i in range(con.iNumPlayers)],
+				    'bCrisisImminent' : False,
 				}
                 self.save()
 		
@@ -181,6 +182,12 @@ class StoredData:
 		
 	def setTempFlippingCity(self, tNewValue):
 		self.scriptDict['tTempFlippingCity'] = tNewValue
+		
+	def isCrisisImminent(self):
+		return self.scriptDict['bCrisisImminent']
+		
+	def setCrisisImminent(self, bNewValue):
+		self.scriptDict['bCrisisImminent'] = bNewValue
 
 # All modules import the following single instance, not the class
 

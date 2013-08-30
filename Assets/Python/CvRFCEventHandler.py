@@ -203,14 +203,6 @@ class CvRFCEventHandler:
 			utils.removeSlaves(city)
 		else:
 			utils.freeSlaves(city, iPlayer)
-			
-		# Byzantine UP: kill Byzantium if they are collapsing and use their capital
-		if iOwner == iByzantium and gc.getPlayer(iByzantium).isAlive():
-			if (city.getX(), city.getY()) == (68, 45):
-				if utils.getStabilityLevel(iByzantium) == con.iStabilityCollapsing:
-					if gc.getPlayer(utils.getHumanID()).canContact(iByzantium):
-						CyInterface().addMessage(utils.getHumanID(), False, con.iDuration, gc.getPlayer(iOwner).getCivilizationDescription(0) + ' ' + CyTranslator().getText("TXT_KEY_STABILITY_CIVILWAR", ()), "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-					sta.completeCollapse(iByzantium)
 					
 							
 		# kill Seljuks

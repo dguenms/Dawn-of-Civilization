@@ -78,9 +78,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR2</Tag>
-		<English>Ocean Trade and Resettlement are allowed with Optics</English>
+		<English>Ocean Trade allowed with Optics, reduced instability for overseas colonies</English>
 		<French>Toutes les unités en mer ont un champ de vision élargi</French>
-		<German>Ozeanhandel und Umsiedlung werden durch Optik ermöglicht</German>
+		<German>Ozeanhandel ermöglicht durch Optik, verringerte Instabilität durch Übersee-Kolonien</German>
 		<Italian>Tutte le unit&#224; marine hanno un raggio visivo più ampio</Italian>
 		<Spanish>Todas las unidades mar&#237;timas tienen un alcance de visibilidad superior</Spanish>
 	</TEXT>
@@ -101,8 +101,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ2</Tag>
-		<English>Cities in the center of your empire are immune to collapse and secession</English>
-		<German>Städte im Zentrum Ihres Reiches sind immun gegenüber Kollaps und Sezession</German>
+		<English>Immune to complete collapse as long as Constantinople is controlled</English>
+		<German>Immun gegen kompletten Kollaps solange Konstantinopel kontrolliert wird</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR</Tag>

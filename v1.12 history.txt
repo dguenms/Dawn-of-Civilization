@@ -48,3 +48,7 @@
 	# the severity of a crisis depends on your stability level, while the effects depend on the stability category with the lowest value
 	# a terminal crisis (possible only at unstable or collapsing) results in a complete collapse
 # adjusted difficulty settings to increase AI unit production and remove their maluses against barbarians
+# new Persian UP: no expansion penalties for controlling foreign cores
+# new Phoenician UP: starts with Mercenaries, mercenary costs halved, no extra mercenary costs
+# new Byzantine UP: immune to complete collapse as long as Constantinople is controlled
+# new Portuguese UP: Ocean trade enabled with Optics, reduced expansion penalty for overseas colonies

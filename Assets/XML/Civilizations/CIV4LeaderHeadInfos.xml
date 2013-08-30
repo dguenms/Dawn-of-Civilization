@@ -8541,7 +8541,7 @@
 			<!-- Rhye - end -->
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_WARRIOR_CODE</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>

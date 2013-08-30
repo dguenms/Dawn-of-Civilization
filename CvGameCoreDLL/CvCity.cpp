@@ -5510,6 +5510,12 @@ int CvCity::getHurryGold(HurryTypes eHurry, int iHurryCost) const
 		iGold *= 3;
 		iGold /= 4;
 	}
+	
+	// Phoenician UP: -50% mercenary cost
+	if (getOwnerINLINE() == CARTHAGE && GC.getHurryInfo(eHurry).isUnits())
+	{
+		iGold /= 2;
+	}
 
 	return std::max(1, iGold);
 }

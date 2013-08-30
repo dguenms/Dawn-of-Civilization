@@ -156,6 +156,7 @@ BeginPlayer
 	PlayableCiv=1                                 
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON 
+	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_MERCENARIES
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
 BeginPlayer
