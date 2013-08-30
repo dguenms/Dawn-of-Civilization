@@ -568,4 +568,24 @@
 		<Tag>TXT_KEY_HURRY_GOLD_UNITS</Tag>
 		<English>Can Spend Gold to Finish Military Unit Production in a City</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM_HELP</Tag>
+		<English>[ICON_BULLET]No stability penalty for conquered cities or minority culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VASSALAGE_HELP</Tag>
+		<English>[ICON_BULLET]Additional stability for every vassal</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP</Tag>
+		<English>[ICON_BULLET]Reduced expansion penalty for overseas colonies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_HELP</Tag>
+		<English>[ICON_BULLET]No stability penalty for economic stagnation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WARRIOR_CODE_HELP</Tag>
+		<English>[ICON_BULLET]No stability penalty for conquered citiess</English>
+	</TEXT>
 </Civ4GameText>

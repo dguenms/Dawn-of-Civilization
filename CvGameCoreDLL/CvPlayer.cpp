@@ -8559,15 +8559,15 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 		}
 	}
 
-	//Rhye - start UP
+	// Egyptian UP: starts with Dynasticism, Slavery and Pantheon
 	if (getID() == EGYPT)
 		if (eCivic == CIVIC_DYNASTICISM || eCivic == CIVIC_SLAVERY || eCivic == CIVIC_PANTHEON)
 			return true;
-	/*if (getID() == PORTUGAL)
-		if (eCivic == CIVIC_RESETTLEMENT)
-			if (GET_TEAM(GET_PLAYER(getID()).getTeam()).isHasTech((TechTypes)OPTICS))
-				return true;*/
-	//Rhye - end UP
+
+	// Phoenician UP: starts with Mercenaries
+	if (getID() == CARTHAGE)
+		if (eCivic == CIVIC_MERCENARIES)
+			return true;
 
 	if (!isHasCivicOption((CivicOptionTypes)(GC.getCivicInfo(eCivic).getCivicOptionType())) && !(GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getCivicInfo(eCivic).getTechPrereq()))))
 	{
@@ -10308,6 +10308,10 @@ void CvPlayer::changeGoldPerUnit(int iChange)
 
 int CvPlayer::getGoldPerMilitaryUnit() const
 {
+	// Phoenician UP: no extra mercenary upkeep
+	if (getID() == CARTHAGE)
+		return 0;
+
 	return m_iGoldPerMilitaryUnit;
 }
 

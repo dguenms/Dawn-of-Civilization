@@ -469,6 +469,10 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseStabilityMilitaryHelp(widgetDataStruct, szBuffer);
 		break;
 
+	case WIDGET_HELP_STABILITY:
+		parseStabilityHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_PEDIA_JUMP_TO_TECH:
 		parseTechEntryHelp(widgetDataStruct, szBuffer);
 		break;
@@ -4650,4 +4654,9 @@ void CvDLLWidgetData::parseStabilityForeignHelp(CvWidgetDataStruct& widgetDataSt
 void CvDLLWidgetData::parseStabilityMilitaryHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
 {
 	GAMETEXT.buildStabilityParameterString(szBuffer, 4);
+}
+
+void CvDLLWidgetData::parseStabilityHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	GAMETEXT.buildStabilityString(szBuffer, widgetDataStruct.m_iData1);
 }

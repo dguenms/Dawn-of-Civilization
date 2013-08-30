@@ -316,23 +316,15 @@ class Barbs:
 	def foundMinorCities(self, iGameTurn):
 		for i in range(len(tMinorCities)):
 			iYear, tPlot, iPlayer, sName, iPopulation, iUnitType, iNumUnits = tMinorCities[i]
-			if iGameTurn < getTurnForYear(iYear): 
-				if sName == 'Marrakus': utils.debugTextPopup('Too early: ' + str(gc.getGame().getGameTurnYear()))
-				return
-			if iGameTurn > getTurnForYear(iYear)+10: 
-				if sName == 'Marrakus': utils.debugTextPopup('Too late: ' + str(gc.getGame().getGameTurnYear()))
-				continue
+			if iGameTurn < getTurnForYear(iYear): return
+			if iGameTurn > getTurnForYear(iYear)+10: continue
 			
 			x, y = tPlot
 			plot = gc.getMap().plot(x, y)
-			if plot.isCity(): 
-				if sName == 'Marrakus': utils.debugTextPopup('Already city on plot: ' + plot.getPlotCity().getName())
-				continue
+			if plot.isCity(): continue
 			
 			# special cases
-			if not self.canFoundCity(sName): 
-				if sName == 'Marrakus': utils.debugTextPopup('Special case: cannot be founded.')
-				continue
+			if not self.canFoundCity(sName): continue
 			
 			lReligions = []
 			bForceSpawn = False
@@ -341,9 +333,7 @@ class Barbs:
 			if iPlayer == iCeltia and utils.getScenario() != con.i3000BC: iPlayer = iIndependent
 			if sName == 'Buda': bForceSpawn = True
 			
-			if not self.isFreePlot(tPlot, bForceSpawn): 
-				if sName == 'Marrakus': utils.debugTextPopup('Plot is not free.')
-				continue
+			if not self.isFreePlot(tPlot, bForceSpawn): continue
 		
 			self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions)
 		

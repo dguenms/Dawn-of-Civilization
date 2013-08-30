@@ -439,4 +439,20 @@
 		<Tag>TXT_KEY_STABILITY_LOST_TERRITORY</Tag>
 		<English>We have lost control over our territory around %s1!</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_COMPLETE_COLLAPSE</Tag>
+		<English>The %s1 civilization has collapsed!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE</Tag>
+		<English>A %s1 crisis is imminent!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CRISIS_IMMINENT</Tag>
+		<English>If our stability does not improve, we will experience a crisis at the next stability check.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_NO_CRISIS_IMMINENT</Tag>
+		<English>If our stability stays constant, we will not experience a crisis at the next stability check.</English>
+	</TEXT>
 </Civ4GameText>
