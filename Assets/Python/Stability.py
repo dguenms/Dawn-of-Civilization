@@ -1786,7 +1786,7 @@ def convertBackCulture(iCiv):
 				city = plot.getPlotCity()
 				if city.getOwner() == iCiv:
 					iCulture = 0
-					for iMinor in range(iNumPlayers, con.iNumTotalPlayersB):
+					for iMinor in range(con.iNumPlayers, con.iNumTotalPlayersB):
 						iCulture += city.getCulture(iMinor)
 						city.setCulture(iMinor, 0, True)
 					city.changeCulture(iCiv, iCulture, True)
