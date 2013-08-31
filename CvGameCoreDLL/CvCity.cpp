@@ -654,6 +654,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_bInfoDirty = true;
 	m_bLayoutDirty = false;
 	m_bPlundered = false;
+	m_bMongolUP = false;
 
 	m_eOwner = eOwner;
 	m_ePreviousOwner = NO_PLAYER;
@@ -13417,6 +13418,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	// m_bInfoDirty not saved...
 	// m_bLayoutDirty not saved...
 	pStream->Read(&m_bPlundered);
+	pStream->Read(&m_bMongolUP);
 
 	pStream->Read((int*)&m_eOwner);
 	pStream->Read((int*)&m_ePreviousOwner);
@@ -13554,6 +13556,7 @@ void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
 
+
 	uint uiFlag=0;
 	pStream->Write(uiFlag);		// flag for expansion
 
@@ -13656,6 +13659,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	// m_bInfoDirty not saved...
 	// m_bLayoutDirty not saved...
 	pStream->Write(m_bPlundered);
+	pStream->Write(m_bMongolUP);
 
 	pStream->Write(m_eOwner);
 	pStream->Write(m_ePreviousOwner);
@@ -15324,4 +15328,15 @@ void CvCity::changeSpecialistGoodHappiness(int iChange)
 void CvCity::changeSpecialistBadHappiness(int iChange)
 {
 	m_iSpecialistBadHappiness += iChange;
+}
+
+// Leoreth
+bool CvCity::isMongolUP() const
+{
+	return m_bMongolUP;
+}
+
+void CvCity::setMongolUP(bool bNewValue)
+{
+	m_bMongolUP = bNewValue;
 }

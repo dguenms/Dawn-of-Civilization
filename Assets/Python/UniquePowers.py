@@ -191,6 +191,17 @@ class UniquePowers:
                                 #if (iGameTurn == self.getLatestRazeData(0)+iTimer):
                                         #self.useMongolUP()
 					
+	def onChangeWar(self, bWar, iTeam, iOtherTeam):
+	
+		# reset Mongol UP flags when peace is made
+		if not bWar:
+			if iTeam == con.iMongolia:
+				for city in utils.getCityList(iOtherTeam):
+					city.setMongolUP(False)
+			elif iOtherTeam == con.iMongolia:
+				for city in utils.getCityList(iTeam):
+					city.setMongolUP(False)
+					
 #------------------VIKING UP----------------------
 
 	def vikingUP(self, argsList):

@@ -497,6 +497,10 @@ public:
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 
+	// Leoreth
+	bool isMongolUP() const;
+	void setMongolUP(bool bNewValue);
+
 private:
 	CvCity* m_pCity;
 };

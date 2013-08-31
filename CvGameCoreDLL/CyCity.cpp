@@ -2351,3 +2351,14 @@ void CyCity::setWeLoveTheKingDay(bool bNewValue)
 		m_pCity->setWeLoveTheKingDay(bNewValue);
 	}
 }
+
+bool CyCity::isMongolUP() const
+{
+	return m_pCity ? m_pCity->isMongolUP() : false;
+}
+
+void CyCity::setMongolUP(bool bNewValue)
+{
+	if (m_pCity)
+		m_pCity->setMongolUP(bNewValue);
+}

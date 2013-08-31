@@ -15806,7 +15806,7 @@
 			<bInvisible>0</bInvisible>
 			<bFirstStrikeImmune>1</bFirstStrikeImmune>
 			<bNoDefensiveBonus>1</bNoDefensiveBonus>
-			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
+			<bIgnoreBuildingDefense>0</bIgnoreBuildingDefense>
 			<bCanMoveImpassable>0</bCanMoveImpassable>
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
@@ -15907,7 +15907,7 @@
 			</FeatureImpassables>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
-			<iCombat>10</iCombat>
+			<iCombat>11</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iAirCombat>0</iAirCombat>
 			<iAirCombatLimit>0</iAirCombatLimit>
@@ -15918,9 +15918,9 @@
 			<iInterceptionProbability>0</iInterceptionProbability>
 			<iEvasionProbability>0</iEvasionProbability>
 			<iWithdrawalProb>0</iWithdrawalProb>
-			<iCollateralDamage>0</iCollateralDamage>
-			<iCollateralDamageLimit>100</iCollateralDamageLimit>
-			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
+			<iCollateralDamage>50</iCollateralDamage>
+			<iCollateralDamageLimit>60</iCollateralDamageLimit>
+			<iCollateralDamageMaxUnits>5</iCollateralDamageMaxUnits>
 			<iCityAttack>0</iCityAttack>
 			<iCityDefense>0</iCityDefense>
 			<iAnimalCombat>0</iAnimalCombat>
@@ -15965,12 +15965,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<FreePromotions>
-				<FreePromotion>
-					<PromotionType>PROMOTION_FORMATION</PromotionType>
-					<bFreePromotion>1</bFreePromotion>
-				</FreePromotion>
-			</FreePromotions>
+			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>

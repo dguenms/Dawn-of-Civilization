@@ -175,7 +175,7 @@ class CvRFCEventHandler:
 			self.up.arabianUP(city)
 		elif iPlayer == con.iTurkey:
 			self.up.turkishUP(city, iPlayer, iOwner)
-		elif iPlayer == con.iMongolia and bConquest:
+		elif iPlayer == con.iMongolia and bConquest and utils.getHumanID() != iPlayer:
 			self.up.mongolUP(city)
 		elif iPlayer == con.iMughals and utils.getHumanID() != con.iMughals:
 			self.up.mughalUP(city)
@@ -716,6 +716,7 @@ class CvRFCEventHandler:
 		bWar, iTeam, iOtherTeam = argsList
 		
 		sta.onChangeWar(bWar, iTeam, iOtherTeam)
+		self.up.onChangeWar(bWar, iTeam, iOtherTeam)
 			
 	def onGoldenAge(self, argsList):
 		iPlayer = argsList[0]
