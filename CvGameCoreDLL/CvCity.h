@@ -886,6 +886,8 @@ public:
 	int getSpecialistBadHappiness() const;
 	void changeSpecialistGoodHappiness(int iChange);
 	void changeSpecialistBadHappiness(int iChange);
+	bool isMongolUP() const;
+	void setMongolUP(bool bNewValue);
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1058,6 +1060,7 @@ protected:
 	bool m_bInfoDirty;
 	bool m_bLayoutDirty;
 	bool m_bPlundered;
+	bool m_bMongolUP;
 
 	PlayerTypes m_eOwner;
 	PlayerTypes m_ePreviousOwner;

@@ -449,7 +449,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_IMMINENT</Tag>
-		<English>If our stability does not improve, we will experience a crisis at the next stability check.</English>
+		<English>If our stability does not improve, we will experience a crisis at the next stability check!</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_NO_CRISIS_IMMINENT</Tag>

@@ -421,7 +421,6 @@ class RiseAndFall:
 		gc.getActivePlayer().setHandicapType(gc.getPlayer(iCiv).getHandicapType())
 		gc.getGame().setActivePlayer(iCiv, False)
 		gc.getPlayer(iCiv).setHandicapType(iOldHandicap)
-		utils.setStartingStabilityParameters(iCiv)
 		for iMaster in range(con.iNumPlayers):
 			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iMaster)):
 				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)

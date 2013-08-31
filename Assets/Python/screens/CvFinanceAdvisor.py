@@ -186,7 +186,7 @@ class CvFinanceAdvisor:
 
 		#Rhye - start
 		iCrisisImminent = 0
-		if sd.isCrisisImminent() and sd.getLastStability() < max(-5, 5 * (sd.getStabilityLevel(ePlayer) - 2) - 5):
+		if sd.isCrisisImminent() and sd.getHumanStability() < max(-5, 5 * (sd.getStabilityLevel(ePlayer) - 2) - 5):
 			iCrisisImminent = 1
 			
 		szStabilityPanel = self.getNextWidgetName()

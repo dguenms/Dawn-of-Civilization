@@ -40,6 +40,9 @@ def checkTurn(iGameTurn):
 	if iGameTurn % utils.getTurns(12) == 0:
 		for iPlayer in range(con.iNumPlayers):
 			checkLostCitiesCollapse(iPlayer)
+			
+	if iGameTurn >= getTurnForYear(con.tBirth[utils.getHumanID()]):
+		sd.setHumanStability(calculateStability(utils.getHumanID()))
 
 def onCityAcquired(city, iOwner, iPlayer):
 	checkStability(iOwner)

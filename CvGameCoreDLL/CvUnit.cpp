@@ -10011,6 +10011,28 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
                             {
                                 GET_PLAYER(GET_TEAM((TeamTypes)iI).getPlayerMemberAt(iJ)).AI_invalidatePlotDangerCache(iIndex);
                             }
+
+							// Leoreth: Mongol UP
+							if (getOwnerINLINE() == MONGOLIA && std::abs(iDY) <= 1 && std::abs(iDX) <= 1)
+							{
+								CvPlot* pNeighborPlot = GC.getMap().plotByIndex(iIndex);
+
+								if (pNeighborPlot->isCity())
+								{
+									CvCity* pCity = pNeighborPlot->getPlotCity();
+									if (GET_TEAM((TeamTypes)MONGOLIA).isAtWar(GET_PLAYER(pCity->getOwner()).getTeam()) && !pCity->isMongolUP())
+									{
+										if (pNewPlot->getUnitPower(getOwnerINLINE()) > pNeighborPlot->getUnitPower(pCity->getOwnerINLINE()))
+										{
+											pCity->setOccupationTimer(std::max(3, pCity->getPopulation() / 3));
+											pCity->setMongolUP(true);
+
+											gDLL->getInterfaceIFace()->addMessage(MONGOLIA, true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_UP_MONGOL_TERROR", pCity->getNameKey()).GetCString(), "AS2D_CITYCAPTURE", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pCity->getX_INLINE(), pCity->getY_INLINE(), true, true);
+											gDLL->getInterfaceIFace()->addMessage(pCity->getOwner(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_UP_MONGOL_TERROR_US", pCity->getNameKey()).GetCString(), "AS2D_CITYCAPTURE", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pCity->getX_INLINE(), pCity->getY_INLINE(), true, true);
+										}
+									}
+								}
+							}
                         }
 					}
 				}

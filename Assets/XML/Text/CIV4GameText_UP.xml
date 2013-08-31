@@ -254,17 +254,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MON</Tag>
-		<English>The Power of the Horde:</English>
+		<English>The Power of Terror:</English>
 		<French>Le Pouvoir de la Horde :</French>
-		<German>Die Macht der Horde:</German>
+		<German>Die Macht des Schreckens:</German>
 		<Italian>Il potere dell'orda:</Italian>
 		<Spanish>El poder de la horda:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MON2</Tag>
-		<English>New Keshiks join your army after conquering big cities</English>
+		<English>Cities threatened by your armies descend into unrest</English>
 		<French>Chaque ville rasée entraîne la reddition des villes ennemies voisines si elles sont approchées</French>
-		<German>Neue Keshiks treten Eurer Armee nach jeder Eroberung einer großen Stadt bei</German>
+		<German>Von Ihren Streitkräften bedrohte Städte verfallen in Unruhe</German>
 		<Italian>Ogni citt&#224; distrutta fa s&#236; che le citt&#224; nemiche vicine si arrendano, se avvicinate</Italian>
 		<Spanish>Una ciudad arrasada provoca que las ciudades enemigas cercanas se rindan al aproximarse</Spanish>
 	</TEXT>
@@ -390,5 +390,15 @@
 		<Tag>TXT_KEY_MISC_GOOD_HEALTH_FROM_SPECIALISTS</Tag>
 		<English>%D1_Change[ICON_HEALTHY] from Specialists</English>
 		<German>%D1_Change[ICON_HEALTHY] durch Spezialisten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MONGOL_TERROR</Tag>
+		<English>The citizens of %s1 tremble in fear before our approaching armies!</English>
+		<German>Die Bürger von %s1 erzittern vor Furcht vor unseren anrückenden Truppen!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MONGOL_TERROR_US</Tag>
+		<English>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</English>
+		<German>Aus Furcht vor den anrückenden mongolischen Armeen haben die Bürger von %s1 ihre Stellungen aufgegeben!</German>
 	</TEXT>
 </Civ4GameText>

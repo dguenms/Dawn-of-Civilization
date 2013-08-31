@@ -132,6 +132,7 @@ class StoredData:
 				    'lStabilityCategoryValues' : [0, 0, 0, 0, 0],
 				    'lNumPreviousCities' : [0 for i in range(con.iNumPlayers)],
 				    'bCrisisImminent' : False,
+				    'iHumanStability' : 0,
 				}
                 self.save()
 		
@@ -189,6 +190,12 @@ class StoredData:
 	def setCrisisImminent(self, bNewValue):
 		self.scriptDict['bCrisisImminent'] = bNewValue
 
+	def getHumanStability(self):
+		return self.scriptDict['iHumanStability']
+	
+	def setHumanStability(self, iNewValue):
+		self.scriptDict['iHumanStability'] = iNewValue
+		
 # All modules import the following single instance, not the class
 
 sd = StoredData()
