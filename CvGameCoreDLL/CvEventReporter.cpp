@@ -439,6 +439,12 @@ void CvEventReporter::playerSlaveTrade(PlayerTypes ePlayer, int iGold)
 	m_kPythonEventMgr.reportPlayerSlaveTrade(ePlayer, iGold);
 }
 
+// Leoreth: release player
+void CvEventReporter::releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer)
+{
+	m_kPythonEventMgr.reportReleasedPlayer(ePlayer, eReleasedPlayer);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

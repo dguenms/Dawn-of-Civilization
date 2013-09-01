@@ -495,16 +495,16 @@ iAztecs : ((17, 48), (18, 48), (19, 48), (20, 48), (21, 48), (22, 48), (23, 48),
 tResurrectionIntervals = (
 [(900, 1300), (1800, 2020)], #Egypt
 [(1500, 2020)], #China
-[], #Babylonia
+[(-3000, -500)], #Babylonia
 [(1800, 2020)], #Greece
 [(1900, 2020)], #India
-[], #Carthage
+[(-1000, -150)], #Carthage
 [(220, 650), (1500, 2020)], #Persia
-[], #Rome
-[], #Tamils
-[(1270, 1520), (1850, 1930)], #Ethiopia
+[(-750, 450)], #Rome
+[(-300, 1500)], #Tamils
+[(1270, 1520), (1850, 2020)], #Ethiopia
 [(1800, 2020)], #Korea
-[], #Maya
+[(0, 800)], #Maya
 [(1100, 1280)], #Byzantium
 [(1800, 2020)], #Japan
 [(1520, 2020)], #Vikings
@@ -512,7 +512,7 @@ tResurrectionIntervals = (
 [],		#Tibet
 [(1950, 2020)], #Khmer
 [(1900, 2020)], #Indonesia
-[],		#Moors
+[(1000, 2020)],	#Moors
 [(1700, 2020)], #Spain
 [(1700, 2020)], #France
 [(1700, 2020)], #England
@@ -521,8 +521,8 @@ tResurrectionIntervals = (
 [(1340, 1590)], #Mali
 [(1920, 2020)], #Poland
 [(1700, 2020)], #Portugal
-[(1800, 1900)], #Inca
-[(1850, 2020)], #Italy
+[(1800, 1930)], #Inca
+[(1820, 2020)], #Italy
 [(1910, 2020)], #Mongolia
 [], 		#Aztec
 [(1940, 2020)], #Mughals
@@ -530,7 +530,7 @@ tResurrectionIntervals = (
 [(1700, 2020)], #Thailand
 [],		#Congo
 [(1700, 2020)], #Netherlands
-[(1870, 2020)], #Germany
+[(1840, 2020)], #Germany
 [(1770, 2020)], #America
 [(1810, 2020)], #Argentina
 [(1820, 2020)], #Brazil

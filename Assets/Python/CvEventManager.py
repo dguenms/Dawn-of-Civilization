@@ -160,6 +160,7 @@ class CvEventManager:
 			'cityCaptureGold'		: self.onCityCaptureGold,
 			'tradeMission'			: self.onTradeMission,
 			'playerSlaveTrade'		: self.onPlayerSlaveTrade,
+			'releasedPlayer'		: self.onReleasedPlayer,
 		}
 
 		################## Events List ###############################
@@ -1113,3 +1114,6 @@ class CvEventManager:
 		
 	def onPlayerSlaveTrade(self, argsList):
 		iPlayer, iGold = argsList
+		
+	def onReleasedPlayer(self, argsList):
+		iPlayer, iReleasedPlayer = argsList

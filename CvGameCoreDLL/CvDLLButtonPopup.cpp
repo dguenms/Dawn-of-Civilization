@@ -23,6 +23,8 @@
 #include "CvEventReporter.h"
 #include "CvMessageControl.h"
 
+#include "CvRhyes.h"
+
 // Public Functions...
 
 #define PASSWORD_DEFAULT (L"*****")
@@ -2459,7 +2461,7 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 
 	gDLL->getInterfaceIFace()->popupSetBodyString(pPopup, gDLL->getText("TXT_KEY_FREE_COLONY"));
 
-	if (GET_PLAYER(ePlayer).canSplitEmpire())
+	/*if (GET_PLAYER(ePlayer).canSplitEmpire())
 	{
 		for(CvArea* pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 		{
@@ -2486,16 +2488,76 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, ARTFILEMGR.getInterfaceArtInfo("INTERFACE_BUTTONS_CITYSELECTION")->getPath(), pLoopArea->getID(), WIDGET_GENERAL);
 			}
 		}
+	}*/
+
+	bool abPlayerFound[NUM_MAJOR_PLAYERS];
+
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	{
+		abPlayerFound[iI] = false;
 	}
+
+	// Leoreth: allow to release dead players based on their cores
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	{
+		PlayerTypes eOtherPlayer = (PlayerTypes)iI;
+		int iYear = GC.getGame().getGameTurnYear();
+		if (eOtherPlayer != ePlayer && !GET_PLAYER(eOtherPlayer).isAlive() && iYear >= startingTurnYear[iI] && iYear <= lastResurrectionYear[iI])
+		{
+			CvWString szCityList;
+			int iCityLoop;
+			int iNumCities = 0;
+
+			for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
+			{
+				if (pLoopCity->plot()->isCore(eOtherPlayer) && !pLoopCity->plot()->isCore(ePlayer) && !pLoopCity->isCapital())
+				{
+					if (!szCityList.empty())
+					{
+						szCityList += L", ";
+					}
+					++iNumCities;
+					abPlayerFound[iI] = true;
+
+					szCityList += pLoopCity->getName();
+				}
+			}
+
+			if (iNumCities > 0)
+			{
+				CvWString szBuffer = gDLL->getText("TXT_KEY_RELEASE_CIVILIZATION", szCityList.GetCString(), GET_PLAYER(eOtherPlayer).getCivilizationShortDescription());
+				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getCivilizationInfo(GET_PLAYER(eOtherPlayer).getCivilizationType()).getButton(), eOtherPlayer, WIDGET_GENERAL);
+			}
+		}
+	}
+
 
 	for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 	{
-		PlayerTypes ePlayer = pLoopCity->getLiberationPlayer(false);
-		if (NO_PLAYER != ePlayer)
+		PlayerTypes eLiberationPlayer = pLoopCity->getLiberationPlayer(false);
+		if (NO_PLAYER != eLiberationPlayer)
 		{
 			//CvWString szCity = gDLL->getText("TXT_KEY_CITY_LIBERATE", pLoopCity->getNameKey(), GET_PLAYER(ePlayer).getNameKey()); //Rhye
-			CvWString szCity = gDLL->getText("TXT_KEY_CITY_LIBERATE", pLoopCity->getNameKey(), GET_PLAYER(ePlayer).getCivilizationShortDescription()); //Rhye
+			CvWString szCity = gDLL->getText("TXT_KEY_CITY_LIBERATE", pLoopCity->getNameKey(), GET_PLAYER(eLiberationPlayer).getCivilizationShortDescription()); //Rhye
 			gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szCity, ARTFILEMGR.getInterfaceArtInfo("INTERFACE_BUTTONS_CITYSELECTION")->getPath(), -pLoopCity->getID(), WIDGET_GENERAL);
+		}
+		else if (pLoopCity->plot()->getSettlerMapValue(ePlayer) < 90)
+		{
+			bool bFound = false;
+			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			{
+				if (abPlayerFound[iI] && pLoopCity->plot()->isCore((PlayerTypes)iI))
+				{
+					bFound = true;
+					break;
+				}
+			}
+
+			if (!bFound)
+			{
+				CvWString szCity = gDLL->getText("TXT_KEY_CITY_LIBERATE_MINOR", pLoopCity->getNameKey()); //Rhye
+				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szCity, ARTFILEMGR.getInterfaceArtInfo("INTERFACE_BUTTONS_CITYSELECTION")->getPath(), -pLoopCity->getID(), WIDGET_GENERAL);
+			}
 		}
 	}
 

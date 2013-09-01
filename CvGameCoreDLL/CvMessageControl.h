@@ -17,7 +17,7 @@ public:
 	DllExport void sendAdvancedStartAction(AdvancedStartActionTypes eAction, PlayerTypes ePlayer, int iX, int iY, int iData, bool bAdd);
 	void sendModNetMessage(int iData1, int iData2, int iData3, int iData4, int iData5);
 	void sendConvert(ReligionTypes eReligion);
-	void sendEmpireSplit(PlayerTypes ePlayer, int iAreaId);
+	void sendEmpireSplit(PlayerTypes ePlayer, int iPlayerID);
 	void sendFoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion, ReligionTypes eSlotReligion);
 	DllExport void sendLaunch(PlayerTypes ePlayer, VictoryTypes eVictory);
 	void sendEventTriggered(PlayerTypes ePlayer, EventTypes eEvent, int iEventTriggeredId);

@@ -339,6 +339,7 @@ enum ECSArtStyles
 
 extern int startingTurn[];
 extern int startingTurnYear[]; // edead
+extern int lastResurrectionYear[]; // Leoreth
 //extern int fallTurnYear[];
 extern char loadingTime[NUM_CIVS][4];
 extern char loadingTime600AD[NUM_CIVS][4];

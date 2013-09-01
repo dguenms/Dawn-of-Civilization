@@ -207,14 +207,14 @@ private:
 class CvNetEmpireSplit : public CvMessageData
 {
 public:
-	CvNetEmpireSplit(PlayerTypes ePlayer = NO_PLAYER, int iAreaId = -1);
+	CvNetEmpireSplit(PlayerTypes ePlayer = NO_PLAYER, int iPlayerID = -1);
 	DllExport virtual void Debug(char* szAddendum);
 	DllExport virtual void Execute();
 	DllExport virtual void PutInBuffer(FDataStreamBase* pStream);
 	DllExport virtual void SetFromBuffer(FDataStreamBase* pStream);
 private:
 	PlayerTypes m_ePlayer;
-	int m_iAreaId;
+	int m_iPlayerID;
 }; 
 
 class CvNetFoundReligion : public CvMessageData

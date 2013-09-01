@@ -988,7 +988,7 @@ public:
 	int getUnitExtraCost(UnitClassTypes eUnitClass) const;
 	void setUnitExtraCost(UnitClassTypes eUnitClass, int iCost);
 
-	DllExport bool splitEmpire(int iAreaId);
+	DllExport bool splitEmpire(int iPlayerID);
 	bool canSplitEmpire() const;
 	bool canSplitArea(int iAreaId) const;
 	PlayerTypes getSplitEmpirePlayer(int iAreaId) const;

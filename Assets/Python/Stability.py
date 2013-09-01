@@ -1580,7 +1580,7 @@ def getResurrectionCities(iPlayer):
 			
 	return lFlippingCities
 	
-def doResurrection(iPlayer, lCityList):
+def doResurrection(iPlayer, lCityList, bAskFlip = True):
 
 	pPlayer = gc.getPlayer(iPlayer)
 	teamPlayer = gc.getTeam(iPlayer)
@@ -1690,7 +1690,7 @@ def doResurrection(iPlayer, lCityList):
 		
 	CyInterface().addMessage(iHuman, True, con.iDuration, CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pPlayer.getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
 	
-	if iHuman in lOwners:
+	if bAskFlip and iHuman in lOwners:
 		rebellionPopup(iPlayer)
 		
 	sd.setStabilityLevel(iPlayer, con.iStabilityStable)
@@ -1759,14 +1759,11 @@ def relocateCapital(iPlayer, bResurrection = False):
 		tCapital = con.tRespawnCapitals[iPlayer]
 		
 	x, y = tCapital
-	if gc.getMap().plot(x, y).isCity():
-		newCapital = gc.getMap().plot(x, y).getPlotCity()
-		
+	plot = gc.getMap().plot(x, y)
+	if plot.isCity() and plot.getPlotCity().getOwner() == iPlayer:
+		newCapital = gc.getMap().plot(x, y).getPlotCity()	
 	else:
-		lBestCities = [(city, max(0, 500-city.getGameTurnFounded()) + city.getPopulation()*5) for city in utils.getCityList(iPlayer)]
-		lBestCities.sort(key=itemgetter(1), reverse=True)
-		
-		newCapital = lBestCities[0][0]
+		newCapital = utils.getHighestEntry(utils.getCityList(iPlayer), lambda x: max(0, utils.getTurns(500)-x.getGameTurnFounded()) + x.getPopulation()*5)
 		
 	oldCapital.setHasRealBuilding(con.iPalace, False)
 	newCapital.setHasRealBuilding(con.iPalace, True)
@@ -1811,7 +1808,7 @@ def setStateReligion(iCiv):
 	if iHighestEntry > 0:
 		gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))                                                       
                                 
-def rebellionPopup(self, iRebelCiv):
+def rebellionPopup(iRebelCiv):
 	utils.showPopup(7622, CyTranslator().getText("TXT_KEY_REBELLION_TITLE", ()), \
 		       CyTranslator().getText("TXT_KEY_REBELLION_TEXT", (gc.getPlayer(iRebelCiv).getCivilizationAdjectiveKey(),)), \
 		       (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), \

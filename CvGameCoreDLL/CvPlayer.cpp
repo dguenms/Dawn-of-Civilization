@@ -22168,11 +22168,21 @@ bool CvPlayer::getSplitEmpireLeaders(CivLeaderArray& aLeaders) const
 	return true;
 }
 
-bool CvPlayer::splitEmpire(int iAreaId)
+bool CvPlayer::splitEmpire(int iPlayerID)
 {
 	PROFILE_FUNC();
 
-	if (!canSplitEmpire())
+	PlayerTypes eNewPlayer = (PlayerTypes)iPlayerID;
+
+	if (eNewPlayer == NO_PLAYER || eNewPlayer == getID())
+	{
+		return false;
+	}
+
+	// Leoreth: report to Python and let it handle it
+	CvEventReporter::getInstance().releasedPlayer(getID(), eNewPlayer);
+
+	/*if (!canSplitEmpire())
 	{
 		return false;
 	}
@@ -22253,7 +22263,7 @@ bool CvPlayer::splitEmpire(int iAreaId)
 		*/
 
 		// remove leftover culture from old recycled player
-		for (int iPlot = 0; iPlot < GC.getMapINLINE().numPlotsINLINE(); ++iPlot)
+		/*for (int iPlot = 0; iPlot < GC.getMapINLINE().numPlotsINLINE(); ++iPlot)
 		{
 			CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iPlot);
 
@@ -22268,7 +22278,7 @@ bool CvPlayer::splitEmpire(int iAreaId)
 		*/
 		//Rhye - end comment
 
-		CvTeam& kNewTeam = GET_TEAM(GET_PLAYER(eNewPlayer).getTeam());
+		/*CvTeam& kNewTeam = GET_TEAM(GET_PLAYER(eNewPlayer).getTeam());
 		for (int i = 0; i < GC.getNumTechInfos(); ++i)
 		{
 			if (GET_TEAM(getTeam()).isHasTech((TechTypes)i))
@@ -22301,7 +22311,7 @@ bool CvPlayer::splitEmpire(int iAreaId)
 		*/
 		//Rhye - end comment
 
-		AI_updateBonusValue();
+		/*AI_updateBonusValue();
 	}
 
 	std::vector< std::pair<int, int> > aCultures;
@@ -22390,7 +22400,7 @@ bool CvPlayer::splitEmpire(int iAreaId)
 	}
 
 
-	GC.getGameINLINE().updatePlotGroups();
+	GC.getGameINLINE().updatePlotGroups();*/
 
 	return true;
 }

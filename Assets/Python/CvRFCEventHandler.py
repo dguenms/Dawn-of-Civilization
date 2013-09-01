@@ -120,6 +120,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("unitBuilt", self.onUnitBuilt)
 		eventManager.addEventHandler("plotFeatureRemoved", self.onPlotFeatureRemoved)
 		eventManager.addEventHandler("goldenAge", self.onGoldenAge)
+		eventManager.addEventHandler("releasedPlayer", self.onReleasedPlayer)
                
                 self.eventManager = eventManager
 
@@ -722,6 +723,25 @@ class CvRFCEventHandler:
 		iPlayer = argsList[0]
 		
 		sta.onGoldenAge(iPlayer)
+		
+	def onReleasedPlayer(self, argsList):
+		iPlayer, iReleasedPlayer = argsList
+		
+		lCities = []
+		for city in utils.getCityList(iPlayer):
+			if city.plot().isCore(iReleasedPlayer) and not city.plot().isCore(iPlayer) and not city.isCapital():
+				lCities.append(city)
+					
+		iReborn = utils.getReborn(iReleasedPlayer)
+		sCities = 'Rebirth cities: '
+		for city in utils.getAreaCities(con.tCoreAreasTL[iReborn][iReleasedPlayer], con.tCoreAreasBR[iReborn][iReleasedPlayer], con.tExceptions[iReborn][iReleasedPlayer]):
+			sCities += city.getName() + ', '
+			if city.getOwner() >= con.iNumPlayers:
+				lCities.append(city)
+				
+		utils.debugTextPopup(sCities)
+				
+		sta.doResurrection(iReleasedPlayer, lCities, False)
 
         def onKbdEvent(self, argsList):
                 'keypress handler - return 1 if the event was consumed'

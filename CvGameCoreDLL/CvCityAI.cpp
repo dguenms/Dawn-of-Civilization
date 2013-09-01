@@ -3201,7 +3201,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case MOORS:
 										if (iI == MEZQUITA && getRegionID() == REGION_IBERIA) iTempValue *= 5;
-										else if (iI == SANKORE || iI == SPIRALMINARET || iI == TOPKAPI || iI == BLUE_MOSQUE) iTempValue /= 3;
+										else if (iI == SANKORE || iI == SPIRALMINARET || iI == TOPKAPI || iI == BLUE_MOSQUE) iTempValue /= 4;
 										break;
 									case SPAIN:
 										if (iI == NOTREDAME || iI == MEZQUITA) {
@@ -3266,7 +3266,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == SANKORE)	iTempValue *= 4;
 										break;
 									case TURKEY:
-										if (iI == TOPKAPI || iI == BLUE_MOSQUE) iTempValue *= 4;
+										if (iI == TOPKAPI || iI == BLUE_MOSQUE) iTempValue *= 6;
 										else if (iI == TAJMAHAL || iI == RED_FORT || iI == KREMLIN) iTempValue /= 4;
 										break;
 									case POLAND:

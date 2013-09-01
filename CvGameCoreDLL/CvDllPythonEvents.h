@@ -95,6 +95,7 @@ public:
 
 	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); //Leoreth
 	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); //Leoreth
+	void reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); //Leoreth
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
