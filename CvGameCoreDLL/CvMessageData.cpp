@@ -559,9 +559,9 @@ void CvNetConvert::SetFromBuffer(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eReligion);
 }
 
-CvNetEmpireSplit::CvNetEmpireSplit(PlayerTypes ePlayer, int iAreaId) : CvMessageData(GAMEMESSAGE_EMPIRE_SPLIT),
+CvNetEmpireSplit::CvNetEmpireSplit(PlayerTypes ePlayer, int iPlayerID) : CvMessageData(GAMEMESSAGE_EMPIRE_SPLIT),
 	m_ePlayer(ePlayer),
-	m_iAreaId(iAreaId)
+	m_iPlayerID(iPlayerID)
 {
 }
 
@@ -574,20 +574,20 @@ void CvNetEmpireSplit::Execute()
 {
 	if (m_ePlayer != NO_PLAYER)
 	{
-		GET_PLAYER(m_ePlayer).splitEmpire(m_iAreaId);
+		GET_PLAYER(m_ePlayer).splitEmpire(m_iPlayerID);
 	}
 }
 
 void CvNetEmpireSplit::PutInBuffer(FDataStreamBase* pStream)
 {
 	pStream->Write(m_ePlayer);
-	pStream->Write(m_iAreaId);
+	pStream->Write(m_iPlayerID);
 }
 
 void CvNetEmpireSplit::SetFromBuffer(FDataStreamBase* pStream)
 {
 	pStream->Read((int*)&m_ePlayer);
-	pStream->Read(&m_iAreaId);
+	pStream->Read(&m_iPlayerID);
 }
 
 CvNetFoundReligion::CvNetFoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion, ReligionTypes eSlotReligion) : CvMessageData(GAMEMESSAGE_FOUND_RELIGION),

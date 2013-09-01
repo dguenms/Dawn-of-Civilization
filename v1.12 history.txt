@@ -54,3 +54,4 @@
 # new Portuguese UP: Ocean trade enabled with Optics, reduced expansion penalty for overseas colonies
 # new Mongol UP: Approaching armies can send enemy cities into unrest
 # Mongol Keshiks changed to: Knight with 3 moves, strength 11, causes collateral damage
+# added an option to release cities to dead civilizations to resurrect them

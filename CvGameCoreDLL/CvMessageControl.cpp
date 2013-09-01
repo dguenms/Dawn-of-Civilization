@@ -99,9 +99,9 @@ void CvMessageControl::sendConvert(ReligionTypes eReligion)
 	}
 }
 
-void CvMessageControl::sendEmpireSplit(PlayerTypes ePlayer, int iAreaId)
+void CvMessageControl::sendEmpireSplit(PlayerTypes ePlayer, int iPlayerID)
 {
-	gDLL->sendMessageData(new CvNetEmpireSplit(ePlayer, iAreaId));
+	gDLL->sendMessageData(new CvNetEmpireSplit(ePlayer, iPlayerID));
 }
 
 void CvMessageControl::sendFoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion, ReligionTypes eSlotReligion)

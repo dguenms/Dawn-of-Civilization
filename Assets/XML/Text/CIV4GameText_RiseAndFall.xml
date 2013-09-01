@@ -220,4 +220,12 @@
 		<Tag>TXT_KEY_ASKCOLONIALCITY_MESSAGE</Tag>
 		<English>The %s1 Trading Company asks for the control of %s3 and offers %d2 gold. Refusal will lead to war. Shall we accept their offer?</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELEASE_CIVILIZATION</Tag>
+		<English>Release %s1_citylist to %s2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_LIBERATE_MINOR</Tag>
+		<English>Grant independence to %s1_city</English>
+	</TEXT>
 </Civ4GameText>

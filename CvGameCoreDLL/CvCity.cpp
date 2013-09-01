@@ -14930,6 +14930,12 @@ void CvCity::liberate(bool bConquest)
 	PlayerTypes ePlayer = getLiberationPlayer(bConquest);
 	PlayerTypes eOwner = getOwnerINLINE();
 
+	// Leoreth: release to independents
+	if (ePlayer == NO_PLAYER)
+	{
+		ePlayer = GET_PLAYER(INDEPENDENT).getNumCities() > GET_PLAYER(INDEPENDENT2).getNumCities() ? INDEPENDENT2 : INDEPENDENT;
+	}
+
 	if (NO_PLAYER != ePlayer)
 	{
 		int iOldOwnerCulture = getCultureTimes100(eOwner);
@@ -15027,7 +15033,8 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 	//Rhye - end comment
 
 	PlayerTypes eBestPlayer = NO_PLAYER;
-	int iBestValue = 0;
+	//int iBestValue = 0;
+	int iBestValue = 25; // Leoreth: some minimum amount of culture required
 
 	int iTotalCultureTimes100 = countTotalCultureTimes100();
 
@@ -15069,6 +15076,12 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 					}
 
 					int iValue = std::max(100, iCultureTimes100) / std::max(1, iCapitalDistance);
+
+					// Leoreth: better value for core and historical tiles
+					if (plot()->isCore(getOwner()))
+						iValue *= 3;
+					else if (plot()->getSettlerMapValue(getOwner()))
+						iValue *= 2;
 
 					if (iValue > iBestValue)
 					{
