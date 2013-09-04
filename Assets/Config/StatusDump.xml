@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	StatusDump
+	by Ruff_Hi
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="StatusDump" 
+	 name="StatusDump Mod" 
+	 author="Ruff_Hi" 
+	 version="1.0" 
+	 date="02/11/2005"
+	 url="http://forums.civfanatics.com/showthread.php?t=141164">
+	 
+	<options id="StatusDump" file="StatusDump.ini">
+		<section id="StatusDump">
+			<!-- Move this outside of INI once Mod objects hold options -->
+			<option id="isStatusDump" type="boolean" default="False"/>
+		</section>
+	</options>
+	
+	<events module="StatusDumpEventManager">
+		<!--arg name="toggleKey" type="key" value="Alt L"/>
+		<arg name="entryKey" type="key" value="Alt E"/-->
+	</events>
+	
+</mod>

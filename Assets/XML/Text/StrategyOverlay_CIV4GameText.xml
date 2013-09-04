@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- Translations for various menu options
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_TITLE</Tag>
+		<English>Strategy Overlay</English>
+		<French>Strategy Overlay</French>
+		<German>Strategie-Overlay</German>
+		<Italian>Livello Strategico</Italian>
+		<Spanish>Strategy Overlay</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_DOTMAPPER</Tag>
+		<English>Dot Mapper</English>
+		<French>Dot Mapper</French>
+		<German>Punkt-Werkzeug</German>
+		<Italian>Mappa di posizionamento</Italian>
+		<Spanish>Dot Mapper</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_PLACECITY</Tag>
+		<English>Place City</English>
+		<French>Place City</French>
+		<German>Stadt platzieren</German>
+		<Italian>Posiziona città</Italian>
+		<Spanish>Place City</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_REMOVECITY</Tag>
+		<English>Remove City</English>
+		<French>Remove City</French>
+		<German>Stadt entfernen</German>
+		<Italian>Rimuovi Città</Italian>
+		<Spanish>Remove City</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_COLORSELECT</Tag>
+		<English>Color Selection</English>
+		<French>Color Selection</French>
+		<German>Farbauswahl</German>
+		<Italian>Seleziona colore</Italian>
+		<Spanish>Color Selection</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_SIGNS</Tag>
+		<English>Signs</English>
+		<French>Signs</French>
+		<German>Markierungen</German>
+		<Italian>Etichette</Italian>
+		<Spanish>Signs</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_ADDSIGN_TITLE</Tag>
+		<English>Add Overlay Sign</English>
+		<French>Add Overlay Sign</French>
+		<German>Overlay-Markierung hinzufügen</German>
+		<Italian>Aggiungi livello etichette</Italian>
+		<Spanish>Add Overlay Sign</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_ADDSIGN_BODY</Tag>
+		<English>Caption for the sign</English>
+		<French>Caption for the sign</French>
+		<German>Text der Markierung</German>
+		<Italian>Testo dell'etichetta</Italian>
+		<Spanish>Caption for the sign</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_ADDSIGN</Tag>
+		<English>Add Sign</English>
+		<French>Add Sign</French>
+		<German>Markierung hinzufügen</German>
+		<Italian>Aggiungi etichetta</Italian>
+		<Spanish>Add Sign</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_REMOVESIGN</Tag>
+		<English>Remove Sign</English>
+		<French>Remove Sign</French>
+		<German>Markierung entfernen</German>
+		<Italian>Rimuovi etichetta</Italian>
+		<Spanish>Remove Sign</Spanish>
+	</TEXT>
+	<TEXT>
+	    <Tag>TXT_KEY_STRATOVERLAY_ADDSIGN_EDITBOX_HELP</Tag>
+	    <English>Enter the text to be displayed on the sign</English>
+	    <French>Enter the text to be displayed on the sign</French>
+	    <German>Eingabe des Textes, der auf der Markierung erscheinen soll</German>
+	    <Italian>Digita il testo che deve essere visualizzato sull'etichetta</Italian>
+	    <Spanish>Enter the text to be displayed on the sign</Spanish>
+	</TEXT>
+</Civ4GameText>

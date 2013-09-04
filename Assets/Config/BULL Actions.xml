@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BULL City Bar
+	by EmperorFool
+	
+	Copyright (c) 2009 The BUG Mod.
+-->
+<mod id="Actions" 
+	 name="BULL Actions" 
+	 author="EmperorFool" 
+	 version="1.0" 
+	 date="04/20/2009"
+	 url="http://forums.civfanatics.com/showthread.php?t=307951"
+	 dll="1">
+	 
+	<options id="Actions" file="BUG Actions.ini">
+		<section id="Units">
+			<!-- Ask Declare War -->
+			<option id="AskDeclareWarUnits" key="Ask Declare War Units" 
+					type="boolean" default="True"/>
+			
+			<!-- Sentry Healing by Unofficial Patch -->
+			<option id="SentryHealing" key="Sentry Healing" 
+					type="boolean" default="True"/>
+			<option id="SentryHealingOnlyNeutral" key="Sentry Healing Only Neutral" 
+					type="boolean" default="True"/>
+			
+			<!-- Ignore Harmless Barbarians (with Great Wall) -->
+			<option id="IgnoreHarmlessBarbarians" key="Ignore Harmless Barbarians" 
+					type="boolean" default="True" dll="2"/>
+		</section>
+		
+		<section id="Workers">
+			<!-- PreChop by EmperorFool -->
+			<option id="PreChopForests" key="Pre Chop Forests" 
+					type="boolean" default="True"/>
+			<option id="PreChopImprovements" key="Pre Chop Improvements" 
+					type="boolean" default="True"/>
+		</section>
+	</options>
+</mod>

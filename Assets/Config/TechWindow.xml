@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	TechWindow
+	by SirRethcir, Roamty, Caesium, Guarav
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="TechWindow" 
+	 name="TechWindow" 
+	 author="SirRethcir, Roamty, Caesium, Guarav" 
+	 version="1.g" 
+	 date="11/18/2007"
+	 url="http://forums.civfanatics.com/showthread.php?t=158636">
+	 
+	<options id="TechWindow" file="TechWindow.ini">
+		<section id="TechWindow">
+			<list   id="ViewType" key="View" 
+					type="int" default="1" listType="string" 
+					values="Original|Detailed|Wide" 
+					get="getViewType">
+				<choice id="Original" get="isOriginalView"/>
+				<choice id="Detailed" get="isDetailedView"/>
+				<choice id="Wide" get="isWideView"/>
+				<change module="CvScreensInterface" function="deleteTechSplash"/>
+			</list>
+			<option id="CivilopediaText" key="Civilopedia Text" 
+					type="boolean" default="False"
+					get="isShowCivilopediaText"/>
+		</section>
+	</options>
+</mod>

@@ -210,6 +210,31 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_INTERFACE_68</Description>
 		</HintInfo>
+		
+		<!-- BUG Interface Hints -->
+		
+		<HintInfo>
+			<Description>TXT_KEY_BUG_HINT_INTERFACE_1</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_BUG_HINT_INTERFACE_2</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_BUG_HINT_INTERFACE_3</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_BUG_HINT_INTERFACE_4</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_BUG_HINT_INTERFACE_5</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_BUG_HINT_INTERFACE_6</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_BUG_HINT_INTERFACE_7</Description>
+		</HintInfo>
+		
 		<HintInfo>
 			<Description>TXT_KEY_HINT_1</Description>
 		</HintInfo>
@@ -446,6 +471,9 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_9</Description>
 		</HintInfo>
+
+		<!-- BUG Hints -->
+		
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_10</Description>
 		</HintInfo>

@@ -30,8 +30,9 @@ import CvWonderMovieScreen
 import CvEraMovieScreen
 import CvSpaceShipScreen
 
-import CvPediaMain
-import CvPediaHistory
+# BUG - Sevopedia - start
+import SevoScreenEnums
+# BUG - Sevopedia - end
 
 import CvWorldBuilderScreen
 import CvWorldBuilderDiplomacyScreen
@@ -47,6 +48,13 @@ import CvScreenUtilsInterface
 import ScreenInput as PyScreenInput
 from CvScreenEnums import *
 from CvPythonExtensions import *
+
+# BUG - Options - end
+import BugCore
+AdvisorOpt = BugCore.game.Advisors
+CustDomAdvOpt = BugCore.game.CustDomAdv
+TechWindowOpt = BugCore.game.TechWindow
+# BUG - Options - end
 
 g_bIsScreenActive = -1
 
@@ -187,6 +195,9 @@ mainInterface = CvMainInterface.CvMainInterface()
 def showMainInterface():
 	mainInterface.interfaceScreen()
 
+def reinitMainInterface():
+	mainInterface.initState()
+
 def numPlotListButtons():
 	return mainInterface.numPlotListButtons()
 
@@ -224,20 +235,65 @@ def showForeignAdvisorScreen(argsList):
 	if (-1 != CyGame().getActivePlayer()):
 		foreignAdvisor.interfaceScreen(argsList[0])
 
-financeAdvisor = CvFinanceAdvisor.CvFinanceAdvisor()
-def showFinanceAdvisor(argsList):
+# BUG - Finance Advisor - start
+financeAdvisor = None
+def createFinanceAdvisor():
+	"""Creates the correct Finance Advisor based on an option."""
+	global financeAdvisor
+	if financeAdvisor is None:
+		if (AdvisorOpt.isBugFinanceAdvisor()):
+			import BugFinanceAdvisor
+			financeAdvisor = BugFinanceAdvisor.BugFinanceAdvisor()
+		else:
+			import CvFinanceAdvisor
+			financeAdvisor = CvFinanceAdvisor.CvFinanceAdvisor()
+		HandleInputMap[FINANCE_ADVISOR] = financeAdvisor
+# BUG - Finance Advisor - end
+			
+def showFinanceAdvisor():
 	if (-1 != CyGame().getActivePlayer()):
-		financeAdvisor.interfaceScreen(argsList[0])
+		financeAdvisor.interfaceScreen()
 
-domesticAdvisor = CvDomesticAdvisor.CvDomesticAdvisor()
+# BUG - CustDomAdv - start
+domesticAdvisor = None
+def createDomesticAdvisor():
+	"""Creates the correct Domestic Advisor based on an option."""
+	global domesticAdvisor
+	if domesticAdvisor is None:
+		if (CustDomAdvOpt.isEnabled()):
+			import CvCustomizableDomesticAdvisor
+			domesticAdvisor = CvCustomizableDomesticAdvisor.CvCustomizableDomesticAdvisor()
+		else:
+			import CvDomesticAdvisor
+			domesticAdvisor = CvDomesticAdvisor.CvDomesticAdvisor()
+		HandleInputMap[DOMESTIC_ADVISOR] = domesticAdvisor
+# BUG - CustDomAdv - end
+
 def showDomesticAdvisor(argsList):
 	if (-1 != CyGame().getActivePlayer()):
 		domesticAdvisor.interfaceScreen()
 
-militaryAdvisor = CvMilitaryAdvisor.CvMilitaryAdvisor(MILITARY_ADVISOR)
+# BUG - Military Advisor - start
+militaryAdvisor = None
+def createMilitaryAdvisor():
+	"""Creates the correct Military Advisor based on an option."""
+	global militaryAdvisor
+	if militaryAdvisor is None:
+		if (AdvisorOpt.isBUG_MA()):
+			import CvBUGMilitaryAdvisor
+			militaryAdvisor = CvBUGMilitaryAdvisor.CvMilitaryAdvisor(MILITARY_ADVISOR)
+		else:
+			import CvMilitaryAdvisor
+			militaryAdvisor = CvMilitaryAdvisor.CvMilitaryAdvisor(MILITARY_ADVISOR)
+		HandleInputMap[MILITARY_ADVISOR] = militaryAdvisor
+
 def showMilitaryAdvisor():
 	if (-1 != CyGame().getActivePlayer()):
+		if (AdvisorOpt.isBUG_MA()):
+			# TODO: move to CvBUGMilitaryAdvisor.interfaceScreen()
+			militaryAdvisor.IconGridActive = False
 		militaryAdvisor.interfaceScreen()
+# BUG - Military Advisor - end
 
 espionageAdvisor = CvEspionageAdvisor.CvEspionageAdvisor()
 def showEspionageAdvisor():
@@ -298,86 +354,282 @@ debugInfoScreen = CvDebugInfoScreen.CvDebugInfoScreen()
 def showDebugInfoScreen():
 	debugInfoScreen.interfaceScreen()
 
-techSplashScreen = CvTechSplashScreen.CvTechSplashScreen(TECH_SPLASH)
+# BUG - Tech Splash Screen - start
+techSplashScreen = None
+def createTechSplash():
+	"""Creates the correct Tech Splash Screen based on an option."""
+	global techSplashScreen
+	if techSplashScreen is None:
+		if (TechWindowOpt.isDetailedView()):
+			import TechWindow
+			techSplashScreen = TechWindow.CvTechSplashScreen(TECH_SPLASH)
+		elif (TechWindowOpt.isWideView()):
+			import TechWindowWide
+			techSplashScreen = TechWindowWide.CvTechSplashScreen(TECH_SPLASH)
+		else:
+			import CvTechSplashScreen
+			techSplashScreen = CvTechSplashScreen.CvTechSplashScreen(TECH_SPLASH)
+	HandleInputMap[TECH_SPLASH] = techSplashScreen
+
+def deleteTechSplash(option=None, value=None):
+	global techSplashScreen
+	techSplashScreen = None
+	if TECH_SPLASH in HandleInputMap:
+		del HandleInputMap[TECH_SPLASH]
+
 def showTechSplash(argsList):
+	if techSplashScreen is None:
+		createTechSplash()
 	techSplashScreen.interfaceScreen(argsList[0])
+# BUG - Tech Splash Screen - end
 
 victoryScreen = CvVictoryScreen.CvVictoryScreen(VICTORY_SCREEN)
 def showVictoryScreen():
 	if (-1 != CyGame().getActivePlayer()):
 		victoryScreen.interfaceScreen()
 
-#################################################
-## Civilopedia
-#################################################
-pediaMainScreen = CvPediaMain.CvPediaMain()
+# BUG - Sevopedia - start
+
+pediaMainScreen = None
+bUsingSevopedia = False
+def createCivilopedia():
+	"""Creates the correct Civilopedia based on an option."""
+	global pediaMainScreen
+	global bUsingSevopedia
+	if pediaMainScreen is None:
+		import SevoPediaUtil
+		if (AdvisorOpt.Sevopedia()):
+			import SevoPediaMain
+			import SevoPediaHistory
+			bUsingSevopedia = True
+			pediaMainScreen = SevoPediaMain.SevoPediaMain()
+		else:
+			import CvPediaMain
+			import CvPediaHistory
+			bUsingSevopedia = False
+			pediaMainScreen = CvPediaMain.CvPediaMain()
+		HandleInputMap.update(
+							{
+								PEDIA_MAIN : pediaMainScreen,
+								PEDIA_TECH : pediaMainScreen,
+								PEDIA_UNIT : pediaMainScreen,
+								PEDIA_BUILDING : pediaMainScreen,
+								PEDIA_PROMOTION : pediaMainScreen,
+								PEDIA_PROJECT : pediaMainScreen,
+								PEDIA_UNIT_CHART : pediaMainScreen,
+								PEDIA_BONUS : pediaMainScreen,
+								PEDIA_IMPROVEMENT : pediaMainScreen,
+								PEDIA_TERRAIN : pediaMainScreen,
+								PEDIA_FEATURE : pediaMainScreen,
+								PEDIA_CIVIC : pediaMainScreen,
+								PEDIA_CIVILIZATION : pediaMainScreen,
+								PEDIA_LEADER : pediaMainScreen,
+								PEDIA_RELIGION : pediaMainScreen,
+								PEDIA_CORPORATION : pediaMainScreen,
+								PEDIA_HISTORY : pediaMainScreen,
+								
+								SevoScreenEnums.PEDIA_MAIN		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_TECHS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_UNITS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_UNIT_UPGRADES	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_UNIT_CATEGORIES	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_PROMOTIONS	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_PROMOTION_TREE	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_BUILDINGS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_NATIONAL_WONDERS	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_GREAT_WONDERS	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_PROJECTS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_SPECIALISTS	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_TERRAINS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_FEATURES		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_BONUSES		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_IMPROVEMENTS	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_CIVS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_LEADERS		: pediaMainScreen,
+								#SevoScreenEnums.PEDIA_TRAITS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_CIVICS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_RELIGIONS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_CORPORATIONS	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_CONCEPTS		: pediaMainScreen,
+								SevoScreenEnums.PEDIA_BTS_CONCEPTS	: pediaMainScreen,
+								SevoScreenEnums.PEDIA_HINTS		: pediaMainScreen,
+								#SevoScreenEnums.PEDIA_SHORTCUTS		: pediaMainScreen,
+							})
+		global HandleNavigationMap
+		HandleNavigationMap = {
+							MAIN_INTERFACE : mainInterface,
+							PEDIA_MAIN : pediaMainScreen,
+							PEDIA_TECH : pediaMainScreen,
+							PEDIA_UNIT : pediaMainScreen,
+							PEDIA_BUILDING : pediaMainScreen,
+							PEDIA_PROMOTION : pediaMainScreen,
+							PEDIA_PROJECT : pediaMainScreen,
+							PEDIA_UNIT_CHART : pediaMainScreen,
+							PEDIA_BONUS : pediaMainScreen,
+							PEDIA_IMPROVEMENT : pediaMainScreen,
+							PEDIA_TERRAIN : pediaMainScreen,
+							PEDIA_FEATURE : pediaMainScreen,
+							PEDIA_CIVIC : pediaMainScreen,
+							PEDIA_CIVILIZATION : pediaMainScreen,
+							PEDIA_LEADER : pediaMainScreen,
+							PEDIA_HISTORY : pediaMainScreen,
+							PEDIA_RELIGION : pediaMainScreen,
+							PEDIA_CORPORATION : pediaMainScreen,
+							
+							SevoScreenEnums.PEDIA_MAIN		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_TECHS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_UNITS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_UNIT_UPGRADES	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_UNIT_CATEGORIES	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_PROMOTIONS	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_PROMOTION_TREE	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_BUILDINGS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_NATIONAL_WONDERS	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_GREAT_WONDERS	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_PROJECTS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_SPECIALISTS	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_TERRAINS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_FEATURES		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_BONUSES		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_IMPROVEMENTS	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_CIVS		 	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_LEADERS		: pediaMainScreen,
+							#SevoScreenEnums.PEDIA_TRAITS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_CIVICS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_RELIGIONS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_CORPORATIONS	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_CONCEPTS		: pediaMainScreen,
+							SevoScreenEnums.PEDIA_BTS_CONCEPTS	: pediaMainScreen,
+							SevoScreenEnums.PEDIA_HINTS			: pediaMainScreen,
+							#SevoScreenEnums.PEDIA_SHORTCUTS		: pediaMainScreen,
+						}
+
 def linkToPedia(argsList):
 	pediaMainScreen.link(argsList[0])
-		
+
 def pediaShow():
+	createCivilopedia()
 	return pediaMainScreen.pediaShow()
-	
+
 def pediaBack():
 	return pediaMainScreen.back()
-		
+
 def pediaForward():
-	pediaMainScreen.forward()
-		
+	return pediaMainScreen.forward()
+
 def pediaMain(argsList):
-	pediaMainScreen.pediaJump(PEDIA_MAIN, argsList[0], True)
-		
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_MAIN, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_MAIN, argsList[0], True)
+
 def pediaJumpToTech(argsList):
-	pediaMainScreen.pediaJump(PEDIA_TECH, argsList[0], True)
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_TECHS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_TECH, argsList[0], True)
 
 def pediaJumpToUnit(argsList):
-	pediaMainScreen.pediaJump(PEDIA_UNIT, argsList[0], True)
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_UNITS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_UNIT, argsList[0], True)
+
+def pediaJumpToUnitChart(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_UNIT_CATEGORIES, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_UNIT_CHART, argsList[0], True)
+
+def pediaJumpToPromotion(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_PROMOTIONS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_PROMOTION, argsList[0], True)
 
 def pediaJumpToBuilding(argsList):
-	pediaMainScreen.pediaJump(PEDIA_BUILDING, argsList[0], True)
-	
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_BUILDINGS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_BUILDING, argsList[0], True)
+
 def pediaJumpToProject(argsList):
-	pediaMainScreen.pediaJump(PEDIA_PROJECT, argsList[0], True)
-	
-def pediaJumpToReligion(argsList):
-	pediaMainScreen.pediaJump(PEDIA_RELIGION, argsList[0], True)
-	
-def pediaJumpToCorporation(argsList):
-	pediaMainScreen.pediaJump(PEDIA_CORPORATION, argsList[0], True)
-	
-def pediaJumpToPromotion(argsList):
-	pediaMainScreen.pediaJump(PEDIA_PROMOTION, argsList[0], True)
-	
-def pediaJumpToUnitChart(argsList):
-	pediaMainScreen.pediaJump(PEDIA_UNIT_CHART, argsList[0], True)
-
-def pediaJumpToBonus(argsList):
-	pediaMainScreen.pediaJump(PEDIA_BONUS, argsList[0], True)
-	
-def pediaJumpToTerrain(argsList):
-	pediaMainScreen.pediaJump(PEDIA_TERRAIN, argsList[0], True)
-	
-def pediaJumpToFeature(argsList):
-	pediaMainScreen.pediaJump(PEDIA_FEATURE, argsList[0], True)
-	
-def pediaJumpToImprovement(argsList):
-	pediaMainScreen.pediaJump(PEDIA_IMPROVEMENT, argsList[0], True)
-
-def pediaJumpToCivic(argsList):
-	pediaMainScreen.pediaJump(PEDIA_CIVIC, argsList[0], True)
-
-def pediaJumpToCiv(argsList):
-	pediaMainScreen.pediaJump(PEDIA_CIVILIZATION, argsList[0], True)
-
-def pediaJumpToLeader(argsList):
-	pediaMainScreen.pediaJump(PEDIA_LEADER, argsList[0], True)
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_PROJECTS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_PROJECT, argsList[0], True)
 
 def pediaJumpToSpecialist(argsList):
-	pediaMainScreen.pediaJump(PEDIA_SPECIALIST, argsList[0], True)
-	
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_SPECIALISTS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_SPECIALIST, argsList[0], True)
+
+def pediaJumpToTerrain(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_TERRAINS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_TERRAIN, argsList[0], True)
+
+def pediaJumpToFeature(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_FEATURES, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_FEATURE, argsList[0], True)
+
+def pediaJumpToBonus(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_BONUSES, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_BONUS, argsList[0], True)
+
+def pediaJumpToImprovement(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_IMPROVEMENTS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_IMPROVEMENT, argsList[0], True)
+
+def pediaJumpToCiv(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_CIVS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_CIVILIZATION, argsList[0], True)
+
+def pediaJumpToLeader(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_LEADERS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_LEADER, argsList[0], True)
+
+def pediaJumpToCivic(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_CIVICS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_CIVIC, argsList[0], True)
+
+def pediaJumpToReligion(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_RELIGIONS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_RELIGION, argsList[0], True)
+
+def pediaJumpToCorporation(argsList):
+	if (bUsingSevopedia):
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_CORPORATIONS, argsList[0], True, False)
+	else:
+		pediaMainScreen.pediaJump(PEDIA_CORPORATION, argsList[0], True)
+
 def pediaShowHistorical(argsList):
-	iEntryId = pediaMainScreen.pediaHistorical.getIdFromEntryInfo(argsList[0], argsList[1])
-	pediaMainScreen.pediaJump(PEDIA_HISTORY, iEntryId, True)
-	return
+	if (bUsingSevopedia):
+		if (argsList[0] == CivilopediaPageTypes.CIVILOPEDIA_PAGE_CONCEPT_NEW):
+			pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_BTS_CONCEPTS, argsList[1], True, False)
+		else:
+			pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_CONCEPTS, argsList[1], True, False)
+	else:
+		iEntryId = pediaMainScreen.pediaHistorical.getIdFromEntryInfo(argsList[0], argsList[1])
+		pediaMainScreen.pediaJump(PEDIA_HISTORY, iEntryId, True)
+
+# BUG - Sevopedia - end
 
 #################################################
 ## Worldbuilder
@@ -952,10 +1204,10 @@ def featAccomplishedOnClickedCallback(argsList):
 		elif ((iData1 >= FeatTypes.FEAT_COPPER_CONNECTED) and (iData1 <= FeatTypes.FEAT_FOOD_CONNECTED)):
 			showForeignAdvisorScreen([0])
 		elif ((iData1 == FeatTypes.FEAT_NATIONAL_WONDER)):
-		  # 2 is for the wonder tab...
+			# 2 is for the wonder tab...
 			showInfoScreen([2, 0])
 		elif ((iData1 >= FeatTypes.FEAT_POPULATION_HALF_MILLION) and (iData1 <= FeatTypes.FEAT_POPULATION_2_BILLION)):
-		  # 1 is for the demographics tab...
+			# 1 is for the demographics tab...
 			showInfoScreen([1, 0])
 		elif iData1 == FeatTypes.FEAT_CORPORATION_ENABLED:
 			showCorporationScreen()
@@ -1426,14 +1678,14 @@ HandleCloseMap = {  DAWN_OF_MAN : dawnOfMan,
 ## Handle Input Map
 #######################################################################################
 HandleInputMap = {  MAIN_INTERFACE : mainInterface,
-					DOMESTIC_ADVISOR : domesticAdvisor,
+#					DOMESTIC_ADVISOR : domesticAdvisor,
 					RELIGION_SCREEN : religionScreen,
 					CORPORATION_SCREEN : corporationScreen,
 					CIVICS_SCREEN : civicScreen,
 					TECH_CHOOSER : techChooser,
 					FOREIGN_ADVISOR : foreignAdvisor,
-					FINANCE_ADVISOR : financeAdvisor,
-					MILITARY_ADVISOR : militaryAdvisor,
+#					FINANCE_ADVISOR : financeAdvisor,
+#					MILITARY_ADVISOR : militaryAdvisor,
 					DAWN_OF_MAN : dawnOfMan,
 					WONDER_MOVIE_SCREEN : wonderMovie,
 					ERA_MOVIE_SCREEN : eraMovie,
@@ -1441,7 +1693,6 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					INTRO_MOVIE_SCREEN : introMovie,
 					OPTIONS_SCREEN : optionsScreen,
 					INFO_SCREEN : infoScreen,
-					TECH_SPLASH : techSplashScreen,
 					REPLAY_SCREEN : replayScreen,
 					VICTORY_SCREEN : victoryScreen,
 					TOP_CIVS : topCivs,
@@ -1449,24 +1700,7 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					VICTORY_MOVIE_SCREEN : victoryMovie,
 					ESPIONAGE_ADVISOR : espionageAdvisor,
 					DAN_QUAYLE_SCREEN : danQuayleScreen,
-					
-					PEDIA_MAIN : pediaMainScreen,
-					PEDIA_TECH : pediaMainScreen,
-					PEDIA_UNIT : pediaMainScreen,
-					PEDIA_BUILDING : pediaMainScreen,
-					PEDIA_PROMOTION : pediaMainScreen,
-					PEDIA_PROJECT : pediaMainScreen,
-					PEDIA_UNIT_CHART : pediaMainScreen,
-					PEDIA_BONUS : pediaMainScreen,
-					PEDIA_IMPROVEMENT : pediaMainScreen,
-					PEDIA_TERRAIN : pediaMainScreen,
-					PEDIA_FEATURE : pediaMainScreen,
-					PEDIA_CIVIC : pediaMainScreen,
-					PEDIA_CIVILIZATION : pediaMainScreen,
-					PEDIA_LEADER : pediaMainScreen,
-					PEDIA_RELIGION : pediaMainScreen,
-					PEDIA_CORPORATION : pediaMainScreen,
-					PEDIA_HISTORY : pediaMainScreen,
+
 					WORLDBUILDER_SCREEN : worldBuilderScreen,
 					WORLDBUILDER_DIPLOMACY_SCREEN : worldBuilderDiplomacyScreen,
 					
@@ -1478,25 +1712,14 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 #######################################################################################
 ## Handle Navigation Map
 #######################################################################################
-HandleNavigationMap = {
-					MAIN_INTERFACE : mainInterface,
-					PEDIA_MAIN : pediaMainScreen,
-					PEDIA_TECH : pediaMainScreen,
-					PEDIA_UNIT : pediaMainScreen,
-					PEDIA_BUILDING : pediaMainScreen,
-					PEDIA_PROMOTION : pediaMainScreen,
-					PEDIA_PROJECT : pediaMainScreen,
-					PEDIA_UNIT_CHART : pediaMainScreen,
-					PEDIA_BONUS : pediaMainScreen,
-					PEDIA_IMPROVEMENT : pediaMainScreen,
-					PEDIA_TERRAIN : pediaMainScreen,
-					PEDIA_FEATURE : pediaMainScreen,
-					PEDIA_CIVIC : pediaMainScreen,
-					PEDIA_CIVILIZATION : pediaMainScreen,
-					PEDIA_LEADER : pediaMainScreen,
-					PEDIA_HISTORY : pediaMainScreen,
-					PEDIA_RELIGION : pediaMainScreen,
-					PEDIA_CORPORATION : pediaMainScreen
-				
-				# add new screens here
-				}
+HandleNavigationMap = {}
+
+
+# BUG - Options - start
+def init():
+	createDomesticAdvisor()
+	createFinanceAdvisor()
+	createMilitaryAdvisor()
+	createCivilopedia()
+	createTechSplash()
+# BUG - Options - end

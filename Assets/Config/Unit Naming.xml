@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Unit Naming
+	by Ruff_Hi
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="UnitNaming" 
+	 name="Unit Naming" 
+	 author="Ruff_Hi" 
+	 version="1.0" 
+	 date="09/02/2007"
+	 url="http://forums.civfanatics.com/showthread.php?t=241801">
+	 
+	<options id="UnitNaming" file="Unit Naming.ini">
+		<section id="UnitName">
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True"/>
+			<option id="UseAdvanced" key="UseAdvanced" 
+					type="boolean" default="False" 
+					get="isAdvanced" set="setAdvanced"/>
+			<option id="Default" key="Default" 
+					type="string" default="^ut^ ^cnt[n][u]^ (^ct^)"/>
+			
+			<option id="Combat_None" key="CombatNone" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_AIR" key="CombatAIR" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_ARCHER" key="CombatARCHER" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_ARMOR" key="CombatARMOR" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_GUN" key="CombatGUN" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_HELICOPTER" key="CombatHELICOPTER" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_MELEE" key="CombatMELEE" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_MOUNTED" key="CombatMOUNTED" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_NAVAL" key="CombatNAVAL" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_RECON" key="CombatRECON" 
+					type="string" default="DEFAULT"/>
+			<option id="Combat_SIEGE" key="CombatSIEGE" 
+					type="string" default="DEFAULT"/>
+			<accessor get="getByCombatType" set="setByCombatType" 
+					  args="combatType" id="Combat_%s"/>
+		</section>
+	</options>
+	
+	<options id="AdvUnitNaming" file="Adv Unit Naming.ini">
+		<section id="UnitName">
+			<option id="ByEraAndClass" key="%s_%s" args="era, class" 
+					type="string" default="DEFAULT"/>
+		</section>
+	</options>
+	
+	<events module="UnitNameEventManager">
+		<!--arg type="key" value="Alt Ctrl N"/-->
+	</events>
+	
+</mod>

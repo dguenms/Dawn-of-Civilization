@@ -3893,9 +3893,9 @@ class Victory:
 
 	def getIcon(self, bVal):
 		if bVal:
-			return u"%c" %(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 10)
+			return u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 		else:
-			return u"%c" %(CyGame().getSymbolID(FontSymbols.POWER_CHAR) + 11)
+			return u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
 
 
 	def getUHVHelp(self, iPlayer, iGoal):

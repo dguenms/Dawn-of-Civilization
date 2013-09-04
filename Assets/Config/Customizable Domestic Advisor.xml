@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Customizable Domestic Advisor
+	by Taelis, Cammagno
+	
+	Adds multiple pages to the Domestic Advisor that can be modified by the user.
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="CustDomAdv" 
+	 name="Customizable Domestic Advisor" 
+	 author="Taelis, Cammagno" 
+	 version="3.0" 
+	 date="07/11/2008"
+	 url="http://forums.civfanatics.com/forumdisplay.php?f=268"
+	 module="CvCustomizableDomesticAdvisor">
+	 
+	<options id="CustDomAdv" file="CustDomAdv.ini">
+		<section id="CustDomAdv">
+			<!-- Customizable Domestic Advisor (F1) by Taelis, pages by Cammagno -->
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True"/>
+			<list	id="SpaceTop" key="Space Top"
+					type="int" listType="string" 
+					values="None|Small|Medium|Large" default="1">
+				<change module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
+			</list>
+			<list	id="SpaceSides" key="Space Sides"
+					type="int" listType="string" 
+					values="None|Small|Medium|Large|LargeLeft" default="1">
+				<change module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
+			</list>
+			<list	id="ProductionGrouping" key="Production Grouping"
+					type="int" default="3" listType="string">
+				<choice id="None" get="isProductionGroupingNone"/>
+				<choice id="Icons" get="isProductionGroupingIcons"/>
+				<choice id="Colors" get="isProductionGroupingColors"/>
+				<choice id="Both" get="isProductionGroupingIcons isProductionGroupingColors"/>
+			</list>
+		</section>
+	</options>
+
+	<event type="ResolutionChanged" module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
+	<event type="LanguageChanged" module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
+	
+	<widget name="WIDGET_CDA_SELECT_PAGE" xml="TXT_KEY_CDA_SELECT_PAGE"/>
+	<widget name="WIDGET_CDA_PREV_PAGE" xml="TXT_KEY_CDA_PREV_PAGE"/>
+	<widget name="WIDGET_CDA_NEXT_PAGE" xml="TXT_KEY_CDA_NEXT_PAGE"/>
+	
+	<widget name="WIDGET_CDA_EDIT_PAGE" function="getEditHelpText"/>
+	<widget name="WIDGET_CDA_SAVE" xml="TXT_KEY_CDA_SAVE"/>
+	<widget name="WIDGET_CDA_RELOAD" xml="TXT_KEY_CDA_RELOAD"/>
+	
+	<widget name="WIDGET_CDA_RENAME_PAGE" xml="TXT_KEY_CDA_RENAME_PAGE"/>
+	<widget name="WIDGET_CDA_ADD_PAGE" xml="TXT_KEY_CDA_ADD_PAGE"/>
+	<widget name="WIDGET_CDA_REMOVE_PAGE" xml="TXT_KEY_CDA_REMOVE_PAGE"/>
+	<widget name="WIDGET_CDA_MOVE_PAGE_UP" xml="TXT_KEY_CDA_MOVE_PAGE_UP"/>
+	<widget name="WIDGET_CDA_MOVE_PAGE_DOWN" xml="TXT_KEY_CDA_MOVE_PAGE_DOWN"/>
+	
+	<widget name="WIDGET_CDA_TOGGLE_SPECIALISTS" xml="TXT_KEY_CDA_TOGGLE_SPECIALISTS"/>
+	<widget name="WIDGET_CDA_ADD_COLUMN" xml="TXT_KEY_CDA_ADD_COLUMN"/>
+	<widget name="WIDGET_CDA_REMOVE_COLUMN" xml="TXT_KEY_CDA_REMOVE_COLUMN"/>
+	<widget name="WIDGET_CDA_MOVE_COLUMN_UP" xml="TXT_KEY_CDA_MOVE_COLUMN_UP"/>
+	<widget name="WIDGET_CDA_MOVE_COLUMN_DOWN" xml="TXT_KEY_CDA_MOVE_COLUMN_DOWN"/>
+	<widget name="WIDGET_CDA_SHRINK_COLUMN" xml="TXT_KEY_CDA_SHRINK_COLUMN"/>
+	<widget name="WIDGET_CDA_EXPAND_COLUMN" xml="TXT_KEY_CDA_EXPAND_COLUMN"/>
+
+</mod>

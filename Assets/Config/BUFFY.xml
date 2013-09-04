@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BUFFY
+	by BUFFY Team
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<mod id="BUFFY" 
+	 name="BUFFY" 
+	 author="BUFFY Team" 
+	 version="3.19.003" 
+	 date="05/04/2009">
+
+	<!-- This must be set to True when building a BUFFY release -->
+	<option id="Enabled" type="boolean" default="False"/>
+	
+	<options id="BUFFY" file="BUFFY.ini">
+		<section id="BUFFY">
+			<option id="WarningsDawnOfMan" key="Show BUFFY Warnings on Dawn of Man" 
+				type="boolean" default="True" and="Enabled"/>
+			<option id="WarningsSettings" key="Show BUFFY Warnings on Settings" 
+				type="boolean" default="True" and="Enabled"/>
+		</section>
+	</options>
+
+	<init module="Buffy"/>
+	<init module="GameSetUpCheck"/>
+	
+	<export module="Buffy" function="canTriggerTheVedicAryans" to="CvRandomEventInterface"/>
+	
+</mod>

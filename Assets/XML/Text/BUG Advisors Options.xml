@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BUG Advisors
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+
+<!-- Finance Advisor -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGFINANCEADVISOR_TEXT</Tag>
+		<English>BUG Finance Advisor</English>
+		<French>BUG Finance Advisor</French>
+		<German>BUG Finanzberater</German>
+		<Italian>Evoluto</Italian>
+		<Spanish>BUG Finance Advisor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGFINANCEADVISOR_HOVER</Tag>
+		<English>When checked, uses the BUG Finance Advisor (requires restart).</English>
+		<French>When checked, uses the BUG Finance Advisor (requires restart).</French>
+		<German>Aktiviert den verbesserten Finanzberater der BUG Mod (erfordert Neustart)</German>
+		<Italian>Quando è selezionato, visualizza il Consigliere Economico del BUG mod (è richiesto un  perchè il cambiamento abbia effetto).</Italian>
+		<Spanish>When checked, uses the BUG Finance Advisor (requires restart).</Spanish>
+	</TEXT>
+
+<!-- Exotic Foreign Advisor -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCETAB_TEXT</Tag>
+		<English>Glance Tab</English>
+		<French>Page Coup d'Oeuil</French>
+		<German>Überblick</German>
+		<Italian>Tabella "Occhiata"</Italian>
+		<Spanish>Glance Tab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCETAB_HOVER</Tag>
+		<English>When checked, displays the 'Glance' tab on the Exotic Foreign Advisor screen.</English>
+		<French>En activant, montre la page 'Coup d'Oeuil' sur la page de l'Adviseur Etranger Exotique.</French>
+		<German>Zeigt einen zusätzlichen Kurzüberblick im Bildschirm des Auslandsberaters an</German>
+		<Italian>Quando è selezionato, visualizza la tabella "Occhiata" nella schermata del Consigliere Estero (utilizzando l'Exotic Foreign Advisor Mod).</Italian>
+		<Spanish>When checked, displays the 'Glance' tab on the Exotic Foreign Advisor screen.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCEATTITUDES_TEXT</Tag>
+		<English>Smilies</English>
+		<French>Smileys</French>
+		<German>Smilies</German>
+		<Italian>Icone</Italian>
+		<Spanish>Smilies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCEATTITUDES_LIST</Tag>
+		<English>Numbers|Smilies|Both</English>
+		<French>Numbers|Smileys|Both</French>
+		<German>Zahlen|Smilies|Beides</German>
+		<Italian>Numbers|Icone|Both</Italian>
+		<Spanish>Numbers|Smilies|Both</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCEATTITUDES_HOVER</Tag>
+		<English>Select how to display AI attitudes on the GLANCE tab: numbers, smilies, or both.</English>
+		<French>Sélectionnez le mode d'afficher des attitudes d'AI sur l'onglet GLANCE: nombres, des smileys, ou les deux.</French>
+		<German>Bestimmt, wie im Kurzüberblick die Einstellung anderer Zivilisationen gegenüber der eigenen dargestellt werden</German>
+		<Italian>Selezionare la modalità di visualizzazione atteggiamenti AI sulla scheda GLANCE: i numeri, faccine, o entrambi.</Italian>
+		<Spanish>Select how to display AI attitudes on the GLANCE tab: numbers, smilies, or both.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAIMPROVEDINFO_TEXT</Tag>
+		<English>Improved Info Tab</English>
+		<French>Improved Info Tab</French>
+		<German>BUG Info</German>
+		<Italian>Scheda Informazioni migliorata</Italian>
+		<Spanish>Improved Info Tab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAIMPROVEDINFO_HOVER</Tag>
+		<English>When checked, uses improved Foreign Advisor 'Info' tab instead of default.</English>
+		<French>When checked, uses improved Foreign Advisor 'Info' tab instead of default.</French>
+		<German>Zeigt die Informationen auf der entsprechenden Seite des Auslandsberaters übersichtlicher an</German>
+		<Italian>Quando è selezionato, utilizza la versione migliorata della scheda Informazioni del Consigliere Estero al posto di quella standard.</Italian>
+		<Spanish>When checked, uses improved Foreign Advisor 'Info' tab instead of default.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFADEALTURNSLEFT_TEXT</Tag>
+		<English>Deal Turns Left</English>
+		<French>Deal Turns Left</French>
+		<German>Vertragskündigungen</German>
+		<Italian>Turni di Accordo rimasti</Italian>
+		<Spanish>Deal Turns Left</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFADEALTURNSLEFT_HOVER</Tag>
+		<English>When checked, shows how many turns are left before you can cancel each deal on the 'Active' tab.</English>
+		<French>When checked, shows how many turns are left before you can cancel each deal on the 'Active' tab.</French>
+		<German>Zeigt an, wie viele Runden noch verbleiben, bis ein Vertrag im Auslandsberater unter "Aktiv" gekündigt werden kann</German>
+		<Italian>Quando è selezionato, mostra quanti turni sono rimasti prima che si possa annullare un accordo.</Italian>
+		<Spanish>When checked, shows how many turns are left before you can cancel each deal on the 'Active' tab.</Spanish>
+	</TEXT>
+
+<!-- Military Advisor -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGMA_TEXT</Tag>
+		<English>BUG Military Advisor</English>
+		<French>BUG Military Advisor</French>
+		<German>BUG Militärberater</German>
+		<Italian>Evoluto</Italian>
+		<Spanish>BUG Military Advisor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGMA_HOVER</Tag>
+		<English>When checked, uses the BUG Militiary Advisor (requires restart).</English>
+		<French>When checked, uses the BUG Militiary Advisor (requires restart).</French>
+		<German>Aktiviert den verbesserten Militärberater der BUG Mod (erfordert Neustart)</German>
+		<Italian>Quando è selezionato, utilizza il Consigliere Militare del BUG Mod (è richiesto un  perchè il cambiamento abbia effetto).</Italian>
+		<Spanish>When checked, uses the BUG Militiary Advisor (requires restart).</Spanish>
+	</TEXT>
+
+<!-- Technology Advisor -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__GPTECHPREFS_TEXT</Tag>
+		<English>GP Research</English>
+		<French>Recherche des PI</French>
+		<German>GP-Technologien</German>
+		<Italian>Ricerche dei GP</Italian>
+		<Spanish>GP Research</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__GPTECHPREFS_HOVER</Tag>
+		<English>When checked, displays the technology each type of great person will research.</English>
+		<French>En activant, montre la technologie que chaque Personnage Illustre peut découvrir.</French>
+		<German>Zeigt links neben dem Technologiebaum die Technologien an, die jeder Typ einer Großen Persönlichkeit erforschen kann</German>
+		<Italian>Quando è selezionato, visualizza la tecnologia ricercata da ogni Grande Personaggio nella schermata del Consigliere Tecnologico.</Italian>
+		<Spanish>When checked, displays the technology each type of great person will research.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__WIDETECHSCREEN_TEXT</Tag>
+		<English>Widescreen</English>
+		<French>Ecran Large</French>
+		<German>Breitbild</German>
+		<Italian>Schermo ampio</Italian>
+		<Spanish>Widescreen</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__WIDETECHSCREEN_HOVER</Tag>
+		<English>When checked, the width of the tech screen will be linked to your screen resolution (requires restart).</English>
+		<French>En activant, la largeur de l'écran de technologie dépendra de votre résolution d'écran (requièrt un redémarrage).</French>
+		<German>Koppelt die Breite des Technologiebaums an die Bildschirmauflösung (erfordert Neustart)</German>
+		<Italian>Quando è selezionato, la larghezza della schermata del Consigliere Tecnologico è legata alla risoluzione dello schermo (è richiesto un riavvio perchè il cambiamento abbia effetto).</Italian>
+		<Spanish>When checked, the width of the tech screen will be linked to your screen resolution (requires restart).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWTECHERA_TEXT</Tag>
+		<English>Show Era</English>
+		<French>Show Era</French>
+		<German>Epoche anzeigen</German>
+		<Italian>Show Era</Italian>
+		<Spanish>Show Era</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWTECHERA_HOVER</Tag>
+		<English>When selected, shows the technology's associated era.</English>
+		<French>When selected, shows the technology's associated era.</French>
+		<German>Zeigt jeweils die Epoche an, zu der eine Technologie gehört</German>
+		<Italian>When selected, shows the technology's associated era.</Italian>
+		<Spanish>When selected, shows the technology's associated era.</Spanish>
+	</TEXT>
+
+<!-- Religion Advisor -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGRELIGIOUSTAB_TEXT</Tag>
+		<English>BUG Religion Advisor</English>
+		<French>BUG Religion Advisor</French>
+		<German>BUG Religionsberater</German>
+		<Italian>Consigliere Religioso</Italian>
+		<Spanish>BUG Religion Advisor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGRELIGIOUSTAB_HOVER</Tag>
+		<English>When checked, displays extra information on the Religious tab.</English>
+		<French>When checked, displays extra information on the Religious tab.</French>
+		<German>Zeigt zusätzliche Informationen auf der entsprechenden Seite des Religionsberaters an</German>
+		<Italian>Quando è selezionato, mostra informazioni aggiuntive nella schermata del Consigliere Religioso.</Italian>
+		<Spanish>When checked, displays extra information on the Religious tab.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWRELIGIONS_TEXT</Tag>
+		<English>Show Religions</English>
+		<French>Show Religions</French>
+		<German>Anzeige</German>
+		<Italian>Show Religions</Italian>
+		<Spanish>Show Religions</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWRELIGIONS_LIST</Tag>
+		<English>All|Founded|Player's</English>
+		<French>All|Founded|Player's</French>
+		<German>Alle|Gegründete|Eigene</German>
+		<Italian>All|Founded|Player's</Italian>
+		<Spanish>All|Founded|Player's</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWRELIGIONS_HOVER</Tag>
+		<English>Select which religions should be shown in the top area of the Religion Advisor.</English>
+		<French>Select which religions should be shown in the top area of the Religion Advisor.</French>
+		<German>Bestimmt, welche Religionen in der oberen Hälfte des  Religionsberaters angezeigt werden sollen</German>
+		<Italian>Select which religions should be shown in the top area of the Religion Advisor.</Italian>
+		<Spanish>Select which religions should be shown in the top area of the Religion Advisor.</Spanish>
+	</TEXT>
+
+<!-- Victory Advisor -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGVICTORIESTAB_TEXT</Tag>
+		<English>Victories tab</English>
+		<French>Victories tab</French>
+		<German>BUG Siegbedingungen</German>
+		<Italian>Scheda Vittorie</Italian>
+		<Spanish>Victories tab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGVICTORIESTAB_HOVER</Tag>
+		<English>When checked, displays extra information on the Victories tab.</English>
+		<French>When checked, displays extra information on the Victories tab.</French>
+		<German>Zeigt zusätzliche Informationen auf der entsprechenden Seite des Sieg-Bildschirms an</German>
+		<Italian>Quando è selezionato, mostra informazioni aggiuntive nella Scheda delle Vittorie della Schermata Condizioni di Vittoria.</Italian>
+		<Spanish>When checked, displays extra information on the Victories tab.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGMEMBERSTAB_TEXT</Tag>
+		<English>Members tab</English>
+		<French>Members tab</French>
+		<German>BUG Mitglieder</German>
+		<Italian>Scheda Membri</Italian>
+		<Spanish>Members tab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGMEMBERSTAB_HOVER</Tag>
+		<English>When checked, displays extra information on the Members tab.</English>
+		<French>When checked, displays extra information on the Members tab.</French>
+		<German>Zeigt zusätzliche Informationen auf der entsprechenden Seite des Sieg-Bildschirms an</German>
+		<Italian>Quando è selezionato, mostra informazioni aggiuntive nella Scheda dei Membri della Schermata Condizioni di Vittoria.</Italian>
+		<Spanish>When checked, displays extra information on the Members tab.</Spanish>
+	</TEXT>
+
+<!-- Info Screen -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSTAB_TEXT</Tag>
+		<English>Graphs tab</English>
+		<French>Graphs tab</French>
+		<German>BUG Diagramme</German>
+		<Italian>Scheda Grafici</Italian>
+		<Spanish>Graphs tab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSTAB_HOVER</Tag>
+		<English>When checked, displays graphs in BUG format.</English>
+		<French>When checked, displays graphs in BUG format.</French>
+		<German>Zeigt die Diagramme auf der entsprechenden Seite des Info-Bildschirms in einer übersichtlicheren Anordnung an.</German>
+		<Italian>Quando è selezionato, mostra la Scheda dei Grafici nel formato modificato del BUG Mod.</Italian>
+		<Spanish>When checked, displays graphs in BUG format.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSLOGSCALE_TEXT</Tag>
+		<English>Graphs Log Scale</English>
+		<French>Graphs Log Scale</French>
+		<German>Log-Skala</German>
+		<Italian>Scala logaritmica</Italian>
+		<Spanish>Graphs Log Scale</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSLOGSCALE_HOVER</Tag>
+		<English>When checked, displays graphs are displayed in Log(10) scale.</English>
+		<French>When checked, displays graphs are displayed in Log(10) scale.</French>
+		<German>Zeigt Diagramme in einer logarithmischen Darstellung an</German>
+		<Italian>Quando è selezionato, mostra i Grafici in scala logaritmica (su base 10).</Italian>
+		<Spanish>When checked, displays graphs are displayed in Log(10) scale.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGINFOWONDERS_TEXT</Tag>
+		<English>Wonders tab</English>
+		<French>Wonders tab</French>
+		<German>BUG Wunder</German>
+		<Italian>Scheda Meraviglie</Italian>
+		<Spanish>Wonders tab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGINFOWONDERS_HOVER</Tag>
+		<English>When checked, displays the BUG version of the Wonders tab.</English>
+		<French>When checked, displays the BUG version of the Wonders tab.</French>
+		<German>Zeigt die entsprechende Seite des Info-Bildschirms in einer übersichtlicheren Anordnung an</German>
+		<Italian>Quando è selezionato, mostra la Scheda delle Meraviglie nel formato modificato del BUG Mod.</Italian>
+		<Spanish>When checked, displays the BUG version of the Wonders tab.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGINFOWONDERSPLAYERCOLOR_TEXT</Tag>
+		<English>Use Player Color</English>
+		<French>Use Player Color</French>
+		<German>Spielerfarben</German>
+		<Italian>Use Player Color</Italian>
+		<Spanish>Use Player Color</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGINFOWONDERSPLAYERCOLOR_HOVER</Tag>
+		<English>When checked, displays wonders on the BUG version of the Wonders tab using the owning player's color.</English>
+		<French>When checked, displays wonders on the BUG version of the Wonders tab using the owning player's color.</French>
+		<German>Färbt die Wundernamen auf der von BUG veränderten Wunder-Seite in der Farbe des jeweiligen Spielers ein</German>
+		<Italian>When checked, displays wonders on the BUG version of the Wonders tab using the owning player's color.</Italian>
+		<Spanish>When checked, displays wonders on the BUG version of the Wonders tab using the owning player's color.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGSTATSTAB_TEXT</Tag>
+		<English>Stats tab</English>
+		<French>Stats tab</French>
+		<German>BUG Statistiken</German>
+		<Italian>Scheda Statistiche</Italian>
+		<Spanish>Stats tab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGSTATSTAB_HOVER</Tag>
+		<English>When checked, displays improvements on Stats tab.</English>
+		<French>When checked, displays improvements on Stats tab.</French>
+		<German>Zeigt die Statistiken auf der entsprechenden Seite des Info-Bildschirms in einer übersichtlicheren Anordnung an</German>
+		<Italian>Quando è selezionato, mostra la Scheda delle Statistiche nella versione migliorata del BUG Mod</Italian>
+		<Spanish>When checked, displays improvements on Stats tab.</Spanish>
+	</TEXT>
+
+<!-- Sevopedia -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SEVOPEDIA_TEXT</Tag>
+		<English>Enabled</English>
+		<French>Activé</French>
+		<German>Aktivieren</German>
+		<Italian>Attivata</Italian>
+		<Spanish>Enabled</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SEVOPEDIA_HOVER</Tag>
+		<English>When checked, uses the Sevopedia (requires restart).</English>
+		<French>En activant, utilise le Sevopedia (requièrt un redémarrage).</French>
+		<German>Aktiviert die "Sevopedia" (erfordert Neustart)</German>
+		<Italian>Quando è selezionato, viene utilizzata la Sevopedia invece della Civilopedia (è richiesto un riavvio perchè il cambiamento abbia effetto).</Italian>
+		<Spanish>When checked, uses the Sevopedia (requires restart).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SEVOPEDIASORTITEMLIST_TEXT</Tag>
+		<English>Sort Lists</English>
+		<French>Trier les Listes</French>
+		<German>Listen sortieren</German>
+		<Italian>Liste ordinate</Italian>
+		<Spanish>Sort Lists</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SEVOPEDIASORTITEMLIST_HOVER</Tag>
+		<English>When checked, the lists of units, buildings, technologies, etc. are sorted.</English>
+		<French>En activant, les listes des unités, bâtiments, technologies, etc. seront triées.</French>
+		<German>Sortiert die Listen der Einheiten, Gebäuden, Technologien etc.</German>
+		<Italian>Quando è selezionato, le liste di Unità, Edifici, Tecnologie ecc. sono ordinate.</Italian>
+		<Spanish>When checked, the lists of units, buildings, technologies, etc. are sorted.</Spanish>
+	</TEXT>
+</Civ4GameText>

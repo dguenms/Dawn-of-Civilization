@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Unit Naming
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__ENABLED_TEXT</Tag>
+		<English>Enabled</English>
+		<French>Activé</French>
+		<German>Aktivieren</German>
+		<Italian>Attivato</Italian>
+		<Spanish>Enabled</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__ENABLED_HOVER</Tag>
+		<English>When checked, uses the formats on this tab and in the INI file to name the player's units.</English>
+		<French>En activant,utilise les formats spécifiés içi et dans le fichier INI pour nommer vos unités.</French>
+		<German>Aktiviert die Benennung eigener Einheiten mit Hilfe der Regeln hier und in der entsprechenden INI-Datei</German>
+		<Italian>Quando è selezionato, vengono utilizzati i formati in questa tabella e nel file 'Adv Unit Naming.ini' per denominare le Unità del giocatore. I nomi possono essere costruiti combinando testo semplice e codici (che devono essere posti fra accenti circonflessi: ^).[NEWLINE]  Ad esempio: "^cv^ ^ut^ di ^ct^" --> "Arciere Americano di Boston".</Italian>
+		<Spanish>When checked, uses the formats on this tab and in the INI file to name the player's units.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__USEADVANCED_TEXT</Tag>
+		<English>Use Advanced Methods</English>
+		<French>Utiliser la Méthode Avancée</French>
+		<German>Erweitertes System verwenden</German>
+		<Italian>Usa le convenzioni di denominazione avanzate per le varie Ere</Italian>
+		<Spanish>Use Advanced Methods</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__USEADVANCED_HOVER</Tag>
+		<English>When checked, the advanced naming conventions in 'Adv Unit Naming.ini' file will be used  (see ini file for Era_UnitClass options).</English>
+		<French>En activant, les conventions de noms du fichier 'Adv Unit Naming.ini' seront utilisées  (voir le fichier INI pour les options Era_UnitClass).</French>
+		<German>Verwendet die erweiterten Benennungsregeln, die sich in der Datei "Adv Unit Naming.ini" befinden  (siehe INI-Datei für "Era_UnitClass"-Optionen)</German>
+		<Italian>Quando è selezionato, vengono utilizzate le convenzioni di denominazione avanzate definite nel file 'Adv Unit Naming.ini', che consentono impostazioni differenziate per le varie Ere.</Italian>
+		<Spanish>When checked, the advanced naming conventions in 'Adv Unit Naming.ini' file will be used  (see ini file for Era_UnitClass options).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__DEFAULT_TEXT</Tag>
+		<English>Naming Convention: DEFAULT</English>
+		<French>Convention des Noms: DEFAUT</French>
+		<German>Benennungsregel: DEFAULT</German>
+		<Italian>Convenzioni di denominazione: generale ("DEFAULT")</Italian>
+		<Spanish>Naming Convention: DEFAULT</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__DEFAULT_HOVER</Tag>
+		<English>Enter the user defined naming convention (see help file for further information). Names can be built from plain text and format codes that appear between matching carets (^).[NEWLINE][ICON_BULLET]e.g. "^cv^ ^ut^ from ^ct^" --> "American Archer from Boston"[NEWLINE][BOLD]General Codes[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]civ4[COLOR_REVERT] - Use built-in Civ4 names[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rd[COLOR_REVERT] - Random name[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rc[COLOR_REVERT] - Random civ-related name[NEWLINE][BOLD]Unit Info Codes[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ct[COLOR_REVERT] - City where unit was built (e.g. Boston)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cv[COLOR_REVERT] - Civilization that built the unit in adjective form (e.g. American)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ut[COLOR_REVERT] - Unit type (e.g. Archer)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cb[COLOR_REVERT] - Combat type (e.g. Melee)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]dm[COLOR_REVERT] - Domain type (e.g. Water)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ld[COLOR_REVERT] - Leader that built the unit (e.g. Roosevelt)[NEWLINE][BOLD]Counting Codes[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][a][COLOR_REVERT] - Count across all units[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][u][COLOR_REVERT] - Count per unit type[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][c][COLOR_REVERT] - Count per city[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][t][COLOR_REVERT] - Count per unit/city combination[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][b][COLOR_REVERT] - Count per combat type[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][d][COLOR_REVERT] - Count per domain[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x:y][COLOR_REVERT] - Count up to a number chosen between x and y[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x][COLOR_REVERT] - Count from x, incrementing each time tt1 code is reset[NEWLINE][NEWLINE]* f in [f] is one of s, A, a, p, g, n, o, r (see help file)</English>
+		<French>Entrez la convention des noms (voir le fichier d'aide pour plus d'information).[NEWLINE]Les noms sont construits avec du texte et des codets de format entre carets (^).[NEWLINE][ICON_BULLET]p.ex. "^ut^ ^cv^ de ^ct^" --> "Archer Américain de Boston"[NEWLINE][BOLD]Codes Généraux[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]civ4[COLOR_REVERT] - Utilise les noms inclus dans Civ4[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rd[COLOR_REVERT] - Nom aléatoire[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rc[COLOR_REVERT] - Nom aléatoire spécifique à votre civilisation[NEWLINE][BOLD]Codes d'Information[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ct[COLOR_REVERT] - Ville ou l'unité a étée construite (p.ex. Boston)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cv[COLOR_REVERT] - Civilisation de l'unité (p.ex. Américain)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ut[COLOR_REVERT] - Type d'Unité (p.ex. Archer)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cb[COLOR_REVERT] - Type de Combat (p.ex. Melee)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]dm[COLOR_REVERT] - Type de Domaine (p.ex. Eau)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ld[COLOR_REVERT] - Dirigeant qui a construit l'unité (p.ex. Roosevelt)[NEWLINE][BOLD]Codes Numériques[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][a][COLOR_REVERT] - Compte toutes les unités[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][u][COLOR_REVERT] - Compte toutes les unités d'un même type[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][c][COLOR_REVERT] - Compte les unités par ville[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][t][COLOR_REVERT] - Compte par combination d'unité/ville[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[t][f][COLOR_REVERT] - Compte par type de combat[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][d][COLOR_REVERT] - Compte par domaine[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x:y][COLOR_REVERT] - Compte entre x et y[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x][COLOR_REVERT] - Compte à partir de x[NEWLINE][NEWLINE]* f dans [f] est égal à s, A, a, p, g, n, o ou r (voir fichier d'aide)</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel (siehe Hilfe-Datei für weitere Information). Die Benennung kann aus Klartext und Formatierungscodes zwischen zwei Zirkumflexen (^) bestehen:[NEWLINE][ICON_BULLET]z.B. "^cv^ ^ut^ aus ^ct^" --> "Amerikanischer Bogenschütze aus Boston"[NEWLINE][BOLD]Allgemeine Codes[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]civ4[COLOR_REVERT] - Standard Civ4-Namen verwenden[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rd[COLOR_REVERT] - Zufälliger Name[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rc[COLOR_REVERT] - Zufälliger zivilisationsbezogener Name[NEWLINE][BOLD]Codes für Einheiteninfos[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ct[COLOR_REVERT] - Name der Stadt, die eine Einheit aufgestellt hat (z.B. Boston)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cv[COLOR_REVERT] - Adjektiv der Zivilisation, die eine Einheit aufgestellt hat (z.B. amerikanisch)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ut[COLOR_REVERT] - Einheitentyp (z.B. Bogenschütze)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cb[COLOR_REVERT] - Einheitenklasse (z.B. Nahkampf)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]dm[COLOR_REVERT] - Einsatzgebiet einer Einheit (z.B. Wasser)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ld[COLOR_REVERT] - Name des Oberhaupts, das eine Einheit aufgestellt hat (z.B. Roosevelt)[NEWLINE][BOLD]Nummerierungscodes[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][a][COLOR_REVERT] - Nummerierung über alle Einheiten[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][u][COLOR_REVERT] - Nummerierung über alle Einheiten gleichen Typs[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][c][COLOR_REVERT] - Nummerierung pro Stadt[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][t][COLOR_REVERT] - Nummerierung pro Einheitentyp/Stadt in Kombination[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][b][COLOR_REVERT] - Nummerierung pro Einheitenklasse[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][d][COLOR_REVERT] - Nummerierung pro Einsatzgebiet einer Einheit[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x:y][COLOR_REVERT] - Nummerierung mit einer festgelegten Zahl zwischen x und y[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt2[f][x][COLOR_REVERT] - Nummerierung beginnt mit x und wächst jedes Mal an, wenn der Code tt auf 1 zurückgesetzt wird[NEWLINE][NEWLINE]* f in [f] kann auch s, A, a, p, g, n, o, r sein (siehe Hilfe-Datei)</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata[NEWLINE][BOLD]Codici generici[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]civ4[COLOR_REVERT] - usa i nomi standard di Civ4:BtS;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rd[COLOR_REVERT] - nome casuale[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rc[COLOR_REVERT] - nome casuale relativo alla Civiltà[NEWLINE][BOLD]Codici informativi[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ct[COLOR_REVERT] - Città dove l'Unità è stata costruita (ad es. Boston)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cv[COLOR_REVERT] - aggettivo della Civiltà che ha costruito l'Unità (ad es. Americano)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ut[COLOR_REVERT] - tipo di Unità (ad es. Arciere)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cb[COLOR_REVERT] - tipologia di combattimento dell'Unità (ad es. A distanza)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]dm[COLOR_REVERT] - dominio dell'Unità (ad esempio Acqua)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ld[COLOR_REVERT] - leader che ha costruito l'Unità (ad esempio Roosevelt)[NEWLINE][BOLD]Codici di conteggio[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][a][COLOR_REVERT] - conta su tutte le Unità[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][u][COLOR_REVERT] - conta su tutte le Unità dello stesso tipo[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][c][COLOR_REVERT] - conta su tutte le Unità prodotte nella stessa Città[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][t][COLOR_REVERT] - conta su tutte le Unità dello stesso tipo e prodotte nella stessa Città[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][b][COLOR_REVERT] - conta su tutte le Unità della stessa tipologia di combattimento[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][d][COLOR_REVERT] - conta su tutte le Unità dello stesso dominio [NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x:y][COLOR_REVERT] - conta fino ad un numero casuale scelto fra x ed y[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x][COLOR_REVERT] - conta a partire da x, incrementandosi di 1 ogni volta che il codice tt1 viene resettato[NEWLINE][NEWLINE]* f in [f] è uno fra s (assente), A (lettera maiuscola), a (lettera minuscola), p (lettera fonetica), g (lettera greca), n (numero cardinale), o (numero ordinale), r (numero romano).[NEWLINE]Vedi il file di aiuto per maggiori dettagli.</Italian>
+		<Spanish>Enter the user defined naming convention (see help file for further information). Names can be built from plain text and format codes that appear between matching carets (^).[NEWLINE][ICON_BULLET]e.g. "^cv^ ^ut^ from ^ct^" --> "American Archer from Boston"[NEWLINE][BOLD]General Codes[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]civ4[COLOR_REVERT] - Use built-in Civ4 names[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rd[COLOR_REVERT] - Random name[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]rc[COLOR_REVERT] - Random civ-related name[NEWLINE][BOLD]Unit Info Codes[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ct[COLOR_REVERT] - City where unit was built (e.g. Boston)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cv[COLOR_REVERT] - Civilization that built the unit in adjective form (e.g. American)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ut[COLOR_REVERT] - Unit type (e.g. Archer)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cb[COLOR_REVERT] - Combat type (e.g. Melee)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]dm[COLOR_REVERT] - Domain type (e.g. Water)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]ld[COLOR_REVERT] - Leader that built the unit (e.g. Roosevelt)[NEWLINE][BOLD]Counting Codes[\BOLD][NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][a][COLOR_REVERT] - Count across all units[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][u][COLOR_REVERT] - Count per unit type[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][c][COLOR_REVERT] - Count per city[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][t][COLOR_REVERT] - Count per unit/city combination[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][b][COLOR_REVERT] - Count per combat type[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]cnt[f][d][COLOR_REVERT] - Count per domain[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x:y][COLOR_REVERT] - Count up to a number chosen between x and y[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]tt1[f][x][COLOR_REVERT] - Count from x, incrementing each time tt1 code is reset[NEWLINE][NEWLINE]* f in [f] is one of s, A, a, p, g, n, o, r (see help file)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_AIR_TEXT</Tag>
+		<English>Naming Convention: Combat[AIR]</English>
+		<French>Convention des Noms: Combat[AIR]</French>
+		<German>Benennungsregel: Kampf[LUFT]</German>
+		<Italian>- per le Unità di Combattimento Aereo</Italian>
+		<Spanish>Naming Convention: Combat[AIR]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_AIR_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'AIR'.</English>
+		<French>Entrez la convention des noms pour les unités 'AIR'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Lufteinheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento Aereo ('Combat[AIR]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'AIR'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_ARCHER_TEXT</Tag>
+		<English>Naming Convention: Combat[ARCHER]</English>
+		<French>Convention des Noms: Combat[ARCHER]</French>
+		<German>Benennungsregel: Kampf[BOGENSCHÜTZEN]</German>
+		<Italian>- per le Unità di Combattimento a Distanza</Italian>
+		<Spanish>Naming Convention: Combat[ARCHER]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_ARCHER_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'ARCHER'.</English>
+		<French>Entrez la convention des noms pour les unités 'ARCHER'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Bogenschützeneinheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento a Distanza ('Combat[ARCHER]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'ARCHER'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_ARMOR_TEXT</Tag>
+		<English>Naming Convention: Combat[ARMOR]</English>
+		<French>Convention des Noms: Combat[ARMOR]</French>
+		<German>Benennungsregel: Kampf[GEPANZERT]</German>
+		<Italian>- per le Unità di Combattimento Corazzate</Italian>
+		<Spanish>Naming Convention: Combat[ARMOR]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_ARMOR_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'ARMOR'.</English>
+		<French>Entrez la convention des noms pour les unités 'ARMOR'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Gepanzerte Einheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento Corazzate ('Combat[ARMOR]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'ARMOR'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_GUN_TEXT</Tag>
+		<English>Naming Convention: Combat[GUN]</English>
+		<French>Convention des Noms: Combat[GUN]</French>
+		<German>Benennungsregel: Kampf[SCHIEßPULVER]</German>
+		<Italian>- per le Unità di Combattimento con Armi da fuoco</Italian>
+		<Spanish>Naming Convention: Combat[GUN]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_GUN_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'GUN'.</English>
+		<French>Entrez la convention des noms pour les unités 'GUN'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Schießpulvereinheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento con Armi da fuoco ('Combat[GUN]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'GUN'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_HELICOPTER_TEXT</Tag>
+		<English>Naming Convention: Combat[HELICOPTER]</English>
+		<French>Convention des Noms: Combat[HELICOPTER]</French>
+		<German>Benennungsregel: Kampf[HUBSCHRAUBER]</German>
+		<Italian>- per le Unità di Combattimento con Elicotteri</Italian>
+		<Spanish>Naming Convention: Combat[HELICOPTER]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_HELICOPTER_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'HELICOPTER'.</English>
+		<French>Entrez la convention des noms pour les unités 'HELICOPTER'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Hubschrauber</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento con Elicotteri ('Combat[HELICOPTER]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'HELICOPTER'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_MELEE_TEXT</Tag>
+		<English>Naming Convention: Combat[MELEE]</English>
+		<French>Convention des Noms: Combat[MELEE]</French>
+		<German>Benennungsregel: Kampf[NAHKAMPF]</German>
+		<Italian>- per le Unità di Combattimento Ravvicinato</Italian>
+		<Spanish>Naming Convention: Combat[MELEE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_MELEE_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'MELEE'.</English>
+		<French>Entrez la convention des noms pour les unités 'MELEE'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Nahkampfeinheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento Ravvicinato ('Combat[MELEE]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'MELEE'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_MOUNTED_TEXT</Tag>
+		<English>Naming Convention: Combat[MOUNTED]</English>
+		<French>Convention des Noms: Combat[MOUNTED]</French>
+		<German>Benennungsregel: Kampf[BERITTEN]</German>
+		<Italian>- per le Unità di Combattimento a Cavallo</Italian>
+		<Spanish>Naming Convention: Combat[MOUNTED]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_MOUNTED_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'MOUNTED'.</English>
+		<French>Entrez la convention des noms pour les unités 'MOUNTED'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Berittene Einheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento a Cavallo ('Combat[MOUNTED]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'MOUNTED'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_NAVAL_TEXT</Tag>
+		<English>Naming Convention: Combat[NAVAL]</English>
+		<French>Convention des Noms: Combat[NAVAL]</French>
+		<German>Benennungsregel: Kampf[MARINE]</German>
+		<Italian>- per le Unità di Combattimento Navale</Italian>
+		<Spanish>Naming Convention: Combat[NAVAL]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_NAVAL_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'NAVAL'.</English>
+		<French>Entrez la convention des noms pour les unités 'NAVAL'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Marineeinheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento Navale ('Combat[NAVAL]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'NAVAL'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_NONE_TEXT</Tag>
+		<English>Naming Convention: Combat[None]</English>
+		<French>Convention des Noms: Combat[None]</French>
+		<German>Benennungsregel: Kampf[Keine]</German>
+		<Italian>- per le Unità Non Combattenti</Italian>
+		<Spanish>Naming Convention: Combat[None]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_NONE_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'None'.</English>
+		<French>Entrez la convention des noms pour les unités 'None'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Nicht-Kampfeinheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità Non Combattenti ('Combat[None]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'None'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_RECON_TEXT</Tag>
+		<English>Naming Convention: Combat[RECON]</English>
+		<French>Convention des Noms: Combat[RECON]</French>
+		<German>Benennungsregel: Kampf[AUFKLÄRUNG]</German>
+		<Italian>- per le Unità da Ricognizione</Italian>
+		<Spanish>Naming Convention: Combat[RECON]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_RECON_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'RECON'.</English>
+		<French>Entrez la convention des noms pour les unités 'RECON'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Aufklärungseinheiten</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità da Ricognizione ('Combat[RECON]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'RECON'.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_SIEGE_TEXT</Tag>
+		<English>Naming Convention: Combat[SIEGE]</English>
+		<French>Convention des Noms: Combat[SIEGE]</French>
+		<German>Benennungsregel: Kampf[BELAGERUNG]</German>
+		<Italian>- per le Unità di Combattimento da Assedio</Italian>
+		<Spanish>Naming Convention: Combat[SIEGE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_UNITNAMING__COMBAT_SIEGE_HOVER</Tag>
+		<English>Enter the user defined naming convention for combat units 'SIEGE'.</English>
+		<French>Entrez la convention des noms pour les unités 'SIEGE'.</French>
+		<German>Eingabe der benutzerdefinierten Benennungsregel für Belagerungswaffen</German>
+		<Italian>Inserisci la tua convenzione di denominazione personalizzata per le Unità di Combattimento da Assedio ('Combat[SIEGE]').</Italian>
+		<Spanish>Enter the user defined naming convention for combat units 'SIEGE'.</Spanish>
+	</TEXT>
+</Civ4GameText>

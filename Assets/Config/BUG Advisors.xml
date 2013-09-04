@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BUG Advisors
+	by Taelis, Cammagno, Requies, Ruff_Hi, Sevo, EmperorFool
+	
+	Collects all of the various advisor-based mods.
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="Advisors" 
+	 name="BUG Advisors" 
+	 author="Taelis, Cammagno, Requies, Ruff_Hi, Sevo, EmperorFool" 
+	 version="3.0" 
+	 date="07/11/2008"
+	 url="http://forums.civfanatics.com/forumdisplay.php?f=268">
+	 
+	<options id="Advisors" file="BUG Advisors.ini">
+		<section id="Advisors">
+			<!-- Finance Advisor by EmperorFool -->
+			<option id="BugFinanceAdvisor" key="BUG Finance Advisor" 
+					type="boolean" default="True" 
+					get="isBugFinanceAdvisor"/>
+
+			<!-- Exotic Foreign Advisor (F4) by Requies, Dresden, EmperorFool -->
+			<option id="EFAGlanceTab" key="EFA Glance" 
+					type="boolean" default="True" 
+					get="isShowGlance"/>
+			<list   id="EFAGlanceAttitudes" key="EFA Glance Attitudes" 
+					type="int" default="1" listType="string">
+				<choice id="Numbers" get="isShowGlanceNumbers"/>
+				<choice id="Smilies" get="isShowGlanceSmilies"/>
+				<choice id="Both" get="isShowGlanceNumbers isShowGlanceSmilies"/>
+			</list>
+			<option id="EFAImprovedInfo" key="EFA Improved Info" 
+					type="boolean" default="True" 
+					get="isUseImprovedEFAInfo"/>
+			<option id="EFADealTurnsLeft" key="EFA Deal Turns Left" 
+					type="boolean" default="True" 
+					get="isShowDealTurnsLeft"/>
+	
+			<!-- BUG Military Advisor (F5) by Ruff_Hi, EmperorFool -->
+			<option id="BugMA" key="BugMilitaryAdvisor" 
+					type="boolean" default="True" 
+					get="isBUG_MA"/>
+	
+			<!-- Technology Advisor (F6) by EmperorFool, Ruff_Hi -->
+			<option id="GPTechPrefs" key="GP Tech Prefs" 
+					type="boolean" default="True" 
+					get="isShowGPTechPrefs"/>
+			<option id="WideTechScreen" key="Wide Tech Screen" 
+					type="boolean" default="True" 
+					get="isWideTechScreen"/>
+			<option id="ShowTechEra" key="Show Tech Era" 
+					type="boolean" default="False"
+					get="isShowTechEra"/>
+	
+			<!-- BUG Religion Advisor (F7) by Ruff_Hi -->
+			<option id="BugReligiousTab" key="Religious" 
+					type="boolean" default="True" 
+					get="isReligious"/>
+			<list   id="ShowReligions" key="Show Religions" 
+					type="int" default="0" listType="string" 
+					get="getShowReligions">
+				<choice id="All" get="isShowAllReligions isShowFoundedReligions isShowPlayerReligions"/>
+				<choice id="Founded" get="isShowFoundedReligions"/>
+				<choice id="Player" get="isShowPlayerReligions"/>
+			</list>
+
+			<!-- BUG Victory Advisor (F8) by Ruff_Hi -->
+			<option id="BugVictoriesTab" key="Victories" 
+					type="boolean" default="True" 
+					get="isVictories"/>
+			<option id="BugMembersTab" key="Members" 
+					type="boolean" default="True" 
+					get="isMembers"/>
+	
+			<!-- BUG Info Screen (F9) by Ruff_Hi -->
+			<option id="BugGraphsTab" key="Graphs" 
+					type="boolean" default="True" 
+					get="isGraphs"/>
+			<option id="BugGraphsLogScale" key="Log Scale" 
+					type="boolean" default="False" 
+					get="isGraphsLogScale"/>
+			<option id="BugStatsTab" key="Improvements" 
+					type="boolean" default="True" 
+					get="isShowImprovements"/>
+			<option id="BugInfoWonders" key="Wonders" 
+					type="boolean" default="True" 
+					get="isShowInfoWonders"/>
+			<option id="BugInfoWondersPlayerColor" key="Wonders Player Color" 
+					type="boolean" default="True" 
+					get="isWonderListUsePlayerColor"/>
+
+			<!-- Sevopedia (F12) by Sevo -->
+			<option id="Sevopedia" key="Sevopedia" 
+					type="boolean" default="True" 
+					get="isSevopedia"/>
+			<option id="SevopediaSortItemList" key="Sevopedia Sort" 
+					type="boolean" default="True" 
+					get="isSortSevopedia"/>
+		</section>
+	</options>
+	
+	<widget name="WIDGET_INFO_WORLD_WONDERS" xml="TXT_KEY_TOP_CITIES_SCREEN_WORLD_WONDERS"/>
+	<widget name="WIDGET_INFO_NATIONAL_WONDERS" xml="TXT_KEY_TOP_CITIES_SCREEN_NATIONAL_WONDERS"/>
+	<widget name="WIDGET_INFO_PROJECTS" xml="TXT_KEY_PEDIA_CATEGORY_PROJECT"/>
+
+	<widget name="WIDGET_TECH_PREFS_ALL" module="CvTechChooser" function="getAllTechPrefsHover"/>
+	<widget name="WIDGET_TECH_PREFS_CURRENT" module="CvTechChooser" function="getCurrentTechPrefsHover"/>
+	<widget name="WIDGET_TECH_PREFS_FUTURE" module="CvTechChooser" function="getFutureTechPrefsHover"/>
+	<widget name="WIDGET_TECH_CHOOSER_ERA" module="CvTechChooser" function="getEraDescription"/>
+
+	<event type="ResolutionChanged" module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
+	<event type="LanguageChanged" module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
+
+</mod>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Strategy Overlay
+	by Del69
+
+	Initial config and event handler setup for strategy overlay screen
+	Placed in CustomAssets/Config for Bug Mod
+-->
+<mod id="StrategyOverlay"
+	 module="CvStrategyOverlay"
+	 name="Strategy Overlay"
+	 author="Del69"
+	 version="1.0b"
+	 date="10/20/2008">
+
+	<options id="StrategyOverlay" file="Strategy Overlay.ini">
+		<section id="StrategyOverlay">
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True">
+				<change function="onEnabledOptionChanged"/>
+			</option>
+			
+			<option id="ShowDotMap" key="Show DotMap" 
+					type="boolean" default="True">
+				<change function="onShowDotMapOptionChanged"/>
+			</option>
+			<option id="DotMapDrawDots" key="DotMap Draw Dots" 
+					type="boolean" default="True">
+				<change function="onDotMapOptionChanged"/>
+			</option>
+			<option id="DotMapDotIcon" key="DotMap Dot Icon" 
+					type="int" default="23"> <!-- PLOT_STYLE_DOT_TARGET -->
+				<change function="onDotMapOptionChanged"/>
+			</option>
+			<option id="DotMapBrightness" key="DotMap Brightness" 
+					type="int" default="50">
+				<change function="onDotMapOptionChanged"/>
+			</option>
+			<option id="DotMapHighlightBrightness" key="DotMap Highlight Brightness" 
+					type="int" default="100">
+				<change function="onDotMapOptionChanged"/>
+			</option>
+		</section>
+	</options>
+	
+	<init>
+		<arg name="paletteWidth" type="int" value="3"/>
+		<arg name="paletteColors" type="tuple">
+			"COLOR_PLAYER_BROWN",
+			"COLOR_PLAYER_PEACH",
+			"COLOR_PLAYER_PEACH_TEXT",
+			
+			"COLOR_PLAYER_PALE_RED",
+			"COLOR_RED",
+			"COLOR_PLAYER_PINK",
+
+			"COLOR_PLAYER_PALE_ORANGE",
+			"COLOR_PLAYER_ORANGE",
+			"COLOR_PLAYER_DARK_YELLOW",
+			
+			"COLOR_GREAT_PEOPLE_RATE",
+			"COLOR_YELLOW",
+			"COLOR_PLAYER_LIGHT_YELLOW",
+			
+			"COLOR_PLAYER_DARK_GREEN",
+			"COLOR_PLAYER_GREEN",
+			"COLOR_PLAYER_LIGHT_GREEN",
+			
+			"COLOR_PLAYER_DARK_CYAN",
+			"COLOR_PLAYER_MIDDLE_CYAN",
+			"COLOR_PLAYER_CYAN",
+			
+			"COLOR_PLAYER_DARK_BLUE",
+			"COLOR_PLAYER_BLUE",
+			"COLOR_PLAYER_LIGHT_BLUE",
+			
+			"COLOR_PLAYER_DARK_PURPLE",
+			"COLOR_MAGENTA",
+			"COLOR_PLAYER_PURPLE_TEXT",
+			
+			"COLOR_BLACK",
+			"COLOR_LIGHT_GREY",
+			"COLOR_WHITE"
+		</arg>
+	</init>
+	
+	<!-- Loading and Saving -->
+	<event type="GameStart" function="onGameStart"/>
+	<event type="OnLoad" function="onLoad"/>
+	<event type="PythonReloaded" function="onLoad"/>
+	<event type="OnPreSave" function="onPreSave"/>
+	
+	<!-- Hiding/Showing During HotSeat Games -->
+	<event type="BeginActivePlayerTurn" function="onBeginActivePlayerTurn"/>
+	<event type="SwitchHotSeatPlayer" function="onSwitchHotSeatPlayer"/>
+	
+	<!-- Interacting -->
+	<event type="ModNetMessage" function="onModNetMessage"/>
+	
+	<shortcut key="Ctrl X | Ctrl F10" function="toggleDotMapVisibility"/>
+	<shortcut key="Alt X | Alt F10" function="toggleDotMapEditMode"/>
+</mod>

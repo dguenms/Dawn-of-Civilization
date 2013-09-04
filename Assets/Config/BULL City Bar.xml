@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BULL City Bar
+	by EmperorFool
+	
+	Copyright (c) 2009 The BUG Mod.
+-->
+<mod id="CityBar" 
+	 name="BULL City Bar" 
+	 author="EmperorFool" 
+	 version="1.0" 
+	 date="04/20/2009"
+	 url="http://forums.civfanatics.com/showthread.php?t=307951"
+	 dll="1">
+	 
+	<options id="CityBar" file="BUG City Bar.ini">
+		<section id="Bar">
+			<option id="AirportIcons" key="Airport Icons" 
+					type="boolean" default="True"/>
+					
+			<option id="StarvationTurns" key="Starvation Turns" 
+					type="boolean" default="True"/>
+		</section>
+		
+		<section id="Hover">
+			<option id="Health" key="Health" 
+					type="boolean" default="True"/>
+			<option id="Happiness" key="Happiness" 
+					type="boolean" default="True"/>
+					
+			<option id="HurryAnger" key="Hurry Anger" 
+					type="boolean" default="True"/>
+			<option id="DraftAnger" key="Draft Anger" 
+					type="boolean" default="True"/>
+					
+			<option id="FoodAssist" key="Food Assist" 
+					type="boolean" default="True"/>
+			<option id="BaseValues" key="Base Values" 
+					type="boolean" default="True"/>
+			<option id="BaseProduction" key="Base Production" 
+					type="boolean" default="True"/>
+			<option id="BuildingActualEffects" key="Building Actual Effects" 
+					type="boolean" default="True"/>
+					
+			<option id="HurryAssist" key="Hurry Assist" 
+					type="boolean" default="True"/>
+			<option id="HurryAssistIncludeCurrent" key="Hurry Assist Include Current" 
+					type="boolean" default="False"/>
+					
+			<option id="TradeDetail" key="Trade Detail" 
+					type="boolean" default="True"/>
+			<option id="Commerce" key="Commerce" 
+					type="boolean" default="True"/>
+					
+			<option id="BuildingIcons" key="BuildingIcons" 
+					type="boolean" default="True"/>
+					
+			<option id="CultureTurns" key="Culture Turns" 
+					type="boolean" default="True"/>
+			<option id="GreatPersonTurns" key="Great Person Turns" 
+					type="boolean" default="True"/>
+					
+			<option id="Specialists" key="Specialists" 
+					type="boolean" default="True"/>
+			<option id="RevoltChance" key="Revolt Chance" 
+					type="boolean" default="True"/>
+					
+			<option id="HideInstructions" key="Hide Instructions" 
+					type="boolean" default="True"/>
+		</section>
+	</options>
+</mod>

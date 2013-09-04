@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	EventSigns
+	by Dresden
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="EventSigns" 
+	 name="EventSigns" 
+	 module="EventSigns" 
+	 author="Dresden" 
+	 version="2.0" 
+	 date="11/7/2008"
+	 url="http://forums.civfanatics.com/showthread.php?t=298285">
+	 
+	<options id="EventSigns" file="EventSigns.ini">
+		<section id="EventSigns">
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True" 
+					get="isEnabled">
+				<change module="EventSigns" function="enabledOptionChanged"/>
+			</option>
+		</section>
+	</options>
+
+	<events class="EventSignsEventHandler"/>
+	
+	<export function="applyLandmarkFromEvent" to="CvRandomEventInterface"/>
+	<export function="applySaltpeter" to="CvRandomEventInterface"/>
+
+</mod>

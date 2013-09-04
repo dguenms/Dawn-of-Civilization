@@ -15080,7 +15080,7 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 					// Leoreth: better value for core and historical tiles
 					if (plot()->isCore(getOwner()))
 						iValue *= 3;
-					else if (plot()->getSettlerMapValue(getOwner()))
+					else if (plot()->getSettlerMapValue(getOwner()) > 90)
 						iValue *= 2;
 
 					if (iValue > iBestValue)

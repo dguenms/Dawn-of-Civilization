@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BUG Core
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+
+<!-- Logging -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__SCREENLOGLEVEL_TEXT</Tag>
+		<English>Screen Logging Level</English>
+		<French>Screen Logging Level</French>
+		<German>Protokollierungsstufe (Bildschirm)</German>
+		<Italian>Livello di log a video</Italian>
+		<Spanish>Screen Logging Level</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__SCREENLOGLEVEL_HOVER</Tag>
+		<English>Selects which logging messages get printed to the screen. Each level includes messages of all levels below it.</English>
+		<French>Selects which logging messages get printed to the screen. Each level includes messages of all levels below it.</French>
+		<German>Bestimmt, welche Protokoll-Meldungen im Hauptbildschirm angezeigt werden (jede Stufe schließt die Meldungen der Stufe darunter mit ein)</German>
+		<Italian>Seleziona quali messaggi di log vengono mostrati sullo schermo. Ogni livello comprende ovviamente tutti i messaggi dei livelli inferiori.</Italian>
+		<Spanish>Selects which logging messages get printed to the screen. Each level includes messages of all levels below it.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__SCREENLOGLEVEL_LIST</Tag>
+		<English>Debug|Info|Warning|Error|None</English>
+		<French>Debug|Info|Warning|Error|None</French>
+		<German>Debug|Info|Warnung|Fehler|Keine</German>
+		<Italian>Debug|Informazioni|Avvisi|Errori|Nessuno</Italian>
+		<Spanish>Debug|Info|Warning|Error|None</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__FILELOGLEVEL_TEXT</Tag>
+		<English>File Logging Level</English>
+		<French>File Logging Level</French>
+		<German>Protokollierungsstufe (Datei)</German>
+		<Italian>Livello di log su file</Italian>
+		<Spanish>File Logging Level</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__FILELOGLEVEL_HOVER</Tag>
+		<English>Selects which logging messages get printed to the PythonDbg.log file. Each level includes messages of all levels below it.</English>
+		<French>Selects which logging messages get printed to the PythonDbg.log file. Each level includes messages of all levels below it.</French>
+		<German>Bestimmt, welche Protokoll-Meldungen in der Datei "PythonDbg.log" gespeichert werden (jede Stufe schließt die Meldungen der Stufe darunter mit ein)</German>
+		<Italian>Seleziona quali messaggi di log vengono scritti nel file PythonDbg.log. Ogni livello comprende ovviamente tutti i messaggi dei livelli inferiori.</Italian>
+		<Spanish>Selects which logging messages get printed to the PythonDbg.log file. Each level includes messages of all levels below it.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__FILELOGLEVEL_LIST</Tag>
+		<English>Debug|Info|Warning|Error|None</English>
+		<French>Debug|Info|Warning|Error|None</French>
+		<German>Debug|Info|Warnung|Fehler|Keine</German>
+		<Italian>Debug|Informazioni|Avvisi|Errori|Nessuno</Italian>
+		<Spanish>Debug|Info|Warning|Error|None</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOGTIME_TEXT</Tag>
+		<English>Include Time</English>
+		<French>Include Time</French>
+		<German>Zeit protokollieren</German>
+		<Italian>Includi ora</Italian>
+		<Spanish>Include Time</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOGTIME_HOVER</Tag>
+		<English>When checked, each log file message includes the current time in HH:MM:SS format.</English>
+		<French>When checked, each log file message includes the current time in HH:MM:SS format.</French>
+		<German>Fügt jeder ausgegebenen Protokoll-Meldung die aktuelle Uhrzeit im Format "HH:MM:SS" hinzu</German>
+		<Italian>Quando è selezionato, ogni messaggio di log include l'ora corrente (nel formato HH:MM:SS).</Italian>
+		<Spanish>When checked, each log file message includes the current time in HH:MM:SS format.</Spanish>
+	</TEXT>
+	
+<!-- Subversion -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__CHECKFORUPDATES_TEXT</Tag>
+		<English>Check for Updates</English>
+		<French>Check for Updates</French>
+		<German>Nach Updates suchen</German>
+		<Italian>Cerca aggiornamenti</Italian>
+		<Spanish>Check for Updates</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__CHECKFORUPDATES_HOVER</Tag>
+		<English>When checked, BUG will look for SVN updates and/or releases each time you launch Civilization and notify you when new ones are found.</English>
+		<French>When checked, BUG will look for SVN updates and/or releases each time you launch Civilization and notify you when new ones are found.</French>
+		<German>Lässt die BUG Mod bei jedem Spielstart nach SVN-Updates und/oder neuen offiziellen Versionen suchen und eine Meldung ausgeben, wenn aktuellere Versionen gefunden wurden</German>
+		<Italian>Quando è selezionato, il BUG Mod controllerà la disponibilità di aggiornamenti SVN e/o nuove versioni ogni volta che lancerai Civ4 e ti notificherà ciò che avrà eventualmente trovato.</Italian>
+		<Spanish>When checked, BUG will look for SVN updates and/or releases each time you launch Civilization and notify you when new ones are found.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOCALROOT_TEXT</Tag>
+		<English>BUG Install Folder</English>
+		<French>BUG Install Folder</French>
+		<German>Installationsverzeichnis der BUG Mod</German>
+		<Italian>Cartella di installazione del BUG Mod</Italian>
+		<Spanish>BUG Install Folder</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOCALROOT_HOVER</Tag>
+		<English>Location where BUG files are installed.</English>
+		<French>Location where BUG files are installed.</French>
+		<German>Verzeichnis, in dem sich die Dateien der BUG Mod befinden</German>
+		<Italian>Posizione in cui sono installati i file del BUG Mod.</Italian>
+		<Spanish>Location where BUG files are installed.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOCALVERSION_TEXT</Tag>
+		<English>Installed Revision</English>
+		<French>Installed Revision</French>
+		<German>Installierte Revision</German>
+		<Italian>Revisione installata</Italian>
+		<Spanish>Installed Revision</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOCALVERSION_HOVER</Tag>
+		<English>Revision number of the BUG installation.</English>
+		<French>Revision number of the BUG installation.</French>
+		<German>Revisionsnummer der installierten BUG Mod</German>
+		<Italian>Numero di revisione del BUG Mod installato.</Italian>
+		<Spanish>Revision number of the BUG installation.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__REPOSITORYURL_TEXT</Tag>
+		<English>Repository URL</English>
+		<French>Repository URL</French>
+		<German>URL des Projektarchivs</German>
+		<Italian>URL del repository SVN</Italian>
+		<Spanish>Repository URL</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__REPOSITORYURL_HOVER</Tag>
+		<English>URL for the BUG repository.</English>
+		<French>URL for the BUG repository.</French>
+		<German>URL des Projektarchivs der BUG Mod</German>
+		<Italian>URL della directory SVN online dove si trovano i file del BUG Mod.</Italian>
+		<Spanish>URL for the BUG repository.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__REPOSITORYVERSION_TEXT</Tag>
+		<English>Repository Revision</English>
+		<French>Repository Revision</French>
+		<German>Revision des Projektarchivs</German>
+		<Italian>Revisione del repository</Italian>
+		<Spanish>Repository Revision</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__REPOSITORYVERSION_HOVER</Tag>
+		<English>Revision number of the BUG repository.</English>
+		<French>Revision number of the BUG repository.</French>
+		<German>Revisionsnummer des Projektarchivs der BUG Mod</German>
+		<Italian>Numero di revisione della versione SVN disponibile online del BUG Mod.</Italian>
+		<Spanish>Revision number of the BUG repository.</Spanish>
+	</TEXT>
+</Civ4GameText>

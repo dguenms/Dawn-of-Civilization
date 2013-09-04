@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Color Translations
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_RED</Tag>
+		<English>Red</English>
+		<French>Rouge</French>
+		<German>Rot</German>
+		<Italian>Rosso</Italian>
+		<Spanish>Rojo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_YELLOW</Tag>
+		<English>Yellow</English>
+		<French>Jaune</French>
+		<German>Gelb</German>
+		<Italian>Giallo</Italian>
+		<Spanish>Amarillo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_GREEN</Tag>
+		<English>Green</English>
+		<French>Vert</French>
+		<German>Grün</German>
+		<Italian>Verde</Italian>
+		<Spanish>Verde</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_CYAN</Tag>
+		<English>Cyan</English>
+		<French>Cyan</French>
+		<German>Türkis</German>
+		<Italian>Azzurro</Italian>
+		<Spanish>Ci&#225;nico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_BLUE</Tag>
+		<English>Blue</English>
+		<French>Bleu</French>
+		<German>Blau</German>
+		<Italian>Blu</Italian>
+		<Spanish>Azul</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_MAGENTA</Tag>
+		<English>Magenta</English>
+		<French>Magenta</French>
+		<German>Magenta</German>
+		<Italian>Magenta</Italian>
+		<Spanish>Magenta</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_WHITE</Tag>
+		<English>White</English>
+		<French>Blanc</French>
+		<German>Weiß</German>
+		<Italian>Bianco</Italian>
+		<Spanish>Blanco</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_LIGHT_GREY</Tag>
+		<English>Light Grey</English>
+		<French>Gris Pâle</French>
+		<German>Hellgrau</German>
+		<Italian>Grigio Chiaro</Italian>
+		<Spanish>Gris Ligero</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_GREY</Tag>
+		<English>Grey</English>
+		<French>Gris</French>
+		<German>Grau</German>
+		<Italian>Grigio</Italian>
+		<Spanish>Gris</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_DARK_GREY</Tag>
+		<English>Dark Grey</English>
+		<French>Gris Foncé</French>
+		<German>Dunkelgrau</German>
+		<Italian>Grigio Scuro</Italian>
+		<Spanish>Gris Oscuro</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLOR_BLACK</Tag>
+		<English>Black</English>
+		<French>Noir</French>
+		<German>Schwarz</German>
+		<Italian>Nero</Italian>
+		<Spanish>Negro</Spanish>
+	</TEXT>
+</Civ4GameText>
