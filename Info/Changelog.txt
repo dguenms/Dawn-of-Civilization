@@ -1,0 +1,613 @@
+CHANGELOG for BUG
+=================
+
+* Introduction
+
+* BUG 4.4
+* BUG 4.3
+* BUG 4.2
+* BUG 4.1
+* BUG 4.0
+* BUG 3.6
+
+
+____________________________________________________________________________________________________
+INTRODUCTION
+
+This file lists the new features and fixes contained in each BUG release.  The changes for each 
+release are grouped into two major sections--CHANGES and MODDING--and within each section further 
+into New Features, Improvements, and Bug Fixes.
+
+The CHANGES sections are for end-users and list the visible changes in BUG.  New Features cover 
+major new additions that add completely new functionality.  Improvements are smaller changes made 
+to existing features.  Finally, Bug Fixes cover fixes to existing features in both BTS and BUG.
+
+The MODDING sections are mostly of interest to modders merging BUG into their own mods.
+
+Note: Changes marked [BULL] only take effect when the optional BUG DLL is installed.
+      BULL features that don't require BUG are not listed here.
+
+
+____________________________________________________________________________________________________
+BUG 4.4 released May 17th, 2010
+
+CHANGES
+
+New Features:
+
+- BUG Plot List (Unit Icons)
+	Completely rewritten code significantly speeds up drawing icons of large unit stacks
+- Resource Deals
+	Resource icons in active import/export columns on the RESOURCES tab of the Foreign Advisor 
+	show the full deal they belong to and can be clicked to cancel the deal [BULL]
+
+Improvements:
+
+- Production Queue
+	Items that have hammers invested already are drawn in cyan (projects only work with BULL)
+- Customizable Domestic Advisor
+	Added Draft Anger column
+- Great Person Tech Prefs
+	Added headings and limited Current and Future techs to those that can be researched
+- Unit Naming
+	Can use multiple counters for a single naming code
+- Civ4lerts
+	Worst Enemy alerts show the old enemy along with the new one
+- BUG Button
+	Added option to hide the button and moved it slightly left
+- Translations
+	Added several improved Spanish translations by Gerard
+
+Bug Fixes:
+
+- Random Events
+	Fixed culture-level checking in Partisans random event; event is now possible on 3.19 and above
+- Unit Naming
+	Civilization name code uses adjective as described in hover help as opposed to noun form (English vs. England)
+- Worst Enemy
+	Fixed check in games with multiple players on a team
+	Alert ignores human teams instead of AIs
+- Civ4lerts
+	City-related, Worst Enemy, and Refuses to Talk alerts work for each player in Hot Seat games
+	Worst Enemy and Refuses to Talk alerts work with AI AutoPlay
+	Worst Enemy alert not shown when team is killed (was showing no-name team)
+- Combat Log
+	Actual owner of hidden nationality units is not exposed
+- Options Screen
+	Fixed options that were not being saved and/or could only turn off
+- Foreign Advisor
+	INFO tab shows correct modifier total, including visible values from Show Hidden Attitude mod when active
+
+Merged Mods:
+
+- Unofficial Patch
+	Updated to release version 1.50
+
+
+MODDING
+
+	*** Important: See "Removed EntryPoints Modules" below *** 
+
+New Features:
+
+- BugUtil
+	Added export(), exportFunction(), extend(), and extendFunction() for injecting functions into EntryPoints modules
+- Configuration
+	Added <export> and <extend> XML elements that call exportFunction() and extendFunction() respectively
+- BugData
+	New API for storing data in CyGame's script data that is 100% compatible with SdToolKit
+
+Improvements:
+
+- Simplified Initialization
+	BugInit.init() alone guards against being called twice
+	CyGame.isFinalInitialized() used to check if Civ4 is ready
+- Removed EntryPoints Modules
+	CvAppInterface, CvDiplomacyInterface, CvOptionsScreenCallbackInterface, and CvRandomEventInterface
+	If your mod needs to add code to any of these modules, use <export> and <extend> or use the original BTS modules as a base
+- PlayerUtil
+	players() and teams() now accept active parameter that restrict to players/teams that can become active
+
+Bug Fixes:
+
+- Better Espionage
+	Removed unused EspionageEventManager
+- AttitudeUtil
+	Limits Worst Enemy checks to teams that are alive
+- BugUtil Logging
+	Unicode encoding errors are caught and ignored in log()
+- Options
+	Unsaved options use TYPE_MAP to convert to correct real type (bool/int/etc) when setting
+	<option> key defaults to id if inside <options> so they are saved to the INI file
+- Initialization
+	BUG now tells BULL that it has been initialized so BULL can query for options 
+
+
+____________________________________________________________________________________________________
+BUG 4.3 released February 16th, 2010
+
+CHANGES
+
+New Features:
+
+- Main Interface
+	Can choose from three sizes for the build/action buttons
+	Added a button to bring up the BUG Options Screen (top left)
+- Espionage Advisor
+	New layout shows EPs spent against you and icons for passive missions
+	Can swap cities and missions lists to see cost in each city for a single mission
+	New GLANCE-style tab shows EPs spending on and by each rival you've met
+- Technology Chooser
+	Added color-coded shadow denoting each technology's era
+- BUFFY
+	Barbarian Uprising events require Priesthood
+
+Improvements:
+
+- Main Interface
+	Unit Plot drawing improvements (pre-work only at the moment)
+- Great Person Bar
+	Added city's total GP/Turn to hover.
+- City Screen
+	Can select which tiles to count in Raw Yields when Civ starts
+- Foreign Advisor
+	Can select how to display attitudes: numbers, smilies, or both
+	Shows technologies that you cannot trade to rivals
+- Technology Chooser
+	Added hover to GP Research icons showing the preferred order
+- Unit Naming
+	Unnamed initial units are named when you found your capital
+	Units from tribal villages (goody huts) are named
+	Random names can now be mixed with other naming codes or static text
+- Reminders
+	Saved for all players in multiplayer games [BULL]
+
+Bug Fixes:
+
+- Strategy Layer
+	Fixed random crash on Windows Vista/7
+- City Screen
+	Happiness and unhappiness are shown for foreign cities
+	Whip/Draft Anger is shown for teammates' cities
+	Raw Yields now adds Trade Routes to commerce total when Fractional Trade is off, hides fractions when on
+- Team Games
+	WHEOOH works correctly and won't check if a rival will DoW on your teammates or theirs
+	Worst Enemy no longer shown for humans' teammates
+- Multiplayer OOS Errors
+	Changed random "polling error" on F8:MEMBERS tab to use asynchronous RNG
+	Changed random unit name generator to use asynchronous RNG
+- Scoreboard
+	You can always see how many cities your teammates have
+- Unit Naming
+	Phonetic and Greek naming codes now start at first element (alpha)
+	Domain code (^dm^) uses translated description (Water) instead of XML key (DOMAIN_WATER)
+
+MODDING
+
+New Features:
+
+- BUFFY
+	Merged BUFFY code into BUG so there's one code repository
+
+Improvements:
+
+- Translation
+	Split CIV4GameText XML files for Options into individual files matching the Config folder
+- BugEventManager
+	Added addPopupHandlers() that takes the name and functions as parameters instead of a single tuple
+- Configuration
+	Added a warning when you specify a key for an <option> or <list> that is outside an <options> or <section> element
+- DllUtil
+	widget() now accepts an existing WidgetType as the first parameter when you only need the data values to vary
+
+Bug Fixes:
+
+- BugPath
+	Added safeDebugPath() and safeInfoPath() to safely log paths that might contain non-Latin characters
+
+
+____________________________________________________________________________________________________
+BUG 4.2 released November 15th, 2009
+
+CHANGES
+
+New Features:
+
+- SevoPedia
+	Technology page shows Civilizations that start with it
+
+Improvements:
+
+- Great Person Progress Bar
+	Added hover text displaying full details
+- Info Screen [F9]
+	Made colors optional on WONDERS list
+	Added hover help text to WONDERS tab buttons
+- Option Shortcut Reminder
+	Message turns itself off the first time you open the Options screen
+	If you turn it back on in the System tab, it will remain on as before
+
+Bug Fixes:
+
+- City Screen
+	Fixed display of food bar text when city is already over threshold
+- Customizable Domestic Advisor
+	Fixed options on Advisors tab
+	Fixed Zoom to City Button Details option title
+- AutoLog
+	Pillaging entries work and show correct gold amount
+	Peace offer entries work
+- AutoSave
+	Fixed invalid save file names when starting from a scenario
+- Civ4lerts
+	Growth, happiness, and health alerts correctly detect when a city will grow next turn
+- General
+	Added missing 3.19 change with liberating cities during war-time
+- Mac
+	Fixed reverse list sorting in GPUtil
+	Fixed random crash when using Strategy Layer
+
+
+MODDING
+
+New Features:
+
+- Events
+	playerRevolution(ePlayer, iAnarchyTurns, leOldCivics, leNewCivics) [BULL]
+- CityUtil
+	Use willGrowThisTurn() and willShrinkThisTurn() instead of CyCity.getFoodTurnsLeft()
+- BugUtil
+	Added lookupModule() to acquire a module without looking up a function
+
+Improvements:
+
+- Options
+	Shortcut Reminder message uses CvModName.modName instead of "BUG Mod"
+- GameUtils
+	<gameutils> now auto-detects module-level handlers and listeners (omit "class")
+	Logs a warning if a listener returns a value or all handlers return None
+	Traps and logs exceptions raised by handlers and listeners
+
+Bug Fixes:
+
+- GameUtils
+	Fixed problem when using <callback> element to define new callbacks
+	New <callback>s no longer require a default value (omit both "type" and "default")
+	Logs a warning if a listener returns a value or all handlers return None
+	Traps and logs exceptions raised by handlers and listeners 
+
+
+____________________________________________________________________________________________________
+BUG 4.1 released September 29th, 2009
+
+CHANGES
+
+New Features:
+
+- Mac support
+- Scoreboard
+	Added Civilization Description option (e.g. "English Empire")
+- City Screen
+	Added option to show only religions and corporations present in the city plus allows for more than seven of each
+	If Fractional Trade Routes is enabled, shows two decimal places for Trade Route values [BULL]
+- Foreign Advisor (F4)
+	TECHS: Added a status column that shows War, Forced Peace, and Refuses to Talk
+- Religion Advisor (F7)
+	Added option to limit the religions shown in the top area to only those that are founded or available for conversion
+	Added johny smith's scrolling panel for mods with more than seven religions
+	Shows new religions and religious buildings/units types from mods
+- Civ4lerts
+	Added Refuses to Talk alert
+	Added Worst Enemy alert
+	Added Resource Trade alert
+	Added Map Trade alert
+
+Improvements:
+
+- Scoreboard
+	Refuses to Talk now works without BULL
+- Customizable Domestic Advisor (F1)
+	Added hover help text to buttons
+- MapFinder
+	Added ALT + CTRL + SHIFT + G to stop
+	Added separate Save path
+
+Bug Fixes:
+
+- BUFFY and Single-Player BUG can coexist; set NoCustomAssets to 1 in BUFFY's INI file
+- Main Interface
+	Moved the Tech text down 2 pixels so that it now lines up with the GG and GP bars
+	Era Text and Great Person Bar hidden in Hide Interface and WorldBuilder modes
+- Strategy Layer
+	Placed dots are drawn when a game is loaded if the Dot Map is visible
+- Scoreboard
+	Number of cities counts only the ones you can see on the map (plus their capital) when you can't see a rival's city list
+	Rival city lists cannot be seen when you cannot contact them and for OCC games
+- City Screen
+	Production bar tick marks count food for Workers/Settlers correctly
+	Anger Counter hidden for foreign cities because you cannot see Whip/Draft button hovers
+- Customizable Domestic Advisor (F1)
+	Culture levels under No Espionage are now correct
+- Technology Advisor (F6)
+	Great Person Bulbed Techs are reset when a game is started or loaded
+- Info Screen (F9)
+	Projects List
+		Hover shows project instead of building; click goes to correct Civilopedia entry
+		Completed projects no longer show an invalid date or city name
+- MapFinder
+	Status panel title displays correctly
+- Civ4lerts
+	Trade alerts suspended when an AI Refuses to Talk
+- Unit Naming
+	Default naming convention matches new unit counting codes
+- Logger
+	File name and path changes take effect immediately
+	Suppresses the nationality of rival Privateers
+
+
+MODDING
+
+New Features:
+
+- AttitudeUtil
+	Added functions to determine worst enemies
+- BugUtil
+	Added escapeXml() to replace <, >, and & with their XML entities
+- DiplomacyUtil
+	Added functions to detect when a rival refuses to talk
+- ReligionUtil
+	Makes adding religions and new types of religious buildings/units to the Religion Advisor a snap
+- TradeUtil
+	Added functions to get lists of valid trading partners for the various tradeable items
+	Added calculateTradeRouteYield(), calculateTotalTradeRouteYield(), and calculateTradeRoutes()
+	Added functions to handle Fractional Trade Routes
+
+Improvements:
+
+- BugEventManager
+	Exceptions from event handlers are caught and logged, and the next handler is called instead of aborting the event
+- BugGameUtils
+	Each callback's dispatch logging is now optional via "log" XML attribute
+- GameUtil
+	Added checks for more game options used by diplomacy/trade changes
+- GPUtil
+	Added specific instructions for adding new GP types
+- Options
+	You can reuse a list option's display values from XML for another option by putting its ID in the values attribute 
+
+Bug Fixes:
+
+- BugPath
+	Ignores CustomAssets folder when running as a Mod due to too many issues
+
+
+____________________________________________________________________________________________________
+BUG 4.0 released August 16, 2009
+
+CHANGES
+
+	*** BULL: The BUG DLL ***
+	
+	This is an optional component that, once installed, enables the features listed below marked [BULL].
+	Any features that don't require BUG are not listed here. Refer to BULL's changelog for more information.
+
+New Features:
+
+- Regenerate map shortcut (ALT + G) [BULL]
+- MapFinder from HOF Mod: ALT + CTRL + G to start/stop [BULL]
+- Advanced Scoreboard
+	Refuses to Talk (F) [BULL]
+	Number of Cities (Q)
+- Production Decay [BULL]
+	A yellow ! means an item in the build queue will start to decay after 5 turns of non-production
+	A red !! means an item will decay this turn
+	Hover for units/buildings shows actual decay amount and turns until it starts 
+- Info Screen (F9)
+	New expanded Wonders tab by DanF5771
+		Shows constructed items (all known rivals)
+		Shows items being built (must have enough EPs for City Visibility)
+		Zoom to City button
+	Remembers the selected tab like other screens
+- BUG Religious Advisor (F7) shows which buildings have been or are being built for the state religion 
+- AutoSave: automatically save single-player games at start, end, and exit [BULL]
+	You must use ESC : Exit to Main Menu or Desktop; ALT + F4 won't save
+
+Improvements:
+
+- BUG and BULL versions are displayed when hovering over your flag [BULL]
+- Min/Max Commerce Rate buttons have more accurate hover text [BULL]
+- City Screen
+	Added hover details for food rate [BULL]
+- Foreign Advisor
+	ACTIVE: Added number of turns until you can cancel each deal
+	INFO: Hover details for trade with each rival [BULL]
+	RESOURCES: Hovers show the reason an AI won't trade [BULL]
+	TECHS: Hovers show the reason an AI won't trade [BULL]
+- Finance Advisor
+	Hover details for trade commerce and gold from specialists [BULL]
+- Graphs (both BUG and Vanilla) now include a 'log scale' option
+- Autolog
+	Amount of gold from pillages
+	Retreat and withdrawal [BULL]
+	Collateral and flanking damage [BULL]
+	Upgraded units [BULL]
+- Strategy Overlay
+	Configurable color palette
+	Outlines using the same color now overlap instead of merging into a single outline
+
+Bug Fixes:
+
+- Fixed City Built event
+- Changed Scoreboard items (WHEOOH, Number of Cities) so that they are optional
+- HotSeat
+	Strategy Layer is hidden while switching players
+	Civ4lerts and Reminders no longer show up while switching players
+	Civ4lerts now fire for all human players
+	Reminders that fired this turn no longer show in End Turn Text for next player
+- Multiplayer
+	Strategy Layer now saves all players' dotmaps
+- Sevopedia now opens from MAIN MENU without loading or starting a game
+- Fixed intermittent Vista "no interface" issue
+- AutoLog no longer calls CvGameUtils.getPillageGold()
+	Fixes an OOS error when some players have different Autolog settings
+- Anger Counter on City Screen hidden when investigating foreign cities
+- Era and game date colors are disabled by default
+
+
+MODDING
+
+New Features:
+
+- BugConfig
+	Configuration XML is now modular (rewrote BugConfig)
+	Added <config> element to add your own configuration XML elements
+	Added <bug> element that can be used in place of <mod> when not specifying a new mod
+	Added <link> element to create a linked option*
+- Added BugDll module for creating Python features that depend on the DLL but work gracefully without it
+- Added "dll" attribute to <mod>, <option>, <list>, <init>, <event>, <events> and <shortcut>
+	The <mod>, <option> and <list> elements are still created but marked if the DLL isn't the correct version; the others are skipped
+- DealUtil
+	Deal class has new CvDeal functions, plus more
+	Added several helpful module functions for testing TradeableItems values
+- Exposed and/or replicated several CvDeal functions in DealUtil.Deal:
+	bool isCancelable(PlayerTypes eByPlayer, bool bIgnoreWaitingPeriod=False)
+	wstring getCannotCancelReason(PlayerTypes eByPlayer)
+	int turnsToCancel(PlayerTypes eByPlayer)
+- Events
+	SwitchHotSeatPlayer(PlayerTypes ePlayer)
+	unitUpgraded(CyUnit pOldUnit, CyUnit pNewUnit, int iCost) [BULL]
+	unitCaptured(PlayerTypes eOwner, UnitTypes eUnitType, CyUnit pNewUnit) [BULL]
+	combatWithdrawal(CyUnit pAttacker, CyUnit pDefender) [BULL]
+	combatRetreat(CyUnit pAttacker, CyUnit pDefender) [BULL]
+	combatLogCollateral(CyUnit pAttacker, CyUnit pDefender, int iDamage) [BULL]
+	combatLogFlanking(CyUnit pAttacker, CyUnit pDefender, int iDamage) [BULL]
+- BugUtil
+	getText() and getPlainText() both replace [ICON_XXX] in the message
+	Added deferCall() to call a function in a future gameUpdate event after an optional delay
+	Added alertInput() and alertInputFlags() that print to the screen using alert() instead of debug()
+- CvUtil
+	Added CvUtil.getNewScreenID() so mods don't have to hard-code screen IDs*
+- BugPath
+	Completely rewritten to be easier to use*
+- BugGameUtils
+	Provides modular access to CvGameUtils-based callback handlers and listeners
+- WidgetUtil
+	Allows mods to define new WidgetTypes without modifying the DLL
+	Use this to add hover help to almost any button, text, or graphic
+
+Bug Fixes:
+
+- Removed firing of gameUpdate in updateScreen() as it seems to be fired by BTS now
+- Active Player Turn
+	Moved checking for begin/end from CvMainInterface.updateScreen() to BugEventManager.onGameUpdate()
+	Now fires begin event when active player changes in addition to game turn for HotSeat games
+
+API Changes: (*)
+
+- If you define any linked options in your configuration XML, you must change them to use <link>
+	Change
+		<option id="NewOptionID" link="ExistingOptionID"/>
+	to
+		<link id="NewOptionID" to="ExistingOptionID"/>
+- BugPath directory names and paths are exposed through functions
+	For example, replace
+		BugPath.modDir
+	with
+		BugPath.getModDir()
+- If you have defined your own screen ID, switch to using CvUtil.getNewScreenID() to avoid clashes
+	Replace
+		MOD_SCREEN_ID = 1050
+	with
+		MOD_SCREEN_ID = CvUtil.getNewScreenID()
+
+
+____________________________________________________________________________________________________
+BUG 3.6 released February 23, 2009
+
+CHANGES
+
+New Features:
+
+- Added map script "Maze" by Sirian
+- Field of View slider on the main screen
+- Improvements to stats tab on info screen
+- Tick Marks for selected progress bars (tech, food, production)
+- Tick Marks: Added whip threshold indicator to city production bar (look for yellow center tick mark)
+- Added FoodAssist: net food added to stores per turn and turns until starvation
+- Added EventSigns: plots whose yields change due to random events marked on the map with signs
+- Added BUG Finance Advisor with detailed line items for Commerce and Income
+- Added Min/Max Commerce Rate buttons: set any commerce rate to 0% or 100% with one click
+- Added Gold Rate Warning: yellow gold rate when negative but not enough to go below zero
+- Added Strategy Overlay: create a multicolored in-game dot map
+- Log the current turn slider values (gold, science, culture, espionage)
+
+Improvements:
+
+- Customizable Domestic Advisor (CDA) now also resizable based on 2 new BUG options
+- CDA: Added a "whip anger" column to CDA (not added to any pages)
+- CDA: coloring options now allow reversed comparisons (i.e. higher numbers are worse)
+- Show attitudes in leaderhead hovers in Exotic Foreign Advisor (EFA) Info tab and Military Advisor (MA)
+- EFA Info tab: Added Domestic Trade total and correct detection of possibility of trade routes
+- EFA Info tab: Added second trade column (for number of trade routes) to EFA Info Tab
+- Advanced Scoreboard: option to show Civ ID number; layout character is "I" but it's not in the default layout
+- Advanced Scoreboard: option to show the rank of a Civ; layout character is "K"
+- Advanced Scoreboard: options for maximum players, line height, and research icon size
+- Civ4lert: alert for cities that will/have become pacified after capture or revolt
+- Civ4lert: alert for cities founded by known, non-vassal rivals
+- Civ4lert: alert for when rival will become a vassal, capitulate, or sign a peace treaty
+- Raw Yields: Split up Trade Routes total into Domestic, Foreign, and Overseas (foreign only) Trade
+- Sevopedia: Resource pages show all buildings they affect in the Buildings list--not just the buildings that supply the resource
+- Great General Progress Bar: Replaced "General" with icon
+- BUG options screen: Improved hover texts that include multiple options and redesigned General tab
+- Updated German and Italian translations
+- Added CvAltRoot for use with Civ4's /AltRoot command-line feature
+- F9 / Charts now includes a 3-in-1 feature that displays 3 user selected charts
+- Added the ability to revert to the original BtS unit plot style
+- Added the ability to add the following options to the original BtS unit plot style (promo, mission, GG, wounded, upgrade)
+- Unit Info Pane: Added option to display moves left for a single unit using a fraction
+- Unit Info Pane: Added min/max moves left when multiple units selected
+- added 'turns to next vote' and 'vote to next election' to members tab
+
+Bug Fixes:
+
+- Advanced Scoreboard: Fixed offset for vassals when grouped
+- Advanced Scoreboard: Changed empty vassal indent to a bullet
+- Advanced Scoreboard: Changed vassal icon to a gold star for the active player
+- Autolog: Added checking of logging to all logging options which was previously ignored
+- Autolog: Fixed bug with Autolog onCityOffered logging which was misinterpreting a passed event argument
+- IconGrid: Added changes by DanF5771 (two widget data values instead of one)
+- IconGrid: Fixed bug where empty icon and stacked bar columns caused following columns to misalign
+- MA: Removed event reporting
+- MA: Reversed leaderhead parameters so attitude of row leaderhead is shown
+- MA: Fixed scrolling display error with Worst Enemy in MA Sit Rep when there is none for a leader
+- Main Interface: Fixed click/hover response on (widescreen) research bar
+- Main Interface: Era Text and Great Person Bar now hide with No Interface and WorldBuilder
+- CDA: Now adjusts position of Liberate button to make sure it doesn't overlap Exit text
+- Advanced Scoreboard: Fixed screen redraw after peace treaty is canceled
+- No more warning about xmllib being deprecated
+- Fixed bug with loading options when viewing Sevopedia from the MAIN MENU
+- PLE Unit Hover: Fixed calculation of Movement Points remaining
+- Unit Info Pane: Fixed calculation of Movement Points remaining
+- Logger: Fixed missing turn headers
+
+
+MODDING
+
+New Features:
+
+- New Font File includes citizen icon, great general icon, and blank icon
+- Created FontUtil for adding new constants to FontSymbols
+	Define symbols in XML: <symbol id [name] [from] [offset]/>
+	Provides getChar(symbol) for easier access to unicode string for symbol
+- CvMainInterface.updateScreen() fires gameUpdate event (not fired by Civ4)
+- Added <shortcut> tag to XML configuration to create keyboard shortcuts
+- Added module attribute to <mod> element that is used as default for module attributes in all child elements
+- Added horizontal and vertical sliders to BUG Options Screen (see BugOptionsTab)
+
+Bug Fixes:
+
+- Reloading Python modules now works!
+	Added PythonReloaded event fired after reloading (good time to call onLoad handler for mods that store data)
+- Fixed bug where Trade.findTypes() from TradeUtil.py was returning a list of types rather than a list of trades with that type
+- Fixed DealCanceled event
+- Option dirty bits and change functions are no longer set/called during initialization
