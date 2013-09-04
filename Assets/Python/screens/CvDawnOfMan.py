@@ -12,6 +12,13 @@ ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
 gc = CyGlobalContext()
 
+## HOF MOD
+import Buffy
+import BugCore
+import GameSetUpCheck
+BUFFYOpt = BugCore.game.BUFFY
+## end HOF MOD
+
 class CvDawnOfMan:
 	"Dawn of man screen"
 	def __init__(self, iScreenID):

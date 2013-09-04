@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Plot List Enhancements
+	by 12monkeys, turlute, EmperorFool
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="PLE" 
+	 name="Plot List Enhancements" 
+	 author="12monkeys, turlute, EmperorFool" 
+	 version="2.03" 
+	 date="04/14/2006"
+	 url="http://forums.civfanatics.com/showthread.php?t=149572">
+	
+	<options id="PLE" file="Plot List Enhancements.ini">
+		<section id="PlotList">
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True"/>
+			
+			<list   id="Draw_Method" key="Draw Method" 
+					type="int" default="1" listType="string" 
+					values="PLE|VAN|NEW BUG" 
+					get="getDrawMethod" dirtyBit="PlotListButtons"/>
+
+			<option id="PLE_Style" key="PLE Style" 
+					type="boolean" default="True"
+					get="isPLE_Style" dirtyBit="PlotListButtons"/>
+			
+			<!-- Modes and Filters -->
+			<option id="Show_Buttons" key="Show Buttons" 
+					type="boolean" default="True" 
+					get="isShowButtons" dirtyBit="PlotListButtons"/>
+			<list   id="Default_View_Mode" key="Default View Mode" 
+					type="int" default="1" listType="string" 
+					values="Single Row|Multiple Rows|Vertical Groups|Horizontal Groups" 
+					get="getDefaultViewMode"/>
+			<list   id="Default_Group_Mode" key="Default Grouping Mode" 
+					type="int" default="0" listType="string" 
+					values="Unit Type|Selection Group" 
+					get="getDefaultGroupMode"/>
+			<list   id="Filter_Behavior" key="Filter Behavior" 
+					type="int" default="1" listType="string" 
+					values="PLE|BUG" 
+					get="getFilterBehavior" dirtyBit="PlotListButtons">
+				<choice id="PLE" get="isPleFilterBehavior"/>
+				<choice id="BUG" get="isBugFilterBehavior"/>
+			</list>
+			
+			<!-- Health Bar -->
+			<option id="Health_Bar" key="Health Bar" 
+					type="boolean" default="True" 
+					get="isShowHealthBar" dirtyBit="PlotListButtons"/>
+			<option id="Hide_Health_Fighting" key="Hide Health Bar While Fighting" 
+					type="boolean" default="True" 
+					get="isHideHealthFighting"/>
+			<option id="Healthy_Color" key="Healthy Color" 
+					type="color" default="COLOR_GREEN" 
+					get="getHealthyColor" dirtyBit="PlotListButtons">
+				<change module="PlotListEnhancements" function="resetUnitPlotListStackedBarColors"/>
+			</option>
+			<option id="Wounded_Color" key="Wounded Color" 
+					type="color" default="COLOR_RED" 
+					get="getWoundedColor" dirtyBit="PlotListButtons">
+				<change module="PlotListEnhancements" function="resetUnitPlotListStackedBarColors"/>
+			</option>
+			
+			<!-- Move Bar -->
+			<option id="Move_Bar" key="Move Bar" 
+					type="boolean" default="True" 
+					get="isShowMoveBar" dirtyBit="PlotListButtons"/>
+			<option id="Full_Movement_Color" key="Full Movement Color" 
+					type="color" default="COLOR_BLUE" 
+					get="getFullMovementColor" dirtyBit="PlotListButtons">
+				<change module="PlotListEnhancements" function="resetUnitPlotListStackedBarColors"/>
+			</option>
+			<option id="Has_Moved_Color" key="Has Moved Color" 
+					type="color" default="COLOR_YELLOW" 
+					get="getHasMovedColor" dirtyBit="PlotListButtons">
+				<change module="PlotListEnhancements" function="resetUnitPlotListStackedBarColors"/>
+			</option>
+			<option id="No_Movement_Color" key="No Movement Color" 
+					type="color" default="COLOR_BLACK" 
+					get="getNoMovementColor" dirtyBit="PlotListButtons">
+				<change module="PlotListEnhancements" function="resetUnitPlotListStackedBarColors"/>
+			</option>
+			
+			<!-- Indicators -->
+			<option id="Wounded_Indicator" key="Wounded Indicator" 
+					type="boolean" default="True" 
+					get="isShowWoundedIndicator" dirtyBit="PlotListButtons"/>
+			<option id="Lead_By_GG_Indicator" key="Great General Indicator" 
+					type="boolean" default="True" 
+					get="isShowGreatGeneralIndicator" dirtyBit="PlotListButtons"/>
+			<option id="Promotion_Indicator" key="Promotion Indicator" 
+					type="boolean" default="True" 
+					get="isShowPromotionIndicator" dirtyBit="PlotListButtons"/>
+			<option id="Upgrade_Indicator" key="Upgrade Indicator" 
+					type="boolean" default="True" 
+					get="isShowUpgradeIndicator" dirtyBit="PlotListButtons"/>
+			<option id="Mission_Info" key="Mission Info" 
+					type="boolean" default="True" 
+					get="isShowMissionInfo" dirtyBit="PlotListButtons"/>
+			
+			<!-- Button Spacing -->
+			<option id="Horizontal_Spacing" key="Horizontal Item Spacing" 
+					type="int" default="34" 
+					get="getHoriztonalSpacing" dirtyBit="PlotListButtons"/>
+			<option id="Vertical_Spacing" key="Vertical Item Spacing" 
+					type="int" default="42" 
+					get="getVerticalSpacing" dirtyBit="PlotListButtons"/>
+			
+			<!-- Unit Info Hover Pane -->
+			<option id="Info_Pane" key="Unit Info Hover" 
+					type="boolean" default="True" 
+					get="isShowInfoPane" dirtyBit="PlotListButtons"/>
+			<option id="Info_Pane_X" key="Info Pane X Position" 
+					type="int" default="5" 
+					get="getInfoPaneX"/>
+			<option id="Info_Pane_Y" key="Info Pane Y Position" 
+					type="int" default="160" 
+					get="getInfoPaneY"/>
+			<option id="Info_Pane_Width" key="Info Pane X Size" 
+					type="int" default="5" 
+					get="getInfoPaneWidth"/>
+			<option id="Info_Pane_Standard_Line_Height" key="Pixel Per Line Type 1" 
+					type="int" default="24" 
+					get="getInfoPaneStandardLineHeight"/>
+			<option id="Info_Pane_Bulleted_Line_Height" key="Pixel Per Line Type 2" 
+					type="int" default="19" 
+					get="getInfoPaneBulletedLineHeight"/>
+			<list   id="Info_Pane_Promo_Icon_Offset_Y" key="Promo Icon Offset Y" 
+					type="int" default="0" 
+					values="10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10" 
+					get="getInfoPanePromoIconOffsetY"/>
+			
+			<option id="Unit_Name_Color" key="Unit Name Color" 
+					type="color" default="COLOR_YELLOW" 
+					get="getUnitNameColor"/>
+			<option id="Upgrade_Possible_Color" key="Upgrade Possible Color" 
+					type="color" default="COLOR_GREEN" 
+					get="getUpgradePossibleColor"/>
+			<option id="Upgrade_Not_Possible_Color" key="Upgrade Not Possible Color" 
+					type="color" default="COLOR_RED" 
+					get="getUpgradeNotPossibleColor"/>
+			<option id="Unit_Type_Specialties_Color" key="Unit Type Specialties Color" 
+					type="color" default="COLOR_WHITE" 
+					get="getUnitTypeSpecialtiesColor"/>
+			<option id="Promotion_Specialties_Color" key="Promotion Specialties Color" 
+					type="color" default="COLOR_LIGHT_GREY" 
+					get="getPromotionSpecialtiesColor"/>
+			
+			<!-- Move Highlighter -->
+			<option id="Move_Highlighter" key="Move Highlighter" 
+					type="boolean" default="True" 
+					get="isShowMoveHighlighter"/>
+			
+			<option id="MH_Color_Impassable_Terrain" key="Color Impassable Terrain" 
+					type="color" default="COLOR_CLEAR" 
+					get="getImpassableTerrainColor"/>
+			<option id="MH_Color_Passable_Terrain" key="Color Passable Terrain" 
+					type="color" default="COLOR_WHITE" 
+					get="getPassableTerrainColor"/>
+			<option id="MH_Color_Passable_Neutral_Territory" key="Color Passable Neutral Territory" 
+					type="color" default="COLOR_PLAYER_DARK_YELLOW" 
+					get="getNeutralTerritoryColor"/>
+			<option id="MH_Color_Passable_Enemy_Territory" key="Color Passable Enemy Territory" 
+					type="color" default="COLOR_PLAYER_DARK_RED" 
+					get="getEnemyTerritoryColor"/>
+			<option id="MH_Color_Passable_Barbarian_Territory" key="Color Passable Barbarian Territory" 
+					type="color" default="COLOR_PLAYER_DARK_CYAN" 
+					get="getBarbarianTerritoryColor"/>
+			<option id="MH_Color_Neutral_Unit" key="Color Neutral Unit" 
+					type="color" default="COLOR_YELLOW" 
+					get="getNeutralUnitColor"/>
+			<option id="MH_Color_Enemy_Unit" key="Color Enemy Unit" 
+					type="color" default="COLOR_RED" 
+					get="getEnemyUnitColor"/>
+			<option id="MH_Color_Barbarian_Unit" key="Color Barbarian Unit" 
+					type="color" default="COLOR_CYAN" 
+					get="getBarbarianUnitColor"/>
+		</section>
+	</options>
+</mod>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	MapFinder
+	by HOF Team, EmperorFool
+	
+	Copyright (c) 2009 The BUG Mod.
+-->
+<mod id="MapFinder" 
+	 module="MapFinder" 
+	 name="MapFinder" 
+	 author="HOF Team, EmperorFool" 
+	 version="1.0" 
+	 date="01/05/2009"
+	 dll="1">
+	
+	<options id="MapFinder" file="MapFinder.ini">
+		<section id="MapFinder">
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True"/>
+			
+			<option id="Path" key="Path" 
+					type="string" default="C:\Program Files\Civ4_Map_Finder"/>
+			<option id="SavePath" key="Save Path" 
+					type="string" default="C:\Program Files\Civ4_Map_Finder\Saves"/>
+			<option id="RuleFile" key="Rule File" 
+					type="string" default="Default.rul"/>
+			
+			<list   id="RegenerationDelay" key="Regeneration Delay" 
+					type="float" default="0.0" 
+					format="%.2f" values="0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0"/>
+			<list   id="SkipDelay" key="Skip Delay" 
+					type="float" default="0.25" 
+					format="%.2f" values="0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0"/>
+			<list   id="SaveDelay" key="Save Delay" 
+					type="float" default="2.0" 
+					format="%.2f" values="0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0"/>
+			
+			<option id="RegenerationLimit" key="Regeneration Limit" 
+					type="int" default="1000"/>
+			<option id="SaveLimit" key="Save Limit" 
+					type="int" default="1000"/>
+		</section>
+	</options>
+	
+	<init>
+		<arg name="minimumSaveDelay" type="float" value="2.0"/>
+	</init>
+	
+	<shortcut key="Alt G" function="doRegenerate"/>
+	<shortcut key="Alt Ctrl G" function="doStart"/>
+	<shortcut key="Alt Ctrl Shift G" function="doStop"/>
+	
+</mod>

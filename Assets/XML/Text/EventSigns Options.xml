@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Event Signs
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_EVENTSIGNS__ENABLED_TEXT</Tag>
+		<English>Event Signs</English>
+		<French>Event Signs</French>
+		<German>Ereignismarker</German>
+		<Italian>Segnali d'evento</Italian>
+		<Spanish>Event Signs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_EVENTSIGNS__ENABLED_HOVER</Tag>
+		<English>When checked, places signs on plots whose yields have changed because of random events.</English>
+		<French>When checked, places signs on plots whose yields have changed because of random events.</French>
+		<German>Markiert Geländefelder, deren Erträge sich durch zufällige Ereignisse verändert haben, auf der Karte mit einem Hinweis</German>
+		<Italian>Quando è selezionato, le caselle che hanno avuto la propria resa produttiva modificata da un evento casuale vengono marcate sulla mappa con una indicazionedom di tale modifica.</Italian>
+		<Spanish>When checked, places signs on plots whose yields have changed because of random events.</Spanish>
+	</TEXT>
+</Civ4GameText>

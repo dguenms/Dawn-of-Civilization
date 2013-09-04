@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+  Copyright (c) 2005-2006, Gillmer J. Derge.
+
+  This file is part of Civilization IV Alerts mod.
+
+  Civilization IV Alerts mod is free software; you can redistribute
+  it and/or modify it under the terms of the GNU General Public
+  License as published by the Free Software Foundation; either
+  version 2 of the License, or (at your option) any later version.
+
+  Civilization IV Alerts mod is distributed in the hope that it will
+  be useful, but WITHOUT ANY WARRANTY; without even the implied
+  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Civilization IV Alerts mod; if not, write to the Free
+  Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  02110-1301 USA
+  -->
+
+
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_REFUSES_TO_TALK</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]%s1 refuses to talk.[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]%s1 refuse de vous parler.[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]%s1 ist nicht gesprächsbereit.[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]%s1 rifiuta di parlare.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]%s1 se niega a hablar.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_WILLING_TO_TALK</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 is willing to negotiate.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 est disposé à négocier.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]%s1 ist bereit zu verhandeln.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 è disposto a negoziare.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 está dispuesto a negociar.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_YOU_WORST_ENEMY</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]You are the worst enemy of %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]You are the worst enemy of %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]Ihr seid der Erzfeind von %s1.[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]You are the worst enemy of %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]You are the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_WORST_ENEMY</Tag>
+		<English>[COLOR_YIELD_FOOD]%s2 is the worst enemy of %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s2 is the worst enemy of %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s2 ist der Erzfeind von %s1.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s2 is the worst enemy of %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s2 is the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY_FROM_YOU</Tag>
+		<English>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was you).[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was you).[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s2 ist der neue Erzfeind von %s1 (statt Euch).[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was you).[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was you).[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY_TO_YOU</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]You are the new worst enemy of %s1 (was %s2).[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]You are the new worst enemy of %s1 (was %s2).[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]Ihr seid der neue Erzfeind von %s1 (statt %s2).[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]You are the new worst enemy of %s1 (was %s2).[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]You are the new worst enemy of %s1 (was %s2).[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY</Tag>
+		<English>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was %s3).[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was %s3).[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s2 ist der neue Erzfeind von %s1 (statt %s3).[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was %s3).[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was %s3).[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_NO_WORST_ENEMY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s2 is no longer the worst enemy of %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s2 is no longer the worst enemy of %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]%s2 ist nicht mehr der Erzfeind von %s1.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s2 is no longer the worst enemy of %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s2 is no longer the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_YOU_NO_WORST_ENEMY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Ihr seid nicht mehr der Erzfeind von %s1.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_GOLD_TRADE</Tag>
+		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 gold available for trade.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_COMMERCE]%s1 a %d2 pièces d'or disponible pour le commerce.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_COMMERCE]%s1 hat %d2 Gold zum Handeln.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_COMMERCE]%s1 ha %d2 oro disponibile per il commercio.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_COMMERCE]%s1 tiene %d2 de oro disponible para el comercio.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_GOLD_PER_TURN_TRADE</Tag>
+		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 gold per turn available for trade.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_COMMERCE]%s1 a %d2 pièces d'or par tour disponible pour le commerce.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_COMMERCE]%s1 hat %d2 Gold pro Runde zum Handeln.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_COMMERCE]%s1 ha %d2 oro per turno disponibile per il commercio.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_COMMERCE]%s1 tiene %d2 de oro por turno disponible para el comercio.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_GROWTH</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 will grow to size %d2 on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 atteindra la taille %d2 au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]Die Bevölkerung von %s1 wächst nächste Runde auf %d2 an.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 crescerà a grandezza %d2 al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 alcanzará tamaño %d2 el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_SHRINKAGE</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 will shrink to size %d2 on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 retrécira à la taille %d2 au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 schrumpft nächste Runde auf %d2.[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 si ridurrà a grandezza %d2 al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se reducirá tamaño %d2 el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHEALTHY</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 will become unhealthy on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 deviendra malsain au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 wird nächste Runde krank.[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 diventerà insalubre al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se volverá insalubre el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_HEALTHY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 will become healthy on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 deviendra sain au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Bevölkerung von %s1 wird nächste Runde gesund.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 diventerà salubre al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se volverá sano el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHAPPY</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 will become unhappy on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 deviendra malheureux au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 wird nächste Runde unzufrieden.[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 diventerà infelice al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se volverá infeliz el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_HAPPY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 will become happy on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 deviendra heureux au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Bevölkerung von %s1 wird nächste Runde zufrieden.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 diventerà felice al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se volverá feliz el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_UNHEALTHY</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 has become unhealthy.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 est devenu malsain.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 ist krank![COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 è diventata insalubre.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se ha vuelto insalubre.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_HEALTHY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 has become healthy.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 est devenu sain.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Bevölkerung von %s1 ist gesund![COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 è diventata salubre.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se ha vuelto sano.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_UNHAPPY</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 has become unhappy.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 est devenu malheureux.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 ist unzufrieden![COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 è diventata infelice.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se ha vuelto infeliz.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_HAPPY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 has become happy.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 est devenu heureux.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Bevölkerung von %s1 ist zufrieden![COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 è diventata felice.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se ha vuelto feliz.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_GROWTH</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 has grown to size %d2.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 a grandi jusqu'à la taille %d2.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]Die Bevölkerung von %s1 ist auf %d2 gewachsen![COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 è cresciuta a grandezza %d2.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 ha alcanzado tamaño %d2.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_SHRINKAGE</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 has shrunk to size %d2.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 à retréci jusqu'à la taille %d2.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 ist auf %d2 geschrumpft![COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 si è ridotta a grandezza %d2.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se ha reducido tamaño %d2.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_PACIFIED</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 will be pacified on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 sera apaisée sur le prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Unruhen in %s1 werden nächste Runde enden.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 sarà pacificata al turno seguente.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 será pacificado en la vuelta siguiente.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PACIFIED</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 has been pacified.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 a été apaisée.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Unruhen in %s1 sind beendet![COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 è stata pacificata.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]Se ha pacificado %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_CAN_HURRY_POP</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_ANGRYPOP] with %d4[ICON_PRODUCTION] overflow and +1[ICON_UNHAPPY] for %d5 turns.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 peut précipiter %s2 pour %d3[ICON_ANGRYPOP] avec %d4[ICON_PRODUCTION] de débordement et +1[ICON_UNHAPPY] por %d5 tour.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s1 kann das Bauprojekt "%s2" unter Einsatz von %d3[ICON_ANGRYPOP] beschleunigen (Überschuss: %d4[ICON_PRODUCTION]), wobei für %d5 Runden +1[ICON_UNHAPPY] in der Stadt verursacht wird.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 può accelerare %s2 per %d3[ICON_ANGRYPOP] con un surplus di %d4[ICON_PRODUCTION] e 1[ICON_UNHAPPY] per %d5 turni.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 puede acelerar %s2 para %d3[ICON_ANGRYPOP] con %d4[ICON_PRODUCTION] de desbordamiento y +1[ICON_UNHAPPY] para %d5 turnos.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_CAN_HURRY_POP_PLUS_GOLD</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_ANGRYPOP] with %d4[ICON_PRODUCTION] overflow, %d6[ICON_GOLD] added to the treasury, and +1[ICON_UNHAPPY] for %d5 turns.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_ANGRYPOP] with %d4[ICON_PRODUCTION] overflow, %d6[ICON_GOLD] added to the treasury, and +1[ICON_UNHAPPY] for %d5 turns.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s1 kann das Bauprojekt "%s2" unter Einsatz von %d3[ICON_ANGRYPOP] beschleunigen (Überschuss: %d4[ICON_PRODUCTION] + %d6[ICON_GOLD] für die Staatskasse), wobei für %d5 Runden +1[ICON_UNHAPPY] in der Stadt verursacht wird.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 può accelerare %s2 per %d3[ICON_ANGRYPOP] con un surplus di %d4[ICON_PRODUCTION], un aumento del tesoro di %d6[ICON_GOLD] e +1[ICON_UNHAPPY] per %d5 turni.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_ANGRYPOP] with %d4[ICON_PRODUCTION] overflow, %d6[ICON_GOLD] added to the treasury, and +1[ICON_UNHAPPY] for %d5 turns.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_CAN_HURRY_GOLD</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_GOLD].[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 peut précipiter %s2 pour %d3[ICON_GOLD].[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s1 kann das Bauprojekt "%s2" unter Einsatz von %d3[ICON_GOLD] beschleunigen.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 può accelerare %s2 per %d3[ICON_GOLD].[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 puede acelerar %s2 para %d3[ICON_GOLD].[COLOR_REVERT]</Spanish>
+	</TEXT>
+</Civ4GameText>

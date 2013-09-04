@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Better Espionage Screen
+	by Almightix, EmperorFool
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="BetterEspionage" 
+	 module="SpyUtil"
+	 name="Better Espionage Screen" 
+	 author="Almightix, Ruff_Hi, EmperorFool" 
+	 version="1.1" 
+	 date="07/29/2007" 
+	 url="http://forums.civfanatics.com/showthread.php?t=234523">
+	 
+	<options id="BetterEspionage" file="Better Espionage.ini">
+		<section id="Better Espionage">
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True" 
+					dirtyBit="Espionage_Advisor" 
+					label="Better Espionage Screen" 
+					help="When checked, uses Almightix's Better Espionage Screen."/>
+			
+			<option id="ShowCalculatedInformation" key="Show Calculated Information" 
+					type="boolean" default="False" 
+					dirtyBit="Espionage_Advisor" 
+					label="Show Calculated Information" 
+					help="When checked, shows calculated espionage information."/>
+			
+			<option id="DefaultRatioColor" key="Default Ratio Color" 
+					type="color" default="COLOR_CYAN" 
+					dirtyBit="Espionage_Advisor" 
+					label="Ratio Color" 
+					help="Default color used for espionage ratios."/>
+			<list   id="GoodRatioCutoff" key="Good Ratio Cutoff" 
+					type="float" default="95.0" listType="float" 
+					values="100.0, 97.5, 95.0, 92.5, 90.0, 87.5, 85.0, 82.5, 80.0, 77.5, 75.0" format="%.1f%%" 
+					dirtyBit="Espionage_Advisor" 
+					label="Good Ratio Cutoff" 
+					help="Ratios less than or equal to this value are colored with the following color."/>
+			<option id="GoodRatioColor" key="Good Ratio Color" 
+					type="color" default="COLOR_GREEN" 
+					dirtyBit="Espionage_Advisor" 
+					label="Good Color" 
+					help="Color used for good espionage ratios."/>
+			<list   id="BadRatioCutoff" key="Bad Ratio Cutoff" 
+					type="float" default="105.0" listType="float" 
+					values="100.0, 102.5, 105.0, 107.5, 110.0, 112.5, 115.0, 117.5, 120.0, 122.5, 125.0" format="%.1f%%" 
+					dirtyBit="Espionage_Advisor" 
+					label="Bad Ratio Cutoff" 
+					help="Ratios greater than or equal to this value are colored with the following color."/>
+			<option id="BadRatioColor" key="Bad Ratio Color" 
+					type="color" default="COLOR_YELLOW" 
+					dirtyBit="Espionage_Advisor" 
+					label="Bad Color" 
+					help="Color used for bad espionage ratios."/>
+			
+			<option id="PossibleMissionColor" key="Possible Mission Color" 
+					type="color" default="COLOR_GREEN" 
+					dirtyBit="Espionage_Advisor" 
+					label="Possible Mission Color" 
+					help="Color used for missions that you can perform now (you have enough EPs against the target)."/>
+			<list   id="CloseMissionPercent" key="Close Mission Percent" 
+					type="float" default="5.0" listType="float" 
+					values="2.5, 5.0, 7.5, 10.0, 12.5, 15.0, 17.5, 20.0, 22.5, 25.0" format="%.1f%%" 
+					dirtyBit="Espionage_Advisor" 
+					label="Close Percent Cutoff" 
+					help="Determines how close your EPs have to be to the cost of a mission for it to be considered close to possible."/>
+			<option id="CloseMissionColor" key="Close Mission Color" 
+					type="color" default="COLOR_CYAN" 
+					dirtyBit="Espionage_Advisor" 
+					label="Close Mission Color" 
+					help="Color used for missions that you can perform soon (you have close to enough EPs against the target)."/>
+		</section>
+	</options>
+	
+	<event type="GameStart" function="onGameStart"/>
+	<event type="OnLoad" function="onGameLoad"/>
+	<event type="PythonReloaded" function="onPythonReloaded"/>
+	<event type="BeginPlayerTurn" function="onBeginPlayerTurn"/>
+</mod>

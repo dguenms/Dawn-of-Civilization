@@ -794,7 +794,7 @@ def cancelDefensivePacts(iPlayer, lDefensivePactCivs):
 	
 	for iOtherPlayer in lDefensivePactCivs:
 		pOtherPlayer = gc.getPlayer(iOtherPlayer)
-		tOtherPlayer = gc.getPlayer(iOtherPlayer)
+		tOtherPlayer = gc.getTeam(iOtherPlayer)
 		
 		tPlayer.setDefensivePact(iOtherPlayer, False)
 		tOtherPlayer.setDefensivePact(iPlayer, False)
@@ -1672,6 +1672,9 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 				teamOwner.declareWar(iPlayer, False, -1)
 			else:
 				teamOwner.makePeace(iPlayer)
+				
+	if len(utils.getCityList(iPlayer)) == 0:
+		utils.debugTextPopup('Civ resurrected without any cities')
 			
 	relocateCapital(iPlayer, True)
 	

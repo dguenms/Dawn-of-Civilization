@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BUG XML Configuration
+
+	This file defines the elements used in the XML configuration files.
+	
+	DO NOT MODIFY THIS FILE!
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<bug>
+	
+	<config root="bug">
+		<config tag="mod" parents="xml" module="BugConfig" class="ModHandler"/>
+		<config tag="init" parents="mod" module="BugConfig" class="InitHandler"/>
+		
+		<config tag="export" parents="mod" module="BugConfig" class="ExportHandler"/>
+		<config tag="extend" parents="mod" module="BugConfig" class="ExtendHandler"/>
+		
+		<config tag="options" parents="mod" module="BugOptions" class="OptionsHandler">
+			<config tag="section" class="SectionHandler">
+				<config tag="option" parents="bug mod options" class="OptionHandler"/>
+				<config tag="list" parents="bug mod options" class="ListOptionHandler">
+					<config tag="choice" class = "ListChoiceHandler"/>
+				</config>
+				<config tag="change" parents="- option list" class="ChangeHandler"/>
+				<config tag="accessor" parents="options" class="AccessorHandler"/>
+			</config>
+		</config>
+		<config tag="link" parents="mod options section" module="BugOptions" class="LinkedOptionHandler"/>
+		
+		<config tag="events" parents="mod" module="BugConfig" class="EventsHandler"/>
+		<config tag="event" parents="mod" module="BugConfig" class="EventHandler"/>
+		
+		<config tag="symbol" parents="mod" module="FontUtil" class="SymbolHandler"/>
+		<config tag="shortcut" parents="mod" module="InputUtil" class="ShortcutHandler"/>
+		<config tag="widget" parents="mod" module="WidgetUtil" class="WidgetHandler"/>
+		
+		<config tag="screen" parents="mod" module="BugOptionsScreen" class="ScreenHandler">
+			<config tag="tab" class="TabHandler"/>
+		</config>
+		
+		<config tag="gameutils" parents="mod" module="BugGameUtils" class="GameUtilsHandler">
+			<config tag="callback" class="CallbackHandler"/>
+		</config>
+	</config>
+	
+</bug>

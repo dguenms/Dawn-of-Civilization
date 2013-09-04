@@ -5159,8 +5159,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iSpearman, iArabia, (77, 40), 2)
 			
 	def germanSpawn(self):
-		if sd.scriptDict['lStability'][iHolyRome] < -10:
-			sd.scriptDict['lStability'][iHolyRome] = -10
+		if sd.getStabilityLevel(iHolyRome) < con.iStabilityShaky: sd.setStabilityLevel(iHolyRome, con.iStabilityShaky)
 			
 		pHolyRome.setReborn()
 		

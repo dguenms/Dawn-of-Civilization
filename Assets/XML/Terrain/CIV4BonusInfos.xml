@@ -2202,7 +2202,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_SWAMP</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
-			<TechObsolete>NONE</TechObsolete>
+			<TechObsolete>TECH_AGRICULTURE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>

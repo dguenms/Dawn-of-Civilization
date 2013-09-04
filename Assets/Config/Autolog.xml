@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Autolog
+	by eotinb, Ruff_Hi
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="Autolog" 
+	 module="autologEventManager"
+	 name="Autolog Mod" 
+	 author="eotinb, Ruff_Hi" 
+	 version="1.2" 
+	 date="12/06/2005"
+	 url="http://forums.civfanatics.com/showthread.php?t=141164">
+	 
+	<options id="Autolog" file="Autolog.ini">
+		<section id="Autolog">
+			<!-- Move this outside of INI once Mod objects hold options -->
+			<option id="LoggingOn" type="boolean" default="False"/>
+			
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True" 
+					get="isEnabled" set="setEnabled" 
+					label="Enable Logging" 
+					help="When checked, various game events are logged to a text file using eotinb's AutoLog mod."/>
+			<option id="Silent" key="Silent" 
+					type="boolean" default="False" 
+					get="isSilent" set="setSilent" 
+					label="Start Automatically" 
+					help="When checked, the logger is automatically started with no in-game message."/>
+			
+			<!-- Log file -->
+			<option id="DefaultFileName" key="Default File Name" 
+					type="boolean" default="True" 
+					get="isUseDefaultFileName" set="setUseDefaultFileName" 
+					label="Use Default File Name" 
+					help="When checked, the default (playername.txt) will be used, ignores log file name option.">
+				<change module="autologEventManager" function="setDefaultFileName"/>
+			</option>
+			<option id="FilePath" key="File Path" 
+					type="string" default="" 
+					get="getFilePath" set="setFilePath" 
+					label="Path" 
+					help="Directory where log file resides (fully qualified path, i.e. C:\folder\subfolder or blank).">
+				<change module="autologEventManager" function="setFilePath"/>
+			</option>
+			<option id="FileName" key="File Name" 
+					type="string" default="autolog.txt" 
+					get="getFileName" set="setFileName" 
+					label="File" 
+					help="Name of log file. If there is no file of this name in the directory above, one will be created.">
+				<change module="autologEventManager" function="setFileName"/>
+			</option>
+			
+			<!-- Log format -->
+			<list   id="Format" key="Format Style" 
+					type="int" default="2" listType="string" 
+					values="Plain|HTML Tags|Forum Tags, with '' around color codes|Forum Tags, no '' around color codes" 
+					get="getFormatStyle" set="setFormatStyle" 
+					label="Format Style" 
+					help="The format of the log output."/>
+			<option id="ColorCoding" key="Color Coding" 
+					type="boolean" default="True" 
+					get="isColorCoding" set="setColorCoding" 
+					label="Color Coding" 
+					help="When checked, comments are color-coded for forum posts."/>
+			<list   id="4000BC" key="4000BC" 
+					type="int" default="0" listType="int" 
+					values="0, 1" 
+					get="get4000BCTurn" set="set4000BCTurn" 
+					label="4000BC is Turn" 
+					help="Select which turn number 4000BC should be."/>
+			<option id="IBT" key="Show IBT" 
+					type="boolean" default="True" 
+					get="isShowIBT" set="setShowIBT" 
+					label="Show IBT" 
+					help="When checked, the logger inserts IBT (in between turns) at the end of the player's turn."/>
+			<option id="Prefix" key="Prefix" 
+					type="string" default="Player Comment" 
+					get="getPrefix" set="setPrefix" 
+					label="Prefix" 
+					help="Used as a prefix before user entries in the log [use ALT + E], e.g. your nick."/>
+			
+			<!-- Events to log -->
+			
+			<!-- Research and Builds -->
+			<option id="LogTech" key="Tech" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogTechnology" set="setLogTechnology" 
+					label="Technologies" 
+					help="When checked, will log techs acquired and research started."/>
+			<option id="LogBuildStarted" key="Build Started" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogBuildStarted" set="setLogBuildStarted" 
+					label="Builds Started" 
+					help="When checked, will log when a city starts a build."/>
+			<option id="LogBuildCompleted" key="Build Completed" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogBuildCompleted" set="setLogBuildCompleted" 
+					label="Builds Completed" 
+					help="When checked, will log when a city completes a build."/>
+			<option id="LogProjects" key="Project Completed" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogProjectCompleted" set="setLogProjectCompleted" 
+					label="Projects Completed" 
+					help="When checked, will log completion of projects (certain wonders are technically projects -- other wonders are treated like normal buildings)."/>
+			<option id="LogImprovements" key="Improvements" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogImprovements" set="setLogImprovements" 
+					label="Improvements" 
+					help="When checked, will log when your improvements are built or destroyed by you."/>
+			<option id="LogSliders" key="Sliders" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogSliders" set="setLogSliders" 
+					label="Sliders" 
+					help="When checked, will log the sliders each turn."/>
+			
+			<!-- Cities -->
+			<option id="LogCityFounded" key="City Founded" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCityFounded" set="setLogCityFounded" 
+					label="City Founded" 
+					help="When checked, will log when you found a city."/>
+			<option id="LogCityGrowth" key="City Growth" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCityGrowth" set="setLogCityGrowth" 
+					label="City Growth" 
+					help="When checked, will log when one of your cities grows in population."/>
+			<option id="LogCityBorders" key="City Borders" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCityBorders" set="setLogCityBorders" 
+					label="City Borders" 
+					help="When checked, will log when one of your city\'s borders expand."/>
+			<option id="LogCityOwner" key="City Ownership" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCityOwner" set="setLogCityOwner" 
+					label="City Ownership" 
+					help="When checked, will log when you acquire or lose a city through conquest or trade."/>
+			<option id="LogCityRazed" key="City Razed" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCityRazed" set="setLogCityRazed" 
+					label="City Razed" 
+					help="When checked, will log when you raze another civ\'s city or one of your cities is razed."/>
+			<option id="LogCityWhipStatus" key="City Whip" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCityWhipStatus" set="setLogCityWhipStatus" 
+					label="City Whip" 
+					help="When checked, will log when you whip a city or when the whip anger decreases in a city."/>
+			
+			<!-- Game Events -->
+			<option id="LogGoodies" key="Goodies" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogTribalVillage" set="setLogTribalVillage" 
+					label="Tribal Villages" 
+					help="When checked, will log results from popping tribal villages."/>
+			<option id="LogReligion" key="Religion" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogReligion" set="setLogReligion" 
+					label="Religions" 
+					help="When checked, will log\n1. When you found a religion\n2. Spread of any religion to your cities\n 3. Spread of religions whose Holy city you control to foreign cities"/>
+			<option id="LogCorporation" key="Corporation" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCorporation" set="setLogCorporation" 
+					label="Corporations" 
+					help="When checked, will log\n1. When you found a corporation\n2. Spread of any corporation to your cities\n 3. Spread of corporation whose headquarters you control to foreign cities"/>
+			<option id="LogGP" key="Great People" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogGreatPeople" set="setLogGreatPeople" 
+					label="Great People" 
+					help="When checked, will log the birth of great people (in your cities)."/>
+			<option id="LogGA" key="Golden Age" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogGoldenAge" set="setLogGoldenAge" 
+					label="Golden Age" 
+					help="When checked, will log begin and end of your Golden Ages."/>
+			
+			<!-- Politics -->
+			<option id="LogContact" key="Contact" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogContact" set="setLogContact" 
+					label="Contact" 
+					help="When checked, will log first contact with other civs."/>
+			<option id="LogAttitude" key="Attitude" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogAttitude" set="setLogAttitude" 
+					label="Attitude" 
+					help="When checked, will log any change in attitude between civs known to you."/>
+			<option id="LogWar" key="War" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogWar" set="setLogWar" 
+					label="War" 
+					help="When checked, will log start and end of wars between civs known to you."/>
+			<option id="LogVassals" key="Vassals" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogVassals" set="setLogVassals" 
+					label="Vassal States" 
+					help="When checked, will log when any civ becomes a vassal state of or frees itself from another."/>
+			<option id="LogCivics" key="Civics" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCivics" set="setLogCivics" 
+					label="Civics" 
+					help="When checked, will log any change in civics of civs known to you."/>
+			
+			<!-- Combat -->
+			<option id="LogCombat" key="Combat" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCombat" set="setLogCombat" 
+					label="Combat" 
+					help="When checked, will log combat results involving your units."/>
+			<option id="LogPromotions" key="Promotions" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogPromotion" set="setLogPromotion" 
+					label="Promotions" 
+					help="When checked, will log when you promote one of your units."/>
+			<option id="LogPillage" key="Pillage" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogPillage" set="setLogPillage" 
+					label="Pillaging" 
+					help="When checked, will log when you pillage or your improvements are pillaged."/>
+
+			<!-- Trades and Demands -->
+			<option id="LogTradeOffer" key="TradeOffer" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogTradeOffer" set="setLogTradeOffer" 
+					label="TradeOffer" 
+					help="When checked, will log AI-initiated trades and gift offers and your responses."/>
+			<option id="LogTributeDemand" key="TributeDemand" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogTributeDemand" set="setLogTributeDemand" 
+					label="TributeDemand" 
+					help="When checked, will log AI demands for tribute or help and your responses."/>
+			<option id="LogReligionDemand" key="ReligionDemand" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogReligionDemand" set="setLogReligionDemand" 
+					label="ReligionDemand" 
+					help="When checked, will log AI demands that you change religion and your responses."/>
+			<option id="LogCivicDemand" key="CivicDemand" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogCivicDemand" set="setLogCivicDemand" 
+					label="CivicDemand" 
+					help="When checked, will log AI demands that you change civics and your responses."/>
+			<option id="LogWarDemand" key="WarDemand" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogWarDemand" set="setLogWarDemand" 
+					label="WarDemand" 
+					help="When checked, will log AI requests to declare war on a third party and your responses."/>
+			<option id="LogEmbargoDemand" key="EmbargoDemand" 
+					type="boolean" default="True" and="LoggingOn" 
+					get="isLogEmbargoDemand" set="setLogEmbargoDemand" 
+					label="EmbargoDemand" 
+					help="When checked, will log AI requests to stop trading with a third party and your responses."/>
+		</section>
+	</options>
+	
+	<events>
+		<!--arg name="toggleKey" type="key" value="Alt L"/>
+		<arg name="entryKey" type="key" value="Alt E"/-->
+	</events>
+	
+	<gameutils listener="doPillageGoldListener"/>
+	
+</mod>

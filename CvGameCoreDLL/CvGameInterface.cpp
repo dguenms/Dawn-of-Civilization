@@ -1722,9 +1722,9 @@ void CvGame::doControl(ControlTypes eControl)
 
 	case CONTROL_FINANCIAL_SCREEN:
 		{
-			CyArgsList argsList;
-			argsList.add(-1);
-			gDLL->getPythonIFace()->callFunction(PYScreensModule, "showFinanceAdvisor", argsList.makeFunctionArgs());
+			//CyArgsList argsList;
+			//argsList.add(-1);
+			gDLL->getPythonIFace()->callFunction(PYScreensModule, "showFinanceAdvisor");
 		}
 		break;
 

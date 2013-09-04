@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BULL Core
+	by EmperorFool
+	
+	Exposes BUG functions to BULL via CvAppInterface.
+
+	Copyright (c) 2010 The BUG Mod.
+-->
+<mod id="BULL" 
+	 name="BULL Core" 
+	 module="BugDll"
+	 author="EmperorFool" 
+	 date="02/18/2010"
+	 dll="1">
+	
+	<export function="isBug" to="CvAppInterface"/>
+	
+	<export function="getOptionBOOL" to="CvAppInterface"/>
+	<export function="getOptionINT" to="CvAppInterface"/>
+	<export function="getOptionFLOAT" to="CvAppInterface"/>
+	<export function="getOptionSTRING" to="CvAppInterface"/>
+	
+	<export module="CvModName" function="getNameAndVersion" to="CvAppInterface" as="getModNameAndVersion"/>
+</mod>

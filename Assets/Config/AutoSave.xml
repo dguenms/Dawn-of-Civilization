@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	AutoSave
+	by BUG Team, HOF Team
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="AutoSave" 
+	 name="AutoSave" 
+	 module="AutoSave" 
+	 author="BUG Team, HOF Team" 
+	 version="1.0" 
+	 date="05/04/2009"
+	 url=""
+	 dll="1">
+	 
+	<options id="AutoSave" file="AutoSave.ini">
+		<section id="AutoSave">
+			<option id="CreateStartSave" key="Create Start Save" 
+					type="boolean" default="False"/>
+
+			<option id="CreateEndSave" key="Create End Save" 
+					type="boolean" default="False"/>
+
+			<option id="CreateExitSave" key="Create Exit Save" 
+					type="boolean" default="False"/>
+
+			<option id="UsePlayerName" key="Use Player Name" 
+					type="boolean" default="False"/>
+		</section>
+	</options>
+	
+	<init/>
+	
+	<export function="saveGameStart" to="CvAppInterface" as="gameStartSave"/>
+	<export function="saveGameEnd" to="CvAppInterface" as="gameEndSave"/>
+	<export function="saveGameExit" to="CvAppInterface" as="gameExitSave"/>
+</mod>

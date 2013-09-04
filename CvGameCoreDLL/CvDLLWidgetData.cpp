@@ -1630,9 +1630,9 @@ void CvDLLWidgetData::doForeignAdvisor(CvWidgetDataStruct &widgetDataStruct)
 
 void CvDLLWidgetData::doFinanceAdvisor(CvWidgetDataStruct &widgetDataStruct)
 {
-	CyArgsList argsList;
-	argsList.add(widgetDataStruct.m_iData1);
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "showFinanceAdvisor", argsList.makeFunctionArgs());
+	//CyArgsList argsList;
+	//argsList.add(widgetDataStruct.m_iData1);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "showFinanceAdvisor");
 }
 
 //

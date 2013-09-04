@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Advanced Combat Odds
+	by PieceOfMind
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<mod id="ACO" 
+	 name="Advanced Combat Odds" 
+	 author="PieceOfMind" 
+	 version="1.0" 
+	 date="04/18/2009" 
+	 url="http://forums.civfanatics.com/showthread.php?t=310415"
+	 dll="1">
+	 
+	<options id="ACO" file="Advanced Combat Odds.ini">
+		<section id="ACO">
+			<option id="Enabled" type="boolean" default="True"/>
+			<option id="Debug" type="boolean" default="False"/>
+			
+			<option id="ForceOriginalOdds" key="Force Original Odds" 
+					type="boolean" default="False"/>
+			<option id="IgnoreBarbFreeWins" key="Ignore Barb Free Wins" 
+					type="boolean" default="False"/>
+			
+			<option id="SwapViews" key="Swap Views" 
+					type="boolean" default="False"/>
+			<option id="MergeShortBars" key="Merge Short Bars" 
+					type="boolean" default="True"/>
+			<option id="ShowModifierLabels" key="Show Modifier Labels" 
+					type="boolean" default="False"/>
+					
+			<list   id="ShowBasicInfo" key="Show Basic Info" 
+					type="int" default="3" listType="string" 
+					values="Never|Normal|Shifted|Both"/>
+			<list   id="ShowAttackerInfo" key="Show Attacker Info" 
+					type="int" default="0" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+			<list   id="ShowDefenderInfo" key="Show Defender Info" 
+					type="int" default="3" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+					
+			<list   id="ShowSurvivalOdds" key="Show Survival Odds" 
+					type="int" default="3" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+			<list   id="ShowUnharmedOdds" key="Show Unharmed Odds" 
+					type="int" default="2" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+			<list   id="ShowAverageHealth" key="Show Average Health" 
+					type="int" default="2" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+			<list   id="ShowAttackerHealthBars" key="Show Attacker Health Bars" 
+					type="int" default="3" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+			<list   id="ShowDedenderHealthBars" key="Show Dedender Health Bars" 
+					type="int" default="2" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+					
+			<list   id="ShowUnroundedExperience" key="Show Unrounded Experience" 
+					type="int" default="0" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+			<list   id="ShowExperienceRange" key="Show Experience Range" 
+					type="int" default="2" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+					
+			<list   id="ShowDefenseModifiers" key="Show Defense Modifiers" 
+					type="int" default="3" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+			<list   id="ShowTotalDefenseModifier" key="Show Total Defense Modifier" 
+					type="int" default="2" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+					
+			<list   id="ShowShiftInstructions" key="Show Shift Instructions" 
+					type="int" default="1" listType="string" 
+					values="ACO__ShowBasicInfo"/>
+		</section>
+	</options>
+</mod>

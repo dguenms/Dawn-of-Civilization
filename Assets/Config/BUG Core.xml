@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BUG Core
+	by EmperorFool
+	
+	Holds state and options used by the BUG Core.
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="Core" 
+	 name="BUG Core" 
+	 author="EmperorFool" 
+	 version="3.5" 
+	 build="1324" 
+	 date="09/11/2008"
+	 url="http://forums.civfanatics.com/forumdisplay.php?f=268">
+	 
+	<options id="Core" file="BUG Core.ini">
+		<section id="General">
+			<option id="OptionsScreenOpened" key="Options Screen Opened" 
+					type="boolean" default="False"
+					help="Set to True the first time the player opens the BUG Options screen"/>
+		</section>
+		
+		<section id="Logging">
+			<list   id="ScreenLogLevel" key="Screen Level" 
+					type="int" default="2" listType="string" 
+					values="Debug|Info|Warning|Error|None">
+				<change module="BugUtil" function="readLoggingOptions"/>
+			</list>
+			<list   id="FileLogLevel" key="File Level" 
+					type="int" default="0" listType="string" 
+					values="Debug|Info|Warning|Error|None">
+				<change module="BugUtil" function="readLoggingOptions"/>
+			</list>
+			<option id="LogTime" key="Log Time" 
+					type="boolean" default="True">
+				<change module="BugUtil" function="readLoggingOptions"/>
+			</option>
+		</section>
+		
+		<section id="Subversion">
+			<option id="CheckForUpdates" key="Check For Updates" 
+					type="boolean" default="False" 
+					title="Check for Updates">
+				<change module="BugUpdateChecker" function="onCheckForUpdatesChanged"/>
+			</option>
+			
+			<option id="LocalRoot" key="Local Root" 
+					type="string" default=""
+					title="Local Root Directory">
+				<change module="BugUpdateChecker" function="onLocalRootChanged"/>
+			</option>
+			<option id="LocalVersion" key="Local Revision" 
+					type="int" default="0"
+					title="Local Revision"/>
+			
+			<option id="RepositoryUrl" key="Repository URL" 
+					type="string" default="http://civ4bug.svn.sourceforge.net/svnroot/civ4bug/BUG Mod/"
+					title="Repository URL">
+				<change module="BugUpdateChecker" function="onRepositoryUrlChanged"/>
+			</option>
+			<option id="RepositoryVersion" key="Repository Revision" 
+					type="int" default="0"
+					title="Repository Revision"/>
+		</section>
+		
+		<option id="LastSvnCheck" type="float" default="0"/>
+	</options>
+	
+	<init module="BugUtil" function="readLoggingOptions" immediate="true"/>
+    <init module="BugDll" immediate="true"/>
+	<init module="BugEventManager" function="configure" immediate="true">
+		<arg name="logging" type="boolean" value="true"/>
+		<arg name="noLogEvents" type="set">
+			"gameUpdate",
+			"mouseEvent",
+			"kbdEvent"
+		</arg>
+	</init>
+	
+	<!-- BUG Options Screen UI control handlers -->
+	<export module="BugOptionsScreen" function="handleBugExitButtonInput" to="CvOptionsScreenCallbackInterface"/>
+	<export module="BugOptionsScreen" function="handleBugHelpButtonInput" to="CvOptionsScreenCallbackInterface"/>
+	<export module="BugOptionsScreen" function="handleBugCheckboxClicked" to="CvOptionsScreenCallbackInterface"/>
+	<export module="BugOptionsScreen" function="handleBugTextEditChange" to="CvOptionsScreenCallbackInterface"/>
+	<export module="BugOptionsScreen" function="handleBugDropdownChange" to="CvOptionsScreenCallbackInterface"/>
+	<export module="BugOptionsScreen" function="handleBugIntDropdownChange" to="CvOptionsScreenCallbackInterface"/>
+	<export module="BugOptionsScreen" function="handleBugFloatDropdownChange" to="CvOptionsScreenCallbackInterface"/>
+	<export module="BugOptionsScreen" function="handleBugColorDropdownChange" to="CvOptionsScreenCallbackInterface"/>
+	<export module="BugOptionsScreen" function="handleBugSliderChanged" to="CvOptionsScreenCallbackInterface"/>
+	
+	<!-- Civ4 Options Screen UI control handlers -->
+	<extend how="after" module="BugOptionsScreen" function="handleLanguagesDropdownBoxInput" to="CvOptionsScreenCallbackInterface"/>
+	<extend how="after" module="BugOptionsScreen" function="handleResolutionDropdownInput" to="CvOptionsScreenCallbackInterface"/>
+	
+	<event type="gameUpdate" module="BugUtil" function="doDeferredCalls"/>
+	<event type="BeginPlayerTurn" module="BugUtil" function="doHotSeatCheck"/>
+	<event type="SwitchHotSeatPlayer" module="CvMainInterface" function="onSwitchHotSeatPlayer"/>
+	
+	<!-- Game ScriptData -->
+	<event type="GameStart" module="BugData" function="onGameStart"/>
+	<event type="OnLoad" module="BugData" function="onGameLoad"/>
+	<!--event type="OnPreSave" module="BugData" function="onPreSave"/-->
+	
+	<event type="LanguageChanged" module="BugOptions" function="clearAllTranslations"/>
+	<event type="LanguageChanged" module="BugOptionsScreen" function="clearAllTranslations"/>
+	<shortcut module="BugOptionsScreen" function="showOptionsScreen" keys="Alt Ctrl O | Alt J"/>
+	
+	<shortcut module="BugHelp" function="launch" keys="Alt Ctrl F1"/>
+		<!--arg type="string" value="TXT_KEY_BUG_HELP_FILE"/-->
+</mod>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Unit Naming Translations
+
+	Copyright (c) 2010 The BUG Mod.
+  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	
+	<!-- Domain Descriptions -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_UNIT_NAMING_DOMAIN_LAND</Tag>
+		<English>Land</English>
+		<French>Terrestre</French>
+		<German>Land</German>
+		<Italian>Terrestre</Italian>
+		<Spanish>Terrestre</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_UNIT_NAMING_DOMAIN_SEA</Tag>
+		<English>Naval</English>
+		<French>Naval</French>
+		<German>Marine</German>
+		<Italian>Navale</Italian>
+		<Spanish>Naval</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_UNIT_NAMING_DOMAIN_AIR</Tag>
+		<English>Air</English>
+		<French>A&#233;rien</French>
+		<German>Luft</German>
+		<Italian>Aerea</Italian>
+		<Spanish>A&#233;rea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_UNIT_NAMING_DOMAIN_IMMOBILE</Tag>
+		<English>Stationary</English>
+		<French>Stationnaire</French>
+		<German>Stationär</German>
+		<Italian>Stazionario</Italian>
+		<Spanish>Estacionaria</Spanish>
+	</TEXT>
+
+</Civ4GameText>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BUG Main Interface
+	by EmperorFool, Impaler[WrG], NeverMind, SimCutie
+	
+	Collects all of the various main interface mods.
+	
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="MainInterface" 
+	 name="BUG Main Interface" 
+	 author="EmperorFool, Impaler[WrG], NeverMind, SimCutie" 
+	 version="3.0" 
+	 date="07/11/2008"
+	 url="http://forums.civfanatics.com/forumdisplay.php?f=268">
+	 
+	<options id="MainInterface" file="BUG Main Interface.ini">
+		<section id="Main">
+			<!-- Options Screen Shortcut Reminder -->
+			<option id="OptionsKey" key="Options Shortcut Reminder" 
+					type="boolean" default="True" 
+					get="isShowOptionsKeyReminder" set="setShowOptionsKeyReminder" dirtyBit="GameData"/>
+			
+			<!-- Options Screen Button -->
+			<option id="OptionsButton" key="Options Button" 
+					type="boolean" default="True" 
+					get="isShowOptionsButton" set="setShowOptionsButton" dirtyBit="GameData"/>
+
+			<!-- Gold Rate Warning -->
+			<option id="GoldRateWarning" key="Gold Rate Warning" 
+					type="boolean" default="True" 
+					get="isGoldRateWarning" dirtyBit="GameData"/>
+			
+			<!-- Great Person Progress Bar by Impaler[WrG], EmperorFool -->
+			<option id="GPBar" key="GP Progress Bar" 
+					type="boolean" default="True" 
+					get="isShowGPProgressBar" dirtyBit="GameData"/>
+			<list   id="GPBar_Types" key="GP Progress Bar Types" 
+					type="int" default="2" listType="string" 
+					values="None|One|Maximum" 
+					get="getGPBarPercents" dirtyBit="GameData">
+				<choice id="None" get="isGPBarTypesNone"/>
+				<choice id="One" get="isGPBarTypesOne"/>
+				<choice id="Maximum" get="isGPBarTypesMax"/>
+			</list>
+			
+			<!-- Great General Progress Bar by NeverMind -->
+			<option id="Combat_Counter" key="Combat Counter" 
+					type="boolean" default="True" 
+					get="isShowGGProgressBar" dirtyBit="GameData"/>
+			
+			<!-- Min/Max Commerce Buttons by codewarrior -->
+			<option id="MinMax_Commerce" key="MinMax Commerce" 
+					type="boolean" default="True" 
+					get="isShowMinMaxCommerceButtons" dirtyBit="PercentButtons, GameData">
+				<change module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
+			</option>
+			
+			<!-- City Cycle Arrows by SimCutie -->
+			<option id="CityArrows" key="City Cycle Arrows" 
+					type="boolean" default="True" 
+					get="isShowCityCycleArrows" dirtyBit="MiscButtons"/>
+
+			<!-- Progress Bar Tick Marks -->
+			<option id="ProgressBarsTickMarks" key="Tick Marks" 
+					type="boolean" default="True" 
+					get="isShowpBarTickMarks" dirtyBit="GameData"/>
+
+			<!-- Field of View -->
+			<option id="FieldOfView" key="Field of View" 
+					type="boolean" default="True" 
+					get="isShowFieldOfView" dirtyBit="MiscButtons"/>
+			<option id="FieldOfView_Remember" key="Remember Field of View" 
+					type="boolean" default="True" 
+					get="isRememberFieldOfView"/>
+			<option id="FieldOfView_Value" key="Field of View Value"
+					type="string" default="42" 
+					get="getFieldOfView" set="setFieldOfView"/> 
+
+			<!-- Movement Points -->
+			<option id="UnitMovementPointsFraction" key="Unit Movement Points Fraction" 
+					type="boolean" default="True" 
+					get="isShowUnitMovementPointsFraction" dirtyBit="InfoPane"/>
+			<option id="StackMovementPoints" key="Stack Movement Points" 
+					type="boolean" default="True" 
+					get="isShowStackMovementPoints" dirtyBit="InfoPane"/>
+			
+			<!-- Build/Action Icon Size by EmperorFool -->
+			<list   id="BuildIconSize" key="Build Icon Size" 
+					type="int" default="1" listType="string" 
+					values="Small|Medium|Large" 
+					get="getBuildIconSize" dirtyBit="SelectionButtons">
+				<choice id="Small" get="isBuildIconSizeSmall"/>
+				<choice id="Medium" get="isBuildIconSizeMedium"/>
+				<choice id="Large" get="isBuildIconSizeLarge"/>
+			</list>
+		</section>
+	</options>
+	
+	<widget name="WIDGET_GP_PROGRESS_BAR" module="GPUtil" function="getHoverText"/>
+	<widget name="WIDGET_BUG_OPTION_SCREEN" xml="TXT_KEY_BUG_OPTIONS_SCREEN_HOVER"/>
+</mod>

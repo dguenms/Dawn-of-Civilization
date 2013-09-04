@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BULL Miscellaneous Hovers
+	by EmperorFool
+	
+	Copyright (c) 2009 The BUG Mod.
+-->
+<mod id="MiscHover" 
+	 name="BULL Miscellaneous Hovers" 
+	 author="EmperorFool" 
+	 version="1.0" 
+	 date="04/20/2009"
+	 url="http://forums.civfanatics.com/showthread.php?t=307951"
+	 dll="1">
+	 
+	<options id="MiscHover" file="BUG Misc Hovers.ini">
+		<section id="Leaderhead">
+			<option id="LeaderheadHiddenAttitude" key="Show Hidden Attitude" 
+					type="boolean" default="True" dll="2"/>
+			<option id="LeaderheadWorstEnemy" key="Show Worst Enemy" 
+					type="boolean" default="True"/>
+			<option id="LeaderheadDefensivePacts" key="Show Defensive Pacts" 
+					type="boolean" default="True"/>
+		</section>
+		
+		<section id="Plot">
+			<option id="LatLongCoords" key="Lat Long Coords" 
+					type="boolean" default="True"/>
+			<option id="PartialBuilds" key="Plot Partial Builds" 
+					type="boolean" default="True"/>
+		</section>
+		
+		<section id="Unit">
+			<option id="UpdateUnitNameOnUpgrade" key="Update Name On Upgrade" 
+					type="boolean" default="True"/>
+			<option id="UnitExperience" key="Unit Experience" 
+					type="boolean" default="True" dll="3"/>
+			<option id="UnitExperienceModifiers" key="Unit Experience Modifiers" 
+					type="boolean" default="True" dll="3"/>
+		</section>
+		
+		<section id="Building">
+			<option id="BuildingActualEffects" key="Building Actual Effects" 
+					type="boolean" default="True"/>
+		</section>
+		
+		<section id="Tech">
+			<option id="SpedUpTechs" key="Sped Up Techs" 
+					type="boolean" default="True"/>
+			<option id="TechTradeDenial" key="Trade Denial" 
+					type="boolean" default="True"/>
+		</section>
+		
+		<section id="Bonus">
+			<option id="BonusTradeDenial" key="Trade Denial" 
+					type="boolean" default="True"/>
+		</section>
+		
+		
+		<section id="City Screen">
+			<option id="BaseCommerce" key="Base Commerce" 
+					type="boolean" default="True"/>
+			<option id="GreatPeopleRateBreakdown" key="Great People Rate Breakdown" 
+					type="boolean" default="True"/>
+					
+			<option id="BuildingSavedMaintenance" key="Building Saved Maintenance" 
+					type="boolean" default="True"/>
+			<option id="BuildingAdditionalFood" key="Building Additional Food" 
+					type="boolean" default="True"/>
+			<option id="BuildingAdditionalProduction" key="Building Additional Production" 
+					type="boolean" default="True"/>
+			<option id="BuildingAdditionalCommerce" key="Building Additional Commerce" 
+					type="boolean" default="True"/>
+			<option id="BuildingAdditionalHealth" key="Building Additional Health" 
+					type="boolean" default="True"/>
+			<option id="BuildingAdditionalHappiness" key="Building Additional Happiness" 
+					type="boolean" default="True"/>
+			<option id="BuildingAdditionalGreatPeople" key="Building Additional Great People" 
+					type="boolean" default="True"/>
+			<option id="BuildingAdditionalDefense" key="Building Additional Defense" 
+					type="boolean" default="True" dll="2"/>
+		</section>
+		
+		
+		<section id="Action Buttons">
+			<option id="ConscriptUnit" key="Conscript Unit" 
+					type="boolean" default="True" dll="3"/>
+			<option id="ConscriptLimit" key="Conscript Limit" 
+					type="boolean" default="True" dll="3"/>
+					
+			<option id="HurryOverflow" key="Hurry Overflow" 
+					type="boolean" default="True"/>
+			<option id="HurryOverflowIncludeCurrent" key="Hurry Overflow Include Current" 
+					type="boolean" default="False"/>
+					
+			<option id="RemoveSpecialist" key="Remove Specialist" 
+					type="boolean" default="True"/>
+					
+			<option id="CDAZoomCityDetails" key="CDA Zoom City Details" 
+					type="boolean" default="True"/>
+		</section>
+	</options>
+</mod>

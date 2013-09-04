@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Civ4lerts
+	by Dr. Elmer Jiggle, EmperorFool
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="Civ4lerts" 
+	 name="Civ4lerts" 
+	 author="Dr. Elmer Jiggle, EmperorFool" 
+	 version="1.4" 
+	 date="08/11/2006"
+	 url="http://forums.civfanatics.com/showthread.php?t=157088">
+	 
+	<link id="WhipAssistOverflowCountCurrentProduction" 
+		  to="CityScreen__WhipAssistOverflowCountCurrentProduction"/>
+	
+	<options id="Civ4lerts" file="Civ4lerts.ini">
+		<section id="Civ4lerts">
+			<!-- Move this outside of INI once Mod objects hold options -->
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True" 
+					get="isEnabled" set="setEnabled" 
+					label="Enable Civ4lerts" 
+					help="When checked, messages are displayed to alert you to various pending and existing conditions using Dr. Elmer Jiggle's Civ4lerts mod."/>
+			
+			<!-- City -->
+			<option id="CityPendingGrowth" key="City Pending Growth" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityPendingGrowthAlert" set="setShowCityPendingGrowthAlert" 
+					label="Pending" 
+					help="When checked, displays an alert when a city's population will grow or shrink next turn."/>
+			<option id="CityGrowth" key="City Growth" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityGrowthAlert" set="setShowCityGrowthAlert" 
+					label="Growth" 
+					help="When checked, displays an alert when a city's population has grown or shrunk."/>
+			<option id="CityPendingHappiness" key="City Pending Happiness" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityPendingHappinessAlert" set="setShowCityPendingHappinessAlert" 
+					label="Pending" 
+					help="When checked, displays an alert when a city will become happy or unhappy next turn."/>
+			<option id="CityHappiness" key="City Happiness" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityHappinessAlert" set="setShowCityHappinessAlert" 
+					label="Happiness" 
+					help="When checked, displays an alert when a city has become happy or unhappy."/>
+			<option id="CityPendingHealthiness" key="City Pending Healthiness" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityPendingHealthinessAlert" set="setShowCityPendingHealthinessAlert" 
+					label="Pending" 
+					help="When checked, displays an alert when a city will become healthy or unhealthy next turn."/>
+			<option id="CityHealthiness" key="City Healthiness" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityHealthinessAlert" set="setShowCityHealthinessAlert" 
+					label="Healthiness" 
+					help="When checked, displays an alert when a city has become healthy or unhealthy."/>
+			<option id="CityPendingOccupation" key="City Pending Occupation" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityPendingOccupationAlert" set="setShowCityPendingOccupationAlert" 
+					label="Pending" 
+					help="When checked, displays an alert when a city will be pacified next turn, ending occupation."/>
+			<option id="CityOccupation" key="City Occupation" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityOccupationAlert" set="setShowCityOccupationAlert" 
+					label="Occupation" 
+					help="When checked, displays an alert when a city has been pacified, ending occupation."/>
+			
+			<option id="CityCanHurryPop" key="City Can Hurry Pop" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityCanHurryPopAlert" set="setShowCityCanHurryPopAlert" 
+					label="Can Hurry w. Population" 
+					help="When checked, displays an alert once a city can hurry the item it's building with the whip."/>
+			<option id="CityCanHurryGold" key="City Can Hurry Gold" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowCityCanHurryGoldAlert" set="setShowCityCanHurryGoldAlert" 
+					label="Can Hurry w. Gold" 
+					help="When checked, displays an alert once a city can hurry the item it's building with gold."/>
+			
+			<!-- Trade -->
+			<option id="GoldTrade" key="Gold Trade" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowGoldTradeAlert" set="setShowGoldTradeAlert" 
+					label="Gold" 
+					help="."/>
+			<list   id="GoldTradeThresh" key="Gold Trade Threshold" 
+					type="int" default="50" listType="int" 
+					values="25, 50, 100, 200, 300, 500, 1000" 
+					get="getGoldTradeThreshold" set="setGoldTradeThreshold" 
+					label="Threshold" 
+					help="."/>
+			<option id="GoldPerTurnTrade" key="Gold Per Turn Trade" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowGoldPerTurnTradeAlert" set="setShowGoldPerTurnTradeAlert" 
+					label="Gold Per Turn" 
+					help="."/>
+			<list   id="GoldPerTurnTradeThresh" key="Gold Per Turn Threshold" 
+					type="int" default="5" listType="int" 
+					values="1, 2, 3, 5, 10, 15, 20, 25, 30, 50, 100" 
+					get="getGoldPerTurnTradeThreshold" set="setGoldPerTurnTradeThreshold" 
+					label="Threshold" 
+					help="."/>
+			
+			<!-- Diplomacy -->
+			<option id="RefusesToTalk" key="Refuses To Talk" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowRefusesToTalkAlert" set="setShowRefusesToTalkAlert"/>
+			<option id="WorstEnemy" key="Worst Enemy" 
+					type="boolean" default="True" and="Enabled" 
+					get="isShowWorstEnemyAlert" set="setShowWorstEnemyAlert"/>
+		</section>
+	</options>
+	
+	<events module="Civ4lerts"/>
+	
+</mod>

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- BUG Mod - Plot List Enhancements -->
+<!-- -->
+<!-- Game Text Infos -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_PLE_UPGRADE_HELP</Tag>
+		<English>(CTRL: units on this plot.[NEWLINE]ALT: all units)</English>
+		<French>(CTRL: unités sur cette case.[NEWLINE]ALT: toutes les unités.)</French>
+		<German>(STRG: Einheiten auf diesem Geländefeld[NEWLINE]ALT: alle Einheiten)</German>
+		<Italian>(CTRL: unità in questa casella.[NEWLINE]ALT: tutte le unità)</Italian>
+		<Spanish>(CTRL: units on this plot.[NEWLINE]ALT: all units)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_CURRENT_MODE</Tag>
+		<English>This is the current mode</English>
+		<French>This is the current mode</French>
+		<German>Dies ist die derzeitige Ansicht</German>
+		<Italian>Questa è la modalità corrente</Italian>
+		<Spanish>This is the current mode</Spanish>
+	</TEXT>
+	
+	<!-- View Modes -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_VIEW_MODE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Switch View Mode[COLOR_REVERT][NEWLINE]Choose how unit icons are displayed: single row, multiple rows, or stacked into separate rows or columns</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Switch View Mode[COLOR_REVERT][NEWLINE]Choose how unit icons are displayed: single row, multiple rows, or stacked into separate rows or columns</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Anzeigemethode ändern[COLOR_REVERT][NEWLINE]Auswahl der Anzeigemethode für Einheitensymbole: Einzeilig, Mehrzeilig, in Zeilen gruppiert oder in Spalten gruppiert</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia modalità di visualizzazione[COLOR_REVERT][NEWLINE]Scegli come vengono visualizzate le icone delle Unità: riga singola, righe multiple o gruppi di colonne o righe</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Switch View Mode[COLOR_REVERT][NEWLINE]Choose how unit icons are displayed: single row, multiple rows, or stacked into separate rows or columns</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_MODE_STANDARD</Tag>
+		<English>View unit buttons in a single row</English>
+		<French>Voir les unités de manière standard</French>
+		<German>Einheitensymbole einzeilig anordnen</German>
+		<Italian>Visualizza le icone delle Unità nel formato a riga singola</Italian>
+		<Spanish>View unit buttons in a single row</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_MODE_MULTILINE</Tag>
+		<English>View unit buttons in multiple rows</English>
+		<French>Voir les unités en format multiligne</French>
+		<German>Einheitensymbole mehrzeilig anordnen</German>
+		<Italian>Visualizza le icone delle Unità nel formato multilinea</Italian>
+		<Spanish>View unit buttons in multiple rows</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_MODE_STACK_VERT</Tag>
+		<English>View unit buttons grouped into columns</English>
+		<French>Voir les unités triées verticalement</French>
+		<German>Einheitensymbole in Spalten gruppieren</German>
+		<Italian>Visualizza le icone delle Unità raggruppate in colonne</Italian>
+		<Spanish>View unit buttons grouped into columns</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_MODE_STACK_HORIZ</Tag>
+		<English>View unit buttons grouped into rows</English>
+		<French>Voir les unités triées horizontalement</French>
+		<German>Einheitensymbole in Zeilen gruppieren</German>
+		<Italian>Visualizza le icone delle Unità raggruppate in righe</Italian>
+		<Spanish>View unit buttons grouped into rows</Spanish>
+	</TEXT>
+	
+	<!-- Reset All Filters -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_RESET_FILTERS</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Reset Filters[COLOR_REVERT][NEWLINE]Show all units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Reset Filters[COLOR_REVERT][NEWLINE]Show all units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter zurücksetzen[COLOR_REVERT][NEWLINE]Anzeige aller Einheiten</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Annulla tutti i filtri[COLOR_REVERT][NEWLINE]Mostra tutte le Unità</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Reset Filters[COLOR_REVERT][NEWLINE]Show all units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_RESET_FILTERS_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Reset Filters[COLOR_REVERT][NEWLINE]Show all units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Reset Filters[COLOR_REVERT][NEWLINE]Show all units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter zurücksetzen[COLOR_REVERT][NEWLINE]Anzeige aller Einheiten</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Annulla tutti i filtri[COLOR_REVERT][NEWLINE]Mostra tutte le Unità</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Reset Filters[COLOR_REVERT][NEWLINE]Show all units</Spanish>
+	</TEXT>
+	
+	<!-- Movement Filters -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_CANMOVE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Hide units that can move</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Hide units that can move</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Bewegung" aktivieren[COLOR_REVERT][NEWLINE]Einheiten ausblenden, die bewegt werden können</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul movimento[COLOR_REVERT][NEWLINE]Non mostrare le Unità che possono muoversi</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Hide units that can move</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_CANMOVE_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can move</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can move</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Bewegung" deaktivieren[COLOR_REVERT][NEWLINE]Einheiten einblenden, die bewegt werden können</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul movimento[COLOR_REVERT][NEWLINE]Mostra le Unità che possono muoversi</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can move</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_CANMOVE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show only units that can move</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show only units that can move</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Bewegung" aktivieren[COLOR_REVERT][NEWLINE]Nur Einheiten anzeigen, die bewegt werden können</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul movimento[COLOR_REVERT][NEWLINE]Mostra solo le Unità che possono muoversi</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show only units that can move</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_CANMOVE_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can and cannot move</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can and cannot move</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Bewegung" deaktivieren[COLOR_REVERT][NEWLINE]Einheiten anzeigen, die bewegt und nicht mehr bewegt werden können</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul movimento[COLOR_REVERT][NEWLINE]Mostra sia le Unità che possono muoversi che quelle che non possono</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can and cannot move</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_CANTMOVE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Hide units that cannot move</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Hide units that cannot move</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Bewegung" aktivieren[COLOR_REVERT][NEWLINE]Einheiten ausblenden, die nicht mehr bewegt werden können</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul movimento[COLOR_REVERT][NEWLINE]Non mostrare le Unità che non possono muoversi</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Hide units that cannot move</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_CANTMOVE_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that cannot move</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that cannot move</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Bewegung" deaktivieren[COLOR_REVERT][NEWLINE]Einheiten einblenden, die nicht mehr bewegt werden können</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul movimento[COLOR_REVERT][NEWLINE]Mostra le Unità che non possono muoversi</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that cannot move</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_CANTMOVE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show only units that cannot move</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show only units that cannot move</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Bewegung" aktivieren[COLOR_REVERT][NEWLINE]Nur Einheiten anzeigen, die nicht mehr bewegt werden können</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul movimento[COLOR_REVERT][NEWLINE]Mostra solo le Unità che non possono muoversi</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show only units that cannot move</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_CANTMOVE_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can and cannot move</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can and cannot move</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Bewegung" deaktivieren[COLOR_REVERT][NEWLINE]Einheiten anzeigen, die bewegt und nicht mehr bewegt werden können</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul movimento[COLOR_REVERT][NEWLINE]Mostra sia le Unità che possono muoversi che quelle che non possono</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Movement Filter[COLOR_REVERT][NEWLINE]Show units that can and cannot move</Spanish>
+	</TEXT>
+	
+	<!-- Health Filters -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_WOUNDED</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Hide wounded units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités blessées</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Gesundheit" aktivieren[COLOR_REVERT][NEWLINE]Verwundete Einheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla salute[COLOR_REVERT][NEWLINE]Non mostrare le Unità ferite</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Hide wounded units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_WOUNDED_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Gesundheit" deaktivieren[COLOR_REVERT][NEWLINE]Verwundete Einheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla salute[COLOR_REVERT][NEWLINE]Mostra le Unità ferite</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_WOUNDED</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show only wounded units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show only wounded units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Gesundheit" aktivieren[COLOR_REVERT][NEWLINE]Nur verwundete Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla salute[COLOR_REVERT][NEWLINE]Mostra solo le Unità ferite</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show only wounded units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_WOUNDED_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded and healthy units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded and healthy units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Gesundheit" deaktivieren[COLOR_REVERT][NEWLINE]Verwundete und unverwundete Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla salute[COLOR_REVERT][NEWLINE]Mostra le Unità ferite e le Unità sane</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded and healthy units</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_HEALTHY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Hide healthy units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités saines</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Gesundheit" aktivieren[COLOR_REVERT][NEWLINE]Unverwundete Einheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla salute[COLOR_REVERT][NEWLINE]Non mostrare le Unità sane</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Hide healthy units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_HEALTHY_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show healthy units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show healthy units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Gesundheit" deaktivieren[COLOR_REVERT][NEWLINE]Unverwundete Einheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla salute[COLOR_REVERT][NEWLINE]Mostra le Unità sane</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show healthy units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_HEALTHY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show only healthy units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show only healthy units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Gesundheit" aktivieren[COLOR_REVERT][NEWLINE]Nur unverwundete Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla salute[COLOR_REVERT][NEWLINE]Mostra solo le Unità sane</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show only healthy units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_HEALTHY_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded and healthy units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded and healthy units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Gesundheit" deaktivieren[COLOR_REVERT][NEWLINE]Verwundete und unverwundete Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla salute[COLOR_REVERT][NEWLINE]Mostra le Unità ferite e le Unità sane</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Health Filter[COLOR_REVERT][NEWLINE]Show wounded and healthy units</Spanish>
+	</TEXT>
+	
+	<!-- Domain Filters -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_AIR</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Hide air units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités aériennes</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" aktivieren[COLOR_REVERT][NEWLINE]Lufteinheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Non mostrare le Unità aeree</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Hide air units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_AIR_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show air units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show air units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" deaktivieren[COLOR_REVERT][NEWLINE]Lufteinheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra le Unità aeree</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show air units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_AIR</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only air units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only air units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" aktivieren[COLOR_REVERT][NEWLINE]Nur Lufteinheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra solo le Unità aeree</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only air units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_AIR_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" deaktivieren[COLOR_REVERT][NEWLINE]Land-, Marine- und Lufteinheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra le Unità aeree, navali e terrestri</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_SEA</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Hide naval units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités navales</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" aktivieren[COLOR_REVERT][NEWLINE]Marineeinheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Non mostrare le Unità navali</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Hide naval units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_SEA_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show naval units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show naval units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" deaktivieren[COLOR_REVERT][NEWLINE]Marineeinheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra le Unità navali</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show naval units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_SEA</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only naval units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only naval units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" aktivieren[COLOR_REVERT][NEWLINE]Nur Marineeinheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra solo le Unità navali</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only naval units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_SEA_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" deaktivieren[COLOR_REVERT][NEWLINE]Land-, Marine- und Lufteinheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra le Unità aeree, navali e terrestri</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_LAND</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Hide land units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités terrestres</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" aktivieren[COLOR_REVERT][NEWLINE]Landeinheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Non mostrare le Unità terrestri</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Hide land units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_LAND_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" deaktivieren[COLOR_REVERT][NEWLINE]Landeinheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra le Unità terrestri</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_LAND</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only land units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only land units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" aktivieren[COLOR_REVERT][NEWLINE]Nur Landeinheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra solo le Unità terrestri</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show only land units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_LAND_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Einsatzgebiet" deaktivieren[COLOR_REVERT][NEWLINE]Land-, Marine- und Lufteinheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul dominio[COLOR_REVERT][NEWLINE]Mostra le Unità aeree, navali e terrestri</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Domain Filter[COLOR_REVERT][NEWLINE]Show land, naval and air units</Spanish>
+	</TEXT>
+	
+	<!-- Civilian/Military Filters -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_DOM</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Hide civilian units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités domestiques</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Militär" aktivieren[COLOR_REVERT][NEWLINE]Zivile Einheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul tipo[COLOR_REVERT][NEWLINE]Non mostrare le Unità civili</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Hide civilian units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_DOM_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Militär" deaktivieren[COLOR_REVERT][NEWLINE]Zivile Einheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul tipo[COLOR_REVERT][NEWLINE]Mostra le Unità civili</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_DOM</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show only civilian units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show only civilian units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Militär" aktivieren[COLOR_REVERT][NEWLINE]Nur zivile Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul tipo[COLOR_REVERT][NEWLINE]Mostra solo le Unità civili</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show only civilian units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_DOM_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian and military units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian and military units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Militär" deaktivieren[COLOR_REVERT][NEWLINE]Zivile und militärische Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul tipo[COLOR_REVERT][NEWLINE]Mostra le Unità civili e militari</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian and military units</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_MIL</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Hide military units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités militaires</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Militär" aktivieren[COLOR_REVERT][NEWLINE]Militärische Einheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul tipo[COLOR_REVERT][NEWLINE]Non mostrare le Unità militari</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Hide military units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_MIL_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show military units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show military units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Militär" deaktivieren[COLOR_REVERT][NEWLINE]Militärische Einheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul tipo[COLOR_REVERT][NEWLINE]Mostra le Unità militari</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show military units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_MIL</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show only military units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show only military units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Militär" aktivieren[COLOR_REVERT][NEWLINE]Nur militärische Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul tipo[COLOR_REVERT][NEWLINE]Mostra solo le Unità militari</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show only military units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_MIL_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian and military units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian and military units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Militär" deaktivieren[COLOR_REVERT][NEWLINE]Zivile und militärische Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sul tipo[COLOR_REVERT][NEWLINE]Mostra le Unità civili e militari</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Military Filter[COLOR_REVERT][NEWLINE]Show civilian and military units</Spanish>
+	</TEXT>
+	
+	<!-- Foreign/Domestic Filters -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_OWN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Hide domestic units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités que vous possédez</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Nationalität" aktivieren[COLOR_REVERT][NEWLINE]Eigene Einheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla nazionalità[COLOR_REVERT][NEWLINE]Non mostrare le proprie Unità</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Hide domestic units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_OWN_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show domestic units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show domestic units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Nationalität" deaktivieren[COLOR_REVERT][NEWLINE]Eigene Einheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla nazionalità[COLOR_REVERT][NEWLINE]Mostra le proprie Unità</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show domestic units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_OWN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show only domestic units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show only domestic units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Nationalität" aktivieren[COLOR_REVERT][NEWLINE]Nur eigene Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla nazionalità[COLOR_REVERT][NEWLINE]Mostra solo le proprie Unità</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show only domestic units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_OWN_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign and domestic units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign and domestic units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Nationalität" deaktivieren[COLOR_REVERT][NEWLINE]Eigene und gegnerische Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla nazionalità[COLOR_REVERT][NEWLINE]Mostra le proprie Unità e quelle altrui</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign and domestic units</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_FOREIGN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Hide foreign units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Ne pas afficher les unités qui ne vous appartiennent pas</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Nationalität" aktivieren[COLOR_REVERT][NEWLINE]Gegnerische Einheiten ausblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla nazionalità[COLOR_REVERT][NEWLINE]Non mostrare le Unità altrui</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Hide foreign units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_FOREIGN_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Nationalität" deaktivieren[COLOR_REVERT][NEWLINE]Gegnerische Einheiten einblenden</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla nazionalità[COLOR_REVERT][NEWLINE]Mostra le Unità altrui</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_FOREIGN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show only foreign units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show only foreign units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Nationalität" aktivieren[COLOR_REVERT][NEWLINE]Nur gegnerische Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla nazionalità[COLOR_REVERT][NEWLINE]Mostra solo le Unità altrui</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show only foreign units</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_FILTER_BUG_FOREIGN_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign and domestic units</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign and domestic units</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Nationalität" deaktivieren[COLOR_REVERT][NEWLINE]Eigene und gegnerische Einheiten anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia il filtro sulla nazionalità[COLOR_REVERT][NEWLINE]Mostra le proprie Unità e quelle altrui</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Nationality Filter[COLOR_REVERT][NEWLINE]Show foreign and domestic units</Spanish>
+	</TEXT>
+	
+	<!-- Grouping Modes -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_GRP_STANDARD</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Switch to Standard Mode[COLOR_REVERT][NEWLINE]View normal unit icons and issue orders</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Switch to Standard Mode[COLOR_REVERT][NEWLINE]View normal unit icons and issue orders</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Standardansicht aktivieren[COLOR_REVERT][NEWLINE]Anzeige der normalen Einheitensymbole und Aktionsschaltflächen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Passa alla Modalità Standard[COLOR_REVERT][NEWLINE]Visualizza tutte le icone di Unità</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Switch to Standard Mode[COLOR_REVERT][NEWLINE]View normal unit icons and issue orders</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_GRP_STANDARD_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Standard Mode[COLOR_REVERT][NEWLINE]Toggle how units are grouped: by unit type or selection group</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Standard Mode[COLOR_REVERT][NEWLINE]Toggle how units are grouped: by unit type or selection group</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Standardansicht[COLOR_REVERT][NEWLINE]Auswahl der Art der Gruppierung: nach Einheitentyp oder nach Einheitenverband</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Modalità Standard[COLOR_REVERT][NEWLINE]Cambia il raggruppamento delle Unità: per tipo o per gruppo di selezione</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Standard Mode[COLOR_REVERT][NEWLINE]Toggle how units are grouped: by unit type or selection group</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_GRP_UNITTYPE</Tag>
+		<English>Group units by unit type</English>
+		<French>Sélectionner les unités par types d'unité</French>
+		<German>Einheiten nach Typen zusammenfassen</German>
+		<Italian>Raggruppa le Unità per tipo</Italian>
+		<Spanish>Group units by unit type</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_GRP_GROUPS</Tag>
+		<English>Group units by selection group</English>
+		<French>Sélectionner les unités par groupe</French>
+		<German>Einheiten nach Gruppen zusammenfassen</German>
+		<Italian>Raggruppa le Unità per gruppo di selezione</Italian>
+		<Spanish>Group units by selection group</Spanish>
+	</TEXT>
+	
+	<!-- Promotion and Upgrade Modes -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_PLE_GRP_PROMO</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Switch to Promotion Mode[COLOR_REVERT][NEWLINE]View units available for promotion along with the promotions they may receive</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Switch to Promotion Mode[COLOR_REVERT][NEWLINE]Sélectionner les unités en attente de promotion</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Beförderung" aktivieren[COLOR_REVERT][NEWLINE]Beförderbare Einheiten und die jeweils verfügbaren Beförderungen anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Passa alla Modalità Promozione[COLOR_REVERT][NEWLINE]Visualizza solo le Unità con possibilità di promozione (e le promozioni che possono ricevere)</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Switch to Promotion Mode[COLOR_REVERT][NEWLINE]View units available for promotion along with the promotions they may receive</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_GRP_PROMO_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Promotion Mode[COLOR_REVERT][NEWLINE]Switch back to Standard Mode</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Promotion Mode[COLOR_REVERT][NEWLINE]Switch back to Standard Mode</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Beförderung" deaktivieren[COLOR_REVERT][NEWLINE]Zur Standardansicht wechseln</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Modalità Promozione[COLOR_REVERT][NEWLINE]Torna alla Modalità Standard</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Promotion Mode[COLOR_REVERT][NEWLINE]Switch back to Standard Mode</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_GRP_UPGRADE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Switch to Upgrade Mode[COLOR_REVERT][NEWLINE]View units available for upgrade along with the units they may become</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Switch to Upgrade Mode[COLOR_REVERT][NEWLINE]Sélectionner les unités pouvant être améliorées</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Modernisierung" aktivieren[COLOR_REVERT][NEWLINE]Modernisierbare Einheiten und die jeweils verfügbaren Einheiten, zu denen sie modernisiert werden können, anzeigen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Passa alla Modalità Avanzamento[COLOR_REVERT][NEWLINE]Visualizza solo le Unità con possibilità di avanzamento (e le Unità a cui possono avanzare)</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Switch to Upgrade Mode[COLOR_REVERT][NEWLINE]View units available for upgrade along with the units they may become</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLE_GRP_UPGRADE_ON</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Upgrade Mode[COLOR_REVERT][NEWLINE]Switch back to Standard Mode</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Upgrade Mode[COLOR_REVERT][NEWLINE]Switch back to Standard Mode</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Filter "Modernisierung" deaktivieren[COLOR_REVERT][NEWLINE]Zur Standardansicht wechseln</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT] Modalità Avanzamento[COLOR_REVERT][NEWLINE]Torna alla Modalità Standard</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Upgrade Mode[COLOR_REVERT][NEWLINE]Switch back to Standard Mode</Spanish>
+	</TEXT>
+</Civ4GameText>

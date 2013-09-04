@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Not Just Another Game Clock Mod
+	by TheLopez
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="NJAGC" 
+	 name="Not Just Another Game Clock Mod" 
+	 author="TheLopez" 
+	 version="0.4w" 
+	 date="11/08/2006" 
+	 url="http://forums.civfanatics.com/showthread.php?t=158137">
+	 
+	<options id="NJAGC" file="Not Just Another Game Clock Mod Config.ini">
+		<section id="Not Just Another Game Clock Mod">
+			<option id="Enabled" key="Enabled" 
+					type="boolean" default="True" 
+					get="isEnabled" set="setEnabled" dirtyBit="GameData" 
+					label="Enable NJAGC" 
+					help="When checked, the game clock is displayed using TheLopez's NJAGC mod."/>
+			<option id="ShowEra" key="Show Era" 
+					type="boolean" default="True" 
+					get="isShowEra" set="setShowEra" dirtyBit="GameData" 
+					label="Display Era" 
+					help="When checked, the current era is displayed to the left of the research bar."/>
+			<option id="ShowEraColor" key="Show Reflect Era In Turn Color" 
+					type="boolean" default="False" 
+					get="isUseEraColor" set="setUseEraColor" dirtyBit="GameData" 
+					label="Use Era-Related Colors" 
+					help="When checked, the game date and era are displayed using a color for each era."/>
+			
+			<list   id="Color_ERA_ANCIENT" key="ERA_ANCIENT" 
+					type="color" default="COLOR_RED" 
+					get="getAncientEraColor" set="setAncientEraColor" dirtyBit="GameData" 
+					label="Ancient Era" 
+					help="Color to use for the Ancient era."/>
+			<list   id="Color_ERA_CLASSICAL" key="ERA_CLASSICAL" 
+					type="color" default="COLOR_YELLOW" 
+					get="getClassicalEraColor" set="setClassicalEraColor" dirtyBit="GameData" 
+					label="Classical Era" 
+					help="Color to use for the Classical era."/>
+			<list   id="Color_ERA_MEDIEVAL" key="ERA_MEDIEVAL" 
+					type="color" default="COLOR_GREEN" 
+					get="getMedievalEraColor" set="setMedievalEraColor" dirtyBit="GameData" 
+					label="Medieval Era" 
+					help="Color to use for the Medieval era."/>
+			<list   id="Color_ERA_RENAISSANCE" key="ERA_RENAISSANCE" 
+					type="color" default="COLOR_CYAN" 
+					get="getRenaissanceEraColor" set="setRenaissanceEraColor" dirtyBit="GameData" 
+					label="Renaissance Era" 
+					help="Color to use for the Renaissance era."/>
+			<list   id="Color_ERA_INDUSTRIAL" key="ERA_INDUSTRIAL" 
+					type="color" default="COLOR_BLUE" 
+					get="getIndustrialEraColor" set="setIndustrialEraColor" dirtyBit="GameData" 
+					label="Industrial Era" 
+					help="Color to use for the Industrial era."/>
+			<list   id="Color_ERA_MODERN" key="ERA_MODERN" 
+					type="color" default="COLOR_MAGENTA" 
+					get="getModernEraColor" set="setModernEraColor" dirtyBit="GameData" 
+					label="Modern Era" 
+					help="Color to use for the Modern era."/>
+			<list   id="Color_ERA_FUTURE" key="ERA_FUTURE" 
+					type="color" default="COLOR_WHITE" 
+					get="getFutureEraColor" set="getFutureEraColor" dirtyBit="GameData" 
+					label="Future Era" 
+					help="Color to use for the Future era."/>
+			<accessor get="getEraColor" set="setEraColor" args="era" id="Color_%s"/>
+			
+			<option id="ShowTime" key="Show Game Clock" 
+					type="boolean" default="True" 
+					get="isShowTime" set="setShowTime" dirtyBit="GameData" 
+					label="Clock" 
+					help="When checked, the real time is displayed."/>
+			<option id="ShowCompletedTurns" key="Show Game Completed Turns" 
+					type="boolean" default="True" 
+					get="isShowGameTurn" set="setShowGameTurn" dirtyBit="GameData" 
+					label="Completed Turns" 
+					help="When checked, the number of turns completed is displayed."/>
+			<option id="ShowTotalTurns" key="Show Game Total Turns" 
+					type="boolean" default="True" 
+					get="isShowTotalTurns" set="setShowTotalTurns" dirtyBit="GameData" 
+					label="Total Turns" 
+					help="When checked, the total turns in the game is displayed if Time Victory is enabled."/>
+			<option id="ShowCompletedPercent" key="Show Game Completed Percent" 
+					type="boolean" default="False" 
+					get="isShowPercentComplete" set="setShowPercentComplete" dirtyBit="GameData" 
+					label="Completed Percentage" 
+					help="When checked, the completed percentage is displayed if Time Victory is enabled."/>
+			<option id="ShowDate" key="Show Turns" 
+					type="boolean" default="True" 
+					get="isShowDateGA" set="setShowDateGA" dirtyBit="GameData" 
+					label="Game Date and Golden Age Turns" 
+					help="When checked, the in-game date and turns left in a Golden Age are displayed."/>
+			
+			<option id="AlternateText" key="Alternate Views" 
+					type="boolean" default="True" 
+					get="isAlternateTimeText" set="setAlternateTimeText" dirtyBit="GameData" 
+					label="Alternate Game Clock" 
+					help="When checked, the game clock switches between two views: standard and alternate."/>
+			<list   id="AltTiming" key="Alternating Time" 
+					type="int" default="5" 
+					values="1, 2, 5, 10, 15, 30, 45, 60, 300, 600"
+					get="getAlternatePeriod" set="setAlternatePeriod" dirtyBit="GameData" 
+					label="Period (in seconds)" 
+					help="Select the time each view of the game clock is displayed when alternating is enabled."/>
+			
+			<option id="ShowAltTime" key="Alternate Show Game Clock" 
+					type="boolean" default="True" 
+					get="isShowAltTime" set="setShowAltTime" dirtyBit="GameData" 
+					label="Clock" 
+					help="When checked, the real time is displayed."/>
+			<option id="ShowAltCompletedTurns" key="Alternate Show Game Completed Turns" 
+					type="boolean" default="False" 
+					get="isShowAltGameTurn" set="setShowAltGameTurn" dirtyBit="GameData" 
+					label="Completed Turns" 
+					help="When checked, the number of turns completed is displayed."/>
+			<option id="ShowAltTotalTurns" key="Alternate Show Game Total Turns" 
+					type="boolean" default="False" 
+					get="isShowAltTotalTurns" set="setShowAltTotalTurns" dirtyBit="GameData" 
+					label="Total Turns" 
+					help="When checked, the total turns in the game is displayed if Time Victory is enabled."/>
+			<option id="ShowAltCompletedPercent" key="Alternate Show Game Completed Percent" 
+					type="boolean" default="True" 
+					get="isShowAltPercentComplete" set="setShowAltPercentComplete" dirtyBit="GameData" 
+					label="Completed Percentage" 
+					help="When checked, the completed percentage is displayed if Time Victory is enabled."/>
+			<option id="ShowAltDate" key="Alternate Show Turns" 
+					type="boolean" default="True" 
+					get="isShowAltDateGA" set="setShowAltDateGA" dirtyBit="GameData" 
+					label="Game Date and Golden Age Turns" 
+					help="When checked, the in-game date and turns left in a Golden Age are displayed."/>
+		</section>
+	</options>
+	
+</mod>
