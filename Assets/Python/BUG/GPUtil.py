@@ -106,6 +106,7 @@ def getColor(gpType):
 	return g_gpColors[gpType]
 
 def getUnitIcon(iUnit):
+	iUnit = gc.getUnitClassInfo(gc.getUnitInfo(iUnit).getUnitClassType()).getDefaultUnitIndex()
 	try:
 		return g_unitIcons[iUnit]
 	except:

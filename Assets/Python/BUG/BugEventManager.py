@@ -250,6 +250,17 @@ class BugEventManager(CvEventManager.CvEventManager):
 		"""Raises ConfigError if the eventType is undefined."""
 		if not self.hasEvent(eventType):
 			raise BugUtil.ConfigError("Event '%s' is undefined" % eventType)
+        
+	def applyEvent( self, argsList ):
+            '''Apply the effects of an event'''
+            context, playerID, netUserData, popupReturn = argsList
+            
+            if(self.CustomEvents.has_key(context)):
+                    entry = self.CustomEvents[context]
+                    # the apply function
+                    return entry[1]( playerID, netUserData, popupReturn )   
+            else:
+                    return super(BugEventManager, self).applyEvent(argsList)
 
 	def addEvent(self, eventType):
 		"""Creates a new event type without any handlers.

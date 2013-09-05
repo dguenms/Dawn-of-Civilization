@@ -1864,7 +1864,7 @@ tRespawnCapitals = (
 -1,		# Tibet
 -1,		# Khmer
 (104, 25), #Jakarta
--1,		# Moors
+(51, 37), #Marrakesh
 -1,		# Spain
 -1,		# France
 -1,		# England
@@ -1908,7 +1908,7 @@ tRespawnTL = (
 -1,		# Tibet
 -1,		# Khmer
 -1,		# Indonesia
--1,		# Moors
+(48, 34), #Moors
 -1,		# Spain
 -1,		# France
 -1,		# England
@@ -1951,7 +1951,7 @@ tRespawnBR = (
 -1,		# Tibet
 -1,		# Khmer
 -1,		# Indonesia
--1,		# Moors
+(58, 39), #Moors
 -1,		# Spain
 -1,		# France
 -1,		# England

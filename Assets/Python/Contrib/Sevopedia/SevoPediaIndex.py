@@ -58,7 +58,7 @@ class SevoPediaIndex:
 		
 		civList = self.top.getCivilizationList()
 		leaderList = self.top.getLeaderList()
-		traitList = self.top.getTraitList()
+		#traitList = self.top.getTraitList()
 		
 		civicList = self.top.getCivicList()
 		religionList = self.top.getReligionList()
@@ -129,8 +129,8 @@ class SevoPediaIndex:
 			list.append([item[0],"Civ",item])
 		for item in leaderList:
 			list.append([item[0],"Leader",item])
-		for item in traitList:
-			list.append([item[0][2:],"Trait",item])
+		#for item in traitList:
+		#	list.append([item[0][2:],"Trait",item])
 		
 		for item in religionList:
 			list.append([item[0],"Religion",item])
@@ -142,8 +142,8 @@ class SevoPediaIndex:
 		
 		for item in conceptList:
 			list.append([item[0],"Concept",item])
-		for item in newConceptList:
-			list.append([item[0],"NewConcept",item])
+		#for item in newConceptList:
+		#	list.append([item[0],"NewConcept",item])
 		
 		list.sort()
 		self.index = list
@@ -236,8 +236,8 @@ class SevoPediaIndex:
 			
 			elif (type == "Concept"):
 				screen.setTableText(self.tableName, iColumn, iRow, u"<font=3>%c %s</font>" % (CONCEPT_CHAR, item[0]), gc.getConceptInfo(item[1]).getButton(), WidgetTypes.WIDGET_PEDIA_DESCRIPTION, CivilopediaPageTypes.CIVILOPEDIA_PAGE_CONCEPT, item[1], CvUtil.FONT_LEFT_JUSTIFY)
-			elif (type == "NewConcept"):
-				screen.setTableText(self.tableName, iColumn, iRow, u"<font=3>%c %s</font>" % (CONCEPT_CHAR, item[0]), gc.getConceptInfo(item[1]).getButton(), WidgetTypes.WIDGET_PEDIA_DESCRIPTION, CivilopediaPageTypes.CIVILOPEDIA_PAGE_CONCEPT_NEW, item[1], CvUtil.FONT_LEFT_JUSTIFY)
+			#elif (type == "NewConcept"):
+			#	screen.setTableText(self.tableName, iColumn, iRow, u"<font=3>%c %s</font>" % (CONCEPT_CHAR, item[0]), gc.getConceptInfo(item[1]).getButton(), WidgetTypes.WIDGET_PEDIA_DESCRIPTION, CivilopediaPageTypes.CIVILOPEDIA_PAGE_CONCEPT_NEW, item[1], CvUtil.FONT_LEFT_JUSTIFY)
 		
 		self.iLastRow = iRow
 
