@@ -25,29 +25,21 @@ class SevoPediaCivilization:
 		self.iCivilization = -1
 		self.top = main
 
-		self.X_MAIN_PANE = self.top.X_PEDIA_PAGE
+		self.X_MAIN_PANE = self.top.X_PEDIA_PAGE + 20 - 4
 		self.Y_MAIN_PANE = self.top.Y_PEDIA_PAGE
+		self.W_MAIN_PANE = 160 #self.H_MAIN_PANE
 
 		self.Y_TECH = self.Y_MAIN_PANE
 		self.H_TECH = 110
 
 		self.Y_LEADER = self.Y_TECH + self.H_TECH + 10
-		self.H_LEADER = 110
-
-		self.H_MAIN_PANE = self.Y_LEADER + self.H_LEADER - self.Y_MAIN_PANE
-		self.W_MAIN_PANE = self.H_MAIN_PANE
+		self.H_LEADER = 250 #110
 
 		self.X_TECH = self.X_MAIN_PANE + self.W_MAIN_PANE + 10
 		self.W_TECH = self.top.R_PEDIA_PAGE - self.X_TECH
 
 		self.X_LEADER = self.X_TECH
 		self.W_LEADER = self.W_TECH
-
-		self.W_ICON = 150
-		self.H_ICON = 150
-		self.X_ICON = self.X_MAIN_PANE + (self.H_MAIN_PANE - self.H_ICON) / 2
-		self.Y_ICON = self.Y_MAIN_PANE + (self.H_MAIN_PANE - self.H_ICON) / 2
-		self.ICON_SIZE = 64
 
 		self.X_BUILDING = self.X_MAIN_PANE
 		self.Y_BUILDING = self.Y_LEADER + self.H_LEADER + 10
@@ -63,6 +55,14 @@ class SevoPediaCivilization:
 		self.Y_TEXT = self.Y_BUILDING + self.H_BUILDING + 10
 		self.W_TEXT = self.top.R_PEDIA_PAGE - self.X_TEXT
 		self.H_TEXT = self.top.B_PEDIA_PAGE - self.Y_TEXT
+
+		self.H_MAIN_PANE = self.Y_TEXT - self.Y_MAIN_PANE #(self.Y_LEADER + self.H_LEADER) - self.Y_MAIN_PANE
+
+		self.W_ICON = 150
+		self.H_ICON = 150
+		self.X_ICON = self.X_MAIN_PANE + 5 #(self.H_MAIN_PANE - self.H_ICON) / 2
+		self.Y_ICON = self.Y_MAIN_PANE + (self.H_MAIN_PANE - self.H_ICON)/2
+		self.ICON_SIZE = 128 #64
 
 
 
@@ -94,7 +94,7 @@ class SevoPediaCivilization:
 		#Rhye - start
 		panelName = self.top.getNextWidgetName()
 		screen.addPanel( panelName, "", "", true, true,
-				 self.X_TECH, self.Y_TECH - 4, self.W_LEADER, self.Y_TEXT - self.Y_TECH + 4, PanelStyles.PANEL_STYLE_BLUE50 ) 
+				 self.X_TECH, self.Y_MAIN_PANE, self.W_LEADER, self.H_MAIN_PANE, PanelStyles.PANEL_STYLE_BLUE50 ) 
 		szText = CyGameTextMgr().parseCivInfos(self.iCivilization, True)
 		screen.attachMultilineText( panelName, "", szText, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		#Rhye - end
