@@ -4073,27 +4073,27 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_PERSIAN_PROPHET</UnitType>
+					<UnitType>UNIT_MUGHAL_PROPHET</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_PERSIAN_ARTIST</UnitType>
+					<UnitType>UNIT_MUGHAL_ARTIST</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_PERSIAN_SCIENTIST</UnitType>
+					<UnitType>UNIT_MUGHAL_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_PERSIAN_MERCHANT</UnitType>
+					<UnitType>UNIT_MUGHAL_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_PERSIAN_ENGINEER</UnitType>
+					<UnitType>UNIT_MUGHAL_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
-					<UnitType>UNIT_PERSIAN_GREAT_GENERAL</UnitType>
+					<UnitType>UNIT_MUGHAL_GREAT_GENERAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
