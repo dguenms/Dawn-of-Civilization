@@ -61818,8 +61818,8 @@
 			<Type>UNIT_MUGHAL_PROPHET</Type>
 			<UniqueNames>
 				<UniqueName>Rajah Birbar</UniqueName>
-				<UniqueName>Nur-ud-Din Mohammad Salim</UniqueName>
 				<UniqueName>Abu al-Fazal ibn Mubarak</UniqueName>
+				<UniqueName>Nur-ud-Din Mohammad Salim</UniqueName>
 				<UniqueName>Azam Khan</UniqueName>
 				<UniqueName>Sufi Ahmad</UniqueName>
 				<UniqueName>Mirza Gul Muhammad</UniqueName>
@@ -62036,9 +62036,10 @@
 			<Type>UNIT_MUGHAL_ARTIST</Type>
 			<UniqueNames>
 				<UniqueName>Kamran Mirza</UniqueName>
+				<UniqueName>Gulbadan Begum</UniqueName>
 				<UniqueName>Abd as-Samad</UniqueName>
+				<UniqueName>Ustad Mansur</UniqueName>
 				<UniqueName>Abdul Ramin Khan-i-Khana</UniqueName>
-				<UniqueName>Mir Sayid Ali</UniqueName>
 				<UniqueName>Govardhan</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -62220,12 +62221,12 @@
 			<Class>UNITCLASS_SCIENTIST</Class>
 			<Type>UNIT_MUGHAL_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName>Fathullah Shirazi</UniqueName>
-				<UniqueName>Sidi Marjan</UniqueName>
-				<UniqueName>Shaikh Ilm-ud-Din Ansari</UniqueName>
-				<UniqueName>Humayun</UniqueName>
 				<UniqueName>Ali Kashmiri ibn Luqman</UniqueName>
 				<UniqueName>Babur ibn Tuzuk</UniqueName>
+				<UniqueName>Humayun</UniqueName>
+				<UniqueName>Fathullah Shirazi</UniqueName>
+				<UniqueName>Shaikh Ilm-ud-Din Ansari</UniqueName>
+				<UniqueName>Sidi Marjan</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -62412,11 +62413,11 @@
 			<Type>UNIT_MUGHAL_MERCHANT</Type>
 			<UniqueNames>
 				<UniqueName>Abu Hassan Ghiyas Beg</UniqueName>
-				<UniqueName>Ibrahim Khan II</UniqueName>
-				<UniqueName>Lala Ratan Chand</UniqueName>
-				<UniqueName>Nawab Khair Andesh Khan</UniqueName>
-				<UniqueName>Qasim Khan Juvayni</UniqueName>
 				<UniqueName>Mir Jumla II</UniqueName>
+				<UniqueName>Qasim Khan Juvayni</UniqueName>
+				<UniqueName>Nawab Khair Andesh Khan</UniqueName>
+				<UniqueName>Ibrahim Khan</UniqueName>
+				<UniqueName>Lala Ratan Chand</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -62597,11 +62598,11 @@
 			<Class>UNITCLASS_ENGINEER</Class>
 			<Type>UNIT_MUGHAL_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName>Ustad Ahmad Lahauri</UniqueName>
 				<UniqueName>Shahab ud-Din Khurram</UniqueName>
 				<UniqueName>Muhi-ud-Din Aurangzeb</UniqueName>
-				<UniqueName>Zinat-al-Nisa</UniqueName>
+				<UniqueName>Ustad Ahmad Lahauri</UniqueName>
 				<UniqueName>Muhammad Azam</UniqueName>
+				<UniqueName>Zinat-al-Nisa</UniqueName>
 				<UniqueName>Safdar Jung</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -62783,12 +62784,12 @@
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
 			<Type>UNIT_MUGHAL_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName>Abudullah Khan Barha</UniqueName>
-				<UniqueName>Bayram Khan</UniqueName>
 				<UniqueName>Muhammad Shahabuddin Ghori</UniqueName>
-				<UniqueName>Shams-ud-Din Iltutmish</UniqueName>
 				<UniqueName>Zahir-ud-Din Muhammad Babur</UniqueName>
+				<UniqueName>Bayram Khan</UniqueName>
+				<UniqueName>Shaikh Alauddin Chisti</UniqueName>
 				<UniqueName>Mir Baqi</UniqueName>
+				<UniqueName>Abudullah Khan Barha</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
