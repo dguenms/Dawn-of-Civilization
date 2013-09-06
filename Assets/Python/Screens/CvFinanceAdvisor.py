@@ -86,13 +86,9 @@ class CvFinanceAdvisor:
 	def getScreen(self):
 		return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.FINANCE_ADVISOR)
 
-	def interfaceScreen(self, iScreen):
+	def interfaceScreen(self):
 	
-		if (iScreen < 0):
-			if (self.iScreen < 0):
-				iScreen = self.iDefaultScreen
-			else:
-				iScreen = self.iScreen
+		iScreen = self.iDefaultScreen
 				
 		if (self.iScreen != iScreen):	
 			self.killScreen()

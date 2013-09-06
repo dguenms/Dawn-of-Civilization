@@ -216,6 +216,11 @@ def checkLostCoreCollapse(iPlayer):
 	
 	# completely pushed out of core: collapse
 	if len(lCities) == 0:
+	
+		if iPlayer in [con.iPhoenicia, con.iKhmer] and not utils.isReborn(iPlayer):
+			pPlayer.setReborn()
+			return
+	
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		completeCollapse(iPlayer)
 
@@ -479,7 +484,7 @@ def secedeCities(iPlayer, lCities):
 		iGameTurnYear = gc.getGame().getGameTurnYear()
 	
 		# three possible behaviors: if living civ has a claim, assign it to them
-		# claim = culture, core, historical and original owner
+		# claim based on core territory
 		iClaim = -1
 		for iLoopPlayer in range(con.iNumPlayers):
 			if iLoopPlayer == iPlayer: continue
@@ -488,13 +493,15 @@ def secedeCities(iPlayer, lCities):
 				iClaim = iLoopPlayer
 				utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: core territory.')
 				break
-				
+		
+		# claim based on original owner
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
 			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and iOriginalOwner < con.iNumPlayers:
 				iClaim = iOriginalOwner
 				utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: original owner.')
 				
+		# claim based on culture
 		if iClaim == -1:
 			for iLoopPlayer in range(con.iNumPlayers):
 				if iLoopPlayer == iPlayer: continue
@@ -504,6 +511,17 @@ def secedeCities(iPlayer, lCities):
 					if iCulturePercent >= 75:
 						iClaim = iLoopPlayer
 						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: culture.')
+						break
+						
+		# claim based on war target
+		if iClaim == -1:
+			tPlayer = gc.getTeam(iPlayer)
+			for iLoopPlayer in range(con.iNumPlayers):
+				pLoopPlayer = gc.getPlayer(iLoopPlayer)
+				if pLoopPlayer.isAlive() and tPlayer.isAtWar(iLoopPlayer) and utils.getHumanID() != iLoopPlayer:
+					if pLoopPlayer.getWarMapValue(city.getX(), city.getY()) >= 8:
+						iClaim = iLoopPlayer
+						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: war target.')
 						break
 						
 		if iClaim != -1:
@@ -547,18 +565,18 @@ def secedeCities(iPlayer, lCities):
 		doResurrection(iResurrectionPlayer, dPossibleResurrections[iResurrectionPlayer])
 		
 def secedeCity(city, iNewOwner):
-	#utils.debugTextPopup('Secede city: ' + city.getName())
+	sName = city.getName()
 	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
 	
 	if iNewOwner in [con.iIndependent, con.iIndependent2, con.iNative, con.iBarbarian]:
-		sText = localText.getText("TXT_KEY_STABILITY_CITY_INDEPENDENCE", (city.getName(),))
+		sText = localText.getText("TXT_KEY_STABILITY_CITY_INDEPENDENCE", (sName,))
 		CyInterface().addMessage(city.getOwner(), False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 	else:
-		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER", (city.getName(), gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
+		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER", (sName, gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
 		CyInterface().addMessage(city.getOwner(), False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		
 	if utils.getHumanID() == iNewOwner:
-		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US", (city.getName(),))
+		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US", (sName,))
 		CyInterface().addMessage(iNewOwner, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 	
 def completeCollapse(iPlayer):

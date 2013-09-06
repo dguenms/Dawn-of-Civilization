@@ -107,7 +107,8 @@ class Civ4lerts:
 		cityEvent.add(CityHealthiness(eventManager))
 		cityEvent.add(CityHappiness(eventManager))
 		cityEvent.add(CanHurryPopulation(eventManager))
-		cityEvent.add(CanHurryGold(eventManager))
+		cityEvent.add(CanHurryGoldUnits(eventManager))
+		cityEvent.add(CanHurryGoldBuildings(eventManager))
 		
 		cityEvent = EndTurnReadyCityAlertManager(eventManager)
 		cityEvent.add(CityPendingGrowth(eventManager))
@@ -709,15 +710,34 @@ class CanHurryPopulation(AbstractCanHurry):
 		else:
 			return localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_CAN_HURRY_POP", (city.getName(), info.getDescription(), iPop, iOverflow, iAnger))
 
-class CanHurryGold(AbstractCanHurry):
+class CanHurryGoldUnits(AbstractCanHurry):
 	"""
-	Displays an alert when a city can hurry using gold.
+	Displays an alert when a city can hurry units using gold.
 	"""
 	def __init__(self, eventManager): 
 		AbstractCanHurry.__init__(self, eventManager)
 
 	def init(self):
-		AbstractCanHurry.init(self, "HURRY_GOLD")
+		AbstractCanHurry.init(self, "HURRY_GOLD_UNITS")
+
+	def _isShowAlert(self, passes):
+		return passes and Civ4lertsOpt.isShowCityCanHurryGoldAlert()
+	
+	def _getAlertMessage(self, city, info):
+		iGold = city.hurryGold(self.keHurryType)
+		return localText.getText("TXT_KEY_CIV4LERTS_ON_CITY_CAN_HURRY_GOLD", 
+								 (city.getName(), info.getDescription(), iGold))
+								 
+								 
+class CanHurryGoldBuildings(AbstractCanHurry):
+	"""
+	Displays an alert when a city can hurry buildings using gold.
+	"""
+	def __init__(self, eventManager): 
+		AbstractCanHurry.__init__(self, eventManager)
+
+	def init(self):
+		AbstractCanHurry.init(self, "HURRY_GOLD_BUILDINGS")
 
 	def _isShowAlert(self, passes):
 		return passes and Civ4lertsOpt.isShowCityCanHurryGoldAlert()

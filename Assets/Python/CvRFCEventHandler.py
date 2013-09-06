@@ -222,6 +222,10 @@ class CvRFCEventHandler:
 				if tCity == con.tRespawnCapitals[iPlayer]:
 					utils.relocateCapital(iPlayer, city)
 					
+		# Leoreth: conquering Constantinople adds it to the Turkish core
+		if iPlayer == con.iTurkey and (city.getX(), city.getY()) == (68, 45):
+			if not utils.isReborn(con.iTurkey): gc.getPlayer(con.iTurkey).setReborn()
+					
 		# Leoreth: help Byzantium/Constantinople
 		if iPlayer == con.iByzantium and (city.getX(), city.getY()) == con.tCapitals[0][con.iByzantium] and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
 			if city.getPopulation() < 5:
@@ -240,9 +244,6 @@ class CvRFCEventHandler:
 			city.setHasRealBuilding(con.iJewishTemple + 4*gc.getPlayer(iPlayer).getStateReligion(), True)
 			
 		if bConquest:
-			if self.rnf.getExileData(0) == city.getX() and self.rnf.getExileData(1) == city.getY():
-				if iPlayer == utils.getHumanID() and self.rnf.getExileData(2) != -1:
-					self.rnf.escape(city)
 
 			# Colombian UP: no resistance in conquered cities in Latin America
 			if iPlayer == con.iMaya and utils.isReborn(con.iMaya):
@@ -311,6 +312,7 @@ class CvRFCEventHandler:
 					utils.makeUnitAI(con.iGalley, con.iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
 					utils.makeUnitAI(con.iSettler, con.iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
 					
+				if not utils.isReborn(iOwner): gc.getPlayer(con.iCarthage).setReborn()
 				self.dc.setCivAdjective(iOwner, "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
 				self.dc.setCivShortDesc(iOwner, "TXT_KEY_CIV_CARTHAGE_SHORT_DESC")
 				
@@ -731,15 +733,6 @@ class CvRFCEventHandler:
 		for city in utils.getCityList(iPlayer):
 			if city.plot().isCore(iReleasedPlayer) and not city.plot().isCore(iPlayer) and not city.isCapital():
 				lCities.append(city)
-					
-		iReborn = utils.getReborn(iReleasedPlayer)
-		sCities = 'Rebirth cities: '
-		for city in utils.getAreaCities(con.tCoreAreasTL[iReborn][iReleasedPlayer], con.tCoreAreasBR[iReborn][iReleasedPlayer], con.tExceptions[iReborn][iReleasedPlayer]):
-			sCities += city.getName() + ', '
-			if city.getOwner() >= con.iNumPlayers:
-				lCities.append(city)
-				
-		utils.debugTextPopup(sCities)
 				
 		sta.doResurrection(iReleasedPlayer, lCities, False)
 
