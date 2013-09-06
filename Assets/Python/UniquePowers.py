@@ -386,7 +386,7 @@ class UniquePowers:
 		for i in range(iNumTargets):
 			if len(lEnemyCities) > 0:
 				pTargetCity = lEnemyCities.pop(0)[1]
-				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iRome)
+				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iTamils)
 				
 				utils.makeUnitAI(con.iSwordsman, iTamils, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				utils.makeUnitAI(con.iWarElephant, iTamils, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)

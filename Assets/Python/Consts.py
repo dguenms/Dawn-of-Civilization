@@ -1015,8 +1015,8 @@ tCapitals = (
 (76, 40), #tBabylon
 (67, 41), #tAthens
 (90, 40), #tDelhi
-#(58, 39), #tCarthage
-(73, 40), #tSur
+(58, 39), #tCarthage
+#(73, 40), #tSur
 (81, 41), #Esfahan
 (60, 44), #tRome
 (91, 31), #Thanjavur
@@ -1030,7 +1030,7 @@ tCapitals = (
 (75, 33), #tMecca
 (96, 43), #Lhasa
 #(102, 34), #tAngkor
-(102, 33), #tAngkor
+(101, 37), #Hanoi
 (100, 26), #Palembang
 (51, 41), #Cordoba
 (52, 44), #tMadrid
@@ -1152,9 +1152,9 @@ tCoreAreasTL = (
 (75, 38), #Babylonia
 (65, 39), #Greece
 (87, 33), #India
-(71, 39), #Carthage
+(54, 37), #Carthage
 (79, 37), #Persia
-(58, 45), #Rome		# ITALY (now doesn't include southern italy because that apparently causes a crash with Byzantine or independent Naples?)
+(58, 45), #Rome	
 (90, 28), #Tamils
 (69, 27), #Ethiopia
 (107, 45), #Korea
@@ -1164,7 +1164,7 @@ tCoreAreasTL = (
 (58, 56), #Vikings
 (73, 30), #Arabia
 (92, 41), #Tibet
-(100, 32), #Khmer
+(97, 35), #Khmer (Vietnam)
 (98, 24), #Indonesia
 (51, 37), #Moors
 (49, 43), #Spain
@@ -1180,7 +1180,7 @@ tCoreAreasTL = (
 (87, 46), #Mongolia
 (12, 33), #Mexico
 (86, 37), #Mughals
-(69, 41), #Turkey
+(68, 41), #Turkey
 (100, 32), #Thailand
 (61, 19), #Congo
 (56, 52), #Holland
@@ -1238,7 +1238,7 @@ tCoreAreasBR = (
 (77, 42), #Babylonia
 (70, 44), #Greece
 (94, 40), #India
-(74, 41), #Carthage
+(60, 39), #Carthage
 (85, 44), #Persia
 (63, 47), #Rome
 (93, 34), #Tamils
@@ -1250,7 +1250,7 @@ tCoreAreasBR = (
 (64, 62), #Vikings
 (81, 39), #Arabia
 (98, 45), #Tibet
-(103, 36), #Khmer
+(102, 38), #Khmer
 (107, 31), #Indonesia
 (58, 43), #Moors
 (53, 46), #Spain

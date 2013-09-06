@@ -32,16 +32,40 @@ iIndependent2 = con.iIndependent2
 iNumTotalPlayers = con.iNumTotalPlayers
 
 iRomeCarthageYear = -220
+tRomeCarthageTL = (53, 37)
+tRomeCarthageBR = (61, 40)
+
 iRomeGreeceYear = -150
-iRomePersiaYear = -100
+tRomeGreeceTL = (64, 40)
+tRomeGreeceBR = (68, 45)
+
+iRomeMesopotamiaYear = -100
+tRomeMesopotamiaTL = (70, 38)
+tRomeMesopotamiaBR = (78, 45)
+
 iRomeCeltiaYear = -50
+tRomeCeltiaTL = (52, 45)
+tRomeCeltiaBR = (59, 51)
+
 iRomeEgyptYear = 0
+tRomeEgyptTL = (65, 31)
+tRomeEgyptBR = (72, 36)
 
 iAlexanderYear = -340
+tGreeceMesopotamiaTL = (70, 38)
+tGreeceMesopotamiaBR = (78, 45)
+tGreeceEgyptTL = (65, 31)
+tGreeceEgyptBR = (72, 36)
+tGreecePersiaTL = (79, 37)
+tGreecePersiaBR = (85, 45)
 
 iCholaSumatraYear = 1030
+tCholaSumatraTL = (98, 26)
+tCholaSumatraBR = (101, 28)
 
 iSpainMoorsYear = 1200
+tSpainMoorsTL = (50, 40)
+tSpainMoorsBR = (54, 42)
 
 iRome = con.iRome
 iCarthage = con.iCarthage
@@ -102,59 +126,20 @@ class AIWars:
                 if (iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50)):
                         utils.minorWars(con.iCeltia)
 			utils.minorWars(con.iSeljuks)
+			
+		self.spawnConquerors(iGreece, iBabylonia, tGreeceMesopotamiaTL, tGreeceMesopotamiaBR, 2, iAlexanderYear, 10)
+		self.spawnConquerors(iGreece, iEgypt, tGreeceEgyptTL, tGreeceEgyptBR, 2, iAlexanderYear, 10)
+		self.spawnConquerors(iGreece, iPersia, tGreecePersiaTL, tGreecePersiaBR, 2, iAlexanderYear, 10)
 		
-		if utils.getHumanID() != iGreece and gc.getPlayer(iGreece).isAlive():
-			if iGameTurn == getTurnForYear(iAlexanderYear) - 5 + (utils.getSeed() % 10):
-				if gc.getPlayer(iBabylonia).isAlive() and not gc.getTeam(iGreece).isVassal(iBabylonia):
-					gc.getTeam(iGreece).declareWar(iBabylonia, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.greekConquestUP(iBabylonia, 2)
-					
-			if iGameTurn == getTurnForYear(iAlexanderYear) - 5 + (utils.getSeed() % 10):
-				if gc.getPlayer(iEgypt).isAlive() and not gc.getTeam(iGreece).isVassal(iEgypt):
-					gc.getTeam(iGreece).declareWar(iEgypt, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.greekConquestUP(iEgypt, 2)
-					
-			if iGameTurn == getTurnForYear(iAlexanderYear) - 5 + (utils.getSeed() % 10):
-				if gc.getPlayer(iPersia).isAlive() and not gc.getTeam(iGreece).isVassal(iPersia):
-					gc.getTeam(iGreece).declareWar(iPersia, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.greekConquestUP(iPersia, 2)
+		self.spawnConquerors(iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
+		self.spawnConquerors(iRome, iGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
+		self.spawnConquerors(iRome, iPersia, tRomeMesopotamiaTL, tRomeMesopotamiaBR, 2, iRomeMesopotamiaYear, 10)
+		self.spawnConquerors(iRome, iCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
+		self.spawnConquerors(iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
+
+		self.spawnConquerors(iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 		
-		if utils.getHumanID() != iRome and gc.getPlayer(iRome).isAlive():
-			if iGameTurn == getTurnForYear(iRomeCarthageYear) - 5 + (utils.getSeed() % 10):
-				if gc.getPlayer(iCarthage).isAlive() and not gc.getTeam(iRome).isVassal(iCarthage):
-					gc.getTeam(iRome).declareWar(iCarthage, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.doRomanWar(iCarthage)
-				
-			if iGameTurn == getTurnForYear(iRomeGreeceYear) - 5 + (utils.getSeed() % 10):
-				if gc.getPlayer(iGreece).isAlive() and not gc.getTeam(iRome).isVassal(iGreece):
-					gc.getTeam(iRome).declareWar(iGreece, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.doRomanWar(iGreece)
-					
-			if iGameTurn == getTurnForYear(iRomePersiaYear) - 5 + (utils.getSeed() % 10):
-				if gc.getPlayer(iPersia).isAlive() and not gc.getTeam(iRome).isVassal(iPersia):
-					gc.getTeam(iRome).declareWar(iPersia, True, WarPlanTypes.WARPLAN_LIMITED)
-					up.doRomanWar(iPersia)
-					
-			if iGameTurn == getTurnForYear(iRomeCeltiaYear) - 5 + (utils.getSeed() % 10):
-				if gc.getPlayer(iCeltia).isAlive():
-					gc.getTeam(iRome).declareWar(iCeltia, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.romanConquestUP(iCeltia, 2)
-					
-			if iGameTurn == getTurnForYear(iRomeEgyptYear) - 5 + (utils.getSeed() % 10):
-				if gc.getPlayer(iEgypt).isAlive() and not gc.getTeam(iRome).isVassal(iEgypt):
-					gc.getTeam(iRome).declareWar(iEgypt, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.doRomanWar(iEgypt)
-					
-		if utils.getHumanID() != iTamils and gc.getPlayer(iTamils).isAlive():
-			if iGameTurn == getTurnForYear(iCholaSumatraYear) - 10 + (utils.getSeed() % 10):
-				if gc.getPlayer(iIndonesia).isAlive() and not gc.getTeam(iTamils).isVassal(iIndonesia):
-					gc.getTeam(iTamils).declareWar(iIndonesia, True, WarPlanTypes.WARPLAN_TOTAL)
-					up.tamilConquestUP(iTamils, 2)
-					
-		if utils.getHumanID() != iSpain and gc.getPlayer(iSpain).isAlive():
-			if iGameTurn == getTurnForYear(iSpainMoorsYear) - 10 + (utils.getSeed() % 10):
-				if gc.getPlayer(iMoors).isAlive() and not gc.getTeam(iSpain).isVassal(iMoors) and (gc.getPlayer(iMoors).getCapitalCity().getX(), gc.getPlayer(iMoors).getCapitalCity().getY()) == con.tCapitals[0][iMoors]:
-					gc.getTeam(iSpain).declareWar(iMoors, True, WarPlanTypes.WARPLAN_TOTAL)
+		self.spawnConquerors(iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 0, iSpainMoorsYear, 10)
                         
                 if (iGameTurn == getTurnForYear(1500) or iGameTurn == getTurnForYear(1850)):
                         for iLoopCiv in range( iNumPlayers ):
@@ -203,8 +188,58 @@ class AIWars:
                         #make sure we don't miss this
                         print("Skipping AIWar")
                         self.setNextTurnAIWar(iGameTurn + iMinInterval + gc.getGame().getSorenRandNum(iMaxInterval-iMinInterval, 'random turn'))
-
-
+			
+	def spawnConquerors(self, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
+	
+		if utils.getHumanID() == iPlayer:
+			return
+			
+		if not gc.getPlayer(iPlayer).isAlive():
+			return
+	
+		if gc.getGame().getGameTurn() != getTurnForYear(iYear) - iIntervalTurns/2 + (utils.getSeed() % iIntervalTurns):
+			return
+			
+		lCities = []
+		for city in utils.getAreaCities(tTL, tBR):
+			if city.getOwner() != iPlayer and not gc.getTeam(city.getOwner()).isVassal(iPlayer):
+				lCities.append(city)
+				
+		capital = gc.getPlayer(iPlayer).getCapitalCity()
+		
+		lTargetCities = []
+		for i in range(iNumTargets):
+			if len(lCities) == 0: break
+			
+			targetCity = utils.getHighestEntry(lCities, lambda x: -utils.calculateDistance(x.getX(), x.getY(), capital.getX(), capital.getY()) + int(x.getOwner() == iPreferredTarget) * 1000)
+			lTargetCities.append(targetCity)
+			lCities.remove(targetCity)
+			
+		lOwners = []
+		for city in lTargetCities:
+			if city.getOwner() not in lOwners:
+				lOwners.append(city.getOwner())
+				
+		if iPreferredTarget not in lOwners and gc.getPlayer(iPreferredTarget).isAlive():
+			gc.getTeam(iPlayer).declareWar(iPreferredTarget, True, iWarPlan)
+				
+		for iOwner in lOwners:
+			gc.getTeam(iPlayer).declareWar(iOwner, True, iWarPlan)
+			CyInterface().addMessage(iOwner, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_CONQUESTS_TARGET", (gc.getPlayer(iOwner).getCivilizationShortDescription(0),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+			
+		for city in lTargetCities:
+			iExtra = 0
+			if utils.getHumanID() not in [iPlayer, city.getOwner()]: iExtra = 1
+			
+			tPlot = utils.findNearestLandPlot((city.getX(), city.getY()), iPlayer)
+			
+			utils.makeUnitAI(utils.getBestInfantry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
+			utils.makeUnitAI(utils.getBestSiege(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2*iExtra)
+			
+			if iPlayer == con.iTamils:
+				utils.makeUnitAI(con.iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+				
+			
         def pickCivs(self): 
                 iCiv = -1
                 iTargetCiv = -1

@@ -59,3 +59,7 @@
 # Observatories now require Scientific Method
 # Japanese Kaizen Plants now give a free engineer and an additional scientist slot
 # added Mughal great people names (credit: Royal Tenenbaum)
+# Phoenician core moves to Northern Africa after founding Carthage
+# Khmer core moves to Burma and Vietnam after the Thai spawn
+# Turkish core includes Constantinople after they conquer it
+# scripted spawns now target regions instead of civilizations

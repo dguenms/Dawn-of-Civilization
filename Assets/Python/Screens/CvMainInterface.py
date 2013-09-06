@@ -3589,7 +3589,8 @@ class CvMainInterface:
 # BUG - Whip Assist - start
 					else:
 						HURRY_WHIP = gc.getInfoTypeForString("HURRY_POPULATION")
-						HURRY_BUY = gc.getInfoTypeForString("HURRY_GOLD")
+						HURRY_BUY_UNIT = gc.getInfoTypeForString("HURRY_GOLD_UNITS")
+						HURRY_BUY_BUILDING = gc.getInfoTypeForString("HURRY_GOLD_BUILDINGS")
 						if (CityScreenOpt.isShowWhipAssist() and pHeadSelectedCity.canHurry(HURRY_WHIP, False)):
 							iHurryPop = pHeadSelectedCity.hurryPopulation(HURRY_WHIP)
 							iOverflow = pHeadSelectedCity.hurryProduction(HURRY_WHIP) - pHeadSelectedCity.productionLeft()
@@ -3617,8 +3618,11 @@ class CvMainInterface:
 								szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION_WHIP_PLUS_GOLD", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft(), iHurryPop, iOverflow, iOverflowGold))
 							else:
 								szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION_WHIP", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft(), iHurryPop, iOverflow))
-						elif (CityScreenOpt.isShowWhipAssist() and pHeadSelectedCity.canHurry(HURRY_BUY, False)):
-							iHurryCost = pHeadSelectedCity.hurryGold(HURRY_BUY)
+						elif (CityScreenOpt.isShowWhipAssist() and pHeadSelectedCity.canHurry(HURRY_BUY_UNITS, False)):
+							iHurryCost = pHeadSelectedCity.hurryGold(HURRY_BUY_UNITS)
+							szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION_BUY", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft(), iHurryCost))
+						elif (CityScreenOpt.isShowWhipAssist() and pHeadSelectedCity.canHurry(HURRY_BUY_BUILDINGS, False)):
+							iHurryCost = pHeadSelectedCity.hurryGold(HURRY_BUY_BUILDINGS)
 							szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION_BUY", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft(), iHurryCost))
 						else:
 							szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft()))

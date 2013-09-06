@@ -196,7 +196,8 @@ class CvReligionScreen:
 			self.Y_RELIGION_AREA = 84
 			self.W_RELIGION_AREA = 934
 			self.H_RELIGION_AREA = 175
-			self.RELIGIONS = ReligionUtil.getAllReligions() + (ReligionUtil.getNumReligions(),)
+			self.RELIGIONS = ReligionUtil.getAllReligions()# + (ReligionUtil.getNumReligions(),)
+			#self.RELIGIONS.append(ReligionUtil.getNumReligions())
 
 		# Make the scrollable area for the religions list...
 		screen.addPanel(self.RELIGION_PANEL_ID, "", "", False, True, self.X_RELIGION_AREA, self.Y_RELIGION_AREA, self.W_RELIGION_AREA, self.H_RELIGION_AREA+5, PanelStyles.PANEL_STYLE_MAIN)
