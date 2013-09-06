@@ -1789,7 +1789,7 @@ class RiseAndFall:
 						tCapital = (x-1, y+1)
 						gc.getMap().plot(x-1, y+1).setFeatureType(-1, 0)
 						
-				if not utils.isReborn(iKhmer): pKhmer.setReborn(True)
+				if not utils.isReborn(iKhmer): pKhmer.setReborn()
 
 			if iCiv == iMongolia and utils.getHumanID() != iMongolia:
 				tTopLeft = (81, 45) # 6 more west, 1 more south

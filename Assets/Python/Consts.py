@@ -501,7 +501,7 @@ tResurrectionIntervals = (
 [(-1000, -150)], #Carthage
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome
-[(-300, 1500)], #Tamils
+[(-300, 1200)], #Tamils
 [(1270, 1520), (1850, 2020)], #Ethiopia
 [(1800, 2020)], #Korea
 [(0, 800)], #Maya
@@ -2222,7 +2222,7 @@ tResurrectionProb = (
 30, #Carthage
 70, #Persia
 65, #Rome
-20, #Tamils
+10, #Tamils
 80, #Ethopia
 80, #Korea
 30, #Maya
