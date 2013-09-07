@@ -6,10 +6,13 @@ import PyHelpers
 import cPickle as pickle
 import Consts as con
 
+import BugData
+
 # globals
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer	
 
+import Popup
 
 class StoredData:
 
@@ -18,11 +21,12 @@ class StoredData:
 
         def load(self):
                 """Loads and unpickles script data"""
-                self.scriptDict = pickle.loads(gc.getGame().getScriptData())
+                #self.scriptDict = pickle.loads(gc.getGame().getScriptData())
+		self.scriptDict = BugData.getTable("StoredData").data
 
         def save(self):
                 """Pickles and saves script data"""
-                gc.getGame().setScriptData(pickle.dumps(self.scriptDict))
+                BugData.getTable("StoredData").data = self.scriptDict
 
         def setup(self):
                 """Initialise the global script data dictionary for usage."""
