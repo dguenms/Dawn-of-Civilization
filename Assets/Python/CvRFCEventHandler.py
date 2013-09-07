@@ -712,7 +712,6 @@ class CvRFCEventHandler:
 
 
         def onLoadGame(self, argsList):
-
                 sd.load() # edead: load & unpickle script data
 		
 	def onChangeWar(self, argsList):

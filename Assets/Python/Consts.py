@@ -501,7 +501,7 @@ tResurrectionIntervals = (
 [(-1000, -150)], #Carthage
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome
-[(-300, 1200)], #Tamils
+[(-300, 600)], #Tamils
 [(1270, 1520), (1850, 2020)], #Ethiopia
 [(1800, 2020)], #Korea
 [(0, 800)], #Maya

@@ -233,8 +233,15 @@ class AIWars:
 			
 			tPlot = utils.findNearestLandPlot((city.getX(), city.getY()), iPlayer)
 			
-			utils.makeUnitAI(utils.getBestInfantry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
-			utils.makeUnitAI(utils.getBestSiege(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2*iExtra)
+			iBestInfantry = utils.getBestInfantry(iPlayer)
+			iBestSiege = utils.getBestSiege(iPlayer)
+			
+			if iPlayer == con.iGreece:
+				iBestInfantry = con.iGreekPhalanx
+				iBestSiege = con.iCatapult
+			
+			utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
+			utils.makeUnitAI(iBestSiege, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2*iExtra)
 			
 			if iPlayer == con.iTamils:
 				utils.makeUnitAI(con.iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
