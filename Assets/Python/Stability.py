@@ -1234,10 +1234,10 @@ def calculateStability(iPlayer):
 		
 	if tPlayer.isHasTech(con.iDemocracy):
 		if iCivicOrganization not in [con.iCivicRepresentation, con.iCivicEgalitarianism]: iCivicStability -= 3
-		if iCivicLabor not in [con.iCivicSlavery, con.iCivicAgrarianism] and iCivicOrganization != con.iCivicTotalitarianism: iCivicStability -= 5
+		if iCivicLabor in [con.iCivicSlavery, con.iCivicAgrarianism] and iCivicOrganization != con.iCivicTotalitarianism: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iUtopia):
-		if iCivicOrganization in [con.iCivicEgalitarianism, con.iCivicTotalitarianism]: iCivicStability -= 5
+		if iCivicOrganization not in [con.iCivicEgalitarianism, con.iCivicTotalitarianism]: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iEconomics):
 		if iCivicEconomy in [con.iCivicSelfSufficiency, con.iCivicGuilds]: iCivicStability -= 5

@@ -3618,11 +3618,11 @@ class CvMainInterface:
 								szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION_WHIP_PLUS_GOLD", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft(), iHurryPop, iOverflow, iOverflowGold))
 							else:
 								szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION_WHIP", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft(), iHurryPop, iOverflow))
-						elif (CityScreenOpt.isShowWhipAssist() and pHeadSelectedCity.canHurry(HURRY_BUY_UNITS, False)):
-							iHurryCost = pHeadSelectedCity.hurryGold(HURRY_BUY_UNITS)
+						elif (CityScreenOpt.isShowWhipAssist() and pHeadSelectedCity.canHurry(HURRY_BUY_UNIT, False)):
+							iHurryCost = pHeadSelectedCity.hurryGold(HURRY_BUY_UNIT)
 							szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION_BUY", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft(), iHurryCost))
-						elif (CityScreenOpt.isShowWhipAssist() and pHeadSelectedCity.canHurry(HURRY_BUY_BUILDINGS, False)):
-							iHurryCost = pHeadSelectedCity.hurryGold(HURRY_BUY_BUILDINGS)
+						elif (CityScreenOpt.isShowWhipAssist() and pHeadSelectedCity.canHurry(HURRY_BUY_BUILDING, False)):
+							iHurryCost = pHeadSelectedCity.hurryGold(HURRY_BUY_BUILDING)
 							szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION_BUY", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft(), iHurryCost))
 						else:
 							szBuffer = localText.getText("INTERFACE_CITY_PRODUCTION", (pHeadSelectedCity.getProductionNameKey(), pHeadSelectedCity.getProductionTurnsLeft()))
@@ -5050,13 +5050,14 @@ class CvMainInterface:
 															scores.setAttitude(cAtt)
 # BUG - Attitude Icons - end
 # Leoreth - Stability Icons - start
-												iStabilityLevel = sd.getStabilityLevel(ePlayer)
-												if iStabilityLevel > con.iStabilityStable: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
-												elif iStabilityLevel > con.iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
-												else: cStab = unichr(CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))
-												szBuffer += cStab
-												if (bAlignIcons):
-													scores.setStability(cStab)
+												if ePlayer < con.iNumPlayers:
+													iStabilityLevel = sd.getStabilityLevel(ePlayer)
+													if iStabilityLevel > con.iStabilityStable: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
+													elif iStabilityLevel > con.iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
+													else: cStab = unichr(CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))
+													szBuffer += cStab
+													if (bAlignIcons):
+														scores.setStability(cStab)
 # BUG - Refuses to Talk - start
 												if (not DiplomacyUtil.isWillingToTalk(ePlayer, gc.getGame().getActivePlayer())):
 													cRefusesToTalk = u"!"
