@@ -24,8 +24,11 @@ from CvPythonExtensions import *
 import BugUtil
 import FontUtil
 import PlayerUtil
+import RFCUtils
 
 gc = CyGlobalContext()
+
+utils = RFCUtils.RFCUtils()
 
 # Generic GP icon
 g_gpIcon = None
@@ -173,13 +176,14 @@ def calcPercentages(city):
 	# Calc total rate
 	iTotal = 0
 	for iUnit in g_gpUnitTypes:
-		iTotal += city.getGreatPeopleUnitProgress(iUnit)
+		iTotal += city.getGreatPeopleUnitProgress(utils.getUniqueUnitType(city.getOwner(), gc.getUnitInfo(iUnit).getUnitClassType()))
 	# Calc individual percentages based on rates and total
 	percents = []
 	if (iTotal > 0):
 		iLeftover = 100
 		for iUnit in range(gc.getNumUnitInfos()):
 #			iUnit = getUnitType(gpType)
+			#if gc.getUnitInfo(iUnit).isGraphicalOnly(): continue
 			iProgress = city.getGreatPeopleUnitProgress(iUnit)
 			if (iProgress > 0):
 				iPercent = 100 * iProgress / iTotal
