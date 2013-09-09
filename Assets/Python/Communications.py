@@ -123,72 +123,64 @@ class Communications:
         def decay(self, iCiv):
 
                 teamCiv = gc.getTeam(gc.getPlayer(iCiv).getTeam())
-                cutList = []
-                iRndnum = gc.getGame().getSorenRandNum(iNumMajorPlayers, 'starting index')
                 iCounter = 0
+		
+		# Initialize list
+		lContacts = [i for i in range(con.iNumPlayers) if gc.getPlayer(i).isAlive() and teamCiv.canContact(i)]
 
-                #initialise list
-                #print ("iRndnum", iRndnum)
-                for i in range(iRndnum, iNumMajorPlayers + iRndnum):
-                        #print ("i", i)
-                        if (iRndnum % 2 == 0): #randomize scan order
-                                j = i
-                                #print ("jA", j)
-                        else:
-                                j = iNumMajorPlayers + 2*iRndnum - i
-                                #print ("jB", j)
-                        iOtherCiv = j % iNumMajorPlayers
-                        #print ("iOtherCiv", iOtherCiv)
-                        if (gc.getPlayer(iOtherCiv).isAlive()):
-                                if (teamCiv.canContact(iOtherCiv)):
-                                        if (not gc.getTeam(gc.getPlayer(iOtherCiv).getTeam()).isHasTech(con.iElectricity)):
-                                                cutList.append(iOtherCiv)
-                #print (iCiv, "cutList", cutList)
-                #first browse our cities - if other civs can see our borders
-                for pyCity in PyPlayer(iCiv).getCityList():
-                        city = pyCity.GetCy()
-                        for iOtherCiv in cutList:
-                                if (city.hasBuilding(iNumBuildingsPlague + iOtherCiv)): #their embassy. + getProduction()?
-                                        cutList.remove(iOtherCiv)
-                                pCity = gc.getMap().plot( city.getX(), city.getY() )
-                                if (pCity.isVisible(iOtherCiv, False)): #in case it has a holy city
-                                        if (iOtherCiv in cutList):
-                                                cutList.remove(iOtherCiv)                                
-                        for x in range(city.getX()-4, city.getX()+5):
-                                for y in range(city.getY()-4, city.getY()+5):
-                                        pCurrent = gc.getMap().plot( x, y )
-                                        if (pCurrent.isVisible(iCiv, False)):
-                                                for iOtherCiv2 in cutList:
-                                                        if (pCurrent.getOwner() == iOtherCiv2):
-                                                                cutList.remove(iOtherCiv2)
-
-                #then browse their cities - if we can see their borders (view distance is asymmetrical)            
-                for iOtherCiv in cutList:
-                        if (iCounter >= 4): #3 in vanilla and warlords
-                                return 
-                        bNear = False
-                        for pyOtherCity in PyPlayer(iOtherCiv).getCityList():
-                                city = pyOtherCity.GetCy()
-                                if (city.hasBuilding(iNumBuildingsPlague + iCiv)): #our embassy. + getProduction()?
-                                        bNear = True
-                                        break
-                                pOtherCity = gc.getMap().plot( city.getX(), city.getY() )
-                                if (pOtherCity.isVisible(iCiv, False)): #in case I've got a holy city
-                                        bNear = True
-                                        break
-                                for x in range(city.getX()-4, city.getX()+5):
-                                        for y in range(city.getY()-4, city.getY()+5):
-                                                pCurrent = gc.getMap().plot( x, y )
-                                                if (pCurrent.isVisible(iOtherCiv, False)):
-                                                        if (pCurrent.getOwner() == iCiv):
-                                                                bNear = True
-                                                                break
-                                                                break
-                        if (bNear == False):
-                                teamCiv.cutContact(iOtherCiv)
-                                iCounter += 1
-                                print ("Cutting contacts between", gc.getPlayer(iCiv).getCivilizationShortDescription(0), "and", gc.getPlayer(iOtherCiv).getCivilizationShortDescription(0))
-                
+		# If other civs can see our borders
+		for city in utils.getCityList(iCiv):
+			for iOtherCiv in lContacts:
+				if city.hasBuilding(iNumBuildingsPlague + iOtherCiv):
+					lContacts.remove(iOtherCiv)
+				elif city.plot().isVisible(iOtherCiv, False):
+					lContacts.remove(iOtherCiv)
+			# Leoreth: this is very inefficient, find a better way
+			x = city.getX()
+			y = city.getY()
+			r = city.getCultureLevel()
+			for i in range(x-r, x+r+1):
+				for j in range(y-r, y+r+1):
+					plot = gc.getMap().plot(i, j)
+					for iOtherCiv in lContacts:
+						if plot.getOwner() == iOtherCiv:
+							lContacts.remove(iOtherCiv)
+							
+		# If we can see their borders (view distance is asymmetrical)
+		for iOtherCiv in lContacts:
+			for city in utils.getCityList(iOtherCiv):
+				if city.hasBuilding(iNumBuildingsPlague + iCiv):
+					lContacts.remove(iOtherCiv)
+					continue
+				elif city.plot().isVisible(iCiv, False):
+					lContacts.remove(iOtherCiv)
+					continue
+				else:
+					x = city.getX()
+					y = city.getY()
+					r = city.getCultureLevel()
+					for i in range(x-r, x+r+1):
+						for j in range(y-r, y+r+1):
+							plot = gc.getMap().plot(i, j)
+							if plot.isVisible(iOtherCiv, False) and plot.getOwner() == iCiv:
+								lContacts.remove(iOtherCiv)
+								continue
+								
+		# master/vassal relationships: if master can be seen, don't cut vassal contact and vice versa
+		for iLoopPlayer in range(con.iNumPlayers):
+			for iContact in lContacts:
+				if gc.getTeam(iContact).isAVassal(iLoopPlayer) and iLoopPlayer not in lContacts:
+					lContacts.remove(iContact)
+				elif gc.getTeam(iLoopPlayer).isAVassal(iContact) and iLoopPlayer not in lContacts:
+					lContacts.remove(iContact)
+								
+		# choose up to four random contacts to cut
+		for i in range(4):
+			if len(lContacts) == 0: break
+			
+			iContact = utils.getRandomEntry(lContacts)
+			utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iContact).getCivilizationShortDescription(0))
+			teamCiv.cutContact(iContact)
 
 
 

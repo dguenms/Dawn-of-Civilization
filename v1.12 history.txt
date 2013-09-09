@@ -67,3 +67,4 @@
 # independents benefit from the 80% rule if the civilization owning this core is dead
 # cities cannot spread culture into foreign cores unless they are in the core themselves
 # Phoenicia now starts with Alphabet
+# cutting the contact to a vassal is impossible if there is still contact to the master and vice versa
