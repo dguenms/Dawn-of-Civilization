@@ -63,3 +63,7 @@
 # Khmer core moves to Burma and Vietnam after the Thai spawn
 # Turkish core includes Constantinople after they conquer it
 # scripted spawns now target regions instead of civilizations
+# all civilizations receive a minor version of the Turkish UP on city conquest (affects only the first ring around the city)
+# independents benefit from the 80% rule if the civilization owning this core is dead
+# cities cannot spread culture into foreign cores unless they are in the core themselves
+# Phoenicia now starts with Alphabet

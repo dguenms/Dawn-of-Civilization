@@ -4342,6 +4342,7 @@ class RiseAndFall:
                                 teamCarthage.setHasTech(con.iHunting, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+                                teamCarthage.setHasTech(con.iAlphabet, True, iCiv, False, False)
                         if (iCiv == iRome):
                                 teamRome.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -5246,7 +5247,8 @@ class RiseAndFall:
 				plot = gc.getMap().plot(x,y)
 				if plot.isFlatlands() or plot.isHills():
 					if plot.getFeatureType() != gc.getInfoTypeForString("FEATURE_MUD"):
-						plotList.append((x,y))
+						if plot.getOwner() < 0:
+							plotList.append((x,y))
 		
 		if not plotList:
 			utils.debugTextPopup('List empty.')

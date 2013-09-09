@@ -171,23 +171,23 @@ class CvRFCEventHandler:
 		
 		if bConquest:
 			sta.onCityAcquired(city, iOwner, iPlayer)
-		
+			
 		if iPlayer == con.iArabia:
 			self.up.arabianUP(city)
-		elif iPlayer == con.iTurkey:
-			self.up.turkishUP(city, iPlayer, iOwner)
-		elif iPlayer == con.iMongolia and bConquest and utils.getHumanID() != iPlayer:
-			self.up.mongolUP(city)
 		elif iPlayer == con.iMughals and utils.getHumanID() != con.iMughals:
 			self.up.mughalUP(city)
 		elif iPlayer == con.iSeljuks:
 			self.up.seljukUP(city)
+			
+		if iPlayer == con.iMongolia and bConquest and utils.getHumanID() != iPlayer:
+			self.up.mongolUP(city)
+			
+		if iPlayer in [con.iTurkey, con.iSeljuks]:
 			self.up.turkishUP(city, iPlayer, iOwner)
-		elif iPlayer in lTradingCompanyList:
-			if (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(iPlayer)]:
-				self.up.tradingCompanyCulture(city, iPlayer, iOwner)
-		elif iPlayer == con.iSpain and (city.getX(), city.getY()) == con.tCapitals[0][con.iMoors]:
+		elif iPlayer in lTradingCompanyList and (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(iPlayer)]:
 			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
+		else:
+			utils.cityConquestCulture(city, iPlayer, iOwner)
 			
                 if iPlayer < iNumMajorPlayers:
 			utils.spreadMajorCulture(iPlayer, city.getX(), city.getY())

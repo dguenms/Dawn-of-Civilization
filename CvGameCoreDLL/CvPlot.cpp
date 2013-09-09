@@ -3015,15 +3015,34 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 
 			if (iCulture > 0)
 			{
-				//Rhye - start (core territories of modern civs are not invaded by old civs' culture dominance)
-				if (iI < NUM_MAJOR_PLAYERS) {
+				// All major civilizations have easier control over their own core (80% rule)
+				if (iI < NUM_MAJOR_PLAYERS)
+				{
 					if (isCore((PlayerTypes)iI))
+					{
 						if (!isCity())
+						{
 							iCulture *= 4;
-						//else
-						//	iCulture *= 2;
+						}
+					}
 				}
-				//Rhye - end
+
+				// Independents get the same advantage over a civ's core if that civ is dead
+				if (iI == INDEPENDENT || iI == INDEPENDENT2)
+				{
+					if (!isCity())
+					{
+						for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+						{
+							if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurnYear() > startingTurnYear[iJ] && !GET_PLAYER((PlayerTypes)iI).isAlive())
+							{
+								iCulture *= 4;
+								break;
+							}
+						}
+					}
+				}
+
 
 				if (isWithinCultureRange((PlayerTypes)iI))
 				{
