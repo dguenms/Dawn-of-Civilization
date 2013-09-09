@@ -20,6 +20,10 @@ import CvUtil
 import re
 import string
 
+import RFCUtils
+
+utils = RFCUtils.RFCUtils()
+
 # Globals
 ScoreOpt = BugCore.game.Scores
 gc = CyGlobalContext()

@@ -12810,7 +12810,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 								// Leoreth: culture can only invade foreign core if city itself is in foreign core
 								bool bCanSpreadCore = true;
 
-								if (!pLoopPlot->isCore(ePlayer))
+								if (!pLoopPlot->isCore(ePlayer) && iCultureRange > 2)
 								{
 									for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 									{
