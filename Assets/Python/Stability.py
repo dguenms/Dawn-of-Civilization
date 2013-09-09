@@ -987,6 +987,13 @@ def calculateStability(iPlayer):
 		if city.isHasReligion(iStateReligion):
 			iStateReligionCities += 1
 			if not bNonStateReligion: iOnlyStateReligionCities += 1
+			
+		if iPlayer == con.iPoland:
+			if iStateReligion in [con.iCatholicism, con.iOrthodoxy, con.iProtestantism]:
+				for iReligion in [con.iCatholicism, con.iOrthodoxy, con.iProtestantism]:
+					if iReligion != iStateReligion and city.isHasReligion(iReligion):
+						iStateReligionCities += 1
+						if not bNonStateReligion: iOnlyStateReligionCities += 1
 				
 		if bNonStateReligion: iNonStateReligionCities += 1
 		
@@ -1445,12 +1452,18 @@ def calculatePowerRank(iPlayer, iTurn):
 def isTolerated(iPlayer, iReligion):
 	pPlayer = gc.getPlayer(iPlayer)
 	iStateReligion = pPlayer.getStateReligion()
+	lChristianity = [con.iCatholicism, con.iOrthodoxy, con.iProtestantism]
 	
 	# Secularism civic
 	if pPlayer.getCivics(4) == con.iCivicSecularism: return True
 	
 	# Mughal UP
 	if iPlayer == con.iMughals: return True
+	
+	# Polish UP
+	if iPlayer == con.iPoland:
+		if pPlayer.getStateReligion() in lChristianity and iReligion in lChristianity:
+			return True
 	
 	# Exceptions
 	if iStateReligion == con.iConfucianism and iReligion == con.iTaoism: return True

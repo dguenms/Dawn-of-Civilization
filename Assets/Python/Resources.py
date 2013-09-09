@@ -37,6 +37,7 @@ iTobacco = con.iTobacco
 iSpices = con.iSpices
 iIvory = con.iIvory
 iIron = con.iIron
+iDeer = con.iDeer
 
 iCottage = con.iCottage
 iSilk = con.iSilk
@@ -45,6 +46,30 @@ iRoad = 0
 tSilkRoute = ((85,48), (86,49), (87,48), (88,47), (89,46), (90,47),(90,45),  (91,47),(91,45),  (92,48),(92,45),  (93,48),(93,46),  (94,47), (95,47), (96,47), (97,47), (98,47), (99,46))
 
 class Resources:
+
+	# Leoreth: bonus removement alerts by edead
+	def createResource(self, iX, iY, iBonus, textKey="TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE"):
+		"""Creates a bonus resource and alerts the plot owner"""
+		
+		if gc.getMap().plot(iX,iY).getBonusType(-1) == -1 or iBonus == -1: # only proceed if the bonus isn't already there or if we're removing the bonus
+			if iBonus == -1:
+				iBonus = gc.getMap().plot(iX,iY).getBonusType(-1) # for alert
+				gc.getMap().plot(iX,iY).setBonusType(-1)
+			else:
+				gc.getMap().plot(iX,iY).setBonusType(iBonus)
+				
+			iOwner = gc.getMap().plot(iX,iY).getOwner()
+			if iOwner >= 0 and textKey != -1: # only show alert to the tile owner
+				city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+				if not city.isNone():
+					szText = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName(), gc.getPlayer(iOwner).getCivilizationAdjective(0)))
+					CyInterface().addMessage(iOwner, False, con.iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(con.iWhite), iX, iY, True, True)
+
+
+	def removeResource(self, iX, iY, textKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
+		"""Removes a bonus resource and alerts the plot owner"""
+		
+		self.createResource(iX, iY, -1, textKey)
        	
         def checkTurn(self, iGameTurn):
 
@@ -54,7 +79,7 @@ class Resources:
 			
 		# Tamils
 		if iGameTurn == getTurnForYear(-300)-1 and utils.getPlayerEnabled(con.iTamils):
-			gc.getMap().plot(90, 29).setBonusType(iFish)
+			self.createResource(90, 29, iFish)
 
                 #Orka: Silk Road
                 if (iGameTurn == getTurnForYear(-200)): 
@@ -79,18 +104,19 @@ class Resources:
 
 			gc.getMap().plot(88, 47).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 			gc.getMap().plot(88, 47).setRouteType(iRoad)
-			gc.getMap().plot(88, 47).setBonusType(iSilk)
-			gc.getMap().plot(85, 46).setBonusType(iSilk)
+			
+			self.createResource(88, 47, iSilk)
+			self.createResource(88, 46, iSilk)
 
 		#Leoreth: Hanseong's pig appears later so China isn't that eager to found Sanshan
 		if iGameTurn == getTurnForYear(-50):
-			gc.getMap().plot(108, 47).setBonusType(iPig)
+			self.createResource(108, 47, iPig)
 
 		#Leoreth: change Indus tiles to desert floodplains in 0 AD
 		if (iGameTurn == getTurnForYear(0)):
 			for tPlot in [(86, 37), (86, 38), (87, 38)]:
 				x, y = tPlot
-				gc.getMap().plot(x,y).setBonusType(-1)
+				self.removeResource(x, y)
 				gc.getMap().plot(x,y).setTerrainType(2, True, True)
 				gc.getMap().plot(x,y).setFeatureType(3, 0)
 			for tPlot in [(85, 38), (85, 37)]:
@@ -98,20 +124,20 @@ class Resources:
 				gc.getMap().plot(x,y).setFeatureType(3, 0)
 
                 if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
-                        gc.getMap().plot(53, 51).setBonusType(iDye) #France
-                        gc.getMap().plot(53, 55).setBonusType(iDye) #England
+			self.createResource(53, 51, iDye) # France
+			self.createResource(53, 55, iDye) # England
                 if utils.getScenario() >= con.i600AD: #late start condition
-                        if (iGameTurn == getTurnForYear(600)): 
-                                gc.getMap().plot(53, 51).setBonusType(iDye) #France
-                                gc.getMap().plot(53, 55).setBonusType(iDye) #England
+                        if (iGameTurn == getTurnForYear(600)):
+				self.createResource(53, 51, iDye)
+				self.createResource(53, 55, iDye)
 
 		# Leoreth: remove floodplains in Sudan and ivory in Morocco and Tunisia
 		if iGameTurn == getTurnForYear(550):
 			gc.getMap().plot(67, 30).setFeatureType(-1, 0)
 			gc.getMap().plot(67, 31).setFeatureType(-1, 0)
 			
-			gc.getMap().plot(51, 36).setBonusType(-1)
-			gc.getMap().plot(58, 37).setBonusType(-1)
+			self.removeResource(51, 36)
+			self.removeResource(58, 37)
 
 		# Leoreth: replicate silk route in 600 AD
 		if iGameTurn == getTurnForYear(600) and utils.getScenario() == con.i600AD:
@@ -123,30 +149,30 @@ class Resources:
 			
 		# Leoreth: prepare Tibet
 		if iGameTurn == getTurnForYear(630)-1 and utils.getPlayerEnabled(con.iTibet):
-			gc.getMap().plot(95, 43).setBonusType(iWheat)
-			gc.getMap().plot(97, 44).setBonusType(iHorse)
+			self.createResource(95, 43, iWheat)
+			self.createResource(97, 44, iHorse)
 		
 		# Leoreth: for respawned Egypt
 		if iGameTurn == getTurnForYear(900):
-			gc.getMap().plot(71, 34).setBonusType(con.iIron)
-			
+			self.createResource(71, 34, iIron)
                     
                 if (iGameTurn == getTurnForYear(1100)):
                         #gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt
-                        gc.getMap().plot(72, 24).setBonusType(iSugar) #East Africa
-                        gc.getMap().plot(70, 17).setBonusType(iSugar) #Zimbabwe
-                        gc.getMap().plot(67, 11).setBonusType(iSugar) #South Africa
-
-                        gc.getMap().plot(66, 23).setBonusType(iBanana) #Central Africa
-                        gc.getMap().plot(64, 20).setBonusType(iBanana) #Central Africa
+			
+			self.createResource(72, 24, iSugar) # East Africa
+			self.createResource(70, 17, iSugar) # Zimbabwe
+			self.createResource(67, 11, iSugar) # South Africa
+			
+			self.createResource(66, 23, iBanana) # Central Africa
+			self.createResource(64, 20, iBanana) # Central Africa
 			
 			if utils.getPlayerEnabled(con.iCongo):
-				gc.getMap().plot(61, 22).setBonusType(iCotton) #Congo
-				gc.getMap().plot(63, 19).setBonusType(iIvory) #Congo
-				gc.getMap().plot(61, 24).setBonusType(iIvory) #Cameroon
-
-			gc.getMap().plot(57, 46).setBonusType(iWine) #Savoy
-			gc.getMap().plot(57, 45).setBonusType(iClam) #Savoy
+				self.createResource(61, 22, iCotton) # Congo
+				self.createResource(63, 19, iIvory) # Congo
+				self.createResource(61, 24, iIvory) # Cameroon
+			
+			self.createResource(57, 46, iWine) # Savoy
+			self.createResource(57, 45, iClam) # Savoy
 			
 		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
 		if iGameTurn == getTurnForYear(con.tBirth[con.iMongolia]):
@@ -156,7 +182,7 @@ class Resources:
 
                 if (iGameTurn == getTurnForYear(1250)):
                         #gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
-			gc.getMap().plot(96, 37).setBonusType(iFish)  #Calcutta/Dhaka/Pagan
+			self.createResource(69, 37, iFish) # Calcutta, Dhaka, Pagan
 
 		if iGameTurn == getTurnForYear(1350):
 			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove jungle in Vietnam
@@ -166,44 +192,42 @@ class Resources:
 			gc.getMap().plot(36, 54).setTerrainType(3, True, True) #Tundra in Newfoundland
 			gc.getMap().plot(36, 54).setBonusType(-1) #remove marsh in Newfoundland
 			
-			gc.getMap().plot(56, 54).setBonusType(iFish) #Amsterdam
-			gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
-			gc.getMap().plot(58, 52).setBonusType(iCow) #Amsterdam
+			self.createResource(56, 54, iFish) # Amsterdam
+			self.createResource(57, 52, iWheat) # Amsterdam
+			self.createResource(58, 52, iCow) # Amsterdam
                         
                 if (iGameTurn == getTurnForYear(1600)):
-                        gc.getMap().plot(28, 46).setBonusType(iCow) #Washington area
-                        gc.getMap().plot(30, 49).setBonusType(iCow) #New York area
-                        gc.getMap().plot(25, 49).setBonusType(iCow) #Lakes
-                        gc.getMap().plot(23, 42).setBonusType(iCow) #Jacksonville area
-                        gc.getMap().plot(18, 46).setBonusType(iCow) #Colorado 
-                       # gc.getMap().plot(11, 47).setBonusType(iCow) #California
-                        gc.getMap().plot(20, 45).setBonusType(iCow) #Texas
-                        gc.getMap().plot(37, 14).setBonusType(iCow) #Argentina
-                        gc.getMap().plot(33, 11).setBonusType(iCow) #Argentina
-                        gc.getMap().plot(35, 10).setBonusType(iCow) #Pampas
-
-                        gc.getMap().plot(24, 43).setBonusType(iCotton) #near Florida
-                        gc.getMap().plot(23, 45).setBonusType(iCotton) #Louisiana
-                        gc.getMap().plot(22, 44).setBonusType(iCotton) #Louisiana
-                        gc.getMap().plot(13, 45).setBonusType(iCotton) #California
-                        
-                        gc.getMap().plot(22, 49).setBonusType(iPig) #Lakes
-                        
-                        gc.getMap().plot(21, 50).setBonusType(iWheat) #Canadian border
-                        gc.getMap().plot(19, 48).setBonusType(iWheat) #Midwest
-
-                        gc.getMap().plot(22, 33).setBonusType(iBanana) #Guatemala
-                        gc.getMap().plot(27, 31).setBonusType(iBanana) #Colombia
-                        gc.getMap().plot(43, 23).setBonusType(iBanana) #Brazil
-                        gc.getMap().plot(39, 26).setBonusType(iBanana) #Brazil
-
-                        gc.getMap().plot(49, 44).setBonusType(iCorn) #Galicia
-                        gc.getMap().plot(54, 48).setBonusType(iCorn) #France
-                        gc.getMap().plot(67, 47).setBonusType(iCorn) #Romania
-
-                        gc.getMap().plot(106, 50).setBonusType(iCorn) #Manchuria
+			self.createResource(28, 46, iCow) # Washington area
+			self.createResource(30, 49, iCow) # New York area
+			self.createResource(25, 49, iCow) # Lakes
+			self.createResource(23, 42, iCow) # Jacksonville area
+			self.createResource(18, 46, iCow) # Colorado
+			self.createResource(20, 45, iCow) # Texas
+			self.createResource(37, 14, iCow) # Argentina
+			self.createResource(33, 11, iCow) # Argentina
+			self.createResource(35, 10, iCow) # Pampas
 			
-			gc.getMap().plot(92, 35).setBonusType(iSpices) #Deccan
+			self.createResource(24, 43, iCotton) # near Florida
+			self.createResource(23, 45, iCotton) # Louisiana
+			self.createResource(22, 44, iCotton) # Louisiana
+			self.createResource(13, 45, iCotton) # California
+			
+			self.createResource(22, 49, iPig) # Lakes
+			
+			self.createResource(21, 50, iWheat) # Canadian border
+			self.createResource(19, 48, iWheat) # Midwest
+			
+			self.createResource(22, 33, iBanana) # Guatemala
+			self.createResource(27, 31, iBanana) # Colombia
+			self.createResource(43, 23, iBanana) # Brazil
+			self.createResource(39, 26, iBanana) # Brazil
+			
+			self.createResource(49, 44, iCorn) # Galicia
+			self.createResource(54, 48, iCorn) # France
+			self.createResource(67, 47, iCorn) # Romania
+			self.createResource(106, 50, iCorn) # Manchuria
+			
+			self.createResource(92, 35, iSpices) # Deccan
 			
 			# remove floodplains in Transoxania
 			for tuple in [(82, 47), (83, 46), (85, 49)]:
@@ -212,78 +236,76 @@ class Resources:
                        
 
                 if (iGameTurn == getTurnForYear(1700)):
-                        gc.getMap().plot(26, 45).setBonusType(iHorse) #Washington area                        
-                        gc.getMap().plot(21, 48).setBonusType(iHorse) #Midwest
-                        gc.getMap().plot(19, 45).setBonusType(iHorse) #Texas
-                        gc.getMap().plot(40, 25).setBonusType(iHorse) #Brazil
-                        gc.getMap().plot(33, 10).setBonusType(iHorse) #Buenos Aires area
-                        gc.getMap().plot(32, 8).setBonusType(iHorse) #Pampas
-
-                        gc.getMap().plot(27, 36).setBonusType(iSugar) #Caribbean
-                        gc.getMap().plot(39, 25).setBonusType(iSugar) #Brazil
-                        gc.getMap().plot(37, 20).setBonusType(iSugar) #inner Brazil
-			gc.getMap().plot(29, 37).setBonusType(iSugar) #Hispaniola
-
-                        gc.getMap().plot(104, 52).setBonusType(iCorn) #Manchuria
-                        gc.getMap().plot(89, 36).setBonusType(iCorn) #India
+			self.createResource(26, 45, iHorse) # Washington area
+			self.createResource(21, 48, iHorse) # Midwest
+			self.createResource(19, 45, iHorse) # Texas
+			self.createResource(40, 25, iHorse) # Brazil
+			self.createResource(33, 10, iHorse) # Buenos Aires area
+			self.createResource(32, 8, iHorse) # Pampas
 			
-			gc.getMap().plot(38, 18).setBonusType(iCoffee) #Brazil
-			gc.getMap().plot(39, 20).setBonusType(iCoffee) #Brazil
-			gc.getMap().plot(38, 22).setBonusType(iCoffee) #Brazil
-			gc.getMap().plot(27, 30).setBonusType(iCoffee) #Colombia
-			gc.getMap().plot(29, 30).setBonusType(iCoffee) #Colombia
-			gc.getMap().plot(26, 27).setBonusType(iCoffee) #Colombia
-			gc.getMap().plot(104, 25).setBonusType(iCoffee) #Java
+			self.createResource(27, 36, iSugar) # Caribbean
+			self.createResource(39, 25, iSugar) # Brazil
+			self.createResource(37, 20, iSugar) # inner Brazil
+			self.createResource(29, 37, iSugar) # Hispaniola
 			
-			gc.getMap().plot(67, 44).setBonusType(iTobacco) #Turkey
+			self.createResource(104, 52, iCorn) # Manchuria
+			self.createResource(89, 36, iCorn) # India
 			
-			gc.getMap().plot(90, 35).setBonusType(iTea) #West Bengal
+			self.createResource(38, 18, iCoffee) # Brazil
+			self.createResource(39, 20, iCoffee) # Brazil
+			self.createResource(38, 22, iCoffee) # Brazil
+			self.createResource(27, 30, iCoffee) # Colombia
+			self.createResource(29, 30, iCoffee) # Colombia
+			self.createResource(26, 27, iCoffee) # Colombia
+			self.createResource(104, 25, iCoffee) # Java
 			
-			gc.getMap().plot(39, 16).setBonusType(iFish) #Brazil
+			self.createResource(67, 44, iTobacco) # Turkey
+			
+			self.createResource(90, 35, iTea) # West Bengal
+			
+			self.createResource(39, 16, iFish) # Brazil
+			
+			self.createResource(70, 59, iDeer) # St Petersburg
 			
 			gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
 			
-			gc.getMap().plot(70, 59).setBonusType(con.iDeer)
-			
 		if iGameTurn == getTurnForYear(1800):
 			if gc.getDefineINT("PLAYER_REBIRTH_MEXICO") != 0:
-				gc.getMap().plot(17, 41).setBonusType(iHorse) # Mexico
-				gc.getMap().plot(16, 42).setBonusType(con.iIron) # Mexico
+				self.createResource(17, 41, iHorse) # Mexico
+				self.createResource(16, 42, iIron) # Mexico
 				
 			if gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") != 0:
-				gc.getMap().plot(28, 31).setBonusType(con.iIron) # Colombia
+				self.createResource(28, 31, iIron) # Colombia
 			
 			if utils.getPlayerEnabled(con.iArgentina):
-				gc.getMap().plot(31, 10).setBonusType(iWine) # Mendoza, Argentina
-				gc.getMap().plot(31, 6).setBonusType(iSheep) # Pampas, Argentina
-				gc.getMap().plot(32, 11).setBonusType(iIron) # Argentina
+				self.createResource(31, 10, iWine) # Mendoza, Argentina
+				self.createResource(31, 6, iSheep) # Pampas, Argentina
+				self.createResource(32, 11, iIron) # Argentina
 			
 			if utils.getPlayerEnabled(con.iBrazil):
-				gc.getMap().plot(36, 18).setBonusType(iCorn) # Sao Paulo
-				gc.getMap().plot(42, 18).setBonusType(iFish) # Rio de Janeiro
+				self.createResource(36, 18, iCorn) # Sao Paulo
+				self.createResource(42, 18, iFish) # Rio de Janeiro
 
                 if (iGameTurn == getTurnForYear(1850)):
-                        gc.getMap().plot(12, 45).setBonusType(iWine) #California
-                        gc.getMap().plot(31, 10).setBonusType(iWine) #Andes
-			gc.getMap().plot(113, 12).setBonusType(iWine) #Barossa Valley, Australia
-
-                        gc.getMap().plot(114, 11).setBonusType(iSheep) #Australia
-                        gc.getMap().plot(116, 13).setBonusType(iSheep) #Australia
-                        gc.getMap().plot(121, 6).setBonusType(iSheep) #New Zealand
-
-                        gc.getMap().plot(58, 47).setBonusType(iRice) #Vercelli
-                        gc.getMap().plot(12, 49).setBonusType(iRice) #California
-
-                        gc.getMap().plot(11, 45).setBonusType(iFish) #California
-			gc.getMap().plot(10, 45).setBonusType(iFish) #California
-			gc.getMap().plot(87, 35).setBonusType(iFish) #Bombay
-
-			gc.getMap().plot(115, 52).setBonusType(iCow) #Hokkaido
+			self.createResource(12, 45, iWine) # California
+			self.createResource(31, 10, iWine) # Andes
+			self.createResource(113, 12, iWine) # Barossa Valley, Australia
 			
-			gc.getMap().plot(1, 38).setBonusType(iSugar) #Hawaii
-			gc.getMap().plot(5, 36).setBonusType(iBanana) #Hawaii
+			self.createResource(114, 11, iSheep) # Australia
+			self.createResource(116, 13, iSheep) # Australia
+			self.createResource(121, 6, iSheep) # New Zealand
 			
+			self.createResource(58, 47, iRice) # Vercelli
+			self.createResource(12, 49, iRice) # California
 			
+			self.createResource(11, 45, iFish) # California
+			self.createResource(10, 45, iFish) # California
+			self.createResource(87, 35, iFish) # Bombay
+			
+			self.createResource(115, 52, iCow) # Hokkaido
+			
+			self.createResource(1, 38, iSugar) # Hawaii
+			self.createResource(5, 36, iBanana) # Hawaii
 			
 			# flood plains in California
 			for tPlot in [(11, 46), (11, 47), (11, 48)]:
