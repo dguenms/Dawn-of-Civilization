@@ -1685,3 +1685,17 @@ class RFCUtils:
                 for i in labels:
                     popup.addButton( i )
                 popup.launch(False)
+		
+	def cityConquestCulture(self, city, iPlayer, iPreviousOwner):
+		x = city.getX()
+		y = city.getY()
+		for i in range(x-1, x+2):
+			for j in range(y-1, y+2):
+				plot = gc.getMap().plot(i, j)
+				if (i, j) == (x, y):
+					self.convertPlotCulture(plot, iPlayer, 50, False)
+				elif plot.getOwner() == iPreviousOwner:
+					self.convertPlotCulture(plot, iPlayer, 65, True)
+				else:
+					self.convertPlotCulture(plot, iPlayer, 25, True)
+	

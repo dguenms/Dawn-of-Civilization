@@ -702,9 +702,9 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		break;
 
 	case BUTTONPOPUP_FREE_COLONY:
-		if (pPopupReturn->getButtonClicked() >= 0)
+		if (pPopupReturn->getButtonClicked() > 0)
 		{
-			CvMessageControl::getInstance().sendEmpireSplit(GC.getGameINLINE().getActivePlayer(), pPopupReturn->getButtonClicked());
+			CvMessageControl::getInstance().sendEmpireSplit(GC.getGameINLINE().getActivePlayer(), pPopupReturn->getButtonClicked()-1);
 		}
 		else if (pPopupReturn->getButtonClicked() < 0)
 		{
@@ -2526,7 +2526,7 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 			if (iNumCities > 0)
 			{
 				CvWString szBuffer = gDLL->getText("TXT_KEY_RELEASE_CIVILIZATION", szCityList.GetCString(), GET_PLAYER(eOtherPlayer).getCivilizationShortDescription());
-				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getCivilizationInfo(GET_PLAYER(eOtherPlayer).getCivilizationType()).getButton(), eOtherPlayer, WIDGET_GENERAL);
+				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getCivilizationInfo(GET_PLAYER(eOtherPlayer).getCivilizationType()).getButton(), eOtherPlayer+1, WIDGET_GENERAL);
 			}
 		}
 	}

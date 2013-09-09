@@ -12807,9 +12807,32 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 						{
 							if (pLoopPlot->isPotentialCityWorkForArea(area()))
 							{
-								int iChange = ((eCultureLevel - iCultureRange) * iFreeCultureRate) + iCultureRate + 1;
-								if (ePlayer == ITALY) iChange /= 2;
-								pLoopPlot->changeCulture(ePlayer, iChange, (bUpdate || !(pLoopPlot->isOwned())));
+								// Leoreth: culture can only invade foreign core if city itself is in foreign core
+								bool bCanSpreadCore = true;
+
+								if (!pLoopPlot->isCore(ePlayer))
+								{
+									for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+									{
+										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI))
+										{
+											bCanSpreadCore = false;
+										}
+
+										if (pLoopPlot->isCore((PlayerTypes)iI) && plot()->isCore((PlayerTypes)iI))
+										{
+											bCanSpreadCore = true;
+											break;
+										}
+									}
+								}
+
+								if (bCanSpreadCore)
+								{
+									int iChange = ((eCultureLevel - iCultureRange) * iFreeCultureRate) + iCultureRate + 1;
+									if (ePlayer == ITALY) iChange /= 2;
+									pLoopPlot->changeCulture(ePlayer, iChange, (bUpdate || !(pLoopPlot->isOwned())));
+								}
 							}
 						}
 					}
