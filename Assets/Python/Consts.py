@@ -1893,7 +1893,7 @@ tRespawnTL = (
 (99, 39), #China
 -1,		# Babylonia
 -1,		# Greece
--1,		#India
+(88, 33),	# India
 -1,		# Phoenicia
 -1,		# Persia
 -1,		# Rome
@@ -1932,11 +1932,11 @@ tRespawnTL = (
 -1)		# Brazil
 
 tRespawnBR = (
-(71, 39), #Egypt
-(107, 47), #China
+(71, 39), 	# Egypt
+(107, 47), 	# China
 -1,		# Babylonia
 -1,		# Greece
--1, 		#India
+(96, 41), 	# India
 -1,		# Phoenicia
 -1,		# Persia
 -1,		# Rome

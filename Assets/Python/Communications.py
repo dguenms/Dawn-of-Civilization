@@ -147,14 +147,13 @@ class Communications:
 							lContacts.remove(iOtherCiv)
 							
 		# If we can see their borders (view distance is asymmetrical)
+		lRemove = []
 		for iOtherCiv in lContacts:
 			for city in utils.getCityList(iOtherCiv):
 				if city.hasBuilding(iNumBuildingsPlague + iCiv):
-					lContacts.remove(iOtherCiv)
-					continue
+					lRemove.append(iOtherCiv)
 				elif city.plot().isVisible(iCiv, False):
-					lContacts.remove(iOtherCiv)
-					continue
+					lRemove.append(iOtherCiv)
 				else:
 					x = city.getX()
 					y = city.getY()
@@ -163,23 +162,29 @@ class Communications:
 						for j in range(y-r, y+r+1):
 							plot = gc.getMap().plot(i, j)
 							if plot.isVisible(iOtherCiv, False) and plot.getOwner() == iCiv:
-								lContacts.remove(iOtherCiv)
-								continue
+								lRemove.append(iOtherCiv)
+								
+		for iLoopCiv in lRemove:
+			if iLoopCiv in lContacts: lContacts.remove(iLoopCiv)
 								
 		# master/vassal relationships: if master can be seen, don't cut vassal contact and vice versa
+		lRemove = []
 		for iLoopPlayer in range(con.iNumPlayers):
 			for iContact in lContacts:
-				if gc.getTeam(iContact).isAVassal(iLoopPlayer) and iLoopPlayer not in lContacts:
-					lContacts.remove(iContact)
-				elif gc.getTeam(iLoopPlayer).isAVassal(iContact) and iLoopPlayer not in lContacts:
-					lContacts.remove(iContact)
+				if gc.getTeam(iContact).isVassal(iLoopPlayer) and iLoopPlayer not in lContacts:
+					lRemove.append(iContact)
+				elif gc.getTeam(iLoopPlayer).isVassal(iContact) and iLoopPlayer not in lContacts:
+					lRemove.append(iContact)
+					
+		for iLoopCiv in lRemove:
+			if iLoopCiv in lContacts: lContacts.remove(iLoopCiv)
 								
 		# choose up to four random contacts to cut
 		for i in range(4):
 			if len(lContacts) == 0: break
 			
 			iContact = utils.getRandomEntry(lContacts)
-			utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iContact).getCivilizationShortDescription(0))
+			#utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iContact).getCivilizationShortDescription(0))
 			teamCiv.cutContact(iContact)
 
 

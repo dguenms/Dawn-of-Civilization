@@ -61817,12 +61817,12 @@
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_MUGHAL_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName>Rajah Birbar</UniqueName>
-				<UniqueName>Abu al-Fazal ibn Mubarak</UniqueName>
-				<UniqueName>Nur-ud-Din Mohammad Salim</UniqueName>
-				<UniqueName>Azam Khan</UniqueName>
-				<UniqueName>Sufi Ahmad</UniqueName>
-				<UniqueName>Mirza Gul Muhammad</UniqueName>
+				<UniqueName>Rajah Birbal</UniqueName>
+				<UniqueName>Guru Ram Das</UniqueName>
+				<UniqueName>Guru Arjan</UniqueName>
+				<UniqueName>Hiravijaya ji</UniqueName>
+				<UniqueName>Shah Abdul Latif Bhittai</UniqueName>
+				<UniqueName>Bulleh Shah</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -62035,12 +62035,12 @@
 			<Class>UNITCLASS_ARTIST</Class>
 			<Type>UNIT_MUGHAL_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName>Kamran Mirza</UniqueName>
 				<UniqueName>Gulbadan Begum</UniqueName>
-				<UniqueName>Abd as-Samad</UniqueName>
+				<UniqueName>Shaikh Abu al-Faiz ibn Mubarak</UniqueName>
+				<UniqueName>'Abd al-Samad</UniqueName>
 				<UniqueName>Ustad Mansur</UniqueName>
-				<UniqueName>Abdul Ramin Khan-i-Khana</UniqueName>
 				<UniqueName>Govardhan</UniqueName>
+				<UniqueName>Jafar Zatalli</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -62221,12 +62221,12 @@
 			<Class>UNITCLASS_SCIENTIST</Class>
 			<Type>UNIT_MUGHAL_SCIENTIST</Type>
 			<UniqueNames>
-				<UniqueName>Ali Kashmiri ibn Luqman</UniqueName>
-				<UniqueName>Babur ibn Tuzuk</UniqueName>
-				<UniqueName>Humayun</UniqueName>
-				<UniqueName>Fathullah Shirazi</UniqueName>
-				<UniqueName>Shaikh Ilm-ud-Din Ansari</UniqueName>
-				<UniqueName>Sidi Marjan</UniqueName>
+				<UniqueName>Kashmiri ibn Luqman</UniqueName>
+				<UniqueName>Abu al-Fazid ibn Mubarak</UniqueName>
+				<UniqueName>Muhammad Salih Tahtawi</UniqueName>
+				<UniqueName>'Abd-ul-Qadir Bada'uni</UniqueName>
+				<UniqueName>Maharaja Sawai Jai Singh II</UniqueName>
+				<UniqueName>Khwaja Nizam-ud-Din Ahmad</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -62412,12 +62412,12 @@
 			<Class>UNITCLASS_MERCHANT</Class>
 			<Type>UNIT_MUGHAL_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName>Abu Hassan Ghiyas Beg</UniqueName>
+				<UniqueName>Sher Shah Suri</UniqueName>
+				<UniqueName>Raja Todar Mal</UniqueName>
 				<UniqueName>Mir Jumla II</UniqueName>
-				<UniqueName>Qasim Khan Juvayni</UniqueName>
-				<UniqueName>Nawab Khair Andesh Khan</UniqueName>
-				<UniqueName>Ibrahim Khan</UniqueName>
-				<UniqueName>Lala Ratan Chand</UniqueName>
+				<UniqueName>Yahya Saleh</UniqueName>
+				<UniqueName>Khan 'Alam</UniqueName>
+				<UniqueName>Mian Muhammad Mansha</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -62598,12 +62598,12 @@
 			<Class>UNITCLASS_ENGINEER</Class>
 			<Type>UNIT_MUGHAL_ENGINEER</Type>
 			<UniqueNames>
-				<UniqueName>Shahab ud-Din Khurram</UniqueName>
-				<UniqueName>Muhi-ud-Din Aurangzeb</UniqueName>
 				<UniqueName>Ustad Ahmad Lahauri</UniqueName>
-				<UniqueName>Muhammad Azam</UniqueName>
-				<UniqueName>Zinat-al-Nisa</UniqueName>
-				<UniqueName>Safdar Jung</UniqueName>
+				<UniqueName>Fathullah Shirazi</UniqueName>
+				<UniqueName>Abdur Rahman Hye</UniqueName>
+				<UniqueName>Abdul Qadeer Khan</UniqueName>
+				<UniqueName>Munir Ahmad Khan</UniqueName>
+				<UniqueName>Yasmeen Lari</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -62784,12 +62784,12 @@
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
 			<Type>UNIT_MUGHAL_GREAT_GENERAL</Type>
 			<UniqueNames>
-				<UniqueName>Muhammad Shahabuddin Ghori</UniqueName>
-				<UniqueName>Zahir-ud-Din Muhammad Babur</UniqueName>
+				<UniqueName>Zahir-ud-din Muhammad Babur</UniqueName>
 				<UniqueName>Bayram Khan</UniqueName>
-				<UniqueName>Shaikh Alauddin Chisti</UniqueName>
 				<UniqueName>Mir Baqi</UniqueName>
 				<UniqueName>Abudullah Khan Barha</UniqueName>
+				<UniqueName>Abul Muzaffar Aurangzeb</UniqueName>
+				<UniqueName>Ali Vardi Khan</UniqueName> 
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
