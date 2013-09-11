@@ -2873,6 +2873,14 @@ class Victory:
 		if iTech in [con.iTheology, con.iMachinery, con.iCivilService] and self.getGoal(iRome, 2) == -1:
 			if self.getRomanTechs(0) == 1 and self.getRomanTechs(1) == 1 and self.getRomanTechs(2) == 1:
 				self.setGoal(iRome, 2, 1)
+					
+		# Korean UHV: Printing Press
+		if iTech == con.iPrintingPress:
+			if self.getGoal(iKorea, 1) == -1:
+				if iPlayer == iKorea:
+					self.setGoal(iKorea, 1, 1)
+				else:
+					self.setGoal(iKorea, 1, 0)
 				
 		# Polish UHV: Liberalism
 		if iTech == con.iLiberalism:
@@ -2946,14 +2954,6 @@ class Victory:
 		#if iTech in [con.iBanking, con.iPatronage, con.iEducation, con.iElectricity, con.iRadio, con.iFascism] and self.getGoal(iItaly, 0) == -1:
 		#	if self.getItalianTechs(0) == 1 and self.getItalianTechs(1) == 1 and self.getItalianTechs(2) == 1 and self.getItalianTechs(3) == 1 and self.getItalianTechs(4) == 1 and self.getItalianTechs(5) == 1:
 		#		self.setGoal(iItaly, 0, 1)
-					
-		# Korean UHV: Printing Press
-		if iTech == con.iPrintingPress:
-			if self.getGoal(iKorea, 1) == -1:
-				if iPlayer == iKorea:
-					self.setGoal(iKorea, 1, 1)
-				else:
-					self.setGoal(iKorea, 1, 0)
 					
 		# Arabian UHV: discover all medieval techs by 1300 AD
 		#if iPlayer == iArabia and self.getGoal(iArabia, 0) == -1:

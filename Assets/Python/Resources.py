@@ -11,6 +11,7 @@ import RFCUtils # edead
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 utils = RFCUtils.RFCUtils()
+localText = CyTranslator()
 
 ### Constants ###
 
