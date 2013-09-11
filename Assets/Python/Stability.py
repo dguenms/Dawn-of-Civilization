@@ -305,6 +305,8 @@ def checkStability(iPlayer, bPositive = False):
 			gc.getGame().setStabilityParameter(i, lParameters[i])
 	
 def triggerCrisis(iPlayer, iStabilityLevel, iCrisisType, lStabilityTypes):
+
+	if iStabilityLevel < 0: iStabilityLevel = 0
 	
 	# human players: receive a warning before the first crisis
 	if utils.getHumanID() == iPlayer and not sd.isCrisisImminent():
@@ -1764,8 +1766,8 @@ def getResurrectionTechs(iPlayer):
 				
 	# use independents as source civs in case no other can be found
 	if len(lSourceCivs) == 0:
-		lSourceCivs.append(iIndependent)
-		lSourceCivs.append(iIndependent2)
+		lSourceCivs.append(con.iIndependent)
+		lSourceCivs.append(con.iIndependent2)
 	
 	for iTech in range(con.iNumTechs):
 		
@@ -1786,6 +1788,8 @@ def getResurrectionTechs(iPlayer):
 	return lTechList
 	
 def relocateCapital(iPlayer, bResurrection = False):
+	if gc.getPlayer(iPlayer).getNumCities() == 0: return
+
 	tCapital = con.tCapitals[utils.getReborn(iPlayer)][iPlayer]
 	oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
 	
