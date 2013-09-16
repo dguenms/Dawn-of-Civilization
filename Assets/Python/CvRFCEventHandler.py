@@ -281,6 +281,10 @@ class CvRFCEventHandler:
                 
                 if iOwner < con.iNumActivePlayers: 
                         cnm.onCityBuilt(city)
+			
+		# starting workers
+		if gc.getPlayer(iOwner).getNumCities() == 1:
+			self.rnf.createStartingWorkers(iOwner, (city.getX(), city.getY()))
 
 		#Rhye - delete culture of barbs and minor civs to prevent weird unhappiness
                 pCurrent = gc.getMap().plot( city.getX(), city.getY() )

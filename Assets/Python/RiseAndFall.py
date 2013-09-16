@@ -2068,9 +2068,9 @@ class RiseAndFall:
                         gc.getMap().plot(123, 2).setRevealed(iCiv, False, True, -1);
                         print ("Plots covered")
 
-                        if (gc.getPlayer(iCiv).getNumCities() > 0):
-                                capital = gc.getPlayer(iCiv).getCapitalCity()
-                                self.createStartingWorkers(iCiv, (capital.getX(), capital.getY()))
+                        #if (gc.getPlayer(iCiv).getNumCities() > 0):
+                        #        capital = gc.getPlayer(iCiv).getCapitalCity()
+                        #        self.createStartingWorkers(iCiv, (capital.getX(), capital.getY()))
 
                         if (iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID()): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
 				print "Flip Popup: free region"
@@ -2131,7 +2131,7 @@ class RiseAndFall:
                                         result = plotList[rndNum]
                                         if (result):
                                                 self.createStartingUnits(iCiv, result)
-                                                self.createStartingWorkers(iCiv, result)
+                                                #self.createStartingWorkers(iCiv, result)
                                                 self.assignTechs(iCiv)
                                                 utils.setPlagueCountdown(iCiv, -con.iImmunity)
                                                 utils.clearPlague(iCiv)
@@ -2223,6 +2223,8 @@ class RiseAndFall:
 				
 				# notify dynamic names
 				dc.onCityAcquired((iCiv, iOwner, gc.getMap().plot(tCapital[0], tCapital[1]).getPlotCity(), False, True))
+				
+				self.createStartingWorkers(iCiv, tCapital)
 
                 else:           # starting units have already been placed, now to the second part
 
@@ -2255,9 +2257,9 @@ class RiseAndFall:
                         print ("Plots covered")
                                 
                         # create workers
-                        if gc.getPlayer(iCiv).getNumCities() > 0:
-                                capital = gc.getPlayer(iCiv).getCapitalCity()
-                                self.createStartingWorkers(iCiv, (capital.getX(), capital.getY()))
+                        #if gc.getPlayer(iCiv).getNumCities() > 0:
+                        #        capital = gc.getPlayer(iCiv).getCapitalCity()
+                        #        self.createStartingWorkers(iCiv, (capital.getX(), capital.getY()))
                                 
                         # convert human cities
                         if iNumHumanCitiesToConvert > 0:
