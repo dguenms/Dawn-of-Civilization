@@ -4479,6 +4479,7 @@ def doTradingCompanyConquerors2(argsList):
 		if gc.getMap().plot(x, y).isCity():
 			utils.colonialConquest(iPlayer, x, y)
 
+	tSeaPlot = -1
 	x, y = targetList[0]
 	for i in range(x-1, x+2):
 		for j in range(y-1, y+2):
