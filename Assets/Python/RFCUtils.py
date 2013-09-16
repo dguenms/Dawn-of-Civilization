@@ -1471,7 +1471,7 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return False
+		return con.iWarrior
 		
 	def getBestCavalry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -1482,7 +1482,7 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return False
+		return con.iWarrior
 		
 	def getBestSiege(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -1493,7 +1493,7 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return False
+		return con.iWarrior
 				
 	def getBestCounter(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -1504,7 +1504,7 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return False
+		return con.iWarrior
 		
 	def getBestDefender(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -1515,7 +1515,7 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return False
+		return con.iWarrior
 		
 	def getPlotList(self, tTL, tBR, tExceptions=()):
 		lResults = []
