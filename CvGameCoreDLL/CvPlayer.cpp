@@ -4845,10 +4845,14 @@ bool CvPlayer::canRaze(CvCity* pCity) const
 			{
 				return true;
 			}*/
-			if (getID() != TURKEY)
+
+			// Leoreth: not necessary anymore, culture spread now applies only after the raze decision
+			/*if (getID() != TURKEY)
 			{
 				return false;
-			}
+			}*/
+
+			return false;
 		}
 
 		//Leoreth: protect holy cities
