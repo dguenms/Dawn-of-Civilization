@@ -319,7 +319,7 @@ def triggerCrisis(iPlayer, iStabilityLevel, iCrisisType, lStabilityTypes):
 	if iStabilityLevel < con.iStabilitySolid:
 		sText = localText.getText("TXT_KEY_STABILITY_CRISIS_MESSAGE", (localText.getText(tCrisisLevels[iStabilityLevel], ()), localText.getText(tCrisisTypes[iCrisisType], ())))
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-		utils.debugTextPopup(gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + ' is experiencing a ' + localText.getText(tCrisisLevels[iStabilityLevel], ()) + ' ' + localText.getText(tCrisisTypes[iCrisisType], ()) + ' crisis!' + '\nYear: ' + str(gc.getGame().getGameTurnYear()))
+		#utils.debugTextPopup(gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + ' is experiencing a ' + localText.getText(tCrisisLevels[iStabilityLevel], ()) + ' ' + localText.getText(tCrisisTypes[iCrisisType], ()) + ' crisis!' + '\nYear: ' + str(gc.getGame().getGameTurnYear()))
 	
 	if iStabilityLevel > con.iStabilityShaky:
 		changeCrisisCountdown(iPlayer, utils.getTurns(5))
