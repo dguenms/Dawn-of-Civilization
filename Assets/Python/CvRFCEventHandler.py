@@ -121,6 +121,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("plotFeatureRemoved", self.onPlotFeatureRemoved)
 		eventManager.addEventHandler("goldenAge", self.onGoldenAge)
 		eventManager.addEventHandler("releasedPlayer", self.onReleasedPlayer)
+		eventManager.addEventHandler("cityAcquiredAndKept", self.onCityAcquiredAndKept)
                
                 self.eventManager = eventManager
 
@@ -165,7 +166,6 @@ class CvRFCEventHandler:
 
         def onCityAcquired(self, argsList):
 		iOwner, iPlayer, city, bConquest, bTrade = argsList
-		lTradingCompanyList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
                 
 		cnm.onCityAcquired(city, iPlayer)
 		
@@ -181,13 +181,6 @@ class CvRFCEventHandler:
 			
 		if iPlayer == con.iMongolia and bConquest and utils.getHumanID() != iPlayer:
 			self.up.mongolUP(city)
-			
-		if iPlayer in [con.iTurkey, con.iSeljuks]:
-			self.up.turkishUP(city, iPlayer, iOwner)
-		elif iPlayer in lTradingCompanyList and (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(iPlayer)]:
-			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
-		else:
-			utils.cityConquestCulture(city, iPlayer, iOwner)
 			
                 if iPlayer < iNumMajorPlayers:
 			utils.spreadMajorCulture(iPlayer, city.getX(), city.getY())
@@ -263,6 +256,21 @@ class CvRFCEventHandler:
 		self.dc.onCityAcquired(argsList) # DynamicCivs
                 
                 return 0
+		
+	def onCityAcquiredAndKept(self, argsList):
+		iPlayer, city = argsList
+		iOwner = city.getPreviousOwner()
+		
+		utils.debugTextPopup('City acquired and kept: ' + city.getName() + '\nPlayer: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0))
+		
+		lTradingCompanyList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+			
+		if iPlayer in [con.iTurkey, con.iSeljuks]:
+			self.up.turkishUP(city, iPlayer, iOwner)
+		elif iPlayer in lTradingCompanyList and (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(iPlayer)]:
+			self.up.tradingCompanyCulture(city, iPlayer, iOwner)
+		else:
+			utils.cityConquestCulture(city, iPlayer, iOwner)
 
         def onCityRazed(self, argsList):
                 city, iPlayer = argsList
