@@ -33,7 +33,7 @@ PyInfo = PyHelpers.PyInfo
 
 # globals
 ###################################################
-class CvEventManager:
+class CvEventManager(object):
 	def __init__(self):
 		#################### ON EVENT MAP ######################
 		#print "EVENTMANAGER INIT"

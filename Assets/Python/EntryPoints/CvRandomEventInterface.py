@@ -4297,6 +4297,7 @@ def canTriggerTradingCompanyConquerors(argsList):
 	id = lCivList.index(iPlayer)
 
 	# Leoreth: dirty solution: determine that turn's target cities during this check
+	utils.debugTextPopup('Determining colonial targets.')
 	targetList = utils.getColonialTargets(iPlayer, True)
 	
 	sd.scriptDict['tTradingCompanyConquerorsTargets'][id].extend(targetList)
@@ -4344,14 +4345,14 @@ def getTradingCompanyConquerors1HelpText(argsList):
 		for iCiv in targetCivList:
 			if targetCivList.index(iCiv) != 0:
 				sTargetCivs += ', '
-			sTargetCivs += CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
+			sTargetCivs += gc.getPlayer(iCiv).getCivilizationShortDescription(0) #CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
 
 	for tPlot in targetList:
 		x, y = tPlot
 		if targetList.index(tPlot) != 0:
 			sTargetCities += ', '
 		if gc.getMap().plot(x, y).isCity():
-			sTargetCities += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
+			sTargetCities += gc.getMap().plot(x, y).getPlotCity().getName() #CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
 		else:
 			sTargetCities += cnm.getFoundName(iCiv, (x,y))
 
@@ -4370,7 +4371,7 @@ def doTradingCompanyConquerors1(argsList):
 	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 	id = lCivList.index(iPlayer)
 
-	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+	targetList = list(sd.scriptDict['tTradingCompanyConquerorsTargets'][id])
 	targetCivList = []
 	settlerList = []
 
@@ -4389,6 +4390,7 @@ def doTradingCompanyConquerors1(argsList):
 		x, y = tPlot
 		utils.colonialAcquisition(iPlayer, x, y)
 	
+	utils.debugTextPopup(str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in targetCivList]))
 	for iTargetCiv in targetCivList:
 		iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
 		if iTargetCiv >= con.iNumPlayers:
@@ -4454,14 +4456,14 @@ def getTradingCompanyConquerors2HelpText(argsList):
 	for iCiv in targetCivList:
 		if targetCivList.index(iCiv) != 0:
 			sTargetCivs += ', '
-		sTargetCivs += CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
+		sTargetCivs += gc.getPlayer(iCiv).getCivilizationShortDescription(0) #CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),())
 
 	for tPlot in targetList:
 		x, y = tPlot
 		if gc.getMap().plot(x, y).isCity():
 			if targetList.index(tPlot) != 0:
 				sTargetCities += ', '
-			sTargetCities += CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
+			sTargetCities += gc.getMap().plot(x, y).getPlotCity().getName() #CyTranslator().getText(str(gc.getMap().plot(x, y).getPlotCity().getNameKey()),())
 
 	return localText.getText("TXT_KEY_EVENT_TCC_CONQUEST", (sTargetCivs, sTargetCities))
 
@@ -4589,22 +4591,3 @@ def doReformation3(argsList):
 	for iTargetCiv in range(con.iNumPlayers):
 		if sd.scriptDict['lReformationDecision'][iTargetCiv] == 0:
 			gc.getTeam(iPlayer).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	

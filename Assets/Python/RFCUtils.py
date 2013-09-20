@@ -1255,21 +1255,20 @@ class RFCUtils:
 					cityList.remove(cityList[iRand])
 
 		if bEmpty:
-			while len(targetList) < iNumCities:
+			while len(targetList) < iNumCities and len(lPlotList) > 0:
 				iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random free plot')
-				if len(lPlotList) > 0:
-					x, y = lPlotList[iRand]
-					bValid = True
-					for i in range(x-1, x+2):
-						for j in range(y-1, y+2):
-							if gc.getMap().plot(i, j).isCity():
-								bValid = False
-								break
-								break
-								
-					if bValid:
-						targetList.append(lPlotList[iRand])
-						lPlotList.remove(lPlotList[iRand])
+				x, y = lPlotList[iRand]
+				bValid = True
+				for i in range(x-1, x+2):
+					for j in range(y-1, y+2):
+						if gc.getMap().plot(i, j).isCity():
+							bValid = False
+							break
+							break
+							
+				if bValid:
+					targetList.append(lPlotList[iRand])
+					lPlotList.remove(lPlotList[iRand])
 
 		return targetList
 
