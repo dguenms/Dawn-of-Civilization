@@ -176,6 +176,11 @@ class Communications:
 				elif gc.getTeam(iLoopPlayer).isVassal(iContact) and iLoopPlayer not in lContacts:
 					lRemove.append(iContact)
 					
+		# if there are still vassals in the list, their masters are too -> remove the vassals, and cut contact when there masters are chosen
+		for iContact in lContacts:
+			if gc.getTeam(iContact).isAVassal() and iContact not in lRemove:
+				lRemove.append(iContact)
+					
 		for iLoopCiv in lRemove:
 			if iLoopCiv in lContacts: lContacts.remove(iLoopCiv)
 								
@@ -186,6 +191,12 @@ class Communications:
 			iContact = utils.getRandomEntry(lContacts)
 			#utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iContact).getCivilizationShortDescription(0))
 			teamCiv.cutContact(iContact)
+			
+			# remove all vassals of that civ as well
+			for iLoopCiv in range(con.iNumPlayers):
+				if gc.getTeam(iLoopCiv).isVassal(iContact):
+					#utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iLoopCiv).getCivilizationShortDescription(0))
+					teamCiv.cutContact(iLoopCiv)
 
 
 
