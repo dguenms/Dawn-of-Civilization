@@ -1366,6 +1366,17 @@
 			<Rotate>45</Rotate>
 			<!-- this needs to be the negative of the CITY_TWIST value in detail manager; note that this uses degrees but DetailManager uses radians. Sorry. -->
 		</ArtRef>
+		<ArtRef Name="building:LSYSTEM_THEODOSIAN_WALLS">
+			<Attribute Class="Scalar">szSpecialLayout:CityCenter</Attribute>
+			<Attribute Class="Scalar">szBuilder:WallBuilder</Attribute>
+			<Attribute Class="Scalar">bLayoutAfterGenerics:1</Attribute>
+			<Attribute Class="Scalar">bNoContour:1</Attribute>
+			<Attribute Class="Scalar">szPostArtFile:Art/Structures/Wonders/Theodosian Walls/post01_byz_med.nif</Attribute>
+			<Attribute Class="Scalar">szWallArtFile:Art/Structures/Wonders/Theodosian Walls/wall%1_byz_med.nif</Attribute>
+			<Scale>1.0</Scale>
+			<Rotate>45</Rotate>
+			<!-- this needs to be the negative of the CITY_TWIST value in detail manager; note that this uses degrees but DetailManager uses radians. Sorry. -->
+		</ArtRef>
 		<ArtRef Name="building:LSYSTEM_GREAT_WALL">
 			<Attribute Class="Scalar">szSpecialLayout:CityCenter</Attribute>
 			<Attribute Class="Scalar">szBuilder:GreatWallBuilder</Attribute>

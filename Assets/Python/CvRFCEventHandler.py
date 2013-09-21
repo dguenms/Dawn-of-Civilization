@@ -261,7 +261,7 @@ class CvRFCEventHandler:
 		iPlayer, city = argsList
 		iOwner = city.getPreviousOwner()
 		
-		utils.debugTextPopup('City acquired and kept: ' + city.getName() + '\nPlayer: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0))
+		#utils.debugTextPopup('City acquired and kept: ' + city.getName() + '\nPlayer: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0))
 		
 		lTradingCompanyList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 			
@@ -601,6 +601,9 @@ class CvRFCEventHandler:
 
         def onBeginPlayerTurn(self, argsList):        
                 iGameTurn, iPlayer = argsList
+		
+		if utils.getHumanID() == iPlayer:
+			utils.debugTextPopup('Can contact: ' + str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in range(con.iNumPlayers) if gc.getTeam(iPlayer).canContact(i)]))
 
                 if (self.rnf.getDeleteMode(0) != -1):
                         self.rnf.deleteMode(iPlayer)
@@ -720,7 +723,10 @@ class CvRFCEventHandler:
 
         def onPreSave(self, argsList):
                 'called before a game is actually saved'
-                sd.save() # edead: pickle & save script data
+		
+		sd.save() # edead: pickle & save script data
+		
+		
 
 
         def onLoadGame(self, argsList):

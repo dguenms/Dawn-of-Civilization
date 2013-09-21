@@ -22,15 +22,11 @@ class StoredData:
         def load(self):
                 """Loads and unpickles script data"""
                 #self.scriptDict = pickle.loads(gc.getGame().getScriptData())
-		popup = Popup.PyPopup()
-		popup.setBodyString('Loading stored data.')
-		popup.launch()
 		self.scriptDict = BugData.getTable("StoredData").data
 
         def save(self):
                 """Pickles and saves script data"""
-		CyInterface().addMessage(gc.getGame().getActivePlayer(), False, con.iDuration, 'Saving stored data.', "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-                BugData.getTable("StoredData").data = self.scriptDict
+		BugData.getTable("StoredData").data = self.scriptDict
 
         def setup(self):
                 """Initialise the global script data dictionary for usage."""

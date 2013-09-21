@@ -314,6 +314,53 @@ tFall = (
 2020,					# Argentina
 2020)					# Brazil
 
+tVictoryYears = (
+(-850, -100, 170), # Egypt
+(-1, 1000, 1800), # China
+(-1, -850, -700), # Babylonia
+(-1, -250, -330), # Greece
+(-1, 700, 1200), # India
+(-300, -100, 200), # Carthage
+(140, 350, 350), # Persia
+(100, 320, -1), # Rome
+(800, 1000, 1200), # Tamils
+(-1, 600, 1500, 1910), # Ethiopia
+(1200, -1, -1), # Korea
+(600, 900, 1600), # Maya
+(1000, 1200, 1450), # Byzantium
+(1600, 1940, -1), # Japan
+(1050, 1100, 1500), # Vikings
+(1300, 1300, -1), # Arabia
+(1000, 1400, 1700), # Tibet
+(1200, 1450, 1450), # Khmer
+(1300, 1500, 1940), # Indonesia
+(1000, 1200, 1300), # Moors
+(-1, 1650, 1700), # Spain
+(1700, 1800, 1900), # France
+(1730, 1800, -1), # England
+(1200, -1, 1700), # HolyRome
+(1700, 1920, 1950), # Russia
+(1350, 1500, 1700), # Mali
+(1400, -1, 1600), # Poland
+(1550, 1650, 1700), # Portugal
+(1500, 1550, 1700), # Inca
+(1500, 1600, 1930), # Italy
+(1300, -1, 1500), # Mongolia
+(1520, 1650, -1), # Aztecs
+(1500, 1660, 1750), # Mughals
+(1500, 1700, 1800), # Turkey
+(1650, 1700, 1900), # Thailand
+(1650, 1800, -1), # Congo
+(1650, 1750, 1800), # Iran
+(1745, 1745, 1775), # Holland
+(1900, 1940, -1), # Germany
+(1930, 2000, 2000), # America
+(1880, 1940, 1960), # Mexico
+(1900, 1930, 1960), # Argentina
+(1870, 1920, 1950), # Colombia
+(1880, -1, 1950), # Brazil
+)
+
 # Leoreth: date-triggered respawn for certain civs
 tRebirth = (
 -1,				# Egypt
