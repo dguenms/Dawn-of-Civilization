@@ -5,13 +5,6 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 import CvScreensInterface
-import Consts as con #Rhye
-
-PIXEL_INCREMENT = 7
-BOX_INCREMENT_WIDTH = 27 # Used to be 33 #Should be a multiple of 3...
-BOX_INCREMENT_HEIGHT = 9 #Should be a multiple of 3...
-BOX_INCREMENT_Y_SPACING = 6 #Should be a multiple of 3...
-BOX_INCREMENT_X_SPACING = 9 #Should be a multiple of 3...
 
 TEXTURE_SIZE = 24
 X_START = 6
@@ -679,6 +672,8 @@ class CvTechChooser:
 
 		# Improvements
 		for j in range(gc.getNumBuildInfos()):
+			if gc.getBuildInfo(j).isGraphicalOnly(): continue
+		
 			bTechFound = 0;
 
 			if (gc.getBuildInfo(j).getTechPrereq() == -1):
