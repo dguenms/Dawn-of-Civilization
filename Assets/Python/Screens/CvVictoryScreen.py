@@ -93,7 +93,7 @@ class CvVictoryScreen:
 		self.W_AREA = 1010
 		self.H_AREA = 650
 
-		self.TABLE_WIDTH_0 = 350
+		self.TABLE_WIDTH_0 = 500#350
 		self.TABLE_WIDTH_1 = 80
 		self.TABLE_WIDTH_2 = 180
 		self.TABLE_WIDTH_3 = 100
