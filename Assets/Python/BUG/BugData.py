@@ -91,6 +91,7 @@ def onGameStart(argsList):
 	initGameData()
 
 def onGameLoad(argsList):
+	print 'ON GAME LOAD'
 	initGameData().load()
 
 def save():

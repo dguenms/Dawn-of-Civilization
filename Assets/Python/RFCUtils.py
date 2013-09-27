@@ -1698,3 +1698,4 @@ class RFCUtils:
 				else:
 					self.convertPlotCulture(plot, iPlayer, 25, True)
 	
+utils = RFCUtils()

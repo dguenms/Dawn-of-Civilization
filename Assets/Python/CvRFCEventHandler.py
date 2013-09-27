@@ -730,7 +730,7 @@ class CvRFCEventHandler:
 
 
         def onLoadGame(self, argsList):
-                sd.load() # edead: load & unpickle script data
+		sd.load() # edead: load & unpickle script data
 		
 	def onChangeWar(self, argsList):
 		bWar, iTeam, iOtherTeam = argsList
