@@ -3723,7 +3723,7 @@ class RiseAndFall:
 		utils.makeUnit(con.iBuddhistMissionary, iJapan, tCapitals[0][iJapan], 3)
                 utils.makeUnit(con.iSwordsman, iJapan, tCapitals[0][iJapan], 2)
                 utils.makeUnit(con.iArcher, iJapan, tCapitals[0][iJapan], 2)
-                utils.makeUnit(con.iWorker, iJapan, tCapitals[0][iJapan], 2)
+                #utils.makeUnit(con.iWorker, iJapan, tCapitals[0][iJapan], 2)
                 tSeaPlot = self.findSeaPlots(tCapitals[0][iJapan], 1, iJapan)
                 if (tSeaPlot):                                
                         utils.makeUnit(con.iWorkBoat, iJapan, tSeaPlot, 2)
@@ -3734,7 +3734,7 @@ class RiseAndFall:
 
 
                 utils.makeUnit(con.iSettler, iVikings, tCapitals[0][iVikings], 2)
-		utils.makeUnit(con.iWorker, iVikings, tCapitals[0][iVikings], 3)
+		#utils.makeUnit(con.iWorker, iVikings, tCapitals[0][iVikings], 3)
                 utils.makeUnit(con.iLongbowman, iVikings, tCapitals[0][iVikings], 4)
                 utils.makeUnit(con.iAxeman, iVikings, tCapitals[0][iVikings], 2)
                 utils.makeUnit(con.iScout, iVikings, tCapitals[0][iVikings], 1)
@@ -3763,7 +3763,7 @@ class RiseAndFall:
 		utils.makeUnit(con.iArcher, iKorea, tCapitals[0][iKorea], 2)
 		utils.makeUnit(con.iAxeman, iKorea, tCapitals[0][iKorea], 3)
 		utils.makeUnit(con.iHorseArcher, iKorea, tCapitals[0][iKorea], 1)
-		utils.makeUnit(con.iWorker, iKorea, tCapitals[0][iKorea], 3)
+		#utils.makeUnit(con.iWorker, iKorea, tCapitals[0][iKorea], 3)
 
 		if utils.getHumanID() != iKorea:
 			utils.makeUnit(con.iMaceman, iKorea, tCapitals[0][iKorea], 2)
@@ -5253,7 +5253,7 @@ class RiseAndFall:
 							plotList.append((x,y))
 		
 		if not plotList:
-			utils.debugTextPopup('List empty.')
+			#utils.debugTextPopup('List empty: ' + str(tTL) + ' ' + str(tBR))
 			return
 		
 		tPlot = utils.getRandomEntry(plotList)

@@ -2679,6 +2679,9 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	//Rhye - start penalty 
 	//for large / giga empires
 	int iNumCities = GET_PLAYER((PlayerTypes)getID()).getNumCities();
+	int iPopulation = GET_PLAYER((PlayerTypes)getID()).getTotalPopulation();
+	int iMaxPopulation = 10 * (6 + 2 * GET_PLAYER((PlayerTypes)getID()).getCurrentEra());
+
 	int iMultiplier = 5;
 	if (GET_PLAYER((PlayerTypes)getID()).isHuman())
 		iMultiplier = 8;
@@ -2687,9 +2690,9 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	//if (GC.getGame().getTechRank(getID()) == 0)
 	//	iMultiplier += 4;
 
-	if (iNumCities > 10)
+	if (iPopulation > iMaxPopulation)
 	{
-		iCost *= 100 + iMultiplier*(iNumCities-10);
+		iCost *= 100 + iMultiplier * (iPopulation - iMaxPopulation) / 10;
 		iCost /= 100;
 	}	
 
