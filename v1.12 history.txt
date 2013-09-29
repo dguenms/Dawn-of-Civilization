@@ -71,3 +71,5 @@
 # new Polish UP: other Christian denominations do not count as non-state religions for religious unity
 # added a notification when a new resource appears or is removed
 # workers now spawn immediately when the first city is founded
+# large empire tech penalty now based on population: threshold is 10 * (6 + 2 * current era)
+# reduced the cost of Divine Right

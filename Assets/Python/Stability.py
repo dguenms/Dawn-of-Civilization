@@ -798,8 +798,16 @@ def cancelTrades(iPlayer, lTradingCivs, iNumCancels):
 			pOtherPlayer = gc.getPlayer(iOtherPlayer)
 			tOtherPlayer = gc.getTeam(iOtherPlayer)
 			
-			tPlayer.setOpenBorders(iOtherPlayer, False)
-			tOtherPlayer.setOpenBorders(iPlayer, False)
+			#tPlayer.setOpenBorders(iOtherPlayer, False)
+			#tOtherPlayer.setOpenBorders(iPlayer, False)
+			
+			lDeals = utils.getAllDealsType(iPlayer, iOtherPlayer, TradeableItems.TRADE_OPEN_BORDERS)
+			
+			if lDeals: 
+				lDeals[0].kill()
+			else:
+				utils.debugTextPopup('No appropriate deals found.')
+				continue
 			
 			pOtherPlayer.AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, utils.getTurns(10))
 			pOtherPlayer.AI_changeAttitudeExtra(iPlayer, -2)
@@ -809,6 +817,10 @@ def cancelTrades(iPlayer, lTradingCivs, iNumCancels):
 			if utils.getHumanID() == iPlayer:
 				sText = localText.getText("TXT_KEY_STABILITY_CANCEL_TRADE", (gc.getPlayer(iOtherPlayer).getCivilizationShortDescription(0),))
 				CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+				
+			if utils.getHumanID() == iOtherPlayer:
+				sText = localText.getText("TXT_KEY_STABILITY_CANCEL_TRADE", (gc.getPlayer(iPlayer).getCivilizationShortDescription(0),))
+				CyInterface().addMessage(iOtherPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 			
 def cancelDefensivePacts(iPlayer, lDefensivePactCivs):
 	tPlayer = gc.getTeam(iPlayer)
@@ -817,13 +829,26 @@ def cancelDefensivePacts(iPlayer, lDefensivePactCivs):
 		pOtherPlayer = gc.getPlayer(iOtherPlayer)
 		tOtherPlayer = gc.getTeam(iOtherPlayer)
 		
-		tPlayer.setDefensivePact(iOtherPlayer, False)
-		tOtherPlayer.setDefensivePact(iPlayer, False)
+		#tPlayer.setDefensivePact(iOtherPlayer, False)
+		#tOtherPlayer.setDefensivePact(iPlayer, False)
+			
+		lDeals = utils.getAllDealsType(iPlayer, iOtherPlayer, TradeableItems.TRADE_DEFENSIVE_PACT)
+		
+		if lDeals: 
+			lDeals[0].kill()
+		else:
+			utils.debugTextPopup('No appropriate deals found.')
+			continue
+			
 		pOtherPlayer.AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, utils.getTurns(10))
 		pOtherPlayer.AI_changeAttitudeExtra(iPlayer, -2)
 			
 		if utils.getHumanID() == iPlayer:
 			sText = localText.getText("TXT_KEY_STABILITY_CANCEL_DEFENSIVE_PACT", (gc.getPlayer(iOtherPlayer).getCivilizationShortDescription(0),))
+			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+			
+		if utils.getHumanID() == iOtherPlayer:
+			sText = localText.getText("TXT_KEY_STABILITY_CANCEL_DEFENSIVE_PACT", (gc.getPlayer(iPlayer).getCivilizationShortDescription(0),))
 			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 	
 def cancelVassals(iPlayer, lVassals, bCapitulated):
@@ -831,7 +856,19 @@ def cancelVassals(iPlayer, lVassals, bCapitulated):
 		pOtherPlayer = gc.getPlayer(iOtherPlayer)
 		tOtherPlayer = gc.getTeam(iOtherPlayer)
 		
-		tOtherPlayer.setVassal(iPlayer, False, bCapitulated)
+		#tOtherPlayer.setVassal(iPlayer, False, bCapitulated)
+		
+		if bCapitulated: iTrade = TradeableItems.TRADE_SURRENDER
+		else: iTrade = TradeableItems.TRADE_VASSAL
+		
+		lDeals = utils.getAllDealsType(iPlayer, iOtherPlayer, iTrade)
+		
+		if lDeals: 
+			lDeals[0].kill()
+		else:
+			utils.debugTextPopup('No appropriate deals found.')
+			continue
+		
 		pOtherPlayer.AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, utils.getTurns(10))
 		pOtherPlayer.AI_changeAttitudeExtra(iPlayer, -2)
 			
@@ -1331,7 +1368,7 @@ def calculateStability(iPlayer):
 			if iLoopScore > iPlayerScore: iDefensivePactStability += 5
 			
 		# bad relations
-		if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS: iRelationStability -= 2
+		if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS and not tPlayer.isAtWar(iLoopPlayer): iRelationStability -= 2
 		
 		# worst enemies
 		if pLoopPlayer.getWorstEnemy() == iPlayer:

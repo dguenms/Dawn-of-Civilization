@@ -602,8 +602,8 @@ class CvRFCEventHandler:
         def onBeginPlayerTurn(self, argsList):        
                 iGameTurn, iPlayer = argsList
 		
-		if utils.getHumanID() == iPlayer:
-			utils.debugTextPopup('Can contact: ' + str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in range(con.iNumPlayers) if gc.getTeam(iPlayer).canContact(i)]))
+		#if utils.getHumanID() == iPlayer:
+		#	utils.debugTextPopup('Can contact: ' + str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in range(con.iNumPlayers) if gc.getTeam(iPlayer).canContact(i)]))
 
                 if (self.rnf.getDeleteMode(0) != -1):
                         self.rnf.deleteMode(iPlayer)

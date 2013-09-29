@@ -1697,5 +1697,26 @@ class RFCUtils:
 					self.convertPlotCulture(plot, iPlayer, 65, True)
 				else:
 					self.convertPlotCulture(plot, iPlayer, 25, True)
+					
+	def getAllDeals(self, iFirstPlayer, iSecondPlayer):
+		lDeals = []
+		pGame = gc.getGame()
+		
+		for i in range(pGame.getNumDeals()):
+			pDeal = pGame.getDeal(i)
+			if (pDeal.getFirstPlayer() == iFirstPlayer and pDeal.getSecondPlayer() == iSecondPlayer) or (pDeal.getFirstPlayer() == iSecondPlayer and pDeal.getSecondPlayer() == iFirstPlayer):
+				lDeals.append(pDeal)
+				
+		return lDeals
+		
+	def getAllDealsType(self, iFirstPlayer, iSecondPlayer, iTradeableItem):
+		lDeals = []
+	
+		for pDeal in utils.getAllDeals(iFirstPlayer, iSecondPlayer):
+			for j in range(pDeal.getLengthFirstTrades()):
+				if pDeal.getFirstTrade(j).ItemType == iTradeableItem:
+					lDeals.append(pDeal)
+					
+		return lDeals
 	
 utils = RFCUtils()
