@@ -988,7 +988,7 @@
 		<German>Borobudur</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HELP_BOROBUDUR</Tag>
+		<Tag>TXT_KEY_BUILDING_ANGKOR_WAT_HELP</Tag>
 		<English>[ICON_BULLET]Artists can also be hired using Priest slots.</English>
 		<German>[ICON_BULLET]Künstler können auch mithilfe von Priesterstellen eingestellt werden.</German>
 	</TEXT>
@@ -1079,8 +1079,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STATUE_OF_ZEUS_EFFECT</Tag>
-		<English>[ICON_BULLET]Increases military unit production speed by 25% in all cities with pagan temples</English>
-		<German>[ICON_BULLET]Erhöht die Produktionsgeschwindigkeit militärischer Einheiten in allen Städten mit heidnischen Tempeln um 25%</German>
+		<English>[ICON_BULLET]No city resistance on conquest[NEWLINE][ICON_BULLET]Increases military unit production speed by 25% in all cities with pagan temples</English>
+		<German>[ICON_BULLET]Kein Widerstand nach Stadteroberung[NEWLINE][ICON_BULLET]Erhöht die Produktionsgeschwindigkeit militärischer Einheiten in allen Städten mit heidnischen Tempeln um 25%</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY_HELP</Tag>
@@ -1265,5 +1265,10 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 		<Tag>TXT_KEY_BUILDING_FORBIDDEN_PALACE_HELP</Tag>
 		<English>[ICON_BULLET]Civic Upkeep Reduced by 33%</English>
 		<German>[ICON_BULLET]Staatsformen-Unterhalt um 33% reduziert</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EIFFEL_TOWER_HELP</Tag>
+		<English>[ICON_BULLET]Golden Ages consume at most three great people.</English>
+		<German>[ICON_BULLET]Goldene Zeitalter verbrauchen höchstens drei große Persönlichkeiten.</German>
 	</TEXT>
 </Civ4GameText>

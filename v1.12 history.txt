@@ -1,4 +1,4 @@
-# removed the mercenary mechanic
+># removed the mercenary mechanic
 # new civics:
 	# GOVERNMENT
 	  1. Dynasticism (Monarchy, medium): +1 happiness per military unit (+4 max)
@@ -73,3 +73,10 @@
 # workers now spawn immediately when the first city is founded
 # large empire tech penalty now based on population: threshold is 10 * (6 + 2 * current era)
 # reduced the cost of Divine Right
+# Borobudur now gives three priest slots and +1 production for priests
+# Wat Preah Pisnulok now gives +1 population in all cities and allows to hire artists with priest slots
+# The Eiffel Tower now gives +50% culture and caps the golden age cost at three great people
+# The Statue of Zeus now also gives no city resistance on conquest, and is cheaper to build
+# The Dome of the Rock now requires the Temple of Solomon, but is very cheap to build
+# The Temple of Solomon now also gives one free priest
+# Notre Dame now faster to build with Marble
