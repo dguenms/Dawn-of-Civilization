@@ -2687,8 +2687,8 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 		iMultiplier = 8;
 
 	// Leoreth: larger penalty for tech leader
-	//if (GC.getGame().getTechRank(getID()) == 0)
-	//	iMultiplier += 4;
+	if (GC.getGame().getTechRank(getID()) == 0)
+		iMultiplier += 4;
 
 	if (iPopulation > iMaxPopulation)
 	{

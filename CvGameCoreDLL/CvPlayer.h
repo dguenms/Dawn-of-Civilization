@@ -1116,7 +1116,7 @@ public:
 	bool isReborn(); // Leoreth
     int getReborn(); // Leoreth
     void setReborn(); // Leoreth
-    bool isHasBuilding(BuildingTypes eIndex); // Leoreth
+    bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
 	DllExport int getWarMapValue(int x, int y); //Leoreth
 
 	int getLatestRebellionTurn();

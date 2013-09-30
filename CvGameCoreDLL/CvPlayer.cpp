@@ -9799,6 +9799,12 @@ int CvPlayer::getGoldenAgeLength() const
 
 int CvPlayer::getNumUnitGoldenAges() const
 {
+	// Leoreth: Eiffel Tower effect: golden age cost capped at 3 GPs
+	if (isHasBuilding((BuildingTypes)EIFFELTOWER))
+	{
+		return std::min(m_iNumUnitGoldenAges, 1);
+	}
+
 	return m_iNumUnitGoldenAges;
 }
 
@@ -24700,7 +24706,7 @@ int CvPlayer::getWarMapValue(int x, int y)
 	return warMaps[getReborn()][getID()][EARTH_Y-1-y][x];
 }
 
-bool CvPlayer::isHasBuilding(BuildingTypes eIndex)
+bool CvPlayer::isHasBuilding(BuildingTypes eIndex) const
 {
     return (countNumBuildings(eIndex) > 0);
 }

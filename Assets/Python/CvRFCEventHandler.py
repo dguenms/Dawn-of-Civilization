@@ -243,6 +243,10 @@ class CvRFCEventHandler:
 				if utils.isPlotInArea((city.getX(), city.getY()), con.tSouthCentralAmericaTL, con.tSouthCentralAmericaBR):
 					city.setOccupationTimer(0)
 					
+			# Statue of Zeus effect: no city resistance on conquest
+			if gc.getPlayer(iPlayer).countNumBuildings(con.iStatueOfZeus) > 0 and not gc.getTeam(iPlayer).isHasTech(con.iTheology):
+				city.setOccupationTimer(0)
+					
 		if bTrade:
 			for i in range(con.iScotlandYard - con.iHeroicEpic + 1):
 				iNationalWonder = i + con.iHeroicEpic

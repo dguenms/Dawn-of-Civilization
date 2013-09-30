@@ -10750,8 +10750,8 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
 
-	// Leoreth: Borobudur effect
-	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)BOROBUDUR) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
+	// Leoreth: Wat Preah Pisnulok effect
+	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)ANGKORWAT) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
 	{
 		if (eIndex == (SpecialistTypes)2) // artist
 		{
