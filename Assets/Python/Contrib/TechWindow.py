@@ -14,6 +14,7 @@ TechWindowOpt = BugCore.game.TechWindow
 # BUG - Options - end
 
 localText = CyTranslator()
+gc = CyGlobalContext()
 
 class CvTechSplashScreen:
 	"Splash screen for techs"
@@ -300,6 +301,8 @@ class CvTechSplashScreen:
 #---Eingefügt START - kann komplett gelöscht werden --------------
                 # Improvements
 		for j in range(CyGlobalContext().getNumBuildInfos()):
+				if gc.getBuildInfo(j).isGraphicalOnly(): continue
+		
 				bTechFound = 0;
 				if (CyGlobalContext().getBuildInfo(j).getTechPrereq() == -1):
 					bTechFound = 0

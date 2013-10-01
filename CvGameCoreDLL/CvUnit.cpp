@@ -7644,59 +7644,59 @@ int CvUnit::workRate(bool bMax) const
         iRate /= 100;
         break;
 	case MAYA:
-		iRate *= 120;
-		iRate /= 100;
-		break;
-    case BYZANTIUM:
-        iRate *= 90;
-        iRate /= 100;
-        break;
-	case JAPAN:
-		iRate *= 110 + (int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //115
-		iRate /= 100;
-		break;
-	case VIKING:
-		iRate *= 120;
-		iRate /= 100;
-		break;
-	case ARABIA:
 		iRate *= 100;
 		iRate /= 100;
 		break;
+    case BYZANTIUM:
+        iRate *= 80;
+        iRate /= 100;
+        break;
+	case JAPAN:
+		iRate *= 100 + (int)GET_PLAYER((PlayerTypes)getOwnerINLINE()).getCurrentEra(); //115
+		iRate /= 100;
+		break;
+	case VIKING:
+		iRate *= 100;
+		iRate /= 100;
+		break;
+	case ARABIA:
+		iRate *= 80;
+		iRate /= 100;
+		break;
 	case TIBET:
-		iRate *= 120;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case KHMER:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case INDONESIA:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case MOORS:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case SPAIN:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case FRANCE:
-		iRate *= 120;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case ENGLAND:
-		iRate *= 130;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case HOLY_ROME:
-		iRate *= 120;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case RUSSIA:
-		iRate *= 135;
+		iRate *= 120;
 		iRate /= 100;
 		break;
 	case MALI:
@@ -7704,55 +7704,55 @@ int CvUnit::workRate(bool bMax) const
 		iRate /= 100;
 		break;
 	case POLAND:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case PORTUGAL:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case TURKEY:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case INCA:
-		iRate *= 135;
+		iRate *= 125;
 		iRate /= 100;
 		break;
 	case ITALY:
-		iRate *= 140;
+		iRate *= 120;
 		iRate /= 100;
 		break;
 	case MONGOLIA:
-		iRate *= 115;
+		iRate *= 110;
 		iRate /= 100;
 		break;
 	case MUGHALS:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case AZTEC:
-		iRate *= 135;
+		iRate *= 125;
 		iRate /= 100;
 		break;
 	case THAILAND:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case CONGO:
-		iRate *= 110;
+		iRate *= 100;
 		iRate /= 100;
 		break;
 	case NETHERLANDS:
-		iRate *= 130;
+		iRate *= 120;
 		iRate /= 100;
 		break;
 	case GERMANY:
-		iRate *= 140;
+		iRate *= 120;
 		iRate /= 100;
 		break;
 	case AMERICA:
-		iRate *= 150;
+		iRate *= 125;
 		iRate /= 100;
 		break;
 	case ARGENTINA:
