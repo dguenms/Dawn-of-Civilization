@@ -4049,7 +4049,7 @@ class Victory:
 				aHelp.append(self.getIcon(bItaly) + localText.getText("TXT_KEY_VICTORY_ITALY", ()) + ' ' + self.getIcon(bIberia) + localText.getText("TXT_KEY_VICTORY_IBERIA_CARTHAGE", ()))
 			elif iGoal == 2:
 				iGold = pCarthage.getGold()
-				aHelp.append(self.getIcon(iGold >= utils.getTurns()) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(5000))))
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(5000))))
 
 		elif iPlayer == iRome:
 			if iGoal == 0:

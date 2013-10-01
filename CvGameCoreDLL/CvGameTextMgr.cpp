@@ -5510,7 +5510,10 @@ void CvGameTextMgr::setTechHelp(CvWStringBuffer &szBuffer, TechTypes eTech, bool
 	//	Build farm, irrigation, etc...
 	for (iI = 0; iI < GC.getNumBuildInfos(); ++iI)
 	{
-		buildImprovementString(szBuffer, eTech, iI, true, bPlayerContext);
+		if (!GC.getBuildInfo((BuildTypes)iI).isGraphicalOnly())
+		{
+			buildImprovementString(szBuffer, eTech, iI, true, bPlayerContext);
+		}
 	}
 
 	//	Extra moves for certain domains...

@@ -80,3 +80,5 @@
 # The Dome of the Rock now requires the Temple of Solomon, but is very cheap to build
 # The Temple of Solomon now also gives one free priest
 # Notre Dame now faster to build with Marble
+# removed Mesopotamia from Rome's historical area
+# removed Canada from America's historical area
