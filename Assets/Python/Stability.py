@@ -307,6 +307,7 @@ def checkStability(iPlayer, bPositive = False):
 def triggerCrisis(iPlayer, iStabilityLevel, iCrisisType, lStabilityTypes):
 
 	if iStabilityLevel < 0: iStabilityLevel = 0
+	elif iStabilityLevel > 4: iStabilityLevel = 4
 	
 	# human players: receive a warning before the first crisis
 	if utils.getHumanID() == iPlayer and not sd.isCrisisImminent():
@@ -570,13 +571,14 @@ def secedeCity(city, iNewOwner):
 	sName = city.getName()
 	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
 	
-	if iNewOwner in [con.iIndependent, con.iIndependent2, con.iNative, con.iBarbarian]:
-		sText = localText.getText("TXT_KEY_STABILITY_CITY_INDEPENDENCE", (sName,))
-		CyInterface().addMessage(city.getOwner(), False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-	else:
-		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER", (sName, gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
-		utils.debugTextPopup(sText)
-		CyInterface().addMessage(city.getOwner(), False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+	if city.getOwner() == utils.getHumanID():
+		if iNewOwner in [con.iIndependent, con.iIndependent2, con.iNative, con.iBarbarian]:
+			sText = localText.getText("TXT_KEY_STABILITY_CITY_INDEPENDENCE", (sName,))
+			CyInterface().addMessage(city.getOwner(), False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+		else:
+			sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER", (sName, gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
+			utils.debugTextPopup(sText)
+			CyInterface().addMessage(city.getOwner(), False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		
 	if utils.getHumanID() == iNewOwner:
 		sText = localText.getText("TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US", (sName,))
