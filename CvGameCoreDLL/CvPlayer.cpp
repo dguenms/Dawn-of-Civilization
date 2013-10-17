@@ -1878,7 +1878,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 				else
 				{
 					pNewCity->chooseProduction();
-					GC.getGameINLINE().logMsg("City acquired and kept: %s by %s", pNewCity->getName(), getCivilizationShortDescription(0));
 					CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pNewCity);
 				}
 			}
@@ -1894,7 +1893,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 		else
 		{
-			GC.getGameINLINE().logMsg("City acquired and kept: %s by %s", pNewCity->getName(), getCivilizationShortDescription(0));
 			CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pNewCity);
 		}
 	}
