@@ -45,6 +45,10 @@
 		<English>Lombard Peoples</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DESC_DEFAULT</Tag>
+		<English>Kingdom of Italy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_ITALIAN_LEAGUE</Tag>
 		<English>Italian League</English>
 	</TEXT>
