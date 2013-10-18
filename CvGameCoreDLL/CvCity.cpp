@@ -643,6 +643,11 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iSpecialistGoodHappiness = 0;
 	m_iSpecialistBadHappiness = 0;
 
+	m_iCorporationGoodHappiness = 0;
+	m_iCorporationBadHappiness = 0;
+	m_iCorporationHealth = 0;
+	m_iCorporationUnhealth = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
