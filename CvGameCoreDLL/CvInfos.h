@@ -4145,6 +4145,8 @@ public:
 	int getSpreadFactor() const;				// Exposed to Python
 	int getSpreadCost() const;				// Exposed to Python
 	int getMaintenance() const;				// Exposed to Python
+	int getHappiness() const;
+	int getHealth() const;
 	int getMissionType() const;					// Exposed to Python
 	void setMissionType(int iNewType);
 
@@ -4179,6 +4181,8 @@ protected:
 	int m_iSpreadFactor;
 	int m_iSpreadCost;
 	int m_iMaintenance;
+	int m_iHappiness;
+	int m_iHealth;
 	int m_iMissionType;
 	int m_iBonusProduced;
 

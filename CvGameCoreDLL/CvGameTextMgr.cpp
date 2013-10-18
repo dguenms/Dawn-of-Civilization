@@ -8897,6 +8897,15 @@ void CvGameTextMgr::setBadHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
+		// Leoreth
+		iHealth = (city.getCorporationUnhealth());
+		if (iHealth > 0)
+		{
+			iTotalHealth += iHealth;
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HEALTH_FROM_CORPORATIONS", iHealth));
+			szBuffer.append(NEWLINE);
+		}
+
 		iHealth = -(GET_PLAYER(city.getOwnerINLINE()).getExtraHealth());
 		if (iHealth > 0)
 		{
@@ -9013,6 +9022,14 @@ void CvGameTextMgr::setGoodHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		if (iHealth > 0)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_GOOD_HEALTH_FROM_BUILDINGS", iHealth));
+			szBuffer.append(NEWLINE);
+		}
+
+		// Leoreth
+		iHealth = city.getCorporationHealth();
+		if (iHealth > 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HEALTH_GOOD_HEALTH_FROM_CORPORATIONS", iHealth));
 			szBuffer.append(NEWLINE);
 		}
 
@@ -9277,6 +9294,13 @@ void CvGameTextMgr::setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
+		iAnger = city.getCorporationBadHappiness();
+		if (iAnger > 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_ANGER_CORPORATION", iAnger));
+			szBuffer.append(NEWLINE);
+		}
+
 		iNewAnger -= std::min(0, city.getCommerceHappiness());
 		iAnger = ((iNewAnger - iOldAnger) + std::min(0, iOldAnger));
 		if (iAnger > 0)
@@ -9323,6 +9347,7 @@ void CvGameTextMgr::setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		iOldAnger = iNewAnger;
 
 		iOldAnger += city.getSpecialistBadHappiness();
+		iOldAnger += city.getCorporationBadHappiness();
 
 		szBuffer.append(L"-----------------------\n");
 
@@ -9420,6 +9445,14 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		{
 			iTotalHappy += iHappy;
 			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_SPECIALISTS", iHappy));
+			szBuffer.append(NEWLINE);
+		}
+
+		iHappy = city.getCorporationGoodHappiness();
+		if (iHappy > 0)
+		{
+			iTotalHappy += iHappy;
+			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_CORPORATION", iHappy));
 			szBuffer.append(NEWLINE);
 		}
 
@@ -10024,6 +10057,67 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 		szBuffer.append(gDLL->getText("TXT_KEY_CORPORATION_ALL_CITIES", szTempBuffer.GetCString()));
 	}
 
+	// Leoreth: happiness and health
+	szTempBuffer.clear();
+	int iHappinessProduced = GC.getCorporationInfo(eCorporation).getHappiness();
+
+	if (iHappinessProduced != 0)
+	{
+		if (!szTempBuffer.empty())
+		{
+			szTempBuffer += L", ";
+		}
+
+		if (iHappinessProduced % 100 == 0)
+		{
+			szTempBuffer += CvWString::format(L"+%d%c",
+				abs(iHappinessProduced / 10),
+				iHappinessProduced > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR));
+		}
+		else
+		{
+			szTempBuffer += CvWString::format(L"+%.2f%c",
+				0.1f * abs(iHappinessProduced),
+				iHappinessProduced > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR));
+		}
+	}
+
+	if (!szTempBuffer.empty())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_CORPORATION_ALL_CITIES", szTempBuffer.GetCString()));
+	}
+
+	szTempBuffer.clear();
+	int iHealthProduced = GC.getCorporationInfo(eCorporation).getHealth();
+
+	if (iHealthProduced != 0)
+	{
+		if (!szTempBuffer.empty())
+		{
+			szTempBuffer += L", ";
+		}
+
+		if (iHealthProduced % 100 == 0)
+		{
+			szTempBuffer += CvWString::format(L"+%d%c",
+				abs(iHealthProduced / 10),
+				iHappinessProduced > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR));
+		}
+		else
+		{
+			szTempBuffer += CvWString::format(L"+%.2f%c",
+				0.1f * abs(iHealthProduced),
+				iHappinessProduced > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR));
+		}
+	}
+
+	if (!szTempBuffer.empty())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_CORPORATION_ALL_CITIES", szTempBuffer.GetCString()));
+	}
+
 	if (!bCivilopedia)
 	{
 		if (kCorporation.getTechPrereq() != NO_TECH)
@@ -10166,7 +10260,7 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 		BonusTypes eBonus = (BonusTypes)kCorporation.getPrereqBonus(i);
 		if (NO_BONUS != eBonus)
 		{
-			iNumResources += pCity->getNumBonuses(eBonus);
+			iNumResources += std::min(12, pCity->getNumBonuses(eBonus));
 		}
 	}
 
@@ -10220,6 +10314,22 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 			szBuffer.append(szTempBuffer);
 			bHandled = true;
 		}
+	}
+
+	// Leoreth: happiness and health
+	int iHappiness = pCity->getCorporationHappinessByCorporation(eCorporation);
+	int iHealth = pCity->getCorporationHealthByCorporation(eCorporation);
+
+	if (iHappiness != 0)
+	{
+		CvWString szTempBuffer = CvWString::format(L"+%d%c", (abs(iHappiness) + 99) / 100, iHappiness > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR));
+		szBuffer.append(szTempBuffer);
+	}
+
+	if (iHealth != 0)
+	{
+		CvWString szTempBuffer = CvWString::format(L"+%d%c", (abs(iHealth) + 99) / 100, iHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR));
+		szBuffer.append(szTempBuffer);
 	}
 
 	int iMaintenance = 0;

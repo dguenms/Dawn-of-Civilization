@@ -552,6 +552,21 @@
 		<German>%D1_Change[ICON_UNHAPPY]: "Unsere Sklaven sehnen sich nach Freiheit!"</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_HAPPY_CORPORATION</Tag>
+		<English>%D1_Change[ICON_HAPPY]: "Our corporations treat us well!"</English>
+		<German>%D1_Change[ICON_HAPPY]: "Unsere Kapitalgesellschaften behandeln uns gut!"</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ANGER_CORPORATION</Tag>
+		<English>%D1_Change[ICON_UNHAPPY]: "Our workers are being exploited!"</English>
+		<German>%D1_Change[ICON_UNHAPPY]: "Unsere Arbeiter werden ausgebeutet!"</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HEALTH_FROM_CORPORATIONS</Tag>
+		<English>%D1_Change[ICON_UNHEALTHY] from Corporations</English>
+		<German>%D1_Change[ICON_UNHEALTHY] durch Kapitalgesellschaften</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRADE_SLAVE</Tag>
 		<English>Slave Trade</English>
 		<German>Sklavenhandel</German>

@@ -82,3 +82,4 @@
 # Notre Dame now faster to build with Marble
 # removed Mesopotamia from Rome's historical area
 # removed Canada from America's historical area
+# Corporations create unhappiness and pollution now
