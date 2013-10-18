@@ -15,6 +15,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>0</iHappiness>
+			<iHealth>0</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_SILK</BonusType>
 				<BonusType>BONUS_COTTON</BonusType>
@@ -44,6 +46,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>0</iHappiness>
+			<iHealth>0</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_SPICES</BonusType>
 				<BonusType>BONUS_SUGAR</BonusType>
@@ -76,6 +80,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>-2</iHappiness>
+			<iHealth>0</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_WHEAT</BonusType>
 				<BonusType>BONUS_CORN</BonusType>
@@ -107,6 +113,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>-2</iHappiness>
+			<iHealth>0</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_CRAB</BonusType>
 				<BonusType>BONUS_CLAM</BonusType>
@@ -142,6 +150,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>-4</iHappiness>
+			<iHealth>-2</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_SHEEP</BonusType>
 				<BonusType>BONUS_COTTON</BonusType>
@@ -178,6 +188,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>-4</iHappiness>
+			<iHealth>-3</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_COAL</BonusType>
 				<BonusType>BONUS_COPPER</BonusType>
@@ -213,6 +225,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>-4</iHappiness>
+			<iHealth>-4</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
@@ -243,6 +257,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>-3</iHappiness>
+			<iHealth>-2</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_GOLD</BonusType>
 				<BonusType>BONUS_SILVER</BonusType>
@@ -277,6 +293,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
+			<iHappiness>-4</iHappiness>
+			<iHealth>-2</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_ALUMINUM</BonusType>

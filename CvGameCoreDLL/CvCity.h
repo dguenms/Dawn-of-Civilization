@@ -647,10 +647,18 @@ public:
 	int getCorporationCommerceByCorporation(CommerceTypes eIndex, CorporationTypes eCorporation) const;			// Exposed to Python
 	int getCorporationYield(YieldTypes eIndex) const;																				// Exposed to Python
 	int getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes eCorporation) const;			// Exposed to Python
+	int getCorporationGoodHappiness() const;
+	int getCorporationBadHappiness() const;
+	int getCorporationHappinessByCorporation(CorporationTypes eCorporation) const;
+	int getCorporationHealth() const;
+	int getCorporationUnhealth() const;
+	int getCorporationHealthByCorporation(CorporationTypes eCorporation) const;
 	void updateCorporation();
 	void updateCorporationCommerce(CommerceTypes eIndex);
 	void updateCorporationYield(YieldTypes eIndex);
 	void updateCorporationBonus();
+	void updateCorporationHappiness();
+	void updateCorporationHealth();
 
 	int getCommerceRateModifier(CommerceTypes eIndex) const;										// Exposed to Python
 	void changeCommerceRateModifier(CommerceTypes eIndex, int iChange);
@@ -1048,6 +1056,11 @@ protected:
 	//Leoreth
 	int m_iSpecialistGoodHappiness;
 	int m_iSpecialistBadHappiness;
+
+	int m_iCorporationGoodHappiness;
+	int m_iCorporationBadHappiness;
+	int m_iCorporationHealth;
+	int m_iCorporationUnhealth;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

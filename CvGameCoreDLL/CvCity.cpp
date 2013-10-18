@@ -5075,6 +5075,7 @@ int CvCity::unhappyLevel(int iExtra) const
 		iUnhappiness += std::max(0, getVassalUnhappiness());
 		iUnhappiness += std::max(0, getEspionageHappinessCounter());
 		iUnhappiness += std::max(0, getSpecialistBadHappiness()); // Leoreth
+		iUnhappiness += std::max(0, getCorporationBadHappiness()); // Leoreth
 	}
 
 	return std::max(0, iUnhappiness);
@@ -5095,6 +5096,7 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, getFeatureGoodHappiness());
 	iHappiness += std::max(0, getBonusGoodHappiness());
 	iHappiness += std::max(0, getReligionGoodHappiness());
+	iHappiness += std::max(0, getCorporationGoodHappiness()); // Leoreth
 	iHappiness += std::max(0, getSpecialistGoodHappiness()); // Leoreth
 	iHappiness += std::max(0, getCommerceHappiness());
 	iHappiness += std::max(0, area()->getBuildingHappiness(getOwnerINLINE()));
@@ -5107,7 +5109,6 @@ int CvCity::happyLevel() const
 	{
 		iHappiness += GC.getDefineINT("TEMP_HAPPY");
 	}
-
 
 	return std::max(0, iHappiness);
 }
@@ -5233,6 +5234,13 @@ int CvCity::goodHealth() const
 		iTotalHealth += iHealth;
 	}
 
+	// Leoreth
+	iHealth = getCorporationHealth();
+	if (iHealth > 0)
+	{
+		iTotalHealth += iHealth;
+	}
+
 	iHealth = GET_PLAYER(getOwnerINLINE()).getExtraHealth() + getExtraHealth();
 	if (iHealth > 0)
 	{
@@ -5298,6 +5306,13 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 	}
 
 	iHealth = totalBadBuildingHealth();
+	if (iHealth < 0)
+	{
+		iTotalHealth += iHealth;
+	}
+
+	// Leoreth
+	iHealth = -getCorporationUnhealth();
 	if (iHealth < 0)
 	{
 		iTotalHealth += iHealth;
@@ -9461,8 +9476,8 @@ void CvCity::updateCorporationCommerce(CommerceTypes eIndex)
 
 	for (int iI = 0; iI < GC.getNumCorporationInfos(); iI++)
 	{
-		iNewCommerce += getCorporationCommerceByCorporation(eIndex, ((CorporationTypes)iI)); //Rhye - corporation cap (headquarters)
-		//iNewCommerce += std::min(25, getCorporationCommerceByCorporation(eIndex, ((CorporationTypes)iI))); //Rhye - corporation cap (headquarters)
+		//iNewCommerce += getCorporationCommerceByCorporation(eIndex, ((CorporationTypes)iI)); //Rhye - corporation cap (headquarters)
+		iNewCommerce += std::min(25, getCorporationCommerceByCorporation(eIndex, ((CorporationTypes)iI))); //Rhye - corporation cap (headquarters)
 	}
 
 	if (getCorporationCommerce(eIndex) != iNewCommerce)
@@ -9481,8 +9496,8 @@ void CvCity::updateCorporationYield(YieldTypes eIndex)
 
 	for (int iI = 0; iI < GC.getNumCorporationInfos(); iI++)
 	{
-		iNewYield += getCorporationYieldByCorporation(eIndex, (CorporationTypes)iI); //Rhye - corporation cap (headquarters)
-		//iNewYield += std::min(25, getCorporationYieldByCorporation(eIndex, (CorporationTypes)iI)); //Rhye - corporation cap (headquarters)
+		//iNewYield += getCorporationYieldByCorporation(eIndex, (CorporationTypes)iI); //Rhye - corporation cap (headquarters)
+		iNewYield += std::min(25, getCorporationYieldByCorporation(eIndex, (CorporationTypes)iI)); //Rhye - corporation cap (headquarters)
 	}
 
 	if (iOldYield != iNewYield)
@@ -9491,6 +9506,85 @@ void CvCity::updateCorporationYield(YieldTypes eIndex)
 		FAssert(getCorporationYield(eIndex) >= 0);
 
 		changeBaseYieldRate(eIndex, (iNewYield - iOldYield));
+	}
+}
+
+// Leoreth
+void CvCity::updateCorporationHappiness()
+{
+	int iHappiness;
+
+	int iOldGoodHappiness = getCorporationGoodHappiness();
+	int iNewGoodHappiness = 0;
+
+	int iOldBadHappiness = getCorporationBadHappiness();
+	int iNewBadHappiness = 0;
+
+	for (int iI = 0; iI < GC.getNumCorporationInfos(); iI++)
+	{
+		iHappiness = getCorporationHappinessByCorporation((CorporationTypes)iI);
+
+		if (iHappiness > 0)
+		{
+			iNewGoodHappiness += iHappiness;
+		}
+
+		if (iHappiness < 0)
+		{
+			iNewBadHappiness -= iHappiness;
+		}
+	}
+
+	if (iOldGoodHappiness != iNewGoodHappiness)
+	{
+		m_iCorporationGoodHappiness = iNewGoodHappiness;
+		FAssert(getCorporationGoodHappiness() >= 0);
+	}
+
+	if (iOldBadHappiness != iNewBadHappiness)
+	{
+		m_iCorporationBadHappiness = iNewBadHappiness;
+		FAssert(getCorporationBadHappiness() >= 0);
+	}
+}
+
+
+// Leoreth
+void CvCity::updateCorporationHealth()
+{
+	int iHealth;
+
+	int iOldHealth = getCorporationHealth();
+	int iNewHealth = 0;
+
+	int iOldUnhealth = getCorporationUnhealth();
+	int iNewUnhealth = 0;
+
+	for (int iI = 0; iI < GC.getNumCorporationInfos(); iI++)
+	{
+		iHealth = getCorporationHealthByCorporation((CorporationTypes)iI);
+
+		if (iHealth > 0)
+		{
+			iNewHealth += iHealth;
+		}
+
+		if (iHealth < 0)
+		{
+			iNewUnhealth -= iHealth;
+		}
+	}
+
+	if (iOldHealth != iNewHealth)
+	{
+		m_iCorporationHealth = iNewHealth;
+		FAssert(getCorporationHealth() >= 0);
+	}
+
+	if (iOldUnhealth != iNewUnhealth)
+	{
+		m_iCorporationUnhealth = iNewUnhealth;
+		FAssert(getCorporationUnhealth() >= 0);
 	}
 }
 
@@ -9512,6 +9606,10 @@ void CvCity::updateCorporation()
 	}
 
 	updateMaintenance();
+
+	updateCorporationHappiness();
+
+	updateCorporationHealth();
 }
 
 
@@ -13430,6 +13528,13 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iSpecialistFreeExperience);
 	pStream->Read(&m_iEspionageDefenseModifier);
 
+	pStream->Read(&m_iSpecialistGoodHappiness);
+	pStream->Read(&m_iSpecialistBadHappiness);
+	pStream->Read(&m_iCorporationGoodHappiness);
+	pStream->Read(&m_iCorporationBadHappiness);
+	pStream->Read(&m_iCorporationHealth);
+	pStream->Read(&m_iCorporationUnhealth);
+
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
 	pStream->Read(&m_bDrafted);
@@ -13670,6 +13775,13 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCitySizeBoost);
 	pStream->Write(m_iSpecialistFreeExperience);
 	pStream->Write(m_iEspionageDefenseModifier);
+
+	pStream->Write(m_iSpecialistGoodHappiness);
+	pStream->Write(m_iSpecialistBadHappiness);
+	pStream->Write(m_iCorporationGoodHappiness);
+	pStream->Write(m_iCorporationBadHappiness);
+	pStream->Write(m_iCorporationHealth);
+	pStream->Write(m_iCorporationUnhealth);
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -15375,4 +15487,74 @@ bool CvCity::isMongolUP() const
 void CvCity::setMongolUP(bool bNewValue)
 {
 	m_bMongolUP = bNewValue;
+}
+
+int CvCity::getCorporationGoodHappiness() const
+{
+	return m_iCorporationGoodHappiness;
+}
+
+int CvCity::getCorporationBadHappiness() const
+{
+	return m_iCorporationBadHappiness;
+}
+
+int CvCity::getCorporationHappinessByCorporation(CorporationTypes eCorporation) const
+{
+	FAssertMsg(eCorporation >= 0, "eCorporation expected to be >= 0");
+	FAssertMsg(eCorporation < GC.getNumCorporationInfos(), "GC.getNumCorporationInfos expected to be >= 0");
+
+	int iNumBonuses = 0;
+	int iHappiness = 0;
+
+	if (isActiveCorporation(eCorporation) && !isDisorder())
+	{
+		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
+		{
+			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
+			iNumBonuses = getNumBonuses(eBonus);
+
+			if (NO_BONUS != eBonus && iNumBonuses > 0)
+			{
+				iHappiness += GC.getCorporationInfo(eCorporation).getHappiness() * std::min(12, getNumBonuses(eBonus));
+			}
+		}
+	}
+
+	return iHappiness / 10;
+}
+
+int CvCity::getCorporationHealth() const
+{
+	return m_iCorporationHealth;
+}
+
+int CvCity::getCorporationUnhealth() const
+{
+	return m_iCorporationUnhealth;
+}
+
+int CvCity::getCorporationHealthByCorporation(CorporationTypes eCorporation) const
+{
+	FAssertMsg(eCorporation >= 0, "eCorporation expected to be >= 0");
+	FAssertMsg(eCorporation < GC.getNumCorporationInfos(), "GC.getNumCorporationInfos expected to be >= 0");
+
+	int iNumBonuses = 0;
+	int iHealth = 0;
+
+	if (isActiveCorporation(eCorporation) && !isDisorder())
+	{
+		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
+		{
+			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
+			iNumBonuses = getNumBonuses(eBonus);
+
+			if (NO_BONUS != eBonus && iNumBonuses > 0)
+			{
+				iHealth += GC.getCorporationInfo(eCorporation).getHealth() * std::min(12, getNumBonuses(eBonus));
+			}
+		}
+	}
+
+	return iHealth / 10;
 }
