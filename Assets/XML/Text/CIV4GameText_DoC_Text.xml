@@ -587,5 +587,19 @@
 		<Italian>[ICON_BULLET]Il primo a scoprire fonda[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]El primero en descubrir se incorpora[SPACE]</Spanish>
 	</TEXT>
-	
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_OPTION_MODDER_1</Tag>
+		<English>Display UHV End Turns</English>
+		<German>EHS Endrunden Anzeigen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_OPTION_MODDER_1_HELP</Tag>
+		<English>The turn in which your UHV goals must be completed is displayed even after the discovery of Calendar.</English>
+		<German>Die Runde, in der Ihre EHS-Ziele erfüllt werden müssen, wird auch nach der Entdeckung des Kalenders angezeigt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_UHV_END_TURN</Tag>
+		<English>(Turn %d1)</English>
+		<German>(Runde %d1)</German>
+	</TEXT>
 </Civ4GameText>
