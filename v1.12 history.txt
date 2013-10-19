@@ -83,3 +83,5 @@
 # removed Mesopotamia from Rome's historical area
 # removed Canada from America's historical area
 # Corporations create unhappiness and pollution now
+# Deadlines for all UHV goals are now displayed before Calendar is discovered
+# Added an option to display UHV goal deadlines regardless of the knowledge of Calendar

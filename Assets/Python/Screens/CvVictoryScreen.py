@@ -93,10 +93,10 @@ class CvVictoryScreen:
 		self.W_AREA = 1010
 		self.H_AREA = 650
 
-		self.TABLE_WIDTH_0 = 500#350
+		self.TABLE_WIDTH_0 = 550#500#350
 		self.TABLE_WIDTH_1 = 80
 		self.TABLE_WIDTH_2 = 180
-		self.TABLE_WIDTH_3 = 100
+		self.TABLE_WIDTH_3 = 120#100
 		self.TABLE_WIDTH_4 = 180
 		self.TABLE_WIDTH_5 = 100
 
@@ -1542,7 +1542,7 @@ class CvVictoryScreen:
 						sGoalTurn = ''
 						if not gc.getTeam(self.iActivePlayer).isHasTech(con.iCalendar) or gc.getPlayer(self.iActivePlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
 							iVictoryYear = con.tVictoryYears[self.iActivePlayer][i]
-							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (getTurnForYear(iVictoryYear),))
+							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (getTurnForYear(iVictoryYear) - utils.getScenarioStartTurn(),))
                                                 screen.setTableText(szTable, 0, iRow, sGoalText + sGoalTurn, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY) # edead - added game speed type
                                                 screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
                                                 if (utils.getGoal(self.iActivePlayer, i) == 1):       
