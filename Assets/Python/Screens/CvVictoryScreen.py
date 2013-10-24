@@ -1560,6 +1560,28 @@ class CvVictoryScreen:
 								screen.setTableText(szTable, 0, iRow, szHelp, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
                                         bEntriesFound = True
                                 #Rhye - end
+				
+				# Leoreth: Religious Victory
+				if iLoopVC == 8:
+					iVictoryType = utils.getReligiousVictoryType(self.iActivePlayer)
+					if iVictoryType > -1:
+						for i in range(3):
+							iRow = screen.appendTableRow(szTable)
+							sGoalText = localText.getText(con.tReligiousGoals[gc.getGame().getGameSpeedType()][iVictoryType][i], ())
+							screen.setTableText(szTable, 0, iRow, sGoalText, '', WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+							screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+							if vic.checkReligiousGoal(self.iActivePlayer, i) == 1: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_YES'
+							elif vic.checkReligiousGoal(self.iActivePlayer, i) == 0: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_NO'
+							else: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_NOTYET'
+							screen.setTableText(szTable, 3, iRow, localText.getText(sGoalProgress, ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+							
+							aHelpStrings = vic.getURVHelp(self.iActivePlayer, i)
+							if len(aHelpStrings) > 0:
+								for szHelp in aHelpStrings:
+									iRow = screen.appendTableRow(szTable)
+									szHelp = '    ' + szHelp
+									screen.setTableText(szTable, 0, iRow, szHelp, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						bEntriesFound = True
 					
 				if (bEntriesFound):
 					screen.appendTableRow(szTable)

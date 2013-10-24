@@ -85,3 +85,48 @@
 # Corporations create unhappiness and pollution now
 # Deadlines for all UHV goals are now displayed before Calendar is discovered
 # Added an option to display UHV goal deadlines regardless of the knowledge of Calendar
+# Added a Religious victory option depending on your state religion
+	# Protestantism
+	   - be first to discover Liberalism, Constitution and Economics
+	   - make sure there are five great merchants and five great engineers settled in Protestant civilizations
+	   - make sure that at least half of all civilizations are Protestant or secular
+	# Catholicism
+	   - be Pope for 100 turns
+	   - control the Catholic shrine and make sure 12 great prophets are settled in Catholic civilizations
+	   - make sure 50% of the world territory are controlled by Catholic civilizations
+	# Orthodoxy
+	   - build four Orthodox cathedrals
+	   - control three cities with influential culture
+	   - make sure there are no Catholic civilizations
+	# Islam
+	   - spread Islam to 50%
+	   - settle seven great people in the Muslim holy city
+	   - control five shrines
+	# Hinduism
+	   - settle five different great people in the Hindu holy city
+	   - experience 24 turns of golden age
+	   - have a total population of 500 million
+	# Buddhism
+	   - be at peace for 100 turns
+	   - have the highest approval rating for 100 turns
+	   - have no furious or annoyed relations with any civilizations
+	# Confucianism
+	   - have friendly relations with five civilizations
+	   - control the Confucian and Taoist shrine and combine their income to 40 gold
+	   - settle five great people in the Confucian holy city
+	# Taoism
+	   - make sure there are two other Taoist civilizations
+	   - build three wonders in the Taoist holy city
+	   - have legendary culture in the Taoist holy city
+	# Zoroastrianism
+	   - acquire six incense resources
+	   - spread Zoroastrianism to 20%
+	   - have legendary culture in the Zoroastrian holy city
+	# Polytheism
+	   - make sure there are 15 pagan temples in the world
+	   - control ten wonders that require no state religion
+	   - don't allow more than half of your cities to have a religion
+	# Secularism
+	   - control the temples of seven different religions
+	   - make sure there are 20 universities in secular civilizations
+	   - be first to enter the industrial and modern eras

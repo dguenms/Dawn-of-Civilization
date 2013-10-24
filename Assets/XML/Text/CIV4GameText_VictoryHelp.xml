@@ -564,4 +564,116 @@
 		<Tag>TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES</Tag>
 		<English>Gold from trading resources: %d1 / %d2</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROTESTANT_MERCHANTS</Tag>
+		<English>Protestant great merchants: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROTESTANT_ENGINEERS</Tag>
+		<English>Protestant great engineers: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROTESTANT_CIVS</Tag>
+		<English>Protestant or secular civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_POPE_TURNS</Tag>
+		<English>Turns as Pope: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CATHOLIC_SAINTS</Tag>
+		<English>Catholic great prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CATHOLIC_WORLD_TERRITORY</Tag>
+		<English>Territory controlled by Catholic civilizations: %s1 / %s2%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS</Tag>
+		<English>Orthodox cathedrals: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORTHODOX_INFLUENTIAL_CITIES</Tag>
+		<English>Orthodox influential cities: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_GREAT_PEOPLE</Tag>
+		<English>Great people in %s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_CATHOLICS</Tag>
+		<English>No Catholic civilizations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_DIFFERENT_GREAT_PEOPLE</Tag>
+		<English>Different great people in %s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOLDEN_AGE_TURNS</Tag>
+		<English>Golden age turns: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_REAL_POPULATION</Tag>
+		<English>Total Population: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PEACE_TURNS</Tag>
+		<English>Turns spent at peace: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HAPPINESS_TURNS</Tag>
+		<English>Turns with highest approval rating: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_BAD_RELATIONS</Tag>
+		<English>No furious or annoyed relations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_CIVS</Tag>
+		<English>Friendly civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CHINESE_SHRINE_INCOME</Tag>
+		<English>Combined shrine income: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TAOIST_CIVS</Tag>
+		<English>Other Taoist civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HOLY_CITY_WONDERS</Tag>
+		<English>Wonders in %s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LEGENDARY_CULTURE_CITY</Tag>
+		<English>Legendary culture in %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_HOLY_CITY</Tag>
+		<English>Control %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_PAGAN_TEMPLES_WORLD</Tag>
+		<English>Pagan temples in the world: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_NONRELIGIOUS_WONDERS</Tag>
+		<English>Controlled nonreligious wonders: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_POLYTHEISM_NEVER_RELIGION</Tag>
+		<English>Never more than half of all cities with a religion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DIFFERENT_TEMPLES</Tag>
+		<English>Temples of different religions: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SECULAR_UNIVERSITIES</Tag>
+		<English>Universities in secular civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_</Tag>
+		<English></English>
+	</TEXT>
 </Civ4GameText>
