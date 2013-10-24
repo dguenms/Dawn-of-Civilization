@@ -2471,8 +2471,46 @@ class Victory:
                         if (gc.getGame().getWinner() == -1):                              
                                 if (self.getGoal(iPlayer, 0) == 1 and self.getGoal(iPlayer, 1) == 1 and self.getGoal(iPlayer, 2) == 1) and gc.getGame().getGameTurnYear() >= con.tBirth[utils.getHumanID()]: #Leoreth: don't win during autoplay
                                         gc.getGame().setWinner(iPlayer, 7) #Historical Victory
-
-
+					
+		# check religious victory (human only)
+		if utils.getHumanID() == iPlayer:
+			iVictoryType = utils.getReligiousVictoryType(iPlayer)
+			
+			if iVictoryType == con.iCatholicism and gc.getGame().getSecretaryGeneral(1) == iPlayer:
+				sd.changePopeTurns(1)
+				
+			if iVictoryType == con.iHinduism and gc.getPlayer(iPlayer).isGoldenAge():
+				sd.changeHinduGoldenAgeTurns(1)
+				
+			if iVictoryType == con.iBuddhism:
+				bAtPeace = True
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getTeam(iPlayer).isAtWar(iLoopPlayer):
+						bAtPeace = False
+						break
+				if bAtPeace:
+					sd.changeBuddhistPeaceTurns(1)
+				
+				lApprovalList = [utils.getApprovalRate(i) for i in range(con.iNumPlayers)]
+				iHighestEntry = utils.getHighestEntry(lApprovalList)
+				if lApprovalList.index(iHighestEntry) == iPlayer:
+					sd.changeBuddhistHappinessTurns(1)
+					
+			if iVictoryType == con.iVictoryPolytheism:
+				iReligionCities = 0
+				cityList = utils.getCityList(iPlayer)
+				for city in cityList:
+					for iReligion in range(con.iNumReligions):
+						if city.isHasReligion(iReligion):
+							iReligionCities += 1
+							break
+				if 2 * iReligionCities > len(cityList):
+					sd.setPolytheismNoReligion(False)
+				else:
+					sd.setPolytheismNoReligion(True)
+		
+			if self.checkReligiousGoal(iPlayer, 0) == 1 and self.checkReligiousGoal(iPlayer, 1) == 1 and self.checkReligiousGoal(iPlayer, 2) == 1:
+				gc.getGame().setWinner(iPlayer, 8)
 
 
         def onCityBuilt(self, city, iPlayer): #see onCityBuilt in CvRFCEventHandler
@@ -2743,6 +2781,15 @@ class Victory:
                         return
 
                 iGameTurn = gc.getGame().getGameTurn()
+		
+		# Protestant URV: Liberalism, Constitution, Economics
+		if iTech == con.iLiberalism and sd.getProtestantTechs(0) == -1: sd.setProtestantTechs(0, iPlayer)
+		elif iTech == con.iConstitution and sd.getProtestantTechs(1) == -1: sd.setProtestantTechs(1, iPlayer)
+		elif iTech == con.iEconomics and sd.getProtestantTechs(2) == -1: sd.setProtestantTechs(2, iPlayer)
+		
+		# Secular URV:
+		if gc.getTechInfo(iTech).getEra() == con.iIndustrial and sd.getFirstIndustrial() == -1: sd.setFirstIndustrial(iPlayer)
+		elif gc.getTechInfo(iTech).getEra() == con.iModern and sd.getFirstModern() == -1: sd.setFirstModern(iPlayer)
 		
 		# Leoreth: ignore AI civs to improve speed 
 		# important: include all civs with tech goals in list so that the check is made for all players to catch failed goals
@@ -3480,6 +3527,320 @@ class Victory:
 				
 				if pHolyCity.getX() == iX and pHolyCity.getY() == iY:
 					self.setGoal(iMali, 0, 1)
+					
+	def checkReligiousGoal(self, iPlayer, iGoal):
+		pPlayer = gc.getPlayer(iPlayer)
+		iVictoryType = utils.getReligiousVictoryType(iPlayer)
+		
+		if iVictoryType == -1: return -1
+		
+		elif iVictoryType == con.iProtestantism:
+		
+			# First Protestant goal: Be first to discover Liberalism, Constitution and Economics
+			if iGoal == 0:
+				iLiberalism = sd.getProtestantTechs(0)
+				iConstitution = sd.getProtestantTechs(0)
+				iEconomics = sd.getProtestantTechs(0)
+				
+				if iLiberalism == iPlayer and iConstitution == iPlayer and iEconomics == iPlayer: return 1
+				
+				if iLiberalism != iPlayer or iConstitution != iPlayer or iEconomics != iPlayer: return 0
+				
+			# Second Protestant goal: Make sure five great merchants and great engineers are settled in Protestant civilizations
+			elif iGoal == 1:
+				iEngineers = 0
+				iMerchants = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iProtestantism:
+						for city in utils.getCityList(iLoopPlayer):
+							iEngineers += city.getFreeSpecialistCount(con.iGreatEngineer)
+							iMerchants += city.getFreeSpecialistCount(con.iGreatMerchant)
+							
+				if iEngineers >= 5 and iMerchants >= 5: return 1
+				
+			# Third Protestant goal: Make sure at least half of all civilizations are Protestant or Secular
+			elif iGoal == 2:
+				iNumTotalCivs = 0
+				iNumProtestantCivs = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive():
+						iNumTotalCivs += 1
+						if gc.getPlayer(iLoopPlayer).getStateReligion() == con.iProtestantism or gc.getPlayer(iLoopPlayer).getCivics(4) == con.iCivicSecularism:
+							iNumProtestantCivs += 1
+							
+				if 2 * iNumProtestantCivs >= iNumTotalCivs: return 1
+				
+		elif iVictoryType == con.iCatholicism:
+		
+			# First Catholic goal: Be Pope for 100 turns
+			if iGoal == 0:
+				if sd.getPopeTurns() >= utils.getTurns(100): return 1
+				
+			# Second Catholic goal: Control the Catholic shrine and make sure 12 great prophets are settled in Catholic civilizations
+			elif iGoal == 1:
+				bShrine = pPlayer.countNumBuildings(con.iChristianShrine) >= 1
+				iSaints = 0
+				
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iCatholicism:
+						for city in utils.getCityList(iLoopPlayer):
+							iSaints += city.getFreeSpecialistCount(con.iGreatPriest)
+							
+				if bShrine and iSaints >= 12: return 1
+
+			# Third Catholic goal: Make sure 50% of world territory is controlled by Catholic civilizations
+			elif iGoal == 2:
+				iTotalLand = gc.getMap().getLandPlots()
+				iCatholicLand = 0
+				
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iCatholicism:
+						iCatholicLand += gc.getPlayer(iLoopPlayer).getTotalLand()
+						
+				fLandPercent = 100.0 * iCatholicLand / iTotalLand
+				
+				if fLandPercent >= 50.0: return 1
+				
+		elif iVictoryType == con.iOrthodoxy:
+				
+			# First Orthodox goal: build four Orthodox Cathedrals
+			if iGoal == 0:
+				if pPlayer.countNumBuildings(con.iOrthodoxCathedral) >= 4: return 1
+				
+			# Second Orthodox goal: have three Orthodox cities with influential culture
+			elif iGoal == 1:
+				iCount = 0
+				for city in utils.getCityList(iPlayer):
+					if city.isHasReligion(con.iOrthodoxy) and city.getCultureLevel() >= 5:
+						iCount += 1
+						
+				if iCount >= 3: return 1
+				
+			# Third Orthodox goal: make sure there are no Catholic civilizations in the world
+			elif iGoal == 2:
+				bNoCatholics = True
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iCatholicism:
+						bNoCatholics = False
+						break
+						
+				if bNoCatholics: return 1
+				
+		elif iVictoryType == con.iIslam:
+		
+			# First Muslim goal: spread Islam to 50%
+			if iGoal == 0:
+				fReligionPercent = gc.getGame().calculateReligionPercent(con.iIslam)
+				
+				if fReligionPercent >= 50.0: return 1
+				
+			# Second Muslim goal: settle seven great people in the Muslim holy city
+			elif iGoal == 1:
+				iCount = 0
+				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+					iCount += gc.getGame().getHolyCity(con.iIslam).getFreeSpecialistCount(iGreatPerson)
+					
+				if iCount >= 7: return 1
+				
+			# Third Muslim goal: Control five shrines
+			elif iGoal == 2:
+				iCount = 0
+				for iReligion in range(con.iNumReligions):
+					iCount += pPlayer.countNumBuildings(con.iJewishShrine + 4*iReligion)
+					
+				if iCount >= 5: return 1
+				
+		elif iVictoryType == con.iHinduism:
+		
+			# First Hindu goal: settle five different great people in the Hindu holy city
+			if iGoal == 0:
+				iCount = 0
+				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+					if gc.getGame().getHolyCity(con.iHinduism).getFreeSpecialistCount(iGreatPerson) > 0:
+						iCount += 1
+						
+				if iCount >= 5: return 1
+				
+			# Second Hindu goal: experience 24 turns of golden age
+			elif iGoal == 1:
+				if sd.getHinduGoldenAgeTurns() >= utils.getTurns(24): return 1
+				
+			# Third Hindu goal: have a total population of 500 million
+			elif iGoal == 2:
+				if pPlayer.getRealPopulation() >= 500000000: return 1
+				
+		elif iVictoryType == con.iBuddhism:
+		
+			# First Buddhist goal: be at peace for 100 turns
+			if iGoal == 0:
+				if sd.getBuddhistPeaceTurns() >= utils.getTurns(100): return 1
+				
+			# Second Buddhist goal: have the highest approval rating for 100 turns
+			elif iGoal == 1:
+				if sd.getBuddhistHappinessTurns() >= utils.getTurns(100): return 1
+				
+			# Third Buddhist goal: have no furious or annoyed relations with any civilization
+			elif iGoal == 2:
+				bNoBadRelations = True
+				for iLoopPlayer in range(con.iNumPlayers):
+					if iLoopPlayer == iPlayer: continue
+					if not gc.getTeam(iPlayer).isHasMet(iLoopPlayer):
+						bNoBadRelations = False
+						break
+					
+					iAttitude = gc.getPlayer(iLoopPlayer).AI_getAttitude(iPlayer)
+					if iAttitude == AttitudeTypes.ATTITUDE_FURIOUS or iAttitude == AttitudeTypes.ATTITUDE_ANNOYED:
+						bNoBadRelations = False
+						break
+						
+				if bNoBadRelations: return 1
+				
+		elif iVictoryType == con.iConfucianism:
+		
+			# First Confucian goal: have friendly relations with five civilizations
+			if iGoal == 0:
+				iFriendlyCivs = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if iLoopPlayer == iPlayer: continue
+					if not gc.getPlayer(iLoopPlayer).isAlive(): continue
+					
+					if gc.getPlayer(iLoopPlayer).AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY:
+						iFriendlyCivs += 1
+						
+				if iFriendlyCivs >= 5: return 1
+				
+			# Second Confucian goal: control the Confucian and Taoist shrine and combine their income to 40 gold
+			elif iGoal == 1:
+				bConfucianShrine = pPlayer.countNumBuildings(con.iConfucianShrine) > 0
+				bTaoistShrine = pPlayer.countNumBuildings(con.iTaoistShrine) > 0
+				
+				iThreshold = 20
+				if pPlayer.countNumBuildings(con.iTempleOfSalomon) > 0 and not gc.getTeam(iPlayer).isHasTech(con.iLiberalism):
+					iThreshold = 40
+					
+				iConfucianIncome = min(iThreshold, gc.getGame().countReligionLevels(con.iConfucianism))
+				iTaoistIncome = min(iThreshold, gc.getGame().countReligionLevels(con.iTaoism))
+				
+				if bConfucianShrine and bTaoistShrine and iConfucianIncome + iTaoistIncome >= 40: return 1
+				
+			# Third Confucian goal: settle five great people in the Confucian holy city
+			elif iGoal == 2:
+				iCount = 0
+				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+					iCount += gc.getGame().getHolyCity(con.iConfucianism).getFreeSpecialistCount(iGreatPerson)
+					
+				if iCount >= 5: return 1
+				
+		elif iVictoryType == con.iTaoism:
+		
+			# First Taoist goal: make sure at least two other civilizations have Taoism as state religion
+			if iGoal == 0:
+				iCount = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if iLoopPlayer == iPlayer: continue
+					
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iTaoism:
+						iCount += 1
+						
+				if iCount >= 2: return 1
+				
+			# Second Taoist goal: have three wonders in the Tao holy city
+			elif iGoal == 1:
+				iCount = 0
+				holyCity = gc.getGame().getHolyCity(con.iTaoism)
+				for iBuilding in range(con.iPyramid, con.iNumBuildings):
+					if iBuilding == con.iOlympicPark: continue
+					
+					if holyCity.isHasRealBuilding(iBuilding): iCount += 1
+					
+				if holyCity.getOwner() == iPlayer and iCount >= 3: return 1
+				
+			# Third Taoist goal: have legendary culture in the Tao holy city
+			elif iGoal == 2:
+				holyCity = gc.getGame().getHolyCity(con.iTaoism)
+				
+				if holyCity.getOwner() == iPlayer and holyCity.getCultureLevel() >= 6: return 1
+				
+		elif iVictoryType == con.iZoroastrianism:
+		
+			# First Zoroastrian goal: acquire six incense resources
+			if iGoal == 0:
+				if pPlayer.getNumAvailableBonuses(con.iIncense) >= 6: return 1
+				
+			# Second Zoroastrian goal: spread Zoroastrianism to 20%
+			elif iGoal == 1:
+				fReligionPercent = gc.getGame().calculateReligionPercent(con.iZoroastrianism)
+				
+				if fReligionPercent >= 20.0: return 1
+				
+			# Third Zoroastrian goal: have legendary culture in the Zoroastrian holy city
+			elif iGoal == 2:
+				holyCity = gc.getGame().getHolyCity(con.iZoroastrianism)
+				
+				if holyCity.getOwner() == iPlayer and holyCity.getCultureLevel() >= 6: return 1
+				
+		elif iVictoryType == con.iVictoryPolytheism:
+		
+			# First Polytheist goal: make sure there are 15 pagan temples in the world
+			if iGoal == 0:
+				iCount = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					iCount += gc.getPlayer(iLoopPlayer).countNumBuildings(utils.getUniqueBuilding(iLoopPlayer, con.iPaganTemple))
+					
+				if iCount >= 15: return 1
+				
+			# Second Polytheist goal: control ten wonders that require no state religion
+			elif iGoal == 1:
+				iCount = 0
+				for iBuilding in range(con.iPyramid, con.iNumBuildings):
+					if iBuilding == con.iOlympicPark: continue
+					
+					if gc.getBuildingInfo(iBuilding).getPrereqReligion() < 0 and pPlayer.countNumBuildings(iBuilding) > 0:
+						iCount += 1
+						
+				if iCount >= 10: return 1
+				
+			# Third Polytheist goal: don't allow more than half of your cities to have a religion
+			elif iGoal == 2:
+				if sd.isPolytheismNeverReligion(): return 1				
+				
+		elif iVictoryType == con.iVictorySecularism:
+		
+			# First Secular goal: control the temples of seven different religions
+			if iGoal == 0:
+				iCount = 0
+				for iReligion in range(con.iNumReligions):
+					if pPlayer.countNumBuildings(con.iJewishTemple + 4*iReligion) > 0:
+						iCount += 1
+						
+				if iCount >= 7: return 1
+				
+			# Second Secular goal: make sure there are 20 universities controlled by secular civilizations
+			elif iGoal == 1:
+				iCount = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getCivics(4) == con.iCivicSecularism:
+						iCount += gc.getPlayer(iLoopPlayer).countNumBuildings(utils.getUniqueBuilding(iLoopPlayer, con.iUniversity))
+						
+				if iCount >= 20: return 1
+				
+			# Third Secular goal: be first to enter the industrial and modern eras
+			elif iGoal == 2:
+				iIndustrial = sd.getFirstIndustrial()
+				iModern = sd.getFirstModern()
+				
+				if iIndustrial == iPlayer and iModern == iPlayer: return 1
+				
+				if iIndustrial != iPlayer or iModern != iPlayer: return 0
+				
+		return -1
+					
+#####################################################################################################################################################
+#
+#	UTILITY METHODS
+#
+#####################################################################################################################################################
+					
 
         def calculateTopCityCulture(self, x, y):
                 iBestCityValue = 0
@@ -3896,8 +4257,230 @@ class Victory:
 			return u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 		else:
 			return u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
-
-
+			
+			
+	def getURVHelp(self, iPlayer, iGoal):
+		pPlayer = gc.getPlayer(iPlayer)
+		iVictoryType = utils.getReligiousVictoryType(iPlayer)
+		aHelp = []
+		
+		if self.checkReligiousGoal(iPlayer, iGoal) == 1:
+			aHelp.append(self.getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED", ()))
+			return aHelp
+		elif self.checkReligiousGoal(iPlayer, iGoal) == 0:
+			aHelp.append(self.getIcon(False) + localText.getText("TXT_KEY_VICTORY_GOAL_FAILED", ()))
+			return aHelp
+			
+		if iVictoryType == con.iProtestantism:
+			if iGoal == 0:
+				bLiberalism = sd.getProtestantTechs(0) == iPlayer
+				bConstitution = sd.getProtestantTechs(0) == iPlayer
+				bEconomics = sd.getProtestantTechs(0) == iPlayer
+				aHelp.append(self.getIcon(bLiberalism) + localText.getText("TXT_KEY_TECH_LIBERALISM", ()) + ' ' + self.getIcon(bConstitution) + localText.getText("TXT_KEY_TECH_CONSTITUTION", ()) + ' ' + self.getIcon(bEconomics) + localText.getText("TXT_KEY_TECH_ECONOMICS", ()))
+			elif iGoal == 1:
+				iEngineers = 0
+				iMerchants = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iProtestantism:
+						for city in utils.getCityList(iLoopPlayer):
+							iEngineers += city.getFreeSpecialistCount(con.iGreatEngineer)
+							iMerchants += city.getFreeSpecialistCount(con.iGreatMerchant)
+				aHelp.append(self.getIcon(iMerchants >= 5) + localText.getText("TXT_KEY_VICTORY_PROTESTANT_MERCHANTS", (iMerchants, 5)) + ' ' + self.getIcon(iEngineers >= 5) + localText.getText("TXT_KEY_VICTORY_PROTESTANT_ENGINEERS", (iEngineers, 5)))
+			elif iGoal == 2:
+				iNumTotalCivs = 0
+				iNumProtestantCivs = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive():
+						iNumTotalCivs += 1
+						if gc.getPlayer(iLoopPlayer).getStateReligion() == con.iProtestantism or gc.getPlayer(iLoopPlayer).getCivics(4) == con.iCivicSecularism:
+							iNumProtestantCivs += 1
+				aHelp.append(self.getIcon(2 * iNumProtestantCivs >= iNumTotalCivs) + localText.getText("TXT_KEY_VICTORY_PROTESTANT_CIVS", (iNumProtestantCivs, iNumTotalCivs)))
+				
+		elif iVictoryType == con.iCatholicism:
+			if iGoal == 0:
+				iPopeTurns = sd.getPopeTurns()
+				aHelp.append(self.getIcon(iPopeTurns >= utils.getTurns(100)) + localText.getText("TXT_KEY_VICTORY_POPE_TURNS", (iPopeTurns, utils.getTurns(100))))
+			elif iGoal == 1:
+				bShrine = pPlayer.countNumBuildings(con.iChristianShrine) >= 1
+				iSaints = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iCatholicism:
+						for city in utils.getCityList(iLoopPlayer):
+							iSaints += city.getFreeSpecialistCount(con.iGreatPriest)
+				aHelp.append(self.getIcon(bShrine) + localText.getText("TXT_KEY_BUILDING_CHRISTIAN_SHRINE", ()) + ' ' + self.getIcon(iSaints >= 12) + localText.getText("TXT_KEY_VICTORY_CATHOLIC_SAINTS", (iSaints, 12)))
+			elif iGoal == 2:
+				iTotalLand = gc.getMap().getLandPlots()
+				iCatholicLand = 0
+				
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iCatholicism:
+						iCatholicLand += gc.getPlayer(iLoopPlayer).getTotalLand()
+						
+				fLandPercent = 100.0 * iCatholicLand / iTotalLand
+				aHelp.append(self.getIcon(fLandPercent >= 50.0) + localText.getText("TXT_KEY_VICTORY_CATHOLIC_WORLD_TERRITORY", (str(u"%.2f%%" % fLandPercent), str(50))))
+				
+		elif iVictoryType == con.iOrthodoxy:
+			if iGoal == 0:
+				iOrthodoxCathedrals = pPlayer.countNumBuildings(con.iOrthodoxCathedral)
+				aHelp.append(self.getIcon(iOrthodoxCathedrals >= 4) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS", (iOrthodoxCathedrals, 4)))
+			elif iGoal == 1:
+				iCount = 0
+				for city in utils.getCityList(iPlayer):
+					if city.isHasReligion(con.iOrthodoxy) and city.getCultureLevel() >= 5:
+						iCount += 1
+				aHelp.append(self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_INFLUENTIAL_CITIES", (iCount, 3)))
+			elif iGoal == 2:
+				bNoCatholics = True
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iCatholicism:
+						bNoCatholics = False
+						break
+				aHelp.append(self.getIcon(bNoCatholics) + localText.getText("TXT_KEY_VICTORY_NO_CATHOLICS", ()))
+				
+		elif iVictoryType == con.iIslam:
+			if iGoal == 0:
+				fReligionPercent = gc.getGame().calculateReligionPercent(con.iIslam)
+				aHelp.append(self.getIcon(fReligionPercent >= 50.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(con.iIslam).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(50))))
+			elif iGoal == 1:
+				iCount = 0
+				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+					iCount += gc.getGame().getHolyCity(con.iIslam).getFreeSpecialistCount(iGreatPerson)
+				aHelp.append(self.getIcon(iCount >= 7) + localText.getText("TXT_KEY_VICTORY_CITY_GREAT_PEOPLE", (gc.getGame().getHolyCity(con.iIslam).getName(), iCount, 7)))
+			elif iGoal == 2:
+				iCount = 0
+				for iReligion in range(con.iNumReligions):
+					iCount += pPlayer.countNumBuildings(con.iJewishShrine + 4*iReligion)
+				aHelp.append(self.getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_SHRINES", (iCount, 5)))
+				
+		elif iVictoryType == con.iHinduism:
+			if iGoal == 0:
+				iCount = 0
+				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+					if gc.getGame().getHolyCity(con.iHinduism).getFreeSpecialistCount(iGreatPerson) > 0:
+						iCount += 1
+				aHelp.append(self.getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_CITY_DIFFERENT_GREAT_PEOPLE", (gc.getGame().getHolyCity(con.iHinduism).getName(), iCount, 5)))
+			elif iGoal == 1:
+				iGoldenAgeTurns = sd.getHinduGoldenAgeTurns()
+				aHelp.append(self.getIcon(iGoldenAgeTurns >= utils.getTurns(24)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGE_TURNS", (iGoldenAgeTurns, utils.getTurns(24))))
+			elif iGoal == 2:
+				iPopulation = pPlayer.getRealPopulation()
+				aHelp.append(self.getIcon(iPopulation >= 500000000) + localText.getText("TXT_KEY_VICTORY_REAL_POPULATION", (iPopulation, 500000000)))
+				
+		elif iVictoryType == con.iBuddhism:
+			if iGoal == 0:
+				iPeaceTurns = sd.getBuddhistPeaceTurns()
+				aHelp.append(self.getIcon(iPeaceTurns >= utils.getTurns(100)) + localText.getText("TXT_KEY_VICTORY_PEACE_TURNS", (iPeaceTurns, utils.getTurns(100))))
+			elif iGoal == 1:
+				iHappinessTurns = sd.getBuddhistHappinessTurns()
+				aHelp.append(self.getIcon(iHappinessTurns >= utils.getTurns(100)) + localText.getText("TXT_KEY_VICTORY_HAPPINESS_TURNS", (iHappinessTurns, utils.getTurns(100))))
+			elif iGoal == 2:
+				bNoBadRelations = True
+				for iLoopPlayer in range(con.iNumPlayers):
+					if iLoopPlayer == iPlayer: continue
+					if not gc.getTeam(iPlayer).isHasMet(iLoopPlayer):
+						bNoBadRelations = False
+						break
+					
+					iAttitude = gc.getPlayer(iLoopPlayer).AI_getAttitude(iPlayer)
+					if iAttitude == AttitudeTypes.ATTITUDE_FURIOUS or iAttitude == AttitudeTypes.ATTITUDE_ANNOYED:
+						bNoBadRelations = False
+						break
+				aHelp.append(self.getIcon(bNoBadRelations) + localText.getText("TXT_KEY_VICTORY_NO_BAD_RELATIONS", ()))
+		
+		elif iVictoryType == con.iConfucianism:
+			if iGoal == 0:
+				iFriendlyCivs = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if iLoopPlayer == iPlayer: continue
+					if not gc.getPlayer(iLoopPlayer).isAlive(): continue
+					
+					if gc.getPlayer(iLoopPlayer).AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FRIENDLY:
+						iFriendlyCivs += 1
+				aHelp.append(self.getIcon(iFriendlyCivs >= 5) + localText.getText("TXT_KEY_VICTORY_FRIENDLY_CIVS", (iFriendlyCivs, 5)))
+			elif iGoal == 1:
+				bConfucianShrine = pPlayer.countNumBuildings(con.iConfucianShrine) > 0
+				bTaoistShrine = pPlayer.countNumBuildings(con.iTaoistShrine) > 0
+				
+				iThreshold = 20
+				if pPlayer.countNumBuildings(con.iTempleOfSalomon) > 0 and not gc.getTeam(iPlayer).isHasTech(con.iLiberalism):
+					iThreshold = 40
+					
+				iConfucianIncome = min(iThreshold, gc.getGame().countReligionLevels(con.iConfucianism))
+				iTaoistIncome = min(iThreshold, gc.getGame().countReligionLevels(con.iTaoism))
+				aHelp.append(self.getIcon(bConfucianShrine) + localText.getText("TXT_KEY_BUILDING_CONFUCIAN_SHRINE", ()) + ' ' + self.getIcon(bTaoistShrine) + localText.getText("TXT_KEY_BUILDING_TAOIST_SHRINE", ()) + ' ' + self.getIcon(iConfucianIncome + iTaoistIncome >= 40) + localText.getText("TXT_KEY_VICTORY_CHINESE_SHRINE_INCOME", (iConfucianIncome + iTaoistIncome, 40)))
+			elif iGoal == 2:
+				iCount = 0
+				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+					iCount += gc.getGame().getHolyCity(con.iConfucianism).getFreeSpecialistCount(iGreatPerson)
+				aHelp.append(self.getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_CITY_GREAT_PEOPLE", (gc.getGame().getHolyCity(con.iConfucianism).getName(), iCount, 5)))
+			
+		elif iVictoryType == con.iTaoism:
+			if iGoal == 0:
+				iCount = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if iLoopPlayer == iPlayer: continue
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iTaoism:
+						iCount += 1
+				aHelp.append(self.getIcon(iCount >= 2) + localText.getText("TXT_KEY_VICTORY_TAOIST_CIVS", (iCount, 2)))
+			elif iGoal == 1:
+				iCount = 0
+				holyCity = gc.getGame().getHolyCity(con.iTaoism)
+				for iBuilding in range(con.iPyramid, con.iNumBuildings):
+					if iBuilding == con.iOlympicPark: continue
+					if holyCity.isHasRealBuilding(iBuilding): iCount += 1
+				aHelp.append(self.getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_HOLY_CITY_WONDERS", (holyCity.getName(), iCount, 3)))
+			elif iGoal == 2:
+				holyCity = gc.getGame().getHolyCity(con.iTaoism)
+				aHelp.append(self.getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + self.getIcon(holyCity.getCultureLevel() >= 6) + localText.getText("TXT_KEY_VICTORY_LEGENDARY_CULTURE_CITY", (holyCity.getName(),)))
+				
+		elif iVictoryType == con.iZoroastrianism:
+			if iGoal == 0:
+				iNumIncense = pPlayer.getNumAvailableBonuses(con.iIncense)
+				aHelp.append(self.getIcon(iNumIncense >= 6) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", (iNumIncense, 6)))
+			elif iGoal == 1:
+				fReligionPercent = gc.getGame().calculateReligionPercent(con.iZoroastrianism)
+				aHelp.append(self.getIcon(fReligionPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(con.iZoroastrianism).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(20))))
+			elif iGoal == 2:
+				holyCity = gc.getGame().getHolyCity(con.iZoroastrianism)
+				aHelp.append(self.getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + self.getIcon(holyCity.getCultureLevel() >= 6) + localText.getText("TXT_KEY_VICTORY_LEGENDARY_CULTURE_CITY", (holyCity.getName(),)))
+				
+		elif iVictoryType == con.iVictoryPolytheism:
+			if iGoal == 0:
+				iCount = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					iCount += gc.getPlayer(iLoopPlayer).countNumBuildings(utils.getUniqueBuilding(iLoopPlayer, con.iPaganTemple))
+				aHelp.append(self.getIcon(iCount >= 15) + localText.getText("TXT_KEY_VICTORY_NUM_PAGAN_TEMPLES_WORLD", (iCount, 15)))
+			elif iGoal == 1:
+				iCount = 0
+				for iBuilding in range(con.iPyramid, con.iNumBuildings):
+					if iBuilding == con.iOlympicPark: continue
+					if gc.getBuildingInfo(iBuilding).getPrereqReligion() < 0 and pPlayer.countNumBuildings(iBuilding) > 0:
+						iCount += 1
+				aHelp.append(self.getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_NONRELIGIOUS_WONDERS", (iCount, 10)))
+			elif iGoal == 2:
+				bPolytheismNeverReligion = sd.isPolytheismNeverReligion()
+				aHelp.append(self.getIcon(bPolytheismNeverReligion) + localText.getText("TXT_KEY_VICTORY_POLYTHEISM_NEVER_RELIGION", ()))
+		
+		elif iVictoryType == con.iVictorySecularism:
+			if iGoal == 0:
+				iCount = 0
+				for iReligion in range(con.iNumReligions):
+					if pPlayer.countNumBuildings(con.iJewishTemple + 4*iReligion) > 0:
+						iCount += 1
+				aHelp.append(self.getIcon(iCount >= 7) + localText.getText("TXT_KEY_VICTORY_DIFFERENT_TEMPLES", (iCount, 7)))
+			elif iGoal == 1:
+				iCount = 0
+				for iLoopPlayer in range(con.iNumPlayers):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getCivics(4) == con.iCivicSecularism:
+						iCount += gc.getPlayer(iLoopPlayer).countNumBuildings(utils.getUniqueBuilding(iLoopPlayer, con.iUniversity))
+				aHelp.append(self.getIcon(iCount >= 20) + localText.getText("TXT_KEY_VICTORY_SECULAR_UNIVERSITIES", (iCount, 20)))
+			elif iGoal == 2:
+				bIndustrial = sd.getFirstIndustrial() == iPlayer
+				bModern = sd.getFirstModern() == iPlayer
+				aHelp.append(self.getIcon(bIndustrial) + localText.getText("TXT_KEY_VICTORY_FIRST_ENTER_INDUSTRIAL", ()) + ' ' + self.getIcon(bModern) + localText.getText("TXT_KEY_VICTORY_FIRST_ENTER_MODERN", ()))
+				
+		return aHelp
+				
 	def getUHVHelp(self, iPlayer, iGoal):
 		"Returns an array of help strings used by the Victory Screen table"
 		

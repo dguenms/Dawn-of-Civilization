@@ -1718,5 +1718,26 @@ class RFCUtils:
 					lDeals.append(pDeal)
 					
 		return lDeals
-	
-utils = RFCUtils()
+		
+	def getReligiousVictoryType(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		iStateReligion = pPlayer.getStateReligion()
+		
+		if iStateReligion >= 0:
+			return iStateReligion
+		elif pPlayer.getCivics(4) == con.iCivicPantheon:
+			return con.iVictoryPolytheism
+		elif pPlayer.getCivics(4) == con.iCivicSecularism:
+			return con.iVictorySecularism
+			
+		return -1
+		
+	def getApprovalRating(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		
+		if not pPlayer.isAlive(): return 0
+		
+		iHappy = pPlayer.calculateTotalCityHappiness()
+		iUnhappy = pPlayer.calculateTotalCityUnhappiness()
+		
+		return (iHappy * 100) / max(1, iHappy + iUnhappy)

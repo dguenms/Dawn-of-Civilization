@@ -125,6 +125,14 @@ class StoredData:
 				    'iCongoSlaveCounter' : 0,
 				    'bMaliGold' : False,
 				    'iColombianTradeGold' : 0,
+				    'lProtestantTechs' : [-1, -1, -1],
+				    'iPopeTurns' : 0,
+				    'iHinduGoldenAgeTurns' : 0,
+				    'iBuddhistPeaceTurns' : 0,
+				    'iBuddhistHappinessTurns' : 0,
+				    'bPolytheismNeverReligion' : True,
+				    'iFirstIndustrial' : -1,
+				    'iFirstModern' : -1,
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
@@ -196,6 +204,54 @@ class StoredData:
 	
 	def setHumanStability(self, iNewValue):
 		self.scriptDict['iHumanStability'] = iNewValue
+		
+	def getProtestantTechs(self, i):
+		return self.scriptDict['lProtestantTechs'][i]
+		
+	def setProtestantTechs(self, i, iNewValue):
+		self.scriptDict['lProtestantTechs'][i] = iNewValue
+		
+	def getPopeTurns(self):
+		return self.scriptDict['iPopeTurns']
+		
+	def changePopeTurns(self, iChange):
+		self.scriptDict['iPopeTurns'] += iChange
+		
+	def getHinduGoldenAgeTurns(self):
+		return self.scriptDict['iHinduGoldenAgeTurns']
+		
+	def changeHinduGoldenAgeTurns(self, iChange):
+		self.scriptDict['iHinduGoldenAgeTurns'] += iChange
+		
+	def getBuddhistPeaceTurns(self):
+		return self.scriptDict['iBuddhistPeaceTurns']
+		
+	def changeBuddhistPeaceTurns(self, iChange):
+		self.scriptDict['iBuddhistPeaceTurns'] += iChange
+		
+	def getBuddhistHappinessTurns(self):
+		return self.scriptDict['iBuddhistHappinessTurns']
+		
+	def changeBuddhistHappinessTurns(self, iChange):
+		self.scriptDict['iBuddhistHappinessTurns'] += iChange
+		
+	def isPolytheismNeverReligion(self):
+		return self.scriptDict['bPolytheismNeverReligion']
+		
+	def setPolytheismNeverReligion(self, bNewValue):
+		self.scriptDict['bPolytheismNeverReligion'] = bNewValue
+		
+	def getFirstIndustrial(self):
+		return self.scriptDict['iFirstIndustrial']
+		
+	def setFirstIndustrial(self, iNewValue):
+		self.scriptDict['iFirstIndustrial'] = iNewValue
+		
+	def getFirstModern(self):
+		return self.scriptDict['iFirstModern']
+		
+	def setFirstModern(self, iNewValue):
+		self.scriptDict['iFirstModern'] = iNewValue
 		
 # All modules import the following single instance, not the class
 

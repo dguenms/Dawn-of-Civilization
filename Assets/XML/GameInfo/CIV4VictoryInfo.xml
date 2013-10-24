@@ -162,5 +162,24 @@
 			<VictoryMovie/>
 		</VictoryInfo>
 		<!-- Rhye - end -->
+		<VictoryInfo>
+			<Type>VICTORY_RELIGIOUS</Type>
+			<Description>TXT_KEY_VICTORY_RELIGIOUS</Description>
+			<Civilopedia>TXT_KEY_VICTORY_RELIGIOUS_PEDIA</Civilopedia>
+			<bTargetScore>0</bTargetScore>
+			<bEndScore>0</bEndScore>
+			<bConquest>0</bConquest>
+			<bDiploVote>0</bDiploVote>
+			<bPermanent>0</bPermanent>
+			<iPopulationPercentLead>0</iPopulationPercentLead>
+			<iLandPercent>0</iLandPercent>
+			<iMinLandPercent>0</iMinLandPercent>
+			<iReligionPercent>0</iReligionPercent>
+			<CityCulture>NONE</CityCulture>
+			<iNumCultureCities>0</iNumCultureCities>
+			<iTotalCultureRatio>0</iTotalCultureRatio>
+			<iVictoryDelayTurns>0</iVictoryDelayTurns>
+			<VictoryMovie/>
+		</VictoryInfo>
 	</VictoryInfos>
 </Civ4VictoryInfo>

@@ -7412,8 +7412,9 @@ void CvGame::testVictory()
 			if (!(kLoopTeam.isMinorCiv()))
 			{
 				//Rhye - start (Historical victory should not be checked - it's triggered by python
+				// Leoreth: same for religious
 				//for (int iJ = 0; iJ < GC.getNumVictoryInfos(); iJ++)
-				for (int iJ = 0; iJ < GC.getNumVictoryInfos()-1; iJ++)
+				for (int iJ = 0; iJ < GC.getNumVictoryInfos()-2; iJ++)
 				//Rhye - end
 				{
 					if (testVictory((VictoryTypes)iJ, (TeamTypes)iI, &bEndScore))
