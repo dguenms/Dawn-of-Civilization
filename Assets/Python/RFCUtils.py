@@ -1384,7 +1384,7 @@ class RFCUtils:
 	def foundCapital(self, iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligions=[], iScenario=False):
 	
 		if iScenario:
-			if utils.getScenario() != iScenario: return
+			if self.getScenario() != iScenario: return
 		
 		#if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])+3: return
 		
