@@ -3916,6 +3916,11 @@ public:
 	int getTradeRoutes() const;					// Exposed to Python
 	int getMinVoters() const;					// Exposed to Python
 
+	// Leoreth
+	int getGold() const;
+	int getEspionage() const;
+	int getHappiness() const;
+
 	bool isSecretaryGeneral() const;		// Exposed to Python
 	bool isVictory() const;							// Exposed to Python
 	bool isFreeTrade() const;						// Exposed to Python
@@ -3942,6 +3947,11 @@ protected:
 	int m_iStateReligionVotePercent;
 	int m_iTradeRoutes;
 	int m_iMinVoters;
+
+	// Leoreth
+	int m_iGold;
+	int m_iEspionage;
+	int m_iHappiness;
 
 	bool m_bSecretaryGeneral;
 	bool m_bVictory;

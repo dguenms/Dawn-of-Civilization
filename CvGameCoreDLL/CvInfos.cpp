@@ -16380,6 +16380,22 @@ int CvVoteInfo::getMinVoters() const
 	return m_iMinVoters;
 }
 
+// Leoreth
+int CvVoteInfo::getGold() const
+{
+	return m_iGold;
+}
+
+int CvVoteInfo::getEspionage() const
+{
+	return m_iEspionage;
+}
+
+int CvVoteInfo::getHappiness() const
+{
+	return m_iHappiness;
+}
+
 bool CvVoteInfo::isSecretaryGeneral() const
 {
 	return m_bSecretaryGeneral;
@@ -16465,6 +16481,11 @@ bool CvVoteInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iStateReligionVotePercent, "iStateReligionVotePercent");
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");
 	pXML->GetChildXmlValByName(&m_iMinVoters, "iMinVoters");
+
+	// Leoreth
+	pXML->GetChildXmlValByName(&m_iGold, "iGold");
+	pXML->GetChildXmlValByName(&m_iEspionage, "iEspionage");
+	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 
 	pXML->GetChildXmlValByName(&m_bSecretaryGeneral, "bSecretaryGeneral");
 	pXML->GetChildXmlValByName(&m_bVictory, "bVictory");

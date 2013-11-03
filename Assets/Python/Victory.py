@@ -2491,7 +2491,7 @@ class Victory:
 				if bAtPeace:
 					sd.changeBuddhistPeaceTurns(1)
 				
-				lApprovalList = [utils.getApprovalRate(i) for i in range(con.iNumPlayers)]
+				lApprovalList = [utils.getApprovalRating(i) for i in range(con.iNumPlayers)]
 				iHighestEntry = utils.getHighestEntry(lApprovalList)
 				if lApprovalList.index(iHighestEntry) == iPlayer:
 					sd.changeBuddhistHappinessTurns(1)
@@ -2500,14 +2500,10 @@ class Victory:
 				iReligionCities = 0
 				cityList = utils.getCityList(iPlayer)
 				for city in cityList:
-					for iReligion in range(con.iNumReligions):
-						if city.isHasReligion(iReligion):
-							iReligionCities += 1
-							break
+					if city.getReligionCount() > 0:
+						iReligionCities += 1
 				if 2 * iReligionCities > len(cityList):
 					sd.setPolytheismNoReligion(False)
-				else:
-					sd.setPolytheismNoReligion(True)
 		
 			if self.checkReligiousGoal(iPlayer, 0) == 1 and self.checkReligiousGoal(iPlayer, 1) == 1 and self.checkReligiousGoal(iPlayer, 2) == 1:
 				gc.getGame().setWinner(iPlayer, 8)
@@ -3607,14 +3603,19 @@ class Victory:
 			if iGoal == 0:
 				if pPlayer.countNumBuildings(con.iOrthodoxCathedral) >= 4: return 1
 				
-			# Second Orthodox goal: have three Orthodox cities with influential culture
+			# Second Orthodox goal: make sure the five most cultured cities in the world are Orthodox
 			elif iGoal == 1:
-				iCount = 0
-				for city in utils.getCityList(iPlayer):
-					if city.isHasReligion(con.iOrthodoxy) and city.getCultureLevel() >= 5:
-						iCount += 1
+				lCities = []
+				for iLoopPlayer in range(con.iNumPlayers):
+					lCities.append(utils.getCityList(iLoopPlayer))
+				lCities = utils.getSortedList(lCities, lambda x: x.getCulture(x.getOwner()), True)
+				
+				iCultureCities = 0
+				for city in lCities[0:4]:
+					if city.isHasReligion(con.iOrthodoxy) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iOrthodoxy:
+						iCultureCities += 1
 						
-				if iCount >= 3: return 1
+				if iCultureCities == 5: return 5
 				
 			# Third Orthodox goal: make sure there are no Catholic civilizations in the world
 			elif iGoal == 2:
@@ -3665,9 +3666,19 @@ class Victory:
 			elif iGoal == 1:
 				if sd.getHinduGoldenAgeTurns() >= utils.getTurns(24): return 1
 				
-			# Third Hindu goal: have a total population of 500 million
+			# Third Hindu goal: make sure the five largest cities in the world are Hindu
 			elif iGoal == 2:
-				if pPlayer.getRealPopulation() >= 500000000: return 1
+				lCities = []
+				for iLoopPlayer in range(con.iNumPlayers):
+					lCities.append(utils.getCityList(iLoopPlayer))
+				lCities = utils.getSortedList(lCities, lambda x: x.getPopulation(), True)
+				
+				iLargestCities = 0
+				for city in lCities[0:4]:
+					if city.isHasReligion(con.iHinduism) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iHinduism:
+						iLargestCities += 1
+						
+				if iLargestCities == 5: return 5
 				
 		elif iVictoryType == con.iBuddhism:
 		
@@ -3684,6 +3695,8 @@ class Victory:
 				bNoBadRelations = True
 				for iLoopPlayer in range(con.iNumPlayers):
 					if iLoopPlayer == iPlayer: continue
+					if not gc.getPlayer(iLoopPlayer).isAlive(): continue
+					
 					if not gc.getTeam(iPlayer).isHasMet(iLoopPlayer):
 						bNoBadRelations = False
 						break
@@ -4324,11 +4337,15 @@ class Victory:
 				iOrthodoxCathedrals = pPlayer.countNumBuildings(con.iOrthodoxCathedral)
 				aHelp.append(self.getIcon(iOrthodoxCathedrals >= 4) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS", (iOrthodoxCathedrals, 4)))
 			elif iGoal == 1:
-				iCount = 0
-				for city in utils.getCityList(iPlayer):
-					if city.isHasReligion(con.iOrthodoxy) and city.getCultureLevel() >= 5:
-						iCount += 1
-				aHelp.append(self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_INFLUENTIAL_CITIES", (iCount, 3)))
+				lCities = []
+				for iLoopPlayer in range(con.iNumPlayers):
+					lCities.append(utils.getCityList(iLoopPlayer))
+				lCities = utils.getSortedList(lCities, lambda x: x.getCulture(x.getOwner()), True)
+				iCultureCities = 0
+				for city in lCities[0:4]:
+					if city.isHasReligion(con.iOrthodoxy) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iOrthodoxy:
+						iCultureCities += 1
+				aHelp.append(self.getIcon(iCultureCities == 5) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CULTURE_CITIES", (iCultureCities, 5)))
 			elif iGoal == 2:
 				bNoCatholics = True
 				for iLoopPlayer in range(con.iNumPlayers):
@@ -4363,8 +4380,15 @@ class Victory:
 				iGoldenAgeTurns = sd.getHinduGoldenAgeTurns()
 				aHelp.append(self.getIcon(iGoldenAgeTurns >= utils.getTurns(24)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGE_TURNS", (iGoldenAgeTurns, utils.getTurns(24))))
 			elif iGoal == 2:
-				iPopulation = pPlayer.getRealPopulation()
-				aHelp.append(self.getIcon(iPopulation >= 500000000) + localText.getText("TXT_KEY_VICTORY_REAL_POPULATION", (iPopulation, 500000000)))
+				lCities = []
+				for iLoopPlayer in range(con.iNumPlayers):
+					lCities.append(utils.getCityList(iLoopPlayer))
+				lCities = utils.getSortedList(lCities, lambda x: x.getPopulation(), True)
+				iLargestCities = 0
+				for city in lCities[0:4]:
+					if city.isHasReligion(con.iHinduism) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iHinduism:
+						iLargestCities += 1
+				aHelp.append(self.getIcon(iLargestCities == 5) + localText.getText("TXT_KEY_VICTORY_HINDU_LARGEST_CITIES", (iLargestCities, 5)))
 				
 		elif iVictoryType == con.iBuddhism:
 			if iGoal == 0:
@@ -4377,6 +4401,8 @@ class Victory:
 				bNoBadRelations = True
 				for iLoopPlayer in range(con.iNumPlayers):
 					if iLoopPlayer == iPlayer: continue
+					if not gc.getPlayer(iLoopPlayer).isAlive(): continue
+					
 					if not gc.getTeam(iPlayer).isHasMet(iLoopPlayer):
 						bNoBadRelations = False
 						break

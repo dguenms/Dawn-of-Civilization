@@ -15,6 +15,7 @@ import CvUtil
 import ScreenInput
 import SevoScreenEnums
 import string
+import Consts as con
 
 gc = CyGlobalContext()
 ArtFileMgr = CyArtFileMgr()
@@ -77,6 +78,13 @@ class SevoPediaReligion:
 		iTech = gc.getReligionInfo(self.iReligion).getTechPrereq()
 		if (iTech > -1):
 			screen.attachImageButton( panelName, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False )
+			
+		if self.iReligion == con.iJudaism:
+			screen.attachImageButton(panelName, "", gc.getTechInfo(con.iPrintingPress).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, con.iPrintingPress, 1, False)	
+		elif self.iReligion == con.iOrthodoxy:	
+			screen.attachImageButton(panelName, "", gc.getBuildingInfo(con.iApostolicPalace).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, con.iApostolicPalace, 1, False)
+		elif self.iReligion == con.iBuddhism:
+			screen.attachImageButton(panelName, "", gc.getBuildingInfo(con.iHinduTemple).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, con.iHinduTemple, 1, False)
 
 
 
@@ -99,8 +107,25 @@ class SevoPediaReligion:
 		screen = self.top.getScreen()
 		panelName = self.top.getNextWidgetName()
 		screen.addPanel( panelName, "", "", True, True, self.X_TEXT, self.Y_TEXT, self.W_TEXT, self.H_TEXT, PanelStyles.PANEL_STYLE_BLUE50 )
-		szText = gc.getReligionInfo(self.iReligion).getCivilopedia()
+		szText = self.getURVText(self.iReligion) + gc.getReligionInfo(self.iReligion).getCivilopedia()
 		screen.attachMultilineText( panelName, "Text", szText, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		
+	def getURVText(self, iReligion):
+		sText = ''
+		
+		if iReligion < 0: return sText
+		
+		sText += localText.getText('TXT_KEY_VICTORY_RELIGIOUS_VICTORY', ())
+		sText += '\n'
+		
+		for i in range(3):
+			sText += localText.getText('TXT_KEY_ICON_BULLET', ())
+			sText += localText.getText(con.tReligiousGoals[gc.getGame().getGameSpeedType()][iReligion][i], ())
+			sText += '\n'
+			
+		sText += '\n'
+			
+		return sText
 
 
 

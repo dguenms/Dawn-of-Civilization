@@ -2792,7 +2792,7 @@ const TCHAR* CvPlayer::getUnitButton(UnitTypes eUnit) const
 void CvPlayer::doTurn()
 {
 	PROFILE_FUNC();
-	GC.getGameINLINE().logMsg("player doTurn: %d", getID()); //Rhye
+	//GC.getGameINLINE().logMsg("player doTurn: %d", getID()); //Rhye
 
 	//Rhye - start
 	if (turnPlayed[getID()] == 1)
@@ -2892,7 +2892,7 @@ void CvPlayer::doTurn()
 	CvEventReporter::getInstance().endPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
 
 	turnPlayed[getID()] = 1; //Rhye
-	GC.getGameINLINE().logMsg("player end turn: %d", getID()); //Rhye
+	//GC.getGameINLINE().logMsg("player end turn: %d", getID()); //Rhye
 }
 
 
@@ -22786,11 +22786,12 @@ int CvPlayer::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 	{
 		if (NO_RELIGION != eReligion)
 		{
-			iVotes = getReligionPopulation(eReligion);
+			if (getStateReligion() != eReligion) return 0;
+			iVotes = (int)std::sqrt((double)getReligionPopulation(eReligion));
 		}
 		else
 		{
-			iVotes = getTotalPopulation();
+			iVotes = (int)std::sqrt((double)getTotalPopulation());
 		}
 	}
 	else
@@ -22811,6 +22812,7 @@ int CvPlayer::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 		{
 			if (NO_RELIGION != eReligion)
 			{
+				if (getStateReligion() != eReligion) return 0;
 				iVotes = getHasReligionCount(eReligion);
 			}
 			else
@@ -22822,11 +22824,12 @@ int CvPlayer::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 		{
 			if (NO_RELIGION == eReligion)
 			{
-				iVotes = getTotalPopulation();
+				iVotes = (int)std::sqrt((double)getTotalPopulation());
 			}
 			else
 			{
-				iVotes = getReligionPopulation(eReligion);
+				if (getStateReligion() != eReligion) return 0;
+				iVotes = (int)std::sqrt((double)getReligionPopulation(eReligion));
 			}
 		}
 
@@ -22848,13 +22851,16 @@ bool CvPlayer::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionS
 {
 	CvTeam& kOurTeam = GET_TEAM(getTeam());
 
-	if (NO_PLAYER != kData.ePlayer)
+	GC.getGame().logMsg("canDoResolution: %d", getID());
+
+	/*if (NO_PLAYER != kData.ePlayer)
 	{
 		if (!kOurTeam.isHasMet(GET_PLAYER(kData.ePlayer).getTeam()))
 		{
+			GC.getGame().logMsg("Failed: hasn't met target.");
 			return false;
 		}
-	}
+	}*/
 
 	if (GC.getVoteInfo(kData.eVote).isOpenBorders())
 	{
@@ -22928,7 +22934,7 @@ bool CvPlayer::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionS
 	}
 	else if (GC.getVoteInfo(kData.eVote).isForceWar())
 	{
-		FAssert(NO_PLAYER != kData.ePlayer);
+		/*FAssert(NO_PLAYER != kData.ePlayer);
 		CvPlayer& kPlayer = GET_PLAYER(kData.ePlayer);
 
 		if (!kOurTeam.isAtWar(kPlayer.getTeam()))
@@ -22946,11 +22952,12 @@ bool CvPlayer::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionS
 				}
 			}
 
-			if (!GET_TEAM(eMaster).canDeclareWar(kPlayer.getTeam()))
+			if (!GET_TEAM(eMaster).canDeclareWar(kPlayer.getTeam()) || !GET_TEAM(eMaster).isHasMet(kPlayer.getTeam()))
 			{
+				GC.getGame().logMsg("Failed: cannot declare war on target.");
 				return false;
 			}
-		}
+		}*/
 	}
 	else if (GC.getVoteInfo(kData.eVote).isForceNoTrade())
 	{
@@ -22970,6 +22977,13 @@ bool CvPlayer::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionS
 			return false;
 		}
 	}
+	else if (GC.getVoteInfo(kData.eVote).getEspionage() > 0)
+	{
+		if (GET_TEAM(GET_PLAYER(kData.eOtherPlayer).getTeam()).isVassal(GET_PLAYER(kData.ePlayer).getTeam()))
+		{
+			return false;
+		}
+	}
 
 	return true;
 }
@@ -22979,6 +22993,32 @@ bool CvPlayer::canDefyResolution(VoteSourceTypes eVoteSource, const VoteSelectio
 	if (GC.getGameINLINE().getSecretaryGeneral(eVoteSource) == getTeam())
 	{
 		return false;
+	}
+
+	// Leoreth: different state religion cannot defy
+	ReligionTypes eReligion = GC.getGameINLINE().getVoteSourceReligion(eVoteSource);
+	if (eReligion != NO_RELIGION)
+	{
+		if (getStateReligion() != eReligion)
+		{
+			return false;
+		}
+	}
+	// Leoreth: UN: only most powerful four civs can defy (security council)
+	else
+	{
+		int iPowerRank = 1;
+		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).getPower() > getPower())
+			{
+				iPowerRank++;
+				if (iPowerRank > 4)
+				{
+					return false;
+				}
+			}
+		}
 	}
 
 	if (GC.getVoteInfo(kData.eVote).isOpenBorders())
@@ -23041,6 +23081,17 @@ bool CvPlayer::canDefyResolution(VoteSourceTypes eVoteSource, const VoteSelectio
 	else if (GC.getVoteInfo(kData.eVote).isAssignCity())
 	{
 		if (kData.ePlayer == getID())
+		{
+			return true;
+		}
+	}
+	else if (GC.getVoteInfo(kData.eVote).getHappiness() < 0)
+	{
+		return true;
+	}
+	else if (GC.getVoteInfo(kData.eVote).getEspionage() > 0)
+	{
+		if (kData.eOtherPlayer == getID())
 		{
 			return true;
 		}
@@ -23113,10 +23164,16 @@ bool CvPlayer::isFullMember(VoteSourceTypes eVoteSource) const
 
 bool CvPlayer::isVotingMember(VoteSourceTypes eVoteSource) const
 {
-	//Rhye - start
 	if (isMinorCiv() || isBarbarian())
+	{
 		return false;
-	//Rhye - end
+	}
+
+	// Leoreth: you cannot even become voting member of the AP without Catholic state religion
+	if (GC.getGame().getVoteSourceReligion(eVoteSource) != NO_RELIGION && GC.getGame().getVoteSourceReligion(eVoteSource) != getStateReligion())
+	{
+		return false;
+	}
 
 	return (getVotes(NO_VOTE, eVoteSource) > 0);
 }

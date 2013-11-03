@@ -661,6 +661,10 @@ class CvRFCEventHandler:
 			else:
 				CyInterface().addMessage(iOwner, True, con.iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REMOVED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()))), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
+		# Leoreth: easter egg
+		if iReligion == con.iBuddhism:
+			if pSpreadCity.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']:
+				pSpreadCity.setName('Buddhapest', False)
 
         def onFirstContact(self, argsList):
             

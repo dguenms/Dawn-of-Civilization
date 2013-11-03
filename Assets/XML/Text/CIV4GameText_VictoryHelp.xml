@@ -593,8 +593,8 @@
 		<English>Orthodox cathedrals: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_ORTHODOX_INFLUENTIAL_CITIES</Tag>
-		<English>Orthodox influential cities: %d1 / %d2</English>
+		<Tag>TXT_KEY_VICTORY_ORTHODOX_CULTURE_CITIES</Tag>
+		<English>Top five Orthodox cities: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CITY_GREAT_PEOPLE</Tag>
@@ -613,8 +613,8 @@
 		<English>Golden age turns: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_REAL_POPULATION</Tag>
-		<English>Total Population: %d1 / %d2</English>
+		<Tag>TXT_KEY_VICTORY_HINDU_LARGEST_CITIES</Tag>
+		<English>Top five Hindu cities: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PEACE_TURNS</Tag>

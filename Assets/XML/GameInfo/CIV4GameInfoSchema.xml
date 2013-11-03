@@ -110,6 +110,7 @@
 		<element type="Button"/>
 	</ElementType>
 	<ElementType name="iPopulationThreshold" content="textOnly" dt:type="int"/>
+	<ElementType name="iEspionage" content="textOnly" dt:type="int"/>
 	<ElementType name="bCityVoting" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bCivVoting" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iMinVoters" content="textOnly" dt:type="int"/>
@@ -161,6 +162,9 @@
 		<element type="bForceNoTrade"/>
 		<element type="bForceWar"/>
 		<element type="bAssignCity"/>
+		<element type="iGold" minOccurs="0"/>
+		<element type="iEspionage" minOccurs="0"/>
+		<element type="iHappiness" minOccurs="0"/>
 		<element type="ForceCivics"/>
 		<element type="DiploVotes"/>
 	</ElementType>
