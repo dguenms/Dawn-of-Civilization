@@ -138,7 +138,7 @@ class CvPediaReligion:
 		screen.addPanel( panelName, "", "", true, true,
 				 self.X_TEXT, self.Y_TEXT, self.W_TEXT, self.H_TEXT, PanelStyles.PANEL_STYLE_BLUE50 )
  
-		szText = gc.getReligionInfo(self.iReligion).getCivilopedia()
+		szText = self.getURVText(self.iReligion) + gc.getReligionInfo(self.iReligion).getCivilopedia()
 		
 		screen.attachMultilineText( panelName, "Text", szText, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		
@@ -146,6 +146,23 @@ class CvPediaReligion:
 
 		self.top.placeLinks()
 		self.top.placeReligions()
+		
+	def getURVText(self, iReligion):
+		sText = ''
+		
+		if iReligion < 0: return sText
+		
+		sText += localText.getText('TXT_KEY_VICTORY_RELIGIOUS_VICTORY', ())
+		sText += '\n'
+		
+		for i in range(3):
+			sText += localText.getText('TXT_KEY_ICON_BULLET', ())
+			sText += localText.getText(con.tReligiousGoals[gc.getGame().getGameSpeedType()][iReligion][i], ())
+			sText += '\n'
+			
+		sText += '\n'
+			
+		return sText
 
 		
 	# Will handle the input for this screen...

@@ -10,6 +10,11 @@
 		<German>Religiös</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RELIGIOUS_VICTORY</Tag>
+		<English>Religious Victory:</English>
+		<German>Religiöser Sieg:</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SCREEN_FULFILLED</Tag>
 		<English>Fulfilled:</English>
 		<German>Erfüllt:</German>
@@ -61,8 +66,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_ORT2</Tag>
-		<English>Have three Orthodox cities with influential culture</English>
-		<German>Haben Sie drei orthodoxe Städte mit einflussreicher Kultur</German>
+		<English>Make sure the five most cultured cities in the world are Orthodox</English>
+		<German>Stellen Sie sicher, dass die fünf kultiviertesten Städte der Welt orthodox sind</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_ORT3</Tag>
@@ -106,8 +111,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_HIN3</Tag>
-		<English>Have a total population of 500 million</English>
-		<German>Haben Sie eine Gesamtbevölkerung von 500 Millionen</German>
+		<English>Make sure the five largest cities in the world are Hindu</English>
+		<German>Stellen Sie sicher, dass die fünf größten Städte der Welt hinduistisch sind</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>

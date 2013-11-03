@@ -1712,7 +1712,7 @@ class RFCUtils:
 	def getAllDealsType(self, iFirstPlayer, iSecondPlayer, iTradeableItem):
 		lDeals = []
 	
-		for pDeal in utils.getAllDeals(iFirstPlayer, iSecondPlayer):
+		for pDeal in self.getAllDeals(iFirstPlayer, iSecondPlayer):
 			for j in range(pDeal.getLengthFirstTrades()):
 				if pDeal.getFirstTrade(j).ItemType == iTradeableItem:
 					lDeals.append(pDeal)

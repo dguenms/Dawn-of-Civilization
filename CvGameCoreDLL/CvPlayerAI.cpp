@@ -7256,6 +7256,52 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 					}
 				}
 			}
+			else if (GC.getVoteInfo(kVoteData.eVote).getGold() > 0)
+			{
+				bValid = false;
+				if (kVoteData.ePlayer != NO_PLAYER)
+				{
+					if (kVoteData.ePlayer == getID())
+					{
+						bValid = true;
+					}
+					else
+					{
+						if ((AI_getAttitude(kVoteData.ePlayer) == ATTITUDE_FURIOUS) || (getCapitalCity()->getDefyResolutionPercentAnger(0) > -GC.getVoteInfo(kVoteData.eVote).getHappiness()))
+						{
+							bValid = false;
+							bDefy = true;
+						}
+						else
+						{
+							bValid = (2 * getReligionPopulation(GC.getGame().getVoteSourceReligion(eVoteSource)) >= getTotalPopulation());
+						}
+					}
+				}
+			}
+			else if (GC.getVoteInfo(kVoteData.eVote).getEspionage())
+			{
+				bValid = false;
+				if (kVoteData.ePlayer != NO_PLAYER && kVoteData.eOtherPlayer != NO_PLAYER)
+				{
+					if (kVoteData.ePlayer == getID())
+					{
+						bValid = true;
+					}
+					else if (kVoteData.eOtherPlayer == getID())
+					{
+						bValid = false;
+						if (GC.getGame().getSorenRandNum(3, "AI Erratic Defiance (Assign City)") == 0)
+						{
+							bDefy = true;
+						}
+					}
+					else
+					{
+						bValid = (AI_getAttitude(kVoteData.ePlayer) >= AI_getAttitude(kVoteData.eOtherPlayer));
+					}
+				}
+			}
 		}
 
 		if (bDefy && canDefyResolution(eVoteSource, kVoteData))

@@ -270,7 +270,7 @@ def checkStability(iPlayer, bPositive = False):
 	iThreshold = 5 * (iStabilityLevel - 2) - 5
 	
 	if bFall:
-		iThreshold += 5 * iStabilityLevel + 5
+		iThreshold += 5 * iStabilityLevel + 5 + max(10, (iGameTurn - getTurnForYear(con.tFall[iPlayer])) / utils.getTurns(10))
 		
 	iCrisisThreshold = max(-5, iThreshold)
 	
@@ -492,6 +492,7 @@ def secedeCities(iPlayer, lCities):
 		for iLoopPlayer in range(con.iNumPlayers):
 			if iLoopPlayer == iPlayer: continue
 			if iGameTurnYear < con.tBirth[iLoopPlayer]: continue
+			if iGameTurnYear > con.tFall[iLoopPlayer]: continue
 			if cityPlot.isCore(iLoopPlayer) and gc.getPlayer(iLoopPlayer).isAlive():
 				iClaim = iLoopPlayer
 				utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: core territory.')
@@ -500,7 +501,7 @@ def secedeCities(iPlayer, lCities):
 		# claim based on original owner
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
-			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and iOriginalOwner < con.iNumPlayers:
+			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and iOriginalOwner < con.iNumPlayers and iGameTurnYear < con.tFall[iOriginalOwner]:
 				iClaim = iOriginalOwner
 				utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: original owner.')
 				
@@ -509,6 +510,7 @@ def secedeCities(iPlayer, lCities):
 			for iLoopPlayer in range(con.iNumPlayers):
 				if iLoopPlayer == iPlayer: continue
 				if iGameTurnYear < con.tBirth[iLoopPlayer]: continue
+				if iGameTurnYear > con.tFall[iLoopPlayer]: continue
 				if gc.getPlayer(iLoopPlayer).isAlive():
 					iCulturePercent = 100 * cityPlot.getCulture(iLoopPlayer) / cityPlot.countTotalCulture()
 					if iCulturePercent >= 75:
@@ -521,7 +523,7 @@ def secedeCities(iPlayer, lCities):
 			tPlayer = gc.getTeam(iPlayer)
 			for iLoopPlayer in range(con.iNumPlayers):
 				pLoopPlayer = gc.getPlayer(iLoopPlayer)
-				if pLoopPlayer.isAlive() and tPlayer.isAtWar(iLoopPlayer) and utils.getHumanID() != iLoopPlayer:
+				if pLoopPlayer.isAlive() and tPlayer.isAtWar(iLoopPlayer) and utils.getHumanID() != iLoopPlayer and iGameTurnYear < con.tFall[iLoopPlayer]:
 					if pLoopPlayer.getWarMapValue(city.getX(), city.getY()) >= 8:
 						iClaim = iLoopPlayer
 						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: war target.')
@@ -978,11 +980,12 @@ def calculateStability(iPlayer):
 				bForeignCore = True
 				break
 				
-		bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
+		#bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
+		bExpansionExceptions = bTotalitarianism
 		
 		# Expansion
 		if plot.isCore(iPlayer) or city.isCapital():
-			iCorePopulation += (2 + iCurrentEra) * iPopulation
+			iCorePopulation += 10 + (2 + iCurrentEra) * iPopulation
 		else:
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
@@ -1078,8 +1081,8 @@ def calculateStability(iPlayer):
 	iOwnCoreStability = 0
 	
 	# help Tibet
-	if iPlayer == con.iTibet and iGameTurn <= getTurnForYear(1000):
-		iPeripheryPopulation /= 2
+	#if iPlayer == con.iTibet and iGameTurn <= getTurnForYear(1000):
+	#	iPeripheryPopulation /= 2
 	
 	# Core vs. Periphery Populations
 	iCombinedPopulation = iCorePopulation + iPeripheryPopulation

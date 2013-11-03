@@ -33,7 +33,7 @@
 	# MILITARY
 	  1. Warrior Code (Horseback Riding, low): -50% war weariness, double production for Barracks, Stable
 	  2. Mercenaries (Currency, medium): can hurry units with gold, +1 gold upkeep per unit
-	  3. Levy Armies (Feudalism, low): +50% improvement speed, additional free units, unit production with food
+	  3. Levy Armies (Feudalism, low): additional free units, unit production with food
 	  4. Standing Army (Military Tradition, high): +25% unit production, +2 experience
 	  5. Conscription (Nationalism, low): can draft 2 units, +50% experience within own borders
 # anarchy doesn't cost golden age turns
@@ -87,46 +87,46 @@
 # Added an option to display UHV goal deadlines regardless of the knowledge of Calendar
 # Added a Religious victory option depending on your state religion
 	# Protestantism
-	   - be first to discover Liberalism, Constitution and Economics
-	   - make sure there are five great merchants and five great engineers settled in Protestant civilizations
-	   - make sure that at least half of all civilizations are Protestant or secular
+	   - Enlightenment: be first to discover Liberalism, Constitution and Economics
+	   - Work Ethic: make sure there are five great merchants and five great engineers settled in Protestant civilizations
+	   - Religious Freedom: make sure that at least half of all civilizations are Protestant or secular
 	# Catholicism
-	   - be Pope for 100 turns
-	   - control the Catholic shrine and make sure 12 great prophets are settled in Catholic civilizations
-	   - make sure 50% of the world territory are controlled by Catholic civilizations
+	   - Holy See: be Pope for 100 turns
+	   - Holy Land: control the Catholic shrine and make sure 12 great prophets are settled in Catholic civilizations
+	   - Holy Mission: make sure 50% of the world territory are controlled by Catholic civilizations
 	# Orthodoxy
-	   - build four Orthodox cathedrals
-	   - control three cities with influential culture
-	   - make sure there are no Catholic civilizations
+	   - Patriarchates: build four Orthodox cathedrals
+	   - Iconography: control three cities with influential culture
+	   - Communion: make sure there are no Catholic civilizations
 	# Islam
-	   - spread Islam to 50%
-	   - settle seven great people in the Muslim holy city
-	   - control five shrines
+	   - Shahada: spread Islam to 50%
+	   - Hajj: settle seven great people in the Muslim holy city
+	   - Jihad: control five shrines
 	# Hinduism
-	   - settle five different great people in the Hindu holy city
-	   - experience 24 turns of golden age
-	   - have a total population of 500 million
+	   - Varna: settle five different great people in the Hindu holy city
+	   - Artha: experience 24 turns of golden age
+	   - Kama: have a total population of 500 million
 	# Buddhism
-	   - be at peace for 100 turns
-	   - have the highest approval rating for 100 turns
-	   - have no furious or annoyed relations with any civilizations
+	   - Sila: be at peace for 100 turns
+	   - Nirvana: have the highest approval rating for 100 turns
+	   - Middle Way: have no furious or annoyed relations with any civilization
 	# Confucianism
-	   - have friendly relations with five civilizations
-	   - control the Confucian and Taoist shrine and combine their income to 40 gold
-	   - settle five great people in the Confucian holy city
+	   - Harmony: have friendly relations with five civilizations
+	   - Ritual: control the Confucian and Taoist shrine and combine their income to 40 gold
+	   - Five Classics: settle five great people in the Confucian holy city
 	# Taoism
-	   - make sure there are two other Taoist civilizations
-	   - build three wonders in the Taoist holy city
-	   - have legendary culture in the Taoist holy city
+	   - Virtue: make sure there are two other Taoist civilizations
+	   - Three Treasures: build three wonders in the Taoist holy city
+	   - Immortality: have legendary culture in the Taoist holy city
 	# Zoroastrianism
-	   - acquire six incense resources
-	   - spread Zoroastrianism to 20%
-	   - have legendary culture in the Zoroastrian holy city
+	   - Adar: acquire six incense resources
+	   - Mathra: spread Zoroastrianism to 20%
+	   - Shahnameh: have legendary culture in the Zoroastrian holy city
 	# Polytheism
 	   - make sure there are 15 pagan temples in the world
 	   - control ten wonders that require no state religion
 	   - don't allow more than half of your cities to have a religion
 	# Secularism
-	   - control the temples of seven different religions
-	   - make sure there are 20 universities in secular civilizations
-	   - be first to enter the industrial and modern eras
+	   - Tolerance: control the temples of seven different religions
+	   - Humanism: make sure there are 20 universities in secular civilizations
+	   - Modernization: be first to enter the industrial and modern eras
