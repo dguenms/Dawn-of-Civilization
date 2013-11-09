@@ -483,7 +483,7 @@ class RiseAndFall:
         	                        if ( pCurrent.isCity()):
                 	                        city = pCurrent.getPlotCity()
                         	                if (city.getOwner() == iHuman):
-                                        	        if (not (x == tCapitals[utils.getReborn(iHuman)][iHuman] and y == tCapitals[utils.getReborn(iHuman)][iHuman]) and not (self.getCheatMode() == True and pCurrent.getPlotCity().isCapital())):
+                                        	        if not ((x,y) == tCapitals[utils.getReborn(iHuman)][iHuman] and pCurrent.getPlotCity.isCapital()):
                                                 	        humanCityList.append(city)
                 
                 if( popupReturn.getButtonClicked() == 0 ): # 1st button
