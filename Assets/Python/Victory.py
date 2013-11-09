@@ -2503,7 +2503,7 @@ class Victory:
 					if city.getReligionCount() > 0:
 						iReligionCities += 1
 				if 2 * iReligionCities > len(cityList):
-					sd.setPolytheismNoReligion(False)
+					sd.setPolytheismNeverReligion(False)
 		
 			if self.checkReligiousGoal(iPlayer, 0) == 1 and self.checkReligiousGoal(iPlayer, 1) == 1 and self.checkReligiousGoal(iPlayer, 2) == 1:
 				gc.getGame().setWinner(iPlayer, 8)
