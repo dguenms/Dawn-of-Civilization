@@ -1626,6 +1626,10 @@ class RFCUtils:
 		lSortedList = self.getSortedList(lList, function, True)
 		return lSortedList[0]
 		
+	def getHighestIndex(self, lList, function = lambda x: x):
+		lSortedList = self.getSortedList(lList, function, True)
+		return lList.index(lSortedList[0])
+		
 	def getColonyPlayer(self, iCiv):
 		tCoreTL = con.tCoreAreasTL[0][iCiv]
 		tCoreBR = con.tCoreAreasBR[0][iCiv]

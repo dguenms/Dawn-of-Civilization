@@ -639,6 +639,8 @@ class RiseAndFall:
 			
 			pPersia.setReborn()
 			pHolyRome.setReborn()
+			
+			pChina.updateTradeRoutes()
 		
 		self.assign3000BCGold()	
 		self.invalidateUHVs()
@@ -1067,7 +1069,7 @@ class RiseAndFall:
 				
 		# Leoreth: help human with Aztec UHV - prevent super London getting in the way
 		if iGameTurn == getTurnForYear(1500) and utils.getHumanID() == iAztecs:
-			plot = gc.getMap().plot(con.tCapitals[iEngland][0], con.tCapitals[iEngland][1])
+			plot = gc.getMap().plot(con.tCapitals[0][iEngland][0], con.tCapitals[0][iEngland][1])
 			if plot.isCity():
 				city = plot.getPlotCity()
 				if city.getPopulation() > 14:
@@ -4162,6 +4164,7 @@ class RiseAndFall:
                 teamVikings.setHasTech(con.iHunting, True, iCiv, False, False)
                 teamVikings.setHasTech(con.iArchery, True, iCiv, False, False)
                 teamVikings.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+                teamVikings.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
                 iCiv = iArabia
                 teamArabia.setHasTech(con.iMining, True, iCiv, False, False)
                 teamArabia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)

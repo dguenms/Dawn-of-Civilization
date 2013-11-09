@@ -15297,6 +15297,12 @@ int CvCity::getBestYieldAvailable(YieldTypes eYield) const
 
 bool CvCity::isAutoRaze() const
 {
+	// Leoreth: don't raze holy cities
+	if (isHolyCity())
+	{
+		return false;
+	}
+
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_CITY_RAZING))
 	{
 		if (getHighestPopulation() == 1)
@@ -15314,11 +15320,6 @@ bool CvCity::isAutoRaze() const
 	{
 		return true;
 	}
-
-	/*if ((getX() == 73 || getX() == 71) && getY() == 43)     // Leoreth - hack to stop Phoenicia from conquering Gordion or Hattusas and expanding there
-	{
-	    return true;
-	}*/
 
 	return false;
 }
