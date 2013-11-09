@@ -3607,7 +3607,7 @@ class Victory:
 			elif iGoal == 1:
 				lCities = []
 				for iLoopPlayer in range(con.iNumPlayers):
-					lCities.append(utils.getCityList(iLoopPlayer))
+					lCities.extend(utils.getCityList(iLoopPlayer))
 				lCities = utils.getSortedList(lCities, lambda x: x.getCulture(x.getOwner()), True)
 				
 				iCultureCities = 0
@@ -3670,7 +3670,7 @@ class Victory:
 			elif iGoal == 2:
 				lCities = []
 				for iLoopPlayer in range(con.iNumPlayers):
-					lCities.append(utils.getCityList(iLoopPlayer))
+					lCities.extend(utils.getCityList(iLoopPlayer))
 				lCities = utils.getSortedList(lCities, lambda x: x.getPopulation(), True)
 				
 				iLargestCities = 0
@@ -4339,7 +4339,7 @@ class Victory:
 			elif iGoal == 1:
 				lCities = []
 				for iLoopPlayer in range(con.iNumPlayers):
-					lCities.append(utils.getCityList(iLoopPlayer))
+					lCities.extend(utils.getCityList(iLoopPlayer))
 				lCities = utils.getSortedList(lCities, lambda x: x.getCulture(x.getOwner()), True)
 				iCultureCities = 0
 				for city in lCities[0:4]:
@@ -4382,7 +4382,7 @@ class Victory:
 			elif iGoal == 2:
 				lCities = []
 				for iLoopPlayer in range(con.iNumPlayers):
-					lCities.append(utils.getCityList(iLoopPlayer))
+					lCities.extend(utils.getCityList(iLoopPlayer))
 				lCities = utils.getSortedList(lCities, lambda x: x.getPopulation(), True)
 				iLargestCities = 0
 				for city in lCities[0:4]:
