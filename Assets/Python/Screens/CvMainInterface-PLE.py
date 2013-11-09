@@ -2082,7 +2082,10 @@ class CvMainInterface:
 				iBtnH = 30
 
 				# Conscript button
-				szText = "<font=1>" + localText.getText("TXT_KEY_DRAFT", ()) + "</font>"
+				if pHeadSelectedCity.canEnslave(True):
+					szText = "<font=1>" + localText.getText("TXT_KEY_ENSLAVE", ()) + "</font>" #Leoreth
+				else:
+					szText = "<font=1>" + localText.getText("TXT_KEY_DRAFT", ()) + "</font>"
 				screen.setButtonGFC( "Conscript", szText, "", iBtnX, iBtnY, iBtnW, iBtnH, WidgetTypes.WIDGET_CONSCRIPT, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
 				screen.setStyle( "Conscript", "Button_CityT1_Style" )
 				screen.hide( "Conscript" )
@@ -2193,7 +2196,7 @@ class CvMainInterface:
 
 				# Conscript Button Show
 				screen.show( "Conscript" )
-				if (pHeadSelectedCity.canConscript()):
+				if (pHeadSelectedCity.canConscript() or pHeadSelectedCity.canEnslave(False)):
 					screen.enable( "Conscript", True )
 				else:
 					screen.enable( "Conscript", False )
@@ -5304,6 +5307,23 @@ class CvMainInterface:
 				self.setFieldofView_Text(screen)
 				MainOpt.setFieldOfView(self.iField_View)
 # BUG - field of view slider - end
+		
+		# Leoreth: enslave option
+		if inputClass.getFunctionName() == "Conscript":
+			pCity = CyInterface().getHeadSelectedCity()
+			if pCity.canEnslave(True):
+				pCity.conscript()
+			#utils.debugTextPopup("Enslave")
+			
+		# Leoreth: sacrifice Aztec slaves
+		if (inputClass.getNotifyCode() == 11 and inputClass.getData1() == 300 and inputClass.getData2() == 300):
+			self.pPushedButtonUnit = g_pSelectedUnit
+			iX = self.pPushedButtonUnit.getX()
+			iY = self.pPushedButtonUnit.getY()
+			city = gc.getMap().plot(iX, iY).getPlotCity()
+			city.changeHappinessTimer(5)
+			city.setWeLoveTheKingDay(True)
+			self.pPushedButtonUnit.kill(false, city.getOwner())
 
 		return 0
 	
