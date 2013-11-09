@@ -140,54 +140,12 @@ class AIWars:
 		self.spawnConquerors(iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 		
 		self.spawnConquerors(iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 0, iSpainMoorsYear, 10)
-                        
-                if (iGameTurn == getTurnForYear(1500) or iGameTurn == getTurnForYear(1850)):
-                        for iLoopCiv in range( iNumPlayers ):
-                                self.setAttackingCivsArray(iLoopCiv, max(0,self.getAttackingCivsArray(iLoopCiv) - con.tAggressionLevel[iLoopCiv])) 
-
-                     
-                if (iGameTurn == self.getNextTurnAIWar()):
-                    
-                        if (iGameTurn > getTurnForYear(1600)): #longer periods due to globalization of contacts
-                                iMinInterval = iMinIntervalLate
-                                iMaxInterval = iMaxIntervalLate
-                        else:
-                                iMinInterval = iMinIntervalEarly
-                                iMaxInterval = iMaxIntervalEarly
-                        
-                        # game speed factor - edead
-                        iMinInterval = utils.getTurns(iMinInterval)
-                        iMaxInterval = utils.getTurns(iMaxInterval)
-
-                        #skip if in a world war already
-                        if (iGameTurn > getTurnForYear(1500)):
-                                numCivsAtWar = 0
-                                gc.getGame().countCivPlayersAlive()
-                                for iLoopCiv in range( iNumPlayers ):
-                                        tLoopCiv = gc.getTeam(gc.getPlayer(iLoopCiv).getTeam())
-                                        if (tLoopCiv.getAtWarCount(True) != 0):
-                                                numCivsAtWar += 1
-                                if (numCivsAtWar*100/gc.getGame().countCivPlayersAlive() > 50): #more than half at war with someone
-                                        print("Skipping AIWar (WW)")
-                                        self.setNextTurnAIWar(iGameTurn + iMinInterval + gc.getGame().getSorenRandNum(iMaxInterval-iMinInterval, 'random turn'))
-                                        return
-                            
-                        iCiv, iTargetCiv = self.pickCivs()
-                        if (iTargetCiv >= 0 and iTargetCiv <= iNumTotalPlayers):
-                                self.initWar(iCiv, iTargetCiv, iGameTurn, iMaxInterval, iMinInterval)
-                                return
-                        else:
-                                print ("AIWars iTargetCiv missing", iCiv)
-                                iCiv, iTargetCiv = self.pickCivs()
-                                if (iTargetCiv >= 0 and iTargetCiv <= iNumTotalPlayers):
-                                        self.initWar(iCiv, iTargetCiv, iGameTurn, iMaxInterval, iMinInterval)
-                                        return
-                                else:
-                                        print ("AIWars iTargetCiv missing again", iCiv)
-
-                        #make sure we don't miss this
-                        print("Skipping AIWar")
-                        self.setNextTurnAIWar(iGameTurn + iMinInterval + gc.getGame().getSorenRandNum(iMaxInterval-iMinInterval, 'random turn'))
+		
+		if iGameTurn == self.getNextTurnAIWar():
+			self.planWars(iGameTurn)
+			
+		for iLoopPlayer in range(con.iNumPlayers):
+			sd.changeAggressionLevel(iLoopPlayer, con.tAggressionLevel[iLoopPlayer] + gc.getGame().getSorenRandNum(2, 'Random aggression'))
 			
 	def spawnConquerors(self, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
 	
@@ -245,233 +203,6 @@ class AIWars:
 			
 			if iPlayer == con.iTamils:
 				utils.makeUnitAI(con.iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-				
-			
-        def pickCivs(self): 
-                iCiv = -1
-                iTargetCiv = -1
-                iCiv = self.chooseAttackingPlayer()
-                if (iCiv >= 0 and iCiv <= iNumPlayers):
-                        iTargetCiv = self.checkGrid(iCiv)
-                        return (iCiv, iTargetCiv)
-                else:
-                        print ("AIWars iCiv missing", iCiv)
-                        return (-1, -1)
-
-        def initWar(self, iCiv, iTargetCiv, iGameTurn, iMaxInterval, iMinInterval):
-		gc.getTeam(iCiv).declareWar(iTargetCiv, True, -1) ##False?
-                self.setNextTurnAIWar(iGameTurn + iMinInterval + gc.getGame().getSorenRandNum(iMaxInterval-iMinInterval, 'random turn'))
-                print("Setting AIWar", iCiv, "attacking", iTargetCiv)
-
-##        def initArray(self):
-##                for k in range( iNumPlayers ):
-##                        grid = []                
-##                        for j in range( 68 ):
-##                                line = []
-##                                for i in range( 124 ):        
-##                                        line.append( gc.getPlayer(iCiv).getSettlersMaps( 67-j, i ) )
-##                                grid.append( line )
-##                        self.lSettlersMap.append( grid )
-##                print self.lSettlersMap
-
-
-
-
-        def chooseAttackingPlayer(self): 
-                #finding max teams ever alive (countCivTeamsEverAlive() doesn't work as late human starting civ gets killed every turn)
-                iMaxCivs = iNumPlayers
-                for i in range( iNumPlayers ):
-                        j = iNumPlayers -1 - i
-                        if (gc.getPlayer(j).isAlive()):
-                                iMaxCivs = j
-                                break 
-                #print ("iMaxCivs", iMaxCivs)
-                
-                if (gc.getGame().countCivPlayersAlive() <= 2):
-                        return -1
-                else:
-                        iRndnum = gc.getGame().getSorenRandNum(iMaxCivs, 'attacking civ index') 
-                        #print ("iRndnum", iRndnum)
-                        iAlreadyAttacked = -100
-                        iMin = 100
-                        iCiv = -1
-                        for i in range( iRndnum, iRndnum + iMaxCivs ):
-                                iLoopCiv = i % iMaxCivs
-                                if (gc.getPlayer(iLoopCiv).isAlive() and not gc.getPlayer(iLoopCiv).isHuman()):
-                                        if (utils.getPlagueCountdown(iLoopCiv) >= -10 and utils.getPlagueCountdown(iLoopCiv) <= 0): #civ is not under plague or quit recently from it
-                                                iAlreadyAttacked = self.getAttackingCivsArray(iLoopCiv)
-                                                if (utils.isAVassal(iLoopCiv)):
-                                                        iAlreadyAttacked += 1 #less likely to attack
-                                                if (iLoopCiv == con.iPortugal or iLoopCiv == con.iNetherlands):
-                                                        iAlreadyAttacked += 1 #less likely to attack, would cripple them
-                                                #check if a world war is already in place
-                                                iNumAlreadyWar = 0
-                                                tLoopCiv = gc.getTeam(gc.getPlayer(iLoopCiv).getTeam())
-                                                for kLoopCiv in range( iNumPlayers ):
-                                                        if (tLoopCiv.isAtWar(kLoopCiv)):
-                                                                iNumAlreadyWar += 1
-                                                if (iNumAlreadyWar >= 5):
-                                                        iAlreadyAttacked += 2 #much less likely to attack
-                                                elif (iNumAlreadyWar >= 3):
-                                                        iAlreadyAttacked += 1 #less likely to attack
-                                                            
-                                                if (iAlreadyAttacked < iMin):
-                                                        iMin = iAlreadyAttacked
-                                                        iCiv = iLoopCiv
-                        #print ("attacking civ", iCiv)
-                        if (iAlreadyAttacked != -100):
-                                self.setAttackingCivsArray(iCiv, iAlreadyAttacked + 1)                        
-                                return iCiv
-                        else:
-                                return -1
-                return -1
-                    
-             
-
-        def checkGrid(self, iCiv):
-                pCiv = gc.getPlayer(iCiv)
-                tCiv = gc.getTeam(pCiv.getTeam())
-                lTargetCivs = []
-                #lTargetCivs = con.l0ArrayTotal
-
-                #clean it, sometimes it takes old values in memory
-                for k in range( iNumTotalPlayers ):
-                        lTargetCivs.append(0)
-                        #lTargetCivs[k] = 0
-
-                ##set alive civs to 1 to differentiate them from dead civs
-                for k in range( iNumPlayers ):
-                        if (gc.getPlayer(k).isAlive() and tCiv.isHasMet(k)): #canContact here?
-                                if (lTargetCivs[k] == 0):
-                                        lTargetCivs[k] = 1
-                for k in range( iNumTotalPlayers ):
-                        if (k >= iNumPlayers):
-                                if (gc.getPlayer(k).isAlive() and tCiv.isHasMet(k)):
-                                        lTargetCivs[k] = 1
-
-                ##set master or vassal to 0
-                for k in range( iNumPlayers ):                                
-                        if (gc.getTeam(gc.getPlayer(k).getTeam()).isVassal(iCiv) or tCiv.isVassal(k)):
-                                 lTargetCivs[k] = 0
-
-                #if already at war
-                for k in range( iNumTotalPlayers ): 
-                        if (tCiv.isAtWar(k)):
-                                lTargetCivs[k] = 0
-
-                lTargetCivs[iCiv] = 0
-                                
-                for j in range( 68 ): 
-                        for i in range( 124 ):                                      
-                                iOwner = gc.getMap().plot( i, j ).getOwner()
-                                if (iOwner >= 0 and iOwner < iNumTotalPlayers and iOwner != iCiv):
-                                        if (lTargetCivs[iOwner] > 0):
-                                                lTargetCivs[iOwner] += gc.getPlayer(iCiv).getWarMapValue(i, j)
-                                                
-                #there are other routines for this
-                lTargetCivs[iIndependent] /= 3
-                lTargetCivs[iIndependent2] /= 3
-
-                #can they attack civs with lost contact?
-                for k in range( iNumPlayers ): 
-                        if (not pCiv.canContact(k)):
-                                lTargetCivs[k] /= 8
-
-                #print(lTargetCivs)
-                
-                #normalization
-                iMaxTempValue = -1
-                for k in range( iNumTotalPlayers ):
-                        if (lTargetCivs[k] > iMaxTempValue):
-                                iMaxTempValue = lTargetCivs[k]
-                #print(iMaxTempValue)
-                if (iMaxTempValue > 0):
-                        for k in range( iNumTotalPlayers ):
-                                if (lTargetCivs[k] > 0):
-                                        #lTargetCivs[k] *= 500 #non va!
-                                        #lTargetCivs[k] / iMaxTempValue
-                                        lTargetCivs[k] = lTargetCivs[k]*500/iMaxTempValue
-                                        
-                #print(lTargetCivs)
-                
-                for iLoopCiv in range( iNumTotalPlayers ):
-
-                        if (lTargetCivs[iLoopCiv] <= 0):
-                                continue
-                            
-                        #add a random value
-                        if (lTargetCivs[iLoopCiv] <= iThreshold):
-                                lTargetCivs[iLoopCiv] += gc.getGame().getSorenRandNum(100, 'random modifier')
-                        if (lTargetCivs[iLoopCiv] > iThreshold):
-                                lTargetCivs[iLoopCiv] += gc.getGame().getSorenRandNum(300, 'random modifier')
-                        #balanced with attitude
-                        attitude = 2*(pCiv.AI_getAttitude(iLoopCiv) - 2)
-                        if (attitude > 0):
-                                lTargetCivs[iLoopCiv] /= attitude
-                        #exploit plague
-                        if (utils.getPlagueCountdown(iLoopCiv) > 0 or utils.getPlagueCountdown(iLoopCiv) < -10 and not (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[iLoopCiv]) + utils.getTurns(20))):
-                                lTargetCivs[iLoopCiv] *= 3
-                                lTargetCivs[iLoopCiv] /= 2
-
-                        #balanced with master's attitude
-                        for j in range( iNumTotalPlayers ):
-                                if (tCiv.isVassal(j)):
-                                        attitude = 2*(gc.getPlayer(j).AI_getAttitude(iLoopCiv) - 2)
-                                        if (attitude > 0):
-                                                lTargetCivs[iLoopCiv] /= attitude
-
-                        #if already at war 
-                        if (not tCiv.isAtWar(iLoopCiv)):
-                                #consider peace counter
-                                iCounter = min(7,max(1,tCiv.AI_getAtPeaceCounter(iLoopCiv)))
-                                if (iCounter <= 7):
-                                        lTargetCivs[iLoopCiv] *= 20 + 10*iCounter
-                                        lTargetCivs[iLoopCiv] /= 100
-                                        
-                        #if under pact
-                        if (tCiv.isDefensivePact(iLoopCiv)):
-                                lTargetCivs[iLoopCiv] /= 4
-                        #if friend of a friend
-##                        for jLoopCiv in range( iNumTotalPlayers ):
-##                                if (tCiv.isDefensivePact(jLoopCiv) and gc.getTeam(gc.getPlayer(iLoopCiv).getTeam()).isDefensivePact(jLoopCiv)):
-##                                        lTargetCivs[iLoopCiv] /= 2
-                                
-                        #spare them
-                        if (iLoopCiv == con.iNetherlands or iLoopCiv == con.iPortugal or iLoopCiv == con.iItaly):
-                                lTargetCivs[iLoopCiv] *= 4
-                                lTargetCivs[iLoopCiv] /= 5
-                        #no suicide
-                        if (iCiv == con.iNetherlands):
-                                if (iLoopCiv == con.iFrance or iLoopCiv == con.iGermany):
-                                        lTargetCivs[iLoopCiv] *= 1
-                                        lTargetCivs[iLoopCiv] /= 2
-                        if (iCiv == con.iPortugal):
-                                if (iLoopCiv == con.iSpain):
-                                        lTargetCivs[iLoopCiv] *= 1
-                                        lTargetCivs[iLoopCiv] /= 2
-			if (iCiv == con.iItaly):
-				if (iLoopCiv == con.iGermany or iLoopCiv == con.iFrance):
-					lTargetCivs[iLoopCiv] /= 2
-                                
-                                
-                #print(lTargetCivs)
-                
-                #find max
-                iMaxValue = 0
-                iTargetCiv = -1
-                for iLoopCiv in range( iNumTotalPlayers ):
-                        if (lTargetCivs[iLoopCiv] > iMaxValue):
-                                iMaxValue = lTargetCivs[iLoopCiv]
-                                iTargetCiv = iLoopCiv
-
-                #print ("maxvalue", iMaxValue)
-                #print("target civ", iTargetCiv)
-
-                if (iMaxValue >= iMinValue):
-                        return iTargetCiv
-                return -1
-
-                                        
 	    
         def forgetMemory(self, iTech, iPlayer):
                 if (iTech == con.iCommunism or iTech == con.iMassMedia):
@@ -482,9 +213,43 @@ class AIWars:
                                 if (pPlayer.AI_getMemoryCount(iLoopCiv,1) > 0):
                                         pPlayer.AI_changeMemoryCount(iLoopCiv,1,-1)
 					
+	def getNextInterval(self, iGameTurn):
+		if iGameTurn > getTurnForYear(1600):
+			iMinInterval = iMinIntervalLate
+			iMaxInterval = iMaxIntervalLate
+		else:
+			iMinInterval = iMinIntervalEarly
+			iMaxInterval = iMaxIntervalEarly
+			
+		iMinInterval = utils.getTurns(iMinInterval)
+		iMaxInterval = utils.getTurns(iMaxInterval)
+		
+		return iMinInterval + gc.getGame().getSorenRandNum(iMaxInterval-iMinInterval, 'random turn')
+					
 	def planWars(self, iGameTurn):
+	
+		# skip if there is a world war
+		if iGameTurn > getTurnForYear(1500):
+			iCivsAtWar = 0
+			for iLoopPlayer in range(con.iNumPlayers):
+				tLoopPlayer = gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam())
+				if tLoopPlayer.getAtWarCount(True) > 0:
+					iCivsAtWar += 1
+			if 100 * iCivsAtWar / gc.getGame().countCivPlayersAlive() > 50:
+				self.setNextTurnAIWar(iGameTurn + self.getNextInterval(iGameTurn))
+				return
+	
 		iAttackingPlayer = self.determineAttackingPlayer()
 		iTargetPlayer = self.determineTargetPlayer(iAttackingPlayer)
+		
+		sd.setAggressionLevel(iAttackingPlayer, 0)
+		
+		if iTargetPlayer == -1:
+			return
+			
+		gc.getTeam(iAttackingPlayer).AI_setWarPlan(iTargetPlayer, WarPlanTypes.WARPLAN_PREPARING_LIMITED)
+		
+		self.setNextTurnAIWar(iGameTurn + self.getNextInterval(iGameTurn))
 		
 	def determineAttackingPlayer(self):
 		lAggressionLevels = sd.getAggressionLevels()
@@ -516,6 +281,9 @@ class AIWars:
 			
 			lPotentialTargets.append(iLoopPlayer)
 			
+		if not lPotentialTargets:
+			return -1
+			
 		# iterate the map for all potential targets
 		for i in range(124):
 			for j in range(68):
@@ -527,4 +295,77 @@ class AIWars:
 		for iLoopPlayer in lPotentialTargets:
 			lTargetValues[iLoopPlayer] /= 8
 			
+		# normalization
+		iMaxValue = utils.getHighestEntry(lTargetValues)
+		for iLoopPlayer in lPotentialTargets:
+			lTargetValues[iLoopPlayer] *= 500
+			lTargetValues[iLoopPlayer] /= iMaxValue
 			
+		for iLoopPlayer in lPotentialTargets:
+		
+			# randomization
+			if lTargetValues[iLoopPlayer] <= iThreshold:
+				lTargetValues[iLoopPlayer] += gc.getGame().getSorenRandNum(100, 'random modifier')
+			else:
+				lTargetValues[iLoopPlayer] += gc.getGame().getSorenRandNum(300, 'random modifier')
+			
+			# balanced by attitude
+			iAttitude = pPlayer.AI_getAttitude(iLoopPlayer) - 2
+			if iAttitude > 0:
+				lTargetValues[iLoopPlayer] /= 2 * iAttitude
+				
+			# exploit plague
+			if utils.getPlagueCountdown(iLoopPlayer) > 0 or utils.getPlagueCountdown(iLoopPlayer) < -10:
+				if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iLoopPlayer]) + utils.getTurns(20):
+					lTargetValues[iLoopPlayer] *= 3
+					lTargetValues[iLoopPlayer] /= 2
+		
+			# determine master
+			iMaster = -1
+			for iLoopMaster in range(con.iNumPlayers):
+				if tLoopPlayer.isVassal(iLoopMaster):
+					iMaster = iLoopMaster
+					break
+					
+			# master attitudes
+			if iMaster >= 0:
+				iAttitude = gc.getPlayer(iMaster).AI_getAttitude(iLoopPlayer)
+				if iAttitude > 0:
+					lTargetValues[iLoopPlayer] /= 2 * iAttitude
+			
+			# peace counter
+			if not tPlayer.isAtWar(iLoopPlayer):
+				iCounter = min(7, max(1, tPlayer.AI_getAtPeaceCounter(iLoopPlayer)))
+				if iCounter <= 7:
+					lTargetValues[iLoopPlayer] *= 20 + 10 * iCounter
+					lTargetValues[iLoopPlayer] /= 100
+					
+			# defensive pact
+			if tPlayer.isDefensivePact(iLoopPlayer):
+				lTargetValues[iLoopPlayer] /= 4
+				
+			# consider power
+			iOurPower = tPlayer.getPower(True)
+			iTheirPower = gc.getTeam(iLoopPlayer).getPower(True)
+			if iOurPower > 2 * iTheirPower:
+				lTargetValues[iLoopPlayer] *= 2
+			elif 2 * iOurPower < iTheirPower:
+				lTargetValues[iLoopPlayer] /= 2
+				
+			# spare smallish civs
+			if iLoopPlayer in [con.iNetherlands, con.iPortugal, con.iItaly]:
+				lTargetValues[iLoopPlayer] *= 4
+				lTargetValues[iLoopPlayer] /= 5
+				
+			# no suicide
+			if iPlayer == con.iNetherlands:
+				if iLoopPlayer in [con.iFrance, con.iHolyRome, con.iGermany]:
+					lTargetValues[iLoopPlayer] /= 2
+			elif iPlayer == con.iPortugal:
+				if iLoopPlayer == con.iSpain:
+					lTargetValues[iLoopPlayer] /= 2
+			elif iPlayer == con.iItaly:
+				if iLoopPlayer in [con.iFrance, con.iHolyRome, con.iGermany]:
+					lTargetValues[iLoopPlayer] /= 2
+					
+		return utils.getHighestIndex(lTargetValues)

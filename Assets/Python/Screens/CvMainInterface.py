@@ -5479,6 +5479,23 @@ class CvMainInterface:
 				self.setFieldofView_Text(screen)
 				MainOpt.setFieldOfView(self.iField_View)
 # BUG - field of view slider - end
+		
+		# Leoreth: enslave option
+		if inputClass.getFunctionName() == "Conscript":
+			pCity = CyInterface().getHeadSelectedCity()
+			if pCity.canEnslave(True):
+				pCity.conscript()
+			#utils.debugTextPopup("Enslave")
+			
+		# Leoreth: sacrifice Aztec slaves
+		if (inputClass.getNotifyCode() == 11 and inputClass.getData1() == 300 and inputClass.getData2() == 300):
+			self.pPushedButtonUnit = g_pSelectedUnit
+			iX = self.pPushedButtonUnit.getX()
+			iY = self.pPushedButtonUnit.getY()
+			city = gc.getMap().plot(iX, iY).getPlotCity()
+			city.changeHappinessTimer(5)
+			city.setWeLoveTheKingDay(True)
+			self.pPushedButtonUnit.kill(false, city.getOwner())
 
 		return 0
 	

@@ -751,6 +751,11 @@ class CvRFCEventHandler:
 		
 		sta.onChangeWar(bWar, iTeam, iOtherTeam)
 		self.up.onChangeWar(bWar, iTeam, iOtherTeam)
+		
+		# don't start AIWars if they get involved in natural wars
+		if bWar and iTeam < con.iNumPlayers and iOtherTeam < con.iNumPlayers:
+			sd.setAggressionLevel(iTeam, 0)
+			sd.setAggressionLevel(iOtherTeam, 0)
 			
 	def onGoldenAge(self, argsList):
 		iPlayer = argsList[0]

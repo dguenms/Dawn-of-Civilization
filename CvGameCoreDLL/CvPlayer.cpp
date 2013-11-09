@@ -25156,7 +25156,7 @@ DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
 
 bool CvPlayer::canEnslave() const
 {
-	return (getCivics((CivicOptionTypes)3) == CIVIC_SLAVERY && getMaxConscript() <= 0);
+	return (getCivics((CivicOptionTypes)2) == CIVIC_SLAVERY && getMaxConscript() <= 0);
 }
 
 bool CvPlayer::hasCivic(CivicTypes eCivic) const
