@@ -6189,6 +6189,7 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 
 		if (GET_TEAM(getTeam()).AI_getAtWarCounter(GET_PLAYER(ePlayer).getTeam()) < iRefuseDuration)
 		{
+			GC.getGame().logMsg("Player %d not willing to talk to player %d", (int)getID(), (int)ePlayer);
 			GC.getGame().logMsg("Refuse duration: %d turns, Length of war: %d turns", iRefuseDuration, GET_TEAM(getTeam()).AI_getAtWarCounter(GET_PLAYER(ePlayer).getTeam()));
 			return false;
 		}
