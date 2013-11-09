@@ -6187,10 +6187,10 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 			iRefuseDuration = 0;
 		}
 
-		if (GET_TEAM(getTeam()).AI_getAtWarCounter(GET_PLAYER(ePlayer).getTeam()) < iRefuseDuration)
+		/*if (GET_TEAM(getTeam()).AI_getAtWarCounter(GET_PLAYER(ePlayer).getTeam()) < iRefuseDuration)
 		{
 			return false;
-		}
+		}*/
 
 		if (GET_TEAM(getTeam()).isAVassal())
 		{

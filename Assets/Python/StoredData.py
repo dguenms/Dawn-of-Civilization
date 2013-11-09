@@ -71,6 +71,7 @@ class StoredData:
 				    #------------AIWars
                                     'lAttackingCivsArray': [0 for i in range(con.iNumPlayers)], #original RFC had -1 here somewhere??
                                     'iNextTurnAIWar': -1,
+				    'lAggressionLevels': [0 for i in range(con.iNumPlayers)],
                                     #------------Congresses
                                     'bCongressEnabled': False,
                                     'iCivsWithNationalism': 0,
@@ -252,6 +253,15 @@ class StoredData:
 		
 	def setFirstModern(self, iNewValue):
 		self.scriptDict['iFirstModern'] = iNewValue
+		
+	def getAggressionLevels(self):
+		return self.scriptDict['lAggressionLevels']
+		
+	def changeAggressionLevel(self, iPlayer, iChange):
+		self.scriptDict['lAggressionLevels'][iPlayer] += iChange
+		
+	def setAggressionLevel(self, iPlayer, iNewValue):
+		self.scriptDict['lAggressionLevels'][iPlayer] = iNewValue
 		
 # All modules import the following single instance, not the class
 

@@ -31070,6 +31070,7 @@ BeginPlot
 		BuildingType=BUILDING_TOPKAPI_PALACE
 		BuildingType=BUILDING_BLUE_MOSQUE
 		ReligionType=RELIGION_ORTHODOXY
+		HolyCityReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		Player33Culture=100
 	EndCity
@@ -34626,6 +34627,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_ISLAMIC_SHRINE
 		ReligionType=RELIGION_ISLAM
+		HolyCityReligionType=RELIGION_ISLAM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player33Culture=10

@@ -602,4 +602,20 @@
 		<English>(Turn %d1)</English>
 		<German>(Runde %d1)</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FREE_TECH</Tag>
+		<English>[ICON_BULLET]1 Free Technology From Your Current Or Earlier Eras</English>
+		<French>[ICON_BULLET]1 technologie gratuite</French>
+		<German>[ICON_BULLET]1 freie Technologie aus Ihrer aktuellen oder früheren Zeitaltern</German>
+		<Italian>[ICON_BULLET]1 tecnologia gratuita</Italian>
+		<Spanish>[ICON_BULLET]1 tecnolog&#237;a gratis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FREE_TECHS</Tag>
+		<English>[ICON_BULLET]%d1_Num Free Technologies From Your Current Or Earlier Eras</English>
+		<French>[ICON_BULLET]%d1_Num technologies gratuites</French>
+		<German>[ICON_BULLET]%d1_Num freie Technologien aus Ihrer aktuellen oder früheren Zeitaltern</German>
+		<Italian>[ICON_BULLET]%d1_Num tecnologie gratuite</Italian>
+		<Spanish>[ICON_BULLET]%d1_Num tecnolog&#237;as gratis</Spanish>
+	</TEXT>
 </Civ4GameText>

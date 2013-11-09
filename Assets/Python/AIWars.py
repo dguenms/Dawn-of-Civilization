@@ -481,5 +481,50 @@ class AIWars:
                                         pPlayer.AI_changeMemoryCount(iLoopCiv,0,-1)
                                 if (pPlayer.AI_getMemoryCount(iLoopCiv,1) > 0):
                                         pPlayer.AI_changeMemoryCount(iLoopCiv,1,-1)
+					
+	def planWars(self, iGameTurn):
+		iAttackingPlayer = self.determineAttackingPlayer()
+		iTargetPlayer = self.determineTargetPlayer(iAttackingPlayer)
+		
+	def determineAttackingPlayer(self):
+		lAggressionLevels = sd.getAggressionLevels()
+		iHighestEntry = utils.getHighestEntry(lAggressionLevels)
+		
+		return lAggressionLevels.index(iHighestEntry)
+		
+	def determineTargetPlayer(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		tPlayer = gc.getTeam(pPlayer.getTeam())
+		lPotentialTargets = []
+		lTargetValues = [0 for i in range(con.iNumPlayers)]
 
-
+		# determine potential targets
+		for iLoopPlayer in range(con.iNumPlayers):
+			pLoopPlayer = gc.getPlayer(iLoopPlayer)
+			tLoopPlayer = gc.getTeam(pLoopPlayer.getTeam())
+			
+			# requires live civ and past contact
+			if not pLoopPlayer.isAlive(): continue
+			if not tPlayer.isHasMet(iLoopPlayer): continue
+			
+			# no masters or vassals
+			if tPlayer.isVassal(iLoopPlayer): continue
+			if tLoopPlayer.isVassal(iPlayer): continue
+			
+			# not already at war
+			if tPlayer.isAtWar(iLoopPlayer): continue
+			
+			lPotentialTargets.append(iLoopPlayer)
+			
+		# iterate the map for all potential targets
+		for i in range(124):
+			for j in range(68):
+				iOwner = gc.getMap().plot(i,j).getOwner()
+				if iOwner in lPotentialTargets:
+					lTargetValues[iOwner] += pPlayer.getWarMapValue(i, j)
+					
+		# hard to attack with lost contact
+		for iLoopPlayer in lPotentialTargets:
+			lTargetValues[iLoopPlayer] /= 8
+			
+			
