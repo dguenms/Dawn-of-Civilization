@@ -136,9 +136,9 @@ class Barbs:
                         
                 #celts
                 if (iGameTurn >= getTurnForYear(-650) and iGameTurn <= getTurnForYear(-110)):
-                        self.checkSpawn(iCeltia, con.iCelticGallicWarrior, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 7, 0)
+                        self.checkSpawn(iCeltia, con.iCelticGallicWarrior, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 6, 0)
                         if (iHandicap >= 0):
-                                self.checkSpawn(iCeltia, con.iAxeman, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 9, 6, ["TXT_KEY_ADJECTIVE_GAUL"])
+                                self.checkSpawn(iCeltia, con.iAxeman, 1, (49, 46), (65, 52), self.spawnMinors, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GAUL"])
 
                 #norse
                 if (iGameTurn >= getTurnForYear(-650) and iGameTurn <= getTurnForYear(550)):
@@ -197,21 +197,21 @@ class Barbs:
 
 		# Leoreth: Barbarians in Anatolia (Hittites), replace Hattusas spawn
 		if (iGameTurn >= getTurnForYear(-2000) and iGameTurn <= getTurnForYear(-800)):
-			self.checkSpawn(iBarbarian, con.iHittiteHuluganni, 2 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 12, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
+			self.checkSpawn(iBarbarian, con.iHittiteHuluganni, 1 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 16, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
                         
                 #barbarians in europe
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(470)):
-                        self.checkSpawn(iBarbarian, con.iAxeman, 3 + iHandicap, (50, 45), (63, 52), self.spawnInvaders, iGameTurn, 12, 0, ["TXT_KEY_ADJECTIVE_GERMANIC"])
-			self.checkSpawn(iBarbarian, con.iAxeman, 2 + iHandicap, (64, 49), (69, 55), self.spawnInvaders, iGameTurn, 14, 2, ["TXT_KEY_ADJECTIVE_GERMANIC"])
+                        self.checkSpawn(iBarbarian, con.iAxeman, 3 + iHandicap, (50, 45), (63, 52), self.spawnInvaders, iGameTurn, 10, 0, ["TXT_KEY_ADJECTIVE_GERMANIC"])
+			self.checkSpawn(iBarbarian, con.iAxeman, 2 + iHandicap, (64, 49), (69, 55), self.spawnInvaders, iGameTurn, 12, 2, ["TXT_KEY_ADJECTIVE_GERMANIC"])
 		# Leoreth: begins 100 AD instead of 50 AD
                 if (iGameTurn >= getTurnForYear(100) and iGameTurn <= getTurnForYear(470)):
-                        self.checkSpawn(iBarbarian, con.iSwordsman, 3, (58, 45), (70, 55), self.spawnInvaders, iGameTurn, 10, 5, ["TXT_KEY_ADJECTIVE_GERMANIC"])
+                        self.checkSpawn(iBarbarian, con.iSwordsman, 3, (58, 45), (70, 55), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_GERMANIC"])
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(550)):
-                        self.checkSpawn(iBarbarian, con.iAxeman, 4 + iHandicap, (49, 41), (56, 52), self.spawnInvaders, iGameTurn, 6, 4, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
-			self.checkSpawn(iBarbarian, con.iSwordsman, 4 + iHandicap, (49, 41), (57, 52), self.spawnInvaders, iGameTurn, 6, 2, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
-			self.checkSpawn(iBarbarian, con.iHorseArcher, 3, (55, 49), (65, 53), self.spawnInvaders, iGameTurn, 6, 0, ["TXT_KEY_ADJECTIVE_HUNNIC"])
+                        self.checkSpawn(iBarbarian, con.iAxeman, 4 + iHandicap, (49, 41), (56, 52), self.spawnInvaders, iGameTurn, 5, 4, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
+			self.checkSpawn(iBarbarian, con.iSwordsman, 4 + iHandicap, (49, 41), (57, 52), self.spawnInvaders, iGameTurn, 5, 2, ["TXT_KEY_ADJECTIVE_VISIGOTHIC"])
+			self.checkSpawn(iBarbarian, con.iHorseArcher, 3, (55, 49), (65, 53), self.spawnInvaders, iGameTurn, 5, 0, ["TXT_KEY_ADJECTIVE_HUNNIC"])
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(700)):
-                        self.checkSpawn(iBarbarian, con.iHorseArcher, 3 + iHandicap, (58, 50), (88, 53), self.spawnInvaders, iGameTurn, 4, 2, ["TXT_KEY_ADJECTIVE_HUNNIC"])
+                        self.checkSpawn(iBarbarian, con.iHorseArcher, 3 + iHandicap, (58, 50), (88, 53), self.spawnInvaders, iGameTurn, 3, 2, ["TXT_KEY_ADJECTIVE_HUNNIC"])
 
 		#Leoreth: barbarians in Balkans / Black Sea until the High Middle Ages (Bulgarians, Cumans, Pechenegs)
 		if (iGameTurn >= getTurnForYear(680) and iGameTurn <= getTurnForYear(1000)):
