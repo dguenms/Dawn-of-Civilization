@@ -730,9 +730,9 @@ class CvRFCEventHandler:
 			elif iPlayer == con.iItaly and iEra == con.iIndustrial:
 				utils.moveCapital(iPlayer, (60, 44)) # Roma
 			elif iPlayer == con.iVikings and iEra == con.iRenaissance:
-				utils.moveCapital(iPlayer, (63, 58)) # Stockholm
+				utils.moveCapital(iPlayer, (63, 59)) # Stockholm
 			elif iPlayer == con.iHolyRome and iEra == con.iRenaissance:
-				utils.moveCapital(iPlayer, (63, 49)) # Wien
+				utils.moveCapital(iPlayer, (62, 49)) # Wien
                 
 
         def onPreSave(self, argsList):
