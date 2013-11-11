@@ -6070,15 +6070,15 @@ void CvGame::doTurn()
 
 	doDeals();
 
-	/*for (iI = 0; iI < MAX_TEAMS; iI++)
+	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
-		GC.getGameINLINE().logMsg("doTurn iterate player: %d", iI); //Rhye
+		//GC.getGameINLINE().logMsg("doTurn iterate player: %d", iI); //Rhye
 		if (GET_TEAM((TeamTypes)iI).isAlive())
 		{
-			GC.getGameINLINE().logMsg("doTurn iterate alive player: %d", iI); //Rhye
+			//GC.getGameINLINE().logMsg("doTurn iterate alive player: %d", iI); //Rhye
 			GET_TEAM((TeamTypes)iI).doTurn();
 		}
-	}*/
+	}
 
 	GC.getMapINLINE().doTurn();
 
