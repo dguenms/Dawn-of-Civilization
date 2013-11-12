@@ -16183,8 +16183,9 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 
 			if (NULL != pCity)
 			{
-				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_CITY_CULTURE_INSERTED", pCity->getNameKey()).GetCString();
+				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_CITY_CULTURE_INSERTED", pCity->getNameKey()).GetCString();				
 
+				/* original bts code
 				int iCultureAmount = kMission.getCityInsertCultureAmountFactor() * pCity->countTotalCultureTimes100();
 				iCultureAmount /= 10000;
 				iCultureAmount = std::max(1, iCultureAmount);
@@ -16199,7 +16200,14 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 				if (iNumTurnsApplied > 0)
 				{
 					pCity->changeCulture(getID(), iCultureAmount % iNumTurnsApplied, false, true);
-				}
+				} */
+
+				// K-Mod. apply culture in one hit. We don't need fake 'free city culture' anymore.
+				int iCultureTimes100 = std::max(1, kMission.getCityInsertCultureAmountFactor() * pCity->countTotalCultureTimes100() / 100);
+
+				//pCity->changeCultureTimes100(getID(), iCultureTimes100, true, true);
+				pCity->doPlotCultureTimes100(true, getID(), iCultureTimes100, false); // plot culture only.
+				// K-Mod end
 
 				bSomethingHappened = true;
 			}

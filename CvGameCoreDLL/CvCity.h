@@ -896,6 +896,7 @@ public:
 	void changeSpecialistBadHappiness(int iChange);
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
+	void doPlotCultureTimes100(bool bUpdate, PlayerTypes ePlayer, int iCultureRateTimes100, bool bCityCulture);
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

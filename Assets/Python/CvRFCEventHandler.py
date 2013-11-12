@@ -184,6 +184,10 @@ class CvRFCEventHandler:
 			
                 if iPlayer < iNumMajorPlayers:
 			utils.spreadMajorCulture(iPlayer, city.getX(), city.getY())
+			
+		# starting workers
+		if gc.getPlayer(iOwner).getNumCities() == 1:
+			self.rnf.createStartingWorkers(iOwner, (city.getX(), city.getY()))
 		
 		# relocate capitals
 		if utils.getHumanID() != iPlayer:

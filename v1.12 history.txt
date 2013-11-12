@@ -130,3 +130,4 @@
 	   - Tolerance: control the temples of seven different religions
 	   - Humanism: make sure there are 20 universities in secular civilizations
 	   - Modernization: be first to enter the industrial and modern eras
+# redid AIWars to allow more AI planning and avoid stupid wars
