@@ -1089,7 +1089,9 @@ void CvCity::doTurn()
 /**	END                                                                  						**/
 /*************************************************************************************************/
 
-	doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
+	// Leoreth: try K-Mods plot culture algorithm
+	//doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
+	doPlotCultureTimes100(false, getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), true);
 
 	doProduction(bAllowNoProduction);
 
@@ -9972,6 +9974,9 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
+	// Leoreth: includes K-Mod fixes / culture spread changes
+	int iOldValue = getCultureTimes100(eIndex);
+
 	if (getCultureTimes100(eIndex) != iNewValue)
 	{
 		m_aiCulture[eIndex] = iNewValue;
@@ -9981,7 +9986,14 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 
 		if (bPlots)
 		{
+			/* original bts code
 			doPlotCulture(true, eIndex, 0);
+			*/
+			//doPlotCulture(true, eIndex, (iNewValue-iOldValue)/100);
+			doPlotCultureTimes100(true, eIndex, (iNewValue-iOldValue), false);
+			// note: this function no longer applies free city culture.
+			// also, note that if a city's culture is decreased to zero, there will probably still be some residual plot culture around the city
+			// this is because the culture level on the way up will be higher than it is on the way down.
 		}
 	}
 }
@@ -12943,6 +12955,102 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 			}
 		}
 	}
+}
+
+// This function has essentially been rewriten for K-Mod. (and it use to not be 'times 100')
+// A note about scale: the city plot itself gets roughly 10x culture. The outer edges of the cultural influence get 1x culture (ie. the influence that extends beyond the borders).
+void CvCity::doPlotCultureTimes100(bool bUpdate, PlayerTypes ePlayer, int iCultureRateTimes100, bool bCityCulture)
+{
+	CultureLevelTypes eCultureLevel = (CultureLevelTypes)0;
+
+	/*if (GC.getUSE_DO_PLOT_CULTURE_CALLBACK()) // K-Mod. block unused python callbacks
+	{
+		CyCity* pyCity = new CyCity(this);
+		CyArgsList argsList;
+		argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
+		argsList.add(bUpdate);
+		argsList.add(ePlayer);
+		//argsList.add(iCultureRate);
+		argsList.add(iCultureRateTimes100/100); // K-Mod
+		long lResult=0;
+		gDLL->getPythonIFace()->callFunction(PYGameModule, "doPlotCulture", argsList.makeFunctionArgs(), &lResult);
+		delete pyCity;	// python fxn must not hold on to this pointer 
+		if (lResult == 1)
+		{
+			return;
+		}
+	}*/
+
+	FAssert(NO_PLAYER != ePlayer);
+
+	if (getOwnerINLINE() == ePlayer)
+	{
+		eCultureLevel = getCultureLevel();
+	}
+	else
+	{
+		for (int iI = (GC.getNumCultureLevelInfos() - 1); iI > 0; iI--)
+		{
+			if (getCultureTimes100(ePlayer) >= 100 * GC.getGameINLINE().getCultureThreshold((CultureLevelTypes)iI))
+			{
+				eCultureLevel = (CultureLevelTypes)iI;
+				break;
+			}
+		}
+	}
+
+/**
+*** K-Mod, 30/oct/10, Karadoc
+*** increased culture range, added a percentage based distance bonus (decreasing the importance flat rate bonus).
+**/
+	// (original bts code deleted)
+
+	// Experimental culture profile...
+	// Ae^(-bx). A = 10 (no effect), b = log(full_range_ratio)/range
+	// (iScale-1)(iDistance - iRange)^2/(iRange^2) + 1   // This approximates the exponential pretty well
+	const int iScale = 10;
+	const int iCultureRange = eCultureLevel + 3;
+
+	//const int iOuterRatio = 10;
+	//const double iB = log((double)iOuterRatio)/iCultureRange;
+
+	// free culture bonus for cities
+	iCultureRateTimes100+=(bCityCulture && iCultureRateTimes100 > 0)?600 :0;
+
+	// note, original code had "if (getCultureTimes100(ePlayer) > 0)". I took that part out.
+	if (eCultureLevel != NO_CULTURELEVEL &&	(std::abs(iCultureRateTimes100*iScale) >= 100 || bCityCulture))
+	{
+		for (int iDX = -iCultureRange; iDX <= iCultureRange; iDX++)
+		{
+			for (int iDY = -iCultureRange; iDY <= iCultureRange; iDY++)
+			{
+				int iDistance = cultureDistance(iDX, iDY);
+
+				if (iDistance <= iCultureRange)
+				{
+					CvPlot* pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+
+					if (pLoopPlot != NULL)
+					{
+						if (pLoopPlot->isPotentialCityWorkForArea(area()))
+						{
+							/* int iCultureToAdd =
+								(iInnerFactor * iCultureRange - iDistance * (iInnerFactor - iOuterFactor))
+								* iCultureRateTimes100 / (iCultureRange * 100); */
+							//int iCultureToAdd = (int)(iScale*iCultureRateTimes100*exp(-iB*iDistance)/100);
+							int iCultureToAdd =
+								iCultureRateTimes100*((iScale-1)*(iDistance-iCultureRange)*(iDistance-iCultureRange) + iCultureRange*iCultureRange)/(100*iCultureRange*iCultureRange);
+
+							pLoopPlot->changeCulture(ePlayer, iCultureToAdd, (bUpdate || !(pLoopPlot->isOwned())));
+						}
+					}
+				}
+			}
+		}
+	}
+/*
+** K-Mod end
+*/
 }
 
 bool CvCity::doCheckProduction()
