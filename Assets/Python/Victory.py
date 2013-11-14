@@ -3611,7 +3611,7 @@ class Victory:
 				lCities = utils.getSortedList(lCities, lambda x: x.getCulture(x.getOwner()), True)
 				
 				iCultureCities = 0
-				for city in lCities[0:4]:
+				for city in lCities[0:5]:
 					if city.isHasReligion(con.iOrthodoxy) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iOrthodoxy:
 						iCultureCities += 1
 						
@@ -3674,7 +3674,7 @@ class Victory:
 				lCities = utils.getSortedList(lCities, lambda x: x.getPopulation(), True)
 				
 				iLargestCities = 0
-				for city in lCities[0:4]:
+				for city in lCities[0:5]:
 					if city.isHasReligion(con.iHinduism) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iHinduism:
 						iLargestCities += 1
 						
@@ -4342,7 +4342,7 @@ class Victory:
 					lCities.extend(utils.getCityList(iLoopPlayer))
 				lCities = utils.getSortedList(lCities, lambda x: x.getCulture(x.getOwner()), True)
 				iCultureCities = 0
-				for city in lCities[0:4]:
+				for city in lCities[0:5]:
 					if city.isHasReligion(con.iOrthodoxy) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iOrthodoxy:
 						iCultureCities += 1
 				aHelp.append(self.getIcon(iCultureCities == 5) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CULTURE_CITIES", (iCultureCities, 5)))
@@ -4385,7 +4385,7 @@ class Victory:
 					lCities.extend(utils.getCityList(iLoopPlayer))
 				lCities = utils.getSortedList(lCities, lambda x: x.getPopulation(), True)
 				iLargestCities = 0
-				for city in lCities[0:4]:
+				for city in lCities[0:5]:
 					if city.isHasReligion(con.iHinduism) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iHinduism:
 						iLargestCities += 1
 				aHelp.append(self.getIcon(iLargestCities == 5) + localText.getText("TXT_KEY_VICTORY_HINDU_LARGEST_CITIES", (iLargestCities, 5)))
