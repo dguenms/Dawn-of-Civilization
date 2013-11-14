@@ -3615,7 +3615,7 @@ class Victory:
 					if city.isHasReligion(con.iOrthodoxy) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iOrthodoxy:
 						iCultureCities += 1
 						
-				if iCultureCities == 5: return 5
+				if iCultureCities == 5: return 1
 				
 			# Third Orthodox goal: make sure there are no Catholic civilizations in the world
 			elif iGoal == 2:
@@ -3678,7 +3678,7 @@ class Victory:
 					if city.isHasReligion(con.iHinduism) and gc.getPlayer(city.getOwner()).getStateReligion() == con.iHinduism:
 						iLargestCities += 1
 						
-				if iLargestCities == 5: return 5
+				if iLargestCities == 5: return 1
 				
 		elif iVictoryType == con.iBuddhism:
 		
