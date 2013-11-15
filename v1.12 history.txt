@@ -131,3 +131,4 @@
 	   - Humanism: make sure there are 20 universities in secular civilizations
 	   - Modernization: be first to enter the industrial and modern eras
 # redid AIWars to allow more AI planning and avoid stupid wars
+# civic effects that previously allowed unlimited specialists now double the available specialist slots

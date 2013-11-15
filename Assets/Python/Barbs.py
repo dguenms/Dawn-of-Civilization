@@ -7,6 +7,7 @@ import PyHelpers        # LOQ
 #import cPickle as pickle
 import RFCUtils
 import Consts as con
+from StoredData import sd
 
 # globals
 gc = CyGlobalContext()
@@ -320,6 +321,8 @@ class Barbs:
 			if iGameTurn < getTurnForYear(iYear): return
 			if iGameTurn > getTurnForYear(iYear)+10: continue
 			
+			if sd.isMinorCityFounded(i): continue
+			
 			x, y = tPlot
 			plot = gc.getMap().plot(x, y)
 			if plot.isCity(): continue
@@ -335,8 +338,11 @@ class Barbs:
 			if sName == 'Buda': bForceSpawn = True
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
+			
+			self.clearUnits(iPlayer, tPlot)
 		
-			self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions)
+			if self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions):
+				sd.setMinorCityFounded(i, True)
 		
 	def canFoundCity(self, sName):
 		if sName == 'Kanchipuram' and utils.getHumanID() == con.iTamils: return False
@@ -367,6 +373,35 @@ class Barbs:
 			for iReligion in lReligions:
 				if gc.getGame().isReligionFounded(iReligion):
 					city.setHasReligion(iReligion, True, False, False)
+					
+			return True
+		else:
+			return False
+					
+	def clearUnits(self, iPlayer, tPlot):
+		
+		lHumanUnits = []
+		lOtherUnits = []
+	
+		for x in range(tPlot[0], tPlot[0]+1):
+			for y in range(tPlot[1], tPlot[1]+1):
+				plot = gc.getMap().plot(x, y)
+				
+				for iUnit in range(plot.getNumUnits()):
+					unit = plot.getUnit(iUnit)
+					
+					if unit.getOwner() == utils.getHumanID():
+						lHumanUnits.append(unit)
+					else:
+						lOtherUnits.append(unit)
+						
+		capital = gc.getPlayer(utils.getHumanID()).getCapitalCity()
+		for unit in lHumanUnits:
+			unit.setXY(capital.getX(), capital.getY())
+			
+		for unit in lOtherUnits:
+			utils.makeUnit(unit.getUnitType(), iPlayer, tPlot, 1)
+			unit.kill(False, -1)
 				
 	def isFreePlot(self, tPlot, bIgnoreCulture = False):
 		x, y = tPlot

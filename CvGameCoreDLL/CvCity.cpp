@@ -1090,8 +1090,8 @@ void CvCity::doTurn()
 /*************************************************************************************************/
 
 	// Leoreth: try K-Mods plot culture algorithm
-	//doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
-	doPlotCultureTimes100(false, getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), true);
+	doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
+	//doPlotCultureTimes100(false, getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), true);
 
 	doProduction(bAllowNoProduction);
 
@@ -9975,7 +9975,7 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
 	// Leoreth: includes K-Mod fixes / culture spread changes
-	int iOldValue = getCultureTimes100(eIndex);
+	//int iOldValue = getCultureTimes100(eIndex);
 
 	if (getCultureTimes100(eIndex) != iNewValue)
 	{
@@ -9986,11 +9986,11 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 
 		if (bPlots)
 		{
-			/* original bts code
 			doPlotCulture(true, eIndex, 0);
-			*/
+			
+			// tried K-Mod code
 			//doPlotCulture(true, eIndex, (iNewValue-iOldValue)/100);
-			doPlotCultureTimes100(true, eIndex, (iNewValue-iOldValue), false);
+			//doPlotCultureTimes100(true, eIndex, (iNewValue-iOldValue), false);
 			// note: this function no longer applies free city culture.
 			// also, note that if a city's culture is decreased to zero, there will probably still be some residual plot culture around the city
 			// this is because the culture level on the way up will be higher than it is on the way down.
@@ -10865,29 +10865,37 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
 
+	int iMaxSpecialistCount = m_paiMaxSpecialistCount[eIndex];
+
 	// Leoreth: Wat Preah Pisnulok effect
 	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)ANGKORWAT) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
 	{
 		if (eIndex == (SpecialistTypes)2) // artist
 		{
-			return m_paiMaxSpecialistCount[eIndex]+m_paiMaxSpecialistCount[(SpecialistTypes)1]; // priest
+			iMaxSpecialistCount += m_paiMaxSpecialistCount[(SpecialistTypes)1]; // priest
 		}
 
 		if (eIndex == (SpecialistTypes)1) // priest
 		{
 			int iPriestsToArtists = max(0, getSpecialistCount((SpecialistTypes)2) - getFreeSpecialistCount((SpecialistTypes)2) - m_paiMaxSpecialistCount[(SpecialistTypes)2]);
-			return m_paiMaxSpecialistCount[eIndex]-iPriestsToArtists;
+			iMaxSpecialistCount -= iPriestsToArtists;
 		}
 	}
 
-	return m_paiMaxSpecialistCount[eIndex];
+	// Leoreth: unlimited specialist effects now only double available specialists
+	if (GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex))
+	{
+		iMaxSpecialistCount *= 2;
+	}
+
+	return iMaxSpecialistCount;
 }
 
 
 bool CvCity::isSpecialistValid(SpecialistTypes eIndex, int iExtra) const
 {
 	// Leoreth: Sphinx effect included (disabled)
-	return (((getSpecialistCount(eIndex) + iExtra) <= getMaxSpecialistCount(eIndex)) || GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex) || /*(isHasRealBuilding((BuildingTypes)STONEHENGE) && eIndex == (SpecialistTypes)2)  ||*/ (eIndex == GC.getDefineINT("DEFAULT_SPECIALIST")));
+	return (((getSpecialistCount(eIndex) + iExtra) <= getMaxSpecialistCount(eIndex)) || /*GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex) ||*/ /*(isHasRealBuilding((BuildingTypes)STONEHENGE) && eIndex == (SpecialistTypes)2)  ||*/ (eIndex == GC.getDefineINT("DEFAULT_SPECIALIST")));
 }
 
 
