@@ -127,6 +127,9 @@ iOrange = 88
 iTan = 90
 iLime = 100
 
+# independent cities
+iNumMinorCities = 36
+
 #neighbours
 lNeighbours = [
 [iBabylonia, iGreece, iPersia, iCarthage, iRome, iEthiopia, iByzantium, iArabia, iMoors, iTurkey], #Egypt

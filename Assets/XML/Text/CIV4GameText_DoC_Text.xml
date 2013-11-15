@@ -618,4 +618,12 @@
 		<Italian>[ICON_BULLET]%d1_Num tecnologie gratuite</Italian>
 		<Spanish>[ICON_BULLET]%d1_Num tecnolog&#237;as gratis</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_UNLIMTED</Tag>
+		<English>[ICON_BULLET]Double[SPACE]</English>
+		<French>[ICON_BULLET]Sans limite[SPACE]</French>
+		<German>[ICON_BULLET]Doppelt soviele[SPACE]</German>
+		<Italian>[ICON_BULLET]Illimitato[SPACE]</Italian>
+		<Spanish>[ICON_BULLET]Sin l&#237;mite[SPACE]</Spanish>
+	</TEXT>
 </Civ4GameText>

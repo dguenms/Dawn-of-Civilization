@@ -3540,7 +3540,7 @@ class Victory:
 				
 				if iLiberalism == iPlayer and iConstitution == iPlayer and iEconomics == iPlayer: return 1
 				
-				if iLiberalism != iPlayer or iConstitution != iPlayer or iEconomics != iPlayer: return 0
+				if iLiberalism not in [iPlayer, -1] or iConstitution not in [iPlayer, -1] or iEconomics not in [iPlayer, -1]: return 0
 				
 			# Second Protestant goal: Make sure five great merchants and great engineers are settled in Protestant civilizations
 			elif iGoal == 1:
@@ -3844,7 +3844,7 @@ class Victory:
 				
 				if iIndustrial == iPlayer and iModern == iPlayer: return 1
 				
-				if iIndustrial != iPlayer or iModern != iPlayer: return 0
+				if iIndustrial not in [iPlayer, -1] or iModern not in [iPlayer, -1]: return 0
 				
 		return -1
 					

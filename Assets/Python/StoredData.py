@@ -60,6 +60,7 @@ class StoredData:
 				    'lAnarchyTurns': [0 for i in range(con.iNumPlayers)],
 				    'lResurrections': [0 for i in range(con.iNumPlayers)],
 				    'lPlayerEnabled': [True for i in con.lSecondaryCivs],
+				    'lCityFounded': [False for i in range(con.iNumMinorCities)],
                                      #------------Religions
                                     'iSeed': -1,
 				    'lReformationDecision': [-1 for i in range(con.iNumPlayers)],
@@ -262,6 +263,12 @@ class StoredData:
 		
 	def setAggressionLevel(self, iPlayer, iNewValue):
 		self.scriptDict['lAggressionLevels'][iPlayer] = iNewValue
+		
+	def isMinorCityFounded(self, iCity):
+		return self.scriptDict['lCityFounded'][iCity]
+		
+	def setMinorCityFounded(self, iCity, bNewValue):
+		self.scriptDict['lCityFounded'][iCity] = bNewValue
 		
 # All modules import the following single instance, not the class
 
