@@ -2681,20 +2681,51 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	int iNumCities = GET_PLAYER((PlayerTypes)getID()).getNumCities();
 	int iPopulation = GET_PLAYER((PlayerTypes)getID()).getTotalPopulation();
 	int iMaxPopulation = 10 * (6 + 2 * GET_PLAYER((PlayerTypes)getID()).getCurrentEra());
+	int iSurplus = 0;
 
 	int iMultiplier = 5;
+
 	if (GET_PLAYER((PlayerTypes)getID()).isHuman())
-		iMultiplier = 8;
+		iMultiplier += 5;
 
 	// Leoreth: larger penalty for tech leader
-	if (GC.getGame().getTechRank(getID()) == 0)
-		iMultiplier += 4;
+	//if (GC.getGame().getTechRank(getID()) == 0)
+	//	iMultiplier += 4;
 
 	if (iPopulation > iMaxPopulation)
 	{
-		iCost *= 100 + iMultiplier * (iPopulation - iMaxPopulation) / 10;
+		// extra costs come in 5/10% increments
+		iSurplus = (iPopulation - iMaxPopulation) / 10;
+
+		iCost *= 100 + iMultiplier * iSurplus;
 		iCost /= 100;
 	}	
+
+	// Leoreth: penalty for the tech leader
+	if (GC.getGame().getTechRank(getID()) == 0)
+	{
+		int iBestValue = getTotalTechValue();
+		int iDenominator = 0;
+		int iAverageValue = 0;
+
+		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		{
+			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isVassal(getID()))
+			{
+				iAverageValue += GET_TEAM((TeamTypes)iI).getTotalTechValue();
+				iDenominator += 1;
+			}
+		}
+
+		if (iDenominator > 0)
+		{
+			// extra costs come in 10% increments
+			iSurplus = (100 * iBestValue / iAverageValue) / 10;
+
+			iCost *= 100 + 10 * iSurplus;
+			iCost /= 100;
+		}
+	}
 
 	//medieval and renaissance cost more
 	if (GC.getTechInfo((TechTypes)eTech).getEra() == 2 || GC.getTechInfo((TechTypes)eTech).getEra() == 3){ 
