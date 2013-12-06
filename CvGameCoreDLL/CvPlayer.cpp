@@ -10465,7 +10465,7 @@ int CvPlayer::getHighestNavalUnitLevel() const
 void CvPlayer::setHighestNavalUnitLevel(int iNewValue)
 {
 	m_iHighestNavalUnitLevel = iNewValue;
-	FAssert(getHighestsNavalUnitLevel() >= 0);
+	FAssert(getHighestNavalUnitLevel() >= 0);
 }
 
 int CvPlayer::getMaxConscript() const

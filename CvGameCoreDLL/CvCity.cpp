@@ -3813,6 +3813,7 @@ void CvCity::hurry(HurryTypes eHurry)
 	int iHurryGold;
 	int iHurryPopulation;
 	int iHurryAngerLength;
+	int iHurryAngerModifier;
 
 	if (!canHurry(eHurry))
 	{
@@ -3828,7 +3829,10 @@ void CvCity::hurry(HurryTypes eHurry)
 	GET_PLAYER(getOwnerINLINE()).changeGold(-(iHurryGold));
 	changePopulation(-(iHurryPopulation));
 
-	changeHurryAngerTimer(iHurryAngerLength);
+	// Leoreth: amount of sacrificed population increases hurry anger
+	iHurryAngerModifier = (iHurryPopulation + 1) / 2;
+
+	changeHurryAngerTimer(iHurryAngerLength * iHurryAngerModifier);
 
 	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
 	{
@@ -15638,7 +15642,7 @@ int CvCity::getCorporationHappinessByCorporation(CorporationTypes eCorporation) 
 
 			if (NO_BONUS != eBonus && iNumBonuses > 0)
 			{
-				iHappiness += GC.getCorporationInfo(eCorporation).getHappiness() * std::min(12, getNumBonuses(eBonus));
+				iHappiness += GC.getCorporationInfo(eCorporation).getHappiness() * std::min(12, iNumBonuses);
 			}
 		}
 	}
@@ -15673,7 +15677,7 @@ int CvCity::getCorporationHealthByCorporation(CorporationTypes eCorporation) con
 
 			if (NO_BONUS != eBonus && iNumBonuses > 0)
 			{
-				iHealth += GC.getCorporationInfo(eCorporation).getHealth() * std::min(12, getNumBonuses(eBonus));
+				iHealth += GC.getCorporationInfo(eCorporation).getHealth() * std::min(12, iNumBonuses);
 			}
 		}
 	}

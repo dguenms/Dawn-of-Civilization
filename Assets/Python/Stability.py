@@ -491,6 +491,7 @@ def secedeCities(iPlayer, lCities):
 		iClaim = -1
 		for iLoopPlayer in range(con.iNumPlayers):
 			if iLoopPlayer == iPlayer: continue
+			if utils.getHumanID() == iLoopPlayer: continue
 			if iGameTurnYear < con.tBirth[iLoopPlayer]: continue
 			if iGameTurnYear > con.tFall[iLoopPlayer]: continue
 			if cityPlot.isCore(iLoopPlayer) and gc.getPlayer(iLoopPlayer).isAlive():
@@ -501,7 +502,7 @@ def secedeCities(iPlayer, lCities):
 		# claim based on original owner
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
-			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and iOriginalOwner < con.iNumPlayers and iGameTurnYear < con.tFall[iOriginalOwner]:
+			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and utils.getHumanID() != iOriginalOwner and iOriginalOwner < con.iNumPlayers and iGameTurnYear < con.tFall[iOriginalOwner]:
 				iClaim = iOriginalOwner
 				utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: original owner.')
 				
@@ -509,6 +510,7 @@ def secedeCities(iPlayer, lCities):
 		if iClaim == -1:
 			for iLoopPlayer in range(con.iNumPlayers):
 				if iLoopPlayer == iPlayer: continue
+				if utils.getHumanID() == iLoopPlayer: continue
 				if iGameTurnYear < con.tBirth[iLoopPlayer]: continue
 				if iGameTurnYear > con.tFall[iLoopPlayer]: continue
 				if gc.getPlayer(iLoopPlayer).isAlive():
@@ -984,7 +986,7 @@ def calculateStability(iPlayer):
 		bExpansionExceptions = bTotalitarianism
 		
 		# Expansion
-		if plot.isCore(iPlayer) or city.isCapital():
+		if plot.isCore(iPlayer):
 			iCorePopulation += 10 + (2 + iCurrentEra) * iPopulation
 		else:
 			# ahistorical tiles

@@ -1,4 +1,4 @@
-># removed the mercenary mechanic
+# removed the mercenary mechanic
 # new civics:
 	# GOVERNMENT
 	  1. Dynasticism (Monarchy, medium): +1 happiness per military unit (+4 max)
@@ -13,8 +13,8 @@
 	  4. Totalitarianism (Fascism, none): +1 happiness per military unit (+4 max), no city distance upkeep, unlimited spies
 	  5. Egalitarianism (Democracy, medium): +2 happiness in largest cities, +1 production from town, unhappiness for civs without Egalitarianism
 	# LABOR
-	  1. Slavery (Masonry, medium): can hurry with population, +1 commerce from plantation, slave plantation
-	  2. Agrarianism (Calendar, low): +1 commerce from farm
+	  1. Slavery (Masonry, medium): can hurry with population, +1 commerce from plantation, slave plantation, -25% great people birth
+	  2. Agrarianism (Calendar, low): +1 commerce from farm, +1 production from pasture
 	  3. Capitalism (Economics, medium): +2 commerce from town, +10% commerce, can hurry buildings with gold
 	  4. Industrialism (Steel, medium): +1 production from workshop, watermill, unlimited engineers, +10% production
 	  5. Public Welfare (Communism, high): unlimited artist, scientist, merchant, +2 science per specialist, double production for University, Hospital
@@ -109,7 +109,7 @@
 	# Buddhism
 	   - Sila: be at peace for 100 turns
 	   - Nirvana: have the highest approval rating for 100 turns
-	   - Middle Way: have no furious or annoyed relations with any civilization
+	   - Middle Way: have cautious or better relations with all civilizations
 	# Confucianism
 	   - Harmony: have friendly relations with five civilizations
 	   - Ritual: control the Confucian and Taoist shrine and combine their income to 40 gold
@@ -132,3 +132,8 @@
 	   - Modernization: be first to enter the industrial and modern eras
 # redid AIWars to allow more AI planning and avoid stupid wars
 # civic effects that previously allowed unlimited specialists now double the available specialist slots
+# removed the tech leader multiplier from the large empire tech penalty
+# new tech leader penalty: additional costs based on the percentage of beakers you are ahead of the average
+# tech leader and large empire penalties now come in 10% increments
+# hurry unhappiness now scales with the amount of sacrificed population
+# human players cannot receive cities from AI collapses anymore
