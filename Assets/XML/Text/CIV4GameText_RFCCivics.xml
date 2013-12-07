@@ -586,6 +586,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WARRIOR_CODE_HELP</Tag>
-		<English>[ICON_BULLET]No stability penalty for conquered citiess</English>
+		<English>[ICON_BULLET]No stability penalty for conquered cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SECULARISM_HELP</Tag>
+		<English>[ICON_BULLET]Can Build All Wonders that Require a State Religion</English>
 	</TEXT>
 </Civ4GameText>

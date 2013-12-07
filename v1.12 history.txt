@@ -137,3 +137,6 @@
 # tech leader and large empire penalties now come in 10% increments
 # hurry unhappiness now scales with the amount of sacrificed population
 # human players cannot receive cities from AI collapses anymore
+# the Chinese UP now expires with the Renaissance
+# some religious wonders now also require state religion
+# secularism now allows you to build wonders that require state religion

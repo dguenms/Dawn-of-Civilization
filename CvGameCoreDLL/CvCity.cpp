@@ -2236,7 +2236,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	if (GC.getBuildingInfo(eBuilding).isStateReligion())
 	{
 		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
-		if (NO_RELIGION == eStateReligion || !isHasReligion(eStateReligion))
+		if (NO_RELIGION == eStateReligion || !isHasReligion(eStateReligion))//GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)4) == CIVIC_SECULARISM)
 		{
 			return false;
 		}

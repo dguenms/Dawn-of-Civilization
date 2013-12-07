@@ -27428,7 +27428,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_ANGKOR_WAT</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -27975,7 +27975,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SISTINE_CHAPEL</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
 			
@@ -28163,7 +28163,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SPIRAL_MINARET</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			
@@ -28345,7 +28345,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_NOTRE_DAME</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
 			
@@ -28525,7 +28525,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_TAJ_MAHAL</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			
@@ -28707,7 +28707,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_KREMLIN</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			
@@ -30814,7 +30814,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_UNIVERSITY_SANKORE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			
@@ -31539,7 +31539,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_CHRIST_THE_REDEEMER</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
 			
@@ -33505,7 +33505,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_LEANING_TOWER</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
 			<PrereqCivic>NONE</PrereqCivic>
@@ -34229,7 +34229,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_THEODOSIAN_WALLS</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -34585,7 +34585,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_MEZQUITA</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -34970,9 +34970,9 @@
 			<MovieDefineTag>ART_DEF_MOVIE_TOPKAPI_PALACE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<bStateReligion>0</bStateReligion>
-			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
@@ -35326,7 +35326,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SAN_MARCO</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -36087,7 +36087,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_KHAJURAHO</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -36269,7 +36269,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_HIMEJI_CASTLE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -36809,9 +36809,9 @@
 			<MovieDefineTag>ART_DEF_MOVIE_BLUE_MOSQUE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<bStateReligion>0</bStateReligion>
-			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -36990,7 +36990,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_RED_FORT</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			
@@ -37180,7 +37180,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_VERSAILLES</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
 			

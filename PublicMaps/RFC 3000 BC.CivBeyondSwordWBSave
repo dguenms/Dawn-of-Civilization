@@ -259,6 +259,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FANATICISM
+	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_ISLAM                            
 	Handicap=HANDICAP_PRINCE                 
 EndPlayer
