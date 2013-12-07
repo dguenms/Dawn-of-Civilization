@@ -10322,13 +10322,13 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 
 	if (iHappiness != 0)
 	{
-		CvWString szTempBuffer = CvWString::format(L"+%d%c", (abs(iHappiness) + 99) / 100, iHappiness > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR));
+		CvWString szTempBuffer = CvWString::format(L"+%d%c", abs(iHappiness), iHappiness > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR));
 		szBuffer.append(szTempBuffer);
 	}
 
 	if (iHealth != 0)
 	{
-		CvWString szTempBuffer = CvWString::format(L"+%d%c", (abs(iHealth) + 99) / 100, iHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR));
+		CvWString szTempBuffer = CvWString::format(L"+%d%c", abs(iHealth), iHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR));
 		szBuffer.append(szTempBuffer);
 	}
 
