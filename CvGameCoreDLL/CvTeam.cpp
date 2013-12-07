@@ -2866,7 +2866,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	//Rhye - end
 
 	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
-	if (getID() == CHINA)
+	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		bool bUnknown = true;
 		for (int i = 0; i < NUM_MAJOR_PLAYERS; i++)
