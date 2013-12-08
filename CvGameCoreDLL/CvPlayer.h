@@ -1128,6 +1128,13 @@ public:
 	void setPersecutionCountdown(int iNewValue);
 	int calculateForeignReligionWeight();
 
+	// Leoreth
+	int getDomainProductionModifier(DomainTypes eDomainType) const;
+	int getDomainExperienceModifier(DomainTypes eDomainType) const;
+
+	void changeDomainProductionModifier(DomainTypes eDomainType, int iChange);
+	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange);
+
 protected:
 
 	int m_iStartingX;
@@ -1283,6 +1290,10 @@ protected:
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;
+
+	//Leoreth
+	int* m_aiDomainProductionModifiers;
+	int* m_aiDomainExperienceModifiers;
 
 	bool* m_abFeatAccomplished;
 	bool* m_abOptions;

@@ -55,6 +55,9 @@ CvPlayer::CvPlayer()
 	m_aiGoldPerTurnByPlayer = new int[MAX_PLAYERS];
 	m_aiEspionageSpendingWeightAgainstTeam = new int[MAX_TEAMS];
 
+	m_aiDomainProductionModifiers = new int[NUM_DOMAIN_TYPES]; // Leoreth
+	m_aiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES]; // Leoreth
+
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
 
@@ -123,6 +126,8 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiCommerceFlexibleCount);
 	SAFE_DELETE_ARRAY(m_aiGoldPerTurnByPlayer);
 	SAFE_DELETE_ARRAY(m_aiEspionageSpendingWeightAgainstTeam);
+	SAFE_DELETE_ARRAY(m_aiDomainProductionModifiers); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiDomainExperienceModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
 }
@@ -578,6 +583,13 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_aiStateReligionBuildingCommerce[iI] = 0;
 		m_aiSpecialistExtraCommerce[iI] = 0;
 		m_aiCommerceFlexibleCount[iI] = 0;
+	}
+
+	// Leoreth
+	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
+	{
+		m_aiDomainProductionModifiers[iI] = 0;
+		m_aiDomainExperienceModifiers[iI] = 0;
 	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -5973,7 +5985,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	if (GC.getBuildingInfo(eBuilding).getStateReligion() != NO_RELIGION)
 	{
-		if (getStateReligion() != GC.getBuildingInfo(eBuilding).getStateReligion() && !getCivics((CivicOptionTypes)4) == CIVIC_SECULARISM)
+		if (getStateReligion() != GC.getBuildingInfo(eBuilding).getStateReligion() && getCivics((CivicOptionTypes)4) != CIVIC_SECULARISM)
 		{
 			return false;
 		}
@@ -7287,6 +7299,12 @@ int CvPlayer::getProductionModifier(UnitTypes eUnit) const
 	if (GC.getUnitInfo(eUnit).isMilitaryProduction())
 	{
 		iMultiplier += getMilitaryProductionModifier();
+	}
+
+	// Leoreth: civic modifier for specific domains
+	if (GC.getUnitInfo(eUnit).getDomainType() != NO_DOMAIN)
+	{
+		iMultiplier += getDomainProductionModifier((DomainTypes)GC.getUnitInfo(eUnit).getDomainType());
 	}
 
 	for (int iI = 0; iI < GC.getNumTraitInfos(); iI++)
@@ -18159,6 +18177,14 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 			changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (GC.getCivicInfo(eCivic).getImprovementYieldChanges(iI, iJ) * iChange));
 		}
 	}
+
+	// Leoreth
+	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
+	{
+		changeDomainProductionModifier((DomainTypes)iI, GC.getCivicInfo(eCivic).getDomainProductionModifier(iI) * iChange);
+		changeDomainExperienceModifier((DomainTypes)iI, GC.getCivicInfo(eCivic).getDomainExperienceModifier(iI) * iChange);
+	}
+
 	//GC.getGameINLINE().logMsg("End process civics.");
 }
 
@@ -25175,4 +25201,28 @@ bool CvPlayer::hasCivic(CivicTypes eCivic) const
 TeamTypes CvPlayer::getWorstEnemy() const
 {
 	return GET_TEAM(getTeam()).AI_getWorstEnemy();
+}
+
+// Leoreth
+int CvPlayer::getDomainProductionModifier(DomainTypes eDomainType) const
+{
+	return m_aiDomainProductionModifiers[(int)eDomainType];
+}
+
+// Leoreth
+void CvPlayer::changeDomainProductionModifier(DomainTypes eDomainType, int iChange)
+{
+	m_aiDomainProductionModifiers[(int)eDomainType] += iChange;
+}
+
+// Leoreth
+int CvPlayer::getDomainExperienceModifier(DomainTypes eDomainType) const
+{
+	return m_aiDomainExperienceModifiers[(int)eDomainType];
+}
+
+// Leoreth
+void CvPlayer::changeDomainExperienceModifier(DomainTypes eDomainType, int iChange)
+{
+	m_aiDomainExperienceModifiers[(int)eDomainType] += iChange;
 }

@@ -1759,7 +1759,7 @@ enum CivicTypes						// Exposed to Python
 	CIVIC_MERCENARIES,
 	CIVIC_LEVY_ARMIES,
 	CIVIC_PROFESSIONAL_ARMIES,
-	CIVIC_CONSCRIPTION
+	CIVIC_NAVAL_DOMINANCE
 };
 
 enum WarPlanTypes					// Exposed to Python

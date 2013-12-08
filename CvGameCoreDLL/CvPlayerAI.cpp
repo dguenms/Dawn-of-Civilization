@@ -6544,7 +6544,7 @@ int CvPlayerAI::AI_getSameReligionAttitude(PlayerTypes ePlayer) const
 
 	iAttitude = 0;
 
-	// edead: begin religions - count Chinese religions as one but with less bonus (below); should not apply to Sunni/Shia
+	// edead: begin religions - count Chinese religions as one but with less bonus (below)
 	if ((getStateReligion() != NO_RELIGION) && (getStateReligion() == GET_PLAYER(ePlayer).getStateReligion()))
 	{
 		bSameReligion = true;

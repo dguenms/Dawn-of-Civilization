@@ -777,6 +777,24 @@
 	<ElementType name="ImprovementYieldChanges" content="eltOnly">
 		<element type="ImprovementYieldChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<!-- Leoreth start -->
+	<ElementType name="DomainType" content="textOnly"/>
+	<ElementType name="DomainProductionModifier" content="eltOnly">
+		<element type="DomainType"/>
+		<element type="iProductionModifier"/>
+	</ElementType>
+	<ElementType name="DomainProductionModifiers" content="eltOnly">
+		<element type="DomainProductionModifier" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="iExperienceModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="DomainExperienceModifier" content="eltOnly">
+		<element type="DomainType"/>
+		<element type="iExperienceModifier"/>
+	</ElementType>
+	<ElementType name="DomainExperienceModifiers" content="eltOnly">
+		<element type="DomainExperienceModifier" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
 		<element type="CivicOptionType"/>
@@ -858,6 +876,8 @@
 		<element type="BuildingProductionModifiers" minOccurs="0"/> <!-- Leoreth -->
 		<element type="FeatureHappinessChanges"/>
 		<element type="ImprovementYieldChanges"/>
+		<element type="DomainProductionModifiers" minOccurs="0"/> <!-- Leoreth -->
+		<element type="DomainExperienceModifiers" minOccurs="0"/> <!-- Leoreth -->
 		<element type="WeLoveTheKing"/>
 	</ElementType>
 	<ElementType name="CivicInfos" content="eltOnly">

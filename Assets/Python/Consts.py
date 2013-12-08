@@ -1282,7 +1282,7 @@ tCoreAreasBR = (
 ((70, 36), #Egypt
 (107, 47), #China
 (77, 42), #Babylonia
-(70, 44), #Greece
+(70, 45), #Greece
 (96, 40), #India
 (74, 41), #Carthage
 (85, 44), #Persia
@@ -1324,7 +1324,7 @@ tCoreAreasBR = (
 ((70, 36), #Egypt
 (107, 47), #China
 (77, 42), #Babylonia
-(70, 44), #Greece
+(70, 45), #Greece
 (94, 40), #India
 (60, 39), #Carthage
 (85, 44), #Persia
@@ -1369,7 +1369,7 @@ tExceptions = (  #for RiseAndFall
 ((), #Egypt
 (), #China
 ((78, 41), (78, 42)), #Babylonia
-(), #Greece
+((64, 45), (65, 45), (66, 45)), #Greece
 (), #India
 (),#(73, 40), (73, 41)), #Carthage
 ((72, 39), (72, 40), (72, 41), (73, 41), (74, 41), (75, 41), (76, 41), (77, 41), (78, 41), (73, 40), (74, 40), (75, 40), (76, 40), (77, 40), (78, 40), (73, 39), (74, 39), (75, 39), (76, 39), (77, 39), (78, 39), (73, 38), (74, 38), (75, 38), (76, 38), (77, 38), (72, 37), (73, 37), (74, 37), (75, 37), (76, 37), (77, 37), (78, 37)), #Persia
@@ -1411,7 +1411,7 @@ tExceptions = (  #for RiseAndFall
 ((), #Egypt
 (), #China
 ((78, 41), (78, 42)), #Babylonia
-(), #Greece
+((64, 45), (65, 45), (66, 46)), #Greece
 (), #India
 (),#(73, 40), (73, 41)), #Carthage
 (), #Persia
@@ -2576,7 +2576,7 @@ iCivicDirectRule, iCivicVassalage, iCivicAbsolutism, iCivicRepresentation, iCivi
 iCivicTribalism, iCivicSlavery, iCivicAgrarianism, iCivicCapitalism, iCivicIndustrialism, iCivicPublicWelfare,
 iCivicSelfSufficiency, iCivicGuilds, iCivicMercantilism, iCivicFreeMarket, iCivicCentralPlanning, iCivicEnvironmentalism,
 iCivicAnimism, iCivicPantheon, iCivicOrganizedReligion, iCivicScholasticism, iCivicFanaticism, iCivicSecularism,
-iCivicMilitia, iCivicWarriorCode, iCivicMercenaries, iCivicLevyArmies, iCivicStandingArmy, iCivicConscription) = range(iNumCivics)
+iCivicMilitia, iCivicWarriorCode, iCivicMercenaries, iCivicLevyArmies, iCivicStandingArmy, iCivicNavalDominance) = range(iNumCivics)
 
 #Specialists
 iNumSpecialists = 15

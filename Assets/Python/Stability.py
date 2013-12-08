@@ -1301,7 +1301,7 @@ def calculateStability(iPlayer):
 		if iCivicMilitary == con.iCivicMercenaries: iCivicStability -= 7
 		
 	if tPlayer.isHasTech(con.iMilitaryScience):
-		if iCivicMilitary == con.iCivicWarriorCode: iCivicStability -= 5
+		if iCivicMilitary == con.iCivicWarriorCode: iCivicStability -= 10
 	
 	iCivicEraTechStability = iCivicStability
 	

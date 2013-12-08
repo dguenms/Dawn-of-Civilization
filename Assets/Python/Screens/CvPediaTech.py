@@ -238,9 +238,14 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 #		for j in range(gc.getNumBuildingClassInfos()):
 #			eLoopBuilding = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationBuildings(j)
 		for eLoopBuilding in range(gc.getNumBuildingInfos()):
-			if (eLoopBuilding != -1):
+			if eLoopBuilding > con.iNumBuildingsPlague: continue
+		
+			if (eLoopBuilding != -1 and eLoopBuilding != con.iNumBuildingsPlague):
 				if (isTechRequiredForBuilding(self.iTech, eLoopBuilding)):
         				screen.attachImageButton( panelName, "", gc.getBuildingInfo(eLoopBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
+			elif eLoopBuilding == con.iNumBuildingsPlague:
+				if isTechRequiredForBuilding(self.iTech, eLoopBuilding):
+					screen.attachImageButton( panelName, "", gc.getTechInfo(con.iPaper).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
 						
 		for eLoopProject in range(gc.getNumProjectInfos()):
 			if (isTechRequiredForProject(self.iTech, eLoopProject)):

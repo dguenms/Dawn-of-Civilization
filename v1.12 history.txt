@@ -4,7 +4,7 @@
 	  1. Dynasticism (Monarchy, medium): +1 happiness per military unit (+4 max)
 	  2. City States (Literature, high): +1 food per specialist, +100% number of cities upkeep
 	  3. Theocracy (Theology, high): +2 happiness with state religion, unlimited priests, +2 experience with state religion
-	  4. Autocracy (Nationalism, none): +3 happiness with barracks, can draft 1 unit, +50% great general rate, +25% espionage
+	  4. Autocracy (Nationalism, none): +3 happiness with barracks, can draft 3 units, +50% great general rate, +25% espionage
 	  5. Republic (Liberalism, high): +50% great people rate, +100% cottage growth
 	# ORGANIZATION:
 	  1. Vassalage (Feudalism, medium): +2 experience, +2 happiness with Castle
@@ -13,8 +13,8 @@
 	  4. Totalitarianism (Fascism, none): +1 happiness per military unit (+4 max), no city distance upkeep, unlimited spies
 	  5. Egalitarianism (Democracy, medium): +2 happiness in largest cities, +1 production from town, unhappiness for civs without Egalitarianism
 	# LABOR
-	  1. Slavery (Masonry, medium): can hurry with population, +1 commerce from plantation, slave plantation, -25% great people birth
-	  2. Agrarianism (Calendar, low): +1 commerce from farm, +1 production from pasture
+	  1. Slavery (Masonry, medium): can hurry with population, +1 commerce from plantation, slave plantation
+	  2. Agrarianism (Calendar, low): +1 commerce from farm, +1 production from pasture, +25% worker speed
 	  3. Capitalism (Economics, medium): +2 commerce from town, +10% commerce, can hurry buildings with gold
 	  4. Industrialism (Steel, medium): +1 production from workshop, watermill, unlimited engineers, +10% production
 	  5. Public Welfare (Communism, high): unlimited artist, scientist, merchant, +2 science per specialist, double production for University, Hospital
@@ -31,11 +31,11 @@
 	  4. Fanaticism (Divine Right, low): +25% unit production with state religion, no foreign religion spread
 	  5. Secularism (Liberalism, low): +10% research, no religious unhappiness, no state religion
 	# MILITARY
-	  1. Warrior Code (Horseback Riding, low): -50% war weariness, double production for Barracks, Stable
+	  1. Warrior Code (Horseback Riding, low): +50% great general birth, -50% war weariness, double production for Barracks, Stable
 	  2. Mercenaries (Currency, medium): can hurry units with gold, +1 gold upkeep per unit
 	  3. Levy Armies (Feudalism, low): additional free units, unit production with food
-	  4. Standing Army (Military Tradition, high): +25% unit production, +2 experience
-	  5. Conscription (Nationalism, low): can draft 2 units, +50% experience within own borders
+	  4. Standing Army (Military Tradition, high): +25% land unit production, +2 land unit experience
+	  5. Naval Dominance (Military Science, medium): +25% sea unit production, +2 sea unit experience, double production for Harbor, Customs House, Drydock
 # anarchy doesn't cost golden age turns
 # reduced blockade range to 2
 # the number of bonus resources that can influence your corporation yield is capped at 12 per type
@@ -140,3 +140,4 @@
 # the Chinese UP now expires with the Renaissance
 # some religious wonders now also require state religion
 # secularism now allows you to build wonders that require state religion
+# resources spawning on water are now properly announced
