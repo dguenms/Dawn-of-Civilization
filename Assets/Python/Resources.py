@@ -61,7 +61,8 @@ class Resources:
 				
 			iOwner = gc.getMap().plot(iX,iY).getOwner()
 			if iOwner >= 0 and textKey != -1: # only show alert to the tile owner
-				city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+				# Leoreth: changed so different area cities are found if water resource is added (because sea is automatically a different area than land)
+				city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, not gc.getMap().plot(iX, iY).isWater(), False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 				if not city.isNone():
 					szText = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName(), gc.getPlayer(iOwner).getCivilizationAdjective(0)))
 					CyInterface().addMessage(iOwner, False, con.iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(con.iWhite), iX, iY, True, True)

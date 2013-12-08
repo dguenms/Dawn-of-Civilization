@@ -358,8 +358,8 @@
 		<English>Standing Army</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CONSCRIPTION_TITLE</Tag>
-		<English>Conscription</English>
+		<Tag>TXT_KEY_CIVIC_NAVAL_DOMINANCE_TITLE</Tag>
+		<English>Naval Dominance</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
@@ -397,6 +397,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER</Tag>
 		<English>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DOMAIN_XP</Tag>
+		<English>[ICON_BULLET]+%d1 Experience For All %s2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Production For All %s2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_PROD_CIVIC</Tag>

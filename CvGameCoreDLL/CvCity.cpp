@@ -2817,6 +2817,12 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		iExperience += getDomainFreeExperience((DomainTypes)(GC.getUnitInfo(eUnit).getDomainType()));
 
 		iExperience += getSpecialistFreeExperience();
+
+		// Leoreth: domain specific experience from civics
+		if (GC.getUnitInfo(eUnit).getDomainType() != NO_DOMAIN)
+		{
+			iExperience += GET_PLAYER(getOwnerINLINE()).getDomainExperienceModifier((DomainTypes)GC.getUnitInfo(eUnit).getDomainType());
+		}
 	}
 
 	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION)

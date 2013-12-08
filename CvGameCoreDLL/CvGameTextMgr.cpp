@@ -4788,6 +4788,16 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FREE_XP", GC.getCivicInfo(eCivic).getFreeExperience()));
 	}
 
+	// Leoreth: domain free experience
+	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
+	{
+		if (GC.getCivicInfo(eCivic).getDomainExperienceModifier((DomainTypes)iI) != 0)
+		{
+			szHelpText.append(NEWLINE);
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DOMAIN_XP", GC.getCivicInfo(eCivic).getDomainExperienceModifier((DomainTypes)iI), GC.getDomainInfo((DomainTypes)iI).getText()));
+		}
+	}
+
 	//	Worker speed modifier
 	if (GC.getCivicInfo(eCivic).getWorkerSpeedModifier() != 0)
 	{
@@ -4825,6 +4835,16 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_MILITARY_PRODUCTION", GC.getCivicInfo(eCivic).getMilitaryProductionModifier()));
+	}
+
+	// Leoreth: domain military production modifier
+	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
+	{
+		if (GC.getCivicInfo(eCivic).getDomainProductionModifier((DomainTypes)iI) != 0)
+		{
+			szHelpText.append(NEWLINE);
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DOMAIN_PRODUCTION", GC.getCivicInfo(eCivic).getDomainProductionModifier((DomainTypes)iI), GC.getDomainInfo((DomainTypes)iI).getText()));
+		}
 	}
 
 	//	Free units population percent
@@ -12362,6 +12382,10 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 
 		// Domain
 		int iDomainMod = city.getDomainProductionModifier((DomainTypes)unit.getDomainType());
+
+		// Leoreth: also include civic domain production modifier
+		iDomainMod += GET_PLAYER(city.getOwnerINLINE()).getDomainProductionModifier((DomainTypes)unit.getDomainType());
+
 		if (0 != iDomainMod)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_DOMAIN", iDomainMod, GC.getDomainInfo((DomainTypes)unit.getDomainType()).getTextKeyWide()));

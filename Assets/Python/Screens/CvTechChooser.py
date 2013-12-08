@@ -5,6 +5,7 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 import CvScreensInterface
+import Consts as con
 
 TEXTURE_SIZE = 24
 X_START = 6
@@ -403,6 +404,9 @@ class CvTechChooser:
 		for j in range(gc.getNumBuildingClassInfos()):
 			bTechFound = 0
 			eLoopBuilding = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationBuildings(j)
+			
+			# Leoreth: don't show all embassies
+			if eLoopBuilding > con.iNumBuildingsPlague: continue
 
 			if (eLoopBuilding != -1):
 				if (gc.getBuildingInfo(eLoopBuilding).getPrereqAndTech() == i):
