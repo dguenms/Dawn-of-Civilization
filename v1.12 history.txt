@@ -141,3 +141,6 @@
 # some religious wonders now also require state religion
 # secularism now allows you to build wonders that require state religion
 # resources spawning on water are now properly announced
+# included Thrace in the Greek core
+# added a notification in case more slaves become available for trade
+# adjusted Cannon costs

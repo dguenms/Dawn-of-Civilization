@@ -947,7 +947,7 @@ def calculateStability(iPlayer):
 	iCivicReligion = pPlayer.getCivics(4)
 	iCivicMilitary = pPlayer.getCivics(5)
 	
-	iCorePopulation = 0
+	iCorePopulation = 10
 	iPeripheryPopulation = 0
 	iTotalCoreCities = 0
 	iOccupiedCoreCities = 0
@@ -987,7 +987,7 @@ def calculateStability(iPlayer):
 		
 		# Expansion
 		if plot.isCore(iPlayer):
-			iCorePopulation += 10 + (2 + iCurrentEra) * iPopulation
+			iCorePopulation += (2 + iCurrentEra) * iPopulation
 		else:
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2

@@ -158,6 +158,9 @@ def getMapTradePartners(playerOrID):
 	"""
 	return getTradePartnersByTeam(playerOrID, lambda fromTeam, toTeam: fromTeam.isMapTrading() or toTeam.isMapTrading())
 
+# Leoreth
+def getSlaveTradePartners(playerOrID):
+	return getTradePartnersByPlayer(playerOrID, lambda fromPlayer, toPlayer: fromPlayer.isSlaveTrade(toPlayer.getID()))
 
 def getOpenBordersTradePartners(playerOrID):
 	"""

@@ -639,6 +639,7 @@ class RiseAndFall:
 			
 			pPersia.setReborn()
 			pHolyRome.setReborn()
+			pTurkey.setReborn()
 			
 			pChina.updateTradeRoutes()
 		
@@ -2759,7 +2760,7 @@ class RiseAndFall:
 						if tPlot != askCityList[len(askCityList)-1]:
 							sAskCities += ", " + gc.getMap().plot(x, y).getPlotCity().getName()
 						else:
-							sAskCities += CyTranslator().getText("TXT_KEY_AND") + gc.getMap().plot(x, y).getPlotCity().getName()
+							sAskCities += CyTranslator().getText("TXT_KEY_AND", ()) + gc.getMap().plot(x, y).getPlotCity().getName()
 						
 				iAskGold = len(askCityList) * 200
 						

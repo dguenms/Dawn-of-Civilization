@@ -183,7 +183,7 @@ class AIWars:
 				
 		for iOwner in lOwners:
 			gc.getTeam(iPlayer).declareWar(iOwner, True, iWarPlan)
-			CyInterface().addMessage(iOwner, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_CONQUESTS_TARGET", (gc.getPlayer(iOwner).getCivilizationShortDescription(0),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+			CyInterface().addMessage(iOwner, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_CONQUESTS_TARGET", (gc.getPlayer(iPlayer).getCivilizationShortDescription(0),)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 			
 		for city in lTargetCities:
 			iExtra = 0

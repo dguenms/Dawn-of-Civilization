@@ -2423,3 +2423,9 @@ void CyPlayer::setLatestRebellionTurn(int iTurn)
 	if (m_pPlayer)
 		m_pPlayer->setLatestRebellionTurn(iTurn);
 }
+
+bool CyPlayer::isSlaveTrade(int ePlayer)
+{
+	if (m_pPlayer)
+		return (m_pPlayer->AI_slaveTrade((PlayerTypes)ePlayer) == NO_DENIAL);
+}
