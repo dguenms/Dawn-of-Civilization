@@ -107,6 +107,11 @@
 		<Spanish>[COLOR_YIELD_COMMERCE]%s1 tiene %d2 de oro disponible para el comercio.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_SLAVE_TRADE</Tag>
+		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 slaves available for trade.[COLOR_REVERT]</English>
+		<German>[COLOR_YIELD_COMMERCE]%s1 hat %d2 Sklaven zum Handeln.[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV4LERTS_ON_GOLD_PER_TURN_TRADE</Tag>
 		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 gold per turn available for trade.[COLOR_REVERT]</English>
 		<French>[COLOR_YIELD_COMMERCE]%s1 a %d2 pièces d'or par tour disponible pour le commerce.[COLOR_REVERT]</French>
