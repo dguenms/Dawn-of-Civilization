@@ -144,3 +144,4 @@
 # included Thrace in the Greek core
 # added a notification in case more slaves become available for trade
 # adjusted Cannon costs
+# 80% rule now also applies to city flips

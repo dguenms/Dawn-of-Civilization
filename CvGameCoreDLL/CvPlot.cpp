@@ -3020,18 +3020,18 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 				{
 					if (isCore((PlayerTypes)iI))
 					{
-						if (!isCity())
-						{
+						//if (!isCity())
+						//{
 							iCulture *= 4;
-						}
+						//}
 					}
 				}
 
 				// Independents get the same advantage over a civ's core if that civ is dead
 				if (iI == INDEPENDENT || iI == INDEPENDENT2)
 				{
-					if (!isCity())
-					{
+					//if (!isCity())
+					//{
 						for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
 						{
 							if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurnYear() > startingTurnYear[iJ] && !GET_PLAYER((PlayerTypes)iI).isAlive())
@@ -3040,7 +3040,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 								break;
 							}
 						}
-					}
+					//}
 				}
 
 
@@ -8804,29 +8804,8 @@ void CvPlot::doCulture()
 
 		if (eCulturalOwner != NO_PLAYER)
 		{
-			//Rhye - start
-			//if (GET_PLAYER(eCulturalOwner).getTeam() != getTeam())
-			//{
-			int iOldOwner = -1;
-			int iMax = -1;
-			int iMaxValue = 0;
-			if (getOwnerINLINE() >= NUM_MAJOR_PLAYERS) {
-				for (int i=0; i<NUM_MAJOR_PLAYERS; i++){
-					if (getCulture((PlayerTypes)i) > iMaxValue && GET_PLAYER((PlayerTypes)i).isAlive()) {
-						iMaxValue = getCulture((PlayerTypes)i);
-						iMax = i;
-					}
-				}
-			}
-			if (GET_PLAYER(eCulturalOwner).getTeam() != getTeam() ||
-					(iMax != -1 && getCulture((PlayerTypes)eCulturalOwner)<10*iMaxValue))  //Rhye
+			if (GET_PLAYER(eCulturalOwner).getTeam() != getTeam())
 			{
-				if (iMax != -1 && getCulture((PlayerTypes)eCulturalOwner)<10*iMaxValue) {
-					iOldOwner = eCulturalOwner;
-					eCulturalOwner = (PlayerTypes)iMax;
-				}
-				//Rhye - end
-
 				if (!(pCity->isOccupation()))
 				{
 					if (GC.getGameINLINE().getSorenRandNum(100, "Revolt #1") < pCity->getRevoltTestProbability())
@@ -8834,8 +8813,7 @@ void CvPlot::doCulture()
 						iCityStrength = pCity->cultureStrength(eCulturalOwner);
 						iGarrison = pCity->cultureGarrison(eCulturalOwner);
 
-						//if ((GC.getGameINLINE().getSorenRandNum(iCityStrength, "Revolt #2") > iGarrison) || pCity->isBarbarian()) //Rhye
-						if ((GC.getGameINLINE().getSorenRandNum(iCityStrength, "Revolt #2") > iGarrison) || pCity->isBarbarian() || iOldOwner != -1) //Rhye
+						if ((GC.getGameINLINE().getSorenRandNum(iCityStrength, "Revolt #2") > iGarrison) || pCity->isBarbarian())
 						{
 							CLinkList<IDInfo> oldUnits;
 
