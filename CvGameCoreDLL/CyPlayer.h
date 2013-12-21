@@ -535,6 +535,7 @@ public:
 	int getWorstEnemy();
 	int getLatestRebellionTurn();
 	void setLatestRebellionTurn(int iTurn);
+	bool isSlaveTrade(int ePlayer);
 
 private:
 	CvPlayer* m_pPlayer;

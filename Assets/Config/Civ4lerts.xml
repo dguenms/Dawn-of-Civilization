@@ -100,6 +100,11 @@
 					get="getGoldPerTurnTradeThreshold" set="setGoldPerTurnTradeThreshold" 
 					label="Threshold" 
 					help="."/>
+			<option id="SlaveTrade" key="Slave Trade"
+					type="boolean" default="True" and="Enabled"
+					get="isShowSlaveTradeAlert" set="setShowSlaveTradeAlert"
+					label="Slaves"
+					help="."/>
 			
 			<!-- Diplomacy -->
 			<option id="RefusesToTalk" key="Refuses To Talk" 

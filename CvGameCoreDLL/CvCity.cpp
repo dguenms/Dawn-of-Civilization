@@ -159,6 +159,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 	pPlot = GC.getMapINLINE().plotINLINE(iX, iY);
 
+	// Leoreth: can cities be founded on top of others?
+	if (pPlot->isCity())
+	{
+		GC.getGame().logMsg("\nFOUNDED CITY ON TOP OF ANOTHER CITY!\n");
+	}
+
 	//--------------------------------
 	// Log this event
 	if (GC.getLogging())

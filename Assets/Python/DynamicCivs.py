@@ -1070,6 +1070,9 @@ class DynamicCivs:
 			if iMaster == iSpain and iPlayer == iMaya and bReborn:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_SPANISH_VASSAL")
 				return
+			if iMaster == iPersia and pMasterPlayer.isReborn():
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE", pPlayer.getCivilizationShortDescriptionKey())
+				return
 			
 			if iMaster in self.specificVassalNames and not pMasterPlayer.isReborn():
 				if iPlayer in self.specificVassalNames[iMaster]:

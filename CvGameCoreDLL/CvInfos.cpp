@@ -5871,7 +5871,7 @@ int CvCivicInfo::getFeatureHappinessChanges(int i) const
 // Leoreth
 int CvCivicInfo::getDomainProductionModifier(int i) const
 {
-	FAssertMsg(i < 4, "Index out of bounds");
+	FAssertMsg(i < NUM_DOMAIN_TYPES, "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_paiDomainProductionModifiers ? m_paiDomainProductionModifiers[i] : -1;
 }
@@ -5879,8 +5879,8 @@ int CvCivicInfo::getDomainProductionModifier(int i) const
 // Leoreth
 int CvCivicInfo::getDomainExperienceModifier(int i) const
 {
-	FAssertMsg(i < 4, "Index out of bounds");
-	FAssertMsg(i > -1; "Index out of bounds");
+	FAssertMsg(i < NUM_DOMAIN_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
 	return m_paiDomainExperienceModifiers ? m_paiDomainExperienceModifiers[i] : -1;
 }
 

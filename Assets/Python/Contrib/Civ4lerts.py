@@ -115,6 +115,7 @@ class Civ4lerts:
 		
 		GoldTrade(eventManager)
 		GoldPerTurnTrade(eventManager)
+		SlaveTrade(eventManager)
 		RefusesToTalk(eventManager)
 		WorstEnemy(eventManager)
 
@@ -836,6 +837,51 @@ class GoldPerTurnTrade(AbstractStatefulAlert):
 	
 	def _setMaxGoldPerTurnTrade(self, player, rival, value):
 		self.maxGoldPerTurnTrade[player][rival] = value
+		
+## Trading Slaves
+
+class SlaveTrade(AbstractStatefulAlert):
+	"""
+	Displays an alert when a civilization has extra slaves 
+	available for trade since the last alert
+	"""
+	
+	def __init__(self, eventManager):
+		AbstractStatefulAlert.__init__(self, eventManager)
+		eventManager.addEventHandler("BeginActivePlayerTurn", self.onBeginActivePlayerTurn)
+		
+		self.maxSlaveTrade = []
+		
+	def onBeginActivePlayerTurn(self, argsList):
+		if not Civ4lertsOpt.isShowSlaveTradeAlert():
+			return
+		if len(self.maxSlaveTrade) == 0:
+			return
+		playerID = PlayerUtil.getActivePlayerID()
+		for rival in TradeUtil.getSlaveTradePartners(playerID):
+			rivalID = rival.getID()
+			oldMaxSlaveTrade = self._getMaxSlaveTrade(playerID, rivalID)
+			newMaxSlaveTrade = rival.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_SLAVE"))
+			deltaMaxSlaveTrade = newMaxSlaveTrade - oldMaxSlaveTrade
+			if deltaMaxSlaveTrade > 0:
+				message = localText.getText("TXT_KEY_CIV4LERTS_ON_SLAVE_TRADE", (rival.getName(), newMaxSlaveTrade))
+				addMessageNoIcon(playerID, message)
+				self._setMaxSlaveTrade(playerID, rivalID, newMaxSlaveTrade)
+			elif newMaxSlaveTrade < oldMaxSlaveTrade:
+				self._setMaxSlaveTrade(playerID, rivalID, newMaxSlaveTrade)
+				
+	def _reset(self):
+		self.maxSlaveTrade = {}
+		for player in range(gc.getMAX_PLAYERS()):
+			self.maxSlaveTrade[player] = {}
+			for rival in range(gc.getMAX_PLAYERS()):
+				self._setMaxSlaveTrade(player, rival, 0)
+				
+	def _getMaxSlaveTrade(self, player, rival):
+		return self.maxSlaveTrade[player][rival]
+		
+	def _setMaxSlaveTrade(self, player, rival, value):
+		self.maxSlaveTrade[player][rival] = value
 
 
 ## Diplomacy

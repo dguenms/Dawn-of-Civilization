@@ -4516,7 +4516,7 @@ DenialTypes CvPlayer::getTradeDenial(PlayerTypes eWhoTo, TradeData item) const
 		CvUnit* pUnit = getUnit(item.m_iData);
 		if (pUnit != NULL)
 		{
-			return AI_slaveTrade(pUnit, eWhoTo);
+			return AI_slaveTrade(eWhoTo);
 		}
 		break;
 	// edead: end
@@ -25112,7 +25112,7 @@ int CvPlayer::calculateForeignReligionWeight()
 */
 
 // Relic trade based on Afforess' Advanced Diplomacy
-DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
+DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 {
 
 	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAtWar(getTeam()))
@@ -25178,7 +25178,7 @@ DenialTypes CvPlayer::AI_slaveTrade(CvUnit* pUnit, PlayerTypes ePlayer) const
 
 	AttitudeTypes eAttitude = AI_getAttitude(ePlayer);
 
-	if (eAttitude <= ATTITUDE_FURIOUS)
+	if (eAttitude <= ATTITUDE_ANNOYED)
 	{
 		return DENIAL_ATTITUDE;
 	}

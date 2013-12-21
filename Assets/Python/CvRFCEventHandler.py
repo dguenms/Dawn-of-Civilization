@@ -332,7 +332,7 @@ class CvRFCEventHandler:
 					utils.makeUnitAI(con.iGalley, con.iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
 					utils.makeUnitAI(con.iSettler, con.iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
 					
-					if not utils.isReborn(iOwner): gc.getPlayer(con.iCarthage).setReborn()
+				if not utils.isReborn(iOwner): gc.getPlayer(con.iCarthage).setReborn()
 					
 				self.dc.setCivAdjective(iOwner, "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
 				self.dc.setCivShortDesc(iOwner, "TXT_KEY_CIV_CARTHAGE_SHORT_DESC")

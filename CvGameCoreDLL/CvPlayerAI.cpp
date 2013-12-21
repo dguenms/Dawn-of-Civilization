@@ -11085,8 +11085,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 		//GC.getGameINLINE().logMsg("Begin AI free core specialist.");
 		int iLoop;
-		int iX;
-		int iY;
+//		int iX;
+//		int iY;
 		CvCity* pLoopCity;
 		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
