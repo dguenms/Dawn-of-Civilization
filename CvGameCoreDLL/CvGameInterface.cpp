@@ -11,6 +11,10 @@
 #include "CvGameTextMgr.h"
 #include "CvMessageControl.h"
 
+// BUG - start
+#include "CvBugOptions.h"
+// BUG - end
+
 void CvGame::updateColoredPlots()
 {
 	PROFILE_FUNC();
@@ -266,6 +270,15 @@ void CvGame::updateColoredPlots()
 						{
 							if (pHeadSelectedUnit->canFound(pLoopPlot))
 							{
+// BUFFY - Don't Recommend Plots in Fog of War - start
+#ifdef _BUFFY
+								if (!pLoopPlot->isVisible(pHeadSelectedUnit->getTeam(), false))
+								{
+									continue;
+								}
+#endif
+// BUFFY - Don't Recommend Plots in Fog of War - end
+
 								if (GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).AI_isPlotCitySite(pLoopPlot))
 								{
 									gDLL->getEngineIFace()->addColoredPlot(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), GC.getColorInfo((ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT")).getColor(), PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS);
@@ -874,6 +887,10 @@ void CvGame::selectionListMove(CvPlot* pPlot, bool bAlt, bool bShift, bool bCtrl
 		gDLL->getInterfaceIFace()->selectGroup(pHeadSelectedUnit, false, true, false);
 	}
 
+// BUG - Declare War - start
+	bool bAskToDeclareWar = getBugOptionBOOL("Actions__AskDeclareWarUnits", true, "BUG_ASK_DECLARE_WAR_UNITS");
+// BUG - Declare War - end
+
 	pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
 
 	while (pSelectedUnitNode != NULL)
@@ -882,7 +899,10 @@ void CvGame::selectionListMove(CvPlot* pPlot, bool bAlt, bool bShift, bool bCtrl
 
 		eRivalTeam = pSelectedUnit->getDeclareWarMove(pPlot);
 
-		if (eRivalTeam != NO_TEAM)
+// BUG - Declare War - start
+		// only ask if option is off or moving into rival territory without open borders
+		if (eRivalTeam != NO_TEAM && (pPlot->getTeam() == eRivalTeam || bAskToDeclareWar))
+// BUG - Declare War - end
 		{
 			CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_DECLAREWARMOVE);
 			if (NULL != pInfo)
@@ -966,15 +986,37 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 			}
 			else if (eMessage == GAMEMESSAGE_DO_COMMAND)
 			{
-				pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
-
-				while (pSelectedUnitNode != NULL)
+// BUG - All Units Actions - start
+				if ((iData2 == COMMAND_DELETE) && bAlt)
 				{
+					CvPlayerAI& kPlayer = GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE());
+					int iLoop;
+					pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
 					pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
-					pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
+					UnitTypes kType = pSelectedUnit->getUnitType();
 
-					CvMessageControl::getInstance().sendDoCommand(pSelectedUnit->getID(), ((CommandTypes)iData2), iData3, iData4, bAlt);
+					for (CvUnit* pLoopUnit = kPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = kPlayer.nextUnit(&iLoop))
+					{
+						if (pLoopUnit->getUnitType() == kType)
+						{
+                            CvMessageControl::getInstance().sendDoCommand(pLoopUnit->getID(), ((CommandTypes)iData2), iData3, iData4, bAlt);
+						}
+					}
 				}
+				else
+				{
+					// unchanged
+					pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
+
+					while (pSelectedUnitNode != NULL)
+					{
+						pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
+						pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
+
+						CvMessageControl::getInstance().sendDoCommand(pSelectedUnit->getID(), ((CommandTypes)iData2), iData3, iData4, bAlt);
+					}
+				}
+// BUG - All Units Actions - end
 			}
 			else if ((eMessage == GAMEMESSAGE_PUSH_MISSION) || (eMessage == GAMEMESSAGE_AUTO_MISSION))
 			{
@@ -985,7 +1027,27 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 
 				if (eMessage == GAMEMESSAGE_PUSH_MISSION)
 				{
-					CvMessageControl::getInstance().sendPushMission(pHeadSelectedUnit->getID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+// BUG - All Units Actions - start
+					if (((iData2 == MISSION_FORTIFY) || (iData2 == MISSION_SLEEP)) && bAlt)
+					{
+						CvPlayerAI& kPlayer = GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE());
+						int iLoop;
+						pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
+						pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
+						UnitTypes eUnit = pSelectedUnit->getUnitType();
+
+						for(CvSelectionGroup* pLoopSelectionGroup = kPlayer.firstSelectionGroup(&iLoop); pLoopSelectionGroup; pLoopSelectionGroup = kPlayer.nextSelectionGroup(&iLoop))
+						{
+							if (pLoopSelectionGroup->allMatch(eUnit))
+                                CvMessageControl::getInstance().sendPushMission(pLoopSelectionGroup->getHeadUnit()->getID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+						}
+					}
+					else
+					{
+						// unchanged
+						CvMessageControl::getInstance().sendPushMission(pHeadSelectedUnit->getID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+					}
+// BUG - All Units Actions - end
 				}
 				else
 				{
@@ -1193,7 +1255,9 @@ void CvGame::handleAction(int iAction)
 
 	if (GC.getActionInfo(iAction).getMissionType() != NO_MISSION)
 	{
-		selectionListGameNetMessage(GAMEMESSAGE_PUSH_MISSION, GC.getActionInfo(iAction).getMissionType(), GC.getActionInfo(iAction).getMissionData(), -1, 0, false, bShift);
+// BUG - All Units Actions - start
+		selectionListGameNetMessage(GAMEMESSAGE_PUSH_MISSION, GC.getActionInfo(iAction).getMissionType(), GC.getActionInfo(iAction).getMissionData(), -1, 0, bAlt, bShift);
+// BUG - All Units Actions - end
 	}
 
 	if (GC.getActionInfo(iAction).getCommandType() != NO_COMMAND)
@@ -1721,11 +1785,7 @@ void CvGame::doControl(ControlTypes eControl)
 		break;
 
 	case CONTROL_FINANCIAL_SCREEN:
-		{
-			//CyArgsList argsList;
-			//argsList.add(-1);
-			gDLL->getPythonIFace()->callFunction(PYScreensModule, "showFinanceAdvisor");
-		}
+		gDLL->getPythonIFace()->callFunction(PYScreensModule, "showFinanceAdvisor");
 		break;
 
 	case CONTROL_MILITARY_SCREEN:

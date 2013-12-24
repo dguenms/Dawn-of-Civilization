@@ -2,7 +2,7 @@
 
 #include "CvGameCoreDLL.h"
 #include "CvGameCoreUtils.h"
-#include "CvTextMgr.h"
+//#include "CvTextMgr.h"
 #include "CvGlobals.h"
 
 using namespace std;

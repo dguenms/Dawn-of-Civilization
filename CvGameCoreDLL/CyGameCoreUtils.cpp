@@ -263,6 +263,20 @@ int cyGetEspionageModifier(int iOurTeam, int iTargetTeam)
 	return getEspionageModifier((TeamTypes)iOurTeam, (TeamTypes)iTargetTeam);
 }
 
+// BUG - Unit Experience - start
+int cyCalculateExperience(int iLevel, int ePlayer)
+{
+	return calculateExperience(iLevel, (PlayerTypes)ePlayer);
+}
+
+int cyCalculateLevel(int iExperience, int ePlayer)
+{
+	return calculateLevel(iExperience, (PlayerTypes)ePlayer);
+}
+// BUG - Unit Experience - end
+
+
+
 // edead: start
 int cyGetTurnForYear(int iTurnYear)
 {

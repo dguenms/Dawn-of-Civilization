@@ -4226,8 +4226,16 @@ void CvTeamAI::AI_doWar()
 					}
 				}
 			}
-			else if ((bFinancesProMaxWar || !bFinancesOpposeWar) &&
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       01/02/09                                jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+			else if ((bFinancesProLimitedWar || !bFinancesOpposeWar) &&
 				(GC.getGameINLINE().getSorenRandNum(iLimitedWarRand, "AI Limited War") == 0))
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 			{
 				iNoWarRoll = GC.getGameINLINE().getSorenRandNum(100, "AI No War") - 10;
 				iNoWarRoll = range(iNoWarRoll + (bAggressive ? 10 : 0) + (bFinancesProLimitedWar ? 10 : 0), 0, 99);

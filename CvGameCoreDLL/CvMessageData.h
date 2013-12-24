@@ -414,6 +414,20 @@ private:
 	int m_iY;
 };
 
-
+// BUG - Reminder Mod - start
+class CvNetAddReminder : public CvMessageData
+{
+public:
+	CvNetAddReminder(PlayerTypes ePlayer = NO_PLAYER, int iGameTurn = 0, CvWString szMessage = "");
+	virtual void Debug(char* szAddendum);
+	virtual void Execute();
+	virtual void PutInBuffer(FDataStreamBase* pStream);
+	virtual void SetFromBuffer(FDataStreamBase* pStream);
+private:
+	PlayerTypes m_ePlayer;
+	int m_iGameTurn;
+	CvWString m_szMessage;
+};
+// BUG - Reminder Mod - end
 
 #endif

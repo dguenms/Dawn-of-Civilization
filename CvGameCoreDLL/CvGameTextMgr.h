@@ -67,6 +67,9 @@ public:
 	DllExport void parseLeaderShortTraits(CvWStringBuffer &szInfoText, LeaderHeadTypes eLeader);
 	DllExport void parseCivInfos(CvWStringBuffer &szHelpString, CivilizationTypes eCivilization, bool bDawnOfMan = false, bool bLinks = true);
 	DllExport void parseSpecialistHelp(CvWStringBuffer &szHelpString, SpecialistTypes eSpecialist, CvCity* pCity, bool bCivilopediaText = false);
+// BUG - Specialist Actual Effects - start
+	void parseSpecialistHelpActual(CvWStringBuffer &szHelpString, SpecialistTypes eSpecialist, CvCity* pCity, bool bCivilopediaText = false, int iChange = 0);
+// BUG - Specialist Actual Effects - end
 	DllExport void parseFreeSpecialistHelp(CvWStringBuffer &szHelpString, const CvCity& kCity);
 	DllExport void parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes ePromotion, const wchar* pcNewline = NEWLINE);
 	DllExport void parseCivicInfo(CvWStringBuffer &szBuffer, CivicTypes eCivic, bool bCivilopediaText = false, bool bPlayerContext = false, bool bSkipName = false);
@@ -74,21 +77,56 @@ public:
 	DllExport void parseLeaderHeadHelp(CvWStringBuffer &szBuffer, PlayerTypes eThisPlayer, PlayerTypes eOtherPlayer);
 	DllExport void parseLeaderLineHelp(CvWStringBuffer &szBuffer, PlayerTypes eThisPlayer, PlayerTypes eOtherPlayer);
 	DllExport void parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city);
+// BUG - Building Additional Great People - start
+	bool setBuildingAdditionalGreatPeopleHelp(CvWStringBuffer &szBuffer, const CvCity& city, const CvWString& szStart, bool bStarted = false);
+// BUG - Building Additional Great People - end
 	DllExport void parseGreatGeneralHelp(CvWStringBuffer &szBuffer, CvPlayer& kPlayer);
 
 	DllExport void setTechHelp(CvWStringBuffer &szBuffer, TechTypes eTech, bool bCivilopediaText = false, bool bPlayerContext = false, bool bStrategyText = false, bool bTreeInfo = true, TechTypes eFromTech = NO_TECH);
+// BUG - Trade Denial - start
+	DllExport void setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech, PlayerTypes eTradePlayer, bool bCivilopediaText = false, bool bPlayerContext = false, bool bStrategyText = false, bool bTreeInfo = true, TechTypes eFromTech = NO_TECH);
+// BUG - Trade Denial - end
 	DllExport void setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool bCivilopediaText = false);
+// BUG - Starting Experience - start
+	void setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool bCivilopediaText = false, CvCity* pCity = NULL, bool bConscript = false);
+	void setUnitExperienceHelp(CvWStringBuffer &szBuffer, CvWString szStart, UnitTypes eUnit, CvCity* pCity, bool bConscript = false);
+// BUG - Starting Experience - end
 	DllExport void setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool bCivilopediaText = false, bool bStrategyText = false, bool bTechChooserText = false, CvCity* pCity = NULL);
 	DllExport void setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBuilding, bool bCivilopediaText = false, bool bStrategyText = false, bool bTechChooserText = false, CvCity* pCity = NULL);
+// BUG - Building Actual Effects - start
+	void setBuildingActualEffects(CvWStringBuffer &szBuffer, CvWString &szStart, BuildingTypes eBuilding, CvCity* pCity, bool bNewLine = true);
+	void setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTypes eBuilding, bool bCivilopediaText = false, bool bStrategyText = false, bool bTechChooserText = false, CvCity* pCity = NULL, bool bActual = true);
+// BUG - Building Actual Effects - end
+// BUG - Production Decay - start
+	void setProductionDecayHelp(CvWStringBuffer &szBuffer, int iTurnsLeft, int iThreshold, int iDecay, bool bProducing);
+// BUG - Production Decay - end
 	DllExport void setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProject, bool bCivilopediaText = false, CvCity* pCity = NULL);
 	DllExport void setProcessHelp(CvWStringBuffer &szBuffer, ProcessTypes eProcess);
 	DllExport void setGoodHealthHelp(CvWStringBuffer &szBuffer, CvCity& city);
 	DllExport void setBadHealthHelp(CvWStringBuffer &szBuffer, CvCity& city);
+// BUG - Building Additional Health - start
+	bool setBuildingAdditionalHealthHelp(CvWStringBuffer &szBuffer, const CvCity& city, const CvWString& szStart, bool bStarted = false);
+// BUG - Building Additional Health - end
 	DllExport void setAngerHelp(CvWStringBuffer &szBuffer, CvCity& city);
 	DllExport void setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city);
+// BUG - Building Additional Happiness - start
+	bool setBuildingAdditionalHappinessHelp(CvWStringBuffer &szBuffer, const CvCity& city, const CvWString& szStart, bool bStarted = false);
+// BUG - Building Additional Happiness - end
 	DllExport void setYieldChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, const int* piYieldChange, bool bPercent = false, bool bNewLine = true);
 	DllExport void setCommerceChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, const int* piCommerceChange, bool bPercent = false, bool bNewLine = true);
+// BUG - Resumable Value Change Help - start
+	void setCommerceTimes100ChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, const int* piCommerceChange, bool bNewLine = false, bool bStarted = false);
+	bool setResumableYieldChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, const int* piYieldChange, bool bPercent = false, bool bNewLine = true, bool bStarted = false);
+	bool setResumableCommerceChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, const int* piCommerceChange, bool bPercent = false, bool bNewLine = true, bool bStarted = false);
+	bool setResumableCommerceTimes100ChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, const int* piCommerceChange, bool bNewLine, bool bStarted = false);
+	bool setResumableGoodBadChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, int iGood, int iGoodSymbol, int iBad, int iBadSymbol, bool bPercent = false, bool bNewLine = false, bool bStarted = false);
+	bool setResumableValueChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, int iValue, int iSymbol, bool bPercent = false, bool bNewLine = false, bool bStarted = false);
+	bool setResumableValueTimes100ChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, int iValue, int iSymbol, bool bNewLine = false, bool bStarted = false);
+// BUG - Resumable Value Change Help - end
 	DllExport void setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText = false);
+// BUG - Trade Denial - start
+	DllExport void setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, PlayerTypes eTradePlayer);
+// BUG - Trade Denial - end
 	DllExport void setReligionHelp(CvWStringBuffer &szBuffer, ReligionTypes eReligion, bool bCivilopedia = false);
 	DllExport void setReligionHelpCity(CvWStringBuffer &szBuffer, ReligionTypes eReligion, CvCity *pCity, bool bCityScreen = false, bool bForceReligion = false, bool bForceState = false, bool bNoStateReligion = false);
 	DllExport void setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTypes eCorporation, bool bCivilopedia = false);
@@ -98,8 +136,20 @@ public:
 	DllExport void setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTypes eImprovement, bool bCivilopediaText = false);
 	DllExport void setTerrainHelp(CvWStringBuffer &szBuffer, TerrainTypes eTerrain, bool bCivilopediaText = false);
 	DllExport void setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeature, bool bCivilopediaText = false);
+// BUG - Food Rate Hover - start
+	void setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city);
+// BUG - Food Rate Hover - end
+// BUG - Building Additional Yield - start
+	bool setBuildingAdditionalYieldHelp(CvWStringBuffer &szBuffer, const CvCity& city, YieldTypes eIndex, const CvWString& szStart, bool bStarted = false);
+// BUG - Building Additional Yield - end
 	DllExport void setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city);
 	DllExport void setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, CommerceTypes eCommerceType);
+// BUG - Building Additional Commerce - start
+	bool setBuildingAdditionalCommerceHelp(CvWStringBuffer &szBuffer, const CvCity& city, CommerceTypes eIndex, const CvWString& szStart, bool bStarted = false);
+// BUG - Building Additional Commerce - end
+// BUG - Building Saved Maintenance - start
+	bool setBuildingSavedMaintenanceHelp(CvWStringBuffer &szBuffer, const CvCity& city, const CvWString& szStart, bool bStarted = false);
+// BUG - Building Saved Maintenance - start
 	DllExport void setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldTypes eYieldType);
 	DllExport void setConvertHelp(CvWStringBuffer& szBuffer, PlayerTypes ePlayer, ReligionTypes eReligion);
 	DllExport void setRevolutionHelp(CvWStringBuffer& szBuffer, PlayerTypes ePlayer);
@@ -172,6 +222,16 @@ public:
 	void getDealString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer1, PlayerTypes ePlayer2, const CLinkList<TradeData>* pListPlayer1, const CLinkList<TradeData>* pListPlayer2, PlayerTypes ePlayerPerspective = NO_PLAYER);
 	DllExport void getActiveDealsString(CvWStringBuffer& szString, PlayerTypes eThisPlayer, PlayerTypes eOtherPlayer);
 	void getOtherRelationsString(CvWStringBuffer& szString, PlayerTypes eThisPlayer, PlayerTypes eOtherPlayer);
+// BUG - Leaderhead Relations - start
+	void parseLeaderHeadRelationsHelp(CvWStringBuffer &szBuffer, PlayerTypes eThisPlayer, PlayerTypes eOtherPlayer);
+	void getAllRelationsString(CvWStringBuffer& szString, TeamTypes eThisTeam);
+	void getActiveTeamRelationsString(CvWStringBuffer& szString, TeamTypes eThisTeam);
+	void getOtherRelationsString(CvWStringBuffer& szString, TeamTypes eThisTeam, TeamTypes eOtherTeam, TeamTypes eSkipTeam);
+// BUG - Leaderhead Relations - end
+
+// BUG - Finance Advisor - start
+	void buildFinanceSpecialistGoldString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer);
+// BUG - Finance Advisor - end
 
 	DllExport void buildFinanceInflationString(CvWStringBuffer& szDetails, PlayerTypes ePlayer);
 	DllExport void buildFinanceUnitCostString(CvWStringBuffer& szDetails, PlayerTypes ePlayer);
@@ -183,6 +243,22 @@ public:
 	DllExport void getTradeScreenTitleIcon(CvString& szButton, CvWidgetDataStruct& widgetData, PlayerTypes ePlayer);
 	DllExport void getTradeScreenIcons(std::vector< std::pair<CvString, CvWidgetDataStruct> >& aIconInfos, PlayerTypes ePlayer);
 	DllExport void getTradeScreenHeader(CvWString& szHeader, PlayerTypes ePlayer, PlayerTypes eOtherPlayer, bool bAttitude);
+
+// BUG - Trade Hover - start
+	void buildDomesticTradeString(CvWStringBuffer& szDetails, PlayerTypes ePlayer);
+	void buildForeignTradeString(CvWStringBuffer& szDetails, PlayerTypes ePlayer);
+	void buildTradeString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer, PlayerTypes eWithPlayer=NO_PLAYER, bool bDomestic=true, bool bForeign=true, bool bHeading=true);
+// BUG - Trade Hover - end
+
+// BUG - Defense Hover - start
+	void setDefenseHelp(CvWStringBuffer &szBuffer, CvCity& city);
+// BUG - Defense Hover - end
+// BUG - Building Additional Defense - start
+	bool setBuildingAdditionalDefenseHelp(CvWStringBuffer &szBuffer, const CvCity& city, const CvWString& szStart, bool bStarted = false);
+// BUG - Building Additional Defense - end
+// BUG - Building Additional Bombard Defense - start
+	bool setBuildingAdditionalBombardDefenseHelp(CvWStringBuffer &szBuffer, const CvCity& city, const CvWString& szStart, bool bStarted = false);
+// BUG - Building Additional Bombard Defense - end
 
 	DllExport void getGlobeLayerName(GlobeLayerTypes eType, int iOption, CvWString& strName);
 

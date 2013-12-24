@@ -41,6 +41,9 @@ public:
 	void doChangeSpecialist(CvWidgetDataStruct &widgetDataStruct);
 	void doResearch(CvWidgetDataStruct &widgetDataStruct);
 	void doChangePercent(CvWidgetDataStruct &widgetDataStruct);
+// BUG - Min/Max Commerce Rate - start
+	void doSetPercent(CvWidgetDataStruct &widgetDataStruct);
+// BUG - Min/Max Commerce Rate - end
 	void doCityTab(CvWidgetDataStruct &widgetDataStruct);
 	void doContactCiv(CvWidgetDataStruct &widgetDataStruct);
 	void doConvert(CvWidgetDataStruct &widgetDataStruct);
@@ -102,6 +105,9 @@ public:
 	void parseResearchHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseTechTreeHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseChangePercentHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Min/Max Commerce Rate - start
+	void parseSetPercentHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Min/Max Commerce Rate - end
 	void parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseCompleteStabilityInfo(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer); //Rhye
 	void parseHistoricalVictoryInfo(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer); //Rhye
@@ -132,6 +138,9 @@ public:
 	void parseTerrainHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseFeatureHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseTechEntryHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Trade Denial - start
+	void parseTechTradeEntryHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Trade Denial - end
 	void parseTechPrereqHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseTechTreePrereq(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer, bool bTechTreeInfo);
 	void parseObsoleteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
@@ -170,6 +179,11 @@ public:
 	void parseProcessInfoHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseFoundReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseFoundCorporationHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Finance Advisor - start
+	void parseFinanceDomesticTrade(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void parseFinanceForeignTrade(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void parseFinanceSpecialistGold(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Finance Advisor - end
 	void parseFinanceNumUnits(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseFinanceUnitCost(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseFinanceAwaySupply(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
@@ -184,6 +198,9 @@ public:
 	void parsePediaBack(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parsePediaForward(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseBonusHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Trade Denial - start
+	void parseBonusTradeHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Trade Denial - end
 	void parseReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseReligionHelpCity(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseCorporationHelpCity(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
@@ -198,10 +215,22 @@ public:
 	void parseDescriptionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer, bool bMinimal);
 	void parseCloseScreenHelp(CvWStringBuffer &szBuffer);
 	void parseKillDealHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Food Rate Hover - start
+	void parseFoodModHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Food Rate Hover - end
 	void parseProductionModHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseLeaderheadHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseLeaderLineHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Leaderhead Relations - start
+	void parseLeaderheadRelationsHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Leaderhead Relations - end
 	void parseCommerceModHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Trade Hover - start
+	void parseTradeRoutes(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Trade Hover - end
+// BUG - Defense Hover - start
+	void parseDefenseHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+// BUG - Defense Hover - end
 
 	// Leoreth
 	void parseStabilityExpansionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);

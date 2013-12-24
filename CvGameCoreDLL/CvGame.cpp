@@ -30,6 +30,10 @@
 #include "CvDLLEngineIFaceBase.h"
 #include "CvDLLPythonIFaceBase.h"
 
+// BUG - start
+#include "BugMod.h"
+// BUG - end
+
 #include "CvRhyes.h" //Rhye
 
 // Public Functions...
@@ -108,7 +112,7 @@ void CvGame::init(HandicapTypes eHandicap)
 	int iStartTurn;
 	int iEstimateEndTurn;
 	int iI;
-	//logMsg("game init"); //Rhye
+
 	//--------------------------------
 	// Init saved data
 	reset(eHandicap);
@@ -308,7 +312,7 @@ void CvGame::init(HandicapTypes eHandicap)
 void CvGame::setInitialItems()
 {
 	PROFILE_FUNC();
-	//logMsg("setInitialItems"); //Rhye
+
 	initFreeState();
 	assignStartingPlots();
 	normalizeStartingPlots();
@@ -324,11 +328,31 @@ void CvGame::setInitialItems()
 	}
 }
 
+// BUG - MapFinder - start
+// from HOF Mod - Dianthus
+bool CvGame::canRegenerateMap() const
+{
+	if (GC.getGameINLINE().getElapsedGameTurns() != 0) return false;
+	if (GC.getGameINLINE().isGameMultiPlayer()) return false;
+	if (GC.getInitCore().getWBMapScript()) return false;
+
+	// EF: TODO clear contact at start of regenerateMap()?
+	for (int iI = 1; iI < MAX_CIV_TEAMS; iI++)
+	{
+		CvTeam& team=GET_TEAM((TeamTypes)iI);
+		for (int iJ = 0; iJ < iI; iJ++)
+		{
+			if (team.isHasMet((TeamTypes)iJ)) return false;
+		}
+	}
+	return true;
+}
+// BUG - MapFinder - end
 
 void CvGame::regenerateMap()
 {
 	int iI;
-	//logMsg("regenerateMap"); //Rhye
+
 	if (GC.getInitCore().getWBMapScript())
 	{
 		return;
@@ -387,6 +411,13 @@ void CvGame::regenerateMap()
 
 	gDLL->getEngineIFace()->AutoSave(true);
 
+// BUG - AutoSave - start
+	gDLL->getPythonIFace()->callFunction(PYBugModule, "gameStartSave");
+// BUG - AutoSave - end
+
+	// EF - This doesn't work until after the game has had time to update.
+	//      Centering on the starting location is now done by MapFinder using BugUtil.delayCall().
+	//      Must leave this here for non-BUG
 	if (NO_PLAYER != getActivePlayer())
 	{
 		CvPlot* pPlot = GET_PLAYER(getActivePlayer()).getStartingPlot();
@@ -2173,7 +2204,7 @@ int CvGame::getTeamClosenessScore(int** aaiDistances, int* aiStartingLocs)
 void CvGame::update()
 {
 	PROFILE("CvGame::update");
-	//logMsg("update"); //Rhye
+
 	if (!gDLL->GetWorldBuilderMode() || isInAdvancedStart())
 	{
 		sendPlayerOptions();
@@ -5141,6 +5172,10 @@ void CvGame::setGameState(GameStateTypes eNewValue)
 		{
 			CvEventReporter::getInstance().gameEnd();
 
+// BUG - AutoSave - start
+			gDLL->getPythonIFace()->callFunction(PYBugModule, "gameEndSave");
+// BUG - AutoSave - end
+
 			showEndGameSequence();
 
 			for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
@@ -6051,7 +6086,7 @@ void CvGame::addGreatPersonBornName(const CvWString& szName)
 void CvGame::doTurn()
 {
 	PROFILE_BEGIN("CvGame::doTurn()");
-	//logMsg("doTurn: %d", getGameTurn()); //Rhye
+
 	int aiShuffle[MAX_PLAYERS];
 	int iLoopPlayer;
 	int iI;
@@ -6072,10 +6107,8 @@ void CvGame::doTurn()
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
-		//GC.getGameINLINE().logMsg("doTurn iterate player: %d", iI); //Rhye
 		if (GET_TEAM((TeamTypes)iI).isAlive())
 		{
-			//GC.getGameINLINE().logMsg("doTurn iterate alive player: %d", iI); //Rhye
 			GET_TEAM((TeamTypes)iI).doTurn();
 		}
 	}
@@ -6208,10 +6241,59 @@ void CvGame::doDeals()
 void CvGame::doGlobalWarming()
 {
 	int iGlobalWarmingDefense = 0;
+
+// BUG - Global Warming Mod - start
+#ifdef _MOD_GWARM
+	int iTreeHuggerDefenseBonus = GC.getDefineINT("TREEHUGGER_DEFENSE_BONUS");
+	bool abTreeHugger[MAX_PLAYERS];
+
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)//GWMod Loop to look for environmentalism witten by EmperorFool
+	{
+		abTreeHugger[iI] = false;
+		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			for (int iJ = 0; iJ < GC.getNumCivicOptionInfos(); iJ++)
+			{
+				CivicTypes eCivic = GET_PLAYER((PlayerTypes)iI).getCivics((CivicOptionTypes)iJ);
+				if (GC.getCivicInfo(eCivic).getExtraHealth() != 0)
+				{
+					abTreeHugger[iI] = true;
+					break;
+				}
+			}
+		}
+	}
+#endif
+
 	for (int i = 0; i < GC.getMapINLINE().numPlotsINLINE(); ++i)
 	{
 		CvPlot* pPlot = GC.getMapINLINE().plotByIndexINLINE(i);
 
+#ifdef _MOD_GWARM
+		if (pPlot->getFeatureType() != NO_FEATURE)
+		{
+			int iFeatureWarmingDefense = GC.getFeatureInfo(pPlot->getFeatureType()).getWarmingDefense();
+			if (iFeatureWarmingDefense > 0)
+			{
+				PlayerTypes eCulturalOwner = pPlot->getOwner();
+				if (eCulturalOwner != NO_PLAYER)
+				{
+					if (abTreeHugger[eCulturalOwner])
+					{
+						iGlobalWarmingDefense += (iFeatureWarmingDefense) * (iTreeHuggerDefenseBonus);
+					}
+					else
+					{
+						iGlobalWarmingDefense += iFeatureWarmingDefense;
+					}
+				}
+				else
+				{
+					iGlobalWarmingDefense += iFeatureWarmingDefense;
+				}
+			}
+		}
+#else
 		if (!pPlot->isWater())
 		{
 			if (pPlot->getFeatureType() != NO_FEATURE)
@@ -6222,10 +6304,15 @@ void CvGame::doGlobalWarming()
 				}
 			}
 		}
+#endif
 	}
 	iGlobalWarmingDefense = iGlobalWarmingDefense * GC.getDefineINT("GLOBAL_WARMING_FOREST") / std::max(1, GC.getMapINLINE().getLandPlots());
 
 	int iUnhealthWeight = GC.getDefineINT("GLOBAL_WARMING_UNHEALTH_WEIGHT");
+#ifdef _MOD_GWARM
+	int iBonusWeight = GC.getDefineINT("GLOBAL_WARMING_BONUS_WEIGHT");
+	int iPowerWeight = GC.getDefineINT("GLOBAL_WARMING_POWER_WEIGHT");
+#endif
 	int iGlobalWarmingValue = 0;
 	for (int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
 	{
@@ -6235,26 +6322,125 @@ void CvGame::doGlobalWarming()
 			int iLoop;
 			for (CvCity* pCity = kPlayer.firstCity(&iLoop); pCity != NULL; pCity = kPlayer.nextCity(&iLoop))
 			{
+#ifdef _MOD_GWARM
+				iGlobalWarmingValue -= (pCity->totalBadBuildingHealth() * iUnhealthWeight) + (pCity->getBonusBadHealth() * iBonusWeight) + (pCity->getPowerBadHealth() * iPowerWeight); //GWMod Changed to be total building bad health and to include power and bonuses M.A.
+#else
 				iGlobalWarmingValue -= pCity->getBuildingBadHealth() * iUnhealthWeight;
+#endif
 			}
 		}
 	}
 	iGlobalWarmingValue /= GC.getMapINLINE().numPlotsINLINE();
 
+#ifdef _MOD_GWARM
+#else
 	iGlobalWarmingValue += getNukesExploded() * GC.getDefineINT("GLOBAL_WARMING_NUKE_WEIGHT") / 100;
+#endif
 
 	TerrainTypes eWarmingTerrain = ((TerrainTypes)(GC.getDefineINT("GLOBAL_WARMING_TERRAIN")));
+#ifdef _MOD_GWARM
+	TerrainTypes eFrozenTerrain = ((TerrainTypes)(GC.getDefineINT("FROZEN_TERRAIN")));
+	TerrainTypes eColdTerrain = ((TerrainTypes)(GC.getDefineINT("COLD_TERRAIN")));
+	TerrainTypes eTemperateTerrain = ((TerrainTypes)(GC.getDefineINT("TEMPERATE_TERRAIN")));
+	TerrainTypes eDryTerrain = ((TerrainTypes)(GC.getDefineINT("DRY_TERRAIN")));
+	TerrainTypes eBarrenTerrain = ((TerrainTypes)(GC.getDefineINT("BARREN_TERRAIN")));
+	TerrainTypes eShallowsTerrain = ((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN")));
+
+	FeatureTypes eColdFeature = ((FeatureTypes)(GC.getDefineINT("COLD_FEATURE")));
+	FeatureTypes eTemperateFeature = ((FeatureTypes)(GC.getDefineINT("TEMPERATE_FEATURE")));
+	FeatureTypes eWarmFeature = ((FeatureTypes)(GC.getDefineINT("WARM_FEATURE")));
+	FeatureTypes eFalloutFeature = ((FeatureTypes)(GC.getDefineINT("NUKE_FEATURE")));
+#endif
 
 	for (int iI = 0; iI < iGlobalWarmingValue; iI++)
 	{
 		if (getSorenRandNum(100, "Global Warming") + iGlobalWarmingDefense < GC.getDefineINT("GLOBAL_WARMING_PROB"))
 		{
+#ifdef _MOD_GWARM
+			CvPlot* pPlot = GC.getMapINLINE().syncRandPlot(RANDPLOT_NOT_CITY); // GWMod removed check for water tile M.A.
+#else
 			CvPlot* pPlot = GC.getMapINLINE().syncRandPlot(RANDPLOT_LAND | RANDPLOT_NOT_CITY);
+#endif
 
 			if (pPlot != NULL)
 			{
 				bool bChanged = false;
 
+#ifdef _MOD_GWARM
+				if (pPlot->getFeatureType() != NO_FEATURE)
+				{
+					if (pPlot->getFeatureType() != GC.getDefineINT("NUKE_FEATURE"))
+					{
+						// GWMod won't remove features if underlaying terrain can melt
+						if (pPlot->getFeatureType() != eColdFeature)
+						{
+							if ((pPlot->calculateBestNatureYield(YIELD_FOOD, NO_TEAM) > 1) && (pPlot->getFeatureType() == eTemperateFeature))
+							{
+								pPlot->setFeatureType(eWarmFeature);
+								bChanged = true;
+							}
+							else if (pPlot->getTerrainType() == eColdTerrain)
+							{
+								pPlot->setTerrainType(eTemperateTerrain);
+								bChanged = true;
+							}
+							else if (pPlot->getTerrainType() == eFrozenTerrain)
+							{
+								pPlot->setTerrainType(eColdTerrain);
+								bChanged = true;
+							}
+							else
+							{
+								pPlot->setFeatureType(NO_FEATURE);
+								bChanged = true;
+							}
+						}
+						else
+						{
+							pPlot->setFeatureType(NO_FEATURE);
+							bChanged = true;
+						}
+					}
+				}
+				else if (!pPlot->isWater())  // GWMod added check for water tile M.A.
+				{
+					// GWMod stepped terrain changes M.A.
+					if (pPlot->getTerrainType() == eBarrenTerrain)
+					{
+						if (isOption(GAMEOPTION_RISING_SEAS))
+						{
+							if (pPlot->isCoastalLand())
+							{
+								if (!pPlot->isHills() && !pPlot->isPeak())
+								{
+									pPlot->setTerrainType(eShallowsTerrain);
+									bChanged = true;
+								}
+							}
+						}
+					}
+					else if (pPlot->getTerrainType() == eDryTerrain)
+					{
+						pPlot->setTerrainType(eBarrenTerrain);
+						bChanged = true;
+					}
+					else if (pPlot->getTerrainType() == eTemperateTerrain)
+					{
+						pPlot->setTerrainType(eDryTerrain);
+						bChanged = true;
+					}
+					else if (pPlot->getTerrainType() == eColdTerrain)
+					{
+						pPlot->setTerrainType(eTemperateTerrain);
+						bChanged = true;
+					}
+					else if (pPlot->getTerrainType() == eFrozenTerrain)
+					{
+						pPlot->setTerrainType(eColdTerrain);
+						bChanged = true;
+					}
+				}
+#else
 				if (pPlot->getFeatureType() != NO_FEATURE)
 				{
 					if (pPlot->getFeatureType() != GC.getDefineINT("NUKE_FEATURE"))
@@ -6271,6 +6457,7 @@ void CvGame::doGlobalWarming()
 						bChanged = true;
 					}
 				}
+#endif
 
 				if (bChanged)
 				{
@@ -6289,6 +6476,70 @@ void CvGame::doGlobalWarming()
 			}
 		}
 	}
+	
+#ifdef _MOD_GWARM
+	//Nuclear Winter
+	int iNuclearWinterValue = 0;
+	iNuclearWinterValue += getNukesExploded() * GC.getDefineINT("GLOBAL_WARMING_NUKE_WEIGHT") / 100;
+
+	for (int iI = 0; iI < iNuclearWinterValue; iI++)
+	{
+		if (getSorenRandNum(100, "Nuclear Fallout") + iGlobalWarmingDefense < GC.getDefineINT("NUCLEAR_WINTER_PROB"))
+		{
+			CvPlot* pPlot = GC.getMapINLINE().syncRandPlot(RANDPLOT_LAND | RANDPLOT_NOT_CITY);
+			FeatureTypes eFeature = pPlot->getFeatureType();
+
+			if (pPlot != NULL)
+			{
+				bool bChanged = false;
+				if (pPlot->getFeatureType() != NO_FEATURE)
+				{
+					if (pPlot->getFeatureType() != GC.getDefineINT("NUKE_FEATURE"))
+					{
+						if (pPlot->getFeatureType() != eColdFeature)
+						{
+							pPlot->setFeatureType(NO_FEATURE);
+							bChanged = true;
+						}
+					}
+				}
+				else
+				{
+					pPlot->setFeatureType(eFalloutFeature);
+					bChanged = true;
+				}
+				if (getSorenRandNum(100, "Nuclear Winter") + iGlobalWarmingDefense < GC.getDefineINT("NUCLEAR_WINTER_PROB"))
+				{
+					if (pPlot->getTerrainType() == eColdTerrain)
+					{
+						pPlot->setTerrainType(eFrozenTerrain);
+						bChanged = true;
+					}
+					if (pPlot->calculateTotalBestNatureYield(NO_TEAM) > 1)
+					{
+						pPlot->setTerrainType(eColdTerrain);
+						bChanged = true;
+					}
+				}
+				if (bChanged)
+				{
+					pPlot->setImprovementType(NO_IMPROVEMENT);
+
+					CvCity* pCity = GC.getMapINLINE().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE());
+					if (pCity != NULL)
+					{
+						if (pPlot->isVisible(pCity->getTeam(), false))
+						{
+							CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_NUCLEAR_WINTER_NEAR_CITY", pCity->getNameKey());
+							gDLL->getInterfaceIFace()->addMessage(pCity->getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_GLOBALWARMING", MESSAGE_TYPE_INFO, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
+						}
+					}
+				}
+			}
+		}
+	}
+#endif
+// BUG - Global Warming Mod - end
 }
 
 
@@ -8889,11 +9140,40 @@ bool CvGame::hasSkippedSaveChecksum() const
 
 void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv)
 {
+	// UNOFFICIAL_PATCH Start
+	// * Fixed bug with colonies who occupy recycled player slots showing the old leader or civ names.
+	CvWString szEmptyString = L"";
+	LeaderHeadTypes eOldLeader = GET_PLAYER(eNewPlayer).getLeaderType();
+	if ( (eOldLeader != NO_LEADER) && (eOldLeader != eLeader) ) 
+	{
+		GC.getInitCore().setLeaderName(eNewPlayer, szEmptyString);
+	}
+	CivilizationTypes eOldCiv = GET_PLAYER(eNewPlayer).getCivilizationType();
+	if ( (eOldCiv != NO_CIVILIZATION) && (eOldCiv != eCiv) ) 
+	{
+		GC.getInitCore().setCivAdjective(eNewPlayer, szEmptyString);
+		GC.getInitCore().setCivDescription(eNewPlayer, szEmptyString);
+		GC.getInitCore().setCivShortDesc(eNewPlayer, szEmptyString);
+	}
+	// UNOFFICIAL_PATCH End
 	PlayerColorTypes eColor = (PlayerColorTypes)GC.getCivilizationInfo(eCiv).getDefaultPlayerColor();
 
 	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       12/30/08                                jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original bts code
 		if (eColor == NO_PLAYERCOLOR || GET_PLAYER((PlayerTypes)iI).getPlayerColor() == eColor)
+*/
+		// Don't invalidate color choice if it's taken by this player
+		if (eColor == NO_PLAYERCOLOR || (GET_PLAYER((PlayerTypes)iI).getPlayerColor() == eColor && (PlayerTypes)iI != eNewPlayer) )
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 		{
 			for (int iK = 0; iK < GC.getNumPlayerColorInfos(); iK++)
 			{
@@ -9979,6 +10259,23 @@ bool CvGame::pythonIsBonusIgnoreLatitudes() const
 
 	return false;
 }
+
+
+// BUFFY - Security Checks - start
+#ifdef _BUFFY
+// from HOF Mod - Dianthus
+int CvGame::checkCRCs(std::string fileName_, std::string expectedModCRC_, std::string expectedDLLCRC_, std::string expectedShaderCRC_, std::string expectedPythonCRC_, std::string expectedXMLCRC_) const
+{
+	return 0;
+}
+
+// from HOF Mod - Denniz 3.17
+int CvGame::getWarningStatus() const
+{
+	return 0;
+}
+#endif
+// BUFFY - Security Checks - end
 
 // Leoreth
 bool CvGame::isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const

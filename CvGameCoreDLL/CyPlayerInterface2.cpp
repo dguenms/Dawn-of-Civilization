@@ -38,6 +38,9 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("AI_changeMemoryCount", &CyPlayer::AI_changeMemoryCount, "void (/*PlayerTypes*/ eIndex1, /*MemoryTypes*/ eIndex2, int iChange)")
 		.def("AI_getExtraGoldTarget", &CyPlayer::AI_getExtraGoldTarget, "int ()")
 		.def("AI_setExtraGoldTarget", &CyPlayer::AI_setExtraGoldTarget, "void (int)")
+// BUG - Refuses to Talk - start
+		.def("AI_isWillingToTalk", &CyPlayer::AI_isWillingToTalk, "bool (int /*PlayerTypes*/)")
+// BUG - Refuses to Talk - end
 
 		.def("getScoreHistory", &CyPlayer::getScoreHistory, "int (int iTurn)")
 		.def("getEconomyHistory", &CyPlayer::getEconomyHistory, "int (int iTurn)")
@@ -61,6 +64,10 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("canSplitArea", &CyPlayer::canSplitArea, "bool (int)")
 		.def("canHaveTradeRoutesWith", &CyPlayer::canHaveTradeRoutesWith, "bool (int)")
 		.def("forcePeace", &CyPlayer::forcePeace, "void (int)")
+		
+// BUG - Reminder Mod - start
+		.def("addReminder", &CyPlayer::addReminder, "void (int iGameTurn, string szMessage)")
+// BUG - Reminder Mod - end
 
 		.def("getSettlersMaps", &CyPlayer::getSettlersMaps, "int (int i, int j)") //Rhye
 		.def("setFlag", &CyPlayer::setFlag, "void (str s)") //Rhye

@@ -932,11 +932,11 @@ class RiseAndFall:
 
         def setupBirthTurnModifiers(self):
                 for iCiv in range(iNumPlayers):
-                        if (iCiv >= iGreece and not gc.getPlayer(iCiv).isHuman()):
+                        if (iCiv >= iIndia and not gc.getPlayer(iCiv).isHuman()):
                                 self.setBirthTurnModifier(iCiv, (gc.getGame().getSorenRandNum(11, 'BirthTurnModifier') - 5)) # -5 to +5
                 #now make sure that no civs spawn in the same turn and cause a double "new civ" popup
                 for iCiv in range(iNumPlayers):
-                        if (iCiv > utils.getHumanID() and iCiv < iAmerica):
+                        if (iCiv > utils.getHumanID() and iCiv < iBrazil):
                                 for j in range(iNumPlayers-1-iCiv):
                                         iNextCiv = iCiv+j+1
                                         if (getTurnForYear(con.tBirth[iCiv])+self.getBirthTurnModifier(iCiv) == getTurnForYear(con.tBirth[iNextCiv])+self.getBirthTurnModifier(iNextCiv)):
@@ -1764,7 +1764,7 @@ class RiseAndFall:
 				if pIndia.isAlive() and utils.getHumanID() != iIndia:
 					if pIndia.getCapitalCity().getName() == "Pataliputra":
 						oldCapital = pIndia.getCapitalCity()
-						cityList = PyPlayer(iMongolia).getCityList()
+						cityList = PyPlayer(iMughals).getCityList()
 						newCapital = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')].GetCy()
 						newCapital.setHasRealBuilding(con.iPalace, True)
 						oldCapital.setHasRealBuilding(con.iPalace, False)

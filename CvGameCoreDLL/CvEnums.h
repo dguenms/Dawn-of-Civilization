@@ -247,6 +247,11 @@ enum InterfaceModeTypes			// Exposed to Python
 	INTERFACEMODE_REBASE,
 	INTERFACEMODE_PYTHON_PICK_PLOT,
 	INTERFACEMODE_SAVE_PLOT_NIFS,
+// BUG - Sentry Actions - start
+#ifdef _MOD_SENTRY
+	INTERFACEMODE_GO_TO_SENTRY,
+#endif
+// BUG - Sentry Actions - end
 
 #ifdef _USRDLL
 	NUM_INTERFACEMODE_TYPES
@@ -542,6 +547,33 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_GLOBELAYER_TOGGLE,
 	WIDGET_FINANCE_ADVISOR, //Leoreth
 
+// BUG - Min/Max Commerce Rate - start
+	WIDGET_SET_PERCENT,
+// BUG - Min/Max Commerce Rate - end
+
+// BUG - Finance Advisor - start
+	WIDGET_HELP_FINANCE_DOMESTIC_TRADE,
+	WIDGET_HELP_FINANCE_FOREIGN_TRADE,
+	WIDGET_HELP_FINANCE_SPECIALISTS,
+// BUG - Finance Advisor - end
+
+// BUG - Trade Denial - start
+	WIDGET_PEDIA_JUMP_TO_BONUS_TRADE,
+	WIDGET_PEDIA_JUMP_TO_TECH_TRADE,
+// BUG - Trade Denial - end
+
+// BUG - Foreign Advisor INFO Trade - start
+	WIDGET_TRADE_ROUTES,
+// BUG - Foreign Advisor INFO Trade - end
+
+// BUG - Food Rate Hover - start
+	WIDGET_FOOD_MOD_HELP,
+// BUG - Food Rate Hover - end
+
+// BUG - Leaderhead Relations - start
+	WIDGET_LEADERHEAD_RELATIONS,
+// BUG - Leaderhead Relations - end
+
 	// Leoreth
 	WIDGET_HELP_STABILITY_EXPANSION,
 	WIDGET_HELP_STABILITY_ECONOMY,
@@ -748,6 +780,12 @@ enum GameOptionTypes				// Exposed to Python
 	GAMEOPTION_NO_GOODY_HUTS,
 	GAMEOPTION_NO_EVENTS,
 	GAMEOPTION_NO_ESPIONAGE,
+
+// BUG - Global Warming Mod - start
+#ifdef _MOD_GWARM
+	GAMEOPTION_RISING_SEAS,
+#endif
+// BUG - Global Warming Mod - end
 
 #ifdef _USRDLL
 	NUM_GAMEOPTION_TYPES
@@ -986,6 +1024,7 @@ enum FontSymbols					// Exposed to Python
 	POWER_CHAR,
 	CITIZEN_CHAR,
 	GENERAL_CHAR,
+	AIRPORT_CHAR,
 	RELATION_CHAR,
 	FURIOUS_CHAR,
 	ANNOYED_CHAR,
@@ -1468,6 +1507,13 @@ enum ActivityTypes			// Exposed to Python
 	ACTIVITY_MISSION,
 	ACTIVITY_PATROL,
 	ACTIVITY_PLUNDER,
+// BUG - Sentry Actions - start
+#ifdef _MOD_SENTRY
+	ACTIVITY_SENTRY_WHILE_HEAL,
+	ACTIVITY_SENTRY_NAVAL_UNITS,
+	ACTIVITY_SENTRY_LAND_UNITS,
+#endif
+// BUG - Sentry Actions - end
 
 #ifdef _USRDLL
 	NUM_ACTIVITY_TYPES
@@ -1542,6 +1588,14 @@ enum MissionTypes				// Exposed to Python
 	MISSION_DAMAGE,
 	MISSION_MULTI_SELECT,
 	MISSION_MULTI_DESELECT,
+// BUG - Sentry Actions - start
+#ifdef _MOD_SENTRY
+	MISSION_MOVE_TO_SENTRY,
+	MISSION_SENTRY_WHILE_HEAL,
+	MISSION_SENTRY_NAVAL_UNITS,
+	MISSION_SENTRY_LAND_UNITS,
+#endif
+// BUG - Sentry Actions - end
 
 #ifdef _USRDLL
 	NUM_MISSION_TYPES
@@ -2750,6 +2804,9 @@ enum GameMessageTypes				// Exposed to Python
 	GAMEMESSAGE_ADVANCED_START_ACTION,
 	GAMEMESSAGE_FOUND_RELIGION,
 	GAMEMESSAGE_MOD_NET_MESSAGE
+// BUG - Reminder Mod - start
+	, GAMEMESSAGE_ADD_REMINDER
+// BUG - Reminder Mod - end
 };
 
 enum PopupControlLayout		// Exposed to Python

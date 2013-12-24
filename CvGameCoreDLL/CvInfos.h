@@ -924,6 +924,10 @@ public:
 
 	float getUnitMaxSpeed() const;					// Exposed to Python
 	float getUnitPadTime() const;					// Exposed to Python
+	
+// BUG - Unit Experience - start
+	bool canAcquireExperience() const;				// Exposed to Python
+// BUG - Unit Experience - end
 
 	// Arrays
 
@@ -3194,7 +3198,12 @@ public:
 	int getDefenseModifier() const;						// Exposed to Python
 	int getAdvancedStartRemoveCost() const;						// Exposed to Python
 	int getTurnDamage() const;						// Exposed to Python
-
+// BUG - Global Warming Mod - start
+#ifdef _MOD_GWARM
+	int getWarmingDefense() const;						// Exposed to Python
+#endif
+// BUG - Global Warming Mod - end
+	
 	bool isNoCoast() const;						// Exposed to Python
 	bool isNoRiver() const;						// Exposed to Python
 	bool isNoAdjacent() const;				// Exposed to Python
@@ -3245,10 +3254,15 @@ protected:
 	int m_iDefenseModifier;
 	int m_iAdvancedStartRemoveCost;
 	int m_iTurnDamage;
-
-	bool m_bNoCoast;
-	bool m_bNoRiver;
-	bool m_bNoAdjacent;
+// BUG - Global Warming Mod - start
+#ifdef _MOD_GWARM
+	int m_iWarmingDefense;
+#endif
+// BUG - Global Warming Mod - end
+	
+	bool m_bNoCoast;				
+	bool m_bNoRiver;					
+	bool m_bNoAdjacent;			
 	bool m_bRequiresFlatlands;
 	bool m_bRequiresRiver;
 	bool m_bAddsFreshWater;

@@ -26,6 +26,12 @@ public:
 
 	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);						
 	void reportCombatResult(CvUnit* pWinner, CvUnit* pLoser);					
+// BUG - Combat Events - start
+	void reportCombatRetreat(CvUnit* pAttacker, CvUnit* pDefender);
+	void reportCombatWithdrawal(CvUnit* pAttacker, CvUnit* pDefender);
+	void reportCombatLogCollateral(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
+	void reportCombatLogFlanking(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
+// BUG - Combat Events - start
 	void reportImprovementBuilt(int iImprovementType, int iX, int iY);	
 	void reportImprovementDestroyed(int iImprovementType, int iPlayer, int iX, int iY);	
 	void reportRouteBuilt(int iRouteType, int iX, int iY);	
@@ -46,6 +52,12 @@ public:
 	void reportCityProduction(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityBuildingUnit(CvCity *pCity, UnitTypes eUnitType);
 	void reportCityBuildingBuilding(CvCity *pCity, BuildingTypes eBuildingType);
+// BUG - Project Started Event - start
+	void reportCityBuildingProject(CvCity* pCity, ProjectTypes eProjectType);
+// BUG - Project Started Event - end
+// BUG - Process Started Event - start
+	void reportCityBuildingProcess(CvCity* pCity, ProcessTypes eProcessType);
+// BUG - Process Started Event - end
 	void reportCityRename(CvCity *pCity);
 	void reportCityHurry(CvCity *pCity, HurryTypes eHurry);
 	void reportCityCaptureGold(CvCity *pCity, PlayerTypes ePlayer, int iCaptureGold);
@@ -57,8 +69,14 @@ public:
 	void reportUnitCreated(CvUnit *pUnit);
 	void reportUnitBuilt(CvCity *pCity, CvUnit *pUnit);
 	void reportUnitKilled(CvUnit *pUnit, PlayerTypes eAttacker);			
+// BUG - Upgrade Unit Event - start
+	void reportUnitCaptured(PlayerTypes eFromPlayer, UnitTypes eUnitType, CvUnit* pNewUnit);
+// BUG - Upgrade Unit Event - end
 	void reportUnitLost(CvUnit *pUnit);
 	void reportUnitPromoted(CvUnit* pUnit, PromotionTypes ePromotion);
+// BUG - Upgrade Unit Event - start
+	void reportUnitUpgraded(CvUnit* pOldUnit, CvUnit* pNewUnit, int iPrice);
+// BUG - Upgrade Unit Event - end
 	void reportUnitSelected(CvUnit *pUnit);
 	void reportUnitRename(CvUnit *pUnit);
 	void reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer, int iPillagedGold);

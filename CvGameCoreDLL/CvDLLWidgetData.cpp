@@ -22,6 +22,17 @@
 
 #include "CvRhyes.h" //Rhye
 
+// BUG - start
+#include "BugMod.h"
+#include "CvBugOptions.h"
+// BUG - end
+
+// BUFFY - start
+#ifdef _BUFFY
+#include "Buffy.h"
+#endif
+// BUFFY - end
+
 CvDLLWidgetData* CvDLLWidgetData::m_pInst = NULL;
 
 CvDLLWidgetData& CvDLLWidgetData::getInstance()
@@ -137,6 +148,12 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseChangePercentHelp(widgetDataStruct, szBuffer);
 		break;
 
+// BUG - Min/Max Commerce Rate - start
+	case WIDGET_SET_PERCENT:
+		parseSetPercentHelp(widgetDataStruct, szBuffer);
+		break;
+// BUG - Min/Max Commerce Rate - end
+
 	case WIDGET_CITY_TAB:
 		{
 			CvWString szTemp;
@@ -155,6 +172,16 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 
 	case WIDGET_ZOOM_CITY:
 		szBuffer.append(gDLL->getText("TXT_KEY_ZOOM_CITY_HELP"));
+// BUG - Zoom City Details - start
+		if (getBugOptionBOOL("MiscHover__CDAZoomCityDetails", true, "BUG_CDA_ZOOM_CITY_DETAILS"))
+		{
+			// only if the active player owns the city
+			if (GC.getGame().getActivePlayer() == widgetDataStruct.m_iData1) {
+				szBuffer.append(NEWLINE);
+				GAMETEXT.setCityBarHelp(szBuffer, GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getCity(widgetDataStruct.m_iData2));
+			}
+		}
+// BUG - Zoom City Details - end
 		break;
 
 	case WIDGET_END_TURN:
@@ -210,6 +237,9 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		break;
 
 	case WIDGET_HELP_DEFENSE:
+// BUG - Defense Hover - start
+		parseDefenseHelp(widgetDataStruct, szBuffer);
+// BUG - Defense Hover - end
 		break;
 
 	case WIDGET_HELP_HEALTH:
@@ -408,6 +438,20 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseFoundCorporationHelp(widgetDataStruct, szBuffer);
 		break;
 
+// BUG - Finance Advisor - start
+	case WIDGET_HELP_FINANCE_DOMESTIC_TRADE:
+		parseFinanceDomesticTrade(widgetDataStruct, szBuffer);
+		break;
+
+	case WIDGET_HELP_FINANCE_FOREIGN_TRADE:
+		parseFinanceForeignTrade(widgetDataStruct, szBuffer);
+		break;
+
+	case WIDGET_HELP_FINANCE_SPECIALISTS:
+		parseFinanceSpecialistGold(widgetDataStruct, szBuffer);
+		break;
+// BUG - Finance Advisor - end
+
 	case WIDGET_HELP_FINANCE_NUM_UNITS:
 		parseFinanceNumUnits(widgetDataStruct, szBuffer);
 		break;
@@ -448,6 +492,16 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseFinanceGoldReserve(widgetDataStruct, szBuffer);
 		break;
 
+	case WIDGET_PEDIA_JUMP_TO_TECH:
+		parseTechEntryHelp(widgetDataStruct, szBuffer);
+		break;
+
+// BUG - Trade Denial - start
+	case WIDGET_PEDIA_JUMP_TO_TECH_TRADE:
+		parseTechTradeEntryHelp(widgetDataStruct, szBuffer);
+		break;
+// BUG - Trade Denial - end
+
 	// Leoreth
 	case WIDGET_HELP_STABILITY_EXPANSION:
 		parseStabilityExpansionHelp(widgetDataStruct, szBuffer);
@@ -471,10 +525,6 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 
 	case WIDGET_HELP_STABILITY:
 		parseStabilityHelp(widgetDataStruct, szBuffer);
-		break;
-
-	case WIDGET_PEDIA_JUMP_TO_TECH:
-		parseTechEntryHelp(widgetDataStruct, szBuffer);
 		break;
 
 	case WIDGET_PEDIA_JUMP_TO_REQUIRED_TECH:
@@ -504,6 +554,12 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 	case WIDGET_PEDIA_JUMP_TO_BONUS:
 		parseBonusHelp(widgetDataStruct, szBuffer);
 		break;
+
+// BUG - Trade Denial - start
+	case WIDGET_PEDIA_JUMP_TO_BONUS_TRADE:
+		parseBonusTradeHelp(widgetDataStruct, szBuffer);
+		break;
+// BUG - Trade Denial - end
 
 	case WIDGET_PEDIA_MAIN:
 		break;
@@ -585,6 +641,12 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 	case WIDGET_MINIMAP_HIGHLIGHT:
 		break;
 
+// BUG - Food Rate Hover - start
+	case WIDGET_FOOD_MOD_HELP:
+		parseFoodModHelp(widgetDataStruct, szBuffer);
+		break;
+// BUG - Food Rate Hover - end
+
 	case WIDGET_PRODUCTION_MOD_HELP:
 		parseProductionModHelp(widgetDataStruct, szBuffer);
 		break;
@@ -593,6 +655,12 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseLeaderheadHelp(widgetDataStruct, szBuffer);
 		break;
 
+// BUG - Leaderhead Relations - start
+	case WIDGET_LEADERHEAD_RELATIONS:
+		parseLeaderheadRelationsHelp(widgetDataStruct, szBuffer);
+		break;
+// BUG - Leaderhead Relations - end
+
 	case WIDGET_LEADER_LINE:
 		parseLeaderLineHelp(widgetDataStruct, szBuffer);
 		break;
@@ -600,6 +668,12 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 	case WIDGET_COMMERCE_MOD_HELP:
 		parseCommerceModHelp(widgetDataStruct, szBuffer);
 		break;
+
+// BUG - Trade Hover - start
+	case WIDGET_TRADE_ROUTES:
+		parseTradeRoutes(widgetDataStruct, szBuffer);
+		break;
+// BUG - Trade Hover - end
 
 	}
 }
@@ -706,6 +780,12 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 	case WIDGET_CHANGE_PERCENT:
 		doChangePercent(widgetDataStruct);
 		break;
+
+// BUG - Min/Max Commerce Rate - start
+	case WIDGET_SET_PERCENT:
+		doSetPercent(widgetDataStruct);
+		break;
+// BUG - Min/Max Commerce Rate - end
 
 	case WIDGET_CITY_TAB:
 		doCityTab(widgetDataStruct);
@@ -1004,6 +1084,12 @@ bool CvDLLWidgetData::executeAltAction( CvWidgetDataStruct &widgetDataStruct )
 		doContactCiv(widgetDataStruct);
 		break;
 
+// BUG - Leaderhead Relations - start
+	case WIDGET_LEADERHEAD_RELATIONS:
+		doContactCiv(widgetDataStruct);
+		break;
+// BUG - Leaderhead Relations - end
+
 	default:
 		bHandled = false;
 		break;
@@ -1153,7 +1239,20 @@ void CvDLLWidgetData::doTrain(CvWidgetDataStruct &widgetDataStruct)
 
 	if (widgetDataStruct.m_iData2 != FFreeList::INVALID_INDEX)
 	{
-		CvMessageControl::getInstance().sendPushOrder(widgetDataStruct.m_iData2, ORDER_TRAIN, eUnit, false, false, false);
+// Train Units Forever - start
+		bool bAlt;
+		CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
+
+		if (kUnit.getCombat() || kUnit.getAirCombat())
+		{
+			bAlt = getBugOptionBOOL("CityScreen__ProductionPopupTrainMilitaryUnitsForever", true, "BUG_PRODUCTION_POPUP_TRAIN_MILITARY_UNITS_FOREVER");
+		}
+		else
+		{
+			bAlt = getBugOptionBOOL("CityScreen__ProductionPopupTrainCivilianUnitsForever", false, "BUG_PRODUCTION_POPUP_TRAIN_CIVILIAN_UNITS_FOREVER");
+		}
+		CvMessageControl::getInstance().sendPushOrder(widgetDataStruct.m_iData2, ORDER_TRAIN, eUnit, bAlt, false, false);
+// Train Units Forever - end
 	}
 	else
 	{
@@ -1258,6 +1357,30 @@ void CvDLLWidgetData::doResearch(CvWidgetDataStruct &widgetDataStruct)
 		}
 	}
 
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       12/07/09                            Emperor Fool      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+	// Free Tech Popup Fix
+	if (widgetDataStruct.m_iData2 > 0)
+	{
+		CvPlayer& kPlayer = GET_PLAYER(GC.getGameINLINE().getActivePlayer());
+
+		if (!kPlayer.isChoosingFreeTech())
+		{
+			gDLL->getInterfaceIFace()->addMessage(GC.getGameINLINE().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_CHEATERS_NEVER_PROSPER"), NULL, MESSAGE_TYPE_MAJOR_EVENT);
+			return;
+		}
+		else
+		{
+			kPlayer.setChoosingFreeTech(false);
+		}
+	}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
+
 	CvMessageControl::getInstance().sendResearch(((TechTypes)widgetDataStruct.m_iData1), widgetDataStruct.m_iData2, bShift);
 }
 
@@ -1266,6 +1389,13 @@ void CvDLLWidgetData::doChangePercent(CvWidgetDataStruct &widgetDataStruct)
 {
 	CvMessageControl::getInstance().sendPercentChange(((CommerceTypes)widgetDataStruct.m_iData1), widgetDataStruct.m_iData2);
 }
+
+// BUG - Min/Max Commerce Rate - start
+void CvDLLWidgetData::doSetPercent(CvWidgetDataStruct &widgetDataStruct)
+{
+	CvMessageControl::getInstance().sendPercentChange(((CommerceTypes)widgetDataStruct.m_iData1), widgetDataStruct.m_iData2 - GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCommercePercent((CommerceTypes)widgetDataStruct.m_iData1));
+}
+// BUG - Min/Max Commerce Rate - end
 
 void CvDLLWidgetData::doCityTab(CvWidgetDataStruct &widgetDataStruct)
 {
@@ -1752,7 +1882,9 @@ void CvDLLWidgetData::parseConstructHelp(CvWidgetDataStruct &widgetDataStruct, C
 	{
 		eBuilding = (BuildingTypes)GC.getCivilizationInfo(pHeadSelectedCity->getCivilizationType()).getCivilizationBuildings(widgetDataStruct.m_iData1);
 
-		GAMETEXT.setBuildingHelp(szBuffer, eBuilding, false, widgetDataStruct.m_bOption, false, pHeadSelectedCity);
+// BUG - Building Actual Effects - start
+		GAMETEXT.setBuildingHelpActual(szBuffer, eBuilding, false, widgetDataStruct.m_bOption, false, pHeadSelectedCity);
+// BUG - Building Actual Effects - end
 	}
 }
 
@@ -1817,6 +1949,36 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 			}
 		}
 
+// BUG - Hurry Overflow - start
+		if (getBugOptionBOOL("MiscHover__HurryOverflow", true, "BUG_HURRY_OVERFLOW_HOVER"))
+		{
+			int iOverflowProduction = 0;
+			int iOverflowGold = 0;
+			if (pHeadSelectedCity->hurryOverflow((HurryTypes)(widgetDataStruct.m_iData1), &iOverflowProduction, &iOverflowGold, getBugOptionBOOL("MiscHover__HurryOverflowIncludeCurrent", false, "BUG_HURRY_OVERFLOW_HOVER_INCLUDE_CURRENT")))
+			{
+				if (iOverflowProduction > 0 || iOverflowGold > 0)
+				{
+					bFirst = true;
+					CvWStringBuffer szOverflowBuffer;
+					if (iOverflowProduction > 0)
+					{
+						szTempBuffer.Format(L"%d%c", iOverflowProduction, GC.getYieldInfo(YIELD_PRODUCTION).getChar());
+						setListHelp(szOverflowBuffer, NULL, szTempBuffer, L", ", bFirst);
+						bFirst = false;
+					}
+					if (iOverflowGold > 0)
+					{
+						szTempBuffer.Format(L"%d%c", iOverflowGold, GC.getCommerceInfo(COMMERCE_GOLD).getChar());
+						setListHelp(szOverflowBuffer, NULL, szTempBuffer, L", ", bFirst);
+						bFirst = false;
+					}
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HURRY_OVERFLOW", szOverflowBuffer));
+				}
+			}
+		}
+// BUG - Hurry Overflow - end
+
 		iHurryAngerLength = pHeadSelectedCity->hurryAngerLength((HurryTypes)(widgetDataStruct.m_iData1));
 
 		if (iHurryAngerLength > 0)
@@ -1880,6 +2042,13 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 			CvWString szTemp;
 			szTemp.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_UNIT_TEXT"), GC.getUnitInfo(eConscriptUnit).getDescription());
 			szBuffer.assign(szTemp);
+		
+// BUG - Starting Experience - start
+			if (getBugOptionBOOL("MiscHover__ConscriptUnit", true, "BUG_CONSCRIPT_UNIT_HOVER"))
+			{
+				GAMETEXT.setBasicUnitHelpWithCity(szBuffer, pHeadSelectedCity->getConscriptUnit(), false, pHeadSelectedCity, true);
+			}
+// BUG - Starting Experience - end
 
 			iConscriptPopulation = pHeadSelectedCity->getConscriptPopulation();
 
@@ -1942,6 +2111,32 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 					szBuffer.append(ENDCOLR);
 				}
 			}
+// BUG - Conscript Limit - start
+			else if (getBugOptionBOOL("MiscHover__ConscriptLimit", true, "BUG_CONSCRIPT_LIMIT_HOVER"))
+			{
+				if (pHeadSelectedCity->isDrafted())
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_CITY_HAS_CONSCRIPTED"));
+				}
+				else
+				{
+					int iDraftUnits = GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getConscriptCount();
+					int iMaxDraftUnits = GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getMaxConscript();
+
+					if (iDraftUnits >= iMaxDraftUnits)
+					{
+						szBuffer.append(NEWLINE);
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_NO_CONSCRIPT_UNITS_LEFT"));
+					}
+					else
+					{
+						szBuffer.append(NEWLINE);
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_CONSCRIPT_UNITS_LEFT", iMaxDraftUnits - iDraftUnits));
+					}
+				}
+			}
+// BUG - Conscript Limit - end
 		}
 	}
 }
@@ -2012,8 +2207,14 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 			}
 
 			pMissionCity = pMissionPlot->getPlotCity();
-
+			
+// BUG - Sentry Actions - start
+#ifdef _MOD_SENTRY
+			if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_HEAL || GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_SENTRY_WHILE_HEAL)
+#else
 			if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_HEAL)
+#endif
+// BUG - Sentry Actions - end
 			{
 				iTurns = 0;
 
@@ -2307,7 +2508,9 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_JOIN)
 			{
-				GAMETEXT.parseSpecialistHelp(szBuffer, ((SpecialistTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData())), pMissionCity, true);
+// BUG - Specialist Actual Effects - start
+				GAMETEXT.parseSpecialistHelpActual(szBuffer, ((SpecialistTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData())), pMissionCity, true, 1);
+// BUG - Specialist Actual Effects - end
 			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_CONSTRUCT)
 			{
@@ -2325,7 +2528,9 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					else
 					{
 						szBuffer.append(NEWLINE);
-						GAMETEXT.setBuildingHelp(szBuffer, ((BuildingTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData())), false, false, false, pMissionCity);
+// BUG - Building Actual Effects - start
+						GAMETEXT.setBuildingHelpActual(szBuffer, ((BuildingTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData())), false, false, false, pMissionCity);
+// BUG - Building Actual Effects - end
 					}
 				}
 			}
@@ -2898,6 +3103,12 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getBuildInfo(eBuild).getHelp()).c_str());
 				}
 			}
+// BUG - Fortify/Sleep All Action - start
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_FORTIFY || GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_SLEEP)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_SAME_UNITS_TYPE"));
+			}
+// BUG - Fortify/Sleep All Action - end
 
 			if (!CvWString(GC.getMissionInfo((MissionTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType())).getHelp()).empty())
 			{
@@ -2970,6 +3181,12 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					}
 				}
 			}
+// BUG - Delete All Action - start
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType() == COMMAND_DELETE)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_SAME_UNITS_TYPE"));
+			}
+// BUG - Delete All Action - end
 
 			if (GC.getCommandInfo((CommandTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType())).getAll())
 			{
@@ -3084,7 +3301,9 @@ void CvDLLWidgetData::parseDisabledCitizenHelp(CvWidgetDataStruct &widgetDataStr
 	{
 		if (widgetDataStruct.m_iData1 != NO_SPECIALIST)
 		{
-			GAMETEXT.parseSpecialistHelp(szBuffer, ((SpecialistTypes)(widgetDataStruct.m_iData1)), pHeadSelectedCity);
+// BUG - Specialist Actual Effects - start
+			GAMETEXT.parseSpecialistHelpActual(szBuffer, ((SpecialistTypes)(widgetDataStruct.m_iData1)), pHeadSelectedCity, false, 1);
+// BUG - Specialist Actual Effects - end
 
 			if (!(pHeadSelectedCity->isSpecialistValid(((SpecialistTypes)(widgetDataStruct.m_iData1)), 1)))
 			{
@@ -3147,7 +3366,9 @@ void CvDLLWidgetData::parseChangeSpecialistHelp(CvWidgetDataStruct &widgetDataSt
 	{
 		if (widgetDataStruct.m_iData2 > 0)
 		{
-			GAMETEXT.parseSpecialistHelp(szBuffer, ((SpecialistTypes)(widgetDataStruct.m_iData1)), pHeadSelectedCity);
+// BUG - Specialist Actual Effects - start
+			GAMETEXT.parseSpecialistHelpActual(szBuffer, ((SpecialistTypes)(widgetDataStruct.m_iData1)), pHeadSelectedCity, false, widgetDataStruct.m_iData2);
+// BUG - Specialist Actual Effects - end
 
 			if (widgetDataStruct.m_iData1 != GC.getDefineINT("DEFAULT_SPECIALIST"))
 			{
@@ -3165,6 +3386,15 @@ void CvDLLWidgetData::parseChangeSpecialistHelp(CvWidgetDataStruct &widgetDataSt
 		else
 		{
 			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_REMOVE_SPECIALIST", GC.getSpecialistInfo((SpecialistTypes) widgetDataStruct.m_iData1).getTextKeyWide()));
+
+// BUG - Remove Specialist Hover - start
+			if (getBugOptionBOOL("MiscHover__RemoveSpecialist", true, "BUG_CITY_SCREEN_REMOVE_SPECIALIST_HOVER"))
+			{
+// BUG - Specialist Actual Effects - start
+				GAMETEXT.parseSpecialistHelpActual(szBuffer, ((SpecialistTypes)(widgetDataStruct.m_iData1)), pHeadSelectedCity, false, widgetDataStruct.m_iData2);
+// BUG - Specialist Actual Effects - end
+			}
+// BUG - Remove Specialist Hover - end
 
 			if (pHeadSelectedCity->getForceSpecialistCount((SpecialistTypes)(widgetDataStruct.m_iData1)) > 0)
 			{
@@ -3219,15 +3449,38 @@ void CvDLLWidgetData::parseChangePercentHelp(CvWidgetDataStruct &widgetDataStruc
 	}
 }
 
+// BUG - Min/Max Commerce Rate - start
+void CvDLLWidgetData::parseSetPercentHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	szBuffer.assign(gDLL->getText("TXT_KEY_MISC_SET_RATE", GC.getCommerceInfo((CommerceTypes) widgetDataStruct.m_iData1).getTextKeyWide(), widgetDataStruct.m_iData2));
+}
+// BUG - Min/Max Commerce Rate - end
+
 
 void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
-	//	Do not execute this if we are trying to contact ourselves...
-	if (widgetDataStruct.m_iData1 >= MAX_PLAYERS || GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getCivilizationType() == NO_CIVILIZATION)
+	// do not execute if player is out of range
+	PlayerTypes ePlayer = (PlayerTypes) widgetDataStruct.m_iData1;
+	if (ePlayer >= MAX_PLAYERS)
 	{
 		return;
 	}
-	if (GC.getGameINLINE().getActivePlayer() == widgetDataStruct.m_iData1)
+
+	// do not execute if player is not a real civ
+	CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+	if (kPlayer.getCivilizationType() == NO_CIVILIZATION)
+	{
+		return;
+	}
+
+	TeamTypes eTeam = (TeamTypes) kPlayer.getTeam();
+	CvTeamAI& kTeam = GET_TEAM(eTeam);
+
+	PlayerTypes eActivePlayer = GC.getGameINLINE().getActivePlayer();
+	TeamTypes eActiveTeam = (TeamTypes) GET_PLAYER(eActivePlayer).getTeam();
+	CvTeamAI& kActiveTeam = GET_TEAM(eActiveTeam);
+
+	if (GC.getGameINLINE().getActivePlayer() == ePlayer)
 	{
 		//Rhye - start
 		parseCompleteStabilityInfo(widgetDataStruct, szBuffer);
@@ -3265,22 +3518,52 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 				szBuffer.append(gDLL->getText("TXT_KEY_MISC_REFUSES_TO_TALK"));
 			}
 
+// BUG - start
+			// moved up here to match other leaderhead hovers
 			szBuffer.append(NEWLINE);
-			GAMETEXT.getAttitudeString(szBuffer, ((PlayerTypes)widgetDataStruct.m_iData1), GC.getGameINLINE().getActivePlayer());
+			GAMETEXT.getEspionageString(szBuffer, ePlayer, eActivePlayer);
 
-			szBuffer.append(NEWLINE);
-			GAMETEXT.getEspionageString(szBuffer, ((PlayerTypes)widgetDataStruct.m_iData1), GC.getGameINLINE().getActivePlayer());
+			//szBuffer.append(NEWLINE);
+			GAMETEXT.getAttitudeString(szBuffer, ePlayer, eActivePlayer);
 
-			//Rhye - start
-			if ((int)widgetDataStruct.m_iData1 < NUM_MAJOR_PLAYERS)
-			{
-				parseCompleteStabilityInfo(widgetDataStruct, szBuffer);
-				parseHistoricalVictoryInfo(widgetDataStruct, szBuffer);
-			}
-			//Rhye - end
-
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_CTRL_TRADE"));
+			// espionage moved above
+			// CTRL instructions moved below
+// BUG - end
 		}
+// BUG - Espionage for Humans - start
+		else
+		{
+			szBuffer.append(NEWLINE);
+			GAMETEXT.getEspionageString(szBuffer, ePlayer, eActivePlayer);
+		}
+// BUG - Espionage for Humans - end
+
+// BUG - Deals in Scoreboard - start
+		if (gDLL->ctrlKey())
+		{
+			GAMETEXT.getActiveDealsString(szBuffer, ePlayer, eActivePlayer);
+		}
+// BUG - Deals in Scoreboard - end
+
+// BUG - Relations in Scoreboard - start
+		GAMETEXT.getAllRelationsString(szBuffer, eTeam);
+// BUG - Relations in Scoreboard - end
+
+// BUG - start
+		// moved from above to organize the hover text
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_CTRL_TRADE"));
+// BUG - end
+
+		//Rhye - start
+		if ((int)widgetDataStruct.m_iData1 < NUM_MAJOR_PLAYERS)
+		{
+			parseCompleteStabilityInfo(widgetDataStruct, szBuffer);
+			parseHistoricalVictoryInfo(widgetDataStruct, szBuffer);
+		}
+		//Rhye - end
+
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_CTRL_TRADE"));
 
 		if ((GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam() != GC.getGameINLINE().getActiveTeam()) && !(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isAtWar(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam())))
 		{
@@ -3717,6 +4000,13 @@ void CvDLLWidgetData::parseMaintenanceHelp(CvWidgetDataStruct &widgetDataStruct,
 				swprintf(szTempBuffer, L" (%s%d%%)", ((iMaintenanceValue > 0) ? L"+" : L""), iMaintenanceValue);
 				szBuffer.append(szTempBuffer);
 			}
+
+// BUG - Building Saved Maintenance - start
+			if (pHeadSelectedCity->getOwnerINLINE() == GC.getGame().getActivePlayer() && getBugOptionBOOL("MiscHover__BuildingSavedMaintenance", true, "BUG_BUILDING_SAVED_MAINTENANCE_HOVER"))
+			{
+				GAMETEXT.setBuildingSavedMaintenanceHelp(szBuffer, *pHeadSelectedCity, DOUBLE_SEPARATOR);
+			}
+// BUG - Building Saved Maintenance - end
 		}
 	}
 }
@@ -3730,6 +4020,13 @@ void CvDLLWidgetData::parseHealthHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 		GAMETEXT.setBadHealthHelp(szBuffer, *pHeadSelectedCity);
 		szBuffer.append(L"\n=======================\n");
 		GAMETEXT.setGoodHealthHelp(szBuffer, *pHeadSelectedCity);
+
+// BUG - Building Additional Health - start
+		if (pHeadSelectedCity->getOwnerINLINE() == GC.getGame().getActivePlayer() && getBugOptionBOOL("MiscHover__BuildingAdditionalHealth", true, "BUG_BUILDING_ADDITIONAL_HEALTH_HOVER"))
+		{
+			GAMETEXT.setBuildingAdditionalHealthHelp(szBuffer, *pHeadSelectedCity, DOUBLE_SEPARATOR);
+		}
+// BUG - Building Additional Health - end
 	}
 }
 
@@ -3796,6 +4093,13 @@ void CvDLLWidgetData::parseHappinessHelp(CvWidgetDataStruct &widgetDataStruct, C
 		GAMETEXT.setAngerHelp(szBuffer, *pHeadSelectedCity);
 		szBuffer.append(L"\n=======================\n");
 		GAMETEXT.setHappyHelp(szBuffer, *pHeadSelectedCity);
+
+// BUG - Building Additional Happiness - start
+		if (pHeadSelectedCity->getOwnerINLINE() == GC.getGame().getActivePlayer() && getBugOptionBOOL("MiscHover__BuildingAdditionalHappiness", true, "BUG_BUILDING_ADDITIONAL_HAPPINESS_HOVER"))
+		{
+			GAMETEXT.setBuildingAdditionalHappinessHelp(szBuffer, *pHeadSelectedCity, DOUBLE_SEPARATOR);
+		}
+// BUG - Building Additional Happiness - end
 	}
 }
 
@@ -3912,7 +4216,9 @@ void CvDLLWidgetData::parseSelectedHelp(CvWidgetDataStruct &widgetDataStruct, Cv
 				break;
 
 			case ORDER_CONSTRUCT:
-				GAMETEXT.setBuildingHelp(szBuffer, ((BuildingTypes)(pOrder->iData1)), false, false, false, pHeadSelectedCity);
+// BUG - Building Actual Effects - start
+				GAMETEXT.setBuildingHelpActual(szBuffer, ((BuildingTypes)(pOrder->iData1)), false, false, false, pHeadSelectedCity);
+// BUG - Building Actual Effects - end
 				break;
 
 			case ORDER_CREATE:
@@ -3996,6 +4302,19 @@ void CvDLLWidgetData::parseTechEntryHelp(CvWidgetDataStruct &widgetDataStruct, C
 	}
 }
 
+// BUG - Trade Denial - start
+void CvDLLWidgetData::parseTechTradeEntryHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	if (widgetDataStruct.m_iData2 == -1)
+	{
+		parseTechEntryHelp(widgetDataStruct, szBuffer);
+	}
+	else
+	{
+		GAMETEXT.setTechTradeHelp(szBuffer, (TechTypes)widgetDataStruct.m_iData1, (PlayerTypes)widgetDataStruct.m_iData2, false, false, false, true, NO_TECH);
+	}
+}
+// BUG - Trade Denial - end
 
 void CvDLLWidgetData::parseTechPrereqHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
@@ -4196,6 +4515,40 @@ void CvDLLWidgetData::parseFoundCorporationHelp(CvWidgetDataStruct &widgetDataSt
 	GAMETEXT.buildFoundCorporationString(szBuffer, ((TechTypes)(widgetDataStruct.m_iData1)), widgetDataStruct.m_iData2, true);
 }
 
+// BUG - Finance Advisor - start
+void CvDLLWidgetData::parseFinanceDomesticTrade(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+//	szBuffer = "The Total Commerce from Domestic Trade Routes";
+	szBuffer.assign(gDLL->getText("TXT_KEY_BUG_FINANCIAL_ADVISOR_DOMESTIC_TRADE"));
+	szBuffer.append(NEWLINE);
+	if (widgetDataStruct.m_iData2 > 0)
+	{
+		GAMETEXT.buildDomesticTradeString(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1);
+	}
+}
+
+void CvDLLWidgetData::parseFinanceForeignTrade(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+//	szBuffer = "The Total Commerce from Foreign Trade Routes";
+	szBuffer.assign(gDLL->getText("TXT_KEY_BUG_FINANCIAL_ADVISOR_FOREIGN_TRADE"));
+	szBuffer.append(NEWLINE);
+	if (widgetDataStruct.m_iData2 > 0)
+	{
+		GAMETEXT.buildForeignTradeString(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1);
+	}
+}
+
+void CvDLLWidgetData::parseFinanceSpecialistGold(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+//	szBuffer = "The Total Commerce from Foreign Trade Routes";
+	szBuffer.assign(gDLL->getText("TXT_KEY_BUG_FINANCIAL_ADVISOR_SPECIALISTS"));
+	if (widgetDataStruct.m_iData2 > 0)
+	{
+		GAMETEXT.buildFinanceSpecialistGoldString(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1);
+	}
+}
+// BUG - Finance Advisor - end
+
 void CvDLLWidgetData::parseFinanceNumUnits(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 //	szBuffer = "Number of units you are currently supporting";
@@ -4305,6 +4658,20 @@ void CvDLLWidgetData::parseBonusHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 		GAMETEXT.setBonusHelp(szBuffer, (BonusTypes)widgetDataStruct.m_iData1);
 	}
 }
+
+// BUG - Trade Denial - start
+void CvDLLWidgetData::parseBonusTradeHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	if (widgetDataStruct.m_iData2 == -1)
+	{
+		parseBonusHelp(widgetDataStruct, szBuffer);
+	}
+	else
+	{
+		GAMETEXT.setBonusTradeHelp(szBuffer, (BonusTypes)widgetDataStruct.m_iData1, false, (PlayerTypes)widgetDataStruct.m_iData2);
+	}
+}
+// BUG - Trade Denial - end
 
 void CvDLLWidgetData::parseReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
@@ -4559,7 +4926,52 @@ void CvDLLWidgetData::parseKillDealHelp(CvWidgetDataStruct &widgetDataStruct, Cv
 		}
 	}
 
-	szBuffer.assign(szTemp);
+	szBuffer.append(szTemp);
+	
+// BUG - Kill Deal Info - start
+	if (pDeal != NULL)
+	{
+		szBuffer.append(NEWLINE);
+		GAMETEXT.getDealString(szBuffer, *pDeal, GC.getGameINLINE().getActivePlayer());
+
+		int iItem = widgetDataStruct.m_iData2;
+		if (iItem != -1)
+		{
+			const CLinkList<TradeData>* listTradeData = NULL;
+
+			if (iItem < pDeal->getLengthFirstTrades())
+			{
+				listTradeData = pDeal->getFirstTrades();
+			}
+			else
+			{
+				iItem -= pDeal->getLengthFirstTrades();
+				if (iItem < pDeal->getLengthSecondTrades())
+				{
+					listTradeData = pDeal->getSecondTrades();
+				}
+			}
+
+			if (listTradeData != NULL)
+			{
+				int iCount = 0;
+				for (CLLNode<TradeData>* pNode = listTradeData->head(); NULL != pNode; pNode = listTradeData->next(pNode))
+				{
+					if (iCount++ == iItem)
+					{
+						TradeData& kTradeData = pNode->m_data;
+						if (kTradeData.m_eItemType == TRADE_RESOURCES)
+						{
+							szBuffer.append(NEWLINE NEWLINE);
+							GAMETEXT.setBonusHelp(szBuffer, (BonusTypes)kTradeData.m_iData);
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
+// BUG - Kill Deal Info - end
 }
 
 
@@ -4599,6 +5011,17 @@ void CvDLLWidgetData::doRefreshMilitaryAdvisor(CvWidgetDataStruct &widgetDataStr
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "refreshMilitaryAdvisor", argsList.makeFunctionArgs());
 }
 
+// BUG - Food Rate Hover - start
+void CvDLLWidgetData::parseFoodModHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	CvCity* pCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
+	if (NULL != pCity)
+	{
+		GAMETEXT.setFoodHelp(szBuffer, *pCity);
+	}
+}
+// BUG - Food Rate Hover - end
+
 void CvDLLWidgetData::parseProductionModHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	CvCity* pCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
@@ -4618,6 +5041,13 @@ void CvDLLWidgetData::parseLeaderLineHelp(CvWidgetDataStruct &widgetDataStruct, 
 	GAMETEXT.parseLeaderLineHelp(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1, (PlayerTypes)widgetDataStruct.m_iData2);
 }
 
+// BUG - Leaderhead Relations - start
+void CvDLLWidgetData::parseLeaderheadRelationsHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	GAMETEXT.parseLeaderHeadRelationsHelp(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1, (PlayerTypes)widgetDataStruct.m_iData2);
+}
+// BUG - Leaderhead Relations - end
+
 void CvDLLWidgetData::parseCommerceModHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	CvCity* pCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
@@ -4631,6 +5061,25 @@ void CvDLLWidgetData::parseScoreHelp(CvWidgetDataStruct& widgetDataStruct, CvWSt
 {
 	GAMETEXT.setScoreHelp(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1);
 }
+
+// BUG - Trade Hover - start
+void CvDLLWidgetData::parseTradeRoutes(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	GAMETEXT.buildTradeString(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1, (PlayerTypes)widgetDataStruct.m_iData2);
+	GAMETEXT.getActiveDealsString(szBuffer, (PlayerTypes)widgetDataStruct.m_iData1, (PlayerTypes)widgetDataStruct.m_iData2);
+}
+// BUG - Trade Hover - end
+
+// BUG - Defense Hover - start
+void CvDLLWidgetData::parseDefenseHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
+{
+	CvCity* pHeadSelectedCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
+	if (NULL != pHeadSelectedCity)
+	{
+		GAMETEXT.setDefenseHelp(szBuffer, *pHeadSelectedCity);
+	}
+}
+// BUG - Defense Hover - end
 
 void CvDLLWidgetData::parseStabilityExpansionHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
 {

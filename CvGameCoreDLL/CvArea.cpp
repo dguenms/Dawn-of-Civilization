@@ -100,7 +100,6 @@ CvArea::~CvArea()
 
 void CvArea::init(int iID, bool bWater)
 {
-	//GC.getGameINLINE().logMsg("area init", iID); //Rhye
 	//--------------------------------
 	// Init saved data
 	reset(iID, bWater);
