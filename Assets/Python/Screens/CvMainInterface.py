@@ -5050,6 +5050,7 @@ class CvMainInterface:
 															scores.setAttitude(cAtt)
 # BUG - Attitude Icons - end
 # Leoreth - Stability Icons - start
+
 												if ePlayer < con.iNumPlayers:
 													iStabilityLevel = sd.getStabilityLevel(ePlayer)
 													if iStabilityLevel > con.iStabilityStable: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
