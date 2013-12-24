@@ -2736,9 +2736,12 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	iCost *= std::max(0, ((GC.getDefineINT("TECH_COST_EXTRA_TEAM_MEMBER_MODIFIER") * (getNumMembers() - 1)) + 100));
 	iCost /= 100;
 
+	int iNumCities = GET_PLAYER((PlayerTypes)getID()).getNumCities();
+	int iMultiplier;
+
 	//Rhye - start penalty 
 	//for large / giga empires
-	int iNumCities = GET_PLAYER((PlayerTypes)getID()).getNumCities();
+	/*int iNumCities = GET_PLAYER((PlayerTypes)getID()).getNumCities();
 	int iPopulation = GET_PLAYER((PlayerTypes)getID()).getTotalPopulation();
 	int iMaxPopulation = 10 * (6 + 2 * GET_PLAYER((PlayerTypes)getID()).getCurrentEra());
 	int iSurplus = 0;
@@ -2749,6 +2752,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 		iMultiplier += 5;
 
 	// Leoreth: larger penalty for tech leader
+	// moved to CvCity::calculateNumCitiesMaintenance()
 	//if (GC.getGame().getTechRank(getID()) == 0)
 	//	iMultiplier += 4;
 
@@ -2759,7 +2763,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 
 		iCost *= 100 + iMultiplier * iSurplus;
 		iCost /= 100;
-	}	
+	}*/
 
 	// Leoreth: penalty for the tech leader
 	if (GC.getGame().getTechRank(getID()) == 0)
@@ -2780,7 +2784,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 		if (iDenominator > 0)
 		{
 			// extra costs come in 10% increments
-			iSurplus = (100 * iBestValue / iAverageValue) / 10;
+			int iSurplus = (100 * iBestValue / iAverageValue) / 10;
 
 			iCost *= 100 + 10 * iSurplus;
 			iCost /= 100;

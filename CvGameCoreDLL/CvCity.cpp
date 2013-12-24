@@ -6605,13 +6605,6 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 {
 	int iNumCitiesPercent = 100;
 
-	//Rhye - start
-	/*iNumCitiesPercent *= (getPopulation() + 17);
-	iNumCitiesPercent /= 18;*/
-	iNumCitiesPercent *= (getPopulation() + 9);
-	iNumCitiesPercent /= 10;
-	//Rhye - end
-
 	iNumCitiesPercent *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getNumCitiesMaintenancePercent();
 	iNumCitiesPercent /= 100;
 
@@ -6633,6 +6626,21 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 	int iNumCitiesMaintenance = (GET_PLAYER(getOwnerINLINE()).getNumCities() + iNumVassalCities) * iNumCitiesPercent;
 
 	iNumCitiesMaintenance = std::min(iNumCitiesMaintenance, GC.getHandicapInfo(getHandicapType()).getMaxNumCitiesMaintenance() * 100);
+
+	// Rhye: modify by city size
+	iNumCitiesPercent *= (getPopulation() + 9);
+	iNumCitiesPercent /= 10;
+
+	// Leoreth: apply large empire penalty here
+	int iSizeThreshold = 6 + 3 * GET_PLAYER(getOwnerINLINE()).getCurrentEra();
+	int iMultiplier = (GET_PLAYER(getOwnerINLINE()).isHuman()) ? 10 : 5;
+	int iNumCities = GET_PLAYER(getOwnerINLINE()).getTotalPopulation() / iSizeThreshold;
+
+	if (iNumCities > 10)
+	{
+		iNumCitiesMaintenance *= 100 + iMultiplier * (iNumCities - 10);
+		iNumCitiesMaintenance /= 100;
+	}
 
 	iNumCitiesMaintenance *= std::max(0, (GET_PLAYER(getOwnerINLINE()).getNumCitiesMaintenanceModifier() + 100));
 	iNumCitiesMaintenance /= 100;
