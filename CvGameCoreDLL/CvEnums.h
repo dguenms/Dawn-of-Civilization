@@ -1024,7 +1024,6 @@ enum FontSymbols					// Exposed to Python
 	POWER_CHAR,
 	CITIZEN_CHAR,
 	GENERAL_CHAR,
-	AIRPORT_CHAR,
 	RELATION_CHAR,
 	FURIOUS_CHAR,
 	ANNOYED_CHAR,
@@ -1041,6 +1040,7 @@ enum FontSymbols					// Exposed to Python
 	DOWN_CHAR,
 	SUCCESS_CHAR,
 	FAILURE_CHAR,
+	AIRPORT_CHAR,
 
 #ifdef _USRDLL
 	MAX_NUM_SYMBOLS

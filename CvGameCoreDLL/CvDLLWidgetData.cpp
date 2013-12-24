@@ -3555,6 +3555,8 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_CTRL_TRADE"));
 // BUG - end
 
+		szBuffer.append(NEWLINE);
+
 		//Rhye - start
 		if ((int)widgetDataStruct.m_iData1 < NUM_MAJOR_PLAYERS)
 		{
