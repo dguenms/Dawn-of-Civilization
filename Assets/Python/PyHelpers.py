@@ -35,6 +35,9 @@ class PyPlayer:
 
 	def getName(self):
 		return self.player.getName()
+		
+	def getCivilizationShortDescription(self):
+		return self.player.getCivilizationShortDescription(0)
 
 # Players Team
 	def getTeamID(self):

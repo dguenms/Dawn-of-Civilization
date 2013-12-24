@@ -4725,7 +4725,7 @@ class CvMainInterface:
 	
 # BUG - Dead Civs - start
 											if (ScoreOpt.isUsePlayerName()):
-												szPlayerName = gc.getPlayer(ePlayer).getName()
+												szPlayerName = gc.getPlayer(ePlayer).getCivilizationShortDescription(0)
 											else:
 												szPlayerName = gc.getLeaderHeadInfo(gc.getPlayer(ePlayer).getLeaderType()).getDescription()
 											if (ScoreOpt.isShowBothNames()):

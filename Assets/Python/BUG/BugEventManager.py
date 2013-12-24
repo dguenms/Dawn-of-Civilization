@@ -544,7 +544,7 @@ class BugEventManager(CvEventManager.CvEventManager):
 		eOwner, eUnitType, pNewUnit = argsList
 		BugUtil.debug("%s %s captured as %s by %s", 
 				gc.getPlayer(eOwner).getName(), gc.getUnitInfo(eUnitType).getDescription(), 
-				pNewUnit.getName(), gc.getPlayer(pNewUnit.getOwner()).getName())
+				pNewUnit.getName(), gc.getPlayer(pNewUnit.getOwner()).getCivilizationShortDescription(0))
 	
 	def onCombatWithdrawal(self, argsList):
 		"""Fired when a unit withdraws from combat after doing maximum damage."""
@@ -577,7 +577,7 @@ class BugEventManager(CvEventManager.CvEventManager):
 		for eOldCivic, eNewCivic in zip(leOldCivics, leNewCivics):
 			if eOldCivic != eNewCivic:
 				civics.append(gc.getCivicInfo(eNewCivic).getDescription())
-		BugUtil.debug("Revolution for %s, %d turns: %s", gc.getPlayer(ePlayer).getName(), iAnarchyTurns, ", ".join(civics))
+		BugUtil.debug("Revolution for %s, %d turns: %s", gc.getPlayer(ePlayer).getCivilizationShortDescription(0), iAnarchyTurns, ", ".join(civics))
 
 	# popup events
 	def rnfEventBegin7614(self):

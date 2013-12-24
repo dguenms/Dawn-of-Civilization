@@ -1853,7 +1853,7 @@ class PLE:
 		# get units owner name if its not a player unit
 		if (pUnit.getOwner() != gc.getGame().getActivePlayer()):
 			pOwner = gc.getPlayer(pUnit.getOwner())
-			szOwner = u"<font=2> [" + localText.changeTextColor(pOwner.getName(), pOwner.getPlayerColor()) + u"]</font>"
+			szOwner = u"<font=2> [" + localText.changeTextColor(pOwner.getCivilizationShortDescription(0), pOwner.getPlayerColor()) + u"]</font>"
 		else:
 			szOwner = u""
 

@@ -71,7 +71,7 @@ def doUpdate ():
 			# Player we are updating must be a valid, living, non-human, full-fledged civ.
 			if ( pPlayer and (not pPlayer.isNone()) and pPlayer.isAlive() and (not pPlayer.isHuman())
 				 and (not pPlayer.isBarbarian()) and (not pPlayer.isMinorCiv()) ):
-				BugUtil.debug("Updating Info for Player %d (%s)" % (iPlayer, pPlayer.getName()))
+				BugUtil.debug("Updating Info for Player %d (%s)" % (iPlayer, pPlayer.getCivilizationShortDescription(0)))
 				iTeam = pPlayer.getTeam()
 				pTeam = gc.getTeam(iTeam)
 				# Team assumed valid, living, etc. since the player was.
@@ -96,7 +96,7 @@ def doUpdate ():
 						if ( pOtherPlayer and (iOtherPlayer != iPlayer) 
 							 and (not pOtherPlayer.isNone()) and pOtherPlayer.isAlive() 
 							 and (not pOtherPlayer.isBarbarian()) and (not pOtherPlayer.isMinorCiv()) ):
-							BugUtil.debug(" -- Testing against Player %d (%s)" % (iOtherPlayer, pOtherPlayer.getName()))
+							BugUtil.debug(" -- Testing against Player %d (%s)" % (iOtherPlayer, pOtherPlayer.getCivilizationShortDescription(0)))
 							iOtherTeam = pOtherPlayer.getTeam()
 							if ( (not pActiveTeam.isHasMet(iOtherTeam)) or (not pTeam.isHasMet(iOtherTeam)) ):
 								BugUtil.debug("     -- Skipping; either active team or updating team has not met test team")
@@ -108,7 +108,7 @@ def doUpdate ():
 								if (eCivic == pOtherPlayer.getCivics(eCategory)):
 									if bFoundPossibleFavorite:
 										BugUtil.debug("     -- Players share civic %d (%s) and %s is giving the diplo modifier." 
-													  % (eCivic, gc.getCivicInfo(eCivic).getText(), pPlayer.getName()))
+													  % (eCivic, gc.getCivicInfo(eCivic).getText(), pPlayer.getCivilizationShortDescription(0)))
 										BugUtil.debug("         -- This is the only possible favorite in category %d (%s)." 
 													  % (eCategory, gc.getCivicOptionInfo(eCategory).getText()))
 										for eOtherCivic in gCivicsByCategory[eCategory]:
@@ -116,22 +116,22 @@ def doUpdate ():
 												favorite.removePossible(eOtherCivic)
 									else:
 										BugUtil.debug("     -- Players share civic %d (%s) but %s is NOT giving the diplo modifier." 
-													  % (eCivic, gc.getCivicInfo(eCivic).getText(), pPlayer.getName()))
+													  % (eCivic, gc.getCivicInfo(eCivic).getText(), pPlayer.getCivilizationShortDescription(0)))
 										BugUtil.debug("         -- This one must be ruled out as a possible favorite.")
 										favorite.removePossible(eCivic)
 								else:
 									if bFoundPossibleFavorite:
 										BugUtil.debug("     -- Players do NOT share civic %d (%s) but %s is giving the diplo modifier." 
-													  % (eCivic, gc.getCivicInfo(eCivic).getText(), pPlayer.getName()))
+													  % (eCivic, gc.getCivicInfo(eCivic).getText(), pPlayer.getCivilizationShortDescription(0)))
 										BugUtil.debug("         -- All civics in category %d (%s) must be ruled out." 
 													  % (eCategory, gc.getCivicOptionInfo(eCategory).getText()))
 										for eOtherCivic in gCivicsByCategory[eCategory]:
 											favorite.removePossible(eOtherCivic)
 									else:
 										BugUtil.debug("     -- Players do NOT share civic %d (%s) and %s is NOT giving the diplo modifier." 
-													  % (eCivic, gc.getCivicInfo(eCivic).getText(), pPlayer.getName()))
+													  % (eCivic, gc.getCivicInfo(eCivic).getText(), pPlayer.getCivilizationShortDescription(0)))
 										BugUtil.debug("         -- This doesn't tell us anything new.") 
-				BugUtil.debug(" -- Finished update for %s: %s" % (pPlayer.getName(), str(favorite)))
+				BugUtil.debug(" -- Finished update for %s: %s" % (pPlayer.getCivilizationShortDescription(0), str(favorite)))
 		#dump()
 
 def initData ():

@@ -377,11 +377,11 @@ def combatDetailMessageBuilder(cdUnit, ePlayer, iChange):
 def combatMessageBuilder(cdAttacker, cdDefender, iCombatOdds):
 	combatMessage = ""
 	if (cdAttacker.eOwner == cdAttacker.eVisualOwner):
-		combatMessage += "%s's " %(gc.getPlayer(cdAttacker.eOwner).getName(),)
+		combatMessage += "%s's " %(gc.getPlayer(cdAttacker.eOwner).getCivilizationShortDescription(0),)
 	combatMessage += "%s (%.2f)" %(cdAttacker.sUnitName,cdAttacker.iCurrCombatStr/100.0,)
 	combatMessage += " " + localText.getText("TXT_KEY_COMBAT_MESSAGE_VS", ()) + " "
 	if (cdDefender.eOwner == cdDefender.eVisualOwner):
-		combatMessage += "%s's " %(gc.getPlayer(cdDefender.eOwner).getName(),)
+		combatMessage += "%s's " %(gc.getPlayer(cdDefender.eOwner).getCivilizationShortDescription(0),)
 	combatMessage += "%s (%.2f)" %(cdDefender.sUnitName,cdDefender.iCurrCombatStr/100.0,)
 	CyInterface().addCombatMessage(cdAttacker.eOwner,combatMessage)
 	CyInterface().addCombatMessage(cdDefender.eOwner,combatMessage)

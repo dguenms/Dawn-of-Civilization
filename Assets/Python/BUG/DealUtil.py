@@ -295,6 +295,6 @@ def test():
 				TradeableItems.TRADE_GOLD_PER_TURN,
 			))
 	for player, deals in allDeals.iteritems():
-		print PlayerUtil.getPlayer(player).getName()
+		print PlayerUtil.getPlayer(player).getCivilizationShortDescription(0)
 		for type, deal in deals.iteritems():
 			print "%s: %r" % (TradeUtil.TRADE_FORMATS[type].name, deal)

@@ -163,10 +163,10 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 					#iColor = gc.getPlayerColorInfo(player.getPlayerColor()).getColorTypePrimary()
 					iColor = gc.getInfoTypeForString("COLOR_MAGENTA")
 					if (bRevealed):
-						message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_FOUNDED", (player.getName(), city.getName()))
+						message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_FOUNDED", (player.getCivilizationShortDescription(0), city.getName()))
 						self._addMessageAtCity(iActivePlayer, message, "Art/Interface/Buttons/Actions/foundcity.dds", city, iColor)
 					else:
-						message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_FOUNDED_UNSEEN", (player.getName(), city.getName()))
+						message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_FOUNDED_UNSEEN", (player.getCivilizationShortDescription(0), city.getName()))
 						self._addMessageNoIcon(iActivePlayer, message, iColor)
 
 	def OnCityRazed(self, argsList):
@@ -315,7 +315,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 				if (newTechs):
 					szNewTechs = self.buildTechString(newTechs)
 					message = localText.getText("TXT_KEY_MORECIV4LERTS_NEW_TECH_AVAIL",	
-												(gc.getPlayer(iLoopPlayer).getName(), szNewTechs))
+												(gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0), szNewTechs))
 					self._addMessageNoIcon(iActivePlayer, message)
 				
 				#Determine removed techs
@@ -323,7 +323,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 				if (removedTechs):
 					szRemovedTechs = self.buildTechString(removedTechs)
 					message = localText.getText("TXT_KEY_MORECIV4LERTS_TECH_NOT_AVAIL",	
-												(gc.getPlayer(iLoopPlayer).getName(), szRemovedTechs))
+												(gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0), szRemovedTechs))
 					self._addMessageNoIcon(iActivePlayer, message)
 				
 			else: pass #end activePlayer loop
@@ -350,7 +350,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 				if (newTrades):
 					szNewTrades = self.buildBonusString(newTrades)
 					message = localText.getText("TXT_KEY_MORECIV4LERTS_NEW_BONUS_AVAIL",	
-												(gc.getPlayer(iLoopPlayer).getName(), szNewTrades))
+												(gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0), szNewTrades))
 					self._addMessageNoIcon(iActivePlayer, message)
 				
 				#Determine removed bonuses
@@ -358,7 +358,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 				if (removedTrades):
 					szRemovedTrades = self.buildBonusString(removedTrades)
 					message = localText.getText("TXT_KEY_MORECIV4LERTS_BONUS_NOT_AVAIL",	
-												(gc.getPlayer(iLoopPlayer).getName(), szRemovedTrades))
+												(gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0), szRemovedTrades))
 					self._addMessageNoIcon(iActivePlayer, message)
 
 			#save curr trades for next time

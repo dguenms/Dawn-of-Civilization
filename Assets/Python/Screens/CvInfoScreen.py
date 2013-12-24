@@ -602,7 +602,7 @@ class CvInfoScreen:
 			screen.addDropDownBoxGFC(self.szDropdownName, 22, 12, 300, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 			for j in range(gc.getMAX_PLAYERS()):
 				if (gc.getPlayer(j).isAlive()):
-					screen.addPullDownString(self.szDropdownName, gc.getPlayer(j).getName(), j, j, False )
+					screen.addPullDownString(self.szDropdownName, gc.getPlayer(j).getCivilizationShortDescription(0), j, j, False )
 
 		self.iActivePlayer = CyGame().getActivePlayer()
 		self.pActivePlayer = gc.getPlayer(self.iActivePlayer)
@@ -1356,7 +1356,7 @@ class CvInfoScreen:
 
 	def getPlayerName(self, ePlayer):
 		if (ScoreOpt.isUsePlayerName()):
-			szPlayerName = gc.getPlayer(ePlayer).getName()
+			szPlayerName = gc.getPlayer(ePlayer).getCivilizationShortDescription(0)
 		else:
 			szPlayerName = gc.getLeaderHeadInfo(gc.getPlayer(ePlayer).getLeaderType()).getDescription()
 
@@ -2749,7 +2749,7 @@ class CvInfoScreen:
 
 		# Leader Name
 		self.szLeaderNameWidget = self.getNextWidgetName()
-		szText = u"<font=4b>" + gc.getPlayer(self.iActivePlayer).getName() + u"</font>"
+		szText = u"<font=4b>" + gc.getPlayer(self.iActivePlayer).getCivilizationShortDescription(0) + u"</font>"
 		screen.setText(self.szLeaderNameWidget, "", szText, CvUtil.FONT_LEFT_JUSTIFY,
 				   self.X_LEADER_NAME, self.Y_LEADER_NAME, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 

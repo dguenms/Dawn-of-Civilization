@@ -138,7 +138,7 @@ class CvTechChooser:
 			screen.setActivation( "CivDropDown", ActivationTypes.ACTIVATE_MIMICPARENTFOCUS )
 			for j in range(gc.getMAX_PLAYERS()):
 				if (gc.getPlayer(j).isAlive()):
-					screen.addPullDownString( "CivDropDown", gc.getPlayer(j).getName(), j, j, False )
+					screen.addPullDownString( "CivDropDown", gc.getPlayer(j).getCivilizationShortDescription(0), j, j, False )
 		else:
 			screen.hide( "CivDropDown" )
 
