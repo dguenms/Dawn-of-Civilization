@@ -281,7 +281,7 @@ def getTrainableUnits(playerOrID, knowableUnits, checkCities=True, military=None
 	else:
 		cities = None
 	units = set()
-	BugUtil.debug("%s =========", player.getName())
+	BugUtil.debug("%s =========", player.getCivilizationShortDescription(0))
 	for eClass in range(NUM_CLASSES):
 		eUnit = civInfo.getCivilizationUnits(eClass)
 		if eUnit == -1 or eUnit not in knowableUnits:
@@ -534,12 +534,12 @@ def getCanTrainUnits(playerOrID, askingPlayerOrID=None, military=None):
 					if city.canTrain(eUnit, False, False):
 						units.add(eUnit)
 						break
-	BugUtil.debug("%s can train:", player.getName())
+	BugUtil.debug("%s can train:", player.getCivilizationShortDescription(0))
 	for eUnit in units:
 		unitInfo = gc.getUnitInfo(eUnit)
 		BugUtil.debug("  %s", unitInfo.getDescription())
 	if askingPlayer:
-		BugUtil.debug("%s can maybe train:", player.getName())
+		BugUtil.debug("%s can maybe train:", player.getCivilizationShortDescription(0))
 		for eUnit in maybeUnits:
 			unitInfo = gc.getUnitInfo(eUnit)
 			BugUtil.debug("  %s", unitInfo.getDescription())

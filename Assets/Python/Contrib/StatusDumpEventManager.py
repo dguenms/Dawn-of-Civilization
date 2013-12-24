@@ -136,7 +136,7 @@ class StatusDumpEvent(AbstractStatusDumpEvent):
 		pPlayer = gc.getPlayer(ePlayer)
 
 		# human / game name
-		sMsg = BugUtil.getText("TXT_KEY_STATUS_DUMP_PLAYER_NAME", (pPlayer.getName()))
+		sMsg = BugUtil.getText("TXT_KEY_STATUS_DUMP_PLAYER_NAME", (pPlayer.getCivilizationShortDescription(0)))
 		self._writeMsg(sMsg, vColor="Black", vBold=False, vUnderline=False, vOpenSpoiler="", vCloseSpoiler=False)
 
 		# leader / civ name
@@ -215,7 +215,7 @@ class StatusDumpEvent(AbstractStatusDumpEvent):
 			return "%i/%i" % (zcurrturn, zmaxturn)
 
 	def _getFileName(self):
-		zsFileName = "%s_%s.txt" % (gc.getActivePlayer().getName(), self._getGameYear())
+		zsFileName = "%s_%s.txt" % (gc.getActivePlayer().getCivilizationShortDescription(0), self._getGameYear())
 		return zsFileName
 
 	def _writeMsg(self, sMsg, vColor="Black", vBold=True, vUnderline=True, vOpenSpoiler="", vCloseSpoiler=False):

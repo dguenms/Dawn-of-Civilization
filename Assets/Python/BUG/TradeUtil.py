@@ -581,7 +581,7 @@ def getTradeReligion(player, trade):
 	return gc.getReligionInfo(trade.iData).getDescription()
 
 def getTradePlayer(player, trade):
-	return PlayerUtil.getPlayer(trade.iData).getName()
+	return PlayerUtil.getPlayer(trade.iData).getCivilizationShortDescription(0)
 
 def getTradePeaceDeal(player, trade):
 	BugUtil.debug("TradeUtil - peace treaty has iData %d", trade.iData)
@@ -719,7 +719,7 @@ def printStatus(ePlayer, eAskingPlayer=None):
 	player = PlayerUtil.getPlayer(ePlayer)
 	if eAskingPlayer is None:
 		eAskingPlayer = PlayerUtil.getActivePlayerID()
-	print "Trade Status -- %s" % player.getName()
+	print "Trade Status -- %s" % player.getCivilizationShortDescription(0)
 	for eItem, name in STATUS_TRADE_ITEMS:
 		tradeData = TradeData()
 		tradeData.ItemType = eItem

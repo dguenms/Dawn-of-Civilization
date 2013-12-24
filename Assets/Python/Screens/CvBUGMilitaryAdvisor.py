@@ -318,7 +318,7 @@ class CvMilitaryAdvisor:
 #				BugUtil.debug("Grid_ThreatIndex - Start %i %s" % (iLoopPlayer, szPlayerName))
 #				BugUtil.debug("Grid_ThreatIndex - Start %i" % (iLoopPlayer))
 
-				self.iconGrid.appendRow(pPlayer.getName(), "", 3)
+				self.iconGrid.appendRow(pPlayer.getCivilizationShortDescription(0), "", 3)
 
 				# add leaderhead icon
 				self.iconGrid.addIcon(iRow, self.Col_Leader,
@@ -693,7 +693,7 @@ class CvMilitaryAdvisor:
 			ePlayer = player.getID()
 			if (ePlayer != self.iActivePlayer
 					and (activeTeam.isHasMet(player.getTeam()) or gc.getGame().isDebugMode())):
-				self.iconGrid.appendRow(player.getName(), "", 3)
+				self.iconGrid.appendRow(player.getCivilizationShortDescription(0), "", 3)
 				
 				# add leaderhead icon
 				self.iconGrid.addIcon(iRow, self.SA_Col_Leader,

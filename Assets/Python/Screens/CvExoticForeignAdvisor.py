@@ -301,7 +301,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 					bSelected = False
 					if j == self.iActiveLeader:
 						bSelected = True
-					screen.addPullDownString(self.szDropdownName, gc.getPlayer(j).getName(), j, j, bSelected )
+					screen.addPullDownString(self.szDropdownName, gc.getPlayer(j).getCivilizationShortDescription(0), j, j, bSelected )
 
 		CyInterface().setDirty(InterfaceDirtyBits.Foreign_Screen_DIRTY_BIT, False)
 		
@@ -377,7 +377,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 
 			# Player panel
 			playerPanelName = self.getNextWidgetName()
-			screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getName(), "", False, True, PanelStyles.PANEL_STYLE_MAIN)
+			screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0), "", False, True, PanelStyles.PANEL_STYLE_MAIN)
 
 			screen.attachLabel(playerPanelName, "", "   ")
 
@@ -453,7 +453,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 
 				# Player panel
 				playerPanelName = self.getNextWidgetName()
-				screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getName(), "", False, True, PanelStyles.PANEL_STYLE_MAIN)
+				screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0), "", False, True, PanelStyles.PANEL_STYLE_MAIN)
 
 				screen.attachImageButton(playerPanelName, "", objLeaderHead.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_LEADERHEAD, iLoopPlayer, self.iActiveLeader, False)
 						
@@ -1053,7 +1053,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 				if ( not activePlayer.canTradeNetworkWith(iLoopPlayer) ):
 					message = localText.getText("TXT_KEY_FOREIGN_ADVISOR_NOT_CONNECTED", ())
 				
-				self.resIconGrid.appendRow(currentPlayer.getName(), message)
+				self.resIconGrid.appendRow(currentPlayer.getCivilizationShortDescription(0), message)
 				self.resIconGrid.addIcon( currentRow, self.leaderCol
 										, gc.getLeaderHeadInfo(currentPlayer.getLeaderType()).getButton()
 										, 64, WidgetTypes.WIDGET_LEADERHEAD, iLoopPlayer, self.iActiveLeader )
@@ -1183,7 +1183,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 				if ( not gc.getTeam(activePlayer.getTeam()).isTechTrading() and not gc.getTeam(currentPlayer.getTeam()).isTechTrading() ):
 					message = localText.getText("TXT_KEY_FOREIGN_ADVISOR_NO_TECH_TRADING", ())
 
-				self.techIconGrid.appendRow(currentPlayer.getName(), message)
+				self.techIconGrid.appendRow(currentPlayer.getCivilizationShortDescription(0), message)
 				self.techIconGrid.addIcon( currentRow, iTechColLeader, gc.getLeaderHeadInfo(currentPlayer.getLeaderType()).getButton()
 										 , 64, WidgetTypes.WIDGET_LEADERHEAD, iLoopPlayer, self.iActiveLeader )
 

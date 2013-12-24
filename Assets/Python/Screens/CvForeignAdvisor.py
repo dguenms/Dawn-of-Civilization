@@ -210,7 +210,7 @@ class CvForeignAdvisor:
 
 			# Player panel
 			playerPanelName = self.getNextWidgetName()
-			screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getName(), "", False, True, PanelStyles.PANEL_STYLE_MAIN)
+			screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0), "", False, True, PanelStyles.PANEL_STYLE_MAIN)
 
 			screen.attachLabel(playerPanelName, "", "   ")
 
@@ -246,7 +246,7 @@ class CvForeignAdvisor:
 
 		# Active player panel
 		activePlayerPanelName = self.getNextWidgetName()
-		szPlayerName = playerActive.getName()
+		szPlayerName = playerActive.getCivilizationShortDescription(0)
 		
 		if (gc.getTeam(playerActive.getTeam()).isGoldTrading() or gc.getTeam(playerSelected.getTeam()).isGoldTrading()):
 			if (self.iScreen == FOREIGN_BONUS_SCREEN):
@@ -314,7 +314,7 @@ class CvForeignAdvisor:
 			if (gc.getPlayer(iLoopPlayer).isAlive() and iLoopPlayer != self.iActiveLeader and (gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isHasMet(gc.getPlayer(self.iActiveLeader).getTeam()) or gc.getGame().isDebugMode()) and not gc.getPlayer(iLoopPlayer).isBarbarian() and not gc.getPlayer(iLoopPlayer).isMinorCiv()):
 
 				currentPlayerPanelName = self.getNextWidgetName()
-				szPlayerName = gc.getPlayer(iLoopPlayer).getName()
+				szPlayerName = gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0)
 				if (gc.getTeam(playerActive.getTeam()).isGoldTrading() or gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isGoldTrading()):
 					if (self.iScreen == FOREIGN_BONUS_SCREEN):
 						szPlayerName += u" : " + localText.getText("TXT_KEY_FOREIGN_ADVISOR_GOLD_PER_TURN_FOR_TRADE", (gc.getPlayer(iLoopPlayer).AI_maxGoldPerTurnTrade(self.iActiveLeader), ))

@@ -1080,7 +1080,7 @@ class Congresses:
                         sResults = ""
                         for iCiv in range( iNumPlayers ):
                                 if (self.getInvitedNations(iCiv) == True):
-                                        sResults += gc.getPlayer(iCiv).getName()
+                                        sResults += gc.getPlayer(iCiv).getCivilizationShortDescription(0)
                                         if (self.getVotes(iCiv) > iTempPosThreshold):
                                                 sResults += (" " + CyTranslator().getText("TXT_KEY_CONGRESS_POPUP_VOTES_YES", ()))  
                                         elif (self.getVotes(iCiv) < iTempNegThreshold):

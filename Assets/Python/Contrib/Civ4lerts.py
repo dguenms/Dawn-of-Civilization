@@ -775,7 +775,7 @@ class GoldTrade(AbstractStatefulAlert):
 			newMaxGoldTrade = rival.AI_maxGoldTrade(playerID)
 			deltaMaxGoldTrade = newMaxGoldTrade - oldMaxGoldTrade
 			if deltaMaxGoldTrade >= Civ4lertsOpt.getGoldTradeThreshold():
-				message = localText.getText("TXT_KEY_CIV4LERTS_ON_GOLD_TRADE", (rival.getName(), newMaxGoldTrade))
+				message = localText.getText("TXT_KEY_CIV4LERTS_ON_GOLD_TRADE", (rival.getCivilizationShortDescription(0), newMaxGoldTrade))
 				addMessageNoIcon(playerID, message)
 				self._setMaxGoldTrade(playerID, rivalID, newMaxGoldTrade)
 			elif newMaxGoldTrade < oldMaxGoldTrade:
@@ -818,7 +818,7 @@ class GoldPerTurnTrade(AbstractStatefulAlert):
 			newMaxGoldPerTurnTrade = rival.AI_maxGoldPerTurnTrade(playerID)
 			deltaMaxGoldPerTurnTrade = newMaxGoldPerTurnTrade - oldMaxGoldPerTurnTrade
 			if (deltaMaxGoldPerTurnTrade >= Civ4lertsOpt.getGoldPerTurnTradeThreshold()):
-				message = localText.getText("TXT_KEY_CIV4LERTS_ON_GOLD_PER_TURN_TRADE", (rival.getName(), newMaxGoldPerTurnTrade))
+				message = localText.getText("TXT_KEY_CIV4LERTS_ON_GOLD_PER_TURN_TRADE", (rival.getCivilizationShortDescription(0), newMaxGoldPerTurnTrade))
 				addMessageNoIcon(playerID, message)
 				self._setMaxGoldPerTurnTrade(playerID, rivalID, newMaxGoldPerTurnTrade)
 			else:
@@ -864,7 +864,7 @@ class SlaveTrade(AbstractStatefulAlert):
 			newMaxSlaveTrade = rival.getUnitClassCount(gc.getInfoTypeForString("UNITCLASS_SLAVE"))
 			deltaMaxSlaveTrade = newMaxSlaveTrade - oldMaxSlaveTrade
 			if deltaMaxSlaveTrade > 0:
-				message = localText.getText("TXT_KEY_CIV4LERTS_ON_SLAVE_TRADE", (rival.getName(), newMaxSlaveTrade))
+				message = localText.getText("TXT_KEY_CIV4LERTS_ON_SLAVE_TRADE", (rival.getCivilizationShortDescription(0), newMaxSlaveTrade))
 				addMessageNoIcon(playerID, message)
 				self._setMaxSlaveTrade(playerID, rivalID, newMaxSlaveTrade)
 			elif newMaxSlaveTrade < oldMaxSlaveTrade:
@@ -949,7 +949,7 @@ class RefusesToTalk(AbstractStatefulAlert):
 		for ePlayer in players:
 			player = gc.getPlayer(ePlayer)
 			if player.isAlive():
-				message = BugUtil.getText(key, player.getName())
+				message = BugUtil.getText(key, player.getCivilizationShortDescription(0))
 				addMessageNoIcon(eActivePlayer, message)
 
 	def _reset(self):
@@ -1030,33 +1030,33 @@ class WorstEnemy(AbstractStatefulAlert):
 					enemies[eTeam] = eNewEnemy
 					if eNewEnemy == -1:
 						if eOldEnemy == eActiveTeam:
-							message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_YOU_NO_WORST_ENEMY", gc.getTeam(eTeam).getName())
+							message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_YOU_NO_WORST_ENEMY", gc.getPlayer(eTeam).getCivilizationShortDescription(0))
 						else:
 							message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_NO_WORST_ENEMY", 
-									(gc.getTeam(eTeam).getName(), gc.getTeam(eOldEnemy).getName()))
+									(gc.getPlayer(eTeam).getCivilizationShortDescription(0), gc.getPlayer(eOldEnemy).getCivilizationShortDescription(0)))
 					elif eOldEnemy == -1:
 						message = None # handled below
 						if eNewEnemy not in delayedMessages:
-							delayedMessages[eNewEnemy] = gc.getTeam(eTeam).getName()
+							delayedMessages[eNewEnemy] = gc.getPlayer(eTeam).getCivilizationShortDescription(0)
 						else:
-							delayedMessages[eNewEnemy] += u", " + gc.getTeam(eTeam).getName()
+							delayedMessages[eNewEnemy] += u", " + gc.getPlayer(eTeam).getCivilizationShortDescription(0)
 					else:
 						if eOldEnemy == eActiveTeam:
 							message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY_FROM_YOU", 
-									(gc.getTeam(eTeam).getName(), gc.getTeam(eNewEnemy).getName()))
+									(gc.getPlayer(eTeam).getCivilizationShortDescription(0), gc.getPlayer(eNewEnemy).getCivilizationShortDescription(0)))
 						elif eNewEnemy == eActiveTeam:
 							message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY_TO_YOU", 
-									(gc.getTeam(eTeam).getName(), gc.getTeam(eOldEnemy).getName()))
+									(gc.getPlayer(eTeam).getCivilizationShortDescription(0), gc.getPlayer(eOldEnemy).getCivilizationShortDescription(0)))
 						else:
 							message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY", 
-									(gc.getTeam(eTeam).getName(), gc.getTeam(eNewEnemy).getName(), gc.getTeam(eOldEnemy).getName()))
+									(gc.getPlayer(eTeam).getCivilizationShortDescription(0), gc.getPlayer(eNewEnemy).getCivilizationShortDescription(0), gc.getPlayer(eOldEnemy).getCivilizationShortDescription(0)))
 					if message:
 						addMessageNoIcon(eActivePlayer, message)
 		for eEnemy, haters in delayedMessages.iteritems():
 			if eActiveTeam == eEnemy:
 				message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_YOU_WORST_ENEMY", haters)
 			else:
-				message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_WORST_ENEMY", (haters, gc.getTeam(eEnemy).getName()))
+				message = BugUtil.getText("TXT_KEY_CIV4LERTS_ON_WORST_ENEMY", (haters, gc.getPlayer(eEnemy).getCivilizationShortDescription(0)))
 			addMessageNoIcon(eActivePlayer, message)
 
 	def _reset(self):

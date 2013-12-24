@@ -16279,30 +16279,31 @@ void CvGameTextMgr::getOtherRelationsString(CvWStringBuffer& szString, TeamTypes
 	for (int iTeam = 0; iTeam < MAX_CIV_TEAMS; ++iTeam)
 	{
 		CvTeamAI& kTeam = GET_TEAM((TeamTypes) iTeam);
+		CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes) iTeam);
 		if (kTeam.isAlive() && !kTeam.isMinorCiv() && iTeam != eThisTeam && iTeam != eSkipTeam && (eOtherTeam == NO_TEAM || iTeam == eOtherTeam))
 		{
 			if (kTeam.isHasMet(eThisTeam) && kTeam.isHasMet(GC.getGameINLINE().getActiveTeam()))
 			{
 				if (::atWar((TeamTypes) iTeam, eThisTeam))
 				{
-					setListHelp(szWar, L"", kTeam.getName().GetCString(), L", ", bFirstWar);
+					setListHelp(szWar, L"", kPlayer.getCivilizationShortDescription(), L", ", bFirstWar);
 					bFirstWar = false;
 				}
 				else if (kTeam.isForcePeace(eThisTeam))
 				{
-					setListHelp(szPeace, L"", kTeam.getName().GetCString(), L", ", bFirstPeace);
+					setListHelp(szPeace, L"", kPlayer.getCivilizationShortDescription(), L", ", bFirstPeace);
 					bFirstPeace = false;
 				}
 
 				if (!kTeam.isHuman() && kTeam.AI_getWorstEnemy() == eThisTeam)
 				{
-					setListHelp(szEnemy, L"", GET_PLAYER((PlayerTypes)iTeam).getCivilizationShortDescription(), L", ", bFirstEnemy);
+					setListHelp(szEnemy, L"", kPlayer.getCivilizationShortDescription(), L", ", bFirstEnemy);
 					bFirstEnemy = false;
 				}
 
 				if (kTeam.isDefensivePact(eThisTeam))
 				{
-					setListHelp(szPact, L"", kTeam.getName().GetCString(), L", ", bFirstPact);
+					setListHelp(szPact, L"", kPlayer.getCivilizationShortDescription(), L", ", bFirstPact);
 					bFirstPact = false;
 				}
 			}
@@ -16318,7 +16319,7 @@ void CvGameTextMgr::getOtherRelationsString(CvWStringBuffer& szString, TeamTypes
 	if (!kThisTeam.isHuman() && eWorstEnemy != NO_TEAM && eWorstEnemy != eSkipTeam && (eOtherTeam == NO_TEAM || eWorstEnemy == eOtherTeam) && GET_TEAM(eWorstEnemy).isHasMet(GC.getGameINLINE().getActiveTeam()))
 	{
 		szString.append(NEWLINE);
-		szString.append(gDLL->getText(L"TXT_KEY_WORST_ENEMY_IS", GET_TEAM(eWorstEnemy).getName().GetCString()));
+		szString.append(gDLL->getText(L"TXT_KEY_WORST_ENEMY_IS", GET_PLAYER((PlayerTypes)eWorstEnemy).getCivilizationShortDescription()));
 	}
 	if (!szEnemy.empty())
 	{
