@@ -69,6 +69,11 @@ void CyGameCoreUtilsPythonInterface()
 	python::def("isLimitedProject", cyIsLimitedProject, "bool (int /*ProjectTypes*/ eProject)");
 	python::def("getCombatOdds", cyGetCombatOdds, "int (CyUnit* pAttacker, CyUnit* pDefender)");
 	python::def("getEspionageModifier", cyGetEspionageModifier, "int (int /*TeamTypes*/ iOurTeam, int /*TeamTypes*/ iTargetTeam)");
+
+// BUG - Unit Experience - start
+	python::def("calculateExperience", cyCalculateExperience, "int (int iLevel, int /*PlayerTypes*/ iPlayer)");
+	python::def("calculateLevel", cyCalculateLevel, "int (int iExperience, int /*PlayerTypes*/ iPlayer)");
+// BUG - Unit Experience - end
 	
 	// edead: start
 	python::def("getTurnForYear", cyGetTurnForYear, "int (int iTurnYear)");

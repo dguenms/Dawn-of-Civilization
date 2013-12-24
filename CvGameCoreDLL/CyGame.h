@@ -277,6 +277,25 @@ public:
 	bool isEventActive(int /*EventTriggerTypes*/ eTrigger);
 	void doControl(int iControl);
 
+// BUG - MapFinder - start
+	bool canRegenerateMap() const;
+	bool regenerateMap();
+
+	void saveGame(std::string fileName) const;
+// BUG - MapFinder - end
+
+// BUG - EXE/DLL Paths - start
+	std::string getDLLPath() const;
+	std::string getExePath() const;
+// BUG - EXE/DLL Paths - end
+
+// BUFFY - Security Checks - start
+#ifdef _BUFFY
+	int checkCRCs(std::string fileName_, std::string expectedModCRC_, std::string expectedDLLCRC_, std::string expectedShaderCRC_, std::string expectedPythonCRC_, std::string expectedXMLCRC_) const;
+	int getWarningStatus() const;
+#endif
+// BUFFY - Security Checks - end
+
 	// Leoreth
 	bool isNeighbors(int /*PlayerTypes*/ ePlayer1, int /*PlayerTypes*/ ePlayer2);
 	bool isCheatingEnabled() const;

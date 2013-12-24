@@ -280,6 +280,14 @@ public:
 	DllExport virtual void read(FDataStreamBase* pStream);
 	DllExport virtual void write(FDataStreamBase* pStream);
 
+// BUG - EXE/DLL Paths - start
+	// EF: should these be CvWString?
+	CvString getDLLPath() const;
+	CvString getDLLName() const;
+	CvString getExePath() const;
+	CvString getExeName() const;
+// BUG - EXE/DLL Paths - end
+
 protected:
 
 	void clearCustomMapOptions();
@@ -388,6 +396,16 @@ protected:
 	CvString* m_aszPythonCheck;
 	CvString* m_aszXMLCheck;
 	mutable CvString m_szTempCheck;
+
+// BUG - EXE/DLL Paths - start
+	static void setPathNames();
+
+	static CvString dllPath;
+	static CvString dllName;
+	static CvString exePath;
+	static CvString exeName;
+	static bool bPathsSet;
+// BUG - EXE/DLL Paths - end
 };
 
 #endif

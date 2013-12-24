@@ -1231,6 +1231,14 @@ int CyPlayer::getExtraHealth()
 	return m_pPlayer ? m_pPlayer->getExtraHealth() : -1;
 }
 
+// BUG - start
+void CyPlayer::changeExtraHealth(int iChange)
+{
+	if (m_pPlayer)
+		m_pPlayer->changeExtraHealth(iChange);
+}
+// BUG - end
+
 int CyPlayer::getBuildingGoodHealth()
 {
 	return m_pPlayer ? m_pPlayer->getBuildingGoodHealth() : -1;
@@ -2215,6 +2223,13 @@ void CyPlayer::AI_setExtraGoldTarget(int iNewValue)
 	}
 }
 
+// BUG - Refuses to Talk - start
+bool CyPlayer::AI_isWillingToTalk(int /*PlayerTypes*/ ePlayer)
+{
+	return m_pPlayer ? m_pPlayer->AI_isWillingToTalk((PlayerTypes)ePlayer) : false;
+}
+// BUG - Refuses to Talk - end
+
 
 int CyPlayer::getScoreHistory(int iTurn) const
 {
@@ -2336,6 +2351,14 @@ void  CyPlayer::forcePeace(int iPlayer)
 	if (m_pPlayer)
 		m_pPlayer->forcePeace((PlayerTypes)iPlayer);
 }
+
+// BUG - Reminder Mod - start
+void CyPlayer::addReminder(int iGameTurn, std::wstring szMessage) const
+{
+	if (m_pPlayer)
+		m_pPlayer->addReminder(iGameTurn, CvWString(szMessage));
+}
+// BUG - Reminder Mod - end
 
 //Rhye - start
 int CyPlayer::getSettlersMaps(int y, int x)

@@ -226,114 +226,122 @@ bool isBeforeUnitCycle(const CvUnit* pFirstUnit, const CvUnit* pSecondUnit)
 	return (pFirstUnit->getID() < pSecondUnit->getID());
 }
 
+/*************************************************************************************************/
+/** ADVANCED COMBAT ODDS                      11/7/09                           PieceOfMind      */
+/** BEGIN                                                                       v?.?             */
+/*************************************************************************************************/
 bool isPromotionValid(PromotionTypes ePromotion, UnitTypes eUnit, bool bLeader)
 {
-	CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
-	CvPromotionInfo& kPromotion = GC.getPromotionInfo(ePromotion);
+    CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
+    CvPromotionInfo& kPromotion = GC.getPromotionInfo(ePromotion);
 
-	if (kUnit.getFreePromotions(ePromotion))
-	{
-		return true;
-	}
+    if (kUnit.getFreePromotions(ePromotion))
+    {
+        return true;
+    }
 
-	if (kUnit.getUnitCombatType() == NO_UNITCOMBAT)
-	{
-		return false;
-	}
+    if (kUnit.getUnitCombatType() == NO_UNITCOMBAT)
+    {
+        return false;
+    }
 
-	if (!bLeader && kPromotion.isLeader())
-	{
-		return false;
-	}
+    if (!bLeader && kPromotion.isLeader())
+    {
+        return false;
+    }
 
-	if (!(kPromotion.getUnitCombat(kUnit.getUnitCombatType())))
-	{
-		return false;
-	}
+    if (!(kPromotion.getUnitCombat(kUnit.getUnitCombatType())))
+    {
+        return false;
+    }
 
-	if (kUnit.isOnlyDefensive())
-	{
-		if ((kPromotion.getCityAttackPercent() != 0) ||
-			  (kPromotion.getWithdrawalChange() != 0) ||
-			  (kPromotion.getCollateralDamageChange() != 0) ||
-			  (kPromotion.isBlitz()) ||
-			  (kPromotion.isAmphib()) ||
-			  (kPromotion.isRiver()) ||
-			  (kPromotion.getHillsAttackPercent() != 0))
-		{
-			return false;
-		}
-	}
+    if (kUnit.isOnlyDefensive())
+    {
+        if ((kPromotion.getCityAttackPercent() != 0) ||
+                (kPromotion.getWithdrawalChange() != 0) ||
+                (kPromotion.getCollateralDamageChange() != 0) ||
+                (kPromotion.isBlitz()) ||
+                (kPromotion.isAmphib()) ||
+                (kPromotion.isRiver()) ||
+                (kPromotion.getHillsAttackPercent() != 0))
+        {
+            return false;
+        }
+    }
 
-	if (kUnit.isIgnoreTerrainCost())
-	{
-		if (kPromotion.getMoveDiscountChange() != 0)
-		{
-			return false;
-		}
-	}
+    if (kUnit.isIgnoreTerrainCost())
+    {
+        if (kPromotion.getMoveDiscountChange() != 0)
+        {
+            return false;
+        }
+    }
 
-	if (kUnit.getMoves() == 1)
-	{
-		if (kPromotion.isBlitz())
-		{
-			return false;
-		}
-	}
+    if (kUnit.getMoves() == 1)
+    {
+        if (kPromotion.isBlitz())
+        {
+            return false;
+        }
+    }
 
-	if ((kUnit.getCollateralDamage() == 0) || (kUnit.getCollateralDamageLimit() == 0) || (kUnit.getCollateralDamageMaxUnits() == 0))
-	{
-		if (kPromotion.getCollateralDamageChange() != 0)
-		{
-			return false;
-		}
-	}
+    if ((kUnit.getCollateralDamage() == 0) || (kUnit.getCollateralDamageLimit() == 0) || (kUnit.getCollateralDamageMaxUnits() == 0))
+    {
+        if (kPromotion.getCollateralDamageChange() != 0)
+        {
+            return false;
+        }
+    }
 
-	if (kUnit.getInterceptionProbability() == 0)
-	{
-		if (kPromotion.getInterceptChange() != 0)
-		{
-			return false;
-		}
-	}
+    if (kUnit.getInterceptionProbability() == 0)
+    {
+        if (kPromotion.getInterceptChange() != 0)
+        {
+            return false;
+        }
+    }
 
-	if (NO_PROMOTION != kPromotion.getPrereqPromotion())
-	{
-		if (!isPromotionValid((PromotionTypes)kPromotion.getPrereqPromotion(), eUnit, bLeader))
-		{
-			return false;
-		}
-	}
+    if (NO_PROMOTION != kPromotion.getPrereqPromotion())
+    {
+        if (!isPromotionValid((PromotionTypes)kPromotion.getPrereqPromotion(), eUnit, bLeader))
+        {
+            return false;
+        }
+    }
 
-	PromotionTypes ePrereq1 = (PromotionTypes)kPromotion.getPrereqOrPromotion1();
-	PromotionTypes ePrereq2 = (PromotionTypes)kPromotion.getPrereqOrPromotion2();
-	if (NO_PROMOTION != ePrereq1 || NO_PROMOTION != ePrereq2)
-	{
-		bool bValid = false;
-		if (!bValid)
-		{
-			if (NO_PROMOTION != ePrereq1 && isPromotionValid(ePrereq1, eUnit, bLeader))
-			{
-				bValid = true;
-			}
-		}
+    PromotionTypes ePrereq1 = (PromotionTypes)kPromotion.getPrereqOrPromotion1();
+    PromotionTypes ePrereq2 = (PromotionTypes)kPromotion.getPrereqOrPromotion2();
+    if (NO_PROMOTION != ePrereq1 || NO_PROMOTION != ePrereq2)
+    {
+        bool bValid = false;
+        if (!bValid)
+        {
+            if (NO_PROMOTION != ePrereq1 && isPromotionValid(ePrereq1, eUnit, bLeader))
+            {
+                bValid = true;
+            }
+        }
 
-		if (!bValid)
-		{
-			if (NO_PROMOTION != ePrereq2 && isPromotionValid(ePrereq2, eUnit, bLeader))
-			{
-				bValid = true;
-			}
-		}
+        if (!bValid)
+        {
+            if (NO_PROMOTION != ePrereq2 && isPromotionValid(ePrereq2, eUnit, bLeader))
+            {
+                bValid = true;
+            }
+        }
 
-		if (!bValid)
-		{
-			return false;
-		}
-	}
+        if (!bValid)
+        {
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 }
+/*************************************************************************************************/
+/** ADVANCED COMBAT ODDS                      11/7/09                           PieceOfMind      */
+/** END                                                                                          */
+/*************************************************************************************************/
 
 int getPopulationAsset(int iPopulation)
 {
@@ -862,9 +870,6 @@ int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender)
 			}
 		}
 	}
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
 
 	// Weigh the total to the number of possible combinations of first strikes events
 	// note: the integer math breaks down when #FS > 656 (with a die size of 1000)
@@ -877,6 +882,236 @@ int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender)
 
 	return iOdds;
 }
+
+/*************************************************************************************************/
+/** ADVANCED COMBAT ODDS                      11/7/09                           PieceOfMind      */
+/** BEGIN                                                                       v1.1             */
+/*************************************************************************************************/
+
+//Calculates the probability of a particular combat outcome
+//Returns a float value (between 0 and 1)
+//Written by PieceOfMind
+//n_A = hits taken by attacker, n_D = hits taken by defender.
+float getCombatOddsSpecific(CvUnit* pAttacker, CvUnit* pDefender, int n_A, int n_D)
+{
+    int iAttackerStrength;
+    int iAttackerFirepower;
+    int iDefenderStrength;
+    int iDefenderFirepower;
+    int iDefenderOdds;
+    int iAttackerOdds;
+    int iStrengthFactor;
+    int iDamageToAttacker;
+    int iDamageToDefender;
+    int iNeededRoundsAttacker;
+    //int iNeededRoundsDefender;
+
+    int AttFSnet;
+    int AttFSC;
+    int DefFSC;
+
+    int iDefenderHitLimit;
+
+
+    iAttackerStrength = pAttacker->currCombatStr(NULL, NULL);
+    iAttackerFirepower = pAttacker->currFirepower(NULL, NULL);
+    iDefenderStrength = pDefender->currCombatStr(pDefender->plot(), pAttacker);
+    iDefenderFirepower = pDefender->currFirepower(pDefender->plot(), pAttacker);
+
+    iStrengthFactor = ((iAttackerFirepower + iDefenderFirepower + 1) / 2);
+    iDamageToAttacker = std::max(1,((GC.getDefineINT("COMBAT_DAMAGE") * (iDefenderFirepower + iStrengthFactor)) / (iAttackerFirepower + iStrengthFactor)));
+    iDamageToDefender = std::max(1,((GC.getDefineINT("COMBAT_DAMAGE") * (iAttackerFirepower + iStrengthFactor)) / (iDefenderFirepower + iStrengthFactor)));
+
+    iDefenderOdds = ((GC.getDefineINT("COMBAT_DIE_SIDES") * iDefenderStrength) / (iAttackerStrength + iDefenderStrength));
+    iAttackerOdds = GC.getDefineINT("COMBAT_DIE_SIDES") - iDefenderOdds;
+
+    if (GC.getDefineINT("ACO_IgnoreBarbFreeWins")==0)
+    {
+        if (pDefender->isBarbarian())
+        {
+            //defender is barbarian
+            if (!GET_PLAYER(pAttacker->getOwnerINLINE()).isBarbarian() && GET_PLAYER(pAttacker->getOwnerINLINE()).getWinsVsBarbs() < GC.getHandicapInfo(GET_PLAYER(pAttacker->getOwnerINLINE()).getHandicapType()).getFreeWinsVsBarbs())
+            {
+                //attacker is not barb and attacker player has free wins left
+                //I have assumed in the following code only one of the units (attacker and defender) can be a barbarian
+
+                iDefenderOdds = std::min((10 * GC.getDefineINT("COMBAT_DIE_SIDES")) / 100, iDefenderOdds);
+                iAttackerOdds = std::max((90 * GC.getDefineINT("COMBAT_DIE_SIDES")) / 100, iAttackerOdds);
+            }
+        }
+        else if (pAttacker->isBarbarian())
+        {
+            //attacker is barbarian
+            if (!GET_PLAYER(pDefender->getOwnerINLINE()).isBarbarian() && GET_PLAYER(pDefender->getOwnerINLINE()).getWinsVsBarbs() < GC.getHandicapInfo(GET_PLAYER(pDefender->getOwnerINLINE()).getHandicapType()).getFreeWinsVsBarbs())
+            {
+                //defender is not barbarian and defender has free wins left and attacker is barbarian
+                iAttackerOdds = std::min((10 * GC.getDefineINT("COMBAT_DIE_SIDES")) / 100, iAttackerOdds);
+                iDefenderOdds = std::max((90 * GC.getDefineINT("COMBAT_DIE_SIDES")) / 100, iDefenderOdds);
+            }
+        }
+    }
+
+    iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimit();
+
+    //iNeededRoundsAttacker = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - (((pAttacker->combatLimit())==GC.getMAX_HIT_POINTS())?1:0) ) / iDamageToDefender;
+    iNeededRoundsAttacker = (pDefender->currHitPoints() - pDefender->maxHitPoints() + pAttacker->combatLimit() - (((pAttacker->combatLimit())==pDefender->maxHitPoints())?1:0))/iDamageToDefender + 1;
+
+    int N_D = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - (((pAttacker->combatLimit())==GC.getMAX_HIT_POINTS())?1:0) ) / iDamageToDefender;
+
+    //int N_A = (pAttacker->currHitPoints() + iDamageToAttacker - 1 ) / iDamageToAttacker;  //same as next line
+    int N_A = (pAttacker->currHitPoints() - 1)/iDamageToAttacker + 1;
+
+
+    //int iRetreatOdds = std::max((pAttacker->withdrawalProbability()),100);
+    float RetreatOdds = ((float)(std::min((pAttacker->withdrawalProbability()),100)))/100.0f ;
+
+    AttFSnet = ( (pDefender->immuneToFirstStrikes()) ? 0 : pAttacker->firstStrikes() ) - ((pAttacker->immuneToFirstStrikes()) ? 0 : pDefender->firstStrikes());
+    AttFSC = (pDefender->immuneToFirstStrikes()) ? 0 : (pAttacker->chanceFirstStrikes());
+    DefFSC = (pAttacker->immuneToFirstStrikes()) ? 0 : (pDefender->chanceFirstStrikes());
+
+
+    float P_A = (float)iAttackerOdds / GC.getDefineINT("COMBAT_DIE_SIDES");
+    float P_D = (float)iDefenderOdds / GC.getDefineINT("COMBAT_DIE_SIDES");
+    float answer = 0.0f;
+    if (n_A < N_A && n_D == iNeededRoundsAttacker)   // (1) Defender dies or is taken to combat limit
+    {
+        float sum1 = 0.0f;
+        for (int i = (-AttFSnet-AttFSC<1?1:-AttFSnet-AttFSC); i <= DefFSC - AttFSnet; i++)
+        {
+            for (int j = 0; j <= i; j++)
+            {
+
+                if (n_A >= j)
+                {
+                    sum1 += (float)getBinomialCoefficient(i,j) * pow(P_A,(float)(i-j)) * getBinomialCoefficient(iNeededRoundsAttacker-1+n_A-j,iNeededRoundsAttacker-1);
+
+                } //if
+            }//for j
+        }//for i
+        sum1 *= pow(P_D,(float)n_A)*pow(P_A,(float)iNeededRoundsAttacker);
+        answer += sum1;
+
+
+        float sum2 = 0.0f;
+
+
+        for (int i = (0<AttFSnet-DefFSC?AttFSnet-DefFSC:0); i <= AttFSnet + AttFSC; i++)
+        {
+
+            for (int j = 0; j <= i; j++)
+            {
+                if (N_D > j)
+                {
+                    sum2 = sum2 + getBinomialCoefficient(n_A+iNeededRoundsAttacker-j-1,n_A) * (float)getBinomialCoefficient(i,j) * pow(P_A,(float)iNeededRoundsAttacker) * pow(P_D,(float)(n_A+i-j));
+
+                }
+                else if (n_A == 0)
+                {
+                    sum2 = sum2 + (float)getBinomialCoefficient(i,j) * pow(P_A,(float)j) * pow(P_D,(float)(i-j));
+                }
+                else
+                {
+                    sum2 = sum2 + 0.0f;
+                }
+            }//for j
+
+        }//for i
+        answer += sum2;
+
+    }
+    else if (n_D < N_D && n_A == N_A)  // (2) Attacker dies!
+    {
+
+        float sum1 = 0.0f;
+        for (int i = (-AttFSnet-AttFSC<1?1:-AttFSnet-AttFSC); i <= DefFSC - AttFSnet; i++)
+        {
+
+            for (int j = 0; j <= i; j++)
+            {
+                if (N_A>j)
+                {
+                    sum1 += getBinomialCoefficient(n_D+N_A-j-1,n_D) * (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(N_A)) * pow(P_A,(float)(n_D+i-j));
+                }
+                else
+                {
+                    if (n_D == 0)
+                    {
+                        sum1 += (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(j)) * pow(P_A,(float)(i-j));
+                    }//if (inside if) else sum += 0
+                }//if
+            }//for j
+
+        }//for i
+        answer += sum1;
+        float sum2 = 0.0f;
+        for (int i = (0<AttFSnet-DefFSC?AttFSnet-DefFSC:0); i <= AttFSnet + AttFSC; i++)
+        {
+            for (int j = 0; j <= i; j++)
+            {
+                if (n_D >= j)
+                {
+                    sum2 += (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(i-j)) * getBinomialCoefficient(N_A-1+n_D-j,N_A-1);
+                } //if
+            }//for j
+        }//for i
+        sum2 *= pow(P_A,(float)(n_D))*pow(P_D,(float)(N_A));
+        answer += sum2;
+        answer = answer * (1.0f - RetreatOdds);
+
+    }
+    else if (n_A == (N_A-1) && n_D < N_D)  // (3) Attacker retreats!
+    {
+        float sum1 = 0.0f;
+        for (int i = (AttFSnet+AttFSC>-1?1:-AttFSnet-AttFSC); i <= DefFSC - AttFSnet; i++)
+        {
+
+            for (int j = 0; j <= i; j++)
+            {
+                if (N_A>j)
+                {
+                    sum1 += getBinomialCoefficient(n_D+N_A-j-1,n_D) * (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(N_A)) * pow(P_A,(float)(n_D+i-j));
+                }
+                else
+                {
+                    if (n_D == 0)
+                    {
+                        sum1 += (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(j)) * pow(P_A,(float)(i-j));
+                    }//if (inside if) else sum += 0
+                }//if
+            }//for j
+
+        }//for i
+        answer += sum1;
+
+        float sum2 = 0.0f;
+        for (int i = (0<AttFSnet-DefFSC?AttFSnet-DefFSC:0); i <= AttFSnet + AttFSC; i++)
+        {
+            for (int j = 0; j <= i; j++)
+            {
+                if (n_D >= j)
+                {
+                    sum2 += (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(i-j)) * getBinomialCoefficient(N_A-1+n_D-j,N_A-1);
+                } //if
+            }//for j
+        }//for i
+        sum2 *= pow(P_A,(float)(n_D))*pow(P_D,(float)(N_A));
+        answer += sum2;
+        answer = answer * RetreatOdds;//
+    }
+    else
+    {
+        //Unexpected value.  Process should not reach here.
+    }
+
+    answer = answer / ((float)(AttFSC+DefFSC+1)); // dividing by (t+w+1) as is necessary
+    return answer;
+}// getCombatOddsSpecific
+
+// I had to add this function to the header file CvGameCoreUtils.h
+/*************************************************************************************************/
+/** ADVANCED COMBAT ODDS                      11/7/09                           PieceOfMind      */
+/** END                                                                                          */
+/*************************************************************************************************/
 
 int getEspionageModifier(TeamTypes eOurTeam, TeamTypes eTargetTeam)
 {
@@ -1759,34 +1994,10 @@ int stepValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointe
 		return FALSE;
 	}
 
-/********************************************************************************/
-/* 	BETTER_BTS_AI_MOD					12/12/08				jdog5000	*/
-/* 																			*/
-/* 	Bugfix																	*/
-/********************************************************************************/
-/* original BTS code
 	if (GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY)->area() != pNewPlot->area())
 	{
 		return FALSE;
 	}
-*/
-	CvPlot* pFromPlot = GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY);
-	if (pFromPlot->area() != pNewPlot->area())
-	{
-		return FALSE;
-	}
-
-	// Don't count diagonal hops across land isthmus
-	if (pFromPlot->isWater() && pNewPlot->isWater())
-	{
-		if (!(GC.getMapINLINE().plotINLINE(parent->m_iX, node->m_iY)->isWater()) && !(GC.getMapINLINE().plotINLINE(node->m_iX, parent->m_iY)->isWater()))
-		{
-			return FALSE;
-		}
-	}
-/********************************************************************************/
-/* 	BETTER_BTS_AI_MOD						END								*/
-/********************************************************************************/
 
 	return TRUE;
 }
@@ -2180,7 +2391,14 @@ void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType)
 	case ACTIVITY_SLEEP: szString = L"ACTIVITY_SLEEP"; break;
 	case ACTIVITY_HEAL: szString = L"ACTIVITY_HEAL"; break;
 	case ACTIVITY_SENTRY: szString = L"ACTIVITY_SENTRY"; break;
-	case ACTIVITY_INTERCEPT: szString = L"ACTIVITY_SENTRY"; break;
+// BUG - Sentry Actions - start
+#ifdef _MOD_SENTRY
+	case ACTIVITY_SENTRY_WHILE_HEAL: szString = L"ACTIVITY_SENTRY_WHILE_HEAL"; break;
+	case ACTIVITY_SENTRY_NAVAL_UNITS: szString = L"ACTIVITY_SENTRY_NAVAL_UNITS"; break;
+	case ACTIVITY_SENTRY_LAND_UNITS: szString = L"ACTIVITY_SENTRY_LAND_UNITS"; break;
+#endif
+// BUG - Sentry Actions - end
+	case ACTIVITY_INTERCEPT: szString = L"ACTIVITY_INTERCEPT"; break;
 	case ACTIVITY_MISSION: szString = L"ACTIVITY_MISSION"; break;
 
 	default: szString = CvWString::format(L"UNKNOWN_ACTIVITY(%d)", eActivityType); break;
@@ -2194,6 +2412,11 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	case NO_MISSION: szString = L"NO_MISSION"; break;
 
 	case MISSION_MOVE_TO: szString = L"MISSION_MOVE_TO"; break;
+// BUG - Sentry Actions - start
+#ifdef _MOD_SENTRY
+	case MISSION_MOVE_TO_SENTRY: szString = L"MISSION_MOVE_TO_SENTRY"; break;
+#endif
+// BUG - Sentry Actions - end
 	case MISSION_ROUTE_TO: szString = L"MISSION_ROUTE_TO"; break;
 	case MISSION_MOVE_TO_UNIT: szString = L"MISSION_MOVE_TO_UNIT"; break;
 	case MISSION_SKIP: szString = L"MISSION_SKIP"; break;
@@ -2204,6 +2427,13 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	case MISSION_SEAPATROL: szString = L"MISSION_SEAPATROL"; break;
 	case MISSION_HEAL: szString = L"MISSION_HEAL"; break;
 	case MISSION_SENTRY: szString = L"MISSION_SENTRY"; break;
+// BUG - Sentry Actions - start
+#ifdef _MOD_SENTRY
+	case MISSION_SENTRY_WHILE_HEAL: szString = L"MISSION_SENTRY_WHILE_HEAL"; break;
+	case MISSION_SENTRY_NAVAL_UNITS: szString = L"MISSION_SENTRY_NAVAL_UNITS"; break;
+	case MISSION_SENTRY_LAND_UNITS: szString = L"MISSION_SENTRY_LAND_UNITS"; break;
+#endif
+// BUG - Sentry Actions - end
 	case MISSION_AIRLIFT: szString = L"MISSION_AIRLIFT"; break;
 	case MISSION_NUKE: szString = L"MISSION_NUKE"; break;
 	case MISSION_RECON: szString = L"MISSION_RECON"; break;
@@ -2329,3 +2559,56 @@ void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI)
 	default: szString = CvWString::format(L"unknown(%d)", eUnitAI); break;
 	}
 }
+
+// BUG - Unit Experience - start
+#include "CyArgsList.h"
+
+/*
+ * Calculates the experience needed to reach the next level after the given level.
+ */
+int calculateExperience(int iLevel, PlayerTypes ePlayer)
+{
+	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
+	FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
+
+	long lExperienceNeeded = 0;
+
+	CyArgsList argsList;
+	argsList.add(iLevel);
+	argsList.add(ePlayer);
+
+	gDLL->getPythonIFace()->callFunction(PYGameModule, "getExperienceNeeded", argsList.makeFunctionArgs(), &lExperienceNeeded);
+
+	return (int)lExperienceNeeded;
+}
+
+/*
+ * Calculates the level for a unit with the given experience.
+ */
+int calculateLevel(int iExperience, PlayerTypes ePlayer)
+{
+	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
+
+	if (iExperience <= 0)
+	{
+		return 1;
+	}
+
+	int iLevel = 1;
+	while (true)
+	{
+		int iNextLevelExperience = calculateExperience(iLevel, ePlayer);
+		if (iNextLevelExperience > iExperience)
+		{
+			break;
+		}
+		++iLevel;
+		if (iNextLevelExperience == iExperience)
+		{
+			break;
+		}
+	}
+
+	return iLevel;
+}
+// BUG - Unit Experience - end

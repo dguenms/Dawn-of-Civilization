@@ -258,6 +258,42 @@ bool CvXMLLoadUtility::SetPostGlobalsGlobalDefines()
 		idx = FindInInfoClass(szVal);
 		GC.getDefinesVarSystem()->SetValue("SHALLOW_WATER_TERRAIN", idx);
 
+// BUG - Global Warming Mod - start
+#ifdef _MOD_GWARM
+		SetGlobalDefine("FROZEN_TERRAIN", szVal);
+		idx = FindInInfoClass(szVal);
+		GC.getDefinesVarSystem()->SetValue("FROZEN_TERRAIN", idx);
+
+		SetGlobalDefine("COLD_TERRAIN", szVal);
+		idx = FindInInfoClass(szVal);
+		GC.getDefinesVarSystem()->SetValue("COLD_TERRAIN", idx);
+
+		SetGlobalDefine("TEMPERATE_TERRAIN", szVal);
+		idx = FindInInfoClass(szVal);
+		GC.getDefinesVarSystem()->SetValue("TEMPERATE_TERRAIN", idx);
+
+		SetGlobalDefine("DRY_TERRAIN", szVal);
+		idx = FindInInfoClass(szVal);
+		GC.getDefinesVarSystem()->SetValue("DRY_TERRAIN", idx);
+
+		SetGlobalDefine("BARREN_TERRAIN", szVal);
+		idx = FindInInfoClass(szVal);
+		GC.getDefinesVarSystem()->SetValue("BARREN_TERRAIN", idx);
+
+		SetGlobalDefine("COLD_FEATURE", szVal);
+		idx = FindInInfoClass(szVal);
+		GC.getDefinesVarSystem()->SetValue("COLD_FEATURE", idx);
+
+		SetGlobalDefine("TEMPERATE_FEATURE", szVal);
+		idx = FindInInfoClass(szVal);
+		GC.getDefinesVarSystem()->SetValue("TEMPERATE_FEATURE", idx);
+
+		SetGlobalDefine("WARM_FEATURE", szVal);
+		idx = FindInInfoClass(szVal);
+		GC.getDefinesVarSystem()->SetValue("WARM_FEATURE", idx);
+#endif
+// BUG - Global Warming Mod - end
+
 		SetGlobalDefine("LAND_IMPROVEMENT", szVal);
 		idx = FindInInfoClass(szVal);
 		GC.getDefinesVarSystem()->SetValue("LAND_IMPROVEMENT", idx);

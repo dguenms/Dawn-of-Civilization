@@ -1182,7 +1182,19 @@ void CvUnitAI::AI_settleMove()
 	for (int iI = 0; iI < GET_PLAYER(getOwnerINLINE()).AI_getNumCitySites(); iI++)
 	{
 		CvPlot* pCitySitePlot = GET_PLAYER(getOwnerINLINE()).AI_getCitySite(iI);
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       01/10/09                                jdog5000      */
+/*                                                                                              */
+/* Bugfix, settler AI                                                                           */
+/************************************************************************************************/
+/* original bts code
 		if (pCitySitePlot->getArea() == getArea())
+*/
+		// Only count city sites we can get to
+		if ((pCitySitePlot->getArea() == getArea() || canMoveAllTerrain()) && generatePath(pCitySitePlot, MOVE_SAFE_TERRITORY, true))
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 		{
 			if (plot() == pCitySitePlot)
 			{
@@ -5107,6 +5119,12 @@ void CvUnitAI::AI_assaultSeaMove()
 						getGroup()->AI_seperateAI(UNITAI_ATTACK_SEA);
 						getGroup()->AI_seperateAI(UNITAI_RESERVE_SEA);
 
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       05/11/09                                jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original bts code
 					if (pOldGroup == getGroup() && getUnitType() == UNITAI_ASSAULT_SEA)
 					{
 						if (AI_retreatToCity(true))
@@ -5114,6 +5132,22 @@ void CvUnitAI::AI_assaultSeaMove()
 							bMissionPushed = true;
 						}
 					}
+*/
+								// Fixed bug in next line with checking unit type instead of unit AI
+								if (pOldGroup == getGroup() && AI_getUnitAIType() == UNITAI_ASSAULT_SEA)
+								{
+									// Need to be sure all units can move
+									if( getGroup()->canAllMove() )
+									{
+										if (AI_retreatToCity(true))
+										{
+											bMissionPushed = true;
+										}
+									}
+								}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 
 					if (bMissionPushed)
 					{
@@ -9231,6 +9265,19 @@ bool CvUnitAI::AI_spreadReligionAirlift()
 					{
 						if (GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopCity->plot(), MISSIONAI_SPREAD, getGroup()) == 0)
 						{
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       08/04/09                                jdog5000      */
+/*                                                                                              */
+/* Unit AI                                                                                      */
+/************************************************************************************************/
+							// Don't airlift where there's already one of our unit types (probably just airlifted)
+							if( pLoopCity->plot()->plotCount(PUF_isUnitType, getUnitType(), -1, getOwnerINLINE()) > 0 )
+							{
+								continue;
+							}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 							iValue = (7 + (pLoopCity->getPopulation() * 4));
 
 							int iCityReligionCount = pLoopCity->getReligionCount();
@@ -9323,6 +9370,19 @@ bool CvUnitAI::AI_spreadCorporationAirlift()
 					{
 						if (GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopCity->plot(), MISSIONAI_SPREAD_CORPORATION, getGroup()) == 0)
 						{
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       08/04/09                                jdog5000      */
+/*                                                                                              */
+/* Unit AI                                                                                      */
+/************************************************************************************************/
+							// Don't airlift where there's already one of our unit types (probably just airlifted)
+							if( pLoopCity->plot()->plotCount(PUF_isUnitType, getUnitType(), -1, getOwnerINLINE()) > 0 )
+							{
+								continue;
+							}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 							int iValue = (pLoopCity->getPopulation() * 4);
 
 							if (pLoopCity->getOwnerINLINE() == getOwnerINLINE())
@@ -10052,10 +10112,26 @@ bool CvUnitAI::AI_paradrop(int iRange)
 						PlayerTypes eTargetPlayer = pLoopPlot->getOwnerINLINE();
 						FAssert(NO_PLAYER != eTargetPlayer);
 
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       08/01/08                                jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original BTS code
 						if (NO_BONUS != pLoopPlot->getBonusType())
 						{
 							iValue += GET_PLAYER(eTargetPlayer).AI_bonusVal(pLoopPlot->getBonusType()) - 10;
 						}
+*/
+						// Bonus values for bonuses the AI has are less than 10 for non-strategic resources... since this is
+						// in the AI territory they probably have it
+						if (NO_BONUS != pLoopPlot->getNonObsoleteBonusType(getTeam()))
+						{
+							iValue += std::max(1,GET_PLAYER(eTargetPlayer).AI_bonusVal(pLoopPlot->getBonusType()) - 10);
+						}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 
 						for (int i = -1; i <= 1; ++i)
 						{
@@ -13382,7 +13458,18 @@ bool CvUnitAI::AI_specialSeaTransportMissionary()
 
 								if (iPathTurns == 1)
 								{
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       02/22/10                                jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original bts code
 									iValue *= 2;
+*/
+									iCorpValue *= 2;
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 								}
 
 								iCorpValue *= 1000;

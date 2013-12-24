@@ -279,6 +279,9 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getLevelExperienceModifier", &CyPlayer::getLevelExperienceModifier, "int ()")
 
 		.def("getExtraHealth", &CyPlayer::getExtraHealth, "int ()")
+// BUG - start
+		.def("changeExtraHealth", &CyPlayer::changeExtraHealth, "void (int iChange)")
+// BUG - end
 		.def("getBuildingGoodHealth", &CyPlayer::getBuildingGoodHealth, "int ()")
 		.def("getBuildingBadHealth", &CyPlayer::getBuildingBadHealth, "int ()")
 

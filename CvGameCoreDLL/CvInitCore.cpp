@@ -10,6 +10,22 @@
 #include "CvGameAI.h"
 #include "CvGameCoreUtils.h"
 
+// BUG - Save Format - start
+#include "BugMod.h"
+// BUG - Save Format - end
+
+// BUG - EXE/DLL Paths - start
+#include "moduleobject.h"
+#include "CvDLLIniParserIFaceBase.h"
+#include <shlobj.h>
+
+CvString CvInitCore::dllPath;
+CvString CvInitCore::dllName;
+CvString CvInitCore::exePath;
+CvString CvInitCore::exeName;
+bool CvInitCore::bPathsSet;
+// BUG - EXE/DLL Paths - end
+
 // Public Functions...
 
 CvInitCore::CvInitCore()
@@ -53,6 +69,10 @@ CvInitCore::CvInitCore()
 
 	m_aeCustomMapOptions = NULL;
 	m_abVictories = NULL;
+
+// BUG - EXE/DLL Paths - start
+	bPathsSet = false;
+// BUG - EXE/DLL Paths - end
 
 	reset(NO_GAMEMODE);
 }
@@ -1294,7 +1314,7 @@ const CvWString & CvInitCore::getCivShortDesc(PlayerTypes eID, uint uiForm) cons
 	}
 	else
 	{
-		m_szTemp = "()"; // Leoreth: debug, remove afterwards
+		m_szTemp = "";
 	}
 
 	return m_szTemp;
@@ -1879,6 +1899,10 @@ void CvInitCore::read(FDataStreamBase* pStream)
 	uint uiSaveFlag=0;
 	pStream->Read(&uiSaveFlag);		// flags for expansion (see SaveBits)
 
+// BUG - Save Format - start
+	bool bugSaveFlag = uiSaveFlag & BUG_DLL_SAVE_FORMAT;
+	uiSaveFlag &= ~BUG_DLL_SAVE_FORMAT;
+
 	// GAME DATA
 	pStream->Read((int*)&m_eType);
 	pStream->ReadString(m_szGameName);
@@ -1913,6 +1937,14 @@ void CvInitCore::read(FDataStreamBase* pStream)
 		pStream->Read(m_iNumVictories, m_abVictories);
 	}
 
+// BUG - Save Format - start
+	if (bugSaveFlag)
+	{
+		// read and ignore number of game options as it's only for external tools
+		int iNumGameOptions = 0;
+		pStream->Read(&iNumGameOptions);
+	}
+// BUG - Save Format - end
 
 	if (uiSaveFlag > 0)
 	{
@@ -1984,6 +2016,20 @@ void CvInitCore::read(FDataStreamBase* pStream)
 void CvInitCore::write(FDataStreamBase* pStream)
 {
 	uint uiSaveFlag=1;
+// BUG - Save Format - start
+	// If any optional mod alters the number of game options or save format in any way,
+	// set the BUG save format bit and write out the number of game options later.
+	// It is safe to have multiple #ifdefs trigger.
+	bool bugSaveFlag = false;
+#ifdef _BUFFY
+	bugSaveFlag = true;
+	uiSaveFlag |= BUG_DLL_SAVE_FORMAT;
+#endif
+#ifdef _MOD_GWARM
+	bugSaveFlag = true;
+	uiSaveFlag |= BUG_DLL_SAVE_FORMAT;
+#endif
+// BUG - Save Format - end
 	pStream->Write(uiSaveFlag);		// flag for expansion, see SaveBits)
 
 	// GAME DATA
@@ -2009,6 +2055,14 @@ void CvInitCore::write(FDataStreamBase* pStream)
 
 	pStream->Write(m_iNumVictories);
 	pStream->Write(m_iNumVictories, m_abVictories);
+
+// BUG - Save Format - start
+	if (bugSaveFlag)
+	{
+		// write out the number of game options for the external parser tool
+		pStream->Write(NUM_GAMEOPTION_TYPES);
+	}
+// BUG - Save Format - end
 
 	pStream->Write(NUM_GAMEOPTION_TYPES, m_abOptions);
 	pStream->Write(NUM_MPOPTION_TYPES, m_abMPOptions);
@@ -2048,3 +2102,73 @@ void CvInitCore::write(FDataStreamBase* pStream)
 	pStream->Write(MAX_PLAYERS, m_abPlayableCiv);
 	pStream->Write(MAX_PLAYERS, m_abMinorNationCiv);
 }
+
+
+// BUG - EXE/DLL Paths - start
+CvString CvInitCore::getDLLPath() const
+{
+	setPathNames();
+	return dllPath;
+}
+
+CvString CvInitCore::getDLLName() const
+{
+	setPathNames();
+	return dllName;
+}
+
+CvString CvInitCore::getExePath() const
+{
+	setPathNames();
+	return exePath;
+}
+
+CvString CvInitCore::getExeName() const
+{
+	setPathNames();
+	return exeName;
+}
+
+extern HANDLE dllModule;
+void CvInitCore::setPathNames()
+{
+	if (bPathsSet)
+	{
+		return;
+	}
+
+	TCHAR pathBuffer[4096];
+	DWORD result;
+	TCHAR* pos;
+	
+	result = GetModuleFileName(NULL, pathBuffer, sizeof(pathBuffer));
+	pos = strchr(pathBuffer, '\\');
+	while (pos != NULL && *pos != NULL)
+	{
+		TCHAR* next = strchr(pos + 1, '\\');
+		if (!next)
+		{
+			*pos = 0;
+			exePath = pathBuffer;
+			exeName = pos + 1;
+		}
+		pos = next;
+	}
+
+	result = GetModuleFileName((HMODULE)dllModule, pathBuffer, sizeof(pathBuffer));
+	pos = strchr(pathBuffer, '\\');
+	while (pos != NULL && *pos != NULL)
+	{
+		TCHAR* next = strchr(pos + 1, '\\');
+		if (!next)
+		{
+			*pos = 0;
+			dllPath = pathBuffer;
+			dllName = pos + 1;
+		}
+		pos = next;
+	}
+
+	bPathsSet = true;
+}
+// BUG - EXE/DLL Paths - end

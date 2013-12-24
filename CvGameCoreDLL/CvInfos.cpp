@@ -3792,6 +3792,27 @@ bool CvUnitInfo::isSlave() const
 	return (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SLAVE"));
 }
 
+// BUG - Unit Experience - start
+/*
+ * Returns true if this unit type is eligible to receive experience points.
+ */
+bool CvUnitInfo::canAcquireExperience() const
+{
+	if (m_iUnitCombatType != NO_UNITCOMBAT)
+	{
+		for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+		{
+			if (GC.getPromotionInfo((PromotionTypes)iI).getUnitCombat(m_iUnitCombatType))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+// BUG - Unit Experience - end
+
 
 // Arrays
 
@@ -14087,6 +14108,15 @@ int CvFeatureInfo::getTurnDamage() const
 	return m_iTurnDamage;
 }
 
+// BUG - Global Warming Mod - start
+#ifdef _MOD_GWARM
+int CvFeatureInfo::getWarmingDefense() const
+{
+	return m_iWarmingDefense; 
+}
+#endif
+// BUG - Global Warming Mod - end
+
 bool CvFeatureInfo::isNoCoast() const
 {
 	return m_bNoCoast;
@@ -14280,6 +14310,11 @@ bool CvFeatureInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefense");
 	pXML->GetChildXmlValByName(&m_iAdvancedStartRemoveCost, "iAdvancedStartRemoveCost");
 	pXML->GetChildXmlValByName(&m_iTurnDamage, "iTurnDamage");
+// BUG - Global Warming Mod - start
+#ifdef _MOD_GWARM
+	pXML->GetChildXmlValByName(&m_iWarmingDefense, "iWarmingDefense");
+#endif
+// BUG - Global Warming Mod - end
 	pXML->GetChildXmlValByName(&m_iAppearanceProbability, "iAppearance");
 	pXML->GetChildXmlValByName(&m_iDisappearanceProbability, "iDisappearance");
 	pXML->GetChildXmlValByName(&m_iGrowthProbability, "iGrowth");

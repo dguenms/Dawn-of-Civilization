@@ -94,3 +94,35 @@ void CyDeal::kill()
 		m_pDeal->kill();
 	}
 }
+
+// BUG - Expose Deal Cancelability - start
+bool CyDeal::isCancelable(int /*PlayerTypes*/ eByPlayer, bool bIgnoreWaitingPeriod) const
+{
+	if (NULL != m_pDeal)
+	{
+		if (bIgnoreWaitingPeriod)
+		{
+			return !m_pDeal->isUncancelableVassalDeal((PlayerTypes)eByPlayer, NULL);
+		}
+
+		return m_pDeal->isCancelable((PlayerTypes)eByPlayer, NULL);
+	}
+	
+	return false;
+}
+
+std::wstring CyDeal::getCannotCancelReason(int /*PlayerTypes*/ eByPlayer) const
+{
+	CvWString szReason;
+	if (NULL != m_pDeal)
+	{
+		m_pDeal->isCancelable((PlayerTypes)eByPlayer, &szReason);
+	}
+	return szReason;
+}
+
+int CyDeal::turnsToCancel(int /*PlayerTypes*/ eByPlayer) const
+{
+	return (m_pDeal ? m_pDeal->turnsToCancel((PlayerTypes)eByPlayer) : -1);
+}
+// BUG - Expose Deal Cancelability - end

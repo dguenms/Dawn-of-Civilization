@@ -34,6 +34,10 @@
 
 #include "CvRhyes.h" //Rhye
 
+// BUG - Ignore Harmless Barbarians - start
+#include "CvBugOptions.h"
+// BUG - Ignore Harmless Barbarians - end
+
 // Public Functions...
 
 CvPlayer::CvPlayer()
@@ -139,7 +143,7 @@ void CvPlayer::init(PlayerTypes eID)
 	int iValue;
 	int iBestValue;
 	int iI, iJ;
-	//GC.getGameINLINE().logMsg("player init", eID); //Rhye
+
 	//--------------------------------
 	// Init saved data
 	reset(eID);
@@ -164,8 +168,6 @@ void CvPlayer::init(PlayerTypes eID)
 	// Init other game data
 	FAssert(getTeam() != NO_TEAM);
 	GET_TEAM(getTeam()).changeNumMembers(1);
-
-	//TCHAR szOut[1024];
 
 	if ((GC.getInitCore().getSlotStatus(getID()) == SS_TAKEN) || (GC.getInitCore().getSlotStatus(getID()) == SS_COMPUTER))
 	{
@@ -309,20 +311,7 @@ void CvPlayer::init(PlayerTypes eID)
 		}
 	}
 
-	//sprintf(szOut, "Player %d AI init reached.", eID);
-	//GC.getGameINLINE().logMsg(szOut);
-
 	AI_init();
-
-	//sprintf(szOut, "Player %d init completed.", eID);
-	//GC.getGameINLINE().logMsg(szOut);
-
-	//Rhye - start (dynamic civ names - not jdog's)
-	/*if (getID() < NUM_MAJOR_PLAYERS)
-		setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][0]);
-	if (getID() == EGYPT) //Egyptian UP
-		setCivDescription(civDynamicNames[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][1]); //Egypt
-	//Rhye - end*/
 }
 
 
@@ -1982,8 +1971,6 @@ CvWString CvPlayer::getNewCityName() const
 		szName = "TXT_KEY_CITY";
 	}
 
-	//szName = "Nova " + szName; //Rhye
-
 	return szName;
 }
 
@@ -3359,9 +3346,41 @@ bool CvPlayer::hasBusyUnit() const
 	return false;
 }
 
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       12/07/09                            Emperor Fool      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+// Free Tech Popup Fix
+bool CvPlayer::isChoosingFreeTech() const
+{
+	return m_bChoosingFreeTech;
+}
+
+void CvPlayer::setChoosingFreeTech(bool bValue)
+{
+	m_bChoosingFreeTech = bValue;
+}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 
 void CvPlayer::chooseTech(int iDiscover, CvWString szText, bool bFront)
 {
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       12/07/09                            Emperor Fool      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+	// Free Tech Popup Fix
+	if (iDiscover > 0)
+	{
+		setChoosingFreeTech(true);
+	}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
+
 	CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_CHOOSETECH);
 	if (NULL != pInfo)
 	{
@@ -4321,7 +4340,18 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		break;
 
 	case TRADE_CIVIC:
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       10/22/09                          denev & jdog5000    */
+/*                                                                                              */
+/* Diplomacy                                                                                    */
+/************************************************************************************************/
+/* original bts code
 		if (!(GET_TEAM(getTeam()).isHuman()))
+*/
+		if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()))
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 		{
 			if (GET_PLAYER(eWhoTo).isCivic((CivicTypes)(item.m_iData)))
 			{
@@ -4337,7 +4367,18 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		break;
 
 	case TRADE_RELIGION:
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       10/22/09                          denev & jdog5000    */
+/*                                                                                              */
+/* Diplomacy                                                                                    */
+/************************************************************************************************/
+/* original bts code
 		if (!(GET_TEAM(getTeam()).isHuman()))
+*/
+		if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()))
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 		{
 			if (GET_PLAYER(eWhoTo).getStateReligion() == ((ReligionTypes)(item.m_iData)))
 			{
@@ -4966,9 +5007,6 @@ void CvPlayer::raze(CvCity* pCity)
 	CvEventReporter::getInstance().cityRazed(pCity, getID());
 
 	disband(pCity);
-
-	//Leoreth: moved to Python
-	//processCivNames(); //Rhye - dynamic civ names - not jdog's
 }
 
 
@@ -5128,7 +5166,10 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 
 	if (!szBuffer.empty())
 	{
-		gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getGoodyInfo(eGoody).getSound(), MESSAGE_TYPE_MINOR_EVENT, ARTFILEMGR.getImprovementArtInfo("ART_DEF_IMPROVEMENT_GOODY_HUT")->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+// BUG - Goody Hut Log - start
+		// keep messages in event log forever
+		gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getGoodyInfo(eGoody).getSound(), MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getImprovementArtInfo("ART_DEF_IMPROVEMENT_GOODY_HUT")->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+// BUG - Goody Hut Log - end
 	}
 
 	iRange = GC.getGoodyInfo(eGoody).getMapRange();
@@ -5783,9 +5824,6 @@ void CvPlayer::found(int iX, int iY)
 	//Rhye - end comment
 
 	CvEventReporter::getInstance().cityBuilt(pCity);
-
-	//Leoreth: moved to Python
-	//processCivNames(); //Rhye - dynamic civ names - not jdog's
 }
 
 
@@ -7426,7 +7464,18 @@ void CvPlayer::removeBuildingClass(BuildingClassTypes eBuildingClass)
 		{
 			if (pLoopCity->getNumRealBuilding(eBuilding) > 0)
 			{
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       02/16/10                          EmperorFool         */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original bts code
 				pLoopCity->setNumRealBuilding(eBuilding, 0);
+*/
+				pLoopCity->setNumRealBuilding(eBuilding, pLoopCity->getNumRealBuilding(eBuilding) - 1);
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 				break;
 			}
 		}
@@ -7663,6 +7712,11 @@ int CvPlayer::calculateTotalExports(YieldTypes eYield) const
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
+// BUG - Fractional Trade Routes - start
+#ifdef _MOD_FRACTRADE
+		int iCityExports = 0;
+#endif
+
 		for (iTradeLoop = 0; iTradeLoop < pLoopCity->getTradeRoutes(); iTradeLoop++)
 		{
 			pTradeCity = pLoopCity->getTradeCity(iTradeLoop);
@@ -7670,10 +7724,19 @@ int CvPlayer::calculateTotalExports(YieldTypes eYield) const
 			{
 				if (pTradeCity->getOwnerINLINE() != getID())
 				{
+#ifdef _MOD_FRACTRADE
+					iCityExports += pLoopCity->calculateTradeYield(eYield, pLoopCity->calculateTradeProfitTimes100(pTradeCity));
+#else
 					iTotalExports += pLoopCity->calculateTradeYield(eYield, pLoopCity->calculateTradeProfit(pTradeCity));
+#endif
 				}
 			}
 		}
+
+#ifdef _MOD_FRACTRADE
+		iTotalExports += iCityExports / 100;
+#endif
+// BUG - Fractional Trade Routes - end
 	}
 
 	return iTotalExports;
@@ -7692,6 +7755,11 @@ int CvPlayer::calculateTotalImports(YieldTypes eYield) const
 	{
 		if (iPlayerLoop != getID())
 		{
+// BUG - Fractional Trade Routes - start
+#ifdef _MOD_FRACTRADE
+			int iCityImports = 0;
+#endif
+
 			for (pLoopCity = GET_PLAYER((PlayerTypes) iPlayerLoop).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes) iPlayerLoop).nextCity(&iLoop))
 			{
 				for (iTradeLoop = 0; iTradeLoop < pLoopCity->getTradeRoutes(); iTradeLoop++)
@@ -7701,11 +7769,20 @@ int CvPlayer::calculateTotalImports(YieldTypes eYield) const
 					{
 						if (pTradeCity->getOwnerINLINE() == getID())
 						{
+#ifdef _MOD_FRACTRADE
+							iCityImports += pLoopCity->calculateTradeYield(eYield, pLoopCity->calculateTradeProfitTimes100(pTradeCity));
+#else
 							iTotalImports += pLoopCity->calculateTradeYield(eYield, pLoopCity->calculateTradeProfit(pTradeCity));
+#endif
 						}
 					}
 				}
 			}
+
+#ifdef _MOD_FRACTRADE
+			iTotalImports += iCityImports / 100;
+#endif
+// BUG - Fractional Trade Routes - end
 		}
 	}
 	return iTotalImports;
@@ -8562,6 +8639,20 @@ bool CvPlayer::isCivic(CivicTypes eCivic) const
 bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 {
 	PROFILE_FUNC();
+
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       02/16/10                                jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+	// Circumvents second crash bug in simultaneous turns MP games
+	if( eCivic == NO_CIVIC )
+	{
+		return true;
+	}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/	
 
 	if (GC.getGameINLINE().isForceCivicOption((CivicOptionTypes)(GC.getCivicInfo(eCivic).getCivicOptionType())))
 	{
@@ -10150,6 +10241,39 @@ void CvPlayer::changeWorkerSpeedModifier(int iChange)
 {
 	m_iWorkerSpeedModifier = (m_iWorkerSpeedModifier + iChange);
 }
+
+// BUG - Partial Builds - start
+/*
+ * Returns the work rate for the first unit that can build <eBuild>.
+ */
+int CvPlayer::getWorkRate(BuildTypes eBuild) const
+{
+	int iRate = 0;
+	CvCivilizationInfo& kCiv = GC.getCivilizationInfo(getCivilizationType());
+
+	for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+	{
+		CvUnitInfo& kUnit = GC.getUnitInfo((UnitTypes)kCiv.getCivilizationUnits(iI));
+
+		if (kUnit.getBuilds(eBuild))
+		{
+			iRate = kUnit.getWorkRate();
+			break;
+		}
+	}
+
+	iRate *= std::max(0, getWorkerSpeedModifier() + 100);
+	iRate /= 100;
+
+	if (!isHuman() && !isBarbarian())
+	{
+		iRate *= std::max(0, (GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIWorkRateModifier() + 100));
+		iRate /= 100;
+	}
+
+	return iRate;
+}
+// BUG - Partial Builds - end
 
 
 int CvPlayer::getImprovementUpgradeRateModifier() const
@@ -12736,17 +12860,6 @@ int CvPlayer::getCapitalYieldRateModifier(YieldTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
-	//Leoreth - Babylonian UP: free Absolutism bonus after the discovery of Code of Laws
-	/*if (getID() == BABYLONIA && GET_TEAM(getTeam()).isHasTech((TechTypes)CODEOFLAWS))
-	{
-	    if ((int) eIndex != 0)
-	    {
-            if (getCivics((CivicOptionTypes)1) != 7)
-            {
-                return m_aiCapitalYieldRateModifier[eIndex]+33;
-            }
-	    }
-	}*/
 	return m_aiCapitalYieldRateModifier[eIndex];
 }
 
@@ -18012,6 +18125,11 @@ void CvPlayer::doWarnings()
 		gDLL->getEntityIFace()->updateEnemyGlow(pLoopUnit->getUnitEntity());
 	}
 
+// BUG - Ignore Harmless Barbarians - start
+	bool bCheckBarbarians = false;
+	bool bCheckBarbariansInitialized = !isHuman();
+// BUG - Ignore Harmless Barbarians - end
+
 	//update enemy units close to your territory
 	iMaxCount = range(((getNumCities() + 4) / 7), 2, 5);
 	for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
@@ -18034,6 +18152,23 @@ void CvPlayer::doWarnings()
 					{
 						if (!pUnit->isAnimal())
 						{
+// BUG - Ignore Harmless Barbarians - start
+							if (!bCheckBarbariansInitialized)
+							{
+								bCheckBarbarians = getBugOptionBOOL("Actions__IgnoreHarmlessBarbarians", true, "BUG_IGNORE_HARMLESS_BARBARIANS");
+								bCheckBarbariansInitialized = true;
+							}
+							if (bCheckBarbarians && pUnit->isBarbarian() && pUnit->getDomainType() == DOMAIN_LAND)
+							{
+								CvArea* pArea = pUnit->area();
+								if (pArea && pArea->isBorderObstacle(getTeam()))
+								{
+									// don't show warning for land-based barbarians when player has Great Wall
+									continue;
+								}
+							}
+// BUG - Ignore Harmless Barbarians - end
+
 							pNearestCity = GC.getMapINLINE().findCity(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), getID(), NO_TEAM, !(pLoopPlot->isWater()));
 
 							if (pNearestCity != NULL)
@@ -18069,8 +18204,6 @@ void CvPlayer::verifyGoldCommercePercent()
 void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 {
 	int iI, iJ;
-
-	//GC.getGameINLINE().logMsg("Begin process civics.");
 
 	changeGreatPeopleRateModifier(GC.getCivicInfo(eCivic).getGreatPeopleRateModifier() * iChange);
 	changeGreatGeneralRateModifier(GC.getCivicInfo(eCivic).getGreatGeneralRateModifier() * iChange);
@@ -23699,6 +23832,42 @@ UnitTypes CvPlayer::getTechFreeUnit(TechTypes eTech) const
 }
 
 
+// BUG - Trade Totals - start
+/*
+ * Adds the yield and count for each trade route with eWithPlayer.
+ *
+ * The yield and counts are not reset to zero.
+ * If Fractional Trade Routes is enabled and bRound is false, the yield values are left times 100.
+ */
+void CvPlayer::calculateTradeTotals(YieldTypes eIndex, int& iDomesticYield, int& iDomesticRoutes, int& iForeignYield, int& iForeignRoutes, PlayerTypes eWithPlayer, bool bRound, bool bBase) const
+{
+	int iIter;
+
+	for (CvCity* pCity = firstCity(&iIter); NULL != pCity; pCity = nextCity(&iIter))
+	{
+		pCity->calculateTradeTotals(eIndex, iDomesticYield, iDomesticRoutes, iForeignYield, iForeignRoutes, eWithPlayer, bRound, bBase);
+	}
+}
+
+/*
+ * Returns the total trade yield with eWithPlayer.
+ *
+ * If Fractional Trade Routes is enabled, the yield value is left times 100.
+ * UNUSED
+ */
+int CvPlayer::calculateTotalTradeYield(YieldTypes eIndex, PlayerTypes eWithPlayer, bool bRound, bool bBase) const
+{
+	int iDomesticYield = 0;
+	int iDomesticRoutes = 0;
+	int iForeignYield = 0;
+	int iForeignRoutes = 0;
+	
+	calculateTradeTotals(eIndex, iDomesticYield, iDomesticRoutes, iForeignYield, iForeignRoutes, eWithPlayer, bRound, bBase);
+	return iDomesticYield + iForeignRoutes;
+}
+// BUG - Trade Totals - end
+
+
 void CvPlayer::buildTradeTable(PlayerTypes eOtherPlayer, CLinkList<TradeData>& ourList) const
 {
 	TradeData item;
@@ -25226,3 +25395,11 @@ void CvPlayer::changeDomainExperienceModifier(DomainTypes eDomainType, int iChan
 {
 	m_aiDomainExperienceModifiers[(int)eDomainType] += iChange;
 }
+
+// BUG - Reminder Mod - start
+#include "CvMessageControl.h"
+void CvPlayer::addReminder(int iGameTurn, CvWString szMessage) const
+{
+	CvMessageControl::getInstance().sendAddReminder(getID(), iGameTurn, szMessage);
+}
+// BUG - Reminder Mod - end
