@@ -8183,10 +8183,24 @@ int CvPlayer::calculateInflationRate() const
 	//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
 	//if (GC.getGameINLINE().getGameTurn() >=181 )
 	if (GC.getGameINLINE().getGameTurn() >= getTurnForYear(600) ) // edead: epic/marathon
-		if (getID() < VIKING) {
+	{
+		if (getID() < VIKING)
+		{
 			iRate *= 85;
 			iRate /= 100;
 		}
+	}
+
+	// Leoreth: apply large empire penalty
+	int iSizeThreshold = 6 + 3 * getCurrentEra();
+	int iMultiplier = isHuman() ? 10 : 5;
+	int iNumCities = getTotalPopulation() / iSizeThreshold;
+
+	if (iNumCities > 10)
+	{
+		iRate *= 100 + iMultiplier * (iNumCities - 10);
+		iRate /= 100;
+	}
 
 	FAssert(iRate >= 0);
 
