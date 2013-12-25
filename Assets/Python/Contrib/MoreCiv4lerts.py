@@ -540,7 +540,10 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 		return self.buildItemString(bonuses, gc.getBonusInfo, CvBonusInfo.getDescription)
 
 	def buildPlayerString(self, players):
-		return self.buildItemString(players, gc.getPlayer, CyPlayer.getName)
+		#return self.buildItemString(players, gc.getPlayer, CyPlayer.getCivilizationShortDescription)
+		names = [gc.getPlayer(iPlayer).getCivilizationShortDescription(0) for iPlayer in players]
+		names.sort()
+		return u", ".join(names)
 	
 	def buildItemString(self, items, getItemFunc, getNameFunc):
 		names = [getNameFunc(getItemFunc(eItem)) for eItem in items]
