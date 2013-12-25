@@ -543,7 +543,7 @@ class BugEventManager(CvEventManager.CvEventManager):
 		"""Called when a unit is captured."""
 		eOwner, eUnitType, pNewUnit = argsList
 		BugUtil.debug("%s %s captured as %s by %s", 
-				gc.getPlayer(eOwner).getName(), gc.getUnitInfo(eUnitType).getDescription(), 
+				gc.getPlayer(eOwner).getCivilizationShortDescription(0), gc.getUnitInfo(eUnitType).getDescription(), 
 				pNewUnit.getName(), gc.getPlayer(pNewUnit.getOwner()).getCivilizationShortDescription(0))
 	
 	def onCombatWithdrawal(self, argsList):
