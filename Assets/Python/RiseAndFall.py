@@ -3458,7 +3458,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
 			utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 4)
                 if (iCiv == iPersia):
-                        utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
+                        utils.makeUnit(con.iIranianQizilbash, iCiv, tPlot, 6)
                         utils.makeUnit(con.iBombard, iCiv, tPlot, 3)
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 		if (iCiv == iIndia):
@@ -3609,8 +3609,7 @@ class RiseAndFall:
 		
 		# Persia
 		tCapital = con.tEsfahan
-		utils.makeUnit(con.iMusketman, iPersia, tCapital, 6)
-		utils.makeUnit(con.iIranianQizilbash, iPersia, tCapital, 6)
+		utils.makeUnit(con.iIranianQizilbash, iPersia, tCapital, 10)
 		utils.makeUnit(con.iBombard, iPersia, tCapital, 4)
 		
 		# Korea
