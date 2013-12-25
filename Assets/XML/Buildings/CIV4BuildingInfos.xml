@@ -8473,7 +8473,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ARABIAN_MADRASSA</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
-			<ReligionType>NONE</ReligionType>
+			<ReligionType>RELIGION_ISLAM</ReligionType>
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
