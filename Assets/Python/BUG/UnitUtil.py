@@ -512,7 +512,7 @@ def getCanTrainUnits(playerOrID, askingPlayerOrID=None, military=None):
 			if askingPlayer:
 				for eTech in unitTechs[eUnit]:
 					if not (askingTeam.isHasTech(eTech) or askingPlayer.canResearch(eTech, False)):
-						BugUtil.debug("%s doesn't comprehend %s", askingPlayer.getName(), gc.getTechInfo(eTech).getDescription())
+						BugUtil.debug("%s doesn't comprehend %s", askingPlayer.getCivilizationShortDescription(0), gc.getTechInfo(eTech).getDescription())
 						skip = True
 						break
 				else:
