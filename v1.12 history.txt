@@ -145,3 +145,6 @@
 # added a notification in case more slaves become available for trade
 # adjusted Cannon costs
 # 80% rule now also applies to city flips
+# Qizilbash now replaces Musketman
+# Qizilbash now has +25% against gunpowder units and starts with Guerilla
+# Huscarl now requires Feudalism instead of Civil Service
