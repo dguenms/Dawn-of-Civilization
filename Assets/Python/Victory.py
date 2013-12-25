@@ -5006,7 +5006,7 @@ class Victory:
 				iCount = 0
 				for iCiv in range(con.iNumPlayers):
 					pPlayer = gc.getPlayer(iCiv)
-					if iCiv != iRussia and pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and (pPlayer.getCivics(1) == con.iSupremeCouncil or pPlayer.getCivics(3) == con.iStateProperty):
+					if iCiv != iRussia and pPlayer.AI_getAttitude(iRussia) == AttitudeTypes.ATTITUDE_FRIENDLY and pPlayer.getCivics(3) == con.iCivicCentralPlanning:
 						iCount += 1
 				aHelp.append(self.getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_COMMUNIST_BROTHERS", (iCount, 5)))
 
