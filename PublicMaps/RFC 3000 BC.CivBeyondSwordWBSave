@@ -25307,7 +25307,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=54
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -25315,6 +25314,7 @@ BeginPlot
 	x=66,y=55
 	RiverNSDirection=0
 	isWOfRiver
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
