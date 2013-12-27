@@ -502,9 +502,12 @@ def secedeCities(iPlayer, lCities):
 		# claim based on original owner
 		if iClaim == -1:
 			iOriginalOwner = city.getOriginalOwner()
-			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and utils.getHumanID() != iOriginalOwner and iOriginalOwner < con.iNumPlayers and iGameTurnYear < con.tFall[iOriginalOwner]:
-				iClaim = iOriginalOwner
-				utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: original owner.')
+			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and utils.getHumanID() != iOriginalOwner
+				if iOriginalOwner < con.iNumPlayers and iGameTurnYear < con.tFall[iOriginalOwner]:
+					# cities lost too long ago doesn't return
+					if city.getGameTurnPlayerLost(iOriginalOwner) >= gc.getGame().getGameTurn() - utils.getTurns(50):
+						iClaim = iOriginalOwner
+						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: original owner.')
 				
 		# claim based on culture
 		if iClaim == -1:
@@ -527,6 +530,9 @@ def secedeCities(iPlayer, lCities):
 				pLoopPlayer = gc.getPlayer(iLoopPlayer)
 				if pLoopPlayer.isAlive() and tPlayer.isAtWar(iLoopPlayer) and utils.getHumanID() != iLoopPlayer and iGameTurnYear < con.tFall[iLoopPlayer]:
 					if pLoopPlayer.getWarMapValue(city.getX(), city.getY()) >= 8:
+						# another enemy with closer city: don't claim the city
+						closestCity = gc.getMap().findCity(city.getX(), city.getY(), PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, city)
+						if closestCity.getOwner() != iLoopPlayer and tPlayer.isAtWar(closestCity.getOwner()): continue
 						iClaim = iLoopPlayer
 						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: war target.')
 						break
@@ -1610,7 +1616,10 @@ def getResurrectionCities(iPlayer):
 			if (x, y) not in tExceptions:
 				plot = gc.getMap().plot(x, y)
 				if plot.isCity():
-					lPotentialCities.append(plot.getPlotCity())
+					city = plot.getPlotCity()
+					# for humans: exclude recently conquered cities to avoid annoying reflips
+					if city.getOwner() != utils.getHumanID() or city.getGameTurnCityAcquired() < gc.getGame().getGameTurn() - utils.getTurns(5):
+						lPotentialCities.append(city)
 					
 	for k in range(len(lPotentialCities)):
 		city = lPotentialCities[k]

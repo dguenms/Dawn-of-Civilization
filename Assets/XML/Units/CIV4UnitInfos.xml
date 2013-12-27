@@ -1640,8 +1640,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_WORKER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_WORKERMODERN</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_BRAZILIAN_MADEIREIRO</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>

@@ -548,5 +548,6 @@ void CyCityPythonInterface1(python::class_<CyCity>& x)
 		.def("setWeLoveTheKingDay", &CyCity::setWeLoveTheKingDay, "void (bool bNewValue)")
 		.def("isMongolUP", &CyCity::isMongolUP, "bool ()")
 		.def("setMongolUP", &CyCity::setMongolUP, "void (bool bNewValue)")
+		.def("getGameTurnPlayerLost", &CyCity::getGameTurnPlayerLost, "int (int ePlayer)")
 		;
 }

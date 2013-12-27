@@ -563,6 +563,7 @@ public:
 	// Leoreth
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
+	int getGameTurnPlayerLost(int ePlayer);
 
 private:
 	CvCity* m_pCity;

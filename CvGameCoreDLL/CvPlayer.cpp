@@ -1657,6 +1657,9 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	pNewCity->setOriginalOwner(eOriginalOwner);
 	pNewCity->setGameTurnFounded(iGameTurnFounded);
 
+	// Leoreth: log game turn of losing this city for previous owner
+	pNewCity->setGameTurnPlayerLost(eOldOwner, GC.getGameINLINE().getGameTurn());
+
 	//Leoreth: protect middle eastern cities from Seljuk invasions
 	if (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)
 		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation)) : iPopulation);
