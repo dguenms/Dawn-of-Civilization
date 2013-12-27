@@ -2988,7 +2988,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 							{
 								for (iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
 								{
-									if (GC.getBuildingInfo(eLoopBuilding).getPrereqNumOfBuildingClass(iJ) > 0)
+									// Leoreth
+									if (GC.getBuildingInfo(eLoopBuilding).getPrereqNumOfBuildingClass(iJ) > 0 || GC.getBuildingInfo(eLoopBuilding).getPrereqBuildingClassPercent(iJ) > 0)
 									{
 										iValue = 0;
 										break;

@@ -6838,6 +6838,7 @@ m_piBuildingHappinessChanges(NULL),
 m_piPrereqNumOfBuildingClass(NULL),
 m_piFlavorValue(NULL),
 m_piImprovementFreeSpecialist(NULL),
+m_piPrereqBuildingClassPercent(NULL), //Leoreth
 m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
@@ -6888,6 +6889,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piPrereqNumOfBuildingClass);
 	SAFE_DELETE_ARRAY(m_piFlavorValue);
 	SAFE_DELETE_ARRAY(m_piImprovementFreeSpecialist);
+	SAFE_DELETE_ARRAY(m_piPrereqBuildingClassPercent); //Leoreth
 	SAFE_DELETE_ARRAY(m_pbCommerceFlexible);
 	SAFE_DELETE_ARRAY(m_pbCommerceChangeOriginalOwner);
 	SAFE_DELETE_ARRAY(m_pbBuildingClassNeededInCity);
@@ -7895,6 +7897,14 @@ int* CvBuildingInfo::getBonusCommerceModifierArray(int i) const
 	return m_ppaiBonusCommerceModifier[i];
 }
 
+// Leoreth
+int CvBuildingInfo::getPrereqBuildingClassPercent(int i) const
+{
+	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piPrereqBuildingClassPercent[i];
+}
+
 const TCHAR* CvBuildingInfo::getButton() const
 {
 	const CvArtInfoBuilding * pBuildingArtInfo;
@@ -8196,6 +8206,11 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	m_piPrereqNumOfBuildingClass = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_piPrereqNumOfBuildingClass);
 
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piPrereqBuildingClassPercent);
+	m_piPrereqBuildingClassPercent = new int[GC.getNumBuildingClassInfos()];
+	stream->Read(GC.getNumBuildingClassInfos(), m_piPrereqBuildingClassPercent);
+
 	SAFE_DELETE_ARRAY(m_piFlavorValue);
 	m_piFlavorValue = new int[GC.getNumFlavorTypes()];
 	stream->Read(GC.getNumFlavorTypes(), m_piFlavorValue);
@@ -8421,6 +8436,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_DOMAIN_TYPES, m_piDomainProductionModifier);
 	stream->Write(GC.getNumBuildingClassInfos(), m_piBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_piPrereqNumOfBuildingClass);
+	stream->Write(GC.getNumBuildingClassInfos(), m_piPrereqBuildingClassPercent);
 	stream->Write(GC.getNumFlavorTypes(), m_piFlavorValue);
 	stream->Write(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
 
@@ -8929,6 +8945,9 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->SetVariableListTagPair(&m_piPrereqNumOfBuildingClass, "PrereqBuildingClasses", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 	pXML->SetVariableListTagPair(&m_pbBuildingClassNeededInCity, "BuildingClassNeededs", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
+
+	// Leoreth
+	pXML->SetVariableListTagPair(&m_piPrereqBuildingClassPercent, "PrereqBuildingClassPercents", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 
 	pXML->Init2DIntList(&m_ppaiSpecialistYieldChange, GC.getNumSpecialistInfos(), NUM_YIELD_TYPES);
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"SpecialistYieldChanges"))

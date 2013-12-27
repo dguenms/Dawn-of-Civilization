@@ -1789,6 +1789,9 @@ public:
 	int getBonusCommerceModifier(int i, int j) const;
 	int* getBonusCommerceModifierArray(int i) const;
 
+	// Leoreth
+	int getPrereqBuildingClassPercent(int i) const;
+
 	// Other
 
 	const CvArtInfoBuilding* getArtInfo() const;
@@ -1961,6 +1964,9 @@ protected:
 	int* m_piPrereqNumOfBuildingClass;
 	int* m_piFlavorValue;
 	int* m_piImprovementFreeSpecialist;
+
+	// Leoreth
+	int* m_piPrereqBuildingClassPercent;
 
 	bool* m_pbCommerceFlexible;
 	bool* m_pbCommerceChangeOriginalOwner;

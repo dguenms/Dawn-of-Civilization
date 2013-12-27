@@ -241,7 +241,7 @@
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>0</iAIWeight>
 			<iCost>200</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -338,12 +338,13 @@
 			<DomainFreeExperiences/>
 			<DomainProductionModifiers/>
 			<BuildingHappinessChanges/>
-			<PrereqBuildingClasses>
-				<PrereqBuildingClass>
+			<PrereqBuildingClasses/>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
 					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
-					<iNumBuildingNeeded>4</iNumBuildingNeeded>
-				</PrereqBuildingClass>
-			</PrereqBuildingClasses>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
@@ -23622,7 +23623,7 @@
 			<iAIWeight>0</iAIWeight>
 			<!-- Rhye -->
 			<iCost>300</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -23814,7 +23815,7 @@
 			<iAIWeight>0</iAIWeight>
 			<!-- Rhye -->
 			<iCost>-1</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -23941,8 +23942,7 @@
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
 			<bStateReligion>0</bStateReligion>
-			<PrereqReligion>NONE</PrereqReligion>
-			
+			<PrereqReligion>NONE</PrereqReligion>		
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -23981,7 +23981,7 @@
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bMapCentering>0</bMapCentering>
-			<bNoUnhappiness>1</bNoUnhappiness>
+			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
 			<bBuildingOnlyHealthy>0</bBuildingOnlyHealthy>
 			<bNeverCapture>0</bNeverCapture>
@@ -23989,8 +23989,8 @@
 			<bPrereqReligion>0</bPrereqReligion>
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>0</iAIWeight>
-			<iCost>300</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
+			<iCost>200</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -24026,7 +24026,7 @@
 			<iHealth>0</iHealth>
 			<iAreaHealth>0</iAreaHealth>
 			<iGlobalHealth>0</iGlobalHealth>
-			<iHappiness>0</iHappiness>
+			<iHappiness>2</iHappiness>
 			<iAreaHappiness>0</iAreaHappiness>
 			<iGlobalHappiness>0</iGlobalHappiness>
 			<iStateReligionHappiness>0</iStateReligionHappiness>
@@ -24067,7 +24067,11 @@
 			<GlobalCommerceModifiers/>
 			<SpecialistExtraCommerces/>
 			<StateReligionCommerces/>
-			<CommerceHappinesses/>
+			<CommerceHappinesses>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>10</iCommerce>
+			</CommerceHappinesses>
 			<ReligionChanges/>
 			<SpecialistCounts>
 				<SpecialistCount>
@@ -24086,12 +24090,13 @@
 			<DomainFreeExperiences/>
 			<DomainProductionModifiers/>
 			<BuildingHappinessChanges/>
-			<PrereqBuildingClasses>
-				<PrereqBuildingClass>
+			<PrereqBuildingClasses/>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
 					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
-					<iNumBuildingNeeded>4</iNumBuildingNeeded>
-				</PrereqBuildingClass>
-			</PrereqBuildingClasses>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
@@ -24175,7 +24180,7 @@
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>0</iAIWeight>
 			<iCost>300</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -24351,7 +24356,7 @@
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>0</iAIWeight>
 			<iCost>300</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -24528,7 +24533,7 @@
 			<iAIWeight>0</iAIWeight>
 			<!-- Rhye -->
 			<iCost>500</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -24809,12 +24814,13 @@
 			<DomainFreeExperiences/>
 			<DomainProductionModifiers/>
 			<BuildingHappinessChanges/>
-			<PrereqBuildingClasses>
-				<PrereqBuildingClass>
+			<PrereqBuildingClasses/>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
 					<BuildingClassType>BUILDINGCLASS_BANK</BuildingClassType>
-					<iNumBuildingNeeded>4</iNumBuildingNeeded>
-				</PrereqBuildingClass>
-			</PrereqBuildingClasses>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_BANK</BuildingClassType>
@@ -24987,12 +24993,13 @@
 			<DomainFreeExperiences/>
 			<DomainProductionModifiers/>
 			<BuildingHappinessChanges/>
-			<PrereqBuildingClasses>
-				<PrereqBuildingClass>
+			<PrereqBuildingClasses/>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
 					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
-					<iNumBuildingNeeded>4</iNumBuildingNeeded>
-				</PrereqBuildingClass>
-			</PrereqBuildingClasses>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
@@ -25767,12 +25774,13 @@
 			<DomainFreeExperiences/>
 			<DomainProductionModifiers/>
 			<BuildingHappinessChanges/>
-			<PrereqBuildingClasses>
-				<PrereqBuildingClass>
+			<PrereqBuildingClasses/>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
 					<BuildingClassType>BUILDINGCLASS_HOSPITAL</BuildingClassType>
-					<iNumBuildingNeeded>4</iNumBuildingNeeded>
-				</PrereqBuildingClass>
-			</PrereqBuildingClasses>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_HOSPITAL</BuildingClassType>
@@ -33558,7 +33566,7 @@
 			<bCenterInCity>0</bCenterInCity>
 			<iAIWeight>0</iAIWeight>
 			<iCost>400</iCost>
-			<iHurryCostModifier>50</iHurryCostModifier>
+			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>

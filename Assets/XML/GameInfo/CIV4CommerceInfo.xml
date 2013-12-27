@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jesse Smith (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Commerce Infos -->
+<Civ4CommerceInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
+	<CommerceInfos>
+		<CommerceInfo>
+			<Type>COMMERCE_GOLD</Type>
+			<Description>TXT_KEY_COMMERCE_GOLD</Description>
+			<iInitialPercent>0</iInitialPercent>
+			<iInitialHappiness>0</iInitialHappiness>
+			<iAIWeightPercent>100</iAIWeightPercent>
+			<bFlexiblePercent>0</bFlexiblePercent>
+			<Button>Art/Interface/Buttons/Process/ProcessWealth.dds</Button>
+		</CommerceInfo>
+		<CommerceInfo>
+			<Type>COMMERCE_RESEARCH</Type>
+			<Description>TXT_KEY_COMMERCE_RESEARCH</Description>
+			<iInitialPercent>100</iInitialPercent>
+			<iInitialHappiness>0</iInitialHappiness>
+			<iAIWeightPercent>125</iAIWeightPercent>
+			<bFlexiblePercent>1</bFlexiblePercent>
+			<Button>Art/Interface/Buttons/Process/ProcessResearch.dds</Button>
+		</CommerceInfo>
+		<CommerceInfo>
+			<Type>COMMERCE_CULTURE</Type>
+			<Description>TXT_KEY_COMMERCE_CULTURE</Description>
+			<iInitialPercent>0</iInitialPercent>
+			<iInitialHappiness>0</iInitialHappiness>
+			<iAIWeightPercent>25</iAIWeightPercent>
+			<bFlexiblePercent>0</bFlexiblePercent>
+			<Button>Art/Interface/Buttons/Process/ProcessCulture.dds</Button>
+		</CommerceInfo>
+		<CommerceInfo>
+			<Type>COMMERCE_ESPIONAGE</Type>
+			<Description>TXT_KEY_ESPIONAGE_CULTURE</Description>
+			<iInitialPercent>0</iInitialPercent>
+			<iInitialHappiness>0</iInitialHappiness>
+			<iAIWeightPercent>25</iAIWeightPercent>
+			<bFlexiblePercent>1</bFlexiblePercent>
+			<Button>Art/Interface/Buttons/Process/ProcessCulture.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,16</Button>
+		</CommerceInfo>
+	</CommerceInfos>
+</Civ4CommerceInfo>
