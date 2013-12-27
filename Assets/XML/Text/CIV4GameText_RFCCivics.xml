@@ -600,4 +600,9 @@
 		<Tag>TXT_KEY_CIVIC_SECULARISM_HELP</Tag>
 		<English>[ICON_BULLET]Can Build All Wonders that Require a State Religion</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_PERCENT_SPECIAL_BUILDINGS_NO_CITY</Tag>
+		<!-- %s1_Name = Can be Buildings, Units, etc -->
+		<English>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</English>
+	</TEXT>
 </Civ4GameText>

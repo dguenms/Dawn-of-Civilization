@@ -329,6 +329,14 @@
 	<ElementType name="PrereqBuildingClasses" content="eltOnly">
 		<element type="PrereqBuildingClass" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="iBuildingNeededPercent" content="textOnly" dt:type="int"/>
+	<ElementType name="PrereqBuildingClassPercent" content="eltOnly">
+		<element type="BuildingClassType"/>
+		<element type="iBuildingNeededPercent"/>
+	</ElementType>
+	<ElementType name="PrereqBuildingClassPercents" content="eltOnly">
+		<element type="PrereqBuildingClassPercent" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="bNeededInCity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="BuildingClassNeeded" content="eltOnly">
 		<element type="BuildingClassType"/>
@@ -543,6 +551,7 @@
 		<element type="DomainProductionModifiers"/>
 		<element type="BuildingHappinessChanges"/>
 		<element type="PrereqBuildingClasses"/>
+		<element type="PrereqBuildingClassPercents" minOccurs="0"/>
 		<element type="BuildingClassNeededs"/>
 		<element type="SpecialistYieldChanges"/>
 		<element type="BonusYieldModifiers"/>

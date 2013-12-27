@@ -7424,6 +7424,11 @@ int CvPlayer::getProductionModifier(ProjectTypes eProject) const
 
 int CvPlayer::getBuildingClassPrereqBuilding(BuildingTypes eBuilding, BuildingClassTypes ePrereqBuildingClass, int iExtra) const
 {
+	return std::max(getBuildingClassPrereqBuildingStatic(eBuilding, ePrereqBuildingClass, iExtra), getBuildingClassPrereqBuildingPercent(eBuilding, ePrereqBuildingClass, iExtra));
+}
+
+int CvPlayer::getBuildingClassPrereqBuildingStatic(BuildingTypes eBuilding, BuildingClassTypes ePrereqBuildingClass, int iExtra) const
+{
 	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
 
 	int iPrereqs = kBuilding.getPrereqNumOfBuildingClass(ePrereqBuildingClass);
@@ -7452,6 +7457,29 @@ int CvPlayer::getBuildingClassPrereqBuilding(BuildingTypes eBuilding, BuildingCl
 	return iPrereqs;
 }
 
+// Leoreth
+int CvPlayer::getBuildingClassPrereqBuildingPercent(BuildingTypes eBuilding, BuildingClassTypes ePrereqBuildingClass, int iExtra) const
+{
+	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+
+	int iPrereqPercent = kBuilding.getPrereqBuildingClassPercent(ePrereqBuildingClass);
+
+	if (iPrereqPercent < 1)
+	{
+		return 0;
+	}
+
+	BuildingClassTypes eBuildingClass = (BuildingClassTypes)kBuilding.getBuildingClassType();
+
+	int iPrereqs = iPrereqPercent * getNumCities() / 100;
+
+	if (GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman())
+	{
+		iPrereqs = std::min(1, iPrereqs);
+	}
+	
+	return iPrereqs;
+}
 
 void CvPlayer::removeBuildingClass(BuildingClassTypes eBuildingClass)
 {
