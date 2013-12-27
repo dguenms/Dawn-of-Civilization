@@ -57,6 +57,7 @@ CvCity::CvCity()
 
 	m_aiCulture = new int[MAX_PLAYERS];
 	m_aiNumRevolts = new int[MAX_PLAYERS];
+	m_aiGameTurnPlayerLost = new int[MAX_PLAYERS]; // Leoreth
 	m_abEverOwned = new bool[MAX_PLAYERS];
 	m_abTradeRoute = new bool[MAX_PLAYERS];
 	m_abRevealed = new bool[MAX_TEAMS];
@@ -141,6 +142,7 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiDomainProductionModifier);
 	SAFE_DELETE_ARRAY(m_aiCulture);
 	SAFE_DELETE_ARRAY(m_aiNumRevolts);
+	SAFE_DELETE_ARRAY(m_aiGameTurnPlayerLost); // Leoreth
 	SAFE_DELETE_ARRAY(m_abEverOwned);
 	SAFE_DELETE_ARRAY(m_abTradeRoute);
 	SAFE_DELETE_ARRAY(m_abRevealed);
@@ -716,6 +718,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	{
 		m_aiCulture[iI] = 0;
 		m_aiNumRevolts[iI] = 0;
+		m_aiGameTurnPlayerLost[iI] = -1; // Leoreth
 	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -14950,6 +14953,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);
 	pStream->Read(MAX_PLAYERS, m_aiCulture);
 	pStream->Read(MAX_PLAYERS, m_aiNumRevolts);
+	pStream->Read(MAX_PLAYERS, m_aiGameTurnPlayerLost); // Leoreth
 
 	pStream->Read(MAX_PLAYERS, m_abEverOwned);
 	pStream->Read(MAX_PLAYERS, m_abTradeRoute);
@@ -15198,6 +15202,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainProductionModifier);
 	pStream->Write(MAX_PLAYERS, m_aiCulture);
 	pStream->Write(MAX_PLAYERS, m_aiNumRevolts);
+	pStream->Write(MAX_PLAYERS, m_aiGameTurnPlayerLost); // Leoreth
 
 	pStream->Write(MAX_PLAYERS, m_abEverOwned);
 	pStream->Write(MAX_PLAYERS, m_abTradeRoute);
@@ -17088,4 +17093,15 @@ int CvCity::getCorporationHealthByCorporation(CorporationTypes eCorporation) con
 	}
 
 	return iHealth / 10;
+}
+
+// Leoreth
+int CvCity::getGameTurnPlayerLost(PlayerTypes ePlayer)
+{
+	return m_aiGameTurnPlayerLost[ePlayer];
+}
+
+void CvCity::setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue)
+{
+	m_aiGameTurnPlayerLost[ePlayer] = iNewValue;
 }

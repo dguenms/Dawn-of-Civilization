@@ -149,3 +149,7 @@
 # Qizilbash now has +25% against gunpowder units and starts with Guerilla
 # Huscarl now requires Feudalism instead of Civil Service
 # Madrassa counts as an Islamic building
+# included merijn_v1's buttons for: Albion Legion, Madeireiro and Fazenda
+# cities recently conquered by a human cannot become part of a resurrection
+# claims on cities from collapsing civs because of being the original owner are now only valid if the city has been recently lost
+# claims on cities from collapsing civs because of war targets are now only valid if the closest city isn't controlled by a different enemy of the collapsing civ

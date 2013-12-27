@@ -2645,3 +2645,8 @@ void CyCity::setMongolUP(bool bNewValue)
 	if (m_pCity)
 		m_pCity->setMongolUP(bNewValue);
 }
+
+int CyCity::getGameTurnPlayerLost(int ePlayer)
+{
+	return m_pCity ? m_pCity->getGameTurnPlayerLost((PlayerTypes)ePlayer) : -1;
+}

@@ -991,6 +991,8 @@ public:
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
 	void doPlotCultureTimes100(bool bUpdate, PlayerTypes ePlayer, int iCultureRateTimes100, bool bCityCulture);
+	int getGameTurnPlayerLost(PlayerTypes ePlayer);
+	void setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue);
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1207,6 +1209,9 @@ protected:
 	int* m_aiDomainProductionModifier;
 	int* m_aiCulture;
 	int* m_aiNumRevolts;
+
+	// Leoreth
+	int* m_aiGameTurnPlayerLost;
 
 	bool* m_abEverOwned;
 	bool* m_abTradeRoute;

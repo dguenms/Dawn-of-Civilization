@@ -2543,7 +2543,7 @@
 			<fInterfaceScale>0.65</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/BrazilFazenda/BrazilFazenda.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Builds/BuildPlantation.dds</Button>
+			<Button>Art/Structures/Buildings/BrazilFazenda/Fazenda.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ARGENTINE_REFRIGERATION_PLANT</Type>
