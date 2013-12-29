@@ -144,6 +144,8 @@ class StoredData:
 				    'lNumPreviousCities' : [0 for i in range(con.iNumPlayers)],
 				    'bCrisisImminent' : False,
 				    'iHumanStability' : 0,
+				    'iHumanRazePenalty' : 0,
+				    'lBarbarianLosses' : [0 for i in range(con.iNumPlayers)],
 				}
                 self.save()
 		
@@ -269,6 +271,21 @@ class StoredData:
 		
 	def setMinorCityFounded(self, iCity, bNewValue):
 		self.scriptDict['lCityFounded'][iCity] = bNewValue
+		
+	def getHumanRazePenalty(self):
+		return self.scriptDict['iHumanRazePenalty']
+		
+	def setHumanRazePenalty(self, iNewValue):
+		self.scriptDict['iHumanRazePenalty'] = iNewValue
+		
+	def changeHumanRazePenalty(self, iChange):
+		self.scriptDict['iHumanRazePenalty'] += iChange
+		
+	def getBarbarianLosses(self, iPlayer):
+		return self.scriptDict['lBarbarianLosses'][iPlayer]
+		
+	def changeBarbarianLosses(self, iPlayer, iChange):
+		self.scriptDict['lBarbarianLosses'][iPlayer] += iChange
 		
 # All modules import the following single instance, not the class
 

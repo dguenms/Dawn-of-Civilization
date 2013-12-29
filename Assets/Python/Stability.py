@@ -37,6 +37,13 @@ def checkTurn(iGameTurn):
 		if getCrisisCountdown(iPlayer) > 0:
 			changeCrisisCountdown(iPlayer, -1)
 			
+	if iGameTurn % utils.getTurns(5) == 0:
+		if sd.getHumanRazePenalty() < 0:
+			sd.changeHumanRazePenalty(2)
+		for iPlayer in range(con.iNumPlayers):
+			if sd.getBarbarianLosses(iPlayer) > 0:
+				sd.changeBarbarianLosses(iPlayer, -1)
+			
 	if iGameTurn % utils.getTurns(12) == 0:
 		for iPlayer in range(con.iNumPlayers):
 			checkLostCitiesCollapse(iPlayer)
@@ -53,7 +60,9 @@ def onCityAcquired(city, iOwner, iPlayer):
 		checkBarbarianCollapse(iOwner)
 	
 def onCityRazed(iPlayer):
-	if utils.getHumanID() == iPlayer: checkStability(iPlayer)
+	if utils.getHumanID() == iPlayer: 
+		sd.changeHumanRazePenalty(-10)
+		checkStability(iPlayer)
 	
 def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
@@ -87,6 +96,10 @@ def onGoldenAge(iPlayer):
 	
 def onGreatPersonBorn(iPlayer):
 	checkStability(iPlayer, True)
+	
+def onCombatResult(iWinningPlayer, iLosingPlayer):
+	if iWinningPlayer == con.iBarbarian:
+		sd.changeBarbarianLosses(iLosingPlayer, 1)
 	
 def onCivSpawn(iPlayer):
 	for iOlderNeighbor in con.lOlderNeighbours[iPlayer]:
@@ -1086,6 +1099,7 @@ def calculateStability(iPlayer):
 	iExpansionStability = 0
 	
 	iCorePeripheryStability = 0
+	iRazeCityStability = 0
 	iOwnCoreStability = 0
 	
 	# help Tibet
@@ -1120,7 +1134,13 @@ def calculateStability(iPlayer):
 	lParameters[con.iParameterCorePeriphery] = iCorePeripheryStability
 		
 	iExpansionStability += iCorePeripheryStability
+	
+	# apply raze city penalty
+	iRazeCityStability = sd.getHumanRazePenalty()
+	
+	lParameters[con.iParameterRazedCities] = iRazeCityStability
 		
+	iExpansionStability += iRazeCityStability
 	
 	# Control over own core - even necessary? already weighs in above - disable for now and see how it goes
 	#iExpansionStability -= 20 * iOccupiedCoreCities / iTotalCoreCities
@@ -1432,31 +1452,36 @@ def calculateStability(iPlayer):
 	
 	iWarSuccessStability = 0
 	iMilitaryStrengthStability = 0
+	iBarbarianLossesStability = 0
+	
+	iNumerator = 0
+	iDenominator = 0
 	
 	# war success
 	for iLoopPlayer in range(con.iNumPlayers):
-		if tPlayer.isAtWar(iLoopPlayer):
+		if tPlayer.isAtWar(iLoopPlayer) and gc.getPlayer(iLoopPlayer).isAlive():
 			iOurSuccess = tPlayer.AI_getWarSuccess(iLoopPlayer)
 			iTheirSuccess = gc.getTeam(iLoopPlayer).AI_getWarSuccess(iPlayer)
 			iCombinedSuccess = iOurSuccess + iTheirSuccess
 			
-			# war score should decay over time by some means, otherwise it's too attractive to stay in a war where you're doing well
+			# ignore insignificant wars
+			if iCombinedSuccess < 20: continue
 			
-			if iCombinedSuccess < 20:
-				iOurPercentage = 0 # war too insignificant (takes care of division by zero as well)
-			else:
-				iOurPercentage = 100 * iOurSuccess / iCombinedSuccess - 50
+			# make losing wars more influential
+			if iOurSuccess <= iTheirSuccess: iCombinedSuccess *= 5
+			else: iCombinedSuccess *= 2
 			
-			iThisWarStability = 0
-			if iOurPercentage > 0:
-				iThisWarStability = iOurPercentage / 5
-			elif iOurPercentage < 0:
-				iThisWarStability = iOurPercentage / 2
-				
-			iWarSuccessStability += iThisWarStability
+			iNumerator += iOurSuccess - iTheirSuccess
+			iDenominator += iCombinedSuccess
 				
 			#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' war against ' + gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0) + '\n' + pPlayer.getCivilizationAdjective(0) + ' success: ' + str(iOurSuccess) + '\n' + gc.getPlayer(iLoopPlayer).getCivilizationAdjective(0) + ' success: ' + str(iTheirSuccess) + '\nResulting stability: ' + str(iThisWarStability))
-				
+			
+	if iDenominator > 0:
+		iWarSuccessStability = iNumerator / iDenominator
+		
+	if iWarSuccessStability > 10: iWarSuccessStability = 10
+	elif iWarSuccessStability < -25: iWarSuccessStability = -25
+			
 	#if iWarSuccessStability > 0:
 	#	sMilitaryString += localText.getText('TXT_KEY_STABILITY_WINNING_WARS', (iWarSuccessStability,))
 	#elif iWarSuccessStability < 0:
@@ -1483,6 +1508,13 @@ def calculateStability(iPlayer):
 	lParameters[con.iParameterMilitaryStrength] = iMilitaryStrengthStability
 	
 	iMilitaryStability += iMilitaryStrengthStability
+	
+	# apply barbarian losses
+	iBarbarianLossesStability = -sd.getBarbarianLosses(iPlayer)
+	
+	lParameters[con.iParameterBarbarianLosses] = iBarbarianLossesStability
+	
+	iMilitaryStability += iBarbarianLossesStability
 	
 	iStability = iExpansionStability + iEconomyStability + iDomesticStability + iForeignStability + iMilitaryStability
 	

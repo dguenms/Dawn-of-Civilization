@@ -411,6 +411,8 @@ class CvRFCEventHandler:
 		
 		pWinningUnit, pLosingUnit = argsList
 		
+		sta.onCombatResult(pWinningUnit.getOwner(), pLosingUnit.getOwner())
+		
 		# catch slaves by defeating native and barbarian Pombos or Impis
 		if pLosingUnit.getOwner() in [con.iBarbarian, con.iNative] and pLosingUnit.getUnitType() in [con.iZuluImpi, con.iKongoPombos]:
 			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
