@@ -15180,6 +15180,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	if (iStabilityCategory == 0)
 	{
 		int iParameterCorePeriphery = game.getStabilityParameter(PARAMETER_CORE_PERIPHERY);
+		int iParameterRazedCities = game.getStabilityParameter(PARAMETER_RAZED_CITIES);
 
 		iTotalStability = iParameterCorePeriphery;
 
@@ -15202,6 +15203,13 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		{
 			CvWString szTemp;
 			szTemp.Format(L"%d: %s", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterRazedCities < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterRazedCities, gDLL->getText("TXT_KEY_STABILITY_RAZED_CITIES").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
@@ -15432,6 +15440,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	{
 		int iParameterWarSuccess = game.getStabilityParameter(PARAMETER_WAR_SUCCESS);
 		int iParameterMilitaryStrength = game.getStabilityParameter(PARAMETER_MILITARY_STRENGTH);
+		int iParameterBarbarianLosses = game.getStabilityParameter(PARAMETER_BARBARIAN_LOSSES);
 
 		iTotalStability = iParameterWarSuccess + iParameterMilitaryStrength;
 
@@ -15461,6 +15470,13 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		{
 			CvWString szTemp;
 			szTemp.Format(L"%d: %s", iParameterMilitaryStrength, gDLL->getText("TXT_KEY_STABILITY_LOSING_STRENGTH").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterBarbarianLosses < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterBarbarianLosses, gDLL->getText("TXT_KEY_STABILITY_BARBARIAN_LOSSES").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
