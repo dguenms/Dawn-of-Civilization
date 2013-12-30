@@ -976,6 +976,7 @@ def calculateStability(iPlayer):
 	iOnlyStateReligionCities = 0
 	iNonStateReligionCities = 0
 	
+	iHappyCities = 0
 	iUnhappyCities = 0
 		
 	bTotalitarianism = (iCivicOrganization == con.iCivicTotalitarianism)
@@ -1065,7 +1066,14 @@ def calculateStability(iPlayer):
 		if bNonStateReligion: iNonStateReligionCities += 1
 		
 		# Happiness
-		if city.angryPopulation(0) > 0: iUnhappyCities += 1
+		iHappiness = city.happyLevel()
+		iUnhappiness = city.unhappyLevel(0)
+		iOvercrowding = city.getOvercrowdingPercentAnger(0) * city.getPopulation() / 1000
+		
+		if city.isWeLoveTheKingDay() or (iPopulation >= pPlayer.getAveragePopulation() and iHappiness - iUnhappiness >= iPopulation / 4):
+			iHappyCities += 1
+		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
+			iUnhappyCities += 1
 			
 	#for city in utils.getAreaCities(con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer]):
 	#	iTotalCoreCities += 1
@@ -1087,9 +1095,6 @@ def calculateStability(iPlayer):
 	iCurrentCommerceRank = calculateCommerceRank(iPlayer, iGameTurn)
 	iPreviousCommerceRank = calculateCommerceRank(iPlayer, iGameTurn - utils.getTurns(10))
 	
-	iHappiness = pPlayer.calculateTotalCityHappiness()
-	iUnhappiness = pPlayer.calculateTotalCityUnhappiness()
-	
 	iCurrentPower = pPlayer.getPower()#pPlayer.getPowerHistory(iGameTurn)
 	iPreviousPower = pPlayer.getPowerHistory(iGameTurn - utils.getTurns(10))
 	
@@ -1110,20 +1115,20 @@ def calculateStability(iPlayer):
 	# Core vs. Periphery Populations
 	iCombinedPopulation = iCorePopulation + iPeripheryPopulation
 	
-	if iCombinedPopulation == 0:
-		iCorePercentage = 0
-	else:
-		iCorePercentage = 100 * iCorePopulation / iCombinedPopulation - 50
+	#if iCombinedPopulation == 0:
+	#	iCorePercentage = 0
+	#else:
+	#	iCorePercentage = 100 * iCorePopulation / iCombinedPopulation - 50
 		
 	if iCorePopulation == 0:
 		iPeripheryExcess = 200
 	else:
 		iPeripheryExcess = 100 * iPeripheryPopulation / iCorePopulation - 100
 	
-	if iPeripheryExcess > 200: iPeripheryExcess = 200
+	if iPeripheryExcess > 100: iPeripheryExcess = 100
 		
 	if iPeripheryExcess > 0:
-		iCorePeripheryStability -= iPeripheryExcess / 4
+		iCorePeripheryStability -= 25 * sigmoid(iPeripheryExcess / 100)
 		
 		utils.debugTextPopup('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
 		
@@ -1222,9 +1227,15 @@ def calculateStability(iPlayer):
 	# Happiness
 	iHappinessStability = 0
 	
-	if iNumTotalCities > 0: 
-		iHappinessStability += (iHappiness - iUnhappiness) / iNumTotalCities
-	iHappinessStability -= 2 * iUnhappyCities
+	if iNumTotalCities > 0:
+		iHappinessStability += min(iNumTotalCities, 5 * iHappyCities / iNumTotalCities)
+		iHappinessStability -= min(iNumTotalCities, 10 * iUnhappyCities / iNumTotalCities)
+	
+	#utils.debugTextPopup(pPlayer.getCivilizationShortDescription(0) + ' happiness stability: ' + str(iHappinessStability) + '\nHappy cities: ' + str(iHappyCities) + '\nUnhappy cities: ' + str(iUnhappyCities) + '\nTotal cities: ' + str(iNumTotalCities))
+	
+	#if iNumTotalCities > 0: 
+	#	iHappinessStability += (iHappiness - iUnhappiness) / iNumTotalCities
+	#iHappinessStability -= 2 * iUnhappyCities
 	
 	#if iHappinessStability > 0:
 	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_HAPPINESS', (iHappinessStability,))
@@ -1314,7 +1325,7 @@ def calculateStability(iPlayer):
 		elif iCurrentEra >= con.iIndustrial: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iDemocracy):
-		if iCivicOrganization not in [con.iCivicRepresentation, con.iCivicEgalitarianism]: iCivicStability -= 3
+		if iCivicOrganization not in [con.iCivicRepresentation, con.iCivicEgalitarianism]: iCivicStability -= 5
 		if iCivicLabor in [con.iCivicSlavery, con.iCivicAgrarianism] and iCivicOrganization != con.iCivicTotalitarianism: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iUtopia):
@@ -1455,7 +1466,7 @@ def calculateStability(iPlayer):
 	iMilitaryStrengthStability = 0
 	iBarbarianLossesStability = 0
 	
-	fNumerator = 0.0
+	iNumerator = 0
 	iDenominator = 0
 	
 	# war success
@@ -1468,22 +1479,24 @@ def calculateStability(iPlayer):
 			# ignore insignificant wars
 			if iCombinedSuccess < 20: continue
 			
-			fThisWarSuccess = 1.0 * (1.0 * iOurSuccess/iCombinedSuccess - 1.0/2)
+			iThisWarSuccess = 100 * iOurSuccess / iCombinedSuccess - 50
 			
-			fNumerator += fThisWarSuccess
+			#fThisWarSuccess = 1.0 * (1.0 * iOurSuccess/iCombinedSuccess - 1.0/2)
+			
+			iNumerator += iThisWarSuccess
 			iDenominator += 1
 				
 			#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' war against ' + gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0) + '\n' + pPlayer.getCivilizationAdjective(0) + ' success: ' + str(iOurSuccess) + '\n' + gc.getPlayer(iLoopPlayer).getCivilizationAdjective(0) + ' success: ' + str(iTheirSuccess) + '\nResulting stability: ' + str(iThisWarStability))
 			
 	if iDenominator > 0:
-		fTotalSuccess = 1.0 * fNumerator / iDenominator
+		iTotalSuccess = iNumerator / iDenominator
 		
-		if fTotalSuccess > 0:
-			iWarSuccessStability = int(fTotalSuccess * 10)
+		if iTotalSuccess > 0:
+			iWarSuccessStability = 10 * iTotalSuccess / 100
 		else:
-			iWarSuccessStability = int(sigmoid(fTotalSuccess) * 20)
+			iWarSuccessStability = int(20 * sigmoid(1.0 * iTotalSuccess / 100))
 		
-		sLogString = pPlayer.getCivilizationAdjective(0) + ' total war success: ' + str(fTotalSuccess) + '\nStability: ' + str(iWarSuccessStability)
+		sLogString = pPlayer.getCivilizationAdjective(0) + ' total war success: ' + str(iTotalSuccess) + '\nStability: ' + str(iWarSuccessStability)
 		
 		utils.debugTextPopup(sLogString)
 			
