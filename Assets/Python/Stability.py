@@ -7,6 +7,7 @@ import Consts as con
 import RFCUtils
 import DynamicCivs
 from operator import itemgetter
+import math
 
 utils = RFCUtils.RFCUtils()
 dc = DynamicCivs.DynamicCivs()
@@ -98,7 +99,7 @@ def onGreatPersonBorn(iPlayer):
 	checkStability(iPlayer, True)
 	
 def onCombatResult(iWinningPlayer, iLosingPlayer):
-	if iWinningPlayer == con.iBarbarian:
+	if iWinningPlayer == con.iBarbarian and iLosingPlayer < con.iNumPlayers:
 		sd.changeBarbarianLosses(iLosingPlayer, 1)
 	
 def onCivSpawn(iPlayer):
@@ -1454,7 +1455,7 @@ def calculateStability(iPlayer):
 	iMilitaryStrengthStability = 0
 	iBarbarianLossesStability = 0
 	
-	iNumerator = 0
+	fNumerator = 0.0
 	iDenominator = 0
 	
 	# war success
@@ -1467,20 +1468,24 @@ def calculateStability(iPlayer):
 			# ignore insignificant wars
 			if iCombinedSuccess < 20: continue
 			
-			# make losing wars more influential
-			if iOurSuccess <= iTheirSuccess: iCombinedSuccess *= 5
-			else: iCombinedSuccess *= 2
+			fThisWarSuccess = 1.0 * (1.0 * iOurSuccess/iCombinedSuccess - 1.0/2)
 			
-			iNumerator += iOurSuccess - iTheirSuccess
-			iDenominator += iCombinedSuccess
+			fNumerator += fThisWarSuccess
+			iDenominator += 1
 				
 			#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' war against ' + gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0) + '\n' + pPlayer.getCivilizationAdjective(0) + ' success: ' + str(iOurSuccess) + '\n' + gc.getPlayer(iLoopPlayer).getCivilizationAdjective(0) + ' success: ' + str(iTheirSuccess) + '\nResulting stability: ' + str(iThisWarStability))
 			
 	if iDenominator > 0:
-		iWarSuccessStability = iNumerator / iDenominator
+		fTotalSuccess = 1.0 * fNumerator / iDenominator
 		
-	if iWarSuccessStability > 10: iWarSuccessStability = 10
-	elif iWarSuccessStability < -25: iWarSuccessStability = -25
+		if fTotalSuccess > 0:
+			iWarSuccessStability = int(fTotalSuccess * 10)
+		else:
+			iWarSuccessStability = int(sigmoid(fTotalSuccess) * 20)
+		
+		sLogString = pPlayer.getCivilizationAdjective(0) + ' total war success: ' + str(fTotalSuccess) + '\nStability: ' + str(iWarSuccessStability)
+		
+		utils.debugTextPopup(sLogString)
 			
 	#if iWarSuccessStability > 0:
 	#	sMilitaryString += localText.getText('TXT_KEY_STABILITY_WINNING_WARS', (iWarSuccessStability,))
@@ -1521,7 +1526,10 @@ def calculateStability(iPlayer):
 	#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' Stability: ' + str(iStability) + '\nExpansion: ' + str(iExpansionStability) + '\nEconomy: ' + str(iEconomyStability) + '\nDomestic: ' + str(iDomesticStability) + '\nForeign: ' + str(iForeignStability) + '\nMilitary: ' + str(iMilitaryStability))
 
 	return iStability, [iExpansionStability, iEconomyStability, iDomesticStability, iForeignStability, iMilitaryStability], lParameters
-	
+
+def sigmoid(x):
+	return 2.0 / (1 + math.exp(-5*x)) - 1.0
+
 def determineCrisisType(lStabilityTypes):
 	iLowestEntry = utils.getHighestEntry(lStabilityTypes, lambda x: -x)
 	return lStabilityTypes.index(iLowestEntry)
