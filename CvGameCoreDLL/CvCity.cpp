@@ -3864,6 +3864,10 @@ void CvCity::hurry(HurryTypes eHurry)
 	// Leoreth: amount of sacrificed population increases hurry anger
 	iHurryAngerModifier = (iHurryPopulation + 1) / 2;
 
+	// Leoreth: Pyramids negate unhappiness scaling
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMID))
+		iHurryAngerModifier = 1;
+
 	changeHurryAngerTimer(iHurryAngerLength * iHurryAngerModifier);
 
 	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())

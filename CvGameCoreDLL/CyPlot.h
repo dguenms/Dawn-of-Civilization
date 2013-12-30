@@ -266,6 +266,8 @@ public:
 	bool isCore(int ePlayer);
 	void setCore(int ePlayer, bool bReborn, bool bNewValue);
 	int getSettlerMapValue(int ePlayer);
+	bool isWithinGreatWall();
+	void setWithinGreatWall(bool bNewValue);
 
 private:
 	CvPlot* m_pPlot;

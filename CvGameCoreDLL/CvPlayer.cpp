@@ -25013,6 +25013,11 @@ bool CvPlayer::isHasBuilding(BuildingTypes eIndex) const
     return (countNumBuildings(eIndex) > 0);
 }
 
+bool CvPlayer::isHasBuildingEffect(BuildingTypes eIndex) const
+{
+	return (isHasBuilding(eIndex) && !GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo(eIndex).getObsoleteTech()));
+}
+
 EraTypes CvPlayer::getSoundtrackEra()
 {
 	ReligionTypes eStateReligion = getStateReligion();

@@ -2397,7 +2397,8 @@ bool CvUnit::canEnterArea(TeamTypes eTeam, const CvArea* pArea, bool bIgnoreRigh
 		return false;
 	}
 
-	if (isBarbarian() && DOMAIN_LAND == getDomainType())
+	// Leoreth: changed Great Wall effect
+	/*if (isBarbarian() && DOMAIN_LAND == getDomainType())
 	{
 		if (eTeam != NO_TEAM && eTeam != getTeam())
 		{
@@ -2406,7 +2407,7 @@ bool CvUnit::canEnterArea(TeamTypes eTeam, const CvArea* pArea, bool bIgnoreRigh
 				return false;
 			}
 		}
-	}
+	}*/
 
 	return true;
 }
