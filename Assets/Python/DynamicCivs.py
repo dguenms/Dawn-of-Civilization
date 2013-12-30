@@ -1160,24 +1160,22 @@ class DynamicCivs:
 		if iPlayer == iEgypt:
 			if bResurrected and self.getResurrections(iPlayer) < 2:
 				if bTheocracy and iReligion == con.iIslam:
-					if iEra <= iMedieval:
-						if pArabia.isAlive():
+					if iEra <= iIndustrial:
+						if tPlayer.isHasTech(con.iGunpowder):
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_CALIPHATE")
+						elif pArabia.isAlive():
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_FATIMID_CALIPHATE")
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_AYYUBID_CALIPHATE")
 						return
-					elif iEra <= iIndustrial:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_CALIPHATE")
-						return
 				elif iReligion == con.iIslam:
-					if iEra <= iMedieval:
-						if pArabia.isAlive():
+					if iEra <= iIndustrial:
+						if tPlayer.isHasTech(con.iGunpowder):
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_SULTANATE")
+						elif pArabia.isAlive():
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_FATIMID_SULTANATE")
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_AYYUBID_SULTANATE")
-						return
-					elif iEra <= iIndustrial:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_SULTANATE")
 						return
 				else:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_COPTIC")
