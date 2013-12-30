@@ -589,7 +589,7 @@ def secedeCities(iPlayer, lCities):
 	# might need a more sophisticated approach to also catch minors and other unstable civs in their respawn area
 	for iResurrectionPlayer in dPossibleResurrections:
 		utils.debugTextPopup('Resurrection: ' + gc.getPlayer(iResurrectionPlayer).getCivilizationShortDescription(0))
-		doResurrection(iResurrectionPlayer, dPossibleResurrections[iResurrectionPlayer])
+		resurrectionFromCollapse(iResurrectionPlayer, dPossibleResurrections[iResurrectionPlayer])
 		
 def secedeCity(city, iNewOwner):
 	sName = city.getName()
@@ -1128,7 +1128,7 @@ def calculateStability(iPlayer):
 	if iPeripheryExcess > 100: iPeripheryExcess = 100
 		
 	if iPeripheryExcess > 0:
-		iCorePeripheryStability -= 25 * sigmoid(iPeripheryExcess / 100)
+		iCorePeripheryStability -= int(25 * sigmoid(1.0 * iPeripheryExcess / 100))
 		
 		utils.debugTextPopup('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
 		
@@ -1496,9 +1496,9 @@ def calculateStability(iPlayer):
 		else:
 			iWarSuccessStability = int(20 * sigmoid(1.0 * iTotalSuccess / 100))
 		
-		sLogString = pPlayer.getCivilizationAdjective(0) + ' total war success: ' + str(iTotalSuccess) + '\nStability: ' + str(iWarSuccessStability)
+		#sLogString = pPlayer.getCivilizationAdjective(0) + ' total war success: ' + str(iTotalSuccess) + '\nStability: ' + str(iWarSuccessStability)
 		
-		utils.debugTextPopup(sLogString)
+		#utils.debugTextPopup(sLogString)
 			
 	#if iWarSuccessStability > 0:
 	#	sMilitaryString += localText.getText('TXT_KEY_STABILITY_WINNING_WARS', (iWarSuccessStability,))
@@ -1641,7 +1641,7 @@ def checkResurrection(iGameTurn):
 						doResurrection(iLoopCiv, lCityList)
 						return
 						
-def getResurrectionCities(iPlayer):
+def getResurrectionCities(iPlayer, bFromCollapse = False):
 
 	pPlayer = gc.getPlayer(iPlayer)
 	teamPlayer = gc.getTeam(iPlayer)
@@ -1698,6 +1698,12 @@ def getResurrectionCities(iPlayer):
 			
 		if gc.getPlayer(iOwner).getNumCities() >= iMinNumCitiesOwner:
 		
+			# special case for civs returning from collapse: be more strict
+			if bFromCollapse:
+				if iOwnerStability < con.iStabilityShaky:
+					lFlippingCities.append(city)
+				continue
+		
 			# owner stability below -10: city always flips
 			if iOwnerStability < con.iStabilityShaky:
 				lFlippingCities.append(city)
@@ -1715,10 +1721,19 @@ def getResurrectionCities(iPlayer):
 					lFlippingCities.append(city)
 					
 		# if only up to two cities wouldn't flip, they flip as well (but at least one city has to flip already, else the respawn fails)
-		if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0:
+		if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0 and not bFromCollapse:
 			lFlippingCities = lPotentialCities
 			
 	return lFlippingCities
+	
+def resurrectionFromCollapse(iPlayer, lCityList):
+
+	# collect other cities that could flip
+	for city in getResurrectionCities(iPlayer, True):
+		if city not in lCityList:
+			lCityList.append(city)
+			
+	doResurrection(iPlayer, lCityList)
 	
 def doResurrection(iPlayer, lCityList, bAskFlip = True):
 
