@@ -198,6 +198,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_bFlagDirty = false;
 	m_bPlotLayoutDirty = false;
 	m_bLayoutStateWorked = false;
+	m_bWithinGreatWall = false;
 
 	m_eOwner = NO_PLAYER;
 	m_ePlotType = PLOT_OCEAN;
@@ -444,6 +445,21 @@ void CvPlot::doTurn()
 	doCulture();
 
 	verifyUnitValidPlot();
+
+	// Leoreth: Great Wall effect
+	if (isWithinGreatWall() && isOwned())
+	{
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREATWALL))
+		{
+			for (int iI = 0; iI < getNumUnits(); iI++)
+			{
+				if (getUnitByIndex(iI)->getOwnerINLINE() == BARBARIAN)
+				{
+					getUnitByIndex(iI)->changeDamage(10, getOwnerINLINE());
+				}
+			}
+		}
+	}
 
 	/*
 	if (!isOwned())
@@ -2847,20 +2863,31 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		{
 			iRegularCost = 1;
 		}
-		else {
-	//Rhye - end
-		iRegularCost = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getMovementCost() : GC.getFeatureInfo(getFeatureType()).getMovementCost());
-
-		if (isHills())
+		else
 		{
-			iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
-		}
+		//Rhye - end
+			iRegularCost = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getMovementCost() : GC.getFeatureInfo(getFeatureType()).getMovementCost());
 
-		if (iRegularCost > 0)
-		{
-			iRegularCost = std::max(1, (iRegularCost - pUnit->getExtraMoveDiscount()));
-		}
-		} //Rhye
+			if (isHills())
+			{
+				iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
+			}
+
+			// Leoreth: Great Wall effect
+			if (isWithinGreatWall() && isOwned())
+			{
+				if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREATWALL))
+				{
+					iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
+				}
+			}
+
+			if (iRegularCost > 0)
+			{
+				iRegularCost = std::max(1, (iRegularCost - pUnit->getExtraMoveDiscount()));
+			}
+		} 
+		//Rhye
 	}
 
 	bool bHasTerrainCost = (iRegularCost > 1);
@@ -9194,6 +9221,7 @@ void CvPlot::read(FDataStreamBase* pStream)
 	// m_bFlagDirty not saved
 	// m_bPlotLayoutDirty not saved
 	// m_bLayoutStateWorked not saved
+	pStream->Read(&m_bWithinGreatWall); // Leoreth
 
 	pStream->Read(&m_eOwner);
 	pStream->Read(&m_ePlotType);
@@ -9459,6 +9487,7 @@ void CvPlot::write(FDataStreamBase* pStream)
 	// m_bFlagDirty not saved
 	// m_bPlotLayoutDirty not saved
 	// m_bLayoutStateWorked not saved
+	pStream->Write(m_bWithinGreatWall);
 
 	pStream->Write(m_eOwner);
 	pStream->Write(m_ePlotType);
@@ -10802,4 +10831,16 @@ void CvPlot::setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue)
 int CvPlot::getSettlerMapValue(PlayerTypes ePlayer) const
 {
 	return GET_PLAYER(ePlayer).getSettlersMaps(67 - getY_INLINE(), getX_INLINE());
+}
+
+// Leoreth
+bool CvPlot::isWithinGreatWall() const
+{
+	return m_bWithinGreatWall;
+}
+
+// Leoreth
+void CvPlot::setWithinGreatWall(bool bNewValue)
+{
+	m_bWithinGreatWall = bNewValue;
 }

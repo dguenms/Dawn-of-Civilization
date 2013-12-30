@@ -155,3 +155,13 @@
 # claims on cities from collapsing civs because of war targets are now only valid if the closest city isn't controlled by a different enemy of the collapsing civ
 # Opera House is cheaper and now gives +2 happiness and +1 happiness per 10% culture instead of removing unhappiness entirely
 # removed the base +1 happiness per 10% culture
+# Egyptian Obelisk now has one priest slot and +25% culture
+# Ethiopian Stele now has two priest slots
+# changed Keshik strength to 10
+# The Great Lighthouse now provides only one trade route for all coastal cities, and one additional trade route for its own city
+# The Spiral Minaret now only provides +1 gold for every state religion building
+# New Pyramids effect: hurry unhappiness does not scale with the amount of sacrificed population
+# The Pyramids now expire with Feudalism
+# Barbarians can now enter your territory even with the Great Walls
+# New Great Wall effects: additional movement costs for enemies within your territory, barbarians take damage inside of your territory
+# The Great Wall now expires with Military Tradition

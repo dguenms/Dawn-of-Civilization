@@ -1084,7 +1084,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY_HELP</Tag>
-		<English>[ICON_BULLET]Unlimited experience from barbarian units[NEWLINE][ICON_BULLET]Victories against barbarians contribute to great general birth</English>
+		<English>[ICON_BULLET]Unlimited Experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories Against Barbarians Contribute to Great General Birth</English>
 		<German>[ICON_BULLET]Unbegrenzte Erfahrung von barbarischen Einheiten[NEWLINE][ICON_BULLET]Siege gegen Barbaren tragen zur Geburt großer Generäle bei</German>
 	</TEXT>
 	<TEXT>
@@ -1268,7 +1268,17 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EIFFEL_TOWER_HELP</Tag>
-		<English>[ICON_BULLET]Golden Ages consume at most three great people.</English>
-		<German>[ICON_BULLET]Goldene Zeitalter verbrauchen höchstens drei große Persönlichkeiten.</German>
+		<English>[ICON_BULLET]Golden Ages Consume at most Three Great People</English>
+		<German>[ICON_BULLET]Goldene Zeitalter verbrauchen höchstens drei große Persönlichkeiten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMID_HELP</Tag>
+		<English>[ICON_BULLET]Hurry Unhappiness Does Not Increase with the Amount of Sacrificed Population</English>
+		<German>[ICON_BULLET]Die Unzufriedenheit durch Sklaverei steigt nicht mit der Anzahl der geopferten Bevölkerung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREAT_WALL_HELP</Tag>
+		<English>[ICON_BULLET]Reduced Enemy Movement Speed Within the Walls.[NEWLINE][ICON_BULLET]Barbarian Units Take Damage within the Walls</English>
+		<German>[ICON_BULLET]Geringere Bewegung feindlicher Einheiten innerhalb der Mauern.[NEWLINE][ICON_BULLET]Barbarische Einheiten nehmen Schaden innerhalb der Mauern</German>
 	</TEXT>
 </Civ4GameText>

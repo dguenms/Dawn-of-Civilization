@@ -1981,7 +1981,12 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 
 		iHurryAngerLength = pHeadSelectedCity->hurryAngerLength((HurryTypes)(widgetDataStruct.m_iData1));
 
+		// Leoreth: anger scales with amount of sacrificed population
 		int iHurryAngerModifier = (1 + iHurryPopulation) / 2;
+
+		// Leoreth: Pyramids negate unhappiness scaling
+		if (GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMID))
+			iHurryAngerModifier = 1;
 
 		if (iHurryAngerLength > 0)
 		{

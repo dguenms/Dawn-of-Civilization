@@ -506,6 +506,8 @@ public:
 	bool isCore(PlayerTypes ePlayer) const;
 	void setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue);
 	int getSettlerMapValue(PlayerTypes ePlayer) const;
+	bool isWithinGreatWall() const;
+	void setWithinGreatWall(bool bNewValue);
 
 protected:
 
@@ -565,6 +567,9 @@ protected:
 	// Leoreth: initialized by Python at the beginning of the game
 	bool* m_abCore;
 	bool* m_abRebornCore;
+
+	// Leoreth
+	bool m_bWithinGreatWall;
 
 	short* /*ImprovementTypes*/ m_aeRevealedImprovementType;
 	short* /*RouteTypes*/ m_aeRevealedRouteType;

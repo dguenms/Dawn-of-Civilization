@@ -559,6 +559,13 @@ class CvRFCEventHandler:
 				if city.getCityIndexPlot(i).isPeak():
 					iNumPeaks += 1
 			city.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_MACHU_PICCHU"), 0, iNumPeaks * 2)
+			
+		# Leoreth: Great Wall
+		if iBuildingType == con.iGreatWall:
+			for iPlot in range(gc.getMap().numPlots()):
+				plot = gc.getMap().plotByIndex(iPlot)
+				if plot.getOwner() == iOwner and not plot.isWater():
+					plot.setWithinGreatWall(True)
 
 		# Leoreth: found Buddhism when a Hindu temple is built
 		if iBuildingType == con.iHinduTemple:

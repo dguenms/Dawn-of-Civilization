@@ -3513,8 +3513,8 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 			iValue += 5;
 	}
 
-	//Leoreth: more barbarian pressure against India
-	if (getID() == BARBARIAN && pCity->getOwner() == INDIA)
+	//Leoreth: more barbarian pressure against India and Rome
+	if (getID() == BARBARIAN && (pCity->getOwner() == INDIA || pCity->getOwner() == ROME))
 		iValue += 2;
 
 	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)

@@ -617,6 +617,8 @@ class RiseAndFall:
 			
 		self.foundCapitals()
 		self.flipStartingTerritory()
+		
+		self.updateGreatWall()
 	
 		if utils.getScenario() == con.i3000BC:
 			self.create4000BCstartingUnits()
@@ -647,7 +649,6 @@ class RiseAndFall:
 		self.invalidateUHVs()
 		
 	def adjustCityCulture(self):
-	
 		if utils.getTurns(10) == 10: return
 	
 		lCities = []
@@ -657,8 +658,34 @@ class RiseAndFall:
 		for city in lCities:
 			city.setCulture(city.getOwner(), utils.getTurns(city.getCulture(city.getOwner())), True)
 			
-	def adjust1700ADCulture(self):
+	def updateGreatWall(self):
+		if utils.getScenario() == con.i3000BC:
+			return
 	
+		elif utils.getScenario() == con.i600AD:
+			tTL = (98, 39)
+			tBR = (107, 48)
+			lExceptions = [(105, 48), (106, 48), (107, 48), (106, 47), (98, 46), (98, 47), (99, 47), (98, 48), (99, 48), (98, 39), (99, 39), (100, 39), (98, 40), (99, 40), (98, 41), (99, 41), (98, 42)]
+			lAdditions = [(103, 38), (104, 37), (101, 49), (102, 49), (103, 49)]
+				
+		elif utils.getScenario() == con.i1700AD:
+			tTL = (98, 40)
+			tBR = (106, 50)
+			lExceptions = [(98, 46), (98, 47), (98, 48), (98, 49), (99, 49), (98, 50), (99, 50), (100, 50)]
+			lAdditions = [(104, 51), (105, 51), (106, 51), (107, 50), (107, 41), (107, 42), (107, 43), (103, 39), (104, 39), (105, 39), (104, 37)]
+			
+		for x in range(tTL[0], tBR[0]+1):
+			for y in range(tTL[1], tBR[1]+1):
+				if (x, y) not in lExceptions:
+					plot = gc.getMap().plot(x, y)
+					if not plot.isWater(): plot.setWithinGreatWall(True)
+					#utils.debugTextPopup('setWithinGreatWall: ' + str((x,y)))
+		for (x, y) in lAdditions:
+			plot = gc.getMap().plot(x, y)
+			if not plot.isWater(): plot.setWithinGreatWall(True)
+			#utils.debugTextPopup('setWithinGreatWall: ' + str((x,y)))
+			
+	def adjust1700ADCulture(self):
 		for x in range(124):
 			for y in range(68):
 				plot = gc.getMap().plot(x, y)
@@ -666,7 +693,6 @@ class RiseAndFall:
 					utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
 			
 	def prepareColonists(self):
-	
 		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
 			self.setAstronomyTurn(iPlayer, getTurnForYear(1700))
 			
@@ -678,12 +704,10 @@ class RiseAndFall:
 		self.setColonistsAlreadyGiven(iNetherlands, 4)
 		
 	def assign3000BCGold(self):
-	
 		for iPlayer in range(con.iNumTotalPlayers):
 			gc.getPlayer(iPlayer).changeGold(con.tStartingGold[iPlayer])
 			
 	def assign600ADGold(self):
-	
 		pChina.changeGold(300)
 		pJapan.changeGold(150)
 		
@@ -693,7 +717,6 @@ class RiseAndFall:
 		pSeljuks.changeGold(250)
 		
 	def assign1700ADGold(self):
-	
 		pChina.changeGold(300)
 		pJapan.changeGold(100)
 		
@@ -708,8 +731,7 @@ class RiseAndFall:
 		pThailand.changeGold(-500)
 		pNetherlands.changeGold(200)
 		
-	def init1700ADDiplomacy(self):
-	
+	def init1700ADDiplomacy(self):	
 		self.changeAttitudeExtra(iPersia, iTurkey, -4)
 		self.changeAttitudeExtra(iPersia, iMughals, -2)
 		self.changeAttitudeExtra(iChina, iKorea, 2)
@@ -729,32 +751,26 @@ class RiseAndFall:
 		
 		teamEngland.declareWar(iMughals, False, WarPlanTypes.WARPLAN_TOTAL)
 	
-	def changeAttitudeExtra(self, iPlayer1, iPlayer2, iValue):
-	
+	def changeAttitudeExtra(self, iPlayer1, iPlayer2, iValue):	
 		gc.getPlayer(iPlayer1).AI_changeAttitudeExtra(iPlayer2, iValue)
 		gc.getPlayer(iPlayer2).AI_changeAttitudeExtra(iPlayer1, iValue)
 		
 	def set3000BCStability(self):
-	
 		return
 			
-	def set600ADStability(self):
-	
+	def set600ADStability(self):	
 		return
 		
-	def set1700ADStability(self):
-	
+	def set1700ADStability(self):	
 		return
 
 	def invalidateUHVs(self):
-	
 		for iPlayer in range(con.iNumPlayers):
 			if not gc.getPlayer(iPlayer).isPlayable():
 				for i in range(3):
 					utils.setGoal(iPlayer, i, 0)
 					
-	def foundCapitals(self):
-	
+	def foundCapitals(self):	
 		if utils.getScenario() == con.i600AD:
 		
 			# Byzantium
@@ -2293,9 +2309,8 @@ class RiseAndFall:
 							
 		# Leoreth: Byzantium also flips Roman cities in the eastern half of the empire outside of its core (Egypt, Mesopotamia)
 		if iCiv == iByzantium and pRome.isAlive():
-			for pCity in PyPlayer(iRome).getCityList():
-				city = pCity.GetCy()
-				if city.getRegionID() in [con.rEgypt, con.rEthiopia, con.rPersia, con.rMesopotamia]:
+			for city in utils.getCityList(iRome):
+				if city.getX() >= tCapitals[0][iByzantium][0] and city.getY() <= tCapitals[0][iByzantium][1]:
 					cityList.append(city)
 					
 		# Leoreth: remove capital locations
@@ -3323,6 +3338,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iMaceman, iCiv, tPlot, 1)
 			if utils.getHumanID() != iPoland:
 				utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iKnight, iCiv, tPlot, 1)
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                 if (iCiv == iTurkey):
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)

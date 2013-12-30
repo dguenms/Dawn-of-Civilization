@@ -4530,6 +4530,12 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}
 		// end UHV requirement info
 
+		//Leoreth: display Great Wall, only bugfix purposes
+		if (pPlot->isWithinGreatWall())
+		{
+			szString.append("Great Wall");
+			szString.append(NEWLINE);
+		}
 
 		//Leoreth: display region, only bugfix purposes
 		/*if (!pPlot->isWater())
@@ -9832,11 +9838,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_PROVIDES_AREA_CLEAN_POWER"));
 	}
 
-	if (kBuilding.isAreaBorderObstacle())
+	// Leoreth: change Great Wall effect
+	/*if (kBuilding.isAreaBorderObstacle())
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_BORDER_OBSTACLE"));
-	}
+	}*/
 
 	for (iI = 0; iI < GC.getNumVoteSourceInfos(); ++iI)
 	{
