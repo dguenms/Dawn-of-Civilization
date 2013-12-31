@@ -2522,7 +2522,7 @@ iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHo
 iForge, iMaliMint, iFactory, iGermanAssemblyPlant, iCoalPlant, iJapaneseShalePlant, iHydroPlant, iNuclearPlant,
 iIndustrialPark, iObelisk, iEgyptianObelisk, iEthiopianStele, iNativeAmericaTotem, iIndonesianCandi, iPublicTransportation, iAcademy,
 iLibrary, iArabianMadrassa, iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, 
-iRussianResearchInstitute, iTheatre, iFrenchSalon, iByzantineHippodrome, iChinesePavillion, iColosseum, iGreekOdeon, iMayaBallCourt,
+iRussianResearchInstitute, iTheatre, iGreekOdeon, iFrenchSalon, iByzantineHippodrome, iChinesePavillion, iColosseum, iMayaBallCourt,
 iBabylonGarden, iMexicoCharreada, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iKongoMbwadi, iPhoenicianGlassmaker, 
 iGrocer, iBrazilianFazenda, iColombianHacienda, iBank, iEnglishStockExchange, iSupermarket, iAmericanMall, iArgentineRefrigerationPlant, iCourthouse, 
 iAztecSacrificialAltar,  iHolyRomanRathaus, iSumerianZiggurat, iPolishSejmik, iJail,  iIndianMausoleum, iLevee, iNetherlandsDike, iIntelligenceAgency, 

@@ -1442,7 +1442,7 @@ class DynamicCivs:
 					elif capital.getName() == "Stockholm" or capital.getName() == "Kalmar":
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_SWEDEN")
 						return
-					elif capital.getName() == "Kobenhavn":
+					elif capital.getName() == "Kobenhavn" or capital.getName() == "Roskilde":
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK")
 						return
 						
