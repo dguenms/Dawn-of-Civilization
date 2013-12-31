@@ -165,3 +165,8 @@
 # Barbarians can now enter your territory even with the Great Walls
 # New Great Wall effects: additional movement costs for enemies within your territory, barbarians take damage inside of your territory
 # The Great Wall now expires with Military Tradition
+# Greek Hoplite is now an Axeman that starts with Shock and Formation
+# Mayan Ball Court now requires Mathematics
+# Indian Stepwell now requires Masonry, but doesn't add an artist slot anymore
+# Greek Odeon now replaces Theatre, requires Aesthetics and gives +1 happiness and a scientist slot
+# Viking Trading Post now requires Sailing

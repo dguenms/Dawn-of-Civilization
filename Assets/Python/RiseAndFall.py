@@ -3751,9 +3751,9 @@ class RiseAndFall:
 			utils.makeUnit(con.iJapanSamurai, iJapan, tCapitals[0][iJapan], 3)
 
 
-                utils.makeUnit(con.iSettler, iVikings, tCapitals[0][iVikings], 2)
+                utils.makeUnit(con.iSettler, iVikings, tCapitals[0][iVikings], 1)
 		#utils.makeUnit(con.iWorker, iVikings, tCapitals[0][iVikings], 3)
-                utils.makeUnit(con.iLongbowman, iVikings, tCapitals[0][iVikings], 4)
+                utils.makeUnit(con.iLongbowman, iVikings, tCapitals[0][iVikings], 2)
                 utils.makeUnit(con.iAxeman, iVikings, tCapitals[0][iVikings], 2)
                 utils.makeUnit(con.iScout, iVikings, tCapitals[0][iVikings], 1)
                 pVikings.initUnit(con.iSwordsman, tCapitals[0][iVikings][0], tCapitals[0][iVikings][1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
@@ -3762,10 +3762,22 @@ class RiseAndFall:
                 if (tSeaPlot):                                
                         utils.makeUnit(con.iWorkBoat, iVikings, tSeaPlot, 1)
                         pVikings.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
-                        utils.makeUnit(con.iSettler, iVikings, tSeaPlot, 1)
-                        utils.makeUnit(con.iLongbowman, iVikings, tSeaPlot, 1)
+			if utils.getHumanID() == iVikings:
+				utils.makeUnit(con.iSettler, iVikings, tSeaPlot, 1)
+				utils.makeUnit(con.iLongbowman, iVikings, tSeaPlot, 1)
                         pVikings.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)                                  #utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
-                        pVikings.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)                                  #utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
+                        pVikings.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
+			#utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
+			
+		# start AI settler and garrison in Denmark and Sweden
+		if utils.getHumanID() != iVikings:
+			utils.makeUnit(con.iSettler, iVikings, (60, 56), 1)
+			utils.makeUnit(con.iLongbowman, iVikings, (60, 56), 1)
+			utils.makeUnit(con.iSettler, iVikings, (63, 59), 1)
+			utils.makeUnit(con.iLongbowman, iVikings, (63, 59), 1)
+		else:
+			utils.makeUnit(con.iSettler, iVikings, tCapitals[0][iVikings], 1)
+			utils.makeUnit(con.iLongbowman, iVikings, tCapitals[0][iVikings], 2)
 
                 utils.makeUnit(con.iSpearman, iByzantium, tCapitals[0][iByzantium], 2)
                 utils.makeUnit(con.iArcher, iByzantium, tCapitals[0][iByzantium], 3)
