@@ -8910,8 +8910,8 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 		return DENIAL_WORST_ENEMY;
 	}
 
-	// Leoreth: Indonesian UP: AI more willing to trade away resources it would usually keep
-	if (AI_corporationBonusVal(eBonus) > 0 && ePlayer != (PlayerTypes)INDONESIA)
+	// Leoreth: Indonesian UP: AI more willing to trade away resources it would usually keep - disabled
+	if (AI_corporationBonusVal(eBonus) > 0/* && ePlayer != (PlayerTypes)INDONESIA*/)
 	{
 		return DENIAL_JOKING;
 	}
@@ -8954,9 +8954,9 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 
 	eAttitude = AI_getAttitude(ePlayer);
 
-	//Leoreth: Indonesian UP: AI trades away resources it would usually keep
-	if (ePlayer == (PlayerTypes)INDONESIA)
-		eAttitude = (AttitudeTypes)((int)AI_getAttitude(ePlayer) + 1);
+	//Leoreth: Indonesian UP: AI trades away resources it would usually keep - disabled
+	//if (ePlayer == (PlayerTypes)INDONESIA)
+	//	eAttitude = (AttitudeTypes)((int)AI_getAttitude(ePlayer) + 1);
 
 	if (bStrategic)
 	{

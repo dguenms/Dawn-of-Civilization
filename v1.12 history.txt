@@ -166,7 +166,10 @@
 # New Great Wall effects: additional movement costs for enemies within your territory, barbarians take damage inside of your territory
 # The Great Wall now expires with Military Tradition
 # Greek Hoplite is now an Axeman that starts with Shock and Formation
-# Mayan Ball Court now requires Mathematics
+# Mayan Ball Court now requires Mathematics, gives +2 happiness and +2 experience for melee and archery units
 # Indian Stepwell now requires Masonry, but doesn't add an artist slot anymore
 # Greek Odeon now replaces Theatre, requires Aesthetics and gives +1 happiness and a scientist slot
 # Viking Trading Post now requires Sailing
+# Indonesian Orang Laut is now a cheaper strength 4 Privateer that requires Compass and receives +50% against other Privateers
+# New Indonesia UP effect: Additional gold for foreign ships in your core
+# Thai Ho Trai is now a cheaper library that gives +1 happiness

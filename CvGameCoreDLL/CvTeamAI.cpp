@@ -2497,9 +2497,9 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	//Leoreth: Indonesian UP: AI more likely to open borders
-	if ((int)eTeam == INDONESIA)
-		eAttitude = (AttitudeTypes)((int)eAttitude + 1);
+	//Leoreth: Indonesian UP: AI more likely to open borders - disabled
+	//if ((int)eTeam == INDONESIA)
+	//	eAttitude = (AttitudeTypes)((int)eAttitude + 1);
 
 	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
 	// for (iI = 0; iI < MAX_PLAYERS; iI++)

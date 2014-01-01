@@ -22,9 +22,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_EGY2</Tag>
-		<English>Monarchy, Serfdom and Pantheon are enabled at start</English>
+		<English>Dynasticism, Slavery and Pantheon are enabled at start</English>
 		<French>Le droit héréditaire et l'esclavage sont disponibles au départ</French>
-		<German>Aktivierung von Monarchie, Leibeigenschaft und Pantheon beim Spielstart</German>
+		<German>Aktivierung von Dynastizismus, Sklaverei und Pantheon beim Spielstart</German>
 		<Italian>All'avvio sono abilitati governo ereditario e schiavitù</Italian>
 		<Spanish>Gobierno hereditario y Esclavitud est&#225;n activados al principio</Spanish>
 	</TEXT>
@@ -405,5 +405,10 @@
 		<Tag>TXT_KEY_UP_MONGOL_TERROR_US</Tag>
 		<English>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</English>
 		<German>Aus Furcht vor den anrückenden mongolischen Armeen haben die Bürger von %s1 ihre Stellungen aufgegeben!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INDONESIAN_UP</Tag>
+		<English>The trade passing through our waters brings %d1 [ICON_GOLD] to our treasury!</English>
+		<German>Der durch unsere Gewässer verlaufende Handel bringt unserer Schatzkammer %d1 [ICON_GOLD]!</German>
 	</TEXT>
 </Civ4GameText>
