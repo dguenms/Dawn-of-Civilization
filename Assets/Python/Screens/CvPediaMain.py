@@ -525,12 +525,6 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 			tList.pop(con.iNativeSlave)
 			tList.pop(con.iBireme)
 			tList.pop(con.iAmericanNavySeal)
-			#tList.pop(83) #Hwacha
-                        #tList.pop(71) #Cataphract  
-                        #tList.pop(con.iHolyRomanLandsknecht) #Landsknecht
-                        #tList.pop(con.iZuluImpi) #Impi
-                        #tList.pop(con.iNativeAmericaDogSoldier) #DogSoldier                          
-                        #tList.pop(con.iSumerianVulture) #Vulture
                         tList.pop(con.iCelticGallicWarrior) #GallicWarrior
 			tList.pop(con.iHarappanMilitia)
                         pass

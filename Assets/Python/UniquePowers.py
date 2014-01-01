@@ -175,6 +175,8 @@ class UniquePowers:
 
                 if (iGameTurn >= getTurnForYear(con.tBirth[iAmerica])+utils.getTurns(5)):
                         self.checkImmigration()
+			
+		self.indonesianUP()
 
 		#if iGameTurn == getTurnForYear(con.tBirth[iRome]+1):
 		#	for iCiv in range(iNumActivePlayers):
@@ -785,3 +787,19 @@ class UniquePowers:
 					if pCurrent.getOwner() == iPreviousOwner:
 						utils.convertPlotCulture(pCurrent, iCiv, 15, False)
                         
+	# Indonesian UP: additional gold for foreign ships in your core
+	def indonesianUP(self):
+		iNumUnits = 0
+		for (x, y) in utils.getPlotList(con.tCoreAreasTL[0][iIndonesia], con.tCoreAreasBR[0][iIndonesia]):
+			plot = gc.getMap().plot(x, y)
+			if plot.getOwner() == iIndonesia:
+				for iUnit in range(plot.getNumUnits()):
+					unit = plot.getUnit(iUnit)
+					if unit.getOwner() < con.iNumPlayers and unit.getOwner() != iIndonesia and unit.getDomainType() == DomainTypes.DOMAIN_SEA:
+						iNumUnits += 1
+					
+		if iNumUnits > 0:
+			iGold = 5 * iNumUnits
+			gc.getPlayer(iIndonesia).changeGold(iGold)
+			if utils.getHumanID() == iIndonesia:
+				CyInterface().addMessage(iIndonesia, False, con.iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
