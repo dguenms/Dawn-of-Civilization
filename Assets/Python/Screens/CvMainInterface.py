@@ -2437,6 +2437,7 @@ class CvMainInterface:
 				if ( pHeadSelectedUnit.getOwner() == gc.getGame().getActivePlayer() and g_pSelectedUnit != pHeadSelectedUnit ):
 				
 					g_pSelectedUnit = pHeadSelectedUnit
+					pUnit = g_pSelectedUnit
 					
 					iCount = 0
 
@@ -2466,6 +2467,20 @@ class CvMainInterface:
 						screen.show( "BottomButtonContainer" )
 						
 						iCount = iCount + 1
+						
+					# Leoreth: Byzantine UP: bribe barbarians
+					if pUnit.getUnitType() == con.iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == con.iByzantium:
+						plot = CyMap().plot(pUnit.getX(), pUnit.getY())
+						unitList = [plot.getUnit(i) for i in range(plot.getNumUnits())]
+						bBarbarian = False
+						for unit in unitList:
+							if unit.getOwner() == con.iBarbarian:
+								bBarbarian = True
+								break
+						if bBarbarian:
+							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(con.iBanking).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 301, 301, False)
+							screen.show("BottomButtonContainer")
+							iCount = iCount + 1
 
 		elif (CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_HIDE_ALL and CyInterface().getShowInterface() != InterfaceVisibility.INTERFACE_MINIMAP_ONLY):
 		
@@ -5497,6 +5512,11 @@ class CvMainInterface:
 			city.changeHappinessTimer(5)
 			city.setWeLoveTheKingDay(True)
 			self.pPushedButtonUnit.kill(false, city.getOwner())
+		
+		# Leoreth: start Byzantine UP
+		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 301:
+			utils.doByzantineBribery(g_pSelectedUnit)
+		# Leoreth: end
 
 		return 0
 	

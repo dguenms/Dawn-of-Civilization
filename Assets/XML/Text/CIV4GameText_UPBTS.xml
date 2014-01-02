@@ -96,13 +96,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ</Tag>
-		<English>The Power of the Metropolis:</English>
-		<German>Die Macht der Metropole:</German>
+		<English>The Power of Bribery:</English>
+		<German>Die Macht der Bestechung:</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BYZ2</Tag>
-		<English>Immune to complete collapse as long as Constantinople is controlled</English>
-		<German>Immun gegen kompletten Kollaps solange Konstantinopel kontrolliert wird</German>
+		<English>Double gold value in trades, spies can bribe barbarian units</English>
+		<German>Doppelter Wert von Gold beim Handeln, Spione können barbarische Einheiten bestechen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KOR</Tag>
@@ -126,13 +126,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA</Tag>
-		<English>The Power of Emissaries:</English>
-		<German>Die Macht der Abgesandten:</German>
+		<English>The Power of Father Governs Children:</English>
+		<German>Die Macht von Vater Regiert Kinder:</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA2</Tag>
-		<English>Better relations with civilizations you have established embassies with</English>
-		<German>Bessere Beziehungen mit Zivilisationen, mit denen Botschaften eingerichtet wurden</German>
+		<English>Can use twice as many units to generate military happiness</English>
+		<German>Kann zweimal soviele militärische Einheiten einsetzen, um Zufriedenheit zu generieren</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IRA</Tag>
@@ -146,13 +146,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_HRE</Tag>
-		<English>The Power of the Emperor:</English>
-		<German>Die Macht des Kaisers:</German>
+		<English>The Power of Investiture:</English>
+		<German>Die Macht der Investitur:</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_HRE2</Tag>
-		<English>Double votes in Apostolic Palace elections</English>
-		<German>Doppelte Stimmzahl in Wahlen zum Apostolischen Palast</German>
+		<English>Double construction speed of state religion buildings</English>
+		<German>Doppelte Baugeschwindigkeit für Gebäude der Staatsreligion</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MUG</Tag>

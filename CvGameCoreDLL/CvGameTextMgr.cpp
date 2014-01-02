@@ -7107,6 +7107,11 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		int iMilitaryHappinessLimit = GC.getCivicInfo(eCivic).getMilitaryHappinessLimit();
 
+		if (bPlayerContext && GC.getGame().getActivePlayer() == THAILAND)
+		{
+			iMilitaryHappinessLimit *= 2;
+		}
+
 		szHelpText.append(NEWLINE);
 
 		if (iMilitaryHappinessLimit > 0)

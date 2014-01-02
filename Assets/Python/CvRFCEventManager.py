@@ -2,6 +2,12 @@
 ## This file was originally taken from CivPath mod.
 ##  modified by eN
 
+###################################################################
+#                                                                 #
+#        LEORETH: DEPRECATED, USE BUGEVENTMANAGER INSTEAD         #
+#                                                                 #
+###################################################################
+
 import CvEventManager
 import CvRFCEventHandler
 import RiseAndFall
@@ -65,7 +71,8 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
 	    7625 : ('AskColonialCityEvent', self.rnfEventApply7625, self.rnfEventBegin7625),
 	    7626 : ('OrthodoxyEvent', self.relEventApply7626, self.relEventBegin7626),
 	    7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
-	    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628)
+	    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628),
+	    7629 : ('ByzantineBriberyEvent', self.rnfEventApply7629, self.rnfEventBegin7629),
         }
 
         # --> INSERT EVENT HANDLER INITIALIZATION HERE <--
@@ -269,3 +276,8 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
     def rnfEventBegin7628(self):
 	    pass
 	    
+    def rnfEventApply7629(self, playerID, netUserData, popupReturn):
+	    self.rnf.eventApply7629(netUserData, popupReturn)
+	    
+    def rnfEventBegin7629(self):
+	    pass

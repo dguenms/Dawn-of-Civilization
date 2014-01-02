@@ -277,6 +277,8 @@ class RFCUtils:
 				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
 			if iExp > 0:
 				unit.changeExperience(iExp, 100, False, False, False)
+				
+		return unit
 
 	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum, sAdj=""): #by LOQ, modified by Leoreth
                 'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
@@ -1745,3 +1747,34 @@ class RFCUtils:
 		iUnhappy = pPlayer.calculateTotalCityUnhappiness()
 		
 		return (iHappy * 100) / max(1, iHappy + iUnhappy)
+		
+	# Leoreth: Byzantine UP: bribe barbarian units
+	def doByzantineBribery(self, spy):
+		localText = CyTranslator()
+		plot = CyMap().plot(spy.getX(), spy.getY())
+		unitList = [plot.getUnit(i) for i in range(plot.getNumUnits())]
+		targetList = []
+		iTreasury = gc.getPlayer(con.iByzantium).getGold()
+		
+		# get pairs of units with their bribe costs
+		for unit in unitList:
+			iCost = gc.getUnitInfo(unit.getUnitType()).getProductionCost() * 2
+			if unit.getOwner() == con.iBarbarian and iCost <= iTreasury:
+				targetList.append((unit, iCost))
+				
+		# only once per turn
+		spy.finishMoves()
+				
+		# launch popup
+		popup = Popup.PyPopup(7629, EventContextTypes.EVENTCONTEXT_ALL)
+		sd.setByzantineBribes(targetList)
+		popup.setHeaderString(localText.getText("TXT_KEY_BYZANTINE_UP_TITLE", ()))
+		popup.setBodyString(localText.getText("TXT_KEY_BYZANTINE_UP_BODY", ()))
+		
+		for tTuple in targetList:
+			unit, iCost = tTuple
+			popup.addButton(localText.getText("TXT_KEY_BYZANTINE_UP_BUTTON", (unit.getName(), iCost)))
+			
+		popup.addButton(localText.getText("TXT_KEY_BYZANTINE_UP_BUTTON_NONE", ()))
+
+		popup.launch(False)

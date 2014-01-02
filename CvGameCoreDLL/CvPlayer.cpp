@@ -18272,7 +18272,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeGoldPerUnit(GC.getCivicInfo(eCivic).getGoldPerUnit() * iChange);
 	changeGoldPerMilitaryUnit(GC.getCivicInfo(eCivic).getGoldPerMilitaryUnit() * iChange);
 	changeHappyPerMilitaryUnit(GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit() * iChange);
-	changeMilitaryHappinessLimit(GC.getCivicInfo(eCivic).getMilitaryHappinessLimit() * iChange); //Leoreth
+	changeMilitaryHappinessLimit(GC.getCivicInfo(eCivic).getMilitaryHappinessLimit() * (getID() == THAILAND ? 2 * iChange : iChange)); //Leoreth: includes Thai UP
 	changeMilitaryFoodProductionCount((GC.getCivicInfo(eCivic).isMilitaryFoodProduction()) ? iChange : 0);
 	changeMaxConscript(getWorldSizeMaxConscript(eCivic) * iChange);
 	changeNoUnhealthyPopulationCount((GC.getCivicInfo(eCivic).isNoUnhealthyPopulation()) ? iChange : 0);
@@ -23051,9 +23051,9 @@ int CvPlayer::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 		}
 	}
 
-	//Leoreth: Holy Roman UP
-	if (eReligion != NO_RELIGION && getID() == HOLY_ROME)
-		iVotes *= 2;
+	//Leoreth: Holy Roman UP - disabled
+	//if (eReligion != NO_RELIGION && getID() == HOLY_ROME)
+	//	iVotes *= 2;
 
 	return iVotes;
 }

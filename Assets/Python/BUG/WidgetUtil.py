@@ -118,6 +118,15 @@ def getWidgetHelp(argsList):
 	This function is a BugGameUtils handler registered in init.xml.
 	"""
 	eWidgetType, iData1, iData2, bOption = argsList
+	
+	# Leoreth: Aztec UP: sacrifice slaves
+	if iData1 == 300:
+		return CyTranslator().getText("TXT_KEY_BUTTON_SACRIFICE", (utils.getTurns(5), utils.getTurns(5)))
+					
+	# Leoreth: Byzantine UP: bribe button
+	if iData1 == 301:
+		return CyTranslator().getText("TXT_KEY_ACTION_BYZANTINE_UP", ())
+	
 	func = g_widgetHelp.get(eWidgetType)
 	if func:
 		return func(eWidgetType, iData1, iData2, bOption)

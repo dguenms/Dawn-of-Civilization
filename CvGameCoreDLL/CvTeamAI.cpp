@@ -1614,7 +1614,9 @@ int CvTeamAI::AI_mapTradeVal(TeamTypes eTeam) const
 		}
 	}
 
-	iValue /= 10;
+	// Leoreth: make maps less valuable
+	//iValue /= 10;
+	iValue /= 25;
 
 	if (GET_TEAM(eTeam).isVassal(getID()))
 	{
