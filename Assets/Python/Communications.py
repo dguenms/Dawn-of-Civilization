@@ -176,7 +176,7 @@ class Communications:
 				elif gc.getTeam(iLoopPlayer).isVassal(iContact) and iLoopPlayer not in lContacts:
 					lRemove.append(iContact)
 					
-		# if there are still vassals in the list, their masters are too -> remove the vassals, and cut contact when there masters are chosen
+		# if there are still vassals in the list, their masters are too -> remove the vassals, and cut contact when their masters are chosen
 		for iContact in lContacts:
 			if gc.getTeam(iContact).isAVassal() and iContact not in lRemove:
 				lRemove.append(iContact)
@@ -189,15 +189,23 @@ class Communications:
 			if len(lContacts) == 0: break
 			
 			iContact = utils.getRandomEntry(lContacts)
-			#utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iContact).getCivilizationShortDescription(0))
-			teamCiv.cutContact(iContact)
 			
-			# remove all vassals of that civ as well
+			lOurCivs = [iCiv]
+			lTheirCivs = [iContact]
+			
+			# remove contacts for all vassals on both sides as well
 			for iLoopCiv in range(con.iNumPlayers):
-				if gc.getTeam(iLoopCiv).isVassal(iContact):
-					#utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iLoopCiv).getCivilizationShortDescription(0))
-					teamCiv.cutContact(iLoopCiv)
-
+				if gc.getTeam(iLoopCiv).isVassal(iCiv):
+					lOurCivs.append(iLoopCiv)
+				elif gc.getTeam(iLoopCiv).isVassal(iContact):
+					lTheirCivs.append(iLoopCiv)
+					
+			for iOurCiv in lOurCivs:
+				for iTheirCiv in lTheirCivs:
+					utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iOurCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iTheirCiv).getCivilizationShortDescription(0))
+					gc.getTeam(iOurCiv).cutContact(iTheirCiv)
+					
+			lContacts.remove(iContact)
 
 
         def onBuildingBuilt(self, iPlayer, iBuilding, city):
