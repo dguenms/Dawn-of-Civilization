@@ -6437,14 +6437,14 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 	}*/
 	//Rhye - end UP
 
-	//Leoreth: Thai UP
-	if (ePlayer == THAILAND)
+	//Leoreth: Thai UP - disabled
+	/*if (ePlayer == THAILAND)
 	{
 		if (GET_PLAYER((PlayerTypes)THAILAND).isHasBuilding((BuildingTypes)(NUM_BUILDINGS_PLAGUE+getID())))
 		{
 			iAttitude += 4;
 		}
-	}
+	}*/
 
 //	if (GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI))
 //	{
@@ -7606,7 +7606,7 @@ int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pLis
 			}
 			break;
 		case TRADE_GOLD:
-			iValue += (pNode->m_data.m_iData * AI_goldTradeValuePercent()) / 100;
+			iValue += (pNode->m_data.m_iData * AI_goldTradeValuePercent(ePlayer)) / 100;
 			break;
 		case TRADE_GOLD_PER_TURN:
 			if (!bIgnoreAnnual)
@@ -7822,7 +7822,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 	iHumanDealWeight = AI_dealVal(ePlayer, pTheirList);
 	iAIDealWeight = GET_PLAYER(ePlayer).AI_dealVal(getID(), pOurList);
 
-	int iGoldValuePercent = AI_goldTradeValuePercent();
+	int iGoldValuePercent = AI_goldTradeValuePercent(ePlayer);
 
 	pTheirCounter->clear();
 	pOurCounter->clear();
@@ -8338,14 +8338,14 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 			if (pGoldNode)
 			{
 				iGoldData = iGoldWeight * 100;
-				iGoldData /= AI_goldTradeValuePercent();
+				iGoldData /= AI_goldTradeValuePercent(ePlayer);
 
 				iGoldData = std::min(iGoldData, AI_maxGoldTrade(ePlayer));
 
 				if (iGoldData > 0)
 				{
 					pGoldNode->m_data.m_iData = iGoldData;
-					iAIDealWeight += (iGoldData * AI_goldTradeValuePercent()) / 100;
+					iAIDealWeight += (iGoldData * AI_goldTradeValuePercent(ePlayer)) / 100;
 					pOurCounter->insertAtEnd(pGoldNode->m_data);
 					pGoldNode = NULL;
 				}
@@ -8446,7 +8446,7 @@ int CvPlayerAI::AI_maxGoldPerTurnTrade(PlayerTypes ePlayer) const
 int CvPlayerAI::AI_goldPerTurnTradeVal(int iGoldPerTurn) const
 {
 	int iValue = iGoldPerTurn * GC.getDefineINT("PEACE_TREATY_LENGTH");
-	iValue *= AI_goldTradeValuePercent();
+	iValue *= AI_goldTradeValuePercent(NO_PLAYER);
 	iValue /= 100;
 
 	return iValue;
@@ -13571,7 +13571,8 @@ void CvPlayerAI::AI_doDiplo()
 //Speed: End Modify
 	//Rhye - end
 
-	iGoldValuePercent = AI_goldTradeValuePercent();
+	// Leoreth: moved
+	//iGoldValuePercent = AI_goldTradeValuePercent();
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
@@ -13582,6 +13583,9 @@ void CvPlayerAI::AI_doDiplo()
 	{
 		for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
+			// Leoreth: moved here because now it's player dependent
+			iGoldValuePercent = AI_goldTradeValuePercent((PlayerTypes)iI);
+
 			if (GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
 				if (GET_PLAYER((PlayerTypes)iI).isHuman() == (iPass == 1))
@@ -17551,15 +17555,21 @@ int CvPlayerAI::AI_goldToUpgradeAllUnits(int iExpThreshold) const
 	return iTotalGold;
 }
 
-int CvPlayerAI::AI_goldTradeValuePercent() const
+int CvPlayerAI::AI_goldTradeValuePercent(PlayerTypes eOtherPlayer) const
 {
 	int iValue = 2;
 	if (AI_isFinancialTrouble())
 	{
 		iValue += 1;
 	}
-	return 100 * iValue;
 
+	// Leoreth: Byzantine UP: double value of Byzantine gold
+	if (eOtherPlayer == BYZANTIUM)
+	{
+		iValue *= 2;
+	}
+
+	return 100 * iValue;
 }
 
 int CvPlayerAI::AI_averageYieldMultiplier(YieldTypes eYield) const

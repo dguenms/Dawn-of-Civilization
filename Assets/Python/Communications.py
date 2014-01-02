@@ -202,7 +202,7 @@ class Communications:
 					
 			for iOurCiv in lOurCivs:
 				for iTheirCiv in lTheirCivs:
-					utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iOurCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iTheirCiv).getCivilizationShortDescription(0))
+					#utils.debugTextPopup('Cut contact between ' + gc.getPlayer(iOurCiv).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iTheirCiv).getCivilizationShortDescription(0))
 					gc.getTeam(iOurCiv).cutContact(iTheirCiv)
 					
 			lContacts.remove(iContact)

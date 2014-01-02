@@ -3641,6 +3641,15 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 		}
 	}
 
+	// Leoreth: Holy Roman UP: +100% production of state religion buildings
+	if (GC.getBuildingInfo(eBuilding).getStateReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
+	{
+		if (GC.getBuildingInfo(eBuilding).getStateReligion() == GET_PLAYER(getOwnerINLINE()).getStateReligion())
+		{
+			iMultiplier += 100;
+		}
+	}
+
 	return std::max(0, iMultiplier);
 }
 

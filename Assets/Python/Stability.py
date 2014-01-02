@@ -342,10 +342,7 @@ def triggerCrisis(iPlayer, iStabilityLevel, iCrisisType, lStabilityTypes):
 		changeCrisisCountdown(iPlayer, utils.getTurns(10))
 		
 	if iStabilityLevel == con.iStabilityCollapsing:
-		if isByzantineUP(iPlayer):
-			collapseToCore(iPlayer)
-		else:
-			completeCollapse(iPlayer)
+		completeCollapse(iPlayer)
 		
 	elif iStabilityLevel < con.iStabilitySolid:
 		if iCrisisType == con.iStabilityExpansion: territorialCrisis(iPlayer, iStabilityLevel)
@@ -1577,14 +1574,6 @@ def isTolerated(iPlayer, iReligion):
 	if iStateReligion == con.iHinduism and iReligion == con.iBuddhism: return True
 	if iStateReligion == con.iBuddhism and iReligion == con.iHinduism: return True
 	
-	return False
-	
-def isByzantineUP(iPlayer):
-	if iPlayer == con.iByzantium:
-		capital = gc.getPlayer(iPlayer).getCapitalCity()
-		if (capital.getX(), capital.getY()) == con.tCapitals[utils.getReborn(iPlayer)][iPlayer]:
-			return True
-			
 	return False
 	
 def isOverseas(city):

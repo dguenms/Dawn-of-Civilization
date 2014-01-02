@@ -283,7 +283,7 @@ public:
 
 	int AI_goldToUpgradeAllUnits(int iExpThreshold = 0) const;
 
-	int AI_goldTradeValuePercent() const;
+	int AI_goldTradeValuePercent(PlayerTypes eOtherPlayer) const;
 	
 	int AI_averageYieldMultiplier(YieldTypes eYield) const;
 	int AI_averageCommerceMultiplier(CommerceTypes eCommerce) const;

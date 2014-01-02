@@ -2522,10 +2522,10 @@ iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHo
 iForge, iMaliMint, iFactory, iGermanAssemblyPlant, iCoalPlant, iJapaneseShalePlant, iHydroPlant, iNuclearPlant,
 iIndustrialPark, iObelisk, iEgyptianObelisk, iEthiopianStele, iNativeAmericaTotem, iIndonesianCandi, iPublicTransportation, iAcademy,
 iLibrary, iArabianMadrassa, iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, 
-iRussianResearchInstitute, iTheatre, iGreekOdeon, iFrenchSalon, iByzantineHippodrome, iChinesePavillion, iColosseum, iMayaBallCourt,
+iRussianResearchInstitute, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavillion, iColosseum, iMayaBallCourt,
 iBabylonGarden, iMexicoCharreada, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iKongoMbwadi, iPhoenicianGlassmaker, 
 iGrocer, iBrazilianFazenda, iColombianHacienda, iBank, iEnglishStockExchange, iSupermarket, iAmericanMall, iArgentineRefrigerationPlant, iCourthouse, 
-iAztecSacrificialAltar,  iHolyRomanRathaus, iSumerianZiggurat, iPolishSejmik, iJail,  iIndianMausoleum, iLevee, iNetherlandsDike, iIntelligenceAgency, 
+iAztecSacrificialAltar,  iHolyRomanRathaus, iSumerianZiggurat, iPolishSejmik, iJail, iIndianMausoleum, iFrenchSalon, iLevee, iNetherlandsDike, iIntelligenceAgency, 
 iNationalSecurity, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iChristianTemple, iChristianCathedral, iChristianMonastery, 
 iChristianShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iIslamicTemple, iIslamicCathedral,
 iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, 
@@ -2580,7 +2580,7 @@ iCivicMilitia, iCivicWarriorCode, iCivicMercenaries, iCivicLevyArmies, iCivicSta
 
 #Specialists
 iNumSpecialists = 15
-(iCitizen, iPriest, iArtist, iScientist, iMerchant, iEngineer, iSpy, iGreatPriest, iGreatArtist, iGreatScientist, iGreatMerchant,
+(iCitizen, iPriest, iArtist, iScientist, iMerchant, iEngineer, iSpecialistSpy, iGreatPriest, iGreatArtist, iGreatScientist, iGreatMerchant,
 iGreatEngineer, iGreatGeneral, iGreatSpy, iSettledSlave) = range(iNumSpecialists)
 
 #Stability Levels

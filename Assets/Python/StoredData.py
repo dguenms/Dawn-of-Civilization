@@ -69,6 +69,7 @@ class StoredData:
                                     'iLatestFlipTurn': 0,
                                     'lLatestRazeData': [-1, -1, -1, -1, -1],
 				    'iRomanVictories': 0,
+				    'lByzantineBribes': [],
 				    #------------AIWars
                                     'lAttackingCivsArray': [0 for i in range(con.iNumPlayers)], #original RFC had -1 here somewhere??
                                     'iNextTurnAIWar': -1,
@@ -286,6 +287,12 @@ class StoredData:
 		
 	def changeBarbarianLosses(self, iPlayer, iChange):
 		self.scriptDict['lBarbarianLosses'][iPlayer] += iChange
+		
+	def getByzantineBribes(self):
+		return self.scriptDict['lByzantineBribes']
+		
+	def setByzantineBribes(self, lBribes):
+		self.scriptDict['lByzantineBribes'] = lBribes
 		
 # All modules import the following single instance, not the class
 

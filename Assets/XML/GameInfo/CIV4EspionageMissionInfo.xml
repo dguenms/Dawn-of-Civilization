@@ -603,7 +603,7 @@
 			<iBuyTechCostFactor>0</iBuyTechCostFactor>
 			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
 			<!-- Rhye 60000 -->
-			<iSwitchReligionCostFactor>10000</iSwitchReligionCostFactor>
+			<iSwitchReligionCostFactor>100000</iSwitchReligionCostFactor>
 			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
 			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
 			<iCounterespionageMod>0</iCounterespionageMod>

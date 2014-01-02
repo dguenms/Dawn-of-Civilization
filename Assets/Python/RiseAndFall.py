@@ -590,7 +590,19 @@ class RiseAndFall:
 		
 		CyInterface().addMessage(city.getOwner(), True, con.iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		
-
+	def eventApply7629(self, netUserData, popupReturn):
+		targetList = sd.getByzantineBribes()
+		iButton = popupReturn.getButtonClicked()
+		
+		if iButton >= len(targetList): return
+		
+		unit, iCost = targetList[iButton]
+		closestCity = gc.getMap().findCity(unit.getX(), unit.getY(), iByzantium, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+		
+		newUnit = utils.makeUnit(unit.getUnitType(), iByzantium, (closestCity.plot().getX(), closestCity.plot().getY()), 1)
+		gc.getPlayer(iByzantium).changeGold(-iCost)
+		unit.kill(False, iByzantium)
+		CyInterface().selectUnit(newUnit, True, True, False)
 
 #######################################
 ### Main methods (Event-Triggered) ###
@@ -608,7 +620,7 @@ class RiseAndFall:
 			for i in range(plotEgypt.getNumUnits()):
 				unit = plotEgypt.getUnit(i)
 				if unit.getUnitType() == con.iSettler:
-					CyInterface().selectUnit(unit, true, false, false)
+					CyInterface().selectUnit(unit, True, False, False)
 					break
 					
 	def initScenario(self):
