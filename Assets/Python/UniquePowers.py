@@ -795,11 +795,14 @@ class UniquePowers:
 			if plot.getOwner() == iIndonesia:
 				for iUnit in range(plot.getNumUnits()):
 					unit = plot.getUnit(iUnit)
-					if unit.getOwner() < con.iNumPlayers and unit.getOwner() != iIndonesia and unit.getDomainType() == DomainTypes.DOMAIN_SEA:
-						iNumUnits += 1
+					if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
+						iOwner = unit.getOwner()
+						if iOwner < con.iNumPlayers and iOwner != iIndonesia and not gc.getTeam(iOwner).isAtWar(iIndonesia):
+							iNumUnits += 1
 					
 		if iNumUnits > 0:
 			iGold = 5 * iNumUnits
 			gc.getPlayer(iIndonesia).changeGold(iGold)
 			if utils.getHumanID() == iIndonesia:
 				CyInterface().addMessage(iIndonesia, False, con.iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+				

@@ -1671,7 +1671,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 				if plot.isCity():
 					city = plot.getPlotCity()
 					# for humans: exclude recently conquered cities to avoid annoying reflips
-					if city.getOwner() != utils.getHumanID() or city.getGameTurnCityAcquired() < gc.getGame().getGameTurn() - utils.getTurns(5):
+					if city.getOwner() != utils.getHumanID() or city.getGameTurnAcquired() < gc.getGame().getGameTurn() - utils.getTurns(5):
 						lPotentialCities.append(city)
 					
 	for k in range(len(lPotentialCities)):
