@@ -1466,7 +1466,7 @@ class RiseAndFall:
 			pMaya.setCivics(2, con.iCivicCapitalism)
 			pMaya.setCivics(3, con.iCivicMercantilism)
 			pMaya.setCivics(4, con.iCivicOrganizedReligion)
-			pMaya.setCivics(5, con.iCivicConscription)
+			pMaya.setCivics(5, con.iCivicStandingArmy)
 			gc.getMap().plot(28, 31).setFeatureType(-1, 0)
 
         def checkPlayerTurn(self, iGameTurn, iPlayer):
@@ -3613,8 +3613,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 4)
                 if (iCiv == iAztecs):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
-		if iCiv == iMughals:
-			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+		#if iCiv == iMughals:
+		#	utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 		if iCiv == iThailand:
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
 		if iCiv == iCongo:

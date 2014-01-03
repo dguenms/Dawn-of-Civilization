@@ -1250,7 +1250,6 @@ def calculateStability(iPlayer):
 		if iCivicGovernment == con.iCivicAutocracy: iCivicStability += 5
 		if iCivicEconomy == con.iCivicCentralPlanning: CivicStability += 3
 		if iCivicReligion != con.iCivicSecularism: iCivicStability -= 5
-		if iCivicMilitary == con.iCivicConscription: iCivicStability += 3
 	
 	if iCivicEconomy == con.iCivicCentralPlanning:
 		if iCivicLabor == con.iCivicIndustrialism: iCivicStability += 2

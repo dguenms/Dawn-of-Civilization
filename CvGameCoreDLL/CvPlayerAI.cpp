@@ -3521,6 +3521,11 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 2;
 	//Rhye - end
 
+	if (getID() == MUGHALS && pCity->getOwner() == SELJUKS)
+	{
+		iValue /= 10;
+	}
+
 	if (!bIgnoreAttackers)
 	{
 	iValue += AI_adjacentPotentialAttackers(pCity->plot());
@@ -3689,15 +3694,6 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	if (bRandomize)
 	{
 		iValue += GC.getGameINLINE().getSorenRandNum(((pCity->getPopulation() / 2) + 1), "AI Target City Value");
-	}
-
-	// Leoreth: try to help Mongolia to conquer China
-	if (getID() == MONGOLIA)
-	{
-		if (pCity->getX() == 103 && pCity->getY() == 44)
-		{
-			return -1000000;
-		}
 	}
 
 	return iValue;
@@ -11739,6 +11735,18 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue += ((getNumCities() *  (bCultureVictory3 ? 10 : 1)) + 6);
 		}
 		iValue += (iTempValue / 2);
+	}
+
+	// Leoreth: domain production and experience
+	int iDomainDivisor;
+	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
+	{
+		if (iI == DOMAIN_LAND) iDomainDivisor = 1;
+		else if (iI == DOMAIN_SEA) iDomainDivisor = 2;
+		else iDomainDivisor = 5;
+
+		iValue += (kCivic.getDomainExperienceModifier(iI) * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / (iDomainDivisor * 100);
+		iValue += (kCivic.getDomainProductionModifier(iI) * getNumCities() * iWarmongerPercent) / (iDomainDivisor * (bWarPlan ? 300 : 500));
 	}
 
 	//Rhye - start 6th

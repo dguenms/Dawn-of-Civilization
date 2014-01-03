@@ -391,6 +391,10 @@ class RFCUtils:
 									# Leoreth: can't flip naval units anymore
 									if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
 										continue
+										
+									# Leoreth: ignore workers as well
+									if unit.getUnitType() in [con.iWorker, con.iIndianFastWorker, con.iBrazilianLenhador]:
+										continue
 									
 									if (bKillSettlers):
 										if ((unit.getUnitType() > iSettler)):

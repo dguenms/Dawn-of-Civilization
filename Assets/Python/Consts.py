@@ -1225,7 +1225,7 @@ tCoreAreasTL = (
 (58, 45), #Italy
 (87, 46), #Mongolia
 (15, 36), #Aztecs
-(86, 38), #Mughals
+(84, 38), #Mughals
 (69, 41), #Turkey
 (100, 32), #Thailand
 (61, 19), #Congo
@@ -1311,7 +1311,7 @@ tCoreAreasBR = (
 (63, 47), #Italy
 (105, 58), #Mongolia
 (20, 41), #Aztecs
-(94, 43), #Mughals
+(91, 43), #Mughals
 (77, 48), #Turkey
 (103, 36), #Thailand
 (65, 22), #Congo
@@ -1790,7 +1790,7 @@ tBroaderAreasTL = (
 (57, 47), #Italy
 (82, 44), #Mongolia
 (14, 32), #Aztecs
-(86, 37), #Mughals
+(84, 37), #Mughals
 (68, 42), #Turkey
 (97, 25), #Thailand
 (61, 19), #Congo
