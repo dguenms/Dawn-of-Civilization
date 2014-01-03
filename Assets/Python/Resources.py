@@ -157,6 +157,7 @@ class Resources:
 		
 		# Leoreth: for respawned Egypt
 		if iGameTurn == getTurnForYear(900):
+			self.removeResource(71, 34)
 			self.createResource(71, 34, iIron)
                     
                 if (iGameTurn == getTurnForYear(1100)):
