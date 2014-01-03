@@ -171,7 +171,7 @@
 # Greek Odeon now replaces Theatre, requires Aesthetics and gives +1 happiness and a scientist slot
 # Viking Trading Post now requires Sailing
 # Indonesian Orang Laut is now a cheaper strength 4 Privateer that requires Compass and receives +50% against other Privateers
-# New Indonesia UP effect: Additional gold for foreign ships in your core
+# new Indonesian UP: Straits: Additional gold for foreign ships in your core
 # Thai Ho Trai is now a cheaper library that gives +1 happiness
 # fixed a mistake in the switch religion espionage mission, now 10x the previous cost as intended
 # maps are now less valuable in AI trades
@@ -179,3 +179,4 @@
 # new Thai UP: Father Governs Children: can use twice as many units to generate military happiness
 # new HRE UP: Investiture: double construction speed of state religion buildings
 # new Byzantine UP: Bribery: double gold value in trades, spies can bribe barbarian units
+# moved the Mughal core west

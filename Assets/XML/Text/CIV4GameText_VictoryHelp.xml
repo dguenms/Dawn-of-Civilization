@@ -82,7 +82,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MOST_CULTURED_CITY_VALUE</Tag>
-		<English>Most cultured city: %s1_city (%d2 / %d1)</English>
+		<English>Most cultured city: %s1_city (%d2 / %d3)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MEDITERRANEAN_CITIES</Tag>
