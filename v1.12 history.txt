@@ -180,3 +180,9 @@
 # new HRE UP: Investiture: double construction speed of state religion buildings
 # new Byzantine UP: Bribery: double gold value in trades, spies can bribe barbarian units
 # moved the Mughal core west
+# new Moorish UU: Corsair: Privateer with +25% strength on coast, receives gold from sinking ships
+# new Moorish UHV:
+	# Control three cities in Iberia, the Maghreb and West Africa in 1200 AD
+	# Settle a total of five great prophets, scientists or engineers in Cordoba by 1300 AD
+	# Acquire 5000 gold through piracy by 1650 AD
+# the Viking UP now expires after the Middle Ages

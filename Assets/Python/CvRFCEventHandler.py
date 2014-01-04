@@ -407,7 +407,7 @@ class CvRFCEventHandler:
                 self.up.aztecUP(argsList)
 		self.vic.onCombatResult(argsList)
                 self.rnf.immuneMode(argsList)
-		self.up.vikingUP(argsList)
+		self.up.vikingUP(argsList) # includes Moorish Corsairs
 		
 		pWinningUnit, pLosingUnit = argsList
 		

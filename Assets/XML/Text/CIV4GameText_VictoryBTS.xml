@@ -359,18 +359,28 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO1</Tag>
-		<English>Make Cordoba the most populous city and leading commercial center of the world in 1000 AD</English>
-		<German>Machen Sie Cordoba im Jahr 1000 n. Chr. zur bevölkerungsreichsten Stadt und kommerziellen Zentrum der Welt</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_MOO2</Tag>
 		<English>Control three cities in Iberia, the Maghreb and West Africa in 1200 AD</English>
 		<German>Kontrollieren Sie im Jahr 1200 n. Chr. drei Städte in Iberien, dem Maghreb und Westafrika</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO2</Tag>
+		<English>Settle a total of five great prophets, scientists or engineers in Cordoba by 1300 AD</English>
+		<German>Siedeln Sie bis zum Jahr 1300 n. Chr. insgesamt fünf große Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3</Tag>
-		<English>Settle a total of four great prophets, scientists or engineers in Cordoba in 1300 AD</English>
-		<German>Siedeln Sie im Jahr 1300 n. Chr. insgesamt vier große Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
+		<English>Acquire 5000 gold through piracy by 1650 AD</English>
+		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 5000 Gold durch Piraterie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO3_EPIC</Tag>
+		<English>Acquire 7500 gold through piracy by 1650 AD</English>
+		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 7500 Gold durch Piraterie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO3_MARATHON</Tag>
+		<English>Acquire 15,000 gold through piracy by 1650 AD</English>
+		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 15.000 Gold durch Piraterie</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KON1</Tag>

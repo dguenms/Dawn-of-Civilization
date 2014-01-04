@@ -1533,45 +1533,37 @@ class Victory:
 		elif iPlayer == iMoors:
 			if pMoors.isAlive():
 			
-				if iGameTurn == getTurnForYear(1000):
-					bCommerce = False
-					mostCommercialCity = self.calculateTopCityCommerce(51, 41)
-					if (mostCommercialCity != -1):
-                                                if (mostCommercialCity.getOwner() == iMoors and mostCommercialCity.getX() == 51 and mostCommercialCity.getY() == 41):
-                                                        bCommerce = True
-
-					bLargest = False
-					largestCity = self.calculateTopCityPopulation(51, 41)                                        
-                                        if (largestCity != -1):
-                                                if (largestCity.getOwner() == iMoors and largestCity.getX() == 51 and largestCity.getY() == 41):
-                                                        bLargest = True
-
-					if (bCommerce and bLargest):
-						self.setGoal(iMoors, 0, 1)
-					else:
-						self.setGoal(iMoors, 0, 0)
-						
 				if iGameTurn == getTurnForYear(1200):
 					bIberia = self.checkOwnedArea(iMoors, tIberiaTL, tIberiaBR, 3)
 					bMaghreb = self.checkOwnedArea(iMoors, tMaghrebTL, tMaghrebBR, 3)
 					bWestAfrica = self.checkOwnedArea(iMoors, tWestAfricaTL, tWestAfricaBR, 3)
 					
 					if bIberia and bMaghreb and bWestAfrica:
-						self.setGoal(iMoors, 1, 1)
+						self.setGoal(iMoors, 0, 1)
 					else:
-						self.setGoal(iMoors, 1, 0)
+						self.setGoal(iMoors, 0, 0)
 						
-				if iGameTurn == getTurnForYear(1300):
+				if self.getGoal(iMoors, 1) == -1:
 					plot = gc.getMap().plot(51, 41)
 					iCounter = 0
 					if plot.isCity:
 						capital = plot.getPlotCity()
 						for iSpecialist in range(gc.getNumSpecialistInfos()):
-							if iSpecialist in [7, 9, 11]: #prophet, scientist, engineer
+							if iSpecialist in [con.iProphet, con.iScientist, con.iEngineer]:
 								iCounter += capital.getFreeSpecialistCount(iSpecialist)
-					if iCounter >= 4:
+					if iCounter >= 5:
+						self.setGoal(iMoors, 1, 1)
+						
+				if iGameTurn == getTurnForYear(1300):
+					if self.getGoal(iMoors, 1) == -1:
+						self.setGoal(iMoors, 1, 0)
+						
+				if self.getGoal(iMoors, 2) == -1:
+					if sd.getMoorishGold() >= utils.getTurns(5000):
 						self.setGoal(iMoors, 2, 1)
-					else:
+						
+				if iGameTurn == getTurnForYear(1650):
+					if self.getGoal(iMoors, 2) == -1:
 						self.setGoal(iMoors, 2, 0)
 					
 				
@@ -4868,26 +4860,23 @@ class Victory:
 				aHelp.append(self.getIcon(popPercent >= 9.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(9))))
 
 		elif iPlayer == iMoors:
-			if iGoal == 0:          	
-				pBestPopCity = self.calculateTopCityPopulation(51, 41)
-				bBestPopCity = (pBestPopCity.getOwner() == iMoors and pBestPopCity.getX() == 51 and pBestPopCity.getY() == 41)
-				pBestCommerceCity = self.calculateTopCityCommerce(51, 41)
-				bBestCommerceCity = (pBestCommerceCity.getOwner() == iMoors and pBestCommerceCity.getX() == 51 and pBestCommerceCity.getY() == 41)
-				aHelp.append(self.getIcon(bBestPopCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestPopCity.getName(),)) + ' ' + self.getIcon(bBestCommerceCity) + localText.getText("TXT_KEY_VICTORY_BEST_COMMERCE_CITY", (pBestCommerceCity.getName(),)))
-			elif iGoal == 1:
+			if iGoal == 0:
 				iIberia = self.getNumCitiesInArea(iMoors, tIberiaTL, tIberiaBR)
 				iMaghreb = self.getNumCitiesInArea(iMoors, tMaghrebTL, tMaghrebBR)
 				iWestAfrica = self.getNumCitiesInArea(iMoors, tWestAfricaTL, tWestAfricaBR)
 				aHelp.append(self.getIcon(iIberia >= 3) + localText.getText("TXT_KEY_VICTORY_IBERIA", (iIberia, 3)) + ' ' + self.getIcon(iMaghreb >= 3) + localText.getText("TXT_KEY_VICTORY_MAGHREB_MOORS", (iMaghreb, 3)) + ' ' + self.getIcon(iWestAfrica >= 3) + localText.getText("TXT_KEY_VICTORY_WEST_AFRICA", (iWestAfrica, 3)))
-			elif iGoal == 2:
+			elif iGoal == 1:
 				plot = gc.getMap().plot(51, 41)
 				iCounter = 0
-				if plot.isCity:
+				if plot.isCity():
 					capital = plot.getPlotCity()
 					for iSpecialist in range(gc.getNumSpecialistInfos()):
-						if iSpecialist in [7, 9, 11]: #prophet, scientist, engineer
+						if iSpecialist in [con.iProphet, con.iScientist, con.iEngineer]:
 							iCounter += capital.getFreeSpecialistCount(iSpecialist)
-				aHelp.append(self.getIcon(iCounter >= 4) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 4)))
+				aHelp.append(self.getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
+			elif iGoal == 2:
+				iGold = sd.getMoorishGold()
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_PIRACY", (iGold, utils.getTurns(5000))))
 			
 		elif iPlayer == iSpain:
 			if iGoal == 1:

@@ -1517,7 +1517,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		iCaptureGold = (int)lCaptureGold;
 
 		// Leoreth: Viking UP
-		if (getID() == VIKING)
+		if (getID() == VIKING && getCurrentEra() <= ERA_MEDIEVAL)
 		{
 			iCaptureGold *= 2;
 		}

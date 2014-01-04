@@ -3942,8 +3942,8 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_CUIRASSIER</UnitClassType>
-					<UnitType>UNIT_MOORISH_CAMEL_GUNNER</UnitType>
+					<UnitClassType>UNITCLASS_PRIVATEER</UnitClassType>
+					<UnitType>UNIT_MOORISH_CORSAIR</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
