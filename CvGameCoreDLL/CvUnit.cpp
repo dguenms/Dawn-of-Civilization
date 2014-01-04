@@ -4849,8 +4849,10 @@ bool CvUnit::pillage()
 			iPillageGold = (int)lPillageGold;
 
 			//Rhye - start UP (Viking)
-			if (getOwnerINLINE() == VIKING)
-				iPillageGold*=5;
+			if (getOwnerINLINE() == VIKING && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
+			{
+				iPillageGold *= 5;
+			}
 			//Rhye - end UP
 
 

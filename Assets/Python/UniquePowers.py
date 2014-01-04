@@ -211,13 +211,19 @@ class UniquePowers:
 		pWinningUnit, pLosingUnit = argsList
 		cLosingUnit = PyHelpers.PyInfo.UnitInfo(pLosingUnit.getUnitType())
 		
-		if pWinningUnit.getOwner() == iVikings:
+		iOwner = pWinningUnit.getOwner()
+		
+		if (iOwner == iVikings and gc.getPlayer(iVikings).getCurrentEra() <= con.iMedieval) or pWinningUnit.getUnitType() == con.iMoorishCorsair:
 			if cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA"):
 				iGold = cLosingUnit.getProductionCost() / 2
-				gc.getPlayer(iVikings).changeGold(iGold)
+				gc.getPlayer(iOwner).changeGold(iGold)
 				sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()
-				CyInterface().addMessage(iVikings, False, con.iDuration, CyTranslator().getText("TXT_KEY_VIKING_NAVAL_UP", (iGold, sAdjective, pLosingUnit.getNameKey())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-				sd.scriptDict['iVikingGold'] += iGold
+				CyInterface().addMessage(iOwner, False, con.iDuration, CyTranslator().getText("TXT_KEY_VIKING_NAVAL_UP", (iGold, sAdjective, pLosingUnit.getNameKey())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+				
+				if iOwner == iVikings:
+					sd.scriptDict['iVikingGold'] += iGold
+				elif iOwner == iMoors:
+					sd.changeMoorishGold(iGold)
 				
 			
 

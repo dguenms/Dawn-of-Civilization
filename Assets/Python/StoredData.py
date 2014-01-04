@@ -136,6 +136,7 @@ class StoredData:
 				    'bPolytheismNeverReligion' : True,
 				    'iFirstIndustrial' : -1,
 				    'iFirstModern' : -1,
+				    'iMoorishGold' : 0,
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
@@ -293,6 +294,12 @@ class StoredData:
 		
 	def setByzantineBribes(self, lBribes):
 		self.scriptDict['lByzantineBribes'] = lBribes
+		
+	def getMoorishGold(self):
+		return self.scriptDict['iMoorishGold']
+		
+	def changeMoorishGold(self, iChange):
+		self.scriptDict['iMoorishGold'] += iChange
 		
 # All modules import the following single instance, not the class
 

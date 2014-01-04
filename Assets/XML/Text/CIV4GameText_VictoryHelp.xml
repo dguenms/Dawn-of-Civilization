@@ -673,6 +673,10 @@
 		<English>Universities in secular civilizations: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PIRACY</Tag>
+		<English>Gold from piracy: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_</Tag>
 		<English></English>
 	</TEXT>
