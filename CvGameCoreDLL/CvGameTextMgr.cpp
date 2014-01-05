@@ -15248,7 +15248,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		if (iParameterEconomicGrowth != 0 && iParameterPercentChange > iParameterBaselinePercent)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_GROWTH").GetCString());
+			szTemp.Format(L"+%d: %s (%d / %d)", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_GROWTH").GetCString(), iParameterPercentChange, iParameterBaselinePercent);
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
@@ -15260,13 +15260,13 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 			if (iParameterPercentChange >= 0)
 			{
 				CvWString szTemp;
-				szTemp.Format(L"%d: %s", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_STAGNATION").GetCString());
+				szTemp.Format(L"%d: %s (%d / %d)", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_STAGNATION").GetCString(), iParameterPercentChange, iParameterBaselinePercent);
 				szStabilityParameters += NEWLINE + szTemp;
 			}
 			else
 			{
 				CvWString szTemp;
-				szTemp.Format(L"%d: %s", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_DECLINE").GetCString());
+				szTemp.Format(L"%d: %s (%d / %d)", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_DECLINE").GetCString(), iParameterPercentChange, iParameterBaselinePercent);
 				szStabilityParameters += NEWLINE + szTemp;
 			}
 		}

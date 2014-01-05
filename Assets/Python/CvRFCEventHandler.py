@@ -122,6 +122,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("goldenAge", self.onGoldenAge)
 		eventManager.addEventHandler("releasedPlayer", self.onReleasedPlayer)
 		eventManager.addEventHandler("cityAcquiredAndKept", self.onCityAcquiredAndKept)
+		eventManager.addEventHandler("blockade", self.onBlockade)
                
                 self.eventManager = eventManager
 
@@ -784,6 +785,12 @@ class CvRFCEventHandler:
 				lCities.append(city)
 				
 		sta.doResurrection(iReleasedPlayer, lCities, False)
+		
+	def onBlockade(self, argsList):
+		iPlayer, iGold = argsList
+		
+		if iPlayer == con.iMoors:
+			sd.changeMoorishGold(iGold)
 
         def onKbdEvent(self, argsList):
                 'keypress handler - return 1 if the event was consumed'

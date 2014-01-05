@@ -178,9 +178,7 @@ class Resources:
 			self.createResource(57, 46, iWine) # Savoy
 			self.createResource(57, 45, iClam) # Savoy
 			
-		# Leoreth: for Portugal
-		if iGameTurn == getTurnForYear(1180):
-			self.createResource(51, 44, iIron) # Portugal
+			self.createResource(50, 44, iIron) # Portugal
 			
 		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
 		if iGameTurn == getTurnForYear(con.tBirth[con.iMongolia]):

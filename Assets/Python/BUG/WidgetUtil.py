@@ -41,7 +41,9 @@
 from CvPythonExtensions import *
 import BugConfig
 import BugUtil
+import RFCUtils
 
+utils = RFCUtils.RFCUtils()
 
 ## Widget Types
 

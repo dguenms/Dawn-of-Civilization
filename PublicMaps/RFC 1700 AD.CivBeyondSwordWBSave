@@ -21616,6 +21616,7 @@ BeginPlot
 	x=50,y=44
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_IRON
 	PlotType=1
 	TeamReveal=14,20,21,22,27,36,42,
 EndPlot

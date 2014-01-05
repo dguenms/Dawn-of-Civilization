@@ -702,7 +702,8 @@ class CanHurryPopulation(AbstractCanHurry):
 		iOverflow = city.hurryProduction(self.keHurryType) - city.productionLeft()
 		if Civ4lertsOpt.isWhipAssistOverflowCountCurrentProduction():
 			iOverflow = iOverflow + city.getCurrentProductionDifference(True, False)
-		iAnger = city.getHurryAngerTimer() + city.flatHurryAngerLength()
+		iAngerModifier = (iPop + 1) / 2
+		iAnger = city.getHurryAngerTimer() + city.flatHurryAngerLength() * iAngerModifier
 		iMaxOverflow = min(city.getProductionNeeded(), iOverflow)
 		iOverflowGold = max(0, iOverflow - iMaxOverflow) * gc.getDefineINT("MAXED_UNIT_GOLD_PERCENT") / 100
 		iOverflow =  100 * iMaxOverflow / city.getBaseYieldRateModifier(gc.getInfoTypeForString("YIELD_PRODUCTION"), city.getProductionModifier())

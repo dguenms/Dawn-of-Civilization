@@ -3268,11 +3268,13 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iSpearman, iCiv, tPlot, 1)
+			utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
+			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 1)
 			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(con.iGalley, iCiv, tSeaPlot, 1)
+				utils.makeUnit(con.iTrireme, iCiv, tSeaPlot, 1)
 				utils.makeUnit(con.iWorkboat, iCiv, tSeaPlot, 1)
 			if utils.getHumanID() in [iSpain, iMoors]:
 				utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -3284,7 +3286,8 @@ class RiseAndFall:
 			utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 4)
 			if self.getPlayerEnabled(iMoors):
-				utils.makeUnit(con.iKnight, iCiv, tPlot, 2)
+				if utils.getHumanID() != iMoors:
+					utils.makeUnit(con.iKnight, iCiv, tPlot, 2)
 			else:
 				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			if utils.getHumanID() != iSpain:
@@ -4908,6 +4911,7 @@ class RiseAndFall:
                                 teamPortugal.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamPortugal.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamPortugal.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+                                teamPortugal.setHasTech(con.iCalendar, True, iCiv, False, False)
                                 teamPortugal.setHasTech(con.iMeditation, True, iCiv, False, False)
                         if (iCiv == iInca):
                                 teamInca.setHasTech(con.iMining, True, iCiv, False, False)
