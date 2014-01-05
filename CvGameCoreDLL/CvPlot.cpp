@@ -1438,7 +1438,8 @@ bool CvPlot::isFreshWater() const
 
 bool CvPlot::isPotentialIrrigation() const
 {
-	if ((isCity() && !isHills()) || ((getImprovementType() != NO_IMPROVEMENT) && (GC.getImprovementInfo(getImprovementType()).isCarriesIrrigation())))
+	// Leoreth: all Moorish improvements that give food spread irrigation
+	if ((isCity() && !isHills()) || ((getImprovementType() != NO_IMPROVEMENT) && (GC.getImprovementInfo(getImprovementType()).isCarriesIrrigation() || (getTeam() == MOORS && GC.getImprovementInfo(getImprovementType()).getYieldChange(0) > 0))))
 	{
 		if ((getTeam() != NO_TEAM) && GET_TEAM(getTeam()).isIrrigation())
 		{
@@ -1461,7 +1462,7 @@ bool CvPlot::canHavePotentialIrrigation() const
 
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		if (GC.getImprovementInfo((ImprovementTypes)iI).isCarriesIrrigation())
+		if (GC.getImprovementInfo((ImprovementTypes)iI).isCarriesIrrigation() || (getOwner() == MOORS && GC.getImprovementInfo((ImprovementTypes)iI).getYieldChange(0) > 0))
 		{
 			if (canHaveImprovement(((ImprovementTypes)iI), NO_TEAM, true))
 			{

@@ -34613,6 +34613,7 @@
 			<Description>TXT_KEY_BUILDING_MEZQUITA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MEZQUITA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_MEZQUITA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_MEZQUITA_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MEZQUITA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_MEZQUITA</MovieDefineTag>
@@ -34669,7 +34670,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bCenterInCity>0</bCenterInCity>
-			<iAIWeight>0</iAIWeight>
+			<iAIWeight>100</iAIWeight>
 			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>

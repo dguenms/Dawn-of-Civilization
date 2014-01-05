@@ -1549,7 +1549,7 @@ class Victory:
 					if plot.isCity:
 						capital = plot.getPlotCity()
 						for iSpecialist in range(gc.getNumSpecialistInfos()):
-							if iSpecialist in [con.iProphet, con.iScientist, con.iEngineer]:
+							if iSpecialist in [con.iGreatProphet, con.iGreatScientist, con.iGreatEngineer]:
 								iCounter += capital.getFreeSpecialistCount(iSpecialist)
 					if iCounter >= 5:
 						self.setGoal(iMoors, 1, 1)
@@ -3572,7 +3572,7 @@ class Victory:
 				for iLoopPlayer in range(con.iNumPlayers):
 					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iCatholicism:
 						for city in utils.getCityList(iLoopPlayer):
-							iSaints += city.getFreeSpecialistCount(con.iGreatPriest)
+							iSaints += city.getFreeSpecialistCount(con.iGreatProphet)
 							
 				if bShrine and iSaints >= 12: return 1
 
@@ -3630,7 +3630,7 @@ class Victory:
 			# Second Muslim goal: settle seven great people in the Muslim holy city
 			elif iGoal == 1:
 				iCount = 0
-				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+				for iGreatPerson in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iSpecialistGreatSpy]:
 					iCount += gc.getGame().getHolyCity(con.iIslam).getFreeSpecialistCount(iGreatPerson)
 					
 				if iCount >= 7: return 1
@@ -3648,7 +3648,7 @@ class Victory:
 			# First Hindu goal: settle five different great people in the Hindu holy city
 			if iGoal == 0:
 				iCount = 0
-				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+				for iGreatPerson in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iSpecialistGreatSpy]:
 					if gc.getGame().getHolyCity(con.iHinduism).getFreeSpecialistCount(iGreatPerson) > 0:
 						iCount += 1
 						
@@ -3731,7 +3731,7 @@ class Victory:
 			# Third Confucian goal: settle five great people in the Confucian holy city
 			elif iGoal == 2:
 				iCount = 0
-				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+				for iGreatPerson in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iSpecialistGreatSpy]:
 					iCount += gc.getGame().getHolyCity(con.iConfucianism).getFreeSpecialistCount(iGreatPerson)
 					
 				if iCount >= 5: return 1
@@ -4311,7 +4311,7 @@ class Victory:
 				for iLoopPlayer in range(con.iNumPlayers):
 					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iCatholicism:
 						for city in utils.getCityList(iLoopPlayer):
-							iSaints += city.getFreeSpecialistCount(con.iGreatPriest)
+							iSaints += city.getFreeSpecialistCount(con.iGreatProphet)
 				aHelp.append(self.getIcon(bShrine) + localText.getText("TXT_KEY_BUILDING_CHRISTIAN_SHRINE", ()) + ' ' + self.getIcon(iSaints >= 12) + localText.getText("TXT_KEY_VICTORY_CATHOLIC_SAINTS", (iSaints, 12)))
 			elif iGoal == 2:
 				iTotalLand = gc.getMap().getLandPlots()
@@ -4352,7 +4352,7 @@ class Victory:
 				aHelp.append(self.getIcon(fReligionPercent >= 50.0) + localText.getText("TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT", (gc.getReligionInfo(con.iIslam).getTextKey(), str(u"%.2f%%" % fReligionPercent), str(50))))
 			elif iGoal == 1:
 				iCount = 0
-				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+				for iGreatPerson in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iSpecialistGreatSpy]:
 					iCount += gc.getGame().getHolyCity(con.iIslam).getFreeSpecialistCount(iGreatPerson)
 				aHelp.append(self.getIcon(iCount >= 7) + localText.getText("TXT_KEY_VICTORY_CITY_GREAT_PEOPLE", (gc.getGame().getHolyCity(con.iIslam).getName(), iCount, 7)))
 			elif iGoal == 2:
@@ -4364,7 +4364,7 @@ class Victory:
 		elif iVictoryType == con.iHinduism:
 			if iGoal == 0:
 				iCount = 0
-				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+				for iGreatPerson in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iSpecialistGreatSpy]:
 					if gc.getGame().getHolyCity(con.iHinduism).getFreeSpecialistCount(iGreatPerson) > 0:
 						iCount += 1
 				aHelp.append(self.getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_CITY_DIFFERENT_GREAT_PEOPLE", (gc.getGame().getHolyCity(con.iHinduism).getName(), iCount, 5)))
@@ -4428,7 +4428,7 @@ class Victory:
 				aHelp.append(self.getIcon(bConfucianShrine) + localText.getText("TXT_KEY_BUILDING_CONFUCIAN_SHRINE", ()) + ' ' + self.getIcon(bTaoistShrine) + localText.getText("TXT_KEY_BUILDING_TAOIST_SHRINE", ()) + ' ' + self.getIcon(iConfucianIncome + iTaoistIncome >= 40) + localText.getText("TXT_KEY_VICTORY_CHINESE_SHRINE_INCOME", (iConfucianIncome + iTaoistIncome, 40)))
 			elif iGoal == 2:
 				iCount = 0
-				for iGreatPerson in [con.iGreatPriest, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
+				for iGreatPerson in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iSpecialistGreatSpy]:
 					iCount += gc.getGame().getHolyCity(con.iConfucianism).getFreeSpecialistCount(iGreatPerson)
 				aHelp.append(self.getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_CITY_GREAT_PEOPLE", (gc.getGame().getHolyCity(con.iConfucianism).getName(), iCount, 5)))
 			
@@ -4871,7 +4871,7 @@ class Victory:
 				if plot.isCity():
 					capital = plot.getPlotCity()
 					for iSpecialist in range(gc.getNumSpecialistInfos()):
-						if iSpecialist in [con.iProphet, con.iScientist, con.iEngineer]:
+						if iSpecialist in [con.iGreatProphet, con.iGreatScientist, con.iGreatEngineer]:
 							iCounter += capital.getFreeSpecialistCount(iSpecialist)
 				aHelp.append(self.getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
 			elif iGoal == 2:
@@ -5001,10 +5001,9 @@ class Victory:
 
 		elif iPlayer == iNetherlands:
 			if iGoal == 0:
-				iGMerchant = CvUtil.findInfoTypeNum(gc.getSpecialistInfo, gc.getNumSpecialistInfos(), "SPECIALIST_GREAT_MERCHANT")
 				pPlot = gc.getMap().plot(57, 53)
 				if pPlot.isCity() and pPlot.getPlotCity().getOwner() == iNetherlands:
-					iMerchants = pPlot.getPlotCity().getFreeSpecialistCount(iGMerchant)
+					iMerchants = pPlot.getPlotCity().getFreeSpecialistCount(con.iGreatMerchant)
 				else:
 					iMerchants = 0
 				aHelp.append(self.getIcon(iMerchants >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_MERCHANTS_IN_CITY", ("Amsterdam", iMerchants, 3)))

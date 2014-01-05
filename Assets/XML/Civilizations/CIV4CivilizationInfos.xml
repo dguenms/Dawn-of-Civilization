@@ -1732,7 +1732,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
 					<BuildingType>BUILDING_FRENCH_SALON</BuildingType>
 				</Building>
 			</Buildings>

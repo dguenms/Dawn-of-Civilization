@@ -30,17 +30,17 @@ class CvCivicsScreen:
 		self.HELP_HEADER_NAME = "CivicsScreenHeaderName"
 
 		self.HEADINGS_WIDTH = 176 #199 #171
-		self.HEADINGS_TOP = 70
+		self.HEADINGS_TOP = 50 #70
 		self.HEADINGS_SPACING = -4 #5 #0
-		self.HEADINGS_BOTTOM = 305 #280
-		self.HELP_TOP = 370 # 300
-		self.HELP_BOTTOM = 700 #610
+		self.HEADINGS_BOTTOM = 285 #305 #280
+		self.HELP_TOP = 350 #370 # 300
+		self.HELP_BOTTOM = 680 #700 #610
 		self.TEXT_MARGIN = 15
 		self.BUTTON_SIZE = 24
 		self.BIG_BUTTON_SIZE = 64
-		self.BOTTOM_LINE_TOP = 700 #630 #700
-		self.BOTTOM_LINE_WIDTH = 693 #1014 ##1024
-		self.BOTTOM_LINE_HEIGHT = 60 # 60
+		self.BOTTOM_LINE_TOP = 675 #700 #630 #700
+		self.BOTTOM_LINE_WIDTH = 6 * self.HEADINGS_WIDTH + 5 * self.HEADINGS_SPACING #990 #693 #1014 ##1024
+		self.BOTTOM_LINE_HEIGHT = 45 #60 # 60
 
 		self.X_EXIT = 994
 		self.Y_EXIT = 726 #726 ##715
@@ -311,12 +311,15 @@ class CvCivicsScreen:
 			szText = localText.getText("TXT_KEY_ANARCHY_TURNS", (iTurns, ))
 		else:
 			szText = CyGameTextMgr().setRevolutionHelp(self.iActivePlayer)
-
-		screen.setLabel("CivicsRevText", "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.BOTTOM_LINE_TOP + self.TEXT_MARGIN//2, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			
+		# Maintenance		
+		szText += ", " + localText.getText("TXT_KEY_CIVIC_SCREEN_UPKEEP", (activePlayer.getCivicUpkeep(self.m_paeDisplayCivics, True), ))
+		
+		screen.setLabel("CivicsRevText", "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.BOTTOM_LINE_TOP + self.BOTTOM_LINE_HEIGHT/4 + 0 * self.TEXT_MARGIN//2, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		# Maintenance		
-		szText = localText.getText("TXT_KEY_CIVIC_SCREEN_UPKEEP", (activePlayer.getCivicUpkeep(self.m_paeDisplayCivics, True), ))
-		screen.setLabel("CivicsUpkeepText", "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.BOTTOM_LINE_TOP + self.BOTTOM_LINE_HEIGHT - 2 * self.TEXT_MARGIN, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		#szText = localText.getText("TXT_KEY_CIVIC_SCREEN_UPKEEP", (activePlayer.getCivicUpkeep(self.m_paeDisplayCivics, True), ))
+		#screen.setLabel("CivicsUpkeepText", "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.BOTTOM_LINE_TOP + self.BOTTOM_LINE_HEIGHT - 2 * self.TEXT_MARGIN, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		
 	# Revolution!!!
 	def Revolution(self, inputClass):

@@ -1281,4 +1281,9 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 		<English>[ICON_BULLET]Reduced Enemy Movement Speed Within the Walls.[NEWLINE][ICON_BULLET]Barbarian Units Take Damage within the Walls</English>
 		<German>[ICON_BULLET]Geringere Bewegung feindlicher Einheiten innerhalb der Mauern.[NEWLINE][ICON_BULLET]Barbarische Einheiten nehmen Schaden innerhalb der Mauern</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MEZQUITA_HELP</Tag>
+		<English>[ICON_BULLET]Builder Receives a Great Person</English>
+		<German>[ICON_BULLET]Erbauer erhält eine große Persönlichkeit</German>
+	</TEXT>
 </Civ4GameText>

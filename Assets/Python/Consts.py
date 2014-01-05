@@ -2580,8 +2580,8 @@ iCivicMilitia, iCivicWarriorCode, iCivicMercenaries, iCivicLevyArmies, iCivicSta
 
 #Specialists
 iNumSpecialists = 15
-(iCitizen, iPriest, iArtist, iScientist, iMerchant, iEngineer, iSpecialistSpy, iGreatPriest, iGreatArtist, iGreatScientist, iGreatMerchant,
-iGreatEngineer, iGreatGeneral, iGreatSpy, iSettledSlave) = range(iNumSpecialists)
+(iCitizen, iSpecialistPriest, iSpecialistArtist, iSpecialistScientist, iSpecialistMerchant, iSpecialistEngineer, iSpecialistSpy, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant,
+iGreatEngineer, iGreatGeneral, iSpecialistGreatSpy, iSettledSlave) = range(iNumSpecialists)
 
 #Stability Levels
 iNumStabilityLevels = 5

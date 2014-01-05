@@ -190,3 +190,5 @@
 # medieval European civs start with Meditation
 # it's harder for far away civs to become worst enemies
 # iron appears in Lusitania on Portugal's spawn
+# better panel adjustment in the civic selection screen
+# discouraged Byzantium from settling Chersonesos
