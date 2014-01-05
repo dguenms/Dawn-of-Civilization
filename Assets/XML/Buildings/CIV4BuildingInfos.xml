@@ -23598,7 +23598,7 @@
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<ObsoleteTech>NONE</ObsoleteTech>
+			<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 			<!-- Rhye -->
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<TechTypes/>
@@ -24007,7 +24007,7 @@
 			<bNukeImmune>0</bNukeImmune>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bCenterInCity>0</bCenterInCity>
-			<iAIWeight>0</iAIWeight>
+			<iAIWeight>-50</iAIWeight>
 			<iCost>200</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -34866,7 +34866,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bCenterInCity>0</bCenterInCity>
-			<iAIWeight>0</iAIWeight>
+			<iAIWeight>100</iAIWeight>
 			<iCost>150</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>

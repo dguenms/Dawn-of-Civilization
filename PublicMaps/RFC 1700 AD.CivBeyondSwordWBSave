@@ -29971,8 +29971,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	PlotType=2
 	TeamReveal=14,23,24,26,37,42,
 EndPlot
@@ -29980,10 +29982,8 @@ BeginPlot
 	x=66,y=55
 	RiverNSDirection=0
 	isWOfRiver
-	RouteType=ROUTE_ROAD
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	PlotType=2
 	TeamReveal=14,23,24,26,37,42,
 EndPlot

@@ -11353,6 +11353,8 @@ void CvUnit::collectBlockadeGold()
 							GET_PLAYER(getOwnerINLINE()).changeGold(iGold);
 							GET_PLAYER(pCity->getOwnerINLINE()).changeGold(-iGold);
 
+							CvEventReporter::getInstance().blockade(getOwnerINLINE(), iGold); // Leoreth
+
 							CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_TRADE_ROUTE_PLUNDERED", getNameKey(), pCity->getNameKey(), iGold);
 							gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BUILD_BANK", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE());
 

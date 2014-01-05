@@ -1377,6 +1377,21 @@ void CvDllPythonEvents::reportReleasedPlayer(PlayerTypes ePlayer, PlayerTypes eR
 	}
 }
 
+// Leoreth: blockade a city
+void CvDllPythonEvents::reportBlockade(PlayerTypes ePlayer, int iGold)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("blockade");
+
+		eventData.add((int)ePlayer);
+		eventData.add(iGold);
+
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

@@ -186,3 +186,7 @@
 	# Settle a total of five great prophets, scientists or engineers in Cordoba by 1300 AD
 	# Acquire 5000 gold through piracy by 1650 AD
 # the Viking UP now expires after the Middle Ages
+# the Flavian Amphithetre now expires with Feudalism
+# medieval European civs start with Meditation
+# it's harder for far away civs to become worst enemies
+# iron appears in Lusitania on Portugal's spawn

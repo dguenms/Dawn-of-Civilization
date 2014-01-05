@@ -3470,15 +3470,12 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	//Leoreth: take war maps into account here as well
 	iValue += warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] / 2;
 
-	// Leoreth: no Poland, don't conquer Central Asia
-	if (getID() == POLAND)
+	// Leoreth: don't conquer independents in regions you're not supposed to
+	if (pCity->getOwner() >= NUM_PL)
 	{
-		if (pCity->getOwner() >= NUM_PL)
+		if (warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] == 0)
 		{
-			if (warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] == 0)
-			{
-				iValue /= 2;
-			}
+			iValue /= 2;
 		}
 	}
 
@@ -3524,6 +3521,11 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	if (getID() == MUGHALS && pCity->getOwner() == SELJUKS)
 	{
 		iValue /= 10;
+	}
+
+	if (getID() == FRANCE && pCity->getX() == 69 && pCity->getY() == 52 && pCity->getOwner() >= NUM_MAJOR_PLAYERS)
+	{
+		return 0;
 	}
 
 	if (!bIgnoreAttackers)

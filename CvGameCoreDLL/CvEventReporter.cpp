@@ -495,6 +495,12 @@ void CvEventReporter::releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedP
 	m_kPythonEventMgr.reportReleasedPlayer(ePlayer, eReleasedPlayer);
 }
 
+// Leoreth: blockade a city
+void CvEventReporter::blockade(PlayerTypes ePlayer, int iGold)
+{
+	m_kPythonEventMgr.reportBlockade(ePlayer, iGold);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();
