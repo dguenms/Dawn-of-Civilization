@@ -2874,7 +2874,7 @@ void CvTeamAI::AI_updateWorstEnemy()
 					if (AI_getAttitude(eLoopTeam) < ATTITUDE_CAUTIOUS)
 					{
 						// Leoreth: far away civs shouldn't be enemies
-						int iValue = AI_getAttitudeVal(eLoopTeam) * 100 / (GC.getGame().isNeighbors((PlayerTypes)getID(), (PlayerTypes)eLoopTeam) ? 1 : borders[getID()][eLoopTeam]);
+						int iValue = AI_getAttitudeVal(eLoopTeam); // * 100 / (GC.getGame().isNeighbors((PlayerTypes)getID(), (PlayerTypes)eLoopTeam) ? 1 : borders[getID()][eLoopTeam]);
 						if (iValue < iBestValue)
 						{
 							iBestValue = iValue;
