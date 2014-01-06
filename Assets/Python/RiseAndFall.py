@@ -835,31 +835,31 @@ class RiseAndFall:
 			
 			# Mecca
 			pMecca = gc.getGame().getHolyCity(con.iIslam)
-			pMecca.setFreeSpecialistCount(con.iGreatPriest, 2)
+			pMecca.setFreeSpecialistCount(con.iGreatProphet, 2)
 			
 			# Rome
 			x, y = con.tCapitals[0][iRome]
 			pRome = gc.getMap().plot(x, y).getPlotCity()
-			pRome.setFreeSpecialistCount(con.iGreatPriest, 1)
+			pRome.setFreeSpecialistCount(con.iGreatProphet, 1)
 			
 			# Baghdad
 			x, y = con.tBaghdad
 			pBaghdad = gc.getMap().plot(x, y).getPlotCity()
-			pBaghdad.setFreeSpecialistCount(con.iGreatPriest, 1)
+			pBaghdad.setFreeSpecialistCount(con.iGreatProphet, 1)
 			
 			# Pataliputra
 			pPataliputra = gc.getGame().getHolyCity(con.iHinduism)
-			pPataliputra.setFreeSpecialistCount(con.iGreatPriest, 2)
+			pPataliputra.setFreeSpecialistCount(con.iGreatProphet, 2)
 			
 			# Lhasa
 			x, y = con.tCapitals[0][iTibet]
 			pLhasa = gc.getMap().plot(x, y).getPlotCity()
-			pLhasa.setFreeSpecialistCount(con.iGreatPriest, 2)
+			pLhasa.setFreeSpecialistCount(con.iGreatProphet, 2)
 			
 			# Ayutthaya
 			x, y = con.tCapitals[0][iThailand]
 			pAyutthaya = gc.getMap().plot(x, y).getPlotCity()
-			pAyutthaya.setFreeSpecialistCount(con.iGreatPriest, 1)
+			pAyutthaya.setFreeSpecialistCount(con.iGreatProphet, 1)
 			
 			# Chengdu
 			pChengdu = gc.getMap().plot(99, 41).getPlotCity()
