@@ -2865,7 +2865,7 @@ void CvTeamAI::AI_updateWorstEnemy()
 		TeamTypes eLoopTeam = (TeamTypes) iI;
 		CvTeam& kLoopTeam = GET_TEAM(eLoopTeam);
 		//if (kLoopTeam.isAlive()) //Rhye
-		if (kLoopTeam.isAlive() && !kLoopTeam.isMinorCiv()) //Rhye
+		if (kLoopTeam.isAlive() && iI < NUM_MAJOR_PLAYERS) //Rhye
 		{
 			if (iI != getID() && !kLoopTeam.isVassal(getID()))
 			{
@@ -2874,7 +2874,13 @@ void CvTeamAI::AI_updateWorstEnemy()
 					if (AI_getAttitude(eLoopTeam) < ATTITUDE_CAUTIOUS)
 					{
 						// Leoreth: far away civs shouldn't be enemies
-						int iValue = AI_getAttitudeVal(eLoopTeam); // * 100 / (GC.getGame().isNeighbors((PlayerTypes)getID(), (PlayerTypes)eLoopTeam) ? 1 : borders[getID()][eLoopTeam]);
+						int iBorders = borders[getID()][iI];
+
+						// independents don't have a borders modifier
+						if (getID() >= NUM_MAJOR_PLAYERS) iBorders = 1;
+
+						if (iBorders == 0) GC.getGame().logMsg("Division by zero: %d and %d", (int)getID(), iI);
+						int iValue = AI_getAttitudeVal(eLoopTeam) * 100 / ((iBorders == 0) || GC.getGame().isNeighbors((PlayerTypes)getID(), (PlayerTypes)eLoopTeam) ? 1 : iBorders);
 						if (iValue < iBestValue)
 						{
 							iBestValue = iValue;
