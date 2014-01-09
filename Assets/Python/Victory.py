@@ -1559,7 +1559,7 @@ class Victory:
 						self.setGoal(iMoors, 1, 0)
 						
 				if self.getGoal(iMoors, 2) == -1:
-					if sd.getMoorishGold() >= utils.getTurns(5000):
+					if sd.getMoorishGold() >= utils.getTurns(3000):
 						self.setGoal(iMoors, 2, 1)
 						
 				if iGameTurn == getTurnForYear(1650):
@@ -4876,7 +4876,7 @@ class Victory:
 				aHelp.append(self.getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
 			elif iGoal == 2:
 				iGold = sd.getMoorishGold()
-				aHelp.append(self.getIcon(iGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_PIRACY", (iGold, utils.getTurns(5000))))
+				aHelp.append(self.getIcon(iGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_PIRACY", (iGold, utils.getTurns(3000))))
 			
 		elif iPlayer == iSpain:
 			if iGoal == 1:

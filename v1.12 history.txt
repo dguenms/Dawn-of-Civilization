@@ -184,7 +184,7 @@
 # new Moorish UHV:
 	# Control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 	# Settle a total of five great prophets, scientists or engineers in Cordoba by 1300 AD
-	# Acquire 5000 gold through piracy by 1650 AD
+	# Acquire 3000 gold through piracy by 1650 AD
 # the Viking UP now expires after the Middle Ages
 # the Flavian Amphithetre now expires with Feudalism
 # medieval European civs start with Meditation
@@ -192,3 +192,5 @@
 # iron appears in Lusitania on Portugal's spawn
 # better panel adjustment in the civic selection screen
 # discouraged Byzantium from settling Chersonesos
+# La Mezquita now also gives a free great person
+# the Tamil Sangam now also gives +25% culture
