@@ -1286,4 +1286,9 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 		<English>[ICON_BULLET]Builder Receives a Great Person</English>
 		<German>[ICON_BULLET]Erbauer erhält eine große Persönlichkeit</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MEZQUITA_FREE_GP</Tag>
+		<English>A %s1 has been born after the construction of La Mezquita in %s2!</English>
+		<German>Ein %s1 wurde nach der Errichtung der La Mezquita in %s2 geboren!</German>
+	</TEXT>
 </Civ4GameText>

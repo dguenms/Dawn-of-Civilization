@@ -2468,6 +2468,16 @@ class CvMainInterface:
 						
 						iCount = iCount + 1
 						
+					# Leoreth: Aztec UP: sacrifice slaves
+					if pUnit.getUnitType() == con.iAztecSlave and pUnit.getOwner() == con.iAztecs:
+						plot = CyMap().plot(pUnit.getX(), pUnit.getY())
+						if plot.isCity():
+							city = plot.getPlotCity()
+							if city.getOwner() == con.iAztecs and not city.isWeLoveTheKingDay():
+								screen.appendMultiListButton("BottomButtonContainer", gc.getBuildingInfo(con.iAztecSacrificialAltar).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10000, 10000, False)
+								screen.show("BottomButtonContainer")
+								iCount = iCount + 1
+						
 					# Leoreth: Byzantine UP: bribe barbarians
 					if pUnit.getUnitType() == con.iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == con.iByzantium:
 						plot = CyMap().plot(pUnit.getX(), pUnit.getY())
@@ -2478,7 +2488,7 @@ class CvMainInterface:
 								bBarbarian = True
 								break
 						if bBarbarian:
-							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(con.iBanking).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 301, 301, False)
+							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(con.iBanking).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")
 							iCount = iCount + 1
 
@@ -5504,7 +5514,7 @@ class CvMainInterface:
 			#utils.debugTextPopup("Enslave")
 			
 		# Leoreth: sacrifice Aztec slaves
-		if (inputClass.getNotifyCode() == 11 and inputClass.getData1() == 300 and inputClass.getData2() == 300):
+		if (inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10000 and inputClass.getData2() == 10000):
 			self.pPushedButtonUnit = g_pSelectedUnit
 			iX = self.pPushedButtonUnit.getX()
 			iY = self.pPushedButtonUnit.getY()
@@ -5514,7 +5524,7 @@ class CvMainInterface:
 			self.pPushedButtonUnit.kill(false, city.getOwner())
 		
 		# Leoreth: start Byzantine UP
-		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 301:
+		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:
 			utils.doByzantineBribery(g_pSelectedUnit)
 		# Leoreth: end
 

@@ -567,6 +567,17 @@ class CvRFCEventHandler:
 				plot = gc.getMap().plotByIndex(iPlot)
 				if plot.getOwner() == iOwner and not plot.isWater():
 					plot.setWithinGreatWall(True)
+					
+		# Leoreth: La Mezquita
+		if iBuildingType == con.iMezquita:
+			lGPList = [0, 0, 0, 0, 0, 0, 0]
+			for city in utils.getCityList(iOwner):
+				for i in range(7):
+					iSpecialistUnit = con.iProphet + i
+					lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
+			iGPType = con.iProphet + utils.getHighestIndex(lGPList)
+			utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
+			CyInterface().addMessage(con.iBrazil, False, con.iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(con.iWhite), city.getX(), city.getY(), True, True)
 
 		# Leoreth: found Buddhism when a Hindu temple is built
 		if iBuildingType == con.iHinduTemple:

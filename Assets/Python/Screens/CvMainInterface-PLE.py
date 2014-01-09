@@ -5316,7 +5316,7 @@ class CvMainInterface:
 			#utils.debugTextPopup("Enslave")
 			
 		# Leoreth: sacrifice Aztec slaves
-		if (inputClass.getNotifyCode() == 11 and inputClass.getData1() == 300 and inputClass.getData2() == 300):
+		if (inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10000 and inputClass.getData2() == 10000):
 			self.pPushedButtonUnit = g_pSelectedUnit
 			iX = self.pPushedButtonUnit.getX()
 			iY = self.pPushedButtonUnit.getY()

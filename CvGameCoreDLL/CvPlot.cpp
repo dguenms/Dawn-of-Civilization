@@ -2874,10 +2874,10 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 				iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
 			}
 
-			// Leoreth: Great Wall effect
+			// Leoreth: Great Wall effect (+1 movement cost for enemies within the great wall)
 			if (isWithinGreatWall() && isOwned())
 			{
-				if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREATWALL))
+				if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREATWALL) && GET_TEAM((TeamTypes)getOwnerINLINE()).isAtWar((TeamTypes)pUnit->getOwner()))
 				{
 					iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
 				}
