@@ -573,11 +573,11 @@ class CvRFCEventHandler:
 			lGPList = [0, 0, 0, 0, 0, 0, 0]
 			for city in utils.getCityList(iOwner):
 				for i in range(7):
-					iSpecialistUnit = con.iProphet + i
+					iSpecialistUnit = utils.getUniqueUnit(iOwner, con.iProphet + i)
 					lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
-			iGPType = con.iProphet + utils.getHighestIndex(lGPList)
+			iGPType = utils.getUniqueUnit(iOwner, con.iProphet + utils.getHighestIndex(lGPList))
 			utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
-			CyInterface().addMessage(con.iBrazil, False, con.iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(con.iWhite), city.getX(), city.getY(), True, True)
+			CyInterface().addMessage(iOwner, False, con.iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(con.iWhite), city.getX(), city.getY(), True, True)
 
 		# Leoreth: found Buddhism when a Hindu temple is built
 		if iBuildingType == con.iHinduTemple:
