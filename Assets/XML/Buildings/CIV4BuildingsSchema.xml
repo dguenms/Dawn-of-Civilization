@@ -411,8 +411,8 @@
 		<element type="HolyCity"/>
 		<element type="ReligionType"/>
 		<element type="StateReligion"/>
-		<element type="bStateReligion"/>
 		<element type="OrStateReligion" minOccurs="0"/>
+		<element type="bStateReligion"/>
 		<element type="PrereqReligion"/>
 		<element type="OrPrereqReligion" minOccurs="0"/>
 		<element type="PrereqCivic" minOccurs="0"/>

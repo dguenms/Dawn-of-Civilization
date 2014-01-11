@@ -385,10 +385,11 @@
 			<!-- Rhye - end -->
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
+			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			
+			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -434,7 +435,7 @@
 			<bNukeImmune>1</bNukeImmune>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bCenterInCity>0</bCenterInCity>
-			<iAIWeight>0</iAIWeight>
+			<iAIWeight>200</iAIWeight>
 			<iCost>800</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -23744,12 +23745,7 @@
 			<DomainProductionModifiers/>
 			<BuildingHappinessChanges/>
 			<PrereqBuildingClasses/>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
+			<BuildingClassNeededs/>
 			<SpecialistYieldChanges/>
 			<BonusYieldModifiers/>
 			<ImprovementFreeSpecialists/>
@@ -27463,6 +27459,7 @@
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
+			<OrStateReligion>RELIGION_BUDDHISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -31032,9 +31029,11 @@
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_WALL</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
+			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>	
+			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -31574,9 +31573,10 @@
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
+			<OrStateReligion>RELIGION_JUDAISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
-			
+			<OrPrereqReligion>RELIGION_JUDAISM</OrPrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -31744,10 +31744,10 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHWEDAGON_PAYA</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
+			<OrStateReligion>RELIGION_HINDUISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
-			
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -34444,9 +34444,11 @@
 			<MovieDefineTag>ART_DEF_MOVIE_TERRACOTTA_ARMY</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
+			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
+			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -35926,7 +35928,8 @@
 			<MovieDefineTag>ART_DEF_MOVIE_BOROBUDUR</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
+			<OrStateReligion>RELIGION_HINDUISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -36123,6 +36126,7 @@
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
+			<OrStateReligion>RELIGION_BUDDHISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -36484,9 +36488,11 @@
 			<MovieDefineTag>ART_DEF_MOVIE_PORCELAIN_TOWER</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
+			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
+			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
@@ -36664,7 +36670,8 @@
 			<MovieDefineTag>ART_DEF_MOVIE_HARMANDIR_SAHIB</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_HINDUISM</StateReligion>
+			<OrStateReligion>RELIGION_ISLAM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
@@ -37781,9 +37788,11 @@
 			<MovieDefineTag>NONE</MovieDefineTag>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
+			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<bStateReligion>0</bStateReligion>
-			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>		
+			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
+			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<FoundsCorporation>NONE</FoundsCorporation>
 			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>

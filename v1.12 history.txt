@@ -194,3 +194,5 @@
 # discouraged Byzantium from settling Chersonesos
 # La Mezquita now also gives a free great person
 # the Tamil Sangam now also gives +25% culture
+# certain wonders are now enabled with two different (state) religions
+# state religion requirements are now displayed in the civilopedia if different from the religion requirements

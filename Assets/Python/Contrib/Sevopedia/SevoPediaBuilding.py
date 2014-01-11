@@ -208,10 +208,39 @@ class SevoPediaBuilding:
 					screen.attachImageButton( panelName, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iPrereq, -1, False )
 
 		iPrereq = gc.getBuildingInfo(self.iBuilding).getPrereqReligion()
+		iOrPrereq = gc.getBuildingInfo(self.iBuilding).getOrPrereqReligion()
+		iStatePrereq = gc.getBuildingInfo(self.iBuilding).getStateReligion()
+		iOrStatePrereq = gc.getBuildingInfo(self.iBuilding).getOrStateReligion()
+		
+		if iOrPrereq >= 0 and iStatePrereq >= 0:
+			screen.attachLabel(panelName, "", "(")
+		
 		if (iPrereq >= 0):
 			screen.attachImageButton( panelName, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, -1, False )
 
+		if iOrPrereq >= 0:
+			screen.attachLabel(panelName, "", localText.getText("TXT_KEY_OR", ()))
+			screen.attachImageButton(panelName, "", gc.getReligionInfo(iOrPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrPrereq, -1, False )
+			
+		if iOrPrereq >= 0 and iStatePrereq >= 0:
+			screen.attachLabel(panelName, "", ")")
+			
+		if set([iPrereq, iOrPrereq]) != set([iStatePrereq, iOrStatePrereq]):	
+			if iPrereq >= 0 and iStatePrereq >= 0:
+				screen.attachLabel(panelName, "", localText.getText("TXT_KEY_AND", ()))
+				
+			if iPrereq >= 0 and iOrStatePrereq >= 0:
+				screen.attachLabel(panelName, "", "(")
+				
+			if iStatePrereq >= 0:
+				screen.attachImageButton(panelName, "", gc.getReligionInfo(iStatePrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iStatePrereq, 1, False )
+				
+			if iOrStatePrereq >= 0:
+				screen.attachLabel(panelName, "", localText.getText("TXT_KEY_OR", ()))
+				screen.attachImageButton(panelName, "", gc.getReligionInfo(iOrStatePrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrStatePrereq, 1, False)
 
+			if iPrereq >= 0 and iOrStatePrereq >= 0:
+				screen.attachLabel(panelName, "", ")")
 
 	def placeSpecial(self):
 		screen = self.top.getScreen()

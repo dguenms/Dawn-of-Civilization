@@ -4686,7 +4686,7 @@ void CvDLLWidgetData::parseReligionHelp(CvWidgetDataStruct &widgetDataStruct, Cv
 {
 	if (widgetDataStruct.m_iData2 != 0)
 	{
-		GAMETEXT.setReligionHelp(szBuffer, (ReligionTypes)widgetDataStruct.m_iData1);
+		GAMETEXT.setReligionHelp(szBuffer, (ReligionTypes)widgetDataStruct.m_iData1, false, widgetDataStruct.m_iData2 == 1);
 	}
 }
 
