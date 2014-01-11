@@ -1467,6 +1467,10 @@ class RFCUtils:
 		pPlayer = gc.getPlayer(iPlayer)
 		return gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(iUnitClass)
 		
+	def getUniqueUnit(self, iPlayer, iUnit):
+		pPlayer = gc.getPlayer(iPlayer)
+		return gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(gc.getUnitInfo(iUnit).getUnitClassType())
+		
 	def getBestInfantry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
 		lInfantryList = [con.iInfantry, con.iRifleman, con.iMusketman, con.iMaceman, con.iCrossbowman, con.iSwordsman, con.iAxeman, con.iWarrior]
