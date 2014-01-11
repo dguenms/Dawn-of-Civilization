@@ -2319,7 +2319,8 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	}
 
 	//Rhye - start
-	if (eBuilding == OLYMPICPARK) {
+	if (eBuilding == OLYMPICPARK)
+	{
 		if (GET_PLAYER(getOwnerINLINE()).isOlympics()) return false;
 	}
 	//Rhye - end
@@ -2328,7 +2329,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	if (eBuilding >= NUM_BUILDINGS_PLAGUE)
 	{
 		//return false;
-
+		
 		if (getOwnerINLINE() >= NUM_MAJOR_PLAYERS)
 			return false;
 		if (getOwnerINLINE() == (PlayerTypes)((int)eBuilding - NUM_BUILDINGS_PLAGUE))
@@ -2352,44 +2353,74 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 
 	//Rhye - start switch for the UHV
 	if (eBuilding == RED_FORT)
+	{
 		if (getOwnerINLINE() != MUGHALS)
+		{
 			if (GET_PLAYER((PlayerTypes)MUGHALS).isHuman())
+			{
 				if (!GET_PLAYER((PlayerTypes)MUGHALS).isAlive())
+				{
 					return false;
-
-	if (eBuilding == WEMBLEY || eBuilding == GREATDAM || eBuilding == CRISTO)
-		if (getOwnerINLINE() != BRAZIL)
-			if (GET_PLAYER((PlayerTypes)BRAZIL).isHuman())
-				if (!GET_PLAYER((PlayerTypes)BRAZIL).isAlive())
-					return false;
-
-	if (eBuilding == CHICHENITZA)
-		if (getOwnerINLINE() != MAYA) {
-			if (GET_PLAYER((PlayerTypes)MAYA).isHuman()) {
-				if (!GET_PLAYER((PlayerTypes)MAYA).isAlive())
-					return false;
-			}
-		}
-
-	if (eBuilding == NOTREDAME)
-		if (getOwnerINLINE() != FRANCE) {
-			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman()) {
-				if (!GET_PLAYER((PlayerTypes)FRANCE).isAlive())
-					return false;
-				else {
-					if (getID() >= NUM_MAJOR_PLAYERS)
-						return false;
 				}
 			}
 		}
+	}
 
-	if (eBuilding == STATUEOFLIBERTY)
-		if (getOwnerINLINE() != AMERICA) {
-			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman()) {
-				if (!GET_PLAYER((PlayerTypes)AMERICA).isAlive())
+	if (eBuilding == WEMBLEY || eBuilding == GREATDAM || eBuilding == CRISTO)
+	{
+		if (getOwnerINLINE() != BRAZIL)
+		{
+			if (GET_PLAYER((PlayerTypes)BRAZIL).isHuman())
+			{
+				if (!GET_PLAYER((PlayerTypes)BRAZIL).isAlive())
+				{
 					return false;
+				}
 			}
 		}
+	}
+
+	if (eBuilding == CHICHENITZA)
+	{
+		if (getOwnerINLINE() != MAYA)
+		{
+			if (GET_PLAYER((PlayerTypes)MAYA).isHuman())
+			{
+				if (!GET_PLAYER((PlayerTypes)MAYA).isAlive())
+				{
+					return false;
+				}
+			}
+		}
+	}
+
+	if (eBuilding == NOTREDAME)
+	{
+		if (getOwnerINLINE() != FRANCE)
+		{
+			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman())
+			{
+				if (!GET_PLAYER((PlayerTypes)FRANCE).isAlive())
+				{
+					return false;
+				}
+			}
+		}
+	}
+
+	if (eBuilding == STATUEOFLIBERTY)
+	{
+		if (getOwnerINLINE() != AMERICA)
+		{
+			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman())
+			{
+				if (!GET_PLAYER((PlayerTypes)AMERICA).isAlive())
+				{
+					return false;
+				}
+			}
+		}
+	}
 	//Rhye - end
 
 	if (!bTestVisible)
