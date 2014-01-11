@@ -6263,12 +6263,20 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	//Rhye - start
 	if (getScenario() >= SCENARIO_600AD) //late start condition
+	{
 		if ((eBuilding >= PYRAMID && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == ZEUS || eBuilding == MAUSOLLOS || eBuilding == KHAJURAHO || iI == ISHTAR)
+		{
 			return false;
+		}
+	}
 
 	if (getScenario() == SCENARIO_1700AD)
+	{
 		if (eBuilding == GREATWALL || eBuilding == MACHU_PICCHU || eBuilding == KHAJURAHO)
+		{
 			return false;
+		}
+	}
 	//Rhye - end
 
 	if (GC.getGameINLINE().isBuildingClassMaxedOut(eBuildingClass))
@@ -6371,23 +6379,32 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	//Leoreth: don't allow UHV wonders before the respective human civ has spawned and some turns after
 	if (!isHuman())
 	{
-		if (eBuilding == NOTREDAME || eBuilding == EIFFELTOWER){
-			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman()){
-				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[FRANCE])+5){
+		if (eBuilding == NOTREDAME || eBuilding == EIFFELTOWER)
+		{
+			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman())
+			{
+				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[FRANCE])+5)
+				{
 					return false;
 				}
 			}
 		}
-		else if (eBuilding == BLUE_MOSQUE || eBuilding == TOPKAPI){
-			if (GET_PLAYER((PlayerTypes)TURKEY).isHuman()){
-				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[TURKEY])+5){
+		else if (eBuilding == BLUE_MOSQUE || eBuilding == TOPKAPI)
+		{
+			if (GET_PLAYER((PlayerTypes)TURKEY).isHuman())
+			{
+				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[TURKEY])+5)
+				{
 					return false;
 				}
 			}
 		}
-		else if (eBuilding == UNITEDNATIONS || eBuilding == PENTAGON || eBuilding == STATUEOFLIBERTY){
-			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman()){
-				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[AMERICA])+5){
+		else if (eBuilding == UNITEDNATIONS || eBuilding == PENTAGON || eBuilding == STATUEOFLIBERTY)
+		{
+			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman())
+			{
+				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[AMERICA])+5)
+				{
 					return false;
 				}
 			}
