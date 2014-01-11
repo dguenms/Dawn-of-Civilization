@@ -576,6 +576,9 @@ void CyInfoPythonInterface1()
 		.def("getMovie", &CvBuildingInfo::getMovie, "string ()")
 		.def("getMovieDefineTag", &CvBuildingInfo::getMovieDefineTag, "string ()")
 
+		// Leoreth
+		.def("getOrPrereqReligion", &CvBuildingInfo::getOrPrereqReligion, "int ()")
+		.def("getOrStateReligion", &CvBuildingInfo::getOrStateReligion, "int ()")
 
 		// Arrays
 

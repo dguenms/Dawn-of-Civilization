@@ -626,4 +626,9 @@
 		<Italian>[ICON_BULLET]Illimitato[SPACE]</Italian>
 		<Spanish>[ICON_BULLET]Sin l&#237;mite[SPACE]</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STATE_RELIGION</Tag>
+		<English>State Religion</English>
+		<German>Staatsreligion</German>
+	</TEXT>
 </Civ4GameText>
