@@ -290,7 +290,7 @@ class CvRFCEventHandler:
                 if iPlayer == con.iMongolia:
                         self.vic.onCityRazed(iPlayer, city) #Victory
 			
-		sta.onCityRazed(iPlayer)
+		sta.onCityRazed(iPlayer, city)
 
         def onCityBuilt(self, argsList):
                 city = argsList[0]

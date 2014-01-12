@@ -60,8 +60,11 @@ def onCityAcquired(city, iOwner, iPlayer):
 	if iPlayer == con.iBarbarian:
 		checkBarbarianCollapse(iOwner)
 	
-def onCityRazed(iPlayer):
-	if utils.getHumanID() == iPlayer: 
+def onCityRazed(iPlayer, city):
+	if utils.getHumanID() == iPlayer:
+		iRazePenalty = -10
+		if city.getPopulation() < 5 and not city.isCapital():
+			iRazePenalty = -2 * city.getPopulation()
 		sd.changeHumanRazePenalty(-10)
 		checkStability(iPlayer)
 	
@@ -72,7 +75,7 @@ def onVassalState(iMaster, iVassal):
 	checkStability(iVassal)
 	checkStability(iMaster, True)
 	
-	# reupdate number of cities so vassals survive losing cities
+	# update number of cities so vassals survive losing cities
 	sd.setNumPreviousCities(iVassal, gc.getPlayer(iVassal).getNumCities())
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
@@ -1077,7 +1080,7 @@ def calculateStability(iPlayer):
 	#	if city.getOwner() != iPlayer:
 	#		iOccupiedCoreCities += 1
 			
-	iCurrentCommerce = pPlayer.calculateTotalCommerce()#pPlayer.getEconomyHistory(iGameTurn)
+	iCurrentCommerce = pPlayer.calculateTotalCommerce()
 	iPreviousCommerce = pPlayer.getEconomyHistory(iGameTurn - utils.getTurns(10))
 	
 	iCurrentCommerceNeighbors = iPreviousCommerce * 11 / 10
@@ -1161,12 +1164,14 @@ def calculateStability(iPlayer):
 		iNeighborCommerceDifference = iCurrentCommerceNeighbors - iPreviousCommerceNeighbors
 		iBaselinePercentChange = 100 * iNeighborCommerceDifference / iPreviousCommerceNeighbors
 		
+		utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + " Economic Stability\nGrowth: " + str(iPercentChange) + "\nBaseline Percent: " + str(iBaselinePercentChange))
+		
 		iEconomicGrowthStability = (iPercentChange - iBaselinePercentChange) / 2
 		if iEconomicGrowthStability > 10: iEconomicGrowthStability = 10
 		elif iEconomicGrowthStability < -10: iEconomicGrowthStability = -10
 		
 		# Environmentalism
-		if bEnvironmentalism and iPercentChange > iBaselinePercentChange and iEconomicGrowthStability < 0:
+		if bEnvironmentalism and iPercentChange >= 0 and iEconomicGrowthStability < 0:
 			iEconomicGrowthStability = 0
 		
 		#if iPercentChange > iBaselinePercentChange:

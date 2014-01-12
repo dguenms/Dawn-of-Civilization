@@ -2766,7 +2766,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	}*/
 
 	// Leoreth: penalty for the tech leader
-	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - getTurnForYear(startingTurnYear[getID()] > 30))
+	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - getTurnForYear(startingTurnYear[getID()]) > 30)
 	{
 		int iBestValue = getTotalTechValue();
 		int iDenominator = 0;
