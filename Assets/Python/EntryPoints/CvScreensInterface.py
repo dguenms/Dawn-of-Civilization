@@ -524,10 +524,13 @@ def pediaMain(argsList):
 		pediaMainScreen.pediaJump(PEDIA_MAIN, argsList[0], True)
 
 def pediaJumpToTech(argsList):
+	iTech = argsList[0]
+	# Leoreth: hack to solve right click on current research
+	if iTech == -1: iTech = gc.getPlayer(gc.getGame().getActivePlayer()).getCurrentResearch()
 	if (bUsingSevopedia):
-		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_TECHS, argsList[0], True, False)
+		pediaMainScreen.pediaJump(SevoScreenEnums.PEDIA_TECHS, iTech, True, False)
 	else:
-		pediaMainScreen.pediaJump(PEDIA_TECH, argsList[0], True)
+		pediaMainScreen.pediaJump(PEDIA_TECH, iTech, True)
 
 def pediaJumpToUnit(argsList):
 	if (bUsingSevopedia):

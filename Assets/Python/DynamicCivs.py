@@ -409,7 +409,23 @@ class DynamicCivs:
 			#iTibet - none so far
 			#iKhmer - none so far
 			#iIndonesia - none so far
-			#iMoors - none so far
+			iMoors : {
+				iEgypt : "TXT_KEY_CIV_EGYPT_ARABIAN_VASSAL",
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ARABIAN_VASSAL",
+				iPersia : "TXT_KEY_CIV_PERSIA_ARABIAN_VASSAL",
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_ARABIAN_VASSAL",
+				iRome : "TXT_KEY_CIV_ROME_ARABIAN_VASSAL",
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ARABIAN_VASSAL",
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ARABIAN_VASSAL",
+				iVikings : "TXT_KEY_CIV_VIKINGS_ARABIAN_VASSAL",
+				iKhmer : "TXT_KEY_CIV_KHMER_ARABIAN_VASSAL",
+				iMoors : "TXT_KEY_CIV_ARABIA_MOORISH_VASSAL",
+				iSpain : "TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL",
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARABIAN_VASSAL",
+				iAztecs : "TXT_KEY_CIV_AZTECS_ARABIAN_VASSAL",
+				iTurkey : "TXT_KEY_CIV_TURKEY_ARABIAN_VASSAL",
+				iMughals : "TXT_KEY_CIV_MUGHALS_ARABIAN_VASSAL",
+				iThailand : "TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL",},
 			iSpain : {
 				iCarthage : "TXT_KEY_CIV_PHOENICIA_SPANISH_VASSAL",
 				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_SPANISH_VASSAL",

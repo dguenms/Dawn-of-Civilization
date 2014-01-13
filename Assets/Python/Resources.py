@@ -185,6 +185,9 @@ class Resources:
 			for tPlot in [(101, 48), (100, 49), (100, 50), (99, 50)]:
 				x, y = tPlot
 				gc.getMap().plot(x, y).setRouteType(iRoad)
+				
+			# silk near Astrakhan
+			self.createResource(78, 51, iSilk)
 
                 if (iGameTurn == getTurnForYear(1250)):
                         #gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
@@ -232,6 +235,7 @@ class Resources:
 			self.createResource(54, 48, iCorn) # France
 			self.createResource(67, 47, iCorn) # Romania
 			self.createResource(106, 50, iCorn) # Manchuria
+			self.createResource(77, 52, iCorn) # Caricyn
 			
 			self.createResource(92, 35, iSpices) # Deccan
 			
