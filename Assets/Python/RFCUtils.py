@@ -1786,3 +1786,25 @@ class RFCUtils:
 		popup.addButton(localText.getText("TXT_KEY_BYZANTINE_UP_BUTTON_NONE", ()))
 
 		popup.launch(False)
+		
+	def linreg(self, lTuples):
+		n = len(lTuples)
+		Sx = Sy = Sxx = Syy = Sxy = 0.0
+		for x, y in lTuples:
+			Sx += x
+			Sy += y
+			Sxx += x*x
+			Syy += y*y
+			Sxy += x*y
+			
+		det = n * Sxx - Sx * Sx
+		a, b = (n * Sxy - Sy * Sx) / det, (Sxx * Sy - Sx * Sxy) / det
+		
+		#meanerror = residual = 0.0
+		#for x, y in zip(lx, ly):
+		#	meanerror += (y - Sy/n)**2
+		#	residual += (y - a * x - b)**2
+			
+		#RR = 1 - residual/meanerror
+		
+		return a, b

@@ -1158,17 +1158,28 @@ def calculateStability(iPlayer):
 	
 	# Economic growth
 	if iPreviousCommerce != 0:
-		iCommerceDifference = iCurrentCommerce - iPreviousCommerce
-		iPercentChange = 100 * iCommerceDifference / iPreviousCommerce
+		#iCommerceDifference = iCurrentCommerce - iPreviousCommerce
+		#iPercentChange = 100 * iCommerceDifference / iPreviousCommerce
 		
-		iNeighborCommerceDifference = iCurrentCommerceNeighbors - iPreviousCommerceNeighbors
-		iBaselinePercentChange = 100 * iNeighborCommerceDifference / iPreviousCommerceNeighbors
+		#iNeighborCommerceDifference = iCurrentCommerceNeighbors - iPreviousCommerceNeighbors
+		#iBaselinePercentChange = 100 * iNeighborCommerceDifference / iPreviousCommerceNeighbors
 		
-		utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + " Economic Stability\nGrowth: " + str(iPercentChange) + "\nBaseline Percent: " + str(iBaselinePercentChange))
+		iPercentChange = calculateEconomicGrowth(iPlayer, 10)
+		iBaselinePercentChange = 20 #calculateEconomicGrowthNeighbors(iPlayer, 10)
 		
-		iEconomicGrowthStability = (iPercentChange - iBaselinePercentChange) / 2
-		if iEconomicGrowthStability > 10: iEconomicGrowthStability = 10
-		elif iEconomicGrowthStability < -10: iEconomicGrowthStability = -10
+		iDifference = iPercentChange - iBaselinePercentChange
+		
+		if iDifference > 20:
+			iEconomicGrowthStability = 10 + (iDifference - 20) / 5
+		elif iDifference < -20:
+			iEconomicGrowthStability = -10 + (iDifference + 20) / 5
+		else:
+			iEconomicGrowthStability = iDifference / 2
+		
+		if iEconomicGrowthStability > 20: iEconomicGrowthStability = 20
+		elif iEconomicGrowthStability < -20: iEconomicGrowthStability = -20
+		
+		#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + " Economic Stability\nGrowth: " + str(iPercentChange) + "\nBaseline Percent: " + str(iBaselinePercentChange) + "\nStability: " + str(iEconomicGrowthStability))
 		
 		# Environmentalism
 		if bEnvironmentalism and iPercentChange >= 0 and iEconomicGrowthStability < 0:
@@ -1543,6 +1554,80 @@ def calculateStability(iPlayer):
 
 def sigmoid(x):
 	return 2.0 / (1 + math.exp(-5*x)) - 1.0
+	
+def calculateEconomicGrowth(iPlayer, iNumTurns):
+	lHistory = []
+	pPlayer = gc.getPlayer(iPlayer)
+	iCurrentTurn = gc.getGame().getGameTurn()
+	
+	for iTurn in range(iCurrentTurn - iNumTurns, iCurrentTurn):
+		iHistory = pPlayer.getEconomyHistory(iTurn)
+		if iHistory > 1:
+			lHistory.append((iTurn - iCurrentTurn + iNumTurns, iHistory))
+	
+	lHistory.append((iNumTurns, pPlayer.calculateTotalCommerce()))
+		
+	sDebug = "Calculate economic growth for " + pPlayer.getCivilizationShortDescription(0) + "\n"
+	for iTurn, iCommerce in lHistory:
+		sDebug += "Turn " + str(iTurn) + " Commerce: " + str(iCommerce) + "\n"
+			
+	a, b = utils.linreg(lHistory)
+	
+	iNormalizedStartTurn = b
+	iNormalizedCurrentTurn = a * iNumTurns + b
+	
+	iGrowth = int(100 * (iNormalizedCurrentTurn - iNormalizedStartTurn) / iNormalizedStartTurn)
+	
+	sDebug += "First turn: " + str(iNormalizedStartTurn) + "\n"
+	sDebug += "Current turn: " + str(iNormalizedCurrentTurn) + "\n"
+	sDebug += "Percent growth: " + str(iGrowth)
+	
+	#utils.debugTextPopup(sDebug)
+	
+	return iGrowth
+	
+def calculateEconomicGrowthNeighbors(iPlayer, iNumTurns):
+	lHistory = []
+	lContacts = []
+	pPlayer = gc.getPlayer(iPlayer)
+	iCurrentTurn = gc.getGame().getGameTurn()
+	
+	sDebug = "Calculate economy history for: "
+	for iLoopPlayer in range(con.iNumPlayers):
+		if pPlayer.canContact(iLoopPlayer):
+			lContacts.append(iLoopPlayer)
+			sDebug += gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0) + " "
+			
+	for iTurn in range(iCurrentTurn - iNumTurns, iCurrentTurn):
+		iHistory = pPlayer.getEconomyHistory(iTurn)
+		for iLoopPlayer in lContacts:
+			iHistory += gc.getPlayer(iLoopPlayer).getEconomyHistory(iTurn)
+		if iHistory > 1:
+			lHistory.append((iTurn - iCurrentTurn + iNumTurns, iHistory))
+			
+	iHistory = pPlayer.calculateTotalCommerce()
+	for iLoopPlayer in lContacts:
+		iHistory += gc.getPlayer(iLoopPlayer).calculateTotalCommerce()
+		
+	lHistory.append((iCurrentTurn, iHistory))
+		
+	for iTurn, iCommerce in lHistory:
+		sDebug += "Turn " + str(iTurn) + " Commerce: " + str(iCommerce) + "\n"
+	
+	a, b = utils.linreg(lHistory)
+	
+	iNormalizedStartTurn = b
+	iNormalizedCurrentTurn = a * iNumTurns + b
+	
+	iGrowth = int(100 * (iNormalizedCurrentTurn - iNormalizedStartTurn) / iNormalizedStartTurn)
+	
+	sDebug += "First turn: " + str(iNormalizedStartTurn) + "\n"
+	sDebug += "Current turn: " + str(iNormalizedCurrentTurn) + "\n"
+	sDebug += "Percent growth: " + str(iGrowth)
+	
+	#utils.debugTextPopup(sDebug)
+	
+	return iGrowth
 
 def determineCrisisType(lStabilityTypes):
 	iLowestEntry = utils.getHighestEntry(lStabilityTypes, lambda x: -x)
