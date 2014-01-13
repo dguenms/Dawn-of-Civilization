@@ -3518,9 +3518,9 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 2;
 	//Rhye - end
 
-	if (getID() == MUGHALS && pCity->getOwner() == SELJUKS)
+	if (getID() == MUGHALS && pCity->getOwner() == SELJUKS && pCity->getRegionID() == REGION_PERSIA)
 	{
-		iValue /= 10;
+		return -1;
 	}
 
 	if (getID() == FRANCE && pCity->getX() == 69 && pCity->getY() == 52 && pCity->getOwner() >= NUM_MAJOR_PLAYERS)

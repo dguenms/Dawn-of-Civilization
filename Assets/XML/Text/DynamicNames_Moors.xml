@@ -56,4 +56,8 @@
 		<Tag>TXT_KEY_CIV_MOORS_TAIFAS</Tag>
 		<English>Andalusian Taifas</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ARABIA_MOORISH_VASSAL</Tag>
+		<English>Emirate of Hejaz</English>
+	</TEXT>
 </Civ4GameText>

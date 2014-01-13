@@ -8877,6 +8877,8 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 				szBuffer.append(gDLL->getText("TXT_KEY_CITY_FREE_EXPERIENCE", iExperience));
 			}
 			iExperience = kPlayer.getFreeExperience();
+			iExperience += kPlayer.getDomainExperienceModifier((DomainTypes)kUnit.getDomainType()); // Leoreth: free experience per domain
+			if (kPlayer.isStateReligion() && kPlayer.isHasBuildingEffect((BuildingTypes)HARMANDIR_SAHIB) && pCity->isHasReligion(kPlayer.getStateReligion())) iExperience += 2; // Leoreth: Harmandir Sahib effect
 			if (iExperience != 0)
 			{
 				szBuffer.append(NEWLINE);

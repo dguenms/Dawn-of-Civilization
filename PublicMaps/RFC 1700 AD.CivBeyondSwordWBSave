@@ -22124,8 +22124,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=42
-	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -22553,7 +22552,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=41
-	ImprovementType=IMPROVEMENT_WORKSHOP
+	BonusType=BONUS_WINE
+	ImprovementType=IMPROVEMENT_WINERY
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=14,20,21,22,27,33,36,41,42,
@@ -33060,23 +33061,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=48
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_PLAINS
+	ImprovementType=IMPROVEMENT_MINE
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=33
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginCity
-		CityOwner=33
-		CityName=Kefe
-		CityPopulation=3
-		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
-	EndCity
 	TeamReveal=24,33,41,42,
 EndPlot
 BeginPlot
@@ -33087,7 +33074,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=50
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,33,41,42,
 EndPlot
@@ -33592,7 +33579,7 @@ EndPlot
 BeginPlot
 	x=73,y=49
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=24,33,41,42,
 EndPlot
@@ -34159,17 +34146,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=49
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
-	TeamReveal=24,33,41,42,
-EndPlot
-BeginPlot
-	x=74,y=50
-	BonusType=BONUS_COAL
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=24
 		Damage=0
@@ -34198,6 +34175,16 @@ BeginPlot
 		ReligionType=RELIGION_ORTHODOXY
 		Player24Culture=10
 	EndCity
+	PlotType=2
+	TeamReveal=24,33,41,42,
+EndPlot
+BeginPlot
+	x=74,y=50
+	BonusType=BONUS_COAL
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 	TeamReveal=24,33,41,42,
 EndPlot
 BeginPlot
@@ -35131,25 +35118,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=46
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=6,33,41,42,
 EndPlot
 BeginPlot
 	x=76,y=47
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 	TeamReveal=6,24,33,41,42,
 EndPlot
 BeginPlot
 	x=76,y=48
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,42,
 EndPlot
 BeginPlot
 	x=76,y=49
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,42,
 EndPlot
@@ -35593,25 +35580,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=46
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 	TeamReveal=6,33,41,42,
 EndPlot
 BeginPlot
 	x=77,y=47
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=6,24,33,41,42,
 EndPlot
 BeginPlot
 	x=77,y=48
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,42,
 EndPlot
 BeginPlot
 	x=77,y=49
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,42,
 EndPlot
@@ -35633,6 +35620,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=52
+	BonusType=BONUS_CORN
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,42,
@@ -36097,12 +36086,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=50
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=24,42,
 EndPlot
 BeginPlot
 	x=78,y=51
+	BonusType=BONUS_SILK
+	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,42,

@@ -196,3 +196,5 @@
 # the Tamil Sangam now also gives +25% culture
 # certain wonders are now enabled with two different (state) religions
 # state religion requirements are now displayed in the civilopedia if different from the religion requirements
+# made southern Russia, the Caucasus and the Caricyn/Astrakhan region more habitable
+# removed Kefe from the 1700 AD scenario and moved Rostov 1S to the coast

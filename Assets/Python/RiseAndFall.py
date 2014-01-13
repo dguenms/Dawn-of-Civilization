@@ -889,6 +889,10 @@ class RiseAndFall:
 			tBR = (97, 45)
 			self.startingFlip(iChina, [(tTL, tBR)])
 			
+			# Russia (Sankt Peterburg)
+			utils.convertPlotCulture(gc.getMap().plot(68, 58), iRussia, 100, True)
+			utils.convertPlotCulture(gc.getMap().plot(67, 57), iRussia, 100, True)
+			
 			
 	def startingFlip(self, iPlayer, lRegionList):
 	
