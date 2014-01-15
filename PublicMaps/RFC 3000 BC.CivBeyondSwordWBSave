@@ -19877,7 +19877,7 @@ BeginPlot
 	PlotType=3
 EndPlot
 BeginPlot
-	x=52,y=
+	x=52,y=41
 	BonusType=BONUS_WINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2

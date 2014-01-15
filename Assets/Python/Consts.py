@@ -1225,7 +1225,7 @@ tCoreAreasTL = (
 (58, 45), #Italy
 (87, 46), #Mongolia
 (15, 36), #Aztecs
-(84, 38), #Mughals
+(86, 38), #Mughals
 (69, 41), #Turkey
 (100, 32), #Thailand
 (61, 19), #Congo
