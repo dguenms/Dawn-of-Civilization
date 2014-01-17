@@ -198,3 +198,5 @@
 # state religion requirements are now displayed in the civilopedia if different from the religion requirements
 # made southern Russia, the Caucasus and the Caricyn/Astrakhan region more habitable
 # removed Kefe from the 1700 AD scenario and moved Rostov 1S to the coast
+# you are now able to use slaves under all civics except Egalitarianism
+# Egalitarianism increases the unhappiness from using slaves for all other civs not using it

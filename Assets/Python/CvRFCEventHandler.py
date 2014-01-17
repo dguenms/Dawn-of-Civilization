@@ -198,7 +198,7 @@ class CvRFCEventHandler:
 				utils.moveCapital(con.iMongolia, (102, 47)) # Khanbaliq
 				
 		# remove slaves if unable to practice slavery
-		if gc.getPlayer(iPlayer).getCivics(2) != con.iCivicAgrarianism and gc.getPlayer(iPlayer).getCivics(2) != con.iCivicSlavery:
+		if gc.getPlayer(iPlayer).getCivics(1) == con.iCivicEgalitarianism:
 			utils.removeSlaves(city)
 		else:
 			utils.freeSlaves(city, iPlayer)
@@ -456,7 +456,7 @@ class CvRFCEventHandler:
 		if iPlayer < iNumPlayers:
 			self.dc.onRevolution(iPlayer)
 			
-		if gc.getPlayer(iPlayer).getCivics(2) != con.iCivicAgrarianism and gc.getPlayer(iPlayer).getCivics(2) != con.iCivicSlavery and gc.getPlayer(iPlayer).getCivics(3) != con.iCivicMercantilism:
+		if gc.getPlayer(iPlayer).getCivics(1) == con.iEgalitarianism:
 			utils.clearSlaves(iPlayer)
 			
 		if iPlayer in [con.iEgypt]:
