@@ -17045,7 +17045,18 @@ int CvCity::getSpecialistGoodHappiness() const
 
 int CvCity::getSpecialistBadHappiness() const
 {
-	return m_iSpecialistBadHappiness;
+	int iSpecialistBadHappiness = m_iSpecialistBadHappiness;
+
+	// Leoreth: increased unhappiness from Egalitarianism
+	int iAngerModifier = 0;
+	for (int iI = 0; iI < GC.getNumCivicInfos(); iI++)
+	{
+		iAngerModifier += GET_PLAYER(getOwnerINLINE()).getCivicPercentAnger((CivicTypes)iI, false);
+	}
+
+	GC.getGame().logMsg("Anger modifier: %d", iAngerModifier);
+
+	return iSpecialistBadHappiness * (GC.getPERCENT_ANGER_DIVISOR() + 4 * iAngerModifier) / GC.getPERCENT_ANGER_DIVISOR();
 }
 
 void CvCity::changeSpecialistGoodHappiness(int iChange)

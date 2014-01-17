@@ -2432,6 +2432,12 @@ void CvUnitAI::AI_attackCityMove()
 	}
 	//Rhye - end
 
+	// Leoreth: Mughals should not target Seljuks
+	if (getOwnerINLINE() == MUGHALS)
+	{
+		bHuntSeljuks = false;
+	}
+
 	bool bReadyToAttack = ((getGroup()->getNumUnits() >= (bHuntBarbs ? 3 : AI_stackOfDoomExtra())));
 	if (plot()->getOwnerINLINE() == getOwnerINLINE())
 	{

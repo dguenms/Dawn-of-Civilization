@@ -69,4 +69,8 @@ As a program, scholasticism began as an attempt at harmonization on the part of 
 		<Italian>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per le unit&#224; militari stazionate in citt&#224;</Italian>
 		<Spanish>[ICON_BULLET]%D1_PerUnit %F2_HappyOrSad por cada unidad militar destacada en la ciudad</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_EGALITARIANISM_HELP</Tag>
+		<English>[ICON_BULLET]Unable to Use Slaves[NEWLINE][ICON_BULLET][ICON_UNHAPPY] Penalty for Slaves in Civs without [LINK=literal]Egalitarianism[\LINK]</English>
+	</TEXT>
 </Civ4GameText>

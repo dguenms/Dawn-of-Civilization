@@ -4467,10 +4467,14 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		{
 			if (GC.getUnitInfo(pUnitTraded->getUnitType()).isSlave() && (pTheirCapitalCity != NULL))
 			{
-				// make sure slaves aren't on sea
-				if (!pUnitTraded->isCargo() || pUnitTraded->canUnload())
+				// receiving player must be able to use slaves
+				if (GET_PLAYER(eWhoTo).getCivics((CivicOptionTypes)1) != CIVIC_EGALITARIANISM)
 				{
-					return true;
+					// make sure slaves aren't on sea
+					if (!pUnitTraded->isCargo() || pUnitTraded->canUnload())
+					{
+						return true;
+					}
 				}
 			}
 		}
@@ -8878,7 +8882,8 @@ int CvPlayer::getCivicPercentAnger(CivicTypes eCivic, bool bIgnore) const
 
 	for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// Leoreth: don't count minors
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_PLAYER((PlayerTypes)iI).isMinorCiv())
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() != getTeam())
 			{
@@ -25381,11 +25386,6 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 	{
 		return DENIAL_UNKNOWN;
 	}
-
-	if (GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY && GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM && GET_PLAYER(ePlayer).getCivics((CivicOptionTypes)2) != CIVIC_AGRARIANISM)
-	{
-		return DENIAL_UNKNOWN;
-	}
 	
 	/*if ((GC.getUnitInfo(pUnit->getUnitType()).getStateReligion() != GET_PLAYER(ePlayer).getStateReligion()) && (GC.getUnitInfo(pUnit->getUnitType()).getOrStateReligion() != GET_PLAYER(ePlayer).getStateReligion()))
 	{
@@ -25425,7 +25425,7 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 
 bool CvPlayer::canEnslave() const
 {
-	return (getCivics((CivicOptionTypes)2) == CIVIC_SLAVERY && getMaxConscript() <= 0);
+	return (getCivics((CivicOptionTypes)1) == CIVIC_SLAVERY && getMaxConscript() <= 0);
 }
 
 bool CvPlayer::hasCivic(CivicTypes eCivic) const

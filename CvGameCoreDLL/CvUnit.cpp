@@ -5912,7 +5912,7 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 	//Leoreth: no slavery in the motherland, needs forced labor
 	if (getUnitType() == GC.getInfoTypeForString("UNIT_SLAVE"))
 	{
-		if (GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY && GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)3) != CIVIC_MERCANTILISM)
+		if (GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)1) == CIVIC_EGALITARIANISM)
 		{
 			return false;
 		}
@@ -6260,21 +6260,6 @@ bool CvUnit::canTrade(const CvPlot* pPlot, bool bTestVisible) const
 	if (!bTestVisible)
 	{
 		if (pCity->getTeam() == getTeam())
-		{
-			return false;
-		}
-	}
-
-	//Leoreth: slave trade only with Catholics and Protestants who run forced labor
-	if (getUnitClassType() == (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
-	{
-		PlayerTypes eOwner = pCity->getOwner();
-		if (GET_PLAYER(eOwner).getStateReligion() != CATHOLICISM && GET_PLAYER(eOwner).getStateReligion() != PROTESTANTISM)
-		{
-			return false;
-		}
-
-		if (GET_PLAYER(eOwner).getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY)
 		{
 			return false;
 		}
