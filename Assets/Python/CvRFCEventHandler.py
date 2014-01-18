@@ -456,7 +456,7 @@ class CvRFCEventHandler:
 		if iPlayer < iNumPlayers:
 			self.dc.onRevolution(iPlayer)
 			
-		if gc.getPlayer(iPlayer).getCivics(1) == con.iEgalitarianism:
+		if gc.getPlayer(iPlayer).getCivics(1) == con.iCivicEgalitarianism:
 			utils.clearSlaves(iPlayer)
 			
 		if iPlayer in [con.iEgypt]:
