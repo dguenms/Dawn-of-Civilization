@@ -2268,12 +2268,29 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
+	bool bReligion = true;
 	if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION)
 	{
 		if (!(isHasReligion((ReligionTypes)(GC.getBuildingInfo(eBuilding).getPrereqReligion()))))
 		{
-			return false;
+			bReligion = false;
 		}
+	}
+
+	// Leoreth: OR religion requirement
+	bool bOrReligion = false;
+	if (GC.getBuildingInfo(eBuilding).getOrPrereqReligion() != NO_RELIGION)
+	{
+		bOrReligion = true;
+		if (!(isHasReligion((ReligionTypes)GC.getBuildingInfo(eBuilding).getOrPrereqReligion())))
+		{
+			bOrReligion = false;
+		}
+	}
+
+	if (!bReligion && !bOrReligion)
+	{
+		return false;
 	}
 
 	eCorporation = (CorporationTypes)GC.getBuildingInfo(eBuilding).getPrereqCorporation();

@@ -200,3 +200,5 @@
 # removed Kefe from the 1700 AD scenario and moved Rostov 1S to the coast
 # you are now able to use slaves under all civics except Egalitarianism
 # Egalitarianism increases the unhappiness from using slaves for all other civs not using it
+# the third Aztec UHV goal now counts all Old World units, not just Europeans
+# civs have to be dead for at least 20 turns until they can resurrect again
