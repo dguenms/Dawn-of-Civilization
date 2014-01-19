@@ -6028,12 +6028,29 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		}
 	}
 
+	bool bStateReligion = true;
 	if (GC.getBuildingInfo(eBuilding).getStateReligion() != NO_RELIGION)
 	{
-		if (getStateReligion() != GC.getBuildingInfo(eBuilding).getStateReligion() && getCivics((CivicOptionTypes)4) != CIVIC_SECULARISM)
+		if (getStateReligion() != GC.getBuildingInfo(eBuilding).getStateReligion())
 		{
-			return false;
+			bStateReligion = false;
 		}
+	}
+
+	// Leoreth: OR state religion requirement
+	bool bOrStateReligion = false;
+	if (GC.getBuildingInfo(eBuilding).getOrStateReligion() != NO_RELIGION)
+	{
+		bOrStateReligion = true;
+		if (getStateReligion() != GC.getBuildingInfo(eBuilding).getOrStateReligion())
+		{
+			bOrStateReligion = false;
+		}
+	}
+
+	if (!bStateReligion && !bOrStateReligion && getCivics((CivicOptionTypes)4) != CIVIC_SECULARISM)
+	{
+		return false;
 	}
 
 	// edead: start civic requirement

@@ -560,6 +560,7 @@ def secedeCities(iPlayer, lCities):
 		for iLoopPlayer in range(con.iNumPlayers):
 			if iLoopPlayer == iPlayer: continue
 			if gc.getPlayer(iLoopPlayer).isAlive(): continue
+			if gc.getGame().getGameTurn() - getLastTurnAlive(iLoopPlayer) < utils.getTurns(20): continue
 		
 			tRespawnTL, tRespawnBR, tRespawnExceptions = utils.getRespawnArea(iLoopPlayer)
 			if utils.isPlotInArea(tCityPlot, tRespawnTL, tRespawnBR, tRespawnExceptions):
@@ -1566,10 +1567,6 @@ def calculateEconomicGrowth(iPlayer, iNumTurns):
 			lHistory.append((iTurn - iCurrentTurn + iNumTurns, iHistory))
 	
 	lHistory.append((iNumTurns, pPlayer.calculateTotalCommerce()))
-		
-	sDebug = "Calculate economic growth for " + pPlayer.getCivilizationShortDescription(0) + "\n"
-	for iTurn, iCommerce in lHistory:
-		sDebug += "Turn " + str(iTurn) + " Commerce: " + str(iCommerce) + "\n"
 			
 	a, b = utils.linreg(lHistory)
 	
@@ -1577,12 +1574,6 @@ def calculateEconomicGrowth(iPlayer, iNumTurns):
 	iNormalizedCurrentTurn = a * iNumTurns + b
 	
 	iGrowth = int(100 * (iNormalizedCurrentTurn - iNormalizedStartTurn) / iNormalizedStartTurn)
-	
-	sDebug += "First turn: " + str(iNormalizedStartTurn) + "\n"
-	sDebug += "Current turn: " + str(iNormalizedCurrentTurn) + "\n"
-	sDebug += "Percent growth: " + str(iGrowth)
-	
-	#utils.debugTextPopup(sDebug)
 	
 	return iGrowth
 	
@@ -1592,11 +1583,9 @@ def calculateEconomicGrowthNeighbors(iPlayer, iNumTurns):
 	pPlayer = gc.getPlayer(iPlayer)
 	iCurrentTurn = gc.getGame().getGameTurn()
 	
-	sDebug = "Calculate economy history for: "
 	for iLoopPlayer in range(con.iNumPlayers):
 		if pPlayer.canContact(iLoopPlayer):
 			lContacts.append(iLoopPlayer)
-			sDebug += gc.getPlayer(iLoopPlayer).getCivilizationShortDescription(0) + " "
 			
 	for iTurn in range(iCurrentTurn - iNumTurns, iCurrentTurn):
 		iHistory = pPlayer.getEconomyHistory(iTurn)
@@ -1610,9 +1599,6 @@ def calculateEconomicGrowthNeighbors(iPlayer, iNumTurns):
 		iHistory += gc.getPlayer(iLoopPlayer).calculateTotalCommerce()
 		
 	lHistory.append((iCurrentTurn, iHistory))
-		
-	for iTurn, iCommerce in lHistory:
-		sDebug += "Turn " + str(iTurn) + " Commerce: " + str(iCommerce) + "\n"
 	
 	a, b = utils.linreg(lHistory)
 	
@@ -1620,12 +1606,6 @@ def calculateEconomicGrowthNeighbors(iPlayer, iNumTurns):
 	iNormalizedCurrentTurn = a * iNumTurns + b
 	
 	iGrowth = int(100 * (iNormalizedCurrentTurn - iNormalizedStartTurn) / iNormalizedStartTurn)
-	
-	sDebug += "First turn: " + str(iNormalizedStartTurn) + "\n"
-	sDebug += "Current turn: " + str(iNormalizedCurrentTurn) + "\n"
-	sDebug += "Percent growth: " + str(iGrowth)
-	
-	#utils.debugTextPopup(sDebug)
 	
 	return iGrowth
 
@@ -1669,6 +1649,19 @@ def isOverseas(city):
 	capital = gc.getPlayer(city.getOwner()).getCapitalCity()
 	
 	return (capital.plot().getArea() != city.plot().getArea())
+	
+# use score history to determine last turn the civ was alive
+def getLastTurnAlive(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iCurrentTurn = gc.getGame().getGameTurn()
+	
+	if pPlayer.isAlive(): return iCurrentTurn
+	
+	for iTurn in range(iCurrentTurn, 0, -1):
+		if pPlayer.getScoreHistory(iTurn) > 0:
+			return iTurn
+			
+	return 0
 
 def checkResurrection(iGameTurn):
 
@@ -1686,6 +1679,9 @@ def checkResurrection(iGameTurn):
 		# special case Netherlands: need only one city to respawn (Amsterdam)
 		if iLoopCiv == con.iNetherlands:
 			iMinNumCities = 1
+			
+		# check if only recently died
+		if iGameTurn - getLastTurnAlive(iLoopCiv) < utils.getTurns(20): continue
 		
 		# check if the civ can be reborn at this date
 		if len(con.tResurrectionIntervals[iLoopCiv]) > 0:
