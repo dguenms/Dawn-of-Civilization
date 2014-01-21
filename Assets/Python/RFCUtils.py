@@ -1797,7 +1797,7 @@ class RFCUtils:
 			Syy += y*y
 			Sxy += x*y
 			
-		det = n * Sxx - Sx * Sx
+		det = n * Sxx - Sx * Sx		
 		a, b = (n * Sxy - Sy * Sx) / det, (Sxx * Sy - Sx * Sxy) / det
 		
 		#meanerror = residual = 0.0

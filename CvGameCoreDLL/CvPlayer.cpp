@@ -18773,6 +18773,10 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(MAX_PLAYERS, m_aiGoldPerTurnByPlayer);
 	pStream->Read(MAX_TEAMS, m_aiEspionageSpendingWeightAgainstTeam);
 
+	// Leoreth
+	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainProductionModifiers);
+	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
+
 	pStream->Read(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Read(NUM_PLAYEROPTION_TYPES, m_abOptions);
 
@@ -19273,6 +19277,10 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceFlexibleCount);
 	pStream->Write(MAX_PLAYERS, m_aiGoldPerTurnByPlayer);
 	pStream->Write(MAX_TEAMS, m_aiEspionageSpendingWeightAgainstTeam);
+
+	// Leoreth
+	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainProductionModifiers);
+	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
 
 	pStream->Write(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Write(NUM_PLAYEROPTION_TYPES, m_abOptions);

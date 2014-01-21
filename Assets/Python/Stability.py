@@ -1015,7 +1015,7 @@ def calculateStability(iPlayer):
 			if not bHistorical: iModifier += 2
 			
 			# colonies with Totalitarianism
-			if isOverseas(city) and bHistorical: iModifier += 1
+			if isOverseas(city) and bHistorical and bTotalitarianism: iModifier += 1
 			
 			# not original owner
 			if city.getOriginalOwner() != iPlayer and not bExpansionExceptions and not bWarriorCode: iModifier += 1
@@ -1338,7 +1338,7 @@ def calculateStability(iPlayer):
 		elif iCurrentEra >= con.iIndustrial: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iDemocracy):
-		if iCivicOrganization not in [con.iCivicRepresentation, con.iCivicEgalitarianism]: iCivicStability -= 5
+		if iCivicOrganization not in [con.iCivicRepresentation, con.iCivicEgalitarianism, con.iCivicTotalitarianism]: iCivicStability -= 5
 		if iCivicLabor in [con.iCivicSlavery, con.iCivicAgrarianism] and iCivicOrganization != con.iCivicTotalitarianism: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iUtopia):
