@@ -1789,6 +1789,9 @@ class RFCUtils:
 		
 	def linreg(self, lTuples):
 		n = len(lTuples)
+		
+		if n < 2: return 0.0, 0.0
+		
 		Sx = Sy = Sxx = Syy = Sxy = 0.0
 		for x, y in lTuples:
 			Sx += x

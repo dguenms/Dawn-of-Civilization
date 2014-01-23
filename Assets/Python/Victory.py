@@ -2477,7 +2477,7 @@ class Victory:
 			if iVictoryType == con.iBuddhism:
 				bAtPeace = True
 				for iLoopPlayer in range(con.iNumPlayers):
-					if gc.getTeam(iPlayer).isAtWar(iLoopPlayer):
+					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getTeam(iPlayer).isAtWar(iLoopPlayer):
 						bAtPeace = False
 						break
 				if bAtPeace:
