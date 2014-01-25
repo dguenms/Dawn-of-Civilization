@@ -14967,6 +14967,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iSpecialistFreeExperience);
 	pStream->Read(&m_iEspionageDefenseModifier);
 
+	// Leoreth
 	pStream->Read(&m_iSpecialistGoodHappiness);
 	pStream->Read(&m_iSpecialistBadHappiness);
 	pStream->Read(&m_iCorporationGoodHappiness);
@@ -14985,7 +14986,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	// m_bInfoDirty not saved...
 	// m_bLayoutDirty not saved...
 	pStream->Read(&m_bPlundered);
-	pStream->Read(&m_bMongolUP);
+	pStream->Read(&m_bMongolUP); // Leoreth
 
 	pStream->Read((int*)&m_eOwner);
 	pStream->Read((int*)&m_ePreviousOwner);
@@ -15216,6 +15217,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iSpecialistFreeExperience);
 	pStream->Write(m_iEspionageDefenseModifier);
 
+	// Leoreth
 	pStream->Write(m_iSpecialistGoodHappiness);
 	pStream->Write(m_iSpecialistBadHappiness);
 	pStream->Write(m_iCorporationGoodHappiness);
@@ -15234,7 +15236,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	// m_bInfoDirty not saved...
 	// m_bLayoutDirty not saved...
 	pStream->Write(m_bPlundered);
-	pStream->Write(m_bMongolUP);
+	pStream->Write(m_bMongolUP); // Leoreth
 
 	pStream->Write(m_eOwner);
 	pStream->Write(m_ePreviousOwner);
@@ -17019,39 +17021,52 @@ bool CvCity::canEnslave() const
 
 bool CvCity::canEnslave(bool bGeneral) const
 {
+	TCHAR szOut[1024];
+	sprintf(szOut, "Checking canEnslave for: %s", getName().c_str());
+	GC.getGame().logMsg(szOut);
+			
 	if (GET_PLAYER(getOwnerINLINE()).canEnslave())
 	{
 		if (getRegionID() == REGION_WEST_AFRICA || getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_ETHIOPIA)
 		{
 			if (bGeneral)
 			{
+				GC.getGame().logMsg("Can enslave: general");
 				return true;
 			}
 
 			if (isDisorder())
 			{
+				GC.getGame().logMsg("Cannot enslave: disorder");
 				return false;
 			}
 
 			if (isDrafted())
 			{
+				GC.getGame().logMsg("Cannot enslave: drafted");
 				return false;
 			}
 
 			if (getPopulation() <= 2)
 			{
+				GC.getGame().logMsg("Cannot enslave: population");
 				return false;
 			}
 
 			if (getPopulation() < GC.getDefineINT("CONSCRIPT_MIN_CITY_POPULATION")+2)
 			{
+				GC.getGame().logMsg("Cannot enslave: define population");
 				return false;
 			}
 
+			GC.getGame().logMsg("Can enslave: player");
 			return true;
 		}
+
+		GC.getGame().logMsg("Cannot enslave: region");
 	}
 
+	GC.getGame().logMsg("Cannot enslave: player");
 	return false;
 }
 
@@ -17070,8 +17085,6 @@ int CvCity::getSpecialistBadHappiness() const
 	{
 		iAngerModifier += GET_PLAYER(getOwnerINLINE()).getCivicPercentAnger((CivicTypes)iI, false);
 	}
-
-	GC.getGame().logMsg("Anger modifier: %d", iAngerModifier);
 
 	return iSpecialistBadHappiness * (GC.getPERCENT_ANGER_DIVISOR() + 4 * iAngerModifier) / GC.getPERCENT_ANGER_DIVISOR();
 }

@@ -1573,6 +1573,8 @@ def calculateEconomicGrowth(iPlayer, iNumTurns):
 	iNormalizedStartTurn = b
 	iNormalizedCurrentTurn = a * iNumTurns + b
 	
+	if iNormalizedStartTurn == 0.0: return 0
+	
 	iGrowth = int(100 * (iNormalizedCurrentTurn - iNormalizedStartTurn) / iNormalizedStartTurn)
 	
 	return iGrowth

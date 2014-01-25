@@ -202,3 +202,4 @@
 # Egalitarianism increases the unhappiness from using slaves for all other civs not using it
 # the third Aztec UHV goal now counts all Old World units, not just Europeans
 # civs have to be dead for at least 20 turns until they can resurrect again
+# added Polish Wilno to the 1700 AD scenario

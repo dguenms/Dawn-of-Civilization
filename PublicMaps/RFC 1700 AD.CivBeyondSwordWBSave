@@ -29427,10 +29427,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		BuildingType=BUILDING_ORTHODOX_TEMPLE
-		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		ReligionType=RELIGION_ORTHODOXY
 		Player26Culture=50
 	EndCity
 	TeamReveal=14,21,23,24,26,36,37,42,
@@ -30509,9 +30506,38 @@ BeginPlot
 	x=67,y=55
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginCity
+		CityOwner=26
+		CityName=Wilno
+		CityPopulation=5
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_POLISH_SEJMIK
+		BuildingType=BUILDING_CHRISTIAN_TEMPLE
+		BuildingType=BUILDING_CHRISTIAN_MONASTERY
+		ReligionType=RELIGION_CHRISTIANITY
+		Player26Culture=10
+	EndCity
 	TeamReveal=14,23,24,26,37,42,
 EndPlot
 BeginPlot
