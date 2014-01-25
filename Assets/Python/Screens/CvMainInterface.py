@@ -2199,8 +2199,10 @@ class CvMainInterface:
 
 				# Conscript button
 				if pHeadSelectedCity.canEnslave(True):
+					print pHeadSelectedCity.getName() + ' can enslave'
 					szText = "<font=1>" + localText.getText("TXT_KEY_ENSLAVE", ()) + "</font>" #Leoreth
 				else:
+					print pHeadSelectedCity.getName() + ' can not enslave'
 					szText = "<font=1>" + localText.getText("TXT_KEY_DRAFT", ()) + "</font>"
 				screen.setButtonGFC( "Conscript", szText, "", iBtnX, iBtnY, iBtnW, iBtnH, WidgetTypes.WIDGET_CONSCRIPT, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
 				screen.setStyle( "Conscript", "Button_CityT1_Style" )
