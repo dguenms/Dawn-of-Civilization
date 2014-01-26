@@ -11006,6 +11006,16 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			}
 		}
 
+		// Leoreth
+		if (kBuilding.getNumColoniesPrereq() > 0)
+		{
+			if (NO_PLAYER == ePlayer || GET_PLAYER(ePlayer).countColonies() < kBuilding.getNumColoniesPrereq())
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_COLONIES", kBuilding.getNumColoniesPrereq()));
+			}
+		}
+
 		if (kBuilding.getUnitLevelPrereq() > 0)
 		{
 			if (NO_PLAYER == ePlayer || GET_PLAYER(ePlayer).getHighestUnitLevel() < kBuilding.getUnitLevelPrereq())

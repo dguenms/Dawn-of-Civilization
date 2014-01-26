@@ -25129,6 +25129,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>0</iConquestProb>
 			<iCitiesPrereq>0</iCitiesPrereq>
+			<iColoniesPrereq>1</iColoniesPrereq>
 			<iTeamsPrereq>0</iTeamsPrereq>
 			<!-- Rhye -->
 			<iLevelPrereq>0</iLevelPrereq>
@@ -25331,6 +25332,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>0</iConquestProb>
 			<iCitiesPrereq>0</iCitiesPrereq>
+			<iColoniesPrereq>1</iColoniesPrereq>
 			<iTeamsPrereq>0</iTeamsPrereq>
 			<!-- Rhye -->
 			<iLevelPrereq>0</iLevelPrereq>

@@ -6374,6 +6374,15 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			return false;
 		}
 
+		// Leoreth: if the building requires colonies (check if it does first, because the calculation of colonies is time consuming)
+		if (GC.getBuildingInfo(eBuilding).getNumColoniesPrereq() > 0)
+		{
+			if (countColonies() < GC.getBuildingInfo(eBuilding).getNumColoniesPrereq())
+			{
+				return false;
+			}
+		}
+
 		if (getHighestUnitLevel() < GC.getBuildingInfo(eBuilding).getUnitLevelPrereq())
 		{
 			return false;
@@ -25486,6 +25495,30 @@ int CvPlayer::getDomainExperienceModifier(DomainTypes eDomainType) const
 void CvPlayer::changeDomainExperienceModifier(DomainTypes eDomainType, int iChange)
 {
 	m_aiDomainExperienceModifiers[(int)eDomainType] += iChange;
+}
+
+// Leoreth
+int CvPlayer::countColonies() const
+{
+	if (getNumCities() == 0)
+	{
+		return 0;
+	}
+
+	int iHomeArea = GC.getMapINLINE().getArea(getCapitalCity()->getArea())->getClosestAreaSize(30);
+	int iNumColonies = 0;
+
+	int iLoop;
+	CvCity* pLoopCity;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		if (GC.getMapINLINE().getArea(pLoopCity->getArea())->getClosestAreaSize(30) != iHomeArea)
+		{
+			iNumColonies++;
+		}
+	}
+
+	return iNumColonies;
 }
 
 // BUG - Reminder Mod - start

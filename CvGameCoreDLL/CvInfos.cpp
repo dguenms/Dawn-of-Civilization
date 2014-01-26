@@ -6713,6 +6713,7 @@ m_iAdvancedStartCost(0),
 m_iAdvancedStartCostIncrease(0),
 m_iMinAreaSize(0),
 m_iNumCitiesPrereq(0),
+m_iNumColoniesPrereq(0),
 m_iNumTeamsPrereq(0),
 m_iUnitLevelPrereq(0),
 m_iMinLatitude(0),
@@ -7023,6 +7024,12 @@ int CvBuildingInfo::getMinAreaSize() const
 int CvBuildingInfo::getNumCitiesPrereq() const
 {
 	return m_iNumCitiesPrereq;
+}
+
+// Leoreth
+int CvBuildingInfo::getNumColoniesPrereq() const
+{
+	return m_iNumColoniesPrereq;
 }
 
 int CvBuildingInfo::getNumTeamsPrereq() const
@@ -7983,6 +7990,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iAdvancedStartCostIncrease);
 	stream->Read(&m_iMinAreaSize);
 	stream->Read(&m_iNumCitiesPrereq);
+	stream->Read(&m_iNumColoniesPrereq); // Leoreth
 	stream->Read(&m_iNumTeamsPrereq);
 	stream->Read(&m_iUnitLevelPrereq);
 	stream->Read(&m_iMinLatitude);
@@ -8306,6 +8314,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iAdvancedStartCostIncrease);
 	stream->Write(m_iMinAreaSize);
 	stream->Write(m_iNumCitiesPrereq);
+	stream->Write(m_iNumColoniesPrereq); // Leoreth
 	stream->Write(m_iNumTeamsPrereq);
 	stream->Write(m_iUnitLevelPrereq);
 	stream->Write(m_iMinLatitude);
@@ -8677,6 +8686,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iMinAreaSize, "iMinAreaSize");
 	pXML->GetChildXmlValByName(&m_iConquestProbability, "iConquestProb");
 	pXML->GetChildXmlValByName(&m_iNumCitiesPrereq, "iCitiesPrereq");
+	pXML->GetChildXmlValByName(&m_iNumColoniesPrereq, "iColoniesPrereq"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iNumTeamsPrereq, "iTeamsPrereq");
 	pXML->GetChildXmlValByName(&m_iUnitLevelPrereq, "iLevelPrereq");
 	pXML->GetChildXmlValByName(&m_iMinLatitude, "iMinLatitude");

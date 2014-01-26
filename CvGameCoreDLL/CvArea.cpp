@@ -919,6 +919,47 @@ void CvArea::changeNumImprovements(ImprovementTypes eImprovement, int iChange)
 }
 
 
+int CvArea::getClosestAreaSize(int iSize) const
+{
+	if (getNumTiles() > iSize)
+	{
+		return getID();
+	}
+
+	int iLoop, iCurrentDistance;
+	CvPlot* pCurrentPlot;
+	CvPlot* pLoopPlot;
+	int iClosestArea = -1;
+	int iClosestDistance = MAX_INT;
+	
+	for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+	{
+		pCurrentPlot = GC.getMapINLINE().plotByIndex(iI);
+
+		if (pCurrentPlot->getArea() == getID())
+		{
+			for (int iJ = 0; iJ < GC.getMapINLINE().numPlotsINLINE(); iJ++)
+			{
+				pLoopPlot = GC.getMapINLINE().plotByIndex(iJ);
+
+				if (pLoopPlot->getArea() != getID() && !pLoopPlot->isWater() && GC.getMapINLINE().getArea(pLoopPlot->getArea())->getNumTiles() > iSize)
+				{
+					iCurrentDistance = stepDistance(pCurrentPlot->getX(), pCurrentPlot->getY(), pLoopPlot->getX(), pLoopPlot->getY());
+
+					if (iCurrentDistance < iClosestDistance)
+					{
+						iClosestDistance = iCurrentDistance;
+						iClosestArea = pLoopPlot->getArea();
+					}
+				}
+			}
+		}
+	}
+
+	return iClosestArea;
+}
+
+
 void CvArea::read(FDataStreamBase* pStream)
 {
 	int iI;

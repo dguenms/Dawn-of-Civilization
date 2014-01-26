@@ -118,6 +118,8 @@ public:
 	int getNumImprovements(ImprovementTypes eImprovement) const;							// Exposed to Python
 	void changeNumImprovements(ImprovementTypes eImprovement, int iChange);
 
+	int getClosestAreaSize(int iSize) const;
+
 protected:
 
 	int m_iID;
