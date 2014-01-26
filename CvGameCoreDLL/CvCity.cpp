@@ -17020,53 +17020,40 @@ bool CvCity::canEnslave() const
 }
 
 bool CvCity::canEnslave(bool bGeneral) const
-{
-	TCHAR szOut[1024];
-	sprintf(szOut, "Checking canEnslave for: %s", getName().c_str());
-	GC.getGame().logMsg(szOut);
-			
+{			
 	if (GET_PLAYER(getOwnerINLINE()).canEnslave())
 	{
 		if (getRegionID() == REGION_WEST_AFRICA || getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_ETHIOPIA)
 		{
 			if (bGeneral)
 			{
-				GC.getGame().logMsg("Can enslave: general");
 				return true;
 			}
 
 			if (isDisorder())
 			{
-				GC.getGame().logMsg("Cannot enslave: disorder");
 				return false;
 			}
 
 			if (isDrafted())
 			{
-				GC.getGame().logMsg("Cannot enslave: drafted");
 				return false;
 			}
 
 			if (getPopulation() <= 2)
 			{
-				GC.getGame().logMsg("Cannot enslave: population");
 				return false;
 			}
 
 			if (getPopulation() < GC.getDefineINT("CONSCRIPT_MIN_CITY_POPULATION")+2)
 			{
-				GC.getGame().logMsg("Cannot enslave: define population");
 				return false;
 			}
 
-			GC.getGame().logMsg("Can enslave: player");
 			return true;
 		}
-
-		GC.getGame().logMsg("Cannot enslave: region");
 	}
 
-	GC.getGame().logMsg("Cannot enslave: player");
 	return false;
 }
 
