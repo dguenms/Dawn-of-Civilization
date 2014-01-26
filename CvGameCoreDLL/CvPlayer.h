@@ -1163,6 +1163,8 @@ public:
 	void changeDomainProductionModifier(DomainTypes eDomainType, int iChange);
 	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange);
 
+	int countColonies() const;
+
 protected:
 
 	int m_iStartingX;

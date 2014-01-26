@@ -1621,6 +1621,7 @@ public:
 	int getAdvancedStartCostIncrease() const;				// Exposed to Python
 	int getMinAreaSize() const;				// Exposed to Python
 	int getNumCitiesPrereq() const;				// Exposed to Python
+	int getNumColoniesPrereq() const; // Leoreth
 	int getNumTeamsPrereq() const;				// Exposed to Python
 	int getUnitLevelPrereq() const;				// Exposed to Python
 	int getMinLatitude() const;				// Exposed to Python
@@ -1830,6 +1831,7 @@ protected:
 	int m_iAdvancedStartCostIncrease;
 	int m_iMinAreaSize;
 	int m_iNumCitiesPrereq;
+	int m_iNumColoniesPrereq; // Leoreth
 	int m_iNumTeamsPrereq;
 	int m_iUnitLevelPrereq;
 	int m_iMinLatitude;

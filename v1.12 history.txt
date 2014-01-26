@@ -203,3 +203,4 @@
 # the third Aztec UHV goal now counts all Old World units, not just Europeans
 # civs have to be dead for at least 20 turns until they can resurrect again
 # added Polish Wilno to the 1700 AD scenario
+# Trading Companies now require at least one colony
