@@ -5428,7 +5428,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	}
 
 	//Leoreth: in case of one city, allow it, so spawning players can't be pushed out and denied their capital
-	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && (isHuman()? true : isFoundedFirstCity()))
+	if (pPlot->isOwned() && (pPlot->getOwnerINLINE() != getID()) && (isHuman()? isFoundedFirstCity() || (getStartingPlot() != pPlot) : isFoundedFirstCity()))
 	{
 		return false;
 	}

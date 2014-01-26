@@ -625,6 +625,8 @@ class RiseAndFall:
 					
 	def initScenario(self):
 	
+		self.updateStartingPlots()
+	
 		self.adjustCityCulture()
 			
 		self.foundCapitals()
@@ -659,6 +661,11 @@ class RiseAndFall:
 		
 		self.assign3000BCGold()	
 		self.invalidateUHVs()
+		
+	def updateStartingPlots(self):
+		for iPlayer in range(con.iNumPlayers):
+			x, y = con.tCapitals[0][iPlayer]
+			gc.getPlayer(iPlayer).setStartingPlot(gc.getMap().plot(x, y), False)
 		
 	def adjustCityCulture(self):
 		if utils.getTurns(10) == 10: return
@@ -2326,7 +2333,7 @@ class RiseAndFall:
 		# Leoreth: Byzantium also flips Roman cities in the eastern half of the empire outside of its core (Egypt, Mesopotamia)
 		if iCiv == iByzantium and pRome.isAlive():
 			for city in utils.getCityList(iRome):
-				if city.getX() >= tCapitals[0][iByzantium][0] and city.getY() <= tCapitals[0][iByzantium][1]:
+				if city.getX() >= tCapitals[0][iByzantium][0]-1 and city.getY() <= tCapitals[0][iByzantium][1]:
 					cityList.append(city)
 					
 		# Leoreth: remove capital locations
@@ -2357,23 +2364,20 @@ class RiseAndFall:
                                                 iNumHumanCities += 1
                                 #case 3: other
                                 elif (not loopCity.isCapital() or (iOwner == iIndia and iCiv == iMughals and utils.getHumanID() != iOwner)):   #utils.debugTextPopup( 'OTHER' )                                
-                                        if (iConvertedCitiesCount < 6): #there won't be more than 5 flips in the area
-                                                iCultureChange = 50
-                                                if (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[iCiv]) + 5): #if we're during a birth
-                                                        rndNum = gc.getGame().getSorenRandNum(100, 'odds')
-                                                        if (rndNum >= tAIStopBirthThreshold[iOwner]) and not (iCiv == con.iGermany and utils.getHumanID() != con.iGermany) and not (iCiv == iByzantium and iOwner == iRome):
-                                                                print (iOwner, "stops birth", iCiv, "rndNum:", rndNum, "threshold:", tAIStopBirthThreshold[iOwner])
-                                                                if (not gc.getTeam(gc.getPlayer(iOwner).getTeam()).isAtWar(iCiv)):                                                                        
-                                                                        gc.getTeam(gc.getPlayer(iOwner).getTeam()).declareWar(iCiv, False, -1)
-                                                                        if (gc.getPlayer(iCiv).getNumCities() > 0): #this check is needed, otherwise game crashes
-                                                                                print ("capital:", gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY())
-                                                                                if (gc.getPlayer(iCiv).getCapitalCity().getX() != -1 and gc.getPlayer(iCiv).getCapitalCity().getY() != -1):
-                                                                                        self.createAdditionalUnits(iCiv, (gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY()))
-                                                                                else:
-                                                                                        self.createAdditionalUnits(iCiv, tCapitals[utils.getReborn(iCiv)][iCiv])
+					iCultureChange = 50
+					if (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[iCiv]) + 5): #if we're during a birth
+						rndNum = gc.getGame().getSorenRandNum(100, 'odds')
+						if (rndNum >= tAIStopBirthThreshold[iOwner]) and not (iCiv == con.iGermany and utils.getHumanID() != con.iGermany) and not (iCiv == iByzantium and iOwner == iRome):
+							print (iOwner, "stops birth", iCiv, "rndNum:", rndNum, "threshold:", tAIStopBirthThreshold[iOwner])
+							if (not gc.getTeam(gc.getPlayer(iOwner).getTeam()).isAtWar(iCiv)):                                                                        
+								gc.getTeam(gc.getPlayer(iOwner).getTeam()).declareWar(iCiv, False, -1)
+								if (gc.getPlayer(iCiv).getNumCities() > 0): #this check is needed, otherwise game crashes
+									print ("capital:", gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY())
+									if (gc.getPlayer(iCiv).getCapitalCity().getX() != -1 and gc.getPlayer(iCiv).getCapitalCity().getY() != -1):
+										self.createAdditionalUnits(iCiv, (gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY()))
+									else:
+										self.createAdditionalUnits(iCiv, tCapitals[utils.getReborn(iCiv)][iCiv])
                                                                         
-                                                        
-
                                 if (iCultureChange > 0):
                                         utils.cultureManager((loopX,loopY), iCultureChange, iCiv, iOwner, True, False, False)
                                         
