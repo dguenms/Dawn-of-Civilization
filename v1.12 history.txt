@@ -204,3 +204,7 @@
 # civs have to be dead for at least 20 turns until they can resurrect again
 # added Polish Wilno to the 1700 AD scenario
 # Trading Companies now require at least one colony
+# New Turkish UHV:
+	# Have three non-obsolete wonders in your capital in 1550 AD
+	# Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD
+	# Have more culture than all European civilizations combined in 1800 AD

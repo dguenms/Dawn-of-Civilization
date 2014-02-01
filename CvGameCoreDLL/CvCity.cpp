@@ -14242,6 +14242,12 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 								{
 									for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 									{
+										// Leoreth: only for civs that have already spawned yet
+										if (GC.getGame().getGameTurnYear() < startingTurnYear[iI])
+										{
+											continue;
+										}
+
 										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI))
 										{
 											bCanSpreadCore = false;

@@ -1060,7 +1060,7 @@ def calculateStability(iPlayer):
 		if iPlayer == con.iPoland:
 			if iStateReligion in [con.iCatholicism, con.iOrthodoxy, con.iProtestantism]:
 				for iReligion in [con.iCatholicism, con.iOrthodoxy, con.iProtestantism]:
-					if iReligion != iStateReligion and city.isHasReligion(iReligion):
+					if iReligion != iStateReligion and city.isHasReligion(iReligion) and not city.isHasReligion(iStateReligion):
 						iStateReligionCities += 1
 						if not bNonStateReligion: iOnlyStateReligionCities += 1
 				
