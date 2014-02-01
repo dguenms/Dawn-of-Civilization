@@ -2012,19 +2012,19 @@ class Victory:
 				if iGameTurn == getTurnForYear(1550):
 					capital = pTurkey.getCapitalCity()
 					iCounter = 0
-					for iWonder in range(con.iPyramid, con.iNumBuildings):
-						if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
-							if capital.isHasRealBuilding(iWonder):
-								iCounter += 1
-					if capital.isHasRealBuilding(con.iFlavianAmphitheatre):
-						iCounter += 1
-					if iCounter >= 4:
+					for iWonder in range(con.iNumBuildings):
+						if isWorldWonderClass(gc.getBuildingInfo(iWonder).getBuildingClassType()):
+							iObsoleteTech = gc.getBuildingInfo(iWonder).getObsoleteTech()
+							if iObsoleteTech == -1 or not teamTurkey.isHasTech(iObsoleteTech):
+								if capital.isHasRealBuilding(iWonder):
+									iCounter += 1
+					if iCounter >= 3:
 						self.setGoal(iTurkey, 0, 1)
 					else:
 						self.setGoal(iTurkey, 0, 0)
 
-				# Leoreth: new second goal: control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna in 1700 AD
-				if iGameTurn == getTurnForYear(1700):
+				# Leoreth: new second goal: control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD
+				if self.getGoal(iTurkey, 1) == -1:
 					
 					bEasternMediterranean = self.isCultureControlled(iTurkey, lEasternMediterranean)
 					bBlackSea = self.isCultureControlled(iTurkey, lBlackSea)
@@ -2035,12 +2035,14 @@ class Victory:
 
 					if bEasternMediterranean and bBlackSea and bCairo and bMecca and bBaghdad and bVienna:
 						self.setGoal(iTurkey, 1, 1)
-					else:
+						
+				if iGameTurn == getTurnForYear(1700):
+					if self.getGoal(iTurkey, 1) == -1:
 						self.setGoal(iTurkey, 1, 0)
 
-				# Leoreth: new third goal: have the largest military power in 1800 AD
+				# Leoreth: new third goal: have more culture than all European civilizations combined in 1800 AD
 				if iGameTurn == getTurnForYear(1800):
-					if self.getMostPowerfulCiv(iTurkey) == iTurkey:
+					if pTurkey.countTotalCulture() > self.getTotalCulture(con.lCivGroups[0]):
 						self.setGoal(iTurkey, 2, 1)
 					else:
 						self.setGoal(iTurkey, 2, 0)
@@ -4255,6 +4257,12 @@ class Victory:
 			lCities.extend(utils.getCityList(iPlayer))
 		pHighestCommerceCity = utils.getHighestEntry(lCities, lambda x: x.getCommerceRate(0) + x.getCommerceRate(1) + x.getCommerceRate(2) + x.getCommerceRate(3))
 		return pHighestCommerceCity
+		
+	def getTotalCulture(self, lPlayers):
+		iCulture = 0
+		for iPlayer in lPlayers:
+			iCulture += gc.getPlayer(iPlayer).countTotalCulture()
+		return iCulture
 
 
 	def getIcon(self, bVal):
@@ -5171,15 +5179,16 @@ class Victory:
 	
 		elif iPlayer == iTurkey:
 			if iGoal == 0:
-				capital = pTurkey.getCapitalCity()
 				iCounter = 0
-				for iWonder in range(con.iPyramid, con.iNumBuildings):
-					if iWonder not in [con.iMilitaryAcademy, con.iItalianArtStudio]:
-						if capital.isHasRealBuilding(iWonder):
-							iCounter += 1
-				if capital.isHasRealBuilding(con.iFlavianAmphitheatre):
-					iCounter += 1
-				aHelp.append(self.getIcon(iCounter >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS_CAPITAL", (iCounter, 4)))
+				if pTurkey.getNumCities() > 0:
+					capital = pTurkey.getCapitalCity()
+					for iWonder in range(con.iNumBuildings):
+						if isWorldWonderClass(gc.getBuildingInfo(iWonder).getBuildingClassType()):
+							iObsoleteTech = gc.getBuildingInfo(iWonder).getObsoleteTech()
+							if iObsoleteTech == -1 or not teamTurkey.isHasTech(iObsoleteTech):
+								if capital.isHasRealBuilding(iWonder):
+									iCounter += 1
+				aHelp.append(self.getIcon(iCounter >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS_CAPITAL", (iCounter, 3)))
 			elif iGoal == 1:
 				bEasternMediterranean = self.isCultureControlled(iTurkey, lEasternMediterranean)
 				bBlackSea = self.isCultureControlled(iTurkey, lBlackSea)
@@ -5190,9 +5199,10 @@ class Victory:
 				aHelp.append(self.getIcon(bEasternMediterranean) + localText.getText("TXT_KEY_VICTORY_EASTERN_MEDITERRANEAN", ()) + ' ' + self.getIcon(bBlackSea) + localText.getText("TXT_KEY_VICTORY_BLACK_SEA", ()))
 				aHelp.append(self.getIcon(bCairo) + localText.getText("TXT_KEY_VICTORY_CAIRO", ()) + ' ' + self.getIcon(bMecca) + localText.getText("TXT_KEY_VICTORY_MECCA", ()) + ' ' + self.getIcon(bBaghdad) + localText.getText("TXT_KEY_VICTORY_BAGHDAD", ()) + ' ' + self.getIcon(bVienna) + localText.getText("TXT_KEY_VICTORY_VIENNA", ()))
 			elif iGoal == 2:
-				iMostPowerfulCiv = self.getMostPowerfulCiv(iTurkey)
-				aHelp.append(self.getIcon(iMostPowerfulCiv == iTurkey) + localText.getText("TXT_KEY_VICTORY_MOST_POWERFUL_CIV", ()) + CyTranslator().getText(str(gc.getPlayer(iMostPowerfulCiv).getCivilizationShortDescriptionKey()),()))
-
+				iTurkishCulture = pTurkey.countTotalCulture()
+				iEuropeanCulture = self.getTotalCulture(con.lCivGroups[0])
+				aHelp.append(self.getIcon(iTurkishCulture > iEuropeanCulture) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iTurkishCulture, iEuropeanCulture)))
+				
 		elif iPlayer == iThailand:
 			if iGoal == 0:
 				iCount = 0
