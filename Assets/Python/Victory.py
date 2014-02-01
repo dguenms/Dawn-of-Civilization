@@ -2018,7 +2018,7 @@ class Victory:
 							if iObsoleteTech == -1 or not teamTurkey.isHasTech(iObsoleteTech):
 								if capital.isHasRealBuilding(iWonder):
 									iCounter += 1
-					if iCounter >= 3:
+					if iCounter >= 4:
 						self.setGoal(iTurkey, 0, 1)
 					else:
 						self.setGoal(iTurkey, 0, 0)
@@ -5188,7 +5188,7 @@ class Victory:
 							if iObsoleteTech == -1 or not teamTurkey.isHasTech(iObsoleteTech):
 								if capital.isHasRealBuilding(iWonder):
 									iCounter += 1
-				aHelp.append(self.getIcon(iCounter >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS_CAPITAL", (iCounter, 3)))
+				aHelp.append(self.getIcon(iCounter >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS_CAPITAL", (iCounter, 4)))
 			elif iGoal == 1:
 				bEasternMediterranean = self.isCultureControlled(iTurkey, lEasternMediterranean)
 				bBlackSea = self.isCultureControlled(iTurkey, lBlackSea)
