@@ -654,6 +654,7 @@ class RiseAndFall:
 			self.adjust1700ADCulture()
 			
 			pPersia.setReborn()
+			pSpain.setReborn()
 			pHolyRome.setReborn()
 			pTurkey.setReborn()
 			

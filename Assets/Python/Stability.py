@@ -537,13 +537,13 @@ def secedeCities(iPlayer, lCities):
 						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: culture.')
 						break
 						
-		# claim based on war target
+		# claim based on war target (needs to be winning the war based on war success)
 		if iClaim == -1:
 			tPlayer = gc.getTeam(iPlayer)
 			for iLoopPlayer in range(con.iNumPlayers):
 				pLoopPlayer = gc.getPlayer(iLoopPlayer)
 				if pLoopPlayer.isAlive() and tPlayer.isAtWar(iLoopPlayer) and utils.getHumanID() != iLoopPlayer and iGameTurnYear < con.tFall[iLoopPlayer]:
-					if pLoopPlayer.getWarMapValue(city.getX(), city.getY()) >= 8:
+					if pLoopPlayer.getWarMapValue(city.getX(), city.getY()) >= 8 and gc.getTeam(iLoopPlayer).AI_getWarSuccess(iPlayer) > tPlayer.AI_getWarSuccess(iLoopPlayer):
 						# another enemy with closer city: don't claim the city
 						closestCity = gc.getMap().findCity(city.getX(), city.getY(), PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, city)
 						if closestCity.getOwner() != iLoopPlayer and tPlayer.isAtWar(closestCity.getOwner()): continue
