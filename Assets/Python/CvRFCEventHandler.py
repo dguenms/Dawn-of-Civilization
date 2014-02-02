@@ -766,6 +766,16 @@ class CvRFCEventHandler:
 				utils.moveCapital(iPlayer, (63, 59)) # Stockholm
 			elif iPlayer == con.iHolyRome and iEra == con.iRenaissance:
 				utils.moveCapital(iPlayer, (62, 49)) # Wien
+				
+		# Spain's core extends when reaching the Renaissance and there are no Moors in Iberia
+		if iPlayer == con.iSpain and iEra == con.iRenaissance:
+			bNoMoors = True
+			if gc.getPlayer(con.iMoors).isAlive():
+				for city in utils.getCityList(iMoors):
+					if city.plot().getRegionID() == con.rIberia:
+						bNoMoors = False
+			if bNoMoors:
+				gc.getPlayer(con.iSpain).setReborn()
                 
 
         def onPreSave(self, argsList):

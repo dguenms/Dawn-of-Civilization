@@ -213,3 +213,4 @@
 # the Maya spawn with Holkans and only one settler
 # Zapotec Danibaan (Monte Albán) appears on the stone shortly before the Mayan spawn
 # Barbarian Holkans spawn in Mesoamerica during the classical Maya era
+# Spain's core extends to Catalonia and Andalusia on entering the Renaissance in case the Moors are driven out of Iberia
