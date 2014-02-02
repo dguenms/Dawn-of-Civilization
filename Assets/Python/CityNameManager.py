@@ -4889,6 +4889,7 @@ tRenames = (
 	'Reggio'		:	'R&#237;joles',
 	'Jiu Jinshan'		:	'San Francisco',
 	'Luo Shanji'		:	'Los Angeles',
+	'Danibaan'		:	'Monte Alb&#225;n',
 	'Eko'			:	'Lagos',},
 # France
 {	'Lutetia'		:	'Paris',

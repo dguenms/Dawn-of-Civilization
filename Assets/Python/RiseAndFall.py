@@ -3201,8 +3201,8 @@ class RiseAndFall:
 				utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
 				utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
                 if (iCiv == iMaya):
-			utils.createSettlers(iCiv, 2)
-                        utils.makeUnit(con.iWarrior, iCiv, tPlot, 3)
+			utils.createSettlers(iCiv, 1)
+                        utils.makeUnit(con.iMayaHolkan, iCiv, tPlot, 2)
                 if (iCiv == iByzantium):
                         utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 4)
 			utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
@@ -3581,7 +3581,7 @@ class RiseAndFall:
 		if (iCiv == iKorea):
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
                 if (iCiv == iMaya):
-                        utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iByzantium):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 			#utils.makeUnit(con.iSettler, iCiv, tPlot, 1)

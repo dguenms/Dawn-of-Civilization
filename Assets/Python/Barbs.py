@@ -53,6 +53,7 @@ tMinorCities = (
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, con.iWarElephant, 1),	# Thanjavur
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, con.iArcher, 1),		# Dunhuang
+(-100, (19, 35), iNative, 'Danibaan', 2, con.iMayaHolkan, 2),		# Monte Albán
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, con.iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (76, 30), iIndependent, "Sana'a", 1, -1, -1),			# Sana'a
@@ -174,7 +175,12 @@ class Barbs:
 		if iGameTurn >= getTurnForYear(400) and iGameTurn <= getTurnForYear(550):
 			self.checkSpawn(iBarbarian, con.iHorseArcher, 2+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 5-iHandicap, 2, ["TXT_KEY_ADJECTIVE_HEPHTHALITE"])
 
-       
+		# Holkans in classical Mesoamerica
+		if iGameTurn >= getTurnForYear(100) and iGameTurn <= getTurnForYear(600):
+			self.checkSpawn(iBarbarian, con.iMayaHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 6, 4)
+			
+		if iGameTurn >= getTurnForYear(600) and iGameTurn <= getTurnForYear(1000):
+			self.checkSpawn(iBarbarian, con.iMayaHolkan, 1, (17, 31), (25, 37), self.spawnUprising, iGameTurn, 4, 2)
                         
                 #pirates in Mediterranean
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(50)):
@@ -554,7 +560,8 @@ class Barbs:
 		for i in range(x-2, x+3):
 			for j in range(y-2, y+3):
 				if abs(x-i) == 2 or abs(y-j) == 2:
-					if not gc.getMap().plot(i,j).isUnit() and not gc.getMap().plot(i,j).isWater():
+					plot = gc.getMap().plot(i,j)
+					if not plot.isUnit() and not plot.isWater() and not plot.isPeak():
 						plotList.append((i,j))
 						
 		return utils.getRandomEntry(plotList)
@@ -619,7 +626,8 @@ class Barbs:
 			
 	def spawnUprising(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		''' Leoreth: represents uprisings of Natives against colonial settlements, especially North America
-			     spawns units in a free plot in the second ring of a random target city in the area'''
+			     spawns units in a free plot in the second ring of a random target city in the area
+			     (also used for units from warring city states in classical Mesoamerica)'''
 			     
 		targetCityList = self.getTargetCities(tTL, tBR)
 		tCity = utils.getRandomEntry(targetCityList)
