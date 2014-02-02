@@ -130,4 +130,12 @@
 		<Tag>TXT_KEY_UNIT_MOORISH_CORSAIR_HELP</Tag>
 		<English>[ICON_BULLET]Receives [ICON_GOLD] for Sinking Enemy Ships</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MAYA_HOLKAN_HELP</Tag>
+		<English>[ICON_BULLET]Receives [ICON_FOOD] for Defeating Enemy Units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAYA_HOLKAN_EFFECT</Tag>
+		<English>Your Holkan has defeated a %s1 %s2, acquiring %d3 [ICON_FOOD] for %s4.</English>
+	</TEXT>
 </Civ4GameText>

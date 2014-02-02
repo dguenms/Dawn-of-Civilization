@@ -208,3 +208,8 @@
 	# Have four non-obsolete wonders in your capital in 1550 AD
 	# Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD
 	# Have more culture than all European civilizations combined in 1800 AD
+# the Maya Holkan is now an Archer replacement that requires Hunting and has a 25% withdrawal chance
+# Maya Holkans generate 5 food for their closest city on combat victory
+# the Maya spawn with Holkans and only one settler
+# Zapotec Danibaan (Monte Albán) appears on the stone shortly before the Mayan spawn
+# Barbarian Holkans spawn in Mesoamerica during the classical Maya era

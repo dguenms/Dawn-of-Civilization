@@ -424,6 +424,14 @@ class CvRFCEventHandler:
 						utils.makeUnit(iNewUnit, pWinningUnit.getOwner(), (pWinningUnit.getX(), pWinningUnit.getY()), 1)
 						CyInterface().addMessage(pWinningUnit.getOwner(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
 
+		# Maya Holkans give food to closest city on victory
+		if pWinningUnit.getUnitType() == con.iMayaHolkan:
+			iOwner = pWinningUnit.getOwner()
+			city = gc.getMap().findCity(pWinningUnit.getX(), pWinningUnit.getY(), iOwner, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+			if city: 
+				city.changeFood(5)
+				sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()
+				CyInterface().addMessage(iOwner, False, con.iDuration, CyTranslator().getText("TXT_KEY_MAYA_HOLKAN_EFFECT", (sAdjective, pLosingUnit.getNameKey(), 5, city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		
         def onReligionFounded(self, argsList):
                 'Religion Founded'
