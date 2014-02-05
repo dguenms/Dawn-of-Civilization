@@ -244,6 +244,7 @@ def checkLostCoreCollapse(iPlayer):
 def checkStability(iPlayer, bPositive = False):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
+	iGameEra = gc.getGame().getCurrentEra()
 	
 	# must not be dead
 	if not pPlayer.isAlive():
@@ -288,6 +289,10 @@ def checkStability(iPlayer, bPositive = False):
 	
 	if bFall:
 		iThreshold += 5 * iStabilityLevel + 5 + max(10, (iGameTurn - getTurnForYear(con.tFall[iPlayer])) / utils.getTurns(10))
+		
+	# make everyone a bit more stable after the Renaissance -> less collapses
+	if iGameEra >= con.iRenaissance:
+		iThreshold -= 5
 		
 	iCrisisThreshold = max(-5, iThreshold)
 	

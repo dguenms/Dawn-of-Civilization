@@ -214,3 +214,7 @@
 # Zapotec Danibaan (Monte Albán) appears on the stone shortly before the Mayan spawn
 # Barbarian Holkans spawn in Mesoamerica during the classical Maya era
 # Spain's core extends to Catalonia and Andalusia on entering the Renaissance in case the Moors are driven out of Iberia
+# new third Maya goal: be the first civilization to discover Astronomy
+# renamed Aztec UP to the Power of Flower Wars
+# new Turkish UP: Devshirme: can conscript two additional units in cities with non-state religions
+# new Topkapi Palace effect: additional foreign culture is converted on city conquest

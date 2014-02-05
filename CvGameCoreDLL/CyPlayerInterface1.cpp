@@ -475,5 +475,6 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getLatestRebellionTurn", &CyPlayer::getLatestRebellionTurn, "int ()")
 		.def("setLatestRebellionTurn", &CyPlayer::setLatestRebellionTurn, "void (int iTurn)")
 		.def("isSlaveTrade", &CyPlayer::isSlaveTrade, "bool (int iPlayer)")
+		.def("isHasBuildingEffect", &CyPlayer::isHasBuildingEffect, "bool (int eBuildingType)")
 		;
 }
