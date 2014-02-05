@@ -10621,10 +10621,12 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 				// Leoreth: Dutch UP
 				if (getOwner() == (PlayerTypes)NETHERLANDS && eCorporation == (CorporationTypes)1) // trading company
 				{
-					iYield += 2 * (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * getNumBonuses(eBonus) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-				}else{
-					iYield += (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * getNumBonuses(eBonus) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-					//iYield += (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(12,getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+					iYield += 2 * (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(12, getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;;
+				}
+				else
+				{
+					//iYield += (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * getNumBonuses(eBonus) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
+					iYield += (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(12, getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 				}
 			}
 		}
@@ -10656,16 +10658,11 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 				iNumBonuses += getNumBonuses(BONUS_SUGAR);
 			}
 
-			// Leoreth: Dutch UP (double yield from trading company)
-			if (getOwner() == NETHERLANDS && eCorporation == (CorporationTypes)1)
-			{
-				iNumBonuses *= 2;
-			}
-
+			// Leoreth: includes Dutch UP (double yield from trading company)
 			if (NO_BONUS != eBonus && iNumBonuses > 0)
 			{
 				//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-				iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12,getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+				iCommerce += ((getOwner() == NETHERLANDS && eCorporation == (CorporationTypes)1) ? 2 : 1) * (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(12, getNumBonuses(eBonus)) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			}
 		}
 	}
