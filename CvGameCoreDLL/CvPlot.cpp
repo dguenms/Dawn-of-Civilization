@@ -3899,15 +3899,15 @@ bool CvPlot::isTradeNetworkConnected(const CvPlot* pPlot, TeamTypes eTeam) const
 		}
 	}
 
-	bool bBonusIsland = false;
-	for (int iI = 0; iI < NUM_BONUS_ISLANDS; iI++)
+	bool bBonusIsland = (!isWater() && GC.getMap().getArea(getArea())->getNumTiles() <= 3);
+	/*for (int iI = 0; iI < NUM_BONUS_ISLANDS; iI++)
 	{
 		if (getX_INLINE() == bonusIslandsX[iI] && getY_INLINE() == bonusIslandsY[iI])
 		{
 			bBonusIsland = true;
 			break;
 		}
-	}
+	}*/
 
 	if (isCity(true, eTeam) || bBonusIsland)
 	{

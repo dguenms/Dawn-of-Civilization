@@ -27,7 +27,7 @@ typedef list<char*> LISTCHAR;
 #define NUM_PL					(41)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(50)
-#define NUM_BONUS_ISLANDS		(11)
+//#define NUM_BONUS_ISLANDS		(11)
 
 enum MyTechs
 {
@@ -386,8 +386,8 @@ extern int currentEra600AD[NUM_PL];
 extern int currentEra1700AD[NUM_PL];
 extern int growthThreshold[NUM_PL];
 
-extern int bonusIslandsX[NUM_BONUS_ISLANDS];
-extern int bonusIslandsY[NUM_BONUS_ISLANDS];
+//extern int bonusIslandsX[NUM_BONUS_ISLANDS];
+//extern int bonusIslandsY[NUM_BONUS_ISLANDS];
 
 //extern int militaryBonus[2][18];
 extern char uniquePower[NUM_CIVS][2][16];
