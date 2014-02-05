@@ -274,7 +274,7 @@ class CvRFCEventHandler:
 		
 		lTradingCompanyList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 			
-		if iPlayer in [con.iTurkey, con.iSeljuks]:
+		if iPlayer == con.iSeljuks or gc.getPlayer(iPlayer).isHasBuildingEffect(con.iTopkapiPalace):
 			self.up.turkishUP(city, iPlayer, iOwner)
 		elif iPlayer in lTradingCompanyList and (city.getX(), city.getY()) in con.tTradingCompanyPlotLists[lTradingCompanyList.index(iPlayer)]:
 			self.up.tradingCompanyCulture(city, iPlayer, iOwner)

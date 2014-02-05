@@ -1258,9 +1258,9 @@ class Victory:
 						if (self.getGoal(iMaya, 1) == -1): #see onBuildingBuilt()
 							self.setGoal(iMaya, 1, 0)
 
-					if (iGameTurn == getTurnForYear(1600)):      
-						if (self.getGoal(iMaya, 2) == -1): #see onGreatPersonBorn()
-							self.setGoal(iMaya, 2, 0)
+					#if (iGameTurn == getTurnForYear(1600)):      
+					#	if (self.getGoal(iMaya, 2) == -1): #see onGreatPersonBorn()
+					#		self.setGoal(iMaya, 2, 0)
 							
 				else:
 				
@@ -2910,6 +2910,14 @@ class Victory:
 		if iTech in [con.iTheology, con.iMachinery, con.iCivilService] and self.getGoal(iRome, 2) == -1:
 			if self.getRomanTechs(0) == 1 and self.getRomanTechs(1) == 1 and self.getRomanTechs(2) == 1:
 				self.setGoal(iRome, 2, 1)
+				
+		# Maya UHV: Astronomy
+		if iTech == con.iAstronomy:
+			if self.getGoal(iMaya, 2) == -1:
+				if iPlayer == iMaya:
+					self.setGoal(iMaya, 2, 1)
+				else:
+					self.setGoal(iMaya, 2, 0)
 					
 		# Korean UHV: Printing Press
 		if iTech == con.iPrintingPress:
@@ -3424,12 +3432,6 @@ class Victory:
 		
 		pUnitInfo = gc.getUnitInfo(pUnit.getUnitType())
 		iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
-		
-		# Maya third goal: get a great general
-		if iPlayer == iMaya and not utils.isReborn(iMaya):
-			if self.getGoal(iMaya, 2) == -1:
-				if pUnitInfo.getGreatPeoples(iGreatGeneral):
-					self.setGoal(iMaya, 2, 1)
 					
 		# Mexican second goal: get three great generals
 		if iPlayer == iAztecs and utils.isReborn(iPlayer):
@@ -3440,16 +3442,7 @@ class Victory:
 		
 
 	def onGreatGeneralBorn(self, iPlayer):
-	
-		# Leoreth: ignore AI civs to improve speed
-		if self.isIgnoreAI() and utils.getHumanID() != iPlayer:
-			return
-
-		# Leoreth: new third goal for Maya: get a great general by 1600 AD
-		if iPlayer == iMaya:
-			if self.getGoal(iMaya, 2) == -1:
-				if gc.getGame().getGameTurn() <= getTurnForYear(1600):
-					self.setGoal(iMaya, 2, 1)
+		pass
 
 
 	def onTechStolen(self, iPlayer, iTech):

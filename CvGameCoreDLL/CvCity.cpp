@@ -4132,6 +4132,25 @@ bool CvCity::canConscript() const
 		return false;
 	}
 
+	// Turkish UP: extra conscript requires non-state religion
+	if (getOwnerINLINE() == TURKEY && GET_PLAYER(getOwnerINLINE()).getConscriptCount() - GET_PLAYER(getOwnerINLINE()).getMaxConscript() >= -2)
+	{
+		if (!GET_PLAYER(getOwnerINLINE()).isStateReligion())
+		{
+			if (getReligionCount() == 0)
+			{
+				return false;
+			}
+		}
+		else
+		{
+			if ((isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion()) && getReligionCount() == 1) || getReligionCount() == 0)
+			{
+				return false;
+			}
+		}
+	}
+
 	if (getPopulation() <= getConscriptPopulation())
 	{
 		return false;

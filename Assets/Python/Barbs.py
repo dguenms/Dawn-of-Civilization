@@ -53,7 +53,7 @@ tMinorCities = (
 (-300, (91, 31), iIndependent, 'Tanjapuri', 1, con.iWarElephant, 1),	# Thanjavur
 (-190, (77, 44), iIndependent2, 'Artashat', 1, -1, -1),			# Artaxata
 (-100, (95, 47), iBarbarian, 'Dunhuang', 2, con.iArcher, 1),		# Dunhuang
-(-100, (19, 35), iNative, 'Danibaan', 2, con.iMayaHolkan, 2),		# Monte Albán
+(-100, (19, 35), iNative, 'Danni B&#225;a', 2, con.iMayaHolkan, 2),	# Monte Albán
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, con.iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
 (100, (76, 30), iIndependent, "Sana'a", 1, -1, -1),			# Sana'a

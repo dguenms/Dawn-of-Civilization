@@ -10705,13 +10705,12 @@ void CvPlayer::setHighestNavalUnitLevel(int iNewValue)
 
 int CvPlayer::getMaxConscript() const
 {
-	if (GET_PLAYER((PlayerTypes)getID()).isHasBuilding((BuildingTypes)TOPKAPI))
-	{
-		return m_iMaxConscript+1;
-	}else
-	{
-		return m_iMaxConscript;
-	}
+	int iConscript = m_iMaxConscript;
+
+	// Turkish UP: two extra conscripts (in cities with non-state religions)
+	if (getID() == TURKEY) iConscript += 2;
+
+	return iConscript;
 }
 
 

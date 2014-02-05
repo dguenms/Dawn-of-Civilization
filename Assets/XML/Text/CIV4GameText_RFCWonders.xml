@@ -1064,8 +1064,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_HELP</Tag>
-		<English>[ICON_BULLET]Can draft one extra unit per turn</English>
-		<German>[ICON_BULLET]Kann eine zusätzliche Einheit pro Runde rekrutieren</German>
+		<English>[ICON_BULLET]Additional Foreign Culture is Converted on City Conquest</English>
+		<German>[ICON_BULLET]Bei der Eroberung gegnerischer Städte wird zusätzliche Kultur konvertiert</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE</Tag>

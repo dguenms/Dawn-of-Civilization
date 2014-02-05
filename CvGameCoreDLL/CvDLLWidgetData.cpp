@@ -2131,6 +2131,25 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 					int iDraftUnits = GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getConscriptCount();
 					int iMaxDraftUnits = GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getMaxConscript();
 
+					// Leoreth: reflect Turkish UP here
+					if (pHeadSelectedCity->getOwnerINLINE() == TURKEY)
+					{
+						if (!GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).isStateReligion())
+						{
+							if (pHeadSelectedCity->getReligionCount() == 0)
+							{
+								iMaxDraftUnits -= 2;
+							}
+						}
+						else
+						{
+							if ((pHeadSelectedCity->isHasReligion(GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getStateReligion()) && pHeadSelectedCity->getReligionCount() == 1) || pHeadSelectedCity->getReligionCount() == 0)
+							{
+								iMaxDraftUnits -= 2;
+							}
+						}
+					}
+
 					if (iDraftUnits >= iMaxDraftUnits)
 					{
 						szBuffer.append(NEWLINE);
