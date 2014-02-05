@@ -1176,7 +1176,8 @@ class RFCUtils:
 			for j in range(y-1, y+2):
 				current = gc.getMap().plot(i, j)
 				if not current.isCity() and not current.isPeak() and not current.isWater():
-					lFreePlots.append((i,j))
+					if not plot.getFeatureType() == con.iJungle and not plot.getTerrainType() == con.iMarsh:
+						lFreePlots.append((i,j))
 					
 		if iTargetCiv != -1 and not gc.getTeam(iCiv).isAtWar(iTargetCiv):
 			gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_TOTAL)
