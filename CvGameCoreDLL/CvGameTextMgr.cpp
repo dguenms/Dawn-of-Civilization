@@ -12990,6 +12990,12 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 			iYieldProduced /= 100;
 		}
 
+		// Leoreth: display the Dutch UP
+		if (GC.getGameINLINE().getActivePlayer() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+		{
+			iYieldProduced *= 2;
+		}
+
 		if (iYieldProduced != 0)
 		{
 			if (!szTempBuffer.empty())
@@ -13029,6 +13035,13 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 			iCommerceProduced *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent();
 			iCommerceProduced /= 100;
 		}
+
+		// Leoreth: display the Dutch UP
+		if (GC.getGameINLINE().getActivePlayer() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+		{
+			iCommerceProduced *= 2;
+		}
+
 		if (iCommerceProduced != 0)
 		{
 			if (!szTempBuffer.empty())
@@ -13280,6 +13293,11 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 			iYield += (kCorporation.getYieldProduced(i) * std::min(12,iNumResources) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 		}
 
+		if (pCity->getOwnerINLINE() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+		{
+			iYield *= 2;
+		}
+
 		if (iYield != 0)
 		{
 			if (bHandled)
@@ -13303,6 +13321,11 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 		{
 			//iCommerce += (kCorporation.getCommerceProduced(i) * iNumResources * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
 			iCommerce += (kCorporation.getCommerceProduced(i) * std::min(12,iNumResources) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+		}
+
+		if (pCity->getOwnerINLINE() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+		{
+			iCommerce *= 2;
 		}
 
 		if (iCommerce != 0)
