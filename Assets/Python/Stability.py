@@ -65,7 +65,7 @@ def onCityRazed(iPlayer, city):
 		iRazePenalty = -10
 		if city.getPopulation() < 5 and not city.isCapital():
 			iRazePenalty = -2 * city.getPopulation()
-		sd.changeHumanRazePenalty(-10)
+		sd.changeHumanRazePenalty(iRazePenalty)
 		checkStability(iPlayer)
 	
 def onTechAcquired(iPlayer, iTech):
