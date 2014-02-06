@@ -293,7 +293,4 @@ class Companies:
 		tlx, tly = tTL
 		brx, bry = tBR
 
-		if (x >= tlx) and (x <= brx) and (y >= tly) and (y <= bry):
-			return True
-		else:
-			return False
+		return ((x >= tlx) and (x <= brx) and (y >= tly) and (y <= bry))
