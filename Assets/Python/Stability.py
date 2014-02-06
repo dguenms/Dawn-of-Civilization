@@ -978,6 +978,11 @@ def calculateStability(iPlayer):
 	iTotalCoreCities = 0
 	iOccupiedCoreCities = 0
 	
+	iHistoricalPopulation = 0
+	iForeignPopulation = 0
+	iContestedPopulation = 0
+	iForeignCorePopulation = 0
+	
 	iStateReligionCities = 0
 	iOnlyStateReligionCities = 0
 	iNonStateReligionCities = 0
@@ -993,6 +998,8 @@ def calculateStability(iPlayer):
 	bEnvironmentalism = (iCivicEconomy == con.iCivicEnvironmentalism)
 	bFanaticism = (iCivicGovernment == con.iCivicFanaticism)
 	bAutocracy = (iCivicGovernment == con.iCivicAutocracy)
+	
+	bSingleCoreCity = (len(utils.getCoreCityList(iPlayer, iReborn)) == 1)
 	
 	for city in utils.getCityList(iPlayer):
 		iPopulation = city.getPopulation()
@@ -1015,6 +1022,7 @@ def calculateStability(iPlayer):
 		# Expansion
 		if plot.isCore(iPlayer):
 			iCorePopulation += (2 + iCurrentEra) * iPopulation
+			if bSingleCoreCity: iCorePopulation += (iCurrentEra - 1) * iPopulation
 		else:
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
@@ -1041,14 +1049,25 @@ def calculateStability(iPlayer):
 			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, con.iJail)): iModifier -= 1
 			
 			# cap
-			if iModifier < 1: iModifier = 1
+			if iModifier < 0: iModifier = 0
 			
 			# Portuguese UP: reduced instability from overseas colonies
 			if isOverseas(city):
 				if iPlayer == con.iPortugal: iModifier -= 1
-				elif bMercantilism and iModifier > 1: iModifier -= 1
+				elif bMercantilism and iModifier > 0: 
+					iModifier -= 1
+					
+			utils.debugTextPopup('City: ' + city.getName() + '\n Modifier: ' + str(iModifier))
 			
-			iPeripheryPopulation += iModifier * iPopulation
+			iPeripheryPopulation += (100 + iModifier * 50) * iPopulation / 100
+			
+			if not bHistorical:
+				if bForeignCore: iForeignCorePopulation += (100 + iModifier * 50) * iPopulation / 100
+				else: iForeignPopulation += (100 + iModifier * 50) * iPopulation / 100
+			else:
+				if bForeignCore: iContestedPopulation += (100 + iModifier * 50) * iPopulation / 100
+				else: iHistoricalPopulation += (100 + iModifier * 50) * iPopulation / 100
+
 			
 		# Religions
 		bNonStateReligion = False
@@ -1080,6 +1099,9 @@ def calculateStability(iPlayer):
 			iHappyCities += 1
 		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
+			
+	sPopulationDebug = 'Core Population: ' + str(iCorePopulation) + '\nHistorical population: ' + str(iHistoricalPopulation) + '\nContested population: ' + str(iContestedPopulation) + '\nForeign population: ' + str(iForeignPopulation) + '\nForeign core population: ' + str(iForeignCorePopulation)
+	utils.debugTextPopup(sPopulationDebug)
 			
 	#for city in utils.getAreaCities(con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer]):
 	#	iTotalCoreCities += 1
