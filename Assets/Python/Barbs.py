@@ -561,7 +561,7 @@ class Barbs:
 			for j in range(y-2, y+3):
 				if abs(x-i) == 2 or abs(y-j) == 2:
 					plot = gc.getMap().plot(i,j)
-					if not plot.isUnit() and not plot.isWater() and not plot.isPeak():
+					if not plot.isUnit() and not plot.isWater() and not plot.isPeak() and not plot.isCity():
 						plotList.append((i,j))
 						
 		return utils.getRandomEntry(plotList)
