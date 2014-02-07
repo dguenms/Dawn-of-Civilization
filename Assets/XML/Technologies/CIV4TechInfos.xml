@@ -3781,7 +3781,9 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_RAILROAD</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs/>
+			<AndPreReqs>
+				<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
+			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_COMBUSTION_QUOTE</Quote>
 			<Sound>AS2D_TECH_COMBUSTION</Sound>
 			<SoundMP>AS2D_TECH_MP_COMBUSTION</SoundMP>
