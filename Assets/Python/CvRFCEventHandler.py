@@ -156,6 +156,7 @@ class CvRFCEventHandler:
 		for x in range(124):
 			for y in range(68):
 				plot = gc.getMap().plot(x, y)
+				if plot.isWater(): continue
 				for iPlayer in range(con.iNumPlayers):
 					if utils.isPlotInArea((x, y), con.tCoreAreasTL[0][iPlayer], con.tCoreAreasBR[0][iPlayer], con.tExceptions[0][iPlayer]):
 						plot.setCore(iPlayer, False, True)
@@ -826,7 +827,7 @@ class CvRFCEventHandler:
                 eventType,key,mx,my,px,py = argsList
                         
                 theKey=int(key)
-
+		
 		if ( eventType == self.EventKeyDown and theKey == int(InputTypes.KB_Q) and self.eventManager.bAlt and self.eventManager.bShift):
                         print("SHIFT-ALT-Q") #enables squatting
                         self.rnf.setCheatMode(True);
