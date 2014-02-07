@@ -5732,7 +5732,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									break;
 								case PERSIA:
 									if (iI == THEOLOGY)
-										iValue /= 2;
+										iValue /= 4;
 									if (iI == FISSION) {
 										iValue *= 4;
 										iValue /= 3;

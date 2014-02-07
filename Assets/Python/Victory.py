@@ -4593,7 +4593,7 @@ class Victory:
                         	bPhoenicia = self.checkOwnedCiv(iGreece, iCarthage)
                         	bBabylonia = self.checkOwnedCiv(iGreece, iBabylonia)
 				bPersia = self.checkOwnedCiv(iGreece, iPersia)
-				aHelp.append(self.getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + self.getIcon(bPhoenicia) + localText.getText("TXT_KEY_CIV_CARTHAGE_SHORT_DESC", ()) + ' ' + self.getIcon(bBabylonia) + localText.getText("TXT_KEY_CIV_BABYLONIA_SHORT_DESC", ()) + ' ' + self.getIcon(bPersia) + localText.getText("TXT_KEY_CIV_PERSIA_SHORT_DESC", ()))
+				aHelp.append(self.getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + self.getIcon(bPhoenicia) + localText.getText("TXT_KEY_CIV_PHOENICIA_SHORT_DESC", ()) + ' ' + self.getIcon(bBabylonia) + localText.getText("TXT_KEY_CIV_BABYLONIA_SHORT_DESC", ()) + ' ' + self.getIcon(bPersia) + localText.getText("TXT_KEY_CIV_PERSIA_SHORT_DESC", ()))
 
 		elif iPlayer == iPersia:
 			if not pPersia.isReborn():

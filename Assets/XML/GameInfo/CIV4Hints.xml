@@ -343,9 +343,9 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_32</Description>
 		</HintInfo>
-		<HintInfo>
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_33</Description>
-		</HintInfo>
+		</HintInfo-->
 		<!--HintInfo>
 			<Description>TXT_KEY_HINT_34</Description>
 		</HintInfo-->

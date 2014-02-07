@@ -56,7 +56,7 @@ tMinorCities = (
 (-100, (19, 35), iNative, 'Danni B&#225;a', 2, con.iMayaHolkan, 2),	# Monte Albán
 (-75, (89, 46), iBarbarian, 'Kashgar', 2, con.iArcher, 1),		# Kashgar
 (-50, (55, 50), iCeltia, 'Lutetia', 2, -1, -1),				# Paris
-(100, (76, 30), iIndependent, "Sana'a", 1, -1, -1),			# Sana'a
+(100, (76, 30), iIndependent, "Sana'a", 2, -1, -1),			# Sana'a
 (107, (98, 36), iIndependent2, 'Pagan', 2, -1, -1),			# Pagan
 (633, (96, 43), iBarbarian, 'Rasa', 2, con.iTibetanKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, con.iCrossbowman, 1),	# Marrakesh

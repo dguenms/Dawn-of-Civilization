@@ -129,29 +129,37 @@ def getCrisisCountdown(iPlayer):
 def changeCrisisCountdown(iPlayer, iChange):
 	sd.changeCrisisCountdown(iPlayer, iChange)
 	
-def checkBarbarianCollapse(iPlayer):
+def isImmune(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	
 	# must not be dead
 	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
-		return
+		return True
 		
 	# only for major civs
 	if iPlayer >= con.iNumPlayers:
-		return
+		return True
 		
 	# immune right after scenario start
 	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
-		return
+		return True
 		
 	# immune right after birth
 	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < utils.getTurns(20):
-		return
+		return True
 		
 	# immune right after resurrection
 	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
-		return
+		return True
+		
+	return False
+	
+def checkBarbarianCollapse(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iGameTurn = gc.getGame().getGameTurn()
+		
+	if isImmune(iPlayer): return
 		
 	iNumCities = pPlayer.getNumCities()
 	iLostCities = 0
@@ -174,25 +182,7 @@ def checkLostCitiesCollapse(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	
-	# must not be dead
-	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
-		return
-		
-	# only for major civs
-	if iPlayer >= con.iNumPlayers:
-		return
-		
-	# immune right after scenario start
-	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
-		return
-		
-	# immune right after birth
-	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < utils.getTurns(20):
-		return
-		
-	# immune right after resurrection
-	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
-		return
+	if isImmune(iPlayer): return
 		
 	iNumCurrentCities = pPlayer.getNumCities()
 	iNumPreviousCities = sd.getNumPreviousCities(iPlayer)
@@ -208,25 +198,7 @@ def checkLostCoreCollapse(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	
-	# must not be dead
-	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
-		return
-		
-	# only for major civs
-	if iPlayer >= con.iNumPlayers:
-		return
-		
-	# immune right after scenario start
-	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
-		return
-		
-	# immune right after birth
-	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < utils.getTurns(20):
-		return
-		
-	# immune right after resurrection
-	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
-		return
+	if isImmune(iPlayer): return
 		
 	iReborn = utils.getReborn(iPlayer)
 	lCities = utils.getAreaCitiesCiv(iPlayer, con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer])
@@ -240,43 +212,57 @@ def checkLostCoreCollapse(iPlayer):
 	
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
 		completeCollapse(iPlayer)
+		
+def getAverageStabilityLevel(iPlayer):
+	iLevel = 0
+	iCount = 0
+	for iLoopPlayer in range(con.iNumPlayers):
+		if gc.getPlayer(iLoopPlayer).isAlive() and iLoopPlayer != iPlayer:
+			iCount += 1
+			iLevel += getStabilityLevel(iLoopPlayer)-2
+			
+	if iCount == 0: return 0
+	
+	return 2 * iLevel / iCount
+		
+def getStabilityThreshold(iPlayer):
+	iGameTurn = gc.getGame().getGameTurn()
+	iStabilityLevel = getStabilityLevel(iPlayer)
+
+	iThreshold = 5 * (iStabilityLevel - 2) - 5
+	
+	if utils.getHumanID() != iPlayer and iGameTurn > getTurnForYear(con.tFall[iPlayer]):
+		iThreshold += 5 * iStabilityLevel + 5 + max(10, (iGameTurn - getTurnForYear(con.tFall[iPlayer])) / utils.getTurns(10))
+		
+	# golden ages make stability increases easier
+	if gc.getPlayer(iPlayer).isGoldenAge():
+		iThreshold -= 5
+		
+	# make everyone a bit more stable after the Renaissance -> less collapses
+	if gc.getGame().getCurrentEra() >= con.iRenaissance:
+		iThreshold -= 5
+		
+	# normalization: reduce the threshold if most of the world is unstable and vice versa
+	iThreshold += getAverageStabilityLevel(iPlayer) * 5
+		
+	return iThreshold
 
 def checkStability(iPlayer, bPositive = False):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	iGameEra = gc.getGame().getCurrentEra()
 	
-	# must not be dead
-	if not pPlayer.isAlive():
+	if isImmune(iPlayer): return
+		
+	# immune to negative stability checks in golden ages and anarchy
+	if pPlayer.isGoldenAge() and not bPositive:
 		return
 		
-	# I mean it
-	if pPlayer.getNumCities() == 0:
-		return
-	
-	# only for major civs
-	if iPlayer >= con.iNumPlayers:
-		return
-		
-	# immune to stability checks right after scenario start
-	if iGameTurn - utils.getScenarioStartTurn() < utils.getTurns(20):
-		return
-
-	# immune to stability checks right after birth
-	if iGameTurn - getTurnForYear(con.tBirth[iPlayer]) < utils.getTurns(20):
-		return
-		
-	# immune right after resurrection
-	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
-		return
-		
-	# immune to stability checks in golden ages and anarchy
-	if pPlayer.isGoldenAge() or pPlayer.isAnarchy():
-		return
+	# immune during anarchy
+	if pPlayer.isAnarchy(): return
 		
 	# immune if there's been a crisis recently
-	if getCrisisCountdown(iPlayer) > 0:
-		return
+	if getCrisisCountdown(iPlayer) > 0: return
 		
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
@@ -285,14 +271,7 @@ def checkStability(iPlayer, bPositive = False):
 	bFall = (utils.getHumanID() != iPlayer and iGameTurn > getTurnForYear(con.tFall[iPlayer]))
 	
 	# it's easier to lose stability and harder to gain it at higher levels -> prevent "falling through the levels"
-	iThreshold = 5 * (iStabilityLevel - 2) - 5
-	
-	if bFall:
-		iThreshold += 5 * iStabilityLevel + 5 + max(10, (iGameTurn - getTurnForYear(con.tFall[iPlayer])) / utils.getTurns(10))
-		
-	# make everyone a bit more stable after the Renaissance -> less collapses
-	if iGameEra >= con.iRenaissance:
-		iThreshold -= 5
+	iThreshold = getStabilityThreshold(iPlayer)
 		
 	iCrisisThreshold = max(-5, iThreshold)
 	
@@ -978,10 +957,10 @@ def calculateStability(iPlayer):
 	iTotalCoreCities = 0
 	iOccupiedCoreCities = 0
 	
-	iHistoricalPopulation = 0
-	iForeignPopulation = 0
-	iContestedPopulation = 0
-	iForeignCorePopulation = 0
+	#iHistoricalPopulation = 0
+	#iForeignPopulation = 0
+	#iContestedPopulation = 0
+	#iForeignCorePopulation = 0
 	
 	iStateReligionCities = 0
 	iOnlyStateReligionCities = 0
@@ -1057,16 +1036,16 @@ def calculateStability(iPlayer):
 				elif bMercantilism and iModifier > 0: 
 					iModifier -= 1
 					
-			utils.debugTextPopup('City: ' + city.getName() + '\n Modifier: ' + str(iModifier))
+			#utils.debugTextPopup('City: ' + city.getName() + '\n Modifier: ' + str(iModifier))
 			
 			iPeripheryPopulation += (100 + iModifier * 50) * iPopulation / 100
 			
-			if not bHistorical:
-				if bForeignCore: iForeignCorePopulation += (100 + iModifier * 50) * iPopulation / 100
-				else: iForeignPopulation += (100 + iModifier * 50) * iPopulation / 100
-			else:
-				if bForeignCore: iContestedPopulation += (100 + iModifier * 50) * iPopulation / 100
-				else: iHistoricalPopulation += (100 + iModifier * 50) * iPopulation / 100
+			#if not bHistorical:
+			#	if bForeignCore: iForeignCorePopulation += (100 + iModifier * 50) * iPopulation / 100
+			#	else: iForeignPopulation += (100 + iModifier * 50) * iPopulation / 100
+			#else:
+			#	if bForeignCore: iContestedPopulation += (100 + iModifier * 50) * iPopulation / 100
+			#	else: iHistoricalPopulation += (100 + iModifier * 50) * iPopulation / 100
 
 			
 		# Religions
@@ -1100,8 +1079,8 @@ def calculateStability(iPlayer):
 		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
 			
-	sPopulationDebug = 'Core Population: ' + str(iCorePopulation) + '\nHistorical population: ' + str(iHistoricalPopulation) + '\nContested population: ' + str(iContestedPopulation) + '\nForeign population: ' + str(iForeignPopulation) + '\nForeign core population: ' + str(iForeignCorePopulation)
-	utils.debugTextPopup(sPopulationDebug)
+	#sPopulationDebug = 'Core Population: ' + str(iCorePopulation) + '\nHistorical population: ' + str(iHistoricalPopulation) + '\nContested population: ' + str(iContestedPopulation) + '\nForeign population: ' + str(iForeignPopulation) + '\nForeign core population: ' + str(iForeignCorePopulation)
+	#utils.debugTextPopup(sPopulationDebug)
 			
 	#for city in utils.getAreaCities(con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer]):
 	#	iTotalCoreCities += 1
