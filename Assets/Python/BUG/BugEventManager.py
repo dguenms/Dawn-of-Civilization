@@ -106,7 +106,6 @@ import InputUtil
 import types
 
 import RiseAndFall
-import Congresses
 import Religions
 import CvRFCEventHandler
 
@@ -227,7 +226,6 @@ class BugEventManager(CvEventManager.CvEventManager):
 		# --> INSERT EVENT HANDLER INITIALIZATION HERE <--
 		CvRFCEventHandler.CvRFCEventHandler(self)
 		self.rnf = RiseAndFall.RiseAndFall()
-		self.cong = Congresses.Congresses()
 		self.rel = Religions.Religions()
 	
 	def setLogging(self, logging):

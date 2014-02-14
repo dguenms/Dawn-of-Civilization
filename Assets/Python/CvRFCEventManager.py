@@ -11,7 +11,7 @@
 import CvEventManager
 import CvRFCEventHandler
 import RiseAndFall
-import Congresses
+import Congresses as cong
 import Religions
 
 class CvRFCEventManager(CvEventManager.CvEventManager, object):
@@ -73,12 +73,13 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
 	    7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
 	    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628),
 	    7629 : ('ByzantineBriberyEvent', self.rnfEventApply7629, self.rnfEventBegin7629),
+	    7630 : ('CongressClaimCityEvent', self.congEventApply7630, self.congEventBegin7630),
+	    7631 : ('CongressVoteCityEvent', self.congEventApply7631, self.congEventBegin7631),
         }
 
         # --> INSERT EVENT HANDLER INITIALIZATION HERE <--
         CvRFCEventHandler.CvRFCEventHandler(self)
         self.rnf = RiseAndFall.RiseAndFall()
-        self.cong = Congresses.Congresses()
         self.rel = Religions.Religions()
         
 
@@ -202,37 +203,43 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
             pass
        
     def congEventApply7616(self, playerID, netUserData, popupReturn):
-            self.cong.eventApply7616(popupReturn)
+            #self.cong.eventApply7616(popupReturn)
+	    pass
 
     def congEventBegin7617(self):
             pass
        
     def congEventApply7617(self, playerID, netUserData, popupReturn):
-            self.cong.eventApply7617(popupReturn)
+            #self.cong.eventApply7617(popupReturn)
+	    pass
 
     def congEventBegin7618(self):
             pass
        
     def congEventApply7618(self, playerID, netUserData, popupReturn):
-            self.cong.eventApply7618(popupReturn)
+            #self.cong.eventApply7618(popupReturn)
+	    pass
 
     def congEventBegin7619(self):
             pass
        
     def congEventApply7619(self, playerID, netUserData, popupReturn):
-            self.cong.eventApply7619(popupReturn)
+            #self.cong.eventApply7619(popupReturn)
+	    pass
 
     def congEventBegin7620(self):
             pass
        
     def congEventApply7620(self, playerID, netUserData, popupReturn):
-            self.cong.eventApply7620(popupReturn)
+            #self.cong.eventApply7620(popupReturn)
+	    pass
 
     def congEventBegin7621(self):
             pass
        
     def congEventApply7621(self, playerID, netUserData, popupReturn):
-            self.cong.eventApply7621(popupReturn)
+            #self.cong.eventApply7621(popupReturn)
+	    pass
 
     def rnfEventBegin7622(self):
             pass
@@ -244,7 +251,8 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
             pass
        
     def congEventApply7623(self, playerID, netUserData, popupReturn):
-            self.cong.eventApply7623(popupReturn)
+            #self.cong.eventApply7623(popupReturn)
+	    pass
 
     def relEventBegin7624(self):
             pass
@@ -281,3 +289,15 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
 	    
     def rnfEventBegin7629(self):
 	    pass
+	    
+    def congEventApply7630(self, playerID, netUserData, popupReturn):
+	    cong.currentCongress.applyClaimCityEvent(netUserData, popupReturn)
+	    
+    def congEventBegin7630(self):
+	    pass
+	    
+    def congEventApply7631(self, playerID, netUserData, popupReturn):
+	    cong.currentCongress.applyVoteCityEvent(netUserData, popupReturn)
+	    
+    def congEventBegin7631(self):
+            pass

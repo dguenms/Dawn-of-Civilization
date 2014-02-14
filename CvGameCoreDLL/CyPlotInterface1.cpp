@@ -261,7 +261,9 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("isCore", &CyPlot::isCore, "bool (int ePlayer)")
 		.def("setCore", &CyPlot::setCore, "void (int ePlayer, bool bNewValue)")
 		.def("getSettlerMapValue", &CyPlot::getSettlerMapValue, "int (int ePlayer)")
+		.def("getWarMapValue", &CyPlot::getWarMapValue, "int (int ePlayer)")
 		.def("isWithinGreatWall", &CyPlot::isWithinGreatWall, "bool ()")
 		.def("setWithinGreatWall", &CyPlot::setWithinGreatWall, "void (bool bNewValue)")
+		.def("cameraLookAt", &CyPlot::cameraLookAt, "void ()")
 	;
 }

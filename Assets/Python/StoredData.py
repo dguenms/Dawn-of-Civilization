@@ -75,24 +75,11 @@ class StoredData:
                                     'iNextTurnAIWar': -1,
 				    'lAggressionLevels': [0 for i in range(con.iNumPlayers)],
                                     #------------Congresses
-                                    'bCongressEnabled': False,
-                                    'iCivsWithNationalism': 0,
-                                    'bUNbuilt': False,
-                                    'lInvitedNations': [False for i in range(con.iNumPlayers)],
-                                    'lVotes': [0 for i in range(con.iNumPlayers)],
-                                    'lTempActiveCiv': [-1 for i in range(con.iNumPlayers)],
-                                    'lTempReqCity': [-1 for i in range(con.iNumPlayers)],
-                                    'iLoopIndex': 0,
-                                    'lTempReqCityHuman': [-1, -1, -1, -1, -1],
-                                    'tempReqCityNI': -1,
-                                    'tempActiveCivNI': -1,
-                                    'lTempAttackingCivsNI': [False for i in range(con.iNumPlayers)],
-                                    'iNumNationsTemp': 0,
-                                    'lBribe' : [-1, -1, -1],
-                                    'lCivsToBribe': [-1 for i in range(con.iNumPlayers)],
-                                    'tTempFlippingCityCongress': -1,
-                                    'lMemory': [0 for i in range(con.iNumTotalPlayersB)], #total players + barbarians (minors and barbs are not used, but necessary for not going out of range)
-                                    #------------Plague
+				    'iGlobalWarAttacker': -1,
+				    'iGlobalWarDefender': -1,
+				    'iCongressTurns': 0,
+				    'iCivsWithNationalism': 0,
+				    #------------Plague
                                     'lPlagueCountdown': [0 for i in range(con.iNumTotalPlayersB)], #total players + barbarians
                                     'lGenericPlagueDates': [-1, -1, -1, -1],# -1],
                                     'lFirstContactPlague': [False for i in range(con.iNumTotalPlayersB)], #total players + barbarians
@@ -300,6 +287,28 @@ class StoredData:
 		
 	def changeMoorishGold(self, iChange):
 		self.scriptDict['iMoorishGold'] += iChange
+		
+	# Congresses
+	def getGlobalWarAttacker(self):
+		return self.scriptDict['iGlobalWarAttacker']
+		
+	def setGlobalWarAttacker(self, iNewValue):
+		self.scriptDict['iGlobalWarAttacker'] = iNewValue
+		
+	def getGlobalWarDefender(self):
+		return self.scriptDict['iGlobalWarDefender']
+		
+	def setGlobalWarDefender(self):
+		self.scriptDict['iGlobalWarDefender'] = iNewValue
+		
+	def getCongressTurns(self):
+		return self.scriptDict['iCongressTurns']
+		
+	def setCongressTurns(self, iNewValue):
+		self.scriptDict['iCongressTurns'] = iNewValue
+		
+	def changeCongressTurns(self, iChange):
+		self.scriptDict['iCongressTurns'] += iChange
 		
 # All modules import the following single instance, not the class
 

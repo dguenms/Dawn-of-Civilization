@@ -1074,6 +1074,11 @@ int CyPlot::getSettlerMapValue(int ePlayer)
 	return m_pPlot ? m_pPlot->getSettlerMapValue((PlayerTypes)ePlayer) : -1;
 }
 
+int CyPlot::getWarMapValue(int ePlayer)
+{
+	return m_pPlot ? m_pPlot->getWarMapValue((PlayerTypes)ePlayer) : -1;
+}
+
 bool CyPlot::isWithinGreatWall()
 {
 	return m_pPlot ? m_pPlot->isWithinGreatWall() : -1;
@@ -1083,4 +1088,9 @@ void CyPlot::setWithinGreatWall(bool bNewValue)
 {
 	if (m_pPlot)
 		m_pPlot->setWithinGreatWall(bNewValue);
+}
+
+void CyPlot::cameraLookAt()
+{
+	if (m_pPlot) m_pPlot->cameraLookAt();
 }

@@ -1176,8 +1176,8 @@ class RFCUtils:
 			for j in range(y-1, y+2):
 				current = gc.getMap().plot(i, j)
 				if not current.isCity() and not current.isPeak() and not current.isWater():
-					if not current.getFeatureType() == con.iJungle and not current.getTerrainType() == con.iMarsh:
-						lFreePlots.append((i,j))
+					#if not current.getFeatureType() == con.iJungle and not current.getTerrainType() == con.iMarsh:
+					lFreePlots.append((i,j))
 					
 		if iTargetCiv != -1 and not gc.getTeam(iCiv).isAtWar(iTargetCiv):
 			gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_TOTAL)
@@ -1554,16 +1554,26 @@ class RFCUtils:
 				lCities.append(city)
 		return lCities
 		
-	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False):
+	def completeCityFlip(self, x, y, iCiv, iOwner, iCultureChange, bBarbarianDecay = True, bBarbarianConversion = False, bAlwaysOwnPlots = False, bFlipUnits = False):
 	
 		plot = gc.getMap().plot(x, y)
 		plot.setRevealed(iCiv, False, True, -1)
 	
 		self.cultureManager((x, y), iCultureChange, iCiv, iOwner, bBarbarianDecay, bBarbarianConversion, bAlwaysOwnPlots)
-		self.flipUnitsInCityBefore((x, y), iCiv, iOwner)
+		
+		if bFlipUnits: 
+			self.flipUnitsInCityBefore((x, y), iCiv, iOwner)
+		else:
+			self.pushOutGarrisons((x, y), iOwner)
+			self.relocateSeaGarrisons((x, y), iOwner)
+		
 		self.setTempFlippingCity((x, y))
 		self.flipCity((x, y), 0, 0, iCiv, [iOwner])
-		self.flipUnitsInCityAfter(self.getTempFlippingCity(), iCiv)
+		
+		if bFlipUnits: 
+			self.flipUnitsInCityAfter(self.getTempFlippingCity(), iCiv)
+		else:
+			self.createGarrisons(self.getTempFlippingCity(), iCiv, 2)
 		
 		plot.setRevealed(iCiv, True, True, -1)
 	

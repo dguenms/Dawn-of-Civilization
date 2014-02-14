@@ -29,12 +29,27 @@
 		<Spanish>%s1 quiere %s2 (%s3)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REQUEST_CITY</Tag>
+		<English>%s1 claims the %s2 city of %s3</English>
+		<German>%s1 fordert die %s2 Stadt %s3</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REQUEST_SETTLE_OWNED</Tag>
+		<English>%s1 claims %s2 territory to found %s3</English>
+		<German>%s1 fordert %s2 Gebiet, um %s3 zu gründen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REQUEST_SETTLE</Tag>
+		<English>%s1 claims unsettled territory to found %s2</English>
+		<German>%s1 fordert unbesiedeltes Gebiet, um %s2 zu gründen</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_OF</Tag>
-		<English>Congress of</English>
-		<French>Congrès de</French>
-		<German>Kongress von</German>
-		<Italian>Congresso di</Italian>
-		<Spanish>Congreso de</Spanish>
+		<English>Congress of %s1</English>
+		<French>Congrès de %s1</French>
+		<German>Kongress von %s1</German>
+		<Italian>Congresso di %s1</Italian>
+		<Spanish>Congreso de %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INTRO</Tag>
@@ -251,5 +266,50 @@
 		<German>OK</German>
 		<Italian>OK</Italian>
 		<Spanish>Aceptar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_RESULTS</Tag>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]After long negotiations, the voting members of the Congress have come to the following decision:[NEWLINE]</English>
+		<German>[H1]Kongress von %s1[\H1][NEWLINE]Nach langen Verhandlung sind die stimmberechtigen Mitglieder des Kongresses zu folgender Entscheidung gekommen:[NEWLINE]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_RESULT_ASSIGNMENT</Tag>
+		<English>[NEWLINE][ICON_BULLET]%s2 %s1 falls under %s3 control.</English>
+		<German>[NEWLINE][ICON_BULLET]%s2 %s1 fällt unter %s3 Kontrolle.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY</Tag>
+		<English>[NEWLINE][ICON_BULLET]%s3 may found %s1 in %s2 territory.</English>
+		<German>[NEWLINE][ICON_BULLET]%s3 darf %s1 in %s2 Territorium gründen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_RESULT_COLONY</Tag>
+		<English>[NEWLINE][ICON_BULLET]%s2 may found %s1.</English>
+		<German>[NEWLINE][ICON_BULLET]%s2 darf %s1 gründen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NO_RESULTS</Tag>
+		<English>[NEWLINE]The members decided to uphold the status quo.</English>
+		<German>[NEWLINE]Die Mitglieder haben entschieden, den Status Quo aufrecht zu erhalten.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_INVITE</Tag>
+		<English>[NEWLINE][ICON_BULLET]%s1</English>
+		<German>[NEWLINE][ICON_BULLET]%s1</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_INTRODUCTION</Tag>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A new international congress is being held. The leaders of the world's most important civilizations convene to discuss the balance of the world. Besides our civilization, the participants are:[NEWLINE]%s2[NEWLINE][NEWLINE]Every civilization is allowed to either claim a city or request to colonize unsettled territory. If enough civilizations approve, the request is granted. Refusal to comply with the decision of the congress may lead to war with the civilizations that supported it!</English>
+		<German>[H1]Kongress von %s1[\H1][NEWLINe]Ein neuer internationaler Kongress wird abgehalten. Die Anführer der wichtigsten Zivilisationen der Welt kommen zusammen, um das Gleichgewicht der Welt zu diskutieren. Neben unserer Zivilisation sind unter den Teilnehmern:[NEWLINE]%s2[NEWLINE][NEWLINE]Jede Zivilisation darf entweder eine Stadt beanspruchen oder um die Kolonisierung unbesiedelter Gebiete anfragen. Falls genügen Zivilisationen zustimmen, wird der Anfrage stattgegeben. Eine Weigerung, der Entscheidung des Kongresses nachzukommen, kann zum Krieg mit den Zivilisationen führen, die sie unterstützt haben!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_AI</Tag>
+		<English>[H1]Congress of %s1[\H1][NEWLINE]A world congress is being held, but we haven't been invited. Apparently we are not important enough. The fate of the world is now in the hands of the following civilizations:[NEWLINE]%s2[NEWLINE][NEWLINE]Now we can only await their decisions and trust in their common sense.</English>
+		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein Weltkongress wird abgehalten, aber wir wurden nicht eingeladen. Scheinbar sind wir nicht wichtig genug. Das Schicksal der Welt liegt nun in den Händen der folgenden Zivilisationen:[NEWLINE]%s2[NEWLINE][NEWLINE]Jetzt können wir nur noch ihre Entscheidungen abwarten und auf ihren gesunden Menschenverstand vertrauen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CLAIM_CITY</Tag>
+		<English>It is now our turn to make a demand.</English>
+		<German>Wir sind nun an der Reihe, eine Forderung zu stellen.</German>
 	</TEXT>
 </Civ4GameText>
