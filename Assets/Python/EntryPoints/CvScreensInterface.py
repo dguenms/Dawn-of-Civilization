@@ -1672,6 +1672,15 @@ def applyVoteCityEvent(argsList):
 	
 def applyIntroductionEvent(argsList):
 	cong.currentCongress.applyIntroductionEvent()
+	
+def applyRefusalEvent(argsList):
+	cong.currentCongress.applyRefusalEvent(argsList[0], argsList[1], argsList[2])
+	
+def applyBriberyEvent(argsList):
+	cong.currentCongress.applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])
+	
+def applyBriberyResultEvent(argsList):
+	cong.currentCongress.applyBriberyResultEvent()
 
 
 #######################################################################################

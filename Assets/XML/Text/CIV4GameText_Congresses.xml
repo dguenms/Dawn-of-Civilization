@@ -312,4 +312,79 @@
 		<English>It is now our turn to make a demand.</English>
 		<German>Wir sind nun an der Reihe, eine Forderung zu stellen.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_DEMAND_CITY</Tag>
+		<English>The congress has decided to hand over our city of %s2 to %s1. Shall we comply with their demand? Refusal may lead to war against the supporters of this decision.</English>
+		<German>Der Kongress hat entschieden, unsere Stadt %s2 an %s1 zu übergeben. Sollen wir dieser Forderung nachkommen? Eine Weigerung kann zum Krieg gegen die Unterstützer dieser Entscheidung führen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_DEMAND_TERRITORY</Tag>
+		<English>The congress has decided to allow %s1 to colonize our territory near %s2. Shall we comply with their demand? Refusal may lead to war against the supporters of this decision.</English>
+		<German>Der Kongress hat entschieden, %s1 die Erlaubnis zu gewähren, unser Territorium nahe %s2 zu kolonisieren. Sollen wir dieser Forderung nachkommen? Eine Weigerung kann zum Krieg geegn die Unterstützer dieser Entscheidung führen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_ACCEPT</Tag>
+		<English>Accept</English>
+		<German>Akzeptieren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_REFUSE</Tag>
+		<English>Refuse</English>
+		<German>Weigern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY</Tag>
+		<English>%s1 opinion on our claim on the %s2 city of %s3 is divided. It might be possible to influence their decision. What should we do?</English>
+		<German>Die %s1 Meinungen zu unserer Forderung der %s2 Stadt %s3 sind gespalten. Es könnte möglich sein, ihre Entscheidung zu beeinflussen. Was sollen wir tun?</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY</Tag>
+		<English>%s1 opinion on our request to colonize the %s2 territory near %s3 is divided. It might be possible to influence their decision. What should we do?</English>
+		<German>Die %s1 Meinungen zu unserem Antrag, das %s2 Gebiet nahe %s3 zu kolonisieren, ist gespalten. Es könnte möglich sein, ihre Entscheidung zu beeinflussen. Was sollen wir tun?</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_OWN_CITY</Tag>
+		<English>The congress is currently debating the %s2 claim on our city of %s3, and it might be possible to influence the %s1 decision. What should we do?</English>
+		<German>Der Kongress debattiert im Moment die %s2 Forderung unserer Stadt %s3, und es könnte möglich sein, die %s1 Entscheidung zu beeinflussen. Was sollen wir tun?</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY</Tag>
+		<English>The congress is currently debating the %s2 request to colonize our territory near %s3, and it might be possible to influence the %s1 decision. What should we do?</English>
+		<German>Der Kongress debattiert im Moment den %s2 Antrag, unser Gebiet nahe %s3 zu kolonisieren, und es könnte möglich sein, die %s1 Entscheidung zu beeinflussen. Was sollen wir tun?</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_GOLD</Tag>
+		<English>Attempt to bribe their representatives (%d1 [ICON_GOLD])</English>
+		<German>Versucht, ihre Delegierten zu bestechen (%d1 [ICON_GOLD])</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_MANIPULATION</Tag>
+		<English>Infiltrate their delegation (%d1 [ICON_ESPIONAGE])</English>
+		<German>Infiltriert ihre Delegation (%d1 [ICON_ESPIONAGE])</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_NO_BRIBE</Tag>
+		<English>Let them vote as they please.</English>
+		<German>Lasst sie abstimmen, wie es ihnen gefällt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS</Tag>
+		<English>The attempt was successful! %s1 will now support our claim.</English>
+		<German>Der Versuch war erfolgreich! %s1 wird unsere Forderung nun unterstützen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS</Tag>
+		<English>The attempt was successful! %s1 will now vote against the claim against us.</English>
+		<German>Der Versuch war erfolgreich! %s1 wird nun gegen die gegen uns gerichtete Forderung stimmen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE</Tag>
+		<English>%s1 has rejected our clumsy attempts to influence their decision! They have voted against our claim, and our relations have soured in consequence.</English>
+		<German>%s1 hat unsere ungeschickten Versuche, ihre Entscheidung zu beeinflussen, zurückgewiesen! Sie haben gegen unsere Forderung gestimmt, und in Folge haben sich unsere Beziehungen verschlechtert.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE</Tag>
+		<English>%s1 has rejected our clumsy attempts to influence their decision! They will now support the claim against us, and our relations have soured in consequence.</English>
+		<German>%s1 hat unsere ungeschickten Versuche, ihre Entscheidung zu beeinflussen, zurückgewiesen! Sie werden nun die gegen uns gerichtete Forderung unterstützen, und in Folge haben sich unsere Beziehungen verschlechtert.</German>
+	</TEXT>
 </Civ4GameText>
