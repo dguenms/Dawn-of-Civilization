@@ -218,3 +218,9 @@
 # renamed Aztec UP to the Power of Flower Wars
 # new Turkish UP: Devshirme: can conscript two additional units in cities with non-state religions
 # new Topkapi Palace effect: additional foreign culture is converted on city conquest
+# rewritten Congress mechanics
+	# triggered either periodically or when a large war ends
+	# players can claim cities or request to settle free plots
+	# whole congress is resolved in one turn now
+	# when voting on a city claim, camera moves to the city in question
+	# significantly improved performance

@@ -11,7 +11,7 @@ import Resources
 import CityNameManager as cnm
 import UniquePowers     
 import AIWars           
-import Congresses
+import Congresses as cong
 import Consts as con 
 import RFCUtils
 utils = RFCUtils.RFCUtils()
@@ -133,7 +133,6 @@ class CvRFCEventHandler:
                 self.res = Resources.Resources()
                 self.up = UniquePowers.UniquePowers()
                 self.aiw = AIWars.AIWars()
-                self.cong = Congresses.Congresses()
                 self.vic = Victory.Victory()
                 self.pla = Plague.Plague()
                 self.com = Communications.Communications()
@@ -151,6 +150,8 @@ class CvRFCEventHandler:
 		self.dc.setup()
                 self.aiw.setup()
 		self.vic.setup() # Leoreth
+		
+		cong.setup()
 		
 		# Leoreth: set DLL core values
 		for x in range(124):
@@ -535,7 +536,6 @@ class CvRFCEventHandler:
                 self.vic.onBuildingBuilt(city.getOwner(), iBuildingType)
                 if iOwner < con.iNumPlayers:
                         self.com.onBuildingBuilt(iOwner, iBuildingType, city)
-                self.cong.onBuildingBuilt(iOwner, iBuildingType, city)
 		
 		if isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
 			sta.onWonderBuilt(iOwner, iBuildingType)
@@ -630,13 +630,13 @@ class CvRFCEventHandler:
                 self.res.checkTurn(iGameTurn)
                 self.up.checkTurn(iGameTurn)
                 self.aiw.checkTurn(iGameTurn)
-                self.cong.checkTurn(iGameTurn)
                 self.pla.checkTurn(iGameTurn)
                 self.vic.checkTurn(iGameTurn)
                 self.com.checkTurn(iGameTurn)
 		self.corp.checkTurn(iGameTurn)
 		
 		sta.checkTurn(iGameTurn)
+		cong.checkTurn(iGameTurn)
 		
 		if iGameTurn % 10 == 0:
                         self.dc.checkTurn(iGameTurn)
@@ -695,11 +695,6 @@ class CvRFCEventHandler:
 			else:
 				CyInterface().addMessage(iOwner, True, con.iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REMOVED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()))), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 
-		# Leoreth: easter egg
-		if iReligion == con.iBuddhism:
-			if pSpreadCity.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']:
-				pSpreadCity.setName('Buddhapest', False)
-
         def onFirstContact(self, argsList):
             
                 iTeamX,iHasMetTeamY = argsList
@@ -733,9 +728,6 @@ class CvRFCEventHandler:
                 if (gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer]) and iPlayer < con.iNumPlayers):
                         if (gc.getGame().getGameTurn() > getTurnForYear(1700)):
                                 self.aiw.forgetMemory(argsList[0], argsList[2])
-
-                if (gc.getGame().getGameTurn() > getTurnForYear(1000)):
-                        self.cong.onTechAcquired(argsList[0], argsList[2])
 
                 if (argsList[0] == con.iAstronomy):
 			self.rnf.earlyTradingCompany(iPlayer)
@@ -791,10 +783,15 @@ class CvRFCEventHandler:
 		sd.load() # edead: load & unpickle script data
 		
 	def onChangeWar(self, argsList):
-		bWar, iTeam, iOtherTeam = argsList
+		bWar, iTeam, iOtherTeam, bGlobalWar = argsList
 		
 		sta.onChangeWar(bWar, iTeam, iOtherTeam)
 		self.up.onChangeWar(bWar, iTeam, iOtherTeam)
+		
+		cong.onChangeWar(argsList)
+		
+		if bWar and bGlobalWar:
+			utils.debugTextPopup('Global war: ' + gc.getPlayer(iTeam).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iOtherTeam).getCivilizationShortDescription(0))
 		
 		# don't start AIWars if they get involved in natural wars
 		if bWar and iTeam < con.iNumPlayers and iOtherTeam < con.iNumPlayers:

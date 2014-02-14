@@ -206,7 +206,7 @@ def onCityAcquired(city, iNewOwner):
 	elif sOldName == 'Toranaro' and iNewOwner not in [iJapan, iFrance]: sNewName = 'Tolanaro'
 	elif sOldName == 'Kerimane' and iNewOwner != iJapan: sNewName = 'Quelimane'
 	elif sOldName == 'Sofara' and iNewOwner != iJapan: sNewName = 'Sofala'
-	elif sOldName == 'Indraprastha' and iNewOwner == iIndia: sNewName = 'Dilli'
+	#elif sOldName == 'Indraprastha' and iNewOwner == iIndia: sNewName = 'Dilli'
 	elif sOldName == 'Singidunon' and iNewOwner != iByzantium: sNewName = 'Belgrad'
 	
 	if sNewName != "":
@@ -317,6 +317,10 @@ def onReligionSpread(iReligion, iCiv, city):
 	if iCiv == iIndonesia:
 		if iReligion == con.iIslam:
 			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
+			
+	# easter egg
+	if iReligion == con.iBuddhism:
+		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: city.setName('Buddhapest', False)
 			
 def onRevolution(iCiv):
 

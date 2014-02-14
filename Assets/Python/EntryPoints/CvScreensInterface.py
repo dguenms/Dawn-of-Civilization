@@ -64,6 +64,7 @@ import Consts as con
 import RFCUtils
 import Victory as vic
 import CityNameManager as cnm
+import Congresses as cong
 utils = RFCUtils.RFCUtils()
 gc = CyGlobalContext()
 
@@ -1663,9 +1664,14 @@ def getCityName(self, argsList):
 	else:
 		return result
 		
-		
-			
-		
+def applyClaimCityEvent(argsList):
+	cong.currentCongress.applyClaimCityEvent(argsList[0])
+	
+def applyVoteCityEvent(argsList):
+	cong.currentCongress.applyVoteCityEvent(argsList[1], argsList[2], argsList[0])
+	
+def applyIntroductionEvent(argsList):
+	cong.currentCongress.applyIntroductionEvent()
 
 
 #######################################################################################

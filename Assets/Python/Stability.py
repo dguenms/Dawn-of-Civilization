@@ -1172,7 +1172,7 @@ def calculateStability(iPlayer):
 		#iBaselinePercentChange = 100 * iNeighborCommerceDifference / iPreviousCommerceNeighbors
 		
 		iPercentChange = calculateEconomicGrowth(iPlayer, 10)
-		iBaselinePercentChange = 20 #calculateEconomicGrowthNeighbors(iPlayer, 10)
+		iBaselinePercentChange = 10 #calculateEconomicGrowthNeighbors(iPlayer, 10)
 		
 		iDifference = iPercentChange - iBaselinePercentChange
 		
@@ -1878,16 +1878,11 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		bCapital = city.isCapital()
 		
 		if pOwner.isBarbarian() or pOwner.isMinorCiv():
-			utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True)
+			utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True, True)
 			utils.flipUnitsInArea((x-2, y-2), (x+2, y+2), iPlayer, iOwner, True, False)
 	
 		else:
-			utils.cultureManager((x, y), 75, iPlayer, iOwner, False, True, True)
-			utils.pushOutGarrisons((x, y), iOwner)
-			utils.relocateSeaGarrisons((x, y), iOwner)
-			sd.setTempFlippingCity((x, y))
-			utils.flipCity((x, y), 0, 0, iPlayer, [iOwner])
-			utils.createGarrisons(sd.getTempFlippingCity(), iPlayer, iGarrison)
+			utils.completeCityFlip(x, y, iPlayer, iOwner, 75, False, True, True)
 			
 		newCity = gc.getMap().plot(x, y).getPlotCity()
 		

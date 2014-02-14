@@ -4,1180 +4,645 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers 
 import Popup
-#import cPickle as pickle
 import RFCUtils
-import Consts as con
+from Consts import *
+import CityNameManager as cnm
 from StoredData import sd # edead
 
-# globals
+### Globals ###
+
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 utils = RFCUtils.RFCUtils()
+localText = CyTranslator()
+
+### Singleton ###
+
+currentCongress = None
 
 ### Constants ###
 
-
-iPosThreshold = 5
-iNegThreshold = -5
-iWarThreshold = 16
-iNormalizationThreshold = 20
-
-
-
-iEgypt = con.iEgypt
-iIndia = con.iIndia
-iChina = con.iChina
-iBabylonia = con.iBabylonia
-iGreece = con.iGreece
-iPersia = con.iPersia
-iCarthage = con.iCarthage
-iRome = con.iRome
-iTamils = con.iTamils
-iJapan = con.iJapan
-iEthiopia = con.iEthiopia
-iKorea = con.iKorea
-iMaya = con.iMaya
-iByzantium = con.iByzantium
-iVikings = con.iVikings
-iArabia = con.iArabia
-iTibet = con.iTibet
-iKhmer = con.iKhmer
-iIndonesia = con.iIndonesia
-iMoors = con.iMoors
-iSpain = con.iSpain
-iFrance = con.iFrance
-iEngland = con.iEngland
-iHolyRome = con.iHolyRome
-iRussia = con.iRussia
-iNetherlands = con.iNetherlands
-iHolland = con.iHolland
-iMali = con.iMali
-iPoland = con.iPoland
-iTurkey = con.iTurkey
-iPortugal = con.iPortugal
-iInca = con.iInca
-iItaly = con.iItaly
-iMongolia = con.iMongolia
-iAztecs = con.iAztecs
-iMughals = con.iMughals
-iThailand = con.iThailand
-iGermany = con.iGermany
-iAmerica = con.iAmerica
-iBrazil = con.iBrazil
-iNumPlayers = con.iNumPlayers
-iNumMajorPlayers = con.iNumMajorPlayers
-iNumActivePlayers = con.iNumActivePlayers
-iIndependent = con.iIndependent
-iIndependent2 = con.iIndependent2
-iNative = con.iNative
-iCeltia = con.iCeltia
-iBarbarian = con.iBarbarian
-iNumTotalPlayers = con.iNumTotalPlayers
-
-
-lCivGroups = con.lCivGroups
-lNeighbours = con.lNeighbours
-
-      
-  
-class Congresses:
-
-
-        #host city
-        sHostCity = ""
-
-
-##################################################
-### Secure storage & retrieval of script data ###
-################################################
-
-        def getCongressEnabled( self ):
-                return sd.scriptDict['bCongressEnabled']
-
-        def setCongressEnabled( self, bNewValue ):
-                sd.scriptDict['bCongressEnabled'] = bNewValue
-
-        def getCivsWithNationalism( self ):
-                return sd.scriptDict['iCivsWithNationalism']
-
-        def setCivsWithNationalism( self, iNewValue ):
-                sd.scriptDict['iCivsWithNationalism'] = iNewValue
-
-        def getUNbuilt( self ):
-                return sd.scriptDict['bUNbuilt']
-
-        def setUNbuilt( self, bNewValue ):
-                sd.scriptDict['bUNbuilt'] = bNewValue
-
-        def getInvitedNations( self, iCiv ):
-                return sd.scriptDict['lInvitedNations'][iCiv]
-
-        def setInvitedNations( self, iCiv, bNewValue ):
-                sd.scriptDict['lInvitedNations'][iCiv] = bNewValue
-
-        def getVotes( self, iCiv ):
-                return sd.scriptDict['lVotes'][iCiv]
-
-        def setVotes( self, iCiv, iNewValue ):
-                sd.scriptDict['lVotes'][iCiv] = iNewValue
-
-        def getTempActiveCiv( self, iLoop ):
-                return sd.scriptDict['lTempActiveCiv'][iLoop]
-
-        def setTempActiveCiv( self, iLoop, iNewValue ):
-                sd.scriptDict['lTempActiveCiv'][iLoop] = iNewValue
-
-        def getTempReqCity( self, iLoop ):
-                return sd.scriptDict['lTempReqCity'][iLoop]
-
-        def setTempReqCity( self, iLoop, tNewValue ):
-                sd.scriptDict['lTempReqCity'][iLoop] = tNewValue
-
-        def getLoopIndex( self ):
-                return sd.scriptDict['iLoopIndex']
-
-        def setLoopIndex( self, iNewValue ):
-                sd.scriptDict['iLoopIndex'] = iNewValue
-
-        def getTempReqCityHuman( self, iLoop ):
-                return sd.scriptDict['lTempReqCityHuman'][iLoop]
-
-        def setTempReqCityHuman( self, iLoop, tNewValue ):
-                sd.scriptDict['lTempReqCityHuman'][iLoop] = tNewValue
-
-        def getTempReqCityNI( self ):
-                return sd.scriptDict['tempReqCityNI']
-
-        def setTempReqCityNI( self, tNewValue ):
-                sd.scriptDict['tempReqCityNI'] = tNewValue
-
-        def getTempActiveCivNI( self ):
-                return sd.scriptDict['tempActiveCivNI']
-
-        def setTempActiveCivNI( self, iNewValue ):
-                sd.scriptDict['tempActiveCivNI'] = iNewValue
-
-        def getTempAttackingCivsNI( self, iCiv ):
-                return sd.scriptDict['lTempAttackingCivsNI'][iCiv]
-
-        def setTempAttackingCivsNI( self, iCiv, bNewValue ):
-                sd.scriptDict['lTempAttackingCivsNI'][iCiv] = bNewValue
-
-        def getNumNationsTemp( self ):
-                return sd.scriptDict['iNumNationsTemp']
-
-        def setNumNationsTemp( self, iNewValue ):
-                sd.scriptDict['iNumNationsTemp'] = iNewValue
-
-        def getBribe( self, iCiv ):
-                return sd.scriptDict['lBribe'][iCiv]
-
-        def setBribe( self, iCiv, iNewValue ):
-                sd.scriptDict['lBribe'][iCiv] = iNewValue
-
-        def getCivsToBribe( self, iCiv ):
-                return sd.scriptDict['lCivsToBribe'][iCiv]
-
-        def setCivsToBribe( self, iCiv, iNewValue ):
-                sd.scriptDict['lCivsToBribe'][iCiv] = iNewValue
-
-        def getMemory( self, iCiv ):
-                return sd.scriptDict['lMemory'][iCiv]
-
-        def setMemory( self, iCiv, iNewValue ):
-                sd.scriptDict['lMemory'][iCiv] = iNewValue
-
-        #from RiseAndFall.py
-        def getTempFlippingCityCongress( self ):
-                return sd.scriptDict['tempFlippingCityCongress']
-
-        def setTempFlippingCityCongress( self, tNewValue ):
-                sd.scriptDict['tempFlippingCityCongress'] = tNewValue
-
-
-###############
-### Popups ###
-#############
-
-        ''' popupID has to be a registered ID in CvRhyesCatapultEventManager.__init__!! '''
-        def showPopup(self, popupID, title, message, labels):
-                popup = Popup.PyPopup(popupID, EventContextTypes.EVENTCONTEXT_ALL)
-                popup.setHeaderString(title)
-                popup.setBodyString(message)
-                for i in labels:
-                    popup.addButton( i )
-                popup.launch(False)
-   
-        def votePopup(self, iActiveCiv, reqCity, iActiveCivLoopIndex):
-                self.showPopup(7616, \
-                            CyTranslator().getText("TXT_KEY_CONGRESS_OF", ()) + " " + self.sHostCity, \
-                            CyTranslator().getText("TXT_KEY_CONGRESS_REQUEST", \
-                                (gc.getPlayer(iActiveCiv).getName(), reqCity.getName(), gc.getPlayer(reqCity.getOwner()).getCivilizationAdjective(0))), \
-                            (CyTranslator().getText("TXT_KEY_POPUP_VOTE_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_ABSTAIN", ()), CyTranslator().getText("TXT_KEY_POPUP_VOTE_NO", ())))
-
-                print ("iActiveCivLoopIndex", iActiveCivLoopIndex, "X", reqCity.getX(), "Y", reqCity.getY())
-                self.setTempReqCity(iActiveCivLoopIndex, (reqCity.getX(), reqCity.getY()))                
-                self.setTempActiveCiv(iActiveCivLoopIndex, iActiveCiv) #not self.getLoopIndex() because it should write all the values while precomputing, while waiting for the event for moving the index for reading
-
-        def eventApply7616(self, popupReturn):
-                iHuman = utils.getHumanID()
-                tReqCity = self.getTempReqCity(self.getLoopIndex())
-                print ("self.getLoopIndex() - votePopup", self.getLoopIndex())
-                print ("tReqCity", tReqCity)
-                tempReqCity = gc.getMap().plot( tReqCity[0], tReqCity[1] ).getPlotCity()
-                tempActiveCiv = self.getTempActiveCiv(self.getLoopIndex())
-                tempOwnerCiv = tempReqCity.getOwner()
-                if( popupReturn.getButtonClicked() == 0 ): # 1st button
-                        self.setVotes(iHuman, 10)
-                        self.setMemory(tempActiveCiv, self.getMemory(tempActiveCiv)/2 +100)
-                        self.setMemory(tempOwnerCiv, self.getMemory(tempOwnerCiv)/2 -100)
-                elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
-                        self.setVotes(iHuman, 0)
-                        self.setMemory(tempActiveCiv, self.getMemory(tempActiveCiv)*2/3)
-                        self.setMemory(tempOwnerCiv, self.getMemory(tempOwnerCiv)*2/3)
-                elif( popupReturn.getButtonClicked() == 2 ): # 3rd button
-                        self.setVotes(iHuman, -10)
-                        self.setMemory(tempActiveCiv, self.getMemory(tempActiveCiv)/2 -100)
-                        self.setMemory(tempOwnerCiv, self.getMemory(tempOwnerCiv)/2 +100)
-                self.voteAI(tempActiveCiv, tempReqCity)                
-                self.finalCount(tempActiveCiv, tempReqCity, True)
-                self.setLoopIndex( self.getLoopIndex() + 1 )
-
-
-
-        def askNothingPopup(self, iActiveCiv, iActiveCivLoopIndex):
-                print ("iActiveCivLoopIndex", iActiveCivLoopIndex, "no city")
-                if (iActiveCiv == utils.getHumanID()):
-                        tempStr = CyTranslator().getText("TXT_KEY_CONGRESS_NO_CITY", ())
-                else:
-                        tempStr = gc.getPlayer(iActiveCiv).getName() + " " + CyTranslator().getText("TXT_KEY_CONGRESS_NO_AI_REQUEST", ())
-                tempOKStr = " " #CyTranslator().getText("TXT_KEY_CONGRESS_OK", ())
-                self.showPopup(7623, \
-                            CyTranslator().getText("TXT_KEY_CONGRESS_OF", ()) + " " + self.sHostCity, \
-                            tempStr, \
-                            tempOKStr)
-
-        def eventApply7623(self, popupReturn):                
-                print ("self.getLoopIndex() - askNothingPopup", self.getLoopIndex())
-                self.setLoopIndex( self.getLoopIndex() + 1 )
-
-                
-
-
-        def askCityPopup(self, iActiveCiv, cityList): #, iActiveCivLoopIndex):
-                cityListNames = []
-                print cityList
-                cityListNames.append(CyTranslator().getText("TXT_KEY_CONGRESS_NO_REQUEST", ()))
-                for i in range(len(cityList)):
-                        cityListNames.append(cityList[i].getName() + " (" + gc.getPlayer(cityList[i].getOwner()).getCivilizationAdjective(0) + ")" )
-                        self.setTempReqCityHuman(i, (cityList[i].getX(), cityList[i].getY())) 
-                print cityListNames
-                self.showPopup(7617, CyTranslator().getText("TXT_KEY_CONGRESS_OF", ()) + " " + self.sHostCity, CyTranslator().getText("TXT_KEY_CONGRESS_HUMAN_REQUEST", ()), cityListNames)
-                #self.setTempActiveCiv(iActiveCivLoopIndex, iActiveCiv) #using iHuman instead
-                #print ("iActiveCiv", iActiveCiv, "iActiveCivLoopIndex", iActiveCivLoopIndex, "self.getTempActiveCiv(self.getLoopIndex())", self.getTempActiveCiv(self.getLoopIndex()))
-                              
-
-        def eventApply7617(self, popupReturn):
-                iHuman = utils.getHumanID()
-                self.setVotes(iHuman, 30)
-                if (popupReturn.getButtonClicked() > 0): #!= NO_REQUEST
-                        tReqCity = self.getTempReqCityHuman( popupReturn.getButtonClicked() - 1 ) #-1 because 0 is NO_REQUEST
-                        print tReqCity
-                        tempReqCity = gc.getMap().plot( tReqCity[0], tReqCity[1] ).getPlotCity()
-                        #self.voteAI(self.getTempActiveCiv(self.getLoopIndex()), tempReqCity)
-                        #self.finalCount(self.getTempActiveCiv(self.getLoopIndex()), tempReqCity, True)
-                        self.voteAI(iHuman, tempReqCity)
-                        self.finalCount(iHuman, tempReqCity, True)
-                print ("self.getLoopIndex() - askCityPopup", self.getLoopIndex())
-                self.setLoopIndex( self.getLoopIndex() + 1 )
-
-
-
-                
-        def decisionPopup(self, bHumanInvited):
-                if (bHumanInvited):
-                        tReqCity = self.getTempReqCity(self.getLoopIndex())
-                        tempReqCity = gc.getMap().plot( tReqCity[0], tReqCity[1] ).getPlotCity()
-                        tempActiveCiv = self.getTempActiveCiv(self.getLoopIndex())
-                else:
-                        tempReqCity = gc.getMap().plot( self.getTempReqCityNI()[0], self.getTempReqCityNI()[1] ).getPlotCity()
-                        tempActiveCiv = self.getTempActiveCivNI()
-                self.showPopup(7618, \
-                            (CyTranslator().getText("TXT_KEY_CONGRESS_OF", ()) + " " + self.sHostCity), \
-                            (CyTranslator().getText("TXT_KEY_CONGRESS_REQUEST1", ()) + " " + tempReqCity.getName() + " " + \
-                               CyTranslator().getText("TXT_KEY_CONGRESS_REQUEST2", ()) + " " + gc.getPlayer(tempActiveCiv).getCivilizationAdjective(0) \
-                                   + " " + CyTranslator().getText("TXT_KEY_CONGRESS_REQUEST3", ())), \
-                            (CyTranslator().getText("TXT_KEY_CONGRESS_ACCEPT_DECISION", ()), CyTranslator().getText("TXT_KEY_CONGRESS_REFUSE_DECISION", ()) ))
-
-        def eventApply7618(self, popupReturn):
-                if( popupReturn.getButtonClicked() == 0 ): # 1st button
-                        if (self.getInvitedNations(utils.getHumanID()) == True):
-                                self.acceptDecision(self.getTempActiveCiv(self.getLoopIndex() - 1), self.getTempReqCity(self.getLoopIndex() - 1), True) #, True)   #-1 because there's already +1 in eventApply7616
-                        else:
-                                self.acceptDecision(self.getTempActiveCivNI(), self.getTempReqCityNI(), True) #, False)                        
-                elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
-                        if (self.getInvitedNations(utils.getHumanID()) == True):
-                                self.refuseDecision(self.getTempActiveCiv(self.getLoopIndex() - 1), True)
-                        else:
-                                self.refuseDecision(self.getTempActiveCivNI(), False)
-
-        def invitationPopup(self):
-                self.showPopup(7619, \
-                             CyTranslator().getText("TXT_KEY_CONGRESS_NEW", ()), \
-                             CyTranslator().getText("TXT_KEY_CONGRESS_INVITATION", ()), \
-                            (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ()) ))
-
-        def eventApply7619(self, popupReturn):
-                if( popupReturn.getButtonClicked() == 0 ): # 1st button
-                        self.setInvitedNations(utils.getHumanID(), True)
-                elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
-                        self.setInvitedNations(utils.getHumanID(), False)
-
-        def bribePopup(self):
-                iHuman = utils.getHumanID()
-                civNamesList = []
-                civNamesList.append(CyTranslator().getText("TXT_KEY_POPUP_NO", ()))
-                iCounter = 0
-                for iCiv in range( iNumPlayers ):
-                        if ((self.getInvitedNations(iCiv) == True) and iCiv != iHuman):
-                                if (gc.getPlayer(iHuman).canContact(iCiv)):
-                                        civNamesList.append(gc.getPlayer(iCiv).getCivilizationShortDescription(0) + " (" + gc.getAttitudeInfo(gc.getPlayer(iCiv).AI_getAttitude(iHuman)).getDescription() + ")")
-                                        self.setCivsToBribe(iCounter, iCiv)
-                                        iCounter += 1                
-                #print civNamesList
-                self.showPopup(7620, CyTranslator().getText("TXT_KEY_CONGRESS_NEW", ()), CyTranslator().getText("TXT_KEY_CONGRESS_CORRUPTION_REQUEST", ()), civNamesList)
-                              
-
-        def eventApply7620(self, popupReturn):
-                iHuman = utils.getHumanID()                
-                pHuman = gc.getPlayer(iHuman)
-                
-                #debug
-##                for iCiv in range( iNumPlayers ):
-##                        pCiv = gc.getPlayer(iCiv)
-##                        print ("iCiv", iCiv)
-##                        if (iCiv != iHuman and pCiv.isAlive()):
-##                                iTempThreshold = 200
-##                                iGoldRequired = (2*pHuman.getGold() + 2*pCiv.getGold())/4 - 70
-##                                print ("iGoldRequired", iGoldRequired)
-##                                if (gc.getPlayer(iCiv).AI_isFinancialTrouble()):
-##                                        iGoldRequired *= 3
-##                                        iGoldRequired /= 5
-##                                if (iGoldRequired < 50):
-##                                        iGoldRequired = 50
-##                                print ("financial trouble", iGoldRequired)
-##                                iSoggezione = gc.getGame().getPlayerRank(iCiv) - gc.getGame().getPlayerRank(iHuman)
-##                                iSoggezioneModifier = min(100, abs(iSoggezione)*(100/((iNumPlayers/2)+5))) + 100
-##                                print ("iSoggezione", iSoggezione, "iSoggezioneModifier", iSoggezioneModifier)
-##                                if (iSoggezione > 0):
-##                                        iTempThreshold = iGoldRequired*100/iSoggezioneModifier
-##                                if (iSoggezione < 0):
-##                                        iTempThreshold = iGoldRequired*iSoggezioneModifier/100
-##                                print ("iTempThreshold_soggezione", iTempThreshold)
-##                                iAttitude = pCiv.AI_getAttitude(iHuman)-2
-##                                iAttitudeModifier = (100 - abs(iAttitude)*25)
-##                                if (iAttitude > 0):
-##                                        iTempThreshold = iTempThreshold*iAttitudeModifier/100
-##                                if (iAttitude < 0):
-##                                        iTempThreshold = iTempThreshold*(100+iAttitudeModifier)/100
-##                                print ("iAttitudeModifier", iAttitudeModifier, "iTempThreshold_attitude", iTempThreshold)
-##                                if (gc.getTeam(pCiv.getTeam()).isAtWar(iHuman)):
-##                                        iTempThreshold *=2
-##                                print ("iTempThreshold_war_final", iTempThreshold)
-##                for i in range( iNumPlayers ):
-##                        print self.getCivsToBribe(i)
-
-                if (popupReturn.getButtonClicked() > 0): #!= NO_REQUEST
-                        iCiv = self.getCivsToBribe(popupReturn.getButtonClicked() - 1)
-                        self.setBribe(0, utils.getHumanID()) #master
-                        self.setBribe(1, iCiv) #serf
-                        self.setBribe(2, iCiv) #enemy
-                        self.goldPopup()
-                                
-
-        def goldPopup(self):
-                self.showPopup(7621, CyTranslator().getText("TXT_KEY_CONGRESS_NEW", ()), CyTranslator().getText("TXT_KEY_CONGRESS_CORRUPTION_GOLD", ()), ("10%", "20%", "50%"))
-
-        def eventApply7621(self, popupReturn):
-                iHuman = utils.getHumanID()                
-
-                if (popupReturn.getButtonClicked() == 0):
-                        iGoldOffered = gc.getPlayer(iHuman).getGold()*10/100
-                elif (popupReturn.getButtonClicked() == 1):
-                        iGoldOffered = gc.getPlayer(iHuman).getGold()*20/100
-                elif (popupReturn.getButtonClicked() == 2):
-                        iGoldOffered = gc.getPlayer(iHuman).getGold()*50/100
-                       
-                iCiv = self.getBribe(1)
-                pCiv = gc.getPlayer(iCiv)
-                iHuman = utils.getHumanID()
-                pHuman = gc.getPlayer(iHuman)
-                
-                iTempThreshold = 200
-                #iGoldRequired = (2*pHuman.getGold() + 2*pCiv.getGold())/4 - 70
-		iGoldRequired = (pHuman.getGold() + 4*pCiv.getGold())/10 # iOnlySignIn / Leoreth
-                if (gc.getPlayer(iCiv).AI_isFinancialTrouble()):
-                        iGoldRequired *= 3
-                        iGoldRequired /= 5
-                if (iGoldRequired < 50):
-                        iGoldRequired = 50
-                iSoggezione = gc.getGame().getPlayerRank(iCiv) - gc.getGame().getPlayerRank(iHuman)
-                #iSoggezioneModifier = min(100, abs(iSoggezione)*(100/((iNumPlayers/2)+5))) + 100
-		iSoggezioneModifier = min(80, abs(iSoggezione)*(80/8)) + 100 # iOnlySignIn / Leoreth
-                if (iSoggezione > 0):
-                        iTempThreshold = iGoldRequired*100/iSoggezioneModifier
-                if (iSoggezione < 0):
-                        iTempThreshold = iGoldRequired*iSoggezioneModifier/100
-                iAttitude = pCiv.AI_getAttitude(iHuman)-2
-                iAttitudeModifier = (100 - abs(iAttitude)*25)
-                if (iAttitude > 0):
-                        iTempThreshold = iTempThreshold*iAttitudeModifier/100
-                if (iAttitude < 0):
-                        iTempThreshold = iTempThreshold*(100+iAttitudeModifier)/100
-                if (gc.getTeam(pCiv.getTeam()).isAtWar(iHuman)):
-                        iTempThreshold *=2
-
-                if (iTempThreshold <= iGoldOffered):
-                        popup = Popup.PyPopup()       
-                        popup.setBodyString( CyTranslator().getText("TXT_KEY_CONGRESS_CORRUPTION_YES", ()))
-                        popup.launch()
-                        self.setBribe(1, iCiv) #serf
-                        self.setBribe(2, -1) #enemy
-                        pHuman.changeGold(-iGoldOffered)
-                        pCiv.changeGold(iGoldOffered)
-                elif (iAttitudeModifier <= 1 or gc.getTeam(pCiv.getTeam()).isAtWar(iHuman) or iGoldOffered < 60):
-                        popup = Popup.PyPopup()       
-                        popup.setBodyString( CyTranslator().getText("TXT_KEY_CONGRESS_CORRUPTION_ENEMY", ()))
-                        popup.launch()  
-                        self.setBribe(1, -1) #serf
-                        self.setBribe(2, iCiv) #enemy
-                else:
-                        popup = Popup.PyPopup()       
-                        popup.setBodyString( CyTranslator().getText("TXT_KEY_CONGRESS_CORRUPTION_NO", ()))
-                        popup.launch()
-
-
-
-
-#######################################
-### Main methods (Event-Triggered) ###
-#####################################  
-
-                
-        def checkTurn(self, iGameTurn):
-
-                if (self.getCongressEnabled() == True):
-                        if (iGameTurn % utils.getTurns(25) == 2): # edead: RFCM
-                                iNumNationsTemp = self.preInvitations()
-                                self.setNumNationsTemp(iNumNationsTemp)
-                        if (iGameTurn % utils.getTurns(25) == 3): # edead: RFCM
-                                self.bribingTurn(self.getNumNationsTemp())                    
-                        if (iGameTurn % utils.getTurns(25) == 4): # edead: RFCM
-                                self.startCongress(self.getNumNationsTemp())
-##                        pass
-
-##                #debug
-##                self.setCongressEnabled(True)
-##                if (iGameTurn % 3 == 0): 
-##                        iNumNationsTemp = self.preInvitations()
-##                        self.setNumNationsTemp(iNumNationsTemp)
-##                if (iGameTurn % 3 == 1):                                
-##                        self.bribingTurn(self.getNumNationsTemp())
-##                if (iGameTurn % 3 == 2):
-##                        self.startCongress(self.getNumNationsTemp())
-
-        def onTechAcquired(self, iTech, iPlayer):
-                if (self.getCongressEnabled() == True or self.getUNbuilt() == True):
-                        return
-                if (self.getCivsWithNationalism() >= 1 and gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[utils.getHumanID()])): # edead: RFCM
-                        print ("Congress enabled")
-                        self.setCongressEnabled(True)
-                        return
-                if (iTech == con.iNationalism):
-                        self.setCivsWithNationalism(self.getCivsWithNationalism() + 1)
-
-        def onBuildingBuilt(self, iPlayer, iBuilding, city):
-                if (self.getCongressEnabled() == True):
-                        if (iBuilding == con.iUnitedNations):
-                                print ("Congress disabled")
-                                self.setCongressEnabled(False)
-                                self.setUNbuilt(True)
-
-
-        def preInvitations(self):
-                self.resetData()
-                iNumNationsTemp = self.inviteGuests()
-                if (self.getInvitedNations(utils.getHumanID()) == True):
-                        self.invitationPopup()
-                return iNumNationsTemp
-
-
-        def bribingTurn(self, iNumNationsTemp):
-                iHuman = utils.getHumanID()
-                if (iNumNationsTemp > 3):
-                        if (self.getInvitedNations(iHuman) == True):
-                                self.bribePopup()
-
-            
-        def startCongress(self, iNumNationsTemp):
-                if (iNumNationsTemp > 3):
-                        iNumNations = self.checkInvitations()
-                        self.tradeCities(iNumNations)
-                      
-
-        def resetData(self):
-                #invitations
-                for iCiv in range( iNumPlayers ):
-                        self.setInvitedNations(iCiv, False)
-                #bribe settings
-                self.setBribe(0, -1) #master
-                self.setBribe(1, -1) #serf
-                self.setBribe(2, -1) #enemy
-                ##list of civs to bribe
-                for iCiv in range( iNumPlayers ):
-                        self.setCivsToBribe(iCiv, -1)
-
-
-        def selectRandomCityCiv(self, iCiv):
-                cityList = []
-                for pyCity in PyPlayer(iCiv).getCityList():
-                        cityList.append(pyCity.GetCy())
-                iCity = gc.getGame().getSorenRandNum(len(cityList), 'random city')
-                return cityList[iCity]
-            
-
-
-        def inviteGuests(self):
-                iCount = 0
-                iCountNotInvited = 0
-                for iCiv in range( iNumPlayers ):
-                        if (gc.getPlayer(iCiv).isAlive()):
-                                if (gc.getGame().getPlayerRank(iCiv) == 0):
-                                        iLeader = iCiv
-                                        self.setInvitedNations(iLeader, True)
-                                        iCount += 1
-                                        break
-                print ("iLeader", iLeader)
-                
-                for iRank in range( 1, iNumPlayers ):
-                        for iCiv in range( iNumPlayers ):
-                                if (gc.getGame().getPlayerRank(iCiv) == iRank):
-                                        if (gc.getPlayer(iCiv).isAlive()):
-                                                if (gc.getPlayer(iCiv).canContact(iLeader)):
-                                                        if (iCount < 9):
-                                                                self.setInvitedNations(iCiv, True)
-                                                                print ("inviting", iCiv)
-                                                                iCount += 1
-                                                        else:
-                                                                iCountNotInvited += 1
-                                        
-                #invite someone different X2
-                for k in range (2):
-                        if (iCountNotInvited > 1):
-                                iRndnum = gc.getGame().getSorenRandNum(iNumPlayers, 'civ in')
-                                print ("scan order", iRndnum)
-                                for i in range( iRndnum, iNumPlayers + iRndnum ):
-                                        if (iRndnum % 2 == 0): #randomize scan order
-                                                j = i
-                                        else:
-                                                j = iNumPlayers + 2*iRndnum - i
-                                        iCiv = j % iNumPlayers
-                                        if (gc.getPlayer(iCiv).isAlive()):
-                                                if (gc.getPlayer(iCiv).canContact(iLeader)):
-                                                        if (self.getInvitedNations(iCiv) == False):
-                                                                self.setInvitedNations(iCiv, True)
-                                                                print ("Adding ", iCiv)
-                                                                break
-                                iRndnum = gc.getGame().getSorenRandNum(iNumPlayers, 'civ out')
-                                print ("scan order", iRndnum)
-                                for i in range( iRndnum, iNumPlayers + iRndnum ):
-                                        if (iRndnum % 2 == 0): #randomize scan order
-                                                j = i
-                                        else:
-                                                j = iNumPlayers + 2*iRndnum - i
-                                        iCiv = j % iNumPlayers
-                                        if (self.getInvitedNations(iCiv) == True):
-                                                if (gc.getGame().getPlayerRank(iCiv) > 3):
-                                                        self.setInvitedNations(iCiv, False)
-                                                        print ("Removing ", iCiv)
-                                                        break
-
-                #debug - always invited
-##                iHuman = utils.getHumanID()
-##                if (self.getInvitedNations(iHuman) == False and gc.getPlayer(iHuman).isAlive()):                                                        
-##                        self.setInvitedNations(utils.getHumanID(), True)
-##                        iCount += 1
-                #debug - never invited                  
-##                iHuman = utils.getHumanID()
-##                if (self.getInvitedNations(iHuman) == True and gc.getPlayer(iHuman).isAlive()):                                                        
-##                        self.setInvitedNations(utils.getHumanID(), False)
-##                        iCount -= 1
-
-
-                return iCount
-
-
-        def checkInvitations(self):
-                #check dead civs
-                for iCiv in range( iNumPlayers ):
-                        if (not gc.getPlayer(iCiv).isAlive()):
-                                self.setInvitedNations(iCiv, False)
-
-                #recount
-                iCount = 0
-                for iCiv in range( iNumPlayers ):
-                        if (self.getInvitedNations(iCiv) == True):
-                                iCount += 1
-                                
-                #host nation
-                iRndnum = gc.getGame().getSorenRandNum(iNumPlayers, 'host civ')
-                for i in range( iRndnum, iNumPlayers + iRndnum ):
-                        iCiv = i % iNumPlayers
-                        if (self.getInvitedNations(iCiv) == True):
-                                iHost = iCiv
-                                break     
-                #host city
-                hostCity = self.selectRandomCityCiv(iHost)
-                self.sHostCity = hostCity.getName()
-
-                #debug
-                print ("invited 2: ")
-                for iCiv in range( iNumPlayers ):
-                        if (self.getInvitedNations(iCiv)):                                
-                                print (gc.getPlayer(iCiv).getCivilizationShortDescription(0), gc.getGame().getPlayerRank(iCiv) )
-
-                return iCount
-                                
-
-
-
-        def tradeCities(self, iNumNations):
-                self.setLoopIndex(0)
-                self.setTempReqCityNI(-1)
-                self.setTempActiveCivNI(-1)
-                for i in range( iNumPlayers ):              
-                        self.setTempAttackingCivsNI(i, False)
-                
-                iRndnum = gc.getGame().getSorenRandNum(iNumPlayers, 'a random civ starts')
-                #iActiveCivLoopIndex = iNumNations-1 ##reversed because popups overlap; -=1 is right down here
-                iActiveCivLoopIndex = iNumNations ##reversed because popups overlap; -=1 is right down here
-
-                for i in range( iRndnum, iNumPlayers + iRndnum ):
-                        iActiveCiv = i % iNumPlayers
-                        if (self.getInvitedNations(iActiveCiv)):
-                                print ("iActiveCivLoopIndexNotYetUpdated", iActiveCivLoopIndex, "iActiveCiv", iActiveCiv)
-                                for iLoopCiv in range( iNumPlayers ):
-                                        self.setVotes(iLoopCiv, 0)  #reset votes array
-                                if (iActiveCiv != utils.getHumanID()):
-                                        iActiveCivLoopIndex -= 1
-                                        self.tradeCitiesAI(iActiveCiv, iActiveCivLoopIndex)
-                                else:
-                                        iActiveCivLoopIndex -= 1
-                                        self.tradeCitiesHuman(iActiveCiv, iActiveCivLoopIndex)
-                #for j in range( iNumNations ):
-                #        print ("self.getTempReqCity(iNumNations) dopo", j, self.getTempReqCity(j))
-                                
-                print ("sHostCity", self.sHostCity)
-                if (self.getInvitedNations(utils.getHumanID()) == True):
-                        popup = Popup.PyPopup()
-                        popup.setHeaderString(CyTranslator().getText("TXT_KEY_CONGRESS_OF", ()) + " " + self.sHostCity)          
-                        popup.setBodyString( CyTranslator().getText("TXT_KEY_CONGRESS_INTRO", ()))
-                        popup.launch()
-
-                print ("self.getTempReqCityNI()", self.getTempReqCityNI())
-                if (self.getTempReqCityNI() != -1):
-                        self.decisionPopup(False)
-                        
-                if (self.getInvitedNations(utils.getHumanID()) == False):
-                        popup = Popup.PyPopup()
-                        popup.setHeaderString(CyTranslator().getText("TXT_KEY_CONGRESS_OF", ()) + " " + self.sHostCity)          
-                        popup.setBodyString( CyTranslator().getText("TXT_KEY_CONGRESS_INTRO_NOT_INVITED", ()))
-                        popup.launch()
-
-
-        def tradeCitiesAI(self, iActiveCiv, iActiveCivLoopIndex):
-                cityList = self.selectCities(iActiveCiv)
-                print ("iActiveCiv", iActiveCiv, "len(cityList)", len(cityList))
-                if (len(cityList)):
-                        reqCity = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random choice')]
-                        
-                        #if (reqCity.isCapital()):
-                        #        reqCity = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random choice')] #retry once (less likely to happen)
-                        #if (reqCity.isCapital()):
-                        #        reqCity = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random choice')] #retry twice (less likely to happen)
-                        if (gc.getPlayer(reqCity.getOwner()).getSettlersMaps( 67-reqCity.getY(), reqCity.getX() ) >= 500 and reqCity.getCulture(reqCity.getOwner()) >= 2000):
-                                reqCity = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random choice')] #retry once (less likely to happen)
-
-
-                        if (reqCity):
-                                if (self.getInvitedNations(utils.getHumanID()) == True):
-                                        self.votePopup(iActiveCiv, reqCity, iActiveCivLoopIndex) 
-                                else:
-                                        self.congressAIOnly(iActiveCiv, reqCity, iActiveCivLoopIndex)
-                else:
-                        if (self.getInvitedNations(utils.getHumanID()) == True):
-                                self.askNothingPopup(iActiveCiv, iActiveCivLoopIndex) 
-
-
-
-        def congressAIOnly(self, iActiveCiv, reqCity, iActiveCivLoopIndex):
-                #if (reqCity.getOwner() == utils.getHumanID()):
-                self.voteAI(iActiveCiv, reqCity)
-                self.finalCount(iActiveCiv, reqCity, False)
-
-
-
-
-        def tradeCitiesHuman(self, iActiveCiv, iActiveCivLoopIndex):
-                cityList = self.selectCities(iActiveCiv)
-                print ("iActiveCiv", iActiveCiv, "len(cityList)", len(cityList))
-                if (not len(cityList)):
-                        self.askNothingPopup(iActiveCiv, iActiveCivLoopIndex) 
-                        #popup = Popup.PyPopup() 
-                        #popup.setBodyString( CyTranslator().getText("TXT_KEY_CONGRESS_NO_CITY", ()))
-                        #popup.launch()
-                        
-                        #self.setLoopIndex( self.getLoopIndex() + 1 ) #0 because setTempCity is skipped
-                elif (len(cityList)):
-                        #erase duplicates
-                        for i in range(len(cityList)):
-                                for j in range(len(cityList)):
-                                        if (i != j and cityList[i] == cityList[j]):
-                                                cityList[j] = -1
-                        iLength = len(cityList) #static length, not affected by pop()
-                        for i in range(iLength):
-                                j = iLength -1 -i
-                                print ("j,", j, "cityList[j]", cityList[j])
-                                if (cityList[j] == -1):
-                                        cityList.pop(j)
-                        
-                        ##reduce to 5
-                        while (len(cityList) > 5):
-                                iPop = gc.getGame().getSorenRandNum(len(cityList), 'random city')
-                                cityList.pop(iPop)
-                        print ("pop done", len(cityList))
-                        self.askCityPopup(iActiveCiv, cityList) #, iActiveCivLoopIndex)
-
-
-        def selectCities(self, iActiveCiv):
-                cityList = []
-                for iLoopCiv in range( iNumTotalPlayers+1 ):
-                        if (gc.getPlayer(iLoopCiv).isAlive() and iLoopCiv != iActiveCiv):
-                                for pyCity in PyPlayer(iLoopCiv).getCityList():
-                                        if (pyCity.GetCy()):
-                                                city = pyCity.GetCy()
-                                                cityPlot = gc.getMap().plot(city.getX(), city.getY())
-                                                if (cityPlot.isCity()): #sometimes cities have been razed
-                                                        #condition 1
-                                                        if (cityPlot.isRevealed(iActiveCiv, False) and not city.isCapital()):
-                                                                #condition 2: don't ask human player cities if it's weak                                  
-                                                                if (not (city.getOwner() == utils.getHumanID() and gc.getActivePlayer().getNumCities() <=3)):
-                                                                        #condition 3: don't ask cities to close friends (or isHuman, since we can't know human attitude)   
-                                                                        if ((not (gc.getPlayer(iActiveCiv).AI_getAttitude(city.getOwner()) >= 3)) or gc.getPlayer(iActiveCiv).isHuman()):
-                                                                                #condition 4: don't ask cities to civs just born   
-                                                                                if (not (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[city.getOwner()]) + utils.getTurns(20))): # edead: RFCM
-                                                                                        #condition 5: don't ask to the civ that has bribed you
-                                                                                        if (not (self.getBribe(0) == city.getOwner() and iActiveCiv == self.getBribe(1))):
-
-                                                                                                #condition: don't ask cities to master or vassal
-                                                                                                if (not (gc.getTeam(gc.getPlayer(city.getOwner()).getTeam()).isVassal(iActiveCiv)) and not (gc.getTeam(gc.getPlayer(iActiveCiv).getTeam()).isVassal(city.getOwner()))):
-
-                                                                                                        #condition: Ethiopian UP
-                                                                                                        if (iLoopCiv != con.iEthiopia):
-
-                                                                                                                #condition 6a: city culture
-                                                                                                                if (city.getCulture(iActiveCiv) > 0):
-                                                                                                                        if (city.getOwner() != iAmerica):
-                                                                                                                                if (city not in cityList):
-                                                                                                                                        cityList.append(city)
-                                                                                                                                        continue
-                                                                                                                #condition 6b: plot culture
-                                                                                                                if (cityPlot.getCulture(iActiveCiv) > 0):
-                                                                                                                        if (city.getOwner() != iAmerica):
-                                                                                                                                if (city not in cityList):
-                                                                                                                                        cityList.append(city)
-                                                                                                                                        continue
-                                                                                                                #condition 7: ever owned
-                                                                                                                if city.isEverOwned(iActiveCiv):
-                                                                                                                        if (city not in cityList):
-                                                                                                                                cityList.append(city)
-                                                                                                                                continue
-                                                                                                                #condition 8: core land
-                                                                                                                if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-city.getY(), city.getX() ) >= 500):
-                                                                                                                        if (city not in cityList):
-                                                                                                                                cityList.append(city)
-                                                                                                                                continue
-                                                                                                                #condition 9: colonies
-                                                                                                                if (iActiveCiv in lCivGroups[0]):
-                                                                                                                        if (city.getOwner() >= iNumPlayers or (city.getOwner() < iNumPlayers and not gc.getPlayer(city.getOwner()).isHuman() and utils.getStabilityLevel(city.getOwner()) < con.iStabilityShaky)):
-                                                                                                                                if (city.getX()<=42 or (city.getX()>=86 and city.getY()<=52) or city.getY()<=39): #America, Asia, Africa
-                                                                                                                                        if (len(cityList) <= 7):
-                                                                                                                                                if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-city.getY(), city.getX() ) >= 60):                                                                                                        
-                                                                                                                                                        if (city not in cityList):
-                                                                                                                                                                cityList.append(city)
-                                                                                                                                                                continue
-                                                                                                                                        elif (len(cityList) <= 14):
-                                                                                                                                                if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-city.getY(), city.getX() ) >= 150):                                                                                                 
-                                                                                                                                                        if (city not in cityList):
-                                                                                                                                                                cityList.append(city)
-                                                                                                                                                                continue
-                                                                                                                                        else:
-                                                                                                                                                if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-city.getY(), city.getX() ) == 400):
-                                                                                                                                                        if (city not in cityList):
-                                                                                                                                                                cityList.append(city)
-                                                                                                                                                                continue
-                                                                                                                #condition 10: unstable empires near
-                                                                                                                if (city.getOwner() < iNumMajorPlayers):
-                                                                                                                        if (gc.getGame().getPlayerRank(city.getOwner()) > gc.getGame().countCivPlayersAlive()/2 and gc.getGame().getPlayerRank(iActiveCiv) < gc.getGame().countCivPlayersAlive()/2):
-                                                                                                                                if sd.getStabilityLevel(city.getOwner()) == con.iStabilityCollapsing:
-                                                                                                                                        if (gc.getPlayer(iActiveCiv).getNumCities() > 0): #this check is needed, otherwise game crashes
-                                                                                                                                                if (utils.calculateDistance(cityPlot.getX(), cityPlot.getY(), gc.getPlayer(iActiveCiv).getCapitalCity().getX(), gc.getPlayer(iActiveCiv).getCapitalCity().getY()) <= 15 or (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-city.getY(), city.getX() ) >= 40)):
-                                                                                                                                                        if (city not in cityList):
-                                                                                                                                                                cityList.append(city)
-                                                                                                                                                                continue
-                                                                                                                #condition 11: borders
-                                                                                                                for x in range(city.getX()-3, city.getX()+4):
-                                                                                                                        for y in range(city.getY()-3, city.getY()+4):
-                                                                                                                                pCurrent = gc.getMap().plot( x, y )
-                                                                                                                                if ( pCurrent.getOwner() == iActiveCiv ):
-                                                                                                                                        if (city not in cityList):
-                                                                                                                                                cityList.append(city)
-                                                                                                                                                break
-                                                                                                                                                break
-                #debug
-                #print ("cityList", iActiveCiv)
-                #for iC in cityList:
-                #    print iC.getName()
-                return cityList
-                                                                
-
-        def voteAI(self, iActiveCiv, reqCity):
-                print ("iActiveCiv", iActiveCiv)
-                for iCiv in range( iNumPlayers ):
-                        if (self.getInvitedNations(iCiv) == True) and (iCiv != utils.getHumanID()):
-                                iResult = 0
-                                iOwner = reqCity.getOwner()                                
-                                #factor 1a - score
-                                if (iOwner != iBarbarian and iOwner != iIndependent and iOwner != iIndependent2):
-                                        iResult += (gc.getGame().getPlayerRank(iActiveCiv) - gc.getGame().getPlayerRank(iOwner))
-                                if (iOwner == iBarbarian or iOwner == iIndependent or iOwner == iIndependent2):
-                                        iResult += (gc.getGame().getPlayerRank(iActiveCiv) - iNumPlayers/2)
-                                #factor 1b - leader
-                                if (gc.getGame().getPlayerRank(iActiveCiv) == 0 and gc.getGame().getPlayerRank(iCiv) <= 4):
-                                        iResult -= 4
-                                if (gc.getGame().getPlayerRank(iOwner) == 0 and gc.getGame().getPlayerRank(iCiv) <= 4):
-                                        iResult += 3
-                                #factor 1c - num cities
-                                if (iOwner != iBarbarian and iOwner != iIndependent and iOwner != iIndependent2):
-                                        iResult += 2*(gc.getPlayer(iOwner).getNumCities() - gc.getPlayer(iActiveCiv).getNumCities())
-                                if (iOwner == iBarbarian or iOwner == iIndependent or iOwner == iIndependent2):
-                                        iResult += 2*(gc.getGame().countCivTeamsAlive()/2 - gc.getPlayer(iActiveCiv).getNumCities())
-                                #factor 2a - friendship
-                                pCiv = gc.getPlayer(iCiv)
-                                tCiv = gc.getTeam(pCiv.getTeam())
-                                attitude1 = pCiv.AI_getAttitude(iActiveCiv) - 2
-                                attitude2 = 0
-                                if (iOwner != iBarbarian):
-                                        attitude2 = pCiv.AI_getAttitude(iOwner) - 2
-                                #if (not gc.getPlayer(iCiv).canContact(iActiveCiv)):
-                                #        print ("No contact active civ", pCiv.AI_getAttitude(iActiveCiv))
-                                #if (not gc.getPlayer(iCiv).canContact(iOwner)):
-                                #        print ("No contact owner civ", pCiv.AI_getAttitude(iOwner))
-                                iResult += 8*(attitude1-attitude2)
-                                if tCiv.isDefensivePact(iActiveCiv):
-                                        iResult += 2
-                                if tCiv.isDefensivePact(iOwner):
-                                        iResult -= 2
-                                #factor 2b - at war                                
-                                if (tCiv.isAtWar(iActiveCiv)):
-                                        iResult -= 7
-                                if (iOwner != iBarbarian):
-                                        if (tCiv.isAtWar(iOwner)):
-                                                iResult += 7
-                                #factor 3a - ever owned
-                                if (reqCity.isEverOwned(iActiveCiv)):
-                                        iResult += 9
-                                #factor 3b - culture
-                                if (reqCity.getCulture(iActiveCiv) > 0):
-                                        iResult += 8
-                                if (reqCity.getCulture(iActiveCiv) <= 0):
-                                        iResult -= 5
-                                #factor 4a - city radius owner
-                                iCountPlots = 0
-                                for x in range(reqCity.getX()-2, reqCity.getX()+3):
-                                        for y in range(reqCity.getY()-2, reqCity.getY()+3):
-                                                pCurrent = gc.getMap().plot( x, y )
-                                                if ( pCurrent.getOwner() == iActiveCiv ):
-                                                        iCountPlots += 1
-                                iResult += iCountPlots
-                                #factor 4b - city radius culture
-                                iCountCulture = 0
-                                for x in range(reqCity.getX()-2, reqCity.getX()+3):
-                                        for y in range(reqCity.getY()-2, reqCity.getY()+3):
-                                                pCurrent = gc.getMap().plot( x, y )
-                                                if ( pCurrent.getCulture(iActiveCiv) > 0 ):
-                                                        iCountCulture += 1
-                                if (iCountCulture == 0):
-                                        iResult -= 5
-                                #factor 5 - capital
-                                if (reqCity.isCapital()):
-                                        iResult -= 25
-                                        #if (gc.getPlayer(iOwner).getNumCities() <= 2):
-                                        #        iResult += 3    #a good chance to kill a civ
-                                        #else:
-                                        #        iResult -= 25    #but usually a capital shouldn't flip
-                                #factor 6 - neighbour
-                                if (iActiveCiv in lNeighbours[iCiv]):
-                                        iResult -= 5
-                                if (iOwner in lNeighbours[iCiv]):
-                                        iResult += 5
-                                #factor 7a - euro civs leave colonization go on if not interested in the area
-                                if (iCiv in lCivGroups[0]):
-                                        if (iActiveCiv in lCivGroups[0] and iOwner not in lCivGroups[0]):
-                                                if (gc.getPlayer(iCiv).getSettlersMaps( 67-reqCity.getY(), reqCity.getX() ) < 60):
-                                                        iResult += 8
-                                #factor 7b - help forming settlers maps
-                                if (iActiveCiv in lCivGroups[0] and iOwner not in lCivGroups[0]):
-                                        if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-reqCity.getY(), reqCity.getX() ) >= 200):
-                                                iResult += 6
-                                if (iActiveCiv not in lCivGroups[0] and iOwner in lCivGroups[0]):
-                                        if (gc.getPlayer(iOwner).getSettlersMaps( 67-reqCity.getY(), reqCity.getX() ) >= 200):
-                                                iResult -= 4 
-                                #factor 8 - distant lands
-                                for i in range(6):
-                                        if ((iActiveCiv in lCivGroups[i]) and (iOwner in lCivGroups[i]) and (iCiv not in lCivGroups[i])):
-                                                if (iActiveCiv not in lCivGroups[0]): #Euros
-                                                        iResult /= 2
-                                                else:
-                                                        iResult *= 2
-                                                        iResult /= 3                                                    
-                                #factor 9 - core land
-                                if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-reqCity.getY(), reqCity.getX() ) >= 500):
-                                        iResult += 9
-                                if (gc.getPlayer(iOwner).getSettlersMaps( 67-reqCity.getY(), reqCity.getX() ) >= 500):
-                                        iResult -= 13
-                                #factor 10 - human player
-                                if (iActiveCiv == utils.getHumanID()):
-                                        iResult += 2
-                                if (iOwner == utils.getHumanID()):
-                                        iResult -= 3
-                                #factor 11 - memory
-                                iMemoryModifier = self.getMemory(iCiv)/15
-                                if (self.getMemory(iCiv) > 225):
-                                        iMemoryModifier = 15
-                                if (self.getMemory(iCiv) < -225):
-                                        iMemoryModifier = -15  
-                                    
-                                if (iActiveCiv == utils.getHumanID()):
-                                        iResult += iMemoryModifier
-                                if (iOwner == utils.getHumanID()):
-                                        iResult -= iMemoryModifier
-                                #factor 12 - wonders
-                                if (reqCity.getNumWorldWonders() > 0):
-                                        iResult -= 2*reqCity.getNumWorldWonders()                                
-                                #factor 13 - French UP
-                                #if (iCiv in lCivGroups[0]):
-                                #        if (iActiveCiv == iFrance):
-                                #                iResult += 6
-                                #        if (iOwner == iFrance):
-                                #                iResult -= 9
-
-                                #factor - master and vassal                                                
-                                if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iActiveCiv):
-                                        iResult += 25
-                                if gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iOwner):
-                                        iResult -= 25
-                                if gc.getTeam(gc.getPlayer(iActiveCiv).getTeam()).isVassal(iCiv):
-                                        iResult += 10
-                                if gc.getTeam(gc.getPlayer(iOwner).getTeam()).isVassal(iCiv):
-                                        iResult -= 10                                                
-                                #factor 14 - generic modifier
-                                        iResult += 3 
+iCongressInterval = 25
+
+### Event Handlers ###
+
+def setup():
+	sd.setCongressTurns(utils.getTurns(iCongressInterval))
+
+def checkTurn(iGameTurn):
+	if isCongressEnabled():
+		if not isGlobalWar():
+			sd.changeCongressTurns(-1)
+			
+		if sd.getCongressTurns() == 0:
+			sd.setCongressTurns(utils.getTurns(iCongressInterval))
+			currentCongress = Congress()
+			currentCongress.startCongress()
+
+def onChangeWar(argsList):
+	bWar, iPlayer, iOtherPlayer, bGlobalWar = argsList
+	
+	if isCongressEnabled():
+		if bWar and bGlobalWar and not isGlobalWar():
+			sd.setGlobalWarAttacker(iPlayer)
+			sd.setGlobalWarDefender(iOtherPlayer)
+		
+		if not bWar and sd.getGlobalWarAttacker() in [iPlayer, iOtherPlayer] and sd.getGlobalWarDefender() in [iPlayer, iOtherPlayer]:
+			endGlobalWar(iPlayer, iOtherPlayer)
+			
+### Global Methods ###
+
+def isCongressEnabled():
+	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iUnitedNations).getBuildingClassType()) > 0:
+		return False
+		
+	#if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
+	#	return False
+		
+	return (gc.getGame().countKnownTechNumTeams(iNationalism) > 0)
+
+def isGlobalWar():
+	return (sd.getGlobalWarAttacker() != -1 and sd.getGlobalWarDefender() != -1)
+	
+def endGlobalWar(iAttacker, iDefender):
+	sd.setGlobalWarAttacker(-1)
+	sd.setGlobalWarDefender(-1)
+	
+	lAttackers = [iAttacker]
+	lDefenders = [iDefender]
+	
+	# force peace for all allies of the belligerents
+	for iLoopPlayer in range(iNumPlayers):
+		if utils.isAVassal(iLoopPlayer): continue
+		if gc.getTeam(iLoopPlayer).isDefensivePact(iAttacker) and gc.getTeam(iLoopPlayer).isAtWar(iDefender):
+			lAttackers.append(iLoopPlayer)
+			gc.getTeam(iLoopPlayer).makePeace(iDefender)
+		if gc.getTeam(iLoopPlayer).isDefensivePact(iDefender) and gc.getTeam(iLoopPlayer).isAtWar(iAttacker):
+			lDefenders.append(iLoopPlayer)
+			gc.getTeam(iLoopPlayer).makePeace(iAttacker)
+			
+	if gc.getTeam(iAttacker).AI_getWarSuccess(iDefender) > gc.getTeam(iDefender).AI_getWarSuccess(iAttacker):
+		lWinners = lAttackers
+		lLosers = lDefenders
+	else:
+		lWinners = lDefenders
+		lLosers = lAttackers
+	
+	currentCongress = Congress(lWinners, lLosers)
+	currentCongress.start()
+	
+def getNumInvitations():
+	return min(10, gc.getGame().countCivPlayersAlive())
+	
+def start():
+	currentCongress = Congress()
+	currentCongress.startCongress()
+			
+class Congress:
+	
+	### Constructor ###
+	
+	def __init__(self, lWinners = [], lLosers = []):
+		self.sHostCityName = ""
+		self.lInvites = []
+		self.lWinners = lWinners
+		self.lLosers = lLosers
+		self.bPostWar = False
+		self.dPossibleClaims = {}
+		self.dCityClaims = {}
+		self.dVotes = {}
+		self.lHumanVotes = []
+		self.iNumHumanVotes = 0
+		self.dVotingMemory = {}
+		self.dVotedFor = {}
+
+	### Popups ###
+	
+	def startIntroductionEvent(self, bHumanInvited):
+		popup = CyPopupInfo()
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyIntroductionEvent")
+		
+		sInviteString = ""
+		for iPlayer in self.lInvites:
+			if utils.getHumanID() != iPlayer:
+				sInviteString += localText.getText("TXT_KEY_CONGRESS_INVITE", (gc.getPlayer(iPlayer).getCivilizationDescription(0),))
+		
+		if bHumanInvited:
+			sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION", (self.sHostCityName, sInviteString))
+		else:
+			sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_AI", (self.sHostCityName, sInviteString))
+			
+		popup.setText(sText)
+			
+		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_OK", ()), '')
+		popup.addPopup(utils.getHumanID())
+		
+	def applyIntroductionEvent(self):
+		if utils.getHumanID() in self.lInvites:
+			# human still has to make a claim
+			self.makeClaimHuman()
+		else:
+			# human cannot make claims, so let the AI vote
+			self.voteOnClaims()
+
+	def startClaimCityEvent(self):
+		popup = CyPopupInfo()
+		popup.setText(localText.getText("TXT_KEY_CONGRESS_CLAIM_CITY", (self.sHostCityName,)))
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyClaimCityEvent")
+		
+		for tCity in self.dPossibleClaims[utils.getHumanID()]:
+			x, y, iValue = tCity
+			plot = gc.getMap().plot(x, y)
+			if plot.isCity():
+				popup.addPythonButton(plot.getPlotCity().getName() + ' (' + str(iValue) + ')', gc.getCivilizationInfo(gc.getPlayer(plot.getPlotCity().getOwner()).getCivilizationType()).getButton())
+			else:
+				popup.addPythonButton(cnm.getFoundName(utils.getHumanID(), (x, y)) + ' (' + str(iValue) + ')', 'Art/Interface/Buttons/Actions/FoundCity.dds')
+			
+		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_NO_REQUEST", ()), 'Art/Interface/Buttons/Actions/Cancel.dds')
+		popup.addPopup(utils.getHumanID())
+
+	def applyClaimCityEvent(self, iChoice):
+		if iChoice < len(self.dPossibleClaims[utils.getHumanID()]):
+			x, y, iValue = self.dPossibleClaims[utils.getHumanID()][iChoice]
+			self.dCityClaims[utils.getHumanID()] = (x, y, iValue)
+
+		self.voteOnClaims()	
+		
+	def startVoteCityEvent(self, iClaimant, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		if plot.isRevealed(utils.getHumanID(), False):
+			plot.cameraLookAt()
+		
+		popup = CyPopupInfo()
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyVoteCityEvent")
+		popup.setData1(iClaimant)
+		popup.setData2(plot.getOwner())
+		
+		sClaimant = gc.getPlayer(iClaimant).getCivilizationShortDescription(0)
+		
+		if plot.isCity():
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_CITY", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), plot.getPlotCity().getName())))
+		elif plot.isOwned():
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE_OWNED", (sClaimant, gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), cnm.getFoundName(iClaimant, tPlot))))
+		else:
+			popup.setText(localText.getText("TXT_KEY_CONGRESS_REQUEST_SETTLE", (sClaimant, cnm.getFoundName(iClaimant, tPlot))))
+			
+		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_VOTE_YES", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_ABSTAIN", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+		popup.addPythonButton(localText.getText("TXT_KEY_POPUP_VOTE_NO", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+		
+		popup.addPopup(utils.getHumanID())
+		
+	def applyVoteCityEvent(self, iClaimant, iOwner, iVote):
+		self.vote(utils.getHumanID(), iClaimant, 1 - iVote) # yes=0, abstain=1, no=2
+		
+		if iClaimant in self.dVotingMemory: self.dVotingMemory[iClaimant] += (1 - iVote)
+		if iOwner >= 0 and iOwner in self.dVotingMemory: self.dVotingMemory[iOwner] += (iVote - 1)
+		self.iNumHumanVotes += 1
+		
+		# still votes to cast: start a new popup, otherwise let the AI vote
+		if self.iNumHumanVotes < len(self.lHumanVotes):
+			iNextClaimant, x, y = self.lHumanVotes[self.iNumHumanVotes]
+			self.startVoteCityEvent(iNextClaimant, (x, y))
+		else:
+			self.voteOnClaimsAI()
+			
+	def startResultsEvent(self, lAssignments, lColonies):
+		sText = localText.getText("TXT_KEY_CONGRESS_RESULTS", (self.sHostCityName,))
+		
+		for tAssignment in lAssignments:
+			sName, iOldOwner, iNewOwner = tAssignment
+			sText += localText.getText("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", (sName, gc.getPlayer(iOldOwner).getCivilizationAdjective(0), gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
+			
+		for tColony in lColonies:
+			sName, iOldOwner, iNewOwner = tColony
+			if iOldOwner >= 0:
+				sText += localText.getText("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", (sName, gc.getPlayer(iOldOwner).getCivilizationAdjective(0), gc.getPlayer(iNewOwner).getCivilizationShortDescription(0)))
+			else:
+				sText += localText.getText("TXT_KEY_CONGRESS_RESULT_COLONY", (sName, gc.getPlayer(iNewOwner).getCivilizationShortDescription(0)))
+				
+		if len(lAssignments) == 0 and len(lColonies) == 0:
+			sText += localText.getText("TXT_KEY_CONGRESS_NO_RESULTS", ())
+			
+		popup = CyPopupInfo()
+		popup.setText(sText)
+		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_OK", ()), '')
+		
+		popup.addPopup(utils.getHumanID())
+
+	### Other Methods ###
+
+	def startCongress(self):
+		self.bPostWar = (len(self.lWinners) > 0)
+		lPossibleInvites = []
+		
+		if self.bPostWar:
+			lPossibleInvites.extend(self.lWinners)
+			lPossibleInvites.extend(self.lLosers)
+		else:
+			lPossibleInvites = [i for i in range(iNumPlayers)]
+
+		self.inviteToCongress(lPossibleInvites)
+		
+		if self.bPostWar:
+			iHostPlayer = self.lWinners[0]
+		else:
+			iHostPlayer = utils.getRandomEntry(self.lInvites)
+			
+		self.sHostCityName = utils.getRandomEntry(utils.getCoreCityList(iHostPlayer, utils.getReborn(iHostPlayer))).getName()
+		
+		for iLoopPlayer in self.lInvites:
+			if self.bPostWar and iLoopPlayer in self.lLosers: continue
+			self.dPossibleClaims[iLoopPlayer] = self.selectClaims(iLoopPlayer)
+			
+		for iLoopPlayer in self.lInvites:
+			if iLoopPlayer not in self.dPossibleClaims: continue
+			
+			if utils.getHumanID() == iLoopPlayer:
+				self.startIntroductionEvent(True)
+			else:
+				self.makeClaimAI(iLoopPlayer)
+				
+		# procedure continues from the makeClaimHuman event
+		
+		# unless the player isn't involved, in that case resolve from here
+		if utils.getHumanID() not in self.dPossibleClaims:
+			self.startIntroductionEvent(False)
+			#self.voteOnClaims()
+			
+	def voteOnClaims(self):
+		# only humans vote so AI memory can influence their actions later
+		for iVoter in self.lInvites:
+			self.dVotes[iVoter] = 0
+			self.dVotingMemory[iVoter] = 0
+			self.dVotedFor[iVoter] = []
+			if utils.getHumanID() == iVoter:
+				self.voteOnClaimsHuman()
+				
+		# procedure continues from the voteOnClaimsHuman event
+				
+		# unless the player isn't involved, in that case resolve from here
+		if utils.getHumanID() not in self.lInvites:
+			self.voteOnClaimsAI()
+			
+	def applyVotes(self):
+		dResults = {}
+	
+		lAssignments = []
+		lColonies = []
+		
+		for iClaimant in self.dCityClaims:
+			x, y, iValue = self.dCityClaims[iClaimant]
+			if self.dVotes[iClaimant] > 0:
+				# only one player may receive a plot/city in case multiple civs claimed it (most votes)
+				if (x, y) not in dResults:
+					dResults[(x, y)] = (iClaimant, self.dVotes[iClaimant])
+				else:
+					iOtherClaimant, iVotes = dResults[(x, y)]
+					if self.dVotes[iClaimant] > iVotes: dResults[(x, y)] = (iClaimant, self.dVotes[iClaimant])
 					
-				# Leoreth: French UP
-				if iActiveCiv == iFrance:
-					iResult += 10
+		for tAssignedPlot in dResults:
+			x, y = tAssignedPlot
+			iClaimant, iVotes = dResults[tAssignedPlot]
+			plot = gc.getMap().plot(x, y)
+			
+			bHuman = (plot.getOwner() == utils.getHumanID())
+			# insert ability to refuse flips later
+			
+			if plot.isCity():
+				lAssignments.append((plot.getPlotCity().getName(), plot.getOwner(), iClaimant))
+				self.assignCity(iClaimant, plot.getOwner(), (x, y))
+			else:
+				lColonies.append((cnm.getFoundName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
+				self.foundColony(iClaimant, (x, y))
 					
+		self.startResultsEvent(lAssignments, lColonies)
 					
-                                #factor 15a - owner
-                                if (iOwner == iCiv):
-                                        iResult = -30
-                                #factor 15b - active civ
-                                if (iActiveCiv == iCiv):
-                                        iResult = 30
+	def assignCity(self, iPlayer, iOwner, tPlot):
+		x, y = tPlot
+		utils.completeCityFlip(x, y, iPlayer, iOwner, 80, False, False, True)
+		
+	def foundColony(self, iPlayer, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		if plot.isOwned(): utils.convertPlotCulture(plot, iPlayer, 100, True)
+		
+		if utils.getHumanID() == iPlayer:
+			utils.makeUnit(iSettler, iPlayer, tPlot, 1)
+		else:
+			gc.getPlayer(iPlayer).found(x, y)
+			
+		utils.createGarrisons(tPlot, iPlayer, 2)
+				
+	def voteOnClaimsHuman(self):
+		for iClaimant in self.dCityClaims:
+			if utils.getHumanID() != iClaimant:
+				x, y, iValue = self.dCityClaims[iClaimant]
+				self.lHumanVotes.append((iClaimant, x, y))
+				
+		if len(self.lHumanVotes) > 0:
+			iClaimant, x, y = self.lHumanVotes[0]
+			self.startVoteCityEvent(iClaimant, (x, y))
+			
+	def voteOnClaimsAI(self):
+		for iVoter in self.lInvites:
+			if utils.getHumanID() != iVoter:
+				for iClaimant in self.dCityClaims:
+					if iVoter != iClaimant:
+						x, y, iValue = self.dCityClaims[iClaimant]
+						self.voteOnCityClaimAI(iVoter, iClaimant, (x, y), iValue)
+						
+		# continue with applying the votes
+		self.applyVotes()
+			
+	def voteOnCityClaimAI(self, iVoter, iClaimant, tPlot, iClaimValue):
+		iFavorClaimant = 0
+		iFavorOwner = 0
+		
+		iClaimValidity = 0
+		
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		pVoter = gc.getPlayer(iVoter)
+		tVoter = gc.getTeam(iVoter)
+		
+		iOwner = plot.getOwner()
+		iNumPlayersAlive = gc.getGame().countCivPlayersAlive()
+		
+		bCity = plot.isCity()
+		bOwner = (iOwner >= 0)
+		bOwnClaim = (iClaimant == iVoter)
+		
+		if bCity: city = plot.getPlotCity()
+		if bOwner: 
+			bMinor = (iOwner >= iNumPlayers)
+			bOwnCity = (iOwner == iVoter)
+			
+		# player factors
+		if bOwner and not bMinor and not bOwnCity and not bOwnClaim:
+			# player rank
+			iFavorClaimant += iNumPlayersAlive / 2 - gc.getGame().getPlayerRank(iClaimant)
+			iFavorOwner += iNumPlayersAlive / 2 - gc.getGame().getPlayerRank(iOwner)
+			
+			# player relations
+			iFavorClaimant += 5 * (pVoter.AI_getAttitude(iClaimant) - 2)
+			iFavorOwner += 5 * (pVoter.AI_getAttitude(iOwner) - 2)
+			
+			# defensive pacts
+			if tVoter.isDefensivePact(iClaimant): iFavorClaimant += 5
+			if tVoter.isDefensivePact(iOwner): iFavorOwner += 5
+			
+			# at war
+			if tVoter.isAtWar(iClaimant): iFavorClaimant -= 10
+			if tVoter.isAtWar(iOwner): iFavorOwner -= 10
+			
+			# neighbors
+			if not gc.getGame().isNeighbors(iVoter, iClaimant): iFavorClaimant += 5
+			if not gc.getGame().isNeighbors(iVoter, iOwner): iFavorOwner += 10
+			
+			# vassalage
+			if tVoter.isVassal(iClaimant): iFavorClaimant += 20
+			if tVoter.isVassal(iOwner): iFavorOwner += 20
+			
+			if gc.getTeam(iClaimant).isVassal(iVoter): iFavorClaimant += 10
+			if gc.getTeam(iOwner).isVassal(iVoter): iFavorOwner += 10
+			
+			# French UP
+			if iClaimant == iFrance: iFavorClaimant += 10
+			if iOwner == iFrance: iFavorOwner += 10
+			
+			# AI memory of human voting behavior
+			if utils.getHumanID() == iClaimant and iVoter in self.dVotingMemory: iFavorClaimant += 5 * self.dVotingMemory[iVoter]
+			if utils.getHumanID() == iOwner and iVoter in self.dVotingMemory: iFavorOwner += 5 * self.dVotingMemory[iVoter]
+			
+		# plot factors
+		# plot culture
+		if bOwner:
+			iClaimValidity += (100 * plot.getCulture(iClaimant) / plot.countTotalCulture()) / 20
 
-                                self.setVotes(iCiv, iResult)       
-
-                                print (gc.getPlayer(iActiveCiv).getCivilizationShortDescription(0), reqCity.getName(), reqCity.getX(), reqCity.getY(), gc.getPlayer(iOwner).getCivilizationShortDescription(0), gc.getPlayer(iCiv).getCivilizationShortDescription(0), iResult)          
-
-
-            
-        def finalCount(self, iActiveCiv, reqCity, bShowResults):
-                iHuman = utils.getHumanID()
-                if (reqCity):   #just in case, as it might have been destroyed during AI turn
-                        iOwner = reqCity.getOwner()
-                        iTempPosThreshold = iPosThreshold
-                        iTempNegThreshold = iNegThreshold
-                        
-                        #normalization
-                        iTotal = 0
-                        iCount = 0
-                        iMax = 0
-                        for iCiv in range( iNumPlayers ):
-                                if (self.getInvitedNations(iCiv) == True):
-                                        if (iCiv != iActiveCiv and iCiv != reqCity.getOwner() and iCiv != iHuman):
-                                                iCount += 1
-                                                iTotal += self.getVotes(iCiv)
-                                                if (abs(self.getVotes(iCiv)) > iMax):
-                                                        iMax = abs(self.getVotes(iCiv))
-                        iAverage = iTotal / iCount
-                        for iCiv in range( iNumPlayers ):
-                                if (self.getInvitedNations(iCiv) == True):
-                                        if (iCiv != iActiveCiv and iCiv != reqCity.getOwner() and iCiv != iHuman):
-                                                if (iAverage > 0):                                                        
-                                                        if (self.getVotes(iCiv) < iAverage):
-                                                                self.setVotes(iCiv, self.getVotes(iCiv)-iAverage*2/3)
-                                                        if (self.getVotes(iCiv) > 0):
-                                                                self.setVotes(iCiv, self.getVotes(iCiv)*iNormalizationThreshold/iMax)
-                                                if (iAverage < 0):
-                                                        if (self.getVotes(iCiv) > iAverage):
-                                                                self.setVotes(iCiv, self.getVotes(iCiv)-iAverage*2/3)
-                                                        if (self.getVotes(iCiv) < 0):
-                                                                self.setVotes(iCiv, self.getVotes(iCiv)*iNormalizationThreshold/iMax)
-                        for iCiv in range( iNumPlayers ):
-                                if (self.getInvitedNations(iCiv) == True):
-                                        if (iCiv != iActiveCiv and iCiv != reqCity.getOwner() and iCiv != iHuman):
-                                                if (self.getVotes(iCiv) <= 3 and self.getVotes(iCiv) >= -3):
-                                                        self.setVotes(iCiv, self.getVotes(iCiv)*2) #less abstaining
-                        #debug
-                        #for iCiv in range( iNumPlayers ):
-                        #        if (self.getInvitedNations(iCiv) == True):
-                        #                 print ("Normalized", gc.getPlayer(iCiv).getCivilizationShortDescription(0), self.getVotes(iCiv))
-                        if (iAverage > 0):
-                                iTempPosThreshold = iPosThreshold + 1
-                                iTempNegThreshold = iNegThreshold + 1
-                        if (iAverage < 0):
-                                iTempPosThreshold = iPosThreshold - 1
-                                iTempNegThreshold = iNegThreshold - 1
-                        #end normalization
-
-
-                        #corruption
-                        print ("Bribe vector", self.getBribe(0), self.getBribe(1), self.getBribe(2))
-                        if (self.getBribe(1) != -1):
-                                iCiv = self.getBribe(1)
-                        elif (self.getBribe(2) != -1):
-                                iCiv = self.getBribe(2)                               
-                        if (self.getBribe(0) != -1):
-                                if (iCiv != iActiveCiv and iCiv != iOwner):
-                                        if (self.getBribe(1) == iCiv):
-                                                self.setVotes(iCiv, self.getVotes(iHuman))
-                                        elif (self.getBribe(2) == iCiv):
-                                                if (self.getVotes(iHuman) > iTempPosThreshold or self.getVotes(iHuman) < iTempNegThreshold):
-                                                        self.setVotes(iCiv, -self.getVotes(iHuman))
-
-                        #show results
-                        sResults = ""
-                        for iCiv in range( iNumPlayers ):
-                                if (self.getInvitedNations(iCiv) == True):
-                                        sResults += gc.getPlayer(iCiv).getCivilizationShortDescription(0)
-                                        if (self.getVotes(iCiv) > iTempPosThreshold):
-                                                sResults += (" " + CyTranslator().getText("TXT_KEY_CONGRESS_POPUP_VOTES_YES", ()))  
-                                        elif (self.getVotes(iCiv) < iTempNegThreshold):
-                                                sResults += (" " + CyTranslator().getText("TXT_KEY_CONGRESS_POPUP_VOTES_NO", ()))                            
-                                        else:
-                                                sResults += (" " + CyTranslator().getText("TXT_KEY_CONGRESS_POPUP_ABSTAINS", ()))
-
-                                                
-                        iYes = 0
-                        iNo = 0
-                        for iCiv in range( iNumPlayers ):
-                                if (self.getVotes(iCiv) > iTempPosThreshold):
-                                        iYes += 1
-                                if (self.getVotes(iCiv) < iTempNegThreshold):    
-                                        iNo += 1
-                        if (iYes > iNo):
-                                sResults += CyTranslator().getText("TXT_KEY_CONGRESS_POPUP_YES_WINS", ())
-                        else:
-                                sResults += CyTranslator().getText("TXT_KEY_CONGRESS_POPUP_NO_WINS", ())
-                        if (bShowResults == True):
-                                popup = Popup.PyPopup()
-                                sTempString = CyTranslator().getText("TXT_KEY_CONGRESS_REQUEST", (gc.getPlayer(iActiveCiv).getName(), reqCity.getName(), gc.getPlayer(reqCity.getOwner()).getCivilizationAdjective(0)))
-                                popup.setHeaderString( sTempString )
-                                popup.setBodyString( sResults )
-                                popup.launch()
-
-                        print (reqCity.getName(), "flipping to ", iActiveCiv, iYes, iNo)
-                        
-                        if (iYes > iNo):
-                                if (iOwner == iHuman and self.getInvitedNations(iOwner) == False):
-                                        self.setTempReqCityNI((reqCity.getX(), reqCity.getY()))
-                                        self.setTempActiveCivNI(iActiveCiv)
-                                        for iCiv in range( iNumPlayers ):
-                                                if (self.getInvitedNations(iCiv) == True):
-                                                        if (self.getVotes(iCiv) > iWarThreshold):
-                                                                self.setTempAttackingCivsNI(iCiv, True)
-                                elif (iOwner == iHuman and self.getInvitedNations(iOwner) == True):
-                                        self.decisionPopup(True)                                    
-                                else:                                    
-                                        self.acceptDecision(iActiveCiv, reqCity, False) #, True)
-                                        if (self.getInvitedNations(iHuman) == False):
-                                                CyInterface().addMessage(iHuman, True, con.iDuration/2, (reqCity.getName() + " " + \
-                                                                                   CyTranslator().getText("TXT_KEY_CONGRESS_NOTIFY_YES", (gc.getPlayer(iActiveCiv).getCivilizationAdjectiveKey(),))), \
-                                                                                   "", 0, "", ColorTypes(con.iCyan), -1, -1, True, True)
- 
-                                    
-
-        def acceptDecision(self, iActiveCiv, reqCity, bDecisionPopup): #, bHumanInvited):
-                if (bDecisionPopup):
-                        tReqCity = reqCity
-                        reqCity = gc.getMap().plot( tReqCity[0], tReqCity[1] ).getPlotCity()
-##                if (bDecisionPopup and bHumanInvited):
-##                        tReqCity = self.getTempReqCity(self.getLoopIndex())
-##                        reqCity = gc.getMap().plot( tReqCity[0], tReqCity[1] ).getPlotCity()
-##                        iActiveCiv = self.getTempActiveCiv(self.getLoopIndex())
-##                elif (not bHumanInvited):
-##                        tReqCity = self.getTempReqCityNI()
-##                        reqCity = gc.getMap().plot( tReqCity[0], tReqCity[1] ).getPlotCity()
-##                        iActiveCiv = self.getTempActiveCivNI()
-                iOwner = reqCity.getOwner()
-                print ("Accepting decision:", reqCity.getName(), "iActiveCiv:", iActiveCiv)
-                utils.cultureManager((reqCity.getX(),reqCity.getY()), 80, iActiveCiv, iOwner, False, False, True)
-                utils.pushOutGarrisons((reqCity.getX(),reqCity.getY()), iOwner)
-                utils.relocateSeaGarrisons((reqCity.getX(),reqCity.getY()), iOwner)                
-                self.setTempFlippingCityCongress((reqCity.getX(),reqCity.getY()))
-                utils.flipCity((reqCity.getX(),reqCity.getY()), 0, 0, iActiveCiv, [iOwner])
-                utils.createGarrisons(self.getTempFlippingCityCongress(), iActiveCiv, 2)
-                
-
-                              
-        def refuseDecision(self, iActiveCiv, bHumanInvited):
-                iWWmodifier = 0
-                iHuman = utils.getHumanID()
-                tHuman = gc.getTeam(gc.getPlayer(iHuman).getTeam())
-                for iLoopCiv in range( iNumPlayers ):
-                        if tHuman.isDefensivePact(iLoopCiv):
-                                iWWmodifier += 8
-                                if (iWWmodifier >= 24):
-                                        break                
-                for iCiv in range( iNumPlayers ):
-                        iRndnum = gc.getGame().getSorenRandNum(100, 'rnd')
-                        iPatienceThreshold = con.tPatienceThreshold[iActiveCiv] + iWWmodifier
-                        if (utils.isAVassal(iActiveCiv)):
-                                iPatienceThreshold += 50
-                                if (iPatienceThreshold == 100):
-                                        iPatienceThreshold = 90
-                        if (iRndnum >= iPatienceThreshold):
-                                if (bHumanInvited):
-                                        if (self.getInvitedNations(iCiv) == True):
-                                                if (self.getVotes(iCiv) > iWarThreshold):
-                                                        gc.getTeam(gc.getPlayer(iCiv).getTeam()).declareWar(iHuman, False, -1)
-                                else:
-                                        if (self.getTempAttackingCivsNI(iCiv) == True):
-                                                print ("TempAttackingCivsNI: ", iCiv)
-                                                gc.getTeam(gc.getPlayer(iCiv).getTeam()).declareWar(iHuman, False, -1)
-
-            
-
-
-    
+		# Europeans support colonialism unless they want the plot for themselves
+		if iVoter in lCivGroups[0]:
+			if iClaimant in lCivGroups[0]:
+				if not bOwner or iOwner not in lCivGroups[0]:
+					if plot.getSettlerMapValue(iVoter) < 90:
+						iClaimValidity += 10
+						
+		# vote to support settler maps for civs from your own group
+		if bOwner:
+			bDifferentGroupClaimant = True
+			bDifferentGroupOwner = True
+			for lGroup in lCivGroups:
+				if iVoter in lGroup and iClaimant in lGroup: bDifferentGroupClaimant = False
+				if iVoter in lGroup and iOwner in lGroup: bDifferentGroupOwner = False
+		
+			iClaimantValue = plot.getSettlerMapValue(iClaimant)
+			iOwnerValue = plot.getSettlerMapValue(iOwner)
+			
+			if not bDifferentGroupClaimant and bDifferentGroupOwner and iClaimantValue >= 90: iClaimantValue *= 2
+			if not bDifferentGroupOwner and bDifferentGroupClaimant and iOwnerValue >= 90: iOwnerValue *= 2
+			
+			iClaimValidity += max(1, iClaimantValue / 100)
+			iClaimValidity -= max(1, iOwnerValue / 100)
+			
+		# own expansion targets
+		if not bOwnClaim:
+			iOwnSettlerValue = plot.getSettlerMapValue(iVoter)
+			iOwnWarTargetValue = plot.getWarMapValue(iVoter)
+			
+			if iOwnSettlerValue >= 200: iClaimValidity -= max(1, iOwnSettlerValue / 100)
+			if iOwnWarTargetValue > 0: iClaimValidity -= max(1, iOwnWarTargetValue / 2)
+		
+		# city factors
+		if bCity:
+			# previous ownership
+			if city.isEverOwned(iClaimant): iClaimValidity += 5
+			if city.getOriginalOwner() == iClaimant: iClaimValidity += 5
+			
+			# city culture, see plot culture
+			if city.getCulture(iClaimant) == 0: iClaimValidity -= 10
+			
+			# close borders
+			for i in range(21):
+				if city.getCityIndexPlot(i).getOwner() == iClaimant:
+					iClaimValidity += 1
+					
+			# capital
+			if city.isCapital(): iClaimValidity -= 10
+			
+			# core area
+			if plot.isCore(iClaimant): iClaimValidity += 10
+			if plot.isCore(iOwner): iClaimValidity -= 15
+				
+		bThreatenedClaimant = (2 * tVoter.getPower(True) < gc.getTeam(iClaimant).getPower(True))
+		if bOwner: bThreatenedOwner = (2 * tVoter.getPower(True) < gc.getTeam(iOwner).getPower(True))
+		
+		# always vote for claims on empty territory unless claim is invalid
+		if not bOwner:
+			if iClaimValidity >= 0:
+				self.vote(iVoter, iClaimant, 1)
+				return
+		
+		# always vote for own claims unless threatened by owner
+		if bOwnClaim:
+			if not bOwner or not bThreatenedOwner:
+				self.vote(iVoter, iClaimant, 1)
+				return
+				
+		# always vote against claims on own cities unless threatened by owner
+		if bOwner and bOwnCity:
+			if not bThreatenedClaimant:
+				self.vote(iVoter, iClaimant, -1)
+				return
+				
+		# vote to assing minor cities if there is a valid claim
+		if bOwner and bMinor:
+			if iClaimValidity > 0:
+				self.vote(iVoter, iClaimant, 1)
+			else:
+				self.vote(iVoter, iClaimant, -1)
+			return
+			
+		# maybe include threatened here?
+		if iClaimValidity > 0:
+			# claim insufficient to overcome dislike
+			if iFavorClaimant + iClaimValidity < iFavorOwner:
+				self.vote(iVoter, iClaimant, -1)
+			# valid claim and claimant is more liked
+			elif iFavorClaimant > iFavorOwner:
+				self.vote(iVoter, iClaimant, 1)
+			# less liked, but justified by claim
+			elif iFavorClaimant + iClaimValidity > iFavorOwner:
+				iRand = gc.getGame().getSorenRandNum(40, 'Random vote outcome')
+				if iRand < iClaimValidity:
+					self.vote(iVoter, iClaimant, 1)
+				else:
+					self.vote(iVoter, iClaimant, -1)
+					
+				# bribery for human?
+				
+		else:
+			# like them enough to overcome bad claim
+			if iFavorClaimant + iClaimValidity > iFavorOwner:
+				self.vote(iVoter, iClaimant, 1)
+			else:
+				self.vote(iVoter, iClaimant, -1)
+				
+	def vote(self, iVoter, iClaimant, iVote):
+		if iClaimant in self.dVotes: self.dVotes[iClaimant] += iVote
+		self.dVotes[iClaimant] += iVote
+		if iVote == 1 and iVoter not in self.dVotedFor[iClaimant]: self.dVotedFor[iClaimant].append(iVoter)
+				
+	def makeClaimHuman(self):
+		self.startClaimCityEvent()
+		
+	def makeClaimAI(self, iPlayer):
+		x, y, iValue = utils.getHighestEntry(self.dPossibleClaims[iPlayer], lambda x: x[2])
+		self.dCityClaims[iPlayer] = (x, y, iValue)
+			
+	def selectClaims(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		iGameTurn = gc.getGame().getGameTurn()
+		iNumPlayersAlive = gc.getGame().countCivPlayersAlive()
+		lPlots = []
+		
+		for iLoopPlayer in range(iNumTotalPlayers+1):
+			if iLoopPlayer == iPlayer: continue
+			if not gc.getPlayer(iLoopPlayer).isAlive(): continue
+			if iLoopPlayer in self.lWinners: continue
+				
+			# AI civs: cannot claim cities from friends
+			if utils.getHumanID() != iPlayer and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: continue
+			
+			# recently born
+			if iGameTurn < getTurnForYear(tBirth[iLoopPlayer]) + utils.getTurns(20): continue
+			
+			# recently reborn
+			if iGameTurn < pPlayer.getLatestRebellionTurn() + utils.getTurns(20): continue
+			
+			# check bribery here or when a claim is made?
+			
+			# exclude master/vassal relationships
+			if gc.getTeam(iPlayer).isVassal(iLoopPlayer): continue
+			if gc.getTeam(iLoopPlayer).isVassal(iPlayer): continue
+			
+			# Ethiopian UP
+			if iLoopPlayer == iEthiopia: continue
+			
+			for city in utils.getCityList(iLoopPlayer):
+				x, y = city.getX(), city.getY()
+				plot = gc.getMap().plot(x, y)
+				iSettlerMapValue = plot.getSettlerMapValue(iPlayer)
+				iValue = 0
+				
+				if not plot.isRevealed(iPlayer, False): continue
+				if city.isCapital(): continue
+				
+				# city culture
+				iTotalCulture = city.countTotalCultureTimes100()
+				if iTotalCulture > 0:
+					iCultureRatio = city.getCultureTimes100(iPlayer) * 100 / iTotalCulture
+					if iCultureRatio > 20:
+						if iLoopPlayer != iAmerica:
+							iValue += iCultureRatio / 20
+							
+				# ever owned
+				if city.isEverOwned(iPlayer):
+					iValue += 3
+						
+				# own core
+				if plot.isCore(iPlayer):
+					iValue += 5
+							
+				# colonies
+				if iPlayer in lCivGroups[0]:
+					if iLoopPlayer >= iNumPlayers or (iLoopPlayer not in lCivGroups[0] and utils.getStabilityLevel(iLoopPlayer) < iStabilityShaky) or (iLoopPlayer in lCivGroups[0] and utils.getHumanID() != iLoopPlayer and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
+						if plot.getRegionID() not in lEurope and plot.getRegionID() not in lMiddleEast:
+							if iSettlerMapValue > 90:
+								iValue += max(1, iSettlerMapValue / 100)
+									
+				# weaker and collapsing empires
+				if iLoopPlayer < iNumPlayers:
+					if gc.getGame().getPlayerRank(iLoopPlayer) > iNumPlayersAlive / 2 and gc.getGame().getPlayerRank(iLoopPlayer) < iNumPlayersAlive / 2:
+						if sd.getStabilityLevel(iLoopPlayer) == iStabilityCollapsing:
+							if iSettlerMapValue >= 90:
+								iValue += max(1, iSettlerMapValue / 100)
+									
+				# close to own empire
+				closestCity = gc.getMap().findCity(x, y, iPlayer, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, city)
+				iDistance = stepDistance(x, y, closestCity.getX(), closestCity.getY())
+				if iDistance < 5:
+					iValue += 5-iDistance
+					
+				# after war: war targets
+				if self.bPostWar:
+					iValue += plot.getWarMapValue(iPlayer) / 2
+					
+				if iValue > 0:
+					lPlots.append((x, y, iValue))
+		
+		# extra spots for colonial civs -> will be settled
+		# not available after wars because these congresses are supposed to reassign cities
+		if iPlayer in lCivGroups[0] and not self.bPostWar:
+			for x in range(iWorldX):
+				for y in range(iWorldY):
+					plot = gc.getMap().plot(x, y)
+					if not plot.isCity() and not plot.isPeak() and not plot.isWater():
+						if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
+							iSettlerMapValue = plot.getSettlerMapValue(iPlayer)
+							if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)) != "-1":
+								closestCity = gc.getMap().findCity(x, y, PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+								if stepDistance(x, y, closestCity.getX(), closestCity.getY()) > 2:
+									lPlots.append((x, y, max(1, iSettlerMapValue / 100)))
+						
+		lPlots = utils.getSortedList(lPlots, lambda x: x[2] + gc.getGame().getSorenRandNum(3, 'Randomize city value'), True)
+		return lPlots[:10]
+		
+	def inviteToCongress(self, lPossibleInvites):
+		lPossibleInvites = utils.getSortedList(lPossibleInvites, lambda x: gc.getGame().getPlayerRank(x))
+		self.lInvites = lPossibleInvites[:getNumInvitations()]

@@ -10834,6 +10834,11 @@ int CvPlot::getSettlerMapValue(PlayerTypes ePlayer) const
 	return GET_PLAYER(ePlayer).getSettlersMaps(67 - getY_INLINE(), getX_INLINE());
 }
 
+int CvPlot::getWarMapValue(PlayerTypes ePlayer) const
+{
+	return GET_PLAYER(ePlayer).getWarMapValue(getX_INLINE(), getY_INLINE());
+}
+
 // Leoreth
 bool CvPlot::isWithinGreatWall() const
 {
@@ -10844,4 +10849,10 @@ bool CvPlot::isWithinGreatWall() const
 void CvPlot::setWithinGreatWall(bool bNewValue)
 {
 	m_bWithinGreatWall = bNewValue;
+}
+
+// Leoreth
+void CvPlot::cameraLookAt()
+{
+	gDLL->getEngineIFace()->cameraLookAt(getPoint());
 }

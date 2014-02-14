@@ -1554,8 +1554,49 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 		}
 		//Rhye - end
 
-		CvEventReporter::getInstance().changeWar(true, getID(), eTeam);
-		
+		// Leoreth: determine wars with global alliances
+		int iWorldStrength = 0;
+		int iOurStrength = 0;
+		int iTheirStrength = 0;
+
+		for (iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive())
+			{
+				if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+				{
+					iWorldStrength += GET_TEAM((TeamTypes)iI).getPower(false);
+				}
+
+				if (GET_TEAM((TeamTypes)iI).isDefensivePact(eTeam))
+				{
+					if (!GET_TEAM((TeamTypes)iI).isVassal(getID()) && !isVassal((TeamTypes)iI))
+					{
+						iTheirStrength += GET_TEAM((TeamTypes)iI).getPower(true);
+					}
+				}
+
+				if (GET_TEAM((TeamTypes)iI).isDefensivePact(getID()))
+				{
+					if (!GET_TEAM((TeamTypes)iI).isVassal(eTeam) && !isVassal((TeamTypes)iI))
+					{
+						iOurStrength += GET_TEAM((TeamTypes)iI).getPower(true);
+					}
+				}
+			}
+		}
+
+		// if the enemy has no allies, our own won't step in either
+		if (iTheirStrength == 0) iOurStrength = 0;
+
+		iOurStrength += getPower(true);
+		iTheirStrength += GET_TEAM(eTeam).getPower(true);
+
+		GC.getGame().logMsg("Global war between %d and %d, our strength: %d, their strength: %d, world strength: %d", getID(), eTeam, iOurStrength, iTheirStrength, iWorldStrength);
+
+		bool bGlobalWar = (2 * (iOurStrength + iTheirStrength) > iWorldStrength);
+
+		CvEventReporter::getInstance().changeWar(true, getID(), eTeam, bGlobalWar);
 
 		//cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled) 
 
@@ -1567,7 +1608,8 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 				{
 					//Rhye - start (as pacts are checked first, before vassals, recursion otherwise may lead to masters declaring war on vassals
 					//GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE);
-					if (!GET_TEAM((TeamTypes)iI).isVassal(getID()) && !isVassal((TeamTypes)iI)) {
+					if (!GET_TEAM((TeamTypes)iI).isVassal(getID()) && !isVassal((TeamTypes)iI)) 
+					{
 						GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE);
 					}
 					//Rhye - end
@@ -1772,7 +1814,7 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 
 		} //Rhye
 
-		CvEventReporter::getInstance().changeWar(false, getID(), eTeam);
+		CvEventReporter::getInstance().changeWar(false, getID(), eTeam, false);
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
