@@ -224,3 +224,5 @@
 	# whole congress is resolved in one turn now
 	# when voting on a city claim, camera moves to the city in question
 	# significantly improved performance
+	# if an AI civ is undecided on your claim, or on a claim on one of your cities, you can attempt to influence them using gold or espionage
+	# city assignments by the congress can be refused, which might lead to war against the supporting civilizations

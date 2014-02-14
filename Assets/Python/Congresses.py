@@ -56,8 +56,8 @@ def isCongressEnabled():
 	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iUnitedNations).getBuildingClassType()) > 0:
 		return False
 		
-	#if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
-	#	return False
+	if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
+		return False
 		
 	return (gc.getGame().countKnownTechNumTeams(iNationalism) > 0)
 
@@ -115,6 +115,14 @@ class Congress:
 		self.iNumHumanVotes = 0
 		self.dVotingMemory = {}
 		self.dVotedFor = {}
+		self.lAssignments = []
+		self.lColonies = []
+		self.lHumanAssignments = []
+		self.iNumHumanAssignments = 0
+		self.dPossibleBelligerents = {}
+		self.lPossibleBribes = []
+		self.iNumBribes = 0
+		self.lBriberyOptions = []
 
 	### Popups ###
 	
@@ -212,21 +220,191 @@ class Congress:
 		else:
 			self.voteOnClaimsAI()
 			
-	def startResultsEvent(self, lAssignments, lColonies):
+	def startBriberyEvent(self, iVoter, iClaimant, tPlot, iDifference, iClaimValidity):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		iBribedPlayer = iVoter
+		
+		bHumanClaim = (utils.getHumanID() == iClaimant)
+		bCity = plot.isCity()
+		
+		if plot.isRevealed(utils.getHumanID(), False):
+			plot.cameraLookAt()
+		
+		if bHumanClaim:
+			if bCity:
+				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_CITY", (gc.getPlayer(iBribedPlayer).getCivilizationAdjective(0), gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), plot.getPlotCity().getName()))
+			else:
+				closestCity = gc.getMap().findCity(x, y, iBribedPlayer, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_COLONY", (gc.getPlayer(iBribedPlayer).getCivilizationAdjective(0), gc.getPlayer(plot.getOwner()).getCivilizationAdjective(0), closestCity.getName()))
+		else:	
+			if bCity:
+				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_OWN_CITY", (gc.getPlayer(iBribedPlayer).getCivilizationAdjective(0), gc.getPlayer(iClaimant).getCivilizationAdjective(0), plot.getPlotCity().getName()))
+			else:
+				closestCity = gc.getMap().findCity(x, y, utils.getHumanID(), TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY", (gc.getPlayer(iBribedPlayer).getCivilizationAdjective(0), gc.getPlayer(iClaimant).getCivilizationAdjective(0), closestCity.getName()))
+				
+		iCost = iDifference * gc.getPlayer(iBribedPlayer).calculateTotalCommerce()
+		
+		iTreasury = gc.getPlayer(utils.getHumanID()).getGold()
+		iEspionageSpent = gc.getTeam(utils.getHumanID()).getEspionagePointsAgainstTeam(iBribedPlayer)
+		
+		if bHumanClaim:
+			# both types of influence have a 50 / 75 / 90 percent chance based on the investment for an averagely valid claim (= 25)
+			iLowChance = 25 + iClaimValidity
+			iMediumChance = 50 + iClaimValidity
+			iHighChance = 65 + iClaimValidity
+		else:
+			# both types of influence have a 50 / 75 / 90 percent chance based on the investment for an averagely valid claim (= 25)
+			iLowChance = 75 - iClaimValidity
+			iMediumChance = 100 - iClaimValidity
+			iHighChance = 115 - iClaimValidity
+		
+		self.lBriberyOptions = []
+		
+		if iTreasury >= iCost / 2: self.lBriberyOptions.append((0, iCost / 2, iLowChance))
+		if iTreasury >= iCost: self.lBriberyOptions.append((0, iCost, iMediumChance))
+		if iTreasury >= iCost * 2: self.lBriberyOptions.append((0, iCost * 2, iHighChance))
+		
+		if iEspionageSpent >= iCost / 2: self.lBriberyOptions.append((3, iCost / 2, iLowChance))
+		if iEspionageSpent >= iCost: self.lBriberyOptions.append((3, iCost, iMediumChance))
+		if iEspionageSpent >= iCost * 2: self.lBriberyOptions.append((3, iCost * 2, iHighChance))
+		
+		popup = CyPopupInfo()
+		popup.setText(sText)
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyBriberyEvent")
+		popup.setData1(iBribedPlayer)
+		popup.setData2(iClaimant)
+		popup.setData3(iClaimValidity)
+		
+		for tOption in self.lBriberyOptions:
+			iCommerceType, iCost, iThreshold = tOption
+			if iCommerceType == 0: textKey = "TXT_KEY_CONGRESS_BRIBE_GOLD"
+			elif iCommerceType == 3: textKey = "TXT_KEY_CONGRESS_MANIPULATION"
+			
+			popup.addPythonButton(localText.getText(textKey, (iCost,)), gc.getCommerceInfo(iCommerceType).getButton())
+			
+		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_NO_BRIBE", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_BUTTONS_CANCEL")).getPath())
+		
+		popup.addPopup(utils.getHumanID())
+		
+	def applyBriberyEvent(self, iChoice, iBribedPlayer, iClaimant, iClaimValidity):
+		if iChoice < len(self.lBriberyOptions):
+			iCommerceType, iCost, iThreshold = self.lBriberyOptions[iChoice]
+			iRand = gc.getGame().getSorenRandNum(100, 'Influence voting')
+			
+			if iCommerceType == 0: gc.getPlayer(utils.getHumanID()).changeGold(-iCost)
+			elif iCommerceType == 3: gc.getTeam(utils.getHumanID()).changeEspionagePointsAgainstTeam(-iCost)
+			
+			bHumanClaim = (utils.getHumanID() == iClaimant)
+			bSuccess = (iRand < iThreshold)
+			
+			self.startBriberyResultEvent(iBribedPlayer, iClaimant, bHumanClaim, bSuccess)
+		else:
+			# if no bribery option was chosen, the civ votes randomly as usual
+			iRand = gc.getGame().getSorenRandNum(50, 'Uninfluenced voting')
+			if iRand < iClaimValidity:
+				self.vote(iBribedPlayer, iClaimant, 1)
+			else:
+				self.vote(iBribedPlayer, iClaimant, -1)
+				
+	def startBriberyResultEvent(self, iBribedPlayer, iClaimant, bHumanClaim, bSuccess):	
+		if bSuccess:
+			if bHumanClaim:
+				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS", (gc.getPlayer(iBribedPlayer).getCivilizationShortDescription(0),))
+				self.vote(iBribedPlayer, iClaimant, 1)
+			else:
+				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_SUCCESS", (gc.getPlayer(iBribedPlayer).getCivilizationShortDescription(0),))
+				self.vote(iBribedPlayer, iClaimant, -1)
+		else:
+			if bHumanClaim:
+				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_FAILURE", (gc.getPlayer(iBribedPlayer).getCivilizationShortDescription(0),))
+				self.vote(iBribedPlayer, iClaimant, -1)
+			else:
+				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE", (gc.getPlayer(iBribedPlayer).getCivilizationShortDescription(0),))
+				self.vote(iBribedPlayer, iClaimant, 1)
+				
+			gc.getPlayer(iBribedPlayer).AI_changeMemoryCount(utils.getHumanID(), MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, utils.getTurns(5))
+			gc.getPlayer(iBribedPlayer).AI_changeAttitudeExtra(utils.getHumanID(), -4)
+			
+		popup = CyPopupInfo()
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyBriberyResultEvent")
+		popup.setText(sText)
+		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_OK", ()), '')
+		
+		popup.addPopup(utils.getHumanID())
+		
+	def applyBriberyResultEvent(self):
+		# just continue to the next bribe if there is one
+		self.iNumBribes += 1
+		if self.iNumBribes < len(self.lPossibleBribes):
+			iVoter, iClaimant, tPlot, iDifference, iClaimValidity = self.lPossibleBribes[self.iNumBribes]
+			self.startBriberyEvent(iVoter, iClaimant, tPlot, iDifference, iClaimValidity)
+		else:
+			# otherwise continue with applying the votes
+			self.applyVotes()
+			
+	def startRefusalEvent(self, iClaimant, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		if plot.isRevealed(utils.getHumanID(), False):
+			plot.cameraLookAt()
+		
+		popup = CyPopupInfo()
+		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+		popup.setOnClickedPythonCallback("applyRefusalEvent")
+		popup.setData1(iClaimant)
+		popup.setData2(tPlot)
+		
+		if plot.isCity():
+			sText = localText.getText("TXT_KEY_CONGRESS_DEMAND_CITY", (gc.getPlayer(iClaimant).getCivilizationShortDescription(0), plot.getPlotCity().getName()))
+		else:
+			closestCity = gc.getMap().findCity(x, y, utils.getHumanID(), TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+			sText = localText.getText("TXT_KEY_CONGRESS_DEMAND_TERRITORY", (gc.getPlayer(iClaimant).getCivilizationShortDescription(0), closestCity.getName()))
+			
+		popup.setText(sText)
+		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_ACCEPT", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_REFUSE", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
+		popup.addPopup(utils.getHumanID())
+		
+	def applyRefusalEvent(self, iChoice, iClaimant, tPlot):
+		if iChoice == 0:
+			x, y = tPlot
+			plot = gc.getMap().plot(x, y)
+			if plot.isCity():
+				self.assignCity(iClaimant, plot.getOwner(), tPlot)
+			else:
+				self.foundColony(iClaimant, tPlot)
+		else:
+			self.refuseDemand(iClaimant)
+			
+		self.iNumHumanAssignments += 1
+		
+		# still assignments to react to: start a new popup, otherwise show the results
+		if self.iNumHumanAssignments < len(self.lHumanAssignments):
+			iNextClaimant, tPlot = self.lHumanAssignments[self.iNumHumanAssignments]
+			self.startRefusalEvent(iClaimant, tPlot)
+		else:
+			self.finishCongress()
+			
+	def startResultsEvent(self):
 		sText = localText.getText("TXT_KEY_CONGRESS_RESULTS", (self.sHostCityName,))
 		
-		for tAssignment in lAssignments:
+		for tAssignment in self.lAssignments:
 			sName, iOldOwner, iNewOwner = tAssignment
 			sText += localText.getText("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", (sName, gc.getPlayer(iOldOwner).getCivilizationAdjective(0), gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
 			
-		for tColony in lColonies:
+		for tColony in self.lColonies:
 			sName, iOldOwner, iNewOwner = tColony
 			if iOldOwner >= 0:
 				sText += localText.getText("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", (sName, gc.getPlayer(iOldOwner).getCivilizationAdjective(0), gc.getPlayer(iNewOwner).getCivilizationShortDescription(0)))
 			else:
 				sText += localText.getText("TXT_KEY_CONGRESS_RESULT_COLONY", (sName, gc.getPlayer(iNewOwner).getCivilizationShortDescription(0)))
 				
-		if len(lAssignments) == 0 and len(lColonies) == 0:
+		if len(self.lAssignments) == 0 and len(self.lColonies) == 0:
 			sText += localText.getText("TXT_KEY_CONGRESS_NO_RESULTS", ())
 			
 		popup = CyPopupInfo()
@@ -292,9 +470,6 @@ class Congress:
 			
 	def applyVotes(self):
 		dResults = {}
-	
-		lAssignments = []
-		lColonies = []
 		
 		for iClaimant in self.dCityClaims:
 			x, y, iValue = self.dCityClaims[iClaimant]
@@ -311,17 +486,43 @@ class Congress:
 			iClaimant, iVotes = dResults[tAssignedPlot]
 			plot = gc.getMap().plot(x, y)
 			
-			bHuman = (plot.getOwner() == utils.getHumanID())
-			# insert ability to refuse flips later
+			bCanRefuse = (plot.getOwner() == utils.getHumanID() and utils.getHumanID() not in self.dVotedFor[iClaimant] and not self.bPostWar)
 			
 			if plot.isCity():
-				lAssignments.append((plot.getPlotCity().getName(), plot.getOwner(), iClaimant))
-				self.assignCity(iClaimant, plot.getOwner(), (x, y))
+				self.lAssignments.append((plot.getPlotCity().getName(), plot.getOwner(), iClaimant))
+				if bCanRefuse:
+					self.lHumanAssignments.append((iClaimant, (x, y)))
+				else:
+					self.assignCity(iClaimant, plot.getOwner(), (x, y))
 			else:
-				lColonies.append((cnm.getFoundName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
-				self.foundColony(iClaimant, (x, y))
+				self.lColonies.append((cnm.getFoundName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
+				if bCanRefuse:
+					self.lHumanAssignments.append((iClaimant, (x, y)))
+				else:
+					self.foundColony(iClaimant, (x, y))
 					
-		self.startResultsEvent(lAssignments, lColonies)
+		# allow human player to refuse in case his cities were claimed -> last decision leads to result event
+		if len(self.lHumanAssignments) > 0:
+			iClaimant, tPlot = self.lHumanAssignments[0]
+			self.startRefusalEvent(iClaimant, tPlot)
+		else:
+			# without human cities affected, finish the congress immediately
+			self.finishCongress()
+			
+	def refuseDemand(self, iClaimant):
+		iVotes = self.dVotes[iClaimant]
+		
+		if iClaimant not in self.dPossibleBelligerents:
+			self.dPossibleBelligerents[iClaimant] = 2 * iVotes
+		else:
+			self.dPossibleBelligerents[iClaimant] += 2 * iVotes
+		
+		for iVoter in self.dVotedFor[iClaimant]:
+			if utils.isAVassal(iVoter): continue
+			if iVoter not in self.dPossibleBelligerents:
+				self.dPossibleBelligerents[iVoter] = iVotes
+			else:
+				self.dPossibleBelligerents[iVoter] += iVotes
 					
 	def assignCity(self, iPlayer, iOwner, tPlot):
 		x, y = tPlot
@@ -339,6 +540,23 @@ class Congress:
 			gc.getPlayer(iPlayer).found(x, y)
 			
 		utils.createGarrisons(tPlot, iPlayer, 2)
+		
+	def finishCongress(self):
+		# declare war against human if he refused demands
+		iGlobalWarModifier = 0
+		tHuman = gc.getTeam(utils.getHumanID())
+		for iLoopPlayer in range(iNumPlayers):
+			if tHuman.isDefensivePact(iLoopPlayer):
+				iGlobalWarModifier += 10
+				
+		for iBelligerent in self.dPossibleBelligerents:
+			iRand = gc.getGame().getSorenRandNum(100, 'Random declaration of war')
+			iThreshold = tPatienceThreshold[iBelligerent] + 5 * self.dPossibleBelligerents[iBelligerents] + iGlobalWarModifier
+			if iRand >= iThreshold:
+				gc.getTeam(iBelligerent).declareWar(utils.getHumanID(), False, WarPlanTypes.WARPLAN_DOGPILE)
+				
+		# display Congress results
+		self.startResultsEvent()
 				
 	def voteOnClaimsHuman(self):
 		for iClaimant in self.dCityClaims:
@@ -356,10 +574,18 @@ class Congress:
 				for iClaimant in self.dCityClaims:
 					if iVoter != iClaimant:
 						x, y, iValue = self.dCityClaims[iClaimant]
-						self.voteOnCityClaimAI(iVoter, iClaimant, (x, y), iValue)
+						tResult = self.voteOnCityClaimAI(iVoter, iClaimant, (x, y), iValue)
 						
-		# continue with applying the votes
-		self.applyVotes()
+						# if a human bribe is possible, a set of data has been returned, so add it to the list of possible bribes
+						if tResult: self.lPossibleBribes.append(tResult)
+						
+		# if bribes are possible, handle them now, votes are applied after the last bribe event
+		if len(self.lPossibleBribes) > 0:
+			iVoter, iClaimant, tPlot, iDifference, iClaimValidity = self.lPossibleBribes[0]
+			self.startBriberyEvent(iVoter, iClaimant, tPlot, iDifference, iClaimValidity)
+		else:
+		# continue with applying the votes right now in case there are no bribes
+			self.applyVotes()
 			
 	def voteOnCityClaimAI(self, iVoter, iClaimant, tPlot, iClaimValue):
 		iFavorClaimant = 0
@@ -518,13 +744,16 @@ class Congress:
 				self.vote(iVoter, iClaimant, 1)
 			# less liked, but justified by claim
 			elif iFavorClaimant + iClaimValidity > iFavorOwner:
-				iRand = gc.getGame().getSorenRandNum(40, 'Random vote outcome')
-				if iRand < iClaimValidity:
-					self.vote(iVoter, iClaimant, 1)
+				# human can bribe on a close call if own claim or own city
+				if (iClaimant == utils.getHumanID() or (bOwner and iOwner == utils.getHumanID())) and iClaimValidity < 50:
+					# return the relevant data to be added to the list of possible bribes in the calling method
+					return (iVoter, iClaimant, tPlot, iFavorOwner - iFavorClaimant, iClaimValidity)
 				else:
-					self.vote(iVoter, iClaimant, -1)
-					
-				# bribery for human?
+					iRand = gc.getGame().getSorenRandNum(50, 'Random vote outcome')
+					if iRand < iClaimValidity:
+						self.vote(iVoter, iClaimant, 1)
+					else:
+						self.vote(iVoter, iClaimant, -1)
 				
 		else:
 			# like them enough to overcome bad claim
@@ -532,6 +761,9 @@ class Congress:
 				self.vote(iVoter, iClaimant, 1)
 			else:
 				self.vote(iVoter, iClaimant, -1)
+				
+		# return none to signify that no bribe is possible
+		return None
 				
 	def vote(self, iVoter, iClaimant, iVote):
 		if iClaimant in self.dVotes: self.dVotes[iClaimant] += iVote
@@ -564,8 +796,6 @@ class Congress:
 			
 			# recently reborn
 			if iGameTurn < pPlayer.getLatestRebellionTurn() + utils.getTurns(20): continue
-			
-			# check bribery here or when a claim is made?
 			
 			# exclude master/vassal relationships
 			if gc.getTeam(iPlayer).isVassal(iLoopPlayer): continue
@@ -638,7 +868,7 @@ class Congress:
 							if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)) != "-1":
 								closestCity = gc.getMap().findCity(x, y, PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 								if stepDistance(x, y, closestCity.getX(), closestCity.getY()) > 2:
-									lPlots.append((x, y, max(1, iSettlerMapValue / 100)))
+									lPlots.append((x, y, max(1, iSettlerMapValue / 100 - 1)))
 						
 		lPlots = utils.getSortedList(lPlots, lambda x: x[2] + gc.getGame().getSorenRandNum(3, 'Randomize city value'), True)
 		return lPlots[:10]
