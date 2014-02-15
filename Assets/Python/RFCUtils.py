@@ -1517,6 +1517,9 @@ class RFCUtils:
 		return con.iWarrior
 		
 	def getBestDefender(self, iPlayer):
+		# Leoreth: there is a C++ error for barbarians for some reason, workaround by simply using independents
+		if iPlayer == con.iBarbarian: iPlayer = con.iIndependent
+		
 		pPlayer = gc.getPlayer(iPlayer)
 		lDefenderList = [con.iInfantry, con.iMachineGun, con.iRifleman, con.iLongbowman, con.iCrossbowman, con.iArcher, con.iWarrior]
 		

@@ -848,7 +848,7 @@ def cancelDefensivePacts(iPlayer, lDefensivePactCivs):
 		if lDeals: 
 			lDeals[0].kill()
 		else:
-			utils.debugTextPopup('No appropriate deals found.')
+			#utils.debugTextPopup('No appropriate deals found.')
 			continue
 			
 		pOtherPlayer.AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, utils.getTurns(10))
@@ -877,7 +877,7 @@ def cancelVassals(iPlayer, lVassals, bCapitulated):
 		if lDeals: 
 			lDeals[0].kill()
 		else:
-			utils.debugTextPopup('No appropriate deals found.')
+			#utils.debugTextPopup('No appropriate deals found.')
 			continue
 		
 		pOtherPlayer.AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, utils.getTurns(10))
