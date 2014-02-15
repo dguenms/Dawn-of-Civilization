@@ -298,7 +298,7 @@ class StoredData:
 	def getGlobalWarDefender(self):
 		return self.scriptDict['iGlobalWarDefender']
 		
-	def setGlobalWarDefender(self):
+	def setGlobalWarDefender(self, iNewValue):
 		self.scriptDict['iGlobalWarDefender'] = iNewValue
 		
 	def getCongressTurns(self):
