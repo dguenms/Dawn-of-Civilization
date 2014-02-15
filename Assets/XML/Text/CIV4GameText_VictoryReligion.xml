@@ -156,28 +156,38 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_CON2</Tag>
-		<English>Ritual: Control the Confucian and Taoist shrines and combine their income to 40 gold</English>
-		<German>Ritual: Kontrollieren Sie den konfuzianistischen und taoistischen Schrein und kombinieren Sie ihr Einkommen zu 40 Gold</German>
+		<English>Ritual: Have five wonders in the Confucian holy city</English>
+		<German>Ritual: Haben Sie fünf Wunder in der konfuzianistischen heiligen Stadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_CON3</Tag>
-		<English>Five Classics: Settle five great people in the Confucian holy city</English>
-		<German>Fünf Klassiker: Siedeln Sie fünf große Persönlichkeiten in der konfuzianistischen heiligen Stadt an</German>
+		<English>Loyalty: Control an army of 200 non-obsolete melee or gunpowder units</English>
+		<German>Loyalität: Kontrollieren Sie eine Armee as 200 nicht-veralteten Nahkampf- oder Schießpulver-Einheiten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1</Tag>
-		<English>Virtue: Make sure there are at least two other Taoist civilizations</English>
-		<German>Tugend: Stellen Sie sicher, dass es mindestens zwei anderen taoistische Zivilisationen gibt</German>
+		<English>Compassion: Have the highest life expectancy rating in the world for 100 turns</English>
+		<German>Mitgefühl: Haben Sie 100 Runden lang die höchste Lebenserwartung in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_TAO1_EPIC</Tag>
+		<English>Compassion: Have the highest life expectancy rating in the world for 150 turns</English>
+		<German>Mitgefühl: Haben Sie 150 Runden lang die höchste Lebenserwartung in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_TAO1_MARATHON</Tag>
+		<English>Compassion: Have the highest life expectancy rating in the world for 300 turns</English>
+		<German>Mitgefühl: Haben Sie 300 Runden lang die höchste Lebenserwartung in der Welt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO2</Tag>
-		<English>Three Treasures: Have three wonders in the Taoist holy city</English>
-		<German>Drei Schätze: Haben Sie drei Wunder in der taoistischen heiligen Stadt</German>
+		<English>Moderation: Control the Confucian and Taoist shrines and combine their income to 40 gold</English>
+		<German>Mäßigung: Kontrollieren Sie den konfuzianistischen und den taoistischen Schrein und kombinieren Sie ihr Einkommen zu 40 Gold</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO3</Tag>
-		<English>Immortality: Have legendary culture in the Taoist holy city</English>
-		<German>Unsterblichkeit: Haben Sie legendäre Kultur in der taoistischen heiligen Stadt</German>
+		<English>Humility: Have legendary culture in the Taoist holy city</English>
+		<German>Bescheidenheit: Haben Sie legendäre Kultur in der taoistischen heiligen Stadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_ZOR1</Tag>

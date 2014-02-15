@@ -56,8 +56,8 @@ def isCongressEnabled():
 	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iUnitedNations).getBuildingClassType()) > 0:
 		return False
 		
-	if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
-		return False
+	#if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
+	#	return False
 		
 	return (gc.getGame().countKnownTechNumTeams(iNationalism) > 0)
 
@@ -610,6 +610,12 @@ class Congress:
 			bMinor = (iOwner >= iNumPlayers)
 			bOwnCity = (iOwner == iVoter)
 			
+		sDebugText = 'Vote City AI Debug\nVoter: ' + gc.getPlayer(iVoter).getCivilizationShortDescription(0) + '\nClaimant: ' + gc.getPlayer(iClaimant).getCivilizationShortDescription(0)
+		if bCity: sDebugText += '\nCity claim: ' + city.getName()
+		if bOwner: sDebugText += '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0)
+		
+		print sDebugText
+			
 		# player factors
 		if bOwner and not bMinor and not bOwnCity and not bOwnClaim:
 			# player rank
@@ -704,6 +710,12 @@ class Congress:
 			# core area
 			if plot.isCore(iClaimant): iClaimValidity += 10
 			if plot.isCore(iOwner): iClaimValidity -= 15
+			
+		sDebugText = 'FavorClaimant: ' + str(iFavorClaimant)
+		sDebugText += '\nFavorOwner: ' + str(iFavorOwner)
+		sDebugText += '\nClaim Validity: ' + str(iClaimValidity)
+		
+		print sDebugText + '\n'
 				
 		bThreatenedClaimant = (2 * tVoter.getPower(True) < gc.getTeam(iClaimant).getPower(True))
 		if bOwner: bThreatenedOwner = (2 * tVoter.getPower(True) < gc.getTeam(iOwner).getPower(True))
@@ -711,26 +723,31 @@ class Congress:
 		# always vote for claims on empty territory unless claim is invalid
 		if not bOwner:
 			if iClaimValidity >= 0:
+				print 'Voted YES: empty territory'
 				self.vote(iVoter, iClaimant, 1)
 				return
 		
 		# always vote for own claims unless threatened by owner
 		if bOwnClaim:
 			if not bOwner or not bThreatenedOwner:
+				print 'Voted YES: own claim'
 				self.vote(iVoter, iClaimant, 1)
 				return
 				
 		# always vote against claims on own cities unless threatened by owner
 		if bOwner and bOwnCity:
 			if not bThreatenedClaimant:
+				print 'Voted NO: claim on own city'
 				self.vote(iVoter, iClaimant, -1)
 				return
 				
 		# vote to assing minor cities if there is a valid claim
 		if bOwner and bMinor:
 			if iClaimValidity > 0:
+				print 'Voted YES: valid claim on minors'
 				self.vote(iVoter, iClaimant, 1)
 			else:
+				print 'Voted NO: invalid claim on minors'
 				self.vote(iVoter, iClaimant, -1)
 			return
 			
@@ -738,29 +755,38 @@ class Congress:
 		if iClaimValidity > 0:
 			# claim insufficient to overcome dislike
 			if iFavorClaimant + iClaimValidity < iFavorOwner:
+				print 'Voted NO: claimant favor and validity lower than owner favor'
 				self.vote(iVoter, iClaimant, -1)
 			# valid claim and claimant is more liked
 			elif iFavorClaimant > iFavorOwner:
+				print 'Voted YES: claimant favor higher than owner favor'
 				self.vote(iVoter, iClaimant, 1)
 			# less liked, but justified by claim
 			elif iFavorClaimant + iClaimValidity > iFavorOwner:
 				# human can bribe on a close call if own claim or own city
 				if (iClaimant == utils.getHumanID() or (bOwner and iOwner == utils.getHumanID())) and iClaimValidity < 50:
 					# return the relevant data to be added to the list of possible bribes in the calling method
+					print 'NO VOTE: open for bribes'
 					return (iVoter, iClaimant, tPlot, iFavorOwner - iFavorClaimant, iClaimValidity)
 				else:
 					iRand = gc.getGame().getSorenRandNum(50, 'Random vote outcome')
 					if iRand < iClaimValidity:
+						print 'Voted YES: random'
 						self.vote(iVoter, iClaimant, 1)
 					else:
+						print 'Voted NO: random'
 						self.vote(iVoter, iClaimant, -1)
 				
 		else:
 			# like them enough to overcome bad claim
 			if iFavorClaimant + iClaimValidity > iFavorOwner:
+				print 'Voted YES: likes claimant enough despite bad claim'
 				self.vote(iVoter, iClaimant, 1)
 			else:
+				print 'Voted NO: bad claim'
 				self.vote(iVoter, iClaimant, -1)
+				
+		print '\nEND VOTE CITY AI'
 				
 		# return none to signify that no bribe is possible
 		return None

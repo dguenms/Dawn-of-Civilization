@@ -677,6 +677,14 @@
 		<English>Gold from piracy: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HEALTH_TURNS</Tag>
+		<English>Turns with highest life expectancy rating: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_NUM_UNITS</Tag>
+		<English>Number of melee and archery units: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_</Tag>
 		<English></English>
 	</TEXT>

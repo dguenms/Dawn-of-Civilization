@@ -2490,6 +2490,11 @@ class Victory:
 				if lApprovalList.index(iHighestEntry) == iPlayer:
 					sd.changeBuddhistHappinessTurns(1)
 					
+			if iVictoryType == con.iVictoryTaoism:
+				lLifeExpectancyList = [utils.getLifeExpectancyRating(i) for i in range(con.iNumPlayers)]
+				if utils.getHighestIndex(lLifeExpectancyList) == iPlayer:
+					sd.changeTaoistHealthTurns(1)
+					
 			if iVictoryType == con.iVictoryPolytheism:
 				iReligionCities = 0
 				cityList = utils.getCityList(iPlayer)
@@ -3709,7 +3714,38 @@ class Victory:
 						
 				if iFriendlyCivs >= 5: return 1
 				
-			# Second Confucian goal: control the Confucian and Taoist shrine and combine their income to 40 gold
+			# Second Confucian goal: have five wonders in the Confucian holy city
+			elif iGoal == 1:
+				iCount = 0
+				holyCity = gc.getGame().getHolyCity(con.iConfucianism)
+				for iBuilding in range(con.iPyramid, con.iNumBuildings):
+					if iBuilding == con.iOlympicPark: continue
+					
+					if holyCity.isHasRealBuilding(iBuilding): iCount += 1
+					
+				if holyCity.getOwner() == iPlayer and iCount >= 5: return 1
+				
+			# Third Confucian goal: control an army of 200 non-obsolete melee or gunpowder units
+			elif iGoal == 2:
+				iCount = 0
+				iUnitCombatMelee = gc.getInfoTypeForString("UNITCOMBAT_MELEE")
+				iUnitCombatGunpowder = gc.getInfoTypeForString("UNITCOMBAT_GUN")
+				for iUnit in range(con.iNumUnits):
+					if pPlayer.canTrain(iUnit, False, False):
+						iUnitCombatType = gc.getUnitInfo(iUnit).getUnitCombatType()
+						if iUnitCombatType in [iUnitCombatMelee, iUnitCombatGunpowder]:
+							iUnitClass = gc.getUnitInfo(iUnit).getUnitClassType()
+							iCount += pPlayer.getUnitClassCount(iUnitClass)
+							
+				if iCount >= 200: return 1
+				
+		elif iVictoryType == con.iTaoism:
+		
+			# First Taoist goal: have the highest life expectancy in the world for 100 turns
+			if iGoal == 0:
+				if sd.getTaoistHealthTurns() >= utils.getTurns(100): return 1
+				
+			# Second Taoist goal: control the Confucian and Taoist shrine and combine their income to 40 gold
 			elif iGoal == 1:
 				bConfucianShrine = pPlayer.countNumBuildings(con.iConfucianShrine) > 0
 				bTaoistShrine = pPlayer.countNumBuildings(con.iTaoistShrine) > 0
@@ -3722,38 +3758,6 @@ class Victory:
 				iTaoistIncome = min(iThreshold, gc.getGame().countReligionLevels(con.iTaoism))
 				
 				if bConfucianShrine and bTaoistShrine and iConfucianIncome + iTaoistIncome >= 40: return 1
-				
-			# Third Confucian goal: settle five great people in the Confucian holy city
-			elif iGoal == 2:
-				iCount = 0
-				for iGreatPerson in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iSpecialistGreatSpy]:
-					iCount += gc.getGame().getHolyCity(con.iConfucianism).getFreeSpecialistCount(iGreatPerson)
-					
-				if iCount >= 5: return 1
-				
-		elif iVictoryType == con.iTaoism:
-		
-			# First Taoist goal: make sure at least two other civilizations have Taoism as state religion
-			if iGoal == 0:
-				iCount = 0
-				for iLoopPlayer in range(con.iNumPlayers):
-					if iLoopPlayer == iPlayer: continue
-					
-					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iTaoism:
-						iCount += 1
-						
-				if iCount >= 2: return 1
-				
-			# Second Taoist goal: have three wonders in the Tao holy city
-			elif iGoal == 1:
-				iCount = 0
-				holyCity = gc.getGame().getHolyCity(con.iTaoism)
-				for iBuilding in range(con.iPyramid, con.iNumBuildings):
-					if iBuilding == con.iOlympicPark: continue
-					
-					if holyCity.isHasRealBuilding(iBuilding): iCount += 1
-					
-				if holyCity.getOwner() == iPlayer and iCount >= 3: return 1
 				
 			# Third Taoist goal: have legendary culture in the Tao holy city
 			elif iGoal == 2:
@@ -4417,6 +4421,29 @@ class Victory:
 						iFriendlyCivs += 1
 				aHelp.append(self.getIcon(iFriendlyCivs >= 5) + localText.getText("TXT_KEY_VICTORY_FRIENDLY_CIVS", (iFriendlyCivs, 5)))
 			elif iGoal == 1:
+				iCount = 0
+				holyCity = gc.getGame().getHolyCity(con.iConfucianism)
+				for iBuilding in range(con.iPyramid, con.iNumBuildings):
+					if iBuilding == con.iOlympicPark: continue
+					if holyCity.isHasRealBuilding(iBuilding): iCount += 1
+				aHelp.append(self.getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_HOLY_CITY_WONDERS", (holyCity.getName(), iCount, 3)))
+			elif iGoal == 2:
+				iCount = 0
+				iUnitCombatMelee = gc.getInfoTypeForString("UNITCOMBAT_MELEE")
+				iUnitCombatGunpowder = gc.getInfoTypeForString("UNITCOMBAT_GUN")
+				for iUnit in range(con.iNumUnits):
+					if pPlayer.canTrain(iUnit, False, False):
+						iUnitCombatType = gc.getUnitInfo(iUnit).getUnitCombatType()
+						if iUnitCombatType in [iUnitCombatMelee, iUnitCombatGunpowder]:
+							iUnitClass = gc.getUnitInfo(iUnit).getUnitClassType()
+							iCount += pPlayer.getUnitClassCount(iUnitClass)
+				aHelp.append(self.getIcon(iCount >= 200) + localText.getText("TXT_KEY_VICTORY_CONTROL_NUM_UNITS", (iCount, 200)))
+							
+		elif iVictoryType == con.iTaoism:
+			if iGoal == 0:
+				iHealthTurns = sd.getTaoistHealthTurns()
+				aHelp.append(self.getIcon(iHealthTurns >= utils.getTurns(100)) + localText.getText("TXT_KEY_VICTORY_HEALTH_TURNS", (iHealthTurns, utils.getTurns(100))))
+			elif iGoal == 1:
 				bConfucianShrine = pPlayer.countNumBuildings(con.iConfucianShrine) > 0
 				bTaoistShrine = pPlayer.countNumBuildings(con.iTaoistShrine) > 0
 				
@@ -4427,27 +4454,6 @@ class Victory:
 				iConfucianIncome = min(iThreshold, gc.getGame().countReligionLevels(con.iConfucianism))
 				iTaoistIncome = min(iThreshold, gc.getGame().countReligionLevels(con.iTaoism))
 				aHelp.append(self.getIcon(bConfucianShrine) + localText.getText("TXT_KEY_BUILDING_CONFUCIAN_SHRINE", ()) + ' ' + self.getIcon(bTaoistShrine) + localText.getText("TXT_KEY_BUILDING_TAOIST_SHRINE", ()) + ' ' + self.getIcon(iConfucianIncome + iTaoistIncome >= 40) + localText.getText("TXT_KEY_VICTORY_CHINESE_SHRINE_INCOME", (iConfucianIncome + iTaoistIncome, 40)))
-			elif iGoal == 2:
-				iCount = 0
-				for iGreatPerson in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iSpecialistGreatSpy]:
-					iCount += gc.getGame().getHolyCity(con.iConfucianism).getFreeSpecialistCount(iGreatPerson)
-				aHelp.append(self.getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_CITY_GREAT_PEOPLE", (gc.getGame().getHolyCity(con.iConfucianism).getName(), iCount, 5)))
-			
-		elif iVictoryType == con.iTaoism:
-			if iGoal == 0:
-				iCount = 0
-				for iLoopPlayer in range(con.iNumPlayers):
-					if iLoopPlayer == iPlayer: continue
-					if gc.getPlayer(iLoopPlayer).isAlive() and gc.getPlayer(iLoopPlayer).getStateReligion() == con.iTaoism:
-						iCount += 1
-				aHelp.append(self.getIcon(iCount >= 2) + localText.getText("TXT_KEY_VICTORY_TAOIST_CIVS", (iCount, 2)))
-			elif iGoal == 1:
-				iCount = 0
-				holyCity = gc.getGame().getHolyCity(con.iTaoism)
-				for iBuilding in range(con.iPyramid, con.iNumBuildings):
-					if iBuilding == con.iOlympicPark: continue
-					if holyCity.isHasRealBuilding(iBuilding): iCount += 1
-				aHelp.append(self.getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_HOLY_CITY_WONDERS", (holyCity.getName(), iCount, 3)))
 			elif iGoal == 2:
 				holyCity = gc.getGame().getHolyCity(con.iTaoism)
 				aHelp.append(self.getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + self.getIcon(holyCity.getCultureLevel() >= 6) + localText.getText("TXT_KEY_VICTORY_LEGENDARY_CULTURE_CITY", (holyCity.getName(),)))
