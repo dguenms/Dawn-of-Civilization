@@ -1286,10 +1286,10 @@ class RiseAndFall:
                 #        self.collapseGeneric(iGameTurn)
                 #if (iGameTurn >= getTurnForYear(-2000) and iGameTurn % utils.getTurns(13) == 7): #used to be 8 in vanilla, because we must give some time for vassal states to form
                 #        self.collapseMotherland(iGameTurn)
-                if (iGameTurn > getTurnForYear(300) and iGameTurn % utils.getTurns(10) == 6):
-                        self.secession(iGameTurn)
+                #if (iGameTurn > getTurnForYear(300) and iGameTurn % utils.getTurns(10) == 6):
+                #        self.secession(iGameTurn)
 
-		if iGameTurn % utils.getTurns(15) == 10:
+		if iGameTurn % utils.getTurns(10) == 5:
 			sta.checkResurrection(iGameTurn)
 			
 		# Leoreth: check for scripted rebirths

@@ -1689,7 +1689,7 @@ def checkResurrection(iGameTurn):
 			iMinNumCities = 1
 			
 		# check if only recently died
-		if iGameTurn - getLastTurnAlive(iLoopCiv) < utils.getTurns(20): continue
+		if iGameTurn - getLastTurnAlive(iLoopCiv) < utils.getTurns(10): continue
 		
 		# check if the civ can be reborn at this date
 		if len(con.tResurrectionIntervals[iLoopCiv]) > 0:
@@ -1786,18 +1786,18 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 					lFlippingCities.append(city)
 				continue
 		
-			# owner stability below -10: city always flips
+			# owner stability below shaky: city always flips
 			if iOwnerStability < con.iStabilityShaky:
 				lFlippingCities.append(city)
 				
-			# owner stability below 10: city flips if far away from their capital, or is capital spot of the dead civ
+			# owner stability below stable: city flips if far away from their capital, or is capital spot of the dead civ
 			elif iOwnerStability < con.iStabilityStable:
 				ownerCapital = gc.getPlayer(iOwner).getCapitalCity()
 				iDistance = utils.calculateDistance(city.getX(), city.getY(), ownerCapital.getX(), ownerCapital.getY())
 				if bCapital or iDistance >= 8:
 					lFlippingCities.append(city)
 				
-			# owner stability below 20: only capital spot flips
+			# owner stability below solid: only capital spot flips
 			elif iOwnerStability < con.iStabilitySolid:
 				if bCapital:
 					lFlippingCities.append(city)

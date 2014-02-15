@@ -124,6 +124,7 @@ class StoredData:
 				    'iFirstIndustrial' : -1,
 				    'iFirstModern' : -1,
 				    'iMoorishGold' : 0,
+				    'iTaoistHealthTurns' : 0,
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
@@ -287,6 +288,15 @@ class StoredData:
 		
 	def changeMoorishGold(self, iChange):
 		self.scriptDict['iMoorishGold'] += iChange
+		
+	def getTaoistHealthTurns(self, iChange):
+		return self.scriptDict['iTaoistHealthTurns']
+	
+	def setTaoistHealthTurns(self, iNewValue):
+		self.scriptDict['iTaoistHealthTurns'] = iNewValue
+		
+	def changeTaoistHealthTurns(self, iChange):
+		self.scriptDict['iTaoistHealthTurns'] += iNewValue
 		
 	# Congresses
 	def getGlobalWarAttacker(self):

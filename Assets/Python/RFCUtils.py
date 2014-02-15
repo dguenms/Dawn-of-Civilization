@@ -1770,6 +1770,16 @@ class RFCUtils:
 		
 		return (iHappy * 100) / max(1, iHappy + iUnhappy)
 		
+	def getLifeExpectancyRating(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		
+		if not pPlayer.isAlive(): return 0
+		
+		iHealthy = pPlayer.calculateTotalCityHealthiness()
+		iUnhealthy = pPlayer.calculateTotalCityUnhealthiness()
+		
+		return (iHealthy * 100) / max(1, iHealthy + iUnhealthy)
+		
 	# Leoreth: Byzantine UP: bribe barbarian units
 	def doByzantineBribery(self, spy):
 		localText = CyTranslator()

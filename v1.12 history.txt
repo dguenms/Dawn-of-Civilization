@@ -112,12 +112,12 @@
 	   - Middle Way: have cautious or better relations with all civilizations
 	# Confucianism
 	   - Harmony: have friendly relations with five civilizations
-	   - Ritual: control the Confucian and Taoist shrine and combine their income to 40 gold
-	   - Five Classics: settle five great people in the Confucian holy city
+	   - Ritual: have five wonders in the Confucian holy city
+	   - Loyalty: control an army of 200 non-obsolete melee or gunpowder units
 	# Taoism
-	   - Virtue: make sure there are two other Taoist civilizations
-	   - Three Treasures: build three wonders in the Taoist holy city
-	   - Immortality: have legendary culture in the Taoist holy city
+	   - Compassion: have the highest life expectancy rating in the world for 100 turns
+	   - Moderation: control the Confucian and Taoist shrines and combine their income to 40 gold
+	   - Humility: have legendary culture in the Taoist holy city
 	# Zoroastrianism
 	   - Adar: acquire six incense resources
 	   - Mathra: spread Zoroastrianism to 20%
@@ -226,3 +226,4 @@
 	# significantly improved performance
 	# if an AI civ is undecided on your claim, or on a claim on one of your cities, you can attempt to influence them using gold or espionage
 	# city assignments by the congress can be refused, which might lead to war against the supporting civilizations
+# the Pyramids now also increase worker speed by 25%
