@@ -11480,15 +11480,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Leoreth: corporation commerce modifier
 	if (kCivic.getCorporationCommerceModifier() != 0)
 	{
-		GC.getGameINLINE().logMsg("Begin AI corporation commerce modifier.");
-
 		int iCorpCount = 0;
 		for (int iCorp = 0; iCorp < GC.getNumCorporationInfos(); ++iCorp)
 		{
 			iCorpCount += countCorporations((CorporationTypes)iCorp);
 		}
 		iValue += ((kCivic.getCorporationCommerceModifier() * iCorpCount) / 5);
-		GC.getGameINLINE().logMsg("End AI corporation commerce modifier.");
 	}
 
 	if (kCivic.getCivicPercentAnger() != 0)

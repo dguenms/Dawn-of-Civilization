@@ -502,7 +502,7 @@ def secedeCities(iPlayer, lCities):
 			iOriginalOwner = city.getOriginalOwner()
 			if cityPlot.getSettlerMapValue(iOriginalOwner) >= 90 and gc.getPlayer(iOriginalOwner).isAlive() and iOriginalOwner != iPlayer and utils.getHumanID() != iOriginalOwner:
 				if iOriginalOwner < con.iNumPlayers and iGameTurnYear < con.tFall[iOriginalOwner]:
-					# cities lost too long ago doesn't return
+					# cities lost too long ago don't return
 					if city.getGameTurnPlayerLost(iOriginalOwner) >= gc.getGame().getGameTurn() - utils.getTurns(50):
 						iClaim = iOriginalOwner
 						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: original owner.')
@@ -515,11 +515,13 @@ def secedeCities(iPlayer, lCities):
 				if iGameTurnYear < con.tBirth[iLoopPlayer]: continue
 				if iGameTurnYear > con.tFall[iLoopPlayer]: continue
 				if gc.getPlayer(iLoopPlayer).isAlive():
-					iCulturePercent = 100 * cityPlot.getCulture(iLoopPlayer) / cityPlot.countTotalCulture()
-					if iCulturePercent >= 75:
-						iClaim = iLoopPlayer
-						utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: culture.')
-						break
+					iTotalCulture = cityPlot.countTotalCulture()
+					if iTotalCulture > 0:
+						iCulturePercent = 100 * cityPlot.getCulture(iLoopPlayer) / cityPlot.countTotalCulture()
+						if iCulturePercent >= 75:
+							iClaim = iLoopPlayer
+							utils.debugTextPopup('Secede ' + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ' ' + city.getName() + ' to ' + gc.getPlayer(iClaim).getCivilizationShortDescription(0) + '.\nReason: culture.')
+							break
 						
 		# claim based on war target (needs to be winning the war based on war success)
 		if iClaim == -1:
@@ -1673,6 +1675,8 @@ def getLastTurnAlive(iPlayer):
 
 def checkResurrection(iGameTurn):
 
+	print '\nCheck resurrection'
+
 	iNationalismModifier = min(20, 4 * utils.getCivsWithNationalism())
 	
 	iRand = gc.getGame().getSorenRandNum(con.iNumPlayers, 'random starting civ')
@@ -1683,6 +1687,11 @@ def checkResurrection(iGameTurn):
 		iLoopCiv = i % con.iNumPlayers
 		bPossible = False
 		iMinNumCities = 2
+		
+		# only dead civ need to check for resurrection
+		if gc.getPlayer(iLoopCiv).isAlive(): continue
+		
+		print 'Check ' + gc.getPlayer(iLoopCiv).getCivilizationShortDescription(0)
 		
 		# special case Netherlands: need only one city to respawn (Amsterdam)
 		if iLoopCiv == con.iNetherlands:
@@ -1714,12 +1723,16 @@ def checkResurrection(iGameTurn):
 		# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
 		if iLoopCiv == con.iIndia and gc.getPlayer(con.iMughals).isAlive(): bPossible = False
 		
+		if bPossible: print 'Possible.'
+		
 		if bPossible and not gc.getPlayer(iLoopCiv).isAlive() and iGameTurn > utils.getLastTurnAlive(iLoopCiv) + utils.getTurns(20):
 			if con.tRebirth[iLoopCiv] == -1:
 				iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll')
-				if iRespawnRoll + iNationalismModifier - 10 >= con.tResurrectionProb[iLoopCiv]:
+				if iRespawnRoll - iNationalismModifier + 10 < con.tResurrectionProb[iLoopCiv]:
+					print 'Passed respawn roll'
 					lCityList = getResurrectionCities(iLoopCiv)
 					if len(lCityList) >= iMinNumCities:
+						print 'Enough cities -> doResurrection()'
 						doResurrection(iLoopCiv, lCityList)
 						return
 						
