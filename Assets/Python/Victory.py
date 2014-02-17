@@ -2490,7 +2490,7 @@ class Victory:
 				if lApprovalList.index(iHighestEntry) == iPlayer:
 					sd.changeBuddhistHappinessTurns(1)
 					
-			if iVictoryType == con.iVictoryTaoism:
+			if iVictoryType == con.iTaoism:
 				lLifeExpectancyList = [utils.getLifeExpectancyRating(i) for i in range(con.iNumPlayers)]
 				if utils.getHighestIndex(lLifeExpectancyList) == iPlayer:
 					sd.changeTaoistHealthTurns(1)
