@@ -79,6 +79,7 @@ class StoredData:
 				    'iGlobalWarDefender': -1,
 				    'iCongressTurns': 0,
 				    'iCivsWithNationalism': 0,
+				    'currentCongress': None,
 				    #------------Plague
                                     'lPlagueCountdown': [0 for i in range(con.iNumTotalPlayersB)], #total players + barbarians
                                     'lGenericPlagueDates': [-1, -1, -1, -1],# -1],
@@ -319,6 +320,12 @@ class StoredData:
 		
 	def changeCongressTurns(self, iChange):
 		self.scriptDict['iCongressTurns'] += iChange
+		
+	def getCurrentCongress(self):
+		return self.scriptDict['currentCongress']
+		
+	def setCurrentCongress(self, congress):
+		self.scriptDict['currentCongress'] = congress
 		
 # All modules import the following single instance, not the class
 
