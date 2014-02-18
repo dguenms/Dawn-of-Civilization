@@ -1665,22 +1665,22 @@ def getCityName(self, argsList):
 		return result
 		
 def applyClaimCityEvent(argsList):
-	cong.currentCongress.applyClaimCityEvent(argsList[0])
+	sd.getCurrentCongress().applyClaimCityEvent(argsList[0])
 	
 def applyVoteCityEvent(argsList):
-	cong.currentCongress.applyVoteCityEvent(argsList[1], argsList[2], argsList[0])
+	sd.getCurrentCongress().applyVoteCityEvent(argsList[1], argsList[2], argsList[0])
 	
 def applyIntroductionEvent(argsList):
-	cong.currentCongress.applyIntroductionEvent()
+	sd.getCurrentCongress().applyIntroductionEvent()
 	
 def applyRefusalEvent(argsList):
-	cong.currentCongress.applyRefusalEvent(argsList[0], argsList[1], argsList[2])
+	sd.getCurrentCongress().applyRefusalEvent(argsList[0], argsList[1], argsList[2])
 	
 def applyBriberyEvent(argsList):
-	cong.currentCongress.applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])
+	sd.getCurrentCongress().applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])
 	
 def applyBriberyResultEvent(argsList):
-	cong.currentCongress.applyBriberyResultEvent()
+	sd.getCurrentCongress().applyBriberyResultEvent()
 
 
 #######################################################################################

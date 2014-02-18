@@ -37,6 +37,7 @@ def checkTurn(iGameTurn):
 		if sd.getCongressTurns() == 0:
 			sd.setCongressTurns(utils.getTurns(iCongressInterval))
 			currentCongress = Congress()
+			sd.setCurrentCongress(currentCongress)
 			currentCongress.startCongress()
 
 def onChangeWar(argsList):
@@ -56,8 +57,8 @@ def isCongressEnabled():
 	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iUnitedNations).getBuildingClassType()) > 0:
 		return False
 		
-	#if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
-	#	return False
+	if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
+		return False
 		
 	return (gc.getGame().countKnownTechNumTeams(iNationalism) > 0)
 
@@ -89,7 +90,8 @@ def endGlobalWar(iAttacker, iDefender):
 		lLosers = lAttackers
 	
 	currentCongress = Congress(lWinners, lLosers)
-	currentCongress.start()
+	sd.setCurrentCongress(currentCongress)
+	currentCongress.startCongress()
 	
 def getNumInvitations():
 	return min(10, gc.getGame().countCivPlayersAlive())
@@ -610,7 +612,7 @@ class Congress:
 			bMinor = (iOwner >= iNumPlayers)
 			bOwnCity = (iOwner == iVoter)
 			
-		sDebugText = 'Vote City AI Debug\nVoter: ' + gc.getPlayer(iVoter).getCivilizationShortDescription(0) + '\nClaimant: ' + gc.getPlayer(iClaimant).getCivilizationShortDescription(0)
+		sDebugText = '\nVote City AI Debug\nVoter: ' + gc.getPlayer(iVoter).getCivilizationShortDescription(0) + '\nClaimant: ' + gc.getPlayer(iClaimant).getCivilizationShortDescription(0)
 		if bCity: sDebugText += '\nCity claim: ' + city.getName()
 		if bOwner: sDebugText += '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0)
 		
@@ -657,6 +659,11 @@ class Congress:
 		# plot culture
 		if bOwner:
 			iClaimValidity += (100 * plot.getCulture(iClaimant) / plot.countTotalCulture()) / 20
+			
+		# generic settler map bonus
+		iClaimantValue = plot.getSettlerMapValue(iClaimant)
+		if iClaimantValue >= 90:
+			iClaimValidity += max(1, iClaimantValue / 100)
 
 		# Europeans support colonialism unless they want the plot for themselves
 		if iVoter in lCivGroups[0]:
@@ -786,7 +793,7 @@ class Congress:
 				print 'Voted NO: bad claim'
 				self.vote(iVoter, iClaimant, -1)
 				
-		print '\nEND VOTE CITY AI'
+		print 'End vote city AI'
 				
 		# return none to signify that no bribe is possible
 		return None
@@ -800,6 +807,7 @@ class Congress:
 		self.startClaimCityEvent()
 		
 	def makeClaimAI(self, iPlayer):
+		if len(self.dPossibleClaims[iPlayer]) == 0: return
 		x, y, iValue = utils.getHighestEntry(self.dPossibleClaims[iPlayer], lambda x: x[2])
 		self.dCityClaims[iPlayer] = (x, y, iValue)
 			
