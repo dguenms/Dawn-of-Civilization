@@ -311,6 +311,9 @@ class Congress:
 			else:
 				self.vote(iBribedPlayer, iClaimant, -1)
 				
+			# to continue the process
+			self.applyBriberyResultEvent()
+				
 	def startBriberyResultEvent(self, iBribedPlayer, iClaimant, bHumanClaim, bSuccess):	
 		if bSuccess:
 			if bHumanClaim:
