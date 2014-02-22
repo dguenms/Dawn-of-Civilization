@@ -789,6 +789,7 @@
 	<ElementType name="bAlwaysHeal" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bHillsDoubleMove" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bImmuneToFirstStrikes" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bNoUpgrade" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iVisibilityChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iMovesChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iMoveDiscountChange" content="textOnly" dt:type="int"/>
@@ -807,6 +808,7 @@
 	<ElementType name="iSameTileHealChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iAdjacentTileHealChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iCombatPercent" content="textOnly" dt:type="int"/>
+	<ElementType name="iExtraUpkeep" content="textOnly" dt:type="int"/>
 	<ElementType name="bUnitCombat" content="textOnly" dt:type="boolean"/>
 	<ElementType name="UnitCombat" content="eltOnly">
 		<element type="UnitCombatType"/>
@@ -850,6 +852,7 @@
 		<element type="bAlwaysHeal"/>
 		<element type="bHillsDoubleMove"/>
 		<element type="bImmuneToFirstStrikes"/>
+		<element type="bNoUpgrade" minOccurs="0"/>
 		<element type="iVisibilityChange"/>
 		<element type="iMovesChange"/>
 		<element type="iMoveDiscountChange"/>
@@ -878,6 +881,7 @@
 		<element type="iPillageChange"/>
 		<element type="iUpgradeDiscount"/>
 		<element type="iExperiencePercent"/>
+		<element type="iExtraUpkeep" minOccurs="0"/>
 		<element type="TerrainAttacks"/>
 		<element type="TerrainDefenses"/>
 		<element type="FeatureAttacks"/>

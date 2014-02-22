@@ -1278,7 +1278,9 @@ class DynamicCivs:
 						return
 			else:
 				if bEmpire:
-					if iEra <= iRenaissance:
+					if iGameTurn < getTurnForYear(con.tBirth[con.iMongolia]):
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SONG")
+					elif iEra <= iRenaissance:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
 					else:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")

@@ -137,7 +137,7 @@ class AIWars:
 		self.spawnConquerors(iRome, iCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeCeltiaYear, 10)
 		self.spawnConquerors(iRome, iEgypt, tRomeEgyptTL, tRomeEgyptBR, 2, iRomeEgyptYear, 10)
 
-		self.spawnConquerors(iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
+		#self.spawnConquerors(iTamils, iIndonesia, tCholaSumatraTL, tCholaSumatraBR, 1, iCholaSumatraYear, 10)
 		
 		self.spawnConquerors(iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 0, iSpainMoorsYear, 10)
 		

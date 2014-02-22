@@ -73,4 +73,19 @@ As a program, scholasticism began as an attempt at harmonization on the part of 
 		<Tag>TXT_KEY_CIVIC_EGALITARIANISM_HELP</Tag>
 		<English>[ICON_BULLET]Unable to Use Slaves[NEWLINE][ICON_BULLET][ICON_UNHAPPY] Penalty for Slaves in Civs without [LINK=literal]Egalitarianism[\LINK]</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_NO_UPGRADE</Tag>
+		<English>[ICON_BULLET]Cannot Be Upgraded</English>
+		<German>[ICON_BULLET]Kann nicht aufgerüstet werden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_EXTRA_UPKEEP_TEXT</Tag>
+		<English>[ICON_BULLET]Costs %d1 [ICON_GOLD] Additional Upkeep</English>
+		<German>[ICON_BULLET]Kostet %d1 [ICON_GOLD] zusätzlichen Unterhalt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCENARIES_HELP</Tag>
+		<English>[ICON_BULLET]Hurried Units Start with the [LINK=literal]Mercenary[\LINK] promotion</English>
+		<German>[ICON_BULLET]Beschleunigte Einheiten starten mit der [LINK=literal]Söldner[\LINK]-Beförderung</German>
+	</TEXT>
 </Civ4GameText>

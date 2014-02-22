@@ -833,6 +833,10 @@ public:
 	void setUnitProduction(UnitTypes eIndex, int iNewValue);								// Exposed to Python
 	void changeUnitProduction(UnitTypes eIndex, int iChange);								// Exposed to Python
 
+	// Leoreth
+	bool isUnitHurried(UnitTypes eIndex) const;
+	void setUnitHurried(UnitTypes eIndex, bool bNewValue);
+
 	int getUnitProductionTime(UnitTypes eIndex) const;														// Exposed to Python
 	void setUnitProductionTime(UnitTypes eIndex, int iNewValue);						// Exposed to Python
 	void changeUnitProductionTime(UnitTypes eIndex, int iChange);						// Exposed to Python
@@ -1249,6 +1253,7 @@ protected:
 	bool* m_pabWorkingPlot;
 	bool* m_pabHasReligion;
 	bool* m_pabHasCorporation;
+	bool* m_pabIsUnitHurried; // Leoreth
 
 	IDInfo* m_paTradeCities;
 

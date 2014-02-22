@@ -483,6 +483,7 @@ public:
 	int getUpgradeDiscount() const;				// Exposed to Python
 	int getExperiencePercent() const;				// Exposed to Python
 	int getKamikazePercent() const;				// Exposed to Python
+	int getExtraUpkeep() const; // Leoreth
 
 	bool isLeader() const;				// Exposed to Python
 	bool isBlitz() const;				// Exposed to Python
@@ -492,6 +493,7 @@ public:
 	bool isAlwaysHeal() const;				// Exposed to Python
 	bool isHillsDoubleMove() const;				// Exposed to Python
 	bool isImmuneToFirstStrikes() const;				// Exposed to Python
+	bool isNoUpgrade() const; // Leoreth
 
 	const TCHAR* getSound() const;				// Exposed to Python
 	void setSound(const TCHAR* szVal);
@@ -555,6 +557,7 @@ protected:
 	int m_iUpgradeDiscount;
 	int m_iExperiencePercent;
 	int m_iKamikazePercent;
+	int m_iExtraUpkeep; // Leoreth
 
 	bool m_bLeader;
 	bool m_bBlitz;
@@ -564,6 +567,7 @@ protected:
 	bool m_bAlwaysHeal;
 	bool m_bHillsDoubleMove;
 	bool m_bImmuneToFirstStrikes;
+	bool m_bNoUpgrade; // Leoreth
 
 	CvString m_szSound;
 

@@ -18250,6 +18250,7 @@ void CvPlayer::doWarnings()
 								bCheckBarbarians = getBugOptionBOOL("Actions__IgnoreHarmlessBarbarians", true, "BUG_IGNORE_HARMLESS_BARBARIANS");
 								bCheckBarbariansInitialized = true;
 							}
+							/* Leoreth: great wall allows barbarians to enter now
 							if (bCheckBarbarians && pUnit->isBarbarian() && pUnit->getDomainType() == DOMAIN_LAND)
 							{
 								CvArea* pArea = pUnit->area();
@@ -18258,7 +18259,7 @@ void CvPlayer::doWarnings()
 									// don't show warning for land-based barbarians when player has Great Wall
 									continue;
 								}
-							}
+							}*/
 // BUG - Ignore Harmless Barbarians - end
 
 							pNearestCity = GC.getMapINLINE().findCity(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), getID(), NO_TEAM, !(pLoopPlot->isWater()));
@@ -25415,10 +25416,16 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 		return DENIAL_NO_GAIN;
 	}
 
-	if (getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY)
+	// don't buy when running Egalitarianism
+	if (getCivics((CivicOptionTypes)2) == CIVIC_EGALITARIANISM)
+	{
+		return DENIAL_NO_GAIN;
+	}
+
+	/*if (getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY)
 	{
 		return DENIAL_UNKNOWN;
-	}
+	}*/
 	
 	/*if ((GC.getUnitInfo(pUnit->getUnitType()).getStateReligion() != GET_PLAYER(ePlayer).getStateReligion()) && (GC.getUnitInfo(pUnit->getUnitType()).getOrStateReligion() != GET_PLAYER(ePlayer).getStateReligion()))
 	{

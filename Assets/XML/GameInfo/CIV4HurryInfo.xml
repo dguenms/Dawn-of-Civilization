@@ -19,7 +19,7 @@
 		<HurryInfo>
 			<Type>HURRY_GOLD_UNITS</Type>
 			<Description>TXT_KEY_HURRY_GOLD_UNITS</Description>
-			<iGoldPerProduction>3</iGoldPerProduction>
+			<iGoldPerProduction>2</iGoldPerProduction>
 			<iProductionPerPopulation>0</iProductionPerPopulation>
 			<bAnger>0</bAnger>
 			<bUnits>1</bUnits>

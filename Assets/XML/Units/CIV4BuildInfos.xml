@@ -45,6 +45,7 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/BuildPavedRoad.dds</Button>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_RAILROAD</Type>
