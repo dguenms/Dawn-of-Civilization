@@ -524,7 +524,12 @@ public:
 																																														
 	int getImmuneToFirstStrikesCount() const;																									
 	void changeImmuneToFirstStrikesCount(int iChange);																				
-																																														
+					
+	// Leoreth
+	int getNoUpgradeCount() const;
+	bool isNoUpgrade() const;
+	void changeNoUpgradeCount(int iChange);
+
 	int getExtraVisibilityRange() const;																						// Exposed to Python					
 	void changeExtraVisibilityRange(int iChange);
 
@@ -605,6 +610,10 @@ public:
 
 	int getKamikazePercent() const;																									// Exposed to Python
 	void changeKamikazePercent(int iChange);
+
+	// Leoreth
+	int getExtraUpkeep() const;
+	void changeExtraUpkeep(int iChange);
 
 	DllExport DirectionTypes getFacingDirection(bool checkLineOfSightProperty) const;
 	void setFacingDirection(DirectionTypes facingDirection);
@@ -808,6 +817,7 @@ protected:
 	int m_iAlwaysHealCount;
 	int m_iHillsDoubleMoveCount;
 	int m_iImmuneToFirstStrikesCount;
+	int m_iNoUpgradeCount; // Leoreth
 	int m_iExtraVisibilityRange;
 	int m_iExtraMoves;
 	int m_iExtraMoveDiscount;
@@ -838,6 +848,7 @@ protected:
 	int m_iBaseCombat;
 	DirectionTypes m_eFacingDirection;
 	int m_iImmobileTimer;
+	int m_iExtraUpkeep; // Leoreth
 
 	bool m_bMadeAttack;
 	bool m_bMadeInterception;

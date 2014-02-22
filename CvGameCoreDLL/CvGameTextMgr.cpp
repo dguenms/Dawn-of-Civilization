@@ -6576,6 +6576,13 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_IMMUNE_FIRST_STRIKES_TEXT"));
 	}
 
+	// Leoreth
+	if (GC.getPromotionInfo(ePromotion).isNoUpgrade())
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_NO_UPGRADE"));
+	}
+
 	for (iI = 0; iI < GC.getNumTerrainInfos(); ++iI)
 	{
 		if (GC.getPromotionInfo(ePromotion).getTerrainDoubleMove(iI))
@@ -6784,6 +6791,13 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 	{
 		szBuffer.append(pcNewline);
 		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_KAMIKAZE_TEXT", GC.getPromotionInfo(ePromotion).getKamikazePercent()));
+	}
+
+	// Leoreth
+	if (GC.getPromotionInfo(ePromotion).getExtraUpkeep() != 0)
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_EXTRA_UPKEEP_TEXT", GC.getPromotionInfo(ePromotion).getExtraUpkeep()));
 	}
 
 	for (iI = 0; iI < GC.getNumTerrainInfos(); ++iI)

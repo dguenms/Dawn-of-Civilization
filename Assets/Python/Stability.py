@@ -1227,10 +1227,10 @@ def calculateStability(iPlayer):
 			if tPlayer.isOpenBorders(iLoopPlayer):
 				if bMercantilism:
 					if pLoopPlayer.getEconomyHistory(iGameTurn) > iCurrentCommerce:
-						iEconomicSystemStability -= 3
+						iEconomicSystemStability -= 2
 				if bCentralPlanning:
 					if pLoopPlayer.getCivics(3) == con.iCivicFreeMarket:
-						iEconomicSystemStability -= 3
+						iEconomicSystemStability -= 2
 						
 	#if iEconomicSystemStability != 0:
 	#	if bMercantilism:
@@ -1250,8 +1250,10 @@ def calculateStability(iPlayer):
 	iHappinessStability = 0
 	
 	if iNumTotalCities > 0:
-		iHappinessStability += min(iNumTotalCities, 5 * iHappyCities / iNumTotalCities)
-		iHappinessStability -= min(iNumTotalCities, 10 * iUnhappyCities / iNumTotalCities)
+		if iHappyCities > iUnhappyCities:
+			iHappinessStability += min(iNumTotalCities, 5 * (iHappyCities - iUnhappyCities) / iNumTotalCities)
+		else:
+			iHappinessStability -= min(iNumTotalCities, 10 * (iUnhappyCities - iHappyCities) / iNumTotalCities)
 	
 	#utils.debugTextPopup(pPlayer.getCivilizationShortDescription(0) + ' happiness stability: ' + str(iHappinessStability) + '\nHappy cities: ' + str(iHappyCities) + '\nUnhappy cities: ' + str(iUnhappyCities) + '\nTotal cities: ' + str(iNumTotalCities))
 	

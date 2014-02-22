@@ -3515,13 +3515,14 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 2;
 
 	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
-		iValue += 2;
-	//Rhye - end
-
-	if (getID() == MUGHALS && pCity->getOwner() >= NUM_MAJOR_PLAYERS && pCity->getRegionID() == REGION_PERSIA)
 	{
-		return -1;
+		// Leoreth: the AI has to follow expansion patterns when picking independent cities as targets
+		if (isMinorCiv() || pCity->plot()->getSettlerMapValue(getID()) >= 90 || pCity->plot()->getWarMapValue(getID()) > 0)
+		{
+			iValue += 2;
+		}
 	}
+	//Rhye - end
 
 	if (getID() == FRANCE && pCity->getX() == 69 && pCity->getY() == 52 && pCity->getOwner() >= NUM_MAJOR_PLAYERS)
 	{
@@ -3530,7 +3531,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 
 	if (!bIgnoreAttackers)
 	{
-	iValue += AI_adjacentPotentialAttackers(pCity->plot());
+		iValue += AI_adjacentPotentialAttackers(pCity->plot());
 	}
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)

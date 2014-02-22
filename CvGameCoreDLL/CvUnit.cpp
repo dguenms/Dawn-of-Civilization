@@ -170,6 +170,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	GET_PLAYER(getOwnerINLINE()).changeUnitClassCount(((UnitClassTypes)(m_pUnitInfo->getUnitClassType())), 1);
 
 	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(m_pUnitInfo->getExtraCost());
+	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(getExtraUpkeep()); // Leoreth
 
 	if (m_pUnitInfo->getNukeRange() != -1)
 	{
@@ -408,6 +409,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iAlwaysHealCount = 0;
 	m_iHillsDoubleMoveCount = 0;
 	m_iImmuneToFirstStrikesCount = 0;
+	m_iNoUpgradeCount = 0; // Leoreth
 	m_iExtraVisibilityRange = 0;
 	m_iExtraMoves = 0;
 	m_iExtraMoveDiscount = 0;
@@ -435,6 +437,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iUpgradeDiscount = 0;
 	m_iExperiencePercent = 0;
 	m_iKamikazePercent = 0;
+	m_iExtraUpkeep = 0;
 	m_eFacingDirection = DIRECTION_SOUTH;
 	m_iImmobileTimer = 0;
 
@@ -729,6 +732,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	GET_PLAYER(getOwnerINLINE()).changeUnitClassCount((UnitClassTypes)m_pUnitInfo->getUnitClassType(), -1);
 
 	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(-(m_pUnitInfo->getExtraCost()));
+	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(-getExtraUpkeep()); // Leoreth
 
 	if (m_pUnitInfo->getNukeRange() != -1)
 	{
@@ -7170,6 +7174,12 @@ bool CvUnit::canUpgrade(UnitTypes eUnit, bool bTestVisible) const
 		return false;
 	}
 
+	// Leoreth
+	if (isNoUpgrade())
+	{
+		return false;
+	}
+
 	if (!bTestVisible)
 	{
 		if (GET_PLAYER(getOwnerINLINE()).getGold() < upgradePrice(eUnit))
@@ -10758,6 +10768,24 @@ void CvUnit::changeImmuneToFirstStrikesCount(int iChange)
 }
 
 
+// Leoreth
+int CvUnit::getNoUpgradeCount() const
+{
+	return m_iNoUpgradeCount;
+}
+
+void CvUnit::changeNoUpgradeCount(int iChange)
+{
+	m_iNoUpgradeCount += iChange;
+	FAssert(getNoUpgradeCount() >= 0)
+}
+
+bool CvUnit::isNoUpgrade() const
+{
+	return (getNoUpgradeCount() > 0);
+}
+
+
 int CvUnit::getExtraVisibilityRange() const
 {
 	return m_iExtraVisibilityRange;
@@ -11108,6 +11136,20 @@ void CvUnit::changeKamikazePercent(int iChange)
 		setInfoBarDirty(true);
 	}
 }
+
+
+// Leoreth
+int CvUnit::getExtraUpkeep() const
+{
+	return m_iExtraUpkeep;
+}
+
+void CvUnit::changeExtraUpkeep(int iChange)
+{
+	m_iExtraUpkeep += iChange;
+	GET_PLAYER(getOwnerINLINE()).changeExtraUnitCost(iChange);
+}
+
 
 DirectionTypes CvUnit::getFacingDirection(bool checkLineOfSightProperty) const
 {
@@ -11952,6 +11994,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeAlwaysHealCount((GC.getPromotionInfo(eIndex).isAlwaysHeal()) ? iChange : 0);
 		changeHillsDoubleMoveCount((GC.getPromotionInfo(eIndex).isHillsDoubleMove()) ? iChange : 0);
 		changeImmuneToFirstStrikesCount((GC.getPromotionInfo(eIndex).isImmuneToFirstStrikes()) ? iChange : 0);
+		changeNoUpgradeCount((GC.getPromotionInfo(eIndex).isNoUpgrade()) ? iChange : 0);
 
 		changeExtraVisibilityRange(GC.getPromotionInfo(eIndex).getVisibilityChange() * iChange);
 		changeExtraMoves(GC.getPromotionInfo(eIndex).getMovesChange() * iChange);
@@ -11981,6 +12024,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeExperiencePercent(GC.getPromotionInfo(eIndex).getExperiencePercent() * iChange);
 		changeKamikazePercent((GC.getPromotionInfo(eIndex).getKamikazePercent()) * iChange);
 		changeCargoSpace(GC.getPromotionInfo(eIndex).getCargoChange() * iChange);
+		changeExtraUpkeep(GC.getPromotionInfo(eIndex).getExtraUpkeep() * iChange); // Leoreth
 
 		for (iI = 0; iI < GC.getNumTerrainInfos(); iI++)
 		{
@@ -12105,6 +12149,7 @@ void CvUnit::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iAlwaysHealCount);
 	pStream->Read(&m_iHillsDoubleMoveCount);
 	pStream->Read(&m_iImmuneToFirstStrikesCount);
+	pStream->Read(&m_iNoUpgradeCount); // Leoreth
 	pStream->Read(&m_iExtraVisibilityRange);
 	pStream->Read(&m_iExtraMoves);
 	pStream->Read(&m_iExtraMoveDiscount);
@@ -12132,6 +12177,7 @@ void CvUnit::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iUpgradeDiscount);
 	pStream->Read(&m_iExperiencePercent);
 	pStream->Read(&m_iKamikazePercent);
+	pStream->Read(&m_iExtraUpkeep);
 	pStream->Read(&m_iBaseCombat);
 	pStream->Read((int*)&m_eFacingDirection);
 	pStream->Read(&m_iImmobileTimer);
@@ -12209,6 +12255,7 @@ void CvUnit::write(FDataStreamBase* pStream)
 	pStream->Write(m_iAlwaysHealCount);
 	pStream->Write(m_iHillsDoubleMoveCount);
 	pStream->Write(m_iImmuneToFirstStrikesCount);
+	pStream->Write(m_iNoUpgradeCount); // Leoreth
 	pStream->Write(m_iExtraVisibilityRange);
 	pStream->Write(m_iExtraMoves);
 	pStream->Write(m_iExtraMoveDiscount);
@@ -12236,6 +12283,7 @@ void CvUnit::write(FDataStreamBase* pStream)
 	pStream->Write(m_iUpgradeDiscount);
 	pStream->Write(m_iExperiencePercent);
 	pStream->Write(m_iKamikazePercent);
+	pStream->Write(m_iExtraUpkeep); // Leoreth
 	pStream->Write(m_iBaseCombat);
 	pStream->Write(m_eFacingDirection);
 	pStream->Write(m_iImmobileTimer);

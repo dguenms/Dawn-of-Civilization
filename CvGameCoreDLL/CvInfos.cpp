@@ -1624,6 +1624,7 @@ m_iPillageChange(0),
 m_iUpgradeDiscount(0),
 m_iExperiencePercent(0),
 m_iKamikazePercent(0),
+m_iExtraUpkeep(0), // Leoreth
 m_bLeader(false),
 m_bBlitz(false),
 m_bAmphib(false),
@@ -1632,6 +1633,7 @@ m_bEnemyRoute(false),
 m_bAlwaysHeal(false),
 m_bHillsDoubleMove(false),
 m_bImmuneToFirstStrikes(false),
+m_bNoUpgrade(false), // Leoreth
 m_piTerrainAttackPercent(NULL),
 m_piTerrainDefensePercent(NULL),
 m_piFeatureAttackPercent(NULL),
@@ -1859,6 +1861,12 @@ int CvPromotionInfo::getKamikazePercent() const
 	return m_iKamikazePercent;
 }
 
+// Leoreth
+int CvPromotionInfo::getExtraUpkeep() const
+{
+	return m_iExtraUpkeep;
+}
+
 bool CvPromotionInfo::isLeader() const
 {
 	return m_bLeader;
@@ -1897,6 +1905,12 @@ bool CvPromotionInfo::isHillsDoubleMove() const
 bool CvPromotionInfo::isImmuneToFirstStrikes() const
 {
 	return m_bImmuneToFirstStrikes;
+}
+
+// Leoreth
+bool CvPromotionInfo::isNoUpgrade() const
+{
+	return m_bNoUpgrade;
 }
 
 const TCHAR* CvPromotionInfo::getSound() const
@@ -2017,6 +2031,7 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iUpgradeDiscount);
 	stream->Read(&m_iExperiencePercent);
 	stream->Read(&m_iKamikazePercent);
+	stream->Read(&m_iExtraUpkeep); // Leoreth
 
 	stream->Read(&m_bLeader);
 	stream->Read(&m_bBlitz);
@@ -2026,6 +2041,7 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bAlwaysHeal);
 	stream->Read(&m_bHillsDoubleMove);
 	stream->Read(&m_bImmuneToFirstStrikes);
+	stream->Read(&m_bNoUpgrade); // Leoreth
 
 	stream->ReadString(m_szSound);
 
@@ -2111,6 +2127,7 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iUpgradeDiscount);
 	stream->Write(m_iExperiencePercent);
 	stream->Write(m_iKamikazePercent);
+	stream->Write(m_iExtraUpkeep); // Leoreth
 
 	stream->Write(m_bLeader);
 	stream->Write(m_bBlitz);
@@ -2120,6 +2137,7 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bAlwaysHeal);
 	stream->Write(m_bHillsDoubleMove);
 	stream->Write(m_bImmuneToFirstStrikes);
+	stream->Write(m_bNoUpgrade); // Leoreth
 
 	stream->WriteString(m_szSound);
 
@@ -2168,6 +2186,7 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bAlwaysHeal, "bAlwaysHeal");
 	pXML->GetChildXmlValByName(&m_bHillsDoubleMove, "bHillsDoubleMove");
 	pXML->GetChildXmlValByName(&m_bImmuneToFirstStrikes, "bImmuneToFirstStrikes");
+	pXML->GetChildXmlValByName(&m_bNoUpgrade, "bNoUpgrade"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iVisibilityChange, "iVisibilityChange");
 	pXML->GetChildXmlValByName(&m_iMovesChange, "iMovesChange");
 	pXML->GetChildXmlValByName(&m_iMoveDiscountChange, "iMoveDiscountChange");
@@ -2196,6 +2215,7 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iUpgradeDiscount, "iUpgradeDiscount");
 	pXML->GetChildXmlValByName(&m_iExperiencePercent, "iExperiencePercent");
 	pXML->GetChildXmlValByName(&m_iKamikazePercent, "iKamikazePercent");
+	pXML->GetChildXmlValByName(&m_iExtraUpkeep, "iExtraUpkeep"); // Leoreth
 
 	pXML->SetVariableListTagPair(&m_piTerrainAttackPercent, "TerrainAttacks", sizeof(GC.getTerrainInfo((TerrainTypes)0)), GC.getNumTerrainInfos());
 	pXML->SetVariableListTagPair(&m_piTerrainDefensePercent, "TerrainDefenses", sizeof(GC.getTerrainInfo((TerrainTypes)0)), GC.getNumTerrainInfos());
@@ -10806,11 +10826,11 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
 
 		if (!GET_PLAYER((PlayerTypes)pl).isHuman())
 			if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 1)
-				iAIChinaBonus = 30;
+				iAIChinaBonus = 20;
 			else if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 2)
-				iAIChinaBonus = 15;
+				iAIChinaBonus = 10;
 			else if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() > 2)
-				iAIChinaBonus = -40;
+				iAIChinaBonus = -20;
 
 		iFinalResearchPercent = researchPercent * (researchModifier[pl] - iAIChinaBonus + std::min(GET_PLAYER((PlayerTypes)pl).getCurrentEra() - 1, 3) * 5) / 100;
 

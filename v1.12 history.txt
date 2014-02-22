@@ -31,11 +31,12 @@
 	  4. Fanaticism (Divine Right, low): +25% unit production with state religion, no foreign religion spread
 	  5. Secularism (Liberalism, low): +10% research, no religious unhappiness, no state religion
 	# MILITARY
-	  1. Warrior Code (Horseback Riding, low): +50% great general birth, -50% war weariness, double production for Barracks, Stable
-	  2. Mercenaries (Currency, medium): can hurry units with gold, +1 gold upkeep per unit
+	  1. Warrior Code (Horseback Riding, low): -50% war weariness, double production for Barracks, Stable
+	  2. Mercenaries (Currency, medium): can hurry units with gold, hurried units start with the Mercenary promotion
 	  3. Levy Armies (Feudalism, low): additional free units, unit production with food
 	  4. Standing Army (Military Tradition, high): +25% land unit production, +2 land unit experience
 	  5. Naval Dominance (Military Science, medium): +25% sea unit production, +2 sea unit experience, double production for Harbor, Customs House, Drydock
+# changed the Mercenary promotion: +2 gold extra upkeep, cannot be upgraded
 # anarchy doesn't cost golden age turns
 # reduced blockade range to 2
 # the number of bonus resources that can influence your corporation yield is capped at 12 per type
@@ -227,3 +228,4 @@
 	# if an AI civ is undecided on your claim, or on a claim on one of your cities, you can attempt to influence them using gold or espionage
 	# city assignments by the congress can be refused, which might lead to war against the supporting civilizations
 # the Pyramids now also increase worker speed by 25%
+# changed the English UP to cap city distance for maintenance calculations instead of completely disabling distance maintenance

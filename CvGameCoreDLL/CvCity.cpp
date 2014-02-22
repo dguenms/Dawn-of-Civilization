@@ -91,6 +91,7 @@ CvCity::CvCity()
 	m_pabWorkingPlot = NULL;
 	m_pabHasReligion = NULL;
 	m_pabHasCorporation = NULL;
+	m_pabIsUnitHurried = NULL;
 
 	m_paTradeCities = NULL;
 
@@ -541,6 +542,7 @@ void CvCity::uninit()
 	SAFE_DELETE_ARRAY(m_pabWorkingPlot);
 	SAFE_DELETE_ARRAY(m_pabHasReligion);
 	SAFE_DELETE_ARRAY(m_pabHasCorporation);
+	SAFE_DELETE_ARRAY(m_pabIsUnitHurried); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_paTradeCities);
 
@@ -802,12 +804,14 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_paiUnitProductionTime = new int[GC.getNumUnitInfos()];
 		m_paiGreatPeopleUnitRate = new int[GC.getNumUnitInfos()];
 		m_paiGreatPeopleUnitProgress = new int[GC.getNumUnitInfos()];
+		m_pabIsUnitHurried = new bool[GC.getNumUnitInfos()]; // Leoreth
 		for (iI = 0;iI < GC.getNumUnitInfos();iI++)
 		{
 			m_paiUnitProduction[iI] = 0;
 			m_paiUnitProductionTime[iI] = 0;
 			m_paiGreatPeopleUnitRate[iI] = 0;
 			m_paiGreatPeopleUnitProgress[iI] = 0;
+			m_pabIsUnitHurried[iI] = false; // Leoreth
 		}
 
 		FAssertMsg((0 < GC.getNumSpecialistInfos()),  "GC.getNumSpecialistInfos() is not greater than zero but an array is being allocated in CvCity::reset");
@@ -3915,6 +3919,12 @@ void CvCity::hurry(HurryTypes eHurry)
 
 	changeProduction(hurryProduction(eHurry));
 
+	// Leoreth: remember if a unit is being hurried to apply the mercenary promotion
+	if (isProductionUnit())
+	{
+		setUnitHurried(getProductionUnit(), true);
+	}
+
 	GET_PLAYER(getOwnerINLINE()).changeGold(-(iHurryGold));
 	changePopulation(-(iHurryPopulation));
 
@@ -6641,6 +6651,7 @@ int CvCity::calculateDistanceMaintenanceTimes100() const
 	int iWorstCityMaintenance;
 	int iBestCapitalMaintenance;
 	int iTempMaintenance;
+	int iDistance;
 	int iLoop;
 
 	iWorstCityMaintenance = 0;
@@ -6648,7 +6659,15 @@ int CvCity::calculateDistanceMaintenanceTimes100() const
 
 	for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
 	{
-		iTempMaintenance = 100 * (GC.getDefineINT("MAX_DISTANCE_CITY_MAINTENANCE") * plotDistance(getX_INLINE(), getY_INLINE(), pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE()));
+		iDistance = plotDistance(getX_INLINE(), getY_INLINE(), pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE());
+
+		// Leoreth: English UP: distance capped at 10
+		if (getOwnerINLINE() == ENGLAND)
+		{
+			iDistance = std::min(10, iDistance);
+		}
+
+		iTempMaintenance = 100 * (GC.getDefineINT("MAX_DISTANCE_CITY_MAINTENANCE") * iDistance);
 
 		iTempMaintenance *= (getPopulation() + 7);
 		iTempMaintenance /= 10;
@@ -6746,12 +6765,6 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		return 0;
 	}
 
-	//Leoreth: English UP
-	if (getOwnerINLINE() == (PlayerTypes)ENGLAND)
-	{
-		return 0;
-	}
-
 	CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
 	if (pCapital && pCapital->area() == area())
 	{
@@ -6785,6 +6798,7 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 
 	int iMaintenance = (iNumCities * iNumCities) / 100;
 
+	// influenced by English UP here
 	iMaintenance = std::min(iMaintenance, (GC.getHandicapInfo(getHandicapType()).getMaxColonyMaintenance() * calculateDistanceMaintenanceTimes100()) / 100);
 
 	FAssert(iMaintenance >= 0);
@@ -11891,6 +11905,23 @@ void CvCity::changeUnitProduction(UnitTypes eIndex, int iChange)
 }
 
 
+// Leoreth
+bool CvCity::isUnitHurried(UnitTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < GC.getNumUnitInfos(), "eIndex expected to be < GC.getNumUnitInfos()");
+	return m_pabIsUnitHurried[eIndex];
+}
+
+
+void CvCity::setUnitHurried(UnitTypes eIndex, bool bNewValue)
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < GC.getNumUnitInfos(), "eIndex expected to be < GC.getNumUnitInfos()");
+	m_pabIsUnitHurried[eIndex] = bNewValue;
+}
+
+
 int CvCity::getUnitProductionTime(UnitTypes eIndex)	const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
@@ -13516,6 +13547,13 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 			pUnit->finishMoves();
 
+			// Leoreth: if unit was hurried, apply the mercenary promotion, and reset the hurry memory
+			if (isUnitHurried(eTrainUnit))
+			{
+				pUnit->setHasPromotion((PromotionTypes)GC.getInfoTypeForString("PROMOTION_MERCENARY"), true);
+				setUnitHurried(eTrainUnit, false);
+			}
+
 			addProductionExperience(pUnit);
 
 			pRallyPlot = getRallyPlot();
@@ -15075,6 +15113,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_CITY_PLOTS, m_pabWorkingPlot);
 	pStream->Read(GC.getNumReligionInfos(), m_pabHasReligion);
 	pStream->Read(GC.getNumCorporationInfos(), m_pabHasCorporation);
+	pStream->Read(GC.getNumUnitInfos(), m_pabIsUnitHurried); // Leoreth
 
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
 	{
@@ -15325,6 +15364,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_CITY_PLOTS, m_pabWorkingPlot);
 	pStream->Write(GC.getNumReligionInfos(), m_pabHasReligion);
 	pStream->Write(GC.getNumCorporationInfos(), m_pabHasCorporation);
+	pStream->Write(GC.getNumUnitInfos(), m_pabIsUnitHurried); // Leoreth
 
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
 	{

@@ -20119,7 +20119,7 @@
 			<Description>TXT_KEY_LEADER_QIN_SHI_HUANG</Description>
 			<Civilopedia>TXT_KEY_LEADER_QIN_SHI_HUANG_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_QIN_SHI_HUANG</ArtDefineTag>
-			<iWonderConstructRand>30</iWonderConstructRand>
+			<iWonderConstructRand>40</iWonderConstructRand>
 			<iBaseAttitude>1</iBaseAttitude>
 			<iBasePeaceWeight>2</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -20142,7 +20142,7 @@
 			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>20</iBuildUnitProb>
+			<iBuildUnitProb>15</iBuildUnitProb>
 			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>-1</iWorseRankDifferenceAttitudeChange>
@@ -43396,7 +43396,7 @@
 			<Description>TXT_KEY_LEADER_TAIZONG</Description>
 			<Civilopedia>TXT_KEY_LEADER_TAIZONG_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_TAIZONG</ArtDefineTag>
-			<iWonderConstructRand>40</iWonderConstructRand>
+			<iWonderConstructRand>50</iWonderConstructRand>
 			<iBaseAttitude>1</iBaseAttitude>
 			<iBasePeaceWeight>8</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
@@ -43419,7 +43419,7 @@
 			<iDemandRebukedSneakProb>0</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>20</iDemandRebukedWarProb>
 			<iRazeCityProb>0</iRazeCityProb>
-			<iBuildUnitProb>1</iBuildUnitProb>
+			<iBuildUnitProb>5</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
 			<iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange>

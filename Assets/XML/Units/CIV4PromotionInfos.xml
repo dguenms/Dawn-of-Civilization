@@ -4830,6 +4830,7 @@
 			<bAlwaysHeal>0</bAlwaysHeal>
 			<bHillsDoubleMove>0</bHillsDoubleMove>
 			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
+			<bNoUpgrade>1</bNoUpgrade>
 			<iVisibilityChange>0</iVisibilityChange>
 			<iMovesChange>0</iMovesChange>
 			<iMoveDiscountChange>0</iMoveDiscountChange>
@@ -4858,6 +4859,7 @@
 			<iPillageChange>0</iPillageChange>
 			<iUpgradeDiscount>0</iUpgradeDiscount>
 			<iExperiencePercent>0</iExperiencePercent>
+			<iExtraUpkeep>2</iExtraUpkeep>
 			<TerrainAttacks/>
 			<TerrainDefenses/>
 			<FeatureAttacks/>
