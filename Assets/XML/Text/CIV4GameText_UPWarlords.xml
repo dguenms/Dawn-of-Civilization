@@ -30,9 +30,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_CAR2</Tag>
-		<English>Gold costs for rushing units halved, no extra unit upkeep while running Mercenaries</English>
+		<English>Halved costs and no extra upkeep for hurried units</English>
 		<French>Coûts de recrutement et d'entretien des mercenaires divisés par deux</French>
-		<German>Goldkosten zur Beschleunigung von Einheiten halbiert, kein zusätzlicher Einheitenunterhalt für Söldner</German>
+		<German>Halbierte Kosten und kein zusätzlicher Unterhalt für beschleunigte Einheiten</German>
 		<Italian>Dimezzati i costi di assunzione e mantenimento dei mercenari</Italian>
 		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
 	</TEXT>

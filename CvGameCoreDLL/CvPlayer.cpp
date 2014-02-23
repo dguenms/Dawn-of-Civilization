@@ -10553,10 +10553,6 @@ void CvPlayer::changeGoldPerUnit(int iChange)
 
 int CvPlayer::getGoldPerMilitaryUnit() const
 {
-	// Phoenician UP: no extra mercenary upkeep
-	if (getID() == CARTHAGE)
-		return 0;
-
 	return m_iGoldPerMilitaryUnit;
 }
 
