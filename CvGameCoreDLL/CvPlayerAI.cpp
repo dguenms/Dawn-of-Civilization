@@ -4619,7 +4619,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 								}
 
-                                //the way feature-remove is done in XML is pretty weird
+								//the way feature-remove is done in XML is pretty weird
                                 //I believe this code needs to be outside the general BuildTypes loop
                                 //to ensure the feature-remove is only counted once rather than once per build
 								//which could be a lot since nearly every build clears jungle...
@@ -4697,6 +4697,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								bool bEnablesUnitWonder = false;
 								for (iJ = 0; iJ < GC.getNumUnitClassInfos(); iJ++)
 								{
+									GC.getGameINLINE().logMsg("Iterate unit %d", iJ);
+
 									eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iJ)));
 
 									if (eLoopUnit != NO_UNIT)
@@ -5088,6 +5090,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 											}
 										}
 									}
+									
 								if (bEnablesUnitWonder)
 								{
 									int iWonderRandom = ((bAsync) ? GC.getASyncRand().get(400, "AI Research Wonder Unit ASYNC") : GC.getGameINLINE().getSorenRandNum(400, "AI Research Wonder Unit"));
@@ -6085,7 +6088,6 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 		}
 	}
 
-
     SAFE_DELETE_ARRAY(paiBonusClassRevealed);
     SAFE_DELETE_ARRAY(paiBonusClassUnrevealed);
     SAFE_DELETE_ARRAY(paiBonusClassHave);
@@ -6130,6 +6132,8 @@ void CvPlayerAI::AI_chooseResearch()
 	TechTypes eBestTech;
 	int iI;
 
+	GC.getGameINLINE().logMsg("begin chooseResearch()");
+
 	clearResearchQueue();
 
 	if (getCurrentResearch() == NO_TECH)
@@ -6152,6 +6156,8 @@ void CvPlayerAI::AI_chooseResearch()
 		}
 	}
 
+	GC.getGameINLINE().logMsg("Done with player iteration");
+
 	if (getCurrentResearch() == NO_TECH)
 	{
 		//Rhye - start
@@ -6172,13 +6178,19 @@ void CvPlayerAI::AI_chooseResearch()
 			int iAIResearchDepth;
 			iAIResearchDepth = AI_isDoStrategy(AI_STRATEGY_CULTURE3) ? 1 : 3;
 
+			GC.getGameINLINE().logMsg("Done with isDoStrategy()");
+
 			eBestTech = AI_bestTech((isHuman()) ? 1 : iAIResearchDepth);
 		}
+
+		GC.getGameINLINE().logMsg("Done with bestTech()");
 
 		if (eBestTech != NO_TECH)
 		{
 			pushResearch(eBestTech);
 		}
+
+		GC.getGameINLINE().logMsg("Research pushed");
 	}
 }
 
@@ -13173,10 +13185,15 @@ void CvPlayerAI::AI_doResearch()
 {
 	FAssertMsg(!isHuman(), "isHuman did not return false as expected");
 
+	GC.getGameINLINE().logMsg("Entered AI_doResearch()");
+
 	if (getCurrentResearch() == NO_TECH)
 	{
+		GC.getGameINLINE().logMsg("Passed getCurrentResearch()");
 		AI_chooseResearch();
+		GC.getGameINLINE().logMsg("Done with chooseResearch()");
 		AI_forceUpdateStrategies(); //to account for current research.
+		GC.getGameINLINE().logMsg("Done with forceUpdateStrategies()");
 	}
 }
 

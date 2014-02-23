@@ -649,15 +649,15 @@ class CvRFCEventHandler:
 		#if utils.getHumanID() == iPlayer:
 		#	utils.debugTextPopup('Can contact: ' + str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in range(con.iNumPlayers) if gc.getTeam(iPlayer).canContact(i)]))
 
-                if (self.rnf.getDeleteMode(0) != -1):
+		if (self.rnf.getDeleteMode(0) != -1):
                         self.rnf.deleteMode(iPlayer)
-                        
-                self.pla.checkPlayerTurn(iGameTurn, iPlayer)
-
-                if (gc.getPlayer(iPlayer).isAlive()):
+			
+		self.pla.checkPlayerTurn(iGameTurn, iPlayer)
+		
+		if (gc.getPlayer(iPlayer).isAlive()):
                         self.vic.checkPlayerTurn(iGameTurn, iPlayer)
-
-                if (gc.getPlayer(iPlayer).isAlive() and iPlayer < con.iNumPlayers and not gc.getPlayer(iPlayer).isHuman()):
+			
+		if (gc.getPlayer(iPlayer).isAlive() and iPlayer < con.iNumPlayers and not gc.getPlayer(iPlayer).isHuman()):
                         self.rnf.checkPlayerTurn(iGameTurn, iPlayer) #for leaders switch
 
 	def onGreatPersonBorn(self, argsList):
