@@ -188,7 +188,7 @@
 			<NIF>art/LeaderHeads/Kublai_Khan/kublai_khan.nif</NIF>
 			<KFM>art/LeaderHeads/Kublai_Khan/kublai_khan.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Kublai_Khan/kublai_khan_noshader.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Kublai_Khan/qin_shi_huang_BG.kfm</BackgroundKFM>
+			<BackgroundKFM>art/LeaderHeads/Qin_Shi_Huang/qin_shi_huang_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SALADIN</Type>

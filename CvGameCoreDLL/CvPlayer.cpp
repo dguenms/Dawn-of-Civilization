@@ -10917,7 +10917,6 @@ void CvPlayer::changeProcessModifier(int iChange)
 //Leoreth
 void CvPlayer::updateProductionToCommerceModifier()
 {
-	GC.getGameINLINE().logMsg("Begin update process modifier.");
 	int iLoop;
 	CvCity* pLoopCity;
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
@@ -10927,7 +10926,6 @@ void CvPlayer::updateProductionToCommerceModifier()
 			pLoopCity->changeProductionToCommerceModifier((CommerceTypes)iI, pLoopCity->getProductionToCommerceModifier((CommerceTypes)iI) * (100 + getProcessModifier()) / 100 - pLoopCity->getProductionToCommerceModifier((CommerceTypes)iI));
 		}
 	}
-	GC.getGameINLINE().logMsg("End update process modifier.");
 }
 
 
@@ -25506,7 +25504,8 @@ void CvPlayer::changeDomainExperienceModifier(DomainTypes eDomainType, int iChan
 // Leoreth
 int CvPlayer::countColonies() const
 {
-	if (getNumCities() == 0)
+	// also need to check minors because they have no capitals
+	if (isMinorCiv() || getNumCities() == 0)
 	{
 		return 0;
 	}
