@@ -3919,8 +3919,8 @@ void CvCity::hurry(HurryTypes eHurry)
 
 	changeProduction(hurryProduction(eHurry));
 
-	// Leoreth: remember if a unit is being hurried to apply the mercenary promotion
-	if (isProductionUnit())
+	// Leoreth: remember if a unit is being hurried to apply the mercenary promotion, includes Phoenician UP
+	if (isProductionUnit() && iHurryGold > 0 && getOwnerINLINE() != CARTHAGE)
 	{
 		setUnitHurried(getProductionUnit(), true);
 	}
