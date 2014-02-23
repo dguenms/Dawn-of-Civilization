@@ -246,7 +246,7 @@ class Congress:
 				closestCity = gc.getMap().findCity(x, y, utils.getHumanID(), TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY", (gc.getPlayer(iBribedPlayer).getCivilizationAdjective(0), gc.getPlayer(iClaimant).getCivilizationAdjective(0), closestCity.getName()))
 				
-		iCost = iDifference * gc.getPlayer(iBribedPlayer).calculateTotalCommerce()
+		iCost = iDifference * gc.getPlayer(iBribedPlayer).calculateTotalCommerce() / 2
 		
 		iTreasury = gc.getPlayer(utils.getHumanID()).getGold()
 		iEspionageSpent = gc.getTeam(utils.getHumanID()).getEspionagePointsAgainstTeam(iBribedPlayer)
@@ -417,6 +417,9 @@ class Congress:
 		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_OK", ()), '')
 		
 		popup.addPopup(utils.getHumanID())
+		
+		# don't waste memory
+		sd.setCurrentCongress(None)
 
 	### Other Methods ###
 
@@ -614,6 +617,7 @@ class Congress:
 		if bOwner: 
 			bMinor = (iOwner >= iNumPlayers)
 			bOwnCity = (iOwner == iVoter)
+			bWarClaim = (iClaimant in self.lWinners and iOwner in self.lLosers)
 			
 		sDebugText = '\nVote City AI Debug\nVoter: ' + gc.getPlayer(iVoter).getCivilizationShortDescription(0) + '\nClaimant: ' + gc.getPlayer(iClaimant).getCivilizationShortDescription(0)
 		if bCity: sDebugText += '\nCity claim: ' + city.getName()
@@ -658,6 +662,12 @@ class Congress:
 			if utils.getHumanID() == iClaimant and iVoter in self.dVotingMemory: iFavorClaimant += 5 * self.dVotingMemory[iVoter]
 			if utils.getHumanID() == iOwner and iVoter in self.dVotingMemory: iFavorOwner += 5 * self.dVotingMemory[iVoter]
 			
+		# if we don't dislike them, agree with the value of their claim
+		if pVoter.AI_getAttitude(iClaimant): iClaimValidity += iClaimValue
+			
+		# French UP
+		if iClaimant == iFrance: iClaimValidity += 5
+			
 		# plot factors
 		# plot culture
 		if bOwner:
@@ -697,8 +707,21 @@ class Congress:
 			iOwnSettlerValue = plot.getSettlerMapValue(iVoter)
 			iOwnWarTargetValue = plot.getWarMapValue(iVoter)
 			
-			if iOwnSettlerValue >= 200: iClaimValidity -= max(1, iOwnSettlerValue / 100)
-			if iOwnWarTargetValue > 0: iClaimValidity -= max(1, iOwnWarTargetValue / 2)
+			# if vote between two civs, favor the weaker one if we want to expand there later on
+			if bOwner:
+				iClaimantPower = gc.getTeam(iClaimant).getPower(True)
+				iOwnerPower = gc.getTeam(iOwner).getPower(True)
+			
+				if iClaimantPower > iOwnerPower:
+					if iOwnSettlerValue >= 200: iFavorClaimant -= max(1, iOwnSettlerValue / 100)
+					if iOwnWarTargetValue > 0: iFavorClaimant -= max(1, iOwnWarTargetValue / 2)
+				elif iOwnerPower > iClaimantPower:
+					if iOwnSettlerValue >= 200: iFavorOwner -= max(1, iOwnSettlerValue / 100)
+					if iOwnWarTargetValue > 0: iFavorOwner -= max(1, iOwnWarTargetValue / 2)
+			# if vote for free territory, reduce the validity of the claim
+			else:
+				if iOwnSettlerValue >= 200: iClaimValidity -= max(1, iOwnSettlerValue / 100)
+				if iOwnWarTargetValue > 0: iClaimValidity -= max(1, iOwnWarTargetValue / 2)
 		
 		# city factors
 		if bCity:
@@ -762,7 +785,8 @@ class Congress:
 			return
 			
 		# maybe include threatened here?
-		if iClaimValidity > 0:
+		# winners of wars don't need valid claims
+		if iClaimValidity > 0 or (bOwner and bWarClaim):
 			# claim insufficient to overcome dislike
 			if iFavorClaimant + iClaimValidity < iFavorOwner:
 				print 'Voted NO: claimant favor and validity lower than owner favor'
@@ -772,7 +796,7 @@ class Congress:
 				print 'Voted YES: claimant favor higher than owner favor'
 				self.vote(iVoter, iClaimant, 1)
 			# less liked, but justified by claim
-			elif iFavorClaimant + iClaimValidity > iFavorOwner:
+			elif iFavorClaimant + iClaimValidity >= iFavorOwner:
 				# human can bribe on a close call if own claim or own city
 				if (iClaimant == utils.getHumanID() or (bOwner and iOwner == utils.getHumanID())) and iClaimValidity < 50:
 					# return the relevant data to be added to the list of possible bribes in the calling method
@@ -898,6 +922,7 @@ class Congress:
 		if iPlayer in lCivGroups[0] and not self.bPostWar:
 			for x in range(iWorldX):
 				for y in range(iWorldY):
+					if utils.getHumanID() == iPlayer and not plot.isRevealed(iPlayer, False): continue
 					plot = gc.getMap().plot(x, y)
 					if not plot.isCity() and not plot.isPeak() and not plot.isWater():
 						if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
