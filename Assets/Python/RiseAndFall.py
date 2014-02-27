@@ -1798,16 +1798,6 @@ class RiseAndFall:
                         if iCiv in lConditionalCivs or bCapitalSettled:
                                 x, y = tCapital
                                 utils.convertPlotCulture(gc.getMap().plot(x,y), iCiv, 100, True)
-                                
-			# Leoreth: so Mughals can flip Pataliputra
-			if iCiv == iMughals:
-				if pIndia.isAlive() and utils.getHumanID() != iIndia:
-					if pIndia.getCapitalCity().getName() == "Pataliputra":
-						oldCapital = pIndia.getCapitalCity()
-						cityList = PyPlayer(iMughals).getCityList()
-						newCapital = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')].GetCy()
-						newCapital.setHasRealBuilding(con.iPalace, True)
-						oldCapital.setHasRealBuilding(con.iPalace, False)
 
                 if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
                         reborn = utils.getReborn(iCiv)

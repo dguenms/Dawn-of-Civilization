@@ -1690,6 +1690,9 @@ def checkResurrection(iGameTurn):
 		bPossible = False
 		iMinNumCities = 2
 		
+		# no respawn before spawn
+		if iGameTurn < getTurnForYear(con.tBirth[iLoopCiv]) + 10: continue
+		
 		# only dead civ need to check for resurrection
 		if gc.getPlayer(iLoopCiv).isAlive(): continue
 		

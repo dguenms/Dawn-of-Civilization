@@ -2571,15 +2571,21 @@ int calculateExperience(int iLevel, PlayerTypes ePlayer)
 	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
 	FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
 
-	long lExperienceNeeded = 0;
+	// Japanese UP: cheaper promotions
+	if (ePlayer == JAPAN)
+	{
+		iLevel = std::max(1, iLevel - 1);
+	}
 
-	CyArgsList argsList;
-	argsList.add(iLevel);
-	argsList.add(ePlayer);
+	int iExperienceNeeded = iLevel * iLevel + 1;
 
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "getExperienceNeeded", argsList.makeFunctionArgs(), &lExperienceNeeded);
+	int iModifier = GET_PLAYER(ePlayer).getLevelExperienceModifier();
+	if (iModifier != 0)
+	{
+		iExperienceNeeded += (iExperienceNeeded * iModifier + 99) / 100; // round up
+	}
 
-	return (int)lExperienceNeeded;
+	return iExperienceNeeded;
 }
 
 /*

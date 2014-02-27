@@ -10475,7 +10475,7 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 	int iUnitExperience = iChange;
 
 	// Leoreth: Terracotta Army effect
-	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)TERRACOTTA) && iMax != GC.getDefineINT("ANIMAL_MAX_XP_VALUE"))
+	if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA) && iMax != GC.getDefineINT("ANIMAL_MAX_XP_VALUE"))
 		iMax = MAX_INT;
 
 	if (bFromCombat)
@@ -10491,7 +10491,7 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 		}
 
 		// Leoreth: Terracotta Army effect
-		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)TERRACOTTA))
+		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA))
 		{
 			kPlayer.changeCombatExperience((iChange * iCombatExperienceMod) / 100);
 		}

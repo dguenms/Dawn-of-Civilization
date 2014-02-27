@@ -955,9 +955,10 @@ class Victory:
 				else:
 					if iGameTurn == getTurnForYear(1650):
 						iCount = 0
-						for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iEngland, iRussia, iPoland, iNetherlands, iPortugal, iItaly]:
+						for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iGermany, iHolyRome, iEngland, iRussia, iPoland, iNetherlands, iPortugal, iItaly]:
 							if teamPersia.isOpenBorders(iEurociv):
 								iCount += 1
+						utils.debugTextPopup("Iranian OBs: " + str(iCount))
 						if iCount >= 6:
 							self.setGoal(iPersia, 0, 1)
 						else:
@@ -4627,7 +4628,7 @@ class Victory:
 			else:
 				if iGoal == 0:
 					iCount = 0
-					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iGermany, iRussia, iPoland, iPortugal, iNetherlands]:
+					for iEurociv in [iGreece, iRome, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iGermany, iRussia, iPoland, iPortugal, iNetherlands, iItaly]:
 						if teamPersia.isOpenBorders(iEurociv):
 							iCount += 1
 					aHelp.append(self.getIcon(iCount >= 6) + localText.getText("TXT_KEY_VICTORY_OPEN_BORDERS", (iCount, 6)))
