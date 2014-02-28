@@ -788,7 +788,8 @@ class CvRFCEventHandler:
 		sta.onChangeWar(bWar, iTeam, iOtherTeam)
 		self.up.onChangeWar(bWar, iTeam, iOtherTeam)
 		
-		cong.onChangeWar(argsList)
+		if iTeam < con.iNumPlayers and iOtherTeam < con.iNumPlayers:
+			cong.onChangeWar(argsList)
 		
 		if bWar and bGlobalWar:
 			utils.debugTextPopup('Global war: ' + gc.getPlayer(iTeam).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iOtherTeam).getCivilizationShortDescription(0))
