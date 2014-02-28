@@ -99,6 +99,8 @@ class CvVictoryScreen:
 		self.TABLE_WIDTH_3 = 120#100
 		self.TABLE_WIDTH_4 = 80#180
 		self.TABLE_WIDTH_5 = 100
+		
+		self.TABLE_RFC_WIDTH_0 = 750
 
 		self.TABLE2_WIDTH_0 = 740
 		self.TABLE2_WIDTH_1 = 265
@@ -1536,14 +1538,17 @@ class CvVictoryScreen:
 					
                                 #Rhye - start
                                 if (iLoopVC == 7):
-                                        for i in range(3):
+					for i in range(3):
                                                 iRow = screen.appendTableRow(szTable)
+						sGoalTitle = localText.getText(con.tGoals[gc.getPlayer(self.iActivePlayer).getReborn()][2][self.iActivePlayer][i] + "_TITLE", ())
 						sGoalText = localText.getText(con.tGoals[gc.getPlayer(self.iActivePlayer).getReborn()][gc.getGame().getGameSpeedType()][self.iActivePlayer][i], ())
 						sGoalTurn = ''
 						if not gc.getTeam(self.iActivePlayer).isHasTech(con.iCalendar) or gc.getPlayer(self.iActivePlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
 							iVictoryYear = con.tVictoryYears[self.iActivePlayer][i]
 							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (getTurnForYear(iVictoryYear) - utils.getScenarioStartTurn(),))
-                                                screen.setTableText(szTable, 0, iRow, sGoalText + sGoalTurn, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY) # edead - added game speed type
+                                                screen.setTableText(szTable, 0, iRow, sGoalTitle, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						iRow = screen.appendTableRow(szTable)
+						screen.setTableText(szTable, 0, iRow, sGoalText + sGoalTurn, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY) # edead - added game speed type
                                                 screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
                                                 if (utils.getGoal(self.iActivePlayer, i) == 1):       
                                                         screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_YES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -1564,7 +1569,10 @@ class CvVictoryScreen:
 				# Leoreth: Religious Victory
 				if iLoopVC == 8:
 					iVictoryType = utils.getReligiousVictoryType(self.iActivePlayer)
-					if iVictoryType > -1:
+					if iVictoryType == -1:
+						iRow = screen.appendTableRow(szTable)
+						screen.setTableText(szTable, 0, iRow, localText.getText("TXT_KEY_NO_RELIGIOUS_GOALS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+					else:
 						for i in range(3):
 							iRow = screen.appendTableRow(szTable)
 							sGoalText = localText.getText(con.tReligiousGoals[gc.getGame().getGameSpeedType()][iVictoryType][i], ())
