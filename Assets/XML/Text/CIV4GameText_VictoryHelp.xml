@@ -310,7 +310,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA</Tag>
-		<English>7 cities in Siberia</English>
+		<English>Cities in Siberia: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY</Tag>

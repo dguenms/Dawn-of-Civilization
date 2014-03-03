@@ -1624,109 +1624,109 @@ class RiseAndFall:
                                                 
                                         return
 					
-        def processConstantinople(self):
-                asiaID = gc.getMap().plot(69, 44).area().getID()
-                pConstantinople = gc.getMap().plot(68, 45)
-                if (pConstantinople.area().getID() != asiaID):
-                        if (pConstantinople.isCity() and pConstantinople.getPlotCity().getOwner() < con.iNumMajorPlayers):
-                                return
-                        else:
-                                gc.getMap().plot(68, 45).setArea(asiaID)
+        #def processConstantinople(self):
+        #        asiaID = gc.getMap().plot(69, 44).area().getID()
+        #        pConstantinople = gc.getMap().plot(68, 45)
+        #        if (pConstantinople.area().getID() != asiaID):
+        #                if (pConstantinople.isCity() and pConstantinople.getPlotCity().getOwner() < con.iNumMajorPlayers):
+        #                        return
+        #                else:
+        #                        gc.getMap().plot(68, 45).setArea(asiaID)
 
-        def convertMiddleEast(self):
-                if (gc.getMap().plot(76,40).area().getID() == con.iEurope):
-                        return
-                for i in range(72,86+1):
-                        for j in range(34,46):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
-                                        pCurrent.setArea(con.iEurope)
+        #def convertMiddleEast(self):
+        #        if (gc.getMap().plot(76,40).area().getID() == con.iEurope):
+        #                return
+        #        for i in range(72,86+1):
+        #                for j in range(34,46):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
+        #                                pCurrent.setArea(con.iEurope)
 
-                for i in range(69,71+1):
-                        for j in range(40,45):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
-                                        pCurrent.setArea(con.iEurope)
+        #        for i in range(69,71+1):
+        #                for j in range(40,45):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
+        #                                pCurrent.setArea(con.iEurope)
 
-                for i in range(78,86+1):
-                        for j in range(47,49):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
-                                        pCurrent.setArea(con.iEurope)
-                return
+        #        for i in range(78,86+1):
+        #                for j in range(47,49):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if ((not pCurrent.isWater()) and pCurrent.area().getID() != con.iEurope):
+        #                                pCurrent.setArea(con.iEurope)
+        #        return
 
 
-        def reconvertMiddleEast(self):
-                if (gc.getMap().plot(76,40).area().getID() == con.iAsia):
-                        return
-                for i in range(72,86+1):
-                        for j in range(34,46+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iAsia)
+        #def reconvertMiddleEast(self):
+        #        if (gc.getMap().plot(76,40).area().getID() == con.iAsia):
+        #                return
+        #        for i in range(72,86+1):
+        #                for j in range(34,46+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iAsia)
 
-                for i in range(69,71+1):
-                        for j in range(40,45+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iAsia)
+        #        for i in range(69,71+1):
+        #                for j in range(40,45+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iAsia)
 
-                for i in range(78,86+1):
-                        for j in range(47,49+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iAsia)
+        #        for i in range(78,86+1):
+        #                for j in range(47,49+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iAsia)
 
-        def convertNorthAfrica(self):
-                if (gc.getMap().plot(69,33).area().getID() == con.iEurope):
-                        return
-                for i in range(48,65+1):
-                        for j in range(35,39+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iEurope)
+        #def convertNorthAfrica(self):
+        #        if (gc.getMap().plot(69,33).area().getID() == con.iEurope):
+        #                return
+        #        for i in range(48,65+1):
+        #                for j in range(35,39+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iEurope)
 
-                for i in range(66,71+1):
-                        for j in range(29,37+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iEurope)
+        #        for i in range(66,71+1):
+        #                for j in range(29,37+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iEurope)
 
-                for i in range(72,73+1):
-                        for j in range(29,32+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iEurope)
+        #        for i in range(72,73+1):
+        #                for j in range(29,32+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iEurope)
 
-        def reconvertNorthAfrica(self):
-                if (gc.getMap().plot(69,33).area().getID() == con.iAsia):
-                        return
-                for i in range(48,65+1):
-                        for j in range(35,39+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iAsia)
+        #def reconvertNorthAfrica(self):
+        #        if (gc.getMap().plot(69,33).area().getID() == con.iAsia):
+        #                return
+        #        for i in range(48,65+1):
+        #                for j in range(35,39+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iAsia)
 
-                for i in range(66,71+1):
-                        for j in range(29,37+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iAsia)
+        #        for i in range(66,71+1):
+        #                for j in range(29,37+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iAsia)
 
-                for i in range(72,73+1):
-                        for j in range(29,32+1):
-                                pCurrent = gc.getMap().plot(i, j)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(con.iAsia)
-        def processAfrica(self):
-                africaID = gc.getMap().plot(65, 10).area().getID()
-                if (gc.getMap().plot(56, 29).area().getID() == africaID):
-                        return
-                for iLoopX in range(48,63+1):
-                        for iLoopY in range(22,33+1):
-                                pCurrent = gc.getMap().plot(iLoopX, iLoopY)
-                                if (not pCurrent.isWater()):
-                                        pCurrent.setArea(africaID)
+        #        for i in range(72,73+1):
+        #                for j in range(29,32+1):
+        #                        pCurrent = gc.getMap().plot(i, j)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(con.iAsia)
+        #def processAfrica(self):
+        #        africaID = gc.getMap().plot(65, 10).area().getID()
+        #        if (gc.getMap().plot(56, 29).area().getID() == africaID):
+        #                return
+        #        for iLoopX in range(48,63+1):
+        #                for iLoopY in range(22,33+1):
+        #                        pCurrent = gc.getMap().plot(iLoopX, iLoopY)
+        #                        if (not pCurrent.isWater()):
+        #                                pCurrent.setArea(africaID)
                             
                                     
         def initBirth(self, iCurrentTurn, iBirthYear, iCiv): # iBirthYear is really year now, so no conversion prior to function call - edead
