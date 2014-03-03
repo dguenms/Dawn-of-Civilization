@@ -1381,7 +1381,7 @@ void CvMap::calculateAreas()
 		gDLL->callUpdater();
 		for (int iY = 23; iY <= 29; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(sudamericaID);
 		}
 	}
@@ -1389,7 +1389,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 3; iY <= 32; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(sudamericaID);
 		}
 	}
@@ -1397,7 +1397,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 10; iY <= 29; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(sudamericaID);
 		}
 	}
@@ -1407,7 +1407,7 @@ void CvMap::calculateAreas()
 		gDLL->callUpdater();
 		for (int iY = 40; iY <= 52; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1415,7 +1415,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 40; iY <= 45; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1423,7 +1423,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 46; iY <= 65; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1431,7 +1431,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 52; iY <= 63; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1439,17 +1439,16 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 55; iY <= 65; iY++)
 		{
-			if (!((iX == 113 || iX == 114) && (iY == 54 || iY == 55 || iY == 56))) { //except Sakhalin
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
-	}
+	
 	for (int iX = 111; iX <= 112; iX++) //Vladivostok area
 	{
 		for (int iY = 51; iY <= 55; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1462,7 +1461,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 38; iY <= 45; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1472,7 +1471,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 37; iY <= 43; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1482,7 +1481,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 32; iY <= 37; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1492,7 +1491,7 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 38; iY <= 39; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
@@ -1502,20 +1501,20 @@ void CvMap::calculateAreas()
 	{
 		for (int iY = 30; iY <= 31; iY++)
 		{
-			if (!plotSorenINLINE(iX, iY)->isWater())
+			if (!plotSorenINLINE(iX, iY)->isWater() && GC.getMap().getArea(plotSorenINLINE(iX, iY)->getArea())->getNumTiles() > 30)
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
 	}
 
 	//British Isles
-	for (int iX = 48; iX <= 54; iX++)
+	/*for (int iX = 48; iX <= 54; iX++)
 	{
 		for (int iY = 53; iY <= 60; iY++)
 		{
 			if (!plotSorenINLINE(iX, iY)->isWater())
 				plotSorenINLINE(iX, iY)->setArea(europaID);
 		}
-	}
+	}*/
 
 	//for (int iX = 48; iX <= 67; iX++)
 	//{

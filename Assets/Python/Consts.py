@@ -343,7 +343,7 @@ tVictoryYears = (
 (1700, 1800, 1900), # France
 (1730, 1800, -1), # England
 (1200, -1, 1700), # HolyRome
-(1700, 1920, 1950), # Russia
+(1920, -1, 1950), # Russia
 (1350, 1500, 1700), # Mali
 (1400, -1, 1600), # Poland
 (1550, 1650, 1700), # Portugal
@@ -1012,9 +1012,9 @@ iNetherlands	:	"TXT_KEY_DOM_NETHERLANDS_1700AD",
 lDawnOfMan = [dawnOfMan3000BC, dawnOfMan600AD, dawnOfMan1700AD]
 
 
-iEurope = gc.getMap().plot(55, 50).getArea()
-iAfrica = gc.getMap().plot(72, 29).getArea()
-iAsia = gc.getMap().plot(102, 47).getArea()
+iAreaEurope = gc.getMap().plot(55, 50).getArea()
+iAreaAfrica = gc.getMap().plot(72, 29).getArea()
+iAreaAsia = gc.getMap().plot(102, 47).getArea()
 
 lMiddleEast = []
 lEastIndies = []

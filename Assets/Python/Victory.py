@@ -716,7 +716,7 @@ class Victory:
 			utils.setGoal(iJapan, 0, 1)
 			utils.setGoal(iFrance, 0, 1)
 			# England
-			utils.setGoal(iRussia, 0, 1)
+			#utils.setGoal(iRussia, 0, 1)
 			utils.setGoal(iCongo, 0, 1)
 			# Netherlands
 			
@@ -1792,20 +1792,19 @@ class Victory:
                         if (pRussia.isAlive()):
 
                                 if (iGameTurn == getTurnForYear(1700)):  
-                                        if (self.getGoal(iRussia, 0) == -1):
+                                        if not self.checkFoundedArea(iRussia, tSiberiaTL, tSiberiaBR, 7):
                                                 self.setGoal(iRussia, 0, 0)
 						
 				# Leoreth: build the Trans-Siberian Railroad by 1920
 				if iGameTurn == getTurnForYear(1920):
-					if self.getGoal(iRussia, 1) == -1:
+					if self.getGoal(iRussia, 0) == -1:
 						if self.getRussianProjects(0) == -1:
 							self.setGoal(iRussia, 1, 0)
 							
-				if teamRussia.isHasTech(con.iRailroad) and self.getGoal(iRussia, 1) == -1 and self.getRussianProjects(0) == -1:
+				if teamRussia.isHasTech(con.iRailroad) and self.getGoal(iRussia, 0) == -1 and self.getRussianProjects(0) == -1:
 					if self.isConnectedByRailroad(iRussia, con.tCapitals[0][iRussia], lSiberianCoast):
 						self.setRussianProjects(0, 1)
-						if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
-							self.setGoal(iRussia, 1, 1)
+						self.setGoal(iRussia, 0, 1)
 							
 				# Leoreth: have friendly relations with 5 communist civilizations by 1950 AD
 				if iGameTurn == getTurnForYear(1950):
@@ -3379,7 +3378,7 @@ class Victory:
 				if (iPlayer == iRussia):
 					if self.getGoal(iRussia, 1) == -1:
 						self.setRussianProjects(2, 1)
-						if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
+						if self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
 							self.setGoal(iRussia, 1, 1)
 				else:
 					self.setGoal(iRussia, 1, 0)
@@ -3388,7 +3387,7 @@ class Victory:
 				if iPlayer == iRussia:
 					if self.getGoal(iRussia, 1) == -1:
 						self.setRussianProjects(1, 1)
-						if self.getRussianProjects(0) == 1 and self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
+						if self.getRussianProjects(1) == 1 and self.getRussianProjects(2) == 1:
 							self.setGoal(iRussia, 1, 1)
 				else:
 					self.setGoal(iRussia, 1, 0)
@@ -4992,13 +4991,13 @@ class Victory:
 
 		elif iPlayer == iRussia:
 			if iGoal == 0:
-				bSiberia = self.checkFoundedArea(iRussia, tSiberiaTL, tSiberiaBR, 7)
-				aHelp.append(self.getIcon(bSiberia) + localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", ()))
-			elif iGoal == 1:
+				iSiberia = self.getNumCitiesInArea(iMoors, tSiberiaTL, tSiberiaBR)
 				bSiberianRailway = (self.getRussianProjects(0) == 1)
+				aHelp.append(self.getIcon(iSiberia >= 7) + localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", (iSiberia, 7)) + ' ' + self.getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()))
+			elif iGoal == 1:
 				bManhattanProject = (self.getRussianProjects(1) == 1)
 				bApolloProgram = (self.getRussianProjects(2) == 1)
-				aHelp.append(self.getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()) + ' ' + self.getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + self.getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()))
+				aHelp.append(self.getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + self.getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()))
 			elif iGoal == 2:
 				iCount = 0
 				for iCiv in range(con.iNumPlayers):

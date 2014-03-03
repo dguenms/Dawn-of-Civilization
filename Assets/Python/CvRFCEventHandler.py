@@ -153,6 +153,14 @@ class CvRFCEventHandler:
 		
 		cong.setup()
 		
+		# area debug
+		#sContinentDebug = ""
+		#for y in range(con.iWorldY-1, 0, -1):
+		#	for x in range(con.iWorldX):
+		#		sContinentDebug += str(gc.getMap().plot(x, y).getArea()) + ", "
+		#	sContinentDebug += "\n"
+		##print sContinentDebug
+		
 		# Leoreth: set DLL core values
 		for x in range(124):
 			for y in range(68):
