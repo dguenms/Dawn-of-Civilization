@@ -19,6 +19,7 @@ import ColorUtil
 import GameUtil
 import PlayerUtil
 import TechUtil
+import CvScreenEnums
 
 AdvisorOpt = BugCore.game.Advisors
 # BUG - end
@@ -78,22 +79,27 @@ class CvVictoryScreen:
 		self.Z_BACKGROUND = -6.1
 		self.Z_CONTROLS = self.Z_BACKGROUND - 0.2
 		self.DZ = -0.2
+		
+		self.mainScreen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
+		self.X_EXTRA = 0
+		if self.mainScreen.getXResolution() > 1024: self.X_EXTRA = self.mainScreen.getXResolution() - 1024
+		self.mainScreen = None
 
-		self.X_SCREEN = 500
+		self.X_SCREEN = 500 + self.X_EXTRA / 2
 		self.Y_SCREEN = 396
-		self.W_SCREEN = 1024
+		self.W_SCREEN = 1024 + self.X_EXTRA
 		self.H_SCREEN = 768
 		self.Y_TITLE = 12
 
-		self.X_EXIT = 994
+		self.X_EXIT = 994 + self.X_EXTRA
 		self.Y_EXIT = 726
 
-		self.X_AREA = 10
+		self.X_AREA = 10 #- self.X_EXTRA / 2
 		self.Y_AREA = 60
-		self.W_AREA = 1010
+		self.W_AREA = 1010 + self.X_EXTRA
 		self.H_AREA = 650
 
-		self.TABLE_WIDTH_0 = 580#500#350
+		self.TABLE_WIDTH_0 = 580 + self.X_EXTRA#500#350
 		self.TABLE_WIDTH_1 = 0
 		self.TABLE_WIDTH_2 = 120
 		self.TABLE_WIDTH_3 = 120#100
@@ -174,11 +180,11 @@ class CvVictoryScreen:
 			self.iScreen = VICTORY_CONDITION_SCREEN
 
 		# Set the background widget and exit button
-		screen.addDDSGFC(self.BACKGROUND_ID, ArtFileMgr.getInterfaceArtInfo("MAINMENU_SLIDESHOW_LOAD").getPath(), 0, 0, self.W_SCREEN, self.H_SCREEN, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		screen.addPanel( "TechTopPanel", u"", u"", True, False, 0, 0, self.W_SCREEN, 55, PanelStyles.PANEL_STYLE_TOPBAR )
-		screen.addPanel( "TechBottomPanel", u"", u"", True, False, 0, 713, self.W_SCREEN, 55, PanelStyles.PANEL_STYLE_BOTTOMBAR )
+		screen.addDDSGFC(self.BACKGROUND_ID, ArtFileMgr.getInterfaceArtInfo("MAINMENU_SLIDESHOW_LOAD").getPath(), -self.X_EXTRA/2, 0, self.W_SCREEN + self.X_EXTRA, self.H_SCREEN, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+		screen.addPanel( "TechTopPanel", u"", u"", True, False, -self.X_EXTRA/2, 0, self.W_SCREEN + self.X_EXTRA, 55, PanelStyles.PANEL_STYLE_TOPBAR )
+		screen.addPanel( "TechBottomPanel", u"", u"", True, False, -self.X_EXTRA/2, 713, self.W_SCREEN + self.X_EXTRA, 55, PanelStyles.PANEL_STYLE_BOTTOMBAR )
 		screen.showWindowBackground( False )
-		screen.setDimensions(screen.centerX(0), screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
+		screen.setDimensions(screen.centerX(0) - self.X_EXTRA/2, screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
 		screen.setText(self.EXIT_ID, "Background", u"<font=4>" + localText.getText("TXT_KEY_PEDIA_SCREEN_EXIT", ()).upper() + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_EXIT, self.Y_EXIT, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1 )
 
 		# Header...
@@ -1546,9 +1552,13 @@ class CvVictoryScreen:
 						if not gc.getTeam(self.iActivePlayer).isHasTech(con.iCalendar) or gc.getPlayer(self.iActivePlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
 							iVictoryYear = con.tVictoryYears[self.iActivePlayer][i]
 							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (getTurnForYear(iVictoryYear) - utils.getScenarioStartTurn(),))
-                                                screen.setTableText(szTable, 0, iRow, sGoalTitle, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-						iRow = screen.appendTableRow(szTable)
-						screen.setTableText(szTable, 0, iRow, sGoalText + sGoalTurn, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY) # edead - added game speed type
+                                                sGoalDisplay = sGoalText + sGoalTurn
+						if self.X_EXTRA < 100:
+							screen.setTableText(szTable, 0, iRow, sGoalTitle, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+							iRow = screen.appendTableRow(szTable)
+						else:
+							sGoalDisplay = sGoalTitle + ': ' + sGoalDisplay
+						screen.setTableText(szTable, 0, iRow, sGoalDisplay, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY) # edead - added game speed type
                                                 screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
                                                 if (utils.getGoal(self.iActivePlayer, i) == 1):       
                                                         screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_YES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
