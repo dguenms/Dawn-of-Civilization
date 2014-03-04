@@ -14770,9 +14770,12 @@ void CvCity::doReligion()
 										//Leoreth: Christianity spreads easier to the New World
 										if (iI == CATHOLICISM || iI == PROTESTANTISM)
 										{
-											if (getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA || getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CARIBBEAN || getRegionID() == REGION_MESOAMERICA || getRegionID() == REGION_BRAZIL || getRegionID() == REGION_ARGENTINA || getRegionID() == REGION_PERU || getRegionID() == REGION_COLOMBIA || getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_AUSTRALIA)
+											if (GET_PLAYER(getOwnerINLINE()).getStateReligion() == NO_RELIGION || GET_PLAYER(getOwnerINLINE()).getStateReligion() == CATHOLICISM || GET_PLAYER(getOwnerINLINE()).getStateReligion() == PROTESTANTISM)
 											{
-												bDistanceReduction = false;
+												if (getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA || getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CARIBBEAN || getRegionID() == REGION_MESOAMERICA || getRegionID() == REGION_BRAZIL || getRegionID() == REGION_ARGENTINA || getRegionID() == REGION_PERU || getRegionID() == REGION_COLOMBIA || getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_AUSTRALIA)
+												{
+													bDistanceReduction = false;
+												}
 											}
 										}
 
