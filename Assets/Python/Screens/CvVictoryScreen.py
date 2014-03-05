@@ -80,10 +80,7 @@ class CvVictoryScreen:
 		self.Z_CONTROLS = self.Z_BACKGROUND - 0.2
 		self.DZ = -0.2
 		
-		self.mainScreen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
 		self.X_EXTRA = 0
-		if self.mainScreen.getXResolution() > 1024: self.X_EXTRA = self.mainScreen.getXResolution() - 1024
-		self.mainScreen = None
 
 		self.X_SCREEN = 500 + self.X_EXTRA / 2
 		self.Y_SCREEN = 396
@@ -174,6 +171,15 @@ class CvVictoryScreen:
 			return
 		screen.setRenderInterfaceOnly(True);
 		screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
+		
+		mainScreen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
+		if mainScreen.getXResolution() > 1024: self.X_EXTRA = mainScreen.getXResolution() - 1024
+		
+		self.X_SCREEN += self.X_EXTRA / 2
+		self.W_SCREEN += self.X_EXTRA
+		self.X_EXIT += self.X_EXTRA
+		self.W_AREA += self.X_EXTRA
+		self.TABLE_WIDTH_0 += self.X_EXTRA
 
 		self.iActivePlayer = CyGame().getActivePlayer()
 		if self.iScreen == -1:
