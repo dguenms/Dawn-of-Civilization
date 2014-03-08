@@ -172,6 +172,12 @@ class CvVictoryScreen:
 		screen.setRenderInterfaceOnly(True);
 		screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
 		
+		self.X_SCREEN -= self.X_EXTRA / 2
+		self.W_SCREEN -= self.X_EXTRA
+		self.X_EXIT -= self.X_EXTRA
+		self.W_AREA -= self.X_EXTRA
+		self.TABLE_WIDTH_0 -= self.X_EXTRA
+		
 		mainScreen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
 		if mainScreen.getXResolution() > 1024: self.X_EXTRA = mainScreen.getXResolution() - 1024
 		
