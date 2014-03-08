@@ -799,8 +799,8 @@ class CvRFCEventHandler:
 		if iTeam < con.iNumPlayers and iOtherTeam < con.iNumPlayers:
 			cong.onChangeWar(argsList)
 		
-		if bWar and bGlobalWar:
-			utils.debugTextPopup('Global war: ' + gc.getPlayer(iTeam).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iOtherTeam).getCivilizationShortDescription(0))
+		#if bWar and bGlobalWar:
+		#	utils.debugTextPopup('Global war: ' + gc.getPlayer(iTeam).getCivilizationShortDescription(0) + ' and ' + gc.getPlayer(iOtherTeam).getCivilizationShortDescription(0))
 		
 		# don't start AIWars if they get involved in natural wars
 		if bWar and iTeam < con.iNumPlayers and iOtherTeam < con.iNumPlayers:
