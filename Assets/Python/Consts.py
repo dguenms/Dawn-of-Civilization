@@ -320,7 +320,7 @@ tFall = (
 
 tVictoryYears = (
 (-850, -100, 170), # Egypt
-(-1, 1000, 1800), # China
+(1000, -1, 1800), # China
 (-1, -850, -700), # Babylonia
 (-1, -250, -330), # Greece
 (-1, 700, 1200), # India
