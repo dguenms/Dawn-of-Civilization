@@ -34957,6 +34957,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=47
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD

@@ -109,7 +109,7 @@ class Resources:
 			gc.getMap().plot(88, 47).setRouteType(iRoad)
 			
 			self.createResource(88, 47, iSilk)
-			self.createResource(88, 46, iSilk)
+			#self.createResource(88, 46, iSilk)
 
 		#Leoreth: Hanseong's pig appears later so China isn't that eager to found Sanshan
 		if iGameTurn == getTurnForYear(-50):

@@ -23032,7 +23032,7 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_CATHEDRAL</BuildingClass>
-			<Type>BUILDING_ZOROASTRIANISM_CATHEDRAL</Type>
+			<Type>BUILDING_ZOROASTRIAN_CATHEDRAL</Type>
 			<SpecialBuildingType>SPECIALBUILDING_CATHEDRAL</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL_PEDIA</Civilopedia>
