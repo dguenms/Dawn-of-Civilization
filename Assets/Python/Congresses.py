@@ -863,7 +863,7 @@ class Congress:
 			if gc.getTeam(iLoopPlayer).isVassal(iPlayer): continue
 			
 			# Ethiopian UP
-			if iLoopPlayer == iEthiopia: continue
+			#if iLoopPlayer == iEthiopia: continue
 			
 			for city in utils.getCityList(iLoopPlayer):
 				x, y = city.getX(), city.getY()

@@ -229,3 +229,5 @@
 	# city assignments by the congress can be refused, which might lead to war against the supporting civilizations
 # the Pyramids now also increase worker speed by 25%
 # changed the English UP to cap city distance for maintenance calculations instead of completely disabling distance maintenance
+# new Ethiopian UP: +10% land unit strength within own cultural borders
+# new Persian UP: no expansion stability penalties for low culture

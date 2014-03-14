@@ -20,6 +20,11 @@
 		<German>Erfüllt:</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_RELIGIOUS_GOALS</Tag>
+		<English>You lack a state religion with religious goals!</English>
+		<German>Euch fehlt eine Staatsreligion mit religiösen Zielen!</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_PRO1</Tag>
 		<English>Enlightenment: Be first to discover Liberalism, Constitution and Economics</English>
 		<German>Aufklärung: Entdecken Sie als erstes den Liberalismus, die Verfassung und Wirtschaftswissenschaften</German>
