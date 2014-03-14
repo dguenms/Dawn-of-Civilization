@@ -783,9 +783,6 @@ class CvRFCEventHandler:
                 'called before a game is actually saved'
 		
 		sd.save() # edead: pickle & save script data
-		
-		
-
 
         def onLoadGame(self, argsList):
 		sd.load() # edead: load & unpickle script data

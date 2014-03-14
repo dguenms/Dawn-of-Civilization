@@ -2823,7 +2823,8 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 			}
 		}
 
-		if (iDenominator > 0)
+		// Leoreth: average is skewed for too few civs, also ruins the Babylonian UP
+		if (iDenominator > 5)
 		{
 			// extra costs come in 10% increments
 			int iSurplus = (100 * iBestValue / iAverageValue) / 10;

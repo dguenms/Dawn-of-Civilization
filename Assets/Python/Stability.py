@@ -991,11 +991,19 @@ def calculateStability(iPlayer):
 		
 		bHistorical = (plot.getSettlerMapValue(iPlayer) >= 90)
 		
+		iOwnCulture = plot.getCulture(iPlayer)
+		iTotalCulture = 0
+		
 		bForeignCore = False
 		for iLoopPlayer in range(con.iNumPlayers):
-			if iLoopPlayer != iPlayer and iGameTurn > getTurnForYear(con.tBirth[iLoopPlayer]) and plot.isCore(iLoopPlayer):
-				bForeignCore = True
-				break
+			iTempCulture = plot.getCulture(iLoopPlayer)
+			if plot.isCore(iLoopPlayer):
+				iTempCulture *= 2
+				if iLoopPlayer != iPlayer and iGameTurn > getTurnForYear(con.tBirth[iLoopPlayer]):
+					bForeignCore = True
+			iTotalCulture += iTempCulture
+			
+		iCulturePercent = 100 * iOwnCulture / iTotalCulture
 				
 		#bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
 		bExpansionExceptions = bTotalitarianism
@@ -1014,11 +1022,13 @@ def calculateStability(iPlayer):
 			# not original owner
 			if city.getOriginalOwner() != iPlayer and not bExpansionExceptions and not bWarriorCode: iModifier += 1
 			
-			# not majority culture
-			if plot.getCulture(iPlayer) * 2 < plot.countTotalCulture() and not bExpansionExceptions: iModifier += 1
+			# not majority culture (includes foreign core and Persian UP)
+			if iPlayer != con.iPersia:
+				if iCulturePercent < 50: iModifier += 1
+				if iCulturePercent < 20: iModifier += 1
 			
 			# foreign core (includes Persian UP)
-			if bForeignCore and iPlayer != con.iPersia: iModifier += 1
+			#if bForeignCore and iPlayer != con.iPersia: iModifier += 1
 			
 			# City States
 			if bCityStates: iModifier += 2
@@ -1084,11 +1094,6 @@ def calculateStability(iPlayer):
 	#sPopulationDebug = 'Core Population: ' + str(iCorePopulation) + '\nHistorical population: ' + str(iHistoricalPopulation) + '\nContested population: ' + str(iContestedPopulation) + '\nForeign population: ' + str(iForeignPopulation) + '\nForeign core population: ' + str(iForeignCorePopulation)
 	#utils.debugTextPopup(sPopulationDebug)
 			
-	#for city in utils.getAreaCities(con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer]):
-	#	iTotalCoreCities += 1
-	#	if city.getOwner() != iPlayer:
-	#		iOccupiedCoreCities += 1
-			
 	iCurrentCommerce = pPlayer.calculateTotalCommerce()
 	iPreviousCommerce = pPlayer.getEconomyHistory(iGameTurn - utils.getTurns(10))
 	
@@ -1104,11 +1109,8 @@ def calculateStability(iPlayer):
 	iCurrentCommerceRank = calculateCommerceRank(iPlayer, iGameTurn)
 	iPreviousCommerceRank = calculateCommerceRank(iPlayer, iGameTurn - utils.getTurns(10))
 	
-	iCurrentPower = pPlayer.getPower()#pPlayer.getPowerHistory(iGameTurn)
+	iCurrentPower = pPlayer.getPower()
 	iPreviousPower = pPlayer.getPowerHistory(iGameTurn - utils.getTurns(10))
-	
-	#iCurrentPowerRank = calculatePowerRank(iPlayer, iGameTurn)
-	#iPreviousPowerRank = calculatePowerRank(iPlayer, iGameTurn - 10)
 	
 	# EXPANSION
 	iExpansionStability = 0
@@ -1117,17 +1119,8 @@ def calculateStability(iPlayer):
 	iRazeCityStability = 0
 	iOwnCoreStability = 0
 	
-	# help Tibet
-	#if iPlayer == con.iTibet and iGameTurn <= getTurnForYear(1000):
-	#	iPeripheryPopulation /= 2
-	
 	# Core vs. Periphery Populations
 	iCombinedPopulation = iCorePopulation + iPeripheryPopulation
-	
-	#if iCombinedPopulation == 0:
-	#	iCorePercentage = 0
-	#else:
-	#	iCorePercentage = 100 * iCorePopulation / iCombinedPopulation - 50
 		
 	if iCorePopulation == 0:
 		iPeripheryExcess = 200
@@ -1141,11 +1134,6 @@ def calculateStability(iPlayer):
 		
 		utils.debugTextPopup('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
 		
-	#if iCorePeripheryStability > 0:
-	#	sExpansionString += localText.getText('TXT_KEY_STABILITY_CORE_PERIPHERY_POSITIVE', (iCorePeripheryStability,))
-	#elif iCorePeripheryStability < 0:
-	#	sExpansionString += localText.getText('TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE', (iCorePeripheryStability,))
-	
 	lParameters[con.iParameterCorePeriphery] = iCorePeripheryStability
 		
 	iExpansionStability += iCorePeripheryStability
@@ -1157,9 +1145,6 @@ def calculateStability(iPlayer):
 		
 	iExpansionStability += iRazeCityStability
 	
-	# Control over own core - even necessary? already weighs in above - disable for now and see how it goes
-	#iExpansionStability -= 20 * iOccupiedCoreCities / iTotalCoreCities
-	
 	# ECONOMY
 	iEconomyStability = 0
 	
@@ -1167,12 +1152,6 @@ def calculateStability(iPlayer):
 	
 	# Economic growth
 	if iPreviousCommerce != 0:
-		#iCommerceDifference = iCurrentCommerce - iPreviousCommerce
-		#iPercentChange = 100 * iCommerceDifference / iPreviousCommerce
-		
-		#iNeighborCommerceDifference = iCurrentCommerceNeighbors - iPreviousCommerceNeighbors
-		#iBaselinePercentChange = 100 * iNeighborCommerceDifference / iPreviousCommerceNeighbors
-		
 		iPercentChange = calculateEconomicGrowth(iPlayer, 10)
 		iBaselinePercentChange = 10 #calculateEconomicGrowthNeighbors(iPlayer, 10)
 		
@@ -1194,28 +1173,11 @@ def calculateStability(iPlayer):
 		if bEnvironmentalism and iPercentChange >= 0 and iEconomicGrowthStability < 0:
 			iEconomicGrowthStability = 0
 		
-		#if iPercentChange > iBaselinePercentChange:
-		#	sEconomyString += localText.getText('TXT_KEY_STABILITY_ECONOMIC_GROWTH', (iEconomicGrowthStability,))
-		#elif iPercentChange >= 0 and iPercentChange != iBaselinePercentChange:
-		#	sEconomyString += localText.getText('TXT_KEY_STABILITY_ECONOMIC_STAGNATION', (iEconomicGrowthStability,))
-		#else:
-		#	sEconomyString += localText.getText('TXT_KEY_STABILITY_ECONOMIC_DECLINE', (iEconomicGrowthStability,))
-		
 		lParameters[con.iParameterEconomicGrowth] = iEconomicGrowthStability
 		lParameters[con.iParameterPercentChange] = iPercentChange
 		lParameters[con.iParameterBaselinePercent] = iBaselinePercentChange
 	
 	iEconomyStability += iEconomicGrowthStability
-	
-	# Relative wealth
-	#iRankDifference = iCurrentCommerceRank - iPreviousCommerceRank
-	
-	#if iRankDifference > 0:
-	#	sEconomyString += localText.getText('TXT_KEY_STABILITY_RELATIVE_WEALTH_GAIN', (iRankDifference,))
-	#elif iRankDifference < 0:
-	#	sEconomyString += localText.getText('TXT_KEY_STABILITY_RELATIVE_WEALTH_LOSS', (iRankDifference,))
-		
-	#iEconomyStability += iRankDifference
 	
 	# Economic systems
 	iEconomicSystemStability = 0
@@ -1231,12 +1193,6 @@ def calculateStability(iPlayer):
 				if bCentralPlanning:
 					if pLoopPlayer.getCivics(3) == con.iCivicFreeMarket:
 						iEconomicSystemStability -= 2
-						
-	#if iEconomicSystemStability != 0:
-	#	if bMercantilism:
-	#		sEconomyString += localText.getText('TXT_KEY_STABILITY_MERCANTILISM_TRADE_RICHER', (iEconomicSystemPenalty,))
-	#	if bCentralPlanning:
-	#		sEconomyString += localText.getText('TXT_KEY_STABILITY_CENTRAL_PLANNING_TRADE_FREE_MARKET', (iEconomicSystemPenalty,))
 	
 	if bMercantilism: lParameters[con.iParameterMercantilism] = iEconomicSystemStability
 	if bCentralPlanning: lParameters[con.iParameterCentralPlanning] = iEconomicSystemStability
@@ -1256,15 +1212,6 @@ def calculateStability(iPlayer):
 			iHappinessStability -= min(iNumTotalCities, 10 * (iUnhappyCities - iHappyCities) / iNumTotalCities)
 	
 	#utils.debugTextPopup(pPlayer.getCivilizationShortDescription(0) + ' happiness stability: ' + str(iHappinessStability) + '\nHappy cities: ' + str(iHappyCities) + '\nUnhappy cities: ' + str(iUnhappyCities) + '\nTotal cities: ' + str(iNumTotalCities))
-	
-	#if iNumTotalCities > 0: 
-	#	iHappinessStability += (iHappiness - iUnhappiness) / iNumTotalCities
-	#iHappinessStability -= 2 * iUnhappyCities
-	
-	#if iHappinessStability > 0:
-	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_HAPPINESS', (iHappinessStability,))
-	#elif iHappinessStability < 0:
-	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_UNHAPPINESS', (iHappinessStability,))
 	
 	lParameters[con.iParameterHappiness] = iHappinessStability
 	
@@ -1322,11 +1269,6 @@ def calculateStability(iPlayer):
 		
 	iCivicCombinationStability = iCivicStability
 	
-	#if iCivicCombinationStability > 0:
-	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_CIVIC_COMBINATIONS_POSITIVE', (iCivicCombinationStability,))
-	#elif iCivicCombinationStability < 0:
-	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_CIVIC_COMBINATIONS_NEGATIVE', (iCivicCombinationStability,))
-	
 	lParameters[con.iParameterCivicCombinations] = iCivicCombinationStability
 	
 	iCivicStability = 0
@@ -1366,11 +1308,6 @@ def calculateStability(iPlayer):
 	
 	iCivicEraTechStability = iCivicStability
 	
-	#if iCivicEraTechStability > 0:
-	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_CIVIC_ERA_TECH_POSITIVE', (iCivicEraTechStability,))
-	#elif iCivicEraTechStability < 0:
-	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_CIVIC_ERA_TECH_NEGATIVE', (iCivicEraTechStability,))
-	
 	lParameters[con.iParameterCivicsEraTech] = iCivicEraTechStability
 	
 	iDomesticStability += iCivicCombinationStability + iCivicEraTechStability
@@ -1393,11 +1330,6 @@ def calculateStability(iPlayer):
 			if iCivicGovernment == con.iCivicTheocracy:
 				iOnlyStateReligionRatio = 100 * iOnlyStateReligionCities / iNumTotalCities
 				iReligionStability += iOnlyStateReligionRatio / 20
-			
-	#if iReligionStability > 0:
-	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_RELIGIOUS_UNITY', (iReligionStability,))
-	#elif iReligionStability < 0:
-	#	sDomesticString += localText.getText('TXT_KEY_STABILITY_RELIGIOUS_DISUNITY', (iReligionStability,))
 	
 	lParameters[con.iParameterReligion] = iReligionStability
 		
@@ -1449,28 +1381,6 @@ def calculateStability(iPlayer):
 			if tPlayer.isAtWar(iLoopPlayer):
 				if pLoopPlayer.getStateReligion() != iStateReligion: iFanaticismStability += 3
 				else: iFanaticismStability -= 2
-			
-	#if iNeighborStability < 0:
-	#	sForeignString += localText.getText('TXT_KEY_STABILITY_NEIGHBORS', (iNeighborStability,))
-		
-	#if iVassalStability > 0:
-	#	sForeignString += localText.getText('TXT_KEY_STABILITY_VASSALS_POSITIVE', (iVassalStability,))
-	#elif iVassalStability < 0:
-	#	sForeignString += localText.getText('TXT_KEY_STABILITY_VASSALS_NEGATIVE', (iVassalStability,))
-		
-	#if iDefensivePactStability > 0:
-	#	sForeignString += localText.getText('TXT_KEY_STABILITY_DEFENSIVE_PACTS', (iDefensivePactStability,))
-		
-	#if iRelationStability < 0:
-	#	sForeignString += localText.getText('TXT_KEY_STABILITY_BAD_RELATIONS', (iRelationStability,))
-		
-	#if iWarStability > 0:
-	#	if bAutocracy and bFanaticism:
-	#		sForeignString += localText.getText('TXT_KEY_STABILITY_WARS_BOTH', (iWarStability,))
-	#	elif bAutocracy:
-	#		sForeignString += localText.getText('TXT_KEY_STABILITY_WARS_NEIGHBORS', (iWarStability,))
-	#	elif bFanaticism:
-	#		sForeignString += localText.getText('TXT_KEY_STABILITY_WARS_HEATHENS', (iWarStability,))
 	
 	lParameters[con.iParameterNeighbors] = iNeighborStability
 	lParameters[con.iParameterVassals] = iVassalStability
@@ -1495,16 +1405,15 @@ def calculateStability(iPlayer):
 	# war success
 	for iLoopPlayer in range(con.iNumPlayers):
 		if tPlayer.isAtWar(iLoopPlayer) and gc.getPlayer(iLoopPlayer).isAlive():
-			iOurSuccess = tPlayer.AI_getWarSuccess(iLoopPlayer)
-			iTheirSuccess = gc.getTeam(iLoopPlayer).AI_getWarSuccess(iPlayer)
+			# our success = their war weariness and vice versa
+			iOurSuccess = gc.getTeam(iLoopPlayer).getWarWeariness(iPlayer)  #tPlayer.AI_getWarSuccess(iLoopPlayer)
+			iTheirSuccess = tPlayer.getWarWeariness(iLoopPlayer)  #gc.getTeam(iLoopPlayer).AI_getWarSuccess(iPlayer)
 			iCombinedSuccess = iOurSuccess + iTheirSuccess
 			
 			# ignore insignificant wars
 			if iCombinedSuccess < 20: continue
 			
 			iThisWarSuccess = 100 * iOurSuccess / iCombinedSuccess - 50
-			
-			#fThisWarSuccess = 1.0 * (1.0 * iOurSuccess/iCombinedSuccess - 1.0/2)
 			
 			iNumerator += iThisWarSuccess
 			iDenominator += 1
@@ -1519,14 +1428,9 @@ def calculateStability(iPlayer):
 		else:
 			iWarSuccessStability = int(20 * sigmoid(1.0 * iTotalSuccess / 100))
 		
-		#sLogString = pPlayer.getCivilizationAdjective(0) + ' total war success: ' + str(iTotalSuccess) + '\nStability: ' + str(iWarSuccessStability)
+		sLogString = pPlayer.getCivilizationAdjective(0) + ' total war success: ' + str(iTotalSuccess) + '\nStability: ' + str(iWarSuccessStability)
 		
-		#utils.debugTextPopup(sLogString)
-			
-	#if iWarSuccessStability > 0:
-	#	sMilitaryString += localText.getText('TXT_KEY_STABILITY_WINNING_WARS', (iWarSuccessStability,))
-	#elif iWarSuccessStability < 0:
-	#	sMilitaryString += localText.getText('TXT_KEY_STABILITY_LOSING_WARS', (iWarSuccessStability,))
+		utils.debugTextPopup(sLogString)
 	
 	lParameters[con.iParameterWarSuccess] = iWarSuccessStability
 				
@@ -1542,9 +1446,6 @@ def calculateStability(iPlayer):
 			if iMilitaryStrengthStability < -10: iMilitaryStrengthStability = -10
 		
 		#utils.debugTextPopup('Military strength: ' + pPlayer.getCivilizationShortDescription(0) + '\nCurrent power: ' + str(iCurrentPower) + '\nPrevious Power: ' + str(iPreviousPower) + '\nPercent change: ' + str(iPercentChange) + '\nStability change: ' + str(iMilitaryStrengthStability))
-	
-	#if iMilitaryStrengthStability < 0:
-	#	sMilitaryString += localText.getText('TXT_KEY_STABILITY_LOSING_STRENGTH', (iMilitaryStrengthStability,))
 	
 	lParameters[con.iParameterMilitaryStrength] = iMilitaryStrengthStability
 	
