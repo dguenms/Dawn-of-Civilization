@@ -137,8 +137,12 @@ class StoredData:
 				    'iHumanStability' : 0,
 				    'iHumanRazePenalty' : 0,
 				    'lBarbarianLosses' : [0 for i in range(con.iNumPlayers)],
+				    'lPreviousCommerce' : [0 for i in range(con.iNumPlayers)],
+				    'lEconomyStability' : [0 for i in range(con.iNumPlayers)],
+				    'lLastExpansionStability' : [0 for i in range(con.iNumPlayers)], 
 				}
                 self.save()
+		
 		
 	def getStabilityLevel(self, iPlayer):
 		return self.scriptDict['lStabilityLevels'][iPlayer]
@@ -156,7 +160,31 @@ class StoredData:
 		return self.scriptDict['iLastStability']
 		
 	def setLastStability(self, iNewValue):
-		self.scriptDict['iLastStability'] = iNewValue		
+		self.scriptDict['iLastStability'] = iNewValue	
+
+	def getPreviousCommerce(self, iPlayer):
+		return self.scriptDict['lPreviousCommerce'][iPlayer]
+		
+	def setPreviousCommerce(self, iPlayer, iNewValue):
+		self.scriptDict['lPreviousCommerce'][iPlayer] = iNewValue
+		
+	def getEconomyStability(self, iPlayer):
+		return self.scriptDict['lEconomyStability'][iPlayer]
+		
+	def setEconomyStability(self, iPlayer, iNewValue):
+		self.scriptDict['lEconomyStability'][iPlayer] = iNewValue
+		
+	def changeEconomyStability(self, iPlayer, iChange):
+		self.scriptDict['lEconomyStability'][iPlayer] += iChange
+		
+	def getLastExpansionStability(self, iPlayer):
+		return self.scriptDict['lLastExpansionStability'][iPlayer]
+		
+	def setLastExpansionStability(self, iPlayer, iNewValue):
+		self.scriptDict['lLastExpansionStability'][iPlayer] = iNewValue
+		
+	def changeLastExpansionStability(self, iPlayer, iChange):
+		self.scriptDict['lLastExpansionStability'][iPlayer] += iChange
 		
 	def getLastDifference(self):
 		return -self.scriptDict['iLastDifference']

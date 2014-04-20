@@ -38,6 +38,12 @@ def checkTurn(iGameTurn):
 		if getCrisisCountdown(iPlayer) > 0:
 			changeCrisisCountdown(iPlayer, -1)
 			
+	# calculate economic stability
+	if iGameTurn % utils.getTurns(3) == 0:
+		for iPlayer in range(con.iNumPlayers):
+			calculateEconomicStability(iPlayer)
+			
+	# decay penalties from razing cities and losing to barbarians
 	if iGameTurn % utils.getTurns(5) == 0:
 		if sd.getHumanRazePenalty() < 0:
 			sd.changeHumanRazePenalty(2)
@@ -1127,10 +1133,17 @@ def calculateStability(iPlayer):
 	else:
 		iPeripheryExcess = 100 * iPeripheryPopulation / iCorePopulation - 100
 	
-	if iPeripheryExcess > 100: iPeripheryExcess = 100
+	if iPeripheryExcess > 200: iPeripheryExcess = 200
 		
 	if iPeripheryExcess > 0:
 		iCorePeripheryStability -= int(25 * sigmoid(1.0 * iPeripheryExcess / 100))
+		
+		iLastExpansionStability = sd.getLastExpansionStability(iPlayer)
+		
+		# cap changes between checks at +5
+		if iLastExpansionStability - iCorePeripheryStability > 5: iCorePeripheryStability = iLastExpansionStability - 5
+		
+		sd.setLastExpansionStability(iPlayer, iCorePeripheryStability)
 		
 		utils.debugTextPopup('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
 		
@@ -1151,31 +1164,36 @@ def calculateStability(iPlayer):
 	iEconomicGrowthStability = 0
 	
 	# Economic growth
-	if iPreviousCommerce != 0:
-		iPercentChange = calculateEconomicGrowth(iPlayer, 10)
-		iBaselinePercentChange = 10 #calculateEconomicGrowthNeighbors(iPlayer, 10)
-		
-		iDifference = iPercentChange - iBaselinePercentChange
-		
-		if iDifference > 20:
-			iEconomicGrowthStability = 10 + (iDifference - 20) / 5
-		elif iDifference < -20:
-			iEconomicGrowthStability = -10 + (iDifference + 20) / 5
-		else:
-			iEconomicGrowthStability = iDifference / 2
-		
-		if iEconomicGrowthStability > 20: iEconomicGrowthStability = 20
-		elif iEconomicGrowthStability < -20: iEconomicGrowthStability = -20
-		
-		#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + " Economic Stability\nGrowth: " + str(iPercentChange) + "\nBaseline Percent: " + str(iBaselinePercentChange) + "\nStability: " + str(iEconomicGrowthStability))
-		
-		# Environmentalism
-		if bEnvironmentalism and iPercentChange >= 0 and iEconomicGrowthStability < 0:
-			iEconomicGrowthStability = 0
-		
-		lParameters[con.iParameterEconomicGrowth] = iEconomicGrowthStability
-		lParameters[con.iParameterPercentChange] = iPercentChange
-		lParameters[con.iParameterBaselinePercent] = iBaselinePercentChange
+	#if iPreviousCommerce != 0:
+	#	iPercentChange = calculateEconomicGrowth(iPlayer, 10)
+	#	iBaselinePercentChange = 10 #calculateEconomicGrowthNeighbors(iPlayer, 10)
+	#	
+	#	iDifference = iPercentChange - iBaselinePercentChange
+	#	
+	#	if iDifference > 20:
+	#		iEconomicGrowthStability = 10 + (iDifference - 20) / 5
+	#	elif iDifference < -20:
+	#		iEconomicGrowthStability = -10 + (iDifference + 20) / 5
+	#	else:
+	#		iEconomicGrowthStability = iDifference / 2
+	#	
+	#	if iEconomicGrowthStability > 20: iEconomicGrowthStability = 20
+	#	elif iEconomicGrowthStability < -20: iEconomicGrowthStability = -20
+	#	
+	#	#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + " Economic Stability\nGrowth: " + str(iPercentChange) + "\nBaseline Percent: " + str(iBaselinePercentChange) + "\nStability: " + str(iEconomicGrowthStability))
+	#	
+	#	# Environmentalism
+	#	if bEnvironmentalism and iPercentChange >= 0 and iEconomicGrowthStability < 0:
+	#		iEconomicGrowthStability = 0
+	#	
+	#	lParameters[con.iParameterEconomicGrowth] = iEconomicGrowthStability
+	#	lParameters[con.iParameterPercentChange] = iPercentChange
+	#	lParameters[con.iParameterBaselinePercent] = iBaselinePercentChange
+	
+	iEconomicGrowthStability = sd.getEconomyStability(iPlayer) / 2
+	
+	if iEconomicGrowthStability > 30: iEconomicGrowthStability = 30
+	elif iEconomicGrowthStability < -30: iEconomicGrowthStability = -30
 	
 	iEconomyStability += iEconomicGrowthStability
 	
@@ -1207,7 +1225,7 @@ def calculateStability(iPlayer):
 	
 	if iNumTotalCities > 0:
 		if iHappyCities > iUnhappyCities:
-			iHappinessStability += min(iNumTotalCities, 5 * (iHappyCities - iUnhappyCities) / iNumTotalCities)
+			iHappinessStability += min(iNumTotalCities, 10 * (iHappyCities - iUnhappyCities) / iNumTotalCities)
 		else:
 			iHappinessStability -= min(iNumTotalCities, 10 * (iUnhappyCities - iHappyCities) / iNumTotalCities)
 	
@@ -1424,7 +1442,7 @@ def calculateStability(iPlayer):
 		iTotalSuccess = iNumerator / iDenominator
 		
 		if iTotalSuccess > 0:
-			iWarSuccessStability = 10 * iTotalSuccess / 100
+			iWarSuccessStability = 20 * iTotalSuccess / 100
 		else:
 			iWarSuccessStability = int(20 * sigmoid(1.0 * iTotalSuccess / 100))
 		
@@ -1465,7 +1483,38 @@ def calculateStability(iPlayer):
 	return iStability, [iExpansionStability, iEconomyStability, iDomesticStability, iForeignStability, iMilitaryStability], lParameters
 
 def sigmoid(x):
-	return 2.0 / (1 + math.exp(-5*x)) - 1.0
+	#return 2.0 / (1 + math.exp(-5*x)) - 1.0
+	return math.tanh(5 * x / 4)
+	
+def calculateEconomicStability(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	
+	iPreviousCommerce = sd.getPreviousCommerce(iPlayer)
+	iCurrentCommerce = pPlayer.calculateTotalCommerce()
+	
+	iEconomyStability = sd.getEconomyStability(iPlayer)
+	
+	if iPreviousCommerce == 0: return
+	
+	iPercentChange = 100 * iCurrentCommerce / iPreviousCommerce - 100
+	
+	if iEconomyStability >= 0:
+		if iPercentChange > 5:
+			iEconomyStability += 2
+		elif iPercentChange < -5:
+			iEconomyStability -= 4
+		else:
+			iEconomyStability -= 1
+	else:
+		if iPercentChange > 5:
+			iEconomyStability += 2
+		elif iPercentChange < -5:
+			iEconomyStability -= 2
+		else:
+			iEconomyStability += 0
+			
+	sd.setEconomyStability(iPlayer, iEconomyStability)
+	sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
 	
 def calculateEconomicGrowth(iPlayer, iNumTurns):
 	lHistory = []
