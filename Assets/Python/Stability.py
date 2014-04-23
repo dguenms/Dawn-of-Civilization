@@ -1009,6 +1009,8 @@ def calculateStability(iPlayer):
 					bForeignCore = True
 			iTotalCulture += iTempCulture
 			
+		if iTotalCulture == 0: iTotalCulture = 1
+		
 		iCulturePercent = 100 * iOwnCulture / iTotalCulture
 				
 		#bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
@@ -1489,29 +1491,31 @@ def sigmoid(x):
 def calculateEconomicStability(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	
+	if not pPlayer.isAlive(): return
+	
 	iPreviousCommerce = sd.getPreviousCommerce(iPlayer)
 	iCurrentCommerce = pPlayer.calculateTotalCommerce()
 	
 	iEconomyStability = sd.getEconomyStability(iPlayer)
 	
-	if iPreviousCommerce == 0: return
+	if iPreviousCommerce == 0: 
+		sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
+		return
 	
 	iPercentChange = 100 * iCurrentCommerce / iPreviousCommerce - 100
 	
-	if iEconomyStability >= 0:
-		if iPercentChange > 5:
-			iEconomyStability += 2
-		elif iPercentChange < -5:
-			iEconomyStability -= 4
-		else:
-			iEconomyStability -= 1
+	if iPlayer == con.iChina:
+		utils.debugTextPopup('GROWTH: ' + str(iPercentChange) + '%')
+		
+	if iPercentChange > 5:
+		iEconomyStability += 2
+	elif iPercentChange < -5:
+		iEconomyStability -= 2
 	else:
-		if iPercentChange > 5:
-			iEconomyStability += 2
-		elif iPercentChange < -5:
-			iEconomyStability -= 2
-		else:
-			iEconomyStability += 0
+		if iEconomyStability > 0:
+			iEconomyStability -= 1
+		elif iEconomyStability < 0:
+			iEconomyStability += 1
 			
 	sd.setEconomyStability(iPlayer, iEconomyStability)
 	sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
