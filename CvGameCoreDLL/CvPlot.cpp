@@ -6726,6 +6726,10 @@ void CvPlot::updateYield()
 			{
 				if (isBeingWorked())
 				{
+					if (pWorkingCity->getX() == 15 && pWorkingCity->getY() == 42)
+					{
+						GC.getGameINLINE().logMsg("Plot update yield.");
+					}
 					pWorkingCity->changeBaseYieldRate(((YieldTypes)iI), (getYield((YieldTypes)iI) - iOldYield));
 				}
 

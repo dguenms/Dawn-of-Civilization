@@ -4697,8 +4697,6 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								bool bEnablesUnitWonder = false;
 								for (iJ = 0; iJ < GC.getNumUnitClassInfos(); iJ++)
 								{
-									GC.getGameINLINE().logMsg("Iterate unit %d", iJ);
-
 									eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iJ)));
 
 									if (eLoopUnit != NO_UNIT)
