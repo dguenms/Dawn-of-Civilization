@@ -10880,7 +10880,7 @@ void CvPlayer::changeCorporationCommerceModifier(int iChange)
 {
 	if (iChange != 0)
 	{
-		m_iCorporationMaintenanceModifier += iChange;
+		m_iCorporationCommerceModifier += iChange;
 	}
 }
 

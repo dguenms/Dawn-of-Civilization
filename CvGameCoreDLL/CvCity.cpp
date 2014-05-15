@@ -4492,6 +4492,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeSeaPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getSeaPlotYieldChange(iI) * iChange));
 			changeRiverPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getRiverPlotYieldChange(iI) * iChange));
+			if (getX() == 15 && getY() == 42)
+			{
+				GC.getGameINLINE().logMsg("Process building.");
+			}
 			changeBaseYieldRate(((YieldTypes)iI), ((GC.getBuildingInfo(eBuilding).getYieldChange(iI) + getBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), (YieldTypes)iI))* iChange));
 			changeYieldRateModifier(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getYieldModifier(iI) * iChange));
 			changePowerYieldRateModifier(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getPowerYieldModifier(iI) * iChange));
@@ -4655,6 +4659,10 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
+		if (getX() == 15 && getY() == 42)
+		{
+			GC.getGameINLINE().logMsg("Process specialist.");
+		}
 		changeBaseYieldRate(((YieldTypes)iI), (GC.getSpecialistInfo(eSpecialist).getYieldChange(iI) * iChange));
 	}
 
@@ -9502,6 +9510,11 @@ void CvCity::setBaseYieldRate(YieldTypes eIndex, int iNewValue)
 				gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true );
 			}
 		}
+	}	
+
+	if (getX() == 15 && getY() == 42)
+	{
+		GC.getGameINLINE().logMsg("Base yield reset, yield rates: %d, %d, %d", getYieldRate(YIELD_FOOD), getYieldRate(YIELD_PRODUCTION), getYieldRate(YIELD_COMMERCE));
 	}
 }
 
@@ -9543,6 +9556,11 @@ void CvCity::changeYieldRateModifier(YieldTypes eIndex, int iChange)
 		{
 			setInfoDirty(true);
 		}
+	}
+	
+	if (getX() == 15 && getY() == 42)
+	{
+		GC.getGameINLINE().logMsg("Yield rate modifier changed, yield rates: %d, %d, %d", getYieldRate(YIELD_FOOD), getYieldRate(YIELD_PRODUCTION), getYieldRate(YIELD_COMMERCE));
 	}
 }
 
@@ -9893,6 +9911,11 @@ void CvCity::setTradeYield(YieldTypes eIndex, int iNewValue)
 		m_aiTradeYield[eIndex] = iNewValue;
 		FAssert(getTradeYield(eIndex) >= 0);
 
+		if (getX() == 15 && getY() == 42)
+		{
+			GC.getGameINLINE().logMsg("Set trade yield.");
+		}
+
 		changeBaseYieldRate(eIndex, (iNewValue - iOldValue));
 	}
 }
@@ -9991,6 +10014,11 @@ void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 	{
 		m_aiExtraSpecialistYield[eYield] = iNewYield;
 		FAssert(getExtraSpecialistYield(eYield) >= 0);
+
+		if (getX() == 15 && getY() == 42)
+		{
+			GC.getGameINLINE().logMsg("Update extra specialist yield.");
+		}
 
 		changeBaseYieldRate(eYield, (iNewYield - iOldYield));
 	}
@@ -10604,6 +10632,11 @@ void CvCity::setCorporationYield(YieldTypes eIndex, int iNewValue)
 		m_aiCorporationYield[eIndex] = iNewValue;
 		FAssert(getCorporationYield(eIndex) >= 0);
 
+		if (getX() == 15 && getY() == 42)
+		{
+			GC.getGameINLINE().logMsg("Set corporation yield for type %d to: %d.", (int)eIndex, iNewValue);
+		}
+
 		changeBaseYieldRate(eIndex, (iNewValue - iOldValue));
 	}
 }
@@ -10646,6 +10679,11 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 		}
 	}
 
+	if (getX() == 15 && getY() == 42)
+	{
+		GC.getGameINLINE().logMsg("Corporation yield %d for corporation %d: %d.", (int)eIndex, (int)eCorporation, iYield);
+	}
+
 	return (iYield + 99) / 100;
 }
 
@@ -10681,8 +10719,17 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 		}
 	}
 
-	//Leoreth: civic corporation commerce modifier
-	iCommerce = iCommerce * (100 + GET_PLAYER(getOwner()).getCorporationCommerceModifier()) / 100;
+	if (GET_PLAYER(getOwner()).getCorporationCommerceModifier() < -100 || GET_PLAYER(getOwner()).getCorporationCommerceModifier() > 100)
+	{
+		GC.getGameINLINE().logMsg("OVERFLOW - corporation commerce modifier: %d", GET_PLAYER(getOwner()).getCorporationCommerceModifier());
+	}
+	else
+	{
+		//Leoreth: civic corporation commerce modifier
+		iCommerce = iCommerce * (100 + GET_PLAYER(getOwner()).getCorporationCommerceModifier()) / 100;
+	}
+
+	
 
 	return (iCommerce + 99) / 100;
 }
@@ -10717,10 +10764,27 @@ void CvCity::updateCorporationYield(YieldTypes eIndex)
 		iNewYield += std::min(25, getCorporationYieldByCorporation(eIndex, (CorporationTypes)iI)); //Rhye - corporation cap (headquarters)
 	}
 
+	if (getX() == 15 && getY() == 42)
+	{
+		GC.getGameINLINE().logMsg("iOldYield = %d.", iOldYield);
+		GC.getGameINLINE().logMsg("iNewYield = %d.", iNewYield);
+	}
+
+	if (iNewYield > 1000 || iNewYield < -1000)
+	{
+		GC.getGameINLINE().logMsg("OVERFLOW: x=%d, y=%d", getX(), getY());
+		GC.getGameINLINE().setAIAutoPlayCatapult(0);
+	}
+
 	if (iOldYield != iNewYield)
 	{
 		m_aiCorporationYield[eIndex] = iNewYield;
 		FAssert(getCorporationYield(eIndex) >= 0);
+
+		if (getX() == 15 && getY() == 42)
+		{
+			GC.getGameINLINE().logMsg("Update corporation yield.");
+		}
 
 		changeBaseYieldRate(eIndex, (iNewYield - iOldYield));
 	}
@@ -12501,6 +12565,11 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 				{
+					if (getX() == 15 && getY() == 42)
+					{
+						GC.getGameINLINE().logMsg("Set working plot.");
+					}
+
 					changeBaseYieldRate(((YieldTypes)iI), pPlot->getYield((YieldTypes)iI));
 				}
 
@@ -12517,6 +12586,11 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 				{
+					if (getX() == 15 && getY() == 42)
+					{
+						GC.getGameINLINE().logMsg("Set working plot 2.");
+					}
+
 					changeBaseYieldRate(((YieldTypes)iI), -(pPlot->getYield((YieldTypes)iI)));
 				}
 			}
@@ -16344,6 +16418,10 @@ void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldType
 				{
 					if (getNumActiveBuilding(eBuilding) > 0)
 					{
+						if (getX() == 15 && getY() == 42)
+						{
+							GC.getGameINLINE().logMsg("Set building yield change.");
+						}
 						changeBaseYieldRate(eYield, (iChange - iOldChange) * getNumActiveBuilding(eBuilding));
 					}
 				}
@@ -16366,6 +16444,10 @@ void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldType
 		{
 			if (getNumActiveBuilding(eBuilding) > 0)
 			{
+				if (getX() == 15 && getY() == 42)
+				{
+					GC.getGameINLINE().logMsg("Set building yield change 2.");
+				}
 				changeBaseYieldRate(eYield, iChange * getNumActiveBuilding(eBuilding));
 			}
 		}
