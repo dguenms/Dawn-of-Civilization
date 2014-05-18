@@ -2593,9 +2593,9 @@ iNumStabilityTypes = 5
 (iStabilityExpansion, iStabilityEconomy, iStabilityDomestic, iStabilityForeign, iStabilityMilitary) = range(iNumStabilityTypes)
 
 #Stability Parameters
-iNumStabilityParameters = 20
-(iParameterCorePeriphery, iParameterRazedCities,											# Expansion
-iParameterEconomicGrowth, iParameterPercentChange, iParameterBaselinePercent, iParameterMercantilism, iParameterCentralPlanning,	# Economy
+iNumStabilityParameters = 22
+(iParameterCorePeriphery, iParameterCoreScore, iParameterPeripheryScore, iParameterRazedCities,						# Expansion
+iParameterEconomicGrowth, iParameterTrade, iParameterExpenses, iParameterMercantilism, iParameterCentralPlanning,			# Economy
 iParameterHappiness, iParameterCivicCombinations, iParameterCivicsEraTech, iParameterReligion,						# Domestic
 iParameterNeighbors, iParameterVassals, iParameterDefensivePacts, iParameterRelations, iParameterAutocracy, iParameterFanaticism,	# Foreign
 iParameterWarSuccess, iParameterMilitaryStrength, iParameterBarbarianLosses) = range(iNumStabilityParameters)				# Military
