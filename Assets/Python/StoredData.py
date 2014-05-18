@@ -140,6 +140,7 @@ class StoredData:
 				    'lPreviousCommerce' : [0 for i in range(con.iNumPlayers)],
 				    'lEconomyStability' : [0 for i in range(con.iNumPlayers)],
 				    'lLastExpansionStability' : [0 for i in range(con.iNumPlayers)], 
+				    'lHappinessStability' : [0 for i in range(con.iNumPlayers)],
 				}
                 self.save()
 		
@@ -185,6 +186,12 @@ class StoredData:
 		
 	def changeLastExpansionStability(self, iPlayer, iChange):
 		self.scriptDict['lLastExpansionStability'][iPlayer] += iChange
+		
+	def getHappinessStability(self, iPlayer):
+		return self.scriptDict['lHappinessStability'][iPlayer]
+		
+	def setHappinessStability(self, iPlayer, iNewValue):
+		self.scriptDict['lHappinessStability'][iPlayer] = iNewValue
 		
 	def getLastDifference(self):
 		return -self.scriptDict['iLastDifference']

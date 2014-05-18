@@ -41,7 +41,8 @@ def checkTurn(iGameTurn):
 	# calculate economic stability
 	if iGameTurn % utils.getTurns(3) == 0:
 		for iPlayer in range(con.iNumPlayers):
-			calculateEconomicStability(iPlayer)
+			updateEconomicStability(iPlayer)
+			updateHappinessStability(iPlayer)
 			
 	# decay penalties from razing cities and losing to barbarians
 	if iGameTurn % utils.getTurns(5) == 0:
@@ -965,17 +966,9 @@ def calculateStability(iPlayer):
 	iTotalCoreCities = 0
 	iOccupiedCoreCities = 0
 	
-	#iHistoricalPopulation = 0
-	#iForeignPopulation = 0
-	#iContestedPopulation = 0
-	#iForeignCorePopulation = 0
-	
 	iStateReligionCities = 0
 	iOnlyStateReligionCities = 0
 	iNonStateReligionCities = 0
-	
-	iHappyCities = 0
-	iUnhappyCities = 0
 		
 	bTotalitarianism = (iCivicOrganization == con.iCivicTotalitarianism)
 	bCityStates = (iCivicGovernment == con.iCivicCityStates)
@@ -1009,17 +1002,18 @@ def calculateStability(iPlayer):
 					bForeignCore = True
 			iTotalCulture += iTempCulture
 			
-		if iTotalCulture == 0: iTotalCulture = 1
-		
-		iCulturePercent = 100 * iOwnCulture / iTotalCulture
+		if iTotalCulture != 0:
+			iCulturePercent = 100 * iOwnCulture / iTotalCulture
+		else:
+			iCulturePercent = 100
 				
 		#bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
-		bExpansionExceptions = bTotalitarianism
+		bExpansionExceptions = bTotalitarianism or bWarriorCode
 		
 		# Expansion
 		if plot.isCore(iPlayer):
 			iCorePopulation += (2 + iCurrentEra) * iPopulation
-			if bSingleCoreCity and iCurrentEra > con.iAncient: iCorePopulation += (iCurrentEra - 1) * iPopulation
+			if bSingleCoreCity and iCurrentEra > con.iAncient: iCorePopulation += iCurrentEra * iPopulation
 		else:
 			# ahistorical tiles
 			if not bHistorical: iModifier += 2
@@ -1028,7 +1022,8 @@ def calculateStability(iPlayer):
 			if isOverseas(city) and bHistorical and bTotalitarianism: iModifier += 1
 			
 			# not original owner
-			if city.getOriginalOwner() != iPlayer and not bExpansionExceptions and not bWarriorCode: iModifier += 1
+			if not bExpansionExceptions:
+				if city.getOriginalOwner() != iPlayer and iGameTurn - city.getGameTurnAcquired() < utils.getTurns(25): iModifier += 1
 			
 			# not majority culture (includes foreign core and Persian UP)
 			if iPlayer != con.iPersia:
@@ -1047,15 +1042,14 @@ def calculateStability(iPlayer):
 			# Jail
 			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, con.iJail)): iModifier -= 1
 			
-			# cap
-			if iModifier < 0: iModifier = 0
-			
 			# Portuguese UP: reduced instability from overseas colonies
 			if isOverseas(city):
 				if iPlayer == con.iPortugal: iModifier -= 1
-				elif bMercantilism and iModifier > 0: 
-					iModifier -= 1
+				if bMercantilism: iModifier -= 1
 					
+			# cap
+			if iModifier < -2: iModifier = -2
+			
 			#utils.debugTextPopup('City: ' + city.getName() + '\n Modifier: ' + str(iModifier))
 			
 			iPeripheryPopulation += (100 + iModifier * 50) * iPopulation / 100
@@ -1088,34 +1082,24 @@ def calculateStability(iPlayer):
 						if not bNonStateReligion: iOnlyStateReligionCities += 1
 				
 		if bNonStateReligion: iNonStateReligionCities += 1
-		
-		# Happiness
-		iHappiness = city.happyLevel()
-		iUnhappiness = city.unhappyLevel(0)
-		iOvercrowding = city.getOvercrowdingPercentAnger(0) * city.getPopulation() / 1000
-		
-		if city.isWeLoveTheKingDay() or (iPopulation >= pPlayer.getAveragePopulation() and iHappiness - iUnhappiness >= iPopulation / 4):
-			iHappyCities += 1
-		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
-			iUnhappyCities += 1
 			
 	#sPopulationDebug = 'Core Population: ' + str(iCorePopulation) + '\nHistorical population: ' + str(iHistoricalPopulation) + '\nContested population: ' + str(iContestedPopulation) + '\nForeign population: ' + str(iForeignPopulation) + '\nForeign core population: ' + str(iForeignCorePopulation)
 	#utils.debugTextPopup(sPopulationDebug)
 			
-	iCurrentCommerce = pPlayer.calculateTotalCommerce()
-	iPreviousCommerce = pPlayer.getEconomyHistory(iGameTurn - utils.getTurns(10))
+	#iCurrentCommerce = pPlayer.calculateTotalCommerce()
+	#iPreviousCommerce = pPlayer.getEconomyHistory(iGameTurn - utils.getTurns(10))
 	
-	iCurrentCommerceNeighbors = iPreviousCommerce * 11 / 10
-	iPreviousCommerceNeighbors = iPreviousCommerce
+	#iCurrentCommerceNeighbors = iPreviousCommerce * 11 / 10
+	#iPreviousCommerceNeighbors = iPreviousCommerce
 		
-	for iLoopPlayer in range(con.iNumPlayers):
-		if pPlayer.canContact(iLoopPlayer):
-			pLoopPlayer = gc.getPlayer(iLoopPlayer)
-			iCurrentCommerceNeighbors += pLoopPlayer.calculateTotalCommerce()
-			iPreviousCommerceNeighbors += pLoopPlayer.getEconomyHistory(iGameTurn - utils.getTurns(10))
+	#for iLoopPlayer in range(con.iNumPlayers):
+	#	if pPlayer.canContact(iLoopPlayer):
+	#		pLoopPlayer = gc.getPlayer(iLoopPlayer)
+	#		iCurrentCommerceNeighbors += pLoopPlayer.calculateTotalCommerce()
+	#		iPreviousCommerceNeighbors += pLoopPlayer.getEconomyHistory(iGameTurn - utils.getTurns(10))
 			
-	iCurrentCommerceRank = calculateCommerceRank(iPlayer, iGameTurn)
-	iPreviousCommerceRank = calculateCommerceRank(iPlayer, iGameTurn - utils.getTurns(10))
+	#iCurrentCommerceRank = calculateCommerceRank(iPlayer, iGameTurn)
+	#iPreviousCommerceRank = calculateCommerceRank(iPlayer, iGameTurn - utils.getTurns(10))
 	
 	iCurrentPower = pPlayer.getPower()
 	iPreviousPower = pPlayer.getPowerHistory(iGameTurn - utils.getTurns(10))
@@ -1125,11 +1109,8 @@ def calculateStability(iPlayer):
 	
 	iCorePeripheryStability = 0
 	iRazeCityStability = 0
-	iOwnCoreStability = 0
 	
 	# Core vs. Periphery Populations
-	iCombinedPopulation = iCorePopulation + iPeripheryPopulation
-		
 	if iCorePopulation == 0:
 		iPeripheryExcess = 200
 	else:
@@ -1150,6 +1131,8 @@ def calculateStability(iPlayer):
 		utils.debugTextPopup('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
 		
 	lParameters[con.iParameterCorePeriphery] = iCorePeripheryStability
+	lParameters[con.iParameterCoreScore] = iCorePopulation
+	lParameters[con.iParameterPeripheryScore] = iPeripheryPopulation
 		
 	iExpansionStability += iCorePeripheryStability
 	
@@ -1163,41 +1146,47 @@ def calculateStability(iPlayer):
 	# ECONOMY
 	iEconomyStability = 0
 	
-	iEconomicGrowthStability = 0
-	
-	# Economic growth
-	#if iPreviousCommerce != 0:
-	#	iPercentChange = calculateEconomicGrowth(iPlayer, 10)
-	#	iBaselinePercentChange = 10 #calculateEconomicGrowthNeighbors(iPlayer, 10)
-	#	
-	#	iDifference = iPercentChange - iBaselinePercentChange
-	#	
-	#	if iDifference > 20:
-	#		iEconomicGrowthStability = 10 + (iDifference - 20) / 5
-	#	elif iDifference < -20:
-	#		iEconomicGrowthStability = -10 + (iDifference + 20) / 5
-	#	else:
-	#		iEconomicGrowthStability = iDifference / 2
-	#	
-	#	if iEconomicGrowthStability > 20: iEconomicGrowthStability = 20
-	#	elif iEconomicGrowthStability < -20: iEconomicGrowthStability = -20
-	#	
-	#	#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + " Economic Stability\nGrowth: " + str(iPercentChange) + "\nBaseline Percent: " + str(iBaselinePercentChange) + "\nStability: " + str(iEconomicGrowthStability))
-	#	
-	#	# Environmentalism
-	#	if bEnvironmentalism and iPercentChange >= 0 and iEconomicGrowthStability < 0:
-	#		iEconomicGrowthStability = 0
-	#	
-	#	lParameters[con.iParameterEconomicGrowth] = iEconomicGrowthStability
-	#	lParameters[con.iParameterPercentChange] = iPercentChange
-	#	lParameters[con.iParameterBaselinePercent] = iBaselinePercentChange
-	
+	# Economic Growth
 	iEconomicGrowthStability = sd.getEconomyStability(iPlayer) / 2
 	
+	# economic growth stability cap
 	if iEconomicGrowthStability > 30: iEconomicGrowthStability = 30
 	elif iEconomicGrowthStability < -30: iEconomicGrowthStability = -30
 	
 	iEconomyStability += iEconomicGrowthStability
+	
+	# Trade
+	iImports = pPlayer.calculateTotalImports(YieldTypes.YIELD_COMMERCE)
+	iExports = pPlayer.calculateTotalExports(YieldTypes.YIELD_COMMERCE)
+	
+	if bMercantilism:
+		iTradeVolume = 2 * iExports
+	else:
+		iTradeVolume = iImports + iExports
+		
+	iTradeStability = iTradeVolume / iNumTotalCities - iCurrentEra
+	
+	lParameters[con.iParameterTrade] = iTradeStability
+	
+	iEconomyStability += iTradeStability
+	
+	# Surplus and Deficit
+	iExpenseStability = 0
+	iTotalCommerce = pPlayer.calculateTotalCommerce()
+	#iTotalCosts = pPlayer.calculateInflatedCosts()
+	
+	#if iTotalCommerce > 0:
+	#	iExpenseRatio = 100 * iTotalCosts / iTotalCommerce
+	#
+	#	iExpenseStability = (25 - iExpenseRatio) / 5
+	#	
+	#	if iExpenseStability < -5: iExpenseStability = -5
+	#	
+	#	lParameters[con.iParameterExpenses] = iExpenseStability
+		
+	iEconomyStability += iExpenseStability
+	
+	#utils.debugTextPopup("Trade stability: " + str(iTradeStability) + "\nExpenseStability: " + str(iExpenseStability))
 	
 	# Economic systems
 	iEconomicSystemStability = 0
@@ -1208,7 +1197,7 @@ def calculateStability(iPlayer):
 			pLoopPlayer = gc.getPlayer(iLoopPlayer)
 			if tPlayer.isOpenBorders(iLoopPlayer):
 				if bMercantilism:
-					if pLoopPlayer.getEconomyHistory(iGameTurn) > iCurrentCommerce:
+					if pLoopPlayer.calculateTotalCommerce() > iTotalCommerce:
 						iEconomicSystemStability -= 2
 				if bCentralPlanning:
 					if pLoopPlayer.getCivics(3) == con.iCivicFreeMarket:
@@ -1223,13 +1212,16 @@ def calculateStability(iPlayer):
 	iDomesticStability = 0
 	
 	# Happiness
-	iHappinessStability = 0
+	iHappinessStability = sd.getHappinessStability(iPlayer) / 2
 	
-	if iNumTotalCities > 0:
-		if iHappyCities > iUnhappyCities:
-			iHappinessStability += min(iNumTotalCities, 10 * (iHappyCities - iUnhappyCities) / iNumTotalCities)
-		else:
-			iHappinessStability -= min(iNumTotalCities, 10 * (iUnhappyCities - iHappyCities) / iNumTotalCities)
+	if iHappinessStability > 10: iHappinessStability = 10
+	if iHappinessStability < -10: iHappinessStability = -10
+	
+	#if iNumTotalCities > 0:
+	#	if iHappyCities > iUnhappyCities:
+	#		iHappinessStability += min(iNumTotalCities, 10 * (iHappyCities - iUnhappyCities) / iNumTotalCities)
+	#	else:
+	#		iHappinessStability -= min(iNumTotalCities, 10 * (iUnhappyCities - iHappyCities) / iNumTotalCities)
 	
 	#utils.debugTextPopup(pPlayer.getCivilizationShortDescription(0) + ' happiness stability: ' + str(iHappinessStability) + '\nHappy cities: ' + str(iHappyCities) + '\nUnhappy cities: ' + str(iUnhappyCities) + '\nTotal cities: ' + str(iNumTotalCities))
 	
@@ -1450,7 +1442,7 @@ def calculateStability(iPlayer):
 		
 		sLogString = pPlayer.getCivilizationAdjective(0) + ' total war success: ' + str(iTotalSuccess) + '\nStability: ' + str(iWarSuccessStability)
 		
-		utils.debugTextPopup(sLogString)
+		#utils.debugTextPopup(sLogString)
 	
 	lParameters[con.iParameterWarSuccess] = iWarSuccessStability
 				
@@ -1486,9 +1478,9 @@ def calculateStability(iPlayer):
 
 def sigmoid(x):
 	#return 2.0 / (1 + math.exp(-5*x)) - 1.0
-	return math.tanh(5 * x / 4)
+	return math.tanh(5 * x / 2)
 	
-def calculateEconomicStability(iPlayer):
+def updateEconomicStability(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	
 	if not pPlayer.isAlive(): return
@@ -1503,14 +1495,17 @@ def calculateEconomicStability(iPlayer):
 		return
 	
 	iPercentChange = 100 * iCurrentCommerce / iPreviousCommerce - 100
-	
-	if iPlayer == con.iChina:
-		utils.debugTextPopup('GROWTH: ' + str(iPercentChange) + '%')
 		
 	if iPercentChange > 5:
-		iEconomyStability += 2
+		if iEconomyStability >= 0:
+			iEconomyStability += 2
+		else:
+			iEconomyStability += 4
 	elif iPercentChange < -5:
-		iEconomyStability -= 2
+		if iEconomyStability <= 0:
+			iEconomyStability -= 2
+		else:
+			iEconomyStability -= 4
 	else:
 		if iEconomyStability > 0:
 			iEconomyStability -= 1
@@ -1519,6 +1514,39 @@ def calculateEconomicStability(iPlayer):
 			
 	sd.setEconomyStability(iPlayer, iEconomyStability)
 	sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
+	
+def updateHappinessStability(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	
+	if not pPlayer.isAlive(): return
+	
+	iHappinessStability = sd.getHappinessStability(iPlayer)
+	iHappyCities = 0
+	iUnhappyCities = 0
+	
+	for city in utils.getCityList(iPlayer):
+		iPopulation = city.getPopulation()
+		iHappiness = city.happyLevel()
+		iUnhappiness = city.unhappyLevel(0)
+		iOvercrowding = city.getOvercrowdingPercentAnger(0) * city.getPopulation() / 1000
+		
+		if city.isWeLoveTheKingDay() or (iPopulation >= pPlayer.getAveragePopulation() and iHappiness - iUnhappiness >= iPopulation / 4):
+			iHappyCities += 1
+		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
+			iUnhappyCities += 1
+		
+	if iHappyCities > iUnhappyCities:
+		if iHappinessStability >= 0:
+			iHappinessStability += 1
+		else:
+			iHappinessStability += 2
+	elif iHappyCities < iUnhappyCities:
+		if iHappinessStability <= 0:
+			iHappinessStability -= 1
+		else:
+			iHappinessStability -= 2
+			
+	sd.setHappinessStability(iPlayer, iHappinessStability)
 	
 def calculateEconomicGrowth(iPlayer, iNumTurns):
 	lHistory = []
@@ -2001,7 +2029,7 @@ def convertBackCulture(iCiv):
 					city.changeCulture(iCiv, iCulture, True)
 			elif plot.isCityRadius() and plot.getOwner() == iCiv:
 				iCulture = 0
-				for iMinor in range(iNumPlayers, con.iNumTotalPlayersB):
+				for iMinor in range(con.iNumPlayers, con.iNumTotalPlayersB):
 					iCulture += plot.getCulture(iMinor)
 					plot.setCulture(iMinor, 0, True)
 				plot.changeCulture(iCiv, iCulture, True)

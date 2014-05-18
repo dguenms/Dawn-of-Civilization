@@ -15264,6 +15264,8 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	if (iStabilityCategory == 0)
 	{
 		int iParameterCorePeriphery = game.getStabilityParameter(PARAMETER_CORE_PERIPHERY);
+		int iParameterCoreScore = game.getStabilityParameter(PARAMETER_CORE_SCORE);
+		int iParameterPeripheryScore = game.getStabilityParameter(PARAMETER_PERIPHERY_SCORE);
 		int iParameterRazedCities = game.getStabilityParameter(PARAMETER_RAZED_CITIES);
 
 		iTotalStability = iParameterCorePeriphery;
@@ -15276,7 +15278,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		if (iParameterCorePeriphery > 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_POSITIVE").GetCString());
+			szTemp.Format(L"+%d: %s (%d / %d)", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_POSITIVE").GetCString(), iParameterPeripheryScore, iParameterCoreScore);
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
@@ -15286,7 +15288,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		if (iParameterCorePeriphery < 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE").GetCString());
+			szTemp.Format(L"%d: %s (%d / %d)", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE").GetCString(), iParameterPeripheryScore, iParameterCoreScore);
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
@@ -15305,19 +15307,64 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	else if (iStabilityCategory == 1)
 	{
 		int iParameterEconomicGrowth = game.getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
-		int iParameterPercentChange = game.getStabilityParameter(PARAMETER_PERCENT_CHANGE);
-		int iParameterBaselinePercent = game.getStabilityParameter(PARAMETER_BASELINE_PERCENT);
+		int iParameterTrade = game.getStabilityParameter(PARAMETER_TRADE);
+		int iParameterExpenses = game.getStabilityParameter(PARAMETER_EXPENSES);
 		int iParameterMercantilism = game.getStabilityParameter(PARAMETER_MERCANTILISM);
 		int iParameterCentralPlanning = game.getStabilityParameter(PARAMETER_CENTRAL_PLANNING);
 
-		iTotalStability = iParameterEconomicGrowth + iParameterMercantilism + iParameterCentralPlanning;
+		iTotalStability = iParameterEconomicGrowth + iParameterTrade + iParameterExpenses + iParameterMercantilism + iParameterCentralPlanning;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_ECONOMY");
 
 		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
 		szStabilityParameters += szColor;
 
-		if (iParameterEconomicGrowth != 0 && iParameterPercentChange > iParameterBaselinePercent)
+		if (iParameterEconomicGrowth > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_GROWTH").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterTrade > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterTrade, gDLL->getText("TXT_KEY_STABILITY_TRADE").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterExpenses > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterExpenses, gDLL->getText("TXT_KEY_STABILITY_BUDGET_SURPLUS").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+		
+		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
+		szStabilityParameters += szColor;
+
+		if (iParameterEconomicGrowth < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_DECLINE").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterTrade < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterTrade, gDLL->getText("TXT_KEY_STABILITY_TRADE").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterExpenses < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterExpenses, gDLL->getText("TXT_KEY_STABILITY_BUDGET_DEFICIT").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		/*if (iParameterEconomicGrowth != 0 && iParameterPercentChange > iParameterBaselinePercent)
 		{
 			CvWString szTemp;
 			szTemp.Format(L"+%d: %s (%d / %d)", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_GROWTH").GetCString(), iParameterPercentChange, iParameterBaselinePercent);
@@ -15341,7 +15388,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 				szTemp.Format(L"%d: %s (%d / %d)", iParameterEconomicGrowth, gDLL->getText("TXT_KEY_STABILITY_ECONOMIC_DECLINE").GetCString(), iParameterPercentChange, iParameterBaselinePercent);
 				szStabilityParameters += NEWLINE + szTemp;
 			}
-		}
+		}*/
 
 		if (iParameterMercantilism < 0)
 		{
