@@ -297,7 +297,7 @@ class Congress:
 			iRand = gc.getGame().getSorenRandNum(100, 'Influence voting')
 			
 			if iCommerceType == 0: gc.getPlayer(utils.getHumanID()).changeGold(-iCost)
-			elif iCommerceType == 3: gc.getTeam(utils.getHumanID()).changeEspionagePointsAgainstTeam(-iCost)
+			elif iCommerceType == 3: gc.getTeam(utils.getHumanID()).changeEspionagePointsAgainstTeam(iBribedPlayer, -iCost)
 			
 			bHumanClaim = (utils.getHumanID() == iClaimant)
 			bSuccess = (iRand < iThreshold)

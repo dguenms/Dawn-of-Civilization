@@ -1330,6 +1330,7 @@ def calculateStability(iPlayer):
 	if iNumTotalCities > 0:
 		iHeathenRatio = 100 * iNonStateReligionCities / iNumTotalCities
 		iHeathenThreshold = 30
+		iBelieverThreshold = 75
 		if iCivicReligion == con.iCivicFanaticism: iHeathenThreshold = 0
 		
 		if iHeathenRatio > iHeathenThreshold:
@@ -1337,7 +1338,13 @@ def calculateStability(iPlayer):
 			
 		if iStateReligion != -1:
 			iStateReligionRatio = 100 * iStateReligionCities / iNumTotalCities
-			iReligionStability += (iStateReligionRatio - 70) / 10
+			iBelieverStability = (iStateReligionRatio - iBelieverThreshold) / 5
+			
+			# cap at -10 for threshold = 75
+			iCap = 2 * (iBelieverThreshold - 100) / 5
+			if iBelieverStability < iCap: iBelieverStability = iCap
+			
+			iReligionStability += iBelieverStability
 		
 			if iCivicGovernment == con.iCivicTheocracy:
 				iOnlyStateReligionRatio = 100 * iOnlyStateReligionCities / iNumTotalCities
@@ -1524,13 +1531,15 @@ def updateHappinessStability(iPlayer):
 	iHappyCities = 0
 	iUnhappyCities = 0
 	
+	iAveragePopulation = pPlayer.getAveragePopulation()
+	
 	for city in utils.getCityList(iPlayer):
 		iPopulation = city.getPopulation()
 		iHappiness = city.happyLevel()
 		iUnhappiness = city.unhappyLevel(0)
 		iOvercrowding = city.getOvercrowdingPercentAnger(0) * city.getPopulation() / 1000
 		
-		if city.isWeLoveTheKingDay() or (iPopulation >= pPlayer.getAveragePopulation() and iHappiness - iUnhappiness >= iPopulation / 4):
+		if city.isWeLoveTheKingDay() or (iPopulation >= iAveragePopulation and iHappiness - iUnhappiness >= iAveragePopulation / 4):
 			iHappyCities += 1
 		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
@@ -1619,6 +1628,9 @@ def isTolerated(iPlayer, iReligion):
 	pPlayer = gc.getPlayer(iPlayer)
 	iStateReligion = pPlayer.getStateReligion()
 	lChristianity = [con.iCatholicism, con.iOrthodoxy, con.iProtestantism]
+	
+	# should not be asked, but still check
+	if iStateReligion == iReligion: return True
 	
 	# Secularism civic
 	if pPlayer.getCivics(4) == con.iCivicSecularism: return True
