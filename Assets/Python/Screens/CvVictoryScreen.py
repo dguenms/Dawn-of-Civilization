@@ -181,6 +181,8 @@ class CvVictoryScreen:
 		mainScreen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
 		if mainScreen.getXResolution() > 1024: self.X_EXTRA = mainScreen.getXResolution() - 1024
 		
+		if self.X_EXTRA + 1024 > 1600: self.X_EXTRA = 1600 - 1024
+		
 		self.X_SCREEN += self.X_EXTRA / 2
 		self.W_SCREEN += self.X_EXTRA
 		self.X_EXIT += self.X_EXTRA

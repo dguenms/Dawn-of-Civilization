@@ -261,7 +261,7 @@ def checkStability(iPlayer, bPositive = False):
 	
 	if isImmune(iPlayer): return
 		
-	# immune to negative stability checks in golden ages and anarchy
+	# immune to negative stability checks in golden ages
 	if pPlayer.isGoldenAge() and not bPositive:
 		return
 		
@@ -1242,12 +1242,13 @@ def calculateStability(iPlayer):
 		elif iCivicLabor != con.iCivicPublicWelfare: iCivicStability -= 5
 		
 	if iCivicOrganization == con.iCivicEgalitarianism:
-		if iCivicGovernment == con.iCivicRepublic: iCivicStability += 1
-		if iCivicLabor != con.iCivicPublicWelfare: iCivicStability -= 5
+		if iCivicGovernment == con.iCivicRepublic: iCivicStability += 2
+		if iCivicLabor != con.iCivicPublicWelfare: iCivicStability -= 3
 		if iCivicEconomy == con.iCivicEnvironmentalism: iCivicStability += 2
 		if iCivicReligion == con.iCivicSecularism: iCivicStability += 2
 		
 	if iCivicLabor == con.iCivicCapitalism:	
+		if iCivicOrganization == con.iCivicRepresentation: iCivicStability += 2
 		if iCivicEconomy == con.iCivicFreeMarket: iCivicStability += 3
 		if iCivicEconomy == con.iCivicGuilds: iCivicStability -= 5
 		
@@ -1255,7 +1256,8 @@ def calculateStability(iPlayer):
 		if iCivicLabor == con.iCivicIndustrialism: iCivicStability -= 5
 		
 	if iCivicGovernment == con.iCivicTheocracy:
-		if iCivicReligion == con.iCivicFanaticism: iCivicStability += 3
+		if iCivicReligion == con.iCivicFanaticism: iCivicStability += 5
+		elif iCivicReligion == con.iCivicOrganizedReligion: iCivicStability += 3
 		if iCivicReligion == con.iCivicSecularism: iCivicStability -= 7
 		if iCivicOrganization == con.iCivicEgalitarianism: iCivicStability -= 3
 		
@@ -1271,13 +1273,27 @@ def calculateStability(iPlayer):
 	if iCivicGovernment == con.iCivicCityStates:
 		if iCivicOrganization in [con.iCivicVassalage, con.iCivicAbsolutism, con.iCivicEgalitarianism]: iCivicStability -= 3
 		if iCivicEconomy == con.iCivicGuilds: iCivicStability += 2
-		elif iCivicEconomy != con.iCivicMercantilism: iCivicStability -= 5
+		elif iCivicEconomy not in [con.iCivicMercantilism, con.iCivicSelfSufficiency]: iCivicStability -= 5
 		if iCivicMilitary in [con.iCivicMilitia, con.iCivicMercenaries]: iCivicStability += 2
-		else: iCivicStability -= 3
+		elif iCivicMilitary != con.iCivicNavalDominance: iCivicStability -= 3
 		
 	if iCivicOrganization == con.iCivicAbsolutism:
 		if iCivicGovernment == con.iCivicRepublic: iCivicStability -= 5
 		if iCivicEconomy == con.iCivicMercantilism: iCivicStability += 3
+		if iCivicReligion == con.iCivicOrganizedReligion: iCivicStability += 2
+		
+		if iCurrentEra == con.iRenaissance:
+			if iCivicGovernment == con.iCivicDynasticism: iCivicStability += 2
+			
+	if iCivicGovernment == con.iCivicRepublic:
+		if iCivicOrganization == con.iCivicRepresentation: iCivicStability += 2
+		
+	if iCivicMilitary == con.iCivicWarriorCode:
+		if iCivicGovernment == con.iCivicDynasticism: iCivicStability += 2
+		if iCivicReligion == con.iCivicFanaticism: iCivicStability += 2
+		
+	if iCivicGovernment == con.iCivicAutocracy:
+		if iCivicMilitary == con.iCivicStandingArmy: iCivicStability += 3
 		
 	iCivicCombinationStability = iCivicStability
 	
@@ -1288,7 +1304,7 @@ def calculateStability(iPlayer):
 	# Civics (eras and techs)
 	if iCivicOrganization == con.iCivicVassalage:
 		if iCurrentEra == con.iMedieval: iCivicStability += 2
-		else: iCivicStability -= 5
+		elif iCurrentEra >= con.iIndustrial: iCivicStability -= 5
 		
 	if iCivicGovernment == con.iCivicTheocracy:
 		if iCurrentEra >= con.iIndustrial: iCivicStability -= 5
@@ -1308,15 +1324,17 @@ def calculateStability(iPlayer):
 	if tPlayer.isHasTech(con.iUtopia):
 		if iCivicOrganization not in [con.iCivicEgalitarianism, con.iCivicTotalitarianism]: iCivicStability -= 5
 		
-	if tPlayer.isHasTech(con.iEconomics):
+	if tPlayer.isHasTech(con.iCorporation):
 		if iCivicEconomy in [con.iCivicSelfSufficiency, con.iCivicGuilds]: iCivicStability -= 5
+		
+	if tPlayer.isHasTech(con.iEconomics):
 		if iCivicLabor == con.iCivicSlavery and iCivicOrganization != con.iCivicTotalitarianism: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iNationalism):
-		if iCivicMilitary == con.iCivicMercenaries: iCivicStability -= 7
+		if iCivicMilitary == con.iCivicMercenaries: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iMilitaryScience):
-		if iCivicMilitary == con.iCivicWarriorCode: iCivicStability -= 10
+		if iCivicMilitary == con.iCivicWarriorCode: iCivicStability -= 7
 	
 	iCivicEraTechStability = iCivicStability
 	
