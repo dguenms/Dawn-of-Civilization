@@ -1381,6 +1381,8 @@ def calculateStability(iPlayer):
 	iAutocracyStability = 0
 	iFanaticismStability = 0
 	
+	iNumContacts = 0
+	
 	for iLoopPlayer in range(con.iNumPlayers):
 		pLoopPlayer = gc.getPlayer(iLoopPlayer)
 		tLoopPlayer = gc.getTeam(pLoopPlayer.getTeam())
@@ -1396,6 +1398,7 @@ def calculateStability(iPlayer):
 		# vassal stability
 		if tLoopPlayer.isVassal(iPlayer):
 			if getStabilityLevel(iLoopPlayer) == con.iStabilityCollapsing: iVassalStability -= 5
+			elif getStabilityLevel(iLoopPlayer) == con.iStabilityUnstable: iVassalStability -= 2
 			elif getStabilityLevel(iLoopPlayer) == con.iStabilitySolid: iVassalStability += 3
 			
 			if bVassalage: iVassalStability += 2
@@ -1404,8 +1407,15 @@ def calculateStability(iPlayer):
 		if tPlayer.isDefensivePact(iLoopPlayer):
 			if iLoopScore > iPlayerScore: iDefensivePactStability += 5
 			
+		# open borders
+		if tPlayer.canContact(iLoopPlayer):
+			if pLoopPlayer.getStateReligion() == iStateReligion: iRelationStability += 1
+			else: iRelationStability += 2
+			
+			iNumContacts += 1
+			
 		# bad relations
-		if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS and not tPlayer.isAtWar(iLoopPlayer): iRelationStability -= 2
+		#if pLoopPlayer.AI_getAttitude(iPlayer) == AttitudeTypes.ATTITUDE_FURIOUS and not tPlayer.isAtWar(iLoopPlayer): iRelationStability -= 2
 		
 		# worst enemies
 		if pLoopPlayer.getWorstEnemy() == iPlayer:
@@ -1418,6 +1428,9 @@ def calculateStability(iPlayer):
 			if tPlayer.isAtWar(iLoopPlayer):
 				if pLoopPlayer.getStateReligion() != iStateReligion: iFanaticismStability += 3
 				else: iFanaticismStability -= 2
+		
+	# penalize contacts because they allow more OB treaties
+	iRelationStability -= iNumContacts / 2 + min(4, iNumContacts)
 	
 	lParameters[con.iParameterNeighbors] = iNeighborStability
 	lParameters[con.iParameterVassals] = iVassalStability
