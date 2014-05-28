@@ -1608,6 +1608,13 @@ def updateEconomicStability(iPlayer):
 	
 	if not pPlayer.isAlive(): return
 	
+	iCivicLabor = pPlayer.getCivics(2)
+	iCivicEconomy = pPlayer.getCivics(3)
+	
+	bPublicWelfare = (iCivicLabor == con.iCivicPublicWelfare)
+	bFreeMarket = (iCivicEconomy == con.iCivicFreeMarket)
+	bEnvironmentalism = (iCivicEconomy == con.iCivicEnvironmentalism)
+	
 	iPreviousCommerce = sd.getPreviousCommerce(iPlayer)
 	iCurrentCommerce = pPlayer.calculateTotalCommerce()
 	
@@ -1621,17 +1628,19 @@ def updateEconomicStability(iPlayer):
 		
 	if iPercentChange > 5:
 		if iEconomyStability >= 0:
-			iEconomyStability += 2
+			if bFreeMarket: iEconomyStability += 3
+			else: iEconomyStability += 2
 		else:
 			iEconomyStability += 4
 	elif iPercentChange < -5:
 		if iEconomyStability <= 0:
-			iEconomyStability -= 2
+			if bPublicWelfare: iEconomyStability -= 1
+			else: iEconomyStability -= 2
 		else:
 			iEconomyStability -= 4
 	else:
 		if iEconomyStability > 0:
-			iEconomyStability -= 1
+			if not bEnvironmentalism: iEconomyStability -= 1
 		elif iEconomyStability < 0:
 			iEconomyStability += 1
 			
