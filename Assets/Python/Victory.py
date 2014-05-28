@@ -4426,7 +4426,7 @@ class Victory:
 				for iBuilding in range(con.iPyramid, con.iNumBuildings):
 					if iBuilding == con.iOlympicPark: continue
 					if holyCity.isHasRealBuilding(iBuilding): iCount += 1
-				aHelp.append(self.getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + self.getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_HOLY_CITY_WONDERS", (holyCity.getName(), iCount, 3)))
+				aHelp.append(self.getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + self.getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_HOLY_CITY_WONDERS", (holyCity.getName(), iCount, 5)))
 			elif iGoal == 2:
 				iCount = 0
 				iUnitCombatMelee = gc.getInfoTypeForString("UNITCOMBAT_MELEE")

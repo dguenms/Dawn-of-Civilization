@@ -682,7 +682,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_NUM_UNITS</Tag>
-		<English>Number of melee and archery units: %d1 / %d2</English>
+		<English>Number of melee and gunpowder units: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_</Tag>

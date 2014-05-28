@@ -15308,11 +15308,10 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	{
 		int iParameterEconomicGrowth = game.getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
 		int iParameterTrade = game.getStabilityParameter(PARAMETER_TRADE);
-		int iParameterExpenses = game.getStabilityParameter(PARAMETER_EXPENSES);
 		int iParameterMercantilism = game.getStabilityParameter(PARAMETER_MERCANTILISM);
 		int iParameterCentralPlanning = game.getStabilityParameter(PARAMETER_CENTRAL_PLANNING);
 
-		iTotalStability = iParameterEconomicGrowth + iParameterTrade + iParameterExpenses + iParameterMercantilism + iParameterCentralPlanning;
+		iTotalStability = iParameterEconomicGrowth + iParameterTrade + iParameterMercantilism + iParameterCentralPlanning;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_ECONOMY");
 
@@ -15332,13 +15331,6 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 			szTemp.Format(L"+%d: %s", iParameterTrade, gDLL->getText("TXT_KEY_STABILITY_TRADE").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
-
-		if (iParameterExpenses > 0)
-		{
-			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterExpenses, gDLL->getText("TXT_KEY_STABILITY_BUDGET_SURPLUS").GetCString());
-			szStabilityParameters += NEWLINE + szTemp;
-		}
 		
 		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_RED"));
 		szStabilityParameters += szColor;
@@ -15353,14 +15345,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		if (iParameterTrade < 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterTrade, gDLL->getText("TXT_KEY_STABILITY_TRADE").GetCString());
-			szStabilityParameters += NEWLINE + szTemp;
-		}
-
-		if (iParameterExpenses < 0)
-		{
-			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterExpenses, gDLL->getText("TXT_KEY_STABILITY_BUDGET_DEFICIT").GetCString());
+			szTemp.Format(L"%d: %s", iParameterTrade, gDLL->getText("TXT_KEY_STABILITY_INSUFFICIENT_TRADE").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
@@ -15569,38 +15554,53 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	// Military
 	else if (iStabilityCategory == 4)
 	{
-		int iParameterWarSuccess = game.getStabilityParameter(PARAMETER_WAR_SUCCESS);
-		int iParameterMilitaryStrength = game.getStabilityParameter(PARAMETER_MILITARY_STRENGTH);
+		int iParameterConquests = game.getStabilityParameter(PARAMETER_CONQUESTS);
+		int iParameterBattles = game.getStabilityParameter(PARAMETER_BATTLES);
+		int iParameterWarWeariness = game.getStabilityParameter(PARAMETER_WAR_WEARINESS);
 		int iParameterBarbarianLosses = game.getStabilityParameter(PARAMETER_BARBARIAN_LOSSES);
 
-		iTotalStability = iParameterWarSuccess + iParameterMilitaryStrength;
+		iTotalStability = iParameterConquests + iParameterBattles + iParameterWarWeariness + iParameterBarbarianLosses;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_MILITARY");
 
 		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
 		szStabilityParameters += szColor;
 
-		if (iParameterWarSuccess > 0)
+		if (iParameterConquests > 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterWarSuccess, gDLL->getText("TXT_KEY_STABILITY_WINNING_WARS").GetCString());
+			szTemp.Format(L"+%d: %s", iParameterConquests, gDLL->getText("TXT_KEY_STABILITY_CONQUERED_CITIES").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterBattles > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterBattles, gDLL->getText("TXT_KEY_STABILITY_WON_BATTLES").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
 		szColor.Format(ENDCOLR SETCOLR, TEXT_COLOR("COLOR_RED"));
 		szStabilityParameters += szColor;
 
-		if (iParameterWarSuccess < 0)
+		if (iParameterConquests < 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterWarSuccess, gDLL->getText("TXT_KEY_STABILITY_LOSING_WARS").GetCString());
+			szTemp.Format(L"%d: %s", iParameterConquests, gDLL->getText("TXT_KEY_STABILITY_LOST_CITIES").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
-		if (iParameterMilitaryStrength < 0)
+		if (iParameterBattles < 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterMilitaryStrength, gDLL->getText("TXT_KEY_STABILITY_LOSING_STRENGTH").GetCString());
+			szTemp.Format(L"%d: %s", iParameterBattles, gDLL->getText("TXT_KEY_STABILITY_LOST_BATTLES").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterWarWeariness < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterWarWeariness, gDLL->getText("TXT_KEY_STABILITY_WAR_WEARINESS").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
