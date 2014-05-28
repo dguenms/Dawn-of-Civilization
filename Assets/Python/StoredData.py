@@ -5,6 +5,7 @@ import CvUtil
 import PyHelpers  
 import cPickle as pickle
 import Consts as con
+from WarStatus import WarStatus
 
 # globals
 gc = CyGlobalContext()
@@ -141,6 +142,7 @@ class StoredData:
 				    'lEconomyStability' : [0 for i in range(con.iNumPlayers)],
 				    'lLastExpansionStability' : [0 for i in range(con.iNumPlayers)], 
 				    'lHappinessStability' : [0 for i in range(con.iNumPlayers)],
+				    'lWarStatus' : [{} for i in range(con.iNumPlayers)],
 				}
                 self.save()
 		
@@ -234,6 +236,18 @@ class StoredData:
 	
 	def setHumanStability(self, iNewValue):
 		self.scriptDict['iHumanStability'] = iNewValue
+		
+	def getWarStatusEnemies(self, iPlayer):
+		return self.scriptDict['lWarStatus'][iPlayer].keys()
+		
+	def getWarStatus(self, iPlayer, iEnemy):
+		return self.scriptDict['lWarStatus'][iPlayer][iEnemy]
+		
+	def addWarStatus(self, iPlayer, iEnemy):
+		self.scriptDict['lWarStatus'][iPlayer][iEnemy] = WarStatus(iPlayer, iEnemy)
+		
+	def removeWarStatus(self, iPlayer, iEnemy):
+		del self.scriptDict['lWarStatus'][iPlayer][iEnemy]
 		
 	def getProtestantTechs(self, i):
 		return self.scriptDict['lProtestantTechs'][i]

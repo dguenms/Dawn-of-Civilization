@@ -422,7 +422,13 @@ class CvRFCEventHandler:
 		
 		pWinningUnit, pLosingUnit = argsList
 		
-		sta.onCombatResult(pWinningUnit.getOwner(), pLosingUnit.getOwner())
+		iUnitPower = 0
+		pLosingUnitInfo = gc.getUnitInfo(pLosingUnit.getUnitType())
+		
+		if pLosingUnitInfo.getUnitCombatType() != gc.getInfoTypeForString("UNITCOMBAT_SIEGE"):
+			iUnitPower = pLosingUnitInfo.getPowerValue()
+		
+		sta.onCombatResult(pWinningUnit.getOwner(), pLosingUnit.getOwner(), iUnitPower)
 		
 		# catch slaves by defeating native and barbarian Pombos or Impis
 		if pLosingUnit.getOwner() in [con.iBarbarian, con.iNative] and pLosingUnit.getUnitType() in [con.iZuluImpi, con.iKongoPombos]:

@@ -248,6 +248,14 @@
 		<English>Recession</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_TRADE</Tag>
+		<English>Trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_INSUFFICIENT_TRADE</Tag>
+		<English>Economic Isolation</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_MERCANTILISM_TRADE_RICHER</Tag>
 		<English>Mercantilism: Trade with Wealthier Civilizations</English>
 	</TEXT>
@@ -320,20 +328,24 @@
 		<English>Fanaticism: Fighting Brothers of Faith</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_WINNING_WARS</Tag>
-		<English>Winning Wars</English>
+		<Tag>TXT_KEY_STABILITY_CONQUERED_CITIES</Tag>
+		<English>Conquered Cities</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_LOSING_WARS</Tag>
-		<English>Losing Wars</English>
+		<Tag>TXT_KEY_STABILITY_LOST_CITIES</Tag>
+		<English>Lost Cities</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_LOSING_STRENGTH</Tag>
-		<English>Losing Military Strength</English>
+		<Tag>TXT_KEY_STABILITY_WON_BATTLES</Tag>
+		<English>Won Battles</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_BARBARIAN_LOSSES</Tag>
-		<English>Losses to Barbarians</English>
+		<Tag>TXT_KEY_STABILITY_LOST_BATTLES</Tag>
+		<English>Lost Battles</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_WAR_WEARINESS</Tag>
+		<English>War Weariness</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CRISIS_MESSAGE</Tag>
