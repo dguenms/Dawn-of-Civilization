@@ -432,6 +432,10 @@
 		<English>Unhappy cities are leaving our civilization!</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_DAMAGE_RELATIONS</Tag>
+		<English>Our relations with %s1 have deteriorated!</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CANCEL_TRADE</Tag>
 		<English>%s1 has canceled their open borders agreement with us!</English>
 	</TEXT>
@@ -450,6 +454,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_REMOVE_DEFENSES</Tag>
 		<English>The military crisis leaves our cities without effective defenses!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_TARGET_CITY_UNREST</Tag>
+		<English>Cities sympathetic to the enemy are in open revolt!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_IMMOBILIZED_UNITS</Tag>
+		<English>Due to the military crisis, we have temporarily lost control over our units!</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_UNIT_DESERTION</Tag>

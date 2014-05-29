@@ -405,6 +405,10 @@ public:
 	void attackForDamage(CyUnit *defender, int attakerDamageChange, int defenderDamageChange);
 	void rangeStrike(int iX, int iY);
 
+	// Leoreth
+
+	void changeImmobileTimer(int iChange);
+
 protected:
 	CvUnit* m_pUnit;
 };
