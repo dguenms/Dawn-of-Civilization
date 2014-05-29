@@ -394,5 +394,8 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 
 		.def("getArtInfo", &CyUnit::getArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int i, eEra)")
 		.def("getButton", &CyUnit::getButton, "std::string ()")
+
+		// Leoreth
+		.def("changeImmobileTimer", &CyUnit::changeImmobileTimer, "void (int iChange)")
 		;
 }

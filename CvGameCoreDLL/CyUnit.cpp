@@ -1696,3 +1696,11 @@ std::string CyUnit::getButton() const
 {
 	return m_pUnit ? m_pUnit->getButton() : "";
 }
+
+void CyUnit::changeImmobileTimer(int iChange)
+{
+	if (m_pUnit)
+	{
+		m_pUnit->changeImmobileTimer(iChange);
+	}
+}

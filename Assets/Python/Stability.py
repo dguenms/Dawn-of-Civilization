@@ -246,13 +246,13 @@ def getAverageStabilityLevel(iPlayer):
 			
 	if iCount == 0: return 0
 	
-	return 2 * iLevel / iCount
+	return 1 * iLevel / iCount
 		
 def getStabilityThreshold(iPlayer):
 	iGameTurn = gc.getGame().getGameTurn()
 	iStabilityLevel = getStabilityLevel(iPlayer)
 
-	iThreshold = 5 * (iStabilityLevel - 2) - 5
+	iThreshold = 10 * (iStabilityLevel - 2)
 	
 	if utils.getHumanID() != iPlayer and iGameTurn > getTurnForYear(con.tFall[iPlayer]):
 		iThreshold += 5 * iStabilityLevel + 5 + max(10, (iGameTurn - getTurnForYear(con.tFall[iPlayer])) / utils.getTurns(10))
@@ -289,36 +289,42 @@ def checkStability(iPlayer, bPositive = False):
 		
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
-	sd.setLastDifference(0)
+	bHuman = (utils.getHumanID() == iPlayer)
+	if bHuman: sd.setLastDifference(0)
 	
 	bFall = (utils.getHumanID() != iPlayer and iGameTurn > getTurnForYear(con.tFall[iPlayer]))
 	
 	# it's easier to lose stability and harder to gain it at higher levels -> prevent "falling through the levels"
 	iThreshold = getStabilityThreshold(iPlayer)
 		
-	iCrisisThreshold = max(-5, iThreshold)
-	
 	if iStability > iThreshold + 10:
-		iStabilityLevel = min(iStabilityLevel + 1, con.iStabilitySolid)
-		sd.setLastDifference(1)
+		if iStabilityLevel == con.iStabilitySolid:
+			triggerBonus(iPlayer, lStabilityTypes)
+		else:
+			incrementStability(iPlayer)
+			
+		if bHuman: sd.setLastDifference(1)
 		sd.setCrisisImminent(False)
 		
-	elif iStability >= iCrisisThreshold:
+	elif iStability >= iThreshold:
 		sd.setCrisisImminent(False)
 		
 	elif not bPositive:
-		if iStability < iThreshold - 10:
-			iStabilityLevel = iStabilityLevel - 1#max(iStabilityLevel - 1, con.iStabilityCollapsing)
-			sd.setLastDifference(-1)
-			
-		if iStability < iCrisisThreshold:
+		# humans are immune to first stability drop
+		if bHuman and not sd.isCrisisImminent():
+			sd.setCrisisImminent(True)
+			changeCrisisCountdown(iPlayer, utils.getTurns(5))
+			sText = localText.getText("TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE", (localText.getText(tCrisisLevels[iStabilityLevel], ()),))
+			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+		else:
+			decrementStability(iPlayer)
+			if bHuman: sd.setLastDifference(-1)
+		
 			iCrisisType = determineCrisisType(lStabilityTypes)
-			iCrisisLevel = iStabilityLevel
-			if not bFall: iCrisisLevel += 1
-			triggerCrisis(iPlayer, iCrisisLevel, iCrisisType, lStabilityTypes)
-			
-	setStabilityLevel(iPlayer, max(iStabilityLevel, con.iStabilityCollapsing))
-	
+			iCrisisLevel = iStabilityLevel # PREVIOUS level
+		
+			triggerCrisis(iPlayer, iCrisisLevel, iCrisisType)
+		
 	# update stability information
 	if utils.getHumanID() == iPlayer:
 		for i in range(5):
@@ -327,50 +333,33 @@ def checkStability(iPlayer, bPositive = False):
 		
 		for i in range(con.iNumStabilityParameters):
 			gc.getGame().setStabilityParameter(i, lParameters[i])
+			
+def triggerBonus(iPlayer, lStabilityParameters):
+	return
 	
-def triggerCrisis(iPlayer, iStabilityLevel, iCrisisType, lStabilityTypes):
-
-	if iStabilityLevel < 0: iStabilityLevel = 0
-	elif iStabilityLevel > 4: iStabilityLevel = 4
+def triggerCrisis(iPlayer, iCrisisLevel, iCrisisType):
+	if iCrisisLevel >= con.iStabilityStable: return
 	
-	# human players: receive a warning before the first crisis
-	if utils.getHumanID() == iPlayer and not sd.isCrisisImminent():
-		sd.setCrisisImminent(True)
-		changeCrisisCountdown(iPlayer, utils.getTurns(5))
-		sText = localText.getText("TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE", (localText.getText(tCrisisLevels[iStabilityLevel], ()),))
-		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-		return
-
-	if iStabilityLevel < con.iStabilitySolid:
-		sText = localText.getText("TXT_KEY_STABILITY_CRISIS_MESSAGE", (localText.getText(tCrisisLevels[iStabilityLevel], ()), localText.getText(tCrisisTypes[iCrisisType], ())))
-		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-		#utils.debugTextPopup(gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + ' is experiencing a ' + localText.getText(tCrisisLevels[iStabilityLevel], ()) + ' ' + localText.getText(tCrisisTypes[iCrisisType], ()) + ' crisis!' + '\nYear: ' + str(gc.getGame().getGameTurnYear()))
-	
-	if iStabilityLevel > con.iStabilityShaky:
-		changeCrisisCountdown(iPlayer, utils.getTurns(5))
-	else:
-		changeCrisisCountdown(iPlayer, utils.getTurns(10))
+	sText = localText.getText("TXT_KEY_STABILITY_CRISIS_MESSAGE", (localText.getText(tCrisisLevels[iCrisisLevel], ()), localText.getText(tCrisisTypes[iCrisisType], ())))
+	CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		
-	if iStabilityLevel == con.iStabilityCollapsing:
+	# immune for 10 turns after this crisis
+	changeCrisisCountdown(iPlayer, utils.getTurns(10))
+	
+	if iCrisisLevel == con.iStabilityCollapsing:
 		completeCollapse(iPlayer)
-		
-	elif iStabilityLevel < con.iStabilitySolid:
-		if iCrisisType == con.iStabilityExpansion: territorialCrisis(iPlayer, iStabilityLevel)
-		elif iCrisisType == con.iStabilityEconomy: economicCrisis(iPlayer, iStabilityLevel)
-		elif iCrisisType == con.iStabilityDomestic: domesticCrisis(iPlayer, iStabilityLevel)
-		elif iCrisisType == con.iStabilityForeign: diplomaticCrisis(iPlayer, iStabilityLevel)
-		elif iCrisisType == con.iStabilityMilitary: militaryCrisis(iPlayer, iStabilityLevel)
+	
+	else:
+		if iCrisisType == con.iStabilityExpansion: territorialCrisis(iPlayer, iCrisisLevel)
+		elif iCrisisType == con.iStabilityEconomy: economicCrisis(iPlayer, iCrisisLevel)
+		elif iCrisisType == con.iStabilityDomestic: domesticCrisis(iPlayer, iCrisisLevel)
+		elif iCrisisType == con.iStabilityForeign: diplomaticCrisis(iPlayer, iCrisisLevel)
+		elif iCrisisType == con.iStabilityMilitary: militaryCrisis(iPlayer, iCrisisLevel)
 		
 def territorialCrisis(iPlayer, iCrisisLevel):
 
-	# minor crisis: lose territorial control
-	if iCrisisLevel == con.iStabilityStable:
-		#secedeRandomCity(iPlayer)
-		loseTerritory(iPlayer)
-		
 	# moderate crisis: a single city secedes
-	elif iCrisisLevel == con.iStabilityShaky:
-		#secedeForeignCities(iPlayer)
+	if iCrisisLevel == con.iStabilityShaky:
 		secedeSingleCity(iPlayer)
 		
 	# severe crisis: collapse to core
@@ -380,24 +369,18 @@ def territorialCrisis(iPlayer, iCrisisLevel):
 def economicCrisis(iPlayer, iCrisisLevel):
 	pPlayer = gc.getPlayer(iPlayer)
 	
-	# minor crisis: lose 10% research or gold equivalent
-	if iCrisisLevel == con.iStabilityStable:
-		loseCommerce(iPlayer, 10)
-		
-	# moderate crisis: one turn of anarchy, lose 50% research or gold equivalent
-	elif iCrisisLevel == con.iStabilityShaky:
+	# moderate crisis: lose 50% research or gold equivalent
+	if iCrisisLevel == con.iStabilityShaky:
 		sText = localText.getText("TXT_KEY_STABILITY_ECONOMIC_CRISIS", ())
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 	
-		pPlayer.changeAnarchyTurns(1)
 		loseCommerce(iPlayer, 50)
 		
-	# severe crisis: three turns of anarchy, lose 100% research or gold equivalent, cottages and GPP decay
+	# severe crisis: lose 100% research or gold equivalent, cottages and GPP decay
 	elif iCrisisLevel == con.iStabilityUnstable:
 		sText = localText.getText("TXT_KEY_STABILITY_ECONOMIC_CRISIS", ())
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		
-		pPlayer.changeAnarchyTurns(3)
 		loseCommerce(iPlayer, 100)
 		downgradeCottages(iPlayer)
 		removeGreatPeoplePoints(iPlayer)
@@ -406,84 +389,65 @@ def domesticCrisis(iPlayer, iCrisisLevel):
 	pPlayer = gc.getPlayer(iPlayer)
 	lCities = utils.getCityList(iPlayer)
 
-	# minor crisis: one turn of anarchy, unrest in unhappy cities
-	if iCrisisLevel == con.iStabilityStable:
+	# moderate crisis: unrest in unhappy cities
+	if iCrisisLevel == con.iStabilityShaky:
 		sText = localText.getText("TXT_KEY_STABILITY_DOMESTIC_CRISIS", ())
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		
-		pPlayer.changeAnarchyTurns(1)
 		for city in lCities:
 			if city.happyLevel() < city.unhappyLevel(0): city.setOccupationTimer(2)
 			
-	# moderate crisis: two turns of anarchy, more unrest in unhappy cities
-	elif iCrisisLevel == con.iStabilityShaky:
-		sText = localText.getText("TXT_KEY_STABILITY_DOMESTIC_CRISIS", ())
-		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-		
-		pPlayer.changeAnarchyTurns(2)
-		for city in lCities:
-			if city.happyLevel() < city.unhappyLevel(0): city.setOccupationTimer(4)
-			
-	# severe crisis: three turns of anarchy, unhappy cities secede
+	# severe crisis: two turns of anarchy, unhappy cities secede
 	elif iCrisisLevel == con.iStabilityUnstable:
 		sText = localText.getText("TXT_KEY_STABILITY_DOMESTIC_CRISIS", ())
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		
-		pPlayer.changeAnarchyTurns(3)
+		pPlayer.changeAnarchyTurns(2)
 		secedeUnhappyCities(iPlayer)
 		
 def diplomaticCrisis(iPlayer, iCrisisLevel):
+	pPlayer = gc.getPlayer(iPlayer)
 	tPlayer = gc.getTeam(iPlayer)
-	lTradingCivs = []
-	lDefensivePactCivs = []
+	#lTradingCivs = []
+	#lDefensivePactCivs = []
+	lContacts = []
 	lPeaceVassalCivs = []
 	lCapitulatedCivs = []
 	
 	for iLoopPlayer in range(con.iNumPlayers):
 		tLoopPlayer = gc.getTeam(iLoopPlayer)
-		if tLoopPlayer.isOpenBorders(iPlayer):
-			lTradingCivs.append(iLoopPlayer)
-		if tLoopPlayer.isDefensivePact(iPlayer):
-			lDefensivePactCivs.append(iLoopPlayer)
+		#if tLoopPlayer.isOpenBorders(iPlayer):
+		#	lTradingCivs.append(iLoopPlayer)
+		#if tLoopPlayer.isDefensivePact(iPlayer):
+		#	lDefensivePactCivs.append(iLoopPlayer)
+		if pPlayer.canContact(iLoopPlayer):
+			lContacts.append(iLoopPlayer)
 		if tLoopPlayer.isVassal(iPlayer):
 			if tLoopPlayer.isCapitulated():
 				lCapitulatedCivs.append(iLoopPlayer)
 			else:
 				lPeaceVassalCivs.append(iLoopPlayer)
 
-	# minor crisis: two open border agreements canceled
-	if iCrisisLevel == con.iStabilityStable:
-		cancelTrades(iPlayer, lTradingCivs, 2)
-	
-	# moderate crisis: five open border agreements canceled, defensive pacts canceled, peace vassals freed
-	elif iCrisisLevel == con.iStabilityShaky:
-		cancelTrades(iPlayer, lTradingCivs, 5)
-		cancelDefensivePacts(iPlayer, lDefensivePactCivs)
-		cancelVassals(iPlayer, lPeaceVassalCivs, False)
+	# moderate crisis: relations with 2 civilizations damaged
+	if iCrisisLevel == con.iStabilityShaky:
+		damageRelations(iPlayer, lContacts, 2)
 		
-	# severe crisis: all open border agreements canceled, defensive pacts canceled, vassals freed
+	# severe crisis: relations with 5 civilizations damaged, vassals freed
 	elif iCrisisLevel == con.iStabilityUnstable:
-		cancelTrades(iPlayer, lTradingCivs, len(lTradingCivs))
-		cancelDefensivePacts(iPlayer, lDefensivePactCivs)
+		damageRelations(iPlayer, lContacts, 5)
 		cancelVassals(iPlayer, lPeaceVassalCivs, False)
 		cancelVassals(iPlayer, lCapitulatedCivs, True)
 		
 def militaryCrisis(iPlayer, iCrisisLevel):
 
-	# minor crisis: loss of city defenses
-	if iCrisisLevel == con.iStabilityStable:
-		removeCityDefenses(iPlayer)
+	# moderate crisis: loss of city defenses
+	if iCrisisLevel == con.iStabilityShaky:
+		removeTargetCityDefenses(iPlayer)
 	
-	# moderate crisis: 25% chance of military unit desertion, loss of city defenses
-	elif iCrisisLevel == con.iStabilityShaky:
-		removeCityDefenses(iPlayer)
-		unitDesertion(iPlayer, 4)
-	
-	# severe crisis: 50% chance of military unit desertion, loss of city defenses, secession of enemy target cities
+	# severe crisis: unrest in enemy target cities, immobilized units
 	elif iCrisisLevel == con.iStabilityUnstable:
-		removeCityDefenses(iPlayer)
-		unitDesertion(iPlayer, 2)
-		secedeEnemyTargetCities(iPlayer)
+		targetCityUnrest(iPlayer)
+		immobilizeUnits(iPlayer)
 		
 def getPossibleMinors(iPlayer):
 
@@ -824,6 +788,26 @@ def removeGreatPeoplePoints(iPlayer):
 		sText = localText.getText("TXT_KEY_STABILITY_REMOVE_GPP", ())
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		
+def damageRelations(iPlayer, lContacts, iNumOtherPlayers):
+	pPlayer = gc.getPlayer(iPlayer)
+	
+	for i in range(iNumOtherPlayers):
+		if lContacts:
+			iOtherPlayer = utils.getRandomEntry(lContacts)
+			pOtherPlayer = gc.getPlayer(iOtherPlayer)
+			
+			pOtherPlayer.AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_EVENT_BAD_TO_US, -4)
+			
+			lContacts.remove(iOtherPlayer)
+			
+			if utils.getHumanID() == iPlayer:
+				sText = localText.getText("TXT_KEY_STABILITY_DAMAGE_RELATIONS", (gc.getPlayer(iOtherPlayer).getCivilizationShortDescription(0),))
+				CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+				
+			if utils.getHumanID() == iOtherPlayer:
+				sText = localText.getText("TXT_KEY_STABILITY_DAMAGE_RELATIONS", (gc.getPlayer(iPlayer).getCivilizationShortDescription(0),))
+				CyInterface().addMessage(iOtherPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+		
 def cancelTrades(iPlayer, lTradingCivs, iNumCancels):
 	tPlayer = gc.getTeam(iPlayer)
 	pPlayer = gc.getPlayer(iPlayer)
@@ -914,13 +898,69 @@ def cancelVassals(iPlayer, lVassals, bCapitulated):
 			else:
 				sText = localText.getText("TXT_KEY_STABILITY_CANCEL_PEACE_VASSAL", (gc.getPlayer(iOtherPlayer).getCivilizationShortDescription(0),))
 			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
-		
-def removeCityDefenses(iPlayer):
+			
+def getEnemyTargetCities(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	tPlayer = gc.getTeam(iPlayer)
+	lEnemies = []
+	lTargetCities = []
+	
+	for iLoopPlayer in range(con.iNumPlayers):
+		if tPlayer.isAtWar(iLoopPlayer):
+			lEnemies.append(iLoopPlayer)
+			
 	for city in utils.getCityList(iPlayer):
+		for iEnemy in lEnemies:
+			pEnemy = gc.getPlayer(iEnemy)
+			
+			if 2 * city.getCulture(iEnemy) > city.getCulture(iPlayer):
+				lTargetCities.append(city)
+				break
+				
+			if city.getOriginalOwner() == iEnemy:
+				lTargetCities.append(city)
+				break
+				
+			if pEnemy.getWarMapValue(city.getX(), city.getY()) >= 8:
+				lTargetCities.append(city)
+				break
+				
+	return lTargetCities
+		
+def removeTargetCityDefenses(iPlayer):
+	lTargetCities = getEnemyTargetCities(iPlayer)
+	
+	for city in lTargetCities:
 		city.changeDefenseDamage(100)
 		
-	if utils.getHumanID() == iPlayer:
+	if utils.getHumanID() == iPlayer and len(lTargetCities) > 0:
 		sText = localText.getText("TXT_KEY_STABILITY_REMOVE_DEFENSES", ())
+		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+		
+def targetCityUnrest(iPlayer):
+	lTargetCities = getEnemyTargetCities(iPlayer)
+	
+	for city in lTargetCities:
+		city.setOccupationTimer(2)
+		city.changeDefenseDamage(100)
+		
+	if utils.getHumanID() == iPlayer and len(lTargetCities) > 0:
+		sText = localText.getText("TXT_KEY_STABILITY_TARGET_CITY_UNREST", ())
+		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
+		
+def immobilizeUnits(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	
+	for x in range(124):
+		for y in range(68):
+			plot = gc.getMap().plot(x, y)
+			for i in range(plot.getNumUnits()):
+				unit = plot.getUnit(i)
+				if unit.getOwner() == iPlayer and gc.getUnitInfo(unit.getUnitType()).isMilitaryProduction():
+					unit.changeImmobileTimer(1)
+			
+	if utils.getHumanID() == iPlayer:
+		sText = localText.getText("TXT_KEY_STABILITY_IMMOBILIZED_UNITS", ())
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		
 def unitDesertion(iPlayer, iDivisor):
@@ -934,7 +974,7 @@ def unitDesertion(iPlayer, iDivisor):
 			for i in range(plot.getNumUnits()):
 				unit = plot.getUnit(i)
 				if unit.getOwner() == iPlayer and gc.getUnitInfo(unit.getUnitType()).isMilitaryProduction():
-					lPlotUnits = []
+					lPlotUnits.append(unit)
 			for i in range(len(lPlotUnits)):
 				if i % iDivisor == 0:
 					lDesertingUnits.append(lPlotUnits[i])		
@@ -1526,7 +1566,7 @@ def calculateStability(iPlayer):
 			
 			iWarWearinessStability += iTempWarWearinessStability
 			
-			utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' war against ' + pEnemy.getCivilizationShortDescription(0) + '\nConquest Stability: ' + str(iTempConquestStability) + '\nBattleStability: ' + str(iTempBattleStability) + '\nWar Weariness: ' + str(iTempWarWearinessStability))
+			#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' war against ' + pEnemy.getCivilizationShortDescription(0) + '\nConquest Stability: ' + str(iTempConquestStability) + '\nBattleStability: ' + str(iTempBattleStability) + '\nWar Weariness: ' + str(iTempWarWearinessStability))
 	
 	lParameters[con.iParameterConquests] = iConquestStability
 	lParameters[con.iParameterBattles] = iBattleStability
