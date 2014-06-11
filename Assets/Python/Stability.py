@@ -615,9 +615,9 @@ def collapseToCore(iPlayer):
 			lNonCoreCities.append(city)
 			if plot.getSettlerMapValue(iPlayer) < 90:
 				lAhistoricalCities.append(city)
-			
-	# start by seceding ahistorical cities
-	if len(lAhistoricalCities) > 2:
+				
+	# more than half ahistorical, only secede ahistorical cities
+	if 2 * len(lAhistoricalCities) > len(lNonCoreCities):
 			
 		# notify owner
 		if utils.getHumanID() == iPlayer:
@@ -627,7 +627,7 @@ def collapseToCore(iPlayer):
 		# secede all foreign cities
 		secedeCities(iPlayer, lAhistoricalCities)
 		
-	# if almost all cities are historical, secede non core cities
+	# otherwise, secede all cities outside of core
 	elif lNonCoreCities:
 			
 		# notify owner
@@ -1220,21 +1220,21 @@ def calculateStability(iPlayer):
 	else:
 		iTradeVolume = iImports + iExports
 	
-	# 0, 1, 2, 4, 8, 12
-	if iCurrentEra <= 1:
-		iEraModifier = iCurrentEra
-	else:
-		iEraModifier = iCurrentEra * iCurrentEra / 2
+	iEraModifier = max(1, iCurrentEra * iCurrentEra)
 		
-	iTradeStability = iTradeVolume / iNumTotalCities - iEraModifier
+	iTradeStability = iTradeVolume / iNumTotalCities - 2 * iEraModifier
+	
+	# trade stability cap
+	if iTradeStability > 10: iTradeStability = 10
+	elif iTradeStability < -10: iTradeStability = -10
 	
 	lParameters[con.iParameterTrade] = iTradeStability
 	
 	iEconomyStability += iTradeStability
 	
 	# Surplus and Deficit
-	iExpenseStability = 0
-	iTotalCommerce = pPlayer.calculateTotalCommerce()
+	#iExpenseStability = 0
+	#iTotalCommerce = pPlayer.calculateTotalCommerce()
 	#iTotalCosts = pPlayer.calculateInflatedCosts()
 	
 	#if iTotalCommerce > 0:
@@ -1246,9 +1246,11 @@ def calculateStability(iPlayer):
 	#	
 	#	lParameters[con.iParameterExpenses] = iExpenseStability
 		
-	iEconomyStability += iExpenseStability
+	#iEconomyStability += iExpenseStability
 	
 	#utils.debugTextPopup("Trade stability: " + str(iTradeStability) + "\nExpenseStability: " + str(iExpenseStability))
+	
+	iTotalCommerce = pPlayer.calculateTotalCommerce()
 	
 	# Economic systems
 	iEconomicSystemStability = 0
