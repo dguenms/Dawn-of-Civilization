@@ -783,6 +783,10 @@ class CvRFCEventHandler:
 						bNoMoors = False
 			if bNoMoors:
 				gc.getPlayer(con.iSpain).setReborn()
+				
+		# Italy's core extends when reaching the Industrial era
+		if iPlayer == con.iItaly and iEra == con.iIndustrial:
+			gc.getPlayer(con.iItaly).setReborn()
                 
 
         def onPreSave(self, argsList):

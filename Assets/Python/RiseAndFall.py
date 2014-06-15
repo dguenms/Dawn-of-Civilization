@@ -3365,9 +3365,9 @@ class RiseAndFall:
                         utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
                         utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
 			if utils.getHumanID() != iTurkey:
-				utils.makeUnit(con.iBombard, iCiv, tPlot, 3)
-				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 5)
-				utils.makeUnit(con.iKnight, iCiv, tPlot, 2)
+				utils.makeUnit(con.iBombard, iCiv, tPlot, 5)
+				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 8)
+				utils.makeUnit(con.iKnight, iCiv, tPlot, 4)
                 if (iCiv == iPortugal):
 			utils.createSettlers(iCiv, 1)
                         utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
