@@ -12012,7 +12012,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 			}
 
 			//Rhye - start
-			if (iI == 1) { //Christianity
+			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM) { //Christianity
 				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == CARTHAGE || getID() == PERSIA)
 				{
 					iValue *= 1;
