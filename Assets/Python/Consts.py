@@ -1265,7 +1265,7 @@ tCoreAreasTL = (
 (63, 50), #Poland
 (44, 42), #Portugal
 (26, 20), #Inca
-(58, 45), #Italy
+(58, 40), #Italy
 (87, 46), #Mongolia
 (12, 33), #Mexico
 (86, 37), #Mughals
