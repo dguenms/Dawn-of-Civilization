@@ -1674,7 +1674,7 @@ def applyIntroductionEvent(argsList):
 	sd.getCurrentCongress().applyIntroductionEvent()
 	
 def applyRefusalEvent(argsList):
-	sd.getCurrentCongress().applyRefusalEvent(argsList[0], argsList[1], argsList[2])
+	sd.getCurrentCongress().applyRefusalEvent(argsList[0], argsList[1], argsList[2], argsList[3])
 	
 def applyBriberyEvent(argsList):
 	sd.getCurrentCongress().applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])

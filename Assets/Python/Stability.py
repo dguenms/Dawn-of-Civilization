@@ -126,7 +126,8 @@ def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
 		
 	if iWinningPlayer < con.iNumPlayers and iLosingPlayer < con.iNumPlayers:
 		# update defeated units in a war
-		sd.getWarStatus(iWinningPlayer, iLosingPlayer).changeDefeatedUnits(iLostPower)
+		warStatus = sd.getWarStatus(iWinningPlayer, iLosingPlayer)
+		if warStatus: warStatus.changeDefeatedUnits(iLostPower)
 	
 def onCivSpawn(iPlayer):
 	for iOlderNeighbor in con.lOlderNeighbours[iPlayer]:
@@ -1222,7 +1223,10 @@ def calculateStability(iPlayer):
 	
 	iEraModifier = max(1, iCurrentEra * iCurrentEra)
 		
-	iTradeStability = iTradeVolume / iNumTotalCities - 2 * iEraModifier
+	if iNumTotalCities > 0:
+		iTradeStability = iTradeVolume / iNumTotalCities - 2 * iEraModifier
+	else:
+		iTradeStability = 0
 	
 	# trade stability cap
 	if iTradeStability > 10: iTradeStability = 10
