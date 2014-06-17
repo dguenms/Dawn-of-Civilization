@@ -362,7 +362,8 @@ class Congress:
 		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
 		popup.setOnClickedPythonCallback("applyRefusalEvent")
 		popup.setData1(iClaimant)
-		popup.setData2(tPlot)
+		popup.setData2(x)
+		popup.setData3(y)
 		
 		if plot.isCity():
 			sText = localText.getText("TXT_KEY_CONGRESS_DEMAND_CITY", (gc.getPlayer(iClaimant).getCivilizationShortDescription(0), plot.getPlotCity().getName()))
@@ -375,9 +376,9 @@ class Congress:
 		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_REFUSE", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
 		popup.addPopup(utils.getHumanID())
 		
-	def applyRefusalEvent(self, iChoice, iClaimant, tPlot):
+	def applyRefusalEvent(self, iChoice, iClaimant, x, y):
 		if iChoice == 0:
-			x, y = tPlot
+			tPlot = (x, y)
 			plot = gc.getMap().plot(x, y)
 			if plot.isCity():
 				self.assignCity(iClaimant, plot.getOwner(), tPlot)
