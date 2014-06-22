@@ -181,8 +181,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POL2</Tag>
-		<English>Other Christian denominations do not count as non-state religion for religious unity</English>
-		<German>Andere christliche Konfessionen zählen nicht als Nicht-Staatsreligion im Hinblick auf religiöse Einheit</German>
+		<English>Additional food and commerce during Golden Ages</English>
+		<German>Zusätzliche Nahrung und Kommerz durch Goldene Zeitalter</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MOO</Tag>
@@ -236,13 +236,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARG</Tag>
-		<English>The Power of Justicialism:</English>
-		<German>Die Macht des Justizialismus:</German>
+		<English>The Power of Juntas:</English>
+		<German>Die Macht der Juntas:</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARG2</Tag>
-		<English>One extra [ICON_HAPPY] per 10% [ICON_CULTURE] Rate</English>
-		<German>Eine zusätzliche [ICON_HAPPY] pro 10% [ICON_CULTURE] Rate</German>
+		<English>Great Generals can start Golden Ages</English>
+		<German>Große Generäle können Goldene Zeitalter auslösen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_COL</Tag>

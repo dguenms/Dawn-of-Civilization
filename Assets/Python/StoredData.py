@@ -127,6 +127,7 @@ class StoredData:
 				    'iFirstModern' : -1,
 				    'iMoorishGold' : 0,
 				    'iTaoistHealthTurns' : 0,
+				    'iArgentineGoldenAgeTurns' : 0,
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
@@ -250,6 +251,8 @@ class StoredData:
 	def removeWarStatus(self, iPlayer, iEnemy):
 		del self.scriptDict['lWarStatus'][iPlayer][iEnemy]
 		
+	# VICTORY
+		
 	def getProtestantTechs(self, i):
 		return self.scriptDict['lProtestantTechs'][i]
 		
@@ -297,6 +300,12 @@ class StoredData:
 		
 	def setFirstModern(self, iNewValue):
 		self.scriptDict['iFirstModern'] = iNewValue
+		
+	def getArgentineGoldenAgeTurns(self):
+		return self.scriptDict['iArgentineGoldenAgeTurns']
+		
+	def increaseArgentineGoldenAgeTurns(self):
+		self.scriptDict['iArgentineGoldenAgeTurns'] += 1
 		
 	def getAggressionLevels(self):
 		return self.scriptDict['lAggressionLevels']

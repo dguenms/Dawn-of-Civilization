@@ -6671,6 +6671,20 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			{
 				iYield += GC.getYieldInfo(eYield).getGoldenAgeYield();
 			}
+
+			// Leoreth: Polish UP: +1 food and commerce during golden ages for every tile that produces at least two
+			if (ePlayer == POLAND)
+			{
+				if (eYield == YIELD_FOOD)
+				{
+					if (iYield >= 2) iYield += 1;
+				}
+
+				if (eYield == YIELD_COMMERCE)
+				{
+					if (iYield >= 3) iYield += 1; // normal golden age effect has to be accounted for
+				}
+			}
 		}
 	}
 
