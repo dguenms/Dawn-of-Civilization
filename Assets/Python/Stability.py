@@ -1069,7 +1069,7 @@ def calculateStability(iPlayer):
 		
 		# Expansion
 		if plot.isCore(iPlayer):
-			iCorePopulation += (2 + iCurrentEra) * iPopulation
+			iCorePopulation += (iCurrentEra + 1) * iPopulation
 			if bSingleCoreCity and iCurrentEra > con.iAncient: iCorePopulation += iCurrentEra * iPopulation
 		else:
 			# ahistorical tiles
@@ -1105,7 +1105,7 @@ def calculateStability(iPlayer):
 				if bMercantilism: iModifier -= 1
 					
 			# cap
-			if iModifier < -2: iModifier = -2
+			if iModifier < -1: iModifier = -1
 			
 			#utils.debugTextPopup('City: ' + city.getName() + '\n Modifier: ' + str(iModifier))
 			
@@ -1227,6 +1227,8 @@ def calculateStability(iPlayer):
 		iTradeStability = iTradeVolume / iNumTotalCities - 2 * iEraModifier
 	else:
 		iTradeStability = 0
+		
+	iTradeStability /= 2
 	
 	# trade stability cap
 	if iTradeStability > 10: iTradeStability = 10
