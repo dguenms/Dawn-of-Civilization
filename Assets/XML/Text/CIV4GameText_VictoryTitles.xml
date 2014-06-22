@@ -561,18 +561,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG1_TITLE</Tag>
-		<English>The Juntas</English>
-		<German>Die Juntas</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_ARG2_TITLE</Tag>
 		<English>The Argentinian Paradox</English>
 		<German>Das argentinische Paradox</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ARG3_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_ARG2_TITLE</Tag>
 		<English>Tango and Poetry</English>
 		<German>Tango und Dichtung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG3_TITLE</Tag>
+		<English>Peronism</English>
+		<German>Peronismus</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX1_TITLE</Tag>

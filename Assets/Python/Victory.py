@@ -2383,30 +2383,52 @@ class Victory:
 		elif iPlayer == iArgentina:
 			if pArgentina.isAlive():
 			
-				if iGameTurn == getTurnForYear(1900):
-					capital = pArgentina.getCapitalCity()
-					iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
-					if capital.getFreeSpecialistCount(iGreatGeneral) >= 2:
-						self.setGoal(iArgentina, 0, 1)
-					else:
+				#if iGameTurn == getTurnForYear(1900):
+				#	capital = pArgentina.getCapitalCity()
+				#	iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
+				#	if capital.getFreeSpecialistCount(iGreatGeneral) >= 2:
+				#		self.setGoal(iArgentina, 0, 1)
+				#	else:
+				#		self.setGoal(iArgentina, 0, 0)
+						
+				#if iGameTurn == getTurnForYear(1930):
+				#	pHighestCommerceCity = self.calculateHighestCommerceCity()
+				#	if pHighestCommerceCity.getOwner() == iArgentina:
+				#		self.setGoal(iArgentina, 1, 1)
+				#	else:
+				#		self.setGoal(iArgentina, 1, 0)
+			
+				# first goal: experience two golden ages by 1930 AD
+				if iGameTurn == getTurnForYear(1930):
+					if self.getGoal(iArgentina, 0) == -1:
 						self.setGoal(iArgentina, 0, 0)
 						
-				if iGameTurn == getTurnForYear(1930):
-					pHighestCommerceCity = self.calculateHighestCommerceCity()
-					if pHighestCommerceCity.getOwner() == iArgentina:
-						self.setGoal(iArgentina, 1, 1)
-					else:
-						self.setGoal(iArgentina, 1, 0)
+				if sd.getArgentineGoldenAgeTurns() >= utils.getTurns(16):
+					if self.getGoal(iArgentina, 0) == -1:
+						self.setGoal(iArgentina, 0, 1)
 			
-				if self.getGoal(iArgentina, 2) == -1:
+				# second goal: have 25000 culture in Buenos Aires by 1960 AD
+				if self.getGoal(iArgentina, 1) == -1:
 					pBuenosAires = gc.getMap().plot(con.tCapitals[0][iArgentina][0], con.tCapitals[0][iArgentina][1])
 					if pBuenosAires.isCity():
 						if pBuenosAires.getPlotCity().getCulture(iArgentina) >= utils.getTurns(25000):
-							self.setGoal(iArgentina, 2, 1)
+							self.setGoal(iArgentina, 1, 1)
 							
 				if iGameTurn == getTurnForYear(1960):
+					if self.getGoal(iArgentina, 1) == -1:
+						self.setGoal(iArgentina, 1, 0)
+						
+				# third goal: experience five golden ages by 2000 AD
+				if iGameTurn == getTurnForYear(2000):
 					if self.getGoal(iArgentina, 2) == -1:
 						self.setGoal(iArgentina, 2, 0)
+						
+				if sd.getArgentineGoldenAgeTurns() >= utils.getTurns(40):
+					if self.getGoal(iArgentina, 2) == -1:
+						self.setGoal(iArgentina, 2, 1)
+						
+				if pArgentina.isGoldenAge() and not pArgentina.isAnarchy():
+					sd.increaseArgentineGoldenAgeTurns()
 
 		
 		elif iPlayer == iBrazil:
@@ -5252,20 +5274,26 @@ class Victory:
 				aHelp.append(self.getIcon(iCounter >= 10) + localText.getText("TXT_KEY_VICTORY_OIL_SECURED", (iCounter, 10)))
 				
 		elif iPlayer == iArgentina:
+			#if iGoal == 0:
+			#	capital = pArgentina.getCapitalCity()
+			#	iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
+			#	iGenerals = 0
+			#	if not capital.isNone(): iGenerals = capital.getFreeSpecialistCount(iGreatGeneral)
+			#	aHelp.append(self.getIcon(iGenerals >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS_CAPITAL", (iGenerals, 2)))
+			#elif iGoal == 1:
+			#	pHighestCommerceCity = self.calculateHighestCommerceCity()
+			#	aHelp.append(self.getIcon(pHighestCommerceCity.getOwner() == iArgentina) + localText.getText("TXT_KEY_VICTORY_BEST_COMMERCE_CITY", (pHighestCommerceCity.getName(),)))
 			if iGoal == 0:
-				capital = pArgentina.getCapitalCity()
-				iGreatGeneral = gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL")
-				iGenerals = 0
-				if not capital.isNone(): iGenerals = capital.getFreeSpecialistCount(iGreatGeneral)
-				aHelp.append(self.getIcon(iGenerals >= 2) + localText.getText("TXT_KEY_VICTORY_GREAT_GENERALS_CAPITAL", (iGenerals, 2)))
+				iGoldenAgeTurns = sd.getArgentineGoldenAgeTurns()
+				aHelp.append(self.getIcon(iGoldenAgeTurns >= utils.getTurns(16)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 2)))
 			elif iGoal == 1:
-				pHighestCommerceCity = self.calculateHighestCommerceCity()
-				aHelp.append(self.getIcon(pHighestCommerceCity.getOwner() == iArgentina) + localText.getText("TXT_KEY_VICTORY_BEST_COMMERCE_CITY", (pHighestCommerceCity.getName(),)))
-			elif iGoal == 2:
 				pBuenosAires = gc.getMap().plot(con.tCapitals[0][iArgentina][0], con.tCapitals[0][iArgentina][1])
 				iCulture = 0
 				if pBuenosAires.isCity(): iCulture = pBuenosAires.getPlotCity().getCulture(iArgentina)
 				aHelp.append(self.getIcon(iCulture >= utils.getTurns(25000)) + localText.getText("TXT_KEY_VICTORY_CITY_CULTURE", ("Buenos Aires", iCulture, utils.getTurns(25000))))
+			elif iGoal == 2:
+				iGoldenAgeTurns = sd.getArgentineGoldenAgeTurns()
+				aHelp.append(self.getIcon(iGoldenAgeTurns >= utils.getTurns(40)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 5)))
 				
 		elif iPlayer == iBrazil:
 			if iGoal == 0:

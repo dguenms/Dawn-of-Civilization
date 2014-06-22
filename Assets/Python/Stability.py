@@ -72,7 +72,7 @@ def onCityAcquired(city, iOwner, iPlayer):
 		sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
 	
 def onCityRazed(iPlayer, city):
-	if utils.getHumanID() == iPlayer:
+	if utils.getHumanID() == iPlayer and iPlayer != con.iMongols:
 		iRazePenalty = -10
 		if city.getPopulation() < 5 and not city.isCapital():
 			iRazePenalty = -2 * city.getPopulation()
@@ -1304,7 +1304,7 @@ def calculateStability(iPlayer):
 	
 	if iCivicOrganization == con.iCivicTotalitarianism:
 		if iCivicGovernment == con.iCivicAutocracy: iCivicStability += 5
-		if iCivicEconomy == con.iCivicCentralPlanning: CivicStability += 3
+		if iCivicEconomy == con.iCivicCentralPlanning: iCivicStability += 3
 		if iCivicReligion != con.iCivicSecularism: iCivicStability -= 5
 	
 	if iCivicEconomy == con.iCivicCentralPlanning:
@@ -1800,7 +1800,6 @@ def calculatePowerRank(iPlayer, iTurn):
 def isTolerated(iPlayer, iReligion):
 	pPlayer = gc.getPlayer(iPlayer)
 	iStateReligion = pPlayer.getStateReligion()
-	lChristianity = [con.iCatholicism, con.iOrthodoxy, con.iProtestantism]
 	
 	# should not be asked, but still check
 	if iStateReligion == iReligion: return True
@@ -1810,11 +1809,6 @@ def isTolerated(iPlayer, iReligion):
 	
 	# Mughal UP
 	if iPlayer == con.iMughals: return True
-	
-	# Polish UP
-	if iPlayer == con.iPoland:
-		if pPlayer.getStateReligion() in lChristianity and iReligion in lChristianity:
-			return True
 	
 	# Exceptions
 	if iStateReligion == con.iConfucianism and iReligion == con.iTaoism: return True
