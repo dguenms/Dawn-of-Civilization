@@ -395,6 +395,14 @@
 		<English>[ICON_BULLET]Double Production Speed for [LINK=literal]%s1_unit_or_building[\LINK]</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_START</Tag>
+		<English>[ICON_BULLET]Double Production Speed for</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_BUILDING</Tag>
+		<English>[LINK=literal]%s1_unit_or_building[\LINK]</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER</Tag>
 		<English>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</English>
 	</TEXT>

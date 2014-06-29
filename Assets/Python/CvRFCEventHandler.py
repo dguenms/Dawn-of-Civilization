@@ -263,9 +263,9 @@ class CvRFCEventHandler:
 				city.setOccupationTimer(0)
 					
 		if bTrade:
-			for i in range(con.iScotlandYard - con.iHeroicEpic + 1):
-				iNationalWonder = i + con.iHeroicEpic
-				if city.hasBuilding(iNationalWonder):
+			for i in range(con.iNumBuildings):
+				iNationalWonder = i
+				if isNationalWonderClass(gc.getBuildingInfo(iNationalWonder).getBuildingClassType()) and city.hasBuilding(iNationalWonder):
 					city.setHasRealBuilding(iNationalWonder, False)
 					
 		self.pla.onCityAcquired(iOwner, iPlayer, city) # Plague

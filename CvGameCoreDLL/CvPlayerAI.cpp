@@ -3501,13 +3501,15 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		if (pCity->getRegionID() == REGION_ANATOLIA)
 			iValue += 5;
 
-		if ((pCity->getX() == 89 && pCity->getY() == 46) || (pCity->getX() == 95 && pCity->getY() == 47))
+		/*if ((pCity->getX() == 89 && pCity->getY() == 46) || (pCity->getX() == 95 && pCity->getY() == 47))
 			iValue -= 10;
 		else if (pCity->getX() == 72 && pCity->getY() == 43)
-			iValue += 20;
+			iValue += 20;*/
 
 		if (pCity->getOwner() == BYZANTIUM)
 			iValue += 5;
+		else if (pCity->getOwner() == ARABIA)
+			iValue += 10;
 	}
 
 	//Leoreth: more barbarian pressure against India and Rome

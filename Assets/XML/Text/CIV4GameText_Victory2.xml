@@ -109,7 +109,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MIN_LATITUDE</Tag>
+		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARC_HELP</Tag>
 		<English>[COLOR_WARNING_TEXT]Is automatically built on achievement of 2 Historical Goals out of 3[COLOR_REVERT]</English>
 		<French>[COLOR_WARNING_TEXT]Est automatiquement construit lorsque 2 objectifs historiques sur 3 sont atteints[COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Wird bei Erfüllung von 2 von 3 Historischen Siegbedingungen automatisch erbaut[COLOR_REVERT]</German>

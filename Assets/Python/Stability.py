@@ -72,7 +72,7 @@ def onCityAcquired(city, iOwner, iPlayer):
 		sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
 	
 def onCityRazed(iPlayer, city):
-	if utils.getHumanID() == iPlayer and iPlayer != con.iMongols:
+	if utils.getHumanID() == iPlayer and iPlayer != con.iMongolia:
 		iRazePenalty = -10
 		if city.getPopulation() < 5 and not city.isCapital():
 			iRazePenalty = -2 * city.getPopulation()
@@ -92,7 +92,7 @@ def onVassalState(iMaster, iVassal):
 def onChangeWar(bWar, iTeam, iOtherTeam):
 	if iTeam < con.iNumPlayers and iOtherTeam < con.iNumPlayers:
 		checkStability(iTeam, not bWar)
-		checkStability(iOtherTeam, not bWar)
+		checkStability(iOtherTeam, not bWar, bWar and utils.getHumanID() == iTeam)
 		
 		# start/end war logging for stability
 		if bWar:
@@ -271,7 +271,7 @@ def getStabilityThreshold(iPlayer):
 		
 	return iThreshold
 
-def checkStability(iPlayer, bPositive = False):
+def checkStability(iPlayer, bPositive = False, bWar = False):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	iGameEra = gc.getGame().getCurrentEra()
@@ -324,7 +324,7 @@ def checkStability(iPlayer, bPositive = False):
 			iCrisisType = determineCrisisType(lStabilityTypes)
 			iCrisisLevel = iStabilityLevel # PREVIOUS level
 		
-			triggerCrisis(iPlayer, iCrisisLevel, iCrisisType)
+			triggerCrisis(iPlayer, iCrisisLevel, iCrisisType, bWar)
 		
 	# update stability information
 	if utils.getHumanID() == iPlayer:
@@ -338,7 +338,7 @@ def checkStability(iPlayer, bPositive = False):
 def triggerBonus(iPlayer, lStabilityParameters):
 	return
 	
-def triggerCrisis(iPlayer, iCrisisLevel, iCrisisType):
+def triggerCrisis(iPlayer, iCrisisLevel, iCrisisType, bWar):
 	if iCrisisLevel >= con.iStabilityStable: return
 	
 	sText = localText.getText("TXT_KEY_STABILITY_CRISIS_MESSAGE", (localText.getText(tCrisisLevels[iCrisisLevel], ()), localText.getText(tCrisisTypes[iCrisisType], ())))
@@ -348,7 +348,8 @@ def triggerCrisis(iPlayer, iCrisisLevel, iCrisisType):
 	changeCrisisCountdown(iPlayer, utils.getTurns(10))
 	
 	if iCrisisLevel == con.iStabilityCollapsing:
-		completeCollapse(iPlayer)
+		if not bWar:
+			completeCollapse(iPlayer)
 	
 	else:
 		if iCrisisType == con.iStabilityExpansion: territorialCrisis(iPlayer, iCrisisLevel)
