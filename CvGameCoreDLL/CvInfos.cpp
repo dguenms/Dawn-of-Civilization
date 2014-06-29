@@ -4234,11 +4234,11 @@ void CvUnitInfo::updateArtDefineButton()
 
 const CvArtInfoUnit* CvUnitInfo::getArtInfo(int i, EraTypes eEra, UnitArtStyleTypes eStyle) const
 {
-	if ((eEra > GC.getNumEraInfos() / 2) && !CvString(getLateArtDefineTag(i, eStyle)).empty())
+	if ((eEra >= ERA_INDUSTRIAL) && !CvString(getLateArtDefineTag(i, eStyle)).empty())
 	{
 		return ARTFILEMGR.getUnitArtInfo(getLateArtDefineTag(i, eStyle));
 	}
-	else if ((eEra > GC.getNumEraInfos() / 4) && !CvString(getMiddleArtDefineTag(i, eStyle)).empty())
+	else if ((eEra >= ERA_MEDIEVAL) && !CvString(getMiddleArtDefineTag(i, eStyle)).empty())
 	{
 		return ARTFILEMGR.getUnitArtInfo(getMiddleArtDefineTag(i, eStyle));
 	}

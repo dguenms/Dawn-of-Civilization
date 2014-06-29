@@ -30,7 +30,7 @@ class StoredData:
                 """Initialise the global script data dictionary for usage."""
                 self.scriptDict = {      #------------RiseAndFall
 				    'lTempEventList' : [],
-                                    'iNewCiv': -1,
+                                    'lNewCiv': [],
 				    'iRespawnCiv' : -1,
                                     'iNewCivFlip': -1,
                                     'iOldCivFlip': -1,

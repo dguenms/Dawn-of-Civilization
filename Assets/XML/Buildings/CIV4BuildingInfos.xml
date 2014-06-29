@@ -23769,6 +23769,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_EPIC_PEDIA</Civilopedia>
 			<!-- Rhye -->
 			<Strategy>TXT_KEY_BUILDING_TAJ_MAHAL_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_TRIUMPHAL_ARC_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_EPIC</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -23840,7 +23841,7 @@
 			<iTeamsPrereq>0</iTeamsPrereq>
 			<iLevelPrereq>0</iLevelPrereq>
 			<!-- Rhye -->
-			<iMinLatitude>91</iMinLatitude>
+			<iMinLatitude>90</iMinLatitude>
 			<iMaxLatitude>90</iMaxLatitude>
 			<!-- Rhye -->
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>

@@ -116,7 +116,7 @@ tOceaniaTL = (99, 5)
 tOceaniaBR = (123, 28)
 tMediterraneanTL = (51, 36)
 tMediterraneanBR = (73, 47)
-tMediterraneanExceptions = ((51,36),(51,46),(52,46),(53,46),(53,47),(67,47),(67,46),(73,44),(73,45),(72,45),(71,44),(70,44),(73,36))
+tMediterraneanExceptions = ((51,36),(51,46),(52,46),(53,46),(53,47),(67,47),(67,46),(73,44),(73,45),(72,45),(71,45),(71,44),(70,44),(73,36))
 tHokkaidoTL = (115, 50)
 tHokkaidoBR = (116, 52)
 tHonshuTL = (112, 44)
@@ -2941,7 +2941,7 @@ class Victory:
 		# Maya UHV: Astronomy
 		if iTech == con.iAstronomy:
 			if self.getGoal(iMaya, 2) == -1:
-				if iPlayer == iMaya:
+				if iPlayer == iMaya and not gc.getPlayer(iPlayer).isReborn():
 					self.setGoal(iMaya, 2, 1)
 				else:
 					self.setGoal(iMaya, 2, 0)

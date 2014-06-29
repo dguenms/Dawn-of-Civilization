@@ -7567,11 +7567,16 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 			}
 		}
 	}
+	
+	int iDoubleModifierCount = 0;
+	CvWStringBuffer szDoubleModifiers;
+	szDoubleModifiers.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_START"));
 
 	//  Building Production (Leoreth)
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
 	{
 		int iProductionModifier = GC.getCivicInfo(eCivic).getBuildingProductionModifier(iI);
+
 		if (iProductionModifier != 0)
 		{
 			if (bPlayerContext && NO_PLAYER != GC.getGameINLINE().getActivePlayer())
@@ -7579,30 +7584,42 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationBuildings(iI);
 				if (NO_BUILDING != eBuilding)
 				{
-					szHelpText.append(NEWLINE);
 					if (iProductionModifier == 100)
 					{
-						szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION", GC.getBuildingInfo(eBuilding).getTextKeyWide()));
+						if (iDoubleModifierCount > 0) szDoubleModifiers.append(",");
+						szDoubleModifiers.append(" ");
+						szDoubleModifiers.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_BUILDING", GC.getBuildingInfo(eBuilding).getTextKeyWide()));
+						iDoubleModifierCount++;
 					}
 					else
 					{
+						szHelpText.append(NEWLINE);
 						szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER", iProductionModifier, GC.getBuildingInfo(eBuilding).getTextKeyWide()));
 					}
 				}
 			}
 			else
 			{
-				szHelpText.append(NEWLINE);
 				if (iProductionModifier == 100)
 				{
-					szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION", GC.getBuildingClassInfo((BuildingClassTypes)iI).getTextKeyWide()));
+					if (iDoubleModifierCount > 0) szDoubleModifiers.append(",");
+					szDoubleModifiers.append(" ");
+					szDoubleModifiers.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_BUILDING", GC.getBuildingClassInfo((BuildingClassTypes)iI).getTextKeyWide()));
+					iDoubleModifierCount++;
 				}
 				else
 				{
+					szHelpText.append(NEWLINE);
 					szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER", iProductionModifier, GC.getBuildingClassInfo((BuildingClassTypes)iI).getTextKeyWide()));
 				}
 			}
 		}
+	}
+
+	if (iDoubleModifierCount > 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(szDoubleModifiers.getCString());
 	}
 
 	//	Feature Happiness

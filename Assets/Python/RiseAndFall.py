@@ -219,10 +219,10 @@ class RiseAndFall:
         
 
         def getNewCiv( self ):
-                return sd.scriptDict['iNewCiv']
+                return sd.scriptDict['lNewCiv'].pop()
 
         def setNewCiv( self, iNewValue ):
-                sd.scriptDict['iNewCiv'] = iNewValue
+                sd.scriptDict['lNewCiv'].append(iNewValue)
 		
 	def getRespawnCiv(self):
 		return sd.scriptDict['iRespawnCiv']
@@ -404,8 +404,9 @@ class RiseAndFall:
                 self.setNewCiv(iCiv)
 
         def eventApply7614(self, popupReturn):
+		iNewCiv = self.getNewCiv()
                 if( popupReturn.getButtonClicked() == 0 ): # 1st button
-			self.handleNewCiv(self.getNewCiv())
+			self.handleNewCiv(iNewCiv)
 			
 	def respawnPopup(self, iCiv):
 		self.showPopup(7628, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
@@ -1461,8 +1462,13 @@ class RiseAndFall:
 			pPersia.setCivics(4, con.iCivicFanaticism)
 			pPersia.setCivics(5, con.iCivicLevyArmies)
 		elif iCiv == iAztecs:
-			if gc.getMap().plot(18, 37).isCity() and gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(con.iFloatingGardens).getBuildingClassType()) == 0:
-				gc.getMap().plot(18, 37).getPlotCity().setHasRealBuilding(con.iFloatingGardens, True)
+			if gc.getMap().plot(18, 37).isCity():
+				city = gc.getMap().plot(18, 37).getPlotCity()
+				if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(con.iFloatingGardens).getBuildingClassType()) == 0:
+					city.setHasRealBuilding(con.iFloatingGardens, True)
+				iStateReligion = pAztecs.getStateReligion()
+				if city.isHasReligion(iStateReligion):
+					city.setHasRealBuilding(con.iMonastery + 4 * iStateReligion, True)
 			
 			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
 			
