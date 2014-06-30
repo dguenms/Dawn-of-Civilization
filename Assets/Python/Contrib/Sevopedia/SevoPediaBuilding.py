@@ -207,6 +207,12 @@ class SevoPediaBuilding:
 						bFirst = False
 					screen.attachImageButton( panelName, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iPrereq, -1, False )
 
+		# Leoreth: civic prereqs
+		iPrereq = gc.getBuildingInfo(self.iBuilding).getPrereqCivic()
+		if iPrereq >= 0:
+			screen.attachImageButton(panelName, "", gc.getCivicInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIVIC, iPrereq, -1, False)
+					
+		# Leoreth: religious prereqs
 		iPrereq = gc.getBuildingInfo(self.iBuilding).getPrereqReligion()
 		iOrPrereq = gc.getBuildingInfo(self.iBuilding).getOrPrereqReligion()
 		iStatePrereq = gc.getBuildingInfo(self.iBuilding).getStateReligion()

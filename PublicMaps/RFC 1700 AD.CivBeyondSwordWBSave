@@ -48001,7 +48001,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=41
-		CityName=Sukadana
+		CityName=Pontianak
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_AQUEDUCT
