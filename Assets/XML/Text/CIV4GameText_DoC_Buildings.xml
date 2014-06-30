@@ -87,11 +87,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_WATER</Tag>
-		<English>[ICON_BULLET]Requires Access to Coast</English>
+		<English>[COLOR_WARNING_TEXT]Requires Access to Coast[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_RIVER</Tag>
-		<English>[ICON_BULLET]Requires a River</English>
+		<English>[COLOR_WARNING_TEXT]Requires a River[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_NUM_COLONIES</Tag>

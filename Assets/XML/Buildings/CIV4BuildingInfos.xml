@@ -23841,7 +23841,7 @@
 			<iTeamsPrereq>0</iTeamsPrereq>
 			<iLevelPrereq>0</iLevelPrereq>
 			<!-- Rhye -->
-			<iMinLatitude>90</iMinLatitude>
+			<iMinLatitude>0</iMinLatitude>
 			<iMaxLatitude>90</iMaxLatitude>
 			<!-- Rhye -->
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>

@@ -560,7 +560,7 @@ class Congress:
 				
 		for iBelligerent in self.dPossibleBelligerents:
 			iRand = gc.getGame().getSorenRandNum(100, 'Random declaration of war')
-			iThreshold = tPatienceThreshold[iBelligerent] + 5 * self.dPossibleBelligerents[iBelligerents] + iGlobalWarModifier
+			iThreshold = tPatienceThreshold[iBelligerent] + 5 * self.dPossibleBelligerents[iBelligerent] + iGlobalWarModifier
 			if iRand >= iThreshold:
 				gc.getTeam(iBelligerent).declareWar(utils.getHumanID(), False, WarPlanTypes.WARPLAN_DOGPILE)
 				

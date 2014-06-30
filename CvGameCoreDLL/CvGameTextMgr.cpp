@@ -10597,18 +10597,6 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		}
 	}
 
-	if (kBuilding.isWater())
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_WATER"));
-	}
-
-	if (kBuilding.isRiver())
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_RIVER"));
-	}
-
 	//Rhye - start comment
 	/*if (bCivilopediaText)
 	{
@@ -11036,6 +11024,15 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 				}
 			}
 		}
+		// Leoreth: display civic requirements
+		if (kBuilding.getPrereqCivic() != -1)
+		{
+			if (NULL != pCity && NO_PLAYER != ePlayer && !GET_PLAYER(ePlayer).hasCivic((CivicTypes)kBuilding.getPrereqCivic()))
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_CIVIC", GC.getCivicInfo((CivicTypes)kBuilding.getPrereqCivic()).getText()));
+			}
+		}
 
 		if (kBuilding.isStateReligion())
 		{
@@ -11058,10 +11055,28 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 		// Leoreth
 		if (kBuilding.getNumColoniesPrereq() > 0)
 		{
-			if (NO_PLAYER == ePlayer || GET_PLAYER(ePlayer).countColonies() < kBuilding.getNumColoniesPrereq())
+			if (NULL == pCity || NO_PLAYER == ePlayer || GET_PLAYER(ePlayer).countColonies() < kBuilding.getNumColoniesPrereq())
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_COLONIES", kBuilding.getNumColoniesPrereq()));
+			}
+		}
+
+		if (kBuilding.isWater())
+		{
+			if (NULL == pCity || NO_PLAYER == ePlayer || !pCity->plot()->isCoastalLand())
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_WATER"));
+			}
+		}
+
+		if (kBuilding.isRiver())
+		{
+			if (NULL == pCity || NO_PLAYER == ePlayer || !pCity->plot()->isRiver())
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_RIVER"));
 			}
 		}
 

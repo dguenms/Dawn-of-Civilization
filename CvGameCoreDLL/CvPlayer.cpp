@@ -6053,24 +6053,6 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		return false;
 	}
 
-	// edead: start civic requirement
-	bool bFound = false;
-	if (GC.getBuildingInfo(eBuilding).getPrereqCivic() != NO_CIVIC)
-	{
-		for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
-		{
-			if (getCivics((CivicOptionTypes)iI) == GC.getBuildingInfo(eBuilding).getPrereqCivic())
-			{
-				bFound = true;
-			}
-		}
-		if (!bFound)
-		{
-			return false;
-		}
-	}
-	// edead: end
-
 	if (GC.getGameINLINE().countCivTeamsEverAlive() < GC.getBuildingInfo(eBuilding).getNumTeamsPrereq())
 	{
 		return false;
@@ -6373,6 +6355,24 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		{
 			return false;
 		}
+
+		// edead: start civic requirement
+		bool bFound = false;
+		if (GC.getBuildingInfo(eBuilding).getPrereqCivic() != NO_CIVIC)
+		{
+			for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
+			{
+				if (getCivics((CivicOptionTypes)iI) == GC.getBuildingInfo(eBuilding).getPrereqCivic())
+				{
+					bFound = true;
+				}
+			}
+			if (!bFound)
+			{
+				return false;
+			}
+		}
+		// edead: end
 
 		// Leoreth: if the building requires colonies (check if it does first, because the calculation of colonies is time consuming)
 		if (GC.getBuildingInfo(eBuilding).getNumColoniesPrereq() > 0)

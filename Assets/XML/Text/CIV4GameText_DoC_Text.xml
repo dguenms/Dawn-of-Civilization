@@ -635,4 +635,9 @@
 		<English>State Religion</English>
 		<German>Staatsreligion</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_CIVIC</Tag>
+		<English>[COLOR_WARNING_TEXT]Requires [LINK=literal]%s1[\LINK][COLOR_REVERT]</English>
+		<German>[COLOR_WARNING_TEXT]Erfordert: [LINK=literal]%s1[\LINK][COLOR_REVERT]</German>
+	</TEXT>
 </Civ4GameText>
