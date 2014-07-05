@@ -1799,7 +1799,7 @@ class Victory:
 				if iGameTurn == getTurnForYear(1920):
 					if self.getGoal(iRussia, 0) == -1:
 						if self.getRussianProjects(0) == -1:
-							self.setGoal(iRussia, 1, 0)
+							self.setGoal(iRussia, 0, 0)
 							
 				if teamRussia.isHasTech(con.iRailroad) and self.getGoal(iRussia, 0) == -1 and self.getRussianProjects(0) == -1:
 					if self.isConnectedByRailroad(iRussia, con.tCapitals[0][iRussia], lSiberianCoast):
@@ -5013,7 +5013,7 @@ class Victory:
 
 		elif iPlayer == iRussia:
 			if iGoal == 0:
-				iSiberia = self.getNumCitiesInArea(iMoors, tSiberiaTL, tSiberiaBR)
+				iSiberia = self.getNumCitiesInArea(iRussia, tSiberiaTL, tSiberiaBR)
 				bSiberianRailway = (self.getRussianProjects(0) == 1)
 				aHelp.append(self.getIcon(iSiberia >= 7) + localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", (iSiberia, 7)) + ' ' + self.getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()))
 			elif iGoal == 1:

@@ -381,7 +381,7 @@ class RiseAndFall:
 		
 	def setPlayerEnabled(self, iCiv, bNewValue):
 		sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)] = bNewValue
-		if bNewValue == False: gc.getPlayer(iCiv).getPlayable(False)
+		if bNewValue == False: gc.getPlayer(iCiv).setPlayable(False)
 		
 	def getPlayerEnabled(self, iCiv):
 		return sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
