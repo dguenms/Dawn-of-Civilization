@@ -49121,10 +49121,10 @@
 			<Type>UNIT_SPANISH_PROPHET</Type>
 			<UniqueNames>
 				<UniqueName>Ignacio de Loyola</UniqueName><!-- 16th -->
-				<UniqueName>Juan de Sepulveda</UniqueName><!-- 16th -->
-				<UniqueName>Francisco Suarez</UniqueName><!-- 16th -->
-				<UniqueName>Bartolome de Las Casas</UniqueName><!-- 16th -->
-				<UniqueName>Junipero Serra</UniqueName><!-- 18th -->
+				<UniqueName>Juan de Sep&#250;lveda</UniqueName><!-- 16th -->
+				<UniqueName>Francisco Su&#225;rez</UniqueName><!-- 16th -->
+				<UniqueName>Bartolom&#233; de Las Casas</UniqueName><!-- 16th -->
+				<UniqueName>Jun&#237;pero Serra</UniqueName><!-- 18th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -49339,7 +49339,7 @@
 			<UniqueNames>
 				<UniqueName>Miguel de Cervantes</UniqueName><!-- 16th -->
 				<UniqueName>Garcilaso de la Vega</UniqueName><!-- 16th -->
-				<UniqueName>Diego de Silva Velazquez</UniqueName><!-- 17th -->
+				<UniqueName>Diego de Silva Vel&#225;zquez</UniqueName><!-- 17th -->
 				<UniqueName>Pablo Picasso</UniqueName><!-- 20th -->
 				<UniqueName>Salvador Dal&#237;</UniqueName><!-- 20th -->
 			</UniqueNames>
@@ -49523,7 +49523,7 @@
 			<Type>UNIT_SPANISH_SCIENTIST</Type>
 			<UniqueNames>
 				<UniqueName>Juan de Ortega</UniqueName><!-- 11th -->
-				<UniqueName>Gherard de Cremona</UniqueName><!-- 12th -->
+				<UniqueName>Gerardo de Cremona</UniqueName><!-- 12th -->
 				<UniqueName>Antonio de Ulloa</UniqueName><!-- 18th -->
 				<UniqueName>Santiago Ram&#243;n y Cajal</UniqueName><!-- 19th -->
 			</UniqueNames>
@@ -49711,8 +49711,8 @@
 			<Class>UNITCLASS_MERCHANT</Class>
 			<Type>UNIT_SPANISH_MERCHANT</Type>
 			<UniqueNames>
-				<UniqueName>Cristoforo Colombo</UniqueName><!-- 15th -->
-				<UniqueName>Fernando Magallanes</UniqueName><!-- 15th -->
+				<UniqueName>Crist&#243;bal Col&#243;n</UniqueName><!-- 15th -->
+				<UniqueName>Fernando de Magallanes</UniqueName><!-- 15th -->
 				<UniqueName>Hernando de Soto</UniqueName><!-- 16th -->
 				<UniqueName>Salvador Fidalgo</UniqueName><!-- 18th -->
 			</UniqueNames>
@@ -49897,7 +49897,7 @@
 			<UniqueNames>
 				<UniqueName>Juan de Herrera</UniqueName><!-- 16th -->
 				<UniqueName>Agust&#237;n de Betancourt</UniqueName><!-- 18th -->
-				<UniqueName>Alberto Palacio</UniqueName><!-- 19th -->
+				<UniqueName>Alberto de Palacio y Elissague</UniqueName><!-- 19th -->
 				<UniqueName>Esteban Terradas i Illa</UniqueName><!-- 19th -->
 				<UniqueName>Juan de la Cierva</UniqueName><!-- 20th -->
 			</UniqueNames>
@@ -50082,10 +50082,10 @@
 			<UniqueNames>
 				<UniqueName>El Cid</UniqueName><!-- 11th -->
 				<UniqueName>Francisco Coronado</UniqueName><!-- 16th -->
-				<UniqueName>Hernando Cortes</UniqueName><!-- 16th -->
+				<UniqueName>Hern&#225;n Cort&#233;s</UniqueName><!-- 16th -->
 				<UniqueName>Francisco Pizarro</UniqueName><!-- 16th -->
-				<UniqueName>Alvaro de Bazan</UniqueName><!-- 16th -->
-				<UniqueName>Ambrosio Spinola Doria</UniqueName><!-- 17th -->
+				<UniqueName>&#193;lvaro de Baz&#225;n</UniqueName><!-- 16th -->
+				<UniqueName>Ambrosio Sp&#237;nola Doria</UniqueName><!-- 17th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -52999,7 +52999,7 @@
 			<UniqueNames>
 				<UniqueName>Johannes Kepler</UniqueName><!-- 17th -->
 				<UniqueName>Gottfried Leibniz</UniqueName><!-- 17th -->
-				<UniqueName>Carl Friedrich Gau&#225;</UniqueName><!-- 19th -->
+				<UniqueName>Carl Friedrich Gau&#223;</UniqueName><!-- 19th -->
 				<UniqueName>Albert Einstein</UniqueName><!-- 20th -->
 				<UniqueName>Werner Heisenberg</UniqueName><!-- 20th -->
 				<UniqueName>Max Planck</UniqueName><!-- 20th -->

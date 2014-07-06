@@ -753,17 +753,14 @@ class UniquePowers:
 
 
         def selectRandomCityTargetCiv(self, iCiv):
-                if (gc.getPlayer(iCiv).isAlive()):
-                        cityList = []
-                        for pyCity in PyPlayer(iCiv).getCityList():
-                                if (pyCity.GetCy()):
-                                        if ( pyCity.GetCy().isDisorder() or pyCity.GetCy().foodDifference(False) < 0):
-                                                return pyCity.GetCy()                            
-                                cityList.append(pyCity.GetCy())
-                        if (len(cityList)):
-                                iCity = gc.getGame().getSorenRandNum(len(cityList), 'random city')
-                                return cityList[iCity]
-                return False
+                if gc.getPlayer(iCiv).isAlive():
+			lCities = []
+			for city in utils.getCityList(iCiv):
+				if not city.isDisorder() and city.foodDifference(False) > 0:
+					lCities.append(city)
+			if lCities:
+				return utils.getRandomEntry(lCities)
+		return False
 		
 	def getNewWorldCities(self):
 		lCityList = []
