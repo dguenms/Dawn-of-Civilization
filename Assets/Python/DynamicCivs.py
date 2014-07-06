@@ -2264,7 +2264,7 @@ class DynamicCivs:
 			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_PERU_SHORT_DESC")
 		elif iPlayer == iHolyRome:
 			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
-			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
+			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
 			
 		
                 self.setCivDesc(iPlayer, self.defaultNames[iPlayer])
