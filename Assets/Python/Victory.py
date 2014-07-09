@@ -2608,12 +2608,12 @@ class Victory:
                                                 self.setGoal(iEngland, 0, 1)
 
 
-                elif (iPlayer == iRussia):
-                        if (iGameTurn <= getTurnForYear(1700)):
-                                if (self.getGoal(iRussia, 0) == -1):
-                                        bSiberia = self.checkFoundedArea(iRussia, tSiberiaTL, tSiberiaBR, 7)                                    
-                                        if (bSiberia):
-                                                self.setGoal(iRussia, 0, 1)
+                #elif (iPlayer == iRussia):
+                #        if (iGameTurn <= getTurnForYear(1700)):
+                #                if (self.getGoal(iRussia, 0) == -1):
+                #                        bSiberia = self.checkFoundedArea(iRussia, tSiberiaTL, tSiberiaBR, 7)                                    
+                #                        if (bSiberia):
+                #                                self.setGoal(iRussia, 0, 1)
 
                 #elif (iPlayer == iPortugal):
                 #        if (self.getGoal(iPortugal, 2) == -1):
