@@ -683,8 +683,8 @@ class RFCUtils:
 				unit.kill(False, iOldOwner)
 				
 	def removeCoreUnits(self, iPlayer):
-		for x in range(con.tCoreAreasTL[0][iPlayer][0], con.tCoreAreasBR[0][iPlayer][0]+1):
-			for y in range(con.tCoreAreasTL[0][iPlayer][1], con.tCoreAreasBR[0][iPlayer][1]+1):
+		for x in range(con.tBirthAreaTL[iPlayer][0], con.tBirthAreaBR[iPlayer][0]+1):
+			for y in range(con.tBirthAreaTL[iPlayer][1], con.tBirthAreaBR[iPlayer][1]+1):
 				plot = gc.getMap().plot(x, y)
 				if plot.isCity():
 					pCity = plot.getPlotCity()
@@ -1626,12 +1626,12 @@ class RFCUtils:
 	def createSettlers(self, iPlayer, iTargetCities):
 		iNumCities = 0
 		bCapital = False
-		tTL = con.tCoreAreasTL[0][iPlayer]
-		tBR = con.tCoreAreasBR[0][iPlayer]
+		tTL = con.tBirthAreaTL[iPlayer]
+		tBR = con.tBirthAreaBR[iPlayer]
 		
 		for x in range(tTL[0], tBR[0]+1):
 			for y in range(tTL[1], tBR[1]+1):
-				if (x,y) not in con.tExceptions[0][iPlayer]:
+				if (x,y) not in con.tBirthAreaExceptions[iPlayer]:
 					if gc.getMap().plot(x, y).isCity():
 						iNumCities += 1
 						
@@ -1655,9 +1655,9 @@ class RFCUtils:
 		return lList.index(lSortedList[0])
 		
 	def getColonyPlayer(self, iCiv):
-		tCoreTL = con.tCoreAreasTL[0][iCiv]
-		tCoreBR = con.tCoreAreasBR[0][iCiv]
-		tExceptions = con.tExceptions[0][iCiv]
+		tCoreTL = con.tBirthAreaTL[iCiv]
+		tCoreBR = con.tBirthAreaBR[iCiv]
+		tExceptions = con.tBirthAreaExceptions[iCiv]
 		lCities = self.getAreaCities(tCoreTL, tCoreBR, tExceptions)
 		lPlayers = []
 		lPlayerNumbers = [0 for i in range(con.iNumPlayers)]

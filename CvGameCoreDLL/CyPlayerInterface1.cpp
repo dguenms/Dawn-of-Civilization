@@ -1,3 +1,5 @@
+#pragma component (mintypeinfo, on)
+
 #include "CvGameCoreDLL.h"
 #include "CyPlayer.h"
 #include "CyUnit.h"
@@ -461,20 +463,5 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getEventTriggered", &CyPlayer::getEventTriggered, python::return_value_policy<python::reference_existing_object>(), "EventTriggeredData* (int iID)")
 		.def("initTriggeredData", &CyPlayer::initTriggeredData, python::return_value_policy<python::reference_existing_object>(), "EventTriggeredData* (int eEventTrigger, bool bFire, int iCityId, int iPlotX, int iPlotY, PlayerTypes eOtherPlayer, int iOtherPlayerCityId, ReligionTypes eReligion, CorporationTypes eCorporation, int iUnitId, BuildingTypes eBuilding)")
 		.def("getEventTriggerWeight", &CyPlayer::getEventTriggerWeight, "int getEventTriggerWeight(int eEventTrigger)")
-
-		//Leoreth
-		.def("isReborn", &CyPlayer::isReborn, "bool ()")
-		.def("getReborn", &CyPlayer::getReborn, "int ()")
-		.def("setReborn", &CyPlayer::setReborn, "void ()")
-		.def("updateTradeRoutes", &CyPlayer::updateTradeRoutes, "void ()")
-		.def("getWarMapValue", &CyPlayer::getWarMapValue, "void (int x, int y)")
-		.def("AI_reset", &CyPlayer::AI_reset, "void ()")
-		.def("setPersecutionCountdown", &CyPlayer::setPersecutionCountdown, "void (int iNewValue)")
-		.def("hasCivic", &CyPlayer::hasCivic, "bool (int iCivic)")
-		.def("getWorstEnemy", &CyPlayer::getWorstEnemy, "int ()")
-		.def("getLatestRebellionTurn", &CyPlayer::getLatestRebellionTurn, "int ()")
-		.def("setLatestRebellionTurn", &CyPlayer::setLatestRebellionTurn, "void (int iTurn)")
-		.def("isSlaveTrade", &CyPlayer::isSlaveTrade, "bool (int iPlayer)")
-		.def("isHasBuildingEffect", &CyPlayer::isHasBuildingEffect, "bool (int eBuildingType)")
 		;
 }
