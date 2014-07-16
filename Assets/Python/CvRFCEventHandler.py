@@ -215,9 +215,9 @@ class CvRFCEventHandler:
 					
 							
 		# kill Seljuks
-		if iOwner == iSeljuks and gc.getPlayer(iSeljuks).isAlive() and gc.getGame().getGameTurnYear() >= 1250:
-			if city.isCapital() or gc.getPlayer(iSeljuks).getNumCities() <= 2:
-				sta.completeCollapse(iSeljuks)
+		#if iOwner == iSeljuks and gc.getPlayer(iSeljuks).isAlive() and gc.getGame().getGameTurnYear() >= 1250:
+		#	if city.isCapital() or gc.getPlayer(iSeljuks).getNumCities() <= 2:
+		#		sta.completeCollapse(iSeljuks)
 				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
 				
 		# Leoreth: relocate capital for AI if reacquired:

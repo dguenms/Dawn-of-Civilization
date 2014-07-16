@@ -5484,7 +5484,6 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 
 			bReligionFounded = false;
 			bFirstBonus = false;
-			TCHAR szOut[1024];
 
 			if (bFirst)
 			{

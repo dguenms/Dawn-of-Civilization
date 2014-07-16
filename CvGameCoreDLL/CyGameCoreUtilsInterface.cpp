@@ -1,3 +1,5 @@
+#pragma component (mintypeinfo, on)
+
 #include "CvGameCoreDLL.h"
 #include "CyGameCoreUtils.h"
 #include "CyPlot.h"

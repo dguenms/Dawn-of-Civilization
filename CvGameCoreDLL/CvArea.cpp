@@ -926,7 +926,7 @@ int CvArea::getClosestAreaSize(int iSize) const
 		return getID();
 	}
 
-	int iLoop, iCurrentDistance;
+	int iCurrentDistance;
 	CvPlot* pCurrentPlot;
 	CvPlot* pLoopPlot;
 	int iClosestArea = -1;

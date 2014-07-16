@@ -135,7 +135,7 @@ bool atWar(TeamTypes eTeamA, TeamTypes eTeamB)
 	}
 
 	FAssert(GET_TEAM(eTeamA).isAtWar(eTeamB) == GET_TEAM(eTeamB).isAtWar(eTeamA));
-	FAssert((eTeamA != eTeamB) || !(GET_TEAM(eTeamA).isAtWar(eTeamB)));
+	//FAssert((eTeamA != eTeamB) || !(GET_TEAM(eTeamA).isAtWar(eTeamB)));
 
 	if(eTeamA == eTeamB) return false; //Rhye
 
@@ -2271,14 +2271,20 @@ int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, 
 int getTurns(int iTurns)
 {
 	int iSpeed = (int)GC.getGameINLINE().getGameSpeedType();
-	if (iSpeed == 2) return iTurns;
+	
+	// marathon
+	if (iSpeed == 0) return 3 * iTurns;
+
+	// epic
 	else if (iSpeed == 1)
 	{
 		if (iTurns == 3) return 5;
 		else if (iTurns == 6) return 10;
-		else return (iTurns*3/2);
+		else return (iTurns * 3 / 2);
 	}
-	else if (iSpeed == 0) return iTurns*3;
+
+	// ottherwise normal
+	return iTurns;
 }
 
 int getTurnForYear(int iTurnYear)

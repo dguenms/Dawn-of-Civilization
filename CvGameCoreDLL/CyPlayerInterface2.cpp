@@ -73,5 +73,20 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("setFlag", &CyPlayer::setFlag, "void (str s)") //Rhye
 		.def("setLeader", &CyPlayer::setLeader, "void (int i)") //Rhye
 		.def("getLeader", &CyPlayer::getLeader, "int /*LeaderHeadTypes*/ ()") //Rhye
+
+		//Leoreth
+		.def("isReborn", &CyPlayer::isReborn, "bool ()")
+		.def("getReborn", &CyPlayer::getReborn, "int ()")
+		.def("setReborn", &CyPlayer::setReborn, "void ()")
+		.def("updateTradeRoutes", &CyPlayer::updateTradeRoutes, "void ()")
+		.def("getWarMapValue", &CyPlayer::getWarMapValue, "void (int x, int y)")
+		.def("AI_reset", &CyPlayer::AI_reset, "void ()")
+		.def("setPersecutionCountdown", &CyPlayer::setPersecutionCountdown, "void (int iNewValue)")
+		.def("hasCivic", &CyPlayer::hasCivic, "bool (int iCivic)")
+		.def("getWorstEnemy", &CyPlayer::getWorstEnemy, "int ()")
+		.def("getLatestRebellionTurn", &CyPlayer::getLatestRebellionTurn, "int ()")
+		.def("setLatestRebellionTurn", &CyPlayer::setLatestRebellionTurn, "void (int iTurn)")
+		.def("isSlaveTrade", &CyPlayer::isSlaveTrade, "bool (int iPlayer)")
+		.def("isHasBuildingEffect", &CyPlayer::isHasBuildingEffect, "bool (int eBuildingType)")
 		;
 }

@@ -7912,8 +7912,8 @@ int CvBuildingInfo::getBonusCommerceModifier(int i, int j) const
 {
 	FAssertMsg(i < GC.getNumBonusInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
-	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
+	FAssertMsg(j < NUM_COMMERCE_TYPES, "Index out of bounds");
+	FAssertMsg(j > -1, "Index out of bounds");
 	return m_ppaiBonusCommerceModifier ? m_ppaiBonusCommerceModifier[i][j] : -1;
 }
 

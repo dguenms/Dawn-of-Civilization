@@ -10813,8 +10813,6 @@ bool CvPlot::isCore(PlayerTypes ePlayer) const
 
 void CvPlot::setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue)
 {
-	int iI;
-
 	FAssertMsg(ePlayer >= 0, "eTeam is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "eTeam is expected to be within maximum bounds (invalid Index)");
 

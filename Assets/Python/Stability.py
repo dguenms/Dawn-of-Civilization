@@ -600,7 +600,7 @@ def completeCollapse(iPlayer):
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if iPlayer == con.iByzantium:
-		utils.removeReligionByArea(con.tCoreAreasTL[0][con.iTurkey], con.tCoreAreasBR[0][con.iTurkey], con.iChristianity)
+		utils.removeReligionByArea(con.tCoreAreasTL[0][con.iTurkey], con.tCoreAreasBR[0][con.iTurkey], con.iOrthodoxy)
 		
 	utils.debugTextPopup('Complete collapse: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
 	
@@ -699,10 +699,6 @@ def secedeUnhappyCities(iPlayer):
 			
 	# secede all unhappy cities
 	secedeCities(iPlayer, lCities)
-	
-	# five turns of unrest in all remaining cities
-	for city in lRemainingCities:
-		city.setOccupationTimer(5)
 		
 def secedeEnemyTargetCities(iPlayer):
 	tPlayer = gc.getTeam(iPlayer)
@@ -1098,12 +1094,12 @@ def calculateStability(iPlayer):
 			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, con.iCourthouse)): iModifier -= 1
 			
 			# Jail
-			if city.hasBuilding(utils.getUniqueBuilding(iPlayer, con.iJail)): iModifier -= 1
+			if city.angryPopulation(0) == 0 and city.hasBuilding(utils.getUniqueBuilding(iPlayer, con.iJail)): iModifier -= 1
 			
 			# Portuguese UP: reduced instability from overseas colonies
 			if isOverseas(city):
 				if iPlayer == con.iPortugal: iModifier -= 1
-				if bMercantilism: iModifier -= 1
+				if bMercantilism and bHistorical: iModifier -= 1
 					
 			# cap
 			if iModifier < -1: iModifier = -1

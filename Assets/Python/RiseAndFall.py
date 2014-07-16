@@ -198,6 +198,9 @@ tCapitals = con.tCapitals
 
 # core areas coordinates (top left and bottom right)
 
+tBirthAreaTL = con.tBirthAreaTL
+tBirthAreaBR = con.tBirthAreaBR
+
 tCoreAreasTL = con.tCoreAreasTL
 tCoreAreasBR = con.tCoreAreasBR
 
@@ -886,8 +889,8 @@ class RiseAndFall:
 			self.startingFlip(iByzantium, [(tTL1, tBR1), (tTL2, tBR2)])
 			
 			# China
-			tTL = tCoreAreasTL[0][iChina]
-			tBR = tCoreAreasBR[0][iChina]
+			tTL = tBirthAreaTL[iChina]
+			tBR = tBirthAreaBR[iChina]
 			if utils.getHumanID() != iChina: tTL = (99, 39) # 4 tiles further south
 			self.startingFlip(iChina, [(tTL, tBR)])
 			
@@ -1030,7 +1033,7 @@ class RiseAndFall:
 
 		#Leoreth: Turkey immediately flips Seljuk or independent cities in its core to avoid being pushed out of Anatolia
 		if iGameTurn == sd.scriptDict['iOttomanSpawnTurn']+1:
-			dummy, cityPlotList = utils.squareSearch(con.tCoreAreasTL[0][iTurkey], con.tCoreAreasBR[0][iTurkey], utils.cityPlots, -1)
+			dummy, cityPlotList = utils.squareSearch(con.tBirthAreaTL[iTurkey], con.tBirthAreaBR[iTurkey], utils.cityPlots, -1)
 			for tPlot in cityPlotList:
 				x, y = tPlot
 				city = gc.getMap().plot(x, y).getPlotCity()
@@ -1254,25 +1257,25 @@ class RiseAndFall:
 				if utils.getHumanID() != iChina:
 					tTopLeft = (99, 39) # 4 tiles further south
 				else:
-					tTopLeft = tCoreAreasTL[0][iChina]
-                                iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iChina, tTopLeft, tCoreAreasBR[0][iChina])
-                                self.convertSurroundingPlotCulture(iChina, tTopLeft, tCoreAreasBR[0][iChina])
-                                utils.flipUnitsInArea(tTopLeft, tCoreAreasBR[0][iChina], iChina, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
-                                utils.flipUnitsInArea(tTopLeft, tCoreAreasBR[0][iChina], iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-                                utils.flipUnitsInArea(tTopLeft, tCoreAreasBR[0][iChina], iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+					tTopLeft = tBirthAreaTL[iChina]
+                                iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iChina, tTopLeft, tBirthAreaBR[iChina])
+                                self.convertSurroundingPlotCulture(iChina, tTopLeft, tBirthAreaBR[iChina])
+                                utils.flipUnitsInArea(tTopLeft, tBirthAreaBR[iChina], iChina, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
+                                utils.flipUnitsInArea(tTopLeft, tBirthAreaBR[iChina], iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+                                utils.flipUnitsInArea(tTopLeft, tBirthAreaBR[iChina], iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 
 				
                 #kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs
                 if (iGameTurn >= getTurnForYear(con.tBirth[iVikings])+2 and iGameTurn <= getTurnForYear(con.tBirth[iVikings])+utils.getTurns(10)):
-                        utils.killUnitsInArea(tCoreAreasTL[utils.getReborn(iVikings)][iVikings], tCoreAreasBR[utils.getReborn(iVikings)][iVikings], iBarbarian)
+                        utils.killUnitsInArea(tBirthAreaTL[iVikings], tBirthAreaBR[iVikings], iBarbarian)
                 if (iGameTurn >= getTurnForYear(con.tBirth[iSpain])+2 and iGameTurn <= getTurnForYear(con.tBirth[iSpain])+utils.getTurns(10)):
-                        utils.killUnitsInArea(tCoreAreasTL[utils.getReborn(iSpain)][iSpain], tCoreAreasBR[utils.getReborn(iSpain)][iSpain], iBarbarian)
+                        utils.killUnitsInArea(tBirthAreaTL[iSpain], tBirthAreaBR[iSpain], iBarbarian)
                 if (iGameTurn >= getTurnForYear(con.tBirth[iFrance])+2 and iGameTurn <= getTurnForYear(con.tBirth[iFrance])+utils.getTurns(10)):
-                        utils.killUnitsInArea(tCoreAreasTL[utils.getReborn(iFrance)][iFrance], tCoreAreasBR[utils.getReborn(iFrance)][iFrance], iBarbarian)
+                        utils.killUnitsInArea(tBirthAreaTL[iFrance], tBirthAreaBR[iFrance], iBarbarian)
                 if (iGameTurn >= getTurnForYear(con.tBirth[iGermany])+2 and iGameTurn <= getTurnForYear(con.tBirth[iGermany])+utils.getTurns(10)):
-                        utils.killUnitsInArea(tCoreAreasTL[utils.getReborn(iGermany)][iGermany], tCoreAreasBR[utils.getReborn(iGermany)][iGermany], iBarbarian)
+                        utils.killUnitsInArea(tBirthAreaTL[iGermany], tBirthAreaBR[iGermany], iBarbarian)
                 if (iGameTurn >= getTurnForYear(con.tBirth[iRussia])+2 and iGameTurn <= getTurnForYear(con.tBirth[iRussia])+utils.getTurns(10)):
-                        utils.killUnitsInArea(tCoreAreasTL[utils.getReborn(iRussia)][iRussia], tCoreAreasBR[utils.getReborn(iRussia)][iRussia], iBarbarian)
+                        utils.killUnitsInArea(tBirthAreaTL[iRussia], tBirthAreaBR[iRussia], iBarbarian)
                         
                 #fragment utility
                 if (iGameTurn >= getTurnForYear(50) and iGameTurn % utils.getTurns(15) == 6):
@@ -1595,16 +1598,6 @@ class RiseAndFall:
                                                                                         if (pCurrent.getCulture(iLoop) > 0):
                                                                                                 cityList.append(city)
                                                                                                 break
-												
-					# Leoreth: Byzantine UP: cities in normal area are immune to secession
-					if iPlayer == iByzantium:
-						tlx, tly = con.tCoreAreasTL[utils.getReborn(iByzantium)][iByzantium]
-						brx, bry = con.tCoreAreasBR[utils.getReborn(iByzantium)][iByzantium]
-						for city in cityList:
-							x = city.getX()
-							y = city.getY()
-							if x >= tlx and x <= brx and y >= tly and y <= bry and (x,y) not in con.tNormalAreasSubtract[utils.getReborn(iByzantium)][iByzantium]:
-								cityList.remove(city)
 
                                         if (len(cityList)):
                                                 iNewCiv = iIndependent
@@ -1807,8 +1800,8 @@ class RiseAndFall:
 
                 if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
                         reborn = utils.getReborn(iCiv)
-                        tTopLeft = tCoreAreasTL[reborn][iCiv]
-                        tBottomRight = tCoreAreasBR[reborn][iCiv]
+                        tTopLeft = tBirthAreaTL[iCiv]
+                        tBottomRight = tBirthAreaBR[iCiv]
                         tBroaderTopLeft = tBroaderAreasTL[reborn][iCiv]
                         tBroaderBottomRight = tBroaderAreasBR[reborn][iCiv]
 			
@@ -1902,7 +1895,7 @@ class RiseAndFall:
                                                         pCurrent=gc.getMap().plot(x, y)
                                                         for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
                                                                 if (iCiv != iLoopCiv):
-                                                                        utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iLoopCiv, True, False, con.tExceptions[0][iCiv])
+                                                                        utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iLoopCiv, True, False, con.tBirthAreaExceptions[iCiv])
                                                         if (pCurrent.isCity()):
                                                                 pCurrent.eraseAIDevelopment() #new function, similar to erase but won't delete rivers, resources and features()
                                                         for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
@@ -2316,7 +2309,7 @@ class RiseAndFall:
                 cityList = []
                 self.setSpawnWar(0)
 		
-		if not tExceptions: tExceptions = con.tExceptions[utils.getReborn(iCiv)][iCiv]
+		if not tExceptions: tExceptions = con.tBirthAreaExceptions[iCiv]
                 
                 #collect all the cities in the spawn region
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
@@ -2396,7 +2389,7 @@ class RiseAndFall:
 
         def convertSurroundingPlotCulture(self, iCiv, tTopLeft, tBottomRight, tExceptions = False):
                 
-		if not tExceptions: tExceptions = con.tExceptions[utils.getReborn(iCiv)][iCiv]
+		if not tExceptions: tExceptions = con.tBirthAreaExceptions[iCiv]
 		
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
@@ -2951,13 +2944,13 @@ class RiseAndFall:
 
         def initMinorBetrayal( self, iCiv ):
                 iHuman = utils.getHumanID()
-                dummy, plotList = utils.squareSearch( tCoreAreasTL[utils.getReborn(iCiv)][iCiv], tCoreAreasBR[utils.getReborn(iCiv)][iCiv], utils.outerInvasion, [] )
+                dummy, plotList = utils.squareSearch( tBirthAreaTL[iCiv], tBirthAreaBR[iCiv], utils.outerInvasion, [] )
                 rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot abroad human players borders')
                 if (len(plotList)):
                         result = plotList[rndNum]
                         if (result):
                                 self.createAdditionalUnits(iCiv, result)
-                                self.unitsBetrayal(iCiv, iHuman, tCoreAreasTL[utils.getReborn(iCiv)][iCiv], tCoreAreasBR[utils.getReborn(iCiv)][iCiv], result, con.tExceptions)
+                                self.unitsBetrayal(iCiv, iHuman, tBirthAreaTL[iCiv], tBirthAreaBR[iCiv], result, con.tBirthAreaExceptions)
 
         def initBetrayal( self ):
                 iHuman = utils.getHumanID()
@@ -3365,14 +3358,15 @@ class RiseAndFall:
 			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
                 if (iCiv == iTurkey):
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
-                        utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 3)
-                        utils.makeUnit(con.iBombard, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
+                        utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
+                        utils.makeUnit(con.iKnight, iCiv, tPlot, 3)
+			utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 2)
+                        utils.makeUnit(con.iBombard, iCiv, tPlot, 4)
+                        utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 2)
                         utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
 			if utils.getHumanID() != iTurkey:
-				utils.makeUnit(con.iBombard, iCiv, tPlot, 5)
-				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 8)
+				utils.makeUnit(con.iBombard, iCiv, tPlot, 4)
+				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 5)
 				utils.makeUnit(con.iKnight, iCiv, tPlot, 4)
                 if (iCiv == iPortugal):
 			utils.createSettlers(iCiv, 1)
@@ -5245,11 +5239,6 @@ class RiseAndFall:
 	def holyRomanSpawn(self):
 		plot = gc.getMap().plot(60, 56)
 		if plot.isCity(): plot.getPlotCity().setCulture(iVikings, 5, True)
-		#for x in range(con.tCoreAreasTL[0][iHolyRome][0], con.tCoreAreasBR[0][iHolyRome][0]+1):
-		#	for y in range(con.tCoreAreasTL[0][iHolyRome][1], con.tCoreAreasBR[0][iHolyRome][1]+2):
-		#		gc.getMap().plot(x,y).setCulture(iVikings, 0, True)
-		#utils.debugTextPopup('holy roman spawn')
-		
 		
 				
 	def determineEnabledPlayers(self):
