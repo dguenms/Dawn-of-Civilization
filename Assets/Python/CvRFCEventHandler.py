@@ -261,6 +261,10 @@ class CvRFCEventHandler:
 			# Statue of Zeus effect: no city resistance on conquest
 			if gc.getPlayer(iPlayer).countNumBuildings(con.iStatueOfZeus) > 0 and not gc.getTeam(iPlayer).isHasTech(con.iTheology):
 				city.setOccupationTimer(0)
+				
+			# Byzantium reduced to four cities: core shrinks to Constantinople
+			if iOwner == con.iByzantium and gc.getPlayer(con.iByzantium).getNumCities <= 4:
+				gc.getPlayer(con.iByzantium).setReborn()
 					
 		if bTrade:
 			for i in range(con.iNumBuildings):
@@ -468,6 +472,10 @@ class CvRFCEventHandler:
 		
 		if iVassal == con.iInca:
 			gc.getPlayer(con.iInca).setReborn()
+			
+		# move Mongolia's core south in case they vassalize China
+		if bCapitulated and iVassal == con.iChina and iMaster == con.iMongolia:
+			gc.getPlayer(con.iMongolia).setReborn()
 		
 		self.dc.onVassalState(argsList)
 
@@ -787,6 +795,18 @@ class CvRFCEventHandler:
 		# Italy's core extends when reaching the Industrial era
 		if iPlayer == con.iItaly and iEra == con.iIndustrial:
 			gc.getPlayer(con.iItaly).setReborn()
+			
+		# Arabia's core moves to Iraq when Philosophy is discovered
+		if iPlayer == con.iArabia and iTech == con.iPhilosophy:
+			gc.getPlayer(con.iArabia).setReborn()
+			
+		# Japan's core extends when reaching the Industrial era
+		if iPlayer == con.iJapan and iEra == con.iIndustrial:
+			gc.getPlayer(con.iJapan).setReborn()
+			
+		# Germany's core shrinks when reaching the Modern era
+		if iPlayer == con.iGermany and iEra == con.iModern:
+			gc.getPlayer(con.iGermany).setReborn()
                 
 
         def onPreSave(self, argsList):

@@ -33598,6 +33598,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=48
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=24,33,41,42,
@@ -34217,9 +34219,8 @@ BeginPlot
 	x=74,y=51
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,33,41,42,
@@ -34228,6 +34229,7 @@ BeginPlot
 	x=74,y=52
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_WHEAT
 	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS

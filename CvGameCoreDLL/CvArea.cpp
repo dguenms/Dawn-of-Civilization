@@ -638,6 +638,7 @@ void CvArea::changePower(PlayerTypes eIndex, int iChange)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be < MAX_PLAYERS");
+	if (m_aiPower[eIndex] + iChange < 0) iChange = -m_aiPower[eIndex];
 	m_aiPower[eIndex] = (m_aiPower[eIndex] + iChange);
 	FAssert(getPower(eIndex) >= 0);
 }

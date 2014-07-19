@@ -1561,13 +1561,22 @@ void CvMap::calculateAreas()
 		}
 	}
 
-	// Leoreth: Sahel zone and central africa and Ethiopia Africa as well
-	for (int iX = 48; iX <= 75; iX++)
+	// Leoreth: Western half of Africa
+	for (int iX = 48; iX <= 65; iX++)
 	{
-		for (int iY = 23; iY <= 31; iY++)
+		for (int iY = 23; iY <= 32; iY++)
 		{
 			if (!plotSorenINLINE(iX, iY)->isWater())
 				plotSorenINLINE(iX, iY)->setArea(africaID);
+		}
+	}
+
+	// Eastern half of Africa
+	for (int iX = 66; iX <= 75; iX++)
+	{
+		for (int iY = 23; iY <= 30; iY++)
+		{
+			if (!plotSorenINLINE(iX, iY)->isWater()) plotSorenINLINE(iX, iY)->setArea(africaID);
 		}
 	}
 

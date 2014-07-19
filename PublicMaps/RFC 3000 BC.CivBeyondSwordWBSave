@@ -28000,6 +28000,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=48
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -28414,7 +28415,6 @@ BeginPlot
 	x=74,y=51
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28422,6 +28422,7 @@ BeginPlot
 	x=74,y=52
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
