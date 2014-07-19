@@ -72,10 +72,17 @@ def onCityAcquired(city, iOwner, iPlayer):
 		sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
 	
 def onCityRazed(iPlayer, city):
+	iOwner = city.getOwner()
+	
+	if iOwner == con.iBarbarian: return
+
 	if utils.getHumanID() == iPlayer and iPlayer != con.iMongolia:
 		iRazePenalty = -10
 		if city.getPopulation() < 5 and not city.isCapital():
 			iRazePenalty = -2 * city.getPopulation()
+			
+		if iOwner >= con.iNumPlayers: iRazePenalty /= 2
+			
 		sd.changeHumanRazePenalty(iRazePenalty)
 		checkStability(iPlayer)
 	
@@ -601,6 +608,10 @@ def completeCollapse(iPlayer):
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if iPlayer == con.iByzantium:
 		utils.removeReligionByArea(con.tCoreAreasTL[0][con.iTurkey], con.tCoreAreasBR[0][con.iTurkey], con.iOrthodoxy)
+		
+	# Chinese collapse: Mongolia's core moves south
+	if iPlayer == con.iChina:
+		gc.getPlayer(con.iMongolia).setReborn()
 		
 	utils.debugTextPopup('Complete collapse: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
 	

@@ -5818,7 +5818,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 4;
 										iValue /= 3;
 									}*/
-									if (iI == BANKING) {
+									if (iI == PHILOSOPHY)
+									{
+										iValue *= 3;
+									}
+									else if (iI == BANKING) {
 									    iValue /= 5;
 									}
 									else if (iI == GUNPOWDER || iI == PAPER)
