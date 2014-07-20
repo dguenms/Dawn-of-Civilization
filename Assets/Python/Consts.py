@@ -1341,7 +1341,7 @@ tCoreAreasTL = (
 (107, 45), #Korea
 (20, 35), #Maya
 (64, 40), #Byzantium
-(12, 45), #Japan
+(112, 45), #Japan
 (58, 56), #Vikings
 (73, 30), #Arabia
 (92, 41), #Tibet

@@ -1178,8 +1178,8 @@ class RiseAndFall:
                         for plot in tSpawnPlots:
 				spawnPlot = utils.getFreePlot(plot[0], plot[1])
                                 utils.makeUnitAI(con.iSeljukGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-                                utils.makeUnitAI(con.iSeljukGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK, 3)
-                                utils.makeUnitAI(con.iTrebuchet, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+                                utils.makeUnitAI(con.iSeljukGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
+                                utils.makeUnitAI(con.iTrebuchet, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
                                 pSeljuks.setLastStateReligion(con.iIslam)
 				teamSeljuks.declareWar(iByzantium, True, WarPlanTypes.WARPLAN_TOTAL)
 

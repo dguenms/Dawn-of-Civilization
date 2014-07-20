@@ -468,13 +468,36 @@ def getPossibleMinors(iPlayer):
 		
 	return [con.iIndependent, con.iIndependent2]
 	
-def secedeCities(iPlayer, lCities):
+def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	lPossibleMinors = getPossibleMinors(iPlayer)
 	dPossibleResurrections = {}
 	
 	utils.clearPlague(iPlayer)
 	
+	# if smaller cities are supposed to be destroyed, do that first
+	if bRazeMinorCities:
+		for city in lCities:
+			closestCity = gc.getMap().findCity(city.getX(), city.getY(), iPlayer, -1, True, False, -1, -1, city)
+			
+			if closestCity:
+				#print "Checking for raze: " + city.getName() + ", closest city: " + closestCity.getName()
+				if plotDistance(city.getX(), city.getY(), closestCity.getX(), closestCity.getY()) <= 2:
+					bCulture = (city.getCultureLevel() >= closestCity.getCultureLevel())
+					bPopulation = (city.getPopulation() > closestCity.getPopulation())
+					bMaxPopulation = (closestCity.getPopulation() < 10)
+					bNoHolyCities = (not closestCity.isHolyCity())
+					bNoCapitals = (not closestCity.isCapital())
+					bNotJerusalem = (not (closestCity.getX() == 73 and closestCity.getY() == 38))
+					#print "bCulture = " + str(bCulture) + ", bPopulation = " + str(bPopulation) + ", bMaxPopulation = " + str(bMaxPopulation) + ", bNoHolyCities = " + str(bNoHolyCities)
+					if bCulture and bPopulation and bMaxPopulation and bNoHolyCities and bNoCapitals and bNotJerusalem:
+					#if city.getCulture(iPlayer) > closestCity.getCulture(iPlayer) and city.getPopulation() > closestCity.getPopulation() and closestCity.getPopulation() < 10 and not closestCity.isHolyCity():
+						if closestCity in lCities: lCities.remove(closestCity)
+						utils.debugTextPopup(gc.getPlayer(iPlayer).getCivilizationAdjective(0) + " " + closestCity.getName() + " destroyed during their collapse.")
+						gc.getPlayer(con.iBarbarian).disband(closestCity)
+	
 	for city in lCities:
+	
+		if not city: continue
 	
 		tCityPlot = (city.getX(), city.getY())
 		cityPlot = gc.getMap().plot(city.getX(), city.getY())
@@ -543,6 +566,9 @@ def secedeCities(iPlayer, lCities):
 			if iLoopPlayer == iPlayer: continue
 			if gc.getPlayer(iLoopPlayer).isAlive(): continue
 			if gc.getGame().getGameTurn() - getLastTurnAlive(iLoopPlayer) < utils.getTurns(20): continue
+			
+			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
+			if iPlayer == con.iArabia and iLoopPlayer == con.iEgypt: continue
 		
 			tRespawnTL, tRespawnBR, tRespawnExceptions = utils.getRespawnArea(iLoopPlayer)
 			if utils.isPlotInArea(tCityPlot, tRespawnTL, tRespawnBR, tRespawnExceptions):
@@ -594,8 +620,12 @@ def secedeCity(city, iNewOwner):
 def completeCollapse(iPlayer):
 	lCities = utils.getCityList(iPlayer)
 	
-	# secede all cities
-	secedeCities(iPlayer, lCities)
+	# before cities are seceded, downgrade their cottages
+	downgradeCottages(iPlayer)
+	
+	# secede all cities, destroy close and less important ones
+	bRazeMinorCities = (gc.getPlayer(iPlayer).getCurrentEra() <= con.iMedieval)
+	secedeCities(iPlayer, lCities, bRazeMinorCities)
 		
 	# take care of the remnants of the civ
 	utils.killUnitsInArea((0, 0), (127, 63), iPlayer)
@@ -1027,7 +1057,7 @@ def calculateStability(iPlayer):
 	iCivicMilitary = pPlayer.getCivics(5)
 	
 	iCorePopulation = 10
-	iPeripheryPopulation = 0
+	iPeripheryPopulation = 10
 	iTotalCoreCities = 0
 	iOccupiedCoreCities = 0
 	

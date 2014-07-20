@@ -11086,69 +11086,13 @@ int CvCity::getCulture(PlayerTypes eIndex) const
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
 
-	//int iMinorCulture = 0;
-
-	// Leoreth: all culture American cities in North America counts as American
-	/*if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
-	{
-		if (eIndex == (PlayerTypes)AMERICA)
-		{
-			int iAmericanCulture = 0;
-			int iI;
-			for (iI = 0; iI < MAX_PLAYERS; iI++)
-			{
-				if (GET_PLAYER((PlayerTypes)iI).isAlive())
-				{
-					iAmericanCulture += m_aiCulture[iI];
-				}
-			}
-			return iAmericanCulture / 100;
-		} else
-		{
-			return 0;
-		}
-	}*/
-
-	// Leoreth: absorb independent culture
-	/*if (eIndex != getOwnerINLINE() && (eIndex == INDEPENDENT || eIndex == INDEPENDENT2))
-	{
-		return 0;
-	}
-
-	if (eIndex != INDEPENDENT)
-		iMinorCulture += m_aiCulture[INDEPENDENT];
-
-	if (eIndex != INDEPENDENT2)
-		iMinorCulture += m_aiCulture[INDEPENDENT2];*/
-
-	return (m_aiCulture[eIndex]/* + iMinorCulture*/) / 100;
+	return (m_aiCulture[eIndex]) / 100;
 }
 
 int CvCity::getCultureTimes100(PlayerTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex expected to be < MAX_PLAYERS");
-
-	// Leoreth: all culture American cities in North America counts as American
-	/*if (getOwner() == (PlayerTypes)AMERICA && (getRegionID() == REGION_UNITED_STATES || getRegionID() == REGION_CANADA || getRegionID() == REGION_ALASKA))
-	{
-		if (eIndex == (PlayerTypes)AMERICA)
-		{
-			int iAmericanCulture = 0;
-			int iI;
-			for (iI = 0; iI < MAX_PLAYERS; iI++)
-			{
-				if (GET_PLAYER((PlayerTypes)iI).isAlive())
-				{
-					iAmericanCulture += m_aiCulture[iI];
-				}
-			}
-			return iAmericanCulture;
-		} else
-		{
-			return 0;
-		}
-	}*/
 
 	return m_aiCulture[eIndex];
 }
