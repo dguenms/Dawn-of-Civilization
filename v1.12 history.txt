@@ -231,3 +231,17 @@
 # changed the English UP to cap city distance for maintenance calculations instead of completely disabling distance maintenance
 # new Ethiopian UP: +10% land unit strength within own cultural borders
 # new Persian UP: no expansion stability penalties for low culture
+# moved wheat in south Russia north to be reachable by Moscow, added clams in the Sea of Azov to compensate Rostov
+# Italian core expands when entering the Industrial era
+# Japanese core expands when entering the Industrial era
+# Byzantine core shrinks when reduced to four or less cities
+# Arabian core moves to Iraq with the discovery of Philosophy
+# Mongol core moves south when vassalizing or collapsing China
+# German core shrinks when entering the Modern era
+# new Polish UP: Golden Liberty: additional food and commerce during Golden Ages
+# new Argentine UP: Juntas: Great Generals can start golden ages
+# new Argentine UHV:
+	# experience 2 golden ages by 1930 AD
+	# have 25000 culture in Buenos Aires by 1960 AD
+	# experience 5 golden ages by 2000 AD
+# the Mongols are now immune to stability penalties from city razing

@@ -10598,278 +10598,151 @@ int CvHandicapInfo::getResearchPercentByIDdebug(int pl) const
 {
 	return getResearchPercentByID((PlayerTypes) pl);
 }
-int CvHandicapInfo::getResearchPercentByID(PlayerTypes pl) const
+int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 {
-	int researchPercent = m_iResearchPercent;
-	int basePercent = 75; //72 in vanilla and Warlords
-	int humanContributionPercent = 107;
-	if (GC.getGameINLINE().getHandicapType() == 0) { //viceroy
-		basePercent = 50;//61; //59 in vanilla and Warlords
-		humanContributionPercent = 105;
+	int iResearchPercent = m_iResearchPercent;
+
+	PlayerTypes eHuman = GC.getGameINLINE().getActivePlayer();
+	EraTypes eCurrentEra = GET_PLAYER(ePlayer).getCurrentEra();
+	HandicapTypes eHandicap = GC.getGameINLINE().getHandicapType();
+	int iGameTurn = GC.getGameINLINE().getGameTurn();
+	bool bHuman = (eHuman == ePlayer);
+	bool bReborn = GET_PLAYER(ePlayer).isReborn();
+
+	int iAIBaseModifier = 75;
+	int iHumanSpawnModifier = 107;
+
+	if (eHandicap == 0) // Viceroy
+	{
+		iAIBaseModifier = 50;
+		iHumanSpawnModifier = 105;
 	}
-	else if (GC.getGameINLINE().getHandicapType() == 2) { //emperor
-		basePercent = 100;//85; //82 in vanilla and Warlords
-		humanContributionPercent = 110;
+	else if (eHandicap == 2) // Emperor
+	{
+		iAIBaseModifier = 100;
+		iHumanSpawnModifier = 110;
 	}
 
 	// edead: Epic/Marathon 1.22 late game balancing - progressive growth of research cost - 0% to 25% mid-game
-	if (researchPercent >= 150) {
-		researchPercent *= std::min(120, 100 + 50 * GC.getGameINLINE().getGameTurn() / GC.getGameINLINE().getMaxTurns());
-		researchPercent /= 100;
+	if (iResearchPercent >= 150)
+	{
+		iResearchPercent *= std::min(120, 100 + 50 * GC.getGameINLINE().getGameTurn() / GC.getGameINLINE().getMaxTurns());
+		iResearchPercent /= 100;
 		// reduce human contribution penalty by 0-5% since the above does the same thing
-		humanContributionPercent -= 5 * GC.getGameINLINE().getGameTurn() / GC.getGameINLINE().getMaxTurns();
+		iHumanSpawnModifier -= 5 * GC.getGameINLINE().getGameTurn() / GC.getGameINLINE().getMaxTurns();
 	}
 	// edead: end
 
-	if (!GET_PLAYER((PlayerTypes)pl).isHuman()) {
-		researchPercent *= basePercent;
-		researchPercent /= 100;
-	}
-	else { //it's more convenient to tune this way than tuning AIs
-		researchPercent *= 104;
-		researchPercent /= 100;
-	}
-
-	//if (GC.getGameINLINE().getGameTurn() >= startingTurn[GC.getGameINLINE().getActivePlayer()]) {
-	if (GC.getGameINLINE().getGameTurn() >= getTurnForYear(startingTurnYear[GC.getGameINLINE().getActivePlayer()])) { // edead
-		researchPercent *= humanContributionPercent;
-		researchPercent /= 100;
-	}
-
-	if (pl < VIKING) {
-		if (getScenario() >= SCENARIO_600AD) { //late start condition
-			researchPercent *= 88;
-			researchPercent /= 100;
-			if (pl == CHINA || pl == JAPAN) {
-				researchPercent *= 97;
-				researchPercent /= 100;
-			}
-		}
-		//else if (GC.getGameINLINE().getGameTurn() >=181 ) {
-		else if (GC.getGameINLINE().getGameTurn() >= getTurnForYear(600) ) { // edead
-			researchPercent *= 92;
-			researchPercent /= 100;
-		}
-	}
-
-	if (getScenario() == SCENARIO_600AD) { //late start condition - apparently it goes too fast from 600AD
-		researchPercent *= 108;
-		researchPercent /= 100;
-	}
-
-	if (getScenario() == SCENARIO_1700AD)
+	// human and AI baseline modifications
+	if (!bHuman)
 	{
-		researchPercent *= 12;
-		researchPercent /= 10;
+		iResearchPercent *= iAIBaseModifier;
+		iResearchPercent /= 100;
+	}
+	else
+	{
+		iResearchPercent *= 104;
+		iResearchPercent /= 100;
 	}
 
-	//Leoreth: delay the tech penalty a little to give Babylonia more time if it's player controlled
-	int iDeadline = -1000;
-	if (pl == (PlayerTypes)BABYLONIA)
-		iDeadline = -900;
+	// increase tech costs for everyone as soon as the human player has spawned
+	if (iGameTurn >= getTurnForYear(startingTurnYear[eHuman]))
+	{
+		iResearchPercent *= iHumanSpawnModifier;
+		iResearchPercent /= 100;
+	}
 
-	if (GC.getGameINLINE().getGameTurn() < (getTurnForYear(iDeadline)+1) ) // edead: turn 75
+	// scale the scenario tech speed with its starting conditions
+	int iScenarioModifier = 100;
+
+	if (getScenario() == SCENARIO_600AD) iScenarioModifier = 108;
+	else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 120;
+
+	iResearchPercent *= iScenarioModifier;
+	iResearchPercent /= 100;
+
+	// reduce tech speed during the ancient and classical eras
+	int iPenaltyBegin = -1000;
+	int iPenaltyEnd = 600;
+	int iClassicalModifier = 100;
+
+	// Leoreth: delay the tech penalty a little to give Babylonia more time if it's player controlled
+	if (ePlayer == BABYLONIA) iPenaltyBegin = -900;
+
+	if (iGameTurn < getTurnForYear(iPenaltyBegin) + 1)
+	{
+		iClassicalModifier = 105;
+	}
+	else if (iGameTurn >= getTurnForYear(iPenaltyBegin) + 1 && iGameTurn <= getTurnForYear(600) - 1)
+	{
+		iClassicalModifier = 150;
+	}
+
+	iResearchPercent *= iClassicalModifier;
+	iResearchPercent /= 100;
+
+	int iCivModifier;
+
+	if (ePlayer < NUM_MAJOR_PLAYERS)
+	{
+		iCivModifier = researchModifier[ePlayer];
+	}
+	else if (ePlayer == CELTIA)
+	{
+		if (getScenario() == SCENARIO_3000BC) iCivModifier = 350;
+		else iCivModifier = 100;
+	}
+	else
+	{
+		iCivModifier = 110;
+	}
+
+	// handle several other aspects explicitly: era buffs, Mayan UP, reborn civs
+	if (eCurrentEra <= ERA_CLASSICAL)
+	{
+		if (ePlayer == GREECE) iCivModifier -= 20;
+		if (ePlayer == ROME) iCivModifier -= 35;
+		if (ePlayer == PERSIA) iCivModifier -= 10;
+		if (ePlayer == BABYLONIA) iCivModifier += 15;
+		if (ePlayer == MAYA) iCivModifier -= 50; // Maya UP
+
+		if (ePlayer == INDIA)
 		{
-			researchPercent *= 105;
-			researchPercent /= 100;
+			if (bHuman) iCivModifier -= 10;
+			else iCivModifier -= 25;
 		}
-	else if (GC.getGameINLINE().getGameTurn() >= (getTurnForYear(iDeadline)+1) && GC.getGameINLINE().getGameTurn() <= (getTurnForYear(600)-1))  // edead: turn 75/180 //up to where the new timeline's stretched
+	}
+	else if (eCurrentEra == ERA_ANCIENT)
+	{
+		if (ePlayer == CARTHAGE) iCivModifier -= 20;
+	}
+
+	if (ePlayer == CHINA)
+	{
+		int iAIChinaModifier = 0;
+
+		if (!bHuman)
 		{
-			researchPercent *= 150;
-			researchPercent /= 100;
+			if (eCurrentEra == ERA_ANCIENT) iAIChinaModifier = -20;
+			else if (eCurrentEra == ERA_CLASSICAL) iAIChinaModifier = -10;
+			else if (eCurrentEra >= ERA_RENAISSANCE) iAIChinaModifier = 20;
 		}
 
-	/*switch (pl)
-	{
-	case EGYPT:
-		return researchPercent*135/100; //125 before the new timeline
-	case INDIA:
-		return researchPercent*135/100; //123 before the new timeline
-	case CHINA:
-        if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 1)
-            return researchPercent*102/100; // Leoreth; to help with UHV
-        else
-            return researchPercent*112/100; //115 before the new timeline
-	case BABYLONIA:
-		if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 1)
-			return researchPercent*120/100; //a little boost for the UHV
-		else
-			return researchPercent*125/100; //113 before the new timeline
-	case GREECE:
-        if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 2)
-            return researchPercent*116/100; //102 before the new timeline +higher because the UP already helps
-        else
-            return researchPercent*135/100;
-	case PERSIA:
-		return researchPercent*100/100; //90 before the new timeline
-	case CARTHAGE:
-		return researchPercent*100/100;  //90 before the new timeline
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 2)
-                return researchPercent*108/100; //95 before the new timeline
-            else
-                return researchPercent*135/100;
-        else
-            return researchPercent*92/100;  // Renaissance Italy
-	case JAPAN:
-		return researchPercent*98/100; //95 before the new timeline //120 before embassies
-	case ETHIOPIA:
-		return researchPercent*110/100; //105 before the new timeline
-    case KOREA:
-        return researchPercent*112/100;
-	case MAYA:
-		//Rhye - start UP (Mayan)
-		//return researchPercent*90/100;
-		if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 2)
-			return researchPercent*65/100;
-		else
-			return researchPercent*115/100;
-		//Rhye - end UP
-    case BYZANTIUM:
-        return researchPercent*135/100;
-	case VIKING:
-		return researchPercent*8/10;
-	case GERMANY:
-		return researchPercent*69/100;
-	case FRANCE:
-		return researchPercent*8/10;
-	case ARABIA:
-		return researchPercent*100/100;
-	case KHMER:
-		return researchPercent*100/100;
-	case INDONESIA:
-		return researchPercent*100/100;
-	case SPAIN:
-		return researchPercent*8/10;
-	case ENGLAND:
-		return researchPercent*80/100;
-	case RUSSIA:
-		return researchPercent*67/100; //should be 75, they need a lower value cos their empire size and lack of commerce make them very slow
-	case NETHERLANDS:
-		return researchPercent*62/100; // increased to compensate for their late start
-	case MALI:
-		return researchPercent*110/100; //140 before No tech brokering  //high to counter their UP
-	case TURKEY:
-		return researchPercent*75/100;
-	case PORTUGAL:
-		return researchPercent*75/100;
-	case INCA:
-		return researchPercent*79/100;
-	case MONGOLIA:
-		return researchPercent*73/100;
-	case AZTEC:
-		return researchPercent*87/100;
-	case AMERICA:
-		return researchPercent*63/100;
-	case CELTIA:
-		if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-			return researchPercent*350/100; //Byzantium
-		else
-			return researchPercent*100/100; //Celts
-	default:
-		return researchPercent*110/100;
-		break;
-	}*/
-
-	int iFinalResearchPercent;
-
-	if (pl < NUM_MAJOR_PLAYERS)
-	{
-		iFinalResearchPercent = researchPercent * researchModifier[pl] / 100;
-	}else if (pl == CELTIA)
-	{
-		if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-			iFinalResearchPercent = researchPercent * 350 / 100;
-		else
-			iFinalResearchPercent = researchPercent * 100 / 100;
-	}else
-	{
-		iFinalResearchPercent = researchPercent * 110 / 100;
+		// -25, -10, +5, +30, +35, +40
+		iCivModifier += iAIChinaModifier + std::min(eCurrentEra - 1, 3) * 5;
 	}
 
-	// handle several other aspects explicitly (overwrite): era buffs, Mayan UP, reborn civs
-	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 2)
+	if (bReborn)
 	{
-		if (pl == GREECE)
-			iFinalResearchPercent = researchPercent * 116 / 100;
-		if (pl == ROME)
-			iFinalResearchPercent = researchPercent * 100 / 100;
-		if (pl == PERSIA)
-			iFinalResearchPercent = researchPercent * 90 / 100;
+		if (ePlayer == PERSIA) iCivModifier = 90; // Iran
+		if (ePlayer == AZTEC) iCivModifier = 80; // Mexico
+		if (ePlayer == MAYA) iCivModifier = 80; // Colombia
 	}
 
-	if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() <= 1)
-	{
-		//if (pl == CHINA)
-		//	iFinalResearchPercent = researchPercent * 102 / 100;
-		if (pl == INDIA)
-		{
-			if (GC.getGameINLINE().getActivePlayer() != INDIA)
-			{
-				iFinalResearchPercent = researchPercent * 110 / 100;
-			}
-			else
-			{
-				iFinalResearchPercent = researchPercent * 125 / 100;
-			}
-		}
-		if (pl == BABYLONIA)
-			iFinalResearchPercent = researchPercent * 140 / 100;
-		if (pl == MAYA)												// Maya UP
-			iFinalResearchPercent = researchPercent * 65 / 100;
-	}
+	iResearchPercent *= iCivModifier;
+	iResearchPercent /= 100;
 
-	if (pl == CHINA)
-	{
-		int iAIChinaBonus = 0;
-
-		if (!GET_PLAYER((PlayerTypes)pl).isHuman())
-			if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 1)
-				iAIChinaBonus = 20;
-			else if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 2)
-				iAIChinaBonus = 10;
-			else if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() > 2)
-				iAIChinaBonus = -20;
-
-		iFinalResearchPercent = researchPercent * (researchModifier[pl] - iAIChinaBonus + std::min(GET_PLAYER((PlayerTypes)pl).getCurrentEra() - 1, 3) * 5) / 100;
-
-		/*if (GET_PLAYER((PlayerTypes)pl).isHuman())
-			iFinalResearchPercent = researchPercent * (researchModifier[pl] + std::min(GET_PLAYER((PlayerTypes)pl).getCurrentEra() - 1, 3) * 5) / 100;
-		else
-			if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 1)
-				iFinalResearchPercent = researchPercent * (researchModifier[pl]-35) / 100;
-            else if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() < 2)
-                iFinalResearchPercent = researchPercent * (researchModifier[pl]-25) / 100;*/
-	}
-
-	if (pl == CARTHAGE)
-	{
-		if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)
-		{
-			iFinalResearchPercent = researchPercent * 90 / 100;
-		}
-	}
-
-	/*if (GET_PLAYER((PlayerTypes)pl).getCurrentEra() == 0)
-	{
-		if (pl == INDIA)
-			iFinalResearchPercent = researchPercent * 135 / 100;
-	};*/
-
-	if (GET_PLAYER((PlayerTypes)pl).getReborn())
-	{
-		//if (pl == ROME)
-			//iFinalResearchPercent = researchPercent * 92 / 100;
-		if (pl == PERSIA)
-			iFinalResearchPercent = researchPercent * 90 / 100;
-		else if (pl == AZTEC)
-			iFinalResearchPercent = researchPercent * 80 / 100;
-		else if (pl == MAYA)
-			iFinalResearchPercent = researchPercent * 80 / 100;
-	}
-
-	return iFinalResearchPercent;
+	return iResearchPercent;
 }
 //Rhye - end
 
