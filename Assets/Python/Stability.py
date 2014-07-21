@@ -1875,18 +1875,16 @@ def getLastTurnAlive(iPlayer):
 
 def checkResurrection(iGameTurn):
 
-	print '\nCheck resurrection'
+	#print '\nCheck resurrection'
 
 	iNationalismModifier = min(20, 4 * utils.getCivsWithNationalism())
 	
-	iRand = gc.getGame().getSorenRandNum(con.iNumPlayers, 'random starting civ')
+	lPossibleResurrections = []
 	bDeadCivFound = False
 	
 	# iterate all civs starting with a random civ
-	for i in range(iRand, iRand + con.iNumPlayers):
-		iLoopCiv = i % con.iNumPlayers
+	for iLoopCiv in range(con.iNumPlayers):
 		bPossible = False
-		iMinNumCities = 2
 		
 		# no respawn before spawn
 		if iGameTurn < getTurnForYear(con.tBirth[iLoopCiv]) + 10: continue
@@ -1894,11 +1892,7 @@ def checkResurrection(iGameTurn):
 		# only dead civ need to check for resurrection
 		if gc.getPlayer(iLoopCiv).isAlive(): continue
 		
-		print 'Check ' + gc.getPlayer(iLoopCiv).getCivilizationShortDescription(0)
-		
-		# special case Netherlands: need only one city to respawn (Amsterdam)
-		if iLoopCiv == con.iNetherlands:
-			iMinNumCities = 1
+		#print 'Check ' + gc.getPlayer(iLoopCiv).getCivilizationShortDescription(0)
 			
 		# check if only recently died
 		if iGameTurn - getLastTurnAlive(iLoopCiv) < utils.getTurns(10): continue
@@ -1926,18 +1920,27 @@ def checkResurrection(iGameTurn):
 		# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
 		if iLoopCiv == con.iIndia and gc.getPlayer(con.iMughals).isAlive(): bPossible = False
 		
-		if bPossible: print 'Possible.'
+		#if bPossible: print 'Possible.'
 		
 		if bPossible and not gc.getPlayer(iLoopCiv).isAlive() and iGameTurn > utils.getLastTurnAlive(iLoopCiv) + utils.getTurns(20):
 			if con.tRebirth[iLoopCiv] == -1:
-				iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll')
-				if iRespawnRoll - iNationalismModifier + 10 < con.tResurrectionProb[iLoopCiv]:
-					print 'Passed respawn roll'
-					lCityList = getResurrectionCities(iLoopCiv)
-					if len(lCityList) >= iMinNumCities:
-						print 'Enough cities -> doResurrection()'
-						doResurrection(iLoopCiv, lCityList)
-						return
+				lPossibleResurrections.append(iLoopCiv)
+				
+	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: utils.getLastTurnAlive(x)):
+		iMinNumCities = 2
+		
+		# special case Netherlands: need only one city to respawn (Amsterdam)
+		if iLoopCiv == con.iNetherlands:
+			iMinNumCities = 1
+					
+		iRespawnRoll = gc.getGame().getSorenRandNum(100, 'Respawn Roll')
+		if iRespawnRoll - iNationalismModifier + 10 < con.tResurrectionProb[iLoopCiv]:
+			#print 'Passed respawn roll'
+			lCityList = getResurrectionCities(iLoopCiv)
+			if len(lCityList) >= iMinNumCities:
+				#print 'Enough cities -> doResurrection()'
+				doResurrection(iLoopCiv, lCityList)
+				return
 						
 def getResurrectionCities(iPlayer, bFromCollapse = False):
 
