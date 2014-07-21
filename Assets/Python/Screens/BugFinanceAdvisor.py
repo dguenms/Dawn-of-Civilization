@@ -122,11 +122,11 @@ class BugFinanceAdvisor:
 		elif iStabilityLevel == con.iStabilityStable: szTempBuffer = localText.getText("TXT_KEY_STABILITY_STABLE", ())
 		elif iStabilityLevel == con.iStabilitySolid: szTempBuffer = localText.getText("TXT_KEY_STABILITY_SOLID", ())
 		
-		iValue = sd.getLastStability()
+		iValue = sd.getLastStability(ePlayer)
 		sValue = str(iValue)
 		if iValue > 0: sValue = '+' + sValue
 		
-		szTempBuffer += ' (' + sValue + ') ' + unichr(CyGame().getSymbolID(FontSymbols.EQUAL_CHAR) + sd.getLastDifference())
+		szTempBuffer += ' (' + sValue + ') ' + unichr(CyGame().getSymbolID(FontSymbols.EQUAL_CHAR) + sd.getLastDifference(ePlayer))
 	
 		numCities = player.getNumCities()	
 					
@@ -188,27 +188,27 @@ class BugFinanceAdvisor:
 		szCategoryPanel1 = self.getNextWidgetName()
 		screen.addPanel(szCategoryPanel1, u"", "", True, True, self.X_PARAMETERS1, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
 		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_EXPANSION", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS1 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_EXPANSION, ePlayer, -1)
-		screen.setLabel(self.getNextWidgetName(), szCategoryPanel1, u"<font=4>" + str(sd.getStabilityCategoryValue(0)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS1 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_EXPANSION, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel1, u"<font=4>" + str(sd.getStabilityCategoryValue(ePlayer, 0)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS1 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_EXPANSION, ePlayer, -1)
 		
 		szCategoryPanel2 = self.getNextWidgetName()
 		screen.addPanel(szCategoryPanel2, u"", "", True, True, self.X_PARAMETERS2, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
 		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_ECONOMY", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS2 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_ECONOMY, ePlayer, -1)
-		screen.setLabel(self.getNextWidgetName(), szCategoryPanel2, u"<font=4>" + str(sd.getStabilityCategoryValue(1)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS2 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_ECONOMY, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel2, u"<font=4>" + str(sd.getStabilityCategoryValue(ePlayer, 1)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS2 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_ECONOMY, ePlayer, -1)
 		
 		szCategoryPanel3 = self.getNextWidgetName()
 		screen.addPanel(szCategoryPanel3, u"", "", True, True, self.X_PARAMETERS3, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
 		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_DOMESTIC", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS3 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_DOMESTIC, ePlayer, -1)
-		screen.setLabel(self.getNextWidgetName(), szCategoryPanel3, u"<font=4>" + str(sd.getStabilityCategoryValue(2)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS3 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_DOMESTIC, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel3, u"<font=4>" + str(sd.getStabilityCategoryValue(ePlayer, 2)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS3 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_DOMESTIC, ePlayer, -1)
 		
 		szCategoryPanel4 = self.getNextWidgetName()
 		screen.addPanel(szCategoryPanel4, u"", "", True, True, self.X_PARAMETERS4, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
 		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_FOREIGN", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS4 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_FOREIGN, ePlayer, -1)
-		screen.setLabel(self.getNextWidgetName(), szCategoryPanel4, u"<font=4>" + str(sd.getStabilityCategoryValue(3)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS4 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_FOREIGN, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel4, u"<font=4>" + str(sd.getStabilityCategoryValue(ePlayer, 3)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS4 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_FOREIGN, ePlayer, -1)
 		
 		szCategoryPanel5 = self.getNextWidgetName()
 		screen.addPanel(szCategoryPanel5, u"", "", True, True, self.X_PARAMETERS5, self.Y_PARAMETERS, self.PARAMETERS_WIDTH, self.H_PARAMETERS, PanelStyles.PANEL_STYLE_MAIN)
 		screen.setLabel(self.getNextWidgetName(), "Background", u"<font=3>" + localText.getText("TXT_KEY_STABILITY_CATEGORY_MILITARY", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS5 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.TEXT_MARGIN, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_MILITARY, ePlayer, -1)
-		screen.setLabel(self.getNextWidgetName(), szCategoryPanel5, u"<font=4>" + str(sd.getStabilityCategoryValue(4)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS5 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_MILITARY, ePlayer, -1)
+		screen.setLabel(self.getNextWidgetName(), szCategoryPanel5, u"<font=4>" + str(sd.getStabilityCategoryValue(ePlayer, 4)) + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_PARAMETERS5 + self.PARAMETERS_WIDTH/2, self.Y_PARAMETERS + self.H_PARAMETERS/2, self.Z_CONTROLS + self.DZ, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_STABILITY_MILITARY, ePlayer, -1)
 		
 		# Commerce
 		yLocation  = self.Y_LOCATION

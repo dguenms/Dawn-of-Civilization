@@ -1165,6 +1165,9 @@ public:
 
 	int countColonies() const;
 
+	int getStabilityParameter(ParameterTypes eParameter) const;
+	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);
+
 protected:
 
 	int m_iStartingX;
@@ -1336,6 +1339,8 @@ protected:
 	//Leoreth
 	int* m_aiDomainProductionModifiers;
 	int* m_aiDomainExperienceModifiers;
+
+	int* m_aiStabilityParameters;
 
 	bool* m_abFeatAccomplished;
 	bool* m_abOptions;

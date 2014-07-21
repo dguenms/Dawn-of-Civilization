@@ -131,9 +131,9 @@ class StoredData:
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
-				    'iLastStability' : 0,
-				    'iLastDifference' : 0,
-				    'lStabilityCategoryValues' : [0, 0, 0, 0, 0],
+				    'lLastStability' : [0 for i in range(con.iNumPlayers)],
+				    'lLastDifference' : [0 for i in range(con.iNumPlayers)],
+				    'lStabilityCategoryValues' : [[0, 0, 0, 0, 0] for i in range(con.iNumPlayers)],
 				    'lNumPreviousCities' : [0 for i in range(con.iNumPlayers)],
 				    'bCrisisImminent' : False,
 				    'iHumanStability' : 0,
@@ -160,11 +160,11 @@ class StoredData:
 	def changeCrisisCountdown(self, iPlayer, iChange):
 		self.scriptDict['lCrisisCountdown'][iPlayer] += iChange
 		
-	def getLastStability(self):
-		return self.scriptDict['iLastStability']
+	def getLastStability(self, iPlayer):
+		return self.scriptDict['lLastStability'][iPlayer]
 		
-	def setLastStability(self, iNewValue):
-		self.scriptDict['iLastStability'] = iNewValue	
+	def setLastStability(self, iPlayer, iNewValue):
+		self.scriptDict['lLastStability'][iPlayer] = iNewValue	
 
 	def getPreviousCommerce(self, iPlayer):
 		return self.scriptDict['lPreviousCommerce'][iPlayer]
@@ -196,17 +196,17 @@ class StoredData:
 	def setHappinessStability(self, iPlayer, iNewValue):
 		self.scriptDict['lHappinessStability'][iPlayer] = iNewValue
 		
-	def getLastDifference(self):
-		return -self.scriptDict['iLastDifference']
+	def getLastDifference(self, iPlayer):
+		return -self.scriptDict['lLastDifference'][iPlayer]
 		
-	def setLastDifference(self, iNewValue):
-		self.scriptDict['iLastDifference'] = iNewValue
+	def setLastDifference(self, iPlayer, iNewValue):
+		self.scriptDict['lLastDifference'][iPlayer] = iNewValue
 		
-	def getStabilityCategoryValue(self, iCategory):
-		return self.scriptDict['lStabilityCategoryValues'][iCategory]
+	def getStabilityCategoryValue(self, iPlayer, iCategory):
+		return self.scriptDict['lStabilityCategoryValues'][iPlayer][iCategory]
 		
-	def setStabilityCategoryValue(self, iCategory, iNewValue):
-		self.scriptDict['lStabilityCategoryValues'][iCategory] = iNewValue
+	def setStabilityCategoryValue(self, iPlayer, iCategory, iNewValue):
+		self.scriptDict['lStabilityCategoryValues'][iPlayer][iCategory] = iNewValue
 		
 	def getNumPreviousCities(self, iPlayer):
 		return self.scriptDict['lNumPreviousCities'][iPlayer]
