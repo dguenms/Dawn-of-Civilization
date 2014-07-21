@@ -547,6 +547,7 @@ public:
 	void setLatestRebellionTurn(int iTurn);
 	bool isSlaveTrade(int ePlayer);
 	bool isHasBuildingEffect(int eBuildingType);
+	void setStabilityParameter(int eParameter, int iNewValue);
 
 private:
 	CvPlayer* m_pPlayer;

@@ -2456,3 +2456,9 @@ bool CyPlayer::isHasBuildingEffect(int eBuildingType)
 {
 	return m_pPlayer ? m_pPlayer->isHasBuildingEffect((BuildingTypes)eBuildingType) : false;
 }
+
+void CyPlayer::setStabilityParameter(int eParameter, int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setStabilityParameter((ParameterTypes)eParameter, iNewValue);
+}

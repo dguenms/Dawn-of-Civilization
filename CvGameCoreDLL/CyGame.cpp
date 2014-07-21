@@ -1255,9 +1255,3 @@ bool CyGame::isNeighbors(int ePlayer1, int ePlayer2)
 {
 	return m_pGame ? m_pGame->isNeighbors((PlayerTypes)ePlayer1, (PlayerTypes)ePlayer2) : false;
 }
-
-void CyGame::setStabilityParameter(int eParameter, int iNewValue)
-{
-	if (m_pGame)
-		m_pGame->setStabilityParameter((ParameterTypes)eParameter, iNewValue);
-}

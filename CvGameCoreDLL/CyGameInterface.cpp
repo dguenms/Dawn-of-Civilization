@@ -289,7 +289,6 @@ void CyGamePythonInterface()
 
 		.def("isNeighbors", &CyGame::isNeighbors, "bool (int iPlayer1, int iPlayer2)")
 		.def("isCheatingEnabled", &CyGame::isCheatingEnabled, "bool ()")
-		.def("setStabilityParameter", &CyGame::setStabilityParameter, "void (int iParameter, int iNewValue)")
 		;
 
 	python::class_<CyDeal>("CyDeal")

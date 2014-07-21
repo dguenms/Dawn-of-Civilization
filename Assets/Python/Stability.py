@@ -297,10 +297,10 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 		
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
-	bHuman = (utils.getHumanID() == iPlayer)
-	if bHuman: sd.setLastDifference(0)
+	sd.setLastDifference(iPlayer, 0)
 	
-	bFall = (utils.getHumanID() != iPlayer and iGameTurn > getTurnForYear(con.tFall[iPlayer]))
+	bHuman = (utils.getHumanID() == iPlayer)
+	bFall = (not bHuman and iGameTurn > getTurnForYear(con.tFall[iPlayer]))
 	
 	# it's easier to lose stability and harder to gain it at higher levels -> prevent "falling through the levels"
 	iThreshold = getStabilityThreshold(iPlayer)
@@ -311,7 +311,7 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 		else:
 			incrementStability(iPlayer)
 			
-		if bHuman: sd.setLastDifference(1)
+		sd.setLastDifference(iPlayer, 1)
 		sd.setCrisisImminent(False)
 		
 	elif iStability >= iThreshold:
@@ -326,7 +326,7 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 		else:
 			decrementStability(iPlayer)
-			if bHuman: sd.setLastDifference(-1)
+			sd.setLastDifference(iPlayer, -1)
 		
 			iCrisisType = determineCrisisType(lStabilityTypes)
 			iCrisisLevel = iStabilityLevel # PREVIOUS level
@@ -334,13 +334,12 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 			triggerCrisis(iPlayer, iCrisisLevel, iCrisisType, bWar)
 		
 	# update stability information
-	if utils.getHumanID() == iPlayer:
-		for i in range(5):
-			sd.setLastStability(iStability)
-			sd.setStabilityCategoryValue(i, lStabilityTypes[i])
-		
-		for i in range(con.iNumStabilityParameters):
-			gc.getGame().setStabilityParameter(i, lParameters[i])
+	for i in range(5):
+		sd.setLastStability(iPlayer, iStability)
+		sd.setStabilityCategoryValue(iPlayer, i, lStabilityTypes[i])
+	
+	for i in range(con.iNumStabilityParameters):
+		pPlayer.setStabilityParameter(i, lParameters[i])
 			
 def triggerBonus(iPlayer, lStabilityParameters):
 	return

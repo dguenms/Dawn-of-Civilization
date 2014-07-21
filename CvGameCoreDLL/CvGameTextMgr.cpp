@@ -15289,16 +15289,16 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	CvWString szStabilityParameters;
 	CvWString szStabilityType;
 	CvWString szColor;
-	CvGame& game = GC.getGame();
+	CvPlayer& player = GET_PLAYER(GC.getGameINLINE().getActivePlayer());
 	int iTotalStability = 0;
 
 	// Expansion
 	if (iStabilityCategory == 0)
 	{
-		int iParameterCorePeriphery = game.getStabilityParameter(PARAMETER_CORE_PERIPHERY);
-		int iParameterCoreScore = game.getStabilityParameter(PARAMETER_CORE_SCORE);
-		int iParameterPeripheryScore = game.getStabilityParameter(PARAMETER_PERIPHERY_SCORE);
-		int iParameterRazedCities = game.getStabilityParameter(PARAMETER_RAZED_CITIES);
+		int iParameterCorePeriphery = player.getStabilityParameter(PARAMETER_CORE_PERIPHERY);
+		int iParameterCoreScore = player.getStabilityParameter(PARAMETER_CORE_SCORE);
+		int iParameterPeripheryScore = player.getStabilityParameter(PARAMETER_PERIPHERY_SCORE);
+		int iParameterRazedCities = player.getStabilityParameter(PARAMETER_RAZED_CITIES);
 
 		iTotalStability = iParameterCorePeriphery;
 
@@ -15338,10 +15338,10 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	// Economy
 	else if (iStabilityCategory == 1)
 	{
-		int iParameterEconomicGrowth = game.getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
-		int iParameterTrade = game.getStabilityParameter(PARAMETER_TRADE);
-		int iParameterMercantilism = game.getStabilityParameter(PARAMETER_MERCANTILISM);
-		int iParameterCentralPlanning = game.getStabilityParameter(PARAMETER_CENTRAL_PLANNING);
+		int iParameterEconomicGrowth = player.getStabilityParameter(PARAMETER_ECONOMIC_GROWTH);
+		int iParameterTrade = player.getStabilityParameter(PARAMETER_TRADE);
+		int iParameterMercantilism = player.getStabilityParameter(PARAMETER_MERCANTILISM);
+		int iParameterCentralPlanning = player.getStabilityParameter(PARAMETER_CENTRAL_PLANNING);
 
 		iTotalStability = iParameterEconomicGrowth + iParameterTrade + iParameterMercantilism + iParameterCentralPlanning;
 
@@ -15428,10 +15428,10 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	// Domestic
 	else if (iStabilityCategory == 2)
 	{
-		int iParameterHappiness = game.getStabilityParameter(PARAMETER_HAPPINESS);
-		int iParameterCivicCombinations = game.getStabilityParameter(PARAMETER_CIVIC_COMBINATIONS);
-		int iParameterCivicsEraTech = game.getStabilityParameter(PARAMETER_CIVICS_ERA_TECH);
-		int iParameterReligion = game.getStabilityParameter(PARAMETER_RELIGION);
+		int iParameterHappiness = player.getStabilityParameter(PARAMETER_HAPPINESS);
+		int iParameterCivicCombinations = player.getStabilityParameter(PARAMETER_CIVIC_COMBINATIONS);
+		int iParameterCivicsEraTech = player.getStabilityParameter(PARAMETER_CIVICS_ERA_TECH);
+		int iParameterReligion = player.getStabilityParameter(PARAMETER_RELIGION);
 
 		iTotalStability = iParameterHappiness + iParameterCivicCombinations + iParameterCivicsEraTech + iParameterReligion;
 
@@ -15506,12 +15506,12 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	// Foreign
 	else if (iStabilityCategory == 3)
 	{
-		int iParameterNeighbors = game.getStabilityParameter(PARAMETER_NEIGHBORS);
-		int iParameterVassals = game.getStabilityParameter(PARAMETER_VASSALS);
-		int iParameterDefensivePacts = game.getStabilityParameter(PARAMETER_DEFENSIVE_PACTS);
-		int iParameterRelations = game.getStabilityParameter(PARAMETER_RELATIONS);
-		int iParameterAutocracy = game.getStabilityParameter(PARAMETER_AUTOCRACY);
-		int iParameterFanaticism = game.getStabilityParameter(PARAMETER_FANATICISM);
+		int iParameterNeighbors = player.getStabilityParameter(PARAMETER_NEIGHBORS);
+		int iParameterVassals = player.getStabilityParameter(PARAMETER_VASSALS);
+		int iParameterDefensivePacts = player.getStabilityParameter(PARAMETER_DEFENSIVE_PACTS);
+		int iParameterRelations = player.getStabilityParameter(PARAMETER_RELATIONS);
+		int iParameterAutocracy = player.getStabilityParameter(PARAMETER_AUTOCRACY);
+		int iParameterFanaticism = player.getStabilityParameter(PARAMETER_FANATICISM);
 
 		iTotalStability = iParameterNeighbors + iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterAutocracy + iParameterFanaticism;
 
@@ -15586,10 +15586,10 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	// Military
 	else if (iStabilityCategory == 4)
 	{
-		int iParameterConquests = game.getStabilityParameter(PARAMETER_CONQUESTS);
-		int iParameterBattles = game.getStabilityParameter(PARAMETER_BATTLES);
-		int iParameterWarWeariness = game.getStabilityParameter(PARAMETER_WAR_WEARINESS);
-		int iParameterBarbarianLosses = game.getStabilityParameter(PARAMETER_BARBARIAN_LOSSES);
+		int iParameterConquests = player.getStabilityParameter(PARAMETER_CONQUESTS);
+		int iParameterBattles = player.getStabilityParameter(PARAMETER_BATTLES);
+		int iParameterWarWeariness = player.getStabilityParameter(PARAMETER_WAR_WEARINESS);
+		int iParameterBarbarianLosses = player.getStabilityParameter(PARAMETER_BARBARIAN_LOSSES);
 
 		iTotalStability = iParameterConquests + iParameterBattles + iParameterWarWeariness + iParameterBarbarianLosses;
 

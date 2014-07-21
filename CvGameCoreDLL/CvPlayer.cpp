@@ -61,6 +61,7 @@ CvPlayer::CvPlayer()
 
 	m_aiDomainProductionModifiers = new int[NUM_DOMAIN_TYPES]; // Leoreth
 	m_aiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES]; // Leoreth
+	m_aiStabilityParameters = new int[NUM_PARAMETERS]; // Leoreth
 
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
@@ -132,6 +133,7 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiEspionageSpendingWeightAgainstTeam);
 	SAFE_DELETE_ARRAY(m_aiDomainProductionModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiDomainExperienceModifiers); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiStabilityParameters); // Leoreth
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
 }
@@ -579,6 +581,12 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	{
 		m_aiDomainProductionModifiers[iI] = 0;
 		m_aiDomainExperienceModifiers[iI] = 0;
+	}
+
+	// Leoreth
+	for (iI = 0; iI < NUM_PARAMETERS; iI++)
+	{
+		m_aiStabilityParameters[iI] = 0;
 	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -18779,6 +18787,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	// Leoreth
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainProductionModifiers);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
+	pStream->Read(NUM_PARAMETERS, m_aiStabilityParameters);
 
 	pStream->Read(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Read(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -19284,6 +19293,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	// Leoreth
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainProductionModifiers);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
+	pStream->Write(NUM_PARAMETERS, m_aiStabilityParameters);
 
 	pStream->Write(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Write(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -25529,3 +25539,13 @@ void CvPlayer::addReminder(int iGameTurn, CvWString szMessage) const
 	CvMessageControl::getInstance().sendAddReminder(getID(), iGameTurn, szMessage);
 }
 // BUG - Reminder Mod - end
+
+int CvPlayer::getStabilityParameter(ParameterTypes eParameter) const
+{
+	return m_aiStabilityParameters[eParameter];
+}
+
+void CvPlayer::setStabilityParameter(ParameterTypes eParameter, int iNewValue)
+{
+	m_aiStabilityParameters[eParameter] = iNewValue;
+}
