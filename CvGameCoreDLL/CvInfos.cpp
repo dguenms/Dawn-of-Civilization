@@ -10598,6 +10598,7 @@ int CvHandicapInfo::getResearchPercentByIDdebug(int pl) const
 {
 	return getResearchPercentByID((PlayerTypes) pl);
 }
+
 int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 {
 	int iResearchPercent = m_iResearchPercent;
@@ -10675,7 +10676,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	}
 	else if (iGameTurn >= getTurnForYear(iPenaltyBegin) + 1 && iGameTurn <= getTurnForYear(600) - 1)
 	{
-		iClassicalModifier = 150;
+		iClassicalModifier = 125;
 	}
 
 	iResearchPercent *= iClassicalModifier;
@@ -10700,26 +10701,26 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	// handle several other aspects explicitly: era buffs, Mayan UP, reborn civs
 	if (eCurrentEra <= ERA_CLASSICAL)
 	{
-		if (ePlayer == GREECE) iCivModifier -= 20;
+		/*if (ePlayer == GREECE) iCivModifier -= 20;
 		if (ePlayer == ROME) iCivModifier -= 35;
 		if (ePlayer == PERSIA) iCivModifier -= 10;
-		if (ePlayer == BABYLONIA) iCivModifier += 15;
+		if (ePlayer == BABYLONIA) iCivModifier += 15;*/
 		if (ePlayer == MAYA) iCivModifier -= 50; // Maya UP
 
-		if (ePlayer == INDIA)
+		/*if (ePlayer == INDIA)
 		{
 			if (bHuman) iCivModifier -= 10;
 			else iCivModifier -= 25;
-		}
+		}*/
 	}
-	else if (eCurrentEra == ERA_ANCIENT)
+	/*else if (eCurrentEra == ERA_ANCIENT)
 	{
 		if (ePlayer == CARTHAGE) iCivModifier -= 20;
-	}
+	}*/
 
 	if (ePlayer == CHINA)
 	{
-		int iAIChinaModifier = 0;
+		/*int iAIChinaModifier = 0;
 
 		if (!bHuman)
 		{
@@ -10729,7 +10730,9 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 		}
 
 		// -25, -10, +5, +30, +35, +40
-		iCivModifier += iAIChinaModifier + std::min(eCurrentEra - 1, 3) * 5;
+		iCivModifier += iAIChinaModifier + std::min(eCurrentEra - 1, 3) * 5;*/
+
+		if (eCurrentEra >= ERA_RENAISSANCE) iCivModifier += 30;
 	}
 
 	if (bReborn)
