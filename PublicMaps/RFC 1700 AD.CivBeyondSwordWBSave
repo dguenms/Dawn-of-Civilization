@@ -35126,8 +35126,8 @@ BeginPlot
 	x=76,y=43
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=6,33,41,42,
 EndPlot
 BeginPlot
@@ -35589,8 +35589,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=43
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 	TeamReveal=6,33,41,42,
 EndPlot
 BeginPlot
@@ -38242,8 +38242,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=38
-	BonusType=BONUS_COW
-	ImprovementType=IMPROVEMENT_PASTURE
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=6,32,41,42,

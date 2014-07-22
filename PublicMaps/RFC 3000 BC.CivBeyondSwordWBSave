@@ -29124,8 +29124,8 @@ BeginPlot
 	x=76,y=43
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=76,y=44
@@ -29498,8 +29498,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=43
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=77,y=44
@@ -31657,7 +31657,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=38
-	BonusType=BONUS_COW
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
