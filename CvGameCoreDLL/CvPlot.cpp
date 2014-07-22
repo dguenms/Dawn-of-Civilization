@@ -1346,7 +1346,7 @@ bool CvPlot::isLake() const
 
 	//Rhye - start (salt lake)
 	int saltLakePlots[13][2] = {
-	{77, 43}, //Urmia
+	{76, 43}, //Van
 	{82, 48}, //Aral sea
 	{82, 49},
 	{83, 48},
