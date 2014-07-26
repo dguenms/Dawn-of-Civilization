@@ -2781,32 +2781,6 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	int iNumCities = GET_PLAYER((PlayerTypes)getID()).getNumCities();
 	int iMultiplier;
 
-	//Rhye - start penalty 
-	//for large / giga empires
-	/*int iNumCities = GET_PLAYER((PlayerTypes)getID()).getNumCities();
-	int iPopulation = GET_PLAYER((PlayerTypes)getID()).getTotalPopulation();
-	int iMaxPopulation = 10 * (6 + 2 * GET_PLAYER((PlayerTypes)getID()).getCurrentEra());
-	int iSurplus = 0;
-
-	int iMultiplier = 5;
-
-	if (GET_PLAYER((PlayerTypes)getID()).isHuman())
-		iMultiplier += 5;
-
-	// Leoreth: larger penalty for tech leader
-	// moved to CvCity::calculateNumCitiesMaintenance()
-	//if (GC.getGame().getTechRank(getID()) == 0)
-	//	iMultiplier += 4;
-
-	if (iPopulation > iMaxPopulation)
-	{
-		// extra costs come in 5/10% increments
-		iSurplus = (iPopulation - iMaxPopulation) / 10;
-
-		iCost *= 100 + iMultiplier * iSurplus;
-		iCost /= 100;
-	}*/
-
 	// Leoreth: penalty for the tech leader
 	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - getTurnForYear(startingTurnYear[getID()]) > getTurns(30))
 	{
@@ -2833,15 +2807,6 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 			iCost /= 100;
 		}
 	}
-
-	//medieval and renaissance cost more
-	if (GC.getTechInfo((TechTypes)eTech).getEra() == 2 || GC.getTechInfo((TechTypes)eTech).getEra() == 3){ 
-		iCost *= 11;
-		iCost /= 10; //9 before no tech brokering
-	}
-
-
-	//Rhye - end
 
 	//Rhye - start 
 	//discount for small empires
@@ -2875,7 +2840,7 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	//Rhye - end
 
 	//Rhye - start tech discount
-	int owners = 0;
+	/*int owners = 0;
 	int modifier = 1000;
 	bool bFiber = false;
 	bool bElectricity = false;
@@ -2925,12 +2890,6 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 		}
 	}
 
-	// Leoreth: larger tech discount for last third of the civs
-	/*if (GC.getGame().getTechRank(getID()) >= MAX_CIV_TEAMS * 2 / 3)
-	{
-		modifier *= 2;
-	}*/
-
 	if (bAstronomy) {
 		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 		{
@@ -2942,14 +2901,42 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 		iCost *= ((GC.getGameINLINE().countCivPlayersAlive() * modifier) - owners);
 		iCost /= (GC.getGameINLINE().countCivPlayersAlive() * modifier);
 	}
-	//Rhye - end
+	//Rhye - end*/
+
+	// Leoreth: slow down beelining, help catch up
+	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
+	int iCivsWithTech = 0;
+	int iSpreadModifier = 100;
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) iCivsWithTech++;
+	}
+
+	// less than a quarter know it -> more expensive
+	// lets say there are 12 civs, then its an increase for the 1st to 3rd civ to discover something.
+	// make the max penalty 25%, have it decrease for every subsequent civ
+	// so 25% for the first civ (iCivsWithTech == 0)
+	// 0% for the fourth civ (iCivsWithTech == 3)
+	int iLowerThreshold = iCivsAlive / 4;
+	if (iCivsWithTech < iLowerThreshold) iSpreadModifier += 25 * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
+
+	// more than three quarters know it -> less expensive
+	// assume there are 12 civs, then its an increase for the 10th to 12th civ to discover something
+	// make the max gain 25%, have it decrease for every previous civ
+	// so 25% for the 12th civ (iCivsWithTech == 11)
+	// 0% for the 9th civ (iCivsWithTech == 8)
+	int iUpperThreshold = iCivsAlive * 3 / 4;
+	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= 25 * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
+
+	iCost *= iSpreadModifier;
+	iCost /= 100;
 
 	//Rhye - start
 	//discount for the late game
-	if (GC.getGameINLINE().getGameTurn() > getTurnForYear(1905)){ 
+	/*if (GC.getGameINLINE().getGameTurn() > getTurnForYear(1905)){ 
 		iCost *= 8; 
 		iCost /= 10; 
-	}
+	}*/
 
 	//Rhye - end
 	

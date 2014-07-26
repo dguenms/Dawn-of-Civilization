@@ -245,3 +245,4 @@
 	# have 25000 culture in Buenos Aires by 1960 AD
 	# experience 5 golden ages by 2000 AD
 # the Mongols are now immune to stability penalties from city razing
+# removed peak in Armenia and moved Lake Van 1W to its position

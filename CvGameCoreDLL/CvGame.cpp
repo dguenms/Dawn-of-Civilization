@@ -3200,6 +3200,20 @@ int CvGame::countCivPlayersAlive() const
 	return iCount;
 }
 
+int CvGame::countMajorPlayersAlive() const
+{
+	int iCount = 0;
+
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			iCount++;
+		}
+	}
+
+	return iCount;
+}
 
 int CvGame::countCivPlayersEverAlive() const
 {
@@ -3272,7 +3286,6 @@ int CvGame::countHumanPlayersAlive() const
 
 	return iCount;
 }
-
 
 int CvGame::countTotalCivPower()
 {
