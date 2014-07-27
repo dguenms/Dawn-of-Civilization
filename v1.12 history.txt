@@ -4,14 +4,14 @@
 	  1. Dynasticism (Monarchy, medium): +1 happiness per military unit (+4 max)
 	  2. City States (Literature, high): +1 food per specialist, +100% number of cities upkeep
 	  3. Theocracy (Theology, high): +2 happiness with state religion, unlimited priests, +2 experience with state religion
-	  4. Autocracy (Nationalism, none): +3 happiness with barracks, can draft 3 units, +50% great general rate, +25% espionage
+	  4. Autocracy (Nationalism, medium): +2 happiness with barracks, can draft 3 units, +50% great general rate, +25% espionage
 	  5. Republic (Liberalism, high): +50% great people rate, +100% cottage growth
 	# ORGANIZATION:
 	  1. Vassalage (Feudalism, medium): +2 experience, +2 happiness with Castle
 	  2. Absolutism (Civil Service, high): +40% production and commerce in capital
 	  3. Representation (Constitution, medium): +1 free specialist
 	  4. Totalitarianism (Fascism, none): +1 happiness per military unit (+4 max), no city distance upkeep, unlimited spies
-	  5. Egalitarianism (Democracy, medium): +2 happiness in largest cities, +1 production from town, unhappiness for civs without Egalitarianism
+	  5. Egalitarianism (Democracy, medium): +2 happiness in largest cities, +1 production from town, no slavery, unhappiness from slaves for other civs
 	# LABOR
 	  1. Slavery (Masonry, medium): can hurry with population, +1 commerce from plantation, slave plantation
 	  2. Agrarianism (Calendar, low): +1 commerce from farm, +1 production from pasture, +25% worker speed
