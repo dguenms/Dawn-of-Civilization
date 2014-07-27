@@ -332,6 +332,10 @@
 		<English>Conquered Cities</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_BARBARIAN_LOSSES</Tag>
+		<English>Lost Battles to Barbarians</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_LOST_CITIES</Tag>
 		<English>Lost Cities</English>
 	</TEXT>
