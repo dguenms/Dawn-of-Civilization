@@ -2600,7 +2600,8 @@ bool CvGame::isSoundtrackOverride(CvString& strSoundtrack) const
 {
 	if (GC.getDefineINT("VICTORY_SOUNDTRACK_AVAILABLE") != 0)
 	{
-		if (getGameState() == GAMESTATE_EXTENDED || getGameState() == GAMESTATE_OVER)
+		// Leoreth: victory soundtrack not in extended game state
+		if (/*getGameState() == GAMESTATE_EXTENDED ||*/ getGameState() == GAMESTATE_OVER)
 		{
 			if (getWinner() == getActiveTeam())
 			{
