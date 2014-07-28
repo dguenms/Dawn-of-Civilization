@@ -474,12 +474,12 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	utils.clearPlague(iPlayer)
 	
 	# if smaller cities are supposed to be destroyed, do that first
+	lRemovedCities = []
 	if bRazeMinorCities:
 		for city in lCities:
 			closestCity = gc.getMap().findCity(city.getX(), city.getY(), iPlayer, -1, True, False, -1, -1, city)
 			
 			if closestCity:
-				#print "Checking for raze: " + city.getName() + ", closest city: " + closestCity.getName()
 				if plotDistance(city.getX(), city.getY(), closestCity.getX(), closestCity.getY()) <= 2:
 					bCulture = (city.getCultureLevel() >= closestCity.getCultureLevel())
 					bPopulation = (city.getPopulation() > closestCity.getPopulation())
@@ -487,16 +487,13 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 					bNoHolyCities = (not closestCity.isHolyCity())
 					bNoCapitals = (not closestCity.isCapital())
 					bNotJerusalem = (not (closestCity.getX() == 73 and closestCity.getY() == 38))
-					#print "bCulture = " + str(bCulture) + ", bPopulation = " + str(bPopulation) + ", bMaxPopulation = " + str(bMaxPopulation) + ", bNoHolyCities = " + str(bNoHolyCities)
 					if bCulture and bPopulation and bMaxPopulation and bNoHolyCities and bNoCapitals and bNotJerusalem:
-					#if city.getCulture(iPlayer) > closestCity.getCulture(iPlayer) and city.getPopulation() > closestCity.getPopulation() and closestCity.getPopulation() < 10 and not closestCity.isHolyCity():
-						if closestCity in lCities: lCities.remove(closestCity)
-						utils.debugTextPopup(gc.getPlayer(iPlayer).getCivilizationAdjective(0) + " " + closestCity.getName() + " destroyed during their collapse.")
+						lRemovedCities.append((closestCity.getX(), closestCity.getY()))
 						gc.getPlayer(con.iBarbarian).disband(closestCity)
 	
 	for city in lCities:
 	
-		if not city: continue
+		if (city.getX(), city.getY()) in lRemovedCities: continue
 	
 		tCityPlot = (city.getX(), city.getY())
 		cityPlot = gc.getMap().plot(city.getX(), city.getY())
@@ -600,6 +597,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		resurrectionFromCollapse(iResurrectionPlayer, dPossibleResurrections[iResurrectionPlayer])
 		
 def secedeCity(city, iNewOwner):
+	if not city: return
+
 	sName = city.getName()
 	utils.completeCityFlip(city.getX(), city.getY(), iNewOwner, city.getOwner(), 50, False, True, True)
 	
