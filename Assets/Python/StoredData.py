@@ -349,7 +349,7 @@ class StoredData:
 	def changeMoorishGold(self, iChange):
 		self.scriptDict['iMoorishGold'] += iChange
 		
-	def getTaoistHealthTurns(self, iChange):
+	def getTaoistHealthTurns(self):
 		return self.scriptDict['iTaoistHealthTurns']
 	
 	def setTaoistHealthTurns(self, iNewValue):

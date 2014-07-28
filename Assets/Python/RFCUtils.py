@@ -1182,6 +1182,10 @@ class RFCUtils:
 		if iTargetCiv != -1 and not gc.getTeam(iCiv).isAtWar(iTargetCiv):
 			gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_TOTAL)
 			
+		# independents too so the conquerors don't get pushed out in case the target collapses
+		if not gc.getTeam(iCiv).isAtWar(con.iIndependent): gc.getTeam(iCiv).declareWar(con.iIndependent, True, WarPlanTypes.WARPLAN_LIMITED)
+		if not gc.getTeam(iCiv).isAtWar(con.iIndependent2): gc.getTeam(iCiv).declareWar(con.iIndependent2, True, WarPlanTypes.WARPLAN_LIMITED)
+			
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		tPlot = lFreePlots[iRand]
 		

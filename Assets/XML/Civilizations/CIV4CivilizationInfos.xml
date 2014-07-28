@@ -937,6 +937,10 @@
 					<LeaderName>LEADER_ELISHAT</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
+				<Leader>
+					<LeaderName>LEADER_HIRAM</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
 			</Leaders>
 			<DerivativeCiv>CIVILIZATION_SPAIN</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_CARTHAGE_SELECT</CivilizationSelectionSound>
@@ -1792,6 +1796,10 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
+					<LeaderName>LEADER_CHARLEMAGNE</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
 					<LeaderName>LEADER_LOUIS_XIV</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
@@ -2573,6 +2581,10 @@
 					<LeaderName>LEADER_SHIVAJI</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
+				<Leader>
+					<LeaderName>LEADER_CHANDRAGUPTA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
 			</Leaders>
 			<DerivativeCiv>NONE</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_INDIA_SELECT</CivilizationSelectionSound>
@@ -2917,6 +2929,10 @@
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_CAVOUR</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_LORENZO</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
@@ -4131,6 +4147,10 @@
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_IBN_TUGHLUQ</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
 				<Leader>
 					<LeaderName>LEADER_AKBAR</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
