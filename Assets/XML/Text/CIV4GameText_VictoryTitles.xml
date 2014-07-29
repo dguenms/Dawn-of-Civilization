@@ -50,6 +50,36 @@
 		<German>Der Turm von Babel</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE1_TITLE</Tag>
+		<English>The School of Hellas</English>
+		<German>Die Schule von Hellas</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_TITLE</Tag>
+		<English>Wonders of the Aegean</English>
+		<German>Wunder der Ägäis</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3_TITLE</Tag>
+		<English>Alexander's Empire</English>
+		<German>Alexanders Reich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND1_TITLE</Tag>
+		<English>The Dharmic Religions</English>
+		<German>Die Dharmischen Religionen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND2_TITLE</Tag>
+		<English>Land of Temples</English>
+		<German>Land der Tempel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND3_TITLE</Tag>
+		<English>Sacred Rivers</English>
+		<German>Heilige Flüsse</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_CAR1_TITLE</Tag>
 		<English>New Tyre</English>
 		<German>Das neue Tyrus</German>
