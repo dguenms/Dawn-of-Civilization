@@ -710,10 +710,9 @@ class RFCUtils:
         #Congresses, RiseAndFall
         def relocateSeaGarrisons(self, tCityPlot, iOldOwner):
                 tDestination = (-1, -1)
-                cityList = PyPlayer(iOldOwner).getCityList()
-                for pyCity in cityList:
-                        if (pyCity.GetCy().isCoastalOld()):
-                                tDestination = (pyCity.GetCy().getX(), pyCity.GetCy().getY())
+                for city in self.getCityList(iOldOwner):
+                        if (city.isCoastalOld()):
+                                tDestination = (city.getX(), city.getY())
                 if (tDestination == (-1, -1)):                    
                         for x in range(tCityPlot[0]-12, tCityPlot[0]+12):
                                 for y in range(tCityPlot[1]-12, tCityPlot[1]+12):
@@ -1588,6 +1587,7 @@ class RFCUtils:
 		return (gc.getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]))
 		
 	def getCityList(self, iCiv):
+		if iCiv is None: return []
 		return [pCity.GetCy() for pCity in PyPlayer(iCiv).getCityList()]
 		
 	def isNeighbor(self, iCiv1, iCiv2):

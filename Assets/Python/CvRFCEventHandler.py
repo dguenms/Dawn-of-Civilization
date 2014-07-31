@@ -230,7 +230,7 @@ class CvRFCEventHandler:
 				if tCity == con.tRespawnCapitals[iPlayer]:
 					utils.relocateCapital(iPlayer, city)
 					
-		# Leoreth: conquering Constantinople adds it to the Turkish core
+		# Leoreth: conquering Constantinople adds it to the Turkish core + Rumelia
 		if iPlayer == con.iTurkey and (city.getX(), city.getY()) == (68, 45):
 			if not utils.isReborn(con.iTurkey): gc.getPlayer(con.iTurkey).setReborn()
 					
@@ -783,6 +783,7 @@ class CvRFCEventHandler:
 				utils.moveCapital(iPlayer, (62, 49)) # Wien
 				
 		# Spain's core extends when reaching the Renaissance and there are no Moors in Iberia
+		# at the same time, the Moorish core relocates to Africa
 		if iPlayer == con.iSpain and iEra == con.iRenaissance:
 			bNoMoors = True
 			if gc.getPlayer(con.iMoors).isAlive():
@@ -791,6 +792,7 @@ class CvRFCEventHandler:
 						bNoMoors = False
 			if bNoMoors:
 				gc.getPlayer(con.iSpain).setReborn()
+				gc.getPlayer(con.iMoors).setReborn()
 				
 		# Italy's core extends when reaching the Industrial era
 		if iPlayer == con.iItaly and iEra == con.iIndustrial:

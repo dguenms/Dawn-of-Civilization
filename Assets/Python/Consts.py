@@ -1330,8 +1330,8 @@ tBirthAreaExceptions = (
 tCoreAreasTL = (
 ((67, 32), #Egypt
 (99, 43), #China 
-(75, 38), #Babylonia
-(65, 39), #Greece
+(75, 39), #Babylonia
+(64, 39), #Greece
 (90, 38), #India
 (71, 39), #Carthage
 (79, 37), #Persia
@@ -1361,18 +1361,18 @@ tCoreAreasTL = (
 (95, 47), #Mongolia
 (16, 35), #Aztecs
 (86, 38), #Mughals
-(69, 41), #Turkey
+(69, 42), #Turkey
 (100, 32), #Thailand
 (61, 19), #Congo
 (56, 52), #Holland
 (58, 49), #Germany
-(25, 43), #America
+(23, 45), #America
 (31, 6), #Argentina
 (37, 15), #Brazil
 ),
 ((67, 32), #Egypt
 (99, 43), #China 
-(75, 38), #Babylonia
+(75, 39), #Babylonia
 (65, 39), #Greece
 (90, 38), #India
 (54, 37), #Carthage
@@ -1403,12 +1403,12 @@ tCoreAreasTL = (
 (95, 46), #Mongolia
 (16, 35), #Mexico
 (86, 37), #Mughals
-(68, 41), #Turkey
+(67, 42), #Turkey
 (100, 32), #Thailand
 (61, 19), #Congo
 (56, 52), #Holland
 (58, 49), #Germany
-(25, 43), #America
+(23, 45), #America
 (31, 6), #Argentina
 (37, 15), #Brazil
 )) 
@@ -1433,7 +1433,7 @@ tCoreAreasBR = (
 (98, 45), #Tibet
 (103, 36), #Khmer
 (107, 31), #Indonesia
-(58, 43), #Moors
+(53, 42), #Moors
 (53, 46), #Spain
 (57, 52), #France
 (54, 60), #England   57 without Scotland
@@ -1447,7 +1447,7 @@ tCoreAreasBR = (
 (105, 52), #Mongolia
 (19, 38), #Aztecs
 (91, 43), #Mughals
-(77, 48), #Turkey
+(76, 46), #Turkey
 (103, 36), #Thailand
 (65, 22), #Congo
 (58, 54), #Holland
@@ -1459,7 +1459,7 @@ tCoreAreasBR = (
 ((69, 36), #Egypt
 (107, 47), #China
 (77, 42), #Babylonia
-(70, 45), #Greece
+(69, 42), #Greece
 (96, 40), #India
 (60, 39), #Carthage
 (85, 44), #Persia
@@ -1475,7 +1475,7 @@ tCoreAreasBR = (
 (98, 45), #Tibet
 (102, 38), #Khmer
 (107, 31), #Indonesia
-(58, 43), #Moors
+(56, 39), #Moors
 (55, 46), #Spain
 (57, 52), #France
 (54, 60), #England   57 without Scotland
@@ -1489,7 +1489,7 @@ tCoreAreasBR = (
 (106, 49), #Mongolia
 (19, 40), #Mexico
 (94, 43), #Mughals
-(77, 48), #Turkey
+(76, 47), #Turkey
 (103, 36), #Thailand
 (65, 22), #Congo
 (58, 54), #Holland
@@ -1539,7 +1539,7 @@ tExceptions = (  #for RiseAndFall
 (), #Congo
 ((57, 51), (58, 51)), #Holland
 ((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (58, 52), (58, 53), (62, 51), (63, 51), (64, 53), (61, 49), (61, 50), (64, 52), (58, 54), (65, 52), (65, 53)),  #Germany
-((25, 48), (25, 49), (26, 48), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50)), #America
+((23, 50), (24, 50), (27, 50), (28, 50), (29, 50), (30, 50), (27, 49)), #America
 ((35, 12)), #Argentina
 (), #Brazil
 ),
@@ -1581,7 +1581,7 @@ tExceptions = (  #for RiseAndFall
 (), #Congo
 ((57, 51), (58, 51)), #Holland
 ((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (62, 51), (63, 51), (66, 52), (65, 53), (66, 53), (65, 52)),  #Germany
-((25, 48), (25, 49), (26, 48), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50)), #America
+((23, 50), (24, 50), (27, 50), (28, 50), (29, 50), (30, 50), (27, 49)), #America
 ((35, 12)), #Argentina
 (), #Brazil
 ))
