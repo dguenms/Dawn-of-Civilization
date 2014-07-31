@@ -2155,6 +2155,10 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	utils.clearPlague(iPlayer)
 	convertBackCulture(iPlayer)
 	
+	# change the cores of some civs on respawn
+	if iPlayer in [con.iGreece]:
+		gc.getPlayer(iPlayer).setReborn()
+	
 	# resurrection leaders
 	if iPlayer in con.resurrectionLeaders:
 		if pPlayer.getLeader() != con.resurrectionLeaders[iPlayer]:
