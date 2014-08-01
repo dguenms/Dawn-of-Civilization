@@ -16,7 +16,7 @@
 			<iTrainPercent>200</iTrainPercent><!--default: 180-->
 			<iConstructPercent>300</iConstructPercent>
 			<iCreatePercent>300</iCreatePercent>
-			<iResearchPercent>335</iResearchPercent><!--default:320; grows by up to 20% as the game progresses-->
+			<iResearchPercent>350</iResearchPercent><!--default:320; grows by up to 20% as the game progresses-->
 			<iBuildPercent>300</iBuildPercent>
 			<iImprovementPercent>300</iImprovementPercent>
 			<iGreatPeoplePercent>300</iGreatPeoplePercent>
@@ -82,7 +82,7 @@
 			<iTrainPercent>140</iTrainPercent><!--default: 135-->
 			<iConstructPercent>150</iConstructPercent>
 			<iCreatePercent>150</iCreatePercent>
-			<iResearchPercent>165</iResearchPercent><!--default: 160; grows by up to 20% as the game progresses-->
+			<iResearchPercent>175</iResearchPercent><!--default: 160; grows by up to 20% as the game progresses-->
 			<iBuildPercent>150</iBuildPercent>
 			<iImprovementPercent>150</iImprovementPercent>
 			<iGreatPeoplePercent>150</iGreatPeoplePercent>
