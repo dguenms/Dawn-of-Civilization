@@ -375,6 +375,7 @@ class BugFinanceAdvisor:
 				fCorporations += fCityCorporations
 				
 				fCitySpecialists = city.getSpecialistCommerce(CommerceTypes.COMMERCE_GOLD)
+				fCitySpecialists += (city.getSpecialistPopulation() + city.getNumGreatPeople() - city.getFreeSpecialistCount(con.iSettledSlave)) * player.getSpecialistExtraCommerce(CommerceTypes.COMMERCE_GOLD)
 				fSpecialists += fCitySpecialists
 				
 				fCityWealth = 0.0
