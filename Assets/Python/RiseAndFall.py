@@ -2316,7 +2316,7 @@ class RiseAndFall:
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
 				if not (x,y) in tExceptions:
                                 	pCurrent = gc.getMap().plot( x, y )
-					if pCurrent.isCore(pCurrent.getOwner()): continue
+					if pCurrent.isCore(pCurrent.getOwner()) and not pCurrent.isCore(iCiv): continue
                                 	if ( pCurrent.isCity()):
                                         	if (pCurrent.getPlotCity().getOwner() != iCiv):
                                                 	cityList.append(pCurrent.getPlotCity())
@@ -2396,7 +2396,7 @@ class RiseAndFall:
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
 				if not (x,y) in tExceptions:
 	                                pCurrent = gc.getMap().plot( x, y )
-					if pCurrent.isCore(pCurrent.getOwner()): continue
+					if pCurrent.isCore(pCurrent.getOwner()) and not pCurrent.isCore(iCiv): continue
         	                        if (not pCurrent.isCity()):
                 	                        utils.convertPlotCulture(pCurrent, iCiv, 100, False)
 
