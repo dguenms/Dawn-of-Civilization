@@ -1240,7 +1240,7 @@ def calculateStability(iPlayer):
 	iEconomyStability = 0
 	
 	# Economic Growth
-	iEconomicGrowthStability = sd.getEconomyStability(iPlayer) / 2
+	iEconomicGrowthStability = sd.getEconomyStability(iPlayer) / 20
 	
 	# economic growth stability cap
 	if iEconomicGrowthStability > 30: iEconomicGrowthStability = 30
@@ -1318,7 +1318,7 @@ def calculateStability(iPlayer):
 	iDomesticStability = 0
 	
 	# Happiness
-	iHappinessStability = sd.getHappinessStability(iPlayer) / 2
+	iHappinessStability = sd.getHappinessStability(iPlayer) / 20
 	
 	if iHappinessStability > 10: iHappinessStability = 10
 	if iHappinessStability < -10: iHappinessStability = -10
@@ -1709,24 +1709,30 @@ def updateEconomicStability(iPlayer):
 		return
 	
 	iPercentChange = 100 * iCurrentCommerce / iPreviousCommerce - 100
+	
+	iChange = 0
+	iDivisor = min(10, int(abs(iEconomyStability) / 50))
+	if iDivisor == 0: iDivisor = 1
 		
 	if iPercentChange > 5:
 		if iEconomyStability >= 0:
-			if bFreeMarket: iEconomyStability += 3
-			else: iEconomyStability += 2
+			if bFreeMarket: iChange = 3
+			else: iChange = 2
 		else:
-			iEconomyStability += 4
+			iChange = 4
 	elif iPercentChange < -5:
 		if iEconomyStability <= 0:
-			if bPublicWelfare: iEconomyStability -= 1
-			else: iEconomyStability -= 2
+			if bPublicWelfare: iChange = -1
+			else: iChange = -2
 		else:
-			iEconomyStability -= 4
+			iChange = -4
 	else:
 		if iEconomyStability > 0:
-			if not bEnvironmentalism: iEconomyStability -= 1
+			if not bEnvironmentalism: iChange = -1
 		elif iEconomyStability < 0:
-			iEconomyStability += 1
+			iChange = 1
+			
+	iEconomyStability += 10 * iChange / iDivisor
 			
 	sd.setEconomyStability(iPlayer, iEconomyStability)
 	sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
@@ -1752,17 +1758,23 @@ def updateHappinessStability(iPlayer):
 			iHappyCities += 1
 		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
+			
+	iChange = 0
+	iDivisor = min(10, int(abs(iHappinessStability) / 20))
+	if iDivisor == 0: iDivisor = 1
 		
 	if iHappyCities > iUnhappyCities:
 		if iHappinessStability >= 0:
-			iHappinessStability += 1
+			iChange = 1
 		else:
-			iHappinessStability += 2
+			iChange = 2
 	elif iHappyCities < iUnhappyCities:
 		if iHappinessStability <= 0:
-			iHappinessStability -= 1
+			iChange = -1
 		else:
-			iHappinessStability -= 2
+			iChange = -2
+			
+	iHappinessStability += 10 * iChange / iDivisor
 			
 	sd.setHappinessStability(iPlayer, iHappinessStability)
 	
