@@ -485,6 +485,7 @@ class RiseAndFall:
 				if not (x,y) in tExceptions[utils.getReborn(iNewCivFlip)][iNewCivFlip]:
 	                                pCurrent = gc.getMap().plot( x, y )
         	                        if ( pCurrent.isCity()):
+						if pCurrent.isCore(pCurrent.getOwner()) and not pCurrent.isCore(iNewCivFlip): continue
                 	                        city = pCurrent.getPlotCity()
                         	                if (city.getOwner() == iHuman):
                                         	        if not ((x,y) == tCapitals[utils.getReborn(iHuman)][iHuman] and pCurrent.getPlotCity.isCapital()):
@@ -2920,6 +2921,7 @@ class RiseAndFall:
 			for iLoopCiv in con.lEnemyCivsOnSpawn[iCiv]:
 				if utils.isAVassal(iLoopCiv): continue
 				if not gc.getPlayer(iLoopCiv).isAlive(): continue
+				if teamCiv.isAtWar(iLoopCiv): continue
 				if utils.getHumanID() == iCiv and iLoopCiv not in con.lTotalWarOnSpawn[iCiv]: continue
 				
 				iLoopMin = 50
@@ -2931,6 +2933,8 @@ class RiseAndFall:
 					if iLoopCiv in con.lTotalWarOnSpawn[iCiv]:
 						iWarPlan = WarPlanTypes.WARPLAN_TOTAL
 					teamCiv.declareWar(iLoopCiv, False, iWarPlan)
+					
+					if utils.getHumanID() == iCiv: self.setBetrayalTurns(0)
 					
 					
         def immuneMode(self, argsList): 
