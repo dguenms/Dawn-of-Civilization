@@ -535,7 +535,7 @@ class Barbs:
 							bClear = True
 							for i in range(x-1, x+2):
 								for j in range(y-1, y+2):
-									if gc.getMap().plot(i,j).isUnit(): bClear = False
+									if gc.getMap().plot(i,j).isCity(): bClear = False
 								
 							if bClear and not (bTerritory and plot.getOwner() != -1):
 								plotList.append((x,y))
