@@ -191,7 +191,7 @@ class Resources:
 
                 if (iGameTurn == getTurnForYear(1250)):
                         #gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
-			self.createResource(69, 37, iFish) # Calcutta, Dhaka, Pagan
+			self.createResource(96, 37, iFish) # Calcutta, Dhaka, Pagan
 
 		if iGameTurn == getTurnForYear(1350):
 			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove jungle in Vietnam
