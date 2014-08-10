@@ -80,6 +80,21 @@
 		<German>Heilige Flüsse</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
+		<English>The First Empire</English>
+		<German>Das erste Großreich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2_TITLE</Tag>
+		<English>Seven Wonders of the World</English>
+		<German>Die Sieben Weltwunder</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3_TITLE</Tag>
+		<English>Land of Religions</English>
+		<German>Land der Religionen</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_CAR1_TITLE</Tag>
 		<English>New Tyre</English>
 		<German>Das neue Tyrus</German>
@@ -492,7 +507,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR2_TITLE</Tag>
 		<English>Empire on three Continents</English>
-		<German>Imperium der drei Kontinente</German>
+		<German>Reich der drei Kontinente</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR3_TITLE</Tag>
@@ -515,17 +530,17 @@
 		<German>Der Kreis der Macht</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CON1_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_KON1_TITLE</Tag>
 		<English>Catholic Congo</English>
 		<German>Katholisches Kongo</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CON2_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_KON2_TITLE</Tag>
 		<English>The Middle Passage</English>
 		<German>Die Mittlere Passage</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CON3_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_KON3_TITLE</Tag>
 		<English>Industrial Africa</English>
 		<German>Industrielles Afrika</German>
 	</TEXT>
