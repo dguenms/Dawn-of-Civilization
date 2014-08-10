@@ -640,4 +640,19 @@
 		<English>[COLOR_WARNING_TEXT]Requires [LINK=literal]%s1[\LINK][COLOR_REVERT]</English>
 		<German>[COLOR_WARNING_TEXT]Erfordert: [LINK=literal]%s1[\LINK][COLOR_REVERT]</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_ELECTION_COLLECT_TITHE</Tag>
+		<English>Collect Tithe (Requires %d1 of %d2 Total Votes)</English>
+		<German>Den Zehnt eintreiben (Benötigt %d1 von insgesamt %d2 Stimmen)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_ELECTION_INQUISITION</Tag>
+		<English>Send Inquisition to %s1 (Requires %d2 of %d3 Total Votes)</English>
+		<German>Inquisition nach %s1 entsenden (Benötigt %d2 von insgesamt %d3 Stimmen)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_ELECTION_EXCOMMUNICATION</Tag>
+		<English>Excommunicate %s1 (Requires %d2 of %d3 Total Votes)</English>
+		<German>%s1 exkommunizieren (Benötigt %d2 von insgesamt %d3 Stimmen)</German>
+	</TEXT>
 </Civ4GameText>

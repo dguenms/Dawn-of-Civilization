@@ -1376,12 +1376,16 @@
 		<English>U.N. Resolution #631 (Global Civic - Public Welfare)</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VOTE_SELL_INDULGENCES</Tag>
-		<English>Sell Indulgences</English>
+		<Tag>TXT_KEY_VOTE_COLLECT_TITHE</Tag>
+		<English>Collect Tithe</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VOTE_INQUISITION</Tag>
 		<English>Inquisition</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VOTE_EXCOMMUNICATION</Tag>
+		<English>Excommunication</English>
 	</TEXT>
 
 </Civ4GameText>
