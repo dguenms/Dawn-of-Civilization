@@ -410,6 +410,62 @@
 			</DiploVotes>
 		</VoteInfo>
 		<VoteInfo>
+			<Type>VOTE_UN_DECOLONIZE</Type>
+			<Description>TXT_KEY_VOTE_UN_DECOLONIZE</Description>
+			<iPopulationThreshold>62</iPopulationThreshold>
+			<bCityVoting>0</bCityVoting>
+			<bCivVoting>0</bCivVoting>
+			<iMinVoters>3</iMinVoters>
+			<iStateReligionVotePercent>0</iStateReligionVotePercent>
+			<iTradeRoutes>0</iTradeRoutes>
+			<bSecretaryGeneral>0</bSecretaryGeneral>
+			<bVictory>0</bVictory>
+			<bFreeTrade>0</bFreeTrade>
+			<bNoNukes>0</bNoNukes>
+			<bDefensivePact>0</bDefensivePact>
+			<bOpenBorders>0</bOpenBorders>
+			<bForcePeace>0</bForcePeace>
+			<bForceNoTrade>0</bForceNoTrade>
+			<bForceWar>0</bForceWar>
+			<bAssignCity>0</bAssignCity>
+			<bDecolonize>1</bDecolonize>
+			<ForceCivics/>
+			<DiploVotes>
+				<DiploVote>
+					<DiploVoteType>DIPLOVOTE_UN</DiploVoteType>
+					<bValid>1</bValid>
+				</DiploVote>
+			</DiploVotes>
+		</VoteInfo>
+		<VoteInfo>
+			<Type>VOTE_UN_RELEASE_CIVILIZATION</Type>
+			<Description>TXT_KEY_VOTE_UN_RELEASE_CIVILIZATION</Description>
+			<iPopulationThreshold>62</iPopulationThreshold>
+			<bCityVoting>0</bCityVoting>
+			<bCivVoting>0</bCivVoting>
+			<iMinVoters>3</iMinVoters>
+			<iStateReligionVotePercent>0</iStateReligionVotePercent>
+			<iTradeRoutes>0</iTradeRoutes>
+			<bSecretaryGeneral>0</bSecretaryGeneral>
+			<bVictory>0</bVictory>
+			<bFreeTrade>0</bFreeTrade>
+			<bNoNukes>0</bNoNukes>
+			<bDefensivePact>0</bDefensivePact>
+			<bOpenBorders>0</bOpenBorders>
+			<bForcePeace>0</bForcePeace>
+			<bForceNoTrade>0</bForceNoTrade>
+			<bForceWar>0</bForceWar>
+			<bAssignCity>0</bAssignCity>
+			<bRelease>1</bRelease>
+			<ForceCivics/>
+			<DiploVotes>
+				<DiploVote>
+					<DiploVoteType>DIPLOVOTE_UN</DiploVoteType>
+					<bValid>1</bValid>
+				</DiploVote>
+			</DiploVotes>
+		</VoteInfo>
+		<VoteInfo>
 			<Type>VOTE_POPE</Type>
 			<Description>TXT_KEY_VOTE_POPE</Description>
 			<iPopulationThreshold>40</iPopulationThreshold>
@@ -626,8 +682,8 @@
 			</DiploVotes>
 		</VoteInfo>
 		<VoteInfo>
-			<Type>VOTE_SELL_INDULGENCES</Type>
-			<Description>TXT_KEY_VOTE_SELL_INDULGENCES</Description>
+			<Type>VOTE_COLLECT_TITHE</Type>
+			<Description>TXT_KEY_VOTE_COLLECT_TITHE</Description>
 			<iPopulationThreshold>62</iPopulationThreshold>
 			<bCityVoting>0</bCityVoting>
 			<bCivVoting>0</bCivVoting>
@@ -643,9 +699,9 @@
 			<bForcePeace>0</bForcePeace>
 			<bForceNoTrade>0</bForceNoTrade>
 			<bForceWar>0</bForceWar>
-			<bAssignCity>1</bAssignCity>
-			<iGold>5</iGold>
-			<iHappiness>-2</iHappiness>
+			<bAssignCity>0</bAssignCity>
+			<iGoldPercent>10</iGoldPercent>
+			<iHappiness>0</iHappiness>
 			<ForceCivics/>
 			<DiploVotes>
 				<DiploVote>
@@ -672,8 +728,36 @@
 			<bForcePeace>0</bForcePeace>
 			<bForceNoTrade>0</bForceNoTrade>
 			<bForceWar>0</bForceWar>
-			<bAssignCity>1</bAssignCity>
+			<bAssignCity>0</bAssignCity>
 			<iEspionage>10</iEspionage>
+			<ForceCivics/>
+			<DiploVotes>
+				<DiploVote>
+					<DiploVoteType>DIPLOVOTE_POPE</DiploVoteType>
+					<bValid>1</bValid>
+				</DiploVote>
+			</DiploVotes>
+		</VoteInfo>
+		<VoteInfo>
+			<Type>VOTE_EXCOMMUNICATION</Type>
+			<Description>TXT_KEY_VOTE_EXCOMMUNICATION</Description>
+			<iPopulationThreshold>62</iPopulationThreshold>
+			<bCityVoting>0</bCityVoting>
+			<bCivVoting>0</bCivVoting>
+			<iMinVoters>3</iMinVoters>
+			<iStateReligionVotePercent>100</iStateReligionVotePercent>
+			<iTradeRoutes>0</iTradeRoutes>
+			<bSecretaryGeneral>0</bSecretaryGeneral>
+			<bVictory>0</bVictory>
+			<bFreeTrade>0</bFreeTrade>
+			<bNoNukes>0</bNoNukes>
+			<bDefensivePact>0</bDefensivePact>
+			<bOpenBorders>0</bOpenBorders>
+			<bForcePeace>0</bForcePeace>
+			<bForceNoTrade>0</bForceNoTrade>
+			<bForceWar>0</bForceWar>
+			<bAssignCity>0</bAssignCity>
+			<bRevokeMembership>1</bRevokeMembership>
 			<ForceCivics/>
 			<DiploVotes>
 				<DiploVote>

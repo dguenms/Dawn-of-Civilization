@@ -4459,6 +4459,8 @@ bool CvGame::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionSub
 
 bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelectionSubData& kData) const
 {
+	GC.getGame().logMsg("isValidVoteSelection: %d", (int)kData.eVote);
+
 	if (NO_PLAYER != kData.ePlayer)
 	{
 		CvPlayer& kPlayer = GET_PLAYER(kData.ePlayer);
@@ -4725,6 +4727,12 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 			return false;
 		}
 
+		// Leoreth: last city cannot be voted away
+		if (kPlayer.getNumCities() <= 1)
+		{
+			return false;
+		}
+
 		if (NO_PLAYER == kData.eOtherPlayer)
 		{
 			return false;
@@ -4751,11 +4759,8 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 			return false;
 		}
 	}
-	
-	if (GC.getVoteInfo(kData.eVote).getEspionage() > 0)
+	else if (GC.getVoteInfo(kData.eVote).getEspionage() > 0)
 	{
-		return true;
-
 		if (NO_PLAYER == kData.ePlayer)
 		{
 			return false;
@@ -4772,6 +4777,85 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 		}
 
 		if (GET_TEAM(GET_PLAYER(kData.eOtherPlayer).getTeam()).isVassal(GET_PLAYER(kData.ePlayer).getTeam()))
+		{
+			return false;
+		}
+	}
+	else if (GC.getVoteInfo(kData.eVote).getGoldPercent() > 0)
+	{
+		if (NO_PLAYER == kData.ePlayer)
+		{
+			return false;
+		}
+
+		// impossible if there is a war between full members
+		for (int iTeam1 = 0; iTeam1 < MAX_CIV_TEAMS; ++iTeam1)
+		{
+			CvTeam& kTeam1 = GET_TEAM((TeamTypes)iTeam1);
+			if (kTeam1.isFullMember(eVoteSource))
+			{
+				for (int iTeam2 = iTeam1+1; iTeam2 < MAX_CIV_TEAMS; ++iTeam2)
+				{
+					CvTeam& kTeam2 = GET_TEAM((TeamTypes)iTeam2);
+					if (kTeam2.isFullMember(eVoteSource))
+					{
+						if (kTeam1.isAtWar((TeamTypes)iTeam2)) return false;
+					}
+				}
+			}
+		}
+	}
+	else if (GC.getVoteInfo(kData.eVote).isRevokeMembership())
+	{
+		if (NO_PLAYER == kData.ePlayer)
+		{
+			return false;
+		}
+
+		if (!GET_PLAYER(kData.ePlayer).isFullMember(eVoteSource))
+		{
+			return false;
+		}
+
+		if (GET_TEAM(GET_PLAYER(kData.ePlayer).getTeam()).isVassal(getSecretaryGeneral(eVoteSource)))
+		{
+			return false;
+		}
+	}
+	else if (GC.getVoteInfo(kData.eVote).isDecolonize())
+	{
+		if (NO_PLAYER == kData.ePlayer)
+		{
+			return false;
+		}
+		
+		CvCity* pCity = GET_PLAYER(kData.ePlayer).getCity(kData.iCityId);
+		FAssert(NULL != pCity);
+		if (NULL == pCity)
+		{
+			return false;
+		}
+
+		// only civs at peace can be forced to decolonize
+		CvTeam& kTeam = GET_TEAM(GET_PLAYER(kData.ePlayer).getTeam());
+		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		{
+			if (kTeam.isAtWar((TeamTypes)iI)) return false;
+		}
+	}
+	else if (GC.getVoteInfo(kData.eVote).isReleaseCivilization())
+	{
+		if (kData.ePlayer == NO_PLAYER)
+		{
+			return false;
+		}
+
+		if (kData.eOtherPlayer == NO_PLAYER)
+		{
+			return false;
+		}
+
+		if (GET_TEAM(GET_PLAYER(kData.ePlayer).getTeam()).isVassal(getSecretaryGeneral(eVoteSource)))
 		{
 			return false;
 		}
@@ -7984,7 +8068,12 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 			setVoteOutcome(kData, NO_PLAYER_VOTE);
 		}
 
-		if (kVote.getGold() > 0)
+		if (kVote.isRevokeMembership())
+		{
+			GET_PLAYER(kData.kVoteOption.ePlayer).setLoyalMember(kData.eVoteSource, false);
+		}
+
+		if (kVote.getGoldPercent() > 0)
 		{
 			int iGold;
 			int iTotalGold = 0;
@@ -7993,17 +8082,21 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 			{
 				CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
 
+				// Leoreth: unaffected by defied, but passed resolution
+				if (getPlayerVote((PlayerTypes)iI, kData.getID()) == PLAYER_VOTE_NEVER)
+					continue;
+
 				if (kLoopPlayer.isFullMember(kData.eVoteSource))
 				{
-					iGold = kVote.getGold() * kLoopPlayer.getReligionPopulation(GC.getGame().getVoteSourceReligion(kData.eVoteSource));
+					iGold = kLoopPlayer.getGold() * kVote.getGoldPercent() / 100;
 					iTotalGold += iGold;
-					kLoopPlayer.changeGold(iGold);
+					kLoopPlayer.changeGold(-iGold);
 				}
 			}
 
 			if (kData.kVoteOption.ePlayer != NULL)
 			{
-				GET_PLAYER(kData.kVoteOption.ePlayer).changeGold(iTotalGold);
+				GET_PLAYER(kData.kVoteOption.ePlayer).changeGold(iTotalGold / 2);
 			}
 
 			setVoteOutcome(kData, NO_PLAYER_VOTE);
@@ -8029,6 +8122,10 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 			{
 				CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
 
+				// Leoreth: unaffected by defied, but passed resolution
+				if (getPlayerVote((PlayerTypes)iI, kData.getID()) == PLAYER_VOTE_NEVER)
+					continue;
+
 				if (kLoopPlayer.isFullMember(kData.eVoteSource))
 				{
 					for (CvCity* pLoopCity = kLoopPlayer.firstCity(&iLoop); NULL != pLoopCity; pLoopCity = kLoopPlayer.nextCity(&iLoop))
@@ -8047,6 +8144,18 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 						}
 					}
 				}
+			}
+
+			if (kVote.isDecolonize())
+			{
+				CvCity* pCity = GET_PLAYER(kData.kVoteOption.ePlayer).getCity(kData.kVoteOption.iCityId);
+
+				pCity->liberate(false);
+			}
+
+			if (kVote.isReleaseCivilization())
+			{
+				GET_PLAYER(kData.kVoteOption.ePlayer).splitEmpire(kData.kVoteOption.eOtherPlayer);
 			}
 
 			setVoteOutcome(kData, NO_PLAYER_VOTE);
@@ -9685,19 +9794,38 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 							}
 						}
 					}
-					else if (GC.getVoteInfo(kData.eVote).getGold() > 0)
+					else if (GC.getVoteInfo(kData.eVote).isRevokeMembership())
+					{
+						for (int iTeam1 = 0; iTeam1 < MAX_CIV_TEAMS; ++iTeam1)
+						{
+							CvTeam& kTeam1 = GET_TEAM((TeamTypes)iTeam1);
+
+							if (kTeam1.isAlive())
+							{
+								kData.ePlayer = kTeam1.getLeaderID();
+
+								if (isValidVoteSelection(eVoteSource, kData))
+								{
+									//kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_FORCE_WAR", kTeam1.getName().GetCString(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+									kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_EXCOMMUNICATION", GET_PLAYER((PlayerTypes)iTeam1).getCivilizationDescriptionKey(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+									pData->aVoteOptions.push_back(kData);
+								}
+							}
+						}
+					}
+					else if (GC.getVoteInfo(kData.eVote).getGoldPercent() > 0)
 					{
 						kData.ePlayer = GET_TEAM(GC.getGame().getSecretaryGeneral(eVoteSource)).getLeaderID();
 
 						if (isValidVoteSelection(eVoteSource, kData))
 						{
-							kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_SELL_INDULGENCES", getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource));
+							kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_COLLECT_TITHE", getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource));
 							pData->aVoteOptions.push_back(kData);
 						}
 					}
 					else if (GC.getVoteInfo(kData.eVote).getEspionage() > 0)
 					{
-						kData.ePlayer =GET_TEAM(GC.getGame().getSecretaryGeneral(eVoteSource)).getLeaderID();
+						kData.ePlayer = GET_TEAM(GC.getGame().getSecretaryGeneral(eVoteSource)).getLeaderID();
 
 						for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 						{
@@ -9719,6 +9847,87 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 								if (isValidVoteSelection(eVoteSource, kData))
 								{
 									kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_INQUISITION", kLoopPlayer.getCivilizationShortDescription(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource));
+									pData->aVoteOptions.push_back(kData);
+								}
+							}
+						}
+					}
+					else if (GC.getVoteInfo(kData.eVote).isDecolonize())
+					{
+						for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+						{
+							PlayerTypes ePlayer = (PlayerTypes)iI;
+							CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+
+							if (kPlayer.getTeam() == getSecretaryGeneral(eVoteSource)) continue;
+							if (!kPlayer.isAlive()) continue;
+							if (kPlayer.countColonies() == 0) continue;
+
+							int iBestID = -1;
+							int iBestValue = MAX_INT;
+							int iCurrentValue;
+
+							int iLoop;
+							for (CvCity* pLoopCity = kPlayer.firstCity(&iLoop); NULL != pLoopCity; pLoopCity = kPlayer.nextCity(&iLoop))
+							{
+								if (pLoopCity->plot()->isCore(ePlayer)) continue;
+								if (GC.getMap().getArea(pLoopCity->plot()->getArea())->getClosestAreaSize(30) == GC.getMap().getArea(kPlayer.getCapitalCity()->plot()->getArea())->getClosestAreaSize(30)) continue;
+
+								if (NO_PLAYER == pLoopCity->getLiberationPlayer(false))
+								{
+									iCurrentValue = pLoopCity->plot()->getSettlerMapValue(ePlayer);
+									if (iBestID == -1 || iCurrentValue < iBestValue)
+									{
+										iBestID = pLoopCity->getID();
+										iBestValue = iCurrentValue;
+									}
+								}
+							}
+
+							if (iBestID != -1)
+							{
+								kData.ePlayer = ePlayer;
+								kData.iCityId = iBestID;
+								kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_DECOLONIZE", kPlayer.getCity(iBestID)->getNameKey(), kPlayer.getCivilizationShortDescription(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+								pData->aVoteOptions.push_back(kData);
+							}
+						}
+					}
+					else if (GC.getVoteInfo(kData.eVote).isReleaseCivilization())
+					{
+						PlayerTypes ePlayer;
+						PlayerTypes eOtherPlayer;
+
+						for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+						{
+							ePlayer = (PlayerTypes)iI;
+
+							if (GET_PLAYER(ePlayer).getTeam() == getSecretaryGeneral(eVoteSource)) continue;
+							if (!GET_PLAYER(ePlayer).isAlive()) continue;
+
+							for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+							{
+								eOtherPlayer = (PlayerTypes)iJ;
+
+								if (GET_PLAYER(eOtherPlayer).isAlive()) continue;
+								if (getGameTurnYear() < startingTurnYear[iJ] || getGameTurnYear() > lastResurrectionYear[iJ]) continue;
+
+								int iCityLoop;
+								int iNumCities = 0;
+
+								for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
+								{
+									if (pLoopCity->plot()->isCore(eOtherPlayer) && !pLoopCity->plot()->isCore(ePlayer) && !pLoopCity->isCapital())
+									{
+										++iNumCities;
+									}
+								}
+
+								if (iNumCities > 1)
+								{
+									kData.ePlayer = ePlayer;
+									kData.eOtherPlayer = eOtherPlayer;
+									kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_RELEASE", GET_PLAYER(eOtherPlayer).getCivilizationShortDescription(), GET_PLAYER(ePlayer).getCivilizationAdjective(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
 									pData->aVoteOptions.push_back(kData);
 								}
 							}
@@ -9935,8 +10144,8 @@ void CvGame::doVoteResults()
 					{
 						if (getPlayerVote((PlayerTypes)iJ, pVoteTriggered->getID()) == PLAYER_VOTE_NEVER)
 						{
-							// Leoreth: AP resolutions still pass if defied
-							if (getVoteSourceReligion(eVoteSource) == NO_RELIGION)
+							// Leoreth: AP resolutions still pass if defied - espionage is the only exception
+							if (getVoteSourceReligion(eVoteSource) == NO_RELIGION || GC.getVoteInfo(eVote).getEspionage() > 0)
 								bPassed = false;
 
 							GET_PLAYER((PlayerTypes)iJ).setDefiedResolution(eVoteSource, pVoteTriggered->kVoteOption);

@@ -1840,7 +1840,7 @@ class DynamicCivs:
 			# Siam as default
 			
 		elif iPlayer == iGermany:
-			if bEmpire:
+			if bEmpire and iEra > con.iRenaissance:
 				if utils.getMaster(iHolyRome) == iGermany:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GERMANY_GREATER_EMPIRE")
 					return

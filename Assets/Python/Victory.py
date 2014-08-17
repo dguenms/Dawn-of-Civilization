@@ -4203,6 +4203,8 @@ class Victory:
 		iTotal = 0
 		for iCiv in range(con.iNumPlayers):
 			iTotal += gc.getPlayer(iCiv).getVotes(14, 1)
+			
+		if iTotal == 0: return iTotal
 
 		fPercent = gc.getPlayer(iPlayer).getVotes(14, 1) * 100.0 / iTotal
 

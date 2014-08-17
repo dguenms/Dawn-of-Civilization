@@ -2879,7 +2879,6 @@ void CvTeamAI::AI_updateWorstEnemy()
 						// independents don't have a borders modifier
 						if (getID() >= NUM_MAJOR_PLAYERS) iBorders = 1;
 
-						if (iBorders == 0) GC.getGame().logMsg("Division by zero: %d and %d", (int)getID(), iI);
 						int iValue = AI_getAttitudeVal(eLoopTeam) * 100 / ((iBorders == 0) || GC.getGame().isNeighbors((PlayerTypes)getID(), (PlayerTypes)eLoopTeam) ? 1 : iBorders);
 						if (iValue < iBestValue)
 						{

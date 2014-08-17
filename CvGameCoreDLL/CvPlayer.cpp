@@ -12707,6 +12707,8 @@ ReligionTypes CvPlayer::getLastStateReligion() const
 
 ReligionTypes CvPlayer::getStateReligion() const
 {
+	//if (isMinorCiv()) return NO_RELIGION;
+
 	return ((isStateReligion()) ? getLastStateReligion() : NO_RELIGION);
 }
 
@@ -23062,7 +23064,8 @@ int CvPlayer::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 		}
 		else
 		{
-			iVotes = (int)std::sqrt((double)getTotalPopulation());
+			//iVotes = (int)std::sqrt((double)getTotalPopulation());
+			iVotes = (int)std::sqrt((double)getReligionPopulation(eReligion));
 		}
 	}
 	else
@@ -23122,8 +23125,9 @@ bool CvPlayer::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionS
 {
 	CvTeam& kOurTeam = GET_TEAM(getTeam());
 
-	GC.getGame().logMsg("canDoResolution: %d", getID());
+	GC.getGame().logMsg("canDoResolution: %d (player %d)", (int)kData.eVote, getID());
 
+	// No contact to target civ necessary
 	/*if (NO_PLAYER != kData.ePlayer)
 	{
 		if (!kOurTeam.isHasMet(GET_PLAYER(kData.ePlayer).getTeam()))
@@ -25474,8 +25478,7 @@ bool CvPlayer::canEnslave() const
 
 bool CvPlayer::hasCivic(CivicTypes eCivic) const
 {
-	int iCivic = (int)eCivic;
-	return (getCivics((CivicOptionTypes)(iCivic % 6)) == eCivic);
+	return (getCivics((CivicOptionTypes)GC.getCivicInfo(eCivic).getCivicOptionType()) == eCivic);
 }
 
 TeamTypes CvPlayer::getWorstEnemy() const

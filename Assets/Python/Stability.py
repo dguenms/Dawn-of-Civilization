@@ -69,7 +69,8 @@ def onCityAcquired(city, iOwner, iPlayer):
 		
 	# update conquered cities in a war
 	if iPlayer < con.iNumPlayers and iOwner < con.iNumPlayers and gc.getTeam(iPlayer).isAtWar(iOwner):
-		sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
+		warStatus = sd.getWarStatus(iPlayer, iOwner)
+		if warStatus: warStatus.changeConqueredCities(1)
 	
 def onCityRazed(iPlayer, city):
 	iOwner = city.getOwner()
