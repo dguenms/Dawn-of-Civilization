@@ -997,6 +997,7 @@ public:
 	void doPlotCultureTimes100(bool bUpdate, PlayerTypes ePlayer, int iCultureRateTimes100, bool bCityCulture);
 	int getGameTurnPlayerLost(PlayerTypes ePlayer);
 	void setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue);
+	bool isColony() const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

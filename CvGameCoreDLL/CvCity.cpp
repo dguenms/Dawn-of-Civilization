@@ -17201,3 +17201,9 @@ void CvCity::setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue)
 {
 	m_aiGameTurnPlayerLost[ePlayer] = iNewValue;
 }
+
+// Leoreth
+bool CvCity::isColony() const
+{
+	return (GC.getMap().getArea(getArea())->getClosestAreaSize(30) != GC.getMap().getArea(GET_PLAYER(getOwner()).getCapitalCity()->getArea())->getClosestAreaSize(30))
+}

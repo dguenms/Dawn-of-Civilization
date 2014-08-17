@@ -509,6 +509,7 @@ class RiseAndFall:
                         for x in range(tTopLeft[0], tBottomRight[0]+1):
                                 for y in range(tTopLeft[1], tBottomRight[1]+1):
                                         betrayalPlot = gc.getMap().plot(x,y)
+					if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iNewCivFlip): continue
                                         iNumUnitsInAPlot = betrayalPlot.getNumUnits()
                                         if (iNumUnitsInAPlot):                                                                  
                                                 for i in range(iNumUnitsInAPlot):                                                
@@ -1743,7 +1744,7 @@ class RiseAndFall:
 				sta.completeCollapse(iSeljuks)
 				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
                 
-                lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina]
+                lConditionalCivs = [iByzantium, iThailand, iBrazil, iArgentina]
 		
 		# Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -2988,6 +2989,7 @@ class RiseAndFall:
                         for y in range(tTopLeft[1], tBottomRight[1]+1):
 				if (x, y) not in lExceptions:
 					killPlot = gc.getMap().plot(x,y)
+					if killPlot.isCore(iOldOwner) and not killPlot.isCore(iNewOwner): continue
 					iNumUnitsInAPlot = killPlot.getNumUnits()
 					if (iNumUnitsInAPlot):                                                                  
 						for i in range(iNumUnitsInAPlot):                                                

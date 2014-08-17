@@ -1164,6 +1164,7 @@ public:
 	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange);
 
 	int countColonies() const;
+	int countSlaveCities() const;
 
 	int getStabilityParameter(ParameterTypes eParameter) const;
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);

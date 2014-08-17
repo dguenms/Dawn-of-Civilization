@@ -5913,7 +5913,7 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 		return false;
 	}
 
-	//Leoreth: no slavery in the motherland, needs forced labor
+	//Leoreth: no slavery in the motherland or with egalitarianism
 	if (getUnitType() == GC.getInfoTypeForString("UNIT_SLAVE"))
 	{
 		if (GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)1) == CIVIC_EGALITARIANISM)
