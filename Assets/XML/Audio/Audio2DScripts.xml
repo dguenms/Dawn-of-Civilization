@@ -21655,8 +21655,8 @@
 		<ScriptID>AS2D_DIPLO_MARIA_II</ScriptID>
 		<SoundID>DIPLO_MARIA_II</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -21793,8 +21793,8 @@
 		<ScriptID>AS2D_DIPLO_BASIL</ScriptID>
 		<SoundID>DIPLO_BASIL</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -21839,8 +21839,8 @@
 		<ScriptID>AS2D_DIPLO_LOBSANG</ScriptID>
 		<SoundID>DIPLO_LOBSANG</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -21885,8 +21885,8 @@
 		<ScriptID>AS2D_DIPLO_SOBIESKI</ScriptID>
 		<SoundID>DIPLO_SOBIESKI</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -21908,8 +21908,8 @@
 		<ScriptID>AS2D_DIPLO_TANG_TAIZONG</ScriptID>
 		<SoundID>DIPLO_TANG_TAIZONG</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -21931,8 +21931,8 @@
 		<ScriptID>AS2D_DIPLO_HONGWU</ScriptID>
 		<SoundID>DIPLO_HONGWU</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -21954,8 +21954,8 @@
 		<ScriptID>AS2D_DIPLO_BAIBARS</ScriptID>
 		<SoundID>DIPLO_BAIBARS</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -22690,8 +22690,8 @@
 		<ScriptID>AS2D_DIPLO_SAN_MARTIN_INTRO</ScriptID>
 		<SoundID>DIPLO_SAN_MARTIN_INTRO</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -22713,8 +22713,8 @@
 		<ScriptID>AS2D_DIPLO_SAN_MARTIN</ScriptID>
 		<SoundID>DIPLO_SAN_MARTIN</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -22736,8 +22736,8 @@
 		<ScriptID>AS2D_DIPLO_PERON_INTRO</ScriptID>
 		<SoundID>DIPLO_PERON_INTRO</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -22759,8 +22759,8 @@
 		<ScriptID>AS2D_DIPLO_PERON</ScriptID>
 		<SoundID>DIPLO_PERON</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -22782,8 +22782,8 @@
 		<ScriptID>AS2D_DIPLO_SANTA_ANNA</ScriptID>
 		<SoundID>DIPLO_SANTA_ANNA</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -22805,8 +22805,8 @@
 		<ScriptID>AS2D_DIPLO_JUAREZ</ScriptID>
 		<SoundID>DIPLO_JUAREZ</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -22828,8 +22828,8 @@
 		<ScriptID>AS2D_DIPLO_CARDENAS</ScriptID>
 		<SoundID>DIPLO_CARDENAS</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>
@@ -22851,8 +22851,8 @@
 		<ScriptID>AS2D_DIPLO_BOLIVAR</ScriptID>
 		<SoundID>DIPLO_BOLIVAR</SoundID>
 		<SoundType>GAME_MUSIC</SoundType>
-		<iMinVolume>100</iMinVolume>
-		<iMaxVolume>100</iMaxVolume>
+		<iMinVolume>75</iMinVolume>
+		<iMaxVolume>75</iMaxVolume>
 		<iPitchChangeDown>0</iPitchChangeDown>
 		<iPitchChangeUp>0</iPitchChangeUp>
 		<iMinLeftPan>-1</iMinLeftPan>

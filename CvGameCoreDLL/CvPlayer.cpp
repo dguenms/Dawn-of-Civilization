@@ -25397,7 +25397,6 @@ int CvPlayer::calculateForeignReligionWeight()
 // Relic trade based on Afforess' Advanced Diplomacy
 DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 {
-
 	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAtWar(getTeam()))
 	{
 		return NO_DENIAL;
@@ -25426,6 +25425,12 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 
 	// don't buy when running Egalitarianism
 	if (getCivics((CivicOptionTypes)2) == CIVIC_EGALITARIANISM)
+	{
+		return DENIAL_NO_GAIN;
+	}
+
+	// needs at least one city to put them
+	if (countSlaveCities() == 0)
 	{
 		return DENIAL_NO_GAIN;
 	}
@@ -25533,6 +25538,26 @@ int CvPlayer::countColonies() const
 	}
 
 	return iNumColonies;
+}
+
+int CvPlayer::countSlaveCities() const
+{
+	if (isMinorCiv() || getNumCities() == 0) return 0;
+	
+	int iNumSlaveCities = 0;
+
+	int iLoop, rid;
+	CvCity* pLoopCity;
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		rid = pLoopCity->getRegionID();
+		if (rid != REGION_BRITAIN && rid != REGION_IBERIA && rid != REGION_MAGHREB && rid != REGION_ITALY && rid != REGION_EUROPE && rid != REGION_RUSSIA && rid != REGION_SCANDINAVIA && rid != REGION_BALKANS && rid != REGION_ANATOLIA)
+		{
+			iNumSlaveCities++;
+		}
+	}
+
+	return iNumSlaveCities;
 }
 
 // BUG - Reminder Mod - start
