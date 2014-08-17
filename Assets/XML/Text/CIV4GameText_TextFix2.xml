@@ -1387,5 +1387,17 @@
 		<Tag>TXT_KEY_VOTE_EXCOMMUNICATION</Tag>
 		<English>Excommunication</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VOTE_FORCE_WAR</Tag>
+		<English>Crusade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VOTE_UN_DECOLONIZE</Tag>
+		<English>Decolonization</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VOTE_UN_RELEASE_CIVILIZATION</Tag>
+		<English>Release Civilization</English>
+	</TEXT>
 
 </Civ4GameText>

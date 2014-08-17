@@ -16326,6 +16326,12 @@ m_iPopulationThreshold(0),
 m_iStateReligionVotePercent(0),
 m_iTradeRoutes(0),
 m_iMinVoters(0),
+m_iGoldPercent(0),
+m_iEspionage(0),
+m_iHappiness(0),
+m_bRevokeMembership(false),
+m_bDecolonize(false),
+m_bReleaseCivilization(false),
 m_bSecretaryGeneral(false),
 m_bVictory(false),
 m_bFreeTrade(false),
@@ -16377,9 +16383,9 @@ int CvVoteInfo::getMinVoters() const
 }
 
 // Leoreth
-int CvVoteInfo::getGold() const
+int CvVoteInfo::getGoldPercent() const
 {
-	return m_iGold;
+	return m_iGoldPercent;
 }
 
 int CvVoteInfo::getEspionage() const
@@ -16390,6 +16396,21 @@ int CvVoteInfo::getEspionage() const
 int CvVoteInfo::getHappiness() const
 {
 	return m_iHappiness;
+}
+
+bool CvVoteInfo::isRevokeMembership() const
+{
+	return m_bRevokeMembership;
+}
+
+bool CvVoteInfo::isDecolonize() const
+{
+	return m_bDecolonize;
+}
+
+bool CvVoteInfo::isReleaseCivilization() const
+{
+	return m_bReleaseCivilization;
 }
 
 bool CvVoteInfo::isSecretaryGeneral() const
@@ -16479,9 +16500,12 @@ bool CvVoteInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iMinVoters, "iMinVoters");
 
 	// Leoreth
-	pXML->GetChildXmlValByName(&m_iGold, "iGold");
+	pXML->GetChildXmlValByName(&m_iGoldPercent, "iGoldPercent");
 	pXML->GetChildXmlValByName(&m_iEspionage, "iEspionage");
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
+	pXML->GetChildXmlValByName(&m_bRevokeMembership, "bRevokeMembership");
+	pXML->GetChildXmlValByName(&m_bDecolonize, "bDecolonize");
+	pXML->GetChildXmlValByName(&m_bReleaseCivilization, "bRelease");
 
 	pXML->GetChildXmlValByName(&m_bSecretaryGeneral, "bSecretaryGeneral");
 	pXML->GetChildXmlValByName(&m_bVictory, "bVictory");

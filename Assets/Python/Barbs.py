@@ -65,7 +65,7 @@ tMinorCities = (
 (830, (59, 54), iIndependent, 'Hamburg', 2, con.iCrossbowman, 1),	# Hamburg
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, con.iCrossbowman, 1),	# Lübeck
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
-(880, (65, 48), iIndependent2, 'Buda', 3, con.iHorseArcher, 3),		# Budapest
+(880, (65, 48), iIndependent2, 'Buda', 3, con.iHorseArcher, 5),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, con.iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, con.iArcher, 2),		# Chan Chan
 (900, (69, 52), iIndependent, 'Kyiv', 2, con.iLongbowman, 2),		# Kiev

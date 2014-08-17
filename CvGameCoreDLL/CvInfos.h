@@ -3949,9 +3949,12 @@ public:
 	int getMinVoters() const;					// Exposed to Python
 
 	// Leoreth
-	int getGold() const;
+	int getGoldPercent() const;
 	int getEspionage() const;
 	int getHappiness() const;
+	bool isRevokeMembership() const;
+	bool isDecolonize() const;
+	bool isReleaseCivilization() const;
 
 	bool isSecretaryGeneral() const;		// Exposed to Python
 	bool isVictory() const;							// Exposed to Python
@@ -3981,9 +3984,12 @@ protected:
 	int m_iMinVoters;
 
 	// Leoreth
-	int m_iGold;
+	int m_iGoldPercent;
 	int m_iEspionage;
 	int m_iHappiness;
+	bool m_bRevokeMembership;
+	bool m_bDecolonize;
+	bool m_bReleaseCivilization;
 
 	bool m_bSecretaryGeneral;
 	bool m_bVictory;

@@ -6136,8 +6136,6 @@ void CvPlayerAI::AI_chooseResearch()
 	TechTypes eBestTech;
 	int iI;
 
-	GC.getGameINLINE().logMsg("begin chooseResearch()");
-
 	clearResearchQueue();
 
 	if (getCurrentResearch() == NO_TECH)
@@ -6160,8 +6158,6 @@ void CvPlayerAI::AI_chooseResearch()
 		}
 	}
 
-	GC.getGameINLINE().logMsg("Done with player iteration");
-
 	if (getCurrentResearch() == NO_TECH)
 	{
 		//Rhye - start
@@ -6182,19 +6178,13 @@ void CvPlayerAI::AI_chooseResearch()
 			int iAIResearchDepth;
 			iAIResearchDepth = AI_isDoStrategy(AI_STRATEGY_CULTURE3) ? 1 : 3;
 
-			GC.getGameINLINE().logMsg("Done with isDoStrategy()");
-
 			eBestTech = AI_bestTech((isHuman()) ? 1 : iAIResearchDepth);
 		}
-
-		GC.getGameINLINE().logMsg("Done with bestTech()");
 
 		if (eBestTech != NO_TECH)
 		{
 			pushResearch(eBestTech);
 		}
-
-		GC.getGameINLINE().logMsg("Research pushed");
 	}
 }
 
@@ -7521,9 +7511,36 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 					}
 				}
 			}
-			else if (GC.getVoteInfo(kVoteData.eVote).getGold() > 0)
+			else if (GC.getVoteInfo(kVoteData.eVote).isRevokeMembership())
+			{	
+				FAssert(kVoteData.ePlayer != NO_PLAYER);
+				TeamTypes eWarTeam = GET_PLAYER(kVoteData.ePlayer).getTeam();
+
+				if (eSecretaryGeneral == getTeam() && !bPropose)
+				{
+					bValid = true;
+				}
+				else if (eWarTeam == getTeam())
+				{
+					bValid = false;
+				}
+				else if (GET_TEAM(eWarTeam).isAtWar(getTeam()))
+				{
+					bValid = true;
+				}
+				else
+				{
+					bValid = (bPropose || NO_DENIAL == AI_stopTradingTrade(eWarTeam, GET_TEAM(eSecretaryGeneral).getLeaderID()));
+					if (bValid)
+					{
+						bValid = (GET_TEAM(getTeam()).AI_getAttitude(eWarTeam) < ATTITUDE_ANNOYED);
+					}
+				}
+			}
+			else if (GC.getVoteInfo(kVoteData.eVote).getGoldPercent() > 0)
 			{
 				bValid = false;
+
 				if (kVoteData.ePlayer != NO_PLAYER)
 				{
 					if (kVoteData.ePlayer == getID())
@@ -7532,19 +7549,37 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 					}
 					else
 					{
-						if ((AI_getAttitude(kVoteData.ePlayer) == ATTITUDE_FURIOUS) || (getCapitalCity()->getDefyResolutionPercentAnger(0) > -GC.getVoteInfo(kVoteData.eVote).getHappiness()))
+						if (AI_getAttitude(kVoteData.ePlayer) == ATTITUDE_FURIOUS || getWorstEnemy() == GET_PLAYER(kVoteData.ePlayer).getTeam())
+						{
+							bValid = false;
+							bDefy = true;
+						}
+						else if (AI_isFinancialTrouble())
+						{
+							bValid = false;
+							bDefy = true;
+						}
+						else if (getGold() * GC.getVoteInfo(kVoteData.eVote).getGoldPercent() / 100 < calculateTotalCommerce() / 2)
+						{
+							bValid = true;
+						}
+						else if (getGold() * GC.getVoteInfo(kVoteData.eVote).getGoldPercent() / 100 > 2 * calculateTotalCommerce())
 						{
 							bValid = false;
 							bDefy = true;
 						}
 						else
 						{
-							bValid = (2 * getReligionPopulation(GC.getGame().getVoteSourceReligion(eVoteSource)) >= getTotalPopulation());
+							bValid = false;
+							if (GC.getGame().getSorenRandNum(3, "AI Erratic Defiance (Collect Tithe)") == 0)
+							{
+								bDefy = true;
+							}
 						}
 					}
 				}
 			}
-			else if (GC.getVoteInfo(kVoteData.eVote).getEspionage())
+			else if (GC.getVoteInfo(kVoteData.eVote).getEspionage() > 0)
 			{
 				bValid = false;
 				if (kVoteData.ePlayer != NO_PLAYER && kVoteData.eOtherPlayer != NO_PLAYER)
@@ -7556,15 +7591,51 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 					else if (kVoteData.eOtherPlayer == getID())
 					{
 						bValid = false;
-						if (GC.getGame().getSorenRandNum(3, "AI Erratic Defiance (Assign City)") == 0)
+						if (GC.getGame().getSorenRandNum(2, "AI Erratic Defiance (Inquisition)") == 0)
 						{
 							bDefy = true;
 						}
 					}
 					else
 					{
-						bValid = (AI_getAttitude(kVoteData.ePlayer) >= AI_getAttitude(kVoteData.eOtherPlayer));
+						bValid = (AI_getAttitude(kVoteData.ePlayer) > AI_getAttitude(kVoteData.eOtherPlayer));
 					}
+				}
+			}
+			else if (GC.getVoteInfo(kVoteData.eVote).isDecolonize())
+			{
+				if (kVoteData.ePlayer == getID())
+				{
+					bValid = false;
+					if (GC.getGame().getSorenRandNum(2, "AI Erratic Defiance (Decolonization)") == 0)
+					{
+						bDefy = true;
+					}
+				}
+				// colonial civs tend to vote no
+				else if (countColonies() * 3 >= getNumCities())
+				{
+					bValid = false;
+				}
+				else
+				{
+					bValid = (AI_getAttitude(kVoteData.ePlayer) >= ATTITUDE_PLEASED);
+				}
+			}
+			else if (GC.getVoteInfo(kVoteData.eVote).isReleaseCivilization())
+			{
+				if (kVoteData.ePlayer == getID())
+				{
+					bValid = false;
+					bDefy = true;
+				}
+				else if (kVoteData.ePlayer == getWorstEnemy() || GET_TEAM(GET_PLAYER(kVoteData.ePlayer).getTeam()).isAtWar(getTeam()))
+				{
+					bValid = true;
+				}
+				else
+				{
+					bValid = (AI_getAttitude(kVoteData.ePlayer) < ATTITUDE_ANNOYED);
 				}
 			}
 		}
@@ -11545,7 +11616,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iTempValue = 0;
 	if (kCivic.getPollutionModifier() != 0)
 	{
-		GC.getGameINLINE().logMsg("Begin AI pollution modifier.");
 		int iHealthDifference;
 		int iLoop;
 		CvCity* pLoopCity;
@@ -11555,7 +11625,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue += (6 * AI_getHealthWeight(isCivic(eCivic) ? -iHealthDifference : iHealthDifference, 1));
 		}
 		iValue = iTempValue / 100;
-		GC.getGameINLINE().logMsg("End AI pollution modifier.");
 	}
 
 	iTempValue = kCivic.getHappyPerMilitaryUnit() * 3;
@@ -13189,15 +13258,10 @@ void CvPlayerAI::AI_doResearch()
 {
 	FAssertMsg(!isHuman(), "isHuman did not return false as expected");
 
-	GC.getGameINLINE().logMsg("Entered AI_doResearch()");
-
 	if (getCurrentResearch() == NO_TECH)
 	{
-		GC.getGameINLINE().logMsg("Passed getCurrentResearch()");
 		AI_chooseResearch();
-		GC.getGameINLINE().logMsg("Done with chooseResearch()");
 		AI_forceUpdateStrategies(); //to account for current research.
-		GC.getGameINLINE().logMsg("Done with forceUpdateStrategies()");
 	}
 }
 
@@ -15974,6 +16038,8 @@ EventTypes CvPlayerAI::AI_chooseEvent(int iTriggeredId) const
 void CvPlayerAI::AI_doSplit()
 {
 	PROFILE_FUNC();
+
+	return; // Leoreth: let stability handle it
 
 	if (!canSplitEmpire())
 	{

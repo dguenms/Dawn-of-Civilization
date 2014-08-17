@@ -111,6 +111,7 @@
 	</ElementType>
 	<ElementType name="iPopulationThreshold" content="textOnly" dt:type="int"/>
 	<ElementType name="iEspionage" content="textOnly" dt:type="int"/>
+	<ElementType name="iGoldPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="bCityVoting" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bCivVoting" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iMinVoters" content="textOnly" dt:type="int"/>
@@ -126,6 +127,9 @@
 	<ElementType name="bForceNoTrade" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bForceWar" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bAssignCity" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bRevokeMembership" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bDecolonize" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bRelease" content="textOnly" dt:type="boolean"/>
 	<ElementType name="CivicType" content="textOnly"/>
 	<ElementType name="bForce" content="textOnly" dt:type="boolean"/>
 	<ElementType name="ForceCivic" content="eltOnly">
@@ -162,7 +166,10 @@
 		<element type="bForceNoTrade"/>
 		<element type="bForceWar"/>
 		<element type="bAssignCity"/>
-		<element type="iGold" minOccurs="0"/>
+		<element type="bRevokeMembership" minOccurs="0"/>
+		<element type="bDecolonize" minOccurs="0"/>
+		<element type="bRelease" minOccurs="0"/>
+		<element type="iGoldPercent" minOccurs="0"/>
 		<element type="iEspionage" minOccurs="0"/>
 		<element type="iHappiness" minOccurs="0"/>
 		<element type="ForceCivics"/>

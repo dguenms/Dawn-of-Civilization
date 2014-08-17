@@ -56,7 +56,7 @@
 # new Mongol UP: Approaching armies can send enemy cities into unrest
 # Mongol Keshiks changed to: Knight with 3 moves, strength 11, causes collateral damage
 # added an option to release cities to dead civilizations to resurrect them
-# added the BUG mode to improve the interface
+# added the BUG mod to improve the interface
 # Observatories now require Scientific Method
 # Japanese Kaizen Plants now give a free engineer and an additional scientist slot
 # added Mughal great people names (credit: Royal Tenenbaum)
@@ -247,3 +247,15 @@
 # the Mongols are now immune to stability penalties from city razing
 # removed peak in Armenia and moved Lake Van 1W to its position
 # the core of a civilization cannot flip to a spawning civilization, unless it is also part of the spawning civilization's core
+# rewritten United Nations and Apostolic Palace
+	# votes are now proportional to the square root of (state religion) population
+	# to win a diplomatic victory, your own votes and that of your vassals don't count, you need a majority among all other civilizations
+	# only civilizations with Catholic state religion are members of the AP and allowed to vote
+	# resolutions that affect all members don't fail if one member defies it (instead the defying member is not affected)
+	# renamed "declare war" resolution to Crusade, valid targets are non-members who are at war with a member (defensive crusade) and non-members who control the Catholic holy city or shrine (offensive crusade)
+	# added a "collect tithe" resolution to the AP: all members pay 10% of their treasury of which the Pope receives half
+	# added a "send inquisition to X" resolution to the AP: the Pope receives additional espionage against the target civ
+	# added an "excommunicate X" resolution to the AP: the target player loses membership and receives unhappiness as if he had defied a resolution
+	# only the four civilizations with the highest military power are allowed to defy UN resolutions (Security Council)
+	# added a "decolonized city" resolution to the UN: cities on other continents can be forced to be liberated to independents
+	# added a "release civilization" resolution to the UN: if a dead civilization can be resurrected, a controlling player can be forced to release it

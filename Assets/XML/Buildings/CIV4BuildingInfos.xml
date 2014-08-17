@@ -424,7 +424,7 @@
 			<DiploVoteType>NONE</DiploVoteType>
 			<bForceTeamVoteEligible>0</bForceTeamVoteEligible>
 			<bCapital>0</bCapital>
-			<bGovernmentCenter>1</bGovernmentCenter>
+			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
 			<bMapCentering>0</bMapCentering>

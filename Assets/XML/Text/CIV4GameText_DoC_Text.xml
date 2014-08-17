@@ -655,4 +655,19 @@
 		<English>Excommunicate %s1 (Requires %d2 of %d3 Total Votes)</English>
 		<German>%s1 exkommunizieren (Benötigt %d2 von insgesamt %d3 Stimmen)</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_ELECTION_FORCE_WAR</Tag>
+		<English>Crusade against %s1_player (Requires %d2_ReqNum of %d3_TotNum Total Votes)</English>
+		<German>Kreuzzug gegen %s1_player (Erfordert %d2_ReqNum on insgesamt %d3_TotNum Stimmen.)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_ELECTION_DECOLONIZE</Tag>
+		<English>UN Resolution - Decolonize %s1_city (%s2_player) (Requires %d3_ReqNum of %d4_TotNum Total Votes)</English>
+		<German>UN Resolution - %s1_city (%s2_player) dekolonisieren (Erfordert %d3_ReqNum on insgesamt %d4_TotNum Stimmen.)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_ELECTION_RELEASE</Tag>
+		<English>UN Resolution - Free %s1_player from %s2_civ_adjective Control (Requires %d3_ReqNum of %d4_TotNum Total Votes)</English>
+		<German>UN Resolution - %s1_player aus %s2:1_civ_adjective Kontrolle befreien (Erfordert %d3_ReqNum on insgesamt %d4_TotNum Stimmen.)</German>
+	</TEXT>
 </Civ4GameText>
