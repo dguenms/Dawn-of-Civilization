@@ -2112,7 +2112,7 @@ tRespawnCapitals = (
 
 # area flipped on respawn, if -1 normal area is used instead
 tRespawnTL = (
-(58, 31), #Egypt
+(65, 30), #Egypt
 (99, 39), #China
 -1,		# Babylonia
 -1,		# Greece
@@ -2155,7 +2155,7 @@ tRespawnTL = (
 -1)		# Brazil
 
 tRespawnBR = (
-(71, 39), 	# Egypt
+(71, 37), 	# Egypt
 (107, 47), 	# China
 -1,		# Babylonia
 -1,		# Greece

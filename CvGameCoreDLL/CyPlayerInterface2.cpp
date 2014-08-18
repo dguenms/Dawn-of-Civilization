@@ -76,7 +76,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 
 		//Leoreth
 		.def("isReborn", &CyPlayer::isReborn, "bool ()")
-		.def("getReborn", &CyPlayer::getReborn, "int ()")
+		.def("getReborn", &CyPlayer::getReborn, "int (bool bNewValue)")
 		.def("setReborn", &CyPlayer::setReborn, "void ()")
 		.def("updateTradeRoutes", &CyPlayer::updateTradeRoutes, "void ()")
 		.def("getWarMapValue", &CyPlayer::getWarMapValue, "void (int x, int y)")

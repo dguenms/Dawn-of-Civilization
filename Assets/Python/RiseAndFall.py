@@ -659,10 +659,10 @@ class RiseAndFall:
 			self.prepareColonists()
 			self.adjust1700ADCulture()
 			
-			pPersia.setReborn()
-			pSpain.setReborn()
-			pHolyRome.setReborn()
-			pTurkey.setReborn()
+			pPersia.setReborn(True)
+			pSpain.setReborn(True)
+			pHolyRome.setReborn(True)
+			pTurkey.setReborn(True)
 			
 			pChina.updateTradeRoutes()
 		
@@ -1337,7 +1337,7 @@ class RiseAndFall:
 				pCiv.setLeader(con.rebirthLeaders[iCiv])
 
 		CyInterface().addMessage(gc.getGame().getActivePlayer(), True, con.iDuration, (CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pCiv.getCivilizationAdjectiveKey(),))), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
-		pCiv.setReborn()
+		pCiv.setReborn(True)
 		
 		# Determine whether capital location is free
 		bFree = True
@@ -1823,7 +1823,7 @@ class RiseAndFall:
 						tCapital = (x-1, y+1)
 						gc.getMap().plot(x-1, y+1).setFeatureType(-1, 0)
 						
-				if not utils.isReborn(iKhmer): pKhmer.setReborn()
+				if not utils.isReborn(iKhmer): pKhmer.setReborn(True)
 
 			if iCiv == iMongolia and utils.getHumanID() != iMongolia:
 				tTopLeft = (81, 45) # 6 more west, 1 more south
@@ -5239,7 +5239,7 @@ class RiseAndFall:
 	def germanSpawn(self):
 		if sd.getStabilityLevel(iHolyRome) < con.iStabilityShaky: sd.setStabilityLevel(iHolyRome, con.iStabilityShaky)
 			
-		pHolyRome.setReborn()
+		pHolyRome.setReborn(True)
 		
 		dc.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
 		dc.setCivAdjective(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")

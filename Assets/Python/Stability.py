@@ -239,7 +239,7 @@ def checkLostCoreCollapse(iPlayer):
 	if len(lCities) == 0:
 	
 		if iPlayer in [con.iPhoenicia, con.iKhmer] and not utils.isReborn(iPlayer):
-			pPlayer.setReborn()
+			pPlayer.setReborn(True)
 			return
 	
 		utils.debugTextPopup('Collapse from lost core: ' + pPlayer.getCivilizationShortDescription(0))
@@ -640,7 +640,7 @@ def completeCollapse(iPlayer):
 		
 	# Chinese collapse: Mongolia's core moves south
 	if iPlayer == con.iChina:
-		gc.getPlayer(con.iMongolia).setReborn()
+		gc.getPlayer(con.iMongolia).setReborn(True)
 		
 	utils.debugTextPopup('Complete collapse: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
 	
@@ -2170,7 +2170,11 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	
 	# change the cores of some civs on respawn
 	if iPlayer in [con.iGreece]:
-		gc.getPlayer(iPlayer).setReborn()
+		gc.getPlayer(iPlayer).setReborn(True)
+		
+	# others revert to their old cores instead
+	if iPlayer in [con.iArabia, con.iMongolia]:
+		gc.getPlayer(iPlayer).setReborn(False)
 	
 	# resurrection leaders
 	if iPlayer in con.resurrectionLeaders:
