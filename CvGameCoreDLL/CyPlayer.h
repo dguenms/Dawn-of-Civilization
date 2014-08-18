@@ -536,7 +536,7 @@ public:
 	//Leoreth
 	bool isReborn();
 	int getReborn();
-	void setReborn();
+	void setReborn(bool bNewValue = true);
 	void updateTradeRoutes();
 	int getWarMapValue(int x, int y);
 	void AI_reset();

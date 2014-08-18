@@ -25041,30 +25041,9 @@ int CvPlayer::getReborn()
         return 0;
 }
 
-void CvPlayer::setReborn()
+void CvPlayer::setReborn(bool bNewValue)
 {
-	/*if (getID() == HOLY_ROME)
-	{
-		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_AUSTRIA_ADJECTIVE");
-		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_AUSTRIA_SHORT_DESC");
-	}
-	else if (getID() == AZTEC)
-	{
-		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_MEXICO_ADJECTIVE");
-		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_MEXICO_SHORT_DESC");
-	}
-	else if (getID() == INCA)
-	{
-		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_PERU_ADJECTIVE");
-		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_PERU_SHORT_DESC");
-	}
-	else if (getID() == CARTHAGE)
-	{
-		GC.getInitCore().setCivAdjective(getID(), "TXT_KEY_CIV_CARTHAGE_ADJECTIVE");
-		GC.getInitCore().setCivShortDesc(getID(), "TXT_KEY_CIV_CARTHAGE_SHORT_DESC");
-	}*/
-
-    m_bReborn = true;
+	m_bReborn = bNewValue;
 }
 
 int CvPlayer::getWarMapValue(int x, int y)

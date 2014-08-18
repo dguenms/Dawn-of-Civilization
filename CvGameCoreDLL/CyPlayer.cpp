@@ -2397,10 +2397,10 @@ int CyPlayer::getReborn()
     return m_pPlayer ? m_pPlayer->getReborn() : -1;
 }
 
-void CyPlayer::setReborn()
+void CyPlayer::setReborn(bool bNewValue)
 {
     if (m_pPlayer)
-        m_pPlayer->setReborn();
+        m_pPlayer->setReborn(bNewValue);
 }
 
 void CyPlayer::updateTradeRoutes()
