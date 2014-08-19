@@ -2476,6 +2476,9 @@ public:
 	int getAIAdvancedStartPercent() const;						// Exposed to Python
 	int getNumGoodies() const;				// Exposed to Python
 
+	// Leoreth
+	int getBarbarianSpawnModifier() const;
+
 	// Arrays
 
 	int getGoodies(int i) const;				// Exposed to Python
@@ -2549,6 +2552,9 @@ protected:
 	int m_iAIPerEraModifier;
 	int m_iAIAdvancedStartPercent;
 	int m_iNumGoodies;
+
+	// Leoreth
+	int m_iBarbarianSpawnModifier;
 
 	CvString m_szHandicapName;
 

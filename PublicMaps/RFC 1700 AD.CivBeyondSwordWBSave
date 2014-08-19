@@ -108,7 +108,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM                 
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HONGWU
@@ -123,35 +123,35 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_CONFUCIANISM            
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HAMMURABI
 	CivType=CIVILIZATION_BABYLONIA                 
 	Team=2                 
 	PlayableCiv=0                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_PERICLES
 	CivType=CIVILIZATION_GREECE                 
 	Team=3                 
 	PlayableCiv=0                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_ASOKA
 	CivType=CIVILIZATION_INDIA                 
 	Team=4                 
 	PlayableCiv=0                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HANNIBAL
 	CivType=CIVILIZATION_CARTHAGE                 
 	Team=5                 
 	PlayableCiv=0                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_ABBAS
@@ -165,28 +165,28 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FANATICISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_ISLAM
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_AUGUSTUS
 	CivType=CIVILIZATION_ROME                 
 	Team=7                 
 	PlayableCiv=0                
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_RAJENDRA
 	CivType=CIVILIZATION_TAMILS
 	Team=8
 	PlayableCiv=0
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_ZARA_YAQOB
 	CivType=CIVILIZATION_ETHIOPIA                 
 	Team=9                 
 	PlayableCiv=0                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_WANGKON
@@ -200,14 +200,14 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_CONFUCIANISM
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_PACAL
 	CivType=CIVILIZATION_MAYA                
 	Team=11                 
 	PlayableCiv=0                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
@@ -215,7 +215,7 @@ BeginPlayer
 	Team=12                 
 	PlayableCiv=0
 	StateReligion=RELIGION_ORTHODOXY              
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_TOKUGAWA
@@ -229,7 +229,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_BUDDHISM                  
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_GUSTAV
@@ -246,7 +246,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
 	StateReligion=RELIGION_JUDAISM
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SALADIN
@@ -254,7 +254,7 @@ BeginPlayer
 	Team=15                 
 	PlayableCiv=0      
 	StateReligion=RELIGION_ISLAM                            
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_LOBSANG_GYATSO
@@ -262,7 +262,7 @@ BeginPlayer
 	Team=16
 	PlayableCiv=0
 	StateReligion=RELIGION_BUDDHISM
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SURYAVARMAN
@@ -270,7 +270,7 @@ BeginPlayer
 	Team=17               
 	PlayableCiv=0   
 	StateReligion=RELIGION_HINDUISM                       
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HAYAM_WURUK
@@ -278,7 +278,7 @@ BeginPlayer
 	Team=18
 	PlayableCiv=0  
 	StateReligion=RELIGION_BUDDHISM                       
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_RAHMAN
@@ -286,7 +286,7 @@ BeginPlayer
 	Team=19
 	PlayableCiv=0
 	StateReligion=RELIGION_ISLAM
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FILIPE
@@ -300,7 +300,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
 	StateReligion=RELIGION_CHRISTIANITY                   
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_LOUIS_XIV
@@ -314,7 +314,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
 	StateReligion=RELIGION_CHRISTIANITY                    
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_VICTORIA
@@ -328,7 +328,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_NAVAL_DOMINANCE
 	StateReligion=RELIGION_JUDAISM                   
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FRANCIS
@@ -345,7 +345,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
 	StateReligion=RELIGION_CHRISTIANITY                  
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_PETER
@@ -359,7 +359,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_ORTHODOXY
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MANSA_MUSA
@@ -367,7 +367,7 @@ BeginPlayer
 	Team=25                 
 	PlayableCiv=0          
 	StateReligion=RELIGION_ISLAM
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SOBIESKI
@@ -381,7 +381,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_CHRISTIANITY
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JOAO
@@ -395,14 +395,14 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_NAVAL_DOMINANCE
 	StateReligion=RELIGION_CHRISTIANITY                     
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA                 
 	Team=28                
 	PlayableCiv=0           
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_CAVOUR
@@ -410,21 +410,21 @@ BeginPlayer
 	Team=29
 	PlayableCiv=0
 	StateReligion=RELIGION_CHRISTIANITY
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL                 
 	Team=30               
 	PlayableCiv=0                             
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC                 
 	Team=31               
 	PlayableCiv=0              
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_AKBAR
@@ -438,7 +438,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_ISLAM
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SULEIMAN
@@ -452,7 +452,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_ISLAM                      
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_NARESUAN
@@ -466,7 +466,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	StateReligion=RELIGION_BUDDHISM
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MBEMBA
@@ -478,7 +478,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	StateReligion=RELIGION_CHRISTIANITY
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
@@ -492,7 +492,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_NAVAL_DOMINANCE
 	StateReligion=RELIGION_JUDAISM                   
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FREDERICK
@@ -506,7 +506,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
 	StateReligion=RELIGION_JUDAISM
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_WASHINGTON
@@ -520,7 +520,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
 	StateReligion=RELIGION_JUDAISM                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SAN_MARTIN
@@ -534,7 +534,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
 	StateReligion=RELIGION_CHRISTIANITY
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_DOM_PEDRO
@@ -548,7 +548,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
 	StateReligion=RELIGION_CHRISTIANITY
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer                 
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
@@ -557,7 +557,7 @@ BeginPlayer
 	Team=41       
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer                 
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
@@ -566,7 +566,7 @@ BeginPlayer
 	Team=42
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 	StateReligion=RELIGION_CHRISTIANITY  	
 EndPlayer
 BeginPlayer                 
@@ -576,7 +576,7 @@ BeginPlayer
 	Team=43
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
@@ -585,7 +585,7 @@ BeginPlayer
 	Team=44
 	PlayableCiv=0                 
 	MinorNationStatus=1               
-	Handicap=HANDICAP_PRINCE                 
+	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_ALP
@@ -594,7 +594,7 @@ BeginPlayer
 	Team=45
 	PlayableCiv=0
 	MinorNationStatus=1
-	Handicap=HANDICAP_PRINCE
+	Handicap=HANDICAP_REGENT
 EndPlayer
 
 BeginMap

@@ -111,7 +111,7 @@ class Barbs:
         def checkTurn(self, iGameTurn):
             
                 #handicap level modifier
-                iHandicap = gc.getGame().getHandicapType()
+                iHandicap = gc.getHandicapInfo(gc.getGame().getHandicapType()).getBarbarianSpawnModifier()
 		
 		# Leoreth: buff certain cities if independent / barbarian (imported from SoI)
 		if iGameTurn % 20 == 10:

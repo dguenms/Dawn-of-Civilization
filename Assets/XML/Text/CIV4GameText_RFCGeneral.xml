@@ -39,6 +39,21 @@
 		<Spanish>¡Os han derrotado!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_HEIR</Tag>
+		<English>Heir</English>
+		<German>Erbe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_REGENT</Tag>
+		<English>Regent</English>
+		<German>Regent</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_PARAGON</Tag>
+		<English>Paragon</English>
+		<German>Paragon</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_VICEROY</Tag>
 		<English>Viceroy</English>
 		<French>

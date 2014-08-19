@@ -10375,6 +10375,7 @@ m_iUnownedTilesPerBarbarianCity(0),
 m_iBarbarianCreationTurnsElapsed(0),
 m_iBarbarianCityCreationTurnsElapsed(0),
 m_iBarbarianCityCreationProb(0),
+m_iBarbarianSpawnModifier(0), // Leoreth
 m_iAnimalCombatModifier(0),
 m_iBarbarianCombatModifier(0),
 m_iAIAnimalCombatModifier(0),
@@ -11325,6 +11326,12 @@ int CvHandicapInfo::getBarbarianCityCreationProb() const
 	return m_iBarbarianCityCreationProb;
 }
 
+// Leoreth
+int CvHandicapInfo::getBarbarianSpawnModifier() const
+{
+	return m_iBarbarianSpawnModifier;
+}
+
 int CvHandicapInfo::getAnimalCombatModifier() const
 {
 	return m_iAnimalCombatModifier;
@@ -11533,6 +11540,7 @@ void CvHandicapInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iBarbarianCreationTurnsElapsed);
 	stream->Read(&m_iBarbarianCityCreationTurnsElapsed);
 	stream->Read(&m_iBarbarianCityCreationProb);
+	stream->Read(&m_iBarbarianSpawnModifier); // Leoreth
 	stream->Read(&m_iAnimalCombatModifier);
 	stream->Read(&m_iBarbarianCombatModifier);
 	stream->Read(&m_iAIAnimalCombatModifier);
@@ -11617,6 +11625,7 @@ void CvHandicapInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iBarbarianCreationTurnsElapsed);
 	stream->Write(m_iBarbarianCityCreationTurnsElapsed);
 	stream->Write(m_iBarbarianCityCreationProb);
+	stream->Write(m_iBarbarianSpawnModifier); // Leoreth
 	stream->Write(m_iAnimalCombatModifier);
 	stream->Write(m_iBarbarianCombatModifier);
 	stream->Write(m_iAIAnimalCombatModifier);
@@ -11695,6 +11704,7 @@ bool CvHandicapInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iBarbarianCreationTurnsElapsed, "iBarbarianCreationTurnsElapsed");
 	pXML->GetChildXmlValByName(&m_iBarbarianCityCreationTurnsElapsed, "iBarbarianCityCreationTurnsElapsed");
 	pXML->GetChildXmlValByName(&m_iBarbarianCityCreationProb, "iBarbarianCityCreationProb");
+	pXML->GetChildXmlValByName(&m_iBarbarianSpawnModifier, "iBarbarianSpawnModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iAnimalCombatModifier, "iAnimalBonus");
 	pXML->GetChildXmlValByName(&m_iBarbarianCombatModifier, "iBarbarianBonus");
 	pXML->GetChildXmlValByName(&m_iAIAnimalCombatModifier, "iAIAnimalBonus");
