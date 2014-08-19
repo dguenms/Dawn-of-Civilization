@@ -165,6 +165,9 @@ void CyInfoPythonInterface2()
 		.def("getAIAdvancedStartPercent", &CvHandicapInfo::getAIAdvancedStartPercent, "int ()")
 		.def("getNumGoodies", &CvHandicapInfo::getNumGoodies, "int ()")
 
+		// Leoreth
+		.def("getBarbarianSpawnModifier", &CvHandicapInfo::getBarbarianSpawnModifier, "int ()")
+
 		// Arrays
 
 		.def("getGoodies", &CvHandicapInfo::getGoodies, "int (int i)")

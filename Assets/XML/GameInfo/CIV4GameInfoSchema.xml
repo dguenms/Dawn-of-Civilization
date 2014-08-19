@@ -348,6 +348,7 @@
 	<ElementType name="iBarbarianCreationTurnsElapsed" content="textOnly" dt:type="int"/>
 	<ElementType name="iBarbarianCityCreationTurnsElapsed" content="textOnly" dt:type="int"/>
 	<ElementType name="iBarbarianCityCreationProb" content="textOnly" dt:type="int"/>
+	<ElementType name="iBarbarianSpawnModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iAnimalBonus" content="textOnly" dt:type="int"/>
 	<ElementType name="iBarbarianBonus" content="textOnly" dt:type="int"/>
 	<ElementType name="iAIAnimalBonus" content="textOnly" dt:type="int"/>
@@ -425,6 +426,7 @@
 		<element type="iBarbarianCreationTurnsElapsed"/>
 		<element type="iBarbarianCityCreationTurnsElapsed"/>
 		<element type="iBarbarianCityCreationProb"/>
+		<element type="iBarbarianSpawnModifier" minOccurs="0"/>
 		<element type="iAnimalBonus"/>
 		<element type="iBarbarianBonus"/>
 		<element type="iAIAnimalBonus"/>
@@ -556,7 +558,7 @@
 		<element type="Strategy"/>
 		<element type="VictoryPrereq"/>
 		<element type="TechPrereq"/>
-		<element type="AnyonePrereqProject" minOccurs="0"/>
+		<element type="AnyonePrereqProject"/>
 		<element type="iMaxGlobalInstances"/>
 		<element type="iMaxTeamInstances"/>
 		<element type="iCost"/>

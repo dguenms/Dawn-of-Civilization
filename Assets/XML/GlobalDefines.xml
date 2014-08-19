@@ -68,12 +68,12 @@
 	<Define>
 		<DefineName>STANDARD_HANDICAP</DefineName>
 		<!-- Rhye -->
-		<DefineTextVal>HANDICAP_PRINCE</DefineTextVal>
+		<DefineTextVal>HANDICAP_REGENT</DefineTextVal>
 	</Define>
 	<Define>
 		<DefineName>STANDARD_HANDICAP_QUICK</DefineName>
 		<!-- Rhye -->
-		<DefineTextVal>HANDICAP_PRINCE</DefineTextVal>
+		<DefineTextVal>HANDICAP_REGENT</DefineTextVal>
 	</Define>
 	<Define>
 		<DefineName>STANDARD_GAMESPEED</DefineName>
@@ -102,12 +102,12 @@
 	<Define>
 		<DefineName>AI_HANDICAP</DefineName>
 		<!-- Rhye -->
-		<DefineTextVal>HANDICAP_PRINCE</DefineTextVal>
+		<DefineTextVal>HANDICAP_REGENT</DefineTextVal>
 	</Define>
 	<Define>
 		<DefineName>BARBARIAN_HANDICAP</DefineName>
 		<!-- Rhye -->
-		<DefineTextVal>HANDICAP_PRINCE</DefineTextVal>
+		<DefineTextVal>HANDICAP_REGENT</DefineTextVal>
 	</Define>
 	<Define>
 		<DefineName>BARBARIAN_CIVILIZATION</DefineName>
