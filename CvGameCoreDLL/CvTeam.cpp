@@ -6178,6 +6178,15 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 		}
 	}
 
+	// Leoreth: also for builds because bonus yields on city tiles have to be updated
+	for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
+	{
+		if (GC.getBuildInfo((BuildTypes)iI).getTechPrereq() == eTech)
+		{
+			updateYield();
+		}
+	}
+
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
