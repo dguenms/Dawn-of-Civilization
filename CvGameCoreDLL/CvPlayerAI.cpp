@@ -11797,7 +11797,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			if (GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction() > 0)
 			{
-				iTempValue += ((((AI_avoidScience()) ? 50 : 25) * getNumCities()) / GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction());
+				// Leoreth: down from 50 : 25
+				iTempValue += ((((AI_avoidScience()) ? 30 : 15) * getNumCities()) / GC.getHurryInfo((HurryTypes)iI).getGoldPerProduction());
 			}
 			iTempValue += (GC.getHurryInfo((HurryTypes)iI).getProductionPerPopulation() * getNumCities() * (bWarPlan ? 2 : 1)) / 5;
 			iValue += iTempValue;
