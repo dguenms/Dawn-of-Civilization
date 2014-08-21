@@ -4466,18 +4466,27 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	else
 	{
 	    // Leoreth: tile stability info text
-        long result = -1;
-        long result2 = -1;
-	    CyArgsList argsList;
-	    argsList.add(pPlot->getX());
-	    argsList.add(pPlot->getY());
-	    argsList.add(GC.getGameINLINE().getActivePlayer());
-	    gDLL->getPythonIFace()->callFunction(PYScreensModule, "isCorePlot", argsList.makeFunctionArgs(), &result);
-	    long iCore = (long)result;
+        bool bCore = pPlot->isCore(GC.getGameINLINE().getActivePlayer());
+		bool bForeignCore = false;
+
+		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		{
+			if (iI != GC.getGameINLINE().getActivePlayer())
+			{
+				if (pPlot->isCore((PlayerTypes)iI))
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isAlive() || GET_PLAYER((PlayerTypes)iI).canEverRespawn())
+					{
+						bForeignCore = true;
+						break;
+					}
+				}
+			}
+		}
 
 	    if (pPlot->getPlotType() == PLOT_LAND || pPlot->getPlotType() == PLOT_HILLS)
 	    {
-	        if (iCore == 1)
+	        if (bCore)
 	        {
 	            szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_GREEN_STABILITY_TEXT")));
 	            szString.append(gDLL->getText("TXT_KEY_STABILITY_CORE_AREA"));
@@ -4485,17 +4494,10 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	        else
 	        {
 	            int iSettlerValue = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getSettlersMaps(67-(pPlot->getY()), (pPlot->getX()));
-	            long result2 = -1;
-                CyArgsList argsList2;
-                argsList2.add(pPlot->getX());
-                argsList2.add(pPlot->getY());
-                argsList2.add(GC.getGameINLINE().getActivePlayer());
-	            gDLL->getPythonIFace()->callFunction(PYScreensModule, "isForeignCorePlot", argsList2.makeFunctionArgs(), &result2);
-                long iForeignCore = (long)result2;
-
-                if (iSettlerValue >= 90)
+	            
+				if (iSettlerValue >= 90)
                 {
-                    if (iForeignCore == 1)
+                    if (bForeignCore)
                     {
                         szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_YELLOW_TEXT")));
                         szString.append(gDLL->getText("TXT_KEY_STABILITY_CONTESTED_AREA"));
@@ -4507,7 +4509,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
                     }
                 }
                 else
-                    if (iForeignCore == 1)
+                    if (bForeignCore)
                     {
                         szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_RED_TEXT")));
                         szString.append(gDLL->getText("TXT_KEY_STABILITY_FOREIGN_CORE_AREA"));
@@ -4549,11 +4551,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		// end UHV requirement info
 
 		//Leoreth: display Great Wall, only bugfix purposes
-		if (pPlot->isWithinGreatWall())
+		/*if (pPlot->isWithinGreatWall())
 		{
 			szString.append("Great Wall");
 			szString.append(NEWLINE);
-		}
+		}*/
 
 		//Leoreth: display region, only bugfix purposes
 		/*if (!pPlot->isWater())

@@ -1169,6 +1169,9 @@ public:
 	int getStabilityParameter(ParameterTypes eParameter) const;
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);
 
+	bool canRespawn() const;
+	bool canEverRespawn() const;
+
 protected:
 
 	int m_iStartingX;

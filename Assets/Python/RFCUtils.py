@@ -1839,3 +1839,71 @@ class RFCUtils:
 		#RR = 1 - residual/meanerror
 		
 		return a, b
+		
+	def canRespawn(self, iPlayer):
+		iGameTurn = gc.getGame().getGameTurn()
+		bPossible = False
+		
+		# no respawn before spawn
+		if iGameTurn < getTurnForYear(con.tBirth[iPlayer]) + 10: return False
+		
+		# only dead civ need to check for resurrection
+		if gc.getPlayer(iPlayer).isAlive(): return False
+			
+		# check if only recently died
+		if iGameTurn - self.getLastTurnAlive(iPlayer) < self.getTurns(10): return False
+		
+		# check if the civ can be reborn at this date
+		if len(con.tResurrectionIntervals[iPlayer]) > 0:
+			for tInterval in con.tResurrectionIntervals[iPlayer]:
+				iStart, iEnd = tInterval
+				if getTurnForYear(iStart) <= iGameTurn <= getTurnForYear(iEnd):
+					bPossible = True
+					break
+					
+		# Thailand cannot respawn when Khmer is alive and vice versa
+		if iPlayer == con.iThailand and gc.getPlayer(con.iKhmer).isAlive(): bPossible = False
+		if iPlayer == con.iKhmer and gc.getPlayer(con.iThailand).isAlive(): bPossible = False
+		
+		# Rome cannot respawn when Italy is alive and vice versa
+		if iPlayer == con.iRome and gc.getPlayer(con.iItaly).isAlive(): bPossible = False
+		if iPlayer == con.iItaly and gc.getPlayer(con.iRome).isAlive(): bPossible = False
+		
+		# Greece cannot respawn when Byzantium is alive and vice versa
+		if iPlayer == con.iGreece and gc.getPlayer(con.iByzantium).isAlive(): bPossible = False
+		if iPlayer == con.iByzantium and gc.getPlayer(con.iGreece).isAlive(): bPossible = False
+		
+		# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
+		if iPlayer == con.iIndia and gc.getPlayer(con.iMughals).isAlive(): bPossible = False
+		
+		if bPossible and not gc.getPlayer(iPlayer).isAlive() and iGameTurn > self.getLastTurnAlive(iPlayer) + self.getTurns(20):
+			if con.tRebirth[iPlayer] == -1 or iGameTurn > getTurnForYear(con.tRebirth[iPlayer]) + 10:
+				return True
+				
+		return False
+		
+	def canEverRespawn(self, iPlayer):
+		iGameTurn = gc.getGame().getGameTurn()
+		iNumIntervals = len(con.tResurrectionIntervals[iPlayer])
+		
+		if iNumIntervals == 0:
+			return False
+		else:
+			iStart, iEnd = con.tResurrectionIntervals[iNumIntervals-1]
+			if getTurnForYear(iEnd) < iGameTurn:
+				return False
+				
+		return True	
+		
+	# use score history to determine last turn the civ was alive
+	#def getLastTurnAlive(iPlayer):
+	#	pPlayer = gc.getPlayer(iPlayer)
+	#	iCurrentTurn = gc.getGame().getGameTurn()
+	#	
+	#	if pPlayer.isAlive(): return iCurrentTurn
+	#	
+	#	for iTurn in range(iCurrentTurn, 0, -1):
+	#		if pPlayer.getScoreHistory(iTurn) > 0:
+	#			return iTurn
+	#			
+	#	return 0
