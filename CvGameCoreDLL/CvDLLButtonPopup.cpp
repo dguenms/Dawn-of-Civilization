@@ -2546,7 +2546,7 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 	{
 		PlayerTypes eOtherPlayer = (PlayerTypes)iI;
 		int iYear = GC.getGame().getGameTurnYear();
-		if (eOtherPlayer != ePlayer && !GET_PLAYER(eOtherPlayer).isAlive() && iYear >= startingTurnYear[iI] && iYear <= lastResurrectionYear[iI])
+		if (eOtherPlayer != ePlayer && !GET_PLAYER(eOtherPlayer).isAlive() && GET_PLAYER(eOtherPlayer).canRespawn())
 		{
 			CvWString szCityList;
 			int iCityLoop;

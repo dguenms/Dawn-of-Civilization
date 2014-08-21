@@ -1664,6 +1664,20 @@ def getCityName(self, argsList):
 	else:
 		return result
 		
+def canRespawn(self, argsList):
+	iPlayer = argsList[0]
+	
+	if utils.canRespawn(iPlayer): return 1
+	
+	return 0
+	
+def canEverRespawn(self, argsList):
+	iPlayer = argsList[0]
+	
+	if utils.canEverRespawn(iPlayer): return 1
+	
+	return 0
+		
 def applyClaimCityEvent(argsList):
 	sd.getCurrentCongress().applyClaimCityEvent(argsList[0])
 	

@@ -25556,3 +25556,25 @@ void CvPlayer::setStabilityParameter(ParameterTypes eParameter, int iNewValue)
 {
 	m_aiStabilityParameters[eParameter] = iNewValue;
 }
+
+bool CvPlayer::canRespawn() const
+{
+	long lResult = -1;
+	CyArgsList argsList;
+	argsList.add(getID());
+
+	gDLL->getPythonIFace()->callFunction(PYGameModule, "canRespawn", argsList.makeFunctionArgs(), &lResult);
+
+	return (lResult == 1);
+}
+
+bool CvPlayer::canEverRespawn() const
+{
+	long lResult = -1;
+	CyArgsList argsList;
+	argsList.add(getID());
+
+	gDLL->getPythonIFace()->callFunction(PYGameModule, "canEverRespawn", argsList.makeFunctionArgs(), &lResult);
+
+	return (lResult == 1);
+}

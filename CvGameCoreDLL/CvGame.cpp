@@ -9910,7 +9910,7 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 								eOtherPlayer = (PlayerTypes)iJ;
 
 								if (GET_PLAYER(eOtherPlayer).isAlive()) continue;
-								if (getGameTurnYear() < startingTurnYear[iJ] || getGameTurnYear() > lastResurrectionYear[iJ]) continue;
+								if (!GET_PLAYER(eOtherPlayer).canRespawn()) continue;
 
 								int iCityLoop;
 								int iNumCities = 0;

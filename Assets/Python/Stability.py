@@ -562,7 +562,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		for iLoopPlayer in range(con.iNumPlayers):
 			if iLoopPlayer == iPlayer: continue
 			if gc.getPlayer(iLoopPlayer).isAlive(): continue
-			if gc.getGame().getGameTurn() - getLastTurnAlive(iLoopPlayer) < utils.getTurns(20): continue
+			if gc.getGame().getGameTurn() - utils.getLastTurnAlive(iLoopPlayer) < utils.getTurns(20): continue
 			
 			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
 			if iPlayer == con.iArabia and iLoopPlayer == con.iEgypt: continue
@@ -1871,19 +1871,6 @@ def isOverseas(city):
 	capital = gc.getPlayer(city.getOwner()).getCapitalCity()
 	
 	return (capital.plot().getArea() != city.plot().getArea())
-	
-# use score history to determine last turn the civ was alive
-def getLastTurnAlive(iPlayer):
-	pPlayer = gc.getPlayer(iPlayer)
-	iCurrentTurn = gc.getGame().getGameTurn()
-	
-	if pPlayer.isAlive(): return iCurrentTurn
-	
-	for iTurn in range(iCurrentTurn, 0, -1):
-		if pPlayer.getScoreHistory(iTurn) > 0:
-			return iTurn
-			
-	return 0
 
 def checkResurrection(iGameTurn):
 
@@ -1896,47 +1883,8 @@ def checkResurrection(iGameTurn):
 	
 	# iterate all civs starting with a random civ
 	for iLoopCiv in range(con.iNumPlayers):
-		bPossible = False
-		
-		# no respawn before spawn
-		if iGameTurn < getTurnForYear(con.tBirth[iLoopCiv]) + 10: continue
-		
-		# only dead civ need to check for resurrection
-		if gc.getPlayer(iLoopCiv).isAlive(): continue
-		
-		#print 'Check ' + gc.getPlayer(iLoopCiv).getCivilizationShortDescription(0)
-			
-		# check if only recently died
-		if iGameTurn - getLastTurnAlive(iLoopCiv) < utils.getTurns(10): continue
-		
-		# check if the civ can be reborn at this date
-		if len(con.tResurrectionIntervals[iLoopCiv]) > 0:
-			for tInterval in con.tResurrectionIntervals[iLoopCiv]:
-				iStart, iEnd = tInterval
-				if getTurnForYear(iStart) <= iGameTurn <= getTurnForYear(iEnd):
-					bPossible = True
-					break
-					
-		# Thailand cannot respawn when Khmer is alive and vice versa
-		if iLoopCiv == con.iThailand and gc.getPlayer(con.iKhmer).isAlive(): bPossible = False
-		if iLoopCiv == con.iKhmer and gc.getPlayer(con.iThailand).isAlive(): bPossible = False
-		
-		# Rome cannot respawn when Italy is alive and vice versa
-		if iLoopCiv == con.iRome and gc.getPlayer(con.iItaly).isAlive(): bPossible = False
-		if iLoopCiv == con.iItaly and gc.getPlayer(con.iRome).isAlive(): bPossible = False
-		
-		# Greece cannot respawn when Byzantium is alive and vice versa
-		if iLoopCiv == con.iGreece and gc.getPlayer(con.iByzantium).isAlive(): bPossible = False
-		if iLoopCiv == con.iByzantium and gc.getPlayer(con.iGreece).isAlive(): bPossible = False
-		
-		# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
-		if iLoopCiv == con.iIndia and gc.getPlayer(con.iMughals).isAlive(): bPossible = False
-		
-		#if bPossible: print 'Possible.'
-		
-		if bPossible and not gc.getPlayer(iLoopCiv).isAlive() and iGameTurn > utils.getLastTurnAlive(iLoopCiv) + utils.getTurns(20):
-			if con.tRebirth[iLoopCiv] == -1:
-				lPossibleResurrections.append(iLoopCiv)
+		if utils.canRespawn(iLoopCiv):
+			lPossibleResurrections.append(iLoopCiv)
 				
 	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: utils.getLastTurnAlive(x)):
 		iMinNumCities = 2
