@@ -17207,3 +17207,14 @@ bool CvCity::isColony() const
 {
 	return (GC.getMap().getArea(getArea())->getClosestAreaSize(30) != GC.getMap().getArea(GET_PLAYER(getOwner()).getCapitalCity()->getArea())->getClosestAreaSize(30));
 }
+
+// Leoreth: at most half of the population may be slaves
+bool CvCity::canSlaveJoin() const
+{
+	if (!plot()->canUseSlave()) return false;
+
+	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
+	int iNumSlaves = getFreeSpecialistCount(eSlave);
+
+	return (2 * iNumSlaves < getPopulation());
+}

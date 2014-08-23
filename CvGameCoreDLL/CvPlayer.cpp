@@ -25385,6 +25385,11 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 	{
 		return NO_DENIAL;
 	}
+
+	if (isHuman())
+	{
+		return NO_DENIAL;
+	}
 	
 	if (GET_PLAYER(ePlayer).getTeam() == getTeam())
 	{
@@ -25408,12 +25413,6 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 		return DENIAL_NO_GAIN;
 	}
 
-	// needs at least one city to put them
-	if (countSlaveCities() == 0)
-	{
-		return DENIAL_NO_GAIN;
-	}
-
 	/*if (getCivics((CivicOptionTypes)2) != CIVIC_SLAVERY)
 	{
 		return DENIAL_UNKNOWN;
@@ -25428,11 +25427,6 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 	{
 		return DENIAL_UNKNOWN;
 	}*/
-
-	if (isHuman())
-	{
-		return NO_DENIAL;
-	}
 
 	if (GET_TEAM(getTeam()).AI_getWorstEnemy() == GET_PLAYER(ePlayer).getTeam())
 	{
@@ -25449,6 +25443,12 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 	if (eAttitude <= ATTITUDE_ANNOYED)
 	{
 		return DENIAL_ATTITUDE;
+	}
+
+	// only sell if no slaves are needed
+	if (countRequiredSlaves() < 0)
+	{
+		return DENIAL_NO_GAIN;
 	}
 
 	return NO_DENIAL;
@@ -25577,4 +25577,59 @@ bool CvPlayer::canEverRespawn() const
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "canEverRespawn", argsList.makeFunctionArgs(), &lResult);
 
 	return (lResult == 1);
+}
+
+// Leoreth
+int CvPlayer::countRequiredSlaves() const
+{
+	int iNumRequiredSlaves = 0;
+	ImprovementTypes eSlavePlantation = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION");
+	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(eSlavePlantation);
+
+	BonusTypes eBonus;
+	int iLoop;
+	CvCity* pLoopCity;
+	CvPlot* pLoopPlot;
+	for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
+	{
+		eBonus = (BonusTypes)iI;
+		if (kSlavePlantation.isImprovementBonusTrade(eBonus))
+		{
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				// count bonuses without slave plantation
+				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				{
+					pLoopPlot = plotCity(pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE(), iJ);
+
+					if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != eSlavePlantation)
+					{
+						if (pLoopPlot->canUseSlave()) iNumRequiredSlaves++;
+					}
+				}
+			}
+		}
+	}
+
+	// cities with enough happiness to settle slaves
+	int iExcessHappiness, iSlaveSlots;
+	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		if (pLoopCity->plot()->canUseSlave())
+		{
+			iExcessHappiness = pLoopCity->happyLevel() - pLoopCity->unhappyLevel(0);
+			iSlaveSlots = pLoopCity->getPopulation() / 2 - pLoopCity->getSpecialistCount(eSlave);
+			if (iExcessHappiness > 0 && iSlaveSlots > 0)
+			{
+				iNumRequiredSlaves += std::min(iExcessHappiness / 2, iSlaveSlots);
+			}
+		}
+	}
+
+	// subtract slaves they already have
+	UnitClassTypes eSlaveUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE");
+	iNumRequiredSlaves -= getUnitClassCount(eSlaveUnitClass);
+
+	return iNumRequiredSlaves;
 }

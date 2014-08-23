@@ -998,6 +998,7 @@ public:
 	int getGameTurnPlayerLost(PlayerTypes ePlayer);
 	void setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue);
 	bool isColony() const;
+	bool canSlaveJoin() const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

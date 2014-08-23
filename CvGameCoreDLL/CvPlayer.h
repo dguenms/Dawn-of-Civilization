@@ -1129,6 +1129,8 @@ public:
 	virtual int AI_maxGoldPerTurnTrade(PlayerTypes ePlayer) const = 0;
 	virtual int AI_maxGoldTrade(PlayerTypes ePlayer) const = 0;
 
+	// Leoreth
+
 	int verifySettlersHalt(int threshold); //Rhye
 	DllExport int getSettlersMaps(int y, int x); //Rhye
 	DllExport void setFlag(CvWString s); //Rhye
@@ -1165,6 +1167,7 @@ public:
 
 	int countColonies() const;
 	int countSlaveCities() const;
+	int countRequiredSlaves() const;
 
 	int getStabilityParameter(ParameterTypes eParameter) const;
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);

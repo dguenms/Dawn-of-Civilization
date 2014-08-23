@@ -510,6 +510,7 @@ public:
 	bool isWithinGreatWall() const;
 	void setWithinGreatWall(bool bNewValue);
 	void cameraLookAt();
+	bool canUseSlave() const;
 
 protected:
 

@@ -353,7 +353,7 @@ public:
 	void AI_invalidatePlotDangerCache(int iPlotIndex);
 	// Sanguo Mod Performance, end
 	
-	int  AI_slaveTradeVal(CvUnit* pUnit) const; // edead/Afforess
+	int AI_slaveTradeVal(CvUnit* pUnit) const; // edead/Afforess
 
 	// for serialization
   virtual void read(FDataStreamBase* pStream);

@@ -5921,8 +5921,7 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 			return false;
 		}
 
-		int rid = pCity->getRegionID();
-		if (rid == REGION_BRITAIN || rid == REGION_IBERIA || rid == REGION_MAGHREB || rid == REGION_ITALY || rid == REGION_EUROPE || rid == REGION_RUSSIA || rid == REGION_SCANDINAVIA || rid == REGION_BALKANS || rid == REGION_ANATOLIA)
+		if (!pCity->canSlaveJoin())
 		{
 			return false;
 		}
