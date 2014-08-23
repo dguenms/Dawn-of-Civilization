@@ -565,8 +565,8 @@ class RFCUtils:
         #handler
         def spreadMajorCulture(self, iMajorCiv, iX, iY):  
 		
-                for x in range(iX-4, iX+5):        # from x-4 to x+4
-                        for y in range(iY-4, iY+5):	# from y-4 to y+4
+                for x in range(iX-3, iX+4):        # from x-4 to x+4
+                        for y in range(iY-3, iY+4):	# from y-4 to y+4
                                 pCurrent = gc.getMap().plot(x, y)
                                 if (pCurrent.isCity()):
                                         city = pCurrent.getPlotCity()
@@ -598,17 +598,28 @@ class RFCUtils:
 		#	plot.changeCulture(iMajorCiv, iPlotCulture, True)
 
         #UniquePowers
-        def convertPlotCulture(self, pCurrent, iCiv, iPercent, bOwner):
+        def convertPlotCulture(self, plot, iPlayer, iPercent, bOwner):
+	
+		iConvertedCulture = 0	
+		for iLoopPlayer in range(iNumTotalPlayers):
+			if iLoopPlayer != iPlayer:
+				iLoopCulture = plot.getCulture(iLoopPlayer)
+				iConvertedCulture += iLoopCulture * iPercent / 100
+				plot.setCulture(iLoopPlayer, iLoopCulture * (100-iPercent) / 100, True)
+				
+		plot.changeCulture(iPlayer, iConvertedCulture, True)
+		
+		if bOwner: plot.setOwner(iPlayer)
                 
-                if (pCurrent.isCity()):
-                        city = pCurrent.getPlotCity()
-                        iCivCulture = city.getCulture(iCiv)
-                        iLoopCivCulture = 0
-                        for iLoopCiv in range(iNumTotalPlayers):
-                                if (iLoopCiv != iCiv):
-                                        iLoopCivCulture += city.getCulture(iLoopCiv)                                
-                                        city.setCulture(iLoopCiv, city.getCulture(iLoopCiv)*(100-iPercent)/100, True)
-                        city.setCulture(iCiv, iCivCulture + iLoopCivCulture, True)  
+                #if (pCurrent.isCity()):
+                #        city = pCurrent.getPlotCity()
+                #        iCivCulture = city.getCulture(iCiv)
+                #        iLoopCivCulture = 0
+                #        for iLoopCiv in range(iNumTotalPlayers):
+                #                if (iLoopCiv != iCiv):
+                #                        iLoopCivCulture += city.getCulture(iLoopCiv)                                
+                #                        city.setCulture(iLoopCiv, city.getCulture(iLoopCiv)*(100-iPercent)/100, True)
+                #        city.setCulture(iCiv, iCivCulture + iLoopCivCulture, True)  
         
 ##                for iLoopCiv in range(iNumTotalPlayers):
 ##                        if (iLoopCiv != iCiv):
@@ -616,15 +627,15 @@ class RFCUtils:
 ##                                iCivCulture = pCurrent.getCulture(iCiv)
 ##                                pCurrent.setCulture(iLoopCiv, iLoopCivCulture*(100-iPercent)/100, True)
 ##                                pCurrent.setCulture(iCiv, iCivCulture + iLoopCivCulture*iPercent/100, True)
-                iCivCulture = pCurrent.getCulture(iCiv)
-                iLoopCivCulture = 0
-                for iLoopCiv in range(iNumTotalPlayers):
-                        if (iLoopCiv != iCiv):
-                                iLoopCivCulture += pCurrent.getCulture(iLoopCiv)                                
-                                pCurrent.setCulture(iLoopCiv, pCurrent.getCulture(iLoopCiv)*(100-iPercent)/100, True)
-                pCurrent.setCulture(iCiv, iCivCulture + iLoopCivCulture, True)                                
-                if (bOwner == True):
-                        pCurrent.setOwner(iCiv)
+                #iCivCulture = pCurrent.getCulture(iCiv)
+                #iLoopCivCulture = 0
+                #for iLoopCiv in range(iNumTotalPlayers):
+                #        if (iLoopCiv != iCiv):
+                #                iLoopCivCulture += pCurrent.getCulture(iLoopCiv)                                
+                #                pCurrent.setCulture(iLoopCiv, pCurrent.getCulture(iLoopCiv)*(100-iPercent)/100, True)
+                #pCurrent.setCulture(iCiv, iCivCulture + iLoopCivCulture, True)                                
+                #if (bOwner == True):
+                #        pCurrent.setOwner(iCiv)
 
         #DynamicCivs
         def getMaster(self, iCiv):
@@ -1724,9 +1735,9 @@ class RFCUtils:
 			for j in range(y-1, y+2):
 				plot = gc.getMap().plot(i, j)
 				if (i, j) == (x, y):
-					self.convertPlotCulture(plot, iPlayer, 50, False)
+					self.convertPlotCulture(plot, iPlayer, 25, False)
 				elif plot.getOwner() == iPreviousOwner:
-					self.convertPlotCulture(plot, iPlayer, 65, True)
+					self.convertPlotCulture(plot, iPlayer, 50, True)
 				else:
 					self.convertPlotCulture(plot, iPlayer, 25, True)
 					

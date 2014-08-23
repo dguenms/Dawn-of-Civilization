@@ -6779,7 +6779,7 @@ int CvPlot::getCulture(PlayerTypes eIndex) const
 }
 
 
-int CvPlot::countTotalCulture() const
+int CvPlot::countTotalCulture(bool bIncludeDeadPlayers) const
 {
 	int iTotalCulture;
 	int iI;
@@ -6788,7 +6788,8 @@ int CvPlot::countTotalCulture() const
 
 	for (iI = 0; iI < MAX_PLAYERS; ++iI)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// Leoreth: consider the culture of dead civilizations
+		if (bIncludeDeadPlayers || GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			iTotalCulture += getCulture((PlayerTypes)iI);
 		}
@@ -6848,6 +6849,19 @@ int CvPlot::calculateCulturePercent(PlayerTypes eIndex) const
 	return 0;
 }
 
+int CvPlot::calculateOverallCulturePercent(PlayerTypes eIndex) const
+{
+	int iTotalCulture;
+
+	iTotalCulture = countTotalCulture(true);
+
+	if (iTotalCulture > 0)
+	{
+		return ((getCulture(eIndex) * 100) / iTotalCulture);
+	}
+
+	return 0;
+}
 
 int CvPlot::calculateTeamCulturePercent(TeamTypes eIndex) const
 {

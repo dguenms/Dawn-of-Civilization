@@ -4385,23 +4385,46 @@ class CvMainInterface:
 							screen.show( szName )
 # BUG - Limit/Extra Corporations - end
 
-				szBuffer = u"%d%% %s" %(pHeadSelectedCity.plot().calculateCulturePercent(pHeadSelectedCity.getOwner()), gc.getPlayer(pHeadSelectedCity.getOwner()).getCivilizationAdjective(0) )
+				szBuffer = u"%d%% %s" %(pHeadSelectedCity.plot().calculateOverallCulturePercent(pHeadSelectedCity.getOwner()), gc.getPlayer(pHeadSelectedCity.getOwner()).getCivilizationAdjective(0) )
 				screen.setLabel( "NationalityText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, 125, yResolution - 210, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 				screen.setHitTest( "NationalityText", HitTestTypes.HITTEST_NOHIT )
 				screen.show( "NationalityText" )
 				iRemainder = 100
 				iWhichBar = 0
-				for h in range( gc.getMAX_PLAYERS() ):
-					if ( gc.getPlayer(h).isAlive() ):
-						iPercent = pHeadSelectedCity.plot().calculateCulturePercent(h)
-						if ( iPercent > 0 ):
-							screen.setStackedBarColorsRGB( "NationalityBar", iWhichBar, gc.getPlayer(h).getPlayerTextColorR(), gc.getPlayer(h).getPlayerTextColorG(), gc.getPlayer(h).getPlayerTextColorB(), gc.getPlayer(h).getPlayerTextColorA() )
-							if ( iRemainder <= 0):
-								screen.setBarPercentage( "NationalityBar", iWhichBar, 0.0 )
-							else:
-								screen.setBarPercentage( "NationalityBar", iWhichBar, float(iPercent) / iRemainder)
-							iRemainder -= iPercent
-							iWhichBar += 1
+				lBars = []
+				
+				for iPlayer in range(gc.getMAX_PLAYERS()):
+					iPercent = pHeadSelectedCity.plot().calculateOverallCulturePercent(iPlayer)
+					if iPercent > 0:
+						if iRemainder <= 0:
+							fPercentage = 0.0
+						else:
+							fPercentage = float(iPercent) / iRemainder
+						iRemainder -= iPercent
+						lBars.append((iPlayer, fPercentage))
+						
+				if iRemainder > 0:
+					index = utils.getHighestIndex(lBars, lambda (iPlayer, fPercent): fPercent)
+					iPlayer, fPercent = lBars[index]
+					lBars[index] = (iPlayer, fPercent + float(iRemainder))
+						
+				for i in range(len(lBars)):
+					iPlayer, fPercentage = lBars[i]
+					screen.setStackedBarColorsRGB("NationalityBar", i, gc.getPlayer(iPlayer).getPlayerTextColorR(), gc.getPlayer(iPlayer).getPlayerTextColorG(), gc.getPlayer(iPlayer).getPlayerTextColorB(), gc.getPlayer(iPlayer).getPlayerTextColorA())
+					screen.setBarPercentage("NationalityBar", i, fPercentage)
+				
+				#for h in range( gc.getMAX_PLAYERS() ):
+					# Leoreth: culture of dead civs still counts, so display it
+				#	if True: #( gc.getPlayer(h).isAlive() ):
+				#		iPercent = pHeadSelectedCity.plot().calculateOverallCulturePercent(h)
+				#		if ( iPercent > 0 ):
+				#			screen.setStackedBarColorsRGB( "NationalityBar", iWhichBar, gc.getPlayer(h).getPlayerTextColorR(), gc.getPlayer(h).getPlayerTextColorG(), gc.getPlayer(h).getPlayerTextColorB(), gc.getPlayer(h).getPlayerTextColorA() )
+				#			if ( iRemainder <= 0):
+				#				screen.setBarPercentage( "NationalityBar", iWhichBar, 0.0 )
+				#			else:
+				#				screen.setBarPercentage( "NationalityBar", iWhichBar, float(iPercent) / iRemainder)
+				#			iRemainder -= iPercent
+				#			iWhichBar += 1
 				screen.show( "NationalityBar" )
 
 				iDefenseModifier = pHeadSelectedCity.getDefenseModifier(False)

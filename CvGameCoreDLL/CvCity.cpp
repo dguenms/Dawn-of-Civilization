@@ -5046,7 +5046,8 @@ int CvCity::getCulturePercentAnger() const
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_PLAYER((PlayerTypes)iI).isMinorCiv() && iI != INDEPENDENT && iI != INDEPENDENT2)
+		// Leoreth: worry about culture even if they're dead
+		if (/*GET_PLAYER((PlayerTypes)iI).isAlive() &&*/ !GET_PLAYER((PlayerTypes)iI).isMinorCiv() && iI != INDEPENDENT && iI != INDEPENDENT2)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() != getTeam())
 			{
@@ -5065,11 +5066,6 @@ int CvCity::getCulturePercentAnger() const
 			}
 		}
 	}
-
-	//Rhye - start UP
-	if (getOwnerINLINE() == AMERICA)
-		iAngryCulture /= 4;
-	//Rhye - end UP
 
 	return ((GC.getDefineINT("CULTURE_PERCENT_ANGER") * iAngryCulture) / iTotalCulture);
 }
