@@ -10868,3 +10868,23 @@ void CvPlot::cameraLookAt()
 {
 	gDLL->getEngineIFace()->cameraLookAt(getPoint());
 }
+
+// Leoreth
+bool CvPlot::canUseSlave() const
+{
+	switch (getRegionID())
+	{
+	case REGION_BRITAIN:
+	case REGION_IBERIA:
+	case REGION_MAGHREB:
+	case REGION_ITALY:
+	case REGION_EUROPE:
+	case REGION_RUSSIA:
+	case REGION_SCANDINAVIA:
+	case REGION_BALKANS:
+	case REGION_ANATOLIA:
+		return false;
+	default:
+		return true;
+	}
+}

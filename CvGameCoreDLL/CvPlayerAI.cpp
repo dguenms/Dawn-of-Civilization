@@ -20169,6 +20169,11 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 			return 0;
 		}
 
+		if (countRequiredSlaves() <= 0)
+		{
+			return 0;
+		}
+
 		if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == PORTUGAL || getID() == NETHERLANDS) iValue *= 2;
 
 		if (getStateReligion() != CATHOLICISM) iValue /= 2;
@@ -20199,5 +20204,4 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 
 	return iValue;
 }
-
 // edead: end
