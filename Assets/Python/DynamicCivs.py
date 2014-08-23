@@ -1257,13 +1257,15 @@ class DynamicCivs:
 						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
 						return
 						
-					if iEra <= iRenaissance:
+					if iEra == iMedieval:
 						#if iAnarchyTurns <= 2:
 						#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
 						if teamChina.isHasTech(con.iPaper) and teamChina.isHasTech(con.iGunpowder):
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SONG")
-						else:
+						elif iGameTurn >= getTurnForYear(600):
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_TANG")
+						else:
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QIN")
 						return
 						
 					if iEra == iClassical:

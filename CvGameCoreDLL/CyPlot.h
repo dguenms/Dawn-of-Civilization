@@ -219,6 +219,7 @@ public:
 	int /*TeamTypes*/ findHighestCultureTeam();
 
 	int calculateCulturePercent(int /*PlayerTypes*/ eIndex);	
+	int calculateOverallCulturePercent(int /*PlayerTypes*/ eIndex);
 	int calculateTeamCulturePercent(int /*TeamTypes*/ eIndex);	
 	void setCulture(int /*PlayerTypes*/ eIndex, int iNewValue, bool bUpdate);
 	void changeCulture(int /*PlayerTypes*/ eIndex, int iChange, bool bUpdate);

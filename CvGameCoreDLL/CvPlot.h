@@ -355,11 +355,12 @@ public:
 	int getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUpgrade) const;
 
 	int getCulture(PlayerTypes eIndex) const;																									// Exposed to Python
-	int countTotalCulture() const;																														// Exposed to Python
+	int countTotalCulture(bool bIncludeDeadPlayers = false) const;																														// Exposed to Python
 	int countFriendlyCulture(TeamTypes eTeam) const;
 	TeamTypes findHighestCultureTeam() const;																														// Exposed to Python
 	PlayerTypes findHighestCulturePlayer() const;
 	int calculateCulturePercent(PlayerTypes eIndex) const;																		// Exposed to Python
+	int calculateOverallCulturePercent(PlayerTypes eIndex) const;
 	int calculateTeamCulturePercent(TeamTypes eIndex) const;																						// Exposed to Python
 	void setCulture(PlayerTypes eIndex, int iNewValue, bool bUpdate, bool bUpdatePlotGroups);																		// Exposed to Python
 	void changeCulture(PlayerTypes eIndex, int iChange, bool bUpdate);																	// Exposed to Python
