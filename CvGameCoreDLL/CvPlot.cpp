@@ -10884,21 +10884,28 @@ void CvPlot::cameraLookAt()
 }
 
 // Leoreth
-bool CvPlot::canUseSlave() const
+bool CvPlot::canUseSlave(PlayerTypes ePlayer) const
 {
+	if (GET_PLAYER(ePlayer).getNumCities() == 0) return false;
+	int rid = GET_PLAYER(ePlayer).getCapitalCity()->getRegionID();
+
 	switch (getRegionID())
 	{
-	case REGION_BRITAIN:
-	case REGION_IBERIA:
-	case REGION_MAGHREB:
-	case REGION_ITALY:
-	case REGION_EUROPE:
-	case REGION_RUSSIA:
-	case REGION_SCANDINAVIA:
-	case REGION_BALKANS:
-	case REGION_ANATOLIA:
-		return false;
-	default:
+	case REGION_ALASKA:
+	case REGION_CANADA:
+	case REGION_UNITED_STATES:
+	case REGION_CARIBBEAN:
+	case REGION_MESOAMERICA:
+	case REGION_BRAZIL:
+	case REGION_ARGENTINA:
+	case REGION_PERU:
+	case REGION_COLOMBIA:
 		return true;
+	case REGION_ETHIOPIA:
+	case REGION_WEST_AFRICA:
+	case REGION_SOUTH_AFRICA:
+		if (rid != REGION_ETHIOPIA && rid != REGION_WEST_AFRICA && rid != REGION_SOUTH_AFRICA) return true;
+	default:
+		return false;
 	}
 }

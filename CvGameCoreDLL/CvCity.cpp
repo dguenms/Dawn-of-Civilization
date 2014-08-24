@@ -17207,7 +17207,7 @@ bool CvCity::isColony() const
 // Leoreth: at most half of the population may be slaves
 bool CvCity::canSlaveJoin() const
 {
-	if (!plot()->canUseSlave()) return false;
+	if (!plot()->canUseSlave(getOwner())) return false;
 
 	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
 	int iNumSlaves = getFreeSpecialistCount(eSlave);

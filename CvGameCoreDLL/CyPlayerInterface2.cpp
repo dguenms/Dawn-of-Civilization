@@ -89,5 +89,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("isSlaveTrade", &CyPlayer::isSlaveTrade, "bool (int iPlayer)")
 		.def("isHasBuildingEffect", &CyPlayer::isHasBuildingEffect, "bool (int eBuildingType)")
 		.def("setStabilityParameter", &CyPlayer::setStabilityParameter, "void (int iParameter, int iNewValue)")
+		.def("countRequiredSlaves", &CyPlayer::countRequiredSlaves, "int ()")
 		;
 }

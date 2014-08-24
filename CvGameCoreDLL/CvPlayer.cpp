@@ -25396,16 +25396,16 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 		return NO_DENIAL;
 	}
 
-	if (ePlayer == CONGO || ePlayer == MALI || ePlayer == ETHIOPIA)
+	/*if (getID() == CONGO || getID() == MALI || getID() == ETHIOPIA)
 	{
 		return DENIAL_NO_GAIN;
-	}
+	}*/
 
 	// don't buy back slaves they've just bought
-	if (GET_PLAYER(ePlayer).AI_getContactTimer(getID(), CONTACT_TRADE_SLAVE) > 0)
+	/*if (GET_PLAYER(ePlayer).AI_getContactTimer(getID(), CONTACT_TRADE_SLAVE) > 0)
 	{
 		return DENIAL_NO_GAIN;
-	}
+	}*/
 
 	// don't buy when running Egalitarianism
 	if (getCivics((CivicOptionTypes)2) == CIVIC_EGALITARIANISM)
@@ -25446,7 +25446,7 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 	}
 
 	// only sell if no slaves are needed
-	if (countRequiredSlaves() < 0)
+	if (countRequiredSlaves() >= 0)
 	{
 		return DENIAL_NO_GAIN;
 	}
@@ -25604,7 +25604,7 @@ int CvPlayer::countRequiredSlaves() const
 
 					if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != eSlavePlantation)
 					{
-						if (pLoopPlot->canUseSlave()) iNumRequiredSlaves++;
+						if (pLoopPlot->canUseSlave(getID())) iNumRequiredSlaves++;
 					}
 				}
 			}
@@ -25612,7 +25612,7 @@ int CvPlayer::countRequiredSlaves() const
 	}
 
 	// cities with enough happiness to settle slaves
-	int iExcessHappiness, iSlaveSlots;
+	/*int iExcessHappiness, iSlaveSlots;
 	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
@@ -25624,6 +25624,15 @@ int CvPlayer::countRequiredSlaves() const
 			{
 				iNumRequiredSlaves += std::min(iExcessHappiness / 2, iSlaveSlots);
 			}
+		}
+	}*/
+
+	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		if (pLoopCity->plot()->canUseSlave(getID()) && pLoopCity->getSpecialistCount(eSlave) == 0)
+		{
+			iNumRequiredSlaves++;
 		}
 	}
 

@@ -2462,3 +2462,8 @@ void CyPlayer::setStabilityParameter(int eParameter, int iNewValue)
 	if (m_pPlayer)
 		m_pPlayer->setStabilityParameter((ParameterTypes)eParameter, iNewValue);
 }
+
+int CyPlayer::countRequiredSlaves()
+{
+	return m_pPlayer ? m_pPlayer->countRequiredSlaves() : -1;
+}
