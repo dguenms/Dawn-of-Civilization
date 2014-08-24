@@ -600,6 +600,17 @@ class RFCUtils:
         #UniquePowers
         def convertPlotCulture(self, plot, iPlayer, iPercent, bOwner):
 	
+		if plot.isCity():
+			city = plot.getPlotCity()
+			iConvertedCulture = 0
+			for iLoopPlayer in range(iNumTotalPlayers):
+				if iLoopPlayer != iPlayer:
+					iLoopCulture = city.getCulture(iLoopPlayer)
+					iConvertedCulture += iLoopCulture * iPercent / 100
+					plot.setCulture(iLoopPlayer, iLoopCulture * (100-iPercent) / 100, True)
+					
+			city.changeCulture(iPlayer, iConvertedCulture, True)
+	
 		iConvertedCulture = 0	
 		for iLoopPlayer in range(iNumTotalPlayers):
 			if iLoopPlayer != iPlayer:
