@@ -670,4 +670,29 @@
 		<English>UN Resolution - Free %s1_player from %s2_civ_adjective Control (Requires %d3_ReqNum of %d4_TotNum Total Votes)</English>
 		<German>UN Resolution - %s1_player aus %s2:1_civ_adjective Kontrolle befreien (Erfordert %d3_ReqNum on insgesamt %d4_TotNum Stimmen.)</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_HEIR_HELP</Tag>
+		<English>The Heir difficulty is the right level for beginners. Your cities receive additional happiness and your research, unit production and upkeep costs are lower than those of your AI opponents.</English>
+		<German>Dieser Schwierigkeitsgrad ist die richtige Stufe für Anfänger. Eure Städte erhalten zusätzliche Zufriedenheit und Eure Forschungs-, Produktions- und Unterhaltskosten sind geringer als die Eurer KI-Gegner</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_REGENT_HELP</Tag>
+		<English>As a Regent, you are facing a fairly balanced challenge and are evenly matched in terms of modifiers with your AI adversaries.</English>
+		<German>Als Regent, Ihr steht einer relativ balancierten Herausforderung gegenüber und seid auf demselben Level wie Eure KI-Widersacher was Modifikatoren angeht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_MONARCH_HELP</Tag>
+		<English>Monarch players play under the same conditions as Regents, but will face more formidable AI opponents.</English>
+		<German>Monarchen-Spieler spielen unter denselben Bedingungen wie Regenten, stehen allerdings stärkeren KI-Gegnern gegenüber.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_EMPEROR_HELP</Tag>
+		<English>The Emperor level is for experienced players. You will play under significant research, unit production, upkeep and happiness penalties, while the AI receives even more advantages in these areas.</English>
+		<German>Die Kaiser-Stufe ist für erfahrene Spieler. Ihr werdet unter erheblichen Forschungs-, Produktions-, Unterhalts- und Zufriedenheits-Mali, während die KI in diesen Bereichen noch mehr Vorteile erhält.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HANDICAP_PARAGON_HELP</Tag>
+		<English>Can you beat this game on this level and prove that you are truly a Paragon? Compared to Emperor, your AI adversaries will receive even more unit production and research advantages.</English>
+		<German>Könnt Ihr dieses Spiel auf diesem Level gewinnen und beweisen, dass ihr wirklich ein Paragon seid? Verglichen mit Kaiser werden Eure KI-Widersacher noch mehr Produktions- und Forschungsvorteile erhalten.</German>
+	</TEXT>
 </Civ4GameText>
