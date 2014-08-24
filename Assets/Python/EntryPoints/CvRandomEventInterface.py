@@ -4288,6 +4288,8 @@ def canTriggerImpeachmentCity(argsList):
 def canTriggerTradingCompanyConquerors(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
+	
+	if utils.getScenario() == con.i1700AD: return False
 
 	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 	

@@ -511,7 +511,7 @@ public:
 	bool isWithinGreatWall() const;
 	void setWithinGreatWall(bool bNewValue);
 	void cameraLookAt();
-	bool canUseSlave() const;
+	bool canUseSlave(PlayerTypes ePlayer) const;
 
 protected:
 

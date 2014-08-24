@@ -548,6 +548,7 @@ public:
 	bool isSlaveTrade(int ePlayer);
 	bool isHasBuildingEffect(int eBuildingType);
 	void setStabilityParameter(int eParameter, int iNewValue);
+	int countRequiredSlaves();
 
 private:
 	CvPlayer* m_pPlayer;
