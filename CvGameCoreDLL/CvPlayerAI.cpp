@@ -11454,6 +11454,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12);
 
+	// Leoreth: factor in extra unit upkeep
+	if (eCivic == CIVIC_MERCENARIES)
+	{
+		iValue -= getNumMilitaryUnits();
+	}
+
 	//Leoreth: free core specialist
 	if (kCivic.getCoreFreeSpecialist() > 0)
 	{

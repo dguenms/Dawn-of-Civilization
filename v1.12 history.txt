@@ -181,7 +181,7 @@
 # new HRE UP: Investiture: double construction speed of state religion buildings
 # new Byzantine UP: Bribery: double gold value in trades, spies can bribe barbarian units
 # moved the Mughal core west
-# new Moorish UU: Corsair: Privateer with +25% strength on coast, receives gold from sinking ships
+# new Moorish UU: Corsair: strength 4 Privateer (Optics, Gunpowder) with +25% strength on coast, receives gold from sinking ships
 # new Moorish UHV:
 	# Control three cities in Iberia, the Maghreb and West Africa in 1200 AD
 	# Settle a total of five great prophets, scientists or engineers in Cordoba by 1300 AD
@@ -259,3 +259,12 @@
 	# only the four civilizations with the highest military power are allowed to defy UN resolutions (Security Council)
 	# added a "decolonized city" resolution to the UN: cities on other continents can be forced to be liberated to independents
 	# added a "release civilization" resolution to the UN: if a dead civilization can be resurrected, a controlling player can be forced to release it
+# slaves are now limited to half the population of every city
+# slaves can now only be used in the Americas and in Africa unless your capital is there
+# the culture of dead civilizations remains present in your cities
+# new difficulty levels: Heir, Regent, Monarch, Emperor, Paragon
+	# Heir equals Viceroy
+	# Regent equivalent to old Monarch
+	# Monarch: slightly stronger AI opponents than Regent
+	# Emperor remains
+	# Paragon: slightly stronger AI opponents than Emperor

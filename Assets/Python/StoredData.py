@@ -242,7 +242,6 @@ class StoredData:
 		return self.scriptDict['lWarStatus'][iPlayer].keys()
 		
 	def getWarStatus(self, iPlayer, iEnemy):
-		if iEnemy not in self.scriptDict['lWarStatus'][iPlayer]: return None
 		return self.scriptDict['lWarStatus'][iPlayer][iEnemy]
 		
 	def addWarStatus(self, iPlayer, iEnemy):

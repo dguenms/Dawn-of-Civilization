@@ -183,7 +183,7 @@
 			<!-- Rhye - start -->
 			<Description>TXT_KEY_BUILDING_SUMMER_PALACE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SUMMER_PALACE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_VERSAILLES_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_SUMMER_PALACE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PALACE</ArtDefineTag>
 			<!-- Rhye - end -->
@@ -1283,7 +1283,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_INCAN_TAMBO</Description>
 			<Civilopedia>TXT_KEY_BUILDING_INCAN_TAMBO_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CASTLE_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TERRACE</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -3511,7 +3511,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_MOORISH_NORIA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MOORISH_NORIA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_AQUEDUCT_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_MOORISH_NORIA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MOORISH_NORIA</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -9005,7 +9005,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_TAMIL_SANGAM</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TAMIL_SANGAM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_LIBRARY_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_TAMIL_SANGAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TAMIL_SANGAM</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -9737,7 +9737,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_TIBETAN_GOMPA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TIBETAN_GOMPA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_UNIVERSITY_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_TIBETAN_GOMPA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TIBETAN_GOMPA</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -12998,7 +12998,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_KONGO_MBWADI</Description>
 			<Civilopedia>TXT_KEY_BUILDING_KONGO_MBWADI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MARKET_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_KONGO_MBWADI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_KONGO_MBWADI</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -13211,7 +13211,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MARKET_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PHOENICIAN_GLASSMAKER</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -15497,7 +15497,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_POLISH_SEJMIK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_POLISH_SEJMIK_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_COURTHOUSE_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_POLISH_SEJMIK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_POLISH_SEJMIK</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -17083,8 +17083,8 @@
 			<Type>BUILDING_JEWISH_TEMPLE</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_JEWISH_TEMPLE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_JEWISH_TEMPLE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_TEMPLE</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -17259,7 +17259,7 @@
 			<Type>BUILDING_JEWISH_CATHEDRAL</Type>
 			<SpecialBuildingType>SPECIALBUILDING_CATHEDRAL</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Description>
-			<Civilopedia>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_CATHEDRAL</ArtDefineTag>
@@ -17446,8 +17446,8 @@
 			<Type>BUILDING_JEWISH_MONASTERY</Type>
 			<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_JEWISH_MONASTERY</Description>
-			<Civilopedia>TXT_KEY_BUILDING_JEWISH_MONASTERY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_JEWISH_MONASTERY_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_MONASTERY</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -18527,8 +18527,8 @@
 			<Type>BUILDING_ORTHODOX_TEMPLE</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ORTHODOX_TEMPLE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ORTHODOX_TEMPLE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_ORTHODOX_TEMPLE_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_TEMPLE</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -18703,7 +18703,7 @@
 			<Type>BUILDING_ORTHODOX_CATHEDRAL</Type>
 			<SpecialBuildingType>SPECIALBUILDING_CATHEDRAL</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_CATHEDRAL</ArtDefineTag>
@@ -18890,8 +18890,8 @@
 			<Type>BUILDING_ORTHODOX_MONASTERY</Type>
 			<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ORTHODOX_MONASTERY</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ORTHODOX_MONASTERY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_ORTHODOX_MONASTERY_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_MONASTERY</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>
@@ -23005,7 +23005,7 @@
 			<FreeSpecialistCounts/>
 			<CommerceFlexibles/>
 			<CommerceChangeOriginalOwners/>
-			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
+			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
 			<BonusHealthChanges/>
 			<BonusHappinessChanges/>
 			<BonusProductionModifiers/>
@@ -23177,7 +23177,7 @@
 			<FreeSpecialistCounts/>
 			<CommerceFlexibles/>
 			<CommerceChangeOriginalOwners/>
-			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
+			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
 			<BonusHealthChanges/>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
@@ -23366,7 +23366,7 @@
 			<FreeSpecialistCounts/>
 			<CommerceFlexibles/>
 			<CommerceChangeOriginalOwners/>
-			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
+			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
 			<BonusHealthChanges/>
 			<BonusHappinessChanges/>
 			<BonusProductionModifiers/>
@@ -23768,7 +23768,7 @@
 			<Description>TXT_KEY_BUILDING_NATIONAL_EPIC</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_EPIC_PEDIA</Civilopedia>
 			<!-- Rhye -->
-			<Strategy>TXT_KEY_BUILDING_TAJ_MAHAL_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_NATIONAL_EPIC_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_TRIUMPHAL_ARC_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_EPIC</ArtDefineTag>
@@ -25062,7 +25062,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_TRADING_COMPANY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TRADING_COMPANY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HARBOR_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TRADING_COMPANY</ArtDefineTag>
 			<!-- Rhye - end -->
@@ -25265,7 +25265,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_TRADING_COMPANY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TRADING_COMPANY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HARBOR_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TRADING_COMPANY</ArtDefineTag>
 			<!-- Rhye - end -->
@@ -33718,7 +33718,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_OLYMPIC_PARK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_OLYMPIC_PARK_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_TAJ_MAHAL_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_OLYMPIC_PARK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_OLYMPIC_PARK</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_OLYMPIC_PARK</MovieDefineTag>
@@ -35722,7 +35722,7 @@
 			<SpecialBuildingType>NONE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_FORGE_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ITALIAN_ART_STUDIO</ArtDefineTag>
 			<MovieDefineTag>NONE</MovieDefineTag>

@@ -1251,7 +1251,7 @@
 			<CivicOptionType>CIVICOPTION_LABOR</CivicOptionType>
 			<Type>CIVIC_INDUSTRIALISM</Type>
 			<Description>TXT_KEY_CIVIC_INDUSTRIALISM</Description>
-			<Civilopedia>TXT_KEY_CIVIC_INDUSTRIALISM_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_TECH_INDUSTRIALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_INDUSTRIALISM_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/TechTree/Industrialism.dds,Art/Interface/Buttons/TechTree_Atlas.dds,8,4</Button>
 			<TechPrereq>TECH_STEEL</TechPrereq>
@@ -1507,7 +1507,7 @@
 			<CivicOptionType>CIVICOPTION_ECONOMY</CivicOptionType>
 			<Type>CIVIC_GUILDS</Type>
 			<Description>TXT_KEY_CIVIC_GUILDS</Description>
-			<Civilopedia>TXT_KEY_CIVIC_GUILDS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_TECH_GUILDS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_GUILDS_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/TechTree/Guilds.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,4</Button>
 			<TechPrereq>TECH_GUILDS</TechPrereq>
