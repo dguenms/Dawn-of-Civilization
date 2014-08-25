@@ -10614,12 +10614,12 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	int iAIBaseModifier = 75;
 	int iHumanSpawnModifier = 107;
 
-	if (eHandicap == 0) // Viceroy
+	if (eHandicap == 0) // Heir
 	{
 		iAIBaseModifier = 50;
 		iHumanSpawnModifier = 105;
 	}
-	else if (eHandicap == 2) // Emperor
+	else if (eHandicap >= 3) // Emperor and Paragon
 	{
 		iAIBaseModifier = 100;
 		iHumanSpawnModifier = 110;
@@ -10871,117 +10871,59 @@ int CvHandicapInfo::getNumCitiesMaintenancePercent() const
 }
 
 //Rhye - start switch
-int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes pl) const
+int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes ePlayer) const
 {
-	int result = m_iNumCitiesMaintenancePercent;
+	int iMaintenance = m_iNumCitiesMaintenancePercent;
 
-	if (getScenario() >= SCENARIO_600AD) //late start condition
-		if (pl < VIKING) {
-			result *= 80;
-			result /= 100;
-		}
-	/*switch (pl)
+	if (getScenario() >= SCENARIO_600AD && ePlayer < VIKING)
 	{
-	case EGYPT:
-		return result*135/100;
-	case INDIA:
-		return result*130/100;
-	case CHINA:
-		return result*127/100;
-	case BABYLONIA:
-		return result*135/100;
-	case GREECE:
-		return result*127/100;
-	case PERSIA:
-		return result*10/10;
-	case CARTHAGE:
-		return result*9/10;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            return result*9/10;
-        else
-            return result*8/10; // Leoreth - Renaissance Italy
-	case JAPAN:
-		return result*110/100;
-	case ETHIOPIA:
-		return result*115/100;
-    case KOREA:
-        return result*110/100;
-	case MAYA:
-		return result*115/100;
-    case BYZANTIUM:
-        return result*8/10;
-	case VIKING:
-		return result*75/100;
-	case ARABIA:
-		return result*10/10;
-	case KHMER:
-		return result*10/10;
-	case INDONESIA:
-		return result*10/10;
-	case SPAIN:
-		return result*7/10;
-	case ENGLAND:
-		return result*7/10;
-	case FRANCE:
-		return result*7/10;
-	case GERMANY:
-		return result*7/10;
-	case RUSSIA:
-		return result*7/10;
-	case NETHERLANDS:
-		return result*7/10;
-	case MALI:
-		return result*9/10;  //8 before new UP
-	case TURKEY:
-		return result*7/10;
-	case PORTUGAL:
-		return result*72/100;
-	case INCA:
-		return result*8/10;
-	case MONGOLIA:
-		return result*7/10;
-	case AZTEC:
-		return result*85/100;
-	case AMERICA:
-		return result*7/10;
-	default:
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-			return result*6/10;
-		else
-			return result*3/10;
-	}*/
-
-	int iFinalResult;
-
-	if (pl < NUM_MAJOR_PLAYERS)
-	{
-		iFinalResult = result * numMaintenanceModifier[pl] / 100;
-	}else
-	{
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-			iFinalResult = result * 60 / 100;
-		else
-			iFinalResult = result * 30 / 100;
+		iMaintenance *= 80;
+		iMaintenance /= 100;
 	}
-
-	// handle respawned civs explicitly here (overwrite)
-	if (pl == MAYA)
+	
+	if (ePlayer < NUM_MAJOR_PLAYERS)
 	{
-		if (GET_PLAYER((PlayerTypes)pl).isReborn())
+		iMaintenance *= numMaintenanceModifier[ePlayer];
+		iMaintenance /= 100;
+	}
+	else
+	{
+		if (getScenario() == SCENARIO_3000BC)
 		{
-			iFinalResult = result * 85 / 100;
+			iMaintenance *= 60;
+			iMaintenance /= 100;
+		}
+		else
+		{
+			iMaintenance *= 30;
+			iMaintenance /= 100;
 		}
 	}
 
 	// handle respawned civs explicitly here (overwrite)
-	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
+	if (ePlayer == MAYA)
 	{
-		if (pl == ROME)
-			iFinalResult = result * 80 / 100;
-	}*/
+		if (GET_PLAYER(ePlayer).isReborn())
+		{
+			iMaintenance *= 85;
+			iMaintenance /= 100;
+		}
+	}
 
-	return iFinalResult;
+	// Leoreth: additional maintenance for high population
+	int iTotalPopulation = GET_PLAYER(ePlayer).getTotalPopulation();
+	int iThreshold = 10 * (6 + 2 * GET_PLAYER(ePlayer).getCurrentEra()) * GET_PLAYER(ePlayer).getNumCities();
+	int iPercentage;
+
+	if (iTotalPopulation - iThreshold > 0)
+	{
+		iPercentage = (100 * (iTotalPopulation - iThreshold) / iThreshold - 100) / 10;
+
+		iMaintenance *= 100 + 10 * iPercentage;
+		iMaintenance /= 100;
+	}
+
+	return iMaintenance;
 }
 //Rhye - end
 

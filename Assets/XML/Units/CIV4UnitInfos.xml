@@ -1412,7 +1412,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_BRAZILIAN_LENHADOR</Description>
 			<Civilopedia>TXT_KEY_UNIT_BRAZILIAN_LENHADOR_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_WORKER_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_BRAZILIAN_LENHADOR_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_BRAZILIAN_LENHADOR_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -7809,7 +7809,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_KONGO_POMBOS</Description>
 			<Civilopedia>TXT_KEY_UNIT_KONGO_POMBOS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_MACEMAN_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_KONGO_POMBOS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -11403,7 +11403,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ITALY_BERSAGLIERE</Description>
 			<Civilopedia>TXT_KEY_UNIT_ITALY_BERSAGLIERE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_INFANTRY_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_ITALY_BERSAGLIERE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -16152,7 +16152,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_TIBETAN_KHAMPA</Description>
 			<Civilopedia>TXT_KEY_UNIT_TIBETAN_KHAMPA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_HORSE_ARCHER_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_TIBETAN_KHAMPA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -18245,7 +18245,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_POLISH_WINGED_HUSSAR</Description>
 			<Civilopedia>TXT_KEY_UNIT_POLISH_WINGED_HUSSAR_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_CUIRASSIER_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_POLISH_WINGED_HUSSAR_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -19922,7 +19922,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_CARTHAGINIAN_WAR_ELEPHANT</Description>
 			<Civilopedia>TXT_KEY_UNIT_CARTHAGINIAN_WAR_ELEPHANT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_WAR_ELEPHANT_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_CARTHAGIAN_WAR_ELEPHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -22088,7 +22088,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_FRENCH_HEAVY_CANNON</Description>
 			<Civilopedia>TXT_KEY_UNIT_FRENCH_HEAVY_CANNON_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_CANNON_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_FRENCH_HEAVY_CANNON_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -24117,7 +24117,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_TAMIL_DHARANI</Description>
 			<Civilopedia>TXT_KEY_UNIT_TAMIL_DHARANI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_CARAVEL_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>

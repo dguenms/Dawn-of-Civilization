@@ -69,8 +69,11 @@ def onCityAcquired(city, iOwner, iPlayer):
 		
 	# update conquered cities in a war
 	if iPlayer < con.iNumPlayers and iOwner < con.iNumPlayers and gc.getTeam(iPlayer).isAtWar(iOwner):
-		warStatus = sd.getWarStatus(iPlayer, iOwner)
-		if warStatus: warStatus.changeConqueredCities(1)
+		if iOwner in sd.getWarStatusEnemies:
+			sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
+		else:
+			sd.addWarStatus(iPlayer, iOwner)
+			sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
 	
 def onCityRazed(iPlayer, city):
 	iOwner = city.getOwner()
@@ -134,8 +137,11 @@ def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
 		
 	if iWinningPlayer < con.iNumPlayers and iLosingPlayer < con.iNumPlayers:
 		# update defeated units in a war
-		warStatus = sd.getWarStatus(iWinningPlayer, iLosingPlayer)
-		if warStatus: warStatus.changeDefeatedUnits(iLostPower)
+		if iLosingPlayer in sd.getWarStatusEnemies(iWinningPlayer):
+			sd.getWarStatus(iWinningPlayer, iLosingPlayer).changeDefeatedUnits(iLostPower)
+		else:
+			sd.addWarStatus(iWinningPlayer, iLosingPlayer)
+			sd.getWarStatus(iWinningPlayer, iLosingPlayer).changeDefeatedUnits(iLostPower)
 	
 def onCivSpawn(iPlayer):
 	for iOlderNeighbor in con.lOlderNeighbours[iPlayer]:

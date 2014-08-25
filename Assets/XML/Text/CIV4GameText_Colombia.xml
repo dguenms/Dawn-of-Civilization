@@ -27,7 +27,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COLOMBIAN_ALBION_LEGION_STRATEGY</Tag>
-		<English>This grenadier replacement is very mobile and especially effective against cities.</English>
+		<English>This Colombian [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT] replacement is very mobile and especially effective against cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA</Tag>
@@ -35,11 +35,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA_STRATEGY</Tag>
-		<English>Unique Colombian building which replaces the Grocer. It provides additional gold with Coffee.</English>
+		<English>This unique Colombian building which replaces the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT]. It provides additional gold with [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COL_EMBASSY</Tag>
 		<English>Colombian Embassy</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_PEDIA</Tag>
+		<English>[TAB]The territory of what is now Colombia was originally inhabited by indigenous peoples including the Muisca, Quimbaya, and Tairona. The Spanish arrived in 1499 and initiated a period of conquest and colonization ultimately creating the Viceroyalty of New Granada, with its capital at Bogotá.[11] Independence from Spain was won in 1819, but by 1830 "Gran Colombia" had collapsed with the secession of Venezuela and Ecuador. What is now Colombia and Panama emerged as the Republic of New Granada. The new nation experimented with federalism as the Granadine Confederation (1858), and then the United States of Colombia (1863), before the Republic of Colombia was finally declared in 1886. Panama seceded in 1903.[PARAGRAPH:1]Since the 1960s, the country has suffered from an asymmetric low-intensity armed conflict. The conflict escalated in the 1990s, but since 2000 the conflict has decreased considerably.[PARAGRAPH:1]Colombia is ethnically diverse, and the interaction between descendants of the original native inhabitants, Spanish colonists, Africans originally brought to the country as slaves, and 20th-century immigrants from Europe and the Middle East, has produced a rich cultural heritage.[13] This has also been influenced by Colombia's varied geography, and the imposing landscape of the country has resulted in the development of very strong regional identities, in many cases stronger than the national. The majority of the urban centres are located in the highlands of the Andes mountains, but Colombian territory also encompasses Amazon rainforest, tropical grassland and both Caribbean and Pacific coastlines.</English>
+	</TEXT>
 </Civ4GameText>
-

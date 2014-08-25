@@ -13,6 +13,14 @@
 		<Spanish>[TAB]Un Arco de Triunfo es una enorme arcada monumental que se suele construir para celebrar una victoria en la guerra. El arco siempre es una estructura solitaria, separada de las puertas o muros de la ciudad. En su forma m&#225;s sencilla consiste en dos pilares conectados por un arco que a su vez est&#225; coronado por una estructura superior en la cual se suele colocar una estatua o una inscripci&#243;n conmemorativa. Los Arcos de Triunfo m&#225;s elaborados pueden tener un par de arcos secundarios en los laterales. Los m&#225;s famosos son el Arco de Tito en Roma y el Arco del Triunfo de Paris.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_STRATEGY</Tag>
+		<English>Building the [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins an immediate [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</English>
+		<French>La construction du [COLOR_BUILDING_TEXT]Arc de Triomphe[COLOR_REVERT] d&#233;clenche le d&#233;but d'un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il augmente la production d'unit&#233;s militaires de la ville</French>
+		<German>Nach dem Bau des [COLOR_BUILDING_TEXT]Triumphbogen[COLOR_REVERT] bricht f&#252;r Ihre Zivilisation umgehend ein [COLOR_HIGHLIGHT_TEXT]goldenes Zeitalter[COLOR_REVERT] an. Dar&#252;ber hinaus erh&#246;ht es in einer Stadt die Produktion von Milit&#228;reinheiten.</German>
+		<Italian>Costruendo il [COLOR_BUILDING_TEXT]Arco di Trionfo[COLOR_REVERT], darai immediatamente inizio all'[COLOR_HIGHLIGHT_TEXT]et&#224; dell'oro[COLOR_REVERT] per la tua civilt&#224;. Inoltre, aumenta la produzione della citt&#224; per la realizzazione di unit&#224; militari.</Italian>
+		<Spanish>Construir el [COLOR_BUILDING_TEXT]Arco de Triunfo[COLOR_REVERT] hace que comience de inmediato una [COLOR_HIGHLIGHT_TEXT]Edad de oro[COLOR_REVERT] para esa civilizaci&#243;n. Tambi&#233;n aumenta la producci&#243;n de la ciudad cuando crea unidades militares.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHICHEN_ITZA</Tag>
 		<English>Temple of Kukulkan</English>
 		<French>
@@ -183,7 +191,7 @@
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>la National Gallery</Text>
+			<Text>La Galeria Nacional</Text>
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
@@ -195,6 +203,14 @@
 		<German>[TAB]Eine Nationalgalerie ist die größte öffentlich zugängliche Kunstgalerie eines Landes. Diese Galerien sind unter verschiedenen Bezeichnungen in fast allen Hauptstädten weit verbreitet und dienen als Ausstellungsorte für Kunst, meist bildende Kunst, und zwar in erster Linie für Gemälde, Illustrationen und Skulpturen. Das Kunstmuseum als solches ist eine relativ moderne Einrichtung: Die erste Institution dieser Art war der Pariser Louvre, der erst 1793 - kurz nach der französischen Revolution - gebaut wurde, nachdem die königlichen Schätze per Dekret dem Volk zugänglich gemacht worden waren. </German>
 		<Italian>[TAB]Una galleria nazionale &#232; la principale galleria d'arte pubblica di una nazione. Con diversi nomi se ne trovano in quasi ogni capitale. Sono uno spazio per l'esibizione dell'arte, solitamente visiva, e principalmente dipinti, illustrazioni e sculture. Il museo d'arte &#232; considerato un'invenzione abbastanza moderna: il primo &#232; quello del Louvre a Parigi fondato nel 1793, poco dopo la rivoluzione francese, quando i tesori reali vennero dichiarati di propriet&#224; del popolo. </Italian>
 		<Spanish>[TAB]Una galer&#237;a nacional es un gran museo de arte público de un pa&#237;s. Recibe diferentes nombres, pero casi todas las capitales del mundo cuentan con una de ellas. Hay un espacio para la exhibici&#243;n de elementos art&#237;sticos, normalmente artes visuales, fundamentalmente pintura, ilustraci&#243;n y escultura. El museo de arte se considera una invenci&#243;n relativamente moderna. El primero de ellos fue el Louvre en Par&#237;s, fundado en 1793, al poco de finalizar la Revoluci&#243;n Francesa y tras declarar públicos los bienes de la realeza. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]Galerie Nationale[COLOR_REVERT] double la production de culture de la ville qui l'abrite et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
+		<German>Die [COLOR_BUILDING_TEXT]Nationalgalerie[COLOR_REVERT] verdoppelt den kulturellen Aussto&#223; einer Stadt. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Galleria Nazionale[COLOR_REVERT] raddoppia la produzione culturale della citt&#224; e aumenta le probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Galer&#237;a Nacional[COLOR_REVERT] dobla la producci&#243;n cultural de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE</Tag>
@@ -229,6 +245,14 @@
 		<Spanish>[TAB]Un Teatro de la Ópera es un edificio en el que se interpretan &#243;peras. Las instalaciones se suelen construir espec&#237;ficamente para la representaci&#243;n de &#243;peras, aunque tambi&#233;n pueden albergar otro tipo de actuaciones. Algunos de los teatros de &#243;pera m&#225;s famosos son el Globe Theatre de Londres, donde se presentaron la mayor&#237;a de las obras de William Shakespeare por primera vez, la Opera House de Sydney, uno de los edificios m&#225;s famosos del siglo XX y La Scala de Mil&#225;n. </Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] increases the cultural ouput of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Opéra[COLOR_REVERT] supprime tout m&#233;contentement dans la ville o&#249; il est construit. Il augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
+		<German>In St&#228;dten mit dem [COLOR_BUILDING_TEXT]Opernhaus[COLOR_REVERT] herrscht keine Unzufriedenheit. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]Teatro dell'opera[COLOR_REVERT] rimuove tutta l'infelicit&#224; dalla citt&#224; in cui viene costruito. Aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]Teatro de la Ópera[COLOR_REVERT] elimina toda la infelicidad de la ciudad en la que se construya. Tambi&#233;n aumenta las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WALL_STREET</Tag>
 		<English>Stock Exchange</English>
 		<French>
@@ -259,6 +283,14 @@
 		<German>[TAB]Eine Börse ist ein organisierter Markt für Geschäfte mit Aktien, Anleihen, Devisen, oder bestimmten Waren, die von so genannten Maklern oder Brokern (Wertpapierhändlern) getätigt werden. Ebenso werden hier Wertpapiere und andere finanzielle Instrumente und Kapitalgeschäfte abgewickelt, einschließlich der Zahlung von Gewinnen und Dividenden. Die berühmteste Börse ist die New York Stock Exchange in der Wall Street.</German>
 		<Italian>[TAB]Una borsa &#232; una corporazione o organizzazione che fornisce la possibilit&#224; ad agenti e scambisti di scambiare azioni e altre security delle varie compagnie. Le borse servono anche per l'emissione e il riscatto delle security, cos&#236; come di altri strumenti finanziari ed eventi capitali, incluso il pagamento di entrate e dividendi. La più famosa al mondo &#232; la borsa di New York, che si trova a Wall Street. </Italian>
 		<Spanish>[TAB]La bolsa o mercado de valores es una corporaci&#243;n u organizaci&#243;n que proporciona instalaciones a los &quot;corredores&quot; y comerciantes para intercambiar acciones de empresas y otros t&#237;tulos. Las bolsas tambi&#233;n brindan facilidades para librar, expedir o reembolsar t&#237;tulos, as&#237; como instrumentos financieros apropiados para el pago de rentas y dividendos. La m&#225;s famosa es la que se encuentra en la calle Wall Street de Nueva York.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WALL_STREET_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] doubles its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]Bourse[COLOR_REVERT] double la production de richesse de la ville et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
+		<German>Die [COLOR_BUILDING_TEXT]B&#246;rse[COLOR_REVERT] verdoppelt die Wohlstandsproduktion einer Stadt und erh&#246;ht die Chance, einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Borsa[COLOR_REVERT] raddoppia la produzione di ricchezza della citt&#224; e aumenta le probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Mercante[COLOR_REVERT].</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Bolsa[COLOR_REVERT] dobla la producci&#243;n de riqueza de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD</Tag>
@@ -293,6 +325,14 @@
 		<Spanish>[TAB]La Interpol (&quot;International Criminal Police Organization&quot; u &quot;Organizaci&#243;n Internacional de Polic&#237;a Criminal&quot; en castellano) fue fundada en 1923 para mejorar la cooperaci&#243;n internacional de la polic&#237;a criminal. El nombre &quot;Interpol&quot;, que entonces solo era la direcci&#243;n de tel&#233;grafo de la organizaci&#243;n, fue adoptado en 1956 como nuevo nombre oficial de la organizaci&#243;n, que dej&#243; de llamarse Comisi&#243;n Internacional de Polic&#237;a Criminal. Interpol es la tercera organizaci&#243;n internacional m&#225;s grande del mundo, despu&#233;s de las Naciones Unidas y la FIFA, y cuenta con 186 pa&#237;ses miembro.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] provides a +100%% bonus to Espionage output.</English>
+		<French>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] double votre production d'espionnage.</French>
+		<German>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] gew&#228;hrt einen +100%% Bonus auf Spionageleistungen.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] d&#224; un bonus del +100%% alla resa dello spionaggio.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] proporciona una bonificaci&#243;n del +100% al rendimiento del Espionaje.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SUMMER_PALACE</Tag>
 		<English>Summer Palace</English>
 		<French>
@@ -323,6 +363,14 @@
 		<German>[TAB]Eine Residenz ist der Wohnsitz eines Staatsoberhaupts oder einer anderen hochrangigen Person des öffentlichen Lebens. Viele Residenzen dienen heute als Parlamentssitze oder Museen. Staatsoberh&#228;upter, insbesondere Monarchen, leben in der Regel einige Wochen im Jahr nicht in ihrem Hauptwohnsitz, sondern (je nach Jahreszeit) in ihren so genannten Winter- oder Sommerresidenzen. Beispiele hierfür sind der russische Winterpalast in St. Petersburg, der chinesische Sommerpalast in Peking und der Kücüksu-Sommerpalast in Istanbul.</German>
 		<Italian>[TAB]Un palazzo &#232; la casa di un capo di stato o di un'altra importante figura pubblica. Molti palazzi ora sono adibiti a usi diversi, come parlamenti o musei. I capi di stato, specialmente i monarchi, passano qualche settimana ogni anno in palazzi che non sono la loro residenza primaria. Solitamente sono chiamati palazzo d'inverno o d'estate, a seconda della stagione in cui vengono usati. Un esempio sono il Palazzo d'Inverno a San Pietroburgo, il Palazzo d'Estate a Pechino e il Palazzo d'Estate Kucuksu a Istanbul.</Italian>
 		<Spanish>[TAB]Un palacio es el hogar del jefe de estado o de otro personaje público de alto rango. Hoy en d&#237;a, muchos palacios se usan para cosas diferentes, por ejemplo, como sedes del Parlamento o museos. Los cabezas de estado, especialmente los monarcas, sol&#237;an pasar algunas semanas del a&#241;o fuera de su residencia habitual, en otros palacios. Dichos edificios sol&#237;an recibir el nombre de palacios de invierno o de verano, en funci&#243;n de la estaci&#243;n en la que fueran utilizados. Algunos ejemplos son el Palacio de Invierno ruso de San Petersburgo, el Palacio de Verano chino de Pek&#237;n, y el Palacio de Kucuksu, de verano, en Estambul.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUMMER_PALACE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Summer Palace[COLOR_REVERT] reduces the maintenance costs in nearby cities and acts like a second [COLOR_BUILDING_TEXT]Forbidden Palace[COLOR_REVERT]. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Spy[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Palais d'été[COLOR_REVERT] r&#233;duit le co&#251;t d'entretien des villes voisines et agit comme une seconde [COLOR_BUILDING_TEXT]Cit&#233; interdite[COLOR_REVERT]. Il augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]Espion illustre[COLOR_REVERT].</French>
+		<German>Der [COLOR_BUILDING_TEXT]Sommerresidenz[COLOR_REVERT] verringert die Unterhaltskosten aller nahe gelegenen St&#228;dte und entspricht einer zweiten [COLOR_BUILDING_TEXT]Verbotenen Stadt[COLOR_REVERT]. Dar&#252;ber hinaus erh&#246;ht es die Chance auf einen [COLOR_UNIT_TEXT]Gro&#223;er Spion[COLOR_REVERT].</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]Palazzo d'estate[COLOR_REVERT] riduce il mantenimento delle citt&#224; vicine e funge da secondo [COLOR_BUILDING_TEXT]Palazzo Proibito[COLOR_REVERT]. Aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Spia[COLOR_REVERT].</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]Palacio de Verano[COLOR_REVERT] reduce los costes de mantenimiento de todas las ciudades cercanas y funciona como una segunda [COLOR_BUILDING_TEXT]Ciudad Prohibida[COLOR_REVERT]. Adem&#225;s, aumenta las posibilidades de generar un [COLOR_UNIT_TEXT]Gran esp&#237;a[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BROADWAY</Tag>
@@ -477,6 +525,14 @@
 		<Spanish>[TAB]Una compa&#241;&#237;a de las Indias es una asociaci&#243;n de inversores o accionistas cuyos fines son promocionar el comercio, la exploraci&#243;n y la colonizaci&#243;n. Estas compa&#241;&#237;as se formaron a partir del siglo XVI por grupos de inversores europeos que quer&#237;an financiar la exploraci&#243;n de África, la India, el Caribe y el norte de Am&#233;rica, normalmente bajo la tutela de un estado, que emit&#237;a la carta real o los estatutos de la compa&#241;&#237;a. Algunas de las m&#225;s notables fueron la brit&#225;nica Compa&#241;&#237;a de las Indias Orientales y la Verenigde Oostindische Compagnie holandesa.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health and happiness for several colonial resources. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK</Tag>
 		<English>Olympic Park</English>
 		<French>
@@ -507,6 +563,14 @@
 		<German>[TAB]Ein Olympiapark ist ein Veranstaltungsort, der von dem Gastgeberland Olympischer Spiele errichtet wird. Im Innern des Parks ist stets eine große Schale untergebracht, welche als letzte Station für die Zeremonie des Olympischen Fackellaufs dient: Der Schlussläufer läuft auf diese Schale zu, die üblicherweise am oberen Ende einer großen Treppe platziert ist, und entzündet im Stadion das Olympische Feuer. Die Schale und das Podest, auf dem sie angebracht ist, sind stets in einem einzigartigen und häufig dramatischen Design entworfen, das thematisch die Art und Weise widerspiegelt, wie das Feuer während der Er&#246;ffnungsfeier entfacht wird - bei den Olympischen Spielen in Barcelona 1992 schoss ein Bogensch&#252;tze einen brennenden Pfeil direkt &#252;ber den Kessel, um ihn zu entz&#252;nden.</German>
 		<Italian>[TAB]Un Parco olimpico &#232; un complesso architettonico creato da un paese quando deve ospitare le Olimpiadi e al cui interno viene sempre costruito un braciere: la destinazione della fiamma olimpica. L'ultimo tedoforo corre verso il braciere, solitamente posto in cima a una grande scalinata, e poi usa la torcia per accendere la fiamma nello stadio. Il braciere e il piedistallo su cui riposa sono sempre oggetto di design molto particolari. Ci&#242; &#232; anche legato al modo in cui il braciere viene acceso durante la cerimonia d'apertura. A Barcellona nel 1992, per esempio, un arciere scocc&#242; una freccia incendiaria sopra il braciere, per accenderlo.</Italian>
 		<Spanish>[TAB]Un estadio ol&#237;mpico es el edificio principal de acogida al público de unos Juegos Ol&#237;mpicos. Siempre se construye un pebetero en el interior del mismo, que es el destino final de la ceremonia de entrega de la antorcha. El último portador de la antorcha debe correr hacia el pebetero, que suele encontrarse en la cima de unas escaleras, y usar la citada antorcha para encender la llama del estadio. El pebetero y el pedestal que lo soporta siempre son objeto de una ceremonia única y a menudo impresionante. El protagonismo de este evento tambi&#233;n reside en el modo de pasar la llama al pebetero durante la ceremonia de inauguraci&#243;n. En Barcelona en 1992, un arquero dispar&#243; una flecha en llamas que inmediatamente encendi&#243; la llama del pebetero.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK_STRATEGY</Tag>
+		<English>Building the [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins an immediate [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</English>
+		<French>La construction du [COLOR_BUILDING_TEXT]Parc Olympique[COLOR_REVERT] d&#233;clenche le d&#233;but d'un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
+		<German>Nach dem Bau des [COLOR_BUILDING_TEXT]Olympiapark[COLOR_REVERT] bricht f&#252;r Ihre Zivilisation umgehend ein [COLOR_HIGHLIGHT_TEXT]goldenes Zeitalter[COLOR_REVERT] an. Dar&#252;ber hinaus erh&#246;ht es die Chancen der Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>Costruendo il [COLOR_BUILDING_TEXT]Parco Olympico[COLOR_REVERT], darai immediatamente inizio all'[COLOR_HIGHLIGHT_TEXT]et&#224; dell'oro[COLOR_REVERT] per la tua civilt&#224;. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Mercante[COLOR_REVERT].</Italian>
+		<Spanish>Construir el [COLOR_BUILDING_TEXT]Estadio Ol&#237;mpico[COLOR_REVERT] hace que comience de inmediato una [COLOR_HIGHLIGHT_TEXT]Edad de oro[COLOR_REVERT] para esa civilizaci&#243;n. Tambi&#233;n aumenta las probabilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ANGKOR_WAT</Tag>
@@ -1290,5 +1354,13 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 		<Tag>TXT_KEY_MEZQUITA_FREE_GP</Tag>
 		<English>A %s1 has been born after the construction of La Mezquita in %s2!</English>
 		<German>Ein %s1 wurde nach der Errichtung der La Mezquita in %s2 geboren!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_PARK_STRATEGY</Tag>
+		<English>Build the [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] to greatly increase the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chances that a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT] might appear in your city.</English>
+		<French>Construisez le [COLOR_BUILDING_TEXT]parc national[COLOR_REVERT] pour &#233;liminer toute pr&#233;sence de maladie dans votre ville. Il conf&#232;re &#233;galement un sp&#233;cialiste gratuit pour chaque [COLOR_HIGHLIGHT_TEXT]r&#233;serve bois&#233;e[COLOR_REVERT] pr&#233;sente dans son rayon et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]scientifique illustre[COLOR_REVERT] dans votre ville.</French>
+		<German>Der [COLOR_BUILDING_TEXT]Nationalpark[COLOR_REVERT] befreit die Bev&#246;lkerung einer Stadt von allen Krankheiten. Dar&#252;ber hinaus gew&#228;hrt er einen Spezialisten f&#252;r jeden [COLOR_HIGHLIGHT_TEXT]Naturpark[COLOR_REVERT] innerhalb des Stadtgebiets und erh&#246;ht die Chancen auf den Erhalt eines [COLOR_UNIT_TEXT]Gro&#223;en Wissenschaftlers[COLOR_REVERT].</German>
+		<Italian>Costruisci il [COLOR_BUILDING_TEXT]Parco nazionale[COLOR_REVERT] per far fronte alla mancanza di salute della popolazione della tua citt&#224;. Fornisce inoltre uno specialista per ogni [COLOR_HIGHLIGHT_TEXT]Riserva forestale[COLOR_REVERT] nel raggio della citt&#224; e aumenta le probabilit&#224; che appaia un [COLOR_UNIT_TEXT]Grande Scienziato[COLOR_REVERT] nella tua citt&#224;.</Italian>
+		<Spanish>Construye el [COLOR_BUILDING_TEXT]Parque nacional[COLOR_REVERT] para eliminar toda la insalubridad de la poblaci&#243;n de la ciudad. Tambi&#233;n proporciona un especialista gratis por cada [COLOR_HIGHLIGHT_TEXT]Reserva forestal[COLOR_REVERT] que haya en su radio urbano y aumenta la probabilidad de que pueda aparecer un [COLOR_UNIT_TEXT]gran cient&#237;fico[COLOR_REVERT] en la ciudad.</Spanish>
 	</TEXT>
 </Civ4GameText>
