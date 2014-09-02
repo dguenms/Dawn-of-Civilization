@@ -1904,28 +1904,20 @@ class RFCUtils:
 				
 		return False
 		
-	def canEverRespawn(self, iPlayer):
-		iGameTurn = gc.getGame().getGameTurn()
+	def canEverRespawn(self, iPlayer, iGameTurn = gc.getGame().getGameTurn()):
 		iNumIntervals = len(con.tResurrectionIntervals[iPlayer])
 		
 		if iNumIntervals == 0:
 			return False
 		else:
-			iStart, iEnd = con.tResurrectionIntervals[iNumIntervals-1]
+			iStart, iEnd = con.tResurrectionIntervals[iPlayer][iNumIntervals-1]
 			if getTurnForYear(iEnd) < iGameTurn:
 				return False
 				
-		return True	
-		
-	# use score history to determine last turn the civ was alive
-	#def getLastTurnAlive(iPlayer):
-	#	pPlayer = gc.getPlayer(iPlayer)
-	#	iCurrentTurn = gc.getGame().getGameTurn()
-	#	
-	#	if pPlayer.isAlive(): return iCurrentTurn
-	#	
-	#	for iTurn in range(iCurrentTurn, 0, -1):
-	#		if pPlayer.getScoreHistory(iTurn) > 0:
-	#			return iTurn
-	#			
-	#	return 0
+		return True
+
+	# Leoreth: returns True if function returns True for at least one member, otherwise False	
+	def satisfies(self, lList, function):
+		for element in lList:
+			if function(element): return True
+		return False

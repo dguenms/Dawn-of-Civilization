@@ -235,9 +235,9 @@
 			<Description>TXT_KEY_BUG_HINT_INTERFACE_7</Description>
 		</HintInfo>
 		
-		<HintInfo>
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_1</Description>
-		</HintInfo>
+		</HintInfo-->
 		<!-- Rhye - start -->
 		<!--
 		<HintInfo>
@@ -483,9 +483,9 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_12</Description>
 		</HintInfo>
-		<HintInfo>
+		<!--HintInfo>
 			<Description>TXT_KEY_HINT_DOC_13</Description>
-		</HintInfo>
+		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_14</Description>
 		</HintInfo>
@@ -560,6 +560,18 @@
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_38</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_39</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_40</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_41</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_42</Description>
 		</HintInfo>
 	</HintInfos>
 </Civ4Hints>

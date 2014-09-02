@@ -22,7 +22,10 @@ currentCongress = None
 
 ### Constants ###
 
-iCongressInterval = 25
+iCongressInterval = 15
+
+tAmericanClaimsTL = (19, 41)
+tAmericanClaimsBR = (24, 49)
 
 ### Event Handlers ###
 
@@ -57,8 +60,8 @@ def isCongressEnabled():
 	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iUnitedNations).getBuildingClassType()) > 0:
 		return False
 		
-	if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
-		return False
+	#if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
+	#	return False
 		
 	return (gc.getGame().countKnownTechNumTeams(iNationalism) > 0)
 
@@ -428,6 +431,8 @@ class Congress:
 		self.bPostWar = (len(self.lWinners) > 0)
 		lPossibleInvites = []
 		
+		utils.debugTextPopup('Congress takes place')
+		
 		if self.bPostWar:
 			lPossibleInvites.extend(self.lWinners)
 			lPossibleInvites.extend(self.lLosers)
@@ -459,8 +464,11 @@ class Congress:
 		
 		# unless the player isn't involved, in that case resolve from here
 		if utils.getHumanID() not in self.dPossibleClaims:
-			self.startIntroductionEvent(False)
-			#self.voteOnClaims()
+			# since Congresses now can occur during autoplay, don't display these congresses to the player
+			if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]):
+				self.startIntroductionEvent(False)
+			else:
+				self.voteOnClaims()
 			
 	def voteOnClaims(self):
 		# only humans vote so AI memory can influence their actions later
@@ -625,6 +633,12 @@ class Congress:
 		if bOwner: sDebugText += '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0)
 		
 		print sDebugText
+		
+		# everyone agrees on AI American claims in the west
+		if iClaimant == iAmerica and utils.getHumanID() != iAmerica and iVoter != iOwner:
+			if utils.isPlotInArea((x, y), tAmericanClaimsTL, tAmericanClaimsBR):
+				self.vote(iVoter, iClaimant, 1)
+				return
 			
 		# player factors
 		if bOwner and not bMinor and not bOwnCity and not bOwnClaim:
@@ -664,7 +678,7 @@ class Congress:
 			if utils.getHumanID() == iOwner and iVoter in self.dVotingMemory: iFavorOwner += 5 * self.dVotingMemory[iVoter]
 			
 		# if we don't dislike them, agree with the value of their claim
-		if pVoter.AI_getAttitude(iClaimant): iClaimValidity += iClaimValue
+		if pVoter.AI_getAttitude(iClaimant) >= AttitudeTypes.ATTITUDE_CAUTIOUS: iClaimValidity += iClaimValue
 			
 		# French UP
 		if iClaimant == iFrance: iClaimValidity += 5
@@ -915,6 +929,11 @@ class Congress:
 				if self.bPostWar:
 					iValue += plot.getWarMapValue(iPlayer) / 2
 					
+				# AI America receives extra value for claims in the west
+				if iPlayer == iAmerica and utils.getHumanID() != iPlayer:
+					if utils.isPlotInArea((x, y), tAmericanClaimsTL, tAmericanClaimsBR):
+						iValue += 5
+					
 				if iValue > 0:
 					lPlots.append((x, y, iValue))
 		
@@ -939,3 +958,9 @@ class Congress:
 	def inviteToCongress(self, lPossibleInvites):
 		lPossibleInvites = utils.getSortedList(lPossibleInvites, lambda x: gc.getGame().getPlayerRank(x))
 		self.lInvites = lPossibleInvites[:getNumInvitations()]
+		
+		# Leoreth: America receives an invite if there are still claims in the west
+		if iAmerica not in self.lInvites and not self.bPostWar and gc.getGame().getGameTurn() > tBirth[iAmerica]:
+			lAmericanClaimCities = utils.getAreaCities(tAmericanClaimsTL, tAmericanClaimsBR)
+			if utils.satisfies(lAmericanClaimCities, lambda x: x.getOwner() != iAmerica):
+				self.lInvites[len(self.lInvites)-1] = iAmerica

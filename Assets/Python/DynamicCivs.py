@@ -1265,7 +1265,7 @@ class DynamicCivs:
 						elif iGameTurn >= getTurnForYear(600):
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_TANG")
 						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QIN")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
 						return
 						
 					if iEra == iClassical:

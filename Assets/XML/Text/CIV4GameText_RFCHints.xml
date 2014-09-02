@@ -391,7 +391,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_7</Tag>
-		<English>In Dawn of Civilization, Nationalism is not necessary for the resurrection of civilizations, but they can only happen in historically appropriate periods.</English>
+		<English>In Dawn of Civilization, Nationalism is not necessary for the resurrection of civilizations. Instead they can only happen in historically appropriate periods.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_8</Tag>
@@ -495,15 +495,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_33</Tag>
-		<English>Slaves can be created using the "enslave" button in cities in Sub-Saharan Africa while using Forced Labor.</English>
+		<English>Slaves can be created using the "enslave" button in cities in Sub-Saharan Africa while using Slavery.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_34</Tag>
-		<English>Defeating Impis and Pombos on your territory while using Forced Labor has a chance to create a slave unit.</English>
+		<English>Defeating Impis and Pombos on your territory while using Slavery has a chance to create a slave unit.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_35</Tag>
-		<English>All civilizations except Ethiopia, Mali and Congo can use slave units to build slave plantations for additional production and commerce or settle them as specialists for additional production at the cost of unhappiness.</English>
+		<English>Acquire slaves to build slave plantations or settle them in your cities. This option is only available in North America or in Africa unless your capital is in Africa.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_36</Tag>
@@ -511,10 +511,26 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_37</Tag>
-		<English>Slave plantations and slave specialists are removed if you don't use either Forced Labor, Agrarianism or Mercantilism.</English>
+		<English>Slave plantations and slave specialists are removed once you adopt Egalitarianism.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_38</Tag>
 		<English>Goody huts are placed randomly at the beginning of the game.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_39</Tag>
+		<English>The area certain civilizations flip on spawn is not always identical to their core. Several civilizations can flip larger areas.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_40</Tag>
+		<English>The core of several civilizations expands on certain conditions, such as entering a new era.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_41</Tag>
+		<English>The stability and flip zone maps for all civilizations can be found in the Maps folder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_42</Tag>
+		<English>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</English>
 	</TEXT>
 </Civ4GameText>

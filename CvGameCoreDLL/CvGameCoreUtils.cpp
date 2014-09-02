@@ -18,6 +18,7 @@
 #include "CvDLLEntityIFaceBase.h"
 #include "CvDLLFAStarIFaceBase.h"
 
+#include "CvRhyes.h"
 
 #define PATH_MOVEMENT_WEIGHT									(1000)
 #define PATH_RIVER_WEIGHT											(100)
@@ -2624,3 +2625,8 @@ int calculateLevel(int iExperience, PlayerTypes ePlayer)
 	return iLevel;
 }
 // BUG - Unit Experience - end
+
+int getSettlerMapValue(int iPlayer, int iReborn, int x, int y)
+{
+	return settlersMaps[iReborn][iPlayer][y][x];
+}

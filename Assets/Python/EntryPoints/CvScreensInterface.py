@@ -1468,20 +1468,13 @@ def getUHVTileInfo(argsList):
 		if x >= tlx and x <= brx and y >= tly and y <= bry:
 			return 28
 			
+	elif iPlayer == con.iSpain:
+		if utils.isPlotInArea((x, y), vic.tEuropeTL, vic.tEuropeBR): return 29
+		elif utils.isPlotInArea((x, y), vic.tEasternEuropeTL, vic.tEasternEuropeBR): return 29
+			
 	elif iPlayer == con.iFrance:
-		bEurope = False
-	
-		tlx, tly = con.tEuropeTL
-		brx, bry = con.tEuropeBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
-			bEurope = True
-			
-		tlx, tly = con.tEasternEuropeTL
-		brx, bry = con.tEasternEuropeBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
-			bEurope = True
-			
-		if bEurope: return 29
+		if utils.isPlotInArea((x, y), vic.tEuropeTL, vic.tEuropeBR): return 29
+		elif utils.isPlotInArea((x, y), vic.tEasternEuropeTL, vic.tEasternEuropeBR): return 29
 				
 		tlx, tly = con.tNorthAmericaTL
 		brx, bry = con.tNorthAmericaBR
