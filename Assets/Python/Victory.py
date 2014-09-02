@@ -1626,13 +1626,14 @@ class Victory:
 				if iGameTurn == getTurnForYear(1700):
 					fReligionPercent = gc.getGame().calculateReligionPercent(con.iChristianity)
 
+					lEuropePlots = utils.getPlotList(tEuropeTL, tEuropeBR)
+					lEuropePlots.extend(utils.getPlotList(tEasternEuropeTL, tEasternEuropeBR))
+									
 					bNoProtestants = True
-					for iCiv in range(iNumPlayers):
-						if gc.getPlayer(iCiv).getStateReligion() == con.iJudaism:
-							cityList = PyPlayer(iCiv).getCityList()
-							for city in cityList:
-								pCity = city.GetCy()
-								if pCity.getRegionID() in [con.rIberia, con.rBritain, con.rItaly, con.rEurope, con.rBalkans, con.rScandinavia, con.rRussia]:
+					for iLoopPlayer in range(con.iNumPlayers):
+						if gc.getPlayer(iLoopPlayer).getStateReligion() == con.iProtestantism:
+							for city in utils.getCityList(iLoopPlayer):
+								if (city.getX(), city.getY()) in lEuropePlots:
 									bNoProtestants = False
 									break
 									break

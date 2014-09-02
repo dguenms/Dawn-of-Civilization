@@ -366,6 +366,8 @@ ScenarioTypes getScenario(); // Leoreth
 int getScenarioStartYear(); // Leoreth
 int getScenarioStartTurn(); // Leoreth
 
+int getSettlerMapValue(int iPlayer, int iReborn, int x, int y); // Leoreth
+
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);

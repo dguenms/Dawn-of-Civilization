@@ -36062,7 +36062,6 @@ BeginPlot
 		CityOwner=6
 		CityName=Tabriz
 		CityPopulation=7
-		ProductionUnit=UNIT_WORKER
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -37826,7 +37825,6 @@ BeginPlot
 		CityOwner=6
 		CityName=Shiraz
 		CityPopulation=6
-		ProductionUnit=UNIT_WARRIOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -38741,7 +38739,6 @@ BeginPlot
 		CityOwner=6
 		CityName=Herat
 		CityPopulation=5
-		ProductionBuilding=BUILDING_BARRACKS
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_FORGE
@@ -45621,7 +45618,6 @@ BeginPlot
 		CityOwner=1
 		CityName=Chengdu
 		CityPopulation=6
-		ProductionUnit=UNIT_WARRIOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
@@ -46134,7 +46130,6 @@ BeginPlot
 		CityOwner=1
 		CityName=Xi'an
 		CityPopulation=8
-		ProductionBuilding=BUILDING_BARRACKS
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_AQUEDUCT
@@ -47108,7 +47103,6 @@ BeginPlot
 		CityOwner=1
 		CityName=Chongqing
 		CityPopulation=7
-		ProductionUnit=UNIT_WARRIOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
@@ -47174,7 +47168,6 @@ BeginPlot
 		CityOwner=1
 		CityName=Beijing
 		CityPopulation=9
-		ProductionBuilding=BUILDING_BARRACKS
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_FORBIDDEN_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -47603,7 +47596,6 @@ BeginPlot
 		CityOwner=1
 		CityName=Kaifeng
 		CityPopulation=6
-		ProductionUnit=UNIT_WARRIOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
@@ -48540,7 +48532,6 @@ BeginPlot
 		CityOwner=1
 		CityName=Guangzhou
 		CityPopulation=10
-		ProductionUnit=UNIT_WARRIOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -49060,7 +49051,6 @@ BeginPlot
 		CityOwner=1
 		CityName=Shanghai
 		CityPopulation=10
-		ProductionUnit=UNIT_WARRIOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -49484,7 +49474,6 @@ BeginPlot
 		CityOwner=1
 		CityName=Hangzhou
 		CityPopulation=8
-		ProductionUnit=UNIT_WARRIOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR

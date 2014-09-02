@@ -3,7 +3,10 @@
 <!-- Sid Meier's Civilization 4 -->
 <!-- -->
 <Civ4GameText xmlns="http://www.firaxis.com">
-
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_SCREEN_TITLE</Tag>
+		<English>DAWN OF A CIVILIZATION</English>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_EGYPT</Tag>
 		<English>It is the year 3000 BC. The Egyptian civilization coalesces under the recent unification of the Kingdoms of Lower and Upper Egypt. The fertile banks of the Nile make Egypt one of the wealthiest regions of the world. It is time to use this wealth to build monuments and establish a culture the world has never seen before.</English>

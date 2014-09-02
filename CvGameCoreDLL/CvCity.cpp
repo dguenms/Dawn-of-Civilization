@@ -5055,7 +5055,12 @@ int CvCity::getCulturePercentAnger() const
 
 				if (iCulture > 0)
 				{
-					if (atWar(GET_PLAYER((PlayerTypes)iI).getTeam(), getTeam()))
+					if (!GET_PLAYER((PlayerTypes)iI).isAlive())
+					{
+						iCulture *= 50;
+						iCulture /= 100;
+					}
+					else if (atWar(GET_PLAYER((PlayerTypes)iI).getTeam(), getTeam()))
 					{
 						iCulture *= std::max(0, (GC.getDefineINT("AT_WAR_CULTURE_ANGER_MODIFIER") + 100));
 						iCulture /= 100;

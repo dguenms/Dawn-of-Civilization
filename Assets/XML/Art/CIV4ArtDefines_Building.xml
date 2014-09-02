@@ -1681,7 +1681,7 @@
 			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Apostolic_Palace/Apostolic_Palace.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,2,14</Button>
+			<Button>Art/Interface/Buttons/Buildings/ApostolicPalace.dds</Button>
 		</BuildingArtInfo>
 		<!-- Rhye - start -->
 		<BuildingArtInfo>
@@ -2013,6 +2013,16 @@
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Civilizations/Portugal.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,1,5</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ITA_EMBASSY</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Civilizations/Italy.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_INC_EMBASSY</Type>

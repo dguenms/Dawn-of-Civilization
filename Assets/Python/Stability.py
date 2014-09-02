@@ -1253,6 +1253,8 @@ def calculateStability(iPlayer):
 	if iEconomicGrowthStability > 30: iEconomicGrowthStability = 30
 	elif iEconomicGrowthStability < -30: iEconomicGrowthStability = -30
 	
+	lParameters[con.iParameterEconomicGrowth] = iEconomicGrowthStability
+	
 	iEconomyStability += iEconomicGrowthStability
 	
 	# Trade
