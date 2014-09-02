@@ -1822,7 +1822,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Ethiopia.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,3,4</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Ethiopia.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_KOR_EMBASSY</Type>
@@ -1842,7 +1842,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Maya.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,6,4</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Maya.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BYZ_EMBASSY</Type>
@@ -1852,7 +1852,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Maya.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,2,4</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Byzantium.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_VIK_EMBASSY</Type>
@@ -1892,7 +1892,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Khmer.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,5,4</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Khmer.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_INO_EMBASSY</Type>
@@ -1982,7 +1982,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Netherlands.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,8,4</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Netherlands.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MAL_EMBASSY</Type>
@@ -2012,7 +2012,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Civilizations/Portugal.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,1,5</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Portugal.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ITA_EMBASSY</Type>
@@ -2271,9 +2271,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.8</fScale>
 			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Himeji Castle/asiapalace.nif</NIF>
+			<NIF>Art/Structures/Wonders/HimejiCastle/asiapalace.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Himeji Castle/HimejiCastle.dds</Button>
+			<Button>Art/Structures/Wonders/HimejiCastle/HimejiCastle.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_PORCELAIN_TOWER</Type>
@@ -2281,9 +2281,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.4</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Porcelain Tower/nanjing.nif</NIF>
+			<NIF>Art/Structures/Wonders/PorcelainTower/nanjing.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Porcelain Tower/Button_PorcelainTower.dds</Button>
+			<Button>Art/Structures/Wonders/PorcelainTower/Button_PorcelainTower.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GREAT_BATH</Type>
@@ -2291,9 +2291,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Great Bath/bath_middle_east.nif</NIF>
+			<NIF>Art/Structures/Wonders/GreatBath/bath_middle_east.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Great Bath/GreatBathButton.dds</Button>
+			<Button>Art/Structures/Wonders/GreatBath/GreatBathButton.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_KHAJURAHO</Type>
@@ -2351,9 +2351,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Ho Trai/confucian_cathedral.nif</NIF>
+			<NIF>Art/Structures/Buildings/HoTrai/confucian_cathedral.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Ho Trai/Ho Trai.dds</Button>
+			<Button>Art/Structures/Buildings/HoTrai/HoTrai.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BLUE_MOSQUE</Type>
@@ -2371,9 +2371,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.5</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Red Fort/palace.nif</NIF>
+			<NIF>Art/Structures/Wonders/RedFort/palace.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Red Fort/Red Fort.dds</Button>
+			<Button>Art/Structures/Wonders/RedFort/RedFort.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CARAVANSERAI</Type>
@@ -2431,9 +2431,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.00</fScale>
 			<fInterfaceScale>0.43</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Empire State Building/empire.nif</NIF>
+			<NIF>Art/Structures/Wonders/EmpireStateBuilding/empire.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Empire State Building/empiremain.dds</Button>
+			<Button>Art/Structures/Wonders/EmpireStateBuilding/empiremain.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_FLOATING_GARDENS</Type>
@@ -2541,9 +2541,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>3</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Machu Picchu/macchu_picchu.nif</NIF>
+			<NIF>Art/Structures/Wonders/MachuPicchu/macchu_picchu.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Machu Picchu/Machu.dds</Button>
+			<Button>Art/Structures/Wonders/MachuPicchu/Machu.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</Type>
@@ -2561,9 +2561,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>.9</fScale>
 			<fInterfaceScale>.75</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Refrigeration Plant/Industrial_Park.nif</NIF>
+			<NIF>Art/Structures/Buildings/RefrigerationPlant/Industrial_Park.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Refrigeration Plant/Refrigeration Plant.dds</Button>
+			<Button>Art/Structures/Buildings/RefrigerationPlant/RefrigerationPlant.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
