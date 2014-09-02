@@ -1626,8 +1626,8 @@ class Victory:
 				if iGameTurn == getTurnForYear(1700):
 					fReligionPercent = gc.getGame().calculateReligionPercent(con.iChristianity)
 
-					lEuropePlots = utils.getPlotList(tEuropeTL, tEuropeBR)
-					lEuropePlots.extend(utils.getPlotList(tEasternEuropeTL, tEasternEuropeBR))
+					lEuropePlots = utils.getPlotList(con.tEuropeTL, con.tEuropeBR)
+					lEuropePlots.extend(utils.getPlotList(con.tEasternEuropeTL, con.tEasternEuropeBR))
 									
 					bNoProtestants = True
 					for iLoopPlayer in range(con.iNumPlayers):
