@@ -564,6 +564,8 @@ class CvRFCEventHandler:
 			
 		if iBuildingType == con.iPalace:
 			sta.onPalaceMoved(iOwner)
+			
+			if city.isHasRealBuilding(con.iSummerPalace): city.setHasRealBuilding(con.iSummerPalace, False)
 
 		# Leoreth: Apostolic Palace moves holy city
 		if iBuildingType == con.iApostolicPalace:

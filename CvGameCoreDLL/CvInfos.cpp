@@ -11179,7 +11179,7 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 
 	if (pl < NUM_MAJOR_PLAYERS)
 	{
-		result = m_iHealthBonus * healthMultiplier[pl];
+		result = m_iHealthBonus + healthModifier[pl];
 	}
 
 	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
@@ -11187,11 +11187,6 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
 		if (pl == ROME)
 			result = m_iHealthBonus * 6;
 	}*/
-
-	if (pl == INDIA)
-	{
-		result -= 1;
-	}
 
 	if (getScenario() >= SCENARIO_600AD) { //late start condition
 		if (pl < VIKING && result < 5) {

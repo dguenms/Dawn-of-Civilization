@@ -37,11 +37,11 @@
 			<Description>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_STABILITY_TOOLTIP_PEDIA</Civilopedia>
 		</ConceptInfo>
-		<ConceptInfo>
+		<!--ConceptInfo>
 			<Type>CONCEPT_CIVIC_STABILITY</Type>
 			<Description>TXT_KEY_CONCEPT_CIVIC_STABILITY</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_CIVIC_STABILITY_PEDIA</Civilopedia>
-		</ConceptInfo>
+		</ConceptInfo-->
 		<ConceptInfo>
 			<Type>CONCEPT_CONGRESSES</Type>
 			<Description>TXT_KEY_CONCEPT_CONGRESSES</Description>
@@ -109,6 +109,11 @@
 			<Type>CONCEPT_SLAVERY</Type>
 			<Description>TXT_KEY_CONCEPT_SLAVERY</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_SLAVERY_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_STABILITY_INFLUENCES</Type>
+			<Description>TXT_KEY_CONCEPT_STABILITY_INFLUENCES</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_STABILITY_INFLUENCES_PEDIA</Civilopedia>
 		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

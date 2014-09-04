@@ -7098,6 +7098,8 @@ int CvPlayerAI::AI_getColonyAttitude(PlayerTypes ePlayer) const
 PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, VoteSourceTypes eVoteSource, bool bPropose)
 {
 	PROFILE_FUNC();
+	
+	GC.getGame().logMsg("AI_diploVote()");
 
 	CivicTypes eBestCivic;
 	int iOpenCount;
@@ -7582,6 +7584,8 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 			else if (GC.getVoteInfo(kVoteData.eVote).getEspionage() > 0)
 			{
 				bValid = false;
+				GC.getGame().logMsg("Inquisition vote pope: %d", (int)kVoteData.ePlayer);
+				GC.getGame().logMsg("Inquisition vote target: %d", (int)kVoteData.eOtherPlayer);
 				if (kVoteData.ePlayer != NO_PLAYER && kVoteData.eOtherPlayer != NO_PLAYER)
 				{
 					if (kVoteData.ePlayer == getID())
@@ -14878,7 +14882,7 @@ void CvPlayerAI::AI_doDiplo()
 									// edead: start Relic trade based on Afforess' Advanced Diplomacy
 									//if (GET_TEAM(getTeam()).getLeaderID() == getID())
 									{
-										if (AI_getContactTimer(((PlayerTypes)iI), CONTACT_TRADE_SLAVE) == 0)
+										if (AI_getContactTimer(((PlayerTypes)iI), CONTACT_TRADE_SLAVE) == 0 && countRequiredSlaves() > 0)
 										{
 											if (GC.getGameINLINE().getSorenRandNum(GC.getLeaderHeadInfo(getPersonalityType()).getContactRand(CONTACT_TRADE_SLAVE), "AI Diplo Trade Relic") == 0)
 											{

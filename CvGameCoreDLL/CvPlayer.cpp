@@ -23125,7 +23125,7 @@ bool CvPlayer::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionS
 {
 	CvTeam& kOurTeam = GET_TEAM(getTeam());
 
-	GC.getGame().logMsg("canDoResolution: %d (player %d)", (int)kData.eVote, getID());
+	//GC.getGame().logMsg("canDoResolution: %d (player %d)", (int)kData.eVote, getID());
 
 	// No contact to target civ necessary
 	/*if (NO_PLAYER != kData.ePlayer)
