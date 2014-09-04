@@ -142,9 +142,15 @@ class Congress:
 				sInviteString += localText.getText("TXT_KEY_CONGRESS_INVITE", (gc.getPlayer(iPlayer).getCivilizationDescription(0),))
 		
 		if bHumanInvited:
-			sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION", (self.sHostCityName, sInviteString))
+			if self.bPostWar:
+				sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR", (self.sHostCityName, sInviteString))
+			else:
+				sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION", (self.sHostCityName, sInviteString))
 		else:
-			sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_AI", (self.sHostCityName, sInviteString))
+			if self.bPostWar:
+				sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI", (self.sHostCityName, sInviteString))
+			else:
+				sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_AI", (self.sHostCityName, sInviteString))
 			
 		popup.setText(sText)
 			
@@ -395,35 +401,39 @@ class Congress:
 		# still assignments to react to: start a new popup, otherwise show the results
 		if self.iNumHumanAssignments < len(self.lHumanAssignments):
 			iNextClaimant, tPlot = self.lHumanAssignments[self.iNumHumanAssignments]
-			self.startRefusalEvent(iClaimant, tPlot)
+			self.startRefusalEvent(iNextClaimant, tPlot)
 		else:
 			self.finishCongress()
 			
 	def startResultsEvent(self):
-		sText = localText.getText("TXT_KEY_CONGRESS_RESULTS", (self.sHostCityName,))
+		# don't display if human still in autoplay
+		if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]):
+	
+			sText = localText.getText("TXT_KEY_CONGRESS_RESULTS", (self.sHostCityName,))
 		
-		for tAssignment in self.lAssignments:
-			sName, iOldOwner, iNewOwner = tAssignment
-			sText += localText.getText("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", (sName, gc.getPlayer(iOldOwner).getCivilizationAdjective(0), gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
+			for tAssignment in self.lAssignments:
+				sName, iOldOwner, iNewOwner = tAssignment
+				sText += localText.getText("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", (sName, gc.getPlayer(iOldOwner).getCivilizationAdjective(0), gc.getPlayer(iNewOwner).getCivilizationAdjective(0)))
 			
-		for tColony in self.lColonies:
-			sName, iOldOwner, iNewOwner = tColony
-			if iOldOwner >= 0:
-				sText += localText.getText("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", (sName, gc.getPlayer(iOldOwner).getCivilizationAdjective(0), gc.getPlayer(iNewOwner).getCivilizationShortDescription(0)))
-			else:
-				sText += localText.getText("TXT_KEY_CONGRESS_RESULT_COLONY", (sName, gc.getPlayer(iNewOwner).getCivilizationShortDescription(0)))
+			for tColony in self.lColonies:
+				sName, iOldOwner, iNewOwner = tColony
+				if iOldOwner >= 0:
+					sText += localText.getText("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", (sName, gc.getPlayer(iOldOwner).getCivilizationAdjective(0), gc.getPlayer(iNewOwner).getCivilizationShortDescription(0)))
+				else:
+					sText += localText.getText("TXT_KEY_CONGRESS_RESULT_COLONY", (sName, gc.getPlayer(iNewOwner).getCivilizationShortDescription(0)))
 				
-		if len(self.lAssignments) == 0 and len(self.lColonies) == 0:
-			sText += localText.getText("TXT_KEY_CONGRESS_NO_RESULTS", ())
+			if len(self.lAssignments) == 0 and len(self.lColonies) == 0:
+				sText += localText.getText("TXT_KEY_CONGRESS_NO_RESULTS", ())
 			
-		popup = CyPopupInfo()
-		popup.setText(sText)
-		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_OK", ()), '')
+			popup = CyPopupInfo()
+			popup.setText(sText)
+			popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_OK", ()), '')
 		
-		popup.addPopup(utils.getHumanID())
+			popup.addPopup(utils.getHumanID())
 		
 		# don't waste memory
 		sd.setCurrentCongress(None)
+		del currentCongress
 
 	### Other Methods ###
 
@@ -568,7 +578,7 @@ class Congress:
 				
 		for iBelligerent in self.dPossibleBelligerents:
 			iRand = gc.getGame().getSorenRandNum(100, 'Random declaration of war')
-			iThreshold = tPatienceThreshold[iBelligerent] + 5 * self.dPossibleBelligerents[iBelligerent] + iGlobalWarModifier
+			iThreshold = 10 + tPatienceThreshold[iBelligerent] - 5 * self.dPossibleBelligerents[iBelligerent] - iGlobalWarModifier
 			if iRand >= iThreshold:
 				gc.getTeam(iBelligerent).declareWar(utils.getHumanID(), False, WarPlanTypes.WARPLAN_DOGPILE)
 				

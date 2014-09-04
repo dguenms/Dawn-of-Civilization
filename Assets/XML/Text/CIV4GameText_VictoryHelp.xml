@@ -130,15 +130,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_FRANCE</Tag>
-		<English>France: %d1 / %d2</English>
+		<English>Gaul: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND</Tag>
-		<English>England: %d1 / %d2</English>
+		<English>Britain: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE</Tag>
-		<English>Carthage: %d1 / %d2</English>
+		<English>Africa: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM</Tag>

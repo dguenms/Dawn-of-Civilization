@@ -6765,6 +6765,11 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible)
 		return false;
 	}
 
+	if (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+	{
+		if (!pPlot->canUseSlave(getOwner())) return false;
+	}
+
 	return true;
 }
 

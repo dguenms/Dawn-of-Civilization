@@ -369,7 +369,7 @@ extern int researchModifier[NUM_PL];
 extern int distanceMaintenanceModifier[NUM_PL];
 extern int numMaintenanceModifier[NUM_PL];
 extern int civicUpkeepModifier[NUM_PL];
-extern int healthMultiplier[NUM_PL];
+extern int healthModifier[NUM_PL];
 
 extern int startingEraFound[NUM_PL];
 extern int startingEraFound600AD[NUM_PL];

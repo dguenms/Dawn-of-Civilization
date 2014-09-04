@@ -9982,6 +9982,8 @@ VoteTriggeredData* CvGame::addVoteTriggered(const VoteSelectionData& kData, int 
 
 VoteTriggeredData* CvGame::addVoteTriggered(VoteSourceTypes eVoteSource, const VoteSelectionSubData& kOptionData)
 {
+	GC.getGame().logMsg("addVoteTriggered()");
+
 	VoteTriggeredData* pData = ((VoteTriggeredData*)(m_votesTriggered.add()));
 
 	if (NULL != pData)
