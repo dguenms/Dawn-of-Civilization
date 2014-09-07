@@ -257,7 +257,7 @@
 	# added a "send inquisition to X" resolution to the AP: the Pope receives additional espionage against the target civ
 	# added an "excommunicate X" resolution to the AP: the target player loses membership and receives unhappiness as if he had defied a resolution
 	# only the four civilizations with the highest military power are allowed to defy UN resolutions (Security Council)
-	# added a "decolonized city" resolution to the UN: cities on other continents can be forced to be liberated to independents
+	# added a "decolonize city" resolution to the UN: cities on other continents can be forced to be liberated to independents
 	# added a "release civilization" resolution to the UN: if a dead civilization can be resurrected, a controlling player can be forced to release it
 # slaves are now limited to half the population of every city
 # slaves can now only be used in the Americas and in Africa unless your capital is there

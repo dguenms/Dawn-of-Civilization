@@ -15,7 +15,6 @@ iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNether
 
 iHolland = iNetherlands
 iDelhi = iMughals
-#iItaly = iRome
 iSiam = iThailand
 iPhoenicia = iCarthage
 iHRE = iHolyRome
@@ -1196,7 +1195,7 @@ tReserveCapitals = (
 tBirthAreaTL = (
 (66, 30), #Egypt
 (99, 43), #China 
-(75, 38), #Babylonia
+(75, 39), #Babylonia
 (65, 39), #Greece
 (87, 36), #India
 (71, 39), #Carthage
@@ -1234,7 +1233,7 @@ tBirthAreaTL = (
 (58, 49), #Germany
 (25, 43), #America
 (31, 3), #Buenos Aires
-(36, 14), #Brazil
+(36, 15), #Brazil
 )
 
 tBirthAreaBR = (
@@ -1268,22 +1267,22 @@ tBirthAreaBR = (
 (50, 44), #Portugal
 (29, 24), #Inca
 (63, 47), #Italy
-(105, 58), #Mongolia
+(105, 54), #Mongolia
 (20, 41), #Aztecs
 (91, 43), #Mughals
-(77, 48), #Turkey
+(76, 48), #Turkey
 (103, 36), #Thailand
 (65, 22), #Congo
 (58, 54), #Holland
-(66, 55), #Germany
+(65, 55), #Germany
 (32, 50), #America
-(36, 13), #Argentina
+(35, 13), #Argentina
 (43, 27), #Brazil
 )
 
 tBirthAreaExceptions = (
 (), #Egypt
-(), #China
+((106, 47)), #China
 ((78, 41), (78, 42)), #Babylonia
 ((64, 45), (65, 45), (66, 45)), #Greece
 (), #India
@@ -1315,14 +1314,14 @@ tBirthAreaExceptions = (
 ((99, 47), (100, 47), (101, 47), (102, 47), (103, 47), (99, 46), (100, 46), (101, 46), (102, 46), (103, 46), (104, 46), (99, 45), (100, 45), (101, 45), (102, 45), (103, 45), (104, 45), (105, 45), (106, 45)), #Mongolia
 (), #Aztecs
 ((92, 43), (93, 42), (93, 43), (94, 42), (94, 43)), #Mughals
-((68, 48), (68, 49), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (74, 42), (75, 42), (80, 47), (80, 48), (80, 49), (67, 42), (67, 41)), #Turkey
+((74, 48), (75, 48), (76, 48), (75, 47), (75, 48), (76, 41)), #Turkey
 (), #Thailand
 (), #Congo
 ((57, 51), (58, 51)), #Holland
-((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (58, 52), (58, 53), (62, 51), (63, 51), (64, 53), (61, 49), (61, 50), (64, 52), (58, 54)),  #Germany
+((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (58, 52), (58, 53), (62, 51), (63, 51), (64, 53), (61, 49), (61, 50), (64, 52), (58, 54), (65, 52), (65, 53)),  #Germany
 ((25, 48), (25, 49), (26, 48), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50)), #America
-((35, 12), (35, 13), (36, 12), (36, 13)), #Argentina
-(), #Brazil
+((35, 4), (35, 12), (35, 13), (36, 12), (36, 13)), #Argentina
+((36, 15), (36, 16)), #Brazil
 )
 
 #core areas (for RiseAndFall and Victory)
@@ -1333,12 +1332,12 @@ tCoreAreasTL = (
 (75, 39), #Babylonia
 (64, 39), #Greece
 (90, 38), #India
-(71, 39), #Carthage
+(73, 39), #Carthage
 (79, 37), #Persia
 (59, 41), #Rome
 (90, 28), #Tamils
 (69, 27), #Ethiopia
-(107, 45), #Korea
+(108, 46), #Korea
 (20, 35), #Maya
 (64, 40), #Byzantium
 (112, 45), #Japan
@@ -1371,7 +1370,7 @@ tCoreAreasTL = (
 (37, 15), #Brazil
 ),
 ((67, 32), #Egypt
-(99, 43), #China 
+(99, 41), #China 
 (75, 39), #Babylonia
 (65, 39), #Greece
 (90, 38), #India
@@ -1380,7 +1379,7 @@ tCoreAreasTL = (
 (58, 45), #Rome	
 (90, 28), #Tamils
 (69, 27), #Ethiopia
-(107, 45), #Korea
+(108, 46), #Korea
 (24, 26), #Colombia
 (67, 44), #Byzantium
 (111, 41), #Japan
@@ -1424,7 +1423,7 @@ tCoreAreasBR = (
 (63, 47), #Rome
 (93, 34), #Tamils
 (73, 30), #Ethiopia
-(110, 49), #Korea
+(109, 48), #Korea
 (23, 37), #Maya
 (72, 46), #Byzantium
 (116, 47), #Japan
@@ -1435,7 +1434,7 @@ tCoreAreasBR = (
 (107, 31), #Indonesia
 (53, 42), #Moors
 (53, 46), #Spain
-(57, 52), #France
+(57, 51), #France
 (54, 60), #England   57 without Scotland
 (64, 54), #Holy Rome
 (75, 59), #Russia
@@ -1466,7 +1465,7 @@ tCoreAreasBR = (
 (63, 47), #Rome
 (93, 34), #Tamils
 (73, 30), #Ethiopia
-(110, 49), #Korea
+(109, 48), #Korea
 (31, 32), #Colombia
 (69, 46), #Byzantium
 (116, 49), #Japan
@@ -1477,7 +1476,7 @@ tCoreAreasBR = (
 (107, 31), #Indonesia
 (56, 39), #Moors
 (55, 46), #Spain
-(57, 52), #France
+(57, 51), #France
 (54, 60), #England   57 without Scotland
 (66, 51), #Holy Rome
 (75, 59), #Russia
@@ -1502,7 +1501,7 @@ tCoreAreasBR = (
 
 tExceptions = (  #for RiseAndFall
 ((), #Egypt
-(), #China
+((106, 47)), #China
 ((78, 41), (78, 42)), #Babylonia
 ((64, 45), (65, 45), (66, 45)), #Greece
 (), #India
@@ -1513,7 +1512,7 @@ tExceptions = (  #for RiseAndFall
 (), #Ethiopia
 (), #Korea
 (), #Maya
-(), #Byzantium
+((71, 40)), #Byzantium
 (), #Japan
 (), #Vikings
 ((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
@@ -1534,7 +1533,7 @@ tExceptions = (  #for RiseAndFall
 ((102, 47), (103, 47)), #Mongolia
 (), #Aztecs
 ((92, 43), (93, 42), (93, 43), (94, 42), (94, 43)), #Mughals
-((68, 48), (68, 49), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (74, 42), (75, 42), (80, 47), (80, 48), (80, 49), (67, 42), (67, 41)), #Turkey
+(), #Turkey
 (), #Thailand
 (), #Congo
 ((57, 51), (58, 51)), #Holland
@@ -1544,7 +1543,7 @@ tExceptions = (  #for RiseAndFall
 (), #Brazil
 ),
 ((), #Egypt
-(), #China
+((99, 41), (106, 47)), #China
 ((78, 41), (78, 42)), #Babylonia
 ((64, 45), (65, 45), (66, 46)), #Greece
 (), #India
@@ -1555,7 +1554,7 @@ tExceptions = (  #for RiseAndFall
 (), #Ethiopia
 (), #Korea
 ((30, 26), (31, 26), (30, 27), (31, 27), (30, 28), (30, 29)), #Colombia
-(), #Byzantium
+((71, 40)), #Byzantium
 (), #Japan
 (), #Vikings
 ((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
@@ -1576,7 +1575,7 @@ tExceptions = (  #for RiseAndFall
 (), #Mongolia
 ((19, 40)), #Mexico
 ((92, 43)), #Mughals
-((68, 48), (68, 49), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (74, 42), (75, 42), (80, 47), (80, 48), (80, 49)), #Turkey
+((68, 48), (68, 49), (73, 40), (73, 41), (73, 42), (71, 42), (70, 42), (74, 42), (75, 42), (80, 47), (80, 48), (80, 49), (67, 42)), #Turkey
 (), #Thailand
 (), #Congo
 ((57, 51), (58, 51)), #Holland

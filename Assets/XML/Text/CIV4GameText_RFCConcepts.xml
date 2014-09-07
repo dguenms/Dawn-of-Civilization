@@ -118,7 +118,7 @@
 		<Italian>[H1]Ambasciate[\H1][PARAGRAPH:2]Per ridurre l'eccesso di comunicazioni, periodicamente viene azzerato il contatto con le civilt&#224;. Rimarrai in contatto solo con le civilt&#224; che sono in vista delle tue citt&#224; o le cui citt&#224; sono nella visuale di una delle tue unit&#224;. Puoi stabilire un contatto permanente con una civilt&#224; costruendo la loro ambasciata. Le ambasciate vengono distrutte, se entri in guerra con la relativa civilt&#224;.</Italian>
 		<Spanish>[H1]Embajadas[\H1][PARAGRAPH:2]El contacto con otras civilizaciones se reiniciar&#225; peri&#243;dicamente para limitar las comunicaciones no deseadas. Solo podr&#225;s mantener contacto con las civilizaciones cuando &#233;stas se encuentren dentro de la visual de tus ciudades o cuando una de tus unidades se encuentre en la visual de una ciudad extranjera. Puedes establecer un contacto permanente con una civilizaci&#243;n si construyes su embajada. Las embajadas se destruyen si entras en guerra con una civilizaci&#243;n.</Spanish>
 	</TEXT>
-	<TEXT>
+	<!--TEXT>
 		<Tag>TXT_KEY_CONCEPT_CONGRESSES</Tag>
 		<English>Congresses</English>
 		<French>Congr&#232;s</French>
@@ -133,7 +133,7 @@
 		<German>[H1]Kongresse[\H1][PARAGRAPH:2]Sobald 3 Zivilisationen den "Nationalismus" erforscht haben bzw. nach jeweils 25. Runden, findet in einer zuf&#228;llig ausgew&#228;hlten Gastgeberstadt ein Weltkongress statt. Dazu werden 9 Zivilisationen als Teilnehmer eingeladen, in der Regel die bedeutendsten Nationen. Jede von ihnen kann eine fremde Stadt verlangen und die anderen Kongressteilnehmer k&#246;nnen &#252;ber jede Forderung mit JA, NEIN oder ENTHALTUNG abstimmen. Die KI macht ihre Entscheidung &#252;ber die zu fordernde Stadt zum Beispiel davon abh&#228;ngig, ob sie zuvor bereits einmal zu ihrer Zivilisation geh&#246;rte oder ob sie sich in der N&#228;he ihres Grenzgebiets befindet. Die gleichen Gesichtspunkte werden auch f&#252;r die Bestimmung der bis zu 5 St&#228;dte zugrunde gelegt, die der Spieler fordern kann.[PARAGRAPH:2]Die KI wird sich hinsichtlich ihres Abstimmungsverhaltens an Faktoren wie beispielsweise ihrer Haltung gegen&#252;ber dem bisherigen Eigent&#252;mer der Stadt und der fordernden Nation, eventuell vorausgegangenen Kriegen gegen diese beiden Parteien, den vorherrschenden Machtverh&#228;ltnissen oder den aktuellen nachbarschaftlichen Beziehungen orientieren. Sie k&#246;nnen auch versuchen, eine andere Zivilisation zu bestechen, damit sie in Ihrem Sinne abstimmt, allerdings sollten Sie dabei einkalkulieren, dass allein der Versuch bereits dazu f&#252;hren kann, dass sich das Ganze ins Gegenteil verkehrt und die Nation erst recht gegen Sie stimmt! Abgesehen davon besteht auch die M&#246;glichkeit, die &#220;bereignung einer geforderten Stadt zu verweigern, allerdings besteht dann die Gefahr, dass es zum Krieg mit allen Zivilisationen kommt, die f&#252;r die &#220;bereignung gestimmt haben.</German>
 		<Italian>[H1]Congressi[\H1][PARAGRAPH:2]Dopo che il nazionalismo &#232; stato scoperto da almeno 3 civilt&#224;, ogni 25&#176; turno si terr&#224; un congresso mondiale in una citt&#224; a caso. Vengono invitate nuove civilt&#224;, di solito le pi&#249; importanti; ognuna di queste pu&#242; chiedere di prendere il controllo di una citt&#224; importante e le altre votano S&#204;, NO o SI ASTENGONO per ogni richiesta. L'IA sceglie quali citt&#224; chiedere in base a fattori come se ha mai posseduto la citt&#224; nel proprio impero o se la citt&#224; &#232; vicina ai confini. Gli stessi fattori vengono utilizzati per dare al giocatore una scelta tra 5 citt&#224; da richiedere.[PARAGRAPH:2]L'IA voter&#224; basandosi su fattori come atteggiamento e precedenti scontri sia con il proprietario sia con il richiedente di una citt&#224;, l'equilibrio di potere tra i due o ragioni di vicinanza. Puoi anche tentare di corrompere un'altra civilt&#224; affinch&#233; voti a tuo favore. Attento, perch&#233; potrebbe indignarsi e votare contro di te! Puoi rifiutare di lasciare la citt&#224;, ma rischi di entrare in guerra con ogni civilt&#224; che ha votato a favore del passaggio.</Italian>
 		<Spanish>[H1]Congresos[\H1][PARAGRAPH:2]Cuando 3 civilizaciones descubran el Nacionalismo, y tras cada 25 turnos subsiguientes, se celebrar&#225; un Congreso Mundial en una ciudad aleatoria  Al que se invitar&#225; a nueve civilizaciones, normalmente las m&#225;s importantes. En &#233;l, toda civilizaci&#243;n puede pedir el control de una ciudad concreta y los dem&#225;s invitados del Congreso deber&#225;n votar S&#205; o NO, o ABSTENERSE por cada solicitud. La IA elige su ciudad en funci&#243;n de factores como si alguna vez ha controlado esa ciudad o su proximidad con sus fronteras. Y esos mismos factores se utilizan para presentar al jugador un abanico de hasta 5 ciudades entre las cuales elegir la que quiera pedir.[PARAGRAPH:2]La IA votar&#225; teniendo en cuenta factores como la actitud y las guerras previas contra el actual controlador de la ciudad y el jugador, su equilibro de poder o las relaciones vecinales. Tambi&#233;n puedes sobornar a una civilizaci&#243;n para que vote a tu favor. Pero ten cuidado, pues ello podr&#237;a incentivarles a que voten en contra de tus intereses. Puedes negarte a conceder una ciudad, pero te arriesgas a entrar en guerra con cada una de las civilizaciones que votaron a favor del cambio.</Spanish>
-	</TEXT>
+	</TEXT-->
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_ODDS</Tag>
 		<English>Odds and Ends</English>
@@ -323,14 +323,14 @@ The target areas of each civilization are as follows:
 [ICON_BULLET]No stability penalties for controlling cities
 [ICON_BULLET]Risk of respawn of another civilization
 [ICON_BULLET]The civilization native to this area only needs 20% culture to maintain control over this tile
-[ICON_BULLET]It is harder to build up culture here which can lead to stability penalties
+[ICON_BULLET]It is harder to build up culture here, which can lead to stability penalties
 [NEWLINE][BOLD]Foreign Area:[\BOLD]
 [ICON_BULLET]Controlling cities here can hurt your expansion stability
 [NEWLINE][BOLD]Foreign Core Area:[\BOLD]
 [ICON_BULLET]Controlling cities here can hurt your expansion stability
 [ICON_BULLET]Risk of respawn of another civilization
 [ICON_BULLET]The civilization native to this area only needs 20% culture to maintain control over this tile
-[ICON_BULLET]It is harder to build up culture here which can lead to stability penalties</English>
+[ICON_BULLET]It is harder to build up culture here, which can lead to stability penalties</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_SLAVERY</Tag>
@@ -585,6 +585,51 @@ Similar to conquest stability, the battles you have won are compared to the batt
 Your war weariness is compared to your enemy's. If it is larger, you receive a penalty proportional to the difference. This penalty also decays while the war lasts.
 [NEWLINE][BOLD]Barbarian Losses Stability[\BOLD]
 You receive a -1 stability penalty for every battle you lose against a barbarian unit. This penalty also decays over time.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_DIPLOMATIC_INSTITUTIONS</Tag>
+		<English>Diplomatic Institutions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_DIPLOMATIC_INSTITUTIONS_PEDIA</Tag>
+		<English>[H1]Diplomatic Institutions[\H1][PARAGRAPH:2]The [BOLD]Apostolic Palace[\BOLD] and [BOLD]United Nations[\BOLD] have seen some changes in Dawn of Civilizations. Several rules have been modified and certain resolutions were to increase their impact and make them more interesting to interact with. General changes:
+[NEWLINE][ICON_BULLET]Instead of being directly proportional to population, the number of votes of a civilization are now proportional to the square root of its population. This reduces the influence of large civilizations and makes cooperation with smaller civilizations more important.
+[ICON_BULLET]Defying resolutions now follows different rules for the two institutions.
+[ICON_BULLET]When a civilization attempts to win a diplomatic victory, its own votes and the votes of its vassals are disregarded. Instead it needs to win a majority among the remaining votes. This way, the diplomatic victory truly requires diplomacy, and cannot be achieved by military subjugation.
+[H2]Apostolic Palace[\H2]
+[ICON_BULLET]Only civilizations with Catholic state religions are members of the Apostolic Palace and allowed to vote.
+[ICON_BULLET]Resolutions that affect all members don't fail only because a member defies it.
+[ICON_BULLET]Instead, civilizations defying resolutions are not affected by them. The usual penalties (loss of membership, unhappiness, diplomatic penalties) still apply.
+[ICON_BULLET]Renamed the "Declare War" resolutions to "Crusade". Valid targets are non-members who are at war with a member (defensive crusade) and non-members who control the Catholic holy city or shrine (offensive crusade).
+[ICON_BULLET]New "Collect Tithe" resolution: all members pay 10% of their treasury of which the Pope receives half.
+[ICON_BULLET]New "Send Inquisition" resolution: the Pope receives additional espionage against the target civilization.
+[ICON_BULLET]New "Excommunication" resolution: the target loses membership and receives unhappiness as if they had defied a resolution.
+[H2]United Nations[\H2]
+[ICON_BULLET]Security Council: only the four civilizations with the highest military power are allowed to defy resolutions.
+[ICON_BULLET]New "Decolonize City" resolution: Cities on other continents can be forced to be liberated to independents.
+[ICON_BULLET]New "Release Civilization" resolution: If a civilization can respawn, another civilization controlling their territory can be forced to release it.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CONGRESSES</Tag>
+		<English>Congresses</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CONGRESSES_PEDIA</Tag>
+		<English>[H1]Congresses[\H1][PARAGRAPH:2]Congresses in Rhye's and Fall represent the phenomenon of informal institutionalization of international politics that began during the 19th century. This includes the idea of the balance of power which manifested itself in the Congress of Vienna and the Concert of Europe, but also international conferences on territorial claims such as the Berlin Congress. They also represent other diplomatic exchanges of territory like the Louisiana Purchase.[PARAGRAPH:2]Congresses take place as soon as the first civilization discovers Nationalism and regularly occur every 15 turns. The ten most powerful civilizations of the world will be invited, and each of them can either claim a city or request to found a colony on unsettled territory. If the majority of civilizations agrees, the request is granted and the city will change hands or a settler will be created on the demanded empty spot. While the human player can decide on claims by voting YES, NO or ABSTAIN, the AI will make its own decisions based on a variety of factors. These include the legitimacy of the claim (e.g. if the claimed city is historical for the civilization or if it already has culture there), the relationship to the demanding and controlling civilizations, including their own interest in the city.[PARAGRAPH:2]If a player claim was considered legitimate by an AI, but not granted because of insufficient relations, or if a player city has been granted to another civilization by the AI, the player can choose a number of options to influence the vote of AI civilizations in their favor. This can happen either through bribery (offering gold) or manipulation (expending espionage points). The player can spend varying amounts of both resources depending on how much they consider influencing their votes necessary. Another way to influence the AI is by agreeing to their own claims in the same congress - or at least avoiding to vote against them![PARAGRAPH:2]If all attempts fail and the congress still gives away one of your cities, you still have the opportunity to refuse handing it over. But be careful, this may cause some of the civilizations that agreed to the request to go to war over your contempt for their decision! The more votes were in favor of reassigning the city, the likelier an individual civilization is to go to war.[PARAGRAPH:2]Congresses are disrupted by global wars, under which different rules apply. A global war takes place when at least half the military power of the world is at war with each other. During these times, no congresses occur because the world is settling its differences on the battlefield instead of the negotiation table. However, when such a global war ends (by the main belligerents agreeing to peace), peace is enforced on all belligerents and a new congress is called to restore order after the war. Such a congress differs from normal congresses in that only belligerents are invited, that only civilizations on the winning side are allowed to make demands, and that it is impossible to request colonizing free territory. Civilizations that have lost the war still can vote on all claims, however. Congresses completely come to an end when the United Nations are built because their formalized approach to multilateral diplomacy makes congresses obsolete.
+[NEWLINE]If you are familiar with Congresses from Rhye's and Fall, you will notice multiple significant changes and improvements over the previous system, some of which have already been mentioned:
+[NEWLINE][ICON_BULLET]In addition to periodic congresses, congresses can also occur after global wars
+[ICON_BULLET]Participants can also request to settle free territory
+[ICON_BULLET]A streamlined interaction process so that the entire congress can be resolved in one turn
+[ICON_BULLET]Significant improvements in computation times
+[ICON_BULLET]When voting on a claim, the camera centers on the plot or city in question
+[ICON_BULLET]The option to influence a civilization's decision is only offered when there is actually a chance of success
+[ICON_BULLET]Attempts to influence a decision are now specific to a certain claim and can be used both to achieve agreement to an own claim and disagreement with a claim on your own cities
+[ICON_BULLET]There is no limit on how many civilizations can be attempted to be influenced during the same Congress
+[ICON_BULLET]In addition to bribery by offering gold, votes can also be manipulated by expending espionage
+[ICON_BULLET]More sophisticated AI decisionmaking: it now takes the legitimacy of the claim, its relations to the claimant and owner, and its own interest in the city into account
+[ICON_BULLET]More global AI decisionmaking: your own voting behavior influences how the AI treats your claims and the claims against you, global opinion influences how likely AIs are to go to war over a refused claim
+[ICON_BULLET]No more multiple assignments during the same Congress: if more than one civilization have successfully claimed the same city, it goes to the civilization that received the most votes in favor
+</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_</Tag>

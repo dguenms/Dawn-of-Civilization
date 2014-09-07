@@ -2128,6 +2128,10 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	if iPlayer in [con.iGreece]:
 		gc.getPlayer(iPlayer).setReborn(True)
 		
+	if iPlayer == con.iChina:
+		if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[con.iMongolia]):
+			gc.getPlayer(iPlayer).setReborn(True)
+		
 	# others revert to their old cores instead
 	if iPlayer in [con.iArabia, con.iMongolia]:
 		gc.getPlayer(iPlayer).setReborn(False)
