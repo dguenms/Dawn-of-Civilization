@@ -94,6 +94,11 @@
 				<choice id="Medium" get="isBuildIconSizeMedium"/>
 				<choice id="Large" get="isBuildIconSizeLarge"/>
 			</list>
+
+			<!-- Leoreth: show debug popups -->
+			<option id="ShowDebugPopups" key="Show Debug Popups" 
+					type="boolean" default="True" 
+					get="isShowDebugPopups" dirtyBit="GameData"/>
 		</section>
 	</options>
 	

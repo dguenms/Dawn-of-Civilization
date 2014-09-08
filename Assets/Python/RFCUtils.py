@@ -7,8 +7,10 @@ import Popup
 import Consts as con
 #import cPickle as pickle
 from StoredData import sd
+import BugCore
 
 # globals
+MainOpt = BugCore.game.MainInterface
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
@@ -255,7 +257,7 @@ class RFCUtils:
             
         #RiseAndFall
         def debugTextPopup(self, strText):
-		if gc.getGame().isCheatingEnabled():
+		if MainOpt.isShowDebugPopups():
 			popup = Popup.PyPopup()
 			popup.setBodyString( strText )
 			popup.launch()		

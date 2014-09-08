@@ -2452,7 +2452,7 @@
 			<ShortDescription>TXT_KEY_CIV_INDIA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_INDIA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_INDIA_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_PURPLE</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_PALE_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INDIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> <!-- Rhye -->
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
@@ -3070,7 +3070,7 @@
 			<Adjective>TXT_KEY_CIV_KHMER_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_KHMER_PEDIA</Civilopedia>
 			<!-- Rhye -->
-			<DefaultPlayerColor>PLAYERCOLOR_GREYISH_GREEN</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_BROWNISH_RED</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KHMER</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>

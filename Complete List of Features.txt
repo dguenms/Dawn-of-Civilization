@@ -1,9 +1,9 @@
 RFC Dawn of Civilization
-Complete List of Features (as of version 1.10)
+Complete List of Features (as of version 1.12)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
-This version corresponds to SVN revision 541.
+This version corresponds to SVN revision 774.
 
 GAME MECHANICS
 # enabled Epic/Marathon speeds (RFCMarathon modmod by embryodead)
@@ -19,8 +19,6 @@ GAME MECHANICS
 # civilizations are more likely to collapse after a certain historical date (e.g. Rome after 476 AD)
 # adapted the civic requirement mechanic for buildings and units from Sword of Islam
 # all civilizations have their core areas revealed at spawn
-# modified the AI to be more likely to adopt historical civics
-  (basically the "favourite civic" feature per civ and per era)
 # added a war on spawn between Turkey and Arabia
 # doubled the chance of war on spawn between Arabia and Egypt
 # some civilizations (Arabia, Mongolia, Turkey) fight their initial spawn wars longer
@@ -105,6 +103,11 @@ GAME MECHANICS
 # wars on spawn only start when the spawn actually happens
 # minor civs cannot take goody huts
 # Pastures and Plantations now yield +1 gold with railroads
+# the mercenary mechanic has been removed
+# no Golden Age turns are used up during Anarchy
+# blockade range has been reduced to 2
+# new stability mechanics
+	# 
 
 BALANCE
 # more Keshiks for Mongolia on spawn
@@ -655,6 +658,7 @@ UNITS
 # Dog Soldiers only receive +75% against melee units
 # The Incan unique unit was renamed from Quechua to Aucac
 # Portuguese Carracks start with Sentry now
+# New promotion: Mercenary (+2 gold upkeep, cannot be upgraded)
 
 BUILDINGS
 # Monument was renamed Pagan Temple, expires with Divine Right and gives +1 happiness with the Pantheon civic (see "civics")
@@ -675,7 +679,7 @@ BUILDINGS
 WONDERS
 # continental wonder effects now affect the whole map
 # Added special prerequisites to ensure a more historical placement of wonders
-	# Catholic wonders: Hagia Sophia, Sistine Chapel, Apostolic Palace, Notre Dame, Cristo Redentor, Theodosian Walls
+	# Catholic wonders: Sistine Chapel, Apostolic Palace, Notre Dame, Cristo Redentor, Theodosian Walls
 	# Muslim wonders: University of Sankore, Spiral Minaret, La Mezquita, Dome of the Rock, Topkapi Palace, Blue Mosque, The Red Fort
 	# Buddhist wonders: Shwedagon Paya, Himeji Castle
 	# Hindu wonders: Taj Mahal, Harmandir Sahib, Khajuraho, The Great Bath, Wat Preah Pisnulok
@@ -784,46 +788,44 @@ RELIGION
 # the spread chance of Catholicism and Protestantism does not depend on the distance of the city to the holy city, to increase their spread in the New World
 
 CIVICS
-# Complete rework of the civic system (except the expansion category)
-# New five categories: Government, Organization, Society, Economy, Religion
+# Complete rework of the civic system (including removing the expansion category)
+# New six categories: Government, Organization, Labor, Economy, Religion, Military
 # Government:
-	1. Tyranny (standard)
-	2. Dynasticism (Monarchy): +1 happiness per military unit, capped at +8
-	3. City States (Code of Laws): +1 food per specialist in all cities that work at most 7 land tiles, +100% number of cities maintenance 
-           [note: the extra food only applies to specialists that aren't hired because of unlimited specialist effects such as Egalitarianism, this is not displayed for individual specialists]
-	4. Theocracy (Theology): +2 experience and +2 happiness with state religion, no foreign religion spread, unlimited priests
-	5. Autocracy (Nationalism): +3 happiness with barracks, can draft military units
-	6. Republic (Philosophy): +100% cottage growth, +40% great people birth, +25% war weariness
+	1. Dynasticism (Monarchy, medium): +1 happiness per military unit (+4 max)
+	2. City States (Literature, high): +1 food per specialist, +100% number of cities upkeep
+	3. Theocracy (Theology, high): +2 happiness with state religion, double priest slots, +2 experience with state religion
+	4. Autocracy (Nationalism, medium): +2 happiness with barracks, can draft 3 units, +50% great general rate, +25% espionage
+	5. Republic (Liberalism, high): +50% great people rate, +100% cottage growth
 # Organization:
-	1. Direct Rule (standard)
-	2. Vassalage (Feudalism): extra free units, +2 XP per unit, -25% number of cities upkeep
-	3. Absolutism (Civil Service): +40% production and commerce in the capital city
-	4. Representation (Constitution): +2 research per specialist
-	5. Supreme Council (Communism): No city distance maintenance
-	6. Universal Suffrage (Democracy): +1 hammer in towns, +2 happiness in largest cities
-# Society:
-	1. Tribalism (standard)
-	2. Agrarianism (Calendar): +1 commerce for pastures and +2 commerce for plantations, -1 trade route, -50% cottage growth
-	3. Urbanization (Guilds): +50% worker speed, +1 production from workshops
-	4. Capitalism (Economics): +2 commerce for towns, can hurry with gold, +10% commerce
-	5. Totalitarianism (Fascism): -50% war weariness, +25% espionage, +25% unit production, unlimited spies
-	6. Egalitarianism (Democracy): Unlimited artist, merchant, scientist
+	1. Vassalage (Feudalism, medium): +2 experience, +2 happiness with Castle
+	2. Absolutism (Civil Service, high): +40% production and commerce in capital
+	3. Representation (Constitution, medium): +1 free specialist
+	4. Totalitarianism (Fascism, none): +1 happiness per military unit (+4 max), no city distance upkeep, double spy slots
+	5. Egalitarianism (Democracy, medium): +2 happiness in largest cities, +1 production from town, no slavery, unhappiness from slaves for other civs
+# Labor:
+	1. Slavery (Masonry, medium): can hurry with population, +1 commerce from plantation, slave plantation
+	2. Agrarianism (Calendar, low): +1 commerce from farm, +1 production from pasture, +25% worker speed
+	3. Capitalism (Economics, medium): +2 commerce from town, +10% commerce, can hurry buildings with gold
+	4. Industrialism (Steel, medium): +1 production from workshop, watermill, unlimited engineers, +10% production
+	5. Public Welfare (Communism, high): double artist, scientist and merchant slots, +2 science per specialist, double production for University, Hospital
 # Economy:
-	1. Self-Sufficiency (standard)
-	2. Forced Labor (Masonry): Can hurry with population
-	3. Mercantilism (Banking): +1 specialist, no foreign trade
-	4. Free Market (Economics): +1 trade route, +25% trade route yield, risk of a great depression
-	5. State Property (Communism): +50% production to commerce rate, +1 food for workshop, watermill, +1 production per specialist, no more than one corporation per city
-	6. Environmentalism (Ecology): -30% unhealthiness, +1 unhappiness from Nuclear Plant, +2 commerce for windmill
+	1. Guilds (Guilds, low): +1 gold per specialist, +1 production from workshop
+	2. Mercantilism (Banking, high): no foreign trade routes, +25% trade route yield, +25% gold in capital, +1 commerce from workshop
+	3. Free Market (Corporation, medium): +1 trade route, increased corporation spread, +25% corporation commerce
+	4. Central Planning (Communism, high): +1 production per specialist, +1 food from workshop, watermill, double production for Factory, Coal Plant
+	5. Environmentalism (Ecology, medium): -30% pollution, +2 commerce from windmill, forest preserve, +1 happiness with Public Transportation, double production for Recycling Center, Hydro Plant
 # Religion:
-	1. Animism (standard): +1 unhappiness per non-state religion
-	2. Pantheon (Polytheism): no state religion, can build classical wonders, +1 happiness with Pagan Temple, +1 unhappiness per non-state religion
-	3. Organized Religion (Monotheism): +25% building construction with state religion, can always train missionaries, +1 unhappiness per non-state religion
-	4. Scholasticism (Literature): +35% great people birth in cities with state religion, +1 unhappiness per non-state religion
-	5. Fanaticism (Divine Right): +25% unit training speed with state religion, +2 unhappiness per non-state religion
-	6. Secularism (Liberalism): +10% science
-# Expansion
-	# added the Imperialism civic (requires Nationalism): reduced penalty from controlling foreign cores, reduced likeliness of respawns on your territory
+	1. Pantheon (Polytheism, medium): +1 happiness with Pagan Temple, can construct classical wonders
+	2. Organized Religion (Monotheism, high): +25% building speed with state religion
+	3. Scholasticism (Philosophy, medium): +25% great people birth with state religion, allows missionaries
+	4. Fanaticism (Divine Right, low): +25% unit production with state religion, no foreign religion spread
+	5. Secularism (Liberalism, low): +10% research, no religious unhappiness, no state religion
+# Military:
+	1. Warrior Code (Horseback Riding, low): -50% war weariness, double production for Barracks, Stable
+	2. Mercenaries (Currency, medium): can hurry units with gold, hurried units start with the Mercenary promotion
+	3. Levy Armies (Feudalism, low): additional free units, unit production with food
+	4. Standing Army (Military Tradition, high): +25% land unit production, +2 land unit experience
+	5. Naval Dominance (Military Science, medium): +25% sea unit production, +2 sea unit experience, double production for Harbor, Customs House, Drydock
 
 CORPORATIONS
 # Corporation headquarters and executives removed, corporations spread on their own to cities that fulfill its conditions

@@ -5035,7 +5035,8 @@ int CvCity::getCulturePercentAnger() const
 	int iCulture;
 	int iI;
 
-	iTotalCulture = plot()->countTotalCulture();
+	//iTotalCulture = plot()->countTotalCulture();
+	iTotalCulture = countTotalCultureTimes100() / 100;
 
 	if (iTotalCulture == 0)
 	{
@@ -5051,7 +5052,8 @@ int CvCity::getCulturePercentAnger() const
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() != getTeam())
 			{
-				iCulture = plot()->getCulture((PlayerTypes)iI);
+				//iCulture = plot()->getCulture((PlayerTypes)iI);
+				iCulture = getCulture((PlayerTypes)iI);
 
 				if (iCulture > 0)
 				{
@@ -11102,6 +11104,28 @@ int CvCity::calculateCulturePercent(PlayerTypes eIndex) const
 	int iTotalCulture;
 
 	iTotalCulture = countTotalCultureTimes100();
+
+	if (iTotalCulture > 0)
+	{
+		return ((getCultureTimes100(eIndex) * 100) / iTotalCulture);
+	}
+
+	return 0;
+}
+
+
+// Leoreth
+int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
+{
+	int iTotalCulture;
+
+	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	{
+		if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			iTotalCulture += getCultureTimes100(eIndex);
+		}
+	}
 
 	if (iTotalCulture > 0)
 	{

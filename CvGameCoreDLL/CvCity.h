@@ -764,6 +764,7 @@ public:
 	int countTotalCultureTimes100() const;		//Rhye																					// Exposed to Python
 	PlayerTypes findHighestCulture() const;																			// Exposed to Python
 	int calculateCulturePercent(PlayerTypes eIndex) const;											// Exposed to Python
+	int calculateOverallCulturePercent(PlayerTypes eIndex) const; // Leoreth
 	int calculateTeamCulturePercent(TeamTypes eIndex) const;										// Exposed to Python
 	void setCulture(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
 	void setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, bool bUpdatePlotGroups);			// Exposed to Python
