@@ -2650,3 +2650,8 @@ int CyCity::getGameTurnPlayerLost(int ePlayer)
 {
 	return m_pCity ? m_pCity->getGameTurnPlayerLost((PlayerTypes)ePlayer) : -1;
 }
+
+int CyCity::calculateOverallCulturePercent(int ePlayer)
+{
+	return m_pCity ? m_pCity->calculateOverallCulturePercent((PlayerTypes)ePlayer) : 0;
+}

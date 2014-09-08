@@ -4394,7 +4394,7 @@ class CvMainInterface:
 				lBars = []
 				
 				for iPlayer in range(gc.getMAX_PLAYERS()):
-					iPercent = pHeadSelectedCity.plot().calculateOverallCulturePercent(iPlayer)
+					iPercent = pHeadSelectedCity.calculateOverallCulturePercent(iPlayer)
 					if iPercent > 0:
 						if iRemainder <= 0:
 							fPercentage = 0.0

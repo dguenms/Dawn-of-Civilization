@@ -120,7 +120,7 @@
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_INDIA</Type>
-			<Button>,Art/Interface/Buttons/Civilizations/India.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,2,6</Button>
+			<Button>Art/Interface/Buttons/Civilizations/India.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_WheelOfLaw.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
@@ -134,7 +134,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_KHMER</Type>
 			<!-- Rhye -->
-			<Button>,Art/Interface/Buttons/Civilizations/Khmer.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,5,4</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Khmer.dds</Button>
 			<!-- Rhye -->
 			<Path>Art/Interface/TeamColor/FlagDECAL_Cambodia.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>

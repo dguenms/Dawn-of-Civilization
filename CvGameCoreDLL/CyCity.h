@@ -428,6 +428,7 @@ public:
 	int countTotalCultureTimes100();
 	PlayerTypes findHighestCulture();
 	int calculateCulturePercent(int eIndex);
+	int calculateOverallCulturePercent(int ePlayer); // Leoreth
 	int calculateTeamCulturePercent(int /*TeamTypes*/ eIndex);
 	void setCulture(int /*PlayerTypes*/ eIndex, int iNewValue, bool bPlots);
 	void setCultureTimes100(int /*PlayerTypes*/ eIndex, int iNewValue, bool bPlots);
