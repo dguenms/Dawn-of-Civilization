@@ -1744,7 +1744,7 @@ class RiseAndFall:
 				sta.completeCollapse(iSeljuks)
 				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
                 
-                lConditionalCivs = [iByzantium, iThailand, iBrazil, iArgentina]
+                lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina]
 		
 		# Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
