@@ -74,12 +74,13 @@ GAME MECHANICS
 # missionary success chance abroad depends on the civ-specific religion spread chance, just like the natural religion spread
 # the Apostolic Palace now only has full members (i.e. civs with Catholic state religion)
 # added slave units
-	# can be created by using the enslave button in cities in Sub-Saharan Africa while running Forced Labor
-	# defeating Pombos and Impis on your territory while running Forced Labor has a chance to give a slave unit
+	# can be created by using the enslave button in cities in Sub-Saharan Africa while running Slavery
+	# defeating Pombos and Impis on your territory while running Slavery has a chance to give a slave unit
 	# slaves can be sold in the diplomacy negotiation table
-	# native African civs cannot sell slaves
-	# others can build slave plantations (+1 production and +2 commerce over regular plantations, consumes the slave) or settle them as specialists (+2 production, +1 unhappiness)
-	# switching out of Forced Labor, Agrarianism, Mercantilism removes all slave plantations and specialists
+	# slave plantations (+1 production and +2 commerce over regular plantations, consumes the slave) or settling slaves as specialists (+2 production, +1 unhappiness) is possible in the Americas and Sub-Saharan Africa (unless your capital is there)
+	# slave specialists are limited to half the city's population
+	# adopting Egalitarianism removes slave plantations and specialists
+	# slaves create additional unhappiness when more civilizations run Egalitarianism
 	# conquering a city with slave specialists turns them into slave units again
 # independents can't circumnavigate or receive conquerors anymore
 # redesigned barbarians, new units and spawn patterns with appropriate unit AIs
@@ -107,8 +108,114 @@ GAME MECHANICS
 # no Golden Age turns are used up during Anarchy
 # blockade range has been reduced to 2
 # new stability mechanics
-	# 
-
+	# stability checks are now triggered by certain events (discovering a technology, changing civics, losing/acquiring a city, starting wars, making peace ...) instead of periodically
+	# stability scores are not permanent anymore, and instead discarded after a stability check, therefore there are no permanent stability hits anymore
+	# instead, only a stability level is stored: collapsing, unstable, shaky, stable, solid
+	# stability is divided into five categories: expansion, economy, domestic, foreign and military
+	# at every check your stability level can increase or decrease depending on your score, if the level drops low enough a crisis occurs
+	# the severity of a crisis depends on the stability level while the effects depend on the stability category with the lowest score
+	# a crisis on collapsing is called a terminal crisis and results in a complete collapse
+# Added an option to release cities to dead civilizations to resurrect them
+# The core of various civilizations moves or expands on specific conditions
+	# Phoenician core moves to Northern Africa after founding Carthage
+	# Khmer core moves to Burma and Vietnam after the Thai spawn
+	# Turkish core expands to Constantinople after they conquer it
+	# Spanish core expands to Catalonia and Andalusia on entering the Renaissance in case the Moors are driven out of Iberia
+	# Italian core expands to all of Italy on entering the Industrial era
+	# Japanese core expands to all of Japan on entering the Industrial era
+	# Byzantine core shrinks when reduced to four or less cities
+	# Arabian core moves to Iraq with the discovery of Philosophy
+	# Mongol core moves south when vassalizing or collapsing China
+	# German core shrinks when entering the Modern era
+	# Chinese core expands to the south on respawn after collapsing to the Mongols
+	# Mongol and Arabian core revert to their original area after respawn
+# all civilizations now convert some enemy culture on city conquest (includes tiles in the first ring)
+# cities cannot spread culture into foreign cores unless they are in their core themselves
+# independents also benefit from the 80% rule if the civilization owning a core is dead
+# Added a religious victory option depending on your state religion
+	# Protestantism
+		- Enlightenment: be first to discover Liberalism, Constitution and Economics
+		- Work Ethic: make sure there are five great merchants and five great engineers settled in Protestant civilizations
+		- Religious Freedom: make sure that at least half of all civilizations are Protestant or secular
+	# Catholicism
+		- Holy See: be Pope for 100 turns
+		- Holy Land: control the Catholic shrine and make sure 12 great prophets are settled in Catholic civilizations
+		- Holy Mission: make sure 50% of the world territory are controlled by Catholic civilizations
+	# Orthodoxy
+		- Patriarchates: build four Orthodox cathedrals
+		- Iconography: control three cities with influential culture
+		- Communion: make sure there are no Catholic civilizations
+	# Islam
+		- Shahada: spread Islam to 50%
+		- Hajj: settle seven great people in the Muslim holy city
+		- Jihad: control five shrines
+	# Hinduism
+		- Varna: settle five different great people in the Hindu holy city
+		- Artha: experience 24 turns of golden age
+		- Kama: have a total population of 500 million
+	# Buddhism
+		- Sila: be at peace for 100 turns
+		- Nirvana: have the highest approval rating for 100 turns
+		- Middle Way: have cautious or better relations with all civilizations
+	# Confucianism
+		- Harmony: have friendly relations with five civilizations
+		- Ritual: have five wonders in the Confucian holy city
+		- Loyalty: control an army of 200 non-obsolete melee or gunpowder units
+	# Taoism
+		- Compassion: have the highest life expectancy rating in the world for 100 turns
+		- Moderation: control the Confucian and Taoist shrines and combine their income to 40 gold
+		- Humility: have legendary culture in the Taoist holy city
+	# Zoroastrianism
+		- Adar: acquire six incense resources
+		- Mathra: spread Zoroastrianism to 20%
+		- Shahnameh: have legendary culture in the Zoroastrian holy city
+	# Polytheism
+		- make sure there are 15 pagan temples in the world
+		- control ten wonders that require no state religion
+		- don't allow more than half of your cities to have a religion
+	# Secularism
+		- Tolerance: control the temples of seven different religions
+		- Humanism: make sure there are 20 universities in secular civilizations
+		- Modernization: be first to enter the industrial and modern eras
+# hurry unhappiness now scales with the amount of sacrificed population
+# the 80% rule now also applies to city flips
+# cities recently conquered by a human cannot become part of a resurrection
+# claims on cities from collapsing civs because of being the original owner are now only valid if the city has been recently lost
+# claims on cities from collapsing civs because of war targets are now only valid if the closest city isn't controlled by a different enemy of the collapsing civ
+# removed the base +1 happiness per 10% culture
+# Civilizations have to be dead for at least 20 turns to be resurrected
+# Rewritten Congress mechanics
+	# triggered either periodically or when a large war ends
+	# players can claim cities or request to settle free spots
+	# after a war, the winners can claim cities from the losers
+	# entire congress is resolves in one turn now
+	# when voting on a city claim, camera moves to the city in question
+	# significantly improved performance
+	# if an AI civ is undecided on your claim or a claim on one of your cities, you can attempt to influence them using gold or espionage
+	# city assignments by the congress can be refused, which might lead to war against the civilizations that voted yes
+	# voting AI takes its relationships, own interest and the legitimacy of a claim into account when voting on claims
+# flip zone and core area are not identical anymore
+# the core of a civilization cannot flip to a spawning civilization, unless the tile in question is also in their core
+# new rules for the Apostolic Palace and United Nations
+	# votes are now proportional to the square root of your (state religion) population to give smaller civs more weight
+	# when attempting to win a diplomatic victory, your own votes and those of your vassals do not count, a majority among all other civilizations is required
+	# only civilizations with Catholic state religion are members of the AP and allowed to vote
+	# resolutions that affect all members don't fail if oen member defies it, instead the defying civilization is not affected
+	# renamed "Declare War" resolution to "Crusade": valid targets are non-members at war with members (defensive crusade) or non-members that control the Catholic shrine or holy city (offensive crusade)
+	# Added a "Collect Tithe" resolution to the AP: all members pay 10% of their treasury of which the Pope receives half
+	# Added a "Send Inquesition" resolution to the AP: the Pope receives additional espionage against the target
+	# Added an "Excommunication" resolution to the AP: the target player loses membership and receives unhappiness as if they had defied a resolution
+	# Only the four civilizations with the highest military power can defy UN resolutions (Security Council)
+	# Added a "Decolonization" resolution to the UN: cities on other continents can be released to independents
+	# Added a "Self-Determination" resolution to the UN: if a civilization can be released, it can be enforced by the UN
+# the culture of dead civilizations remains present in your cities
+# new difficulty levels
+	# Heir: equivalent to Viceroy
+	# Regent: equivalent to previous Monarch
+	# Monarch: Regent with more formidable AI opponents
+	# Emperor: equivalent to previous Emperor
+	# Paragon: Emperor with more formidable AI opponents
+	
 BALANCE
 # more Keshiks for Mongolia on spawn
 # Phoenicia spawns a settler in Qart-Hadasht 820 BC (AI only)
@@ -147,6 +254,9 @@ BALANCE
 # the number of settlers a civ receives on spawn depends on the number of cities about to flip
 # independents pay no unit upkeep
 # AI conquerors start with extra experience
+# Tech leaders receive a penalty through additional technology costs depending on how far they are ahead
+# Medieval European civs start with Meditation
+# it's harder for far away civs to become worst enemies
 
 INTERFACE
 # Great people births are displayed again
@@ -187,10 +297,16 @@ INTERFACE
 # added a tech history graph to the demographics advisor screen
 # Civilopedia now better displays building requirements (civics, river, water)
 # Civilopedia now better displays religion requirements
+# added the BUG mod to improve the interface
+# added a notification when a new resource appears or disappears
+# if applicable, the deadline for a UHV goal will be displayed as turns before Calendar is discovered
+# added an option to display UHV goal deadline turns regardless of the knowledge of Calendar
+# better panel adjustment in the civic advisor
+# state religion requirements are now displayed in the civilopedia if they are different than the religion requirement
+# included stability maps for all civilizations in the mod
 
 GRAPHICS
 # China has a light yellow color now (Zulu from BtS)
-# Germany has the color and coat of arms of Holy Rome
 # Arabia's coat of arms changed to the shahada
 # England's secondary color changed to yellow
 # Byzantium's color changed to dark purple (Rome in Civ)
@@ -201,6 +317,8 @@ GRAPHICS
 # Persia's coat of arms changed to the Achaemenid eagle
 # Viking color changed to light purple, as in BtS
 # added a new loading screen
+# India's colors changed to orange and yellow
+# Khmer's colors changed to brownish red and white
 
 MAP
 # Moved some food resources out of Inverness' radius
@@ -281,12 +399,17 @@ MAP
 # pass over the Andes opens in Bolivia when the Incan conquerors arrive
 # added additional capes around the Canaries and the Gold Coast to delay the circumnavigation of Africa
 # opened the Canary Islands for settlement
+# added an additional row of tiles in Central Europe by moving Scandinavia north
+# iron appears in Lusitania on Portugal's spawn
+# made southern Russia, the Caucasus and the Caricyn/Astrakhan region more habitable
+# Zapotec Danni Báa (Monte Albán) appears shortly before the Mayan spawn
+# removed peak in Armenia and moved Lake Van 1W to its position
 
 CIVILIZATIONS
-# Updated UP for Egypt: it now enables Dynasticism, Forced Labor and Pantheon
+# Updated UP for Egypt: it now enables Dynasticism, Slavery and Pantheon
 # New UP for Japan: The Power of Honor - unit promotions are available 50% faster
-# New UP for England: The Power of Indirect Rule - no city distance and colony maintenance
-# New UP for Mongolia: The Power of the Horde - every captured city spawns Keshiks according to its size
+# New UP for England: The Power of Indirect Rule - city distance is capped for distance maintenance
+# New UP for Mongolia: The Power of Terror - Approaching armies can send enemy cities into unrest
 # New UP for Rome: The Power of Mandate Armies - the first declaration of war against a mediterranean civ spawns an army near one of their cities
 # The Vikings now spawn at Oslo instead of Nidaros/Trondheim
 # The Viking dynamic civilization names now change to Sweden after the Renaissance
@@ -300,7 +423,7 @@ CIVILIZATIONS
 # India spawns in 1500 BC at Pataliputra now
 # Arabia now spawns in 620 AD in both scenarios
 # Arabia flips Mesopotamia and Egypt, some of its starting units appear there
-# new Chinese UP: The Power of Invention: -20% for all techs not already discovered by somebody else
+# new Chinese UP: The Power of Invention: -20% for all techs not already discovered by somebody else until the Renaissance
 # new Chinese UB: Taixue (Library): 3 scientist slots
 # new Dutch UP: Doubled yield and commerce from the trading company corporation
 # new Indian UP: The Power of Varnas: specialists generate +1 health
@@ -320,10 +443,10 @@ CIVILIZATIONS
 # the Greek UP now expires after the Classical era
 # when people migrate to an American city due to their UP, all worked cottages increase by one level
 # the time between American UP effects now depends on their civics (Republic, Capitalism, Free Market and Secularism help)
-# new Viking UP: The Power of Raids: Additional gold from pillaging, conquering cities and sinking ships
+# new Viking UP: The Power of Raids: Additional gold from pillaging, conquering cities and sinking ships during the Middle Ages
 # new French UP: The Power of Diplomacy: Negative opinions of other civilizations decay twice as fast, nobody can refuse to talk to you, higher chance to get votes in Congresses
 # the Thais now flip Angkor if it has at least one wonder
-# changed the Aztec UP to give slaves instead of workers, Aztec slaves can also hurry buildings or be sacrificed for temporary happiness
+# changed the Aztec UP to give slaves instead of workers and renamed it to The Power of Flower Wars, Aztec slaves can also hurry buildings or be sacrificed for temporary happiness
 # Mali is now known as the Mandinka and their adjective is Mande
 # new American UP: The Power of the American Dream: +2 happiness each while running Republic, Capitalism and Free Market
 # American UB (Mall) now has +10% commerce instead of +20% gold
@@ -331,9 +454,12 @@ CIVILIZATIONS
 # reduced Incan starting units and settlers
 # reduced the Incan core to only include the vicinity of Qusqu
 # new Inca UB: Tambo (replaces Castle, requires Construction, +2 culture)
-# new Portuguese UP: Ocean Trade and Resettlement are allowed with Optics
+# new Portuguese UP: Ocean trade enabled with Optics, reduced expansion penalty for overseas colonies
 # Argentina, Mexico, Colombia and Brazil have a dynamic state religion based on the religions in their core
 # adjusted the Incan respawn to suit Peru more
+# new Turkish UP: The Power of Devshirme: can conscript two additional units in cities with non-state religions
+# new Ethiopian UP: +10% land unit strength within own cultural borders
+# new Persian UP: no expansion stability penalties for low culture
 
 UHVs
 # First Dutch goal changed to: settle three merchants in Amsterdam by 1745 AD
@@ -354,7 +480,7 @@ UHVs
 	# Have the world's largest military power in 1800 AD
 # New first Japanese goal: Have more than 18000 culture in 1600 AD
 # New second Japanese goal: Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and Philippines in 1940 AD
-# New third Maya goal: Get a great general by 1600 AD
+# New third Maya goal: Be the first civilization to discover Astronomy
 # New Indian UHV:
 	# Control the Buddhist and the Hindu shrine in 250 BC
 	# Build 20 temples by 700 AD
@@ -402,16 +528,20 @@ UHVs
 # new Aztec UHV:
 	# Make Tenochtitlan the largest city in the world in 1520 AD
 	# Build 6 pagan temples and 6 sacrificial altars by 1650 AD
-	# Enslave 20 European units
+	# Enslave 20 Old World units
 # new Incan UHV:
 	# Build five Tambos and a road along the Andean coast by 1500 AD
 	# Have 2500 gold in 1550 AD
 	# Control 60% of South America in 1700 AD
+# new Turkish UHV:
+	# Have four non-obsolete wonders in your capital in 1550 AD
+	# Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD
+	# Have more culture than all European civilizations combined in 1800 AD
 
 NEW CIVILIZATIONS
 # Replaced Carthage with Phoenicia
 	# Spawn 1200 BC at Sur
-	# The Power of Mercenaries: -50% mercenary costs
+	# The Power of Mercenaries: starts with the Mercenary civic, mercenary costs halved, no extra mercenary upkeep
 	# Unique Building: Glassmaker (Market): +50% trade route yield
 	# Unique Unit: African War Elephant (War Elephant): requires only Horseback Riding, starts with Shock
 	# changed version of Carthage's UHV (see "UHVs")
@@ -435,7 +565,7 @@ NEW CIVILIZATIONS
 	# Leaders: Justinian I (removed from Rome), Basil II
 	# Unique Unit: Cataphract (Knight with +1 strength, +25% vs. melee)
 	# Unique Building: Hippodrome (Theatre with more happiness from culture and horses)
-	# Unique Power: The Power of the Metropolis: Normal area immune to collapse and secession while Constantinople is controlled
+	# Unique Power: The Power of Bribery: double gold from trades, spies can bribe barbarian units
 	# Unique Historical Victory:
 		# Own 5000 gold in 1000 AD
 		# Make Constantinople the world's largest and most cultured city in 1200 AD
@@ -453,9 +583,9 @@ NEW CIVILIZATIONS
 # added Indonesia
 	# Spawn 700 AD in Palembang (Sumatra)
 	# Leaders: Dharmasetu, Hayam Wuruk, Suharto
-	# Unique Unit: Orang Laut (Privateer, available with Compass)
+	# Unique Unit: Orang Laut (Privateer, available with Compass, cheaper, strength 4, +50% against Privateers)
 	# Unique Building: Candi (Pagan Temple with +1 production, +1 culture)
-	# Unique Power: The Power of Trade: Other civs are likelier to open borders or trade away resources
+	# Unique Power: The Power of Straits: additional gold for every foreign ship in your core
 	# Unique Historical Victory:
 		# Have the largest population of the world in 1300 AD
 		# Acquire 10 different happiness resources by 1500 AD
@@ -464,8 +594,8 @@ NEW CIVILIZATIONS
 	# Spawn 1350 AD in Ayutthaya if Khmer are sufficiently unstable
 	# Leaders: Naresuan, Mongkut
 	# Unique Unit: Chang Suek (Knight with +50% vs. cavalry and Rifleman, requires only ivory)
-	# Unique Building: Ho Trai (Library with +25% culture)
-	# Unique Power: The Power of Embassies: Better relations with civilizations you have established embassies with
+	# Unique Building: Ho Trai (Library with +1 happiness, cheaper)
+	# Unique Power: The Power of Father Governs Children: can use twice as many units to generate military happiness
 	# Unique Historical Victory:
 		# Have open borders with 10 civilizations in 1650 AD
 		# Make Ayutthaya the world's most populous city in 1700 AD
@@ -485,7 +615,7 @@ NEW CIVILIZATIONS
 	# Leaders: Barbarossa, Charles V, Francis I
 	# Unique Unit: Landsknecht (Pikeman)
 	# Unique Building: Rathaus (Courthouse)
-	# Unique Power: The Power of the Emperor: Double votes in Apostolic Palace elections
+	# Unique Power: The Power of Investiture: Double construction speed of state religion buildings
 	# Unique Historical Victory:
 		# Control the Apostolic Palace and the Church of the Holy Sepulchre in 1200 AD
 		# Found Protestantism
@@ -493,7 +623,7 @@ NEW CIVILIZATIONS
 # added Iran as a Persian "rebirth"
 	# Rebirth in 1500 AD in Esfahan
 	# Leader: Abbas, Khomeini
-	# Unique Unit: Qizilbash (Heavy Swordsman with +1 strength, starts with City Raider I)
+	# Unique Unit: Qizilbash (Musketman with +25% against gunpowder units, starts with Guerilla I)
 	# Unique Building: Caravanserai (Market with +1 trade route)
 	# Unique Power: The Power of Safaviyya: Religious buildings produce +2 culture and +2 research
 	# Unique Historical Victory:
@@ -518,7 +648,7 @@ NEW CIVILIZATIONS
 	# Leader: Rajendra Chola
 	# Color: Light Blue
 	# Unique Unit: Dharani (Caravel with 2 cargo, requires Compass, cannot enter Ocean tiles until Astronomy)
-	# Unique Building: Sangam (Library with one additional artist slot)
+	# Unique Building: Sangam (Library with +25% culture and +1 artist slot)
 	# Unique Power: The Power of Thalassocracy: +1 commerce on sea tiles
 	# Unique Historical Victory:
 		# Have 3000 gold and 2000 culture in 800 AD
@@ -530,7 +660,7 @@ NEW CIVILIZATIONS
 	# Color: Amaranth
 	# Unique Unit: Winged Hussar (Cuirassier with +50% attack against Musketman, Rifleman)
 	# Unique Building: Sejmik (Courthouse with +10% gold and +2 happiness)
-	# Unique Power: The Power of Golden Liberty: free cultural control over historical tiles (other players may keep the first ring around their cities)
+	# Unique Power: The Power of Golden Liberty: additional food and commerce during Golden Ages
 	# Unique Historical Victory:
 		# Have three cities with 12 population by 1400 AD
 		# Be first to discover Liberalism
@@ -539,13 +669,13 @@ NEW CIVILIZATIONS
 	# Spawn 711 AD at Cordoba
 	# Leaders: Abd-ar-Rahman III, Yaqub al-Mansur
 	# Color: Light Brown
-	# Unique Unit: Camel Gunner (Cuirassier with strength 11, requires Gunpowder)
+	# Unique Unit: Corsair (Privateer with strength 4, +25% strength on coast, +50% against Privateers, receives gold for sinking ships
 	# Unique Building: Noria (Aqueduct with +2 production)
 	# Unique Power: The Power of Irrigation: improvements that increase food give an additional food on plains tiles
 	# Unique Historical Victory:
-		# Make Cordoba the largest city and largest commercial center of the world in 1000 AD
 		# Control three cities in Iberia, the Maghreb and West Africa in 1200 AD
-		# Settle four great prophets, scientists or engineers in Cordoba by 1300 AD
+		# Settle a total of five great prophets, scientists or engineers in Cordoba by 1300 AD
+		# Acquire 3000 gold through piracy by 1650 AD
 # added Congo
 	# Spawn 1390 AD at Mbanza Kongo
 	# Leader: Mbemba
@@ -596,11 +726,11 @@ NEW CIVILIZATIONS
 	# Color: light blue
 	# Unique Unit: Grenadier Cavalry (Cavalry with +25% against Rifleman)
 	# Unique Building: Cold Storage Plant (Supermarket with +10% gold from Cow, Pig, Sheep)
-	# Unique Power: The Power of Justicialism: +1 happiness per 10% culture rate
+	# Unique Power: The Power of Juntas: Great Generals can start Golden Ages
 	# Unique Historical Victory:
-		# Settle 2 great generals in your capital in 1900 AD
-		# Control the city with the highest commerce output in 1930 AD
+		# Experience 2 Golden Ages by 1930 AD
 		# Have 25000 culture in Buenos Aires in 1960 AD
+		# Experience 5 Golden Ages by 2000 AD
 # added Colombia as a Maya "rebirth"
 	# Respawn 1814 AD at Bogotá
 	# Leader: Bolivar
@@ -626,6 +756,7 @@ TECHNOLOGIES
 # Electricity is now required to access Aluminum
 # Economics now requires Astronomy
 # Pastures now yield +1 food with Refrigeration
+# reduced the cost of Divine Right
 
 UNITS
 # The Greek unique unit was renamed from Phalanx to Hoplite
@@ -636,9 +767,7 @@ UNITS
 # The German unique unit, the Panzer, now requires Oil and starts with Leadership instead of Commando
 # Airships now require Combustion
 # Replaced Macemen with Longswordsmen (same stats)
-# New unit: Levy (strength 6, +25% against mounted units, produced with food, requires Feudalism and Vassalage)
-# Knights, Camel Archers and Keshiks now require Feudalism
-# Longbowmen now require Guilds
+# Camel Archers and Keshiks now require Feudalism
 # Legions now receive +25% against axemen
 # Anti-Tank-Infantry now requires Rocketry
 # New unit: Bombard (strength 8, +25% against cities), requires Gunpowder and Iron or Copper
@@ -654,16 +783,19 @@ UNITS
 # Impis cannot pass deserts anymore
 # all War Elephant units have -25% city attack and only +25% against cavalry
 # Infantry does not receive +25% against gunpowder units anymore
-# Mongol Keshiks now start with Formation and ignore city defenses
+# Mongol Keshiks have three moves, an additional first strike and cause collateral damage
 # Dog Soldiers only receive +75% against melee units
 # The Incan unique unit was renamed from Quechua to Aucac
 # Portuguese Carracks start with Sentry now
 # New promotion: Mercenary (+2 gold upkeep, cannot be upgraded)
+# Huscarls now require Feudalism
+# The Greek Hoplite is now an Axeman that starts with Shock and Formation
+# Maya Holkan now replaces Archer, requires Hunting, has a 25% retreat chance and generate 5 food for the nearest city on combat victory
 
 BUILDINGS
 # Monument was renamed Pagan Temple, expires with Divine Right and gives +1 happiness with the Pantheon civic (see "civics")
 # Persia's Apothecary now replaces Market
-# The Viking Trading Post now also offers a merchant slot
+# The Viking Trading Post now also offers a merchant slot and only requires Sailing
 # France's Salon is now a Theatre instead of an Observatory and as +20% great people birth
 # Germany's Assembly Plant now adds +25% unit production speed
 # Spanish citadels are now built twice as fast, but lose the stone modifier
@@ -675,10 +807,21 @@ BUILDINGS
 # Russian Research Institutes have only one scientist slot
 # Harbors can be built on all bodies of water, regardless of size
 # National Parks now give +8 health instead of completely removing unhealthiness
+# Observatories now require Scientific Method
+# Japanese Kaizen Plants now give a free engineer and an additional scientist slot
+# Madrassa counts as a religious building
+# Opera House is cheaper and gives +2 happiness and +1 happiness instead of no unhappiness
+# Egyptian Obelisks now have one priest slot and +25% culture
+# Ethiopian Steles now have two priest slots
+# Mayan Ball Courts now require Mathematics and give +2 happiness and +2 experience for melee and archery units
+# Indian Stepwells now only require Masonry
+# Greek Odeon now replaces Theatre, requires Aesthetics and gives +1 happiness and a scientist slot
+# French Salon now replaces Jail, gives +25% GP birth, +25% culture and +1 happiness with coffee, tea and tobacco
+# Trading Companies now require at least one colony
 
 WONDERS
 # continental wonder effects now affect the whole map
-# Added special prerequisites to ensure a more historical placement of wonders
+# Added special prerequisites to ensure a more historical placement of wonders, sometimes including state religion
 	# Catholic wonders: Sistine Chapel, Apostolic Palace, Notre Dame, Cristo Redentor, Theodosian Walls
 	# Muslim wonders: University of Sankore, Spiral Minaret, La Mezquita, Dome of the Rock, Topkapi Palace, Blue Mosque, The Red Fort
 	# Buddhist wonders: Shwedagon Paya, Himeji Castle
@@ -695,17 +838,17 @@ WONDERS
 # Masjid al-Haram, the Muslim shrine, now has appropriate graphics
 # Added All Saint's Church as Protestant Shrine
 # Added Adur Farnbag as Zoroastrian Shrine
-# Added the Temple of Solomon (Monotheism): doubled shrine revenue limit
+# Added the Temple of Solomon (Monotheism): doubled shrine revenue limit, +1 free priest
 # Added Ishtar Gate (Priesthood): +100% enemy war weariness
 # Added Theodosian Walls (Construction): -100% bombard damage pre gunpowder, doesn't create GPP
 # Added Terracotta Army (Pottery): +25% unit production, barbarians give unlimited experience and great general points
-# Added La Mezquita (Theology): +2 free priests
-# Added Dome of the Rock (Divine Right): -50% war weariness
-# Added Topkapi Palace (Civil Service, Engineering): can draft one extra unit
+# Added La Mezquita (Theology): +2 free priests and a free great person
+# Added Dome of the Rock (Divine Right): -50% war weariness, requires the Temple of Solomon
+# Added Topkapi Palace (Civil Service, Engineering): additional foreign culture is converted on city conquest
 # Added Brandenburg Gate (Nationalism, Rifling): +100% great general rate within cultural borders
 # Added Westminster Palace (Democracy, Railroad): -33% hurry costs, expires with Fiber Optics
 # Added Blue Mosque (Music, Engineering): no unhappiness in this city
-# Added Borobudur (Aesthetics, Machinery, Islam): artists can be hired using priest slots
+# Added Borobudur (Aesthetics, Machinery, Buddhism): three extra priest slots and +1 production for priests
 # Added Harmandir Sahib (Military Tradition): +2 experience in state religion cities
 # Added Himeji Castle (Feudalism): melee and archery units start with drill I, city garrison I, amount of gold pillaged doubled
 # Added Khajuraho (Monotheism, Aesthetics): +100% construction speed of religious buildings
@@ -718,12 +861,18 @@ WONDERS
 # Added Trafalgar Square (Chemistry, Astronomy, naval unit with level three or higher): +5 XP and +50% production for naval units, expires with Combustion
 # Added Lubyanka (Communism): +2 espionage per specialist
 # Changed Hagia Sophia to the Orthodox shrine
-# Changed the effect of Statue of Zeus: +25% unit training speed in cities with pagan temples, expires with Theology now
+# Changed the effect of Statue of Zeus: +25% unit training speed in cities with pagan temples, no resistance in conquered cities, expires with Theology now
 # Changed the effect of Pyramids: -33% hurry costs
 # Changed the effect of the Great Sphinx: great prophets can create great works like great artists
 # Changed the effect of the Parthenon: allows all government civics, expires with Theology now
 # Changed the effect of St. Basil's Cathedral: requires Gunpowder, +2 espionage per religious building, expires with Communism
 # Changed the effect of Hanging Gardens: requires Masonry and Agriculture, +3 health in its city
+# Changed the effect of Wat Preah Pisnulok: +1 population in all cities, allows to hire artists with priest slots
+# Changed the effect of the Eiffel Tower: +50% culture, Golden Ages never consume more than three great people
+# Changed the effect of the Great Lighthouse: +1 trade route for all coastal cities, +1 trade route
+# Changed the effect of the Spiral Minaret: +1 gold per state religion building
+# Changed the effect of the Pyramids: +25% worker speed, hurry unhappiness does not scale with the amount of sacrificed population, expires with Feudalism
+# Changed the effect of the Great Wall: additional movement costs for enemies within your territory, barbarians take damage within your territory, expires with Military Tradition
 # The Leaning Tower requires Patronage and Philosophy now
 # The Sistine Chapel requires Patronage now
 # Great Library expires with Divine Right
@@ -734,6 +883,8 @@ WONDERS
 # Wembley now also requires Radio
 # The Eiffel Tower now requires Electricity and Steel
 # The Forbidden Palace now also reduces civic upkeep by 33%
+# Notre Dame is now faster to build with Marble instead of Stone
+# The Flavian Amphitheatre expires with Feudalism
 
 LEADERHEADS
 # China: added Tang Taizong and Hongwu
@@ -842,6 +993,7 @@ CORPORATIONS
 	# Oil Industry (Combustion): oil -> gold
 	# Luxury Industry (Electricity): gold, silver, gems, marble -> gold, culture
 	# Computer Industry (Computers): copper, aluminum, oil -> research
+# Corporations now create unhappiness and pollution depending on the number of resources they consume
 
 AI
 # Justinian is less militarily inclined
@@ -864,9 +1016,13 @@ AI
 # reduced the overzealous settling of Arabia and Aztecs in unsuitable locations
 # AIs now properly target independents in their war target areas
 # prevented the AI from building the embassy of civs it shares a border with, and made the construction of embassies less likely in general
+# improved semi-scripted AI wars with more planning and less stupid wars
+# maps are now less valuable in AI trades
 
 BUGFIXES
 # included 3Miro's fixes to the bugs that rendered settlers and large unit stacks unable to move, respectively
 # Keshiks now cause flanking damage as intended
 # Stealth Destroyers now detect Submarines as (probably) intended
 # Units from other civs don't create military happiness anymore
+# Cutting contacts with a vassal is now impossible when there is still contact to their master
+# Fixed the switch religion espionage mission to have 10x the previous cost as intended

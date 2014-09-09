@@ -47,7 +47,7 @@
 	# stability is divided in five categories: expansion, economy, domestic, foreign and military
 	# at every check your stability level can increase or decrease depending on your value, and a crisis may occur
 	# the severity of a crisis depends on your stability level, while the effects depend on the stability category with the lowest value
-	# a terminal crisis (possible only at unstable or collapsing) results in a complete collapse
+	# a terminal crisis (every crisis on collapsing) results in a complete collapse
 # adjusted difficulty settings to increase AI unit production and remove their maluses against barbarians
 # new Phoenician UP: starts with Mercenaries, mercenary costs halved, no extra mercenary costs
 # new Portuguese UP: Ocean trade enabled with Optics, reduced expansion penalty for overseas colonies
@@ -80,7 +80,7 @@
 # removed Mesopotamia from Rome's historical area
 # removed Canada from America's historical area
 # Corporations create unhappiness and pollution now depending on the number of resources they consume
-# Deadlines for all UHV goals are now displayed before Calendar is discovered
+# Deadlines for all UHV goals are now displayed as turns before Calendar is discovered
 # Added an option to display UHV goal deadlines regardless of the knowledge of Calendar
 # Added a Religious victory option depending on your state religion
 	# Protestantism
