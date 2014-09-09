@@ -684,7 +684,7 @@ NEW CIVILIZATIONS
 	# Unique Building: Mbwadi (Market with +10% gold with cotton, sheep, silk)
 	# Unique Power: The Power of the Tropics: +1 food and production and no unhealthiness on jungle and marsh tiles
 	# Unique Historical Victory:
-		# Have 10% of the votes in the Apostolic Palace by 1650 AD
+		# Have 15% of the votes in the Apostolic Palace by 1650 AD
 		# Acquire 1000 gold by slave trade by 1800 AD
 		# Enter the Industrial Era before anyone enters the Modern era
 # added Tibet

@@ -262,3 +262,4 @@
 # the Chinese core expands to the south on respawn after collapsing to the Mongols
 # changed India's colors to orange and yellow
 # changed Khmer's colors to brownish red and white
+# changed Congo's first goal to require 15% of votes to reflect the rule change
