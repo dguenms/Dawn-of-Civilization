@@ -4148,7 +4148,7 @@ class RiseAndFall:
 			teamNetherlands.setHasTech(iTech, True, iNetherlands, False, False)
 			
 		lGermanTechs = [con.iPrintingPress, con.iMilitaryTradition, con.iMilitaryScience, con.iReplaceableParts, con.iRifling, con.iLiberalism,
-				con.iConstitution, con.iAstronomy]
+				con.iConstitution, con.iAstronomy, con.iEconomics]
 		lGermanTechs.extend(lMedievalTechs)
 		for iTech in lGermanTechs:
 			teamGermany.setHasTech(iTech, True, iGermany, False, False)

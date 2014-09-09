@@ -2320,7 +2320,7 @@ class Victory:
 			if pCongo.isAlive():
 
 				if self.getGoal(iCongo, 0) == -1:
-					if self.getApostolicVotePercent(iCongo) >= 10.0:
+					if self.getApostolicVotePercent(iCongo) >= 15.0:
 						self.setGoal(iCongo, 0, 1)
 
 				if iGameTurn == getTurnForYear(1650):
@@ -4203,11 +4203,11 @@ class Victory:
 	def getApostolicVotePercent(self, iPlayer):
 		iTotal = 0
 		for iCiv in range(con.iNumPlayers):
-			iTotal += gc.getPlayer(iCiv).getVotes(14, 1)
+			iTotal += gc.getPlayer(iCiv).getVotes(16, 1)
 			
 		if iTotal == 0: return iTotal
 
-		fPercent = gc.getPlayer(iPlayer).getVotes(14, 1) * 100.0 / iTotal
+		fPercent = gc.getPlayer(iPlayer).getVotes(16, 1) * 100.0 / iTotal
 
 		return fPercent
 
@@ -5246,7 +5246,7 @@ class Victory:
 		elif iPlayer == iCongo:
 			if iGoal == 0:
 				fPercent = self.getApostolicVotePercent(iCongo)
-				aHelp.append(self.getIcon(fPercent >= 10.0) + localText.getText("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", (str(u"%.2f%%" % fPercent), str(10))))
+				aHelp.append(self.getIcon(fPercent >= 15.0) + localText.getText("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", (str(u"%.2f%%" % fPercent), str(15))))
 			elif iGoal == 1:
 				iSlaves = self.getCongoSlaveCounter()
 				aHelp.append(self.getIcon(iSlaves >= utils.getTurns(1000)) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, utils.getTurns(1000))))
