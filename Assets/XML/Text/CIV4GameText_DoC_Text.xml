@@ -396,6 +396,10 @@
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for having the current building in your capital</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_PROD_HOLY_ROME</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] for State Religion Building</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_GAUL</Tag>
 		<English>Gaul</English>
 	</TEXT>

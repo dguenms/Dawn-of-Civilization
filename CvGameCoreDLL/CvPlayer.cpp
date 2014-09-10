@@ -9107,7 +9107,7 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		if (!bStarting || !(pLoopCity->isHolyCity()))
+		if (!bStarting || !(pLoopCity->isHolyCity() && getNumCities() > 1))
 		{
 			iValue = 10;
 			iValue += pLoopCity->getPopulation();
