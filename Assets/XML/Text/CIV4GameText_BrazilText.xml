@@ -101,7 +101,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_STRATEGY</Tag>
-		<English>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that inreases your wealth when controlling plantation resources.</English>
+		<English>The [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT], the Brazilian replacement for the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT], increases a city's wealth. It also increases the city's health and wealth with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT]. A [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is required to build [COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT].</English>
 		<French>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</French>
 		<German>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</German>
 		<Italian>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</Italian>
