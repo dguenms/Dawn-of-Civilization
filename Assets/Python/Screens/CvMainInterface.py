@@ -4385,7 +4385,7 @@ class CvMainInterface:
 							screen.show( szName )
 # BUG - Limit/Extra Corporations - end
 
-				szBuffer = u"%d%% %s" %(pHeadSelectedCity.plot().calculateOverallCulturePercent(pHeadSelectedCity.getOwner()), gc.getPlayer(pHeadSelectedCity.getOwner()).getCivilizationAdjective(0) )
+				szBuffer = u"%d%% %s" %(pHeadSelectedCity.calculateOverallCulturePercent(pHeadSelectedCity.getOwner()), gc.getPlayer(pHeadSelectedCity.getOwner()).getCivilizationAdjective(0) )
 				screen.setLabel( "NationalityText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, 125, yResolution - 210, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 				screen.setHitTest( "NationalityText", HitTestTypes.HITTEST_NOHIT )
 				screen.show( "NationalityText" )

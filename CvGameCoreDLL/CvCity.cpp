@@ -3694,11 +3694,14 @@ int CvCity::getProductionModifier(BuildingTypes eBuilding) const
 	}
 
 	// Leoreth: Holy Roman UP: +100% production of state religion buildings
-	if (GC.getBuildingInfo(eBuilding).getStateReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
+	if (getOwnerINLINE() == HOLY_ROME)
 	{
-		if (GC.getBuildingInfo(eBuilding).getStateReligion() == GET_PLAYER(getOwnerINLINE()).getStateReligion())
+		if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
 		{
-			iMultiplier += 100;
+			if (GC.getBuildingInfo(eBuilding).getPrereqReligion() == GET_PLAYER(getOwnerINLINE()).getStateReligion())
+			{
+				iMultiplier += 100;
+			}
 		}
 	}
 
@@ -11117,19 +11120,24 @@ int CvCity::calculateCulturePercent(PlayerTypes eIndex) const
 // Leoreth
 int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
 {
-	int iTotalCulture;
+	int iTotalCulture = 0;
 
 	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 	{
 		if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv())
 		{
-			iTotalCulture += getCultureTimes100(eIndex);
+			iTotalCulture += getCultureTimes100((PlayerTypes)iI);
 		}
 	}
 
 	if (iTotalCulture > 0)
 	{
 		return ((getCultureTimes100(eIndex) * 100) / iTotalCulture);
+	}
+
+	if (eIndex == getOwner())
+	{
+		return 100;
 	}
 
 	return 0;

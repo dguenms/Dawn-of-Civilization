@@ -16172,6 +16172,19 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			}
 		}
 
+		// Leoreth: display Holy Roman UP
+		if (city.getOwnerINLINE() == HOLY_ROME)
+		{
+			if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION && GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()).getMaxGlobalInstances() != 1)
+			{
+				if (GC.getBuildingInfo(eBuilding).getPrereqReligion() == GET_PLAYER(city.getOwnerINLINE()).getStateReligion())
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_PROD_HOLY_ROME", 100));
+					szBuffer.append(NEWLINE);
+					iBaseModifier += 100;
+				}
+			}
+		}
 	}
 
 	ProjectTypes eProject = city.getProductionProject();
