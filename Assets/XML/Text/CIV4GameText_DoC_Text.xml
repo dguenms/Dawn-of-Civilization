@@ -828,14 +828,9 @@
 		<German>Könnt Ihr dieses Spiel auf diesem Level gewinnen und beweisen, dass ihr wirklich ein Paragon seid? Verglichen mit Kaiser werden Eure KI-Widersacher noch mehr Produktions- und Forschungsvorteile erhalten.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE</Tag>
-		<English>%s1 has been discovered near %s2 (%s3)!</English>
-		<German>%s1 wurde in der Nähe von %s2 (%s3) entdeckt!</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED</Tag>
-		<English>The %s1 resource near %s2 (%s3) has been exhausted!</English>
-		<German>Die %s1-Ressource in der Nähe von %s2 (%s3) wurde aufgebraucht!</German>
+		<English>Our source of [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] near %s2_CityName has been exhausted!</English>
+		<German>Unser Vorkommen des Bonusguts [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] in der Nähe von %s2_CityName ist aufgebraucht!</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
