@@ -4080,7 +4080,8 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 			if (true) //GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
 				// Leoreth: count dead civs as well
-				iCulturePercent = pHeadSelectedCity->plot()->calculateOverallCulturePercent((PlayerTypes)iI);
+				//iCulturePercent = pHeadSelectedCity->plot()->calculateOverallCulturePercent((PlayerTypes)iI);
+				iCulturePercent = pHeadSelectedCity->calculateOverallCulturePercent((PlayerTypes)iI);
 
 				if (iCulturePercent > 0)
 				{
