@@ -838,7 +838,7 @@ class Victory:
 
 				# Leoreth - new condition: have 4 golden ages until 1850 AD
                                 if (iGameTurn == getTurnForYear(1800)):
-                                        if (self.getGoal(iChina, 1) == -1):
+                                        if (self.getGoal(iChina, 2) == -1):
                                                 self.setGoal(iChina, 2, 0)
 
                                 #if (iGameTurn == getTurnForYear(1600)):

@@ -248,7 +248,16 @@ class StoredData:
 		self.scriptDict['lWarStatus'][iPlayer][iEnemy] = WarStatus(iPlayer, iEnemy)
 		
 	def removeWarStatus(self, iPlayer, iEnemy):
-		del self.scriptDict['lWarStatus'][iPlayer][iEnemy]
+		if iEnemy in self.scriptDict['lWarStatus'][iPlayer]:
+			del self.scriptDict['lWarStatus'][iPlayer][iEnemy]
+		
+	def startWar(self, iPlayer1, iPlayer2):
+		self.addWarStatus(iPlayer1, iPlayer2)
+		self.addWarStatus(iPlayer2, iPlayer1)
+		
+	def endWar(self, iPlayer1, iPlayer2):
+		self.removeWarStatus(iPlayer1, iPlayer2)
+		self.removeWarStatus(iPlayer2, iPlayer1)
 		
 	# VICTORY
 		

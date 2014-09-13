@@ -433,7 +433,6 @@ class Congress:
 		
 		# don't waste memory
 		sd.setCurrentCongress(None)
-		del currentCongress
 
 	### Other Methods ###
 
