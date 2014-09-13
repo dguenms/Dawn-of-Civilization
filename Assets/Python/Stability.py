@@ -72,7 +72,7 @@ def onCityAcquired(city, iOwner, iPlayer):
 		if iOwner in sd.getWarStatusEnemies(iPlayer):
 			sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
 		else:
-			sd.addWarStatus(iPlayer, iOwner)
+			sd.startWar(iPlayer, iOwner)
 			sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
 	
 def onCityRazed(iPlayer, city):
@@ -107,11 +107,9 @@ def onChangeWar(bWar, iTeam, iOtherTeam):
 		
 		# start/end war logging for stability
 		if bWar:
-			sd.addWarStatus(iTeam, iOtherTeam)
-			sd.addWarStatus(iOtherTeam, iTeam)
+			sd.startWar(iTeam, iOtherTeam)
 		else:
-			sd.removeWarStatus(iTeam, iOtherTeam)
-			sd.removeWarStatus(iOtherTeam, iTeam)
+			sd.endWar(iTeam, iOtherTeam)
 	
 def onRevolution(iPlayer):
 	checkStability(iPlayer)
@@ -140,7 +138,7 @@ def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
 		if iLosingPlayer in sd.getWarStatusEnemies(iWinningPlayer):
 			sd.getWarStatus(iWinningPlayer, iLosingPlayer).changeDefeatedUnits(iLostPower)
 		else:
-			sd.addWarStatus(iWinningPlayer, iLosingPlayer)
+			sd.startWar(iWinningPlayer, iLosingPlayer)
 			sd.getWarStatus(iWinningPlayer, iLosingPlayer).changeDefeatedUnits(iLostPower)
 	
 def onCivSpawn(iPlayer):
