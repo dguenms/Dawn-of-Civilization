@@ -378,6 +378,11 @@
 		<German>Lasst sie abstimmen, wie es ihnen gefällt.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CANNOT_AFFORD_BRIBE</Tag>
+		<English>Unfortunately, we lack the means to do anything.</English>
+		<German>Leider fehlen uns die Mittel, etwas zu tun.</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS</Tag>
 		<English>The attempt was successful! %s1 will now support our claim.</English>
 		<German>Der Versuch war erfolgreich! %s1 wird unsere Forderung nun unterstützen.</German>

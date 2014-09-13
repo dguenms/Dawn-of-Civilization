@@ -175,9 +175,9 @@ class Congress:
 			x, y, iValue = tCity
 			plot = gc.getMap().plot(x, y)
 			if plot.isCity():
-				popup.addPythonButton(plot.getPlotCity().getName() + ' (' + str(iValue) + ')', gc.getCivilizationInfo(gc.getPlayer(plot.getPlotCity().getOwner()).getCivilizationType()).getButton())
+				popup.addPythonButton(plot.getPlotCity().getName(), gc.getCivilizationInfo(gc.getPlayer(plot.getPlotCity().getOwner()).getCivilizationType()).getButton())
 			else:
-				popup.addPythonButton(cnm.getFoundName(utils.getHumanID(), (x, y)) + ' (' + str(iValue) + ')', 'Art/Interface/Buttons/Actions/FoundCity.dds')
+				popup.addPythonButton(cnm.getFoundName(utils.getHumanID(), (x, y)), 'Art/Interface/Buttons/Actions/FoundCity.dds')
 			
 		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_NO_REQUEST", ()), 'Art/Interface/Buttons/Actions/Cancel.dds')
 		popup.addPopup(utils.getHumanID())
@@ -291,12 +291,19 @@ class Congress:
 		
 		for tOption in self.lBriberyOptions:
 			iCommerceType, iCost, iThreshold = tOption
-			if iCommerceType == 0: textKey = "TXT_KEY_CONGRESS_BRIBE_GOLD"
-			elif iCommerceType == 3: textKey = "TXT_KEY_CONGRESS_MANIPULATION"
+			if iCommerceType == 0: 
+				textKey = "TXT_KEY_CONGRESS_BRIBE_GOLD"
+				button = gc.getCommerceInfo(iCommerceType).getButton()
+			elif iCommerceType == 3: 
+				textKey = "TXT_KEY_CONGRESS_MANIPULATION"
+				button = 'Art/Interface/Buttons/Espionage.dds'
 			
-			popup.addPythonButton(localText.getText(textKey, (iCost,)), gc.getCommerceInfo(iCommerceType).getButton())
+			popup.addPythonButton(localText.getText(textKey, (iCost,)), button)
 			
-		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_NO_BRIBE", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_BUTTONS_CANCEL")).getPath())
+		if self.lBriberyOptions:
+			popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_NO_BRIBE", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_BUTTONS_CANCEL")).getPath())
+		else:
+			popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_CANNOT_AFFORD_BRIBE", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_BUTTONS_CANCEL")).getPath())
 		
 		popup.addPopup(utils.getHumanID())
 		
@@ -822,7 +829,7 @@ class Congress:
 			# less liked, but justified by claim
 			elif iFavorClaimant + iClaimValidity >= iFavorOwner:
 				# human can bribe on a close call if own claim or own city
-				if (iClaimant == utils.getHumanID() or (bOwner and iOwner == utils.getHumanID())) and iClaimValidity < 50:
+				if (iClaimant == utils.getHumanID() or (bOwner and iOwner == utils.getHumanID())) and iClaimValidity < 50 and iFavorOwner - iFavorClaimant > 0:
 					# return the relevant data to be added to the list of possible bribes in the calling method
 					print 'NO VOTE: open for bribes'
 					return (iVoter, iClaimant, tPlot, iFavorOwner - iFavorClaimant, iClaimValidity)
