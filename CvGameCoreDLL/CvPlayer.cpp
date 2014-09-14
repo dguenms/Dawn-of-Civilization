@@ -8279,7 +8279,7 @@ int CvPlayer::calculateInflationRate() const
 
 	// Leoreth: apply large empire penalty
 	int iSizeThreshold = 6 + 3 * getCurrentEra();
-	int iMultiplier = isHuman() ? 10 : 5;
+	int iMultiplier = isHuman() ? 5 : 5;
 	int iNumCities = getTotalPopulation() / iSizeThreshold;
 
 	if (iNumCities > 10)
@@ -25563,7 +25563,7 @@ bool CvPlayer::canRespawn() const
 	CyArgsList argsList;
 	argsList.add(getID());
 
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "canRespawn", argsList.makeFunctionArgs(), &lResult);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canRespawn", argsList.makeFunctionArgs(), &lResult);
 
 	return (lResult == 1);
 }
@@ -25573,8 +25573,9 @@ bool CvPlayer::canEverRespawn() const
 	long lResult = -1;
 	CyArgsList argsList;
 	argsList.add(getID());
+	argsList.add(GC.getGame().getGameTurn());
 
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "canEverRespawn", argsList.makeFunctionArgs(), &lResult);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canEverRespawn", argsList.makeFunctionArgs(), &lResult);
 
 	return (lResult == 1);
 }

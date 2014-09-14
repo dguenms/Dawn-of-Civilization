@@ -549,6 +549,8 @@ public:
 	bool isHasBuildingEffect(int eBuildingType);
 	void setStabilityParameter(int eParameter, int iNewValue);
 	int countRequiredSlaves();
+	bool canRespawn();
+	bool canEverRespawn();
 
 private:
 	CvPlayer* m_pPlayer;

@@ -90,5 +90,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("isHasBuildingEffect", &CyPlayer::isHasBuildingEffect, "bool (int eBuildingType)")
 		.def("setStabilityParameter", &CyPlayer::setStabilityParameter, "void (int iParameter, int iNewValue)")
 		.def("countRequiredSlaves", &CyPlayer::countRequiredSlaves, "int ()")
+		.def("canRespawn", &CyPlayer::canRespawn, "bool ()")
+		.def("canEverRespawn", &CyPlayer::canEverRespawn, "bool ()")
 		;
 }

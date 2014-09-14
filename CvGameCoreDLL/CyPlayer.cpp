@@ -2467,3 +2467,13 @@ int CyPlayer::countRequiredSlaves()
 {
 	return m_pPlayer ? m_pPlayer->countRequiredSlaves() : -1;
 }
+
+bool CyPlayer::canRespawn()
+{
+	return m_pPlayer ? m_pPlayer->canRespawn() : false;
+}
+
+bool CyPlayer::canEverRespawn()
+{
+	return m_pPlayer ? m_pPlayer->canEverRespawn() : false;
+}

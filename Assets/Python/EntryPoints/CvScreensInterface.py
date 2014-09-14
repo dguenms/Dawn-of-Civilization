@@ -1647,7 +1647,7 @@ def getUHVTileInfo(argsList):
 			
 	return -1
 		
-def getCityName(self, argsList):
+def getCityName(argsList):
 	iPlayer, x, y = argsList
 	
 	result = cnm.getFoundName(iPlayer, (x,y))
@@ -1657,17 +1657,17 @@ def getCityName(self, argsList):
 	else:
 		return result
 		
-def canRespawn(self, argsList):
+def canRespawn(argsList):
 	iPlayer = argsList[0]
 	
 	if utils.canRespawn(iPlayer): return 1
 	
 	return 0
 	
-def canEverRespawn(self, argsList):
-	iPlayer = argsList[0]
+def canEverRespawn(argsList):
+	iPlayer, iGameTurn = argsList
 	
-	if utils.canEverRespawn(iPlayer): return 1
+	if utils.canEverRespawn(iPlayer, iGameTurn): return 1
 	
 	return 0
 		
