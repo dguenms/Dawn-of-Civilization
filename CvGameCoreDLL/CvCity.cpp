@@ -6151,6 +6151,9 @@ void CvCity::setPopulation(int iNewValue)
 {
 	int iOldPopulation;
 
+	// Leoreth: values lower than 1 should be impossible
+	iNewValue = std::max(1, iNewValue);
+
 	iOldPopulation = getPopulation();
 
 	if (iOldPopulation != iNewValue)
