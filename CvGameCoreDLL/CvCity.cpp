@@ -11067,7 +11067,7 @@ int CvCity::countTotalCultureTimes100() const
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		//if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			iTotalCulture += getCultureTimes100((PlayerTypes)iI);
 		}
@@ -11125,12 +11125,9 @@ int CvCity::calculateOverallCulturePercent(PlayerTypes eIndex) const
 {
 	int iTotalCulture = 0;
 
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv())
-		{
-			iTotalCulture += getCultureTimes100((PlayerTypes)iI);
-		}
+		iTotalCulture += getCultureTimes100((PlayerTypes)iI);
 	}
 
 	if (iTotalCulture > 0)
@@ -13993,234 +13990,71 @@ void CvCity::doGrowth()
 
 void CvCity::doCulture()
 {
-	//Rhye - start
-//Speed: Modified by Kael 04/19/2007
-//	CyCity* pyCity = new CyCity(this);
-//	CyArgsList argsList;
-//	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
-//	long lResult=0;
-//	gDLL->getPythonIFace()->callFunction(PYGameModule, "doCulture", argsList.makeFunctionArgs(), &lResult);
-//	delete pyCity;	// python fxn must not hold on to this pointer
-//	if (lResult == 1)
-//	{
-//		return;
-//	}
-//Speed: End Modify
-	//Rhye - end
-
-	//Rhye - start switch
+	//Rhye
 	//changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
-	if 	(getCommerceRate(COMMERCE_CULTURE) <=4)
-		changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
-	else {
-		/*switch (getOwnerINLINE())
+	if 	(getCommerceRate(COMMERCE_CULTURE) <= 4)
 	{
-			case EGYPT:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true); //72 before removal of Creative trait
-				break;
-			case INDIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *80 /100, false, true);
-				break;
-			case CHINA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *80 /100, false, true);
-				break;
-			case BABYLONIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
-				break;
-			case GREECE:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
-				break;
-			case PERSIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true); //100 before removal of Creative trait
-				break;
-			case CARTHAGE:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true); //100 before removal of Creative trait
-				break;
-			case ROME:
-                if (!GET_PLAYER((PlayerTypes)getOwnerINLINE()).isReborn())
-                    changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true); //was 110 but it chokes euro civs
-                else
-                    changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true); //respawned Italy
-				break;
-			case JAPAN:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
-				break;
-			case ETHIOPIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *90 /100, false, true);
-				break;
-            case KOREA:
-                changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-                break;
-			case MAYA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
-				break;
-            case BYZANTIUM:
-                changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *100 /100, false, true);
-                break;
-			case VIKING:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
-				break;
-			case ARABIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *110 /100, false, true); //100 in vanilla
-				break;
-			case KHMER:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *120 /100, false, true);
-				break;
-			case INDONESIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *120 /100, false, true);
-				break;
-			case FRANCE:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *160 /100, false, true); //150 in vanilla and warlords
-				break;
-			case SPAIN:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *125 /100, false, true);
-				break;
-			case ENGLAND:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
-				break;
-			case GERMANY:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *128 /100, false, true);
-				break;
-			case RUSSIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
-				break;
-			case NETHERLANDS:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *140 /100, false, true); // 140: Leoreth //135, but it's too strong as Amsterdam is a powerhouse
-				break;
-			case MALI:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *130 /100, false, true);
-				break;
-			case TURKEY:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *150 /100, false, true); //already strong with UP
-				break;
-			case PORTUGAL:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *147 /100, false, true);
-				break;
-			case INCA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *140 /100, false, true);
-				break;
-			case MONGOLIA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *135 /100, false, true);
-				break;
-			case AZTEC:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *140 /100, false, true);
-				break;
-			case AMERICA:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *165 /100, false, true);
-				break;
-			case INDEPENDENT:
-			case INDEPENDENT2:
-				if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) { //late start condition
-					if (getX_INLINE() == 57 && getY_INLINE() == 46) //Marseilles
-						if (getCulture(getOwnerINLINE()) < 1)
-							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
-					else if (getX_INLINE() == 60 && getY_INLINE() == 44) //Rome
-						if (getCulture(getOwnerINLINE()) < 50)
-							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
-					else
-						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
-				}
-				else
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
-				break;
-			case NATIVE:
-				if (hasActiveWorldWonder()) {
-					if (getCulture(getOwnerINLINE()) < 50)
-						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true); }
-				else {
-					if (getCulture(getOwnerINLINE()) < 5)
-						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true); }
-				break;
-			case CELTIA:
-				if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) { //late start condition (Byzantium)
-					if (getX_INLINE() == 73 && getY_INLINE() == 41) //Alexandretta
-						if (getCulture(getOwnerINLINE()) < 1)
-							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-					else if (getX_INLINE() == 73 && getY_INLINE() == 38) //Jerusalem
-						if (getCulture(getOwnerINLINE()) < 1)
-							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-					else
-						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-				}
-				else
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-				break;
-			case BARBARIAN:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *30 /100, false, true);
-				break;
-			default:
-				changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *40 /100, false, true);
-				break;*/
+		changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
+		return;
+	}
 
-			if (GET_PLAYER((PlayerTypes) getOwnerINLINE()).isReborn())
-			{
-				//if (getOwnerINLINE() == ROME)
-				//	changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
-				if (getOwnerINLINE() == PERSIA)
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 135 / 100, false, true);
-				else if (getOwnerINLINE() == AZTEC)
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 140 / 100, false, true);
-				else if (getOwnerINLINE() == MAYA)
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 140 / 100, false, true);
-				else
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 40 / 100, false, true);
-			}else
-			{
-				if (getOwnerINLINE() < NUM_MAJOR_PLAYERS)
-				{
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * cultureModifier[getOwnerINLINE()] / 100, false, true);
-				}else if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2)
-				{
-					if (getScenario() >= SCENARIO_600AD) { //late start condition
-						if (getX_INLINE() == 57 && getY_INLINE() == 46) //Marseilles
-							if (getCulture(getOwnerINLINE()) < 1)
-								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
-						else if (getX_INLINE() == 60 && getY_INLINE() == 44) //Rome
-							if (getCulture(getOwnerINLINE()) < 50)
-								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
-						else
-							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
-					}
-					else
-						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true);
+	int iCultureModifier = 100;
+	PlayerTypes eOwner = getOwnerINLINE();
 
-					// Leoreth: buff Lhasa to help it against cultural takeover
-					//if (getRegionID() == REGION_TIBET)
-					//	changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
-				}else if (getOwnerINLINE() == NATIVE)
-				{
-					if (hasActiveWorldWonder()) {
-						if (getCulture(getOwnerINLINE()) < 50)
-							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true); }
-					else {
-						if (getCulture(getOwnerINLINE()) < 5)
-							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *15 /100, false, true); }
-				}else if (getOwnerINLINE() == CELTIA)
-				{
-					if (getScenario() >= SCENARIO_600AD) { //late start condition (Byzantium)
-						if (getX_INLINE() == 73 && getY_INLINE() == 41) //Alexandretta
-							if (getCulture(getOwnerINLINE()) < 1)
-								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-						else if (getX_INLINE() == 73 && getY_INLINE() == 38) //Jerusalem
-							if (getCulture(getOwnerINLINE()) < 1)
-								changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-						else
-							changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-					}
-					else
-						changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *50 /100, false, true);
-				}else if (getOwnerINLINE() == BARBARIAN)
-				{
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) *30 /100, false, true);
-				}else
-				{
-					changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE) * 40 / 100, false, true);
-				}
-			}
+	if (eOwner < NUM_MAJOR_PLAYERS)
+	{
+		iCultureModifier = cultureModifier[eOwner];
+	}
 
+	if (GET_PLAYER((PlayerTypes)eOwner).isReborn())
+	{
+		if (eOwner == PERSIA) iCultureModifier = 135;
+		else if (eOwner == AZTEC) iCultureModifier = 140;
+		else if (eOwner == MAYA) iCultureModifier = 140;
+	}
+
+	if (eOwner == INDEPENDENT || eOwner == INDEPENDENT2)
+	{
+		iCultureModifier = 15;
+		if (getScenario() >= SCENARIO_600AD)
+		{
+			if (getX_INLINE() == 57 && getY_INLINE() == 46 && getCulture(eOwner) < 1) iCultureModifier = 15; // Marseilles
+			else if (getX_INLINE() == 60 && getY_INLINE() == 44 && getCulture(eOwner) < 50) iCultureModifier = 15; // Rome
+		}
+	}
+
+	if (eOwner == NATIVE)
+	{
+		if (hasActiveWorldWonder() && getCulture(eOwner) < 50) iCultureModifier = 15;
+		else if (getCulture(eOwner) < 5) iCultureModifier = 15;
+	}
+
+	if (eOwner == CELTIA || eOwner == SELJUKS)
+	{
+		iCultureModifier = 50;
+	}
+
+	if (eOwner == BARBARIAN)
+	{
+		iCultureModifier = 30;
 	}
 	//Rhye - end
 
+	changeCultureTimes100(eOwner, getCommerceRateTimes100(COMMERCE_CULTURE) * iCultureModifier / 100, false, true);
+
+	// Leoreth: let culture of dead civilizations decay
+	int iTotalCultureTimes100 = countTotalCultureTimes100();
+
+	PlayerTypes ePlayer;
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		ePlayer = (PlayerTypes)iI;
+		if (!GET_PLAYER(ePlayer).isAlive() && getCulture(ePlayer) > 0)
+		{
+			// culture of dead civilizations decreases by 1% of total city culture per turn
+			changeCultureTimes100(ePlayer, -iTotalCultureTimes100 / 100, false, true);
+		}
+	}
 }
 
 
@@ -16771,6 +16605,7 @@ void CvCity::liberate(bool bConquest)
 			if (NULL != pCity)
 			{
 				pCity->setCultureTimes100(ePlayer, pCity->getCultureTimes100(ePlayer) + iOldOwnerCulture / 2, true, true);
+				pCity->setCultureTimes100(eOwner, iOldOwnerCulture / 2, true, true); // Leoreth: overall culture remains constant
 			}
 
 			if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAVassal())

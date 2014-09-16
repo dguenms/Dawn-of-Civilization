@@ -609,7 +609,7 @@ class RFCUtils:
 				if iLoopPlayer != iPlayer:
 					iLoopCulture = city.getCulture(iLoopPlayer)
 					iConvertedCulture += iLoopCulture * iPercent / 100
-					plot.setCulture(iLoopPlayer, iLoopCulture * (100-iPercent) / 100, True)
+					city.setCulture(iLoopPlayer, iLoopCulture * (100-iPercent) / 100, True)
 					
 			city.changeCulture(iPlayer, iConvertedCulture, True)
 	
