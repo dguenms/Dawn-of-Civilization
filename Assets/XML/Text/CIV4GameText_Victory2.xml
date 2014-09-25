@@ -1049,4 +1049,19 @@
 		<English>South America</English>
 		<German>Südamerika</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_62</Tag>
+		<English>Canada</English>
+		<German>Kanada</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_63</Tag>
+		<English>Atlantic Coast</English>
+		<German>Atlantikküste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_64</Tag>
+		<English>Pacific Coast</English>
+		<German>Pazifikküste</German>
+	</TEXT>
 </Civ4GameText>

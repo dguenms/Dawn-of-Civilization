@@ -55,6 +55,8 @@ BeginTeam
 EndTeam
 BeginTeam                 
 EndTeam
+BeginTeam
+EndTeam
 BeginTeam                 
 EndTeam
 BeginTeam                 
@@ -546,10 +548,6 @@ BeginPlayer
 	CivType=CIVILIZATION_ARGENTINA
 	Team=39
 	PlayableCiv=1
-	LeaderType=LEADER_SAN_MARTIN
-	CivType=CIVILIZATION_ARGENTINA
-	Team=39
-	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_AUTOCRACY
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_CAPITALISM
@@ -573,11 +571,25 @@ BeginPlayer
 	StateReligion=RELIGION_CHRISTIANITY
 	Handicap=HANDICAP_REGENT
 EndPlayer
+BeginPlayer
+	LeaderType=LEADER_TRUDEAU
+	CivType=CIVILIZATION_CANADA
+	Team=41
+	PlayableCiv=1
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
+	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_MARKET
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
+	StateReligion=RELIGION_CHRISTIANITY
+	Handicap=HANDICAP_REGENT
+EndPlayer
 BeginPlayer                 
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
-	Team=41      
+	Team=42      
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_REGENT                 
@@ -586,7 +598,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
-	Team=42
+	Team=43
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_REGENT                 
@@ -595,7 +607,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_NATIVE
 	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
-	Team=43       
+	Team=44       
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_REGENT                 
@@ -603,7 +615,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT                 
-	Team=44
+	Team=45
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_REGENT                 
@@ -617,7 +629,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_WARRIOR_CODE
 	MinorNationStatus=1
-	Team=45
+	Team=46
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -634,7 +646,6 @@ BeginMap
 	sealevel=SEALEVEL_MEDIUM                 
 	num plots written=8432
 EndMap
-
 
 ### Plot Info ###
 BeginPlot
@@ -3746,19 +3757,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=63
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_SNOW
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=8,y=64
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=0
 EndPlot
 BeginPlot
 	x=8,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=8,y=66
@@ -4027,7 +4038,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=50
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -4042,6 +4053,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=53
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4074,7 +4086,7 @@ EndPlot
 BeginPlot
 	x=9,y=59
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
@@ -4086,15 +4098,15 @@ BeginPlot
 	x=9,y=61
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=9,y=62
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=9,y=63
@@ -4103,15 +4115,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=64
-	BonusType=BONUS_OIL
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=9,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_OIL
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=9,y=66
@@ -4385,15 +4396,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=51
-	BonusType=BONUS_MARBLE
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=10,y=52
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=10,y=53
@@ -4407,18 +4417,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=55
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
 EndPlot
 BeginPlot
 	x=10,y=56
-	TerrainType=TERRAIN_SNOW
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=10,y=57
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=0
 EndPlot
 BeginPlot
 	x=10,y=58
@@ -4436,13 +4447,15 @@ BeginPlot
 	x=10,y=60
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=10,y=61
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -4458,12 +4471,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=64
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=10,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4716,6 +4728,7 @@ BeginPlot
 	x=11,y=46
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -4725,6 +4738,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -4732,6 +4746,7 @@ BeginPlot
 	x=11,y=48
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -4744,34 +4759,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=11,y=50
-	isNOfRiver
-	RiverWEDirection=3
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=11,y=51
+	isNOfRiver
+	RiverWEDirection=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=11,y=52
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=11,y=52
+	x=11,y=53
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=11,y=53
-	BonusType=BONUS_DEER
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
 	x=11,y=54
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=0
 EndPlot
 BeginPlot
 	x=11,y=55
@@ -4780,13 +4793,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=11,y=56
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=0
 EndPlot
 BeginPlot
 	x=11,y=57
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_SNOW
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=11,y=58
@@ -4797,19 +4811,21 @@ BeginPlot
 	x=11,y=59
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=11,y=60
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=11,y=61
+	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=11,y=62
@@ -4835,7 +4851,7 @@ EndPlot
 BeginPlot
 	x=11,y=66
 	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -5104,59 +5120,63 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=50
-	isNOfRiver
-	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
 	x=12,y=51
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
 	x=12,y=52
-	RiverNSDirection=2
-	isNOfRiver
-	RiverWEDirection=3
-	isWOfRiver
-	BonusType=BONUS_COPPER
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=12,y=53
 	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
 	x=12,y=54
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	RiverNSDirection=2
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=12,y=55
-	TerrainType=TERRAIN_SNOW
-	PlotType=0
+	RiverNSDirection=2
+	isWOfRiver
+	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=12,y=56
-	TerrainType=TERRAIN_SNOW
-	PlotType=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=12,y=57
-	TerrainType=TERRAIN_SNOW
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=12,y=58
-	isNOfRiver
-	RiverWEDirection=1
 	BonusType=BONUS_SILVER
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -5173,17 +5193,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=61
+	RiverNSDirection=0
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=12,y=62
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=12,y=63
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -5460,57 +5486,61 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=49
-	RiverNSDirection=0
-	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=50
-	isNOfRiver
-	RiverWEDirection=3
 	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=51
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=52
-	RiverNSDirection=0
+	RiverNSDirection=2
 	isWOfRiver
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
 	x=13,y=53
-	RiverNSDirection=0
+	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=54
-	isNOfRiver
-	RiverWEDirection=3
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=55
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	RiverNSDirection=0
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=56
+	isNOfRiver
+	RiverWEDirection=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=57
@@ -5519,56 +5549,52 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=58
-	RiverNSDirection=0
 	isNOfRiver
 	RiverWEDirection=1
-	isWOfRiver
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=0
 EndPlot
 BeginPlot
 	x=13,y=59
-	RiverNSDirection=0
-	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=60
-	RiverNSDirection=0
-	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=13,y=61
-	RiverNSDirection=0
-	isWOfRiver
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=62
-	RiverNSDirection=0
-	isWOfRiver
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=63
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=64
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=65
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=66
@@ -5836,8 +5862,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=49
-	isNOfRiver
-	RiverWEDirection=3
 	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
@@ -5856,56 +5880,67 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=52
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
 	x=14,y=53
+	RiverNSDirection=0
+	isWOfRiver
+	BonusType=BONUS_COAL
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=14,y=54
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
 	x=14,y=55
-	isNOfRiver
-	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=14,y=56
-	RiverNSDirection=0
-	isNOfRiver
-	RiverWEDirection=1
-	isWOfRiver
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=0
 EndPlot
 BeginPlot
 	x=14,y=57
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=14,y=58
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=14,y=59
-	isNOfRiver
-	RiverWEDirection=1
+	RiverNSDirection=0
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=0
+	PlotType=1
 EndPlot
 BeginPlot
 	x=14,y=60
+	RiverNSDirection=0
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
@@ -5913,31 +5948,32 @@ EndPlot
 BeginPlot
 	x=14,y=61
 	isNOfRiver
-	RiverWEDirection=1
+	RiverWEDirection=3
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=14,y=62
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=14,y=63
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=14,y=64
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=14,y=65
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=14,y=66
@@ -6209,8 +6245,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=49
-	isNOfRiver
-	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
 EndPlot
@@ -6232,83 +6266,86 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=53
-	isNOfRiver
-	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
 	x=15,y=54
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=15,y=55
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=56
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=57
+	RiverNSDirection=0
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	isWOfRiver
+	BonusType=BONUS_FUR
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=58
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=59
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=60
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=61
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
+EndPlot
+BeginPlot
+	x=15,y=62
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=15,y=62
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
-EndPlot
-BeginPlot
 	x=15,y=63
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=15,y=64
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=65
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=15,y=66
@@ -6606,95 +6643,94 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=16,y=53
-	isNOfRiver
-	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=16,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	isNOfRiver
+	RiverWEDirection=1
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=55
-	RiverNSDirection=0
 	isNOfRiver
 	RiverWEDirection=1
-	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=56
 	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_FUR
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=57
-	isNOfRiver
-	RiverWEDirection=1
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
+	RiverNSDirection=0
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=58
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=59
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=16,y=60
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	RiverNSDirection=0
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=16,y=61
+	x=16,y=60
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
+	x=16,y=61
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
+EndPlot
+BeginPlot
 	x=16,y=62
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=63
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=16,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=16,y=66
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -6974,81 +7010,81 @@ BeginPlot
 	x=17,y=51
 	isNOfRiver
 	RiverWEDirection=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=17,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=53
-	isNOfRiver
-	RiverWEDirection=1
 	BonusType=BONUS_OIL
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=54
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=55
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=56
+	BonusType=BONUS_OIL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=57
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=58
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=17,y=59
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=17,y=59
+	x=17,y=60
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=17,y=60
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
-EndPlot
-BeginPlot
 	x=17,y=61
-	BonusType=BONUS_FUR
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=17,y=62
-	TerrainType=TERRAIN_SNOW
+	BonusType=BONUS_GEMS
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=63
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=64
@@ -7058,17 +7094,15 @@ EndPlot
 BeginPlot
 	x=17,y=65
 	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	PlotType=3
 EndPlot
 BeginPlot
 	x=17,y=66
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=17,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -7363,29 +7397,29 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=18,y=53
-	RiverNSDirection=0
-	isNOfRiver
-	RiverWEDirection=1
-	isWOfRiver
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=18,y=54
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=18,y=55
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -7397,15 +7431,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=57
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=18,y=58
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=18,y=59
@@ -7415,9 +7448,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=60
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=18,y=61
@@ -7426,24 +7459,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=62
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=18,y=63
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=18,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=18,y=65
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=18,y=66
@@ -7735,48 +7767,51 @@ BeginPlot
 	x=19,y=51
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_DEER
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=53
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=54
-	isNOfRiver
-	RiverWEDirection=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=55
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=56
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=57
+	BonusType=BONUS_URANIUM
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=58
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -7788,45 +7823,42 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=19,y=60
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=61
-	TerrainType=TERRAIN_SNOW
+	BonusType=BONUS_GEMS
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=62
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=63
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=19,y=64
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
 BeginPlot
-	x=19,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
+	x=19,y=64
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+EndPlot
+BeginPlot
+	x=19,y=65
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=66
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=19,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -8095,56 +8127,54 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=50
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=20,y=51
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=20,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=20,y=53
-	BonusType=BONUS_IRON
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=20,y=54
 	RiverNSDirection=0
-	isNOfRiver
-	RiverWEDirection=1
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
+	x=20,y=53
+	RiverNSDirection=0
+	isWOfRiver
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=20,y=54
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
 	x=20,y=55
-	BonusType=BONUS_URANIUM
+	BonusType=BONUS_FUR
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=20,y=56
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=20,y=57
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=20,y=58
@@ -8164,13 +8194,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=61
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=20,y=62
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=20,y=63
@@ -8179,24 +8209,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=64
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=20,y=65
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
 BeginPlot
-	x=20,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
 	x=20,y=66
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=20,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -8481,19 +8508,20 @@ BeginPlot
 	x=21,y=51
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=21,y=52
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=21,y=53
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=21,y=54
@@ -8502,11 +8530,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=55
-	isNOfRiver
-	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=21,y=56
@@ -8516,7 +8541,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=57
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -8533,19 +8558,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=60
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=21,y=61
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=21,y=61
+	x=21,y=62
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-EndPlot
-BeginPlot
-	x=21,y=62
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
 EndPlot
 BeginPlot
 	x=21,y=63
@@ -8554,13 +8579,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=64
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=21,y=65
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=21,y=66
@@ -8570,7 +8596,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -8844,6 +8869,7 @@ BeginPlot
 	x=22,y=49
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -8856,21 +8882,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=51
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=22,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=22,y=53
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=22,y=54
@@ -8880,26 +8906,28 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=55
-	isNOfRiver
-	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=22,y=56
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=22,y=57
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=22,y=58
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -8915,24 +8943,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=61
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=22,y=62
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
+EndPlot
+BeginPlot
+	x=22,y=63
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=22,y=63
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
-EndPlot
-BeginPlot
 	x=22,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -8950,7 +8976,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -9227,7 +9252,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=49
-	BonusType=BONUS_CORN
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -9239,48 +9264,47 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=51
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
+EndPlot
+BeginPlot
+	x=23,y=52
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=23,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	x=23,y=53
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
-	x=23,y=53
-	BonusType=BONUS_FUR
+	x=23,y=54
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
+EndPlot
+BeginPlot
+	x=23,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=23,y=54
+	x=23,y=56
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=23,y=55
+	x=23,y=57
 	isNOfRiver
 	RiverWEDirection=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=23,y=56
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
-EndPlot
-BeginPlot
-	x=23,y=57
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
-EndPlot
-BeginPlot
 	x=23,y=58
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -9296,14 +9320,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=61
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=23,y=62
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=23,y=63
@@ -9313,7 +9336,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -9330,7 +9352,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -9592,8 +9613,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=48
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=24,y=49
@@ -9602,41 +9623,41 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=50
-	RiverNSDirection=2
-	isWOfRiver
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=24,y=51
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=24,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=24,y=53
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=24,y=54
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
+EndPlot
+BeginPlot
+	x=24,y=55
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=24,y=55
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
 	x=24,y=56
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=24,y=57
@@ -9645,17 +9666,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=58
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=24,y=59
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=24,y=60
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -9670,12 +9691,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=63
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=24,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -9692,7 +9713,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -9968,36 +9988,37 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=50
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=25,y=51
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
+	x=25,y=51
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
 	x=25,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=25,y=53
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
+EndPlot
+BeginPlot
+	x=25,y=54
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=25,y=54
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
 	x=25,y=55
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=25,y=56
@@ -10011,22 +10032,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=58
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=59
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=60
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=61
-	TerrainType=TERRAIN_SNOW
+	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -10036,13 +10057,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=63
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=25,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -10059,7 +10078,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
@@ -10331,47 +10349,50 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=48
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-EndPlot
-BeginPlot
-	x=26,y=49
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=26,y=50
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=26,y=51
-	BonusType=BONUS_FUR
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=26,y=52
-	TerrainType=TERRAIN_TUNDRA
+	x=26,y=49
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
+	x=26,y=50
+	RiverNSDirection=0
+	isWOfRiver
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=26,y=51
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=26,y=52
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
+EndPlot
+BeginPlot
 	x=26,y=53
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=54
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=55
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=56
@@ -10385,45 +10406,41 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=58
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=26,y=59
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=26,y=60
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=26,y=61
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=26,y=62
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
 EndPlot
 BeginPlot
-	x=26,y=62
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
 	x=26,y=63
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=26,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -10699,37 +10716,40 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=48
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=27,y=49
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
+	x=27,y=49
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
 	x=27,y=50
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=27,y=51
-	BonusType=BONUS_URANIUM
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=27,y=52
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	RiverNSDirection=2
+	isWOfRiver
+	BonusType=BONUS_ALUMINUM
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=27,y=53
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -10755,13 +10775,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=58
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=59
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_OCEAN
+	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=60
@@ -10775,37 +10795,34 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=62
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=63
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=64
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=65
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
-EndPlot
-BeginPlot
-	x=27,y=66
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=27,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
+	x=27,y=66
 	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	PlotType=1
+EndPlot
+BeginPlot
+	x=27,y=67
+	TerrainType=TERRAIN_SNOW
+	PlotType=1
 EndPlot
 BeginPlot
 	x=28,y=0
@@ -11078,40 +11095,43 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=49
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=28,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=28,y=50
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
-EndPlot
-BeginPlot
 	x=28,y=51
-	isNOfRiver
-	RiverWEDirection=1
+	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=28,y=52
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=28,y=53
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=28,y=54
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=28,y=55
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=28,y=56
@@ -11130,8 +11150,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=59
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=60
@@ -11140,24 +11160,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=61
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=62
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
-EndPlot
-BeginPlot
-	x=28,y=63
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
+	x=28,y=63
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_OCEAN
+	PlotType=3
+EndPlot
+BeginPlot
 	x=28,y=64
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_OCEAN
+	PlotType=3
 EndPlot
 BeginPlot
 	x=28,y=65
@@ -11173,9 +11195,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=29,y=0
@@ -11463,7 +11484,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=50
-	RiverNSDirection=2
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+EndPlot
+BeginPlot
+	x=29,y=51
+	RiverNSDirection=0
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
@@ -11472,59 +11499,56 @@ BeginPlot
 	PlotType=2
 EndPlot
 BeginPlot
-	x=29,y=51
+	x=29,y=52
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
-EndPlot
-BeginPlot
-	x=29,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=53
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
+EndPlot
+BeginPlot
+	x=29,y=54
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
+EndPlot
+BeginPlot
+	x=29,y=55
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=29,y=54
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=29,y=55
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
 	x=29,y=56
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	isNOfRiver
+	RiverWEDirection=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=57
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=58
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=59
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=60
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=29,y=61
@@ -11545,13 +11569,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=64
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=65
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=29,y=66
@@ -11563,7 +11589,7 @@ BeginPlot
 	x=29,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=0
@@ -11853,71 +11879,74 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=50
-	RiverNSDirection=0
-	isNOfRiver
-	RiverWEDirection=1
-	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=51
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=30,y=52
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=30,y=53
 	BonusType=BONUS_FUR
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=30,y=54
-	isNOfRiver
-	RiverWEDirection=3
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=55
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=56
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	isNOfRiver
+	RiverWEDirection=3
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=57
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=58
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=59
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=60
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=30,y=61
@@ -11926,8 +11955,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=62
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=30,y=63
@@ -11937,8 +11966,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=64
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	FeatureType=FEATURE_ICE, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=30,y=65
@@ -11947,15 +11977,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=66
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=1
 EndPlot
 BeginPlot
 	x=30,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=31,y=0
@@ -12252,10 +12281,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=51
-	RiverNSDirection=0
-	isNOfRiver
-	RiverWEDirection=1
-	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -12263,19 +12288,16 @@ EndPlot
 BeginPlot
 	x=31,y=52
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=31,y=53
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=31,y=54
-	isNOfRiver
-	RiverWEDirection=3
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
@@ -12288,8 +12310,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=56
+	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=31,y=57
@@ -12298,8 +12321,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=58
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=31,y=59
@@ -12308,20 +12331,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=60
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=31,y=61
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=31,y=62
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=2
 EndPlot
 BeginPlot
 	x=31,y=63
@@ -12340,15 +12361,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=66
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=0
 EndPlot
 BeginPlot
 	x=31,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=32,y=0
@@ -12635,7 +12655,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=49
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12653,14 +12672,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=52
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_FUR
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=32,y=53
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=32,y=54
@@ -12671,42 +12691,39 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=55
-	RiverNSDirection=0
-	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=32,y=56
-	RiverNSDirection=0
-	isWOfRiver
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=32,y=57
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=32,y=58
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=1
 EndPlot
 BeginPlot
 	x=32,y=59
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=0
 EndPlot
 BeginPlot
 	x=32,y=60
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=32,y=61
 	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=32,y=62
@@ -12725,9 +12742,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=0
 EndPlot
 BeginPlot
 	x=32,y=66
@@ -13038,6 +13054,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=49
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -13048,16 +13065,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=51
-	BonusType=BONUS_FUR
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=33,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=33,y=53
@@ -13066,17 +13081,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=2
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
-EndPlot
-BeginPlot
-	x=33,y=55
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
+	x=33,y=55
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=2
+EndPlot
+BeginPlot
 	x=33,y=56
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -13092,39 +13111,38 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=59
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=33,y=60
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=33,y=61
 	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=33,y=62
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=33,y=63
-	TerrainType=TERRAIN_SNOW
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=33,y=64
 	TerrainType=TERRAIN_SNOW
-	PlotType=1
+	PlotType=0
 EndPlot
 BeginPlot
 	x=33,y=65
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=1
 EndPlot
 BeginPlot
 	x=33,y=66
@@ -13455,9 +13473,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=34,y=55
@@ -13467,6 +13484,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=56
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
@@ -13482,36 +13500,33 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=59
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=34,y=60
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=34,y=61
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=34,y=62
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=34,y=63
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
 EndPlot
 BeginPlot
-	x=34,y=63
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
 	x=34,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_SNOW
+	PlotType=1
 EndPlot
 BeginPlot
 	x=34,y=65
@@ -13521,14 +13536,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=66
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=34,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=0
@@ -13843,34 +13858,34 @@ BeginPlot
 	x=35,y=51
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 EndPlot
 BeginPlot
 	x=35,y=52
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=53
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=35,y=54
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-EndPlot
-BeginPlot
-	x=35,y=55
-	BonusType=BONUS_FUR
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 EndPlot
 BeginPlot
-	x=35,y=56
+	x=35,y=54
 	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	PlotType=1
+EndPlot
+BeginPlot
+	x=35,y=55
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=35,y=56
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=57
@@ -13879,8 +13894,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=58
-	BonusType=BONUS_WHALE
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -13890,18 +13904,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=60
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=61
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_OCEAN
+	PlotType=3
 EndPlot
 BeginPlot
 	x=35,y=62
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -13929,9 +13941,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=0
@@ -14226,25 +14237,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=52
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=53
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=54
-	BonusType=BONUS_SWAMP
-	FeatureType=FEATURE_MUD, FeatureVariety=0
-	TerrainType=TERRAIN_MARSH
-	PlotType=2
+	FeatureType=FEATURE_FOREST, FeatureVariety=2
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 EndPlot
 BeginPlot
 	x=36,y=55
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14257,7 +14265,7 @@ EndPlot
 BeginPlot
 	x=36,y=57
 	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14274,30 +14282,27 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=60
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=61
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=62
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=63
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=64
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14314,9 +14319,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=67
-	FeatureType=FEATURE_ICE, FeatureVariety=0
-	TerrainType=TERRAIN_SNOW
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=0
@@ -14608,12 +14612,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=51
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=52
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -14623,9 +14627,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=54
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=37,y=55
@@ -14669,7 +14672,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=63
-	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14971,33 +14973,33 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=51
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=52
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=53
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=54
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=55
-	TerrainType=TERRAIN_COAST
+	BonusType=BONUS_WHALE
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=38,y=56
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -15336,13 +15338,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=53
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=39,y=54
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -25305,8 +25306,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=54
-	TerrainType=TERRAIN_GRASS
 	BonusType=BONUS_WHEAT
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot

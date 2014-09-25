@@ -56,6 +56,17 @@
 			<fAlpha>1.00</fAlpha>
 		</ColorVal>
 		<ColorVal>
+			<Type>COLOR_PLAYER_CANADA_RED</Type>
+			<fRed>0.750</fRed>
+			<fGreen>0.182</fGreen>
+			<fBlue>0.139</fBlue>
+			<fAlpha>1.00</fAlpha>
+			<!--<fRed>0.75</fRed>
+			<fGreen>0.00</fGreen>
+			<fBlue>0.00</fBlue>
+			<fAlpha>1.00</fAlpha>-->
+		</ColorVal>
+		<ColorVal>
 			<Type>COLOR_RED</Type>
 			<fRed>1.00</fRed>
 			<fGreen>0.00</fGreen>

@@ -1784,4 +1784,8 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 		<Italian>Costruisci il [COLOR_BUILDING_TEXT]Parco nazionale[COLOR_REVERT] per far fronte alla mancanza di salute della popolazione della tua citt&#224;. Fornisce inoltre uno specialista per ogni [COLOR_HIGHLIGHT_TEXT]Riserva forestale[COLOR_REVERT] nel raggio della citt&#224; e aumenta le probabilit&#224; che appaia un [COLOR_UNIT_TEXT]Grande Scienziato[COLOR_REVERT] nella tua citt&#224;.</Italian>
 		<Spanish>Construye el [COLOR_BUILDING_TEXT]Parque nacional[COLOR_REVERT] para eliminar toda la insalubridad de la poblaci&#243;n de la ciudad. Tambi&#233;n proporciona un especialista gratis por cada [COLOR_HIGHLIGHT_TEXT]Reserva forestal[COLOR_REVERT] que haya en su radio urbano y aumenta la probabilidad de que pueda aparecer un [COLOR_UNIT_TEXT]gran cient&#237;fico[COLOR_REVERT] en la ciudad.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
+		<English>CN Tower</English>
+	</TEXT>
 </Civ4GameText>

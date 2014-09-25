@@ -3402,8 +3402,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == CRISTO) iTempValue *= 3;
 										if (iI == GREATDAM || iI == WEMBLEY) iTempValue *= 2;
 										break;
+									case CANADA:
+										if (iI == CN_TOWER) iTempValue *= 3;
+										break;
 									case CELTIA:
-										if (iI == STONEHENGE) iTempValue *= 4;
+										//if (iI == STONEHENGE) iTempValue *= 4;
 										break;
 									default:
 										if (iI == STONEHENGE) iTempValue *= 2;

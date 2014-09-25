@@ -61,6 +61,7 @@ iGermany = con.iGermany
 iAmerica = con.iAmerica
 iArgentina = con.iArgentina
 iBrazil = con.iBrazil
+iCanada = con.iCanada
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
 iNumActivePlayers = con.iNumActivePlayers
@@ -115,6 +116,7 @@ pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
 pArgentina = gc.getPlayer(iArgentina)
 pBrazil = gc.getPlayer(iBrazil)
+pCanada = gc.getPlayer(iCanada)
 pSeljuks = gc.getPlayer(iSeljuks)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
@@ -164,6 +166,7 @@ teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamArgentina = gc.getTeam(pArgentina.getTeam())
 teamBrazil = gc.getTeam(pBrazil.getTeam())
+teamCanada = gc.getTeam(pCanada.getTeam())
 teamSeljuks = gc.getTeam(pSeljuks.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
@@ -235,6 +238,7 @@ class DynamicCivs:
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEFAULT",
 			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_DEFAULT",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEFAULT",
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_DEFAULT",
                 }
 		
 		self.peopleNames = {
@@ -279,6 +283,7 @@ class DynamicCivs:
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_PEOPLES",
 			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_PEOPLES",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_PEOPLES",
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_PEOPLES",
                 }
 				
 		self.specificVassalNames = {
@@ -869,6 +874,7 @@ class DynamicCivs:
 			iAmerica : con.iWashington,
 			iArgentina : con.iSanMartin,
 			iBrazil : con.iDomPedro,
+			iCanada : con.iTrudeau,
 		}
 		
 		self.lateStartingLeaders = {

@@ -665,6 +665,18 @@
 		<German>Pindorama</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN1_TITLE</Tag>
+		<English>A Mari Usque Ad Mare</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN2_TITLE</Tag>
+		<English>Great White North</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN3_TITLE</Tag>
+		<English>Peacekeeping</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV__TITLE</Tag>
 		<English></English>
 		<German></German>

@@ -145,6 +145,7 @@ public:
 	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
 	void releasedPlayer(PlayerTypes ePlayer, PlayerTypes eReleasedPlayer); // Leoreth
 	void blockade(PlayerTypes ePlayer, int iGold); // Leoreth
+	void peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
 
 	DllExport void preSave();
 

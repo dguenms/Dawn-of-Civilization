@@ -685,6 +685,22 @@
 		<English>Number of melee and gunpowder units: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ATLANTIC_RAILROAD</Tag>
+		<English>Railroad to an Atlantic port</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PACIFIC_RAILROAD</Tag>
+		<English>Railroad to a Pacific port</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA</Tag>
+		<English>Canadian territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS</Tag>
+		<English>Peace deals arranged: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_</Tag>
 		<English></English>
 	</TEXT>

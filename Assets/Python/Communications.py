@@ -75,7 +75,8 @@ tPool3 = (con.iEgypt,
 	  con.iCongo,
 	  con.iTibet,
 	  con.iBrazil,
-	  con.iArgentina)
+	  con.iArgentina,
+	  con.iCanada)
 
 
 class Communications:
@@ -239,12 +240,18 @@ class Communications:
 
 
         def onCityAcquired(self, city):
+	
+		print "Communications.onCityAcquired: " + str(city.getName())
 
                 for iLoopCiv in range (iNumMajorPlayers):
                         if (city.hasBuilding(iNumBuildingsPlague + iLoopCiv)):
-				print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)
+				#print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)
                                 city.setHasRealBuilding(iNumBuildingsPlague + iLoopCiv, False)
-				print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)+" passed."
-                                print ("embassy deleted on city acquired", city.getName())
+				#print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)+" passed."
+                                #print ("embassy deleted on city acquired", city.getName())
+				
+		print "Communications.onCityAcquired: " + str(city.getName())
+
+                
         
 

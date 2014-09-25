@@ -162,6 +162,7 @@ class CvEventManager(object):
 			'playerSlaveTrade'		: self.onPlayerSlaveTrade,
 			'releasedPlayer'		: self.onReleasedPlayer,
 			'blockade'			: self.onBlockade,
+			'peaceBrokered'			: self.onPeaceBrokered,
 		}
 
 		################## Events List ###############################
@@ -1121,3 +1122,6 @@ class CvEventManager(object):
 		
 	def onBlockade(self, argsList):
 		iPlayer, iGold = argsList
+		
+	def onPeaceBrokered(self, argsList):
+		iBroker, iPlayer1, iPlayer2 = argsList

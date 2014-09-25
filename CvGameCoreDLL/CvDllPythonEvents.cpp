@@ -1393,6 +1393,22 @@ void CvDllPythonEvents::reportBlockade(PlayerTypes ePlayer, int iGold)
 	}
 }
 
+// Leoreth: peace deal arranged between players
+void CvDllPythonEvents::reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("peaceBrokered");
+
+		eventData.add((int)eBroker);
+		eventData.add((int)ePlayer1);
+		eventData.add((int)ePlayer2);
+
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

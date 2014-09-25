@@ -2356,6 +2356,7 @@ void CvGame::update()
 		case AMERICA:
 		case ARGENTINA:
 		case BRAZIL:
+		case CANADA:
 			//if (getGameTurn() == 0 || (getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition
 			//if (getGameTurn() == 0 || (getGameTurn() == getTurnForYear(600) && getScenario() == SCENARIO_600AD)) //late start condition // edead
 			if (getGameTurn() == getScenarioStartTurn())
@@ -7980,8 +7981,9 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 					{
 						//Rhye - start
 						//kLoopPlayer.forcePeace(kData.kVoteOption.ePlayer);
-						if (atWar(kPlayer.getTeam(), (TeamTypes)iPlayer)) {
+						if (atWar(kPlayer.getTeam(), (TeamTypes)kData.kVoteOption.ePlayer)) {
 							kLoopPlayer.forcePeace(kData.kVoteOption.ePlayer);
+							CvEventReporter::getInstance().peaceBrokered(GET_TEAM(getSecretaryGeneral(kVote.isVoteSourceType(0) ? (VoteSourceTypes)0 : (VoteSourceTypes)1)).getLeaderID(), (PlayerTypes)iPlayer, kData.kVoteOption.ePlayer);
 						}
 						//Rhye - end
 					}

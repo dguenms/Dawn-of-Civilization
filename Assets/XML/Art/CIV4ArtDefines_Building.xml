@@ -680,6 +680,16 @@
 			<Button>,Art/Interface/Buttons/Buildings/Courthouse.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,2</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CANADA_RCMP</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.8</fScale>
+			<fInterfaceScale>0.61</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Courthouse/Courthouse.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/rcmp_btn.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_AZTEC_SACRIFICIAL_ALTAR</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -2124,6 +2134,16 @@
 			<KFM/>
 			<Button>Art/Interface/Buttons/Civilizations/Brazil.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CAN_EMBASSY</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Civilizations/canada_btn.dds</Button>
+		</BuildingArtInfo>
 		<!-- Rhye - end -->
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CHINESE_ACADEMY</Type>
@@ -2544,6 +2564,16 @@
 			<NIF>Art/Structures/Wonders/MachuPicchu/macchu_picchu.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/MachuPicchu/Machu.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CN_TOWER</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>3</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/CN_Tower/cn_tower.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/CN_Tower/cntower.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</Type>

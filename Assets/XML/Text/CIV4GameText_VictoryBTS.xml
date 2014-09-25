@@ -502,4 +502,19 @@
 		<English>Acquire 15000 gold by selling resources by 1950 AD</English>
 		<German>Erhalten Sie bis zum Jahr 1950 n. Chr. 15000 Gold durch den Verkauf von Ressourcen</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN1</Tag>
+		<English>Connect your capital to an Atlantic and a Pacific port by railroad in 1920 AD</English>
+		<German>Verbinden Sie im Jahr 1920 n. Chr. Ihre Hauptstadt per Schiene zu einem atlantischem und einem pazifischen Hafen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN2</Tag>
+		<English>Control all of Canada without ever conquering a city in 1950 AD</English>
+		<German>Kontrollieren Sie im Jahr 1950 n. Chr. ganz Kanada ohne jemals eine Stadt zu erobern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN3</Tag>
+		<English>End twelve wars through diplomacy by 2000 AD</English>
+		<German>Beenden Sie bis zum Jahr 2000 n. Chr. zwölf Kriege durch Diplomatie</German>
+	</TEXT>
 </Civ4GameText>

@@ -501,6 +501,12 @@ void CvEventReporter::blockade(PlayerTypes ePlayer, int iGold)
 	m_kPythonEventMgr.reportBlockade(ePlayer, iGold);
 }
 
+// Leoreth: arrange peace deal between players
+void CvEventReporter::peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2)
+{
+	m_kPythonEventMgr.reportPeaceBrokered(eBroker, ePlayer1, ePlayer2);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

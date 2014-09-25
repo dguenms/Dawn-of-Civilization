@@ -4,6 +4,46 @@
 <!-- -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_DESC</Tag>
+		<English>The Canadians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_SHORT_DESC</Tag>
+		<English>Canada</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_ADJECTIVE</Tag>
+		<English>Canadian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_PEDIA</Tag>
+		<English>Canada is a country in North America consisting of ten provinces and three territories. Located in the northern part of the continent, it extends from the Atlantic to the Pacific and northward into the Arctic Ocean. At 9.98 million square kilometres in total, Canada is the world's second-largest country by total area. Its common border with the United States is the world's longest land border shared by the same two countries. The land that is now Canada has been inhabited for millennia by various Aboriginal peoples. Beginning in the late 15th century, British and French colonies were established on the region's Atlantic coast. As a consequence of various conflicts, the United Kingdom gained and lost North American territories until left, in the late 18th century, with what mostly comprises Canada today. Pursuant to the British North America Act, on July 1, 1867 three colonies joined to form the autonomous federal dominion of Canada. This began an accretion of provinces and territories to the new self-governing dominion. In 1931, Britain granted Canada full independence in most matters with the Statute of Westminster 1931. The Canada Act 1982 severed the vestiges of legal dependence on the British parliament. Canada is a federal parliamentary democracy and a constitutional monarchy, with Queen Elizabeth II as its head of state. Canada is a member of the Commonwealth of Nations. The country is officially bilingual at the federal level. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries, with a population of approximately 35 million as of December 2012. Its advanced economy is one of the largest in the world, relying chiefly upon its abundant natural resources and well-developed trade networks. Canada's long and complex relationship with the United States has had a significant impact on its economy and culture. Canada is a developed country and one of the wealthiest in the world, with the eighth highest per capita income globally, and the eighth highest ranking in the Human Development Index. It ranks among the highest in international measurements of education, government transparency, civil liberties, quality of life, and economic freedom. Canada's participation in economic international and intergovernmental institutions or groupings includes the G8 (Group of Eight); the Group of Ten (economic); the Group of Twenty (G-20 major economies); the North American Free Trade Agreement; and the Asia-Pacific Economic Cooperation forum. Canada's alliances include the North Atlantic Treaty Organization (NATO).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_TRUDEAU</Tag>
+		<English>Trudeau</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_TRUDEAU_PEDIA</Tag>
+		<English>Joseph Philippe Pierre Yves Elliott Trudeau, PC CH CC QC FSRC (October 18, 1919 - September 28, 2000), usually known as Pierre Trudeau or Pierre Elliott Trudeau, was the 15th Prime Minister of Canada from April 20, 1968 to June 4, 1979, and again from March 3, 1980 to June 30, 1984. Trudeau began his political career as a lawyer, intellectual, and activist in Quebec politics. In the 1960s, he entered federal politics by joining the Liberal Party of Canada. He was appointed as Lester Pearson's Parliamentary Secretary, and later became his Minister of Justice. From his base in Montreal, Trudeau took control of the Liberal Party and became a charismatic leader, inspiring "Trudeaumania". From the late 1960s until the mid-1980s, he dominated the Canadian political scene and aroused passionate reactions. "Reason before passion" was his personal motto. He retired from politics in 1984, and John Turner succeeded him as Prime Minister. Admirers praise the force of Trudeau's intellect and salute his political acumen in preserving national unity against the Quebec sovereignty movement, suppressing a violent revolt, and establishing the Charter of Rights and Freedoms within Canada's constitution. Critics accuse him of arrogance, economic mismanagement, and unduly favouring the federal government relative to the provinces, especially in trying to distribute the oil wealth of the Prairies.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CANADA_CORVETTE</Tag>
+		<English>Corvette</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CORVETTE_PEDIA</Tag>
+		<English>The modern corvette appeared during World War II as an easily built patrol and convoy escort vessel. The British naval designer William Reed drew up a small ship based on the single-shaft Smiths Dock Company whale catcher Southern Pride, whose simple design and mercantile construction standards lent itself to rapid production in large numbers in small yards unused to naval work. First Lord of the Admiralty Winston Churchill, later Prime Minister, had a hand in reviving the name "corvette". During the arms buildup leading to World War II, the term "corvette" was almost attached to the Tribal-class destroyer. The Tribals were so much larger than and sufficiently different from other British destroyers that some consideration was given to resurrecting the classification of "corvette" and applying it to them. This idea was dropped, and the term applied to small, mass-produced antisubmarine escorts such as the Flower class of World War II. The first modern corvettes were the Flower class (Royal Navy corvettes were named after flowers, and ships in Royal Canadian Navy service took the name of smaller Canadian cities and towns). Their chief duty was to protect convoys throughout the Battle of the Atlantic and on the routes from the UK to Murmansk carrying supplies to the Soviet Union. The Flower-class corvette was originally designed for offshore patrol work, and was not ideal as an antisubmarine escort; they were really too short for open ocean work, too lightly armed for antiaircraft defence, and little faster than the merchantmen they escorted, a particular problem given the faster German U-boat designs then emerging. They were very seaworthy and manoeuvrable, but living conditions for ocean voyages were appalling. Because of this, the corvette was superseded in the Royal Navy as the escort ship of choice by the frigate, which was larger, faster, better armed, and had two shafts. However, many small yards could not produce vessels of frigate size, so an improved corvette design, the Castle class, was introduced later in the war, with some remaining in service until the mid-1950s.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CANADA_RCMP</Tag>
+		<English>Royal Mounted Police</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CANADA_RCMP_PEDIA</Tag>
+		<English>The Royal Canadian Mounted Police (RCMP) (French: Gendarmerie royale du Canada (GRC), literally 'Royal Gendarmerie of Canada'; colloquially known as the Mounties, and internally as 'the Force') is both a federal and a national police force of Canada, and one of the most recognized of its kind in the world. It is unique in the world as a national, federal, provincial, and municipal policing body. The RCMP provides policing services to all of Canada at a federal level, and also on a contract basis to the three territories, eight of Canada's provinces (the RCMP does not provide provincial or municipal policing in either Ontario or Quebec), more than 190 municipalities, 184 aboriginal communities, and three international airports.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MOORS_DESC</Tag>
 		<English>The Moors</English>
 	</TEXT>

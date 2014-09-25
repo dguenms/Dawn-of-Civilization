@@ -83,6 +83,7 @@ iGermany = con.iGermany
 iAmerica = con.iAmerica
 iArgentina = con.iArgentina
 iBrazil = con.iBrazil
+iCanada = con.iCanada
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
 iNumActivePlayers = con.iNumActivePlayers
@@ -137,6 +138,7 @@ pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
 pArgentina = gc.getPlayer(iArgentina)
 pBrazil = gc.getPlayer(iBrazil)
+pCanada = gc.getPlayer(iCanada)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
 pNative = gc.getPlayer(iNative)
@@ -186,6 +188,7 @@ teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamArgentina = gc.getTeam(pArgentina.getTeam())
 teamBrazil = gc.getTeam(pBrazil.getTeam())
+teamCanada = gc.getTeam(pCanada.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
 teamNative = gc.getTeam(pNative.getTeam())
@@ -1744,7 +1747,7 @@ class RiseAndFall:
 				sta.completeCollapse(iSeljuks)
 				#utils.killAndFragmentCiv(iSeljuks, iIndependent, iIndependent2, -1, False)
                 
-                lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina]
+                lConditionalCivs = [iByzantium, iMughals, iThailand, iBrazil, iArgentina, iCanada]
 		
 		# Leoreth: extra checks for conditional civs
                 if iCiv in lConditionalCivs and utils.getHumanID() != iCiv:
@@ -2358,9 +2361,10 @@ class RiseAndFall:
                                 #case 3: other
                                 elif (not loopCity.isCapital() or (iOwner == iIndia and iCiv == iMughals and utils.getHumanID() != iOwner)):   #utils.debugTextPopup( 'OTHER' )                                
 					iCultureChange = 50
+					bNoWar = (iCiv == con.iCanada or (utils.getHumanID() != iCiv and iCiv == con.iGermany))
 					if (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[iCiv]) + 5): #if we're during a birth
 						rndNum = gc.getGame().getSorenRandNum(100, 'odds')
-						if (rndNum >= tAIStopBirthThreshold[iOwner]) and not (iCiv == con.iGermany and utils.getHumanID() != con.iGermany) and not (iCiv == iByzantium and iOwner == iRome):
+						if (rndNum >= tAIStopBirthThreshold[iOwner]) and not bNoWar and not (iCiv == iByzantium and iOwner == iRome):
 							print (iOwner, "stops birth", iCiv, "rndNum:", rndNum, "threshold:", tAIStopBirthThreshold[iOwner])
 							if (not gc.getTeam(gc.getPlayer(iOwner).getTeam()).isAtWar(iCiv)):                                                                        
 								gc.getTeam(gc.getPlayer(iOwner).getTeam()).declareWar(iCiv, False, -1)
@@ -3111,6 +3115,10 @@ class RiseAndFall:
 			utils.makeUnit(con.iGrenadier, iCiv, tPlot, 2)
 			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3)
 			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
+		elif iCiv == iCanada:
+			utils.makeUnit(con.iCavalry, iCiv, tPlot, 2)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 4)
+			utils.makeUnit(con.iCannon, iCiv, tPlot, 2)
 
 
         def createStartingUnits( self, iCiv, tPlot ):
@@ -3489,6 +3497,10 @@ class RiseAndFall:
 				utils.makeUnit(con.iFrigate, iCiv, tSeaPlot, 3)
 			if utils.getHumanID() != iBrazil:
 				utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+		if iCiv == iCanada:
+			utils.createSettlers(iCiv, 5)
+			utils.makeUnit(con.iCavalry, iCiv, tPlot, 3)
+			utils.makeUnit(con.iRifleman, iCiv, tPlot, 5)
 				
 		# Leoreth: start wars on spawn when the spawn actually happens
 		self.startWarsOnSpawn(iCiv)
@@ -3647,6 +3659,8 @@ class RiseAndFall:
 			utils.makeUnit(con.iBrazilianLenhador, iCiv, tPlot, 3)
 		if iCiv == iArgentina:
 			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
+		if iCiv == iCanada:
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 3)
 			
 	def create1700ADstartingUnits(self):
 	
@@ -3755,7 +3769,7 @@ class RiseAndFall:
 		utils.makeUnit(con.iRifleman, iGermany, tCapital, 8)
 		utils.makeUnit(con.iCannon, iGermany, tCapital, 3)
 		
-		for iPlayer in [iAmerica, iArgentina, iBrazil]:
+		for iPlayer in [iAmerica, iArgentina, iBrazil, iCanada]:
 			if utils.getHumanID() == iPlayer:
 				utils.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], 1)
 				utils.makeUnit(iWarrior, iPlayer, con.tCapitals[0][iPlayer], 1)
@@ -3908,6 +3922,9 @@ class RiseAndFall:
 		if pBrazil.isHuman():
 			utils.makeUnit(iSettler, iBrazil, tCapitals[0][iBrazil], 1)
 			utils.makeUnit(iWarrior, iBrazil, tCapitals[0][iBrazil], 1)
+		if pCanada.isHuman():
+			utils.makeUnit(iSettler, iCanada, tCapitals[0][iCanada], 1)
+			utils.makeUnit(iWarrior, iCanada, tCapitals[0][iCanada], 1)
 
 
         def create4000BCstartingUnits( self ):
@@ -4036,6 +4053,9 @@ class RiseAndFall:
 		if pBrazil.isHuman():
 			utils.makeUnit(iSettler, iBrazil, tCapitals[0][iBrazil], 1)
 			utils.makeUnit(iWarrior, iBrazil, tCapitals[0][iBrazil], 1)
+		if pCanada.isHuman():
+			utils.makeUnit(iSettler, iCanada, tCapitals[0][iCanada], 1)
+			utils.makeUnit(iWarrior, iCanada, tCapitals[0][iCanada], 1)
 			
 			
 	def assign1700ADTechs(self):
@@ -5047,6 +5067,20 @@ class RiseAndFall:
 						con.iNationalism, con.iDemocracy, con.iSteamPower]
 				for iTech in lArgentineTechs:
 					teamArgentina.setHasTech(iTech, True, iCiv, False, False)
+			if iCiv == iCanada:
+				lCanadianTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
+						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
+						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
+						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
+						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
+						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, \
+						con.iNationalism, con.iDemocracy, con.iSteamPower, con.iSteel, con.iRailroad]
+				for iTech in lCanadianTechs:
+					teamCanada.setHasTech(iTech, True, iCiv, False, False)
+					
+				# srpt Canadian vassalage
+				#gc.getTeam(gc.getPlayer(iCanada).getTeam()).setVassal(iEngland, True, False)
+				
 			if iCiv == iBrazil:
 				lBrazilTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
 						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
