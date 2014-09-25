@@ -863,6 +863,7 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 
 	case TRADE_PEACE:
 		GET_TEAM(GET_PLAYER(eFromPlayer).getTeam()).makePeace((TeamTypes)trade.m_iData);
+		CvEventReporter::getInstance().peaceBrokered(eToPlayer, eFromPlayer, GET_TEAM((TeamTypes)trade.m_iData).getLeaderID());
 		break;
 
 	case TRADE_WAR:

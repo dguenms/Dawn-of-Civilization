@@ -43,6 +43,12 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_CANADA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Canada.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_MapleLeaf.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_CARTHAGE</Type>
 			<!-- Rhye -->
 			<Button>,Art/Interface/Buttons/Civilizations/Carthage.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,5,1</Button>

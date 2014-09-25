@@ -259,4 +259,8 @@
 		<Tag>TXT_KEY_DOM_BRAZIL</Tag>
 		<English>It is the year 1822 AD. After the revolution in Portugal threatens Brazilian sovereignty with in the United Kingdom, Dom Pedro of Brazil declares an independent empire. Brazil's rich plantations as well as the Amazon rainforest promise wealth for the future, but also demand preservation.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_CANADA</Tag>
+		<English>It is the year 1867. After the American revolution, Canada has remained under colonial control. With the approval of the North America Acts, Canada has now been finally granted independence so it can expand across the Great White North on its own accord.</English>
+	</TEXT>
 </Civ4GameText>

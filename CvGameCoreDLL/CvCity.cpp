@@ -12157,6 +12157,29 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
 
 	int iMaxSpecialistCount = m_paiMaxSpecialistCount[eIndex];
+	
+	// srpt new Canadian UP
+	/*if (getOwnerINLINE() == CANADA)
+	{
+		int iMulticulturalism = 0;
+		for (int iI =  0; iI < NUM_RELIGIONS; iI++)
+		{
+			if ((GET_PLAYER(getOwnerINLINE()).getStateReligion() != ((ReligionTypes)iI)) && (isHasReligion((ReligionTypes)iI)))
+			{
+				iMulticulturalism += 1;
+			}
+		}
+		if ((eIndex == (SpecialistTypes)2) && (hasBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_THEATRE")))) // artist
+		{
+			iMaxSpecialistCount += iMulticulturalism;
+		}
+		if ((eIndex == (SpecialistTypes)3) && (hasBuilding((BuildingTypes)GC.getInfoTypeForString("BUILDING_LIBRARY")))) // scientist
+		{
+			iMaxSpecialistCount += iMulticulturalism;
+		}
+	}*/
+	// srpt end
+				
 
 	// Leoreth: Wat Preah Pisnulok effect
 	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)ANGKORWAT) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))

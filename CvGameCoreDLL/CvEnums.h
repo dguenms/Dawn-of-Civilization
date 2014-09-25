@@ -1181,6 +1181,7 @@ enum PlayerTypes				// Exposed to Python
 	AMERICA,
 	ARGENTINA,
 	BRAZIL,
+	CANADA,
 	INDEPENDENT,
 	INDEPENDENT2,
 	NATIVE,

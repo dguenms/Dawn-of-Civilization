@@ -738,6 +738,32 @@ class UniquePowers:
 			elif utils.getHumanID() == iTargetPlayer:
 				CyInterface().addMessage(iTargetPlayer, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_IMMIGRATION", (targetCity.getName(),)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(con.iSettler).getButton(), ColorTypes(con.iYellow), x, y, True, True)
 	
+			if iTargetPlayer == con.iCanada:
+				self.canadianUP(targetCity)
+		
+		
+	def canadianUP(self, city):
+		iPopulation = city.getPopulation()
+		
+		lProgress = []
+		bAllZero = True
+		for iSpecialist in [con.iProphet, con.iArtist, con.iScientist, con.iMerchant, con.iEngineer, con.iGreatGeneral, con.iGreatSpy]:
+			iProgress = city.getGreatPeopleUnitProgress(utils.getUniqueUnit(iSpecialist))
+			if iProgress > 0: bAllZero = False
+			lProgress.append(iProgress)
+			
+		if bAllZero:
+			iGreatPerson = utils.getRandomEntry([con.iProphet, con.iArtist, con.iScientist, con.iMerchant, con.iEngineer, con.iGreatSpy])
+		else:
+			iGreatPerson = utils.getHighestIndex(lProgress) + con.iProphet
+			
+		iGreatPerson = utils.getUniqueUnit(iGreatPerson)
+		
+		city.changeGreatPeopleProgress(iPopulation)
+		city.changeGreatPeopleUnitProgress(iGreatPerson, iPopulation)
+		
+		if utils.getHumanID() == city.getOwner():
+			CyInterface().addMessage(city.getOwner(), False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_MULTICULTURALISM", (city.getName(), gc.getUnitInfo(iGreatPerson).getText(), iPopulation)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGreatPerson).getButton(), ColorTypes(con.iGreen), city.getX(), city.getY(), True, True)
                                         
         def selectRandomCitySourceCiv(self, iCiv):
                 if (gc.getPlayer(iCiv).isAlive()):

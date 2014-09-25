@@ -18,15 +18,15 @@ typedef list<char*> LISTCHAR;
 
 #define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
 
-#define BEGIN_WONDERS				(130) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(131) // increment if normal building (not for wonders) is added
 //#define NUM_WONDERS				(186)
-#define NUM_BUILDINGS_PLAGUE		(204) // always increment when a building is added except embassies
+#define NUM_BUILDINGS_PLAGUE		(205) // always increment when a building is added except embassies
 #define NUM_BUILDINGTYPES_PLAGUE	(129) // increment when a building class is created except embassies
 
-#define NUM_MAJOR_PLAYERS		(41)
-#define NUM_PL					(41)
+#define NUM_MAJOR_PLAYERS		(42)
+#define NUM_PL					(42)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
-#define NUM_CIVS				(50)
+#define NUM_CIVS				(51)
 //#define NUM_BONUS_ISLANDS		(11)
 
 enum MyTechs
@@ -204,6 +204,7 @@ enum MyBuildings
   FLOATING_GARDENS = BEGIN_WONDERS+70,
   LUBYANKA = BEGIN_WONDERS+71,
   MACHU_PICCHU = BEGIN_WONDERS+72,
+  CN_TOWER = BEGIN_WONDERS+73,
 };
 
 enum MyReligions

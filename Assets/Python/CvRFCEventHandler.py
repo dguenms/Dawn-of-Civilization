@@ -123,6 +123,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("releasedPlayer", self.onReleasedPlayer)
 		eventManager.addEventHandler("cityAcquiredAndKept", self.onCityAcquiredAndKept)
 		eventManager.addEventHandler("blockade", self.onBlockade)
+		eventManager.addEventHandler("peaceBrokered", self.onPeaceBrokered)
                
                 self.eventManager = eventManager
 
@@ -858,6 +859,11 @@ class CvRFCEventHandler:
 		
 		if iPlayer == con.iMoors:
 			sd.changeMoorishGold(iGold)
+			
+	def onPeaceBrokered(self, argsList):
+		iBroker, iPlayer1, iPlayer2 = argsList
+		
+		self.vic.onPeaceBrokered(iBroker, iPlayer1, iPlayer2)
 
         def onKbdEvent(self, argsList):
                 'keypress handler - return 1 if the event was consumed'

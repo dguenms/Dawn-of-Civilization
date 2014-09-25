@@ -8,10 +8,10 @@ iWorldX = 124
 iWorldY = 68
 
 # initialise player variables to player IDs from WBS
-iNumPlayers = 41
+iNumPlayers = 42
 (iEgypt, iChina, iBabylonia, iGreece, iIndia, iCarthage, iPersia, iRome, iTamils, iEthiopia, iKorea, iMaya, iByzantium, iJapan, 
 iVikings, iArabia, iTibet, iKhmer, iIndonesia, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iMali, iPoland, iPortugal, 
-iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany, iAmerica, iArgentina, iBrazil) = range(iNumPlayers)
+iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany, iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlayers)
 
 iHolland = iNetherlands
 iDelhi = iMughals
@@ -40,8 +40,8 @@ l0ArrayTotal =  [0 for i in range(iNumTotalPlayers)]
 lm1Array =      [-1 for i in range(iNumPlayers)]
 
 # civilizations, not players
-iNumCivilizations = 55
-(iCivAmerica, iCivArabia, iCivAztec, iCivArgentina, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCarthage, iCivCelt, iCivChina, iCivColombia, iCivEgypt, 
+iNumCivilizations = 56
+(iCivAmerica, iCivArabia, iCivAztec, iCivArgentina, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCanada, iCivCarthage, iCivCelt, iCivChina, iCivColombia, iCivEgypt, 
 iCivEngland, iCivEthiopia, iCivFrance, iCivGermany, iCivGreece, iCivHarappa, iCivHolyRoman, iCivInca, iCivIndia, iCivIndonesia, iCivIran, iCivItaly, 
 iCivJapan, iCivKhmer, iCivKongo, iCivKorea, iCivMali, iCivMaya, iCivMexico, iCivMongol, iCivMoors, iCivMughals, iCivNativeAmericans, iCivNetherlands,
 iCivOttomans, iCivPersia, iCivPoland, iCivPortugal, iCivRome, iCivRussia, iCivSeljuks, iCivSpain, iCivSumeria, iCivTamils, iCivThailand, 
@@ -53,15 +53,15 @@ lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iMoors, iSpain, iFrance, iE
                 [iEgypt, iBabylonia, iPersia, iByzantium, iArabia, iTurkey, iCarthage], #MiddleEastern
                 [iEgypt, iGreece, iCarthage, iRome, iByzantium, iMoors], #Mediterranean
                 [iEgypt, iCarthage, iEthiopia, iMali, iCongo], #African
-                [iMaya, iInca, iAztecs, iAmerica, iArgentina, iBrazil]] #American
+                [iMaya, iInca, iAztecs, iAmerica, iArgentina, iBrazil, iCanada]] #American
 
 lCivStabilityGroups = [[iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany],  #Euros
                 [iIndia, iChina, iJapan, iKorea, iTibet, iKhmer, iIndonesia, iMongolia, iThailand, iTamils], #Asian
                 [iBabylonia, iPersia, iArabia, iTurkey, iMughals], #MiddleEastern
                 [iEgypt, iGreece, iCarthage, iRome, iEthiopia, iByzantium, iMoors, iMali, iCongo], #Mediterranean
-                [iMaya, iInca, iAztecs, iAmerica, iArgentina, iBrazil]] #American
+                [iMaya, iInca, iAztecs, iAmerica, iArgentina, iBrazil, iCanada]] #American
 		
-lTechGroups = [[iRome, iGreece, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany, iAmerica, iArgentina, iBrazil], #Europe and NA
+lTechGroups = [[iRome, iGreece, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany, iAmerica, iArgentina, iBrazil, iCanada], #Europe and NA
 	       [iEgypt, iBabylonia, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMoors, iMali, iTurkey, iMughals, iTamils, iCongo], #Middle East
 	       [iChina, iKorea, iJapan, iTibet, iKhmer, iIndonesia, iMongolia, iThailand], #Far East
 	       [iMaya, iInca, iAztecs]] #Native America
@@ -173,6 +173,7 @@ lNeighbours = [
 [iJapan, iSpain, iFrance, iEngland, iRussia, iInca, iAztecs], #America
 [iSpain, iPortugal, iInca, iBrazil], #Argentina
 [iSpain, iPortugal, iInca, iArgentina], #Brazil
+[iAmerica], #Canada
 ]
 
 #for stability hit on spawn
@@ -218,6 +219,7 @@ lOlderNeighbours = [
 [iSpain, iFrance, iEngland, iNetherlands, iPortugal, iAztecs, iMaya], #America
 [iSpain, iPortugal, iInca], #Argentina
 [iSpain, iPortugal, iInca], #Brazil
+[iAmerica], #Canada
 ]
 
 # civ birth dates
@@ -265,6 +267,8 @@ tBirth = (
 1775, # 346, #1775AD #332 for 1733AD	# America
 1810,					# Argentina
 1822,					# Brazil
+1867,	#Canada
+#1791,	#Canada
 -3000, # 0,
 -3000, # 0,
 -3000, # 0,
@@ -315,7 +319,8 @@ tFall = (
 2020,					# Germany
 2020,					# America
 2020,					# Argentina
-2020)					# Brazil
+2020,					# Brazil
+2020)					# Canada
 
 tVictoryYears = (
 (-850, -100, 170), # Egypt
@@ -362,6 +367,7 @@ tVictoryYears = (
 (1900, 1930, 1960), # Argentina
 (1870, 1920, 1950), # Colombia
 (1880, -1, 1950), # Brazil
+(   -1,  -1,   -1), # Canada
 )
 
 # Leoreth: date-triggered respawn for certain civs
@@ -407,7 +413,8 @@ tRebirth = (
 -1,				# Germany
 -1,				# America
 -1,				# Argentina
--1)				# Brazil
+-1,				# Brazil
+-1)				# Canada
 
 # Leoreth: ID of the civilization a player is turned into on rebirth
 tRebirthCiv = (
@@ -450,7 +457,8 @@ iCivMexico,	# Aztecs
 -1,		# Germany
 -1,		# America
 -1,		# Argentina
--1)		# Brazil
+-1,		# Brazil
+-1)		# Canada
 
 tRebirthPlot = (
 -1,		# Egypt
@@ -493,7 +501,8 @@ tRebirthPlot = (
 -1,		# Germany
 -1,		# America
 -1,		# Argentina
--1)		# Brazil
+-1,		# Brazil
+-1)		# Canada
 		
 tRebirthArea = (
 -1,			# Egypt
@@ -536,7 +545,8 @@ tRebirthArea = (
 -1,			# Germany
 -1,			# America
 -1,			# Argentina
--1)			# Brazil
+-1,			# Brazil
+-1)			# Canada
 
 dRebirthExceptions = {
 iAztecs : ((17, 48), (18, 48), (19, 48), (20, 48), (21, 48), (22, 48), (23, 48), (18, 47), (19, 47), (20, 47), (21, 47), (22, 47), (23, 47), (18, 46), (19, 46), (20, 46), (21, 46), (22, 46), (23, 46), (21, 45), (22, 45), (23, 45), (22, 44), (23, 44), (22, 43), (23, 43), (23, 42), (22, 35), (21, 34), (22, 34), (23, 34)),
@@ -584,6 +594,7 @@ tResurrectionIntervals = (
 [(1770, 2020)], #America
 [(1810, 2020)], #Argentina
 [(1820, 2020)], #Brazil
+[(1867, 2020)], #Canada
 )
 
 tYear = (
@@ -627,7 +638,8 @@ tYear = (
 ("1701 ", "TXT_KEY_AD"),	# Germany
 ("1775 ", "TXT_KEY_AD"),	# America
 ("1810 ", "TXT_KEY_AD"),	# Argentina
-("1822 ", "TXT_KEY_AD"))	# Brazil
+("1822 ", "TXT_KEY_AD"),	# Brazil
+("1867 ", "TXT_KEY_AD"))	# Canada
 
 # edead: tGoals[iGameSpeed][iCiv][iGoal]
 # Leoreth: tGoals[reborn][iGameSpeed][iCiv][iGoal]
@@ -674,6 +686,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2_MARATHON", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
 ),
 ( # Epic
 ("TXT_KEY_UHV_EGY1_EPIC", "TXT_KEY_UHV_EGY2_EPIC", "TXT_KEY_UHV_EGY3_EPIC"),
@@ -717,6 +730,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2_EPIC", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
 ),
 ( # Normal
 ("TXT_KEY_UHV_EGY1", "TXT_KEY_UHV_EGY2", "TXT_KEY_UHV_EGY3"),
@@ -760,6 +774,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2", "TXT_KEY_UHV_ARG3"),
 ("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3"),
 )
 )
 
@@ -805,7 +820,8 @@ tGoals2 = (
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2_MARATHON", "TXT_KEY_UHV_ARG3"),
-("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3")
+("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3")
 ),
 ( # Epic
 ("TXT_KEY_UHV_EGY1_EPIC", "TXT_KEY_UHV_EGY2_EPIC", "TXT_KEY_UHV_EGY3_EPIC"),
@@ -848,7 +864,8 @@ tGoals2 = (
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2_EPIC", "TXT_KEY_UHV_ARG3"),
-("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3")
+("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3")
 ),
 ( # Normal
 ("TXT_KEY_UHV_EGY1", "TXT_KEY_UHV_EGY2", "TXT_KEY_UHV_EGY3"),
@@ -891,7 +908,8 @@ tGoals2 = (
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),
 ("TXT_KEY_UHV_ARG1", "TXT_KEY_UHV_ARG2", "TXT_KEY_UHV_ARG3"),
-("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3")
+("TXT_KEY_UHV_BRA1", "TXT_KEY_UHV_BRA2", "TXT_KEY_UHV_BRA3"),
+("TXT_KEY_UHV_CAN1", "TXT_KEY_UHV_CAN2", "TXT_KEY_UHV_CAN3")
 )
 )
 
@@ -978,6 +996,7 @@ iGermany	:	"TXT_KEY_DOM_GERMANY",
 iAmerica	:	"TXT_KEY_DOM_AMERICA",
 iArgentina	:	"TXT_KEY_DOM_ARGENTINA",
 iBrazil		:	"TXT_KEY_DOM_BRAZIL",
+iCanada		:	"TXT_KEY_DOM_CANADA",
 }
 
 dawnOfMan600AD = {
@@ -1097,6 +1116,7 @@ tCapitals = (
 (27, 46), #tWashington
 (34, 11), #Buenos Aires
 (41, 18), #Rio de Janeiro
+(30, 52), #Montreal
 ),
 ((69, 33), #tThebes
 (102, 47), #tBeijing
@@ -1144,6 +1164,7 @@ tCapitals = (
 (27, 46), #tWashington
 (34, 11), #Buenos Aires
 (41, 18), #Rio de Janeiro
+(29, 50), #Ottawa
 )) 
 
 #for minor civs
@@ -1186,6 +1207,7 @@ tReserveCapitals = (
 (), #((57, 52), (56, 52), (58, 53)), #tAmsterdam
 (),
 (), 
+(),
 (),
 (),
 )
@@ -1234,6 +1256,7 @@ tBirthAreaTL = (
 (25, 43), #America
 (31, 3), #Buenos Aires
 (36, 15), #Brazil
+(20, 50), #Canada
 )
 
 tBirthAreaBR = (
@@ -1278,6 +1301,7 @@ tBirthAreaBR = (
 (32, 50), #America
 (35, 13), #Argentina
 (43, 27), #Brazil
+(35, 60), #Canada
 )
 
 tBirthAreaExceptions = (
@@ -1319,9 +1343,10 @@ tBirthAreaExceptions = (
 (), #Congo
 ((57, 51), (58, 51)), #Holland
 ((62, 49), (62, 50), (63, 49), (63, 50), (64, 49), (64, 50), (64, 51), (65, 49), (65, 50), (65, 51), (66, 49), (66, 50), (66, 51), (58, 52), (58, 53), (62, 51), (63, 51), (64, 53), (61, 49), (61, 50), (64, 52), (58, 54), (65, 52), (65, 53)),  #Germany
-((25, 48), (25, 49), (26, 48), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50)), #America
+((25, 48), (25, 49), (25, 50), (26, 48), (26, 49), (27, 49), (27, 50), (28, 50), (29, 50), (30, 50)), #America
 ((35, 4), (35, 12), (35, 13), (36, 12), (36, 13)), #Argentina
 ((36, 15), (36, 16)), #Brazil
+((20, 50), (21, 50), (22, 50), (23, 50), (24, 50), (25, 50), (29, 50), (30, 50), (31, 50), (32, 50), (20, 51), (21, 51), (22, 51), (23, 51), (24, 51), (32, 51), (35, 53), (35, 54), (34, 55), (34, 56), (33, 56), (33, 57)), #Canada
 )
 
 #core areas (for RiseAndFall and Victory)
@@ -1368,6 +1393,7 @@ tCoreAreasTL = (
 (23, 45), #America
 (31, 6), #Argentina
 (37, 15), #Brazil
+(27, 50), #Canada
 ),
 ((67, 32), #Egypt
 (99, 41), #China 
@@ -1410,6 +1436,7 @@ tCoreAreasTL = (
 (23, 45), #America
 (31, 6), #Argentina
 (37, 15), #Brazil
+(27, 50), #Canada
 )) 
 
 tCoreAreasBR = (
@@ -1454,6 +1481,7 @@ tCoreAreasBR = (
 (32, 50), #America
 (35, 12), #Argentina
 (41, 22), #Brazil
+(35, 52), #Canada
 ),
 ((69, 36), #Egypt
 (107, 47), #China
@@ -1496,6 +1524,7 @@ tCoreAreasBR = (
 (32, 50), #America
 (35, 12), #Argentina
 (41, 22), #Brazil
+(35, 52), #Canada
 ))
 
 
@@ -1541,6 +1570,7 @@ tExceptions = (  #for RiseAndFall
 ((23, 50), (24, 50), (27, 50), (28, 50), (29, 50), (30, 50), (27, 49)), #America
 ((35, 12)), #Argentina
 (), #Brazil
+((29, 50), (30, 50), (31, 50), (31, 50), (32, 50), (32, 51)), #Canada
 ),
 ((), #Egypt
 ((99, 41), (106, 47)), #China
@@ -1583,6 +1613,7 @@ tExceptions = (  #for RiseAndFall
 ((23, 50), (24, 50), (27, 50), (28, 50), (29, 50), (30, 50), (27, 49)), #America
 ((35, 12)), #Argentina
 (), #Brazil
+((29, 50), (30, 50), (31, 50), (31, 50), (32, 50), (32, 51)), #Canada
 ))
 
 
@@ -1631,6 +1662,7 @@ tNormalAreasTL = (
 (11, 43), #America
 (31,  3), #Argentina
 (32, 14), #Brazil
+( 8, 50), #Canada
 ),
 ((65, 30), #Egypt
 (99, 39), #China
@@ -1673,6 +1705,7 @@ tNormalAreasTL = (
 (11, 43), #America
 (31,  3), #Argentina
 (32, 14), #Brazil
+( 8, 50), #Canada
 ))
 
 tNormalAreasBR = (
@@ -1717,6 +1750,7 @@ tNormalAreasBR = (
 (31, 49), #America
 (36, 15), #Argentina
 (43, 28), #Brazil
+(37, 67), #Canada
 ),
 ((72, 37), #Egypt
 (108, 50), #China
@@ -1759,6 +1793,7 @@ tNormalAreasBR = (
 (31, 49), #America
 (36, 15), #Argentina
 (43, 28), #Brazil
+(37, 67), #Canada
 ))
 
 
@@ -1804,6 +1839,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 (), #America
 ((35, 12), (35, 13), (36, 12), (36, 13), (36, 14), (36, 15)), #Argentina
 (), #Brazil STILL NEEDS TO BE DONE
+((11,50), (12,50), (13,50), (14,50), (16,50), (17,50), (18,50), (19,50), (20,50), (21,50), (22,50), (23,50), (24,50), (25,50), (29,50), (30,50), (31,50), (32,50), (32,51), (8,59), (8,60), (8,61), (8,62), (8,63), (8,64), (8,65), (9,59), (9,60), (9,61), (9,62), (9,63), (9,64), (9,65), (37,66), (37,67)), #Canada 
 ),
 (((72, 37), (70, 30), (71, 30), (72, 30)), #Egypt
 ((99, 49), (100, 49), (101, 49), (99, 50), (100, 50), (101, 50), (102, 50)), #China
@@ -1845,6 +1881,7 @@ tNormalAreasSubtract = (  #for resurrection and stability
 (), #America
 ((35, 12), (35, 13), (36, 12), (36, 13), (36, 14), (36, 15)), #Argentina
 (), #Brazil STILL NEEDS TO BE DONE
+((11,50), (12,50), (13,50), (14,50), (16,50), (17,50), (18,50), (19,50), (20,50), (21,50), (22,50), (23,50), (24,50), (25,50), (29,50), (30,50), (31,50), (32,50), (32,51), (8,59), (8,60), (8,61), (8,62), (8,63), (8,64), (8,65), (9,59), (9,60), (9,61), (9,62), (9,63), (9,64), (9,65), (37,66), (37,67)), #Canada 
 ))
 
 # broader areas coordinates (top left and bottom right) (for RiseAndFall)
@@ -1891,6 +1928,7 @@ tBroaderAreasTL = (
 (10, 42), #America
 (29,  3), #Argentina
 (32, 14), #Brazil
+( 8, 50), #Canada
 ),
 ((60, 26), #Egypt
 (95, 38), #China
@@ -1933,6 +1971,7 @@ tBroaderAreasTL = (
 (10, 42), #America
 (29,  3), #Argentina
 (32, 14), #Brazil
+( 8, 50), #Canada
 ))
 
 tBroaderAreasBR = (
@@ -1977,6 +2016,7 @@ tBroaderAreasBR = (
 (37, 56), #America
 (36, 15), #Argentina
 (43, 28), #Brazil
+(37, 67), #Canada
 ),
 ((74, 38), #Egypt
 (108, 50), #China
@@ -2019,6 +2059,7 @@ tBroaderAreasBR = (
 (37, 56), #America
 (36, 15), #Argentina
 (43, 28), #Brazil
+(37, 67), #Canada
 ))
 
 # Leoreth: new capital locations if changed during the game
@@ -2063,7 +2104,8 @@ tNewCapitals = (
 -1,		# Germany
 -1,		# America
 -1, 		# Argentina
--1)		# Brazil
+-1,		# Brazil
+-1)		# Canada
 
 #Leoreth: respawn areas and capitals similar to SoI
 tRespawnCapitals = (
@@ -2107,7 +2149,8 @@ tRespawnCapitals = (
 -1,		# Germany
 -1,		# America
 -1, 		# Argentina
--1)		# Brazil
+-1,		# Brazil
+-1)		# Canada
 
 # area flipped on respawn, if -1 normal area is used instead
 tRespawnTL = (
@@ -2151,10 +2194,11 @@ tRespawnTL = (
 -1,		# Germany
 -1,		# America
 -1, 		# Argentina
--1)		# Brazil
+-1,		# Brazil
+-1)		# Canada
 
 tRespawnBR = (
-(71, 37), 	# Egypt
+(71, 39), 	# Egypt
 (107, 47), 	# China
 -1,		# Babylonia
 -1,		# Greece
@@ -2194,7 +2238,8 @@ tRespawnBR = (
 -1,		# Germany
 -1,		# America
 -1,		# Argentina
--1)		# Brazil
+-1,		# Brazil
+-1)		# Canada
 
 # starting gold in 3000 BC
 tStartingGold = (
@@ -2239,6 +2284,7 @@ tStartingGold = (
 1500,	# America
 1200,	# Argentina
 1600,	# Brazil
+1000,	# Canada
 50,	# Independent
 50,	# Independent
 100,	# Native
@@ -2290,6 +2336,7 @@ lEnemyCivsOnSpawn = [
 [iIndependent,iIndependent2], #America
 [iSpain, iSpain, iIndependent,iIndependent2], #Argentina
 [iIndependent,iIndependent2], #Brazil
+[], #Canada
 ]
 
 # Leoreth
@@ -2335,6 +2382,7 @@ lTotalWarOnSpawn = [
 [], #America
 [], #Argentina
 [], #Brazil
+[], #Canada
 ]
 
 
@@ -2381,6 +2429,7 @@ tAggressionLevel = (
 2, #America
 0, #Argentina
 0, #Brazil
+0, #Canada
 0) #Barbs
 
 
@@ -2427,6 +2476,7 @@ tAIStopBirthThreshold = (
     50, #America
     60, #Argentina
     60, #Brazil
+	60, #Canada
     100,
     100,
     100,
@@ -2477,6 +2527,7 @@ tResurrectionProb = (
 100, #America
 100, #Argentina
 100, #Brazil
+100, #Canada
 #    100, #Holland
 #    100, #Portugal
 100) #Barbs 
@@ -2525,6 +2576,7 @@ tPatienceThreshold = (
 30, #America
 40, #Argentina
 40, #Brazil
+40, #Canada
 100) #Barbs
 
 
@@ -2570,7 +2622,8 @@ tMaxColonists = (
 2, #Germany
 0, #America
 0, #Argentina
-0) #Brazil
+0, #Brazil
+0) #Canada
 
 
 # initialise religion variables to religion indices from XML
@@ -2615,7 +2668,7 @@ iNumTechsFuture = iNumTechs+1
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 150
+iNumUnits = 151
 (iLion, iBear, iPanther, iWolf, iSettler, iWorker, iIndianFastWorker, iBrazilianLenhador, iScout, iExplorer, iSpy, iJewishMissionary,
 iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary,
 iZoroastrianMissionary, iWarrior, iIncanQuechua, iHarappanMilitia, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
@@ -2629,7 +2682,7 @@ iSpanishConquistador, iCuirassier,  iMoorishCamelGunner, iPolishWingedHussar, iS
 iWarElephant, iKhmerBallistaElephant, iCarthaginianWarElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha, iTrebuchet, 
 iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iBireme, iTrireme, iCaravel, 
 iPortugalCarrack, iTamilDharani, iGalleon, iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iMoorishCorsair, iFrigate, iShipOfTheLine, 
-iIronclad, iTransport,  iDestroyer, iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, iJetFighter, 
+iIronclad, iTransport,  iDestroyer, iCanadaCorvette,iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, iJetFighter, 
 iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iGreatGeneral, iGreatSpy,
 iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
 
@@ -2649,7 +2702,7 @@ iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobac
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 203
+iNumBuildings = 205
 (iPalace, iGreatPalace, iForbiddenPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
 iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iMoorishNoria, iHarappanBath,
 iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
@@ -2658,10 +2711,10 @@ iIndustrialPark, iObelisk, iEgyptianObelisk, iEthiopianStele, iNativeAmericaTote
 iLibrary, iArabianMadrassa, iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, 
 iRussianResearchInstitute, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavillion, iColosseum, iMayaBallCourt,
 iBabylonGarden, iMexicoCharreada, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iKongoMbwadi, iPhoenicianGlassmaker, 
-iGrocer, iBrazilianFazenda, iColombianHacienda, iBank, iEnglishStockExchange, iSupermarket, iAmericanMall, iArgentineRefrigerationPlant, iCourthouse, 
-iAztecSacrificialAltar,  iHolyRomanRathaus, iSumerianZiggurat, iPolishSejmik, iJail, iIndianMausoleum, iFrenchSalon, iLevee, iNetherlandsDike, iIntelligenceAgency, 
-iNationalSecurity, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iChristianTemple, iChristianCathedral, iChristianMonastery, 
-iChristianShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iIslamicTemple, iIslamicCathedral,
+iGrocer, iBrazilianFazenda, iColombianHacienda, iBank, iEnglishStockExchange, iSupermarket, iAmericanMall, iArgentineRefrigerationPlant, iCourthouse,
+iAztecSacrificialAltar,  iHolyRomanRathaus, iSumerianZiggurat, iPolishSejmik, iJail, iIndianMausoleum, iFrenchSalon, iCanadianRoyalMountedPolice, iLevee, 
+iNetherlandsDike, iIntelligenceAgency, iNationalSecurity, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iChristianTemple, iChristianCathedral, 
+iChristianMonastery, iChristianShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iIslamicTemple, iIslamicCathedral,
 iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, 
 iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery,
 iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral,
@@ -2674,7 +2727,7 @@ iSankore, iGreatWall, iStatueOfZeus, iMausoleumOfMaussollos, iCristoRedentor, iS
 iLeaningTower, iOlympicPark, iTempleOfSalomon, iIshtarGate, iTheodosianWalls, iTerracottaArmy, iMezquita, iDomeOfTheRock,
 iTopkapiPalace, iBrandenburgGate, iSanMarcoBasilica, iWestminster, iItalianArtStudio, iBorobudur, iKhajuraho,
 iHimejiCastle, iPorcelainTower, iHarmandirSahib, iBlueMosque, iRedFort, iVersailles, iTrafalgarSquare, iEmpireState,
-iGrandCanal, iFloatingGardens, iLubyanka, iMachuPicchu) = range(iNumBuildings)
+iGrandCanal, iFloatingGardens, iLubyanka, iMachuPicchu, iCNTower) = range(iNumBuildings)
 
 iSummerPalace = iGreatPalace
 iHeroicEpic = iFlavianAmphitheatre
@@ -2701,7 +2754,7 @@ iNumBuildingsEmbassy = iNumBuildingsPlague+iNumPlayers
 (iEgyEmbassy, iChiEmbassy, iBabEmbassy, iGreEmbassy, iIndEmbassy, iCarEmbassy, iPerEmbassy, iRomEmbassy, iTamEmbassy, iEthEmbassy, 
 iKorEmbassy, iMayEmbassy, iByzEmbassy, iJapEmbassy, iVikEmbassy, iAraEmbassy, iTibEmbassy, iKhmEmbassy, iInoEmbassy, iMooEmbassy, iSpaEmbassy,
 iFraEmbassy, iEngEmbassy, HreEmbassy, iRusEmbassy, iMalEmbassy, iPolEmbassy, iPorEmbassy, iIncEmbassy, iItaEmbassy, iMonEmbassy, 
-iAztEmbassy, iMugEmbassy, iTurEmbassy, iThaEmbassy, iConEmbassy, iHolEmbassy, iGerEmbassy, iAmeEmbassy, iArgEmbassy, iBraEmbassy) = range(iNumBuildingsPlague, iNumBuildingsPlague+iNumPlayers)
+iAztEmbassy, iMugEmbassy, iTurEmbassy, iThaEmbassy, iConEmbassy, iHolEmbassy, iGerEmbassy, iAmeEmbassy, iArgEmbassy, iBraEmbassy, iCanEmbassy) = range(iNumBuildingsPlague, iNumBuildingsPlague+iNumPlayers)
 
 #Civics
 iNumCivics = 36
@@ -2806,6 +2859,7 @@ iFloodPlains = 3
 iForest = 4
 iFallout = 5
 iMud = 6
+iCape = 7
 
 iGrass = 0
 iPlains = 1
@@ -2830,7 +2884,7 @@ iVictorySecularism = 10
 
 #leaders
 
-iNumLeaders = 110
+iNumLeaders = 111
 (iLeaderBarbarian, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
 iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iGilgamesh, iHammurabi, iHannibal, iHatshepsut,
 iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, iLouis, iMansaMusa, iMao,
@@ -2839,7 +2893,7 @@ iSaladin, iShaka, iSittingBull, iStalin, iSuleiman, iSuryavarman, iTokugawa, iVi
 iZaraYaqob, iJimmu, iMeiji, iAkbar, iHiram, iHaileSelassie, iGustav, iAbuBakr, iMongkut, iElishat,
 iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonso, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
 iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShivaji,
-iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iChandragupta, iTughluq, iBasil, iRahman, iRajendra, iLobsangGyatso,
+iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, iRahman, iRajendra, iLobsangGyatso,
 iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, iLorenzo, iSantaAnna, iJuarez, iCardenas, iDomPedro, 
 iSanMartin, iPeron, iBolivar) = range(iNumLeaders)
 
@@ -2901,6 +2955,7 @@ tIsActiveOnLateStart = (
 1,	# America
 1,	# Argentina
 1,	# Brazil
+1,	# Canada
 1,
 1,
 1,
@@ -2960,6 +3015,7 @@ i1700AD,	# Germany
 i1700AD,	# America
 i1700AD,	# Argentina
 i1700AD,	# Brazil
+i1700AD,	# Canada
 i1700AD,	# Independent
 i1700AD,	# Independent
 i1700AD,	# Natives

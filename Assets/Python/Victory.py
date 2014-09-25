@@ -214,6 +214,15 @@ tGuayanasBR = (37, 31)
 tCaribbeanTL = (25, 33)
 tCaribbeanBR = (33, 39)
 
+lAtlanticCoast = [(x, y) for x in range(30, 36+1) for y in range(50, 55+1) if not gc.getMap().plot(x, y).isWater() and gc.getMap().plot(x, y).isCoastalLand()]
+lPacificCoast = [(11, 51), (10, 52), (11, 53), (10, 56)]
+tCanadaWestTL = (10, 52)
+tCanadaWestBR = (26, 61)
+tCanadaWestExceptions = ((10, 59), (10, 60), (10, 61), (21, 61), (22, 61), (23, 61), (24, 61), (25, 61))
+tCanadaEastTL = (27, 50)
+tCanadaEastBR = (36, 59)
+tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50))
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -257,6 +266,7 @@ iGermany = con.iGermany
 iAmerica = con.iAmerica
 iArgentina = con.iArgentina
 iBrazil = con.iBrazil
+iCanada = con.iCanada
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
 iNumActivePlayers = con.iNumActivePlayers
@@ -310,6 +320,7 @@ pGermany = gc.getPlayer(iGermany)
 pAmerica = gc.getPlayer(iAmerica)
 pArgentina = gc.getPlayer(iArgentina)
 pBrazil = gc.getPlayer(iBrazil)
+pCanada = gc.getPlayer(iCanada)
 pIndependent = gc.getPlayer(iIndependent)
 pIndependent2 = gc.getPlayer(iIndependent2)
 pNative = gc.getPlayer(iNative)
@@ -358,6 +369,7 @@ teamGermany = gc.getTeam(pGermany.getTeam())
 teamAmerica = gc.getTeam(pAmerica.getTeam())
 teamArgentina = gc.getTeam(pArgentina.getTeam())
 teamBrazil = gc.getTeam(pBrazil.getTeam())
+teamCanada = gc.getTeam(pCanada.getTeam())
 teamIndependent = gc.getTeam(pIndependent.getTeam())
 teamIndependent2 = gc.getTeam(pIndependent2.getTeam())
 teamNative = gc.getTeam(pNative.getTeam())
@@ -2446,7 +2458,38 @@ class Victory:
 						self.setGoal(iBrazil, 2, 1)
 					else:
 						self.setGoal(iBrazil, 2, 0)
-
+						
+		elif iPlayer == iCanada:
+			if pCanada.isAlive():
+			
+				# First goal: connect your capital to an Atlantic and a Pacific port in 1920 AD
+				if iGameTurn == getTurnForYear(1920):
+					capital = pCanada.getCapitalCity()
+					tCapital = (capital.getX(), capital.getY())
+					bAtlantic = self.isConnectedByRailroad(iCanada, tCapital, lAtlanticCoast)
+					bPacific = self.isConnectedByRailroad(iCanada, tCapital, lPacificCoast)
+					if bAtlantic and bPacific:
+						self.setGoal(iCanada, 0, 1)
+					else:
+						self.setGoal(iCanada, 0, 0)
+					
+				# Second goal: control all of Canada in 1950 AD
+				if iGameTurn == getTurnForYear(1950) and self.getGoal(iCanada, 1) == -1:
+					bAllCanada = True
+					lCanada = utils.getPlotList(tCanadaEastTL, tCanadaEastBR, tCanadaEastExceptions)
+					lCanada.extend(utils.getPlotList(tCanadaWestTL, tCanadaWestBR, tCanadaWestExceptions))
+					for (x, y) in lCanada:
+						plot = gc.getMap().plot(x, y)
+						if not plot.isWater() and plot.getOwner() != iCanada:
+							bAllCanada = False
+							break
+					if bAllCanada:
+						self.setGoal(iCanada, 1, 1)
+					else:
+						self.setGoal(iCanada, 1, 0)
+						
+				if iGameTurn == getTurnForYear(2000) and self.getGoal(iCanada, 2) == -1:
+					self.setGoal(iCanada, 2, 0)
 
                 #generic checks
                 pPlayer = gc.getPlayer(iPlayer)
@@ -2774,6 +2817,9 @@ class Victory:
 			if self.getGoal(iTibet, 0) == -1:
 				if pTibet.getNumCities() >= 5:
 					self.setGoal(iTibet, 0, 1)
+					
+		if playerType == iCanada and bConquest:
+			self.setGoal(iCanada, 1, 0)
 
         def onCityRazed(self, iPlayer, city):
 
@@ -3538,6 +3584,16 @@ class Victory:
 
 				if pHolyCity.getX() == iX and pHolyCity.getY() == iY:
 					self.setGoal(iMali, 0, 1)
+					
+	def onPeaceBrokered(self, iBroker, iPlayer1, iPlayer2):
+	
+		if self.isIgnoreAI() and utils.getHumanID() != iBroker:
+			return
+			
+		if iBroker == iCanada:
+			sd.changeCanadianPeaceDeals(1)
+			if sd.getCanadianPeaceDeals() >= 12:
+				self.setGoal(iCanada, 2, 1)
 
 	def checkReligiousGoal(self, iPlayer, iGoal):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -4159,6 +4215,8 @@ class Victory:
 		startPlot = gc.getMap().plot(iStartX, iStartY)
 
 		if not (startPlot.isCity() and startPlot.getOwner() == iPlayer): return False
+		
+		if tStart in lTargetList: return True
 
 		iRailroad = gc.getInfoTypeForString("ROUTE_RAILROAD")
 		lNodes = [(utils.calculateDistance(iStartX, iStartY, iTargetX, iTargetY), iStartX, iStartY)]
@@ -5315,4 +5373,19 @@ class Victory:
 				if capital: bNationalPark = capital.isHasRealBuilding(con.iNationalPark)
 				aHelp.append(self.getIcon(iForestPreserves >= 20) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(con.iForestPreserve).getText(), iForestPreserves, 20)) + ' ' + self.getIcon(bNationalPark) + localText.getText("TXT_KEY_VICTORY_NATIONAL_PARK_CAPITAL", ()))
 
+		elif iPlayer == iCanada:
+			if iGoal == 0:
+				capital = pCanada.getCapitalCity()
+				bAtlantic = capital and self.isConnectedByRailroad(iCanada, (capital.getX(), capital.getY()), lAtlanticCoast)
+				bPacific = capital and self.isConnectedByRailroad(iCanada, (capital.getX(), capital.getY()), lPacificCoast)
+				aHelp.append(self.getIcon(bAtlantic) + localText.getText("TXT_KEY_VICTORY_ATLANTIC_RAILROAD", ()) + ' ' + self.getIcon(bPacific) + localText.getText("TXT_KEY_VICTORY_PACIFIC_RAILROAD", ()))
+			elif iGoal == 1:
+				iCanadaWest, iTotalCanadaWest = self.countControlledTiles(iCanada, tCanadaWestTL, tCanadaWestBR, False, tCanadaWestExceptions)
+				iCanadaEast, iTotalCanadaEast = self.countControlledTiles(iCanada, tCanadaEastTL, tCanadaEastBR, False, tCanadaEastExceptions)
+				fCanada = (iCanadaWest + iCanadaEast) * 100.0 / (iTotalCanadaWest + iTotalCanadaEast)
+				aHelp.append(self.getIcon(iCanadaWest + iCanadaEast == iTotalCanadaWest + iTotalCanadaEast) + localText.getText("TXT_KEY_VICTORY_CONTROL_CANADA", (str(u"%.2f%%" % fCanada), str(100))))
+			elif iGoal == 2:
+				iPeaceDeals = sd.getCanadianPeaceDeals()
+				aHelp.append(self.getIcon(iPeaceDeals >= 12) + localText.getText("TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS", (iPeaceDeals, 12)))
+				
 		return aHelp

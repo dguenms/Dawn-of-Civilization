@@ -431,4 +431,8 @@
 		<Tag>TXT_KEY_ACTION_BYZANTINE_UP</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_MULTICULTURALISM</Tag>
+		<English>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</English>
+	</TEXT>
 </Civ4GameText>

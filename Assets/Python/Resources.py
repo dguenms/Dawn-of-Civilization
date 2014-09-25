@@ -45,6 +45,7 @@ iSilk = con.iSilk
 iRoad = 0
 #Orka: Silk Road road locations
 tSilkRoute = ((85,48), (86,49), (87,48), (88,47), (89,46), (90,47),(90,45),  (91,47),(91,45),  (92,48),(92,45),  (93,48),(93,46),  (94,47), (95,47), (96,47), (97,47), (98,47), (99,46))
+lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 58), (36, 59)]
 
 class Resources:
 
@@ -154,6 +155,11 @@ class Resources:
 		if iGameTurn == getTurnForYear(630)-1 and utils.getPlayerEnabled(con.iTibet):
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
+			
+		if iGameTurn == getTurnForYear(700) and utils.getHumanID() == con.iVikings:
+			gc.getMap().plot(35, 54).setFeatureType(iMud, 0)
+			for x, y in lNewfoundlandCapes:
+				gc.getMap().plot(x, y).setFeatureType(iCape, 0)
 		
 		# Leoreth: for respawned Egypt
 		if iGameTurn == getTurnForYear(900):
@@ -197,18 +203,21 @@ class Resources:
 			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove jungle in Vietnam
 
 		if (iGameTurn == getTurnForYear(1500)):
-			gc.getMap().plot(36, 54).setFeatureType(4, 2) #Forest in Newfoundland
-			gc.getMap().plot(36, 54).setTerrainType(3, True, True) #Tundra in Newfoundland
-			gc.getMap().plot(36, 54).setBonusType(-1) #remove marsh in Newfoundland
+			gc.getMap().plot(35, 54).setFeatureType(-1, 0) # remove Marsh in case it had been placed
+			for x, y in lNewfoundlandCapes:
+				gc.getMap().plot(x, y).setFeatureType(-1, 0)
 			
 			self.createResource(56, 54, iFish) # Amsterdam
 			self.createResource(57, 52, iWheat) # Amsterdam
 			self.createResource(58, 52, iCow) # Amsterdam
                         
                 if (iGameTurn == getTurnForYear(1600)):
+			self.createResource(29, 52, iCow) # Montreal
+			self.createResource(18, 53, iCow) # Alberta
+			self.createResource(12, 52, iCow) # British Columbia
 			self.createResource(28, 46, iCow) # Washington area
 			self.createResource(30, 49, iCow) # New York area
-			self.createResource(25, 49, iCow) # Lakes
+			#self.createResource(25, 49, iCow) # Lakes
 			self.createResource(23, 42, iCow) # Jacksonville area
 			self.createResource(18, 46, iCow) # Colorado
 			self.createResource(20, 45, iCow) # Texas
@@ -221,10 +230,13 @@ class Resources:
 			self.createResource(22, 44, iCotton) # Louisiana
 			self.createResource(13, 45, iCotton) # California
 			
-			self.createResource(22, 49, iPig) # Lakes
+			self.createResource(26, 49, iPig) # Lakes
 			
-			self.createResource(21, 50, iWheat) # Canadian border
+			self.createResource(19, 51, iSheep) # Canadian border
+			
+			#self.createResource(21, 50, iWheat) # Canadian border
 			self.createResource(19, 48, iWheat) # Midwest
+			self.createResource(20, 53, iWheat) # Manitoba
 			
 			self.createResource(22, 33, iBanana) # Guatemala
 			self.createResource(27, 31, iBanana) # Colombia
@@ -246,6 +258,7 @@ class Resources:
                        
 
                 if (iGameTurn == getTurnForYear(1700)):
+			self.createResource(16, 54, iHorse) # Alberta
 			self.createResource(26, 45, iHorse) # Washington area
 			self.createResource(21, 48, iHorse) # Midwest
 			self.createResource(19, 45, iHorse) # Texas
@@ -309,7 +322,7 @@ class Resources:
 			self.createResource(12, 49, iRice) # California
 			
 			self.createResource(11, 45, iFish) # California
-			self.createResource(10, 45, iFish) # California
+			#self.createResource(10, 45, iFish) # California
 			self.createResource(87, 35, iFish) # Bombay
 			
 			self.createResource(115, 52, iCow) # Hokkaido

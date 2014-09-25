@@ -823,6 +823,119 @@
 			<CivilizationActionSound>AS3D_BYZANTIUM_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
+			<Type>CIVILIZATION_CANADA</Type>
+			<Description>TXT_KEY_CIV_CANADA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_CANADA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_CANADA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_CANADA_PEDIA</Civilopedia>
+			<!-- Rhye -->
+			<DefaultPlayerColor>PLAYERCOLOR_CANADA_RED</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_CANADA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<!-- Rhye - start -->
+				<City>Cambridge</City>
+				<City>TXT_KEY_CITY_NAME_HASTINGS</City>
+				<City>TXT_KEY_CITY_NAME_COVENTRY</City>
+				<City>TXT_KEY_CITY_NAME_WARWICK</City>
+				<City>Cardiff</City>
+				<City>TXT_KEY_CITY_NAME_LIVERPOOL</City>
+				<City>TXT_KEY_CITY_NAME_DOVER</City>
+				<City>TXT_KEY_CITY_NAME_BRIGHTON</City>
+				<City>TXT_KEY_CITY_NAME_NORWICH</City>
+				<City>TXT_KEY_CITY_NAME_LEEDS</City>
+				<City>TXT_KEY_CITY_NAME_READING</City>
+				<City>TXT_KEY_CITY_NAME_RICHMOND</City>
+				<City>TXT_KEY_CITY_NAME_GLOUCESTER</City>
+				<City>TXT_KEY_CITY_NAME_BRISTOL</City>
+				<City>TXT_KEY_CITY_NAME_LEICESTER</City>
+				<City>TXT_KEY_CITY_NAME_IPSWICH</City>
+				<City>TXT_KEY_CITY_NAME_PORTSMOUTH</City>
+				<City>TXT_KEY_CITY_NAME_BERWICK</City>
+				<City>Middlesbrough</City>
+				<City>TXT_KEY_CITY_NAME_SOUTHAMPTON</City>
+				<City>TXT_KEY_CITY_NAME_SHEFFIELD</City>
+				<City>TXT_KEY_CITY_NAME_COLCHESTER</City>
+				<City>TXT_KEY_CITY_NAME_LANCASTER</City>
+				<City>TXT_KEY_CITY_NAME_BLACKPOOL</City>
+				<City>TXT_KEY_CITY_NAME_WINCHESTER</City>
+				<City>TXT_KEY_CITY_NAME_HULL</City>
+				<!-- Rhye - end -->
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingType>BUILDING_CANADA_RCMP</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_DESTROYER</UnitClassType>
+					<UnitType>UNIT_CANADA_CORVETTE</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_ENGLISH_PROPHET</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitType>UNIT_ENGLISH_ARTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ENGLISH_SCIENTIST</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ENGLISH_MERCHANT</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ENGLISH_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_ENGLISH_GREAT_GENERAL</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<!-- Rhye -->
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<!-- Rhye -->
+				<CivicType>CIVIC_MILITIA</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_TRUDEAU</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_AMERICA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_ENGLAND_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_ENGLAND_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
 			<Type>CIVILIZATION_CARTHAGE</Type>
 			<Description>TXT_KEY_CIV_CARTHAGE_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_PHOENICIA_SHORT_DESC</ShortDescription>
