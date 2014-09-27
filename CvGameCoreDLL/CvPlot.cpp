@@ -10884,6 +10884,22 @@ void CvPlot::cameraLookAt()
 }
 
 // Leoreth
+int CvPlot::calculateCultureCost() const
+{
+	int iCost = 0;
+
+	iCost += GC.getTerrainInfo(getTerrainType()).getCultureCostModifier();
+	iCost += GC.getFeatureInfo(getFeatureType()).getCultureCostModifier();
+
+	if (isHills()) iCost += GC.getDefineINT("CULTURE_COST_HILL");
+	if (isPeak()) iCost += GC.getDefineINT("CULTURE_COST_PEAK");
+
+	if (getBonusType() >= 0) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
+
+	return std::max(0, iCost);
+}
+
+// Leoreth
 bool CvPlot::canUseSlave(PlayerTypes ePlayer) const
 {
 	if (GET_PLAYER(ePlayer).getNumCities() == 0) return false;

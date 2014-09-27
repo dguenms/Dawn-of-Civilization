@@ -342,6 +342,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>25</iBuildModifier>
 			<iDefense>0</iDefense>
+			<iCultureCost>10</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Desert.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -501,6 +502,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>25</iBuildModifier>
 			<iDefense>0</iDefense>
+			<iCultureCost>5</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Tundra.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -650,6 +652,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>50</iBuildModifier>
 			<iDefense>0</iDefense>
+			<iCultureCost>20</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Ice.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -954,6 +957,7 @@
 			<iSeeThrough>0</iSeeThrough>
 			<iBuildModifier>0</iBuildModifier>
 			<iDefense>0</iDefense>
+			<iCultureCost>10</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Ocean.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -1401,6 +1405,7 @@
 			<iSeeThrough>0</iSeeThrough>
 			<iBuildModifier>0</iBuildModifier>
 			<iDefense>0</iDefense>
+			<iCultureCost>5</iCultureCost> <!-- counters bonus -->
 			<Button>Art/Interface/Buttons/BaseTerrain/Marsh.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>

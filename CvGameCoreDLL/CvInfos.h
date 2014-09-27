@@ -3214,6 +3214,7 @@ public:
 	int getDisappearanceProbability() const;	// Exposed to Python
 	int getGrowthProbability() const;					// Exposed to Python
 	int getDefenseModifier() const;						// Exposed to Python
+	int getCultureCostModifier() const;		// Leoreth
 	int getAdvancedStartRemoveCost() const;						// Exposed to Python
 	int getTurnDamage() const;						// Exposed to Python
 // BUG - Global Warming Mod - start
@@ -3270,6 +3271,7 @@ protected:
 	int m_iDisappearanceProbability;
 	int m_iGrowthProbability;
 	int m_iDefenseModifier;
+	int m_iCultureCostModifier; // Leoreth
 	int m_iAdvancedStartRemoveCost;
 	int m_iTurnDamage;
 // BUG - Global Warming Mod - start
@@ -3431,6 +3433,7 @@ public:
 	int getSeeThroughLevel() const;			// Exposed to Python
 	int getBuildModifier() const;				// Exposed to Python
 	int getDefenseModifier() const;			// Exposed to Python
+	int getCultureCostModifier() const;	// Leoreth
 
 	bool isWater() const;								// Exposed to Python
 	bool isImpassable() const;					// Exposed to Python
@@ -3465,6 +3468,7 @@ protected:
 	int m_iSeeThroughLevel;
 	int m_iBuildModifier;
 	int m_iDefenseModifier;
+	int m_iCultureCostModifier; // Leoreth
 
 	bool m_bWater;
 	bool m_bImpassable;

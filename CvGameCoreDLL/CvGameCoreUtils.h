@@ -212,6 +212,7 @@ inline DirectionTypes directionXY(const CvPlot* pFromPlot, const CvPlot* pToPlot
 }
 
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
+CvPlot* plotCity3(int iX, int iY, int iIndex); // Leoreth
 int plotCityXY(int iDX, int iDY);																									// Exposed to Python
 int plotCityXY(const CvCity* pCity, const CvPlot* pPlot);													// Exposed to Python
 

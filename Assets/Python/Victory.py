@@ -214,7 +214,7 @@ tGuayanasBR = (37, 31)
 tCaribbeanTL = (25, 33)
 tCaribbeanBR = (33, 39)
 
-lAtlanticCoast = [(x, y) for x in range(30, 36+1) for y in range(50, 55+1) if not gc.getMap().plot(x, y).isWater() and gc.getMap().plot(x, y).isCoastalLand()]
+lAtlanticCoast = [(31, 50), (32, 50), (34, 50), (32, 51), (33, 51), (35, 51), (30, 52), (31, 52), (32, 52), (30, 53), (35, 53), (30, 54), (31, 54), (32, 54), (35, 54), (36, 54), (32, 55), (33, 55), (34, 55)]
 lPacificCoast = [(11, 51), (10, 52), (11, 53), (10, 56)]
 tCanadaWestTL = (10, 52)
 tCanadaWestBR = (26, 61)

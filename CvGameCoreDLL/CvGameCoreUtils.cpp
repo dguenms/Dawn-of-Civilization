@@ -34,6 +34,12 @@ CvPlot* plotCity(int iX, int iY, int iIndex)
 	return GC.getMapINLINE().plotINLINE((iX + GC.getCityPlotX()[iIndex]), (iY + GC.getCityPlotY()[iIndex]));
 }
 
+// Leoreth: third ring too
+CvPlot* plotCity3(int iX, int iY, int iIndex)
+{
+	return GC.getMapINLINE().plotINLINE((iX + GC.getCityPlot3X()[iIndex]), (iY + GC.getCityPlot3Y()[iIndex]));
+}
+
 int plotCityXY(int iDX, int iDY)
 {
 	if ((abs(iDX) > CITY_PLOTS_RADIUS) || (abs(iDY) > CITY_PLOTS_RADIUS))

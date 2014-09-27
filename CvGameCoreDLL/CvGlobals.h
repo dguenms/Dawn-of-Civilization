@@ -206,6 +206,10 @@ public:
 	DirectionTypes getTurnRightDirection(int i);
 	DllExport DirectionTypes getXYDirection(int i, int j);
 
+	// Leoreth
+	DllExport int* getCityPlot3X();
+	DllExport int* getCityPlot3Y();
+
 	//
 	// Global Infos
 	// All info type strings are upper case and are kept in this hash map for fast lookup
@@ -957,6 +961,10 @@ protected:
 	int* m_aiCityPlotY;	// [NUM_CITY_PLOTS];
 	int* m_aiCityPlotPriority;	// [NUM_CITY_PLOTS];
 	int m_aaiXYCityPlot[CITY_PLOTS_DIAMETER][CITY_PLOTS_DIAMETER];
+
+	// Leoreth: index over the third ring as well
+	int* m_aiCityPlot3X;
+	int* m_aiCityPlot3Y;
 
 	DirectionTypes* m_aeTurnLeftDirection;	// [NUM_DIRECTION_TYPES];
 	DirectionTypes* m_aeTurnRightDirection;	// [NUM_DIRECTION_TYPES];
