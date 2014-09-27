@@ -1684,4 +1684,24 @@
 		<DefineName>FORCE_UNOWNED_CITY_TIMER</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>CULTURE_COST_BONUS</DefineName>
+		<iDefineIntVal>-10</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>CULTURE_COST_HILL</DefineName>
+		<iDefineIntVal>5</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>CULTURE_COST_PEAK</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>CULTURE_COST_DISTANCE</DefineName>
+		<iDefineIntVal>5</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>CULTURE_COST_RIVER</DefineName>
+		<iDefineIntVal>-5</iDefineIntVal>
+	</Define>
 </Civ4Defines>

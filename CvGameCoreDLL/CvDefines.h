@@ -51,6 +51,7 @@
 #define DIRECTION_RADIUS											(1)
 #define DIRECTION_DIAMETER										((DIRECTION_RADIUS * 2) + 1)
 #define NUM_CITY_PLOTS												(21)
+#define NUM_CITY_PLOTS_3											(37) // Leoreth: 21 + 16
 #define CITY_HOME_PLOT												(0)
 #define CITY_PLOTS_RADIUS											(2)
 #define CITY_PLOTS_DIAMETER										((CITY_PLOTS_RADIUS*2) + 1)

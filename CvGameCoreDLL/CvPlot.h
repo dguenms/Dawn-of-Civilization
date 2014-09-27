@@ -512,6 +512,7 @@ public:
 	void setWithinGreatWall(bool bNewValue);
 	void cameraLookAt();
 	bool canUseSlave(PlayerTypes ePlayer) const;
+	int calculateCultureCost() const;
 
 protected:
 

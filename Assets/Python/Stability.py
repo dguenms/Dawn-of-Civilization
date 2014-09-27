@@ -465,7 +465,7 @@ def militaryCrisis(iPlayer, iCrisisLevel):
 def getPossibleMinors(iPlayer):
 
 	if utils.getCivsWithNationalism() == 0 and iPlayer in [con.iMaya, con.iAztecs, con.iInca, con.iMali, con.iEthiopia, con.iCongo]:
-		return [con.iNative, con.iBarbarian, con.iIndependent]
+		return [con.iNative]
 		
 	if gc.getGame().getCurrentEra() <= con.iMedieval:
 		return [con.iBarbarian, con.iIndependent, con.iIndependent2]

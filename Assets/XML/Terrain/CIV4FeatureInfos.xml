@@ -12,6 +12,7 @@
 			<iSeeThrough>0</iSeeThrough>
 			<iHealthPercent>0</iHealthPercent>
 			<iDefense>0</iDefense>
+			<iCultureCost>10</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>0</iGrowth>
@@ -128,6 +129,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iHealthPercent>-25</iHealthPercent>
 			<iDefense>50</iDefense>
+			<iCultureCost>10</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<!-- Rhye -->
@@ -245,6 +247,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iHealthPercent>0</iHealthPercent>
 			<iDefense>0</iDefense>
+			<iCultureCost>-10</iCultureCost>
 			<iAppearance>500</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>0</iGrowth>
@@ -362,6 +365,7 @@
 			<iSeeThrough>0</iSeeThrough>
 			<iHealthPercent>-40</iHealthPercent>
 			<iDefense>0</iDefense>
+			<iCultureCost>-5</iCultureCost>
 			<iAppearance>10000</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>0</iGrowth>
@@ -474,6 +478,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iHealthPercent>50</iHealthPercent>
 			<iDefense>50</iDefense>
+			<iCultureCost>5</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<!-- Rhye -->
@@ -596,6 +601,7 @@
 			<iSeeThrough>0</iSeeThrough>
 			<iHealthPercent>-50</iHealthPercent>
 			<iDefense>0</iDefense>
+			<iCultureCost>20</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>500</iDisappearance>
 			<iGrowth>0</iGrowth>
@@ -704,6 +710,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iHealthPercent>-40</iHealthPercent>
 			<iDefense>50</iDefense>
+			<iCultureCost>10</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>0</iGrowth>

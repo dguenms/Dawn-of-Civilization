@@ -146,6 +146,8 @@ m_aiPlotCardinalDirectionX(NULL),
 m_aiPlotCardinalDirectionY(NULL),
 m_aiCityPlotX(NULL),
 m_aiCityPlotY(NULL),
+m_aiCityPlot3X(NULL), // Leoreth
+m_aiCityPlot3Y(NULL), // Leoreth
 m_aiCityPlotPriority(NULL),
 m_aeTurnLeftDirection(NULL),
 m_aeTurnRightDirection(NULL),
@@ -308,6 +310,23 @@ void CvGlobals::init()
 		2, 2, 1, 0,-1,-2,-2,-2,-1, 0, 1, 2,
 	};
 
+	// Leoreth: also index the third ring around a city
+	int aiCityPlot3X[NUM_CITY_PLOTS_3] =
+	{
+		0,
+		0, 1, 1, 1, 0,-1,-1,-1,
+		0, 1, 2, 2, 2, 1, 0,-1,-2,-2,-2,-1,
+		0, 1, 2, 3, 3, 3, 2, 1, 0,-1,-2,-3,-3,-3,-2,-1,
+	};
+
+	int aiCityPlot3Y[NUM_CITY_PLOTS_3] =
+	{
+		0,
+		1, 1, 0,-1,-1,-1, 0, 1,
+		2, 2, 1, 0,-1,-2,-2,-2,-1, 0, 1, 2,
+		3, 3, 2, 1, 0,-1,-2,-3,-3,-3,-2,-1, 0, 1, 2, 3,
+	};
+
 	int aiCityPlotPriority[NUM_CITY_PLOTS] =
 	{
 		0,
@@ -404,6 +423,8 @@ void CvGlobals::uninit()
 	SAFE_DELETE_ARRAY(m_aiPlotCardinalDirectionY);
 	SAFE_DELETE_ARRAY(m_aiCityPlotX);
 	SAFE_DELETE_ARRAY(m_aiCityPlotY);
+	SAFE_DELETE_ARRAY(m_aiCityPlot3X); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiCityPlot3Y); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCityPlotPriority);
 	SAFE_DELETE_ARRAY(m_aeTurnLeftDirection);
 	SAFE_DELETE_ARRAY(m_aeTurnRightDirection);
@@ -650,6 +671,17 @@ int* CvGlobals::getCityPlotX()
 int* CvGlobals::getCityPlotY()
 {
 	return m_aiCityPlotY;
+}
+
+// Leoreth: also index over the third ring
+int* CvGlobals::getCityPlot3X()
+{
+	return m_aiCityPlot3X;
+}
+
+int* CvGlobals::getCityPlot3Y()
+{
+	return m_aiCityPlot3Y;
 }
 
 int* CvGlobals::getCityPlotPriority()

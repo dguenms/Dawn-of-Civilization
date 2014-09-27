@@ -63,6 +63,10 @@ CvCity::CvCity()
 	m_abRevealed = new bool[MAX_TEAMS];
 	m_abEspionageVisibility = new bool[MAX_TEAMS];
 
+	m_aiCulturePlots = new int[NUM_CITY_PLOTS_3]; // Leoreth
+	m_aiCulturePlotIndices = new int[NUM_CITY_PLOTS_3]; // Leoreth
+	m_aiCultureCosts = new int[NUM_CITY_PLOTS_3]; // Leoreth
+
 	m_paiNoBonus = NULL;
 	m_paiFreeBonus = NULL;
 	m_paiNumBonuses = NULL;
@@ -144,6 +148,9 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiCulture);
 	SAFE_DELETE_ARRAY(m_aiNumRevolts);
 	SAFE_DELETE_ARRAY(m_aiGameTurnPlayerLost); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiCulturePlots); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiCulturePlotIndices); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiCultureCosts); // Leoreth
 	SAFE_DELETE_ARRAY(m_abEverOwned);
 	SAFE_DELETE_ARRAY(m_abTradeRoute);
 	SAFE_DELETE_ARRAY(m_abRevealed);
@@ -884,6 +891,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aBuildingHappyChange.clear();
 		m_aBuildingHealthChange.clear();
 	}
+
+	updateCultureCosts();
 
 	if (!bConstructorCall)
 	{
@@ -12725,7 +12734,8 @@ void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool b
 				{
 					if (GC.getBuildingInfo(eIndex).isGoldenAge())
 					{
-						GET_PLAYER(getOwnerINLINE()).changeGoldenAgeTurns(iChangeNumRealBuilding * (GET_PLAYER(getOwnerINLINE()).getGoldenAgeLength() + 1));
+						// Leoreth: adjusting for turn changes not required during anarchy because it doesn't count down
+						GET_PLAYER(getOwnerINLINE()).changeGoldenAgeTurns(iChangeNumRealBuilding * (GET_PLAYER(getOwnerINLINE()).getGoldenAgeLength() + (GET_PLAYER(getOwnerINLINE()).isAnarchy() ? 0 : 1)));
 					}
 
 					if (GC.getBuildingInfo(eIndex).getGlobalPopulationChange() != 0)
@@ -14937,6 +14947,10 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(MAX_TEAMS, m_abRevealed);
 	pStream->Read(MAX_TEAMS, m_abEspionageVisibility);
 
+	/*pStream->Read(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
+	pStream->Read(NUM_CITY_PLOTS_3, m_aiCulturePlotIndices); // Leoreth
+	pStream->Read(NUM_CITY_PLOTS_3, m_aiCultureCosts);*/ // Leoreth
+
 	pStream->ReadString(m_szName);
 	pStream->ReadString(m_szScriptData);
 
@@ -15187,6 +15201,10 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(MAX_PLAYERS, m_abTradeRoute);
 	pStream->Write(MAX_TEAMS, m_abRevealed);
 	pStream->Write(MAX_TEAMS, m_abEspionageVisibility);
+
+	/*pStream->Write(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
+	pStream->Write(NUM_CITY_PLOTS_3, m_aiCulturePlotIndices); // Leoreth
+	pStream->Write(NUM_CITY_PLOTS_3, m_aiCultureCosts);*/ // Leoreth
 
 	pStream->WriteString(m_szName);
 	pStream->WriteString(m_szScriptData);
@@ -17111,4 +17129,99 @@ bool CvCity::canSlaveJoin() const
 	int iNumSlaves = getFreeSpecialistCount(eSlave);
 
 	return (2 * iNumSlaves < getPopulation());
+}
+
+// Leoreth
+int CvCity::calculateCultureCost(CvPlot* pPlot) const
+{
+	if (plot() == pPlot) return 0;
+
+	int iCost = pPlot->calculateCultureCost();
+
+	iCost += plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY()) * GC.getDefineINT("CULTURE_COST_DISTANCE");
+
+	if (plot()->getRiverID() == pPlot->getRiverID()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
+
+	return iCost;
+}
+
+// Leoreth: takes local index, returns plot as global index
+int CvCity::getCulturePlot(int i) const
+{
+	return m_aiCulturePlots[i];
+}
+
+// Leoreth: takes global plot index, returns plot as local index
+int CvCity::getCulturePlotIndex(int i) const
+{
+	return m_aiCulturePlotIndices[i];
+}
+
+// Leoreth: costs for local index
+int CvCity::getCultureCost(int i) const
+{
+	return m_aiCultureCosts[i];
+}
+
+class PlotCultureCostComparator
+{
+public:
+	PlotCultureCostComparator(CvCity* city)
+	{
+		pCity = city;
+		pMap = GC.getMap();
+	}
+
+	bool operator() (int globalIndex1, int globalIndex2)
+	{
+		CvPlot* kPlot1 = pMap.plotByIndex(globalIndex1);
+		CvPlot* kPlot2 = pMap.plotByIndex(globalIndex2);
+
+		int iCost1 = pCity->calculateCultureCost(kPlot1);
+		int iCost2 = pCity->calculateCultureCost(kPlot2);
+
+		if (iCost1 > iCost2)
+		{
+			return true;
+		}
+		else if (iCost1 == iCost2)
+		{
+			// break ties by distance
+			int iDistance1 = plotDistance(pCity->getX(), pCity->getY(), kPlot1->getX(), kPlot1->getY());
+			int iDistance2 = plotDistance(pCity->getX(), pCity->getY(), kPlot2->getX(), kPlot2->getY());
+
+			if (iDistance1 < iDistance2)
+			{
+				return true;
+			}
+			else if (iDistance1 == iDistance2)
+			{
+				// use global index as last resort
+				return (pMap.plotNum(kPlot1->getX(), kPlot1->getY()) < pMap.plotNum(kPlot2->getX(), kPlot2->getY()));
+			}
+		}
+
+		return false;
+	}
+
+private:
+	CvCity* pCity;
+	CvMap pMap;
+};
+
+// Leoreth
+void CvCity::updateCultureCosts()
+{
+	return;
+
+	CvMap& kMap = GC.getMap();
+	std::vector<int> plots;
+
+	for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+	{
+		plots.push_back(kMap.plotNum(getX() + GC.getCityPlot3X()[iI], getY() + GC.getCityPlot3Y()[iI]));
+	}
+
+	PlotCultureCostComparator kComp(this);
+	std::sort(plots.begin(), plots.end(), kComp);
 }

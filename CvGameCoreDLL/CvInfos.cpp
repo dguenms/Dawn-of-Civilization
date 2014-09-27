@@ -13970,6 +13970,11 @@ int CvFeatureInfo::getDefenseModifier() const
 	return m_iDefenseModifier;
 }
 
+int CvFeatureInfo::getCultureCostModifier() const
+{
+	return m_iCultureCostModifier;
+}
+
 int CvFeatureInfo::getAdvancedStartRemoveCost() const
 {
 	return m_iAdvancedStartRemoveCost;
@@ -14495,6 +14500,7 @@ m_iSeeFromLevel(0),
 m_iSeeThroughLevel(0),
 m_iBuildModifier(0),
 m_iDefenseModifier(0),
+m_iCultureCostModifier(0),
 m_bWater(false),
 m_bImpassable(false),
 m_bFound(false),
@@ -14546,6 +14552,12 @@ int CvTerrainInfo::getBuildModifier() const
 int CvTerrainInfo::getDefenseModifier() const
 {
 	return m_iDefenseModifier;
+}
+
+// Leoreth
+int CvTerrainInfo::getCultureCostModifier() const
+{
+	return m_iCultureCostModifier;
 }
 
 bool CvTerrainInfo::isWater() const
