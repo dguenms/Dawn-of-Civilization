@@ -1256,26 +1256,28 @@ def calculateStability(iPlayer):
 	iEconomyStability += iEconomicGrowthStability
 	
 	# Trade
-	iImports = pPlayer.calculateTotalImports(YieldTypes.YIELD_COMMERCE)
-	iExports = pPlayer.calculateTotalExports(YieldTypes.YIELD_COMMERCE)
+	#iImports = pPlayer.calculateTotalImports(YieldTypes.YIELD_COMMERCE)
+	#iExports = pPlayer.calculateTotalExports(YieldTypes.YIELD_COMMERCE)
 	
-	if bMercantilism:
-		iTradeVolume = 2 * iExports
-	else:
-		iTradeVolume = iImports + iExports
+	#if bMercantilism:
+	#	iTradeVolume = 2 * iExports
+	#else:
+	#	iTradeVolume = iImports + iExports
 	
-	iEraModifier = max(1, iCurrentEra * iCurrentEra)
+	#iEraModifier = max(1, iCurrentEra * iCurrentEra)
 		
-	if iNumTotalCities > 0:
-		iTradeStability = iTradeVolume / iNumTotalCities - 2 * iEraModifier
-	else:
-		iTradeStability = 0
+	#if iNumTotalCities > 0:
+	#	iTradeStability = iTradeVolume / iNumTotalCities - 2 * iEraModifier
+	#else:
+	#	iTradeStability = 0
 		
-	iTradeStability /= 2
+	#iTradeStability /= 2
 	
 	# trade stability cap
-	if iTradeStability > 10: iTradeStability = 10
-	elif iTradeStability < -10: iTradeStability = -10
+	#if iTradeStability > 10: iTradeStability = 10
+	#elif iTradeStability < -10: iTradeStability = -10
+	
+	iTradeStability = 0
 	
 	lParameters[con.iParameterTrade] = iTradeStability
 	
@@ -1522,8 +1524,10 @@ def calculateStability(iPlayer):
 			
 		# open borders
 		if tPlayer.canContact(iLoopPlayer):
-			if pLoopPlayer.getStateReligion() == iStateReligion: iRelationStability += 1
-			else: iRelationStability += 2
+			#if pLoopPlayer.getStateReligion() == iStateReligion: iRelationStability += 1
+			#else: iRelationStability += 2
+			
+			iRelationStability += 1
 			
 			iNumContacts += 1
 			
@@ -1543,7 +1547,7 @@ def calculateStability(iPlayer):
 				else: iFanaticismStability -= 2
 		
 	# penalize contacts because they allow more OB treaties
-	iRelationStability -= iNumContacts / 2 + min(4, iNumContacts)
+	iRelationStability -= (iNumContacts / 2 + min(4, iNumContacts))
 	
 	lParameters[con.iParameterNeighbors] = iNeighborStability
 	lParameters[con.iParameterVassals] = iVassalStability

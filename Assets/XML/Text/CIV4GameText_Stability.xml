@@ -320,6 +320,10 @@
 		<English>Unstable Vassals</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_GOOD_RELATIONS</Tag>
+		<English>Good Relations</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_BAD_RELATIONS</Tag>
 		<English>Bad Relations</English>
 	</TEXT>

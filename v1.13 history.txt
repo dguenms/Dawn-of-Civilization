@@ -12,3 +12,4 @@
 # Enlarged North America to the north to make more room for Canada, extensive terrain changes
 # Capes and marshes blocking access to America from Newfoundland only appear when the player controls the Vikings
 # added the CN Tower wonder: requires Mass Media, free Broadcast Tower for all cities
+# seceding cities in the New World always go to the Natives instead of Independents
