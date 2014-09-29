@@ -20166,19 +20166,8 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	int iValue = GC.getDefineINT("AI_SLAVE_VALUE");
 	PlayerTypes eOwner = pUnit->getOwner();
 
-	// you are talking to someone who is selling a slave
-	// getID() = seller
-	if (getID() == eOwner)
-	{
-		if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == PORTUGAL || getID() == NETHERLANDS) iValue *= 2;
-		
-		if (getStateReligion() != CATHOLICISM) iValue /= 2;
-
-		if (!GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY)) iValue /= 2;
-	}
 	// you are talking to someone who wants to buy a slave
-	// getID() = buyer
-	else
+	if (getID() != eOwner)
 	{
 		if (getID() == MALI || getID() == CONGO || getID() == ETHIOPIA)
 		{
@@ -20189,34 +20178,9 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 		{
 			return 0;
 		}
-
-		if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == PORTUGAL || getID() == NETHERLANDS) iValue *= 2;
-
-		if (getStateReligion() != CATHOLICISM) iValue /= 2;
-
-		if (!GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY)) iValue /= 2;
 	}
 
-	if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == PORTUGAL || getID() == NETHERLANDS)
-	{
-		iValue *= 2;
-	}
-
-	// colonial civs also sell at higher prices to avoid buy and resell exploits
-	if (eOwner == SPAIN || eOwner == FRANCE || eOwner == ENGLAND || eOwner == PORTUGAL || eOwner == NETHERLANDS)
-	{
-		iValue *= 2;
-	}
-
-	if (getStateReligion() != CATHOLICISM)
-	{
-		iValue /= 2;
-	}
-
-	if (!GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
-	{
-		iValue /= 2;
-	}
+	if (getID() == eOwner) iValue *= 2;
 
 	return iValue;
 }

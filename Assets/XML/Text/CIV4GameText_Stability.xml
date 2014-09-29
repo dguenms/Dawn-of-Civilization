@@ -232,6 +232,10 @@
 		<English>Overextension</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_CORE_PERIPHERY_INFO</Tag>
+		<English>Expansion</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_RAZED_CITIES</Tag>
 		<English>Razed Cities</English>
 	</TEXT>
