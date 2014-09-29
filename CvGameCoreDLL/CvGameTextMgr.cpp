@@ -15309,10 +15309,11 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
 		szStabilityParameters += szColor;
 
-		if (iParameterCorePeriphery > 0)
+		if (iParameterCorePeriphery >= 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"+%d: %s (%d / %d)", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_POSITIVE").GetCString(), iParameterPeripheryScore, iParameterCoreScore);
+			szTemp.Format(L"%s: %d / %d", gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_INFO").GetCString(), iParameterPeripheryScore, iParameterCoreScore);
+			//szTemp.Format(L"+%d: %s (%d / %d)", iParameterCorePeriphery, gDLL->getText("TXT_KEY_STABILITY_CORE_PERIPHERY_POSITIVE").GetCString(), iParameterPeripheryScore, iParameterCoreScore);
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
