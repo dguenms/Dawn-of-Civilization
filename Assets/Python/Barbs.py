@@ -344,7 +344,7 @@ class Barbs:
 			
 			if not self.isFreePlot(tPlot, bForceSpawn): continue
 			
-			self.clearUnits(iPlayer, tPlot)
+			utils.evacuate(tPlot)
 		
 			if self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions):
 				sd.setMinorCityFounded(i, True)
@@ -415,25 +415,12 @@ class Barbs:
 		# no cultural control over the tile
 		if plot.isOwned() and plot.getOwner() < con.iNumPlayers and not bIgnoreCulture:
 			return False
-			
-		# no unit on the tile except minors
-		iNumUnits = plot.getNumUnits()
-		for i in range(iNumUnits):
-			unit = plot.getUnit(i)
-			if unit.getOwner() < con.iNumPlayers and not bIgnoreCulture:
-				return False
 				
-		# no player unit or city in adjacent tiles
+		# no city in adjacent tiles
 		for i in range(x-1, x+2):
 			for j in range(y-1, y+2):
 				currentPlot = gc.getMap().plot(x, y)
-				if currentPlot.isCity():
-					return False
-				iNumUnits = currentPlot.getNumUnits()
-				for k in range(iNumUnits):
-					unit = currentPlot.getUnit(k)
-					if unit.getOwner() == utils.getHumanID():
-						return False
+				if currentPlot.isCity(): return False
 						
 		return True
 			
