@@ -141,9 +141,9 @@ class StoredData:
 				    'iHumanRazePenalty' : 0,
 				    'lBarbarianLosses' : [0 for i in range(con.iNumPlayers)],
 				    'lPreviousCommerce' : [0 for i in range(con.iNumPlayers)],
-				    'lEconomyStability' : [0 for i in range(con.iNumPlayers)],
+				    'lEconomyTrend' : [[] for i in range(con.iNumPlayers)],
 				    'lLastExpansionStability' : [0 for i in range(con.iNumPlayers)], 
-				    'lHappinessStability' : [0 for i in range(con.iNumPlayers)],
+				    'lHappinessTrend' : [[] for i in range(con.iNumPlayers)],
 				    'lWarStatus' : [{} for i in range(con.iNumPlayers)],
 				}
                 self.save()
@@ -173,14 +173,13 @@ class StoredData:
 	def setPreviousCommerce(self, iPlayer, iNewValue):
 		self.scriptDict['lPreviousCommerce'][iPlayer] = iNewValue
 		
-	def getEconomyStability(self, iPlayer):
-		return self.scriptDict['lEconomyStability'][iPlayer]
+	def getEconomyTrend(self, iPlayer):
+		return self.scriptDict['lEconomyTrend'][iPlayer]
 		
-	def setEconomyStability(self, iPlayer, iNewValue):
-		self.scriptDict['lEconomyStability'][iPlayer] = iNewValue
-		
-	def changeEconomyStability(self, iPlayer, iChange):
-		self.scriptDict['lEconomyStability'][iPlayer] += iChange
+	def pushEconomyTrend(self, iPlayer, iEntry):
+		self.scriptDict['lEconomyTrend'][iPlayer].append(iEntry)
+		if len(self.scriptDict['lEconomyTrend'][iPlayer]) > 10:
+			self.scriptDict['lEconomyTrend'][iPlayer].pop(0)
 		
 	def getLastExpansionStability(self, iPlayer):
 		return self.scriptDict['lLastExpansionStability'][iPlayer]
@@ -191,11 +190,13 @@ class StoredData:
 	def changeLastExpansionStability(self, iPlayer, iChange):
 		self.scriptDict['lLastExpansionStability'][iPlayer] += iChange
 		
-	def getHappinessStability(self, iPlayer):
-		return self.scriptDict['lHappinessStability'][iPlayer]
+	def getHappinessTrend(self, iPlayer):
+		return self.scriptDict['lHappinessTrend'][iPlayer]
 		
-	def setHappinessStability(self, iPlayer, iNewValue):
-		self.scriptDict['lHappinessStability'][iPlayer] = iNewValue
+	def pushHappinessTrend(self, iPlayer, iEntry):
+		self.scriptDict['lHappinessTrend'][iPlayer].append(iEntry)
+		if len(self.scriptDict['lHappinessTrend'][iPlayer]) > 10:
+			self.scriptDict['lHappinessTrend'][iPlayer].pop(0)
 		
 	def getLastDifference(self, iPlayer):
 		return -self.scriptDict['lLastDifference'][iPlayer]

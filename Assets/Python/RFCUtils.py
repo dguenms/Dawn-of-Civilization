@@ -1924,3 +1924,19 @@ class RFCUtils:
 		for element in lList:
 			if function(element): return True
 		return False
+		
+	def moveToClosestCity(self, unit):
+		city = gc.getMap().findCity(unit.getX(), unit.getY(), unit.getOwner(), TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+		unit.setXYOld(city.getX(), city.getY())
+		
+	def evacuate(self, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		lUnits = []
+		for i in range(plot.getNumUnits()):
+			unit = plot.getUnit(i)
+			lUnits.append(unit)
+			
+		for unit in lUnits:
+			self.moveToClosestCity(unit)

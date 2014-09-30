@@ -41,8 +41,8 @@ def checkTurn(iGameTurn):
 	# calculate economic stability
 	if iGameTurn % utils.getTurns(3) == 0:
 		for iPlayer in range(con.iNumPlayers):
-			updateEconomicStability(iPlayer)
-			updateHappinessStability(iPlayer)
+			updateEconomyTrend(iPlayer)
+			updateHappinessTrend(iPlayer)
 			
 	# decay penalties from razing cities and losing to barbarians
 	if iGameTurn % utils.getTurns(5) == 0:
@@ -306,6 +306,7 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 	
 	bHuman = (utils.getHumanID() == iPlayer)
 	bFall = (not bHuman and iGameTurn > getTurnForYear(con.tFall[iPlayer]))
+	bContinue = False
 	
 	# it's easier to lose stability and harder to gain it at higher levels -> prevent "falling through the levels"
 	iThreshold = getStabilityThreshold(iPlayer)
@@ -322,6 +323,11 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 	elif iStability >= iThreshold:
 		sd.setCrisisImminent(False)
 		
+		# if stability does not improve on collapsing, a complete collapse ensues
+		if iStabilityLevel == con.iStabilityCollapsing:
+			if iStability <= sd.getLastStability(iPlayer):
+				completeCollapse(iPlayer)
+		
 	elif not bPositive:
 		# humans are immune to first stability drop
 		if bHuman and not sd.isCrisisImminent():
@@ -337,14 +343,18 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 			iCrisisLevel = iStabilityLevel # PREVIOUS level
 		
 			triggerCrisis(iPlayer, iCrisisLevel, iCrisisType, bWar)
+			
+			if bFall: bContinue = True
 		
 	# update stability information
+	sd.setLastStability(iPlayer, iStability)
 	for i in range(5):
-		sd.setLastStability(iPlayer, iStability)
 		sd.setStabilityCategoryValue(iPlayer, i, lStabilityTypes[i])
 	
 	for i in range(con.iNumStabilityParameters):
 		pPlayer.setStabilityParameter(i, lParameters[i])
+		
+	if bContinue: checkStability(iPlayer, bPositive, bWar)
 			
 def triggerBonus(iPlayer, lStabilityParameters):
 	return
@@ -1245,11 +1255,7 @@ def calculateStability(iPlayer):
 	iEconomyStability = 0
 	
 	# Economic Growth
-	iEconomicGrowthStability = sd.getEconomyStability(iPlayer) / 20
-	
-	# economic growth stability cap
-	if iEconomicGrowthStability > 30: iEconomicGrowthStability = 30
-	elif iEconomicGrowthStability < -30: iEconomicGrowthStability = -30
+	iEconomicGrowthStability = 3 * calculateTrendScore(sd.getEconomyTrend(iPlayer))
 	
 	lParameters[con.iParameterEconomicGrowth] = iEconomicGrowthStability
 	
@@ -1327,10 +1333,7 @@ def calculateStability(iPlayer):
 	iDomesticStability = 0
 	
 	# Happiness
-	iHappinessStability = sd.getHappinessStability(iPlayer) / 20
-	
-	if iHappinessStability > 10: iHappinessStability = 10
-	if iHappinessStability < -10: iHappinessStability = -10
+	iHappinessStability = calculateTrendScore(sd.getHappinessTrend(iPlayer))
 	
 	#if iNumTotalCities > 0:
 	#	if iHappyCities > iUnhappyCities:
@@ -1698,22 +1701,38 @@ def sigmoid(x):
 	#return 2.0 / (1 + math.exp(-5*x)) - 1.0
 	return math.tanh(5 * x / 2)
 	
-def updateEconomicStability(iPlayer):
+def calculateTrendScore(lTrend):
+	iPositive = 0
+	iNeutral = 0
+	iNegative = 0
+	
+	for iEntry in lTrend:
+		if iEntry > 0: iPositive += 1
+		elif iEntry < 0: iNegative += 1
+		else: iNeutral += 1
+		
+	if iPositive > iNegative: return max(0, iPositive - iNegative - iNeutral / 2)
+	
+	if iNegative > iPositive: return min(0, iPositive - iNegative + iNeutral / 2)
+	
+	return 0
+	
+def updateEconomyTrend(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	
 	if not pPlayer.isAlive(): return
 	
-	iCivicLabor = pPlayer.getCivics(2)
-	iCivicEconomy = pPlayer.getCivics(3)
+	#iCivicLabor = pPlayer.getCivics(2)
+	#iCivicEconomy = pPlayer.getCivics(3)
 	
-	bPublicWelfare = (iCivicLabor == con.iCivicPublicWelfare)
-	bFreeMarket = (iCivicEconomy == con.iCivicFreeMarket)
-	bEnvironmentalism = (iCivicEconomy == con.iCivicEnvironmentalism)
+	#bPublicWelfare = (iCivicLabor == con.iCivicPublicWelfare)
+	#bFreeMarket = (iCivicEconomy == con.iCivicFreeMarket)
+	#bEnvironmentalism = (iCivicEconomy == con.iCivicEnvironmentalism)
 	
 	iPreviousCommerce = sd.getPreviousCommerce(iPlayer)
 	iCurrentCommerce = pPlayer.calculateTotalCommerce()
 	
-	iEconomyStability = sd.getEconomyStability(iPlayer)
+	#iEconomyStability = sd.getEconomyStability(iPlayer)
 	
 	if iPreviousCommerce == 0: 
 		sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
@@ -1721,39 +1740,47 @@ def updateEconomicStability(iPlayer):
 	
 	iPercentChange = 100 * iCurrentCommerce / iPreviousCommerce - 100
 	
-	iChange = 0
-	iDivisor = min(10, int(abs(iEconomyStability) / 50))
-	if iDivisor == 0: iDivisor = 1
-		
-	if iPercentChange > 5:
-		if iEconomyStability >= 0:
-			if bFreeMarket: iChange = 3
-			else: iChange = 2
-		else:
-			iChange = 4
-	elif iPercentChange < -5:
-		if iEconomyStability <= 0:
-			if bPublicWelfare: iChange = -1
-			else: iChange = -2
-		else:
-			iChange = -4
-	else:
-		if iEconomyStability > 0:
-			if not bEnvironmentalism: iChange = -1
-		elif iEconomyStability < 0:
-			iChange = 1
+	if iPercentChange > 5: sd.pushEconomyTrend(iPlayer, 1)
+	elif iPercentChange < -5: sd.pushEconomyTrend(iPlayer, -1)
+	else: sd.pushEconomyTrend(iPlayer, 0)
+	
+	#iChange = 0
+	#iDivisor = min(10, int(abs(iEconomyStability) / 50))
+	#if iDivisor == 0: iDivisor = 1
+	#	
+	#if iPercentChange > 5:
+	#	if iEconomyStability >= 0:
+	#		if bFreeMarket: iChange = 3
+	#		else: iChange = 2
+	#	else:
+	#		iChange = 4
+	#elif iPercentChange < -5:
+	#	if iEconomyStability <= 0:
+	#		if bPublicWelfare: iChange = -1
+	#		else: iChange = -2
+	#	else:
+	#		iChange = -4
+	#else:
+	#	if iEconomyStability > 0:
+	#		if not bEnvironmentalism: iChange = -1
+	#	elif iEconomyStability < 0:
+	#		iChange = 1
 			
-	iEconomyStability += 10 * iChange / iDivisor
+	#iEconomyStability += 10 * iChange / iDivisor
 			
-	sd.setEconomyStability(iPlayer, iEconomyStability)
+	#sd.setEconomyStability(iPlayer, iEconomyStability)
 	sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
 	
-def updateHappinessStability(iPlayer):
+def updateHappinessTrend(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	
 	if not pPlayer.isAlive(): return
 	
-	iHappinessStability = sd.getHappinessStability(iPlayer)
+	iNumCities = pPlayer.getNumCities()
+	
+	if iNumCities == 0: return
+	
+	#iHappinessStability = sd.getHappinessStability(iPlayer)
 	iHappyCities = 0
 	iUnhappyCities = 0
 	
@@ -1770,24 +1797,27 @@ def updateHappinessStability(iPlayer):
 		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
 			
-	iChange = 0
-	iDivisor = min(10, int(abs(iHappinessStability) / 20))
-	if iDivisor == 0: iDivisor = 1
+	if iHappyCities - iUnhappyCities > iNumCities / 5: sd.pushHappinessTrend(iPlayer, 1)
+	elif iUnhappyCities - iHappyCities > iNumCities / 5: sd.pushHappinessTrend(iPlayer, -1)
+			
+	#iChange = 0
+	#iDivisor = min(10, int(abs(iHappinessStability) / 20))
+	#if iDivisor == 0: iDivisor = 1
 		
-	if iHappyCities > iUnhappyCities:
-		if iHappinessStability >= 0:
-			iChange = 1
-		else:
-			iChange = 2
-	elif iHappyCities < iUnhappyCities:
-		if iHappinessStability <= 0:
-			iChange = -1
-		else:
-			iChange = -2
+	#if iHappyCities > iUnhappyCities:
+	#	if iHappinessStability >= 0:
+	#		iChange = 1
+	#	else:
+	#		iChange = 2
+	#elif iHappyCities < iUnhappyCities:
+	#	if iHappinessStability <= 0:
+	#		iChange = -1
+	#	else:
+	#		iChange = -2
 			
-	iHappinessStability += 10 * iChange / iDivisor
+	#iHappinessStability += 10 * iChange / iDivisor
 			
-	sd.setHappinessStability(iPlayer, iHappinessStability)
+	#sd.setHappinessStability(iPlayer, iHappinessStability)
 	
 def calculateEconomicGrowth(iPlayer, iNumTurns):
 	lHistory = []
