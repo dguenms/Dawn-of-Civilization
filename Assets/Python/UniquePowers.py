@@ -670,24 +670,30 @@ class UniquePowers:
 			
 	def doImmigration(self):
 	
-		#utils.debugTextPopup("doImmigration()")
-	
 		# get available migration and immigration cities
 		lSourceCities = []
 		lTargetCities = []
 		
 		for iPlayer in range(con.iNumPlayers):
-			if iPlayer in con.lCivBioNewWorld: continue # no immigration to natives
+			if iPlayer in con.lCivBioNewWorld and not utils.isReborn(iPlayer): continue # no immigration to natives
 			pPlayer = gc.getPlayer(iPlayer)
-			for city in PyPlayer(iPlayer).getCityList():
-				pCity = city.GetCy()
-				if pPlayer.getCapitalCity().getRegionID() in con.lNewWorld:
-					if pCity.getRegionID() in con.lNewWorld:
-						lTargetCities.append((pCity, pCity.happyLevel() - pCity.unhappyLevel(0) + pCity.foodDifference(False) / 2))
+			lCities = []
+			bNewWorld = pPlayer.getCapitalCity().getRegionID() in con.lNewWorld
+			for city in utils.getCityList(iPlayer):
+				iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
+				if city.getRegionID() in con.lNewWorld:
+					if iHappinessDifference > 0: lCities.append((city, iHappinessDifference + city.foodDifference(False) / 2 + city.getPopulation() / 2))
 				else:
-					if pCity.getRegionID() not in con.lNewWorld:
-						lSourceCities.append((pCity, pCity.unhappyLevel(0) - pCity.happyLevel()))
-						
+					if iHappinessDifference < 0: lCities.append((city, -iHappinessDifference))
+			
+			if lCities:
+				lCities.sort(key=itemgetter(1), reverse=True)
+			
+				if pPlayer.getCapitalCity().getRegionID() in con.lNewWorld:
+					lTargetCities.append(lCities[0])
+				else:
+					lSourceCities.append(lCities[0])
+				
 		# sort highest to lowest for happiness/unhappiness
 		lSourceCities.sort(key=itemgetter(1), reverse=True)
 		lTargetCities.sort(key=itemgetter(1), reverse=True)
@@ -696,10 +702,11 @@ class UniquePowers:
 		#utils.debugTextPopup("Target city: "+targetCity.getName())
 		#utils.debugTextPopup("Source city: "+sourceCity.getName())
 		
-		if lSourceCities and lTargetCities:
+		iNumMigrations = min(len(lSourceCities) / 4, len(lTargetCities))
 		
-			sourceCity = lSourceCities[0][0]
-			targetCity = lTargetCities[0][0]
+		for iMigration in range(iNumMigrations):
+			sourceCity = lSourceCities[iMigration][0]
+			targetCity = lTargetCities[iMigration][0]
 		
 			sourceCity.changePopulation(-1)
 			targetCity.changePopulation(1)

@@ -210,6 +210,7 @@ def onCityAcquired(city, iNewOwner):
 	elif sOldName == 'Sofara' and iNewOwner != iJapan: sNewName = 'Sofala'
 	#elif sOldName == 'Indraprastha' and iNewOwner == iIndia: sNewName = 'Dilli'
 	elif sOldName == 'Singidunon' and iNewOwner != iByzantium: sNewName = 'Belgrad'
+	elif sOldName == 'York' and iNewOwner == iCanada and city.getRegionID() == con.rCanada: sNewName = 'Toronto'
 	
 	if sNewName != "":
 		city.setName(sNewName, False)
@@ -302,6 +303,10 @@ def onTechAcquired(iCiv):
 		elif iCiv == iThailand:
 			for city in lCities:
 				if city.getName() == 'Ayutthaya': city.setName('Bangkok', False)
+		
+		if iCiv in [iEngland, iFrance, iAmerica]:
+			for city in lCities:
+				if city.getName() == 'York' and city.getRegionID() == con.rCanada: city.setName('Toronto', False)
 				
 		if iCiv in [iEngland, iIndia, iMughals]:
 			for city in lCities:
