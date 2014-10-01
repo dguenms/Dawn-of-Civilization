@@ -145,6 +145,11 @@ class StoredData:
 				    'lLastExpansionStability' : [0 for i in range(con.iNumPlayers)], 
 				    'lHappinessTrend' : [[] for i in range(con.iNumPlayers)],
 				    'lWarStatus' : [{} for i in range(con.iNumPlayers)],
+				    'lWarTrend' : [[[] for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
+				    'lWarScore' : [[0 for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
+				    'lWarStartTurn' : [[0 for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
+				    'lWarInitialCities' : [[0 for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
+				    'lWarInitialPower' : [[0 for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
 				}
                 self.save()
 		
@@ -248,6 +253,41 @@ class StoredData:
 		
 	def addWarStatus(self, iPlayer, iEnemy):
 		self.scriptDict['lWarStatus'][iPlayer][iEnemy] = WarStatus(iPlayer, iEnemy)
+		
+	def getWarTrend(self, iPlayer, iEnemy):
+		return self.scriptDict['lWarTrend'][iPlayer][iEnemy]
+		
+	def pushWarTrend(self, iPlayer, iEnemy, iEntry):
+		self.scriptDict['lWarTrend'][iPlayer][iEnemy].append(iEntry)
+		if len(self.scriptDict['lWarTrend'][iPlayer][iEnemy]) > 10:
+			self.scriptDict['lWarTrend'][iPlayer][iEnemy].pop(0)
+			
+	def getWarScore(self, iPlayer, iEnemy):
+		return self.scriptDict['lWarScore'][iPlayer][iEnemy]
+		
+	def setWarScore(self, iPlayer, iEnemy, iNewValue):
+		self.scriptDict['lWarScore'][iPlayer][iEnemy] = iEnemy
+		
+	def changeWarScore(self, iPlayer, iEnemy, iChange):
+		self.scriptDict['lWarScore'][iPlayer][iEnemy] += iChange
+		
+	def getWarStartTurn(self, iPlayer, iEnemy):
+		return self.scriptDict['lWarStartTurn'][iPlayer][iEnemy]
+		
+	def setWarStartTurn(self, iPlayer, iEnemy, iNewValue):
+		self.scriptDict['lWarStartTurn'][iPlayer][iEnemy] = iNewValue
+		
+	def getWarInitialCities(self, iPlayer, iEnemy):
+		return self.scriptDict['lWarInitialCities'][iPlayer][iEnemy]
+		
+	def setWarInitialCities(self, iPlayer, iEnemy, iNewValue):
+		self.scriptDict['lWarInitialCities'][iPlayer][iEnemy] = iNewValue
+		
+	def getWarInitialPower(self, iPlayer, iEnemy):
+		return self.scriptDict['lWarInitialPower'][iPlayer][iEnemy]
+		
+	def setWarInitialPower(self, iPlayer, iEnemy, iNewValue):
+		self.scriptDict['lWarInitialPower'][iPlayer][iEnemy] = iNewValue
 		
 	def removeWarStatus(self, iPlayer, iEnemy):
 		if iEnemy in self.scriptDict['lWarStatus'][iPlayer]:
