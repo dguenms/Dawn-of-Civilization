@@ -38,11 +38,17 @@ def checkTurn(iGameTurn):
 		if getCrisisCountdown(iPlayer) > 0:
 			changeCrisisCountdown(iPlayer, -1)
 			
-	# calculate economic stability
+	# calculate economic and happiness stability
 	if iGameTurn % utils.getTurns(3) == 0:
 		for iPlayer in range(con.iNumPlayers):
 			updateEconomyTrend(iPlayer)
 			updateHappinessTrend(iPlayer)
+			
+	# calculate war stability
+	for iPlayer in range(con.iNumPlayers):
+		for iEnemy in range(con.iNumPlayers):
+			if gc.getTeam(iPlayer).isAtWar(iEnemy):
+				updateWarTrend(iPlayer, iEnemy)
 			
 	# decay penalties from razing cities and losing to barbarians
 	if iGameTurn % utils.getTurns(5) == 0:
@@ -67,14 +73,6 @@ def onCityAcquired(city, iOwner, iPlayer):
 	if iPlayer == con.iBarbarian:
 		checkBarbarianCollapse(iOwner)
 		
-	# update conquered cities in a war
-	if iPlayer < con.iNumPlayers and iOwner < con.iNumPlayers and gc.getTeam(iPlayer).isAtWar(iOwner):
-		if iOwner in sd.getWarStatusEnemies(iPlayer):
-			sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
-		else:
-			sd.startWar(iPlayer, iOwner)
-			sd.getWarStatus(iPlayer, iOwner).changeConqueredCities(1)
-	
 def onCityRazed(iPlayer, city):
 	iOwner = city.getOwner()
 	
@@ -105,11 +103,9 @@ def onChangeWar(bWar, iTeam, iOtherTeam):
 		checkStability(iTeam, not bWar)
 		checkStability(iOtherTeam, not bWar, bWar and utils.getHumanID() == iTeam)
 		
-		# start/end war logging for stability
 		if bWar:
-			sd.startWar(iTeam, iOtherTeam)
-		else:
-			sd.endWar(iTeam, iOtherTeam)
+			startWar(iTeam, iOtherTeam)
+			startWar(iOtherTeam, iTeam)
 	
 def onRevolution(iPlayer):
 	checkStability(iPlayer)
@@ -132,14 +128,6 @@ def onGreatPersonBorn(iPlayer):
 def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
 	if iWinningPlayer == con.iBarbarian and iLosingPlayer < con.iNumPlayers:
 		sd.changeBarbarianLosses(iLosingPlayer, 1)
-		
-	if iWinningPlayer < con.iNumPlayers and iLosingPlayer < con.iNumPlayers:
-		# update defeated units in a war
-		if iLosingPlayer in sd.getWarStatusEnemies(iWinningPlayer):
-			sd.getWarStatus(iWinningPlayer, iLosingPlayer).changeDefeatedUnits(iLostPower)
-		else:
-			sd.startWar(iWinningPlayer, iLosingPlayer)
-			sd.getWarStatus(iWinningPlayer, iLosingPlayer).changeDefeatedUnits(iLostPower)
 	
 def onCivSpawn(iPlayer):
 	for iOlderNeighbor in con.lOlderNeighbours[iPlayer]:
@@ -1515,9 +1503,9 @@ def calculateStability(iPlayer):
 				
 		# vassal stability
 		if tLoopPlayer.isVassal(iPlayer):
-			if getStabilityLevel(iLoopPlayer) == con.iStabilityCollapsing: iVassalStability -= 5
-			elif getStabilityLevel(iLoopPlayer) == con.iStabilityUnstable: iVassalStability -= 2
-			elif getStabilityLevel(iLoopPlayer) == con.iStabilitySolid: iVassalStability += 3
+			if getStabilityLevel(iLoopPlayer) == con.iStabilityCollapsing: iVassalStability -= 3
+			elif getStabilityLevel(iLoopPlayer) == con.iStabilityUnstable: iVassalStability -= 1
+			elif getStabilityLevel(iLoopPlayer) == con.iStabilitySolid: iVassalStability += 2
 			
 			if bVassalage: iVassalStability += 2
 			
@@ -1569,68 +1557,39 @@ def calculateStability(iPlayer):
 	iMilitaryStrengthStability = 0
 	iBarbarianLossesStability = 0
 	
-	# new parameter types
-	iBattleStability = 0 # comparison of won battles
-	iConquestStability = 0 # comparison of conquered cities
+	iWarSuccessStability = 0 # war success (conquering cities and defeating units)
 	iWarWearinessStability = 0 # war weariness in comparison to war length
 	iBarbarianLossesStability = 0 # like previously
 	
 	# iterate ongoing wars
-	for iEnemy in sd.getWarStatusEnemies(iPlayer):
+	for iEnemy in range(con.iNumPlayers):
 		pEnemy = gc.getPlayer(iEnemy)
-		if pEnemy.isAlive():
-			ourWarStatus = sd.getWarStatus(iPlayer, iEnemy)
-			theirWarStatus = sd.getWarStatus(iEnemy, iPlayer)
+		if pEnemy.isAlive() and tPlayer.isAtWar(iEnemy):
+			iTempWarSuccessStability = calculateTrendScore(sd.getWarTrend(iPlayer, iEnemy))
+			if iTempWarSuccessStability < 0: iTempWarSuccessStability *= 2
 			
-			iConqueredCities = ourWarStatus.getConqueredCities()
-			iLostCities = theirWarStatus.getConqueredCities()
-			iOurInitialCities = ourWarStatus.getInitialCities()
-			iTheirInitialCities = theirWarStatus.getInitialCities()
+			iWarSuccessStability += iTempWarSuccessStability
 			
-			iTempConquestStability = 0
-			iTempBattleStability = 0
-			
-			iWarTurns = iGameTurn - ourWarStatus.getStartingTurn()
-			iDurationModifier = 0
-			
-			if iWarTurns > utils.getTurns(20):
-				iDurationModifier = (iWarTurns - utils.getTurns(20)) / utils.getTurns(10)
-				if iDurationModifier > 7: iDurationModifier = 7
-			
-			if iTheirInitialCities > 0 and iOurInitialCities > 0:
-				iTempConquestStability = 20 * iConqueredCities / max(5, iTheirInitialCities) - 20 * iLostCities / max(5, iOurInitialCities)
-				if iTempConquestStability > 0: iTempConquestStability /= 2
-				iConquestStability += iTempConquestStability
-			
-			iDefeatedUnits = ourWarStatus.getDefeatedUnits()
-			iLostUnits = theirWarStatus.getDefeatedUnits()
-			iOurInitialPower = ourWarStatus.getInitialPower()
-			iTheirInitialPower = theirWarStatus.getInitialPower()
-			
-			if iTheirInitialPower > 0 and iOurInitialPower > 0:
-				iTempBattleStability = 20 * (iDefeatedUnits - iLostUnits) / iOurInitialPower
-				
-				iTempBattleStability = iTempBattleStability * (100 - 10 * iDurationModifier) / 100
-				
-				if iTempBattleStability > 0: iTempBattleStability /= 2
-				
-				iBattleStability += iTempBattleStability
-				
 			iOurWarWeariness = tPlayer.getWarWeariness(iEnemy)
 			iTheirWarWeariness = gc.getTeam(iEnemy).getWarWeariness(iPlayer)
 			
+			iWarTurns = iGameTurn - sd.getWarStartTurn(iPlayer, iEnemy)
+			iDurationModifier = 0
+			
+			if iWarTurns > utils.getTurns(20):
+				iDurationModifier = min(9, (iWarTurns - utils.getTurns(20)) / utils.getTurns(10))
+				
 			iTempWarWearinessStability = (iTheirWarWeariness - iOurWarWeariness) / (5000 * (iDurationModifier + 1))
 			if iTempWarWearinessStability > 0: iTempWarWearinessStability = 0
 			
 			iWarWearinessStability += iTempWarWearinessStability
 			
-			#utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' war against ' + pEnemy.getCivilizationShortDescription(0) + '\nConquest Stability: ' + str(iTempConquestStability) + '\nBattleStability: ' + str(iTempBattleStability) + '\nWar Weariness: ' + str(iTempWarWearinessStability))
+			utils.debugTextPopup(pPlayer.getCivilizationAdjective(0) + ' war against ' + pEnemy.getCivilizationShortDescription(0) + '\nWar Success Stability: ' + str(iTempWarSuccessStability) + '\nWar Weariness: ' + str(iTempWarWearinessStability))
 	
-	lParameters[con.iParameterConquests] = iConquestStability
-	lParameters[con.iParameterBattles] = iBattleStability
+	lParameters[con.iParameterWarSuccess] = iWarSuccessStability
 	lParameters[con.iParameterWarWeariness] = iWarWearinessStability
 	
-	iMilitaryStability = iConquestStability + iBattleStability + iWarWearinessStability
+	iMilitaryStability = iWarSuccessStability + iWarWearinessStability
 	
 	#iNumerator = 0
 	#iDenominator = 0
@@ -1818,6 +1777,27 @@ def updateHappinessTrend(iPlayer):
 	#iHappinessStability += 10 * iChange / iDivisor
 			
 	#sd.setHappinessStability(iPlayer, iHappinessStability)
+	
+def updateWarTrend(iPlayer, iEnemy):
+	iPreviousTrend = sd.getLastWarTrend(iPlayer, iEnemy)
+	
+	iOurSuccess = gc.getTeam(iPlayer).AI_getWarSuccess(iEnemy)
+	iTheirSuccess = gc.getTeam(iEnemy).AI_getWarSuccess(iPlayer)
+	
+	if abs(iOurSuccess - iTheirSuccess) > max(iTheirSuccess, iOurSuccess) / 10:
+		iCurrentTrend = iPreviousTrend / 2 + iOurSuccess - iTheirSuccess
+	else:
+		iCurrentTrend = 0
+	
+	sd.pushWarTrend(iPlayer, iEnemy, iCurrentTrend)
+	
+def startWar(iPlayer, iEnemy):
+	sd.setWarTrend(iPlayer, iEnemy, [])
+	sd.setWarTrend(iEnemy, iPlayer, [])
+	
+	iGameTurn = gc.getGame().getGameTurn()
+	sd.setWarStartTurn(iPlayer, iEnemy, iGameTurn)
+	sd.setWarStartTurn(iEnemy, iPlayer, iGameTurn)
 	
 def calculateEconomicGrowth(iPlayer, iNumTurns):
 	lHistory = []

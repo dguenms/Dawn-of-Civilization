@@ -896,6 +896,9 @@ class Congress:
 			if gc.getTeam(iPlayer).isVassal(iLoopPlayer): continue
 			if gc.getTeam(iLoopPlayer).isVassal(iPlayer): continue
 			
+			# cannot demand cities while at war
+			if gc.getTeam(iPlayer).isAtWar(iLoopPlayer): continue
+			
 			# Ethiopian UP
 			#if iLoopPlayer == iEthiopia: continue
 			

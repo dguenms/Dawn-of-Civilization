@@ -356,6 +356,14 @@
 		<English>Lost Battles</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_WINNING_WARS</Tag>
+		<English>Winning Wars</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_LOSING_WARS</Tag>
+		<English>Losing Wars</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_WAR_WEARINESS</Tag>
 		<English>War Weariness</English>
 	</TEXT>
