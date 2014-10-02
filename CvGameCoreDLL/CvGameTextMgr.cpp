@@ -15596,46 +15596,31 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 	// Military
 	else if (iStabilityCategory == 4)
 	{
-		int iParameterConquests = player.getStabilityParameter(PARAMETER_CONQUESTS);
-		int iParameterBattles = player.getStabilityParameter(PARAMETER_BATTLES);
+		int iParameterWarSuccess = player.getStabilityParameter(PARAMETER_WAR_SUCCESS);
 		int iParameterWarWeariness = player.getStabilityParameter(PARAMETER_WAR_WEARINESS);
 		int iParameterBarbarianLosses = player.getStabilityParameter(PARAMETER_BARBARIAN_LOSSES);
 
-		iTotalStability = iParameterConquests + iParameterBattles + iParameterWarWeariness + iParameterBarbarianLosses;
+		iTotalStability = iParameterWarSuccess + iParameterWarWeariness + iParameterBarbarianLosses;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_MILITARY");
 
 		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
 		szStabilityParameters += szColor;
 
-		if (iParameterConquests > 0)
+		if (iParameterWarSuccess > 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterConquests, gDLL->getText("TXT_KEY_STABILITY_CONQUERED_CITIES").GetCString());
-			szStabilityParameters += NEWLINE + szTemp;
-		}
-
-		if (iParameterBattles > 0)
-		{
-			CvWString szTemp;
-			szTemp.Format(L"+%d: %s", iParameterBattles, gDLL->getText("TXT_KEY_STABILITY_WON_BATTLES").GetCString());
+			szTemp.Format(L"+%d: %s", iParameterWarSuccess, gDLL->getText("TXT_KEY_STABILITY_WINNING_WARS").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
 		szColor.Format(ENDCOLR SETCOLR, TEXT_COLOR("COLOR_RED"));
 		szStabilityParameters += szColor;
 
-		if (iParameterConquests < 0)
+		if (iParameterWarSuccess < 0)
 		{
 			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterConquests, gDLL->getText("TXT_KEY_STABILITY_LOST_CITIES").GetCString());
-			szStabilityParameters += NEWLINE + szTemp;
-		}
-
-		if (iParameterBattles < 0)
-		{
-			CvWString szTemp;
-			szTemp.Format(L"%d: %s", iParameterBattles, gDLL->getText("TXT_KEY_STABILITY_LOST_BATTLES").GetCString());
+			szTemp.Format(L"%d: %s", iParameterWarSuccess, gDLL->getText("TXT_KEY_STABILITY_LOSING_WARS").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
