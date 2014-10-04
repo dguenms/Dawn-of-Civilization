@@ -1694,7 +1694,7 @@
 	</Define>
 	<Define>
 		<DefineName>CULTURE_COST_PEAK</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CULTURE_COST_DISTANCE</DefineName>

@@ -13896,6 +13896,7 @@ m_iAppearanceProbability(0),
 m_iDisappearanceProbability(0),
 m_iGrowthProbability(0),
 m_iDefenseModifier(0),
+m_iCultureCostModifier(0), // Leoreth
 m_iAdvancedStartRemoveCost(0),
 m_iTurnDamage(0),
 m_bNoCoast(false),
@@ -14185,6 +14186,7 @@ bool CvFeatureInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iSeeThroughChange, "iSeeThrough");
 	pXML->GetChildXmlValByName(&m_iHealthPercent, "iHealthPercent");
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefense");
+	pXML->GetChildXmlValByName(&m_iCultureCostModifier, "iCultureCost");
 	pXML->GetChildXmlValByName(&m_iAdvancedStartRemoveCost, "iAdvancedStartRemoveCost");
 	pXML->GetChildXmlValByName(&m_iTurnDamage, "iTurnDamage");
 // BUG - Global Warming Mod - start
@@ -14682,6 +14684,7 @@ bool CvTerrainInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iSeeThroughLevel, "iSeeThrough");
 	pXML->GetChildXmlValByName(&m_iBuildModifier, "iBuildModifier");
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefense");
+	pXML->GetChildXmlValByName(&m_iCultureCostModifier, "iCultureCost");
 
 	pXML->SetVariableListTagPairForAudioScripts(&m_pi3DAudioScriptFootstepIndex, "FootstepSounds", GC.getFootstepAudioTypes(), GC.getNumFootstepAudioTypes());
 

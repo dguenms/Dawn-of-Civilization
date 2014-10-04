@@ -58,13 +58,13 @@ CvCity::CvCity()
 	m_aiCulture = new int[MAX_PLAYERS];
 	m_aiNumRevolts = new int[MAX_PLAYERS];
 	m_aiGameTurnPlayerLost = new int[MAX_PLAYERS]; // Leoreth
+
 	m_abEverOwned = new bool[MAX_PLAYERS];
 	m_abTradeRoute = new bool[MAX_PLAYERS];
 	m_abRevealed = new bool[MAX_TEAMS];
 	m_abEspionageVisibility = new bool[MAX_TEAMS];
 
 	m_aiCulturePlots = new int[NUM_CITY_PLOTS_3]; // Leoreth
-	m_aiCulturePlotIndices = new int[NUM_CITY_PLOTS_3]; // Leoreth
 	m_aiCultureCosts = new int[NUM_CITY_PLOTS_3]; // Leoreth
 
 	m_paiNoBonus = NULL;
@@ -149,7 +149,6 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiNumRevolts);
 	SAFE_DELETE_ARRAY(m_aiGameTurnPlayerLost); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCulturePlots); // Leoreth
-	SAFE_DELETE_ARRAY(m_aiCulturePlotIndices); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCultureCosts); // Leoreth
 	SAFE_DELETE_ARRAY(m_abEverOwned);
 	SAFE_DELETE_ARRAY(m_abTradeRoute);
@@ -200,6 +199,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	setEverOwned(getOwnerINLINE(), true);
 
 	updateCultureLevel(false);
+	updateCoveredPlots(false);
 
 	if (pPlot->getCulture(getOwnerINLINE()) < GC.getDefineINT("FREE_CITY_CULTURE"))
 	{
@@ -266,11 +266,11 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	}
 
 	// Argentine UP: Justicialism (+1 happiness per 10% culture)
-	if (getOwnerINLINE() == ARGENTINA)
+	/*if (getOwnerINLINE() == ARGENTINA)
 	{
 		BuildingTypes eBuilding = (BuildingTypes)GC.getInfoTypeForString("BUILDING_THEATRE");
 		changeCommerceHappinessPer(COMMERCE_CULTURE, GC.getBuildingInfo(eBuilding).getCommerceHappiness(COMMERCE_CULTURE));
-	}
+	}*/
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
@@ -663,6 +663,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iCorporationHealth = 0;
 	m_iCorporationUnhealth = 0;
 
+	m_iNextCoveredPlot = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -947,6 +949,7 @@ void CvCity::kill(bool bUpdatePlotGroups)
 	}
 
 	setCultureLevel(NO_CULTURELEVEL, false);
+	setNextCoveredPlot(0, false);
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
@@ -8717,6 +8720,7 @@ void CvCity::setOccupationTimer(int iNewValue)
 			updateTradeRoutes();
 
 			updateCultureLevel(true);
+			updateCoveredPlots(true); // Leoreth
 
 			AI_setAssignWorkDirty(true);
 		}
@@ -9045,11 +9049,11 @@ int CvCity::getCultureThreshold(CultureLevelTypes eLevel)
 
 void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups)
 {
-	CvPlot* pLoopPlot;
+	//CvPlot* pLoopPlot;
 	CvWString szBuffer;
 	CultureLevelTypes eOldValue;
-	int iCultureRange;
-	int iDX, iDY;
+	//int iCultureRange;
+	//int iDX, iDY;
 	int iI;
 
 	eOldValue = getCultureLevel();
@@ -9058,7 +9062,7 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 	{
 		m_eCultureLevel = eNewValue;
 
-		if (eOldValue != NO_CULTURELEVEL)
+		/*if (eOldValue != NO_CULTURELEVEL)
 		{
 			for (iDX = -eOldValue; iDX <= eOldValue; iDX++)
 			{
@@ -9108,14 +9112,14 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 					}
 				}
 			}
-		}
+		}*/
 
 		if (GC.getGameINLINE().isFinalInitialized())
 		{
 			if ((getCultureLevel() > eOldValue) && (getCultureLevel() > 1))
 			{
-				szBuffer = gDLL->getText("TXT_KEY_MISC_BORDERS_EXPANDED", getNameKey());
-				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREEXPANDS", MESSAGE_TYPE_MINOR_EVENT, GC.getCommerceInfo(COMMERCE_CULTURE).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+				//szBuffer = gDLL->getText("TXT_KEY_MISC_BORDERS_EXPANDED", getNameKey());
+				//gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREEXPANDS", MESSAGE_TYPE_MINOR_EVENT, GC.getCommerceInfo(COMMERCE_CULTURE).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
 
 				if (getCultureLevel() == (GC.getNumCultureLevelInfos() - 1))
 				{
@@ -9138,7 +9142,7 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 				}
 
 				// ONEVENT - Culture growth
-				CvEventReporter::getInstance().cultureExpansion(this, getOwnerINLINE());
+				//CvEventReporter::getInstance().cultureExpansion(this, getOwnerINLINE());
 
 				//Stop Build Culture
 /************************************************************************************************/
@@ -9157,7 +9161,7 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 */
 				// For AI this is completely unnecessary.  Timing also appears to cause bug with overflow production, 
 				// giving extra hammers innappropriately.
-				if( isHuman() && !isProductionAutomated() )
+				/*if( isHuman() && !isProductionAutomated() )
 				{
 					if (isProductionProcess())
 					{
@@ -11194,6 +11198,7 @@ void CvCity::setCultureTimes100(PlayerTypes eIndex, int iNewValue, bool bPlots, 
 		FAssert(getCultureTimes100(eIndex) >= 0);
 
 		updateCultureLevel(bUpdatePlotGroups);
+		updateCoveredPlots(bUpdatePlotGroups); // Leoreth
 
 		if (bPlots)
 		{
@@ -14094,7 +14099,7 @@ void CvCity::doCulture()
 void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 {
 	CvPlot* pLoopPlot;
-	int iDX, iDY;
+	//int iDX, iDY;
 	int iCultureRange;
 	CultureLevelTypes eCultureLevel = (CultureLevelTypes)0;
 
@@ -14135,7 +14140,43 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 	int iFreeCultureRate = GC.getDefineINT("CITY_FREE_CULTURE_GROWTH_FACTOR");
 	if (getCultureTimes100(ePlayer) > 0)
 	{
-		if (eCultureLevel != NO_CULTURELEVEL)
+		for (int iI = 0; iI < getNextCoveredPlot(); iI++)
+		{
+			pLoopPlot = plotCity3(getX(), getY(), iI);
+
+			if (pLoopPlot->isPotentialCityWorkForArea(area()))
+			{
+				// Leoreth: culture can only invade foreign core if city itself is in foreign core
+				bool bCanSpreadCore = true;
+
+				if (!pLoopPlot->isCore(ePlayer))
+				{
+					for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+					{
+						// Leoreth: only for civs that have already spawned yet
+						if (GC.getGame().getGameTurnYear() < startingTurnYear[iJ]) continue;
+
+						if (pLoopPlot->isCore((PlayerTypes)iJ) && !plot()->isCore((PlayerTypes)iJ)) bCanSpreadCore = false;
+
+						if (pLoopPlot->isCore((PlayerTypes)iJ) && plot()->isCore((PlayerTypes)iJ))
+						{
+							bCanSpreadCore = true;
+							break;
+						}
+					}
+				}
+
+				if (bCanSpreadCore)
+				{
+					// Leoreth: probably needs a more sophistated calculation now with iCultureRange
+					int iChange = ((eCultureLevel - iCultureRange) * iFreeCultureRate) + iCultureRate + 1;
+					if (ePlayer == ITALY) iChange /= 2;
+					pLoopPlot->changeCulture(ePlayer, iChange, (bUpdate || !(pLoopPlot->isOwned())));
+				}
+			}
+		}
+
+		/*if (eCultureLevel != NO_CULTURELEVEL)
 		{
 			for (iDX = -eCultureLevel; iDX <= eCultureLevel; iDX++)
 			{
@@ -14188,7 +14229,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 					}
 				}
 			}
-		}
+		}*/
 	}
 }
 
@@ -14899,6 +14940,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationBadHappiness);
 	pStream->Read(&m_iCorporationHealth);
 	pStream->Read(&m_iCorporationUnhealth);
+	pStream->Read(&m_iNextCoveredPlot); // Leoreth
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -14947,9 +14989,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(MAX_TEAMS, m_abRevealed);
 	pStream->Read(MAX_TEAMS, m_abEspionageVisibility);
 
-	/*pStream->Read(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
-	pStream->Read(NUM_CITY_PLOTS_3, m_aiCulturePlotIndices); // Leoreth
-	pStream->Read(NUM_CITY_PLOTS_3, m_aiCultureCosts);*/ // Leoreth
+	pStream->Read(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
+	pStream->Read(NUM_CITY_PLOTS_3, m_aiCultureCosts); // Leoreth
 
 	pStream->ReadString(m_szName);
 	pStream->ReadString(m_szScriptData);
@@ -15155,6 +15196,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCorporationHealth);
 	pStream->Write(m_iCorporationUnhealth);
 
+	pStream->Write(m_iNextCoveredPlot);
+
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
 	pStream->Write(m_bDrafted);
@@ -15202,9 +15245,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(MAX_TEAMS, m_abRevealed);
 	pStream->Write(MAX_TEAMS, m_abEspionageVisibility);
 
-	/*pStream->Write(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
-	pStream->Write(NUM_CITY_PLOTS_3, m_aiCulturePlotIndices); // Leoreth
-	pStream->Write(NUM_CITY_PLOTS_3, m_aiCultureCosts);*/ // Leoreth
+	pStream->Write(NUM_CITY_PLOTS_3, m_aiCulturePlots); // Leoreth
+	pStream->Write(NUM_CITY_PLOTS_3, m_aiCultureCosts); // Leoreth
 
 	pStream->WriteString(m_szName);
 	pStream->WriteString(m_szScriptData);
@@ -17132,17 +17174,34 @@ bool CvCity::canSlaveJoin() const
 }
 
 // Leoreth
-int CvCity::calculateCultureCost(CvPlot* pPlot) const
+int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 {
 	if (plot() == pPlot) return 0;
 
 	int iCost = pPlot->calculateCultureCost();
+	int iDistance = plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY());
 
-	iCost += plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY()) * GC.getDefineINT("CULTURE_COST_DISTANCE");
+	if (bOrdering)
+	{
+		if (iCost >= 15) iCost += 100; 
+		iCost += 100 * iDistance;
+		if (pPlot->isWater() && !pPlot->isLake() && pPlot->getBonusType() != -1)
+		{
+			if (!isCoastal(20)) iCost += 1000;
+			else if (iDistance > 1) iCost += 5;
+		}
+		if (!pPlot->isWater() && pPlot->getArea() != getArea()) iCost += 1000;
+	}
 
-	if (plot()->getRiverID() == pPlot->getRiverID()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
+	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
+	else iCost += iDistance * GC.getDefineINT("CULTURE_COST_DISTANCE");
 
-	return iCost;
+	if (plot()->isRiver() && plot()->getRiverID() == pPlot->getRiverID()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
+
+	// Leoreth: Inca UP
+	if (getOwnerINLINE() == INCA && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
+
+	return bOrdering ? iCost : std::max(0, iCost);
 }
 
 // Leoreth: takes local index, returns plot as global index
@@ -17151,77 +17210,154 @@ int CvCity::getCulturePlot(int i) const
 	return m_aiCulturePlots[i];
 }
 
-// Leoreth: takes global plot index, returns plot as local index
-int CvCity::getCulturePlotIndex(int i) const
-{
-	return m_aiCulturePlotIndices[i];
-}
-
 // Leoreth: costs for local index
 int CvCity::getCultureCost(int i) const
 {
 	return m_aiCultureCosts[i];
 }
 
-class PlotCultureCostComparator
+struct cultureCompare
 {
-public:
-	PlotCultureCostComparator(CvCity* city)
-	{
-		pCity = city;
-		pMap = GC.getMap();
+	CvCity* city;
+
+	bool operator() (int index1, int index2) 
+	{ 
+		CvPlot* kPlot1 = GC.getMap().plotByIndex(index1);
+		CvPlot* kPlot2 = GC.getMap().plotByIndex(index2);
+
+		// sort by plot culture costs
+		int iCost1 = (kPlot1 != NULL && city != NULL) ? city->calculateCultureCost(kPlot1, true) : -1;
+		int iCost2 = (kPlot2 != NULL && city != NULL) ? city->calculateCultureCost(kPlot2, true) : -1;
+
+		return (iCost1 < iCost2);
 	}
-
-	bool operator() (int globalIndex1, int globalIndex2)
-	{
-		CvPlot* kPlot1 = pMap.plotByIndex(globalIndex1);
-		CvPlot* kPlot2 = pMap.plotByIndex(globalIndex2);
-
-		int iCost1 = pCity->calculateCultureCost(kPlot1);
-		int iCost2 = pCity->calculateCultureCost(kPlot2);
-
-		if (iCost1 > iCost2)
-		{
-			return true;
-		}
-		else if (iCost1 == iCost2)
-		{
-			// break ties by distance
-			int iDistance1 = plotDistance(pCity->getX(), pCity->getY(), kPlot1->getX(), kPlot1->getY());
-			int iDistance2 = plotDistance(pCity->getX(), pCity->getY(), kPlot2->getX(), kPlot2->getY());
-
-			if (iDistance1 < iDistance2)
-			{
-				return true;
-			}
-			else if (iDistance1 == iDistance2)
-			{
-				// use global index as last resort
-				return (pMap.plotNum(kPlot1->getX(), kPlot1->getY()) < pMap.plotNum(kPlot2->getX(), kPlot2->getY()));
-			}
-		}
-
-		return false;
-	}
-
-private:
-	CvCity* pCity;
-	CvMap pMap;
 };
 
 // Leoreth
 void CvCity::updateCultureCosts()
 {
-	return;
-
-	CvMap& kMap = GC.getMap();
 	std::vector<int> plots;
 
+	int iIndex;
 	for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
 	{
-		plots.push_back(kMap.plotNum(getX() + GC.getCityPlot3X()[iI], getY() + GC.getCityPlot3Y()[iI]));
+		iIndex = GC.getMap().plotNum(getX() + GC.getCityPlot3X()[iI], getY() + GC.getCityPlot3Y()[iI]);
+		if (iIndex < 0) iIndex = GC.getMap().numPlots() + iIndex;
+		plots.push_back(iIndex);
 	}
 
-	PlotCultureCostComparator kComp(this);
-	std::sort(plots.begin(), plots.end(), kComp);
+	cultureCompare cmp;
+	cmp.city = this;
+	std::sort(plots.begin(), plots.end(), cmp);
+
+	int iI = 0;
+	int iCumulativeCosts = 0;
+	int iCurrentCosts;
+	CvPlot* plot;
+	for (std::vector<int>::iterator it = plots.begin(); it != plots.end(); ++it)
+	{
+		m_aiCulturePlots[iI] = *it;
+		plot = GC.getMap().plotByIndex(*it);
+		iCurrentCosts = (plot != NULL) ? calculateCultureCost(plot) : 0;
+		iCumulativeCosts += iCurrentCosts;
+		m_aiCultureCosts[iI] = iCumulativeCosts; 
+		iI++;
+	}
+}
+
+int CvCity::getNextCoveredPlot() const
+{
+	return m_iNextCoveredPlot;
+}
+
+void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
+{
+	CvPlot* pLoopPlot;
+	CvWString szBuffer;
+	int iOldValue;
+	int iCultureRange;
+	int iI;
+
+	iOldValue = getNextCoveredPlot();
+
+	if (iNewValue < iOldValue)
+	{
+		m_iNextCoveredPlot = iNewValue;
+
+		if (iOldValue > 0)
+		{
+			for (iI = iNewValue; iI < iOldValue; iI++)
+			{
+				pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iI));
+
+				if (pLoopPlot != NULL)
+				{
+					GC.getGameINLINE().logMsg("Updated coverage for x=%d, y=%d on x=%d, y=%d", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
+					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
+					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, -1, bUpdatePlotGroups);
+				}
+			}
+		}
+	}
+
+	if (iNewValue > iOldValue)
+	{
+		m_iNextCoveredPlot = iNewValue;
+
+		if (iNewValue > 0)
+		{
+			for (iI = iOldValue; iI < iNewValue; iI++)
+			{
+				pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iI));
+
+				if (pLoopPlot != NULL)
+				{
+					GC.getGameINLINE().logMsg("Updated coverage for x=%d, y=%d on x=%d, y=%d (id=%d)", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY(), getCulturePlot(iI));
+					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
+					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, 1, bUpdatePlotGroups);
+				}
+			}
+		}
+
+		if (GC.getGameINLINE().isFinalInitialized())
+		{
+			if (getNextCoveredPlot() > 0 && getCultureCost(getNextCoveredPlot()-1) > 0)
+			{
+				szBuffer = gDLL->getText("TXT_KEY_MISC_BORDERS_EXPANDED", getNameKey());
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREEXPANDS", MESSAGE_TYPE_MINOR_EVENT, GC.getCommerceInfo(COMMERCE_CULTURE).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+
+				// ONEVENT - Culture growth
+				CvEventReporter::getInstance().cultureExpansion(this, getOwnerINLINE());
+
+				if (isHuman() && !isProductionAutomated())
+				{
+					if (isProductionProcess())
+					{
+						if (GC.getProcessInfo(getProductionProcess()).getProductionToCommerceModifier(COMMERCE_CULTURE) > 0)
+						{
+							m_bPopProductionProcess = true;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+void CvCity::updateCoveredPlots(bool bUpdatePlotGroups)
+{
+	if (getCultureUpdateTimer() > 0)
+	{
+		return;
+	}
+
+	int iCulture = getCulture(getOwnerINLINE());
+	int iNextCoveredPlot = 0;
+	for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+	{
+		iNextCoveredPlot++;
+		if (iCulture < getCultureCost(iI)) break;
+	}
+
+	setNextCoveredPlot(iNextCoveredPlot, bUpdatePlotGroups);
 }

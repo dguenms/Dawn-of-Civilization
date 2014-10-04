@@ -121,5 +121,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("setMongolUP", &CyCity::setMongolUP, "void (bool bNewValue)")
 		.def("getGameTurnPlayerLost", &CyCity::getGameTurnPlayerLost, "int (int ePlayer)")
 		.def("calculateOverallCulturePercent", &CyCity::calculateOverallCulturePercent, "int (int ePlayer)")
+		.def("getNextCoveredPlot", &CyCity::getNextCoveredPlot, "int ()")
 		;
 }

@@ -8,7 +8,7 @@
 #include "CyCity.h"
 
 void CyCityPythonInterface1(python::class_<CyCity>& x);
-void CyCityPythonInterface2(python::class_<CyCity>& x),
+void CyCityPythonInterface2(python::class_<CyCity>& x);
 void CyPlotPythonInterface1(python::class_<CyPlot>& x);
 void CyPlayerPythonInterface1(python::class_<CyPlayer>& x);
 void CyPlayerPythonInterface2(python::class_<CyPlayer>& x);

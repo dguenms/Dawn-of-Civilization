@@ -235,11 +235,9 @@
 			<Civilopedia>TXT_KEY_FEATURE_OASIS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_OASIS</ArtDefineTag>
 			<YieldChanges>
-				<!-- Rhye - start -->
-				<iYieldChange>2</iYieldChange>
+				<iYieldChange>3</iYieldChange>
 				<iYieldChange>0</iYieldChange>
-				<iYieldChange>1</iYieldChange>
-				<!-- Rhye - end -->
+				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
@@ -247,7 +245,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iHealthPercent>0</iHealthPercent>
 			<iDefense>0</iDefense>
-			<iCultureCost>-10</iCultureCost>
+			<iCultureCost>-15</iCultureCost>
 			<iAppearance>500</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>0</iGrowth>
@@ -365,7 +363,7 @@
 			<iSeeThrough>0</iSeeThrough>
 			<iHealthPercent>-40</iHealthPercent>
 			<iDefense>0</iDefense>
-			<iCultureCost>-5</iCultureCost>
+			<iCultureCost>-10</iCultureCost>
 			<iAppearance>10000</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<iGrowth>0</iGrowth>
@@ -478,7 +476,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iHealthPercent>50</iHealthPercent>
 			<iDefense>50</iDefense>
-			<iCultureCost>5</iCultureCost>
+			<iCultureCost>0</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>
 			<!-- Rhye -->

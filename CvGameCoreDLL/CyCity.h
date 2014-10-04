@@ -565,6 +565,7 @@ public:
 	bool isMongolUP() const;
 	void setMongolUP(bool bNewValue);
 	int getGameTurnPlayerLost(int ePlayer);
+	int getNextCoveredPlot() const;
 
 private:
 	CvCity* m_pCity;

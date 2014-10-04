@@ -2655,3 +2655,8 @@ int CyCity::calculateOverallCulturePercent(int ePlayer)
 {
 	return m_pCity ? m_pCity->calculateOverallCulturePercent((PlayerTypes)ePlayer) : 0;
 }
+
+int CyCity::getNextCoveredPlot() const
+{
+	return m_pCity ? m_pCity->getNextCoveredPlot() : -1;
+}

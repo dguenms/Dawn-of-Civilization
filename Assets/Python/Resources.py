@@ -45,7 +45,7 @@ iSilk = con.iSilk
 iRoad = 0
 #Orka: Silk Road road locations
 tSilkRoute = ((85,48), (86,49), (87,48), (88,47), (89,46), (90,47),(90,45),  (91,47),(91,45),  (92,48),(92,45),  (93,48),(93,46),  (94,47), (95,47), (96,47), (97,47), (98,47), (99,46))
-lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 58), (36, 59)]
+lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
 
 class Resources:
 
@@ -156,10 +156,12 @@ class Resources:
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
 			
+		# Leoreth: obstacles for the Vikings
 		if iGameTurn == getTurnForYear(700) and utils.getHumanID() == con.iVikings:
-			gc.getMap().plot(35, 54).setFeatureType(iMud, 0)
+			gc.getMap().plot(35, 54).setFeatureType(con.iMud, 0)
+			gc.getMap().plot(35, 54).setBonusType(con.iSwamp)
 			for x, y in lNewfoundlandCapes:
-				gc.getMap().plot(x, y).setFeatureType(iCape, 0)
+				gc.getMap().plot(x, y).setFeatureType(con.iCape, 0)
 		
 		# Leoreth: for respawned Egypt
 		if iGameTurn == getTurnForYear(900):
@@ -204,6 +206,7 @@ class Resources:
 
 		if (iGameTurn == getTurnForYear(1500)):
 			gc.getMap().plot(35, 54).setFeatureType(-1, 0) # remove Marsh in case it had been placed
+			gc.getMap().plot(35, 54).setBonusType(-1)
 			for x, y in lNewfoundlandCapes:
 				gc.getMap().plot(x, y).setFeatureType(-1, 0)
 			

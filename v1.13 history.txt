@@ -13,3 +13,10 @@
 # Capes and marshes blocking access to America from Newfoundland only appear when the player controls the Vikings
 # added the CN Tower wonder: requires Mass Media, free Broadcast Tower for all cities
 # seceding cities in the New World always go to the Natives instead of Independents
+# New culture rules
+	# instead of culture expansion when a city reaches a new culture level, the covered tiles gradually expand as a city gets more culture
+	# city culture can only extend up to the third ring
+	# more culture required to cover the entire second ring
+	# properties of the plot influence how much culture it takes to cover it (more for desert, peaks ..., less for tiles with bonuses or river connections, making for more geographically appropriate borders)
+	# tiles get covered in order of their culture costs (cheapest first)
+# Oasis yields reverted to BtS settings (+3 food, +2 commerce)

@@ -4564,6 +4564,16 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(NEWLINE);
 		}*/
 
+		// Leoreth: display plot index, only bugfix purposes
+		/*szTempBuffer.Format(L"Index: %d", GC.getMap().plotNum(pPlot->getX(), pPlot->getY()));
+		szString.append(szTempBuffer);
+		szString.append(NEWLINE);*/
+
+		// Leoreth: display plot culture costs, only bugfix purposes
+		szTempBuffer.Format(L"Culture cost: %d", pPlot->calculateCultureCost());
+		szString.append(szTempBuffer);
+		szString.append(NEWLINE);
+
 		eRevealOwner = pPlot->getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true);
 
 		if (eRevealOwner != NO_PLAYER)

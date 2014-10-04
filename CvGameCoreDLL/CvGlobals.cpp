@@ -402,6 +402,8 @@ void CvGlobals::init()
 	COPY(m_aiPlotCardinalDirectionY, aiPlotCardinalDirectionY, int);
 	COPY(m_aiCityPlotX, aiCityPlotX, int);
 	COPY(m_aiCityPlotY, aiCityPlotY, int);
+	COPY(m_aiCityPlot3X, aiCityPlot3X, int);
+	COPY(m_aiCityPlot3Y, aiCityPlot3Y, int);
 	COPY(m_aiCityPlotPriority, aiCityPlotPriority, int);
 	COPY(m_aeTurnLeftDirection, aeTurnLeftDirection, DirectionTypes);
 	COPY(m_aeTurnRightDirection, aeTurnRightDirection, DirectionTypes);

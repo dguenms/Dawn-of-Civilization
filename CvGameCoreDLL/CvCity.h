@@ -1000,11 +1000,13 @@ public:
 	void setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue);
 	bool isColony() const;
 	bool canSlaveJoin() const;
-	int calculateCultureCost(CvPlot* pPlot) const;
+	int calculateCultureCost(CvPlot* pPlot, bool bOrdering = false) const;
 	void updateCultureCosts();
+	void updateCoveredPlots(bool bUpdatePlotGroups);
 	int getCulturePlot(int i) const;
-	int getCulturePlotIndex(int i) const;
 	int getCultureCost(int i) const;
+	int getNextCoveredPlot() const;
+	void setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups);
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1171,6 +1173,8 @@ protected:
 	int m_iCorporationHealth;
 	int m_iCorporationUnhealth;
 
+	int m_iNextCoveredPlot;
+
 	bool m_bNeverLost;
 	bool m_bBombarded;
 	bool m_bDrafted;
@@ -1225,7 +1229,6 @@ protected:
 	// Leoreth
 	int* m_aiGameTurnPlayerLost;
 	int* m_aiCulturePlots;
-	int* m_aiCulturePlotIndices;
 	int* m_aiCultureCosts;
 
 	bool* m_abEverOwned;
