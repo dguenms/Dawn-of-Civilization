@@ -2700,6 +2700,8 @@ iNumBonuses = 39
 iDeer, iFish, iPig, iRice, iSheep, iWheat, iDye, iFur, iGems, iGold, iIncense, iIvory, iSilk, iSilver, iSpices,
 iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobacco) = range(iNumBonuses)
 
+iSwamp = iNumBonuses
+
 #Buildings (update Persian UHV every time this is changed)
 
 iNumBuildings = 205
@@ -2871,8 +2873,6 @@ iOcean = 6
 iTerrainPeak = 7
 iTerrainHills = 8
 iMarsh = 9
-
-iSwamp = 36 #bonus
 
 #Plague
 iImmunity = 20

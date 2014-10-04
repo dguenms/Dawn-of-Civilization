@@ -3220,40 +3220,6 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 		}
 	}
 
-	// Leoreth: no culture from cities in other regions in certain cases (at the moment: Tibet)
-	/*if (eBestPlayer != NO_PLAYER && eBestPlayer != BARBARIAN)
-	{
-		bValid = true;
-		if (getRegionID() == REGION_TIBET)
-		{
-			bValid = false;
-			CvCity* pLoopCity;
-			int iLoop;
-			for (pLoopCity = GET_PLAYER(eBestPlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(eBestPlayer).nextCity(&iLoop))
-			{
-				if (pLoopCity->plot()->getRegionID() == REGION_TIBET)
-				{
-					bValid = true;
-					break;
-				}
-			}
-			for (int iJ = 0; iJ < 4; ++iJ)
-			{
-				if (isCultureRangeCity(eBestPlayer, iJ))
-				{
-					bValid = true;
-					break;
-				}
-			}
-		}
-
-		if (!bValid)
-		{
-			eBestPlayer = NO_PLAYER;
-		}
-	}*/
-	// edead: end
-
 	return eBestPlayer;
 }
 
@@ -10889,14 +10855,14 @@ int CvPlot::calculateCultureCost() const
 	int iCost = 0;
 
 	iCost += GC.getTerrainInfo(getTerrainType()).getCultureCostModifier();
-	iCost += GC.getFeatureInfo(getFeatureType()).getCultureCostModifier();
+	if (getFeatureType() >= 0) iCost += GC.getFeatureInfo(getFeatureType()).getCultureCostModifier();
 
 	if (isHills()) iCost += GC.getDefineINT("CULTURE_COST_HILL");
 	if (isPeak()) iCost += GC.getDefineINT("CULTURE_COST_PEAK");
 
 	if (getBonusType() >= 0) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
 
-	return std::max(0, iCost);
+	return iCost;
 }
 
 // Leoreth

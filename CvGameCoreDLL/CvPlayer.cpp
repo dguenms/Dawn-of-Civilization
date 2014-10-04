@@ -1385,7 +1385,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int iTeamCulturePercent;
 	int iDamage;
 	int iDX, iDY;
-	int iI;
+	int iI, iJ;
 	CLinkList<IDInfo> oldUnits;
 	std::vector<int> aeFreeSpecialists;
 
@@ -1417,48 +1417,41 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	if (bConquest)
 	{
-		iRange = pOldCity->getCultureLevel();
+		GC.getGameINLINE().logMsg("City conquered, next covered plot: %d", pOldCity->getNextCoveredPlot());
 
-		for (iDX = -(iRange); iDX <= iRange; iDX++)
+		for (iI = 0; iI < pOldCity->getNextCoveredPlot(); iI++)
 		{
-			for (iDY = -(iRange); iDY <= iRange; iDY++)
+			pLoopPlot = GC.getMap().plotByIndex(pOldCity->getCulturePlot(iI));
+
+			if (pLoopPlot->getOwnerINLINE() == pOldCity->getOwnerINLINE())
 			{
-				if (pOldCity->cultureDistance(iDX, iDY) <= iRange)
+				if (pLoopPlot->getNumCultureRangeCities(pOldCity->getOwnerINLINE()) == 1)
 				{
-					pLoopPlot = plotXY(pOldCity->getX_INLINE(),pOldCity-> getY_INLINE(), iDX, iDY);
+					bool bForceUnowned = false;
 
-					if (pLoopPlot != NULL)
+					for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
 					{
-						if (pLoopPlot->getOwnerINLINE() == pOldCity->getOwnerINLINE())
+						if (GET_PLAYER((PlayerTypes)iJ).isAlive())
 						{
-							if (pLoopPlot->getNumCultureRangeCities(pOldCity->getOwnerINLINE()) == 1)
+							if ((GET_PLAYER((PlayerTypes)iJ).getTeam() != getTeam()) && (GET_PLAYER((PlayerTypes)iJ).getTeam() != pOldCity->getTeam()))
 							{
-								bool bForceUnowned = false;
-
-								for (iI = 0; iI < MAX_PLAYERS; iI++)
+								if (pLoopPlot->getNumCultureRangeCities((PlayerTypes)iJ) > 0)
 								{
-									if (GET_PLAYER((PlayerTypes)iI).isAlive())
-									{
-										if ((GET_PLAYER((PlayerTypes)iI).getTeam() != getTeam()) && (GET_PLAYER((PlayerTypes)iI).getTeam() != pOldCity->getTeam()))
-										{
-											if (pLoopPlot->getNumCultureRangeCities((PlayerTypes)iI) > 0)
-											{
-												bForceUnowned = true;
-												break;
-											}
-										}
-									}
-								}
-
-								if (bForceUnowned)
-								{
-									pLoopPlot->setForceUnownedTimer(GC.getDefineINT("FORCE_UNOWNED_CITY_TIMER"));
+									bForceUnowned = true;
+									break;
 								}
 							}
 						}
 					}
+
+					if (bForceUnowned)
+					{
+						pLoopPlot->setForceUnownedTimer(GC.getDefineINT("FORCE_UNOWNED_CITY_TIMER"));
+					}
 				}
 			}
+
+			//pLoopPlot->changeCultureRangeCities(pOldCity->getOwnerINLINE(), std::max(1, plotDistance(pOldCity->getX(), pOldCity->getY(), pLoopPlot->getX(), pLoopPlot->getY())), -1, true);
 		}
 	}
 
@@ -6930,9 +6923,6 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 			iProductionNeeded *= 146;
 			iProductionNeeded /= 100;
 		}
-
-		if (getID() == INDIA)
-			iProductionNeeded *= 2;
 	}
 	else if (eUnit == 5) { //Worker
 		if (getCurrentEra() == 2) { //medieval

@@ -342,7 +342,7 @@
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>25</iBuildModifier>
 			<iDefense>0</iDefense>
-			<iCultureCost>10</iCultureCost>
+			<iCultureCost>15</iCultureCost>
 			<Button>Art/Interface\Buttons\WorldBuilder\Terrain_Desert.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
