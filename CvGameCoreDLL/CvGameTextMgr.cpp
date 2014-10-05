@@ -4570,9 +4570,9 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		szString.append(NEWLINE);*/
 
 		// Leoreth: display plot culture costs, only bugfix purposes
-		szTempBuffer.Format(L"Culture cost: %d", pPlot->calculateCultureCost());
+		/*szTempBuffer.Format(L"Culture cost: %d", pPlot->calculateCultureCost());
 		szString.append(szTempBuffer);
-		szString.append(NEWLINE);
+		szString.append(NEWLINE);*/
 
 		eRevealOwner = pPlot->getRevealedOwner(GC.getGameINLINE().getActiveTeam(), true);
 
@@ -5423,20 +5423,34 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 // BUG - Building Icons - end
 
 // BUG - Culture Turns - start
+	bool bDisplayCoverage = (pCity->getNextCoveredPlot() < 37);
 	int iCultureRate = pCity->getCommerceRateTimes100(COMMERCE_CULTURE);
+	int iThreshold = pCity->getCultureThreshold();
+	int iCurrent = pCity->getCulture(pCity->getOwnerINLINE());
+	int iOffset = 0;
+
+	if (bDisplayCoverage)
+	{
+		int iNextCoveredPlot = pCity->getNextCoveredPlot();
+		if (iNextCoveredPlot > 0) iOffset = pCity->getCultureCost(iNextCoveredPlot-1);
+		iThreshold = pCity->getCultureCost(iNextCoveredPlot) - iOffset;
+		iCurrent -= iOffset;
+	}
+
 	if (iCultureRate > 0 && getBugOptionBOOL("CityBar__CultureTurns", true, "BUG_CITYBAR_CULTURE_TURNS"))
 	{
+
 		if (pCity->getCultureLevel() != NO_CULTURELEVEL)
 		{
-			szString.append(gDLL->getText("TXT_KEY_CITY_BAR_CULTURE", pCity->getCulture(pCity->getOwnerINLINE()), pCity->getCultureThreshold(), GC.getCultureLevelInfo(pCity->getCultureLevel()).getTextKeyWide()));
+			szString.append(gDLL->getText("TXT_KEY_CITY_BAR_CULTURE", iCurrent, iThreshold, bDisplayCoverage ? gDLL->getText("TXT_KEY_INTERFACE_CITY_NEXT_PLOT").c_str() : GC.getCultureLevelInfo(pCity->getCultureLevel()).getTextKeyWide()));
 		}
 		else
 		{
-			szString.append(gDLL->getText("TXT_KEY_CITY_BAR_CULTURE_NO_LEVEL", pCity->getCulture(pCity->getOwnerINLINE()), pCity->getCultureThreshold()));
+			szString.append(gDLL->getText("TXT_KEY_CITY_BAR_CULTURE_NO_LEVEL", iCurrent, iThreshold));
 		}
 		// all values are *100
 		int iCulture = pCity->getCultureTimes100(pCity->getOwnerINLINE());
-		int iCultureLeft = 100 * pCity->getCultureThreshold() - iCulture;
+		int iCultureLeft = 100 * iThreshold - iCulture;
 		int iCultureTurns = (iCultureLeft + iCultureRate - 1) / iCultureRate;
 		szString.append(L" ");
 		szString.append(gDLL->getText("INTERFACE_CITY_TURNS", iCultureTurns));
@@ -5446,7 +5460,7 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 		// unchanged
 		if (pCity->getCultureLevel() != NO_CULTURELEVEL)
 		{
-			szString.append(gDLL->getText("TXT_KEY_CITY_BAR_CULTURE", pCity->getCulture(pCity->getOwnerINLINE()), pCity->getCultureThreshold(), GC.getCultureLevelInfo(pCity->getCultureLevel()).getTextKeyWide()));
+			szString.append(gDLL->getText("TXT_KEY_CITY_BAR_CULTURE", iCurrent, iThreshold, bDisplayCoverage ? gDLL->getText("TXT_KEY_INTERFACE_CITY_NEXT_PLOT").c_str() : GC.getCultureLevelInfo(pCity->getCultureLevel()).getTextKeyWide()));
 		}
 	}
 // BUG - Culture Turns - end

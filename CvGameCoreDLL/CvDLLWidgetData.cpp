@@ -4173,21 +4173,46 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 
 	if (pHeadSelectedCity != NULL)
 	{
+		// Leoreth: if not all tiles can be covered, display this instead
+		bool bDisplayCoverage = (pHeadSelectedCity->getNextCoveredPlot() < NUM_CITY_PLOTS_3);
+
 		int iCultureTimes100 = pHeadSelectedCity->getCultureTimes100(pHeadSelectedCity->getOwnerINLINE());
-		if (iCultureTimes100%100 == 0)
+
+		int iCurrent, iThreshold;
+		if (bDisplayCoverage)
 		{
-			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CULTURE", iCultureTimes100/100, pHeadSelectedCity->getCultureThreshold()));
+			int iNextCoveredPlot = pHeadSelectedCity->getNextCoveredPlot();
+			int iOffset = 0;
+			if (iCultureTimes100 > 0 && iNextCoveredPlot > 0) iOffset = pHeadSelectedCity->getCultureCost(iNextCoveredPlot-1);
+			
+			iThreshold = pHeadSelectedCity->getCultureCost(iNextCoveredPlot) - iOffset;
+			iCurrent = iCultureTimes100 - iOffset * 100;
 		}
 		else
 		{
-			CvWString szCulture = CvWString::format(L"%d.%02d", iCultureTimes100/100, iCultureTimes100%100);
-			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CULTURE_FLOAT", szCulture.GetCString(), pHeadSelectedCity->getCultureThreshold()));
+			iThreshold = pHeadSelectedCity->getCultureThreshold();
+			iCurrent = iCultureTimes100;
+		}
+
+		if (iCurrent%100 == 0)
+		{
+			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CULTURE", iCurrent/100, iThreshold));
+		}
+		else
+		{
+			CvWString szCulture = CvWString::format(L"%d.%02d", iCurrent/100, iCurrent%100);
+			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CULTURE_FLOAT", szCulture.GetCString(), iThreshold));
+		}
+
+		if (bDisplayCoverage)
+		{
+			szBuffer.append(CvWString::format(L" (%d total)", iCultureTimes100/100));
 		}
 
 		int iCultureRateTimes100 = pHeadSelectedCity->getCommerceRateTimes100(COMMERCE_CULTURE);
 		if (iCultureRateTimes100 > 0)
 		{
-			int iCultureLeftTimes100 = 100 * pHeadSelectedCity->getCultureThreshold() - iCultureTimes100;
+			int iCultureLeftTimes100 = 100 * iThreshold - iCultureTimes100;
 
 			if (iCultureLeftTimes100 > 0)
 			{
