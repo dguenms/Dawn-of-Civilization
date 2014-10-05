@@ -2660,3 +2660,8 @@ int CyCity::getNextCoveredPlot() const
 {
 	return m_pCity ? m_pCity->getNextCoveredPlot() : -1;
 }
+
+int CyCity::getCultureCost(int i) const
+{
+	return m_pCity ? m_pCity->getCultureCost(i) : -1;
+}

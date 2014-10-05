@@ -17,6 +17,11 @@
 		<Italian>[COLOR_MAGENTA]Il confine culturale di %s1 sta per espandersi.[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_MAGENTA]El límite cultural de %s1's es alrededor ampliarse.[COLOR_REVERT]</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_CITY_NEXT_CULTURE_LEVEL</Tag>
+		<English>[COLOR_MAGENTA]%s1 is about to reach a new culture level.[COLOR_REVERT]</English>
+		<German>[COLOR_MAGENTA]%s1 wird in der nächsten Runde eine neue Kulturstufe erreichen.[COLOR_REVERT]</German>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_MORECIV4LERTS_CITY_FOUNDED</Tag>

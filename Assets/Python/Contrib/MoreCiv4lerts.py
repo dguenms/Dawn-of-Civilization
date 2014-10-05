@@ -210,17 +210,28 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 					if (city.getFoodTurnsLeft() == 1 and not city.isFoodProduction()) and not city.AI_isEmphasize(5):
 						popGrowthCount = popGrowthCount + 1
 					if (BeginTurn and self.getCheckForCityBorderExpansion()):
+						iCurrent = city.getCulture(loopPlayer)
+						iChangeRate = city.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)
+						iThreshold = city.getCultureThreshold()
+						iNextCoveredPlot = city.getNextCoveredPlot()
+								
+						# new culture level
 						if (city.getCultureLevel() != gc.getNumCultureLevelInfos() - 1):
-							if ((city.getCulture(loopPlayer) + city.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) >= city.getCultureThreshold()):
-								message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_TO_EXPAND",(city.getName(),))
+							if iCurrent + iChangeRate >= iThreshold:
+								message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_NEXT_CULTURE_LEVEL",(city.getName(),))
 								icon = "Art/Interface/Buttons/General/Warning_popup.dds"
 								self._addMessageAtCity(loopPlayer, message, icon, city)
-							else: pass
-						else: pass #expand check
-					else: pass #message check
-				else: pass #end city loop
-			else: pass #end activePlayer loop
-		else: pass # end expansion check / pop count
+						
+						# new plot(s) covered
+						if iNextCoveredPlot < 37:
+							iOffset = 0
+							if iNextCoveredPlot > 0: iOffset = city.getCultureCost(iNextCoveredPlot-1)
+							iThreshold = city.getCultureCost(iNextCoveredPlot) - iOffset
+							iCurrent -= iOffset
+							if iCurrent + iChangeRate >= iThreshold:
+								message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_TO_EXPAND", (city.getName(), ))
+								icon = "Art/Interface/Buttons/General/Warning_popup.dds"
+								self._addMessageAtCity(loopPlayer, message, icon, city)
 
 		# Check Domination Limit
 		if (self.getCheckForDomVictory() and gc.getGame().isVictoryValid(DomVictory)):

@@ -566,6 +566,7 @@ public:
 	void setMongolUP(bool bNewValue);
 	int getGameTurnPlayerLost(int ePlayer);
 	int getNextCoveredPlot() const;
+	int getCultureCost(int i) const;
 
 private:
 	CvCity* m_pCity;

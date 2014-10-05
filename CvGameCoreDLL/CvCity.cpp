@@ -17196,7 +17196,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
 	else iCost += iDistance * GC.getDefineINT("CULTURE_COST_DISTANCE");
 
-	if (plot()->isRiver() && plot()->getRiverID() == pPlot->getRiverID()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
+	if (plot()->isRiverConnection(directionXY(plot(), pPlot)) || plot()->isRiverConnection(directionXY(pPlot, plot()))) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
 
 	// Leoreth: Inca UP
 	if (getOwnerINLINE() == INCA && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
@@ -17254,6 +17254,7 @@ void CvCity::updateCultureCosts()
 	int iCumulativeCosts = 0;
 	int iCurrentCosts;
 	CvPlot* plot;
+	//if (getOwner() == EGYPT) GC.getGameINLINE().logMsg("Cumulative costs for x=%d, y=%d", getX(), getY());
 	for (std::vector<int>::iterator it = plots.begin(); it != plots.end(); ++it)
 	{
 		m_aiCulturePlots[iI] = *it;
@@ -17261,6 +17262,7 @@ void CvCity::updateCultureCosts()
 		iCurrentCosts = (plot != NULL) ? calculateCultureCost(plot) : 0;
 		iCumulativeCosts += iCurrentCosts;
 		m_aiCultureCosts[iI] = iCumulativeCosts; 
+		//if (getOwner() == EGYPT) GC.getGameINLINE().logMsg("%d = %d (+%d)", iI, iCumulativeCosts, iCurrentCosts);
 		iI++;
 	}
 }
@@ -17278,6 +17280,8 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 	int iCultureRange;
 	int iI;
 
+	//if (getOwner() == EGYPT) GC.getGameINLINE().logMsg("Next covered plot set to: %d (culture = %d)", iNewValue, getCultureTimes100(getOwnerINLINE()) / 100);
+
 	iOldValue = getNextCoveredPlot();
 
 	if (iNewValue < iOldValue)
@@ -17292,7 +17296,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 				if (pLoopPlot != NULL)
 				{
-					GC.getGameINLINE().logMsg("Updated coverage for x=%d, y=%d on x=%d, y=%d", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
+					//GC.getGameINLINE().logMsg("Updated coverage for x=%d, y=%d on x=%d, y=%d", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
 					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
 					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, -1, bUpdatePlotGroups);
 				}
@@ -17312,7 +17316,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 				if (pLoopPlot != NULL)
 				{
-					GC.getGameINLINE().logMsg("Updated coverage for x=%d, y=%d on x=%d, y=%d (id=%d)", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY(), getCulturePlot(iI));
+					//GC.getGameINLINE().logMsg("Updated coverage for x=%d, y=%d on x=%d, y=%d (id=%d)", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY(), getCulturePlot(iI));
 					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
 					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, 1, bUpdatePlotGroups);
 				}
@@ -17355,8 +17359,8 @@ void CvCity::updateCoveredPlots(bool bUpdatePlotGroups)
 	int iNextCoveredPlot = 0;
 	for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
 	{
-		iNextCoveredPlot++;
 		if (iCulture < getCultureCost(iI)) break;
+		iNextCoveredPlot++;
 	}
 
 	setNextCoveredPlot(iNextCoveredPlot, bUpdatePlotGroups);

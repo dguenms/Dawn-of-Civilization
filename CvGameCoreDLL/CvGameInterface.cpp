@@ -121,6 +121,19 @@ void CvGame::updateColoredPlots()
 					}
 				}
 			}
+
+			// Leoreth: display next culture plot
+			if (pHeadSelectedCity->getNextCoveredPlot() < NUM_CITY_PLOTS)
+			{
+				pLoopPlot = GC.getMap().plotByIndex(pHeadSelectedCity->getCulturePlot(pHeadSelectedCity->getNextCoveredPlot()));
+
+				if (pLoopPlot != NULL)
+				{
+					NiColorA color(GC.getColorInfo((ColorTypes)GC.getInfoTypeForString("COLOR_CULTURE_STORED")).getColor());
+					color.a = 0.7f;
+					gDLL->getEngineIFace()->addColoredPlot(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), color, PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_BASE);
+				}
+			}
 		}
 		else
 		{

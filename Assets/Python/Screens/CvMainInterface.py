@@ -4441,10 +4441,13 @@ class CvMainInterface:
 					screen.setLabel( "DefenseText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - 270, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_DEFENSE, -1, -1 )
 					screen.show( "DefenseText" )
 
-				if ( pHeadSelectedCity.getCultureLevel != CultureLevelTypes.NO_CULTURELEVEL ):
+				if ( pHeadSelectedCity.getCultureLevel() != CultureLevelTypes.NO_CULTURELEVEL ):
+					bDisplayCoverage = (pHeadSelectedCity.getNextCoveredPlot() < 37)
 					iRate = pHeadSelectedCity.getCommerceRateTimes100(CommerceTypes.COMMERCE_CULTURE)
+					szCommerceLevel = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getTextKey()
+					if bDisplayCoverage: szCommerceLevel = localText.getText("TXT_KEY_INTERFACE_CITY_NEXT_PLOT", ())
 					if (iRate%100 == 0):
-						szBuffer = localText.getText("INTERFACE_CITY_COMMERCE_RATE", (gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar(), gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getTextKey(), iRate/100))
+						szBuffer = localText.getText("INTERFACE_CITY_COMMERCE_RATE", (gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar(), szCommerceLevel, iRate/100))
 					else:
 						szRate = u"+%d.%02d" % (iRate/100, iRate%100)
 						szBuffer = localText.getText("INTERFACE_CITY_COMMERCE_RATE_FLOAT", (gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar(), gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getTextKey(), szRate))
@@ -4485,12 +4488,23 @@ class CvMainInterface:
 						screen.setBarPercentage( "GreatPeopleBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getGreatPeopleRate()) / float( gc.getPlayer( pHeadSelectedCity.getOwner() ).greatPeopleThreshold(false) ) ) ) / ( 1 - iFirst ) )
 					screen.show( "GreatPeopleBar" )
 
-				iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * pHeadSelectedCity.getCultureThreshold())
-				screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst )
-				if ( iFirst == 1 ):
-					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) )
+				iNextCoveredPlot = pHeadSelectedCity.getNextCoveredPlot()
+				if iNextCoveredPlot < 37:
+					if iNextCoveredPlot == 0: iNextCost = pHeadSelectedCity.getCultureCost(iNextCoveredPlot)
+					else: iNextCost = pHeadSelectedCity.getCultureCost(iNextCoveredPlot) - pHeadSelectedCity.getCultureCost(iNextCoveredPlot-1)
+					iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * iNextCost)
+					screen.setBarPercentage("CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst)
+					if iFirst == 1:
+						screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, (float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(iNextCost)))
+					else:
+						screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ((float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(iNextCost))) / (1-iFirst))
 				else:
-					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
+					iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * pHeadSelectedCity.getCultureThreshold())
+					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst )
+					if ( iFirst == 1 ):
+						screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) )
+					else:
+						screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
 				screen.show( "CultureBar" )
 				
 		else:
