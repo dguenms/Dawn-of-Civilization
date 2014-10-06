@@ -4442,7 +4442,7 @@ class CvMainInterface:
 					screen.show( "DefenseText" )
 
 				if ( pHeadSelectedCity.getCultureLevel() != CultureLevelTypes.NO_CULTURELEVEL ):
-					bDisplayCoverage = (pHeadSelectedCity.getNextCoveredPlot() < 37)
+					bDisplayCoverage = (pHeadSelectedCity.getEffectiveNextCoveredPlot() < 37)
 					iRate = pHeadSelectedCity.getCommerceRateTimes100(CommerceTypes.COMMERCE_CULTURE)
 					szCommerceLevel = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getTextKey()
 					if bDisplayCoverage: szCommerceLevel = localText.getText("TXT_KEY_INTERFACE_CITY_NEXT_PLOT", ())
@@ -4488,7 +4488,7 @@ class CvMainInterface:
 						screen.setBarPercentage( "GreatPeopleBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getGreatPeopleRate()) / float( gc.getPlayer( pHeadSelectedCity.getOwner() ).greatPeopleThreshold(false) ) ) ) / ( 1 - iFirst ) )
 					screen.show( "GreatPeopleBar" )
 
-				iNextCoveredPlot = pHeadSelectedCity.getNextCoveredPlot()
+				iNextCoveredPlot = pHeadSelectedCity.getEffectiveNextCoveredPlot()
 				if iNextCoveredPlot < 37:
 					if iNextCoveredPlot == 0: iNextCost = pHeadSelectedCity.getCultureCost(iNextCoveredPlot)
 					else: iNextCost = pHeadSelectedCity.getCultureCost(iNextCoveredPlot) - pHeadSelectedCity.getCultureCost(iNextCoveredPlot-1)

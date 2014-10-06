@@ -123,5 +123,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("calculateOverallCulturePercent", &CyCity::calculateOverallCulturePercent, "int (int ePlayer)")
 		.def("getNextCoveredPlot", &CyCity::getNextCoveredPlot, "int ()")
 		.def("getCultureCost", &CyCity::getCultureCost, "int (int i)")
+		.def("getEffectiveNextCoveredPlot", &CyCity::getEffectiveNextCoveredPlot, "int ()")
 		;
 }

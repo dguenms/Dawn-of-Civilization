@@ -682,7 +682,9 @@ class UniquePowers:
 			for city in utils.getCityList(iPlayer):
 				iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
 				if city.getRegionID() in con.lNewWorld:
-					if iHappinessDifference > 0: lCities.append((city, iHappinessDifference + city.foodDifference(False) / 2 + city.getPopulation() / 2))
+					iNorthAmericaBonus = 0
+					if city.getRegionID() in [con.rCanada, con.rUnitedStates]: iNorthAmericaBonus = 5
+					if iHappinessDifference > 0: lCities.append((city, iHappinessDifference + city.foodDifference(False) / 2 + city.getPopulation() / 2 + iNorthAmericaBonus))
 				else:
 					if iHappinessDifference < 0: lCities.append((city, -iHappinessDifference))
 			
