@@ -14142,7 +14142,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 	{
 		for (int iI = 0; iI < getNextCoveredPlot(); iI++)
 		{
-			pLoopPlot = plotCity3(getX(), getY(), iI);
+			pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iI));
 
 			if (pLoopPlot->isPotentialCityWorkForArea(area()))
 			{
@@ -17190,7 +17190,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 			if (!isCoastal(20)) iCost += 1000;
 			else if (iDistance > 1) iCost += 5;
 		}
-		if (!pPlot->isWater() && pPlot->getArea() != getArea()) iCost += 1000;
+		//if (!pPlot->isWater() && pPlot->getArea() != getArea()) iCost += 1000;
 	}
 
 	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
@@ -17364,4 +17364,31 @@ void CvCity::updateCoveredPlots(bool bUpdatePlotGroups)
 	}
 
 	setNextCoveredPlot(iNextCoveredPlot, bUpdatePlotGroups);
+}
+
+// Leoreth: skip plots that are already covered by one of your cities or cannot be reached because of culture distance
+int CvCity::getEffectiveNextCoveredPlot() const
+{
+	int iNextCoveredPlot = getNextCoveredPlot();
+	int iCulture = getCulture(getOwnerINLINE());
+
+	CvPlot* pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iNextCoveredPlot));
+
+	int iDistance;
+	bool bAlreadyCovered, bOutOfRange, bAfterExpansion;
+	while (iNextCoveredPlot < NUM_CITY_PLOTS)
+	{
+		pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iNextCoveredPlot));
+		iDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
+
+		bAlreadyCovered = (pLoopPlot->getNumCultureRangeCities(getOwnerINLINE()) > 0);
+		bOutOfRange = (iDistance > getCultureLevel());
+		bAfterExpansion = (getCultureCost(iNextCoveredPlot) >= getCultureThreshold((CultureLevelTypes)iDistance));
+		
+		if (!bAlreadyCovered && (!bOutOfRange || bAfterExpansion)) break;
+
+		iNextCoveredPlot++;
+	}
+
+	return iNextCoveredPlot;
 }

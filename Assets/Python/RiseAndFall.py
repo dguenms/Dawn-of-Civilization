@@ -433,7 +433,8 @@ class RiseAndFall:
 				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)
 		self.setAlreadySwitched(True)
 		gc.getPlayer(iCiv).setPlayable(True)
-		sd.setCrisisImminent(False)
+		
+		sd.resetHumanStability()
 
 		pPlayer = gc.getPlayer(iCiv)
 		pCity, iter = pPlayer.firstCity(true)
@@ -1442,6 +1443,8 @@ class RiseAndFall:
 		
 		# adjust starting stability
 		sd.setStabilityLevel(iCiv, con.iStabilityStable)
+		sd.resetStability(iCiv)
+		if utils.getHumanID() == iCiv: sd.resetHumanStability()
 		
 		# ask human player for flips
 		if iHumanCities > 0 and iCiv != utils.getHumanID():

@@ -149,6 +149,27 @@ class StoredData:
 				}
                 self.save()
 		
+	def resetStability(self, iPlayer):
+		self.setCrisisCountdown(iPlayer, 0)
+		self.setLastStability(iPlayer, 0)
+		self.setLastDifference(iPlayer, 0)
+		for i in range(5): self.setStabilityCategoryValue(iPlayer, i, 0)
+		self.setNumPreviousCities(iPlayer, 0)
+		self.setBarbarianLosses(iPlayer, 0)
+		self.setPreviousCommerce(iPlayer, 0)
+		self.setEconomyTrend(iPlayer, [])
+		self.setLastExpansionStability(iPlayer, 0)
+		self.setHappinessTrend(iPlayer, [])
+		for iLoopPlayer in range(con.iNumPlayers):
+			self.setWarTrend(iPlayer, iLoopPlayer, [])
+			self.setWarTrend(iLoopPlayer, iPlayer, [])
+			self.setWarStartTurn(iPlayer, iLoopPlayer, 0)
+			self.setWarStartTurn(iLoopPlayer, iPlayer, 0)
+		
+	def resetHumanStability(self):
+		self.setCrisisImminent(False)
+		self.setHumanStability(0)
+		self.setHumanRazePenalty(0)
 		
 	def getStabilityLevel(self, iPlayer):
 		return self.scriptDict['lStabilityLevels'][iPlayer]
@@ -158,6 +179,9 @@ class StoredData:
 		
 	def getCrisisCountdown(self, iPlayer):
 		return self.scriptDict['lCrisisCountdown'][iPlayer]
+		
+	def setCrisisCountdown(self, iPlayer, iNewValue):
+		self.scriptDict['lCrisisCountdown'][iPlayer] = iNewValue
 		
 	def changeCrisisCountdown(self, iPlayer, iChange):
 		self.scriptDict['lCrisisCountdown'][iPlayer] += iChange
@@ -181,6 +205,9 @@ class StoredData:
 		self.scriptDict['lEconomyTrend'][iPlayer].append(iEntry)
 		if len(self.scriptDict['lEconomyTrend'][iPlayer]) > 10:
 			self.scriptDict['lEconomyTrend'][iPlayer].pop(0)
+			
+	def setEconomyTrend(self, iPlayer, lNewValue):
+		self.scriptDict['lEconomyTrend'][iPlayer] = lNewValue
 		
 	def getLastExpansionStability(self, iPlayer):
 		return self.scriptDict['lLastExpansionStability'][iPlayer]
@@ -198,6 +225,9 @@ class StoredData:
 		self.scriptDict['lHappinessTrend'][iPlayer].append(iEntry)
 		if len(self.scriptDict['lHappinessTrend'][iPlayer]) > 10:
 			self.scriptDict['lHappinessTrend'][iPlayer].pop(0)
+			
+	def setHappinessTrend(self, iPlayer, lNewValue):
+		self.scriptDict['lHappinessTrend'][iPlayer] = lNewValue
 		
 	def getLastDifference(self, iPlayer):
 		return -self.scriptDict['lLastDifference'][iPlayer]
@@ -346,6 +376,9 @@ class StoredData:
 		
 	def getBarbarianLosses(self, iPlayer):
 		return self.scriptDict['lBarbarianLosses'][iPlayer]
+		
+	def setBarbarianLosses(self, iPlayer, iNewValue):
+		self.scriptDict['lBarbarianLosses'][iPlayer] = iNewValue 
 		
 	def changeBarbarianLosses(self, iPlayer, iChange):
 		self.scriptDict['lBarbarianLosses'][iPlayer] += iChange

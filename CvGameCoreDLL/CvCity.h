@@ -1007,6 +1007,7 @@ public:
 	int getCultureCost(int i) const;
 	int getNextCoveredPlot() const;
 	void setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups);
+	int getEffectiveNextCoveredPlot() const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

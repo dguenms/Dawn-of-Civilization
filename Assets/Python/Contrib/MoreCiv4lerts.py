@@ -213,7 +213,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 						iCurrent = city.getCulture(loopPlayer)
 						iChangeRate = city.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)
 						iThreshold = city.getCultureThreshold()
-						iNextCoveredPlot = city.getNextCoveredPlot()
+						iNextCoveredPlot = city.getEffectiveNextCoveredPlot()
 								
 						# new culture level
 						if (city.getCultureLevel() != gc.getNumCultureLevelInfos() - 1):

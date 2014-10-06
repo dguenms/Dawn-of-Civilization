@@ -1817,6 +1817,12 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	    }
 	}
 
+	// Leoreth: America doesn't care about Canada until the Canadians spawn
+	if (getID() == AMERICA && GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[CANADA]) + getTurns(10))
+	{
+		if (iY >= 52) return 0;
+	}
+
 	bIsCoastal = pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN());
 	pArea = pPlot->area();
 	iNumAreaCities = pArea->getCitiesPerPlayer(getID());
@@ -9133,6 +9139,9 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 
 	iValue -= (iValue % GC.getDefineINT("DIPLOMACY_VALUE_REMAINDER"));
 
+	// Leoreth: help Canada acquire cities
+	if (getID() == CANADA) iValue /= 2;
+
 	if (isHuman())
 	{
 		return std::max(iValue, GC.getDefineINT("DIPLOMACY_VALUE_REMAINDER"));
@@ -9241,7 +9250,8 @@ DenialTypes CvPlayerAI::AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const
 	}
 	//Rhye - end
 
-	if (pCity->calculateCulturePercent(getID()) > 50)
+	// Leoreth: help Canada a bit
+	if (pCity->calculateCulturePercent(getID()) > 50 && ePlayer != CANADA)
 	{
 		return DENIAL_TOO_MUCH;
 	}
