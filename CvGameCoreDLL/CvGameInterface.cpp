@@ -123,10 +123,10 @@ void CvGame::updateColoredPlots()
 			}
 
 			// Leoreth: display next culture plot
-			int iNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
-			if (iNextCoveredPlot < NUM_CITY_PLOTS)
+			int iEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
+			if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS)
 			{
-				pLoopPlot = GC.getMap().plotByIndex(pHeadSelectedCity->getCulturePlot(iNextCoveredPlot));
+				pLoopPlot = GC.getMap().plotByIndex(pHeadSelectedCity->getCulturePlot(iEffectiveNextCoveredPlot));
 
 				if (pLoopPlot != NULL)
 				{

@@ -297,8 +297,14 @@ class Congress:
 			elif iCommerceType == 3: 
 				textKey = "TXT_KEY_CONGRESS_MANIPULATION"
 				button = 'Art/Interface/Buttons/Espionage.dds'
+				
+			if iThreshold == iLowChance: sChance = "TXT_KEY_CONGRESS_CHANCE_AVERAGE"
+			elif iThreshold == iHighChance: sChance = "TXT_KEY_CONGRESS_CHANCE_VERY_HIGH"
+			else: sChance = "TXT_KEY_CONGRESS_CHANCE_HIGH"
 			
-			popup.addPythonButton(localText.getText(textKey, (iCost,)), button)
+			sChance = localText.getText(sChance, ())
+			
+			popup.addPythonButton(localText.getText(textKey, (iCost, sChance)), button)
 			
 		if self.lBriberyOptions:
 			popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_NO_BRIBE", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_BUTTONS_CANCEL")).getPath())
@@ -347,7 +353,7 @@ class Congress:
 				self.vote(iBribedPlayer, iClaimant, 1)
 				
 			gc.getPlayer(iBribedPlayer).AI_changeMemoryCount(utils.getHumanID(), MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, utils.getTurns(5))
-			gc.getPlayer(iBribedPlayer).AI_changeAttitudeExtra(utils.getHumanID(), -4)
+			gc.getPlayer(iBribedPlayer).AI_changeAttitudeExtra(utils.getHumanID(), -2)
 			
 		popup = CyPopupInfo()
 		popup.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
@@ -381,11 +387,17 @@ class Congress:
 		popup.setData2(x)
 		popup.setData3(y)
 		
+		sVotedYes = ""
+		for iPlayer in self.dVotedFor[iClaimant]:
+			if utils.getHumanID() != iPlayer and iClaimant != iPlayer:
+				sVotedYes += localText.getText("TXT_KEY_CONGRESS_INVITE", (gc.getPlayer(iPlayer).getCivilizationDescription(0),))
+		
+		
 		if plot.isCity():
-			sText = localText.getText("TXT_KEY_CONGRESS_DEMAND_CITY", (gc.getPlayer(iClaimant).getCivilizationShortDescription(0), plot.getPlotCity().getName()))
+			sText = localText.getText("TXT_KEY_CONGRESS_DEMAND_CITY", (gc.getPlayer(iClaimant).getCivilizationShortDescription(0), plot.getPlotCity().getName(), sVotedYes))
 		else:
 			closestCity = gc.getMap().findCity(x, y, utils.getHumanID(), TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
-			sText = localText.getText("TXT_KEY_CONGRESS_DEMAND_TERRITORY", (gc.getPlayer(iClaimant).getCivilizationShortDescription(0), closestCity.getName()))
+			sText = localText.getText("TXT_KEY_CONGRESS_DEMAND_TERRITORY", (gc.getPlayer(iClaimant).getCivilizationShortDescription(0), closestCity.getName(), sVotedYes))
 			
 		popup.setText(sText)
 		popup.addPythonButton(localText.getText("TXT_KEY_CONGRESS_ACCEPT", ()), gc.getInterfaceArtInfo(gc.getInfoTypeForString("INTERFACE_EVENT_BULLET")).getPath())
@@ -461,6 +473,13 @@ class Congress:
 			iHostPlayer = self.lWinners[0]
 		else:
 			iHostPlayer = utils.getRandomEntry(self.lInvites)
+			
+		# Leoreth: establish contact between all participants
+		for iThisPlayer in self.lInvites:
+			for iThatPlayer in self.lInvites:
+				if iThisPlayer != iThatPlayer:
+					tThisPlayer = gc.getTeam(iThisPlayer)
+					if not tThisPlayer.canContact(iThatPlayer): tThisPlayer.meet(iThatPlayer, False)
 			
 		self.sHostCityName = utils.getRandomEntry(utils.getCoreCityList(iHostPlayer, utils.getReborn(iHostPlayer))).getName()
 		
@@ -805,7 +824,7 @@ class Congress:
 				self.vote(iVoter, iClaimant, -1)
 				return
 				
-		# vote to assing minor cities if there is a valid claim
+		# vote yes to asking minor cities if there is a valid claim
 		if bOwner and bMinor:
 			if iClaimValidity > 0:
 				print 'Voted YES: valid claim on minors'
@@ -814,6 +833,12 @@ class Congress:
 				print 'Voted NO: invalid claim on minors'
 				self.vote(iVoter, iClaimant, -1)
 			return
+			
+		# always vote no against claims against a common enemy
+		if bOwner and not bOwnClaim:
+			if tVoter.isAtWar(iClaimant) and gc.getTeam(iOwner).isAtWar(iClaimant) and not tVoter.isAtWar(iOwner):
+				print 'Voted NO: claimant is common enemy'
+				self.vote(iVoter, iClaimant, -1)
 			
 		# maybe include threatened here?
 		# winners of wars don't need valid claims

@@ -156,8 +156,8 @@ class Resources:
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
 			
-		# Leoreth: obstacles for the Vikings
-		if iGameTurn == getTurnForYear(700) and utils.getHumanID() == con.iVikings:
+		# Leoreth: obstacles for colonization
+		if iGameTurn == getTurnForYear(700):
 			gc.getMap().plot(35, 54).setFeatureType(con.iMud, 0)
 			gc.getMap().plot(35, 54).setBonusType(con.iSwamp)
 			for x, y in lNewfoundlandCapes:

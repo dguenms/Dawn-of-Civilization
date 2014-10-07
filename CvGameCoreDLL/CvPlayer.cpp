@@ -5542,6 +5542,12 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		}
 	}
 
+	// Leoreth: America doesn't care about Canada until the Canadians spawn
+	if (getID() != GC.getGame().getActivePlayer() && getID() == AMERICA && GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[CANADA]) + getTurns(5))
+	{
+		if (iY >= 52) return false;
+	}
+
 	return true;
 }
 

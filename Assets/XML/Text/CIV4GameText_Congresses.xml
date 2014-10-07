@@ -324,13 +324,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_DEMAND_CITY</Tag>
-		<English>The congress has decided to hand over our city of %s2 to %s1. Shall we comply with their demand? Refusal may lead to war against the supporters of this decision.</English>
-		<German>Der Kongress hat entschieden, unsere Stadt %s2 an %s1 zu übergeben. Sollen wir dieser Forderung nachkommen? Eine Weigerung kann zum Krieg gegen die Unterstützer dieser Entscheidung führen.</German>
+		<English>The congress has decided to hand over our city of %s2 to %s1. Shall we comply with their demand? Refusal may lead to war against the supporters of this decision. The following civilizations voted against us:[NEWLINE]%s3</English>
+		<German>Der Kongress hat entschieden, unsere Stadt %s2 an %s1 zu übergeben. Sollen wir dieser Forderung nachkommen? Eine Weigerung kann zum Krieg gegen die Unterstützer dieser Entscheidung führen. Die folgenden Zivilisationen stimmten gegen uns:[NEWLINE]%s3</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_DEMAND_TERRITORY</Tag>
-		<English>The congress has decided to allow %s1 to colonize our territory near %s2. Shall we comply with their demand? Refusal may lead to war against the supporters of this decision.</English>
-		<German>Der Kongress hat entschieden, %s1 die Erlaubnis zu gewähren, unser Territorium nahe %s2 zu kolonisieren. Sollen wir dieser Forderung nachkommen? Eine Weigerung kann zum Krieg geegn die Unterstützer dieser Entscheidung führen.</German>
+		<English>The congress has decided to allow %s1 to colonize our territory near %s2. Shall we comply with their demand? Refusal may lead to war against the supporters of this decision. The following civilizations voted against us:[NEWLINE]%s3</English>
+		<German>Der Kongress hat entschieden, %s1 die Erlaubnis zu gewähren, unser Territorium nahe %s2 zu kolonisieren. Sollen wir dieser Forderung nachkommen? Eine Weigerung kann zum Krieg geegn die Unterstützer dieser Entscheidung führen. Die folgenden Zivilisationen stimmten gegen uns:[NEWLINE]%s3</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_ACCEPT</Tag>
@@ -364,13 +364,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_BRIBE_GOLD</Tag>
-		<English>Attempt to bribe their representatives (%d1 [ICON_GOLD])</English>
-		<German>Versucht, ihre Delegierten zu bestechen (%d1 [ICON_GOLD])</German>
+		<English>Attempt to bribe their representatives (%s2: %d1 [ICON_GOLD])</English>
+		<German>Versucht, ihre Delegierten zu bestechen (%s2: %d1 [ICON_GOLD])</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_MANIPULATION</Tag>
-		<English>Infiltrate their delegation (%d1 [ICON_ESPIONAGE])</English>
-		<German>Infiltriert ihre Delegation (%d1 [ICON_ESPIONAGE])</German>
+		<English>Infiltrate their delegation (%s2: %d1 [ICON_ESPIONAGE])</English>
+		<German>Infiltriert ihre Delegation (%s2: %d1 [ICON_ESPIONAGE])</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_NO_BRIBE</Tag>
@@ -381,6 +381,21 @@
 		<Tag>TXT_KEY_CONGRESS_CANNOT_AFFORD_BRIBE</Tag>
 		<English>Unfortunately, we lack the means to do anything.</English>
 		<German>Leider fehlen uns die Mittel, etwas zu tun.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CHANCE_AVERAGE</Tag>
+		<English>Average</English>
+		<German>Normal</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CHANCE_HIGH</Tag>
+		<English>High</English>
+		<German>Hoch</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONGRESS_CHANCE_VERY_HIGH</Tag>
+		<English>Very High</English>
+		<German>Sehr Hoch</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_BRIBE_OWN_CLAIM_SUCCESS</Tag>

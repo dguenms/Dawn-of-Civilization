@@ -4488,10 +4488,11 @@ class CvMainInterface:
 						screen.setBarPercentage( "GreatPeopleBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getGreatPeopleRate()) / float( gc.getPlayer( pHeadSelectedCity.getOwner() ).greatPeopleThreshold(false) ) ) ) / ( 1 - iFirst ) )
 					screen.show( "GreatPeopleBar" )
 
+				iEffectiveNextCoveredPlot = pHeadSelectedCity.getEffectiveNextCoveredPlot()
 				iNextCoveredPlot = pHeadSelectedCity.getEffectiveNextCoveredPlot()
-				if iNextCoveredPlot < 37:
-					if iNextCoveredPlot == 0: iNextCost = pHeadSelectedCity.getCultureCost(iNextCoveredPlot)
-					else: iNextCost = pHeadSelectedCity.getCultureCost(iNextCoveredPlot) - pHeadSelectedCity.getCultureCost(iNextCoveredPlot-1)
+				if iEffectiveNextCoveredPlot < 37:
+					if iNextCoveredPlot == 0: iNextCost = pHeadSelectedCity.getCultureCost(iEffectiveNextCoveredPlot)
+					else: iNextCost = pHeadSelectedCity.getCultureCost(iEffectiveNextCoveredPlot) - pHeadSelectedCity.getCultureCost(iNextCoveredPlot-1)
 					iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * iNextCost)
 					screen.setBarPercentage("CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst)
 					if iFirst == 1:
