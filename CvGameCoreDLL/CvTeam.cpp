@@ -5436,6 +5436,26 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					}
 				}
 			}
+
+			bool bBonusVisible = false;
+			for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
+			{
+				if (GC.getBonusInfo((BonusTypes)iI).getTechReveal() == eIndex)
+				{
+					bBonusVisible = true;
+					break;
+				}
+			}
+
+			if (bBonusVisible)
+			{
+				int iLoop;
+				for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); NULL != pLoopCity; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
+				{
+					pLoopCity->updateCultureCosts();
+					pLoopCity->updateCoveredPlots(true);
+				}
+			}
 		}
 
 		processTech(eIndex, ((bNewValue) ? 1 : -1));
