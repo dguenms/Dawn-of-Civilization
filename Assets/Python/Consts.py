@@ -1362,7 +1362,7 @@ tCoreAreasTL = (
 (59, 41), #Rome
 (90, 28), #Tamils
 (69, 27), #Ethiopia
-(108, 46), #Korea
+(108, 45), #Korea
 (20, 35), #Maya
 (64, 40), #Byzantium
 (112, 45), #Japan
@@ -1405,7 +1405,7 @@ tCoreAreasTL = (
 (58, 45), #Rome	
 (90, 28), #Tamils
 (69, 27), #Ethiopia
-(108, 46), #Korea
+(108, 45), #Korea
 (24, 26), #Colombia
 (67, 44), #Byzantium
 (111, 41), #Japan

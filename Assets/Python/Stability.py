@@ -1566,7 +1566,7 @@ def calculateStability(iPlayer):
 		pEnemy = gc.getPlayer(iEnemy)
 		if pEnemy.isAlive() and tPlayer.isAtWar(iEnemy):
 			iTempWarSuccessStability = calculateTrendScore(sd.getWarTrend(iPlayer, iEnemy))
-			if iTempWarSuccessStability < 0: iTempWarSuccessStability *= 2
+			if iTempWarSuccessStability > 0: iTempWarSuccessStability /= 2
 			
 			iWarSuccessStability += iTempWarSuccessStability
 			
@@ -1781,10 +1781,13 @@ def updateHappinessTrend(iPlayer):
 def updateWarTrend(iPlayer, iEnemy):
 	iPreviousTrend = sd.getLastWarTrend(iPlayer, iEnemy)
 	
+	iWarTurns = gc.getGame().getGameTurn() - sd.getWarStartTurn(iPlayer, iEnemy)
+	iDurationModifier = min(5, iWarTurns / utils.getTurns(10))
+	
 	iOurSuccess = gc.getTeam(iPlayer).AI_getWarSuccess(iEnemy)
 	iTheirSuccess = gc.getTeam(iEnemy).AI_getWarSuccess(iPlayer)
 	
-	if abs(iOurSuccess - iTheirSuccess) > max(iTheirSuccess, iOurSuccess) / 10:
+	if abs(iOurSuccess - iTheirSuccess) > max(iTheirSuccess, iOurSuccess) / (10 - iDurationModifier):
 		iCurrentTrend = iPreviousTrend / 2 + iOurSuccess - iTheirSuccess
 	else:
 		iCurrentTrend = 0

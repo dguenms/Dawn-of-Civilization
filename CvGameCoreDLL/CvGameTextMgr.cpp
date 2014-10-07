@@ -5423,8 +5423,9 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 // BUG - Building Icons - end
 
 // BUG - Culture Turns - start
-	int iNextCoveredPlot = pCity->getEffectiveNextCoveredPlot();
-	bool bDisplayCoverage = (iNextCoveredPlot < 37);
+	int iEffectiveNextCoveredPlot = pCity->getEffectiveNextCoveredPlot();
+	int iNextCoveredPlot = pCity->getNextCoveredPlot();
+	bool bDisplayCoverage = (iEffectiveNextCoveredPlot < 37);
 	int iCultureRate = pCity->getCommerceRateTimes100(COMMERCE_CULTURE);
 	int iThreshold = pCity->getCultureThreshold();
 	int iCurrent = pCity->getCulture(pCity->getOwnerINLINE());
@@ -5433,7 +5434,7 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 	if (bDisplayCoverage)
 	{
 		if (iNextCoveredPlot > 0) iOffset = pCity->getCultureCost(iNextCoveredPlot-1);
-		iThreshold = pCity->getCultureCost(iNextCoveredPlot) - iOffset;
+		iThreshold = pCity->getCultureCost(iEffectiveNextCoveredPlot) - iOffset;
 		iCurrent -= iOffset;
 	}
 

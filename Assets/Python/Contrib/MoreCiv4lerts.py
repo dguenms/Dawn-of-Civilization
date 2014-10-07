@@ -213,7 +213,8 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 						iCurrent = city.getCulture(loopPlayer)
 						iChangeRate = city.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)
 						iThreshold = city.getCultureThreshold()
-						iNextCoveredPlot = city.getEffectiveNextCoveredPlot()
+						iEffectiveNextCoveredPlot = city.getEffectiveNextCoveredPlot()
+						iNextCoveredPlot = city.getNextCoveredPlot()
 								
 						# new culture level
 						if (city.getCultureLevel() != gc.getNumCultureLevelInfos() - 1):
@@ -223,10 +224,10 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 								self._addMessageAtCity(loopPlayer, message, icon, city)
 						
 						# new plot(s) covered
-						if iNextCoveredPlot < 37:
+						if iEffectiveNextCoveredPlot < 37:
 							iOffset = 0
 							if iNextCoveredPlot > 0: iOffset = city.getCultureCost(iNextCoveredPlot-1)
-							iThreshold = city.getCultureCost(iNextCoveredPlot) - iOffset
+							iThreshold = city.getCultureCost(iEffectiveNextCoveredPlot) - iOffset
 							iCurrent -= iOffset
 							if iCurrent + iChangeRate >= iThreshold:
 								message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_TO_EXPAND", (city.getName(), ))

@@ -1817,12 +1817,6 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	    }
 	}
 
-	// Leoreth: America doesn't care about Canada until the Canadians spawn
-	if (getID() == AMERICA && GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[CANADA]) + getTurns(10))
-	{
-		if (iY >= 52) return 0;
-	}
-
 	bIsCoastal = pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN());
 	pArea = pPlot->area();
 	iNumAreaCities = pArea->getCitiesPerPlayer(getID());
