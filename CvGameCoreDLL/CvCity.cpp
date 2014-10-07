@@ -14099,7 +14099,7 @@ void CvCity::doCulture()
 void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 {
 	CvPlot* pLoopPlot;
-	//int iDX, iDY;
+	int iDX, iDY;
 	int iCultureRange;
 	CultureLevelTypes eCultureLevel = (CultureLevelTypes)0;
 
@@ -14140,7 +14140,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 	int iFreeCultureRate = GC.getDefineINT("CITY_FREE_CULTURE_GROWTH_FACTOR");
 	if (getCultureTimes100(ePlayer) > 0)
 	{
-		for (int iI = 0; iI < getNextCoveredPlot(); iI++)
+		/*for (int iI = 0; iI < getNextCoveredPlot(); iI++)
 		{
 			pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iI));
 
@@ -14174,9 +14174,9 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 					pLoopPlot->changeCulture(ePlayer, iChange, (bUpdate || !(pLoopPlot->isOwned())));
 				}
 			}
-		}
+		}*/
 
-		/*if (eCultureLevel != NO_CULTURELEVEL)
+		if (eCultureLevel != NO_CULTURELEVEL)
 		{
 			for (iDX = -eCultureLevel; iDX <= eCultureLevel; iDX++)
 			{
@@ -14200,15 +14200,9 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 									for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 									{
 										// Leoreth: only for civs that have already spawned yet
-										if (GC.getGame().getGameTurnYear() < startingTurnYear[iI])
-										{
-											continue;
-										}
+										if (GC.getGame().getGameTurnYear() < startingTurnYear[iI]) continue;
 
-										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI))
-										{
-											bCanSpreadCore = false;
-										}
+										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI)) bCanSpreadCore = false;
 
 										if (pLoopPlot->isCore((PlayerTypes)iI) && plot()->isCore((PlayerTypes)iI))
 										{
@@ -14229,7 +14223,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 					}
 				}
 			}
-		}*/
+		}
 	}
 }
 
@@ -17192,6 +17186,8 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 		}
 		//if (!pPlot->isWater() && pPlot->getArea() != getArea()) iCost += 1000;
 	}
+
+	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal())) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
 
 	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
 	else iCost += iDistance * GC.getDefineINT("CULTURE_COST_DISTANCE");

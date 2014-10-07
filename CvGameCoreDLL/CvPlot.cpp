@@ -10860,8 +10860,6 @@ int CvPlot::calculateCultureCost() const
 	if (isHills()) iCost += GC.getDefineINT("CULTURE_COST_HILL");
 	if (isPeak()) iCost += GC.getDefineINT("CULTURE_COST_PEAK");
 
-	if (getBonusType() >= 0) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
-
 	return iCost;
 }
 
