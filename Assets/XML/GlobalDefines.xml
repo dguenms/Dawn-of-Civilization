@@ -1690,7 +1690,7 @@
 	</Define>
 	<Define>
 		<DefineName>CULTURE_COST_HILL</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CULTURE_COST_PEAK</DefineName>
