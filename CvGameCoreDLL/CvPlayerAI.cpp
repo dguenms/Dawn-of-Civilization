@@ -20170,8 +20170,9 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	int iValue = GC.getDefineINT("AI_SLAVE_VALUE");
 	PlayerTypes eOwner = pUnit->getOwner();
 
-	// you are talking to someone who wants to buy a slave
-	if (getID() != eOwner)
+	//GC.getGame().logMsg("getID() = %d, eOwner = %d", getID(), eOwner);
+
+	if (getID() != GC.getGame().getActivePlayer())
 	{
 		if (getID() == MALI || getID() == CONGO || getID() == ETHIOPIA)
 		{
@@ -20184,7 +20185,7 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 		}
 	}
 
-	if (getID() == eOwner) iValue *= 2;
+	if (getID() == GC.getGame().getActivePlayer()) iValue *= 2;
 
 	return iValue;
 }
