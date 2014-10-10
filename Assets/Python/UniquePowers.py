@@ -752,12 +752,12 @@ class UniquePowers:
 		
 		
 	def canadianUP(self, city):
-		iPopulation = city.getPopulation()
+		iPopulation = 5 * city.getPopulation() / 2
 		
 		lProgress = []
 		bAllZero = True
 		for iSpecialist in [con.iProphet, con.iArtist, con.iScientist, con.iMerchant, con.iEngineer, con.iGreatGeneral, con.iGreatSpy]:
-			iProgress = city.getGreatPeopleUnitProgress(utils.getUniqueUnit(iSpecialist))
+			iProgress = city.getGreatPeopleUnitProgress(utils.getUniqueUnit(city.getOwner(), iSpecialist))
 			if iProgress > 0: bAllZero = False
 			lProgress.append(iProgress)
 			
@@ -766,7 +766,7 @@ class UniquePowers:
 		else:
 			iGreatPerson = utils.getHighestIndex(lProgress) + con.iProphet
 			
-		iGreatPerson = utils.getUniqueUnit(iGreatPerson)
+		iGreatPerson = utils.getUniqueUnit(city.getOwner(), iGreatPerson)
 		
 		city.changeGreatPeopleProgress(iPopulation)
 		city.changeGreatPeopleUnitProgress(iGreatPerson, iPopulation)
