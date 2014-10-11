@@ -20168,7 +20168,17 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	}
 
 	int iValue = GC.getDefineINT("AI_SLAVE_VALUE");
+	int iModifier = 1;
 	PlayerTypes eOwner = pUnit->getOwner();
+
+	bool bOwnerEuropean = (eOwner == SPAIN || eOwner == FRANCE || eOwner == ENGLAND || eOwner == PORTUGAL || eOwner == NETHERLANDS);
+	bool bBuyerEuropean = (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == PORTUGAL || getID() == NETHERLANDS);
+
+	bool bOwnerAstronomy = GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)ASTRONOMY);
+	bool bBuyerAstronomy = GET_TEAM(GET_PLAYER(getID()).getTeam()).isHasTech((TechTypes)ASTRONOMY);
+
+	bool bOwnerCatholic = (GET_PLAYER(eOwner).getStateReligion() == CATHOLICISM && eOwner != GC.getGame().getActivePlayer());
+	bool bBuyerCatholic = GET_PLAYER(getID()).getStateReligion() == CATHOLICISM;
 
 	//GC.getGame().logMsg("getID() = %d, eOwner = %d", getID(), eOwner);
 
@@ -20185,8 +20195,11 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 		}
 	}
 
-	if (getID() == GC.getGame().getActivePlayer()) iValue *= 2;
+	if (getID() == GC.getGame().getActivePlayer()) iModifier += 1;
+	if (bOwnerEuropean || bBuyerEuropean) iModifier += 1;
+	if (!bOwnerAstronomy && !bBuyerAstronomy) iModifier -= 1;
+	if (bOwnerCatholic || bBuyerCatholic) iModifier += 1;
 
-	return iValue;
+	return std::max(1, iModifier) * iValue;
 }
 // edead: end
