@@ -2335,6 +2335,16 @@ class RiseAndFall:
 				if city.getX() >= tCapitals[0][iByzantium][0]-1 and city.getY() <= tCapitals[0][iByzantium][1]:
 					cityList.append(city)
 					
+		# Leoreth Canada also flips English/American/French cities in the Canada region
+		if iCiv == iCanada:
+			lCities = []
+			lCities.extend(utils.getCityList(iFrance))
+			lCities.extend(utils.getCityList(iEngland))
+			lCities.extend(utils.getCityList(iAmerica))
+			for city in lCities:
+				if city.getRegionID() == con.rCanada:
+					cityList.append(city)
+					
 		# Leoreth: remove capital locations
 		for city in cityList:
 			if city.getOwner() < con.iNumPlayers:
