@@ -838,6 +838,11 @@
 		<German>Gebiet Einnehmen</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_OVERFLOW</Tag>
+		<English>Overflow in %s1, method: %s2</English>
+		<German>Overflow in %s1, method: %s2</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>
