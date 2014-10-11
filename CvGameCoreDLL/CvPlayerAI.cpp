@@ -20167,7 +20167,7 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 		return 0;
 	}
 
-	int iValue = GC.getDefineINT("AI_SLAVE_VALUE");
+	int iValue = getTurns(GC.getDefineINT("AI_SLAVE_VALUE"));
 	int iModifier = 1;
 	PlayerTypes eOwner = pUnit->getOwner();
 

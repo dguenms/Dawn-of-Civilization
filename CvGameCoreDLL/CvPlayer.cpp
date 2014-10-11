@@ -5545,8 +5545,8 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	// Leoreth: America/France don't care about Canada until the Canadians spawn
 	if (getID() != GC.getGame().getActivePlayer() && GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[CANADA]) + getTurns(5))
 	{
-		if (getID() == AMERICA && iY >= 52) return false;
-		if (getID() == FRANCE && iX <= 24 && iY >= 52) return false;
+		if (getID() == AMERICA && iY >= 51) return false;
+		if (getID() == FRANCE && iX <= 24 && iY >= 51) return false;
 	}
 
 	return true;
