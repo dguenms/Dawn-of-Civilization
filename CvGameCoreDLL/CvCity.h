@@ -1008,6 +1008,7 @@ public:
 	int getNextCoveredPlot() const;
 	void setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups);
 	int getEffectiveNextCoveredPlot() const;
+	void updateGreatWall();
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

@@ -2670,3 +2670,8 @@ int CyCity::getEffectiveNextCoveredPlot() const
 {
 	return m_pCity ? m_pCity->getEffectiveNextCoveredPlot() : -1;
 }
+
+void CyCity::updateGreatWall()
+{
+	if (m_pCity) m_pCity->updateGreatWall();
+}

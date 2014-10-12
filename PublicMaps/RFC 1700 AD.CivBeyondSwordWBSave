@@ -6256,7 +6256,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -6650,7 +6650,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -7203,7 +7203,7 @@ EndPlot
 BeginPlot
 	x=17,y=65
 	TerrainType=TERRAIN_SNOW
-	PlotType=3
+	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=66
@@ -7437,7 +7437,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
 		BuildingType=BUILDING_FLOATING_GARDENS
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=100
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -7475,7 +7475,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,21,43,
 EndPlot
@@ -9134,7 +9134,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=10
+		Player21Culture=50
 	EndCity
 	TeamReveal=21,43,
 EndPlot
@@ -9505,7 +9505,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,22,42,
 EndPlot
@@ -9553,7 +9553,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHICHEN_ITZA
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,21,22,42,43,
 EndPlot
@@ -9666,6 +9666,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=23,y=52
@@ -9930,7 +9931,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -10477,7 +10478,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player22Culture=10
+		Player22Culture=50
 	EndCity
 	TeamReveal=21,22,42,43,
 EndPlot
@@ -10778,7 +10779,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=100
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -10920,7 +10921,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,21,22,43,
 EndPlot
@@ -11317,7 +11318,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -11455,7 +11456,7 @@ BeginPlot
 	x=27,y=49
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,42,
+	TeamReveal=21,22,42,
 EndPlot
 BeginPlot
 	x=27,y=50
@@ -11463,11 +11464,11 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,42,
+	TeamReveal=21,22,42,
 EndPlot
 BeginPlot
 	x=27,y=51
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
@@ -11499,6 +11500,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
+		Player22Culture=50
 	EndCity
 	TeamReveal=21,22,42,
 EndPlot
@@ -11909,13 +11911,13 @@ BeginPlot
 	x=28,y=48
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,42,
+	TeamReveal=21,22,42,
 EndPlot
 BeginPlot
 	x=28,y=49
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,42,
+	TeamReveal=21,22,42,
 EndPlot
 BeginPlot
 	x=28,y=50
@@ -12104,7 +12106,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -12317,7 +12319,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=10
+		Player21Culture=50
 	EndCity
 	TeamReveal=20,21,22,43,
 EndPlot
@@ -12400,7 +12402,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,42,
+	TeamReveal=21,22,42,
 EndPlot
 BeginPlot
 	x=29,y=50
@@ -12759,7 +12761,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,21,22,42,43,
 EndPlot
@@ -12893,7 +12895,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player22Culture=10
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,42,
 EndPlot
@@ -12903,7 +12905,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,42,
+	TeamReveal=21,22,42,
 EndPlot
 BeginPlot
 	x=30,y=50
@@ -12925,6 +12927,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
@@ -12957,7 +12960,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=10
+		Player21Culture=50
 	EndCity
 	TeamReveal=21,22,42,
 EndPlot
@@ -13189,7 +13192,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -13424,7 +13427,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player22Culture=10
+		Player22Culture=50
 	EndCity
 	TeamReveal=21,22,42,
 EndPlot
@@ -13437,8 +13440,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=52
-	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,22,42,
@@ -13802,7 +13805,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,21,22,43,
 EndPlot
@@ -13895,8 +13898,8 @@ BeginPlot
 	x=32,y=52
 	BonusType=BONUS_FUR
 	ImprovementType=IMPROVEMENT_CAMP
-	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=21,22,42,
@@ -13914,14 +13917,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=32,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=32,y=56
@@ -14254,7 +14257,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player22Culture=10
+		Player22Culture=50
 	EndCity
 	TeamReveal=20,21,22,42,43,
 EndPlot
@@ -14391,7 +14394,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=33,y=56
@@ -14552,7 +14555,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -14724,7 +14727,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player22Culture=10
+		Player22Culture=50
 	EndCity
 	TeamReveal=20,21,22,42,43,
 EndPlot
@@ -14879,24 +14882,26 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=34,y=56
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=34,y=57
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=34,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=34,y=59
@@ -15325,27 +15330,31 @@ BeginPlot
 	x=35,y=54
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=35,y=55
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=35,y=56
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=35,y=57
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=35,y=58
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=35,y=59
@@ -15481,7 +15490,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=50
 	EndCity
 	TeamReveal=20,43,
 EndPlot
@@ -15753,16 +15762,19 @@ BeginPlot
 	x=36,y=52
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=36,y=53
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=36,y=54
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_TUNDRA
+	PlotType=1
 	BeginUnit
 		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=22
 		Damage=0
@@ -15778,33 +15790,36 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player22Culture=10
+		Player22Culture=50
 	EndCity
-	TerrainType=TERRAIN_TUNDRA
-	PlotType=1
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=36,y=55
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=36,y=56
 	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=36,y=57
 	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=36,y=58
 	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=36,y=59
@@ -16069,7 +16084,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=10
+		Player21Culture=50
 	EndCity
 	TeamReveal=20,21,22,27,42,43,
 EndPlot
@@ -16083,7 +16098,7 @@ BeginPlot
 	x=37,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=20,21,22,42,43,
+	TeamReveal=20,21,22,27,42,43,
 EndPlot
 BeginPlot
 	x=37,y=31
@@ -16213,38 +16228,43 @@ BeginPlot
 	x=37,y=52
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=37,y=53
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=37,y=54
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=37,y=55
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=37,y=56
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=37,y=57
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=37,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=37,y=59
@@ -16410,7 +16430,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=10
+		Player27Culture=50
 	EndCity
 	TeamReveal=20,27,42,
 EndPlot
@@ -16499,7 +16519,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=10
+		Player27Culture=50
 	EndCity
 	TeamReveal=20,21,27,42,43,
 EndPlot
@@ -16525,7 +16545,7 @@ BeginPlot
 	x=38,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=20,21,22,43,
+	TeamReveal=20,21,22,27,43,
 EndPlot
 BeginPlot
 	x=38,y=31
@@ -16663,34 +16683,39 @@ BeginPlot
 	x=38,y=53
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=21,
+	TeamReveal=21,22,
 EndPlot
 BeginPlot
 	x=38,y=54
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=38,y=55
-	ImprovementType=IMPROVEMENT_WHALING_BOATS
 	BonusType=BONUS_WHALE
+	ImprovementType=IMPROVEMENT_WHALING_BOATS
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=38,y=56
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=38,y=57
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=38,y=58
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=38,y=59
@@ -16936,7 +16961,7 @@ BeginPlot
 	x=39,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=21,43,
+	TeamReveal=21,27,43,
 EndPlot
 BeginPlot
 	x=39,y=31
@@ -17073,31 +17098,37 @@ BeginPlot
 	x=39,y=53
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=39,y=54
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=39,y=55
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=39,y=56
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=39,y=57
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=39,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=39,y=59
@@ -17341,7 +17372,7 @@ BeginPlot
 	x=40,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=21,
+	TeamReveal=21,27,
 EndPlot
 BeginPlot
 	x=40,y=31
@@ -17483,21 +17514,25 @@ BeginPlot
 	x=40,y=54
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=40,y=55
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=40,y=56
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=40,y=57
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=22,
 EndPlot
 BeginPlot
 	x=40,y=58
@@ -17688,7 +17723,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=10
+		Player27Culture=100
 	EndCity
 	TeamReveal=20,27,42,
 EndPlot
@@ -18151,7 +18186,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=10
+		Player27Culture=50
 	EndCity
 	TeamReveal=20,27,42,
 EndPlot
@@ -19087,7 +19122,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=10
+		Player27Culture=50
 	EndCity
 	TeamReveal=20,21,22,27,43,
 EndPlot
@@ -20280,7 +20315,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=10
+		Player27Culture=50
 	EndCity
 	TeamReveal=20,22,27,36,42,43,
 EndPlot
@@ -20288,7 +20323,7 @@ BeginPlot
 	x=47,y=39
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=20,22,27,36,43,
+	TeamReveal=20,22,27,36,42,43,
 EndPlot
 BeginPlot
 	x=47,y=40
@@ -21132,7 +21167,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=100
+		Player27Culture=250
 	EndCity
 	TeamReveal=14,20,21,22,27,36,43,
 EndPlot
@@ -21178,7 +21213,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,27,36,43,
 EndPlot
@@ -21260,7 +21295,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player22Culture=10
+		Player22Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,36,43,
 EndPlot
@@ -21549,13 +21584,13 @@ BeginPlot
 	x=50,y=38
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=20,22,27,36,42,43,
+	TeamReveal=20,22,27,33,36,42,43,
 EndPlot
 BeginPlot
 	x=50,y=39
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,20,21,22,27,36,42,43,
+	TeamReveal=14,20,21,22,27,33,36,42,43,
 EndPlot
 BeginPlot
 	x=50,y=40
@@ -21563,7 +21598,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,20,21,22,27,36,42,43,
+	TeamReveal=14,20,21,22,27,33,36,42,43,
 EndPlot
 BeginPlot
 	x=50,y=41
@@ -21592,9 +21627,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=50,y=44
+	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
-	BonusType=BONUS_IRON
 	PlotType=1
 	TeamReveal=14,20,21,22,27,36,43,
 EndPlot
@@ -21928,15 +21963,15 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_SANKORE
 		ReligionType=RELIGION_ISLAM
-		Player43Culture=10
+		Player43Culture=100
 	EndCity
-	TeamReveal=42,43,
+	TeamReveal=36,42,43,
 EndPlot
 BeginPlot
 	x=51,y=30
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=42,43,
+	TeamReveal=36,42,43,
 EndPlot
 BeginPlot
 	x=51,y=31
@@ -22005,9 +22040,9 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
-	TeamReveal=20,22,27,36,42,
+	TeamReveal=20,22,27,33,36,42,
 EndPlot
 BeginPlot
 	x=51,y=38
@@ -22096,7 +22131,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_MEZQUITA
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,27,33,36,42,43,
 EndPlot
@@ -22106,7 +22141,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=14,20,21,22,27,36,43,
+	TeamReveal=14,20,21,22,27,33,36,43,
 EndPlot
 BeginPlot
 	x=51,y=43
@@ -22117,7 +22152,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=14,20,21,22,27,36,43,
+	TeamReveal=14,20,21,22,27,33,36,43,
 EndPlot
 BeginPlot
 	x=51,y=44
@@ -22450,7 +22485,7 @@ BeginPlot
 	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=42,43,
+	TeamReveal=36,42,43,
 EndPlot
 BeginPlot
 	x=52,y=30
@@ -22463,7 +22498,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=42,43,
+	TeamReveal=36,42,43,
 EndPlot
 BeginPlot
 	x=52,y=31
@@ -22508,7 +22543,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=33,42,
+	TeamReveal=20,33,42,
 EndPlot
 BeginPlot
 	x=52,y=38
@@ -22544,7 +22579,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=14,20,21,22,27,36,43,
+	TeamReveal=14,20,21,22,27,33,36,43,
 EndPlot
 BeginPlot
 	x=52,y=43
@@ -22552,7 +22587,7 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=14,20,21,22,27,36,43,
+	TeamReveal=14,20,21,22,27,33,36,43,
 EndPlot
 BeginPlot
 	x=52,y=44
@@ -22578,7 +22613,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=100
+		Player20Culture=250
 	EndCity
 	TeamReveal=14,20,21,22,27,36,43,
 EndPlot
@@ -22721,7 +22756,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player22Culture=10
+		Player22Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,36,43,
 EndPlot
@@ -22937,14 +22972,14 @@ BeginPlot
 	x=53,y=29
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=43,
+	TeamReveal=36,43,
 EndPlot
 BeginPlot
 	x=53,y=30
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=43,
+	TeamReveal=36,43,
 EndPlot
 BeginPlot
 	x=53,y=31
@@ -22985,7 +23020,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		ReligionType=RELIGION_ISLAM
-		Player43Culture=10
+		Player43Culture=200
 	EndCity
 	TeamReveal=43,
 EndPlot
@@ -23161,7 +23196,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=11
+		Player21Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,27,36,37,42,43,
 EndPlot
@@ -23225,7 +23260,6 @@ BeginPlot
 		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
@@ -23236,7 +23270,7 @@ BeginPlot
 		BuildingType=BUILDING_TRADING_COMPANY
 		ReligionType=RELIGION_JUDAISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player22Culture=100
+		Player22Culture=250
 	EndCity
 	TeamReveal=14,20,21,22,36,37,
 EndPlot
@@ -23484,6 +23518,7 @@ BeginPlot
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CHRISTIANITY
+		Player36Culture=50
 	EndCity
 	TeamReveal=20,22,27,36,43,
 EndPlot
@@ -23516,7 +23551,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=42,43,
+	TeamReveal=36,42,43,
 EndPlot
 BeginPlot
 	x=54,y=31
@@ -23600,7 +23635,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=20,33,42,43,
 EndPlot
@@ -23981,7 +24016,7 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=42,43,
+	TeamReveal=36,42,43,
 EndPlot
 BeginPlot
 	x=55,y=31
@@ -24101,7 +24136,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=11
+		Player20Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,27,36,42,43,
 EndPlot
@@ -24163,13 +24198,12 @@ BeginPlot
 		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
-		BuildingType=BUILDING_FRENCH_SALON
 		BuildingType=BUILDING_COLOSSEUM
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_FRENCH_SALON
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
 		BuildingType=BUILDING_TRADING_COMPANY
@@ -24177,7 +24211,7 @@ BeginPlot
 		BuildingType=BUILDING_VERSAILLES
 		ReligionType=RELIGION_CHRISTIANITY
 		FreeSpecialistType=SPECIALIST_GREAT_SCIENTIST
-		Player21Culture=150
+		Player21Culture=250
 	EndCity
 	TeamReveal=14,20,21,22,23,27,36,37,42,
 EndPlot
@@ -24479,7 +24513,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player43Culture=10
+		Player43Culture=100
 	EndCity
 	TeamReveal=36,42,43,
 EndPlot
@@ -24614,7 +24648,7 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=11
+		Player21Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,23,27,36,37,42,43,
 EndPlot
@@ -24921,7 +24955,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=27,42,43,
+	TeamReveal=27,36,42,43,
 EndPlot
 BeginPlot
 	x=57,y=29
@@ -25130,7 +25164,7 @@ BeginPlot
 		ReligionType=RELIGION_CHRISTIANITY
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player36Culture=100
+		Player36Culture=250
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,42,43,
 EndPlot
@@ -25467,7 +25501,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=23,33,42,
 EndPlot
@@ -25653,7 +25687,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_JUDAISM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=14,22,37,42,
 EndPlot
@@ -25868,7 +25902,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=10
+		Player27Culture=50
 	EndCity
 	TeamReveal=20,22,27,36,
 EndPlot
@@ -25917,7 +25951,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=27,42,43,
 EndPlot
@@ -26076,7 +26110,7 @@ BeginPlot
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_ENGINEER
-		Player23Culture=10
+		Player23Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,42,43,
 EndPlot
@@ -26144,7 +26178,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		HolyCityReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CHRISTIANITY
-		Player37Culture=95
+		Player37Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,43,
 EndPlot
@@ -26221,7 +26255,7 @@ BeginPlot
 		ReligionType=RELIGION_CHRISTIANITY
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player37Culture=25
+		Player37Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,42,43,
 EndPlot
@@ -26650,7 +26684,7 @@ BeginPlot
 		ReligionType=RELIGION_CHRISTIANITY
 		HolyCityReligionType=RELIGION_CHRISTIANITY
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player43Culture=116
+		Player43Culture=250
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,42,43,
 EndPlot
@@ -26794,7 +26828,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,23,36,37,42,43,
 EndPlot
@@ -26848,14 +26882,13 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=14,22,37,42,43,
 EndPlot
@@ -27173,7 +27206,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=33,42,
 EndPlot
@@ -27397,7 +27430,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=14,42,
 EndPlot
@@ -27564,7 +27597,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player35Culture=90
+		Player35Culture=100
 	EndCity
 	TeamReveal=20,22,27,35,36,
 EndPlot
@@ -27745,7 +27778,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player23Culture=11
+		Player23Culture=100
 	EndCity
 	TeamReveal=14,20,21,22,23,33,36,37,42,43,
 EndPlot
@@ -27808,7 +27841,6 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
@@ -27819,7 +27851,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_MILITARY_ACADEMY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player23Culture=100
+		Player23Culture=250
 	EndCity
 	TeamReveal=14,20,21,22,23,24,26,33,36,37,42,43,
 EndPlot
@@ -27864,13 +27896,12 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player37Culture=62
+		Player37Culture=250
 	EndCity
 	TeamReveal=14,20,21,22,23,24,26,36,37,42,43,
 EndPlot
@@ -28059,7 +28090,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player36Culture=10
+		Player36Culture=50
 	EndCity
 	TeamReveal=20,22,27,36,43,
 EndPlot
@@ -28402,7 +28433,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,37,42,43,
+	TeamReveal=14,26,37,42,43,
 EndPlot
 BeginPlot
 	x=63,y=59
@@ -28423,7 +28454,6 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_BANK
@@ -28431,7 +28461,7 @@ BeginPlot
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		BuildingType=BUILDING_JEWISH_CATHEDRAL
 		ReligionType=RELIGION_JUDAISM
-		Player14Culture=100
+		Player14Culture=250
 	EndCity
 	TeamReveal=14,37,42,43,
 EndPlot
@@ -28899,13 +28929,13 @@ BeginPlot
 	x=64,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,24,37,42,43,
+	TeamReveal=14,24,26,37,42,43,
 EndPlot
 BeginPlot
 	x=64,y=59
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,37,42,43,
+	TeamReveal=14,26,37,42,43,
 EndPlot
 BeginPlot
 	x=64,y=60
@@ -29299,7 +29329,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=23,33,42,
 EndPlot
@@ -29357,7 +29387,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player23Culture=10
+		Player23Culture=100
 	EndCity
 	TeamReveal=14,20,21,23,24,26,33,37,42,43,
 EndPlot
@@ -29401,7 +29431,6 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
@@ -29410,7 +29439,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player26Culture=50
+		Player26Culture=250
 	EndCity
 	TeamReveal=14,21,23,24,26,36,37,43,
 EndPlot
@@ -29444,13 +29473,9 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player37Culture=5
+		Player37Culture=100
 	EndCity
 	TeamReveal=14,23,24,26,37,43,
 EndPlot
@@ -29473,13 +29498,13 @@ BeginPlot
 	x=65,y=57
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=65,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=65,y=59
@@ -29487,7 +29512,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,24,37,42,43,
+	TeamReveal=14,24,26,37,42,43,
 EndPlot
 BeginPlot
 	x=65,y=60
@@ -29523,7 +29548,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player14Culture=10
+		Player14Culture=100
 	EndCity
 	TeamReveal=14,42,43,
 EndPlot
@@ -29952,10 +29977,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=54
-	TerrainType=TERRAIN_GRASS
 	BonusType=BONUS_WHEAT
 	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,23,24,26,37,43,
 EndPlot
@@ -29963,8 +29988,8 @@ BeginPlot
 	x=66,y=55
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_GRASS
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=14,23,24,26,37,43,
 EndPlot
@@ -29982,13 +30007,13 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FORT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=66,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,24,37,42,43,
+	TeamReveal=14,24,26,37,42,43,
 EndPlot
 BeginPlot
 	x=66,y=59
@@ -29997,7 +30022,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,42,43,
+	TeamReveal=14,24,26,37,42,43,
 EndPlot
 BeginPlot
 	x=66,y=60
@@ -30333,7 +30358,7 @@ BeginPlot
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=104
+		Player33Culture=200
 	EndCity
 	TeamReveal=33,42,
 EndPlot
@@ -30382,7 +30407,7 @@ BeginPlot
 		BuildingType=BUILDING_PARTHENON
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=79
+		Player33Culture=200
 	EndCity
 	TeamReveal=33,42,
 EndPlot
@@ -30488,6 +30513,7 @@ BeginPlot
 	x=67,y=55
 	isNOfRiver
 	RiverWEDirection=3
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
@@ -30518,7 +30544,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player26Culture=10
+		Player26Culture=100
 	EndCity
 	TeamReveal=14,23,24,26,37,43,
 EndPlot
@@ -30536,13 +30562,13 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,
+	TeamReveal=14,24,26,37,
 EndPlot
 BeginPlot
 	x=67,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=67,y=59
@@ -30569,9 +30595,9 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player14Culture=10
+		Player14Culture=100
 	EndCity
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=67,y=60
@@ -30998,7 +31024,7 @@ BeginPlot
 		ReligionType=RELIGION_ORTHODOXY
 		HolyCityReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=100
+		Player33Culture=300
 	EndCity
 	TeamReveal=23,24,33,42,
 EndPlot
@@ -31084,7 +31110,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=68,y=57
@@ -31092,20 +31118,20 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=68,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=68,y=59
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=68,y=60
@@ -31340,7 +31366,7 @@ BeginPlot
 	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=42,43,
+	TeamReveal=33,42,43,
 EndPlot
 BeginPlot
 	x=69,y=29
@@ -31392,7 +31418,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=33,42,43,
 EndPlot
@@ -31445,7 +31471,7 @@ BeginPlot
 		BuildingType=BUILDING_STONEHENGE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=14
+		Player33Culture=200
 	EndCity
 	TeamReveal=33,42,
 EndPlot
@@ -31599,7 +31625,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_CATHEDRAL
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=100
 	EndCity
 	TeamReveal=14,23,24,26,37,43,
 EndPlot
@@ -31627,7 +31653,7 @@ BeginPlot
 	x=69,y=55
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=69,y=56
@@ -31635,14 +31661,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=69,y=57
 	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=69,y=58
@@ -31683,16 +31709,16 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=100
 	EndCity
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=69,y=59
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=69,y=60
@@ -31922,7 +31948,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=42,43,
+	TeamReveal=33,42,43,
 EndPlot
 BeginPlot
 	x=70,y=29
@@ -32054,13 +32080,13 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=24,33,42,
+	TeamReveal=23,24,33,42,
 EndPlot
 BeginPlot
 	x=70,y=47
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=24,33,42,
+	TeamReveal=23,24,33,42,
 EndPlot
 BeginPlot
 	x=70,y=48
@@ -32108,7 +32134,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,23,24,37,43,
+	TeamReveal=14,23,24,26,37,43,
 EndPlot
 BeginPlot
 	x=70,y=54
@@ -32125,7 +32151,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=70,y=56
@@ -32134,7 +32160,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=70,y=57
@@ -32143,7 +32169,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=14,24,37,43,
+	TeamReveal=14,24,26,37,43,
 EndPlot
 BeginPlot
 	x=70,y=58
@@ -32319,7 +32345,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=10
+		Player27Culture=50
 	EndCity
 	TeamReveal=20,22,27,36,42,
 EndPlot
@@ -32381,7 +32407,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=20,22,27,36,42,
 EndPlot
@@ -32563,7 +32589,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=33,42,
 EndPlot
@@ -32574,7 +32600,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=33,42,
+	TeamReveal=24,33,42,
 EndPlot
 BeginPlot
 	x=71,y=46
@@ -32628,14 +32654,14 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=14,24,33,42,43,
+	TeamReveal=14,24,26,33,42,43,
 EndPlot
 BeginPlot
 	x=71,y=53
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=14,24,43,
+	TeamReveal=14,24,26,43,
 EndPlot
 BeginPlot
 	x=71,y=54
@@ -32643,14 +32669,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=14,24,43,
+	TeamReveal=14,24,26,43,
 EndPlot
 BeginPlot
 	x=71,y=55
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=14,24,43,
+	TeamReveal=14,24,26,43,
 EndPlot
 BeginPlot
 	x=71,y=56
@@ -32667,7 +32693,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=14,24,
+	TeamReveal=14,24,26,
 EndPlot
 BeginPlot
 	x=71,y=58
@@ -32941,7 +32967,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=33,42,43,
 EndPlot
@@ -33053,7 +33079,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_WINDMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=33,42,
+	TeamReveal=24,33,42,
 EndPlot
 BeginPlot
 	x=72,y=46
@@ -33197,7 +33223,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=100
 	EndCity
 	TeamReveal=14,24,
 EndPlot
@@ -33507,7 +33533,7 @@ BeginPlot
 		ReligionType=RELIGION_CHRISTIANITY
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=200
 	EndCity
 	TeamReveal=6,33,42,
 EndPlot
@@ -33564,7 +33590,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_WINDMILL
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=33,42,
+	TeamReveal=24,33,42,
 EndPlot
 BeginPlot
 	x=73,y=46
@@ -33580,8 +33606,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=48
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=24,33,42,43,
@@ -33655,7 +33681,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		BuildingType=BUILDING_KREMLIN
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=100
+		Player24Culture=250
 	EndCity
 	TeamReveal=14,24,
 EndPlot
@@ -33708,7 +33734,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=100
 	EndCity
 	TeamReveal=14,24,
 EndPlot
@@ -33955,7 +33981,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=20,22,27,36,42,43,
 EndPlot
@@ -34086,7 +34112,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=6,33,42,
 EndPlot
@@ -34133,7 +34159,7 @@ BeginPlot
 	x=74,y=45
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=33,42,
+	TeamReveal=24,33,42,
 EndPlot
 BeginPlot
 	x=74,y=46
@@ -34156,7 +34182,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=49
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=24
 		Damage=0
@@ -34183,9 +34211,8 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=100
 	EndCity
-	PlotType=2
 	TeamReveal=24,33,42,43,
 EndPlot
 BeginPlot
@@ -34201,8 +34228,8 @@ BeginPlot
 	x=74,y=51
 	isNOfRiver
 	RiverWEDirection=3
-	RouteType=ROUTE_ROAD
 	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=24,33,42,43,
@@ -34544,7 +34571,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_ISLAM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=33,42,43,
 EndPlot
@@ -34647,7 +34674,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=15
+		Player33Culture=100
 	EndCity
 	TeamReveal=6,33,42,
 EndPlot
@@ -34655,7 +34682,7 @@ BeginPlot
 	x=75,y=45
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=6,33,42,
+	TeamReveal=6,24,33,42,
 EndPlot
 BeginPlot
 	x=75,y=46
@@ -35008,7 +35035,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=10
+		Player33Culture=100
 	EndCity
 	TeamReveal=27,33,42,43,
 EndPlot
@@ -35545,7 +35572,7 @@ BeginPlot
 		BuildingType=BUILDING_SPIRAL_MINARET
 		ReligionType=RELIGION_ISLAM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player33Culture=10
+		Player33Culture=150
 	EndCity
 	TeamReveal=6,33,42,43,
 EndPlot
@@ -35592,7 +35619,7 @@ BeginPlot
 	x=77,y=46
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=6,33,42,43,
+	TeamReveal=6,24,33,42,43,
 EndPlot
 BeginPlot
 	x=77,y=47
@@ -35604,7 +35631,7 @@ BeginPlot
 	x=77,y=48
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=24,43,
+	TeamReveal=6,24,43,
 EndPlot
 BeginPlot
 	x=77,y=49
@@ -35706,7 +35733,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=100
 	EndCity
 	TeamReveal=24,
 EndPlot
@@ -35972,7 +35999,7 @@ BeginPlot
 	x=78,y=36
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=6,42,43,
+	TeamReveal=6,33,42,43,
 EndPlot
 BeginPlot
 	x=78,y=37
@@ -36049,7 +36076,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
-		Player6Culture=30
+		Player6Culture=100
 	EndCity
 	TeamReveal=6,33,42,43,
 EndPlot
@@ -36085,7 +36112,7 @@ BeginPlot
 	x=78,y=48
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=24,43,
+	TeamReveal=6,24,43,
 EndPlot
 BeginPlot
 	x=78,y=49
@@ -36137,7 +36164,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=100
 	EndCity
 	TeamReveal=24,
 EndPlot
@@ -36513,7 +36540,7 @@ BeginPlot
 	x=79,y=48
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=24,43,
+	TeamReveal=6,24,43,
 EndPlot
 BeginPlot
 	x=79,y=49
@@ -36924,7 +36951,7 @@ BeginPlot
 	x=80,y=48
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=24,42,43,
+	TeamReveal=6,24,42,43,
 EndPlot
 BeginPlot
 	x=80,y=49
@@ -37060,7 +37087,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=50
 	EndCity
 	TeamReveal=24,
 EndPlot
@@ -37342,7 +37369,6 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		#BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_CARAVANSERAI
 		BuildingType=BUILDING_GROCER
@@ -37350,7 +37376,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
-		Player6Culture=100
+		Player6Culture=250
 	EndCity
 	TeamReveal=6,32,42,43,
 EndPlot
@@ -37473,7 +37499,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=50
 	EndCity
 	TeamReveal=24,
 EndPlot
@@ -37762,7 +37788,7 @@ BeginPlot
 		BuildingType=BUILDING_CUSTOM_HOUSE
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=6,20,22,27,32,36,42,43,
 EndPlot
@@ -37818,7 +37844,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player6Culture=20
+		Player6Culture=100
 	EndCity
 	TeamReveal=6,27,32,42,43,
 EndPlot
@@ -38311,7 +38337,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=6,42,43,
 EndPlot
@@ -38726,7 +38752,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
-		Player6Culture=20
+		Player6Culture=100
 	EndCity
 	TeamReveal=6,32,42,43,
 EndPlot
@@ -38872,7 +38898,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=50
 	EndCity
 	TeamReveal=24,
 EndPlot
@@ -39267,7 +39293,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=6,42,
 EndPlot
@@ -39634,7 +39660,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
-		Player32Culture=25
+		Player32Culture=50
 	EndCity
 	TeamReveal=6,20,22,32,36,42,43,
 EndPlot
@@ -40100,7 +40126,7 @@ BeginPlot
 		BuildingType=BUILDING_HARMANDIR_SAHIB
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
-		Player32Culture=63
+		Player32Culture=100
 	EndCity
 	TeamReveal=6,32,42,43,
 EndPlot
@@ -40549,7 +40575,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
-		Player22Culture=36
+		Player22Culture=50
 	EndCity
 	TeamReveal=20,22,32,36,42,43,
 EndPlot
@@ -40972,7 +40998,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
 		ReligionType=RELIGION_HINDUISM
-		Player27Culture=10
+		Player27Culture=50
 	EndCity
 	TeamReveal=20,22,27,32,36,42,43,
 EndPlot
@@ -41103,7 +41129,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=200
 	EndCity
 	TeamReveal=1,42,
 EndPlot
@@ -41207,7 +41233,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
-		Player24Culture=10
+		Player24Culture=50
 	EndCity
 	TeamReveal=24,
 EndPlot
@@ -41536,7 +41562,7 @@ BeginPlot
 		BuildingType=BUILDING_RED_FORT
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
-		Player32Culture=100
+		Player32Culture=250
 	EndCity
 	TeamReveal=6,22,32,42,43,
 EndPlot
@@ -41969,7 +41995,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
-		Player32Culture=78
+		Player32Culture=100
 	EndCity
 	TeamReveal=22,32,36,42,43,
 EndPlot
@@ -42430,7 +42456,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
-		Player22Culture=34
+		Player22Culture=50
 	EndCity
 	TeamReveal=20,22,27,32,36,42,43,
 EndPlot
@@ -42844,7 +42870,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
-		Player36Culture=10
+		Player36Culture=50
 	EndCity
 	TeamReveal=20,22,27,36,42,
 EndPlot
@@ -43400,7 +43426,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
-		Player22Culture=35
+		Player22Culture=50
 	EndCity
 	TeamReveal=20,22,27,32,36,42,43,
 EndPlot
@@ -43462,7 +43488,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player32Culture=155
+		Player32Culture=200
 	EndCity
 	TeamReveal=22,32,42,43,
 EndPlot
@@ -43539,7 +43565,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=10
+		Player42Culture=200
 	EndCity
 	TeamReveal=1,42,
 EndPlot
@@ -44318,13 +44344,13 @@ BeginPlot
 		CityName=Lasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player1Culture=11
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=1,32,42,43,
 EndPlot
@@ -45109,7 +45135,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		BuildingType=BUILDING_SHWEDAGON_PAYA
 		ReligionType=RELIGION_BUDDHISM
-		Player42Culture=11
+		Player42Culture=100
 	EndCity
 	TeamReveal=1,20,22,27,34,36,42,43,
 EndPlot
@@ -45600,7 +45626,7 @@ BeginPlot
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=9
+		Player1Culture=100
 	EndCity
 	TeamReveal=1,42,43,
 EndPlot
@@ -45949,7 +45975,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player43Culture=50
+		Player43Culture=100
 	EndCity
 	TeamReveal=36,42,43,
 EndPlot
@@ -46038,7 +46064,7 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,34,36,42,
+	TeamReveal=1,34,36,42,43,
 EndPlot
 BeginPlot
 	x=100,y=38
@@ -46121,7 +46147,7 @@ BeginPlot
 		BuildingType=BUILDING_TERRACOTTA_ARMY
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=10
+		Player1Culture=300
 	EndCity
 	TeamReveal=1,42,43,
 EndPlot
@@ -46464,6 +46490,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
+		Player36Culture=50
 	EndCity
 	TeamReveal=1,20,27,34,36,42,43,
 EndPlot
@@ -46510,7 +46537,7 @@ BeginPlot
 		BuildingType=BUILDING_ANGKOR_WAT
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player34Culture=100
+		Player34Culture=250
 	EndCity
 	TeamReveal=1,20,27,34,36,42,
 EndPlot
@@ -46592,7 +46619,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player42Culture=10
+		Player42Culture=100
 	EndCity
 	TeamReveal=1,20,27,34,36,42,43,
 EndPlot
@@ -47085,7 +47112,7 @@ BeginPlot
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=10
+		Player1Culture=100
 	EndCity
 	TeamReveal=1,42,43,
 EndPlot
@@ -47159,7 +47186,7 @@ BeginPlot
 		BuildingType=BUILDING_GREAT_WALL
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=100
+		Player1Culture=150
 	EndCity
 	TeamReveal=1,43,
 EndPlot
@@ -47401,6 +47428,7 @@ BeginPlot
 	x=103,y=21
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=36,
 EndPlot
 BeginPlot
 	x=103,y=22
@@ -47589,7 +47617,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player1Culture=10
+		Player1Culture=100
 	EndCity
 	TeamReveal=1,43,
 EndPlot
@@ -47863,6 +47891,7 @@ BeginPlot
 	x=104,y=21
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=36,
 EndPlot
 BeginPlot
 	x=104,y=22
@@ -47929,6 +47958,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
+		Player36Culture=50
 	EndCity
 	TeamReveal=36,42,43,
 EndPlot
@@ -47988,7 +48018,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
-		Player42Culture=50
+		Player42Culture=100
 	EndCity
 	TeamReveal=34,36,42,43,
 EndPlot
@@ -48381,6 +48411,7 @@ BeginPlot
 	x=105,y=21
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=36,
 EndPlot
 BeginPlot
 	x=105,y=22
@@ -48455,7 +48486,7 @@ BeginPlot
 	x=105,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=20,27,34,42,
+	TeamReveal=20,27,34,36,42,
 EndPlot
 BeginPlot
 	x=105,y=33
@@ -48518,7 +48549,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=10
+		Player1Culture=100
 	EndCity
 	TeamReveal=1,20,27,42,43,
 EndPlot
@@ -48618,7 +48649,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
-		Player1Culture=10
+		Player1Culture=80
 	EndCity
 	TeamReveal=1,10,42,43,
 EndPlot
@@ -48852,6 +48883,7 @@ BeginPlot
 	x=106,y=21
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=36,
 EndPlot
 BeginPlot
 	x=106,y=22
@@ -49041,7 +49073,7 @@ BeginPlot
 		BuildingType=BUILDING_PORCELAIN_TOWER
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
-		Player1Culture=10
+		Player1Culture=100
 	EndCity
 	TeamReveal=1,10,13,42,43,
 EndPlot
@@ -49308,6 +49340,7 @@ BeginPlot
 	x=107,y=21
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=36,
 EndPlot
 BeginPlot
 	x=107,y=22
@@ -49460,7 +49493,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player1Culture=10
+		Player1Culture=100
 	EndCity
 	TeamReveal=1,10,13,42,43,
 EndPlot
@@ -49754,7 +49787,7 @@ BeginPlot
 	x=108,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=42,
+	TeamReveal=36,42,
 EndPlot
 BeginPlot
 	x=108,y=23
@@ -49808,7 +49841,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player42Culture=50
+		Player42Culture=100
 	EndCity
 	TeamReveal=36,42,
 EndPlot
@@ -49993,7 +50026,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player10Culture=10
+		Player10Culture=80
 	EndCity
 	TeamReveal=1,10,13,43,
 EndPlot
@@ -50346,7 +50379,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player20Culture=10
+		Player20Culture=100
 	EndCity
 	TeamReveal=20,27,42,
 EndPlot
@@ -50454,7 +50487,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player10Culture=75
+		Player10Culture=250
 	EndCity
 	TeamReveal=1,10,13,42,43,
 EndPlot
@@ -50775,7 +50808,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=20,42,
+	TeamReveal=20,36,42,
 EndPlot
 BeginPlot
 	x=110,y=32
@@ -50874,14 +50907,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=10,13,43,
+	TeamReveal=1,10,13,43,
 EndPlot
 BeginPlot
 	x=110,y=47
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=10,13,43,
+	TeamReveal=1,10,13,43,
 EndPlot
 BeginPlot
 	x=110,y=48
@@ -51179,6 +51212,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_ISLAM
+		Player36Culture=50
 	EndCity
 	TeamReveal=36,42,
 EndPlot
@@ -51204,7 +51238,7 @@ BeginPlot
 	x=111,y=31
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=20,42,
+	TeamReveal=20,36,42,
 EndPlot
 BeginPlot
 	x=111,y=32
@@ -51600,7 +51634,7 @@ BeginPlot
 	x=112,y=31
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=20,42,
+	TeamReveal=20,36,42,
 EndPlot
 BeginPlot
 	x=112,y=32
@@ -51681,7 +51715,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
-		Player13Culture=10
+		Player13Culture=100
 	EndCity
 	TeamReveal=13,20,27,42,
 EndPlot
@@ -52026,7 +52060,7 @@ BeginPlot
 	x=113,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=20,
+	TeamReveal=20,36,
 EndPlot
 BeginPlot
 	x=113,y=32
@@ -52132,7 +52166,7 @@ BeginPlot
 		BuildingType=BUILDING_HIMEJI_CASTLE
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player13Culture=100
+		Player13Culture=250
 	EndCity
 	TeamReveal=10,13,42,
 EndPlot
@@ -52164,7 +52198,7 @@ BeginPlot
 	x=113,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=13,42,
+	TeamReveal=10,13,42,
 EndPlot
 BeginPlot
 	x=113,y=51
@@ -52446,6 +52480,7 @@ BeginPlot
 	x=114,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=36,
 EndPlot
 BeginPlot
 	x=114,y=32
@@ -52839,11 +52874,13 @@ BeginPlot
 	x=115,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=36,
 EndPlot
 BeginPlot
 	x=115,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	TeamReveal=36,
 EndPlot
 BeginPlot
 	x=115,y=30
@@ -53367,7 +53404,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
-		Player13Culture=10
+		Player13Culture=100
 	EndCity
 	TeamReveal=13,42,
 EndPlot

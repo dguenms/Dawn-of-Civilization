@@ -124,5 +124,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("getNextCoveredPlot", &CyCity::getNextCoveredPlot, "int ()")
 		.def("getCultureCost", &CyCity::getCultureCost, "int (int i)")
 		.def("getEffectiveNextCoveredPlot", &CyCity::getEffectiveNextCoveredPlot, "int ()")
+		.def("updateGreatWall", &CyCity::updateGreatWall, "void ()")
 		;
 }

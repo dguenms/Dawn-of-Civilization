@@ -638,11 +638,11 @@ class RiseAndFall:
 		self.updateStartingPlots()
 	
 		self.adjustCityCulture()
+		
+		self.updateGreatWall()
 			
 		self.foundCapitals()
 		self.flipStartingTerritory()
-		
-		self.updateGreatWall()
 	
 		if utils.getScenario() == con.i3000BC:
 			self.create4000BCstartingUnits()
@@ -695,14 +695,26 @@ class RiseAndFall:
 		elif utils.getScenario() == con.i600AD:
 			tTL = (98, 39)
 			tBR = (107, 48)
-			lExceptions = [(105, 48), (106, 48), (107, 48), (106, 47), (98, 46), (98, 47), (99, 47), (98, 48), (99, 48), (98, 39), (99, 39), (100, 39), (98, 40), (99, 40), (98, 41), (99, 41), (98, 42)]
-			lAdditions = [(103, 38), (104, 37), (101, 49), (102, 49), (103, 49)]
+			lExceptions = [(105, 48), (106, 48), (107, 48), (106, 47), (98, 46), (98, 47), (99, 47), (98, 48), (99, 48), (98, 39), (99, 39), (100, 39), (98, 40), (99, 40), (98, 41), (99, 41), (98, 42), (100, 40)]
+			lAdditions = [(103, 38), (104, 37), (102, 49), (103, 49)]
 				
 		elif utils.getScenario() == con.i1700AD:
 			tTL = (98, 40)
 			tBR = (106, 50)
-			lExceptions = [(98, 46), (98, 47), (98, 48), (98, 49), (99, 49), (98, 50), (99, 50), (100, 50)]
-			lAdditions = [(104, 51), (105, 51), (106, 51), (107, 50), (107, 41), (107, 42), (107, 43), (103, 39), (104, 39), (105, 39), (104, 37)]
+			lExceptions = [(98, 46), (98, 47), (98, 48), (98, 49), (99, 49), (98, 50), (99, 50), (100, 50), (99, 47), (99, 48), (100, 49), (101, 49), (101, 50), (102, 50)]
+			lAdditions = [(104, 51), (105, 51), (106, 51), (107, 41), (107, 42), (107, 43), (103, 38), (103, 39), (104, 39), (105, 39), (104, 37)]
+			
+			lRemoveWall = [(98, 39), (99, 39), (100, 39), (101, 39), (102, 39)]
+			
+			for tPlot in lRemoveWall:
+				x, y = tPlot
+				gc.getMap().plot(x, y).setOwner(-1)
+				
+			gc.getMap().plot(102, 47).getPlotCity().updateGreatWall()
+			
+			for tPlot in lRemoveWall:
+				x, y = tPlot
+				gc.getMap().plot(x, y).setOwner(iChina)
 			
 		for x in range(tTL[0], tBR[0]+1):
 			for y in range(tTL[1], tBR[1]+1):
@@ -881,7 +893,7 @@ class RiseAndFall:
 			
 			# Chengdu
 			pChengdu = gc.getMap().plot(99, 41).getPlotCity()
-			pChengdu.setCulture(con.iChina, 10, True)
+			pChengdu.setCulture(con.iChina, 100, True)
 			
 	def flipStartingTerritory(self):
 	
@@ -2342,7 +2354,7 @@ class RiseAndFall:
 			lCities.extend(utils.getCityList(iEngland))
 			lCities.extend(utils.getCityList(iAmerica))
 			for city in lCities:
-				if city.getRegionID() == con.rCanada:
+				if city.getRegionID() == con.rCanada and city.getX() < con.tCapitals[0][iCanada]:
 					cityList.append(city)
 					
 		# Leoreth: remove capital locations
