@@ -23805,7 +23805,7 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player42Culture=1
+		Player42Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25051,7 +25051,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=1
+		Player42Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -28273,7 +28273,7 @@ BeginPlot
 		BuildingType=BUILDING_TEMPLE_OF_SALOMON
 		ReligionType=RELIGION_CHRISTIANITY
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=1
+		Player42Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -28687,7 +28687,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_WALLS
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=1
+		Player42Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -29861,7 +29861,7 @@ BeginPlot
 		CityName=Tisfun
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
-		Player43Culture=1
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -32116,7 +32116,7 @@ BeginPlot
 		CityName=Merv
 		CityPopulation=2
 		BuildingType=BUILDING_STABLE
-		Player42Culture=1
+		Player42Culture=10
 	EndCity
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -32946,7 +32946,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
-		Player42Culture=1
+		Player42Culture=10
 	EndCity
 
 EndPlot
@@ -38861,7 +38861,7 @@ BeginPlot
 		CityOwner=43
 		CityName=Chang'an
 		CityPopulation=1
-		Player43Culture=10
+		Player43Culture=3000
 	EndCity
 EndPlot
 BeginPlot
@@ -39640,7 +39640,7 @@ BeginPlot
 		CityOwner=43
 		CityName=Guiyang
 		CityPopulation=1
-		Player43Culture=10
+		Player43Culture=250
 	EndCity
 	PlotType=1
 EndPlot
@@ -39708,7 +39708,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
-		Player43Culture=10
+		Player43Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -40092,7 +40092,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
-		Player43Culture=10
+		Player43Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -40854,7 +40854,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player43Culture=10
+		Player43Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -40907,7 +40907,7 @@ BeginPlot
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player43Culture=10
+		Player43Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -41670,7 +41670,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player43Culture=10
+		Player43Culture=100
 	EndCity
 EndPlot
 BeginPlot

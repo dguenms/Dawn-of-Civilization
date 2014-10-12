@@ -568,6 +568,7 @@ public:
 	int getNextCoveredPlot() const;
 	int getEffectiveNextCoveredPlot() const;
 	int getCultureCost(int i) const;
+	void updateGreatWall();
 
 private:
 	CvCity* m_pCity;

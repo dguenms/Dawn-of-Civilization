@@ -17468,3 +17468,10 @@ int CvCity::getEffectiveNextCoveredPlot() const
 
 	return iNextCoveredPlot;
 }
+
+// Leoreth: redraw Great Wall around this city
+void CvCity::updateGreatWall()
+{
+	gDLL->getEngineIFace()->RemoveGreatWall(this);
+	gDLL->getEngineIFace()->AddGreatWall(this);
+}

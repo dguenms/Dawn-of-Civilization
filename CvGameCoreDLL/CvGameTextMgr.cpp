@@ -4551,11 +4551,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		// end UHV requirement info
 
 		//Leoreth: display Great Wall, only bugfix purposes
-		/*if (pPlot->isWithinGreatWall())
+		if (pPlot->isWithinGreatWall())
 		{
 			szString.append("Great Wall");
 			szString.append(NEWLINE);
-		}*/
+		}
 
 		//Leoreth: display region, only bugfix purposes
 		/*if (!pPlot->isWater())
