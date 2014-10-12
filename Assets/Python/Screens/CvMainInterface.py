@@ -4442,10 +4442,10 @@ class CvMainInterface:
 					screen.show( "DefenseText" )
 
 				if ( pHeadSelectedCity.getCultureLevel() != CultureLevelTypes.NO_CULTURELEVEL ):
-					bDisplayCoverage = (pHeadSelectedCity.getEffectiveNextCoveredPlot() < 37)
+					#bDisplayCoverage = False #(pHeadSelectedCity.getEffectiveNextCoveredPlot() < 37)
 					iRate = pHeadSelectedCity.getCommerceRateTimes100(CommerceTypes.COMMERCE_CULTURE)
 					szCommerceLevel = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getTextKey()
-					if bDisplayCoverage: szCommerceLevel = localText.getText("TXT_KEY_INTERFACE_CITY_NEXT_PLOT", ())
+					#if bDisplayCoverage: szCommerceLevel = localText.getText("TXT_KEY_INTERFACE_CITY_NEXT_PLOT", ())
 					if (iRate%100 == 0):
 						szBuffer = localText.getText("INTERFACE_CITY_COMMERCE_RATE", (gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar(), szCommerceLevel, iRate/100))
 					else:
@@ -4490,22 +4490,22 @@ class CvMainInterface:
 
 				iEffectiveNextCoveredPlot = pHeadSelectedCity.getEffectiveNextCoveredPlot()
 				iNextCoveredPlot = pHeadSelectedCity.getEffectiveNextCoveredPlot()
-				if iEffectiveNextCoveredPlot < 37:
-					if iNextCoveredPlot == 0: iNextCost = pHeadSelectedCity.getCultureCost(iEffectiveNextCoveredPlot)
-					else: iNextCost = pHeadSelectedCity.getCultureCost(iEffectiveNextCoveredPlot) - pHeadSelectedCity.getCultureCost(iNextCoveredPlot-1)
-					iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * iNextCost)
-					screen.setBarPercentage("CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst)
-					if iFirst == 1:
-						screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, (float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(iNextCost)))
-					else:
-						screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ((float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(iNextCost))) / (1-iFirst))
+				#if iEffectiveNextCoveredPlot < 37:
+				#	if iNextCoveredPlot == 0: iNextCost = pHeadSelectedCity.getCultureCost(iEffectiveNextCoveredPlot)
+				#	else: iNextCost = pHeadSelectedCity.getCultureCost(iEffectiveNextCoveredPlot) - pHeadSelectedCity.getCultureCost(iNextCoveredPlot-1)
+				#	iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * iNextCost)
+				#	screen.setBarPercentage("CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst)
+				#	if iFirst == 1:
+				#		screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, (float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(iNextCost)))
+				#	else:
+				#		screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ((float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(iNextCost))) / (1-iFirst))
+				#else:
+				iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * pHeadSelectedCity.getCultureThreshold())
+				screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst )
+				if ( iFirst == 1 ):
+					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) )
 				else:
-					iFirst = float(pHeadSelectedCity.getCultureTimes100(pHeadSelectedCity.getOwner())) / float(100 * pHeadSelectedCity.getCultureThreshold())
-					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_STORED, iFirst )
-					if ( iFirst == 1 ):
-						screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) )
-					else:
-						screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
+					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
 				screen.show( "CultureBar" )
 				
 		else:

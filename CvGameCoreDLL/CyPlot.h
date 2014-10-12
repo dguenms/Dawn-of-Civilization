@@ -271,6 +271,7 @@ public:
 	bool isWithinGreatWall();
 	void setWithinGreatWall(bool bNewValue);
 	void cameraLookAt();
+	void updateCulture();
 
 private:
 	CvPlot* m_pPlot;

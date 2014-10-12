@@ -2661,6 +2661,11 @@ int CyCity::getNextCoveredPlot() const
 	return m_pCity ? m_pCity->getNextCoveredPlot() : -1;
 }
 
+int CyCity::getCulturePlot(int i) const
+{
+	return m_pCity ? m_pCity->getCulturePlot(i) : -1;
+}
+
 int CyCity::getCultureCost(int i) const
 {
 	return m_pCity ? m_pCity->getCultureCost(i) : -1;
@@ -2669,6 +2674,21 @@ int CyCity::getCultureCost(int i) const
 int CyCity::getEffectiveNextCoveredPlot() const
 {
 	return m_pCity ? m_pCity->getEffectiveNextCoveredPlot() : -1;
+}
+
+bool CyCity::isCoveredBeforeExpansion(int i) const
+{
+	return m_pCity ? m_pCity->isCoveredBeforeExpansion(i) : false;
+}
+
+void CyCity::updateCultureCosts()
+{
+	if (m_pCity) m_pCity->updateCultureCosts();
+}
+
+void CyCity::updateCoveredPlots()
+{
+	if (m_pCity) m_pCity->updateCoveredPlots(true);
 }
 
 void CyCity::updateGreatWall()

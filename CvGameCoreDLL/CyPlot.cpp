@@ -1099,3 +1099,8 @@ int CyPlot::calculateOverallCulturePercent(int ePlayer)
 {
 	return m_pPlot ? m_pPlot->calculateOverallCulturePercent((PlayerTypes)ePlayer) : 0;
 }
+
+void CyPlot::updateCulture()
+{
+	if (m_pPlot) m_pPlot->updateCulture(true, true);
+}

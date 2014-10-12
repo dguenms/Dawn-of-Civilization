@@ -122,8 +122,12 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("getGameTurnPlayerLost", &CyCity::getGameTurnPlayerLost, "int (int ePlayer)")
 		.def("calculateOverallCulturePercent", &CyCity::calculateOverallCulturePercent, "int (int ePlayer)")
 		.def("getNextCoveredPlot", &CyCity::getNextCoveredPlot, "int ()")
+		.def("getCulturePlot", &CyCity::getCulturePlot, "int (int i)")
 		.def("getCultureCost", &CyCity::getCultureCost, "int (int i)")
 		.def("getEffectiveNextCoveredPlot", &CyCity::getEffectiveNextCoveredPlot, "int ()")
+		.def("isCoveredBeforeExpansion", &CyCity::isCoveredBeforeExpansion, "bool (int i)")
+		.def("updateCultureCosts", &CyCity::updateCultureCosts, "void ()")
+		.def("updateCoveredPlots", &CyCity::updateCoveredPlots, "void ()")
 		.def("updateGreatWall", &CyCity::updateGreatWall, "void ()")
 		;
 }

@@ -266,5 +266,6 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("setWithinGreatWall", &CyPlot::setWithinGreatWall, "void (bool bNewValue)")
 		.def("cameraLookAt", &CyPlot::cameraLookAt, "void ()")
 		.def("calculateOverallCulturePercent", &CyPlot::calculateOverallCulturePercent, "int (int ePlayer)")
+		.def("updateCulture", &CyPlot::updateCulture, "void ()")
 	;
 }

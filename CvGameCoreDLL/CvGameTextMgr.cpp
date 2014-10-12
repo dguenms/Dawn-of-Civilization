@@ -4551,11 +4551,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		// end UHV requirement info
 
 		//Leoreth: display Great Wall, only bugfix purposes
-		if (pPlot->isWithinGreatWall())
+		/*if (pPlot->isWithinGreatWall())
 		{
 			szString.append("Great Wall");
 			szString.append(NEWLINE);
-		}
+		}*/
 
 		//Leoreth: display region, only bugfix purposes
 		/*if (!pPlot->isWater())
@@ -5425,7 +5425,7 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 // BUG - Culture Turns - start
 	int iEffectiveNextCoveredPlot = pCity->getEffectiveNextCoveredPlot();
 	int iNextCoveredPlot = pCity->getNextCoveredPlot();
-	bool bDisplayCoverage = (iEffectiveNextCoveredPlot < 37);
+	bool bDisplayCoverage = false;//(iEffectiveNextCoveredPlot < 37);
 	int iCultureRate = pCity->getCommerceRateTimes100(COMMERCE_CULTURE);
 	int iThreshold = pCity->getCultureThreshold();
 	int iCurrent = pCity->getCulture(pCity->getOwnerINLINE());

@@ -4176,7 +4176,7 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 		// Leoreth: if not all tiles can be covered, display this instead
 		int iNextCoveredPlot = pHeadSelectedCity->getNextCoveredPlot();
 		int iEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
-		bool bDisplayCoverage = (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS_3);
+		bool bDisplayCoverage = false; //(iEffectiveNextCoveredPlot < NUM_CITY_PLOTS_3);
 
 		int iCultureTimes100 = pHeadSelectedCity->getCultureTimes100(pHeadSelectedCity->getOwnerINLINE());
 
