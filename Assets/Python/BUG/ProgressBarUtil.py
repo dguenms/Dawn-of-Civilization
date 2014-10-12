@@ -101,6 +101,35 @@ class ProgressBar:
 
 		for item in self.barItems:
 			screen.moveToFront(item)
+			
+			
+	# Leoreth: draw marks in irregular distances as given by list
+	def drawTickMarksList(self, screen, iCurr, iTotal, iFirst, lMarks, bDouble):
+		if not lMarks: return
+		
+		self._deleteCanvas(screen)
+		
+		screen.addDrawControl(self.id, self.BG, self.x, self.y, self.w, self.h, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		self._setVisible(True)
+		
+		i = 0
+		iXPrev = self.w * (iCurr + iFirst) / iTotal
+		while True:
+			if i >= len(lMarks): break
+		
+			iX = self.w * (iCurr + iFirst + lMarks[i]) / iTotal
+			
+			if iX > self.w or abs(iX - iXPrev) < 5: break
+			
+			self._drawline(screen, self.id, iX, self.m_y1, iX, self.m_y2, self.color, bDouble)
+			if self.marks == TICK_MARKS:
+				self._drawline(screen, self.id, iX, self.m_y3, iX, self.m_y4, self.color, bDouble)
+				
+			i += 1
+			iXPrev = iX
+		
+		for item in self.barItems:
+			screen.moveToFront(item)
 
 
 

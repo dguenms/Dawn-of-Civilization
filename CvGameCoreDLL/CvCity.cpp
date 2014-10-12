@@ -17264,15 +17264,14 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 			if (!isCoastal(20)) iCost += 1000;
 			else if (iDistance > 1) iCost += 5;
 		}
-		//if (!pPlot->isWater() && pPlot->getArea() != getArea()) iCost += 1000;
 	}
 
 	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal())) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
-
+	
 	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
 	else iCost += iDistance * GC.getDefineINT("CULTURE_COST_DISTANCE");
 
-	if (plot()->isRiverConnection(directionXY(plot(), pPlot)) || plot()->isRiverConnection(directionXY(pPlot, plot()))) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
+	if (plot()->isRiver() && pPlot->isRiver()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
 
 	// Leoreth: Inca UP
 	if (getOwnerINLINE() == INCA && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
@@ -17312,6 +17311,8 @@ struct cultureCompare
 // Leoreth
 void CvCity::updateCultureCosts()
 {
+	setNextCoveredPlot(0, true);
+
 	std::vector<int> plots;
 
 	int iIndex;
@@ -17372,7 +17373,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 				if (pLoopPlot != NULL)
 				{
-					//GC.getGameINLINE().logMsg("Updated coverage for x=%d, y=%d on x=%d, y=%d", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
+					//GC.getGameINLINE().logMsg("Removed coverage for x=%d, y=%d on x=%d, y=%d", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
 					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
 					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, -1, bUpdatePlotGroups);
 				}
@@ -17392,7 +17393,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 				if (pLoopPlot != NULL)
 				{
-					//GC.getGameINLINE().logMsg("Updated coverage for x=%d, y=%d on x=%d, y=%d (id=%d)", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY(), getCulturePlot(iI));
+					//GC.getGameINLINE().logMsg("Added coverage for x=%d, y=%d on x=%d, y=%d (id=%d)", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY(), getCulturePlot(iI));
 					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
 					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, 1, bUpdatePlotGroups);
 				}
@@ -17446,27 +17447,27 @@ void CvCity::updateCoveredPlots(bool bUpdatePlotGroups)
 int CvCity::getEffectiveNextCoveredPlot() const
 {
 	int iNextCoveredPlot = getNextCoveredPlot();
-	int iCulture = getCulture(getOwnerINLINE());
 
-	CvPlot* pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iNextCoveredPlot));
-
-	int iDistance;
-	bool bAlreadyCovered, bOutOfRange, bAfterExpansion;
+	CvPlot* pLoopPlot;
 	while (iNextCoveredPlot < NUM_CITY_PLOTS)
 	{
 		pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iNextCoveredPlot));
-		iDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
 
-		bAlreadyCovered = (pLoopPlot->getNumCultureRangeCities(getOwnerINLINE()) > 0);
-		bOutOfRange = (iDistance > getCultureLevel());
-		bAfterExpansion = (getCultureCost(iNextCoveredPlot) >= getCultureThreshold((CultureLevelTypes)iDistance));
-		
-		if (!bAlreadyCovered && (!bOutOfRange || bAfterExpansion)) break;
+		if (pLoopPlot->getOwner() == NO_PLAYER && !isCoveredBeforeExpansion(iNextCoveredPlot)) break;
 
 		iNextCoveredPlot++;
 	}
 
 	return iNextCoveredPlot;
+}
+
+// Leoreth: takes local culture plot id, returns true if plot costs less culture than the culture expansion to reach it
+bool CvCity::isCoveredBeforeExpansion(int i) const
+{
+	CvPlot* pPlot = GC.getMap().plotByIndex(getCulturePlot(i));
+	int iDistance = plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY());
+
+	return (getCultureCost(i) < getCultureThreshold((CultureLevelTypes)iDistance));
 }
 
 // Leoreth: redraw Great Wall around this city

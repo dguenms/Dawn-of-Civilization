@@ -567,7 +567,11 @@ public:
 	int getGameTurnPlayerLost(int ePlayer);
 	int getNextCoveredPlot() const;
 	int getEffectiveNextCoveredPlot() const;
+	bool isCoveredBeforeExpansion(int i) const;
+	int getCulturePlot(int i) const;
 	int getCultureCost(int i) const;
+	void updateCultureCosts();
+	void updateCoveredPlots();
 	void updateGreatWall();
 
 private:
