@@ -5606,6 +5606,21 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 			}
 		}
 	}
+
+	if (eOldFeature != eNewValue)
+	{
+		// Leoreth: update culture costs
+		CvPlot* pLoopPlot;
+		for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+		{
+			pLoopPlot = plotCity3(getX(), getY(), iI);
+			if (pLoopPlot != NULL && pLoopPlot->isCity()) 
+			{
+				pLoopPlot->getPlotCity()->updateCultureCosts();
+				pLoopPlot->getPlotCity()->updateCoveredPlots(true);
+			}
+		}
+	}
 }
 
 void CvPlot::setFeatureDummyVisibility(const char *dummyTag, bool show)
@@ -5730,6 +5745,18 @@ void CvPlot::setBonusType(BonusTypes eNewValue)
 		setLayoutDirty(true);
 
 		gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
+
+		// Leoreth: update culture costs
+		CvPlot* pLoopPlot;
+		for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+		{
+			pLoopPlot = plotCity3(getX(), getY(), iI);
+			if (pLoopPlot != NULL && pLoopPlot->isCity()) 
+			{
+				pLoopPlot->getPlotCity()->updateCultureCosts();
+				pLoopPlot->getPlotCity()->updateCoveredPlots(true);
+			}
+		}
 	}
 }
 

@@ -17443,22 +17443,35 @@ void CvCity::updateCoveredPlots(bool bUpdatePlotGroups)
 	setNextCoveredPlot(iNextCoveredPlot, bUpdatePlotGroups);
 }
 
-// Leoreth: skip plots that are already covered by one of your cities or cannot be reached because of culture distance
+// Leoreth: skip plots that are already covered by a city
 int CvCity::getEffectiveNextCoveredPlot() const
 {
 	int iNextCoveredPlot = getNextCoveredPlot();
+	int iI = 0;
 
 	CvPlot* pLoopPlot;
-	while (iNextCoveredPlot < NUM_CITY_PLOTS)
+	int iDistance;
+	while (iI < NUM_CITY_PLOTS_3)
 	{
-		pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iNextCoveredPlot));
+		pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iI));
+		iDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
 
-		if (pLoopPlot->getOwner() == NO_PLAYER && !isCoveredBeforeExpansion(iNextCoveredPlot)) break;
+		if (pLoopPlot->getOwner() == NO_PLAYER && (iI >= iNextCoveredPlot || (iDistance > getCultureLevel() && iDistance > 0 && getCultureCost(iNextCoveredPlot) > getCultureThreshold((CultureLevelTypes)(iDistance-1))))) break;
 
-		iNextCoveredPlot++;
+		/*if (iI < iNextCoveredPlot) 
+		{
+			iDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
+			if (iDistance > getCultureLevel() && iDistance > 0 && getCultureCost(iNextCoveredPlot) > getCultureThreshold((CultureLevelTypes)(iDistance-1))) break;
+		}
+		else
+		{
+			if (pLoopPlot->getOwner() == NO_PLAYER) break;
+		}*/
+
+		iI++;
 	}
 
-	return iNextCoveredPlot;
+	return iI;
 }
 
 // Leoreth: takes local culture plot id, returns true if plot costs less culture than the culture expansion to reach it
