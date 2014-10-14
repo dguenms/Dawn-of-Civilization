@@ -3105,11 +3105,13 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 				if (getBonusType() >= 0 && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(getBonusType()).getTechReveal())) bCanCover = true;
 
 				CvPlot* pTempPlot;
+				if (iI == EGYPT) GC.getGame().logMsg("calculate owner for x=%d, y=%d", getX(), getY());
 				for (int iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
 				{
 					if (bCanCover) break;
 					pTempPlot = plotCardinalDirection(getX(), getY(), (CardinalDirectionTypes)iJ);
-					if (pTempPlot->isWithinCultureRange((PlayerTypes)iI) && pTempPlot->getCulture((PlayerTypes)iI) > 0) bCanCover = true;
+					if (iI == EGYPT) GC.getGame().logMsg("check x=%d, y=%d", pTempPlot->getX(), pTempPlot->getY());
+					if (pTempPlot != NULL && pTempPlot->isWithinCultureRange((PlayerTypes)iI)) bCanCover = true;
 				}
 
 				if (bCanCover && isWithinCultureRange((PlayerTypes)iI))
