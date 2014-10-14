@@ -414,6 +414,10 @@ class CvMainInterface:
 		self.pBarProductionBar_Whip = ProgressBarUtil.ProgressBar("ProductionBar-Whip-Canvas", iCityCenterRow2X, iCityCenterRow2Y-4, self.xResolution - (iCityCenterRow2X*2), iStackBarHeight, gc.getInfoTypeForString("COLOR_YELLOW"), ProgressBarUtil.CENTER_MARKS, False)
 		self.pBarProductionBar_Whip.addBarItem("ProductionBar")
 		self.pBarProductionBar_Whip.addBarItem("ProductionText")
+		
+		self.pBarCultureBar = ProgressBarUtil.ProgressBar("CultureBar-Canvas", 6, self.yResolution - 188, 240, iStackBarHeight, gc.getInfoTypeForString("COLOR_CULTURE_STORED"), ProgressBarUtil.TICK_MARKS, True)
+		self.pBarCultureBar.addBarItem("CultureBar")
+		self.pBarCultureBar.addBarItem("CultureText")
 # BUG - Progress Bar - Tick Marks - end
 
 		self.m_iNumPlotListButtonsPerRow = (self.xResolution - (iMultiListXL+iMultiListXR) - 68) / 34
@@ -3376,6 +3380,8 @@ class CvMainInterface:
 		self.pBarPopulationBar.hide(screen)
 		self.pBarProductionBar.hide(screen)
 		self.pBarProductionBar_Whip.hide(screen)
+		
+		self.pBarCultureBar.hide(screen)
 # BUG - Progress Bar - Tick Marks - end
 
 # BUG - Raw Commerce - start
@@ -4507,6 +4513,15 @@ class CvMainInterface:
 				else:
 					screen.setBarPercentage( "CultureBar", InfoBarTypes.INFOBAR_RATE, ( ( float(pHeadSelectedCity.getCommerceRate(CommerceTypes.COMMERCE_CULTURE)) / float(pHeadSelectedCity.getCultureThreshold()) ) ) / ( 1 - iFirst ) )
 				screen.show( "CultureBar" )
+				
+				lCultureCosts = []
+				for i in range(iNextCoveredPlot, 37):
+					iCost = pHeadSelectedCity.getCultureCost(i)
+					if iCost >= pHeadSelectedCity.getCultureThreshold(): break
+					lCultureCosts.append(iCost)
+				
+				if lCultureCosts:
+					self.pBarCultureBar.drawTickMarksList(screen, pHeadSelectedCity.getCulture(pHeadSelectedCity.getOwner()), pHeadSelectedCity.getCultureThreshold(), lCultureCosts[0], lCultureCosts, False)
 				
 		else:
 		
