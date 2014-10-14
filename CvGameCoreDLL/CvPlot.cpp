@@ -3086,35 +3086,33 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 			if (iCulture > 0)
 			{
 				// All major civilizations have easier control over their own core (80% rule)
-				if (iI < NUM_MAJOR_PLAYERS)
-				{
-					if (isCore((PlayerTypes)iI))
-					{
-						//if (!isCity())
-						//{
-							iCulture *= 4;
-						//}
-					}
-				}
+				if (iI < NUM_MAJOR_PLAYERS) if (isCore((PlayerTypes)iI)) iCulture *= 4;
 
 				// Independents get the same advantage over a civ's core if that civ is dead
 				if (iI == INDEPENDENT || iI == INDEPENDENT2)
 				{
-					//if (!isCity())
-					//{
-						for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+					for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
+					{
+						if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurnYear() > startingTurnYear[iJ] && !GET_PLAYER((PlayerTypes)iI).isAlive())
 						{
-							if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurnYear() > startingTurnYear[iJ] && !GET_PLAYER((PlayerTypes)iI).isAlive())
-							{
-								iCulture *= 4;
-								break;
-							}
+							iCulture *= 4;
+							break;
 						}
-					//}
+					}
 				}
 
+				bool bCanCover = false;
+				if (getBonusType() >= 0 && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(getBonusType()).getTechReveal())) bCanCover = true;
 
-				if (isWithinCultureRange((PlayerTypes)iI))
+				CvPlot* pTempPlot;
+				for (int iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
+				{
+					if (bCanCover) break;
+					pTempPlot = plotCardinalDirection(getX(), getY(), (CardinalDirectionTypes)iJ);
+					if (pTempPlot->isWithinCultureRange((PlayerTypes)iI) && pTempPlot->getCulture((PlayerTypes)iI) > 0) bCanCover = true;
+				}
+
+				if (bCanCover && isWithinCultureRange((PlayerTypes)iI))
 				{
 					if ((iCulture > iBestCulture) || ((iCulture == iBestCulture) && (getOwnerINLINE() == iI)))
 					{
