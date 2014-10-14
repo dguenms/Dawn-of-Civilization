@@ -313,7 +313,7 @@
 		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein Weltkongress wird abgehalten, aber wir wurden nicht eingeladen. Scheinbar sind wir nicht wichtig genug. Das Schicksal der Welt liegt nun in den Händen der folgenden Zivilisationen:[NEWLINE]%s2[NEWLINE][NEWLINE]Jetzt können wir nur noch ihre Entscheidungen abwarten und auf ihren gesunden Menschenverstand vertrauen.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_WAR</Tag>
+		<Tag>TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI</Tag>
 		<English>[H1]Congress of %s1[\H1][NEWLINE]A great international war has come to an end. The belligerents convene in a congress to discuss how to restore order to the world, but we were not involved:[NEWLINE]%s2[NEWLINE][NEWLINE]As a non-belligerent, nobody can claim our cities.</English>
 		<German>[H1]Kongress von %s1[\H1][NEWLINE]Ein großer internationaler Krieg ist zu Ende gegangen. Die kriegführenden Mächte kommen zusammen, um Ordnung in der Welt wiederherzustellen, aber wir waren nicht beteiligt:[NEWLINE]%s2[NEWLINE][NEWLINE]Als Unbeteiligter kann niemand unsere Städte einfordern.</German>
 	</TEXT>
