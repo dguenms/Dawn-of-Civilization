@@ -5447,7 +5447,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 				}
 			}
 
-			if (bBonusVisible)
+			if (GC.getGame().getGameTurn() > getScenarioStartTurn() && bBonusVisible)
 			{
 				int iLoop;
 				for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); NULL != pLoopCity; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
