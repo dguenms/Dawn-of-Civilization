@@ -227,7 +227,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 						if iEffectiveNextCoveredPlot < 37:
 							iOffset = 0
 							if iNextCoveredPlot > 0: iOffset = city.getCultureCost(iNextCoveredPlot-1)
-							iThreshold = city.getCultureCost(iEffectiveNextCoveredPlot) - iOffset
+							iThreshold = city.getCultureCost(iNextCoveredPlot) - iOffset
 							iCurrent -= iOffset
 							if iCurrent + iChangeRate >= iThreshold:
 								message = localText.getText("TXT_KEY_MORECIV4LERTS_CITY_TO_EXPAND", (city.getName(), ))
