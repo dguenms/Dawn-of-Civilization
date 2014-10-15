@@ -415,7 +415,7 @@ class CvMainInterface:
 		self.pBarProductionBar_Whip.addBarItem("ProductionBar")
 		self.pBarProductionBar_Whip.addBarItem("ProductionText")
 		
-		self.pBarCultureBar = ProgressBarUtil.ProgressBar("CultureBar-Canvas", 6, self.yResolution - 188, 240, iStackBarHeight, gc.getInfoTypeForString("COLOR_CULTURE_STORED"), ProgressBarUtil.TICK_MARKS, True)
+		self.pBarCultureBar = ProgressBarUtil.ProgressBar("CultureBar-Canvas", 6, self.yResolution - 188, 240, iStackBarHeight, gc.getInfoTypeForString("COLOR_WHITE"), ProgressBarUtil.SOLID_MARKS, True)
 		self.pBarCultureBar.addBarItem("CultureBar")
 		self.pBarCultureBar.addBarItem("CultureText")
 # BUG - Progress Bar - Tick Marks - end
@@ -4515,13 +4515,17 @@ class CvMainInterface:
 				screen.show( "CultureBar" )
 				
 				lCultureCosts = []
+				iCurrentCulture = pHeadSelectedCity.getCulture(pHeadSelectedCity.getOwner())
+				iThreshold = pHeadSelectedCity.getCultureThreshold()
 				for i in range(iNextCoveredPlot, 37):
 					iCost = pHeadSelectedCity.getCultureCost(i)
-					if iCost >= pHeadSelectedCity.getCultureThreshold(): break
+					if iCost >= iThreshold: break
 					lCultureCosts.append(iCost)
+					
+				print "Culture costs: " + str(lCultureCosts)
 				
 				if lCultureCosts:
-					self.pBarCultureBar.drawTickMarksList(screen, pHeadSelectedCity.getCulture(pHeadSelectedCity.getOwner()), pHeadSelectedCity.getCultureThreshold(), lCultureCosts[0], lCultureCosts, False)
+					self.pBarCultureBar.drawTickMarksList(screen, 0, iThreshold, 0, lCultureCosts, True)
 				
 		else:
 		

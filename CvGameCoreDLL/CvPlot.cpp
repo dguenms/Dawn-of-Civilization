@@ -3105,12 +3105,10 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 				if (getBonusType() >= 0 && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(getBonusType()).getTechReveal())) bCanCover = true;
 
 				CvPlot* pTempPlot;
-				if (iI == EGYPT) GC.getGame().logMsg("calculate owner for x=%d, y=%d", getX(), getY());
 				for (int iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
 				{
 					if (bCanCover) break;
 					pTempPlot = plotCardinalDirection(getX(), getY(), (CardinalDirectionTypes)iJ);
-					if (iI == EGYPT) GC.getGame().logMsg("check x=%d, y=%d", pTempPlot->getX(), pTempPlot->getY());
 					if (pTempPlot != NULL && pTempPlot->isWithinCultureRange((PlayerTypes)iI)) bCanCover = true;
 				}
 
@@ -5877,6 +5875,34 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			}
 		}
 
+		// Leoreth: forts allow to cover a tile
+		/*if (GC.getImprovementInfo(eNewValue).isActsAsCity())
+		{
+			if (getOwner() != NO_PLAYER) // other case already handled in changeBuildProgress
+			{
+				changeCultureRangeCities(getOwner(), 0, 1, true);
+			}
+		}
+
+		if (GC.getImprovementInfo(eOldImprovement).isActsAsCity())
+		{
+			if (getOwner() != NO_PLAYER)
+			{
+				changeCultureRangeCities(getOwner(), 0, -1, true);
+			}
+			else
+			{
+				for (iI = 0; iI < MAX_PLAYERS; iI++)
+				{
+					// since there is no city on the plot, the distance 0 city can only be the fort
+					if (getCultureRangeCities((PlayerTypes)iI, 0) > 0) 
+					{
+						changeCultureRangeCities((PlayerTypes)iI, 0, -1, true);
+					}
+				}
+			}
+		}*/
+
 		gDLL->getInterfaceIFace()->setDirty(CitizenButtons_DIRTY_BIT, true);
 	}
 }
@@ -8110,6 +8136,12 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 			if (GC.getBuildInfo(eBuild).getImprovement() != NO_IMPROVEMENT)
 			{
 				setImprovementType((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement());
+
+				// Leoreth: forts allow to cover cities: if tile unowned, let the building team claim it, otherwise let setImprovementType() handle it
+				/*if (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isActsAsCity())
+				{
+					if (getOwner() == NO_PLAYER) changeCultureRangeCities(GET_TEAM(eTeam).getLeaderID(), 0, 1, true);
+				}*/
 			}
 
 			if (GC.getBuildInfo(eBuild).getRoute() != NO_ROUTE)
