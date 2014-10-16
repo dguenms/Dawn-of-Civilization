@@ -6611,22 +6611,25 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		iYield = std::max(iYield, GC.getYieldInfo(eYield).getMinCity());
 		int iAppliedImprovement = -1;
 
-		// Leoreth (edead): city counts as correct improvement wrt. bonus yields, except food
-		if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && eYield != (YieldTypes)0)
+		// Leoreth (edead): city counts as correct improvement wrt. bonus yields on small islands, except food
+		if (GC.getMap().getArea(getArea())->getNumTiles() <= 3)
 		{
-			for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
+			if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && eYield != (YieldTypes)0)
 			{
-				if (GC.getImprovementInfo((ImprovementTypes)iImprovement).isImprovementBonusMakesValid(getBonusType(GET_PLAYER(ePlayer).getTeam())))
+				for (int iImprovement = 0; iImprovement < GC.getNumImprovementInfos(); iImprovement++)
 				{
-					for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
+					if (GC.getImprovementInfo((ImprovementTypes)iImprovement).isImprovementBonusMakesValid(getBonusType(GET_PLAYER(ePlayer).getTeam())))
 					{
-						if (GC.getBuildInfo((BuildTypes)iBuild).getImprovement() == iImprovement && GET_TEAM((TeamTypes)ePlayer).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes)iBuild).getTechPrereq()))
+						for (int iBuild = 0; iBuild < GC.getNumBuildInfos(); iBuild++)
 						{
-							if (!GC.getBuildInfo((BuildTypes)iBuild).isKill())
+							if (GC.getBuildInfo((BuildTypes)iBuild).getImprovement() == iImprovement && GET_TEAM((TeamTypes)ePlayer).isHasTech((TechTypes)GC.getBuildInfo((BuildTypes)iBuild).getTechPrereq()))
 							{
-								iAppliedImprovement = iImprovement;
-								break;
-								break;
+								if (!GC.getBuildInfo((BuildTypes)iBuild).isKill())
+								{
+									iAppliedImprovement = iImprovement;
+									break;
+									break;
+								}
 							}
 						}
 					}

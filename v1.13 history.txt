@@ -19,5 +19,7 @@
 	# more culture required to cover the entire second ring
 	# properties of the plot influence how much culture it takes to cover it (more for desert, peaks ..., less for tiles with bonuses or river connections, making for more geographically appropriate borders)
 	# tiles get covered in order of their culture costs (cheapest first)
+	# you can also take control of a tile by building a fort on it
 # Oasis yields reverted to BtS settings (+3 food, +2 commerce)
 # immigration happens more frequently now, cities in North America are preferred as targets
+# additional improvement yields now only apply to city tiles for cities on small islands
