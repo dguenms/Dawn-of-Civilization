@@ -4176,24 +4176,11 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 		// Leoreth: if not all tiles can be covered, display this instead
 		int iNextCoveredPlot = pHeadSelectedCity->getNextCoveredPlot();
 		int iEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
-		bool bDisplayCoverage = false; //(iEffectiveNextCoveredPlot < NUM_CITY_PLOTS_3);
 
 		int iCultureTimes100 = pHeadSelectedCity->getCultureTimes100(pHeadSelectedCity->getOwnerINLINE());
 
-		int iCurrent, iThreshold;
-		if (bDisplayCoverage)
-		{
-			int iOffset = 0;
-			if (iCultureTimes100 > 0 && iNextCoveredPlot > 0) iOffset = pHeadSelectedCity->getCultureCost(iNextCoveredPlot-1);
-			
-			iThreshold = pHeadSelectedCity->getCultureCost(iEffectiveNextCoveredPlot) - iOffset;
-			iCurrent = iCultureTimes100 - iOffset * 100;
-		}
-		else
-		{
-			iThreshold = pHeadSelectedCity->getCultureThreshold();
-			iCurrent = iCultureTimes100;
-		}
+		int iThreshold = pHeadSelectedCity->getCultureThreshold();
+		int iCurrent = iCultureTimes100;
 
 		if (iCurrent%100 == 0)
 		{
@@ -4203,11 +4190,6 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 		{
 			CvWString szCulture = CvWString::format(L"%d.%02d", iCurrent/100, iCurrent%100);
 			szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CULTURE_FLOAT", szCulture.GetCString(), iThreshold));
-		}
-
-		if (bDisplayCoverage)
-		{
-			szBuffer.append(CvWString::format(L" (%d total)", iCultureTimes100/100));
 		}
 
 		int iCultureRateTimes100 = pHeadSelectedCity->getCommerceRateTimes100(COMMERCE_CULTURE);
@@ -4221,6 +4203,22 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 
 				szBuffer.append(L' ');
 				szBuffer.append(gDLL->getText("INTERFACE_CITY_TURNS", std::max(1, iTurnsLeft)));
+			}
+		}
+
+		if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS_3)
+		{
+			if (iEffectiveNextCoveredPlot >= iNextCoveredPlot) iThreshold = pHeadSelectedCity->getCultureCost(iEffectiveNextCoveredPlot);
+			else iThreshold = pHeadSelectedCity->getCultureThreshold();
+
+			int iCultureLeftTimes100 = 100 * iThreshold - iCultureTimes100;
+
+			if (iCultureLeftTimes100 > 0)
+			{
+				int iTurnsLeft = (iCultureLeftTimes100 + iCultureRateTimes100 - 1) / iCultureRateTimes100;
+
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_INTERFACE_CITY_EXPANSION_TURNS", std::max(1, iTurnsLeft)));
 			}
 		}
 
