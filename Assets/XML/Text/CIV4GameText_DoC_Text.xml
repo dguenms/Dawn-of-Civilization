@@ -833,9 +833,9 @@
 		<German>Unser Vorkommen des Bonusguts [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT] in der Nähe von %s2_CityName ist aufgebraucht!</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_INTERFACE_CITY_NEXT_PLOT</Tag>
-		<English>Claim Territory</English>
-		<German>Gebiet Einnehmen</German>
+		<Tag>TXT_KEY_INTERFACE_CITY_EXPANSION_TURNS</Tag>
+		<English>Border expands in: %d1 Turns</English>
+		<German>Gebietsweiterung in: %d1 Runden</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_OVERFLOW</Tag>

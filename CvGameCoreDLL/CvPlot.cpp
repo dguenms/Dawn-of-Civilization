@@ -5876,7 +5876,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		}
 
 		// Leoreth: forts allow to cover a tile
-		/*if (GC.getImprovementInfo(eNewValue).isActsAsCity())
+		if (eNewValue != NO_IMPROVEMENT && GC.getImprovementInfo(eNewValue).isActsAsCity())
 		{
 			if (getOwner() != NO_PLAYER) // other case already handled in changeBuildProgress
 			{
@@ -5884,11 +5884,11 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			}
 		}
 
-		if (GC.getImprovementInfo(eOldImprovement).isActsAsCity())
+		if (eOldImprovement != NO_IMPROVEMENT && GC.getImprovementInfo(eOldImprovement).isActsAsCity())
 		{
 			if (getOwner() != NO_PLAYER)
 			{
-				changeCultureRangeCities(getOwner(), 0, -1, true);
+				if (getCultureRangeCities(getOwner(), 0) > 0) changeCultureRangeCities(getOwner(), 0, -1, true);
 			}
 			else
 			{
@@ -5901,7 +5901,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 					}
 				}
 			}
-		}*/
+		}
 
 		gDLL->getInterfaceIFace()->setDirty(CitizenButtons_DIRTY_BIT, true);
 	}
@@ -8138,10 +8138,10 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 				setImprovementType((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement());
 
 				// Leoreth: forts allow to cover cities: if tile unowned, let the building team claim it, otherwise let setImprovementType() handle it
-				/*if (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isActsAsCity())
+				if (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isActsAsCity())
 				{
 					if (getOwner() == NO_PLAYER) changeCultureRangeCities(GET_TEAM(eTeam).getLeaderID(), 0, 1, true);
-				}*/
+				}
 			}
 
 			if (GC.getBuildInfo(eBuild).getRoute() != NO_ROUTE)
