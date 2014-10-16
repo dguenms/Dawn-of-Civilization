@@ -265,13 +265,6 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		changeCommerceHappinessPer(((CommerceTypes)iI), GC.getCommerceInfo((CommerceTypes)iI).getInitialHappiness());
 	}
 
-	// Argentine UP: Justicialism (+1 happiness per 10% culture)
-	/*if (getOwnerINLINE() == ARGENTINA)
-	{
-		BuildingTypes eBuilding = (BuildingTypes)GC.getInfoTypeForString("BUILDING_THEATRE");
-		changeCommerceHappinessPer(COMMERCE_CULTURE, GC.getBuildingInfo(eBuilding).getCommerceHappiness(COMMERCE_CULTURE));
-	}*/
-
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
 		if (GET_PLAYER(getOwnerINLINE()).isBuildingFree((BuildingTypes)iI))
