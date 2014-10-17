@@ -28050,13 +28050,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=55
-	BonusType=BONUS_COW
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=56
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28797,8 +28797,7 @@ BeginPlot
 	x=75,y=52
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_IRON
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -29175,7 +29174,8 @@ BeginPlot
 	x=76,y=52
 	RiverNSDirection=2
 	isWOfRiver
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_IRON
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot

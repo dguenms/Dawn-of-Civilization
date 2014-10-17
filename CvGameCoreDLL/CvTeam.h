@@ -211,6 +211,7 @@ public:
 	bool isHasMet(TeamTypes eIndex) const;																		// Exposed to Python
 	void makeHasMet(TeamTypes eIndex, bool bNewDiplo);
 	DllExport void cutContact(TeamTypes eIndex);	//Rhye
+	bool canCutContact(TeamTypes eIndex); // Leoreth
 
 	DllExport bool isAtWar(TeamTypes eIndex) const;																			// Exposed to Python
 	DllExport void setAtWar(TeamTypes eIndex, bool bNewValue);

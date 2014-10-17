@@ -6934,3 +6934,22 @@ void CvTeam::changeTotalTechValue(int iChange)
 
 	GC.getGame().updateTechRanks();
 }
+
+bool CvTeam::canCutContact(TeamTypes eTeam)
+{
+	bool bResult = true;
+
+	CvPlot* pLoopPlot;
+	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
+	{
+		pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
+		if (pLoopPlot->isOwned())
+		{
+			if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == getID() && pLoopPlot->isVisible(eTeam, false)) bResult = false;
+			if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == eTeam && pLoopPlot->isVisible(getID(), false)) bResult = false;
+		}
+		if (!bResult) break;
+	}
+
+	return bResult;
+}

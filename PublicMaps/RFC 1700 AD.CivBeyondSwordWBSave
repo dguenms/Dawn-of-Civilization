@@ -33687,16 +33687,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=55
-	BonusType=BONUS_COW
-	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=14,24,
 EndPlot
 BeginPlot
 	x=73,y=56
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -34734,9 +34734,8 @@ BeginPlot
 	x=75,y=52
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=24,33,42,43,
 EndPlot
@@ -35196,8 +35195,9 @@ BeginPlot
 	x=76,y=52
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=24,42,43,
 EndPlot

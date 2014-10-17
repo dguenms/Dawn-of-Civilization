@@ -152,7 +152,8 @@ public:
 	void changeExtraMoves(int /*DomainTypes*/ eIndex, int iChange);
 
 	bool isHasMet(int /*TeamTypes*/ eIndex);
-	void cutContact(int /*TeamTypes*/ eIndex); //Rhye
+	void cutContact(int /*TeamTypes*/ eIndex); //
+	bool canCutContact(int /*TeamTypes*/ eIndex);
 	void setAtWar(int /*TeamTypes*/ eIndex, bool bNewValue); //Rhye
 	bool isAtWar(int /*TeamTypes*/ eIndex);
 	bool isPermanentWarPeace(int /*TeamTypes*/ eIndex);

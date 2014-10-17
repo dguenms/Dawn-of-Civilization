@@ -1875,8 +1875,7 @@ class RFCUtils:
 		if gc.getPlayer(iPlayer).isAlive(): return False
 			
 		# check if only recently died
-		if iGameTurn - self.getLastTurnAlive(iPlayer) < self.getTurns(10):
-			return False
+		if iGameTurn - self.getLastTurnAlive(iPlayer) < self.getTurns(10): return False
 		
 		# check if the civ can be reborn at this date
 		if len(con.tResurrectionIntervals[iPlayer]) > 0:
