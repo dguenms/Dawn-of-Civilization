@@ -92,7 +92,8 @@ def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
 	
 def onVassalState(iMaster, iVassal):
-	checkStability(iVassal)
+	#checkStability(iVassal)
+	setStabilityLevel(iVassal, max(con.iStabilityShaky, getStabilityLevel(iVassal)))
 	checkStability(iMaster, True)
 	
 	# update number of cities so vassals survive losing cities

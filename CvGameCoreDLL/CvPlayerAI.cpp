@@ -16212,6 +16212,12 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 	if (getID() == GERMANY)
 		return false;
 
+	// Leoreth: prevent units from being disbanded after spawn in general
+	if (getID() < NUM_MAJOR_PLAYERS && GC.getGame().getGameTurn() < getTurnForYear(startingTurnYear[getID()]) + getTurns(20))
+	{
+		return false;
+	}
+
 	// don't disband immediately after respawn
 	if (getLatestRebellionTurn() >= GC.getGame().getGameTurn() - 2)
 	{

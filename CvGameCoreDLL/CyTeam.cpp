@@ -1004,3 +1004,8 @@ bool CyTeam::isCapitulated()
 {
 	return m_pTeam ? m_pTeam->isCapitulated() : false;
 }
+
+bool CyTeam::canCutContact(int eTeam)
+{
+	return m_pTeam ? m_pTeam->canCutContact((TeamTypes)eTeam) : false;
+}

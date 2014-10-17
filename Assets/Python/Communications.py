@@ -127,46 +127,7 @@ class Communications:
                 iCounter = 0
 		
 		# Initialize list
-		lContacts = [i for i in range(con.iNumPlayers) if gc.getPlayer(i).isAlive() and teamCiv.canContact(i)]
-
-		# If other civs can see our borders
-		for city in utils.getCityList(iCiv):
-			for iOtherCiv in lContacts:
-				if city.hasBuilding(iNumBuildingsPlague + iOtherCiv):
-					lContacts.remove(iOtherCiv)
-				elif city.plot().isVisible(iOtherCiv, False):
-					lContacts.remove(iOtherCiv)
-			# Leoreth: this is very inefficient, find a better way
-			x = city.getX()
-			y = city.getY()
-			r = city.getCultureLevel()
-			for i in range(x-r, x+r+1):
-				for j in range(y-r, y+r+1):
-					plot = gc.getMap().plot(i, j)
-					for iOtherCiv in lContacts:
-						if plot.getOwner() == iOtherCiv:
-							lContacts.remove(iOtherCiv)
-							
-		# If we can see their borders (view distance is asymmetrical)
-		lRemove = []
-		for iOtherCiv in lContacts:
-			for city in utils.getCityList(iOtherCiv):
-				if city.hasBuilding(iNumBuildingsPlague + iCiv):
-					lRemove.append(iOtherCiv)
-				elif city.plot().isVisible(iCiv, False):
-					lRemove.append(iOtherCiv)
-				else:
-					x = city.getX()
-					y = city.getY()
-					r = city.getCultureLevel()
-					for i in range(x-r, x+r+1):
-						for j in range(y-r, y+r+1):
-							plot = gc.getMap().plot(i, j)
-							if plot.isVisible(iOtherCiv, False) and plot.getOwner() == iCiv:
-								lRemove.append(iOtherCiv)
-								
-		for iLoopCiv in lRemove:
-			if iLoopCiv in lContacts: lContacts.remove(iLoopCiv)
+		lContacts = [i for i in range(con.iNumPlayers) if gc.getPlayer(i).isAlive() and teamCiv.canContact(i) and teamCiv.canCutContact(i)]
 								
 		# master/vassal relationships: if master can be seen, don't cut vassal contact and vice versa
 		lRemove = []
