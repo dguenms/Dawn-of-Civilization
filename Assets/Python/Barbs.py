@@ -355,6 +355,7 @@ class Barbs:
 		elif sName == 'Zhongdu' and utils.getHumanID() == con.iChina: return False
 		elif sName == 'Hamburg' and (utils.getHumanID() == con.iHolyRome or utils.getSeed() % 4 == 0): return False
 		elif sName == 'L&#252;beck' and (utils.getHumanID() == con.iHolyRome or utils.getSeed() % 4 != 0): return False
+		elif sName == 'Rasa' and gc.getPlayer(con.iTibet).isAlive(): return False
 		#elif sName == 'Marrakus' and utils.getScenario() != con.i3000BC: return False
 		
 		return True

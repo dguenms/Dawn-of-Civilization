@@ -23,3 +23,5 @@
 # Oasis yields reverted to BtS settings (+3 food, +2 commerce)
 # immigration happens more frequently now, cities in North America are preferred as targets
 # additional improvement yields now only apply to city tiles for cities on small islands
+# vassal stability is reset to shaky (if lower) on vassalization
+# contact can now only be lost if neither of the two civs can currently see the other's territory
