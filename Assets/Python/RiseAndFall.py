@@ -2354,7 +2354,7 @@ class RiseAndFall:
 			lCities.extend(utils.getCityList(iEngland))
 			lCities.extend(utils.getCityList(iAmerica))
 			for city in lCities:
-				if city.getRegionID() == con.rCanada and city.getX() < con.tCapitals[0][iCanada]:
+				if city.getRegionID() == con.rCanada and city.getX() < con.tCapitals[0][iCanada][0]:
 					cityList.append(city)
 					
 		# Leoreth: remove capital locations

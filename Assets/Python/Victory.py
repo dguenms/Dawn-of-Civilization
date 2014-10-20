@@ -2988,7 +2988,7 @@ class Victory:
 		# Maya UHV: Astronomy
 		if iTech == con.iAstronomy:
 			if self.getGoal(iMaya, 2) == -1:
-				if iPlayer == iMaya and not gc.getPlayer(iPlayer).isReborn():
+				if iPlayer == iMaya and not pMaya.isReborn():
 					self.setGoal(iMaya, 2, 1)
 				else:
 					self.setGoal(iMaya, 2, 0)
@@ -3131,7 +3131,7 @@ class Victory:
 
 
                 elif (iPlayer == iMaya):
-                        if (pMaya.isAlive()):
+                        if (pMaya.isAlive() and not pMaya.isReborn()):
                                 if (self.getGoal(iMaya, 0) == -1): #eof error???
                                         if (iTech == con.iCalendar):
                                                 if (iGameTurn <= getTurnForYear(600)):
