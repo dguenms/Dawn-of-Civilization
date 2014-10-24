@@ -17250,7 +17250,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 
 	if (bOrdering)
 	{
-		if (iCost >= 15) iCost += 100; 
+		if (pPlot->getBonusType() < 0 && iCost >= 15) iCost += 100; 
 		iCost += 100 * iDistance;
 		if (pPlot->isWater() && !pPlot->isLake() && pPlot->getBonusType() == -1)
 		{

@@ -264,6 +264,7 @@
 				<BonusType>BONUS_SILVER</BonusType>
 				<BonusType>BONUS_GEMS</BonusType>
 				<BonusType>BONUS_MARBLE</BonusType>
+				<BonusType>BONUS_PEARL</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>

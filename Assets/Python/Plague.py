@@ -325,7 +325,7 @@ class Plague:
                 teamOwner = gc.getTeam(gc.getPlayer(city.getOwner()).getTeam())
                 
                 #deadly plague when human player isn't born yet, will speed up the loading
-                if (gc.getGame().getGameTurn() < getTurnForYear(con.tBirth[utils.getHumanID()] + utils.getTurns(20))):
+                if (gc.getGame().getGameTurn() < getTurnForYear(con.tBirth[utils.getHumanID()]) + utils.getTurns(20)):
                         iDamage += 10
                         baseValue -= 5
      

@@ -958,7 +958,10 @@ enum BonusTypes						// Exposed to Python
 	BONUS_MUSIC,
 	BONUS_MOVIES,
 	BONUS_COTTON,
-	BONUS_SWAMP
+	BONUS_COFFEE,
+	BONUS_TEA,
+	BONUS_TOBACCO,
+	BONUS_PEARL
 };
 
 enum BonusClassTypes			// Exposed to Python

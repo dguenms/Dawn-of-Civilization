@@ -159,7 +159,6 @@ class Resources:
 		# Leoreth: obstacles for colonization
 		if iGameTurn == getTurnForYear(700):
 			gc.getMap().plot(35, 54).setFeatureType(con.iMud, 0)
-			gc.getMap().plot(35, 54).setBonusType(con.iSwamp)
 			for x, y in lNewfoundlandCapes:
 				gc.getMap().plot(x, y).setFeatureType(con.iCape, 0)
 		

@@ -2231,6 +2231,13 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 		bMexico = true;
 	}
 
+	// Leoreth: different fishing boats for different sea levels
+	if (GC.getImprovementInfo(eImprovement).isWater())
+	{
+		if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FISHING_BOATS") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_COAST")) return false;
+		if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_HIGH_SEA_FISHING_BOATS") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_OCEAN")) return false;
+	}
+
 	if (getFeatureType() != NO_FEATURE)
 	{
 		if (GC.getFeatureInfo(getFeatureType()).isNoImprovement())
@@ -2898,9 +2905,14 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	iRegularCost *= GC.getMOVE_DENOMINATOR();
 
 	//Rhye - start
+
 	if (getTerrainType() == 6) //ocean
 	{
-		iRegularCost /= 2;
+		// Leoreth: reduced movement cost only for units that could enter ocean on their own
+		if (!pUnit->getUnitInfo().getTerrainImpassable(getTerrainType()) || (pUnit->getUnitInfo().getTerrainPassableTech(getTerrainType()) != NO_TECH && GET_TEAM(pUnit->getTeam()).isHasTech((TechTypes)pUnit->getUnitInfo().getTerrainPassableTech(getTerrainType()))))
+		{
+			iRegularCost /= 2;
+		}
 	}
 	//Rhye - end
 
