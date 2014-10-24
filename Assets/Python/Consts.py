@@ -2695,12 +2695,10 @@ iEthiopianAskari = iEthiopianOromoWarrior
 iDutchEastIndiaman = iNetherlandsOostindievaarder
 
 # initialise bonuses variables to bonuses IDs from WBS
-iNumBonuses = 39
+iNumBonuses = 40
 (iAluminium, iCoal, iCopper, iHorse, iIron, iMarble, iOil, iStone, iUranium, iBanana, iClam, iCorn, iCow, iCrab,
 iDeer, iFish, iPig, iRice, iSheep, iWheat, iDye, iFur, iGems, iGold, iIncense, iIvory, iSilk, iSilver, iSpices,
-iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobacco) = range(iNumBonuses)
-
-iSwamp = iNumBonuses
+iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobacco, iPearls) = range(iNumBonuses)
 
 #Buildings (update Persian UHV every time this is changed)
 
@@ -2848,8 +2846,8 @@ iNumEras = 7
 
 #Improvements
 
-iNumImprovements = 26
-(iLandWorked, iWaterWorked, iCityRuins, iHut, iFarm, iFishingBoats, iWhalingBoats, iMine, iWorkshop, iLumbermill, iWindmill, iWatermill, iPlantation, 
+iNumImprovements = 27
+(iLandWorked, iWaterWorked, iCityRuins, iHut, iFarm, iFishingBoats, iHighSeaFishingBoats, iWhalingBoats, iMine, iWorkshop, iLumbermill, iWindmill, iWatermill, iPlantation, 
 iSlavePlantation, iQuarry, iPasture, iCamp, iWell, iOffshorePlatform, iWinery, iCottage, iHamlet, iVillage, iTown, iFort, iForestPreserve) = range(iNumImprovements)
 
 #feature & terrain

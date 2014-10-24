@@ -843,6 +843,21 @@
 		<German>Overflow in %s1, method: %s2</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_HIGH_SEA_FISHING_BOATS</Tag>
+		<English>High Sea Fishing Boats</English>
+		<German>Hochsee-Fischerboot</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_ISLANDS</Tag>
+		<English>Islands</English>
+		<German>Inseln</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_PEARL</Tag>
+		<English>Pearls</English>
+		<German>Perlen</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>

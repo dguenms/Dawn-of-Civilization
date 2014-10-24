@@ -941,7 +941,7 @@
 			<Civilopedia>TXT_KEY_TERRAIN_OCEAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_TERRAIN_OCEAN</ArtDefineTag>
 			<Yields>
-				<iYield>1</iYield>
+				<iYield>0</iYield>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
 			</Yields>
