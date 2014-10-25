@@ -6624,7 +6624,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		int iAppliedImprovement = -1;
 
 		// Leoreth (edead): city counts as correct improvement wrt. bonus yields on small islands, except food
-		if (GC.getMap().getArea(getArea())->getNumTiles() <= 3)
+		if (GC.getMap().getArea(getArea())->getNumTiles() <= 5)
 		{
 			if (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && eYield != (YieldTypes)0)
 			{
