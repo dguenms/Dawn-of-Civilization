@@ -593,7 +593,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CHIANG_KAISHEK</Type>
-			<Button>,Art/leaderheads/Chiang/Chiang.dds</Button>
+			<Button>Art/leaderheads/Chiang/Chiang.dds</Button>
 			<NIF>Art/leaderheads/Chiang/chiang2.nif</NIF>
 			<KFM>Art/LeaderHeads/Chiang/wang_kon.kfm</KFM>
 			<NoShaderNIF/>
@@ -601,7 +601,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_NICHOLAS_II</Type>
-			<Button>,Art/Leaderheads/Nicholas_II/nicholas_ii.dds</Button>
+			<Button>Art/Leaderheads/Nicholas_II/nicholas_ii.dds</Button>
 			<NIF>Art/Leaderheads/Nicholas_II/frederick_the_great.nif</NIF>
 			<KFM>Art/LeaderHeads/frederick_the_great/frederick_the_great.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/Nicholas_II/frederick_the_great_noshader.nif</NoShaderNIF>
@@ -625,7 +625,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_KHOMEINI</Type>
-			<Button>,Art/leaderheads/Khomeini/Kh_button.dds</Button>
+			<Button>Art/leaderheads/Khomeini/Kh_button.dds</Button>
 			<NIF>art/LeaderHeads/Khomeini/saladin.nif</NIF>
 			<KFM>art/LeaderHeads/Khomeini/saladin.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Khomeini/saladin.nif</NoShaderNIF>
@@ -633,7 +633,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_TAIZONG</Type>
-			<Button>,Art/leaderheads/Taizong/Taizong.dds</Button>
+			<Button>Art/leaderheads/Taizong/Taizong.dds</Button>
 			<NIF>art/leaderheads/Taizong/mao_tse_tung.nif</NIF>
 			<KFM>art/leaderheads/Taizong/mao_tse_tung.kfm</KFM>
 			<NoShaderNIF>art/leaderheads/Taizong/mao_tse_tung_noshader.nif</NoShaderNIF>
@@ -649,7 +649,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_HAYAW_WURUK</Type>
-			<Button>,Art/leaderheads/HayamWuruk/hayam_btn.dds</Button>
+			<Button>Art/leaderheads/HayamWuruk/hayam_btn.dds</Button>
 			<NIF>art/leaderheads/HayamWuruk/HayamWuruk.nif</NIF>
 			<KFM>art/leaderheads/HayamWuruk/Tachnechobrus.kfm</KFM>
 			<NoShaderNIF>art/leaderheads/HayamWuruk/HayamWuruk.nif</NoShaderNIF>
@@ -657,7 +657,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SUHARTO</Type>
-			<Button>,Art/leaderheads/Suharto/suharto_btn.dds</Button>
+			<Button>Art/leaderheads/Suharto/suharto_btn.dds</Button>
 			<NIF>art/leaderheads/Suharto/SuhartoShadered.nif</NIF>
 			<KFM>art/leaderheads/Suharto/mao_tse_tung.kfm</KFM>
 			<NoShaderNIF>art/leaderheads/Suharto/SuhartoShadered.nif</NoShaderNIF>
@@ -665,7 +665,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_DHARMASETU</Type>
-			<Button>,Art/leaderheads/Dharmasetu/Dharmasetu_btn.dds</Button>
+			<Button>Art/leaderheads/Dharmasetu/Dharmasetu_btn.dds</Button>
 			<NIF>art/leaderheads/Dharmasetu/Arawak.nif</NIF>
 			<KFM>art/leaderheads/Dharmasetu/Arawak.kfm</KFM>
 			<NoShaderNIF>art/leaderheads/Dharmasetu/Arawak.nif</NoShaderNIF>
@@ -681,7 +681,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ISABELLA_NEW</Type>
-			<Button>,Art/Leaderheads/Isabella_new/Button/Btn_LH_Spain_Isabella.dds</Button>
+			<Button>Art/Leaderheads/Isabella_new/Button/Btn_LH_Spain_Isabella.dds</Button>
 			<NIF>Art/Leaderheads/Isabella_new/isabella.nif</NIF>
 			<KFM>Art/Leaderheads/Isabella_new/isabella.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/Isabella_new/isabella.nif</NoShaderNIF>
@@ -689,7 +689,7 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CATHERINE_NEW</Type>
-			<Button>,Art/Leaderheads/catherine_new/Btn_LH_Russia_Catherine.dds</Button>
+			<Button>Art/Leaderheads/catherine_new/Btn_LH_Russia_Catherine.dds</Button>
 			<NIF>Art/Leaderheads/catherine_new/catherine.nif</NIF>
 			<KFM>Art/Leaderheads/catherine_new/catherine.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/catherine_new/catherine.nif</NoShaderNIF>

@@ -2142,7 +2142,7 @@
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Civilizations/canada_btn.dds</Button>
+			<Button>Art/Interface/Buttons/Civilizations/Canada.dds</Button>
 		</BuildingArtInfo>
 		<!-- Rhye - end -->
 		<BuildingArtInfo>
