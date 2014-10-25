@@ -2170,6 +2170,14 @@
 			<Path>Art/Effects/Magpie/Flock.nif</Path>
 			<bIsProjectile>0</bIsProjectile>
 		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_BIRDSCATTER_GULLS</Type>
+			<Description>Birds flying out and fading.</Description>
+			<fScale>0.4</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Effects/Gulls/Flock.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
 		<!-- Fireworks:-->
 		<EffectInfo>
 			<Type>FIREWORKS_RED_LARGE_SLOW</Type>

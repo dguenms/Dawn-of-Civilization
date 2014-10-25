@@ -1792,7 +1792,7 @@
 			<TechCityTrade>NONE</TechCityTrade>
 			<TechObsolete>TECH_COMBUSTION</TechObsolete>
 			<YieldChanges>
-				<iYieldChange>2</iYieldChange>
+				<iYieldChange>1</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
 			</YieldChanges>

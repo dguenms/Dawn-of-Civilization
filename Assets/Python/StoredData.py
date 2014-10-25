@@ -131,6 +131,7 @@ class StoredData:
 				    'iCanadianPeaceDeals' : 0,
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
+				    'lTurnsToCollapse': [-1 for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
 				    'lLastStability' : [0 for i in range(con.iNumPlayers)],
 				    'lLastDifference' : [0 for i in range(con.iNumPlayers)],
@@ -293,6 +294,15 @@ class StoredData:
 		
 	def setWarStartTurn(self, iPlayer, iEnemy, iNewValue):
 		self.scriptDict['lWarStartTurn'][iPlayer][iEnemy] = iNewValue
+		
+	def getTurnsToCollapse(self, iPlayer):
+		return self.scriptDict['lTurnsToCollapse'][iPlayer]
+		
+	def setTurnsToCollapse(self, iPlayer, iNewValue):
+		self.scriptDict['lTurnsToCollapse'][iPlayer] = iNewValue
+		
+	def changeTurnsToCollapse(self, iPlayer, iChange):
+		self.scriptDict['lTurnsToCollapse'][iPlayer] += iChange
 		
 	# VICTORY
 		

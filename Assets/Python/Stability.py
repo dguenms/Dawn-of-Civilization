@@ -35,6 +35,11 @@ tCrisisTypes = (
 
 def checkTurn(iGameTurn):
 	for iPlayer in range(con.iNumPlayers):
+		if sd.getTurnsToCollapse(iPlayer) == 0:
+			completeCollapse(iPlayer)
+		elif sd.getTurnsToCollapse(iPlayer) > 0:
+			sd.changeTurnsToCollapse(iPlayer, -1)
+	
 		if getCrisisCountdown(iPlayer) > 0:
 			changeCrisisCountdown(iPlayer, -1)
 			
@@ -64,6 +69,9 @@ def checkTurn(iGameTurn):
 			
 	if iGameTurn >= getTurnForYear(con.tBirth[utils.getHumanID()]):
 		sd.setHumanStability(calculateStability(utils.getHumanID()))
+		
+def triggerCollapse(iPlayer):
+	sd.setTurnsToCollapse(iPlayer, 1)
 
 def onCityAcquired(city, iOwner, iPlayer):
 	checkStability(iOwner)
@@ -315,7 +323,8 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 		# if stability does not improve on collapsing, a complete collapse ensues
 		if iStabilityLevel == con.iStabilityCollapsing:
 			if iStability <= sd.getLastStability(iPlayer):
-				completeCollapse(iPlayer)
+				#completeCollapse(iPlayer)
+				triggerCollapse(iPlayer)
 		
 	elif not bPositive:
 		# humans are immune to first stability drop
@@ -359,7 +368,8 @@ def triggerCrisis(iPlayer, iCrisisLevel, iCrisisType, bWar):
 	
 	if iCrisisLevel == con.iStabilityCollapsing:
 		if not bWar:
-			completeCollapse(iPlayer)
+			#completeCollapse(iPlayer)
+			triggerCollapse(iPlayer)
 	
 	else:
 		if iCrisisType == con.iStabilityExpansion: territorialCrisis(iPlayer, iCrisisLevel)
