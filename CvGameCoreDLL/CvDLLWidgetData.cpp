@@ -4206,7 +4206,7 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct, CvW
 			}
 		}
 
-		if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS_3)
+		if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS_3 && iCultureRateTimes100 > 0)
 		{
 			if (iEffectiveNextCoveredPlot >= iNextCoveredPlot) iThreshold = pHeadSelectedCity->getCultureCost(iEffectiveNextCoveredPlot);
 			else iThreshold = pHeadSelectedCity->getCultureThreshold();

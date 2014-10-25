@@ -4300,7 +4300,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		{
 			if (!(GET_TEAM(getTeam()).isAVassal()))
 			{
-				if (GET_TEAM(getTeam()).isHasMet((TeamTypes)(item.m_iData)) && GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isHasMet((TeamTypes)(item.m_iData)))
+				if (GET_TEAM(getTeam()).isHasMet((TeamTypes)(item.m_iData)) && GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isHasMet((TeamTypes)(item.m_iData)) && !GET_PLAYER(GET_TEAM((TeamTypes)item.m_iData).getLeaderID()).isMinorCiv())
 				{
 					if (atWar(getTeam(), ((TeamTypes)(item.m_iData))))
 					{
@@ -4316,7 +4316,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		{
 			if (!(GET_TEAM(getTeam()).isAVassal()))
 			{
-				if (!GET_TEAM((TeamTypes)item.m_iData).isAVassal())
+				if (!GET_TEAM((TeamTypes)item.m_iData).isAVassal() && !GET_PLAYER(GET_TEAM((TeamTypes)item.m_iData).getLeaderID()).isMinorCiv())
 				{
 					if (GET_TEAM(getTeam()).isHasMet((TeamTypes)(item.m_iData)) && GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isHasMet((TeamTypes)(item.m_iData)))
 					{
