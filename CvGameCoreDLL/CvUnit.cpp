@@ -2523,20 +2523,15 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	{
 		if (pPlot->getFeatureType() != NO_FEATURE)
 		{
-			if (m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()))
+			// Leoreth: includes Khmer UP, also attacks are possible on impassable features
+			if (m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && (getOwnerINLINE() != KHMER || pPlot->getFeatureType() != 1) && !bAttack)
 			{
 				TechTypes eTech = (TechTypes)m_pUnitInfo->getFeaturePassableTech(pPlot->getFeatureType());
 				if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 				{
 					if (DOMAIN_SEA != getDomainType() || pPlot->getTeam() != getTeam())  // sea units can enter impassable in own cultural borders
 					{
-						//Rhye - start UP (Khmer)
-						//return false;
-						if (getOwnerINLINE() == KHMER && pPlot->getFeatureType() == 1)
-							return true;
-						else
-							return false;
-						//Rhye - end
+						return false;
 					}
 				}
 			}
@@ -12163,6 +12158,12 @@ bool CvUnit::canAdvance(const CvPlot* pPlot, int iThreshold) const
 	FAssert(!(isAnimal() && pPlot->isCity()));
 	FAssert(getDomainType() != DOMAIN_AIR);
 	FAssert(getDomainType() != DOMAIN_IMMOBILE);
+
+	// Leoreth: we can "enter" impassable features with enemy units now, prevent them from advancing to the tile now
+	if (!canMoveInto(pPlot, false, false, false))
+	{
+		return false;
+	}
 
 	if (pPlot->getNumVisibleEnemyDefenders(this) > iThreshold)
 	{

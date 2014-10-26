@@ -2772,7 +2772,9 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	iCost *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent();
 	iCost /= 100;
 
-	iCost *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getResearchPercent();
+	// Leoreth: use tech era instead of start era to fix unintentional changes for late scenarios and make adjusting tech costs easier
+	//iCost *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getResearchPercent();
+	iCost *= GC.getEraInfo((EraTypes)GC.getTechInfo(eTech).getEra()).getResearchPercent();
 	iCost /= 100;
 
 	iCost *= std::max(0, ((GC.getDefineINT("TECH_COST_EXTRA_TEAM_MEMBER_MODIFIER") * (getNumMembers() - 1)) + 100));

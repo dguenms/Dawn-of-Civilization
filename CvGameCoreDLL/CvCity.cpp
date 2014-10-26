@@ -4724,12 +4724,13 @@ LeaderHeadTypes CvCity::getPersonalityType() const
 ArtStyleTypes CvCity::getArtStyleType() const
 {
 	/* Leoreth: art style here */
+	PlayerTypes eHighestCulture = findHighestCulture();
 	int ecs = GC.getDefineINT("ETHNIC_CITY_STYLES");
 	int id = getRegionID();
 
 	if (ecs == 1)
 	{
-		if (getOwnerINLINE() == NATIVE)
+		if (eHighestCulture == NATIVE)
 		{
 			if (id == REGION_ALASKA || id == REGION_CANADA || id == REGION_UNITED_STATES)
 			{
@@ -4748,7 +4749,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 				return (ArtStyleTypes)ARTSTYLE_AFRICA;
 			}
 		}
-		else if (getOwnerINLINE() == INDEPENDENT || getOwnerINLINE() == INDEPENDENT2 || getOwnerINLINE() == BARBARIAN || (getOwnerINLINE() == MONGOLIA && getOriginalOwner() != MONGOLIA))
+		else if (eHighestCulture == INDEPENDENT || eHighestCulture == INDEPENDENT2 || eHighestCulture == BARBARIAN || (eHighestCulture == MONGOLIA && getOriginalOwner() != MONGOLIA))
 		{
 			if (id == REGION_ALASKA || id == REGION_CANADA || id == REGION_UNITED_STATES || id == REGION_BRITAIN)
 			{
@@ -4756,7 +4757,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 			}
 			else if (id == REGION_MESOAMERICA || id == REGION_CARIBBEAN)
 			{
-				if (getOriginalOwner() == AZTEC || getOriginalOwner() == MAYA)
+				if (eHighestCulture == AZTEC || eHighestCulture == MAYA)
 				{
 					return (ArtStyleTypes)ARTSTYLE_MESO_AMERICA;
 				}
@@ -4767,7 +4768,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 			}
 			else if (id == REGION_BRAZIL || id == REGION_ARGENTINA || id == REGION_PERU || id == REGION_COLOMBIA)
 			{
-				if (getOriginalOwner() == INCA)
+				if (eHighestCulture == INCA)
 				{
 					return (ArtStyleTypes)ARTSTYLE_SOUTH_AMERICA;
 				}
@@ -4836,7 +4837,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 				{
 					return (ArtStyleTypes)ARTSTYLE_ARABIA;
 				}
-				else if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
+				else if (GET_PLAYER(eHighestCulture).getCurrentEra() == ERA_ANCIENT)
 				{
 					return (ArtStyleTypes)ARTSTYLE_EGYPT;
 				}
@@ -4877,23 +4878,23 @@ ArtStyleTypes CvCity::getArtStyleType() const
 				return (ArtStyleTypes)ARTSTYLE_SOUTH_PACIFIC;
 			}
 		}
-		else if (getOwnerINLINE() == MONGOLIA)
+		else if (eHighestCulture == MONGOLIA)
 		{
 			if (getPopulation() >= 5)
 			{
 				return GET_PLAYER((PlayerTypes)CHINA).getArtStyleType();
 			}
 		}
-		else if (getOwnerINLINE() == AZTEC || getOwnerINLINE() == MAYA || getOwnerINLINE() == INCA)
+		else if (eHighestCulture == AZTEC || eHighestCulture == MAYA || eHighestCulture == INCA)
 		{
-		    if (GET_PLAYER(getOwnerINLINE()).getStateReligion() == CATHOLICISM)
+		    if (GET_PLAYER(eHighestCulture).getStateReligion() == CATHOLICISM)
 		    {
 		        return (ArtStyleTypes)ARTSTYLE_IBERIA;
 		    }
 		}
 	}
 
-	return GET_PLAYER(getOwnerINLINE()).getArtStyleType();
+	return GET_PLAYER(eHighestCulture).getArtStyleType();
 }
 
 

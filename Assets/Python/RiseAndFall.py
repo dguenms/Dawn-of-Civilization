@@ -2385,7 +2385,7 @@ class RiseAndFall:
                                                 iNumHumanCities += 1
                                 #case 3: other
                                 elif (not loopCity.isCapital() or (iOwner == iIndia and iCiv == iMughals and utils.getHumanID() != iOwner)):   #utils.debugTextPopup( 'OTHER' )                                
-					iCultureChange = 50
+					iCultureChange = 100
 					bNoWar = (iCiv == con.iCanada or (utils.getHumanID() != iCiv and iCiv == con.iGermany))
 					if (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[iCiv]) + 5): #if we're during a birth
 						rndNum = gc.getGame().getSorenRandNum(100, 'odds')
