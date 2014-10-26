@@ -4725,6 +4725,7 @@ ArtStyleTypes CvCity::getArtStyleType() const
 {
 	/* Leoreth: art style here */
 	PlayerTypes eHighestCulture = findHighestCulture();
+	if (eHighestCulture == NO_PLAYER) eHighestCulture = getOwnerINLINE();
 	int ecs = GC.getDefineINT("ETHNIC_CITY_STYLES");
 	int id = getRegionID();
 
