@@ -4251,7 +4251,7 @@
 				<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
 			</ImprovementsRequired>
 			<BonusesRequired>
-				<BonusType>BONUS_CLAM</BonusType>
+				<BonusType>BONUS_PEARL</BonusType>
 			</BonusesRequired>
 			<RoutesRequired/>
 			<ReligionsRequired/>

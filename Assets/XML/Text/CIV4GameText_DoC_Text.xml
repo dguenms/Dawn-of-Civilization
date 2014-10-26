@@ -848,6 +848,11 @@
 		<German>Hochsee-Fischerboot</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_HIGH_SEA_FISHING_BOATS</Tag>
+		<English>High Sea Fishing Boats</English>
+		<German>Hochsee-Fischerboot</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_FEATURE_ISLANDS</Tag>
 		<English>Islands</English>
 		<German>Inseln</German>
