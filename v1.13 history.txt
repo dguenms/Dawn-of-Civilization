@@ -38,3 +38,8 @@
 	# Pearls contribute to Luxury Industry
 	# Pearls added in the East China Sea, near Tamil Nadu, the Persian Gulf and the Venezuelan coast
 # replaced Marsh graphics so that they will not appear in the resource map mode anymore
+# majority culture instead of owner decides city style
+# units on impassable features can still be attacked (but advancing into the tile afterwards is still impossible)
+# all foreign culture inside of cities is flipped on spawn
+# overall increase in costs for techs from the Industrial and Modern era
+# fixed a bug that decreased costs for all techs in later scenarios

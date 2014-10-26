@@ -101,8 +101,8 @@ def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
 	
 def onVassalState(iMaster, iVassal):
-	#checkStability(iVassal)
 	setStabilityLevel(iVassal, max(con.iStabilityShaky, getStabilityLevel(iVassal)))
+	if utils.getHumanID() != iMaster: checkStability(iVassal)
 	checkStability(iMaster, True)
 	
 	# update number of cities so vassals survive losing cities
@@ -641,7 +641,8 @@ def completeCollapse(iPlayer):
 	secedeCities(iPlayer, lCities, bRazeMinorCities)
 		
 	# take care of the remnants of the civ
-	utils.killUnitsInArea((0, 0), (127, 63), iPlayer)
+	#utils.killUnitsInArea((0, 0), (127, 63), iPlayer)
+	gc.getPlayer(iPlayer).killUnits()
 	utils.resetUHV(iPlayer)
 	utils.setLastTurnAlive(iPlayer, gc.getGame().getGameTurn())
 	
