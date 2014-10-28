@@ -72,7 +72,7 @@ class Resources:
 
 	def removeResource(self, iX, iY, textKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
 		"""Removes a bonus resource and alerts the plot owner"""
-		
+		if gc.getMap().plot(iX, iY).getBonusType(-1) == -1: return
 		self.createResource(iX, iY, -1, textKey)
        	
         def checkTurn(self, iGameTurn):
@@ -120,7 +120,6 @@ class Resources:
 		if (iGameTurn == getTurnForYear(0)):
 			for tPlot in [(86, 37), (86, 38), (87, 38)]:
 				x, y = tPlot
-				self.removeResource(x, y)
 				gc.getMap().plot(x,y).setTerrainType(2, True, True)
 				gc.getMap().plot(x,y).setFeatureType(3, 0)
 			for tPlot in [(85, 38), (85, 37)]:

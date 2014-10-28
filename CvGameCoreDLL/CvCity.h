@@ -1010,6 +1010,7 @@ public:
 	int getEffectiveNextCoveredPlot() const;
 	bool isCoveredBeforeExpansion(int i) const;
 	void updateGreatWall();
+	void updateArtStyleType();
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1205,6 +1206,7 @@ protected:
 	PlayerTypes m_ePreviousOwner;
 	PlayerTypes m_eOriginalOwner;
 	CultureLevelTypes m_eCultureLevel;
+	ArtStyleTypes m_eArtStyle; // Leoreth
 
 	int* m_aiSeaPlotYield;
 	int* m_aiRiverPlotYield;
