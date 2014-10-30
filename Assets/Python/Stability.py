@@ -1713,7 +1713,7 @@ def updateEconomyTrend(iPlayer):
 	iPercentChange = 100 * iCurrentCommerce / iPreviousCommerce - 100
 	
 	if iPercentChange > 5: sd.pushEconomyTrend(iPlayer, 1)
-	elif iPercentChange < -5: sd.pushEconomyTrend(iPlayer, -1)
+	elif iPercentChange < 0: sd.pushEconomyTrend(iPlayer, -1)
 	else: sd.pushEconomyTrend(iPlayer, 0)
 	
 	#iChange = 0
