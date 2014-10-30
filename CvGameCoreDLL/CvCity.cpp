@@ -4732,18 +4732,12 @@ ArtStyleTypes CvCity::getArtStyleType() const
 
 void CvCity::updateArtStyleType()
 {
-	GC.getGame().logMsg("updateArtStyleType()");
 	PlayerTypes eHighestCulture = findHighestCulture();
-	GC.getGame().logMsg("passed findHighestCulture()");
 	if (eHighestCulture == NO_PLAYER) eHighestCulture = getOwnerINLINE();
 	int ecs = GC.getDefineINT("ETHNIC_CITY_STYLES");
 	int id = getRegionID();
 
-	GC.getGame().logMsg("getArtStyleType()");
-
 	ArtStyleTypes eNewArtStyle = GET_PLAYER(eHighestCulture).getArtStyleType();
-
-	GC.getGame().logMsg("passed getArtStyleType()");
 
 	if (ecs == 1)
 	{
@@ -4770,6 +4764,8 @@ void CvCity::updateArtStyleType()
 			case REGION_WEST_AFRICA:
 			case REGION_SOUTH_AFRICA:
 				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_AFRICA;
+				break;
+			default:
 				break;
 			}
 		}
@@ -4858,6 +4854,8 @@ void CvCity::updateArtStyleType()
 			case REGION_OCEANIA:
 				eNewArtStyle = (ArtStyleTypes)ARTSTYLE_SOUTH_PACIFIC;
 				break;
+			default:
+				break;
 			}
 		}
 		else if (eHighestCulture == MONGOLIA)
@@ -4870,11 +4868,7 @@ void CvCity::updateArtStyleType()
 		}
 	}
 
-	GC.getGame().logMsg("passed ECS");
-
 	m_eArtStyle = eNewArtStyle;
-
-	GC.getGame().logMsg("end updateArtStyleType()");
 }
 
 

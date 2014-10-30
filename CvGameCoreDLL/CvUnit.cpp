@@ -12160,9 +12160,25 @@ bool CvUnit::canAdvance(const CvPlot* pPlot, int iThreshold) const
 	FAssert(getDomainType() != DOMAIN_IMMOBILE);
 
 	// Leoreth: we can "enter" impassable features with enemy units now, prevent them from advancing to the tile now
-	if (!canMoveInto(pPlot, false, false, false))
+	/*if (!canMoveInto(pPlot, false, false, false))
 	{
 		return false;
+	}*/
+
+	if (pPlot->getFeatureType() != NO_FEATURE)
+	{
+		// Leoreth: includes Khmer UP, also attacks are possible on impassable features
+		if (m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && (getOwnerINLINE() != KHMER || pPlot->getFeatureType() != 1))
+		{
+			TechTypes eTech = (TechTypes)m_pUnitInfo->getFeaturePassableTech(pPlot->getFeatureType());
+			if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
+			{
+				if (DOMAIN_SEA != getDomainType() || pPlot->getTeam() != getTeam())  // sea units can enter impassable in own cultural borders
+				{
+					return false;
+				}
+			}
+		}
 	}
 
 	if (pPlot->getNumVisibleEnemyDefenders(this) > iThreshold)
