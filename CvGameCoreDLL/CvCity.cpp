@@ -4732,6 +4732,8 @@ ArtStyleTypes CvCity::getArtStyleType() const
 
 void CvCity::updateArtStyleType()
 {
+	return;
+
 	PlayerTypes eHighestCulture = findHighestCulture();
 	if (eHighestCulture == NO_PLAYER) eHighestCulture = getOwnerINLINE();
 	int ecs = GC.getDefineINT("ETHNIC_CITY_STYLES");
@@ -11108,8 +11110,6 @@ int CvCity::countTotalCultureTimes100() const
 
 PlayerTypes CvCity::findHighestCulture() const
 {
-	GC.getGame().logMsg("findHighestCulture()");
-
 	PlayerTypes eBestPlayer;
 	int iValue;
 	int iBestValue;
@@ -11120,15 +11120,10 @@ PlayerTypes CvCity::findHighestCulture() const
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		GC.getGame().logMsg("iterate %d", iI);
 
 		if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
-			GC.getGame().logMsg("getCulture()");
-
 			iValue = getCultureTimes100((PlayerTypes)iI);
-
-			GC.getGame().logMsg("passed getCulture()");
 
 			if (iValue > iBestValue)
 			{
@@ -11136,11 +11131,7 @@ PlayerTypes CvCity::findHighestCulture() const
 				eBestPlayer = ((PlayerTypes)iI);
 			}
 		}
-
-		GC.getGame().logMsg("finish %d", iI);
 	}
-
-	GC.getGame().logMsg("end findHighestCulture()");
 
 	return eBestPlayer;
 }
