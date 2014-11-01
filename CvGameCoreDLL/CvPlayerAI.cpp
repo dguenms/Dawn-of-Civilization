@@ -7104,8 +7104,6 @@ int CvPlayerAI::AI_getColonyAttitude(PlayerTypes ePlayer) const
 PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, VoteSourceTypes eVoteSource, bool bPropose)
 {
 	PROFILE_FUNC();
-	
-	GC.getGame().logMsg("AI_diploVote()");
 
 	CivicTypes eBestCivic;
 	int iOpenCount;

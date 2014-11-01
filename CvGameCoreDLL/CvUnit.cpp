@@ -12160,11 +12160,6 @@ bool CvUnit::canAdvance(const CvPlot* pPlot, int iThreshold) const
 	FAssert(getDomainType() != DOMAIN_IMMOBILE);
 
 	// Leoreth: we can "enter" impassable features with enemy units now, prevent them from advancing to the tile now
-	/*if (!canMoveInto(pPlot, false, false, false))
-	{
-		return false;
-	}*/
-
 	if (pPlot->getFeatureType() != NO_FEATURE)
 	{
 		// Leoreth: includes Khmer UP, also attacks are possible on impassable features

@@ -1417,7 +1417,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	if (bConquest)
 	{
-		GC.getGameINLINE().logMsg("City conquered, next covered plot: %d", pOldCity->getNextCoveredPlot());
+		//GC.getGameINLINE().logMsg("City conquered, next covered plot: %d", pOldCity->getNextCoveredPlot());
 
 		for (iI = 0; iI < pOldCity->getNextCoveredPlot(); iI++)
 		{

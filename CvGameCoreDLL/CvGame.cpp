@@ -4425,7 +4425,6 @@ bool CvGame::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionSub
 			{
 				if (kTeam.getVotes(kData.eVote, eVoteSource) >= getVoteRequired(kData.eVote, eVoteSource))
 				{
-					GC.getGame().logMsg("Victory vote canceled because of %d", iTeam);
 					// Can't vote on a winner if one team already has all the votes necessary to win
 					return false;
 				}
@@ -4441,7 +4440,6 @@ bool CvGame::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionSub
 		{
 			if (!kPlayer.canDoResolution(eVoteSource, kData))
 			{
-				GC.getGame().logMsg("Normal vote canceled because of %d", iPlayer);
 				return false;
 			}
 		}
@@ -4460,8 +4458,6 @@ bool CvGame::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionSub
 
 bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelectionSubData& kData) const
 {
-	GC.getGame().logMsg("isValidVoteSelection: %d", (int)kData.eVote);
-
 	if (NO_PLAYER != kData.ePlayer)
 	{
 		CvPlayer& kPlayer = GET_PLAYER(kData.ePlayer);
@@ -9984,8 +9980,6 @@ VoteTriggeredData* CvGame::addVoteTriggered(const VoteSelectionData& kData, int 
 
 VoteTriggeredData* CvGame::addVoteTriggered(VoteSourceTypes eVoteSource, const VoteSelectionSubData& kOptionData)
 {
-	GC.getGame().logMsg("addVoteTriggered()");
-
 	VoteTriggeredData* pData = ((VoteTriggeredData*)(m_votesTriggered.add()));
 
 	if (NULL != pData)
@@ -10036,8 +10030,6 @@ void CvGame::doVoteResults()
 
 		if (!canDoResolution(eVoteSource, pVoteTriggered->kVoteOption))
 		{
-			GC.getGame().logMsg("Resolution canceled.");
-
 			for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; ++iPlayer)
 			{
 				CvPlayer& kPlayer = GET_PLAYER((PlayerTypes) iPlayer);
