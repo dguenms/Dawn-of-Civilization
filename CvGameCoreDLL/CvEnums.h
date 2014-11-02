@@ -1085,6 +1085,14 @@ enum LeaderHeadTypes			// Exposed to Python
 enum ArtStyleTypes				// Exposed to Python
 {
 	NO_ARTSTYLE = -1,
+	
+	ARTSTYLE_EUROPEAN,
+	ARTSTYLE_ASIAN,
+	ARTSTYLE_SOUTH_AMERICA_OLD,
+	ARTSTYLE_MIDDLE_EAST,
+	ARTSTYLE_GRECO_ROMAN_OLD,
+	ARTSTYLE_BARBARIAN_OLD,
+	ARTSTYLE_AFRICAN,
 };
 
 enum UnitArtStyleTypes

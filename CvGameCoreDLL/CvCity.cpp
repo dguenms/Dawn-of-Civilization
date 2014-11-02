@@ -188,6 +188,9 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	// Init saved data
 	reset(iID, eOwner, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
+	// Leoreth: update art style before graphics are set up
+	updateArtStyleType();
+
 	//--------------------------------
 	// Init non-saved data
 	setupGraphical();
@@ -685,7 +688,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_ePreviousOwner = NO_PLAYER;
 	m_eOriginalOwner = eOwner;
 	m_eCultureLevel = NO_CULTURELEVEL;
-	m_eArtStyle = GET_PLAYER(eOwner).getArtStyleType();
+	m_eArtStyle = (eOwner != NO_PLAYER) ? GET_PLAYER(eOwner).getArtStyleType() : NO_ARTSTYLE;
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -4732,16 +4735,14 @@ ArtStyleTypes CvCity::getArtStyleType() const
 
 void CvCity::updateArtStyleType()
 {
-	return;
-
-	PlayerTypes eHighestCulture = findHighestCulture();
+	bool bECS = (GC.getDefineINT("ETHNIC_CITY_STYLES") == 1);
+	PlayerTypes eHighestCulture = findHighestCulture(true);
 	if (eHighestCulture == NO_PLAYER) eHighestCulture = getOwnerINLINE();
-	int ecs = GC.getDefineINT("ETHNIC_CITY_STYLES");
 	int id = getRegionID();
 
 	ArtStyleTypes eNewArtStyle = GET_PLAYER(eHighestCulture).getArtStyleType();
 
-	if (ecs == 1)
+	if (bECS)
 	{
 		if (eHighestCulture == NATIVE)
 		{
@@ -4869,8 +4870,83 @@ void CvCity::updateArtStyleType()
 			if (GET_PLAYER(eHighestCulture).getStateReligion() == CATHOLICISM) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
 		}
 	}
+	else 
+	{
+		if (eHighestCulture == INDEPENDENT || eHighestCulture == INDEPENDENT2 || eHighestCulture == BARBARIAN)
+		{
+			switch (id)
+			{
+			case REGION_BRITAIN:
+			case REGION_EUROPE:
+			case REGION_SCANDINAVIA:
+			case REGION_RUSSIA:
+			case REGION_SIBERIA:
+			case REGION_AUSTRALIA:
+			case REGION_CANADA:
+			case REGION_ALASKA:
+			case REGION_UNITED_STATES:
+				eNewArtStyle = ARTSTYLE_EUROPEAN;
+				break;
+			case REGION_ITALY:
+				if (GET_PLAYER(eHighestCulture).getCurrentEra() >= ERA_MEDIEVAL) eNewArtStyle = ARTSTYLE_EUROPEAN;
+				else eNewArtStyle = ARTSTYLE_GRECO_ROMAN_OLD;
+				break;
+			case REGION_IBERIA:
+				if (isHasReligion((ReligionTypes)ISLAM)) eNewArtStyle = ARTSTYLE_MIDDLE_EAST;
+				else if (GET_PLAYER(eHighestCulture).getCurrentEra() >= ERA_MEDIEVAL) eNewArtStyle = ARTSTYLE_EUROPEAN;
+				else eNewArtStyle = ARTSTYLE_GRECO_ROMAN_OLD;
+				break;
+			case REGION_ANATOLIA:
+			case REGION_MAGHREB:
+				if (isHasReligion((ReligionTypes)ISLAM)) eNewArtStyle = ARTSTYLE_MIDDLE_EAST;
+				else eNewArtStyle = ARTSTYLE_GRECO_ROMAN_OLD;
+				break;
+			case REGION_MESOPOTAMIA:
+			case REGION_ARABIA:
+			case REGION_EGYPT:
+			case REGION_PERSIA:
+			case REGION_INDIA:
+			case REGION_DECCAN:
+				eNewArtStyle = ARTSTYLE_MIDDLE_EAST;
+				break;
+			case REGION_INDOCHINA:
+			case REGION_INDONESIA:
+			case REGION_CHINA:
+			case REGION_KOREA:
+			case REGION_JAPAN:
+			case REGION_MANCHURIA:
+			case REGION_TIBET:
+			case REGION_CENTRAL_ASIA:
+				eNewArtStyle = ARTSTYLE_ASIAN;
+				break;
+			case REGION_OCEANIA:
+				eNewArtStyle = ARTSTYLE_BARBARIAN_OLD;
+				break;
+			case REGION_ETHIOPIA:
+			case REGION_WEST_AFRICA:
+			case REGION_SOUTH_AFRICA:
+				eNewArtStyle = ARTSTYLE_AFRICAN;
+				break;
+			case REGION_CARIBBEAN:
+			case REGION_MESOAMERICA:
+			case REGION_BRAZIL:
+			case REGION_ARGENTINA:
+			case REGION_PERU:
+			case REGION_COLOMBIA:
+				if (isHasReligion((ReligionTypes)CATHOLICISM) || isHasReligion((ReligionTypes)PROTESTANTISM)) eNewArtStyle = ARTSTYLE_EUROPEAN;
+				else eNewArtStyle = ARTSTYLE_SOUTH_AMERICA_OLD;
+				break;
+			default:
+				break;
+			}
+		}
+	}
 
-	m_eArtStyle = eNewArtStyle;
+	if (m_eArtStyle != eNewArtStyle)
+	{
+		m_eArtStyle = eNewArtStyle;
+		setLayoutDirty(true);
+	}
 }
 
 
@@ -11108,7 +11184,7 @@ int CvCity::countTotalCultureTimes100() const
 }
 
 
-PlayerTypes CvCity::findHighestCulture() const
+PlayerTypes CvCity::findHighestCulture(bool bIgnoreMinors) const
 {
 	PlayerTypes eBestPlayer;
 	int iValue;
@@ -11120,6 +11196,7 @@ PlayerTypes CvCity::findHighestCulture() const
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
+		if (bIgnoreMinors && GET_PLAYER((PlayerTypes)iI).isMinorCiv()) continue;
 
 		if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
