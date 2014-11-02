@@ -491,7 +491,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_32</Tag>
-		<English>Settling a city on a resource will yield full production and commerce, as if the appropriate improvement had been built on the tile.</English>
+		<English>Cities on islands of size five or less also act as improvements for the resource they are founded on, yielding the full production and commerce increase for the city tile.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_33</Tag>

@@ -140,17 +140,14 @@ class Congress:
 		for iPlayer in self.lInvites:
 			if utils.getHumanID() != iPlayer:
 				sInviteString += localText.getText("TXT_KEY_CONGRESS_INVITE", (gc.getPlayer(iPlayer).getCivilizationDescription(0),))
-		
-		if bHumanInvited:
-			if self.bPostWar:
-				sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR", (self.sHostCityName, sInviteString))
-			else:
-				sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION", (self.sHostCityName, sInviteString))
+				
+		if self.bPostWar:
+			if bHumanInvited: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR", (self.sHostCityName, sInviteString))
+			elif utils.getHumanID() in self.lLosers: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_LOST_WAR", (self.sHostCityName, sInviteString))
+			else: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI", (self.sHostCityName, sInviteString))
 		else:
-			if self.bPostWar:
-				sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI", (self.sHostCityName, sInviteString))
-			else:
-				sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_AI", (self.sHostCityName, sInviteString))
+			if bHumanInvited: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION", (self.sHostCityName, sInviteString))
+			else: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_AI", (self.sHostCityName, sInviteString))
 			
 		popup.setText(sText)
 			
@@ -158,7 +155,18 @@ class Congress:
 		popup.addPopup(utils.getHumanID())
 		
 	def applyIntroductionEvent(self):
-		if utils.getHumanID() in self.lInvites:
+		# move AI claims here so they are made on the same turn as they are resolved - otherwise change of ownership might confuse things
+		for iLoopPlayer in self.lInvites:
+			if self.bPostWar and iLoopPlayer in self.lLosers: continue
+			self.dPossibleClaims[iLoopPlayer] = self.selectClaims(iLoopPlayer)
+			
+		for iLoopPlayer in self.lInvites:
+			if iLoopPlayer not in self.dPossibleClaims: continue
+			
+			if utils.getHumanID() != iLoopPlayer:
+				self.makeClaimAI(iLoopPlayer)
+	
+		if utils.getHumanID() in self.dPossibleClaims:
 			# human still has to make a claim
 			self.makeClaimHuman()
 		else:
@@ -483,17 +491,9 @@ class Congress:
 			
 		self.sHostCityName = utils.getRandomEntry(utils.getCoreCityList(iHostPlayer, utils.getReborn(iHostPlayer))).getName()
 		
-		for iLoopPlayer in self.lInvites:
-			if self.bPostWar and iLoopPlayer in self.lLosers: continue
-			self.dPossibleClaims[iLoopPlayer] = self.selectClaims(iLoopPlayer)
-			
-		for iLoopPlayer in self.lInvites:
-			if iLoopPlayer not in self.dPossibleClaims: continue
-			
-			if utils.getHumanID() == iLoopPlayer:
-				self.startIntroductionEvent(True)
-			else:
-				self.makeClaimAI(iLoopPlayer)
+		# moved selection of claims after the introduction event so claims and their resolution take place at the same time
+		if utils.getHumanID() in self.dPossibleClaims:
+			self.startIntroductionEvent(True)
 				
 		# procedure continues from the makeClaimHuman event
 		
@@ -503,6 +503,17 @@ class Congress:
 			if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]):
 				self.startIntroductionEvent(False)
 			else:
+				# select claims first, then move on to voting directly since the player isn't involved
+				for iLoopPlayer in self.lInvites:
+					if self.bPostWar and iLoopPlayer in self.lLosers: continue
+					self.dPossibleClaims[iLoopPlayer] = self.selectClaims(iLoopPlayer)
+					
+				for iLoopPlayer in self.lInvites:
+					if iLoopPlayer not in self.dPossibleClaims: continue
+					
+					if utils.getHumanID() != iLoopPlayer:
+						self.makeClaimAI(iLoopPlayer)
+						
 				self.voteOnClaims()
 			
 	def voteOnClaims(self):
@@ -904,6 +915,9 @@ class Congress:
 			if iLoopPlayer == iPlayer: continue
 			if not gc.getPlayer(iLoopPlayer).isAlive(): continue
 			if iLoopPlayer in self.lWinners: continue
+			
+			# after a war: can only demand from losing civs
+			#if self.bPostWar and iLoopPlayer not in self.lLosers: continue
 				
 			# AI civs: cannot claim cities from friends
 			if utils.getHumanID() != iPlayer and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: continue
