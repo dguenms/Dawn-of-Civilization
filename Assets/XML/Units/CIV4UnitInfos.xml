@@ -29183,19 +29183,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_PROPHET</Type>
-			<UniqueNames>
-				<UniqueName>TXT_KEY_GREAT_PERSON_ST_JOHN</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_ST_PETER</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_ST_PAUL</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_RABBI_AKIVA</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_ST_PATRICK</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_ABU_BAKR</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_MOHAMMED_SHAH</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_TSONGKHAPA</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_NARAK</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_RAMAKRISHNA</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_NARAYANA_GURU</UniqueName>
-			</UniqueNames>
+			<UniqueNames/>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -29405,16 +29393,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
 			<Type>UNIT_ARTIST</Type>
-			<UniqueNames>
-				<UniqueName>TXT_KEY_GREAT_PERSON_THESPIS</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_VALMIKI</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_AMIR_KHUSRO</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_JOHANNES_BRAHMS</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_DVORAK</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_JOSEPH_CONRAD</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_FRANK_KAFKA</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_DUKE_ELLINGTON</UniqueName>
-			</UniqueNames>
+			<UniqueNames/>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -29592,10 +29571,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
 			<Type>UNIT_SCIENTIST</Type>
-			<UniqueNames>
-				<UniqueName>TXT_KEY_GREAT_PERSON_NABU_RIMANNI</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_MICHAEL_FARADAY</UniqueName>
-			</UniqueNames>
+			<UniqueNames/>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -29773,14 +29749,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
 			<Type>UNIT_MERCHANT</Type>
-			<UniqueNames>
-				<UniqueName>TXT_KEY_GREAT_PERSON_ARETAS_III</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_WANG_ANSHI</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_RRICHARD_WHITTINGTON</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_SIR_THOMAS_ROE</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_SIR_ALEXANDER_MACKENZIE</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_JOHN_STUART_MILL</UniqueName>
-			</UniqueNames>
+			<UniqueNames/>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -29958,15 +29927,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
 			<Type>UNIT_ENGINEER</Type>
-			<UniqueNames>
-				<UniqueName>TXT_KEY_GREAT_PERSON_JOSEPH_MARIE_JACQUARD</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_ISAMBARD_KINGDOM_BRUNEL</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_WILLIAN_MORTON</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_LOUIS_DAGUERRE</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_FERDINAND_DE_LESSEPS</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_JOHN_ROEBLING</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_NOBERT_RILLIEUX</UniqueName>
-			</UniqueNames>
+			<UniqueNames/>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -30144,14 +30105,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
 			<Type>UNIT_GREAT_GENERAL</Type>
-			<UniqueNames>
-				<UniqueName>TXT_KEY_GREAT_PERSON_VERCINGETORIX</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_ARMINIUS</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_TIMUR</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_EUGENE_OF_SAVOY</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_GERONIMO</UniqueName>
-				<UniqueName>TXT_KEY_GREAT_PERSON_YAMAMOTO</UniqueName>
-			</UniqueNames>
+			<UniqueNames/>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
