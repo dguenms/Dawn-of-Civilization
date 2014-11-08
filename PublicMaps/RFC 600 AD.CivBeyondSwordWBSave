@@ -1441,6 +1441,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=20
+	BonusType=BONUS_SUGAR
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -43788,6 +43789,7 @@ BeginPlot
 	x=113,y=25
 	isWOfRiver
 	RiverNSDirection=2
+	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
