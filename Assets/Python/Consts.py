@@ -336,7 +336,7 @@ tVictoryYears = (
 (-1, -250, -330), # Greece
 (-1, 700, 1200), # India
 (-300, -100, 200), # Carthage
-(-1, -1, -1), # Polynesia
+(800, 1000, 1200), # Polynesia
 (140, 350, 350), # Persia
 (100, 320, -1), # Rome
 (800, 1000, 1200), # Tamils

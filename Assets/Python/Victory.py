@@ -934,22 +934,20 @@ class Victory:
 		elif iPlayer == iPolynesia:
 			if pPolynesia.isAlive():
 			
-				pass
-			
 				# first goal: settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas, Easter Island
-				#if iGameTurn == getTurnForYear(800):
-				#	if self.getGoal(iPolynesia, 0) == -1:
-				#		self.setGoal(iPolynesia, 0, 0)
+				if iGameTurn == getTurnForYear(800):
+					if self.getGoal(iPolynesia, 0) == -1:
+						self.setGoal(iPolynesia, 0, 0)
 						
 				# second goal: settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
-				#if iGameTurn == getTurnForYear(1000):
-				#	if self.getGoal(iPolynesia, 1) == -1:
-				#		self.setGoal(iPolynesia, 1, 0)
+				if iGameTurn == getTurnForYear(1000):
+					if self.getGoal(iPolynesia, 1) == -1:
+						self.setGoal(iPolynesia, 1, 0)
 						
 				# third goal: build the Moai Statues by 1200 AD
-				#if iGameTurn == getTurnForYear(1200):
-				#	if self.getGoal(iPolynesia, 2) == -1:
-				#		self.setGoal(iPolynesia, 2, 0)
+				if iGameTurn == getTurnForYear(1200):
+					if self.getGoal(iPolynesia, 2) == -1:
+						self.setGoal(iPolynesia, 2, 0)
 
                 elif (iPlayer == iPersia):
                         if (pPersia.isAlive()):

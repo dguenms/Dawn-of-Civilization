@@ -385,7 +385,7 @@ class CvRFCEventHandler:
                                         if (iOwner != iSpain):
                                                 self.vic.setGoal(iSpain, 0, 0) 
 
-		if iOwner in [iRussia, iFrance, iEngland, iSpain, iVikings, iPortugal, iNetherlands, iTibet]:
+		if iOwner < con.iNumPlayers:
 			self.vic.onCityBuilt(city, iOwner)
 			
                 if iOwner < con.iNumPlayers:
