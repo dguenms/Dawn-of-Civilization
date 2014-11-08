@@ -1011,6 +1011,7 @@ public:
 	bool isCoveredBeforeExpansion(int i) const;
 	void updateGreatWall();
 	void updateArtStyleType();
+	int getDistanceTradeModifier(CvCity* pOtherCity) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

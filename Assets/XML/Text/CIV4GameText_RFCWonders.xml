@@ -1454,8 +1454,8 @@
 		<Spanish>El [COLOR_BUILDING_TEXT]Gran Faro[COLOR_REVERT] a&#241;ade dos rutas comerciales a todas las ciudades costeras. El [COLOR_BUILDING_TEXT]Gran Faro[COLOR_REVERT] tambi&#233;n aumenta las probabilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Great Cothan[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It also increases the chances of a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT] appearing. The [COLOR_BUILDING_TEXT]Great Cothan[COLOR_REVERT] requires you to have the Pantheon civic active.</English>
+		<Tag>TXT_KEY_BUILDING_GREAT_COTHON_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It also increases the chances of a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT] appearing. The [COLOR_BUILDING_TEXT]Great Cothan[COLOR_REVERT] requires you to have the Pantheon civic active.</English>
 		<French>Les [COLOR_BUILDING_TEXT]statues moa&#239;[COLOR_REVERT] conf&#232;rent un bonus de production &#224; chaque case d'eau de la ville qui les abrite. Elles augmentent &#233;galement les chances d'apparition d'un [COLOR_UNIT_TEXT]proph&#232;te illustre[COLOR_REVERT].</French>
 		<German>Die [COLOR_BUILDING_TEXT]Moai-Statuen[COLOR_REVERT] gew&#228;hren jedem Wasser-Gel&#228;ndefeld einer Stadt einen Produktionsbonus und erh&#246;hen die Chancen auf den Erhalt eines [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT].</German>
 		<Italian>La [COLOR_BUILDING_TEXT]Statua Moai[COLOR_REVERT] d&#224; un bonus alla produzione per ogni casella d'acqua nella citt&#224; in cui &#232; costruita. Aumenta inoltre le probabilit&#224; che appaia un [COLOR_UNIT_TEXT]Grande Profeta[COLOR_REVERT].</Italian>
@@ -1787,5 +1787,9 @@ The name Khajuraho, ancient "Kharjuravahaka", is derived from the Sanskrit words
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
 		<English>CN Tower</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_HELP</Tag>
+		<English>Requires 20 Water Tiles in City Radius[NEWLINE][ICON_BULLET]+2 [ICON_PRODUCTION] for Sea Improvements</English>
 	</TEXT>
 </Civ4GameText>

@@ -911,5 +911,13 @@
 			<NoShaderNIF>art/LeaderHeads/trudeau/alexander.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/trudeau/alexander_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_AHOEITU</Type>
+			<Button>Art/LeaderHeads/Ahoeitu/Ahoeitu.dds</Button>
+			<NIF>art/LeaderHeads/Ahoeitu/HoneHeke.nif</NIF>
+			<KFM>art/LeaderHeads/Ahoeitu/Arawak.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Ahoeitu/HoneHeke.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Ahoeitu/Arawak_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

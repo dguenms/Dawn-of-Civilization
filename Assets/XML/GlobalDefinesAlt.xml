@@ -55,6 +55,10 @@
 		<DefineName>PLAYER_OCCURENCE_BRAZIL</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
+	<Define>
+		<DefineName>PLAYER_OCCURENCE_POLYNESIA</DefineName>
+		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
+	</Define>
 	
 	<!-- Disable the respawn by setting the value to 0 -->
 	<Define>

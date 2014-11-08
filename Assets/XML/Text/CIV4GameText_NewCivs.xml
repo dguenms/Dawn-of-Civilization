@@ -291,4 +291,32 @@
 		<Tag>TXT_KEY_LEADER_CARDENAS_PEDIA</Tag>
 		<English>[H1]Lazaro Cardenas del Río[\H1][NEWLINE][BOLD]President of Mexico [\BOLD][NEWLINE][BOLD]Lived: [\BOLD] May 21, 1895 - October 19, 1970 AD [NEWLINE][PARAGRAPH:2][BOLD]Background:[\BOLD][PARAGRAPH:1]Lázaro Cárdenas was born in a lower-middle class family in the village of Jiquilpan, Michoacán. He supported his family (including his mother and 7 younger siblings) from age 16 on after the death of his father. He worked in a printing shop; although he had little formal education he used every opportunity to educate himself.[PARAGRAPH:1]Cárdenas originally set his sights at becoming a teacher, but was drawn into politics and the military during the Mexican Revolution after Victoriano Huerta overthrew President Francisco Madero. He backed Plutarco Elías Calles, and after Calles became President, Cárdenas became governor of Michoacán in 1928. He became known for his progressive program of building roads and schools and the unusual strict honesty of his administration.[PARAGRAPH:1]Calles continued to dominate Mexico after his presidency with administrations which were his puppets. He selected Cárdenas to be the PRI's presidential candidate on the assumption that he could control Cárdenas as he had controlled others. Cárdenas's first move once in office was to have his presidential salary cut in half. Even more surprising moves would follow. After establishing himself in the presidency, Cárdenas had Calles and dozens of his corrupt associates arrested or deported to the United States, which was greeted with great enthusiasm by the majority of the public.[PARAGRAPH:1]In 1938 Cárdenas nationalized Mexico's petroleum reserves and expropriated the equipment of the foreign oil companies in Mexico. Even though compensation for the expropriated assests was included in this legislation, this move aroused considerable hostility in the international business community and foreign governments, and Mexican oil and other goods were boycotted. However, with the outbreak of World War II, oil became a highly sought-after commodity and the boycott ended.[PARAGRAPH:1]After his presidential term he served as Mexico's secretary of defense through 1945.[PARAGRAPH:1]It is often said that Cárdenas was the only president from the PRI who did not use the office to make himself wealthy. He retired to a modest home by Lake Pátzcuaro and worked the rest of his life supervising irrigation projects and promoting free medical clinics and education for the nation's poor.[PARAGRAPH:1]Lázaro Cárdenas died of cancer in Mexico City. His son Cuauhtémoc Cárdenas is a prominent Mexican politician.[PARAGRAPH:1]</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLYNESIA_DESC</Tag>
+		<English>The Polynesians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLYNESIA_SHORT_DESC</Tag>
+		<English>Polynesia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLYNESIA_ADJECTIVE</Tag>
+		<English>Polynesian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_AHOEITU</Tag>
+		<English>Aho'eitu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_POLYNESIAN_WAKA</Tag>
+		<English>Waka</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MARAE</Tag>
+		<English>Mala'e</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+	</TEXT>
 </Civ4GameText>

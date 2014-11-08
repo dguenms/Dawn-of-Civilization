@@ -104,7 +104,6 @@
 				<CivicType>CIVIC_TRIBALISM</CivicType>
 				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
 			<Leaders>
@@ -4911,6 +4910,109 @@
 			<DerivativeCiv>NONE</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_POLAND_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_POLAND_ORDER</CivilizationActionSound>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_POLYNESIA</Type>
+			<Description>TXT_KEY_CIV_POLYNESIA_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_POLYNESIA_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_POLYNESIA_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_POLYNESIA_PEDIA</Civilopedia>
+			<DefaultPlayerColor>PLAYERCOLOR_POLYNESIA</DefaultPlayerColor>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_POLYNESIA</ArtDefineTag>
+			<ArtStyleType>ARTSTYLE_BARBARIAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<bPlayable>1</bPlayable>
+			<bAIPlayable>1</bAIPlayable>
+			<Cities>
+				<City>Havaiki</City>
+				<!-- Central Polynesia -->
+				<City>Manu'a</City>
+				<City>Samoa</City>
+				<City>Tonga</City>
+				<City>Rotuma</City>
+				<City>Uvea</City>				<!-- Wallis -->
+				<City>Futuna</City>
+				<City>Tokelau</City>
+				<City>Niue</City>
+				<!-- East Polynesia -->
+				<City>Rarotonga</City>
+				<City>Rai'atea</City>
+				<City>Tahiti</City>
+				<City>Rapanui</City>			<!-- Easter Island -->
+				<!-- North Polynesia -->
+				<City>Hawai'i</City>
+				<City>Maui</City>
+				<City>Oahu</City>
+				<!-- Aotearoa/New Zealand -->
+				<City>Okiato</City>
+				<City>Waitangi</City>
+				<City>Hokianga</City>
+				<City>Hauraki</City>			<!-- Auckland -->
+				<City>Tamaki</City>
+				<City>Manukau</City>
+				<City>Kawhia</City>
+				<City>Waikato</City>
+				<City>Tauranga</City>
+				<City>Rotorua</City>
+				<City>Whakatane</City>
+				<City>Urewera</City>
+				<City>Tairawhiti</City>			<!-- Gisborne -->
+				<City>Heretaunga</City>			<!-- Hawke's Bay -->
+				<City>Taupo</City>
+				<City>Taranaki</City>
+				<City>Whanganui</City>
+				<City>Manawatu</City>
+				<City>Otaki</City>
+				<City>Wairarapa</City>
+				<City>Wairau</City>
+				<City>Kaikoura</City>
+				<City>Hokitika</City>
+				<City>Waitaha</City>			<!-- Canterbury -->
+				<City>Otakou</City>				<!-- Otago -->
+			</Cities>
+			<Buildings>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_COLOSSEUM</BuildingClassType>
+					<BuildingType>BUILDING_POLYNESIAN_MARAE</BuildingType>
+				</Building>
+			</Buildings>
+			<Units>
+				<Unit>
+					<UnitClassType>UNITCLASS_GALLEY</UnitClassType>
+					<UnitType>UNIT_POLYNESIAN_WAKA</UnitType>
+				</Unit>
+			</Units>
+			<FreeUnitClasses>
+				<FreeUnitClass>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<iFreeUnits>1</iFreeUnits>
+				</FreeUnitClass>
+			</FreeUnitClasses>
+			<FreeBuildingClasses>
+				<FreeBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bFreeBuildingClass>1</bFreeBuildingClass>
+				</FreeBuildingClass>
+			</FreeBuildingClasses>
+			<FreeTechs/>
+			<DisableTechs/>
+			<InitialCivics>
+				<CivicType>CIVIC_TYRANNY</CivicType>
+				<CivicType>CIVIC_DIRECT_RULE</CivicType>
+				<CivicType>CIVIC_TRIBALISM</CivicType>
+				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_MILITIA</CivicType>
+			</InitialCivics>
+			<Leaders>
+				<Leader>
+					<LeaderName>LEADER_AHOEITU</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+			</Leaders>
+			<DerivativeCiv>CIVILIZATION_INDONESIA</DerivativeCiv>
+			<CivilizationSelectionSound>AS3D_INCA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_INCA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_PORTUGAL</Type>

@@ -1064,4 +1064,29 @@
 		<English>Pacific Coast</English>
 		<German>Pazifikküste</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_65</Tag>
+		<English>Hawaii</English>
+		<German>Hawaii</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_66</Tag>
+		<English>New Zealand</English>
+		<German>Neuseeland</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_67</Tag>
+		<English>Marquesas</English>
+		<German>Marquesas</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_68</Tag>
+		<English>Easter Island</English>
+		<German>Osterinsel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_</Tag>
+		<English></English>
+		<German></German>
+	</TEXT>
 </Civ4GameText>

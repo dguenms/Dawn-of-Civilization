@@ -517,4 +517,29 @@
 		<English>End twelve wars through diplomacy by 2000 AD</English>
 		<German>Beenden Sie bis zum Jahr 2000 n. Chr. zwölf Kriege durch Diplomatie</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY1</Tag>
+		<English>Settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island</English>
+		<German>Besiedeln Sie bis zum Jahr 800 n. Chr. die folgenden Inselgruppen: Hawaii, Neuseeland, Marquesas und die Osterinsel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY2</Tag>
+		<English>Settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD</English>
+		<German>Besiedeln Sie bis zum Jahr 1000 n. Chr. Hawaii, Neuseeland, Marquesas und die Osterinsel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY3</Tag>
+		<English>Build the Moai Statues by 1200 AD</English>
+		<German>Bauen Sie bis zum Jahr 1200 n. Chr. die Moai-Statuen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_</Tag>
+		<English></English>
+		<German></German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_</Tag>
+		<English></English>
+		<German></German>
+	</TEXT>
 </Civ4GameText>

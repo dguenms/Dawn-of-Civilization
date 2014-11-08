@@ -701,6 +701,22 @@
 		<English>Peace deals arranged: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HAWAII</Tag>
+		<English>Hawaii</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NEW_ZEALAND</Tag>
+		<English>New Zealand</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MARQUESAS</Tag>
+		<English>Marquesas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EASTER_ISLAND</Tag>
+		<English>Easter Island</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_</Tag>
 		<English></English>
 	</TEXT>

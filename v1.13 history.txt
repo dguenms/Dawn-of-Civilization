@@ -43,3 +43,20 @@
 # all foreign culture inside of cities is flipped on spawn
 # overall increase in costs for techs from the Industrial and Modern era
 # fixed a bug that decreased costs for all techs in later scenarios
+# New Civilization: Polynesia
+	# Spawn: 1000 BC on Tonga
+	# Leader: Aho'eitu
+	# Color: Light Pink
+	# Unique Building: Mala'e (Amphitheatre): requires Priesthood, halved costs, +2 culture, +1 priest and artist slots
+	# Unique Unit: Waka (Galley): halved costs, +2 movement, only one cargo, can build fishing boats
+	# Unique Power: Navigation: No penalties for cultural expansion over Ocean tiles
+	# Unique Historical Victory:
+		# Settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas, Easter Island
+		# Settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
+		# Build the Moai Statues by 1200 AD
+# added the Moai Statues wonder: requires Priesthood and 20 water tiles in city radius, +2 production on water improvements
+# revised the Pacific Ocean, moving or adding islands and changing coast to ocean tiles
+# cities can be founded on one tile islands even with jungle
+# only normal territory instead of broader territory is revealed on spawn (generally smaller rectangle)
+# removed the trade route yield modifier for overseas cities
+# added a trade route yield modifier based on city distance

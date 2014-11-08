@@ -2299,6 +2299,7 @@ void CvGame::update()
 		case INDIA:
 			//break;
 		case CARTHAGE:
+		case POLYNESIA:
 		case PERSIA:
 		case ROME:
 		case TAMILS:

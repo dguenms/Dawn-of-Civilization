@@ -2906,7 +2906,7 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 
 	//Rhye - start
 
-	if (getTerrainType() == 6) //ocean
+	if (getTerrainType() == TERRAIN_OCEAN)
 	{
 		// Leoreth: reduced movement cost only for units that could enter ocean on their own
 		if (!pUnit->getUnitInfo().getTerrainImpassable(getTerrainType()) || (pUnit->getUnitInfo().getTerrainPassableTech(getTerrainType()) != NO_TECH && GET_TEAM(pUnit->getTeam()).isHasTech((TechTypes)pUnit->getUnitInfo().getTerrainPassableTech(getTerrainType()))))
@@ -6684,6 +6684,15 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			if (isWater())
 			{
 				iYield += GC.getBonusInfo((BonusTypes)21).getYieldChange(eYield);
+			}
+		}
+
+		// Leoreth: Moai Statues effect
+		if (isWater() && GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)MOAI))
+		{
+			if (eYield == YIELD_PRODUCTION && getImprovementType() != NO_IMPROVEMENT)
+			{
+				iYield += 2;
 			}
 		}
 
