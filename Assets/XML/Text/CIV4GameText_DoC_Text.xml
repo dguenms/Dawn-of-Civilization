@@ -863,6 +863,11 @@
 		<German>Perlen</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_MOD_DISTANCE</Tag>
+		<English>%D1%%: from City Distance</English>
+		<German>%D1%%: durch Stadtentfernung</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>

@@ -1157,6 +1157,7 @@ enum PlayerTypes				// Exposed to Python
 	GREECE,
 	INDIA,
 	CARTHAGE,
+	POLYNESIA,
 	PERSIA,
 	ROME,
 	TAMILS,

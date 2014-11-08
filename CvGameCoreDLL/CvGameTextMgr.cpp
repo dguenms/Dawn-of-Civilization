@@ -18514,6 +18514,14 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 						iModifier += iNewMod;
 					}
 				}
+
+				iNewMod = pCity->getDistanceTradeModifier(pOtherCity);
+				if (0 != iNewMod)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_DISTANCE", iNewMod));
+					iModifier += iNewMod;
+				}
 			}
 
 			FAssert(pCity->totalTradeModifier(pOtherCity) == iModifier);

@@ -48,6 +48,7 @@ iBabylonia = con.iBabylonia
 iGreece = con.iGreece
 iPersia = con.iPersia
 iCarthage = con.iCarthage
+iPolynesia = con.iPolynesia
 iRome = con.iRome
 iTamils = con.iTamils
 iJapan = con.iJapan
@@ -103,6 +104,7 @@ pBabylonia = gc.getPlayer(iBabylonia)
 pGreece = gc.getPlayer(iGreece)
 pPersia = gc.getPlayer(iPersia)
 pCarthage = gc.getPlayer(iCarthage)
+pPolynesia = gc.getPlayer(iPolynesia)
 pRome = gc.getPlayer(iRome)
 pTamils = gc.getPlayer(iTamils)
 pJapan = gc.getPlayer(iJapan)
@@ -153,6 +155,7 @@ teamBabylonia = gc.getTeam(pBabylonia.getTeam())
 teamGreece = gc.getTeam(pGreece.getTeam())
 teamPersia = gc.getTeam(pPersia.getTeam())
 teamCarthage = gc.getTeam(pCarthage.getTeam())
+teamPolynesia = gc.getTeam(pPolynesia.getTeam())
 teamRome = gc.getTeam(pRome.getTeam())
 teamTamils = gc.getTeam(pTamils.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
@@ -387,7 +390,7 @@ class RiseAndFall:
 		
 	def setPlayerEnabled(self, iCiv, bNewValue):
 		sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)] = bNewValue
-		if bNewValue == False: gc.getPlayer(iCiv).setPlayable(False)
+		if bNewValue == False and utils.getHumanID() != iCiv: gc.getPlayer(iCiv).setPlayable(False)
 		
 	def getPlayerEnabled(self, iCiv):
 		return sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
@@ -1754,7 +1757,7 @@ class RiseAndFall:
                 iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
 		
 		if iCiv in con.lSecondaryCivs:
-			if not self.getPlayerEnabled(iCiv):
+			if iHuman != iCiv and not self.getPlayerEnabled(iCiv):
 				return
 		
 		if iCiv == iTurkey:
@@ -1957,10 +1960,10 @@ class RiseAndFall:
                                 print ( "setBirthType again: flips" )
 				self.birthInFreeRegion(iCiv, tCapital, tTopLeft, tBottomRight)
 				
-                # Leoreth: reveal all broader plots on spawn
+                # Leoreth: reveal all normal plots on spawn
                 reborn = utils.getReborn(iCiv)
-                for x in range(con.tBroaderAreasTL[reborn][iCiv][0], con.tBroaderAreasBR[reborn][iCiv][0]+1):
-                        for y in range(con.tBroaderAreasTL[reborn][iCiv][1], con.tBroaderAreasBR[reborn][iCiv][1]+1):
+                for x in range(con.tNormalAreasTL[reborn][iCiv][0], con.tNormalAreasBR[reborn][iCiv][0]+1):
+                        for y in range(con.tNormalAreasTL[reborn][iCiv][1], con.tNormalAreasBR[reborn][iCiv][1]+1):
                                 gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
 				
 		# Leoreth: conditional state religion for colonial civs
@@ -3039,6 +3042,8 @@ class RiseAndFall:
                         utils.makeUnit(con.iPersiaImmortal, iCiv, tPlot, 4)
                 if (iCiv == iCarthage):
                         utils.makeUnit(con.iCarthaginianWarElephant, iCiv, tPlot, 1)
+		if iCiv == iPolynesia:
+			utils.makeUnit(con.iWarrior, iCiv, tPlot, 2)
                 if (iCiv == iRome):
                         utils.makeUnit(con.iRomePraetorian, iCiv, tPlot, 4)
                 if (iCiv == iJapan):
@@ -3178,6 +3183,12 @@ class RiseAndFall:
                                 utils.makeUnit(con.iArcher, iCiv, tSeaPlot, 1)
                                 pCarthage.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 pCarthage.initUnit(con.iTrireme, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
+		if iCiv == iPolynesia:
+			tSeaPlot = (4, 19)
+			utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
+			utils.makeUnit(con.iPolynesianWaka, iCiv, tSeaPlot, 1)
+			utils.makeUnit(con.iSettler, iCiv, tSeaPlot, 1)
+			utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
                 if (iCiv == iRome):
 			utils.createSettlers(iCiv, 3)
                         utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
@@ -3976,6 +3987,9 @@ class RiseAndFall:
                 if ( pCarthage.isHuman() ):
                     utils.makeUnit(iSettler, iCarthage, tCapitals[0][iCarthage], 1)
                     utils.makeUnit(iScout, iCarthage, tCapitals[0][iCarthage], 1)
+		if pPolynesia.isHuman():
+		    utils.makeUnit(iSettler, iPolynesia, tCapitals[0][iPolynesia], 1)
+		    utils.makeUnit(iWarrior, iPolynesia, tCapitals[0][iPolynesia], 1)
                 if ( pRome.isHuman() ):
                     utils.makeUnit(iSettler, iRome, tCapitals[0][iRome], 1)
                     utils.makeUnit(iWarrior, iRome, tCapitals[0][iRome], 1)
@@ -4453,6 +4467,10 @@ class RiseAndFall:
                                 teamCarthage.setHasTech(con.iArchery, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			if iCiv == iPolynesia:
+				lPolynesianTechs = [con.iMysticism, con.iFishing, con.iPottery, con.iHunting, con.iSailing]
+				for iTech in lPolynesianTechs:
+					teamPolynesia.setHasTech(iTech, True, iCiv, False, False)
                         if (iCiv == iRome):
                                 teamRome.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamRome.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -5311,6 +5329,13 @@ class RiseAndFall:
 	def determineEnabledPlayers(self):
 	
 		iHuman = utils.getHumanID()
+		
+		iRand = gc.getDefineINT("PLAYER_OCCURENCE_POLYNESIA")
+		
+		if iRand <= 0:
+			self.setPlayerEnabled(iPolynesia, False)
+		elif gc.getGame().getSorenRandNum(iRand, 'Polynesia enabled?') != 0:
+			self.setPlayerEnabled(iPolynesia, False)
 		
 		if iHuman != iIndia and iHuman != iIndonesia:
 			iRand = gc.getDefineINT("PLAYER_OCCURENCE_TAMILS")

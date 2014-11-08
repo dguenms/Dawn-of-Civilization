@@ -1652,8 +1652,21 @@ def getUHVTileInfo(argsList):
 			
 		if utils.isPlotInArea((x, y), vic.tCanadaWestTL, vic.tCanadaWestBR, vic.tCanadaWestExceptions) or utils.isPlotInArea((x, y), vic.tCanadaEastTL, vic.tCanadaEastBR, vic.tCanadaEastExceptions):
 			return 62
+			
+	elif iPlayer == con.iPolynesia:
+		if utils.isPlotInArea((x, y), vic.tHawaiiTL, vic.tHawaiiBR):
+			return 65
+			
+		if utils.isPlotInArea((x, y), vic.tNewZealandTL, vic.tNewZealandBR):
+			return 66
+			
+		if utils.isPlotInArea((x, y), vic.tMarquesasTL, vic.tMarquesasBR):
+			return 67
+			
+		if utils.isPlotInArea((x, y), vic.tEasterIslandTL, vic.tEasterIslandBR):
+			return 68
 				
-			# continue with ID 65
+		# continue with ID 69
 			
 	return -1
 		

@@ -16,6 +16,8 @@ BeginTeam
 EndTeam
 BeginTeam
 EndTeam
+BeginTeam
+EndTeam
 BeginTeam                 
 EndTeam
 BeginTeam
@@ -153,37 +155,44 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
+	LeaderType=LEADER_AHOEITU
+	CivType=CIVILIZATION_POLYNESIA
+	Team=6
+	PlayableCiv=0
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
 	LeaderType=LEADER_CYRUS
 	CivType=CIVILIZATION_PERSIA                 
-	Team=6                 
+	Team=7
 	PlayableCiv=0                 
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_AUGUSTUS
 	CivType=CIVILIZATION_ROME                 
-	Team=7                 
+	Team=8                 
 	PlayableCiv=0                
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_RAJENDRA
 	CivType=CIVILIZATION_TAMILS
-	Team=8
+	Team=9
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_ZARA_YAQOB
 	CivType=CIVILIZATION_ETHIOPIA                 
-	Team=9                 
+	Team=10                 
 	PlayableCiv=0                 
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_WANGKON
 	CivType=CIVILIZATION_KOREA
-	Team=10
+	Team=11
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -194,14 +203,14 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_PACAL
 	CivType=CIVILIZATION_MAYA                
-	Team=11                 
+	Team=12                 
 	PlayableCiv=0                 
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM                
-	Team=12                 
+	Team=13                 
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION   
@@ -213,7 +222,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_TOKUGAWA
 	CivType=CIVILIZATION_JAPAN                 
-	Team=13                 
+	Team=14                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -224,7 +233,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_RAGNAR
 	CivType=CIVILIZATION_VIKING                 
-	Team=14                 
+	Team=15                 
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE                   
@@ -235,7 +244,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SALADIN
 	CivType=CIVILIZATION_ARABIA                 
-	Team=15                 
+	Team=16                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
@@ -248,7 +257,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_LOBSANG_GYATSO
 	CivType=CIVILIZATION_TIBET
-	Team=16
+	Team=17
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -259,7 +268,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SURYAVARMAN
 	CivType=CIVILIZATION_KHMER                 
-	Team=17               
+	Team=18               
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -270,7 +279,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HAYAM_WURUK
 	CivType=CIVILIZATION_INDONESIA
-	Team=18
+	Team=19
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
@@ -280,7 +289,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_RAHMAN
 	CivType=CIVILIZATION_MOORS
-	Team=19
+	Team=20
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -291,7 +300,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_ISABELLA
 	CivType=CIVILIZATION_SPAIN                 
-	Team=20                
+	Team=21                
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
@@ -304,7 +313,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_LOUIS_XIV
 	CivType=CIVILIZATION_FRANCE                 
-	Team=21                 
+	Team=22                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
@@ -317,7 +326,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_VICTORIA
 	CivType=CIVILIZATION_ENGLAND                 
-	Team=22                 
+	Team=23                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
@@ -330,7 +339,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BARBAROSSA
 	CivType=CIVILIZATION_HOLY_ROMAN               
-	Team=23                 
+	Team=24                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
@@ -343,7 +352,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_STALIN
 	CivType=CIVILIZATION_RUSSIA                 
-	Team=24	
+	Team=25	
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
@@ -355,7 +364,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI                 
-	Team=25                 
+	Team=26                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY     
@@ -365,7 +374,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SOBIESKI
 	CivType=CIVILIZATION_POLAND
-	Team=26
+	Team=27
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM	
@@ -378,7 +387,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL                 
-	Team=27                 
+	Team=28                 
 	PlayableCiv=1                     
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_GUILDS	
@@ -392,7 +401,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA                 
-	Team=28                
+	Team=29                
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -402,7 +411,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_CAVOUR
 	CivType=CIVILIZATION_ITALY
-	Team=29
+	Team=30
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
@@ -416,7 +425,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL                 
-	Team=30               
+	Team=31               
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -426,7 +435,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC                 
-	Team=31               
+	Team=32               
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -436,7 +445,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_AKBAR
 	CivType=CIVILIZATION_MUGHALS
-	Team=32
+	Team=33
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -450,7 +459,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN                 
-	Team=33             
+	Team=34             
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY	
@@ -464,7 +473,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_NARESUAN
 	CivType=CIVILIZATION_THAILAND
-	Team=34
+	Team=35
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -476,7 +485,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MBEMBA
 	CivType=CIVILIZATION_KONGO
-	Team=35
+	Team=36
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	Handicap=HANDICAP_REGENT
@@ -484,7 +493,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
 	CivType=CIVILIZATION_NETHERLANDS                 
-	Team=36                 
+	Team=37                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
@@ -498,7 +507,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FREDERICK
 	CivType=CIVILIZATION_GERMANY
-	Team=37
+	Team=38
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
@@ -512,7 +521,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA                 
-	Team=38                 
+	Team=39                 
 	PlayableCiv=1                    
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_CAPITALISM
@@ -526,7 +535,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_SAN_MARTIN
 	CivType=CIVILIZATION_ARGENTINA
-	Team=39
+	Team=40
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_AUTOCRACY
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
@@ -540,7 +549,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_DOM_PEDRO
 	CivType=CIVILIZATION_BRAZIL
-	Team=40
+	Team=41
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
@@ -554,7 +563,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_TRUDEAU
 	CivType=CIVILIZATION_CANADA
-	Team=41
+	Team=42
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
@@ -569,7 +578,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
-	Team=42      
+	Team=43      
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_REGENT                 
@@ -578,7 +587,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_INDEPENDENT
 	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
-	Team=43
+	Team=44
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_REGENT                 
@@ -588,7 +597,7 @@ BeginPlayer
 	LeaderName=TXT_KEY_LEADER_NATIVE
 	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
-	Team=44       
+	Team=45       
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_REGENT                 
@@ -597,7 +606,7 @@ BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM    
 	StateReligion=RELIGION_CHRISTIANITY  
-	Team=45
+	Team=46
 	PlayableCiv=0                 
 	MinorNationStatus=1               
 	Handicap=HANDICAP_REGENT                 
@@ -611,7 +620,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_WARRIOR_CODE
 	MinorNationStatus=1
-	Team=46
+	Team=47
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -705,6 +714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=14
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -720,6 +730,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=17
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -730,9 +741,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=19
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=0,y=20
@@ -1057,22 +1067,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=15
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=1,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=1,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=1,y=18
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1092,11 +1102,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=22
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=1,y=23
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1112,6 +1123,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=26
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1408,29 +1420,30 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=2,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=2,y=18
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_OCEAN
+	PlotType=3
 EndPlot
 BeginPlot
 	x=2,y=19
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=2,y=20
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=2,y=21
@@ -1439,7 +1452,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=22
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1449,8 +1462,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=24
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=2,y=25
@@ -1459,7 +1473,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=26
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1514,6 +1528,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=37
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1753,7 +1768,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -1784,22 +1799,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=22
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	TerrainType=TERRAIN_OCEAN
+	PlotType=3
 EndPlot
 BeginPlot
 	x=3,y=23
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=3,y=24
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=3,y=25
-	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_PEARL
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2056,6 +2073,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=7
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -2111,8 +2129,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=18
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=4,y=19
@@ -2126,6 +2145,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=21
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2136,26 +2156,27 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=23
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=4,y=24
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=4,y=25
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=4,y=26
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=4,y=27
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -2166,17 +2187,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=29
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=4,y=30
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=4,y=31
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2457,28 +2478,30 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=18
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=19
-	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_CLAM
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=20
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=21
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=5,y=22
@@ -2487,22 +2510,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=23
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=24
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=25
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=5,y=26
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2517,17 +2541,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=29
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=5,y=30
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=5,y=31
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2807,7 +2832,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2817,8 +2842,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=19
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=6,y=20
@@ -2832,7 +2858,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=22
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2842,17 +2868,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=24
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=6,y=25
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=6,y=26
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -2867,17 +2893,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=29
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=6,y=30
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=6,y=31
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -3154,14 +3180,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=7,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=7,y=18
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=7,y=19
@@ -3170,7 +3195,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=7,y=20
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -3505,17 +3530,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=8,y=18
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=8,y=19
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -3846,17 +3871,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=15
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=9,y=16
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=9,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -4198,22 +4223,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=15
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=10,y=16
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=10,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=10,y=18
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -4228,7 +4254,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -4553,38 +4579,38 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=11,y=15
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
-EndPlot
-BeginPlot
-	x=11,y=16
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
-EndPlot
-BeginPlot
-	x=11,y=17
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
-EndPlot
-BeginPlot
-	x=11,y=18
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
-EndPlot
-BeginPlot
-	x=11,y=19
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
-	x=11,y=20
+	x=11,y=16
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=11,y=17
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=11,y=18
+	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=11,y=19
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
-	x=11,y=21
+	x=11,y=20
 	TerrainType=TERRAIN_COAST
+	PlotType=3
+EndPlot
+BeginPlot
+	x=11,y=21
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -4927,17 +4953,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=16
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=12,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=12,y=18
-	TerrainType=TERRAIN_OCEAN
+	BonusType=BONUS_PEARL
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -4947,13 +4975,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=20
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=12,y=21
-	BonusType=BONUS_FISH
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -5308,13 +5336,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=13,y=18
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=13,y=19
@@ -5323,12 +5352,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=20
-	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_OCEAN
+	PlotType=3
 EndPlot
 BeginPlot
 	x=13,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -5680,12 +5710,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=14,y=18
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -5695,12 +5725,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=20
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=14,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -5715,6 +5746,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=24
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -6084,6 +6116,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=22
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -6426,21 +6459,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=16,y=16
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=16,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=16,y=18
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=16,y=19
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -6807,17 +6841,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=17,y=16
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=17,y=17
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=18
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -7168,22 +7203,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=15
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=18,y=16
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=18,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=18,y=18
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -7550,17 +7586,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=19,y=15
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=19,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=19,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -7928,9 +7964,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=16
-	ImprovementType=IMPROVEMENT_GOODY_HUT
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=20,y=17
@@ -8293,8 +8328,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=16
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	BonusType=BONUS_STONE
+	ImprovementType=IMPROVEMENT_GOODY_HUT
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=21,y=17
@@ -8660,17 +8697,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=15
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=22,y=16
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=22,y=17
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -8764,15 +8801,15 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYA_HOLKAN, UnitOwner=44
+		UnitType=UNIT_MAYA_HOLKAN, UnitOwner=45
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=45
 		CityName=Yax Mutal
 		CityPopulation=2
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_MAYA_BALL_COURT
-		Player44Culture=1
+		Player45Culture=1
 	EndCity	
 EndPlot
 BeginPlot
@@ -9171,18 +9208,18 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYA_HOLKAN, UnitOwner=44
+		UnitType=UNIT_MAYA_HOLKAN, UnitOwner=45
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=44
+		UnitType=UNIT_WORKER, UnitOwner=45
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=45
 		CityName=Chich'en Itz&#225;
 		CityPopulation=2
 		BuildingType=BUILDING_MAYA_BALL_COURT
 		BuildingType=BUILDING_CHICHEN_ITZA
-		Player44Culture=10
+		Player45Culture=10
 	EndCity	
 EndPlot
 BeginPlot
@@ -19464,15 +19501,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=42
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=43
 	EndUnit		
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Marrakus
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
-		Player42Culture=1
+		Player43Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -20292,17 +20329,17 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=42
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=43
 	EndUnit		
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Burdigala
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player42Culture=1
+		Player43Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -21040,16 +21077,16 @@ BeginPlot
 	PlotType=2
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=43
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
 	EndUnit		
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Barcelona
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player43Culture=1
+		Player44Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -21431,15 +21468,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=42
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=43
 	EndUnit		
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Massilia
 		CityPopulation=3
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
-		Player42Culture=1
+		Player43Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -22881,16 +22918,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=42
+		UnitType=UNIT_SPEARMAN, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Tripolis
 		CityPopulation=2
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -22931,37 +22968,37 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=43
+		UnitType=UNIT_PIKEMAN, UnitOwner=44
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=43
+		UnitType=UNIT_PIKEMAN, UnitOwner=44
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHRISTIAN_MISSIONARY, UnitOwner=43
+		UnitType=UNIT_CHRISTIAN_MISSIONARY, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=43
+		UnitType=UNIT_WORKER, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Roma
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
@@ -22973,7 +23010,7 @@ BeginPlot
 		BuildingType=BUILDING_APOSTOLIC_PALACE
 		ReligionType=RELIGION_CHRISTIANITY
 		HolyCityReligionType=RELIGION_CHRISTIANITY
-		Player43Culture=100
+		Player44Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -23378,31 +23415,31 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=42
+		UnitType=UNIT_PIKEMAN, UnitOwner=43
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=42
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=43
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit		
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Venetia
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
@@ -23410,7 +23447,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_CHRISTIANITY
-		Player42Culture=1
+		Player43Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -23771,15 +23808,15 @@ BeginPlot
 	PlotType=1
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Napoli
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -23821,16 +23858,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit		
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Vindobona
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
-		Player43Culture=1
+		Player44Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -24541,13 +24578,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=42
+		UnitType=UNIT_SPEARMAN, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Hesperides
 		CityPopulation=2
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25005,15 +25042,15 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit	
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Belgrad
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25792,10 +25829,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=42
+		UnitType=UNIT_SPEARMAN, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Alexandria
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
@@ -25803,7 +25840,7 @@ BeginPlot
 		BuildingType=BUILDING_GREAT_LIBRARY
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -25831,16 +25868,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=42
+		UnitType=UNIT_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=42
+		UnitType=UNIT_SPEARMAN, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Athenae
 		CityPopulation=3
 		BuildingType=BUILDING_HARBOR
@@ -25850,7 +25887,7 @@ BeginPlot
 		BuildingType=BUILDING_GREEK_ODEON
 		ReligionType=RELIGION_ORTHODOXY
 		BuildingType=BUILDING_PARTHENON
-		Player42Culture=50
+		Player43Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -26626,18 +26663,18 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=42
+		UnitType=UNIT_SPEARMAN, UnitOwner=43
 	EndUnit	
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMID
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 	PlotType=2
 EndPlot
@@ -27760,18 +27797,18 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=43
+		UnitType=UNIT_SPEARMAN, UnitOwner=44
 	EndUnit	
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=43
+		UnitType=UNIT_ARCHER, UnitOwner=44
 	EndUnit	
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Aksum
 		CityPopulation=2
 		BuildingType=BUILDING_ETHIOPIAN_STELE
 		ReligionType=RELIGION_ORTHODOXY
-		Player43Culture=50
+		Player44Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -27850,15 +27887,15 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Iconium
 		CityPopulation=2
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -28214,10 +28251,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Hierousalem
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -28225,7 +28262,7 @@ BeginPlot
 		BuildingType=BUILDING_TEMPLE_OF_SALOMON
 		ReligionType=RELIGION_CHRISTIANITY
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -28629,17 +28666,17 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Damaskos
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_WALLS
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -29052,17 +29089,17 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Trapezus
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_ORTHODOXY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -29361,14 +29398,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=43
+		UnitType=UNIT_ARCHER, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Sana'a
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
-		Player43Culture=1
+		Player44Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -29806,14 +29843,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=43
+		UnitType=UNIT_ARCHER, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Tisfun
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
-		Player43Culture=10
+		Player44Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -31646,10 +31683,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=43
+		UnitType=UNIT_ARCHER, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Sirajis
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -31659,7 +31696,7 @@ BeginPlot
 		BuildingType=BUILDING_ZOROASTRIAN_TEMPLE
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player43Culture=10
+		Player44Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -32062,14 +32099,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Merv
 		CityPopulation=2
 		BuildingType=BUILDING_STABLE
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -32424,16 +32461,16 @@ BeginPlot
 	x=84,y=41
 	TerrainType=TERRAIN_PLAINS
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=43
+		UnitType=UNIT_ARCHER, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Herat
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
-		Player43Culture=10
+		Player44Culture=10
 	EndCity
 	PlotType=2
 EndPlot
@@ -32800,22 +32837,22 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	#BeginUnit
-	#	UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=42
+	#	UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	#EndUnit
 	#BeginUnit
-	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+	#	UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	#EndUnit
 	#BeginCity
-	#	CityOwner=42
+	#	CityOwner=43
 	#	CityName=Daibul
 	#	CityPopulation=2
 	#	BuildingType=BUILDING_GRANARY
 	#	BuildingType=BUILDING_HINDU_TEMPLE
 	#	ReligionType=RELIGION_HINDUISM
-	#	Player42Culture=50
+	#	Player43Culture=50
 	#EndCity
 EndPlot
 BeginPlot
@@ -32881,16 +32918,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Samarkand
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 
 EndPlot
@@ -33596,22 +33633,22 @@ BeginPlot
 	BonusType=BONUS_MARBLE
 	TerrainType=TERRAIN_PLAINS
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=42
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Lavapuri
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player42Culture=50
+		Player43Culture=50
 	EndCity
 	PlotType=2
 EndPlot
@@ -33972,16 +34009,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=42
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Mumbai
 		CityPopulation=3
 		BuildingType=BUILDING_STABLE
@@ -33990,7 +34027,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player42Culture=50
+		Player43Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -34430,19 +34467,19 @@ BeginPlot
 	PlotType=2
 	RouteType=ROUTE_ROAD
 	BeginCity
-		CityOwner=47
+		CityOwner=48
 		CityName=Kashgar
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_MARKET
-		Player47Culture=10
+		Player48Culture=10
 	EndCity
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=47
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=48
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=47
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=48
 	EndUnit
 EndPlot
 BeginPlot
@@ -34728,19 +34765,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=42
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Cochin
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -34748,7 +34785,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -34769,26 +34806,26 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Vijayanagara
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player43Culture=10
+		Player44Culture=10
 	EndCity
 EndPlot
 BeginPlot
@@ -34835,13 +34872,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=42
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=42
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Delhi
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
@@ -34853,7 +34890,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
-		Player42Culture=100
+		Player43Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -35211,26 +35248,26 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Bhagyanagar
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player43Culture=50
+		Player44Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -35571,6 +35608,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=28
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -35599,19 +35637,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=42
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=42
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Kanchipuram
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -35619,7 +35657,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player42Culture=50
+		Player43Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -36392,19 +36430,19 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Kolkata
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -36412,7 +36450,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player43Culture=50
+		Player44Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -36436,16 +36474,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=43
+		UnitType=UNIT_ARCHER, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
+		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Pataliputra
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
@@ -36464,7 +36502,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		HolyCityReligionType=RELIGION_BUDDHISM
-		Player43Culture=50
+		Player44Culture=50
 	EndCity
 EndPlot
 BeginPlot
@@ -36868,16 +36906,16 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginCity
-		CityOwner=47
+		CityOwner=48
 		CityName=Dunhuang
 		CityPopulation=3
 		ReligionType=RELIGION_BUDDHISM
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
-		Player47Culture=10
+		Player48Culture=10
 	EndCity
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=47
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=48
 	EndUnit
 EndPlot
 BeginPlot
@@ -37918,16 +37956,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=42
+		UnitType=UNIT_ARCHER, UnitOwner=43
 	EndUnit	
 	BeginCity
-		CityOwner=42
+		CityOwner=43
 		CityName=Pagan
 		CityPopulation=4
 		BuildingType=BUILDING_BUDDHIST_TEMPLE                             
 		BuildingType=BUILDING_SHWEDAGON_PAYA
 		ReligionType=RELIGION_BUDDHISM
-		Player42Culture=10
+		Player43Culture=10
 	EndCity
 
 EndPlot
@@ -38779,10 +38817,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1		
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Chang'an
 		CityPopulation=1
-		Player43Culture=3000
+		Player44Culture=3000
 	EndCity
 EndPlot
 BeginPlot
@@ -39553,10 +39591,10 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Guiyang
 		CityPopulation=1
-		Player43Culture=250
+		Player44Culture=250
 	EndCity
 	PlotType=1
 EndPlot
@@ -39603,13 +39641,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=43
+		UnitType=UNIT_SPEARMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=43
+		UnitType=UNIT_SPEARMAN, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Beijing
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -39624,7 +39662,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
-		Player43Culture=100
+		Player44Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -39990,10 +40028,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=43
+		UnitType=UNIT_ARCHER, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Kaifeng
 		CityPopulation=2
 		BuildingType=BUILDING_LIBRARY
@@ -40007,7 +40045,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
-		Player43Culture=100
+		Player44Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -40756,10 +40794,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=43
+		UnitType=UNIT_SPEARMAN, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Guangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
@@ -40767,7 +40805,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		Player43Culture=100
+		Player44Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -40801,10 +40839,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=43
+		UnitType=UNIT_ARCHER, UnitOwner=44
 	EndUnit
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Nanjing
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -40820,7 +40858,7 @@ BeginPlot
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_CONFUCIANISM
 		HolyCityReligionType=RELIGION_TAOISM
-		Player43Culture=100
+		Player44Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -41574,7 +41612,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginCity
-		CityOwner=43
+		CityOwner=44
 		CityName=Hangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -41582,7 +41620,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player43Culture=100
+		Player44Culture=100
 	EndCity
 EndPlot
 BeginPlot
@@ -44514,17 +44552,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=27
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=115,y=28
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=115,y=29
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44874,6 +44914,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=24
+	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -44901,7 +44942,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=29
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45581,21 +45622,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=22
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=23
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=24
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -45931,17 +45974,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=119,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=119,y=22
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=119,y=23
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46266,13 +46309,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	BonusType=BONUS_CRAB
 	PlotType=3
 EndPlot
 BeginPlot
 	x=120,y=18
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46287,12 +46330,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=21
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=120,y=22
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46602,22 +46645,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=14
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=121,y=15
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=121,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=121,y=17
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46627,7 +46670,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=19
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46642,7 +46685,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=22
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46668,12 +46711,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=27
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=121,y=28
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
@@ -46960,19 +47003,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=15
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=122,y=16
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=122,y=17
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=122,y=18
@@ -46981,8 +47024,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=19
-	TerrainType=TERRAIN_OCEAN
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=122,y=20
@@ -46991,9 +47035,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=21
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=122,y=22
@@ -47012,6 +47055,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=25
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -47042,6 +47086,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=31
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -47315,19 +47360,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=16
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=123,y=17
+	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=123,y=18
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=123,y=19
@@ -47341,17 +47387,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=21
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=123,y=22
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=123,y=23
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot

@@ -2417,6 +2417,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)OPTICS))
 				aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		break;
+	case POLYNESIA:
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
+		break;
 	case PERSIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
 		break;
@@ -3066,7 +3070,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == PARTHENON) iTempValue *= 3;
 										else if (iI == ARTEMIS) iTempValue *= 3;
 										else if (iI == ZEUS) iTempValue *= 3;
-										else if (iI == MOAI) iTempValue /= 4;
+										else if (iI == GREAT_COTHON) iTempValue /= 4;
 										//else if (iI == HAGIASOPHIA) iTempValue *= 2;
 										else if (iI == OLYMPICPARK) iTempValue *= 2;
 										else if (iI == APOSTOLIC) iTempValue *= 5;
@@ -3101,10 +3105,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 														iTempValue *= 3;
 														iTempValue /= 2;
 										}
-										else if (iI == MOAI) {
-                                                        iTempValue *= 3;
-										}
+										else if (iI == GREAT_COTHON) iTempValue *= 3;
 										else if (iI == APOSTOLIC) iTempValue *= 2;
+										break;
+									case POLYNESIA:
+										if (iI == MOAI) iTempValue *= 3;
 										break;
 									case PERSIA:
 										if (iI == HANGINGGARDEN) {
@@ -3208,7 +3213,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == PAYA) iTempValue *= 3;
 										else if (iI == TAJMAHAL) iTempValue *= 2;
 										else if (iI == BOROBUDUR) iTempValue *= 2;
-										else if (iI == MOAI) {
+										else if (iI == GREAT_COTHON) {
 											iTempValue *= 3;
 											iTempValue /= 2;
 										}
@@ -3346,7 +3351,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == PAYA) iTempValue *= 3;
 										else if (iI == TAJMAHAL) iTempValue *= 2;
 										else if (iI == BOROBUDUR) iTempValue *= 2;
-										else if (iI == MOAI) {
+										else if (iI == GREAT_COTHON) {
 											iTempValue *= 3;
 											iTempValue /= 2;
 										}
@@ -3410,7 +3415,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									default:
 										if (iI == STONEHENGE) iTempValue *= 2;
-										if (iI == MOAI) iTempValue *= 5;
 										break;
 									}
 

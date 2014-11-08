@@ -891,6 +891,14 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aBuildingHealthChange.clear();
 	}
 
+	int iIndex;
+	for (iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+	{
+		iIndex = GC.getMap().plotNum(getX() + GC.getCityPlot3X()[iI], getY() + GC.getCityPlot3Y()[iI]);
+		if (iIndex < 0) iIndex = GC.getMap().numPlots() + iIndex;
+		m_aiCulturePlots[iI] = iIndex;
+	}
+
 	updateCultureCosts();
 
 	if (!bConstructorCall)
@@ -2383,6 +2391,17 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	}
 	//Rhye - end
 
+	// Leoreth: Moai Statues require 20 water tiles
+	if (eBuilding == MOAI)
+	{
+		int iNumWaterTiles = 0;
+		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			if (getCityIndexPlot(iI)->isWater()) iNumWaterTiles++;
+		}
+
+		if (iNumWaterTiles < 20) return false;
+	}
 
 	//Rhye - start switch for the UHV
 	if (eBuilding == RED_FORT)
@@ -9770,9 +9789,23 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 			iModifier += getPeaceTradeModifier(pOtherCity->getTeam());
 		}
+
+		//Leoreth: new distance modifier
+		iModifier += getDistanceTradeModifier(pOtherCity);
 	}
 
 	return iModifier;
+}
+
+int CvCity::getDistanceTradeModifier(CvCity* pOtherCity) const
+{
+	if (pOtherCity == NULL) return 0;
+	
+	int iDistance = stepDistance(getX_INLINE(), getY_INLINE(), pOtherCity->getX_INLINE(), pOtherCity->getY_INLINE());
+	iDistance /= 5;
+	iDistance *= 5;
+		
+	return iDistance * GC.getDefineINT("DISTANCE_TRADE_MODIFIER");
 }
 
 int CvCity::getPopulationTradeModifier() const
@@ -14302,7 +14335,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 
 						if (pLoopPlot != NULL)
 						{
-							if (pLoopPlot->isPotentialCityWorkForArea(area()))
+							if (pLoopPlot->isPotentialCityWorkForArea(area()) || getOwnerINLINE() == POLYNESIA)
 							{
 								// Leoreth: culture can only invade foreign core if city itself is in foreign core
 								bool bCanSpreadCore = true;
@@ -17314,6 +17347,12 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 			if (!isCoastal(20)) iCost += 1000;
 			else if (iDistance > 1) iCost += 5;
 		}
+
+		// skip already owned tiles
+		if (pPlot->getOwner() == getOwner()) iCost += 1000;
+
+		// even with Polynesian UP Oceans should still be covered last
+		if (getOwnerINLINE() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost += GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
 	}
 
 	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal())) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
@@ -17325,6 +17364,9 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 
 	// Leoreth: Inca UP
 	if (getOwnerINLINE() == INCA && pPlot->isPeak()) iCost += GC.getDefineINT("CULTURE_COST_HILL") - GC.getDefineINT("CULTURE_COST_PEAK");
+
+	// Leoreth: Polynesian UP
+	if (getOwnerINLINE() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
 
 	return bOrdering ? iCost : std::max(0, iCost);
 }
@@ -17361,23 +17403,33 @@ struct cultureCompare
 // Leoreth
 void CvCity::updateCultureCosts()
 {
-	setNextCoveredPlot(0, true);
+	GC.getGame().logMsg("updateCultureCosts()");
+	//setNextCoveredPlot(0, true);
 
 	std::vector<int> plots;
+	std::vector<int> openPlots;
 
-	int iIndex;
-	for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+	int iI;
+	for (iI = 0; iI < getNextCoveredPlot(); iI++)
 	{
-		iIndex = GC.getMap().plotNum(getX() + GC.getCityPlot3X()[iI], getY() + GC.getCityPlot3Y()[iI]);
-		if (iIndex < 0) iIndex = GC.getMap().numPlots() + iIndex;
-		plots.push_back(iIndex);
+		plots.push_back(m_aiCulturePlots[iI]);
+	}
+
+	for (iI = getNextCoveredPlot(); iI < NUM_CITY_PLOTS_3; iI++)
+	{
+		openPlots.push_back(m_aiCulturePlots[iI]);
 	}
 
 	cultureCompare cmp;
 	cmp.city = this;
-	std::sort(plots.begin(), plots.end(), cmp);
+	std::sort(openPlots.begin(), openPlots.end(), cmp);
 
-	int iI = 0;
+	for (std::vector<int>::iterator it = openPlots.begin(); it != openPlots.end(); ++it)
+	{
+		plots.push_back(*it);
+	}
+
+	iI = 0;
 	int iCumulativeCosts = 0;
 	int iCurrentCosts;
 	CvPlot* plot;
@@ -17392,6 +17444,8 @@ void CvCity::updateCultureCosts()
 		//if (getOwner() == EGYPT) GC.getGameINLINE().logMsg("%d = %d (+%d)", iI, iCumulativeCosts, iCurrentCosts);
 		iI++;
 	}
+
+	GC.getGame().logMsg("end updateCultureCosts()");
 }
 
 int CvCity::getNextCoveredPlot() const

@@ -5093,9 +5093,10 @@ int CvTeam::getTerrainTradeCount(TerrainTypes eIndex) const
 bool CvTeam::isTerrainTrade(TerrainTypes eIndex) const
 {
 	// Leoreth: Portuguese UP: Ocean trade with Optics
-	if (getID() == PORTUGAL && eIndex == TERRAIN_OCEAN)
-		if (isHasTech((TechTypes)OPTICS))
-			return true;
+	if (eIndex == TERRAIN_OCEAN)
+	{
+		if (getID() == PORTUGAL && isHasTech((TechTypes)OPTICS)) return true;
+	}
 
 	return (getTerrainTradeCount(eIndex) > 0);
 }

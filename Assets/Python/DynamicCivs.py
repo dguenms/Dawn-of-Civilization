@@ -26,6 +26,7 @@ iGreece = con.iGreece
 iPersia = con.iPersia
 iCarthage = con.iCarthage
 iPhoenicia = con.iPhoenicia
+iPolynesia = con.iPolynesia
 iRome = con.iRome
 iTamils = con.iTamils
 iJapan = con.iJapan
@@ -81,6 +82,7 @@ pBabylonia = gc.getPlayer(iBabylonia)
 pGreece = gc.getPlayer(iGreece)
 pPersia = gc.getPlayer(iPersia)
 pCarthage = gc.getPlayer(iCarthage)
+pPolynesia = gc.getPlayer(iPolynesia)
 pRome = gc.getPlayer(iRome)
 pJapan = gc.getPlayer(iJapan)
 pTamils = gc.getPlayer(iTamils)
@@ -131,6 +133,7 @@ teamBabylonia = gc.getTeam(pBabylonia.getTeam())
 teamGreece = gc.getTeam(pGreece.getTeam())
 teamPersia = gc.getTeam(pPersia.getTeam())
 teamCarthage = gc.getTeam(pCarthage.getTeam())
+teamPolynesia = gc.getTeam(pPolynesia.getTeam())
 teamRome = gc.getTeam(pRome.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
 teamTamils = gc.getTeam(pTamils.getTeam())
@@ -204,6 +207,7 @@ class DynamicCivs:
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_DEFAULT",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEFAULT",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEFAULT",
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_DEFAULT",
                         iRome : "TXT_KEY_CIV_ROME_DESC_DEFAULT",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEFAULT",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEFAULT",
@@ -249,6 +253,7 @@ class DynamicCivs:
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_PEOPLES",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_PEOPLES",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES",
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_PEOPLES",
                         iRome : "TXT_KEY_CIV_ROME_DESC_PEOPLES",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_PEOPLES",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_PEOPLES",
@@ -348,6 +353,7 @@ class DynamicCivs:
 				iAztecs : "TXT_KEY_CIV_AZTECS_PERSIAN_VASSAL",
 				iTurkey : "TXT_KEY_CIV_TURKEY_PERSIAN_VASSAL"},
 			#iCarthage - none so far
+			#iPolynesia - none so far
 			iRome : {
 				iEgypt : "TXT_KEY_CIV_EGYPT_ROMAN_VASSAL",
 				iChina : "TXT_KEY_CIV_CHINA_ROMAN_VASSAL",
@@ -612,6 +618,7 @@ class DynamicCivs:
                         iGreece : "TXT_KEY_CIV_GREECE_SOVIET_VASSAL",
                         iPersia : "TXT_KEY_CIV_PERSIA_SOVIET_VASSAL",
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_SOVIET_VASSAL",
+			iPolynesia : "TXT_KEY_CIV_POLYNESiA_SOVIET_VASSAL",
                         iRome : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
 			iItaly : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
                         iJapan : "TXT_KEY_CIV_JAPAN_SOVIET_VASSAL",
@@ -656,6 +663,7 @@ class DynamicCivs:
                         iGreece : "TXT_KEY_CIV_GREECE_NAZI_VASSAL",
                         iPersia : "TXT_KEY_CIV_PERSIA_NAZI_VASSAL",
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_NAZI_VASSAL",
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_NAZI_VASSAL",
                         iRome : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
 			iItaly : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
                         iJapan : "TXT_KEY_CIV_JAPAN_NAZI_VASSAL",
@@ -700,6 +708,7 @@ class DynamicCivs:
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_FASCIST",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_FASCIST",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_FASCIST",
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_FASCIST",
                         iRome : "TXT_KEY_CIV_ROME_DESC_FASCIST",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_FASCIST",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_FASCIST",
@@ -744,6 +753,7 @@ class DynamicCivs:
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_COMMUNIST",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_COMMUNIST",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST",
+			iPolynesia : "TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST",
                         iRome : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_COMMUNIST",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_COMMUNIST",
@@ -788,6 +798,7 @@ class DynamicCivs:
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_DEMOCRATIC",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEMOCRATIC",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEMOCRATIC",
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_DEMOCRATIC",
                         iRome : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEMOCRATIC",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEMOCRATIC",
@@ -840,6 +851,7 @@ class DynamicCivs:
 			iGreece : con.iPericles,
 			iPersia : con.iCyrus,
 			iCarthage : con.iHiram,
+			iPolynesia : con.iAhoeitu,
 			iRome : con.iJuliusCaesar,
 			iJapan : con.iJimmu,
 			iTamils : con.iRajendra,
@@ -1020,6 +1032,7 @@ class DynamicCivs:
 		elif iPlayer == iPoland: iThreshold = 3
 		elif iPlayer == iMoors: iThreshold = 3
 		elif iPlayer == iTibet: iThreshold = 2
+		elif iPlayer == iPolynesia: iThreshold = 3
 			
 		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
 		
@@ -1373,6 +1386,21 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_CITY_STATES")
 				return
 			# make Carthaginian Kingdom default
+			
+		elif iPlayer == iPolynesia:
+			if capital.getName() in ["Kaua'i", "O'ahu", "Maui"]:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_HAWAII")
+				return
+			
+			if bEmpire:
+				if capital.getName() == "Manu'a": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_EMPIRE_SAMOA")
+				else: self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_EMPIRE")
+				return
+				
+			if capital.getName() == "Manu'a": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_SAMOA")
+			elif capital.getName() == "Niue": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_NIUE")
+			
+			# Kingdom of Tonga as default
 			
 		elif iPlayer == iRome:
 			if pByzantium.isAlive():

@@ -262,4 +262,12 @@
 		<Tag>TXT_KEY_UP_CAN2</Tag>
 		<English>Immigrants bring [ICON_GREATPEOPLE] to your cities</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PLY</Tag>
+		<English>The Power of Navigation:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_PLY2</Tag>
+		<English>No penalties for cultural expansion over Ocean tiles</English>
+	</TEXT>
 </Civ4GameText>

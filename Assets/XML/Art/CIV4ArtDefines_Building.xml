@@ -1564,7 +1564,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/HangingGardens.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MOAI_STATUES</Type>
+			<Type>ART_DEF_BUILDING_GREAT_COTHON</Type>
 			<LSystem>LSYSTEM_HARBOR</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -1572,6 +1572,16 @@
 			<NIF>Art/Structures/Buildings/Cartheginian Cothon/Cothon.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Harbor.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,3</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MOAI_STATUES</Type>
+			<LSystem>LSYSTEM_COAST</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.115</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Moai_Statues/Moai_Statutes.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,14</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SHWEDAGON_PAYA</Type>
@@ -1793,6 +1803,16 @@
 			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Civilizations/Carthage.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,5,1</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PLY_EMBASSY</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/WWBank/WWBank.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Civilizations/Polynesia.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ROM_EMBASSY</Type>
@@ -2594,6 +2614,16 @@
 			<NIF>Art/Structures/Buildings/RefrigerationPlant/Industrial_Park.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/RefrigerationPlant/RefrigerationPlant.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_POLYNESIAN_MARAE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>5.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Marae/wharenui.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Marae/Button_Marae.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

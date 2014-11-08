@@ -5740,6 +5740,12 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == HORSEBACK_RIDING || iI == CONSTRUCTION)
 										iValue *= 3;
 									break;
+								case POLYNESIA:
+									if (iI == COMPASS || iI == PRIESTHOOD || iI == MASONRY)
+										iValue *= 2;
+									if (iI == BRONZEWORKING || iI == IRONWORKING)
+										iValue /= 3;
+									break;
 								case PERSIA:
 									if (iI == THEOLOGY)
 										iValue /= 4;

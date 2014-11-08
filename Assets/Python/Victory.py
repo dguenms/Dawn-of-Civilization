@@ -223,6 +223,15 @@ tCanadaEastTL = (27, 50)
 tCanadaEastBR = (36, 59)
 tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50))
 
+tHawaiiTL = (0, 34)
+tHawaiiBR = (6, 39)
+tNewZealandTL = (119, 4)
+tNewZealandBR = (123, 12)
+tMarquesasTL = (14, 22)
+tMarquesasBR = (16, 24)
+tEasterIslandTL = (20, 15)
+tEasterIslandBR = (22, 17)
+
 # initialise player variables
 iEgypt = con.iEgypt
 iIndia = con.iIndia
@@ -231,6 +240,7 @@ iBabylonia = con.iBabylonia
 iGreece = con.iGreece
 iPersia = con.iPersia
 iCarthage = con.iCarthage
+iPolynesia = con.iPolynesia
 iRome = con.iRome
 iJapan = con.iJapan
 iTamils = con.iTamils
@@ -285,6 +295,7 @@ pBabylonia = gc.getPlayer(iBabylonia)
 pGreece = gc.getPlayer(iGreece)
 pPersia = gc.getPlayer(iPersia)
 pCarthage = gc.getPlayer(iCarthage)
+pPolynesia = gc.getPlayer(iPolynesia)
 pRome = gc.getPlayer(iRome)
 pJapan = gc.getPlayer(iJapan)
 pTamils = gc.getPlayer(iTamils)
@@ -334,6 +345,7 @@ teamBabylonia = gc.getTeam(pBabylonia.getTeam())
 teamGreece = gc.getTeam(pGreece.getTeam())
 teamPersia = gc.getTeam(pPersia.getTeam())
 teamCarthage = gc.getTeam(pCarthage.getTeam())
+teamPolynesia = gc.getTeam(pPolynesia.getTeam())
 teamRome = gc.getTeam(pRome.getTeam())
 teamJapan = gc.getTeam(pJapan.getTeam())
 teamTamils = gc.getTeam(pTamils.getTeam())
@@ -758,6 +770,7 @@ class Victory:
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
 
+		if self.getGoal(iPolynesia, 0) == 0: utils.debugTextPopup("Goal lost on turn " + str(iGameTurn))
 
                 if (not gc.getGame().isVictoryValid(7)): #7 == historical
                         return
@@ -917,8 +930,26 @@ class Victory:
                                                 self.setGoal(iGreece, 2, 1)
                                         else:
                                                 self.setGoal(iGreece, 2, 0)
-
-
+						
+		elif iPlayer == iPolynesia:
+			if pPolynesia.isAlive():
+			
+				pass
+			
+				# first goal: settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas, Easter Island
+				#if iGameTurn == getTurnForYear(800):
+				#	if self.getGoal(iPolynesia, 0) == -1:
+				#		self.setGoal(iPolynesia, 0, 0)
+						
+				# second goal: settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
+				#if iGameTurn == getTurnForYear(1000):
+				#	if self.getGoal(iPolynesia, 1) == -1:
+				#		self.setGoal(iPolynesia, 1, 0)
+						
+				# third goal: build the Moai Statues by 1200 AD
+				#if iGameTurn == getTurnForYear(1200):
+				#	if self.getGoal(iPolynesia, 2) == -1:
+				#		self.setGoal(iPolynesia, 2, 0)
 
                 elif (iPlayer == iPersia):
                         if (pPersia.isAlive()):
@@ -2677,7 +2708,16 @@ class Victory:
 		#			self.setGoal(iNetherlands, 1, 1)
                 #                else:
                 #                        self.setGoal(iNetherlands, 1, 0)
+		
+		elif iPlayer == iPolynesia:
+			iCount = 0
+			if self.getNumCitiesInArea(iPolynesia, tHawaiiTL, tHawaiiBR) > 0: iCount += 1
+			if self.getNumCitiesInArea(iPolynesia, tNewZealandTL, tNewZealandBR) > 0: iCount += 1
+			if self.getNumCitiesInArea(iPolynesia, tMarquesasTL, tMarquesasBR) > 0: iCount += 1
+			if self.getNumCitiesInArea(iPolynesia, tEasterIslandTL, tEasterIslandBR) > 0: iCount += 1
 
+			if iCount >= 2 and self.getGoal(iPolynesia, 0) == -1: self.setGoal(iPolynesia, 0, 1)
+			if iCount >= 4 and self.getGoal(iPolynesia, 1) == -1: self.setGoal(iPolynesia, 1, 1)
 
 
         def onReligionFounded(self, iReligion, iFounder):
@@ -3232,7 +3272,7 @@ class Victory:
 
 		# Leoreth: ignore AI civs to improve speed
 		# important: add all civs with wonder goals to the list so their failure will be checked
-		if self.isIgnoreAI() and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iEgypt, iGreece, iCarthage, iMaya, iKhmer, iFrance, iMali, iItaly, iMughals, iAmerica, iBrazil]:
+		if self.isIgnoreAI() and utils.getHumanID() != iPlayer and utils.getHumanID() not in [iEgypt, iGreece, iCarthage, iPolynesia, iMaya, iKhmer, iFrance, iMali, iItaly, iMughals, iAmerica, iBrazil]:
 			return
 
                 iGameTurn = gc.getGame().getGameTurn()
@@ -3354,6 +3394,13 @@ class Victory:
 		if iBuilding == con.iGreatCothon:
 			if iPlayer != iCarthage:
 				self.setGoal(iCarthage, 0, 0)
+				
+		# Polynesia: build the Moai Statues
+		if iBuilding == con.iMoaiStatues:
+			if iPlayer == iPolynesia:
+				if self.getGoal(iPolynesia, 2) == -1: self.setGoal(iPolynesia, 2, 1)
+			else:
+				self.setGoal(iPolynesia, 2, 0)
 
 		# Maya: build the Temple of Kukulkan
                 if iBuilding == con.iTempleOfKukulkan:
@@ -4742,6 +4789,14 @@ class Victory:
 				iGold = pCarthage.getGold()
 				aHelp.append(self.getIcon(iGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iGold, utils.getTurns(5000))))
 
+		elif iPlayer == iPolynesia:
+			if iGoal == 0 or iGoal == 1:
+				bHawaii = self.getNumCitiesInArea(iPolynesia, tHawaiiTL, tHawaiiBR) > 0
+				bNewZealand = self.getNumCitiesInArea(iPolynesia, tNewZealandTL, tNewZealandBR) > 0
+				bMarquesas = self.getNumCitiesInArea(iPolynesia, tMarquesasTL, tMarquesasBR) > 0
+				bEasterIsland = self.getNumCitiesInArea(iPolynesia, tEasterIslandTL, tEasterIslandBR) > 0
+				aHelp.append(self.getIcon(bHawaii) + localText.getText("TXT_KEY_VICTORY_HAWAII", ()) + self.getIcon(bNewZealand) + localText.getText("TXT_KEY_VICTORY_NEW_ZEALAND", ()) + self.getIcon(bMarquesas) + localText.getText("TXT_KEY_VICTORY_MARQUESAS", ()) + self.getIcon(bEasterIsland) + localText.getText("TXT_KEY_VICTORY_EASTER_ISLAND", ()))
+				
 		elif iPlayer == iRome:
 			if iGoal == 0:
 				iBarracks = self.getNumBuildings(iRome, con.iBarracks)

@@ -204,9 +204,11 @@ class Resources:
 
 		if (iGameTurn == getTurnForYear(1500)):
 			gc.getMap().plot(35, 54).setFeatureType(-1, 0) # remove Marsh in case it had been placed
-			gc.getMap().plot(35, 54).setBonusType(-1)
 			for x, y in lNewfoundlandCapes:
 				gc.getMap().plot(x, y).setFeatureType(-1, 0)
+				
+			# also remove Marsh on Port Moresby
+			gc.getMap().plot(116, 24).setFeatureType(-1, 0)
 			
 			self.createResource(56, 54, iFish) # Amsterdam
 			self.createResource(57, 52, iWheat) # Amsterdam

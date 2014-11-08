@@ -677,6 +677,21 @@
 		<English>Peacekeeping</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY1_TITLE</Tag>
+		<English>(Title)</English>
+		<German></German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY2_TITLE</Tag>
+		<English>(Title)</English>
+		<German></German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY3_TITLE</Tag>
+		<English>(Title)</English>
+		<German></German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV__TITLE</Tag>
 		<English></English>
 		<German></German>
