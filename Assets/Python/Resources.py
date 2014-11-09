@@ -163,7 +163,7 @@ class Resources:
 		
 		# Leoreth: New Guinea can be settled
 		if iGameTurn == getTurnForYear(1000):
-			gc.getMap().plot(113, 25).setFeatureType(0, -1)
+			gc.getMap().plot(113, 25).setFeatureType(-1, 0)
 		
 		# Leoreth: for respawned Egypt
 		if iGameTurn == getTurnForYear(900):
