@@ -15015,7 +15015,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=57
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
