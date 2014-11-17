@@ -240,7 +240,7 @@ def setup():
 		sd.changeDutchColonies(2)
 	
 	# ignore AI goals
-	bIgnoreAI = False#(gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
+	bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
 	sd.setIgnoreAI(bIgnoreAI)
 	
 	if bIgnoreAI:
