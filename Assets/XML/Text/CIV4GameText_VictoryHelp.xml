@@ -625,8 +625,8 @@
 		<English>Turns with highest approval rating: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NO_BAD_RELATIONS</Tag>
-		<English>No furious or annoyed relations</English>
+		<Tag>TXT_KEY_VICTORY_CAUTIOUS_OR_BETTER_RELATIONS</Tag>
+		<English>Cautious or better relations: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FRIENDLY_CIVS</Tag>
@@ -695,6 +695,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA</Tag>
 		<English>Canadian territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA_CITIES</Tag>
+		<English>Controls all cities in Canada</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS</Tag>

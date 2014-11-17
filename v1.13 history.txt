@@ -6,8 +6,8 @@
 	# Unique Unit: Corvette (Destroyer): weaker, but cheaper and faster
 	# Unique Power: Multiculturalism: Immigrants bring GPP to your cities
 	# Unique Historical Victory:
-		# A Mari Usque Ad Mare: Connect your capital to an Atlantic and a Pacific Port in 1920 AD
-		# The Great White North: Control all of Canada without ever conquering a city in 1950 AD
+		# A Mari Usque Ad Mare: Connect your capital to an Atlantic and a Pacific Port by 1920 AD
+		# The Great White North: Control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD
 		# Peacekeeping: End twelve wars through diplomacy by 2000 AD
 # Enlarged North America to the north to make more room for Canada, extensive terrain changes
 # Capes and marshes blocking access to America from Newfoundland only appear when the player controls the Vikings
@@ -60,3 +60,10 @@
 # only normal territory instead of broader territory is revealed on spawn (generally smaller rectangle)
 # removed the trade route yield modifier for overseas cities
 # added a trade route yield modifier based on city distance
+# changed the deadline for the first and second American UHV goals to 1900 and 1950 AD respectively
+# changed the following UHV goals from "in" to "by":
+	# third Brazilian
+	# first Thai
+	# third Italian
+	# first Polish
+	# second English

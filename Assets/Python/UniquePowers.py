@@ -221,7 +221,7 @@ class UniquePowers:
 				CyInterface().addMessage(iOwner, False, con.iDuration, CyTranslator().getText("TXT_KEY_VIKING_NAVAL_UP", (iGold, sAdjective, pLosingUnit.getNameKey())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 				
 				if iOwner == iVikings:
-					sd.scriptDict['iVikingGold'] += iGold
+					sd.changeVikingGold(iGold)
 				elif iOwner == iMoors:
 					sd.changeMoorishGold(iGold)
 				
@@ -496,7 +496,7 @@ class UniquePowers:
                                 CyInterface().addMessage(pWinningPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
                                 CyInterface().addMessage(pLosingPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_LOSE", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(7),pWinningUnit.getX(),pWinningUnit.getY(),True,True)		
                                 if (pLosingUnit.getOwner() not in con.lCivGroups[5] and pLosingUnit.getOwner() < con.iNumPlayers): # old world civs now
-                                        self.setEnslavedUnits(self.getEnslavedUnits() + 1)
+                                        sd.changeAztecSlaves(1)
 
 
 

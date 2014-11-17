@@ -258,9 +258,12 @@ class RFCUtils:
         #RiseAndFall
         def debugTextPopup(self, strText):
 		if MainOpt.isShowDebugPopups():
-			popup = Popup.PyPopup()
-			popup.setBodyString( strText )
-			popup.launch()		
+			self.show(strText)
+
+	def show(self, message):
+		popup = Popup.PyPopup()
+		popup.setBodyString(message)
+		popup.launch()
 
         #RiseAndFall
         def updateMinorTechs( self, iMinorCiv, iMajorCiv):                
@@ -1614,6 +1617,12 @@ class RFCUtils:
 		if iCiv is None: return []
 		return [pCity.GetCy() for pCity in PyPlayer(iCiv).getCityList()]
 		
+	def getAllCities(self):
+		lCities = []
+		for iPlayer in range(con.iNumPlayers):
+			lCities.extend(self.getCityList(iPlayer))
+		return lCities
+		
 	def isNeighbor(self, iCiv1, iCiv2):
 		return gc.getGame().isNeighbors(iCiv1, iCiv2)
 						
@@ -1939,3 +1948,6 @@ class RFCUtils:
 			
 		for unit in lUnits:
 			self.moveToClosestCity(unit)
+			
+	def getWonderList():
+		return [i for i in range(iNumBuildings) if isWorldWonderClass(gc.getBuildingInfo(i).getBuildingClassType())]

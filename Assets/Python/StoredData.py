@@ -2,7 +2,8 @@
 
 from CvPythonExtensions import *
 import CvUtil
-import PyHelpers  
+import PyHelpers
+import Popup
 import cPickle as pickle
 import Consts as con
 from WarStatus import WarStatus
@@ -87,48 +88,35 @@ class StoredData:
                                     'lFirstContactPlague': [False for i in range(con.iNumTotalPlayersB)], #total players + barbarians
                                      #------------Victories
                                     'lGoals': [[-1, -1, -1] for i in range(con.iNumPlayers)],
+				    'lHistoricalGoldenAge' : [False for i in range(con.iNumPlayers)],
 				    'bIgnoreAI': False,
-                                    'lReligionFounded': [-1, -1, -1, -1, -1, -1, -1, -1],
-                                    'iEnslavedUnits': 0,
-                                    'iRazedByMongols': 0,
-                                    'lEnglishEras': [-1, -1],
-                                    'lGreekTechs': [-1, -1, -1],
-                                    'lNewWorld': [-1, -1], #first founded; circumnavigated (still unused)
-                                    'iNumSinks': 0,
-                                    'lBabylonianTechs': [-1, -1, -1],                                    
-                                    #'iMediterraneanColonies': 0,
-                                    'iPortugueseColonies': 0,
-                                    'iFrenchColonies': 0,
-                                    'lWondersBuilt': [0 for i in range(con.iNumPlayers)],
-                                    'l2OutOf3': [False for i in range(con.iNumPlayers)],
-				    'iChineseGoldenAges' : 0,
-				    'lItalianTechs': [-1, -1, -1, -1, -1, -1],
-				    'iNumKoreanSinks': 0,
-				    'iNumGenerals': 0,
-				    'iTechsStolen': 0,
-				    'lChineseTechs': [-1, -1, -1, -1],
-				    'iEthiopianControl' : -1,
-				    'iVikingGold' : 0,
-				    'lRussianProjects' : [-1, -1, -1],
-				    'iDutchColonies' : 0,
-				    'iNumTamilSinks' : 0,
-				    'iTamilTradeGold' : 0,
-				    'lRomanTechs' : [-1, -1, -1],
-				    'iCongoSlaveCounter' : 0,
-				    'bMaliGold' : False,
-				    'iColombianTradeGold' : 0,
-				    'lProtestantTechs' : [-1, -1, -1],
-				    'iPopeTurns' : 0,
-				    'iHinduGoldenAgeTurns' : 0,
-				    'iBuddhistPeaceTurns' : 0,
-				    'iBuddhistHappinessTurns' : 0,
-				    'bPolytheismNeverReligion' : True,
-				    'iFirstIndustrial' : -1,
-				    'iFirstModern' : -1,
-				    'iMoorishGold' : 0,
-				    'iTaoistHealthTurns' : 0,
-				    'iArgentineGoldenAgeTurns' : 0,
-				    'iCanadianPeaceDeals' : 0,
+				    
+				    'lWonderBuilder': [-1 for i in range(con.iNumBuildings - con.iBeginWonders)],
+				    'lReligionFounder': [-1 for i in range(con.iNumReligions)],
+				    'lFirstDiscovered': [-1 for i in range(con.iNumTechs)],
+				    'lFirstEntered': [-1 for i in range(con.iNumEras)],
+				    'iFirstNewWorldColony': -1,
+				    		    
+				    'iChineseGoldenAgeTurns': 0,
+				    'iKoreanSinks': 0,
+				    'iTamilTradeGold': 0,
+				    'iColombianTradeGold': 0,
+				    'iVikingGold': 0,
+				    'iMoorishGold': 0,
+				    'iEnglishSinks': 0,
+				    'iMongolRazes': 0,
+				    'iAztecSlaves': 0,
+				    'iCongoSlaveCounter': 0,
+				    'iDutchColonies': 0,
+				    'iArgentineGoldenAgeTurns': 0,
+				    'iCanadianPeaceDeals': 0,
+				    
+				    'iPopeTurns': 0,
+				    'iHinduGoldenAgeTurns': 0,
+				    'iBuddhistPeaceTurns': 0,
+				    'iBuddhistHappinessTurns': 0,
+				    'iTaoistHealthTurns': 0,
+				    'bPolytheismNeverReligion': True,
                                     #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lTurnsToCollapse': [-1 for i in range(con.iNumPlayers)],
@@ -312,36 +300,6 @@ class StoredData:
 	def setProtestantTechs(self, i, iNewValue):
 		self.scriptDict['lProtestantTechs'][i] = iNewValue
 		
-	def getPopeTurns(self):
-		return self.scriptDict['iPopeTurns']
-		
-	def changePopeTurns(self, iChange):
-		self.scriptDict['iPopeTurns'] += iChange
-		
-	def getHinduGoldenAgeTurns(self):
-		return self.scriptDict['iHinduGoldenAgeTurns']
-		
-	def changeHinduGoldenAgeTurns(self, iChange):
-		self.scriptDict['iHinduGoldenAgeTurns'] += iChange
-		
-	def getBuddhistPeaceTurns(self):
-		return self.scriptDict['iBuddhistPeaceTurns']
-		
-	def changeBuddhistPeaceTurns(self, iChange):
-		self.scriptDict['iBuddhistPeaceTurns'] += iChange
-		
-	def getBuddhistHappinessTurns(self):
-		return self.scriptDict['iBuddhistHappinessTurns']
-		
-	def changeBuddhistHappinessTurns(self, iChange):
-		self.scriptDict['iBuddhistHappinessTurns'] += iChange
-		
-	def isPolytheismNeverReligion(self):
-		return self.scriptDict['bPolytheismNeverReligion']
-		
-	def setPolytheismNeverReligion(self, bNewValue):
-		self.scriptDict['bPolytheismNeverReligion'] = bNewValue
-		
 	def getFirstIndustrial(self):
 		return self.scriptDict['iFirstIndustrial']
 		
@@ -353,12 +311,6 @@ class StoredData:
 		
 	def setFirstModern(self, iNewValue):
 		self.scriptDict['iFirstModern'] = iNewValue
-		
-	def getArgentineGoldenAgeTurns(self):
-		return self.scriptDict['iArgentineGoldenAgeTurns']
-		
-	def increaseArgentineGoldenAgeTurns(self):
-		self.scriptDict['iArgentineGoldenAgeTurns'] += 1
 		
 	def getAggressionLevels(self):
 		return self.scriptDict['lAggressionLevels']
@@ -399,27 +351,6 @@ class StoredData:
 	def setByzantineBribes(self, lBribes):
 		self.scriptDict['lByzantineBribes'] = lBribes
 		
-	def getMoorishGold(self):
-		return self.scriptDict['iMoorishGold']
-		
-	def changeMoorishGold(self, iChange):
-		self.scriptDict['iMoorishGold'] += iChange
-		
-	def getTaoistHealthTurns(self):
-		return self.scriptDict['iTaoistHealthTurns']
-	
-	def setTaoistHealthTurns(self, iNewValue):
-		self.scriptDict['iTaoistHealthTurns'] = iNewValue
-		
-	def changeTaoistHealthTurns(self, iChange):
-		self.scriptDict['iTaoistHealthTurns'] += iChange
-		
-	def getCanadianPeaceDeals(self):
-		return self.scriptDict['iCanadianPeaceDeals']
-		
-	def changeCanadianPeaceDeals(self, iChange):
-		self.scriptDict['iCanadianPeaceDeals'] += iChange
-		
 	# Congresses
 	def getGlobalWarAttacker(self):
 		return self.scriptDict['iGlobalWarAttacker']
@@ -447,6 +378,194 @@ class StoredData:
 		
 	def setCurrentCongress(self, congress):
 		self.scriptDict['currentCongress'] = congress
+		
+	# VICTORY NEW
+	def getGoal(self, iPlayer, iGoal):
+		return self.scriptDict['lGoals'][iPlayer][iGoal]
+		
+	def setGoal(self, iPlayer, iGoal, iNewValue):
+		if iNewValue == 1 and self.getGoal(iPlayer, iGoal) == 0: return
+		self.scriptDict['lGoals'][iPlayer][iGoal] = iNewValue
+		if iNewValue == 0 and gc.getGame().getActivePlayer() == iPlayer:
+			show(CyTranslator().getText("TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE", (iGoal+1,)))
+			
+	def isHistoricalGoldenAge(self, iPlayer):
+		return self.scriptDict['lHistoricalGoldenAge'][iPlayer]
+		
+	def setHistoricalGoldenAge(self, iPlayer, bNewValue):
+		self.scriptDict['lHistoricalGoldenAge'][iPlayer] = bNewValue
+			
+	def isIgnoreAI(self):
+		return self.scriptDict['bIgnoreAI']
+		
+	def setIgnoreAI(self, bNewValue):
+		self.scriptDict['bIgnoreAI'] = bNewValue
+		
+			
+	def getWonderBuilder(self, iWonder):
+		if iWonder < con.iBeginWonders: return -1
+		else: iWonder -= con.iBeginWonders
+		return self.scriptDict['lWonderBuilder'][iWonder]
+		
+	def setWonderBuilder(self, iWonder, iPlayer):
+		if iWonder >= con.iBeginWonders:
+			iWonder -= con.iBeginWonders
+			self.scriptDict['lWonderBuilder'][iWonder] = iPlayer
+			
+	def getReligionFounder(self, iReligion):
+		return self.scriptDict['lReligionFounder'][iReligion]
+		
+	def setReligionFounder(self, iReligion, iPlayer):
+		self.scriptDict['lReligionFounder'][iReligion] = iPlayer
+		
+	def getFirstDiscovered(self, iTech):
+		return self.scriptDict['lFirstDiscovered'][iTech]
+		
+	def setFirstDiscovered(self, iTech, iPlayer):
+		self.scriptDict['lFirstDiscovered'][iTech] = iPlayer
+		
+	def getFirstEntered(self, iEra):
+		return self.scriptDict['lFirstEntered'][iEra]
+		
+	def setFirstEntered(self, iEra, iPlayer):
+		self.scriptDict['lFirstEntered'][iEra] = iPlayer
+			
+			
+	def getCongoSlaveCounter(self):
+		return self.scriptDict['iCongoSlaveCounter']
+	
+	def setCongoSlaveCounter(self, iNewValue):
+		self.scriptDict['iCongoSlaveCounter'] = iNewValue
+		
+	def changeCongoSlaveCounter(self, iChange):
+		self.scriptDict['iCongoSlaveCounter'] += iChange
+		
+	def getDutchColonies(self):
+		return self.scriptDict['iDutchColonies']
+		
+	def setDutchColonies(self, iNewValue):
+		self.scriptDict['iDutchColonies'] = iNewValue
+		
+	def changeDutchColonies(self, iChange):
+		self.scriptDict['iDutchColonies'] += iChange
+		
+	def getChineseGoldenAgeTurns(self):
+		return self.scriptDict['iChineseGoldenAgeTurns']
+		
+	def changeChineseGoldenAgeTurns(self, iChange):
+		self.scriptDict['iChineseGoldenAgeTurns'] += iChange
+		
+	def getTamilTradeGold(self):
+		return self.scriptDict['iTamilTradeGold']
+		
+	def changeTamilTradeGold(self, iChange):
+		self.scriptDict['iTamilTradeGold'] += iChange
+		
+	def getKoreanSinks(self):
+		return self.scriptDict['iKoreanSinks']
+		
+	def changeKoreanSinks(self, iChange):
+		self.scriptDict['iKoreanSinks'] += iChange
+		
+	def getColombianTradeGold(self):
+		return self.scriptDict['iColombianTradeGold']
+		
+	def changeColombianTradeGold(self, iChange):
+		self.scriptDict['iColombianTradeGold'] += iChange
+		
+	def getVikingGold(self):
+		return self.scriptDict['iVikingGold']
+		
+	def changeVikingGold(self, iChange):
+		self.scriptDict['iVikingGold'] += iChange
+		
+	def getMoorishGold(self):
+		return self.scriptDict['iMoorishGold']
+		
+	def changeMoorishGold(self, iChange):
+		self.scriptDict['iMoorishGold'] += iChange
+		
+	def getEnglishSinks(self):
+		return self.scriptDict['iEnglishSinks']
+		
+	def changeEnglishSinks(self, iChange):
+		self.scriptDict['iEnglishSinks'] += iChange
+		
+	def getMongolRazes(self):
+		return self.scriptDict['iMongolRazes']
+		
+	def changeMongolRazes(self, iChange):
+		self.scriptDict['iMongolRazes'] += iChange
+		
+	def getAztecSlaves(self):
+		return self.scriptDict['iAztecSlaves']
+		
+	def changeAztecSlaves(self, iChange):
+		self.scriptDict['iAztecSlaves'] += iChange
+		
+	def getArgentineGoldenAgeTurns(self):
+		return self.scriptDict['iArgentineGoldenAgeTurns']
+		
+	def changeArgentineGoldenAgeTurns(self, iChange):
+		self.scriptDict['iArgentineGoldenAgeTurns'] += iChange
+		
+	def getCanadianPeaceDeals(self):
+		return self.scriptDict['iCanadianPeaceDeals']
+		
+	def changeCanadianPeaceDeals(self, iChange):
+		self.scriptDict['iCanadianPeaceDeals'] += iChange
+		
+	# religious victory
+		
+	def getPopeTurns(self):
+		return self.scriptDict['iPopeTurns']
+		
+	def changePopeTurns(self, iChange):
+		self.scriptDict['iPopeTurns'] += iChange
+		
+	def getHinduGoldenAgeTurns(self):
+		return self.scriptDict['iHinduGoldenAgeTurns']
+		
+	def changeHinduGoldenAgeTurns(self, iChange):
+		self.scriptDict['iHinduGoldenAgeTurns'] += iChange
+		
+	def getBuddhistPeaceTurns(self):
+		return self.scriptDict['iBuddhistPeaceTurns']
+		
+	def changeBuddhistPeaceTurns(self, iChange):
+		self.scriptDict['iBuddhistPeaceTurns'] += iChange
+		
+	def getBuddhistHappinessTurns(self):
+		return self.scriptDict['iBuddhistHappinessTurns']
+		
+	def changeBuddhistHappinessTurns(self, iChange):
+		self.scriptDict['iBuddhistHappinessTurns'] += iChange
+		
+	def getTaoistHealthTurns(self):
+		return self.scriptDict['iTaoistHealthTurns']
+		
+	def changeTaoistHealthTurns(self, iChange):
+		self.scriptDict['iTaoistHealthTurns'] += iChange
+		
+	def isPolytheismNeverReligion(self):
+		return self.scriptDict['bPolytheismNeverReligion']
+		
+	def setPolytheismNeverReligion(self, bNewValue):
+		self.scriptDict['bPolytheismNeverReligion'] = bNewValue
+		
+	def getFirstNewWorldColony(self):
+		return self.scriptDict['iFirstNewWorldColony']
+		
+	def setFirstNewWorldColony(self, iNewValue):
+		self.scriptDict['iFirstNewWorldColony'] = iNewValue
+		
+	def isFirstWorldColonized(self):
+		return self.getFirstNewWorldColony() != -1
+
+def show(message):
+	popup = Popup.PyPopup()
+	popup.setBodyString(message)
+	popup.launch()
 		
 # All modules import the following single instance, not the class
 

@@ -6278,7 +6278,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	//Rhye - start
 	if (getScenario() >= SCENARIO_600AD) //late start condition
 	{
-		if ((eBuilding >= PYRAMID && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == ZEUS || eBuilding == MAUSOLLOS || eBuilding == KHAJURAHO || iI == ISHTAR)
+		if ((eBuilding >= PYRAMIDS && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == STATUE_OF_ZEUS || eBuilding == MAUSOLLOS || eBuilding == KHAJURAHO || iI == ISHTAR_GATE)
 		{
 			return false;
 		}
@@ -6286,7 +6286,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	if (getScenario() == SCENARIO_1700AD)
 	{
-		if (eBuilding == GREATWALL || eBuilding == MACHU_PICCHU || eBuilding == KHAJURAHO)
+		if (eBuilding == GREAT_WALL || eBuilding == MACHU_PICCHU || eBuilding == KHAJURAHO)
 		{
 			return false;
 		}
@@ -6400,7 +6400,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		}
 
 		// Leoreth
-		if (eBuilding == (BuildingTypes)TRAFALGAR)
+		if (eBuilding == (BuildingTypes)TRAFALGAR_SQUARE)
 		{
 			if (getHighestNavalUnitLevel() < 3)
 			{
@@ -6420,7 +6420,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	//Leoreth: don't allow UHV wonders before the respective human civ has spawned and some turns after
 	if (!isHuman())
 	{
-		if (eBuilding == NOTREDAME || eBuilding == EIFFELTOWER)
+		if (eBuilding == NOTRE_DAME || eBuilding == EIFFEL_TOWER)
 		{
 			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman())
 			{
@@ -6430,7 +6430,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				}
 			}
 		}
-		else if (eBuilding == BLUE_MOSQUE || eBuilding == TOPKAPI)
+		else if (eBuilding == BLUE_MOSQUE || eBuilding == TOPKAPI_PALACE)
 		{
 			if (GET_PLAYER((PlayerTypes)TURKEY).isHuman())
 			{
@@ -6440,7 +6440,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				}
 			}
 		}
-		else if (eBuilding == UNITEDNATIONS || eBuilding == PENTAGON || eBuilding == STATUEOFLIBERTY)
+		else if (eBuilding == UNITED_NATIONS || eBuilding == PENTAGON || eBuilding == STATUE_OF_LIBERTY)
 		{
 			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman())
 			{
@@ -6450,7 +6450,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				}
 			}
 		}
-		else if (eBuilding == SANMARCO || eBuilding == SISTINECHAPEL || eBuilding == LEANINGTOWER)
+		else if (eBuilding == SAN_MARCO_BASILICA || eBuilding == SISTINE_CHAPEL || eBuilding == LEANING_TOWER)
 		{
 			if (GET_PLAYER((PlayerTypes)ITALY).isHuman())
 			{
@@ -10008,7 +10008,7 @@ int CvPlayer::getGoldenAgeLength() const
 int CvPlayer::getNumUnitGoldenAges() const
 {
 	// Leoreth: Eiffel Tower effect: golden age cost capped at 3 GPs
-	if (isHasBuilding((BuildingTypes)EIFFELTOWER))
+	if (isHasBuilding((BuildingTypes)EIFFEL_TOWER))
 	{
 		return std::min(m_iNumUnitGoldenAges, 1);
 	}

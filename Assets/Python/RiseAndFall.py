@@ -4449,8 +4449,7 @@ class RiseAndFall:
                                 teamPersia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                                 teamPersia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
 				# Leoreth: Babylonian UHV: make them lose if they don't have Monarchy already
-				if sd.scriptDict['lBabylonianTechs'][2] == -1:
-					sd.scriptDict['lGoals'][iBabylonia][0] = 0
+				vic.onTechAcquired(iPersia, con.iMonarchy)
                         if (iCiv == iCarthage):
                                 teamCarthage.setHasTech(con.iMining, True, iCiv, False, False)
                                 teamCarthage.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
