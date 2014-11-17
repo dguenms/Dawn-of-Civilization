@@ -526,9 +526,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG2</Tag>
-		<English>Control a total of 25 frigates or ships of the line and sink 50 enemy ships in 1800 AD</English>
+		<English>Control a total of 25 frigates or ships of the line and sink 50 enemy ships by 1800 AD</English>
 		<French>Etre le premier à faire le tour du monde</French>
-		<German>Kontrollieren Sie insgesamt 25 Fregatten oder Linienschiffe und versenken Sie 50 gegnerische Schiffe im Jahr 1800 n. Chr.</German>
+		<German>Kontrollieren Sie bis zum Jahr 1800 n. Chr. insgesamt 25 Fregatten oder Linienschiffe und versenken Sie 50 gegnerische Schiffe</German>
 		<Italian>Devi essere il primo a circumnavigare il pianeta</Italian>
 		<Spanish>Ser el primero en circunnavegar el globo</Spanish>
 	</TEXT>
@@ -702,17 +702,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME1</Tag>
-		<English>Allow no European colonies in the North and Central America and in the Caribbean and control or vassalize Mexico in 1930 AD</English>
+		<English>Allow no European colonies in the North and Central America and in the Caribbean and control or vassalize Mexico in 1900 AD</English>
 		<French>Aucune colonie européenne en Amérique septentrionale et centrale ou dans les Caraïbes en 1930 ap. J.-C.</French>
-		<German>Lassen Sie im Jahr 1930 n. Chr. keine europäischen Städte in Nord- und Zentralamerika und in der Karibik zu und kontrollieren oder vassalisieren Sie Mexiko</German>
+		<German>Lassen Sie im Jahr 1900 n. Chr. keine europäischen Städte in Nord- und Zentralamerika und in der Karibik zu und kontrollieren oder vassalisieren Sie Mexiko</German>
 		<Italian>Non permettere alcuna colonia europea in Nord e Centro America e nei Caraibi nel 1930 d.C.</Italian>
 		<Spanish>No permitir colonias europeas en Norte y Centro America y el Caribe en el 1930 d.C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME2</Tag>
-		<English>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 2000 AD</English>
+		<English>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</English>
 		<French>Construire l'ONU, la Statue de la Liberté et le Pentagone avant 2000 ap. J.-C.</French>
-		<German>Errichten Sie bis zum Jahr 2000 n. Chr. die Freiheitsstatue, das Empire State Building, das Pentagon und the Vereinten Nationen</German>
+		<German>Errichten Sie bis zum Jahr 1950 n. Chr. die Freiheitsstatue, das Empire State Building, das Pentagon und the Vereinten Nationen</German>
 		<Italian>Devi costruire le Nazioni Unite, la Statua della Libert&#224; e il Pentagono entro il 2000 d.C.</Italian>
 		<Spanish>Construir las Naciones Unidas, la Estatua de la Libertad y el Pent&#225;gono antes del 2000 d. C.</Spanish>
 	</TEXT>
@@ -736,8 +736,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA3</Tag>
-		<English>Control 65% of the Mediterranean in 1930 AD</English>
-		<German>Kontrollieren Sie 65% der Mittelmeerküste im Jahr 1930 n. Chr.</German>
+		<English>Control 65% of the Mediterranean by 1930 AD</English>
+		<German>Kontrollieren Sie 65% der Mittelmeerküste bis zum Jahr 1930 n. Chr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_0</Tag>

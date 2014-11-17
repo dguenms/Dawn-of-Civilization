@@ -60,118 +60,13 @@ g_bIsScreenActive = -1
 
 #Rhye - start
 from StoredData import sd
-import Consts as con
+from Consts import *
 import RFCUtils
 import Victory as vic
 import CityNameManager as cnm
 import Congresses as cong
 utils = RFCUtils.RFCUtils()
 gc = CyGlobalContext()
-
-tCoreAreasTL = con.tCoreAreasTL
-tCoreAreasBR = con.tCoreAreasBR
-tNormalAreasTL = con.tNormalAreasTL
-tNormalAreasBR = con.tNormalAreasBR
-tAmericasTL = con.tAmericasTL
-tAmericasBR = con.tAmericasBR
-tSAmericaTL = (24, 3)
-tSAmericaBR = (43, 32)
-tNCAmericaTL = (3, 33)
-tNCAmericaBR = (37, 63)
-tCAmericaTL = (12, 33)
-tCAmericaBR = (33, 43)
-tSiberiaTL = (82, 50)
-tSiberiaBR = (112, 64)
-tNECanadaTL = (22, 50)
-tNECanadaBR = (37, 60)
-tLouisianaTL = (19, 42)
-tLouisianaBR = (24, 50)
-tEastCoastTL = (25, 42)
-tEastCoastBR = (35, 52)
-tSouthAfricaTL = (61, 10)
-tSouthAfricaBR = (72, 18)
-tAustraliaTL = (103, 10)
-tAustraliaBR = (118, 22)
-tScandinaviaTL = (57, 55)
-tScandinaviaBR = (65, 65)
-tNearEastTL = (70, 37)
-tNearEastBR = (78, 45)
-tCarthageTL = (50, 36)
-tCarthageBR = (61, 39)
-tAfricaTL = (45, 10)
-tAfricaBR = (76, 39)
-tAsiaTL = (73, 29)
-tAsiaBR = (121, 64)
-tOceaniaTL = (99, 5)
-tOceaniaBR = (123, 28)
-tMediterraneanTL = (51, 36)
-tMediterraneanBR = (73, 47)
-tMediterraneanExceptions = ((51,36),(51,46),(52,46),(53,46),(53,47),(67,47),(67,46),(73,44),(73,45),(71,45),(72,45),(71,44),(70,44),(73,36))
-tHokkaidoTL = (115, 50)
-tHokkaidoBR = (116, 52)
-tHonshuTL = (112, 44)
-tHonshuBR = (116, 49)
-tBalkansTL = (64, 40)
-tBalkansBR = (68, 47)
-tBlackSeaTL = (67, 44)
-tBlackSeaBR = (76, 50)
-tMesopotamiaTL = (73, 37)
-tMesopotamiaBR = (78, 42)
-tFranceTL = (51, 47)
-tEuropeTL = (44, 40)
-tEuropeBR = (68, 65)
-##tNubiaTL = (67, 29)
-##tNubiaBR = (74, 32)
-##tEastAfricaTL = (67, 20)
-##tEastAfricaBR = (77, 28)
-tSomaliaTL = (73, 24)
-tSomaliaBR = (77, 29)
-tSubeqAfricaTL = (60, 10)
-tSubeqAfricaBR = (72, 29)
-tBrazilTL = (32, 14)
-tBrazilBR = (43, 30)
-tLibyaTL = (59, 35)
-tLibyaBR = (66, 37)
-tBalkansTL = (64, 40)
-tBalkansBR = (68, 47)
-tNorthAfricaTL = (58, 32)
-tNorthAfricaBR = (71, 38)
-tNearEastTL = (69, 37)
-tNearEastBR = (76, 45)
-
-tManchuriaTL = (104, 50)
-tManchuriaBR = (112, 55)
-tKoreaTL = (108, 45)
-tKoreaBR = (110, 49)
-tChinaTL = (99, 39)
-tChinaBR = (107, 49)
-tIndochinaTL = (97, 31)
-tIndochinaBR = (103, 38)
-tIndonesiaTL = (98, 24)
-tIndonesiaBR = (109, 30)
-tPhilippinesTL = (108, 30)
-tPhilippinesBR = (110, 36)
-
-tSouthAsiaTL = (88, 24)
-tSouthAsiaBR = (110, 38)
-
-tVienna = (63, 49)
-tCairo = (69, 34)
-tMecca = (75, 33)
-tBaghdad = (77, 40)
-
-lEasternMediterranean = [(58, 39), (58, 38), (58, 37), (59, 37), (60, 37), (61, 37), (61, 36), (62, 36), (63, 36), (64, 36), (65, 36), (66, 36), (67, 36), (68, 36), (69, 36), (70, 36), (71, 36), (65, 37), (66, 37), (72, 37), (73, 37), (73, 38), (73, 39), (73, 40), (73, 41), (73, 42), (70, 42), (71, 42), (72, 42), (69, 43), (70, 43), (69, 44), (68, 45), (67, 44), (67, 45), (66, 44), (65, 43), (66, 43), (65, 42), (66, 42), (67, 42), (67, 41), (65, 40), (66, 40)]
-lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44), (74, 44), (75, 44), (76, 44), (76, 45), (76, 46), (76, 47), (75, 47), (74, 48), (75, 48), (72, 48), (74, 49), (73, 49), (71, 49), (69, 49), (69, 50), (70, 50), (71, 50), (72, 50), (73, 50), (68, 49), (68, 48), (67, 45), (67, 46), (67, 47), (67, 48), (68, 45)]
-
-tSafavidMesopotamiaTL = (75, 39)
-tSafavidMesopotamiaBR = (79, 43)
-tTransoxaniaTL = (82, 42)
-tTransoxaniaBR = (86, 49)
-tNWIndiaTL = (86, 37)
-tNWIndiaBR = (91, 43)
-
-lSiberianCoast = [(109, 50), (109, 51), (110, 51), (111, 51), (112, 52), (114, 54), (113, 55), (111, 54), (111, 55), (110, 55), (110, 58), (111, 58)]
-
 
 def getStabilityLevel(argsList):
 	return sd.getStabilityLevel(argsList[0])
@@ -1237,8 +1132,8 @@ def isCorePlot(argsList):
 	y = argsList[1]
 	iCiv = argsList[2]
 	reborn = utils.getReborn(iCiv)
-	if iCiv < con.iNumPlayers:
-		if (x >= con.tCoreAreasTL[reborn][iCiv][0] and x <= con.tCoreAreasBR[reborn][iCiv][0] and y >= con.tCoreAreasTL[reborn][iCiv][1] and y <= con.tCoreAreasBR[reborn][iCiv][1] and not (x, y) in con.tExceptions[reborn][iCiv]):
+	if iCiv < iNumPlayers:
+		if (x >= tCoreAreasTL[reborn][iCiv][0] and x <= tCoreAreasBR[reborn][iCiv][0] and y >= tCoreAreasTL[reborn][iCiv][1] and y <= tCoreAreasBR[reborn][iCiv][1] and not (x, y) in tExceptions[reborn][iCiv]):
 			return 1
 	return 0
 
@@ -1247,8 +1142,8 @@ def isNormalPlot(argsList):
 	x = argsList[0]
 	y = argsList[1]
 	iCiv = argsList[2]
-	if iCiv < con.iNumPlayers:
-		if (x >= con.tNormalAreasTL[utils.getReborn(iCiv)][iCiv][0] and x <= con.tNormalAreasBR[utils.getReborn(iCiv)][iCiv][0] and y >= con.tNormalAreasTL[utils.getReborn(iCiv)][iCiv][1] and y <= con.tNormalAreasBR[utils.getReborn(iCiv)][iCiv][1] and not (x, y) in con.tNormalAreasSubtract[utils.getReborn(iCiv)][iCiv]):
+	if iCiv < iNumPlayers:
+		if (x >= tNormalAreasTL[utils.getReborn(iCiv)][iCiv][0] and x <= tNormalAreasBR[utils.getReborn(iCiv)][iCiv][0] and y >= tNormalAreasTL[utils.getReborn(iCiv)][iCiv][1] and y <= tNormalAreasBR[utils.getReborn(iCiv)][iCiv][1] and not (x, y) in tNormalAreasSubtract[utils.getReborn(iCiv)][iCiv]):
 			return 1
 	return 0
 
@@ -1257,10 +1152,10 @@ def isForeignCorePlot(argsList):
 	x = argsList[0]
 	y = argsList[1]
 	iResult = 0
-	for iCiv in range(con.iNumPlayers):
-		if CyGlobalContext().getGame().getGameTurn() >= getTurnForYear(con.tBirth[iCiv]):
+	for iCiv in range(iNumPlayers):
+		if CyGlobalContext().getGame().getGameTurn() >= getTurnForYear(tBirth[iCiv]):
 			reborn = utils.getReborn(iCiv)
-			if (x >= con.tCoreAreasTL[reborn][iCiv][0] and x <= con.tCoreAreasBR[reborn][iCiv][0] and y >= con.tCoreAreasTL[reborn][iCiv][1] and y <= con.tCoreAreasBR[reborn][iCiv][1] and not (x, y) in con.tExceptions[reborn][iCiv]):
+			if (x >= tCoreAreasTL[reborn][iCiv][0] and x <= tCoreAreasBR[reborn][iCiv][0] and y >= tCoreAreasTL[reborn][iCiv][1] and y <= tCoreAreasBR[reborn][iCiv][1] and not (x, y) in tExceptions[reborn][iCiv]):
 				iResult = 1
 				break
 	return iResult
@@ -1271,8 +1166,8 @@ def isBroaderPlot(argsList):
 	y = argsList[1]
 	iCiv = argsList[2]
 	reborn = utils.getReborn(iCiv)
-	if iCiv < con.iNumPlayers:
-		if (x >= con.tBroaderAreasTL[reborn][iCiv][0] and x <= con.tBroaderAreasBR[reborn][iCiv][0] and y >= con.tBroaderAreasTL[reborn][iCiv][1] and y <= con.tBroaderAreasBR[reborn][iCiv][1]):
+	if iCiv < iNumPlayers:
+		if (x >= tBroaderAreasTL[reborn][iCiv][0] and x <= tBroaderAreasBR[reborn][iCiv][0] and y >= tBroaderAreasTL[reborn][iCiv][1] and y <= tBroaderAreasBR[reborn][iCiv][1]):
 			return 1
 	return 0
 
@@ -1286,7 +1181,7 @@ def onTechStolen(argsList):
 def isNeighbor(argsList):
 	iPlayer = argsList[0]
 	iNeighbor = argsList[1]
-	if iNeighbor in con.lNeighbours[iPlayer]: return 1
+	if iNeighbor in lNeighbours[iPlayer]: return 1
 	else: return 0
 	
 #Leoreth
@@ -1295,338 +1190,221 @@ def getUHVTileInfo(argsList):
 	y = argsList[1]
 	iPlayer = argsList[2]
 	
-	if iPlayer == con.iGreece:
-		tlx, tly = con.tNormalAreasTL[0][con.iEgypt]
-		brx, bry = con.tNormalAreasBR[0][con.iEgypt]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iEgypt]:
+	if iPlayer == iGreece:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iEgypt], tNormalAreasBR[0][iEgypt], tExceptions[0][iEgypt]):
 			return 0
 			
-		tlx, tly = con.tNormalAreasTL[0][con.iCarthage]
-		brx, bry = con.tNormalAreasBR[0][con.iCarthage]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iCarthage]:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iCarthage], tNormalAreasBR[0][iCarthage], tExceptions[0][iCarthage]):
 			return 1
 			
-		tlx, tly = con.tNormalAreasTL[0][con.iBabylonia]
-		brx, bry = con.tNormalAreasBR[0][con.iBabylonia]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iBabylonia]:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iBabylonia], tNormalAreasBR[0][iBabylonia], tExceptions[0][iBabylonia]):
 			return 2
 			
-		tlx, tly = con.tNormalAreasTL[0][con.iPersia]
-		brx, bry = con.tNormalAreasBR[0][con.iPersia]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in con.tExceptions[0][con.iPersia]:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iPersia], tNormalAreasBR[0][iPersia], tExceptions[0][iPersia]):
 			return 3
 			
-	elif iPlayer == con.iPersia and CyGlobalContext().getPlayer(con.iPersia).isReborn():
-		tlx, tly = tSafavidMesopotamiaTL
-		brx, bry = tSafavidMesopotamiaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iPersia and CyGlobalContext().getPlayer(iPersia).isReborn():
+		if utils.isPlotInArea((x, y), vic.tSafavidMesopotamiaTL, vic.tSafavidMesopotamiaBR):
 			return 4
 			
-		tlx, tly = tTransoxaniaTL
-		brx, bry = tTransoxaniaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tTransoxaniaTL, vic.tTransoxaniaBR):
 			return 5
 			
-		tlx, tly = tNWIndiaTL
-		brx, bry = tNWIndiaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tNWIndiaTL, vic.tNWIndiaBR):
 			return 6
 			
-	elif iPlayer == con.iCarthage:
-		tlx, tly = con.tNormalAreasTL[0][con.iItaly]
-		brx, bry = con.tNormalAreasBR[0][con.iItaly]
-		if x >= tlx and x <= brx and y >= tly and y <= bry and (x,y) not in [(62, 47), (63, 47), (63, 46)]:
+	elif iPlayer == iCarthage:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iItaly], tNormalAreasBR[0][iItaly], [(62, 47), (63, 47), (63, 46)]):
 			return 37
 			
-		tlx, tly = con.tNormalAreasTL[0][con.iSpain]
-		brx, bry = con.tNormalAreasBR[0][con.iSpain]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iSpain], tNormalAreasBR[0][iSpain]):
 			return 8
 			
-	elif iPlayer == con.iItaly:	
-		tlx, tly = tMediterraneanTL
-		brx, bry = tMediterraneanBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry and not (x,y) in tMediterraneanExceptions and CyGlobalContext().getMap().plot(x,y).isCoastalLand():
+	elif iPlayer == iItaly:
+		if utils.isPlotInArea((x, y), vic.tMediterraneanTL, vic.tMediterraneanBR, vic.tMediterraneanExceptions) and CyGlobalContext().getMap().plot(x, y).isCoastalLand():
 			return 7
 			
-	elif iPlayer == con.iRome:	
-		tlx, tly = con.tNormalAreasTL[0][con.iSpain]
-		brx, bry = con.tNormalAreasBR[0][con.iSpain]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iRome:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iSpain], tNormalAreasBR[0][iSpain]):
 			return 8
 				
-		tlx, tly = tFranceTL
-		brx, bry = con.tNormalAreasBR[0][con.iFrance]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tFranceTL, tNormalAreasBR[0][iFrance]):
 			return 9
 				
-		tlx, tly = con.tCoreAreasTL[0][con.iEngland]
-		brx, bry = con.tCoreAreasBR[0][con.iEngland]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iEngland], tCoreAreasBR[0][iEngland]):
 			return 10
 				
-		tlx, tly = tCarthageTL
-		brx, bry = tCarthageBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tCarthageTL, vic.tCarthageBR):
 			return 11
 				
-		tlx, tly = con.tCoreAreasTL[0][con.iByzantium]
-		brx, bry = con.tCoreAreasBR[0][con.iByzantium]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium]):
 			return 12
 			
-		tlx, tly = con.tCoreAreasTL[0][con.iEgypt]
-		brx, bry = con.tCoreAreasBR[0][con.iEgypt]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt]):
 			return 13
 
-	elif iPlayer == con.iJapan:		
-		tlx, tly = tKoreaTL
-		brx, bry = tKoreaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iJapan:
+		if utils.isPlotInArea((x, y), vic.tKoreaTL, vic.tKoreaBR):
 			return 14
-					
-		tlx, tly = tManchuriaTL
-		brx, bry = tManchuriaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tManchuriaTL, vic.tManchuriaBR):
 			return 15
-					
-		tlx, tly = tChinaTL
-		brx, bry = tChinaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
 			return 16
-					
-		tlx, tly = tIndochinaTL
-		brx, bry = tIndochinaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tIndochinaTL, vic.tIndochinaBR):
 			return 17
-					
-		tlx, tly = tIndonesiaTL
-		brx, bry = tIndonesiaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tIndonesiaTL, vic.tIndonesiaBR):
 			return 18
-					
-		tlx, tly = tPhilippinesTL
-		brx, bry = tPhilippinesBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tPhilippinesTL, vic.tPhilippinesBR):
 			return 19
 			
-	elif iPlayer == con.iEthiopia:
-		bAfrica = False
-				
-		tlx, tly = tSomaliaTL
-		brx, bry = tSomaliaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
-			bAfrica = True
-					
-		tlx, tly = tSubeqAfricaTL
-		brx, bry = tSubeqAfricaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
-			bAfrica = True
-			
-		if bAfrica: return 20
+	elif iPlayer == iEthiopia:
+		if utils.isPlotInArea((x, y), vic.tSomaliaTL, vic.tSomaliaBR) or utils.isPlotInArea((x, y), vic.tSubeqAfricaTL, vic.tSubeqAfricaBR):
+			return 20
 		
-	elif iPlayer == con.iByzantium:		
-		tlx, tly = tBalkansTL
-		brx, bry = tBalkansBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iByzantium:
+		if utils.isPlotInArea((x, y), vic.tBalkansTL, vic.tBalkansBR):
 			return 21
-					
-		tlx, tly = tNorthAfricaTL
-		brx, bry = tNorthAfricaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tNorthAfricaTL, vic.tNorthAfricaBR):
 			return 22
-					
-		tlx, tly = tNearEastTL
-		brx, bry = tNearEastBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tNearEastTL, vic.tNearEastBR):
 			return 23
 			
-	elif iPlayer == con.iArabia:	
-		tlx, tly = con.tCoreAreasTL[0][con.iEgypt]
-		brx, bry = con.tCoreAreasBR[0][con.iEgypt]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iArabia:
+		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt]):
 			return 24
 				
-		tlx, tly = tCarthageTL
-		brx, bry = tCarthageBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tCarthageTL, vic.tCarthageBR):
 			return 25
 				
-		tlx, tly = con.tCoreAreasTL[0][con.iBabylonia]
-		brx, bry = con.tCoreAreasBR[0][con.iBabylonia]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iBabylonia], tCoreAreasBR[0][iBabylonia]):
 			return 26
 				
-		tlx, tly = con.tCoreAreasTL[0][con.iPersia]
-		brx, bry = con.tCoreAreasBR[0][con.iPersia]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iPersia], tCoreAreasBR[0][iPersia]):
 			return 27
 				
-		tlx, tly = con.tNormalAreasTL[0][con.iSpain]
-		brx, bry = con.tNormalAreasBR[0][con.iSpain]
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iSpain], tNormalAreasBR[0][iSpain]):
 			return 28
 			
-	elif iPlayer == con.iSpain:
-		if utils.isPlotInArea((x, y), con.tEuropeTL, con.tEuropeBR): return 29
-		elif utils.isPlotInArea((x, y), con.tEasternEuropeTL, con.tEasternEuropeBR): return 29
+	elif iPlayer == iSpain:
+		if utils.isPlotInArea((x, y), vic.tEuropeTL, vic.tEuropeBR): return 29
+		elif utils.isPlotInArea((x, y), vic.tEasternEuropeTL, vic.tEasternEuropeBR): return 29
 			
-	elif iPlayer == con.iFrance:
-		if utils.isPlotInArea((x, y), con.tEuropeTL, con.tEuropeBR): return 29
-		elif utils.isPlotInArea((x, y), con.tEasternEuropeTL, con.tEasternEuropeBR): return 29
+	elif iPlayer == iFrance:
+		if utils.isPlotInArea((x, y), vic.tEuropeTL, vic.tEuropeBR): return 29
+		elif utils.isPlotInArea((x, y), vic.tEasternEuropeTL, vic.tEasternEuropeBR): return 29
 				
-		tlx, tly = con.tNorthAmericaTL
-		brx, bry = con.tNorthAmericaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tNorthAmericaTL, vic.tNorthAmericaBR):
 			return 30
 			
-	elif iPlayer == con.iEngland:		
-		tlx, tly = con.tNorthAmericaTL
-		brx, bry = con.tNorthAmericaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iEngland:
+		if utils.isPlotInArea((x, y), vic.tNorthAmericaTL, vic.tNorthAmericaBR):
 			return 31
-					
-		tlx, tly = con.tSouthCentralAmericaTL
-		brx, bry = con.tSouthCentralAmericaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tSouthCentralAmericaTL, vic.tSouthCentralAmericaBR):
 			return 32
-					
-		tlx, tly = tAfricaTL
-		brx, bry = tAfricaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tAfricaTL, vic.tAfricaBR):
 			return 33
-					
-		tlx, tly = tAsiaTL
-		brx, bry = tAsiaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+				
+		if utils.isPlotInArea((x, y), vic.tAsiaTL, vic.tAsiaBR):
 			return 34
-					
-		tlx, tly = tOceaniaTL
-		brx, bry = tOceaniaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+			
+		if utils.isPlotInArea((x, y), vic.tOceaniaTL, vic.tOceaniaBR):
 			return 35
 			
-	elif iPlayer == con.iGermany:
-		tlx, tly = con.tNormalAreasTL[0][con.iFrance]
-		brx, bry = con.tNormalAreasBR[0][con.iFrance]
-		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iFrance]:
+	elif iPlayer == iGermany:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iFrance], tNormalAreasBR[0][iFrance]):
 			return 36
 			
-		tlx, tly = con.tNormalAreasTL[0][con.iItaly]
-		brx, bry = con.tNormalAreasBR[0][con.iItaly]
-		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iItaly]:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iItaly], tNormalAreasBR[0][iItaly]):
 			return 37
 			
-		tlx, tly = con.tNormalAreasTL[0][con.iRussia]
-		brx, bry = con.tNormalAreasBR[0][con.iRussia]
-		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iRussia]:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iRussia], tNormalAreasBR[0][iRussia]):
 			return 38
 			
-		tlx, tly = con.tNormalAreasTL[0][con.iEngland]
-		brx, bry = con.tNormalAreasBR[0][con.iEngland]
-		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iEngland]:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iEngland], tNormalAreasBR[0][iEngland]):
 			return 39
 			
-		tlx, tly = con.tNormalAreasTL[0][con.iVikings]
-		brx, bry = con.tNormalAreasBR[0][con.iVikings]
-		if x >= tlx and x <= brx and y >= tly and y <= bry: # and not (x,y) in con.tExceptions[0][con.iVikings]:
+		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iVikings], tNormalAreasBR[0][iVikings]):
 			return 40
 			
-	elif iPlayer == con.iRussia:
-		tlx, tly = tSiberiaTL
-		brx, bry = tSiberiaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iRussia:
+		if utils.isPlotInArea((x, y), vic.tSiberiaTL, vic.tSiberiaBR):
 			return 41
 			
-	elif iPlayer == con.iInca:
+	elif iPlayer == iInca:
 		if (x, y) in vic.lAndeanCoast:
 			return 42
 			
-		tlx, tly = vic.tSAmericaTL
-		brx, bry = vic.tSAmericaBR
-		if tlx <= x <= brx and tly <= y <= bry and (x, y) not in vic.tSouthAmericaExceptions:
+		if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
 			return 43
 			
-	elif iPlayer == con.iTurkey:
-		if (x,y) in lEasternMediterranean:
+	elif iPlayer == iTurkey:
+		if (x,y) in vic.lEasternMediterranean:
 			return 47
 			
-		if (x,y) in lBlackSea:
+		if (x,y) in vic.lBlackSea:
 			return 48
 			
-		cx, cy = tCairo
-		if x >= cx-1 and x <= cx+1 and y >= cy-1 and y <= cy+1:
+		cx, cy = vic.tCairo
+		if cx-1 <= x <= cx+1 and cy-1 <= y <= cy+1:
 			return 49
 				
-		cx, cy = tMecca
-		if x >= cx-1 and x <= cx+1 and y >= cy-1 and y <= cy+1:
+		cx, cy = vic.tMecca
+		if cx-1 <= x <= cx+1 and cy-1 <= y <= cy+1:
 			return 50
 				
-		cx, cy = tBaghdad
-		if x >= cx-1 and x <= cx+1 and y >= cy-1 and y <= cy+1:
+		cx, cy = vic.tBaghdad
+		if cx-1 <= x <= cx+1 and cy-1 <= y <= cy+1:
 			return 51
 				
 		cx, cy = tVienna
-		if x >= cx-1 and x <= cx+1 and y >= cy-1 and y <= cy+1:
+		if cx-1 <= x <= cx+1 and cy-1 <= y <= cy+1:
 			return 52
 			
-	elif iPlayer == con.iThailand:
-		tlx, tly = tSouthAsiaTL
-		brx, bry = tSouthAsiaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iThailand:
+		if utils.isPlotInArea((x, y), vic.tSouthAsiaTL, vic.tSouthAsiaBR):
 			return 53
 			
-	elif iPlayer == con.iAmerica:
-		tlx, tly = tNCAmericaTL
-		brx, bry = tNCAmericaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iAmerica:
+		if utils.isPlotInArea((x, y), vic.tNCAmericaTL, vic.tNCAmericaBR):
 			return 54
 			
-	elif iPlayer == con.iTamils:
-		tlx, tly = vic.tDeccanTL
-		brx, bry = vic.tDeccanBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iTamils:
+		if utils.isPlotInArea((x, y), vic.tDeccanTL, vic.tDeccanBR):
 			return 55
 			
-		tlx, tly = vic.tSrivijayaTL
-		brx, bry = vic.tSrivijayaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tSrivijayaTL, vic.tSrivijayaBR):
 			return 56
 			
-	elif iPlayer == con.iMoors:
-		tlx, tly = vic.tIberiaTL
-		brx, bry = vic.tIberiaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iMoors:
+		if utils.isPlotInArea((x, y), vic.tIberiaTL, vic.tIberiaBR):
 			return 57
 			
-		tlx, tly = vic.tMaghrebTL
-		brx, bry = vic.tMaghrebBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tMaghrebTL, vic.tMaghrebBR):
 			return 58
 			
-		tlx, tly = vic.tWestAfricaTL
-		brx, bry = vic.tWestAfricaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tWestAfricaTL, vic.tWestAfricaBR):
 			return 59
 			
-	elif iPlayer == con.iPortugal:		
-		tlx, tly = tAfricaTL
-		brx, bry = tAfricaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+	elif iPlayer == iPortugal:
+		if utils.isPlotInArea((x, y), vic.tAfricaTL, vic.tAfricaBR):
 			return 33
 					
-		tlx, tly = tAsiaTL
-		brx, bry = tAsiaBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tAsiaTL, vic.tAsiaBR):
 			return 34
 					
-		tlx, tly = tBrazilTL
-		brx, bry = tBrazilBR
-		if x >= tlx and x <= brx and y >= tly and y <= bry:
+		if utils.isPlotInArea((x, y), vic.tBrazilTL, vic.tBrazilBR):
 			return 60
 			
-	elif iPlayer == con.iMaya:
+	elif iPlayer == iMaya:
 		if utils.isReborn(iPlayer):
 			if utils.isPlotInArea((x, y), vic.tPeruTL, vic.tPeruBR):
 				return 43
@@ -1643,7 +1421,7 @@ def getUHVTileInfo(argsList):
 			if utils.isPlotInArea((x, y), vic.tSAmericaTL, vic.tSAmericaBR, vic.tSouthAmericaExceptions):
 				return 61
 				
-	elif iPlayer == con.iCanada:
+	elif iPlayer == iCanada:
 		if (x, y) in vic.lAtlanticCoast:
 			return 63
 			
@@ -1653,7 +1431,7 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tCanadaWestTL, vic.tCanadaWestBR, vic.tCanadaWestExceptions) or utils.isPlotInArea((x, y), vic.tCanadaEastTL, vic.tCanadaEastBR, vic.tCanadaEastExceptions):
 			return 62
 			
-	elif iPlayer == con.iPolynesia:
+	elif iPlayer == iPolynesia:
 		if utils.isPlotInArea((x, y), vic.tHawaiiTL, vic.tHawaiiBR):
 			return 65
 			

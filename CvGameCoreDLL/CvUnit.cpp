@@ -293,7 +293,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	}
 	//Rhye - end
 
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HIMEJI) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)RIFLING))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HIMEJI_CASTLE) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)RIFLING))
 	{
 		if (getUnitCombatType() == 1 || getUnitCombatType() == 3) // melee and archery
 		{
@@ -6296,7 +6296,7 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture = m_pUnitInfo->getGreatWorkCulture();
 
 	// Leoreth: new Sphinx effect: great priests can create great works
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)STONEHENGE) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)SPHYNX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
 	{
 		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_ARTIST"))).getGreatWorkCulture();
 	}
@@ -10302,7 +10302,7 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 	int iUnitExperience = iChange;
 
 	// Leoreth: Terracotta Army effect
-	if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA) && iMax != GC.getDefineINT("ANIMAL_MAX_XP_VALUE"))
+	if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA_ARMY) && iMax != GC.getDefineINT("ANIMAL_MAX_XP_VALUE"))
 		iMax = MAX_INT;
 
 	if (bFromCombat)
@@ -10318,7 +10318,7 @@ void CvUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInB
 		}
 
 		// Leoreth: Terracotta Army effect
-		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA))
+		if (bUpdateGlobal || GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)TERRACOTTA_ARMY))
 		{
 			kPlayer.changeCombatExperience((iChange * iCombatExperienceMod) / 100);
 		}

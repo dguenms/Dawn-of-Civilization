@@ -229,8 +229,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1</Tag>
-		<English>Have open borders with 10 civilizations in 1650 AD</English>
-		<German>Haben Sie im Jahr 1650 n. Chr. offene Grenzen mit 10 Zivilisationen</German>
+		<English>Have open borders with 10 civilizations by 1650 AD</English>
+		<German>Haben Sie bis zum Jahr 1650 n. Chr. offene Grenzen mit 10 Zivilisationen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA2</Tag>
@@ -344,8 +344,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL1</Tag>
-		<English>Have three cities of at least size 12 in 1400 AD</English>
-		<German>Haben Sie im Jahr 1400 n. Chr. drei Städte mit mindestens Größe 12</German>
+		<English>Have three cities of at least size 12 by 1400 AD</English>
+		<German>Haben Sie bis zum Jahr 1400 n. Chr. drei Städte mit mindestens Größe 12</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL2</Tag>
@@ -449,8 +449,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA3</Tag>
-		<English>Control 20 Forest Preserves and have a National Park in your capital in 1950 AD</English>
-		<German>Kontrollieren Sie im Jahr 1880 n. Chr. 20 Waldschutzgebiete und einen Nationalpark in Ihrer Hauptstadt</German>
+		<English>Control 20 Forest Preserves and have a National Park in your capital by 1950 AD</English>
+		<German>Kontrollieren Sie bis zum Jahr 1880 n. Chr. 20 Waldschutzgebiete und einen Nationalpark in Ihrer Hauptstadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG1</Tag>
@@ -504,13 +504,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAN1</Tag>
-		<English>Connect your capital to an Atlantic and a Pacific port by railroad in 1920 AD</English>
-		<German>Verbinden Sie im Jahr 1920 n. Chr. Ihre Hauptstadt per Schiene zu einem atlantischem und einem pazifischen Hafen</German>
+		<English>Connect your capital to an Atlantic and a Pacific port by railroad by 1920 AD</English>
+		<German>Verbinden Sie bis zum Jahr 1920 n. Chr. Ihre Hauptstadt per Schiene zu einem atlantischem und einem pazifischen Hafen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAN2</Tag>
-		<English>Control all of Canada without ever conquering a city in 1950 AD</English>
-		<German>Kontrollieren Sie im Jahr 1950 n. Chr. ganz Kanada ohne jemals eine Stadt zu erobern</German>
+		<English>Control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD</English>
+		<German>Kontrollieren Sie bis zum Jahr 1950 n. Chr. alle Städte und 90% des Gebiets in Kanada ohne jemals eine Stadt zu erobern</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CAN3</Tag>

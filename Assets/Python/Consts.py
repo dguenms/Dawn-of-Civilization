@@ -15,6 +15,18 @@ iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iMali, iPoland, iPortugal
 iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany, iAmerica, 
 iArgentina, iBrazil, iCanada) = range(iNumPlayers)
 
+(pEgypt, pChina, pBabylonia, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, pTamils,
+pEthiopia, pKorea, pMaya, pByzantium, pJapan, pVikings, pArabia, pTibet, pKhmer, pIndonesia,
+pMoors, pSpain, pFrance, pEngland, pHolyRome, pRussia, pMali, pPoland, pPortugal, pInca,
+pItaly, pMongolia, pAztecs, pMughals, pTurkey, pThailand, pCongo, pNetherlands, pGermany, pAmerica,
+pArgentina, pBrazil, pCanada) = [gc.getPlayer(i) for i in range(iNumPlayers)]
+
+(teamEgypt, teamChina, teamBabylonia, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, teamTamils,
+teamEthiopia, teamKorea, teamMaya, teamByzantium, teamJapan, teamVikings, teamArabia, teamTibet, teamKhmer, teamIndonesia,
+teamMoors, teamSpain, teamFrance, teamEngland, teamHolyRome, teamRussia, teamMali, teamPoland, teamPortugal, teamInca,
+teamItaly, teamMongolia, teamAztecs, teamMughals, teamTurkey, teamThailand, teamCongo, teamNetherlands, teamGermany, teamAmerica,
+teamArgentina, teamBrazil, teamCanada) = [gc.getTeam(i) for i in range(iNumPlayers)]
+
 iHolland = iNetherlands
 iDelhi = iMughals
 iSiam = iThailand
@@ -81,24 +93,13 @@ lCivBioNewWorld = [iMaya, iInca, iAztecs] #, iNative]
 tAmericasTL = (3, 0)
 tAmericasBR = (43, 63)
 
-tEuropeTL = (48, 40)
-tEuropeBR = (68, 65)
-iEuropeTiles = 297
-
-tEasternEuropeTL = (69, 48)
-tEasternEuropeBR = (73, 64)
-iEasternEuropeTiles = 154
-
-tNorthAmericaTL = (10, 40)
-tNorthAmericaBR = (37, 54)
-iNorthAmericaTiles = 297
-
+# Colombian UP
 tSouthCentralAmericaTL = (13, 3)
 tSouthCentralAmericaBR = (41, 39)
 
+# English colonists
 tCanadaTL = (10, 49)
 tCanadaBR = (37, 58)
-
 tAustraliaTL = (103, 5)
 tAustraliaBR = (123, 22)
 
@@ -2761,7 +2762,7 @@ iNumBuildings = 207
 (iPalace, iGreatPalace, iForbiddenPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
 iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iMoorishNoria, iHarappanBath,
 iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
-iForge, iMaliMint, iFactory, iGermanAssemblyPlant, iCoalPlant, iJapaneseShalePlant, iHydroPlant, iNuclearPlant,
+iForge, iMaliMint, iItalianArtStudio, iFactory, iGermanAssemblyPlant, iCoalPlant, iJapaneseShalePlant, iHydroPlant, iNuclearPlant,
 iIndustrialPark, iObelisk, iEgyptianObelisk, iEthiopianStele, iNativeAmericaTotem, iIndonesianCandi, iPublicTransportation, iAcademy,
 iLibrary, iArabianMadrassa, iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, 
 iRussianResearchInstitute, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavillion, iColosseum, iMayaBallCourt, iBabylonGarden, iMexicoCharreada, 
@@ -2773,16 +2774,18 @@ iChristianMonastery, iChristianShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrt
 iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, 
 iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery,
 iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral,
-iZoroastrianMonastery, iZoroastrianShrine, iFlavianAmphitheatre, iTriumphalArch, iGlobeTheatre, iNationalPark, iNationalGallery,
-iChannelTunnel, iWallStreet, iIronWorks, iTradingCompany, iIberianTradingCompany, iMtRushmore, iRedCross, iInterpol, iPyramid,
-iStonehenge, iGreatLibrary, iGreatLighthouse, iHangingGarden, iColossus, iOracle, iParthenon, iAngkorWat,
+iZoroastrianMonastery, iZoroastrianShrine, iTriumphalArch, iGlobeTheatre, iNationalPark, iNationalGallery,
+iWallStreet, iIronWorks, iTradingCompany, iIberianTradingCompany, iRedCross, iInterpol, iMilitaryAcademy, iPyramid,
+iStonehenge, iGreatLibrary, iGreatLighthouse, iHangingGarden, iColossus, iOracle, iParthenon, iFlavianAmphitheatre, iAngkorWat,
 iTempleOfKukulkan, iSistineChapel, iSpiralMinaret, iNotreDame, iTajMahal, iKremlin, iEiffelTower, iStatueOfLiberty,
-iWembley, iGraceland, iHollywood, iGreatDam, iPentagon, iUnitedNations, iSpaceElevator, iMilitaryAcademy, iArtemis,
+iWembley, iGraceland, iHollywood, iGreatDam, iPentagon, iMtRushmore, iUnitedNations, iSpaceElevator, iCERN, iArtemis,
 iSankore, iGreatWall, iStatueOfZeus, iMausoleumOfMaussollos, iCristoRedentor, iShwedagonPaya, iGreatCothon, iMoaiStatues, iApostolicPalace,
 iLeaningTower, iOlympicPark, iTempleOfSalomon, iIshtarGate, iTheodosianWalls, iTerracottaArmy, iMezquita, iDomeOfTheRock,
-iTopkapiPalace, iBrandenburgGate, iSanMarcoBasilica, iWestminster, iItalianArtStudio, iBorobudur, iKhajuraho,
+iTopkapiPalace, iBrandenburgGate, iSanMarcoBasilica, iWestminster, iBorobudur, iKhajuraho,
 iHimejiCastle, iPorcelainTower, iHarmandirSahib, iBlueMosque, iRedFort, iVersailles, iTrafalgarSquare, iEmpireState,
 iGrandCanal, iFloatingGardens, iLubyanka, iMachuPicchu, iCNTower) = range(iNumBuildings)
+
+iBeginWonders = iPyramid # different from DLL constant because that includes national wonders
 
 iSummerPalace = iGreatPalace
 iHeroicEpic = iFlavianAmphitheatre
@@ -2793,6 +2796,7 @@ iChichenItza = iTempleOfKukulkan
 iBroadway = iWembley
 iRocknroll = iGraceland
 iThreeGorgesDam = iGreatDam
+iChannelTunnel = iCERN
 
 iPaganTemple = iObelisk
 

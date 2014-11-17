@@ -16,7 +16,7 @@ import Consts as con
 import RFCUtils
 utils = RFCUtils.RFCUtils()
 import CvScreenEnums #Rhye
-import Victory
+import Victory as vic
 import Stability as sta
 import Plague
 import Communications
@@ -127,14 +127,12 @@ class CvRFCEventHandler:
                
                 self.eventManager = eventManager
 
-                #self.data = StoredData.StoredData()
                 self.rnf = RiseAndFall.RiseAndFall()
                 self.barb = Barbs.Barbs()
                 self.rel = Religions.Religions()
                 self.res = Resources.Resources()
                 self.up = UniquePowers.UniquePowers()
                 self.aiw = AIWars.AIWars()
-                self.vic = Victory.Victory()
                 self.pla = Plague.Plague()
                 self.com = Communications.Communications()
                 self.corp = Companies.Companies()
@@ -150,8 +148,8 @@ class CvRFCEventHandler:
                 self.pla.setup()
 		self.dc.setup()
                 self.aiw.setup()
-		self.vic.setup() # Leoreth
 		
+		vic.setup()
 		cong.setup()
 		
 		# area debug
@@ -275,9 +273,10 @@ class CvRFCEventHandler:
 					
 		self.pla.onCityAcquired(iOwner, iPlayer, city) # Plague
 		self.com.onCityAcquired(city) # Communications
-		self.vic.onCityAcquired(iOwner, iPlayer, bConquest, city) # Victory
 		self.corp.onCityAcquired(argsList) # Companies
 		self.dc.onCityAcquired(argsList) # DynamicCivs
+		
+		vic.onCityAcquired(iPlayer, iOwner, city, bConquest)
                 
                 return 0
 		
@@ -302,9 +301,7 @@ class CvRFCEventHandler:
                 self.dc.onCityRazed(argsList)
 		self.pla.onCityRazed(city,iPlayer) #Plague
                         
-                if iPlayer == con.iMongolia:
-                        self.vic.onCityRazed(iPlayer, city) #Victory
-			
+                vic.onCityRazed(iPlayer, city)	
 		sta.onCityRazed(iPlayer, city)
 
         def onCityBuilt(self, argsList):
@@ -375,18 +372,7 @@ class CvRFCEventHandler:
 				
 			gc.getPlayer(con.iNetherlands).AI_updateFoundValues(False)
 
-
-                if (self.vic.getNewWorld(0) == -1):
-                        if (iOwner not in con.lCivGroups[5] and iOwner < iNumActivePlayers):
-                                if (city.getX() >= con.tAmericasTL[0] and city.getX() <= con.tAmericasBR[0] and city.getY() >= con.tAmericasTL[1] and city.getY() <= con.tAmericasBR[1]):
-                                        self.vic.setNewWorld(0, iOwner)
-                                        if (iOwner != iVikings):
-                                                self.vic.setGoal(iVikings, 2, 0)
-                                        if (iOwner != iSpain):
-                                                self.vic.setGoal(iSpain, 0, 0) 
-
-		if iOwner < con.iNumPlayers:
-			self.vic.onCityBuilt(city, iOwner)
+		vic.onCityBuilt(iOwner, city)
 			
                 if iOwner < con.iNumPlayers:
 			self.dc.onCityBuilt(iOwner)
@@ -421,11 +407,12 @@ class CvRFCEventHandler:
 
         def onCombatResult(self, argsList):
                 self.up.aztecUP(argsList)
-		self.vic.onCombatResult(argsList)
                 self.rnf.immuneMode(argsList)
 		self.up.vikingUP(argsList) # includes Moorish Corsairs
 		
 		pWinningUnit, pLosingUnit = argsList
+		
+		vic.onCombatResult(pWinningUnit, pLosingUnit)
 		
 		iUnitPower = 0
 		pLosingUnitInfo = gc.getUnitInfo(pLosingUnit.getUnitType())
@@ -461,7 +448,7 @@ class CvRFCEventHandler:
 		if gc.getGame().getGameTurn() == utils.getScenarioStartTurn():
 			return
         
-                self.vic.onReligionFounded(iReligion, iFounder)
+                vic.onReligionFounded(iFounder, iReligion)
 		self.rel.onReligionFounded(iReligion, iFounder)
 
         def onVassalState(self, argsList):
@@ -508,31 +495,31 @@ class CvRFCEventHandler:
 		unit, iImprovement, iRoute, iPlayer, iGold = argsList
 		
 		if iPlayer == con.iVikings and iGold > 0 and iImprovement != -1 and iGold < 1000:
-			self.vic.onUnitPillage(iPlayer, iGold)
+			vic.onUnitPillage(iPlayer, iGold)
 			
 	def onCityCaptureGold(self, argsList):
 		city, iPlayer, iGold = argsList
 		
 		if iPlayer == con.iVikings and iGold > 0:
-			self.vic.onCityCaptureGold(iPlayer, iGold)
+			vic.onCityCaptureGold(iPlayer, iGold)
 			
 	def onPlayerGoldTrade(self, argsList):
 		iFromPlayer, iToPlayer, iGold = argsList
 		
 		if iToPlayer == con.iTamils:
-			self.vic.onPlayerGoldTrade(iToPlayer, iGold)
+			vic.onPlayerGoldTrade(iToPlayer, iGold)
 			
 	def onTradeMission(self, argsList):
 		iUnitType, iPlayer, iX, iY, iGold = argsList
 		
-		if iPlayer == con.iTamils or iPlayer == con.iMali:
-			self.vic.onTradeMission(iPlayer, iX, iY, iGold)
+		if iPlayer in [con.iTamils, con.iMali]:
+			vic.onTradeMission(iPlayer, iX, iY, iGold)
 		
 	def onPlayerSlaveTrade(self, argsList):
 		iPlayer, iGold = argsList
 		
 		if iPlayer == con.iCongo:
-			self.vic.onPlayerSlaveTrade(iPlayer, iGold)
+			vic.onPlayerSlaveTrade(iPlayer, iGold)
 			
 	def onUnitGifted(self, argsList):
 		pUnit, iOwner, pPlot = argsList
@@ -556,7 +543,7 @@ class CvRFCEventHandler:
         def onBuildingBuilt(self, argsList):
                 city, iBuildingType = argsList
                 iOwner = city.getOwner()
-                self.vic.onBuildingBuilt(city.getOwner(), iBuildingType)
+                vic.onBuildingBuilt(iOwner, iBuildingType)
                 if iOwner < con.iNumPlayers:
                         self.com.onBuildingBuilt(iOwner, iBuildingType, city)
 		
@@ -639,7 +626,7 @@ class CvRFCEventHandler:
 
         def onProjectBuilt(self, argsList):
                 city, iProjectType = argsList
-                self.vic.onProjectBuilt(city.getOwner(), iProjectType)
+                vic.onProjectBuilt(city.getOwner(), iProjectType)
 			
 		self.rnf.onProjectBuilt(city, iProjectType)
 
@@ -656,7 +643,6 @@ class CvRFCEventHandler:
                 self.up.checkTurn(iGameTurn)
                 self.aiw.checkTurn(iGameTurn)
                 self.pla.checkTurn(iGameTurn)
-                self.vic.checkTurn(iGameTurn)
                 self.com.checkTurn(iGameTurn)
 		self.corp.checkTurn(iGameTurn)
 		
@@ -680,7 +666,7 @@ class CvRFCEventHandler:
 		self.pla.checkPlayerTurn(iGameTurn, iPlayer)
 		
 		if (gc.getPlayer(iPlayer).isAlive()):
-                        self.vic.checkPlayerTurn(iGameTurn, iPlayer)
+                        vic.checkTurn(iGameTurn, iPlayer)
 			
 		if (gc.getPlayer(iPlayer).isAlive() and iPlayer < con.iNumPlayers and not gc.getPlayer(iPlayer).isHuman()):
                         self.rnf.checkPlayerTurn(iGameTurn, iPlayer) #for leaders switch
@@ -691,7 +677,7 @@ class CvRFCEventHandler:
 		player = PyPlayer(iPlayer)
 		infoUnit = pUnit.getUnitClassType()
 
-		self.vic.onGreatPersonBorn(argsList)
+		vic.onGreatPersonBorn(iPlayer, pCity, pUnit)
 		
 		sta.onGreatPersonBorn(iPlayer)
 		
@@ -742,9 +728,9 @@ class CvRFCEventHandler:
 			return
 			
 		sta.onTechAcquired(iPlayer, iTech)
-                
-                if (gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])):                            
-                	self.vic.onTechAcquired(argsList[0], argsList[2])
+		
+                if (gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer])):
+                	vic.onTechAcquired(iPlayer, iTech)
                         cnm.onTechAcquired(argsList[2])
 
                 if (gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[iPlayer]) and iPlayer < con.iNumPlayers):
@@ -857,13 +843,12 @@ class CvRFCEventHandler:
 	def onBlockade(self, argsList):
 		iPlayer, iGold = argsList
 		
-		if iPlayer == con.iMoors:
-			sd.changeMoorishGold(iGold)
-			
+		vic.onBlockade(iPlayer, iGold)
+		
 	def onPeaceBrokered(self, argsList):
 		iBroker, iPlayer1, iPlayer2 = argsList
 		
-		self.vic.onPeaceBrokered(iBroker, iPlayer1, iPlayer2)
+		vic.onPeaceBrokered(iBroker, iPlayer1, iPlayer2)
 
         def onKbdEvent(self, argsList):
                 'keypress handler - return 1 if the event was consumed'

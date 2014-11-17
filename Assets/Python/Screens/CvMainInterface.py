@@ -7,9 +7,9 @@ import CvScreenEnums
 import CvEventInterface
 import time
 
-import Consts as con
 import RFCUtils
 from StoredData import sd
+from Consts import *
 
 # BUG - DLL - start
 import BugDll
@@ -2475,26 +2475,26 @@ class CvMainInterface:
 						iCount = iCount + 1
 						
 					# Leoreth: Aztec UP: sacrifice slaves
-					if pUnit.getUnitType() == con.iAztecSlave and pUnit.getOwner() == con.iAztecs:
+					if pUnit.getUnitType() == iAztecSlave and pUnit.getOwner() == iAztecs:
 						plot = CyMap().plot(pUnit.getX(), pUnit.getY())
 						if plot.isCity():
 							city = plot.getPlotCity()
-							if city.getOwner() == con.iAztecs and not city.isWeLoveTheKingDay():
-								screen.appendMultiListButton("BottomButtonContainer", gc.getBuildingInfo(con.iAztecSacrificialAltar).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10000, 10000, False)
+							if city.getOwner() == iAztecs and not city.isWeLoveTheKingDay():
+								screen.appendMultiListButton("BottomButtonContainer", gc.getBuildingInfo(iAztecSacrificialAltar).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10000, 10000, False)
 								screen.show("BottomButtonContainer")
 								iCount = iCount + 1
 						
 					# Leoreth: Byzantine UP: bribe barbarians
-					if pUnit.getUnitType() == con.iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == con.iByzantium:
+					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == iByzantium:
 						plot = CyMap().plot(pUnit.getX(), pUnit.getY())
 						unitList = [plot.getUnit(i) for i in range(plot.getNumUnits())]
 						bBarbarian = False
 						for unit in unitList:
-							if unit.getOwner() == con.iBarbarian:
+							if unit.getOwner() == iBarbarian:
 								bBarbarian = True
 								break
 						if bBarbarian:
-							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(con.iBanking).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
+							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iBanking).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")
 							iCount = iCount + 1
 
@@ -5135,10 +5135,10 @@ class CvMainInterface:
 # BUG - Attitude Icons - end
 # Leoreth - Stability Icons - start
 
-												if ePlayer < con.iNumPlayers:
+												if ePlayer < iNumPlayers:
 													iStabilityLevel = sd.getStabilityLevel(ePlayer)
-													if iStabilityLevel > con.iStabilityStable: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
-													elif iStabilityLevel > con.iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
+													if iStabilityLevel > iStabilityStable: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
+													elif iStabilityLevel > iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
 													else: cStab = unichr(CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))
 													szBuffer += cStab
 													if (bAlignIcons):

@@ -2360,7 +2360,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	}
 
 	//Rhye - start
-	if (eBuilding == OLYMPICPARK)
+	if (eBuilding == OLYMPIC_PARK)
 	{
 		if (GET_PLAYER(getOwnerINLINE()).isOlympics()) return false;
 	}
@@ -2392,7 +2392,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	//Rhye - end
 
 	// Leoreth: Moai Statues require 20 water tiles
-	if (eBuilding == MOAI)
+	if (eBuilding == MOAI_STATUES)
 	{
 		int iNumWaterTiles = 0;
 		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -2418,7 +2418,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	if (eBuilding == WEMBLEY || eBuilding == GREATDAM || eBuilding == CRISTO)
+	if (eBuilding == WEMBLEY || eBuilding == THREE_GORGES_DAM || eBuilding == CRISTO_REDENTOR)
 	{
 		if (getOwnerINLINE() != BRAZIL)
 		{
@@ -2432,7 +2432,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	if (eBuilding == CHICHENITZA)
+	if (eBuilding == KUKULKAN)
 	{
 		if (getOwnerINLINE() != MAYA)
 		{
@@ -2446,7 +2446,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	if (eBuilding == NOTREDAME)
+	if (eBuilding == NOTRE_DAME)
 	{
 		if (getOwnerINLINE() != FRANCE)
 		{
@@ -2460,7 +2460,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	if (eBuilding == STATUEOFLIBERTY)
+	if (eBuilding == STATUE_OF_LIBERTY)
 	{
 		if (getOwnerINLINE() != AMERICA)
 		{
@@ -3683,7 +3683,7 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 	}
 
 	// Leoreth: Statue of Zeus effect: +25% military production speed in cities with pagan temples
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)ZEUS) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)THEOLOGY))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)STATUE_OF_ZEUS) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)THEOLOGY))
 	{
 		if (isHasRealBuilding((BuildingTypes)PAGAN_TEMPLE))
 		{
@@ -3966,7 +3966,7 @@ void CvCity::hurry(HurryTypes eHurry)
 	iHurryAngerModifier = (iHurryPopulation + 1) / 2;
 
 	// Leoreth: Pyramids negate unhappiness scaling
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMID))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
 		iHurryAngerModifier = 1;
 
 	changeHurryAngerTimer(iHurryAngerLength * iHurryAngerModifier);
@@ -9777,13 +9777,13 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 	if (NULL != pOtherCity)
 	{
 	    //Leoreth: includes Porcelain Tower effect
-		if (area() != pOtherCity->area() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
+		if (area() != pOtherCity->area() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
 		{
 			iModifier += GC.getDefineINT("OVERSEAS_TRADE_MODIFIER");
 		}
 
         //Leoreth: includes Porcelain Tower effect
-		if (getTeam() != pOtherCity->getTeam() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
+		if (getTeam() != pOtherCity->getTeam() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
 		{
 			iModifier += getForeignTradeRouteModifier();
 
@@ -12325,7 +12325,7 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 				
 
 	// Leoreth: Wat Preah Pisnulok effect
-	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)ANGKORWAT) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
+	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)WAT_PREAH_PISNULOK) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
 	{
 		if (eIndex == (SpecialistTypes)2) // artist
 		{
@@ -13813,7 +13813,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			}
 
 			//Rhye - start
-			if (eConstructBuilding == OLYMPICPARK) {
+			if (eConstructBuilding == OLYMPIC_PARK) {
 				GET_PLAYER(getOwnerINLINE()).setOlympics(true);
 			}
 			//Rhye - end

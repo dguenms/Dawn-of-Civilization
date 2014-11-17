@@ -18485,7 +18485,7 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 
 			if (NULL != pOtherCity)
 			{
-				if (pCity->area() != pOtherCity->area() || GET_PLAYER(pCity->getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
+				if (pCity->area() != pOtherCity->area() || GET_PLAYER(pCity->getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
 				{
 					iNewMod = GC.getDefineINT("OVERSEAS_TRADE_MODIFIER");
 					if (0 != iNewMod)
@@ -18496,7 +18496,7 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					}
 				}
 
-				if (pCity->getTeam() != pOtherCity->getTeam() || GET_PLAYER(pCity->getOwner()).isHasBuilding((BuildingTypes)PORCELAIN))
+				if (pCity->getTeam() != pOtherCity->getTeam() || GET_PLAYER(pCity->getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
 				{
 					iNewMod = pCity->getForeignTradeRouteModifier();
 					if (0 != iNewMod)

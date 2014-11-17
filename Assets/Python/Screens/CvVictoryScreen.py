@@ -8,7 +8,7 @@ import time
 import Consts as con #Rhye
 import cPickle as pickle #Rhye
 import RFCUtils #Rhye
-from Victory import Victory
+import Victory as vic
 
 # BUG - start
 import AttitudeUtil
@@ -50,7 +50,6 @@ utils = RFCUtils.RFCUtils() #Rhye
 gc = CyGlobalContext()
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
-vic = Victory()
 
 VICTORY_CONDITION_SCREEN = 0
 GAME_SETTINGS_SCREEN = 1
