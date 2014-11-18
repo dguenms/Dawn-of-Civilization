@@ -2589,7 +2589,7 @@
 			<Type>ART_DEF_BUILDING_CN_TOWER</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>3</fScale>
+			<fScale>1.5</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/CN_Tower/cn_tower.nif</NIF>
 			<KFM/>
