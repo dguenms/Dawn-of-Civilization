@@ -386,8 +386,6 @@ class StoredData:
 	def setGoal(self, iPlayer, iGoal, iNewValue):
 		if iNewValue == 1 and self.getGoal(iPlayer, iGoal) == 0: return
 		self.scriptDict['lGoals'][iPlayer][iGoal] = iNewValue
-		if iNewValue == 0 and gc.getGame().getActivePlayer() == iPlayer:
-			show(CyTranslator().getText("TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE", (iGoal+1,)))
 			
 	def isHistoricalGoldenAge(self, iPlayer):
 		return self.scriptDict['lHistoricalGoldenAge'][iPlayer]

@@ -741,8 +741,6 @@ class CvRFCEventHandler:
                                 self.aiw.forgetMemory(argsList[0], argsList[2])
 
                 if (argsList[0] == con.iAstronomy):
-			self.rnf.earlyTradingCompany(iPlayer)
-			
 			if iPlayer in [con.iSpain, con.iFrance, con.iEngland, con.iGermany, con.iVikings, con.iNetherlands, con.iPortugal]:
 				self.rnf.setAstronomyTurn(iPlayer, gc.getGame().getGameTurn())
 				
@@ -755,6 +753,11 @@ class CvRFCEventHandler:
 
 		if argsList[0] == con.iRailroad:
 			self.rnf.onRailroadDiscovered(argsList[2])
+			
+		if iTech in [con.iAstronomy, con.iGunpowder]:
+			teamPlayer = gc.getTeam(iPlayer)
+			if teamPlayer.isHasTech(con.iAstronomy) and teamPlayer.isHasTech(con.iGunpowder):
+				self.rnf.earlyTradingCompany(iPlayer)
 			
 		if iTech in [con.iEconomics, con.iRifling]:
 			teamPlayer = gc.getTeam(iPlayer)

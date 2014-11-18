@@ -2064,6 +2064,8 @@ def checkReligiousGoal(iPlayer, iGoal):
 
 def lose(iPlayer, iGoal):
 	sd.setGoal(iPlayer, iGoal, 0)
+	if utils.getHumanID() == iPlayer:
+		utils.show(localText.getText("TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE", (iGoal+1,)))
 	
 def win(iPlayer, iGoal):
 	sd.setGoal(iPlayer, iGoal, 1)
@@ -2082,7 +2084,7 @@ def isPossible(iPlayer, iGoal):
 	return sd.getGoal(iPlayer, iGoal) == -1
 	
 def loseAll(iPlayer):
-	for i in range(3): lose(iPlayer, i)
+	for i in range(3): sd.setGoal(iPlayer, i, 0)
 	
 def countAchievedGoals(iPlayer):
 	iCount = 0

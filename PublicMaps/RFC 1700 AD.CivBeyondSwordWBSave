@@ -51962,7 +51962,6 @@ BeginPlot
 	x=113,y=25
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=37,
@@ -53195,7 +53194,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
