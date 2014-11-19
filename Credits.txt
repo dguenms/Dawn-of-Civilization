@@ -6,7 +6,8 @@ BASE MODS
 # The Sword of Islam by embryodead for various interface improvements, corporation spread changes, middle eastern graphics and many miscellaneous features (including unit trade and city plot yields)
 # Reformation modmod by Panopticon for the basis of the Reformation event
 # Project Synthesis by Linkman for the Seljuks and Middle Eastern Mongol conquerors
-# The History Rewritten mod for the Tamil, Tibetan, Moorish, Polish and Congolese civilizations including units, buildings and leaders
+# The History Rewritten mod for the Tamil, Tibetan, Moorish, Polish, Congolese and Polynesian civilizations including units, buildings and leaders
+# Rhye's and Fall of the Classical World by srpt for the idea behind the stability mechanic
 
 LEADERHEADS
 # melcher kürzer: Catherine the Great, Isabella
@@ -35,12 +36,13 @@ LEADERHEADS
 # Chuggi: Hitler
 # Firaxis: Qin Shi Huang, Taizong (Chinese release)
 # Novator: Lorenzo de' Medici (Simone Boccanegra)
+# Xyth:
 
 From mods, without explicit mention of the original creators
 # The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)
 
 UNITS
-# History Rewritten mod: Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave and Huscarl graphics
+# History Rewritten mod: Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave, Huscarl and Waka graphics
 
 OTHER GRAPHICS
 # Slave unit: RFC Classical World by srpt
@@ -51,8 +53,11 @@ MODULES
 MISCELLANEOUS
 # Corossol: Phoenicia
 # veBear: Indonesia
+# srpt: Canada, including map changes in the region
 # 3Miro: fixes in the stack and settler AI
 # Mef: map changes in France
+# Jusos2108: map changes in Australia
+# blizzrd: map changes in Scandinavia
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others
