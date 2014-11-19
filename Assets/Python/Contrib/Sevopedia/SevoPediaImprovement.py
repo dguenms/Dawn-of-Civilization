@@ -189,7 +189,7 @@ class SevoPediaImprovement:
 				iTech = gc.getBuildInfo(iBuild).getTechPrereq()
 				if (iTech > -1):
 					screen.attachImageButton( panelName, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False )
-
+				break
 
 
 	def placeSpecial(self):

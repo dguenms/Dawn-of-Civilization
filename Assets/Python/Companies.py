@@ -253,12 +253,14 @@ class Companies:
 						iTempValue += city.getNumBonuses(iBonus) * 2
 				else:
 					iTempValue += city.getNumBonuses(iBonus) * 2
-		if not bFound: return -1
-		iValue += iTempValue
 		
 		# Brazilian UP: sugar counts as oil for Oil Industry
 		if owner.getID() == con.iBrazil and iCompany == iOilIndustry:
 			iValue += city.getNumBonuses(con.iSugar) * 3
+			if city.getNumBonuses(con.iSugar) > 0: bFound = True
+					
+		if not bFound: return -1
+		iValue += iTempValue
 		
 		# competition
 		if iCompany == iCerealIndustry and city.isHasCorporation(iFishingIndustry): iValue /= 2
