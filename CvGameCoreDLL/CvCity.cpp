@@ -17348,8 +17348,8 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 			else if (iDistance > 1) iCost += 5;
 		}
 
-		// skip already owned tiles
-		if (pPlot->getOwner() == getOwner()) iCost += 1000;
+		// skip already owned tiles - no, only causes in case the controlling city is lost
+		//if (pPlot->getOwner() == getOwner()) iCost += 1000;
 
 		// even with Polynesian UP Oceans should still be covered last
 		if (getOwnerINLINE() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost += GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();

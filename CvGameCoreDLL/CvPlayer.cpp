@@ -7652,6 +7652,18 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			changeSpecialistExtraYield(((SpecialistTypes)iI), ((YieldTypes)iJ), (GC.getBuildingInfo(eBuilding).getSpecialistYieldChange(iI, iJ) * iChange));
 		}
 	}
+
+	// Leoreth: Moai Statues effect
+	if (eBuilding == MOAI_STATUES)
+	{
+		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+		{
+			if (GC.getImprovementInfo((ImprovementTypes)iI).isWater())
+			{
+				changeImprovementYieldChange((ImprovementTypes)iI, YIELD_PRODUCTION, 2 * iChange);
+			}
+		}
+	}
 }
 
 

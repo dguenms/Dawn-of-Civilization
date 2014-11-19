@@ -6688,13 +6688,13 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		}
 
 		// Leoreth: Moai Statues effect
-		if (isWater() && GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)MOAI_STATUES))
+		/*if (isWater() && GET_PLAYER(ePlayer).isHasBuildingEffect((BuildingTypes)MOAI_STATUES))
 		{
 			if (eYield == YIELD_PRODUCTION && getImprovementType() != NO_IMPROVEMENT)
 			{
 				iYield += 2;
 			}
-		}
+		}*/
 
 		// Leoreth: possible mall effect: +1 commerce on cottages
 		/*if (ePlayer == AMERICA)
