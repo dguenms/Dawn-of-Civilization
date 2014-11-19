@@ -913,11 +913,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_AHOEITU</Type>
-			<Button>Art/LeaderHeads/Ahoeitu/Ahoeitu.dds</Button>
-			<NIF>art/LeaderHeads/Ahoeitu/HoneHeke.nif</NIF>
-			<KFM>art/LeaderHeads/Ahoeitu/Arawak.kfm</KFM>
-			<NoShaderNIF>art/LeaderHeads/Ahoeitu/HoneHeke.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Ahoeitu/Arawak_BG.kfm</BackgroundKFM>
+			<Button>Art/LeaderHeads/Tuitatui/Button_Tu'itatui.dds</Button>
+			<NIF>art/LeaderHeads/Tuitatui/Tokugawa.nif</NIF>
+			<KFM>art/LeaderHeads/Tuitatui/Tokugawa.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Tuitatui/Tokugawa.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Tuitatui/Tokugawa_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
