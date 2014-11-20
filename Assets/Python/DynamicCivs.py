@@ -753,7 +753,7 @@ class DynamicCivs:
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_COMMUNIST",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_COMMUNIST",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST",
-			iPolynesia : "TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST",
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_COMMUNIST",
                         iRome : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",
                         iJapan : "TXT_KEY_CIV_JAPAN_DESC_COMMUNIST",
 			iTamils : "TXT_KEY_CIV_TAMILS_DESC_COMMUNIST",

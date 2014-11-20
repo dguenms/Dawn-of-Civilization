@@ -49,7 +49,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_SLAVE_PLANTATION</Tag>
-		<English>Build Slave Plantation</English>
+		<English>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION</Tag>
@@ -849,8 +849,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HIGH_SEA_FISHING_BOATS</Tag>
-		<English>High Sea Fishing Boats</English>
-		<German>Hochsee-Fischerboot</German>
+		<English>Create [LINK=IMPROVEMENT_HIGH_SEA_FISHING_BOATS]High Sea Fishing Boats[\LINK]</English>
+		<German>Create [LINK=IMPROVEMENT_HIGH_SEA_FISHING_BOATS]High Sea Fishing Boats[\LINK]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_ISLANDS</Tag>
