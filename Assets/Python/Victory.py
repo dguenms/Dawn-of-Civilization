@@ -1309,7 +1309,7 @@ def checkTurn(iGameTurn, iPlayer):
 			expire(iArgentina, 2)
 			
 		if pArgentina.isGoldenAge() and not pArgentina.isAnarchy():
-			sd.changeArentineGoldenAgeTurns(1)
+			sd.changeArgentineGoldenAgeTurns(1)
 			
 	elif iPlayer == iBrazil:
 	
