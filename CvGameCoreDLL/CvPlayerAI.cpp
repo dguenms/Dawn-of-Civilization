@@ -7594,8 +7594,6 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 			else if (GC.getVoteInfo(kVoteData.eVote).getEspionage() > 0)
 			{
 				bValid = false;
-				GC.getGame().logMsg("Inquisition vote pope: %d", (int)kVoteData.ePlayer);
-				GC.getGame().logMsg("Inquisition vote target: %d", (int)kVoteData.eOtherPlayer);
 				if (kVoteData.ePlayer != NO_PLAYER && kVoteData.eOtherPlayer != NO_PLAYER)
 				{
 					if (kVoteData.ePlayer == getID())

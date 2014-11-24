@@ -2661,9 +2661,14 @@ int CyCity::getNextCoveredPlot() const
 	return m_pCity ? m_pCity->getNextCoveredPlot() : -1;
 }
 
-int CyCity::getCulturePlot(int i) const
+int CyCity::getCulturePlotIndex(int i) const
 {
-	return m_pCity ? m_pCity->getCulturePlot(i) : -1;
+	return m_pCity ? m_pCity->getCulturePlotIndex(i) : -1;
+}
+
+CyPlot* CyCity::getCulturePlot(int i) const
+{
+	return m_pCity ? new CyPlot(m_pCity->getCulturePlot(i)) : NULL;
 }
 
 int CyCity::getCultureCost(int i) const
