@@ -17344,6 +17344,9 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 {
 	if (plot() == pPlot) return 0;
 
+	// tiles with forts can be covered for free
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pPlot->getImprovementType()).isActsAsCity()) return 0;
+
 	int iCost = pPlot->calculateCultureCost();
 	int iDistance = plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY());
 
@@ -17351,13 +17354,13 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	{
 		if (pPlot->getBonusType() < 0 && iCost >= 15) iCost += 100; 
 		iCost += 100 * iDistance;
-		if (pPlot->isWater() && !pPlot->isLake() && pPlot->getBonusType() == -1)
+		if (pPlot->isWater() && !pPlot->isLake() && pPlot->getBonusType() == -1 && iDistance > 1)
 		{
 			if (!isCoastal(20)) iCost += 1000;
 			else if (iDistance > 1) iCost += 5;
 		}
 
-		// skip already owned tiles - no, only causes in case the controlling city is lost
+		// skip already owned tiles - no, only causes problems in case the controlling city is lost
 		//if (pPlot->getOwner() == getOwner()) iCost += 1000;
 
 		// even with Polynesian UP Oceans should still be covered last
