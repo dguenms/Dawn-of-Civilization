@@ -568,7 +568,8 @@ public:
 	int getNextCoveredPlot() const;
 	int getEffectiveNextCoveredPlot() const;
 	bool isCoveredBeforeExpansion(int i) const;
-	int getCulturePlot(int i) const;
+	int getCulturePlotIndex(int i) const;
+	CyPlot* getCulturePlot(int i) const;
 	int getCultureCost(int i) const;
 	void updateCultureCosts();
 	void updateCoveredPlots();

@@ -1003,7 +1003,8 @@ public:
 	int calculateCultureCost(CvPlot* pPlot, bool bOrdering = false) const;
 	void updateCultureCosts();
 	void updateCoveredPlots(bool bUpdatePlotGroups);
-	int getCulturePlot(int i) const;
+	int getCulturePlotIndex(int i) const;
+	CvPlot* getCulturePlot(int i) const;
 	int getCultureCost(int i) const;
 	int getNextCoveredPlot() const;
 	void setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups);

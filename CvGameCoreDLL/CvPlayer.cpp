@@ -1421,7 +1421,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 		for (iI = 0; iI < pOldCity->getNextCoveredPlot(); iI++)
 		{
-			pLoopPlot = GC.getMap().plotByIndex(pOldCity->getCulturePlot(iI));
+			pLoopPlot = pOldCity->getCulturePlot(iI);
 
 			if (pLoopPlot->getOwnerINLINE() == pOldCity->getOwnerINLINE())
 			{

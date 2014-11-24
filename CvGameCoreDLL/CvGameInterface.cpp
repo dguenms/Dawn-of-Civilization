@@ -126,7 +126,7 @@ void CvGame::updateColoredPlots()
 			int iEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
 			if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS)
 			{
-				pLoopPlot = GC.getMap().plotByIndex(pHeadSelectedCity->getCulturePlot(iEffectiveNextCoveredPlot));
+				pLoopPlot = pHeadSelectedCity->getCulturePlot(iEffectiveNextCoveredPlot);
 
 				if (pLoopPlot != NULL)
 				{

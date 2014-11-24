@@ -891,11 +891,20 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aBuildingHealthChange.clear();
 	}
 
-	int iIndex;
+	int iX, iY, iIndex;
 	for (iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
 	{
-		iIndex = GC.getMap().plotNum(getX() + GC.getCityPlot3X()[iI], getY() + GC.getCityPlot3Y()[iI]);
-		if (iIndex < 0) iIndex = GC.getMap().numPlots() + iIndex;
+		iX = getX() + GC.getCityPlot3X()[iI];
+		iY = getY() + GC.getCityPlot3Y()[iI];
+
+		// wrap around X coordinate
+		if (iX >= GC.getMap().getGridWidthINLINE()) iX -= GC.getMap().getGridWidthINLINE();
+		else if (iX < 0) iX += GC.getMap().getGridWidthINLINE();
+
+		// handle invalid Y coordinates
+		if (iY >= GC.getMap().getGridHeightINLINE() || iY < 0) iIndex = -1;
+		else iIndex = GC.getMap().plotNum(getX() + GC.getCityPlot3X()[iI], getY() + GC.getCityPlot3Y()[iI]);
+
 		m_aiCulturePlots[iI] = iIndex;
 	}
 
@@ -17372,9 +17381,20 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 }
 
 // Leoreth: takes local index, returns plot as global index
-int CvCity::getCulturePlot(int i) const
+int CvCity::getCulturePlotIndex(int i) const
 {
 	return m_aiCulturePlots[i];
+}
+
+// Leoreth: takes local index, returns plot via global index
+CvPlot* CvCity::getCulturePlot(int i) const
+{
+	int iIndex = getCulturePlotIndex(i);
+
+	// negative index means tile beyond northern or southern edge, just return city tile in this case, additional coverage of this tile does not hurt
+	if (iIndex < 0) return GC.getMap().plot(getX(), getY());
+
+	return GC.getMap().plotByIndex(iIndex);
 }
 
 // Leoreth: costs for local index
@@ -17393,8 +17413,8 @@ struct cultureCompare
 		CvPlot* kPlot2 = GC.getMap().plotByIndex(index2);
 
 		// sort by plot culture costs
-		int iCost1 = (kPlot1 != NULL && city != NULL) ? city->calculateCultureCost(kPlot1, true) : -1;
-		int iCost2 = (kPlot2 != NULL && city != NULL) ? city->calculateCultureCost(kPlot2, true) : -1;
+		int iCost1 = (kPlot1 != NULL && city != NULL) ? city->calculateCultureCost(kPlot1, true) : MAX_INT;
+		int iCost2 = (kPlot2 != NULL && city != NULL) ? city->calculateCultureCost(kPlot2, true) : MAX_INT;
 
 		return (iCost1 < iCost2);
 	}
@@ -17403,7 +17423,6 @@ struct cultureCompare
 // Leoreth
 void CvCity::updateCultureCosts()
 {
-	GC.getGame().logMsg("updateCultureCosts()");
 	//setNextCoveredPlot(0, true);
 
 	std::vector<int> plots;
@@ -17444,8 +17463,6 @@ void CvCity::updateCultureCosts()
 		//if (getOwner() == EGYPT) GC.getGameINLINE().logMsg("%d = %d (+%d)", iI, iCumulativeCosts, iCurrentCosts);
 		iI++;
 	}
-
-	GC.getGame().logMsg("end updateCultureCosts()");
 }
 
 int CvCity::getNextCoveredPlot() const
@@ -17473,7 +17490,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 		{
 			for (iI = iNewValue; iI < iOldValue; iI++)
 			{
-				pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iI));
+				pLoopPlot = getCulturePlot(iI);
 
 				if (pLoopPlot != NULL)
 				{
@@ -17493,7 +17510,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 		{
 			for (iI = iOldValue; iI < iNewValue; iI++)
 			{
-				pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iI));
+				pLoopPlot = getCulturePlot(iI);
 
 				if (pLoopPlot != NULL)
 				{
@@ -17557,7 +17574,7 @@ int CvCity::getEffectiveNextCoveredPlot() const
 	int iDistance;
 	while (iI < NUM_CITY_PLOTS_3)
 	{
-		pLoopPlot = GC.getMap().plotByIndex(getCulturePlot(iI));
+		pLoopPlot = getCulturePlot(iI);
 		iDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
 
 		if (pLoopPlot->getOwner() == NO_PLAYER && (iI >= iNextCoveredPlot || (iDistance > getCultureLevel() && iDistance > 0 && getCultureCost(iNextCoveredPlot) > getCultureThreshold((CultureLevelTypes)(iDistance-1))))) break;
@@ -17581,7 +17598,7 @@ int CvCity::getEffectiveNextCoveredPlot() const
 // Leoreth: takes local culture plot id, returns true if plot costs less culture than the culture expansion to reach it
 bool CvCity::isCoveredBeforeExpansion(int i) const
 {
-	CvPlot* pPlot = GC.getMap().plotByIndex(getCulturePlot(i));
+	CvPlot* pPlot = getCulturePlot(i);
 	int iDistance = plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY());
 
 	return (getCultureCost(i) < getCultureThreshold((CultureLevelTypes)iDistance));
