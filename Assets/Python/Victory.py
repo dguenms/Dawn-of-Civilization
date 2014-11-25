@@ -1106,9 +1106,9 @@ def checkTurn(iGameTurn, iPlayer):
 			# first goal: make Tenochtitlan the largest city in the world in 1520 AD
 			if iGameTurn == getTurnForYear(1520):
 				if isBestCity(iAztecs, (18, 37), cityPopulation):
-					win(iAztecs, 1)
+					win(iAztecs, 0)
 				else:
-					lose(iAztecs, 1)
+					lose(iAztecs, 0)
 					
 			# second goal: build six pagan temples and sacrificial altars by 1650 AD
 			if isPossible(iAztecs, 1):

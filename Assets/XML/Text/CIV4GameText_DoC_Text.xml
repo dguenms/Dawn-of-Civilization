@@ -868,6 +868,11 @@
 		<German>%D1%%: durch Stadtentfernung</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BONUS_PLOTS</Tag>
+		<English>Improved [LINK=literal]%s1[\LINK] Tiles</English>
+		<German>[LINK=literal]%s1[\LINK]-Gel&#228;ndefelder mit Verbesserung</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>

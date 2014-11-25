@@ -6865,7 +6865,8 @@ m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
 m_ppaiSpecialistYieldChange(NULL),
 m_ppaiBonusYieldModifier(NULL),
-m_ppaiBonusCommerceModifier(NULL) //Leoreth
+m_ppaiBonusCommerceModifier(NULL), //Leoreth
+m_ppaiBonusYieldChange(NULL) //Leoreth
 {
 }
 //------------------------------------------------------------------------------------------------------
@@ -6929,10 +6930,28 @@ CvBuildingInfo::~CvBuildingInfo()
 		for(int i=0;i<GC.getNumBonusInfos();i++)
 		{
 			SAFE_DELETE_ARRAY(m_ppaiBonusYieldModifier[i]);
-			SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier[i]); // Leoreth
 		}
 		SAFE_DELETE_ARRAY(m_ppaiBonusYieldModifier);
-		SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier); // Leoreth
+	}
+
+	// Leoreth
+	if (m_ppaiBonusCommerceModifier != NULL)
+	{
+		for (int i = 0; i < GC.getNumBonusInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier);
+	}
+
+	// Leoreth
+	if (m_ppaiBonusYieldChange != NULL)
+	{
+		for (int i = 0; i < GC.getNumBonusInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiBonusYieldChange[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiBonusYieldChange);
 	}
 }
 
@@ -7925,6 +7944,23 @@ int* CvBuildingInfo::getBonusCommerceModifierArray(int i) const
 }
 
 // Leoreth
+int CvBuildingInfo::getBonusYieldChange(int i, int j) const
+{
+	FAssertMsg(i < GC.getNumBonusInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	FAssertMsg(j < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(j > -1, "Index out of bounds");
+	return m_ppaiBonusYieldChange ? m_ppaiBonusYieldChange[i][j] : -1;
+}
+
+int* CvBuildingInfo::getBonusYieldChangeArray(int i) const
+{
+	FAssertMsg(i < GC.getNumBonusInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_ppaiBonusYieldChange[i];
+}
+
+// Leoreth
 int CvBuildingInfo::getPrereqBuildingClassPercent(int i) const
 {
 	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
@@ -8285,6 +8321,13 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 		SAFE_DELETE_ARRAY(m_ppaiBonusYieldModifier);
 	}
 
+	m_ppaiBonusYieldModifier = new int*[GC.getNumBonusInfos()];
+	for(i=0;i<GC.getNumBonusInfos();i++)
+	{
+		m_ppaiBonusYieldModifier[i]  = new int[NUM_YIELD_TYPES];
+		stream->Read(NUM_YIELD_TYPES, m_ppaiBonusYieldModifier[i]);
+	}
+
 	// Leoreth
 	if (m_ppaiBonusCommerceModifier != NULL)
 	{
@@ -8295,11 +8338,28 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 		SAFE_DELETE_ARRAY(m_ppaiBonusCommerceModifier);
 	}
 
-	m_ppaiBonusYieldModifier = new int*[GC.getNumBonusInfos()];
-	for(i=0;i<GC.getNumBonusInfos();i++)
+	m_ppaiBonusCommerceModifier = new int*[GC.getNumBonusInfos()];
+	for (i = 0; i < GC.getNumBonusInfos(); i++)
 	{
-		m_ppaiBonusYieldModifier[i]  = new int[NUM_YIELD_TYPES];
-		stream->Read(NUM_YIELD_TYPES, m_ppaiBonusYieldModifier[i]);
+		m_ppaiBonusCommerceModifier[i] = new int[NUM_COMMERCE_TYPES];
+		stream->Read(NUM_COMMERCE_TYPES, m_ppaiBonusCommerceModifier[i]);
+	}
+
+	// Leoreth
+	if (m_ppaiBonusYieldChange != NULL)
+	{
+		for (i = 0; i < GC.getNumBonusInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiBonusYieldChange[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiBonusYieldChange);
+	}
+
+	m_ppaiBonusYieldChange = new int*[GC.getNumBonusInfos()];
+	for (i = 0; i < GC.getNumBonusInfos(); i++)
+	{
+		m_ppaiBonusYieldChange[i] = new int[NUM_YIELD_TYPES];
+		stream->Read(NUM_YIELD_TYPES, m_ppaiBonusYieldChange[i]);
 	}
 }
 
@@ -8488,6 +8548,12 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	for (i = 0; i < GC.getNumBonusInfos(); i++)
 	{
 		stream->Write(NUM_COMMERCE_TYPES, m_ppaiBonusCommerceModifier[i]);
+	}
+
+	// Leoreth
+	for (i = 0; i < GC.getNumBonusInfos(); i++)
+	{
+		stream->Write(NUM_YIELD_TYPES, m_ppaiBonusYieldChange[i]);
 	}
 }
 
@@ -9087,6 +9153,49 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 					else
 					{
 						pXML->InitList(&m_ppaiBonusCommerceModifier[k], NUM_COMMERCE_TYPES);
+					}
+
+				}
+
+				if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+				{
+					break;
+				}
+			}
+
+			// set the current xml node to it's parent node
+			gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+		}
+
+		// set the current xml node to it's parent node
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	// Leoreth
+	pXML->Init2DIntList(&m_ppaiBonusYieldChange, GC.getNumBonusInfos(), NUM_YIELD_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"BonusYieldChanges"))
+	{
+		iNumChildren = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+
+		if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"BonusYieldChange"))
+		{
+			for(j=0;j<iNumChildren;j++)
+			{
+				pXML->GetChildXmlValByName(szTextVal, "BonusType");
+				k = pXML->FindInInfoClass(szTextVal);
+				if (k > -1)
+				{
+					// delete the array since it will be reallocated
+					SAFE_DELETE_ARRAY(m_ppaiBonusYieldChange[k]);
+					if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldChanges"))
+					{
+						// call the function that sets the yield change variable
+						pXML->SetYields(&m_ppaiBonusYieldChange[k]);
+						gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+					}
+					else
+					{
+						pXML->InitList(&m_ppaiBonusYieldChange[k], NUM_YIELD_TYPES);
 					}
 
 				}

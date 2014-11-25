@@ -1794,6 +1794,9 @@ public:
 	int getBonusCommerceModifier(int i, int j) const;
 	int* getBonusCommerceModifierArray(int i) const;
 
+	int getBonusYieldChange(int i, int j) const;
+	int* getBonusYieldChangeArray(int i) const;
+
 	// Leoreth
 	int getPrereqBuildingClassPercent(int i) const;
 
@@ -1983,6 +1986,7 @@ protected:
 
 	// Leoreth
 	int** m_ppaiBonusCommerceModifier;
+	int** m_ppaiBonusYieldChange;
 
 };
 

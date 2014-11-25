@@ -97,6 +97,9 @@ CvCity::CvCity()
 	m_pabHasCorporation = NULL;
 	m_pabIsUnitHurried = NULL;
 
+	// Leoreth
+	m_ppaiBonusYield = NULL;
+
 	m_paTradeCities = NULL;
 
 	CvDLLEntity::createCityEntity(this);		// create and attach entity to city
@@ -547,6 +550,16 @@ void CvCity::uninit()
 	SAFE_DELETE_ARRAY(m_pabHasCorporation);
 	SAFE_DELETE_ARRAY(m_pabIsUnitHurried); // Leoreth
 
+	// Leoreth
+	if (m_ppaiBonusYield != NULL)
+	{
+		for (int i = 0; i < GC.getNumBonusInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiBonusYield[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiBonusYield);
+	}
+
 	SAFE_DELETE_ARRAY(m_paTradeCities);
 
 	m_orderQueue.clear();
@@ -556,7 +569,7 @@ void CvCity::uninit()
 // Initializes data members that are serialized.
 void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructorCall)
 {
-	int iI;
+	int iI, iJ;
 
 	//--------------------------------
 	// Uninit class
@@ -875,6 +888,17 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
 			m_pabWorkingPlot[iI] = false;
+		}
+
+		// Leoreth
+		m_ppaiBonusYield = new int*[GC.getNumBonusInfos()];
+		for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
+		{
+			m_ppaiBonusYield[iI] = new int[NUM_YIELD_TYPES];
+			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+			{
+				m_ppaiBonusYield[iI][iJ] = 0;
+			}
 		}
 
 		FAssertMsg((0 < GC.getDefineINT("MAX_TRADE_ROUTES")),  "GC.getMAX_TRADE_ROUTES() is not greater than zero but an array is being allocated in CvCity::reset");
@@ -4619,6 +4643,15 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeDomainFreeExperience(((DomainTypes)iI), GC.getBuildingInfo(eBuilding).getDomainFreeExperience(iI) * iChange);
 			changeDomainProductionModifier(((DomainTypes)iI), GC.getBuildingInfo(eBuilding).getDomainProductionModifier(iI) * iChange);
+		}
+
+		// Leoreth
+		for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
+		{
+			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+			{
+				changeBonusYield((BonusTypes)iI, (YieldTypes)iJ, GC.getBuildingInfo(eBuilding).getBonusYieldChange(iI, iJ) * iChange);
+			}
 		}
 
 		updateExtraBuildingHappiness();
@@ -9341,6 +9374,24 @@ void CvCity::changeRiverPlotYield(YieldTypes eIndex, int iChange)
 	}
 }
 
+
+// Leoreth
+int CvCity::getBonusYield(BonusTypes eBonus, YieldTypes eYield) const
+{
+	return m_ppaiBonusYield[eBonus][eYield];
+}
+
+
+// Leoreth
+void CvCity::changeBonusYield(BonusTypes eBonus, YieldTypes eYield, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_ppaiBonusYield[eBonus][eYield] += iChange;
+
+		updateYield();
+	}
+}
 
 // BUG - Building Additional Yield - start
 /*
@@ -15174,6 +15225,12 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumCorporationInfos(), m_pabHasCorporation);
 	pStream->Read(GC.getNumUnitInfos(), m_pabIsUnitHurried); // Leoreth
 
+	// Leoreth
+	for (int i = 0; i < GC.getNumBonusInfos(); i++)
+	{
+		pStream->Read(NUM_YIELD_TYPES, m_ppaiBonusYield[i]);
+	}
+
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
 	{
 		pStream->Read((int*)&m_paTradeCities[iI].eOwner);
@@ -15244,7 +15301,6 @@ void CvCity::read(FDataStreamBase* pStream)
 void CvCity::write(FDataStreamBase* pStream)
 {
 	int iI;
-
 
 	uint uiFlag=0;
 	pStream->Write(uiFlag);		// flag for expansion
@@ -15430,6 +15486,12 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumReligionInfos(), m_pabHasReligion);
 	pStream->Write(GC.getNumCorporationInfos(), m_pabHasCorporation);
 	pStream->Write(GC.getNumUnitInfos(), m_pabIsUnitHurried); // Leoreth
+
+	// Leoreth
+	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
+	{
+		pStream->Write(NUM_YIELD_TYPES, m_ppaiBonusYield[iI]);
+	}
 
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
 	{
