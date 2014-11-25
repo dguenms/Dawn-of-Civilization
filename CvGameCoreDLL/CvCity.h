@@ -632,6 +632,10 @@ public:
 	int getRiverPlotYield(YieldTypes eIndex) const;																// Exposed to Python
 	void changeRiverPlotYield(YieldTypes eIndex, int iChange);
 
+	// Leoreth
+	int getBonusYield(BonusTypes eBonus, YieldTypes eYield) const;
+	void changeBonusYield(BonusTypes eBonus, YieldTypes eYield, int iChange);
+
 // BUG - Building Additional Yield - start
 	int getAdditionalYieldByBuilding(YieldTypes eIndex, BuildingTypes eBuilding) const;						// Exposed to Python
 	int getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingTypes eBuilding) const;				// Exposed to Python
@@ -1275,6 +1279,9 @@ protected:
 	bool* m_pabHasReligion;
 	bool* m_pabHasCorporation;
 	bool* m_pabIsUnitHurried; // Leoreth
+
+	// Leoreth
+	int** m_ppaiBonusYield;
 
 	IDInfo* m_paTradeCities;
 

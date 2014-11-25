@@ -6632,6 +6632,26 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 				}
 			}
 		}
+
+		// Leoreth: additional yield from certain improved bonuses from buildings
+		if (getBonusType() != NO_BONUS && getImprovementType() != NO_IMPROVEMENT)
+		{
+			if (!isImpassable())
+			{
+				pWorkingCity = getWorkingCity();
+
+				if (NULL != pWorkingCity)
+				{
+					if (GC.getImprovementInfo(getImprovementType()).isImprovementBonusMakesValid(getBonusType()))
+					{
+						if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
+						{
+							iYield += pWorkingCity->getBonusYield(getBonusType(), eYield);
+						}
+					}
+				}
+			}
+		}
 	}
 
 	if (bCity)

@@ -10318,6 +10318,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_RIVER_PLOTS").c_str(), L": ", L"", kBuilding.getRiverPlotYieldChangeArray());
 
+	// Leoreth
+	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
+	{
+		setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_BONUS_PLOTS", GC.getBonusInfo((BonusTypes)iI).getText()).c_str(), L": ", L"", kBuilding.getBonusYieldChangeArray(iI));
+	}
+
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_WATER_PLOTS_ALL_CITIES").c_str(), L": ", L"", kBuilding.getGlobalSeaPlotYieldChangeArray());
 
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerYieldModifierArray(), true);
