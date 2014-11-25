@@ -1326,8 +1326,6 @@ def checkTurn(iGameTurn, iPlayer):
 		if isPossible(iBrazil, 2):
 			if countImprovements(iBrazil, iForestPreserve) >= 20 and pBrazil.getCapitalCity() and pBrazil.getCapitalCity().isHasRealBuilding(iNationalPark):
 				win(iBrazil, 2)
-			else:
-				lose(iBrazil, 2)
 				
 		if iGameTurn == getTurnForYear(1950):
 			expire(iBrazil, 2)
