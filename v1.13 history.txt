@@ -67,3 +67,11 @@
 	# third Italian
 	# first Polish
 	# second English
+# buildings now can increase the yield of tiles with specific resources if they have an appropriate improvement
+	# Persian Apothecary now gives +2 food on improved incense tiles, +1 food on improved silk and spices tiles
+	# Iranian Caravanserai now gives +2 food on improved incense tiles, +1 food on improved silk and spices tiles
+	# Mongol Ger now gives +2 food on improved horse tiles, +1 food on improved cow and sheep tiles
+	# Congolese Mbwadi now gives +2 commerce on improved cotton tiles
+	# Argentine Cold Storage Plant now gives +2 commerce on improved cow, pig and deer tiles
+	# Colombian Hacienda now gives +1 food on improved banana tiles, +3 commerce on improved coffee tiles
+	# Brazilian Fazenda now gives +1 commerce on improved banana, spices, sugar, coffee and tobacco tiles

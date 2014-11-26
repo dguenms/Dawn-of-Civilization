@@ -5696,7 +5696,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									if (iI == MASONRY || iI == MONARCHY || iI == POLYTHEISM)
 										iValue *= 2;
-									if (iI == MATHEMATICS)
+									if (iI == MATHEMATICS || iI == BRONZEWORKING || iI == FEUDALISM)
 										iValue /= 3;
 									break;
 								case GREECE:

@@ -1100,7 +1100,7 @@ tCapitals = (
 #(58, 39), #tCarthage
 (73, 40), #tSur
 (4, 18), #Tonga
-(82, 39), #tPersepolis
+(82, 38), #tPersepolis
 (60, 44), #tRome
 (91, 31), #Thanjavur
 (72, 29), #tAksum

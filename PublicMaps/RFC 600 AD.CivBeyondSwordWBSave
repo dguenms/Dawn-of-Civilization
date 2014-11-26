@@ -31712,7 +31712,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=41
-	BonusType=BONUS_SHEEP
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32056,7 +32056,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=38
-	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32477,6 +32476,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=42
+	BonusType=BONUS_SHEEP
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	RouteType=ROUTE_ROAD
