@@ -37854,8 +37854,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=41
-	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=7,33,43,44,
@@ -38239,8 +38239,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=38
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=7,33,43,44,
@@ -38745,7 +38743,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=42
-	ImprovementType=IMPROVEMENT_HAMLET
+	BonusType=BONUS_SHEEP
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
