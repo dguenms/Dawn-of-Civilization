@@ -134,6 +134,9 @@ iLime = 100
 # independent cities
 iNumMinorCities = 37
 
+# scripted conquerors
+iNumConquests = 10
+
 #neighbours
 lNeighbours = [
 [iBabylonia, iGreece, iPersia, iCarthage, iRome, iEthiopia, iByzantium, iArabia, iMoors, iTurkey], #Egypt

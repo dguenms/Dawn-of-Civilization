@@ -75,3 +75,9 @@
 	# Argentine Cold Storage Plant now gives +2 commerce on improved cow, pig and deer tiles
 	# Colombian Hacienda now gives +1 food on improved banana tiles, +3 commerce on improved coffee tiles
 	# Brazilian Fazenda now gives +1 commerce on improved banana, spices, sugar, coffee and tobacco tiles
+# moved location of Parsa (Persian spawn tile) 1S
+# moved wheat near Sirajis north to Aspadana
+# moved sheep near Aspadana east to Balkh
+# Persia starts with one additional settler and worker
+# Persian Immortals start with the March promotion
+- Parthian barbarians will only spawn if Persia is dead
