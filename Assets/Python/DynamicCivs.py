@@ -1347,7 +1347,7 @@ class DynamicCivs:
 			if not bReborn:
 				if bEmpire and iReligion == con.iZoroastrianism:
 					if iGameEra < iMedieval:
-						if iGreece in lPreviousOwners:
+						if bResurrected:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_PARTHIA")
 						else:
 							self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_ACHAEMENID")

@@ -76,6 +76,7 @@ class StoredData:
                                     'lAttackingCivsArray': [0 for i in range(con.iNumPlayers)], #original RFC had -1 here somewhere??
                                     'iNextTurnAIWar': -1,
 				    'lAggressionLevels': [0 for i in range(con.iNumPlayers)],
+				    'lConquests' : [False for i in range(con.iNumConquests)],
                                     #------------Congresses
 				    'iGlobalWarAttacker': -1,
 				    'iGlobalWarDefender': -1,
@@ -137,6 +138,8 @@ class StoredData:
 				    'lWarStartTurn' : [[0 for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
 				}
                 self.save()
+		
+	# STABILITY
 		
 	def resetStability(self, iPlayer):
 		self.setCrisisCountdown(iPlayer, 0)
@@ -292,41 +295,6 @@ class StoredData:
 	def changeTurnsToCollapse(self, iPlayer, iChange):
 		self.scriptDict['lTurnsToCollapse'][iPlayer] += iChange
 		
-	# VICTORY
-		
-	def getProtestantTechs(self, i):
-		return self.scriptDict['lProtestantTechs'][i]
-		
-	def setProtestantTechs(self, i, iNewValue):
-		self.scriptDict['lProtestantTechs'][i] = iNewValue
-		
-	def getFirstIndustrial(self):
-		return self.scriptDict['iFirstIndustrial']
-		
-	def setFirstIndustrial(self, iNewValue):
-		self.scriptDict['iFirstIndustrial'] = iNewValue
-		
-	def getFirstModern(self):
-		return self.scriptDict['iFirstModern']
-		
-	def setFirstModern(self, iNewValue):
-		self.scriptDict['iFirstModern'] = iNewValue
-		
-	def getAggressionLevels(self):
-		return self.scriptDict['lAggressionLevels']
-		
-	def changeAggressionLevel(self, iPlayer, iChange):
-		self.scriptDict['lAggressionLevels'][iPlayer] += iChange
-		
-	def setAggressionLevel(self, iPlayer, iNewValue):
-		self.scriptDict['lAggressionLevels'][iPlayer] = iNewValue
-		
-	def isMinorCityFounded(self, iCity):
-		return self.scriptDict['lCityFounded'][iCity]
-		
-	def setMinorCityFounded(self, iCity, bNewValue):
-		self.scriptDict['lCityFounded'][iCity] = bNewValue
-		
 	def getHumanRazePenalty(self):
 		return self.scriptDict['iHumanRazePenalty']
 		
@@ -345,13 +313,41 @@ class StoredData:
 	def changeBarbarianLosses(self, iPlayer, iChange):
 		self.scriptDict['lBarbarianLosses'][iPlayer] += iChange
 		
+	# AIWARS
+		
+	def getAggressionLevels(self):
+		return self.scriptDict['lAggressionLevels']
+		
+	def changeAggressionLevel(self, iPlayer, iChange):
+		self.scriptDict['lAggressionLevels'][iPlayer] += iChange
+		
+	def setAggressionLevel(self, iPlayer, iNewValue):
+		self.scriptDict['lAggressionLevels'][iPlayer] = iNewValue
+		
+	def setConquest(self, iConquest, bNewValue):
+		self.scriptDict['lConquests'][iConquest] = bNewValue
+		
+	def isConquest(self, iConquest):
+		return self.scriptDict['lConquests'][iConquest]
+		
+	# BARBS
+		
+	def isMinorCityFounded(self, iCity):
+		return self.scriptDict['lCityFounded'][iCity]
+		
+	def setMinorCityFounded(self, iCity, bNewValue):
+		self.scriptDict['lCityFounded'][iCity] = bNewValue
+		
+	# UNIQUE POWERS
+		
 	def getByzantineBribes(self):
 		return self.scriptDict['lByzantineBribes']
 		
 	def setByzantineBribes(self, lBribes):
 		self.scriptDict['lByzantineBribes'] = lBribes
 		
-	# Congresses
+	# CONGRESSES
+	
 	def getGlobalWarAttacker(self):
 		return self.scriptDict['iGlobalWarAttacker']
 		
@@ -379,7 +375,8 @@ class StoredData:
 	def setCurrentCongress(self, congress):
 		self.scriptDict['currentCongress'] = congress
 		
-	# VICTORY NEW
+	# VICTORY
+	
 	def getGoal(self, iPlayer, iGoal):
 		return self.scriptDict['lGoals'][iPlayer][iGoal]
 		
@@ -559,11 +556,6 @@ class StoredData:
 		
 	def isFirstWorldColonized(self):
 		return self.getFirstNewWorldColony() != -1
-
-def show(message):
-	popup = Popup.PyPopup()
-	popup.setBodyString(message)
-	popup.launch()
 		
 # All modules import the following single instance, not the class
 

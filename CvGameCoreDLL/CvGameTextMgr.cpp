@@ -4565,9 +4565,9 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}*/
 
 		// Leoreth: display plot index, only bugfix purposes
-		szTempBuffer.Format(L"Index: %d", GC.getMap().plotNum(pPlot->getX(), pPlot->getY()));
+		/*szTempBuffer.Format(L"Index: %d", GC.getMap().plotNum(pPlot->getX(), pPlot->getY()));
 		szString.append(szTempBuffer);
-		szString.append(NEWLINE);
+		szString.append(NEWLINE);*/
 
 		// Leoreth: display plot culture costs, only bugfix purposes
 		/*szTempBuffer.Format(L"Culture cost: %d", pPlot->calculateCultureCost());
