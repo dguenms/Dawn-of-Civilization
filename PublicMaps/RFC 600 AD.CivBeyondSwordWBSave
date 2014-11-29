@@ -16094,6 +16094,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=41,y=58
+	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

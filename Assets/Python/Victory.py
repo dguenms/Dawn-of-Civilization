@@ -1864,7 +1864,7 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 		if iPlayer == iMaya or iHasMetPlayer == iMaya:
 			if iPlayer == iMaya and iHasMetPlayer in lCivGroups[0]: iEuropean = iHasMetPlayer
 			elif iHasMetPlayer == iMaya and iPlayer in lCivGroups[0]: iEuropean = iPlayer
-			else return
+			else: return
 		
 			for x in range(iWorldX):
 				for y in range(iWorldY):
