@@ -712,6 +712,8 @@ class CvRFCEventHandler:
 		if iTeamX < con.iNumPlayers:
 			self.rnf.onFirstContact(iTeamX, iHasMetTeamY)
                 self.pla.onFirstContact(iTeamX, iHasMetTeamY)
+		
+		vic.onFirstContact(iTeamX, iHasMetTeamY)
 
         #Rhye - start
         def onTechAcquired(self, argsList):
