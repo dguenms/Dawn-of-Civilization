@@ -131,7 +131,7 @@ tSouthAmericaExceptions = ((24, 31), (25, 32))
 
 # third Holy Roman goal: settle three great artists in Vienna by 1700 AD
 # second Turkish goal: control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD
-tVienna = (63, 49)
+tVienna = (62, 49)
 
 # second Turkish goal: control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD
 tCairo = (69, 34)
