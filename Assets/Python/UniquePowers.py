@@ -434,42 +434,20 @@ class UniquePowers:
                 iStateReligion = pArabia.getStateReligion()
 
                 if (iStateReligion >= 0):
-			for iReligion in range(con.iNumReligions):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
-				if city.isHasReligion(iReligion) and not city.isHolyCityByType(iReligion):
-					city.setHasReligion(iReligion, False, False, False)
-				if city.hasBuilding(iTemple + iReligion*4):
-					city.setHasRealBuilding((iTemple + iReligion*4), False)
-				if city.hasBuilding(iCathedral + iReligion*4):
-					city.setHasRealBuilding((iCathedral + iReligion*4), False)
-				if city.hasBuilding(iMonastery + iReligion*4):
-					city.setHasRealBuilding((iMonastery + iReligion*4), False)
+			#for iReligion in range(con.iNumReligions):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
+			#	if city.isHasReligion(iReligion) and not city.isHolyCityByType(iReligion):
+			#		city.setHasReligion(iReligion, False, False, False)
+			#	if city.hasBuilding(iTemple + iReligion*4):
+			#		city.setHasRealBuilding((iTemple + iReligion*4), False)
+			#	if city.hasBuilding(iCathedral + iReligion*4):
+			#		city.setHasRealBuilding((iCathedral + iReligion*4), False)
+			#	if city.hasBuilding(iMonastery + iReligion*4):
+			#		city.setHasRealBuilding((iMonastery + iReligion*4), False)
 
                         if (not city.isHasReligion(iStateReligion)):
                                 city.setHasReligion(iStateReligion, True, True, False)
                         if (not city.hasBuilding(iTemple + iStateReligion*4)):
                                 city.setHasRealBuilding((iTemple + iStateReligion*4), True)
-                        #if (not city.hasBuilding(iCathedral + iStateReligion*4)):
-                        #        city.setHasRealBuilding((iCathedral + iStateReligion*4), True)
-
-
-                                        
-                                    #converts other religions temples and cathedrals
-##                                        for iReligionLoop in range(iNumReligions):
-##                                                if (iReligionLoop != iStateReligion):
-##                                                        if (city.hasBuilding(iTemple + iReligionLoop*4)):
-##                                                                city.setHasRealBuilding((iTemple + iReligionLoop*4), False)
-##                                                                if (not city.hasBuilding(iTemple + iStateReligion*4)):
-##                                                                        city.setHasRealBuilding((iTemple + iStateReligion*4), True)
-##                                                        if (city.hasBuilding(iCathedral + iReligionLoop*4)):
-##                                                                city.setHasRealBuilding((iCathedral + iReligionLoop*4), False)
-##                                                                if (not city.hasBuilding(iCathedral + iStateReligion*4)):
-##                                                                        city.setHasRealBuilding((iCathedral + iStateReligion*4), True)
-
-                        
-
-
-
-
 
 #------------------AZTEC U.P.-------------------
 

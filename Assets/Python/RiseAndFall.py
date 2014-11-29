@@ -1097,12 +1097,10 @@ class RiseAndFall:
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
 				sta.completeCollapse(iRome)
-				#utils.killAndFragmentCiv(iRome, iIndependent, iIndependent2, -1, False)
 				
 		if iGameTurn == getTurnForYear(-50):
 			if pByzantium.isHuman() and pGreece.isAlive():
 				sta.completeCollapse(iGreece)
-				#utils.killAndFragmentCiv(iGreece, iIndependent, iIndependent2, -1, False)
 			
                 #Colonists
                 if (iGameTurn == getTurnForYear(-850)):
@@ -1184,9 +1182,12 @@ class RiseAndFall:
 			
 			for tPlot in targetCityList:
 				tSpawnPlot = utils.getFreeNeighborPlot(tPlot)
-				utils.makeUnitAI(con.iSeljukGhulamWarrior, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-				utils.makeUnitAI(con.iTrebuchet, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-				utils.makeUnitAI(con.iMaceman, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+				iExtra = 0
+				if gc.getMap().plot(tSpawnPlot[0], tSpawnPlot[1]).getPlotCity().getOwner() == iArabia and utils.getHumanID() != iArabia: iExtra = 1
+				
+				utils.makeUnitAI(con.iSeljukGhulamWarrior, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3 + iExtra)
+				utils.makeUnitAI(con.iTrebuchet, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + 2*iExtra)
+				utils.makeUnitAI(con.iMaceman, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
 				utils.makeUnitAI(con.iLongbowman, iSeljuks, tSpawnPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			
 			for iPlayer in targetPlayerList:
@@ -1195,7 +1196,7 @@ class RiseAndFall:
 				CyInterface().addMessage(CyGame().getActivePlayer(), True , con.iDuration, CyTranslator().getText("TXT_KEY_SELJUK_HORDES", ()), "", 1 , "", ColorTypes(con.iRed),0,0,False,False)
 
 		if iGameTurn == getTurnForYear(1070 + utils.getSeed()%10 - 5): #Linkman226- Seljuks
-                        tSpawnPlots = ((77,41), (74, 43), (72, 44))
+                        tSpawnPlots = ((77,41), (74, 43), (72, 44), (74, 39))
                         for plot in tSpawnPlots:
 				spawnPlot = utils.getFreePlot(plot[0], plot[1])
                                 utils.makeUnitAI(con.iSeljukGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
@@ -1203,6 +1204,7 @@ class RiseAndFall:
                                 utils.makeUnitAI(con.iTrebuchet, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
                                 pSeljuks.setLastStateReligion(con.iIslam)
 				teamSeljuks.declareWar(iByzantium, True, WarPlanTypes.WARPLAN_TOTAL)
+				teamSeljuks.declareWar(iArabia, True, WarPlanTypes.WARPLAN_TOTAL)
 
 		if iGameTurn == getTurnForYear(1230 + utils.getSeed()%10): #Linkman226- Mongol Conquerors for Seljuks
 		
