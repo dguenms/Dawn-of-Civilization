@@ -80,4 +80,13 @@
 # moved sheep near Aspadana east to Balkh
 # Persia starts with one additional settler and worker
 # Persian Immortals start with the March promotion
-- Parthian barbarians will only spawn if Persia is dead
+
+# Parthian barbarians will only spawn if Persia is dead
+# increased Arabian unit and city upkeep and unit cost
+# increased Turkish unit and city upkeep
+# reduced Turkish unit costs
+# Arabian UP does not remove foreign religions anymore
+# Temple of Solomon expires with Banking
+# additional Seljuk conquerors against Arabia
+# Seljuks also target Jerusalem
+# new third Maya goal: make contact with a European civilization before they discover America

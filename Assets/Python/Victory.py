@@ -87,12 +87,18 @@ tEuropeBR = (68, 65)
 # second French goal: control 40% of Europe and North America in 1800 AD
 tEasternEuropeTL = (69, 48)
 tEasternEuropeBR = (73, 64)
+
+# second French goal: control 40% of Europe and North America in 1800 AD
+# third Maya goal: make contact with a European civilization before they have discovered America
 tNorthAmericaTL = (10, 40)
 tNorthAmericaBR = (37, 54)
 
 # first English goal: colonize every continent by 1730 AD
 tOceaniaTL = (99, 5)
 tOceaniaBR = (123, 28)
+
+# first English goal: colonize every continent by 1730 AD
+# third Maya goal: make contact with a European civilization before they have discovered America
 tSouthCentralAmericaTL = (13, 3)
 tSouthCentralAmericaBR = (41, 39)
 
@@ -186,7 +192,6 @@ dTechGoals = {
 	iBabylonia: (0, [iWriting, iCodeOfLaws, iMonarchy]),
 	iGreece: (0, [iLiterature, iDrama, iPhilosophy]),
 	iRome: (2, [iTheology, iMachinery, iCivilService]),
-	iMaya: (2, [iAstronomy]),
 	iKorea: (1, [iPrintingPress]),
 	iPoland: (1, [iLiberalism]),
 }
@@ -578,7 +583,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if iGameTurn == getTurnForYear(900):
 				expire(iMaya, 1)
 				
-			# third goal: be the first to discover Astronomy
+			# third goal: make contact with a European civilization before they discover America
 			
 		# Colombia
 		else:
@@ -1847,10 +1852,28 @@ def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 			
 def onBlockade(iPlayer, iGold):
 
-	# third goal: acquire 3000 gold through piracy by 1650 AD
+	# third Moorish goal: acquire 3000 gold through piracy by 1650 AD
 	if iPlayer == iMoors:
 		if isPossible(iMoors, 2):
 			sd.changeMoorishGold(iGold)
+			
+def onFirstContact(iPlayer, iHasMetPlayer):
+
+	# third Maya goal: make contact with a European civilization before they have discovered America
+	if not pMaya.isReborn() and isPossible(iMaya, 2):
+		if iPlayer == iMaya or iHasMetPlayer == iMaya:
+			if iPlayer == iMaya and iHasMetPlayer in lCivGroups[0]: iEuropean = iHasMetPlayer
+			elif iHasMetPlayer == iMaya and iPlayer in lCivGroups[0]: iEuropean = iPlayer
+			else return
+		
+			for x in range(iWorldX):
+				for y in range(iWorldY):
+					if utils.isPlotInArea((x, y), tNorthAmericaTL, tNorthAmericaBR) or utils.isPlotArea((x, y), tSouthCentralAmericaTL, tSouthCentralAmericaBR):
+						if gc.getMap().plot(x, y).isRevealed(iEuropean):
+							lose(iMaya, 2)
+							return
+							
+			win(iMaya, 2)
 			
 def checkReligiousGoals(iPlayer):
 	for i in range(3):

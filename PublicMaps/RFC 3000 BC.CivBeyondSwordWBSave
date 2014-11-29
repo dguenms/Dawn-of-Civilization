@@ -11336,6 +11336,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=19
+	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -11734,7 +11735,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=20
-	BonusType=BONUS_STONE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
