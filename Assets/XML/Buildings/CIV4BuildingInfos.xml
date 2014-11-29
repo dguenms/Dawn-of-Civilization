@@ -34763,7 +34763,7 @@
 			<VictoryPrereq>NONE</VictoryPrereq>
 			<FreeStartEra>NONE</FreeStartEra>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<ObsoleteTech>TECH_LIBERALISM</ObsoleteTech>
+			<ObsoleteTech>TECH_BANKING</ObsoleteTech>
 			<PrereqTech>TECH_MONOTHEISM</PrereqTech>
 			<TechTypes/>
 			<Bonus>NONE</Bonus>
