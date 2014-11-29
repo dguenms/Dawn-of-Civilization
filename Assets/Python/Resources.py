@@ -160,6 +160,9 @@ class Resources:
 			gc.getMap().plot(35, 54).setFeatureType(con.iMud, 0)
 			for x, y in lNewfoundlandCapes:
 				gc.getMap().plot(x, y).setFeatureType(con.iCape, 0)
+				
+			if utils.getHumanID() == con.iVikings:
+				gc.getMap().plot(x, y).setFeatureType(-1, 0)
 		
 		# Leoreth: New Guinea can be settled
 		if iGameTurn == getTurnForYear(1000):
