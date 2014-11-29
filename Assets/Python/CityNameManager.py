@@ -4710,7 +4710,7 @@ tRenames = (
 {	'Malaca'		:	'Melaka',
 	'Malacca'		:	'Melaka',
 	'Malakka'		:	'Melaka',
-	'Palimb&#277;o'		:	'Palembang',
+	'Palimb&#227;o'		:	'Palembang',
 	'Calapa'		:	'Sundapura',
 	'Marca&#231;ar'		:	'Makassar',
 	'Singapore'		:	'Singapura',

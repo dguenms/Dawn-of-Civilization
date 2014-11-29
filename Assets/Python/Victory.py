@@ -1685,7 +1685,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				iStateReligion = pAztecs.getStateReligion()
 				if iStateReligion >= 0:
 					iStateReligionCathedral = iCathedral + 4 * iStateReligion
-					if iBuilding == iCathedral:
+					if iBuilding == iStateReligionCathedral:
 						if getNumBuildings(iAztecs, iStateReligionCathedral) >= 3:
 							win(iAztecs, 0)
 		
@@ -3320,8 +3320,8 @@ def getUHVHelp(iPlayer, iGoal):
 				iNumCathedrals = 0
 				iStateReligion = pAztecs.getStateReligion()
 				if iStateReligion >= 0:
-					iCathedral = iCathedral + 4*iStateReligion
-					iNumCathedrals = getNumBuildings(iAztecs, iCathedral)
+					iStateReligionCathedral = iCathedral + 4*iStateReligion
+					iNumCathedrals = getNumBuildings(iAztecs, iStateReligionCathedral)
 				aHelp.append(getIcon(iNumCathedrals >= 3) + localText.getText("TXT_KEY_VICTORY_STATE_RELIGION_CATHEDRALS", (gc.getReligionInfo(iStateReligion).getAdjectiveKey(), iNumCathedrals, 3)))
 			elif iGoal == 1:
 				iGenerals = pAztecs.getGreatGeneralsCreated()
