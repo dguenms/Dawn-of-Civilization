@@ -2811,12 +2811,6 @@ iShrine = iJewishShrine #generic
 iPlague = iNumBuildings
 iNumBuildingsPlague = iNumBuildings+1
 
-iNumBuildingsEmbassy = iNumBuildingsPlague+iNumPlayers
-(iEgyEmbassy, iChiEmbassy, iBabEmbassy, iGreEmbassy, iIndEmbassy, iCarEmbassy, iPlyEmbassy, iPerEmbassy, iRomEmbassy, iTamEmbassy, iEthEmbassy, 
-iKorEmbassy, iMayEmbassy, iByzEmbassy, iJapEmbassy, iVikEmbassy, iAraEmbassy, iTibEmbassy, iKhmEmbassy, iInoEmbassy, iMooEmbassy, iSpaEmbassy,
-iFraEmbassy, iEngEmbassy, HreEmbassy, iRusEmbassy, iMalEmbassy, iPolEmbassy, iPorEmbassy, iIncEmbassy, iItaEmbassy, iMonEmbassy, 
-iAztEmbassy, iMugEmbassy, iTurEmbassy, iThaEmbassy, iConEmbassy, iHolEmbassy, iGerEmbassy, iAmeEmbassy, iArgEmbassy, iBraEmbassy, iCanEmbassy) = range(iNumBuildingsPlague, iNumBuildingsPlague+iNumPlayers)
-
 #Civics
 iNumCivics = 36
 (iCivicTyranny, iCivicDynasticism, iCivicCityStates, iCivicTheocracy, iCivicAutocracy, iCivicRepublic,

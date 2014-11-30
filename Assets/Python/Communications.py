@@ -16,7 +16,6 @@ PyPlayer = PyHelpers.PyPlayer
 
 iNumMajorPlayers = con.iNumMajorPlayers
 iNumBuildingsPlague = con.iNumBuildingsPlague
-iNumBuildingsEmbassy = con.iNumBuildingsEmbassy
 
 #scrambled pools
 tPool1 = (con.iEgypt, -1, -1, -1, -1, -1,
@@ -172,48 +171,7 @@ class Communications:
 
 
         def onBuildingBuilt(self, iPlayer, iBuilding, city):
-
-                if (iBuilding >= iNumBuildingsPlague):
-                        iEmbassy = iBuilding - iNumBuildingsPlague
-                        if (gc.getPlayer(iEmbassy).isAlive() and gc.getPlayer(iEmbassy).getNumCities() > 0):
-                                availableCity = -1
-                                iMinNumEmbassies = 99
-                                for pyCity in PyPlayer(iEmbassy).getCityList():
-                                    
-                                        if (pyCity.GetCy().hasBuilding(iNumBuildingsPlague + iPlayer)):
-                                                #print (pyCity.GetCy().getName(), "HAS BUILDING")
-                                                return
-                                            
-                                        #if (not pyCity.GetCy().isNationalWondersMaxed()):
-                                        if (not pyCity.GetCy().isTeamWondersMaxed()):                                            
-                                                iNumEmbassies = 0
-                                                for j in range (con.iNumMajorPlayers):
-                                                        if (pyCity.GetCy().hasBuilding(iNumBuildingsPlague + j)):
-                                                                iNumEmbassies += 1
-                                                if (iNumEmbassies < iMinNumEmbassies):
-                                                        availableCity = pyCity.GetCy()
-                                                        iMinNumEmbassies = iNumEmbassies
-                                                        #print (pyCity.GetCy().getName(), "AVAILABLE")
-
-                                if (availableCity != -1):
-                                        availableCity.setHasRealBuilding(iNumBuildingsPlague + iPlayer, True)
-                                        if (gc.getPlayer(iEmbassy).isHuman()):
-                                                CyInterface().addMessage(iEmbassy, False, con.iDuration, CyTranslator().getText("TXT_KEY_EMBASSY_ESTABLISHED", (gc.getPlayer(iPlayer).getCivilizationAdjectiveKey(),)) + " " + availableCity.getName(), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-
+		return
 
         def onCityAcquired(self, city):
-	
-		print "Communications.onCityAcquired: " + str(city.getName())
-
-                for iLoopCiv in range (iNumMajorPlayers):
-                        if (city.hasBuilding(iNumBuildingsPlague + iLoopCiv)):
-				#print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)
-                                city.setHasRealBuilding(iNumBuildingsPlague + iLoopCiv, False)
-				#print "Delete building id: "+str(iNumBuildingsPlague + iLoopCiv)+" passed."
-                                #print ("embassy deleted on city acquired", city.getName())
-				
-		print "Communications.onCityAcquired: " + str(city.getName())
-
-                
-        
-
+		return

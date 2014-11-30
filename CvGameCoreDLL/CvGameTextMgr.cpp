@@ -9795,13 +9795,7 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TEAM_WONDER_LEFT", (GC.getBuildingClassInfo((BuildingClassTypes) kBuilding.getBuildingClassType()).getMaxTeamInstances() - GET_TEAM(GET_PLAYER(ePlayer).getTeam()).getBuildingClassCountPlusMaking((BuildingClassTypes)(kBuilding.getBuildingClassType())))));
 			}
 		}
-		//Rhye - start (embassy)
-		if (eBuilding >= NUM_BUILDINGS_PLAGUE) {
-			szBuffer.append(NEWLINE);
-			szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_EMBASSY_ABILITY"));
-		}
-		else {
-			//Rhye - end (embassy)
+
 		if (isNationalWonderClass((BuildingClassTypes)(kBuilding.getBuildingClassType())))
 		{
 			if (pCity == NULL || ePlayer == NO_PLAYER)
@@ -9815,7 +9809,6 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NATIONAL_WONDER_LEFT", (GC.getBuildingClassInfo((BuildingClassTypes) kBuilding.getBuildingClassType()).getMaxPlayerInstances() - GET_PLAYER(ePlayer).getBuildingClassCountPlusMaking((BuildingClassTypes)(kBuilding.getBuildingClassType())))));
 			}
 		}
-		} //Rhye (embassy)
 	}
 
 	if (kBuilding.getGlobalReligionCommerce() != NO_RELIGION)
