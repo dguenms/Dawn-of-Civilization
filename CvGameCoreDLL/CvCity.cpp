@@ -2399,31 +2399,6 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 	}
 	//Rhye - end
 
-	//Rhye - start (embassy)
-	if (eBuilding >= NUM_BUILDINGS_PLAGUE)
-	{
-		//return false;
-		
-		if (getOwnerINLINE() >= NUM_MAJOR_PLAYERS)
-			return false;
-		if (getOwnerINLINE() == (PlayerTypes)((int)eBuilding - NUM_BUILDINGS_PLAGUE))
-			return false;
-		if (!(GET_PLAYER(getOwnerINLINE()).canContact((PlayerTypes)((int)eBuilding - NUM_BUILDINGS_PLAGUE))))
-			return false;
-		if ((GET_TEAM(getTeam()).isAtWar((TeamTypes)((int)eBuilding - NUM_BUILDINGS_PLAGUE))))
-			return false;
-		if (!(GET_PLAYER((PlayerTypes)((int)eBuilding - NUM_BUILDINGS_PLAGUE))).isAlive())
-			return false;
-		//if (GC.getGameINLINE().getGameTurn() <= startingTurn[eBuilding - NUM_BUILDINGS_PLAGUE] + 2)
-		if (GC.getGameINLINE().getGameTurn() <= getTurnForYear(startingTurnYear[eBuilding - NUM_BUILDINGS_PLAGUE]) + 2) // edead
-			return false;
-		int iEspionagePoints = GET_TEAM(getTeam()).getEspionagePointsAgainstTeam((TeamTypes)((int)eBuilding - NUM_BUILDINGS_PLAGUE));
-		int iCost = 10;
-		if (iEspionagePoints < iCost)
-			return false;
-	}
-	//Rhye - end
-
 	// Leoreth: Moai Statues require 20 water tiles
 	if (eBuilding == MOAI_STATUES)
 	{

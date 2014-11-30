@@ -1442,31 +1442,6 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 			}
 		}
 
-		//Rhye - start (embassy)
-		if (getID() < NUM_MAJOR_PLAYERS && eTeam < NUM_MAJOR_PLAYERS) {
-			CvCity* pLoopCity;
-			int iLoop;
-			for (pLoopCity = GET_PLAYER((PlayerTypes)getID()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)getID()).nextCity(&iLoop))
-			{
-				if (pLoopCity->hasBuilding((BuildingTypes)(NUM_BUILDINGS_PLAGUE + (int)eTeam)))
-				{
-					pLoopCity->setHasRealBuilding((BuildingTypes)(NUM_BUILDINGS_PLAGUE + (int)eTeam), false);
-					break;
-				}
-			}
-			CvCity* pLoopCity2;
-			int iLoop2;
-			for (pLoopCity2 = GET_PLAYER((PlayerTypes)eTeam).firstCity(&iLoop2); pLoopCity2 != NULL; pLoopCity2 = GET_PLAYER((PlayerTypes)eTeam).nextCity(&iLoop2))
-			{
-				if (pLoopCity2->hasBuilding((BuildingTypes)(NUM_BUILDINGS_PLAGUE + getID())))
-				{
-					pLoopCity2->setHasRealBuilding((BuildingTypes)(NUM_BUILDINGS_PLAGUE + getID()), false);
-					break;
-				}
-			}
-		}
-		//Rhye - end
-
 		//Rhye - start comment (defensive pacts are canceled only with the friends of the enemy, to prevent a giant rumble caused by recursive war declaring) 
 		/*if (!(GET_TEAM(eTeam).isMinorCiv()))
 		{

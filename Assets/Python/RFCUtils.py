@@ -26,7 +26,6 @@ iBarbarian = con.iBarbarian
 iSettler = con.iSettler
 
 iNumBuildingsPlague = con.iNumBuildingsPlague
-iNumBuildingsEmbassy = con.iNumBuildingsEmbassy
 
 tCol = (
 '255,255,255',
@@ -780,14 +779,6 @@ class RFCUtils:
                                 self.setGoal(iPlayer, 1, 0)
                         if (self.getGoal(iPlayer, 2) == -1):
                                 self.setGoal(iPlayer, 2, 0)
-                                                
-        def clearEmbassies(self, iDeadCiv):
-                for i in range (iNumTotalPlayers):
-                        for pyCity in PyPlayer(i).getCityList():
-                                if (pyCity.GetCy().hasBuilding(iNumBuildingsPlague + iDeadCiv)):
-                                        pyCity.GetCy().setHasRealBuilding(iNumBuildingsPlague + iDeadCiv, False)
-                                        continue
-
 
         def clearPlague(self, iCiv):
                 for pyCity in PyPlayer(iCiv).getCityList():

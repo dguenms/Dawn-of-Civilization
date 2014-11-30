@@ -5156,13 +5156,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 												iTempValue /= 10 * 100;
 											}
 
-											//Rhye - start (embassy)
-											//iBuildingValue += 100;
-											if (iJ >= NUM_BUILDINGTYPES_PLAGUE)
-												iBuildingValue += 3; //(*numOfCivs)
-											else
-												iBuildingValue += 100;
-											//Rhye - end
+											iBuildingValue += 100;
 
                                             if ((GC.getBuildingClassInfo((BuildingClassTypes)iJ).getDefaultBuildingIndex()) != (GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iJ)))
                                             {

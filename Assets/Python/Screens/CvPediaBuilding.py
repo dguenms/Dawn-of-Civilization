@@ -281,12 +281,6 @@ class CvPediaBuilding:
 		
 		szSpecialText = CyGameTextMgr().getBuildingHelp(self.iBuilding, True, False, False, None)[1:]
 		
-		#Rhye - start
-		if (self.iBuilding >= con.iNumBuildingsPlague):
-                        szSpecialText = localText.getText("TXT_KEY_BUILDING_EMBASSY_EP", ())
-                        szSpecialText += "\n"
-                        szSpecialText += localText.getText("TXT_KEY_BUILDING_EMBASSY_ABILITY", ())
-		#Rhye - end
 		screen.addMultilineText(listName, szSpecialText, self.X_SPECIAL_PANE+5, self.Y_SPECIAL_PANE+30, self.W_SPECIAL_PANE-10, self.H_SPECIAL_PANE-35, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)	
 
 
@@ -337,34 +331,17 @@ class CvPediaBuilding:
 		listBuildings = []
 		iCount = 0
 		#for iBuilding in range(gc.getNumBuildingInfos()): #Rhye
-		for iBuilding in range(con.iNumBuildingsEmbassy): #Leoreth
+		for iBuilding in range(con.iNumBuildings): #Leoreth
 			if (self.getBuildingType(iBuilding) == bWonder and not gc.getBuildingInfo(iBuilding).isGraphicalOnly()):
-                                #Rhye - start
-				#listBuildings.append(iBuilding)
-				#iCount += 1
-				# Leoreth: don't display embassies and corporation headquarters
-                                if (iBuilding not in [con.iPlague, con.iBabylonGarden, con.iHarappanBath, con.iChinesePavillion, con.iNativeAmericaTotem, con.iIncanTerrace] and iBuilding not in range(con.iEgyEmbassy,con.iBraEmbassy+1) and not gc.getBuildingInfo(iBuilding).isGraphicalOnly()):
-                                        listBuildings.append(iBuilding)
-                                        iCount += 1
-				#Rhye - end
+                                listBuildings.append(iBuilding)
+                                iCount += 1
 		
 		listSorted = [(0,0)] * iCount
 		iI = 0
 		for iBuilding in listBuildings:
 			listSorted[iI] = (gc.getBuildingInfo(iBuilding).getDescription(), iBuilding)
 			iI += 1
-		#Rhye - start
-		#if (not bWonder):
-                        #listSorted.pop(67) #ziggurat
-                        #listSorted.pop(66) #rathaus
-                        #listSorted.pop(54) #garden
-                        #listSorted.pop(50) #hippodrome
-                        #listSorted.pop(42) #seowon
-                        #listSorted.pop(37) #totem                        
-                        #listSorted.pop(5) #ikhanda                        
-                        #listSorted.pop(1) #dun
-                #Rhye - end
-		#listSorted.sort() #Rhye
+			
 		return listSorted
 		
 													

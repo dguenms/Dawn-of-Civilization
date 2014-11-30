@@ -404,9 +404,6 @@ class CvTechChooser:
 		for j in range(gc.getNumBuildingClassInfos()):
 			bTechFound = 0
 			eLoopBuilding = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationBuildings(j)
-			
-			# Leoreth: don't show all embassies
-			if eLoopBuilding > con.iNumBuildingsPlague: continue
 
 			if (eLoopBuilding != -1):
 				if (gc.getBuildingInfo(eLoopBuilding).getPrereqAndTech() == i):

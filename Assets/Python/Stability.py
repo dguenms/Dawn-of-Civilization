@@ -645,9 +645,6 @@ def completeCollapse(iPlayer):
 	gc.getPlayer(iPlayer).killUnits()
 	utils.resetUHV(iPlayer)
 	utils.setLastTurnAlive(iPlayer, gc.getGame().getGameTurn())
-	
-	if iPlayer < con.iNumPlayers:
-		utils.clearEmbassies(iPlayer)
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if iPlayer == con.iByzantium:
