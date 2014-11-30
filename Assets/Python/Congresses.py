@@ -155,6 +155,14 @@ class Congress:
 		popup.addPopup(utils.getHumanID())
 		
 	def applyIntroductionEvent(self):
+		# check one more time if player has collapsed in the meantime
+		lRemove = []
+		for iLoopPlayer in self.lInvites:
+			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.add(iLoopPlayer)
+			
+		for iLoopPlayer in lRemove:
+			self.lInvites.remove(iLoopPlayer)
+	
 		# move AI claims here so they are made on the same turn as they are resolved - otherwise change of ownership might confuse things
 		for iLoopPlayer in self.lInvites:
 			if self.bPostWar and iLoopPlayer in self.lLosers: continue
