@@ -313,8 +313,9 @@ class Barbs:
 
                 if iGameTurn == getTurnForYear(-1200):
 			pJerusalem = gc.getMap().plot(73, 38)
-			if pJerusalem.isCity() and pJerusalem.getPlotCity().getOwner() >= con.iNumMajorPlayers:
-				pJerusalem.getPlotCity().setHasRealBuilding(con.iTempleOfSalomon, True)
+			if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(con.iTempleOfSolomon).getBuildingClassType()) == 0:
+				if pJerusalem.isCity() and pJerusalem.getPlotCity().getOwner() >= con.iNumMajorPlayers:
+					pJerusalem.getPlotCity().setHasRealBuilding(con.iTempleOfSalomon, True)
 			
 		if iGameTurn == getTurnForYear(con.tBirth[con.iInca]):
 			if utils.getHumanID() == con.iInca:
