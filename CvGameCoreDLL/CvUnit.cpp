@@ -293,7 +293,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	}
 	//Rhye - end
 
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)HIMEJI_CASTLE) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)RIFLING))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
 	{
 		if (getUnitCombatType() == 1 || getUnitCombatType() == 3) // melee and archery
 		{

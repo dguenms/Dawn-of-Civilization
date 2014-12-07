@@ -109,8 +109,8 @@ class Barbs:
 
         	
         def checkTurn(self, iGameTurn):
-            
-                #handicap level modifier
+		
+		#handicap level modifier
                 iHandicap = gc.getHandicapInfo(gc.getGame().getHandicapType()).getBarbarianSpawnModifier()
 		
 		# Leoreth: buff certain cities if independent / barbarian (imported from SoI)
@@ -197,8 +197,6 @@ class Barbs:
                 if (iGameTurn >= getTurnForYear(700) and iGameTurn <= getTurnForYear(1700)):
                         self.checkSpawn(iBarbarian, con.iTrireme, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 10, 0)
 
-
-
 		# Leoreth: Barbarians in Anatolia (Hittites), replace Hattusas spawn
 		if (iGameTurn >= getTurnForYear(-2000) and iGameTurn <= getTurnForYear(-800)):
 			self.checkSpawn(iBarbarian, con.iHittiteHuluganni, 1 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 16, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
@@ -222,12 +220,12 @@ class Barbs:
 			self.checkSpawn(iBarbarian, con.iHorseArcher, 3 + iHandicap, (64, 45), (69, 49), self.spawnInvaders, iGameTurn, 6, 2, ["TXT_KEY_ADJECTIVE_AVAR", "TXT_KEY_ADJECTIVE_BULGAR"])
 		if (iGameTurn >= getTurnForYear(900) and iGameTurn <= getTurnForYear(1200)):
 			self.checkSpawn(iBarbarian, con.iHorseArcher, 3 + iHandicap, (68, 48), (78, 50), self.spawnInvaders, iGameTurn, 8, 5, ["TXT_KEY_ADJECTIVE_CUMAN"])
-
-                #barbarians in central asia
+			
+		#barbarians in central asia
                 if (iGameTurn >= getTurnForYear(-1600) and iGameTurn < getTurnForYear(-850)):
-                        self.checkSpawn(iBarbarian, con.iSumerianVulture, iHandicap, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+                        self.checkSpawn(iBarbarian, con.iSumerianVulture, 1, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
                 if (iGameTurn >= getTurnForYear(-850) and iGameTurn < getTurnForYear(300)):
-                        self.checkSpawn(iBarbarian, con.iSumerianVulture, 1 + iHandicap, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+                        self.checkSpawn(iBarbarian, con.iSumerianVulture, 1, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
 			if not gc.getPlayer(con.iPersia).isAlive():
 				self.checkSpawn(iBarbarian, con.iHorseArcher, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(700)):
@@ -265,8 +263,8 @@ class Barbs:
                                 self.checkSpawn(iNative, con.iZuluImpi, 2 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 15, 4)
 		if iGameTurn >= getTurnForYear(1600) and iGameTurn <= getTurnForYear(1800):
 			self.checkSpawn(iNative, con.iKongoPombos, 2 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 10, 4)
-				
-                #west africa
+			
+		#west africa
                 if (iGameTurn >= getTurnForYear(450) and iGameTurn <= getTurnForYear(1700)):
                         if iGameTurn < getTurnForYear(1300):
 				sAdj = ["TXT_KEY_ADJECTIVE_GHANAIAN"]
@@ -294,7 +292,7 @@ class Barbs:
                         if (iGameTurn % 18 == 9):
                                 if (gc.getMap().plot(30, 13).getNumUnits() == 0):
                                         self.makeUnit(con.iNativeAmericaDogSoldier, iBarbarian, (30, 13), 3 + iHandicap, 1)
-					
+		
 		if iGameTurn >= getTurnForYear(1700) and iGameTurn <= getTurnForYear(1900):
 			self.checkSpawn(iBarbarian, con.iSiouxMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
 			
@@ -386,8 +384,7 @@ class Barbs:
 		else:
 			return False
 					
-	def clearUnits(self, iPlayer, tPlot):
-		
+	def clearUnits(self, iPlayer, tPlot):	
 		lHumanUnits = []
 		lOtherUnits = []
 	
@@ -513,7 +510,6 @@ class Barbs:
 		return plotList
 		
 	def getFreeLandTiles(self, tTL, tBR, bTerritory=False, bJungle=False):
-	
 		plotList = []
 	
 		for x in range(tTL[0], tBR[0]+1):
@@ -603,7 +599,7 @@ class Barbs:
 			tPlot = utils.getRandomEntry(plotList)
 			if not tPlot: break
 			plotList.remove(tPlot)
-			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, min(iUnitsLeft, iGroupSize), sAdj)
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, min(iUnitsLeft, iGroupSize), sAdj)
 			iUnitsLeft -= iGroupSize
 			
 	def spawnInvaders(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
@@ -614,7 +610,7 @@ class Barbs:
 		tPlot = utils.getRandomEntry(plotList)
 		
 		if tPlot:
-			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, iNumUnits, sAdj)
 			
 	def spawnUprising(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		''' Leoreth: represents uprisings of Natives against colonial settlements, especially North America
@@ -628,4 +624,4 @@ class Barbs:
 			tPlot = self.getCitySpawnPlot(tCity)
 			
 			if tPlot:
-				utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
+				utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, iNumUnits, sAdj)
