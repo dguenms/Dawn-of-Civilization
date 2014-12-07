@@ -12169,6 +12169,7 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 					AI_doAdvancedStart();
 				}*/
 				//Rhye - end comment
+
 				if (GC.getGameINLINE().getElapsedGameTurns() > 0)
 				{
 					if (isAlive())

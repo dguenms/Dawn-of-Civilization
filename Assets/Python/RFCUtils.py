@@ -1926,16 +1926,21 @@ class RFCUtils:
 		
 	def moveToClosestCity(self, unit):
 		city = gc.getMap().findCity(unit.getX(), unit.getY(), unit.getOwner(), TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
-		unit.setXYOld(city.getX(), city.getY())
+		x = city.getX()
+		y = city.getY()
+		
+		if x < 0 or y < 0: unit.kill(False, -1)
+		else: unit.setXY(x, y, False, True, False)
 		
 	def evacuate(self, tPlot):
-		x, y = tPlot
-		plot = gc.getMap().plot(x, y)
-		
+		x, y = tPlot		
 		lUnits = []
-		for i in range(plot.getNumUnits()):
-			unit = plot.getUnit(i)
-			lUnits.append(unit)
+		for i in (x-1, x, x+1):
+			for j in (y-1, y, y+1):
+				plot = gc.getMap().plot(i, j)
+				for k in range(plot.getNumUnits()):
+					unit = plot.getUnit(k)
+					lUnits.append(unit)
 			
 		for unit in lUnits:
 			self.moveToClosestCity(unit)
