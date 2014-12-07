@@ -1868,8 +1868,8 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 		
 			for x in range(iWorldX):
 				for y in range(iWorldY):
-					if utils.isPlotInArea((x, y), tNorthAmericaTL, tNorthAmericaBR) or utils.isPlotArea((x, y), tSouthCentralAmericaTL, tSouthCentralAmericaBR):
-						if gc.getMap().plot(x, y).isRevealed(iEuropean):
+					if utils.isPlotInArea((x, y), tNorthAmericaTL, tNorthAmericaBR) or utils.isPlotInArea((x, y), tSouthCentralAmericaTL, tSouthCentralAmericaBR):
+						if gc.getMap().plot(x, y).isRevealed(iEuropean, False):
 							lose(iMaya, 2)
 							return
 							
