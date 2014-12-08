@@ -376,7 +376,7 @@ tVictoryYears = (
 (1900, 1940, -1), # Germany
 (1930, 2000, 2000), # America
 (1880, 1940, 1960), # Mexico
-(19§0, 1960, 2000), # Argentina
+(1930, 1960, 2000), # Argentina
 (1870, 1920, 1950), # Colombia
 (1880, -1, 1950), # Brazil
 (   -1,  -1,   -1), # Canada
