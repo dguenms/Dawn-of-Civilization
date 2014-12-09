@@ -379,7 +379,7 @@ tVictoryYears = (
 (1930, 1960, 2000), # Argentina
 (1870, 1920, 1950), # Colombia
 (1880, -1, 1950), # Brazil
-(   -1,  -1,   -1), # Canada
+(-1, -1, -1), # Canada
 )
 
 # Leoreth: date-triggered respawn for certain civs
