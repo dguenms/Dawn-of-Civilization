@@ -4747,10 +4747,10 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 			return false;
 		}
 
-		/*if (!kOtherPlayer.isFullMember(eVoteSource))
+		if (!kOtherPlayer.isFullMember(eVoteSource))
 		{
 			return false;
-		}*/
+		}
 
 		if (kOtherPlayer.isHuman() && isOption(GAMEOPTION_ONE_CITY_CHALLENGE))
 		{
@@ -4765,6 +4765,11 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 		}
 
 		if (NO_PLAYER == kData.eOtherPlayer)
+		{
+			return false;
+		}
+
+		if (GET_PLAYER(kData.eOtherPlayer).getTeam() == getSecretaryGeneral(eVoteSource))
 		{
 			return false;
 		}
