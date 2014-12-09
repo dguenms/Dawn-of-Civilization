@@ -459,19 +459,12 @@ class RiseAndFall:
 
         def flipPopup(self, iNewCiv, tTopLeft, tBottomRight):
                 iHuman = utils.getHumanID()
-		if iHuman == iNewCiv:
-			print "Human and new civ are identical, there's something wrong here!"
+		
                 flipText = CyTranslator().getText("TXT_KEY_FLIPMESSAGE1", ())
-                for x in range(tTopLeft[0], tBottomRight[0]+1):
-                        for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if not (x,y) in tExceptions[utils.getReborn(iNewCiv)][iNewCiv]:
-                                	pCurrent = gc.getMap().plot( x, y )
-                                	if ( pCurrent.isCity()):
-                                        	if (pCurrent.getPlotCity().getOwner() == iHuman):
-                                                	#if (not pCurrent.getPlotCity().isCapital()): #exploitable
-                                                	if ( ((x, y) != tCapitals[utils.getReborn(iHuman)][iHuman]) and not (self.getCheatMode() == True and pCurrent.getPlotCity().isCapital())):
-                                                        	flipText += (pCurrent.getPlotCity().getName() + "\n")
-								
+		
+		for city in self.getConvertedCities(iNewCiv, tTopLeft, tBottomRight):
+			flipText += city.getName() + "\n"
+			
                 flipText += CyTranslator().getText("TXT_KEY_FLIPMESSAGE2", ())
                                                         
                 self.showPopup(7615, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), flipText, (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
@@ -2326,103 +2319,107 @@ class RiseAndFall:
 			utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
 			
                                 
-
-                                                
-        def convertSurroundingCities(self, iCiv, tTopLeft, tBottomRight, tExceptions = False):
-                iConvertedCitiesCount = 0
-                iNumHumanCities = 0
-                cityList = []
-                self.setSpawnWar(0)
+	def getConvertedCities(self, iPlayer, tTopLeft, tBottomRight, tExceptions = ()):
+		lCities = []
 		
-		if not tExceptions: tExceptions = con.tBirthAreaExceptions[iCiv]
-                
-                #collect all the cities in the spawn region
-                for x in range(tTopLeft[0], tBottomRight[0]+1):
-                        for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if not (x,y) in tExceptions:
-                                	pCurrent = gc.getMap().plot( x, y )
-					if pCurrent.isOwned() and pCurrent.isCore(pCurrent.getOwner()) and not pCurrent.isCore(iCiv): continue
-                                	if ( pCurrent.isCity()):
-                                        	if (pCurrent.getPlotCity().getOwner() != iCiv):
-                                                	cityList.append(pCurrent.getPlotCity())
-							
+		for city in utils.getAreaCities(tTopLeft, tBottomRight, tExceptions):
+			if city.plot().isCore(city.getOwner()) and not city.plot().isCore(iPlayer): continue
+			
+			if city.getOwner() != iPlayer:
+				lCities.append(city)
+			
 		# Leoreth: Byzantium also flips Roman cities in the eastern half of the empire outside of its core (Egypt, Mesopotamia)
-		if iCiv == iByzantium and pRome.isAlive():
+		if iPlayer == iByzantium and pRome.isAlive():
+			x, y = tCapitals[0][iByzantium]
 			for city in utils.getCityList(iRome):
-				if city.getX() >= tCapitals[0][iByzantium][0]-1 and city.getY() <= tCapitals[0][iByzantium][1]:
-					cityList.append(city)
+				if city.getX() >= x-1 and city.getY() <= y:
+					lCities.append(city)
 					
-		# Leoreth Canada also flips English/American/French cities in the Canada region
-		if iCiv == iCanada:
-			lCities = []
-			lCities.extend(utils.getCityList(iFrance))
-			lCities.extend(utils.getCityList(iEngland))
-			lCities.extend(utils.getCityList(iAmerica))
-			for city in lCities:
+		# Leoreth: Canada also flips English/American/French cities in the Canada region
+		if iPlayer == iCanada:
+			lCanadaCities = []
+			lCanadaCities.extend(utils.getCityList(iFrance))
+			lCanadaCities.extend(utils.getCityList(iEngland))
+			lCanadaCities.extend(utils.getCityList(iAmerica))
+			
+			for city in lCanadaCities:
 				if city.getRegionID() == con.rCanada and city.getX() < con.tCapitals[0][iCanada][0]:
-					cityList.append(city)
+					lCities.append(city)
 					
 		# Leoreth: remove capital locations
-		for city in cityList:
+		for city in lCities:
 			if city.getOwner() < con.iNumPlayers:
 				if (city.getX(), city.getY()) == con.tCapitals[0][city.getOwner()] and city.isCapital():
-					cityList.remove(city)
+					lCities.remove(city)
 
-                print ("Birth", iCiv)
+		return lCities
+                                                
+        def convertSurroundingCities(self, iPlayer, tTopLeft, tBottomRight, tExceptions = False):
+                iConvertedCitiesCount = 0
+                iNumHumanCities = 0
+                self.setSpawnWar(0)
+		
+		if not tExceptions: tExceptions = con.tBirthAreaExceptions[iPlayer]
+					
+		lEnemies = []
+		lCities = self.getConvertedCities(iPlayer, tTopLeft, tBottomRight, tExceptions)
+		
+		for city in lCities:
+			x = city.getX()
+			y = city.getY()
+			iHuman = utils.getHumanID()
+			iOwner = city.getOwner()
+			iCultureChange = 0
+			
+			# Case 1: Minor civilization
+			if iOwner in [iBarbarian, iIndependent, iIndependent2, iCeltia, iSeljuks, iNative]:
+				iCultureChange = 100
+				
+			# Case 2: Human city
+			elif iOwner == iHuman and gc.getPlayer(iHuman).getNumCities() <= 1:
+				iNumHumanCities += 1
+				
+			# Case 3: Other
+			else:
+				iCultureChange = 100
+				if iOwner not in lEnemies: lEnemies.append(iOwner)
+				
+			if iCultureChange > 0:
+				utils.completeCityFlip(x, y, iPlayer, iOwner, iCultureChange, True, False, False, True)
+				iConvertedCitiesCount += 1
+				
+		self.warOnSpawn(iPlayer, lEnemies)
+				
+		if iConvertedCitiesCount > 0:
+			if iHuman == iPlayer:
+				CyInterface().addMessage(iPlayer, True, con.iDuration, CyTranslator().getText("TXT_KEY_FLIP_TO_US", ()), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
+				
+                return iConvertedCitiesCount, iNumHumanCities
+		
+	def warOnSpawn(self, iPlayer, lEnemies):
+		if iPlayer == iCanada: return
+		elif iPlayer == iGermany and utils.getHumanID() != iPlayer: return
+		
+		if gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[iPlayer]) + 5:
+			for iEnemy in lEnemies:
+				tEnemy = gc.getTeam(iEnemy)
+				
+				if tEnemy.isAtWar(iPlayer): continue
+				if iPlayer == iByzantium and iEnemy == iRome: continue
+			
+				iRand = gc.getGame().getSorenRandNum(100, 'War on spawn')
+				if iRand >= tAIStopBirthThreshold[iEnemy]:
+					tEnemy.declareWar(iPlayer, True, WarPlanTypes.WARPLAN_ATTACKED_RECENT)
+					self.spawnAdditionalUnits(iPlayer)
+					
+	def spawnAdditionalUnits(self, iPlayer):
+		tPlot = tCapitals[utils.getReborn(iPlayer)][iPlayer]
+		
+		#if gc.getPlayer(iPlayer).getNumCities() > 0:
+		#	tPlot[0] = gc.getPlayer(iPlayer).getCapitalCity().getX()
+		#	tPlot[1] = gc.getPlayer(iPlayer).getCapitalCity().getY()
 
-                #for each city
-                if (len(cityList)):
-                        for i in range(len(cityList)):
-                                loopCity = cityList[i]
-                                loopX = loopCity.getX()
-                                loopY = loopCity.getY()
-                                print ("cityList", loopCity.getName(), (loopX, loopY))
-                                iHuman = utils.getHumanID()
-                                iOwner = loopCity.getOwner()
-                                iCultureChange = 0 #if 0, no flip; if > 0, flip will occur with the value as variable for utils.CultureManager()
-                                
-                                #case 1: barbarian/independent city
-                                if (iOwner == iBarbarian or iOwner == iIndependent or iOwner == iIndependent2 or iOwner == iCeltia or iOwner == iSeljuks or iOwner == iNative):
-                                        iCultureChange = 100
-                                #case 2: human city
-                                elif (iOwner == iHuman and not (loopX == tCapitals[utils.getReborn(iHuman)][iHuman] and loopY == tCapitals[utils.getReborn(iHuman)][iHuman]) and not gc.getPlayer(iHuman).getNumCities() <= 1 and not (self.getCheatMode() == True and loopCity.isCapital())):
-                                        if (iNumHumanCities == 0):
-                                                iNumHumanCities += 1
-                                #case 3: other
-                                elif (not loopCity.isCapital() or (iOwner == iIndia and iCiv == iMughals and utils.getHumanID() != iOwner)):   #utils.debugTextPopup( 'OTHER' )                                
-					iCultureChange = 100
-					bNoWar = (iCiv == con.iCanada or (utils.getHumanID() != iCiv and iCiv == con.iGermany))
-					if (gc.getGame().getGameTurn() <= getTurnForYear(con.tBirth[iCiv]) + 5): #if we're during a birth
-						rndNum = gc.getGame().getSorenRandNum(100, 'odds')
-						if (rndNum >= tAIStopBirthThreshold[iOwner]) and not bNoWar and not (iCiv == iByzantium and iOwner == iRome):
-							print (iOwner, "stops birth", iCiv, "rndNum:", rndNum, "threshold:", tAIStopBirthThreshold[iOwner])
-							if (not gc.getTeam(gc.getPlayer(iOwner).getTeam()).isAtWar(iCiv)):                                                                        
-								gc.getTeam(gc.getPlayer(iOwner).getTeam()).declareWar(iCiv, False, -1)
-								if (gc.getPlayer(iCiv).getNumCities() > 0): #this check is needed, otherwise game crashes
-									print ("capital:", gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY())
-									if (gc.getPlayer(iCiv).getCapitalCity().getX() != -1 and gc.getPlayer(iCiv).getCapitalCity().getY() != -1):
-										self.createAdditionalUnits(iCiv, (gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY()))
-									else:
-										self.createAdditionalUnits(iCiv, tCapitals[utils.getReborn(iCiv)][iCiv])
-                                                                        
-                                if (iCultureChange > 0):
-                                        utils.cultureManager((loopX,loopY), iCultureChange, iCiv, iOwner, True, False, False)
-                                        
-                                        utils.flipUnitsInCityBefore((loopX,loopY), iCiv, iOwner)
-                                        self.setTempFlippingCity((loopX,loopY)) #necessary for the (688379128, 0) bug
-                                        utils.flipCity((loopX,loopY), 0, 0, iCiv, [iOwner])                                                
-                                        utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iCiv)
-
-                                        iConvertedCitiesCount += 1
-                                        print ("iConvertedCitiesCount", iConvertedCitiesCount)
-
-                if (iConvertedCitiesCount > 0):
-                        if (gc.getPlayer(iCiv).isHuman()):
-                                CyInterface().addMessage(iCiv, True, con.iDuration, CyTranslator().getText("TXT_KEY_FLIP_TO_US", ()), "", 0, "", ColorTypes(con.iGreen), -1, -1, True, True)
-
-                return (iConvertedCitiesCount, iNumHumanCities)
-
-
+		self.createAdditionalUnits(iPlayer, tPlot)
 
         def convertSurroundingPlotCulture(self, iCiv, tTopLeft, tBottomRight, tExceptions = False):
                 
