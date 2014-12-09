@@ -474,7 +474,7 @@ def militaryCrisis(iPlayer, iCrisisLevel):
 		
 def getPossibleMinors(iPlayer):
 
-	if utils.getCivsWithNationalism() == 0 and iPlayer in [con.iMaya, con.iAztecs, con.iInca, con.iMali, con.iEthiopia, con.iCongo]:
+	if gc.getGame().countKnownTechNumTeams(con.iNationalism) == 0 and iPlayer in [con.iMaya, con.iAztecs, con.iInca, con.iMali, con.iEthiopia, con.iCongo]:
 		return [con.iNative]
 		
 	if gc.getGame().getCurrentEra() <= con.iMedieval:
@@ -2277,17 +2277,3 @@ def rebellionPopup(iRebelCiv):
 		       CyTranslator().getText("TXT_KEY_REBELLION_TEXT", (gc.getPlayer(iRebelCiv).getCivilizationAdjectiveKey(),)), \
 		       (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), \
 			CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
-			
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
