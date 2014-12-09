@@ -2375,8 +2375,8 @@ def countResources(iPlayer, iBonus):
 		if iLoopPlayer != iPlayer:
 			pLoopPlayer = gc.getPlayer(iLoopPlayer)
 			if pLoopPlayer.isAlive() and gc.getTeam(pLoopPlayer.getTeam()).isVassal(iPlayer):
-				iNumBonus += pPlayer.getNumAvailableBonuses(iBonus)
-				iNumBonus -= pPlayer.getBonusImport(iBonus)
+				iNumBonus += pLoopPlayer.getNumAvailableBonuses(iBonus)
+				iNumBonus -= pLoopPlayer.getBonusImport(iBonus)
 				
 	return iNumBonus
 	
