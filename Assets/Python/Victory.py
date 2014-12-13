@@ -1666,12 +1666,12 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					
 	# third Polish goal: build a total of three Catholic, Orthodox and Protestant Cathedrals by 1600 AD
 	elif iPlayer == iPoland:
-		if isPossible(iPoland, 0):
+		if isPossible(iPoland, 2):
 			iCatholic = getNumBuildings(iPoland, iChristianCathedral)
 			iOrthodox = getNumBuildings(iPoland, iOrthodoxCathedral)
 			iProtestant = getNumBuildings(iPoland, iJewishCathedral)
 			if iCatholic + iOrthodox + iProtestant >= 3:
-				win(iPoland, 0)
+				win(iPoland, 2)
 				
 	elif iPlayer == iAztecs:
 	
