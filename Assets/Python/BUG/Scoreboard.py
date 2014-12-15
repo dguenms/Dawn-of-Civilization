@@ -32,7 +32,7 @@ gc = CyGlobalContext()
 Z_DEPTH = -0.3
 
 # Columns IDs
-NUM_PARTS = 26
+NUM_PARTS = 27
 (
 	ALIVE,
 	WAR,
@@ -59,7 +59,8 @@ NUM_PARTS = 26
 	WAITING,
 	NET_STATS,
 	OOS,
-	STABILITY
+	STABILITY,
+	COUNTERESPIONAGE_TURNS,
 ) = range(NUM_PARTS)
 
 # Types
@@ -110,6 +111,7 @@ def init():
 	columns.append(Column('T', RESEARCH, SPECIAL))
 	columns.append(Column('U', RESEARCH_TURNS, DYNAMIC))
 	columns.append(Column('E', ESPIONAGE, FIXED, smallSymbol(FontSymbols.COMMERCE_ESPIONAGE_CHAR)))
+	columns.append(Column('e', COUNTERESPIONAGE_TURNS, DYNAMIC))
 	columns.append(Column('N', TRADE, FIXED, smallSymbol(FontSymbols.TRADE_CHAR)))
 	columns.append(Column('B', BORDERS, FIXED, smallSymbol(FontSymbols.OPEN_BORDERS_CHAR)))
 	columns.append(Column('D', PACT, FIXED, smallSymbol(FontSymbols.DEFENSIVE_PACT_CHAR)))
@@ -259,6 +261,9 @@ class Scoreboard:
 		
 	def setEspionage(self):
 		self._set(ESPIONAGE)
+		
+	def setCounterEspionageTurns(self, value):
+		self._set(COUNTERESPIONAGE_TURNS, smallText(value))
 		
 	def setTrade(self):
 		self._set(TRADE, True, 

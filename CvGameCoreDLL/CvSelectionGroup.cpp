@@ -726,6 +726,9 @@ CvPlot* CvSelectionGroup::lastMissionPlot()
 		case MISSION_BUILD:
 		case MISSION_LEAD:
 		case MISSION_ESPIONAGE:
+		case MISSION_RESOLVE_CRISIS:
+		case MISSION_REFORM_GOVERNMENT:
+		case MISSION_DIPLOMATIC_MISSION:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -1077,6 +1080,28 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			}
 			break;
 
+		// Leoreth
+		case MISSION_RESOLVE_CRISIS:
+			if (pLoopUnit->canResolveCrisis(pPlot))
+			{
+				return true;
+			}
+			break;
+
+		case MISSION_REFORM_GOVERNMENT:
+			if (pLoopUnit->canReformGovernment(pPlot))
+			{
+				return true;
+			}
+			break;
+
+		case MISSION_DIPLOMATIC_MISSION:
+			if (pLoopUnit->canDiplomaticMission(pPlot))
+			{
+				return true;
+			}
+			break;
+
 		case MISSION_DIE_ANIMATION:
 			return false;
 			break;
@@ -1267,6 +1292,9 @@ void CvSelectionGroup::startMission()
 		case MISSION_BUILD:
 		case MISSION_LEAD:
 		case MISSION_ESPIONAGE:
+		case MISSION_RESOLVE_CRISIS: // Leoreth
+		case MISSION_REFORM_GOVERNMENT: // Leoreth
+		case MISSION_DIPLOMATIC_MISSION: // Leoreth
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -1509,6 +1537,28 @@ void CvSelectionGroup::startMission()
 						bAction = true;
 					}
 					pUnitNode = NULL; // allow one unit at a time to do espionage
+					break;
+
+				// Leoreth:
+				case MISSION_RESOLVE_CRISIS:
+					if (pLoopUnit->resolveCrisis())
+					{
+						bAction = true;
+					}
+					break;
+
+				case MISSION_REFORM_GOVERNMENT:
+					if (pLoopUnit->reformGovernment())
+					{
+						bAction = true;
+					}
+					break;
+
+				case MISSION_DIPLOMATIC_MISSION:
+					if (pLoopUnit->diplomaticMission())
+					{
+						bAction = true;
+					}
 					break;
 
 				case MISSION_DIE_ANIMATION:
@@ -1775,6 +1825,9 @@ void CvSelectionGroup::continueMission(int iSteps)
 				case MISSION_GOLDEN_AGE:
 				case MISSION_LEAD:
 				case MISSION_ESPIONAGE:
+				case MISSION_RESOLVE_CRISIS: // Leoreth
+				case MISSION_REFORM_GOVERNMENT: // Leoreth
+				case MISSION_DIPLOMATIC_MISSION: // Leoreth
 				case MISSION_DIE_ANIMATION:
 					break;
 
@@ -1874,6 +1927,9 @@ void CvSelectionGroup::continueMission(int iSteps)
 			case MISSION_GOLDEN_AGE:
 			case MISSION_LEAD:
 			case MISSION_ESPIONAGE:
+			case MISSION_RESOLVE_CRISIS: // Leoreth
+			case MISSION_REFORM_GOVERNMENT: // Leoreth
+			case MISSION_DIPLOMATIC_MISSION: // Leoreth
 			case MISSION_DIE_ANIMATION:
 				bDone = true;
 				break;

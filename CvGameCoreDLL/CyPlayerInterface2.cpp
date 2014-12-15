@@ -92,5 +92,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("countRequiredSlaves", &CyPlayer::countRequiredSlaves, "int ()")
 		.def("canRespawn", &CyPlayer::canRespawn, "bool ()")
 		.def("canEverRespawn", &CyPlayer::canEverRespawn, "bool ()")
+		.def("getEspionageExperience", &CyPlayer::getEspionageExperience, "int ()")
+		.def("greatSpyThreshold", &CyPlayer::greatSpyThreshold, "int ()")
 		;
 }

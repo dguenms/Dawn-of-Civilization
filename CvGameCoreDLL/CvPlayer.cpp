@@ -428,8 +428,10 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iGlobalHurryModifier = 0;
 	m_iGreatPeopleCreated = 0;
 	m_iGreatGeneralsCreated = 0;
+	m_iGreatSpiesCreated = 0; // Leoreth
 	m_iGreatPeopleThresholdModifier = 0;
 	m_iGreatGeneralsThresholdModifier = 0;
+	m_iGreatSpiesThresholdModifier = 0; // Leoreth
 	m_iGreatPeopleRateModifier = 0;
 	m_iGreatGeneralRateModifier = 0;
 	m_iDomesticGreatGeneralRateModifier = 0;
@@ -510,6 +512,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iTechScore = 0;
 	m_iWondersScore = 0;
 	m_iCombatExperience = 0;
+	m_iEspionageExperience = 0; // Leoreth
 	m_iPopRushHurryCount = 0;
 	m_iInflationModifier = 0;
 	m_uiStartTime = 0;
@@ -537,6 +540,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bReborn = false;
 	m_iLatestRebellionTurn = 0;
 	m_iPersecutionCountdown = 0;
+	m_iNoAnarchyTurns = 0;
 
 	m_eID = eID;
 	updateTeamType();
@@ -2893,6 +2897,11 @@ void CvPlayer::doTurn()
 	if (getPersecutionCountdown() > 0)
 	{
 		setPersecutionCountdown(getPersecutionCountdown() - 1);
+	}
+
+	if (getNoAnarchyTurns() > 0)
+	{
+		changeNoAnarchyTurns(-1);
 	}
 
 	CvEventReporter::getInstance().endPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
@@ -9579,144 +9588,71 @@ int CvPlayer::greatPeopleThreshold(bool bMilitary) const
 	iThreshold *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getGreatPeoplePercent();
 	iThreshold /= 100;
 
-	//Rhye - start switch
-	int result = iThreshold;
-	/*switch (getID())
-	{
-		case EGYPT:
-			result = (iThreshold*140/100);
-			break;
-		case INDIA:
-			result = (iThreshold*140/100);
-			break;
-		case CHINA:
-			result = (iThreshold*140/100);
-			break;
-		case BABYLONIA:
-			result = (iThreshold*140/100);
-			break;
-		case GREECE:
-			result = (iThreshold*110/100);
-			break;
-		case PERSIA:
-			result = (iThreshold*110/100);
-			break;
-		case CARTHAGE:
-			result = (iThreshold*110/100);
-			break;
-		case ROME:
-            if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                result = (iThreshold*110/100);
-            else
-                result = (iThreshold*77/100);   // Leoreth - Renaissance Italy
-			break;
-		case JAPAN:
-			result = (iThreshold*110/100);
-			break;
-		case ETHIOPIA:
-			if (getCurrentEra() <= 2) //help their UHV
-				result = (iThreshold*80/100);
-			else
-				result = (iThreshold*110/100);
-			break;
-        case KOREA:
-            result = (iThreshold*110/100);
-            break;
-		case MAYA:
-			result = (iThreshold*100/100);
-			break;
-        case BYZANTIUM:
-            result = (iThreshold*120/100);
-            break;
-		case VIKING:
-			result = (iThreshold*90/100);
-			break;
-		case ARABIA:
-			result = (iThreshold*80/100);
-			break;
-		case KHMER:
-			result = (iThreshold*90/100);
-			break;
-		case INDONESIA:
-			result = (iThreshold*90/100);
-			break;
-		case FRANCE:
-			result = (iThreshold*70/100);
-			break;
-		case SPAIN:
-			result = (iThreshold*77/100);
-			break;
-		case ENGLAND:
-			result = (iThreshold*74/100);
-			break;
-		case GERMANY:
-			result = (iThreshold*77/100);
-			break;
-		case RUSSIA:
-			result = (iThreshold*77/100);
-			break;
-		case NETHERLANDS:
-			result = (iThreshold*70/100);   //Leoreth: slightly reduced, 73 before
-			break;
-		case MALI:
-			result = (iThreshold*80/100);
-			break;
-		case TURKEY:
-			result = (iThreshold*77/100);
-			break;
-		case PORTUGAL:
-			result = (iThreshold*73/100);
-			break;
-		case INCA:
-			result = (iThreshold*70/100);
-			break;
-		case MONGOLIA:
-			result = (iThreshold*70/100);
-			break;
-		case AZTEC:
-			result = (iThreshold*70/100);
-			break;
-		case AMERICA:
-			result = (iThreshold*64/100);
-			break;
-		default:
-			result = (iThreshold*100/100);
-			break;
-	}*/
+	// Leoreth: civilization modifiers
+	iThreshold *= greatPeopleModifier();
+	iThreshold /= 100;
+	
+	return std::max(1, iThreshold);
+}
 
+// Leoreth
+int CvPlayer::greatSpyThreshold() const
+{
+	int iThreshold = ((GC.getDefineINT("GREAT_GENERALS_THRESHOLD") * std::max(0, (getGreatSpiesThresholdModifier() + 100))) / 100);
+
+	iThreshold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGreatPeoplePercent();
+	iThreshold /= std::max(1, GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent());
+
+	iThreshold *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getGreatPeoplePercent();
+	iThreshold /= 100;
+
+	// Leoreth: civilization modifiers
+	iThreshold *= greatPeopleModifier();
+	iThreshold /= 100;
+
+	return std::max(1, iThreshold);
+}
+
+// Leoreth
+int CvPlayer::greatPeopleModifier() const
+{
+	int iModifier = 100;
+	
 	if (getID() < NUM_MAJOR_PLAYERS)
 	{
-		result = iThreshold * greatPeopleThresholdArray[getID()] / 100;
-	}else
-	{
-		result = iThreshold * 100 / 100;
+		iModifier = greatPeopleThresholdArray[getID()];
 	}
 
 	// handle respawns and era buffs explicitly here (overwrite)
 	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
 	{
 		if (getID() == ROME)
-			result = iThreshold * 77 / 100;
-		if (getID() == PERSIA)
-			result = iThreshold * 80 / 100;
-		if (getID() == AZTEC)
-			result = iThreshold * 70 / 100;
+			iModifier = 77;
+		else if (getID() == PERSIA)
+			iModifier = 80;
+		else if (getID() == AZTEC)
+			iModifier = 80;
 	}
 
 	if (getID() == ETHIOPIA)
 	{
 		if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() <= 2)
-			result = iThreshold * 80 / 100;
+		{
+			iModifier *= 80;
+			iModifier /= 100;
+		}
 	}
 
-	if (getScenario() >= SCENARIO_600AD) //late start condition
-		if (getID() < VIKING) {
-			result *= 87;
-			result /= 100;
+	if (getScenario() >= SCENARIO_600AD)
+	{
+		if (getID() < VIKING) 
+		{
+			iModifier *= 87;
+			iModifier /= 100;
 		}
-	return std::max(1, result);
-	//return std::max(1, iThreshold);
-	//Rhye - end
+	}
+
+	return iModifier;
 }
 
 
@@ -10111,6 +10047,8 @@ void CvPlayer::changeAnarchyTurns(int iChange)
 
 int CvPlayer::getMaxAnarchyTurns() const
 {
+	if (getNoAnarchyTurns() > 0) return 0;
+
 	return m_iMaxAnarchyTurns;
 }
 
@@ -10212,6 +10150,17 @@ void CvPlayer::incrementGreatGeneralsCreated()
 	m_iGreatGeneralsCreated++;
 }
 
+// Leoreth
+int CvPlayer::getGreatSpiesCreated() const
+{
+	return m_iGreatSpiesCreated;
+}
+
+void CvPlayer::incrementGreatSpiesCreated()
+{
+	m_iGreatSpiesCreated++;
+}
+
 int CvPlayer::getGreatPeopleThresholdModifier() const
 {
 	return m_iGreatPeopleThresholdModifier;
@@ -10233,6 +10182,19 @@ int CvPlayer::getGreatGeneralsThresholdModifier() const
 void CvPlayer::changeGreatGeneralsThresholdModifier(int iChange)
 {
 	m_iGreatGeneralsThresholdModifier += iChange;
+}
+
+
+// Leoreth
+int CvPlayer::getGreatSpiesThresholdModifier() const
+{
+	return m_iGreatSpiesThresholdModifier;
+}
+
+
+void CvPlayer::changeGreatSpiesThresholdModifier(int iChange)
+{
+	m_iGreatSpiesThresholdModifier += iChange;
 }
 
 
@@ -11873,6 +11835,68 @@ void CvPlayer::changeCombatExperience(int iChange)
 	setCombatExperience(getCombatExperience() + iChange);
 }
 
+// Leoreth
+int CvPlayer::getEspionageExperience() const
+{
+	return m_iEspionageExperience;
+}
+
+// Leoreth
+void CvPlayer::setEspionageExperience(int iExperience)
+{
+	FAssert(iExperience >= 0);
+
+	if (iExperience != getEspionageExperience())
+	{
+		m_iEspionageExperience = iExperience;
+
+		if (!isBarbarian())
+		{
+			int iExperienceThreshold = greatSpyThreshold();
+			if (m_iEspionageExperience >= iExperienceThreshold && iExperienceThreshold > 0)
+			{
+				// create great person
+				CvCity* pBestCity = NULL;
+				int iBestValue = -MAX_INT;
+				int iLoop;
+				for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+				{
+					int iValue = 4 * GC.getGameINLINE().getSorenRandNum(getNumCities(), "Great Spy City Selection");
+
+					iValue += pLoopCity->getCommerceRate(COMMERCE_ESPIONAGE);
+
+					if (iValue > iBestValue)
+					{
+						pBestCity = pLoopCity;
+						iBestValue = iValue;
+					}
+				}
+
+				if (pBestCity)
+				{
+                    // edead: start unit class fix for Great Generals
+					int iI;
+					for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
+					{
+						if (GC.getUnitInfo((UnitTypes)iI).getEspionagePoints() > 0)
+						{
+							break;
+						}
+					}
+					UnitTypes eGreatGeneralType = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)(GC.getUnitInfo((UnitTypes)iI).getUnitClassType()))));
+					pBestCity->createGreatPeople(eGreatGeneralType, false, true);
+					setEspionageExperience(getEspionageExperience() - iExperienceThreshold);
+				}
+			}
+		}
+	}
+}
+
+// Leoreth
+void CvPlayer::changeEspionageExperience(int iChange)
+{
+	setEspionageExperience(getEspionageExperience() + iChange);
+}
 
 bool CvPlayer::isConnected() const
 {
@@ -16207,7 +16231,10 @@ int CvPlayer::getEspionageMissionCostModifier(EspionageMissionTypes eMission, Pl
 	// Spy presence mission cost alteration
 	if (NULL != pSpyUnit)
 	{
-		iModifier *= 100 - (pSpyUnit->getFortifyTurns() * GC.getDefineINT("ESPIONAGE_EACH_TURN_UNIT_COST_DECREASE"));
+		//SuperSpies: TSHEEP - add in discount promotions
+		//iModifier *= 100 - (pSpyUnit->getFortifyTurns() * GC.getDefineINT("ESPIONAGE_EACH_TURN_UNIT_COST_DECREASE"));
+		iModifier *= 100 - (std::min(5,(pSpyUnit->getFortifyTurns() + (pSpyUnit->getUpgradeDiscount()/10))) * GC.getDefineINT("ESPIONAGE_EACH_TURN_UNIT_COST_DECREASE"));
+		//SuperSpies: TSHEEP End
 		iModifier /= 100;
 	}
 
@@ -16258,18 +16285,43 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 		if (NULL != pPlot)
 		{
 			// Blow it up
+			//SuperSpies: TSHEEP - Add nearby city to plot destruction message (if any)
+			CvCity* pNearCity = GC.getMapINLINE().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE(), eTargetPlayer, GET_PLAYER(eTargetPlayer).getTeam(), true, false);
 			if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 			{
-				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED", GC.getImprovementInfo(pPlot->getImprovementType()).getDescription()).GetCString();
+				if (pNearCity != NULL)
+				{
+					szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED_NEAR_CITY", GC.getImprovementInfo(pPlot->getImprovementType()).getDescription(), pNearCity->getNameKey()).GetCString();
+				}
+				else
+				{
+					szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED", GC.getImprovementInfo(pPlot->getImprovementType()).getDescription()).GetCString();
+				}
 				pPlot->setImprovementType((ImprovementTypes)(GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage()));
 				bSomethingHappened = true;
 			}
 			else if (pPlot->getRouteType() != NO_ROUTE)
 			{
-				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED", GC.getRouteInfo(pPlot->getRouteType()).getDescription()).GetCString();
+				if (pNearCity != NULL)
+				{
+					szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED_NEAR_CITY", GC.getRouteInfo(pPlot->getRouteType()).getDescription(), pNearCity->getNameKey()).GetCString();
+				}
+				else
+				{
+					szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED", GC.getRouteInfo(pPlot->getRouteType()).getDescription()).GetCString();
+				}
 				pPlot->setRouteType(NO_ROUTE, true);
 				bSomethingHappened = true;
 			}
+			
+			//SuperSpies: TSHEEP Add Radiation Effect
+			if (pSpyUnit->isAmphib())
+			{
+				pPlot->setFeatureType((FeatureTypes)(GC.getDefineINT("NUKE_FEATURE")));
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_ESPIONAGE_USED_RADIATION").GetCString());
+			}
+			//SuperSpies: TSHEEP End
 
 			if (bSomethingHappened)
 			{
@@ -16292,7 +16344,11 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 			if (NULL != pCity)
 			{
 				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED_IN", GC.getBuildingInfo(eTargetBuilding).getDescription(), pCity->getNameKey()).GetCString();
-				pCity->setNumRealBuilding(eTargetBuilding, pCity->getNumRealBuilding(eTargetBuilding) - 1);
+				//SuperSpies: TSHEEP - This part of the fix may not actually be necessary
+				//During the test game though it appeared that the AIs had somehow managed to accrue more than one instance of the same building, although it did not display as such.
+				//pCity->setNumRealBuilding(eTargetBuilding, pCity->getNumRealBuilding(eTargetBuilding) - 1);
+				pCity->setNumRealBuilding(eTargetBuilding, 0);//Setting the number of buildings to 0 guarantees a successful destruction, only drawback would be mods that use multiple instances of buildings, base game does not appear to.
+				//SuperSpies: TSHEEP - End
 
 				bSomethingHappened = true;
 				bShowExplosion = true;
@@ -16343,8 +16399,30 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 	}
 
 	//////////////////////////////
-	// Destroy Unit
+	// SuperSpies: glider1 start
+	// Assassinate(Destroy Unit)
 
+	if (kMission.getDestroyUnitCostFactor() > 0)
+	{
+
+		if (pSpyUnit->canAssassin(pPlot, false))
+		{
+			SpecialistTypes theGreatSpecialistTarget = (SpecialistTypes)iExtraData;
+			if (theGreatSpecialistTarget >= 7)
+			{
+				//Assassinate
+				CvCity* pCity = pPlot->getPlotCity();
+				if (NULL != pCity)
+				{
+					pCity->changeFreeSpecialistCount(theGreatSpecialistTarget, -1);
+					szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_ASSASSINATED", GC.getSpecialistInfo(theGreatSpecialistTarget).getDescription(), pCity->getNameKey()).GetCString();
+					bSomethingHappened = true;
+				}
+			}
+		}
+	}
+	
+/* Commented out: Original Code (see BTS 3.17 code)
 	if (kMission.getDestroyUnitCostFactor() > 0)
 	{
 		if (NO_PLAYER != eTargetPlayer)
@@ -16364,13 +16442,63 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 			}
 		}
 	}
+*/
 
 	//////////////////////////////
-	// Buy Unit
+	// SuperSpies: glider1 start
+	// (Bribe)Buy Unit
 
 	if (kMission.getBuyUnitCostFactor() > 0)
 	{
-		if (NO_PLAYER != eTargetPlayer)
+		if(pSpyUnit->canBribe(pPlot, false))
+		{
+			CvUnit* pTargetUnit;
+			if (pPlot->plotCheck(PUF_isOtherTeam, getID(), -1, NO_PLAYER, NO_TEAM, PUF_isVisible, getID()))
+			{
+				for (int i = 0; i < pPlot->getNumUnits(); i++) 
+				{
+					pTargetUnit = pPlot->getUnitByIndex(i);
+					if (NULL != pTargetUnit && pTargetUnit->AI_getUnitAIType() == UNITAI_WORKER) 
+					{
+						if (pTargetUnit->getTeam() == eTargetTeam) break;
+						pTargetUnit = NULL;
+					}
+				}
+			}
+								
+			if (NO_PLAYER != eTargetPlayer)
+			{
+				if (NULL != pTargetUnit)
+				{
+					if (pTargetUnit->getTeam() == eTargetTeam)
+					{
+						FAssert(pTargetUnit->plot() == pPlot);
+						CvCity* pNearCity = GC.getMapINLINE().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE(), eTargetPlayer, GET_PLAYER(eTargetPlayer).getTeam(), true, false);
+						if (pNearCity != NULL)
+							szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_BRIBED_NEAR_CITY", pTargetUnit->getNameKey(), pNearCity->getNameKey()).GetCString();
+						else
+							szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_SOMETHING_BRIBED", pTargetUnit->getNameKey()).GetCString();
+
+						int iX = pTargetUnit->getX_INLINE();
+						int iY = pTargetUnit->getY_INLINE();
+						pTargetUnit->kill(false, getID());
+						CvUnit* acquiredWorker = initUnit(pTargetUnit->getUnitType(), iX, iY, UNITAI_WORKER);
+						CvCity* pCapital = this->getCapitalCity();
+						if (NULL != pCapital)
+						{
+							iX = pCapital->getX_INLINE();
+							iY = pCapital->getY_INLINE();
+							acquiredWorker->setXY(iX, iY, false, false, false);
+							acquiredWorker->finishMoves();
+						}	
+						bSomethingHappened = true;
+					}
+				}
+			}
+		}
+	}
+
+/*		if (NO_PLAYER != eTargetPlayer)
 		{
 			int iTargetUnitID = iExtraData;
 
@@ -16390,8 +16518,11 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 
 				bSomethingHappened = true;
 			}
+
 		}
-	}
+*/
+	// SuperSpies: glider1 end
+
 
 	//////////////////////////////
 	// Buy City
@@ -16466,7 +16597,10 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 			if (NULL != pCity)
 			{
 				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_CITY_POISONED", pCity->getNameKey()).GetCString();
-				pCity->changeEspionageHealthCounter(kMission.getCityPoisonWaterCounter());
+				//SuperSpies: TSHEEP Modify Unhappiness Based on Promotions
+				//pCity->changeEspionageHealthCounter(kMission.getCityPoisonWaterCounter());
+				pCity->changeEspionageHealthCounter((kMission.getCityPoisonWaterCounter() * (100 + pSpyUnit->getExtraFriendlyHeal()))/100);
+				//SuperSpies: TSHEEP End
 
 				bShowExplosion = true;
 				bSomethingHappened = true;
@@ -16486,7 +16620,10 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 			if (NULL != pCity)
 			{
 				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_CITY_UNHAPPY", pCity->getNameKey()).GetCString();
-				pCity->changeEspionageHappinessCounter(kMission.getCityUnhappinessCounter());
+				//SuperSpies: TSHEEP Modify Unhappiness Based on Promotions
+				//pCity->changeEspionageHappinessCounter(kMission.getCityUnhappinessCounter());
+				pCity->changeEspionageHappinessCounter((kMission.getCityUnhappinessCounter() * (100 + pSpyUnit->getExtraEnemyHeal()))/100);
+				//SuperSpies: TSHEEP End
 
 				bShowExplosion = true;
 				bSomethingHappened = true;
@@ -16506,8 +16643,12 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 			if (NULL != pCity)
 			{
 				szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_TARGET_CITY_REVOLT", pCity->getNameKey()).GetCString();
-				pCity->changeCultureUpdateTimer(kMission.getCityRevoltCounter());
-				pCity->changeOccupationTimer(kMission.getCityRevoltCounter());
+				//SuperSpies: TSHEEP Modify Revolt Time Based on Promotions
+				//pCity->changeCultureUpdateTimer(kMission.getCityRevoltCounter());
+				pCity->changeCultureUpdateTimer((kMission.getCityRevoltCounter() * (100 + pSpyUnit->getExtraNeutralHeal()))/100);
+				//pCity->changeOccupationTimer(kMission.getCityRevoltCounter());
+				pCity->changeOccupationTimer((kMission.getCityRevoltCounter() * (100 + pSpyUnit->getExtraNeutralHeal()))/100);
+				//SuperSpies: TSHEEP End
 
 				bSomethingHappened = true;
 				bShowExplosion = true;
@@ -16625,8 +16766,11 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 		{
 			int iTurns = (kMission.getCounterespionageNumTurns() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent()) / 100;
 			GET_TEAM(getTeam()).changeCounterespionageTurnsLeftAgainstTeam(eTargetTeam, iTurns);
-			GET_TEAM(getTeam()).changeCounterespionageModAgainstTeam(eTargetTeam, kMission.getCounterespionageMod());
-
+			//SuperSpies: TSHEEP Add Intercept to counter espionage mod
+			GET_TEAM(getTeam()).changeCounterespionageModAgainstTeam(eTargetTeam, (kMission.getCounterespionageMod() + (5 * pSpyUnit->currInterceptionProbability())));
+			//GET_TEAM(getTeam()).changeCounterespionageModAgainstTeam(eTargetTeam, kMission.getCounterespionageMod());
+			//SuperSpies: TSHEEP End
+	
 			bSomethingHappened = true;
 
 		}
@@ -18371,8 +18515,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 			changeSpecialistExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange)); //Leoreth
 			changeSpecialistThresholdExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistThresholdExtraYield(iI) * iChange)); //Leoreth
 		}
-
-
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -18668,8 +18810,10 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iGlobalHurryModifier);
 	pStream->Read(&m_iGreatPeopleCreated);
 	pStream->Read(&m_iGreatGeneralsCreated);
+	pStream->Read(&m_iGreatSpiesCreated); // Leoreth
 	pStream->Read(&m_iGreatPeopleThresholdModifier);
 	pStream->Read(&m_iGreatGeneralsThresholdModifier);
+	pStream->Read(&m_iGreatSpiesThresholdModifier); // Leoreth
 	pStream->Read(&m_iGreatPeopleRateModifier);
 	pStream->Read(&m_iGreatGeneralRateModifier);
 	pStream->Read(&m_iDomesticGreatGeneralRateModifier);
@@ -18750,6 +18894,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iWondersScore);
 	pStream->Read(&m_iTechScore);
 	pStream->Read(&m_iCombatExperience);
+	pStream->Read(&m_iEspionageExperience); // Leoreth
 
 	pStream->Read(&m_bAlive);
 	pStream->Read(&m_bEverAlive);
@@ -18774,6 +18919,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bReborn);
 	pStream->Read(&m_iLatestRebellionTurn);
 	pStream->Read(&m_iPersecutionCountdown);
+	pStream->Read(&m_iNoAnarchyTurns);
 
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
@@ -19174,8 +19320,10 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iGlobalHurryModifier);
 	pStream->Write(m_iGreatPeopleCreated);
 	pStream->Write(m_iGreatGeneralsCreated);
+	pStream->Write(m_iGreatSpiesCreated); // Leoreth
 	pStream->Write(m_iGreatPeopleThresholdModifier);
 	pStream->Write(m_iGreatGeneralsThresholdModifier);
+	pStream->Write(m_iGreatSpiesThresholdModifier); // Leoreth
 	pStream->Write(m_iGreatPeopleRateModifier);
 	pStream->Write(m_iGreatGeneralRateModifier);
 	pStream->Write(m_iDomesticGreatGeneralRateModifier);
@@ -19256,6 +19404,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iWondersScore);
 	pStream->Write(m_iTechScore);
 	pStream->Write(m_iCombatExperience);
+	pStream->Write(m_iEspionageExperience); // Leoreth
 
 	pStream->Write(m_bAlive);
 	pStream->Write(m_bEverAlive);
@@ -19281,6 +19430,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bReborn);
 	pStream->Write(m_iLatestRebellionTurn);
 	pStream->Write(m_iPersecutionCountdown);
+	pStream->Write(m_iNoAnarchyTurns);
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);
@@ -19641,21 +19791,33 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 
 	if (bIncrementExperience)
 	{
-		incrementGreatGeneralsCreated();
-
-		//Leoreth: trigger for created generals (Maya UHV)
-		/*long result = -1;
-		CyArgsList argsList;
-		argsList.add(getID());
-	    gDLL->getPythonIFace()->callFunction(PYScreensModule, "onGreatGeneralBorn", argsList.makeFunctionArgs(), &result);*/
-
-		changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
-
-		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		// Leoreth: easy way to distinguish generals and spies
+		if (GC.getUnitInfo(eGreatPersonUnit).getLeaderExperience() > 0)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+			incrementGreatGeneralsCreated();
+
+			changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatGeneralsCreated() / 10) + 1));
+
+			for (int iI = 0; iI < MAX_PLAYERS; iI++)
 			{
-				GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatGeneralsCreated() / 10) + 1));
+				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+				{
+					GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatGeneralsCreated() / 10) + 1));
+				}
+			}
+		}
+		else
+		{
+			incrementGreatSpiesCreated();
+
+			changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENRALS_THRESHOLD_INCREASE") * ((getGreatSpiesCreated() / 10) + 1));
+
+			for (int iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+				{
+					GET_PLAYER((PlayerTypes)iI).changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((getGreatSpiesCreated() / 10) + 1));
+				}
 			}
 		}
 	}
@@ -25655,4 +25817,19 @@ int CvPlayer::countRequiredSlaves() const
 	iNumRequiredSlaves -= getUnitClassCount(eSlaveUnitClass);
 
 	return iNumRequiredSlaves;
+}
+
+int CvPlayer::getNoAnarchyTurns() const
+{
+	return m_iNoAnarchyTurns;
+}
+
+void CvPlayer::setNoAnarchyTurns(int iNewValue)
+{
+	m_iNoAnarchyTurns = iNewValue;
+}
+
+void CvPlayer::changeNoAnarchyTurns(int iChange)
+{
+	m_iNoAnarchyTurns += iChange;
 }

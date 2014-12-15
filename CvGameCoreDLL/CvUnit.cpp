@@ -6516,6 +6516,154 @@ bool CvUnit::canEspionage(const CvPlot* pPlot, bool bTestVisible) const
 	return true;
 }
 
+//SuperSpies: TSHEEP start
+bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iModifier)
+{
+	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + iModifier))/100;
+	int iExperience = 0;
+
+	if (iDifficulty < 1) iExperience = 1;
+	else if (iDifficulty < 10) iExperience = 2;
+	else if (iDifficulty < 25) iExperience = 3;
+	else if (iDifficulty < 50) iExperience = 4;
+	else if (iDifficulty < 75) iExperience = 5;
+	else iExperience = 6;
+
+	changeExperience(iExperience);
+	testPromotionReady();
+
+	GET_PLAYER(getOwner()).changeEspionageExperience(iExperience);
+
+	return true;
+}
+//SuperSpies: TSHEEP End
+
+//SuperSpies: glider1 start
+bool CvUnit::canAssassin(const CvPlot* pPlot, bool bTestVisible) const
+{
+	if (isDelayedDeath())
+	{
+		return false;
+	}
+
+	if (!isSpy())
+	{
+		return false;
+	}
+
+	CvCity* pCity = pPlot->getPlotCity();
+	if (NULL == pCity)
+	{
+		return false;
+	}
+	
+	int numGreatPeople = pCity->getNumGreatPeople();
+	if (numGreatPeople <= 0)
+	{
+		return false;
+	} 
+
+	CvPlayer& kTarget = GET_PLAYER(pCity->getOwnerINLINE());
+
+	if (kTarget.getTeam() == getTeam())
+	{
+		return false;
+	}
+
+	if (kTarget.isBarbarian())
+	{
+		return false;
+	}
+
+	if (GET_TEAM(getTeam()).isVassal(kTarget.getTeam()))
+	{
+		return false;
+	}
+
+	if (!bTestVisible)
+	{
+		if (isMadeAttack())
+		{
+			return false;
+		}
+
+		if (hasMoved())
+		{
+			return false;
+		}
+
+		if (kTarget.getTeam() != getTeam() && !isInvisible(kTarget.getTeam(), false))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool CvUnit::canBribe(const CvPlot* pPlot, bool bTestVisible) const
+{
+	if (isDelayedDeath())
+	{
+		return false;
+	}
+
+	if (!isSpy())
+	{
+		return false;
+	}
+
+	if(pPlot->plotCount(PUF_isOtherTeam, getOwnerINLINE(), -1, NO_PLAYER, NO_TEAM, PUF_isVisible, getOwnerINLINE()) < 1)
+	{
+		return false;
+	}	
+
+	if (pPlot->plotCount(PUF_isUnitAIType, UNITAI_WORKER, -1) < 1)
+	{
+		return false;
+	}
+
+	CvUnit* pTargetUnit;
+	pTargetUnit = pPlot->plotCheck(PUF_isOtherTeam, getOwnerINLINE(), -1, NO_PLAYER, NO_TEAM, PUF_isVisible, getOwnerINLINE());
+	CvPlayer& kTarget = GET_PLAYER(pTargetUnit->getOwnerINLINE());
+
+	if (kTarget.getTeam() == getTeam())
+	{
+		return false;
+	}
+
+	if (kTarget.isBarbarian())
+	{
+		return false;
+	}
+
+	if (GET_TEAM(getTeam()).isVassal(kTarget.getTeam()))
+	{
+		return false;
+	}
+
+	if (!bTestVisible)
+	{
+		if (isMadeAttack())
+		{
+			return false;
+		}
+
+		if (hasMoved())
+		{
+			return false;
+		}
+
+		if (kTarget.getTeam() != getTeam() && !isInvisible(kTarget.getTeam(), false))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+// SuperSpies: glider1 end
+
 bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 {
 	if (!canEspionage(plot()))
@@ -6572,6 +6720,9 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 					CvWString szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_SPY_SUCCESS", getNameKey(), pCapital->getNameKey());
 					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_POSITIVE_DINK", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pCapital->getX_INLINE(), pCapital->getY_INLINE(), true, true);
 				}
+				
+				//SuperSpies: TSHEEP Give spies xp for successful missions
+				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(),GC.getEspionageMissionInfo(eMission).getDifficultyMod());
 			}
 
 			return true;
@@ -6625,7 +6776,9 @@ bool CvUnit::testSpyIntercepted(PlayerTypes eTargetPlayer, int iModifier)
 	CvWString szBuffer = gDLL->getText(szFormatReveal.GetCString(), GET_PLAYER(getOwnerINLINE()).getCivilizationAdjectiveKey(), getNameKey(), kTargetPlayer.getCivilizationAdjectiveKey(), szCityName.GetCString());
 	gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_EXPOSED", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 
-	if (GC.getGameINLINE().getSorenRandNum(100, "Spy Reveal identity") < GC.getDefineINT("ESPIONAGE_SPY_REVEAL_IDENTITY_PERCENT"))
+	//SuperSpies: TSHEEP Enable Loyalty Promotion
+	//if (GC.getGameINLINE().getSorenRandNum(100, "Spy Reveal identity") < GC.getDefineINT("ESPIONAGE_SPY_REVEAL_IDENTITY_PERCENT"))
+	if (GC.getGameINLINE().getSorenRandNum(100, "Spy Reveal identity") < GC.getDefineINT("ESPIONAGE_SPY_REVEAL_IDENTITY_PERCENT") && !isAlwaysHeal())//SuperSpies: TSHEEP End
 	{
 		if (!isEnemy(kTargetPlayer.getTeam()))
 		{
@@ -6644,6 +6797,43 @@ bool CvUnit::testSpyIntercepted(PlayerTypes eTargetPlayer, int iModifier)
 	{
 		NotifyEntity(MISSION_SURRENDER);
 	}
+	
+	//SuperSpies: TSHEEP - Give xp to spy who catches spy
+	CvUnit* pCounterUnit;
+
+	pCounterUnit = plot()->plotCheck(PUF_isCounterSpy, -1, -1, NO_PLAYER, kTargetPlayer.getTeam());
+
+	if(NULL != pCounterUnit)
+	{
+		pCounterUnit->changeExperience(1);
+	}
+	//SuperSpies: TSHEEP End
+	
+	//SuperSpies: TSHEEP Implement Escape Promotion
+	if(GC.getGameINLINE().getSorenRandNum(100, "Spy Reveal identity") < withdrawalProbability())
+	{
+		setFortifyTurns(0);
+		setMadeAttack(true);
+		finishMoves();
+
+		CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
+		if (NULL != pCapital)
+		{
+			setXY(pCapital->getX_INLINE(), pCapital->getY_INLINE(), false, false, false);
+		}
+		szFormatReveal = "TXT_KEY_SPY_ESCAPED_REVEAL";
+		szFormatNoReveal = "TXT_KEY_SPY_ESCAPED";
+		szBuffer = gDLL->getText(szFormatReveal.GetCString(), GET_PLAYER(getOwnerINLINE()).getCivilizationAdjectiveKey(), getNameKey(), kTargetPlayer.getCivilizationAdjectiveKey(), szCityName.GetCString());
+		gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_EXPOSED", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
+		szBuffer = gDLL->getText(szFormatNoReveal.GetCString(), getNameKey(), kTargetPlayer.getCivilizationAdjectiveKey(), szCityName.GetCString());
+		gDLL->getInterfaceIFace()->addMessage(eTargetPlayer, true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_EXPOSE", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+
+		changeExperience(1);
+		testPromotionReady();
+
+		return true;
+	}
+	//SuperSpies: TSHEEP End
 
 	kill(true);
 
@@ -6661,9 +6851,26 @@ int CvUnit::getSpyInterceptPercent(TeamTypes eTargetTeam) const
 	int iOurPoints = GET_TEAM(getTeam()).getEspionagePointsEver();
 	iSuccess += (GC.getDefineINT("ESPIONAGE_INTERCEPT_SPENDING_MAX") * iTargetPoints) / std::max(1, iTargetPoints + iOurPoints);
 
+	//SuperSpies: TSHEEP - add evasion attribute to spy chances
+	if (getExtraEvasion() != 0)
+	{
+		iSuccess -= getExtraEvasion();
+	}
+	//SuperSpies: TSHEEP end
+	
 	if (plot()->isEspionageCounterSpy(eTargetTeam))
 	{
 		iSuccess += GC.getDefineINT("ESPIONAGE_INTERCEPT_COUNTERSPY");
+		//SuperSpies: TSHEEP - Add intercept attribute of any enemy spies present to chances
+		if(plot()->plotCheck(PUF_isCounterSpy, -1, -1, NO_PLAYER, eTargetTeam))
+		{
+			CvUnit* pCounterUnit = plot()->plotCheck(PUF_isCounterSpy, -1, -1, NO_PLAYER, eTargetTeam);
+			if(pCounterUnit->getExtraIntercept() != 0)
+			{
+				iSuccess += pCounterUnit->getExtraIntercept();
+			}
+		}
+		//SuperSpies: TSHEEP end
 	}
 
 	if (GET_TEAM(eTargetTeam).getCounterespionageModAgainstTeam(getTeam()) > 0)
@@ -6671,7 +6878,9 @@ int CvUnit::getSpyInterceptPercent(TeamTypes eTargetTeam) const
 		iSuccess += GC.getDefineINT("ESPIONAGE_INTERCEPT_COUNTERESPIONAGE_MISSION");
 	}
 
-	if (0 == getFortifyTurns() || plot()->plotCount(PUF_isSpy, -1, -1, NO_PLAYER, getTeam()) > 1)
+	//SuperSpies: TSHEEP - This check was always returning true since there is always at least one friendly spy in the tile
+	//if (0 == getFortifyTurns() || plot()->plotCount(PUF_isSpy, -1, -1, NO_PLAYER, getTeam()) > 0)
+	if (0 == getFortifyTurns() || plot()->plotCount(PUF_isSpy, -1, -1, NO_PLAYER, getTeam()) > 1)//SuperSpies: TSHEEP - End
 	{
 		iSuccess += GC.getDefineINT("ESPIONAGE_INTERCEPT_RECENT_MISSION");
 	}
@@ -7740,6 +7949,9 @@ BuildTypes CvUnit::getBuildType() const
 		case MISSION_GOLDEN_AGE:
 		case MISSION_LEAD:
 		case MISSION_ESPIONAGE:
+		case MISSION_RESOLVE_CRISIS: // Leoreth
+		case MISSION_REFORM_GOVERNMENT: // Leoreth
+		case MISSION_DIPLOMATIC_MISSION: // Leoreth
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -7858,7 +8070,12 @@ bool CvUnit::canCoexistWithEnemyUnit(TeamTypes eTeam) const
 {
 	if (NO_TEAM == eTeam)
 	{
-		if(alwaysInvisible())
+		if (alwaysInvisible())
+		{
+			return true;
+		}
+
+		if (GC.getUnitInfo(getUnitType()).isDiplomaticMission())
 		{
 			return true;
 		}
@@ -7866,7 +8083,7 @@ bool CvUnit::canCoexistWithEnemyUnit(TeamTypes eTeam) const
 		return false;
 	}
 
-	if(isInvisible(eTeam, false))
+	if (isInvisible(eTeam, false))
 	{
 		return true;
 	}
@@ -8629,6 +8846,13 @@ bool CvUnit::canAirDefend(const CvPlot* pPlot) const
 	{
 		pPlot = plot();
 	}
+	
+	//SuperSpies: TSHEEP - prevent spies from being used as SAMs
+	if (isSpy())
+	{
+		return false;
+	}
+	//SuperSpies: TSHEEP end
 
 	if (maxInterceptionProbability() == 0)
 	{
@@ -11757,6 +11981,13 @@ bool CvUnit::isPromotionValid(PromotionTypes ePromotion) const
 	{
 		return false;
 	}
+	
+	//SuperSpies: TSHEEP - Spy promotion override
+	if (isSpy())
+	{
+		return true;
+	}
+	//SuperSpies: TSHEEP End
 
 	CvPromotionInfo& promotionInfo = GC.getPromotionInfo(ePromotion);
 
@@ -13683,3 +13914,138 @@ void CvUnit::tradeUnit(PlayerTypes eReceivingPlayer)
 	 }
 }
 // edead (end)
+
+// Leoreth
+bool CvUnit::canResolveCrisis(const CvPlot* pPlot) const
+{
+	if (!GC.getUnitInfo(getUnitType()).isResolveCrisis()) return false;
+
+	if (pPlot->getOwner() != getOwner()) return false;
+
+	if (GET_PLAYER(getOwner()).isAnarchy()) return true;
+
+	int iLoop;
+	for (CvCity* pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
+	{
+		if (pLoopCity->getOccupationTimer() > 0) return true;
+	}
+
+	return false;
+}
+
+bool CvUnit::resolveCrisis()
+{
+	if (!canResolveCrisis(plot()))
+	{
+		return false;
+	}
+
+	GET_PLAYER(getOwner()).changeAnarchyTurns(-GET_PLAYER(getOwner()).getAnarchyTurns());
+
+	int iLoop;
+	for (CvCity* pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
+	{
+		pLoopCity->setOccupationTimer(0);
+	}
+
+	if (plot()->isActiveVisible(false))
+	{
+		NotifyEntity(MISSION_RESOLVE_CRISIS);
+	}
+
+	kill(true);
+
+	return true;
+}
+
+bool CvUnit::canReformGovernment(const CvPlot* pPlot) const
+{
+	if (!GC.getUnitInfo(getUnitType()).isReformGovernment()) return false;
+
+	if (pPlot->getOwner() != getOwner()) return false;
+
+	return true;
+}
+
+bool CvUnit::reformGovernment()
+{
+	if (!canReformGovernment(plot()))
+	{
+		return false;
+	}
+
+	GET_PLAYER(getOwner()).setNoAnarchyTurns(1);
+
+	GET_PLAYER(getOwner()).setRevolutionTimer(0);
+
+	if (plot()->isActiveVisible(false))
+	{
+		NotifyEntity(MISSION_REFORM_GOVERNMENT);
+	}
+
+	// show a popup
+	if (getOwner() == GC.getGame().getActivePlayer())
+	{
+		CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_CHANGECIVIC);
+		if (NULL != pInfo)
+		{
+			gDLL->getInterfaceIFace()->addPopup(pInfo, getOwner());
+		}
+	}
+
+	kill(true);
+
+	return true;
+}
+
+bool CvUnit::canDiplomaticMission(const CvPlot* pPlot) const
+{
+	if (!GC.getUnitInfo(getUnitType()).isDiplomaticMission()) return false;
+
+	if (!pPlot->isCity()) return false;
+
+	CvCity* pCity = pPlot->getPlotCity();
+
+	if (pCity->getOwner() == GC.getGame().getActivePlayer() && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isAtWar(GET_PLAYER(GC.getGame().getActivePlayer()).getTeam())) return false;
+	
+	return (pCity->isCapital() && pCity->getOwner() != getOwner());
+}
+
+bool CvUnit::diplomaticMission()
+{
+	if (!canDiplomaticMission(plot()))
+	{
+		return false;
+	}
+
+	PlayerTypes ePlayer = plot()->getOwner();
+	TeamTypes eTeam = GET_PLAYER(ePlayer).getTeam();
+
+	TeamTypes ourTeam = GET_PLAYER(getOwner()).getTeam();
+
+	if (GET_TEAM(eTeam).isAtWar(ourTeam))
+	{
+		GET_TEAM(eTeam).makePeace(ourTeam);
+	}
+	else
+	{
+		for (int iI = 0; iI < NUM_MEMORY_TYPES; iI++)
+		{
+			if (GET_PLAYER(ePlayer).AI_getMemoryAttitude(getOwner(), (MemoryTypes)iI))
+			{
+				GET_PLAYER(ePlayer).AI_changeMemoryCount(getOwner(), (MemoryTypes)iI, -GET_PLAYER(ePlayer).AI_getMemoryCount(getOwner(), (MemoryTypes)iI));
+			}
+		}
+
+		GET_PLAYER(ePlayer).AI_changeAttitudeExtra(getOwner(), 4);
+	}
+
+	if (plot()->isActiveVisible(false))
+	{
+		NotifyEntity(MISSION_DIPLOMATIC_MISSION);
+	}
+
+	kill(true);
+
+	return true;
+}

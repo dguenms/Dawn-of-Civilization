@@ -185,6 +185,7 @@ public:
 	int unitsGoldenAgeCapable();
 	int unitsGoldenAgeReady();
 	int greatPeopleThreshold(bool bMilitary);
+	int greatSpyThreshold(); // Leoreth
 	int specialistYield(int /*SpecialistTypes*/ eSpecialist, int /*YieldTypes*/ eCommerce);
 	int specialistCommerce(int /*SpecialistTypes*/ eSpecialist, int /*CommerceTypes*/ eCommerce);
 
@@ -445,6 +446,9 @@ public:
 	int getCombatExperience() const;
 	void changeCombatExperience(int iChange);
 	void setCombatExperience(int iExperience);
+
+	// Leoreth
+	int getEspionageExperience() const;
 
 	int getSpecialistExtraYield(int /*SpecialistTypes*/ eIndex1, int /*YieldTypes*/ eIndex2);
 

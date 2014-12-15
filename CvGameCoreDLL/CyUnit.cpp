@@ -259,6 +259,19 @@ bool CyUnit::canPillage(CyPlot* pPlot)
 	return m_pUnit ? m_pUnit->canPillage(pPlot->getPlot()) : false;
 }
 
+//SuperSpies: TSHEEP Assassin Mission
+bool CyUnit::canAssassin(CyPlot* pPlot, bool bTestVisible)
+{
+	return m_pUnit ? m_pUnit->canAssassin(pPlot->getPlot(), bTestVisible) : false;
+}
+//SuperSpies: TSHEEP End
+//SuperSpies: glider1 start
+bool CyUnit::canBribe(CyPlot* pPlot, bool bTestVisible)
+{
+	return m_pUnit ? m_pUnit->canBribe(pPlot->getPlot(), bTestVisible) : false;
+}
+//SuperSpies: glider1 end
+
 int CyUnit::sabotageCost(CyPlot* pPlot)
 {
 	return m_pUnit ? m_pUnit->sabotageCost(pPlot->getPlot()) : -1;

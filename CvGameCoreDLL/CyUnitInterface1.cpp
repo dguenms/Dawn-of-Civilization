@@ -77,6 +77,12 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("canBombard", &CyUnit::canBombard, "bool (CyPlot* pPlot)")
 
 		.def("canPillage", &CyUnit::canPillage, "bool (CyPlot* pPlot)")
+		//SuperSpies: TSHEEP Assassin Mission
+		.def("canAssassin", &CyUnit::canAssassin, "bool (CyPlot* pPlot, bool bTestVisible)")
+		//SuperSpies: RevolutionDCM start
+		.def("canBribe", &CyUnit::canBribe, "bool (CyPlot* pPlot, bool bTestVisible)")
+		//SuperSpies: RevolutionDCM end
+		//SuperSpies: TSHEEP End
 		.def("sabotageCost", &CyUnit::sabotageCost, "int (CyPlot* pPlot)")
 		.def("sabotageProb", &CyUnit::sabotageProb, "int (CyPlot* pPlot, int /*ProbabilityTypes*/ eProbStyle)")
 		.def("canSabotage", &CyUnit::canSabotage, "bool (CyPlot* pPlot, bool bTestVisible)")

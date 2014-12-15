@@ -728,6 +728,11 @@ int CyPlayer::greatPeopleThreshold(bool bMilitary)
 	return m_pPlayer ? m_pPlayer->greatPeopleThreshold(bMilitary) : -1;
 }
 
+int CyPlayer::greatSpyThreshold()
+{
+	return m_pPlayer ? m_pPlayer->greatSpyThreshold() : -1;
+}
+
 int CyPlayer::specialistYield(int /*SpecialistTypes*/ eSpecialist, int /*YieldTypes*/ eCommerce)
 
 {
@@ -1936,6 +1941,12 @@ void CyPlayer::setCombatExperience(int iExperience)
 		m_pPlayer->setCombatExperience(iExperience);
 	}
 
+}
+
+// Leoreth
+int CyPlayer::getEspionageExperience() const
+{
+	return m_pPlayer ? m_pPlayer->getEspionageExperience() : -1;
 }
 
 int CyPlayer::getSpecialistExtraYield(int /*SpecialistTypes*/ eIndex1, int /*YieldTypes*/ eIndex2)

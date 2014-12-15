@@ -316,6 +316,10 @@ bool CvUnitAI::AI_update()
 			AI_spyMove();
 			break;
 
+		case UNITAI_STATESMAN:
+			AI_statesmanMove();
+			break;
+
 		case UNITAI_ICBM:
 			AI_ICBMMove();
 			break;
@@ -3881,17 +3885,6 @@ void CvUnitAI::AI_merchantMove()
 {
 	PROFILE_FUNC();
 
-	//Leoreth: so slaves don't bother with the other considerations
-	if (!isGoldenAge())
-	{
-		if(AI_trade(0))
-		{
-			return;
-		}
-
-		getGroup()->pushMission(MISSION_SKIP);
-	}
-
 	if (AI_construct())
 	{
 		return;
@@ -4215,6 +4208,106 @@ void CvUnitAI::AI_spyMove()
 	return;
 }
 
+// Leoreth
+void CvUnitAI::AI_statesmanMove()
+{
+	PROFILE_FUNC();
+
+	if (AI_construct())
+	{
+		return;
+	}
+
+	if (AI_discover(true, true))
+	{
+		return;
+	}
+
+	if (AI_resolveCrisis(3))
+	{
+		return;
+	}
+
+	if (AI_reformGovernment(3))
+	{
+		return;
+	}
+
+	if (AI_diplomaticMission(150))
+	{
+		return;
+	}
+
+	if (AI_resolveCrisis(2))
+	{
+		return;
+	}
+
+	if (AI_diplomaticMission(130))
+	{
+		return;
+	}
+
+	int iGoldenAgeValue = (GET_PLAYER(getOwnerINLINE()).AI_calculateGoldenAgeValue() / (GET_PLAYER(getOwnerINLINE()).unitsRequiredForGoldenAge()));
+	int iDiscoverValue = std::max(1, getDiscoverResearch(NO_TECH));
+
+	if (((iGoldenAgeValue * 100) / iDiscoverValue) > 60)
+	{
+        if (AI_goldenAge())
+        {
+            return;
+        }
+
+        if (iDiscoverValue > iGoldenAgeValue)
+        {
+            if (AI_discover())
+            {
+                return;
+            }
+            if (GET_PLAYER(getOwnerINLINE()).getUnitClassCount(getUnitClassType()) > 1)
+            {
+                if (AI_join())
+                {
+                    return;
+                }
+            }
+        }
+	}
+	else
+	{
+		if (AI_discover())
+		{
+			return;
+		}
+
+		if (AI_join())
+		{
+			return;
+		}
+	}
+
+	if ((GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 2) > 0) ||
+		  (getGameTurnCreated() < (GC.getGameINLINE().getGameTurn() - 25)))
+	{
+		if (AI_discover())
+		{
+			return;
+		}
+	}
+
+	if (AI_retreatToCity())
+	{
+		return;
+	}
+
+	if (AI_safety())
+	{
+		return;
+	}
+
+	getGroup()->pushMission(MISSION_SKIP);
+	return;
+}
 
 void CvUnitAI::AI_ICBMMove()
 {
@@ -6137,6 +6230,62 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 	int iI;
 
 	iValue = 0;
+
+	//SuperSpies: TSHEEP Setup AI values for promotions
+	if (isSpy())
+	{
+		if (GC.getPromotionInfo(ePromotion).isAlwaysHeal())//Loyalty Promotion
+		{
+			iValue += (5 + withdrawalProbability()); //Favor spies that have a chance to escape
+		}
+
+		iTemp = GC.getPromotionInfo(ePromotion).getInterceptChange(); //Security
+
+		iValue += (iTemp + currInterceptionProbability()); //Lean towards more security if security is already present
+
+		iTemp = GC.getPromotionInfo(ePromotion).getEvasionChange(); //Deception
+
+		iValue += ((iTemp * 3) + evasionProbability()); //Lean towards more deception if deception is already present
+
+		if (GC.getPromotionInfo(ePromotion).isEnemyRoute())
+		{
+			iValue += 4;
+		}
+
+		iValue += (GC.getPromotionInfo(ePromotion).getVisibilityChange()*5);
+
+		iValue += (GC.getPromotionInfo(ePromotion).getMovesChange()*20);
+
+		iValue += (GC.getPromotionInfo(ePromotion).getMoveDiscountChange()*5);
+
+		iValue += GC.getPromotionInfo(ePromotion).getWithdrawalChange()/2;
+
+		if (GC.getPromotionInfo(ePromotion).getEnemyHealChange())
+		{
+			iValue += (GC.getPromotionInfo(ePromotion).getEnemyHealChange()/2) + getExtraEnemyHeal();
+		}
+		
+		if (GC.getPromotionInfo(ePromotion).getNeutralHealChange())
+		{
+			iValue += GC.getPromotionInfo(ePromotion).getNeutralHealChange() + getExtraNeutralHeal();
+		}
+		
+		if (GC.getPromotionInfo(ePromotion).getFriendlyHealChange())
+		{
+			iValue += (GC.getPromotionInfo(ePromotion).getFriendlyHealChange()/2) + getExtraFriendlyHeal();
+		}
+		
+		iValue += GC.getPromotionInfo(ePromotion).getUpgradeDiscount()*2;
+
+		if (iValue > 0)
+		{
+			iValue += GC.getGameINLINE().getSorenRandNum(15, "AI Promote");
+		}
+
+		return iValue;
+
+	}
+	//SuperSpies: TSHEEP End
 
 	if (GC.getPromotionInfo(ePromotion).isLeader())
 	{
@@ -18043,6 +18192,133 @@ bool CvUnitAI::AI_allowGroup(const CvUnit* pUnit, UnitAITypes eUnitAI) const
 	}
 
 	return true;
+}
+
+// Leoreth
+bool CvUnitAI::AI_resolveCrisis(int iTurns)
+{
+	int iAnarchy = GET_PLAYER(getOwner()).getAnarchyTurns();
+	int iOccupationTurns = 0;
+
+	int iLoop;
+	for (CvCity* pCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
+	{
+		iOccupationTurns += pCity->getOccupationTimer();
+	}
+
+	if (iAnarchy + iOccupationTurns / 4 >= iTurns)
+	{
+		if (canResolveCrisis(plot()))
+		{
+			getGroup()->pushMission(MISSION_RESOLVE_CRISIS);
+			return true;
+		}
+
+		CvCity* pClosestCity = GC.getMap().findCity(getX(), getY(), getOwner(), GET_PLAYER(getOwner()).getTeam());
+
+		if (pClosestCity != NULL)
+		{
+			if (atPlot(pClosestCity->plot()))
+			{
+				getGroup()->pushMission(MISSION_RESOLVE_CRISIS);
+				return true;
+			}
+			else
+			{
+				FAssert(!atPlot(pClosestCity->plot()));
+				getGroup()->pushMission(MISSION_MOVE_TO, pClosestCity->getX_INLINE(), pClosestCity->getY_INLINE());
+				getGroup()->pushMission(MISSION_RESOLVE_CRISIS, -1, -1, 0, (getGroup()->getLengthMissionQueue() > 0));
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+// Leoreth: TODO
+bool CvUnitAI::AI_reformGovernment(int iNumChanges)
+{
+	if (GET_PLAYER(getOwner()).getMaxAnarchyTurns() == 0)
+	{
+		return false;
+	}
+
+	int iChanges = 0;
+
+	CivicTypes eCivic;
+	for (int iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
+	{
+		eCivic = GET_PLAYER(getOwner()).AI_bestCivic((CivicOptionTypes)iI);
+
+		if (eCivic != NO_CIVIC && eCivic != GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)iI))
+		{
+			iChanges++;
+		}
+	}
+
+	if (iChanges >= iNumChanges)
+	{
+		if (GET_PLAYER(getOwner()).AI_getCivicTimer() > 0)
+		{
+			getGroup()->pushMission(MISSION_SKIP);
+			return true;
+		}
+
+		if (canReformGovernment(plot()))
+		{
+			getGroup()->pushMission(MISSION_REFORM_GOVERNMENT);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+// Leoreth: AI only uses this mission to make peace in desparate situations
+bool CvUnitAI::AI_diplomaticMission(int iPowerMultiplier)
+{
+	CvCity* pEnemyCapital = NULL;
+	int iEnemyPower = -MAX_INT;
+
+	PlayerTypes ePlayer;
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		ePlayer = (PlayerTypes)iI;
+
+		if (GET_PLAYER(ePlayer).isMinorCiv() || GET_PLAYER(ePlayer).isBarbarian() || GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAVassal())
+		{
+			continue;
+		}
+
+		if (GET_TEAM(GET_PLAYER(getOwner()).getTeam()).AI_surrenderTrade(GET_PLAYER(ePlayer).getTeam(), iPowerMultiplier) == NO_DENIAL)
+		{
+			if (GET_PLAYER(ePlayer).getPower() > iEnemyPower)
+			{
+				pEnemyCapital = GET_PLAYER(ePlayer).getCapitalCity();
+				iEnemyPower = GET_PLAYER(ePlayer).getPower();
+			}
+		}
+	}
+
+	if (pEnemyCapital != NULL)
+	{
+		if (atPlot(pEnemyCapital->plot()))
+		{
+			getGroup()->pushMission(MISSION_DIPLOMATIC_MISSION);
+			return true;
+		}
+		else
+		{
+			FAssert(!atPlot(pEnemyCapital->plot()));
+			getGroup()->pushMission(MISSION_MOVE_TO, pEnemyCapital->getX_INLINE(), pEnemyCapital->getY_INLINE());
+			getGroup()->pushMission(MISSION_DIPLOMATIC_MISSION, -1, -1, 0, (getGroup()->getLengthMissionQueue() > 0));
+			return true;
+		}
+
+	}
+
+	return false;
 }
 
 

@@ -926,6 +926,11 @@ public:
 	bool isAlwaysHostile() const;			// Exposed to Python
 	bool isNoRevealMap() const;			// Exposed to Python
 
+	// Leoreth
+	bool isResolveCrisis() const;
+	bool isReformGovernment() const;
+	bool isDiplomaticMission() const;
+
 	float getUnitMaxSpeed() const;					// Exposed to Python
 	float getUnitPadTime() const;					// Exposed to Python
 	
@@ -1119,6 +1124,11 @@ protected:
 	bool m_bAlwaysHostile;
 	bool m_bNoRevealMap;
 	int m_iLeaderPromotion;
+
+	// Leoreth
+	bool m_bResolveCrisis;
+	bool m_bReformGovernment;
+	bool m_bDiplomaticMission;
 
 	float m_fUnitMaxSpeed;
 	float m_fUnitPadTime;

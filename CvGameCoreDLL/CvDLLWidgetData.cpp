@@ -270,6 +270,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseGreatGeneralHelp(widgetDataStruct, szBuffer);
 		break;
 
+	// Leoreth
+	case WIDGET_HELP_GREAT_SPY:
+		parseGreatSpyHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_HELP_SELECTED:
 		parseSelectedHelp(widgetDataStruct, szBuffer);
 		break;
@@ -2757,6 +2762,29 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 
 				GAMETEXT.setEspionageMissionHelp(szBuffer, pHeadSelectedUnit);
 			}
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_RESOLVE_CRISIS)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_RESOLVE_CRISIS"));
+			}
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_REFORM_GOVERNMENT)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REFORM_GOVERNMENT"));
+			}
+			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_DIPLOMATIC_MISSION)
+			{
+				szBuffer.append(NEWLINE);
+
+				if (GET_TEAM(GET_PLAYER(pHeadSelectedUnit->getOwner()).getTeam()).isAtWar(GET_PLAYER(pHeadSelectedUnit->plot()->getOwner()).getTeam()))
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_DIPLOMATIC_MISSION_WAR"));
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_ACTION_DIPLOMATIC_MISSION_PEACE"));
+				}
+			}
 			else if (GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType() == MISSION_BUILD)
 			{
 				eBuild = ((BuildTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionData()));
@@ -4244,6 +4272,15 @@ void CvDLLWidgetData::parseGreatGeneralHelp(CvWidgetDataStruct &widgetDataStruct
 	if (NO_PLAYER != GC.getGame().getActivePlayer())
 	{
 		GAMETEXT.parseGreatGeneralHelp(szBuffer, GET_PLAYER(GC.getGame().getActivePlayer()));
+	}
+}
+
+
+void CvDLLWidgetData::parseGreatSpyHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	if (NO_PLAYER != GC.getGame().getActivePlayer())
+	{
+		GAMETEXT.parseGreatSpyHelp(szBuffer, GET_PLAYER(GC.getGame().getActivePlayer()));
 	}
 }
 

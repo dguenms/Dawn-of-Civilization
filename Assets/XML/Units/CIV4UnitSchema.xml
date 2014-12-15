@@ -123,6 +123,9 @@
 	<ElementType name="bCounterSpy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFound" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bGoldenAge" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bResolveCrisis" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bReformGovernment" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bDiplomaticMission" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bInvisible" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFirstStrikeImmune" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoDefensiveBonus" content="textOnly" dt:type="boolean"/>
@@ -547,6 +550,9 @@
 		<element type="bCounterSpy"/>
 		<element type="bFound"/>
 		<element type="bGoldenAge"/>
+		<element type="bReformGovernment" minOccurs="0"/>
+		<element type="bResolveCrisis" minOccurs="0"/>
+		<element type="bDiplomaticMission" minOccurs="0"/>
 		<element type="bInvisible"/>
 		<element type="bFirstStrikeImmune"/>
 		<element type="bNoDefensiveBonus"/>

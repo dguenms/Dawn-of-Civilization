@@ -3121,6 +3121,9 @@ m_bLineOfSight(false),
 m_bHiddenNationality(false),
 m_bAlwaysHostile(false),
 m_bNoRevealMap(false),
+m_bResolveCrisis(false), // Leoreth
+m_bReformGovernment(false), // Leoreth
+m_bDiplomaticMission(false), // Leoreth
 m_fUnitMaxSpeed(0.0f),
 m_fUnitPadTime(0.0f),
 m_pbUpgradeUnitClass(NULL),
@@ -3812,6 +3815,21 @@ bool CvUnitInfo::isSlave() const
 	return (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SLAVE"));
 }
 
+bool CvUnitInfo::isResolveCrisis() const
+{
+	return m_bResolveCrisis;
+}
+
+bool CvUnitInfo::isReformGovernment() const
+{
+	return m_bReformGovernment;
+}
+
+bool CvUnitInfo::isDiplomaticMission() const
+{
+	return m_bDiplomaticMission;
+}
+
 // BUG - Unit Experience - start
 /*
  * Returns true if this unit type is eligible to receive experience points.
@@ -4388,6 +4406,11 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bAlwaysHostile);
 	stream->Read(&m_bNoRevealMap);
 
+	// Leoreth
+	stream->Read(&m_bResolveCrisis);
+	stream->Read(&m_bReformGovernment);
+	stream->Read(&m_bDiplomaticMission);
+
 	stream->Read(&m_fUnitMaxSpeed);
 	stream->Read(&m_fUnitPadTime);
 
@@ -4693,6 +4716,11 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bAlwaysHostile);
 	stream->Write(m_bNoRevealMap);
 
+	// Leoreth
+	stream->Write(m_bResolveCrisis);
+	stream->Write(m_bReformGovernment);
+	stream->Write(m_bDiplomaticMission);
+
 	stream->Write(m_fUnitMaxSpeed);
 	stream->Write(m_fUnitPadTime);
 
@@ -4815,6 +4843,9 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bCounterSpy, "bCounterSpy");
 	pXML->GetChildXmlValByName(&m_bFound, "bFound");
 	pXML->GetChildXmlValByName(&m_bGoldenAge, "bGoldenAge");
+	pXML->GetChildXmlValByName(&m_bResolveCrisis, "bResolveCrisis");
+	pXML->GetChildXmlValByName(&m_bReformGovernment, "bReformGovernment");
+	pXML->GetChildXmlValByName(&m_bDiplomaticMission, "bDiplomaticMission");
 	pXML->GetChildXmlValByName(&m_bInvisible, "bInvisible");
 	pXML->GetChildXmlValByName(&m_bFirstStrikeImmune, "bFirstStrikeImmune");
 	pXML->GetChildXmlValByName(&m_bNoDefensiveBonus, "bNoDefensiveBonus");

@@ -873,6 +873,86 @@
 		<German>[LINK=literal]%s1[\LINK]-Gel&#228;ndefelder mit Verbesserung</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_GREAT_SPY</Tag>
+		<English>Great Spy: %d1_Curr/%d2_Need Experience</English>
+		<German>Gro&#223;er Spion: %d1_Curr/%d2_Need Erfahrung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_ESPIONAGE_EXPERIENCE</Tag>
+		<English>Espionage Experience</English>
+		<German>Spionage-Erfahrung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ADMIN_CENTER</Tag>
+		<English>Administrative Center</English>
+		<German>Verwaltungszentrum</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_STATESMAN</Tag>
+		<English>Statesman</English>
+		<German>Staatsmann</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_GREAT_STATESMAN</Tag>
+		<English>Great Statesman</English>
+		<German>Großer Staatsmann</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GREAT_STATESMAN</Tag>
+		<English>Great Statesman</English>
+		<German>Großer Staatsmann</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_REFORM_GOVERNMENT</Tag>
+		<English>Reform Government</English>
+		<German>Regierung Reformieren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_REFORM_GOVERNMENT</Tag>
+		<English>This will order the Great Person to reform your government, allowing you to change civics this turn without any anarchy. It consumes the Great Person.</English>
+		<German>Dies wird die Großen Persönlichkeit veranlassen, Eure Regierung zu reformieren, was Euch erlaubt diese Runde Staatsformen ohne jegliche Anarchie zu wechseln. Die Große Persönlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAN_REFORM_GOVERNMENT</Tag>
+		<English>[ICON_BULLET]Can Reform the Government</English>
+		<German>[ICON_BULLET]Kann die Regierung reformieren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_RESOLVE_CRISIS</Tag>
+		<English>Resolve Crisis</English>
+		<German>Krise Überwinden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_RESOLVE_CRISIS</Tag>
+		<English>This will order the Great Person to end the anarchy in your civilization and the unrest in all your cities. It consumes the Great Person.</English>
+		<German>Dies wird die Große Persönlichkeit veranlassen, the Anarchie in Eurer Zivilisation sowie den Aufruhr in all Euren Städten zu beenden. Die Große Persönlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAN_RESOLVE_CRISIS</Tag>
+		<English>[ICON_BULLET]Can Resolve a Crisis</English>
+		<German>[ICON_BULLET]Kann eine Krise überwinden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_DIPLOMATIC_MISSION</Tag>
+		<English>Diplomatic Mission</English>
+		<German>Diplomatische Mission</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_WAR</Tag>
+		<English>The Great Person will broker an immediate peace treaty between you and your enemy. It consumes the Great Person.</English>
+		<German>Die Große Persönlichkeit wird einen unmittelbaren Friedensvertrag zwischen Euch und Eurem Feind aushandeln. Die Große Persönlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_PEACE</Tag>
+		<English>The Great Person will make another civilization forget your past transgressions and improve your relations. It consumes the Great Person.</English>
+		<German>Die Große Persönlichkeit wird eine andere Zivilisation eure Vergehen aus der Vergangenheit vergessen lassen und eure Beziehungen verbessern. Die Große Persönlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAN_DIPLOMATIC_MISSION</Tag>
+		<English>[ICON_BULLET]Can Conduct Diplomatic Missions</English>
+		<German>[ICON_BULLET]Kann diplomatische Missionen durchführen</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>

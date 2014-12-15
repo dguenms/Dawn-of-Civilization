@@ -90,3 +90,32 @@
 # additional Seljuk conquerors against Arabia
 # Seljuks also target Jerusalem
 # new third Maya goal: make contact with a European civilization before they discover America
+# Included the SuperSpies mod component:
+	# Spies can now get experience from successful missions or intercepting other spies
+	# new Spy promotions to improve their abilities
+	# Spies do not start with Commando anymore
+	# Intelligence Agency now also gives +2 experience to Spies
+	# Security Bureau lets all Spies start with the Security promotion, increasing their chances to intercept other spies
+	# Interpol gives an additional +3 experience to Spies
+# Changed Spy specialists and Great Spies:
+	# Spy specialist has been removed from the game
+	# Great Spies are now created like Great Generals: a new Great Spy is born as soon as enough Spy experience has been accumulated
+	# adjusted the interface so that Spy experience until the next Great Spy is displayed
+	# Great Spies cannot start Golden Ages anymore
+# new specialist: Statesman
+	# generates +2 commerce and +3 GPP (Great Statesman)
+	# can be hired with Palace, Courthouse, Castle, Jail
+# new Great Person type: Great Statesman
+	# represents politicians, political philosophers, political scientists and political activists
+	# can discover technologies (new Civics flavor associated with a number of appropriate technologies)
+	# can start a golden age
+	# can build Administrative Center (requires 8 Courthouses): counts as a government center for city maintenance
+	# can resolve a crisis: immediately ends anarchy and removes unrest from all cities
+	# can reform the government: allows to change civics this turn without anarchy
+	# can conduct a diplomatic mission: EITHER immediately make peace with a civ you are at war with OR improve relations and reduce past transgression penalties with a civ you are at peace with
+	# can join city as a Great Statesman (+4 commerce)
+	# some wonders now create Great Statesman points, especially those which previously generated Great Spy points
+# further espionage related adjustments:
+	# reduced the amount of raw espionage from Intelligence Agencies and Security Bureaus
+	# reduced the Espionage modifier of Jails from 50% to 25%
+	# Instead of double Spy specialists, Totalitarianism now gives +1 espionage per specialist
