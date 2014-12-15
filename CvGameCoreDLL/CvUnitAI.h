@@ -79,6 +79,7 @@ protected:
 	void AI_merchantMove();
 	void AI_engineerMove();
 	void AI_spyMove();
+	void AI_statesmanMove(); // Leoreth
 	void AI_ICBMMove();
 	void AI_workerSeaMove();
 	void AI_barbAttackSeaMove();
@@ -202,6 +203,11 @@ protected:
 	bool AI_seaRetreatFromCityDanger();
 	bool AI_airRetreatFromCityDanger();
 	bool AI_airAttackDamagedSkip();
+
+	// Leoreth
+	bool AI_resolveCrisis(int iTurns);
+	bool AI_reformGovernment(int iNumChanges);
+	bool AI_diplomaticMission(int iPowerMultiplier);
 
 	bool AI_followBombard();
 

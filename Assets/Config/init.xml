@@ -111,6 +111,7 @@
 	<extend how="after" module="DiplomacyUtil" function="handleUserResponse" to="CvDiplomacyInterface" as="handleUserResponse"/>
 	
 	<init module="GGUtil"/>
+	<init module="GSpyUtil"/>
 	<init module="GPUtil"/>
 	<init module="ReligionUtil"/>
 	<init module="TechUtil"/>

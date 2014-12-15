@@ -12256,6 +12256,34 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 						}
 					}
 				}
+				
+				//SuperSpies: glider1 start
+				//Bribe
+				if (pSpyPlot->plotCount(PUF_isOtherTeam, getID(), -1, NO_PLAYER, NO_TEAM, PUF_isVisible, getID()) >= 1)
+				{
+					if (pSpyPlot->plotCount(PUF_isUnitAIType, UNITAI_WORKER, -1) >= 1)
+					{
+						for (int iMission = 0; iMission < GC.getNumEspionageMissionInfos(); ++iMission)
+						{
+							CvEspionageMissionInfo& kMissionInfo = GC.getEspionageMissionInfo((EspionageMissionTypes)iMission);
+
+							if (kMissionInfo.getBuyUnitCostFactor() > 0)
+							{
+								int iValue = AI_espionageVal(pSpyPlot->getOwnerINLINE(), (EspionageMissionTypes)iMission, pSpyPlot, -1);
+								
+								if (iValue > iBestValue)
+								{
+									iBestValue = iValue;
+									eBestMission = (EspionageMissionTypes)iMission;
+									eTargetPlayer = pSpyPlot->getOwnerINLINE();
+									pPlot = pSpyPlot;
+									iData = -1;
+								}
+							}
+						}
+					}
+				}
+				// SuperSpies: glider1 end
 			}
 
 			CvCity* pCity = pSpyPlot->getPlotCity();
@@ -12376,7 +12404,88 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 							}
 						}
 					}
+					
+					//SuperSpies: glider1 start
+					//Assassinate 
+					if (true)
+					{
+						for (int iMission = 0; iMission < GC.getNumEspionageMissionInfos(); ++iMission)
+						{
+							CvEspionageMissionInfo& kMissionInfo = GC.getEspionageMissionInfo((EspionageMissionTypes)iMission);
+
+							if (kMissionInfo.getDestroyUnitCostFactor() > 0)
+							{
+								SpecialistTypes theGreatSpecialistTarget = (SpecialistTypes)0;
+								
+								CvCity* pCity = pSpyPlot->getPlotCity();
+								if (NULL != pCity)
+								{
+									//loop through all great specialist types
+									for (int iSpecialist = 7; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
+									{
+										SpecialistTypes tempSpecialist = (SpecialistTypes)0;
+										//does this city contain this great specialist type?
+										if (pCity->getFreeSpecialistCount((SpecialistTypes)iSpecialist) > 0)
+										{
+											//sort who is the most significant great specialist in the city
+											//prefer any custom specialist	(SpecialistTypes)>13
+											//then great spies				(SpecialistTypes)13
+											//then great generals			(SpecialistTypes)12
+											//then great engineers			(SpecialistTypes)11
+											//then great merchants			(SpecialistTypes)10
+											//then great scientists			(SpecialistTypes)9
+											//then great artists			(SpecialistTypes)8
+											//then great priests			(SpecialistTypes)7
+											tempSpecialist = (SpecialistTypes)iSpecialist;
+											if (tempSpecialist > theGreatSpecialistTarget)
+											{
+												theGreatSpecialistTarget = tempSpecialist;
+											}
+										}
+									}
+								}	
+							
+								int iValue = AI_espionageVal(pSpyPlot->getOwnerINLINE(), (EspionageMissionTypes)iMission, pSpyPlot, -1);
+								
+								if (iValue > iBestValue)
+								{
+									iBestValue = iValue;
+									eBestMission = (EspionageMissionTypes)iMission;
+									eTargetPlayer = pSpyPlot->getOwnerINLINE();
+									pPlot = pSpyPlot;
+									iData = theGreatSpecialistTarget;
+								}
+							}
+						}
+					}
 				}
+				
+				//SuperSpies: TSHEEP - Counter Espionage (Why the heck don't AIs use this in vanilla?) - 
+				//Requires either annoyance or memory of past Spy transgression
+				if ((AI_getAttitudeWeight(pSpyPlot->getOwner()) < (GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI) ? 50 : 0) ||
+					AI_getMemoryCount(pSpyPlot->getOwner(), MEMORY_SPY_CAUGHT) > 0) &&
+					GET_TEAM(getTeam()).getCounterespionageTurnsLeftAgainstTeam(GET_PLAYER(pSpyPlot->getOwner()).getTeam()) <= 0)
+				{
+					for (int iMission = 0; iMission < GC.getNumEspionageMissionInfos(); ++iMission)
+					{
+						CvEspionageMissionInfo& kMissionInfo = GC.getEspionageMissionInfo((EspionageMissionTypes)iMission);
+						if (kMissionInfo.getCounterespionageNumTurns() > 0)
+						{
+							int iValue = AI_espionageVal(pSpyPlot->getOwnerINLINE(), (EspionageMissionTypes)iMission, pSpyPlot, -1);
+							iValue *= 2; //SuperSpies: Increase AI weight of techvalues TSHEEP
+							
+							if (iValue > iBestValue)
+							{
+								iBestValue = iValue;
+								eBestMission = (EspionageMissionTypes)iMission;
+								eTargetPlayer = pSpyPlot->getOwnerINLINE();
+								pPlot = pSpyPlot;
+								iData = -1;
+							}
+						}
+					}
+				}
+				//SuperSpies: TSHEEP End of Counter Espionage
 
 				//Steal Technology
 				for (int iMission = 0; iMission < GC.getNumEspionageMissionInfos(); ++iMission)
@@ -12527,8 +12636,59 @@ int CvPlayerAI::AI_espionageVal(PlayerTypes eTargetPlayer, EspionageMissionTypes
 		}
 	}
 
+	// SuperSpies: glider1 start
+	if (GC.getEspionageMissionInfo(eMission).getDestroyUnitCostFactor() > 0)
+	{
+		/*
+		Assassination iValues competes with:
+		poisoning (64-768)
+		destroy building (2-4439)
+		destroy production (8-137)
+		revolt (45-150?)
+		counter espionage (104-112)
+		steal tech (180-17080)
+		*/
+		SpecialistTypes theGreatSpecialistTarget = (SpecialistTypes)0;
 
-	if (GC.getEspionageMissionInfo(eMission).getDestroyUnitCostFactor() > 0 || GC.getEspionageMissionInfo(eMission).getBuyUnitCostFactor() > 0)
+		CvCity* pCity = pPlot->getPlotCity();
+		if (NULL != pCity)
+		{
+			for (int iSpecialist = 7; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
+			{
+				SpecialistTypes tempSpecialist = (SpecialistTypes)0;
+				if (pCity->getFreeSpecialistCount((SpecialistTypes)iSpecialist) > 0)
+				{
+					tempSpecialist = (SpecialistTypes)iSpecialist;
+					if (tempSpecialist > theGreatSpecialistTarget)
+					{
+						theGreatSpecialistTarget = tempSpecialist;
+					}
+				}
+			}
+		}
+		if (theGreatSpecialistTarget >= 7) 
+		{
+			iValue += 1000;
+		}
+	}
+	
+	if (GC.getEspionageMissionInfo(eMission).getBuyUnitCostFactor() > 0)
+	{
+		/*
+		Bribe iValues compete with:
+		destroy improvement (1-60)
+		*/
+		if (pPlot->plotCount(PUF_isOtherTeam, getID(), -1, NO_PLAYER, NO_TEAM, PUF_isVisible, getID()) >= 1)
+		{
+			if (pPlot->plotCount(PUF_isUnitAIType, UNITAI_WORKER, -1) >= 1)
+			{
+				iValue += 100;
+			}
+		}
+	}
+	//SuperSpies: glider1 end
+
+	/*if (GC.getEspionageMissionInfo(eMission).getDestroyUnitCostFactor() > 0 || GC.getEspionageMissionInfo(eMission).getBuyUnitCostFactor() > 0)
 	{
 		if (NULL != pPlot)
 		{
@@ -12549,7 +12709,7 @@ int CvPlayerAI::AI_espionageVal(PlayerTypes eTargetPlayer, EspionageMissionTypes
 				}
 			}
 		}
-	}
+	}*/
 
 	if (GC.getEspionageMissionInfo(eMission).getStealTreasuryTypes() > 0)
 	{
@@ -12560,6 +12720,17 @@ int CvPlayerAI::AI_espionageVal(PlayerTypes eTargetPlayer, EspionageMissionTypes
 	if (GC.getEspionageMissionInfo(eMission).getCounterespionageNumTurns() > 0)
 	{
 		//iValue += 100 * GET_TEAM(getTeam()).AI_getAttitudeVal(GET_PLAYER(eTargetPlayer).getTeam());
+		//SuperSpies: TSHEEP - Make Counterespionage matter
+		if (NULL != pPlot)
+		{
+			CvCity* pCity = pPlot->getPlotCity();
+
+			if (NULL != pCity)
+			{
+				iValue += std::max((100 - GET_TEAM(getTeam()).AI_getAttitudeVal(GET_PLAYER(eTargetPlayer).getTeam())) * (1 + std::max(AI_getMemoryCount(eTargetPlayer, MEMORY_SPY_CAUGHT), 0)),0);
+			}
+		}
+		//SuperSpies: TSHEEP End
 	}
 
 	if (GC.getEspionageMissionInfo(eMission).getBuyCityCostFactor() > 0)

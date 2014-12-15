@@ -57,6 +57,11 @@ class CvEspionageAdvisor:
 		self.X_EXIT = 994
 		self.Y_EXIT = 726
 
+		self.X_GREAT_SPY_BAR = 0
+		self.Y_GREAT_SPY_BAR = 0
+		self.W_GREAT_SPY_BAR = 0
+		self.H_GREAT_SPY_BAR = 0
+
 		self.nWidgetCount = 0
 
 		self.iDirtyBit = 0
@@ -151,6 +156,9 @@ class CvEspionageAdvisor:
 
 		# draw tabs
 		self.EPScreen.drawTabs()
+			
+		# Leoreth: draw espionage experience bar
+		self.drawEspionageExperience()
 
 	def drawMissionTab(self):
 		screen = self.getScreen()
@@ -307,13 +315,16 @@ class CvEspionageAdvisor:
 					self.MissionCityVisibility = iMissionLoop
 
 		if EspionageOpt.isEnabled():
+			self.Y_EXP_BAR = 70 - 5
+			self.H_EXP_BAR = 20
+		
 			self.X_LEFT_PANE = 25
-			self.Y_LEFT_PANE = 70 - 5
+			self.Y_LEFT_PANE = self.Y_EXP_BAR + self.H_EXP_BAR + 5
 			self.W_LEFT_PANE = 400 + 60
-			self.H_LEFT_PANE = 620
+			self.H_LEFT_PANE = 620 - self.H_EXP_BAR - 5
 
 			self.X_SCROLL = self.X_LEFT_PANE + 20
-			self.Y_SCROLL= 90 - 5
+			self.Y_SCROLL= self.Y_EXP_BAR + self.H_EXP_BAR + 20 - 8
 			self.W_SCROLL= 360 + 60
 			self.H_SCROLL= 580
 
@@ -362,10 +373,13 @@ class CvEspionageAdvisor:
 			self.H_NAME_PANEL = 30
 
 		else:
+			self.Y_EXP_BAR = 70
+			self.H_EXP_BAR = 20
+		
 			self.X_LEFT_PANE = 25
-			self.Y_LEFT_PANE = 70
+			self.Y_LEFT_PANE = self.Y_EXP_BAR + self.H_EXP_BAR + 5
 			self.W_LEFT_PANE = 400
-			self.H_LEFT_PANE = 620
+			self.H_LEFT_PANE = 620 - self.H_EXP_BAR - 5
 
 			self.X_SCROLL = self.X_LEFT_PANE + 20
 			self.Y_SCROLL= 90
@@ -1031,9 +1045,6 @@ class CvEspionageAdvisor:
 
 		return
 
-
-
-
 	def drawSpyvSpyTabConstants(self):
 		# don't skip this segment as some of the constants are dynamic :)
 
@@ -1043,7 +1054,7 @@ class CvEspionageAdvisor:
 		self.drawSpyvSpyTabConstantsDone = 1
 
 		self.X_SvS_PANE = 5
-		self.Y_SvS_PANE = 45
+		self.Y_SvS_PANE = self.Y_EXP_BAR + self.H_EXP_BAR + 5 # 45
 		self.W_SvS_PANE = self.W_SCREEN - 2 * self.X_SvS_PANE
 		self.H_SvS_PANE = self.H_SCREEN - 2 * self.Y_SvS_PANE
 
@@ -1208,3 +1219,39 @@ class CvEspionageAdvisor:
 			CyInterface().setDirty(InterfaceDirtyBits.Espionage_Advisor_DIRTY_BIT, False)
 			self.EPScreen.refreshActiveTab()
 		return
+
+	def drawEspionageExperience(self):
+	
+		if (gc.getPlayer(self.iActivePlayer).greatPeopleThreshold(true) > 0):
+
+			screen = self.getScreen()
+
+			# move GG progress bar to lower panel
+			# by stmartin 02.18.09
+			iPanel_X = self.X_LEFT_PANE
+			iPanel_Y = self.Y_EXP_BAR
+			iPanel_W = 2 * self.W_RIGHT_PANE
+			iPanel_H = self.H_EXP_BAR
+					
+#			szPanel_ID = self.getNextWidgetName()
+#			screen.addPanel(szPanel_ID, u"", "", False, False, iPanel_X, iPanel_Y, iPanel_W, iPanel_H, PanelStyles.PANEL_STYLE_MAIN)
+
+			self.X_GREAT_SPY_BAR = iPanel_X + 5 #+ 25
+			self.Y_GREAT_SPY_BAR = iPanel_Y - 10 #+ 8
+			self.W_GREAT_SPY_BAR = iPanel_W - 40 #- 50
+			self.H_GREAT_SPY_BAR = 35
+			# end
+
+			iExperience = gc.getPlayer(self.iActivePlayer).getEspionageExperience()
+			
+			szGSpyBar_ID = self.getNextWidgetName()
+			szGSpyTxt_ID = self.getNextWidgetName()
+
+			screen.addStackedBarGFC(szGSpyBar_ID, self.X_GREAT_SPY_BAR, self.Y_GREAT_SPY_BAR, self.W_GREAT_SPY_BAR, self.H_GREAT_SPY_BAR, InfoBarTypes.NUM_INFOBAR_TYPES, WidgetTypes.WIDGET_HELP_GREAT_SPY, -1, -1)
+			screen.setStackedBarColors(szGSpyBar_ID, InfoBarTypes.INFOBAR_STORED, gc.getInfoTypeForString("COLOR_GREAT_PEOPLE_STORED"))
+			screen.setStackedBarColors(szGSpyBar_ID, InfoBarTypes.INFOBAR_RATE, gc.getInfoTypeForString("COLOR_GREAT_PEOPLE_RATE"))
+			screen.setStackedBarColors(szGSpyBar_ID, InfoBarTypes.INFOBAR_RATE_EXTRA, gc.getInfoTypeForString("COLOR_EMPTY"))
+			screen.setStackedBarColors(szGSpyBar_ID, InfoBarTypes.INFOBAR_EMPTY, gc.getInfoTypeForString("COLOR_EMPTY"))
+			screen.setBarPercentage(szGSpyBar_ID, InfoBarTypes.INFOBAR_STORED, float(iExperience) / float(gc.getPlayer(self.iActivePlayer).greatSpyThreshold()))
+
+			screen.setLabel(szGSpyTxt_ID, "", localText.getText("TXT_KEY_MISC_ESPIONAGE_EXPERIENCE", ()), CvUtil.FONT_CENTER_JUSTIFY, self.X_GREAT_SPY_BAR + self.W_GREAT_SPY_BAR/2, self.Y_GREAT_SPY_BAR + self.H_GREAT_SPY_BAR/3 - 2, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_GREAT_SPY, -1, -1)

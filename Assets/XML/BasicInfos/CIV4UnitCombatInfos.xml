@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Firaxis Games (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Basic Infos -->
+<Civ4UnitCombatInfos xmlns="x-schema:CIV4BasicInfoSchema.xml">
+	<UnitCombatInfos>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_RECON</Type>
+			<Description>TXT_KEY_UNITCOMBAT_RECON</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Recon_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,7</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_ARCHER</Type>
+			<Description>TXT_KEY_UNITCOMBAT_ARCHER</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Cover.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,5</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_MOUNTED</Type>
+			<Description>TXT_KEY_UNITCOMBAT_MOUNTED</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Formation.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,2</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_MELEE</Type>
+			<Description>TXT_KEY_UNITCOMBAT_MELEE</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Shock.dds,Art/Interface/Buttons/Promotions_Atlas.dds,4,5</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_SIEGE</Type>
+			<Description>TXT_KEY_UNITCOMBAT_SIEGE</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Charge.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,5</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_GUN</Type>
+			<Description>TXT_KEY_UNITCOMBAT_GUN</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Pinch.dds,Art/Interface/Buttons/Promotions_Atlas.dds,3,5</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_ARMOR</Type>
+			<Description>TXT_KEY_UNITCOMBAT_ARMOR</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Ambush.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,1</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_HELICOPTER</Type>
+			<Description>TXT_KEY_UNITCOMBAT_HELICOPTER</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Helicopter_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,7</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_NAVAL</Type>
+			<Description>TXT_KEY_UNITCOMBAT_NAVAL</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Naval_Units.dds,Art/Interface/Buttons/Promotions_Atlas.dds,3,7</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_AIR</Type>
+			<Description>TXT_KEY_UNITCOMBAT_AIR</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Naval_Units.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,6,15</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_SPY</Type>
+			<Description>TXT_KEY_UNITCOMBAT_SPY</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Spy_Units.dds</Button>
+		</UnitCombatInfo>
+	</UnitCombatInfos>
+</Civ4UnitCombatInfos>

@@ -34,5 +34,4 @@ def getPromotion():
 	return gc.getPromotionInfo(g_ePromo)
 
 def getGreatGeneralText(iNeededExp):
-	return BugUtil.getText("INTERFACE_NEXT_GREAT_GENERAL_XP", 
-			(g_cGreatGeneral, iNeededExp))
+	return BugUtil.getText("INTERFACE_NEXT_GREAT_GENERAL_XP", (g_cGreatGeneral, iNeededExp))

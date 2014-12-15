@@ -99,7 +99,7 @@ class CvMilitaryAdvisor:
 										
 	# Screen construction function
 	def interfaceScreen(self):
-							
+	
 		# Create a new screen
 		screen = self.getScreen()
 		if screen.isActive():

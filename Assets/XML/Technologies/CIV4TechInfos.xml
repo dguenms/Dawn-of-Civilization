@@ -276,6 +276,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>6</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_MEDITATION</PrereqTech>
@@ -427,6 +431,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>9</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>8</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -576,6 +584,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -727,6 +739,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>8</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -963,6 +979,10 @@
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_CODE_OF_LAWS</PrereqTech>
@@ -1039,6 +1059,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>1</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_MACHINERY</PrereqTech>
@@ -1113,6 +1137,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>8</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>6</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs/>
@@ -1256,6 +1284,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 			<!-- Rhye -->
@@ -1410,6 +1442,10 @@
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<!-- Rhye -->
 			<OrPreReqs>
@@ -1485,6 +1521,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>5</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_EDUCATION</PrereqTech>
@@ -1553,6 +1593,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 			<!-- Rhye  -->
@@ -1629,6 +1673,10 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -1711,6 +1759,10 @@
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
@@ -1786,6 +1838,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>1</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -1864,6 +1920,10 @@
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>1</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_RADIO</PrereqTech>
@@ -1933,6 +1993,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>1</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>8</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -2455,6 +2519,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>6</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -2677,6 +2745,10 @@
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>1</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
@@ -2748,6 +2820,10 @@
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
@@ -2817,6 +2893,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -2960,6 +3040,10 @@
 					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_GUILDS</PrereqTech>
@@ -3031,6 +3115,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>8</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -3182,6 +3270,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>8</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -5688,6 +5780,10 @@
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
 			</Flavors>
 			<!-- Rhye -->
 			<OrPreReqs>
@@ -6280,6 +6376,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>9</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>

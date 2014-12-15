@@ -81,6 +81,13 @@ public:
 	bool canBombard(CyPlot* pPlot);
 	bool canPillage(CyPlot* pPlot);
 
+	//SuperSpies: TSHEEP Assassin Mission
+	bool canAssassin(CyPlot* pPlot, bool bTestVisible);
+	//SuperSpies: glider1 start - Bribe Mission
+	bool canBribe(CyPlot* pPlot, bool bTestVisible);
+	//SuperSpies: glider1  end
+	//SuperSpies: TSHEEP End
+	
 	int sabotageCost(CyPlot* pPlot);
 	int sabotageProb(CyPlot* pPlot, int /*ProbabilityTypes*/ eProbStyle);
 	bool canSabotage(CyPlot* pPlot, bool bTestVisible);

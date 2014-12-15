@@ -817,6 +817,15 @@
 			<DefaultUnit>UNIT_ENGINEER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_STATESMAN</Type>
+			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_STATESMAN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_GREAT_GENERAL</Type>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

@@ -177,6 +177,15 @@ public:
 	bool canPillage(const CvPlot* pPlot) const;																										// Exposed to Python
 	bool pillage();
 
+	//SuperSpies: TSHEEP Assassin Mission
+	bool canAssassin(const CvPlot* pPlot, bool bTestVisible) const;																										// Exposed to Python
+	//TSHEEP Other functions
+	bool awardSpyExperience(TeamTypes eTargetTeam, int iModifier);
+	//SuperSpies: TSHEEP End
+	//SuperSpies: glider1 start
+	bool canBribe(const CvPlot* pPlot, bool bTestVisible) const;
+	//SuperSpies: glider1 end
+
 	bool canPlunder(const CvPlot* pPlot, bool bTestVisible = false) const;																					// Exposed to Python
 	bool plunder();
 	void updatePlunder(int iChange, bool bUpdatePlotGroups);
@@ -255,6 +264,16 @@ public:
 	int canGiveExperience(const CvPlot* pPlot) const;																												// Exposed to Python 
 	bool giveExperience();																																// Exposed to Python 
 	int getStackExperienceToGive(int iNumUnits) const;
+
+	// Leoreth
+	bool canResolveCrisis(const CvPlot* pPlot) const;
+	bool resolveCrisis();
+
+	bool canReformGovernment(const CvPlot* pPlot) const;
+	bool reformGovernment();
+
+	bool canDiplomaticMission(const CvPlot* pPlot) const;
+	bool diplomaticMission();
 
 	int upgradePrice(UnitTypes eUnit) const;																											// Exposed to Python
 	bool upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, int iCount = 0) const;					// Exposed to Python

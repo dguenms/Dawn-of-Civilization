@@ -80,6 +80,10 @@ import ReminderEventManager
 import GGUtil
 # BUG - Great General Bar - end
 
+# Leoreth - Great Spy Bar - start
+import GSpyUtil
+# Leoreth - Great Spy Bar - end
+
 # BUG - Great Person Bar - start
 import GPUtil
 GP_BAR_WIDTH = 320
@@ -814,6 +818,15 @@ class CvMainInterface:
 		screen.hide( "GreatGeneralBar" )
 # BUG - Great General Bar - end
 
+# Leoreth - Great Spy Bar - start
+		screen.addStackedBarGFC("GreatSpyBar", xCoord - 100, 27, 100, iStackBarHeight, InfoBarTypes.NUM_INFOBAR_TYPES, WidgetTypes.WIDGET_HELP_GREAT_SPY, -1, -1)
+		screen.setStackedBarColors("GreatSpyBar", InfoBarTypes.INFOBAR_STORED, gc.getInfoTypeForString("COLOR_NEGATIVE_RATE"))
+		screen.setStackedBarColors("GreatSpyBar", InfoBarTypes.INFOBAR_RATE, gc.getInfoTypeForString("COLOR_EMPTY"))
+		screen.setStackedBarColors("GreatSpyBar", InfoBarTypes.INFOBAR_RATE_EXTRA, gc.getInfoTypeForString("COLOR_EMPTY"))
+		screen.setStackedBarColors("GreatSpyBar", InfoBarTypes.INFOBAR_EMPTY, gc.getInfoTypeForString("COLOR_EMPTY"))
+		screen.hide("GreatSpyBar")
+# Leoreth - Great Spy Bar - end
+
 # BUG - Great Person Bar - start
 		xCoord += 7 + 100
 		screen.addStackedBarGFC( "GreatPersonBar", xCoord, 27, 380, iStackBarHeight, InfoBarTypes.NUM_INFOBAR_TYPES, WidgetTypes.WIDGET_GP_PROGRESS_BAR, -1, -1 )
@@ -825,7 +838,15 @@ class CvMainInterface:
 # BUG - Great Person Bar - end
 
 # BUG - Bars on single line for higher resolution screens - start
-		xCoord = 268 + (xResolution - 1440) / 2
+		xCoord = 168 + (xResolution - 1440) / 2
+		screen.addStackedBarGFC("GreatSpyBar-w", xCoord, 2, 84, iStackBarHeight, InfoBarTypes.NUM_INFOBAR_TYPES, WidgetTypes.WIDGET_HELP_GREAT_SPY, -1, -1)
+		screen.setStackedBarColors("GreatSpyBar-w", InfoBarTypes.INFOBAR_STORED, gc.getInfoTypeForString("COLOR_PLAYER_DARK_INDIGO"))
+		screen.setStackedBarColors("GreatSpyBar-w", InfoBarTypes.INFOBAR_RATE, gc.getInfoTypeForString("COLOR_EMPTY"))
+		screen.setStackedBarColors("GreatSpyBar-w", InfoBarTypes.INFOBAR_RATE_EXTRA, gc.getInfoTypeForString("COLOR_EMPTY"))
+		screen.setStackedBarColors("GreatSpyBar-w", InfoBarTypes.INFOBAR_EMPTY, gc.getInfoTypeForString("COLOR_EMPTY"))
+		screen.hide("GreatSpyBar-w")
+		
+		xCoord += 100
 		screen.addStackedBarGFC( "GreatGeneralBar-w", xCoord, 2, 84, iStackBarHeight, InfoBarTypes.NUM_INFOBAR_TYPES, WidgetTypes.WIDGET_HELP_GREAT_GENERAL, -1, -1 )
 		screen.setStackedBarColors( "GreatGeneralBar-w", InfoBarTypes.INFOBAR_STORED, gc.getInfoTypeForString("COLOR_NEGATIVE_RATE") ) #gc.getInfoTypeForString("COLOR_GREAT_PEOPLE_STORED") )
 		screen.setStackedBarColors( "GreatGeneralBar-w", InfoBarTypes.INFOBAR_RATE, gc.getInfoTypeForString("COLOR_EMPTY") )
@@ -3013,8 +3034,14 @@ class CvMainInterface:
 		screen.hide( "GreatGeneralBarText" )
 # BUG - Great General Bar - end
 
+# Leoreth - Great Spy Bar - start
+		screen.hide("GreatSpyBar")
+		screen.hide("GreatSpyBarText")
+# Leoreth - Great Spy Bar - end
+
 # BUG - Bars on single line for higher resolution screens - start
 		screen.hide( "GreatGeneralBar-w" )
+		screen.hide( "GreatSpyBar-w" )
 		screen.hide( "ResearchBar-w" )
 		screen.hide( "GreatPersonBar-w" )
 # BUG - Bars on single line for higher resolution screens - end
@@ -3189,6 +3216,10 @@ class CvMainInterface:
 # BUG - Great General Bar - start
 				self.updateGreatGeneralBar(screen)
 # BUG - Great General Bar - end
+
+# Leoreth - Great Spy Bar - start
+				self.updateGreatSpyBar(screen)
+# Leoreth - Great Spy Bar - end
 					
 		return 0
 		
@@ -3266,6 +3297,36 @@ class CvMainInterface:
 			screen.setBarPercentage( szGreatGeneralBar, InfoBarTypes.INFOBAR_STORED, fProgress )
 			screen.show( szGreatGeneralBar )
 # BUG - Great General Bar - end
+
+# Leoreth - Great Spy Bar - start
+	def updateGreatSpyBar(self, screen):
+		if not CyInterface().isCityScreenUp() and MainOpt.isShowGGProgressBar():
+			pPlayer = gc.getActivePlayer()
+			iEspionageExp = pPlayer.getEspionageExperience()
+			iThresholdExp = pPlayer.greatSpyThreshold()
+			iNeededExp = iThresholdExp - iEspionageExp
+			
+			szText = u"<font=2>%s</font>" %(GSpyUtil.getGreatSpyText(iNeededExp))
+			
+# Leoreth - Bars on single line for higher resolution screens - start
+			xResolution = screen.getXResolution()
+			if xResolution >= 1440:
+				szGreatSpyBar = "GreatSpyBar-w"
+				xCoord = 268 + (xResolution - 1440) / 2 + 84 / 2 - 100
+				yCoord = 5
+			else:
+				szGreatSpyBar = "GreatSpyBar"
+				xCoord = 268 + (xResolution - 1024) / 2 + 100 / 2 - 100
+				yCoord = 32
+				
+			screen.setLabel("GreatSpyBarText", "Background", szText, CvUtil.FONT_CENTER_JUSTIFY, xCoord, yCoord, -0.4, FontTypes.GAME_FONT, WidgetTypes.WIDGET_HELP_GREAT_SPY, -1, -1)
+			screen.show("GreatSpyBarText")
+# Leoreth - Bars on single line for higher resolution screens - end
+
+			fProgress = float(iEspionageExp) / float(iThresholdExp)
+			screen.setBarPercentage(szGreatSpyBar, InfoBarTypes.INFOBAR_STORED, fProgress)
+			screen.show(szGreatSpyBar)
+# Leoreth - Great Spy Bar - end
 					
 	def updateTimeText( self ):
 		
@@ -5083,6 +5144,14 @@ class CvMainInterface:
 														szBuffer = szBuffer + szTempBuffer
 														if (bAlignIcons):
 															scores.setEspionage()
+																	
+													#SuperSpies: TSHEEP BEGIN	
+													if (gc.getTeam(gc.getGame().getActiveTeam()).getCounterespionageTurnsLeftAgainstTeam(eTeam) != 0):
+														szTempBuffer = u"(%d)%c" %(gc.getTeam(gc.getGame().getActiveTeam()).getCounterespionageTurnsLeftAgainstTeam(eTeam), CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR))
+														szBuffer = szBuffer + szTempBuffer
+														if (bAlignIcons):
+															scores.setCounterEspionageTurns(szTempBuffer)
+													#SuperSpies: TSHEEP END
 												
 												bEspionageCanSeeResearch = False
 												if (bEspionage):

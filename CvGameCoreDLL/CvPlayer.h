@@ -281,6 +281,9 @@ public:
 	DllExport int unitsGoldenAgeReady() const;																														// Exposed to Python
 	void killGoldenAgeUnits(CvUnit* pUnitAlive);
 
+	int greatSpyThreshold() const;
+	int greatPeopleModifier() const;
+
 	DllExport int greatPeopleThreshold(bool bMilitary = false) const;																														// Exposed to Python
 	int specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) const;														// Exposed to Python
 	int specialistCommerce(SpecialistTypes eSpecialist, CommerceTypes eCommerce) const;										// Exposed to Python
@@ -375,11 +378,17 @@ public:
 	int getGreatGeneralsCreated() const;																																		// Exposed to Python
 	void incrementGreatGeneralsCreated();
 
+	int getGreatSpiesCreated() const;
+	void incrementGreatSpiesCreated();
+
 	int getGreatPeopleThresholdModifier() const;																													// Exposed to Python
 	void changeGreatPeopleThresholdModifier(int iChange);
 
 	int getGreatGeneralsThresholdModifier() const;																													// Exposed to Python
 	void changeGreatGeneralsThresholdModifier(int iChange);
+
+	int getGreatSpiesThresholdModifier() const;
+	void changeGreatSpiesThresholdModifier(int iChange);
 
 	int getGreatPeopleRateModifier() const;																																// Exposed to Python
 	void changeGreatPeopleRateModifier(int iChange);
@@ -644,6 +653,11 @@ public:
 	int getCombatExperience() const; 	// Exposed to Python
 	void setCombatExperience(int iExperience);   // Exposed to Python
 	void changeCombatExperience(int iChange);   // Exposed to Python
+
+	// Leoreth
+	int getEspionageExperience() const;
+	void setEspionageExperience(int iExperience);
+	void changeEspionageExperience(int iChange);
 
 	DllExport bool isConnected() const;
 	DllExport int getNetID() const;
@@ -1175,6 +1189,10 @@ public:
 	bool canRespawn() const;
 	bool canEverRespawn() const;
 
+	int getNoAnarchyTurns() const;
+	void setNoAnarchyTurns(int iNewValue);
+	void changeNoAnarchyTurns(int iChange);
+
 protected:
 
 	int m_iStartingX;
@@ -1195,8 +1213,10 @@ protected:
 	int m_iGlobalHurryModifier;
 	int m_iGreatPeopleCreated;
 	int m_iGreatGeneralsCreated;
+	int m_iGreatSpiesCreated; // Leoreth
 	int m_iGreatPeopleThresholdModifier;
 	int m_iGreatGeneralsThresholdModifier;
+	int m_iGreatSpiesThresholdModifier; // Leoreth
 	int m_iGreatPeopleRateModifier;
 	int m_iGreatGeneralRateModifier;
 	int m_iDomesticGreatGeneralRateModifier;
@@ -1277,6 +1297,7 @@ protected:
 	int m_iTechScore;
 	int m_iWondersScore;
 	int m_iCombatExperience;
+	int m_iEspionageExperience; // Leoreth
 	int m_iPopRushHurryCount;
 	int m_iInflationModifier;
 
@@ -1318,6 +1339,7 @@ protected:
 	bool m_bReborn;
 	int m_iLatestRebellionTurn;
 	int m_iPersecutionCountdown;
+	int m_iNoAnarchyTurns;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;

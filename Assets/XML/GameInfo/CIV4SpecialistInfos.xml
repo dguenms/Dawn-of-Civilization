@@ -187,6 +187,31 @@
 			<Button>Art/Interface/MainScreen/CityScreen/spy.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
+			<Type>SPECIALIST_STATESMAN</Type>
+			<Description>TXT_KEY_SPECIALIST_STATESMAN</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_SPECIALIST_STATESMAN_STRATEGY</Strategy>
+			<Help/>
+			<Texture>Art/Interface/MainScreen/CityScreen/Citizen.dds</Texture>
+			<bVisible>1</bVisible>
+			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
+			<Yields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</Yields>
+			<Commerces/>
+			<iExperience>0</iExperience>
+			<Flavors/>
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>Art/Interface/MainScreen/CityScreen/Citizen.dds</Button>
+		</SpecialistInfo>
+		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_PRIEST</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_PRIEST</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
@@ -327,6 +352,31 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>Art/Interface/MainScreen/CityScreen/Great_Engineer.dds</Button>
+		</SpecialistInfo>
+		<SpecialistInfo>
+			<Type>SPECIALIST_GREAT_STATESMAN</Type>
+			<Description>TXT_KEY_SPECIALIST_GREAT_STATESMAN</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_SPECIALIST_GREAT_STATESMAN_STRATEGY</Strategy>
+			<Help/>
+			<Texture>Art/Interface/MainScreen/CityScreen/Great_Citizen.dds</Texture>
+			<bVisible>1</bVisible>
+			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
+			<Yields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>4</iYield>
+			</Yields>
+			<Commerces/>
+			<iExperience>0</iExperience>
+			<Flavors/>
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>Art/Interface/MainScreen/CityScreen/Great_Citizen.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_GENERAL</Type>

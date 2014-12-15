@@ -8,6 +8,7 @@ BASE MODS
 # Project Synthesis by Linkman for the Seljuks and Middle Eastern Mongol conquerors
 # The History Rewritten mod for the Tamil, Tibetan, Moorish, Polish, Congolese and Polynesian civilizations including units, buildings and leaders
 # Rhye's and Fall of the Classical World by srpt for the idea behind the stability mechanic
+# SuperSpies by Trojan Sheep, glider1 and Lord Tirian
 
 LEADERHEADS
 # melcher kürzer: Catherine the Great, Isabella

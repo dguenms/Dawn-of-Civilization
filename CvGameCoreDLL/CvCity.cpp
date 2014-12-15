@@ -2933,7 +2933,7 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
 		}
 		iExperience += getDomainFreeExperience((DomainTypes)(GC.getUnitInfo(eUnit).getDomainType()));
 
-		iExperience += getSpecialistFreeExperience();
+		if (!GC.getUnitInfo(eUnit).isSpy()) iExperience += getSpecialistFreeExperience();
 
 		// Leoreth: domain specific experience from civics
 		if (GC.getUnitInfo(eUnit).getDomainType() != NO_DOMAIN)
@@ -2953,6 +2953,21 @@ int CvCity::getProductionExperience(UnitTypes eUnit)
                 iExperience += 2;
 		}
 	}
+	
+	//SuperSpies: TSHEEP - Only give spies spy specific xp
+	if (eUnit != NO_UNIT)
+	{
+        if(GC.getUnitInfo(eUnit).isSpy())
+        {
+            iExperience = 0;
+
+            if (GC.getUnitInfo(eUnit).getUnitCombatType() != NO_UNITCOMBAT)
+            {
+                iExperience += getUnitCombatFreeExperience((UnitCombatTypes)(GC.getUnitInfo(eUnit).getUnitCombatType()));
+            }
+        }
+	}
+	//SuperSpies: TSHEEP end
 
 	return std::max(0, iExperience);
 }

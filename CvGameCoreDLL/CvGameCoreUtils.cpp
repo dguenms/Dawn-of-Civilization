@@ -239,116 +239,113 @@ bool isBeforeUnitCycle(const CvUnit* pFirstUnit, const CvUnit* pSecondUnit)
 /*************************************************************************************************/
 bool isPromotionValid(PromotionTypes ePromotion, UnitTypes eUnit, bool bLeader)
 {
-    CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
-    CvPromotionInfo& kPromotion = GC.getPromotionInfo(ePromotion);
+	if (GC.getUnitInfo(eUnit).getFreePromotions(ePromotion))
+	{
+		return true;
+	}
 
-    if (kUnit.getFreePromotions(ePromotion))
-    {
-        return true;
-    }
+	if (GC.getUnitInfo(eUnit).getUnitCombatType() == NO_UNITCOMBAT)
+	{
+		return false;
+	}
 
-    if (kUnit.getUnitCombatType() == NO_UNITCOMBAT)
-    {
-        return false;
-    }
+	if (!bLeader && GC.getPromotionInfo(ePromotion).isLeader())
+	{
+		return false;
+	}
 
-    if (!bLeader && kPromotion.isLeader())
-    {
-        return false;
-    }
+	if (!(GC.getPromotionInfo(ePromotion).getUnitCombat(GC.getUnitInfo(eUnit).getUnitCombatType())))
+	{
+		return false;
+	}
 
-    if (!(kPromotion.getUnitCombat(kUnit.getUnitCombatType())))
-    {
-        return false;
-    }
+	//SuperSpies: TSHEEP Override for Spy promotions
+	//if (GC.getUnitInfo(eUnit).isOnlyDefensive())
+	if (GC.getUnitInfo(eUnit).isOnlyDefensive() && !GC.getUnitInfo(eUnit).isSpy())//SuperSpies: TSHEEP End
+	{
+		if ((GC.getPromotionInfo(ePromotion).getCityAttackPercent() != 0) ||
+			  (GC.getPromotionInfo(ePromotion).getWithdrawalChange() != 0) ||
+			  (GC.getPromotionInfo(ePromotion).getCollateralDamageChange() != 0) ||
+			  (GC.getPromotionInfo(ePromotion).isBlitz()) ||
+			  (GC.getPromotionInfo(ePromotion).isAmphib()) ||
+			  (GC.getPromotionInfo(ePromotion).isRiver()) ||
+			  (GC.getPromotionInfo(ePromotion).getHillsAttackPercent() != 0))
+		{
+			return false;
+		}
+	}
 
-    if (kUnit.isOnlyDefensive())
-    {
-        if ((kPromotion.getCityAttackPercent() != 0) ||
-                (kPromotion.getWithdrawalChange() != 0) ||
-                (kPromotion.getCollateralDamageChange() != 0) ||
-                (kPromotion.isBlitz()) ||
-                (kPromotion.isAmphib()) ||
-                (kPromotion.isRiver()) ||
-                (kPromotion.getHillsAttackPercent() != 0))
-        {
-            return false;
-        }
-    }
+	if (GC.getUnitInfo(eUnit).isIgnoreTerrainCost())
+	{
+		if (GC.getPromotionInfo(ePromotion).getMoveDiscountChange() != 0)
+		{
+			return false;
+		}
+	}
 
-    if (kUnit.isIgnoreTerrainCost())
-    {
-        if (kPromotion.getMoveDiscountChange() != 0)
-        {
-            return false;
-        }
-    }
+	if (GC.getUnitInfo(eUnit).getMoves() == 1)
+	{
+		if (GC.getPromotionInfo(ePromotion).isBlitz())
+		{
+			return false;
+		}
+	}
 
-    if (kUnit.getMoves() == 1)
-    {
-        if (kPromotion.isBlitz())
-        {
-            return false;
-        }
-    }
+	if ((GC.getUnitInfo(eUnit).getCollateralDamageLimit() == 0) || (GC.getUnitInfo(eUnit).getCollateralDamageMaxUnits() == 0))
+	{
+		if (GC.getPromotionInfo(ePromotion).getCollateralDamageChange() != 0)
+		{
+			return false;
+		}
+	}
 
-    if ((kUnit.getCollateralDamage() == 0) || (kUnit.getCollateralDamageLimit() == 0) || (kUnit.getCollateralDamageMaxUnits() == 0))
-    {
-        if (kPromotion.getCollateralDamageChange() != 0)
-        {
-            return false;
-        }
-    }
+	//SuperSpies: TSHEEP - Spy Promotion Override
+	//if (GC.getUnitInfo(eUnit).getInterceptionProbability() == 0)
+	if (GC.getUnitInfo(eUnit).getInterceptionProbability() == 0 && !GC.getUnitInfo(eUnit).isSpy())//SuperSpies: TSHEEP End
+	{
+		if (GC.getPromotionInfo(ePromotion).getInterceptChange() != 0)
+		{
+			return false;
+		}
+	}
 
-    if (kUnit.getInterceptionProbability() == 0)
-    {
-        if (kPromotion.getInterceptChange() != 0)
-        {
-            return false;
-        }
-    }
+	if (NO_PROMOTION != GC.getPromotionInfo(ePromotion).getPrereqPromotion())
+	{
+		if (!isPromotionValid((PromotionTypes)GC.getPromotionInfo(ePromotion).getPrereqPromotion(), eUnit, bLeader))
+		{
+			return false;
+		}
+	}
 
-    if (NO_PROMOTION != kPromotion.getPrereqPromotion())
-    {
-        if (!isPromotionValid((PromotionTypes)kPromotion.getPrereqPromotion(), eUnit, bLeader))
-        {
-            return false;
-        }
-    }
+	PromotionTypes ePrereq1 = (PromotionTypes)GC.getPromotionInfo(ePromotion).getPrereqOrPromotion1();
+	PromotionTypes ePrereq2 = (PromotionTypes)GC.getPromotionInfo(ePromotion).getPrereqOrPromotion2();
+	if (NO_PROMOTION != ePrereq1 || NO_PROMOTION != ePrereq2)
+	{
+		bool bValid = false;
+		if (!bValid)
+		{
+			if (NO_PROMOTION != ePrereq1 && isPromotionValid(ePrereq1, eUnit, bLeader))
+			{
+				bValid = true;
+			}
+		}
 
-    PromotionTypes ePrereq1 = (PromotionTypes)kPromotion.getPrereqOrPromotion1();
-    PromotionTypes ePrereq2 = (PromotionTypes)kPromotion.getPrereqOrPromotion2();
-    if (NO_PROMOTION != ePrereq1 || NO_PROMOTION != ePrereq2)
-    {
-        bool bValid = false;
-        if (!bValid)
-        {
-            if (NO_PROMOTION != ePrereq1 && isPromotionValid(ePrereq1, eUnit, bLeader))
-            {
-                bValid = true;
-            }
-        }
+		if (!bValid)
+		{
+			if (NO_PROMOTION != ePrereq2 && isPromotionValid(ePrereq2, eUnit, bLeader))
+			{
+				bValid = true;
+			}
+		}
 
-        if (!bValid)
-        {
-            if (NO_PROMOTION != ePrereq2 && isPromotionValid(ePrereq2, eUnit, bLeader))
-            {
-                bValid = true;
-            }
-        }
+		if (!bValid)
+		{
+			return false;
+		}
+	}
 
-        if (!bValid)
-        {
-            return false;
-        }
-    }
-
-    return true;
+	return true;
 }
-/*************************************************************************************************/
-/** ADVANCED COMBAT ODDS                      11/7/09                           PieceOfMind      */
-/** END                                                                                          */
-/*************************************************************************************************/
 
 int getPopulationAsset(int iPopulation)
 {
@@ -2471,6 +2468,10 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	case MISSION_BUILD: szString = L"MISSION_BUILD"; break;
 	case MISSION_LEAD: szString = L"MISSION_LEAD"; break;
 	case MISSION_ESPIONAGE: szString = L"MISSION_ESPIONAGE"; break;
+	case MISSION_RESOLVE_CRISIS: szString = L"MISSION_RESOLVE_CRISIS"; break;
+	case MISSION_REFORM_GOVERNMENT: szString = L"MISSION_REFORM_GOVERNMENT"; break;
+	case MISSION_DIPLOMATIC_MISSION: szString = L"MISSION_DIPLOMATIC_MISSION"; break;
+
 	case MISSION_DIE_ANIMATION: szString = L"MISSION_DIE_ANIMATION"; break;
 
 	case MISSION_BEGIN_COMBAT: szString = L"MISSION_BEGIN_COMBAT"; break;
