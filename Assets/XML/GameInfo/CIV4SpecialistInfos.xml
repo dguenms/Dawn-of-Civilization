@@ -161,32 +161,6 @@
 			<Button>Art/Interface/MainScreen/CityScreen/engineer.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
-			<Type>SPECIALIST_SPY</Type>
-			<Description>TXT_KEY_UNIT_SPY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_SPY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_SPECIALIST_SPY_STRATEGY</Strategy>
-			<Help/>
-			<Texture>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,14</Texture>
-			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_SPY</GreatPeopleUnitClass>
-			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
-			<Yields/>
-			<Commerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
-			</Commerces>
-			<iExperience>0</iExperience>
-			<Flavors/>
-			<HotKey/>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/Interface/MainScreen/CityScreen/spy.dds</Button>
-		</SpecialistInfo>
-		<SpecialistInfo>
 			<Type>SPECIALIST_STATESMAN</Type>
 			<Description>TXT_KEY_SPECIALIST_STATESMAN</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
@@ -210,6 +184,32 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>Art/Interface/MainScreen/CityScreen/Citizen.dds</Button>
+		</SpecialistInfo>
+		<SpecialistInfo>
+			<Type>SPECIALIST_SPY</Type>
+			<Description>TXT_KEY_UNIT_SPY</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_GREAT_SPY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_SPECIALIST_SPY_STRATEGY</Strategy>
+			<Help/>
+			<Texture>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,14</Texture>
+			<bVisible>0</bVisible>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SPY</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
+			<Yields/>
+			<Commerces>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</Commerces>
+			<iExperience>0</iExperience>
+			<Flavors/>
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>Art/Interface/MainScreen/CityScreen/spy.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_PRIEST</Type>
@@ -360,7 +360,7 @@
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Great_Citizen.dds</Texture>
-			<bVisible>1</bVisible>
+			<bVisible>0</bVisible>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
 			<Yields>

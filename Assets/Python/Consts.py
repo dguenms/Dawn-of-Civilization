@@ -2822,7 +2822,7 @@ iCivicMilitia, iCivicWarriorCode, iCivicMercenaries, iCivicLevyArmies, iCivicSta
 
 #Specialists
 iNumSpecialists = 17
-(iCitizen, iSpecialistPriest, iSpecialistArtist, iSpecialistScientist, iSpecialistMerchant, iSpecialistEngineer, iSpecialistSpy, iSpecialistStatesman,
+(iCitizen, iSpecialistPriest, iSpecialistArtist, iSpecialistScientist, iSpecialistMerchant, iSpecialistEngineer, iSpecialistStatesman, iSpecialistSpy,
 iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iSpecialistGreatSpy, iSettledSlave) = range(iNumSpecialists)
 
 #Stability Levels
