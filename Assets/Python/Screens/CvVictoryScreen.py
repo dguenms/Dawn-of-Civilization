@@ -1374,7 +1374,7 @@ class CvVictoryScreen:
 								if self.isApolloBuiltbyTeam(activePlayer.getTeam()):
 
 									bHasTech = gc.getTeam(iActiveTeam).isHasTech(iReqTech)
-									sSSPlayer = activePlayer.getCivilizationShortDescription(0) + ":"
+									sSSPlayer = activePlayer.getCivilizationShortDescription() + ":"
 									sSSCount = "%i [+%i]" % (activePlayer.getTeam().getProjectCount(i), activePlayer.getTeam().getProjectMaking(i))
 
 									iHasTechColor = -1
