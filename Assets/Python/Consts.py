@@ -2707,7 +2707,7 @@ tPersecutionPreference = (
 
 # initialise tech variables to unit indices from XML
 
-iNumTechs = 92
+iNumTechs = 93
 (iMysticism, iMeditation, iPolytheism, iPriesthood, iMonotheism, iMonarchy, iLiterature, iCodeOfLaws, iDrama, iFeudalism,
 iTheology, iMusic, iCivilService, iGuilds, iDivineRight, iPatronage, iNationalism, iMilitaryTradition, iConstitution, iLiberalism,
 iDemocracy, iCorporation, iFascism, iCommunism, iMassMedia, iEcology, iFishing, iTheWheel, iAgriculture, iPottery,
@@ -2717,13 +2717,9 @@ iCombustion, iFission, iFlight, iAdvancedFlight, iPlastics, iComposites, iStealt
 iHunting, iMining, iArchery, iMasonry, iAnimalHusbandry, iBronzeWorking, iHorsebackRiding, iIronWorking, iMetalCasting, iCompass, 
 iConstruction, iMachinery, iEngineering, iOptics, iGunpowder, iReplaceableParts, iMilitaryScience, iRifling, iSteamPower, iSteel, 
 iAssemblyLine, iRailroad, iArtillery, iIndustrialism, iRadio, iRefrigeration, iSuperconfuctors, iComputers, iLaser, iRocketry, 
-iSatellites, iRobotics) = range(iNumTechs)
+iSatellites, iRobotics, iFutureTech) = range(iNumTechs)
 
 iUtopia = iCommunism
-
-iFutureTech = iNumTechs
-iNumTechsFuture = iNumTechs+1
-
 
 # initialise unit variables to unit indices from XML
 

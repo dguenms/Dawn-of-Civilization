@@ -653,6 +653,7 @@ class DynamicCivs:
                         iAmerica : "TXT_KEY_CIV_AMERICA_SOVIET_VASSAL",
 			iArgentina : "TXT_KEY_CIV_ARGENTINA_SOVIET_VASSAL",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_SOVIET_VASSAL",
+			iCanada : "TXT_KEY_CIV_CANADA_SOVIET_VASSAL",
                 }
 		
 		self.naziVassals = {
@@ -698,6 +699,7 @@ class DynamicCivs:
                         iAmerica : "TXT_KEY_CIV_AMERICA_NAZI_VASSAL",
 			iArgentina : "TXT_KEY_CIV_ARGENTINA_NAZI_VASSAL",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_NAZI_VASSAL",
+			iCanada : "TXT_KEY_CIV_CANADA_NAZI_VASSAL",
                 }
 
                 self.fascistNames = {
@@ -742,7 +744,8 @@ class DynamicCivs:
 			iGermany : "TXT_KEY_CIV_GERMANY_DESC_FASCIST",
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_FASCIST",
 			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_FASCIST",
-			iBrazil : "TXT_KEY_CIV_BRAZI_DESC_FASCIST",
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_FASCIST",
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_FASCIST",
                 }
 
                 self.communistNames = {
@@ -788,6 +791,7 @@ class DynamicCivs:
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_COMMUNIST",
 			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_COMMUNIST",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_COMMUNIST",
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_COMMUNIST",
                 }
 
                 self.democraticNames = {
@@ -833,6 +837,7 @@ class DynamicCivs:
                         iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEMOCRATIC",
 			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_DEMOCRATIC",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEMOCRATIC",
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_DEMOCRATIC",
                 }
 		
 		self.modernIslamNames = {
