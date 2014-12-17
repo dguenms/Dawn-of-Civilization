@@ -2442,7 +2442,7 @@ def countPlayersWithAttitudeAndCivic(iPlayer, eAttitude, tCivic):
 	return iCount
 	
 def getLargestCities(iPlayer, iNumCities):
-	lCities = utils.getSortedList(utils.getCityList(iPlayer), lambda x: x.getPopulation())
+	lCities = utils.getSortedList(utils.getCityList(iPlayer), lambda x: x.getPopulation(), True)
 	return lCities[:iNumCities]
 	
 def countCitiesOfSize(iPlayer, iThreshold):
@@ -2593,7 +2593,7 @@ def countBestCitiesReligion(iReligion, function, iNumCities):
 	lCities = []
 	for iLoopPlayer in range(iNumPlayers):
 		lCities.extend(utils.getCityList(iLoopPlayer))
-	lCities = utils.getSortedList(lCities, function)
+	lCities = utils.getSortedList(lCities, function, True)
 	
 	iCount = 0
 	for city in lCities[:iNumCities]:
