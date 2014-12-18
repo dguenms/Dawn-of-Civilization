@@ -40,6 +40,7 @@ g_gpBarList = (
 	"UNIT_MERCHANT",
 	"UNIT_SCIENTIST",
 	"UNIT_ARTIST",
+	"UNIT_STATESMAN",
 	"UNIT_PROPHET",
 	"UNIT_GREAT_GENERAL",
 # MOD: specify the unit type (XML key) for each new great person (1)
@@ -55,6 +56,7 @@ NUM_GP = len(g_gpBarList)
 	GP_MERCHANT,
 	GP_SCIENTIST,
 	GP_ARTIST,
+	GP_STATESMAN,
 	GP_PROPHET,
 	GP_GENERAL,
 # MOD: define a constant for each new great person in same order as above (2)
@@ -85,6 +87,7 @@ def init():
 	g_gpColors[GP_MERCHANT] = gc.getInfoTypeForString("COLOR_YELLOW")
 	g_gpColors[GP_SCIENTIST] = gc.getInfoTypeForString("COLOR_RESEARCH_STORED")
 	g_gpColors[GP_ARTIST] = gc.getInfoTypeForString("COLOR_CULTURE_STORED")
+	g_gpColors[GP_STATESMAN] = gc.getInfoTypeForString("COLOR_PLAYER_GOLDENROD")
 	g_gpColors[GP_PROPHET] = gc.getInfoTypeForString("COLOR_BLUE")
 	g_gpColors[GP_GENERAL] = gc.getInfoTypeForString("COLOR_RED")
 	# MOD: specify color for each new great person (3)
@@ -97,6 +100,7 @@ def init():
 	g_unitIcons[g_gpUnitTypes[GP_MERCHANT]] = FontUtil.getChar(FontSymbols.COMMERCE_GOLD_CHAR)
 	g_unitIcons[g_gpUnitTypes[GP_SCIENTIST]] = FontUtil.getChar(FontSymbols.COMMERCE_RESEARCH_CHAR)
 	g_unitIcons[g_gpUnitTypes[GP_ARTIST]] = FontUtil.getChar(FontSymbols.COMMERCE_CULTURE_CHAR)
+	g_unitIcons[g_gpUnitTypes[GP_STATESMAN]] = FontUtil.getChar(FontSymbols.SCALES_CHAR)
 	g_unitIcons[g_gpUnitTypes[GP_PROPHET]] = FontUtil.getChar(FontSymbols.RELIGION_CHAR)
 	g_unitIcons[g_gpUnitTypes[GP_GENERAL]] = FontUtil.getChar(FontSymbols.GREAT_GENERAL_CHAR)
 	# MOD: specify icon (font glyph) for each new great person (4)
