@@ -16,7 +16,7 @@ localText = CyTranslator()
 
 # general constants
 lWonders = [i for i in range(iBeginWonders, iNumBuildings)]
-lGreatPeople = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatGeneral, iSpecialistGreatSpy]
+lGreatPeople = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iSpecialistGreatSpy]
 
 # first Polynesian goal: settle two out of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island
 # second Polynesian goal: settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD

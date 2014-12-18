@@ -1563,7 +1563,7 @@ class CvVictoryScreen:
 						sGoalText = localText.getText(con.tGoals[gc.getPlayer(self.iActivePlayer).getReborn()][gc.getGame().getGameSpeedType()][self.iActivePlayer][i], ())
 						sGoalTurn = ''
 						if not gc.getTeam(self.iActivePlayer).isHasTech(con.iCalendar) or gc.getPlayer(self.iActivePlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
-							iVictoryYear = con.tVictoryYears[self.iActivePlayer][i]
+							iVictoryYear = con.dVictoryYears[gc.getPlayer(self.iActivePlayer).getCivilizationType()][i]
 							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (getTurnForYear(iVictoryYear) - utils.getScenarioStartTurn(),))
                                                 sGoalDisplay = sGoalText + sGoalTurn
 						if self.X_EXTRA < 100:
