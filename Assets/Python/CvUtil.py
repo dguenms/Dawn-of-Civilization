@@ -451,6 +451,7 @@ OtherFontIcons = { 'happy' : FontSymbols.HAPPY_CHAR,
 				'map' : FontSymbols.MAP_CHAR,
 				'occupation' : FontSymbols.OCCUPATION_CHAR,
 				'power' : FontSymbols.POWER_CHAR,
+				'scales' : FontSymbols.SCALES_CHAR,
 				}
 
 GlobalInfosMap = {	'bonus': {'NUM': gc.getNumBonusInfos, 'GET': gc.getBonusInfo},

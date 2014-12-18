@@ -1045,6 +1045,7 @@ enum FontSymbols					// Exposed to Python
 	DOWN_CHAR,
 	SUCCESS_CHAR,
 	FAILURE_CHAR,
+	SCALES_CHAR,
 	AIRPORT_CHAR,
 
 #ifdef _USRDLL
