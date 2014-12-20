@@ -2214,6 +2214,7 @@ def getResurrectionTechs(iPlayer):
 	return lTechList
 	
 def relocateCapital(iPlayer, bResurrection = False):
+	if iPlayer < con.iNumPlayers: return
 	if gc.getPlayer(iPlayer).getNumCities() == 0: return
 
 	tCapital = con.tCapitals[utils.getReborn(iPlayer)][iPlayer]
