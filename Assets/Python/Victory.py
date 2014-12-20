@@ -1651,7 +1651,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 			if iBuilding in [iConfucianCathedral, iBuddhistCathedral]:
 				bBuddhist = getNumBuildings(iKorea, iBuddhistCathedral) > 0
 				bConfucian = getNumBuildings(iKorea, iConfucianCathedral) > 0
-				if bBuddhst and bConfucian:
+				if bBuddhist and bConfucian:
 					win(iKorea, 0)
 					
 	# first Khmer goal: build four Buddhist and Hindu monasteries and Wat Preah Pisnulok by 1200 AD
