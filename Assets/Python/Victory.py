@@ -2486,7 +2486,7 @@ def countCityWonders(iPlayer, tPlot, bIncludeObsolete=False):
 	
 	for iWonder in lWonders:
 		iObsoleteTech = gc.getBuildingInfo(iWonder).getObsoleteTech()
-		if not bIncludeObsolete and gc.getTeam(iPlayer).isHasTech(iObsoleteTech): continue
+		if not bIncludeObsolete and iObsoleteTech != -1 and gc.getTeam(iPlayer).isHasTech(iObsoleteTech): continue
 		if plot.getPlotCity().isHasRealBuilding(iWonder): iCount += 1
 		
 	return iCount
