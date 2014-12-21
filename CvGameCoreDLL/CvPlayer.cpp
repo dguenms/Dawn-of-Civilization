@@ -1906,8 +1906,14 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		}
 	}
 
-	// Leoreth: update art style
-	//pNewCity->updateArtStyleType();
+	// Leoreth: make sure flip at the beginning creates a capital
+	BuildingClassTypes eCapitalBuildingClass = (BuildingClassTypes)GC.getDefineINT("CAPITAL_BUILDINGCLASS");
+	BuildingTypes eCapitalBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eCapitalBuildingClass)));
+
+	if (getBuildingClassCount(eCapitalBuildingClass) == 0)
+	{
+		findNewCapital();
+	}
 
 	// Forcing events that deal with the old city not to expire just because we conquered that city
 	for (CvEventMap::iterator it = m_mapEventsOccured.begin(); it != m_mapEventsOccured.end(); ++it)
@@ -1918,10 +1924,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			triggerData.m_iOtherPlayerCityId = -1;
 		}
 	}
-
-	//Leoreth: moved to Python
-	//processCivNames(); //Rhye - dynamic civ names - not jdog's
-	//GET_PLAYER(eOldOwner).processCivNames(); //Rhye - dynamic civ names - not jdog's
 }
 
 
