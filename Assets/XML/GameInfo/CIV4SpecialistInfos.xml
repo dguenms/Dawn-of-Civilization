@@ -166,7 +166,7 @@
 			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_STATESMAN_STRATEGY</Strategy>
 			<Help/>
-			<Texture>Art/Interface/MainScreen/CityScreen/Citizen.dds</Texture>
+			<Texture>Art/Interface/MainScreen/CityScreen/Statesman.dds</Texture>
 			<bVisible>1</bVisible>
 			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
@@ -359,7 +359,7 @@
 			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Help/>
-			<Texture>Art/Interface/MainScreen/CityScreen/Great_Citizen.dds</Texture>
+			<Texture>Art/Interface/MainScreen/CityScreen/Great_Statesman.dds</Texture>
 			<bVisible>0</bVisible>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>

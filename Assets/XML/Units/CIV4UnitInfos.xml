@@ -30274,8 +30274,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_ARTIST_MODERN</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_STATESMAN</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_STATESMAN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
