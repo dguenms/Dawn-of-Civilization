@@ -573,7 +573,7 @@ class Barbs:
 			if not tPlot: break
 			
 			plotList.remove(tPlot)
-			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, 1, sAdj)
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1, sAdj)
 			
 	def spawnMinors(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: represents minor states without ingame cities
@@ -583,7 +583,7 @@ class Barbs:
 		tPlot = utils.getRandomEntry(plotList)
 		
 		if tPlot:
-			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, iNumUnits, sAdj)
 		
 	def spawnNomads(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: represents aggressive steppe nomads etc.
@@ -610,7 +610,7 @@ class Barbs:
 		tPlot = utils.getRandomEntry(plotList)
 		
 		if tPlot:
-			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, iNumUnits, sAdj)
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, iNumUnits, sAdj)
 			
 	def spawnUprising(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		''' Leoreth: represents uprisings of Natives against colonial settlements, especially North America
