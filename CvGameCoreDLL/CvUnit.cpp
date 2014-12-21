@@ -6722,7 +6722,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 				}
 				
 				//SuperSpies: TSHEEP Give spies xp for successful missions
-				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(),GC.getEspionageMissionInfo(eMission).getDifficultyMod());
+				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), GC.getEspionageMissionInfo(eMission).getDifficultyMod());
 			}
 
 			return true;
