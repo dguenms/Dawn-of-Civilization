@@ -1,0 +1,1 @@
+If you get an error text each time this general attacks, you are missing the extra sound file. Replace the Activation and the Command file with the ones that are labeled 'NoSound' to fix this.

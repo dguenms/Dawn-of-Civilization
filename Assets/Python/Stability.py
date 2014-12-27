@@ -1411,6 +1411,8 @@ def calculateStability(iPlayer):
 	if iCivicGovernment == con.iCivicAutocracy:
 		if iCivicMilitary == con.iCivicStandingArmy: iCivicStability += 3
 		
+	if utils.getHumanID() != iPlayer and iCivicStability < 0: iCivicStability /= 2
+		
 	iCivicCombinationStability = iCivicStability
 	
 	lParameters[con.iParameterCivicCombinations] = iCivicCombinationStability
@@ -1451,6 +1453,8 @@ def calculateStability(iPlayer):
 		
 	if tPlayer.isHasTech(con.iMilitaryScience):
 		if iCivicMilitary == con.iCivicWarriorCode: iCivicStability -= 7
+		
+	if utils.getHumanID() != iPlayer and iCivicStability < 0: iCivicStability /= 2
 	
 	iCivicEraTechStability = iCivicStability
 	

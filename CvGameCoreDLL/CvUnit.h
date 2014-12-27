@@ -766,6 +766,9 @@ public:
 	bool canTradeUnit(PlayerTypes eReceivingPlayer);
 	void tradeUnit(PlayerTypes eReceivingPlayer);
 
+	// Leoreth
+	SpecialistTypes getSettledSpecialist() const;
+
 	DllExport const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;										// Exposed to Python
 	DllExport const TCHAR* getButton() const;										// Exposed to Python
 	DllExport int getGroupSize() const;
