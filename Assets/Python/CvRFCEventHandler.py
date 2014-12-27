@@ -683,15 +683,19 @@ class CvRFCEventHandler:
 		'Great Person Born'
 		pUnit, iPlayer, pCity = argsList
 		player = PyPlayer(iPlayer)
-		infoUnit = pUnit.getUnitClassType()
+		iUnitType = pUnit.getUnitType()
+		iUnitClassType = pUnit.getUnitClassType()
 
 		vic.onGreatPersonBorn(iPlayer, pCity, pUnit)
 		
 		sta.onGreatPersonBorn(iPlayer)
 		
+		#if pUnit.getName() in []:
+		#	utils.replace(pUnit, iUnitType)
+		
 		# Check if we should even show the popup:
-		if pUnit.isNone() or pCity.isNone():
-			return
+		#if pUnit.isNone() or pCity.isNone():
+		#	return
 		
 		#if(len(pUnit.getNameNoDesc()) == 0): # Rename units with no names - important to avoid confusion with event log
 			

@@ -6861,7 +6861,7 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 
 	int iNumCitiesMaintenance = (GET_PLAYER(getOwnerINLINE()).getNumCities() + iNumVassalCities) * iNumCitiesPercent;
 
-	iNumCitiesMaintenance = std::min(iNumCitiesMaintenance, GC.getHandicapInfo(getHandicapType()).getMaxNumCitiesMaintenance() * 100);
+	//iNumCitiesMaintenance = std::min(iNumCitiesMaintenance, GC.getHandicapInfo(getHandicapType()).getMaxNumCitiesMaintenance() * 100);
 
 	// Rhye: modify by city size
 	iNumCitiesPercent *= (getPopulation() + 9);

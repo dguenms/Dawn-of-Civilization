@@ -144,13 +144,11 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		//Leoreth: names in chronological order, but allow some randomness that increases with the game era
 		int iOffset = GC.getGameINLINE().getSorenRandNum(GET_PLAYER(eOwner).getCurrentEra()/2, "Unit name selection");
 
+		int iIndex;
 		for (iI = 0; iI < iNumNames; iI++)
 		{
-			int iIndex;
-			if (iI + iOffset < iNumNames)
-				iIndex = iI + iOffset;
-			else
-				iIndex = iI;
+			iIndex = iI + (iOffset % (iNumNames - iI));
+
 			CvWString szName = gDLL->getText(m_pUnitInfo->getUnitNames(iIndex));
 			if (!GC.getGameINLINE().isGreatPersonBorn(szName))
 			{
@@ -534,6 +532,8 @@ void CvUnit::setupGraphical()
 
 void CvUnit::convert(CvUnit* pUnit)
 {
+	GC.getGame().logMsg("CvUnit::convert()");
+
 	CvPlot* pPlot = plot();
 
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
@@ -14048,4 +14048,18 @@ bool CvUnit::diplomaticMission()
 	kill(true);
 
 	return true;
+}
+
+SpecialistTypes CvUnit::getSettledSpecialist() const
+{
+	int iI;
+	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		if (m_pUnitInfo->getGreatPeoples(iI))
+		{
+			return (SpecialistTypes)iI;
+		}
+	}
+
+	return NO_SPECIALIST;
 }

@@ -2726,7 +2726,7 @@ iUtopia = iCommunism
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 153
+iNumUnits = 161
 (iLion, iBear, iPanther, iWolf, iSettler, iWorker, iIndianFastWorker, iBrazilianLenhador, iScout, iExplorer, iSpy, iJewishMissionary,
 iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary,
 iZoroastrianMissionary, iWarrior, iIncanQuechua, iHarappanMilitia, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
@@ -2741,7 +2741,8 @@ iWarElephant, iKhmerBallistaElephant, iCarthaginianWarElephant, iTank, iGermanPa
 iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iPolynesianWaka, iBireme, iTrireme, iCaravel, 
 iPortugalCarrack, iTamilDharani, iGalleon, iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iMoorishCorsair, iFrigate, iShipOfTheLine, 
 iIronclad, iTransport,  iDestroyer, iCanadaCorvette,iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, iJetFighter, 
-iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iStatesman, iGreatGeneral, iGreatSpy,
+iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iStatesman, iGreatGeneralUnit, iGreatSpy,
+iFemaleProphet, iFemaleArtist, iFemaleScientist, iFemaleMerchant, iFemaleEngineer, iFemaleStatesman, iFemaleGreatGeneral, iFemaleGreatSpy,
 iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
 
 iCongoPombos = iKongoPombos

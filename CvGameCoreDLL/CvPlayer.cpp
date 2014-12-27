@@ -8301,7 +8301,7 @@ int CvPlayer::calculateInflationRate() const
 	}
 
 	// Leoreth: apply large empire penalty
-	int iSizeThreshold = 6 + 3 * getCurrentEra();
+	/*int iSizeThreshold = 6 + 3 * getCurrentEra();
 	int iMultiplier = isHuman() ? 5 : 5;
 	int iNumCities = getTotalPopulation() / iSizeThreshold;
 
@@ -8309,7 +8309,7 @@ int CvPlayer::calculateInflationRate() const
 	{
 		iRate *= 100 + iMultiplier * (iNumCities - 10);
 		iRate /= 100;
-	}
+	}*/
 
 	FAssert(iRate >= 0);
 
@@ -9462,12 +9462,14 @@ int CvPlayer::unitsGoldenAgeReady() const
 	PROFILE_FUNC();
 
 	CvUnit* pLoopUnit;
-	bool* pabUnitUsed;
+	//bool* pabUnitUsed;
+	bool* pabSpecialistUsed;
+	SpecialistTypes eSpecialist;
 	int iCount;
 	int iLoop;
 	int iI;
 
-	pabUnitUsed = new bool[GC.getNumUnitInfos()];
+	/*pabUnitUsed = new bool[GC.getNumUnitInfos()];
 
 	for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
 	{
@@ -9488,7 +9490,33 @@ int CvPlayer::unitsGoldenAgeReady() const
 		}
 	}
 
-	SAFE_DELETE_ARRAY(pabUnitUsed);
+	SAFE_DELETE_ARRAY(pabUnitUsed);*/
+
+	// Leoreth: make sure that different (male and female) great people of the same type are counted as the same for golden ages
+	//          uses the specialist type to identify great people types
+	pabSpecialistUsed = new bool[GC.getNumSpecialistInfos()];
+
+	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		pabSpecialistUsed[iI] = false;
+	}
+
+	iCount = 0;
+
+	for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+	{
+		if (pLoopUnit->isGoldenAge())
+		{
+			eSpecialist = pLoopUnit->getSettledSpecialist();
+			if (eSpecialist != NO_SPECIALIST && !pabSpecialistUsed[eSpecialist])
+			{
+				pabSpecialistUsed[eSpecialist] = true;
+				iCount++;
+			}
+		}
+	}
+
+	SAFE_DELETE_ARRAY(pabSpecialistUsed);
 
 	return iCount;
 }
@@ -9498,25 +9526,35 @@ void CvPlayer::killGoldenAgeUnits(CvUnit* pUnitAlive)
 {
 	CvUnit* pLoopUnit;
 	CvUnit* pBestUnit;
-	bool* pabUnitUsed;
+	//bool* pabUnitUsed;
+	bool* pabSpecialistUsed;
+	SpecialistTypes eSpecialist;
 	int iUnitsRequired;
 	int iValue;
 	int iBestValue;
 	int iLoop;
 	int iI;
 
-	pabUnitUsed = new bool[GC.getNumUnitInfos()];
+	/*pabUnitUsed = new bool[GC.getNumUnitInfos()];
 
 	for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
 	{
 		pabUnitUsed[iI] = false;
+	}*/
+
+	pabSpecialistUsed = new bool[GC.getNumSpecialistInfos()];
+
+	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		pabSpecialistUsed[iI] = false;
 	}
 
 	iUnitsRequired = unitsRequiredForGoldenAge();
 
 	if (pUnitAlive != NULL)
 	{
-		pabUnitUsed[pUnitAlive->getUnitType()] = true;
+		//pabUnitUsed[pUnitAlive->getUnitType()] = true;
+		if (pUnitAlive->getSettledSpecialist() != NO_SPECIALIST) pabSpecialistUsed[pUnitAlive->getSettledSpecialist()] = true;
 		iUnitsRequired--;
 	}
 
@@ -9529,7 +9567,8 @@ void CvPlayer::killGoldenAgeUnits(CvUnit* pUnitAlive)
 		{
 			if (pLoopUnit->isGoldenAge())
 			{
-				if (!(pabUnitUsed[pLoopUnit->getUnitType()]))
+				//if (!(pabUnitUsed[pLoopUnit->getUnitType()]))
+				if (pLoopUnit->getSettledSpecialist() != NO_SPECIALIST && !pabSpecialistUsed[pLoopUnit->getSettledSpecialist()])
 				{
 					iValue = 10000;
 
@@ -9547,7 +9586,8 @@ void CvPlayer::killGoldenAgeUnits(CvUnit* pUnitAlive)
 		FAssert(pBestUnit != NULL);
 		if (pBestUnit != NULL)
 		{
-			pabUnitUsed[pBestUnit->getUnitType()] = true;
+			//pabUnitUsed[pBestUnit->getUnitType()] = true;
+			if (pBestUnit->getSettledSpecialist() != NO_SPECIALIST) pabSpecialistUsed[pBestUnit->getSettledSpecialist()] = true;
 
 			pBestUnit->kill(true);
 
@@ -9560,7 +9600,8 @@ void CvPlayer::killGoldenAgeUnits(CvUnit* pUnitAlive)
 		}
 	}
 
-	SAFE_DELETE_ARRAY(pabUnitUsed);
+	//SAFE_DELETE_ARRAY(pabUnitUsed);
+	SAFE_DELETE_ARRAY(pabSpecialistUsed);
 }
 
 
