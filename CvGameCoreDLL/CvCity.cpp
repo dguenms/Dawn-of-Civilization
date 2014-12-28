@@ -10858,7 +10858,7 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			iNumBonuses = getNumBonuses(eBonus);
 
 			// Leoreth: Brazilian UP (sugar counts as oil for oil industry)
-			if (getOwner() == BRAZIL && eBonus == BONUS_OIL)
+			if (getOwner() == BRAZIL && eBonus == BONUS_OIL && eCorporation == (CorporationTypes)6)
 			{
 				iNumBonuses += getNumBonuses(BONUS_SUGAR);
 			}

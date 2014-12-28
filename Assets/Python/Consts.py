@@ -55,7 +55,7 @@ lm1Array =      [-1 for i in range(iNumPlayers)]
 
 # civilizations, not players
 iNumCivilizations = 57
-(iCivAmerica, iCivArabia, iCivAztec, iCivArgentina, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCanada, iCivCarthage, iCivCelt, 
+(iCivAmerica, iCivArabia, iCivArgentina, iCivAztec, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCanada, iCivCarthage, iCivCelt, 
 iCivChina, iCivColombia, iCivEgypt, iCivEngland, iCivEthiopia, iCivFrance, iCivGermany, iCivGreece, iCivHarappa, iCivHolyRoman, 
 iCivInca, iCivIndia, iCivIndonesia, iCivIran, iCivItaly, iCivJapan, iCivKhmer, iCivKongo, iCivKorea, iCivMali, 
 iCivMaya, iCivMexico, iCivMongol, iCivMoors, iCivMughals, iCivNativeAmericans, iCivNetherlands, iCivOttomans, iCivPersia, iCivPoland, 
@@ -2752,6 +2752,17 @@ iWorkBoat = iWorkboat
 iHeavySwordsman = iMaceman
 iEthiopianAskari = iEthiopianOromoWarrior
 iDutchEastIndiaman = iNetherlandsOostindievaarder
+
+dFemaleGreatPeople = {
+iProphet : iFemaleProphet,
+iArtist : iFemaleArtist,
+iScientist : iFemaleScientist,
+iMerchant : iFemaleMerchant,
+iEngineer : iFemaleEngineer,
+iStatesman : iFemaleStatesman,
+iGreatGeneralUnit : iFemaleGreatGeneral,
+iGreatSpy : iFemaleGreatSpy,
+}
 
 # initialise bonuses variables to bonuses IDs from WBS
 iNumBonuses = 40
