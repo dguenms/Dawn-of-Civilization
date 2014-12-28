@@ -29393,7 +29393,9 @@
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
 			<Type>UNIT_ARTIST</Type>
-			<UniqueNames/>
+			<UniqueNames>
+				<UniqueName>Great ArtistF</UniqueName>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -30907,6 +30909,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARTIST</Class>
@@ -31085,6 +31088,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCIENTIST</Class>
@@ -31263,6 +31267,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MERCHANT</Class>
@@ -31441,6 +31446,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ENGINEER</Class>
@@ -31619,6 +31625,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_STATESMAN</Class>
@@ -31805,6 +31812,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
@@ -31989,6 +31997,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>PROMOTION_LEADER</LeaderPromotion>
 			<iLeaderExperience>20</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_SPY</Class>
@@ -32172,6 +32181,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SLAVE</Class>
@@ -36557,7 +36567,7 @@
 			<UniqueNames>
 				<UniqueName>Merit-Ptah</UniqueName> <!-- 27th BC-->
 				<UniqueName>Manetho</UniqueName> <!-- 3rd BC -->
-				<UniqueName>Hypatia</UniqueName> <!-- 4th -->
+				<UniqueName>HypatiaF</UniqueName> <!-- 4th -->
 				<UniqueName>Ptolemaios</UniqueName> <!-- 2nd -->
 				<UniqueName>Diophantos</UniqueName> <!-- 3rd -->
 			</UniqueNames>
@@ -52291,7 +52301,7 @@
 			<UniqueNames>
 				<UniqueName>Pierre Ab&#233;lard</UniqueName><!-- 12th -->
 				<UniqueName>Louis IX</UniqueName><!-- 13th -->
-				<UniqueName>Jeanne d'Arc</UniqueName><!-- 15th -->
+				<UniqueName>Jeanne d'ArcF</UniqueName><!-- 15th -->
 				<UniqueName>Jean Calvin</UniqueName><!-- 16th -->
 				<UniqueName>Albert Schweitzer</UniqueName><!-- 20th -->
 				<UniqueName>Marcel L&#233;gaut</UniqueName><!-- 20th -->
@@ -52701,7 +52711,7 @@
 				<UniqueName>Antoine Lavoisier</UniqueName><!-- 18th -->
 				<UniqueName>Pierre-Simon Laplace</UniqueName><!-- 18th -->
 				<UniqueName>Louis Pasteur</UniqueName><!-- 19th -->
-				<UniqueName>Marie Curie</UniqueName><!-- 19th -->
+				<UniqueName>Marie CurieF</UniqueName><!-- 19th -->
 				<UniqueName>Antoine Henri Becquerel</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -52890,7 +52900,7 @@
 			<UniqueNames>
 				<UniqueName>Jacques Cartier</UniqueName><!-- 16th -->
 				<UniqueName>Samuel de Champlain</UniqueName><!-- 17th -->
-				<UniqueName>Coco Chanel</UniqueName><!-- 20th -->
+				<UniqueName>Coco ChanelF</UniqueName><!-- 20th -->
 				<UniqueName>Marcel Dessault</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -54610,7 +54620,7 @@
 			<Class>UNITCLASS_PROPHET</Class>
 			<Type>UNIT_GERMAN_PROPHET</Type>
 			<UniqueNames>
-				<UniqueName>Hildegard von Bingen</UniqueName><!-- 12th -->
+				<UniqueName>Hildegard von BingenF</UniqueName><!-- 12th -->
 				<UniqueName>Albertus Magnus</UniqueName><!-- 13th -->
 				<UniqueName>Jan Hus</UniqueName><!-- 14th -->
 				<UniqueName>Martin Luther</UniqueName><!-- 16th -->
@@ -64622,7 +64632,7 @@
 				<UniqueName>Abdur Rahman Hye</UniqueName>
 				<UniqueName>Abdul Qadeer Khan</UniqueName>
 				<UniqueName>Munir Ahmad Khan</UniqueName>
-				<UniqueName>Yasmeen Lari</UniqueName>
+				<UniqueName>Yasmeen LariF</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -67299,7 +67309,7 @@
 				<UniqueName>William Penn</UniqueName><!-- 18th -->
 				<UniqueName>Jonathan Edwards</UniqueName><!-- 18th -->
 				<UniqueName>Joseph Smith</UniqueName><!-- 19th -->
-				<UniqueName>Sojourner Truth</UniqueName><!-- 19th -->
+				<UniqueName>Sojourner TruthF</UniqueName><!-- 19th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -69234,7 +69244,7 @@
 				<UniqueName>Gholam Reza Aghazadeh</UniqueName><!-- 20th -->
 				<UniqueName>Caro Lucas</UniqueName><!-- 20th -->
 				<UniqueName>Siavash Alamouti</UniqueName><!-- 20th -->
-				<UniqueName>Anousheh Ansari</UniqueName><!-- 20th -->
+				<UniqueName>Anousheh AnsariF</UniqueName><!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -69828,7 +69838,7 @@
 			<UniqueNames>
 				<UniqueName>Wojciech</UniqueName>
 				<UniqueName>Stanislaw</UniqueName>
-				<UniqueName>Jadwiga</UniqueName>
+				<UniqueName>JadwigaF</UniqueName>
 				<UniqueName>Karol Wojtyla</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -70229,7 +70239,7 @@
 				<UniqueName>Nikolaj Kopernik</UniqueName>
 				<UniqueName>Jan Brozek</UniqueName>
 				<UniqueName>Stanislaw Staszic</UniqueName>
-				<UniqueName>Maria Sklodowska</UniqueName>
+				<UniqueName>Maria SklodowskaF</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -72304,7 +72314,7 @@
 			<UniqueNames>
 				<UniqueName>Jose Hernandez</UniqueName>
 				<UniqueName>Carlos Gardel</UniqueName>
-				<UniqueName>Eva Per&#243;n</UniqueName>
+				<UniqueName>Eva Per&#243;nF</UniqueName>
 				<UniqueName>Jorge Luis Borges</UniqueName>
 				<UniqueName>Antonio Berni</UniqueName>
 				<UniqueName>Daniel Barenboim</UniqueName>
@@ -74615,7 +74625,7 @@
 				<UniqueName>Fernando Botero</UniqueName>
 				<UniqueName>Rafael Orozco</UniqueName>
 				<UniqueName>Rodrigo Garcia</UniqueName>
-				<UniqueName>Shakira</UniqueName>
+				<UniqueName>ShakiraF</UniqueName>
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -75762,7 +75772,7 @@
 			<UniqueNames>
 				<UniqueName>Jos&#233; Clemente Orozco</UniqueName>
 				<UniqueName>Diego Rivera</UniqueName>
-				<UniqueName>Frida Kahlo</UniqueName>
+				<UniqueName>Frida KahloF</UniqueName>
 				<UniqueName>Octavio Paz</UniqueName>
 				<UniqueName>Pedro Infante</UniqueName>
 				<UniqueName>Carlos Fuentes</UniqueName>

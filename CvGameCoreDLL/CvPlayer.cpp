@@ -1910,7 +1910,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	BuildingClassTypes eCapitalBuildingClass = (BuildingClassTypes)GC.getDefineINT("CAPITAL_BUILDINGCLASS");
 	BuildingTypes eCapitalBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eCapitalBuildingClass)));
 
-	if (getBuildingClassCount(eCapitalBuildingClass) == 0)
+	if (!isMinorCiv() && !isBarbarian() && getBuildingClassCount(eCapitalBuildingClass) == 0)
 	{
 		findNewCapital();
 	}
@@ -19869,7 +19869,8 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 	CvCity* pCity = pPlot->getPlotCity();
 	CvWString szReplayMessage;
 
-    if (pGreatPeopleUnit->getOwner() != INDEPENDENT && pGreatPeopleUnit->getOwner() != INDEPENDENT2 && pGreatPeopleUnit->getOwner() != BARBARIAN)
+	// Leoreth: move notification to Python event
+    /*if (pGreatPeopleUnit->getOwner() != INDEPENDENT && pGreatPeopleUnit->getOwner() != INDEPENDENT2 && pGreatPeopleUnit->getOwner() != BARBARIAN)
     {
         if (pPlot)
         {
@@ -19903,7 +19904,7 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
                 //Rhye - end
             }
         }
-    }
+    }*/
     // Python Event
 	if (pCity)
 	{

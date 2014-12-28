@@ -26,6 +26,7 @@ import DynamicCivs
 
 gc = CyGlobalContext()        
 PyPlayer = PyHelpers.PyPlayer
+localText = CyTranslator()
 
 #Rhye - start
 iEgypt = con.iEgypt
@@ -685,23 +686,27 @@ class CvRFCEventHandler:
 		player = PyPlayer(iPlayer)
 		iUnitType = pUnit.getUnitType()
 		iUnitClassType = pUnit.getUnitClassType()
+		sName = pUnit.getName()
+		
+		if sName[-1] == "F":
+			pUnit.setName(sName[0:-1])
+			pUnit = utils.replace(pUnit, con.dFemaleGreatPeople[iUnitType])
+		
+		# Leoreth: display notification
+		if iPlayer not in [con.iIndependent, con.iIndependent2, con.iBarbarian]:
+			sCity = "%s (%s)" % (pCity.getName(), gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
+			sMessage = localText.getText("TXT_KEY_MISC_GP_BORN", (pUnit.getName(), sCity))
+			sUnrevealedMessage = localText.getText("TXT_KEY_MISC_GP_BORN_SOMEWHERE", (pUnit.getName(),))
+		
+			for iLoopPlayer in range(con.iNumPlayers):
+				if gc.getPlayer(iLoopPlayer).isAlive():
+					if pCity.plot().isRevealed(gc.getPlayer(iLoopPlayer).getTeam(), False):
+						CyInterface().addMessage(iLoopPlayer, False, con.iDuration, sMessage, "AS2D_UNIT_GREATPEOPLE", InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, pUnit.getButton(), ColorTypes(gc.getInfoTypeForString("COLOR_UNIT_TEXT")), pUnit.getX(), pUnit.getY(), True, True)
+					else:
+						CyInterface().addMessage(iLoopPlayer, False, con.iDuration, sUnrevealedMessage, "AS2D_UNIT_GREATPEOPLE", InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, "", ColorTypes(gc.getInfoTypeForString("COLOR_UNIT_TEXT")), -1, -1, False, False)
 
 		vic.onGreatPersonBorn(iPlayer, pCity, pUnit)
-		
 		sta.onGreatPersonBorn(iPlayer)
-		
-		#if pUnit.getName() in []:
-		#	utils.replace(pUnit, iUnitType)
-		
-		# Check if we should even show the popup:
-		#if pUnit.isNone() or pCity.isNone():
-		#	return
-		
-		#if(len(pUnit.getNameNoDesc()) == 0): # Rename units with no names - important to avoid confusion with event log
-			
-		#iCivilizationType = player.player.getCivilizationType()
-		# Pass the civilization and unit type along to the renamer
-		#pUnit.setName(CivSpecificGreatPeopleModNameUtils.generateCivilizationName(iCivilizationType, infoUnit))
 
         def onReligionSpread(self, argsList):
             
