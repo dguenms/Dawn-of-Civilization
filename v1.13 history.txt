@@ -119,3 +119,7 @@
 	# reduced the amount of raw espionage from Intelligence Agencies and Security Bureaus
 	# reduced the Espionage modifier of Jails from 50% to 25%
 	# Instead of double Spy specialists, Totalitarianism now gives +1 espionage per specialist
+# changed additional scientist slot for the Chinese Taixue to a statesman slot
+# changed additional scientist slot for the Greek Odeon to a statesman slot
+# the Roman Forum now gives an additional statesman slot
+# the French Salon now gives an additional statesman slot
