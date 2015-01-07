@@ -59,6 +59,7 @@ MISCELLANEOUS
 # Mef: map changes in France
 # Jusos2108: map changes in Australia
 # blizzrd: map changes in Scandinavia
+# Sgt. Bears: text and XML work
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others

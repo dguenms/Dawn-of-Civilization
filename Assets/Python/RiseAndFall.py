@@ -1332,9 +1332,10 @@ class RiseAndFall:
 		if iCiv == iAztecs and gc.getDefineINT("PLAYER_REBIRTH_MEXICO") == 0: return
 		if iCiv == iMaya and gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") == 0: return
 		
-		# reset contacts
+		# reset contacts and make peace
 		for iOtherCiv in range(con.iNumPlayers):
 			if iCiv != iOtherCiv:
+				teamCiv.makePeace(iOtherCiv)
 				teamCiv.cutContact(iOtherCiv)
 		
 		# reset diplomacy
@@ -2376,7 +2377,7 @@ class RiseAndFall:
 				iCultureChange = 100
 				
 			# Case 2: Human city
-			elif iOwner == iHuman and gc.getPlayer(iHuman).getNumCities() <= 1:
+			elif iOwner == iHuman:
 				iNumHumanCities += 1
 				
 			# Case 3: Other
