@@ -784,14 +784,15 @@
 			<BuildingsRequired>
 				<BuildingClass>BUILDINGCLASS_JEWISH_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CHRISTIAN_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_HINDU_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_BUDDHIST_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CONFUCIAN_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_CATHEDRAL</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
-			<!-- Rhye -->
 			<iNumBuildingsGlobal>5</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
@@ -1699,8 +1700,11 @@
 			<RoutesRequired/>
 			<ReligionsRequired>
 				<ReligionType>RELIGION_JUDAISM</ReligionType>
+				<ReligionType>RELIGION_ORTHODOXY</ReligionType> <!--Christian Religion-->
 				<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
 				<ReligionType>RELIGION_ISLAM</ReligionType>
+<!--Maybe I don't know anything about Zoroastrianism-->
+				<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
 			</ReligionsRequired>
 			<iNumReligions>1</iNumReligions>
 			<CorporationsRequired/>
@@ -5426,7 +5430,6 @@
 				</TriggerText>
 			</TriggerTexts>
 			<bSinglePlayer>0</bSinglePlayer>
-			<!-- Rhye -->
 			<iPercentGamesActive>0</iPercentGamesActive>
 			<iWeight>0</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
@@ -7249,11 +7252,13 @@
 			<BuildingsRequired>
 				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_MONASTERY</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -7518,8 +7523,10 @@
 			<iUnitDistanceWeight>0</iUnitDistanceWeight>
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
-			<BuildingsRequired/>
-			<iNumBuildings>0</iNumBuildings>
+			<BuildingsRequired> <!--Modern Olympics should require the Olympic Park-->
+				<BuildingClass>BUILDINGCLASS_OLYMPIC_PARK</BuildingClass>
+			</BuildingsRequired>
+			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
@@ -9780,6 +9787,8 @@
 				<BuildingClass>BUILDINGCLASS_TAOIST_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CHRISTIAN_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_TEMPLE</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -10151,6 +10160,8 @@
 				<BuildingClass>BUILDINGCLASS_BUDDHIST_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CONFUCIAN_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -12677,6 +12688,8 @@
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_MONASTERY</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -13780,7 +13793,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_AUTOCRACY</Civic>		<!-- Autocracy -->
+			<Civic>CIVIC_AUTOCRACY</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -16504,7 +16517,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClass> <!--changed event to reference the temple of solomon-->
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -16517,7 +16530,6 @@
 			<BonusesRequired/>
 			<RoutesRequired/>
 			<ReligionsRequired>
-				<ReligionType>RELIGION_JUDAISM</ReligionType>
 			</ReligionsRequired>
 			<iNumReligions>1</iNumReligions>
 			<CorporationsRequired/>
@@ -16539,7 +16551,7 @@
 				<PrereqTech>TECH_PAPER</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MASS_MEDIA</ObsoleteTech>
+				<ObsoleteTech>TECH_BANKING</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -16840,7 +16852,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>NONE</Civic>
+			<Civic>CIVIC_PANTHEON</Civic> <!--the text mentions Amun-Re the Egyptian Sun God-->
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -16857,8 +16869,10 @@
 			<iUnitDistanceWeight>0</iUnitDistanceWeight>
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
-			<BuildingsRequired/>
-			<iNumBuildings>0</iNumBuildings>
+			<BuildingsRequired> <!--Remove this if you don't want the Pagan Temple requirement-->
+				<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
+			</BuildingsRequired>
+			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>

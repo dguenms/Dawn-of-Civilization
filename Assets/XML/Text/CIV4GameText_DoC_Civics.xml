@@ -151,4 +151,44 @@
 		<English>[ICON_BULLET]Hurried Units Start with the [LINK=literal]Mercenary[\LINK] promotion</English>
 		<German>[ICON_BULLET]Beschleunigte Einheiten starten mit der [LINK=literal]Söldner[\LINK]-Beförderung</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_GUILDS_STRATEGY</Tag>
+		<English>Extra gold from specialist, extra production from workshops</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_INDUSTRIALISM_STRATEGY</Tag>
+		<English>May hire double the amount of engineers, increased production in all cities, extra production from workshop</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_LEVY_ARMIES_STRATEGY</Tag>
+		<English>Extra free units, military units produced with food</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCENARIES_STRATEGY</Tag>
+		<English>Can spend gold to finish production of units, hurried units start with the mercenary promotion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MILITIA_STRATEGY</Tag>
+		<English>Increased experience gained from combat within your borders, double production speed of walls</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NAVAL_DOMINANCE_STRATEGY</Tag>
+		<English>Extra experience for Naval units, increased production speed for Naval units, double production speed of Harbors, Customs Houses and Drydocks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE_STRATEGY</Tag>
+		<English>May hire double the amount of Artists, Scientists and Merchants, Extra Research from specialists, double production speed for hospitals and Universities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Tag>
+		<English>Extra experience for land units, increased production speed for land units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WARRIOR_CODE_STRATEGY</Tag>
+		<English>Decreased war unhappiness, double production speed of Barracks' and stables, no stability penalty for conquered cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Tag>
+		<English>Extra Production from specialists, extra food from workshops and watermills, double production speed for factories and Coal Plants</English>
+	</TEXT>
 </Civ4GameText>

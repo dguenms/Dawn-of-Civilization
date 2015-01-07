@@ -2076,8 +2076,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 		# third Secular goal: be first to enter the industrial and modern eras
 		elif iGoal == 2:
 			if checkEraGoal(iPlayer, [iIndustrial, iModern]): return 1
-			elif checkEraGoal(-1, [iIndustrial, iModern]): return -1
-			else: return 0
+			elif sd.getFirstEntered(iIndustrial) not in [-1, iPlayer] or sd.getFirstEntered(iModern) not in [-1, iPlayer]: return 0
 			
 	return -1
 
