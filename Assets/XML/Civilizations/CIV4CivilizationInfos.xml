@@ -79,6 +79,10 @@
 					<UnitType>UNIT_AMERICAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_AMERICAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_AMERICAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -184,6 +188,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_ARABIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ARABIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -299,6 +307,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_ARGENTINE_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -425,6 +437,10 @@
 					<UnitType>UNIT_AZTEC_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_AZTEC_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_AZTEC_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -544,6 +560,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_BABYLONIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_BABYLONIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -671,6 +691,10 @@
 					<UnitType>UNIT_BRAZILIAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_BRAZILIAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_BRAZILIAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -779,6 +803,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_BYZANTINE_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -896,6 +924,10 @@
 					<UnitType>UNIT_ENGLISH_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ENGLISH_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_ENGLISH_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -1010,6 +1042,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_PHOENICIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -1251,6 +1287,10 @@
 					<UnitType>UNIT_CHINESE_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_CHINESE_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_CHINESE_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -1364,6 +1404,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_COLOMBIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -1494,6 +1538,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_EGYPTIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_EGYPTIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -1629,6 +1677,10 @@
 					<UnitType>UNIT_ENGLISH_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ENGLISH_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_ENGLISH_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -1762,6 +1814,10 @@
 					<UnitType>UNIT_ETHIOPIAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_ETHIOPIAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -1876,6 +1932,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_FRENCH_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_FRENCH_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2019,6 +2079,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_GERMAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_GERMAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2165,6 +2229,10 @@
 					<UnitType>UNIT_GREEK_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_GREEK_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_GREEK_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -2253,6 +2321,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INDIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2393,6 +2465,10 @@
 					<UnitType>UNIT_GERMAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_GERMAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_GERMAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -2520,6 +2596,10 @@
 					<UnitType>UNIT_INCAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INCAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_INCAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -2642,6 +2722,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INDIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2772,6 +2856,10 @@
 					<UnitType>UNIT_INDONESIAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_INDONESIAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -2897,6 +2985,10 @@
 					<UnitType>UNIT_IRANIAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_IRANIAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_IRANIAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -3008,6 +3100,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_ITALIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ITALIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3127,6 +3223,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_JAPANESE_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_JAPANESE_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3257,6 +3357,10 @@
 					<UnitType>UNIT_KHMER_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_KHMER_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_KHMER_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -3381,6 +3485,10 @@
 					<UnitType>UNIT_CONGOLESE_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_CONGOLESE_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -3485,6 +3593,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_KOREAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_KOREAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3609,6 +3721,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_MALI_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_MALI_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3743,6 +3859,10 @@
 					<UnitType>UNIT_AZTEC_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_AZTEC_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_AZTEC_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -3851,6 +3971,10 @@
 					<UnitType>UNIT_MEXICAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_MEXICAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_MEXICAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -3957,6 +4081,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_MONGOLIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4094,6 +4222,10 @@
 					<UnitType>UNIT_ARABIAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ARABIAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_ARABIAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -4220,6 +4352,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_MUGHAL_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_MUGHAL_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4474,6 +4610,10 @@
 					<UnitType>UNIT_DUTCH_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_DUTCH_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_DUTCH_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -4584,6 +4724,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_TURKISH_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_TURKISH_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4723,6 +4867,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_PERSIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_PERSIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4867,6 +5015,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_POLISH_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_POLISH_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5100,6 +5252,10 @@
 					<UnitType>UNIT_PORTUGUESE_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_PORTUGUESE_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -5238,6 +5394,10 @@
 					<UnitType>UNIT_ROMAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ROMAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_ROMAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -5339,6 +5499,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_RUSSIAN_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5529,6 +5693,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_SPANISH_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_SPANISH_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5767,6 +5935,10 @@
 					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INDIAN_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_INDIAN_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -5880,6 +6052,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_KHMER_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_KHMER_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -6024,6 +6200,10 @@
 					<UnitType>UNIT_CHINESE_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_CHINESE_STATESMAN</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
 					<UnitType>UNIT_CHINESE_GREAT_GENERAL</UnitType>
 				</Unit>
@@ -6135,6 +6315,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
 					<UnitType>UNIT_NORSE_ENGINEER</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitType>UNIT_NORSE_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>

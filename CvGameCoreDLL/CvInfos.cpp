@@ -10803,26 +10803,6 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	iResearchPercent *= iScenarioModifier;
 	iResearchPercent /= 100;
 
-	// reduce tech speed during the ancient and classical eras
-	int iPenaltyBegin = -1000;
-	int iPenaltyEnd = 600;
-	int iClassicalModifier = 100;
-
-	// Leoreth: delay the tech penalty a little to give Babylonia more time if it's player controlled
-	if (ePlayer == BABYLONIA) iPenaltyBegin = -900;
-
-	if (iGameTurn < getTurnForYear(iPenaltyBegin) + 1)
-	{
-		iClassicalModifier = 105;
-	}
-	else if (iGameTurn >= getTurnForYear(iPenaltyBegin) + 1 && iGameTurn <= getTurnForYear(600) - 1)
-	{
-		iClassicalModifier = 125;
-	}
-
-	iResearchPercent *= iClassicalModifier;
-	iResearchPercent /= 100;
-
 	int iCivModifier;
 
 	if (ePlayer < NUM_MAJOR_PLAYERS)
@@ -10839,43 +10819,19 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 		iCivModifier = 110;
 	}
 
-	// handle several other aspects explicitly: era buffs, Mayan UP, reborn civs
+	// Maya UP
 	if (eCurrentEra <= ERA_CLASSICAL)
 	{
-		/*if (ePlayer == GREECE) iCivModifier -= 20;
-		if (ePlayer == ROME) iCivModifier -= 35;
-		if (ePlayer == PERSIA) iCivModifier -= 10;
-		if (ePlayer == BABYLONIA) iCivModifier += 15;*/
 		if (ePlayer == MAYA) iCivModifier -= 50; // Maya UP
-
-		/*if (ePlayer == INDIA)
-		{
-			if (bHuman) iCivModifier -= 10;
-			else iCivModifier -= 25;
-		}*/
 	}
-	/*else if (eCurrentEra == ERA_ANCIENT)
-	{
-		if (ePlayer == CARTHAGE) iCivModifier -= 20;
-	}*/
 
+	// nerf late game China
 	if (ePlayer == CHINA)
 	{
-		/*int iAIChinaModifier = 0;
-
-		if (!bHuman)
-		{
-			if (eCurrentEra == ERA_ANCIENT) iAIChinaModifier = -20;
-			else if (eCurrentEra == ERA_CLASSICAL) iAIChinaModifier = -10;
-			else if (eCurrentEra >= ERA_RENAISSANCE) iAIChinaModifier = 20;
-		}
-
-		// -25, -10, +5, +30, +35, +40
-		iCivModifier += iAIChinaModifier + std::min(eCurrentEra - 1, 3) * 5;*/
-
 		if (eCurrentEra >= ERA_RENAISSANCE) iCivModifier += 30;
 	}
 
+	// reborn civilizations have different modifiers
 	if (bReborn)
 	{
 		if (ePlayer == PERSIA) iCivModifier = 90; // Iran

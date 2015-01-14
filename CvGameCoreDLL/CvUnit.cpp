@@ -234,18 +234,6 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	//Rhye - start UP (start switch)
 	switch (getOwnerINLINE())
 	{
-	/*case JAPAN:   Leoreth: removed in favor of +50% faster unit promotions
-		if (getUnitCombatType() >= 1 && getUnitCombatType() <= 6) //all military land units
-			{
-				setHasPromotion(((PromotionTypes)26), true); //citygarrison1
-			}
-		break;*/
-	/*case ETHIOPIA:
-		if (getUnitCombatType() == 5) //gunpowder
-			{
-				setHasPromotion(((PromotionTypes)0), true); //combat1
-			}
-		break;*/
     case KOREA:
         if (getUnitCombatType() == 8) //naval
             {
@@ -260,32 +248,6 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 				setHasPromotion(((PromotionTypes)42), true); //navigation2
 			}
 		break;
-	/*case ENGLAND: Leoreth: removed in favor of -50% city distance maintenance
-		if (getUnitCombatType() == 8) //naval
-			{
-				setHasPromotion(((PromotionTypes)29), true); //drill1
-				setHasPromotion(((PromotionTypes)30), true); //drill2
-			}
-		break;*/
-	/*case GERMANY: (used to be German UP)
-		if (getUnitCombatType() == 5) //gunpowder
-			{
-				setHasPromotion(((PromotionTypes)14), true); //commando   (was 6/14 armored - ambush)
-			}
-		break;*/
-	/*case TURKEY: //Old Turkish UP
-		if (getUnitCombatType() == 4) //siege
-			{
-				setHasPromotion(((PromotionTypes)33), true); //barrage1
-				setHasPromotion(((PromotionTypes)34), true); //barrage2
-			}
-		break;*/
-	/*case PORTUGAL:
-		if (getUnitCombatType() == 8) //naval
-			{
-				setHasPromotion(((PromotionTypes)39), true); //sentry
-			}
-		break;*/
 	default:
 		break;
 	}
