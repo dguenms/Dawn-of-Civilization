@@ -6038,6 +6038,10 @@
 					<UnitType>UNIT_THAI_CHANG_SUEK</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitType>UNIT_KHMER_PROPHET</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
 					<UnitType>UNIT_KHMER_ARTIST</UnitType>
 				</Unit>

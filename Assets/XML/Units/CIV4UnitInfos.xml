@@ -41754,7 +41754,7 @@
 				<UniqueName>Tissaphernes</UniqueName> <!-- 5th BC -->
 				<UniqueName>Tiribazus</UniqueName> <!-- 4th BC -->
 				<UniqueName>ManiaF</UniqueName> <!-- 4th BC -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -44454,7 +44454,7 @@
 				<UniqueName>Sakamoto Ryouma</UniqueName> <!-- 19th -->
 				<UniqueName>Oukubo Toshimichi</UniqueName> <!-- 19th -->
 				<UniqueName>Shigeru Yoshida</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -45799,7 +45799,7 @@
 				<UniqueName>Tewodros</UniqueName> <!-- 19th -->
 				<UniqueName>Menelik</UniqueName> <!-- 19th -->
 				<UniqueName>Menghistu Hail&#232; Mari &#224;m</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -52533,7 +52533,7 @@
 				<UniqueName>Harshavarman</UniqueName> <!-- 10th -->
 				<UniqueName>Norodom</UniqueName> <!-- 19th -->
 				<UniqueName>Tou Samouth</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -55213,7 +55213,7 @@
 				<UniqueName>Jos&#233; de Galv&#233;z</UniqueName> <!-- 18th -->
 				<UniqueName>Jos&#233; Moni&#241;o</UniqueName> <!-- 18th -->
 				<UniqueName>Juan Prim</UniqueName> <!-- 19th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -59286,7 +59286,7 @@
 				<UniqueName>Rosa LuxemburgF</UniqueName> <!-- 19th -->
 				<UniqueName>Konrad Adenauer</UniqueName> <!-- 20th -->
 				<UniqueName>Helmut Kohl</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -61980,7 +61980,7 @@
 				<UniqueName>Samori Tour&#233;</UniqueName> <!-- 19th -->
 				<UniqueName>Modibo Keita</UniqueName> <!-- 20th -->
 				<UniqueName>Alpha Oumar Konar&#233;</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -64665,7 +64665,7 @@
 				<UniqueName>Manco Inca Yupanqui</UniqueName> <!-- 16th -->
 				<UniqueName>Mama HuacoF</UniqueName> <!-- 16th -->
 				<UniqueName>T&#250;pac Amaru</UniqueName> <!-- 18th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -66018,7 +66018,7 @@
 				<UniqueName>Giuseppe Garibaldi</UniqueName> <!-- 19th -->
 				<UniqueName>Giuseppe Mazzini</UniqueName> <!-- 19th -->
 				<UniqueName>Antonio Gramsci</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -67361,7 +67361,7 @@
 				<UniqueName>Tem&#252;r Khan</UniqueName> <!-- 13th -->
 				<UniqueName>Dayan Khan</UniqueName> <!-- 15th -->
 				<UniqueName>Balingiin Tserendorj</UniqueName> <!-- 19th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -70059,7 +70059,7 @@
 				<UniqueName>Abu'l-Fazl ibn Muhammad</UniqueName> <!-- 16th -->
 				<UniqueName>Muhammad Ali Jinnah</UniqueName> <!-- 20th -->
 				<UniqueName>Choudhry Ali</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -72751,7 +72751,7 @@
 				<UniqueName>Johan Thorbecke</UniqueName> <!-- 19th -->
 				<UniqueName>Cornelis Lely</UniqueName> <!-- 19th -->
 				<UniqueName>Willem Drees</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -74104,7 +74104,7 @@
 				<UniqueName>Elizabeth Cady StantonF</UniqueName> <!-- 19th -->
 				<UniqueName>Eleanor RooseveltF</UniqueName> <!-- 20th -->
 				<UniqueName>George Kennan</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
@@ -75451,7 +75451,7 @@
 				<UniqueName>Amir Kabir</UniqueName> <!-- 19th -->
 				<UniqueName>Reza Shah Pahlavi</UniqueName> <!-- 20th -->
 				<UniqueName>Mohammad Mossadegh</UniqueName> <!-- 20th -->
-			<UniqueNames>
+			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
 			<Combat>NONE</Combat>
