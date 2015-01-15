@@ -905,31 +905,31 @@
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_ENGLISH_PROPHET</UnitType>
+					<UnitType>UNIT_CANADIAN_PROPHET</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ENGLISH_ARTIST</UnitType>
+					<UnitType>UNIT_CANADIAN_ARTIST</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_ENGLISH_SCIENTIST</UnitType>
+					<UnitType>UNIT_CANADIAN_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_ENGLISH_MERCHANT</UnitType>
+					<UnitType>UNIT_CANADIAN_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ENGLISH_ENGINEER</UnitType>
+					<UnitType>UNIT_CANADIAN_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_ENGLISH_STATESMAN</UnitType>
+					<UnitType>UNIT_CANADIAN_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
-					<UnitType>UNIT_ENGLISH_GREAT_GENERAL</UnitType>
+					<UnitType>UNIT_CANADIAN_GREAT_GENERAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
