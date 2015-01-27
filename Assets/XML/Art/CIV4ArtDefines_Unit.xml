@@ -7102,8 +7102,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ARTIST</Type>
@@ -7128,8 +7126,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ARTIST_MODERN</Type>
@@ -7154,8 +7150,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_SCIENTIST</Type>
@@ -7180,8 +7174,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_SCIENTIST_MODERN</Type>
@@ -7206,8 +7198,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_MERCHANT</Type>
@@ -7232,8 +7222,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_MERCHANT_MODERN</Type>
@@ -7266,8 +7254,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ANCIENT_GREAT_SPY</Type>
@@ -7292,8 +7278,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_GREAT_SPY</Type>
@@ -7318,8 +7302,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ENGINEER</Type>
@@ -7344,8 +7326,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ENGINEER_MODERN</Type>
@@ -7370,8 +7350,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_FEMALE_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_FEMALE_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_WARLORD_ANCIENT</Type>
@@ -7396,8 +7374,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_AMAZON_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_AMAZON_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_WARLORD_MEDIEVAL</Type>
@@ -7422,8 +7398,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_AMAZON_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_AMAZON_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_WARLORD_MODERN</Type>
@@ -7448,8 +7422,6 @@
 				<AudioRunTypeLoop/>
 				<AudioRunTypeEnd/>
 			</AudioRunSounds>
-			<SelectionSound>AS3D_UN_AMAZON_SELECTION_VOX</SelectionSound>
-			<ActionSound>AS3D_UN_AMAZON_ACTION_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_STATESMAN</Type>

@@ -688,9 +688,10 @@ class CvRFCEventHandler:
 		iUnitClassType = pUnit.getUnitClassType()
 		sName = pUnit.getName()
 		
-		if sName[-1] == "F":
-			pUnit.setName(sName[0:-1])
-			pUnit = utils.replace(pUnit, con.dFemaleGreatPeople[iUnitType])
+		# Leoreth: replace graphics for female GP names
+		if sName[0] == "f":
+			pUnit.setName(sName[1:])
+			pUnit = utils.replace(pUnit, con.dFemaleGreatPeople[utils.getBaseUnit(iUnitType)])
 		
 		# Leoreth: display notification
 		if iPlayer not in [con.iIndependent, con.iIndependent2, con.iBarbarian]:
