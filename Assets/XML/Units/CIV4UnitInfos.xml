@@ -22930,6 +22930,10 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
+					<BuildType>BUILD_HIGH_SEA_FISHING_BOATS</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
 					<BuildType>BUILD_WHALING_BOATS</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
