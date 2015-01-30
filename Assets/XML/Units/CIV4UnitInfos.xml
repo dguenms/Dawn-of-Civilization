@@ -31801,8 +31801,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_STATESMAN</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_STATESMAN</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_FEMALE_STATESMAN</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_FEMALE_STATESMAN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31814,7 +31814,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
-			<bGraphicalOnly>1</bGraphicalOnly>
+			<bGraphicalOnly>0</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GREAT_GENERAL</Class>
