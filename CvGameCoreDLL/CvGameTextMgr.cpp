@@ -9080,7 +9080,7 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 				szBuffer.append(gDLL->getText("TXT_KEY_PLAYER_FREE_EXPERIENCE", iExperience));
 			}
 			iExperience = pCity->getSpecialistFreeExperience();
-			if (iExperience != 0)
+			if (iExperience != 0 && !GC.getUnitInfo(eUnit).isSpy())
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_SPECIALIST_FREE_EXPERIENCE", iExperience));
