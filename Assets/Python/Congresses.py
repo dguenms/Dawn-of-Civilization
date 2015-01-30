@@ -490,7 +490,7 @@ class Congress:
 		else:
 			iHostPlayer = utils.getRandomEntry(self.lInvites)
 			
-		# Leoreth: establish contact between all participants
+		# establish contact between all participants
 		for iThisPlayer in self.lInvites:
 			for iThatPlayer in self.lInvites:
 				if iThisPlayer != iThatPlayer:
@@ -500,13 +500,13 @@ class Congress:
 		self.sHostCityName = utils.getRandomEntry(utils.getCoreCityList(iHostPlayer, utils.getReborn(iHostPlayer))).getName()
 		
 		# moved selection of claims after the introduction event so claims and their resolution take place at the same time
-		if utils.getHumanID() in self.dPossibleClaims:
+		if utils.getHumanID() in self.lInvites:
 			self.startIntroductionEvent(True)
 				
 		# procedure continues from the makeClaimHuman event
 		
 		# unless the player isn't involved, in that case resolve from here
-		if utils.getHumanID() not in self.dPossibleClaims:
+		if utils.getHumanID() not in self.lInvites:
 			# since Congresses now can occur during autoplay, don't display these congresses to the player
 			if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]):
 				self.startIntroductionEvent(False)
