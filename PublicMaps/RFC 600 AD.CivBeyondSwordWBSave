@@ -43141,6 +43141,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=40
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -43152,13 +43153,13 @@ EndPlot
 BeginPlot
 	x=111,y=42
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=111,y=43
 	BonusType=BONUS_INCENSE
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -43495,7 +43496,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=39
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -43506,13 +43507,13 @@ EndPlot
 BeginPlot
 	x=112,y=41
 	BonusType=BONUS_GOLD
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	#ImprovementType=IMPROVEMENT_GOODY_HUT
 EndPlot
 BeginPlot
 	x=112,y=42
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 EndPlot
 BeginPlot
@@ -43522,6 +43523,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=44
+	BonusType=BONUS_TEA
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -43539,7 +43541,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=47
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -44634,7 +44636,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=42
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45016,7 +45018,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=43
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45384,7 +45386,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=44
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
@@ -45749,27 +45751,27 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=45
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=46
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=47
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=48
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=49
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot

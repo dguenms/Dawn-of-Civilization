@@ -51234,6 +51234,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=40
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=1,14,21,28,43,
@@ -51248,7 +51249,7 @@ BeginPlot
 	x=111,y=42
 	ImprovementType=IMPROVEMENT_WINDMILL
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=1,11,14,21,28,43,44,
 EndPlot
@@ -51257,7 +51258,7 @@ BeginPlot
 	BonusType=BONUS_INCENSE
 	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=1,11,14,43,44,
 EndPlot
@@ -51622,7 +51623,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=39
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,21,28,43,
 EndPlot
@@ -51636,7 +51637,7 @@ BeginPlot
 	x=112,y=41
 	BonusType=BONUS_GOLD
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=14
@@ -51663,7 +51664,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=42
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=0
 	TeamReveal=11,14,21,28,43,
 EndPlot
@@ -51675,7 +51676,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=44
-	ImprovementType=IMPROVEMENT_MINE
+	BonusType=BONUS_TEA
+	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -51700,7 +51702,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=47
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=11,14,
 EndPlot
@@ -52892,7 +52894,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=42
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,
 EndPlot
@@ -53295,7 +53297,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=43
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,43,
 EndPlot
@@ -53704,7 +53706,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=44
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,43,
 EndPlot
@@ -54084,31 +54086,31 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=45
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,43,
 EndPlot
 BeginPlot
 	x=118,y=46
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,43,
 EndPlot
 BeginPlot
 	x=118,y=47
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,43,
 EndPlot
 BeginPlot
 	x=118,y=48
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,43,
 EndPlot
 BeginPlot
 	x=118,y=49
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=14,43,
 EndPlot
