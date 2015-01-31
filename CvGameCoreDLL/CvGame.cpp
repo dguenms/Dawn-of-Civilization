@@ -4633,7 +4633,7 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 			bool bDefensiveCrusade = false;
 			bool bOffensiveCrusade = false;
 				
-			if (GC.getGame().getHolyCity(eVoteSourceReligion)->getOwner() == kPlayer.getID())
+			if (GC.getGame().getHolyCity(eVoteSourceReligion) != NULL && GC.getGame().getHolyCity(eVoteSourceReligion)->getOwner() == kPlayer.getID())
 			{
 				bOffensiveCrusade = true;
 			}
@@ -9689,6 +9689,8 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 
 		for (int iI = 0; iI < GC.getNumVoteInfos(); iI++)
 		{
+			logMsg("vote: %d", iI);
+
 			if (GC.getVoteInfo((VoteTypes)iI).isVoteSourceType(eVoteSource))
 			{
 				if (isChooseElection((VoteTypes)iI))
