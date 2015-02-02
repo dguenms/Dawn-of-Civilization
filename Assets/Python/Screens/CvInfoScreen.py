@@ -2152,9 +2152,9 @@ class CvInfoScreen:
                                         iActivePlayer = CyGame().getActivePlayer()
                                         pActivePlayer = gc.getPlayer(iActivePlayer)
                                         tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
-                                        iCalendar = 33
+                                        iCalendar = con.iCalendar
                                         
-                                        if (tActivePlayer.isHasTech(iCalendar)):
+                                        if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < con.tBirth[iActivePlayer]):
                                                 if (iTurnYear < 0):
                                                     szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
                                                 else:
@@ -2960,7 +2960,7 @@ class CvInfoScreen:
                 iIronWorking = con.iIronWorking
                 iCalendar = con.iCalendar
                 
-                if (tPlayer.isHasTech(iCalendar)):  
+                if (tPlayer.isHasTech(iCalendar) or year < con.tBirth[iPlayer]):  
                         if (year < 0):
                             return localText.getText("TXT_KEY_TIME_BC", (-year,))
                         else:

@@ -16375,9 +16375,17 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 	iBestValue = MAX_INT;
 	pBestUnit = NULL;
 
+	// Leoreth: since independents are exempt from unit upkeep, they never have to disband their units
+	if (getID() == INDEPENDENT || getID() == INDEPENDENT2)
+	{
+		return false;
+	}
+
 	// Leoreth: AI disband all units otherwise, and gets conquered at spawn
 	if (getID() == GERMANY)
+	{
 		return false;
+	}
 
 	// Leoreth: prevent units from being disbanded after spawn in general
 	if (getID() < NUM_MAJOR_PLAYERS && GC.getGame().getGameTurn() < getTurnForYear(startingTurnYear[getID()]) + getTurns(20))
