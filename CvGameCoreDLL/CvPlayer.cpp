@@ -8019,6 +8019,12 @@ int CvPlayer::calculateUnitCost() const
 		return 0;
 	}
 
+	// Leoreth: independents do not have to pay unit costs
+	if (getID() == INDEPENDENT || getID() == INDEPENDENT2)
+	{
+		return 0;
+	}
+
 	int iFreeUnits;
 	int iFreeMilitaryUnits;
 	int iPaidUnits;
@@ -8036,6 +8042,12 @@ int CvPlayer::calculateUnitSupply() const
 	int iBaseSupplyCost;
 
 	if (isAnarchy())
+	{
+		return 0;
+	}
+
+	// Leoreth: independents do not have to pay unit supply
+	if (getID() == INDEPENDENT || getID() == INDEPENDENT2)
 	{
 		return 0;
 	}
