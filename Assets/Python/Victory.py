@@ -651,9 +651,9 @@ def checkTurn(iGameTurn, iPlayer):
 					
 	elif iPlayer == iJapan:
 	
-		# first goal: have 18000 culture in 1600 AD
+		# first goal: have 18000 culture in cities with at least 90% Japanese culture in 1600 AD
 		if iGameTurn == getTurnForYear(1600):
-			if pJapan.countTotalCulture() >= utils.getTurns(18000):
+			if countNativeCulture(iJapan, 90) >= utils.getTurns(18000):
 				win(iJapan, 0)
 			else:
 				lose(iJapan, 0)
@@ -2674,6 +2674,20 @@ def getApostolicVotePercent(iPlayer):
 	
 	return gc.getPlayer(iPlayer).getVotes(16, 1) * 100.0 / iTotal
 	
+def countNativeCulture(iPlayer, iPercent):
+	iPlayerCulture = 0
+	
+	for city in utils.getCityList(iPlayer):
+		iCulture = city.getCulture(iPlayer)
+		iTotal = 0
+		
+		for iLoopPlayer in range(iNumTotalPlayersB): iTotal += city.getCulture(iLoopPlayer)
+		
+		if iTotal > 0 and iCulture * 100 / iTotal >= iPercent:
+			iPlayerCulture += iCulture
+			
+	return iPlayerCulture
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -3069,7 +3083,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iJapan:
 		if iGoal == 0:
-			iCulture = pJapan.countTotalCulture()
+			iCulture = countNativeCulture(iJapan, 90)
 			aHelp.append(getIcon(iCulture >= utils.getTurns(18000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(18000))))
 		elif iGoal == 1:
 			bKorea = isControlledOrVassalized(iJapan, tKoreaTL, tKoreaBR)

@@ -10214,6 +10214,21 @@ int CvCity::getCommerceRateTimes100(CommerceTypes eIndex) const
 		}
 	}
 
+	// Leoreth: Himeji Castle effect
+	if (eIndex == COMMERCE_CULTURE && isHasRealBuilding((BuildingTypes)HIMEJI_CASTLE) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+	{
+		CvUnit* pUnit;
+		for (int i = 0; i < plot()->getNumUnits(); i++)
+		{
+			pUnit = plot()->getUnitByIndex(i);
+
+			if (pUnit->getOwner() == getOwner() && pUnit->isFortifyable() && pUnit->getFortifyTurns() >= GC.getDefineINT("MAX_FORTIFY_TURNS"))
+			{
+				iRate += 100;
+			}
+		}
+	}
+
 	return iRate;
 }
 

@@ -1073,8 +1073,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Tag>
-		<English>[ICON_BULLET]New melee and archery units start with City Garrison I and Drill I[NEWLINE][ICON_BULLET]Amount of [ICON_GOLD]looted doubled</English>
-		<German>[ICON_BULLET]Neue Nahkampf- und Pfeil- und Bogeneinheiten starten mit Garnison I und Drill I[NEWLINE][ICON_BULLET]Menge des geplünderten [ICON_GOLD]verdoppelt</German>
+		<English>[ICON_BULLET]New melee and archery units start with City Garrison I and Drill I[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per fully fortified unit in the city</English>
+		<German>[ICON_BULLET]Neue Nahkampf- und Pfeil- und Bogeneinheiten starten mit Garnison I und Drill I[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] pro vollständig befestigte Einheit in der Stadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_HIMEJI_UNIT_CULTURE</Tag>
+		<English>[ICON_BULLET]%D1%F2 from Fortified Units</English>
+		<German>[ICON_BULLET]%D1%F2 durch befestigte Einheiten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER</Tag>
