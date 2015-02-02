@@ -123,3 +123,12 @@
 # changed additional scientist slot for the Greek Odeon to a statesman slot
 # the Roman Forum now gives an additional statesman slot
 # the French Salon now gives an additional statesman slot
+# turned Kyushu into grassland
+# added Tea to southern Honshu
+# added Clams south of Kyushu
+# changed first Japanese goal: have 18000 culture in cities with 90% Japanese culture in 1600 AD
+# Himeji Castle does not increase pillaging gold anymore
+# reduced Himeji Castle base culture to +4
+# new Himeji Castle effect: +1 culture for every fully fortified unit
+# new Japanese UP: Modernization: On entering a new era, technologies from that eras spread from civilizations with Open Borders agreement
+# Farms on Rice now give +2 food

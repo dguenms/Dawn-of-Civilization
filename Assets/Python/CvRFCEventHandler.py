@@ -821,6 +821,26 @@ class CvRFCEventHandler:
 		# Germany's core shrinks when reaching the Modern era
 		if iPlayer == con.iGermany and iEra == con.iModern:
 			gc.getPlayer(con.iGermany).setReborn(True)
+			
+		# Japanese UP: Modernization
+		# Receives techs discovered by other civilizations when entering a new era
+		if iPlayer == con.iJapan:
+			bNewEra = True
+			for iLoopTech in range(con.iNumTechs):
+				if iLoopTech != iTech and gc.getTeam(iJapan).isHasTech(iLoopTech) and gc.getTechInfo(iLoopTech).getEra() >= iEra:
+					bNewEra = False
+					
+			if bNewEra:
+				for iLoopTech in range(con.iNumTechs):
+					if iLoopTech != iTech and gc.getTechInfo(iLoopTech).getEra() == iEra:
+						iCount = 0
+						for iLoopPlayer in range(con.iNumPlayers):
+							if iLoopPlayer != iPlayer and gc.getPlayer(iLoopPlayer).isAlive():
+								if gc.getTeam(iLoopPlayer).isHasTech(iLoopTech) and (gc.getTeam(iPlayer).isOpenBorders(iLoopPlayer) or utils.getHumanID() != iPlayer):
+									iCount += 1
+									
+						if iCount >= 3:
+							gc.getTeam(iPlayer).setHasTech(iLoopTech, True, iPlayer, True, True)
                 
 
         def onPreSave(self, argsList):

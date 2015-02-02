@@ -16791,6 +16791,30 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 // BUG - Base Commerce - end
 	}
 
+	// Leoreth: Himeji Castle effect
+	int iUnitCulture = 0;
+	if (eCommerceType == COMMERCE_CULTURE && city.isHasRealBuilding((BuildingTypes)HIMEJI_CASTLE) && GET_PLAYER(city.getOwner()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+	{
+		CvUnit* pUnit;
+		for (int i = 0; i < city.plot()->getNumUnits(); i++)
+		{
+			pUnit = city.plot()->getUnitByIndex(i);
+
+			if (pUnit->getOwner() == city.getOwner() && pUnit->isFortifyable() && pUnit->getFortifyTurns() >= GC.getDefineINT("MAX_FORTIFY_TURNS"))
+			{
+				iUnitCulture += 1;
+			}
+		}
+	}
+
+	if (0 != iUnitCulture)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_HIMEJI_UNIT_CULTURE", iUnitCulture, info.getChar()));
+		szBuffer.append(NEWLINE);
+		iBaseCommerceRate += 100 * iUnitCulture;
+		bNeedSubtotal = true;
+	}
+
 // BUG - Base Commerce - start
 		if (bNeedSubtotal && city.getCommerceRateModifier(eCommerceType) != 0 && getBugOptionBOOL("MiscHover__BaseCommerce", true, "BUG_CITY_SCREEN_BASE_COMMERCE_HOVER"))
 		{

@@ -2586,10 +2586,10 @@ int calculateExperience(int iLevel, PlayerTypes ePlayer)
 	FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
 
 	// Japanese UP: cheaper promotions
-	if (ePlayer == JAPAN)
+	/*if (ePlayer == JAPAN)
 	{
 		iLevel = std::max(1, iLevel - 1);
-	}
+	}*/
 
 	int iExperienceNeeded = iLevel * iLevel + 1;
 
