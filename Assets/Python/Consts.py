@@ -2347,6 +2347,30 @@ tStartingGold = (
 0,	# Seljuks
 )
 
+dExtraGold600AD = {
+iChina : 300,
+iJapan : 200,
+iIndependent : 50,
+iIndependent2 : 50,
+iNative : 200,
+iSeljuks : 250,
+}
+
+dExtraGold1700AD = {
+iChina : 300,
+iJapan : 300,
+iSpain : 200,
+iFrance : 250,
+iEngland : 400,
+iRussia : 150,
+iPoland : 100,
+iPortugal : 250,
+iMughals : -200,
+iTurkey : -100,
+iThailand : -500,
+iNetherlands : 200,
+}
+
 #rnf. Some civs have a double entry, for a higher chance
 lEnemyCivsOnSpawn = [
 [], #Egypt

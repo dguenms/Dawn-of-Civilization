@@ -85,7 +85,7 @@ def endGlobalWar(iAttacker, iDefender):
 			lDefenders.append(iLoopPlayer)
 			gc.getTeam(iLoopPlayer).makePeace(iAttacker)
 			
-	if gc.getTeam(iAttacker).AI_getWarSuccess(iDefender) > gc.getTeam(iDefender).AI_getWarSuccess(iAttacker):
+	if gc.getGame().determineWinner(iAttacker, iDefender) == iAttacker:
 		lWinners = lAttackers
 		lLosers = lDefenders
 	else:
@@ -271,7 +271,10 @@ class Congress:
 				closestCity = gc.getMap().findCity(x, y, utils.getHumanID(), TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_OWN_TERRITORY", (gc.getPlayer(iBribedPlayer).getCivilizationAdjective(0), gc.getPlayer(iClaimant).getCivilizationAdjective(0), closestCity.getName()))
 				
-		iCost = iDifference * gc.getPlayer(iBribedPlayer).calculateTotalCommerce() / 2
+		iCost = iDifference * gc.getPlayer(iBribedPlayer).calculateTotalCommerce() / 5
+		
+		# make sure costs are positive
+		if iCost <= 0: iCost = 100
 		
 		iTreasury = gc.getPlayer(utils.getHumanID()).getGold()
 		iEspionageSpent = gc.getTeam(utils.getHumanID()).getEspionagePointsAgainstTeam(iBribedPlayer)

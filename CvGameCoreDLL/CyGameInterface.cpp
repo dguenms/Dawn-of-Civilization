@@ -289,6 +289,7 @@ void CyGamePythonInterface()
 
 		.def("isNeighbors", &CyGame::isNeighbors, "bool (int iPlayer1, int iPlayer2)")
 		.def("isCheatingEnabled", &CyGame::isCheatingEnabled, "bool ()")
+		.def("determineWinner", &CyGame::determineWinner, "int (int iTeam1, int iTeam2)")
 		;
 
 	python::class_<CyDeal>("CyDeal")

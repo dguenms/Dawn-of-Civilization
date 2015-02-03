@@ -1255,3 +1255,8 @@ bool CyGame::isNeighbors(int ePlayer1, int ePlayer2)
 {
 	return m_pGame ? m_pGame->isNeighbors((PlayerTypes)ePlayer1, (PlayerTypes)ePlayer2) : false;
 }
+
+int CyGame::determineWinner(int eTeam1, int eTeam2)
+{
+	return m_pGame ? m_pGame->determineWinner((TeamTypes)eTeam1, (TeamTypes)eTeam2) : eTeam1;
+}

@@ -247,7 +247,7 @@ void CvGameTextMgr::setDateStr(CvWString& szString, int iGameTurn, bool bSave, C
 //Rhye - start
 void CvGameTextMgr::setDateStrPlayer(CvWString& szString, int iGameTurn, bool bSave, CalendarTypes eCalendar, int iStartYear, GameSpeedTypes eSpeed, PlayerTypes ePlayer)
 {
-	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)CALENDAR))
+	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)CALENDAR) || iGameTurn < getTurnForYear(startingTurnYear[ePlayer]))
 		setDateStr(szString, iGameTurn, bSave, eCalendar, iStartYear, eSpeed);
 	else if (GET_PLAYER(ePlayer).getCurrentEra() >= 3)
 		szString = gDLL->getText("TXT_KEY_AGE_RENAISSANCE");
@@ -19658,7 +19658,8 @@ void CvGameTextMgr::getTurnTimerText(CvWString& strText)
 			}
 			else if (GC.getGameINLINE().getMaxTurns() > 0)
 			{
-				if ((GC.getGameINLINE().getElapsedGameTurns() >= (GC.getGameINLINE().getMaxTurns() - 100)) && (GC.getGameINLINE().getElapsedGameTurns() < GC.getGameINLINE().getMaxTurns()))
+				// Leoreth: changed to 20
+				if ((GC.getGameINLINE().getElapsedGameTurns() >= (GC.getGameINLINE().getMaxTurns() - 20)) && (GC.getGameINLINE().getElapsedGameTurns() < GC.getGameINLINE().getMaxTurns()))
 				{
 					if (!strText.empty())
 					{
