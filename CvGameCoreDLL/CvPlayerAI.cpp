@@ -14386,7 +14386,9 @@ void CvPlayerAI::AI_doDiplo()
 													{
 														if (GET_TEAM((TeamTypes)iJ).isAlive())
 														{
-															if (atWar(((TeamTypes)iJ), getTeam()) && !atWar(((TeamTypes)iJ), GET_PLAYER((PlayerTypes)iI).getTeam()))
+															// Leoreth: only ask if they share a border with our enemy
+															//if (atWar(((TeamTypes)iJ), getTeam()) && !atWar(((TeamTypes)iJ), GET_PLAYER((PlayerTypes)iI).getTeam()))
+															if (atWar(((TeamTypes)iJ), getTeam()) && !atWar(((TeamTypes)iJ), GET_PLAYER((PlayerTypes)iI).getTeam()) && GC.getGame().isNeighbors(GET_TEAM((TeamTypes)iJ).getLeaderID(), (PlayerTypes)iI))
 															{
 																if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet((TeamTypes)iJ))
 																{

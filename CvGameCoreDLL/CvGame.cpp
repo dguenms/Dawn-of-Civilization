@@ -10499,3 +10499,9 @@ bool CvGame::isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const
 {
 	return (GET_PLAYER(ePlayer1).AI_calculateStolenCityRadiusPlots(ePlayer2) > 0 || GET_PLAYER(ePlayer2).AI_calculateStolenCityRadiusPlots(ePlayer1) > 0);
 }
+
+// Leoreth
+TeamTypes CvGame::determineWinner(TeamTypes eTeam1, TeamTypes eTeam2) const
+{
+	return (GET_TEAM(eTeam1).AI_endWarVal(eTeam2) < GET_TEAM(eTeam2).AI_endWarVal(eTeam1)) ? eTeam1 : eTeam2;
+}

@@ -729,6 +729,24 @@ class RiseAndFall:
 				plot = gc.getMap().plot(x, y)
 				if plot.getOwner() != -1:
 					utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
+					
+		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iPortugal, 100, True)
+			
+		for x, y in [(58, 49), (59, 49), (60, 49)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iGermany, 100, True)
+			
+		for x, y in [(62, 51)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iHolyRome, 100, True)
+			
+		for x, y in [(58, 52), (58, 53)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iNetherlands, 100, True)
+			
+		for x, y in [(64, 53), (66, 55)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iPoland, 100, True)
+			
+		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iRussia, 100, True)
 			
 	def prepareColonists(self):
 		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
@@ -743,31 +761,15 @@ class RiseAndFall:
 		
 	def assign3000BCGold(self):
 		for iPlayer in range(con.iNumTotalPlayers):
-			gc.getPlayer(iPlayer).changeGold(con.tStartingGold[iPlayer])
+			gc.getPlayer(iPlayer).changeGold(utils.getTurns(con.tStartingGold[iPlayer]))
 			
 	def assign600ADGold(self):
-		pChina.changeGold(300)
-		pJapan.changeGold(150)
-		
-		pIndependent.changeGold(50)
-		pIndependent2.changeGold(50)
-		pNative.changeGold(200)
-		pSeljuks.changeGold(250)
+		for iPlayer in con.dExtraGold600AD:
+			gc.getPlayer(iPlayer).changeGold(utils.getTurns(con.dExtraGold600AD[iPlayer]))
 		
 	def assign1700ADGold(self):
-		pChina.changeGold(300)
-		pJapan.changeGold(100)
-		
-		pSpain.changeGold(200)
-		pFrance.changeGold(250)
-		pEngland.changeGold(400)
-		pRussia.changeGold(150)
-		pPoland.changeGold(100)
-		pPortugal.changeGold(250)
-		pMughals.changeGold(-200)
-		pTurkey.changeGold(-100)
-		pThailand.changeGold(-500)
-		pNetherlands.changeGold(200)
+		for iPlayer in con.dExtraGold1700AD:
+			gc.getPlayer(iPlayer).changeGold(utils.getTurns(con.dExtraGold1700AD[iPlayer]))
 		
 	def init1700ADDiplomacy(self):	
 		self.changeAttitudeExtra(iPersia, iTurkey, -4)
