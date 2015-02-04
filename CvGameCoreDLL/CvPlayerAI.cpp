@@ -5218,7 +5218,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 													{
 														if (isWorldWonderClass((BuildingClassTypes)iJ))
 														{
-															if (!(GC.getGameINLINE().isBuildingClassMaxedOut((BuildingClassTypes)iJ)))
+															if (!(GC.getGameINLINE().isBuildingClassMaxedOut((BuildingClassTypes)iJ)) && canConstruct(eLoopBuilding, false, false, false, true))
 															{
 																bEnablesWonder = true;
 

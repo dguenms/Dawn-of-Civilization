@@ -132,3 +132,12 @@
 # new Himeji Castle effect: +1 culture for every fully fortified unit
 # new Japanese UP: Modernization: On entering a new era, technologies from that eras spread from civilizations with Open Borders agreement
 # Farms on Rice now give +2 food
+# Independents do not pay unit upkeep and never disband their units
+# AI only asks you to join wars if you share a border with their enemy
+# starting gold is adjusted for game speed
+# the AI will disregard the value of wonders in techs that cannot be built
+# Watermills receive +2 commerce from Electricity again
+# Lumbermills require Guilds now
+# New Guilds civic effect: High upkeep, +1 gold per specialist, double production for Forge, Market, Grocer
+# New Dynasticism effect: Low upkeep, +1 happiness per military unit up to a maximum of 4, +1 happiness from Palace
+# New Theocracy effect: Medium upkeep, +2 happiness with state religion, double priest slots, +2 experience with state religion, +1 unhappiness from non-state religions
