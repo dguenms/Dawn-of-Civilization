@@ -1893,8 +1893,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 		if iGoal == 0:
 			lProtestantTechs = [iLiberalism, iConstitution, iEconomics]
 			if checkTechGoal(iPlayer, lProtestantTechs): return 1
-			elif checkTechGoal(-1, lProtestantTechs): return -1
-			else: return 0
+			elif sd.getFirstDiscovered(iLiberalism) not in [iPlayer, -1] or sd.getFirstDiscovered(iConstitution) not in [iPlayer, -1] or sd.getFirstDiscovered(iEconomics) not in [iPlayer, -1]: return 0
 			
 		# second Protestant goal: make sure five great merchants and great engineers are settled in Protestant civilizations
 		elif iGoal == 1:

@@ -5990,7 +5990,7 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 }
 
 
-bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVisible, bool bIgnoreCost) const
+bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVisible, bool bIgnoreCost, bool bIgnoreTech) const
 {
 	BuildingClassTypes eBuildingClass;
 	int iI;
@@ -6021,7 +6021,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		}
 	}
 
-	if (!(currentTeam.isHasTech((TechTypes)(GC.getBuildingInfo(eBuilding).getPrereqAndTech()))))
+	if (!(currentTeam.isHasTech((TechTypes)(GC.getBuildingInfo(eBuilding).getPrereqAndTech()))) && !bIgnoreTech)
 	{
 		return false;
 	}
@@ -6075,6 +6075,32 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		return false;
 	}
 
+	// Leoreth: check if there are any cities with the religion required
+	bool bReligion = true;
+	if (GC.getBuildingInfo(eBuilding).getPrereqReligion() != NO_RELIGION)
+	{
+		if (getHasReligionCount((ReligionTypes)GC.getBuildingInfo(eBuilding).getPrereqReligion()) == 0)
+		{
+			bReligion = false;
+		}
+	}
+
+	// Leoreth: OR religion requirement
+	bool bOrReligion = false;
+	if (GC.getBuildingInfo(eBuilding).getOrPrereqReligion() != NO_RELIGION)
+	{
+		bOrReligion = true;
+		if (getHasReligionCount((ReligionTypes)GC.getBuildingInfo(eBuilding).getOrPrereqReligion()) == 0)
+		{
+			bOrReligion = false;
+		}
+	}
+
+	if (!bReligion && !bOrReligion)
+	{
+		return false;
+	}
+
 	if (GC.getGameINLINE().countCivTeamsEverAlive() < GC.getBuildingInfo(eBuilding).getNumTeamsPrereq())
 	{
 		return false;
@@ -6100,126 +6126,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	if (GC.getBuildingInfo(eBuilding).getMaxStartEra() != NO_ERA)
 	{
-		//Rhye - start switch
 		int startingEra;
-		/*switch (getID())
-		{
-		case EGYPT:
-			startingEra = 0;
-			break;
-		case INDIA:
-			if (!GET_PLAYER((PlayerTypes)INDIA).isReborn())
-				startingEra = 0;
-			else
-				startingEra = 4;
-			break;
-		case CHINA:
-			startingEra = 0;
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-				startingEra = 2;
-			break;
-		case BABYLONIA:
-			startingEra = 0;
-			break;
-		case GREECE:
-			startingEra = 1;
-			break;
-		case PERSIA:
-			if (!GET_PLAYER((PlayerTypes)PERSIA).isReborn())
-				startingEra = 1;
-			else
-				startingEra = 3;
-			break;
-		case CARTHAGE:
-			startingEra = 1;
-			break;
-		case ROME:
-            if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                startingEra = 1;
-            else
-                startingEra = 2;    // Leoreth - Renaissance Italy
-			break;
-		case JAPAN:
-			startingEra = 2;
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-				startingEra = 2;
-			break;
-		case ETHIOPIA:
-			startingEra = 1;
-			break;
-        case KOREA:
-            startingEra = 1;
-            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-                startingEra = 2;
-            break;
-		case MAYA:
-			startingEra = 1;
-			break;
-        case BYZANTIUM:
-            startingEra = 2;
-            break;
-		case VIKING:
-			startingEra = 2;
-			break;
-		case KHMER:
-			startingEra = 2;
-			break;
-		case INDONESIA:
-			startingEra = 2;
-			break;
-		case ARABIA:
-			startingEra = 2;
-			break;
-		case SPAIN:
-			startingEra = 2;
-			break;
-		case FRANCE:
-			startingEra = 2;
-			break;
-		case ENGLAND:
-			startingEra = 2;
-			break;
-		case GERMANY:
-			startingEra = 2;
-			break;
-		case RUSSIA:
-			startingEra = 2;
-			break;
-		case NETHERLANDS:
-			startingEra = 2;
-			break;
-		case MALI:
-			startingEra = 2;
-			break;
-		case TURKEY:
-			startingEra = 2;
-			break;
-		case PORTUGAL:
-			startingEra = 2;
-			break;
-		case INCA:
-			startingEra = 2;
-			break;
-		case MONGOLIA:
-			startingEra = 2;
-			break;
-		case AZTEC:
-			startingEra = 2;
-			break;
-		case AMERICA:
-			startingEra = 3;
-			break;
-		case NATIVE:
-			startingEra = 0;
-			break;
-		default:
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-				startingEra = 2;
-			else
-				startingEra = 0;
-			break;
-		}*/
-
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
 			if (getScenario() == SCENARIO_1700AD)
@@ -6278,9 +6185,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 			if (getID() < VIKING)
 				startingEra = 2;
 
-		//if (GC.getGameINLINE().getStartEra() > GC.getBuildingInfo(eBuilding).getMaxStartEra())
 		if (startingEra > GC.getBuildingInfo(eBuilding).getMaxStartEra())
-		//Rhye - end switch
 		{
 			return false;
 		}

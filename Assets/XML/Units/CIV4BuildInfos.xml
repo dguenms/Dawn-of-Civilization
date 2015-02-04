@@ -244,7 +244,7 @@
 			<Type>BUILD_LUMBERMILL</Type>
 			<Description>TXT_KEY_BUILD_LUMBERMILL</Description>
 			<Help/>
-			<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
+			<PrereqTech>TECH_GUILDS</PrereqTech>
 			<!-- Rhye  -->
 			<iTime>900</iTime>
 			<iCost>0</iCost>

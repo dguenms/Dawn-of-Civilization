@@ -4576,7 +4576,7 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 			}
 			if (isWorldWonderClass((BuildingClassTypes)kLoopBuilding.getBuildingClassType()))
 			{
-				if (!(GC.getGameINLINE().isBuildingClassMaxedOut((BuildingClassTypes)kLoopBuilding.getBuildingClassType())))
+				if (!(GC.getGameINLINE().isBuildingClassMaxedOut((BuildingClassTypes)kLoopBuilding.getBuildingClassType())) && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).canConstruct((BuildingTypes)iI, false, false, false, true))
 				{
 					iValue += 50;
 				}
