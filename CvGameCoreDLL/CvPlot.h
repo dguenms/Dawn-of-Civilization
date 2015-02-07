@@ -501,7 +501,7 @@ public:
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 
-	//Leoreth
+	// Leoreth
 	int getRegionID() const;
 	CvWString getRegionName() const;
 	bool isCore(PlayerTypes ePlayer) const;
@@ -513,6 +513,15 @@ public:
 	void cameraLookAt();
 	bool canUseSlave(PlayerTypes ePlayer) const;
 	int calculateCultureCost() const;
+
+	// Leoreth: graphics paging
+	static void EvictGraphicsIfNecessary();
+	void pageGraphicsOut();
+	static void notePageRenderStart(int iRenderArea);
+	void setShouldHaveFullGraphics(bool bShouldHaveFullGraphics);
+	bool shouldHaveFullGraphics(void) const;
+	//bool shouldHaveGraphics(void) const;
+	void destroyGraphics();
 
 protected:
 
@@ -575,6 +584,9 @@ protected:
 
 	// Leoreth
 	bool m_bWithinGreatWall;
+
+	// Leoreth: graphics paging
+	short m_iGraphicsPageIndex;
 
 	short* /*ImprovementTypes*/ m_aeRevealedImprovementType;
 	short* /*RouteTypes*/ m_aeRevealedRouteType;
