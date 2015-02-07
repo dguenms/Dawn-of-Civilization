@@ -9,6 +9,7 @@ BASE MODS
 # The History Rewritten mod for the Tamil, Tibetan, Moorish, Polish, Congolese and Polynesian civilizations including units, buildings and leaders
 # Rhye's and Fall of the Classical World by srpt for the idea behind the stability mechanic
 # SuperSpies by Trojan Sheep, glider1 and Lord Tirian
+# Caveman2Cosmos for its graphics paging modifications
 
 LEADERHEADS
 # melcher kürzer: Catherine the Great, Isabella
@@ -37,7 +38,7 @@ LEADERHEADS
 # Chuggi: Hitler
 # Firaxis: Qin Shi Huang, Taizong (Chinese release)
 # Novator: Lorenzo de' Medici (Simone Boccanegra)
-# Xyth:
+# Xyth: Aho'eitu (Tu'itatui)
 
 From mods, without explicit mention of the original creators
 # The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)
@@ -63,6 +64,10 @@ MISCELLANEOUS
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others
+
+GREAT PEOPLE NAMES
+Too many people to list for their contributions of Great Statesmen, Female Great People and Canadian Great People names,
+in particular Hightower, DC123456789, borhap88, Panopticon and Chep
 
 There has been so much valuable feedback to this mod which I'm really thankful for. I hope you're not offended if you miss yourself in this quickly compiled list and I hereby thank you anonymously.
 If someone feels he should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.

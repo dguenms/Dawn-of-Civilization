@@ -210,6 +210,11 @@ public:
 	DllExport int* getCityPlot3X();
 	DllExport int* getCityPlot3Y();
 
+	// Leoreth: graphics paging
+	void setGraphicalDetailPagingEnabled(bool bEnabled);
+	bool getGraphicalDetailPagingEnabled();
+	int getGraphicalDetailPageInRange();
+
 	//
 	// Global Infos
 	// All info type strings are upper case and are kept in this hash map for fast lookup
@@ -965,6 +970,9 @@ protected:
 	// Leoreth: index over the third ring as well
 	int* m_aiCityPlot3X;
 	int* m_aiCityPlot3Y;
+
+	// Leoreth: graphics paging
+	bool m_bGraphicalDetailPagingEnabled;
 
 	DirectionTypes* m_aeTurnLeftDirection;	// [NUM_DIRECTION_TYPES];
 	DirectionTypes* m_aeTurnRightDirection;	// [NUM_DIRECTION_TYPES];

@@ -27,6 +27,8 @@
 #include "CvEventReporter.h"
 #include "CvRhyes.h" //Rhye
 
+#include <Psapi.h>
+
 #define STANDARD_MINIMAP_ALPHA		(0.6f)
 #define STANDARD_MINIMAP_ALPHA_TRANSPARENT	(0.4f)
 
@@ -75,6 +77,9 @@ CvPlot::CvPlot()
 
 CvPlot::~CvPlot()
 {
+	// Leoreth: graphics paging
+	pageGraphicsOut();
+
 	uninit();
 
 	SAFE_DELETE_ARRAY(m_aiYield);
@@ -188,6 +193,9 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_iReconCount = 0;
 	m_iRiverCrossingCount = 0;
 
+	// Leoreth: graphics paging
+	m_iGraphicsPageIndex = -1;
+
 	m_bStartingPlot = false;
 	m_bHills = false;
 	m_bNOfRiver = false;
@@ -218,6 +226,278 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	{
 		m_aiYield[iI] = 0;
 	}
+}
+
+typedef struct
+{
+	CvPlot*	pPlot;
+	int		iSeq;
+} GraphicsPagingInfo;
+
+static int iNumPagedInPlots = 0;
+static int iPageTableSize = 0;
+static int iRenderStartSeq = 0;
+static int iCurrentSeq = 0;
+static int iOldestSearchSeqHint = 0;
+static GraphicsPagingInfo* pagingTable = NULL;
+
+#define	MAX_VALID_PAGING_INDEX (65534)
+
+int findFreePagingTableSlot()
+{
+	static int iSearchStartHintIndex = 0;
+
+	for(int iI = 0; iI < iPageTableSize; iI++)
+	{
+		int iIndex = iSearchStartHintIndex++;
+
+		if ( iSearchStartHintIndex >= iPageTableSize )
+		{
+			iSearchStartHintIndex = 0;
+		}
+
+		if ( pagingTable[iIndex].pPlot == NULL )
+		{
+			return iIndex;
+		}
+	}
+
+	return -1;
+}
+
+int allocateNewPagingEntry()
+{
+	if ( iPageTableSize <= iNumPagedInPlots++ )
+	{
+		int iNewSize = std::max(64, iPageTableSize + std::min(iPageTableSize,512));
+
+		GraphicsPagingInfo* newTable = new GraphicsPagingInfo[iNewSize];
+
+		if ( iPageTableSize > 0 )
+		{
+			memcpy(newTable, pagingTable, iPageTableSize*sizeof(GraphicsPagingInfo));
+			SAFE_DELETE_ARRAY(pagingTable);
+		}
+		
+		pagingTable = newTable;
+		iPageTableSize = iNewSize;
+	}
+
+	return findFreePagingTableSlot();
+}
+
+int findOldestEvictablePagingEntry()
+{
+	int iOldest = MAX_INT;
+	int iResult = -1;
+
+	for(int iI = 0; iI < iNumPagedInPlots; iI++)
+	{
+		if ( pagingTable[iI].pPlot != NULL && pagingTable[iI].iSeq < iRenderStartSeq )
+		{
+			if ( pagingTable[iI].iSeq < iOldest )
+			{
+				iOldest = pagingTable[iI].iSeq;
+				iResult = iI;
+			}
+		}
+	}
+
+	return iResult;
+}
+
+#define DEFAULT_MAX_WORKING_SET_THRESHOLD_BEFORE_EVICTION ((size_t)1024*(size_t)1024*(size_t)1024*(size_t)2)
+#define DEFAULT_OS_MEMORY_ALLOWANCE ((size_t)1024*(size_t)1024*(size_t)512)
+
+bool NeedToFreeMemory()
+{
+	PROCESS_MEMORY_COUNTERS pmc;
+	static unsigned int uiMaxMem = 0xFFFFFFFF;
+
+	if ( uiMaxMem == 0xFFFFFFFF )
+	{
+		MEMORYSTATUSEX memoryStatus;
+
+		memoryStatus.dwLength = sizeof(memoryStatus);
+		GlobalMemoryStatusEx(&memoryStatus);
+
+		uiMaxMem = DEFAULT_MAX_WORKING_SET_THRESHOLD_BEFORE_EVICTION;
+
+		DWORDLONG usableMemory = memoryStatus.ullTotalPhys - (DWORDLONG)DEFAULT_OS_MEMORY_ALLOWANCE;
+		if ( usableMemory < uiMaxMem )
+		{
+			uiMaxMem = (unsigned int)usableMemory;
+		}
+	}
+
+	GetProcessMemoryInfo( GetCurrentProcess(), &pmc, sizeof(pmc));
+	
+	if ( pmc.WorkingSetSize > uiMaxMem )
+	{
+		OutputDebugString(CvString::format("Found need to free memory: %d used vs %d target\n", pmc.WorkingSetSize, uiMaxMem).c_str());
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+static bool bFoundEvictable = true;
+
+void CvPlot::EvictGraphicsIfNecessary()
+{
+	while(bFoundEvictable && NeedToFreeMemory())
+	{
+		int iEvictionIndex = findOldestEvictablePagingEntry();
+
+		if ( iEvictionIndex == -1 )
+		{
+			bFoundEvictable = false;
+			break;
+		}
+
+		pagingTable[iEvictionIndex].pPlot->setShouldHaveFullGraphics(false);
+	}
+}
+
+void CvPlot::pageGraphicsOut()
+{
+	bFoundEvictable = true;
+
+	if ( m_iGraphicsPageIndex != -1 )
+	{
+		pagingTable[m_iGraphicsPageIndex].pPlot = NULL;
+
+		if ( --iNumPagedInPlots == 0 )
+		{
+			SAFE_DELETE_ARRAY(pagingTable);
+
+			iPageTableSize = 0;
+		}
+	}
+
+	m_iGraphicsPageIndex = -1;
+}
+
+void CvPlot::notePageRenderStart(int iRenderArea)
+{
+	iRenderStartSeq = std::max(0,iCurrentSeq-iRenderArea);
+}
+
+void CvPlot::setShouldHaveFullGraphics(bool bShouldHaveFullGraphics)
+{
+	bool bChanged;
+
+	if ( !GC.getGraphicalDetailPagingEnabled() )
+	{
+		bChanged = true;
+
+		m_iGraphicsPageIndex = -1;
+
+		if ( pagingTable != NULL )
+		{
+			SAFE_DELETE_ARRAY(pagingTable);
+
+			iNumPagedInPlots = 0;
+			iPageTableSize = 0;
+		}
+	}
+	else
+	{
+		//	A set to false is only ever used to switch out paged in graphics
+		//	or when truning the entire mechanism on from it previously being off.
+		//	In both of these cases we want to treat it as a change
+		bChanged = (!bShouldHaveFullGraphics || ((m_iGraphicsPageIndex != -1) != bShouldHaveFullGraphics));
+
+		if ( bShouldHaveFullGraphics )
+		{
+			if ( m_iGraphicsPageIndex == -1 )
+			{
+				m_iGraphicsPageIndex = allocateNewPagingEntry();
+			}
+
+			GraphicsPagingInfo* pPagingInfo = &pagingTable[m_iGraphicsPageIndex];
+
+			pPagingInfo->iSeq = ++iCurrentSeq;
+			pPagingInfo->pPlot = this;
+
+			if ( iCurrentSeq == MAX_INT )
+			{
+				iCurrentSeq = 0;
+			}
+
+			EvictGraphicsIfNecessary();
+		}
+		else
+		{
+			pageGraphicsOut();
+		}
+	}
+
+	if ( bChanged )
+	{
+		setLayoutDirty(true);
+		if ( getPlotCity() != NULL )
+		{
+			getPlotCity()->setLayoutDirty(true);
+		}
+
+		if ( bShouldHaveFullGraphics )
+		{
+			//gDLL->getEngineIFace()->RebuildPlot(getViewportX(), getViewportY(),false,true);
+			updateSymbols();
+			updateFeatureSymbol();
+			updateRiverSymbol();
+			updateRouteSymbol();
+		}
+		else
+		{
+			destroyGraphics();
+		}
+
+		updateCenterUnit();
+	}
+}
+
+bool CvPlot::shouldHaveFullGraphics(void) const
+{
+	return (!GC.getGraphicalDetailPagingEnabled() || m_iGraphicsPageIndex != -1)/* && shouldHaveGraphics()*/;
+}
+
+/*bool CvPlot::shouldHaveGraphics(void) const
+{
+	return GC.IsGraphicsInitialized() && isInViewport(); // && isRevealed(GC.getGame().getActiveTeam(), false);
+}*/
+
+void CvPlot::destroyGraphics()
+{
+#ifdef MULTI_FEATURE_MOD
+	destroyFeatureSymbols();
+#else
+	gDLL->getFeatureIFace()->destroy(m_pFeatureSymbol);
+#endif
+	if(m_pPlotBuilder)
+	{
+		gDLL->getPlotBuilderIFace()->destroy(m_pPlotBuilder);
+		m_pPlotBuilder = NULL;
+	}
+	gDLL->getRouteIFace()->destroy(m_pRouteSymbol);
+	gDLL->getRiverIFace()->destroy(m_pRiverSymbol);
+	gDLL->getFlagEntityIFace()->destroy(m_pFlagSymbol);
+	gDLL->getFlagEntityIFace()->destroy(m_pFlagSymbolOffset);
+	m_pCenterUnit = NULL;
+	m_pFeatureSymbol = NULL;
+	m_pRouteSymbol = NULL;
+	m_pRiverSymbol = NULL;
+	m_pFlagSymbol = NULL;
+	m_pFlagSymbolOffset = NULL;
+
+	m_bPlotLayoutDirty = false;
+	m_bLayoutStateWorked = false;
+	m_bFlagDirty = false;
+
+	deleteAllSymbols();
 }
 
 
@@ -649,6 +929,12 @@ void CvPlot::updateSymbolDisplay()
 {
 	PROFILE_FUNC();
 
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
+	{
+		return;
+	}
+
 	CvSymbol* pLoopSymbol;
 	int iLoop;
 
@@ -681,6 +967,12 @@ void CvPlot::updateSymbolDisplay()
 void CvPlot::updateSymbolVisibility()
 {
 	PROFILE_FUNC();
+
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
+	{
+		return;
+	}
 
 	CvSymbol* pLoopSymbol;
 	int iLoop;
@@ -716,6 +1008,12 @@ void CvPlot::updateSymbols()
 	PROFILE_FUNC();
 
 	if (!GC.IsGraphicsInitialized())
+	{
+		return;
+	}
+
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
 	{
 		return;
 	}
@@ -786,7 +1084,8 @@ void CvPlot::updateCenterUnit()
 		return;
 	}
 
-	if (!isActiveVisible(true))
+	// Leoreth: includes graphics paging
+	if (!isActiveVisible(true) || !shouldHaveFullGraphics())
 	{
 		setCenterUnit(NULL);
 		return;
@@ -8262,6 +8561,12 @@ void CvPlot::updateFeatureSymbolVisibility()
 		return;
 	}
 
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
+	{
+		return;
+	}
+
 	if (m_pFeatureSymbol != NULL)
 	{
 		bool bVisible = isRevealed(GC.getGameINLINE().getActiveTeam(), true);
@@ -8295,6 +8600,12 @@ void CvPlot::updateFeatureSymbol(bool bForce)
 	eFeature = getFeatureType();
 
 	gDLL->getEngineIFace()->RebuildTileArt(m_iX,m_iY);
+
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
+	{
+		return;
+	}
 
 	if ((eFeature == NO_FEATURE) ||
 		  (GC.getFeatureInfo(eFeature).getArtInfo()->isRiverArt()) ||
@@ -8338,6 +8649,12 @@ void CvPlot::updateRouteSymbol(bool bForce, bool bAdjacent)
 	int iI;
 
 	if (!GC.IsGraphicsInitialized())
+	{
+		return;
+	}
+
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
 	{
 		return;
 	}
@@ -8465,6 +8782,12 @@ void CvPlot::updateRiverSymbol(bool bForce, bool bAdjacent)
 
 void CvPlot::updateRiverSymbolArt(bool bAdjacent)
 {
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
+	{
+		return;
+	}
+
 	//this is used to update floodplain features
 	gDLL->getEntityIFace()->setupFloodPlains(m_pRiverSymbol);
 	if(bAdjacent)
@@ -8496,6 +8819,12 @@ void CvPlot::updateFlagSymbol()
 	PROFILE_FUNC();
 
 	if (!GC.IsGraphicsInitialized())
+	{
+		return;
+	}
+
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
 	{
 		return;
 	}
@@ -9874,6 +10203,12 @@ void CvPlot::setLayoutDirty(bool bDirty)
 
 bool CvPlot::updatePlotBuilder()
 {
+	// Leoreth: graphics paging
+	if ( !shouldHaveFullGraphics() )
+	{
+		return false;
+	}
+
 	if (GC.IsGraphicsInitialized() && shouldUsePlotBuilder())
 	{
 		if (m_pPlotBuilder == NULL) // we need a plot builder... but it doesn't exist

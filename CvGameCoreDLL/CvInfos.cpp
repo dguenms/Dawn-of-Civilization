@@ -10828,7 +10828,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	// nerf late game China
 	if (ePlayer == CHINA)
 	{
-		if (eCurrentEra >= ERA_RENAISSANCE) iCivModifier += 30;
+		if (eCurrentEra >= ERA_RENAISSANCE) iCivModifier += 40;
 	}
 
 	// reborn civilizations have different modifiers

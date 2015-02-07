@@ -240,6 +240,9 @@ m_paMainMenus(NULL)
 /************************************************************************************************/
 /* BETTER_BTS_AI_MOD                       END                                                  */
 /************************************************************************************************/
+
+// Leoreth: graphics paging
+,m_bGraphicalDetailPagingEnabled(false)
 {
 }
 
@@ -3403,6 +3406,23 @@ int CvGlobals::getNUM_CONTROL_TYPES() const
 int CvGlobals::getNUM_LEADERANIM_TYPES() const
 {
 	return NUM_LEADERANIM_TYPES;
+}
+
+
+// Leoreth: graphics paging
+void CvGlobals::setGraphicalDetailPagingEnabled(bool bEnabled)
+{
+	m_bGraphicalDetailPagingEnabled = bEnabled;
+}
+
+bool CvGlobals::getGraphicalDetailPagingEnabled()
+{
+	return m_bGraphicalDetailPagingEnabled;
+}
+
+int CvGlobals::getGraphicalDetailPageInRange()
+{
+	return std::max(1024, 720)/150;
 }
 
 
