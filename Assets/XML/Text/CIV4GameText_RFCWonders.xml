@@ -1088,8 +1088,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
-		<English>[ICON_BULLET]All trade routes are counted as foreign and intercontinental</English>
-		<German>[ICON_BULLET]All Handelsrouten werden als ausländische und Überseerouten gewertet</German>
+		<English>[ICON_BULLET]All trade routes are counted as foreign</English>
+		<German>[ICON_BULLET]All Handelsrouten werden als ausländisch gewertet</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Tag>
