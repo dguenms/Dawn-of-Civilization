@@ -1569,13 +1569,16 @@
 			<TradeYieldModifiers/>
 			<CommerceModifiers/>
 			<CapitalCommerceModifiers/>
-			<SpecialistExtraCommerces>
-				<iCommerce>1</iCommerce>
-			</SpecialistExtraCommerces>
+			<SpecialistExtraCommerces/>
 			<Hurrys/>
 			<SpecialBuildingNotRequireds/>
 			<SpecialistValids/>
-			<BuildingHappinessChanges/>
+			<BuildingHappinessChanges>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_BANK</BuildingType>
+					<iHappinessChange>-1</iHappinessChange>
+				</BuildingHappinessChange>
+			</BuildingHappinessChanges>
 			<BuildingHealthChanges/>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
@@ -1592,7 +1595,24 @@
 				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
 			<FeatureHappinessChanges/>
-			<ImprovementYieldChanges/>
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
 			<WeLoveTheKing/>
 		</CivicInfo>
 		<CivicInfo>
@@ -1654,16 +1674,14 @@
 			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
-			<TradeYieldModifiers>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>25</iYield>
-			</TradeYieldModifiers>
+			<TradeYieldModifiers/>
 			<CommerceModifiers/>
 			<CapitalCommerceModifiers>
-				<iCommerce>25</iCommerce>
+				<iCommerce>50</iCommerce>
 			</CapitalCommerceModifiers>
-			<SpecialistExtraCommerces/>
+			<SpecialistExtraCommerces>
+				<iCommerce>1</iCommerce>
+			</SpecialistExtraCommerces>
 			<Hurrys/>
 			<SpecialBuildingNotRequireds/>
 			<SpecialistValids/>
@@ -1849,6 +1867,8 @@
 					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 					<ImprovementYields>
 						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>-1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
