@@ -43128,6 +43128,8 @@
 				<UniqueName>Cato</UniqueName> <!-- 2nd BC -->
 				<UniqueName>Cicero</UniqueName> <!-- 1st BC -->
 				<UniqueName>Sulla</UniqueName> <!-- 1st BC -->
+				<UniqueName>fLivia Drusilla</UniqueName> <!-- 1st BC -->
+				<UniqueName>fFulvia</UniqueName> <!-- 1st AD -->
 				<UniqueName>Diocletianus</UniqueName> <!-- 3rd -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>

@@ -265,4 +265,22 @@
 		<Italian>Small|Medium|Large</Italian>
 		<Spanish>Small|Medium|Large</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__ENABLEGRAPHICALPAGING_TEXT</Tag>
+		<English>Enable graphics paging</English>
+		<French>Activer la Pagination Graphique</French>
+		<German>Enable graphics paging</German>
+		<Italian>Enable graphics paging</Italian>
+		<Spanish>Enable graphics paging</Spanish>
+		<Finnish>Enable graphics paging</Finnish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__ENABLEGRAPHICALPAGING_HOVER</Tag>
+		<English>Turn on or off paging out of off-focus graphics to save memory</English>
+		<French>Activer la Pagination des Graphiques hors champ pour préserver de la mémoire</French>
+		<German>Turn on or off paging out of off-focus graphics to save memory</German>
+		<Italian>Turn on or off paging out of off-focus graphics to save memory</Italian>
+		<Spanish>Turn on or off paging out of off-focus graphics to save memory</Spanish>
+		<Finnish>Turn on or off paging out of off-focus graphics to save memory</Finnish>
+	</TEXT>
 </Civ4GameText>

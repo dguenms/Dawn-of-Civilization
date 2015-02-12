@@ -99,6 +99,11 @@
 			<option id="ShowDebugPopups" key="Show Debug Popups" 
 					type="boolean" default="False" 
 					get="isShowDebugPopups" dirtyBit="GameData"/>
+      
+		      <!-- Enable graphical paging -->
+		      <option id="EnableGraphicalPaging" key="EnableGraphicalPaging"
+							type="boolean" default="True"
+							get="isEnableGraphicalPaging" dirtyBit="MiscButtons"/>
 		</section>
 	</options>
 	
