@@ -43324,7 +43324,9 @@
 				<UniqueName>Pompeius</UniqueName><!-- 1st BC -->
 				<UniqueName>Vaspasianus</UniqueName><!-- 1st -->
 				<UniqueName>Traianus</UniqueName><!-- 1st -->
+				<UniqueName>fAgrippina</UniqueName> <!-- 1st AD -->
 				<UniqueName>Hadrianus</UniqueName><!-- 2nd -->
+				<UniqueName>fAlbia Dominica</UniqueName> <!-- 4th AD -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
