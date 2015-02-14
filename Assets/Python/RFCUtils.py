@@ -1679,6 +1679,11 @@ class RFCUtils:
 		else:
 			if not bCapital: self.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], 1)
 			
+	def createMissionaries(self, iPlayer, iReligion, iNumUnits):
+		if not gc.getGame().isReligionFounded(iReligion): return
+		
+		self.makeUnit(con.iJewishMissionary + iReligion, iPlayer, con.tCapitals[0][iPlayer], iNumUnits)
+			
 	def getSortedList(self, lList, function, bReverse = False):
 		return sorted(lList, key=lambda element: function(element), reverse=bReverse)
 		
