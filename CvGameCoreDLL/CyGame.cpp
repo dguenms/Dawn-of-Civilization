@@ -1260,3 +1260,33 @@ int CyGame::determineWinner(int eTeam1, int eTeam2)
 {
 	return m_pGame ? m_pGame->determineWinner((TeamTypes)eTeam1, (TeamTypes)eTeam2) : eTeam1;
 }
+
+int CyGame::getXResolution() const
+{
+	return m_pGame ? m_pGame->getXResolution() : -1;
+}
+
+void CyGame::setXResolution(int iNewValue)
+{
+	if (m_pGame) m_pGame->setXResolution(iNewValue); 
+}
+
+void CyGame::changeXResolution(int iChange)
+{
+	if (m_pGame) m_pGame->changeXResolution(iChange);
+}
+
+int CyGame::getYResolution() const
+{
+	return m_pGame ? m_pGame->getYResolution() : -1;
+}
+
+void CyGame::setYResolution(int iNewValue)
+{
+	if (m_pGame) m_pGame->setYResolution(iNewValue);
+}
+
+void CyGame::changeYResolution(int iChange)
+{
+	if (m_pGame) m_pGame->changeYResolution(iChange);
+}

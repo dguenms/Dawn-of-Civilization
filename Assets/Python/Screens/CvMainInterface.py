@@ -313,7 +313,7 @@ class CvMainInterface:
 		self.iField_View_Prev = -1
 # BUG - field of view slider - end
 
-
+		
 		
 
 ############## Basic operational functions ###################
@@ -351,6 +351,9 @@ class CvMainInterface:
 			screen = CyGInterfaceScreen( "MainInterface", CvScreenEnums.MAIN_INTERFACE )
 		self.xResolution = screen.getXResolution()
 		self.yResolution = screen.getYResolution()
+		
+		gc.getGame().setXResolution(self.xResolution)
+		gc.getGame().setYResolution(self.yResolution)
 		
 # BUG - Raw Yields - begin
 		global g_bYieldView

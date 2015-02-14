@@ -462,7 +462,7 @@ void CvPlot::setShouldHaveFullGraphics(bool bShouldHaveFullGraphics)
 
 bool CvPlot::shouldHaveFullGraphics(void) const
 {
-	return (!GC.getGraphicalDetailPagingEnabled() || m_iGraphicsPageIndex != -1)/* && shouldHaveGraphics()*/;
+	return (!GC.getGraphicalDetailPagingEnabled() || m_iGraphicsPageIndex != -1) && GC.IsGraphicsInitialized()/* && shouldHaveGraphics()*/;
 }
 
 /*bool CvPlot::shouldHaveGraphics(void) const

@@ -574,6 +574,15 @@ public:
 	bool isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const;
 	TeamTypes determineWinner(TeamTypes eTeam1, TeamTypes eTeam2) const;
 
+	// Leoreth: graphics paging
+	int getXResolution() const;
+	void setXResolution(int iNewValue);
+	void changeXResolution(int iChange);
+
+	int getYResolution() const;
+	void setYResolution(int iNewValue);
+	void changeYResolution(int iChange);
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;
@@ -670,6 +679,8 @@ protected:
 	// Leoreth: graphics paging
 	int m_iLastLookatX;
 	int m_iLastLookatY;
+	int m_iXResolution;
+	int m_iYResolution;
 	bool m_bWasGraphicsPagingEnabled;
 
 	std::vector<PlotExtraYield> m_aPlotExtraYields;
