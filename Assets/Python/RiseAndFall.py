@@ -3202,7 +3202,7 @@ class RiseAndFall:
                                 pRome.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                 if (iCiv == iJapan):
 		        utils.createSettlers(iCiv, 3)
-			utils.makeUnit(con.iBuddhistMissionary, iJapan, tCapitals[0][iJapan], 3)
+			utils.createMissionaries(iCiv, con.iBuddhism, 3)
                 	utils.makeUnit(con.iSwordsman, iJapan, tCapitals[0][iJapan], 2)
                 	utils.makeUnitAI(con.iArcher, iJapan, tCapitals[0][iJapan], UnitAITypes.UNITAI_CITY_DEFENSE, 2)
                 	utils.makeUnit(con.iWorker, iJapan, tCapitals[0][iJapan], 2)
@@ -3217,7 +3217,7 @@ class RiseAndFall:
 			utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iHinduism, 1)
 			if utils.getHumanID() != iTamils:
 				utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
 				utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
@@ -3238,7 +3238,7 @@ class RiseAndFall:
 				utils.makeUnit(con.iTrireme, iCiv, tSeaPlot, 1)
 		if (iCiv == iKorea):
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iBuddhism, 1)
 			utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 1)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 1)
@@ -3254,9 +3254,9 @@ class RiseAndFall:
                         utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.createSettlers(iCiv, 4)
 			if gc.getGame().isReligionFounded(con.iOrthodoxy):
-				utils.makeUnit(con.iOrthodoxMissionary, iCiv, tPlot, 2)
+				utils.createMissionaries(iCiv, con.iOrthodoxy, 2)
 			else:
-				utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 2)
+				utils.createMissionaries(iCiv, con.iCatholicism, 2)
 			tSeaPlot = self.findSeaPlots(tCapitals[0][iByzantium], 1, iByzantium)
 			if tSeaPlot:
 				utils.makeUnit(con.iGalley, iByzantium, tSeaPlot, 2)
@@ -3290,13 +3290,13 @@ class RiseAndFall:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(con.iTibetanKhampa, iCiv, tPlot, 2)
-			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iBuddhism, 1)
                 if (iCiv == iKhmer):
 			utils.createSettlers(iCiv, 1)
                         utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
                         utils.makeUnitAI(con.iKhmerBallistaElephant, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-			utils.makeUnit(con.iHinduMissionary, iCiv, tPlot, 1)
-                        utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iHinduism, 1)
+                        utils.createMissionaries(iCiv, con.iBuddhism, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
@@ -3306,7 +3306,7 @@ class RiseAndFall:
 		if (iCiv == iIndonesia):
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
-			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iBuddhism, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if (tSeaPlot):
 				utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 1)
@@ -3323,7 +3323,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iSpearman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 1)
-			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 2)
+			utils.createMissionaries(iCiv, con.iIslam, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(con.iGalley, iCiv, tSeaPlot, 1)
@@ -3345,7 +3345,7 @@ class RiseAndFall:
 				utils.makeUnit(con.iSettler, iCiv, tPlot, 1)
 			if utils.getHumanID() != iSpain:
 				utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iCatholicism, 1)
                         if utils.getScenario() == con.i600AD: #late start condition
                                 utils.makeUnit(con.iWorker, iCiv, tPlot, 1) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)
                 if (iCiv == iFrance):
@@ -3353,13 +3353,13 @@ class RiseAndFall:
                         utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
                         utils.makeUnit(con.iSwordsman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iAxeman, iCiv, tPlot, 3)
-			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iCatholicism, 1)
                 if (iCiv == iEngland):
 			utils.createSettlers(iCiv, 3)
                         utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
 			if utils.getHumanID() != iEngland:
 				utils.makeUnit(con.iMaceman, iCiv, tPlot, 3)
-			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iCatholicism, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
@@ -3373,7 +3373,7 @@ class RiseAndFall:
                         utils.makeUnitAI(con.iSwordsman, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
                         utils.makeUnitAI(con.iKnight, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
 			utils.makeUnitAI(con.iCatapult, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
-			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iCatholicism, 1)
                 if (iCiv == iRussia):
 			utils.createSettlers(iCiv, 4)
                         utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
@@ -3384,7 +3384,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iMusketman, iCiv, tPlot, 6)
 			utils.makeUnit(con.iBombard, iCiv, tPlot, 2)
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, gc.getPlayer(iCiv).getStateReligion(), 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
@@ -3398,7 +3398,7 @@ class RiseAndFall:
                 if (iCiv == iMali):
 			utils.createSettlers(iCiv, 3)
                         utils.makeUnit(con.iMaliSkirmisher, iCiv, tPlot, 5)
-                        utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iIslam, 1)
 		if iCiv == iPoland:
 			iNumSettlers = 1
 			if utils.getHumanID() == iPoland: iNumSettlers = 2
@@ -3409,7 +3409,7 @@ class RiseAndFall:
 			if utils.getHumanID() != iPoland:
 				utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iKnight, iCiv, tPlot, 1)
-			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iCatholicism, 1)
                 if (iCiv == iTurkey):
                         utils.makeUnit(con.iLongbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
@@ -3417,7 +3417,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 2)
                         utils.makeUnit(con.iBombard, iCiv, tPlot, 4)
                         utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 2)
-                        utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
+			utils.createMissionaries(iCiv, con.iIslam, 3)
 			if utils.getHumanID() != iTurkey:
 				utils.makeUnit(con.iBombard, iCiv, tPlot, 4)
 				utils.makeUnit(con.iOttomanJanissary, iCiv, tPlot, 5)
@@ -3427,7 +3427,7 @@ class RiseAndFall:
                         utils.makeUnitAI(con.iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 2)
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
-			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iCatholicism, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
                                 utils.makeUnit(con.iWorkBoat, iCiv, tSeaPlot, 2)
@@ -3446,7 +3446,7 @@ class RiseAndFall:
                         utils.makeUnit(con.iCrossbowman, iCiv, tPlot, 3)
                         utils.makeUnit(con.iPikeman, iCiv, tPlot, 2)
 			utils.makeUnit(con.iTrebuchet, iCiv, tPlot, 3)
-			utils.makeUnit(con.iChristianMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iCatholicism, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if (tSeaPlot):
 				utils.makeUnit(con.iWorkboat, iCiv, tSeaPlot, 2)
@@ -3475,12 +3475,12 @@ class RiseAndFall:
 			utils.makeUnit(con.iMughalSiegeElephant, iCiv, tPlot, 3)
 			utils.makeUnit(con.iMusketman, iCiv, tPlot, 4)
 			utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)
-			utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iIslam, 1)
 			if utils.getHumanID() == iMughals:
 				utils.makeUnit(con.iIslamicMissionary, iCiv, tPlot, 3)
 		if iCiv == iThailand:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(con.iBuddhistMissionary, iCiv, tPlot, 1)
+			utils.createMissionaries(iCiv, con.iBuddhism, 1)
 			utils.makeUnit(con.iPikeman, iCiv, tPlot, 3)
 			utils.makeUnit(con.iThaiChangSuek, iCiv, tPlot, 2)
 		if iCiv == iCongo:
@@ -3489,7 +3489,7 @@ class RiseAndFall:
 			utils.makeUnit(con.iCongoPombos, iCiv, tPlot, 2)
 		if iCiv == iGermany:
 			utils.createSettlers(iCiv, 4)
-			utils.makeUnit(con.iJewishMissionary, iCiv, tPlot, 2, "", 2)
+			utils.createMissionaries(iCiv, con.iProtestantism, 2)
 			utils.makeUnit(con.iRifleman, iCiv, tPlot, 3, "", 2)
 			utils.makeUnitAI(con.iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(con.iCannon, iCiv, tPlot, 3, "", 2)
