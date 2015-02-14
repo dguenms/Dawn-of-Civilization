@@ -301,6 +301,14 @@ public:
 	bool isCheatingEnabled() const;
 	int determineWinner(int /*TeamTypes*/ eTeam1, int /*TeamTypes*/ eTeam2);
 
+	int getXResolution() const;
+	void setXResolution(int iNewValue);
+	void changeXResolution(int iChange);
+
+	int getYResolution() const;
+	void setYResolution(int iNewValue);
+	void changeYResolution(int iChange);
+
 protected:
 	CvGame* m_pGame;
 };

@@ -290,6 +290,13 @@ void CyGamePythonInterface()
 		.def("isNeighbors", &CyGame::isNeighbors, "bool (int iPlayer1, int iPlayer2)")
 		.def("isCheatingEnabled", &CyGame::isCheatingEnabled, "bool ()")
 		.def("determineWinner", &CyGame::determineWinner, "int (int iTeam1, int iTeam2)")
+
+		.def("getXResolution", &CyGame::getXResolution, "int ()")
+		.def("setXResolution", &CyGame::setXResolution, "void (int iNewValue)")
+		.def("changeXResolution", &CyGame::changeXResolution, "void (int iChange)")
+		.def("getYResolution", &CyGame::getYResolution, "int ()")
+		.def("setYResolution", &CyGame::setYResolution, "void (int iNewValue)")
+		.def("changeYResolution", &CyGame::changeYResolution, "void (int iChange)")
 		;
 
 	python::class_<CyDeal>("CyDeal")

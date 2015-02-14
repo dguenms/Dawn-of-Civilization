@@ -506,6 +506,10 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 	m_iAIAutoPlay = 0;
 	m_iCircumnavigated = -1; //Rhye
 
+	// Leoreth: graphics paging
+	m_iXResolution = 1024;
+	m_iYResolution = 720;
+
 	m_uiInitialTime = 0;
 
 	m_bScoreDirty = false;
@@ -10567,4 +10571,36 @@ bool CvGame::isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const
 TeamTypes CvGame::determineWinner(TeamTypes eTeam1, TeamTypes eTeam2) const
 {
 	return (GET_TEAM(eTeam1).AI_endWarVal(eTeam2) < GET_TEAM(eTeam2).AI_endWarVal(eTeam1)) ? eTeam1 : eTeam2;
+}
+
+// Leoreth: graphics paging
+
+int CvGame::getXResolution() const
+{
+	return m_iXResolution;
+}
+
+void CvGame::setXResolution(int iNewValue)
+{
+	m_iXResolution = iNewValue;
+}
+
+void CvGame::changeXResolution(int iChange)
+{
+	setXResolution(getXResolution() + iChange);
+}
+
+int CvGame::getYResolution() const
+{
+	return m_iYResolution;
+}
+
+void CvGame::setYResolution(int iNewValue)
+{
+	m_iYResolution = iNewValue;
+}
+
+void CvGame::changeYResolution(int iChange)
+{
+	setYResolution(getYResolution() + iChange);
 }
