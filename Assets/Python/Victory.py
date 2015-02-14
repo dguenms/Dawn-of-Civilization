@@ -2008,7 +2008,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 		# third Confucian goal: control an army of 200 non-obsolete melee or gunpowder units
 		elif iGoal == 2:
 			iUnitCombatMelee = gc.getInfoTypeForString("UNITCOMBAT_MELEE")
-			iUnitCombatGunpowder = gc.getInfoTypeForString("UNITCOMAT_GUNPOWDER")
+			iUnitCombatGunpowder = gc.getInfoTypeForString("UNITCOMBAT_GUN")
 			if countUnitsOfType(iPlayer, [iUnitCombatMelee, iUnitCombatGunpowder]) >= 200: return 1
 			
 	elif iVictoryType == iTaoism:
