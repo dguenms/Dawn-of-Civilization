@@ -25800,3 +25800,16 @@ void CvPlayer::changeNoAnarchyTurns(int iChange)
 {
 	m_iNoAnarchyTurns += iChange;
 }
+
+int CvPlayer::countCoreCities() const
+{
+	int iNumCoreCities = 0;
+
+	int iLoop;
+	for (CvCity* pCity = firstCity(&iLoop); NULL != pCity; pCity = nextCity(&iLoop))
+	{
+		if (pCity->plot()->isCore(getID())) iNumCoreCities++;
+	}
+
+	return iNumCoreCities;
+}

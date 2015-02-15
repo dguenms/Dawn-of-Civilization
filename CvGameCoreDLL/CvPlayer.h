@@ -1193,6 +1193,8 @@ public:
 	void setNoAnarchyTurns(int iNewValue);
 	void changeNoAnarchyTurns(int iChange);
 
+	int countCoreCities() const;
+
 protected:
 
 	int m_iStartingX;

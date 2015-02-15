@@ -102,7 +102,6 @@ def onTechAcquired(iPlayer, iTech):
 	
 def onVassalState(iMaster, iVassal):
 	setStabilityLevel(iVassal, max(con.iStabilityShaky, getStabilityLevel(iVassal)))
-	if utils.getHumanID() != iMaster: checkStability(iVassal)
 	checkStability(iMaster, True)
 	
 	# update number of cities so vassals survive losing cities
@@ -281,10 +280,15 @@ def getStabilityThreshold(iPlayer):
 		
 	return iThreshold
 
-def checkStability(iPlayer, bPositive = False, bWar = False):
+def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	iGameEra = gc.getGame().getCurrentEra()
+	
+	bVassal = (iMaster != -1)
+	
+	# vassal checks are made for triggers of their master civ
+	if bVassal: return
 	
 	if isImmune(iPlayer): return
 		
@@ -301,10 +305,13 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
 	sd.setLastDifference(iPlayer, 0)
-	
 	bHuman = (utils.getHumanID() == iPlayer)
+	bHumanVassal = (bVassal and utils.getHumanID() == iMaster)
 	bFall = (not bHuman and iGameTurn > getTurnForYear(con.tFall[iPlayer]))
 	bContinue = False
+	
+	iCrisisLevelLimit = con.iStabilityCollapsing
+	if bVassal: iCrisisLevelLimit = getStabilityLevel(iMaster)
 	
 	# it's easier to lose stability and harder to gain it at higher levels -> prevent "falling through the levels"
 	iThreshold = getStabilityThreshold(iPlayer)
@@ -316,10 +323,10 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 			incrementStability(iPlayer)
 			
 		sd.setLastDifference(iPlayer, 1)
-		sd.setCrisisImminent(False)
+		if bHuman: sd.setCrisisImminent(False)
 		
 	elif iStability >= iThreshold:
-		sd.setCrisisImminent(False)
+		if bHuman: sd.setCrisisImminent(False)
 		
 		# if stability does not improve on collapsing, a complete collapse ensues
 		if iStabilityLevel == con.iStabilityCollapsing:
@@ -329,8 +336,8 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 		
 	elif not bPositive:
 		# humans are immune to first stability drop
-		if bHuman and not sd.isCrisisImminent():
-			sd.setCrisisImminent(True)
+		if (bHuman or bHumanVassal) and not sd.isCrisisImminent():
+			if bHuman: sd.setCrisisImminent(True)
 			changeCrisisCountdown(iPlayer, utils.getTurns(5))
 			sText = localText.getText("TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE", (localText.getText(tCrisisLevels[iStabilityLevel], ()),))
 			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
@@ -340,6 +347,9 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 		
 			iCrisisType = determineCrisisType(lStabilityTypes)
 			iCrisisLevel = iStabilityLevel # PREVIOUS level
+			
+			# if vassal and master is more stable, prevent worse crises
+			if iCrisisLevelLimit > iCrisisLevel: iCrisisLevel = iCrisisLevelLimit
 		
 			triggerCrisis(iPlayer, iCrisisLevel, iCrisisType, bWar)
 			
@@ -354,6 +364,11 @@ def checkStability(iPlayer, bPositive = False, bWar = False):
 		pPlayer.setStabilityParameter(i, lParameters[i])
 		
 	if bContinue: checkStability(iPlayer, bPositive, bWar)
+	
+	# check vassals
+	for iLoopPlayer in range(iNumPlayers):
+		if gc.getTeam(iLoopPlayer).isVassal(iPlayer):
+			checkStability(iLoopPlayer, bPositive, bWar, iPlayer)
 			
 def triggerBonus(iPlayer, lStabilityParameters):
 	return
