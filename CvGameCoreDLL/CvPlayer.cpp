@@ -5029,6 +5029,9 @@ void CvPlayer::raze(CvCity* pCity)
 	CvEventReporter::getInstance().cityRazed(pCity, getID());
 
 	disband(pCity);
+
+	// Leoreth
+	updateMaintenance();
 }
 
 
@@ -5042,6 +5045,9 @@ void CvPlayer::disband(CvCity* pCity)
 	GC.getGameINLINE().addDestroyedCityName(pCity->getName());
 
 	pCity->kill(true);
+
+	// Leoreth
+	updateMaintenance();
 }
 
 

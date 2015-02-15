@@ -1453,6 +1453,7 @@ void CvCity::doTask(TaskTypes eTask, int iData1, int iData2, bool bOption, bool 
 		else
 		{
 			GET_PLAYER((PlayerTypes)iData1).acquireCity(this, false, true, true);
+			GET_PLAYER(getOwnerINLINE()).updateMaintenance(); // Leoreth
 		}
 		break;
 
@@ -6310,7 +6311,9 @@ void CvCity::setPopulation(int iNewValue)
 
 		plot()->updateYield();
 
-		updateMaintenance();
+		// Leoreth: population now affects overall maintenance modifier
+		//updateMaintenance();
+		GET_PLAYER(getOwnerINLINE()).updateMaintenance();
 
 		if (((iOldPopulation == 1) && (getPopulation() > 1)) ||
 			  ((getPopulation() == 1) && (iOldPopulation > 1))
@@ -6869,7 +6872,7 @@ int CvCity::calculateNumCitiesMaintenanceTimes100() const
 
 	// Leoreth: apply large empire penalty here
 	int iSizeThreshold = 6 + 3 * GET_PLAYER(getOwnerINLINE()).getCurrentEra();
-	int iMultiplier = (GET_PLAYER(getOwnerINLINE()).isHuman()) ? 10 : 5;
+	int iMultiplier = 5; //(GET_PLAYER(getOwnerINLINE()).isHuman()) ? 10 : 5;
 	int iNumCities = GET_PLAYER(getOwnerINLINE()).getTotalPopulation() / iSizeThreshold;
 
 	if (iNumCities > 10)
@@ -16940,6 +16943,8 @@ void CvCity::liberate(bool bConquest)
 			}
 		}
 	}
+
+	GET_PLAYER(eOwner).updateMaintenance(); // Leoreth
 }
 
 PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const

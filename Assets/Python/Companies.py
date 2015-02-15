@@ -121,7 +121,8 @@ class Companies:
 		
 		iValue = 2
 		
-		owner = gc.getPlayer(city.getOwner())
+		iOwner = city.getOwner()
+		owner = gc.getPlayer(iOwner)
 		ownerTeam = gc.getTeam(owner.getTeam())
 		
 		# State Property
@@ -185,52 +186,52 @@ class Companies:
 		
 		# various bonuses
 		if iCompany == iSilkRoute:
-			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0 or city.getNumRealBuilding(con.iIranianCaravanserai) > 0 or city.getNumRealBuilding(con.iKongoMbwadi) > 0 or city.getNumRealBuilding(con.iPhoenicianGlassmaker) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iGrocer) > 0 or city.getNumRealBuilding(con.iBrazilianFazenda) > 0 or city.getNumRealBuilding(con.iColombianHacienda) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iMarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iGrocer)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iHarbor)): iValue += 1
 
 		elif iCompany == iTradingCompany:
-			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iCustomHouse) > 0 or city.getNumRealBuilding(con.iPortugalFeitoria) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iBank) > 0 or city.getNumRealBuilding(con.iEnglishStockExchange) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iTradingCompany) > 0 or city.getNumRealBuilding(con.iIberianTradingCompany) > 0: iValue += 2
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iHarbor)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iCustomHouse)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iBank)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iTradingCompany)): iValue += 2
 
 		elif iCompany == iCerealIndustry:
-			if city.getNumRealBuilding(con.iGranary) > 0 or city.getNumRealBuilding(con.iIncanTerrace) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iGrocer) > 0 or city.getNumRealBuilding(con.iBrazilianFazenda) > 0 or city.getNumRealBuilding(con.iColombianHacienda) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0 or city.getNumRealBuilding(con.iArgentineRefrigerationPlant) > 0: iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iGranary)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iGrocer)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iSupermarket)): iValue += 1
 
 		elif iCompany == iFishingIndustry:
-			if city.getNumRealBuilding(con.iLighthouse) > 0 or city.getNumRealBuilding(con.iVikingTradingPost) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iHarbor) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iSupermarket) > 0 or city.getNumRealBuilding(con.iAmericanMall) > 0 or city.getNumRealBuilding(con.iArgentineRefrigerationPlant) > 0: iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iLighthouse)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iHarbor)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iSupermarket)): iValue += 1
 			
 		elif iCompany == iTextileIndustry:
-			if city.getNumRealBuilding(con.iMarket) > 0 or city.getNumRealBuilding(con.iRomanForum) > 0 or city.getNumRealBuilding(con.iPersianApothecary) > 0 or city.getNumRealBuilding(con.iIranianCaravanserai) > 0 or city.getNumRealBuilding(con.iKongoMbwadi) > 0 or city.getNumRealBuilding(con.iPhoenicianGlassmaker) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iFactory) > 0 or city.getNumRealBuilding(con.iGermanAssemblyPlant) > 0: iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iMarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
 
 		elif iCompany == iSteelIndustry:
-			if city.getNumRealBuilding(con.iFactory) > 0 or city.getNumRealBuilding(con.iGermanAssemblyPlant) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iCoalPlant) > 0 or city.getNumRealBuilding(con.iJapaneseShalePlant) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iIndustrialPark) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iIronWorks) > 0: iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iCoalPlant)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iIndustrialPark)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iIronWorks)): iValue += 3
 
 		elif iCompany == iOilIndustry:
-			if city.getNumRealBuilding(con.iBank) > 0 or city.getNumRealBuilding(con.iEnglishStockExchange) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iIndustrialPark) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iWallStreet) > 0: iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iBank)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iIndustrialPark)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iWallStreet)): iValue += 3
 
 		elif iCompany == iLuxuryIndustry:
-			if city.getNumRealBuilding(con.iFactory) > 0 or city.getNumRealBuilding(con.iGermanAssemblyPlant) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iTheatre) > 0 or city.getNumRealBuilding(con.iFrenchSalon) > 0 or city.getNumRealBuilding(con.iByzantineHippodrome) > 0 or city.getNumRealBuilding(con.iChinesePavillion) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iBroadcastTower) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iHermitage) > 0: iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iTheatre)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iBroadcastTower)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iHermitage)): iValue += 3
 
 		elif iCompany == iComputerIndustry:
-			if city.getNumRealBuilding(con.iFactory) > 0 or city.getNumRealBuilding(con.iGermanAssemblyPlant) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iLaboratory) > 0 or city.getNumRealBuilding(con.iRussianResearchInstitute) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iUniversity) > 0 or city.getNumRealBuilding(con.iKoreanSeowon) > 0 or city.getNumRealBuilding(con.iTibetanGompa) > 0: iValue += 1
-			if city.getNumRealBuilding(con.iChannelTunnel) > 0: iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iLaboratory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iUniversity)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iChannelTunnel)): iValue += 3
 
 		# trade routes
 		iValue += city.getTradeRoutes() - 1

@@ -43737,6 +43737,7 @@
 				<UniqueName>Toshusai Sharaku</UniqueName><!-- 18th -->
 				<UniqueName>Katsushika Hokusai</UniqueName><!-- 18th -->
 				<UniqueName>Utagawa Hiroshige</UniqueName><!-- 19th -->
+				<UniqueName>Tora Okamoto</UniqueName><!-- Contest Reward -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -53923,6 +53924,7 @@
 				<UniqueName>fRaden Ayu Kartini</UniqueName> <!-- 19th -->
 				<UniqueName>Sukarno</UniqueName> <!-- 20th -->
 				<UniqueName>Agus Salim</UniqueName> <!-- 20th -->
+				<UniqueName>Chep the Magnificent</UniqueName> <!-- Contest Reward -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -65371,6 +65373,7 @@
 				<UniqueName>fArtemisia Gentileschi</UniqueName> <!-- 17th -->
 				<UniqueName>fGrazia Deledda</UniqueName> <!-- 20th -->
 				<UniqueName>Gabriele Trovato</UniqueName><!-- 20th -->
+				<UniqueName>Gian Maria Volont&#233;</UniqueName> <!-- Contest Reward -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
