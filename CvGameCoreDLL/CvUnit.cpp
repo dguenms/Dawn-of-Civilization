@@ -6674,13 +6674,15 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 				setMadeAttack(true);
 				finishMoves();
 
-				CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
-				if (NULL != pCapital)
+				// Leoreth: spies are exiled to the closest city, not the capital
+				//CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
+				CvCity* pClosestCity = GC.getMap().findCity(getX(), getY(), getOwner(), getTeam(), false);
+				if (NULL != pClosestCity)
 				{
-					setXY(pCapital->getX_INLINE(), pCapital->getY_INLINE(), false, false, false);
+					setXY(pClosestCity->getX_INLINE(), pClosestCity->getY_INLINE(), false, false, false);
 
-					CvWString szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_SPY_SUCCESS", getNameKey(), pCapital->getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_POSITIVE_DINK", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pCapital->getX_INLINE(), pCapital->getY_INLINE(), true, true);
+					CvWString szBuffer = gDLL->getText("TXT_KEY_ESPIONAGE_SPY_SUCCESS", getNameKey(), pClosestCity->getNameKey());
+					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_POSITIVE_DINK", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pClosestCity->getX_INLINE(), pClosestCity->getY_INLINE(), true, true);
 				}
 				
 				//SuperSpies: TSHEEP Give spies xp for successful missions

@@ -1385,7 +1385,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
-			<FavoriteReligion>NONE</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -1933,7 +1933,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -4684,7 +4684,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_EGALITARIANISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -14645,7 +14645,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -21860,7 +21860,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CAPITALISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
@@ -27467,7 +27467,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
 			<!-- Rhye -->
 			<Traits/>
 			<Flavors>

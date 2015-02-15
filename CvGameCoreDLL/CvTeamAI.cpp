@@ -1816,6 +1816,24 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 		return NO_DENIAL;
 	}
 
+	// Leoreth: last resort
+	if (isAtWar(eTeam) && GET_PLAYER(getLeaderID()).countCoreCities() == 1)
+	{
+		if (GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_NUKED_US) == 0 &&
+			GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_RAZED_CITY) == 0)
+		{
+			CvCity* pCapital = GET_PLAYER(getLeaderID()).getCapitalCity();
+
+			if (pCapital != NULL && GET_PLAYER(getLeaderID()).AI_isPlotThreatened(GET_PLAYER(getLeaderID()).getCapitalCity()->plot(), 2))
+			{
+				if (2 * pCapital->area()->getPower(getLeaderID()) < pCapital->area()->getPower(GET_TEAM(eTeam).getLeaderID()))
+				{
+					return NO_DENIAL;
+				}
+			}
+		}
+	}
+
 	int iAttitudeModifier = 0;
 
 	if (!GET_TEAM(eTeam).isParent(getID()))
@@ -1844,7 +1862,24 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 		int iTotalPower = GC.getGameINLINE().countTotalCivPower();
 		int iAveragePower = iTotalPower / std::max(1, GC.getGameINLINE().countCivTeamsAlive());
 		int iMasterPower = GET_TEAM(eTeam).getPower(false);
-		int iVassalPower = (getPower(true) * (iPowerMultiplier + iPersonalityModifier / std::max(1, iMembers))) / 100;
+		int iTotalMasterPower = GET_TEAM(eTeam).getPower(true);
+		int iRawVassalPower = getPower(true);
+		int iVassalPower = (iRawVassalPower * (iPowerMultiplier + iPersonalityModifier / std::max(1, iMembers))) / 100;
+
+		int iTotalPopulation = GC.getGameINLINE().getTotalPopulation();
+		int iMasterPopulation = GET_TEAM(eTeam).getTotalPopulation();
+		int iVassalPopulation = getTotalPopulation();
+
+		// Leoreth: do not accumulate too many vassals (strength + population instead of number of vassals)
+		if (iTotalMasterPower + iRawVassalPower > iTotalPower / 3)
+		{
+			return DENIAL_POWER_YOU;
+		}
+
+		if (iMasterPopulation + iVassalPopulation > iTotalPopulation / 3)
+		{
+			return DENIAL_POWER_YOU;
+		}
 
 		if (isAtWar(eTeam))
 		{
@@ -2074,14 +2109,17 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 	}
 	else
 	{
-		if (AI_getWarSuccess(eTeam) + 4 * GC.getDefineINT("WAR_SUCCESS_CITY_CAPTURING") > GET_TEAM(eTeam).AI_getWarSuccess(getID()))
+		int iMinCitiesConquered = std::min(GET_PLAYER(getLeaderID()).getNumCities(), 4);
+
+		if (AI_getWarSuccess(eTeam) + iMinCitiesConquered * GC.getDefineINT("WAR_SUCCESS_CITY_CAPTURING") > GET_TEAM(eTeam).AI_getWarSuccess(getID()))
 		{
 			return DENIAL_JOKING;
 		}
 	}
 
+	// Leoreth: with vassal power and population instead
 	//Rhye - start (5 vassals cap if already the strongest; 6 vas+all cap)
-	int mastersVassals = 0;
+	/*int mastersVassals = 0;
 	int mastersAllies = 0;
 	int mastersPower = kMasterTeam.getPower(true);
 	bool bStrongest = true;
@@ -2099,7 +2137,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 	if (mastersVassals >= 5 && bStrongest)
 		return DENIAL_POWER_YOU;
 	if (mastersVassals + mastersAllies >= 6)
-		return DENIAL_POWER_YOU;
+		return DENIAL_POWER_YOU;*/
 	//Rhye - end
 
 	return NO_DENIAL;

@@ -1069,6 +1069,7 @@ class DynamicCivs:
 		bCityStates = (iCivic0 == con.iCivicCityStates)
 		bTheocracy = (iCivic0 == con.iCivicTheocracy)
 		bResurrected = (self.getResurrections(iPlayer) > 0)
+		bCapitulated = bVassal and tPlayer.isCapitulated()
 		iAnarchyTurns = self.getAnarchyTurns(iPlayer)
 		iEra = pPlayer.getCurrentEra()
 		iGameEra = gc.getGame().getCurrentEra()
@@ -1084,12 +1085,11 @@ class DynamicCivs:
                         if tPlayer.isAtWar(iTarget):
                                 bWar = True
 				break
-                # Vassalage --> Civics/ Religion/ Size --> Default names
-		
+
 		# Leoreth: Vassalage (historical -> generic -> default) -> Civics -> Historical (usually religion -> civics -> size) -> Default
                 
                 # by vassalage
-                if bVassal:
+                if bCapitulated:
 			if iMaster == iRussia and pMasterPlayer.getCivics(3) == con.iCivicCentralPlanning:
 				self.setCivDesc(iPlayer, self.sovietVassals[iPlayer])
 				return
