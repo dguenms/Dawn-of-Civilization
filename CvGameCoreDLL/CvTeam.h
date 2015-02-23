@@ -86,6 +86,11 @@ public:
 	int getResearchCost(TechTypes eTech) const;																// Exposed to Python
 	int getResearchLeft(TechTypes eTech) const;																// Exposed to Python
 
+	// Leoreth
+	int getPopulationResearchModifier() const;
+	int getCivilizationResearchModifier() const;
+	int getSpreadResearchModifier(TechTypes eTech) const;
+
 	bool hasHolyCity(ReligionTypes eReligion) const;																		// Exposed to Python
 	bool hasHeadquarters(CorporationTypes eCorporation) const;																		// Exposed to Python
 	bool hasBonus(BonusTypes eBonus) const;
