@@ -366,7 +366,7 @@ def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
 	if bContinue: checkStability(iPlayer, bPositive, bWar)
 	
 	# check vassals
-	for iLoopPlayer in range(iNumPlayers):
+	for iLoopPlayer in range(con.iNumPlayers):
 		if gc.getTeam(iLoopPlayer).isVassal(iPlayer):
 			checkStability(iLoopPlayer, bPositive, bWar, iPlayer)
 			

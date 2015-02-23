@@ -2753,35 +2753,49 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	iCost *= std::max(0, ((GC.getDefineINT("TECH_COST_EXTRA_TEAM_MEMBER_MODIFIER") * (getNumMembers() - 1)) + 100));
 	iCost /= 100;
 
-	int iNumCities = GET_PLAYER((PlayerTypes)getID()).getNumCities();
-	int iMultiplier;
+	iCost *= getPopulationResearchModifier();
+	iCost /= 100;
 
-	// Leoreth: penalty for the tech leader
-	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - getTurnForYear(startingTurnYear[getID()]) > getTurns(30))
+	iCost *= getSpreadResearchModifier(eTech);
+	iCost /= 100;
+
+	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
+	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
 	{
-		int iBestValue = getTotalTechValue();
-		int iDenominator = 0;
-		int iAverageValue = 0;
-
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		bool bUnknown = true;
+		for (int i = 0; i < NUM_MAJOR_PLAYERS; i++)
 		{
-			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isVassal(getID()))
+			if (GET_TEAM((TeamTypes)i).isHasTech(eTech))
 			{
-				iAverageValue += GET_TEAM((TeamTypes)iI).getTotalTechValue();
-				iDenominator += 1;
+				bUnknown = false;
 			}
 		}
 
-		// Leoreth: average is skewed for too few civs, also ruins the Babylonian UP
-		if (iDenominator > 5)
+		if (bUnknown) //allow for all techs
 		{
-			// extra costs come in 10% increments
-			int iSurplus = (100 * iBestValue / iAverageValue) / 10;
-
-			iCost *= 100 + 10 * iSurplus;
+			iCost *= 80;
 			iCost /= 100;
 		}
 	}
+
+
+	return std::max(1, iCost);
+}
+
+int CvTeam::getCivilizationResearchModifier() const
+{
+	if (getLeaderID() < NUM_MAJOR_PLAYERS) return researchModifier[getLeaderID()];
+
+	if (getLeaderID() == CELTIA) return 350;
+
+	return 110;
+}
+
+int CvTeam::getPopulationResearchModifier() const
+{
+	int iModifier = 100;
+
+	int iNumCities = getNumCities();
 
 	//Rhye - start 
 	//discount for small empires
@@ -2814,69 +2828,39 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	}
 	//Rhye - end
 
-	//Rhye - start tech discount
-	/*int owners = 0;
-	int modifier = 1000;
-	bool bFiber = false;
-	bool bElectricity = false;
-	bool bAstronomy = false;
+	return iModifier;
+}
 
-	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
+{
+	int iModifier = 100;
+
+	// Leoreth: penalty for the tech leader
+	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - getTurnForYear(startingTurnYear[getID()]) > getTurns(30))
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_TEAM((TeamTypes)iI).isHasTech((TechTypes)FIBER_OPTICS))
-			{
-				modifier = 1;
-				bFiber = true;
-				bElectricity = true;
-				bAstronomy = true;
-				break;
-			}
-		}
-	}
-	if (!bElectricity) {
-		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
-		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			{
-				if (GET_TEAM((TeamTypes)iI).isHasTech((TechTypes)ELECTRICITY))
-				{
-					modifier = 2;
-					bElectricity = true;
-					bAstronomy = true;
-					break;
-				}
-			}
-		}
-	}
-	if (!bAstronomy) {
-		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
-		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			{
-				if (GET_TEAM((TeamTypes)iI).isHasTech((TechTypes)ASTRONOMY))
-				{
-					modifier = 4;
-					bAstronomy = true;
-					break;
-				}
-			}
-		}
-	}
+		int iBestValue = getTotalTechValue();
+		int iDenominator = 0;
+		int iAverageValue = 0;
 
-	if (bAstronomy) {
-		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 		{
-			if (GET_TEAM((TeamTypes)iI).isHasTech(eTech))
+			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isVassal(getID()))
 			{
-				owners++;
+				iAverageValue += GET_TEAM((TeamTypes)iI).getTotalTechValue();
+				iDenominator += 1;
 			}
 		}
-		iCost *= ((GC.getGameINLINE().countCivPlayersAlive() * modifier) - owners);
-		iCost /= (GC.getGameINLINE().countCivPlayersAlive() * modifier);
+
+		// Leoreth: average is skewed for too few civs, also ruins the Babylonian UP
+		if (iDenominator > 5)
+		{
+			// extra costs come in 10% increments
+			int iSurplus = (100 * iBestValue / iAverageValue) / 10;
+
+			iCost *= 100 + 10 * iSurplus;
+			iCost /= 100;
+		}
 	}
-	//Rhye - end*/
 
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
@@ -2906,57 +2890,8 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	iCost *= iSpreadModifier;
 	iCost /= 100;
 
-	//Rhye - start
-	//discount for the late game
-	/*if (GC.getGameINLINE().getGameTurn() > getTurnForYear(1905)){ 
-		iCost *= 8; 
-		iCost /= 10; 
-	}*/
-
-	//Rhye - end
-	
-	//Rhye - start min and max turns cap
-	/*int iResearchRate = GET_PLAYER((PlayerTypes)getID()).calculateResearchRate(eTech);
-	//int iResearchRate = GET_PLAYER((PlayerTypes)getID()).calculateResearchRate(NO_TECH);
-	
-	if (iResearchRate > 0) {
-		if (iCost / iResearchRate < 4) {
-			//return max (1, max(iCost, 4*iResearchRate) );
-			iCost = 4*iResearchRate;
-		}
-		if (iCost / iResearchRate > 40) {
-			//return max (1, min(iCost, 40*iResearchRate) );
-			iCost = 40*iResearchRate;
-		}
-	}
-	if (iResearchRate == 0) {
-		iCost = 50;
-	}*/
-	//Rhye - end
-
-	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
-	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
-	{
-		bool bUnknown = true;
-		for (int i = 0; i < NUM_MAJOR_PLAYERS; i++)
-		{
-			if (GET_TEAM((TeamTypes)i).isHasTech(eTech))
-			{
-				bUnknown = false;
-			}
-		}
-
-		if (bUnknown) //allow for all techs
-		{
-			iCost *= 80;
-			iCost /= 100;
-		}
-	}
-
-
-	return std::max(1, iCost);
+	return iModifier;
 }
-
 
 int CvTeam::getResearchLeft(TechTypes eTech) const
 {
