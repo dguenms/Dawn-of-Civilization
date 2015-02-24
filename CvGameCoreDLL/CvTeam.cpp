@@ -2759,25 +2759,8 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	iCost *= getSpreadResearchModifier(eTech);
 	iCost /= 100;
 
-	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
-	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
-	{
-		bool bUnknown = true;
-		for (int i = 0; i < NUM_MAJOR_PLAYERS; i++)
-		{
-			if (GET_TEAM((TeamTypes)i).isHasTech(eTech))
-			{
-				bUnknown = false;
-			}
-		}
-
-		if (bUnknown) //allow for all techs
-		{
-			iCost *= 80;
-			iCost /= 100;
-		}
-	}
-
+	iCost *= getTurnResearchModifier();
+	iCost /= 100;
 
 	return std::max(1, iCost);
 }
@@ -2795,38 +2778,48 @@ int CvTeam::getPopulationResearchModifier() const
 {
 	int iModifier = 100;
 
+	int iMultiplier, iTurnModifier;
 	int iNumCities = getNumCities();
 
-	//Rhye - start 
-	//discount for small empires
-	if (getID() < NUM_MAJOR_PLAYERS) {		
+	if (getID() < NUM_MAJOR_PLAYERS)
+	{
+		// Rhye: discount for small empires
 		if (iNumCities < 5)
 		{
-			iMultiplier = 3*(int)GET_PLAYER((PlayerTypes)getID()).getCurrentEra() - 6; //x-x-x-3-6-9-12
-			if (iMultiplier > 0) {
-				iCost *= 100 - iMultiplier*(5-iNumCities); //52-64-76-88 if future; 
-				iCost /= 100;
-			}
-		}	
-		//discount for new born civs
-		int iTurnModifier = 5*(int)GET_PLAYER((PlayerTypes)getID()).getCurrentEra(); //0-5-10-15-20-25-30
-		//edead: game speed adjustment using growth percent in XML (marathon: x3, epic: x1.5, normal: x1)
-		iTurnModifier *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-		iTurnModifier /= 100;
-		//if (GC.getGameINLINE().getGameTurn() <= startingTurn[getID()] + iTurnModifier) {
-		if (GC.getGameINLINE().getGameTurn() <= getTurnForYear(startingTurnYear[getID()]) + iTurnModifier) { // edead
-			
-			//iCost *= 100 - ((startingTurn[getID()] + iTurnModifier) - GC.getGameINLINE().getGameTurn());
-			// edead: start - this should make the length of the bonus longer but not the amount
-			int iAmount = (getTurnForYear(startingTurnYear[getID()]) + iTurnModifier) - GC.getGameINLINE().getGameTurn();
-			iAmount *= 100;
-			iAmount /= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-			iCost *= 100 - iAmount; 
-			// edead: end
-			iCost /= 100;
+			iMultiplier = 5 * std::max(0, GET_PLAYER(getLeaderID()).getCurrentEra() - 2);
+
+			iModifier += iMultiplier * (5 - iNumCities);
 		}
 	}
-	//Rhye - end
+
+	return iModifier;
+}
+
+int CvTeam::getTurnResearchModifier() const
+{
+	int iModifier = 100;
+	int iTurnModifier, iAmount;
+
+	// Rhye: discount for newborn civs
+	if (getID() < NUM_MAJOR_PLAYERS)
+	{
+		iTurnModifier = 5 * GET_PLAYER(getLeaderID()).getCurrentEra();
+
+		// edead: game speed adjustment using growth percent in XML (marathon: x3, epic: x1.5, normal: x1)
+		iTurnModifier *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
+		iTurnModifier /= 100;
+
+		if (GC.getGame().getGameTurn() <= getTurnForYear(startingTurnYear[getID()]) + iTurnModifier)
+		{
+			iAmount = (getTurnForYear(startingTurnYear[getID()]) + iTurnModifier) - GC.getGame().getGameTurn();
+
+			// edead: this should make the length of the bonus longer but not the amount
+			iAmount *= 100;
+			iAmount /= GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent();
+
+			iModifier -= iAmount;
+		}
+	}
 
 	return iModifier;
 }
@@ -2857,15 +2850,14 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 			// extra costs come in 10% increments
 			int iSurplus = (100 * iBestValue / iAverageValue) / 10;
 
-			iCost *= 100 + 10 * iSurplus;
-			iCost /= 100;
+			iModifier += 10 * iSurplus;
 		}
 	}
 
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
 	int iCivsWithTech = 0;
-	int iSpreadModifier = 100;
+	int iSpreadModifier = 0;
 	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 	{
 		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) iCivsWithTech++;
@@ -2887,8 +2879,25 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	int iUpperThreshold = iCivsAlive * 3 / 4;
 	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= 25 * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
-	iCost *= iSpreadModifier;
-	iCost /= 100;
+	iModifier += iSpreadModifier;
+
+	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
+	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
+	{
+		bool bUnknown = true;
+		for (int i = 0; i < NUM_MAJOR_PLAYERS; i++)
+		{
+			if (GET_TEAM((TeamTypes)i).isHasTech(eTech))
+			{
+				bUnknown = false;
+			}
+		}
+
+		if (bUnknown) //allow for all techs
+		{
+			iModifier -= 20;
+		}
+	}
 
 	return iModifier;
 }
