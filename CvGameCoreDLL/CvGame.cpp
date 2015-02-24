@@ -2213,7 +2213,7 @@ void CvGame::update()
 	{
 		//	Sample th BUG setting in the main thread on entry to game update here (it requires a Python call
 		//	so we don't want it happening in background, or more frequently than once per turn slice)
-		bool bPagingEnabled = getBugOptionBOOL("MainInterface__EnableGraphicalPaging", true);
+		bool bPagingEnabled = getBugOptionBOOL("MainInterface__EnableGraphicalPaging", false);
 		GC.setGraphicalDetailPagingEnabled(bPagingEnabled);
 
 		if ( m_bWasGraphicsPagingEnabled != bPagingEnabled)
