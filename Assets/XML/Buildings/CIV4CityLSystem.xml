@@ -1346,6 +1346,16 @@
 			<Rotate>45</Rotate>
 			<!-- this needs to be the negative of the CITY_TWIST value in detail manager; note that this uses degrees but DetailManager uses radians. Sorry. -->
 		</ArtRef>
+		<ArtRef Name="building:LSYSTEM_RUSSIAN_WALLS">
+			<Attribute Class="Scalar">szSpecialLayout:CityCenter</Attribute>
+			<Attribute Class="Scalar">szBuilder:WallBuilder</Attribute>
+			<Attribute Class="Scalar">bLayoutAfterGenerics:1</Attribute>
+			<Attribute Class="Scalar">bNoContour:1</Attribute>
+			<Attribute Class="Scalar">szPostArtFile:Art/2ndUUB/Buildings/Russia/post01_rus_ren.nif</Attribute>
+			<Attribute Class="Scalar">szWallArtFile:Art/2ndUUB/Buildings/Russia/wall%1_rus_ren.nif</Attribute>
+			<Rotate>45</Rotate>
+			<!-- this needs to be the negative of the CITY_TWIST value in detail manager; note that this uses degrees but DetailManager uses radians. Sorry. -->
+		</ArtRef>
 		<ArtRef Name="building:LSYSTEM_CELTIC_DUN">
 			<Attribute Class="Scalar">szSpecialLayout:CityCenter</Attribute>
 			<Attribute Class="Scalar">szBuilder:WallBuilder</Attribute>
