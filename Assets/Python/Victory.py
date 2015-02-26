@@ -1528,7 +1528,6 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 			lose(iCanada, 1)
 			
 def onTechAcquired(iPlayer, iTech):
-
 	if not gc.getGame().isVictoryValid(7): return
 	
 	if iPlayer >= iNumPlayers: return
@@ -1550,18 +1549,19 @@ def onTechAcquired(iPlayer, iTech):
 			if iTech in lTechs:
 				if iPlayer != iLoopPlayer: lose(iLoopPlayer, iGoal)
 				elif checkTechGoal(iLoopPlayer, lTechs): win(iLoopPlayer, iGoal)
-				
-		if isCompleteTechTree(iPlayer):
+	
+	# handle complete tech tree goals (final tech may not be discovered for the first time)
+	if isCompleteTechTree(iPlayer):
 			
-			# third Japanese goal: be the first to finish the tech tree
-			if isPossible(iJapan, 2):
-				if iPlayer == iJapan: win(iJapan, 2)
-				else: lose(iJapan, 2)
+		# third Japanese goal: be the first to finish the tech tree
+		if isPossible(iJapan, 2):
+			if iPlayer == iJapan: win(iJapan, 2)
+			else: lose(iJapan, 2)
 				
-			# third German goal: be the first to finish the tech tree
-			if isPossible(iGermany, 2):
-				if iPlayer == iGermany: win(iGermany, 2)
-				else: lose(iGermany, 2)
+		# third German goal: be the first to finish the tech tree
+		if isPossible(iGermany, 2):
+			if iPlayer == iGermany: win(iGermany, 2)
+			else: lose(iGermany, 2)
 			
 	# handle all "be the first to enter" goals
 	if not isEntered(iEra):
@@ -2558,7 +2558,7 @@ def isCompleteTechTree(iPlayer):
 	
 	tPlayer = gc.getTeam(iPlayer)
 	for iTech in range(iNumTechs):
-		if not tPlayer.isHasTech(iTech): return False
+		if not (tPlayer.isHasTech(iTech) or tPlayer.getTechCount(iTech) > 0): return False
 		
 	return True
 	
