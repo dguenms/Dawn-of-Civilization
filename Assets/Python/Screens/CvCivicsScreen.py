@@ -272,8 +272,9 @@ class CvCivicsScreen:
 			if iTurns > 0:
 				#sAnarchy = CyTranslator().getText('TXT_KEY_CIVIC_SCREEN_ANARCHY_TIMER', (iTurns, ))
 				sAnarchy = CyTranslator().getText('TXT_KEY_ANARCHY_TURNS', (iTurns, ))
-				if bSelection:
-					screen.show("RevolutionButton")
+				
+			if bSelection:
+				screen.show("RevolutionButton")
 
 		else:
 			screen.hide("RevolutionButton")
