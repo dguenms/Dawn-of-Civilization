@@ -1332,7 +1332,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 								{
 									// Leoreth: not for minor civs
 									//if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
-									if (!GET_PLAYER((PlayerTypes)iJ).isMinorCiv() && GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+									if (!GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isMinorCiv() && GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
 									{
 										GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR_ON_FRIEND, 1);
 									}
@@ -2739,6 +2739,12 @@ int CvTeam::getResearchCost(TechTypes eTech, bool bModifiers) const
 	iCost *= GC.getHandicapInfo(getHandicapType()).getResearchPercentByID(getLeaderID()); //Rhye
 	iCost /= 100;
 
+	iCost *= getScenarioResearchModifier();
+	iCost /= 100;
+
+	iCost *= getCivilizationResearchModifier();
+	iCost /= 100;
+
 	iCost *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getResearchPercent();
 	iCost /= 100;
 
@@ -2773,11 +2779,53 @@ int CvTeam::getResearchCost(TechTypes eTech, bool bModifiers) const
 
 int CvTeam::getCivilizationResearchModifier() const
 {
-	if (getLeaderID() < NUM_MAJOR_PLAYERS) return researchModifier[getLeaderID()];
+	int iCivModifier;
 
-	if (getLeaderID() == CELTIA) return 350;
+	if (getLeaderID() < NUM_MAJOR_PLAYERS)
+	{
+		iCivModifier = researchModifier[getLeaderID()];
+	}
+	else if (getLeaderID() == CELTIA)
+	{
+		iCivModifier = 350;
+	}
+	else
+	{
+		iCivModifier = 110;
+	}
 
-	return 110;
+	// Maya UP
+	if (GET_PLAYER(getLeaderID()).getCurrentEra() <= ERA_CLASSICAL)
+	{
+		if (getLeaderID() == MAYA) iCivModifier -= 50; // Maya UP
+	}
+
+	// nerf late game China
+	if (getLeaderID() == CHINA)
+	{
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 40;
+	}
+
+	// reborn civilizations have different modifiers
+	if (GET_PLAYER(getLeaderID()).isReborn())
+	{
+		if (getLeaderID() == PERSIA) iCivModifier = 90; // Iran
+		if (getLeaderID() == AZTEC) iCivModifier = 80; // Mexico
+		if (getLeaderID() == MAYA) iCivModifier = 80; // Colombia
+	}
+
+	return iCivModifier;
+}
+
+int CvTeam::getScenarioResearchModifier() const
+{
+	// scale the scenario tech speed with its starting conditions
+	int iScenarioModifier = 100;
+
+	if (getScenario() == SCENARIO_600AD) iScenarioModifier = 110;
+	else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 120;
+
+	return iScenarioModifier;
 }
 
 int CvTeam::getPopulationResearchModifier() const

@@ -2539,7 +2539,8 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 
 	if (getFeatureType() != NO_FEATURE)
 	{
-		if (GC.getFeatureInfo(getFeatureType()).isNoImprovement())
+		// Leoreth: unless the feature makes valid
+		if (GC.getFeatureInfo(getFeatureType()).isNoImprovement() && !GC.getImprovementInfo(eImprovement).getFeatureMakesValid(getFeatureType()))
 		{
 			return false;
 		}

@@ -332,12 +332,10 @@
 			<HillsYieldChange/>
 			<bWater>0</bWater>
 			<bImpassable>0</bImpassable>
-			<!-- Rhye - start -->
 			<bFound>0</bFound>
 			<bFoundCoast>1</bFoundCoast>
 			<bFoundFreshWater>1</bFoundFreshWater>
 			<iMovement>2</iMovement>
-			<!-- Rhye - end -->
 			<iSeeFrom>1</iSeeFrom>
 			<iSeeThrough>1</iSeeThrough>
 			<iBuildModifier>25</iBuildModifier>

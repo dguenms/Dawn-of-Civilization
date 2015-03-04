@@ -10747,12 +10747,14 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	PlayerTypes eHuman = GC.getGameINLINE().getActivePlayer();
 	EraTypes eCurrentEra = GET_PLAYER(ePlayer).getCurrentEra();
 	HandicapTypes eHandicap = GC.getGameINLINE().getHandicapType();
+
 	int iGameTurn = GC.getGameINLINE().getGameTurn();
+	int iMaxTurns = GC.getGameINLINE().getMaxTurns();
+
 	bool bHuman = (eHuman == ePlayer);
-	bool bReborn = GET_PLAYER(ePlayer).isReborn();
 
 	int iAIBaseModifier = 75;
-	int iHumanSpawnModifier = 107;
+	int iHumanSpawnModifier = 110;
 
 	if (eHandicap == 0) // Heir
 	{
@@ -10762,16 +10764,19 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	else if (eHandicap >= 3) // Emperor and Paragon
 	{
 		iAIBaseModifier = 100;
-		iHumanSpawnModifier = 110;
+		iHumanSpawnModifier = 120;
 	}
 
 	// edead: Epic/Marathon 1.22 late game balancing - progressive growth of research cost - 0% to 25% mid-game
 	if (iResearchPercent >= 150)
 	{
-		iResearchPercent *= std::min(120, 100 + 50 * GC.getGameINLINE().getGameTurn() / GC.getGameINLINE().getMaxTurns());
+		int iSpeedModifier = 10 * iGameTurn / iMaxTurns;
+
+		iResearchPercent *= std::min(125, 100 + 5 * iSpeedModifier);
 		iResearchPercent /= 100;
+
 		// reduce human contribution penalty by 0-5% since the above does the same thing
-		iHumanSpawnModifier -= 5 * GC.getGameINLINE().getGameTurn() / GC.getGameINLINE().getMaxTurns();
+		iHumanSpawnModifier -= iSpeedModifier / 2;
 	}
 	// edead: end
 
@@ -10781,11 +10786,6 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 		iResearchPercent *= iAIBaseModifier;
 		iResearchPercent /= 100;
 	}
-	else
-	{
-		iResearchPercent *= 104;
-		iResearchPercent /= 100;
-	}
 
 	// increase tech costs for everyone as soon as the human player has spawned
 	if (iGameTurn >= getTurnForYear(startingTurnYear[eHuman]))
@@ -10793,54 +10793,6 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 		iResearchPercent *= iHumanSpawnModifier;
 		iResearchPercent /= 100;
 	}
-
-	// scale the scenario tech speed with its starting conditions
-	int iScenarioModifier = 100;
-
-	if (getScenario() == SCENARIO_600AD) iScenarioModifier = 108;
-	else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 120;
-
-	iResearchPercent *= iScenarioModifier;
-	iResearchPercent /= 100;
-
-	int iCivModifier;
-
-	if (ePlayer < NUM_MAJOR_PLAYERS)
-	{
-		iCivModifier = researchModifier[ePlayer];
-	}
-	else if (ePlayer == CELTIA)
-	{
-		if (getScenario() == SCENARIO_3000BC) iCivModifier = 350;
-		else iCivModifier = 100;
-	}
-	else
-	{
-		iCivModifier = 110;
-	}
-
-	// Maya UP
-	if (eCurrentEra <= ERA_CLASSICAL)
-	{
-		if (ePlayer == MAYA) iCivModifier -= 50; // Maya UP
-	}
-
-	// nerf late game China
-	if (ePlayer == CHINA)
-	{
-		if (eCurrentEra >= ERA_RENAISSANCE) iCivModifier += 40;
-	}
-
-	// reborn civilizations have different modifiers
-	if (bReborn)
-	{
-		if (ePlayer == PERSIA) iCivModifier = 90; // Iran
-		if (ePlayer == AZTEC) iCivModifier = 80; // Mexico
-		if (ePlayer == MAYA) iCivModifier = 80; // Colombia
-	}
-
-	iResearchPercent *= iCivModifier;
-	iResearchPercent /= 100;
 
 	return iResearchPercent;
 }
