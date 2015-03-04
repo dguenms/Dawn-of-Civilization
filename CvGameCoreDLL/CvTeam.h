@@ -88,6 +88,7 @@ public:
 
 	// Leoreth
 	int getPopulationResearchModifier() const;
+	int getScenarioResearchModifier() const;
 	int getCivilizationResearchModifier() const;
 	int getTechLeaderModifier() const;
 	int getSpreadResearchModifier(TechTypes eTech) const;
