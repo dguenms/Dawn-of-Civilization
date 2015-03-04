@@ -953,6 +953,31 @@
 		<German>[ICON_BULLET]Kann diplomatische Missionen durchführen</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_BASE_COST</Tag>
+		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Base Cost:[COLOR_REVERT]</English>
+		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Grundkosten:[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EMPIRE_SIZE</Tag>
+		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Empire Size:[COLOR_REVERT]</English>
+		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Reichsgröße:[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LEADER_MODIFIER</Tag>
+		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Lead:[COLOR_REVERT]</English>
+		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Technologievorsprung:[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPREAD_MODIFIER</Tag>
+		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Spread:[COLOR_REVERT]</English>
+		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Technologieverbreitung:[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPAWN_MODIFIER</Tag>
+		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Rise of Civilization:[COLOR_REVERT]</English>
+		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Aufstieg der Zivilisation:[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>
