@@ -83,12 +83,13 @@ public:
 	int countNumAIUnitsByArea(CvArea* pArea, UnitAITypes eUnitAI) const;								// Exposed to Python
 	int countEnemyDangerByArea(CvArea* pArea) const;																		// Exposed to Python
 
-	int getResearchCost(TechTypes eTech) const;																// Exposed to Python
+	int getResearchCost(TechTypes eTech, bool bModifiers = true) const;																// Exposed to Python
 	int getResearchLeft(TechTypes eTech) const;																// Exposed to Python
 
 	// Leoreth
 	int getPopulationResearchModifier() const;
 	int getCivilizationResearchModifier() const;
+	int getTechLeaderModifier() const;
 	int getSpreadResearchModifier(TechTypes eTech) const;
 	int getTurnResearchModifier() const;
 

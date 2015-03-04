@@ -2727,7 +2727,7 @@ int CvTeam::countEnemyDangerByArea(CvArea* pArea) const
 }
 
 
-int CvTeam::getResearchCost(TechTypes eTech) const
+int CvTeam::getResearchCost(TechTypes eTech, bool bModifiers) const
 {
 	int iCost;
 
@@ -2753,14 +2753,20 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	iCost *= std::max(0, ((GC.getDefineINT("TECH_COST_EXTRA_TEAM_MEMBER_MODIFIER") * (getNumMembers() - 1)) + 100));
 	iCost /= 100;
 
-	iCost *= getPopulationResearchModifier();
-	iCost /= 100;
+	if (bModifiers)
+	{
+		iCost *= getPopulationResearchModifier();
+		iCost /= 100;
 
-	iCost *= getSpreadResearchModifier(eTech);
-	iCost /= 100;
+		iCost *= getTechLeaderModifier();
+		iCost /= 100;
 
-	iCost *= getTurnResearchModifier();
-	iCost /= 100;
+		iCost *= getSpreadResearchModifier(eTech);
+		iCost /= 100;
+
+		iCost *= getTurnResearchModifier();
+		iCost /= 100;
+	}
 
 	return std::max(1, iCost);
 }
@@ -2778,7 +2784,7 @@ int CvTeam::getPopulationResearchModifier() const
 {
 	int iModifier = 100;
 
-	int iMultiplier, iTurnModifier;
+	int iMultiplier;
 	int iNumCities = getNumCities();
 
 	if (getID() < NUM_MAJOR_PLAYERS)
@@ -2824,7 +2830,7 @@ int CvTeam::getTurnResearchModifier() const
 	return iModifier;
 }
 
-int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
+int CvTeam::getTechLeaderModifier() const
 {
 	int iModifier = 100;
 
@@ -2847,12 +2853,21 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 		// Leoreth: average is skewed for too few civs, also ruins the Babylonian UP
 		if (iDenominator > 5)
 		{
+			iAverageValue /= iDenominator;
+
 			// extra costs come in 10% increments
 			int iSurplus = (100 * iBestValue / iAverageValue) / 10;
 
 			iModifier += 10 * iSurplus;
 		}
 	}
+
+	return iModifier;
+}
+
+int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
+{
+	int iModifier = 100;
 
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
@@ -2879,10 +2894,16 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	int iUpperThreshold = iCivsAlive * 3 / 4;
 	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= 25 * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
+	// Leoreth: Chinese UP: no penalties for researching less widespread techs until the Renaissance
+	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
+	{
+		if (iSpreadModifier > 0) iSpreadModifier = 0;
+	}
+
 	iModifier += iSpreadModifier;
 
 	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
-	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
+	/*if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		bool bUnknown = true;
 		for (int i = 0; i < NUM_MAJOR_PLAYERS; i++)
@@ -2897,7 +2918,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 		{
 			iModifier -= 20;
 		}
-	}
+	}*/
 
 	return iModifier;
 }

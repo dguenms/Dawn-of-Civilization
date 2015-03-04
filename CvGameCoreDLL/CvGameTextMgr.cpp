@@ -8105,10 +8105,6 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 					{
 						if (GC.getBuildingInfo(eLoopBuilding).getPrereqAndTech() == eTech)
 						{
-						    // Leoreth: don't display all embassies
-						    if (eLoopBuilding > NUM_BUILDINGS_PLAGUE)
-                                continue;
-
 							szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_TECH_CAN_CONSTRUCT").c_str());
 							szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), (eLoopBuilding == NUM_BUILDINGS_PLAGUE ? gDLL->getText("TXT_KEY_BUILDING_EMBASSY_GENERIC").c_str() : GC.getBuildingInfo(eLoopBuilding).getDescription()));
 							setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", bFirst);
@@ -8120,11 +8116,7 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 							{
 								if (GC.getBuildingInfo(eLoopBuilding).getPrereqAndTechs(iJ) == eTech)
 								{
-								    // Leoreth: don't display all embassies
-								    if (eLoopBuilding > NUM_BUILDINGS_PLAGUE)
-                                        continue;
-
-									szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_TECH_CAN_CONSTRUCT").c_str());
+								    szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_TECH_CAN_CONSTRUCT").c_str());
 									szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), (eLoopBuilding == NUM_BUILDINGS_PLAGUE ? gDLL->getText("TXT_KEY_BUILDING_EMBASSY_GENERIC").c_str() : GC.getBuildingInfo(eLoopBuilding).getDescription()));
 									setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", bFirst);
 									bFirst = false;
@@ -8216,6 +8208,75 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 
 			szTempBuffer.Format(L" (%d/%d %c)", GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchProgress(eTech), GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchCost(eTech), GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
 			szBuffer.append(szTempBuffer);
+
+			// Leoreth: display tech modifiers
+			if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchCost(eTech) != GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchCost(eTech, false))
+			{
+				int iCost = GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchCost(eTech, false);
+				int iCurrentCost;
+
+				szBuffer.append(NEWLINE);
+				szBuffer.append(" ");
+				szBuffer.append(gDLL->getText("TXT_KEY_TECH_BASE_COST"));
+				szTempBuffer.Format(L" %d %c", iCost, GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
+				szBuffer.append(szTempBuffer);
+
+				if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).getPopulationResearchModifier() != 100)
+				{
+					iCurrentCost = iCost * GET_TEAM(GC.getGameINLINE().getActiveTeam()).getPopulationResearchModifier();
+					iCurrentCost /= 100;
+
+					szBuffer.append(NEWLINE);
+					szBuffer.append(" ");
+					szBuffer.append(gDLL->getText("TXT_KEY_TECH_EMPIRE_SIZE"));
+					szTempBuffer.Format(L" %s%d %c", (iCurrentCost - iCost > 0) ? "+" : "", iCurrentCost - iCost, GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
+					szBuffer.append(szTempBuffer);
+
+					iCost = iCurrentCost;
+				}
+
+				if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).getTechLeaderModifier() != 100)
+				{
+					iCurrentCost = iCost * GET_TEAM(GC.getGameINLINE().getActiveTeam()).getTechLeaderModifier();
+					iCurrentCost /= 100;
+
+					szBuffer.append(NEWLINE);
+					szBuffer.append(" ");
+					szBuffer.append(gDLL->getText("TXT_KEY_TECH_LEADER_MODIFIER"));
+					szTempBuffer.Format(L" %s%d %c", (iCurrentCost - iCost > 0) ? "+" : "", iCurrentCost - iCost, GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
+					szBuffer.append(szTempBuffer);
+
+					iCost = iCurrentCost;
+				}
+
+				if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).getSpreadResearchModifier(eTech) != 100)
+				{
+					iCurrentCost = iCost * GET_TEAM(GC.getGameINLINE().getActiveTeam()).getSpreadResearchModifier(eTech);
+					iCurrentCost /= 100;
+
+					szBuffer.append(NEWLINE);
+					szBuffer.append(" ");
+					szBuffer.append(gDLL->getText("TXT_KEY_TECH_SPREAD_MODIFIER"));
+					szTempBuffer.Format(L" %s%d %c", (iCurrentCost - iCost > 0) ? "+" : "", iCurrentCost - iCost, GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
+					szBuffer.append(szTempBuffer);
+
+					iCost = iCurrentCost;
+				}
+
+				if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).getTurnResearchModifier() != 100)
+				{
+					iCurrentCost = iCost * GET_TEAM(GC.getGameINLINE().getActiveTeam()).getTurnResearchModifier();
+					iCurrentCost /= 100;
+
+					szBuffer.append(NEWLINE);
+					szBuffer.append(" ");
+					szBuffer.append(gDLL->getText("TXT_KEY_TECH_SPAWN_MODIFIER"));
+					szTempBuffer.Format(L" %s%d %c", (iCurrentCost - iCost > 0) ? "+" : "", iCurrentCost - iCost, GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
+					szBuffer.append(szTempBuffer);
+
+					iCost = iCurrentCost;
+				}
+			}
 		}
 	}
 

@@ -1377,7 +1377,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	bool bRecapture;
 	bool bRaze;
 	bool bGift;
-	int iRange;
+	//int iRange;
 	int iCaptureGold;
 	int iGameTurnFounded;
 	int iPopulation;
@@ -6633,258 +6633,52 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 		}
 	}
 
-	//Rhye - start switch
-	/*switch (getID())
-	{
-		case EGYPT:
-			iProductionNeeded *= 110;
-			iProductionNeeded /= 100;
-			break;
-		case INDIA:
-			iProductionNeeded *= 105;
-			iProductionNeeded /= 100;
-			break;
-		case CHINA:
-			iProductionNeeded *= 110;
-			iProductionNeeded /= 100;
-			//Rhye - start UP (Leoreth: replaced)
-			/*if (GC.getUnitInfo(eUnit).getUnitCombatType() == 3 || GC.getUnitInfo(eUnit).getUnitCombatType() == 5)
-			{
-				iProductionNeeded *= 73; // 2/3 of 110. Otherwise it would be 67
-				iProductionNeeded /= 100;
-			}*/
-			//Rhye - end UP
-			/*break;
-		case BABYLONIA:
-			iProductionNeeded *= 115;
-			iProductionNeeded /= 100;
-			break;
-		case GREECE:
-			iProductionNeeded *= 110;
-			iProductionNeeded /= 100;
-			break;
-		case PERSIA:
-			iProductionNeeded *= 88;
-			iProductionNeeded /= 100;
-			break;
-		case CARTHAGE:
-			iProductionNeeded *= 110;
-			iProductionNeeded /= 100;
-			break;
-		case ROME:
-            if (!GET_PLAYER((PlayerTypes)ROME).isReborn()){
-                iProductionNeeded *= 105;
-                iProductionNeeded /= 100;}
-            else{
-                iProductionNeeded *= 110;    // Leoreth - Renaissance Italy
-                iProductionNeeded /= 100;}
-			break;
-		case JAPAN:
-			iProductionNeeded *= 93;
-			iProductionNeeded /= 100;
-			break;
-		case ETHIOPIA:
-			iProductionNeeded *= 95;
-			iProductionNeeded /= 100;
-			break;
-        case KOREA:
-            iProductionNeeded *= 110;
-            iProductionNeeded /= 100;
-            break;
-		case MAYA:
-			iProductionNeeded *= 105;
-			iProductionNeeded /= 100;
-			break;
-        case BYZANTIUM:
-            iProductionNeeded *= 115;
-            iProductionNeeded /= 100;
-		case VIKING:
-			iProductionNeeded *= 85;
-			iProductionNeeded /= 100;
-			break;
-		case ARABIA:
-			iProductionNeeded *= 92;
-			iProductionNeeded /= 100;
-			break;
-		case KHMER:
-			iProductionNeeded *= 95;
-			iProductionNeeded /= 100;
-			break;
-		case INDONESIA:
-			iProductionNeeded *= 105;
-			iProductionNeeded /= 100;
-			break;
-		case SPAIN:
-			iProductionNeeded *= 95;
-			iProductionNeeded /= 100;
-			break;
-		case FRANCE:
-			iProductionNeeded *= 92;
-			iProductionNeeded /= 100;
-			break;
-		case ENGLAND:
-			iProductionNeeded *= 95;
-			iProductionNeeded /= 100;
-			//Rhye - start UP (old)
-			/*if (GC.getUnitInfo(eUnit).getUnitCombatType() == 8)
-			{
-				iProductionNeeded *= 50;
-				iProductionNeeded /= 100;
-			}*/
-			//Rhye - end UP
-			/*break;
-		case GERMANY:
-			iProductionNeeded *= 80;
-			iProductionNeeded /= 100;
-			break;
-		case RUSSIA:
-			iProductionNeeded *= 85;
-			iProductionNeeded /= 100;
-			break;
-		case NETHERLANDS:
-			iProductionNeeded *= 90;
-			iProductionNeeded /= 100;
-			break;
-		case MALI:
-			iProductionNeeded *= 90;
-			iProductionNeeded /= 100;
-			break;
-		case TURKEY:
-			iProductionNeeded *= 88;
-			iProductionNeeded /= 100;
-			break;
-		case PORTUGAL:
-			iProductionNeeded *= 90;
-			iProductionNeeded /= 100;
-			break;
-		case INCA:
-			iProductionNeeded *= 105; //higher cos they are isolated
-			iProductionNeeded /= 100;
-			break;
-		case MONGOLIA:
-			iProductionNeeded *= 80;
-			iProductionNeeded /= 100;
-			break;
-		case AZTEC:
-			iProductionNeeded *= 108; //higher cos they are isolated
-			iProductionNeeded /= 100;
-			break;
-		case AMERICA:
-			iProductionNeeded *= 83;
-			iProductionNeeded /= 100;
-			break;
-		case INDEPENDENT:
-			iProductionNeeded *= 200;
-			iProductionNeeded /= 100;
-			break;
-		case INDEPENDENT2:
-			iProductionNeeded *= 200;
-			iProductionNeeded /= 100;
-			break;
-		case NATIVE:
-			iProductionNeeded *= 150;
-			iProductionNeeded /= 100;
-			break;
-		case CELTIA:
-			iProductionNeeded *= 150;
-			iProductionNeeded /= 100;
-			break;
-		case BARBARIAN:
-			iProductionNeeded *= 140;
-			iProductionNeeded /= 100;
-			break;
-		default:
-			iProductionNeeded *= 100;
-			iProductionNeeded /= 100;
-			break;
-	}*/
-	//Rhye - end
+	int iCivModifier = 100;
 
-	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-	{
-		if (getID() == ROME)
-			iProductionNeeded = iProductionNeeded * 110 / 100;
-		if (getID() == PERSIA)
-			iProductionNeeded = iProductionNeeded * 90 / 100;
-		if (getID() == AZTEC)
-			iProductionNeeded = iProductionNeeded * 85 / 100;
-		if (getID() == MAYA)
-			iProductionNeeded = iProductionNeeded * 85 / 100;
-	}else
+	if (GC.getUnitInfo(eUnit).isFoodProduction())
 	{
 		if (getID() < NUM_MAJOR_PLAYERS)
 		{
-			iProductionNeeded = iProductionNeeded * unitCostModifier2[getID()] / 100;
-		}else if (getID() == INDEPENDENT || getID() == INDEPENDENT2)
+			if (growthThreshold[getID()] > 100) iCivModifier = growthThreshold[getID()];
+		}
+	}
+	else
+	{
+		if (getID() < NUM_MAJOR_PLAYERS) iCivModifier = unitCostModifier2[getID()];
+		else if (getID() == INDEPENDENT || getID() == INDEPENDENT2) iCivModifier = 200;
+		else if (getID() == CELTIA || getID() == NATIVE) iCivModifier = 150;
+		else if (getID() == BARBARIAN) iCivModifier = 140;
+
+		if (GET_PLAYER((PlayerTypes)getID()).isReborn())
 		{
-			iProductionNeeded = iProductionNeeded * 200 / 100;
-		}else if (getID() == CELTIA || getID() == NATIVE)
-		{
-			iProductionNeeded = iProductionNeeded * 150 / 100;
-		}else if (getID() == BARBARIAN)
-		{
-			iProductionNeeded = iProductionNeeded * 140 / 100;
-		}else
-		{
-			iProductionNeeded = iProductionNeeded * 100 / 100;
+			if (getID() == PERSIA) iCivModifier = 90;
+			if (getID() == AZTEC) iCivModifier = 85;
+			if (getID() == MAYA) iCivModifier = 85;
 		}
 	}
 
-	//if (getID() == CHINA && !GET_PLAYER((PlayerTypes)CHINA).isHuman())
-	//	iProductionNeeded = iProductionNeeded * 80 / 100;
+	iProductionNeeded *= iCivModifier;
+	iProductionNeeded /= 100;
 
-	//Rhye - start (modern units cost more)
-	if (eUnit == 4) { //Settler
-		if (getCurrentEra() == 1) { //classical
-			iProductionNeeded *= 104;
-			iProductionNeeded /= 100;
-		}
-		else if (getCurrentEra() == 2) { //medieval
-			iProductionNeeded *= 114;
-			iProductionNeeded /= 100;
-		}
-		else if (getCurrentEra() == 3) { //renaissance
-			iProductionNeeded *= 111;
-			iProductionNeeded /= 100;
-		}
-		else if (getCurrentEra() == 4) { //industrial
-			iProductionNeeded *= 121;
-			iProductionNeeded /= 100;
-		}
-		else if (getCurrentEra() == 5) { //modern
-			iProductionNeeded *= 146;
-			iProductionNeeded /= 100;
-		}
+	// increase settler and worker cost
+	int iModifier = 0;
+	if (eUnit == 4 || eUnit == 5)
+	{
+		iModifier += 5 * getCurrentEra();
+
+		if (getCurrentEra() > ERA_RENAISSANCE) iModifier += 5 * getCurrentEra();
+
+		iProductionNeeded *= (100 + iModifier);
+		iProductionNeeded /= 100;
 	}
-	else if (eUnit == 5) { //Worker
-		if (getCurrentEra() == 2) { //medieval
-			iProductionNeeded *= 105;
-			iProductionNeeded /= 100;
-		}
-		else if (getCurrentEra() == 3) { //renaissance
-			iProductionNeeded *= 110;
-			iProductionNeeded /= 100;
-		}
-		else if (getCurrentEra() == 4) { //industrial
-			iProductionNeeded *= 125;
-			iProductionNeeded /= 100;
-		}
-		else if (getCurrentEra() == 5) { //modern
-			iProductionNeeded *= 140;
-			iProductionNeeded /= 100;
-		}
+	// other units
+	else 
+	{
+		if (getCurrentEra() > 0) iModifier += 10 * (getCurrentEra()-1);
+
+		iProductionNeeded *= (100 + iModifier);
+		iProductionNeeded /= 100;
 	}
-	else { //all the other units
-		if (getCurrentEra() >= 1) { //classical
-			iProductionNeeded *= (12*(getCurrentEra()-1) + 5 + 100); //100-105-117-129-141-153
-			iProductionNeeded /= 100;
-		}
-		if (GC.getUnitInfo(eUnit).getDomainType() == DOMAIN_LAND) {
-			iProductionNeeded *= (100 + 2*getCurrentEra()); //100-107-121-137-152-168
-			iProductionNeeded /= 100;
-		}
-	}
-	//Rhye - end
 
 	return std::max(1, iProductionNeeded);
 }
@@ -9451,7 +9245,7 @@ void CvPlayer::killGoldenAgeUnits(CvUnit* pUnitAlive)
 	CvUnit* pBestUnit;
 	//bool* pabUnitUsed;
 	bool* pabSpecialistUsed;
-	SpecialistTypes eSpecialist;
+	//SpecialistTypes eSpecialist;
 	int iUnitsRequired;
 	int iValue;
 	int iBestValue;
