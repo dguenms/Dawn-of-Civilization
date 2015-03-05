@@ -141,3 +141,7 @@
 # New Guilds civic effect: High upkeep, +1 gold per specialist, double production for Forge, Market, Grocer
 # New Dynasticism effect: Low upkeep, +1 happiness per military unit up to a maximum of 4, +1 happiness from Palace
 # New Theocracy effect: Medium upkeep, +2 happiness with state religion, double priest slots, +2 experience with state religion, +1 unhappiness from non-state religions
+# if technology cost modifiers exist, they are displayed in the tech tooltip
+# if units are produced with food, their cost is now modified by their civilization's growth modifier
+# Cottages can be built on Oasis tiles now
+# reduced Commerce from Oasis by -1

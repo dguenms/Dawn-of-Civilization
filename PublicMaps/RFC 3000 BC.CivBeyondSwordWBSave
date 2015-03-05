@@ -33953,6 +33953,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=46
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -34327,6 +34331,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=45
+	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -34337,6 +34342,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=47
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -34707,6 +34714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=45
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -34717,6 +34725,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=47
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35100,6 +35112,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=48
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35471,6 +35485,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=48
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35838,7 +35855,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=47
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -36567,6 +36583,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=47
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot

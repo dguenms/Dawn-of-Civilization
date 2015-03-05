@@ -92,19 +92,19 @@ class Resources:
                 
                 #Orka: Silk Road
                 if (iGameTurn == getTurnForYear(-100)):
-                        CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan    
-                        gc.getMap().plot(91, 45).setImprovementType(iCottage) #Khotan                               
-                        CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan    
-                        gc.getMap().plot(93, 48).setImprovementType(iCottage) #Turfan                            
+                        #CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan    
+                        #gc.getMap().plot(91, 45).setImprovementType(iCottage) #Khotan                               
+                        #CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan    
+                        #gc.getMap().plot(93, 48).setImprovementType(iCottage) #Turfan                            
                         #gc.getMap().plot(90, 45).setBonusType(iCotton) #Kashgar
                         #gc.getMap().plot(94, 47).setBonusType(iWheat) #Dunhuang
                         #gc.getMap().plot(96, 48).setBonusType(iSilk) #Dunhuang
-                        CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei    
-                        gc.getMap().plot(97, 47).setImprovementType(iCottage) #Wuwei    
+                        #CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei    
+                        #gc.getMap().plot(97, 47).setImprovementType(iCottage) #Wuwei    
                         #CyGame().setPlotExtraYield(85, 38, YieldTypes.YIELD_FOOD, 2) #Lanzhou
                         #gc.getMap().plot(99, 46).setImprovementType(iCottage) #Lanzhou
-			CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
-			CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
+			#CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
+			#CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
 
 			gc.getMap().plot(88, 47).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 			gc.getMap().plot(88, 47).setRouteType(iRoad)
