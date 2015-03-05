@@ -34466,23 +34466,27 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=46
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD
 	BeginCity
-		CityOwner=48
+		CityOwner=44
 		CityName=Kashgar
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_MARKET
-		Player48Culture=10
+		Player44Culture=40
 	EndCity
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=48
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=48
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
 	EndUnit
 EndPlot
 BeginPlot
@@ -34921,6 +34925,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=45
+	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -34931,6 +34936,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=47
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -35327,6 +35334,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=45
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	ImprovementType=IMPROVEMENT_VILLAGE
@@ -35338,6 +35346,10 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=47
+	RiverNSDirection=0
+	isNOfRiver
+	RiverWEDirection=1
+	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD
@@ -35746,6 +35758,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=48
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD
@@ -36118,6 +36132,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=48
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD
@@ -36541,7 +36558,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=47
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -36909,16 +36925,16 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginCity
-		CityOwner=48
+		CityOwner=43
 		CityName=Dunhuang
 		CityPopulation=3
 		ReligionType=RELIGION_BUDDHISM
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
-		Player48Culture=10
+		Player43Culture=20
 	EndCity
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=48
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
 	EndUnit
 EndPlot
 BeginPlot
@@ -37284,7 +37300,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=47
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
+	ImprovementType=IMPROVEMENT_VILLAGE
 	PlotType=2
 EndPlot
 BeginPlot
@@ -37651,7 +37669,6 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	RouteType=ROUTE_ROAD
-	ImprovementType=IMPROVEMENT_VILLAGE
 EndPlot
 BeginPlot
 	x=97,y=48
