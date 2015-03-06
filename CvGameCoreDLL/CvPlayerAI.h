@@ -144,10 +144,14 @@ public:
 	int AI_goldPerTurnTradeVal(int iGoldPerTurn) const;
 
 	int AI_bonusVal(BonusTypes eBonus, int iChange = 1) const;
-	int AI_baseBonusVal(BonusTypes eBonus) const;
+	int AI_baseBonusVal(BonusTypes eBonus, int iChange = 1) const;
 	int AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const;
 	DenialTypes AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) const;
 	int AI_corporationBonusVal(BonusTypes eBonus) const;
+
+	// Leoreth: more detailed bonus value
+	int AI_bonusHappinessVal(BonusTypes eBonus, int iChange) const;
+	int AI_bonusHealthVal(BonusTypes eBonus, int iChange) const;
 
 	int AI_cityTradeVal(CvCity* pCity) const;
 	DenialTypes AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const;
