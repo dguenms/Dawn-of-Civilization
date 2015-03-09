@@ -402,6 +402,7 @@ protected:
 	int* m_aiGoldTradedTo;
 	int* m_aiAttitudeExtra;
 	int* m_aiBonusValue;
+	int* m_aiLastBonusValueChange;
 	int* m_aiUnitClassWeights;
 	int* m_aiUnitCombatWeights;
 

@@ -99,6 +99,7 @@ CvPlayerAI::CvPlayerAI()
 	m_aiAverageCommerceExchange = new int[NUM_COMMERCE_TYPES];
 
 	m_aiBonusValue = NULL;
+	m_aiLastBonusValueChange = NULL;
 	m_aiUnitClassWeights = NULL;
 	m_aiUnitCombatWeights = NULL;
 	m_aiCloseBordersAttitudeCache = new int[MAX_PLAYERS];
@@ -170,6 +171,7 @@ void CvPlayerAI::AI_init()
 void CvPlayerAI::AI_uninit()
 {
 	SAFE_DELETE_ARRAY(m_aiBonusValue);
+	SAFE_DELETE_ARRAY(m_aiLastBonusValueChange);
 	SAFE_DELETE_ARRAY(m_aiUnitClassWeights);
 	SAFE_DELETE_ARRAY(m_aiUnitCombatWeights);
 }
@@ -263,10 +265,13 @@ void CvPlayerAI::AI_reset(bool bConstructor)
 	m_aiAICitySites.clear();
 
 	FAssert(m_aiBonusValue == NULL);
+	FAssert(m_aiLastBonusValueChange == NULL);
 	m_aiBonusValue = new int[GC.getNumBonusInfos()];
+	m_aiLastBonusValueChange = new int[GC.getNumBonusInfos()];
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		m_aiBonusValue[iI] = -1;
+		m_aiLastBonusValueChange[iI] = -1;
 	}
 
 	FAssert(m_aiUnitClassWeights == NULL);
@@ -8603,7 +8608,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 	PROFILE_FUNC();
 
 	//recalculate if not defined
-	if (m_aiBonusValue[eBonus] == -1)
+	if (m_aiBonusValue[eBonus] == -1 || m_aiLastBonusValueChange[eBonus] != iChange)
 	{
 		PROFILE("CvPlayerAI::AI_baseBonusVal::recalculate");
 
@@ -8621,13 +8626,6 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 		{
 			//iValue += (GC.getBonusInfo(eBonus).getHappiness() * 100);
 			//iValue += (GC.getBonusInfo(eBonus).getHealth() * 100);
-
-			// Leoreth: calculate actual gain
-			if (bOnlyBonus)
-			{
-				iValue += 100 * AI_bonusHappinessVal(eBonus, iChange);
-				iValue += 50 * AI_bonusHealthVal(eBonus, iChange);
-			}
 
 			CvTeam& kTeam = GET_TEAM(getTeam());
 
@@ -8961,9 +8959,20 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 			iValue /= 10;
 		}
 
+		// Leoreth: apply change
+		iValue *= iChange;
+
+		// Leoreth: actual gain from bonuses
+		if (bOnlyBonus)
+		{
+			iValue += 100 * AI_bonusHappinessVal(eBonus, iChange);
+			iValue += 50 * AI_bonusHealthVal(eBonus, iChange);
+		}
 
 		//clamp value non-negative
-		m_aiBonusValue[eBonus] = std::max(0, iValue);
+		m_aiBonusValue[eBonus] = iChange * std::max(0, iChange * iValue);
+
+		m_aiLastBonusValueChange[eBonus] = iChange;
 	}
 
 	return m_aiBonusValue[eBonus];
@@ -9026,7 +9035,7 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 
 	iValue = AI_bonusVal(eBonus, iChange);
 	
-	// Leoreth: consider relative gain
+	// Leoreth: consider relative gain (negative because their loss is our gain)
 	iValue -= GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
 
 	//iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
@@ -15645,6 +15654,7 @@ void CvPlayerAI::read(FDataStreamBase* pStream)
 	}
 
 	pStream->Read(GC.getNumBonusInfos(), m_aiBonusValue);
+	pStream->Read(GC.getNumBonusInfos(), m_aiLastBonusValueChange);
 	pStream->Read(GC.getNumUnitClassInfos(), m_aiUnitClassWeights);
 	pStream->Read(GC.getNumUnitCombatInfos(), m_aiUnitCombatWeights);
 	pStream->Read(MAX_PLAYERS, m_aiCloseBordersAttitudeCache);
@@ -15722,6 +15732,7 @@ void CvPlayerAI::write(FDataStreamBase* pStream)
 	}
 
 	pStream->Write(GC.getNumBonusInfos(), m_aiBonusValue);
+	pStream->Write(GC.getNumBonusInfos(), m_aiLastBonusValueChange);
 	pStream->Write(GC.getNumUnitClassInfos(), m_aiUnitClassWeights);
 	pStream->Write(GC.getNumUnitCombatInfos(), m_aiUnitCombatWeights);
 	pStream->Write(MAX_PLAYERS, m_aiCloseBordersAttitudeCache);
@@ -19769,6 +19780,7 @@ void CvPlayerAI::AI_updateBonusValue(BonusTypes eBonus)
 
 	//reset
     m_aiBonusValue[eBonus] = -1;
+	m_aiLastBonusValueChange[eBonus] = MAX_INT; // -1 taken for negative change
 }
 
 
