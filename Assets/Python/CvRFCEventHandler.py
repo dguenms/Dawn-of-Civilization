@@ -473,6 +473,7 @@ class CvRFCEventHandler:
 		# move Mongolia's core south in case they vassalize China
 		if bCapitulated and iVassal == con.iChina and iMaster == con.iMongolia:
 			gc.getPlayer(con.iMongolia).setReborn(True)
+			utils.show("Mongols become reborn")
 		
 		self.dc.onVassalState(argsList)
 
@@ -824,7 +825,7 @@ class CvRFCEventHandler:
 			
 		# Japanese UP: Modernization
 		# Receives techs discovered by other civilizations when entering a new era
-		if iPlayer == con.iJapan:
+		if iPlayer == con.iJapan and iEra > con.iMedieval:
 			bNewEra = True
 			for iLoopTech in range(con.iNumTechs):
 				if iLoopTech != iTech and gc.getTeam(iJapan).isHasTech(iLoopTech) and gc.getTechInfo(iLoopTech).getEra() >= iEra:

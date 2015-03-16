@@ -4414,807 +4414,16 @@ class RiseAndFall:
                 
                 
         def assignTechs( self, iCiv ):
-                if (utils.getReborn(iCiv) == 0):
-			if iCiv == iIndia:
+		bReborn = (utils.getReborn(iCiv) != 0)
+	
+		if iCiv == iIndia:
+			if not bReborn:
 				lIndianTechs = [con.iMysticism, con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, \
 						con.iHunting, con.iMining, con.iWriting, con.iMeditation, con.iAnimalHusbandry, \
 						con.iBronzeWorking, con.iArchery, con.iSailing]
 				for iTech in lIndianTechs:
 					teamIndia.setHasTech(iTech, True, iCiv, False, False)
-                        if (iCiv == iGreece):
-                                teamGreece.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamGreece.setHasTech(con.iHunting, True, iCiv, False, False)
-                        if (iCiv == iPersia):
-                                teamPersia.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-				# Leoreth: Babylonian UHV: make them lose if they don't have Monarchy already
-				vic.onTechAcquired(iPersia, con.iMonarchy)
-                        if (iCiv == iCarthage):
-                                teamCarthage.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamCarthage.setHasTech(con.iAlphabet, True, iCiv, False, False)
-			if iCiv == iPolynesia:
-				lPolynesianTechs = [con.iMysticism, con.iFishing, con.iPottery, con.iHunting, con.iSailing]
-				for iTech in lPolynesianTechs:
-					teamPolynesia.setHasTech(iTech, True, iCiv, False, False)
-                        if (iCiv == iRome):
-                                teamRome.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMathematics, True, iCiv, False, False)
-                        if (iCiv == iJapan):
-				lJapaneseTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, \
-						  con.iPolytheism, con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, \
-						  con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iMathematics, \
-						  con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iCivilService, con.iHunting, con.iArchery, \
-						  con.iAnimalHusbandry]
-				for iTech in lJapaneseTechs:
-					teamJapan.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iTamils:
-				lTamilTechs = [con.iMining, con.iBronzeWorking, con.iMysticism, con.iPolytheism, con.iMeditation, con.iPriesthood,
-						con.iMasonry, con.iFishing, con.iSailing, con.iMonarchy, con.iTheWheel, con.iPottery, con.iWriting,
-						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iAgriculture,
-						con.iAesthetics, con.iIronWorking]
-				for iTech in lTamilTechs:
-					teamTamils.setHasTech(iTech, True, iCiv, False, False)
-                        if (iCiv == iEthiopia):
-                                teamEthiopia.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iMeditation, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iMonotheism, True, iCiv, False, False) #
-                                teamEthiopia.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamEthiopia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-			if (iCiv == iKorea):
-				lKoreanTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMysticism, con.iPolytheism, \
-						con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, con.iSailing, con.iTheWheel, con.iPottery, \
-						con.iAgriculture, con.iWriting, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iHunting, con.iArchery, \
-						con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics]
-				for iTech in lKoreanTechs:
-					teamKorea.setHasTech(iTech, True, iCiv, False, False)
-                        if (iCiv == iMaya):
-                                teamMaya.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iMeditation, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamMaya.setHasTech(con.iHunting, True, iCiv, False, False)
-                        if (iCiv == iByzantium):
-				teamByzantium.setHasTech(con.iMining, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iIronWorking, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iMachinery, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iMysticism, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iPolytheism, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iMasonry, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iPriesthood, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iMonotheism, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iTheology, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iMonarchy, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iFishing, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iSailing, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iTheWheel, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iPottery, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iAgriculture, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iWriting, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iAlphabet, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iMathematics, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iConstruction, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iCurrency, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iHunting, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iArchery, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iLiterature, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iDrama, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iAesthetics, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iCalendar, True, iCiv, False, False)
-				teamByzantium.setHasTech(con.iMeditation, True, iCiv, False, False)
-                        if (iCiv == iVikings):
-                                teamVikings.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamVikings.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                        if (iCiv == iArabia):
-                                teamArabia.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamArabia.setHasTech(con.iMeditation, True, iCiv, False, False)
-			if iCiv == iTibet:
-				lTibetanTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, con.iMasonry, \
-						con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, \
-						con.iWriting, con.iCodeOfLaws, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, \
-						con.iAnimalHusbandry, con.iHorsebackRiding, con.iCalendar, con.iMeditation, con.iSailing, con.iTheology]
-				for iTech in lTibetanTechs:
-					teamTibet.setHasTech(iTech, True, iCiv, False, False)
-                        if (iCiv == iKhmer):
-                                teamKhmer.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iMeditation, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamKhmer.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-			if (iCiv == iIndonesia):
-				lIndonesianTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, \
-						con.iMysticism, con.iPolytheism, con.iMasonry, con.iMeditation, con.iPriesthood, con.iMonotheism, \
-						con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iSailing, \
-						con.iCodeOfLaws, con.iMathematics, con.iConstruction, con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding]
-				for iTech in lIndonesianTechs:
-					teamIndonesia.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iMoors:
-				lMoorishTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, con.iMasonry, \
-						con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, \
-						con.iWriting, con.iCodeOfLaws, con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, \
-						con.iAnimalHusbandry, con.iHorsebackRiding, con.iLiterature, con.iAesthetics, con.iCalendar, con.iMeditation, con.iSailing, con.iPhilosophy]
-				for iTech in lMoorishTechs:
-					teamMoors.setHasTech(iTech, True, iCiv, False, False)
-                        if (iCiv == iSpain):
-                                teamSpain.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamSpain.setHasTech(con.iMeditation, True, iCiv, False, False)
-                        if (iCiv == iFrance):
-                                teamFrance.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iMysticism, True, iCiv, False, False)                                
-                                teamFrance.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamFrance.setHasTech(con.iMeditation, True, iCiv, False, False)
-                        if (iCiv == iEngland):
-                                teamEngland.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamEngland.setHasTech(con.iMeditation, True, iCiv, False, False)
-                        if (iCiv == iHolyRome):
-                                teamHolyRome.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamHolyRome.setHasTech(con.iMeditation, True, iCiv, False, False)
-                        if (iCiv == iRussia):
-                                teamRussia.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamRussia.setHasTech(con.iMeditation, True, iCiv, False, False)
-                        if (iCiv == iHolland):
-                                teamHolland.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iGuilds, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iEngineering, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iGuilds, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMeditation, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iBanking, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iOptics, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iCivilService, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iCompass, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iGunpowder, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iPhilosophy, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iEducation, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iPaper, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iAstronomy, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iAesthetics, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iLiterature, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iDrama, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iMusic, True, iCiv, False, False)
-                                teamHolland.setHasTech(con.iPatronage, True, iCiv, False, False)
-                        if (iCiv == iMali):
-                                teamMali.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamMali.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-			if iCiv == iPoland:
-				lPolishTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism,
-						con.iPolytheism, con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iFishing,
-						con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iFeudalism,
-						con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, con.iAnimalHusbandry,
-						con.iHorsebackRiding, con.iMeditation, con.iAesthetics, con.iLiterature, con.iCalendar, con.iCivilService]
-				for iTech in lPolishTechs:
-					teamPoland.setHasTech(iTech, True, iCiv, False, False)
-                        if (iCiv == iTurkey):
-                                teamTurkey.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iCivilService, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iGuilds, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iGunpowder, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iEngineering, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamTurkey.setHasTech(con.iMeditation, True, iCiv, False, False)
-                        if (iCiv == iPortugal):
-                                teamPortugal.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iGuilds, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iEngineering, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamPortugal.setHasTech(con.iMeditation, True, iCiv, False, False)
-                        if (iCiv == iInca):
-                                teamInca.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamInca.setHasTech(con.iArchery, True, iCiv, False, False)
-				teamInca.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                        if (iCiv == iMongolia):
-                                teamMongolia.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iMeditation, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iConstruction, True, iCiv, False, False)
-				teamMongolia.setHasTech(con.iEngineering, True, iCiv, False, False)
-				teamMongolia.setHasTech(con.iGuilds, True, iCiv, False, False)
-				teamMongolia.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamMongolia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)                              
-                                teamMongolia.setHasTech(con.iGunpowder, True, iCiv, False, False)                              
-                        if (iCiv == iAztecs):
-                                teamAztecs.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamAztecs.setHasTech(con.iArchery, True, iCiv, False, False)
-			if iCiv == iItaly:
-				lItalianTechs =  [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism,
-						con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iFishing, con.iSailing, con.iTheWheel,
-						con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iFeudalism, con.iGuilds, con.iAlphabet, con.iMathematics,
-						con.iCalendar, con.iConstruction, con.iEngineering, con.iCurrency, con.iHunting, con.iArchery, con.iAnimalHusbandry,
-						con.iHorsebackRiding, con.iAesthetics, con.iLiterature, con.iCompass, con.iCivilService, con.iMeditation]
-				for iTech in lItalianTechs:
-					teamItaly.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iMughals:
-				lMughalTechs =  [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
-						con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
-						con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, \
-						con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, \
-						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iGuilds, con.iAesthetics, con.iLiterature]
-				for iTech in lMughalTechs:
-					teamMughals.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iCongo:
-				lCongoleseTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMysticism, con.iPolytheism,
-						   con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iTheWheel, con.iPottery,
-						   con.iAgriculture, con.iWriting, con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting,
-						   con.iArchery, con.iAnimalHusbandry, con.iMachinery, con.iCivilService, con.iFishing, con.iCodeOfLaws]
-				for iTech in lCongoleseTechs:
-					teamCongo.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iThailand:
-				lThaiTechs =   [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
-						con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
-						con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, \
-						con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, \
-						con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics, con.iPaper, con.iDrama, con.iMusic]
-				for iTech in lThaiTechs:
-					teamThailand.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iGermany:
-				lGermanTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
-						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
-						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
-						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
-						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
-						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage]
-				for iTech in lGermanTechs:
-					teamGermany.setHasTech(iTech, True, iCiv, False, False)
-                        if (iCiv == iAmerica):
-                                for x in range(con.iDemocracy+1):
-                                                teamAmerica.setHasTech(x, True, iCiv, False, False)
-                                for x in range(con.iFishing, con.iChemistry+1):
-                                                teamAmerica.setHasTech(x, True, iCiv, False, False)
-                                for x in range(con.iHunting, con.iRifling+1):
-                                                teamAmerica.setHasTech(x, True, iCiv, False, False)
-                                teamAmerica.setHasTech(con.iSteamPower, True, iCiv, False, False)
-				teamAmerica.setHasTech(con.iScientificMethod, True, iCiv, False, False)
-			if iCiv == iArgentina:
-				lArgentineTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
-						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
-						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
-						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
-						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
-						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, \
-						con.iNationalism, con.iDemocracy, con.iSteamPower]
-				for iTech in lArgentineTechs:
-					teamArgentina.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iCanada:
-				lCanadianTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
-						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
-						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
-						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
-						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
-						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, \
-						con.iNationalism, con.iDemocracy, con.iSteamPower, con.iSteel, con.iRailroad]
-				for iTech in lCanadianTechs:
-					teamCanada.setHasTech(iTech, True, iCiv, False, False)
-					
-				# srpt Canadian vassalage
-				#gc.getTeam(gc.getPlayer(iCanada).getTeam()).setVassal(iEngland, True, False)
-				
-			if iCiv == iBrazil:
-				lBrazilTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
-						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
-						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
-						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
-						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
-						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, \
-						con.iNationalism, con.iDemocracy, con.iSteamPower]
-				for iTech in lBrazilTechs:
-					teamBrazil.setHasTech(iTech, True, iCiv, False, False)
-                else:
-                        if (iCiv == iRome):
-                                teamRome.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iGuilds, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iEngineering, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iAesthetics, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iLiterature, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iCompass, True, iCiv, False, False)
-                                teamRome.setHasTech(con.iCivilService, True, iCiv, False, False)
-                        if iCiv == iPersia:
-                                teamPersia.setHasTech(con.iMysticism, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMeditation, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iLiterature, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iTheology, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMusic, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iCivilService, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iGuilds, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iFishing, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iPottery, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iAesthetics, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iSailing, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iWriting, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMathematics, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iCalendar, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iCurrency, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iPhilosophy, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iPaper, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iHunting, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMining, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iArchery, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMasonry, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iCompass, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iConstruction, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iMachinery, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iEngineering, True, iCiv, False, False)
-                                teamPersia.setHasTech(con.iGunpowder, True, iCiv, False, False)
-			if iCiv == iIndia:
+			else:
 				lIndianTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, \
 						con.iCodeOfLaws, con.iFeudalism, con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iFishing, \
 						con.iTheWheel, con.iAgriculture, con.iPottery, con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, \
@@ -5223,16 +4432,174 @@ class RiseAndFall:
 						con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iAstronomy, con.iPrintingPress, con.iMilitaryTradition]
 				for iTech in lIndianTechs:
 					teamIndia.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iAztecs:
-				lMexicanTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
-						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
-						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
-						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
-						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
-						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage]
-				for iTech in lMexicanTechs:
-					teamAztecs.setHasTech(iTech, True, iCiv, False, False)
-			if iCiv == iMaya:
+		if (iCiv == iGreece):
+			teamGreece.setHasTech(con.iMining, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamGreece.setHasTech(con.iHunting, True, iCiv, False, False)
+		if (iCiv == iPersia):
+			if not bReborn:
+				teamPersia.setHasTech(con.iMining, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMysticism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPolytheism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPriesthood, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMasonry, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iFishing, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iSailing, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMonotheism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMonarchy, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iTheWheel, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPottery, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iWriting, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iHunting, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iArchery, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+				# Leoreth: Babylonian UHV: make them lose if they don't have Monarchy already
+				vic.onTechAcquired(iPersia, con.iMonarchy)
+			else:					
+				teamPersia.setHasTech(con.iMysticism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMeditation, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPolytheism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPriesthood, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMonotheism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMonarchy, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iLiterature, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iFeudalism, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iTheology, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMusic, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCivilService, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iGuilds, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iDivineRight, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iFishing, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iTheWheel, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAgriculture, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPottery, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAesthetics, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iSailing, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iWriting, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMathematics, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAlphabet, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCalendar, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCurrency, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPhilosophy, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iPaper, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iHunting, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMining, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iArchery, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMasonry, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iIronWorking, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iCompass, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iConstruction, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iMachinery, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iEngineering, True, iCiv, False, False)
+				teamPersia.setHasTech(con.iGunpowder, True, iCiv, False, False)
+		if (iCiv == iCarthage):
+			teamCarthage.setHasTech(con.iMining, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamCarthage.setHasTech(con.iAlphabet, True, iCiv, False, False)
+		if iCiv == iPolynesia:
+			lPolynesianTechs = [con.iMysticism, con.iFishing, con.iPottery, con.iHunting, con.iSailing]
+			for iTech in lPolynesianTechs:
+				teamPolynesia.setHasTech(iTech, True, iCiv, False, False)
+		if (iCiv == iRome):
+			teamRome.setHasTech(con.iMining, True, iCiv, False, False)
+			teamRome.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamRome.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamRome.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamRome.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamRome.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamRome.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamRome.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamRome.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamRome.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamRome.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamRome.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamRome.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamRome.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamRome.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamRome.setHasTech(con.iMathematics, True, iCiv, False, False)
+		if (iCiv == iJapan):
+			lJapaneseTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, \
+					  con.iPolytheism, con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, \
+					  con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iMathematics, \
+					  con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iCivilService, con.iHunting, con.iArchery, \
+					  con.iAnimalHusbandry]
+			for iTech in lJapaneseTechs:
+				teamJapan.setHasTech(iTech, True, iCiv, False, False)
+		if iCiv == iTamils:
+			lTamilTechs = [con.iMining, con.iBronzeWorking, con.iMysticism, con.iPolytheism, con.iMeditation, con.iPriesthood,
+					con.iMasonry, con.iFishing, con.iSailing, con.iMonarchy, con.iTheWheel, con.iPottery, con.iWriting,
+					con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iAgriculture,
+					con.iAesthetics, con.iIronWorking]
+			for iTech in lTamilTechs:
+				teamTamils.setHasTech(iTech, True, iCiv, False, False)
+		if (iCiv == iEthiopia):
+			teamEthiopia.setHasTech(con.iMining, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iMeditation, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iMonotheism, True, iCiv, False, False) #
+			teamEthiopia.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamEthiopia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+		if (iCiv == iKorea):
+			lKoreanTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMysticism, con.iPolytheism, \
+					con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, con.iSailing, con.iTheWheel, con.iPottery, \
+					con.iAgriculture, con.iWriting, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iHunting, con.iArchery, \
+					con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics]
+			for iTech in lKoreanTechs:
+				teamKorea.setHasTech(iTech, True, iCiv, False, False)
+		if (iCiv == iMaya):
+			if not bReborn:
+				teamMaya.setHasTech(con.iMining, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iMysticism, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iPolytheism, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iMeditation, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iPriesthood, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iMasonry, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iFishing, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iTheWheel, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iPottery, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iAgriculture, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iWriting, True, iCiv, False, False)
+				teamMaya.setHasTech(con.iHunting, True, iCiv, False, False)
+			else:
 				lColombianTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
 						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
 						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
@@ -5242,7 +4609,608 @@ class RiseAndFall:
 						con.iNationalism, con.iSteamPower, con.iDemocracy]
 				for iTech in lColombianTechs:
 					teamMaya.setHasTech(iTech, True, iCiv, False, False)
-
+		if (iCiv == iByzantium):
+			teamByzantium.setHasTech(con.iMining, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iLiterature, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iDrama, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iAesthetics, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamByzantium.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if (iCiv == iVikings):
+			teamVikings.setHasTech(con.iMining, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamVikings.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+		if (iCiv == iArabia):
+			teamArabia.setHasTech(con.iMining, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iDivineRight, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamArabia.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if iCiv == iTibet:
+			lTibetanTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, con.iMasonry, \
+					con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, \
+					con.iWriting, con.iCodeOfLaws, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, \
+					con.iAnimalHusbandry, con.iHorsebackRiding, con.iCalendar, con.iMeditation, con.iSailing, con.iTheology]
+			for iTech in lTibetanTechs:
+				teamTibet.setHasTech(iTech, True, iCiv, False, False)
+		if (iCiv == iKhmer):
+			teamKhmer.setHasTech(con.iMining, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iMeditation, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamKhmer.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+		if (iCiv == iIndonesia):
+			lIndonesianTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, \
+					con.iMysticism, con.iPolytheism, con.iMasonry, con.iMeditation, con.iPriesthood, con.iMonotheism, \
+					con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iSailing, \
+					con.iCodeOfLaws, con.iMathematics, con.iConstruction, con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding]
+			for iTech in lIndonesianTechs:
+				teamIndonesia.setHasTech(iTech, True, iCiv, False, False)
+		if iCiv == iMoors:
+			lMoorishTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, con.iMasonry, \
+					con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iFishing, con.iTheWheel, con.iPottery, con.iAgriculture, \
+					con.iWriting, con.iCodeOfLaws, con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, \
+					con.iAnimalHusbandry, con.iHorsebackRiding, con.iLiterature, con.iAesthetics, con.iCalendar, con.iMeditation, con.iSailing, con.iPhilosophy]
+			for iTech in lMoorishTechs:
+				teamMoors.setHasTech(iTech, True, iCiv, False, False)
+		if (iCiv == iSpain):
+			teamSpain.setHasTech(con.iMining, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamSpain.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if (iCiv == iFrance):
+			teamFrance.setHasTech(con.iMining, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iMysticism, True, iCiv, False, False)                                
+			teamFrance.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamFrance.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if (iCiv == iEngland):
+			teamEngland.setHasTech(con.iMining, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamEngland.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if (iCiv == iHolyRome):
+			teamHolyRome.setHasTech(con.iMining, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if (iCiv == iRussia):
+			teamRussia.setHasTech(con.iMining, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if (iCiv == iHolland):
+			teamHolland.setHasTech(con.iMining, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iDivineRight, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iGuilds, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iEngineering, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iGuilds, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMeditation, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iBanking, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iOptics, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iCivilService, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iCompass, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iGunpowder, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iPhilosophy, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iEducation, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iPaper, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iAstronomy, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iAesthetics, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iLiterature, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iDrama, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iMusic, True, iCiv, False, False)
+			teamHolland.setHasTech(con.iPatronage, True, iCiv, False, False)
+		if (iCiv == iMali):
+			teamMali.setHasTech(con.iMining, True, iCiv, False, False)
+			teamMali.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamMali.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamMali.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamMali.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamMali.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamMali.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamMali.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamMali.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamMali.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamMali.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamMali.setHasTech(con.iDivineRight, True, iCiv, False, False)
+			teamMali.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamMali.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamMali.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamMali.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamMali.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamMali.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamMali.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamMali.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamMali.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamMali.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamMali.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamMali.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+		if iCiv == iPoland:
+			lPolishTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism,
+					con.iPolytheism, con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iFishing,
+					con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iFeudalism,
+					con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting, con.iArchery, con.iAnimalHusbandry,
+					con.iHorsebackRiding, con.iMeditation, con.iAesthetics, con.iLiterature, con.iCalendar, con.iCivilService]
+			for iTech in lPolishTechs:
+				teamPoland.setHasTech(iTech, True, iCiv, False, False)
+		if (iCiv == iTurkey):
+			teamTurkey.setHasTech(con.iMining, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iDivineRight, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iCivilService, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iGuilds, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iGunpowder, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iEngineering, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamTurkey.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if (iCiv == iPortugal):
+			teamPortugal.setHasTech(con.iMining, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iMonotheism, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iTheology, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iDivineRight, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iSailing, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iGuilds, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iAlphabet, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iEngineering, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iCalendar, True, iCiv, False, False)
+			teamPortugal.setHasTech(con.iMeditation, True, iCiv, False, False)
+		if (iCiv == iInca):
+			teamInca.setHasTech(con.iMining, True, iCiv, False, False)
+			teamInca.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamInca.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamInca.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamInca.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamInca.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamInca.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamInca.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamInca.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamInca.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamInca.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamInca.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamInca.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamInca.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamInca.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamInca.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamInca.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+		if (iCiv == iMongolia):
+			teamMongolia.setHasTech(con.iMining, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iIronWorking, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iMachinery, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iMysticism, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iPolytheism, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iMeditation, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iPriesthood, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iMasonry, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iMonarchy, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iTheWheel, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iPottery, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iAgriculture, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iWriting, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iFeudalism, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iMathematics, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iConstruction, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iEngineering, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iGuilds, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iCurrency, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iHunting, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iArchery, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
+			teamMongolia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)                              
+			teamMongolia.setHasTech(con.iGunpowder, True, iCiv, False, False)                              
+		if (iCiv == iAztecs):
+			if not bReborn:
+				teamAztecs.setHasTech(con.iMining, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iMysticism, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iPolytheism, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iMasonry, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iPriesthood, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iMonarchy, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iFishing, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iTheWheel, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iPottery, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iAgriculture, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iWriting, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iCodeOfLaws, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iMathematics, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iCalendar, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iCurrency, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iHunting, True, iCiv, False, False)
+				teamAztecs.setHasTech(con.iArchery, True, iCiv, False, False)
+			else:				
+				lMexicanTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
+						con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
+						con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
+						con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
+						con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
+						con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage]
+				for iTech in lMexicanTechs:
+					teamAztecs.setHasTech(iTech, True, iCiv, False, False)
+		if iCiv == iItaly:
+			lItalianTechs =  [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism,
+					con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iFishing, con.iSailing, con.iTheWheel,
+					con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iFeudalism, con.iGuilds, con.iAlphabet, con.iMathematics,
+					con.iCalendar, con.iConstruction, con.iEngineering, con.iCurrency, con.iHunting, con.iArchery, con.iAnimalHusbandry,
+					con.iHorsebackRiding, con.iAesthetics, con.iLiterature, con.iCompass, con.iCivilService, con.iMeditation]
+			for iTech in lItalianTechs:
+				teamItaly.setHasTech(iTech, True, iCiv, False, False)
+		if iCiv == iMughals:
+			lMughalTechs =  [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
+					con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
+					con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, \
+					con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, \
+					con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iGuilds, con.iAesthetics, con.iLiterature]
+			for iTech in lMughalTechs:
+				teamMughals.setHasTech(iTech, True, iCiv, False, False)
+		if iCiv == iCongo:
+			lCongoleseTechs = [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMysticism, con.iPolytheism,
+					   con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iTheWheel, con.iPottery,
+					   con.iAgriculture, con.iWriting, con.iAlphabet, con.iMathematics, con.iConstruction, con.iCurrency, con.iHunting,
+					   con.iArchery, con.iAnimalHusbandry, con.iMachinery, con.iCivilService, con.iFishing, con.iCodeOfLaws]
+			for iTech in lCongoleseTechs:
+				teamCongo.setHasTech(iTech, True, iCiv, False, False)
+		if iCiv == iThailand:
+			lThaiTechs =   [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
+					con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
+					con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, \
+					con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, \
+					con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics, con.iPaper, con.iDrama, con.iMusic]
+			for iTech in lThaiTechs:
+				teamThailand.setHasTech(iTech, True, iCiv, False, False)
+		if iCiv == iGermany:
+			lGermanTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
+					con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
+					con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
+					con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
+					con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
+					con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage]
+			for iTech in lGermanTechs:
+				teamGermany.setHasTech(iTech, True, iCiv, False, False)
+		if (iCiv == iAmerica):
+			for x in range(con.iDemocracy+1):
+					teamAmerica.setHasTech(x, True, iCiv, False, False)
+			for x in range(con.iFishing, con.iChemistry+1):
+					teamAmerica.setHasTech(x, True, iCiv, False, False)
+			for x in range(con.iHunting, con.iRifling+1):
+					teamAmerica.setHasTech(x, True, iCiv, False, False)
+			teamAmerica.setHasTech(con.iSteamPower, True, iCiv, False, False)
+			teamAmerica.setHasTech(con.iScientificMethod, True, iCiv, False, False)
+		if iCiv == iArgentina:
+			lArgentineTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
+					con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
+					con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
+					con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
+					con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
+					con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, \
+					con.iNationalism, con.iDemocracy, con.iSteamPower]
+			for iTech in lArgentineTechs:
+				teamArgentina.setHasTech(iTech, True, iCiv, False, False)
+		if iCiv == iCanada:
+			lCanadianTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
+					con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
+					con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
+					con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
+					con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
+					con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, \
+					con.iNationalism, con.iDemocracy, con.iSteamPower, con.iSteel, con.iRailroad]
+			for iTech in lCanadianTechs:
+				teamCanada.setHasTech(iTech, True, iCiv, False, False)
+				
+			# srpt Canadian vassalage
+			#gc.getTeam(gc.getPlayer(iCanada).getTeam()).setVassal(iEngland, True, False)
+			
+		if iCiv == iBrazil:
+			lBrazilTechs = [con.iMysticism, con.iMeditation, con.iPolytheism, con.iPriesthood, con.iMonotheism, con.iMonarchy, con.iLiterature, con.iCodeOfLaws, con.iDrama, con.iFeudalism, \
+					con.iTheology, con.iMusic, con.iCivilService, con.iGuilds, con.iDivineRight, con.iMilitaryTradition, con.iConstitution, con.iLiberalism, \
+					con.iFishing, con.iTheWheel, con.iAgriculture, con.iPottery, con.iPrintingPress, con.iEconomics, con.iAstronomy, con.iScientificMethod, con.iChemistry, \
+					con.iAesthetics, con.iSailing, con.iWriting, con.iMathematics, con.iAlphabet, con.iCalendar, con.iCurrency, con.iPhilosophy, con.iPaper, con.iBanking, con.iEducation, \
+					con.iHunting, con.iMining, con.iArchery, con.iMasonry, con.iAnimalHusbandry, con.iBronzeWorking, con.iHorsebackRiding, con.iIronWorking, con.iMetalCasting, \
+					con.iCompass, con.iConstruction, con.iMachinery, con.iEngineering, con.iOptics, con.iGunpowder, con.iReplaceableParts, con.iMilitaryScience, con.iRifling, con.iPatronage, \
+					con.iNationalism, con.iDemocracy, con.iSteamPower]
+			for iTech in lBrazilTechs:
+				teamBrazil.setHasTech(iTech, True, iCiv, False, False)
+				
                 sta.onCivSpawn(iCiv)
 
 	def arabianSpawn(self):
