@@ -105,6 +105,8 @@ CvGlobals gGlobals;
 // CONSTRUCTOR
 //
 CvGlobals::CvGlobals() :
+iStuckUnitID(-1),
+iStuckUnitCount(0),
 m_bGraphicsInitialized(false),
 m_bLogging(false),
 m_bRandLogging(false),

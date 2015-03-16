@@ -8621,6 +8621,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 
 		int iNumBonuses = getNumAvailableBonuses(eBonus);
 		bool bOnlyBonus = (iChange == 0 || (iNumBonuses == 0 || iChange == 1) || (iNumBonuses == 1 || iChange == -1));
+		bool bStrategic = false;
 
 		if (!GET_TEAM(getTeam()).isBonusObsolete(eBonus))
 		{
@@ -8700,6 +8701,8 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 						{
 							iTempValue += 40;
 						}
+
+						if (iTempValue > 0) bStrategic = true;
 
 						iTempValue += kLoopUnit.getBonusProductionModifier(eBonus) / 10;
 					}
@@ -8959,6 +8962,12 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 			iValue /= 10;
 		}
 
+		// Leoreth: weigh by number of cities
+		int iNumCities = getNumCities();
+		if (bStrategic) iNumCities = std::max(5, iNumCities);
+
+		iValue *= iNumCities;
+
 		// Leoreth: apply change
 		iValue *= iChange;
 
@@ -8968,6 +8977,9 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 			iValue += 100 * AI_bonusHappinessVal(eBonus, iChange);
 			iValue += 50 * AI_bonusHealthVal(eBonus, iChange);
 		}
+
+		// Leoreth: scale with gold value
+		iValue /= 10;
 
 		//clamp value non-negative
 		m_aiBonusValue[eBonus] = iChange * std::max(0, iChange * iValue);

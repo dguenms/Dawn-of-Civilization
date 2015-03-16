@@ -3475,6 +3475,38 @@ void CvSelectionGroup::groupMove(CvPlot* pPlot, bool bCombat, CvUnit* pCombatUni
 		{
 			pLoopUnit->joinGroup(NULL, true);
 			pLoopUnit->ExecuteMove(((float)(GC.getMissionInfo(MISSION_MOVE_TO).getTime() * gDLL->getMillisecsPerTurn())) / 1000.0f, false);
+/************************************************************************************************/
+/* Afforess	                  Start		 07/31/10                                               */
+/*                                                                                              */
+/* Units Seem to be getting stuck here                                                          */
+/************************************************************************************************/
+			if (GC.iStuckUnitID != pLoopUnit->getID())
+			{
+				GC.iStuckUnitID = pLoopUnit->getID();
+				GC.iStuckUnitCount = 0;
+			}
+			else
+			{
+				GC.iStuckUnitCount++;
+				if (GC.iStuckUnitCount > 5)
+				{
+					FAssertMsg(false, "Unit Stuck in Loop!");
+					CvUnit* pHeadUnit = getHeadUnit();
+					if (NULL != pHeadUnit)
+					{
+						TCHAR szOut[1024];
+						CvWString szTempString;
+						getUnitAIString(szTempString, pHeadUnit->AI_getUnitAIType());
+						sprintf(szOut, "Unit stuck in loop: %S(%S)[%d, %d] (%S)\n", pHeadUnit->getName().GetCString(), GET_PLAYER(pHeadUnit->getOwnerINLINE()).getName(),
+							pHeadUnit->getX_INLINE(), pHeadUnit->getY_INLINE(), szTempString.GetCString());
+						gDLL->messageControlLog(szOut);
+					}
+					pLoopUnit->finishMoves();
+				}
+			}
+/************************************************************************************************/
+/* Afforess	                     END                                                            */
+/************************************************************************************************/
 		}
 	}
 

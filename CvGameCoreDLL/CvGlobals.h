@@ -136,6 +136,9 @@ class CvGlobals
 	friend class CvXMLLoadUtility;
 public:
 
+	int iStuckUnitID;
+	int iStuckUnitCount;
+
 	// singleton accessor
 	DllExport inline static CvGlobals& getInstance();
 
