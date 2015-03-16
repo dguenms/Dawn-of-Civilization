@@ -283,10 +283,6 @@ class CvRFCEventHandler:
 		
 		#utils.debugTextPopup('City acquired and kept: ' + city.getName() + '\nPlayer: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0))
 		
-		# starting workers
-		if gc.getPlayer(iPlayer).getNumCities() == 1:
-			self.rnf.createStartingWorkers(iPlayer, (city.getX(), city.getY()))
-			
 		lTradingCompanyList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
 			
 		if iPlayer == con.iSeljuks or gc.getPlayer(iPlayer).isHasBuildingEffect(con.iTopkapiPalace):
@@ -473,7 +469,6 @@ class CvRFCEventHandler:
 		# move Mongolia's core south in case they vassalize China
 		if bCapitulated and iVassal == con.iChina and iMaster == con.iMongolia:
 			gc.getPlayer(con.iMongolia).setReborn(True)
-			utils.show("Mongols become reborn")
 		
 		self.dc.onVassalState(argsList)
 

@@ -478,6 +478,8 @@ class RiseAndFall:
                 tTopLeft = self.getTempTopLeft()
                 tBottomRight = self.getTempBottomRight()
                 iNewCivFlip = self.getNewCivFlip()
+		
+		iNumCities = gc.getPlayer(iNewCivFlip).getNumCities()
 
                 humanCityList = []
                 for x in range(tTopLeft[0], tBottomRight[0]+1):
@@ -504,6 +506,9 @@ class RiseAndFall:
                                         self.setTempFlippingCity((city.getX(),city.getY()))
                                         utils.flipCity((city.getX(), city.getY()), 0, 0, iNewCivFlip, [iHuman])                                        
                                         utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iNewCivFlip)
+					
+			if iNumCities == 0 and gc.getPlayer(iNewCivFlip).getNumCities() > 0:
+				self.createStartingWorkers(iNewCivFlip, (gc.getPlayer(iNewCivFlip).getCapitalCity().getX(), gc.getPlayer(iNewCivFlip).getCapitalCity().getY()))
 
                         #same code as Betrayal - done just once to make sure human player doesn't hold a stack just outside of the cities
                         for x in range(tTopLeft[0], tBottomRight[0]+1):
@@ -2086,11 +2091,17 @@ class RiseAndFall:
 
                 else: #starting units have already been placed, now the second part
 		
+			iNumCities = gc.getPlayer(iCiv).getNumCities()
+		
                         iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, tTopLeft, tBottomRight)
                         self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
                         utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
 			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ# starting workers
+		
+			# create starting workers
+			if iNumCities == 0 and gc.getPlayer(iCiv).getNumCities() > 0:
+				self.createStartingWorkers(iCiv, (gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY()))
 			
 			if iCiv == iArabia:
 				self.arabianSpawn()
@@ -2145,9 +2156,15 @@ class RiseAndFall:
 				city.setHasRealBuilding(con.iLibrary, True)
 				city.setHasRealBuilding(con.iCourthouse, True)
 				if city.isCoastal(20): city.setHasRealBuilding(con.iHarbor, True)
+				
+		iNumCities = gc.getPlayer(iCiv).getNumCities()
                 
                 iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, tTopLeft, tBottomRight)
                 self.convertSurroundingPlotCulture(iCiv, tTopLeft, tBottomRight)
+		
+		# create starting workers
+		if iNumCities == 0 and gc.getPlayer(iCiv).getNumCities() > 0:
+			self.createStartingWorkers(iCiv, (gc.getPlayer(iCiv).getCapitalCity().getX(), gc.getPlayer(iCiv).getCapitalCity().getY()))
 
                 #now starting units must be placed
                 if (iNumAICitiesConverted > 0):
