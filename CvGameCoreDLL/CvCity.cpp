@@ -1105,6 +1105,8 @@ void CvCity::kill(bool bUpdatePlotGroups)
 		}
 	}
 
+	GET_PLAYER(eOwner).changeTotalMaintenance(-getMaintenanceTimes100());
+
 	GET_PLAYER(eOwner).updateMaintenance();
 
 	GC.getMapINLINE().updateWorkingCity();
@@ -6764,6 +6766,8 @@ void CvCity::updateMaintenance()
 	{
 		iNewMaintenance = (calculateBaseMaintenanceTimes100() * std::max(0, (getMaintenanceModifier() + 100))) / 100;
 	}
+
+	GC.getGame().logMsg("Update maintenance for %d, old: %d, new: %d", getID(), iOldMaintenance, iNewMaintenance);
 
 	if (iOldMaintenance != iNewMaintenance)
 	{

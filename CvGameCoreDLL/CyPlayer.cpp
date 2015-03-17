@@ -2420,6 +2420,12 @@ void CyPlayer::updateTradeRoutes()
 		m_pPlayer->updateTradeRoutes();
 }
 
+void CyPlayer::updateMaintenance()
+{
+	if (m_pPlayer)
+		m_pPlayer->updateMaintenance();
+}
+
 int CyPlayer::getWarMapValue(int x, int y)
 {
 	return m_pPlayer ? m_pPlayer->getWarMapValue(x, y) : -1;

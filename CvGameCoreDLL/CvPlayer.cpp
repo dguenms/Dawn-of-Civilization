@@ -5031,7 +5031,7 @@ void CvPlayer::raze(CvCity* pCity)
 	disband(pCity);
 
 	// Leoreth
-	updateMaintenance();
+	//GET_PLAYER(pCity->getOwnerINLINE()).updateMaintenance();
 }
 
 
@@ -5047,7 +5047,7 @@ void CvPlayer::disband(CvCity* pCity)
 	pCity->kill(true);
 
 	// Leoreth
-	updateMaintenance();
+	GET_PLAYER(pCity->getOwnerINLINE()).updateMaintenance();
 }
 
 
