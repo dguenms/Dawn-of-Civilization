@@ -542,6 +542,7 @@ public:
 	int getReborn();
 	void setReborn(bool bNewValue = true);
 	void updateTradeRoutes();
+	void updateMaintenance();
 	int getWarMapValue(int x, int y);
 	void AI_reset();
 	void setPersecutionCountdown(int iNewValue);

@@ -34,6 +34,8 @@ tCrisisTypes = (
 )
 
 def checkTurn(iGameTurn):
+	return
+
 	for iPlayer in range(con.iNumPlayers):
 		if sd.getTurnsToCollapse(iPlayer) == 0:
 			sd.setTurnsToCollapse(iPlayer, -1)
