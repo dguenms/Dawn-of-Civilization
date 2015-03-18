@@ -1105,8 +1105,6 @@ void CvCity::kill(bool bUpdatePlotGroups)
 		}
 	}
 
-	GET_PLAYER(eOwner).changeTotalMaintenance(-getMaintenanceTimes100());
-
 	GET_PLAYER(eOwner).updateMaintenance();
 
 	GC.getMapINLINE().updateWorkingCity();
@@ -6278,9 +6276,6 @@ int CvCity::getPopulation() const
 void CvCity::setPopulation(int iNewValue)
 {
 	int iOldPopulation;
-
-	// Leoreth: values lower than 1 should be impossible
-	iNewValue = std::max(1, iNewValue);
 
 	iOldPopulation = getPopulation();
 
