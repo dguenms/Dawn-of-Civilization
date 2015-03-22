@@ -145,3 +145,9 @@
 # if units are produced with food, their cost is now modified by their civilization's growth modifier
 # Cottages can be built on Oasis tiles now
 # reduced Commerce from Oasis by -1
+# extensive expansion of India to the south and rearrangement of its resources
+# new arrangement of Indian cities in the 600 AD and 1700 AD scenarios
+# India (Maratha Empire) and Tamils (Kingdom of Mysore) playable in 1700 AD
+# Shivaji Bhosle renamed Shahuji
+# extended Indochina to the east
+# Saigon spawns in 1400 AD

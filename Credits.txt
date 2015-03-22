@@ -39,6 +39,7 @@ LEADERHEADS
 # Firaxis: Qin Shi Huang, Taizong (Chinese release)
 # Novator: Lorenzo de' Medici (Simone Boccanegra)
 # Xyth: Aho'eitu (Tu'itatui)
+# cybrxkhan: Krishna Deva Raya (Mihirakula)
 
 From mods, without explicit mention of the original creators
 # The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)

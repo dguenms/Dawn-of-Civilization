@@ -137,7 +137,7 @@ iTan = 90
 iLime = 100
 
 # independent cities
-iNumMinorCities = 38
+iNumMinorCities = 37
 
 # scripted conquerors
 iNumConquests = 10
@@ -1112,7 +1112,7 @@ tCapitals = (
 (4, 18), #Tonga
 (82, 38), #tPersepolis
 (60, 44), #tRome
-(91, 32), #Thanjavur
+(91, 30), #Thanjavur
 (72, 29), #tAksum
 (109, 46), #tSeoul
 (22, 35), #tTikal
@@ -1438,7 +1438,7 @@ tCoreAreasTL = (
 (99, 41), #China 
 (75, 39), #Babylonia
 (65, 39), #Greece
-(90, 38), #India
+(88, 33), #India
 (54, 37), #Carthage
 (3, 17), #Polynesia
 (79, 37), #Persia
@@ -1528,7 +1528,7 @@ tCoreAreasBR = (
 (107, 47), #China
 (77, 42), #Babylonia
 (69, 42), #Greece
-(96, 40), #India
+(91, 38), #India
 (60, 39), #Carthage
 (7, 22), #Polynesia
 (85, 44), #Persia
@@ -2978,7 +2978,7 @@ iVictorySecularism = 10
 
 #leaders
 
-iNumLeaders = 112
+iNumLeaders = 113
 (iLeaderBarbarian, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
 iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iGilgamesh, iHammurabi, iHannibal, iHatshepsut,
 iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, iLouis, iMansaMusa, iMao,
@@ -2989,7 +2989,7 @@ iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonso, iAtaturk, iMaria, 
 iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShivaji,
 iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, iRahman, iRajendra, iLobsangGyatso,
 iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, iLorenzo, iSantaAnna, iJuarez, iCardenas, iDomPedro, 
-iSanMartin, iPeron, iBolivar, iAhoeitu) = range(iNumLeaders)
+iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya) = range(iNumLeaders)
 
 iCleopatra = iHatshepsut
 iSargon = iGilgamesh

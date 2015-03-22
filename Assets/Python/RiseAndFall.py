@@ -664,6 +664,7 @@ class RiseAndFall:
 			self.prepareColonists()
 			self.adjust1700ADCulture()
 			
+			pIndia.setReborn(True)
 			pPersia.setReborn(True)
 			pSpain.setReborn(True)
 			pHolyRome.setReborn(True)

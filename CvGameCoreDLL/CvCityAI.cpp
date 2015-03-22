@@ -2362,7 +2362,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		}
 	else aiUnitAIVal[UNITAI_SETTLE] /= 4;
 
-	if (GET_PLAYER(getOwnerINLINE()).getNumCities() >= 25)
+	/*if (GET_PLAYER(getOwnerINLINE()).getNumCities() >= 25)
 		aiUnitAIVal[UNITAI_SETTLE] /= 4;
 	else if (GET_PLAYER(getOwnerINLINE()).getNumCities() >= 20)
 		aiUnitAIVal[UNITAI_SETTLE] /= 3;
@@ -2372,7 +2372,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		if (GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)5) != (CivicTypes)27) {
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
 			aiUnitAIVal[UNITAI_SETTLE] /= 3;
-		}
+		}*/
 
 
 	switch (getOwnerINLINE())
@@ -2396,7 +2396,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
-        aiUnitAIVal[UNITAI_SETTLE] /= 20;
+        aiUnitAIVal[UNITAI_SETTLE] /= 50;
 		break;
 	case GREECE:
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
@@ -2408,7 +2408,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 3;
 		aiUnitAIVal[UNITAI_ICBM] *= 2;
-		aiUnitAIVal[UNITAI_SETTLE] /= 100;
+		//aiUnitAIVal[UNITAI_SETTLE] /= 50;
 		break;
 	case CARTHAGE:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 2;

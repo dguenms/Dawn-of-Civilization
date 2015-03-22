@@ -2071,6 +2071,12 @@ class DynamicCivs:
 				self.setLeader(iPlayer, con.iHaileSelassie)
 				return
 				
+		elif iPlayer == iTamils:
+		
+			if iEra >= con.iRenaissance:
+				self.setLeader(iPlayer, con.iKrishnaDevaRaya)
+				return
+				
 		elif iPlayer == iKorea:
 			return
 			
