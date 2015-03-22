@@ -116,6 +116,8 @@ tEsfahan = (81, 41)
 tHamburg = (59, 53)
 tMilan = (59, 47)
 tBaghdad = (77, 40)
+tMumbai = (88, 34)
+tMysore = (90, 31)
 
 #for messages
 iDuration = 14
@@ -135,7 +137,7 @@ iTan = 90
 iLime = 100
 
 # independent cities
-iNumMinorCities = 37
+iNumMinorCities = 38
 
 # scripted conquerors
 iNumConquests = 10
@@ -1037,7 +1039,9 @@ iVikings	:	"TXT_KEY_DOM_VIKINGS_LATE",
 
 dawnOfMan1700AD = {
 iChina		:	"TXT_KEY_DOM_CHINA_1700AD",
+iIndia		:	"TXT_KEY_DOM_INDIA_1700AD",
 iPersia		:	"TXT_KEY_DOM_PERSIA_1700AD",
+iTamils		:	"TXT_KEY_DOM_TAMILS_1700AD",
 iKorea		:	"TXT_KEY_DOM_KOREA_1700AD",
 iJapan		:	"TXT_KEY_DOM_JAPAN_1700AD",
 iVikings	:	"TXT_KEY_DOM_SWEDEN_1700AD",
@@ -1108,7 +1112,7 @@ tCapitals = (
 (4, 18), #Tonga
 (82, 38), #tPersepolis
 (60, 44), #tRome
-(91, 31), #Thanjavur
+(91, 32), #Thanjavur
 (72, 29), #tAksum
 (109, 46), #tSeoul
 (22, 35), #tTikal
@@ -1157,7 +1161,7 @@ tCapitals = (
 (4, 18), #Tonga
 (81, 41), #Esfahan
 (60, 44), #tRome
-(91, 31), #Thanjavur
+(90, 30), #Vijayanagara
 (72, 29), #tAksum
 (109, 46), #tSeoul
 (27, 29), #Bogota
@@ -1255,7 +1259,7 @@ tBirthAreaTL = (
 (3, 17), #Polynesia
 (79, 37), #Persia
 (59, 41), #Rome
-(90, 28), #Tamils
+(90, 27), #Tamils
 (69, 27), #Ethiopia
 (107, 45), #Korea
 (20, 35), #Maya
@@ -1301,7 +1305,7 @@ tBirthAreaBR = (
 (7, 22), #Polynesia
 (85, 44), #Persia
 (63, 47), #Rome
-(93, 34), #Tamils
+(93, 32), #Tamils
 (73, 30), #Ethiopia
 (110, 49), #Korea
 (23, 37), #Maya
@@ -1357,7 +1361,7 @@ tBirthAreaExceptions = (
 ((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
 ((98, 42),), #Tibet
 (), #Khmer
-((100, 31), (100, 30), (101, 29)), #Indonesia
+((100, 31), (100, 30), (101, 29), (101, 30)), #Indonesia
 ((58, 43), (58, 42)), #Moors
 ((49, 41), (49, 42), (49, 43), (49, 44), (50, 43), (50, 44), (50, 42)), #Spain
 ((55, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50), (53, 46), (52, 46), (51, 46), (57, 46), (56, 52), (57, 52)), #France
@@ -1395,7 +1399,7 @@ tCoreAreasTL = (
 (3, 17), #Polynesia
 (79, 37), #Persia
 (59, 41), #Rome
-(90, 28), #Tamils
+(90, 27), #Tamils
 (69, 27), #Ethiopia
 (108, 45), #Korea
 (20, 35), #Maya
@@ -1439,7 +1443,7 @@ tCoreAreasTL = (
 (3, 17), #Polynesia
 (79, 37), #Persia
 (58, 45), #Rome	
-(90, 28), #Tamils
+(90, 27), #Tamils
 (69, 27), #Ethiopia
 (108, 45), #Korea
 (24, 26), #Colombia
@@ -1485,7 +1489,7 @@ tCoreAreasBR = (
 (7, 22), #Polynesia
 (85, 44), #Persia
 (63, 47), #Rome
-(93, 34), #Tamils
+(93, 32), #Tamils
 (73, 30), #Ethiopia
 (109, 48), #Korea
 (23, 37), #Maya
@@ -1529,7 +1533,7 @@ tCoreAreasBR = (
 (7, 22), #Polynesia
 (85, 44), #Persia
 (63, 47), #Rome
-(93, 34), #Tamils
+(93, 32), #Tamils
 (73, 30), #Ethiopia
 (109, 48), #Korea
 (31, 32), #Colombia
@@ -1586,7 +1590,7 @@ tExceptions = (  #for RiseAndFall
 ((82, 34), (73, 40), (75, 40), (71, 36), (72, 37), (67, 30), (68, 30), (69, 30), (70, 30), (71, 30), (72, 30), (72, 31), (72, 32), (71, 32)),  #Arabia
 ((98, 42),), #Tibet
 (), #Khmer
-((100, 31), (100, 30), (101, 29)), #Indonesia
+((100, 31), (100, 30), (101, 29), (101, 30)), #Indonesia
 ((58, 43), (58, 42)), #Moors
 ((49, 41), (49, 42), (49, 43), (49, 44), (50, 43), (50, 44), (50, 42)), #Spain
 ((55, 46), (57, 46), (56, 45), (57, 45), (58, 48), (58, 49), (58, 50), (53, 46), (52, 46), (51, 46), (57, 46), (56, 52), (57, 52)), #France
@@ -2358,6 +2362,8 @@ iSeljuks : 250,
 
 dExtraGold1700AD = {
 iChina : 300,
+iIndia : 320,
+iTamils : 200,
 iJapan : 300,
 iSpain : 200,
 iFrance : 250,
@@ -3052,9 +3058,9 @@ tIsActiveOnLateStart = (
 
 tTradingCompanyPlotLists = (
 [(109, 33)], #Spain
-[(89, 33), (90, 33), (91, 33), (92, 33), (89, 32), (90, 32), (91, 32), (90, 31), (91, 31), (90, 30), (91, 29)], #France
-[(88, 36), (88, 35), (88, 34), (89, 34), (89, 33), (89, 32), (90, 32), (90, 31), (90, 30), (91, 29), (91, 31), (91, 32), (91, 33), (92, 33), (92, 34), (93, 34), (93, 35), (94, 35), (94, 36), (94, 37)], #England
-[(82, 34), (89, 33), (90, 31), (101, 29), (105, 39), (93, 28), (71, 17), (69, 13), (54, 26), (62, 20)], #Portugal
+[(101, 37), (101, 36), (102, 36), (102, 35), (103, 35), (103, 34), (104, 34), (104, 33)], #France
+[(95, 37), (94, 37), (94, 36), (94, 35), (94, 34), (93, 34), (93, 33), (92, 33), (92, 32), (88, 33), (88, 34), (88, 35)], #England
+[(82, 34), (89, 31), (101, 29), (105, 39), (93, 28), (93, 27), (71, 17), (69, 13), (54, 26), (62, 20)], #Portugal
 [(99, 28), (99, 27), (100, 27), (100, 26), (101, 26), (104, 25), (105, 25), (106, 25), (107, 24), (104, 27), (105, 27), (106, 27), (104, 28), (106, 28), (105, 29), (106, 29)] #Netherlands
 )
 

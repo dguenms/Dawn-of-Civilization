@@ -777,6 +777,7 @@ class RiseAndFall:
 			gc.getPlayer(iPlayer).changeGold(utils.getTurns(con.dExtraGold1700AD[iPlayer]))
 		
 	def init1700ADDiplomacy(self):	
+		self.changeAttitudeExtra(iIndia, iMughals, -2)
 		self.changeAttitudeExtra(iPersia, iTurkey, -4)
 		self.changeAttitudeExtra(iPersia, iMughals, -2)
 		self.changeAttitudeExtra(iChina, iKorea, 2)
@@ -794,7 +795,8 @@ class RiseAndFall:
 		self.changeAttitudeExtra(iPortugal, iNetherlands, -2)
 		self.changeAttitudeExtra(iNetherlands, iTurkey, -2)
 		
-		teamEngland.declareWar(iMughals, False, WarPlanTypes.WARPLAN_TOTAL)
+		teamEngland.declareWar(iMughals, False, WarPlanTypes.WARPLAN_LIMITED)
+		teamIndia.declareWar(iMughals, False, WarPlanTypes.WARPLAN_TOTAL)
 	
 	def changeAttitudeExtra(self, iPlayer1, iPlayer2, iValue):	
 		gc.getPlayer(iPlayer1).AI_changeAttitudeExtra(iPlayer2, iValue)
@@ -897,6 +899,10 @@ class RiseAndFall:
 			# Chengdu
 			pChengdu = gc.getMap().plot(99, 41).getPlotCity()
 			pChengdu.setCulture(con.iChina, 100, True)
+			
+			# Mumbai
+			pMumbai = gc.getMap().plot(88, 34).getPlotCity()
+			pMumbai.setFreeSpecialistCount(con.iGreatGeneral, 1)
 			
 	def flipStartingTerritory(self):
 	
@@ -3724,6 +3730,17 @@ class RiseAndFall:
 		utils.makeUnit(con.iMusketman, iChina, tCapital, 12)
 		utils.makeUnit(con.iBombard, iChina, tCapital, 5)
 		
+		# India
+		tCapital = con.tMumbai
+		utils.makeUnit(con.iMusketman, iIndia, tCapital, 8)
+		utils.makeUnit(con.iBombard, iIndia, tCapital, 5)
+		utils.makeUnit(con.iCuirassier, iIndia, tCapital, 3)
+		
+		# Tamils
+		tCapital = con.tMysore
+		utils.makeUnit(con.iMusketman, iTamils, tCapital, 6)
+		utils.makeUnit(con.iBombard, iTamils, tCapital, 4)
+		
 		# Persia
 		tCapital = con.tEsfahan
 		utils.makeUnit(con.iIranianQizilbash, iPersia, tCapital, 10)
@@ -4133,6 +4150,16 @@ class RiseAndFall:
 		lChineseTechs.extend(lMedievalTechs)
 		for iTech in lChineseTechs:
 			teamChina.setHasTech(iTech, True, iChina, False, False)
+			
+		lIndianTechs = [con.iPrintingPress, con.iAstronomy, con.iLiberalism, con.iMilitaryScience, con.iMilitaryTradition, con.iReplaceableParts]
+		lIndianTechs.extend(lMedievalTechs)
+		for iTech in lIndianTechs:
+			teamIndia.setHasTech(iTech, True, iIndia, False, False)
+			
+		lTamilTechs = [con.iPrintingPress, con.iAstronomy, con.iMilitaryScience, con.iMilitaryTradition, con.iReplaceableParts]
+		lTamilTechs.extend(lMedievalTechs)
+		for iTech in lTamilTechs:
+			teamTamils.setHasTech(iTech, True, iTamils, False, False)
 			
 		lPersianTechs = [con.iMilitaryTradition, con.iPrintingPress, con.iAstronomy, con.iLiberalism]
 		lPersianTechs.extend(lMedievalTechs)

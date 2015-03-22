@@ -74,6 +74,7 @@ tMinorCities = (
 (1000, (71, 17), iNative, 'Quelimane', 1, con.iZuluImpi, 1),		# Quelimane
 (1100, (71, 20), iNative, 'Mombasa', 1, con.iZuluImpi, 1),		# Mombasa
 (1200, (77, 55), iBarbarian, 'Qazan', 2, con.iHorseArcher, 1),		# Kazan
+(1400, (104, 33), iIndependent, 'Saigon', 5, con.iLongbowman, 3),	# Saigon
 (1483, (62, 20), iNative, 'Mbanza Kongo', 1, con.iCongoPombos, 1),	# Mbanza Kongo
 )
 

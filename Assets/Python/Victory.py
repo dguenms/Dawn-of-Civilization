@@ -2473,7 +2473,7 @@ def isRoad(iPlayer, lPlots):
 		if plot.getOwner() != iPlayer: return False
 		if not plot.getRouteType() == iRoad and not plot.isCity(): return False
 		
-	return 
+	return True
 	
 def countCityWonders(iPlayer, tPlot, bIncludeObsolete=False):
 	iCount = 0

@@ -83,7 +83,7 @@ class Resources:
 			
 		# Tamils
 		if iGameTurn == getTurnForYear(-300)-1 and utils.getPlayerEnabled(con.iTamils):
-			self.createResource(90, 29, iFish)
+			self.createResource(90, 30, iFish)
 
                 #Orka: Silk Road
                 if (iGameTurn == getTurnForYear(-200)): 
@@ -117,14 +117,14 @@ class Resources:
 			self.createResource(108, 47, iPig)
 
 		#Leoreth: change Indus tiles to desert floodplains in 0 AD
-		if (iGameTurn == getTurnForYear(0)):
-			for tPlot in [(86, 37), (86, 38), (87, 38)]:
-				x, y = tPlot
-				gc.getMap().plot(x,y).setTerrainType(2, True, True)
-				gc.getMap().plot(x,y).setFeatureType(3, 0)
-			for tPlot in [(85, 38), (85, 37)]:
-				x, y = tPlot
-				gc.getMap().plot(x,y).setFeatureType(3, 0)
+		#if (iGameTurn == getTurnForYear(0)):
+		#	for tPlot in [(86, 37), (86, 38), (87, 38)]:
+		#		x, y = tPlot
+		#		gc.getMap().plot(x,y).setTerrainType(2, True, True)
+		#		gc.getMap().plot(x,y).setFeatureType(3, 0)
+		#	for tPlot in [(85, 38), (85, 37)]:
+		#		x, y = tPlot
+		#		gc.getMap().plot(x,y).setFeatureType(3, 0)
 
                 if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
 			self.createResource(53, 51, iDye) # France
@@ -143,12 +143,12 @@ class Resources:
 			self.removeResource(58, 37)
 
 		# Leoreth: replicate silk route in 600 AD
-		if iGameTurn == getTurnForYear(600) and utils.getScenario() == con.i600AD:
-                        CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan                               
-                        CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan
-                        CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei
-			CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
-			CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
+		#if iGameTurn == getTurnForYear(600) and utils.getScenario() == con.i600AD:
+                #        CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan                               
+                #        CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan
+                #        CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei
+		#	CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
+		#	CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
 			
 		# Leoreth: prepare Tibet
 		if iGameTurn == getTurnForYear(630)-1 and utils.getPlayerEnabled(con.iTibet):
