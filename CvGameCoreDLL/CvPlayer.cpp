@@ -8877,7 +8877,7 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 			{
 				iValue /= 8;
 			}
-			if (pLoopCity->getX() == 92 && pLoopCity->getY() == 39) //Varanasi
+			if (pLoopCity->getX() == 94 && pLoopCity->getY() == 40) // Pataliputra
 			{
 				if (eReligion == HINDUISM || eReligion == BUDDHISM)
 					iValue *= 4;

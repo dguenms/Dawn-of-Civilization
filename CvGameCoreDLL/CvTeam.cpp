@@ -2904,7 +2904,7 @@ int CvTeam::getTechLeaderModifier() const
 			iAverageValue /= iDenominator;
 
 			// extra costs come in 10% increments
-			int iSurplus = (100 * iBestValue / iAverageValue) / 10;
+			int iSurplus = (100 * iBestValue / iAverageValue - 100) / 10;
 
 			iModifier += 10 * iSurplus;
 		}

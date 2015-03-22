@@ -33513,7 +33513,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=34
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -34305,7 +34305,7 @@ BeginPlot
 	x=90,y=37
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
