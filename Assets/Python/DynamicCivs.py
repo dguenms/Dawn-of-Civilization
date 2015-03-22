@@ -900,6 +900,7 @@ class DynamicCivs:
 		
 		self.l1700ADLeaders = {
 			iChina : con.iHongwu,
+			iIndia : con.iShivaji,
 			iPersia : con.iAbbas,
 			iJapan : con.iTokugawa,
 			iVikings : con.iGustav,
@@ -977,7 +978,7 @@ class DynamicCivs:
 			self.changeResurrections(iEgypt, 1)
 			
 		if utils.getScenario() == con.i1700AD:
-			for iPlayer in [iChina, iPersia, iKorea, iJapan, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iPoland, iPortugal, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany]:
+			for iPlayer in [iChina, iIndia, iTamils, iPersia, iKorea, iJapan, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iPoland, iPortugal, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany]:
 				self.checkName(iPlayer)
 
         def setDetermineds(self, iPlayer, szName="", szFlag=""):
@@ -1038,6 +1039,7 @@ class DynamicCivs:
 		elif iPlayer == iMoors: iThreshold = 3
 		elif iPlayer == iTibet: iThreshold = 2
 		elif iPlayer == iPolynesia: iThreshold = 3
+		elif iPlayer == iTamils: iThreshold = 3
 			
 		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
 		
@@ -1242,10 +1244,6 @@ class DynamicCivs:
 					return
 					
 		elif iPlayer == iIndia:
-			#if bReborn or bResurrected:
-			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
-			#	return
-				
 			if iReligion == con.iIslam:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_SULTANATE")
 				return
@@ -1267,8 +1265,13 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_PALA")
 				return
 				
-			if bEmpire and iEra == iRenaissance:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_VIJAYANAGARA") # check if Vijayanagara is owned
+			if iEra >= iRenaissance:
+				if bEmpire:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
+					return
+					
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
+				return
 				
 		elif iPlayer == iChina:
 			if not bResurrected:
@@ -1426,6 +1429,19 @@ class DynamicCivs:
 				return
 				
 			# make Shogunate default
+			
+		elif iPlayer == iTamils:
+			if iEra >= iRenaissance:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_MYSORE")
+				return
+				
+			if iEra >= iMedieval:
+				if bEmpire:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_VIJAYANAGARA_EMPIRE")
+					return
+			
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_VIJAYANAGARA")
+				return
 				
 		elif iPlayer == iEthiopia:
 			if not gc.getGame().isReligionFounded(con.iIslam):

@@ -28,4 +28,20 @@
 		<Tag>TXT_KEY_CIV_TAMILS_DESC_FASCIST</Tag>
 		<English>Dravidian Empire</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA</Tag>
+		<English>Kingdom of Vijayanagara</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA_EMPIRE</Tag>
+		<English>Vijayanagara Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_MYSORE</Tag>
+		<English>Kingdom of Mysore</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_</Tag>
+		<English></English>
+	</TEXT>
 </Civ4GameText>

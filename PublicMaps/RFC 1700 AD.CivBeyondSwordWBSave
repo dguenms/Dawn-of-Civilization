@@ -144,10 +144,11 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_ASOKA
+	LeaderType=LEADER_SHIVAJI
 	CivType=CIVILIZATION_INDIA                 
 	Team=4                 
-	PlayableCiv=0                 
+	PlayableCiv=1
+	StateReligion=RELIGION_HINDUISM
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -189,7 +190,8 @@ BeginPlayer
 	LeaderType=LEADER_RAJENDRA
 	CivType=CIVILIZATION_TAMILS
 	Team=9
-	PlayableCiv=0
+	PlayableCiv=1
+	StateReligion=RELIGION_HINDUISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -38674,14 +38676,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=35
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=7,21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=84,y=36
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
 	TeamReveal=7,21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
@@ -38692,15 +38695,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=38
-	ImprovementType=IMPROVEMENT_WINDMILL
+	ImprovementType=IMPROVEMENT_PLANTATION
+	BonusType=BONUS_SPICES
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=7,23,33,43,44,
 EndPlot
 BeginPlot
 	x=84,y=39
-	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=7,33,43,44,
@@ -39138,7 +39140,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=34
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=7,23,28,33,37,43,
 EndPlot
@@ -39150,8 +39152,38 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=36
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	RiverNSDirection=2
+	isWOfRiver
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginCity
+		CityOwner=33
+		CityName=Kolachi
+		CityPopulation=6
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		BuildingType=BUILDING_ISLAMIC_MONASTERY
+		ReligionType=RELIGION_ISLAM
+		Player33Culture=50
+	EndCity
 	TeamReveal=7,21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
@@ -39166,10 +39198,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=38
-	RiverNSDirection=2
-	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=7,33,43,44,
@@ -39184,15 +39212,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=40
-	ImprovementType=IMPROVEMENT_WINDMILL
-	TerrainType=TERRAIN_DESERT
-	PlotType=1
+	TerrainType=TERRAIN_PLAINS
+	PlotType=0
 	TeamReveal=7,23,33,43,44,
 EndPlot
 BeginPlot
 	x=85,y=41
-	ImprovementType=IMPROVEMENT_WINDMILL
-	TerrainType=TERRAIN_PLAINS
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=7,33,43,44,
 EndPlot
@@ -39290,7 +39317,7 @@ EndPlot
 BeginPlot
 	x=85,y=49
 	BonusType=BONUS_COTTON
-	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=7,43,
@@ -39588,14 +39615,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=34
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=86,y=35
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	ImprovementType=IMPROVEMENT_HAMLET
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=7,21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
@@ -39607,42 +39635,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=37
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
-	EndUnit
-	BeginCity
-		CityOwner=33
-		CityName=Kolachi
-		CityPopulation=6
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		ReligionType=RELIGION_ISLAM
-		Player33Culture=50
-	EndCity
 	TeamReveal=7,21,23,33,37,43,44,
 EndPlot
 BeginPlot
 	x=86,y=38
-	ImprovementType=IMPROVEMENT_HAMLET
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
@@ -39652,10 +39655,9 @@ EndPlot
 BeginPlot
 	x=86,y=39
 	RiverNSDirection=2
-	isNOfRiver
-	RiverWEDirection=3
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_WATERMILL
+	ImprovementType=IMPROVEMENT_QUARRY
+	BonusType=BONUS_MARBLE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=7,23,33,43,44,
@@ -39665,7 +39667,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
-	PlotType=0
+	PlotType=1
 	TeamReveal=7,23,33,43,44,
 EndPlot
 BeginPlot
@@ -39676,9 +39678,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=42
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=0
 	TeamReveal=7,33,43,44,
 EndPlot
 BeginPlot
@@ -39983,23 +39984,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=26
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=87,y=27
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=87,y=28
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=28,43,
 EndPlot
 BeginPlot
 	x=87,y=29
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=28,43,
 EndPlot
@@ -40041,23 +40042,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=36
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-	TeamReveal=7,21,23,33,37,43,44,
-EndPlot
-BeginPlot
-	x=87,y=37
-	BonusType=BONUS_COTTON
 	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=7,21,23,33,37,43,44,
 EndPlot
 BeginPlot
+	x=87,y=37
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
+	TeamReveal=7,21,23,33,37,43,44,
+EndPlot
+BeginPlot
 	x=87,y=38
-	ImprovementType=IMPROVEMENT_HAMLET
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=7,23,33,43,44,
@@ -40073,7 +40071,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=40
-	BonusType=BONUS_MARBLE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -40117,8 +40114,9 @@ BeginPlot
 	x=87,y=42
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 	TeamReveal=7,33,43,44,
 EndPlot
 BeginPlot
@@ -40131,8 +40129,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=44
-	RiverNSDirection=2
-	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 	TeamReveal=7,33,43,44,
@@ -40417,30 +40413,31 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=25
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=88,y=26
-	TerrainType=TERRAIN_COAST
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=88,y=27
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=43,
 EndPlot
 BeginPlot
 	x=88,y=28
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_OCEAN
+	PlotType=3
 	TeamReveal=28,37,43,
 EndPlot
 BeginPlot
 	x=88,y=29
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=28,37,43,
 EndPlot
@@ -40452,6 +40449,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=31
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,33,37,43,44,
@@ -40464,21 +40463,39 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=33
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-	TeamReveal=21,23,28,33,37,43,44,
-EndPlot
-BeginPlot
-	x=88,y=34
-	BonusType=BONUS_BANANA
 	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_BANANA
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
+	x=88,y=34
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+	BeginCity
+		CityOwner=4
+		CityName=Mumbai
+		CityPopulation=6
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_THEATRE
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_HINDU_MONASTERY
+		ReligionType=RELIGION_HINDUISM
+		Player4Culture=75
+	EndCity
+	TeamReveal=21,23,28,33,37,43,44,
+EndPlot
+BeginPlot
 	x=88,y=35
+	isNOfRiver
+	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -40486,81 +40503,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=36
-	RouteType=ROUTE_ROAD
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
-	BeginCity
-		CityOwner=23
-		CityName=Bombay
-		CityPopulation=6
-		BuildingType=BUILDING_STABLE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_HINDU_TEMPLE
-		BuildingType=BUILDING_HINDU_MONASTERY
-		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_HINDUISM
-		Player23Culture=50
-	EndCity
 	TeamReveal=21,23,33,37,43,44,
 EndPlot
 BeginPlot
 	x=88,y=37
-	isNOfRiver
-	RiverWEDirection=3
-	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_PASTURE
+	BonusType=BONUS_HORSE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=21,23,33,37,43,44,
 EndPlot
 BeginPlot
 	x=88,y=38
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=7,23,33,43,44,
 EndPlot
@@ -40574,44 +40534,46 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=40
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=7,33,43,44,
 EndPlot
 BeginPlot
 	x=88,y=41
-	BonusType=BONUS_SUGAR
 	ImprovementType=IMPROVEMENT_PLANTATION
+	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=7,33,43,44,
 EndPlot
 BeginPlot
 	x=88,y=42
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_FARM
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=7,33,43,44,
 EndPlot
 BeginPlot
 	x=88,y=43
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
+	PlotType=1
 	TeamReveal=7,33,43,
 EndPlot
 BeginPlot
 	x=88,y=44
-	TerrainType=TERRAIN_DESERT
-	PlotType=0
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 	TeamReveal=33,43,
 EndPlot
 BeginPlot
 	x=88,y=45
-	isNOfRiver
-	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
 	TeamReveal=1,43,
@@ -40624,11 +40586,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=47
-	BonusType=BONUS_SILK
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	PlotType=0
 	TeamReveal=1,43,
 EndPlot
 BeginPlot
@@ -40908,7 +40867,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=27
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=37,43,
 EndPlot
@@ -40920,84 +40879,61 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=29
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,37,43,
 EndPlot
 BeginPlot
 	x=89,y=30
-	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=89,y=31
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=89,y=32
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
-	PlotType=2
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginCity
-		CityOwner=28
-		CityName=Goa
-		CityPopulation=5
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
-		ReligionType=RELIGION_HINDUISM
-		Player28Culture=50
-	EndCity
+	PlotType=1
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=89,y=33
+	RouteType=ROUTE_ROAD
 	ImprovementType=IMPROVEMENT_MINE
-	TerrainType=TERRAIN_PLAINS
+	BonusType=BONUS_GEMS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=89,y=34
-	BonusType=BONUS_GEMS
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=89,y=35
-	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=89,y=36
-	BonusType=BONUS_CORN
-	ImprovementType=IMPROVEMENT_FARM
+	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=3
+	isWOfRiver
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -41005,8 +40941,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=37
-	isNOfRiver
-	RiverWEDirection=3
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -41014,22 +40948,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=38
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=23,33,43,44,
 EndPlot
 BeginPlot
 	x=89,y=39
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=7,23,33,43,44,
 EndPlot
 BeginPlot
 	x=89,y=40
-	BonusType=BONUS_COW
 	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=7,33,43,
@@ -41050,12 +40982,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=43
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
-	TeamReveal=7,33,43,
+	PlotType=1
 EndPlot
 BeginPlot
 	x=89,y=44
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
 	TeamReveal=33,43,
@@ -41406,7 +41340,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=27
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=37,43,
 EndPlot
@@ -41418,64 +41352,78 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=29
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=21,23,28,37,43,
 EndPlot
 BeginPlot
 	x=90,y=30
+	RiverNSDirection=2
+	isWOfRiver
+	ImprovementType=IMPROVEMENT_MINE
+	BonusType=BONUS_GOLD
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
+	TeamReveal=21,23,28,33,37,43,44,
+EndPlot
+BeginPlot
+	x=90,y=31
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
+	BeginCity
+		CityOwner=9
+		CityName=Mysuru
+		CityPopulation=5
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_TAMIL_SANGAM
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_HINDU_MONASTERY
+		ReligionType=RELIGION_HINDUISM
+		Player9Culture=50
+	EndCity
+	TeamReveal=21,23,28,33,37,43,44,
+EndPlot
+BeginPlot
+	x=90,y=32
 	ImprovementType=IMPROVEMENT_HAMLET
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
-	x=90,y=31
-	BonusType=BONUS_ALUMINUM
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
-	TeamReveal=21,23,28,33,37,43,44,
-EndPlot
-BeginPlot
-	x=90,y=32
-	BonusType=BONUS_GOLD
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=1
-	TeamReveal=21,23,28,33,37,43,44,
-EndPlot
-BeginPlot
 	x=90,y=33
-	ImprovementType=IMPROVEMENT_HAMLET
-	RouteType=ROUTE_ROAD
+	isNOfRiver
+	RiverWEDirection=1
+	ImprovementType=IMPROVEMENT_PLANTATION
+	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=90,y=34
-	isNOfRiver
-	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_HAMLET
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=90,y=35
-	BonusType=BONUS_TEA
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_FARM
+	BonusType=BONUS_RICE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=90,y=36
+	RouteType=ROUTE_ROAD
 	BonusType=BONUS_COTTON
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_PLAINS
@@ -41489,10 +41437,36 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=4
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=4
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginCity
+		CityOwner=4
+		CityName=Bhopal
+		CityPopulation=5
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_HINDU_TEMPLE
+		ReligionType=RELIGION_HINDUISM
+		Player4Culture=75
+	EndCity
 	TeamReveal=23,33,43,44,
 EndPlot
 BeginPlot
 	x=90,y=38
+	RouteType=ROUTE_ROAD
 	BonusType=BONUS_WHEAT
 	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
@@ -41501,9 +41475,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=39
-	BonusType=BONUS_IVORY
 	ImprovementType=IMPROVEMENT_CAMP
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=7,23,33,43,44,
@@ -41546,8 +41519,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=42
+	RiverNSDirection=2
+	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 	TeamReveal=7,33,43,44,
 EndPlot
 BeginPlot
@@ -41558,6 +41534,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=44
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
 	TeamReveal=33,43,
@@ -41857,40 +41835,43 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=27
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=28,37,43,
 EndPlot
 BeginPlot
 	x=91,y=28
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-	TeamReveal=21,23,28,37,43,
-EndPlot
-BeginPlot
-	x=91,y=29
-	BonusType=BONUS_COW
 	ImprovementType=IMPROVEMENT_PASTURE
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,37,43,
 EndPlot
 BeginPlot
-	x=91,y=30
+	x=91,y=29
+	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
+	TeamReveal=21,23,28,37,43,
+EndPlot
+BeginPlot
+	x=91,y=30
+	isNOfRiver
+	RiverWEDirection=1
+	ImprovementType=IMPROVEMENT_HAMLET
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=91,y=31
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=91,y=32
+	RouteType=ROUTE_ROAD
 	BonusType=BONUS_SPICES
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
@@ -41899,61 +41880,42 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=33
-	BonusType=BONUS_SUGAR
-	ImprovementType=IMPROVEMENT_PLANTATION
+	isNOfRiver
+	RiverWEDirection=1
+	ImprovementType=IMPROVEMENT_CAMP
+	BonusType=BONUS_IVORY
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=91,y=34
-	isNOfRiver
-	RiverWEDirection=1
-	BonusType=BONUS_IVORY
-	ImprovementType=IMPROVEMENT_CAMP
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-	TeamReveal=23,28,33,37,43,44,
-EndPlot
-BeginPlot
-	x=91,y=35
-	BonusType=BONUS_GEMS
-	ImprovementType=IMPROVEMENT_MINE
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
-	TeamReveal=23,28,33,37,43,44,
-EndPlot
-BeginPlot
-	x=91,y=36
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=33
+		CityOwner=44
 		CityName=Hyderabad
 		CityPopulation=7
 		BuildingType=BUILDING_WALLS
@@ -41965,8 +41927,28 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
-		Player33Culture=100
+		Player44Culture=200
 	EndCity
+	TeamReveal=23,28,33,37,43,44,
+EndPlot
+BeginPlot
+	x=91,y=35
+	isNOfRiver
+	RiverWEDirection=1
+	BonusType=BONUS_GEMS
+	ImprovementType=IMPROVEMENT_MINE
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+	TeamReveal=23,28,33,37,43,44,
+EndPlot
+BeginPlot
+	x=91,y=36
+	ImprovementType=IMPROVEMENT_HAMLET
+	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=23,33,37,43,44,
 EndPlot
 BeginPlot
@@ -41999,6 +41981,7 @@ BeginPlot
 	x=91,y=40
 	RiverNSDirection=2
 	isWOfRiver
+	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_DYE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -42027,6 +42010,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=44
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
 	TeamReveal=1,33,43,44,
@@ -42328,19 +42313,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=26
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=28,37,
 EndPlot
 BeginPlot
 	x=92,y=27
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,37,43,
 EndPlot
 BeginPlot
 	x=92,y=28
-	BonusType=BONUS_PEARL
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,37,43,
@@ -42353,25 +42339,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=30
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=92,y=31
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=92,y=32
-	TerrainType=TERRAIN_COAST
-	PlotType=3
-	TeamReveal=21,23,28,33,37,43,44,
-EndPlot
-BeginPlot
-	x=92,y=33
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
@@ -42434,21 +42414,28 @@ BeginPlot
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
-	x=92,y=34
+	x=92,y=33
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_COW
-	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
+	TeamReveal=21,23,28,33,37,43,44,
+EndPlot
+BeginPlot
+	x=92,y=34
+	RiverNSDirection=2
+	isWOfRiver
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=92,y=35
-	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,33,37,43,44,
@@ -42481,8 +42468,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=39
-	ImprovementType=IMPROVEMENT_VILLAGE
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,33,43,44,
@@ -42499,8 +42485,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=41
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 	TeamReveal=1,23,33,43,44,
 EndPlot
 BeginPlot
@@ -42809,22 +42796,24 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=26
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=28,37,
 EndPlot
 BeginPlot
 	x=93,y=27
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	ImprovementType=IMPROVEMENT_MINE
+	BonusType=BONUS_IRON
+	TerrainType=TERRAIN_GRASS
+	PlotType=1
 	TeamReveal=21,23,28,37,43,
 EndPlot
 BeginPlot
 	x=93,y=28
-	BonusType=BONUS_IRON
-	RouteType=ROUTE_ROAD
+	BonusType=BONUS_SPICES
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=1
+	PlotType=2
 	BeginUnit
 		UnitType=UNIT_RIFLEMAN, UnitOwner=37
 		Damage=0
@@ -42851,10 +42840,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=29
-	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=21,23,28,37,43,
 EndPlot
 BeginPlot
@@ -42865,7 +42852,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=31
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
@@ -42877,23 +42864,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=33
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	ImprovementType=IMPROVEMENT_PASTURE
+	BonusType=BONUS_COW
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=93,y=34
-	ImprovementType=IMPROVEMENT_MINE
+	isNOfRiver
+	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=93,y=35
-	ImprovementType=IMPROVEMENT_HAMLET
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	PlotType=1
 	TeamReveal=23,28,33,37,43,44,
 EndPlot
 BeginPlot
@@ -42906,6 +42895,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=37
+	RiverNSDirection=2
+	isWOfRiver
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -42913,6 +42904,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=38
+	isNOfRiver
+	RiverWEDirection=1
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -42920,9 +42913,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=39
-	ImprovementType=IMPROVEMENT_VILLAGE
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,33,43,44,
@@ -42946,7 +42936,7 @@ EndPlot
 BeginPlot
 	x=93,y=42
 	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	PlotType=0
 	TeamReveal=1,33,43,44,
 EndPlot
 BeginPlot
@@ -43245,20 +43235,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=26
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=28,37,
 EndPlot
 BeginPlot
 	x=94,y=27
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,37,
 EndPlot
 BeginPlot
 	x=94,y=28
-	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,37,
@@ -43271,7 +43261,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=30
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=21,23,28,37,43,
 EndPlot
@@ -43283,22 +43273,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=32
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=94,y=33
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=94,y=34
-	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
@@ -43311,107 +43301,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=36
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	ImprovementType=IMPROVEMENT_PLANTATION
+	BonusType=BONUS_TEA
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=94,y=37
-	RouteType=ROUTE_ROAD
+	isNOfRiver
+	RiverWEDirection=1
+	ImprovementType=IMPROVEMENT_PLANTATION
+	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
-	EndUnit
-	BeginCity
-		CityOwner=23
-		CityName=Calcutta
-		CityPopulation=6
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_HINDU_TEMPLE
-		BuildingType=BUILDING_HINDU_MONASTERY
-		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_HINDUISM
-		Player23Culture=50
-	EndCity
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=94,y=38
-	BonusType=BONUS_COTTON
-	RouteType=ROUTE_ROAD
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=21,23,33,37,43,44,
@@ -43833,7 +43741,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=33
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
@@ -43857,14 +43765,100 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=37
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ASSAULT_SEA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ASSAULT_SEA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_CITY_DEFENSE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=23
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginCity
+		CityOwner=23
+		CityName=Calcutta
+		CityPopulation=6
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_THEATRE
+		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_HINDU_MONASTERY
+		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_HINDUISM
+		Player23Culture=50
+	EndCity
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=95,y=38
-	BonusType=BONUS_TEA
-	ImprovementType=IMPROVEMENT_PLANTATION
+	RiverNSDirection=2
+	isWOfRiver
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
@@ -43873,8 +43867,8 @@ BeginPlot
 	x=95,y=39
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_VILLAGE
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	ImprovementType=IMPROVEMENT_PLANTATION
+	BonusType=BONUS_BANANA
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,21,23,28,33,43,44,
@@ -43883,7 +43877,8 @@ BeginPlot
 	x=95,y=40
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	ImprovementType=IMPROVEMENT_PLANTATION
+	BonusType=BONUS_TEA
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,23,33,43,44,
@@ -44248,30 +44243,33 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=36
-	TerrainType=TERRAIN_OCEAN
+	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,37,43,44,
 EndPlot
 BeginPlot
 	x=96,y=37
-	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=96,y=38
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	RiverNSDirection=2
+	isWOfRiver
+	ImprovementType=IMPROVEMENT_HAMLET
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=21,23,28,33,37,43,44,
 EndPlot
 BeginPlot
 	x=96,y=39
 	RiverNSDirection=2
+	isNOfRiver
+	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_BANANA
-	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,21,23,28,33,43,44,
@@ -44279,8 +44277,6 @@ EndPlot
 BeginPlot
 	x=96,y=40
 	RiverNSDirection=2
-	isNOfRiver
-	RiverWEDirection=1
 	isWOfRiver
 	ImprovementType=IMPROVEMENT_VILLAGE
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
@@ -45036,7 +45032,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=30
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=35,37,43,44,
@@ -46006,6 +46002,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=33
+	RiverNSDirection=2
+	isWOfRiver
 	BonusType=BONUS_BANANA
 	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
@@ -46015,6 +46013,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=34
+	RiverNSDirection=2
+	isWOfRiver
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -46474,7 +46474,7 @@ EndPlot
 BeginPlot
 	x=101,y=30
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 	TeamReveal=1,21,28,35,37,43,44,
 EndPlot
 BeginPlot
@@ -46991,16 +46991,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=32
-	ImprovementType=IMPROVEMENT_FARM
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=1,21,28,35,37,43,
 EndPlot
 BeginPlot
 	x=102,y=33
-	RiverNSDirection=2
-	isWOfRiver
-	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,21,28,35,37,43,
@@ -47018,7 +47014,7 @@ BeginPlot
 	x=102,y=35
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_FARM
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,21,28,35,37,43,44,
@@ -47456,7 +47452,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=30
-	TerrainType=TERRAIN_COAST
+	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=21,28,35,37,43,44,
 EndPlot
@@ -47468,21 +47464,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=32
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=1,21,28,35,37,43,
 EndPlot
 BeginPlot
 	x=103,y=33
-	ImprovementType=IMPROVEMENT_MINE
+	RiverNSDirection=2
+	isWOfRiver
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=1,21,28,35,37,
 EndPlot
 BeginPlot
 	x=103,y=34
+	isNOfRiver
+	RiverWEDirection=1
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
-	PlotType=0
+	PlotType=1
 	TeamReveal=1,21,28,35,37,43,
 EndPlot
 BeginPlot
@@ -48020,14 +48021,52 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=33
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=43
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=43
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=43
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginCity
+		CityOwner=43
+		CityName=Saigon
+		CityPopulation=5
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		ReligionType=RELIGION_BUDDHISM
+		ReligionType=RELIGION_CONFUCIANISM
+		Player43Culture=50
+	EndCity
 	TeamReveal=1,21,28,35,37,
 EndPlot
 BeginPlot
 	x=104,y=34
-	TerrainType=TERRAIN_COAST
-	PlotType=3
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
+	PlotType=2
 	TeamReveal=1,21,28,35,37,43,
 EndPlot
 BeginPlot
@@ -48460,6 +48499,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=33
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=21,28,35,
@@ -48927,16 +48968,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=32
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=21,28,35,43,
 EndPlot
 BeginPlot
 	x=106,y=33
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
-	PlotType=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 	TeamReveal=21,28,35,43,
 EndPlot
 BeginPlot
