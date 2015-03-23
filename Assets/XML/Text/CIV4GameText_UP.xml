@@ -30,17 +30,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND</Tag>
-		<English>The Power of Varnas:</English>
+		<English>The Power of Purity:</English>
 		<French>Le Pouvoir de la Spiritualité :</French>
-		<German>Die Macht der Varnas:</German>
+		<German>Die Macht der Reinheit:</German>
 		<Italian>Il potere della spiritualit&#224;:</Italian>
 		<Spanish>El poder de la espiritualidad:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND2</Tag>
-		<English>Specialists create one extra [ICON_HEALTHY]</English>
+		<English>One extra [ICON_HAPPY] for every two excess [ICON_HEALTHY]</English>
 		<French>Pas d'anarchie lors des révolutions</French>
-		<German>Spezialisten erzeugen eine zusätzliche Einheit [ICON_HEALTHY]</German>
+		<German>Eine zusätzliche [ICON_HAPPY] pro zwei überzählige [ICON_HEALTHY]</German>
 		<Italian>Niente anarchia durante le rivoluzioni</Italian>
 		<Spanish>No hay anarqu&#237;a por las revoluciones</Spanish>
 	</TEXT>
@@ -390,6 +390,11 @@
 		<Tag>TXT_KEY_UP_ROMAN_TRIUMPH</Tag>
 		<English>Your triumphant victories have enabled you to field another legion!</English>
 		<German>Eure triumphalen Siege haben Euch ermöglicht, eine weitere Legion auszuheben!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HAPPY_HEALTH</Tag>
+		<English>%D1_Change[ICON_HAPPY]: "Our city is clean!"</English>
+		<German>%D1_Change[ICON_HAPPY]: "Unsere Stadt ist sauber!"</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_GOOD_HEALTH_FROM_SPECIALISTS</Tag>

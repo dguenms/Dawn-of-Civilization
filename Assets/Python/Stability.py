@@ -2169,12 +2169,19 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	convertBackCulture(iPlayer)
 	
 	# change the cores of some civs on respawn
-	if iPlayer in [con.iGreece]:
+	if iPlayer == con.iGreece:
 		gc.getPlayer(iPlayer).setReborn(True)
 		
-	if iPlayer == con.iChina:
+	elif iPlayer == con.iChina:
 		if gc.getGame().getGameTurn() > getTurnForYear(con.tBirth[con.iMongolia]):
 			gc.getPlayer(iPlayer).setReborn(True)
+			
+	elif iPlayer == con.iIndia:
+		if gc.getGame().getGameTurn() >= getTurnForYear(1900):
+			gc.getPlayer(iPlayer).setReborn(False)
+		else:
+			gc.getPlayer(iPlayer).setReborn(True)
+	
 		
 	# others revert to their old cores instead
 	if iPlayer in [con.iArabia, con.iMongolia]:

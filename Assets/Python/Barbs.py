@@ -160,7 +160,17 @@ class Barbs:
                 if (iGameTurn >= getTurnForYear(-350) and iGameTurn <= getTurnForYear(1100)):
                         self.checkSpawn(iBarbarian, con.iSwordsman, 1 + iHandicap, (92, 41), (99, 45), self.spawnMinors, iGameTurn, 10-iHandicap, 3, ["TXT_KEY_ADJECTIVE_TIBETAN"])
 
-                #elephants in india pre-khmer
+		# Deccan barbarians
+		if iGameTurn >= getTurnForYear(-1000) and iGameTurn <= getTurnForYear(1200):
+			iUnit = con.iArcher
+			iStrength = iHandicap
+			if iGameTurn >= getTurnForYear(-500): iUnit = con.iAxeman
+			if iGameTurn >= getTurnForYear(0): iStrength += 1
+			if iGameTurn >= getTurnForYear(200): iUnit = con.iSwordsman
+			
+			self.checkSpawn(iBarbarian, iUnit, iStrength, (87, 23), (96, 37), self.spawnInvaders, iGameTurn, 8-iHandicap, 0, ["Hindi"])
+			
+                # elephants in india pre-khmer
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(700)):
                         self.checkSpawn(iBarbarian, con.iWarElephant, 1, (86, 31), (100, 41), self.spawnInvaders, iGameTurn, 8-iHandicap, 4)
 
@@ -238,7 +248,7 @@ class Barbs:
                         
                 #barbarians in Elam
                 if (iGameTurn >= getTurnForYear(-1600) and iGameTurn < getTurnForYear(-1000)):
-                        self.checkSpawn(iBarbarian, con.iChariot, 2, (81, 37), (87, 45), self.spawnMinors, iGameTurn, 7-iHandicap, 0, ["TXT_KEY_ADJECTIVE_ELAMITE"])
+                        self.checkSpawn(iBarbarian, con.iChariot, 1, (81, 37), (87, 45), self.spawnMinors, iGameTurn, 9-iHandicap, 0, ["TXT_KEY_ADJECTIVE_ELAMITE"])
 
                 #barbarians in north africa
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn < getTurnForYear(50)):

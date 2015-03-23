@@ -303,7 +303,7 @@ tFall = (
 1200,					# Polynesia
 651,					# Persia
 235, # crisis of the third century	# Rome
-1200,					# Tamils
+1000,					# Tamils
 960,					# Ethiopia
 1255, #Mongol invasion			# Korea
 900,					# Maya
@@ -578,12 +578,12 @@ tResurrectionIntervals = (
 [(600, 2020)], #China
 [(-3000, -500)], #Babylonia
 [(1800, 2020)], #Greece
-[(1900, 2020)], #India
+[(1600, 1800), (1900, 2020)], #India
 [(-1000, -150)], #Carthage
 [],		# Polynesia
 [(220, 650), (1500, 2020)], #Persia
 [(-750, 450)], #Rome
-[(-300, 600)], #Tamils
+[(-300, 600), (1300, 1650)], #Tamils
 [(1270, 1520), (1850, 2020)], #Ethiopia
 [(1800, 2020)], #Korea
 [(0, 800)], #Maya
@@ -1669,7 +1669,7 @@ tNormalAreasTL = (
 (99, 39), #China
 (74, 38), #Babylonia
 (64, 39), #Greece
-(87, 28), #India
+(87, 33), #India
 (72, 39), #Carthage
 (3, 15), #Polynesia
 (79, 37), #Persia
@@ -1713,7 +1713,7 @@ tNormalAreasTL = (
 (99, 39), #China
 (74, 38), #Babylonia
 (64, 39), #Greece
-(86, 29), #India
+(96, 42), #India
 (71, 39), #Carthage
 (3, 15), #Polynesia
 (79, 37), #Persia
