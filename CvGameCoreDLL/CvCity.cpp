@@ -5426,6 +5426,12 @@ int CvCity::happyLevel() const
 		iHappiness += GC.getDefineINT("TEMP_HAPPY");
 	}
 
+	// Indian UP: +1 happiness for two excess health
+	if (getOwner() == INDIA)
+	{
+		iHappiness += std::max(0, (goodHealth() - badHealth()) / 2);
+	}
+
 	return std::max(0, iHappiness);
 }
 
@@ -5570,15 +5576,15 @@ int CvCity::goodHealth() const
 		iTotalHealth += iHealth;
 	}
 
-	//Leoreth: Indian UP: +1 health per specialist
-	if (getOwner() == INDIA)
+	//Leoreth: Indian UP: +1 health per specialist - 
+	/*if (getOwner() == INDIA)
 	{
 		iHealth = getSpecialistPopulation();
 		if (iHealth > 0)
 		{
 			iTotalHealth += iHealth;
 		}
-	}
+	}*/
 
 	return iTotalHealth;
 }
