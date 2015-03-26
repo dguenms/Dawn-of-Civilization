@@ -180,7 +180,12 @@ class SevoPediaBonus:
 			screen.attachImageButton( panelName, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False )
 			screen.attachLabel(panelName, "", u"(" + localText.getText("TXT_KEY_PEDIA_BONUS_TRADE", ()) + u")")
 
-
+		# Leoreth
+		iTech = gc.getBonusInfo(self.iBonus).getTechPlayerTrade()
+		if (iTech > -1):
+			screen.attachImageButton( panelName, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False )
+			screen.attachLabel(panelName, "", u"(" + localText.getText("TXT_KEY_PEDIA_BONUS_PLAYER_TRADE", ()) + u")")
+	
 
 	def placeHistory(self):
 		screen = self.top.getScreen()

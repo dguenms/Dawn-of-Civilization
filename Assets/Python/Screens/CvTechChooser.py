@@ -766,7 +766,18 @@ class CvTechChooser:
 				szBonusReveal = self.getNextWidgetName("BonusRevealButton")
 				screen.addDDSGFCAt( szBonusReveal, szTechRecord, gc.getBonusInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_BONUS_REVEAL, i, j, False )
 				fX += X_INCREMENT
-
+		
+		# Leoreth: allows bonus trade
+		j = 0
+		k = 0
+		
+		for j in range( gc.getNumBonusInfos() ):
+			if gc.getBonusInfo(j).getTechPlayerTrade() == i:
+				szBonusPlayerTrade = self.getNextWidgetName("BonusPlayerTradeButton")
+				screen.addDDSGFCAt( szBonusPlayerTrade, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_GOLDTRADING").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_BONUS_PLAYER_TRADE, i, 0, False )
+				fX += X_INCREMENT
+				break
+				
 		j = 0
 		k = 0
 

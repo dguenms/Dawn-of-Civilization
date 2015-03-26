@@ -2756,7 +2756,7 @@ iUtopia = iCommunism
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 161
+iNumUnits = 162
 (iLion, iBear, iPanther, iWolf, iSettler, iWorker, iIndianFastWorker, iBrazilianLenhador, iScout, iExplorer, iSpy, iJewishMissionary,
 iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary,
 iZoroastrianMissionary, iWarrior, iIncanQuechua, iHarappanMilitia, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
@@ -2764,16 +2764,16 @@ iAxeman, iGreekPhalanx, iSumerianVulture, iNativeAmericaDogSoldier, iMaceman, iJ
 iSpearman, iZuluImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iFrenchMusketeer, iOttomanJanissary, iEthiopianOromoWarrior, 
 iIranianQizilbash, iIroquoisMohawk, iRifleman, iEnglishRedcoat, iAmericanMinuteman, iGrenadier, iColombianAlbionLegion, iAtInfantry, iInfantry, iBersagliere,
 iSamInfantry, iMobileSam, iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMaliSkirmisher, iBabylonBowman, iNubianMedjay, iMayaHolkan, 
-iLongbowman, iCrossbowman, iChinaChokonu, iChariot, iEgyptWarChariot, iCelticCidainh, iHittiteHuluganni, iPersiaImmortal, iHorseArcher, iCarthageNumidianCavalry, 
-iKushanAsvaka, iMongolKeshik, iTibetanKhampa, iKnight, iArabiaCamelarcher, iByzantineCataphract, iSeljukGhulamWarrior, iThaiChangSuek, iMandeFarari, 
-iSpanishConquistador, iCuirassier,  iMoorishCamelGunner, iPolishWingedHussar, iSiouxMountedBrave, iCavalry, iRussiaCossack, iMexicoRurales, iArgentineGrenadierCavalry, 
-iWarElephant, iKhmerBallistaElephant, iCarthaginianWarElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha, iTrebuchet, 
-iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iPolynesianWaka, iBireme, iTrireme, iCaravel, 
-iPortugalCarrack, iTamilDharani, iGalleon, iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iMoorishCorsair, iFrigate, iShipOfTheLine, 
-iIronclad, iTransport,  iDestroyer, iCanadaCorvette,iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, iJetFighter, 
-iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iStatesman, iGreatGeneralUnit, iGreatSpy,
-iFemaleProphet, iFemaleArtist, iFemaleScientist, iFemaleMerchant, iFemaleEngineer, iFemaleStatesman, iFemaleGreatGeneral, iFemaleGreatSpy,
-iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
+iIndianBambooBowman, iLongbowman, iCrossbowman, iChinaChokonu, iChariot, iEgyptWarChariot, iCelticCidainh, iHittiteHuluganni, iPersiaImmortal, iHorseArcher, 
+iCarthageNumidianCavalry, iKushanAsvaka, iMongolKeshik, iTibetanKhampa, iKnight, iArabiaCamelarcher, iByzantineCataphract, iSeljukGhulamWarrior, iThaiChangSuek, 
+iMandeFarari, iSpanishConquistador, iCuirassier,  iMoorishCamelGunner, iPolishWingedHussar, iSiouxMountedBrave, iCavalry, iRussiaCossack, iMexicoRurales, 
+iArgentineGrenadierCavalry, iWarElephant, iKhmerBallistaElephant, iCarthaginianWarElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha, 
+iTrebuchet, iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iPolynesianWaka, iBireme, iTrireme, 
+iCaravel, iPortugalCarrack, iTamilDharani, iGalleon, iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iMoorishCorsair, iFrigate, 
+iShipOfTheLine, iIronclad, iTransport,  iDestroyer, iCanadaCorvette,iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, 
+iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iStatesman, iGreatGeneralUnit, 
+iGreatSpy,iFemaleProphet, iFemaleArtist, iFemaleScientist, iFemaleMerchant, iFemaleEngineer, iFemaleStatesman, iFemaleGreatGeneral, 
+iFemaleGreatSpy, iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
 
 iCongoPombos = iKongoPombos
 iCamelArcher = iArabiaCamelarcher

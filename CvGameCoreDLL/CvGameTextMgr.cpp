@@ -8030,6 +8030,14 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 		bFirst = buildBonusRevealString(szBuffer, eTech, iI, bFirst, true, bPlayerContext);
 	}
 
+	// Leoreth
+	bFirst = true;
+
+	for (iI = 0; iI < GC.getNumBonusInfos(); ++iI)
+	{
+		bFirst = buildBonusTradeString(szBuffer, eTech, iI, bFirst, true, bPlayerContext);
+	}
+
 	bFirst = true;
 
 	for (iI = 0; iI < GC.getNumCivicInfos(); ++iI)
@@ -12042,6 +12050,17 @@ void CvGameTextMgr::setGoodHealthHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			}
 		}*/
 
+		// Leoreth: Indian UP
+		if (city.getOwner() == INDIA)
+		{
+			iHealth = (city.happyLevel() - city.unhappyLevel()) / 3;
+			if (iHealth > 0)
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_GOOD_HEALTH_FROM_HAPPINESS", iHealth));
+				szBuffer.append(NEWLINE);
+			}
+		}
+
 		szBuffer.append(L"-----------------------\n");
 
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_TOTAL_HEALTHY", city.goodHealth()));
@@ -12490,13 +12509,13 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
-		iHappy = (city.getOwnerINLINE() == INDIA) ? (city.goodHealth() - city.badHealth()) / 2 : 0;
+		/*iHappy = (city.getOwnerINLINE() == INDIA) ? (city.goodHealth() - city.badHealth()) / 2 : 0;
 		if (iHappy > 0)
 		{
 			iTotalHappy += iHappy;
 			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_HEALTH", iHappy));
 			szBuffer.append(NEWLINE);
-		}
+		}*/
 
 		iHappy = (city.getExtraHappiness() + GET_PLAYER(city.getOwnerINLINE()).getExtraHappiness());
 		if (iHappy > 0)
@@ -14174,6 +14193,23 @@ bool CvGameTextMgr::buildBonusRevealString(CvWStringBuffer &szBuffer, TechTypes 
 		}
 		szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getBonusInfo((BonusTypes) iBonusType).getDescription());
 		setListHelp(szBuffer, gDLL->getText("TXT_KEY_MISC_REVEALS").c_str(), szTempBuffer, L", ", bFirst);
+		bFirst = false;
+	}
+	return bFirst;
+}
+
+bool CvGameTextMgr::buildBonusTradeString(CvWStringBuffer &szBuffer, TechTypes eTech, int iBonusType, bool bFirst, bool bList, bool bPlayerContext)
+{
+	CvWString szTempBuffer;
+
+	if (GC.getBonusInfo((BonusTypes)iBonusType).getTechPlayerTrade() == eTech)
+	{
+		if (bList && bFirst)
+		{
+			szBuffer.append(NEWLINE);
+		}
+		szTempBuffer.Format(SETCOLR L"<link=literal>%s</link>" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getBonusInfo((BonusTypes)iBonusType).getDescription());
+		setListHelp(szBuffer, gDLL->getText("TXT_KEY_MISC_BONUS_PLAYER_TRADE").c_str(), szTempBuffer, L", ", bFirst);
 		bFirst = false;
 	}
 	return bFirst;

@@ -138,4 +138,8 @@
 		<Tag>TXT_KEY_MAYA_HOLKAN_EFFECT</Tag>
 		<English>Your Holkan has defeated a %s1 %s2, acquiring %d3 [ICON_FOOD] for %s4.</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIAN_BAMBOO_BOWMAN</Tag>
+		<English>Bamboo Bowman</English>
+	</TEXT>
 </Civ4GameText>

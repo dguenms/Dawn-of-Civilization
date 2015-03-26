@@ -427,6 +427,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseBonusRevealHelp(widgetDataStruct, szBuffer);
 		break;
 
+	// Leoreth
+	case WIDGET_HELP_BONUS_PLAYER_TRADE:
+		parseBonusPlayerTradeHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_HELP_CIVIC_REVEAL:
 		parseCivicRevealHelp(widgetDataStruct, szBuffer);
 		break;
@@ -4584,6 +4589,20 @@ void CvDLLWidgetData::parseYieldChangeHelp(CvWidgetDataStruct &widgetDataStruct,
 void CvDLLWidgetData::parseBonusRevealHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	GAMETEXT.buildBonusRevealString(szBuffer, ((TechTypes)(widgetDataStruct.m_iData1)), widgetDataStruct.m_iData2, true);
+}
+
+void CvDLLWidgetData::parseBonusPlayerTradeHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	bool bFirst = true;
+	TechTypes eTech = (TechTypes)widgetDataStruct.m_iData1;
+	
+	for (int iI = 0; iI < GC.getNumBonusInfos(); ++iI)
+	{
+		if (GC.getBonusInfo((BonusTypes)iI).getTechPlayerTrade() == eTech)
+		{
+			bFirst = GAMETEXT.buildBonusTradeString(szBuffer, eTech, (BonusTypes)iI, bFirst, false, true);
+		}
+	}
 }
 
 void CvDLLWidgetData::parseCivicRevealHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)

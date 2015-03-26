@@ -1855,6 +1855,11 @@ class RiseAndFall:
 						gc.getMap().plot(x-1, y+1).setFeatureType(-1, 0)
 						
 				if not utils.isReborn(iKhmer): pKhmer.setReborn(True)
+				
+				# Prey Nokor becomes Saigon
+				x, y = (104, 33)
+				if gc.getMap().plot(x, y).isCity():
+					gc.getMap().plot(x, y).getPlotCity().setName("Saigon", False)
 
 			if iCiv == iMongolia and utils.getHumanID() != iMongolia:
 				tTopLeft = (81, 45) # 6 more west, 1 more south
@@ -3180,7 +3185,7 @@ class RiseAndFall:
         def createStartingUnits( self, iCiv, tPlot ):
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
+			utils.makeUnit(con.iIndianBambooBowman, iCiv, tPlot, 1)
                 if (iCiv == iGreece):
 			utils.createSettlers(iCiv, 1)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 2)
@@ -3637,7 +3642,8 @@ class RiseAndFall:
                                 
         def createStartingWorkers( self, iCiv, tPlot ):
 		if iCiv == iIndia:
-			utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 2)
+			#utils.makeUnit(con.iIndianFastWorker, iCiv, tPlot, 2)
+			utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iGreece):
                         utils.makeUnit(con.iWorker, iCiv, tPlot, 2)
                 if (iCiv == iPersia):
