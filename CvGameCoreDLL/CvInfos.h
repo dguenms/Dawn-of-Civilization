@@ -3106,6 +3106,7 @@ public:
 	void setChar(int i);								// Exposed to Python
 	int getTechReveal() const;					// Exposed to Python
 	int getTechCityTrade() const;				// Exposed to Python
+	int getTechPlayerTrade() const;
 	int getTechObsolete() const;				// Exposed to Python
 	int getAITradeModifier() const;			// Exposed to Python
 	int getAIObjective() const;			// Exposed to Python
@@ -3164,6 +3165,7 @@ protected:
 	int m_iChar;
 	int m_iTechReveal;
 	int m_iTechCityTrade;
+	int m_iTechPlayerTrade;
 	int m_iTechObsolete;
 	int m_iAITradeModifier;
 	int m_iAIObjective;

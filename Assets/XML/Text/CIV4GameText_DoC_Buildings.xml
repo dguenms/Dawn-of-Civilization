@@ -98,4 +98,8 @@
 		<English>[COLOR_WARNING_TEXT]Requires at least %d1_Num Colony[COLOR_REVERT]</English>
 		<German>[COLOR_WARNING_TEXT]Erfordert mindestens %d1_Num Kolonie[COLOR_REVERT]</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SMOKEHOUSE</Tag>
+		<English>Smokehouse</English>
+	</TEXT>
 </Civ4GameText>

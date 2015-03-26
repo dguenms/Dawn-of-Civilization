@@ -192,6 +192,7 @@
 	<ElementType name="BonusClassType" content="textOnly"/>
 	<ElementType name="TechReveal" content="textOnly"/>
 	<ElementType name="TechCityTrade" content="textOnly"/>
+	<ElementType name="TechPlayerTrade" content="textOnly"/>
 	<ElementType name="TechObsolete" content="textOnly"/>
 	<ElementType name="iAITradeModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iAIObjective" content="textOnly" dt:type="int"/>
@@ -249,6 +250,7 @@
 		<element type="ArtDefineTag"/>
 		<element type="TechReveal"/>
 		<element type="TechCityTrade"/>
+		<element type="TechPlayerTrade"/>
 		<element type="TechObsolete"/>
 		<element type="YieldChanges"/>
 		<element type="iAITradeModifier"/>

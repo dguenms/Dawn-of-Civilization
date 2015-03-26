@@ -38,7 +38,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_IND2</Tag>
-		<English>One extra [ICON_HAPPY] for every two excess [ICON_HEALTHY]</English>
+		<English>One extra [ICON_HEALTHY] for every three excess [ICON_HAPPY]</English>
 		<French>Pas d'anarchie lors des révolutions</French>
 		<German>Eine zusätzliche [ICON_HAPPY] pro zwei überzählige [ICON_HEALTHY]</German>
 		<Italian>Niente anarchia durante le rivoluzioni</Italian>
@@ -400,6 +400,11 @@
 		<Tag>TXT_KEY_MISC_GOOD_HEALTH_FROM_SPECIALISTS</Tag>
 		<English>%D1_Change[ICON_HEALTHY] from Specialists</English>
 		<German>%D1_Change[ICON_HEALTHY] durch Spezialisten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_GOOD_HEALTH_FROM_HAPPINESS</Tag>
+		<English>%D1_Change[ICON_HEALTHY] from Excess Happiness</English>
+		<German>%D1_Change[ICON_HEALTHY] durch überschüssige Zufriedenheit</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_MONGOL_TERROR</Tag>

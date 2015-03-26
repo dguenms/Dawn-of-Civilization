@@ -15,6 +15,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_ALUMINUM</ArtDefineTag>
 			<TechReveal>TECH_INDUSTRIALISM</TechReveal>
 			<TechCityTrade>TECH_ELECTRICITY</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -72,6 +73,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_COAL</ArtDefineTag>
 			<TechReveal>TECH_STEAM_POWER</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -125,6 +127,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_COPPER</ArtDefineTag>
 			<TechReveal>TECH_BRONZE_WORKING</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -190,6 +193,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_HORSE</ArtDefineTag>
 			<TechReveal>TECH_ANIMAL_HUSBANDRY</TechReveal>
 			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -247,6 +251,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_IRON</ArtDefineTag>
 			<TechReveal>TECH_IRON_WORKING</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -312,6 +317,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_MARBLE</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_MASONRY</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -369,6 +375,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_OIL</ArtDefineTag>
 			<TechReveal>TECH_SCIENTIFIC_METHOD</TechReveal>
 			<TechCityTrade>TECH_COMBUSTION</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -440,6 +447,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_STONE</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_MASONRY</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -493,6 +501,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_URANIUM</ArtDefineTag>
 			<TechReveal>TECH_PHYSICS</TechReveal>
 			<TechCityTrade>TECH_FISSION</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -588,6 +597,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_BANANA</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -642,6 +652,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_CLAM</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
+			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -650,7 +661,7 @@
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
-			<iHealth>0</iHealth>
+			<iHealth>1</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>6</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
@@ -691,6 +702,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_CORN</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_AGRICULTURE</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -699,7 +711,7 @@
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
-			<iHealth>0</iHealth>
+			<iHealth>1</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>4</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
@@ -741,6 +753,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_COW</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
+			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -794,6 +807,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_CRAB</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
+			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -802,7 +816,7 @@
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
-			<iHealth>0</iHealth>
+			<iHealth>1</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>6</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
@@ -843,6 +857,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_DEER</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_HUNTING</TechCityTrade>
+			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -902,6 +917,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_FISH</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
+			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -910,7 +926,7 @@
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
-			<iHealth>0</iHealth>
+			<iHealth>1</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>6</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
@@ -955,6 +971,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_PIG</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
+			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -1014,6 +1031,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_RICE</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_AGRICULTURE</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -1022,7 +1040,7 @@
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
-			<iHealth>0</iHealth>
+			<iHealth>1</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>4</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
@@ -1073,6 +1091,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_SHEEP</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
+			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -1126,6 +1145,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_WHEAT</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_AGRICULTURE</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -1134,7 +1154,7 @@
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
-			<iHealth>0</iHealth>
+			<iHealth>1</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>4</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
@@ -1176,6 +1196,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_DYE</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1230,6 +1251,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_FUR</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_HUNTING</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>TECH_PLASTICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1297,6 +1319,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_GEMS</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1351,6 +1374,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_GOLD</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1404,6 +1428,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_INCENSE</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1453,6 +1478,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_IVORY</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_HUNTING</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>TECH_INDUSTRIALISM</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1512,6 +1538,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_SILK</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1571,6 +1598,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_SILVER</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1624,6 +1652,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_SPICES</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1686,6 +1715,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_SUGAR</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -1740,6 +1770,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_WINE</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_MONARCHY</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1790,6 +1821,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_WHALE</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>TECH_COMBUSTION</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -1839,6 +1871,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_DRAMA</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges/>
 			<iAITradeModifier>0</iAITradeModifier>
@@ -1879,6 +1912,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_MUSIC</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges/>
 			<iAITradeModifier>0</iAITradeModifier>
@@ -1919,6 +1953,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_MOVIES</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges/>
 			<iAITradeModifier>0</iAITradeModifier>
@@ -1960,6 +1995,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_COTTON</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -2014,6 +2050,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_COFFEE</ArtDefineTag>
 			<TechReveal>TECH_GUILDS</TechReveal>
 			<TechCityTrade>TECH_GUILDS</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -2068,6 +2105,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_TEA</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -2131,6 +2169,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_TOBACCO</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>TECH_CALENDAR</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -2202,6 +2241,7 @@
 			<ArtDefineTag>ART_DEF_BONUS_PEARL</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
+			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>TECH_PLASTICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>

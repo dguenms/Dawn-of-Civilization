@@ -1195,6 +1195,8 @@ public:
 
 	int countCoreCities() const;
 
+	bool canTradeBonus(BonusTypes eBonus) const;
+
 protected:
 
 	int m_iStartingX;

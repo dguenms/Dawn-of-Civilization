@@ -151,3 +151,8 @@
 # Shivaji Bhosle renamed Shahuji
 # extended Indochina to the east
 # Saigon spawns in 1400 AD
+# barbarians spawn in the Deccan
+# corrected revealed area to the Indians
+# new Indian UP: Purity: one extra happiness for every two excess health
+# removed health from Wheat, Rice, Corn, Fish, Clam, Crabs
+# Harbors now give extra health from Fish, Clam, Crabs, instead of Lighthouses

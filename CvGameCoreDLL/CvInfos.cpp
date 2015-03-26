@@ -13474,6 +13474,7 @@ m_iBonusClassType(NO_BONUSCLASS),
 m_iChar(0),
 m_iTechReveal(0),
 m_iTechCityTrade(0),
+m_iTechPlayerTrade(0),
 m_iTechObsolete(0),
 m_iAITradeModifier(0),
 m_iAIObjective(0),
@@ -13546,6 +13547,11 @@ int CvBonusInfo::getTechReveal() const
 int CvBonusInfo::getTechCityTrade() const
 {
 	return m_iTechCityTrade;
+}
+
+int CvBonusInfo::getTechPlayerTrade() const
+{
+	return m_iTechPlayerTrade;
 }
 
 int CvBonusInfo::getTechObsolete() const
@@ -13750,6 +13756,7 @@ void CvBonusInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iChar);
 	stream->Read(&m_iTechReveal);
 	stream->Read(&m_iTechCityTrade);
+	stream->Read(&m_iTechPlayerTrade);
 	stream->Read(&m_iTechObsolete);
 	stream->Read(&m_iAITradeModifier);
 	stream->Read(&m_iAIObjective);
@@ -13813,6 +13820,7 @@ void CvBonusInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iChar);
 	stream->Write(m_iTechReveal);
 	stream->Write(m_iTechCityTrade);
+	stream->Write(m_iTechPlayerTrade);
 	stream->Write(m_iTechObsolete);
 	stream->Write(m_iAITradeModifier);
 	stream->Write(m_iAIObjective);
@@ -13870,6 +13878,9 @@ bool CvBonusInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName( szTextVal, "TechCityTrade");
 	m_iTechCityTrade = pXML->FindInInfoClass(szTextVal);
+
+	pXML->GetChildXmlValByName( szTextVal, "TechPlayerTrade");
+	m_iTechPlayerTrade = pXML->FindInInfoClass(szTextVal);
 
 	pXML->GetChildXmlValByName( szTextVal, "TechObsolete");
 	m_iTechObsolete = pXML->FindInInfoClass(szTextVal);

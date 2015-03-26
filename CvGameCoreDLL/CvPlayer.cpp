@@ -4213,6 +4213,8 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 	case TRADE_RESOURCES:
 		FAssertMsg(item.m_iData > -1, "iData is expected to be non-negative");
 
+		if (!canTradeBonus((BonusTypes)item.m_iData)) return false;
+
 		if (canTradeNetworkWith(eWhoTo))
 		{
 			if (!GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isBonusObsolete((BonusTypes) item.m_iData) && !GET_TEAM(getTeam()).isBonusObsolete((BonusTypes) item.m_iData))
@@ -25606,4 +25608,9 @@ int CvPlayer::countCoreCities() const
 	}
 
 	return iNumCoreCities;
+}
+
+bool CvPlayer::canTradeBonus(BonusTypes eBonus) const
+{
+	return (GC.getBonusInfo(eBonus).getTechPlayerTrade() == NO_TECH || GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBonusInfo(eBonus).getTechPlayerTrade()));
 }
