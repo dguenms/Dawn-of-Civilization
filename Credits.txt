@@ -45,10 +45,12 @@ From mods, without explicit mention of the original creators
 # The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)
 
 UNITS
-# History Rewritten mod: Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave, Huscarl and Waka graphics
+# History Rewritten mod (Xyth): Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave, Huscarl and Waka graphics
+# Bakuel: Bamboo Bowman (Maurya Archer)
 
 OTHER GRAPHICS
 # Slave unit: RFC Classical World by srpt
+# Smokehouse building: History Rewritten by Xyth
 
 MODULES
 # Himeji Castle, Empire State Building: Voyhkah
@@ -62,6 +64,7 @@ MISCELLANEOUS
 # Jusos2108: map changes in Australia
 # blizzrd: map changes in Scandinavia
 # Sgt. Bears: text and XML work
+# andrewv42: map changes in India and Indochina
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others

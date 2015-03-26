@@ -151,8 +151,10 @@
 # Shivaji Bhosle renamed Shahuji
 # extended Indochina to the east
 # Saigon spawns in 1400 AD
-# barbarians spawn in the Deccan
-# corrected revealed area to the Indians
-# new Indian UP: Purity: one extra happiness for every two excess health
-# removed health from Wheat, Rice, Corn, Fish, Clam, Crabs
-# Harbors now give extra health from Fish, Clam, Crabs, instead of Lighthouses
+# new Indian UP: Purity: one extra health for every three excess happiness
+# new building: Smokehouse (requires Animal Husbandry): +1 health from Cow, Deer, Pig, Sheep
+# Granary does not give extra health for Wheat, Corn, Rice anymore
+# Supermarket does not give extra health for Cow, Deer, Pig, Sheep anymore
+# new Supermarket effect: +1 health from Wheat, Corn, Rice
+# Cow, Deer, Pig, Sheep, Fish, Clam and Crab cannot be traded until the discovery of Refrigeration
+# new Indian UB: Bamboo Bowman (Archer): can enter Jungle, starts with Shock and Woodsman I
