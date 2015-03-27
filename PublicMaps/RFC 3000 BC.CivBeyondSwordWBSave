@@ -32008,7 +32008,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=35
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
