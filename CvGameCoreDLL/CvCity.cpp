@@ -17579,7 +17579,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 		if (iOldValue > 0)
 		{
-			for (iI = iNewValue; iI < iOldValue; iI++)
+			for (iI = iOldValue; iI > iNewValue; iI--)
 			{
 				pLoopPlot = getCulturePlot(iI);
 
@@ -17597,6 +17597,8 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 	{
 		m_iNextCoveredPlot = iNewValue;
 
+		bool bCoveredNewPlot = false;
+
 		if (iNewValue > 0)
 		{
 			for (iI = iOldValue; iI < iNewValue; iI++)
@@ -17607,6 +17609,12 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 				{
 					//GC.getGameINLINE().logMsg("Added coverage for x=%d, y=%d on x=%d, y=%d (id=%d)", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY(), getCulturePlot(iI));
 					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
+
+					if (pLoopPlot->getCultureRangeCities(getOwnerINLINE(), iCultureRange) == 0)
+					{
+						bCoveredNewPlot = true;
+					}
+
 					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, 1, bUpdatePlotGroups);
 				}
 			}
@@ -17614,7 +17622,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 		if (GC.getGameINLINE().isFinalInitialized())
 		{
-			if (getNextCoveredPlot() > 0 && getCultureCost(getNextCoveredPlot()-1) > 0)
+			if (getNextCoveredPlot() > 0 && getCultureCost(getNextCoveredPlot()-1) > 0 && bCoveredNewPlot)
 			{
 				szBuffer = gDLL->getText("TXT_KEY_MISC_BORDERS_EXPANDED", getNameKey());
 				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CULTUREEXPANDS", MESSAGE_TYPE_MINOR_EVENT, GC.getCommerceInfo(COMMERCE_CULTURE).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
