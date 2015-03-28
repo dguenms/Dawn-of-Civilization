@@ -6772,8 +6772,6 @@ void CvCity::updateMaintenance()
 		iNewMaintenance = (calculateBaseMaintenanceTimes100() * std::max(0, (getMaintenanceModifier() + 100))) / 100;
 	}
 
-	GC.getGame().logMsg("Update maintenance for %d, old: %d, new: %d", getID(), iOldMaintenance, iNewMaintenance);
-
 	if (iOldMaintenance != iNewMaintenance)
 	{
 		FAssert(iOldMaintenance >= 0);
@@ -17573,6 +17571,8 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 	iOldValue = getNextCoveredPlot();
 
+	//GC.getGameINLINE().logMsg("iOldValue = %d, iNewValue = %d", iOldValue, iNewValue);
+
 	if (iNewValue < iOldValue)
 	{
 		m_iNextCoveredPlot = iNewValue;
@@ -17581,12 +17581,14 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 		{
 			for (iI = iOldValue; iI > iNewValue; iI--)
 			{
+				if (iI >= NUM_CITY_PLOTS_3) continue;
+
 				pLoopPlot = getCulturePlot(iI);
 
 				if (pLoopPlot != NULL)
 				{
 					//GC.getGameINLINE().logMsg("Removed coverage for x=%d, y=%d on x=%d, y=%d", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
-					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
+					iCultureRange = std::max(0, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
 					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, -1, bUpdatePlotGroups);
 				}
 			}
@@ -17677,16 +17679,6 @@ int CvCity::getEffectiveNextCoveredPlot() const
 		iDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
 
 		if (pLoopPlot->getOwner() == NO_PLAYER && (iI >= iNextCoveredPlot || (iDistance > getCultureLevel() && iDistance > 0 && getCultureCost(iNextCoveredPlot) > getCultureThreshold((CultureLevelTypes)(iDistance-1))))) break;
-
-		/*if (iI < iNextCoveredPlot) 
-		{
-			iDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
-			if (iDistance > getCultureLevel() && iDistance > 0 && getCultureCost(iNextCoveredPlot) > getCultureThreshold((CultureLevelTypes)(iDistance-1))) break;
-		}
-		else
-		{
-			if (pLoopPlot->getOwner() == NO_PLAYER) break;
-		}*/
 
 		iI++;
 	}
