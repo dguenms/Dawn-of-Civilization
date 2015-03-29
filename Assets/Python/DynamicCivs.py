@@ -1807,7 +1807,7 @@ class DynamicCivs:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS")
 				return
 			else:
-				if bEmpire:
+				if bEmpire or bResurrected:
 					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")
 				else:
 					if capital.getName() == "Fiorenza" or capital.getName() == "Firenze":
