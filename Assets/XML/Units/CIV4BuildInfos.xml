@@ -82,7 +82,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -96,13 +102,11 @@
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
-					<!-- Rhye - start -->
 					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>500</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
-					<!-- Rhye - end -->
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_I</HotKey>
@@ -184,10 +188,16 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_IRON_WORKING</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
-					<!-- Rhye  -->
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -219,7 +229,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -275,7 +291,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -311,7 +333,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -337,7 +365,6 @@
 			<Description>TXT_KEY_BUILD_PLANTATION</Description>
 			<Help/>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>700</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -347,11 +374,17 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
-					<PrereqTech>TECH_CALENDAR</PrereqTech>
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<PrereqTech>TECH_IRON_WORKING</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
@@ -402,7 +435,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -428,7 +467,6 @@
 			<Description>TXT_KEY_BUILD_PASTURE</Description>
 			<Help/>
 			<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -438,7 +476,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -493,7 +537,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -548,7 +598,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -584,11 +640,17 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<PrereqTech>TECH_IRON_WORKING</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
@@ -638,7 +700,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
@@ -739,7 +807,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -769,7 +843,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -815,10 +895,16 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_IRON_WORKING</PrereqTech>
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
-					<!-- Rhye  -->
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<PrereqTech>TECH_IRON_WORKING</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
@@ -851,7 +937,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -888,7 +980,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -925,7 +1023,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -962,11 +1066,17 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
 					<PrereqTech>TECH_CALENDAR</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<PrereqTech>TECH_IRON_WORKING</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
@@ -998,7 +1108,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -1035,7 +1151,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -1071,7 +1193,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -1108,7 +1236,13 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
@@ -1145,11 +1279,17 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<!-- Rhye  -->
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<PrereqTech>TECH_IRON_WORKING</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>

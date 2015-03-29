@@ -6709,10 +6709,12 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		{
 			iYield += GC.getFeatureInfo(getFeatureType()).getYieldChange(eYield);
 
-			//Leoreth: Congo UP: +1 food, +1 production on jungle and marsh tiles
+			//Leoreth: Congo UP: +1 food, +1 production on jungle, rainforest and marsh tiles
 			if (getOwnerINLINE() == CONGO)
 			{
-				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") || getFeatureType() == GC.getInfoTypeForString("FEATURE_MUD"))
+				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
+					getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST") ||
+					getFeatureType() == GC.getInfoTypeForString("FEATURE_MUD"))
 				{
 					if ((int)eYield == 0 || (int)eYield == 1)
 					{
@@ -8511,7 +8513,7 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 
 			if (getFeatureType() != NO_FEATURE)
 			{
-				if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()))
+				if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()) && GET_TEAM(eTeam).isHasTech((TechTypes)GC.getBuildInfo(eBuild).getFeatureTech(getFeatureType())))
 				{
 					FAssertMsg(eTeam != NO_TEAM, "eTeam should be valid");
 

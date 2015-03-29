@@ -988,6 +988,11 @@
 		<German>[ICON_BULLET]Erlaubt Handel von:[SPACE]</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_FEATURE_RAINFOREST</Tag>
+		<English>Rainforest</English>
+		<German>Regenwald</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>
