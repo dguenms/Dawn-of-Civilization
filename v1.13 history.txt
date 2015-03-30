@@ -158,3 +158,10 @@
 # new Supermarket effect: +1 health from Wheat, Corn, Rice
 # Cow, Deer, Pig, Sheep, Fish, Clam and Crab cannot be traded until the discovery of Refrigeration
 # new Indian UB: Bamboo Bowman (Archer): can enter Jungle, starts with Shock and Woodsman I
+# new terrain feature: Rainforest
+	# minus 1 food
+	# passable only to civilian units and elephants
+	# can build mines, cottages and plantations with Iron Working
+	# Khmer can enter Rainforest and build Farms due to their UP
+	# rainforests are included in the Congolese UP
+	# replace jungle in India, Indochina, Indonesia, Polynesia, West Africa, East Africa and Mesoamerica
