@@ -33621,10 +33621,10 @@ BeginPlot
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
 		CityOwner=43
@@ -33988,10 +33988,10 @@ BeginPlot
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
 		CityOwner=43
@@ -34779,13 +34779,13 @@ BeginPlot
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginCity
 		CityOwner=44
@@ -34841,13 +34841,13 @@ BeginPlot
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
 		CityOwner=43
@@ -35220,13 +35220,13 @@ BeginPlot
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
 		CityOwner=43
@@ -35277,13 +35277,13 @@ BeginPlot
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginCity
 		CityOwner=44
@@ -35682,13 +35682,13 @@ BeginPlot
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=43
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=43
 	EndUnit
 	BeginCity
 		CityOwner=43
@@ -36892,13 +36892,13 @@ BeginPlot
 		UnitType=UNIT_INDIAN_FAST_WORKER, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_INDIAN_BAMBOO_BOWMAN, UnitOwner=44
 	EndUnit
 	BeginCity
 		CityOwner=44
