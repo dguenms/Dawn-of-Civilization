@@ -40434,7 +40434,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=30
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

@@ -1814,6 +1814,10 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<iFeatureDefense>20</iFeatureDefense>
 				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<iFeatureDefense>20</iFeatureDefense>
+				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitCombatMods/>
 			<DomainMods/>
@@ -1898,6 +1902,10 @@
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<iFeatureDefense>30</iFeatureDefense>
 				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<iFeatureDefense>30</iFeatureDefense>
+				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitCombatMods/>
 			<DomainMods/>
@@ -1909,6 +1917,10 @@
 				</FeatureDoubleMove>
 				<FeatureDoubleMove>
 					<FeatureType>FEATURE_FOREST</FeatureType>
+					<bFeatureDoubleMove>1</bFeatureDoubleMove>
+				</FeatureDoubleMove>
+				<FeatureDoubleMove>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<bFeatureDoubleMove>1</bFeatureDoubleMove>
 				</FeatureDoubleMove>
 			</FeatureDoubleMoves>
@@ -1988,6 +2000,10 @@
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<iFeatureAttack>50</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
