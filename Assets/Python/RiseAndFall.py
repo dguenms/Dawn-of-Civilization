@@ -3185,7 +3185,7 @@ class RiseAndFall:
         def createStartingUnits( self, iCiv, tPlot ):
 		if iCiv == iIndia:
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(con.iIndianBambooBowman, iCiv, tPlot, 1)
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 1)
                 if (iCiv == iGreece):
 			utils.createSettlers(iCiv, 1)
                         utils.makeUnit(con.iWarrior, iCiv, tPlot, 2)

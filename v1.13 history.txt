@@ -157,7 +157,7 @@
 # Supermarket does not give extra health for Cow, Deer, Pig, Sheep anymore
 # new Supermarket effect: +1 health from Wheat, Corn, Rice
 # Cow, Deer, Pig, Sheep, Fish, Clam and Crab cannot be traded until the discovery of Refrigeration
-# new Indian UB: Bamboo Bowman (Archer): can enter Jungle, starts with Shock and Woodsman I
+# new Indian UU: Bamboo Bowman (Longbowman): strength 5, requires Monarchy and Calendar, can enter Jungle, starts with Formation and Woodsman I
 # new terrain feature: Rainforest
 	# minus 1 food
 	# passable only to civilian units and elephants
