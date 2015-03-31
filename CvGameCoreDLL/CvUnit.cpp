@@ -2486,7 +2486,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		if (pPlot->getFeatureType() != NO_FEATURE)
 		{
 			// Leoreth: includes Khmer UP, also attacks are possible on impassable features
-			if (m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && (getOwnerINLINE() != KHMER || pPlot->getFeatureType() != 1) && !bAttack)
+			if (m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && (getOwnerINLINE() != KHMER || (pPlot->getFeatureType() != 1 && pPlot->getFeatureType() != 8)) && !bAttack)
 			{
 				TechTypes eTech = (TechTypes)m_pUnitInfo->getFeaturePassableTech(pPlot->getFeatureType());
 				if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
