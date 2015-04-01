@@ -102,4 +102,8 @@
 		<Tag>TXT_KEY_BUILDING_SMOKEHOUSE</Tag>
 		<English>Smokehouse</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT</Tag>
+		<English>Edict</English>
+	</TEXT>
 </Civ4GameText>

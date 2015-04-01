@@ -14,7 +14,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DESC_DEFAULT</Tag>
-		<English>Chola Empire</English>
+		<English>Chola Kingdom</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DESC_DEMOCRATIC</Tag>
@@ -39,6 +39,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_MYSORE</Tag>
 		<English>Kingdom of Mysore</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_CHOLA_EMPIRE</Tag>
+		<English>Chola Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_PANDYAN_EMPIRE</Tag>
+		<English>Pandyan Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_CHERA_EMPIRE</Tag>
+		<English>Chera Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_PANDYAN_KINGDOM</Tag>
+		<English>Pandyan Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_CHERA_KINGDOM</Tag>
+		<English>Chera Kingdom</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_</Tag>

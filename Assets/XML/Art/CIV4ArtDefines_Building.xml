@@ -2635,5 +2635,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Marae/Button_Marae.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_INDIAN_EDICT</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Edict/Edict.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Edict/Edict.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

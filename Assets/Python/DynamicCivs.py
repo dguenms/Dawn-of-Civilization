@@ -1443,6 +1443,28 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_VIJAYANAGARA")
 				return
 				
+			if bEmpire:
+				if capital.getName() in ["Madurai", "Thiruvananthapuram"]:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_PANDYAN_EMPIRE")
+					return
+					
+				if capital.getName() in ["Cochin", "Kozhikode"]:
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHERA_EMPIRE")
+					return
+					
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHOLA_EMPIRE")
+				return
+				
+			if capital.getName() in ["Madurai", "Thiruvananthapuram"]:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_PANDYAN_KINGDOM")
+				return
+				
+			if capital.getName() in ["Cochin", "Kozhikode"]:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHERA_KINDGOM")
+				return
+				
+			# Chola Kingdom default
+				
 		elif iPlayer == iEthiopia:
 			if not gc.getGame().isReligionFounded(con.iIslam):
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ETHIOPIA_AKSUM")
