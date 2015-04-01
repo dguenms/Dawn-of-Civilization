@@ -2694,8 +2694,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
-					<BuildingType>BUILDING_INDIAN_STEPWELL</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_OBELISK</BuildingClassType>
+					<BuildingType>BUILDING_INDIAN_EDICT</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

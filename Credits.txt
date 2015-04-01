@@ -46,10 +46,11 @@ From mods, without explicit mention of the original creators
 
 UNITS
 # History Rewritten mod (Xyth): Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave, Huscarl and Waka graphics
-# Bakuel: Bamboo Bowman (Maurya Archer)
+# Bakuel: Patiyodha (Gupta Longbowman)
+# RFC Classical World (srpt): Patiyodha name and button
 
 OTHER GRAPHICS
-# Slave unit: RFC Classical World by srpt
+# Slave unit, Indian Edict: RFC Classical World by srpt
 # Smokehouse building: History Rewritten by Xyth
 
 MODULES
