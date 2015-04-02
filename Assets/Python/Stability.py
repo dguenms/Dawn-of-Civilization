@@ -288,7 +288,7 @@ def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
 	bVassal = (iMaster != -1)
 	
 	# vassal checks are made for triggers of their master civ
-	if bVassal: return
+	if gc.getTeam(pPlayer.getTeam()).isAVassal and not bVassal: return
 	
 	if isImmune(iPlayer): return
 		
