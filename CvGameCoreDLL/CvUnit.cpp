@@ -2481,12 +2481,22 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	CvArea *pPlotArea = pPlot->area();
 	TeamTypes ePlotTeam = pPlot->getTeam();
 	bool bCanEnterArea = canEnterArea(ePlotTeam, pPlotArea);
+	bool bImpassableFeature;
 	if (bCanEnterArea)
 	{
 		if (pPlot->getFeatureType() != NO_FEATURE)
 		{
-			// Leoreth: includes Khmer UP, also attacks are possible on impassable features
-			if (m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && (getOwnerINLINE() != KHMER || (pPlot->getFeatureType() != 1 && pPlot->getFeatureType() != 8)) && !bAttack)
+			// Leoreth: impassable feature with improvement can be entered
+			bImpassableFeature = m_pUnitInfo->getFeatureImpassable(pPlot->getFeatureType()) && (pPlot->getImprovementType() == NO_IMPROVEMENT);
+
+			// Leoreth: Khmer UP
+			if (getOwnerINLINE() == KHMER && (pPlot->getFeatureType() == 1 || pPlot->getFeatureType() == 8))
+			{
+				bImpassableFeature = false;
+			}
+
+			// Leoreth: attacks on impassable tiles are possible now
+			if (bImpassableFeature && !bAttack)
 			{
 				TechTypes eTech = (TechTypes)m_pUnitInfo->getFeaturePassableTech(pPlot->getFeatureType());
 				if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
