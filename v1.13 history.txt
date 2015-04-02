@@ -165,3 +165,5 @@
 	# Khmer can enter Rainforest and build Farms due to their UP
 	# rainforests are included in the Congolese UP
 	# replace jungle in India, Indochina, Indonesia, Polynesia, West Africa, East Africa and Mesoamerica
+# impassable terrain features can be entered if improved
+# improved terrain features do not provide defense bonuses
