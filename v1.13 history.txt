@@ -167,3 +167,16 @@
 	# replace jungle in India, Indochina, Indonesia, Polynesia, West Africa, East Africa and Mesoamerica
 # impassable terrain features can be entered if improved
 # improved terrain features do not provide defense bonuses
+# New civilization: Harappa
+	# Human player only
+	# Spawn: 3000 BC at Harappa
+	# Leader: Vatavelli
+	# Color: Purple
+	# Unique Building: Bath (Aqueduct): requires Masonry, less production cost, +2 culture
+	# Unique Unit: City Builder (Settler): cheaper, new cities start with additional population
+	# Unique Power: Sanitation: positive health contributes to city growth
+	# Unique Historical Victory:
+		# Establish a trade connection with another civilization by 1600 BC
+		# Build three Baths and two Walls by 1500 BC
+		# Have a total population of 20 by 800 BC
+# Independent cities spawn with some initial culture

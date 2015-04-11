@@ -761,11 +761,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_VATAVELLI</Type>
-			<Button>Art/Leaderheads/Priestking/Vatavelli.dds</Button>
-			<NIF>Art/Leaderheads/Priestking/cyrus.nif</NIF>
-			<KFM>Art/Leaderheads/Priestking/cyrus.kfm</KFM>
-			<NoShaderNIF>Art/Leaderheads/Priestking/cyrus.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Priestking/cyrus_bg.kfm</BackgroundKFM>
+			<Button>Art/Leaderheads/Sennacherib/SennacheribButton.dds</Button>
+			<NIF>Art/LeaderHeads/Sennacherib/josef_stalin.nif</NIF>
+			<KFM>Art/LeaderHeads/Sennacherib/josef_stalin.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Sennacherib/josef_stalin_noshader.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Sennacherib/cyrus_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_RAHMAN</Type>
