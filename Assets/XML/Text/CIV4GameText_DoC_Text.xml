@@ -993,6 +993,10 @@
 		<German>Regenwald</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH</Tag>
+		<English>[ICON_BULLET]%D1%F2 from Excess Health</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>

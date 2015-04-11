@@ -692,6 +692,21 @@
 		<German></German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR1_TITLE</Tag>
+		<English>Trade Networks</English>
+		<German></German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR2_TITLE</Tag>
+		<English>Architecture</English>
+		<German></German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR3_TITLE</Tag>
+		<English>Urban Planning</English>
+		<German></German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV__TITLE</Tag>
 		<English></English>
 		<German></German>

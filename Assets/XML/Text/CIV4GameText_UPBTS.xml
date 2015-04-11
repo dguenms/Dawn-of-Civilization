@@ -270,4 +270,12 @@
 		<Tag>TXT_KEY_UP_PLY2</Tag>
 		<English>No penalties for cultural expansion over Ocean tiles</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HAR</Tag>
+		<English>The Power of Sanitation:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_HAR2</Tag>
+		<English>Positive health contributes to city growth</English>
+	</TEXT>
 </Civ4GameText>

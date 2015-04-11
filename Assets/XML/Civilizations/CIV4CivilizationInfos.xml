@@ -2281,7 +2281,7 @@
 			<ShortDescription>TXT_KEY_CIV_HARAPPANS_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_HARAPPANS_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_HARAPPANS_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_GREEN</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HARAPPANS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> <!-- Rhye -->
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
@@ -2289,7 +2289,7 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Harappa</City>
-				<City>Mohenjodaro</City>
+				<City>Mohenjo-Daro</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -2299,8 +2299,8 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_WARRIOR</UnitClassType>
-					<UnitType>UNIT_HARAPPAN_MILITIA</UnitType>
+					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
+					<UnitType>UNIT_HARAPPAN_SETTLER</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>

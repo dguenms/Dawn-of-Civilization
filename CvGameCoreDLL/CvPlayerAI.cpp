@@ -5698,6 +5698,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == MATHEMATICS || iI == BRONZEWORKING || iI == FEUDALISM)
 										iValue /= 3;
 									break;
+								case HARAPPA:
+									if (iI == MASONRY || iI == ANIMAL_HUSBANDRY || iI == POTTERY)
+										iValue *= 2;
+									if (iI == MONOTHEISM || iI == POLYTHEISM || iI == MEDITATION)
+										iValue /= 5;
 								case GREECE:
 									if (iI == MONOTHEISM || iI == MEDITATION || iI == MONARCHY)
 										iValue /= 3;

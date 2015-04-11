@@ -384,6 +384,9 @@ class Barbs:
 			city.setName(sName, False)
 			city.setPopulation(iPopulation)
 			
+			plot.changeCulture(iPlayer, 10 * (gc.getGame().getCurrentEra() + 1), True)
+			city.changeCulture(iPlayer, 10 * (gc.getGame().getCurrentEra() + 1), True)
+			
 			if iNumUnits > 0 and iUnitType > 0:
 				utils.makeUnit(iUnitType, iPlayer, tPlot, iNumUnits)
 				
@@ -392,8 +395,8 @@ class Barbs:
 					city.setHasReligion(iReligion, True, False, False)
 					
 			return True
-		else:
-			return False
+		
+		return False
 					
 	def clearUnits(self, iPlayer, tPlot):	
 		lHumanUnits = []
