@@ -142,4 +142,16 @@
 		<Tag>TXT_KEY_UNIT_INDIAN_BAMBOO_BOWMAN</Tag>
 		<English>Patiyodha</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HARAPPAN_SETTLER</Tag>
+		<English>City Builder</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HARAPPAN_SETTLER_HELP</Tag>
+		<English>[ICON_BULLET]New cities start with additional population</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_</Tag>
+		<English></English>
+	</TEXT>
 </Civ4GameText>

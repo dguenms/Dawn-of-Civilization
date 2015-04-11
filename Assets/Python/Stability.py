@@ -519,7 +519,16 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 					bNotJerusalem = (not (closestCity.getX() == 73 and closestCity.getY() == 38))
 					if bCulture and bPopulation and bMaxPopulation and bNoHolyCities and bNoCapitals and bNotJerusalem:
 						lRemovedCities.append((closestCity.getX(), closestCity.getY()))
-						gc.getPlayer(con.iBarbarian).disband(closestCity)
+						
+	# always raze Harappan cities
+	if iPlayer == iHarappa:
+		for city in lCities:
+			if (city.getX(), city.getY()) not in lRemovedCities:
+				lRemovedCities.append((city.getX(), city.getY()))
+				
+	for tPlot in lRemovedCities:
+		x, y = tPlot
+		pBarbarian.disband(gc.getMap().plot(x, y).getPlotCity())
 	
 	for city in lCities:
 	

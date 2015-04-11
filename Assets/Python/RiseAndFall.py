@@ -45,6 +45,7 @@ iEgypt = con.iEgypt
 iIndia = con.iIndia
 iChina = con.iChina
 iBabylonia = con.iBabylonia
+iHarappa = con.iHarappa
 iGreece = con.iGreece
 iPersia = con.iPersia
 iCarthage = con.iCarthage
@@ -4021,6 +4022,10 @@ class RiseAndFall:
                 utils.makeUnit(iSettler, iBabylonia, tCapitals[0][iBabylonia], 1)
                 utils.makeUnit(iWarrior, iBabylonia, tCapitals[0][iBabylonia], 1)
 
+		if utils.getHumanID() == iHarappa or self.getPlayerEnabled(iHarappa):
+			utils.makeUnit(con.iHarappanSettler, iHarappa, tCapitals[0][iHarappa], 1)
+			utils.makeUnit(iWarrior, iHarappa, tCapitals[0][iHarappa], 1)
+
                 if ( pGreece.isHuman() ):
                     utils.makeUnit(iSettler, iGreece, tCapitals[0][iGreece], 1)
                     utils.makeUnit(iScout, iGreece, tCapitals[0][iGreece], 1)
@@ -5350,15 +5355,20 @@ class RiseAndFall:
 	
 		iHuman = utils.getHumanID()
 		
-		iRand = gc.getDefineINT("PLAYER_OCCURENCE_POLYNESIA")
-		
+		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLYNESIA")	
 		if iRand <= 0:
 			self.setPlayerEnabled(iPolynesia, False)
 		elif gc.getGame().getSorenRandNum(iRand, 'Polynesia enabled?') != 0:
 			self.setPlayerEnabled(iPolynesia, False)
+			
+		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_HARAPPA")
+		if iRand <= 0:
+			self.setPlayerEnabled(iHarappa, False)
+		elif gc.getGame().getSorenRandNum(iRand, 'Harappa enabled?') != 0:
+			self.setPlayerEnabled(iHarappa, False)
 		
 		if iHuman != iIndia and iHuman != iIndonesia:
-			iRand = gc.getDefineINT("PLAYER_OCCURENCE_TAMILS")
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TAMILS")
 			
 			if iRand <= 0:
 				self.setPlayerEnabled(iTamils, False)
@@ -5366,7 +5376,7 @@ class RiseAndFall:
 				self.setPlayerEnabled(iTamils, False)
 				
 		if iHuman != iChina and iHuman != iIndia and iHuman != iMughals:
-			iRand = gc.getDefineINT("PLAYER_OCCURENCE_TIBET")
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TIBET")
 			
 			if iRand <= 0:
 				self.setPlayerEnabled(iTibet, False)
@@ -5374,7 +5384,7 @@ class RiseAndFall:
 				self.setPlayerEnabled(iTibet, False)
 				
 		if iHuman != iSpain and iHuman != iMali:
-			iRand = gc.getDefineINT("PLAYER_OCCURENCE_MOORS")
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_MOORS")
 			
 			if iRand <= 0:
 				self.setPlayerEnabled(iMoors, False)
@@ -5382,7 +5392,7 @@ class RiseAndFall:
 				self.setPlayerEnabled(iMoors, False)
 				
 		if iHuman != iHolyRome and iHuman != iGermany and iHuman != iRussia:
-			iRand = gc.getDefineINT("PLAYER_OCCURENCE_POLAND")
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLAND")
 			
 			if iRand <= 0:
 				self.setPlayerEnabled(iPoland, False)
@@ -5390,7 +5400,7 @@ class RiseAndFall:
 				self.setPlayerEnabled(iPoland, False)
 				
 		if iHuman != iMali and iHuman != iPortugal:
-			iRand = gc.getDefineINT("PLAYER_OCCURENCE_CONGO")
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_CONGO")
 			
 			if iRand <= 0:
 				self.setPlayerEnabled(iCongo, False)
@@ -5398,7 +5408,7 @@ class RiseAndFall:
 				self.setPlayerEnabled(iCongo, False)
 				
 		if iHuman != iSpain:
-			iRand = gc.getDefineINT("PLAYER_OCCURENCE_ARGENTINA")
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_ARGENTINA")
 			
 			if iRand <= 0:
 				self.setPlayerEnabled(iArgentina, False)
@@ -5406,7 +5416,7 @@ class RiseAndFall:
 				self.setPlayerEnabled(iArgentina, False)
 				
 		if iHuman != iPortugal:
-			iRand = gc.getDefineINT("PLAYER_OCCURENCE_BRAZIL")
+			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_BRAZIL")
 			
 			if iRand <= 0:
 				self.setPlayerEnabled(iBrazil, False)

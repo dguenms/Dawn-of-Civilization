@@ -23665,6 +23665,12 @@ int CvPlayer::getNewCityProductionValue() const
 		iValue += (getGrowthThreshold(i) * GC.getDefineINT("ADVANCED_START_POPULATION_COST")) / 100;
 	}
 
+	// Leoreth: Harappan UU: cheaper settler
+	if (getID() == HARAPPA)
+	{
+		iValue /= 2;
+	}
+
 	return iValue;
 }
 

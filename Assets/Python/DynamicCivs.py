@@ -22,6 +22,7 @@ iEgypt = con.iEgypt
 iIndia = con.iIndia
 iChina = con.iChina
 iBabylonia = con.iBabylonia
+iHarappa = con.iHarappa
 iGreece = con.iGreece
 iPersia = con.iPersia
 iCarthage = con.iCarthage
@@ -204,6 +205,7 @@ class DynamicCivs:
                         iIndia : "TXT_KEY_CIV_INDIA_DESC_DEFAULT",
                         iChina : "TXT_KEY_CIV_CHINA_DESC_DEFAULT",
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_DEFAULT",
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_DEFAULT",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_DEFAULT",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEFAULT",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEFAULT",
@@ -250,6 +252,7 @@ class DynamicCivs:
                         iIndia : "TXT_KEY_CIV_INDIA_DESC_PEOPLES",
                         iChina : "TXT_KEY_CIV_CHINA_DESC_PEOPLES",
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_PEOPLES",
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_PEOPLES",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_PEOPLES",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_PEOPLES",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES",
@@ -615,6 +618,7 @@ class DynamicCivs:
                         iIndia : "TXT_KEY_CIV_INDIA_SOVIET_VASSAL",
                         iChina : "TXT_KEY_CIV_CHINA_SOVIET_VASSAL",
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_SOVIET_VASSAL",
+			iHarappa : "TXT_KEY_CIV_HARAPPA_SOVIET_VASSAL",
                         iGreece : "TXT_KEY_CIV_GREECE_SOVIET_VASSAL",
                         iPersia : "TXT_KEY_CIV_PERSIA_SOVIET_VASSAL",
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_SOVIET_VASSAL",
@@ -661,6 +665,7 @@ class DynamicCivs:
                         iIndia : "TXT_KEY_CIV_INDIA_NAZI_VASSAL",
                         iChina : "TXT_KEY_CIV_CHINA_NAZI_VASSAL",
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_NAZI_VASSAL",
+			iHarappa : "TXT_KEY_CIV_HARAPPA_NAZI_VASSAL",
                         iGreece : "TXT_KEY_CIV_GREECE_NAZI_VASSAL",
                         iPersia : "TXT_KEY_CIV_PERSIA_NAZI_VASSAL",
                         iCarthage : "TXT_KEY_CIV_CARTHAGE_NAZI_VASSAL",
@@ -707,6 +712,7 @@ class DynamicCivs:
                         iIndia : "TXT_KEY_CIV_INDIA_DESC_FASCIST",
                         iChina : "TXT_KEY_CIV_CHINA_DESC_FASCIST",
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_FASCIST",
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_FASCIST",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_FASCIST",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_FASCIST",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_FASCIST",
@@ -753,6 +759,7 @@ class DynamicCivs:
                         iIndia : "TXT_KEY_CIV_INDIA_DESC_COMMUNIST",
                         iChina : "TXT_KEY_CIV_CHINA_DESC_COMMUNIST",
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_COMMUNIST",
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_COMMUNIST",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_COMMUNIST",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_COMMUNIST",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST",
@@ -799,6 +806,7 @@ class DynamicCivs:
                         iIndia : "TXT_KEY_CIV_INDIA_DESC_DEMOCRATIC",
                         iChina : "TXT_KEY_CIV_CHINA_DESC_DEMOCRATIC",
                         iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_DEMOCRATIC",
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_DEMOCRATIC",
                         iGreece : "TXT_KEY_CIV_GREECE_DESC_DEMOCRATIC",
                         iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEMOCRATIC",
                         iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEMOCRATIC",
@@ -853,6 +861,7 @@ class DynamicCivs:
 			iIndia : con.iAsoka,
 			iChina : con.iQinShiHuang,
 			iBabylonia : con.iGilgamesh,
+			iHarappa : con.iVatavelli,
 			iGreece : con.iPericles,
 			iPersia : con.iCyrus,
 			iCarthage : con.iHiram,

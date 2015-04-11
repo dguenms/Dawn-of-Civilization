@@ -2347,6 +2347,8 @@ void CvGame::update()
 			break;
 		case BABYLONIA:
 			break;
+		case HARAPPA:
+			break;
 		case KOREA:
             if (getScenario() >= SCENARIO_600AD) //late start condition
                 break;

@@ -721,6 +721,18 @@
 		<English>Easter Island</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_BATHS</Tag>
+		<English>Baths: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_WALLS</Tag>
+		<English>Walls: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TOTAL_POPULATION</Tag>
+		<English>Total population: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_</Tag>
 		<English></English>
 	</TEXT>

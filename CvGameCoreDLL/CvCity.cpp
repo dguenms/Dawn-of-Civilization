@@ -461,9 +461,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		}
 	}
 
-    //Leoreth: Great Bath effect
-    /*if (GET_PLAYER(eOwner).isHasBuilding((BuildingTypes)GREAT_BATH) && !GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)CONSTRUCTION))
-        eraModifier++;*/
+    // Leoreth: Harappan UU (City Builder)
+	if (getOwnerINLINE() == HARAPPA)
+	{
+		eraModifier++;
+	}
+
 	changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + eraModifier);
 	//changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + iExtraPop);
 	//Rhye - end switch
@@ -5700,6 +5703,15 @@ int CvCity::foodDifference(bool bBottom) const
 		iDifference = (getYieldRate(YIELD_FOOD) - foodConsumption());
 	}
 
+	// Harappan UP: Sanitation (positive health contributes to city growth)
+	if (getOwnerINLINE() == HARAPPA)
+	{
+		if (iDifference > 1 && (goodHealth() - badHealth()) > 0)
+		{
+			iDifference += goodHealth() - badHealth();
+		}
+	}
+
 	if (bBottom)
 	{
 		if ((getPopulation() == 1) && (getFood() == 0))
@@ -9636,7 +9648,17 @@ int CvCity::getBaseYieldRateModifier(YieldTypes eIndex, int iExtra) const
 
 int CvCity::getYieldRate(YieldTypes eIndex) const
 {
-	return ((getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex)) / 100);
+	int iYieldRateTimes100 = getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex);
+
+	if (getOwnerINLINE() == HARAPPA && !isFoodProduction())
+	{
+		if (iYieldRateTimes100 - foodConsumption() * 100 > 1 && goodHealth() - badHealth() > 0)
+		{
+			iYieldRateTimes100 += 100 * (goodHealth() - badHealth());
+		}
+	}
+
+	return (iYieldRateTimes100 / 100);
 }
 
 

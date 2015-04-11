@@ -324,6 +324,28 @@ def checkTurn(iGameTurn, iPlayer):
 				win(iBabylonia, 2)
 			else:
 				lose(iBabylonia, 2)
+				
+	elif iPlayer == iHarappa:
+	
+		# first goal: establish a trade connection with another civilization by 1600 BC
+		if isPossible(iHarappa, 0):
+			if isTradeConnected(iHarappa):
+				win(iHarappa, 0)
+				
+		if iGameTurn == getTurnForYear(-1600):
+			expire(iHarappa, 0)
+			
+		# second goal: build three Baths and two Granaries by 1500 BC
+		if iGameTurn == getTurnForYear(-1500):
+			expire(iHarappa, 1)
+			
+		# third goal: have a total population of 20 by 800 BC
+		if isPossible(iHarappa, 2):
+			if pHarappa.getTotalPopulation() >= 20:
+				win(iHarappa, 2)
+				
+		if iGameTurn == getTurnForYear(-800):
+			expire(iHarappa, 2)
 			
 	elif iPlayer == iGreece:
 	
@@ -1634,6 +1656,15 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iConfucian >= 2 and iTaoist >= 2:
 					win(iChina, 0)
 					
+	# second Harappan goal: build three Baths and two Granaries by 1500 BC
+	elif iPlayer == iHarappa:
+		if isPossible(iHarappa, 1):
+			if iBuilding in [iHarappanBath, iGranary]:
+				iNumBaths = getNumBuildings(iHarappa, iHarappanBath)
+				iNumWalls = getNumBuildings(iHarappa, iWalls)
+				if iNumBaths >= 3 and iNumWalls >= 2:
+					win(iHarappa, 1)
+					
 	# second Indian goal: build 20 temples by 700 AD
 	elif iPlayer == iIndia:
 		if isPossible(iIndia, 1):
@@ -2687,6 +2718,13 @@ def countNativeCulture(iPlayer, iPercent):
 			
 	return iPlayerCulture
 	
+def isTradeConnected(iPlayer):
+	for iOtherPlayer in range(iNumPlayers):
+		if iPlayer != iOtherPlayer and gc.getPlayer(iPlayer).canTradeNetworkWith(iOtherPlayer):
+			return True
+			
+	return False
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -2899,6 +2937,15 @@ def getUHVHelp(iPlayer, iGoal):
 			iGoldenAgeTurns = sd.getChineseGoldenAgeTurns()
 			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(32)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 4)))
 
+	elif iPlayer == iHarappa:
+		if iGoal == 1:
+			iNumBaths = getNumBuildings(iHarappa, iHarappanBath)
+			iNumWalls = getNumBuildings(iHarappa, iWalls)
+			aHelp.append(getIcon(iNumBaths >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_BATHS", (iNumBaths, 3)) + ' ' + getIcon(iNumWalls >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_WALLS", (iNumWalls, 2)))
+		elif iGoal == 2:
+			iNumPopulation = pHarappa.getTotalPopulation()
+			aHelp.append(getIcon(iNumPopulation >= 20) + localText.getText("TXT_KEY_VICTORY_TOTAL_POPULATION", (iNumPopulation, 20)))
+			
 	elif iPlayer == iBabylonia:
 		if iGoal == 0:
 			bWriting = sd.getFirstDiscovered(iWriting) == iBabylonia

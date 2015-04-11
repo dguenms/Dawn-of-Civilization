@@ -533,9 +533,19 @@
 		<German>Bauen Sie bis zum Jahr 1200 n. Chr. die Moai-Statuen</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_</Tag>
-		<English></English>
-		<German></German>
+		<Tag>TXT_KEY_UHV_HAR1</Tag>
+		<English>Establish a trade connection with another civilization by 1600 BC</English>
+		<German>Richten Sie bis zum Jahr 1600 v. Chr. eine Handelsverbindung mit einer anderen Zivilisation ein</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR2</Tag>
+		<English>Build three Baths and two Walls by 1500 BC</English>
+		<German>Errichten Sie bis zum Jahr 1500 v. Chr. drei Bäder und zwei Stadtmauern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR3</Tag>
+		<English>Have a total population of 20 by 800 BC</English>
+		<German>Haben Sie bis zum Jahr 800 v. Chr. eine Gesamtbevölkerung von 20</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_</Tag>

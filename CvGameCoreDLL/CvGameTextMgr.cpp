@@ -16002,6 +16002,23 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 		bNeedSubtotal = true;
 	}
 
+	// Harappan UP: Sanitation (positive health contributes to city growth)
+	int iHealthFood = 0;
+	if (city.getOwnerINLINE() == HARAPPA)
+	{
+		if (!city.isFoodProduction() && city.getBaseYieldRate(YIELD_FOOD) * 100 - city.foodConsumption() > 1 && city.goodHealth() > city.badHealth())
+		{
+			iHealthFood = city.goodHealth() - city.badHealth();
+		}
+	}
+	if (iHealthFood != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH", iHealthFood, info.getChar()));
+		iBaseRate += iHealthFood;
+		bNeedSubtotal = true;
+	}
+
 	// Base and modifiers (only if there are modifiers since total is always shown)
 	if (city.getBaseYieldRateModifier(YIELD_FOOD) != 100)
 	{

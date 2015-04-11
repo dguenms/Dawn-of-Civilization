@@ -28,35 +28,39 @@
 		Note that if certain civilizations are controlled by the player, these civs will spawn regardless to provide a historical opponent
 	-->
 	<Define>
-		<DefineName>PLAYER_OCCURENCE_TAMILS</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_TAMILS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURENCE_TIBET</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_TIBET</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURENCE_MOORS</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_MOORS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURENCE_POLAND</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_POLAND</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURENCE_CONGO</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_CONGO</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURENCE_ARGENTINA</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_ARGENTINA</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURENCE_BRAZIL</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_BRAZIL</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->
 	</Define>
 	<Define>
-		<DefineName>PLAYER_OCCURENCE_POLYNESIA</DefineName>
+		<DefineName>PLAYER_OCCURRENCE_POLYNESIA</DefineName>
+		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
+	</Define>
+	<Define>
+		<DefineName>PLAYER_OCCURRENCE_HARAPPA</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
 	</Define>
 	

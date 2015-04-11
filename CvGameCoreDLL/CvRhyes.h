@@ -23,8 +23,8 @@ typedef list<char*> LISTCHAR;
 #define NUM_BUILDINGS_PLAGUE		(210) // always increment when a building is added except embassies
 #define NUM_BUILDINGTYPES_PLAGUE	(131) // increment when a building class is created except embassies
 
-#define NUM_MAJOR_PLAYERS		(43)
-#define NUM_PL					(43)
+#define NUM_MAJOR_PLAYERS		(44)
+#define NUM_PL					(44)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(52)
 //#define NUM_BONUS_ISLANDS		(11)
@@ -337,7 +337,6 @@ enum ECSArtStyles
 
 extern int startingTurn[];
 extern int startingTurnYear[]; // edead
-extern int lastResurrectionYear[]; // Leoreth
 //extern int fallTurnYear[];
 extern char loadingTime[NUM_CIVS][4];
 extern char loadingTime600AD[NUM_CIVS][4];
