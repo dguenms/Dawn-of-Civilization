@@ -521,7 +521,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 						lRemovedCities.append((closestCity.getX(), closestCity.getY()))
 						
 	# always raze Harappan cities
-	if iPlayer == iHarappa:
+	if iPlayer == con.iHarappa:
 		for city in lCities:
 			if (city.getX(), city.getY()) not in lRemovedCities:
 				lRemovedCities.append((city.getX(), city.getY()))
