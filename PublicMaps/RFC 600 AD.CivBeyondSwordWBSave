@@ -141,7 +141,7 @@ BeginPlayer
 	Team=3
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
-EndTeam
+EndPlayer
 BeginPlayer
 	LeaderType=LEADER_PERICLES
 	CivType=CIVILIZATION_GREECE                 
@@ -646,7 +646,6 @@ BeginMap
 	sealevel=SEALEVEL_MEDIUM                 
 	num plots written=8432
 EndMap
-
 
 ### Plot Info ###
 BeginPlot

@@ -6300,21 +6300,21 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Hermosillo
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -6695,21 +6695,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Guadalajara
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -7480,14 +7480,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Ciudad de M&#233;xico
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -7498,7 +7498,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
 		BuildingType=BUILDING_FLOATING_GARDENS
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=100
+		Player22Culture=100
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -7523,20 +7523,20 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Monterrey
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,45,
 EndPlot
@@ -9167,28 +9167,28 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
+		UnitType=UNIT_GALLEON, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=23
 		CityName=Nouvelle Orl&#233;ans
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -9198,7 +9198,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player22Culture=50
+		Player23Culture=50
 	EndCity
 	TeamReveal=23,45,
 EndPlot
@@ -9555,21 +9555,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Ciudad de Guatemala
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,24,44,
 EndPlot
@@ -9604,21 +9604,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Ciudad Real
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHICHEN_ITZA
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,24,44,45,
 EndPlot
@@ -9980,14 +9980,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Quito
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -9995,7 +9995,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -10529,21 +10529,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=Charles Town
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=23,24,44,45,
 EndPlot
@@ -10828,14 +10828,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Lima
 		CityPopulation=5
 		BuildingType=BUILDING_LIGHTHOUSE
@@ -10843,7 +10843,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=100
+		Player22Culture=100
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -10961,7 +10961,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=21
+		UnitType=UNIT_GALLEON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_NAVIGATION1
@@ -10970,14 +10970,14 @@ BeginPlot
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=La Habana
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -10986,7 +10986,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,24,45,
 EndPlot
@@ -11370,21 +11370,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Bogot&#225;
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -11540,35 +11540,35 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=York
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=23,24,44,
 EndPlot
@@ -12160,21 +12160,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Santiago de Chile
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -12369,14 +12369,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=23
 		CityName=Port-au-Prince
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -12385,7 +12385,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player22Culture=50
+		Player23Culture=50
 	EndCity
 	TeamReveal=22,23,24,45,
 EndPlot
@@ -12811,21 +12811,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Caracas
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,24,44,45,
 EndPlot
@@ -12936,21 +12936,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
+		UnitType=UNIT_GALLEON, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=New York
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -12960,7 +12960,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=24,44,
 EndPlot
@@ -12996,28 +12996,28 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=23
 		CityName=Montr&#233;al
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -13025,7 +13025,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player22Culture=50
+		Player23Culture=50
 	EndCity
 	TeamReveal=23,24,44,
 EndPlot
@@ -13243,21 +13243,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=La Paz
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -13476,14 +13476,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=Boston
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -13491,7 +13491,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=23,24,44,
 EndPlot
@@ -13852,14 +13852,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=San Juan
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -13867,7 +13867,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,24,45,
 EndPlot
@@ -14302,14 +14302,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=Bridgetown
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -14317,7 +14317,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=22,23,24,44,45,
 EndPlot
@@ -14592,7 +14592,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=21
+		UnitType=UNIT_GALLEON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_NAVIGATION1
@@ -14601,14 +14601,14 @@ BeginPlot
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Buenos Aires
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -14616,7 +14616,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -14769,21 +14769,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=Georgetown
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=22,23,24,44,45,
 EndPlot
@@ -15526,20 +15526,20 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Montevideo
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=50
+		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
 EndPlot
@@ -15823,21 +15823,21 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=St. John's
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=24,
 EndPlot
@@ -16116,21 +16116,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=23
 		CityName=Cayenne
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player22Culture=50
+		Player23Culture=50
 	EndCity
 	TeamReveal=22,23,24,29,44,45,
 EndPlot
@@ -16469,14 +16469,14 @@ BeginPlot
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=S&#227;o Paulo
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=50
+		Player29Culture=50
 	EndCity
 	TeamReveal=22,29,44,
 EndPlot
@@ -16552,21 +16552,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=Bel&#233;m
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=50
+		Player29Culture=50
 	EndCity
 	TeamReveal=22,23,29,44,45,
 EndPlot
@@ -17740,28 +17740,28 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=28
+		UnitType=UNIT_GALLEON, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=28
+		UnitType=UNIT_GALLEON, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=Rio de Janeiro
 		CityPopulation=5
 		BuildingType=BUILDING_GREAT_PALACE
@@ -17772,7 +17772,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=100
+		Player29Culture=100
 	EndCity
 	TeamReveal=22,29,44,
 EndPlot
@@ -18027,31 +18027,31 @@ BeginPlot
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=41,y=60
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=41,y=61
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=41,y=62
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=41,y=63
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=41,y=64
@@ -18062,7 +18062,7 @@ BeginPlot
 	x=41,y=65
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=41,y=66
@@ -18221,21 +18221,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=Recife
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=50
+		Player29Culture=50
 	EndCity
 	TeamReveal=22,29,44,
 EndPlot
@@ -18438,58 +18438,58 @@ BeginPlot
 	x=42,y=58
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=59
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=60
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=61
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=62
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=63
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=64
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=65
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=66
 	TerrainType=TERRAIN_SNOW
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=42,y=67
@@ -18842,25 +18842,25 @@ BeginPlot
 	x=43,y=58
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=43,y=59
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=43,y=60
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=43,y=61
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=43,y=62
@@ -18894,7 +18894,7 @@ BeginPlot
 	x=43,y=66
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=43,y=67
@@ -19154,14 +19154,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=Ponta Delgada
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -19172,7 +19172,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=50
+		Player29Culture=50
 	EndCity
 	TeamReveal=22,23,24,29,45,
 EndPlot
@@ -19261,13 +19261,13 @@ BeginPlot
 	x=44,y=58
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=44,y=59
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=44,y=60
@@ -19275,7 +19275,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_WHALING_BOATS
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=44,y=61
@@ -19313,7 +19313,7 @@ BeginPlot
 	x=44,y=66
 	TerrainType=TERRAIN_SNOW
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=44,y=67
@@ -19671,7 +19671,7 @@ BeginPlot
 	x=45,y=60
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=45,y=61
@@ -19734,7 +19734,7 @@ BeginPlot
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=45,y=67
@@ -20121,14 +20121,14 @@ BeginPlot
 	x=46,y=65
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=46,y=66
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=46,y=67
@@ -20271,13 +20271,13 @@ BeginPlot
 	x=47,y=26
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=47,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=47,y=28
@@ -20348,14 +20348,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=Funchal
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -20366,7 +20366,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=50
+		Player29Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,44,45,
 EndPlot
@@ -20532,13 +20532,13 @@ BeginPlot
 	x=47,y=65
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=47,y=66
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=47,y=67
@@ -20676,7 +20676,7 @@ BeginPlot
 	x=48,y=25
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=48,y=26
@@ -20933,13 +20933,13 @@ BeginPlot
 	x=48,y=65
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=48,y=66
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=48,y=67
@@ -21077,7 +21077,7 @@ BeginPlot
 	x=49,y=25
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=49,y=26
@@ -21116,19 +21116,19 @@ BeginPlot
 	x=49,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=49,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=49,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=49,y=34
@@ -21197,7 +21197,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=Lisboa
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -21218,7 +21218,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=250
+		Player29Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,29,38,45,
 EndPlot
@@ -21245,14 +21245,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=La Coru&#241;a
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -21264,7 +21264,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=100
+		Player22Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,29,38,45,
 EndPlot
@@ -21328,14 +21328,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=Dublin
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -21346,7 +21346,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player23Culture=100
+		Player24Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,38,45,
 EndPlot
@@ -21398,13 +21398,13 @@ BeginPlot
 	x=49,y=64
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=49,y=65
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=49,y=66
@@ -21582,32 +21582,32 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=50,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=50,y=32
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=50,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=50,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=50,y=35
@@ -22028,25 +22028,25 @@ BeginPlot
 	x=51,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=51,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=51,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=51,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=51,y=35
@@ -22123,7 +22123,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=21
+		UnitType=UNIT_GALLEON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_NAVIGATION1
@@ -22132,7 +22132,7 @@ BeginPlot
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=21
+		UnitType=UNIT_GALLEON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_NAVIGATION1
@@ -22141,7 +22141,7 @@ BeginPlot
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=21
+		UnitType=UNIT_GALLEON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_NAVIGATION1
@@ -22150,7 +22150,7 @@ BeginPlot
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=21
+		UnitType=UNIT_GALLEON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_NAVIGATION1
@@ -22159,14 +22159,14 @@ BeginPlot
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Sevilla
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -22182,7 +22182,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_MEZQUITA
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=100
+		Player22Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,29,35,38,44,45,
 EndPlot
@@ -22554,31 +22554,31 @@ BeginPlot
 	x=52,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=52,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=52,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=52,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=52,y=35
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=52,y=36
@@ -22645,7 +22645,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Madrid
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
@@ -22663,7 +22663,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=250
+		Player22Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,29,38,45,
 EndPlot
@@ -22784,14 +22784,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=Edinburgh
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
@@ -22806,7 +22806,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player23Culture=100
+		Player24Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,38,45,
 EndPlot
@@ -23074,7 +23074,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player45Culture=200
 	EndCity
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=53,y=32
@@ -23083,25 +23083,25 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=53,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=53,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=53,y=35
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=53,y=36
@@ -23198,42 +23198,42 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
+		UnitType=UNIT_GALLEON, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
+		UnitType=UNIT_GALLEON, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
+		UnitType=UNIT_GALLEON, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
+		UnitType=UNIT_GALLEON, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=23
 		CityName=Bordeaux
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -23248,7 +23248,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player22Culture=100
+		Player23Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,29,38,39,44,45,
 EndPlot
@@ -23298,7 +23298,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=London
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -23322,7 +23322,7 @@ BeginPlot
 		BuildingType=BUILDING_TRADING_COMPANY
 		ReligionType=RELIGION_JUDAISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player23Culture=250
+		Player24Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,38,39,
 EndPlot
@@ -23554,14 +23554,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=37
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=37
+		CityOwner=38
 		CityName=Elmina
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -23570,7 +23570,7 @@ BeginPlot
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CHRISTIANITY
-		Player37Culture=50
+		Player38Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,45,
 EndPlot
@@ -23614,31 +23614,31 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=54,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=54,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=54,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=54,y=35
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=54,y=36
@@ -23673,21 +23673,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Wahran
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=22,35,44,45,
 EndPlot
@@ -23877,7 +23877,7 @@ BeginPlot
 	x=54,y=64
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=54,y=65
@@ -24077,7 +24077,7 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=55,y=32
@@ -24086,19 +24086,19 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=55,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=55,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=55,y=35
@@ -24165,14 +24165,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Barcelona
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -24188,7 +24188,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=100
+		Player22Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,29,38,44,45,
 EndPlot
@@ -24239,7 +24239,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=22
+		CityOwner=23
 		CityName=Paris
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -24263,7 +24263,7 @@ BeginPlot
 		BuildingType=BUILDING_VERSAILLES
 		ReligionType=RELIGION_CHRISTIANITY
 		FreeSpecialistType=SPECIALIST_GREAT_SCIENTIST
-		Player22Culture=250
+		Player23Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,25,29,38,39,44,
 EndPlot
@@ -24354,13 +24354,13 @@ BeginPlot
 	x=55,y=64
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=55,y=65
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=55,y=66
@@ -24577,25 +24577,25 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=56,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=56,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=56,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=56,y=34
@@ -24682,14 +24682,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=22
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=23
 		CityName=Marseille
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -24701,7 +24701,7 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player22Culture=100
+		Player23Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,29,38,39,44,45,
 EndPlot
@@ -24835,13 +24835,13 @@ BeginPlot
 	x=56,y=64
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=56,y=65
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=56,y=66
@@ -25022,31 +25022,31 @@ BeginPlot
 	x=57,y=30
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=57,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=57,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=57,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=57,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=57,y=35
@@ -25191,7 +25191,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=37
+		CityOwner=38
 		CityName=Amsterdam
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -25217,7 +25217,7 @@ BeginPlot
 		ReligionType=RELIGION_CHRISTIANITY
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player37Culture=250
+		Player38Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,25,38,39,44,45,
 EndPlot
@@ -25287,19 +25287,19 @@ BeginPlot
 	x=57,y=64
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=57,y=65
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=57,y=66
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=57,y=67
@@ -25486,25 +25486,25 @@ BeginPlot
 	x=58,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=58,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=58,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=58,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=58,y=35
@@ -25539,14 +25539,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Tunus
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -25555,7 +25555,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=25,35,44,
 EndPlot
@@ -25762,26 +25762,26 @@ BeginPlot
 	x=58,y=64
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=58,y=65
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=58,y=66
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=58,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=59,y=0
@@ -25942,21 +25942,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=TXT_KEY_CITY_NAME_LAGOS
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=50
+		Player29Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,
 EndPlot
@@ -26019,19 +26019,19 @@ BeginPlot
 	x=59,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=59,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=59,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=59,y=34
@@ -26129,21 +26129,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=24
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=24
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=25
 		CityName=Mailand
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
@@ -26164,7 +26164,7 @@ BeginPlot
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_ENGINEER
-		Player24Culture=100
+		Player25Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,38,39,44,45,
 EndPlot
@@ -26198,21 +26198,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=39
 		CityName=Frankfurt
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -26232,7 +26232,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		HolyCityReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CHRISTIANITY
-		Player38Culture=100
+		Player39Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,38,39,45,
 EndPlot
@@ -26264,35 +26264,35 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=38
+		UnitType=UNIT_GALLEON, UnitOwner=39
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=38
+		UnitType=UNIT_GALLEON, UnitOwner=39
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=39
 		CityName=Hamburg
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -26309,7 +26309,7 @@ BeginPlot
 		ReligionType=RELIGION_CHRISTIANITY
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player38Culture=100
+		Player39Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,38,39,44,45,
 EndPlot
@@ -26382,26 +26382,26 @@ BeginPlot
 	x=59,y=64
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=59,y=65
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=59,y=66
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=59,y=67
 	FeatureType=FEATURE_ICE, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=60,y=0
@@ -26600,13 +26600,13 @@ BeginPlot
 	x=60,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=60,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=60,y=33
@@ -26987,19 +26987,19 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_WHALING_BOATS
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=60,y=66
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=60,y=67
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=61,y=0
@@ -27206,13 +27206,13 @@ BeginPlot
 	x=61,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=61,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=61,y=33
@@ -27246,21 +27246,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Trablus
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=35,44,
 EndPlot
@@ -27504,13 +27504,13 @@ BeginPlot
 	x=61,y=66
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=61,y=67
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=62,y=0
@@ -27637,7 +27637,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=36
+		CityOwner=37
 		CityName=Mbanza Kongo
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
@@ -27651,7 +27651,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player36Culture=100
+		Player37Culture=100
 	EndCity
 	TeamReveal=22,24,29,37,38,
 EndPlot
@@ -27736,7 +27736,7 @@ BeginPlot
 	x=62,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=62,y=32
@@ -27808,14 +27808,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=24
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=25
 		CityName=Neapel
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -27830,7 +27830,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player24Culture=100
+		Player25Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,35,38,39,44,45,
 EndPlot
@@ -27883,7 +27883,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginCity
-		CityOwner=24
+		CityOwner=25
 		CityName=Wien
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -27903,7 +27903,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		BuildingType=BUILDING_MILITARY_ACADEMY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player24Culture=250
+		Player25Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,25,26,28,35,38,39,44,45,
 EndPlot
@@ -27938,7 +27938,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=38
+		CityOwner=39
 		CityName=Berlin
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -27953,7 +27953,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player38Culture=250
+		Player39Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,25,26,28,38,39,44,45,
 EndPlot
@@ -28052,7 +28052,7 @@ BeginPlot
 	x=62,y=67
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=63,y=0
@@ -28119,21 +28119,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=37
+		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=37
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=37
+		CityOwner=38
 		CityName=Kaapstad
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -28142,7 +28142,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player37Culture=50
+		Player38Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,45,
 EndPlot
@@ -28287,7 +28287,7 @@ BeginPlot
 	x=63,y=30
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=63,y=31
@@ -28491,7 +28491,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=15
+		CityOwner=16
 		CityName=Stockholm
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
@@ -28509,7 +28509,7 @@ BeginPlot
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		BuildingType=BUILDING_JEWISH_CATHEDRAL
 		ReligionType=RELIGION_JUDAISM
-		Player15Culture=250
+		Player16Culture=250
 	EndCity
 	TeamReveal=16,39,44,45,
 EndPlot
@@ -28565,7 +28565,7 @@ BeginPlot
 	x=63,y=67
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=64,y=0
@@ -29035,7 +29035,7 @@ BeginPlot
 	x=64,y=67
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=65,y=0
@@ -29343,21 +29343,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Belgrad
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -29370,7 +29370,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=25,35,44,
 EndPlot
@@ -29400,21 +29400,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=24
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=24
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=25
 		CityName=Budapest
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
@@ -29428,7 +29428,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player24Culture=100
+		Player25Culture=100
 	EndCity
 	TeamReveal=16,22,23,25,26,28,35,39,44,45,
 EndPlot
@@ -29462,7 +29462,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=27
+		CityOwner=28
 		CityName=Warszawa
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
@@ -29480,7 +29480,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=250
+		Player28Culture=250
 	EndCity
 	TeamReveal=16,23,25,26,28,38,39,45,
 EndPlot
@@ -29499,14 +29499,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=39
 		CityName=K&#246;nigsberg
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
@@ -29516,7 +29516,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_JUDAISM
-		Player38Culture=100
+		Player39Culture=100
 	EndCity
 	TeamReveal=16,25,26,28,39,45,
 EndPlot
@@ -29573,14 +29573,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=15
+		CityOwner=16
 		CityName=Lule&#229;
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -29589,7 +29589,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player15Culture=100
+		Player16Culture=100
 	EndCity
 	TeamReveal=16,44,45,
 EndPlot
@@ -30256,21 +30256,21 @@ BeginPlot
 	x=67,y=19
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=67,y=20
 	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=67,y=21
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=67,y=22
@@ -30282,19 +30282,19 @@ BeginPlot
 	x=67,y=23
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=67,y=24
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=67,y=25
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=67,y=26
@@ -30372,14 +30372,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Iskenderiye
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -30398,7 +30398,7 @@ BeginPlot
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=200
+		Player35Culture=200
 	EndCity
 	TeamReveal=35,44,
 EndPlot
@@ -30432,14 +30432,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Atina
 		CityPopulation=6
 		BuildingType=BUILDING_HARBOR
@@ -30447,7 +30447,7 @@ BeginPlot
 		BuildingType=BUILDING_PARTHENON
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=200
+		Player35Culture=200
 	EndCity
 	TeamReveal=35,44,
 EndPlot
@@ -30557,21 +30557,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=27
+		UnitType=UNIT_MUSKETMAN, UnitOwner=28
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=27
+		UnitType=UNIT_MUSKETMAN, UnitOwner=28
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=27
+		CityOwner=28
 		CityName=Wilno
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
@@ -30584,7 +30584,7 @@ BeginPlot
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		BuildingType=BUILDING_CHRISTIAN_MONASTERY
 		ReligionType=RELIGION_CHRISTIANITY
-		Player27Culture=100
+		Player28Culture=100
 	EndCity
 	TeamReveal=16,25,26,28,39,45,
 EndPlot
@@ -30618,14 +30618,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=15
+		CityOwner=16
 		CityName=Helsingfors
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -30635,7 +30635,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
-		Player15Culture=100
+		Player16Culture=100
 	EndCity
 	TeamReveal=16,26,28,39,45,
 EndPlot
@@ -30821,33 +30821,33 @@ BeginPlot
 	x=68,y=20
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=68,y=21
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=68,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=68,y=23
 	BonusType=BONUS_IVORY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=68,y=24
 	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=68,y=25
@@ -30856,7 +30856,7 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=68,y=26
@@ -31028,7 +31028,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Kostantiniyye
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -31058,7 +31058,7 @@ BeginPlot
 		ReligionType=RELIGION_ORTHODOXY
 		HolyCityReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=300
+		Player35Culture=300
 	EndCity
 	TeamReveal=25,26,35,44,
 EndPlot
@@ -31352,45 +31352,45 @@ BeginPlot
 	x=69,y=21
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=69,y=22
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=69,y=23
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=69,y=24
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=69,y=25
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=69,y=26
 	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=69,y=27
 	FeatureType=FEATURE_MUD, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=69,y=28
@@ -31434,14 +31434,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=El-Uqsur
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -31449,7 +31449,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=35,44,45,
 EndPlot
@@ -31479,14 +31479,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=El-Kahire
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
@@ -31502,7 +31502,7 @@ BeginPlot
 		BuildingType=BUILDING_STONEHENGE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=200
+		Player35Culture=200
 	EndCity
 	TeamReveal=35,44,
 EndPlot
@@ -31627,21 +31627,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Kiev
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
@@ -31656,7 +31656,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_CATHEDRAL
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=100
+		Player26Culture=100
 	EndCity
 	TeamReveal=16,25,26,28,39,45,
 EndPlot
@@ -31709,21 +31709,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Sankt-Peterburg
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -31740,7 +31740,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=100
+		Player26Culture=100
 	EndCity
 	TeamReveal=16,26,28,39,45,
 EndPlot
@@ -31934,44 +31934,44 @@ BeginPlot
 	x=70,y=21
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=70,y=22
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=70,y=23
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=70,y=24
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=70,y=25
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=70,y=26
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=70,y=27
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=70,y=28
@@ -32360,14 +32360,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=29
 		CityName=Lauren&#231;o Marques
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -32376,7 +32376,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player28Culture=50
+		Player29Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,44,
 EndPlot
@@ -32461,25 +32461,25 @@ BeginPlot
 	x=71,y=24
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=71,y=25
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=71,y=26
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=71,y=27
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=71,y=28
@@ -32601,14 +32601,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Ankara
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
@@ -32620,7 +32620,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=35,44,
 EndPlot
@@ -32942,13 +32942,13 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=72,y=26
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=72,y=27
@@ -32957,7 +32957,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,45,
+	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=72,y=28
@@ -33236,14 +33236,14 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Arkhangelsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -33254,7 +33254,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=100
+		Player26Culture=100
 	EndCity
 	TeamReveal=16,26,
 EndPlot
@@ -33539,14 +33539,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Kud&#252;s
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -33564,7 +33564,7 @@ BeginPlot
 		ReligionType=RELIGION_CHRISTIANITY
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=200
+		Player35Culture=200
 	EndCity
 	TeamReveal=8,35,44,
 EndPlot
@@ -33695,7 +33695,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Moskva
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -33712,7 +33712,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		BuildingType=BUILDING_KREMLIN
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=250
+		Player26Culture=250
 	EndCity
 	TeamReveal=16,26,
 EndPlot
@@ -33747,14 +33747,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Vologda
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -33765,7 +33765,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=100
+		Player26Culture=100
 	EndCity
 	TeamReveal=16,26,
 EndPlot
@@ -34126,14 +34126,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Sam
 		CityPopulation=5
 		BuildingType=BUILDING_WALLS
@@ -34143,7 +34143,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=8,35,44,
 EndPlot
@@ -34217,21 +34217,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Rostov-na-Donu
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -34242,7 +34242,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=100
+		Player26Culture=100
 	EndCity
 	TeamReveal=26,35,44,45,
 EndPlot
@@ -34503,7 +34503,7 @@ BeginPlot
 	x=75,y=21
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=75,y=22
@@ -34578,14 +34578,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Mekke
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -34602,7 +34602,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_ISLAM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=35,44,45,
 EndPlot
@@ -34685,14 +34685,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Trabzon
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
@@ -34705,7 +34705,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=8,35,44,
 EndPlot
@@ -34995,13 +34995,13 @@ BeginPlot
 	x=76,y=21
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=76,y=22
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=76,y=23
@@ -35051,21 +35051,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Sana'a
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_ISLAM
-		Player34Culture=100
+		Player35Culture=100
 	EndCity
 	TeamReveal=29,35,44,45,
 EndPlot
@@ -35449,19 +35449,19 @@ BeginPlot
 	x=77,y=21
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=77,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=77,y=23
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=77,y=24
@@ -35582,14 +35582,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=34
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=35
 		CityName=Baghdad
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -35603,7 +35603,7 @@ BeginPlot
 		BuildingType=BUILDING_SPIRAL_MINARET
 		ReligionType=RELIGION_ISLAM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player34Culture=150
+		Player35Culture=150
 	EndCity
 	TeamReveal=8,35,44,45,
 EndPlot
@@ -35746,14 +35746,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Vyatka
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -35764,7 +35764,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=100
+		Player26Culture=100
 	EndCity
 	TeamReveal=26,
 EndPlot
@@ -35942,19 +35942,19 @@ BeginPlot
 	x=78,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=78,y=23
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=78,y=24
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=78,y=25
@@ -36087,14 +36087,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=7
+		UnitType=UNIT_MUSKETMAN, UnitOwner=8
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=7
+		CityOwner=8
 		CityName=Tabriz
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
@@ -36107,7 +36107,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
-		Player7Culture=100
+		Player8Culture=100
 	EndCity
 	TeamReveal=8,35,44,45,
 EndPlot
@@ -36178,14 +36178,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Samara
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -36195,7 +36195,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=100
+		Player26Culture=100
 	EndCity
 	TeamReveal=26,
 EndPlot
@@ -37100,14 +37100,14 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Obdorsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -37118,7 +37118,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=50
+		Player26Culture=50
 	EndCity
 	TeamReveal=26,
 EndPlot
@@ -37391,7 +37391,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginCity
-		CityOwner=7
+		CityOwner=8
 		CityName=Isfahan
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -37407,7 +37407,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
-		Player7Culture=250
+		Player8Culture=250
 	EndCity
 	TeamReveal=8,34,44,45,
 EndPlot
@@ -37512,14 +37512,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Ekaterinburg
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -37530,7 +37530,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=50
+		Player26Culture=50
 	EndCity
 	TeamReveal=26,
 EndPlot
@@ -37849,14 +37849,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=7
+		UnitType=UNIT_MUSKETMAN, UnitOwner=8
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=7
+		CityOwner=8
 		CityName=Shiraz
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -37875,7 +37875,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_ZOROASTRIANISM
 		HolyCityReligionType=RELIGION_ZOROASTRIANISM
-		Player7Culture=100
+		Player8Culture=100
 	EndCity
 	TeamReveal=8,29,34,44,45,
 EndPlot
@@ -37953,7 +37953,7 @@ BeginPlot
 	x=82,y=49
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=82,y=50
@@ -38232,7 +38232,7 @@ BeginPlot
 	x=83,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=83,y=31
@@ -38399,13 +38399,13 @@ BeginPlot
 	x=83,y=49
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=83,y=50
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=83,y=51
@@ -38687,13 +38687,13 @@ BeginPlot
 	x=84,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=84,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=84,y=32
@@ -38757,14 +38757,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=7
+		UnitType=UNIT_MUSKETMAN, UnitOwner=8
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=7
+		CityOwner=8
 		CityName=Herat
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
@@ -38777,7 +38777,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
-		Player7Culture=100
+		Player8Culture=100
 	EndCity
 	TeamReveal=8,34,44,45,
 EndPlot
@@ -38853,7 +38853,7 @@ BeginPlot
 	x=84,y=50
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=84,y=51
@@ -38908,14 +38908,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Tyumen
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -38923,7 +38923,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=50
+		Player26Culture=50
 	EndCity
 	TeamReveal=26,
 EndPlot
@@ -39210,7 +39210,7 @@ BeginPlot
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=33
+		CityOwner=34
 		CityName=Kolachi
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -39220,7 +39220,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
-		Player33Culture=50
+		Player34Culture=50
 	EndCity
 	TeamReveal=8,22,24,29,34,38,44,45,
 EndPlot
@@ -39364,13 +39364,13 @@ BeginPlot
 	x=85,y=50
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=85,y=51
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=85,y=52
@@ -39771,14 +39771,14 @@ BeginPlot
 	x=86,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=86,y=51
 	BonusType=BONUS_COPPER
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=86,y=52
@@ -40113,14 +40113,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=33
+		CityOwner=34
 		CityName=Lahore
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -40133,7 +40133,7 @@ BeginPlot
 		BuildingType=BUILDING_HARMANDIR_SAHIB
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
-		Player33Culture=100
+		Player34Culture=100
 	EndCity
 	TeamReveal=8,34,44,45,
 EndPlot
@@ -40196,26 +40196,26 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=87,y=49
 	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=87,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=87,y=51
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=87,y=52
@@ -40465,7 +40465,7 @@ BeginPlot
 	x=88,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=88,y=28
@@ -40513,7 +40513,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=4
+		CityOwner=5
 		CityName=Mumbai
 		CityPopulation=6
 		BuildingType=BUILDING_PALACE
@@ -40527,7 +40527,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
-		Player4Culture=75
+		Player5Culture=75
 	EndCity
 	TeamReveal=22,24,29,34,38,44,45,
 EndPlot
@@ -40634,25 +40634,25 @@ BeginPlot
 	x=88,y=48
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=88,y=49
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=88,y=50
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=88,y=51
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=88,y=52
@@ -41096,13 +41096,13 @@ BeginPlot
 	x=89,y=49
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=89,y=50
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=89,y=51
@@ -41110,7 +41110,7 @@ BeginPlot
 	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=89,y=52
@@ -41162,14 +41162,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=26
 		CityName=Tomsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -41178,7 +41178,7 @@ BeginPlot
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
-		Player25Culture=50
+		Player26Culture=50
 	EndCity
 	TeamReveal=26,
 EndPlot
@@ -41413,7 +41413,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginCity
-		CityOwner=9
+		CityOwner=10
 		CityName=Mahishuru
 		CityPopulation=5
 		BuildingType=BUILDING_PALACE
@@ -41427,7 +41427,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_ISLAM
-		Player9Culture=50
+		Player10Culture=50
 	EndCity
 	TeamReveal=22,24,29,34,38,44,45,
 EndPlot
@@ -41480,21 +41480,21 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=4
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=4
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=4
+		CityOwner=5
 		CityName=Bhopal
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -41502,7 +41502,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
-		Player4Culture=75
+		Player5Culture=75
 	EndCity
 	TeamReveal=24,34,44,45,
 EndPlot
@@ -41529,7 +41529,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=33
+		CityOwner=34
 		CityName=Delhi
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -41546,7 +41546,7 @@ BeginPlot
 		BuildingType=BUILDING_RED_FORT
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
-		Player33Culture=250
+		Player34Culture=250
 	EndCity
 	TeamReveal=8,24,34,44,45,
 EndPlot
@@ -41616,13 +41616,13 @@ BeginPlot
 	x=90,y=49
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=90,y=50
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=90,y=51
@@ -41630,7 +41630,7 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=90,y=52
@@ -42102,7 +42102,7 @@ BeginPlot
 	x=91,y=50
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=91,y=51
@@ -42110,7 +42110,7 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=91,y=52
@@ -42400,49 +42400,49 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
+		UnitType=UNIT_CANNON, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
+		UnitType=UNIT_CANNON, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=Madras
 		CityPopulation=5
 		BuildingType=BUILDING_WALLS
@@ -42454,7 +42454,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=22,24,29,34,38,44,45,
 EndPlot
@@ -42591,7 +42591,7 @@ BeginPlot
 	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=92,y=51
@@ -42599,13 +42599,13 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=92,y=52
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=92,y=53
@@ -42860,14 +42860,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=37
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=37
+		CityOwner=38
 		CityName=Colombo
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -42879,7 +42879,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
-		Player37Culture=50
+		Player38Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,44,
 EndPlot
@@ -43041,7 +43041,7 @@ BeginPlot
 	x=93,y=51
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=93,y=52
@@ -43387,21 +43387,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=33
+		CityOwner=34
 		CityName=Azimabad
 		CityPopulation=10
 		BuildingType=BUILDING_STABLE
@@ -43421,7 +43421,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player33Culture=200
+		Player34Culture=200
 	EndCity
 	TeamReveal=24,34,44,45,
 EndPlot
@@ -43517,7 +43517,7 @@ BeginPlot
 	x=94,y=51
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=94,y=52
@@ -43815,77 +43815,77 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
+		UnitType=UNIT_GALLEON, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
+		UnitType=UNIT_GALLEON, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=23
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
+		UnitType=UNIT_CANNON, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
+		UnitType=UNIT_CANNON, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=23
+		UnitType=UNIT_CANNON, UnitOwner=24
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=24
 		CityName=Calcutta
 		CityPopulation=6
 		BuildingType=BUILDING_WALLS
@@ -43897,7 +43897,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_HINDUISM
-		Player23Culture=50
+		Player24Culture=50
 	EndCity
 	TeamReveal=22,24,29,34,38,44,45,
 EndPlot
@@ -44002,7 +44002,7 @@ BeginPlot
 	x=95,y=51
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=95,y=52
@@ -44216,7 +44216,7 @@ BeginPlot
 	x=96,y=23
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=96,y=24
@@ -44426,13 +44426,13 @@ BeginPlot
 	x=96,y=51
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=96,y=52
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=96,y=53
@@ -44637,19 +44637,19 @@ BeginPlot
 	x=97,y=22
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=97,y=23
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=97,y=24
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=97,y=25
@@ -44824,7 +44824,7 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=97,y=52
@@ -45034,13 +45034,13 @@ BeginPlot
 	x=98,y=22
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=98,y=23
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=98,y=24
@@ -45492,13 +45492,13 @@ BeginPlot
 	x=99,y=22
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=99,y=23
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=99,y=24
@@ -45946,13 +45946,13 @@ BeginPlot
 	x=100,y=22
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=100,y=23
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=55,
+	TeamReveal=45,
 EndPlot
 BeginPlot
 	x=100,y=24
@@ -46496,21 +46496,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=37
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=37
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=37
+		CityOwner=38
 		CityName=Malakka
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -46524,7 +46524,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player37Culture=50
+		Player38Culture=50
 	EndCity
 	TeamReveal=1,22,29,36,38,44,45,
 EndPlot
@@ -46553,7 +46553,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=35
+		CityOwner=36
 		CityName=Ayutthaya
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -46571,7 +46571,7 @@ BeginPlot
 		BuildingType=BUILDING_ANGKOR_WAT
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
-		Player35Culture=250
+		Player36Culture=250
 	EndCity
 	TeamReveal=1,22,29,36,38,44,
 EndPlot
@@ -47952,35 +47952,35 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=37
+		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=37
+		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=37
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=37
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=37
+		CityOwner=38
 		CityName=Batavia
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -47992,7 +47992,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
-		Player37Culture=50
+		Player38Culture=50
 	EndCity
 	TeamReveal=38,44,45,
 EndPlot
@@ -50073,21 +50073,21 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=11
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=11
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=11
+		CityOwner=12
 		CityName=Pyongyang
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -50103,7 +50103,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player11Culture=80
+		Player12Culture=80
 	EndCity
 	TeamReveal=1,12,15,45,
 EndPlot
@@ -50351,7 +50351,7 @@ BeginPlot
 	x=109,y=22
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=109,y=23
@@ -50428,7 +50428,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=21
+		UnitType=UNIT_GALLEON, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		PromotionType=PROMOTION_NAVIGATION1
@@ -50437,14 +50437,14 @@ BeginPlot
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=21
+		CityOwner=22
 		CityName=Manila
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -50454,7 +50454,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
-		Player21Culture=100
+		Player22Culture=100
 	EndCity
 	TeamReveal=22,29,44,
 EndPlot
@@ -50544,7 +50544,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=11
+		CityOwner=12
 		CityName=Hanseong
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -50564,7 +50564,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
-		Player11Culture=250
+		Player12Culture=250
 	EndCity
 	TeamReveal=1,12,15,44,45,
 EndPlot
@@ -50826,7 +50826,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=110,y=23
@@ -51237,7 +51237,7 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=111,y=23
@@ -51275,20 +51275,20 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=37
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_CITY_DEFENSE
 	EndUnit
 	BeginCity
-		CityOwner=37
+		CityOwner=38
 		CityName=Ambon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_ISLAM
-		Player37Culture=50
+		Player38Culture=50
 	EndCity
 	TeamReveal=38,44,
 EndPlot
@@ -51661,7 +51661,7 @@ BeginPlot
 	x=112,y=23
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=54,
+	TeamReveal=44,
 EndPlot
 BeginPlot
 	x=112,y=24
@@ -51772,14 +51772,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=14
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=14
+		CityOwner=15
 		CityName=Kagoshima
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -51790,7 +51790,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
-		Player14Culture=100
+		Player15Culture=100
 	EndCity
 	TeamReveal=15,22,29,44,
 EndPlot
@@ -52223,7 +52223,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginCity
-		CityOwner=14
+		CityOwner=15
 		CityName=Kyouto
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -52242,7 +52242,7 @@ BeginPlot
 		BuildingType=BUILDING_HIMEJI_CASTLE
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
-		Player14Culture=250
+		Player15Culture=250
 	EndCity
 	TeamReveal=12,15,44,
 EndPlot
@@ -53462,14 +53462,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=14
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=14
+		CityOwner=15
 		CityName=Edo
 		CityPopulation=12
 		BuildingType=BUILDING_GRANARY
@@ -53481,7 +53481,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
-		Player14Culture=100
+		Player15Culture=100
 	EndCity
 	TeamReveal=15,44,
 EndPlot
