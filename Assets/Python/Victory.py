@@ -2720,7 +2720,7 @@ def countNativeCulture(iPlayer, iPercent):
 	
 def isTradeConnected(iPlayer):
 	for iOtherPlayer in range(iNumPlayers):
-		if iPlayer != iOtherPlayer and gc.getPlayer(iPlayer).canTradeNetworkWith(iOtherPlayer):
+		if iPlayer != iOtherPlayer and gc.getPlayer(iPlayer).canContact(iOtherPlayer) and gc.getPlayer(iPlayer).canTradeNetworkWith(iOtherPlayer):
 			return True
 			
 	return False
