@@ -36,6 +36,10 @@
 		<English>It is the year 3000 BC. The fertile crescent of Mesopotamia is home of the first urbanized cultures in the history of mankind and known as the cradle of civilization. Though the cities of Sumer and Akkad are thriving, with the emergence of Babylon, they will soon be overshadowed by the greatest metropolis of its time.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_HARAPPA</Tag>
+		<English>It is the year 3000 BC. The river beds of the Indus and Sarasvati provide fertile ground for ancient civilization. With unparalleled sanitation and urban planning, the Indus Valley Civilization centered around the city of Harappa can make use of this fertility and become the most widespread and populous civilization of its time.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_GREECE</Tag>
 		<English>It is the year 1600 BC. The first city states emerge on the Greek peninsula. While the division of the Greek civilization might seem as a disadvantage at first, their emphasis on independence favors the inception of new ideas in literature, science and philosophy as well as new tactics in the art of warfare.</English>
 	</TEXT>
