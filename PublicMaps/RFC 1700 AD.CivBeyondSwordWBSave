@@ -23014,7 +23014,6 @@ BeginPlot
 	BonusType=BONUS_GOLD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_MINE
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -27138,6 +27137,7 @@ EndPlot
 BeginPlot
 	x=61,y=22
 	BonusType=BONUS_COTTON
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -27154,7 +27154,7 @@ EndPlot
 BeginPlot
 	x=61,y=24
 	BonusType=BONUS_IVORY
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=29,37,
@@ -28215,7 +28215,7 @@ EndPlot
 BeginPlot
 	x=63,y=21
 	BonusType=BONUS_COFFEE
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -29785,7 +29785,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -39228,8 +39228,6 @@ BeginPlot
 	x=85,y=37
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_HAMLET
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=8,22,24,29,34,38,44,45,
@@ -39674,6 +39672,8 @@ EndPlot
 BeginPlot
 	x=86,y=37
 	RouteType=ROUTE_ROAD
+	ImprovementType=IMPROVEMENT_HAMLET
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=8,22,24,34,38,44,45,

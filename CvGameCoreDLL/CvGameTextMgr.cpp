@@ -16004,7 +16004,7 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 
 	// Harappan UP: Sanitation (positive health contributes to city growth)
 	int iHealthFood = 0;
-	if (city.getOwnerINLINE() == HARAPPA)
+	if (city.getOwnerINLINE() == HARAPPA && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
 	{
 		if (!city.isFoodProduction() && city.getBaseYieldRate(YIELD_FOOD) * 100 - city.foodConsumption() > 1 && city.goodHealth() > city.badHealth())
 		{

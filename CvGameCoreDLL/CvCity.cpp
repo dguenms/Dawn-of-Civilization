@@ -5703,15 +5703,6 @@ int CvCity::foodDifference(bool bBottom) const
 		iDifference = (getYieldRate(YIELD_FOOD) - foodConsumption());
 	}
 
-	// Harappan UP: Sanitation (positive health contributes to city growth)
-	if (getOwnerINLINE() == HARAPPA)
-	{
-		if (iDifference > 1 && (goodHealth() - badHealth()) > 0)
-		{
-			iDifference += goodHealth() - badHealth();
-		}
-	}
-
 	if (bBottom)
 	{
 		if ((getPopulation() == 1) && (getFood() == 0))
@@ -9650,7 +9641,7 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 {
 	int iYieldRateTimes100 = getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex);
 
-	if (getOwnerINLINE() == HARAPPA && !isFoodProduction())
+	if (eIndex == YIELD_FOOD && getOwnerINLINE() == HARAPPA && GET_PLAYER(getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT  && !isFoodProduction())
 	{
 		if (iYieldRateTimes100 - foodConsumption() * 100 > 1 && goodHealth() - badHealth() > 0)
 		{
