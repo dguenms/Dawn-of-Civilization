@@ -42,7 +42,7 @@ tMinorCities = (
 (-3000, (79, 40), iIndependent2, 'Shushan', 1, con.iArcher, 1), 	# Susa
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, con.iArcher, 1), 	# Samarkand
 #(-2000, (92, 39), iIndependent, 'Varanasi', 1, con.iWarrior, 1), 	# Varanasi
-(-2000, (90, 40), iIndependent, 'Indraprastha', 1, con.iWarrior, 1),	# Delhi
+(-1600, (90, 40), iIndependent, 'Indraprastha', 1, con.iWarrior, 1),	# Delhi
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, con.iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, con.iArcher, 2),		# Ankara
 (-760, (59, 47), iCeltia, 'Melpum', 2, con.iArcher, 2),			# Milan
