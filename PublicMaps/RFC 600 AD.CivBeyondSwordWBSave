@@ -23280,7 +23280,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=22
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -23292,7 +23292,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=24
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -25340,7 +25340,7 @@ BeginPlot
 	x=66,y=23
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -32848,7 +32848,6 @@ BeginPlot
 	x=85,y=37
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -33230,6 +33229,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=37
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot

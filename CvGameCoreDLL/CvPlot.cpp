@@ -2686,7 +2686,7 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 		}
 
 		// Leoreth: instantly built improvements not allowed on features to prevent their instant removal
-		if (getFeatureType() != NO_FEATURE)
+		if (getFeatureType() != NO_FEATURE && GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()))
 		{
 			if (GC.getBuildInfo(eBuild).isKill())
 			{

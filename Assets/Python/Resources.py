@@ -76,10 +76,10 @@ class Resources:
 		self.createResource(iX, iY, -1, textKey)
        	
         def checkTurn(self, iGameTurn):
-
-
-                #if (iGameTurn == 5): #otherwise it's picked by Portugal at the beginning
-                #        gc.getMap().plot(49, 43).setImprovementType(con.iHut)
+		
+		# Gujarati horses appear later so Harappa cannot benefit too early
+		if iGameTurn == getTurnForYear(-1000):
+			self.createResource(88, 37, iHorse)
 			
 		# Tamils
 		if iGameTurn == getTurnForYear(-300)-1 and utils.getPlayerEnabled(con.iTamils):
