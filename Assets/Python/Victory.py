@@ -1659,7 +1659,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	# second Harappan goal: build three Baths and two Granaries by 1500 BC
 	elif iPlayer == iHarappa:
 		if isPossible(iHarappa, 1):
-			if iBuilding in [iHarappanBath, iGranary]:
+			if iBuilding in [iHarappanBath, iWalls]:
 				iNumBaths = getNumBuildings(iHarappa, iHarappanBath)
 				iNumWalls = getNumBuildings(iHarappa, iWalls)
 				if iNumBaths >= 3 and iNumWalls >= 2:
