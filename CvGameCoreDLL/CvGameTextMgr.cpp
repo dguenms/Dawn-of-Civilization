@@ -16006,7 +16006,7 @@ void CvGameTextMgr::setFoodHelp(CvWStringBuffer &szBuffer, CvCity& city)
 	int iHealthFood = 0;
 	if (city.getOwnerINLINE() == HARAPPA && GET_PLAYER(city.getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT)
 	{
-		if (!city.isFoodProduction() && city.getBaseYieldRate(YIELD_FOOD) * 100 - city.foodConsumption() > 1 && city.goodHealth() > city.badHealth())
+		if (!city.isFoodProduction() && city.getBaseYieldRate(YIELD_FOOD) * city.getBaseYieldRateModifier(YIELD_FOOD) - city.foodConsumption() * 100 > 1 && city.goodHealth() > city.badHealth())
 		{
 			iHealthFood = city.goodHealth() - city.badHealth();
 		}
