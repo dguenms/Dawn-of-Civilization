@@ -343,7 +343,7 @@
 		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_HARAPPANS</Type>
 			<Button>,Art/Interface/Buttons/Civilizations/Harappa.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Harappa.dds</Path>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Indus.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
