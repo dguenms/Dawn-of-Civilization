@@ -6311,6 +6311,7 @@ BeginPlot
 		CityName=Hermosillo
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -6706,6 +6707,7 @@ BeginPlot
 		CityName=Guadalajara
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -7491,6 +7493,7 @@ BeginPlot
 		CityName=Ciudad de M&#233;xico
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -7534,6 +7537,7 @@ BeginPlot
 		CityName=Monterrey
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
 		Player22Culture=50
@@ -9192,6 +9196,7 @@ BeginPlot
 		CityName=Nouvelle Orl&#233;ans
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -9566,6 +9571,7 @@ BeginPlot
 		CityName=Ciudad de Guatemala
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -9615,6 +9621,7 @@ BeginPlot
 		CityName=Ciudad Real
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHICHEN_ITZA
 		ReligionType=RELIGION_CHRISTIANITY
@@ -9991,6 +9998,7 @@ BeginPlot
 		CityName=Quito
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
@@ -10540,6 +10548,7 @@ BeginPlot
 		CityName=Charles Town
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
@@ -10838,6 +10847,8 @@ BeginPlot
 		CityOwner=22
 		CityName=Lima
 		CityPopulation=5
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -10981,6 +10992,7 @@ BeginPlot
 		CityName=La Habana
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_MARKET
@@ -11381,6 +11393,7 @@ BeginPlot
 		CityName=Bogot&#225;
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -11565,6 +11578,7 @@ BeginPlot
 		CityName=York
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
@@ -12171,6 +12185,7 @@ BeginPlot
 		CityName=Santiago de Chile
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -12380,6 +12395,7 @@ BeginPlot
 		CityName=Port-au-Prince
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_MARKET
@@ -12822,6 +12838,7 @@ BeginPlot
 		CityName=Caracas
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -12954,6 +12971,7 @@ BeginPlot
 		CityName=New York
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -13021,6 +13039,7 @@ BeginPlot
 		CityName=Montr&#233;al
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
@@ -13254,6 +13273,7 @@ BeginPlot
 		CityName=La Paz
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -13487,6 +13507,7 @@ BeginPlot
 		CityName=Boston
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
@@ -13863,6 +13884,7 @@ BeginPlot
 		CityName=San Juan
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
@@ -14313,6 +14335,7 @@ BeginPlot
 		CityName=Bridgetown
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
@@ -14612,6 +14635,7 @@ BeginPlot
 		CityName=Buenos Aires
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
@@ -14780,6 +14804,7 @@ BeginPlot
 		CityName=Georgetown
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
@@ -15537,6 +15562,7 @@ BeginPlot
 		CityName=Montevideo
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_CHRISTIANITY
 		Player22Culture=50
@@ -15834,6 +15860,7 @@ BeginPlot
 		CityName=St. John's
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		ReligionType=RELIGION_JUDAISM
@@ -16127,6 +16154,7 @@ BeginPlot
 		CityName=Cayenne
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -16473,6 +16501,7 @@ BeginPlot
 		CityName=S&#227;o Paulo
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -16563,6 +16592,7 @@ BeginPlot
 		CityName=Bel&#233;m
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -17766,6 +17796,7 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_GREAT_PALACE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -18232,6 +18263,7 @@ BeginPlot
 		CityName=Recife
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -19165,6 +19197,7 @@ BeginPlot
 		CityName=Ponta Delgada
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -19700,6 +19733,7 @@ BeginPlot
 		CityName=Reykjavik
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -20359,6 +20393,7 @@ BeginPlot
 		CityName=Funchal
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -21202,6 +21237,7 @@ BeginPlot
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -21256,6 +21292,7 @@ BeginPlot
 		CityName=La Coru&#241;a
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -21339,6 +21376,7 @@ BeginPlot
 		CityName=Dublin
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -22011,6 +22049,7 @@ BeginPlot
 		CityName=Djenne
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_SANKORE
 		ReligionType=RELIGION_ISLAM
@@ -22085,6 +22124,7 @@ BeginPlot
 		CityName=Marrakus
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
@@ -22170,6 +22210,7 @@ BeginPlot
 		CityName=Sevilla
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
@@ -22651,6 +22692,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -22796,6 +22838,7 @@ BeginPlot
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -23066,6 +23109,7 @@ BeginPlot
 		CityName=Timbuktu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_MALI_MINT
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -23237,6 +23281,7 @@ BeginPlot
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
@@ -23303,6 +23348,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -23564,6 +23610,7 @@ BeginPlot
 		CityName=Elmina
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_JEWISH_TEMPLE
@@ -23683,6 +23730,7 @@ BeginPlot
 		CityName=Wahran
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
@@ -24175,6 +24223,7 @@ BeginPlot
 		CityName=Barcelona
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
@@ -24244,6 +24293,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ACADEMY
@@ -24560,6 +24610,7 @@ BeginPlot
 		CityName=Gao
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -24692,6 +24743,7 @@ BeginPlot
 		CityName=Marseille
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -25196,6 +25248,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -25549,6 +25602,7 @@ BeginPlot
 		CityName=Tunus
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
@@ -25733,6 +25787,7 @@ BeginPlot
 		CityName=Bergen
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -25952,6 +26007,7 @@ BeginPlot
 		CityName=TXT_KEY_CITY_NAME_LAGOS
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CHRISTIAN_TEMPLE
 		ReligionType=RELIGION_CHRISTIANITY
@@ -26003,6 +26059,7 @@ BeginPlot
 		CityName=Ngazargamu
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_MARKET
 		Player44Culture=100
 	EndCity
@@ -26147,6 +26204,7 @@ BeginPlot
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -26215,6 +26273,7 @@ BeginPlot
 		CityName=Frankfurt
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -26295,6 +26354,7 @@ BeginPlot
 		CityName=Hamburg
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
@@ -26720,6 +26780,7 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -26872,6 +26933,7 @@ BeginPlot
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -26929,6 +26991,7 @@ BeginPlot
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -27257,6 +27320,7 @@ BeginPlot
 		CityName=Trablus
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
@@ -27478,6 +27542,7 @@ BeginPlot
 		CityName=Trondheim
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
@@ -27642,6 +27707,7 @@ BeginPlot
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -27819,6 +27885,7 @@ BeginPlot
 		CityName=Neapel
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -27889,6 +27956,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -27944,6 +28012,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -28137,6 +28206,7 @@ BeginPlot
 		CityName=Kaapstad
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -28497,6 +28567,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_VIKING_TRADING_POST
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -29362,6 +29433,7 @@ BeginPlot
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
@@ -29419,6 +29491,7 @@ BeginPlot
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -29468,6 +29541,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -29511,6 +29585,7 @@ BeginPlot
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -29584,6 +29659,7 @@ BeginPlot
 		CityName=Lule&#229;
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -30383,6 +30459,7 @@ BeginPlot
 		CityName=Iskenderiye
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -30442,6 +30519,8 @@ BeginPlot
 		CityOwner=35
 		CityName=Atina
 		CityPopulation=6
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_COLOSSEUM
 		BuildingType=BUILDING_PARTHENON
@@ -30576,6 +30655,7 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -30629,6 +30709,7 @@ BeginPlot
 		CityName=Helsingfors
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -31034,6 +31115,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_OTTOMAN_HAMMAM
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -31445,6 +31527,7 @@ BeginPlot
 		CityName=El-Uqsur
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -31491,6 +31574,7 @@ BeginPlot
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -31646,6 +31730,7 @@ BeginPlot
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -31727,6 +31812,7 @@ BeginPlot
 		CityName=Sankt-Peterburg
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
@@ -32371,6 +32457,7 @@ BeginPlot
 		CityName=Lauren&#231;o Marques
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -32433,6 +32520,7 @@ BeginPlot
 		CityName=Mombasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_MARKET
@@ -32613,6 +32701,7 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -32992,6 +33081,7 @@ BeginPlot
 		CityName=Gondar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
@@ -33247,6 +33337,7 @@ BeginPlot
 		CityName=Arkhangelsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -33550,6 +33641,7 @@ BeginPlot
 		CityName=Kud&#252;s
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -33701,6 +33793,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -33758,6 +33851,7 @@ BeginPlot
 		CityName=Vologda
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -34006,6 +34100,7 @@ BeginPlot
 		CityName=Muqdisho
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -34138,6 +34233,7 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -34236,6 +34332,7 @@ BeginPlot
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
@@ -34589,6 +34686,7 @@ BeginPlot
 		CityName=Mekke
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -34697,6 +34795,7 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -35062,6 +35161,7 @@ BeginPlot
 		CityName=Sana'a
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_ISLAM
@@ -35593,6 +35693,7 @@ BeginPlot
 		CityName=Baghdad
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -35757,6 +35858,7 @@ BeginPlot
 		CityName=Vyatka
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -36099,6 +36201,7 @@ BeginPlot
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -36189,6 +36292,7 @@ BeginPlot
 		CityName=Samara
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
@@ -37111,6 +37215,7 @@ BeginPlot
 		CityName=Obdorsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -37396,6 +37501,7 @@ BeginPlot
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
@@ -37523,6 +37629,7 @@ BeginPlot
 		CityName=Ekaterinburg
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -37814,6 +37921,7 @@ BeginPlot
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
@@ -37860,6 +37968,7 @@ BeginPlot
 		CityName=Shiraz
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -38363,6 +38472,7 @@ BeginPlot
 		CityPopulation=4
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -38769,6 +38879,7 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -38919,6 +39030,7 @@ BeginPlot
 		CityName=Tyumen
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
@@ -39214,6 +39326,7 @@ BeginPlot
 		CityName=Kolachi
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
@@ -39332,6 +39445,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -40124,6 +40238,7 @@ BeginPlot
 		CityName=Lahore
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -40520,6 +40635,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_THEATRE
@@ -41073,6 +41189,7 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
@@ -41173,6 +41290,7 @@ BeginPlot
 		CityName=Tomsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
@@ -41421,6 +41539,7 @@ BeginPlot
 		BuildingType=BUILDING_TAMIL_SANGAM
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_HINDU_TEMPLE
@@ -41498,6 +41617,7 @@ BeginPlot
 		CityName=Bhopal
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_HINDU_TEMPLE
@@ -41535,6 +41655,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -41965,6 +42086,7 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -42447,6 +42569,7 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_THEATRE
@@ -42871,6 +42994,7 @@ BeginPlot
 		CityName=Colombo
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -43406,6 +43530,7 @@ BeginPlot
 		CityPopulation=10
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -43493,6 +43618,7 @@ BeginPlot
 		CityName=Turfan
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -43890,6 +44016,7 @@ BeginPlot
 		CityPopulation=6
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_THEATRE
@@ -44366,6 +44493,7 @@ BeginPlot
 		CityName=Lasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
@@ -45150,6 +45278,7 @@ BeginPlot
 		CityName=Yangon
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -45649,6 +45778,7 @@ BeginPlot
 		CityName=Chengdu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -45996,6 +46126,8 @@ BeginPlot
 		CityOwner=45
 		CityName=Palembang
 		CityPopulation=8
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -46170,6 +46302,7 @@ BeginPlot
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
@@ -46514,6 +46647,7 @@ BeginPlot
 		CityName=Malakka
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
@@ -46558,6 +46692,7 @@ BeginPlot
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -46643,6 +46778,7 @@ BeginPlot
 		CityName=Hanoi
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -47136,6 +47272,7 @@ BeginPlot
 		CityName=Chongqing
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -47205,6 +47342,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -47636,6 +47774,7 @@ BeginPlot
 		CityName=Kaifeng
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
 		BuildingType=BUILDING_MARKET
@@ -47984,6 +48123,7 @@ BeginPlot
 		CityName=Batavia
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -48046,6 +48186,7 @@ BeginPlot
 		CityName=Pontianak
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -48112,6 +48253,7 @@ BeginPlot
 		CityName=Saigon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -48616,6 +48758,8 @@ BeginPlot
 		CityName=Guangzhou
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -48631,6 +48775,7 @@ EndPlot
 BeginPlot
 	x=105,y=40
 	BonusType=BONUS_BANANA
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -49136,6 +49281,7 @@ BeginPlot
 		CityName=Shanghai
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOM_HOUSE
@@ -49561,6 +49707,7 @@ BeginPlot
 		CityName=Hangzhou
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -49914,6 +50061,7 @@ BeginPlot
 		CityName=Makassar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
@@ -50091,6 +50239,7 @@ BeginPlot
 		CityName=Pyongyang
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -50448,6 +50597,7 @@ BeginPlot
 		CityName=Manila
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -50549,6 +50699,7 @@ BeginPlot
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -51286,6 +51437,7 @@ BeginPlot
 		CityName=Ambon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_ISLAM
 		Player38Culture=50
@@ -51783,6 +51935,7 @@ BeginPlot
 		CityName=Kagoshima
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -52229,6 +52382,7 @@ BeginPlot
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
@@ -53473,6 +53627,7 @@ BeginPlot
 		CityName=Edo
 		CityPopulation=12
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE

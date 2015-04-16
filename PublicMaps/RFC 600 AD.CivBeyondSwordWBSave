@@ -19519,6 +19519,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		Player44Culture=1
 	EndCity
 EndPlot
@@ -34800,6 +34801,7 @@ BeginPlot
 		CityName=Vijayanagara
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
@@ -34897,6 +34899,7 @@ BeginPlot
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_OBELISK
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -35703,6 +35706,7 @@ BeginPlot
 		CityName=Kanchipuram
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
@@ -36540,6 +36544,7 @@ BeginPlot
 		CityPopulation=8
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
@@ -36913,6 +36918,7 @@ BeginPlot
 		CityName=Kolkata
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_HINDU_TEMPLE
@@ -39733,6 +39739,7 @@ BeginPlot
 		CityName=Beijing
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -40893,6 +40900,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		Player45Culture=100
@@ -40901,7 +40909,7 @@ EndPlot
 BeginPlot
 	x=105,y=40
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40936,6 +40944,7 @@ BeginPlot
 		CityName=Nanjing
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -41705,6 +41714,7 @@ BeginPlot
 		CityName=Hangzhou
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_BUDDHISM

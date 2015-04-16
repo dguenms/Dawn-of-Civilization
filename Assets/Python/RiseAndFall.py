@@ -2701,15 +2701,20 @@ class RiseAndFall:
 					lPlotList = []
 					lTargetList = []
 					iWesternLimit = 75
+					
+					iHandicap = 0
+					if utils.getHumanID() == iTeamX:
+						iHandicap = gc.getGame().getHandicapType() / 2
 
 					if iTeamX in [iArabia, iPersia]:
 						lPlotList = utils.getBorderPlotList(iTeamX, DirectionTypes.DIRECTION_NORTH)
-						for tPlot in lPlotList:
-							x, y = tPlot
-							if x < iWesternLimit:
-								lPlotList.remove(tPlot)
 					elif iTeamX in [iByzantium, iRussia]:
 						lPlotList = utils.getBorderPlotList(iTeamX, DirectionTypes.DIRECTION_EAST)
+						
+					for tPlot in lPlotList:
+						x, y = tPlot
+						if x < iWesternLimit:
+							lPlotList.remove(tPlot)
 
 					for i in range(3):
 						if len(lPlotList) > 0:
@@ -2718,9 +2723,9 @@ class RiseAndFall:
 							lPlotList.remove(lPlotList[iRand])
 
 					for tPlot in lTargetList:
-						utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-						utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-						utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+						utils.makeUnitAI(con.iMongolKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iHandicap)
+						utils.makeUnitAI(con.iHorseArcher, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + 2 * iHandicap)
+						utils.makeUnitAI(con.iTrebuchet, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iHandicap)
 
 					if utils.getHumanID() == iTeamX:
 						CyInterface().addMessage(iTeamX, True, con.iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE_HUMAN", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
@@ -3068,6 +3073,9 @@ class RiseAndFall:
 										i = i - 1
 
         def createAdditionalUnits( self, iCiv, tPlot ):
+		if iCiv == iIndia:
+			utils.makeUnit(con.iArcher, iCiv, tPlot, 2)
+			utils.makeUnit(con.iAxeman, iCiv, tPlot, 1)
                 if (iCiv == iGreece):
                         utils.makeUnit(con.iGreekPhalanx, iCiv, tPlot, 4)
                 if (iCiv == iPersia):

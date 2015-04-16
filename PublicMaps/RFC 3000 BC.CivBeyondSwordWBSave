@@ -40092,7 +40092,7 @@ EndPlot
 BeginPlot
 	x=105,y=40
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
