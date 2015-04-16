@@ -9641,6 +9641,7 @@ int CvCity::getYieldRate(YieldTypes eIndex) const
 {
 	int iYieldRateTimes100 = getBaseYieldRate(eIndex) * getBaseYieldRateModifier(eIndex);
 
+	// Harappan UP: Sanitation: positive health contributes to city growth
 	if (eIndex == YIELD_FOOD && getOwnerINLINE() == HARAPPA && GET_PLAYER(getOwnerINLINE()).getCurrentEra() == ERA_ANCIENT  && !isFoodProduction())
 	{
 		if (iYieldRateTimes100 - foodConsumption() * 100 > 1 && goodHealth() - badHealth() > 0)
