@@ -180,3 +180,4 @@
 		# Build three Baths and two Walls by 1500 BC
 		# Have a total population of 20 by 800 BC
 # Independent cities spawn with some initial culture
+# Tech trade requires a trade connection
