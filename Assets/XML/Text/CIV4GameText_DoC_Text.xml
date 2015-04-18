@@ -839,8 +839,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_OVERFLOW</Tag>
-		<English>Overflow in %s1, method: %s2</English>
-		<German>Overflow in %s1, method: %s2</German>
+		<English>Overflow in (%d1, %d2), method: %s3</English>
+		<German>Overflow in (%d1, %d2), method: %s3</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_HIGH_SEA_FISHING_BOATS</Tag>
