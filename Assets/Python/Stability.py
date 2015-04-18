@@ -528,7 +528,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 				
 	for tPlot in lRemovedCities:
 		x, y = tPlot
-		pBarbarian.disband(gc.getMap().plot(x, y).getPlotCity())
+		gc.getPlayer(con.iBarbarian).disband(gc.getMap().plot(x, y).getPlotCity())
 	
 	for city in lCities:
 	
