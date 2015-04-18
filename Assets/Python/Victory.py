@@ -606,6 +606,11 @@ def checkTurn(iGameTurn, iPlayer):
 				expire(iMaya, 1)
 				
 			# third goal: make contact with a European civilization before they discover America
+			if isPossible(iMaya, 2):
+				for iEuropean in lCivGroups[0]:
+					if teamMaya.canContact(iEuropean):
+						win(iMaya, 2)
+						break
 			
 		# Colombia
 		else:
@@ -1902,9 +1907,6 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 					if utils.isPlotInArea((x, y), tNorthAmericaTL, tNorthAmericaBR) or utils.isPlotInArea((x, y), tSouthCentralAmericaTL, tSouthCentralAmericaBR):
 						if gc.getMap().plot(x, y).isRevealed(iEuropean, False):
 							lose(iMaya, 2)
-							return
-							
-			win(iMaya, 2)
 			
 def checkReligiousGoals(iPlayer):
 	for i in range(3):
