@@ -49,7 +49,7 @@ lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55)
 
 class Resources:
 
-	# Leoreth: bonus removement alerts by edead
+	# Leoreth: bonus removal alerts by edead
 	def createResource(self, iX, iY, iBonus, textKey="TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE"):
 		"""Creates a bonus resource and alerts the plot owner"""
 		
@@ -126,13 +126,13 @@ class Resources:
 		#		x, y = tPlot
 		#		gc.getMap().plot(x,y).setFeatureType(3, 0)
 
-                if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
-			self.createResource(53, 51, iDye) # France
-			self.createResource(53, 55, iDye) # England
-                if utils.getScenario() >= con.i600AD: #late start condition
-                        if (iGameTurn == getTurnForYear(600)):
-				self.createResource(53, 51, iDye)
-				self.createResource(53, 55, iDye)
+                #if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
+		#	self.createResource(53, 51, iDye) # France
+		#	self.createResource(53, 55, iDye) # England
+                #if utils.getScenario() >= con.i600AD: #late start condition
+                #        if (iGameTurn == getTurnForYear(600)):
+		#		self.createResource(53, 51, iDye)
+		#		self.createResource(53, 55, iDye)
 
 		# Leoreth: remove floodplains in Sudan and ivory in Morocco and Tunisia
 		if iGameTurn == getTurnForYear(550):

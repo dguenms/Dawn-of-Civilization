@@ -2248,6 +2248,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=37
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14942,6 +14943,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=52
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=23,24,
@@ -18783,6 +18785,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=43,y=43
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,23,24,29,45,
@@ -20509,8 +20512,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=56
-	BonusType=BONUS_FISH
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=16,22,23,24,38,45,
@@ -21390,7 +21391,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=57
-	ImprovementType=IMPROVEMENT_HAMLET
+	BonusType=BONUS_HORSE
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,38,45,
@@ -21774,7 +21776,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=50,y=52
-	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=16,22,23,24,38,
@@ -22773,23 +22774,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=53
-	BonusType=BONUS_COW
-	ImprovementType=IMPROVEMENT_PASTURE
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,38,39,
 EndPlot
 BeginPlot
 	x=52,y=54
-	BonusType=BONUS_SHEEP
-	ImprovementType=IMPROVEMENT_PASTURE
+	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,38,39,
 EndPlot
 BeginPlot
 	x=52,y=55
-	BonusType=BONUS_HORSE
+	BonusType=BONUS_SHEEP
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -23315,8 +23315,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=51
-	BonusType=BONUS_DYE
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,29,38,39,
@@ -23373,8 +23372,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=53,y=55
-	BonusType=BONUS_DYE
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_VILLAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -23863,8 +23861,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=55
-	BonusType=BONUS_WHEAT
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_VILLAGE
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -28894,7 +28891,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=39
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=25,35,44,
@@ -30499,6 +30495,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=40
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=35,44,
@@ -31083,8 +31081,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=42
-	BonusType=BONUS_CLAM
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=35,44,
@@ -31634,6 +31631,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=42
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=35,44,
@@ -33501,6 +33499,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=20
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,44,
@@ -37346,6 +37345,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=17
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -37396,6 +37396,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=27
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -46619,6 +46620,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=28
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=1,22,29,36,38,44,45,
@@ -50019,6 +50021,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=24
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=38,44,
@@ -50999,12 +51002,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=26
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=38,44,
 EndPlot
 BeginPlot
 	x=110,y=27
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=38,44,
@@ -51398,6 +51403,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=24
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=38,44,
@@ -51748,6 +51754,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=11
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -54044,6 +54051,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=52
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=15,44,
@@ -54422,6 +54430,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=53
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=15,
