@@ -336,7 +336,7 @@ def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
 		
 	elif not bPositive:
 		# humans are immune to first stability drop
-		if (bHuman or bHumanVassal) and not sd.isCrisisImminent():
+		if (bHuman or bHumanVassal) and not sd.isCrisisImminent() and iStabilityLevel < con.iStabilityCollapsing:
 			if bHuman: sd.setCrisisImminent(True)
 			changeCrisisCountdown(iPlayer, utils.getTurns(5))
 			sText = localText.getText("TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE", (localText.getText(tCrisisLevels[iStabilityLevel], ()),))

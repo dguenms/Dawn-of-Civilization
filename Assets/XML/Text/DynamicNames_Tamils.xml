@@ -29,6 +29,14 @@
 		<English>Dravidian Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_NAZI_VASSAL</Tag>
+		<English>German Dravida</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_SOVIET_VASSAL</Tag>
+		<English>Soviet Dravida</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA</Tag>
 		<English>Kingdom of Vijayanagara</English>
 	</TEXT>

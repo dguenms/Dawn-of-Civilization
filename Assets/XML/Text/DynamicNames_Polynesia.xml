@@ -52,4 +52,12 @@
 		<Tag>TXT_KEY_CIV_POLYNESIA_EMPIRE_SAMOA</Tag>
 		<English>Tu'i Manu'a Empire</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLYNESIA_NAZI_VASSAL</Tag>
+		<English>Nazi Polynesia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLYNESIA_SOVIET_VASSAL</Tag>
+		<English>Soviet Polynesia</English>
+	</TEXT>
 </Civ4GameText>

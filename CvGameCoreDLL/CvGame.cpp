@@ -4884,6 +4884,11 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 			return false;
 		}
 
+		if (kData.ePlayer == getSecretaryGeneral(eVoteSource))
+		{
+			return false;
+		}
+
 		if (!GET_PLAYER(kData.ePlayer).isFullMember(eVoteSource))
 		{
 			return false;
@@ -8161,7 +8166,8 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 
 				if (kLoopPlayer.isFullMember(kData.eVoteSource))
 				{
-					iGold = kLoopPlayer.getGold() * kVote.getGoldPercent() / 100;
+					iGold = kLoopPlayer.getGold() * kVote.getGoldPercent();
+					iGold /= 100;
 					iTotalGold += iGold;
 					kLoopPlayer.changeGold(-iGold);
 				}
@@ -8170,6 +8176,7 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 			if (kData.kVoteOption.ePlayer != NULL)
 			{
 				GET_PLAYER(kData.kVoteOption.ePlayer).changeGold(iTotalGold / 2);
+				gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_APOSTOLIC_PALACE_COLLECT_TITHE", iTotalGold / 2), "", MESSAGE_TYPE_MAJOR_EVENT, "", (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), -1, -1, true, true);
 			}
 
 			setVoteOutcome(kData, NO_PLAYER_VOTE);
