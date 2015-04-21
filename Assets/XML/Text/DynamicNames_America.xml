@@ -60,4 +60,8 @@
 		<Tag>TXT_KEY_CIV_AZTECS_AMERICAN_VASSAL</Tag>
 		<English>New Mexico</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAYA_AMERICAN_VASSAL</Tag>
+		<English>American Yucatán</English>
+	</TEXT>
 </Civ4GameText>

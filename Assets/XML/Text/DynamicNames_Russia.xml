@@ -29,6 +29,10 @@
 		<English>Panslavic Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_NAZI_VASSAL</Tag>
+		<English>Reichskommissariat Moskowien</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_EMPIRE</Tag>
 		<English>Russian Empire</English>
 	</TEXT>
@@ -37,7 +41,7 @@
 		<English>Grand Duchy of Muscovy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICAN_RUSSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_AMERICA_RUSSIAN_VASSAL</Tag>
 		<English>Russian America</English>
 	</TEXT>
 </Civ4GameText>

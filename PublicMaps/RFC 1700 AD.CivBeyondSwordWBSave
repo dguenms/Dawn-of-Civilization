@@ -39309,14 +39309,14 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=33
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4

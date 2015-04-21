@@ -28,4 +28,12 @@
 		<Tag>TXT_KEY_CIV_HARAPPA_DESC_FASCIST</Tag>
 		<English>National Republic of the Indus</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HARAPPA_NAZI_VASSAL</Tag>
+		<English>German Indus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HARAPPA_SOVIET_VASSAL</Tag>
+		<English>Soviet Indus</English>
+	</TEXT>
 </Civ4GameText>

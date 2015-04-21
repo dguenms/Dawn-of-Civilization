@@ -305,7 +305,7 @@ class DynamicCivs:
 				iBabylonia : "TXT_KEY_CIV_BABYLONIA_CHINESE_VASSAL",
 				iGreece : "TXT_KEY_CIV_GREECE_CHINESE_VASSAL",
 				iPersia : "TXT_KEY_CIV_PERSIA_CHINESE_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_CHINESE_VASSAL",
+				iCarthage : "TXT_KEY_CIV_CARTHAGE_CHINESE_VASSAL",
 				iRome : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
 				iJapan : "TXT_KEY_CIV_JAPAN_CHINESE_VASSAL",
 				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_CHINESE_VASSAL",
@@ -389,7 +389,6 @@ class DynamicCivs:
 				iAztecs : "TXT_KEY_CIV_AZTECS_JAPANESE_VASSAL",},
 			#iTamils - none so far
 			#iEthiopia - none so far
-			
 			#iKorea - none so far
 			#iMaya - none so far
 			iByzantium : {
@@ -521,7 +520,7 @@ class DynamicCivs:
 			iNetherlands : {
 				iIndonesia : "TXT_KEY_CIV_INDONESIA_DUTCH_VASSAL",
 				iMali : "TXT_KEY_CIV_MALI_DUTCH_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_VASSAL",
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DUTCH_VASSAL",
 				iAztecs : "TXT_KEY_CIV_AZTECS_DUTCH_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_DUTCH_VASSAL",
 				iInca : "TXT_KEY_CIV_INCA_DUTCH_VASSAL"},
@@ -546,7 +545,6 @@ class DynamicCivs:
 				iPersia : "TXT_KEY_CIV_PERSIA_MONGOL_VASSAL",
 				iCarthage : "TXT_KEY_CIV_PHOENICIA_MONGOL_VASSAL",
 				iRome : "TXT_KEY_CIV_ROME_MONGOL_VASSAL",
-				iItaly : "TXT_KEY_CIV_ROME_MONGOL_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_MONGOL_VASSAL",
 				iByzantium : "TXT_KEY_CIV_BYZANTIUM_MONGOL_VASSAL",
 				iVikings : "TXT_KEY_CIV_VIKINGS_MONGOL_VASSAL",
@@ -606,6 +604,7 @@ class DynamicCivs:
 			iJapan : "TXT_KEY_CIV_JAPANESE_VASSAL_GENERIC",
 			iByzantium : "TXT_KEY_CIV_BYZANTINE_VASSAL_GENERIC",
 			iArabia : "TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC",
+			iMoors : "TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC",
 			iSpain : "TXT_KEY_CIV_SPANISH_VASSAL_GENERIC",
 			iFrance : "TXT_KEY_CIV_FRENCH_VASSAL_GENERIC",
 			iEngland : "TXT_KEY_CIV_ENGLISH_VASSAL_GENERIC",
@@ -621,8 +620,8 @@ class DynamicCivs:
 			iHarappa : "TXT_KEY_CIV_HARAPPA_SOVIET_VASSAL",
                         iGreece : "TXT_KEY_CIV_GREECE_SOVIET_VASSAL",
                         iPersia : "TXT_KEY_CIV_PERSIA_SOVIET_VASSAL",
-                        iCarthage : "TXT_KEY_CIV_CARTHAGE_SOVIET_VASSAL",
-			iPolynesia : "TXT_KEY_CIV_POLYNESiA_SOVIET_VASSAL",
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_SOVIET_VASSAL",
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_SOVIET_VASSAL",
                         iRome : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
 			iItaly : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
                         iJapan : "TXT_KEY_CIV_JAPAN_SOVIET_VASSAL",
@@ -668,7 +667,7 @@ class DynamicCivs:
 			iHarappa : "TXT_KEY_CIV_HARAPPA_NAZI_VASSAL",
                         iGreece : "TXT_KEY_CIV_GREECE_NAZI_VASSAL",
                         iPersia : "TXT_KEY_CIV_PERSIA_NAZI_VASSAL",
-                        iCarthage : "TXT_KEY_CIV_CARTHAGE_NAZI_VASSAL",
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_NAZI_VASSAL",
 			iPolynesia : "TXT_KEY_CIV_POLYNESIA_NAZI_VASSAL",
                         iRome : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
 			iItaly : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
@@ -1202,7 +1201,7 @@ class DynamicCivs:
 		
 			if iPlayer in self.democraticNames:
 				if iPlayer in self.modernIslamNames and iReligion == con.iIslam:
-					self.setCivDesc(iPlayer, self.democraticNames[iPlayer])
+					self.setCivDesc(iPlayer, self.modernIslamNames[iPlayer])
 				else:
 					self.setCivDesc(iPlayer, self.democraticNames[iPlayer])
 				return
@@ -1276,7 +1275,7 @@ class DynamicCivs:
 				
 			if iEra >= iRenaissance:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA_EMPIRE")
 					return
 					
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
@@ -1469,7 +1468,7 @@ class DynamicCivs:
 				return
 				
 			if capital.getName() in ["Cochin", "Kozhikode"]:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHERA_KINDGOM")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHERA_KINGDOM")
 				return
 				
 			# Chola Kingdom default

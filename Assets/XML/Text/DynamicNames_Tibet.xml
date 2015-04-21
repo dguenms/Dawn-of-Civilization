@@ -29,6 +29,14 @@
 		<English>People's Republic of Tibet</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBET_NAZI_VASSAL</Tag>
+		<English>German Tibet</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBET_SOVIET_VASSAL</Tag>
+		<English>Soviet Tibet</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TIBET_DESC_FASCIST</Tag>
 		<English>Tibetan Empire</English>
 	</TEXT>

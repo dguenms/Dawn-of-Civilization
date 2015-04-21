@@ -997,6 +997,10 @@
 		<English>[ICON_BULLET]%D1%F2 from Excess Health</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_APOSTOLIC_PALACE_COLLECT_TITHE</Tag>
+		<English>We have collected a tithe of %d1 from the Catholic world.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>
