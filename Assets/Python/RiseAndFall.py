@@ -2628,7 +2628,7 @@ class RiseAndFall:
 								lContactPlots.append((x,y))
 							if plot.getOwner() == iNewWorldCiv and not plot.isCity():
 								if plot.isFlatlands() or plot.isHills():
-									if not plot.getFeatureType() == con.iJungle and not plot.getTerrainType() == con.iMarsh and (x,y) != (25, 32):
+									if not plot.getFeatureType() in [con.iJungle, con.iRainforest] and not plot.getTerrainType() == con.iMarsh and (x,y) != (25, 32):
 										if gc.getMap().getArea(plot.getArea()).getNumTiles() > 3:
 											lArrivalPlots.append((x,y))
 								
