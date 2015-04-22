@@ -3008,6 +3008,8 @@ iForest = 4
 iFallout = 5
 iMud = 6
 iCape = 7
+iIslands = 8
+iRainforest = 9
 
 iGrass = 0
 iPlains = 1
