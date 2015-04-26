@@ -4802,14 +4802,6 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 
 			if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
 			{
-				// Leoreth
-				if (eIndex != (ProjectTypes)GC.getInfoTypeForString("PROJECT_PERSECUTION"))
-				{
-					//szBuffer = gDLL->getText("TXT_KEY_MISC_COMPLETES_PROJECT", getName().GetCString(), GC.getProjectInfo(eIndex).getTextKeyWide()); //Rhye
-					szBuffer = gDLL->getText("TXT_KEY_MISC_COMPLETES_PROJECT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GC.getProjectInfo(eIndex).getTextKeyWide()); //Rhye
-					GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
-				}
-
 				for (iI = 0; iI < MAX_PLAYERS; iI++)
 				{
 					if (GET_PLAYER((PlayerTypes)iI).isAlive())

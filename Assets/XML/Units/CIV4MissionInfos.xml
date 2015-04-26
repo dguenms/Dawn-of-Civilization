@@ -905,5 +905,28 @@
 			<bVisible>1</bVisible>
 			<Button>,Art/Interface/Buttons/Civics/Pacifism.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,2</Button>
 		</MissionInfo>
+		<MissionInfo>
+			<Type>MISSION_PERSECUTE</Type>
+			<Description>TXT_KEY_MISSION_PERSECUTE</Description>
+			<Help/>
+			<Waypoint>NONE</Waypoint>
+			<EntityEventType>ENTITY_EVENT_GREAT_EVENT</EntityEventType>
+			<iTime>16</iTime>
+			<bTarget>0</bTarget>
+			<bBuild>0</bBuild>
+			<bSound>1</bSound>
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
+			<bVisible>1</bVisible>
+			<Button>,Art/Interface/Buttons/Buildings/Temple_Jewish.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,15</Button>
+		</MissionInfo>
 	</MissionInfos>
 </Civ4MissionInfos>

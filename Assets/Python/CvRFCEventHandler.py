@@ -632,8 +632,6 @@ class CvRFCEventHandler:
         def onProjectBuilt(self, argsList):
                 city, iProjectType = argsList
                 vic.onProjectBuilt(city.getOwner(), iProjectType)
-			
-		self.rnf.onProjectBuilt(city, iProjectType)
 
         def onImprovementDestroyed(self, argsList):
 		pass

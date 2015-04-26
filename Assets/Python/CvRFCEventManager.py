@@ -70,7 +70,7 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
             #7624 : ('ReformationEvent', self.relEventApply7624, self.relEventBegin7624),
 	    7625 : ('AskColonialCityEvent', self.rnfEventApply7625, self.rnfEventBegin7625),
 	    7626 : ('OrthodoxyEvent', self.relEventApply7626, self.relEventBegin7626),
-	    7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
+	    #7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
 	    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628),
 	    7629 : ('ByzantineBriberyEvent', self.rnfEventApply7629, self.rnfEventBegin7629),
 	    7630 : ('CongressClaimCityEvent', self.congEventApply7630, self.congEventBegin7630),
@@ -272,11 +272,11 @@ class CvRFCEventManager(CvEventManager.CvEventManager, object):
     def relEventBegin7626(self):
             pass
 	    
-    def rnfEventApply7627(self, playerID, netUserData, popupReturn):
-	    self.rnf.eventApply7627(popupReturn)
+#    def rnfEventApply7627(self, playerID, netUserData, popupReturn):
+#	    self.rnf.eventApply7627(popupReturn)
 	    
-    def rnfEventBegin7627(self):
-	    pass
+#    def rnfEventBegin7627(self):
+#	    pass
 	    
     def rnfEventApply7628(self, playerID, netUserData, popupReturn):
 	    self.rnf.eventApply7628(popupReturn)

@@ -930,6 +930,7 @@ public:
 	bool isResolveCrisis() const;
 	bool isReformGovernment() const;
 	bool isDiplomaticMission() const;
+	bool isPersecute() const;
 
 	float getUnitMaxSpeed() const;					// Exposed to Python
 	float getUnitPadTime() const;					// Exposed to Python
@@ -1129,6 +1130,7 @@ protected:
 	bool m_bResolveCrisis;
 	bool m_bReformGovernment;
 	bool m_bDiplomaticMission;
+	bool m_bPersecute;
 
 	float m_fUnitMaxSpeed;
 	float m_fUnitPadTime;

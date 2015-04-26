@@ -174,5 +174,9 @@
 			<Type>UNITAI_STATESMAN</Type>
 			<Description>UNITAI_STATESMAN</Description>
 		</UnitAIInfo>
+		<UnitAIInfo>
+			<Type>UNITAI_PERSECUTOR</Type>
+			<Description>UNITAI_PERSECUTOR</Description>
+		</UnitAIInfo>
 	</UnitAIInfos>
 </Civ4UnitAIInfos>

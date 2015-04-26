@@ -151,6 +151,70 @@
 		<English>[ICON_BULLET]New cities start with additional population</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_PERSECUTOR</Tag>
+		<English>Religious Persecutor</English>
+		<French>Religious Persecutor</French>
+		<German>Religious Persecutor</German>
+		<Italian>Religious Persecutor</Italian>
+		<Spanish>Religious Persecutor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PERSECUTOR_PEDIA</Tag>
+		<English>[TAB]A Religious Persecutor is an official who roots out heresy and apostasy from within the population, often employing the most brutal methods to do so. The Roman Catholic church has conducted a number of Inquisitions in past centuries - perhaps the most famous being the Spanish Inquisition of the fifteenth century, which targeted Muslims and Jews in Spain - but numerous other religions have engaged in similar practices throughout history.</English>
+		<French>[TAB]Un Inquisiteur est un responsable religieux qui traque l'h&#233;r&#233;sie et l'apostasie parmi la population, souvent au moyen de m&#233;thodes brutales. L'Eglise catholique a men&#233; nombre d'inquisitions lors des si&#232;cles pass&#233;s. La plus c&#233;l&#232;bre fut sans doute l'Inquisition espagnole du quinzi&#232;me si&#232;cle, qui prenait pour cible les Musulmans et les Juifs d'Espagne. De nombreuses autres religions se sont engag&#233;es dans des pratiques similaires durant l'Histoire.</French>
+		<German>[TAB]Ein Inquisitor ist ein offizieller religi&#246;ser Beauftragter, der in der Bev&#246;lkerung H&#228;resien und Ketzereien ausmerzt und dabei oft &#228;u&#223;erst brutal vorgeht. Die R&#246;misch-Katholische Kirche f&#252;hrte in den vergangenen Jahrhunderten mehrere Inquisitionen durch - die vielleicht ber&#252;hmteste war die Spanische Inquisition im 15. Jahrhundert, die sich gegen Muslime und Juden richtete - doch viele andere Religionen haben im Lauf der Geschichte &#228;hnliche Praktiken verwendet.</German>
+		<Italian>[TAB]Un Inquisitore &#232; un religioso che ha il compito di debellare eresia e apostasia tra la popolazione, spesso impiegando i mezzi pi&#249; brutali. La chiesa cattolica romana ha condotto una serie di inquisizioni, nei secoli scorsi, la pi&#249; famosa delle quali &#232; sicuramente quella del quindicesimo secolo, che perseguit&#242; musulmani ed ebrei in Spagna. Ma anche molte altre religioni hanno svolto attivit&#224; di questo tipo, nel corso della storia.</Italian>
+		<Spanish>[TAB]Un inquisidor es un dignatario religioso que erradica la herej&#237;a y la apostas&#237;a de la poblaci&#243;n, para lo que emplea con frecuencia los m&#233;todos m&#225;s brutales. La iglesia cat&#243;lica romana ha realizado varias inquisiciones en los siglos pasados ?siendo quiz&#225; la m&#225;s famosa la inquisici&#243;n espa&#241;ola del s. XV, que se dirigi&#243; contra los musulmanes y jud&#237;os que se encontraban en Espa&#241;a?, pero varias religiones m&#225;s han llevado a cabo pr&#225;cticas similares durante la historia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PERSECUTOR_STRATEGY</Tag>
+		<English>Employ a Religious Persecutor to remove non-State religions from a city. The Persecutor is consumed in the operation.</English>
+		<French>Utilisez un Inquisiteur pour supprimer toutes les religions d'une ville qui ne sont pas des religions d'&#233;tat. L'Inquisiteur est d&#233;truit au cours de l'op&#233;ration.</French>
+		<German>Setzen Sie einen Inquisitor ein, um alle Nicht-Staatsreligionen aus einer Stadt zu entfernen. Der Inquisitor wird dabei verbraucht.</German>
+		<Italian>Usa un Inquisitore per eliminare da una citt&#224; tutte le religioni non di stato. Cos&#236; facendo l'Inquisitore verr&#224; distrutto.</Italian>
+		<Spanish>Emplea a un inquisidor para quitar de una ciudad todas las religiones que no sean la oficial. El inquisidor se consumir&#225; en el proceso.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CAN_PERSECUTE</Tag>
+		<English>[ICON_BULLET]Can remove non-state religions and associated buildings</English>
+		<French>[ICON_BULLET]Can remove non-state religions and associated buildings</French>
+		<German>[ICON_BULLET]Can remove non-state religions and associated buildings</German>
+		<Italian>[ICON_BULLET]Can remove non-state religions and associated buildings</Italian>
+		<Spanish>[ICON_BULLET]Can remove non-state religions and associated buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_PERSECUTE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_PERSECUTION</Tag>
+		<English>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</English>
+		<French>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</French>
+		<German>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</German>
+		<Italian>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Italian>
+		<Spanish>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PERSECUTION</Tag>
+		<English>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</English>
+		<French>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</French>
+		<German>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</German>
+		<Italian>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</Italian>
+		<Spanish>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PERSECUTION_FAIL</Tag>
+		<English>Your persecutor in %s1_city was unsuccessful.</English>
+		<French>Your persecutor in %s1_city was unsuccessful.</French>
+		<German>Your persecutor in %s1_city was unsuccessful.</German>
+		<Italian>Your persecutor in %s1_city was unsuccessful.</Italian>
+		<Spanish>Your persecutor in %s1_city was unsuccessful.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 	</TEXT>

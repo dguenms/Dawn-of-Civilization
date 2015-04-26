@@ -1142,6 +1142,7 @@ public:
 	virtual void AI_setExtraGoldTarget(int iNewValue) = 0;
 	virtual int AI_maxGoldPerTurnTrade(PlayerTypes ePlayer) const = 0;
 	virtual int AI_maxGoldTrade(PlayerTypes ePlayer) const = 0;
+	// int AI_persecutionValue(ReligionTypes ePlayer) const = 0;
 
 	// Leoreth
 
@@ -1167,10 +1168,6 @@ public:
 	void setLatestRebellionTurn(int iNewValue);
 
 	EraTypes getSoundtrackEra();
-	
-	int getPersecutionCountdown();
-	void setPersecutionCountdown(int iNewValue);
-	int calculateForeignReligionWeight();
 
 	// Leoreth
 	int getDomainProductionModifier(DomainTypes eDomainType) const;

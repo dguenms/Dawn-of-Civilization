@@ -358,6 +358,8 @@ public:
 	// Sanguo Mod Performance, end
 	
 	int AI_slaveTradeVal(CvUnit* pUnit) const; // edead/Afforess
+	int AI_getPersecutionValue(ReligionTypes eReligion) const; // Leoreth
+	int AI_neededPersecutors(CvArea* pArea) const;
 
 	// for serialization
   virtual void read(FDataStreamBase* pStream);

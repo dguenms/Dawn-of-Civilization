@@ -9716,6 +9716,7 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 {
 	bool bValid;
 	int iNeededMissionaries;
+	int iNeededPersecutors; // Leoreth
 	int iCombatValue;
 	int iValue;
 	int iTempValue;
@@ -10155,6 +10156,24 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 			bValid = false;
 			break;
 
+		case UNITAI_PERSECUTOR:
+			if (pArea != NULL)
+			{
+				if (GC.getUnitInfo(eUnit).isPersecute())
+				{
+					iNeededPersecutors = AI_neededPersecutors(pArea);
+
+					if (iNeededPersecutors > 0)
+					{
+						if (iNeededPersecutors > GET_TEAM(getTeam()).countNumAIUnitsByArea(pArea, UNITAI_PERSECUTOR))
+						{
+							bValid = true;
+							break;
+						}
+					}
+				}
+			}
+
 		default:
 			FAssert(false);
 			break;
@@ -10566,6 +10585,12 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 		iValue += iCombatValue;
 		break;
 
+	case UNITAI_PERSECUTOR:
+		iValue += 50 * GC.getUnitInfo(eUnit).getMoves();
+		iValue += 40 * (5 - religiousTolerance[getID()]);
+		iValue += (isNoNonStateReligionSpread() ? 80 : 0);
+		break;
+
 	default:
 		FAssert(false);
 		break;
@@ -10773,7 +10798,7 @@ int CvPlayerAI::AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) co
         if (iCount > 0)
         {
             if (!bCultureVictory)
-	{
+			{
                 iCount = std::max(1, iCount / (bHoly ? 2 : 4));
             }
             return iCount;
@@ -10794,6 +10819,26 @@ int CvPlayerAI::AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) co
 		}
     }
 
+
+	return iCount;
+}
+
+
+// Leoreth
+int CvPlayerAI::AI_neededPersecutors(CvArea* pArea) const
+{
+	int iCount = 0;
+
+	int iLoop;
+	CvCity* pLoopCity;
+
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		if (pLoopCity->AI_getPersecutionReligion() != NO_RELIGION)
+		{
+			iCount++;
+		}
+	}
 
 	return iCount;
 }
@@ -17165,12 +17210,6 @@ int CvPlayerAI::AI_getStrategyHash() const
                             {
                                 iMissionary += 10;
                             }
-							else
-							{
-								// Leoreth: less inclined to proselytize to someone who has recently persecuted
-								if (GET_PLAYER((PlayerTypes)iI).getPersecutionCountdown() > 0)
-								iMissionary -= 20;
-							}
                         }
                     }
                 }
@@ -20500,3 +20539,11 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	return std::max(1, iModifier) * iValue;
 }
 // edead: end
+
+// Leoreth
+int CvPlayerAI::AI_getPersecutionValue(ReligionTypes eReligion) const
+{
+	if (!isStateReligion()) return 1;
+
+	return persecutionValue[getStateReligion()][eReligion] - religiousTolerance[getID()];
+}

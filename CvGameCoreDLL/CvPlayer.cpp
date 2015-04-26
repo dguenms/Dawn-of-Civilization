@@ -539,7 +539,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	//Leoreth
 	m_bReborn = false;
 	m_iLatestRebellionTurn = 0;
-	m_iPersecutionCountdown = 0;
 	m_iNoAnarchyTurns = 0;
 
 	m_eID = eID;
@@ -2895,11 +2894,6 @@ void CvPlayer::doTurn()
 	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
 
 	AI_doTurnPost();
-
-	if (getPersecutionCountdown() > 0)
-	{
-		setPersecutionCountdown(getPersecutionCountdown() - 1);
-	}
 
 	if (getNoAnarchyTurns() > 0)
 	{
@@ -18690,7 +18684,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	//Leoreth
 	pStream->Read(&m_bReborn);
 	pStream->Read(&m_iLatestRebellionTurn);
-	pStream->Read(&m_iPersecutionCountdown);
 	pStream->Read(&m_iNoAnarchyTurns);
 
 	pStream->Read((int*)&m_eID);
@@ -19201,7 +19194,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	//Leoreth
 	pStream->Write(m_bReborn);
 	pStream->Write(m_iLatestRebellionTurn);
-	pStream->Write(m_iPersecutionCountdown);
 	pStream->Write(m_iNoAnarchyTurns);
 
 	pStream->Write(m_eID);
@@ -25067,45 +25059,6 @@ int CvPlayer::getLatestRebellionTurn()
 void CvPlayer::setLatestRebellionTurn(int iNewValue)
 {
 	m_iLatestRebellionTurn = iNewValue;
-}
-
-int CvPlayer::getPersecutionCountdown()
-{
-	return m_iPersecutionCountdown;
-}
-
-void CvPlayer::setPersecutionCountdown(int iNewValue)
-{
-	m_iPersecutionCountdown = iNewValue;
-}
-
-int CvPlayer::calculateForeignReligionWeight()
-{
-	int iWeight = 0;
-	ReligionTypes eStateReligion = getStateReligion();
-
-	CvCity* pLoopCity;
-	int iLoop;
-	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
-		{
-			ReligionTypes eReligion = (ReligionTypes)iI;
-
-			if ((eStateReligion == BUDDHISM && eReligion == HINDUISM) || (eStateReligion == HINDUISM && eReligion == BUDDHISM) || (eStateReligion == CONFUCIANISM && eReligion == TAOISM) || (eStateReligion == TAOISM && eReligion == CONFUCIANISM))
-			{
-				continue;
-			}
-
-			if (pLoopCity->isHasReligion(eReligion))
-			{
-				iWeight += civSpreadFactor[getID()][eStateReligion] - civSpreadFactor[getID()][eReligion];
-			}
-		}
-	}
-
-	return std::max(0, iWeight / 100);
-
 }
 
 
