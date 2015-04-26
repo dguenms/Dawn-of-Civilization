@@ -8515,6 +8515,12 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_CAN_DIPLOMATIC_MISSION"));
 	}
 
+	if (GC.getUnitInfo(eUnit).isPersecute())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_CAN_PERSECUTE"));
+	}
+
 	bFirst = true;
 
 	for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)

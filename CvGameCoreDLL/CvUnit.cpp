@@ -7926,6 +7926,7 @@ BuildTypes CvUnit::getBuildType() const
 		case MISSION_RESOLVE_CRISIS: // Leoreth
 		case MISSION_REFORM_GOVERNMENT: // Leoreth
 		case MISSION_DIPLOMATIC_MISSION: // Leoreth
+		case MISSION_PERSECUTE: // Leoreth
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -14022,6 +14023,120 @@ bool CvUnit::diplomaticMission()
 	kill(true);
 
 	return true;
+}
+
+bool CvUnit::canPersecute(const CvPlot* pPlot) const
+{
+	if (!GC.getUnitInfo(getUnitType()).isPersecute()) return false;
+
+	if (!pPlot->isCity()) return false;
+
+	CvCity* pCity = pPlot->getPlotCity();
+
+	if (pCity->getOwner() != getOwner()) return false;
+
+	ReligionTypes eStateReligion = GET_PLAYER(getOwner()).getStateReligion();
+	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		if ((ReligionTypes)iI != eStateReligion)
+		{
+			if (pCity->isHasReligion((ReligionTypes)iI) && !pCity->isHolyCity((ReligionTypes)iI))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+bool CvUnit::persecute(ReligionTypes eReligion)
+{
+	if (!canPersecute(plot()))
+	{
+		return false;
+	}
+
+	if (eReligion == NO_RELIGION)
+	{
+		CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_PERSECUTION, getOwnerINLINE(), getID());
+		if (pInfo)
+		{
+			gDLL->getInterfaceIFace()->addPopup(pInfo, getOwnerINLINE(), true);
+		}
+		return false;
+	}
+	else
+	{
+		CvCity* pCity = plot()->getPlotCity();
+		int iChance = 65;
+
+		if (GET_PLAYER(getOwner()).isStateReligion())
+		{
+			iChance += std::min(25, std::max(0, 50 * GET_PLAYER(getOwner()).getHasReligionCount(GET_PLAYER(getOwner()).getStateReligion()) / GET_PLAYER(getOwner()).getNumCities() - 25));
+		}
+
+		if (GC.getGame().getSorenRandNum(100, "Persecution chance") < iChance)
+		{
+			int iLootModifier = 1 + pCity->getPopulation() / pCity->getReligionCount();
+			int iLoot = 1 + iLootModifier;
+
+			for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+			{
+				if (pCity->isHasRealBuilding((BuildingTypes)iI) && GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() == eReligion)
+				{
+					iLoot += iLootModifier;
+					if (GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()).getMaxGlobalInstances() > 1)
+					{
+						pCity->setHasRealBuilding((BuildingTypes)iI, false);
+					}
+				}
+			}
+
+			if (pCity->getPopulation() > 1)
+			{
+				pCity->changePopulation(-pCity->getPopulation() / 5);
+			}
+
+			iLoot += GC.getGame().getSorenRandNum(iLoot, "Random loot");
+			GET_PLAYER(getOwner()).changeGold(iLoot);
+
+			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+			{
+				if (iI != getOwner() && GET_PLAYER((PlayerTypes)iI).isAlive())
+				{
+					if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
+					{
+						GET_PLAYER((PlayerTypes)iI).AI_changeAttitudeExtra(getOwner(), -1);
+					}
+				}
+			}
+
+			if (pCity != NULL)
+			{
+				pCity->setHasReligion(eReligion, false, true);
+			}
+
+			gDLL->getInterfaceIFace()->addMessage(getOwner(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_PERSECUTION", pCity->getName().c_str(), GC.getReligionInfo(eReligion).getDescription(), iLoot), "AS2D_PLAGUE", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
+		}
+		else
+		{
+			gDLL->getInterfaceIFace()->addMessage(getOwner(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MESSAGE_PERSECUTION_FAIL", pCity->getName().c_str()), "AS2D_PLAGUE", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+		}
+
+		pCity->changeCultureUpdateTimer(1);
+		pCity->changeOccupationTimer(1);
+		pCity->changeHurryAngerTimer(pCity->flatHurryAngerLength());
+
+		if (plot()->isActiveVisible(false))
+		{
+			NotifyEntity(MISSION_PERSECUTE);
+		}
+
+		kill(true);
+
+		return true;
+	}
 }
 
 SpecialistTypes CvUnit::getSettledSpecialist() const

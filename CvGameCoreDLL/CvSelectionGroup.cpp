@@ -729,6 +729,7 @@ CvPlot* CvSelectionGroup::lastMissionPlot()
 		case MISSION_RESOLVE_CRISIS:
 		case MISSION_REFORM_GOVERNMENT:
 		case MISSION_DIPLOMATIC_MISSION:
+		case MISSION_PERSECUTE:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -1102,6 +1103,13 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			}
 			break;
 
+		case MISSION_PERSECUTE:
+			if (pLoopUnit->canPersecute(pPlot))
+			{
+				return true;
+			}
+			break;
+
 		case MISSION_DIE_ANIMATION:
 			return false;
 			break;
@@ -1295,6 +1303,7 @@ void CvSelectionGroup::startMission()
 		case MISSION_RESOLVE_CRISIS: // Leoreth
 		case MISSION_REFORM_GOVERNMENT: // Leoreth
 		case MISSION_DIPLOMATIC_MISSION: // Leoreth
+		case MISSION_PERSECUTE: // Leoreth
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -1556,6 +1565,13 @@ void CvSelectionGroup::startMission()
 
 				case MISSION_DIPLOMATIC_MISSION:
 					if (pLoopUnit->diplomaticMission())
+					{
+						bAction = true;
+					}
+					break;
+
+				case MISSION_PERSECUTE:
+					if (pLoopUnit->persecute(NO_RELIGION))
 					{
 						bAction = true;
 					}
@@ -1828,6 +1844,7 @@ void CvSelectionGroup::continueMission(int iSteps)
 				case MISSION_RESOLVE_CRISIS: // Leoreth
 				case MISSION_REFORM_GOVERNMENT: // Leoreth
 				case MISSION_DIPLOMATIC_MISSION: // Leoreth
+				case MISSION_PERSECUTE: // Leoreth
 				case MISSION_DIE_ANIMATION:
 					break;
 
@@ -1930,6 +1947,7 @@ void CvSelectionGroup::continueMission(int iSteps)
 			case MISSION_RESOLVE_CRISIS: // Leoreth
 			case MISSION_REFORM_GOVERNMENT: // Leoreth
 			case MISSION_DIPLOMATIC_MISSION: // Leoreth
+			case MISSION_PERSECUTE: // Leoreth
 			case MISSION_DIE_ANIMATION:
 				bDone = true;
 				break;

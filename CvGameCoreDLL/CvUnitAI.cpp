@@ -399,6 +399,10 @@ bool CvUnitAI::AI_update()
 			AI_attackCityLemmingMove();
 			break;
 
+		case UNITAI_PERSECUTOR:
+			AI_persecutorMove();
+			break;
+
 		default:
 			FAssert(false);
 			break;
@@ -4302,6 +4306,51 @@ void CvUnitAI::AI_statesmanMove()
 
 	if (AI_safety())
 	{
+		return;
+	}
+
+	getGroup()->pushMission(MISSION_SKIP);
+	return;
+}
+
+// Leoreth
+void CvUnitAI::AI_persecutorMove()
+{
+	PROFILE_FUNC();
+
+	CvCity* pLoopCity;
+	int iLoop;
+
+	CvCity* pTargetCity = NULL;
+	int iTargetDistance = MAX_INT;
+	int iTargetValue = -1;
+	int iCurrentDistance, iCurrentValue;
+
+	for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+	{
+		if (getArea() == pLoopCity->getArea() && generatePath(pLoopCity->plot()))
+		{
+			iCurrentDistance = stepDistance(getX_INLINE(), getY_INLINE(), pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE());
+			iCurrentValue = GET_PLAYER(getOwnerINLINE()).AI_getPersecutionValue(pLoopCity->AI_getPersecutionReligion());
+
+			if (iCurrentValue > iTargetValue || (iCurrentValue >= 0 && iCurrentValue == iTargetValue && iCurrentDistance < iTargetDistance))
+			{
+				pTargetCity = pLoopCity;
+				iTargetDistance = iCurrentDistance;
+				iTargetValue = iCurrentValue;
+			}
+		}
+	}
+
+	if (pTargetCity != NULL)
+	{
+		if (atPlot(pTargetCity->plot()) && canPersecute(plot()))
+		{
+			persecute(pTargetCity->AI_getPersecutionReligion());
+			return;
+		}
+
+		getGroup()->pushMission(MISSION_MOVE_TO, pTargetCity->getX(), pTargetCity->getY(), 0, false, true, NO_MISSIONAI, plot(), this);
 		return;
 	}
 
@@ -18236,7 +18285,6 @@ bool CvUnitAI::AI_resolveCrisis(int iTurns)
 	return false;
 }
 
-// Leoreth: TODO
 bool CvUnitAI::AI_reformGovernment(int iNumChanges)
 {
 	if (GET_PLAYER(getOwner()).getMaxAnarchyTurns() == 0)

@@ -753,6 +753,15 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 		CvMessageControl::getInstance().sendFoundReligion(GC.getGameINLINE().getActivePlayer(), (ReligionTypes)pPopupReturn->getButtonClicked(), (ReligionTypes)info.getData1());
 		break;
 
+	// Leoreth
+	case BUTTONPOPUP_PERSECUTION:
+		if (pPopupReturn->getButtonClicked() != -1)
+		{
+			CvUnit* pUnit = GET_PLAYER((PlayerTypes)info.getData1()).getUnit(info.getData2());
+			pUnit->persecute((ReligionTypes)pPopupReturn->getButtonClicked());
+		}
+		break;
+
 	default:
 		FAssert(false);
 		break;
@@ -965,6 +974,9 @@ bool CvDLLButtonPopup::launchButtonPopup(CvPopup* pPopup, CvPopupInfo &info)
 		break;
 	case BUTTONPOPUP_FOUND_RELIGION:
 		bLaunched = launchFoundReligionPopup(pPopup, info);
+		break;
+	case BUTTONPOPUP_PERSECUTION:
+		bLaunched = launchPersecutionPopup(pPopup, info);
 		break;
 	default:
 		FAssert(false);
@@ -2668,6 +2680,57 @@ bool CvDLLButtonPopup::launchFoundReligionPopup(CvPopup* pPopup, CvPopupInfo &in
 	{
 		return false;
 	}
+
+	gDLL->getInterfaceIFace()->popupLaunch(pPopup, false, POPUPSTATE_IMMEDIATE);
+
+	return true;
+}
+
+bool CvDLLButtonPopup::launchPersecutionPopup(CvPopup* pPopup, CvPopupInfo &info)
+{
+	PlayerTypes ePlayer = GC.getGameINLINE().getActivePlayer();
+	if (ePlayer == NO_PLAYER)
+	{
+		return false;
+	}
+
+	CvUnit* pUnit = GET_PLAYER((PlayerTypes)info.getData1()).getUnit(info.getData2());
+
+	if (pUnit == NULL)
+	{
+		return false;
+	}
+
+	CvPlot* pPlot = GC.getMap().plot(pUnit->getX_INLINE(), pUnit->getY_INLINE());
+	CvCity* pCity = pPlot->getPlotCity();
+
+	if (pCity == NULL)
+	{
+		return false;
+	}
+
+	gDLL->getInterfaceIFace()->popupSetBodyString(pPopup, gDLL->getText("TXT_KEY_PERSECUTION_MESSAGE", pCity->getName().c_str()));
+
+	bool bFound = false;
+	for (int iReligion = 0; iReligion < GC.getNumReligionInfos(); iReligion++)
+	{
+		CvReligionInfo& kReligion = GC.getReligionInfo((ReligionTypes)iReligion);
+		if (GET_PLAYER(ePlayer).getStateReligion() != (ReligionTypes)iReligion)
+		{
+			if (pCity->isHasReligion((ReligionTypes)iReligion) && !pCity->isHolyCity((ReligionTypes)iReligion))
+			{
+				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, kReligion.getDescription(), kReligion.getButton(), iReligion, WIDGET_GENERAL);
+				bFound = true;
+			}
+		}
+	}
+
+	if (!bFound)
+	{
+		return false;
+	}
+
+	gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, gDLL->getText("TXT_KEY_NEVER_MIND"), ARTFILEMGR.getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL")->getPath(), -1, WIDGET_GENERAL);
 
 	gDLL->getInterfaceIFace()->popupLaunch(pPopup, false, POPUPSTATE_IMMEDIATE);
 

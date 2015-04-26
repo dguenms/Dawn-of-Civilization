@@ -5009,62 +5009,6 @@ int CvCityAI::AI_projectValue(ProjectTypes eProject)
 
 	iValue = 0;
 
-	if (eProject == GC.getInfoTypeForString("PROJECT_PERSECUTION"))
-	{
-		if (GET_PLAYER(getOwnerINLINE()).getPersecutionCountdown() > 0)
-		{
-			return 0;
-		}
-
-		if (GET_PLAYER(getOwnerINLINE()).calculateForeignReligionWeight() <= 35 - abs(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getLeader()).getDifferentReligionAttitudeChange())*10 - (GET_PLAYER(getOwnerINLINE()).getCurrentEra() == 2? 10 : 0))
-		{
-			return 0;
-		}
-
-		if (GET_PLAYER(getOwnerINLINE()).isStateReligion() && getReligionBadHappiness() > 0)
-		{
-			iValue += 5*getReligionBadHappiness();
-
-			iValue += abs(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getLeader()).getDifferentReligionAttitudeChange())*5;
-
-			iValue -= 15;
-
-			if (getHurryAngerTimer() > 0)
-			{
-				iValue -= 5;
-			}
-
-			if (GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)0) == CIVIC_THEOCRACY || GET_PLAYER(getOwnerINLINE()).getCivics((CivicOptionTypes)4) == CIVIC_FANATICISM)
-			{
-				iValue += 5;
-			}
-
-
-			/*int iNonStateReligions = 0;
-			for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
-			{
-				ReligionTypes eReligion = (ReligionTypes)iI;
-				if (isHasReligion(eReligion) && !isHolyCity(eReligion))
-				{
-					iNonStateReligions += 1;
-				}
-			}
-
-			if (iNonStateReligions > 0)
-			{
-				iValue += 5*iNonStateReligions;
-
-				if (getHurryAngerTimer() == 0)
-				{
-					iValue += 5;
-				}
-
-				iValue += abs(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getLeader()).getDifferentReligionAttitudeChange())*5;
-				iValue -= 10;
-			}*/
-		}
-	}
-
 	if (GC.getProjectInfo(eProject).getNukeInterception() > 0)
 	{
 		if (GC.getGameINLINE().canTrainNukes())
@@ -10434,6 +10378,28 @@ BuildingTypes CvCityAI::AI_bestAdvancedStartBuilding(int iPass)
 	}
 
 	return AI_bestBuildingThreshold(iFocusFlags, 0, std::max(0, 20 - iPass * 5));
+}
+
+// Leoreth: return first non-state religion to make it work for now
+ReligionTypes CvCityAI::AI_getPersecutionReligion()
+{
+	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		if (GET_PLAYER(getOwner()).getStateReligion() != iI)
+		{
+			if (GET_PLAYER(getOwner()).AI_getPersecutionValue((ReligionTypes)iI) < 0)
+			{
+				break;
+			}
+
+			if (isHasReligion((ReligionTypes)iI) && !isHolyCity((ReligionTypes)iI))
+			{
+				return (ReligionTypes)iI;
+			}
+		}
+	}
+
+	return NO_RELIGION;
 }
 
 //

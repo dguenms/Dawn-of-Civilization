@@ -2437,12 +2437,6 @@ void CyPlayer::AI_reset()
         m_pPlayer->AI_reset(false);
 }
 
-void CyPlayer::setPersecutionCountdown(int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setPersecutionCountdown(iNewValue);
-}
-
 bool CyPlayer::hasCivic(int iCivic)
 {
 	return m_pPlayer ? m_pPlayer->hasCivic((CivicTypes)iCivic) : false;

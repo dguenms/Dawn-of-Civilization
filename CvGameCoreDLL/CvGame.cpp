@@ -8057,7 +8057,7 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 					{
 						//Rhye - start
 						//kLoopPlayer.forcePeace(kData.kVoteOption.ePlayer);
-						if (atWar(kPlayer.getTeam(), (TeamTypes)kData.kVoteOption.ePlayer)) {
+						if (atWar(kPlayer.getTeam(), kLoopPlayer.getTeam())) {
 							kLoopPlayer.forcePeace(kData.kVoteOption.ePlayer);
 							CvEventReporter::getInstance().peaceBrokered(GET_TEAM(getSecretaryGeneral(kVote.isVoteSourceType(0) ? (VoteSourceTypes)0 : (VoteSourceTypes)1)).getLeaderID(), (PlayerTypes)iPlayer, kData.kVoteOption.ePlayer);
 						}

@@ -2808,8 +2808,8 @@ iUtopia = iCommunism
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 162
-(iLion, iBear, iPanther, iWolf, iSettler, iHarappanSettler, iWorker, iIndianFastWorker, iBrazilianLenhador, iScout, iExplorer, iSpy, 
+iNumUnits = 163
+(iLion, iBear, iPanther, iWolf, iSettler, iHarappanSettler, iWorker, iIndianFastWorker, iBrazilianLenhador, iScout, iExplorer, iSpy, iProsecutor,
 iJewishMissionary, iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, 
 iTaoistMissionary, iZoroastrianMissionary, iWarrior, iIncanQuechua, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
 iAxeman, iGreekPhalanx, iSumerianVulture, iNativeAmericaDogSoldier, iMaceman, iJapanSamurai, iVikingBerserker, iKongoPombos, 
@@ -2981,9 +2981,9 @@ mercRegions = {
 
 #Projects
 
-iNumProjects = 12
+iNumProjects = 11
 (iManhattanProject, iTheInternet, iSDI, iApolloProgram, iSSCasing, iSSThrusters, iSSEngine, iSSDockingBay,
-iSSCockpit, iSSLifeSupport, iSSStasisChamber, iPersecutionProject) = range(iNumProjects)
+iSSCockpit, iSSLifeSupport, iSSStasisChamber) = range(iNumProjects)
 
 
 #Eras

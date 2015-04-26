@@ -582,25 +582,25 @@ class RiseAndFall:
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iHuman:
 					utils.colonialConquest(iPlayer, x, y)
 					
-	def eventApply7627(self, popupReturn):
-		lReligionList, tCityPlot = utils.getTempEventList()
-		x, y = tCityPlot
-		city = gc.getMap().plot(x, y).getPlotCity()
+	#def eventApply7627(self, popupReturn):
+	#	lReligionList, tCityPlot = utils.getTempEventList()
+	#	x, y = tCityPlot
+	#	city = gc.getMap().plot(x, y).getPlotCity()
+	#	
+	#	utils.debugTextPopup("lReligionList: "+str(lReligionList)+"\n Button clicked: "+str(popupReturn.getButtonClicked()))
+	#	
+	#	iPersecutedReligion = lReligionList[popupReturn.getButtonClicked()]
+	#	
+	#	utils.debugTextPopup("iPersecutedReligion: "+str(gc.getReligionInfo(iPersecutedReligion).getText()))
+	#	
+	#	city.setHasReligion(iPersecutedReligion, False, True, True)
+	#	city.setHasRealBuilding(con.iTemple + 4*iPersecutedReligion, False)
+	#	city.setHasRealBuilding(con.iMonastery + 4*iPersecutedReligion, False)
+	#	city.setHasRealBuilding(con.iCathedral + 4*iPersecutedReligion, False)
+	#	city.changeOccupationTimer(2)
+	#	city.changeHurryAngerTimer(city.hurryAngerLength(0))
 		
-		utils.debugTextPopup("lReligionList: "+str(lReligionList)+"\n Button clicked: "+str(popupReturn.getButtonClicked()))
-		
-		iPersecutedReligion = lReligionList[popupReturn.getButtonClicked()]
-		
-		utils.debugTextPopup("iPersecutedReligion: "+str(gc.getReligionInfo(iPersecutedReligion).getText()))
-		
-		city.setHasReligion(iPersecutedReligion, False, True, True)
-		city.setHasRealBuilding(con.iTemple + 4*iPersecutedReligion, False)
-		city.setHasRealBuilding(con.iMonastery + 4*iPersecutedReligion, False)
-		city.setHasRealBuilding(con.iCathedral + 4*iPersecutedReligion, False)
-		city.changeOccupationTimer(2)
-		city.changeHurryAngerTimer(city.hurryAngerLength(0))
-		
-		CyInterface().addMessage(city.getOwner(), True, con.iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+	#	CyInterface().addMessage(city.getOwner(), True, con.iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
 		
 	def eventApply7629(self, netUserData, popupReturn):
 		targetList = sd.getByzantineBribes()
@@ -2924,60 +2924,60 @@ class RiseAndFall:
 				utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
 				
 				
-	def onProjectBuilt(self, city, iProjectType):
-		if iProjectType == con.iPersecutionProject:
-			lReligionList = []
-			iOwner = city.getOwner()
-			pOwner = gc.getPlayer(iOwner)
-			iStateReligion = pOwner.getStateReligion()
-						
-			for iReligion in range(con.iNumReligions):
-				if city.isHasReligion(iReligion) and iReligion != iStateReligion and not city.isHolyCityByType(iReligion):
-					lReligionList.append(iReligion)
-					
-			if utils.getHumanID() != iOwner:
-				iPersecutedReligion = self.getPersecutedReligion(lReligionList, iStateReligion)
-			else:
-				iPersecutedReligion = -1
-				self.launchPersecutionPopup(lReligionList, city)
+	#def onProjectBuilt(self, city, iProjectType):
+		#if iProjectType == con.iPersecutionProject:
+		#	lReligionList = []
+		#	iOwner = city.getOwner()
+		#	pOwner = gc.getPlayer(iOwner)
+		#	iStateReligion = pOwner.getStateReligion()
+		#				
+		#	for iReligion in range(con.iNumReligions):
+		#		if city.isHasReligion(iReligion) and iReligion != iStateReligion and not city.isHolyCityByType(iReligion):
+		#			lReligionList.append(iReligion)
+		#			
+		#	if utils.getHumanID() != iOwner:
+		#		iPersecutedReligion = self.getPersecutedReligion(lReligionList, iStateReligion)
+		#	else:
+		#		iPersecutedReligion = -1
+		#		self.launchPersecutionPopup(lReligionList, city)
+		#	
+		#	if iPersecutedReligion > -1:
+		#		city.setHasReligion(iPersecutedReligion, False, True, True)
+		#		city.setHasRealBuilding(con.iTemple + 4*iPersecutedReligion, False)
+		#		city.setHasRealBuilding(con.iMonastery + 4*iPersecutedReligion, False)
+		#		city.setHasRealBuilding(con.iCathedral + 4*iPersecutedReligion, False)
+		#		
+		#		city.changeOccupationTimer(2)
+		#		city.changeHurryAngerTimer(city.hurryAngerLength(0))
+		#		
+		#		iCountdown = 10
+		#		iCountdown -= abs(gc.getLeaderheadInfo(gc.getPlayer(iOwner).getLeader()).getDifferentReligionAttitudeChange())
+		#		
+		#		if gc.getPlayer(iOwner).getCivics(0) == con.iTheocracy or gc.getPlayer(iOwner).getCivics(4) == con.iFanaticism:
+		#			iCountdown -= 2
+		#		
+		#		CyInterface().addMessage(city.getOwner(), True, con.iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
+				
+		#	gc.getTeam(pOwner.getTeam()).changeProjectCount(con.iPersecutionProject, -1)
 			
-			if iPersecutedReligion > -1:
-				city.setHasReligion(iPersecutedReligion, False, True, True)
-				city.setHasRealBuilding(con.iTemple + 4*iPersecutedReligion, False)
-				city.setHasRealBuilding(con.iMonastery + 4*iPersecutedReligion, False)
-				city.setHasRealBuilding(con.iCathedral + 4*iPersecutedReligion, False)
-				
-				city.changeOccupationTimer(2)
-				city.changeHurryAngerTimer(city.hurryAngerLength(0))
-				
-				iCountdown = 10
-				iCountdown -= abs(gc.getLeaderheadInfo(gc.getPlayer(iOwner).getLeader()).getDifferentReligionAttitudeChange())
-				
-				if gc.getPlayer(iOwner).getCivics(0) == con.iTheocracy or gc.getPlayer(iOwner).getCivics(4) == con.iFanaticism:
-					iCountdown -= 2
-				
-				CyInterface().addMessage(city.getOwner(), True, con.iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
-				
-			gc.getTeam(pOwner.getTeam()).changeProjectCount(con.iPersecutionProject, -1)
-			
-	def getPersecutedReligion(self, lReligionList, iStateReligion):
-		for iReligion in con.tPersecutionPreference[iStateReligion]:
-			if iReligion in lReligionList:
-				return iReligion
-				
-		return -1
+	#def getPersecutedReligion(self, lReligionList, iStateReligion):
+	#	for iReligion in con.tPersecutionPreference[iStateReligion]:
+	#		if iReligion in lReligionList:
+	#			return iReligion
+	#			
+	#	return -1
 		
-	def launchPersecutionPopup(self, lReligionList, city):
-		popup = Popup.PyPopup(7627, EventContextTypes.EVENTCONTEXT_ALL)
-		popup.setBodyString(CyTranslator().getText("TXT_KEY_PERSECUTION_MESSAGE", (city.getName(),)))
-		
-		for iReligion in lReligionList:
-			popup.addButton(gc.getReligionInfo(iReligion).getText())
-			
-		argsList = [lReligionList, (city.getX(), city.getY())]
-		utils.setTempEventList(argsList)
-		
-		popup.launch(False)
+	#def launchPersecutionPopup(self, lReligionList, city):
+	#	popup = Popup.PyPopup(7627, EventContextTypes.EVENTCONTEXT_ALL)
+	#	popup.setBodyString(CyTranslator().getText("TXT_KEY_PERSECUTION_MESSAGE", (city.getName(),)))
+	#	
+	#	for iReligion in lReligionList:
+	#		popup.addButton(gc.getReligionInfo(iReligion).getText())
+	#		
+	#	argsList = [lReligionList, (city.getX(), city.getY())]
+	#	utils.setTempEventList(argsList)
+	#	
+	#	popup.launch(False)
 	
 	
 	def startWarsOnSpawn(self, iCiv):

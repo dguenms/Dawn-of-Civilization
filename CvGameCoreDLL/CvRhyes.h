@@ -27,7 +27,6 @@ typedef list<char*> LISTCHAR;
 #define NUM_PL					(44)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(52)
-//#define NUM_BONUS_ISLANDS		(11)
 
 enum MyTechs
 {
@@ -382,6 +381,7 @@ extern int currentEra[NUM_PL];
 extern int currentEra600AD[NUM_PL];
 extern int currentEra1700AD[NUM_PL];
 extern int growthThreshold[NUM_PL];
+extern int religiousTolerance[NUM_PL];
 
 //extern int bonusIslandsX[NUM_BONUS_ISLANDS];
 //extern int bonusIslandsY[NUM_BONUS_ISLANDS];
@@ -394,6 +394,8 @@ extern char rating[NUM_CIVS][6][15];
 extern int turnPlayed[NUM_PL+NUM_MINORS]; // modify for new player
 extern int civSpreadFactor[NUM_PL+NUM_MINORS][9]; // s.o.
 extern int borders[NUM_PL][NUM_PL];
+extern int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1];
+extern int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS];
 extern int regionMap[68][124];
 extern int settlersMaps[2][NUM_PL][68][124];
 extern int warMaps[2][NUM_PL][68][124];
