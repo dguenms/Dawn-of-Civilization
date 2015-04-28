@@ -2130,7 +2130,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 			if pPlayer.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not utils.isUniqueBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getPrereqReligion() == -1:
 				newCity.setHasRealBuilding(iBuilding, True)
 			
-		if bCapital:
+		if bCapital and iOwner < con.iNumPlayers:
 			relocateCapital(iOwner)
 			
 		if iOwner not in lOwners:
