@@ -1296,7 +1296,8 @@ class RFCUtils:
 							
 				if bValid:
 					targetList.append(lPlotList[iRand])
-					lPlotList.remove(lPlotList[iRand])
+				
+				lPlotList.remove(lPlotList[iRand])
 
 		return targetList
 
