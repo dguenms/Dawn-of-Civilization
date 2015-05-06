@@ -1729,8 +1729,6 @@ def updateEconomyTrend(iPlayer):
 	iPreviousCommerce = sd.getPreviousCommerce(iPlayer)
 	iCurrentCommerce = pPlayer.calculateTotalCommerce()
 	
-	#iEconomyStability = sd.getEconomyStability(iPlayer)
-	
 	if iPreviousCommerce == 0: 
 		sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
 		return
@@ -1741,31 +1739,6 @@ def updateEconomyTrend(iPlayer):
 	elif iPercentChange < 0: sd.pushEconomyTrend(iPlayer, -1)
 	else: sd.pushEconomyTrend(iPlayer, 0)
 	
-	#iChange = 0
-	#iDivisor = min(10, int(abs(iEconomyStability) / 50))
-	#if iDivisor == 0: iDivisor = 1
-	#	
-	#if iPercentChange > 5:
-	#	if iEconomyStability >= 0:
-	#		if bFreeMarket: iChange = 3
-	#		else: iChange = 2
-	#	else:
-	#		iChange = 4
-	#elif iPercentChange < -5:
-	#	if iEconomyStability <= 0:
-	#		if bPublicWelfare: iChange = -1
-	#		else: iChange = -2
-	#	else:
-	#		iChange = -4
-	#else:
-	#	if iEconomyStability > 0:
-	#		if not bEnvironmentalism: iChange = -1
-	#	elif iEconomyStability < 0:
-	#		iChange = 1
-			
-	#iEconomyStability += 10 * iChange / iDivisor
-			
-	#sd.setEconomyStability(iPlayer, iEconomyStability)
 	sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
 	
 def updateHappinessTrend(iPlayer):
@@ -1777,7 +1750,6 @@ def updateHappinessTrend(iPlayer):
 	
 	if iNumCities == 0: return
 	
-	#iHappinessStability = sd.getHappinessStability(iPlayer)
 	iHappyCities = 0
 	iUnhappyCities = 0
 	
@@ -1794,27 +1766,8 @@ def updateHappinessTrend(iPlayer):
 		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
 			
-	if iHappyCities - iUnhappyCities > iNumCities / 5: sd.pushHappinessTrend(iPlayer, 1)
-	elif iUnhappyCities - iHappyCities > iNumCities / 5: sd.pushHappinessTrend(iPlayer, -1)
-			
-	#iChange = 0
-	#iDivisor = min(10, int(abs(iHappinessStability) / 20))
-	#if iDivisor == 0: iDivisor = 1
-		
-	#if iHappyCities > iUnhappyCities:
-	#	if iHappinessStability >= 0:
-	#		iChange = 1
-	#	else:
-	#		iChange = 2
-	#elif iHappyCities < iUnhappyCities:
-	#	if iHappinessStability <= 0:
-	#		iChange = -1
-	#	else:
-	#		iChange = -2
-			
-	#iHappinessStability += 10 * iChange / iDivisor
-			
-	#sd.setHappinessStability(iPlayer, iHappinessStability)
+	if iHappyCities - iUnhappyCities > math.ceil(iNumCities / 5.0): sd.pushHappinessTrend(iPlayer, 1)
+	elif iUnhappyCities - iHappyCities > math.ceil(iNumCities / 5.0): sd.pushHappinessTrend(iPlayer, -1)
 	
 def updateWarTrend(iPlayer, iEnemy):
 	iPreviousTrend = sd.getLastWarTrend(iPlayer, iEnemy)
