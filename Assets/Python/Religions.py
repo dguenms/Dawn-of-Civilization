@@ -237,41 +237,43 @@ class Religions:
 			#else:
 			#	utils.makeUnit(iMissionary_Christian, con.iNetherlands, con.tCapitals[0][con.iNetherlands], 1)
 
+			pass
+			
 			# Islam spreads to Indonesia
-			for i in range(3):
-				self.spreadReligion(self.selectRandomCityCiv(iIndonesia), 1, iMissionary_Islamic)
+			#for i in range(3):
+			#	self.spreadReligion(self.selectRandomCityCiv(iIndonesia), 1, iMissionary_Islamic)
 		
 		# (Catholic) Christianity spreads to Scandinavia
-		if iGameTurn == getTurnForYear(900) - 5 + (utils.getSeed() % 10) and utils.getHumanID() != con.iVikings:
-			for i in range(2):
-				self.spreadReligion(self.selectRandomCityCiv(iVikings), 1, iMissionary_Christian)
+		#if iGameTurn == getTurnForYear(900) - 5 + (utils.getSeed() % 10) and utils.getHumanID() != con.iVikings:
+		#	for i in range(2):
+		#		self.spreadReligion(self.selectRandomCityCiv(iVikings), 1, iMissionary_Christian)
 		
 		# (Orthodox) Christianity spreads to Russia
-		if iGameTurn == getTurnForYear(988) and utils.getHumanID() != con.iRussia:
-			for i in range(2):
-				self.spreadReligion(self.selectRandomCityCiv(iRussia), 1, iMissionary_Orthodox)
+		#if iGameTurn == getTurnForYear(988) and utils.getHumanID() != con.iRussia:
+		#	for i in range(2):
+		#		self.spreadReligion(self.selectRandomCityCiv(iRussia), 1, iMissionary_Orthodox)
 				
-		if iGameTurn == getTurnForYear(800) + (utils.getSeed() % 20):
-			if not gc.getGame().isReligionFounded(iOrthodoxy):
-				self.foundOrthodoxy(con.iRome)
+		#if iGameTurn == getTurnForYear(800) + (utils.getSeed() % 20):
+		#	if not gc.getGame().isReligionFounded(iOrthodoxy):
+		#		self.foundOrthodoxy(con.iRome)
 				
 		# spread Buddhism to China
-		if iGameTurn == getTurnForYear(100) - 5 + (utils.getSeed() % 10):
-		
+		#if iGameTurn == getTurnForYear(100) - 5 + (utils.getSeed() % 10):
+		#
 			# if Buddhism isn't founded already, found it now (only during autoplay)
-			if not gc.getGame().isReligionFounded(iBuddhism):
-				if con.tBirth[utils.getHumanID()] > gc.getGame().getGameTurnYear():
-					if pIndia.isAlive():
-						pIndia.foundReligion(iBuddhism, iBuddhism, False)
-					elif pTamils.isAlive():
-						pTamils.foundReligion(iBuddhism, iBuddhism, False)
+		#	if not gc.getGame().isReligionFounded(iBuddhism):
+		#		if con.tBirth[utils.getHumanID()] > gc.getGame().getGameTurnYear():
+		#			if pIndia.isAlive():
+		#				pIndia.foundReligion(iBuddhism, iBuddhism, False)
+		#			elif pTamils.isAlive():
+		#				pTamils.foundReligion(iBuddhism, iBuddhism, False)
 		
-			for i in range(3):
-				self.spreadReligion(self.selectRandomCityCiv(con.iChina), 1, iMissionary_Buddhist)
+		#	for i in range(3):
+		#		self.spreadReligion(self.selectRandomCityCiv(con.iChina), 1, iMissionary_Buddhist)
 				
 		# spread Confucianism to Korea
-		if iGameTurn == getTurnForYear(400) - 5 + (utils.getSeed() % 5):
-			self.spreadReligion(self.selectRandomCityCiv(con.iKorea), 1, iMissionary_Confucian)
+		#if iGameTurn == getTurnForYear(400) - 5 + (utils.getSeed() % 5):
+		#	self.spreadReligion(self.selectRandomCityCiv(con.iKorea), 1, iMissionary_Confucian)
 			
 
 

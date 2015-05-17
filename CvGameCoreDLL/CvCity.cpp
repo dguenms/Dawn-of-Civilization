@@ -14797,27 +14797,91 @@ void CvCity::doDecay()
 void CvCity::doReligion()
 {
 	CvCity* pLoopCity;
+	ReligionTypes eReligion;
+	PlayerTypes ePlayer;
+	bool bStateReligion;
+	bool bDistanceReduction;
 	int iRandThreshold;
-	int iSpread;
+	int iSpread, iSpreadFactor, iRegionFactor;
 	int iLoop;
 	int iI, iJ;
 
-	//Rhye - start
-//Speed: Modified by Kael 04/19/2007
-//	CyCity* pyCity = new CyCity(this);
-//	CyArgsList argsList;
-//	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyCity));	// pass in city class
-//	long lResult=0;
-//	gDLL->getPythonIFace()->callFunction(PYGameModule, "doReligion", argsList.makeFunctionArgs(), &lResult);
-//	delete pyCity;	// python fxn must not hold on to this pointer
-//	if (lResult == 1)
-//	{
-//		return;
-//	}
-//Speed: End Modify
-	//Rhye - end
+	int iReligionCount = getReligionCount();
+	bool bNoStateReligion = !GET_PLAYER(getOwnerINLINE()).isStateReligion();
 
-	if (getReligionCount() == 0)
+	int iReligionDistanceDivisor = GC.getDefineINT("RELIGION_SPREAD_DISTANCE_DIVISOR");
+	int iMaxDistance = GC.getMapINLINE().maxPlotDistance();
+
+	int iReligionSpreadRand = GC.getDefineINT("RELIGION_SPREAD_RAND");
+
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		eReligion = (ReligionTypes)iI;
+
+		// Leoreth: prevent Zoroastrianism spread after 1000 AD
+		if (eReligion == ZOROASTRIANISM && GC.getGame().getGameTurnYear() >= 1000) continue;
+
+		if (!isHasReligion(eReligion))
+		{
+			bStateReligion = (GET_PLAYER(getOwnerINLINE()).getStateReligion() == iI);
+			iRegionFactor = getRegionSpreadFactor(getRegionID(), eReligion);
+
+			if (!bStateReligion)
+			{
+				if (GET_PLAYER(getOwnerINLINE()).isNoNonStateReligionSpread()) continue;
+				if (iRegionFactor < 0) continue;
+				if (iRegionFactor == 0 && iReligionCount == 0) continue;
+			}
+
+			iRandThreshold = 0;
+
+			for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+			{
+				ePlayer = (PlayerTypes)iJ;
+
+				if (GET_PLAYER(ePlayer).isAlive())
+				{
+					for (pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
+					{
+						if (pLoopCity->isConnectedTo(this))
+						{
+							iSpread = pLoopCity->getReligionInfluence(eReligion);
+
+							iSpreadFactor = getCivSpreadFactor(getOwnerINLINE(), eReligion) * GC.getReligionInfo(eReligion).getSpreadFactor() / 100;
+							iSpread *= iSpreadFactor;
+
+							if (iSpread > 0)
+							{
+								bDistanceReduction = true;
+
+								//if ((bStateReligion || bNoStateReligion) && iRegionFactor == 2) bDistanceReduction = false;
+								if (eReligion == CATHOLICISM && getOwnerINLINE() == CONGO && GET_PLAYER(getOwnerINLINE()).getStateReligion() == NO_RELIGION) bDistanceReduction = false;
+
+								if (bStateReligion && iRegionFactor > 0) iSpread *= 2;
+
+								if (bDistanceReduction)
+								{
+									iSpread /= std::max(1, ((iReligionDistanceDivisor * plotDistance(getX_INLINE(), getY_INLINE(), pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE())) / iMaxDistance) - 5);
+								}
+
+								iSpread /= (iReligionCount + 1);
+
+								iRandThreshold = std::max(iRandThreshold, iSpread);
+							}
+						}
+					}
+				}
+			
+				if (GC.getGameINLINE().getSorenRandNum(iReligionSpreadRand, "Religion Spread") < iRandThreshold)
+				{
+					setHasReligion(eReligion, true, true, true);
+					break;
+				}
+			}
+		}
+	}
+
+	/*if (getReligionCount() == 0)
 	{
 		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 		{
@@ -14908,7 +14972,7 @@ void CvCity::doReligion()
 				}
 			}
 		}
-	}
+	}*/
 }
 
 
