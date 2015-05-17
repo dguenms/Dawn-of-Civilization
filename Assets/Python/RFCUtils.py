@@ -1683,6 +1683,9 @@ class RFCUtils:
 	def createMissionaries(self, iPlayer, iReligion, iNumUnits):
 		if not gc.getGame().isReligionFounded(iReligion): return
 		
+		# Leoreth: temporarily try less missionaries
+		iNumUnits = 1
+		
 		self.makeUnit(con.iJewishMissionary + iReligion, iPlayer, con.tCapitals[0][iPlayer], iNumUnits)
 			
 	def getSortedList(self, lList, function, bReverse = False):

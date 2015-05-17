@@ -3240,7 +3240,8 @@ class RiseAndFall:
                                 pRome.initUnit(con.iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                 if (iCiv == iJapan):
 		        utils.createSettlers(iCiv, 3)
-			utils.createMissionaries(iCiv, con.iBuddhism, 3)
+			#utils.createMissionaries(iCiv, con.iBuddhism, 3)
+			utils.createMissionaries(iCiv, con.iBuddhism, 1)
                 	utils.makeUnit(con.iSwordsman, iJapan, tCapitals[0][iJapan], 2)
                 	utils.makeUnitAI(con.iArcher, iJapan, tCapitals[0][iJapan], UnitAITypes.UNITAI_CITY_DEFENSE, 2)
                 	utils.makeUnit(con.iWorker, iJapan, tCapitals[0][iJapan], 2)
@@ -3292,9 +3293,11 @@ class RiseAndFall:
                         utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.createSettlers(iCiv, 4)
 			if gc.getGame().isReligionFounded(con.iOrthodoxy):
-				utils.createMissionaries(iCiv, con.iOrthodoxy, 2)
+				#utils.createMissionaries(iCiv, con.iOrthodoxy, 2)
+				utils.createMissionaries(iCiv, con.iOrthodoxy, 1)
 			else:
-				utils.createMissionaries(iCiv, con.iCatholicism, 2)
+				#utils.createMissionaries(iCiv, con.iCatholicism, 2)
+				utils.createMissionaries(iCiv, con.iCatholicism, 1)
 			tSeaPlot = self.findSeaPlots(tCapitals[0][iByzantium], 1, iByzantium)
 			if tSeaPlot:
 				utils.makeUnit(con.iGalley, iByzantium, tSeaPlot, 2)
