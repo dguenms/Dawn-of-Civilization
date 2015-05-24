@@ -4180,7 +4180,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 	case TRADE_TECHNOLOGIES:
 		if (!(GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_TRADING)))
 		{
-			if (GC.getTechInfo((TechTypes)(item.m_iData)).isTrade() && canTradeNetworkWith(eWhoTo))
+			if (GC.getTechInfo((TechTypes)(item.m_iData)).isTrade() && (canTradeNetworkWith(eWhoTo) || atWar(getTeam(), GET_PLAYER(eWhoTo).getTeam())))
 			{
 				if (GET_TEAM(getTeam()).isHasTech((TechTypes)(item.m_iData)) && !(GET_TEAM(getTeam()).isNoTradeTech((TechTypes)(item.m_iData))))
 				{

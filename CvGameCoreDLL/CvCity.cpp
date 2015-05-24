@@ -14814,7 +14814,7 @@ void CvCity::doReligion()
 
 	int iReligionSpreadRand = GC.getDefineINT("RELIGION_SPREAD_RAND");
 
-	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	/*for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
 		eReligion = (ReligionTypes)iI;
 
@@ -14879,9 +14879,9 @@ void CvCity::doReligion()
 				}
 			}
 		}
-	}
+	}*/
 
-	/*if (getReligionCount() == 0)
+	if (getReligionCount() == 0)
 	{
 		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 		{
@@ -14972,7 +14972,7 @@ void CvCity::doReligion()
 				}
 			}
 		}
-	}*/
+	}
 }
 
 

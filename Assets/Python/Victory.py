@@ -1729,6 +1729,13 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					if iBuilding == iStateReligionCathedral:
 						if getNumBuildings(iAztecs, iStateReligionCathedral) >= 3:
 							win(iAztecs, 0)
+	
+	# first Mughal goal: build three Islamic Mosques by 1500 AD
+	elif iPlayer == iMughals:
+		if isPossible(iMughals, 0):
+			if iBuilding == iIslamicCathedral:
+				if getNumBuildings(iMughals, iIslamicCathedral) >= 3:
+					win(iMughals, 0)
 		
 	# first Incan goal: build 5 tambos and a road along the Andean coast by 1500 AD
 	elif iPlayer == iInca:
