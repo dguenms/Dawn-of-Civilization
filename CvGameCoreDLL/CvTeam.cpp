@@ -2761,16 +2761,14 @@ int CvTeam::getResearchCost(TechTypes eTech, bool bModifiers) const
 
 	if (bModifiers)
 	{
-		iCost *= getPopulationResearchModifier();
-		iCost /= 100;
+		int iModifier = 100;
 
-		iCost *= getTechLeaderModifier();
-		iCost /= 100;
+		iModifier += getPopulationResearchModifier();
+		iModifier += getTechLeaderModifier();
+		iModifier += getSpreadResearchModifier(eTech);
+		iModifier += getTurnResearchModifier();
 
-		iCost *= getSpreadResearchModifier(eTech);
-		iCost /= 100;
-
-		iCost *= getTurnResearchModifier();
+		iCost *= iModifier;
 		iCost /= 100;
 	}
 
@@ -2830,7 +2828,7 @@ int CvTeam::getScenarioResearchModifier() const
 
 int CvTeam::getPopulationResearchModifier() const
 {
-	int iModifier = 100;
+	int iModifier = 0;
 
 	int iMultiplier;
 	int iNumCities = getNumCities();
@@ -2851,7 +2849,7 @@ int CvTeam::getPopulationResearchModifier() const
 
 int CvTeam::getTurnResearchModifier() const
 {
-	int iModifier = 100;
+	int iModifier = 0;
 	int iTurnModifier, iAmount;
 
 	// Rhye: discount for newborn civs
@@ -2880,7 +2878,7 @@ int CvTeam::getTurnResearchModifier() const
 
 int CvTeam::getTechLeaderModifier() const
 {
-	int iModifier = 100;
+	int iModifier = 0;
 
 	// Leoreth: penalty for the tech leader
 	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - getTurnForYear(startingTurnYear[getID()]) > getTurns(30))
@@ -2915,7 +2913,7 @@ int CvTeam::getTechLeaderModifier() const
 
 int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 {
-	int iModifier = 100;
+	int iModifier = 0;
 
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
@@ -2935,11 +2933,11 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	if (iCivsWithTech < iLowerThreshold) iSpreadModifier += 25 * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
 
 	// more than three quarters know it -> less expensive
-	// assume there are 12 civs, then its an increase for the 10th to 12th civ to discover something
+	// assume there are 12 civs, then its a decrease for the 10th to 12th civ to discover something
 	// make the max gain 25%, have it decrease for every previous civ
 	// so 25% for the 12th civ (iCivsWithTech == 11)
 	// 0% for the 9th civ (iCivsWithTech == 8)
-	int iUpperThreshold = iCivsAlive * 3 / 4;
+	int iUpperThreshold = 3 * iLowerThreshold;
 	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= 25 * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
 	// Leoreth: Chinese UP: no penalties for researching less widespread techs until the Renaissance
