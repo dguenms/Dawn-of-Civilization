@@ -10763,17 +10763,17 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	bool bHuman = (eHuman == ePlayer);
 
 	int iAIBaseModifier = 75;
-	int iHumanSpawnModifier = 110;
+	int iHumanSpawnModifier = 80;
 
 	if (eHandicap == 0) // Heir
 	{
-		iAIBaseModifier = 50;
-		iHumanSpawnModifier = 105;
+		iAIBaseModifier = 100;
+		iHumanSpawnModifier = 90;
 	}
 	else if (eHandicap >= 3) // Emperor and Paragon
 	{
-		iAIBaseModifier = 100;
-		iHumanSpawnModifier = 120;
+		iAIBaseModifier = 50;
+		iHumanSpawnModifier = 70;
 	}
 
 	// edead: Epic/Marathon 1.22 late game balancing - progressive growth of research cost - 0% to 25% mid-game
@@ -10797,7 +10797,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	}
 
 	// increase tech costs for everyone as soon as the human player has spawned
-	if (iGameTurn >= getTurnForYear(startingTurnYear[eHuman]))
+	if (iGameTurn <= getTurnForYear(startingTurnYear[eHuman]))
 	{
 		iResearchPercent *= iHumanSpawnModifier;
 		iResearchPercent /= 100;
