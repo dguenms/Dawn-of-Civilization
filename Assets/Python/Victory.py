@@ -1795,8 +1795,8 @@ def onProjectBuilt(iPlayer, iProject):
 	if isPossible(iRussia, 1):
 		if iProject in [iApolloProgram, iManhattanProject]:
 			if iPlayer == iRussia:
-				bApolloProgram = teamRussia.getProjectCount(iApolloProgram) > 0
-				bManhattanProject = teamRussia.getProjectCount(iManhattanProject) > 0
+				bApolloProgram = iProject == iApolloProgram or teamRussia.getProjectCount(iApolloProgram) > 0
+				bManhattanProject = iProject == iManhattanProject or teamRussia.getProjectCount(iManhattanProject) > 0
 				if bApolloProgram and bManhattanProject:
 					win(iRussia, 1)
 			else:
