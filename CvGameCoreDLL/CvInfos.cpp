@@ -10762,7 +10762,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 
 	bool bHuman = (eHuman == ePlayer);
 
-	int iAIBaseModifier = 75;
+	int iAIBaseModifier = 90;
 	int iHumanSpawnModifier = 80;
 
 	if (eHandicap == 0) // Heir
@@ -10772,7 +10772,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 	}
 	else if (eHandicap >= 3) // Emperor and Paragon
 	{
-		iAIBaseModifier = 50;
+		iAIBaseModifier = 75;
 		iHumanSpawnModifier = 70;
 	}
 
