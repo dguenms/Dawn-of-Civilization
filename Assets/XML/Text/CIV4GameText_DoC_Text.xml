@@ -1001,6 +1001,10 @@
 		<English>We have collected a tithe of %d1 from the Catholic world.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_STATUE_OF_ZEUS_EFFECT</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] from %s2_unit_or_building with Statue of Zeus</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>

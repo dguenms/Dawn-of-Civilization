@@ -2690,3 +2690,13 @@ int getCivSpreadFactor(PlayerTypes ePlayer, ReligionTypes eReligion)
 
 	return iSpreadFactor;
 }
+
+BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding)
+{
+	return (BuildingTypes)GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(GC.getBuildingInfo(eBuilding).getBuildingClassType());
+}
+
+UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit)
+{
+	return (UnitTypes)GC.getCivilizationInfo(eCivilization).getCivilizationUnits(GC.getUnitInfo(eUnit).getUnitClassType());
+}

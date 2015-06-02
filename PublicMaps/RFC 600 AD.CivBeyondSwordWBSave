@@ -42138,6 +42138,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=47
+	BonusType=BONUS_PIG
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
