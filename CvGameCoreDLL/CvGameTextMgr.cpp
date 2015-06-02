@@ -16325,6 +16325,14 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 				}
 			}
 		}
+
+		// Leoreth: Statue of Zeus effect
+		if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)STATUE_OF_ZEUS) && city.isHasRealBuilding(getUniqueBuilding(city.getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)))
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_STATUE_OF_ZEUS_EFFECT", 25, GC.getBuildingInfo(getUniqueBuilding(city.getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)).getTextKeyWide()));
+			szBuffer.append(NEWLINE);
+			iBaseModifier += 25;
+		}
 	}
 
 	BuildingTypes eBuilding = city.getProductionBuilding();

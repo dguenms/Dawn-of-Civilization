@@ -3679,7 +3679,7 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 	// Leoreth: Statue of Zeus effect: +25% military production speed in cities with pagan temples
 	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)STATUE_OF_ZEUS) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)THEOLOGY))
 	{
-		if (isHasRealBuilding((BuildingTypes)PAGAN_TEMPLE))
+		if (isHasRealBuilding(getUniqueBuilding(getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)))
 		{
 			iMultiplier += 25;
 		}

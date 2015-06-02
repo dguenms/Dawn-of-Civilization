@@ -372,6 +372,9 @@ int getSettlerMapValue(int iPlayer, int iReborn, int x, int y); // Leoreth
 int getRegionSpreadFactor(int iRegionID, ReligionTypes eReligion); // Leoreth
 int getCivSpreadFactor(PlayerTypes ePlayer, ReligionTypes eReligion); // Leoreth
 
+BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth
+UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // Leoreth
+
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);
