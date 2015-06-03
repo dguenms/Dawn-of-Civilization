@@ -260,6 +260,7 @@ class Resources:
 			self.createResource(77, 52, iCorn) # Caricyn
 			
 			self.createResource(92, 35, iSpices) # Deccan
+			gc.getMap().plot(92, 35).setFeatureType(con.iRainforest, 0)
 			
 			# remove floodplains in Transoxania
 			for tuple in [(82, 47), (83, 46), (85, 49)]:
