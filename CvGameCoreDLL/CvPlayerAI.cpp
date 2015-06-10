@@ -5562,8 +5562,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 								}
 
-								//Tech Whore
-								if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_TRADING))
+								//Tech Whore (Leoreth: disable for now, balanced research is more desirable, civ modifiers take care of the rest)
+								/*if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_TRADING))
 								{
 									if (GC.getTechInfo((TechTypes)iI).isTechTrading() || kTeam.isTechTrading())
 									{
@@ -5599,7 +5599,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 											}
 										}
 									}
-								}
+								}*/
 
 								if (AI_isDoStrategy(AI_STRATEGY_CULTURE3))
 								{
@@ -5627,18 +5627,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								}*/
 
 								if (getCurrentEra() < GC.getTechInfo((TechTypes)iI).getEra()) { //otherwise they tend to beeline
-									iValue *= 4;
-									iValue /= 5;
+									/*iValue *= 4;
+									iValue /= 5;*/
+									iValue *= 3;
+									iValue /= 4;
 								}
-
-								/*if (GC.getGameINLINE().getActivePlayer() == ITALY)
-								{
-									if (iI == BANKING)
-										iValue /= 2;
-									if (iI == EDUCATION && getID() == CHINA)
-										iValue /= 2;
-								}*/
-
 
 								switch (getID())
 								{

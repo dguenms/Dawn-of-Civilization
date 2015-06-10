@@ -2932,7 +2932,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// so 25% for the first civ (iCivsWithTech == 0)
 	// 0% for the fourth civ (iCivsWithTech == 3)
 	int iLowerThreshold = iCivsAlive / 4;
-	if (iCivsWithTech < iLowerThreshold) iSpreadModifier += 10 * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
+	if (iCivsWithTech < iLowerThreshold) iSpreadModifier += 20 * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
 
 	// more than three quarters know it -> less expensive
 	// assume there are 12 civs, then its a decrease for the 10th to 12th civ to discover something
