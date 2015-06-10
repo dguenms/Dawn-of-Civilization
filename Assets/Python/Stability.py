@@ -238,7 +238,6 @@ def checkLostCoreCollapse(iPlayer):
 	
 	# completely pushed out of core: collapse
 	if len(lCities) == 0:
-	
 		if iPlayer in [con.iPhoenicia, con.iKhmer] and not utils.isReborn(iPlayer):
 			pPlayer.setReborn(True)
 			return
@@ -2172,9 +2171,9 @@ def getResurrectionTechs(iPlayer):
 				if iPeer != iPlayer and gc.getPlayer(iPeer).isAlive():
 					lSourceCivs.append(iPeer)
 			
-	# direct neighbors (India can benefit from England etc), can count twice
+	# direct neighbors (India can benefit from England etc)
 	for iPeer in range(con.iNumPlayers):
-		if iPeer != iPlayer and gc.getPlayer(iPeer).isAlive():
+		if iPeer != iPlayer and iPeer not in lSourceCivs and gc.getPlayer(iPeer).isAlive():
 			if utils.isNeighbor(iPlayer, iPeer):
 				lSourceCivs.append(iPeer)
 				
@@ -2196,7 +2195,7 @@ def getResurrectionTechs(iPlayer):
 			if gc.getTeam(iOtherCiv).isHasTech(iTech):
 				iCount += 1
 				
-		if 2 * iCount >= len(lSourceCivs):
+		if 3 * iCount >= 2 * len(lSourceCivs):
 			lTechList.append(iTech)
 			
 	return lTechList
