@@ -5846,7 +5846,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 									break;
 								case KHMER:
-									if (iI == PHILOSOPHY)
+									if (iI == PHILOSOPHY || iI == SAILING || iI == CALENDAR)
 										iValue *= 3;
 									if (iI == ALPHABET || iI == CURRENCY || iI == OPTICS)
 										iValue /= 3;

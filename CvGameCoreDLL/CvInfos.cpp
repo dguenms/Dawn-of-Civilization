@@ -10764,6 +10764,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 
 	int iAIBaseModifier = 90;
 	int iHumanSpawnModifier = 80;
+	int iHumanSpawnModifierTurns = iMaxTurns / 4;
 
 	if (eHandicap == 0) // Heir
 	{
@@ -10796,8 +10797,9 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 		iResearchPercent /= 100;
 	}
 
-	// increase tech costs for everyone as soon as the human player has spawned
-	if (iGameTurn <= getTurnForYear(startingTurnYear[eHuman]))
+	// reduce tech costs before the human players enter the game
+	// Leoreth: limit this effect to a constant period, otherwise the effect scales too much with late spawns
+	if (getTurnForYear(startingTurnYear[eHuman]) - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn <= getTurnForYear(startingTurnYear[eHuman]))
 	{
 		iResearchPercent *= iHumanSpawnModifier;
 		iResearchPercent /= 100;
