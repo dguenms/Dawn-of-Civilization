@@ -4936,6 +4936,7 @@ class RiseAndFall:
 			teamHolyRome.setHasTech(con.iFeudalism, True, iCiv, False, False)
 			teamHolyRome.setHasTech(con.iCalendar, True, iCiv, False, False)
 			teamHolyRome.setHasTech(con.iMeditation, True, iCiv, False, False)
+			teamHolyRome.setHasTech(con.iSailing, True, iCiv, False, False)
 		if (iCiv == iRussia):
 			teamRussia.setHasTech(con.iMining, True, iCiv, False, False)
 			teamRussia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -4965,6 +4966,8 @@ class RiseAndFall:
 			teamRussia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
 			teamRussia.setHasTech(con.iCalendar, True, iCiv, False, False)
 			teamRussia.setHasTech(con.iMeditation, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iFishing, True, iCiv, False, False)
+			teamRussia.setHasTech(con.iSailing, True, iCiv, False, False)
 		if (iCiv == iHolland):
 			teamHolland.setHasTech(con.iMining, True, iCiv, False, False)
 			teamHolland.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -5220,7 +5223,7 @@ class RiseAndFall:
 		if iCiv == iThailand:
 			lThaiTechs =   [con.iMining, con.iBronzeWorking, con.iIronWorking, con.iMetalCasting, con.iMachinery, con.iMysticism, con.iPolytheism, \
 					con.iMasonry, con.iPriesthood, con.iMonotheism, con.iTheology, con.iMonarchy, con.iDivineRight, con.iFishing, con.iSailing, \
-					con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, \
+					con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iCodeOfLaws, con.iCivilService, con.iMeditation, \
 					con.iGunpowder, con.iAlphabet, con.iMathematics, con.iCalendar, con.iConstruction, con.iCurrency, \
 					con.iHunting, con.iArchery, con.iAnimalHusbandry, con.iHorsebackRiding, con.iAesthetics, con.iPaper, con.iDrama, con.iMusic]
 			for iTech in lThaiTechs:

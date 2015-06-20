@@ -3000,16 +3000,8 @@ iSlavePlantation, iQuarry, iPasture, iCamp, iWell, iOffshorePlatform, iWinery, i
 
 #feature & terrain
 
-iSeaIce = 0
-iJungle = 1
-iOasis = 2
-iFloodPlains = 3
-iForest = 4
-iFallout = 5
-iMud = 6
-iCape = 7
-iIslands = 8
-iRainforest = 9
+iNumFeatures = 10
+(iSeaIce, iJungle, iOasis, iFloodPlains, iForest, iMud, iCape, iIslands, iRainforest, iFallout) = range(iNumFeatures)
 
 iGrass = 0
 iPlains = 1
