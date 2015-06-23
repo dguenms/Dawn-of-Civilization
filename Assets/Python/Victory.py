@@ -156,8 +156,9 @@ tSafavidMesopotamiaTL = (75, 39)
 tSafavidMesopotamiaBR = (79, 43)
 tTransoxaniaTL = (82, 42)
 tTransoxaniaBR = (86, 49)
-tNWIndiaTL = (86, 37)
+tNWIndiaTL = (85, 36)
 tNWIndiaBR = (91, 43)
+tNWIndiaExceptions = ((89, 36), (90, 36), (91, 36), (89, 37), (90, 37), (91, 37), (89, 38), (90, 38), (91, 38))
 
 # first American goal: allow no European colonies in North America, Central America and the Caribbean
 tNCAmericaTL = (3, 33)
@@ -472,7 +473,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if iGameTurn == getTurnForYear(1750):
 				bMesopotamia = isControlled(iPersia, tSafavidMesopotamiaTL, tSafavidMesopotamiaBR)
 				bTransoxania = isControlled(iPersia, tTransoxaniaTL, tTransoxaniaBR)
-				bNWIndia = isControlled(iPersia, tNWIndiaTL, tNWIndiaBR)
+				bNWIndia = isControlled(iPersia, tNWIndiaTL, tNWIndiaBR, tNWIndiaExceptions)
 				if bMesopotamia and bTransoxania and bNWIndia:
 					win(iPersia, 1)
 				else:
