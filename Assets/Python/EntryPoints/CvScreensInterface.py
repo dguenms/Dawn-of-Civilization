@@ -1210,7 +1210,7 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tTransoxaniaTL, vic.tTransoxaniaBR):
 			return 5
 			
-		if utils.isPlotInArea((x, y), vic.tNWIndiaTL, vic.tNWIndiaBR):
+		if utils.isPlotInArea((x, y), vic.tNWIndiaTL, vic.tNWIndiaBR, vic.tNWIndiaExceptions):
 			return 6
 			
 	elif iPlayer == iCarthage:
