@@ -6260,16 +6260,16 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 			iRefuseDuration /= 100;
 		}
 
-		//Rhye - start
+		//Rhye
 		if (AI_getMemoryCount(ePlayer, MEMORY_NUKED_US) > 0)
+		{
 			iRefuseDuration /= 2;
-		//Rhye - end
-
+		}
 
 		// Leoreth: new French UP
 		if (ePlayer == FRANCE)
 		{
-			iRefuseDuration = 0;
+			iRefuseDuration /= 2;
 		}
 
 		if (GET_TEAM(getTeam()).AI_getAtWarCounter(GET_PLAYER(ePlayer).getTeam()) < iRefuseDuration)
