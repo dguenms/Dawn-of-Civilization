@@ -9722,7 +9722,7 @@ int CvPlayer::getGoldenAgeLength() const
 int CvPlayer::getNumUnitGoldenAges() const
 {
 	// Leoreth: Eiffel Tower effect: golden age cost capped at 3 GPs
-	if (isHasBuilding((BuildingTypes)EIFFEL_TOWER))
+	if (isHasBuildingEffect((BuildingTypes)EIFFEL_TOWER))
 	{
 		return std::min(m_iNumUnitGoldenAges, 1);
 	}
