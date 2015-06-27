@@ -3044,7 +3044,7 @@ def getUHVHelp(iPlayer, iGoal):
 			elif iGoal == 1:
 				bMesopotamia = isControlled(iPersia, tSafavidMesopotamiaTL, tSafavidMesopotamiaBR)
 				bTransoxania = isControlled(iPersia, tTransoxaniaTL, tTransoxaniaBR)
-				bNWIndia = isControlled(iPersia, tNWIndiaTL, tNWIndiaBR)
+				bNWIndia = isControlled(iPersia, tNWIndiaTL, tNWIndiaBR, tNWIndiaExceptions)
 				aHelp.append(getIcon(bMesopotamia) + localText.getText("TXT_KEY_VICTORY_MESOPOTAMIA", ()) + ' ' + getIcon(bTransoxania) + localText.getText("TXT_KEY_VICTORY_TRANSOXANIA", ()) + ' ' + getIcon(bNWIndia) + localText.getText("TXT_KEY_VICTORY_NORTHWEST_INDIA", ()))
 			elif iGoal == 2:
 				pBestCity = getMostCulturedCity(iPersia)

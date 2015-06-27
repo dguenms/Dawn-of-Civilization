@@ -16492,7 +16492,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
