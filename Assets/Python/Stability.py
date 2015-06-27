@@ -520,7 +520,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 						lRemovedCities.append((closestCity.getX(), closestCity.getY()))
 						
 	# always raze Harappan cities
-	if iPlayer == con.iHarappa:
+	if iPlayer == con.iHarappa and utils.getHumanID() != iPlayer:
 		for city in lCities:
 			if (city.getX(), city.getY()) not in lRemovedCities:
 				lRemovedCities.append((city.getX(), city.getY()))
@@ -869,7 +869,7 @@ def damageRelations(iPlayer, lContacts, iNumOtherPlayers):
 			iOtherPlayer = utils.getRandomEntry(lContacts)
 			pOtherPlayer = gc.getPlayer(iOtherPlayer)
 			
-			pOtherPlayer.AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_EVENT_BAD_TO_US, -4)
+			pOtherPlayer.AI_changeMemoryCount(iPlayer, MemoryTypes.MEMORY_EVENT_BAD_TO_US, 4)
 			
 			lContacts.remove(iOtherPlayer)
 			
