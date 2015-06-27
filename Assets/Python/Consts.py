@@ -1731,7 +1731,7 @@ tNormalAreasTL = (
 (15, 35), #Aztecs
 (86, 37), #Mughals
 (68, 42), #Turkey
-(98, 26), #Thailand
+(99, 31), #Thailand
 (61, 19), #Congo
 (56, 51), #Holland
 (59, 48), #Germany
@@ -1776,7 +1776,7 @@ tNormalAreasTL = (
 (15, 35), #Aztecs
 (86, 37), #Mughals
 (68, 42), #Turkey
-(98, 26), #Thailand
+(99, 31), #Thailand
 (61, 19), #Congo
 (56, 51), #Holland
 (59, 48), #Germany
