@@ -83,7 +83,7 @@ class Resources:
 			
 		# Tamils
 		if iGameTurn == getTurnForYear(-300)-1 and utils.getPlayerEnabled(con.iTamils):
-			self.createResource(90, 30, iFish)
+			self.createResource(90, 28, iFish)
 
                 #Orka: Silk Road
                 if (iGameTurn == getTurnForYear(-200)): 
