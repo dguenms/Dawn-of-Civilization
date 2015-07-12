@@ -1917,6 +1917,10 @@
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
+				<FeatureMakesValid>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</FeatureMakesValid>
 			</FeatureMakesValids>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
