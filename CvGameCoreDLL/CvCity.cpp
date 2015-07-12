@@ -17657,7 +17657,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 				if (pLoopPlot != NULL)
 				{
 					//GC.getGameINLINE().logMsg("Added coverage for x=%d, y=%d on x=%d, y=%d (id=%d)", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY(), getCulturePlot(iI));
-					iCultureRange = std::max(1, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
+					iCultureRange = std::max(0, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
 
 					if (pLoopPlot->getCultureRangeCities(getOwnerINLINE(), iCultureRange) == 0)
 					{
