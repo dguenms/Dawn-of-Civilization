@@ -8853,7 +8853,7 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		if (!bStarting || !(pLoopCity->isHolyCity() && getNumCities() > 1))
+		if (!bStarting || !(pLoopCity->isHolyCity() && getNumCities() > 1) || (eSlotReligion == PROTESTANTISM))
 		{
 			iValue = 10;
 			iValue += pLoopCity->getPopulation();
@@ -8922,7 +8922,6 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
             //    iValue = 1;
 
 			iValue = std::max(1, iValue);
-
 
 			if (iValue > iBestValue)
 			{
