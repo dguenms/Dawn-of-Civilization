@@ -3497,30 +3497,23 @@ void CvSelectionGroup::groupMove(CvPlot* pPlot, bool bCombat, CvUnit* pCombatUni
 /* Afforess	                  Start		 07/31/10                                               */
 /*                                                                                              */
 /* Units Seem to be getting stuck here                                                          */
+/* Leoreth: rewrite to handle situations with more than one unit stuck							*/
 /************************************************************************************************/
-			if (GC.iStuckUnitID != pLoopUnit->getID())
+			pLoopUnit->m_iStuckLoopCount++;
+			if (pLoopUnit->m_iStuckLoopCount > 5)
 			{
-				GC.iStuckUnitID = pLoopUnit->getID();
-				GC.iStuckUnitCount = 0;
-			}
-			else
-			{
-				GC.iStuckUnitCount++;
-				if (GC.iStuckUnitCount > 5)
+				FAssertMsg(false, "Unit Stuck in Loop!");
+				CvUnit* pHeadUnit = getHeadUnit();
+				if (NULL != pHeadUnit)
 				{
-					FAssertMsg(false, "Unit Stuck in Loop!");
-					CvUnit* pHeadUnit = getHeadUnit();
-					if (NULL != pHeadUnit)
-					{
-						TCHAR szOut[1024];
-						CvWString szTempString;
-						getUnitAIString(szTempString, pHeadUnit->AI_getUnitAIType());
-						sprintf(szOut, "Unit stuck in loop: %S(%S)[%d, %d] (%S)\n", pHeadUnit->getName().GetCString(), GET_PLAYER(pHeadUnit->getOwnerINLINE()).getName(),
-							pHeadUnit->getX_INLINE(), pHeadUnit->getY_INLINE(), szTempString.GetCString());
-						gDLL->messageControlLog(szOut);
-					}
-					pLoopUnit->finishMoves();
+					TCHAR szOut[1024];
+					CvWString szTempString;
+					getUnitAIString(szTempString, pHeadUnit->AI_getUnitAIType());
+					sprintf(szOut, "Unit stuck in loop: %S(%S)[%d, %d] (%S)\n", pHeadUnit->getName().GetCString(), GET_PLAYER(pHeadUnit->getOwnerINLINE()).getName(),
+						pHeadUnit->getX_INLINE(), pHeadUnit->getY_INLINE(), szTempString.GetCString());
+					gDLL->messageControlLog(szOut);
 				}
+				pLoopUnit->finishMoves();
 			}
 /************************************************************************************************/
 /* Afforess	                     END                                                            */

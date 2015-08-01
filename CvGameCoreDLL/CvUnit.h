@@ -812,6 +812,9 @@ public:
 	virtual void AI_setUnitAIType(UnitAITypes eNewValue) = 0;
     virtual int AI_sacrificeValue(const CvPlot* pPlot) const = 0;
 
+	// Leoreth: avoid eternal loop bug
+	int m_iStuckLoopCount;
+
 protected:
 
 	int m_iID;

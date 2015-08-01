@@ -401,6 +401,8 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_eFacingDirection = DIRECTION_SOUTH;
 	m_iImmobileTimer = 0;
 
+	m_iStuckLoopCount = 0; // Leoreth
+
 	m_bMadeAttack = false;
 	m_bMadeInterception = false;
 	m_bPromotionReady = false;
@@ -847,6 +849,8 @@ void CvUnit::doTurn()
 	setReconPlot(NULL);
 
 	setMoves(0);
+
+	m_iStuckLoopCount = 0;
 }
 
 
