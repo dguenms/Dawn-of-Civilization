@@ -9179,7 +9179,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=29
-	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -9551,7 +9550,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=28
-	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -9917,11 +9915,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=29
+	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=25,y=30
+	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

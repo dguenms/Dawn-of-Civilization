@@ -689,18 +689,23 @@ class CvRFCEventHandler:
 		
 		# Leoreth: display notification
 		if iPlayer not in [con.iIndependent, con.iIndependent2, con.iBarbarian]:
-			sCity = "%s (%s)" % (pCity.getName(), gc.getPlayer(iPlayer).getCivilizationShortDescription(0))
+			pDisplayCity = pCity
+			if pDisplayCity.isNone(): pDisplayCity = gc.getMap().findCity(pUnit.getX(), pUnit.getY(), PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+				
+			sCity = "%s (%s)" % (pDisplayCity.getName(), gc.getPlayer(pDisplayCity.getOwner()).getCivilizationShortDescription(0))
 			sMessage = localText.getText("TXT_KEY_MISC_GP_BORN", (pUnit.getName(), sCity))
 			sUnrevealedMessage = localText.getText("TXT_KEY_MISC_GP_BORN_SOMEWHERE", (pUnit.getName(),))
+			
+			if pCity.isNone(): sMessage = localText.getText("TXT_KEY_MISC_GP_BORN_OUTSIDE", (pUnit.getName(), sCity))
 		
 			for iLoopPlayer in range(con.iNumPlayers):
 				if gc.getPlayer(iLoopPlayer).isAlive():
-					if pCity.plot().isRevealed(gc.getPlayer(iLoopPlayer).getTeam(), False):
+					if pUnit.plot().isRevealed(gc.getPlayer(iLoopPlayer).getTeam(), False):
 						CyInterface().addMessage(iLoopPlayer, False, con.iDuration, sMessage, "AS2D_UNIT_GREATPEOPLE", InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, pUnit.getButton(), ColorTypes(gc.getInfoTypeForString("COLOR_UNIT_TEXT")), pUnit.getX(), pUnit.getY(), True, True)
 					else:
 						CyInterface().addMessage(iLoopPlayer, False, con.iDuration, sUnrevealedMessage, "AS2D_UNIT_GREATPEOPLE", InterfaceMessageTypes.MESSAGE_TYPE_MAJOR_EVENT, "", ColorTypes(gc.getInfoTypeForString("COLOR_UNIT_TEXT")), -1, -1, False, False)
 
-		vic.onGreatPersonBorn(iPlayer, pCity, pUnit)
+		vic.onGreatPersonBorn(iPlayer, pUnit)
 		sta.onGreatPersonBorn(iPlayer)
 
         def onReligionSpread(self, argsList):

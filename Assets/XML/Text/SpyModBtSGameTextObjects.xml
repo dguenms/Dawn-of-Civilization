@@ -23,11 +23,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_LOGISTICS3</Tag>
-		<English>Logistics II</English>
-		<French>Logistique II</French>
-		<German>Logistik II</German>
-		<Italian>Logistica II</Italian>
-		<Spanish>Logística II</Spanish>
+		<English>Logistics III</English>
+		<French>Logistique III</French>
+		<German>Logistik III</German>
+		<Italian>Logistica III</Italian>
+		<Spanish>Logística III</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DECEPTION1</Tag>
@@ -47,11 +47,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_DECEPTION3</Tag>
-		<English>Deception II</English>
-		<French>Déception II</French>
-		<German>Täuschung II</German>
-		<Italian>Inganno II</Italian>
-		<Spanish>Engano II</Spanish>
+		<English>Deception III</English>
+		<French>Déception III</French>
+		<German>Täuschung III</German>
+		<Italian>Inganno III</Italian>
+		<Spanish>Engano III</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SECURITY1</Tag>
@@ -71,11 +71,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SECURITY3</Tag>
-		<English>Informant II</English>
-		<French>Dénonciateur  II</French>
-		<German>Informant II</German>
-		<Italian>Informatore II</Italian>
-		<Spanish>Denunciante II</Spanish>
+		<English>Informant III</English>
+		<French>Dénonciateur  III</French>
+		<German>Informant III</German>
+		<Italian>Informatore III</Italian>
+		<Spanish>Denunciante III</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_IMPROVISE1</Tag>

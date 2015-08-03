@@ -180,7 +180,7 @@ public:
 	//SuperSpies: TSHEEP Assassin Mission
 	bool canAssassin(const CvPlot* pPlot, bool bTestVisible) const;																										// Exposed to Python
 	//TSHEEP Other functions
-	bool awardSpyExperience(TeamTypes eTargetTeam, int iModifier);
+	bool awardSpyExperience(TeamTypes eTargetTeam, int iCost, int iBaseCost, int iModifier);
 	//SuperSpies: TSHEEP End
 	//SuperSpies: glider1 start
 	bool canBribe(const CvPlot* pPlot, bool bTestVisible) const;

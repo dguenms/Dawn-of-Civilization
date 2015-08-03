@@ -4935,7 +4935,7 @@
 			<bAlwaysHeal>0</bAlwaysHeal>
 			<bHillsDoubleMove>0</bHillsDoubleMove>
 			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
-			<iVisibilityChange>1</iVisibilityChange>
+			<iVisibilityChange>0</iVisibilityChange>
 			<iMovesChange>0</iMovesChange>
 			<iMoveDiscountChange>0</iMoveDiscountChange>
 			<iAirRangeChange>0</iAirRangeChange>
@@ -5002,7 +5002,7 @@
 			<bAlwaysHeal>0</bAlwaysHeal>
 			<bHillsDoubleMove>0</bHillsDoubleMove>
 			<bImmuneToFirstStrikes>0</bImmuneToFirstStrikes>
-			<iVisibilityChange>1</iVisibilityChange>
+			<iVisibilityChange>0</iVisibilityChange>
 			<iMovesChange>0</iMovesChange>
 			<iMoveDiscountChange>0</iMoveDiscountChange>
 			<iAirRangeChange>0</iAirRangeChange>
@@ -5229,7 +5229,7 @@
 			<iRevoltProtection>0</iRevoltProtection>
 			<iCollateralDamageProtection>0</iCollateralDamageProtection>
 			<iPillageChange>0</iPillageChange>
-			<iUpgradeDiscount>10</iUpgradeDiscount>
+			<iUpgradeDiscount>5</iUpgradeDiscount>
 			<iExperiencePercent>0</iExperiencePercent>
 			<TerrainAttacks/>
 			<TerrainDefenses/>
@@ -5296,7 +5296,7 @@
 			<iRevoltProtection>0</iRevoltProtection>
 			<iCollateralDamageProtection>0</iCollateralDamageProtection>
 			<iPillageChange>0</iPillageChange>
-			<iUpgradeDiscount>10</iUpgradeDiscount>
+			<iUpgradeDiscount>5</iUpgradeDiscount>
 			<iExperiencePercent>0</iExperiencePercent>
 			<TerrainAttacks/>
 			<TerrainDefenses/>
@@ -5363,7 +5363,7 @@
 			<iRevoltProtection>0</iRevoltProtection>
 			<iCollateralDamageProtection>0</iCollateralDamageProtection>
 			<iPillageChange>0</iPillageChange>
-			<iUpgradeDiscount>10</iUpgradeDiscount>
+			<iUpgradeDiscount>5</iUpgradeDiscount>
 			<iExperiencePercent>0</iExperiencePercent>
 			<TerrainAttacks/>
 			<TerrainDefenses/>
@@ -5430,7 +5430,7 @@
 			<iRevoltProtection>0</iRevoltProtection>
 			<iCollateralDamageProtection>0</iCollateralDamageProtection>
 			<iPillageChange>0</iPillageChange>
-			<iUpgradeDiscount>10</iUpgradeDiscount>
+			<iUpgradeDiscount>5</iUpgradeDiscount>
 			<iExperiencePercent>0</iExperiencePercent>
 			<TerrainAttacks/>
 			<TerrainDefenses/>
@@ -5459,7 +5459,7 @@
 			<Sound>AS2D_PING</Sound>
 			<LayerAnimationPath>NONE</LayerAnimationPath>
 			<PromotionPrereq>NONE</PromotionPrereq>
-			<PromotionPrereqOr1>NONE</PromotionPrereqOr1>
+			<PromotionPrereqOr1>PROMOTION_ESCAPE1</PromotionPrereqOr1>
 			<PromotionPrereqOr2>NONE</PromotionPrereqOr2>
 			<TechPrereq>NONE</TechPrereq>
 			<StateReligionPrereq>NONE</StateReligionPrereq>
@@ -5946,7 +5946,7 @@
 			<iAirRangeChange>0</iAirRangeChange>
 			<iInterceptChange>0</iInterceptChange>
 			<iEvasionChange>0</iEvasionChange>
-			<iWithdrawalChange>40</iWithdrawalChange>
+			<iWithdrawalChange>25</iWithdrawalChange>
 			<iCargoChange>0</iCargoChange>
 			<iCollateralDamageChange>0</iCollateralDamageChange>
 			<iBombardRateChange>0</iBombardRateChange>
@@ -6013,7 +6013,7 @@
 			<iAirRangeChange>0</iAirRangeChange>
 			<iInterceptChange>0</iInterceptChange>
 			<iEvasionChange>0</iEvasionChange>
-			<iWithdrawalChange>40</iWithdrawalChange>
+			<iWithdrawalChange>25</iWithdrawalChange>
 			<iCargoChange>0</iCargoChange>
 			<iCollateralDamageChange>0</iCollateralDamageChange>
 			<iBombardRateChange>0</iBombardRateChange>

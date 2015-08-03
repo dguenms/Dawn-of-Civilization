@@ -6493,17 +6493,26 @@ bool CvUnit::canEspionage(const CvPlot* pPlot, bool bTestVisible) const
 }
 
 //SuperSpies: TSHEEP start
-bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iModifier)
+bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iCost, int iBaseCost, int iModifier)
 {
-	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + iModifier))/100;
+	// cheap missions do not give XP: avoid farming
+	if (iCost < iBaseCost / 5)
+	{
+		return false;
+	}
+
+	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + iModifier)) / 100;
 	int iExperience = 0;
 
-	if (iDifficulty < 1) iExperience = 1;
-	else if (iDifficulty < 10) iExperience = 2;
-	else if (iDifficulty < 25) iExperience = 3;
-	else if (iDifficulty < 50) iExperience = 4;
-	else if (iDifficulty < 75) iExperience = 5;
-	else iExperience = 6;
+	if (iDifficulty >= 90) iExperience = 4;
+	else if (iDifficulty >= 80) iExperience = 3;
+	else if (iDifficulty >= 65) iExperience = 2;
+	else if (iDifficulty >= 50) iExperience = 1;
+
+	if (iExperience == 0)
+	{
+		return false;
+	}
 
 	changeExperience(iExperience);
 	testPromotionReady();
@@ -6700,7 +6709,9 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 				}
 				
 				//SuperSpies: TSHEEP Give spies xp for successful missions
-				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), GC.getEspionageMissionInfo(eMission).getDifficultyMod());
+				int iCost = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCost(eMission, eTargetPlayer, plot(), iData, this);
+				int iBaseCost = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCost((EspionageMissionTypes)GC.getDefineINT("ESPIONAGEMISSION_CITY_UNHAPPINESS"), eTargetPlayer, plot(), iData, this);
+				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), iCost, iBaseCost, GC.getEspionageMissionInfo(eMission).getDifficultyMod());
 			}
 
 			return true;
@@ -6714,7 +6725,6 @@ bool CvUnit::testSpyIntercepted(PlayerTypes eTargetPlayer, int iModifier)
 {
 	CvPlayer& kTargetPlayer = GET_PLAYER(eTargetPlayer);
 
-	if (kTargetPlayer.isBarbarian()) //Rhye
 	if (kTargetPlayer.isBarbarian() || kTargetPlayer.isMinorCiv()) //Rhye
 	{
 		return false;

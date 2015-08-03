@@ -556,6 +556,7 @@ public:
 	int countRequiredSlaves();
 	bool canRespawn();
 	bool canEverRespawn();
+	void setEspionageExperience(int iNewValue);
 
 private:
 	CvPlayer* m_pPlayer;

@@ -18,7 +18,7 @@
 	</Define>
 	<Define>
 		<DefineName>AI_SLAVE_VALUE</DefineName>
-		<iDefineIntVal>100</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<!--
 		Leoreth: define how often these optional civs should appear
