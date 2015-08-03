@@ -634,7 +634,7 @@ def checkTurn(iGameTurn, iPlayer):
 				else:
 					lose(iMaya, 1)
 			
-			# third goal: acquire 5000 gold by selling resources by 1950 AD
+			# third goal: acquire 3000 gold by selling resources by 1950 AD
 			if isPossible(iMaya, 2):
 				iTradeGold = 0
 				
@@ -643,7 +643,7 @@ def checkTurn(iGameTurn, iPlayer):
 					
 				sd.changeColombianTradeGold(iTradeGold)
 				
-				if sd.getColombianTradeGold() >= utils.getTurns(5000):
+				if sd.getColombianTradeGold() >= utils.getTurns(3000):
 					win(iMaya, 2)
 					
 			if iGameTurn == getTurnForYear(1950):
@@ -866,8 +866,8 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1650):
 			expire(iSpain, 1)
 			
-		# third goal: spread Catholicism to 40% and allow no Protestant civilizations in Europe in 1700 AD
-		if iGameTurn == getTurnForYear(1700):
+		# third goal: spread Catholicism to 40% and allow no Protestant civilizations in Europe in 1650 AD
+		if iGameTurn == getTurnForYear(1650):
 			fReligionPercent = gc.getGame().calculateReligionPercent(iChristianity)
 			
 			bProtestantsEurope = isStateReligionInArea(iProtestantism, tEuropeTL, tEuropeBR)
@@ -1827,7 +1827,7 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 				if sd.getKoreanSinks() >= 20:
 					win(iKorea, 2)
 					
-def onGreatPersonBorn(iPlayer, city, unit):
+def onGreatPersonBorn(iPlayer, unit):
 
 	if utils.getHumanID() != iPlayer and sd.isIgnoreAI(): return
 	
@@ -3119,7 +3119,7 @@ def getUHVHelp(iPlayer, iGoal):
 				aHelp.append(getIcon(bSouthAmerica) + localText.getText("TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA", ()))
 			elif iGoal == 2:
 				iTradeGold = sd.getColombianTradeGold()
-				aHelp.append(getIcon(iTradeGold >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES", (iTradeGold, utils.getTurns(5000))))
+				aHelp.append(getIcon(iTradeGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES", (iTradeGold, utils.getTurns(5000))))
 
 	elif iPlayer == iByzantium:
 		if iGoal == 0:

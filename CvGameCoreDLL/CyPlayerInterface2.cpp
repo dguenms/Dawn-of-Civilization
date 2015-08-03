@@ -93,6 +93,7 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("canRespawn", &CyPlayer::canRespawn, "bool ()")
 		.def("canEverRespawn", &CyPlayer::canEverRespawn, "bool ()")
 		.def("getEspionageExperience", &CyPlayer::getEspionageExperience, "int ()")
+		.def("setEspionageExperience", &CyPlayer::setEspionageExperience, "void (int iNewValue)")
 		.def("greatSpyThreshold", &CyPlayer::greatSpyThreshold, "int ()")
 		;
 }

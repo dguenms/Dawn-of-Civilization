@@ -2488,3 +2488,9 @@ bool CyPlayer::canEverRespawn()
 {
 	return m_pPlayer ? m_pPlayer->canEverRespawn() : false;
 }
+
+void CyPlayer::setEspionageExperience(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setEspionageExperience(iNewValue);
+}

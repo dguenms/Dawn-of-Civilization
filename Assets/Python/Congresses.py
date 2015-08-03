@@ -371,7 +371,7 @@ class Congress:
 				sText = localText.getText("TXT_KEY_CONGRESS_BRIBE_THEIR_CLAIM_FAILURE", (gc.getPlayer(iBribedPlayer).getCivilizationShortDescription(0),))
 				self.vote(iBribedPlayer, iClaimant, 1)
 				
-			gc.getPlayer(iBribedPlayer).AI_changeMemoryCount(utils.getHumanID(), MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, utils.getTurns(5))
+			gc.getPlayer(iBribedPlayer).AI_changeMemoryCount(utils.getHumanID(), MemoryTypes.MEMORY_STOPPED_TRADING_RECENT, 1)
 			gc.getPlayer(iBribedPlayer).AI_changeAttitudeExtra(utils.getHumanID(), -2)
 			
 		popup = CyPopupInfo()

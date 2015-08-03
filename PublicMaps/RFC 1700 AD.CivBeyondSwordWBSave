@@ -15090,6 +15090,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=10
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,45,
@@ -16026,6 +16027,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=14
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=22,29,45,
@@ -42604,7 +42606,8 @@ BeginPlot
 	x=92,y=35
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	BonusType=BONUS_SPICES
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=24,34,38,44,45,

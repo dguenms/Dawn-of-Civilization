@@ -1005,6 +1005,16 @@
 		<English>[ICON_BULLET]%D1%%[ICON_PRODUCTION] from %s2_unit_or_building with Statue of Zeus</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_GP_BORN_OUTSIDE</Tag>
+		<English>%s1_GPName has been born near %s2_CityName!</English>
+		<German>Die Gro&#223;e Pers&#246;nlichkeit %s1_GPName wurde nahe %s2_CityName geboren!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_SPY_UPGRADED</Tag>
+		<English>Your Spy has reached the status of a Great Spy!</English>
+		<German>Ihr Spion hat den Status eines Gro&#223;en Spions erreicht!</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<German></German>

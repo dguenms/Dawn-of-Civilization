@@ -363,7 +363,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_INSERT_CULTURE</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_INSERT_CULTURE</Description>
-			<iCost>0</iCost>
+			<iCost>50</iCost>
 			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
@@ -384,7 +384,7 @@
 			<iBuyCityCostFactor>0</iBuyCityCostFactor>
 			<iStealTreasuryTypes>0</iStealTreasuryTypes>
 			<iCityInsertCultureAmountFactor>5</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>300</iCityInsertCultureCostFactor>
+			<iCityInsertCultureCostFactor>500</iCityInsertCultureCostFactor>
 			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
 			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
 			<iCityRevoltCounter>0</iCityRevoltCounter>
@@ -681,7 +681,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_BRIBE</Type>
 			<Description>TXT_KEY_MISSION_BRIBE</Description>
-			<iCost>150</iCost>
+			<iCost>250</iCost>
 			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>0</bTargetsCity>

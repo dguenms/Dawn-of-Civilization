@@ -11620,24 +11620,25 @@ void CvPlayer::setEspionageExperience(int iExperience)
 			int iExperienceThreshold = greatSpyThreshold();
 			if (m_iEspionageExperience >= iExperienceThreshold && iExperienceThreshold > 0)
 			{
-				// create great person
-				CvCity* pBestCity = NULL;
-				int iBestValue = -MAX_INT;
+				// Leoreth: select the best Spy to be upgraded to a Great Spy
+				CvUnit* pBestSpy = NULL;
+				int iBestExperience = -MAX_INT;
 				int iLoop;
-				for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+				for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 				{
-					int iValue = 4 * GC.getGameINLINE().getSorenRandNum(getNumCities(), "Great Spy City Selection");
-
-					iValue += pLoopCity->getCommerceRate(COMMERCE_ESPIONAGE);
-
-					if (iValue > iBestValue)
+					if (pLoopUnit->isSpy())
 					{
-						pBestCity = pLoopCity;
-						iBestValue = iValue;
+						int iExperience = pLoopUnit->getExperience();
+
+						if (iExperience > iBestExperience)
+						{
+							pBestSpy = pLoopUnit;
+							iBestExperience = iExperience;
+						}
 					}
 				}
 
-				if (pBestCity)
+				if (pBestSpy)
 				{
                     // edead: start unit class fix for Great Generals
 					int iI;
@@ -11648,8 +11649,10 @@ void CvPlayer::setEspionageExperience(int iExperience)
 							break;
 						}
 					}
-					UnitTypes eGreatGeneralType = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)(GC.getUnitInfo((UnitTypes)iI).getUnitClassType()))));
-					pBestCity->createGreatPeople(eGreatGeneralType, false, true);
+					UnitTypes eGreatSpyType = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)(GC.getUnitInfo((UnitTypes)iI).getUnitClassType()))));
+					createGreatPeople(eGreatSpyType, false, true, pBestSpy->getX(), pBestSpy->getY());
+					pBestSpy->kill(false);
+					gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MISC_SPY_UPGRADED"), "AS2D_UNIT_GREATPEOPLE", MESSAGE_TYPE_MAJOR_EVENT, GC.getUnitInfo(eGreatSpyType).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pBestSpy->getX_INLINE(), pBestSpy->getY_INLINE(), true, true);
 					setEspionageExperience(getEspionageExperience() - iExperienceThreshold);
 				}
 			}
@@ -19573,7 +19576,7 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
 		{
 			incrementGreatSpiesCreated();
 
-			changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENRALS_THRESHOLD_INCREASE") * ((getGreatSpiesCreated() / 10) + 1));
+			changeGreatSpiesThresholdModifier(GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((getGreatSpiesCreated() / 10) + 1));
 
 			for (int iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -19626,10 +19629,13 @@ void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThre
         }
     }*/
     // Python Event
-	if (pCity)
+	/*if (pCity)
 	{
 		CvEventReporter::getInstance().greatPersonBorn(pGreatPeopleUnit, getID(), pCity);
-	}
+	}*/
+
+	// Leoreth: report in any case, because GPs can now be born in the field (pCity == NULL)
+	CvEventReporter::getInstance().greatPersonBorn(pGreatPeopleUnit, getID(), pCity);
 }
 
 
