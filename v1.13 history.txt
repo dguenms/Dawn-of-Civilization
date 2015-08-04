@@ -181,3 +181,4 @@
 		# Have a total population of 20 by 800 BC
 # Independent cities spawn with some initial culture
 # Tech trade requires a trade connection
+# Instead of being born in cities, new Great Spies replace the most experienced Spy unit
