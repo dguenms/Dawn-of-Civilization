@@ -6502,12 +6502,12 @@ bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iCost, int iBaseCost,
 	}
 
 	int iDifficulty = (getSpyInterceptPercent(eTargetTeam) * (100 + iModifier)) / 100;
-	int iExperience = 0;
+	int iExperience = 1;
 
-	if (iDifficulty >= 90) iExperience = 4;
-	else if (iDifficulty >= 80) iExperience = 3;
-	else if (iDifficulty >= 65) iExperience = 2;
-	else if (iDifficulty >= 50) iExperience = 1;
+	if (iDifficulty >= 90) iExperience += 4;
+	else if (iDifficulty >= 80) iExperience += 3;
+	else if (iDifficulty >= 65) iExperience += 2;
+	else if (iDifficulty >= 50) iExperience += 1;
 
 	if (iExperience == 0)
 	{
