@@ -27,6 +27,9 @@ iCongressInterval = 15
 tAmericanClaimsTL = (19, 41)
 tAmericanClaimsBR = (24, 49)
 
+tNewfoundlandTL = (27, 53)
+tNewfoundlandBR = (36, 59)
+
 ### Event Handlers ###
 
 def setup():
@@ -274,7 +277,7 @@ class Congress:
 		iCost = iDifference * gc.getPlayer(iBribedPlayer).calculateTotalCommerce() / 5
 		
 		# make sure costs are positive
-		if iCost <= 0: iCost = 100
+		if iCost < 100: iCost = 100
 		
 		iTreasury = gc.getPlayer(utils.getHumanID()).getGold()
 		iEspionageSpent = gc.getTeam(utils.getHumanID()).getEspionagePointsAgainstTeam(iBribedPlayer)
@@ -560,7 +563,7 @@ class Congress:
 			iClaimant, iVotes = dResults[tAssignedPlot]
 			plot = gc.getMap().plot(x, y)
 			
-			bCanRefuse = (plot.getOwner() == utils.getHumanID() and utils.getHumanID() not in self.dVotedFor[iClaimant] and not self.bPostWar)
+			bCanRefuse = (plot.getOwner() == utils.getHumanID() and utils.getHumanID() not in self.dVotedFor[iClaimant] and not (self.bPostWar and utils.getHumanID() in self.lLosers))
 			
 			if plot.isCity():
 				self.lAssignments.append((plot.getPlotCity().getName(), plot.getOwner(), iClaimant))
@@ -1005,6 +1008,11 @@ class Congress:
 				if iPlayer == iAmerica and utils.getHumanID() != iPlayer:
 					if utils.isPlotInArea((x, y), tAmericanClaimsTL, tAmericanClaimsBR):
 						iValue += 5
+						
+				# help Canada gain Labrador and Newfoundland
+				if iPlayer == iCanada:
+					if utils.isPlotInArea((x, y), tNewfoundlandTL, tNewfoundlandBR):
+						iValue += 5
 					
 				if iValue > 0:
 					lPlots.append((x, y, iValue))
@@ -1016,7 +1024,7 @@ class Congress:
 				for y in range(iWorldY):
 					if utils.getHumanID() == iPlayer and not plot.isRevealed(iPlayer, False): continue
 					plot = gc.getMap().plot(x, y)
-					if not plot.isCity() and not plot.isPeak() and not plot.isWater():
+					if not plot.isCity() and not plot.isPeak() and not plot.isWater() and pPlayer.canFound(x, y):
 						if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
 							iSettlerMapValue = plot.getSettlerMapValue(iPlayer)
 							if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)) != "-1":
