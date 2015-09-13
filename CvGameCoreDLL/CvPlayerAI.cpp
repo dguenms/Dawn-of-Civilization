@@ -7074,7 +7074,8 @@ int CvPlayerAI::AI_getFavoriteCivicAttitude(PlayerTypes ePlayer) const
 int CvPlayerAI::AI_getTradeAttitude(PlayerTypes ePlayer) const
 {
 	// XXX human only?
-	return range(((AI_getPeacetimeGrantValue(ePlayer) + std::max(0, (AI_getPeacetimeTradeValue(ePlayer) - GET_PLAYER(ePlayer).AI_getPeacetimeTradeValue(getID())))) / ((GET_TEAM(getTeam()).AI_getHasMetCounter(GET_PLAYER(ePlayer).getTeam()) + 1) * 5)), 0, 4);
+	// Leoreth: prevent early gift exploit
+	return range(((AI_getPeacetimeGrantValue(ePlayer) + std::max(0, (AI_getPeacetimeTradeValue(ePlayer) - GET_PLAYER(ePlayer).AI_getPeacetimeTradeValue(getID())))) / ((std::max(GET_TEAM(getTeam()).AI_getHasMetCounter(GET_PLAYER(ePlayer).getTeam()), 10) + 1) * 5)), 0, 4);
 }
 
 

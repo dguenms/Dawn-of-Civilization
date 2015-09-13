@@ -25540,20 +25540,74 @@ int CvPlayer::countRequiredSlaves() const
 		}
 	}*/
 
-	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
+	/*SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
 		if (pLoopCity->plot()->canUseSlave(getID()) && pLoopCity->getSpecialistCount(eSlave) == 0)
 		{
 			iNumRequiredSlaves++;
 		}
-	}
+	}*/
 
 	// subtract slaves they already have
 	UnitClassTypes eSlaveUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE");
 	iNumRequiredSlaves -= getUnitClassCount(eSlaveUnitClass);
 
 	return iNumRequiredSlaves;
+}
+
+CvCity* CvPlayer::findSlaveCity() const
+{
+	if (isHuman()) return getCapitalCity();
+
+	std::vector<CvCity*> lViableCities;
+
+	ImprovementTypes eSlavePlantation = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION");
+	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(eSlavePlantation);
+
+	BonusTypes eBonus;
+	int iLoop;
+	CvCity* pLoopCity;
+	CvPlot* pLoopPlot;
+	for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
+	{
+		eBonus = (BonusTypes)iI;
+		if (kSlavePlantation.isImprovementBonusTrade(eBonus))
+		{
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				// count bonuses without slave plantation
+				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				{
+					pLoopPlot = plotCity(pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE(), iJ);
+
+					if (pLoopPlot->getBonusType() == eBonus && pLoopPlot->getImprovementType() != eSlavePlantation)
+					{
+						lViableCities.push_back(pLoopCity);
+					}
+				}
+			}
+		}
+	}
+
+	if (lViableCities.empty())
+	{
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			if (pLoopCity->canSlaveJoin())
+			{
+				lViableCities.push_back(pLoopCity);
+			}
+		}
+	}
+
+	if (lViableCities.empty())
+	{
+		return getCapitalCity();
+	}
+
+	int iRand = GC.getGame().getSorenRandNum(lViableCities.size(), "Select random colony.");
+	return lViableCities[iRand];
 }
 
 int CvPlayer::getNoAnarchyTurns() const
