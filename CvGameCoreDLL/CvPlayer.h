@@ -1179,6 +1179,7 @@ public:
 	int countColonies() const;
 	int countSlaveCities() const;
 	int countRequiredSlaves() const;
+	CvCity* findSlaveCity() const;
 
 	int getStabilityParameter(ParameterTypes eParameter) const;
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);

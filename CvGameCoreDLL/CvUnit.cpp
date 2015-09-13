@@ -13859,52 +13859,18 @@ void CvUnit::tradeUnit(PlayerTypes eReceivingPlayer)
 {
 	CvUnit* pTradeUnit;
 	CvWString szBuffer;
-	CvCity* pBestCity;
+	CvCity* pSpawnCity;
 	PlayerTypes eOwner;
 	
 	eOwner = getOwnerINLINE();
 	
 	if (eReceivingPlayer != NO_PLAYER)
 	{
-		pBestCity = GET_PLAYER(eReceivingPlayer).getCapitalCity();
-
-		if (!GET_PLAYER(eReceivingPlayer).isHuman())
-		{
-			std::vector<CvCity*> cityList;
-			
-			int iLoop;
-			for (CvCity* pCity = GET_PLAYER(eReceivingPlayer).firstCity(&iLoop); NULL != pCity; pCity = GET_PLAYER(eReceivingPlayer).nextCity(&iLoop))
-			{
-				switch (pCity->getRegionID())
-				{
-					case REGION_ALASKA:
-					case REGION_UNITED_STATES:
-					case REGION_CANADA:
-					case REGION_MESOAMERICA:
-					case REGION_CARIBBEAN:
-					case REGION_BRAZIL:
-					case REGION_ARGENTINA:
-					case REGION_PERU:
-					case REGION_COLOMBIA:
-						cityList.push_back(pCity);
-						break;
-
-					default:
-						FAssert(false);
-						break;
-				}
-			}
-
-			if (cityList.size() > 0)
-			{
-				int iRand = GC.getGame().getSorenRandNum(cityList.size(), "Select random colony.");
-				pBestCity = cityList[iRand];
-			}
-		}
+		pSpawnCity = GET_PLAYER(eReceivingPlayer).findSlaveCity();
 
 		UnitTypes unitType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(eReceivingPlayer).getCivilizationType()).getCivilizationUnits(GC.getUnitInfo(getUnitType()).getUnitClassType());
 
-		pTradeUnit = GET_PLAYER(eReceivingPlayer).initUnit(unitType, pBestCity->getX_INLINE(), pBestCity->getY_INLINE(), AI_getUnitAIType());
+		pTradeUnit = GET_PLAYER(eReceivingPlayer).initUnit(unitType, pSpawnCity->getX_INLINE(), pSpawnCity->getY_INLINE(), AI_getUnitAIType());
 		pTradeUnit->convert(this);
 		
 		szBuffer = gDLL->getText("TXT_KEY_MISC_TRADED_UNIT_TO_YOU", GET_PLAYER(eOwner).getNameKey(), pTradeUnit->getNameKey());
