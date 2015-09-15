@@ -98,7 +98,7 @@ tAmericasBR = (43, 63)
 
 # Colombian UP
 tSouthCentralAmericaTL = (13, 3)
-tSouthCentralAmericaBR = (41, 39)
+tSouthCentralAmericaBR = (43, 39)
 
 # English colonists
 tCanadaTL = (10, 49)
