@@ -646,15 +646,25 @@ class Congress:
 			self.startVoteCityEvent(iClaimant, (x, y))
 			
 	def voteOnClaimsAI(self):
-		for iVoter in self.lInvites:
-			if utils.getHumanID() != iVoter:
-				for iClaimant in self.dCityClaims:
-					if iVoter != iClaimant:
-						x, y, iValue = self.dCityClaims[iClaimant]
-						tResult = self.voteOnCityClaimAI(iVoter, iClaimant, (x, y), iValue)
-						
-						# if a human bribe is possible, a set of data has been returned, so add it to the list of possible bribes
-						if tResult: self.lPossibleBribes.append(tResult)
+		for iClaimant in self.dCityClaims:
+			x, y, iValue = self.dCityClaims[iClaimant]
+			
+			lVoters = self.lInvites
+			
+			plot = gc.getMap().plot(x, y)
+			if plot.isOwned():
+				iOwner = plot.getOwner()
+				if iOwner not in lVoters and iOwner in self.getHighestRankedPlayers([i for i in range(iNumPlayers)], getNumInvitations()):
+					lVoters.append(iOwner)
+			
+			if utils.getHumanID() in lVoters: lVoters.remove(utils.getHumanID())
+			if iClaimant in lVoters: lVoters.remove(iClaimant)
+			
+			for iVoter in lVoters:
+				tResult = self.voteOnCityClaimAI(iVoter, iClaimant, (x, y), iValue)
+				
+				# if a human bribe is possible, a set of data has been returned, so add it to the list of possible bribes
+				if tResult: self.lPossibleBribes.append(tResult)
 						
 		# if bribes are possible, handle them now, votes are applied after the last bribe event
 		if len(self.lPossibleBribes) > 0:
@@ -747,6 +757,10 @@ class Congress:
 		# plot culture
 		if bOwner:
 			iClaimValidity += (100 * plot.getCulture(iClaimant) / plot.countTotalCulture()) / 20
+			
+			# after wars: claiming from a non-participant has less legitimacy unless its your own claim
+			if self.bPostWar and not bOwnClaim and iOwner not in self.lLosers:
+				iClaimValidity -= 10
 			
 		# generic settler map bonus
 		iClaimantValue = plot.getSettlerMapValue(iClaimant)
@@ -1035,9 +1049,12 @@ class Congress:
 		lPlots = utils.getSortedList(lPlots, lambda x: x[2] + gc.getGame().getSorenRandNum(3, 'Randomize city value'), True)
 		return lPlots[:10]
 		
+	def getHighestRankedPlayers(self, lPlayers, iNumPlayers):
+		lSortedPlayers = utils.getSortedList(lPlayers, lambda x: gc.getGame().getPlayerRank(x))
+		return lSortedPlayers[:iNumPlayers]
+		
 	def inviteToCongress(self, lPossibleInvites):
-		lPossibleInvites = utils.getSortedList(lPossibleInvites, lambda x: gc.getGame().getPlayerRank(x))
-		self.lInvites = lPossibleInvites[:getNumInvitations()]
+		lPossibleInvites = getHighestRankedPlayers(lPossibleInvites, getNumInvitations())
 		
 		# Leoreth: America receives an invite if there are still claims in the west
 		if iAmerica not in self.lInvites and not self.bPostWar and gc.getGame().getGameTurn() > tBirth[iAmerica]:
