@@ -436,9 +436,9 @@ def checkTurn(iGameTurn, iPlayer):
 		# Persia
 		if not pPersia.isReborn():
 		
-			# first goal: control 8% of world territory by 140 AD
+			# first goal: control 7% of world territory by 140 AD
 			if isPossible(iPersia, 0):
-				if getLandPercent(iPersia) >= 7.995:
+				if getLandPercent(iPersia) >= 6.995:
 					win(iPersia, 0)
 			
 			if iGameTurn == getTurnForYear(140):
@@ -3030,7 +3030,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if not pPersia.isReborn():
 			if iGoal == 0:
 				landPercent = getLandPercent(iPersia)
-				aHelp.append(getIcon(landPercent >= 7.995) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", (str(u"%.2f%%" % landPercent), str(8))))
+				aHelp.append(getIcon(landPercent >= 6.995) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY", (str(u"%.2f%%" % landPercent), str(7))))
 			elif iGoal == 1:
 				iCounter = countWonders(iPersia)
 				aHelp.append(getIcon(iCounter >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_WONDERS", (iCounter, 7)))

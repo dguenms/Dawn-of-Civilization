@@ -222,8 +222,14 @@ def checkLostCitiesCollapse(iPlayer):
 	
 	# half or less cities than 12 turns ago: collapse (exceptions for civs with very little cities to begin with -> use lost core collapse)
 	if iNumPreviousCities > 2 and 2 * iNumCurrentCities <= iNumPreviousCities:
-		utils.debugTextPopup('Collapse by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
-		completeCollapse(iPlayer)
+	
+		if getStabilityLevel(iPlayer) == con.iStabilityCollapsing:
+			utils.debugTextPopup('Collapse by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
+			completeCollapse(iPlayer)
+		else:
+			utils.debugTextPopup('Collapse to core by lost cities: ' + pPlayer.getCivilizationShortDescription(0))
+			setStabilityLevel(iPlayer, con.iStabilityCollapsing)
+			collapseToCore(iPlayer)
 		
 	sd.setNumPreviousCities(iPlayer, iNumCurrentCities)
 	
