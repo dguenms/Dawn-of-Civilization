@@ -94,6 +94,8 @@ def endGlobalWar(iAttacker, iDefender):
 	else:
 		lWinners = lDefenders
 		lLosers = lAttackers
+		
+	utils.show("end global war. winners: %s, losers: %s" % (str(lWinners), str(lLosers)))
 	
 	currentCongress = Congress(lWinners, lLosers)
 	sd.setCurrentCongress(currentCongress)
@@ -1054,7 +1056,7 @@ class Congress:
 		return lSortedPlayers[:iNumPlayers]
 		
 	def inviteToCongress(self, lPossibleInvites):
-		lPossibleInvites = getHighestRankedPlayers(lPossibleInvites, getNumInvitations())
+		self.lInvites = self.getHighestRankedPlayers(lPossibleInvites, getNumInvitations())
 		
 		# Leoreth: America receives an invite if there are still claims in the west
 		if iAmerica not in self.lInvites and not self.bPostWar and gc.getGame().getGameTurn() > tBirth[iAmerica]:
