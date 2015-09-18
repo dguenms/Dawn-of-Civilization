@@ -503,35 +503,38 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	utils.clearPlague(iPlayer)
 	
 	# if smaller cities are supposed to be destroyed, do that first
+	lCededCities = []
 	lRemovedCities = []
 	if bRazeMinorCities:
 		for city in lCities:
-			closestCity = gc.getMap().findCity(city.getX(), city.getY(), iPlayer, -1, True, False, -1, -1, city)
+			bMaxPopulation = (city.getPopulation() < 10)
+			bNoHolyCities = (not city.isHolyCity())
+			bNoCapitals = (not city.isCapital())
+			bNotJerusalem = (not (city.getX() == 73 and city.getY() == 38))
 			
-			if closestCity:
-				if plotDistance(city.getX(), city.getY(), closestCity.getX(), closestCity.getY()) <= 2:
-					bCulture = (city.getCultureLevel() >= closestCity.getCultureLevel())
-					bPopulation = (city.getPopulation() > closestCity.getPopulation())
-					bMaxPopulation = (closestCity.getPopulation() < 10)
-					bNoHolyCities = (not closestCity.isHolyCity())
-					bNoCapitals = (not closestCity.isCapital())
-					bNotJerusalem = (not (closestCity.getX() == 73 and closestCity.getY() == 38))
-					if bCulture and bPopulation and bMaxPopulation and bNoHolyCities and bNoCapitals and bNotJerusalem:
-						lRemovedCities.append((closestCity.getX(), closestCity.getY()))
-						
-	# always raze Harappan cities
-	if iPlayer == con.iHarappa and utils.getHumanID() != iPlayer:
-		for city in lCities:
-			if (city.getX(), city.getY()) not in lRemovedCities:
-				lRemovedCities.append((city.getX(), city.getY()))
+			if bMaxPopulation and bNoHolyCities and bNoCapitals and bNotJerusalem:
+				closestCity = gc.getMap().findCity(city.getX(), city.getY(), iPlayer, -1, True, False, -1, -1, city)
 				
-	for tPlot in lRemovedCities:
-		x, y = tPlot
-		gc.getPlayer(con.iBarbarian).disband(gc.getMap().plot(x, y).getPlotCity())
+				if closestCity:
+					if plotDistance(city.getX(), city.getY(), closestCity.getX(), closestCity.getY()) <= 2:
+						bCulture = (city.getCultureLevel() <= closestCity.getCultureLevel())
+						bPopulation = (city.getPopulation() < closestCity.getPopulation())
+						
+						if bCulture and bPopulation:
+							lRemovedCities.append(city)
+							continue
+							
+			# always raze Harappan cities
+			if iPlayer == con.iHarappa and utils.getHumanID() != iPlayer:
+				lRemovedCities.append(city)
+				continue
+							
+			lCededCities.append(city)
+			
+	for city in lRemovedCities:
+		gc.getPlayer(con.iBarbarian).disband(city)
 	
-	for city in lCities:
-	
-		if (city.getX(), city.getY()) in lRemovedCities: continue
+	for city in lCededCities:
 	
 		tCityPlot = (city.getX(), city.getY())
 		cityPlot = gc.getMap().plot(city.getX(), city.getY())
