@@ -3208,9 +3208,10 @@ class RiseAndFall:
                                 utils.makeUnit(con.iWarrior, iCiv, tSeaPlot, 1)
                 if (iCiv == iPersia):
 			utils.createSettlers(iCiv, 3)
-                        utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
-                        utils.makeUnit(con.iPersiaImmortal, iCiv, tPlot, 6)
-                        utils.makeUnit(con.iChariot, iCiv, tPlot, 4)
+                        utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+                        utils.makeUnit(con.iPersiaImmortal, iCiv, tPlot, 4)
+                        utils.makeUnit(con.iHorseArcher, iCiv, tPlot, 2)
+			utils.makeUnit(con.iWarElephant, iCiv, tPlot, 1)
                 if (iCiv == iCarthage):
 			utils.createSettlers(iCiv, 1)
                         utils.makeUnitAI(con.iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
