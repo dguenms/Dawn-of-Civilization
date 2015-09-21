@@ -8958,23 +8958,22 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 			//		iValue /= 3;
 			//	}
 
-			iValue /= 10;
+			// Leoreth: value more because happiness/health now scale better
+			//iValue /= 10;
+			iValue /= 2;
 		}
-
-		// Leoreth: weigh by number of cities
-		int iNumCities = getNumCities();
-		if (bStrategic) iNumCities = std::max(5, iNumCities);
-
-		iValue *= iNumCities;
 
 		// Leoreth: apply change
 		iValue *= iChange;
 
+		// Leoreth: weigh by number of cities
+		int iNumCities = getNumCities();
+
 		// Leoreth: actual gain from bonuses
 		if (bOnlyBonus)
 		{
-			iValue += 100 * AI_bonusHappinessVal(eBonus, iChange);
-			iValue += 50 * AI_bonusHealthVal(eBonus, iChange);
+			iValue += 100 * AI_bonusHappinessVal(eBonus, iChange) / iNumCities;
+			iValue += 50 * AI_bonusHealthVal(eBonus, iChange) / iNumCities;
 		}
 
 		// Leoreth: scale with gold value
@@ -9040,14 +9039,26 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 
 int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
 {
-	int iValue;
+	int iValue, iOurValue, iTheirValue;
+	int iCityDifference, iTotalCities;
 
 	FAssertMsg(ePlayer != getID(), "shouldn't call this function on ourselves");
 
-	iValue = AI_bonusVal(eBonus, iChange);
+	iCityDifference = getNumCities() - GET_PLAYER(ePlayer).getNumCities();
+	iTotalCities = getNumCities() + GET_PLAYER(ePlayer).getNumCities();
+
+	iOurValue = AI_bonusVal(eBonus, iChange);
+
+	iOurValue *= 100 + range(0, iCityDifference, iTotalCities / 2) * 20; //(getNumCities() + 3) * 30;
+	iOurValue /= 100;
 	
 	// Leoreth: consider relative gain (negative because their loss is our gain)
-	iValue -= GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
+	iTheirValue = GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
+
+	iTheirValue *= 100 + range(0, -iCityDifference, iTotalCities / 2) * 20; //(GET_PLAYER(ePlayer).getNumCities() + 3) * 30;
+	iTheirValue /= 100;
+
+	iValue = iOurValue - iTheirValue;
 
 	//iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
 	//iValue /= 100;

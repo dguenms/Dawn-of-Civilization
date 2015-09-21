@@ -2167,7 +2167,7 @@ def isEntered(iEra):
 	
 def getBestCity(iPlayer, tPlot, function):
 	x, y = tPlot
-	if not gc.getMap().plot(x, y).isCity(): return None
+	#if not gc.getMap().plot(x, y).isCity(): return None
 	
 	bestCity = gc.getMap().plot(x, y).getPlotCity()
 	iBestValue = function(bestCity)
