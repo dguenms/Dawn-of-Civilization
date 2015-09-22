@@ -511,8 +511,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	# if smaller cities are supposed to be destroyed, do that first
 	lCededCities = []
 	lRemovedCities = []
-	if bRazeMinorCities:
-		for city in lCities:
+	for city in lCities:
+		if bRazeMinorCities:
 			bMaxPopulation = (city.getPopulation() < 10)
 			bNoHolyCities = (not city.isHolyCity())
 			bNoCapitals = (not city.isCapital())
@@ -534,8 +534,8 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 			if iPlayer == con.iHarappa and utils.getHumanID() != iPlayer:
 				lRemovedCities.append(city)
 				continue
-							
-			lCededCities.append(city)
+						
+		lCededCities.append(city)
 			
 	for city in lRemovedCities:
 		gc.getPlayer(con.iBarbarian).disband(city)
@@ -673,7 +673,6 @@ def completeCollapse(iPlayer):
 	secedeCities(iPlayer, lCities, bRazeMinorCities)
 		
 	# take care of the remnants of the civ
-	#utils.killUnitsInArea((0, 0), (127, 63), iPlayer)
 	gc.getPlayer(iPlayer).killUnits()
 	utils.resetUHV(iPlayer)
 	utils.setLastTurnAlive(iPlayer, gc.getGame().getGameTurn())
