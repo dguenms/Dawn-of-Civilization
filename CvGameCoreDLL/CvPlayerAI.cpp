@@ -8967,7 +8967,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 		iValue *= iChange;
 
 		// Leoreth: weigh by number of cities
-		int iNumCities = getNumCities();
+		int iNumCities = std::max(getNumCities(), 1);
 
 		// Leoreth: actual gain from bonuses
 		if (bOnlyBonus)
