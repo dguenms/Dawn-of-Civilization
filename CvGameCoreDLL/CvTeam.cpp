@@ -2931,8 +2931,9 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// make the max penalty 25%, have it decrease for every subsequent civ
 	// so 25% for the first civ (iCivsWithTech == 0)
 	// 0% for the fourth civ (iCivsWithTech == 3)
+	// limited to human players now
 	int iLowerThreshold = iCivsAlive / 4;
-	if (iCivsWithTech < iLowerThreshold) iSpreadModifier += 20 * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
+	if (GET_PLAYER(getLeaderID()).isHuman() && iCivsWithTech < iLowerThreshold) iSpreadModifier += 20 * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
 
 	// more than three quarters know it -> less expensive
 	// assume there are 12 civs, then its a decrease for the 10th to 12th civ to discover something
@@ -2943,30 +2944,21 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= 25 * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
 	// Leoreth: Chinese UP: no penalties for researching less widespread techs until the Renaissance
-	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
+	/*if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
 	{
 		if (iSpreadModifier > 0) iSpreadModifier = 0;
-	}
+	}*/
 
 	iModifier += iSpreadModifier;
 
 	//Leoreth: new Chinese UP: techs not known by anyone get -20% cost
-	/*if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
+	if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)
 	{
-		bool bUnknown = true;
-		for (int i = 0; i < NUM_MAJOR_PLAYERS; i++)
-		{
-			if (GET_TEAM((TeamTypes)i).isHasTech(eTech))
-			{
-				bUnknown = false;
-			}
-		}
-
-		if (bUnknown) //allow for all techs
+		if (iCivsWithTech == 0)
 		{
 			iModifier -= 20;
 		}
-	}*/
+	}
 
 	return iModifier;
 }

@@ -94,8 +94,6 @@ def endGlobalWar(iAttacker, iDefender):
 	else:
 		lWinners = lDefenders
 		lLosers = lAttackers
-		
-	utils.show("end global war. winners: %s, losers: %s" % (str(lWinners), str(lLosers)))
 	
 	currentCongress = Congress(lWinners, lLosers)
 	sd.setCurrentCongress(currentCongress)
