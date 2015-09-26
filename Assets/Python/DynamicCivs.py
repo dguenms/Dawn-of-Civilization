@@ -1010,12 +1010,20 @@ class DynamicCivs:
 		
 	def isCommunist(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
+		iCivic0 = pPlayer.getCivics(0)
+		iCivic1 = pPlayer.getCivics(1)
 		iCivic3 = pPlayer.getCivics(3)
 		
-		if iCivic3 == con.iCivicCentralPlanning:
-			return True
+		if iCivic3 != con.iCivicCentralPlanning:
+			return False
 			
-		return False
+		if iCivic0 == con.iCivicTheocracy:
+			return False
+			
+		if iCivic1 in [con.iCivicVassalage, con.iCivicAbsolutism]:
+			return False
+			
+		return True
 		
 	def isFascist(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)

@@ -9042,10 +9042,14 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 	int iValue, iOurValue, iTheirValue;
 	int iCityDifference, iTotalCities;
 
+	bool bVassal = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(getTeam()) && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isCapitulated();
+
 	FAssertMsg(ePlayer != getID(), "shouldn't call this function on ourselves");
 
 	iCityDifference = getNumCities() - GET_PLAYER(ePlayer).getNumCities();
 	iTotalCities = getNumCities() + GET_PLAYER(ePlayer).getNumCities();
+
+	if (bVassal) iCityDifference = 0;
 
 	iOurValue = AI_bonusVal(eBonus, iChange);
 
@@ -9066,9 +9070,9 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 	iValue *= std::max(0, (GC.getBonusInfo(eBonus).getAITradeModifier() + 100));
 	iValue /= 100;
 
-	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(getTeam()) && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isCapitulated())
+	if (bVassal)
 	{
-		if (GET_PLAYER(ePlayer).getNumAvailableBonuses(eBonus) > 1 && iChange == 1)
+		if (GET_PLAYER(ePlayer).getNumAvailableBonuses(eBonus) > iChange && iChange > 0)
 		{
 			iValue /= 2;
 		}
