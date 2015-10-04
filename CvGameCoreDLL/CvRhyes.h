@@ -28,6 +28,8 @@ typedef list<char*> LISTCHAR;
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(52)
 
+#define NUM_ERAS				(ERA_FUTURE+1)
+
 enum MyTechs
 {
  MYSTICISM,
@@ -388,6 +390,9 @@ extern char uniquePower[NUM_CIVS][2][16];
 extern char uniqueGoals[NUM_CIVS][3][18];
 extern char rating[NUM_CIVS][6][15];
 
+extern int lTechLeaderPenalty[NUM_ERAS];
+extern int lTechBackwardsBonus[NUM_ERAS];
+
 extern int regionSpreadFactor[NUM_REGIONS][NUM_RELIGIONS];
 
 extern int turnPlayed[NUM_PL+NUM_MINORS]; 
@@ -398,3 +403,13 @@ extern int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS];
 extern int regionMap[68][124];
 extern int settlersMaps[2][NUM_PL][68][124];
 extern int warMaps[2][NUM_PL][68][124];
+
+inline int getStartingEra(PlayerTypes ePlayer, bool bAstronomy = true)
+{
+	if (GET_PLAYER(ePlayer).isReborn()) return startingEraRespawn[ePlayer];
+	else if (bAstronomy && GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)ASTRONOMY)) return startingEraFoundAstronomy[ePlayer];
+	else if (getScenario() == SCENARIO_1700AD) return startingEraFound1700AD[ePlayer];
+	else if (getScenario() == SCENARIO_600AD) return startingEraFound600AD[ePlayer];
+
+	return startingEraFound[ePlayer];
+}

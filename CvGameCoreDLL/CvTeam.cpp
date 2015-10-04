@@ -2917,6 +2917,13 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 {
 	int iModifier = 0;
 
+	int iCurrentEra = GET_PLAYER(getLeaderID()).getCurrentEra();
+	int iStartingEra = getStartingEra(getLeaderID(), false);
+
+	// effect does not apply during the era you started in
+	int iLeaderPenalty = (iCurrentEra > iStartingEra) ? lTechLeaderPenalty[iCurrentEra] : 0;
+	int iBackwardsBonus = (iCurrentEra > iStartingEra) ? lTechBackwardsBonus[iCurrentEra] : 0;
+
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
 	int iCivsWithTech = 0;
@@ -2933,7 +2940,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// 0% for the fourth civ (iCivsWithTech == 3)
 	// limited to human players now
 	int iLowerThreshold = iCivsAlive / 4;
-	if (GET_PLAYER(getLeaderID()).isHuman() && iCivsWithTech < iLowerThreshold) iSpreadModifier += 20 * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
+	if (GET_PLAYER(getLeaderID()).isHuman() && iCivsWithTech < iLowerThreshold) iSpreadModifier += iLeaderPenalty * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
 
 	// more than three quarters know it -> less expensive
 	// assume there are 12 civs, then its a decrease for the 10th to 12th civ to discover something
@@ -2941,7 +2948,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// so 25% for the 12th civ (iCivsWithTech == 11)
 	// 0% for the 9th civ (iCivsWithTech == 8)
 	int iUpperThreshold = 3 * iLowerThreshold;
-	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= 25 * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
+	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= iBackwardsBonus * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
 	// Leoreth: Chinese UP: no penalties for researching less widespread techs until the Renaissance
 	/*if (getID() == CHINA && GET_PLAYER((PlayerTypes)getID()).getCurrentEra() < ERA_RENAISSANCE)

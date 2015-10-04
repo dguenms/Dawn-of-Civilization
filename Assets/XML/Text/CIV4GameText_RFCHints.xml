@@ -295,9 +295,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_37</Tag>
-		<English>In Rhye's and Fall of Civilization, jungle and marshes are impassable to most land units.</English>
+		<English>In Rhye's and Fall of Civilization, jungle, rainforest and marshes are impassable to most land units.</English>
 		<French>Dans Rhye's and Fall of Civilization, la plupart des unités terrestres ne peuvent pas franchir les marais et les jungles.</French>
-		<German>In Rhye's and Fall of Civilization sind Dschungel- und Sumpf-Geländefelder für die meisten Landeinheiten unpassierbar.</German>
+		<German>In Rhye's and Fall of Civilization sind Dschungel-, Regenwald- und Sumpf-Geländefelder für die meisten Landeinheiten unpassierbar.</German>
 		<Italian>In Rhye's and Fall giungle e paludi sono impossibili da attraversare per la maggior parte delle unit&#224; terrestri.</Italian>
 		<Spanish>En Rhye's and Fall of Civilization la mayor&#237;a de las unidades terrestres no pueden atravesar junglas ni ci&#233;nagas.</Spanish>
 	</TEXT>
@@ -391,7 +391,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_7</Tag>
-		<English>In Dawn of Civilization, Nationalism is not necessary for the resurrection of civilizations. Instead they can only happen in historically appropriate periods.</English>
+		<English>In Dawn of Civilization, Nationalism is not necessary for the resurrection of civilizations. They can occur in every historically appropriate period instead.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_8</Tag>
@@ -423,7 +423,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_15</Tag>
-		<English>Related religions like Hinduism and Buddhism or Confucianism and Taoism create smaller diplomacy penalties</English>
+		<English>Related religions like Hinduism and Buddhism or Confucianism and Taoism create reduced diplomacy penalties</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_16</Tag>
@@ -475,7 +475,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_28</Tag>
-		<English>Complete the persecution project to remove non-state religions from your cities.</English>
+		<English>Train a persecutor to remove non-state religions from your cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_29</Tag>
@@ -532,5 +532,77 @@
 	<TEXT>
 		<Tag>TXT_KEY_HINT_DOC_42</Tag>
 		<English>The Tamils, Moors, Tibetan, Polish and Congolese civilizations can be configured not to appear in every game. Edit the XML\GlobalDefinesAlt.xml file.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_43</Tag>
+		<English>The Polynesian and Harappan civilizations are intended for the human player only. You can enable them for the AI in XML\GlobalDefinesAlt.xml, however their AI will not be geared towards playing successfully or realistically.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_44</Tag>
+		<English>Stability checks can increase or reduce your stability level and in the latter case, lead to crises and even collapse!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_45</Tag>
+		<English>Stability checks are triggered by a variety of events including discovering techs, changing civics and losing or acquiring cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_46</Tag>
+		<English>Golden Ages protect you from most negative effects of being unstable. The protection only lasts as long as the Golden Age, however.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_47</Tag>
+		<English>DoC adds a new terrain feature, rainforests. They resemble jungles, but cause no unhealthiness and can be improved after the discovery of Metal Casting.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_48</Tag>
+		<English>In DoC, Ocean tiles start out yielding no food. Improvements on Ocean tiles require Compass, but in turn provide one additional food.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_49</Tag>
+		<English>Islands are a new maritime terrain feature that provides additional production, tile defense and faster culture spread.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_50</Tag>
+		<English>Instead of spreading their culture in rings with every new culture level, cities spread cultural control over individual tiles as their culture grows.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_51</Tag>
+		<English>The amount of culture needed to cover a tile depends on its terrain type and features, as well as the distance to cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_52</Tag>
+		<English>Cities will start with covering tiles with the lowest culture costs.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_53</Tag>
+		<English>City culture will never expand beyond the third ring.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_54</Tag>
+		<English>The amount of culture required for the next tile to be covered is displayed as tick marks on the culture bar in the city screen.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_55</Tag>
+		<English>A purple circle marks the next tile to be culturally covered in the city screen.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_56</Tag>
+		<English>A Great Statesman can put an end to war or anarchy, improve diplomatic relations, build an Administrative Center or reform your civics for free.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_57</Tag>
+		<English>Oases provide more food and less commerce. In exchange, cottages can be built on Oases.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_58</Tag>
+		<English>Spies can now accumulate experience and acquire promotions by successfully completing missions.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_59</Tag>
+		<English>Spy specialists have been removed. Instead, global spy experience is accumulated similar to military experience. If the bar is full, your most experienced spy becomes a Great Spy.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_DOC_60</Tag>
+		<English>If you have problems with game performance in the late game, enabling graphics paging in the BUG menu can help on some machines.</English>
 	</TEXT>
 </Civ4GameText>
