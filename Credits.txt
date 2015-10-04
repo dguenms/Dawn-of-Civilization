@@ -66,6 +66,7 @@ MISCELLANEOUS
 # blizzrd: map changes in Scandinavia
 # Sgt. Bears: text and XML work
 # andrewv42: map changes in India and Indochina
+# Steb: city names in Canada and the Americas
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others

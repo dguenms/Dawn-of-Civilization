@@ -3130,16 +3130,16 @@ class CvInfoScreen:
 
 					self.drawGraphs()
 
-				elif (szWidgetName == self.szTurnsDropdownWidget) and AdvisorOpt.isGraphs():
+				elif (szWidgetName == self.szTurnsDropdownWidget and not AdvisorOpt.isGraphs()):
 
 					self.zoomGraph(self.dropDownTurns[iSelected])
 					self.drawGraphs()
 
-				elif (szWidgetName == self.szGraphSmoothingDropdownWidget_1in1 and AdvisorOpt.isGraphs()):
+				elif (AdvisorOpt.isGraphs() and szWidgetName == self.szGraphSmoothingDropdownWidget_1in1):
 					self.iGraph_Smoothing_1in1 = iSelected
 					self.drawGraphs()
 
-				elif (szWidgetName == self.szGraphSmoothingDropdownWidget_7in1 and AdvisorOpt.isGraphs()):
+				elif (AdvisorOpt.isGraphs() and szWidgetName == self.szGraphSmoothingDropdownWidget_7in1):
 					self.iGraph_Smoothing_7in1 = iSelected
 					self.drawGraphs()
 

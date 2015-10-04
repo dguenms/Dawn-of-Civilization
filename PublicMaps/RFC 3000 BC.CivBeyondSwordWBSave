@@ -30196,6 +30196,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=36
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
