@@ -1583,7 +1583,7 @@ tCoreAreasBR = (
 (50, 44), #Portugal
 (29, 24), #Inca
 (63, 47), #Italy
-(106, 49), #Mongolia
+(106, 52), #Mongolia
 (19, 40), #Mexico
 (94, 43), #Mughals
 (76, 47), #Turkey

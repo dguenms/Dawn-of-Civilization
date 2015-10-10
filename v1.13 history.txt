@@ -80,7 +80,6 @@
 # moved sheep near Aspadana east to Balkh
 # Persia starts with one additional settler and worker
 # Persian Immortals start with the March promotion
-
 # Parthian barbarians will only spawn if Persia is dead
 # increased Arabian unit and city upkeep and unit cost
 # increased Turkish unit and city upkeep
@@ -157,7 +156,8 @@
 # Supermarket does not give extra health for Cow, Deer, Pig, Sheep anymore
 # new Supermarket effect: +1 health from Wheat, Corn, Rice
 # Cow, Deer, Pig, Sheep, Fish, Clam and Crab cannot be traded until the discovery of Refrigeration
-# new Indian UU: Bamboo Bowman (Longbowman): strength 5, requires Monarchy and Calendar, can enter Jungle, starts with Formation and Woodsman I
+# new Indian UU: Patiyodha (Longbowman): strength 5, requires Monarchy and Calendar, can enter Jungle, starts with Formation and Woodsman I
+# new Indian UB: Edict (Monument): -10% maintenance cost
 # new terrain feature: Rainforest
 	# minus 1 food
 	# passable only to civilian units and elephants
@@ -182,3 +182,21 @@
 # Independent cities spawn with some initial culture
 # Tech trade requires a trade connection
 # Instead of being born in cities, new Great Spies replace the most experienced Spy unit
+# removed the Persecution project
+# added a Persecutor unit (national unit)
+# Congresses establish contact between all participants
+# When choosing to refuse a Congress city assignment, the dialog lists the civs that voted yes
+# removed the Embassy building
+# vassal dynamic names only apply to capitulated vassals
+# included the improved Civics interface from History Rewritten
+# added an option to enable graphics paging to reduce memory consumption
+# civilizations far ahead/behind in tech receive a penalty/bonus to research costs that increases through the eras
+# added the Tarim river and more oases in the Tarim basin
+# included graphics and names for various female Great People across all civilizations
+# AIs are now willing to trade away their last resource or corporation resources if the trade is otherwise favorable
+# AI resource value is now scaling with the overall benefit on its cities
+# War Elephants now require Horseback Riding and Monarchy
+# Forts increase tile defense by 50%
+# the AI will now only ask to join their war if you share a border with their enemy
+# current year is always displayed during autoplay (even for civs that start without Calendar)
+# disabled the "100 turns left" message
