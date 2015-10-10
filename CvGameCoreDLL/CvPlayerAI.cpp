@@ -9039,7 +9039,7 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 
 int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
 {
-	int iValue, iOurValue, iTheirValue;
+	int iValue;
 	int iCityDifference, iTotalCities;
 
 	bool bVassal = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(getTeam()) && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isCapitulated();
@@ -9051,18 +9051,18 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 
 	if (bVassal) iCityDifference = 0;
 
-	iOurValue = AI_bonusVal(eBonus, iChange);
+	iValue = AI_bonusVal(eBonus, iChange);
 
-	iOurValue *= 100 + range(0, iCityDifference, iTotalCities / 2) * 20; //(getNumCities() + 3) * 30;
-	iOurValue /= 100;
+	iValue *= 100 + range(0, iCityDifference, iTotalCities / 2) * 20; //(getNumCities() + 3) * 30;
+	iValue /= 100;
 	
 	// Leoreth: consider relative gain (negative because their loss is our gain)
-	iTheirValue = GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
+	/*iTheirValue = GET_PLAYER(ePlayer).AI_bonusVal(eBonus, -1 * iChange);
 
 	iTheirValue *= 100 + range(0, -iCityDifference, iTotalCities / 2) * 20; //(GET_PLAYER(ePlayer).getNumCities() + 3) * 30;
 	iTheirValue /= 100;
 
-	iValue = iOurValue - iTheirValue;
+	iValue = iOurValue - iTheirValue;*/
 
 	//iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
 	//iValue /= 100;
