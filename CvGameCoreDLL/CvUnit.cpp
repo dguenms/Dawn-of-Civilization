@@ -253,14 +253,14 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	}
 	//Rhye - end
 
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+	/*if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
 	{
 		if (getUnitCombatType() == 1 || getUnitCombatType() == 3) // melee and archery
 		{
 			setHasPromotion(((PromotionTypes)26), true); //citygarrison1
 			setHasPromotion(((PromotionTypes)29), true); //drill1
 		}
-	}
+	}*/
 
 	if (getDomainType() == DOMAIN_LAND)
 	{
@@ -6493,10 +6493,10 @@ bool CvUnit::canEspionage(const CvPlot* pPlot, bool bTestVisible) const
 }
 
 //SuperSpies: TSHEEP start
-bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iCost, int iBaseCost, int iModifier)
+bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, int iCost, int iModifier)
 {
 	// cheap missions do not give XP: avoid farming
-	if (iCost < iBaseCost / 5)
+	if (iCost < std::min(100, GET_TEAM(getTeam()).getEspionagePointsAgainstTeam(eTargetTeam)))
 	{
 		return false;
 	}
@@ -6657,6 +6657,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 	}
 
 	PlayerTypes eTargetPlayer = plot()->getOwnerINLINE();
+	int iMissionCost;
 
 	if (NO_ESPIONAGEMISSION == eMission)
 	{
@@ -6684,6 +6685,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 			return false;
 		}
 
+		iMissionCost = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCost(eMission, eTargetPlayer, plot(), iData, this);
 		if (GET_PLAYER(getOwnerINLINE()).doEspionageMission(eMission, eTargetPlayer, plot(), iData, this))
 		{
 			if (plot()->isActiveVisible(false))
@@ -6709,9 +6711,7 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 				}
 				
 				//SuperSpies: TSHEEP Give spies xp for successful missions
-				int iCost = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCost(eMission, eTargetPlayer, plot(), iData, this);
-				int iBaseCost = GET_PLAYER(getOwnerINLINE()).getEspionageMissionCost((EspionageMissionTypes)GC.getDefineINT("ESPIONAGEMISSION_CITY_UNHAPPINESS"), eTargetPlayer, plot(), iData, this);
-				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), iCost, iBaseCost, GC.getEspionageMissionInfo(eMission).getDifficultyMod());
+				awardSpyExperience(GET_PLAYER(eTargetPlayer).getTeam(), iMissionCost, GC.getEspionageMissionInfo(eMission).getDifficultyMod());
 			}
 
 			return true;

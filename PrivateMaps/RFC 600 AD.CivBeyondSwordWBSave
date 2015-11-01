@@ -247,7 +247,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE                   
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY      
-	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_WARRIOR_CODE
+	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -438,7 +438,7 @@ BeginPlayer
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_WARRIOR_CODE
+	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -461,7 +461,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_GUILDS
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
-	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_WARRIOR_CODE
 	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -627,7 +626,6 @@ BeginPlayer
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
-	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_WARRIOR_CODE
 	MinorNationStatus=1
 	Team=48
 	PlayableCiv=0
@@ -19173,6 +19171,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=50,y=41
+	RiverNSDirection=2
+	isWOfRiver
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -19548,6 +19548,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=42
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot

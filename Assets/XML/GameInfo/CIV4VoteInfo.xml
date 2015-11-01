@@ -766,5 +766,37 @@
 				</DiploVote>
 			</DiploVotes>
 		</VoteInfo>
+		<VoteInfo>
+			<Type>VOTE_MULTILATERALISM</Type>
+			<Description>TXT_KEY_VOTE_MULTILATERALISM</Description>
+			<iPopulationThreshold>51</iPopulationThreshold>
+			<bCityVoting>0</bCityVoting>
+			<bCivVoting>0</bCivVoting>
+			<iMinVoters>3</iMinVoters>
+			<iStateReligionVotePercent>0</iStateReligionVotePercent>
+			<iTradeRoutes>0</iTradeRoutes>
+			<bSecretaryGeneral>0</bSecretaryGeneral>
+			<bVictory>0</bVictory>
+			<bFreeTrade>0</bFreeTrade>
+			<bNoNukes>0</bNoNukes>
+			<bDefensivePact>0</bDefensivePact>
+			<bOpenBorders>0</bOpenBorders>
+			<bForcePeace>0</bForcePeace>
+			<bForceNoTrade>0</bForceNoTrade>
+			<bForceWar>0</bForceWar>
+			<bAssignCity>0</bAssignCity>
+			<ForceCivics>
+				<ForceCivic>
+					<CivicType>CIVIC_MULTILATERALISM</CivicType>
+					<bForce>1</bForce>
+				</ForceCivic>
+			</ForceCivics>
+			<DiploVotes>
+				<DiploVote>
+					<DiploVoteType>DIPLOVOTE_UN</DiploVoteType>
+					<bValid>1</bValid>
+				</DiploVote>
+			</DiploVotes>
+		</VoteInfo>
 	</VoteInfos>
 </Civ4VoteInfo>

@@ -45,7 +45,7 @@
 		<English>Religious Victory:[NEWLINE][ICON_BULLET]Tolerance: Control the temples of seven different religions[NEWLINE][ICON_BULLET]Humanism: Make sure there are 20 universities controlled by secular civilizations[NEWLINE][ICON_BULLET]Modernization: Be the first to enter the Industrial and Modern eras[PARAGRAPH:2][TAB]Secularism is the principle of separation between government institutions and the persons mandated to represent the State from religious institutions and religious dignitaries. In one sense, secularism may assert the right to be free from religious rule and teachings, and the right to freedom from governmental imposition of religion upon the people within a state that is neutral on matters of belief. (See also separation of church and state and Laïcité.) In another sense, it refers to the view that human activities and decisions, especially political ones, should be unbiased by religious influence. Some scholars are now arguing that the very idea of secularism will change.[PARAGRAPH:2]Secularism draws its intellectual roots from Greek and Roman philosophers such as Marcus Aurelius and Epicurus; medieval Muslim polymaths such as Ibn Rushd; Enlightenment thinkers such as Denis Diderot, Voltaire, Baruch Spinoza, John Locke, James Madison, Thomas Jefferson, and Thomas Paine; and more recent freethinkers, agnostics, and atheists such as Robert Ingersoll and Bertrand Russell.[PARAGRAPH:2]The purposes and arguments in support of secularism vary widely. In European laicism, it has been argued that secularism is a movement toward modernization, and away from traditional religious values (also known as secularization). This type of secularism, on a social or philosophical level, has often occurred while maintaining an official state church or other state support of religion. In the United States, some argue that state secularism has served to a greater extent to protect religion and the religious from governmental interference, while secularism on a social level is less prevalent. Within countries as well, differing political movements support secularism for varying reasons.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_SELF_SUFFICIENCY_PEDIA</Tag>
+		<Tag>TXT_KEY_CIVIC_SUBSISTENCE_PEDIA</Tag>
 		<English>[TAB]Self-sufficiency is the state of not requiring any aid, support, or interaction, for survival; it is therefore a type of personal or collective autonomy. On a national scale, a totally self-sufficient economy that does not trade with the outside world is called an autarky.[PARAGRAPH:2]The term self-sufficiency is usually applied to varieties of sustainable living in which nothing is consumed outside of what is produced by the self-sufficient individuals. Examples of attempts at self-sufficiency in North America include simple living, homesteading, off-the-grid, survivalism, DIY ethic and the back-to-the-land movement.[PARAGRAPH:2]Practices that enable or aid self-sufficiency include autonomous building, permaculture, sustainable agriculture, and renewable energy.[PARAGRAPH:2]The term is also applied to limited forms of self-sufficiency, for example growing one's own food or becoming economically independent of state subsidies.[PARAGRAPH:2]The entire population of the world was, at one time, self sufficient. They made their own clothing, tools, weapons, boats, huts, and food. They used gathering, hunting, herding and farming to find/hunt/grow their own food. As the human population of he world grew, the wild food supply dwindled. People began to rely on herding and farming more; reling less upon gathering and hunting. In modern times, automated food production on farms makes food. The vast populations now depend on a fewer farmers to make their food for them. Many in developed nations now depend on job salaries to buy food, clothes, and shelter, rather than making these things from raw materials found in the environment. But in a few places in the world, native societies continue to be self sufficient, never having given up their traditional ways of food gathering and food making. Because these native peoples have no jobs and make no salaries, they are often listed as unemployed.</English>
 	</TEXT>
 	<TEXT>
@@ -129,7 +129,7 @@
 		<Spanish>[TAB]La tiran&#237;a (del griego tyrannos), en el sentido que se dio al t&#233;rmino en la Grecia antigua, era el r&#233;gimen de poder absoluto, de ordinario unipersonal, que con frecuencia instauraba el tirano, aquel o aquellos que hab&#237;an derrocado el gobierno de una ciudad-estado, normalmente gracias al apoyo popular, pero tambi&#233;n mediante un golpe de estado militar o una intervenci&#243;n extranjera. [NEWLINE] [NEWLINE]Parece que el t&#233;rmino "tirano" se aplic&#243; por primera vez a Fid&#243;n de Argos y a C&#237;pselo de Corinto. El periodo de esplendor de los reg&#237;menes de tiran&#237;a fue el siglo VI a. C., cuando muchos gobiernos del Egeo fueron derribados y Persia tuvo ocasi&#243;n de hacer sus primeras incursiones en Grecia, al buscar diversos tiranos su apoyo para consolidarse en el poder. Pis&#237;strato y sus descendientes, los pisistr&#225;tidas (Hipias e Hiparco), son el ejemplo de estos gobernantes para Atenas; Pol&#237;crates para Samos, y muchos otros. [NEWLINE] [NEWLINE]La tiran&#237;a griega fue fruto de la lucha de las clases populares contra los abusos de la aristocracia y los reyes-sacerdotes, cuyo derecho a gobernar ven&#237;a sancionado por las tradiciones ancestrales y la mitolog&#237;a. Los tiranos llegaron con frecuencia al poder a trav&#233;s de revueltas populares y gozaron de la simpat&#237;a p&#250;blica como gobernantes, al menos en sus primeros a&#241;os en el poder. De Pis&#237;strato, por ejemplo, cuenta Arist&#243;teles que eximi&#243; de impuestos a un agricultor a causa de lo particularmente inf&#233;rtiles que eran sus tierras, y se dice que Cipselo pod&#237;a pasear por las calles de Corinto sin escolta de ninguna clase.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_NAVAL_DOMINANCE_PEDIA</Tag>
+		<Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY_PEDIA</Tag>
 		<English>[TAB]In the modern western countries, the European "Age of Sail" is the period in which international trade and naval warfare were both dominated by sailing ships. The age of sail mostly coincided with the age of discovery, from the 15th to the 18th century. After the 17th century, English naval maps stopped using the term of British Sea for the English Channel. From 15th to the 18th centuries, the period saw square rigged sailing ships[26] carry European settlers to many parts of the world in one of the most important human migrations in recorded history. This period was marked by extensive exploration and colonization efforts on the part of European kingdoms. The sextant, developed in the 18th century, made more accurate charting of nautical position possible.</English>
 	</TEXT>
 	<TEXT>
@@ -153,35 +153,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_GUILDS_STRATEGY</Tag>
-		<English>Extra gold from specialist, extra production from workshops</English>
+		<English>Extra commerce from Workshops and Watermills, extra unhappiness from Banks, faster construction of Forges, Markets, Grocers</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_INDUSTRIALISM_STRATEGY</Tag>
-		<English>May hire double the amount of engineers, increased production in all cities, extra production from workshop</English>
+		<English>May hire double the amount of Engineers, increased production in all cities, extra production from Workshops and Watermills</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LEVY_ARMIES_STRATEGY</Tag>
-		<English>Extra free units, military units produced with food</English>
+		<English>Extra free units, military units produced with food, faster construction of Castles</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCENARIES_STRATEGY</Tag>
-		<English>Can spend gold to finish production of units, hurried units start with the mercenary promotion</English>
+		<English>Can spend gold to finish production of units, hurried units start with the mercenary promotion, faster construction of Walls</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MILITIA_STRATEGY</Tag>
-		<English>Increased experience gained from combat within your borders, double production speed of walls</English>
+		<English>The most primitive Military civic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_NAVAL_DOMINANCE_STRATEGY</Tag>
-		<English>Extra experience for Naval units, increased production speed for Naval units, double production speed of Harbors, Customs Houses and Drydocks</English>
+		<Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY_STRATEGY</Tag>
+		<English>Extra experience for Naval units, increased production speed for Naval units, double production speed of Harbors, Lighthouses and Drydocks, extra production from Fishing Boats</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE_STRATEGY</Tag>
-		<English>May hire double the amount of Artists, Scientists and Merchants, Extra Research from specialists, double production speed for hospitals and Universities</English>
+		<English>Reduced unhappiness from Corporations, extra research from specialists, faster construction of Hospitals and Universities</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Tag>
-		<English>Extra experience for land units, increased production speed for land units</English>
+		<English>Extra experience for land units, extra production from Forts, faster construction of Barracks and Stables</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WARRIOR_CODE_STRATEGY</Tag>
@@ -189,6 +189,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Tag>
-		<English>Extra Production from specialists, extra food from workshops and watermills, double production speed for factories and Coal Plants</English>
+		<English>Extra production from specialists, extra food from Workshops and Watermills, reduced commerce from Workshops, Watermills and Towns, faster construction of Factories and Coal Plants</English>
 	</TEXT>
 </Civ4GameText>

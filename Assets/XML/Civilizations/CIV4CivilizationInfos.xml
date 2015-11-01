@@ -106,7 +106,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -217,7 +217,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -335,7 +335,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -468,7 +468,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -597,7 +597,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -717,7 +717,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -831,7 +831,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -951,7 +951,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -1071,7 +1071,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -1188,7 +1188,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -1322,7 +1322,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -1432,7 +1432,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -1575,7 +1575,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -1704,7 +1704,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -1845,7 +1845,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -1961,7 +1961,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -2108,7 +2108,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -2256,7 +2256,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -2358,7 +2358,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -2492,7 +2492,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -2623,7 +2623,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -2759,7 +2759,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -2882,7 +2882,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -3013,7 +3013,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -3129,7 +3129,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -3195,8 +3195,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COAL_PLANT</BuildingClassType>
-					<BuildingType>BUILDING_JAPANESE_SHALE_PLANT</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+					<BuildingType>BUILDING_JAPANESE_ZAIBATSU</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3252,7 +3252,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -3384,7 +3384,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -3512,7 +3512,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -3621,7 +3621,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -3754,7 +3754,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -3886,7 +3886,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -3992,7 +3992,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -4110,7 +4110,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -4249,7 +4249,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -4389,7 +4389,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -4507,7 +4507,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -4637,7 +4637,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -4753,7 +4753,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -4896,7 +4896,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -5044,7 +5044,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -5152,7 +5152,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -5279,7 +5279,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -5421,7 +5421,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -5528,7 +5528,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -5606,7 +5606,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -5722,7 +5722,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -5839,7 +5839,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -5961,7 +5961,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -6089,7 +6089,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -6234,7 +6234,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -6352,7 +6352,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -6457,7 +6457,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -6545,7 +6545,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -6635,7 +6635,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -6734,7 +6734,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<CivicType>CIVIC_MILITIA</CivicType>
 			</InitialCivics>
@@ -6873,7 +6873,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>
@@ -7571,7 +7571,7 @@
 				<CivicType>CIVIC_TYRANNY</CivicType>
 				<CivicType>CIVIC_DIRECT_RULE</CivicType>
 				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SELF_SUFFICIENCY</CivicType>
+				<CivicType>CIVIC_SUBSISTENCE</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
 				<!-- Rhye -->
 				<CivicType>CIVIC_MILITIA</CivicType>

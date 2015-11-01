@@ -2767,6 +2767,7 @@ int CvTeam::getResearchCost(TechTypes eTech, bool bModifiers) const
 		iModifier += getTechLeaderModifier();
 		iModifier += getSpreadResearchModifier(eTech);
 		iModifier += getTurnResearchModifier();
+		iModifier += getModernizationResearchModifier(eTech); // Leoreth: Japanese UP (Modernization)
 
 		iCost *= iModifier;
 		iCost /= 100;
@@ -2838,7 +2839,7 @@ int CvTeam::getPopulationResearchModifier() const
 		// Rhye: discount for small empires
 		if (iNumCities < 5)
 		{
-			iMultiplier = 5 * std::max(0, GET_PLAYER(getLeaderID()).getCurrentEra() - 2);
+			iMultiplier = -5 * std::max(0, GET_PLAYER(getLeaderID()).getCurrentEra() - 2);
 
 			iModifier += iMultiplier * (5 - iNumCities);
 		}
@@ -2968,6 +2969,43 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	}
 
 	return iModifier;
+}
+
+int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
+{
+	if (getLeaderID() != JAPAN) return 0;
+
+	bool bAllMedievalTechs = true;
+
+	for (int iI = 0; iI < GC.getNumTechInfos(); iI++)
+	{
+		if (GC.getTechInfo((TechTypes)iI).getEra() <= ERA_MEDIEVAL && !isHasTech((TechTypes)iI))
+		{
+			bAllMedievalTechs = false;
+			break;
+		}
+	}
+
+	if (bAllMedievalTechs)
+	{
+		int iCount = 0;
+
+		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		{
+			TeamTypes eTeam = GET_PLAYER((PlayerTypes)iI).getTeam();
+			if (!GET_TEAM(eTeam).isHuman() && canContact(eTeam) && GET_TEAM(eTeam).isHasTech(eTech) && GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL)
+			{
+				iCount++;
+			}
+		}
+
+		if (iCount >= 3)
+		{
+			return -50;
+		}
+	}
+
+	return 0;
 }
 
 int CvTeam::getResearchLeft(TechTypes eTech) const
@@ -4124,6 +4162,19 @@ void CvTeam::setDefensivePact(TeamTypes eIndex, bool bNewValue)
 	if (isDefensivePact(eIndex) != bNewValue)
 	{
 		m_abDefensivePact[eIndex] = bNewValue;
+
+		// Leoreth: members might have defensive pact trade modifiers
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+			if (kPlayer.getTeam() == getID())
+			{
+				if (kPlayer.getDefensivePactTradeModifier() != 0)
+				{
+					kPlayer.updateTradeRoutes();
+				}
+			}
+		}
 
 		if ((getID() == GC.getGameINLINE().getActiveTeam()) || (eIndex == GC.getGameINLINE().getActiveTeam()))
 		{

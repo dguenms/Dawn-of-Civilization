@@ -19,8 +19,8 @@
 	# more culture required to cover the entire second ring
 	# properties of the plot influence how much culture it takes to cover it (more for desert, peaks ..., less for tiles with bonuses or river connections, making for more geographically appropriate borders)
 	# tiles get covered in order of their culture costs (cheapest first)
-	# you can also take control of a tile by building a fort on it
-# Oasis yields reverted to BtS settings (+3 food, +2 commerce)
+	# forts reduce the culture cost to zero
+# Oasis now yields +3 food, +1 commerce
 # immigration happens more frequently now, cities in North America are preferred as targets
 # additional improvement yields now only apply to city tiles for cities on small islands
 # vassal stability is reset to shaky (if lower) on vassalization
@@ -29,14 +29,14 @@
 	# reduced food yield from Ocean tiles by 1
 	# fishing boats on Ocean require Compass
 	# fishing boats on Ocean produce +1 food
-	# increased food from whale by +1
+	# increased food from whaling boats by +1
 	# replaced Coast tiles across the map with Ocean
 	# reduced the size of the Falklands
 	# units only receive double movement on Ocean when they are able to enter Ocean tiles
 	# new terrain feature: Island (+1 production on water tiles)
 	# new resource: Pearls (+1 happiness, expires with Plastics)
 	# Pearls contribute to Luxury Industry
-	# Pearls added in the East China Sea, near Tamil Nadu, the Persian Gulf and the Venezuelan coast
+	# Pearls added in Polynesia, the East China Sea, near Tamil Nadu, the Persian Gulf and the Venezuelan coast
 # replaced Marsh graphics so that they will not appear in the resource map mode anymore
 # majority culture instead of owner decides city style
 # units on impassable features can still be attacked (but advancing into the tile afterwards is still impossible)
@@ -88,7 +88,7 @@
 # Temple of Solomon expires with Banking
 # additional Seljuk conquerors against Arabia
 # Seljuks also target Jerusalem
-# new third Maya goal: make contact with a European civilization before they discover America
+# new third Maya goal: make contact with a European civilization before anyone discovers America
 # Included the SuperSpies mod component:
 	# Spies can now get experience from successful missions or intercepting other spies
 	# new Spy promotions to improve their abilities
@@ -143,7 +143,6 @@
 # if technology cost modifiers exist, they are displayed in the tech tooltip
 # if units are produced with food, their cost is now modified by their civilization's growth modifier
 # Cottages can be built on Oasis tiles now
-# reduced Commerce from Oasis by -1
 # extensive expansion of India to the south and rearrangement of its resources
 # new arrangement of Indian cities in the 600 AD and 1700 AD scenarios
 # India (Maratha Empire) and Tamils (Kingdom of Mysore) playable in 1700 AD
@@ -157,7 +156,7 @@
 # new Supermarket effect: +1 health from Wheat, Corn, Rice
 # Cow, Deer, Pig, Sheep, Fish, Clam and Crab cannot be traded until the discovery of Refrigeration
 # new Indian UU: Patiyodha (Longbowman): strength 5, requires Monarchy and Calendar, can enter Jungle, starts with Formation and Woodsman I
-# new Indian UB: Edict (Monument): -10% maintenance cost
+# new Indian UB: Edict (Pagan Temple): -10% maintenance cost
 # new terrain feature: Rainforest
 	# minus 1 food
 	# passable only to civilian units and elephants
@@ -190,13 +189,51 @@
 # vassal dynamic names only apply to capitulated vassals
 # included the improved Civics interface from History Rewritten
 # added an option to enable graphics paging to reduce memory consumption
-# civilizations far ahead/behind in tech receive a penalty/bonus to research costs that increases through the eras
+# civilizations far ahead/behind in tech receive a penalty/bonus to research costs that scales with era
 # added the Tarim river and more oases in the Tarim basin
 # included graphics and names for various female Great People across all civilizations
 # AIs are now willing to trade away their last resource or corporation resources if the trade is otherwise favorable
 # AI resource value is now scaling with the overall benefit on its cities
 # War Elephants now require Horseback Riding and Monarchy
 # Forts increase tile defense by 50%
-# the AI will now only ask to join their war if you share a border with their enemy
 # current year is always displayed during autoplay (even for civs that start without Calendar)
 # disabled the "100 turns left" message
+# Dharanis cannot cross Capes anymore
+# Removed free techs based on game era for respawned civilizations
+# Civics rebalancing and redesign:
+	# Dynasticism: limit for happiness from military units increased to 6
+	# City States: moved tech requirement to Alphabet
+	# Theocracy: reduced state religion happiness to +1
+	# Autocracy: removed drafts per turn to 2, removed espionage modifier
+	# Republic: reduced upkeep to medium
+	# Vassalage: reduced happiness from Castle to +1, added +2 commerce from Forts
+	# Representation: now gives +2 happiness for largest cities, +1 happiness from Courthouse, double statesman slots
+	# Egalitarianism: now gives double scientist, artist, merchant slots, +1 production from Towns, unhappiness for everyone without Egalitarianism
+	# Slavery: removed extra commerce for Plantations and Slave Plantations
+	# Industrialism: reduced upkeep to low, added +1 production from Watermill
+	# Public Welfare: replaced extra specialist slots with -50% corporation unhappiness
+	# Mercantilism: now gives no extra trade yield for foreign trade routes, +50% yield from trade through capital, +1 commerce from Plantations, double production for Customs House
+	# Central Planning: added -1 commerce from Town
+	# Environmentalism: added +2 commerce from Watermill
+	# Scholasticism: increased great people birth modifier to +40%
+	# Militia: removed all effects
+	# Mercenaries: added double production for Walls
+	# Warrior Code: removed and replaced with Multilateralism
+	# Levy Armies: increased number of free units, added double production for Castles
+	# Standing Army: removed land production modifier, added double production for Barracks and Stables, added +1 production from Forts
+	# Naval Dominance: renamed to Naval Supremacy, added +1 production for Fishing Boats, removed double production for Harbors, Customs House
+	# Multilateralism: new civic (low upkeep, requires Radio) with +100% war weariness, +1 upkeep per military unit, +1 free specialist, +25% trade yield with Defensive Pact
+# reduced production to gold conversion after failed wonder construction to 50%
+# production to commerce conversion processes now do not benefit from production modifiers anymore
+# Japan redesign:
+	# Their UU, the Samurai, now starts with the Leadership instead of the Drill promotions
+	# New UB: Zaibatsu (Factory with halved cost, +1 commerce on water tiles, free engineer)
+	# New UP: Modernization: After discovering all medieval techs, techs that three civs are willing to trade cost -50% research
+	# New first UHV goal: Have an average city culture of 6000 by 1600 AD without ever losing a city
+	# New third UHV goal: Be the first to discover five modern technologies
+	# reduced base tech speed
+	# starts with Calendar in the 3000 BC and 600 AD scenarios
+# Changed Himeji Castle effect: +1 culture per level of every fully fortified unit in the city, defense modifiers increase culture output in all cities
+# During AI trades, human players always have at least as much gold per turn available as they would make at 50% gold rate, even if it is currently spent on research/culture/espionage
+# added the Guadalquivir river in Iberia
+# fixed a bug that gave Arabia a higher tech score in the 600 AD scenario

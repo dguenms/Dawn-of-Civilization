@@ -733,6 +733,14 @@
 		<English>Total population: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVERAGE_CULTURE</Tag>
+		<English>Average Culture: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED</Tag>
+		<English>First to discover technologies in the %s1 era: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_</Tag>
 		<English></English>
 	</TEXT>

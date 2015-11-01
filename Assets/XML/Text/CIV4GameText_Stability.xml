@@ -336,6 +336,10 @@
 		<English>Fanaticism: Fighting Brothers of Faith</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_STABILITY_WARS_MULTILATERALISM</Tag>
+		<English>Multilateralism: Being at War</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_STABILITY_CONQUERED_CITIES</Tag>
 		<English>Conquered Cities</English>
 	</TEXT>

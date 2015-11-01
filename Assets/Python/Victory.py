@@ -679,12 +679,13 @@ def checkTurn(iGameTurn, iPlayer):
 					
 	elif iPlayer == iJapan:
 	
-		# first goal: have 18000 culture in cities with at least 90% Japanese culture in 1600 AD
-		if iGameTurn == getTurnForYear(1600):
-			if countNativeCulture(iJapan, 90) >= utils.getTurns(18000):
+		# first goal: have an average culture of 6000 by 1600 AD without ever losing a city
+		if isPossible(iJapan, 0):
+			if getAverageCulture(iJapan) >= utils.getTurns(6000):
 				win(iJapan, 0)
-			else:
-				lose(iJapan, 0)
+				
+		if iGameTurn == getTurnForYear(1600):
+			expire(iJapan, 0)
 				
 		# second goal: control or vassalize Korea, Manchuria, China, Indochina, Indonesia and the Philippines in 1940 AD
 		if iGameTurn == getTurnForYear(1940):
@@ -1521,6 +1522,10 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	if not gc.getGame().isVictoryValid(7): return
 	
 	if utils.getHumanID() != iPlayer and sd.isIgnoreAI(): return
+	
+	# first Japanese goal: have an average city culture of 6000 by 1600 AD without ever losing a city
+	if iOwner == iJapan:
+		expire(iJapan, 0)
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
 	if iPlayer == iTibet:
@@ -1553,7 +1558,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 	# second Canadian goal: control all cities and 90% of the territory in Canada by 1950 AD without ever conquering a city
 	elif iPlayer == iCanada:
 		if bConquest:
-			lose(iCanada, 1)
+			expire(iCanada, 1)
 			
 def onTechAcquired(iPlayer, iTech):
 	if not gc.getGame().isVictoryValid(7): return
@@ -1577,14 +1582,15 @@ def onTechAcquired(iPlayer, iTech):
 			if iTech in lTechs:
 				if iPlayer != iLoopPlayer: lose(iLoopPlayer, iGoal)
 				elif checkTechGoal(iLoopPlayer, lTechs): win(iLoopPlayer, iGoal)
+				
+		# third Japanese goal: be the first to discover five modern technologies
+		if isPossible(iJapan, 2):
+			if countFirstDiscovered(iPlayer, iModern) >= 5:
+				if iPlayer == iJapan: win(iJapan, 2)
+				else: lose(iJapan, 2)
 	
 	# handle complete tech tree goals (final tech may not be discovered for the first time)
 	if isCompleteTechTree(iPlayer):
-			
-		# third Japanese goal: be the first to finish the tech tree
-		if isPossible(iJapan, 2):
-			if iPlayer == iJapan: win(iJapan, 2)
-			else: lose(iJapan, 2)
 				
 		# third German goal: be the first to finish the tech tree
 		if isPossible(iGermany, 2):
@@ -2388,6 +2394,14 @@ def getAverageCitySize(iPlayer):
 	
 	return pPlayer.getTotalPopulation() * 1.0 / iNumCities
 	
+def getAverageCulture(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iNumCities = pPlayer.getNumCities()
+	
+	if iNumCities == 0: return 0
+	
+	return pPlayer.countTotalCulture() / iNumCities
+	
 def countHappinessResources(iPlayer):
 	iCount = 0
 	pPlayer = gc.getPlayer(iPlayer)
@@ -2602,6 +2616,13 @@ def isCompleteTechTree(iPlayer):
 		if not (tPlayer.isHasTech(iTech) or tPlayer.getTechCount(iTech) > 0): return False
 		
 	return True
+	
+def countFirstDiscovered(iPlayer, iEra):
+	iCount = 0
+	for iTech in range(iNumTechs):
+		if gc.getTechInfo(iTech).getEra() == iEra and sd.getFirstDiscovered(iTech) == iPlayer:
+			iCount += 1
+	return iCount
 	
 def isWonder(iBuilding):
 	return iBeginWonders <= iBuilding < iNumBuildings
@@ -3139,8 +3160,8 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iJapan:
 		if iGoal == 0:
-			iCulture = countNativeCulture(iJapan, 90)
-			aHelp.append(getIcon(iCulture >= utils.getTurns(18000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(18000))))
+			iAverageCulture = getAverageCulture(iJapan)
+			aHelp.append(getIcon(iAverageCulture >= utils.getTurns(6000)) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CULTURE", (iAverageCulture, utils.getTurns(6000))))
 		elif iGoal == 1:
 			bKorea = isControlledOrVassalized(iJapan, tKoreaTL, tKoreaBR)
 			bManchuria = isControlledOrVassalized(iJapan, tManchuriaTL, tManchuriaBR)
@@ -3150,7 +3171,10 @@ def getUHVHelp(iPlayer, iGoal):
 			bPhilippines = isControlledOrVassalized(iJapan, tPhilippinesTL, tPhilippinesBR)
 			aHelp.append(getIcon(bKorea) + localText.getText("TXT_KEY_CIV_KOREA_SHORT_DESC", ()) + ' ' + getIcon(bManchuria) + localText.getText("TXT_KEY_VICTORY_MANCHURIA", ()) + ' ' + getIcon(bChina) + localText.getText("TXT_KEY_CIV_CHINA_SHORT_DESC", ()))
 			aHelp.append(getIcon(bIndochina) + localText.getText("TXT_KEY_VICTORY_INDOCHINA", ()) + ' ' + getIcon(bIndonesia) + localText.getText("TXT_KEY_CIV_INDONESIA_SHORT_DESC", ()) + ' ' + getIcon(bPhilippines) + localText.getText("TXT_KEY_VICTORY_PHILIPPINES", ()))
-
+		elif iGoal == 2:
+			iTechsFirstDiscovered = countFirstDiscovered(iJapan, iModern)
+			aHelp.append(getIcon(iTechsFirstDiscovered >= 5) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iModern).getText(), iTechsFirstDiscovered, 5)))
+			
 	elif iPlayer == iVikings:
 		if iGoal == 0:
 			lEuroCivs = [iRome, iByzantium, iSpain, iFrance, iEngland, iHolyRome, iRussia]

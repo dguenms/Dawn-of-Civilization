@@ -1073,8 +1073,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_HIMEJI_CASTLE</Tag>
-		<English>[ICON_BULLET]New melee and archery units start with City Garrison I and Drill I[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per fully fortified unit in the city</English>
-		<German>[ICON_BULLET]Neue Nahkampf- und Pfeil- und Bogeneinheiten starten mit Garnison I und Drill I[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] pro vollständig befestigte Einheit in der Stadt</German>
+		<English>[ICON_BULLET]City defense increases culture output in all cities[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] per level of every fully fortified unit in the city</English>
+		<German>[ICON_BULLET]Stadtverteidigung erhöht Kulturausstoß in allen Städten[NEWLINE][ICON_BULLET]+1[ICON_CULTURE] pro Level für jede vollständig befestigte Einheit in der Stadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_HIMEJI_UNIT_CULTURE</Tag>

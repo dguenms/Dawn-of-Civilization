@@ -7143,6 +7143,20 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	//  Leoreth: corporation unhappiness modifier
+	if (GC.getCivicInfo(eCivic).getCorporationUnhappinessModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		if (GC.getCivicInfo(eCivic).getCorporationUnhappinessModifier() <= -100)
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_UNHAPPINESS_CORPORATION"));
+		}
+		else
+		{
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_UNHAPPINESS_CORPORATION_MOD", GC.getCivicInfo(eCivic).getCorporationUnhappinessModifier()));
+		}
+	}
+
 	//	Extra Health
 	if (GC.getCivicInfo(eCivic).getExtraHealth() != 0)
 	{
@@ -7325,6 +7339,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	//  Leoreth: wonder production modifier
+	if (GC.getCivicInfo(eCivic).getWonderProductionModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_WONDER_PRODUCTION", GC.getCivicInfo(eCivic).getWonderProductionModifier()));
+	}
+
 	//	Free specialists
 	if (GC.getCivicInfo(eCivic).getFreeSpecialist() != 0)
 	{
@@ -7358,6 +7379,27 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_FOREIGN_TRADE"));
+	}
+
+	//  Leoreth: no benefit from foreign trade
+	if (GC.getCivicInfo(eCivic).isNoForeignTradeModifier())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_FOREIGN_TRADE_MODIFIER"));
+	}
+
+	//  Leoreth: capital trade yield modifier
+	if (GC.getCivicInfo(eCivic).getCapitalTradeModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPITAL_TRADE_MODIFIER", GC.getCivicInfo(eCivic).getCapitalTradeModifier()));
+	}
+
+	// Leoreth: defensive pact trade modifier
+	if (GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_DEFENSIVE_PACT_TRADE_MODIFIER", GC.getCivicInfo(eCivic).getDefensivePactTradeModifier()));
 	}
 
 	//	No Corporations
@@ -7574,7 +7616,7 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	// Leoreth: American UP
 	if (GC.getGame().getActivePlayer() == AMERICA)
 	{
-		if (eCivic == REPUBLIC || eCivic == CAPITALISM || eCivic == FREE_MARKET)
+		if (eCivic == CIVIC_REPUBLIC || eCivic == CIVIC_CAPITALISM || eCivic == CIVIC_FREE_MARKET)
 		{
 			szHelpText.append(NEWLINE);
 			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS", 2, gDLL->getSymbolID(HAPPY_CHAR)));
@@ -8295,6 +8337,18 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 					szBuffer.append(NEWLINE);
 					szBuffer.append(" ");
 					szBuffer.append(gDLL->getText("TXT_KEY_TECH_SPAWN_MODIFIER"));
+					szTempBuffer.Format(L" %s%d %c", (iCostChange > 0) ? "+" : "", iCostChange, GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
+					szBuffer.append(szTempBuffer);
+				}
+
+				if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).getModernizationResearchModifier(eTech) != 0)
+				{
+					iCostChange = iCost * GET_TEAM(GC.getGameINLINE().getActiveTeam()).getModernizationResearchModifier(eTech);
+					iCostChange /= 100;
+
+					szBuffer.append(NEWLINE);
+					szBuffer.append(" ");
+					szBuffer.append(gDLL->getText("TXT_KEY_TECH_MODERNIZATION_MODIFIER"));
 					szTempBuffer.Format(L" %s%d %c", (iCostChange > 0) ? "+" : "", iCostChange, GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
 					szBuffer.append(szTempBuffer);
 				}
@@ -15783,8 +15837,9 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		int iParameterRelations = player.getStabilityParameter(PARAMETER_RELATIONS);
 		int iParameterAutocracy = player.getStabilityParameter(PARAMETER_AUTOCRACY);
 		int iParameterFanaticism = player.getStabilityParameter(PARAMETER_FANATICISM);
+		int iParameterMultilateralism = player.getStabilityParameter(PARAMETER_MULTILATERALISM);
 
-		iTotalStability = iParameterNeighbors + iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterAutocracy + iParameterFanaticism;
+		iTotalStability = iParameterNeighbors + iParameterVassals + iParameterDefensivePacts + iParameterRelations + iParameterAutocracy + iParameterFanaticism + iParameterMultilateralism;
 
 		szStabilityType = gDLL->getText("TXT_KEY_STABILITY_CATEGORY_FOREIGN");
 
@@ -15854,6 +15909,13 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		{
 			CvWString szTemp;
 			szTemp.Format(L"%d: %s", iParameterFanaticism, gDLL->getText("TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
+
+		if (iParameterMultilateralism < 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"%d: %s", iParameterMultilateralism, gDLL->getText("TXT_KEY_STABILITY_WARS_MULTILATERALISM").GetCString());
 			szStabilityParameters += NEWLINE + szTemp;
 		}
 
@@ -16952,7 +17014,7 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 
 			if (pUnit->getOwner() == city.getOwner() && pUnit->isFortifyable() && pUnit->getFortifyTurns() >= GC.getDefineINT("MAX_FORTIFY_TURNS"))
 			{
-				iUnitCulture += 1;
+				iUnitCulture += pUnit->getLevel();
 			}
 		}
 	}
@@ -16988,6 +17050,12 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 			for (int iLoop = 0; iLoop < city.getNumBuilding((BuildingTypes)i); iLoop++)
 			{
 				iBuildingMod += infoBuilding.getCommerceModifier(eCommerceType);
+			}
+
+			// Leoreth: Himeji Castle effect: defense modifier counts as culture modifier
+			if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+			{
+				iBuildingMod += infoBuilding.getDefenseModifier();
 			}
 		}
 		for (int j = 0; j < MAX_PLAYERS; j++)
@@ -17066,7 +17134,7 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 
 	int iModYield = (iModifier * iBaseCommerceRate) / 100;
 
-	int iProductionToCommerce = city.getProductionToCommerceModifier(eCommerceType) * city.getYieldRate(YIELD_PRODUCTION);
+	int iProductionToCommerce = city.getProductionToCommerceModifier(eCommerceType) * city.getBaseYieldRate(YIELD_PRODUCTION); // Leoreth: no production modifiers for processes
 	if (0 != iProductionToCommerce)
 	{
 		if (iProductionToCommerce%100 == 0)
@@ -18806,7 +18874,7 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					}
 				}
 
-				if (pCity->getTeam() != pOtherCity->getTeam() || GET_PLAYER(pCity->getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
+				if ((pCity->getTeam() != pOtherCity->getTeam() && !GET_PLAYER(pCity->getOwner()).isNoForeignTradeModifier()) || GET_PLAYER(pCity->getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
 				{
 					iNewMod = pCity->getForeignTradeRouteModifier();
 					if (0 != iNewMod)
@@ -18831,6 +18899,21 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					szBuffer.append(NEWLINE);
 					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_DISTANCE", iNewMod));
 					iModifier += iNewMod;
+				}
+
+				iNewMod = pCity->getCapitalTradeModifier(pOtherCity);
+				if (0 != iNewMod)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_CAPITAL_ROUTE", iNewMod));
+					iModifier += iNewMod;
+				}
+
+				iNewMod = pCity->getDefensivePactTradeModifier(pOtherCity);
+				if (0 != iNewMod)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_DEFENSIVE_PACT", iNewMod));
 				}
 			}
 

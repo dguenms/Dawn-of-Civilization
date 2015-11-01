@@ -1373,7 +1373,7 @@ int CvTeamAI::AI_techTradeVal(TechTypes eTech, TeamTypes eTeam) const
 }
 
 
-DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
+DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnoreProgress) const
 {
 	PROFILE_FUNC();
 
@@ -1387,10 +1387,9 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
-
 	//Rhye
 	//if (GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
-	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) && !GET_TEAM(eTeam).isHasTech((TechTypes)MASS_MEDIA))
+	if (!bIgnoreProgress && GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) && !GET_TEAM(eTeam).isHasTech((TechTypes)MASS_MEDIA))
 	{
 		CvTeam& kTeam = GET_TEAM(eTeam);
 
@@ -1449,9 +1448,12 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 
 	// Leoreth: stop China from trading away techs it has monopoly on to make its UP less powerful
 	if (iChinaThreshold == 0)
+	{
 		if (getID() == CHINA && GET_PLAYER((PlayerTypes)CHINA).isHuman() && GET_PLAYER((PlayerTypes)CHINA).getCurrentEra() < ERA_RENAISSANCE)
+		{
 			return DENIAL_TECH_WHORE;
-
+		}
+	}
 
 	if (isHuman())
 	{

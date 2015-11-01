@@ -414,8 +414,9 @@ int getWorldSizeMaxConscript(CivicTypes eCivic)
 
 	iMaxConscript = GC.getCivicInfo(eCivic).getMaxConscript();
 
+	/* Leoreth: better control it manually
 	iMaxConscript *= std::max(0, (GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getMaxConscriptModifier() + 100));
-	iMaxConscript /= 100;
+	iMaxConscript /= 100;*/
 
 	return iMaxConscript;
 }

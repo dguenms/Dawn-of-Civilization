@@ -118,9 +118,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_JAP2</Tag>
-		<English>On entering a new era, technologies from that era spread from civilizations with Open Borders agreement</English>
+		<English>After discovering all medieval techs, every tech three other civilizations are willing to trade costs -50% [ICON_RESEARCH]</English>
 		<French>Toutes les unités terrestres ont un bonus de défense des villes</French>
-		<German>Erhält beim Erreichen eines neuen Zeitalters Technologien dieses Zeitalters von Zivilisationen mit Offenen Grenzen</German>
+		<German>Nachdem alle Technologien des Mittelalters entdeckt wurden, kostet jede Technologie -50% [ICON_RESEARCH], die drei andere Zivilisationen zu tauschen bereit sind</German>
 		<Italian>Tutte le unit&#224; militari terrestri hanno un bonus in difesa delle citt&#224;</Italian>
 		<Spanish>Todas las unidades militares terrestres tienen una bonificaci&#243;n al defender ciudades</Spanish>
 	</TEXT>
@@ -270,17 +270,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AZT</Tag>
-		<English>The Power of Sacrifice:</English>
+		<English>The Power of Flower Wars:</English>
 		<French>Le Pouvoir du Sacrifice :</French>
-		<German>Die Macht der Opferung:</German>
+		<German>Die Macht der Blumenkriege:</German>
 		<Italian>Il potere del sacrificio:</Italian>
 		<Spanish>El poder del sacrificio:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_AZT2</Tag>
-		<English>Military units can enslave defeated enemy units</English>
+		<English>Military units can enslave defeated enemy units, can sacrifice slaves to increase city happiness</English>
 		<French>Les unités militaires peuvent asservir les unités ennemies vaincues</French>
-		<German>Versklavung besiegter feindlicher Einheiten durch Militäreinheiten</German>
+		<German>Versklavung besiegter feindlicher Einheiten durch Militäreinheiten, can Sklaven opfern, um Zufriedenheit in Städten zu erhöhen</German>
 		<Italian>Le unit&#224; militari possono schiavizzare le unit&#224; nemiche sconfitte</Italian>
 		<Spanish>Las unidades militares pueden esclavizar a las unidades enemigas derrotadas</Spanish>
 	</TEXT>

@@ -256,15 +256,15 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_HIMEJI_CASTLE</Type>
-			<Path>Art/Structures/Wonders/Himeji Castle/HimejiCastle.bik</Path>
+			<Path>Art/Structures/Wonders/HimejiCastle/HimejiCastle.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_PORCELAIN_TOWER</Type>
-			<Path>Art/Structures/Wonders/Porcelain Tower/PorcelainTower.bik</Path>
+			<Path>Art/Structures/Wonders/PorcelainTower/PorcelainTower.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_GREAT_BATH</Type>
-			<Path>Art/Structure/Wonders/Great Bath/MohenjoDaro.bik</Path>
+			<Path>Art/Structure/Wonders/GreatBath/MohenjoDaro.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_BLUE_MOSQUE</Type>
@@ -328,7 +328,7 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_EMPIRE_STATE</Type>
-			<Path>Art/Structures/Wonders/Empire State Building/EmpireStateBuilding.bik</Path>
+			<Path>Art/Structures/Wonders/EmpireStateBuilding/EmpireStateBuilding.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_KGB</Type>
